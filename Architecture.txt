@@ -1,0 +1,100 @@
+### ARCHITECTURE ###
+
+┌──────────────────────────────────────────────────────────────┐
+│                          USER INTERFACE                      │
+│                   (Streamlit / Web UI)                       │
+│                                                              │
+│  • Case Facts Input (Plain Language)                          │
+│  • Follow-up Q&A                                              │
+│  • PDF Upload (Bare Acts / Judgments)                         │
+│  • Review & Approval Screen                                   │
+└───────────────┬───────────────────────────────┬──────────────┘
+                │                               │
+                │                               │
+        ┌───────▼───────┐               ┌───────▼────────┐
+        │ DOCUMENT      │               │ USER FACTS     │
+        │ INGESTION     │               │ PIPELINE       │
+        │ PIPELINE      │               │                │
+        └───────┬───────┘               └───────┬────────┘
+                │                               │
+                │                               │
+┌───────────────▼───────────────┐   ┌───────────▼─────────────┐
+│ PDF Loader / OCR               │   │ Facts Collector Agent   │
+│ (pdfplumber / Tesseract)       │   │ (Plain language Q&A)    │
+└───────────────┬───────────────┘   └───────────┬─────────────┘
+                │                               │
+┌───────────────▼───────────────┐   ┌───────────▼─────────────┐
+│ Chunking + Metadata Extractor  │   │ Fact Normalizer Agent   │
+│ • Sections                     │   │ • Structured JSON      │
+│ • Case Names                   │   │ • Dates / Places       │
+└───────────────┬───────────────┘   └───────────┬─────────────┘
+                │                               │
+┌───────────────▼───────────────┐   ┌───────────▼─────────────┐
+│ Embeddings Generator           │   │ Contradiction Checker   │
+│ (sentence-transformers)        │   │ Agent                  │
+└───────────────┬───────────────┘   └───────────┬─────────────┘
+                │                               │
+┌───────────────▼───────────────┐               │
+│ VECTOR STORE (FAISS)           │               │
+│ • Bare Acts                    │               │
+│ • Case Law                     │               │
+│ • Metadata + Citations         │               │
+└───────────────┬───────────────┘               │
+                │                               │
+────────────────┼────────────── CREW AI ORCHESTRATION ─────────┼──────────────
+                │                               │
+┌───────────────▼───────────────┐   ┌───────────▼─────────────┐
+│ Issue Framing Agent            │   │ Jurisdiction &           │
+│ • Legal Issues                 │   │ Maintainability Agent   │
+└───────────────┬───────────────┘   └───────────┬─────────────┘
+                │                               │
+┌───────────────▼───────────────┐   ┌───────────▼─────────────┐
+│ Bare Act Research Agent        │   │ Case Law Research Agent │
+│ • Relevant Sections            │   │ • Relevant Judgments    │
+└───────────────┬───────────────┘   └───────────┬─────────────┘
+                │                               │
+┌───────────────▼───────────────┐   ┌───────────▼─────────────┐
+│ Section Applicability Agent    │   │ Precedent Ranking Agent │
+│ • Ingredients Match            │   │ • Binding / Persuasive  │
+└───────────────┬───────────────┘   └───────────┬─────────────┘
+                │                               │
+┌───────────────▼───────────────┐
+│ Legal Opinion Agent            │
+│ • Plain English Opinion        │
+│ • Citations Attached           │
+└───────────────┬───────────────┘
+                │
+┌───────────────▼───────────────┐
+│ Counter-Argument Agent         │
+│ • Opposing Counsel View        │
+│ • Weakness Identification     │
+└───────────────┬───────────────┘
+                │
+┌───────────────▼───────────────┐
+│ Drafting Agent                 │
+│ • Petition / Pleading Draft   │
+│ • Affidavit / Memo            │
+└───────────────┬───────────────┘
+                │
+┌───────────────▼───────────────┐
+│ Formatting & Court Style Agent │
+│ • Cause Title                  │
+│ • Annexures                   │
+└───────────────┬───────────────┘
+                │
+┌───────────────▼───────────────┐
+│ QA & SAFETY CREW               │
+│                                │
+│ • Citation Verification Agent │
+│ • Hallucination Detection     │
+│ • Confidence Scoring Agent    │
+│ • Human Gatekeeper Agent      │
+└───────────────┬───────────────┘
+                │
+┌───────────────▼───────────────┐
+│ FINAL OUTPUT                   │
+│ • Legal Opinion (Explained)   │
+│ • Draft Document (DOC/PDF)    │
+│ • Source Citations            │
+│ • “REQUIRES HUMAN APPROVAL”   │
+└───────────────────────────────┘
