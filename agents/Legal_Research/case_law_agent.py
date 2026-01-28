@@ -1,34 +1,80 @@
 from crewai import Agent
 from crewai.tools import tool
-import faiss, requests, numpy as np, pdfplumber
+import faiss
+import numpy as np
+import requests
+import os
 
-@tool
-def retrieve_case_law(query_text):
-    """Retrieve the most relevant case law paragraph for a given legal query."""
-    
-    index = faiss.read_index("data/vector_store/caselaw.index")
+INDEX_PATH = "data/vector_store/caselaws.index"
+CASELAW_DIR = "data/CaseLaws"
+CHUNK_SIZE = 800
 
-    emb = requests.post(
+
+def embed(text):
+    res = requests.post(
         "http://localhost:11434/api/embeddings",
-        json={"model": "nomic-embed-text", "prompt": query_text}
-    ).json()["embedding"]
+        json={
+            "model": "nomic-embed-text",
+            "prompt": text
+        }
+    )
+    return res.json()["embedding"]
 
-    D, I = index.search(np.array([emb], dtype="float32"), 1)
 
-    full_text = "\n".join(
-        [p.extract_text() for p in pdfplumber.open("data/raw_pdfs/sample_judgment.pdf").pages if p.extract_text()]
+def load_case_chunks():
+    chunks = []
+    sources = []
+
+    for fname in os.listdir(CASELAW_DIR):
+        if not fname.endswith(".txt"):
+            continue
+
+        path = os.path.join(CASELAW_DIR, fname)
+        with open(path, encoding="utf-8") as f:
+            content = f.read()
+
+        for i in range(0, len(content), CHUNK_SIZE):
+            chunks.append(content[i:i + CHUNK_SIZE])
+            sources.append(fname)
+
+    return chunks, sources
+
+
+def retrieve_case_law(query):
+    """
+    Retrieve the most relevant Indian case law for a given legal issue.
+    """
+    index = faiss.read_index(INDEX_PATH)
+    query_emb = embed(query)
+
+    D, I = index.search(
+        np.array([query_emb]).astype("float32"),
+        3
     )
 
-    chunks = [full_text[i:i+500] for i in range(0, len(full_text), 500)]
+    chunks, sources = load_case_chunks()
 
-    return chunks[I[0][0]]
+    results = []
+    for idx in I[0]:
+        results.append({
+            "source": sources[idx],
+            "text": chunks[idx]
+        })
 
+    return results
+
+@tool
+def case_law_tool(query_text: str):
+    """
+    Retrieve relevant Case Laws for a legal query.
+    """
+    return retrieve_case_law(query_text)
 
 case_law_agent = Agent(
     role="Case Law Researcher",
-    goal="Retrieve the most relevant legal precedents.",
-    backstory="You search and retrieve relevant judgments from indexed case law.",
+    goal="Retrieve relevant Indian case law for the given legal issue.",
+    backstory="You are an expert legal researcher skilled in Indian case law analysis.",
     llm="ollama/llama3.1:8b",
-    tools=[retrieve_case_law],
+    tools=[case_law_tool],
     verbose=True
 )

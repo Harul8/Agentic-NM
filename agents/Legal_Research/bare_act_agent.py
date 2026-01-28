@@ -1,41 +1,45 @@
 from crewai import Agent
 from crewai.tools import tool
-import json
-import faiss, requests, numpy as np, pdfplumber
+import faiss, json, requests, numpy as np
 
-@tool
 def retrieve_bare_act_section(query_text):
     """Retrieve the most relevant Bare Act section for a given legal query."""
-    
+
     # Load FAISS index
     index = faiss.read_index("data/vector_store/bareacts.index")
 
-    # Generate embedding from Ollama
+    # Load stored chunks
+    with open("data/vector_store/bareacts_chunks.json", "r", encoding="utf-8") as f:
+        chunks = json.load(f)
+
+    # Generate embedding
     emb = requests.post(
         "http://localhost:11434/api/embeddings",
         json={"model": "nomic-embed-text", "prompt": query_text}
     ).json()["embedding"]
 
-    # Search FAISS
-    D, I = index.search(np.array([emb], dtype="float32"), 1)
+    # Search
+    D, I = index.search(np.array([emb], dtype="float32"), 3)
 
-    # Load Bare Act PDF text
-    full_text = "\n".join(
-        [p.extract_text() for p in pdfplumber.open("data/BareActs/THE INDIAN CONTRACT ACT 1872.pdf").pages if p.extract_text()]
-    )
+    # Return top matches
+    results = []
+    for idx in I[0]:
+        results.append(chunks[str(idx)])
 
-    # Chunk the text
-    chunks = [full_text[i:i+500] for i in range(0, len(full_text), 500)]
+    return "\n\n---\n\n".join(results)
 
-    # Return best matching chunk
-    return chunks[I[0][0]]
-
+@tool
+def bare_act_tool(query_text: str):
+    """
+    Retrieve relevant Bare Act provisions for a legal query.
+    """
+    return retrieve_bare_act_section(query_text)
 
 bare_act_agent = Agent(
     role="Bare Act Researcher",
-    goal="Retrieve the most relevant Bare Act legal section.",
-    backstory="You retrieve exact legal sections from indexed Bare Acts.",
+    goal="Retrieve exact statutory provisions from indexed Bare Acts.",
+    backstory="You are a statutory retrieval system. You never invent law.",
     llm="ollama/llama3.1:8b",
-    tools=[retrieve_bare_act_section],
+    tools=[bare_act_tool],
     verbose=True
 )

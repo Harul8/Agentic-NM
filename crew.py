@@ -39,13 +39,13 @@ task_facts = Task(
 
 
 task_normalize = Task(
-    description="Normalize the structured facts.",
+    description="Normalize the structured facts into clean legal JSON.",
     expected_output="A clean normalized version of the case facts.",
     agent=normalization_agent
 )
 
 task_contradiction = Task(
-    description="Detect contradictions in the facts.",
+    description="Check the normalized facts for internal contradictions.",
     expected_output="A contradiction analysis report.",
     agent=contradiction_agent
 )
