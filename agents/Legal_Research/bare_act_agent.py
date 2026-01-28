@@ -1,45 +1,71 @@
+import os
+import json
+import faiss
+import numpy as np
+import torch
+from sentence_transformers import SentenceTransformer
 from crewai import Agent
 from crewai.tools import tool
-import faiss, json, requests, numpy as np
 
-def retrieve_bare_act_section(query_text):
-    """Retrieve the most relevant Bare Act section for a given legal query."""
+# ===============================
+# PATHS
+# ===============================
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-    # Load FAISS index
-    index = faiss.read_index("data/vector_store/bareacts.index")
+VECTOR_STORE = os.path.join(BASE_DIR, "data", "vector_store")
+INDEX_PATH = os.path.join(VECTOR_STORE, "bareacts.index")
+CHUNKS_PATH = os.path.join(VECTOR_STORE, "bareacts_chunks.json")
 
-    # Load stored chunks
-    with open("data/vector_store/bareacts_chunks.json", "r", encoding="utf-8") as f:
+# ===============================
+# GPU EMBEDDING MODEL
+# ===============================
+device = "cuda" if torch.cuda.is_available() else "cpu"
+embedder = SentenceTransformer(
+    "sentence-transformers/all-MiniLM-L6-v2",
+    device=device
+)
+
+# ===============================
+# TOOL
+# ===============================
+@tool
+def retrieve_bare_act_section(query: str):
+    """
+    Retrieve relevant Bare Act provisions using cosine similarity search.
+    """
+    if not os.path.exists(INDEX_PATH) or not os.path.exists(CHUNKS_PATH):
+        return []
+
+    index = faiss.read_index(INDEX_PATH)
+
+    with open(CHUNKS_PATH, encoding="utf-8") as f:
         chunks = json.load(f)
 
-    # Generate embedding
-    emb = requests.post(
-        "http://localhost:11434/api/embeddings",
-        json={"model": "nomic-embed-text", "prompt": query_text}
-    ).json()["embedding"]
+    query_vec = embedder.encode(
+        query,
+        convert_to_numpy=True,
+        normalize_embeddings=True
+    )
 
-    # Search
-    D, I = index.search(np.array([emb], dtype="float32"), 3)
+    D, I = index.search(np.array([query_vec], dtype="float32"), 5)
 
-    # Return top matches
     results = []
     for idx in I[0]:
-        results.append(chunks[str(idx)])
+        key = str(idx)
+        if key in chunks:
+            results.append(chunks[key])
 
-    return "\n\n---\n\n".join(results)
+    return results
 
-@tool
-def bare_act_tool(query_text: str):
-    """
-    Retrieve relevant Bare Act provisions for a legal query.
-    """
-    return retrieve_bare_act_section(query_text)
 
+# ===============================
+# AGENT
+# ===============================
 bare_act_agent = Agent(
     role="Bare Act Researcher",
     goal="Retrieve exact statutory provisions from indexed Bare Acts.",
-    backstory="You are a statutory retrieval system. You never invent law.",
+    backstory="You retrieve law exactly as written. You do not interpret.",
+    tools=[retrieve_bare_act_section],
     llm="ollama/llama3.1:8b",
-    tools=[bare_act_tool],
     verbose=True
 )

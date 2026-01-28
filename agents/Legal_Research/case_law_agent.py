@@ -1,80 +1,71 @@
-from crewai import Agent
-from crewai.tools import tool
+import os
+import json
 import faiss
 import numpy as np
-import requests
-import os
+import torch
+from sentence_transformers import SentenceTransformer
+from crewai import Agent
+from crewai.tools import tool
 
-INDEX_PATH = "data/vector_store/caselaws.index"
-CASELAW_DIR = "data/CaseLaws"
-CHUNK_SIZE = 800
+# ===============================
+# PATHS
+# ===============================
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+VECTOR_STORE = os.path.join(BASE_DIR, "data", "vector_store")
+INDEX_PATH = os.path.join(VECTOR_STORE, "caselaws.index")
+CHUNKS_PATH = os.path.join(VECTOR_STORE, "caselaws_chunks.json")
 
-def embed(text):
-    res = requests.post(
-        "http://localhost:11434/api/embeddings",
-        json={
-            "model": "nomic-embed-text",
-            "prompt": text
-        }
-    )
-    return res.json()["embedding"]
+# ===============================
+# GPU EMBEDDING MODEL
+# ===============================
+device = "cuda" if torch.cuda.is_available() else "cpu"
+embedder = SentenceTransformer(
+    "sentence-transformers/all-MiniLM-L6-v2",
+    device=device
+)
 
-
-def load_case_chunks():
-    chunks = []
-    sources = []
-
-    for fname in os.listdir(CASELAW_DIR):
-        if not fname.endswith(".txt"):
-            continue
-
-        path = os.path.join(CASELAW_DIR, fname)
-        with open(path, encoding="utf-8") as f:
-            content = f.read()
-
-        for i in range(0, len(content), CHUNK_SIZE):
-            chunks.append(content[i:i + CHUNK_SIZE])
-            sources.append(fname)
-
-    return chunks, sources
-
-
-def retrieve_case_law(query):
+# ===============================
+# TOOL
+# ===============================
+@tool
+def retrieve_case_law(query: str):
     """
-    Retrieve the most relevant Indian case law for a given legal issue.
+    Retrieve relevant Indian case law using cosine similarity search.
     """
+    if not os.path.exists(INDEX_PATH) or not os.path.exists(CHUNKS_PATH):
+        return []
+
     index = faiss.read_index(INDEX_PATH)
-    query_emb = embed(query)
 
-    D, I = index.search(
-        np.array([query_emb]).astype("float32"),
-        3
+    with open(CHUNKS_PATH, encoding="utf-8") as f:
+        chunks = json.load(f)
+
+    query_vec = embedder.encode(
+        query,
+        convert_to_numpy=True,
+        normalize_embeddings=True
     )
 
-    chunks, sources = load_case_chunks()
+    D, I = index.search(np.array([query_vec], dtype="float32"), 5)
 
     results = []
     for idx in I[0]:
-        results.append({
-            "source": sources[idx],
-            "text": chunks[idx]
-        })
+        key = str(idx)
+        if key in chunks:
+            results.append(chunks[key])
 
     return results
 
-@tool
-def case_law_tool(query_text: str):
-    """
-    Retrieve relevant Case Laws for a legal query.
-    """
-    return retrieve_case_law(query_text)
 
+# ===============================
+# AGENT
+# ===============================
 case_law_agent = Agent(
     role="Case Law Researcher",
-    goal="Retrieve relevant Indian case law for the given legal issue.",
-    backstory="You are an expert legal researcher skilled in Indian case law analysis.",
+    goal="Retrieve relevant Indian case law accurately.",
+    backstory="You retrieve judicial precedents without interpretation.",
+    tools=[retrieve_case_law],
     llm="ollama/llama3.1:8b",
-    tools=[case_law_tool],
     verbose=True
 )

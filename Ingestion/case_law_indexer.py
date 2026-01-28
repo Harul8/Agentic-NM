@@ -1,76 +1,105 @@
 import os
+import json
 import faiss
 import numpy as np
-import requests
-from tqdm import tqdm
-import os
+import torch
+from sentence_transformers import SentenceTransformer
 
-# Absolute project root (Nyaymalaw 3.0)
+# ===============================
+# PROJECT PATHS (ABSOLUTE)
+# ===============================
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Data directories
 DATA_DIR = os.path.join(PROJECT_ROOT, "data")
 CASELAW_DIR = os.path.join(DATA_DIR, "CaseLaws")
 VECTOR_STORE_DIR = os.path.join(DATA_DIR, "vector_store")
 
-# Vector store files
 CASELAW_INDEX_PATH = os.path.join(VECTOR_STORE_DIR, "caselaws.index")
 CASELAW_CHUNKS_PATH = os.path.join(VECTOR_STORE_DIR, "caselaws_chunks.json")
 
-# Chunking
-CHUNK_SIZE = 800
+os.makedirs(VECTOR_STORE_DIR, exist_ok=True)
+
+# ===============================
+# GPU EMBEDDING MODEL
+# ===============================
+print("🚀 Loading embedding model on GPU...")
+
+device = "cuda" if torch.cuda.is_available() else "cpu"
+embedder = SentenceTransformer(
+    "sentence-transformers/all-MiniLM-L6-v2",
+    device=device
+)
+
+# ===============================
+# HELPERS
+# ===============================
+def load_text_file(path: str) -> str:
+    with open(path, encoding="utf-8", errors="ignore") as f:
+        return f.read()
 
 
-def embed(text):
-    
-    res = requests.post(
-        "http://localhost:11434/api/embeddings",
-        json={
-            "model": "nomic-embed-text",
-            "prompt": text
-        }
+def chunk_text(text: str, size: int = 800):
+    return [text[i:i + size] for i in range(0, len(text), size)]
+
+
+def embed_batch(texts):
+    return embedder.encode(
+        texts,
+        batch_size=32,
+        convert_to_numpy=True,
+        normalize_embeddings=True,
+        show_progress_bar=False
     )
-    return res.json()["embedding"]
 
-
-def load_case_laws():
-    texts = []
-
-    for fname in os.listdir(CASELAW_DIR):
-        if not fname.endswith(".txt"):
-            continue
-
-        with open(os.path.join(CASELAW_DIR, fname), encoding="utf-8") as f:
-            content = f.read()
-
-        for i in range(0, len(content), CHUNK_SIZE):
-            texts.append(content[i:i + CHUNK_SIZE])
-
-    return texts
-
-
+# ===============================
+# MAIN INGESTION
+# ===============================
 def main():
-    print("📚 Reading case law files...")
-    chunks = load_case_laws()
+    print("📁 Project root:", PROJECT_ROOT)
+    print("📁 Case Laws dir:", CASELAW_DIR)
 
-    if not chunks:
-        print("❌ No case law text found.")
-        return
+    files = [f for f in os.listdir(CASELAW_DIR) if f.lower().endswith(".txt")]
+    print("📄 Files found:", files)
 
-    print(f"🔹 Total chunks: {len(chunks)}")
+    all_embeddings = []
+    chunk_store = {}
+    chunk_id = 0
 
-    embeddings = []
-    for chunk in tqdm(chunks):
-        embeddings.append(embed(chunk))
+    for file in files:
+        print(f"\n➡️ Processing: {file}")
+        text = load_text_file(os.path.join(CASELAW_DIR, file))
+        chunks = chunk_text(text)
 
-    dim = len(embeddings[0])
-    index = faiss.IndexFlatL2(dim)
-    index.add(np.array(embeddings).astype("float32"))
+        print(f"   Chunks created: {len(chunks)}")
 
-    os.makedirs(os.path.dirname(INDEX_PATH), exist_ok=True)
-    faiss.write_index(index, INDEX_PATH)
+        for i in range(0, len(chunks), 32):
+            batch = chunks[i:i + 32]
+            embeddings = embed_batch(batch)
 
-    print(f"✅ Case law FAISS index saved at {INDEX_PATH}")
+            for chunk, emb in zip(batch, embeddings):
+                chunk_store[str(chunk_id)] = {
+                    "source": file,
+                    "text": chunk
+                }
+                all_embeddings.append(emb)
+                chunk_id += 1
+
+            print(f"      Embedded {min(i+32, len(chunks))}/{len(chunks)}")
+
+    print("\n📊 Total chunks embedded:", len(all_embeddings))
+
+    dim = len(all_embeddings[0])
+    index = faiss.IndexFlatIP(dim)
+    index.add(np.array(all_embeddings, dtype="float32"))
+
+    faiss.write_index(index, CASELAW_INDEX_PATH)
+
+    with open(CASELAW_CHUNKS_PATH, "w", encoding="utf-8") as f:
+        json.dump(chunk_store, f, indent=2)
+
+    print("\n✅ Case Laws indexing COMPLETE")
+    print("📦 Index →", CASELAW_INDEX_PATH)
+    print("📄 Chunks →", CASELAW_CHUNKS_PATH)
 
 
 if __name__ == "__main__":
