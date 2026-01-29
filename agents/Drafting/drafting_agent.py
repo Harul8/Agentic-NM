@@ -28,7 +28,7 @@ drafting_agent = Agent(
     role="Drafting Agent",
     goal="Draft petitions, pleadings, and legal documents.",
     backstory="You convert legal opinions into court-ready drafts.",
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     tools=[draft_petition],
     verbose=True
 )

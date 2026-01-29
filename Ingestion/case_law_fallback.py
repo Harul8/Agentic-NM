@@ -3,6 +3,8 @@ import requests
 import os
 import textwrap
 
+from llm.config import OLLAMA_MODEL
+
 SAVE_DIR = "data/CaseLaws"
 
 
@@ -29,7 +31,7 @@ def summarize_url(url):
     res = requests.post(
         "http://localhost:11434/api/generate",
         json={
-            "model": "mistral:7b",
+            "model": OLLAMA_MODEL,
             "prompt": prompt,
             "stream": False
         }

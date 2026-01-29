@@ -66,6 +66,6 @@ case_law_agent = Agent(
     goal="Retrieve relevant Indian case law accurately.",
     backstory="You retrieve judicial precedents without interpretation.",
     tools=[retrieve_case_law],
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     verbose=True
 )

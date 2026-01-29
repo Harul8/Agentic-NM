@@ -18,7 +18,7 @@ hallucination_agent = Agent(
     role="Hallucination Detector",
     goal="Detect and flag hallucinated or unsupported legal reasoning.",
     backstory="You ensure the LLM only returns verifiable legal information.",
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     tools=[detect_hallucinations],
     verbose=True
 )

@@ -26,7 +26,7 @@ precedent_ranking_agent = Agent(
     role="Precedent Ranking Agent",
     goal="Classify and rank legal precedents by authority level.",
     backstory="You determine whether judgments are binding or persuasive.",
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     tools=[rank_precedents],
     verbose=True
 )

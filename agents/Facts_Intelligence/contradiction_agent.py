@@ -27,7 +27,7 @@ contradiction_agent = Agent(
     role="Contradiction Checker",
     goal="Validate normalized case facts for contradictions.",
     backstory="You ensure only logically consistent case facts proceed further.",
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     tools=[detect_contradictions],
     verbose=True
 )

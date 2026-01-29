@@ -26,7 +26,7 @@ confidence_agent = Agent(
     role="Confidence Evaluator",
     goal="Evaluate and assign a confidence level to the generated legal response.",
     backstory="You check if the legal answer is reliable enough to proceed.",
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     tools=[score_confidence],
     verbose=True
 )

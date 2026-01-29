@@ -15,7 +15,7 @@ citation_agent = Agent(
     role="Citation Verifier",
     goal="Ensure all legal statements are properly cited from Bare Acts or case law.",
     backstory="You validate citations and prevent unsupported legal claims.",
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     tools=[verify_citations],
     verbose=True
 )

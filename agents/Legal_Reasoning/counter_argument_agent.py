@@ -25,7 +25,7 @@ counter_argument_agent = Agent(
     role="Counter-Argument Agent",
     goal="Highlight weaknesses and opposing viewpoints.",
     backstory="You help lawyers anticipate the opposing side.",
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     tools=[generate_counter_arguments],
     verbose=True
 )

@@ -23,7 +23,7 @@ facts_agent = Agent(
         "You take plain-language case facts and convert them into structured legal JSON "
         "so that research and drafting agents can use it."
     ),
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     tools=[structure_facts],
     verbose=True
 )

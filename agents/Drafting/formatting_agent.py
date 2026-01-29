@@ -23,7 +23,7 @@ formatting_agent = Agent(
     role="Formatting Agent",
     goal="Format drafted legal petitions and pleadings for final presentation.",
     backstory="You ensure legal drafts are clean, structured, and court-ready.",
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     tools=[format_for_court],
     verbose=True
 )

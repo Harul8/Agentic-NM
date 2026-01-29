@@ -30,7 +30,7 @@ opinion_agent = Agent(
     role="Legal Opinion Agent",
     goal="Provide a reasoned legal opinion from facts and research.",
     backstory="You synthesize Bare Act sections and legal issues into a professional legal opinion.",
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     tools=[generate_opinion],
     verbose=True
 )

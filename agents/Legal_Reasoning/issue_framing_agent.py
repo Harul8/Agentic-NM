@@ -24,7 +24,7 @@ issue_framing_agent = Agent(
     role="Issue Framing Agent",
     goal="Extract the key legal issues from case facts.",
     backstory="You help lawyers understand the main disputes in a case.",
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     tools=[frame_issues],
     verbose=True
 )

@@ -23,7 +23,7 @@ applicability_agent = Agent(
     role="Section Applicability Agent",
     goal="Validate whether the retrieved Bare Act section applies to the case.",
     backstory="You match legal sections with the facts of the case.",
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     tools=[check_section_applicability],
     verbose=True
 )

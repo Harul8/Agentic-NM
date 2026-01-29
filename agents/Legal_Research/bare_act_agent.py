@@ -66,6 +66,6 @@ bare_act_agent = Agent(
     goal="Retrieve exact statutory provisions from indexed Bare Acts.",
     backstory="You retrieve law exactly as written. You do not interpret.",
     tools=[retrieve_bare_act_section],
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     verbose=True
 )

@@ -49,7 +49,7 @@ act_case_fusion_agent = Agent(
         "You never reason, interpret, retry, or invent. "
         "If data is missing, you return empty sections."
     ),
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     tools=[fuse_bare_act_and_case_law],
     verbose=True
 )

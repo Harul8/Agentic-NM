@@ -23,7 +23,7 @@ jurisdiction_agent = Agent(
     role="Jurisdiction Agent",
     goal="Identify the appropriate legal jurisdiction.",
     backstory="You determine where the case should be filed.",
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     tools=[determine_jurisdiction],
     verbose=True
 )

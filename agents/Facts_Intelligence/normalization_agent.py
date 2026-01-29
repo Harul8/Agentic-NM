@@ -22,7 +22,7 @@ normalization_agent = Agent(
     role="Fact Normalizer",
     goal="Normalize and standardize structured case facts.",
     backstory="You clean structured facts into normalized legal JSON.",
-    llm="ollama/llama3.1:8b",
+    llm="ollama/mistral:7b",
     tools=[normalize_facts],
     verbose=True
 )
