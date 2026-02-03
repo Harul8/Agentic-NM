@@ -2,6 +2,8 @@ from crewai import Agent
 from crewai.tools import tool
 import json
 
+from llm.config import CREWAI_LLM
+
 @tool
 def structure_facts(raw_facts: str):
     """
@@ -23,7 +25,7 @@ facts_agent = Agent(
         "You take plain-language case facts and convert them into structured legal JSON "
         "so that research and drafting agents can use it."
     ),
-    llm="ollama/mistral:7b",
+    llm=CREWAI_LLM,
     tools=[structure_facts],
     verbose=True
 )

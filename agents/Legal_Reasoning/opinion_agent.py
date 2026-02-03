@@ -2,6 +2,8 @@ from crewai import Agent
 from crewai.tools import tool
 import json
 
+from llm.config import CREWAI_LLM
+
 @tool
 def generate_opinion(research_data: str):
     """Generate a plain-language legal opinion based on research and facts."""
@@ -30,7 +32,7 @@ opinion_agent = Agent(
     role="Legal Opinion Agent",
     goal="Provide a reasoned legal opinion from facts and research.",
     backstory="You synthesize Bare Act sections and legal issues into a professional legal opinion.",
-    llm="ollama/mistral:7b",
+    llm=CREWAI_LLM,
     tools=[generate_opinion],
     verbose=True
 )

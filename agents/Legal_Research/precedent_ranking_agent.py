@@ -2,6 +2,8 @@ from crewai import Agent
 from crewai.tools import tool
 import json
 
+from llm.config import CREWAI_LLM
+
 @tool
 def rank_precedents(case_law_json: str):
     """Rank retrieved case law precedents as binding or persuasive."""
@@ -26,7 +28,7 @@ precedent_ranking_agent = Agent(
     role="Precedent Ranking Agent",
     goal="Classify and rank legal precedents by authority level.",
     backstory="You determine whether judgments are binding or persuasive.",
-    llm="ollama/mistral:7b",
+    llm=CREWAI_LLM,
     tools=[rank_precedents],
     verbose=True
 )

@@ -1,6 +1,8 @@
 from crewai import Agent
 from crewai.tools import tool
 
+from llm.config import CREWAI_LLM
+
 @tool
 def format_for_court(draft_text: str):
     """Format the drafted legal document into a clean, professional court-ready structure."""
@@ -23,7 +25,7 @@ formatting_agent = Agent(
     role="Formatting Agent",
     goal="Format drafted legal petitions and pleadings for final presentation.",
     backstory="You ensure legal drafts are clean, structured, and court-ready.",
-    llm="ollama/mistral:7b",
+    llm=CREWAI_LLM,
     tools=[format_for_court],
     verbose=True
 )

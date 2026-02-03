@@ -1,6 +1,7 @@
 from crewai import Agent
 from crewai.tools import tool
 
+from llm.config import CREWAI_LLM
 from agents.Legal_Research.bare_act_agent import retrieve_bare_act_section
 from agents.Legal_Research.case_law_agent import retrieve_case_law
 
@@ -49,7 +50,7 @@ act_case_fusion_agent = Agent(
         "You never reason, interpret, retry, or invent. "
         "If data is missing, you return empty sections."
     ),
-    llm="ollama/mistral:7b",
+    llm=CREWAI_LLM,
     tools=[fuse_bare_act_and_case_law],
     verbose=True
 )

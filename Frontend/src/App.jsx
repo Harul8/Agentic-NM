@@ -155,6 +155,7 @@ function App() {
   const hasSavedCurrentChatRef = useRef(false);
   const [editingChatId, setEditingChatId] = useState(null);
   const [editingTitle, setEditingTitle] = useState("");
+  const [openMenuChatId, setOpenMenuChatId] = useState(null);
   const editInputRef = useRef(null);
   const currentChatIdRef = useRef(null);
 
@@ -243,7 +244,7 @@ function App() {
     if (currentChatIdRef.current == null || messages.length === 0) return;
     setSavedChats((prev) =>
       prev.map((c) =>
-        c.id === currentChatIdRef.current
+        c.id == currentChatIdRef.current
           ? { ...c, messages, opinionText, retrieved }
           : c
       )
@@ -299,6 +300,11 @@ function App() {
     el.style.height = "24px";
     el.style.height = `${Math.min(el.scrollHeight, 200)}px`;
   }, [input]);
+
+  // Keep focus in chat input when not loading (so user can type without clicking)
+  useEffect(() => {
+    if (!loading && textareaRef.current) textareaRef.current.focus();
+  }, [loading]);
 
   // -------------------------
   // Reset conversation (from snippet, adapted for existing state)
@@ -390,20 +396,77 @@ function App() {
     setTimeout(() => editInputRef.current?.focus(), 0);
   };
 
-  const saveRenameChat = () => {
+  const saveRenameChat = async () => {
     if (editingChatId == null) return;
     const next = (editingTitle || "").trim() || "Untitled chat";
-    setSavedChats((prev) =>
-      prev.map((c) => (c.id === editingChatId ? { ...c, title: next } : c))
-    );
+    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+    const chat = savedChats.find((c) => c.id == editingChatId);
+    setSavedChats((prev) => prev.map((c) => (c.id == editingChatId ? { ...c, title: next } : c)));
     setEditingChatId(null);
     setEditingTitle("");
+    if (!token || !chat) return;
+    try {
+      const res = await fetch(`${API_BASE}/chats`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+        body: JSON.stringify({
+          id: chat.id,
+          title: next,
+          messages: chat.messages || [],
+          opinionText: chat.opinionText || "",
+          retrieved: chat.retrieved || [],
+          createdAt: chat.createdAt || new Date().toISOString(),
+        }),
+      });
+      if (res.ok) {
+        const listRes = await fetch(`${API_BASE}/chats`, { headers: { Authorization: `Bearer ${token}` } });
+        if (listRes.ok) {
+          const data = await listRes.json().catch(() => ({}));
+          setSavedChats(Array.isArray(data.chats) ? data.chats : []);
+        }
+      }
+    } catch (_) {}
   };
 
   const cancelRenameChat = () => {
     setEditingChatId(null);
     setEditingTitle("");
   };
+
+  const handleDeleteChat = async (chat) => {
+    const idToRemove = chat.id;
+    const idForUrl = typeof idToRemove === "number" ? idToRemove : String(idToRemove).trim();
+    setOpenMenuChatId(null);
+    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+    const wasCurrent = currentChatIdRef.current == idToRemove;
+    if (token) {
+      try {
+        const res = await fetch(`${API_BASE}/chats/${encodeURIComponent(idForUrl)}`, {
+          method: "DELETE",
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        if (res.ok) {
+          const listRes = await fetch(`${API_BASE}/chats`, { headers: { Authorization: `Bearer ${token}` } });
+          if (listRes.ok) {
+            const listData = await listRes.json().catch(() => ({}));
+            setSavedChats(Array.isArray(listData.chats) ? listData.chats : []);
+            if (wasCurrent) handleStartNewCase();
+            return;
+          }
+        }
+      } catch (_) {}
+    }
+    setSavedChats((prev) => prev.filter((c) => String(c.id) !== String(idToRemove)));
+    if (wasCurrent) handleStartNewCase();
+  };
+
+  // Close chat menu when clicking outside
+  useEffect(() => {
+    if (openMenuChatId == null) return;
+    const close = () => setOpenMenuChatId(null);
+    document.addEventListener("click", close);
+    return () => document.removeEventListener("click", close);
+  }, [openMenuChatId]);
 
   // -------------------------
   // Core submit logic (adapted from snippet's handleSubmit, using existing 'input' state)
@@ -591,12 +654,85 @@ function App() {
       return;
     }
 
-    // 3) If already done, treat text as new facts
+    // 3) Continue a loaded chat: use full context and same chat (conversation = history only; new message sent separately)
     if (stage === "done") {
-      const newFacts = text;
-      handleStartNewCase(); // Reset everything
-      setInput(newFacts); // Set new facts as current input, will be handled by next submit
-      setLoading(false); // Ensure loading is reset
+      const normalizeContent = (msg) => {
+        if (typeof msg.content === "string") return msg.content;
+        if (msg.content?.opinionText != null) return msg.content.opinionText || "";
+        return msg.content?.text ?? msg.content?.summary ?? "";
+      };
+      // Send only previous messages (we already appended userMsg above), so backend gets full context + current message separately
+      const previousMessages = messages.slice(0, -1);
+      const conversation = previousMessages.map((m) => ({ role: m.role, content: normalizeContent(m) }));
+      try {
+        // Let React commit loading state so "Nyaymalaw is thinking..." appears
+        await new Promise((r) => setTimeout(r, 0));
+        const res = await fetch(`${API_BASE}/conversation/continue`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ conversation, message: text }),
+        });
+        let data = {};
+        try {
+          data = await res.json();
+        } catch (_) {
+          setError("Invalid response from server.");
+          setMessages((prev) => [
+            ...prev,
+            { role: "assistant", content: "The server response was invalid. Please try again.", timestamp: new Date().toISOString() },
+          ]);
+          return;
+        }
+        if (!res.ok) {
+          setError(data.detail || `Request failed (${res.status})`);
+          setMessages((prev) => [
+            ...prev,
+            { role: "assistant", content: (data.detail && String(data.detail)) || "Something went wrong. Please try again.", timestamp: new Date().toISOString() },
+          ]);
+          return;
+        }
+        const assistantContent = (data.next_question ?? data.message ?? "").trim();
+        if (data.status === "question") {
+          setMessages((prev) => [
+            ...prev,
+            { role: "assistant", content: assistantContent, timestamp: new Date().toISOString() },
+          ]);
+          if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
+        } else if (data.status === "done") {
+          const opinion = data.opinion_text || "";
+          const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
+          setOpinionText(opinion);
+          setRetrieved(retr);
+          setMessages((prev) => [
+            ...prev,
+            {
+              role: "assistant",
+              content: { type: "final_opinion", opinionText: opinion, retrieved: retr },
+              timestamp: new Date().toISOString(),
+            },
+          ]);
+        } else if (data.needs_confirmation) {
+          setPendingMaterials(data.materials_to_confirm);
+          setMessages((prev) => [
+            ...prev,
+            { role: "assistant", content: data.summary ?? "", timestamp: new Date().toISOString() },
+          ]);
+        } else {
+          setMessages((prev) => [
+            ...prev,
+            { role: "assistant", content: assistantContent, timestamp: new Date().toISOString() },
+          ]);
+        }
+      } catch (err) {
+        setError("Error continuing chat: " + (err.message || ""));
+        setMessages((prev) => [
+          ...prev,
+          { role: "assistant", content: "Sorry, something went wrong. Please try again.", timestamp: new Date().toISOString() },
+        ]);
+      } finally {
+        setLoading(false);
+      }
+      return;
     }
   };
 
@@ -1091,7 +1227,7 @@ function App() {
                         <ul className="chat-history-list">
                           {chats.map((chat) => (
                             <li key={chat.id} className="chat-history-item">
-                              {editingChatId === chat.id ? (
+                              {editingChatId == chat.id ? (
                                 <div className="chat-history-rename-row">
                                   <input
                                     ref={editInputRef}
@@ -1117,15 +1253,29 @@ function App() {
                                   >
                                     {chat.title}
                                   </button>
-                                  <button
-                                    type="button"
-                                    onClick={(e) => { e.stopPropagation(); startRenamingChat(chat); }}
-                                    className="chat-history-rename-btn"
-                                    title="Rename chat"
-                                    aria-label="Rename chat"
-                                  >
-                                    ✎
-                                  </button>
+                                  <div className="chat-history-menu-wrap">
+                                    <button
+                                      type="button"
+                                      onClick={(e) => { e.stopPropagation(); setOpenMenuChatId((id) => (id === chat.id ? null : chat.id)); }}
+                                      className="chat-history-menu-btn"
+                                      title="Options"
+                                      aria-label="Chat options"
+                                      aria-expanded={openMenuChatId == chat.id}
+                                    >
+                                      ⋯
+                                    </button>
+                                    {openMenuChatId == chat.id && (
+                                      <div className="chat-history-dropdown" onClick={(e) => e.stopPropagation()}>
+                                        <button type="button" onClick={() => { startRenamingChat(chat); setOpenMenuChatId(null); }} className="chat-history-dropdown-item">
+                                          Rename
+                                        </button>
+                                        <hr className="chat-history-dropdown-divider" />
+                                        <button type="button" onClick={() => handleDeleteChat(chat)} className="chat-history-dropdown-item chat-history-dropdown-item--danger">
+                                          Delete
+                                        </button>
+                                      </div>
+                                    )}
+                                  </div>
                                 </>
                               )}
                             </li>
@@ -1157,6 +1307,7 @@ function App() {
                   <div className="chat-input-container">
                     <textarea
                       ref={textareaRef}
+                      autoFocus
                       value={input}
                       onChange={(e) => setInput(e.target.value)}
                       onKeyDown={handleKeyDown}
@@ -1251,6 +1402,7 @@ function App() {
               <div className="chat-input-container">
                 <textarea
                   ref={textareaRef}
+                  autoFocus
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}

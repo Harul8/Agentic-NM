@@ -2,6 +2,8 @@ from crewai import Agent
 from crewai.tools import tool
 import json
 
+from llm.config import CREWAI_LLM
+
 @tool
 def determine_jurisdiction(normalized_facts: str):
     """Determine the likely court jurisdiction based on locations in the case facts."""
@@ -23,7 +25,7 @@ jurisdiction_agent = Agent(
     role="Jurisdiction Agent",
     goal="Identify the appropriate legal jurisdiction.",
     backstory="You determine where the case should be filed.",
-    llm="ollama/mistral:7b",
+    llm=CREWAI_LLM,
     tools=[determine_jurisdiction],
     verbose=True
 )

@@ -7,6 +7,8 @@ from sentence_transformers import SentenceTransformer
 from crewai import Agent
 from crewai.tools import tool
 
+from llm.config import CREWAI_LLM
+
 # ===============================
 # PATHS
 # ===============================
@@ -66,6 +68,6 @@ case_law_agent = Agent(
     goal="Retrieve relevant Indian case law accurately.",
     backstory="You retrieve judicial precedents without interpretation.",
     tools=[retrieve_case_law],
-    llm="ollama/mistral:7b",
+    llm=CREWAI_LLM,
     verbose=True
 )

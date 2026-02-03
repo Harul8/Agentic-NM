@@ -207,6 +207,16 @@ def chats_list(user: dict = Depends(_user_from_token)):
         conn.close()
 
 
+def _coerce_chat_id(v):
+    """Ensure chat id is int for DB (handles int or string from JSON)."""
+    if v is None:
+        return None
+    try:
+        return int(v)
+    except (TypeError, ValueError):
+        return None
+
+
 @app.post("/chats")
 def chats_upsert(payload: ChatPayload, user: dict = Depends(_user_from_token)):
     """Create or update a chat. If id is provided and exists for this user, update; else create with id or new id."""
@@ -217,22 +227,23 @@ def chats_upsert(payload: ChatPayload, user: dict = Depends(_user_from_token)):
     created_at = payload.createdAt or __import__("datetime").datetime.utcnow().isoformat() + "Z"
     messages_json = json.dumps(messages)
     retrieved_json = json.dumps(retrieved)
+    payload_id = _coerce_chat_id(payload.id)
     conn = _get_db()
     try:
-        if payload.id is not None:
+        if payload_id is not None:
             cur = conn.execute(
                 "SELECT id FROM chats WHERE id = ? AND user_id = ?",
-                (payload.id, user["id"]),
+                (payload_id, user["id"]),
             )
             existing = cur.fetchone()
             if existing:
                 conn.execute(
                     "UPDATE chats SET title = ?, messages_json = ?, opinion_text = ?, retrieved_json = ?, updated_at = datetime('now') WHERE id = ? AND user_id = ?",
-                    (title, messages_json, opinion_text, retrieved_json, payload.id, user["id"]),
+                    (title, messages_json, opinion_text, retrieved_json, payload_id, user["id"]),
                 )
                 conn.commit()
-                return {"id": payload.id, "title": title}
-        chat_id = payload.id if payload.id is not None else int(conn.execute("SELECT COALESCE(MAX(id), 0) + 1 FROM chats").fetchone()[0])
+                return {"id": payload_id, "title": title}
+        chat_id = payload_id if payload_id is not None else int(conn.execute("SELECT COALESCE(MAX(id), 0) + 1 FROM chats").fetchone()[0])
         conn.execute(
             "INSERT OR REPLACE INTO chats (id, user_id, title, messages_json, opinion_text, retrieved_json, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)",
             (chat_id, user["id"], title, messages_json, opinion_text, retrieved_json, created_at),
@@ -261,6 +272,24 @@ def chat_get(chat_id: int, user: dict = Depends(_user_from_token)):
             "retrieved": json.loads(row["retrieved_json"] or "[]"),
             "createdAt": row["created_at"],
         }
+    finally:
+        conn.close()
+
+
+@app.delete("/chats/{chat_id}")
+def chat_delete(chat_id: str, user: dict = Depends(_user_from_token)):
+    """Remove a chat from the user's history."""
+    try:
+        id_val = int(chat_id.strip())
+    except (TypeError, ValueError):
+        raise HTTPException(status_code=400, detail="Invalid chat id")
+    conn = _get_db()
+    try:
+        cur = conn.execute("DELETE FROM chats WHERE id = ? AND user_id = ?", (id_val, user["id"]))
+        conn.commit()
+        if cur.rowcount == 0:
+            raise HTTPException(status_code=404, detail="Chat not found")
+        return {"success": True}
     finally:
         conn.close()
 
@@ -304,6 +333,12 @@ class InterviewStepRequest(BaseModel):
     """Follow-up answer in interview - frontend sends { facts, qa_history }."""
     facts: str = ""
     qa_history: list[QAPair] = []
+
+
+class ContinueChatRequest(BaseModel):
+    """Continue a loaded chat - full conversation history + new user message."""
+    conversation: list[ChatMessage] = []
+    message: str = ""
 
 
 def _build_conv(messages: list[ChatMessage] | None) -> list[dict]:
@@ -357,7 +392,7 @@ def _map_chat_result_to_ui(result: dict) -> dict:
     if phase == "fact_collection":
         return {
             "status": "question",
-            "next_question": result.get("message", "Could you share more details?"),
+            "next_question": result.get("message") or "",
             "retrieved": result.get("response") or [],
         }
     if phase == "confirm_materials":
@@ -377,7 +412,7 @@ def _map_chat_result_to_ui(result: dict) -> dict:
     # Fallback: treat as next question
     return {
         "status": "question",
-        "next_question": result.get("message", "Could you share more details?"),
+        "next_question": result.get("message") or "",
         "retrieved": result.get("response") or [],
     }
 
@@ -444,6 +479,8 @@ def _normalize_content(c):
         return c
     if isinstance(c, dict) and "text" in c:
         return c["text"]
+    if isinstance(c, dict) and c.get("type") == "final_opinion":
+        return c.get("opinionText") or ""
     if isinstance(c, dict) and c.get("type") == "results":
         for p in c.get("parts", []):
             if p.get("type") == "explanation":
@@ -540,6 +577,40 @@ def interview_step(request: InterviewStepRequest):
     )
     if result.get("phase") == "response_generation" and result.get("facts_summary"):
         conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
+        result = process_chat(
+            conversation=conv,
+            current_message=result["facts_summary"],
+            phase="response_generation",
+            facts_summary=result["facts_summary"],
+        )
+    return _map_chat_result_to_ui(result)
+
+
+@app.post("/conversation/continue")
+def continue_chat(request: ContinueChatRequest):
+    """
+    Continue a conversation from chat history. Sends full conversation + new message
+    so the LLM has full context. Returns same shape as submit_case / interview_step.
+    """
+    message = (request.message or "").strip()
+    if not message:
+        return {
+            "status": "question",
+            "next_question": "Please type your follow-up or additional details.",
+            "retrieved": [],
+        }
+    conv = [
+        {"role": m.role, "content": _normalize_content(m.content)}
+        for m in (request.conversation or [])
+    ]
+    result = process_chat(
+        conversation=conv,
+        current_message=message,
+        phase="fact_collection",
+        facts_summary=None,
+    )
+    if result.get("phase") == "response_generation" and result.get("facts_summary"):
+        conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": result.get("message", "")}]
         result = process_chat(
             conversation=conv,
             current_message=result["facts_summary"],

@@ -1,6 +1,8 @@
 from crewai import Agent
 from crewai.tools import tool
 
+from llm.config import CREWAI_LLM
+
 @tool
 def detect_hallucinations(answer_text: str):
     """Check whether the generated legal answer contains unsupported or fabricated content."""
@@ -18,7 +20,7 @@ hallucination_agent = Agent(
     role="Hallucination Detector",
     goal="Detect and flag hallucinated or unsupported legal reasoning.",
     backstory="You ensure the LLM only returns verifiable legal information.",
-    llm="ollama/mistral:7b",
+    llm=CREWAI_LLM,
     tools=[detect_hallucinations],
     verbose=True
 )

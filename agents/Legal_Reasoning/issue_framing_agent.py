@@ -2,6 +2,8 @@ from crewai import Agent
 from crewai.tools import tool
 import json
 
+from llm.config import CREWAI_LLM
+
 @tool
 def frame_issues(normalized_facts: str):
     """Identify and list the core legal issues based on normalized case facts."""
@@ -24,7 +26,7 @@ issue_framing_agent = Agent(
     role="Issue Framing Agent",
     goal="Extract the key legal issues from case facts.",
     backstory="You help lawyers understand the main disputes in a case.",
-    llm="ollama/mistral:7b",
+    llm=CREWAI_LLM,
     tools=[frame_issues],
     verbose=True
 )

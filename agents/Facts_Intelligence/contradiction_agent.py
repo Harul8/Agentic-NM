@@ -2,6 +2,8 @@ from crewai import Agent
 from crewai.tools import tool
 import json
 
+from llm.config import CREWAI_LLM
+
 @tool
 def detect_contradictions(normalized_facts: str):
     """Detect contradictions or logical inconsistencies in normalized legal case facts."""
@@ -27,7 +29,7 @@ contradiction_agent = Agent(
     role="Contradiction Checker",
     goal="Validate normalized case facts for contradictions.",
     backstory="You ensure only logically consistent case facts proceed further.",
-    llm="ollama/mistral:7b",
+    llm=CREWAI_LLM,
     tools=[detect_contradictions],
     verbose=True
 )

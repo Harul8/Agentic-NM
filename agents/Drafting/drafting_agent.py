@@ -2,6 +2,8 @@ from crewai import Agent
 from crewai.tools import tool
 import json
 
+from llm.config import CREWAI_LLM
+
 @tool
 def draft_petition(opinion_json: str):
     """Draft a legal petition or pleading based on the generated legal opinion."""
@@ -28,7 +30,7 @@ drafting_agent = Agent(
     role="Drafting Agent",
     goal="Draft petitions, pleadings, and legal documents.",
     backstory="You convert legal opinions into court-ready drafts.",
-    llm="ollama/mistral:7b",
+    llm=CREWAI_LLM,
     tools=[draft_petition],
     verbose=True
 )

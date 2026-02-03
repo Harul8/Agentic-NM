@@ -993,6 +993,69 @@ body {
   background: #eee;
 }
 
+.chat-history-menu-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.chat-history-menu-btn {
+  padding: 2px 6px;
+  font-size: 1rem;
+  line-height: 1;
+  color: #666;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  opacity: 0.8;
+}
+
+.chat-history-menu-btn:hover {
+  opacity: 1;
+  background: #eee;
+}
+
+.chat-history-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 2px;
+  min-width: 100px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.chat-history-dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  text-align: left;
+  color: var(--text);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.chat-history-dropdown-item:hover {
+  background: var(--bg);
+}
+
+.chat-history-dropdown-divider {
+  margin: 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.chat-history-dropdown-item--danger:hover {
+  background: rgba(220, 53, 69, 0.1);
+  color: #c82333;
+}
+
 .chat-history-rename-row {
   flex: 1;
   min-width: 0;

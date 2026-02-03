@@ -2,6 +2,8 @@ from crewai import Agent
 from crewai.tools import tool
 import json
 
+from llm.config import CREWAI_LLM
+
 @tool
 def generate_counter_arguments(opinion_json: str):
     """Generate possible counter-arguments and weaknesses from the legal opinion."""
@@ -25,7 +27,7 @@ counter_argument_agent = Agent(
     role="Counter-Argument Agent",
     goal="Highlight weaknesses and opposing viewpoints.",
     backstory="You help lawyers anticipate the opposing side.",
-    llm="ollama/mistral:7b",
+    llm=CREWAI_LLM,
     tools=[generate_counter_arguments],
     verbose=True
 )

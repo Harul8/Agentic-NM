@@ -1,5 +1,5 @@
 """
-Ollama model configuration.
+Ollama model configuration — single source for all LLM operations.
 
 Mistral 7B - RTX 4060 8GB compatible:
 - Q4_K_M quantization: ~4-5GB VRAM (model weights)
@@ -7,8 +7,8 @@ Mistral 7B - RTX 4060 8GB compatible:
 - Install: ollama pull mistral:7b
 """
 
-# Model for direct Ollama API calls (fact_collector, response_generator, etc.)
+# Chat/reasoning model used everywhere (direct API + CrewAI)
 OLLAMA_MODEL = "mistral:7b"
 
-# Model for CrewAI agents (format: ollama/model_name)
+# CrewAI agents use this (format: ollama/model_name) — must match OLLAMA_MODEL
 CREWAI_LLM = "ollama/mistral:7b"

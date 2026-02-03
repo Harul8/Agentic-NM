@@ -1,6 +1,8 @@
 from crewai import Agent
 from crewai.tools import tool
 
+from llm.config import CREWAI_LLM
+
 @tool
 def verify_citations(draft_text: str):
     """Check whether the legal draft contains proper Bare Act and Case Law references."""
@@ -15,7 +17,7 @@ citation_agent = Agent(
     role="Citation Verifier",
     goal="Ensure all legal statements are properly cited from Bare Acts or case law.",
     backstory="You validate citations and prevent unsupported legal claims.",
-    llm="ollama/mistral:7b",
+    llm=CREWAI_LLM,
     tools=[verify_citations],
     verbose=True
 )

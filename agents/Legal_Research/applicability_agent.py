@@ -2,6 +2,8 @@ from crewai import Agent
 from crewai.tools import tool
 import json
 
+from llm.config import CREWAI_LLM
+
 @tool
 def check_section_applicability(research_json: str):
     """Check whether the retrieved Bare Act section applies to the case facts."""
@@ -23,7 +25,7 @@ applicability_agent = Agent(
     role="Section Applicability Agent",
     goal="Validate whether the retrieved Bare Act section applies to the case.",
     backstory="You match legal sections with the facts of the case.",
-    llm="ollama/mistral:7b",
+    llm=CREWAI_LLM,
     tools=[check_section_applicability],
     verbose=True
 )
