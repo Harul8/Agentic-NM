@@ -1,6 +1,5 @@
 import os
 import json
-import hashlib
 
 from fastapi import FastAPI, Query, HTTPException
 from fastapi.responses import FileResponse
@@ -63,17 +62,6 @@ class InterviewStepRequest(BaseModel):
     qa_history: list[QAPair] = []
 
 
-class AuthRegisterRequest(BaseModel):
-    email: str = ""
-    name: str = ""
-    password: str = ""
-
-
-class AuthLoginRequest(BaseModel):
-    email: str = ""
-    password: str = ""
-
-
 def _build_conv(messages: list[ChatMessage] | None) -> list[dict]:
     if not messages:
         return []
@@ -85,27 +73,6 @@ _THIS_FILE = os.path.abspath(os.path.normpath(__file__))
 _BASE_DIR = os.path.dirname(_THIS_FILE)
 _BARE_CHUNKS_PATH = os.path.join(_BASE_DIR, "data", "vector_store", "bareacts_chunks.json")
 _BARE_ACTS_DIR = os.path.normpath(os.path.join(_BASE_DIR, "data", "BareActs"))
-_AUTH_USERS_PATH = os.path.join(_BASE_DIR, "data", "auth_users.json")
-
-
-def _hash_password(password: str) -> str:
-    return hashlib.sha256(password.encode("utf-8")).hexdigest()
-
-
-def _load_auth_users() -> dict:
-    if not os.path.isfile(_AUTH_USERS_PATH):
-        return {}
-    try:
-        with open(_AUTH_USERS_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except (json.JSONDecodeError, OSError):
-        return {}
-
-
-def _save_auth_users(users: dict) -> None:
-    os.makedirs(os.path.dirname(_AUTH_USERS_PATH), exist_ok=True)
-    with open(_AUTH_USERS_PATH, "w", encoding="utf-8") as f:
-        json.dump(users, f, indent=2)
 
 
 def _list_bare_acts_from_vector_store() -> list[str]:
