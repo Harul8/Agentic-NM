@@ -2,44 +2,9 @@ import { useState, useRef, useEffect, useMemo } from "react";
 import jsPDF from "jspdf"; // npm install jspdf
 import "./App.css";
 
-const USERS_KEY = "nyaymalaw_users";
-const USER_CHATS_KEY = "nyaymalaw_user_chats";
+const AUTH_TOKEN_KEY = "nyaymalaw_auth_token";
 const CURRENT_USER_KEY = "nyaymalaw_current_user";
-
-async function hashPassword(password) {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(password);
-  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
-}
-
-function getStoredUsers() {
-  try {
-    const raw = localStorage.getItem(USERS_KEY);
-    const parsed = raw ? JSON.parse(raw) : {};
-    const out = {};
-    for (const [email, val] of Object.entries(parsed)) {
-      if (typeof val === "string") {
-        out[email] = { passwordHash: val, name: "" };
-      } else if (val && typeof val === "object") {
-        out[email] = { passwordHash: val.passwordHash || "", name: val.name || "" };
-      }
-    }
-    return out;
-  } catch {
-    return {};
-  }
-}
-
-function getStoredUserChats() {
-  try {
-    const raw = localStorage.getItem(USER_CHATS_KEY);
-    return raw ? JSON.parse(raw) : {};
-  } catch {
-    return {};
-  }
-}
+const CURRENT_USER_NAME_KEY = "nyaymalaw_current_user_name";
 
 // ---------------------------------------------------
 // MAIN APP
@@ -63,30 +28,36 @@ function App() {
   const handleLogin = async (e) => {
     e.preventDefault();
     setAuthError("");
-    const username = (loginUsername || "").trim().toLowerCase();
+    const email = (loginUsername || "").trim().toLowerCase();
     const password = loginPassword || "";
-    if (!username || !password) {
+    if (!email || !password) {
       setAuthError("Please enter email and password.");
       return;
     }
-    const users = getStoredUsers();
-    const userData = users[username];
-    if (!userData) {
-      setAuthError("No account found with this email.");
-      return;
+    try {
+      const res = await fetch(`${API_BASE}/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setAuthError(data.detail || "Login failed.");
+        return;
+      }
+      const token = data.token;
+      const user = data.user || {};
+      localStorage.setItem(AUTH_TOKEN_KEY, token);
+      localStorage.setItem(CURRENT_USER_KEY, user.email || email);
+      localStorage.setItem(CURRENT_USER_NAME_KEY, user.name || "");
+      setCurrentUser(user.email || email);
+      setCurrentUserName(user.name || "");
+      setAuthenticated(true);
+      setLoginUsername("");
+      setLoginPassword("");
+    } catch (err) {
+      setAuthError("Network error. Is the API server running?");
     }
-    const storedHash = userData.passwordHash;
-    const inputHash = await hashPassword(password);
-    if (inputHash !== storedHash) {
-      setAuthError("Incorrect password.");
-      return;
-    }
-    setCurrentUser(username);
-    setCurrentUserName(userData.name || "");
-    localStorage.setItem(CURRENT_USER_KEY, username);
-    setAuthenticated(true);
-    setLoginUsername("");
-    setLoginPassword("");
   };
 
   const handleCreateAccount = async (e) => {
@@ -112,31 +83,40 @@ function App() {
       setAuthError("Passwords do not match.");
       return;
     }
-    const users = getStoredUsers();
-    if (users[email]) {
-      setAuthError("An account with this email already exists.");
-      return;
+    try {
+      const res = await fetch(`${API_BASE}/auth/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, name, password }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setAuthError(data.detail || "Registration failed.");
+        return;
+      }
+      const token = data.token;
+      const user = data.user || {};
+      localStorage.setItem(AUTH_TOKEN_KEY, token);
+      localStorage.setItem(CURRENT_USER_KEY, user.email || email);
+      localStorage.setItem(CURRENT_USER_NAME_KEY, user.name || name);
+      setCurrentUser(user.email || email);
+      setCurrentUserName(user.name || name);
+      setAuthenticated(true);
+      setCreateEmail("");
+      setCreateName("");
+      setCreatePassword("");
+      setCreateConfirm("");
+    } catch (err) {
+      setAuthError("Network error. Is the API server running?");
     }
-    const hashed = await hashPassword(password);
-    users[email] = { passwordHash: hashed, name };
-    localStorage.setItem(USERS_KEY, JSON.stringify(users));
-    const chats = getStoredUserChats();
-    if (!chats[email]) chats[email] = [];
-    localStorage.setItem(USER_CHATS_KEY, JSON.stringify(chats));
-    setCurrentUser(email);
-    setCurrentUserName(name);
-    localStorage.setItem(CURRENT_USER_KEY, email);
-    setAuthenticated(true);
-    setCreateEmail("");
-    setCreateName("");
-    setCreatePassword("");
-    setCreateConfirm("");
   };
 
   const handleLogout = () => {
     setCurrentUser(null);
     setCurrentUserName("");
+    localStorage.removeItem(AUTH_TOKEN_KEY);
     localStorage.removeItem(CURRENT_USER_KEY);
+    localStorage.removeItem(CURRENT_USER_NAME_KEY);
     setAuthenticated(false);
     setMessages([]);
     setSavedChats([]);
@@ -199,41 +179,64 @@ function App() {
   const [bareActs, setBareActs] = useState(DEFAULT_BARE_ACTS);
   const API_BASE = "http://127.0.0.1:8000";
 
-  // Restore session on load
+  // Restore session on load (token + user from localStorage)
   useEffect(() => {
-    const stored = localStorage.getItem(CURRENT_USER_KEY);
-    if (stored && stored.trim()) {
-      const username = stored.trim();
-      setCurrentUser(username);
-      const users = getStoredUsers();
-      const userData = users[username];
-      setCurrentUserName(userData?.name ?? "");
+    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+    const email = localStorage.getItem(CURRENT_USER_KEY);
+    const name = localStorage.getItem(CURRENT_USER_NAME_KEY);
+    if (token && email) {
+      setCurrentUser(email);
+      setCurrentUserName(name || "");
       setAuthenticated(true);
     }
   }, []);
 
-  // Load saved chats for current user when they log in or session restores
+  // Load saved chats from backend when user is set
   useEffect(() => {
     if (!currentUser) {
       setSavedChats([]);
       return;
     }
-    const chats = getStoredUserChats();
-    const userChats = chats[currentUser];
-    setSavedChats(Array.isArray(userChats) ? userChats : []);
-  }, [currentUser]);
+    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+    if (!token) return;
+    fetch(`${API_BASE}/chats`, { headers: { Authorization: `Bearer ${token}` } })
+      .then((res) => {
+        if (res.status === 401) {
+          localStorage.removeItem(AUTH_TOKEN_KEY);
+          localStorage.removeItem(CURRENT_USER_KEY);
+          localStorage.removeItem(CURRENT_USER_NAME_KEY);
+          setCurrentUser(null);
+          setCurrentUserName("");
+          setAuthenticated(false);
+          setSavedChats([]);
+          return { chats: [] };
+        }
+        return res.ok ? res.json() : { chats: [] };
+      })
+      .then((data) => setSavedChats(Array.isArray(data.chats) ? data.chats : []))
+      .catch(() => setSavedChats([]));
+  }, [currentUser, API_BASE]);
 
-  // Persist savedChats for current user whenever they change
+  // Persist current chat to backend when it changes (messages/opinion/retrieved)
   useEffect(() => {
-    if (!currentUser) return;
-    const chats = getStoredUserChats();
-    chats[currentUser] = savedChats;
-    try {
-      localStorage.setItem(USER_CHATS_KEY, JSON.stringify(chats));
-    } catch (e) {
-      console.warn("Could not save chats:", e);
-    }
-  }, [currentUser, savedChats]);
+    const chatId = currentChatIdRef.current;
+    if (chatId == null || !currentUser || messages.length === 0) return;
+    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+    if (!token) return;
+    const title = (messages.find((m) => m.role === "user")?.content || "").toString().slice(0, 50);
+    fetch(`${API_BASE}/chats`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+      body: JSON.stringify({
+        id: chatId,
+        title: title || "Untitled chat",
+        messages,
+        opinionText,
+        retrieved,
+        createdAt: new Date().toISOString(),
+      }),
+    }).catch(() => {});
+  }, [currentUser, messages, opinionText, retrieved, API_BASE]);
 
   // Keep the "current" chat in the list in sync with messages/opinion/retrieved
   useEffect(() => {
@@ -436,6 +439,14 @@ function App() {
       setSavedChats((prev) => [chat, ...prev]);
       currentChatIdRef.current = chatId;
       hasSavedCurrentChatRef.current = true;
+      const token = localStorage.getItem(AUTH_TOKEN_KEY);
+      if (token) {
+        fetch(`${API_BASE}/chats`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+          body: JSON.stringify(chat),
+        }).catch(() => {});
+      }
     }
 
     // 1) Initial facts (await_facts stage)

@@ -1,8 +1,13 @@
 import os
 import json
+import sqlite3
+import hashlib
+import secrets
+from typing import Optional
 
-from fastapi import FastAPI, Query, HTTPException
+from fastapi import FastAPI, Query, HTTPException, Depends, Header
 from fastapi.responses import FileResponse
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
@@ -22,6 +27,245 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Paths and DB (must be before auth routes)
+_THIS_FILE = os.path.abspath(os.path.normpath(__file__))
+_BASE_DIR = os.path.dirname(_THIS_FILE)
+_CHAT_HISTORY_DIR = os.path.join(_BASE_DIR, "data", "chat_history")
+_DB_PATH = os.path.join(_CHAT_HISTORY_DIR, "app.db")
+
+
+def _hash_password(password: str) -> str:
+    return hashlib.sha256(password.encode("utf-8")).hexdigest()
+
+
+def _get_db():
+    conn = sqlite3.connect(_DB_PATH)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+
+def _init_auth_db():
+    os.makedirs(_CHAT_HISTORY_DIR, exist_ok=True)
+    conn = _get_db()
+    try:
+        conn.executescript("""
+            CREATE TABLE IF NOT EXISTS users (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                email TEXT UNIQUE NOT NULL,
+                password_hash TEXT NOT NULL,
+                name TEXT NOT NULL DEFAULT '',
+                created_at TEXT NOT NULL DEFAULT (datetime('now'))
+            );
+            CREATE TABLE IF NOT EXISTS sessions (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id INTEGER NOT NULL REFERENCES users(id),
+                token TEXT UNIQUE NOT NULL,
+                created_at TEXT NOT NULL DEFAULT (datetime('now'))
+            );
+            CREATE TABLE IF NOT EXISTS chats (
+                id INTEGER PRIMARY KEY,
+                user_id INTEGER NOT NULL REFERENCES users(id),
+                title TEXT NOT NULL,
+                messages_json TEXT NOT NULL DEFAULT '[]',
+                opinion_text TEXT NOT NULL DEFAULT '',
+                retrieved_json TEXT NOT NULL DEFAULT '[]',
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+            );
+        """)
+        conn.commit()
+    finally:
+        conn.close()
+
+
+_init_auth_db()
+
+security = HTTPBearer(auto_error=False)
+
+
+def _user_from_token(credentials: Optional[HTTPAuthorizationCredentials] = Depends(security)):
+    if not credentials or (credentials.credentials or "").strip() == "":
+        raise HTTPException(status_code=401, detail="Not authenticated")
+    token = credentials.credentials.strip()
+    conn = _get_db()
+    try:
+        row = conn.execute(
+            "SELECT u.id, u.email, u.name FROM users u JOIN sessions s ON s.user_id = u.id WHERE s.token = ?",
+            (token,),
+        ).fetchone()
+        if not row:
+            raise HTTPException(status_code=401, detail="Invalid or expired token")
+        return {"id": row["id"], "email": row["email"], "name": row["name"]}
+    finally:
+        conn.close()
+
+
+class RegisterRequest(BaseModel):
+    email: str = ""
+    name: str = ""
+    password: str = ""
+
+
+class LoginRequest(BaseModel):
+    email: str = ""
+    password: str = ""
+
+
+class ChatPayload(BaseModel):
+    id: Optional[int] = None
+    title: str = ""
+    messages: list = []
+    opinionText: str = ""
+    retrieved: list = []
+    createdAt: str = ""
+
+
+# ---------- Auth & Chat history (backend storage) ----------
+
+@app.post("/auth/register")
+def auth_register(req: RegisterRequest):
+    email = (req.email or "").strip().lower()
+    name = (req.name or "").strip()
+    password = req.password or ""
+    if not email or not password:
+        raise HTTPException(status_code=400, detail="Email and password required")
+    if len(password) < 6:
+        raise HTTPException(status_code=400, detail="Password must be at least 6 characters")
+    if not name:
+        raise HTTPException(status_code=400, detail="Name required")
+    password_hash = _hash_password(password)
+    conn = _get_db()
+    try:
+        conn.execute(
+            "INSERT INTO users (email, password_hash, name) VALUES (?, ?, ?)",
+            (email, password_hash, name),
+        )
+        conn.commit()
+        user_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
+        token = secrets.token_urlsafe(32)
+        conn.execute("INSERT INTO sessions (user_id, token) VALUES (?, ?)", (user_id, token))
+        conn.commit()
+        return {
+            "success": True,
+            "token": token,
+            "user": {"email": email, "name": name},
+        }
+    except sqlite3.IntegrityError:
+        raise HTTPException(status_code=400, detail="An account with this email already exists")
+    finally:
+        conn.close()
+
+
+@app.post("/auth/login")
+def auth_login(req: LoginRequest):
+    email = (req.email or "").strip().lower()
+    password = req.password or ""
+    if not email or not password:
+        raise HTTPException(status_code=400, detail="Email and password required")
+    password_hash = _hash_password(password)
+    conn = _get_db()
+    try:
+        row = conn.execute(
+            "SELECT id, email, name FROM users WHERE email = ? AND password_hash = ?",
+            (email, password_hash),
+        ).fetchone()
+        if not row:
+            raise HTTPException(status_code=401, detail="Incorrect email or password")
+        token = secrets.token_urlsafe(32)
+        conn.execute("INSERT INTO sessions (user_id, token) VALUES (?, ?)", (row["id"], token))
+        conn.commit()
+        return {
+            "success": True,
+            "token": token,
+            "user": {"email": row["email"], "name": row["name"]},
+        }
+    finally:
+        conn.close()
+
+
+@app.get("/chats")
+def chats_list(user: dict = Depends(_user_from_token)):
+    conn = _get_db()
+    try:
+        rows = conn.execute(
+            "SELECT id, title, messages_json, opinion_text, retrieved_json, created_at FROM chats WHERE user_id = ? ORDER BY created_at DESC",
+            (user["id"],),
+        ).fetchall()
+        out = []
+        for r in rows:
+            out.append({
+                "id": r["id"],
+                "title": r["title"],
+                "messages": json.loads(r["messages_json"] or "[]"),
+                "opinionText": r["opinion_text"] or "",
+                "retrieved": json.loads(r["retrieved_json"] or "[]"),
+                "createdAt": r["created_at"],
+            })
+        return {"chats": out}
+    finally:
+        conn.close()
+
+
+@app.post("/chats")
+def chats_upsert(payload: ChatPayload, user: dict = Depends(_user_from_token)):
+    """Create or update a chat. If id is provided and exists for this user, update; else create with id or new id."""
+    title = (payload.title or "").strip() or "Untitled chat"
+    messages = payload.messages if isinstance(payload.messages, list) else []
+    opinion_text = payload.opinionText or ""
+    retrieved = payload.retrieved if isinstance(payload.retrieved, list) else []
+    created_at = payload.createdAt or __import__("datetime").datetime.utcnow().isoformat() + "Z"
+    messages_json = json.dumps(messages)
+    retrieved_json = json.dumps(retrieved)
+    conn = _get_db()
+    try:
+        if payload.id is not None:
+            cur = conn.execute(
+                "SELECT id FROM chats WHERE id = ? AND user_id = ?",
+                (payload.id, user["id"]),
+            )
+            existing = cur.fetchone()
+            if existing:
+                conn.execute(
+                    "UPDATE chats SET title = ?, messages_json = ?, opinion_text = ?, retrieved_json = ?, updated_at = datetime('now') WHERE id = ? AND user_id = ?",
+                    (title, messages_json, opinion_text, retrieved_json, payload.id, user["id"]),
+                )
+                conn.commit()
+                return {"id": payload.id, "title": title}
+        chat_id = payload.id if payload.id is not None else int(conn.execute("SELECT COALESCE(MAX(id), 0) + 1 FROM chats").fetchone()[0])
+        conn.execute(
+            "INSERT OR REPLACE INTO chats (id, user_id, title, messages_json, opinion_text, retrieved_json, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)",
+            (chat_id, user["id"], title, messages_json, opinion_text, retrieved_json, created_at),
+        )
+        conn.commit()
+        return {"id": chat_id, "title": title}
+    finally:
+        conn.close()
+
+
+@app.get("/chats/{chat_id}")
+def chat_get(chat_id: int, user: dict = Depends(_user_from_token)):
+    conn = _get_db()
+    try:
+        row = conn.execute(
+            "SELECT id, title, messages_json, opinion_text, retrieved_json, created_at FROM chats WHERE id = ? AND user_id = ?",
+            (chat_id, user["id"]),
+        ).fetchone()
+        if not row:
+            raise HTTPException(status_code=404, detail="Chat not found")
+        return {
+            "id": row["id"],
+            "title": row["title"],
+            "messages": json.loads(row["messages_json"] or "[]"),
+            "opinionText": row["opinion_text"] or "",
+            "retrieved": json.loads(row["retrieved_json"] or "[]"),
+            "createdAt": row["created_at"],
+        }
+    finally:
+        conn.close()
+
+
+# ---------- End Auth & Chat history ----------
 
 
 class SearchQuery(BaseModel):
@@ -69,8 +313,6 @@ def _build_conv(messages: list[ChatMessage] | None) -> list[dict]:
 
 
 # Path to vector store and BareActs directory – resolve from this file’s location
-_THIS_FILE = os.path.abspath(os.path.normpath(__file__))
-_BASE_DIR = os.path.dirname(_THIS_FILE)
 _BARE_CHUNKS_PATH = os.path.join(_BASE_DIR, "data", "vector_store", "bareacts_chunks.json")
 _BARE_ACTS_DIR = os.path.normpath(os.path.join(_BASE_DIR, "data", "BareActs"))
 
