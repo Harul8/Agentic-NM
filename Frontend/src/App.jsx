@@ -1,17 +1,295 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
+import jsPDF from "jspdf"; // npm install jspdf
 import "./App.css";
 
+const USERS_KEY = "nyaymalaw_users";
+const USER_CHATS_KEY = "nyaymalaw_user_chats";
+const CURRENT_USER_KEY = "nyaymalaw_current_user";
+
+async function hashPassword(password) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(password);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+function getStoredUsers() {
+  try {
+    const raw = localStorage.getItem(USERS_KEY);
+    const parsed = raw ? JSON.parse(raw) : {};
+    const out = {};
+    for (const [email, val] of Object.entries(parsed)) {
+      if (typeof val === "string") {
+        out[email] = { passwordHash: val, name: "" };
+      } else if (val && typeof val === "object") {
+        out[email] = { passwordHash: val.passwordHash || "", name: val.name || "" };
+      }
+    }
+    return out;
+  } catch {
+    return {};
+  }
+}
+
+function getStoredUserChats() {
+  try {
+    const raw = localStorage.getItem(USER_CHATS_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
+// ---------------------------------------------------
+// MAIN APP
+// ---------------------------------------------------
 function App() {
+  // -------------------------
+  // Auth: user login / create account
+  // -------------------------
+  const [authenticated, setAuthenticated] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUserName, setCurrentUserName] = useState("");
+  const [showCreateAccount, setShowCreateAccount] = useState(false);
+  const [loginUsername, setLoginUsername] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  const [createEmail, setCreateEmail] = useState("");
+  const [createName, setCreateName] = useState("");
+  const [createPassword, setCreatePassword] = useState("");
+  const [createConfirm, setCreateConfirm] = useState("");
+  const [authError, setAuthError] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setAuthError("");
+    const username = (loginUsername || "").trim().toLowerCase();
+    const password = loginPassword || "";
+    if (!username || !password) {
+      setAuthError("Please enter email and password.");
+      return;
+    }
+    const users = getStoredUsers();
+    const userData = users[username];
+    if (!userData) {
+      setAuthError("No account found with this email.");
+      return;
+    }
+    const storedHash = userData.passwordHash;
+    const inputHash = await hashPassword(password);
+    if (inputHash !== storedHash) {
+      setAuthError("Incorrect password.");
+      return;
+    }
+    setCurrentUser(username);
+    setCurrentUserName(userData.name || "");
+    localStorage.setItem(CURRENT_USER_KEY, username);
+    setAuthenticated(true);
+    setLoginUsername("");
+    setLoginPassword("");
+  };
+
+  const handleCreateAccount = async (e) => {
+    e.preventDefault();
+    setAuthError("");
+    const email = (createEmail || "").trim().toLowerCase();
+    const name = (createName || "").trim();
+    const password = createPassword || "";
+    const confirm = createConfirm || "";
+    if (!email || !password) {
+      setAuthError("Please enter email and password.");
+      return;
+    }
+    if (!name) {
+      setAuthError("Please enter your name.");
+      return;
+    }
+    if (password.length < 6) {
+      setAuthError("Password must be at least 6 characters.");
+      return;
+    }
+    if (password !== confirm) {
+      setAuthError("Passwords do not match.");
+      return;
+    }
+    const users = getStoredUsers();
+    if (users[email]) {
+      setAuthError("An account with this email already exists.");
+      return;
+    }
+    const hashed = await hashPassword(password);
+    users[email] = { passwordHash: hashed, name };
+    localStorage.setItem(USERS_KEY, JSON.stringify(users));
+    const chats = getStoredUserChats();
+    if (!chats[email]) chats[email] = [];
+    localStorage.setItem(USER_CHATS_KEY, JSON.stringify(chats));
+    setCurrentUser(email);
+    setCurrentUserName(name);
+    localStorage.setItem(CURRENT_USER_KEY, email);
+    setAuthenticated(true);
+    setCreateEmail("");
+    setCreateName("");
+    setCreatePassword("");
+    setCreateConfirm("");
+  };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    setCurrentUserName("");
+    localStorage.removeItem(CURRENT_USER_KEY);
+    setAuthenticated(false);
+    setMessages([]);
+    setSavedChats([]);
+    handleStartNewCase();
+  };
+
+  // -------------------------
+  // Chat & Interview state (merged from existing and snippet)
+  // -------------------------
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
-  const [phase, setPhase] = useState("fact_collection");
-  const [factsSummary, setFactsSummary] = useState(null);
-  const [pendingMaterials, setPendingMaterials] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const firstReplyText = currentUserName
+    ? `Namasthe ${currentUserName} 🙏, please describe your case in detail as much as you are aware of, it would help me assist you better.`
+    : "Namasthe 🙏, please describe your case in detail as much as you are aware of, it would help me assist you better.";
+  const [phase, setPhase] = useState("fact_collection"); // Retain existing phase logic
+  const [factsSummary, setFactsSummary] = useState(null); // Retain existing
+  const [pendingMaterials, setPendingMaterials] = useState(null); // Retain existing
+  const [loading, setLoading] = useState(false); // Retain existing
+  const [error, setError] = useState(""); // Retain existing
   const messagesEndRef = useRef(null);
   const textareaRef = useRef(null);
+  const messagesContainerRef = useRef(null);
 
+  // New interview state from snippet
+  const [stage, setStage] = useState("await_facts"); // "await_facts" | "interview" | "done"
+  const [facts, setFacts] = useState("");
+  const [currentQuestion, setCurrentQuestion] = useState("");
+  const [qaHistory, setQaHistory] = useState([]); // [{question, answer}]
+  const [opinionText, setOpinionText] = useState("");
+  const [retrieved, setRetrieved] = useState([]);
+  const [rawResponse, setRawResponse] = useState("");
+  const [showDebug, setShowDebug] = useState(false);
+
+  // Saved chats (ChatGPT-style): list of past conversations, persisted to localStorage
+  const [savedChats, setSavedChats] = useState([]);
+  const hasSavedCurrentChatRef = useRef(false);
+  const [editingChatId, setEditingChatId] = useState(null);
+  const [editingTitle, setEditingTitle] = useState("");
+  const editInputRef = useRef(null);
+  const currentChatIdRef = useRef(null);
+
+  // Default list so the UI always shows bare acts (e.g. when API is not running yet)
+  const DEFAULT_BARE_ACTS = [
+    "250884_2_english_01042024.pdf",
+    "A LAND REVENUE (ENHANCEMENT)_ACT_1967.pdf",
+    "a1988-59.pdf",
+    "ASSIGNED LANDS_Act_1977.pdf",
+    "Bhu Bharti_Act_2025.pdf",
+    "Dharani_Act_2020.pdf",
+    "LAND ENCROACHMENT_Act_1905.pdf",
+    "THE INDIAN CONTRACT ACT 1872.pdf",
+    "THE INDIAN EASEMENTS ACT 1882.pdf",
+    "THE LIMITATION ACT 1963.pdf",
+    "THE REGISTRATION ACT 1908.pdf",
+    "THE TELANGANA TENANCY AND AGRICULTURAL LANDS ACT 1950.pdf",
+    "THE TRANSFER OF PROPERTY ACT 1882.pdf",
+    "the_indian_stamp_act_1899.pdf",
+    "WALTA_Act_2002.pdf",
+  ];
+  const [bareActs, setBareActs] = useState(DEFAULT_BARE_ACTS);
+  const API_BASE = "http://127.0.0.1:8000";
+
+  // Restore session on load
+  useEffect(() => {
+    const stored = localStorage.getItem(CURRENT_USER_KEY);
+    if (stored && stored.trim()) {
+      const username = stored.trim();
+      setCurrentUser(username);
+      const users = getStoredUsers();
+      const userData = users[username];
+      setCurrentUserName(userData?.name ?? "");
+      setAuthenticated(true);
+    }
+  }, []);
+
+  // Load saved chats for current user when they log in or session restores
+  useEffect(() => {
+    if (!currentUser) {
+      setSavedChats([]);
+      return;
+    }
+    const chats = getStoredUserChats();
+    const userChats = chats[currentUser];
+    setSavedChats(Array.isArray(userChats) ? userChats : []);
+  }, [currentUser]);
+
+  // Persist savedChats for current user whenever they change
+  useEffect(() => {
+    if (!currentUser) return;
+    const chats = getStoredUserChats();
+    chats[currentUser] = savedChats;
+    try {
+      localStorage.setItem(USER_CHATS_KEY, JSON.stringify(chats));
+    } catch (e) {
+      console.warn("Could not save chats:", e);
+    }
+  }, [currentUser, savedChats]);
+
+  // Keep the "current" chat in the list in sync with messages/opinion/retrieved
+  useEffect(() => {
+    if (currentChatIdRef.current == null || messages.length === 0) return;
+    setSavedChats((prev) =>
+      prev.map((c) =>
+        c.id === currentChatIdRef.current
+          ? { ...c, messages, opinionText, retrieved }
+          : c
+      )
+    );
+  }, [messages, opinionText, retrieved]);
+
+  // Fetch Bare Acts from API when available; keep default list if API fails or returns empty
+  useEffect(() => {
+    const fetchBareActs = async () => {
+      try {
+        const res = await fetch(`${API_BASE}/bareacts/list`);
+        const data = await res.json();
+        const acts = data.acts || [];
+        setBareActs(acts.length > 0 ? acts : DEFAULT_BARE_ACTS);
+      } catch (err) {
+        console.error("Error fetching bare acts:", err);
+        setBareActs(DEFAULT_BARE_ACTS);
+      }
+    };
+    fetchBareActs();
+  }, [API_BASE]);
+
+  // Scroll only the chat messages area to bottom (do not move browser window or input)
+  useEffect(() => {
+    const el = messagesContainerRef.current;
+    if (!el) return;
+    el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
+  }, [messages, loading]);
+
+  // Keyboard scroll in chat (Arrow Up/Down when messages area has focus)
+  useEffect(() => {
+    const el = messagesContainerRef.current;
+    if (!el) return;
+    const onKey = (e) => {
+      if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+      if (document.activeElement !== el && !el.contains(document.activeElement)) return;
+      e.preventDefault();
+      el.scrollBy(0, e.key === "ArrowDown" ? 80 : -80);
+    };
+    const onFocusIn = () => el.focus();
+    el.addEventListener("keydown", onKey, true);
+    el.addEventListener("click", onFocusIn);
+    return () => {
+      el.removeEventListener("keydown", onKey, true);
+      el.removeEventListener("click", onFocusIn);
+    };
+  }, []);
+
+  // Existing textarea autosize (retained)
   useEffect(() => {
     const el = textareaRef.current;
     if (!el) return;
@@ -19,14 +297,301 @@ function App() {
     el.style.height = `${Math.min(el.scrollHeight, 200)}px`;
   }, [input]);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  // -------------------------
+  // Reset conversation (from snippet, adapted for existing state)
+  // -------------------------
+  const handleStartNewCase = () => {
+    hasSavedCurrentChatRef.current = false;
+    currentChatIdRef.current = null;
+    setStage("await_facts");
+    setFacts("");
+    setInput(""); // Reset existing input
+    setCurrentQuestion("");
+    setQaHistory([]);
+    setOpinionText("");
+    setRetrieved([]);
+    setRawResponse("");
+    setError(""); // Reset existing error
+    setPendingMaterials(null); // Reset existing pending materials
+    setMessages([]);
   };
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages, loading]);
+  // Save current conversation to savedChats (for sidebar list and persistence)
+  const saveCurrentChatToHistory = (msgs, opinion, retr) => {
+    const firstUser = (msgs || []).find((m) => m.role === "user");
+    const title =
+      (typeof firstUser?.content === "string" && firstUser.content.trim()) ||
+      `Chat ${new Date().toLocaleString()}`;
+    const chat = {
+      id: Date.now(),
+      title: title.length > 50 ? title.slice(0, 50) + "…" : title,
+      messages: msgs || [],
+      opinionText: opinion || "",
+      retrieved: Array.isArray(retr) ? retr : [],
+      createdAt: new Date().toISOString(),
+    };
+    setSavedChats((prev) => [chat, ...prev]);
+    hasSavedCurrentChatRef.current = true;
+  };
 
+  // Open a saved chat in the chat window
+  const handleLoadChat = (chat) => {
+    setMessages(chat.messages || []);
+    setOpinionText(chat.opinionText || "");
+    setRetrieved(chat.retrieved || []);
+    setStage("done");
+    const firstUser = (chat.messages || []).find((m) => m.role === "user");
+    setFacts(typeof firstUser?.content === "string" ? firstUser.content : "");
+    setCurrentQuestion("");
+    setQaHistory([]);
+    hasSavedCurrentChatRef.current = true;
+    currentChatIdRef.current = chat.id;
+  };
+
+  // New chat: save current if unsaved, then clear
+  const handleNewChat = () => {
+    if (messages.length > 0 && !hasSavedCurrentChatRef.current) {
+      saveCurrentChatToHistory(messages, opinionText, retrieved);
+    }
+    handleStartNewCase();
+  };
+
+  // Group chats by date (Today, Yesterday, This week, or specific date)
+  const groupChatsByDate = (chats) => {
+    if (!chats.length) return [];
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+    const oneDay = 24 * 60 * 60 * 1000;
+    const groups = new Map();
+    const getLabel = (d) => {
+      const dateOnly = new Date(new Date(d).getFullYear(), new Date(d).getMonth(), new Date(d).getDate()).getTime();
+      const diffDays = (today - dateOnly) / oneDay;
+      if (diffDays === 0) return "Today";
+      if (diffDays === 1) return "Yesterday";
+      if (diffDays < 7) return "This week";
+      return new Date(d).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+    };
+    chats.forEach((chat) => {
+      const label = getLabel(chat.createdAt);
+      if (!groups.has(label)) groups.set(label, []);
+      groups.get(label).push(chat);
+    });
+    return Array.from(groups.entries()).map(([groupLabel, groupChats]) => ({ groupLabel, chats: groupChats }));
+  };
+
+  const chatGroups = useMemo(() => groupChatsByDate(savedChats), [savedChats]);
+
+  const startRenamingChat = (chat) => {
+    setEditingChatId(chat.id);
+    setEditingTitle(chat.title || "");
+    setTimeout(() => editInputRef.current?.focus(), 0);
+  };
+
+  const saveRenameChat = () => {
+    if (editingChatId == null) return;
+    const next = (editingTitle || "").trim() || "Untitled chat";
+    setSavedChats((prev) =>
+      prev.map((c) => (c.id === editingChatId ? { ...c, title: next } : c))
+    );
+    setEditingChatId(null);
+    setEditingTitle("");
+  };
+
+  const cancelRenameChat = () => {
+    setEditingChatId(null);
+    setEditingTitle("");
+  };
+
+  // -------------------------
+  // Core submit logic (adapted from snippet's handleSubmit, using existing 'input' state)
+  // -------------------------
+  const handleSubmit = async () => {
+    const text = (input || "").trim(); // Use existing 'input' state
+    if (!text) {
+      alert("Please type something before pressing Submit.");
+      return;
+    }
+
+    setError("");
+    setLoading(true);
+    setInput(""); // Clear input after submission
+    setPendingMaterials(null); // Clear pending materials on new submission
+
+    const userMsg = { role: "user", content: text, timestamp: new Date().toISOString() };
+    const isFirstMessage = messages.length === 0;
+
+    setMessages((prev) => [...prev, userMsg]);
+
+    if (isFirstMessage) {
+      const chatId = Date.now();
+      const title = text.length > 50 ? text.slice(0, 50) + "…" : text;
+      const chat = {
+        id: chatId,
+        title,
+        messages: [userMsg],
+        opinionText: "",
+        retrieved: [],
+        createdAt: new Date().toISOString(),
+      };
+      setSavedChats((prev) => [chat, ...prev]);
+      currentChatIdRef.current = chatId;
+      hasSavedCurrentChatRef.current = true;
+    }
+
+    // 1) Initial facts (await_facts stage)
+    if (stage === "await_facts") {
+      setFacts(text); // Store initial facts
+
+      try {
+        const res = await fetch(`${API_BASE}/submit_case`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text }),
+        });
+        const data = await res.json();
+        setRawResponse(JSON.stringify(data, null, 2));
+
+        if (data.status === "question" && data.next_question) {
+          setCurrentQuestion(data.next_question);
+          setStage("interview");
+          setMessages((prev) => [
+            ...prev,
+            {
+              role: "assistant",
+              content: prev.length === 1 ? firstReplyText : data.next_question,
+              timestamp: new Date().toISOString(),
+            },
+          ]);
+          if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
+        } else if (data.status === "done") {
+          setStage("done");
+          setCurrentQuestion("");
+          const opinion = data.opinion_text || "";
+          const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
+          setOpinionText(opinion);
+          setRetrieved(retr);
+          const newAssistantMsg = {
+            role: "assistant",
+            content: { type: "final_opinion", opinionText: opinion, retrieved: retr },
+            timestamp: new Date().toISOString(),
+          };
+          setMessages((prev) => [...prev, newAssistantMsg]);
+        } else if (data.needs_confirmation) {
+          setPendingMaterials(data.materials_to_confirm);
+          setMessages((prev) => [
+            ...prev,
+            {
+              role: "assistant",
+              content: data.summary, // Use summary for display
+              timestamp: new Date().toISOString(),
+            },
+          ]);
+        } else {
+          setError(
+            data.message ||
+              "The interviewer response was unclear. Please try again."
+          );
+        }
+      } catch (err) {
+        console.error("submit_case error:", err);
+        setError("Error during processing: " + err.message);
+        setRawResponse("Error: " + err.message);
+      } finally {
+        setLoading(false);
+      }
+      return;
+    }
+
+    // 2) Follow-up answers (interview stage)
+    if (stage === "interview") {
+      if (!currentQuestion) {
+        alert("No current question from the assistant.");
+        setLoading(false);
+        return;
+      }
+
+      const updatedHistory = [
+        ...qaHistory,
+        { question: currentQuestion, answer: text },
+      ];
+      setQaHistory(updatedHistory);
+      setCurrentQuestion(""); // Clear current question after answering
+
+      try {
+        const res = await fetch(`${API_BASE}/interview_step`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            facts,
+            qa_history: updatedHistory,
+          }),
+        });
+        const data = await res.json();
+        setRawResponse(JSON.stringify(data, null, 2));
+
+        if (data.status === "question" && data.next_question) {
+          setCurrentQuestion(data.next_question);
+          setStage("interview");
+          setMessages((prev) => [
+            ...prev,
+            {
+              role: "assistant",
+              content: data.next_question,
+              timestamp: new Date().toISOString(),
+            },
+          ]);
+          if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
+        } else if (data.status === "done") {
+          setStage("done");
+          setCurrentQuestion("");
+          const opinion = data.opinion_text || "";
+          const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
+          setOpinionText(opinion);
+          setRetrieved(retr);
+          const newAssistantMsg = {
+            role: "assistant",
+            content: { type: "final_opinion", opinionText: opinion, retrieved: retr },
+            timestamp: new Date().toISOString(),
+          };
+          setMessages((prev) => [...prev, newAssistantMsg]);
+        } else if (data.needs_confirmation) {
+          setPendingMaterials(data.materials_to_confirm);
+          setMessages((prev) => [
+            ...prev,
+            {
+              role: "assistant",
+              content: data.summary, // Use summary for display
+              timestamp: new Date().toISOString(),
+            },
+          ]);
+        } else {
+          setError(
+            data.message ||
+              "The interviewer response was unclear. Please try again."
+          );
+        }
+      } catch (err) {
+        console.error("interview_step error:", err);
+        setError("Error during processing: " + err.message);
+        setRawResponse("Error: " + err.message);
+      } finally {
+        setLoading(false);
+      }
+      return;
+    }
+
+    // 3) If already done, treat text as new facts
+    if (stage === "done") {
+      const newFacts = text;
+      handleStartNewCase(); // Reset everything
+      setInput(newFacts); // Set new facts as current input, will be handled by next submit
+      setLoading(false); // Ensure loading is reset
+    }
+  };
+
+  // -------------------------
+  // Existing functions (retained and adapted)
+  // -------------------------
   const toApiContent = (msg) => {
     if (typeof msg.content === "string") return msg.content;
     if (msg.content?.text) return msg.content.text;
@@ -37,74 +602,66 @@ function App() {
     return "[Message]";
   };
 
-  const sendMessage = async () => {
-    const text = input.trim();
-    if (!text || loading) return;
+  const confirmAndIndex = async () => {
+    if (!pendingMaterials || loading) return;
+    const hasBare = pendingMaterials.bare_acts?.length > 0;
+    const hasCase = pendingMaterials.case_laws?.length > 0;
+    if (!hasBare && !hasCase) return;
 
-    setError("");
-    setInput("");
-    setMessages((prev) => [...prev, { role: "user", content: text }]);
     setLoading(true);
-
+    setError("");
     try {
-      const conv = messages.map((m) => ({ role: m.role, content: toApiContent(m) }));
-      const res = await fetch("/chat", {
+      const res = await fetch(`${API_BASE}/chat/confirm-index`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          conversation: conv,
-          message: text,
-          phase,
-          facts_summary: factsSummary,
+          bare_acts: pendingMaterials.bare_acts || [],
+          case_laws: pendingMaterials.case_laws || [],
+          facts_summary: factsSummary || "",
         }),
       });
-
-      if (!res.ok) {
-        const errText = await res.text();
-        let errMsg = `Backend error (${res.status})`;
-        try {
-          const errJson = JSON.parse(errText);
-          const d = errJson.detail;
-          errMsg = Array.isArray(d)
-            ? d.map((e) => e.msg || e.loc?.join(".")).join("; ") || errMsg
-            : d || errJson.message || errMsg;
-        } catch {
-          if (errText) errMsg = errText.slice(0, 200);
-        }
-        throw new Error(errMsg);
-      }
-
       const data = await res.json();
-
-      if (data.facts_summary) setFactsSummary(data.facts_summary);
-      if (data.phase) setPhase(data.phase);
-      if (data.materials_to_confirm) {
-        setPendingMaterials(data.materials_to_confirm);
-      } else {
-        setPendingMaterials(null);
-      }
-
-      const assistantContent = buildAssistantContent(data);
-      setMessages((prev) => [...prev, { role: "assistant", content: assistantContent }]);
-    } catch (err) {
-      console.error("Chat failed:", err);
-      setError(err.message || "Backend not reachable");
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content: {
-            type: "error",
-            text: "Sorry, I couldn't connect. Please try again.",
+      if (data.success) {
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            content: {
+              type: "indexed",
+              text: data.message || "Materials have been indexed successfully.",
+            },
+            timestamp: new Date().toISOString(),
           },
-        },
-      ]);
+        ]);
+        setPendingMaterials(null);
+        setStage("done"); // Assuming after indexing, we are done with current interview
+        setCurrentQuestion(""); // Clear current question
+
+        if (data.response) {
+          const fullContent = buildAssistantContent({
+            response: data.response,
+            message: data.response.explanation,
+          });
+          setMessages((prev) => [
+            ...prev,
+            { role: "assistant", content: fullContent, timestamp: new Date().toISOString() },
+          ]);
+          setOpinionText(data.response.explanation || ""); // Update opinion text if provided
+          if (Array.isArray(data.response.bare_act_sections) || Array.isArray(data.response.case_laws)) {
+            setRetrieved([...(data.response.bare_act_sections || []), ...(data.response.case_laws || [])]);
+          }
+        }
+      } else {
+        setError(data.message || "Indexing failed");
+      }
+    } catch (err) {
+      setError("Failed to index materials: " + err.message);
     } finally {
       setLoading(false);
     }
   };
 
-  const buildAssistantContent = (data, isConfirmResponse = false) => {
+  const buildAssistantContent = (data) => { // Removed isConfirmResponse as it's not used
     if (data.response) {
       const parts = [];
       if (data.message) {
@@ -142,76 +699,64 @@ function App() {
     return { type: "question", text: "How can I help?" };
   };
 
-  const confirmAndIndex = async () => {
-    if (!pendingMaterials || loading) return;
-    const hasBare = pendingMaterials.bare_acts?.length > 0;
-    const hasCase = pendingMaterials.case_laws?.length > 0;
-    if (!hasBare && !hasCase) return;
-
-    setLoading(true);
-    setError("");
-    try {
-      const res = await fetch("/chat/confirm-index", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          bare_acts: pendingMaterials.bare_acts || [],
-          case_laws: pendingMaterials.case_laws || [],
-          facts_summary: factsSummary || "",
-        }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: "assistant",
-            content: {
-              type: "indexed",
-              text: data.message || "Materials have been indexed successfully.",
-            },
-          },
-        ]);
-        setPendingMaterials(null);
-        setPhase("done");
-
-        if (data.response) {
-          const fullContent = buildAssistantContent({
-            response: data.response,
-            message: data.response.explanation,
-          });
-          setMessages((prev) => [
-            ...prev,
-            { role: "assistant", content: fullContent },
-          ]);
-        }
-      } else {
-        setError(data.message || "Indexing failed");
-      }
-    } catch (err) {
-      setError("Failed to index materials");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleNoMoreInfo = () => {
-    setInput("I don't have any more information. Please proceed with the research.");
-  };
-
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
-      sendMessage();
+      handleSubmit(); // Call the new handleSubmit
     }
   };
 
   const renderAssistantContent = (content) => {
+    if (content == null) return null;
+    if (typeof content === "string") {
+      return <p className="message-text">{content}</p>;
+    }
     if (content.type === "question") {
       return <p className="message-text">{content.text}</p>;
     }
-    if (content.type === "error" || content.type === "indexed") {
-      return <p className={content.type === "error" ? "message-error" : "message-indexed"}>{content.text}</p>;
+    if (content.type === "error") {
+      return <p className="message-error">{content.text}</p>;
+    }
+    if (content.type === "indexed") { // Added for indexed message type
+      return <p className="message-indexed">{content.text}</p>;
+    }
+    if (content.type === "final_opinion") {
+      const opinion = content.opinionText || "";
+      const retr = content.retrieved || [];
+      return (
+        <div className="message-final-opinion">
+          <div className="final-output-header final-output-header--chat">
+            <h4 className="opinion-title">Final Legal Opinion</h4>
+            <button
+              type="button"
+              onClick={handleDownloadPdf}
+              className="download-pdf-button"
+            >
+              📄 Download as PDF
+            </button>
+          </div>
+          <p className="opinion-text">{opinion}</p>
+          <h4 className="bare-acts-used-title">📚 Bare Acts Used (Top-k Context)</h4>
+          {retr.length > 0 ? (
+            <div className="retrieved-list">
+              {retr.map((item, idx) => {
+                const meta = item.meta || {};
+                const actName = meta.act_name || "Unknown Act";
+                const text = item.text || "";
+                const snippet = text.length > 1000 ? text.slice(0, 1000) + " [...]" : text;
+                return (
+                  <details key={idx} className="retrieved-details">
+                    <summary className="retrieved-summary">[{idx + 1}] {actName}</summary>
+                    <p className="retrieved-text">{snippet || "_No text snippet available for this chunk._"}</p>
+                  </details>
+                );
+              })}
+            </div>
+          ) : (
+            <p className="bare-acts-used-empty-message">No Bare Act extracts were retrieved for this query.</p>
+          )}
+        </div>
+      );
     }
     if (content.type === "results" && content.parts) {
       return (
@@ -219,7 +764,7 @@ function App() {
           {content.parts.map((part) => {
             if (part.type === "explanation") {
               return (
-                <div key="explanation" className="message-explanation">
+                <div key={`explanation-${part.text?.slice(0, 30)}`} className="message-explanation">
                   <p>{part.text}</p>
                 </div>
               );
@@ -251,169 +796,506 @@ function App() {
         </div>
       );
     }
+    if (content.text != null) {
+      return <p className="message-text">{content.text}</p>;
+    }
     return null;
   };
 
+
+  // -------------------------
+  // Bare act file download (fetch + blob so we can show errors)
+  // -------------------------
+  const handleBareActDownload = async (e, name) => {
+    e.preventDefault();
+    const url = `${API_BASE}/bareacts/download?name=${encodeURIComponent(name)}`;
+    try {
+      const res = await fetch(url);
+      if (!res.ok) {
+        alert(`Download failed (${res.status}). Make sure the API server is running at ${API_BASE}.`);
+        return;
+      }
+      const blob = await res.blob();
+      const blobUrl = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = blobUrl;
+      a.download = name || "download";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(blobUrl);
+    } catch (err) {
+      console.error("Bare act download error:", err);
+      alert(`Download failed. Is the API server running at ${API_BASE}?`);
+    }
+  };
+
+  // -------------------------
+  // Download PDF handler (from snippet)
+  // -------------------------
+  const handleDownloadPdf = () => {
+    const trimmedOpinion = (opinionText || "").trim();
+    if (!trimmedOpinion) {
+      alert("No final opinion available to download yet.");
+      return;
+    }
+
+    const doc = new jsPDF({
+      unit: "pt",
+      format: "a4",
+    });
+
+    const marginLeft = 40;
+    const maxWidth = 515;
+    let y = 40;
+
+    doc.setFont("Helvetica", "bold");
+    doc.setFontSize(16);
+    doc.text("Legal Opinion", marginLeft, y);
+    y += 28;
+
+    doc.setFont("Helvetica", "normal");
+    doc.setFontSize(11);
+
+    const opinionLines = doc.splitTextToSize(trimmedOpinion, maxWidth);
+    doc.text(opinionLines, marginLeft, y);
+    y += opinionLines.length * 14 + 20;
+
+    // Relevant Bare Acts
+    if (retrieved && retrieved.length > 0) {
+      const uniqueActs = Array.from(
+        new Set(
+          retrieved.map(
+            (item) => (item.meta && item.meta.act_name) || "Unknown Act"
+          )
+        )
+      );
+
+      if (y > 780) {
+        doc.addPage();
+        y = 40;
+      }
+
+      doc.setFont("Helvetica", "bold");
+      doc.setFontSize(13);
+      doc.text("Relevant Bare Acts:", marginLeft, y);
+      y += 20;
+
+      doc.setFont("Helvetica", "normal");
+      doc.setFontSize(11);
+
+      uniqueActs.forEach((act) => {
+        if (y > 780) {
+          doc.addPage();
+          y = 40;
+        }
+        const line = `- ${act}`;
+        const lines = doc.splitTextToSize(line, maxWidth);
+        doc.text(lines, marginLeft, y);
+        y += lines.length * 14;
+      });
+    }
+
+    doc.save("legal_opinion.pdf");
+  };
+
+  // -------------------------
+  // LOGIN / CREATE ACCOUNT SCREEN
+  // -------------------------
+  if (!authenticated) {
+    return (
+      <div className="login-container">
+        {!showCreateAccount ? (
+          <form onSubmit={handleLogin} className="login-form">
+            <h2 className="login-title">🏛️ Nyaymalaw – Login</h2>
+            {authError && <p className="login-error">{authError}</p>}
+            <label className="login-label">Email (username)</label>
+            <input
+              type="email"
+              autoComplete="username"
+              value={loginUsername}
+              onChange={(e) => setLoginUsername(e.target.value)}
+              className="login-input"
+              placeholder="you@example.com"
+            />
+            <label className="login-label">Password</label>
+            <input
+              type="password"
+              autoComplete="current-password"
+              value={loginPassword}
+              onChange={(e) => setLoginPassword(e.target.value)}
+              className="login-input"
+            />
+            <button type="submit" className="login-button">
+              Login
+            </button>
+            <p className="login-switch">
+              New user?{" "}
+              <button
+                type="button"
+                className="login-link"
+                onClick={() => { setShowCreateAccount(true); setAuthError(""); }}
+              >
+                Create account
+              </button>
+            </p>
+          </form>
+        ) : (
+          <form onSubmit={handleCreateAccount} className="login-form">
+            <h2 className="login-title">🏛️ Nyaymalaw – Create account</h2>
+            {authError && <p className="login-error">{authError}</p>}
+            <label className="login-label">Name</label>
+            <input
+              type="text"
+              autoComplete="name"
+              value={createName}
+              onChange={(e) => setCreateName(e.target.value)}
+              className="login-input"
+              placeholder="Your name"
+            />
+            <label className="login-label">Email (username)</label>
+            <input
+              type="email"
+              autoComplete="username"
+              value={createEmail}
+              onChange={(e) => setCreateEmail(e.target.value)}
+              className="login-input"
+              placeholder="you@example.com"
+            />
+            <label className="login-label">Password (min 6 characters)</label>
+            <input
+              type="password"
+              autoComplete="new-password"
+              value={createPassword}
+              onChange={(e) => setCreatePassword(e.target.value)}
+              className="login-input"
+            />
+            <label className="login-label">Confirm password</label>
+            <input
+              type="password"
+              autoComplete="new-password"
+              value={createConfirm}
+              onChange={(e) => setCreateConfirm(e.target.value)}
+              className="login-input"
+            />
+            <button type="submit" className="login-button">
+              Create account
+            </button>
+            <p className="login-switch">
+              Already have an account?{" "}
+              <button
+                type="button"
+                className="login-link"
+                onClick={() => { setShowCreateAccount(false); setAuthError(""); }}
+              >
+                Log in
+              </button>
+            </p>
+          </form>
+        )}
+      </div>
+    );
+  }
+
+  // -------------------------
+  // MAIN APP UI (from snippet, adapted to retain existing chat window)
+  // 3 columns: Bare Acts (left), Conversation+Input (middle), Final Output (right)
+  // -------------------------
   return (
-    <div className="chat-app">
-      <header className="chat-header">
-        <div className="chat-header-inner">
-          <span className="chat-logo">⚖</span>
-          <h1>Nyaymalaw AI</h1>
-          {messages.length > 0 && (
+    <div
+      className="app-container"
+    >
+      {/* Header */}
+      <div className="main-header-fixed">
+        <h1 className="main-title">
+          🏛️ Nyaymalaw – Your legal buddy
+        </h1>
+        <div className="header-user">
+          <span className="header-email" title={currentUser}>{currentUser}</span>
+          <button type="button" onClick={handleLogout} className="header-logout-btn">
+            Logout
+          </button>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div
+        className="main-content-wrapper"
+      >
+        <div
+          className="columns-container"
+        >
+          {/* LEFT COLUMN – New chat, Bare Acts, Chat history */}
+          <div
+            className="left-column"
+            // Removed position: sticky, top, align-self, max-height, overflowY
+          >
             <button
               type="button"
-              onClick={() => {
-                setMessages([]);
-                setPhase("fact_collection");
-                setFactsSummary(null);
-                setPendingCaseLaws(null);
-                setError("");
-              }}
-              className="new-chat-btn"
+              onClick={handleNewChat}
+              className="chat-history-new-btn"
             >
-              New Chat
+              ＋ New chat
             </button>
-          )}
-        </div>
-      </header>
-
-      <main className="chat-main">
-        <div className="messages-container">
-          {messages.length === 0 && !loading && (
-            <div className="chat-welcome">
-              <div className="welcome-icon">⚖</div>
-              <h2>How can I help you today?</h2>
-              <p>
-                I'll gather the facts of your legal matter through a few questions, then research
-                relevant bare acts and case laws for you.
-              </p>
-              <div className="suggestions">
-                <button type="button" onClick={() => setInput("I have a contract dispute")}>
-                  I have a contract dispute
-                </button>
-                <button type="button" onClick={() => setInput("Land encroachment issue")}>
-                  Land encroachment issue
-                </button>
-                <button type="button" onClick={() => setInput("Specific performance of contract")}>
-                  Specific performance of contract
-                </button>
-              </div>
-            </div>
-          )}
-
-          {messages.map((msg, i) => (
-            <div
-              key={`msg-${msg.role}-${i}-${typeof msg.content === "string" ? msg.content?.slice(0, 30) : msg.content?.type || ""}`}
-              className={`message message--${msg.role}`}
-            >
-              <div className="message-avatar">
-                {msg.role === "user" ? (
-                  <span className="avatar-user">U</span>
+            <details className="bare-acts-collapsible">
+              <summary className="bare-acts-collapsible-summary">
+                {bareActs.length ? (
+                  <span className="bare-acts-count">📚 Bare Acts Library ({bareActs.length})</span>
                 ) : (
-                  <span className="avatar-ai">⚖</span>
+                  "📚 Bare Acts Library"
                 )}
-              </div>
-              <div className="message-content">
-                {msg.role === "user" ? (
-                  <div className="message-bubble message-bubble--user">{msg.content}</div>
-                ) : (
-                  <div className="message-bubble message-bubble--assistant">
-                    {renderAssistantContent(msg.content)}
+              </summary>
+              {bareActs.length ? (
+                <ul className="bare-act-list">
+                  {bareActs.map((name, idx) => (
+                    <li key={`${name}-${idx}`} className="bare-act-list-item">
+                      <button
+                        type="button"
+                        onClick={(e) => handleBareActDownload(e, name)}
+                        className="bare-act-download-link"
+                      >
+                        {name}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="bare-act-empty-message">
+                  No bare acts in vector store yet.
+                </p>
+              )}
+            </details>
+
+            {/* Saved chats – below Bare Acts Library */}
+            <div className="chat-history-section">
+              <details className="chat-history-collapsible">
+                <summary className="chat-history-collapsible-summary">
+                  💬 Chat history ({savedChats.length})
+                </summary>
+                {savedChats.length > 0 ? (
+                  <div className="chat-history-groups">
+                    {chatGroups.map(({ groupLabel, chats }) => (
+                      <div key={groupLabel} className="chat-history-group">
+                        <div className="chat-history-group-label">{groupLabel}</div>
+                        <ul className="chat-history-list">
+                          {chats.map((chat) => (
+                            <li key={chat.id} className="chat-history-item">
+                              {editingChatId === chat.id ? (
+                                <div className="chat-history-rename-row">
+                                  <input
+                                    ref={editInputRef}
+                                    type="text"
+                                    value={editingTitle}
+                                    onChange={(e) => setEditingTitle(e.target.value)}
+                                    onKeyDown={(e) => {
+                                      if (e.key === "Enter") saveRenameChat();
+                                      if (e.key === "Escape") cancelRenameChat();
+                                    }}
+                                    onBlur={saveRenameChat}
+                                    className="chat-history-rename-input"
+                                    aria-label="Rename chat"
+                                  />
+                                </div>
+                              ) : (
+                                <>
+                                  <button
+                                    type="button"
+                                    onClick={() => handleLoadChat(chat)}
+                                    className="chat-history-link"
+                                    title={chat.title}
+                                  >
+                                    {chat.title}
+                                  </button>
+                                  <button
+                                    type="button"
+                                    onClick={(e) => { e.stopPropagation(); startRenamingChat(chat); }}
+                                    className="chat-history-rename-btn"
+                                    title="Rename chat"
+                                    aria-label="Rename chat"
+                                  >
+                                    ✎
+                                  </button>
+                                </>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
                   </div>
+                ) : (
+                  <p className="chat-history-empty">No previous chats.</p>
                 )}
-              </div>
+              </details>
             </div>
-          ))}
+          </div>
 
-          {loading && (
-            <div className="message message--assistant">
-              <div className="message-avatar">
-                <span className="avatar-ai">⚖</span>
-              </div>
-              <div className="message-content">
-                <div className="message-bubble message-bubble--assistant typing-indicator">
-                  <span className="typing-dot" />
-                  <span className="typing-dot" />
-                  <span className="typing-dot" />
+          {/* RIGHT CONTENT – Chat window only (80%) */}
+          <div className={`right-content-wrapper${messages.some((m) => m.role === "user") ? " chat-mode" : ""}`}>
+            {!messages.some((m) => m.role === "user") ? (
+              /* ChatGPT-style: plain message + single centered text box until first send */
+              <div className="chat-center-stage">
+                <div className="chat-center-message">
+                  <h2>How can I help you today?</h2>
+                  <p>
+                    I'll gather the facts of your legal matter through a few questions, then research
+                    relevant bare acts and case laws for you.
+                  </p>
+                </div>
+                <div className="chat-center-input-wrapper">
+                  <div className="chat-input-container">
+                    <textarea
+                      ref={textareaRef}
+                      value={input}
+                      onChange={(e) => setInput(e.target.value)}
+                      onKeyDown={handleKeyDown}
+                      placeholder="Describe your case or ask a question..."
+                      className="chat-input"
+                      rows={1}
+                      disabled={loading}
+                    />
+                    <button
+                      type="button"
+                      onClick={handleSubmit}
+                      disabled={loading || !input.trim()}
+                      className="chat-send"
+                      aria-label="Send message"
+                    >
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 19V5M5 12l7-7 7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                  <p className="chat-disclaimer">Nyaymalaw AI can make mistakes. Consider checking important information.</p>
                 </div>
               </div>
-            </div>
-          )}
+            ) : (
+              <>
+                <div className="conversation-card">
+                  <div
+                    ref={messagesContainerRef}
+                    className="messages-container"
+                    tabIndex={0}
+                  >
+                    {messages.map((msg, i) => (
+                  <div
+                    key={`msg-${msg.role}-${i}-${typeof msg.content === "string" ? msg.content?.slice(0, 30) : msg.content?.type || ""}`}
+                    className={`message message--${msg.role}`}
+                  >
+                    <div className="message-avatar">
+                      {msg.role === "user" ? (
+                        <span className="avatar-user">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      ) : (
+                        <span className="avatar-ai">⚖</span>
+                      )}
+                    </div>
+                    <div className="message-content">
+                      {msg.role === "user" ? (
+                        <div className="message-bubble message-bubble--user">{msg.content}</div>
+                      ) : (
+                        <div className="message-bubble message-bubble--assistant">
+                          {renderAssistantContent(msg.content)}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
 
-          <div ref={messagesEndRef} />
+                {loading && (
+                  <div className="message message--assistant">
+                    <div className="message-avatar">
+                      <span className="avatar-ai">⚖</span>
+                    </div>
+                    <div className="message-content">
+                      <div className="message-bubble message-bubble--assistant typing-indicator">
+                        <span className="typing-indicator-text">Nyaymalaw is thinking...</span>
+                        <span className="typing-dots">
+                          <span className="typing-dot" />
+                          <span className="typing-dot" />
+                          <span className="typing-dot" />
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                    <div ref={messagesEndRef} />
+                  </div>
+                </div>
+
+                {/* Fixed bottom input when in chat mode */}
+                <div className="chat-input-wrapper">
+              <div className="chat-input-container">
+                <textarea
+                  ref={textareaRef}
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  placeholder={
+                    stage === "interview" && currentQuestion
+                      ? "Type your details here..."
+                      : stage === "await_facts"
+                      ? "Describe your case facts here..."
+                      : "Type here to start a new case..."
+                  }
+                  className="chat-input"
+                  rows={1}
+                  disabled={loading}
+                />
+                <button
+                  type="button"
+                  onClick={handleSubmit}
+                  disabled={loading || !input.trim()}
+                  className="chat-send"
+                  aria-label="Send message"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 19V5M5 12l7-7 7 7" />
+                  </svg>
+                </button>
+              </div>
+              <p className="chat-disclaimer">
+                Nyaymalaw AI can make mistakes. Consider checking important information.
+              </p>
+                </div>
+
+                {/* Confirmation bar */}
+                {pendingMaterials?.bare_acts?.length > 0 && (
+                  <div className="confirm-index-bar">
+                    <button type="button" onClick={confirmAndIndex} disabled={loading} className="confirm-index-btn">
+                      ✓ Confirm & Index Bare Acts
+                    </button>
+                  </div>
+                )}
+                {pendingMaterials?.case_laws?.length > 0 && (
+                  <div className="confirm-index-bar">
+                    <button type="button" onClick={confirmAndIndex} disabled={loading} className="confirm-index-btn">
+                      ✓ Confirm & Index Case Laws
+                    </button>
+                  </div>
+                )}
+                {error && (
+                  <div className="chat-error">
+                    <span>⚠</span> {error}
+                  </div>
+                )}
+              </>
+            )}
+          </div>
         </div>
-
-        {pendingCaseLaws?.length > 0 && (
-          <div className="confirm-index-bar">
-            <button
-              type="button"
-              onClick={confirmAndIndex}
-              disabled={loading}
-              className="confirm-index-btn"
-            >
-              ✓ Confirm & Index Case Laws
-            </button>
-          </div>
-        )}
-
-        {phase === "fact_collection" && messages.length > 0 && (
-          <div className="quick-action-bar">
-            <button type="button" onClick={handleNoMoreInfo} className="quick-action-btn">
-              I don't have more information
-            </button>
-          </div>
-        )}
-
-        {error && (
-          <div className="chat-error">
-            <span>⚠</span> {error}
-          </div>
-        )}
-
-        <div className="chat-input-wrapper">
-          <div className="chat-input-container">
-            <textarea
-              ref={textareaRef}
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder={
-                phase === "fact_collection"
-                  ? "Share your legal matter or answer the question..."
-                  : "Message Nyaymalaw AI..."
-              }
-              className="chat-input"
-              rows={1}
-              disabled={loading}
-            />
-            <button
-              type="button"
-              onClick={sendMessage}
-              disabled={loading || !input.trim()}
-              className="chat-send"
-              aria-label="Send message"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M22 2L11 13" />
-                <path d="M22 2L15 22L11 13L2 9L22 2Z" />
-              </svg>
-            </button>
-          </div>
-          <p className="chat-disclaimer">
-            Nyaymalaw AI can make mistakes. Consider checking important information.
-          </p>
-        </div>
-      </main>
+      </div>
     </div>
   );
 }

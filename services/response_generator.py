@@ -305,6 +305,84 @@ Be concise. Use bullet points. Focus on practical relevance."""
         return "Relevance analysis could not be generated. Please review the retrieved materials above."
 
 
+
+def add_bare_act_to_index(bare_act_data: dict):
+    if not bare_act_data or not bare_act_data.get("text"):
+        return
+
+    # Load existing index and chunks
+    try:
+        index = faiss.read_index(BARE_INDEX)
+        with open(BARE_CHUNKS, encoding="utf-8") as f:
+            chunks = json.load(f)
+    except Exception:
+        index = faiss.IndexFlatIP(embedder.get_sentence_embedding_dimension())
+        chunks = {}
+
+    # Prepare new chunk
+    new_chunk = {
+        "source": bare_act_data.get("title", "Internet"),
+        "text": bare_act_data["text"],
+        "act_name": bare_act_data.get("act_name", "Bare Act"),
+    }
+
+    # Embed and add to index
+    text_to_embed = new_chunk["text"]
+    embedding = embedder.encode(
+        text_to_embed, convert_to_numpy=True, normalize_embeddings=True
+    )
+    index.add(np.array([embedding], dtype="float32"))
+
+    # Add to chunks
+    new_id = str(len(chunks))
+    chunks[new_id] = new_chunk
+
+    # Save updated index and chunks
+    faiss.write_index(index, BARE_INDEX)
+    with open(BARE_CHUNKS, "w", encoding="utf-8") as f:
+        json.dump(chunks, f, indent=2)
+
+    print(f"Indexed new bare act: {bare_act_data.get('title', 'Internet')}")
+
+
+def add_case_law_to_index(case_law_data: dict):
+    if not case_law_data or not case_law_data.get("relevant_portion"):
+        return
+
+    # Load existing index and chunks
+    try:
+        index = faiss.read_index(CASE_INDEX)
+        with open(CASE_CHUNKS, encoding="utf-8") as f:
+            chunks = json.load(f)
+    except Exception:
+        index = faiss.IndexFlatIP(embedder.get_sentence_embedding_dimension())
+        chunks = {}
+
+    # Prepare new chunk
+    new_chunk = {
+        "source": case_law_data.get("title", "Internet"),
+        "text": case_law_data["relevant_portion"],
+    }
+
+    # Embed and add to index
+    text_to_embed = new_chunk["text"]
+    embedding = embedder.encode(
+        text_to_embed, convert_to_numpy=True, normalize_embeddings=True
+    )
+    index.add(np.array([embedding], dtype="float32"))
+
+    # Add to chunks
+    new_id = str(len(chunks))
+    chunks[new_id] = new_chunk
+
+    # Save updated index and chunks
+    faiss.write_index(index, CASE_INDEX)
+    with open(CASE_CHUNKS, "w", encoding="utf-8") as f:
+        json.dump(chunks, f, indent=2)
+
+    print(f"Indexed new case law: {case_law_data.get('title', 'Internet')}")
+
+
 def generate_summary_for_confirmation(bare_acts: list, case_laws: list) -> str:
     """Generate a brief summary of internet-sourced materials for user confirmation."""
     parts = []
@@ -340,12 +418,14 @@ def generate_response(facts_summary: str, confirmed_materials: dict = None) -> d
     # If user confirmed materials, add them and generate full response
     if confirmed_materials:
         for b in confirmed_materials.get("bare_acts", []):
+            add_bare_act_to_index(b)  # Index the new bare act
             bare_sections.append({
                 "source": b.get("title", "Internet"),
                 "text": b.get("text", b.get("content", b.get("snippet", ""))),
                 "act_name": b.get("title", b.get("act_name", "Bare Act")),
             })
         for c in confirmed_materials.get("case_laws", []):
+            add_case_law_to_index(c)  # Index the new case law
             case_laws_local.append({
                 "source": c.get("title", "Internet"),
                 "text": c.get("relevant_portion", c.get("content", c.get("snippet", ""))),

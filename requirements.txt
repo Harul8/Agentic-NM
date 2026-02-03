@@ -1,0 +1,39 @@
+# Core framework
+crewai==1.5.0
+pydantic>=2.6
+
+# Required by CrewAI to resolve model strings like "ollama/mistral:7b"
+litellm
+
+# Streamlit UI
+streamlit==1.50.0
+
+# Vector search
+faiss-cpu
+
+# PDF processing
+pdfplumber
+pypdf
+
+# Numerical & arrays
+numpy
+tqdm
+
+# HTTP requests (Ollama + web fetch)
+requests
+
+# Internet search
+ddgs
+
+# Embeddings + tokenization helpers
+sentence-transformers
+
+# OCR fallback (optional but safe)
+pytesseract
+pillow
+
+# Database
+sqlite-utils
+
+# Environment variables
+python-dotenv
