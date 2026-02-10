@@ -386,6 +386,16 @@ def _list_bare_acts_from_disk() -> list[str]:
     return sorted(out)
 
 
+def _chat_error_fallback(detail: str = "") -> dict:
+    """Return a safe 200 response when chat processing fails so frontend does not see 500."""
+    return {
+        "status": "question",
+        "next_question": "Something went wrong while processing. Please try again or rephrase. If the issue persists, ensure Ollama is running and the model is available (e.g. ollama run qwen2.5:7b-instruct)."
+        + (f" ({detail})" if detail else ""),
+        "retrieved": [],
+    }
+
+
 def _map_chat_result_to_ui(result: dict) -> dict:
     """Map process_chat result to the shape the frontend expects (status, next_question, etc.)."""
     phase = result.get("phase")
@@ -532,22 +542,25 @@ def submit_case(request: SubmitCaseRequest):
             "next_question": "Please describe your legal issue or the facts of your case in a few sentences.",
             "retrieved": [],
         }
-    conv = [{"role": "user", "content": text}]
-    result = process_chat(
-        conversation=conv,
-        current_message=text,
-        phase="fact_collection",
-        facts_summary=None,
-    )
-    if result.get("phase") == "response_generation" and result.get("facts_summary"):
-        conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
+    try:
+        conv = [{"role": "user", "content": text}]
         result = process_chat(
             conversation=conv,
-            current_message=result["facts_summary"],
-            phase="response_generation",
-            facts_summary=result["facts_summary"],
+            current_message=text,
+            phase="fact_collection",
+            facts_summary=None,
         )
-    return _map_chat_result_to_ui(result)
+        if result.get("phase") == "response_generation" and result.get("facts_summary"):
+            conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
+            result = process_chat(
+                conversation=conv,
+                current_message=result["facts_summary"],
+                phase="response_generation",
+                facts_summary=result["facts_summary"],
+            )
+        return _map_chat_result_to_ui(result)
+    except Exception as e:
+        return _chat_error_fallback(str(e)[:200])
 
 
 @app.post("/interview_step")
@@ -564,26 +577,29 @@ def interview_step(request: InterviewStepRequest):
             "next_question": "Please share more details about your case.",
             "retrieved": [],
         }
-    conv = [{"role": "user", "content": facts}]
-    for qa in qa_history:
-        conv.append({"role": "assistant", "content": qa.question})
-        conv.append({"role": "user", "content": qa.answer})
-    current_message = qa_history[-1].answer
-    result = process_chat(
-        conversation=conv,
-        current_message=current_message,
-        phase="fact_collection",
-        facts_summary=None,
-    )
-    if result.get("phase") == "response_generation" and result.get("facts_summary"):
-        conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
+    try:
+        conv = [{"role": "user", "content": facts}]
+        for qa in qa_history:
+            conv.append({"role": "assistant", "content": qa.question})
+            conv.append({"role": "user", "content": qa.answer})
+        current_message = qa_history[-1].answer
         result = process_chat(
             conversation=conv,
-            current_message=result["facts_summary"],
-            phase="response_generation",
-            facts_summary=result["facts_summary"],
+            current_message=current_message,
+            phase="fact_collection",
+            facts_summary=None,
         )
-    return _map_chat_result_to_ui(result)
+        if result.get("phase") == "response_generation" and result.get("facts_summary"):
+            conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
+            result = process_chat(
+                conversation=conv,
+                current_message=result["facts_summary"],
+                phase="response_generation",
+                facts_summary=result["facts_summary"],
+            )
+        return _map_chat_result_to_ui(result)
+    except Exception as e:
+        return _chat_error_fallback(str(e)[:200])
 
 
 @app.post("/conversation/continue")
@@ -599,25 +615,28 @@ def continue_chat(request: ContinueChatRequest):
             "next_question": "Please type your follow-up or additional details.",
             "retrieved": [],
         }
-    conv = [
-        {"role": m.role, "content": _normalize_content(m.content)}
-        for m in (request.conversation or [])
-    ]
-    result = process_chat(
-        conversation=conv,
-        current_message=message,
-        phase="fact_collection",
-        facts_summary=None,
-    )
-    if result.get("phase") == "response_generation" and result.get("facts_summary"):
-        conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": result.get("message", "")}]
+    try:
+        conv = [
+            {"role": m.role, "content": _normalize_content(m.content)}
+            for m in (request.conversation or [])
+        ]
         result = process_chat(
             conversation=conv,
-            current_message=result["facts_summary"],
-            phase="response_generation",
-            facts_summary=result["facts_summary"],
+            current_message=message,
+            phase="fact_collection",
+            facts_summary=None,
         )
-    return _map_chat_result_to_ui(result)
+        if result.get("phase") == "response_generation" and result.get("facts_summary"):
+            conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": result.get("message", "")}]
+            result = process_chat(
+                conversation=conv,
+                current_message=result["facts_summary"],
+                phase="response_generation",
+                facts_summary=result["facts_summary"],
+            )
+        return _map_chat_result_to_ui(result)
+    except Exception as e:
+        return _chat_error_fallback(str(e)[:200])
 
 
 @app.post("/chat/confirm-index")

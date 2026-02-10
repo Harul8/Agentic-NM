@@ -53,11 +53,21 @@ Conversation so far:
 
 What is your next question? Output valid JSON only."""
 
-    response = ask_llm(prompt)
+    try:
+        response = ask_llm(prompt)
+    except Exception as e:
+        # Ollama unreachable, model missing, or API error: use fallback
+        if is_stop_signal(user_message):
+            facts = "\n".join(m["content"] for m in conversation_history if m.get("role") == "user")
+            return {"action": "complete", "facts_summary": facts or user_message}
+        return {
+            "action": "ask",
+            "question": "Please share any other relevant details—parties, dates, documents, or relief sought. If you have nothing further to add, say 'that's all' or 'proceed' and I shall move to legal research."
+        }
 
     # Parse JSON from response (handle markdown code blocks)
     try:
-        text = response.strip()
+        text = (response or "").strip()
         if "```" in text:
             text = text.split("```")[1]
             if text.startswith("json"):
