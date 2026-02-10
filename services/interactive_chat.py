@@ -1,13 +1,14 @@
 """
 Interactive Chat Orchestrator - Handles multi-phase legal chat flow:
-1. Fact collection (lawyer-style questions)
-2. Response generation (bare acts + case laws + explanations)
+1. Fact collection (professional advocate intake)
+2. Response generation (bare acts + case laws + structured opinion)
 3. Case law confirmation & indexing
 """
 
 from services.fact_collector import get_next_question_or_complete, is_stop_signal
 from services.response_generator import generate_response
 from services.case_law_indexer_incremental import index_new_case_laws
+from prompts.advocate_prompts import TRANSITION_TO_RESEARCH
 
 
 def process_chat(conversation: list, current_message: str, phase: str, facts_summary: str = None) -> dict:
@@ -36,7 +37,7 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
         if result.get("action") == "complete":
             return {
                 "phase": "response_generation",
-                "message": "Thank you. I have enough information. Let me research the relevant bare acts and case laws for you.",
+                "message": TRANSITION_TO_RESEARCH,
                 "facts_summary": result.get("facts_summary", current_message),
                 "response": None,
                 "case_laws_to_confirm": None,
@@ -45,7 +46,7 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
         else:
             return {
                 "phase": "fact_collection",
-                "message": result.get("question", "Could you share more details?"),
+                "message": result.get("question", "Please share any further relevant details."),
                 "facts_summary": None,
                 "response": None,
                 "case_laws_to_confirm": None,
@@ -95,7 +96,7 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
         # Handled by separate index endpoint - not here
         return {
             "phase": "done",
-            "message": "Please use the confirm button to index case laws.",
+            "message": "Please confirm the materials above to index them and generate the full legal analysis.",
             "facts_summary": facts_summary,
             "response": None,
             "case_laws_to_confirm": None,
@@ -104,7 +105,7 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
 
     return {
         "phase": "done",
-        "message": "How else can I help?",
+        "message": "Is there anything else you would like me to research or clarify?",
         "facts_summary": None,
         "response": None,
         "case_laws_to_confirm": None,

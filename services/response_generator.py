@@ -18,6 +18,15 @@ import numpy as np
 import requests
 from sentence_transformers import SentenceTransformer
 from llm.ollama_client import ask_llm
+from prompts.advocate_prompts import (
+    EXPAND_LEGAL_QUERY_SYSTEM,
+    EXTRACT_BARE_ACT_PORTIONS_SYSTEM,
+    EXTRACT_CASE_PORTIONS_SYSTEM,
+    RELEVANCE_EXPLANATION_SYSTEM,
+    RELEVANCE_EXPLANATION_NO_MATERIALS,
+    SUMMARY_FOR_CONFIRMATION_HEAD,
+    SUMMARY_FOR_CONFIRMATION_TAIL,
+)
 
 # Paths
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -32,19 +41,11 @@ embedder = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2", device=
 
 
 def expand_legal_query(facts: str) -> str:
-    """Convert plain-language facts to legal research query with acts, sections, terms."""
-    prompt = f"""You are an Indian legal research expert. Convert these case facts into a concise legal research query.
+    """Convert plain-language facts to a precise legal research query (advocate-style)."""
+    prompt = f"""{EXPAND_LEGAL_QUERY_SYSTEM}
 
 FACTS:
 {facts[:1500]}
-
-Output ONLY a single search query (1-2 sentences) that includes:
-- Relevant Bare Acts (e.g., Specific Relief Act, Contract Act, Transfer of Property Act)
-- Legal terms and concepts
-- Section numbers if mentioned
-- Key legal issues
-
-Example: "Specific performance of contract Section 10 Specific Relief Act 1963 breach of contract remedy"
 
 Query:"""
     try:
@@ -154,14 +155,11 @@ def fetch_bare_act_content(url: str) -> str:
 
 
 def extract_relevant_bare_act_portions(facts: str, title: str, content: str) -> str:
-    """Use LLM to extract relevant bare act provisions from fetched content."""
+    """Use LLM to extract relevant bare act provisions from fetched content (advocate-style)."""
     if not content or len(content) < 100:
         return content[:1500] if content else ""
 
-    prompt = f"""Extract ONLY the relevant statutory provisions/sections from this legal document that apply to the case facts.
-Include: section numbers, definitions, substantive provisions.
-Exclude: preamble, footnotes, unrelated sections.
-Keep 2-4 paragraphs max.
+    prompt = f"""{EXTRACT_BARE_ACT_PORTIONS_SYSTEM}
 
 CASE FACTS:
 {facts[:600]}
@@ -230,14 +228,11 @@ def fetch_case_content(url: str) -> str:
 
 
 def extract_relevant_case_portions(facts: str, case_title: str, case_content: str) -> str:
-    """Use LLM to extract only the RELEVANT portions of a case law for the user's facts."""
+    """Use LLM to extract only the relevant portions of a case law (advocate-style)."""
     if not case_content or len(case_content) < 100:
         return case_content[:1500] if case_content else ""
 
-    prompt = f"""Extract ONLY the portions of this judgment that are RELEVANT to the case facts below.
-Include: ratio decidendi, key holdings, applicable legal principles, relevant observations.
-Exclude: procedural details, unrelated facts, boilerplate.
-Keep 2-4 paragraphs max. Be precise.
+    prompt = f"""{EXTRACT_CASE_PORTIONS_SYSTEM}
 
 CASE FACTS:
 {facts[:800]}
@@ -265,15 +260,16 @@ def generate_relevance_explanation(
     explain WHY it is relevant to the user's facts.
     """
     if not bare_sections and not case_laws and not internet_cases:
-        return "No relevant bare act provisions or case laws were found for your query. Try rephrasing with more specific legal terms or section references."
+        return RELEVANCE_EXPLANATION_NO_MATERIALS
 
     bare_text = json.dumps([{"source": c.get("source"), "text": (c.get("text") or "")[:600]} for c in bare_sections], indent=2)[:2500]
     case_text = json.dumps([{"source": c.get("source"), "text": (c.get("text") or "")[:600]} for c in case_laws], indent=2)[:2500]
     net_text = json.dumps([{"title": c.get("title"), "relevant_portion": c.get("relevant_portion", c.get("content", ""))[:500]} for c in internet_cases], indent=2)[:2000]
 
-    prompt = f"""You are an Indian legal research assistant. For each legal provision and case law below, explain in 2-3 sentences WHY it is relevant to the user's case facts. Be specific - connect the law to the facts.
+    prompt = f"""{RELEVANCE_EXPLANATION_SYSTEM}
 
-USER'S CASE FACTS:
+---
+CLIENT'S CASE FACTS:
 {facts[:1200]}
 
 ---
@@ -289,15 +285,7 @@ CASE LAWS (from internet - if any):
 {net_text}
 ---
 
-Provide a structured response:
-
-## Relevant Bare Act Provisions
-For each section: [Act/Source] - [Why this section applies to the user's situation]
-
-## Relevant Case Laws  
-For each case: [Case name/source] - [Why this precedent applies - what principle from the case helps the user]
-
-Be concise. Use bullet points. Focus on practical relevance."""
+Write the analysis as specified above."""
 
     try:
         return ask_llm(prompt).strip()
@@ -384,21 +372,23 @@ def add_case_law_to_index(case_law_data: dict):
 
 
 def generate_summary_for_confirmation(bare_acts: list, case_laws: list) -> str:
-    """Generate a brief summary of internet-sourced materials for user confirmation."""
-    parts = []
+    """Generate a brief summary of internet-sourced materials for user confirmation (advocate-style)."""
+    parts = [SUMMARY_FOR_CONFIRMATION_HEAD, ""]
     if bare_acts:
         parts.append(f"**Bare Act Sections** ({len(bare_acts)} found):")
         for b in bare_acts[:3]:
             parts.append(f"• {b.get('title', 'Unknown')}")
         if len(bare_acts) > 3:
             parts.append(f"  ... and {len(bare_acts) - 3} more")
+        parts.append("")
     if case_laws:
-        parts.append(f"\n**Case Laws** ({len(case_laws)} found):")
+        parts.append(f"**Case Laws** ({len(case_laws)} found):")
         for c in case_laws[:3]:
             parts.append(f"• {c.get('title', 'Unknown')}")
         if len(case_laws) > 3:
             parts.append(f"  ... and {len(case_laws) - 3} more")
-    parts.append("\n\nIf these are relevant to your matter, please confirm to index them and include them in the full legal research response.")
+        parts.append("")
+    parts.append(SUMMARY_FOR_CONFIRMATION_TAIL)
     return "\n".join(parts)
 
 
@@ -432,7 +422,7 @@ def generate_response(facts_summary: str, confirmed_materials: dict = None) -> d
             })
         # Fall through to generate full response below
 
-    # If no local bare acts OR no local case laws (and no confirmed): search internet
+    # When local vector DB has no suitable data: search internet for missing bare acts and/or case laws
     elif not bare_sections or not case_laws_local:
         internet_bare_acts = []
         internet_cases = []

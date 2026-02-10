@@ -1,43 +1,14 @@
 """
-Fact Collection Service - Lawyer-style questioning to gather case facts.
-Uses LLM to ask relevant, logical questions and stops when user has no more information.
+Fact Collection Service - Professional advocate-style client intake.
+Uses LLM to ask relevant, structured questions and stops when user has no more information.
 """
 
 import json
 from llm.ollama_client import ask_llm
-
-FACT_COLLECTION_SYSTEM = """You are an experienced Indian lawyer conducting an initial client intake.
-Your role is to gather all relevant facts about the client's legal matter through plain-language questions.
-
-RULES:
-1. Ask ONE clear, relevant question at a time in plain English.
-2. Ask logical follow-up questions based on what the client has shared.
-3. Cover: parties involved, dates, key events, documents, jurisdiction, relief sought.
-4. Do NOT give legal advice or conclusions - only gather facts.
-5. Keep questions conversational and easy to understand.
-6. If the client says they don't have more information, or "that's all", or "no more", or "nothing else" - STOP asking and output exactly: {"action": "complete", "facts_summary": "<brief summary of all facts gathered>"}
-7. If you need to ask another question, output: {"action": "ask", "question": "<your next question>"}
-8. Always respond with valid JSON only, no other text."""
-
-STOP_PHRASES = [
-    "i don't have more",
-    "i don't have any more",
-    "that's all",
-    "that is all",
-    "no more",
-    "nothing else",
-    "nothing more",
-    "i've told you everything",
-    "that's everything",
-    "no further",
-    "can't provide more",
-    "don't know more",
-    "not sure",
-    "proceed",
-    "generate",
-    "go ahead",
-    "that's it",
-]
+from prompts.advocate_prompts import (
+    FACT_COLLECTION_SYSTEM,
+    STOP_PHRASES,
+)
 
 
 def is_stop_signal(user_message: str) -> bool:
@@ -99,5 +70,5 @@ What is your next question? Output valid JSON only."""
             return {"action": "complete", "facts_summary": facts or user_message}
         return {
             "action": "ask",
-            "question": "Could you share any other relevant details about your situation? If you don't have more information, just say 'that's all' and I'll proceed with the legal research."
+            "question": "Please share any other relevant details—parties, dates, documents, or relief sought. If you have nothing further to add, say 'that's all' or 'proceed' and I shall move to legal research."
         }
