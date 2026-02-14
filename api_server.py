@@ -436,6 +436,9 @@ def _map_chat_result_to_ui(result: dict) -> dict:
             combined_text = f"{greeting}\n\n{explanation}"
         else:
             combined_text = greeting or explanation
+        # Ensure we never send an empty or trivial intro (e.g. just "⚖")
+        if not combined_text or len(combined_text.strip()) < 20:
+            combined_text = "Here’s what I found for your query. Below are the Supreme Court judgments and any relevant provisions."
         return {
             "status": "done",
             "response_type": response_type or "legal_opinion",

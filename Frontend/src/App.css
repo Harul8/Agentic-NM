@@ -169,7 +169,7 @@ body {
 .message {
   display: flex;
   gap: 4px;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
 }
 
@@ -195,7 +195,6 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  margin-top: 5px;
 }
 
 .avatar-user {
@@ -311,10 +310,6 @@ body {
 }
 
 /* Typing indicator - "Nyaymalaw is thinking" with blinking dots inline */
-.message--loading .message-avatar {
-  margin-top: 0;
-}
-
 .typing-indicator {
   display: flex;
   flex-direction: row;
@@ -326,7 +321,7 @@ body {
 }
 
 .typing-indicator-text {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 

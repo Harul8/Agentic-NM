@@ -885,32 +885,18 @@ function App() {
       const bareActs = content.bare_acts || [];
       const caseLaws = content.case_laws || [];
 
-      // Helper: clean navigation noise from text
-      const cleanText = (text) => {
-        if (!text) return "";
-        const noiseWords = [
-          "Skip to main content", "Indian Kanoon", "Search engine for Indian Law",
-          "Main Navigation", "Free features", "Premium features", "Prism AI",
-          "Pricing Login", "Mobile Navigation", "Legal Document View",
-          "Tools for analyzing", "Document Options", "Get in PDF", "Print it",
-          "Download Court Copy", "Search Results Page", "Filter Results",
-          "Accessibility", "Color Contrast", "Font Size", "Hide Images",
-          "Big Cursor", "Toggle More",
-        ];
-        let cleaned = text;
-        for (const w of noiseWords) {
-          cleaned = cleaned.split(w).join("");
-        }
-        return cleaned.replace(/\s{2,}/g, " ").replace(/Login\s*/g, "").trim();
-      };
-
       // Helper: render a single item row inside a grouped box
       const renderResultItem = (item, idx) => {
         const title = item.title || item.act_name || item.source || `Result ${idx + 1}`;
         const url = item.url || "";
-        const rawText = cleanText(item.text || "");
-        // Take first ~400 chars of cleaned text as snippet
-        const snippet = rawText.length > 400 ? rawText.slice(0, 400) + "..." : rawText;
+        const rawText = item.text || "";
+        // Clean: take meaningful sentences, skip very short fragments and navigation-like lines
+        const cleanLines = rawText
+          .split(/[.\n]/)
+          .map(l => l.trim())
+          .filter(l => l.length > 20 && !/^(Skip|Search|Login|Menu|Toggle|Free|Premium|Print|Download|Pricing)/i.test(l));
+        const snippetText = cleanLines.slice(0, 6).join(". ").trim();
+        const snippet = snippetText.length > 400 ? snippetText.slice(0, 400) + "..." : snippetText;
         return (
           <div key={idx} className="result-item-row">
             <div className="result-item-header">
@@ -924,7 +910,7 @@ function App() {
               )}
             </div>
             {snippet && <p className="result-item-snippet">{snippet}</p>}
-            {rawText.length > 450 && (
+            {rawText.length > snippet.length + 50 && (
               <details className="result-item-expand">
                 <summary className="result-item-read-more">Read more</summary>
                 <p className="result-item-full-text">{rawText}</p>
@@ -1477,7 +1463,7 @@ function App() {
                 ))}
 
                 {loading && (
-                  <div className="message message--assistant message--loading">
+                  <div className="message message--assistant">
                     <div className="message-avatar">
                       <span className="avatar-ai">⚖</span>
                     </div>

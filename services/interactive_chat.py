@@ -67,14 +67,32 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
             result_count = result.get("result_count", 5)
             facts = result.get("facts_summary", current_message)
 
-            # Use LLM-generated message; generate one dynamically if empty
+            # Use LLM-generated message; generate one dynamically if empty or just symbol/emoji
             msg = result.get("message", "").strip()
 
-            # For search/lookup intents: pass the query to generate_response
-            # The greeting + summary will be generated together by generate_conversational_summary
-            # to avoid extra LLM calls that cause timeouts
+            # For search/lookup intents: ensure we have a proper greeting before results
             if intent in ("search", "lookup"):
-                return _run_search_or_lookup(facts, intent, result_count, "")
+                # Treat as "too short" if empty, or only symbols/emoji (e.g. "⚖"), or < 15 chars
+                def _is_proper_greeting(m):
+                    if not m or len(m) < 15:
+                        return False
+                    # Reject if it's mostly non-word chars (emoji/symbols)
+                    words = [w for w in m.split() if any(c.isalnum() for c in w)]
+                    return len(words) >= 3
+                if not _is_proper_greeting(msg):
+                    try:
+                        from llm.ollama_client import ask_llm
+                        msg = ask_llm(
+                            f"You are a friendly legal research assistant. The user asked: \"{facts[:400]}\"\n"
+                            "Write 2-3 short sentences: greet them, acknowledge what they asked for, "
+                            "and say you understand their request and what you are going to provide. "
+                            "Be warm and specific. Output only those sentences, no emoji."
+                        ).strip()
+                    except Exception:
+                        msg = ""
+                    if not _is_proper_greeting(msg):
+                        msg = f"I've looked up Supreme Court case laws and related materials for your query. Here's what I found."
+                return _run_search_or_lookup(facts, intent, result_count, msg)
 
             # For legal_opinion: move to response_generation phase (traditional flow)
             return {
