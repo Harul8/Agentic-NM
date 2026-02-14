@@ -1477,7 +1477,7 @@ function App() {
                 ))}
 
                 {loading && (
-                  <div className="message message--assistant">
+                  <div className="message message--assistant message--loading">
                     <div className="message-avatar">
                       <span className="avatar-ai">⚖</span>
                     </div>

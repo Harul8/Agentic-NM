@@ -311,6 +311,10 @@ body {
 }
 
 /* Typing indicator - "Nyaymalaw is thinking" with blinking dots inline */
+.message--loading .message-avatar {
+  margin-top: 0;
+}
+
 .typing-indicator {
   display: flex;
   flex-direction: row;
