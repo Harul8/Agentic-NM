@@ -294,13 +294,12 @@ def search_internet_case_laws(query: str, max_results: int = 5) -> list:
     """Search internet for Indian case law judgments.
     For Supreme Court queries: find judgments via indiankanoon, then link to sci.gov.in PDFs."""
     is_sc = _is_supreme_court_query(query)
+    print(f"[CASE_SEARCH] query='{query[:80]}', is_sc={is_sc}, max={max_results}")
 
     if is_sc:
-        # Use indiankanoon for actual SC judgment content, plus scr.sci.gov.in
         queries = [
             f"{query} Supreme Court site:indiankanoon.org",
             f"{query} Supreme Court of India judgment site:indiankanoon.org",
-            f"{query} site:scr.sci.gov.in",
         ]
     else:
         queries = [
@@ -319,33 +318,45 @@ def search_internet_case_laws(query: str, max_results: int = 5) -> list:
                 if len(results) >= max_results:
                     break
                 try:
+                    print(f"[CASE_SEARCH] Searching: {q[:80]}...")
                     for r in ddgs.text(q, max_results=max_results * 2):
                         url = r.get("href", "")
                         if not url or url in seen_urls:
                             continue
                         if not _is_judgment_url(url):
+                            print(f"[CASE_SEARCH] Rejected URL: {url[:80]}")
                             continue
                         seen_urls.add(url)
                         title = r.get("title", "Unknown")
-
-                        # For SC cases: try to find the official PDF on sci.gov.in
-                        sci_pdf = ""
-                        if is_sc:
-                            sci_pdf = _find_sci_pdf_url(title)
+                        print(f"[CASE_SEARCH] Found: {title[:60]} -> {url[:60]}")
 
                         results.append({
                             "title": title,
-                            "url": url,            # for fetching content
-                            "sci_pdf": sci_pdf,     # official SC PDF link
+                            "url": url,
+                            "sci_pdf": "",  # Will try to find PDF later, don't block search
                             "snippet": (r.get("body") or "")[:400],
                         })
                         if len(results) >= max_results:
                             break
-                except Exception:
+                except Exception as e:
+                    print(f"[CASE_SEARCH] Query failed: {e}")
                     continue
 
+        # After collecting results, try to find SC PDF links (best-effort, don't fail on error)
+        if is_sc:
+            for r in results:
+                try:
+                    sci_pdf = _find_sci_pdf_url(r["title"])
+                    if sci_pdf:
+                        r["sci_pdf"] = sci_pdf
+                        print(f"[CASE_SEARCH] PDF found: {sci_pdf[:60]}")
+                except Exception:
+                    pass  # PDF link is optional, don't fail
+
+        print(f"[CASE_SEARCH] Total results: {len(results)}")
         return results[:max_results]
-    except Exception:
+    except Exception as e:
+        print(f"[CASE_SEARCH] FATAL: {e}")
         return []
 
 
@@ -818,6 +829,7 @@ def generate_response(facts_summary: str, confirmed_materials: dict = None, top_
 
     bare_sections = list(retrieve_bare_acts(search_query, top_k=top_k))
     case_laws_local = list(retrieve_case_laws(search_query, top_k=top_k))
+    print(f"[GENERATE] Local: {len(bare_sections)} bare acts, {len(case_laws_local)} case laws")
 
     # If user confirmed materials, add them and generate full response
     if confirmed_materials:
@@ -837,6 +849,7 @@ def generate_response(facts_summary: str, confirmed_materials: dict = None, top_
         # Fall through to generate full response below
 
     # When local vector DB has no suitable data: search internet and USE results directly
+    print(f"[GENERATE] Need web search? bare={not bare_sections}, case={not case_laws_local}")
     if not bare_sections or not case_laws_local:
         if not bare_sections:
             bare_results = search_internet_bare_acts(legal_query, max_results=top_k)
@@ -864,35 +877,46 @@ def generate_response(facts_summary: str, confirmed_materials: dict = None, top_
                     })
 
         if not case_laws_local:
+            print(f"[GENERATE] Starting web case law search...")
             web_results = search_internet_case_laws(legal_query, max_results=top_k)
-            for r in web_results:
-                # Try fetching from the source URL (indiankanoon, scr.sci.gov.in, etc.)
-                content = fetch_case_content(r.get("url", ""))
-                # If source URL gave no content and we have a sci_pdf, try the PDF
-                if not content and r.get("sci_pdf"):
-                    content = fetch_case_content(r.get("sci_pdf"))
-                # Always clean the content of navigation noise
-                if content:
-                    content = _clean_scraped_text(content)
-                relevant_portion = ""
-                if content and _is_readable_text(content):
-                    relevant_portion = extract_relevant_case_portions(
-                        facts_summary, r.get("title", ""), content
-                    )
-                text = relevant_portion if _is_readable_text(relevant_portion) else ""
-                if not text and content and _is_readable_text(content):
-                    text = content[:1500]
-                if not text:
-                    # Clean the snippet too
-                    text = _clean_scraped_text(r.get("snippet", ""))
-                if text and _is_readable_text(text):
-                    # Use sci.gov.in PDF as primary link if available, else the source URL
-                    display_url = r.get("sci_pdf") or r.get("url", "")
-                    case_laws_local.append({
-                        "source": r.get("title", "Internet"),
-                        "text": text,
-                        "url": display_url,
-                    })
+            print(f"[GENERATE] Web search returned {len(web_results)} case law results")
+            for idx, r in enumerate(web_results):
+                try:
+                    print(f"[GENERATE] Processing case {idx+1}: {r.get('title', '?')[:60]}")
+                    # Try fetching from the source URL (indiankanoon, scr.sci.gov.in, etc.)
+                    content = fetch_case_content(r.get("url", ""))
+                    print(f"[GENERATE]   Content from URL: {len(content)} chars")
+                    # If source URL gave no content and we have a sci_pdf, try the PDF
+                    if not content and r.get("sci_pdf"):
+                        content = fetch_case_content(r.get("sci_pdf"))
+                        print(f"[GENERATE]   Content from PDF: {len(content)} chars")
+                    # Always clean the content of navigation noise
+                    if content:
+                        content = _clean_scraped_text(content)
+                    relevant_portion = ""
+                    if content and _is_readable_text(content):
+                        relevant_portion = extract_relevant_case_portions(
+                            facts_summary, r.get("title", ""), content
+                        )
+                        print(f"[GENERATE]   LLM summary: {len(relevant_portion)} chars")
+                    text = relevant_portion if _is_readable_text(relevant_portion) else ""
+                    if not text and content and _is_readable_text(content):
+                        text = content[:1500]
+                    if not text:
+                        text = _clean_scraped_text(r.get("snippet", ""))
+                    if text and _is_readable_text(text):
+                        display_url = r.get("sci_pdf") or r.get("url", "")
+                        case_laws_local.append({
+                            "source": r.get("title", "Internet"),
+                            "text": text,
+                            "url": display_url,
+                        })
+                        print(f"[GENERATE]   ADDED case law #{len(case_laws_local)}")
+                    else:
+                        print(f"[GENERATE]   SKIPPED - no readable text")
+                except Exception as e:
+                    print(f"[GENERATE]   ERROR processing case: {e}")
+            print(f"[GENERATE] Final case laws: {len(case_laws_local)}")
 
     # Generate explanation: conversational for search/lookup, formal for legal_opinion
     if intent in ("search", "lookup"):

@@ -1,0 +1,40 @@
+# Virtual environment
+ai-gpu/
+
+# Data folder (DB, chat history, vector indices)
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node / Frontend build
+node_modules/
+Frontend/dist/
+Frontend/.env
+
+# Logs
+*.log
