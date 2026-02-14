@@ -128,9 +128,6 @@ function App() {
   // -------------------------
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
-  const firstReplyText = currentUserName
-    ? `Namasthe ${currentUserName} 🙏, please describe your case in detail as much as you are aware of, it would help me assist you better.`
-    : "Namasthe 🙏, please describe your case in detail as much as you are aware of, it would help me assist you better.";
   const [phase, setPhase] = useState("fact_collection"); // Retain existing phase logic
   const [factsSummary, setFactsSummary] = useState(null); // Retain existing
   const [pendingMaterials, setPendingMaterials] = useState(null); // Retain existing
@@ -532,7 +529,7 @@ function App() {
             ...prev,
             {
               role: "assistant",
-              content: prev.length === 1 ? firstReplyText : data.next_question,
+              content: data.next_question,
               timestamp: new Date().toISOString(),
             },
           ]);
@@ -546,7 +543,14 @@ function App() {
           setRetrieved(retr);
           const newAssistantMsg = {
             role: "assistant",
-            content: { type: "final_opinion", opinionText: opinion, retrieved: retr },
+            content: {
+              type: "final_opinion",
+              response_type: data.response_type || "legal_opinion",
+              opinionText: opinion,
+              bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
+              case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
+              retrieved: retr,
+            },
             timestamp: new Date().toISOString(),
           };
           setMessages((prev) => [...prev, newAssistantMsg]);
@@ -561,10 +565,7 @@ function App() {
             },
           ]);
         } else {
-          setError(
-            data.message ||
-              "The interviewer response was unclear. Please try again."
-          );
+          if (data.message) setError(data.message);
         }
       } catch (err) {
         console.error("submit_case error:", err);
@@ -624,7 +625,14 @@ function App() {
           setRetrieved(retr);
           const newAssistantMsg = {
             role: "assistant",
-            content: { type: "final_opinion", opinionText: opinion, retrieved: retr },
+            content: {
+              type: "final_opinion",
+              response_type: data.response_type || "legal_opinion",
+              opinionText: opinion,
+              bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
+              case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
+              retrieved: retr,
+            },
             timestamp: new Date().toISOString(),
           };
           setMessages((prev) => [...prev, newAssistantMsg]);
@@ -639,10 +647,7 @@ function App() {
             },
           ]);
         } else {
-          setError(
-            data.message ||
-              "The interviewer response was unclear. Please try again."
-          );
+          if (data.message) setError(data.message);
         }
       } catch (err) {
         console.error("interview_step error:", err);
@@ -687,7 +692,7 @@ function App() {
           setError(data.detail || `Request failed (${res.status})`);
           setMessages((prev) => [
             ...prev,
-            { role: "assistant", content: (data.detail && String(data.detail)) || "Something went wrong. Please try again.", timestamp: new Date().toISOString() },
+            { role: "assistant", content: (data.detail && String(data.detail)) || "", timestamp: new Date().toISOString() },
           ]);
           return;
         }
@@ -707,7 +712,14 @@ function App() {
             ...prev,
             {
               role: "assistant",
-              content: { type: "final_opinion", opinionText: opinion, retrieved: retr },
+              content: {
+                type: "final_opinion",
+                response_type: data.response_type || "legal_opinion",
+                opinionText: opinion,
+                bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
+                case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
+                retrieved: retr,
+              },
               timestamp: new Date().toISOString(),
             },
           ]);
@@ -869,38 +881,127 @@ function App() {
     }
     if (content.type === "final_opinion") {
       const opinion = content.opinionText || "";
-      const retr = content.retrieved || [];
+      const responseType = content.response_type || "legal_opinion";
+      const bareActs = content.bare_acts || [];
+      const caseLaws = content.case_laws || [];
+
+      // Helper: clean navigation noise from text
+      const cleanText = (text) => {
+        if (!text) return "";
+        const noiseWords = [
+          "Skip to main content", "Indian Kanoon", "Search engine for Indian Law",
+          "Main Navigation", "Free features", "Premium features", "Prism AI",
+          "Pricing Login", "Mobile Navigation", "Legal Document View",
+          "Tools for analyzing", "Document Options", "Get in PDF", "Print it",
+          "Download Court Copy", "Search Results Page", "Filter Results",
+          "Accessibility", "Color Contrast", "Font Size", "Hide Images",
+          "Big Cursor", "Toggle More",
+        ];
+        let cleaned = text;
+        for (const w of noiseWords) {
+          cleaned = cleaned.split(w).join("");
+        }
+        return cleaned.replace(/\s{2,}/g, " ").replace(/Login\s*/g, "").trim();
+      };
+
+      // Helper: render a single item row inside a grouped box
+      const renderResultItem = (item, idx) => {
+        const title = item.title || item.act_name || item.source || `Result ${idx + 1}`;
+        const url = item.url || "";
+        const rawText = cleanText(item.text || "");
+        // Take first ~400 chars of cleaned text as snippet
+        const snippet = rawText.length > 400 ? rawText.slice(0, 400) + "..." : rawText;
+        return (
+          <div key={idx} className="result-item-row">
+            <div className="result-item-header">
+              <span className="result-item-number">{idx + 1}.</span>
+              {url ? (
+                <a href={url} target="_blank" rel="noopener noreferrer" className="result-item-title-link">
+                  {title}
+                </a>
+              ) : (
+                <span className="result-item-title">{title}</span>
+              )}
+            </div>
+            {snippet && <p className="result-item-snippet">{snippet}</p>}
+            {rawText.length > 450 && (
+              <details className="result-item-expand">
+                <summary className="result-item-read-more">Read more</summary>
+                <p className="result-item-full-text">{rawText}</p>
+              </details>
+            )}
+            {url && (
+              <a href={url} target="_blank" rel="noopener noreferrer" className="result-item-source-link">
+                View original source
+              </a>
+            )}
+          </div>
+        );
+      };
+
+      // Helper: render a grouped box (one for bare acts, one for case laws)
+      const renderGroupBox = (heading, items) => {
+        if (!items || items.length === 0) return null;
+        return (
+          <div className="results-group-box">
+            <h4 className="results-group-heading">{heading}</h4>
+            <div className="results-group-items">
+              {items.map((item, idx) => renderResultItem(item, idx))}
+            </div>
+          </div>
+        );
+      };
+
+      // ---------- search_results / lookup_results (conversational, like ChatGPT) ----------
+      if (responseType === "search_results" || responseType === "lookup_results") {
+        return (
+          <div className="message-final-opinion message-search-results conversational-response">
+            {/* High-level summary always comes first */}
+            {opinion && (
+              <div className="conversational-summary-block">
+                {opinion.split("\n").filter(l => l.trim()).map((para, i) => (
+                  <p key={i} className="conversational-summary-para">{para}</p>
+                ))}
+              </div>
+            )}
+
+            {/* Supreme Court Judgments always shown first for search, then bare acts */}
+            {responseType === "search_results" ? (
+              <>
+                {renderGroupBox("Supreme Court Judgments", caseLaws)}
+                {bareActs.length > 0 && renderGroupBox("Relevant Bare Acts", bareActs)}
+              </>
+            ) : (
+              <>
+                {renderGroupBox("Relevant Bare Acts", bareActs)}
+                {caseLaws.length > 0 && renderGroupBox("Supreme Court Judgments", caseLaws)}
+              </>
+            )}
+            {bareActs.length === 0 && caseLaws.length === 0 && (
+              <p className="search-empty">No results were found. Try refining your query with more specific legal terms.</p>
+            )}
+          </div>
+        );
+      }
+
+      // ---------- legal_opinion (formal layout with header + PDF download) ----------
       return (
         <div className="message-final-opinion">
           <div className="final-output-header final-output-header--chat">
-            <h4 className="opinion-title">Final Legal Opinion</h4>
+            <h4 className="opinion-title">Legal Opinion</h4>
             <button
               type="button"
               onClick={handleDownloadPdf}
               className="download-pdf-button"
             >
-              📄 Download as PDF
+              Download as PDF
             </button>
           </div>
-          <p className="opinion-text">{opinion}</p>
-          <h4 className="bare-acts-used-title">📚 Bare Acts Used (Top-k Context)</h4>
-          {retr.length > 0 ? (
-            <div className="retrieved-list">
-              {retr.map((item, idx) => {
-                const meta = item.meta || {};
-                const actName = meta.act_name || "Unknown Act";
-                const text = item.text || "";
-                const snippet = text.length > 1000 ? text.slice(0, 1000) + " [...]" : text;
-                return (
-                  <details key={idx} className="retrieved-details">
-                    <summary className="retrieved-summary">[{idx + 1}] {actName}</summary>
-                    <p className="retrieved-text">{snippet || "_No text snippet available for this chunk._"}</p>
-                  </details>
-                );
-              })}
-            </div>
-          ) : (
-            <p className="bare-acts-used-empty-message">No Bare Act extracts were retrieved for this query.</p>
+          {opinion && <p className="opinion-text">{opinion}</p>}
+          {renderGroupBox("Relevant Bare Acts", bareActs)}
+          {renderGroupBox("Relevant Case Laws", caseLaws)}
+          {bareActs.length === 0 && caseLaws.length === 0 && (
+            <p className="search-empty">No supporting materials were retrieved for this query.</p>
           )}
         </div>
       );
@@ -1382,7 +1483,7 @@ function App() {
                     </div>
                     <div className="message-content">
                       <div className="message-bubble message-bubble--assistant typing-indicator">
-                        <span className="typing-indicator-text">Nyaymalaw is thinking...</span>
+                        <span className="typing-indicator-text">Nyaymalaw is thinking</span>
                         <span className="typing-dots">
                           <span className="typing-dot" />
                           <span className="typing-dot" />

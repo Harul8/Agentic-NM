@@ -387,11 +387,23 @@ def _list_bare_acts_from_disk() -> list[str]:
 
 
 def _chat_error_fallback(detail: str = "") -> dict:
-    """Return a safe 200 response when chat processing fails so frontend does not see 500."""
+    """Return a safe 200 response when chat processing fails so frontend does not see 500.
+    We try to generate a message from the LLM; if that also fails we use a minimal technical note."""
+    try:
+        from llm.ollama_client import ask_llm
+        error_context = f" (Technical detail: {detail})" if detail else ""
+        msg = ask_llm(
+            f"You are a legal assistant. Something went wrong while processing the user's request.{error_context} "
+            "Write a short, friendly one-sentence apology to the user asking them to try again. Do not mention technical details."
+        ).strip()
+        if msg:
+            return {"status": "question", "next_question": msg, "retrieved": []}
+    except Exception:
+        pass
+    # Absolute last resort (LLM itself is down)
     return {
         "status": "question",
-        "next_question": "Something went wrong while processing. Please try again or rephrase. If the issue persists, ensure Ollama is running and the model is available (e.g. ollama run qwen2.5:7b-instruct)."
-        + (f" ({detail})" if detail else ""),
+        "next_question": "",
         "retrieved": [],
     }
 
@@ -399,6 +411,8 @@ def _chat_error_fallback(detail: str = "") -> dict:
 def _map_chat_result_to_ui(result: dict) -> dict:
     """Map process_chat result to the shape the frontend expects (status, next_question, etc.)."""
     phase = result.get("phase")
+    response_type = result.get("response_type")  # "search_results", "lookup_results", "legal_opinion"
+
     if phase == "fact_collection":
         return {
             "status": "question",
@@ -413,11 +427,22 @@ def _map_chat_result_to_ui(result: dict) -> dict:
         }
     if phase == "done" and result.get("response"):
         resp = result["response"]
-        retrieved = (resp.get("case_laws") or []) + (resp.get("bare_act_sections") or [])
+        bare_acts = resp.get("bare_act_sections") or []
+        case_laws = resp.get("case_laws") or []
+        # Combine greeting/acknowledgment message with the explanation/summary
+        greeting = (result.get("message") or "").strip()
+        explanation = (resp.get("explanation") or "").strip()
+        if greeting and explanation:
+            combined_text = f"{greeting}\n\n{explanation}"
+        else:
+            combined_text = greeting or explanation
         return {
             "status": "done",
-            "opinion_text": resp.get("explanation", ""),
-            "retrieved": retrieved,
+            "response_type": response_type or "legal_opinion",
+            "opinion_text": combined_text,
+            "bare_acts": bare_acts,
+            "case_laws": case_laws,
+            "retrieved": case_laws + bare_acts,  # backward compat
         }
     # Fallback: treat as next question
     return {
@@ -539,7 +564,7 @@ def submit_case(request: SubmitCaseRequest):
     if not text:
         return {
             "status": "question",
-            "next_question": "Please describe your legal issue or the facts of your case in a few sentences.",
+            "next_question": "",
             "retrieved": [],
         }
     try:
@@ -574,7 +599,7 @@ def interview_step(request: InterviewStepRequest):
     if not qa_history:
         return {
             "status": "question",
-            "next_question": "Please share more details about your case.",
+            "next_question": "",
             "retrieved": [],
         }
     try:
@@ -612,7 +637,7 @@ def continue_chat(request: ContinueChatRequest):
     if not message:
         return {
             "status": "question",
-            "next_question": "Please type your follow-up or additional details.",
+            "next_question": "",
             "retrieved": [],
         }
     try:

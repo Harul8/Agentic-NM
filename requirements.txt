@@ -1,39 +1,39 @@
-# Core framework
-crewai==1.5.0
+# API server
+fastapi
+uvicorn[standard]
 pydantic>=2.6
 
-# Required by CrewAI to resolve model strings like "ollama/mistral:7b"
+# CrewAI agents + LLM resolution
+crewai>=1.5.0
 litellm
 
-# Streamlit UI
-streamlit==1.50.0
+# MCP (Model Context Protocol) server
+mcp>=1.23.0
+anyio
 
-# Vector search
+# HTTP
+requests
+
+# Vector search & embeddings
 faiss-cpu
+numpy
+sentence-transformers
+torch
 
 # PDF processing
 pdfplumber
 pypdf
 
-# Numerical & arrays
-numpy
-tqdm
+# Web scraping (Ingestion)
+beautifulsoup4
 
-# HTTP requests (Ollama + web fetch)
-requests
-
-# Internet search
+# Search (Ingestion / case law)
 ddgs
 
-# Embeddings + tokenization helpers
-sentence-transformers
+# Progress & utilities
+tqdm
 
-# OCR fallback (optional but safe)
+# Optional: OCR fallback for PDFs
 pytesseract
 pillow
 
-# Database
-sqlite-utils
-
-# Environment variables
-python-dotenv

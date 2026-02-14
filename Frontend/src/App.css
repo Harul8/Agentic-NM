@@ -169,7 +169,7 @@ body {
 .message {
   display: flex;
   gap: 4px;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
 }
 
@@ -195,6 +195,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 1rem;
+  margin-top: 5px;
 }
 
 .avatar-user {
@@ -235,9 +236,9 @@ body {
 }
 
 .message-bubble {
-  padding: 16px 20px;
+  padding: 12px 16px;
   border-radius: 18px;
-  font-size: 1rem;
+  font-size: 0.88rem;
   line-height: 1.6;
   max-width: 100%;
 }
@@ -309,16 +310,15 @@ body {
   word-break: break-word;
 }
 
-/* Typing indicator - "Nyaymalaw is thinking..." in a grey bubble */
+/* Typing indicator - "Nyaymalaw is thinking" with blinking dots inline */
 .typing-indicator {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: flex-start;
-  padding: 16px 20px;
-  background: #e5e7eb;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+  background: none;
+  padding: 0;
   color: #374151;
-  border-radius: 18px;
 }
 
 .typing-indicator-text {
@@ -327,7 +327,7 @@ body {
 }
 
 .typing-dots {
-  display: flex;
+  display: inline-flex;
   gap: 4px;
   align-items: center;
 }
@@ -1343,7 +1343,7 @@ body {
 }
 .message-final-opinion .opinion-title {
   margin: 0 0 8px 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 .message-final-opinion .final-output-header--chat {
   display: flex;
@@ -1361,6 +1361,142 @@ body {
 }
 .message-final-opinion .download-pdf-button {
   flex-shrink: 0;
+}
+
+/* Grouped results box (one for Bare Acts, one for Case Laws) */
+.results-group-box {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  margin-top: 14px;
+  overflow: hidden;
+  background: #fafbfc;
+}
+
+.results-group-heading {
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #2c3e50;
+  background: #f0f2f5;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.results-group-items {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Individual item row inside a grouped box */
+.result-item-row {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+.result-item-row:last-child {
+  border-bottom: none;
+}
+
+.result-item-header {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.result-item-number {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.result-item-title-link {
+  font-weight: 600;
+  font-size: 0.84rem;
+  color: #1a73e8;
+  text-decoration: none;
+  line-height: 1.3;
+}
+.result-item-title-link:hover {
+  text-decoration: underline;
+}
+
+.result-item-title {
+  font-weight: 600;
+  font-size: 0.84rem;
+  color: #2c3e50;
+  line-height: 1.3;
+}
+
+.result-item-snippet {
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 4px 0 6px 0;
+}
+
+.result-item-expand {
+  margin: 4px 0;
+}
+
+.result-item-read-more {
+  font-size: 0.78rem;
+  color: #1a73e8;
+  cursor: pointer;
+  font-weight: 500;
+}
+.result-item-read-more:hover {
+  text-decoration: underline;
+}
+
+.result-item-full-text {
+  white-space: pre-wrap;
+  font-size: 0.78rem;
+  color: #444;
+  line-height: 1.5;
+  margin-top: 6px;
+  padding: 8px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.result-item-source-link {
+  display: inline-block;
+  font-size: 0.73rem;
+  color: #888;
+  margin-top: 6px;
+  text-decoration: none;
+}
+.result-item-source-link:hover {
+  color: #1a73e8;
+  text-decoration: underline;
+}
+
+/* Conversational response (search/lookup — fluid, like ChatGPT) */
+.conversational-summary-block {
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.conversational-summary-para {
+  font-size: 0.86rem;
+  color: #333;
+  line-height: 1.65;
+  margin: 0 0 8px 0;
+}
+.conversational-summary-para:last-child {
+  margin-bottom: 0;
+}
+
+/* Empty state for search/lookup */
+.search-empty {
+  color: #666;
+  font-style: italic;
+  font-size: 0.9rem;
+  padding: 12px 0;
 }
 
 .retrieved-summary {

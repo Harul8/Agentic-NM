@@ -1,14 +1,41 @@
 """
 Interactive Chat Orchestrator - Handles multi-phase legal chat flow:
-1. Fact collection (professional advocate intake)
+1. Fact collection (professional advocate intake) with intent detection
 2. Response generation (bare acts + case laws + structured opinion)
 3. Case law confirmation & indexing
+
+Intents (detected during fact collection):
+- "search" — find case laws / judgments → skip to research immediately
+- "lookup" — find bare act sections → skip to research immediately
+- "legal_opinion" — user has a problem → interactive fact collection, then full opinion
 """
 
 from services.fact_collector import get_next_question_or_complete, is_stop_signal
 from services.response_generator import generate_response
 from services.case_law_indexer_incremental import index_new_case_laws
-from prompts.advocate_prompts import TRANSITION_TO_RESEARCH
+
+
+def _run_search_or_lookup(facts_summary: str, intent: str, top_k: int, msg: str) -> dict:
+    """Handle search/lookup intents: go straight to generate_response and return results."""
+    resp = generate_response(facts_summary, top_k=top_k, intent=intent)
+
+    # Map intent to response_type
+    response_type = "search_results" if intent == "search" else "lookup_results"
+
+    return {
+        "phase": "done",
+        "message": msg,
+        "facts_summary": facts_summary,
+        "response": {
+            "bare_act_sections": resp.get("bare_act_sections", []),
+            "case_laws": resp.get("case_laws", []),
+            "internet_case_laws": resp.get("internet_case_laws", []),
+            "explanation": resp.get("explanation", ""),
+        },
+        "response_type": response_type,
+        "materials_to_confirm": None,
+        "indexed": False,
+    }
 
 
 def process_chat(conversation: list, current_message: str, phase: str, facts_summary: str = None) -> dict:
@@ -27,6 +54,7 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
             message: str (assistant message to display),
             facts_summary: str (if fact collection complete),
             response: dict (if response generated - bare_act_sections, case_laws, internet_case_laws, explanation),
+            response_type: str ("search_results" | "lookup_results" | "legal_opinion"),
             case_laws_to_confirm: list (internet case laws for user to confirm),
             indexed: bool (if case laws were indexed)
         }
@@ -35,20 +63,38 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
         result = get_next_question_or_complete(conversation, current_message)
 
         if result.get("action") == "complete":
+            intent = result.get("intent", "legal_opinion")
+            result_count = result.get("result_count", 5)
+            facts = result.get("facts_summary", current_message)
+
+            # Use LLM-generated message; generate one dynamically if empty
+            msg = result.get("message", "").strip()
+
+            # For search/lookup intents: pass the query to generate_response
+            # The greeting + summary will be generated together by generate_conversational_summary
+            # to avoid extra LLM calls that cause timeouts
+            if intent in ("search", "lookup"):
+                return _run_search_or_lookup(facts, intent, result_count, "")
+
+            # For legal_opinion: move to response_generation phase (traditional flow)
             return {
                 "phase": "response_generation",
-                "message": TRANSITION_TO_RESEARCH,
-                "facts_summary": result.get("facts_summary", current_message),
+                "message": msg,
+                "facts_summary": facts,
                 "response": None,
+                "response_type": None,
                 "case_laws_to_confirm": None,
                 "indexed": False,
             }
         else:
+            # Use LLM-generated question (reply_to_client)
+            msg = (result.get("question") or "").strip()
             return {
                 "phase": "fact_collection",
-                "message": result.get("question", "Please share any further relevant details."),
+                "message": msg,
                 "facts_summary": None,
                 "response": None,
+                "response_type": None,
                 "case_laws_to_confirm": None,
                 "indexed": False,
             }
@@ -71,6 +117,7 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
                     "internet_case_laws": [],
                     "explanation": resp.get("summary", resp.get("explanation", "")),
                 },
+                "response_type": "legal_opinion",
                 "materials_to_confirm": {
                     "bare_acts": bare_to_confirm,
                     "case_laws": case_to_confirm,
@@ -88,26 +135,28 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
                 "internet_case_laws": resp.get("internet_case_laws", []),
                 "explanation": resp.get("explanation", ""),
             },
+            "response_type": "legal_opinion",
             "materials_to_confirm": None,
             "indexed": False,
         }
 
     elif phase == "confirm_index":
-        # Handled by separate index endpoint - not here
         return {
             "phase": "done",
-            "message": "Please confirm the materials above to index them and generate the full legal analysis.",
+            "message": "",
             "facts_summary": facts_summary,
             "response": None,
+            "response_type": None,
             "case_laws_to_confirm": None,
             "indexed": False,
         }
 
     return {
         "phase": "done",
-        "message": "Is there anything else you would like me to research or clarify?",
+        "message": "",
         "facts_summary": None,
         "response": None,
+        "response_type": None,
         "case_laws_to_confirm": None,
         "indexed": False,
     }
