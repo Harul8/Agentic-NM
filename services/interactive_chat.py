@@ -17,10 +17,21 @@ from services.case_law_indexer_incremental import index_new_case_laws
 
 def _run_search_or_lookup(facts_summary: str, intent: str, top_k: int, msg: str) -> dict:
     """Handle search/lookup intents: go straight to generate_response and return results."""
-    resp = generate_response(facts_summary, top_k=top_k, intent=intent)
+    try:
+        resp = generate_response(facts_summary, top_k=top_k, intent=intent)
+    except Exception as e:
+        resp = {
+            "bare_act_sections": [],
+            "case_laws": [],
+            "internet_case_laws": [],
+            "explanation": f"I couldn't complete your search right now. Please try again or rephrase your query. ({str(e)[:100]})",
+        }
 
     # Map intent to response_type
     response_type = "search_results" if intent == "search" else "lookup_results"
+    explanation = (resp.get("explanation") or "").strip()
+    if not explanation:
+        explanation = "Here’s what I found for your query. Below are any relevant materials."
 
     return {
         "phase": "done",
@@ -30,7 +41,7 @@ def _run_search_or_lookup(facts_summary: str, intent: str, top_k: int, msg: str)
             "bare_act_sections": resp.get("bare_act_sections", []),
             "case_laws": resp.get("case_laws", []),
             "internet_case_laws": resp.get("internet_case_laws", []),
-            "explanation": resp.get("explanation", ""),
+            "explanation": explanation,
         },
         "response_type": response_type,
         "materials_to_confirm": None,

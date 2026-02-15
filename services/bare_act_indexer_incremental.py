@@ -9,11 +9,7 @@ import numpy as np
 import torch
 from sentence_transformers import SentenceTransformer
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VECTOR_STORE = os.path.join(BASE_DIR, "data", "vector_store")
-BARE_INDEX = os.path.join(VECTOR_STORE, "bareacts.index")
-BARE_CHUNKS = os.path.join(VECTOR_STORE, "bareacts_chunks.json")
-BARE_ACTS_DIR = os.path.join(BASE_DIR, "data", "BareActs")
+from config import VECTOR_STORE, BARE_INDEX, BARE_CHUNKS, BARE_ACTS_DIR
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 embedder = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2", device=device)
@@ -75,19 +71,24 @@ def index_new_bare_acts(bare_acts: list) -> dict:
         return {"success": False, "chunks_added": 0, "message": "No valid content to index"}
 
     dim = len(all_embeddings[0])
-    if os.path.exists(BARE_INDEX):
-        index = faiss.read_index(BARE_INDEX)
-        if index.d != dim:
-            return {"success": False, "chunks_added": 0, "message": "Dimension mismatch with existing index"}
-    else:
-        index = faiss.IndexFlatIP(dim)
-
-    index.add(np.array(all_embeddings, dtype="float32"))
-    faiss.write_index(index, BARE_INDEX)
+    try:
+        if os.path.exists(BARE_INDEX):
+            index = faiss.read_index(BARE_INDEX)
+            if index.d != dim:
+                return {"success": False, "chunks_added": 0, "message": "Dimension mismatch with existing index"}
+        else:
+            index = faiss.IndexFlatIP(dim)
+        index.add(np.array(all_embeddings, dtype="float32"))
+        faiss.write_index(index, BARE_INDEX)
+    except Exception as e:
+        return {"success": False, "chunks_added": 0, "message": f"Vector store path not writable (e.g. Drive path on Windows): {str(e)[:80]}"}
 
     chunk_store.update(new_chunks)
-    with open(BARE_CHUNKS, "w", encoding="utf-8") as f:
-        json.dump(chunk_store, f, indent=2)
+    try:
+        with open(BARE_CHUNKS, "w", encoding="utf-8") as f:
+            json.dump(chunk_store, f, indent=2)
+    except Exception:
+        pass
 
     return {
         "success": True,

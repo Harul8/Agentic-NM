@@ -28,11 +28,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Paths and DB (must be before auth routes)
-_THIS_FILE = os.path.abspath(os.path.normpath(__file__))
-_BASE_DIR = os.path.dirname(_THIS_FILE)
-_CHAT_HISTORY_DIR = os.path.join(_BASE_DIR, "data", "chat_history")
-_DB_PATH = os.path.join(_CHAT_HISTORY_DIR, "app.db")
+# Paths and DB (must be before auth routes) – use config for data root (e.g. Google Drive)
+from config import (
+    CHAT_HISTORY_DIR as _CHAT_HISTORY_DIR,
+    DB_PATH as _DB_PATH,
+    BARE_ACTS_DIR as _BARE_ACTS_DIR,
+    VECTOR_STORE as _VECTOR_STORE,
+)
+_BASE_DIR = os.path.dirname(os.path.abspath(os.path.normpath(__file__)))
 
 
 def _hash_password(password: str) -> str:
@@ -43,6 +46,10 @@ def _get_db():
     conn = sqlite3.connect(_DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
+
+
+# Anonymous user used when no auth token (auth disabled for direct access)
+_ANONYMOUS_EMAIL = "anonymous@nyaymalaw.local"
 
 
 def _init_auth_db():
@@ -75,6 +82,14 @@ def _init_auth_db():
             );
         """)
         conn.commit()
+        # Ensure anonymous user exists for no-login access
+        cur = conn.execute("SELECT id FROM users WHERE email = ?", (_ANONYMOUS_EMAIL,))
+        if cur.fetchone() is None:
+            conn.execute(
+                "INSERT INTO users (email, password_hash, name) VALUES (?, ?, ?)",
+                (_ANONYMOUS_EMAIL, "", "Guest"),
+            )
+            conn.commit()
     finally:
         conn.close()
 
@@ -85,8 +100,19 @@ security = HTTPBearer(auto_error=False)
 
 
 def _user_from_token(credentials: Optional[HTTPAuthorizationCredentials] = Depends(security)):
+    """Return user from token, or anonymous user when no token (auth disabled)."""
     if not credentials or (credentials.credentials or "").strip() == "":
-        raise HTTPException(status_code=401, detail="Not authenticated")
+        conn = _get_db()
+        try:
+            row = conn.execute(
+                "SELECT id, email, name FROM users WHERE email = ?",
+                (_ANONYMOUS_EMAIL,),
+            ).fetchone()
+            if row:
+                return {"id": row["id"], "email": row["email"], "name": row["name"]}
+        finally:
+            conn.close()
+        return {"id": 0, "email": _ANONYMOUS_EMAIL, "name": "Guest"}
     token = credentials.credentials.strip()
     conn = _get_db()
     try:
@@ -127,7 +153,7 @@ class ChatPayload(BaseModel):
 def auth_register(req: RegisterRequest):
     email = (req.email or "").strip().lower()
     name = (req.name or "").strip()
-    password = req.password or ""
+    password = (req.password or "").strip()
     if not email or not password:
         raise HTTPException(status_code=400, detail="Email and password required")
     if len(password) < 6:
@@ -160,7 +186,7 @@ def auth_register(req: RegisterRequest):
 @app.post("/auth/login")
 def auth_login(req: LoginRequest):
     email = (req.email or "").strip().lower()
-    password = req.password or ""
+    password = (req.password or "").strip()
     if not email or not password:
         raise HTTPException(status_code=400, detail="Email and password required")
     password_hash = _hash_password(password)
@@ -348,8 +374,6 @@ def _build_conv(messages: list[ChatMessage] | None) -> list[dict]:
 
 
 # Path to vector store and BareActs directory – resolve from this file’s location
-_BARE_CHUNKS_PATH = os.path.join(_BASE_DIR, "data", "vector_store", "bareacts_chunks.json")
-_BARE_ACTS_DIR = os.path.normpath(os.path.join(_BASE_DIR, "data", "BareActs"))
 
 
 def _list_bare_acts_from_vector_store() -> list[str]:
@@ -403,7 +427,7 @@ def _chat_error_fallback(detail: str = "") -> dict:
     # Absolute last resort (LLM itself is down)
     return {
         "status": "question",
-        "next_question": "",
+        "next_question": "Something went wrong. Please try again.",
         "retrieved": [],
     }
 
@@ -414,9 +438,12 @@ def _map_chat_result_to_ui(result: dict) -> dict:
     response_type = result.get("response_type")  # "search_results", "lookup_results", "legal_opinion"
 
     if phase == "fact_collection":
+        next_q = (result.get("message") or "").strip()
+        if not next_q:
+            next_q = "Could you tell me more about your legal query?"
         return {
             "status": "question",
-            "next_question": result.get("message") or "",
+            "next_question": next_q,
             "retrieved": result.get("response") or [],
         }
     if phase == "confirm_materials":
@@ -445,12 +472,23 @@ def _map_chat_result_to_ui(result: dict) -> dict:
             "opinion_text": combined_text,
             "bare_acts": bare_acts,
             "case_laws": case_laws,
-            "retrieved": case_laws + bare_acts,  # backward compat
+            "retrieved": case_laws + bare_acts,
         }
-    # Fallback: treat as next question
+    if phase == "done":
+        return {
+            "status": "done",
+            "response_type": response_type or "legal_opinion",
+            "opinion_text": (result.get("message") or "").strip() or "Your request has been processed.",
+            "bare_acts": [],
+            "case_laws": [],
+            "retrieved": [],
+        }
+    next_q = (result.get("message") or "").strip()
+    if not next_q:
+        next_q = "Please continue or rephrase your question."
     return {
         "status": "question",
-        "next_question": result.get("message") or "",
+        "next_question": next_q,
         "retrieved": result.get("response") or [],
     }
 

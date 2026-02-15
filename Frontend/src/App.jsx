@@ -11,113 +11,12 @@ const CURRENT_USER_NAME_KEY = "nyaymalaw_current_user_name";
 // ---------------------------------------------------
 function App() {
   // -------------------------
-  // Auth: user login / create account
+  // Auth disabled: open app without login. User shown as "Guest".
   // -------------------------
-  const [authenticated, setAuthenticated] = useState(false);
-  const [currentUser, setCurrentUser] = useState(null);
-  const [currentUserName, setCurrentUserName] = useState("");
-  const [showCreateAccount, setShowCreateAccount] = useState(false);
-  const [loginUsername, setLoginUsername] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
-  const [createEmail, setCreateEmail] = useState("");
-  const [createName, setCreateName] = useState("");
-  const [createPassword, setCreatePassword] = useState("");
-  const [createConfirm, setCreateConfirm] = useState("");
-  const [authError, setAuthError] = useState("");
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setAuthError("");
-    const email = (loginUsername || "").trim().toLowerCase();
-    const password = loginPassword || "";
-    if (!email || !password) {
-      setAuthError("Please enter email and password.");
-      return;
-    }
-    try {
-      const res = await fetch(`${API_BASE}/auth/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setAuthError(data.detail || "Login failed.");
-        return;
-      }
-      const token = data.token;
-      const user = data.user || {};
-      localStorage.setItem(AUTH_TOKEN_KEY, token);
-      localStorage.setItem(CURRENT_USER_KEY, user.email || email);
-      localStorage.setItem(CURRENT_USER_NAME_KEY, user.name || "");
-      setCurrentUser(user.email || email);
-      setCurrentUserName(user.name || "");
-      setAuthenticated(true);
-      setLoginUsername("");
-      setLoginPassword("");
-    } catch (err) {
-      setAuthError("Network error. Is the API server running?");
-    }
-  };
-
-  const handleCreateAccount = async (e) => {
-    e.preventDefault();
-    setAuthError("");
-    const email = (createEmail || "").trim().toLowerCase();
-    const name = (createName || "").trim();
-    const password = createPassword || "";
-    const confirm = createConfirm || "";
-    if (!email || !password) {
-      setAuthError("Please enter email and password.");
-      return;
-    }
-    if (!name) {
-      setAuthError("Please enter your name.");
-      return;
-    }
-    if (password.length < 6) {
-      setAuthError("Password must be at least 6 characters.");
-      return;
-    }
-    if (password !== confirm) {
-      setAuthError("Passwords do not match.");
-      return;
-    }
-    try {
-      const res = await fetch(`${API_BASE}/auth/register`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, name, password }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setAuthError(data.detail || "Registration failed.");
-        return;
-      }
-      const token = data.token;
-      const user = data.user || {};
-      localStorage.setItem(AUTH_TOKEN_KEY, token);
-      localStorage.setItem(CURRENT_USER_KEY, user.email || email);
-      localStorage.setItem(CURRENT_USER_NAME_KEY, user.name || name);
-      setCurrentUser(user.email || email);
-      setCurrentUserName(user.name || name);
-      setAuthenticated(true);
-      setCreateEmail("");
-      setCreateName("");
-      setCreatePassword("");
-      setCreateConfirm("");
-    } catch (err) {
-      setAuthError("Network error. Is the API server running?");
-    }
-  };
+  const [currentUser, setCurrentUser] = useState("Guest");
+  const [currentUserName, setCurrentUserName] = useState("Guest");
 
   const handleLogout = () => {
-    setCurrentUser(null);
-    setCurrentUserName("");
-    localStorage.removeItem(AUTH_TOKEN_KEY);
-    localStorage.removeItem(CURRENT_USER_KEY);
-    localStorage.removeItem(CURRENT_USER_NAME_KEY);
-    setAuthenticated(false);
     setMessages([]);
     setSavedChats([]);
     handleStartNewCase();
@@ -175,56 +74,34 @@ function App() {
     "WALTA_Act_2002.pdf",
   ];
   const [bareActs, setBareActs] = useState(DEFAULT_BARE_ACTS);
-  const API_BASE = "http://127.0.0.1:8000";
+  // In production (e.g. https://nyaymalaw.in) use same origin or VITE_API_BASE; locally use backend on :8000
+  const API_BASE =
+    import.meta.env.VITE_API_BASE ||
+    (typeof window !== "undefined" &&
+     (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
+      ? "http://127.0.0.1:8000"
+      : (typeof window !== "undefined" ? window.location.origin : "http://127.0.0.1:8000"));
 
-  // Restore session on load (token + user from localStorage)
+  // Load saved chats from backend (no auth: backend uses anonymous user)
   useEffect(() => {
     const token = localStorage.getItem(AUTH_TOKEN_KEY);
-    const email = localStorage.getItem(CURRENT_USER_KEY);
-    const name = localStorage.getItem(CURRENT_USER_NAME_KEY);
-    if (token && email) {
-      setCurrentUser(email);
-      setCurrentUserName(name || "");
-      setAuthenticated(true);
-    }
-  }, []);
-
-  // Load saved chats from backend when user is set
-  useEffect(() => {
-    if (!currentUser) {
-      setSavedChats([]);
-      return;
-    }
-    const token = localStorage.getItem(AUTH_TOKEN_KEY);
-    if (!token) return;
-    fetch(`${API_BASE}/chats`, { headers: { Authorization: `Bearer ${token}` } })
-      .then((res) => {
-        if (res.status === 401) {
-          localStorage.removeItem(AUTH_TOKEN_KEY);
-          localStorage.removeItem(CURRENT_USER_KEY);
-          localStorage.removeItem(CURRENT_USER_NAME_KEY);
-          setCurrentUser(null);
-          setCurrentUserName("");
-          setAuthenticated(false);
-          setSavedChats([]);
-          return { chats: [] };
-        }
-        return res.ok ? res.json() : { chats: [] };
-      })
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    fetch(`${API_BASE}/chats`, { headers })
+      .then((res) => (res.ok ? res.json() : { chats: [] }))
       .then((data) => setSavedChats(Array.isArray(data.chats) ? data.chats : []))
       .catch(() => setSavedChats([]));
-  }, [currentUser, API_BASE]);
+  }, [API_BASE]);
 
-  // Persist current chat to backend when it changes (messages/opinion/retrieved)
+  // Persist current chat to backend when it changes (no auth: backend uses anonymous user)
   useEffect(() => {
     const chatId = currentChatIdRef.current;
-    if (chatId == null || !currentUser || messages.length === 0) return;
+    if (chatId == null || messages.length === 0) return;
     const token = localStorage.getItem(AUTH_TOKEN_KEY);
-    if (!token) return;
+    const headers = { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) };
     const title = (messages.find((m) => m.role === "user")?.content || "").toString().slice(0, 50);
     fetch(`${API_BASE}/chats`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+      headers,
       body: JSON.stringify({
         id: chatId,
         title: title || "Untitled chat",
@@ -234,7 +111,7 @@ function App() {
         createdAt: new Date().toISOString(),
       }),
     }).catch(() => {});
-  }, [currentUser, messages, opinionText, retrieved, API_BASE]);
+  }, [messages, opinionText, retrieved, API_BASE]);
 
   // Keep the "current" chat in the list in sync with messages/opinion/retrieved
   useEffect(() => {
@@ -401,22 +278,15 @@ function App() {
     setSavedChats((prev) => prev.map((c) => (c.id == editingChatId ? { ...c, title: next } : c)));
     setEditingChatId(null);
     setEditingTitle("");
-    if (!token || !chat) return;
+    if (!chat) return;
+    const headers = { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) };
     try {
-      const res = await fetch(`${API_BASE}/chats`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-        body: JSON.stringify({
-          id: chat.id,
-          title: next,
-          messages: chat.messages || [],
-          opinionText: chat.opinionText || "",
-          retrieved: chat.retrieved || [],
-          createdAt: chat.createdAt || new Date().toISOString(),
-        }),
-      });
+      const res = await fetch(`${API_BASE}/chats`, { method: "POST", headers, body: JSON.stringify({
+        id: chat.id, title: next, messages: chat.messages || [], opinionText: chat.opinionText || "",
+        retrieved: chat.retrieved || [], createdAt: chat.createdAt || new Date().toISOString(),
+      }) });
       if (res.ok) {
-        const listRes = await fetch(`${API_BASE}/chats`, { headers: { Authorization: `Bearer ${token}` } });
+        const listRes = await fetch(`${API_BASE}/chats`, { headers: token ? { Authorization: `Bearer ${token}` } : {} });
         if (listRes.ok) {
           const data = await listRes.json().catch(() => ({}));
           setSavedChats(Array.isArray(data.chats) ? data.chats : []);
@@ -436,23 +306,19 @@ function App() {
     setOpenMenuChatId(null);
     const token = localStorage.getItem(AUTH_TOKEN_KEY);
     const wasCurrent = currentChatIdRef.current == idToRemove;
-    if (token) {
-      try {
-        const res = await fetch(`${API_BASE}/chats/${encodeURIComponent(idForUrl)}`, {
-          method: "DELETE",
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        if (res.ok) {
-          const listRes = await fetch(`${API_BASE}/chats`, { headers: { Authorization: `Bearer ${token}` } });
-          if (listRes.ok) {
-            const listData = await listRes.json().catch(() => ({}));
-            setSavedChats(Array.isArray(listData.chats) ? listData.chats : []);
-            if (wasCurrent) handleStartNewCase();
-            return;
-          }
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    try {
+      const res = await fetch(`${API_BASE}/chats/${encodeURIComponent(idForUrl)}`, { method: "DELETE", headers });
+      if (res.ok) {
+        const listRes = await fetch(`${API_BASE}/chats`, { headers });
+        if (listRes.ok) {
+          const listData = await listRes.json().catch(() => ({}));
+          setSavedChats(Array.isArray(listData.chats) ? listData.chats : []);
+          if (wasCurrent) handleStartNewCase();
+          return;
         }
-      } catch (_) {}
-    }
+      }
+    } catch (_) {}
     setSavedChats((prev) => prev.filter((c) => String(c.id) !== String(idToRemove)));
     if (wasCurrent) handleStartNewCase();
   };
@@ -500,13 +366,8 @@ function App() {
       currentChatIdRef.current = chatId;
       hasSavedCurrentChatRef.current = true;
       const token = localStorage.getItem(AUTH_TOKEN_KEY);
-      if (token) {
-        fetch(`${API_BASE}/chats`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-          body: JSON.stringify(chat),
-        }).catch(() => {});
-      }
+      const headers = { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) };
+      fetch(`${API_BASE}/chats`, { method: "POST", headers, body: JSON.stringify(chat) }).catch(() => {});
     }
 
     // 1) Initial facts (await_facts stage)
@@ -519,7 +380,15 @@ function App() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ text }),
         });
-        const data = await res.json();
+        let data = {};
+        try {
+          const text = await res.text();
+          data = text ? JSON.parse(text) : {};
+        } catch (_) {
+          setError("Server returned an invalid or empty response. Please try again.");
+          setRawResponse("Error: Invalid or empty response from server.");
+          return;
+        }
         setRawResponse(JSON.stringify(data, null, 2));
 
         if (data.status === "question" && data.next_question) {
@@ -569,8 +438,8 @@ function App() {
         }
       } catch (err) {
         console.error("submit_case error:", err);
-        setError("Error during processing: " + err.message);
-        setRawResponse("Error: " + err.message);
+        setError(err.message && err.message.includes("JSON") ? "Server returned an invalid response. Please try again." : "Error during processing: " + (err.message || "Please try again."));
+        setRawResponse("Error: " + (err.message || ""));
       } finally {
         setLoading(false);
       }
@@ -601,7 +470,15 @@ function App() {
             qa_history: updatedHistory,
           }),
         });
-        const data = await res.json();
+        let data = {};
+        try {
+          const text = await res.text();
+          data = text ? JSON.parse(text) : {};
+        } catch (_) {
+          setError("Server returned an invalid or empty response. Please try again.");
+          setRawResponse("Error: Invalid or empty response from server.");
+          return;
+        }
         setRawResponse(JSON.stringify(data, null, 2));
 
         if (data.status === "question" && data.next_question) {
@@ -651,7 +528,7 @@ function App() {
         }
       } catch (err) {
         console.error("interview_step error:", err);
-        setError("Error during processing: " + err.message);
+        setError("Error during processing: " + (err.message || "Network or server error"));
         setRawResponse("Error: " + err.message);
       } finally {
         setLoading(false);
@@ -779,7 +656,14 @@ function App() {
           facts_summary: factsSummary || "",
         }),
       });
-      const data = await res.json();
+      let data = {};
+      try {
+        const text = await res.text();
+        data = text ? JSON.parse(text) : {};
+      } catch (_) {
+        setError("Server returned an invalid or empty response.");
+        return;
+      }
       if (data.success) {
         setMessages((prev) => [
           ...prev,
@@ -1134,105 +1018,7 @@ function App() {
   };
 
   // -------------------------
-  // LOGIN / CREATE ACCOUNT SCREEN
-  // -------------------------
-  if (!authenticated) {
-    return (
-      <div className="login-container">
-        {!showCreateAccount ? (
-          <form onSubmit={handleLogin} className="login-form">
-            <h2 className="login-title">🏛️ Nyaymalaw – Login</h2>
-            {authError && <p className="login-error">{authError}</p>}
-            <label className="login-label">Email (username)</label>
-            <input
-              type="email"
-              autoComplete="username"
-              value={loginUsername}
-              onChange={(e) => setLoginUsername(e.target.value)}
-              className="login-input"
-              placeholder="you@example.com"
-            />
-            <label className="login-label">Password</label>
-            <input
-              type="password"
-              autoComplete="current-password"
-              value={loginPassword}
-              onChange={(e) => setLoginPassword(e.target.value)}
-              className="login-input"
-            />
-            <button type="submit" className="login-button">
-              Login
-            </button>
-            <p className="login-switch">
-              New user?{" "}
-              <button
-                type="button"
-                className="login-link"
-                onClick={() => { setShowCreateAccount(true); setAuthError(""); }}
-              >
-                Create account
-              </button>
-            </p>
-          </form>
-        ) : (
-          <form onSubmit={handleCreateAccount} className="login-form">
-            <h2 className="login-title">🏛️ Nyaymalaw – Create account</h2>
-            {authError && <p className="login-error">{authError}</p>}
-            <label className="login-label">Name</label>
-            <input
-              type="text"
-              autoComplete="name"
-              value={createName}
-              onChange={(e) => setCreateName(e.target.value)}
-              className="login-input"
-              placeholder="Your name"
-            />
-            <label className="login-label">Email (username)</label>
-            <input
-              type="email"
-              autoComplete="username"
-              value={createEmail}
-              onChange={(e) => setCreateEmail(e.target.value)}
-              className="login-input"
-              placeholder="you@example.com"
-            />
-            <label className="login-label">Password (min 6 characters)</label>
-            <input
-              type="password"
-              autoComplete="new-password"
-              value={createPassword}
-              onChange={(e) => setCreatePassword(e.target.value)}
-              className="login-input"
-            />
-            <label className="login-label">Confirm password</label>
-            <input
-              type="password"
-              autoComplete="new-password"
-              value={createConfirm}
-              onChange={(e) => setCreateConfirm(e.target.value)}
-              className="login-input"
-            />
-            <button type="submit" className="login-button">
-              Create account
-            </button>
-            <p className="login-switch">
-              Already have an account?{" "}
-              <button
-                type="button"
-                className="login-link"
-                onClick={() => { setShowCreateAccount(false); setAuthError(""); }}
-              >
-                Log in
-              </button>
-            </p>
-          </form>
-        )}
-      </div>
-    );
-  }
-
-  // -------------------------
-  // MAIN APP UI (from snippet, adapted to retain existing chat window)
+  // MAIN APP UI (no login; open directly)
   // 3 columns: Bare Acts (left), Conversation+Input (middle), Final Output (right)
   // -------------------------
   return (
@@ -1245,9 +1031,9 @@ function App() {
           🏛️ Nyaymalaw – Your legal buddy
         </h1>
         <div className="header-user">
-          <span className="header-email" title={currentUser}>{currentUser}</span>
+          <span className="header-email" title={currentUser || "Guest"}>{currentUser || "Guest"}</span>
           <button type="button" onClick={handleLogout} className="header-logout-btn">
-            Logout
+            New chat
           </button>
         </div>
       </div>

@@ -10,13 +10,11 @@ from crewai.tools import tool
 from llm.config import CREWAI_LLM
 
 # ===============================
-# PATHS
+# PATHS (from config – DATA_ROOT e.g. Google Drive)
 # ===============================
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-VECTOR_STORE = os.path.join(BASE_DIR, "data", "vector_store")
-INDEX_PATH = os.path.join(VECTOR_STORE, "caselaws.index")
-CHUNKS_PATH = os.path.join(VECTOR_STORE, "caselaws_chunks.json")
+from config import VECTOR_STORE, CASE_INDEX, CASE_CHUNKS
+INDEX_PATH = CASE_INDEX
+CHUNKS_PATH = CASE_CHUNKS
 
 # ===============================
 # GPU EMBEDDING MODEL

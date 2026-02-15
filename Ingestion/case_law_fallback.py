@@ -1,11 +1,14 @@
 from ddgs import DDGS
 import requests
 import os
+import sys
 import textwrap
 
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from config import CASELAW_DIR
 from llm.config import OLLAMA_MODEL
 
-SAVE_DIR = "data/CaseLaws"
+SAVE_DIR = CASELAW_DIR
 
 
 def internet_case_search(query, max_results=5):

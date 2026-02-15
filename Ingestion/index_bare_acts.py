@@ -7,16 +7,15 @@ import torch
 from sentence_transformers import SentenceTransformer
 
 # ===============================
-# PROJECT PATHS (ABSOLUTE)
+# PROJECT PATHS (from config – DATA_ROOT e.g. Google Drive)
 # ===============================
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from config import DATA_ROOT, BARE_ACTS_DIR, VECTOR_STORE, BARE_INDEX, BARE_CHUNKS
 
-DATA_DIR = os.path.join(PROJECT_ROOT, "data")
-BARE_ACTS_DIR = os.path.join(DATA_DIR, "BareActs")
-VECTOR_STORE_DIR = os.path.join(DATA_DIR, "vector_store")
-
-BAREACT_INDEX_PATH = os.path.join(VECTOR_STORE_DIR, "bareacts.index")
-BAREACT_CHUNKS_PATH = os.path.join(VECTOR_STORE_DIR, "bareacts_chunks.json")
+VECTOR_STORE_DIR = VECTOR_STORE
+BAREACT_INDEX_PATH = BARE_INDEX
+BAREACT_CHUNKS_PATH = BARE_CHUNKS
 
 os.makedirs(VECTOR_STORE_DIR, exist_ok=True)
 

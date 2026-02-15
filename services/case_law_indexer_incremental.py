@@ -9,11 +9,7 @@ import numpy as np
 import torch
 from sentence_transformers import SentenceTransformer
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VECTOR_STORE = os.path.join(BASE_DIR, "data", "vector_store")
-CASE_INDEX = os.path.join(VECTOR_STORE, "caselaws.index")
-CASE_CHUNKS = os.path.join(VECTOR_STORE, "caselaws_chunks.json")
-CASELAW_DIR = os.path.join(BASE_DIR, "data", "CaseLaws")
+from config import VECTOR_STORE, CASE_INDEX, CASE_CHUNKS, CASELAW_DIR
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 embedder = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2", device=device)
@@ -85,22 +81,25 @@ def index_new_case_laws(case_laws: list) -> dict:
     if not all_embeddings:
         return {"success": False, "chunks_added": 0, "message": "No valid content to index"}
 
-    # Update FAISS index
     dim = len(all_embeddings[0])
-    if os.path.exists(CASE_INDEX):
-        index = faiss.read_index(CASE_INDEX)
-        if index.d != dim:
-            return {"success": False, "chunks_added": 0, "message": "Dimension mismatch with existing index"}
-    else:
-        index = faiss.IndexFlatIP(dim)
+    try:
+        if os.path.exists(CASE_INDEX):
+            index = faiss.read_index(CASE_INDEX)
+            if index.d != dim:
+                return {"success": False, "chunks_added": 0, "message": "Dimension mismatch with existing index"}
+        else:
+            index = faiss.IndexFlatIP(dim)
+        index.add(np.array(all_embeddings, dtype="float32"))
+        faiss.write_index(index, CASE_INDEX)
+    except Exception as e:
+        return {"success": False, "chunks_added": 0, "message": f"Vector store path not writable (e.g. Drive path on Windows): {str(e)[:80]}"}
 
-    index.add(np.array(all_embeddings, dtype="float32"))
-    faiss.write_index(index, CASE_INDEX)
-
-    # Merge and save chunks
     chunk_store.update(new_chunks)
-    with open(CASE_CHUNKS, "w", encoding="utf-8") as f:
-        json.dump(chunk_store, f, indent=2)
+    try:
+        with open(CASE_CHUNKS, "w", encoding="utf-8") as f:
+            json.dump(chunk_store, f, indent=2)
+    except Exception:
+        pass
 
     return {
         "success": True,

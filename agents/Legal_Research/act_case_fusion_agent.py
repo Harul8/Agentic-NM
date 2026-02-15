@@ -7,62 +7,21 @@ from agents.Legal_Research.case_law_agent import retrieve_case_law
 
 
 def _web_fallback_bare_acts(issue: str, max_results: int = 5) -> list:
-    """Search the web for relevant bare acts when local vector store has none."""
-    from services.response_generator import (
-        search_internet_bare_acts,
-        fetch_bare_act_content,
-        extract_relevant_bare_act_portions,
-    )
-    results = []
+    """Search web for bare acts (PDF-preferred); save PDFs to Drive and index. No generic pages."""
+    from services.response_generator import web_fallback_bare_acts_with_save
     try:
-        web_results = search_internet_bare_acts(issue, max_results=max_results)
-        for r in web_results:
-            content = fetch_bare_act_content(r.get("url", ""))
-            title = r.get("title", "Unknown")
-            relevant = ""
-            if content:
-                relevant = extract_relevant_bare_act_portions(issue, title, content)
-            text = relevant or (content[:1500] if content else (r.get("snippet", ""))[:800])
-            if not text:
-                continue
-            results.append({
-                "source": title,
-                "text": text,
-                "act_name": title,
-                "url": r.get("url", ""),
-            })
+        return web_fallback_bare_acts_with_save(issue, max_results=max_results)
     except Exception:
-        pass
-    return results
+        return []
 
 
 def _web_fallback_case_laws(issue: str, max_results: int = 5) -> list:
-    """Search the web for relevant case laws when local vector store has none."""
-    from services.response_generator import (
-        search_internet_case_laws,
-        fetch_case_content,
-        extract_relevant_case_portions,
-    )
-    results = []
+    """Search web for case laws (PDF-preferred); save PDFs to Drive and index. No generic pages."""
+    from services.response_generator import web_fallback_case_laws_with_save
     try:
-        web_results = search_internet_case_laws(issue, max_results=max_results)
-        for r in web_results:
-            content = fetch_case_content(r.get("url", ""))
-            title = r.get("title", "Unknown")
-            relevant = ""
-            if content:
-                relevant = extract_relevant_case_portions(issue, title, content)
-            text = relevant or (content[:1500] if content else (r.get("snippet", ""))[:800])
-            if not text:
-                continue
-            results.append({
-                "source": title,
-                "text": text,
-                "url": r.get("url", ""),
-            })
+        return web_fallback_case_laws_with_save(issue, max_results=max_results)
     except Exception:
-        pass
-    return results
+        return []
 
 
 @tool

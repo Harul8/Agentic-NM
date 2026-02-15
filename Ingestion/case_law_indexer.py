@@ -6,16 +6,15 @@ import torch
 from sentence_transformers import SentenceTransformer
 
 # ===============================
-# PROJECT PATHS (ABSOLUTE)
+# PROJECT PATHS (from config – DATA_ROOT e.g. Google Drive)
 # ===============================
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from config import DATA_ROOT, CASELAW_DIR, VECTOR_STORE, CASE_INDEX, CASE_CHUNKS
 
-DATA_DIR = os.path.join(PROJECT_ROOT, "data")
-CASELAW_DIR = os.path.join(DATA_DIR, "CaseLaws")
-VECTOR_STORE_DIR = os.path.join(DATA_DIR, "vector_store")
-
-CASELAW_INDEX_PATH = os.path.join(VECTOR_STORE_DIR, "caselaws.index")
-CASELAW_CHUNKS_PATH = os.path.join(VECTOR_STORE_DIR, "caselaws_chunks.json")
+VECTOR_STORE_DIR = VECTOR_STORE
+CASELAW_INDEX_PATH = CASE_INDEX
+CASELAW_CHUNKS_PATH = CASE_CHUNKS
 
 os.makedirs(VECTOR_STORE_DIR, exist_ok=True)
 

@@ -1,11 +1,14 @@
 import os
+import sys
 import faiss
 import numpy as np
 import requests
 from ddgs import DDGS
 
-VECTOR_PATH = "data/vector_store/caselaws.index"
-CASELAW_DIR = "data/CaseLaws"
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from config import CASE_INDEX, CASELAW_DIR
+
+VECTOR_PATH = CASE_INDEX
 
 
 def embed(text: str):
