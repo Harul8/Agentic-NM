@@ -5,6 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     allowedHosts: ["nyaymalaw.in", "www.nyaymalaw.in"],
+    hmr: false, // disable WebSocket HMR when using tunnel (nyaymalaw.in → localhost:5173)
     proxy: {
       "/search": {
         target: "http://127.0.0.1:8000",

@@ -54,6 +54,25 @@ def _extract_json(text: str) -> dict | None:
     return None
 
 
+def _is_greeting_or_small_talk(msg: str) -> bool:
+    """True if the message is clearly not a legal request (greeting, thanks, very short)."""
+    m = (msg or "").strip().lower()
+    if len(m) > 80:
+        return False  # Substantive messages are not greetings
+    greetings = (
+        "hi", "hello", "hey", "hi there", "hello there", "good morning", "good afternoon",
+        "good evening", "thanks", "thank you", "ok", "okay", "yes", "no", "bye", "goodbye",
+    )
+    if m in greetings or m.rstrip("!?.") in greetings:
+        return True
+    # Very short and no legal/research keywords
+    if len(m) < 25:
+        legal_keywords = ("law", "act", "section", "case", "court", "judgment", "legal", "advice", "sue", "file", "right", "compensation", "land", "property", "contract", "agreement")
+        if not any(kw in m for kw in legal_keywords):
+            return True
+    return False
+
+
 def _detect_intent_from_keywords(msg: str) -> str | None:
     """Keyword-based intent detection as a safety net when the LLM gets it wrong."""
     m = msg.lower()
@@ -101,8 +120,20 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
     reply = (out.get("reply_to_client") or out.get("question") or "").strip()
     if out["action"] == "complete":
         intent = out.get("intent", "legal_opinion")
-        if intent not in ("search", "lookup", "legal_opinion"):
+        if intent not in ("search", "lookup", "legal_opinion", "chat", "greeting"):
             intent = "legal_opinion"
+
+        # Greeting/chat must never run research: treat as "ask" with the reply
+        if intent in ("chat", "greeting"):
+            if reply:
+                return {"action": "ask", "question": reply}
+            return {"action": "ask", "question": "Hello! How can I help you today? Please share your legal query or what you'd like to look up—case laws, bare act sections, or a situation you need advice on."}
+
+        # Safety net: if user message is clearly greeting/small talk, do not run research
+        if _is_greeting_or_small_talk(user_message) and intent == "legal_opinion":
+            if reply:
+                return {"action": "ask", "question": reply}
+            return {"action": "ask", "question": "Hello! I'm here to help with legal research—case laws, bare act provisions, or a legal opinion. What would you like to explore?"}
 
         # Safety net: override intent based on keywords in user message
         keyword_intent = _detect_intent_from_keywords(user_message)

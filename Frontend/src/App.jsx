@@ -82,15 +82,24 @@ function App() {
       ? "http://127.0.0.1:8000"
       : (typeof window !== "undefined" ? window.location.origin : "http://127.0.0.1:8000"));
 
-  // Load saved chats from backend (no auth: backend uses anonymous user)
+  // Load saved chats once on mount (do not depend on API_BASE to avoid re-runs and 429 from backend).
   useEffect(() => {
     const token = localStorage.getItem(AUTH_TOKEN_KEY);
     const headers = token ? { Authorization: `Bearer ${token}` } : {};
     fetch(`${API_BASE}/chats`, { headers })
-      .then((res) => (res.ok ? res.json() : { chats: [] }))
+      .then(async (res) => {
+        if (!res.ok) return { chats: [] }; // 429 or other error: don't parse body (may be HTML)
+        const text = await res.text();
+        try {
+          return text ? JSON.parse(text) : { chats: [] };
+        } catch {
+          return { chats: [] };
+        }
+      })
       .then((data) => setSavedChats(Array.isArray(data.chats) ? data.chats : []))
       .catch(() => setSavedChats([]));
-  }, [API_BASE]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional: run once on mount only
+  }, []);
 
   // Persist current chat to backend when it changes (no auth: backend uses anonymous user)
   useEffect(() => {
@@ -125,12 +134,23 @@ function App() {
     );
   }, [messages, opinionText, retrieved]);
 
-  // Fetch Bare Acts from API when available; keep default list if API fails or returns empty
+  // Fetch Bare Acts once on mount (do not depend on API_BASE to avoid re-runs and 429).
   useEffect(() => {
     const fetchBareActs = async () => {
       try {
         const res = await fetch(`${API_BASE}/bareacts/list`);
-        const data = await res.json();
+        if (!res.ok) {
+          setBareActs(DEFAULT_BARE_ACTS);
+          return;
+        }
+        const text = await res.text();
+        let data = {};
+        try {
+          data = text ? JSON.parse(text) : {};
+        } catch {
+          setBareActs(DEFAULT_BARE_ACTS);
+          return;
+        }
         const acts = data.acts || [];
         setBareActs(acts.length > 0 ? acts : DEFAULT_BARE_ACTS);
       } catch (err) {
@@ -139,7 +159,8 @@ function App() {
       }
     };
     fetchBareActs();
-  }, [API_BASE]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional: run once on mount only
+  }, []);
 
   // Scroll only the chat messages area to bottom (do not move browser window or input)
   useEffect(() => {

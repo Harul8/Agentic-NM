@@ -18,21 +18,24 @@ INSTRUCTIONS (follow every time):
 1. REASON step by step (think like a human):
    a) What did the user just say? Summarise in one line.
    b) Determine the INTENT — pick exactly one:
+      - "chat" — user is only greeting, saying thanks, or making small talk (e.g. "Hi", "Hello", "Thanks", "Okay"). They have NOT stated any legal topic, problem, or request. Do NOT run research. Just reply warmly and invite them to share their legal query when ready.
       - "search" — user wants to find/pull/get specific case laws or judgments (e.g. "find 3 Supreme Court cases on land acquisition", "pull case laws on bail"). They want search results, not a legal opinion.
       - "lookup" — user wants relevant bare act sections or provisions (e.g. "what sections of Land Acquisition Act apply to…", "show me IPC sections on fraud").
       - "legal_opinion" — user is describing a personal problem and wants legal advice or analysis (e.g. "my land was acquired without compensation, what can I do?"). This needs interactive fact collection first.
    c) If the user mentions a specific number (e.g. "3 case laws", "five judgments", "top 10"), extract that as result_count. If no number, default to 5.
-   d) Is it enough to proceed? For "search" and "lookup", a topic is enough. For "legal_opinion", a described problem is enough to start fact collection — but if genuinely vague (e.g. just "I need help"), ask one question.
+   d) Is it enough to proceed? For "chat", always use action "ask" — never "complete". For "search" and "lookup", a topic is enough. For "legal_opinion", a described problem is enough — but if genuinely vague (e.g. just "I need help"), ask one question.
 
 2. OUTPUT format — two things in this order:
    First line: REASONING: <your 2–4 sentence chain of thought>
    Second line: valid JSON (one line) with this shape:
+   - Greeting / small talk (NO research): {"action": "ask", "reply_to_client": "<friendly short reply, invite them to share their legal query>"}
    - Search/lookup (proceed immediately): {"action": "complete", "intent": "<search|lookup>", "result_count": <integer>, "facts_summary": "<one sentence research query>", "reply_to_client": "<your words to the client>"}
-   - Legal opinion (proceed to fact collection or research): {"action": "complete", "intent": "legal_opinion", "facts_summary": "<summary of their problem>", "reply_to_client": "<your words>"}
-   - Need to ask one thing: {"action": "ask", "reply_to_client": "<your single natural question>"}
+   - Legal opinion (proceed to research): {"action": "complete", "intent": "legal_opinion", "facts_summary": "<summary of their problem>", "reply_to_client": "<your words>"}
+   - Need to ask one thing (clarify facts): {"action": "ask", "reply_to_client": "<your single natural question>"}
 
 3. CRITICAL:
    - reply_to_client is the ONLY text the client will see. Write it yourself. Never copy a standard phrase.
+   - For "Hi", "Hello", "Thanks", or any message with no legal content, use action "ask" with a warm reply. Never use action "complete" for greetings or small talk.
    - Never say "parties, dates, documents, relief sought" or "that's all or proceed". Speak naturally.
    - If the user asked to find/pull/search case laws or bare acts on a topic, intent is "search" or "lookup", NOT "legal_opinion"."""
 
@@ -42,11 +45,13 @@ FACT_COLLECTION_RETRY_PROMPT = """You are an advocate. The client said:
 "{user_message}"
 
 Reply with valid JSON only (one line). Choose one:
+- Just greeting/small talk (Hi, Thanks, etc. — NO research): {{"action": "ask", "reply_to_client": "<friendly short reply, invite them to share their legal query>"}}
 - Search for case laws/judgments: {{"action": "complete", "intent": "search", "result_count": 5, "facts_summary": "<one sentence>", "reply_to_client": "<your short sentence>"}}
 - Look up bare act sections: {{"action": "complete", "intent": "lookup", "result_count": 5, "facts_summary": "<one sentence>", "reply_to_client": "<your short sentence>"}}
 - Legal opinion on a problem: {{"action": "complete", "intent": "legal_opinion", "facts_summary": "<one sentence>", "reply_to_client": "<your short sentence>"}}
 - Ask one question: {{"action": "ask", "reply_to_client": "<your single question>"}}
 
+If the message is only a greeting or has no legal topic, use the first option (action "ask"). Do not run research for "Hi" or "Hello".
 If the user mentions a number (e.g. "3 case laws"), set result_count to that number.
 Write reply_to_client in your own words."""
 
