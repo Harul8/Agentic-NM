@@ -20,6 +20,11 @@ numpy
 sentence-transformers
 torch
 
+# Cross-encoder re-ranker (v2 hybrid retrieval)
+# Used by retrieval/hybrid_retriever.py for re-ranking candidates
+# ms-marco-MiniLM-L-12-v2 (~130MB, runs alongside Qwen2.5 7B on RTX 4060)
+# No extra pip install needed — sentence-transformers includes CrossEncoder
+
 # PDF processing
 pdfplumber
 pypdf
@@ -37,3 +42,5 @@ tqdm
 pytesseract
 pillow
 
+# Optional: .env file support
+python-dotenv

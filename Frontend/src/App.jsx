@@ -1046,31 +1046,10 @@ function App() {
     <div
       className="app-container"
     >
-      {/* Header */}
-      <div className="main-header-fixed">
-        <h1 className="main-title">
-          🏛️ Nyaymalaw – Your legal buddy
-        </h1>
-        <div className="header-user">
-          <span className="header-email" title={currentUser || "Guest"}>{currentUser || "Guest"}</span>
-          <button type="button" onClick={handleLogout} className="header-logout-btn">
-            New chat
-          </button>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div
-        className="main-content-wrapper"
-      >
-        <div
-          className="columns-container"
-        >
-          {/* LEFT COLUMN – New chat, Bare Acts, Chat history */}
-          <div
-            className="left-column"
-            // Removed position: sticky, top, align-self, max-height, overflowY
-          >
+      {/* Two-pane layout: Left (sidebar) and Right (chat) */}
+      <div className="main-content-wrapper">
+        {/* LEFT PANE – New chat, Bare Acts, Chat history */}
+        <div className="left-column">
             <button
               type="button"
               onClick={handleNewChat}
@@ -1183,10 +1162,22 @@ function App() {
                 )}
               </details>
             </div>
-          </div>
+        </div>
 
-          {/* RIGHT CONTENT – Chat window only (80%) */}
-          <div className={`right-content-wrapper${messages.some((m) => m.role === "user") ? " chat-mode" : ""}`}>
+        {/* RIGHT PANE – Title at top, then chat area */}
+        <div className={`right-content-wrapper${messages.some((m) => m.role === "user") ? " chat-mode" : ""}`}>
+          {/* Title at top left of right pane */}
+          <div className="right-pane-header">
+            <h1 className="main-title">
+              ⚖ Nyaymalaw
+            </h1>
+            <div className="header-user">
+              <span className="header-email" title={currentUser || "Guest"}>{currentUser || "Guest"}</span>
+              <button type="button" onClick={handleLogout} className="header-logout-btn">
+                New chat
+              </button>
+            </div>
+          </div>
             {!messages.some((m) => m.role === "user") ? (
               /* ChatGPT-style: plain message + single centered text box until first send */
               <div className="chat-center-stage">
@@ -1350,7 +1341,6 @@ function App() {
                 )}
               </>
             )}
-          </div>
         </div>
       </div>
     </div>

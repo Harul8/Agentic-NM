@@ -1,27 +1,24 @@
 """
-Incremental Bare Act Indexer - Add user-confirmed bare act sections to the vector store.
+Incremental Bare Act Indexer — Thin wrapper around v2 modules.
+
+All chunking → Ingestion.smart_chunker
+All indexing → retrieval.auto_enricher (FAISS v2 + BM25)
 """
 
 import os
-import json
-import faiss
-import numpy as np
-import torch
-from sentence_transformers import SentenceTransformer
+import logging
 
-from config import VECTOR_STORE, BARE_INDEX, BARE_CHUNKS, BARE_ACTS_DIR
+from config import BARE_ACTS_DIR, VECTOR_STORE
+from Ingestion.smart_chunker import chunk_bare_act
+from retrieval.auto_enricher import enrich_from_search_result
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
-embedder = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2", device=device)
-
-
-def chunk_text(text: str, size: int = 800) -> list:
-    return [text[i:i + size] for i in range(0, len(text), size)]
+logger = logging.getLogger(__name__)
 
 
 def index_new_bare_acts(bare_acts: list) -> dict:
     """
-    Add new bare act sections to the existing vector store.
+    Add new bare act sections to the v2 vector store.
+
     bare_acts: list of {title, url, text, act_name, source}
     Returns: {success: bool, chunks_added: int, message: str}
     """
@@ -31,15 +28,7 @@ def index_new_bare_acts(bare_acts: list) -> dict:
     os.makedirs(VECTOR_STORE, exist_ok=True)
     os.makedirs(BARE_ACTS_DIR, exist_ok=True)
 
-    chunk_store = {}
-    if os.path.exists(BARE_CHUNKS):
-        with open(BARE_CHUNKS, encoding="utf-8") as f:
-            chunk_store = json.load(f)
-
-    chunk_id = len(chunk_store)
-    all_embeddings = []
-    new_chunks = {}
-
+    total_enriched = 0
     for item in bare_acts:
         title = item.get("title") or item.get("act_name", "Unknown")
         url = item.get("url", "")
@@ -47,51 +36,44 @@ def index_new_bare_acts(bare_acts: list) -> dict:
         if not text:
             continue
 
-        safe_title = "".join(c if c.isalnum() or c in " _-" else "_" for c in str(title))[:80]
-        filename = f"Indexed_{safe_title}.txt"
-        filepath = os.path.join(BARE_ACTS_DIR, filename)
-        with open(filepath, "w", encoding="utf-8") as f:
-            f.write(f"TITLE: {title}\n")
-            f.write(f"SOURCE: {url}\n\n")
-            f.write(text)
+        # Use auto_enricher which handles: save to Drive + chunk via smart_chunker + index to FAISS+BM25
+        result = enrich_from_search_result(
+            result={
+                "title": title,
+                "url": url,
+                "snippet": text[:400],
+                "content_text": text,
+                "pdf_bytes": None,  # No PDF bytes from confirmed materials
+                "source_tier": "tier2_official",
+            },
+            search_type="bare_act",
+        )
+        if result.get("indexed"):
+            total_enriched += 1
 
-        chunks = chunk_text(text)
-        for chunk in chunks:
-            emb = embedder.encode(
-                chunk,
-                convert_to_numpy=True,
-                normalize_embeddings=True
-            )
-            key = str(chunk_id)
-            new_chunks[key] = {"source": filename, "text": chunk}
-            all_embeddings.append(emb)
-            chunk_id += 1
+    if total_enriched == 0:
+        # Fallback: save as text files so data is not lost
+        for item in bare_acts:
+            title = item.get("title") or item.get("act_name", "Unknown")
+            text = item.get("text") or item.get("content", "")
+            if not text:
+                continue
+            safe_title = "".join(c if c.isalnum() or c in " _-" else "_" for c in str(title))[:80]
+            filepath = os.path.join(BARE_ACTS_DIR, f"Indexed_{safe_title}.txt")
+            try:
+                with open(filepath, "w", encoding="utf-8") as f:
+                    f.write(f"TITLE: {title}\nSOURCE: {item.get('url', '')}\n\n{text}")
+            except Exception:
+                pass
 
-    if not all_embeddings:
-        return {"success": False, "chunks_added": 0, "message": "No valid content to index"}
-
-    dim = len(all_embeddings[0])
-    try:
-        if os.path.exists(BARE_INDEX):
-            index = faiss.read_index(BARE_INDEX)
-            if index.d != dim:
-                return {"success": False, "chunks_added": 0, "message": "Dimension mismatch with existing index"}
-        else:
-            index = faiss.IndexFlatIP(dim)
-        index.add(np.array(all_embeddings, dtype="float32"))
-        faiss.write_index(index, BARE_INDEX)
-    except Exception as e:
-        return {"success": False, "chunks_added": 0, "message": f"Vector store path not writable (e.g. Drive path on Windows): {str(e)[:80]}"}
-
-    chunk_store.update(new_chunks)
-    try:
-        with open(BARE_CHUNKS, "w", encoding="utf-8") as f:
-            json.dump(chunk_store, f, indent=2)
-    except Exception:
-        pass
+        return {
+            "success": True,
+            "chunks_added": 0,
+            "message": f"Saved {len(bare_acts)} bare act(s) as text (enricher unavailable)",
+        }
 
     return {
         "success": True,
-        "chunks_added": len(new_chunks),
-        "message": f"Successfully indexed {len(bare_acts)} bare act section(s) with {len(new_chunks)} chunks"
+        "chunks_added": total_enriched,
+        "message": f"Successfully indexed {total_enriched} bare act section(s) via v2 pipeline",
     }

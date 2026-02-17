@@ -7,19 +7,48 @@ from agents.Legal_Research.case_law_agent import retrieve_case_law
 
 
 def _web_fallback_bare_acts(issue: str, max_results: int = 5) -> list:
-    """Search web for bare acts (PDF-preferred); save PDFs to Drive and index. No generic pages."""
-    from services.response_generator import web_fallback_bare_acts_with_save
+    """Search web for bare acts via tiered search + auto-enricher (v2 pipeline)."""
     try:
-        return web_fallback_bare_acts_with_save(issue, max_results=max_results)
+        from retrieval.tiered_search import search_for_gaps
+        from retrieval.auto_enricher import enrich_from_gap_results
+        gaps = [{"aspect": "bare_act", "search_queries": [f"{issue} India bare act section"]}]
+        gap_results = search_for_gaps(gaps, jurisdiction_state="")
+        enrich_from_gap_results(gap_results, search_type="bare_act")
+        results = []
+        for gap in gap_results.get("results", []):
+            for r in gap.get("search_results", []):
+                results.append({
+                    "source": r.get("title", "Internet"),
+                    "text": r.get("snippet", ""),
+                    "act_name": r.get("title", "Unknown"),
+                    "url": r.get("url", ""),
+                })
+                if len(results) >= max_results:
+                    break
+        return results[:max_results]
     except Exception:
         return []
 
 
 def _web_fallback_case_laws(issue: str, max_results: int = 5) -> list:
-    """Search web for case laws (PDF-preferred); save PDFs to Drive and index. No generic pages."""
-    from services.response_generator import web_fallback_case_laws_with_save
+    """Search web for case laws via tiered search + auto-enricher (v2 pipeline)."""
     try:
-        return web_fallback_case_laws_with_save(issue, max_results=max_results)
+        from retrieval.tiered_search import search_for_gaps
+        from retrieval.auto_enricher import enrich_from_gap_results
+        gaps = [{"aspect": "case_law", "search_queries": [f"{issue} Supreme Court India judgment"]}]
+        gap_results = search_for_gaps(gaps, jurisdiction_state="")
+        enrich_from_gap_results(gap_results, search_type="case_law")
+        results = []
+        for gap in gap_results.get("results", []):
+            for r in gap.get("search_results", []):
+                results.append({
+                    "source": r.get("title", "Internet"),
+                    "text": r.get("snippet", ""),
+                    "url": r.get("url", ""),
+                })
+                if len(results) >= max_results:
+                    break
+        return results[:max_results]
     except Exception:
         return []
 

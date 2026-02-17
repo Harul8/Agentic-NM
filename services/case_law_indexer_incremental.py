@@ -1,28 +1,25 @@
 """
-Incremental Case Law Indexer - Add user-confirmed case laws to the vector store.
+Incremental Case Law Indexer — Thin wrapper around v2 modules.
+
+All chunking → Ingestion.smart_chunker
+All indexing → retrieval.auto_enricher (FAISS v2 + BM25)
 """
 
 import os
-import json
-import faiss
-import numpy as np
-import torch
-from sentence_transformers import SentenceTransformer
+import logging
 
-from config import VECTOR_STORE, CASE_INDEX, CASE_CHUNKS, CASELAW_DIR
+from config import CASELAW_DIR, VECTOR_STORE
+from Ingestion.smart_chunker import chunk_case_law
+from retrieval.auto_enricher import enrich_from_search_result
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
-embedder = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2", device=device)
-
-
-def chunk_text(text: str, size: int = 800) -> list:
-    return [text[i:i + size] for i in range(0, len(text), size)]
+logger = logging.getLogger(__name__)
 
 
 def index_new_case_laws(case_laws: list) -> dict:
     """
-    Add new case laws to the existing vector store.
-    case_laws: list of {title, url, content, source}
+    Add new case laws to the v2 vector store.
+
+    case_laws: list of {title, url, content, relevant_portion, source}
     Returns: {success: bool, chunks_added: int, message: str}
     """
     if not case_laws:
@@ -31,22 +28,10 @@ def index_new_case_laws(case_laws: list) -> dict:
     os.makedirs(VECTOR_STORE, exist_ok=True)
     os.makedirs(CASELAW_DIR, exist_ok=True)
 
-    # Load existing chunks and index
-    chunk_store = {}
-    if os.path.exists(CASE_CHUNKS):
-        with open(CASE_CHUNKS, encoding="utf-8") as f:
-            chunk_store = json.load(f)
-
-    existing_count = len(chunk_store)
-    chunk_id = existing_count
-
-    all_embeddings = []
-    new_chunks = {}
-
+    total_enriched = 0
     for case in case_laws:
         title = case.get("title", "Unknown")
         url = case.get("url", "")
-        # Prefer relevant_portion (LLM-extracted key portions) for better search
         content = (
             case.get("relevant_portion")
             or case.get("content")
@@ -56,53 +41,44 @@ def index_new_case_laws(case_laws: list) -> dict:
         if not content:
             continue
 
-        # Save to CaseLaws folder
-        safe_title = "".join(c if c.isalnum() or c in " _-" else "_" for c in title)[:80]
-        filename = f"Indexed_{safe_title}.txt"
-        filepath = os.path.join(CASELAW_DIR, filename)
-        with open(filepath, "w", encoding="utf-8") as f:
-            f.write(f"TITLE: {title}\n")
-            f.write(f"SOURCE: {url}\n\n")
-            f.write(content)
+        # Use auto_enricher which handles: save to Drive + chunk via smart_chunker + index to FAISS+BM25
+        result = enrich_from_search_result(
+            result={
+                "title": title,
+                "url": url,
+                "snippet": content[:400],
+                "content_text": content,
+                "pdf_bytes": None,
+                "source_tier": "tier2_official",
+            },
+            search_type="case_law",
+        )
+        if result.get("indexed"):
+            total_enriched += 1
 
-        # Chunk and embed
-        chunks = chunk_text(content)
-        for chunk in chunks:
-            emb = embedder.encode(
-                chunk,
-                convert_to_numpy=True,
-                normalize_embeddings=True
-            )
-            key = str(chunk_id)
-            new_chunks[key] = {"source": filename, "text": chunk}
-            all_embeddings.append(emb)
-            chunk_id += 1
+    if total_enriched == 0:
+        # Fallback: save as text files so data is not lost
+        for case in case_laws:
+            title = case.get("title", "Unknown")
+            content = case.get("relevant_portion") or case.get("content") or ""
+            if not content:
+                continue
+            safe_title = "".join(c if c.isalnum() or c in " _-" else "_" for c in title)[:80]
+            filepath = os.path.join(CASELAW_DIR, f"Indexed_{safe_title}.txt")
+            try:
+                with open(filepath, "w", encoding="utf-8") as f:
+                    f.write(f"TITLE: {title}\nSOURCE: {case.get('url', '')}\n\n{content}")
+            except Exception:
+                pass
 
-    if not all_embeddings:
-        return {"success": False, "chunks_added": 0, "message": "No valid content to index"}
-
-    dim = len(all_embeddings[0])
-    try:
-        if os.path.exists(CASE_INDEX):
-            index = faiss.read_index(CASE_INDEX)
-            if index.d != dim:
-                return {"success": False, "chunks_added": 0, "message": "Dimension mismatch with existing index"}
-        else:
-            index = faiss.IndexFlatIP(dim)
-        index.add(np.array(all_embeddings, dtype="float32"))
-        faiss.write_index(index, CASE_INDEX)
-    except Exception as e:
-        return {"success": False, "chunks_added": 0, "message": f"Vector store path not writable (e.g. Drive path on Windows): {str(e)[:80]}"}
-
-    chunk_store.update(new_chunks)
-    try:
-        with open(CASE_CHUNKS, "w", encoding="utf-8") as f:
-            json.dump(chunk_store, f, indent=2)
-    except Exception:
-        pass
+        return {
+            "success": True,
+            "chunks_added": 0,
+            "message": f"Saved {len(case_laws)} case law(s) as text (enricher unavailable)",
+        }
 
     return {
         "success": True,
-        "chunks_added": len(new_chunks),
-        "message": f"Successfully indexed {len(case_laws)} case law(s) with {len(new_chunks)} chunks"
+        "chunks_added": total_enriched,
+        "message": f"Successfully indexed {total_enriched} case law(s) via v2 pipeline",
     }

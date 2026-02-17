@@ -1,3 +1,3 @@
-# ingestion/chunker.py
-def chunk_text(text, size=800):
-    return [text[i:i+size] for i in range(0, len(text), size)]
+# DEPRECATED — Use Ingestion.smart_chunker instead.
+# This file kept only so old imports don't crash.
+from Ingestion.smart_chunker import chunk_bare_act as chunk_text  # noqa: F401

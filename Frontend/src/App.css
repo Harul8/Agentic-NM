@@ -321,8 +321,8 @@ body {
 }
 
 .typing-indicator-text {
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 0.88rem;
+  font-weight: normal;
 }
 
 .typing-dots {
@@ -575,7 +575,11 @@ body {
 .app-container {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background-color: #fafafa;
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Login Screen Styles */
@@ -681,26 +685,31 @@ body {
   color: #357bd8;
 }
 
-/* Main Header (Fixed) */
-.main-header-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10000;
-  background-color: #ffffff;
-  border-bottom: 1px solid #ddd;
-  padding: 24px 32px 20px 32px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+/* Main Content Wrapper – Two-pane layout (left sidebar + right chat) */
+.main-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  gap: 0;
+}
+
+/* Right Pane Header (title at top left of right pane) */
+.right-pane-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  padding: 16px 24px;
+  border-bottom: 1px solid #ddd;
+  background-color: #ffffff;
+  flex-shrink: 0;
 }
 
 .main-title {
   margin: 0;
-  font-size: 38px;
+  font-size: 28px;
   font-weight: 700;
   letter-spacing: 0.3px;
 }
@@ -735,42 +744,26 @@ body {
   background: #e9ecef;
 }
 
-/* Main Content Wrapper – use full width from left, minimal left gap */
-.main-content-wrapper {
-  margin-top: 70px; /* Offset for fixed header */
-  padding-left: 10px;
-  padding-right: 16px;
-  padding-bottom: 24px;
-  max-width: 100%;
-  height: calc(100vh - 70px - 24px);
-  min-height: 0;
+/* Left Column (Sidebar) – New chat, Bare Acts, Chat history */
+.left-column {
+  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
+  background-color: #f5f5f5;
+  padding: 16px;
+  border-right: 1px solid #ddd;
+  font-size: 0.9rem;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  gap: 12px;
 }
 
-.columns-container {
-  display: flex;
-  flex: 1;
-  gap: 16px;
-  align-items: stretch;
-  max-width: 100%;
-  margin: 0;
-  width: 100%;
-  min-height: 0;
+.left-column > * {
+  flex-shrink: 0;
 }
 
-/* Left Column (Bare Acts Library) */
-.left-column {
-  flex: 1; /* Roughly 20% */
-  max-width: 260px; /* Keep max-width as a constraint */
-  background-color: #ffffff;
-  padding: 16px;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  border-right: 1px solid #eee;
-  font-size: 0.9rem;
-  height: fit-content; /* Allow content to dictate height, but not scroll internally */
-}
 
 .left-column h3 {
     margin-top: 0;
@@ -892,6 +885,11 @@ body {
   margin-top: 16px;
   padding-top: 12px;
   border-top: 1px solid #eee;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .chat-history-new-btn {
@@ -916,6 +914,18 @@ body {
 
 .chat-history-collapsible {
   margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+  overflow: hidden;
+}
+
+.chat-history-collapsible[open] {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
 }
 
 .chat-history-collapsible-summary {
@@ -942,6 +952,9 @@ body {
 
 .chat-history-groups {
   margin-top: 8px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
 }
 
 .chat-history-group {
@@ -1114,18 +1127,19 @@ body {
   margin-top: 0;
 }
 
-/* Right Content Wrapper (80%) */
+/* Right Content Wrapper – Takes remaining space, contains header + chat area */
 .right-content-wrapper {
-  flex: 4;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
   min-height: 0;
+  overflow: hidden;
+  background-color: #fafafa;
 }
 
-/* Chat mode: input fixed at bottom of window, only conversation scrolls */
+/* Chat mode: input fixed at bottom, only conversation scrolls */
 .right-content-wrapper.chat-mode {
-  flex: 4;
+  flex: 1;
   display: flex;
   flex-direction: column;
   min-height: 0;
@@ -1167,7 +1181,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 24px 16px 32px;
-  min-height: calc(100vh - 70px - 24px - 32px);
+  min-height: 0;
 }
 
 .chat-center-message {

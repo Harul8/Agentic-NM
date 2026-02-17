@@ -16,7 +16,7 @@ from agents.Legal_Research.act_case_fusion_agent import fuse_bare_act_and_case_l
 from services.interactive_chat import process_chat
 from services.case_law_indexer_incremental import index_new_case_laws
 from services.bare_act_indexer_incremental import index_new_bare_acts
-from services.response_generator import generate_response
+from services.response_generator_v2 import generate_response_v2
 
 app = FastAPI(title="Nyaymalaw API")
 
@@ -731,7 +731,7 @@ def confirm_index(request: ConfirmIndexRequest):
         "bare_acts": request.bare_acts,
         "case_laws": request.case_laws,
     }
-    resp = generate_response(request.facts_summary, confirmed_materials=confirmed)
+    resp = generate_response_v2(request.facts_summary, confirmed_materials=confirmed)
 
     return {
         "success": True,

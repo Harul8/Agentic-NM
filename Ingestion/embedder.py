@@ -1,9 +1,5 @@
-# ingestion/embedder.py
-import requests
-
-def embed(text):
-    resp = requests.post(
-        "http://localhost:11434/api/embeddings",
-        json={"model":"nomic-embed-text", "prompt": text}
-    )
-    return resp.json()["embedding"]
+# DEPRECATED — Embedding is handled by retrieval.hybrid_retriever.
+# This file kept only so old imports don't crash.
+def embed(texts):
+    from retrieval.hybrid_retriever import _get_embedder
+    return _get_embedder().encode(texts, convert_to_numpy=True, normalize_embeddings=True)
