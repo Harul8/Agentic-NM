@@ -44,3 +44,6 @@ pillow>=10.0
 
 # Optional: .env file support
 python-dotenv>=1.0,<2.0
+
+# PowerPoint generation
+python-pptx>=0.6.23,<1.0

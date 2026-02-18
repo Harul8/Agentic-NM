@@ -8,7 +8,7 @@ You can keep **chat history**, **login credentials**, **vector DB**, **BareActs*
    - **Windows:** `G:\My Drive\`
    - **macOS:** `/Users/you/Google Drive/`
 
-2. **Create a folder** for Nyaymalaw data, e.g. `G:\My Drive\Nyaymalaw` (Windows) or `~/Google Drive/Nyaymalaw` (macOS).
+2. **Create a folder** for Nyaymalaw data, e.g. `G:\My Drive\Nyaymalaw` (Windows) or `~/Google Drive/Nyaymalaw` (macOS). This project is configured to use **G:\My Drive\Nyaymalaw** (see `.env`).
 
 3. **Set the environment variable** before starting the API server and any scripts:
 
@@ -32,7 +32,23 @@ You can keep **chat history**, **login credentials**, **vector DB**, **BareActs*
 
    Or put the same line in a `.env` file in the project root and load it (e.g. with `python-dotenv` if you add it).
 
-4. **First run:** The app will create under that folder:
+4. **Optional — shareable links for local files:** If you share your Drive folders (BareActs, CaseLaws) and want bare act / case law titles in the app to link to those folders when there is no web URL, set:
+
+   **Windows (PowerShell):**
+   ```powershell
+   $env:NYAYMALAW_GOOGLE_DRIVE_BARE_ACTS_URL = "https://drive.google.com/drive/folders/YOUR_BARE_ACTS_FOLDER_ID"
+   $env:NYAYMALAW_GOOGLE_DRIVE_CASE_LAWS_URL = "https://drive.google.com/drive/folders/YOUR_CASE_LAWS_FOLDER_ID"
+   ```
+
+   **macOS / Linux:**
+   ```bash
+   export NYAYMALAW_GOOGLE_DRIVE_BARE_ACTS_URL="https://drive.google.com/drive/folders/YOUR_BARE_ACTS_FOLDER_ID"
+   export NYAYMALAW_GOOGLE_DRIVE_CASE_LAWS_URL="https://drive.google.com/drive/folders/YOUR_CASE_LAWS_FOLDER_ID"
+   ```
+
+   To get the folder ID: open the folder in Google Drive in your browser, copy the URL. It looks like `https://drive.google.com/drive/folders/1abc...xyz` — the part after `/folders/` is the ID.
+
+5. **First run:** The app will create under that folder:
    - `chat_history/app.db` — login credentials + chat history
    - `vector_store/` — `bareacts.index`, `bareacts_chunks.json`, `caselaws.index`, `caselaws_chunks.json`
    - `BareActs/` — your bare act PDFs/text files

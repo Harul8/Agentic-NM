@@ -635,12 +635,22 @@ def _map_chat_result_to_ui(result: dict) -> dict:
         # Ensure we never send an empty or trivial intro (e.g. just "⚖")
         if not combined_text or len(combined_text.strip()) < 20:
             combined_text = "Here’s what I found for your query. Below are the Supreme Court judgments and any relevant provisions."
+        # If bare acts have nested case laws, don't return separate case_laws array to avoid duplicates
+        # Case laws are now nested under bare_acts[].related_case_laws
+        separate_case_laws = []
+        if bare_acts and len(bare_acts) > 0:
+            # Check if any bare act has nested case laws
+            has_nested_case_laws = any(ba.get("related_case_laws") for ba in bare_acts)
+            if not has_nested_case_laws:
+                # Only return separate case_laws if no nested case laws exist
+                separate_case_laws = all_case_laws
+        
         return {
             "status": "done",
             "response_type": response_type or "legal_opinion",
             "opinion_text": combined_text,
             "bare_acts": bare_acts,
-            "case_laws": all_case_laws,  # Include both local and internet case laws
+            "case_laws": separate_case_laws,  # Empty if case laws are nested under bare acts
             "retrieved": all_case_laws + bare_acts,
             "progress": resp.get("progress"),  # Include progress tracking data
         }
@@ -701,8 +711,11 @@ def _resolve_bare_act_path(base: str):
 
 
 @app.get("/bareacts/download")
-def bareacts_download(name: str = Query(..., description="Filename of the bare act to download")):
-    """Serve a bare act file for download. Name must be a safe filename (no path traversal)."""
+def bareacts_download(
+    name: str = Query(..., description="Filename of the bare act to download"),
+    inline: bool = Query(False, description="If true, open in browser (inline) instead of download"),
+):
+    """Serve a bare act file for download or inline view. Name must be a safe filename (no path traversal)."""
     # Normalize: strip and take basename so we accept names with or without path/whitespace
     base = os.path.basename(name).strip() if name else ""
     if not base or ".." in base or "/" in name or "\\" in name:
@@ -713,7 +726,9 @@ def bareacts_download(name: str = Query(..., description="Filename of the bare a
     media_type = "application/pdf" if base.lower().endswith(".pdf") else "text/plain"
     try:
         response = FileResponse(path, filename=base, media_type=media_type)
-        response.headers["Content-Disposition"] = f'attachment; filename="{base}"'
+        # inline: open in new tab (browser displays PDF); attachment: download
+        disposition = "inline" if inline else "attachment"
+        response.headers["Content-Disposition"] = f'{disposition}; filename="{base}"'
         return response
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Could not serve file: {e!s}")

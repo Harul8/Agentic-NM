@@ -26,6 +26,12 @@ VECTOR_STORE = os.path.join(DATA_ROOT, "vector_store")
 BARE_ACTS_DIR = os.path.join(DATA_ROOT, "BareActs")
 CASELAW_DIR = os.path.join(DATA_ROOT, "CaseLaws")
 
+# Optional: shareable Google Drive folder URLs for local files (when using NYAYMALAW_DATA_ROOT on Drive).
+# When set, bare act / case law titles without a web URL will link to these folders.
+# Example: https://drive.google.com/drive/folders/YOUR_FOLDER_ID
+GOOGLE_DRIVE_BARE_ACTS_FOLDER_URL = os.environ.get("NYAYMALAW_GOOGLE_DRIVE_BARE_ACTS_URL", "").strip()
+GOOGLE_DRIVE_CASE_LAWS_FOLDER_URL = os.environ.get("NYAYMALAW_GOOGLE_DRIVE_CASE_LAWS_URL", "").strip()
+
 # Vector store files — legacy (v1 blind chunking)
 BARE_INDEX = os.path.join(VECTOR_STORE, "bareacts.index")
 BARE_CHUNKS = os.path.join(VECTOR_STORE, "bareacts_chunks.json")

@@ -14,8 +14,15 @@ imported and used by the API server.
 import os
 import json
 import logging
+from pathlib import Path
 from typing import Optional
 
+from config import (
+    BARE_ACTS_DIR,
+    CASELAW_DIR,
+    GOOGLE_DRIVE_BARE_ACTS_FOLDER_URL,
+    GOOGLE_DRIVE_CASE_LAWS_FOLDER_URL,
+)
 from llm.ollama_client import ask_llm
 from prompts.advocate_prompts import (
     EXPAND_LEGAL_QUERY_SYSTEM,
@@ -134,7 +141,13 @@ def _court_acronym(court: str, binding_authority: str, case_name_or_source: str 
     if "tribunal" in combined:
         return "[Trib.]"
     # Fallback: "State of X" or "v/s State of" in case name usually indicates state/High Court litigation
-    if "state of " in combined or " v/s state" in combined or " vs state" in combined:
+    # Also check for "v/s State" or "vs State" (without "of")
+    if ("state of " in combined or " v/s state" in combined or " vs state" in combined or 
+        " v/s state" in combined or " vs state" in combined or
+        "/state" in combined.lower()):
+        return "[HC]"
+    # If case name contains "State" and looks like a court case, default to HC
+    if "state" in combined and ("v/s" in combined or "vs" in combined or "v." in combined):
         return "[HC]"
     return "[Court]"
 
@@ -420,11 +433,11 @@ def generate_response_v2(
         logger.info(f"Applied result_count limit: {result_count} bare acts")
 
     # Step 6: Match case laws to bare act sections
-    # Combine and format case laws
+    # Combine and format case laws - need enough for at least 2 per bare act section
     combined_case_laws = case_laws + internet_case_laws
     combined_case_laws.sort(key=lambda x: x.get("_rerank_score", 0), reverse=True)
-    # Get enough case laws to match to bare acts (need at least 2 per bare act)
-    format_input_size = max(len(all_bare_acts) * 4, 20)
+    # Get plenty of case laws so after grouping we have enough for 2 per section
+    format_input_size = max(len(all_bare_acts) * 6, 30)
     case_laws_for_format = combined_case_laws[:format_input_size]
     all_case_laws = _format_case_laws(case_laws_for_format, user_query=facts_summary)
 
@@ -464,7 +477,7 @@ def generate_response_v2(
 
     return {
         "bare_act_sections": all_bare_acts,  # Now includes nested case_laws
-        "case_laws": flattened_case_laws,  # Flattened for backward compat
+        "case_laws": [],  # Empty - case laws are now nested under bare acts to avoid duplicates
         "explanation": explanation,
         "sufficiency": sufficiency,
         "sources_used": list(sources_used),
@@ -513,34 +526,27 @@ def _match_case_laws_to_bare_acts(bare_acts: list, case_laws: list, max_per_sect
             score = score_query_document(ba_query, f"{cl_title} {cl_text[:2000]}")
             matches.append((ba_idx, cl_idx, score))
     
-    # Sort matches by score (highest first)
-    matches.sort(key=lambda x: x[2], reverse=True)
+    # For each bare act, get its top max_per_section case laws by score (highest match first)
+    # No duplicates: each case law appears at most once (under its best-matching section)
+    assigned_case_laws = set()
     
-    # Assign case laws to bare act sections (no duplicates, max 2 per section)
-    assigned_case_laws = set()  # Track which case laws have been assigned
-    bare_act_case_counts = {}  # Track how many case laws each bare act has
+    for ba_idx in range(len(bare_acts)):
+        bare_acts[ba_idx]["related_case_laws"] = []
+        # All matches for this bare act: (cl_idx, score)
+        ba_matches = [(cl_idx, score) for bai, cl_idx, score in matches if bai == ba_idx]
+        ba_matches.sort(key=lambda x: x[1], reverse=True)  # Highest score first
+        count = 0
+        for cl_idx, score in ba_matches:
+            if count >= max_per_section:
+                break
+            if cl_idx in assigned_case_laws:
+                continue
+            bare_acts[ba_idx]["related_case_laws"].append(case_laws[cl_idx])
+            assigned_case_laws.add(cl_idx)
+            count += 1
     
-    for ba_idx, cl_idx, score in matches:
-        # Skip if this case law already assigned
-        if cl_idx in assigned_case_laws:
-            continue
-        # Skip if this bare act already has max case laws
-        if bare_act_case_counts.get(ba_idx, 0) >= max_per_section:
-            continue
-        
-        # Assign this case law to this bare act
-        if "related_case_laws" not in bare_acts[ba_idx]:
-            bare_acts[ba_idx]["related_case_laws"] = []
-        bare_acts[ba_idx]["related_case_laws"].append(case_laws[cl_idx])
-        assigned_case_laws.add(cl_idx)
-        bare_act_case_counts[ba_idx] = bare_act_case_counts.get(ba_idx, 0) + 1
-    
-    # Ensure all bare acts have the field (even if empty)
-    for ba in bare_acts:
-        if "related_case_laws" not in ba:
-            ba["related_case_laws"] = []
-    
-    logger.info(f"Matched {len(assigned_case_laws)} case laws to {len(bare_acts)} bare act sections")
+    total_assigned = sum(len(ba.get("related_case_laws", [])) for ba in bare_acts)
+    logger.info(f"Matched {total_assigned} case laws to {len(bare_acts)} bare act sections (up to {max_per_section} per section)")
     return bare_acts
 
 
@@ -581,13 +587,22 @@ def _format_bare_acts(bare_acts: list) -> list:
         if not display_title:
             display_title = ba.get("source", "Unknown")
 
+        # Use web URL if present; else file:// link to local/Drive PDF so hyperlinks always work
+        url = ba.get("url", "")
+        if not url:
+            src_file = ba.get("source_file") or ba.get("source") or ""
+            if src_file:
+                file_path = Path(BARE_ACTS_DIR) / src_file
+                url = file_path.as_uri()
+            if not url:
+                url = GOOGLE_DRIVE_BARE_ACTS_FOLDER_URL
         formatted.append({
             "source": ba.get("source_file", ba.get("source", "")),
             "text": text,
             "act_name": act_name,
             "section_number": section,
             "title": display_title,
-            "url": ba.get("url", ""),
+            "url": url,
             "source_tag": ba.get("source_tag", "LOCAL_DB"),
             "_rerank_score": ba.get("_rerank_score", 0),
         })
@@ -705,11 +720,16 @@ def _format_case_laws(case_laws: list, user_query: str = "") -> list:
         else:
             display_title = f"{acronym} {fallback_title}".strip() if acronym != "[Court]" else fallback_title
 
-        # Preserve URL - check multiple possible fields
+        # Use web URL if present; else file:// link to local/Drive PDF so hyperlinks always work
         url = first.get("url") or first.get("source_url") or ""
-        # For local case laws without URL, we could construct a file:// URL, but for now leave empty
-        # Internet case laws should have URL from enrichment
-        
+        if not url:
+            src_file = first.get("source_file") or first.get("source") or ""
+            if src_file:
+                file_path = Path(CASELAW_DIR) / src_file
+                url = file_path.as_uri()
+            if not url:
+                url = GOOGLE_DRIVE_CASE_LAWS_FOLDER_URL
+
         formatted.append({
             "source": first.get("source_file", first.get("source", "")),
             "text": summary_body,
@@ -719,7 +739,7 @@ def _format_case_laws(case_laws: list, user_query: str = "") -> list:
             "year": year,
             "citation": citation,
             "binding_authority": first.get("binding_authority", ""),
-            "url": url,  # Preserve URL from original chunk
+            "url": url,
             "source_tag": first.get("source_tag", "LOCAL_DB"),
             "_rerank_score": top3[0]["score"],
             "_year": _case_year_for_sort(first),

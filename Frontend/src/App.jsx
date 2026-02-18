@@ -945,7 +945,7 @@ function App() {
                 <h5 className="related-case-laws-heading">Relevant Case Laws:</h5>
                 {relatedCaseLaws.map((caseLaw, clIdx) => {
                   const caseTitle = caseLaw.title || caseLaw.case_name || "Unknown Case";
-                  const caseUrl = caseLaw.url || "";
+                  const caseUrl = caseLaw.url || caseLaw.source_url || "";
                   const caseText = caseLaw.text || "";
                   const caseCleanLines = caseText
                     .split(/[.\n]/)
@@ -1241,17 +1241,30 @@ function App() {
               </summary>
               {bareActs.length ? (
                 <ul className="bare-act-list">
-                  {bareActs.map((name, idx) => (
+                  {bareActs.map((name, idx) => {
+                    // Use same-origin (relative) URL so the new tab is not blocked (about:blank#blocked).
+                    // Dev: Vite proxies /bareacts to the API. Prod: proxy /bareacts to your API or same origin.
+                    const useRelative =
+                      typeof window !== "undefined" &&
+                      (window.location.hostname === "localhost" ||
+                        window.location.hostname === "127.0.0.1" ||
+                        API_BASE === "" ||
+                        API_BASE.startsWith(window.location.origin));
+                    const downloadUrl = useRelative
+                      ? `/bareacts/download?name=${encodeURIComponent(name)}&inline=1`
+                      : `${API_BASE}/bareacts/download?name=${encodeURIComponent(name)}&inline=1`;
+                    return (
                     <li key={`${name}-${idx}`} className="bare-act-list-item">
-                      <button
-                        type="button"
-                        onClick={(e) => handleBareActDownload(e, name)}
+                      <a
+                        href={downloadUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="bare-act-download-link"
                       >
                         {name}
-                      </button>
+                      </a>
                     </li>
-                  ))}
+                  );})}
                 </ul>
               ) : (
                 <p className="bare-act-empty-message">
