@@ -408,7 +408,7 @@ def _make_case_chunk(
     text: str, metadata: dict, binding: str, para_num: str, filename: str
 ) -> dict:
     """Create a single case law chunk with full metadata."""
-    case_name = metadata.get("case_name", "")
+    case_name = (metadata.get("case_name") or "").strip() or os.path.basename(filename).replace(".pdf", "") or "Judgment"
     court = metadata.get("court", "")
     year = metadata.get("year", "")
     citation = metadata.get("citation", "")

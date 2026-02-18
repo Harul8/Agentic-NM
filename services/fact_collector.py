@@ -40,10 +40,13 @@ def is_stop_signal(user_message: str) -> bool:
     return any(phrase in msg for phrase in STOP_PHRASES)
 
 
-def is_greeting(msg: str) -> bool:
+def is_greeting(msg: str, conversation_history: list = None) -> bool:
     """
     True if the message is a greeting / small talk with no legal content.
     Uses the expanded GREETING_PHRASES list (English + Indian languages).
+    
+    If conversation_history exists and has legal content, short answers are NOT greetings
+    (they're follow-up answers to questions).
     """
     m = (msg or "").strip().lower()
     if len(m) > 100:
@@ -54,7 +57,17 @@ def is_greeting(msg: str) -> bool:
     if cleaned in GREETING_PHRASES:
         return True
 
-    # Short message with no legal keywords
+    # If there's conversation history with legal keywords, short answers are likely follow-ups, not greetings
+    if conversation_history:
+        has_legal_context = any(
+            any(kw in (m.get("content", "") or "").lower() for kw in _LEGAL_KEYWORDS)
+            for m in conversation_history
+            if m.get("role") == "user"
+        )
+        if has_legal_context:
+            return False  # Short answer in legal conversation = follow-up, not greeting
+
+    # Short message with no legal keywords (only if no prior legal context)
     if len(m) < 30 and not any(kw in m for kw in _LEGAL_KEYWORDS):
         return True
 
@@ -124,6 +137,7 @@ def _detect_intent_from_keywords(msg: str) -> str | None:
         "case law", "case laws", "caselaws", "judgment", "judgement",
         "judgments", "judgements", "ruling", "rulings", "verdict",
         "pull", "find me", "search for", "get me", "show me",
+        "pull three", "pull 3", "find three", "get three",  # explicit count requests
     ]
     if any(s in m for s in search_signals):
         return "search"
@@ -134,6 +148,9 @@ def _detect_intent_from_keywords(msg: str) -> str | None:
     ]
     if any(s in m for s in lookup_signals):
         return "lookup"
+    # If message contains both "case" and "bare act" or "section", prefer search
+    if ("case" in m or "judgment" in m) and ("bare act" in m or "section" in m):
+        return "search"  # "pull case laws and bare act sections" → search
     return None
 
 
@@ -176,11 +193,16 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
                 return {"action": "ask", "question": reply}
             return {"action": "ask", "question": generate_greeting_response(user_message)}
 
-        # Safety net: if user message is clearly greeting, don't run research
-        if is_greeting(user_message) and intent == "legal_opinion":
-            if reply:
-                return {"action": "ask", "question": reply}
-            return {"action": "ask", "question": generate_greeting_response(user_message)}
+        # Safety net: if user message is clearly greeting (and no prior legal context), don't run research
+        # Don't check conversation_history here since we're inside _parse_llm_response which doesn't have it
+        # The fast-path check at the top of get_next_question_or_complete already handles this
+        if len(user_message.strip()) < 30 and not any(kw in user_message.lower() for kw in _LEGAL_KEYWORDS) and intent == "legal_opinion":
+            # Only treat as greeting if it's an exact match to greeting phrases
+            cleaned = user_message.strip().lower().rstrip("!?.,;:")
+            if cleaned in GREETING_PHRASES:
+                if reply:
+                    return {"action": "ask", "question": reply}
+                return {"action": "ask", "question": generate_greeting_response(user_message)}
 
         # Safety net: override intent based on keywords
         keyword_intent = _detect_intent_from_keywords(user_message)
@@ -227,7 +249,8 @@ def get_next_question_or_complete(conversation_history: list, user_message: str)
     """
 
     # --- Fast path: greetings don't need the full LLM pipeline ---
-    if is_greeting(user_message):
+    # Pass conversation_history so short follow-ups (e.g. "telangana") aren't misclassified as greetings
+    if is_greeting(user_message, conversation_history):
         return {"action": "ask", "question": generate_greeting_response(user_message)}
 
     # --- Fast path: stop signals ---

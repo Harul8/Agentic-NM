@@ -187,20 +187,38 @@ def _parse_json_response(response: str) -> Optional[dict]:
 
 
 def _heuristic_sufficiency(bare_acts: list, case_laws: list) -> dict:
-    """Simple heuristic fallback when LLM analysis fails."""
-    has_bare_acts = len(bare_acts) > 0
-    has_case_laws = len(case_laws) > 0
+    """
+    Heuristic fallback when LLM analysis fails.
+
+    Be SKEPTICAL: having chunks in the vector store doesn't mean they're relevant.
+    Check that results look like real legal content (have act names, case names, etc.)
+    rather than just trusting raw count.
+    """
+    # Filter to results that look like real legal content
+    real_bare_acts = [
+        ba for ba in bare_acts
+        if ba.get("act_name") and ba.get("section_number")
+        and len((ba.get("full_text") or ba.get("text", "")).strip()) > 50
+    ]
+    real_case_laws = [
+        cl for cl in case_laws
+        if cl.get("case_name") and cl.get("case_name", "").lower() != "unknown"
+        and len((cl.get("full_text") or cl.get("text", "")).strip()) > 50
+    ]
+
+    has_bare_acts = len(real_bare_acts) >= 2
+    has_case_laws = len(real_case_laws) >= 1
 
     gaps = []
     if not has_bare_acts:
         gaps.append({
-            "aspect": "No bare act sections found",
+            "aspect": "Insufficient relevant bare act sections",
             "missing": "bare_act",
             "search_query": "relevant Indian bare act sections",
         })
     if not has_case_laws:
         gaps.append({
-            "aspect": "No case laws found",
+            "aspect": "Insufficient relevant case laws",
             "missing": "case_law",
             "search_query": "relevant Indian court judgments",
         })

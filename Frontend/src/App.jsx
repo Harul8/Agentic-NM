@@ -45,6 +45,11 @@ function App() {
   const [retrieved, setRetrieved] = useState([]);
   const [rawResponse, setRawResponse] = useState("");
   const [showDebug, setShowDebug] = useState(false);
+  
+  // Progress tracking state
+  const [progress, setProgress] = useState(null);
+  const [elapsedTime, setElapsedTime] = useState(0);
+  const [expandedGroups, setExpandedGroups] = useState({});
 
   // Saved chats (ChatGPT-style): list of past conversations, persisted to localStorage
   const [savedChats, setSavedChats] = useState([]);
@@ -364,6 +369,8 @@ function App() {
 
     setError("");
     setLoading(true);
+    setProgress(null); // Reset progress
+    setElapsedTime(0); // Reset timer
     setInput(""); // Clear input after submission
     setPendingMaterials(null); // Clear pending materials on new submission
 
@@ -440,6 +447,7 @@ function App() {
               bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
               case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
               retrieved: retr,
+              progress: data.progress || null, // Store progress in message
             },
             timestamp: new Date().toISOString(),
           };
@@ -530,6 +538,7 @@ function App() {
               bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
               case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
               retrieved: retr,
+              progress: data.progress || null, // Store progress in message
             },
             timestamp: new Date().toISOString(),
           };
@@ -598,14 +607,17 @@ function App() {
         if (data.status === "question") {
           setMessages((prev) => [
             ...prev,
-            { role: "assistant", content: assistantContent, timestamp: new Date().toISOString() },
+            { role: "assistant", content: assistantContent || "Could you tell me more about your legal query?", timestamp: new Date().toISOString() },
           ]);
           if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
         } else if (data.status === "done") {
-          const opinion = data.opinion_text || "";
+          const opinion = data.opinion_text || "Your request has been processed.";
           const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
           setOpinionText(opinion);
           setRetrieved(retr);
+          if (data.progress) {
+            setProgress(data.progress);
+          }
           setMessages((prev) => [
             ...prev,
             {
@@ -617,6 +629,7 @@ function App() {
                 bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
                 case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
                 retrieved: retr,
+                progress: data.progress || null, // Store progress in message
               },
               timestamp: new Date().toISOString(),
             },
@@ -625,12 +638,14 @@ function App() {
           setPendingMaterials(data.materials_to_confirm);
           setMessages((prev) => [
             ...prev,
-            { role: "assistant", content: data.summary ?? "", timestamp: new Date().toISOString() },
+            { role: "assistant", content: data.summary ?? "Please confirm the materials to proceed.", timestamp: new Date().toISOString() },
           ]);
         } else {
+          // Fallback: ensure we always show something
+          const fallbackContent = assistantContent || data.opinion_text || data.summary || "I've received your message. Processing...";
           setMessages((prev) => [
             ...prev,
-            { role: "assistant", content: assistantContent, timestamp: new Date().toISOString() },
+            { role: "assistant", content: fallbackContent, timestamp: new Date().toISOString() },
           ]);
         }
       } catch (err) {
@@ -644,6 +659,73 @@ function App() {
       }
       return;
     }
+  };
+
+  // -------------------------
+  // Progress Display Component
+  // -------------------------
+  const ProgressDisplay = ({ progress, expandedGroups, setExpandedGroups }) => {
+    if (!progress || !progress.groups || progress.groups.length === 0) return null;
+    
+    const toggleGroup = (groupName) => {
+      setExpandedGroups((prev) => ({
+        ...prev,
+        [groupName]: !prev[groupName],
+      }));
+    };
+
+    return (
+      <div className="progress-display">
+        {progress.groups.map((group, idx) => {
+          const isExpanded = expandedGroups[group.name] !== undefined ? expandedGroups[group.name] : false;
+          const stats = group.stats || {};
+          return (
+            <details
+              key={idx}
+              className="progress-group"
+              open={isExpanded}
+              onToggle={(e) => {
+                const newState = e.target.open;
+                setExpandedGroups((prev) => ({
+                  ...prev,
+                  [group.name]: newState,
+                }));
+              }}
+            >
+              <summary className="progress-group-summary">
+                <span className="progress-group-name">{group.name}</span>
+                {stats.total_searched > 0 && (
+                  <span className="progress-group-stats">
+                    {stats.total_searched} searched, {stats.passed_threshold} passed threshold, {stats.included} included
+                  </span>
+                )}
+              </summary>
+              <div className="progress-steps">
+                {group.steps.map((step, stepIdx) => {
+                  const isDocScan = step.metadata?.doc_name;
+                  const included = step.metadata?.included;
+                  const score = step.metadata?.score;
+                  return (
+                    <div
+                      key={stepIdx}
+                      className={`progress-step ${isDocScan ? (included ? "progress-step-included" : "progress-step-ignored") : ""}`}
+                    >
+                      <span className="progress-step-time">{step.timestamp.toFixed(1)}s</span>
+                      <span className="progress-step-message">{step.message}</span>
+                      {score !== undefined && (
+                        <span className={`progress-step-score ${included ? "score-included" : "score-ignored"}`}>
+                          Score: {score}
+                        </span>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </details>
+          );
+        })}
+      </div>
+    );
   };
 
   // -------------------------
@@ -789,19 +871,19 @@ function App() {
       const responseType = content.response_type || "legal_opinion";
       const bareActs = content.bare_acts || [];
       const caseLaws = content.case_laws || [];
+      const messageProgress = content.progress || null; // Get progress from message content
 
       // Helper: render a single item row inside a grouped box
       const renderResultItem = (item, idx) => {
         const title = item.title || item.act_name || item.source || `Result ${idx + 1}`;
-        const url = item.url || "";
+        const url = item.url || item.source_url || ""; // Check multiple URL fields
         const rawText = item.text || "";
-        // Clean: take meaningful sentences, skip very short fragments and navigation-like lines
+        // Clean: remove very short fragments and navigation-like lines, but show full content
         const cleanLines = rawText
           .split(/[.\n]/)
           .map(l => l.trim())
           .filter(l => l.length > 20 && !/^(Skip|Search|Login|Menu|Toggle|Free|Premium|Print|Download|Pricing)/i.test(l));
-        const snippetText = cleanLines.slice(0, 6).join(". ").trim();
-        const snippet = snippetText.length > 400 ? snippetText.slice(0, 400) + "..." : snippetText;
+        const cleanedText = cleanLines.join(". ").trim();
         return (
           <div key={idx} className="result-item-row">
             <div className="result-item-header">
@@ -814,17 +896,84 @@ function App() {
                 <span className="result-item-title">{title}</span>
               )}
             </div>
-            {snippet && <p className="result-item-snippet">{snippet}</p>}
-            {rawText.length > snippet.length + 50 && (
-              <details className="result-item-expand">
-                <summary className="result-item-read-more">Read more</summary>
-                <p className="result-item-full-text">{rawText}</p>
-              </details>
-            )}
+            {cleanedText && <p className="result-item-full-text">{cleanedText}</p>}
             {url && (
               <a href={url} target="_blank" rel="noopener noreferrer" className="result-item-source-link">
                 View original source
               </a>
+            )}
+          </div>
+        );
+      };
+
+      // Helper: render bare act with nested case laws
+      const renderBareActWithCaseLaws = (bareAct, idx) => {
+        const title = bareAct.title || bareAct.act_name || bareAct.source || `Bare Act ${idx + 1}`;
+        const url = bareAct.url || bareAct.source_url || "";
+        const rawText = bareAct.text || "";
+        const relatedCaseLaws = bareAct.related_case_laws || [];
+        
+        // Clean text
+        const cleanLines = rawText
+          .split(/[.\n]/)
+          .map(l => l.trim())
+          .filter(l => l.length > 20 && !/^(Skip|Search|Login|Menu|Toggle|Free|Premium|Print|Download|Pricing)/i.test(l));
+        const cleanedText = cleanLines.join(". ").trim();
+        
+        return (
+          <div key={idx} className="result-item-row bare-act-with-cases">
+            <div className="result-item-header">
+              <span className="result-item-number">{idx + 1}.</span>
+              {url ? (
+                <a href={url} target="_blank" rel="noopener noreferrer" className="result-item-title-link">
+                  {title}
+                </a>
+              ) : (
+                <span className="result-item-title">{title}</span>
+              )}
+            </div>
+            {cleanedText && <p className="result-item-full-text">{cleanedText}</p>}
+            {url && (
+              <a href={url} target="_blank" rel="noopener noreferrer" className="result-item-source-link">
+                View original source
+              </a>
+            )}
+            
+            {/* Related Case Laws */}
+            {relatedCaseLaws.length > 0 && (
+              <div className="related-case-laws">
+                <h5 className="related-case-laws-heading">Relevant Case Laws:</h5>
+                {relatedCaseLaws.map((caseLaw, clIdx) => {
+                  const caseTitle = caseLaw.title || caseLaw.case_name || "Unknown Case";
+                  const caseUrl = caseLaw.url || "";
+                  const caseText = caseLaw.text || "";
+                  const caseCleanLines = caseText
+                    .split(/[.\n]/)
+                    .map(l => l.trim())
+                    .filter(l => l.length > 20 && !/^(Skip|Search|Login|Menu|Toggle|Free|Premium|Print|Download|Pricing)/i.test(l));
+                  const caseCleanedText = caseCleanLines.join(". ").trim();
+                  
+                  return (
+                    <div key={clIdx} className="related-case-law-item">
+                      <div className="case-law-header">
+                        {caseUrl ? (
+                          <a href={caseUrl} target="_blank" rel="noopener noreferrer" className="case-law-title-link">
+                            {caseTitle}
+                          </a>
+                        ) : (
+                          <span className="case-law-title">{caseTitle}</span>
+                        )}
+                      </div>
+                      {caseCleanedText && <p className="case-law-text">{caseCleanedText}</p>}
+                      {caseUrl && (
+                        <a href={caseUrl} target="_blank" rel="noopener noreferrer" className="case-law-source-link">
+                          View judgment
+                        </a>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
             )}
           </div>
         );
@@ -856,18 +1005,27 @@ function App() {
               </div>
             )}
 
-            {/* Supreme Court Judgments always shown first for search, then bare acts */}
-            {responseType === "search_results" ? (
-              <>
-                {renderGroupBox("Supreme Court Judgments", caseLaws)}
-                {bareActs.length > 0 && renderGroupBox("Relevant Bare Acts", bareActs)}
-              </>
-            ) : (
-              <>
-                {renderGroupBox("Relevant Bare Acts", bareActs)}
-                {caseLaws.length > 0 && renderGroupBox("Supreme Court Judgments", caseLaws)}
-              </>
+            {/* Progress display */}
+            {messageProgress && (
+              <ProgressDisplay 
+                progress={messageProgress} 
+                expandedGroups={expandedGroups}
+                setExpandedGroups={setExpandedGroups}
+              />
             )}
+            
+            {/* Bare Acts with nested Case Laws */}
+            {bareActs.length > 0 ? (
+              <div className="results-group-box">
+                <h4 className="results-group-heading">Relevant Bare Acts</h4>
+                <div className="results-group-items">
+                  {bareActs.map((bareAct, idx) => renderBareActWithCaseLaws(bareAct, idx))}
+                </div>
+              </div>
+            ) : (
+              caseLaws.length > 0 && renderGroupBox("Supreme Court Judgments", caseLaws)
+            )}
+            
             {bareActs.length === 0 && caseLaws.length === 0 && (
               <p className="search-empty">No results were found. Try refining your query with more specific legal terms.</p>
             )}
@@ -889,8 +1047,24 @@ function App() {
             </button>
           </div>
           {opinion && <p className="opinion-text">{opinion}</p>}
-          {renderGroupBox("Relevant Bare Acts", bareActs)}
-          {renderGroupBox("Relevant Case Laws", caseLaws)}
+          {messageProgress && (
+            <ProgressDisplay 
+              progress={messageProgress} 
+              expandedGroups={expandedGroups}
+              setExpandedGroups={setExpandedGroups}
+            />
+          )}
+          {/* Bare Acts with nested Case Laws */}
+          {bareActs.length > 0 ? (
+            <div className="results-group-box">
+              <h4 className="results-group-heading">Relevant Bare Acts</h4>
+              <div className="results-group-items">
+                {bareActs.map((bareAct, idx) => renderBareActWithCaseLaws(bareAct, idx))}
+              </div>
+            </div>
+          ) : (
+            caseLaws.length > 0 && renderGroupBox("Relevant Case Laws", caseLaws)
+          )}
           {bareActs.length === 0 && caseLaws.length === 0 && (
             <p className="search-empty">No supporting materials were retrieved for this query.</p>
           )}
@@ -1273,7 +1447,19 @@ function App() {
                           <span className="typing-dot" />
                           <span className="typing-dot" />
                         </span>
+                        {elapsedTime > 0 && (
+                          <span className="typing-timer">
+                            {Math.floor(elapsedTime / 60)} min {Math.floor(elapsedTime % 60)} sec
+                          </span>
+                        )}
                       </div>
+                      {progress && (
+                        <ProgressDisplay 
+                          progress={progress} 
+                          expandedGroups={expandedGroups}
+                          setExpandedGroups={setExpandedGroups}
+                        />
+                      )}
                     </div>
                   </div>
                 )}

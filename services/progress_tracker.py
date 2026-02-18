@@ -1,0 +1,111 @@
+"""
+Progress Tracker — Tracks detailed search progress for UI display.
+
+Tracks:
+- Start time and elapsed time
+- Steps grouped by "Internal Search" and "Web Search"
+- Document scans with scores and inclusion decisions
+- Counts: total searched, passed threshold, included
+"""
+
+import time
+from typing import Optional, Dict, List, Any
+from datetime import datetime
+
+
+class ProgressTracker:
+    """Tracks search progress with timestamps and detailed step information."""
+
+    def __init__(self):
+        self.start_time = time.time()
+        self.groups: List[Dict[str, Any]] = []
+        self.current_group: Optional[Dict[str, Any]] = None
+
+    def start_group(self, group_name: str, description: str = ""):
+        """Start a new progress group (e.g., 'Internal Search', 'Web Search')."""
+        if self.current_group:
+            self.groups.append(self.current_group)
+        self.current_group = {
+            "name": group_name,
+            "description": description,
+            "steps": [],
+            "stats": {
+                "total_searched": 0,
+                "passed_threshold": 0,
+                "included": 0,
+                "ignored": 0,
+            },
+        }
+
+    def add_step(self, message: str, metadata: Optional[Dict[str, Any]] = None):
+        """Add a progress step to the current group."""
+        if not self.current_group:
+            self.start_group("Default", "Progress tracking")
+        elapsed = time.time() - self.start_time
+        step = {
+            "timestamp": round(elapsed, 2),
+            "message": message,
+            "metadata": metadata or {},
+        }
+        self.current_group["steps"].append(step)
+
+    def add_document_scan(
+        self,
+        doc_name: str,
+        score: float,
+        included: bool,
+        threshold: float = 2.0,
+        metadata: Optional[Dict[str, Any]] = None,
+    ):
+        """Record a document scan with score and inclusion decision."""
+        if not self.current_group:
+            self.start_group("Default", "Progress tracking")
+        
+        elapsed = time.time() - self.start_time
+        passed_threshold = score >= threshold
+        
+        # Update stats
+        self.current_group["stats"]["total_searched"] += 1
+        if passed_threshold:
+            self.current_group["stats"]["passed_threshold"] += 1
+        if included:
+            self.current_group["stats"]["included"] += 1
+        else:
+            self.current_group["stats"]["ignored"] += 1
+
+        step = {
+            "timestamp": round(elapsed, 2),
+            "message": f"Document '{doc_name}' scanned, score = {score:.2f}, {'included' if included else 'ignored'}",
+            "metadata": {
+                "doc_name": doc_name,
+                "score": round(score, 2),
+                "included": included,
+                "passed_threshold": passed_threshold,
+                "threshold": threshold,
+                **(metadata or {}),
+            },
+        }
+        self.current_group["steps"].append(step)
+
+    def finish_group(self):
+        """Finish the current group and add it to groups list."""
+        if self.current_group:
+            self.groups.append(self.current_group)
+            self.current_group = None
+
+    def get_progress(self) -> Dict[str, Any]:
+        """Get the complete progress data structure."""
+        # Finish current group if any
+        if self.current_group:
+            self.finish_group()
+        
+        elapsed = time.time() - self.start_time
+        return {
+            "start_time": datetime.utcnow().isoformat() + "Z",
+            "elapsed_seconds": round(elapsed, 2),
+            "groups": self.groups,
+        }
+
+    def get_elapsed_time(self) -> float:
+        """Get elapsed time in seconds."""
+        return time.time() - self.start_time

@@ -102,7 +102,22 @@ def get_source_tag(url: str) -> str:
 # ---------------------------------------------------------------------------
 
 def _ddgs_search(query: str, max_results: int = 10) -> list:
-    """Execute a DuckDuckGo search. Returns list of {title, url, snippet}."""
+    """
+    Execute a DuckDuckGo search. Returns list of {title, url, snippet}.
+    Strictly filters out blocked domains (Wikipedia, social media, etc.) per tier hierarchy.
+    
+    Note: DuckDuckGo/primp may query Wikipedia's API internally as part of its search aggregation,
+    but Wikipedia results are filtered out here and never returned. Only official sources
+    (Tier 2: courts, Tier 3: legal portals, Tier 4: newspapers) are allowed.
+    
+    Suppresses primp's internal logging to avoid noise from Wikipedia/other search engine API calls.
+    """
+    import logging as std_logging
+    # Suppress primp's verbose logging (it logs all internal API calls to Wikipedia, Google, etc.)
+    primp_logger = std_logging.getLogger("primp")
+    original_level = primp_logger.level
+    primp_logger.setLevel(std_logging.WARNING)  # Only show warnings/errors, not INFO
+    
     try:
         from ddgs import DDGS
         results = []
@@ -111,6 +126,9 @@ def _ddgs_search(query: str, max_results: int = 10) -> list:
                 url = r.get("href", r.get("url", ""))
                 if not url:
                     continue
+                # Strict filtering: block Wikipedia and other blocked domains immediately
+                if is_blocked_source(url):
+                    continue  # Skip Wikipedia, social media, blogs, etc.
                 results.append({
                     "title": r.get("title", ""),
                     "url": url,
@@ -120,6 +138,9 @@ def _ddgs_search(query: str, max_results: int = 10) -> list:
     except Exception as e:
         logger.error(f"DuckDuckGo search failed for '{query}': {e}")
         return []
+    finally:
+        # Restore original logging level
+        primp_logger.setLevel(original_level)
 
 
 def search_tier2_official(
@@ -137,25 +158,35 @@ def search_tier2_official(
     """
     results = []
 
-    # Supreme Court
+    # Supreme Court - strict domain check: only sci.gov.in results
     sc_query = f"{query} site:sci.gov.in judgment"
     sc_results = _ddgs_search(sc_query, max_results=max_results)
     for r in sc_results:
-        if not is_blocked_source(r["url"]):
-            r["source_tag"] = "OFFICIAL_COURT"
-            r["tier"] = 2
-            results.append(r)
+        url = r.get("url", "")
+        if is_blocked_source(url):
+            continue
+        # Ensure result is actually from sci.gov.in (site: operator isn't always perfect)
+        if "sci.gov.in" not in url.lower():
+            continue
+        r["source_tag"] = "OFFICIAL_COURT"
+        r["tier"] = 2
+        results.append(r)
 
-    # India Code (for bare acts)
+    # India Code (for bare acts) - strict domain check: only indiacode.nic.in results
     ic_query = f"{query} site:indiacode.nic.in"
     ic_results = _ddgs_search(ic_query, max_results=5)
     for r in ic_results:
-        if not is_blocked_source(r["url"]):
-            r["source_tag"] = "OFFICIAL_COURT"
-            r["tier"] = 2
-            results.append(r)
+        url = r.get("url", "")
+        if is_blocked_source(url):
+            continue
+        # Ensure result is actually from indiacode.nic.in
+        if "indiacode.nic.in" not in url.lower():
+            continue
+        r["source_tag"] = "OFFICIAL_COURT"
+        r["tier"] = 2
+        results.append(r)
 
-    # Relevant High Court
+    # Relevant High Court - strict domain check
     if jurisdiction_state:
         state_lower = jurisdiction_state.lower().strip()
         hc_domain = HC_DOMAIN_BY_STATE.get(state_lower)
@@ -163,10 +194,16 @@ def search_tier2_official(
             hc_query = f"{query} site:{hc_domain}"
             hc_results = _ddgs_search(hc_query, max_results=max_results)
             for r in hc_results:
-                if not is_blocked_source(r["url"]):
-                    r["source_tag"] = "OFFICIAL_COURT"
-                    r["tier"] = 2
-                    results.append(r)
+                url = r.get("url", "")
+                if is_blocked_source(url):
+                    continue
+                # Ensure result is actually from the specified HC domain
+                domain_clean = hc_domain.replace("https://", "").replace("http://", "").replace("www.", "")
+                if domain_clean not in url.lower():
+                    continue
+                r["source_tag"] = "OFFICIAL_COURT"
+                r["tier"] = 2
+                results.append(r)
 
     # Deduplicate by URL
     seen = set()
@@ -336,21 +373,32 @@ def fetch_content_and_pdf(url: str, timeout: int = 30) -> tuple:
 
     # PDF
     if "pdf" in content_type or url.lower().endswith(".pdf"):
+        import io
         pdf_bytes = response.content
-        # Extract text from PDF
+        # Extract text: pdfplumber first, then pypdf fallback
+        text = ""
         try:
-            import io
             import pdfplumber
-            text = ""
             with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
                 for page in pdf.pages:
                     page_text = page.extract_text()
                     if page_text:
                         text += page_text + "\n"
-            return text, pdf_bytes
         except Exception as e:
-            logger.warning(f"Failed to extract text from PDF at {url}: {e}")
-            return "", pdf_bytes
+            logger.warning(f"pdfplumber failed for PDF at {url}: {e}")
+        if not text.strip():
+            try:
+                from pypdf import PdfReader
+                reader = PdfReader(io.BytesIO(pdf_bytes))
+                for page in reader.pages:
+                    t = page.extract_text()
+                    if t:
+                        text += t + "\n"
+                if text.strip():
+                    logger.info("Extracted PDF text using pypdf fallback")
+            except Exception as e2:
+                logger.warning(f"pypdf fallback failed for PDF at {url}: {e2}")
+        return (text.strip(), pdf_bytes) if text.strip() else ("", pdf_bytes)
 
     # HTML
     if "html" in content_type or "text" in content_type:

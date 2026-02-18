@@ -2,11 +2,14 @@ import os
 import json
 import sqlite3
 import hashlib
+import logging
 import secrets
+import time
+import traceback
 from typing import Optional
 
-from fastapi import FastAPI, Query, HTTPException, Depends, Header
-from fastapi.responses import FileResponse
+from fastapi import FastAPI, Query, HTTPException, Depends, Header, Request
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
@@ -17,16 +20,125 @@ from services.interactive_chat import process_chat
 from services.case_law_indexer_incremental import index_new_case_laws
 from services.bare_act_indexer_incremental import index_new_bare_acts
 from services.response_generator_v2 import generate_response_v2
+from llm.ollama_client import check_ollama_health
 
-app = FastAPI(title="Nyaymalaw API")
+# ---------------------------------------------------------------------------
+# Structured logging setup
+# ---------------------------------------------------------------------------
+LOG_LEVEL = os.environ.get("LOG_LEVEL", "INFO").upper()
+logging.basicConfig(
+    level=getattr(logging, LOG_LEVEL, logging.INFO),
+    format="%(asctime)s | %(levelname)-8s | %(name)s | %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+logger = logging.getLogger("nyaymalaw.api")
 
+# ---------------------------------------------------------------------------
+# App init
+# ---------------------------------------------------------------------------
+app = FastAPI(title="Nyaymalaw API", version="3.0.0")
+
+# CORS: environment-aware — set ALLOWED_ORIGINS env var for production
+_cors_origins_env = os.environ.get("ALLOWED_ORIGINS", "").strip()
+_cors_origins = (
+    [o.strip() for o in _cors_origins_env.split(",") if o.strip()]
+    if _cors_origins_env
+    else ["*"]
+)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=_cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# ---------------------------------------------------------------------------
+# Per-IP request rate limiter (in-memory sliding window)
+# ---------------------------------------------------------------------------
+from collections import defaultdict
+
+_RATE_LIMIT_WINDOW = int(os.environ.get("RATE_LIMIT_WINDOW", "60"))   # seconds
+_RATE_LIMIT_MAX = int(os.environ.get("RATE_LIMIT_MAX", "100"))        # requests per window (increased from 30)
+_RATE_LIMIT_ENABLED = os.environ.get("RATE_LIMIT_ENABLED", "false").lower() == "true"  # Disabled by default for development
+_rate_store: dict[str, list[float]] = defaultdict(list)
+
+# Only rate-limit mutation endpoints (not health, static, etc.)
+_RATE_LIMITED_PATHS = {"/submit_case", "/interview_step", "/conversation/continue", "/chat", "/chat/confirm-index", "/search"}
+
+# IPs to skip rate limiting (localhost for development)
+_SKIP_RATE_LIMIT_IPS = {"127.0.0.1", "localhost", "::1"}
+
+
+@app.middleware("http")
+async def rate_limit_middleware(request: Request, call_next):
+    # Skip rate limiting if disabled or for localhost
+    if not _RATE_LIMIT_ENABLED:
+        return await call_next(request)
+    
+    if request.method in ("POST", "PUT", "PATCH") and request.url.path in _RATE_LIMITED_PATHS:
+        client_ip = request.client.host if request.client else "unknown"
+        
+        # Skip rate limiting for localhost/development
+        if client_ip in _SKIP_RATE_LIMIT_IPS:
+            return await call_next(request)
+        
+        now = time.time()
+        # Prune old entries
+        window_start = now - _RATE_LIMIT_WINDOW
+        _rate_store[client_ip] = [t for t in _rate_store[client_ip] if t > window_start]
+        if len(_rate_store[client_ip]) >= _RATE_LIMIT_MAX:
+            logger.warning("Rate limit hit for IP %s on %s", client_ip, request.url.path)
+            return JSONResponse(
+                status_code=429,
+                content={"detail": "Too many requests. Please slow down and try again in a minute."},
+            )
+        _rate_store[client_ip].append(now)
+    return await call_next(request)
+
+
+# ---------------------------------------------------------------------------
+# Request logging middleware
+# ---------------------------------------------------------------------------
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    start = time.perf_counter()
+    method = request.method
+    path = request.url.path
+    try:
+        response = await call_next(request)
+        elapsed_ms = (time.perf_counter() - start) * 1000
+        logger.info(
+            "%s %s → %d (%.0fms)", method, path, response.status_code, elapsed_ms
+        )
+        return response
+    except Exception as exc:
+        elapsed_ms = (time.perf_counter() - start) * 1000
+        logger.error(
+            "%s %s → 500 (%.0fms) %s", method, path, elapsed_ms, exc
+        )
+        raise
+
+
+# ---------------------------------------------------------------------------
+# Global error handler — catch unhandled exceptions, return clean JSON
+# ---------------------------------------------------------------------------
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    logger.error(
+        "Unhandled exception on %s %s:\n%s",
+        request.method,
+        request.url.path,
+        traceback.format_exc(),
+    )
+    return JSONResponse(
+        status_code=500,
+        content={
+            "detail": "An internal error occurred. Please try again.",
+            "error_type": type(exc).__name__,
+        },
+    )
+
 
 # Paths and DB (must be before auth routes) – use config for data root (e.g. Google Drive)
 from config import (
@@ -96,12 +208,23 @@ def _init_auth_db():
 
 _init_auth_db()
 
+# Phase 4: Ensure tier columns exist (idempotent migration)
+from services.tier_manager import (
+    ensure_tier_columns,
+    check_query_limit,
+    increment_query_count,
+    check_feature,
+    get_tier_info,
+    upgrade_user,
+)
+ensure_tier_columns()
+
 security = HTTPBearer(auto_error=False)
 
 
 def _user_from_token(credentials: Optional[HTTPAuthorizationCredentials] = Depends(security)):
-    """Return user from token, or anonymous user when no token (auth disabled)."""
-    if not credentials or (credentials.credentials or "").strip() == "":
+    """Return user from token, or anonymous user when no token or invalid token (avoids 401 for stale tokens)."""
+    def _anonymous_user():
         conn = _get_db()
         try:
             row = conn.execute(
@@ -113,6 +236,10 @@ def _user_from_token(credentials: Optional[HTTPAuthorizationCredentials] = Depen
         finally:
             conn.close()
         return {"id": 0, "email": _ANONYMOUS_EMAIL, "name": "Guest"}
+
+    if not credentials or (credentials.credentials or "").strip() == "":
+        return _anonymous_user()
+
     token = credentials.credentials.strip()
     conn = _get_db()
     try:
@@ -121,10 +248,50 @@ def _user_from_token(credentials: Optional[HTTPAuthorizationCredentials] = Depen
             (token,),
         ).fetchone()
         if not row:
-            raise HTTPException(status_code=401, detail="Invalid or expired token")
+            # Invalid or expired token: fall back to anonymous so app works without re-login
+            logger.debug("Invalid or expired token; using anonymous user")
+            return _anonymous_user()
         return {"id": row["id"], "email": row["email"], "name": row["name"]}
     finally:
         conn.close()
+
+
+def _enforce_query_limit(user: dict) -> None:
+    """Raise 429 if the user has exceeded their daily query limit."""
+    # Skip query limit enforcement for development (disabled by default)
+    _QUERY_LIMIT_ENABLED = os.environ.get("QUERY_LIMIT_ENABLED", "false").lower() == "true"
+    if not _QUERY_LIMIT_ENABLED:
+        return  # Skip limit check in development
+    
+    # Also skip for anonymous/guest users (id 0 or anonymous email)
+    if user.get("id") == 0 or user.get("email") == _ANONYMOUS_EMAIL:
+        return
+    
+    result = check_query_limit(user["id"])
+    if not result.get("allowed"):
+        raise HTTPException(
+            status_code=429,
+            detail={
+                "message": result.get("message", "Query limit exceeded"),
+                "tier": result.get("tier", "free"),
+                "queries_used": result.get("queries_used", 0),
+                "queries_limit": result.get("queries_limit", 5),
+            },
+        )
+
+
+def _enforce_feature(user: dict, feature: str) -> None:
+    """Raise 403 if the user's tier doesn't include this feature."""
+    result = check_feature(user["id"], feature)
+    if not result.get("allowed"):
+        raise HTTPException(
+            status_code=403,
+            detail={
+                "message": result.get("message", "Feature not available"),
+                "tier": result.get("tier", "free"),
+                "feature": feature,
+            },
+        )
 
 
 class RegisterRequest(BaseModel):
@@ -456,6 +623,8 @@ def _map_chat_result_to_ui(result: dict) -> dict:
         resp = result["response"]
         bare_acts = resp.get("bare_act_sections") or []
         case_laws = resp.get("case_laws") or []
+        internet_case_laws = resp.get("internet_case_laws") or []
+        all_case_laws = case_laws + internet_case_laws
         # Combine greeting/acknowledgment message with the explanation/summary
         greeting = (result.get("message") or "").strip()
         explanation = (resp.get("explanation") or "").strip()
@@ -471,8 +640,9 @@ def _map_chat_result_to_ui(result: dict) -> dict:
             "response_type": response_type or "legal_opinion",
             "opinion_text": combined_text,
             "bare_acts": bare_acts,
-            "case_laws": case_laws,
-            "retrieved": case_laws + bare_acts,
+            "case_laws": all_case_laws,  # Include both local and internet case laws
+            "retrieved": all_case_laws + bare_acts,
+            "progress": resp.get("progress"),  # Include progress tracking data
         }
     if phase == "done":
         return {
@@ -596,11 +766,12 @@ def chat(request: ChatRequest):
 
 
 @app.post("/submit_case")
-def submit_case(request: SubmitCaseRequest):
+def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_token)):
     """
     Initial case submission (await_facts). Frontend sends { text }.
     Returns status + next_question | opinion_text | needs_confirmation so the UI can continue the flow.
     """
+    _enforce_query_limit(user)
     text = (request.text or "").strip()
     if not text:
         return {
@@ -624,17 +795,20 @@ def submit_case(request: SubmitCaseRequest):
                 phase="response_generation",
                 facts_summary=result["facts_summary"],
             )
+        if result.get("phase") == "done":
+            increment_query_count(user["id"])
         return _map_chat_result_to_ui(result)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
 
 
 @app.post("/interview_step")
-def interview_step(request: InterviewStepRequest):
+def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_from_token)):
     """
     Follow-up answer in interview. Frontend sends { facts, qa_history } (qa_history includes the latest answer).
     Returns same shape as submit_case for consistent UI handling.
     """
+    _enforce_query_limit(user)
     facts = request.facts or ""
     qa_history = request.qa_history or []
     if not qa_history:
@@ -663,17 +837,20 @@ def interview_step(request: InterviewStepRequest):
                 phase="response_generation",
                 facts_summary=result["facts_summary"],
             )
+        if result.get("phase") == "done":
+            increment_query_count(user["id"])
         return _map_chat_result_to_ui(result)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
 
 
 @app.post("/conversation/continue")
-def continue_chat(request: ContinueChatRequest):
+def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_token)):
     """
     Continue a conversation from chat history. Sends full conversation + new message
     so the LLM has full context. Returns same shape as submit_case / interview_step.
     """
+    _enforce_query_limit(user)
     message = (request.message or "").strip()
     if not message:
         return {
@@ -700,13 +877,15 @@ def continue_chat(request: ContinueChatRequest):
                 phase="response_generation",
                 facts_summary=result["facts_summary"],
             )
+        if result.get("phase") == "done":
+            increment_query_count(user["id"])
         return _map_chat_result_to_ui(result)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
 
 
 @app.post("/chat/confirm-index")
-def confirm_index(request: ConfirmIndexRequest):
+def confirm_index(request: ConfirmIndexRequest, user: dict = Depends(_user_from_token)):
     """
     Index user-confirmed bare acts and case laws into the vector store,
     then generate and return the full legal research response.
@@ -738,6 +917,129 @@ def confirm_index(request: ConfirmIndexRequest):
         "message": f"Indexed: {bare_result.get('chunks_added', 0)} bare act chunks, {case_result.get('chunks_added', 0)} case law chunks",
         "response": resp,
     }
+
+
+# ---------- Tier / Freemium endpoints ----------
+
+class UpgradeRequest(BaseModel):
+    user_id: int
+    tier: str = "premium"
+
+
+@app.get("/user/tier")
+def user_tier(user: dict = Depends(_user_from_token)):
+    """Return the user's current tier, query usage, and feature access."""
+    info = get_tier_info(user["id"])
+    return info
+
+
+@app.post("/admin/upgrade")
+def admin_upgrade(request: UpgradeRequest):
+    """
+    Upgrade a user's tier. Placeholder for Razorpay webhook integration.
+    In production, this should be authenticated with an admin token.
+    """
+    result = upgrade_user(request.user_id, request.tier)
+    if not result.get("success"):
+        raise HTTPException(status_code=400, detail=result.get("message", "Upgrade failed"))
+    return result
+
+
+# ---------- Health check endpoint ----------
+
+@app.post("/admin/reset-rate-limit")
+def reset_rate_limit():
+    """Reset rate limit store (development only)."""
+    global _rate_store
+    _rate_store.clear()
+    logger.info("Rate limit store cleared")
+    return {"status": "ok", "message": "Rate limit store cleared"}
+
+
+@app.get("/health")
+def health_check():
+    """
+    Production health check — verifies Ollama, DB, and vector store.
+    Returns 200 if all healthy, 503 if any critical service is down.
+    """
+    health = {"status": "healthy", "checks": {}}
+
+    # 1. Ollama + model
+    ollama = check_ollama_health()
+    health["checks"]["ollama"] = ollama
+    if not ollama.get("ollama_reachable"):
+        health["status"] = "unhealthy"
+    if not ollama.get("model_loaded"):
+        health["status"] = "degraded" if health["status"] == "healthy" else health["status"]
+
+    # 2. Database
+    try:
+        conn = _get_db()
+        conn.execute("SELECT 1").fetchone()
+        conn.close()
+        health["checks"]["database"] = {"reachable": True}
+    except Exception as e:
+        health["checks"]["database"] = {"reachable": False, "error": str(e)}
+        health["status"] = "unhealthy"
+
+    # 3. Vector store
+    from config import VECTOR_STORE, BARE_INDEX_V2, CASE_INDEX_V2
+    vs_exists = os.path.isdir(VECTOR_STORE)
+    bare_index_exists = os.path.isfile(BARE_INDEX_V2)
+    case_index_exists = os.path.isfile(CASE_INDEX_V2)
+    health["checks"]["vector_store"] = {
+        "directory_exists": vs_exists,
+        "bare_acts_index": bare_index_exists,
+        "case_laws_index": case_index_exists,
+    }
+    if not vs_exists:
+        health["status"] = "degraded" if health["status"] == "healthy" else health["status"]
+
+    status_code = 200 if health["status"] != "unhealthy" else 503
+    return JSONResponse(content=health, status_code=status_code)
+
+
+# ---------- Startup validation ----------
+
+@app.on_event("startup")
+async def startup_validation():
+    """Log system status on startup — warns but does NOT block if services are down."""
+    logger.info("=" * 60)
+    logger.info("Nyaymalaw API v3.0.0 starting up")
+    logger.info("=" * 60)
+
+    # Check Ollama
+    ollama = check_ollama_health()
+    if ollama.get("ollama_reachable") and ollama.get("model_loaded"):
+        logger.info("✓ Ollama reachable, model '%s' loaded", ollama["model"])
+    elif ollama.get("ollama_reachable"):
+        logger.warning("⚠ Ollama reachable but model '%s' NOT found. Run: ollama pull %s", ollama["model"], ollama["model"])
+    else:
+        logger.warning("⚠ Ollama NOT reachable at localhost:11434. Start Ollama first.")
+
+    # Check DB
+    try:
+        conn = _get_db()
+        conn.execute("SELECT 1").fetchone()
+        conn.close()
+        logger.info("✓ Database accessible at %s", _DB_PATH)
+    except Exception as e:
+        logger.warning("⚠ Database error: %s", e)
+
+    # Check vector store
+    from config import VECTOR_STORE, BARE_INDEX_V2, CASE_INDEX_V2
+    if os.path.isdir(VECTOR_STORE):
+        bare_ok = os.path.isfile(BARE_INDEX_V2)
+        case_ok = os.path.isfile(CASE_INDEX_V2)
+        logger.info(
+            "✓ Vector store at %s (bare_acts: %s, case_laws: %s)",
+            VECTOR_STORE, "✓" if bare_ok else "✗", "✓" if case_ok else "✗",
+        )
+    else:
+        logger.warning("⚠ Vector store directory not found: %s", VECTOR_STORE)
+
+    logger.info("CORS origins: %s", _cors_origins)
+    logger.info("=" * 60)
 
 
 if __name__ == "__main__":

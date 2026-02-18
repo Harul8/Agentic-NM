@@ -1,9 +1,58 @@
+"""
+Legal Research Fusion — Combines bare act retrieval + case law retrieval.
+
+Phase 3 rewrite: Uses v2 hybrid_retriever (FAISS + BM25 + cross-encoder)
+instead of the old bare_act_agent/case_law_agent (v1 FAISS only).
+Web fallback uses tiered_search + auto_enricher.
+
+This module is used by:
+- api_server.py /search endpoint
+- mcp_server.py legal_research tool
+"""
+
 from crewai import Agent
 from crewai.tools import tool
 
 from llm.config import CREWAI_LLM
-from agents.Legal_Research.bare_act_agent import retrieve_bare_act_section
-from agents.Legal_Research.case_law_agent import retrieve_case_law
+
+
+def _search_bare_acts(issue: str, top_k: int = 20) -> list:
+    """Search bare acts using v2 hybrid retriever (FAISS + BM25 + cross-encoder)."""
+    try:
+        from retrieval.hybrid_retriever import search_bare_acts_auto
+        results = search_bare_acts_auto(issue, top_k=top_k)
+        return [
+            {
+                "source": r.get("source", ""),
+                "text": r.get("text", ""),
+                "act_name": r.get("act_name", ""),
+                "section_number": r.get("section_number", ""),
+                "rerank_score": r.get("rerank_score", 0),
+            }
+            for r in results if r.get("text")
+        ]
+    except Exception:
+        return []
+
+
+def _search_case_laws(issue: str, top_k: int = 20) -> list:
+    """Search case laws using v2 hybrid retriever (FAISS + BM25 + cross-encoder)."""
+    try:
+        from retrieval.hybrid_retriever import search_case_laws_auto
+        results = search_case_laws_auto(issue, top_k=top_k)
+        return [
+            {
+                "source": r.get("source", ""),
+                "text": r.get("text", ""),
+                "case_name": r.get("case_name", ""),
+                "court": r.get("court", ""),
+                "year": r.get("year", ""),
+                "rerank_score": r.get("rerank_score", 0),
+            }
+            for r in results if r.get("text")
+        ]
+    except Exception:
+        return []
 
 
 def _web_fallback_bare_acts(issue: str, max_results: int = 5) -> list:
@@ -57,34 +106,22 @@ def _web_fallback_case_laws(issue: str, max_results: int = 5) -> list:
 def fuse_bare_act_and_case_law(issue: str):
     """
     Combine relevant Bare Act sections and Case Laws for a given legal issue.
-    Uses local vector store first; if no results, searches the web for Indian bare acts and case laws.
+    Uses v2 hybrid retriever (FAISS + BM25 + cross-encoder) first;
+    falls back to tiered web search if local results are insufficient.
     """
-
     result = {
         "issue": issue,
         "bare_act_sections": [],
         "case_laws": [],
     }
 
-    # ---- Bare Act Retrieval (local, then web fallback) ----
-    try:
-        bare_acts = retrieve_bare_act_section.run(query=issue)
-        if bare_acts:
-            result["bare_act_sections"] = bare_acts
-    except Exception:
-        result["bare_act_sections"] = []
-
+    # ---- Bare Act Retrieval (v2 hybrid, then web fallback) ----
+    result["bare_act_sections"] = _search_bare_acts(issue)
     if not result["bare_act_sections"]:
         result["bare_act_sections"] = _web_fallback_bare_acts(issue, max_results=5)
 
-    # ---- Case Law Retrieval (local, then web fallback) ----
-    try:
-        case_laws = retrieve_case_law.run(query=issue)
-        if case_laws:
-            result["case_laws"] = case_laws
-    except Exception:
-        result["case_laws"] = []
-
+    # ---- Case Law Retrieval (v2 hybrid, then web fallback) ----
+    result["case_laws"] = _search_case_laws(issue)
     if not result["case_laws"]:
         result["case_laws"] = _web_fallback_case_laws(issue, max_results=5)
 

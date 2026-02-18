@@ -51,6 +51,27 @@ def _get_cross_encoder():
     return _cross_encoder
 
 
+def score_query_document(query: str, document_text: str) -> float:
+    """
+    Score a single (query, document) pair with the cross-encoder.
+    Uses full document text (up to 15K chars) for accurate scoring.
+    Used to score web-fetched documents before indexing (only index if score > HIGH_QUALITY).
+    """
+    if not document_text or not query:
+        return 0.0
+    # Use up to 15K chars for scoring (full PDF content, not just snippet)
+    text = (document_text[:15000]).strip()
+    if len(text) < 50:
+        return 0.0
+    try:
+        ce = _get_cross_encoder()
+        score = ce.predict([(query, text)], show_progress_bar=False)
+        return float(score[0])
+    except Exception as e:
+        logger.warning(f"Cross-encoder score failed: {e}")
+        return 0.0
+
+
 # ---------------------------------------------------------------------------
 # BM25 Implementation (lightweight, no external dependency)
 # ---------------------------------------------------------------------------

@@ -133,6 +133,41 @@ BLOCKED_DOMAINS = (
 # All allowed domains combined (for quick lookup)
 ALL_ALLOWED_DOMAINS = TIER2_OFFICIAL_COURT_DOMAINS + TIER3_LEGAL_PORTAL_DOMAINS + TIER4_NEWSPAPER_DOMAINS
 
+# ---------------------------------------------------------------------------
+# Freemium tier configuration
+# ---------------------------------------------------------------------------
+
+TIER_FREE = "free"
+TIER_PREMIUM = "premium"
+
+# Daily query limits per tier
+TIER_QUERY_LIMITS = {
+    TIER_FREE: 10,
+    TIER_PREMIUM: 100,
+}
+
+# Features available per tier
+TIER_FEATURES = {
+    TIER_FREE: {
+        "basic_search": True,        # Search case laws / bare acts
+        "basic_opinion": True,        # Get legal opinion (up to daily limit)
+        "chat_history": True,         # Save/load chat history
+        "internet_search": True,      # Tiered internet fallback
+        "advanced_research": False,   # Deep multi-gap research
+        "document_drafting": False,   # Petition / pleading drafting
+        "priority_response": False,   # Faster processing queue
+    },
+    TIER_PREMIUM: {
+        "basic_search": True,
+        "basic_opinion": True,
+        "chat_history": True,
+        "internet_search": True,
+        "advanced_research": True,
+        "document_drafting": True,
+        "priority_response": True,
+    },
+}
+
 # High Court domain mapping by state (for jurisdiction-aware search)
 HC_DOMAIN_BY_STATE = {
     "karnataka": "karnatakajudiciary.kar.nic.in",

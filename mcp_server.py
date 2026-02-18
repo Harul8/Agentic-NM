@@ -29,14 +29,14 @@ def _run_legal_research(issue: str) -> dict:
 
 def _run_legal_opinion(facts_summary: str, bare_act_sections: list = None, case_laws: list = None) -> dict:
     """Generate a legal opinion from facts and optional retrieved materials."""
-    from services.response_generator import generate_response
+    from services.response_generator_v2 import generate_response_v2
 
     confirmed = {}
     if bare_act_sections:
         confirmed["bare_acts"] = bare_act_sections
     if case_laws:
         confirmed["case_laws"] = case_laws
-    return generate_response(facts_summary, confirmed_materials=confirmed or None)
+    return generate_response_v2(facts_summary, confirmed_materials=confirmed or None)
 
 
 def main() -> None:

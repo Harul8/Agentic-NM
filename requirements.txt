@@ -1,24 +1,24 @@
 # API server
-fastapi
-uvicorn[standard]
-pydantic>=2.6
+fastapi>=0.110,<1.0
+uvicorn[standard]>=0.29,<1.0
+pydantic>=2.6,<3.0
 
 # CrewAI agents + LLM resolution
-crewai>=1.5.0
-litellm
+crewai>=1.5.0,<2.0
+litellm>=1.30,<2.0
 
 # MCP (Model Context Protocol) server
-mcp>=1.23.0
-anyio
+mcp>=1.23.0,<2.0
+anyio>=4.0,<5.0
 
 # HTTP
-requests
+requests>=2.31,<3.0
 
 # Vector search & embeddings
-faiss-cpu
-numpy
-sentence-transformers
-torch
+faiss-cpu>=1.7,<2.0
+numpy>=1.24,<2.0
+sentence-transformers>=2.5,<4.0
+torch>=2.1
 
 # Cross-encoder re-ranker (v2 hybrid retrieval)
 # Used by retrieval/hybrid_retriever.py for re-ranking candidates
@@ -26,21 +26,21 @@ torch
 # No extra pip install needed — sentence-transformers includes CrossEncoder
 
 # PDF processing
-pdfplumber
-pypdf
+pdfplumber>=0.10,<1.0
+pypdf>=4.0,<5.0
 
 # Web scraping (Ingestion)
-beautifulsoup4
+beautifulsoup4>=4.12,<5.0
 
 # Search (Ingestion / case law)
-ddgs
+ddgs>=6.0
 
 # Progress & utilities
-tqdm
+tqdm>=4.66,<5.0
 
 # Optional: OCR fallback for PDFs
-pytesseract
-pillow
+pytesseract>=0.3.10
+pillow>=10.0
 
 # Optional: .env file support
-python-dotenv
+python-dotenv>=1.0,<2.0

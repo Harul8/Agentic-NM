@@ -15,7 +15,7 @@ import logging
 
 from services.fact_collector import get_next_question_or_complete
 from services.response_generator_v2 import generate_response_v2 as generate_response
-from prompts.advocate_prompts import LEGAL_DISCLAIMER
+from services.content_guard import check_query_safety, sanitize_input, check_response_safety
 
 logger = logging.getLogger(__name__)
 
@@ -40,10 +40,10 @@ def _ensure_message(msg: str, facts: str, intent: str) -> str:
         return "Thank you for sharing the details. I've researched the applicable bare acts and case laws. Here's my analysis."
 
 
-def _run_search_or_lookup(facts_summary: str, intent: str, msg: str) -> dict:
+def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_count: int = 5) -> dict:
     """Handle search/lookup intents: go straight to research and return results."""
     try:
-        resp = generate_response(facts_summary, jurisdiction_state="", intent=intent)
+        resp = generate_response(facts_summary, jurisdiction_state="", intent=intent, result_count=result_count)
     except Exception as e:
         logger.error("Research generation failed: %s", e, exc_info=True)
         resp = {
@@ -101,6 +101,22 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
     materials_to_confirm, indexed
     """
 
+    # ---- Safety gate: check input before any processing ----
+    current_message = sanitize_input(current_message)
+    safety = check_query_safety(current_message)
+
+    if not safety.get("safe"):
+        logger.warning("Blocked unsafe query (risk=%s): %s", safety.get("risk_level"), current_message[:80])
+        return {
+            "phase": "fact_collection",
+            "message": safety.get("reason", "I cannot process this request. Please rephrase your legal question."),
+            "facts_summary": None,
+            "response": None,
+            "response_type": None,
+            "materials_to_confirm": None,
+            "indexed": False,
+        }
+
     # ---- Phase: Fact Collection ----
     if phase == "fact_collection":
         result = get_next_question_or_complete(conversation, current_message)
@@ -111,7 +127,8 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
             msg = _ensure_message(result.get("message", ""), facts, intent)
 
             if intent in ("search", "lookup"):
-                return _run_search_or_lookup(facts, intent, msg)
+                count = result.get("result_count", 5)
+                return _run_search_or_lookup(facts, intent, msg, result_count=count)
 
             # Legal opinion: move to response_generation phase
             return {
@@ -173,14 +190,17 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
                 "indexed": False,
             }
 
-        # Full response ready — append disclaimer to legal opinions
+        # Full response ready — check output safety
         explanation = (resp.get("explanation") or "").strip()
         if explanation:
-            explanation += LEGAL_DISCLAIMER
+            resp_safety = check_response_safety(explanation)
+            if not resp_safety.get("safe"):
+                logger.warning("Unsafe LLM output blocked")
+                explanation = "I was unable to generate a safe response for this query. Please try rephrasing."
 
         return {
             "phase": "done",
-            "message": explanation,
+            "message": "",  # transition text only — explanation goes in response.explanation
             "facts_summary": facts,
             "response": {
                 "bare_act_sections": resp.get("bare_act_sections", []),
