@@ -30,6 +30,7 @@ from prompts.advocate_prompts import (
     EXTRACT_CASE_PORTIONS_SYSTEM,
     CASE_SUMMARY_SYSTEM,
     RELEVANCE_EXPLANATION_SYSTEM,
+    RELEVANCE_EXPLANATION_NO_MATERIALS,
     CONVERSATIONAL_SUMMARY_SYSTEM,
 )
 from services.progress_tracker import ProgressTracker
@@ -820,6 +821,20 @@ def _generate_legal_opinion(
     sufficiency: dict,
 ) -> str:
     """Generate a formal legal opinion with citations and source tags."""
+    # Check if we have any materials at all
+    has_bare_acts = bool(bare_acts and len(bare_acts) > 0)
+    has_case_laws = bool(case_laws and len(case_laws) > 0)
+    
+    # If no materials at all, use the fallback message
+    if not has_bare_acts and not has_case_laws:
+        return f"""## Brief Facts
+{facts[:200]}
+
+## Analysis and Conclusion
+{RELEVANCE_EXPLANATION_NO_MATERIALS}
+
+*This analysis is based on general legal principles only, as no directly relevant materials were found in the database.*"""
+
     bare_text = json.dumps(
         [{"title": b.get("title"), "text": b.get("text", "")[:500], "source_tag": b.get("source_tag")}
          for b in bare_acts[:15]],
@@ -833,6 +848,14 @@ def _generate_legal_opinion(
     )[:3000]
 
     confidence = sufficiency.get("confidence", "medium")
+    
+    # Add explicit empty array indicators if needed
+    bare_array_note = ""
+    case_array_note = ""
+    if not has_bare_acts:
+        bare_array_note = "\n⚠️ NOTE: The BARE ACT SECTIONS array above is EMPTY ([]). Do NOT create an 'Applicable Statutory Provisions' section."
+    if not has_case_laws:
+        case_array_note = "\n⚠️ NOTE: The CASE LAWS array above is EMPTY ([]). Do NOT create a 'Relevant Case Law' section."
 
     prompt = f"""{RELEVANCE_EXPLANATION_SYSTEM}
 
@@ -841,17 +864,22 @@ CASE FACTS:
 
 BARE ACT SECTIONS:
 {bare_text}
+{bare_array_note}
 
 CASE LAWS:
 {case_text}
+{case_array_note}
 
 CONFIDENCE LEVEL: {confidence}
 
-IMPORTANT: For each legal statement, cite the source. Tag each citation with its source type:
-[LOCAL_DB] for materials from our verified database
-[OFFICIAL_COURT] for materials from court websites
-[LEGAL_PORTAL] for materials from legal portals
-[NEWS_REFERENCE] for newspaper articles (context only)
+IMPORTANT: 
+- Only cite sources that appear in the arrays above. If an array is empty ([]), do not create that section.
+- For each legal statement that references retrieved materials, tag the citation with its source type:
+  [LOCAL_DB] for materials from our verified database
+  [OFFICIAL_COURT] for materials from court websites
+  [LEGAL_PORTAL] for materials from legal portals
+  [NEWS_REFERENCE] for newspaper articles (context only)
+- If no materials were retrieved (empty arrays), do NOT add any source tags.
 
 Generate the legal analysis:"""
 
@@ -868,6 +896,9 @@ def _generate_conversational_summary(
     case_laws: list,
 ) -> str:
     """Generate a conversational summary for search/lookup queries."""
+    has_bare_acts = bool(bare_acts and len(bare_acts) > 0)
+    has_case_laws = bool(case_laws and len(case_laws) > 0)
+    
     bare_text = json.dumps(
         [{"title": b.get("title"), "text": b.get("text", "")[:300]}
          for b in bare_acts[:10]],
@@ -879,12 +910,22 @@ def _generate_conversational_summary(
          for c in case_laws[:10]],
         indent=2,
     )[:2000]
+    
+    # Add explicit empty array indicators if needed
+    bare_array_note = ""
+    case_array_note = ""
+    if not has_bare_acts:
+        bare_array_note = "\n⚠️ NOTE: The BARE ACTS FOUND array above is EMPTY ([]). Do NOT claim you found bare act provisions."
+    if not has_case_laws:
+        case_array_note = "\n⚠️ NOTE: The CASE LAWS FOUND array above is EMPTY ([]). Do NOT claim you found case laws."
 
     prompt = f"""{CONVERSATIONAL_SUMMARY_SYSTEM}
 
 USER QUERY: {facts[:500]}
 BARE ACTS FOUND: {bare_text}
+{bare_array_note}
 CASE LAWS FOUND: {case_text}
+{case_array_note}
 
 Response:"""
 
