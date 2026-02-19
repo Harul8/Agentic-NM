@@ -40,10 +40,10 @@ def _ensure_message(msg: str, facts: str, intent: str) -> str:
         return "Thank you for sharing the details. I've researched the applicable bare acts and case laws. Here's my analysis."
 
 
-def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_count: int = 5) -> dict:
+def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_count: int = 5, progress_callback=None) -> dict:
     """Handle search/lookup intents: go straight to research and return results."""
     try:
-        resp = generate_response(facts_summary, jurisdiction_state="", intent=intent, result_count=result_count)
+        resp = generate_response(facts_summary, jurisdiction_state="", intent=intent, result_count=result_count, progress_callback=progress_callback)
     except Exception as e:
         logger.error("Research generation failed: %s", e, exc_info=True)
         resp = {
@@ -67,6 +67,7 @@ def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_coun
             "case_laws": resp.get("case_laws", []),
             "internet_case_laws": resp.get("internet_case_laws", []),
             "explanation": explanation,
+            "progress": resp.get("progress"),
         },
         "response_type": response_type,
         "materials_to_confirm": None,
@@ -87,7 +88,7 @@ def _empty_result(phase: str = "done", facts_summary: str = None) -> dict:
     }
 
 
-def process_chat(conversation: list, current_message: str, phase: str, facts_summary: str = None) -> dict:
+def process_chat(conversation: list, current_message: str, phase: str, facts_summary: str = None, progress_callback=None) -> dict:
     """
     Process a chat message and return the appropriate response.
 
@@ -128,7 +129,7 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
 
             if intent in ("search", "lookup"):
                 count = result.get("result_count", 5)
-                return _run_search_or_lookup(facts, intent, msg, result_count=count)
+                return _run_search_or_lookup(facts, intent, msg, result_count=count, progress_callback=progress_callback)
 
             # Legal opinion: move to response_generation phase
             return {
@@ -156,7 +157,7 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
     elif phase == "response_generation":
         facts = facts_summary or current_message
         try:
-            resp = generate_response(facts, jurisdiction_state="", intent="legal_opinion")
+            resp = generate_response(facts, jurisdiction_state="", intent="legal_opinion", progress_callback=progress_callback)
         except Exception as e:
             logger.error("Response generation failed: %s", e, exc_info=True)
             return {
@@ -207,6 +208,7 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
                 "case_laws": resp.get("case_laws", []),
                 "internet_case_laws": resp.get("internet_case_laws", []),
                 "explanation": explanation,
+                "progress": resp.get("progress"),
             },
             "response_type": "legal_opinion",
             "materials_to_confirm": None,

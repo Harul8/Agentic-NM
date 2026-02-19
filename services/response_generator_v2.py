@@ -206,6 +206,7 @@ def generate_response_v2(
     intent: str = "legal_opinion",
     confirmed_materials: dict = None,
     result_count: int = None,
+    progress_callback=None,
 ) -> dict:
     """
     Full legal research response using the v2 pipeline.
@@ -245,32 +246,44 @@ def generate_response_v2(
     # Initialize progress tracker
     progress = ProgressTracker()
 
+    def _emit_progress():
+        if progress_callback:
+            try:
+                progress_callback(progress.get_progress_snapshot())
+            except Exception:
+                pass
+
     # Step 1: Expand query
     legal_query = expand_legal_query(facts_summary)
     search_query = f"{facts_summary} {legal_query}"[:500]
     logger.info(f"Expanded query: {legal_query[:200]}")
 
     # Step 2: Hybrid search local vector store
-    progress.start_group("Internal Search", "Searching local vector database")
+    progress.start_group("Internal Search", "Local vector store (FAISS + BM25 + re-ranking)")
+    _emit_progress()
     progress.add_step("Searching local vector store (FAISS + BM25 + re-ranking)...")
+    _emit_progress()
     logger.info("Searching local vector store (hybrid: FAISS + BM25 + re-rank)...")
     bare_acts = search_bare_acts_auto(search_query, top_k=30)
     case_laws = search_case_laws_auto(search_query, top_k=30)
 
     logger.info(f"Local results (raw): {len(bare_acts)} bare act chunks, {len(case_laws)} case law chunks")
     progress.add_step(f"Found {len(case_laws)} case law documents in local database", {"total_found": len(case_laws)})
-
+    _emit_progress()
     # Track ALL document scans (before filtering) - this shows what was actually scanned
     progress.add_step("Scanning case law documents for similarity...")
+    _emit_progress()
     all_case_laws_scanned = case_laws.copy()  # Keep original list for tracking
     for cl in all_case_laws_scanned:
         score = cl.get("_rerank_score", 0)
         doc_name = cl.get("case_name") or cl.get("source", "Unknown")
         included = score >= MIN_RERANK_SCORE
         progress.add_document_scan(doc_name, score, included, threshold=MIN_RERANK_SCORE)
+        _emit_progress()
 
     # Filter by relevance then by quality — no junk or very old cases
     progress.add_step(f"Filtering documents (relevance score >= {MIN_RERANK_SCORE})...")
+    _emit_progress()
     bare_acts_before = len(bare_acts)
     case_laws_before = len(case_laws)
     
@@ -285,7 +298,7 @@ def generate_response_v2(
         "passed_threshold": passed_threshold,
         "total_searched": case_laws_before
     })
-
+    _emit_progress()
     # Sort: bare acts by relevance; case laws by year (prefer last 40 years) then relevance
     bare_acts.sort(key=lambda x: x.get("_rerank_score", 0), reverse=True)
     case_laws.sort(
@@ -312,6 +325,7 @@ def generate_response_v2(
             "high_quality_count": local_high_quality_count,
             "skipped_web": True
         })
+        _emit_progress()
         case_laws = case_laws_high[:TARGET_HIGH_QUALITY_CASE_LAWS]
     else:
         # Keep local case laws with score >= WEB_MIN for later merge
@@ -320,6 +334,7 @@ def generate_response_v2(
             "passed_threshold": len(case_laws),
             "skipped_web": False
         })
+        _emit_progress()
 
     # Add confirmed materials if provided
     if confirmed_materials:
@@ -338,9 +353,12 @@ def generate_response_v2(
 
     if not skip_web_search and gaps and not sufficiency.get("overall_sufficient", False):
         progress.finish_group()  # Finish Internal Search group
-        progress.start_group("Web Search", "Searching official court websites and legal portals")
+        _emit_progress()
+        progress.start_group("Web Search", "External sources (official court websites & legal portals)")
+        _emit_progress()
         logger.info(f"Gaps identified: {len(gaps)}. Searching internet (tiered, official PDFs only)...")
         progress.add_step(f"Gaps identified: {len(gaps)}. Searching official sources...", {"gap_count": len(gaps)})
+        _emit_progress()
         
         for g in gaps:
             q = (g.get("query") or "").strip()
@@ -353,7 +371,9 @@ def generate_response_v2(
         progress.add_step(f"Found {len(web_case_law_results)} case law results from web search", {
             "total_found": len(web_case_law_results)
         })
+        _emit_progress()
         progress.add_step("Downloading and extracting PDFs...")
+        _emit_progress()
 
         enrichment_summary = enrich_from_gap_results(
             gap_results,
@@ -364,6 +384,7 @@ def generate_response_v2(
         
         # Track web document scans
         progress.add_step("Scanning web documents for similarity...")
+        _emit_progress()
         for enriched in enrichment_summary.get("enriched_case_laws", []):
             score = enriched.get("_rerank_score", 0)
             doc_name = enriched.get("title", "Unknown")
@@ -372,13 +393,13 @@ def generate_response_v2(
                 "url": enriched.get("url", ""),
                 "source_tag": enriched.get("source_tag", "")
             })
-        
+            _emit_progress()
         web_passed = len([e for e in enrichment_summary.get("enriched_case_laws", []) if e.get("_rerank_score", 0) >= WEB_MIN_SCORE])
         progress.add_step(f"Web search complete: {web_passed} case laws passed threshold (score >= {WEB_MIN_SCORE})", {
             "passed_threshold": web_passed,
             "total_searched": len(web_case_law_results)
         })
-
+        _emit_progress()
         # Process internet results for display
         for enriched in enrichment_summary.get("enriched_bare_acts", []):
             content = enriched.get("content", "")
@@ -419,10 +440,11 @@ def generate_response_v2(
     else:
         logger.info("Local results sufficient. Skipping internet search.")
         progress.finish_group()  # Finish Internal Search group if web search skipped
-
+        _emit_progress()
     # Finish any remaining group
     if progress.current_group:
         progress.finish_group()
+        _emit_progress()
 
     # Step 5: Format bare acts first, then match case laws to them
     all_bare_acts = _format_bare_acts(bare_acts + internet_bare_acts)

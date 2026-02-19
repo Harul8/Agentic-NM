@@ -206,6 +206,74 @@ function App() {
     if (!loading && textareaRef.current) textareaRef.current.focus();
   }, [loading]);
 
+  // Elapsed time timer while loading (drives loading-step circles and "X min Y sec")
+  useEffect(() => {
+    if (!loading) return;
+    const start = Date.now();
+    const tick = () => setElapsedTime(Math.floor((Date.now() - start) / 1000));
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, [loading]);
+
+  // -------------------------
+  // SSE Stream Consumer Helper
+  // -------------------------
+  const consumeSSEStream = async (url, body, onProgress, onDone) => {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    if (!res.ok) {
+      const errData = await res.json().catch(() => ({}));
+      throw new Error(errData.detail || `Request failed (${res.status})`);
+    }
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = "";
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      const events = buffer.split(/\n\n+/);
+      buffer = events.pop() || "";
+      for (const raw of events) {
+        let eventType = "";
+        let dataLine = "";
+        for (const line of raw.split(/\n/)) {
+          if (line.startsWith("event:")) eventType = line.slice(6).trim();
+          if (line.startsWith("data:")) dataLine = line.slice(5).trim();
+        }
+        if (!dataLine) continue;
+        try {
+          const payload = JSON.parse(dataLine);
+          if (eventType === "progress" && onProgress) {
+            onProgress(payload);
+          } else if (eventType === "done" && onDone) {
+            onDone(payload);
+            return;
+          }
+        } catch (e) {
+          // ignore parse errors for partial chunks
+        }
+      }
+    }
+    // handle any remaining buffer
+    if (buffer.trim()) {
+      let eventType = "";
+      let dataLine = "";
+      for (const line of buffer.split(/\n/)) {
+        if (line.startsWith("event:")) eventType = line.slice(6).trim();
+        if (line.startsWith("data:")) dataLine = line.slice(5).trim();
+      }
+      if (dataLine && eventType === "done" && onDone) {
+        try {
+          onDone(JSON.parse(dataLine));
+        } catch (_) {}
+      }
+    }
+  };
+
   // -------------------------
   // Reset conversation (from snippet, adapted for existing state)
   // -------------------------
@@ -398,76 +466,89 @@ function App() {
       fetch(`${API_BASE}/chats`, { method: "POST", headers, body: JSON.stringify(chat) }).catch(() => {});
     }
 
-    // 1) Initial facts (await_facts stage)
+    // 1) Initial facts (await_facts stage) - use streaming
     if (stage === "await_facts") {
       setFacts(text); // Store initial facts
 
       try {
-        const res = await fetch(`${API_BASE}/submit_case`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text }),
-        });
-        let data = {};
-        try {
-          const text = await res.text();
-          data = text ? JSON.parse(text) : {};
-        } catch (_) {
-          setError("Server returned an invalid or empty response. Please try again.");
-          setRawResponse("Error: Invalid or empty response from server.");
-          return;
-        }
-        setRawResponse(JSON.stringify(data, null, 2));
-
-        if (data.status === "question" && data.next_question) {
-          setCurrentQuestion(data.next_question);
-          setStage("interview");
-          setMessages((prev) => [
-            ...prev,
-            {
-              role: "assistant",
-              content: data.next_question,
-              timestamp: new Date().toISOString(),
-            },
-          ]);
-          if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
-        } else if (data.status === "done") {
-          setStage("done");
-          setCurrentQuestion("");
-          const opinion = data.opinion_text || "";
-          const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
-          setOpinionText(opinion);
-          setRetrieved(retr);
-          const newAssistantMsg = {
-            role: "assistant",
-            content: {
-              type: "final_opinion",
-              response_type: data.response_type || "legal_opinion",
-              opinionText: opinion,
-              bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
-              case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
-              retrieved: retr,
-              progress: data.progress || null, // Store progress in message
-            },
-            timestamp: new Date().toISOString(),
-          };
-          setMessages((prev) => [...prev, newAssistantMsg]);
-        } else if (data.needs_confirmation) {
-          setPendingMaterials(data.materials_to_confirm);
-          setMessages((prev) => [
-            ...prev,
-            {
-              role: "assistant",
-              content: data.summary, // Use summary for display
-              timestamp: new Date().toISOString(),
-            },
-          ]);
-        } else {
-          if (data.message) setError(data.message);
-        }
+        await consumeSSEStream(
+          `${API_BASE}/submit_case/stream`,
+          { text },
+          (progressPayload) => {
+            setProgress(progressPayload);
+            const groups = progressPayload.groups || [];
+            if (groups.length > 0) {
+              setExpandedGroups((prev) => {
+                const next = { ...prev };
+                groups.forEach((g) => { if (g && g.name) next[g.name] = true; });
+                return next;
+              });
+            }
+          },
+          (data) => {
+            setRawResponse(JSON.stringify(data, null, 2));
+            if (data.status === "question" && data.next_question) {
+              setCurrentQuestion(data.next_question);
+              setStage("interview");
+              setMessages((prev) => [
+                ...prev,
+                {
+                  role: "assistant",
+                  content: data.next_question,
+                  timestamp: new Date().toISOString(),
+                },
+              ]);
+              if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
+            } else if (data.status === "done") {
+              setStage("done");
+              setCurrentQuestion("");
+              const opinion = data.opinion_text || "";
+              const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
+              setOpinionText(opinion);
+              setRetrieved(retr);
+              if (data.progress) {
+                setProgress(data.progress);
+                const groups = (data.progress && data.progress.groups) || [];
+                if (groups.length > 0) {
+                  setExpandedGroups((prev) => {
+                    const next = { ...prev };
+                    groups.forEach((g) => { if (g && g.name) next[g.name] = false; });
+                    return next;
+                  });
+                }
+              }
+              const newAssistantMsg = {
+                role: "assistant",
+                content: {
+                  type: "final_opinion",
+                  response_type: data.response_type || "legal_opinion",
+                  opinionText: opinion,
+                  bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
+                  case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
+                  retrieved: retr,
+                  progress: data.progress || null,
+                },
+                timestamp: new Date().toISOString(),
+              };
+              setMessages((prev) => [...prev, newAssistantMsg]);
+            } else if (data.needs_confirmation) {
+              setPendingMaterials(data.materials_to_confirm);
+              setMessages((prev) => [
+                ...prev,
+                {
+                  role: "assistant",
+                  content: data.summary,
+                  timestamp: new Date().toISOString(),
+                },
+              ]);
+            } else {
+              if (data.message) setError(data.message);
+            }
+          }
+        );
       } catch (err) {
-        console.error("submit_case error:", err);
-        setError(err.message && err.message.includes("JSON") ? "Server returned an invalid response. Please try again." : "Error during processing: " + (err.message || "Please try again."));
+        console.error("submit_case stream error:", err);
+        setError(err.message || "Error during processing. Please try again.");
         setRawResponse("Error: " + (err.message || ""));
       } finally {
         setLoading(false);
@@ -475,7 +556,7 @@ function App() {
       return;
     }
 
-    // 2) Follow-up answers (interview stage)
+    // 2) Follow-up answers (interview stage) - use streaming
     if (stage === "interview") {
       if (!currentQuestion) {
         alert("No current question from the assistant.");
@@ -491,73 +572,83 @@ function App() {
       setCurrentQuestion(""); // Clear current question after answering
 
       try {
-        const res = await fetch(`${API_BASE}/interview_step`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            facts,
-            qa_history: updatedHistory,
-          }),
-        });
-        let data = {};
-        try {
-          const text = await res.text();
-          data = text ? JSON.parse(text) : {};
-        } catch (_) {
-          setError("Server returned an invalid or empty response. Please try again.");
-          setRawResponse("Error: Invalid or empty response from server.");
-          return;
-        }
-        setRawResponse(JSON.stringify(data, null, 2));
-
-        if (data.status === "question" && data.next_question) {
-          setCurrentQuestion(data.next_question);
-          setStage("interview");
-          setMessages((prev) => [
-            ...prev,
-            {
-              role: "assistant",
-              content: data.next_question,
-              timestamp: new Date().toISOString(),
-            },
-          ]);
-          if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
-        } else if (data.status === "done") {
-          setStage("done");
-          setCurrentQuestion("");
-          const opinion = data.opinion_text || "";
-          const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
-          setOpinionText(opinion);
-          setRetrieved(retr);
-          const newAssistantMsg = {
-            role: "assistant",
-            content: {
-              type: "final_opinion",
-              response_type: data.response_type || "legal_opinion",
-              opinionText: opinion,
-              bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
-              case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
-              retrieved: retr,
-              progress: data.progress || null, // Store progress in message
-            },
-            timestamp: new Date().toISOString(),
-          };
-          setMessages((prev) => [...prev, newAssistantMsg]);
-        } else if (data.needs_confirmation) {
-          setPendingMaterials(data.materials_to_confirm);
-          setMessages((prev) => [
-            ...prev,
-            {
-              role: "assistant",
-              content: data.summary, // Use summary for display
-              timestamp: new Date().toISOString(),
-            },
-          ]);
-        } else {
-          if (data.message) setError(data.message);
-        }
+        await consumeSSEStream(
+          `${API_BASE}/interview_step/stream`,
+          { facts, qa_history: updatedHistory },
+          (progressPayload) => {
+            setProgress(progressPayload);
+            const groups = progressPayload.groups || [];
+            if (groups.length > 0) {
+              setExpandedGroups((prev) => {
+                const next = { ...prev };
+                groups.forEach((g) => { if (g && g.name) next[g.name] = true; });
+                return next;
+              });
+            }
+          },
+          (data) => {
+            setRawResponse(JSON.stringify(data, null, 2));
+            if (data.status === "question" && data.next_question) {
+              setCurrentQuestion(data.next_question);
+              setStage("interview");
+              setMessages((prev) => [
+                ...prev,
+                {
+                  role: "assistant",
+                  content: data.next_question,
+                  timestamp: new Date().toISOString(),
+                },
+              ]);
+              if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
+            } else if (data.status === "done") {
+              setStage("done");
+              setCurrentQuestion("");
+              const opinion = data.opinion_text || "";
+              const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
+              setOpinionText(opinion);
+              setRetrieved(retr);
+              if (data.progress) {
+                setProgress(data.progress);
+                const groups = (data.progress && data.progress.groups) || [];
+                if (groups.length > 0) {
+                  setExpandedGroups((prev) => {
+                    const next = { ...prev };
+                    groups.forEach((g) => { if (g && g.name) next[g.name] = false; });
+                    return next;
+                  });
+                }
+              }
+              const newAssistantMsg = {
+                role: "assistant",
+                content: {
+                  type: "final_opinion",
+                  response_type: data.response_type || "legal_opinion",
+                  opinionText: opinion,
+                  bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
+                  case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
+                  retrieved: retr,
+                  progress: data.progress || null,
+                },
+                timestamp: new Date().toISOString(),
+              };
+              setMessages((prev) => [...prev, newAssistantMsg]);
+            } else if (data.needs_confirmation) {
+              setPendingMaterials(data.materials_to_confirm);
+              setMessages((prev) => [
+                ...prev,
+                {
+                  role: "assistant",
+                  content: data.summary,
+                  timestamp: new Date().toISOString(),
+                },
+              ]);
+            } else {
+              if (data.message) setError(data.message);
+            }
+          }
+        );
       } catch (err) {
-        console.error("interview_step error:", err);
+        console.error("interview_step stream error:", err);
         setError("Error during processing: " + (err.message || "Network or server error"));
         setRawResponse("Error: " + err.message);
       } finally {
@@ -566,88 +657,86 @@ function App() {
       return;
     }
 
-    // 3) Continue a loaded chat: use full context and same chat (conversation = history only; new message sent separately)
+    // 3) Continue a loaded chat: use stream endpoint for live progress
     if (stage === "done") {
       const normalizeContent = (msg) => {
         if (typeof msg.content === "string") return msg.content;
         if (msg.content?.opinionText != null) return msg.content.opinionText || "";
         return msg.content?.text ?? msg.content?.summary ?? "";
       };
-      // Send only previous messages (we already appended userMsg above), so backend gets full context + current message separately
       const previousMessages = messages.slice(0, -1);
       const conversation = previousMessages.map((m) => ({ role: m.role, content: normalizeContent(m) }));
       try {
-        // Let React commit loading state so "Nyaymalaw is thinking..." appears
         await new Promise((r) => setTimeout(r, 0));
-        const res = await fetch(`${API_BASE}/conversation/continue`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ conversation, message: text }),
-        });
-        let data = {};
-        try {
-          data = await res.json();
-        } catch (_) {
-          setError("Invalid response from server.");
-          setMessages((prev) => [
-            ...prev,
-            { role: "assistant", content: "The server response was invalid. Please try again.", timestamp: new Date().toISOString() },
-          ]);
-          return;
-        }
-        if (!res.ok) {
-          setError(data.detail || `Request failed (${res.status})`);
-          setMessages((prev) => [
-            ...prev,
-            { role: "assistant", content: (data.detail && String(data.detail)) || "", timestamp: new Date().toISOString() },
-          ]);
-          return;
-        }
-        const assistantContent = (data.next_question ?? data.message ?? "").trim();
-        if (data.status === "question") {
-          setMessages((prev) => [
-            ...prev,
-            { role: "assistant", content: assistantContent || "Could you tell me more about your legal query?", timestamp: new Date().toISOString() },
-          ]);
-          if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
-        } else if (data.status === "done") {
-          const opinion = data.opinion_text || "Your request has been processed.";
-          const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
-          setOpinionText(opinion);
-          setRetrieved(retr);
-          if (data.progress) {
-            setProgress(data.progress);
+        await consumeSSEStream(
+          `${API_BASE}/conversation/continue/stream`,
+          { conversation, message: text },
+          (progressPayload) => {
+            setProgress(progressPayload);
+            const groups = progressPayload.groups || [];
+            if (groups.length > 0) {
+              setExpandedGroups((prev) => {
+                const next = { ...prev };
+                groups.forEach((g) => { if (g && g.name) next[g.name] = true; });
+                return next;
+              });
+            }
+          },
+          (data) => {
+            const assistantContent = (data.next_question ?? data.message ?? "").trim();
+            if (data.status === "question") {
+              setMessages((prev) => [
+                ...prev,
+                { role: "assistant", content: assistantContent || "Could you tell me more?", timestamp: new Date().toISOString() },
+              ]);
+              if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
+            } else if (data.status === "done") {
+              const opinion = data.opinion_text || "Your request has been processed.";
+              const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
+              setOpinionText(opinion);
+              setRetrieved(retr);
+              if (data.progress) {
+                setProgress(data.progress);
+                const groups = (data.progress && data.progress.groups) || [];
+                if (groups.length > 0) {
+                  setExpandedGroups((prev) => {
+                    const next = { ...prev };
+                    groups.forEach((g) => { if (g && g.name) next[g.name] = false; });
+                    return next;
+                  });
+                }
+              }
+              setMessages((prev) => [
+                ...prev,
+                {
+                  role: "assistant",
+                  content: {
+                    type: "final_opinion",
+                    response_type: data.response_type || "legal_opinion",
+                    opinionText: opinion,
+                    bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
+                    case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
+                    retrieved: retr,
+                    progress: data.progress || null,
+                  },
+                  timestamp: new Date().toISOString(),
+                },
+              ]);
+            } else if (data.needs_confirmation) {
+              setPendingMaterials(data.materials_to_confirm);
+              setMessages((prev) => [
+                ...prev,
+                { role: "assistant", content: data.summary ?? "Please confirm the materials to proceed.", timestamp: new Date().toISOString() },
+              ]);
+            } else {
+              const fallbackContent = assistantContent || data.opinion_text || data.summary || "Processing...";
+              setMessages((prev) => [
+                ...prev,
+                { role: "assistant", content: fallbackContent, timestamp: new Date().toISOString() },
+              ]);
+            }
           }
-          setMessages((prev) => [
-            ...prev,
-            {
-              role: "assistant",
-              content: {
-                type: "final_opinion",
-                response_type: data.response_type || "legal_opinion",
-                opinionText: opinion,
-                bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
-                case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
-                retrieved: retr,
-                progress: data.progress || null, // Store progress in message
-              },
-              timestamp: new Date().toISOString(),
-            },
-          ]);
-        } else if (data.needs_confirmation) {
-          setPendingMaterials(data.materials_to_confirm);
-          setMessages((prev) => [
-            ...prev,
-            { role: "assistant", content: data.summary ?? "Please confirm the materials to proceed.", timestamp: new Date().toISOString() },
-          ]);
-        } else {
-          // Fallback: ensure we always show something
-          const fallbackContent = assistantContent || data.opinion_text || data.summary || "I've received your message. Processing...";
-          setMessages((prev) => [
-            ...prev,
-            { role: "assistant", content: fallbackContent, timestamp: new Date().toISOString() },
-          ]);
-        }
+        );
       } catch (err) {
         setError("Error continuing chat: " + (err.message || ""));
         setMessages((prev) => [
@@ -666,22 +755,23 @@ function App() {
   // -------------------------
   const ProgressDisplay = ({ progress, expandedGroups, setExpandedGroups }) => {
     if (!progress || !progress.groups || progress.groups.length === 0) return null;
-    
-    const toggleGroup = (groupName) => {
-      setExpandedGroups((prev) => ({
-        ...prev,
-        [groupName]: !prev[groupName],
-      }));
+
+    const groupDisplayName = (group) => {
+      const name = group.name || "";
+      if (name === "Internal Search") return { title: "Internal Search", subtitle: "Local vector store (FAISS + BM25 + re-ranking)" };
+      if (name === "Web Search") return { title: "Web Search (External)", subtitle: "Official court websites & legal portals" };
+      return { title: name, subtitle: group.description || "" };
     };
 
     return (
       <div className="progress-display">
         {progress.groups.map((group, idx) => {
-          const isExpanded = expandedGroups[group.name] !== undefined ? expandedGroups[group.name] : false;
+          const isExpanded = expandedGroups[group.name] !== undefined ? expandedGroups[group.name] : true;
           const stats = group.stats || {};
+          const { title, subtitle } = groupDisplayName(group);
           return (
             <details
-              key={idx}
+              key={group.name || idx}
               className="progress-group"
               open={isExpanded}
               onToggle={(e) => {
@@ -693,10 +783,13 @@ function App() {
               }}
             >
               <summary className="progress-group-summary">
-                <span className="progress-group-name">{group.name}</span>
+                <div className="progress-group-heading">
+                  <span className="progress-group-name">{title}</span>
+                  {subtitle && <span className="progress-group-description">{subtitle}</span>}
+                </div>
                 {stats.total_searched > 0 && (
                   <span className="progress-group-stats">
-                    {stats.total_searched} searched, {stats.passed_threshold} passed threshold, {stats.included} included
+                    {stats.total_searched} searched, {stats.passed_threshold} passed, {stats.included} included
                   </span>
                 )}
               </summary>
@@ -710,6 +803,7 @@ function App() {
                       key={stepIdx}
                       className={`progress-step ${isDocScan ? (included ? "progress-step-included" : "progress-step-ignored") : ""}`}
                     >
+                      <span className="progress-step-dot progress-step-dot--completed" aria-hidden />
                       <span className="progress-step-time">{step.timestamp.toFixed(1)}s</span>
                       <span className="progress-step-message">{step.message}</span>
                       {score !== undefined && (
@@ -889,7 +983,7 @@ function App() {
             <div className="result-item-header">
               <span className="result-item-number">{idx + 1}.</span>
               {url ? (
-                <a href={url} target="_blank" rel="noopener noreferrer" className="result-item-title-link">
+                <a href={url} rel="noopener noreferrer" className="result-item-title-link" title="Opens in this tab. Ctrl+click for new tab.">
                   {title}
                 </a>
               ) : (
@@ -898,7 +992,7 @@ function App() {
             </div>
             {cleanedText && <p className="result-item-full-text">{cleanedText}</p>}
             {url && (
-              <a href={url} target="_blank" rel="noopener noreferrer" className="result-item-source-link">
+              <a href={url} rel="noopener noreferrer" className="result-item-source-link" title="Opens in this tab. Ctrl+click for new tab.">
                 View original source
               </a>
             )}
@@ -925,7 +1019,7 @@ function App() {
             <div className="result-item-header">
               <span className="result-item-number">{idx + 1}.</span>
               {url ? (
-                <a href={url} target="_blank" rel="noopener noreferrer" className="result-item-title-link">
+                <a href={url} rel="noopener noreferrer" className="result-item-title-link" title="Opens in this tab. Ctrl+click for new tab.">
                   {title}
                 </a>
               ) : (
@@ -934,7 +1028,7 @@ function App() {
             </div>
             {cleanedText && <p className="result-item-full-text">{cleanedText}</p>}
             {url && (
-              <a href={url} target="_blank" rel="noopener noreferrer" className="result-item-source-link">
+              <a href={url} rel="noopener noreferrer" className="result-item-source-link" title="Opens in this tab. Ctrl+click for new tab.">
                 View original source
               </a>
             )}
@@ -957,7 +1051,7 @@ function App() {
                     <div key={clIdx} className="related-case-law-item">
                       <div className="case-law-header">
                         {caseUrl ? (
-                          <a href={caseUrl} target="_blank" rel="noopener noreferrer" className="case-law-title-link">
+                          <a href={caseUrl} rel="noopener noreferrer" className="case-law-title-link" title="Opens in this tab. Ctrl+click for new tab.">
                             {caseTitle}
                           </a>
                         ) : (
@@ -966,7 +1060,7 @@ function App() {
                       </div>
                       {caseCleanedText && <p className="case-law-text">{caseCleanedText}</p>}
                       {caseUrl && (
-                        <a href={caseUrl} target="_blank" rel="noopener noreferrer" className="case-law-source-link">
+                        <a href={caseUrl} rel="noopener noreferrer" className="case-law-source-link" title="Opens in this tab. Ctrl+click for new tab.">
                           View judgment
                         </a>
                       )}
@@ -1097,7 +1191,7 @@ function App() {
                     )}
                     <pre>{item.text || item.content || JSON.stringify(item, null, 2)}</pre>
                     {item.url && (
-                      <a href={item.url} target="_blank" rel="noopener noreferrer" className="result-link">
+                      <a href={item.url} rel="noopener noreferrer" className="result-link" title="Opens in this tab. Ctrl+click for new tab.">
                         View source
                       </a>
                     )}
@@ -1472,6 +1566,11 @@ function App() {
                           expandedGroups={expandedGroups}
                           setExpandedGroups={setExpandedGroups}
                         />
+                      )}
+                      {!progress && (
+                        <div className="progress-display progress-display--loading">
+                          <p className="progress-wait-message">Starting search… Progress will appear here as the backend processes your query.</p>
+                        </div>
                       )}
                     </div>
                   </div>

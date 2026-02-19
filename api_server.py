@@ -1,3 +1,4 @@
+import asyncio
 import os
 import json
 import sqlite3
@@ -6,10 +7,11 @@ import logging
 import secrets
 import time
 import traceback
+from queue import Queue
 from typing import Optional
 
 from fastapi import FastAPI, Query, HTTPException, Depends, Header, Request
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
@@ -64,7 +66,7 @@ _RATE_LIMIT_ENABLED = os.environ.get("RATE_LIMIT_ENABLED", "false").lower() == "
 _rate_store: dict[str, list[float]] = defaultdict(list)
 
 # Only rate-limit mutation endpoints (not health, static, etc.)
-_RATE_LIMITED_PATHS = {"/submit_case", "/interview_step", "/conversation/continue", "/chat", "/chat/confirm-index", "/search"}
+_RATE_LIMITED_PATHS = {"/submit_case", "/submit_case/stream", "/interview_step", "/interview_step/stream", "/conversation/continue", "/conversation/continue/stream", "/chat", "/chat/confirm-index", "/search"}
 
 # IPs to skip rate limiting (localhost for development)
 _SKIP_RATE_LIMIT_IPS = {"127.0.0.1", "localhost", "::1"}
@@ -897,6 +899,239 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
         return _map_chat_result_to_ui(result)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
+
+
+def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, user_id: str) -> None:
+    """Run the same logic as continue_chat, pushing progress to queue and finally the result."""
+    try:
+        def progress_callback(progress_snapshot: dict):
+            queue.put(("progress", progress_snapshot))
+
+        result = process_chat(
+            conversation=conv,
+            current_message=message,
+            phase="fact_collection",
+            facts_summary=None,
+            progress_callback=progress_callback,
+        )
+        if result.get("phase") == "response_generation" and result.get("facts_summary"):
+            conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": result.get("message", "")}]
+            result = process_chat(
+                conversation=conv,
+                current_message=result["facts_summary"],
+                phase="response_generation",
+                facts_summary=result["facts_summary"],
+                progress_callback=progress_callback,
+            )
+        if result.get("phase") == "done":
+            increment_query_count(user_id)
+        queue.put(("result", _map_chat_result_to_ui(result)))
+    except Exception as e:
+        logger.exception("Stream continue_chat failed")
+        queue.put(("result", _chat_error_fallback(str(e)[:200])))
+
+
+def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str) -> None:
+    """Run submit_case logic with progress streaming."""
+    try:
+        def progress_callback(progress_snapshot: dict):
+            queue.put(("progress", progress_snapshot))
+
+        conv = [{"role": "user", "content": text}]
+        result = process_chat(
+            conversation=conv,
+            current_message=text,
+            phase="fact_collection",
+            facts_summary=None,
+            progress_callback=progress_callback,
+        )
+        if result.get("phase") == "response_generation" and result.get("facts_summary"):
+            conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
+            result = process_chat(
+                conversation=conv,
+                current_message=result["facts_summary"],
+                phase="response_generation",
+                facts_summary=result["facts_summary"],
+                progress_callback=progress_callback,
+            )
+        if result.get("phase") == "done":
+            increment_query_count(user_id)
+        queue.put(("result", _map_chat_result_to_ui(result)))
+    except Exception as e:
+        logger.exception("Stream submit_case failed")
+        queue.put(("result", _chat_error_fallback(str(e)[:200])))
+
+
+def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue, user_id: str) -> None:
+    """Run interview_step logic with progress streaming."""
+    try:
+        def progress_callback(progress_snapshot: dict):
+            queue.put(("progress", progress_snapshot))
+
+        conv = [{"role": "user", "content": facts}]
+        for qa in qa_history:
+            conv.append({"role": "assistant", "content": qa.question})
+            conv.append({"role": "user", "content": qa.answer})
+        current_message = qa_history[-1].answer if qa_history else ""
+        result = process_chat(
+            conversation=conv,
+            current_message=current_message,
+            phase="fact_collection",
+            facts_summary=None,
+            progress_callback=progress_callback,
+        )
+        if result.get("phase") == "response_generation" and result.get("facts_summary"):
+            conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
+            result = process_chat(
+                conversation=conv,
+                current_message=result["facts_summary"],
+                phase="response_generation",
+                facts_summary=result["facts_summary"],
+                progress_callback=progress_callback,
+            )
+        if result.get("phase") == "done":
+            increment_query_count(user_id)
+        queue.put(("result", _map_chat_result_to_ui(result)))
+    except Exception as e:
+        logger.exception("Stream interview_step failed")
+        queue.put(("result", _chat_error_fallback(str(e)[:200])))
+
+
+@app.post("/submit_case/stream")
+async def submit_case_stream(request: SubmitCaseRequest, user: dict = Depends(_user_from_token)):
+    """Same as /submit_case but streams progress via Server-Sent Events."""
+    _enforce_query_limit(user)
+    text = (request.text or "").strip()
+    if not text:
+        return JSONResponse(
+            status_code=400,
+            content={"detail": "text is required"},
+        )
+    queue = Queue()
+    loop = asyncio.get_event_loop()
+    user_id = user.get("id", _ANONYMOUS_EMAIL)
+
+    def run_in_thread():
+        _run_submit_case_with_progress(text, queue, user_id)
+
+    thread = __import__("threading").Thread(target=run_in_thread)
+    thread.start()
+
+    async def event_generator():
+        while True:
+            try:
+                kind, payload = await loop.run_in_executor(None, queue.get)
+            except Exception:
+                break
+            if kind == "result":
+                yield f"event: done\ndata: {json.dumps(payload)}\n\n"
+                break
+            if kind == "progress":
+                yield f"event: progress\ndata: {json.dumps(payload)}\n\n"
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        },
+    )
+
+
+@app.post("/interview_step/stream")
+async def interview_step_stream(request: InterviewStepRequest, user: dict = Depends(_user_from_token)):
+    """Same as /interview_step but streams progress via Server-Sent Events."""
+    _enforce_query_limit(user)
+    facts = request.facts or ""
+    qa_history = request.qa_history or []
+    if not qa_history:
+        return JSONResponse(
+            status_code=400,
+            content={"detail": "qa_history is required"},
+        )
+    queue = Queue()
+    loop = asyncio.get_event_loop()
+    user_id = user.get("id", _ANONYMOUS_EMAIL)
+
+    def run_in_thread():
+        _run_interview_step_with_progress(facts, qa_history, queue, user_id)
+
+    thread = __import__("threading").Thread(target=run_in_thread)
+    thread.start()
+
+    async def event_generator():
+        while True:
+            try:
+                kind, payload = await loop.run_in_executor(None, queue.get)
+            except Exception:
+                break
+            if kind == "result":
+                yield f"event: done\ndata: {json.dumps(payload)}\n\n"
+                break
+            if kind == "progress":
+                yield f"event: progress\ndata: {json.dumps(payload)}\n\n"
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        },
+    )
+
+
+@app.post("/conversation/continue/stream")
+async def continue_chat_stream(request: ContinueChatRequest, user: dict = Depends(_user_from_token)):
+    """
+    Same as /conversation/continue but streams progress via Server-Sent Events.
+    Events: "progress" (progress snapshot JSON), "done" (final UI result JSON).
+    """
+    _enforce_query_limit(user)
+    message = (request.message or "").strip()
+    if not message:
+        return JSONResponse(
+            status_code=400,
+            content={"detail": "message is required"},
+        )
+    conv = [
+        {"role": m.role, "content": _normalize_content(m.content)}
+        for m in (request.conversation or [])
+    ]
+    queue = Queue()
+    loop = asyncio.get_event_loop()
+    user_id = user.get("id", _ANONYMOUS_EMAIL)
+
+    def run_in_thread():
+        _run_continue_chat_with_progress(conv, message, queue, user_id)
+
+    thread = __import__("threading").Thread(target=run_in_thread)
+    thread.start()
+
+    async def event_generator():
+        while True:
+            try:
+                kind, payload = await loop.run_in_executor(None, queue.get)
+            except Exception:
+                break
+            if kind == "result":
+                yield f"event: done\ndata: {json.dumps(payload)}\n\n"
+                break
+            if kind == "progress":
+                yield f"event: progress\ndata: {json.dumps(payload)}\n\n"
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        },
+    )
 
 
 @app.post("/chat/confirm-index")

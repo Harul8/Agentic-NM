@@ -348,6 +348,19 @@ body {
   font-size: 0.85rem;
 }
 
+.progress-display--loading {
+  opacity: 0.9;
+}
+.progress-display--loading .progress-step-message {
+  color: #6b7280;
+}
+.progress-wait-message {
+  margin: 0;
+  padding: 12px;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
 .progress-group {
   margin-bottom: 8px;
 }
@@ -359,7 +372,8 @@ body {
 .progress-group-summary {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 8px;
   padding: 8px 12px;
   background: #f3f4f6;
   border-radius: 6px;
@@ -373,15 +387,26 @@ body {
   background: #e5e7eb;
 }
 
+.progress-group-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
 .progress-group-name {
   font-weight: 600;
   color: #1f2937;
+}
+.progress-group-description {
+  font-size: 0.75rem;
+  font-weight: normal;
+  color: #6b7280;
 }
 
 .progress-group-stats {
   font-size: 0.8rem;
   color: #6b7280;
   font-weight: normal;
+  flex-shrink: 0;
 }
 
 .progress-steps {
@@ -396,10 +421,31 @@ body {
 .progress-step {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   padding: 6px 0;
   border-bottom: 1px solid #f3f4f6;
   font-size: 0.8rem;
+}
+
+/* Step status circle: completed (green), in-progress (light green), pending (outline) */
+.progress-step-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #d1d5db;
+}
+.progress-step-dot--completed {
+  background: #22c55e;
+  border-color: #22c55e;
+}
+.progress-step-dot--in-progress {
+  background: #86efac;
+  border-color: #4ade80;
+}
+.progress-step-dot--pending {
+  background: transparent;
+  border-color: #d1d5db;
 }
 
 .progress-step:last-child {

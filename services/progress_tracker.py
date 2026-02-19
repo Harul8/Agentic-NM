@@ -8,6 +8,7 @@ Tracks:
 - Counts: total searched, passed threshold, included
 """
 
+import copy
 import time
 from typing import Optional, Dict, List, Any
 from datetime import datetime
@@ -94,7 +95,7 @@ class ProgressTracker:
             self.current_group = None
 
     def get_progress(self) -> Dict[str, Any]:
-        """Get the complete progress data structure."""
+        """Get the complete progress data structure (finishes current group)."""
         # Finish current group if any
         if self.current_group:
             self.finish_group()
@@ -104,6 +105,18 @@ class ProgressTracker:
             "start_time": datetime.utcnow().isoformat() + "Z",
             "elapsed_seconds": round(elapsed, 2),
             "groups": self.groups,
+        }
+
+    def get_progress_snapshot(self) -> Dict[str, Any]:
+        """Get current progress without modifying state (for streaming/live updates)."""
+        elapsed = time.time() - self.start_time
+        groups = copy.deepcopy(self.groups)
+        if self.current_group:
+            groups = groups + [copy.deepcopy(self.current_group)]
+        return {
+            "start_time": datetime.utcnow().isoformat() + "Z",
+            "elapsed_seconds": round(elapsed, 2),
+            "groups": groups,
         }
 
     def get_elapsed_time(self) -> float:
