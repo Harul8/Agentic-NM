@@ -264,7 +264,7 @@ def plot_opinion_radar(mean_scores: dict, output_path: str):
 # ---------------------------------------------------------------------------
 
 def plot_source_distribution(results: list, output_path: str):
-    """Pie chart showing where final results come from (LOCAL_DB, OFFICIAL_COURT, etc.)."""
+    """Pie chart showing where final results come from (LOCAL_DB, OFFICIAL, LEGAL_PORTAL, etc.)."""
     _setup_style()
     source_counts = {}
     for r in results:

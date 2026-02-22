@@ -1,5 +1,8 @@
 import { useState, useRef, useEffect, useMemo } from "react";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import jsPDF from "jspdf"; // npm install jspdf
+import * as XLSX from "xlsx";
 import "./App.css";
 
 const AUTH_TOKEN_KEY = "nyaymalaw_auth_token";
@@ -51,6 +54,23 @@ function App() {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [expandedGroups, setExpandedGroups] = useState({});
 
+  // Eval section (collapsible, below chat)
+  const [evalExpanded, setEvalExpanded] = useState(false);
+  const [evalFiles, setEvalFiles] = useState([]);
+  const [evalFigures, setEvalFigures] = useState([]);
+  const [evalLoaded, setEvalLoaded] = useState(null); // { path, data }
+  const [evalLoading, setEvalLoading] = useState(false);
+
+  // Architecture section (collapsible, below Eval)
+  const [architectureExpanded, setArchitectureExpanded] = useState(false);
+  const [architectureContent, setArchitectureContent] = useState(null);
+  const [architectureLoading, setArchitectureLoading] = useState(false);
+
+  // Pending indexing (left pane, below Chat history) — from web enrichment; user selects and clicks Index
+  const [pendingIndexingCandidates, setPendingIndexingCandidates] = useState([]);
+  const [indexingRunning, setIndexingRunning] = useState(false);
+  const [showClearPendingConfirm, setShowClearPendingConfirm] = useState(false);
+
   // Saved chats (ChatGPT-style): list of past conversations, persisted to localStorage
   const [savedChats, setSavedChats] = useState([]);
   const hasSavedCurrentChatRef = useRef(false);
@@ -58,7 +78,15 @@ function App() {
   const [editingTitle, setEditingTitle] = useState("");
   const [openMenuChatId, setOpenMenuChatId] = useState(null);
   const editInputRef = useRef(null);
+  const editMessageInputRef = useRef(null);
   const currentChatIdRef = useRef(null);
+
+  // Edit user message (current and old chats)
+  const [editingMessageIndex, setEditingMessageIndex] = useState(null);
+  const [editDraft, setEditDraft] = useState("");
+
+  // Left sidebar accordion: only one of Bare Acts / Case Laws / Chat history expanded at a time
+  const [sidebarExpandedSection, setSidebarExpandedSection] = useState(null);
 
   // Default list so the UI always shows bare acts (e.g. when API is not running yet)
   const DEFAULT_BARE_ACTS = [
@@ -79,6 +107,10 @@ function App() {
     "WALTA_Act_2002.pdf",
   ];
   const [bareActs, setBareActs] = useState(DEFAULT_BARE_ACTS);
+  const [caseLawsList, setCaseLawsList] = useState([]);
+  const [bareActsFilter, setBareActsFilter] = useState("");
+  const [caseLawsFilter, setCaseLawsFilter] = useState("");
+  const [chatHistoryFilter, setChatHistoryFilter] = useState("");
   // In production (e.g. https://nyaymalaw.in) use same origin or VITE_API_BASE; locally use backend on :8000
   const API_BASE =
     import.meta.env.VITE_API_BASE ||
@@ -86,6 +118,31 @@ function App() {
      (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
       ? "http://127.0.0.1:8000"
       : (typeof window !== "undefined" ? window.location.origin : "http://127.0.0.1:8000"));
+
+  // Load persisted pending indexing candidates on mount (survives refresh)
+  useEffect(() => {
+    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    fetch(`${API_BASE}/indexing/pending`, { headers })
+      .then(async (res) => {
+        if (!res.ok) return { items: [] };
+        const data = await res.json().catch(() => ({}));
+        return data;
+      })
+      .then((data) => {
+        const items = Array.isArray(data?.items) ? data.items : [];
+        setPendingIndexingCandidates(items.map((c, i) => ({
+          id: `idx-${Date.now()}-${i}`,
+          title: c.title || "",
+          source_url: c.source_url || "",
+          suggested_category: c.suggested_category || "case_law",
+          category: c.suggested_category || "case_law",
+          selected: !c.already_in_store,
+          already_in_store: !!c.already_in_store,
+        })));
+      })
+      .catch(() => {});
+  }, [API_BASE]);
 
   // Load saved chats once on mount (do not depend on API_BASE to avoid re-runs and 429 from backend).
   useEffect(() => {
@@ -167,6 +224,21 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional: run once on mount only
   }, []);
 
+  // Fetch Case Laws list once on mount
+  useEffect(() => {
+    const fetchCaseLaws = async () => {
+      try {
+        const res = await fetch(`${API_BASE}/caselaws/list`);
+        if (!res.ok) return;
+        const data = await res.json().catch(() => ({}));
+        setCaseLawsList(Array.isArray(data.cases) ? data.cases : []);
+      } catch {
+        setCaseLawsList([]);
+      }
+    };
+    fetchCaseLaws();
+  }, [API_BASE]);
+
   // Scroll only the chat messages area to bottom (do not move browser window or input)
   useEffect(() => {
     const el = messagesContainerRef.current;
@@ -214,6 +286,30 @@ function App() {
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
   }, [loading]);
+
+  // Fetch eval file list and figures when eval section is expanded
+  useEffect(() => {
+    if (!evalExpanded) return;
+    fetch(`${API_BASE}/eval/list`)
+      .then((r) => r.json())
+      .then((d) => setEvalFiles(d.files || []))
+      .catch(() => setEvalFiles([]));
+    fetch(`${API_BASE}/eval/figures/list`)
+      .then((r) => r.json())
+      .then((d) => setEvalFigures(d.figures || []))
+      .catch(() => setEvalFigures([]));
+  }, [evalExpanded, API_BASE]);
+
+  // Fetch architecture doc when Architecture section is expanded
+  useEffect(() => {
+    if (!architectureExpanded) return;
+    setArchitectureLoading(true);
+    fetch(`${API_BASE}/docs/architecture`)
+      .then((r) => r.json())
+      .then((d) => setArchitectureContent(d.content ?? null))
+      .catch(() => setArchitectureContent(null))
+      .finally(() => setArchitectureLoading(false));
+  }, [architectureExpanded, API_BASE]);
 
   // -------------------------
   // SSE Stream Consumer Helper
@@ -293,6 +389,36 @@ function App() {
     setMessages([]);
   };
 
+  const applyIndexingCandidates = (data) => {
+    if (data && data.indexing_candidates && data.indexing_candidates.length) {
+      const candidates = data.indexing_candidates.map((c, i) => ({
+        id: `idx-${Date.now()}-${i}`,
+        title: c.title || "",
+        source_url: c.source_url || "",
+        suggested_category: c.suggested_category || "case_law",
+        category: c.suggested_category || "case_law",
+        selected: !c.already_in_store,
+        already_in_store: !!c.already_in_store,
+      }));
+      setPendingIndexingCandidates(candidates);
+      const token = localStorage.getItem(AUTH_TOKEN_KEY);
+      const persistItems = data.indexing_candidates.map((c) => ({
+        title: c.title || "",
+        source_url: c.source_url || "",
+        suggested_category: c.suggested_category || "case_law",
+        already_in_store: !!c.already_in_store,
+      }));
+      fetch(`${API_BASE}/indexing/pending`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
+        body: JSON.stringify({ items: persistItems }),
+      }).catch(() => {});
+    }
+  };
+
   // Save current conversation to savedChats (for sidebar list and persistence)
   const saveCurrentChatToHistory = (msgs, opinion, retr) => {
     const firstUser = (msgs || []).find((m) => m.role === "user");
@@ -356,7 +482,12 @@ function App() {
     return Array.from(groups.entries()).map(([groupLabel, groupChats]) => ({ groupLabel, chats: groupChats }));
   };
 
-  const chatGroups = useMemo(() => groupChatsByDate(savedChats), [savedChats]);
+  const filteredSavedChats = useMemo(() => {
+    const q = (chatHistoryFilter || "").trim().toLowerCase();
+    if (!q) return savedChats;
+    return savedChats.filter((c) => (c.title || "").toLowerCase().includes(q));
+  }, [savedChats, chatHistoryFilter]);
+  const chatGroups = useMemo(() => groupChatsByDate(filteredSavedChats), [filteredSavedChats]);
 
   const startRenamingChat = (chat) => {
     setEditingChatId(chat.id);
@@ -429,8 +560,8 @@ function App() {
   // Core submit logic (adapted from snippet's handleSubmit, using existing 'input' state)
   // -------------------------
   const handleSubmit = async () => {
-    const text = (input || "").trim(); // Use existing 'input' state
-    if (!text) {
+    const raw = input ?? "";
+    if (!raw.trim()) {
       alert("Please type something before pressing Submit.");
       return;
     }
@@ -442,14 +573,15 @@ function App() {
     setInput(""); // Clear input after submission
     setPendingMaterials(null); // Clear pending materials on new submission
 
-    const userMsg = { role: "user", content: text, timestamp: new Date().toISOString() };
+    // Keep exact format user typed (spaces, newlines)
+    const userMsg = { role: "user", content: raw, timestamp: new Date().toISOString() };
     const isFirstMessage = messages.length === 0;
 
     setMessages((prev) => [...prev, userMsg]);
 
     if (isFirstMessage) {
       const chatId = Date.now();
-      const title = text.length > 50 ? text.slice(0, 50) + "…" : text;
+      const title = raw.trim().length > 50 ? raw.trim().slice(0, 50) + "…" : raw.trim();
       const chat = {
         id: chatId,
         title,
@@ -468,12 +600,12 @@ function App() {
 
     // 1) Initial facts (await_facts stage) - use streaming
     if (stage === "await_facts") {
-      setFacts(text); // Store initial facts
+      setFacts(raw); // Store initial facts (format preserved)
 
       try {
         await consumeSSEStream(
           `${API_BASE}/submit_case/stream`,
-          { text },
+          { text: raw },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
@@ -506,6 +638,7 @@ function App() {
               const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
               setOpinionText(opinion);
               setRetrieved(retr);
+              applyIndexingCandidates(data);
               if (data.progress) {
                 setProgress(data.progress);
                 const groups = (data.progress && data.progress.groups) || [];
@@ -527,6 +660,7 @@ function App() {
                   case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
                   retrieved: retr,
                   progress: data.progress || null,
+                  model_used: data.model_used || null,
                 },
                 timestamp: new Date().toISOString(),
               };
@@ -566,7 +700,7 @@ function App() {
 
       const updatedHistory = [
         ...qaHistory,
-        { question: currentQuestion, answer: text },
+        { question: currentQuestion, answer: raw },
       ];
       setQaHistory(updatedHistory);
       setCurrentQuestion(""); // Clear current question after answering
@@ -607,6 +741,7 @@ function App() {
               const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
               setOpinionText(opinion);
               setRetrieved(retr);
+              applyIndexingCandidates(data);
               if (data.progress) {
                 setProgress(data.progress);
                 const groups = (data.progress && data.progress.groups) || [];
@@ -628,6 +763,7 @@ function App() {
                   case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
                   retrieved: retr,
                   progress: data.progress || null,
+                  model_used: data.model_used || null,
                 },
                 timestamp: new Date().toISOString(),
               };
@@ -670,7 +806,7 @@ function App() {
         await new Promise((r) => setTimeout(r, 0));
         await consumeSSEStream(
           `${API_BASE}/conversation/continue/stream`,
-          { conversation, message: text },
+          { conversation, message: raw },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
@@ -695,6 +831,7 @@ function App() {
               const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
               setOpinionText(opinion);
               setRetrieved(retr);
+              applyIndexingCandidates(data);
               if (data.progress) {
                 setProgress(data.progress);
                 const groups = (data.progress && data.progress.groups) || [];
@@ -718,6 +855,7 @@ function App() {
                     case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
                     retrieved: retr,
                     progress: data.progress || null,
+                    model_used: data.model_used || null,
                   },
                   timestamp: new Date().toISOString(),
                 },
@@ -751,53 +889,63 @@ function App() {
   };
 
   // -------------------------
-  // Progress Display Component
+  // Progress Display Component — single collapsible "Progress tracker" with all steps
   // -------------------------
+  const PROGRESS_TRACKER_KEY = "progress_tracker";
   const ProgressDisplay = ({ progress, expandedGroups, setExpandedGroups }) => {
     if (!progress || !progress.groups || progress.groups.length === 0) return null;
 
-    const groupDisplayName = (group) => {
-      const name = group.name || "";
-      if (name === "Internal Search") return { title: "Internal Search", subtitle: "Local vector store (FAISS + BM25 + re-ranking)" };
-      if (name === "Web Search") return { title: "Web Search (External)", subtitle: "Official court websites & legal portals" };
-      return { title: name, subtitle: group.description || "" };
-    };
+    const isExpanded = expandedGroups[PROGRESS_TRACKER_KEY] !== undefined ? expandedGroups[PROGRESS_TRACKER_KEY] : true;
+    const allSteps = progress.groups.flatMap((g) => (g.steps || []).map((s) => ({ ...s, groupName: g.name })));
+    const totalStats = progress.groups.reduce(
+      (acc, g) => {
+        const s = g.stats || {};
+        acc.searched += s.total_searched || 0;
+        acc.passed += s.passed_threshold || 0;
+        acc.included += s.included || 0;
+        return acc;
+      },
+      { searched: 0, passed: 0, included: 0 },
+    );
 
     return (
       <div className="progress-display">
-        {progress.groups.map((group, idx) => {
-          const isExpanded = expandedGroups[group.name] !== undefined ? expandedGroups[group.name] : true;
-          const stats = group.stats || {};
-          const { title, subtitle } = groupDisplayName(group);
-          return (
-            <details
-              key={group.name || idx}
-              className="progress-group"
-              open={isExpanded}
-              onToggle={(e) => {
-                const newState = e.target.open;
-                setExpandedGroups((prev) => ({
-                  ...prev,
-                  [group.name]: newState,
-                }));
-              }}
-            >
-              <summary className="progress-group-summary">
-                <div className="progress-group-heading">
-                  <span className="progress-group-name">{title}</span>
-                  {subtitle && <span className="progress-group-description">{subtitle}</span>}
-                </div>
-                {stats.total_searched > 0 && (
-                  <span className="progress-group-stats">
-                    {stats.total_searched} searched, {stats.passed_threshold} passed, {stats.included} included
-                  </span>
-                )}
-              </summary>
+        <details
+          className="progress-group"
+          open={isExpanded}
+          onClick={(e) => {
+            if (e.target.closest("summary")) {
+              e.preventDefault();
+              setExpandedGroups((prev) => ({
+                ...prev,
+                [PROGRESS_TRACKER_KEY]: !(prev[PROGRESS_TRACKER_KEY] !== undefined ? prev[PROGRESS_TRACKER_KEY] : true),
+              }));
+            }
+          }}
+        >
+          <summary className="progress-group-summary">
+            <span className="progress-group-name">Progress tracker</span>
+            {totalStats.searched > 0 && (
+              <span className="progress-group-stats">
+                {totalStats.searched} searched, {totalStats.passed} passed, {totalStats.included} included
+              </span>
+            )}
+          </summary>
+          <div
+            className="progress-steps-outer"
+            role="region"
+            aria-label="Progress steps"
+            onMouseDown={(e) => e.stopPropagation()}
+            onPointerDown={(e) => e.stopPropagation()}
+          >
+            <div className="progress-steps-wrapper">
               <div className="progress-steps">
-                {group.steps.map((step, stepIdx) => {
+                {allSteps.map((step, stepIdx) => {
                   const isDocScan = step.metadata?.doc_name;
                   const included = step.metadata?.included;
                   const score = step.metadata?.score;
+                  const alreadyTitles = step.metadata?.already_in_library_titles;
+                  const hasAlreadyInLibrary = Array.isArray(alreadyTitles) && alreadyTitles.length > 0;
                   return (
                     <div
                       key={stepIdx}
@@ -811,16 +959,373 @@ function App() {
                           Score: {score}
                         </span>
                       )}
+                      {hasAlreadyInLibrary && (
+                        <div className="progress-step-already-in-library" aria-label="Already in library">
+                          <span className="progress-step-already-label">{alreadyTitles.length} already in library:</span>
+                          <ul className="progress-step-already-list">
+                            {alreadyTitles.slice(0, 20).map((t, i) => (
+                              <li key={i} title={t}>{t.length > 50 ? t.slice(0, 50) + "…" : t}</li>
+                            ))}
+                            {alreadyTitles.length > 20 && (
+                              <li className="progress-step-already-more">+{alreadyTitles.length - 20} more</li>
+                            )}
+                          </ul>
+                        </div>
+                      )}
                     </div>
                   );
                 })}
               </div>
-            </details>
-          );
-        })}
+            </div>
+          </div>
+        </details>
       </div>
     );
   };
+
+  // -------------------------
+  // Eval Section — JSON as tables (see .cursor/rules/eval-json-ui-rendering.md)
+  // - Metrics objects: rows = metric names, cols = mean, n, stdev, ci_95
+  // - Aggregated-by-key: rows = outer keys (e.g. threshold), cols = inner keys
+  // - Array of objects: flatten nested objects to sub-columns, arrays to length; no collapsibles
+  // -------------------------
+  const downloadTableCsv = (headers, rows, filename) => {
+    const escape = (v) => {
+      const s = String(v ?? "");
+      if (/[",\n\r]/.test(s)) return `"${s.replace(/"/g, '""')}"`;
+      return s;
+    };
+    const line = (arr) => arr.map(escape).join(",");
+    const csv = [line(headers), ...rows.map((r) => line(r))].join("\r\n");
+    const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `${filename || "table"}.csv`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  };
+  const downloadTableExcel = (headers, rows, filename) => {
+    try {
+      const ws = XLSX.utils.aoa_to_sheet([headers, ...rows]);
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+      XLSX.writeFile(wb, `${filename || "table"}.xlsx`);
+    } catch (e) {
+      console.error("Excel export failed:", e);
+    }
+  };
+  const EvalTableToolbar = ({ headers, rows, filename }) => {
+    if (!headers?.length) return null;
+    const base = filename || "eval-table";
+    return (
+      <div className="eval-table-toolbar">
+        <button type="button" className="eval-download-btn" onClick={() => downloadTableCsv(headers, rows, base)}>
+          Download CSV
+        </button>
+        <button type="button" className="eval-download-btn" onClick={() => downloadTableExcel(headers, rows, base)}>
+          Download Excel
+        </button>
+      </div>
+    );
+  };
+  const JsonToTable = ({ data, baseFilename = "eval-table" }) => {
+    if (data == null) return null;
+    // Detect metrics object: { metric_name: { mean, n, stdev, ci_95 }, ... } → table with metrics as rows
+    const isMetricsObject = (o) => {
+      if (!o || typeof o !== "object" || Array.isArray(o)) return false;
+      const entries = Object.entries(o);
+      if (entries.length === 0) return false;
+      const firstVal = entries[0][1];
+      if (!firstVal || typeof firstVal !== "object" || Array.isArray(firstVal)) return false;
+      const statKeys = ["mean", "n", "stdev", "ci_95"];
+      const hasStats = statKeys.some((k) => k in firstVal);
+      if (!hasStats) return false;
+      return entries.every(([, v]) => v && typeof v === "object" && !Array.isArray(v));
+    };
+    if (typeof data === "object" && !Array.isArray(data) && isMetricsObject(data)) {
+      const statKeys = ["mean", "n", "stdev", "ci_95"];
+      const headers = ["metric", ...statKeys];
+      const rows = Object.entries(data).map(([metric, stats]) => [
+        metric,
+        ...statKeys.map((k) => (stats && stats[k] != null) ? (typeof stats[k] === "number" ? Number(stats[k]).toFixed(4) : String(stats[k])) : "—"),
+      ]);
+      return (
+        <div className="eval-table-block">
+          <EvalTableToolbar headers={headers} rows={rows} filename={baseFilename} />
+          <div className="eval-table-wrap">
+            <table className="eval-table eval-table--metrics">
+              <thead><tr><th>metric</th>{statKeys.map((k) => <th key={k}>{k}</th>)}</tr></thead>
+              <tbody>
+                {Object.entries(data).map(([metric, stats]) => (
+                  <tr key={metric}>
+                    <td className="eval-metric-name">{metric}</td>
+                    {statKeys.map((k) => (
+                      <td key={k}>{(stats && stats[k] != null) ? (typeof stats[k] === "number" ? Number(stats[k]).toFixed(4) : String(stats[k])) : "—"}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      );
+    }
+    // Detect aggregated-by-key object (e.g. threshold_sweep aggregated): { "0.1": { mean_precision, mean_recall, ... }, ... } → rows = keys, columns = metric names
+    const isAggregatedTable = (o) => {
+      if (!o || typeof o !== "object" || Array.isArray(o)) return false;
+      const entries = Object.entries(o);
+      if (entries.length === 0) return false;
+      const firstVal = entries[0][1];
+      if (!firstVal || typeof firstVal !== "object" || Array.isArray(firstVal)) return false;
+      if (isMetricsObject(o)) return false; // already handled
+      const keys = Object.keys(firstVal);
+      const allScalar = keys.every((k) => {
+        const v = firstVal[k];
+        return v == null || typeof v !== "object" || Array.isArray(v);
+      });
+      if (!allScalar) return false;
+      return entries.every(([, v]) => v && typeof v === "object" && !Array.isArray(v) && Object.keys(v).every((k) => typeof v[k] !== "object" || v[k] == null));
+    };
+    if (typeof data === "object" && !Array.isArray(data) && isAggregatedTable(data)) {
+      const rowKeys = Object.keys(data).sort((a, b) => parseFloat(a) - parseFloat(b));
+      const colKeys = [...new Set(rowKeys.flatMap((rk) => Object.keys(data[rk] || {})))];
+      const headers = ["threshold", ...colKeys];
+      const rows = rowKeys.map((rk) => {
+        const row = data[rk] || {};
+        return [rk, ...colKeys.map((k) => {
+          const v = row[k];
+          return v != null ? (typeof v === "number" ? (Number.isInteger(v) ? String(v) : Number(v).toFixed(4)) : String(v)) : "—";
+        })];
+      });
+      return (
+        <div className="eval-table-block">
+          <EvalTableToolbar headers={headers} rows={rows} filename={baseFilename} />
+          <div className="eval-table-wrap">
+            <table className="eval-table eval-table--metrics">
+              <thead><tr><th>threshold</th>{colKeys.map((k) => <th key={k}>{k}</th>)}</tr></thead>
+              <tbody>
+                {rowKeys.map((rk) => {
+                  const row = data[rk] || {};
+                  return (
+                    <tr key={rk}>
+                      <td className="eval-metric-name">{rk}</td>
+                      {colKeys.map((k) => {
+                        const v = row[k];
+                        const disp = v != null ? (typeof v === "number" ? (Number.isInteger(v) ? String(v) : Number(v).toFixed(4)) : String(v)) : "—";
+                        return <td key={k}>{disp}</td>;
+                      })}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      );
+    }
+    if (Array.isArray(data)) {
+      if (data.length === 0) return <p className="eval-empty">Empty array</p>;
+      const first = data[0];
+      if (typeof first !== "object" || first === null) {
+        const headers = ["value"];
+        const rows = data.map((v) => [String(v)]);
+        return (
+          <div className="eval-table-block">
+            <EvalTableToolbar headers={headers} rows={rows} filename={baseFilename} />
+            <div className="eval-table-wrap">
+              <table className="eval-table">
+                <tbody>
+                  {data.map((v, i) => (
+                    <tr key={i}><td>{String(v)}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        );
+      }
+      // Flatten each row: nested objects become sub-columns (e.g. filter_results.bare_acts_after_score_filter), arrays become length
+      const flattenRow = (obj, prefix = "") => {
+        const out = {};
+        if (obj == null) return out;
+        for (const [k, v] of Object.entries(obj)) {
+          const key = prefix ? `${prefix}.${k}` : k;
+          if (v == null) {
+            out[key] = "";
+          } else if (Array.isArray(v)) {
+            out[key] = v.length;
+          } else if (typeof v === "object") {
+            const allScalar = Object.values(v).every(
+              (x) => x == null || typeof x !== "object" || Array.isArray(x)
+            );
+            if (allScalar) {
+              for (const [kk, vv] of Object.entries(v)) {
+                const subKey = prefix ? `${prefix}.${k}.${kk}` : `${k}.${kk}`;
+                out[subKey] = Array.isArray(vv) ? vv.length : vv;
+              }
+            } else {
+              Object.assign(out, flattenRow(v, key));
+            }
+          } else {
+            out[key] = v;
+          }
+        }
+        return out;
+      };
+      const flattened = data.slice(0, 100).map((r) => flattenRow(r));
+      const keys = [...new Set(flattened.flatMap((r) => Object.keys(r)))].sort();
+      if (keys.length === 0) return null;
+      const headers = keys;
+      const rows = flattened.map((row) => keys.map((k) => {
+        const v = row[k];
+        return v == null ? "" : typeof v === "string" && v.length > 150 ? v.slice(0, 150) + "…" : String(v);
+      }));
+      return (
+        <div className="eval-table-block">
+          <EvalTableToolbar headers={headers} rows={rows} filename={baseFilename} />
+          <div className="eval-table-wrap">
+            <table className="eval-table eval-table--flat">
+              <thead><tr>{keys.map((k) => <th key={k}>{k}</th>)}</tr></thead>
+              <tbody>
+                {flattened.map((row, i) => (
+                  <tr key={i}>
+                    {keys.map((k) => {
+                      const v = row[k];
+                      const s = v == null ? "" : typeof v === "string" && v.length > 150 ? v.slice(0, 150) + "…" : String(v);
+                      return <td key={k}>{s}</td>;
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {data.length > 100 && <p className="eval-truncated">Showing first 100 of {data.length} rows</p>}
+        </div>
+      );
+    }
+    if (typeof data === "object") {
+      const entries = Object.entries(data);
+      if (entries.length === 0) return <p className="eval-empty">Empty object</p>;
+      // If top-level keys are metrics objects (e.g. compare.json: bm25, merged, full), show each as heading + table, no collapse
+      if (entries.every(([, v]) => isMetricsObject(v))) {
+        return (
+          <div className="eval-object-wrap">
+            {entries.map(([runName, metrics]) => (
+              <div key={runName} className="eval-run-block">
+                <h5 className="eval-run-title">{runName}</h5>
+                <JsonToTable data={metrics} baseFilename={`${baseFilename}-${runName}`} />
+              </div>
+            ))}
+          </div>
+        );
+      }
+      // Other objects: flatten into key-value table, no details/collapse
+      const isFlat = (o) => o == null || typeof o !== "object" || typeof o === "number" || typeof o === "string" || typeof o === "boolean";
+      return (
+        <div className="eval-object-wrap">
+          {entries.map(([k, v]) => (
+            <div key={k} className="eval-kv-block">
+              <span className="eval-kv-key">{k}:</span>
+              {v != null && typeof v === "object" && !Array.isArray(v) && Object.values(v).every(isFlat) ? (
+                <table className="eval-table eval-table--keyval">
+                  <tbody>
+                    {Object.entries(v).map(([kk, vv]) => (
+                      <tr key={kk}><td>{kk}</td><td>{JSON.stringify(vv)}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+              ) : v != null && (typeof v === "object" || Array.isArray(v)) ? (
+                <JsonToTable data={v} baseFilename={baseFilename ? `${baseFilename}-${k}` : k} />
+              ) : (
+                <span>{String(v)}</span>
+              )}
+            </div>
+          ))}
+        </div>
+      );
+    }
+    return <span>{String(data)}</span>;
+  };
+
+  const EvalSection = () => (
+    <details
+      className="eval-section"
+      open={evalExpanded}
+      onToggle={(e) => setEvalExpanded(e.target.open)}
+    >
+      <summary className="eval-section-summary">Eval Results</summary>
+      <div className="eval-section-body">
+        {evalFiles.length === 0 ? (
+          <p className="eval-message">No eval files found. Run batch eval to generate results.</p>
+        ) : (
+          <div className="eval-files">
+            {evalFiles.map((f) => (
+              <button
+                key={f.path}
+                type="button"
+                className={`eval-file-btn ${evalLoaded?.path === f.path ? "eval-file-btn--active" : ""}`}
+                onClick={() => {
+                  setEvalLoading(true);
+                  fetch(`${API_BASE}/eval/file?path=${encodeURIComponent(f.path)}`)
+                    .then((r) => r.json())
+                    .then((data) => setEvalLoaded({ path: f.path, data }))
+                    .catch(() => setEvalLoaded(null))
+                    .finally(() => setEvalLoading(false));
+                }}
+              >
+                {f.name || f.path}
+              </button>
+            ))}
+          </div>
+        )}
+        {evalLoading && <p className="eval-loading">Loading…</p>}
+        {evalLoaded && !evalLoading && (
+          <div className="eval-content">
+            <h4 className="eval-file-title">{evalLoaded.path}</h4>
+            <JsonToTable data={evalLoaded.data} baseFilename={(evalLoaded.path || "eval").replace(/\.json$/i, "").replace(/\//g, "-")} />
+          </div>
+        )}
+        {evalFigures.length > 0 && (
+          <div className="eval-figures">
+            <h4 className="eval-figures-title">Figures</h4>
+            <div className="eval-figures-grid">
+              {evalFigures.map((fig) => (
+                <figure key={fig.path} className="eval-figure">
+                  <img
+                    src={`${API_BASE}/eval/figures/file?path=${encodeURIComponent(fig.path)}`}
+                    alt={fig.name}
+                    className="eval-figure-img"
+                  />
+                  <figcaption className="eval-figure-caption">{fig.name}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </details>
+  );
+
+  const ArchitectureSection = () => (
+    <details
+      className="architecture-section"
+      open={architectureExpanded}
+      onToggle={(e) => setArchitectureExpanded(e.target.open)}
+    >
+      <summary className="architecture-section-summary">Architecture</summary>
+      <div className="architecture-section-body">
+        {architectureLoading && <p className="architecture-loading">Loading…</p>}
+        {!architectureLoading && architectureContent && (
+          <div className="architecture-content">
+            <ReactMarkdown rehypePlugins={[rehypeRaw]}>{architectureContent}</ReactMarkdown>
+          </div>
+        )}
+        {!architectureLoading && !architectureContent && architectureExpanded && (
+          <p className="architecture-message">Could not load architecture doc.</p>
+        )}
+      </div>
+    </details>
+  );
 
   // -------------------------
   // Existing functions (retained and adapted)
@@ -833,6 +1338,43 @@ function App() {
       return exp?.text || "[Legal research response]";
     }
     return "[Message]";
+  };
+
+  const getMessageTextForCopy = (msg) => {
+    if (msg.role === "user") return typeof msg.content === "string" ? msg.content : String(msg.content ?? "");
+    return toApiContent(msg);
+  };
+
+  const handleCopyMessage = (msg) => {
+    const str = getMessageTextForCopy(msg);
+    navigator.clipboard.writeText(str).then(() => { /* optional: toast */ }).catch(() => {});
+  };
+
+  const startEditUserMessage = (index) => {
+    const msg = messages[index];
+    if (msg?.role !== "user") return;
+    const content = typeof msg.content === "string" ? msg.content : "";
+    setEditDraft(content);
+    setEditingMessageIndex(index);
+    setTimeout(() => editMessageInputRef.current?.focus(), 0);
+  };
+
+  const saveEditUserMessage = () => {
+    if (editingMessageIndex == null) return;
+    setMessages((prev) =>
+      prev.map((m, j) =>
+        j === editingMessageIndex && m.role === "user"
+          ? { ...m, content: editDraft }
+          : m
+      )
+    );
+    setEditingMessageIndex(null);
+    setEditDraft("");
+  };
+
+  const cancelEditUserMessage = () => {
+    setEditingMessageIndex(null);
+    setEditDraft("");
   };
 
   const confirmAndIndex = async () => {
@@ -1107,7 +1649,6 @@ function App() {
                 setExpandedGroups={setExpandedGroups}
               />
             )}
-            
             {/* Bare Acts with nested Case Laws */}
             {bareActs.length > 0 ? (
               <div className="results-group-box">
@@ -1127,20 +1668,55 @@ function App() {
         );
       }
 
-      // ---------- legal_opinion (formal layout with header + PDF download) ----------
-      return (
-        <div className="message-final-opinion">
-          <div className="final-output-header final-output-header--chat">
-            <h4 className="opinion-title">Legal Opinion</h4>
-            <button
-              type="button"
-              onClick={handleDownloadPdf}
-              className="download-pdf-button"
-            >
-              Download as PDF
-            </button>
+      // ---------- legal_opinion only: formal layout with "Legal Opinion" header + PDF download ----------
+      if (responseType === "legal_opinion") {
+        return (
+          <div className="message-final-opinion">
+            <div className="final-output-header final-output-header--chat">
+              <h4 className="opinion-title">Legal Opinion</h4>
+              <button
+                type="button"
+                onClick={handleDownloadPdf}
+                className="download-pdf-button"
+              >
+                Download as PDF
+              </button>
+            </div>
+            {opinion && <p className="opinion-text">{opinion}</p>}
+            {messageProgress && (
+              <ProgressDisplay 
+                progress={messageProgress} 
+                expandedGroups={expandedGroups}
+                setExpandedGroups={setExpandedGroups}
+              />
+            )}
+            {bareActs.length > 0 ? (
+              <div className="results-group-box">
+                <h4 className="results-group-heading">Relevant Bare Acts</h4>
+                <div className="results-group-items">
+                  {bareActs.map((bareAct, idx) => renderBareActWithCaseLaws(bareAct, idx))}
+                </div>
+              </div>
+            ) : (
+              caseLaws.length > 0 && renderGroupBox("Relevant Case Laws", caseLaws)
+            )}
+            {bareActs.length === 0 && caseLaws.length === 0 && (
+              <p className="search-empty">No supporting materials were retrieved for this query.</p>
+            )}
           </div>
-          {opinion && <p className="opinion-text">{opinion}</p>}
+        );
+      }
+
+      // ---------- other types (generic_chat, etc.): no "Legal Opinion" header, no PDF button ----------
+      return (
+        <div className="message-final-opinion message-search-results conversational-response">
+          {opinion && (
+            <div className="conversational-summary-block">
+              {opinion.split("\n").filter(l => l.trim()).map((para, i) => (
+                <p key={i} className="conversational-summary-para">{para}</p>
+              ))}
+            </div>
+          )}
           {messageProgress && (
             <ProgressDisplay 
               progress={messageProgress} 
@@ -1148,7 +1724,6 @@ function App() {
               setExpandedGroups={setExpandedGroups}
             />
           )}
-          {/* Bare Acts with nested Case Laws */}
           {bareActs.length > 0 ? (
             <div className="results-group-box">
               <h4 className="results-group-heading">Relevant Bare Acts</h4>
@@ -1159,7 +1734,7 @@ function App() {
           ) : (
             caseLaws.length > 0 && renderGroupBox("Relevant Case Laws", caseLaws)
           )}
-          {bareActs.length === 0 && caseLaws.length === 0 && (
+          {bareActs.length === 0 && caseLaws.length === 0 && opinion && (
             <p className="search-empty">No supporting materials were retrieved for this query.</p>
           )}
         </div>
@@ -1316,8 +1891,9 @@ function App() {
     >
       {/* Two-pane layout: Left (sidebar) and Right (chat) */}
       <div className="main-content-wrapper">
-        {/* LEFT PANE – New chat, Bare Acts, Chat history */}
+        {/* LEFT PANE – New chat, Bare Acts, Case Laws, Chat history, Pending indexing (fixed order) */}
         <div className="left-column">
+            <div className="left-column-scroll">
             <button
               type="button"
               onClick={handleNewChat}
@@ -1325,56 +1901,147 @@ function App() {
             >
               ＋ New chat
             </button>
-            <details className="bare-acts-collapsible">
-              <summary className="bare-acts-collapsible-summary">
+            <details
+              className="bare-acts-collapsible"
+              open={sidebarExpandedSection === "bare_acts"}
+              onClick={(e) => {
+                if (e.target.closest("summary")) {
+                  e.preventDefault();
+                  setSidebarExpandedSection((prev) => (prev === "bare_acts" ? null : "bare_acts"));
+                }
+              }}
+            >
+              <summary className="bare-acts-collapsible-summary sidebar-collapsible-summary">
                 {bareActs.length ? (
-                  <span className="bare-acts-count">📚 Bare Acts Library ({bareActs.length})</span>
+                  <span className="bare-acts-count">Bare Acts Library ({bareActs.length})</span>
                 ) : (
-                  "📚 Bare Acts Library"
+                  <span>Bare Acts Library</span>
                 )}
               </summary>
               {bareActs.length ? (
-                <ul className="bare-act-list">
-                  {bareActs.map((name, idx) => {
-                    // Use same-origin (relative) URL so the new tab is not blocked (about:blank#blocked).
-                    // Dev: Vite proxies /bareacts to the API. Prod: proxy /bareacts to your API or same origin.
-                    const useRelative =
-                      typeof window !== "undefined" &&
-                      (window.location.hostname === "localhost" ||
-                        window.location.hostname === "127.0.0.1" ||
-                        API_BASE === "" ||
-                        API_BASE.startsWith(window.location.origin));
-                    const downloadUrl = useRelative
-                      ? `/bareacts/download?name=${encodeURIComponent(name)}&inline=1`
-                      : `${API_BASE}/bareacts/download?name=${encodeURIComponent(name)}&inline=1`;
-                    return (
-                    <li key={`${name}-${idx}`} className="bare-act-list-item">
-                      <a
-                        href={downloadUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bare-act-download-link"
-                      >
-                        {name}
-                      </a>
-                    </li>
-                  );})}
-                </ul>
+                <>
+                  <input
+                    type="text"
+                    placeholder="Search bare acts..."
+                    value={bareActsFilter}
+                    onChange={(e) => setBareActsFilter(e.target.value)}
+                    className="sidebar-search-input"
+                    aria-label="Filter bare acts"
+                  />
+                  <div className="sidebar-list-scroll" onMouseDown={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+                  <ul className="bare-act-list">
+                    {bareActs
+                      .filter((name) => !bareActsFilter.trim() || name.toLowerCase().includes(bareActsFilter.trim().toLowerCase()))
+                      .map((name, idx) => {
+                        const useRelative =
+                          typeof window !== "undefined" &&
+                          (window.location.hostname === "localhost" ||
+                            window.location.hostname === "127.0.0.1" ||
+                            API_BASE === "" ||
+                            API_BASE.startsWith(window.location.origin));
+                        const downloadUrl = useRelative
+                          ? `/bareacts/download?name=${encodeURIComponent(name)}&inline=1`
+                          : `${API_BASE}/bareacts/download?name=${encodeURIComponent(name)}&inline=1`;
+                        return (
+                          <li key={`${name}-${idx}`} className="bare-act-list-item">
+                            <a href={downloadUrl} target="_blank" rel="noopener noreferrer" className="bare-act-download-link">
+                              {name}
+                            </a>
+                          </li>
+                        );
+                      })}
+                  </ul>
+                  </div>
+                </>
               ) : (
-                <p className="bare-act-empty-message">
-                  No bare acts in vector store yet.
-                </p>
+                <p className="bare-act-empty-message">No bare acts in vector store yet.</p>
               )}
             </details>
 
-            {/* Saved chats – below Bare Acts Library */}
+            {/* Case Laws – below Bare Acts, same functionality */}
+            <details
+              className="case-laws-collapsible"
+              open={sidebarExpandedSection === "case_laws"}
+              onClick={(e) => {
+                if (e.target.closest("summary")) {
+                  e.preventDefault();
+                  setSidebarExpandedSection((prev) => (prev === "case_laws" ? null : "case_laws"));
+                }
+              }}
+            >
+              <summary className="case-laws-collapsible-summary sidebar-collapsible-summary">
+                {caseLawsList.length ? (
+                  <span className="case-laws-count">Case Laws ({caseLawsList.length})</span>
+                ) : (
+                  <span>Case Laws</span>
+                )}
+              </summary>
+              {caseLawsList.length ? (
+                <>
+                  <input
+                    type="text"
+                    placeholder="Search case laws..."
+                    value={caseLawsFilter}
+                    onChange={(e) => setCaseLawsFilter(e.target.value)}
+                    className="sidebar-search-input"
+                    aria-label="Filter case laws"
+                  />
+                  <div className="sidebar-list-scroll" onMouseDown={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+                  <ul className="case-laws-list">
+                    {caseLawsList
+                      .filter((name) => !caseLawsFilter.trim() || name.toLowerCase().includes(caseLawsFilter.trim().toLowerCase()))
+                      .map((name, idx) => {
+                        const useRelative =
+                          typeof window !== "undefined" &&
+                          (window.location.hostname === "localhost" ||
+                            window.location.hostname === "127.0.0.1" ||
+                            API_BASE === "" ||
+                            API_BASE.startsWith(window.location.origin));
+                        const downloadUrl = useRelative
+                          ? `/caselaws/download?name=${encodeURIComponent(name)}&inline=1`
+                          : `${API_BASE}/caselaws/download?name=${encodeURIComponent(name)}&inline=1`;
+                        return (
+                          <li key={`${name}-${idx}`} className="case-laws-list-item">
+                            <a href={downloadUrl} target="_blank" rel="noopener noreferrer" className="case-laws-download-link">
+                              {name}
+                            </a>
+                          </li>
+                        );
+                      })}
+                  </ul>
+                  </div>
+                </>
+              ) : (
+                <p className="case-laws-empty-message">No case laws in vector store yet.</p>
+              )}
+            </details>
+
+            {/* Saved chats – below Case Laws */}
             <div className="chat-history-section">
-              <details className="chat-history-collapsible">
-                <summary className="chat-history-collapsible-summary">
-                  💬 Chat history ({savedChats.length})
+              <details
+                className="chat-history-collapsible"
+                open={sidebarExpandedSection === "chat_history"}
+                onClick={(e) => {
+                  if (e.target.closest("summary")) {
+                    e.preventDefault();
+                    setSidebarExpandedSection((prev) => (prev === "chat_history" ? null : "chat_history"));
+                  }
+                }}
+              >
+                <summary className="chat-history-collapsible-summary sidebar-collapsible-summary">
+                  <span>Chat history ({savedChats.length})</span>
                 </summary>
                 {savedChats.length > 0 ? (
-                  <div className="chat-history-groups">
+                  <>
+                    <input
+                      type="text"
+                      placeholder="Search chat history..."
+                      value={chatHistoryFilter}
+                      onChange={(e) => setChatHistoryFilter(e.target.value)}
+                      className="sidebar-search-input"
+                      aria-label="Filter chat history"
+                    />
+                    <div className="chat-history-groups" onMouseDown={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
                     {chatGroups.map(({ groupLabel, chats }) => (
                       <div key={groupLabel} className="chat-history-group">
                         <div className="chat-history-group-label">{groupLabel}</div>
@@ -1437,11 +2104,151 @@ function App() {
                         </ul>
                       </div>
                     ))}
-                  </div>
+                    </div>
+                  </>
                 ) : (
                   <p className="chat-history-empty">No previous chats.</p>
                 )}
               </details>
+            </div>
+
+            {/* Pending indexing – same row as above three: font, color, gap, one-expanded-at-a-time */}
+            <details
+              className="pending-indexing-collapsible"
+              open={sidebarExpandedSection === "pending_indexing"}
+              onClick={(e) => {
+                if (e.target.closest("summary")) {
+                  e.preventDefault();
+                  setSidebarExpandedSection((prev) => (prev === "pending_indexing" ? null : "pending_indexing"));
+                }
+              }}
+            >
+              <summary className="pending-indexing-collapsible-summary sidebar-collapsible-summary">
+                <span className="pending-indexing-count">Pending indexing ({pendingIndexingCandidates.length})</span>
+              </summary>
+              <div className="pending-indexing-body" onMouseDown={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+                {pendingIndexingCandidates.length > 0 ? (
+                  <>
+                    <div className="pending-indexing-actions">
+                      <button
+                        type="button"
+                        className="pending-indexing-btn"
+                        disabled={indexingRunning || !pendingIndexingCandidates.some((c) => c.selected && !c.already_in_store)}
+                        onClick={async () => {
+                          const selected = pendingIndexingCandidates.filter((c) => c.selected && !c.already_in_store);
+                          if (!selected.length) return;
+                          setIndexingRunning(true);
+                          const token = localStorage.getItem(AUTH_TOKEN_KEY);
+                          const headers = token ? { Authorization: `Bearer ${token}` } : {};
+                          const refreshPending = async () => {
+                            try {
+                              const pendRes = await fetch(`${API_BASE}/indexing/pending`, { headers });
+                              const pendData = pendRes.ok ? await pendRes.json().catch(() => ({})) : {};
+                              const items = Array.isArray(pendData?.items) ? pendData.items : [];
+                              setPendingIndexingCandidates(items.map((c, i) => ({
+                                id: `idx-${Date.now()}-${i}`,
+                                title: c.title || "",
+                                source_url: c.source_url || "",
+                                suggested_category: c.suggested_category || "case_law",
+                                category: c.suggested_category || "case_law",
+                                selected: !c.already_in_store,
+                                already_in_store: !!c.already_in_store,
+                              })));
+                            } catch (_) {}
+                          };
+                          const pollId = setInterval(refreshPending, 2000);
+                          try {
+                            const res = await fetch(`${API_BASE}/indexing/run`, {
+                              method: "POST",
+                              headers: {
+                                "Content-Type": "application/json",
+                                ...headers,
+                              },
+                              body: JSON.stringify({
+                                items: selected.map((c) => ({
+                                  url: (c.source_url || "").trim(),
+                                  title: (c.title || "").trim(),
+                                  category: c.category || c.suggested_category || "bare_act",
+                                })),
+                              }),
+                            });
+                            const data = res.ok ? await res.json().catch(() => ({})) : {};
+                            if (res.ok) await refreshPending();
+                            if (data.errors && data.errors.length) {
+                              setError(data.message || "Some items could not be indexed.");
+                            }
+                          } catch (e) {
+                            setError(e?.message || "Indexing request failed.");
+                          } finally {
+                            clearInterval(pollId);
+                            await refreshPending();
+                            setIndexingRunning(false);
+                          }
+                        }}
+                      >
+                        {indexingRunning ? "Indexing…" : "Index"}
+                      </button>
+                      <button
+                        type="button"
+                        className="pending-indexing-btn pending-indexing-btn-clear"
+                        disabled={indexingRunning || pendingIndexingCandidates.length === 0}
+                        onClick={() => setShowClearPendingConfirm(true)}
+                      >
+                        Clear
+                      </button>
+                    </div>
+                    <ul className="pending-indexing-list">
+                      {pendingIndexingCandidates.map((c) => (
+                        <li key={c.id} className={`pending-indexing-item${c.already_in_store ? " pending-indexing-item--duplicate" : ""}`}>
+                          <label className="pending-indexing-row">
+                            <input
+                              type="checkbox"
+                              checked={!!c.selected}
+                              disabled={!!c.already_in_store}
+                              onChange={() => {
+                                if (c.already_in_store) return;
+                                setPendingIndexingCandidates((prev) =>
+                                  prev.map((x) => (x.id === c.id ? { ...x, selected: !x.selected } : x))
+                                );
+                              }}
+                              className="pending-indexing-checkbox"
+                              aria-label={c.already_in_store ? `Already in library: ${c.title}` : `Select ${c.title}`}
+                            />
+                            <a
+                              href={c.source_url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`pending-indexing-link${c.already_in_store ? " pending-indexing-link--duplicate" : ""}`}
+                              title={c.already_in_store ? `${c.title} — Already in library` : c.title}
+                            >
+                              {c.title.length > 40 ? c.title.slice(0, 40) + "…" : c.title}
+                            </a>
+                            {c.already_in_store && (
+                              <span className="pending-indexing-badge" title="Same act/document already in internal store">Already in library</span>
+                            )}
+                            <select
+                              value={c.category}
+                              onChange={(e) => {
+                                setPendingIndexingCandidates((prev) =>
+                                  prev.map((x) => (x.id === c.id ? { ...x, category: e.target.value } : x))
+                                );
+                              }}
+                              className="pending-indexing-dropdown"
+                              aria-label="Category"
+                            >
+                              <option value="bare_act">Bare act</option>
+                              <option value="case_law">Case law</option>
+                            </select>
+                          </label>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <p className="pending-indexing-empty">No documents pending. New candidates appear here after web search.</p>
+                )}
+              </div>
+            </details>
             </div>
         </div>
 
@@ -1459,6 +2266,7 @@ function App() {
               </button>
             </div>
           </div>
+            {/* Chat area: center stage (no messages) or conversation + input + disclaimer */}
             {!messages.some((m) => m.role === "user") ? (
               /* ChatGPT-style: plain message + single centered text box until first send */
               <div className="chat-center-stage">
@@ -1507,7 +2315,7 @@ function App() {
                   >
                     {messages.map((msg, i) => (
                   <div
-                    key={`msg-${msg.role}-${i}-${typeof msg.content === "string" ? msg.content?.slice(0, 30) : msg.content?.type || ""}`}
+                    key={`msg-${i}`}
                     className={`message message--${msg.role}`}
                   >
                     <div className="message-avatar">
@@ -1531,10 +2339,49 @@ function App() {
                     </div>
                     <div className="message-content">
                       {msg.role === "user" ? (
-                        <div className="message-bubble message-bubble--user">{msg.content}</div>
+                        <div className="message-bubble message-bubble--user">
+                          {editingMessageIndex === i ? (
+                            <div className="message-edit-inline">
+                              <textarea
+                                ref={editMessageInputRef}
+                                className="message-edit-textarea"
+                                value={editDraft}
+                                onChange={(e) => setEditDraft(e.target.value)}
+                                rows={Math.min(40, Math.max(6, (editDraft.match(/\n/g) || []).length + 2))}
+                              />
+                              <div className="message-edit-actions">
+                                <button type="button" className="message-edit-btn message-edit-btn-save" onClick={saveEditUserMessage}>
+                                  Save
+                                </button>
+                                <button type="button" className="message-edit-btn message-edit-btn-cancel" onClick={cancelEditUserMessage}>
+                                  Cancel
+                                </button>
+                              </div>
+                            </div>
+                          ) : (
+                            <>
+                              <div className="message-bubble-text message-bubble-text--preserve" title="User message">
+                                {typeof msg.content === "string" ? msg.content : String(msg.content ?? "")}
+                              </div>
+                              <div className="message-bubble-actions">
+                                <button type="button" className="message-action-btn" onClick={() => startEditUserMessage(i)} title="Edit">
+                                  Edit
+                                </button>
+                                <button type="button" className="message-action-btn" onClick={() => handleCopyMessage(msg)} title="Copy">
+                                  Copy
+                                </button>
+                              </div>
+                            </>
+                          )}
+                        </div>
                       ) : (
                         <div className="message-bubble message-bubble--assistant">
                           {renderAssistantContent(msg.content)}
+                          <div className="message-bubble-actions">
+                            <button type="button" className="message-action-btn" onClick={() => handleCopyMessage(msg)} title="Copy">
+                              Copy
+                            </button>
+                          </div>
                         </div>
                       )}
                     </div>
@@ -1639,8 +2486,41 @@ function App() {
                 )}
               </>
             )}
+
+            {/* Bottom pane: always retained — Eval Results + Architecture (separate from chat, below disclaimer) */}
+            <div className="eval-architecture-pane" aria-label="Eval Results and Architecture">
+              <EvalSection />
+              <ArchitectureSection />
+            </div>
         </div>
       </div>
+
+      {/* Confirmation: discard pending indexing documents */}
+      {showClearPendingConfirm && (
+        <div className="clear-pending-overlay" onClick={() => setShowClearPendingConfirm(false)}>
+          <div className="clear-pending-dialog" onClick={(e) => e.stopPropagation()}>
+            <p className="clear-pending-message">Are you sure you want to discard these documents?</p>
+            <div className="clear-pending-actions">
+              <button type="button" className="clear-pending-btn clear-pending-btn-no" onClick={() => setShowClearPendingConfirm(false)}>
+                No
+              </button>
+              <button type="button" className="clear-pending-btn clear-pending-btn-yes" onClick={async () => {
+                const token = localStorage.getItem(AUTH_TOKEN_KEY);
+                try {
+                  await fetch(`${API_BASE}/indexing/pending`, {
+                    method: "DELETE",
+                    headers: token ? { Authorization: `Bearer ${token}` } : {},
+                  });
+                } catch {}
+                setPendingIndexingCandidates([]);
+                setShowClearPendingConfirm(false);
+              }}>
+                Yes
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

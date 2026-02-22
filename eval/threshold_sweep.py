@@ -15,6 +15,7 @@ The sweep can run in two modes:
 """
 
 import argparse
+import glob
 import json
 import logging
 import os
@@ -257,7 +258,16 @@ if __name__ == "__main__":
     os.makedirs(args.out, exist_ok=True)
 
     if args.results:
-        report = sweep_batch(args.results)
+        results_path = args.results
+        # Expand glob on Windows (PowerShell doesn't expand batch_full_pipeline_*.json)
+        if "*" in results_path:
+            matches = sorted(glob.glob(results_path), key=lambda p: (os.path.getmtime(p), p), reverse=True)
+            if not matches:
+                logger.error(f"No files match: {results_path}")
+                sys.exit(1)
+            results_path = matches[0]
+            logger.info(f"Using: {results_path}")
+        report = sweep_batch(results_path)
     elif args.queries:
         report = sweep_live(args.queries)
     else:

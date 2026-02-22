@@ -9,10 +9,12 @@ Phase 2 cleanup:
 - No more inline _is_proper_greeting() or ad-hoc LLM calls for greetings
 - Direct v2 pipeline import, no fallbacks
 - Disclaimer appended to legal opinions
+- generic_chat: non-legal topics (politics, science, tech) answered like ChatGPT/Perplexity.
 """
 
 import logging
 
+from llm.ollama_client import ask_llm
 from services.fact_collector import get_next_question_or_complete
 from services.response_generator_v2 import generate_response_v2 as generate_response
 from services.content_guard import check_query_safety, sanitize_input, check_response_safety
@@ -40,10 +42,19 @@ def _ensure_message(msg: str, facts: str, intent: str) -> str:
         return "Thank you for sharing the details. I've researched the applicable bare acts and case laws. Here's my analysis."
 
 
-def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_count: int = 5, progress_callback=None) -> dict:
+def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_count: int = None, progress_callback=None, search_strategy: str = "local_then_web") -> dict:
     """Handle search/lookup intents: go straight to research and return results."""
+    document_types = "case_laws_only" if intent == "search" else "acts_only"
     try:
-        resp = generate_response(facts_summary, jurisdiction_state="", intent=intent, result_count=result_count, progress_callback=progress_callback)
+        resp = generate_response(
+            facts_summary,
+            jurisdiction_state="",
+            intent=intent,
+            result_count=result_count,
+            progress_callback=progress_callback,
+            document_types=document_types,
+            search_strategy=search_strategy,
+        )
     except Exception as e:
         logger.error("Research generation failed: %s", e, exc_info=True)
         resp = {
@@ -68,8 +79,46 @@ def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_coun
             "internet_case_laws": resp.get("internet_case_laws", []),
             "explanation": explanation,
             "progress": resp.get("progress"),
+            "indexing_candidates": resp.get("indexing_candidates", []),
         },
         "response_type": response_type,
+        "materials_to_confirm": None,
+        "indexed": False,
+    }
+
+
+# Generalist Agent — handles all conversations and queries NOT covered by legal agents:
+# non-legal topics (politics, science, tech, general knowledge), how-to, trivia, and any unclear request.
+GENERIC_CHAT_SYSTEM = """You are a helpful, knowledgeable generalist assistant. You handle any question or conversation that is not a legal research request (case laws, bare acts, legal advice, or bulk indexing from a URL). Answer clearly and conversationally — like ChatGPT or Perplexity. Topics you handle include: politics, science, technology, history, how-to, trivia, general knowledge, and any other non-legal or ambiguous query. If the question is clearly about law (Indian law, cases, acts, legal advice), briefly say you're better suited for legal research and suggest they ask for case laws or legal opinion in this app. Otherwise answer from your training knowledge. Keep responses informative and concise. If you don't know something, say so. Do not use legal disclaimers for non-legal topics."""
+
+
+def _run_generic_chat(conversation: list, current_message: str) -> dict:
+    """Generalist Agent: handle any query not covered by legal agents (search, lookup, legal_opinion). Answers like ChatGPT/Perplexity; no legal retrieval."""
+    try:
+        context = "\n".join(
+            f"{'User' if m.get('role') == 'user' else 'Assistant'}: {m.get('content', '')}"
+            for m in conversation[-6:]
+        )
+        prompt = f"{GENERIC_CHAT_SYSTEM}\n\nConversation:\n{context}\n\nUser: {current_message}\n\nAssistant:"
+        reply = ask_llm(prompt).strip()
+        if not reply:
+            reply = "I'm not sure how to answer that. Could you rephrase or ask something else?"
+    except Exception as e:
+        logger.error("Generic chat failed: %s", e, exc_info=True)
+        reply = "I couldn't generate a response right now. Please try again."
+    return {
+        "phase": "done",
+        "message": reply,
+        "facts_summary": current_message,
+        "response": {
+            "bare_act_sections": [],
+            "case_laws": [],
+            "internet_case_laws": [],
+            "explanation": reply,
+            "progress": None,
+            "indexing_candidates": [],
+        },
+        "response_type": "generic_chat",
         "materials_to_confirm": None,
         "indexed": False,
     }
@@ -88,7 +137,7 @@ def _empty_result(phase: str = "done", facts_summary: str = None) -> dict:
     }
 
 
-def process_chat(conversation: list, current_message: str, phase: str, facts_summary: str = None, progress_callback=None) -> dict:
+def process_chat(conversation: list, current_message: str, phase: str, facts_summary: str = None, progress_callback=None, intent: str = None, document_types: str = None, search_strategy: str = None, result_count: int = None) -> dict:
     """
     Process a chat message and return the appropriate response.
 
@@ -128,14 +177,26 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
             msg = _ensure_message(result.get("message", ""), facts, intent)
 
             if intent in ("search", "lookup"):
-                count = result.get("result_count", 5)
-                return _run_search_or_lookup(facts, intent, msg, result_count=count, progress_callback=progress_callback)
+                count = result.get("result_count")
+                strategy = result.get("search_strategy", "local_then_web")
+                return _run_search_or_lookup(facts, intent, msg, result_count=count, progress_callback=progress_callback, search_strategy=strategy)
 
-            # Legal opinion: move to response_generation phase
+            if intent == "bulk_ingest":
+                # Bulk ingest removed; treat as generic chat
+                return _run_generic_chat(conversation, current_message)
+
+            if intent == "generic_chat":
+                return _run_generic_chat(conversation, current_message)
+
+            # Legal opinion: move to response_generation phase (API will call again with intent/document_types/search_strategy)
             return {
                 "phase": "response_generation",
                 "message": msg,
                 "facts_summary": facts,
+                "intent": intent,
+                "document_types": result.get("document_types", "both"),
+                "search_strategy": result.get("search_strategy", "local_then_web"),
+                "result_count": result.get("result_count"),
                 "response": None,
                 "response_type": None,
                 "materials_to_confirm": None,
@@ -156,8 +217,20 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
     # ---- Phase: Response Generation ----
     elif phase == "response_generation":
         facts = facts_summary or current_message
+        use_intent = intent or "legal_opinion"
+        use_document_types = document_types or "both"
+        use_search_strategy = search_strategy or "local_then_web"
+        use_result_count = result_count
         try:
-            resp = generate_response(facts, jurisdiction_state="", intent="legal_opinion", progress_callback=progress_callback)
+            resp = generate_response(
+                facts,
+                jurisdiction_state="",
+                intent=use_intent,
+                progress_callback=progress_callback,
+                document_types=use_document_types,
+                search_strategy=use_search_strategy,
+                result_count=use_result_count,
+            )
         except Exception as e:
             logger.error("Response generation failed: %s", e, exc_info=True)
             return {
@@ -209,6 +282,7 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
                 "internet_case_laws": resp.get("internet_case_laws", []),
                 "explanation": explanation,
                 "progress": resp.get("progress"),
+                "indexing_candidates": resp.get("indexing_candidates", []),
             },
             "response_type": "legal_opinion",
             "materials_to_confirm": None,

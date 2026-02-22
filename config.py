@@ -6,13 +6,16 @@ e.g. a Google Drive folder: G:\\My Drive\\Nyaymalaw
 import os
 
 # Optional: load .env so NYAYMALAW_DATA_ROOT can be set there (requires python-dotenv)
+_PROJECT_ROOT = os.path.dirname(os.path.abspath(os.path.normpath(__file__)))
 try:
     from dotenv import load_dotenv
-    load_dotenv()
+    # Load .env from project root so it works regardless of process cwd
+    _env_path = os.path.join(_PROJECT_ROOT, ".env")
+    load_dotenv(_env_path)
 except ImportError:
     pass
-
-_PROJECT_ROOT = os.path.dirname(os.path.abspath(os.path.normpath(__file__)))
+except Exception:
+    pass
 _default_data = os.path.join(_PROJECT_ROOT, "data")
 
 # Use env var for data root (e.g. Google Drive path). If unset, use project/data.
@@ -51,6 +54,9 @@ CASE_BM25_INDEX = os.path.join(VECTOR_STORE, "caselaws_bm25.json")
 # Web references table (articles/news that aren't primary sources)
 WEB_REFERENCES_DB = os.path.join(DATA_ROOT, "web_references.json")
 
+# Pending indexing candidates (survives refresh; removed on Index or Discard)
+PENDING_INDEXING_PATH = os.path.join(DATA_ROOT, "pending_indexing.json")
+
 # ---------------------------------------------------------------------------
 # Embedding & re-ranker model names
 # ---------------------------------------------------------------------------
@@ -61,7 +67,10 @@ CROSS_ENCODER_MODEL = "cross-encoder/ms-marco-MiniLM-L-12-v2"
 # Domain whitelists for tiered internet search
 # ---------------------------------------------------------------------------
 
-# Tier 2: Official court & government websites (highest authority)
+# Source tags: OFFICIAL = government sources (state/central legislation + court judgments), LEGAL_PORTAL = known portals, NEWS_REFERENCE = news, rest discarded
+OFFICIAL_SOURCE_TAG = "OFFICIAL"
+
+# Tier 2: Official government sources (legislation: India Code, legislative.gov.in; judgments: Supreme Court, High Courts)
 TIER2_OFFICIAL_COURT_DOMAINS = (
     "main.sci.gov.in",
     "sci.gov.in",

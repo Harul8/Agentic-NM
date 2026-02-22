@@ -50,6 +50,34 @@ class ProgressTracker:
         }
         self.current_group["steps"].append(step)
 
+    def update_last_step(self, message: str, metadata: Optional[Dict[str, Any]] = None):
+        """Update the last step's message (and optionally metadata) in place for live progress (e.g. (n/total))."""
+        if not self.current_group or not self.current_group["steps"]:
+            self.add_step(message, metadata)
+            return
+        elapsed = time.time() - self.start_time
+        last = self.current_group["steps"][-1]
+        last["message"] = message
+        last["timestamp"] = round(elapsed, 2)
+        if metadata is not None:
+            last["metadata"] = {**(last.get("metadata") or {}), **metadata}
+
+    def update_last_step_with_prefix(self, message_prefix: str, message: str, metadata: Optional[Dict[str, Any]] = None):
+        """Update the last step whose message starts with message_prefix (so we don't overwrite a doc-scan step)."""
+        if not self.current_group or not self.current_group["steps"]:
+            self.add_step(message, metadata)
+            return
+        elapsed = time.time() - self.start_time
+        steps = self.current_group["steps"]
+        for i in range(len(steps) - 1, -1, -1):
+            if steps[i].get("message", "").startswith(message_prefix):
+                steps[i]["message"] = message
+                steps[i]["timestamp"] = round(elapsed, 2)
+                if metadata is not None:
+                    steps[i]["metadata"] = {**(steps[i].get("metadata") or {}), **metadata}
+                return
+        self.add_step(message, metadata)
+
     def add_document_scan(
         self,
         doc_name: str,

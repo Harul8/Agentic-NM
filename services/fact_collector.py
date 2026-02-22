@@ -15,6 +15,8 @@ from llm.ollama_client import ask_llm
 from prompts.advocate_prompts import (
     GREETING_PHRASES,
     GREETING_RESPONSE_PROMPT,
+    ROUTING_GATE1_SYSTEM,
+    ROUTING_GATE2_SYSTEM,
     FACT_COLLECTION_SYSTEM,
     FACT_COLLECTION_RETRY_PROMPT,
     STOP_PHRASES,
@@ -127,6 +129,65 @@ def _extract_json(text: str) -> dict | None:
 
 
 # ---------------------------------------------------------------------------
+# Two-gate routing: Gate 1 (legal vs generalist vs greeting), Gate 2 (legal intent)
+# ---------------------------------------------------------------------------
+
+def _run_gate1(conversation_history: list, user_message: str) -> dict | None:
+    """
+    Gate 1: Classify as GREETING | LEGAL | GENERALIST.
+    Returns {"gate1": "GREETING"|"LEGAL"|"GENERALIST", "reply_to_client": "..."} or None.
+    """
+    context = "\n".join(
+        f"{'User' if m.get('role') == 'user' else 'Assistant'}: {(m.get('content') or '')[:200]}"
+        for m in conversation_history[-4:]
+    )
+    prompt = f"""{ROUTING_GATE1_SYSTEM}
+
+Conversation (recent):
+{context or '(none)'}
+
+User: {user_message}
+
+Reply with ONLY one line of JSON (gate1 and reply_to_client when applicable)."""
+    try:
+        response = ask_llm(prompt).strip()
+        out = _extract_json(response)
+        if not out or not isinstance(out, dict):
+            return None
+        gate1 = (out.get("gate1") or "").strip().upper()
+        if gate1 not in ("GREETING", "LEGAL", "GENERALIST"):
+            return None
+        reply = (out.get("reply_to_client") or "").strip()
+        return {"gate1": gate1, "reply_to_client": reply}
+    except Exception:
+        return None
+
+
+def _run_gate2_legal(conversation_history: list, user_message: str) -> dict | None:
+    """
+    Gate 2: Only for LEGAL requests. Classify intent (search, lookup, legal_opinion)
+    and return full fact-collector shape for _parse_llm_response.
+    """
+    context = "\n".join(
+        f"{'User' if m.get('role') == 'user' else 'Assistant'}: {m.get('content') or ''}"
+        for m in conversation_history
+    )
+    prompt = f"""{ROUTING_GATE2_SYSTEM}
+
+Conversation so far:
+{context}
+
+User: {user_message}
+
+Output one line of valid JSON only (action, intent, facts_summary, reply_to_client; add result_count for search/lookup; add search_strategy only when user clearly wants web_only or local_only; use action "ask" only if you need one more question for legal_opinion)."""
+    try:
+        response = ask_llm(prompt).strip()
+        return _parse_llm_response(response, user_message)
+    except Exception:
+        return None
+
+
+# ---------------------------------------------------------------------------
 # Intent detection (keyword safety net when LLM gets it wrong)
 # ---------------------------------------------------------------------------
 
@@ -154,6 +215,38 @@ def _detect_intent_from_keywords(msg: str) -> str | None:
     return None
 
 
+def _detect_search_strategy_from_keywords(msg: str) -> str | None:
+    """Detect explicit user intent to use only web or only local. Returns 'web_only' | 'local_only' | None."""
+    m = msg.lower()
+    web_only_phrases = [
+        "avoid local", "skip local", "don't search local", "do not search local",
+        "only web search", "only web", "directly go to web", "go to web",
+        "no local search", "search the web only", "use internet only", "web only",
+        "internet only", "don't use local", "without local",
+    ]
+    if any(p in m for p in web_only_phrases):
+        return "web_only"
+    local_only_phrases = [
+        "only local", "no web", "don't search internet", "do not search internet",
+        "skip web", "local database only", "local only", "no internet",
+    ]
+    if any(p in m for p in local_only_phrases):
+        return "local_only"
+    return None
+
+
+def _is_all_acts_style_request(msg: str) -> bool:
+    """True if user is asking for 'all acts' / 'pull all' / 'list all' (broad discovery, not a small count)."""
+    m = (msg or "").lower()
+    phrases = [
+        "all acts", "all the acts", "all laws", "pull all", "list all",
+        "list all acts", "list all laws", "every act", "every law",
+        "all acts and laws", "all acts and laws made by", "acts made by government",
+        "all acts enacted by", "all acts by government",
+    ]
+    return any(p in m for p in phrases)
+
+
 def _extract_result_count(msg: str) -> int | None:
     """Extract a number from the user's message like 'find 3 case laws'."""
     import re
@@ -163,7 +256,7 @@ def _extract_result_count(msg: str) -> int | None:
     }
     m = re.search(r"(?:top\s+)?(\d+)\s+(?:case|judgment|judgement|ruling|bare|section)", msg.lower())
     if m:
-        return min(int(m.group(1)), 20) or 5
+        return min(int(m.group(1)), 30) or 5
     for word, num in word_to_num.items():
         if re.search(rf"\b{word}\b\s+(?:case|judgment|judgement|ruling|bare|section)", msg.lower()):
             return num
@@ -184,7 +277,7 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
 
     if out["action"] == "complete":
         intent = out.get("intent", "legal_opinion")
-        if intent not in ("search", "lookup", "legal_opinion", "chat", "greeting"):
+        if intent not in ("search", "lookup", "legal_opinion", "chat", "greeting", "generic_chat"):
             intent = "legal_opinion"
 
         # Greeting/chat must never run research
@@ -204,29 +297,94 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
                     return {"action": "ask", "question": reply}
                 return {"action": "ask", "question": generate_greeting_response(user_message)}
 
-        # Safety net: override intent based on keywords
+        # Safety net: override intent based on keywords when routing LLM said legal_opinion
         keyword_intent = _detect_intent_from_keywords(user_message)
         if keyword_intent and intent == "legal_opinion":
             intent = keyword_intent
 
-        # Extract result count
-        result_count = 5
+        # Model-driven intent: single source of truth for document_types, search_strategy, result_count
+        research_intent = None
         try:
-            result_count = int(out.get("result_count", 5))
-            result_count = max(1, min(result_count, 20))
-        except (TypeError, ValueError):
-            result_count = 5
-        text_count = _extract_result_count(user_message)
-        if text_count:
-            result_count = text_count
+            from services.intent_extractor import extract_research_intent
+            research_intent = extract_research_intent(user_message)
+        except Exception as e:
+            logger.debug("Intent extraction failed, using fallbacks: %s", e)
 
-        return {
+        # result_count: model-driven when user specified a number; None = flexible limit (no rigid cap)
+        result_count = None
+        if research_intent and research_intent.get("result_count") is not None:
+            result_count = research_intent.get("result_count")
+        else:
+            text_count = _extract_result_count(user_message)
+            if text_count:
+                result_count = text_count
+            else:
+                try:
+                    rc = out.get("result_count")
+                    if rc is not None:
+                        result_count = max(1, min(int(rc), 30))
+                except (TypeError, ValueError):
+                    pass
+        # "Pull all" / broad: no cap
+        if _is_all_acts_style_request(user_message):
+            result_count = None
+
+        # document_types: from intent first; fallback from routing intent + keywords
+        if research_intent and research_intent.get("document_types") in ("acts_only", "case_laws_only", "both"):
+            document_types = research_intent["document_types"]
+            if document_types == "acts_only" and intent == "legal_opinion":
+                intent = "lookup"
+            elif document_types == "case_laws_only" and intent == "legal_opinion":
+                intent = "search"
+        else:
+            if intent == "lookup":
+                document_types = "acts_only"
+            elif intent == "search":
+                document_types = "case_laws_only"
+            else:
+                document_types = "both"
+            msg_lower = (user_message or "").lower()
+            acts_only_signals = [
+                "acts enacted by", "enacted by the government", "only acts", "only laws",
+                "state acts", "bare acts only", "no case laws", "don't want any case laws",
+                "don't want case laws", "without case laws", "acts by telangana", "acts by the state",
+                "government of telangana", "indiacode", "all the acts",
+            ]
+            case_laws_only_signals = [
+                "only case laws", "only judgments", "only judgements", "only court",
+                "no acts", "don't want acts", "case laws only", "judgments only",
+            ]
+            if any(s in msg_lower for s in acts_only_signals):
+                document_types = "acts_only"
+                if intent == "legal_opinion":
+                    intent = "lookup"
+            elif any(s in msg_lower for s in case_laws_only_signals):
+                document_types = "case_laws_only"
+                if intent == "legal_opinion":
+                    intent = "search"
+
+        # search_strategy: from intent first; fallback from routing LLM + keywords.
+        # Explicit user phrases ("avoid local", "directly go to web", "web only") always override so we never ignore them.
+        if research_intent and research_intent.get("search_strategy") in ("web_only", "local_only", "local_then_web"):
+            search_strategy = research_intent["search_strategy"]
+        else:
+            search_strategy = (out.get("search_strategy") or "local_then_web").strip().lower()
+            if search_strategy not in ("local_only", "web_only", "local_then_web"):
+                search_strategy = "local_then_web"
+        keyword_strategy = _detect_search_strategy_from_keywords(user_message)
+        if keyword_strategy:
+            search_strategy = keyword_strategy
+
+        payload = {
             "action": "complete",
             "intent": intent,
             "result_count": result_count,
             "facts_summary": out.get("facts_summary") or user_message,
             "message": reply,
+            "document_types": document_types,
+            "search_strategy": search_strategy,
         }
+        return payload
 
     # action == "ask"
     if reply:
@@ -267,17 +425,63 @@ def get_next_question_or_complete(conversation_history: list, user_message: str)
                 return parsed
         except Exception:
             pass
-        # Fallback: combine all user text
+        # Fallback: combine all user text; no result_count = flexible limit
         all_text = "\n".join(m["content"] for m in conversation_history if m.get("role") == "user")
         return {
             "action": "complete",
             "intent": "legal_opinion",
-            "result_count": 5,
+            "result_count": None,
             "facts_summary": f"{all_text}\n{user_message}".strip(),
             "message": "",
+            "document_types": "both",
+            "search_strategy": _detect_search_strategy_from_keywords(user_message) or "local_then_web",
         }
 
-    # --- Main path: build prompt and call LLM ---
+    # --- Two-gate routing: Gate 1 (legal vs generalist vs greeting) ---
+    gate1_result = _run_gate1(conversation_history, user_message)
+    if gate1_result:
+        g1 = gate1_result.get("gate1", "")
+        reply = (gate1_result.get("reply_to_client") or "").strip()
+        if g1 == "GREETING":
+            return {"action": "ask", "question": reply or generate_greeting_response(user_message)}
+        if g1 == "GENERALIST":
+            return {
+                "action": "complete",
+                "intent": "generic_chat",
+                "result_count": None,
+                "facts_summary": user_message,
+                "message": reply or "I'll answer that as a general question.",
+                "document_types": "both",
+                "search_strategy": "local_then_web",
+            }
+        if g1 == "LEGAL":
+            # Gate 2: classify legal intent (search, lookup, legal_opinion)
+            parsed = _run_gate2_legal(conversation_history, user_message)
+            if parsed:
+                return parsed
+            # Gate 2 failed: fall back to full orchestrator
+            try:
+                from agents.orchestrator_agent import run_orchestrator
+                orchestrator_output = run_orchestrator(conversation_history, user_message)
+                if orchestrator_output:
+                    parsed = _parse_llm_response(orchestrator_output, user_message)
+                    if parsed:
+                        return parsed
+            except Exception:
+                pass
+
+    # --- Fallback: try full orchestrator if two-gate was skipped or Gate 2 failed ---
+    try:
+        from agents.orchestrator_agent import run_orchestrator
+        orchestrator_output = run_orchestrator(conversation_history, user_message)
+        if orchestrator_output:
+            parsed = _parse_llm_response(orchestrator_output, user_message)
+            if parsed:
+                return parsed
+    except Exception:
+        pass
+
+    # --- Fallback: build prompt and call LLM ---
     conv_text = "\n".join(
         f"{'Client' if m['role'] == 'user' else 'Lawyer'}: {m['content']}"
         for m in conversation_history
@@ -310,14 +514,16 @@ Now output REASONING: then on the next line your JSON with reply_to_client."""
     except Exception:
         pass
 
-    # --- Both attempts failed: default to research with what we have ---
+    # --- Both attempts failed: default to research with what we have (flexible limit when no count) ---
     logger.warning("Fact collection LLM failed twice, proceeding to research with user's message")
     all_user_text = "\n".join(m["content"] for m in conversation_history if m.get("role") == "user")
     combined = f"{all_user_text}\n{user_message}".strip() or user_message
     return {
         "action": "complete",
         "intent": _detect_intent_from_keywords(user_message) or "legal_opinion",
-        "result_count": _extract_result_count(user_message) or 5,
+        "result_count": _extract_result_count(user_message),
         "facts_summary": combined,
         "message": "",
+        "document_types": "both",
+        "search_strategy": _detect_search_strategy_from_keywords(user_message) or "local_then_web",
     }

@@ -26,6 +26,16 @@ export default defineConfig({
         target: "http://127.0.0.1:8000",
         changeOrigin: true,
         secure: false
+      },
+      "/caselaws": {
+        target: "http://127.0.0.1:8000",
+        changeOrigin: true,
+        secure: false
+      },
+      "/eval": {
+        target: "http://127.0.0.1:8000",
+        changeOrigin: true,
+        secure: false
       }
     }
   }

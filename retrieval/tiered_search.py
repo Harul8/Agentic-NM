@@ -2,11 +2,10 @@
 Tiered Internet Search — Strict domain-governed web search for legal materials.
 
 Follows the 4-tier data sourcing hierarchy:
-  Tier 2: Official court websites (SC, HCs, India Code)
-  Tier 3: Trusted legal portals (Indian Kanoon, Live Law, etc.)
-  Tier 4: Mainstream newspapers (context only, NOT authority)
-
-Blocked: All social media, blogs, Wikipedia, user-generated content.
+  Tier 2: Official government sources (legislation: state/central; judgments: courts) — tag: OFFICIAL
+  Tier 3: Known legal portals (Indian Kanoon, Live Law, etc.) — tag: LEGAL_PORTAL
+  Tier 4: News articles (context only, NOT authority) — tag: NEWS_REFERENCE
+  Rest: Discarded (blocked domains, unknown).
 
 When original PDFs are found, they are auto-saved to Google Drive and indexed.
 """
@@ -14,6 +13,7 @@ When original PDFs are found, they are auto-saved to Google Drive and indexed.
 import os
 import logging
 import json
+import time
 from typing import Optional
 
 from config import (
@@ -23,6 +23,7 @@ from config import (
     BLOCKED_DOMAINS,
     ALL_ALLOWED_DOMAINS,
     HC_DOMAIN_BY_STATE,
+    OFFICIAL_SOURCE_TAG,
 )
 
 logger = logging.getLogger(__name__)
@@ -88,10 +89,10 @@ def is_blocked_source(url: str) -> bool:
 
 
 def get_source_tag(url: str) -> str:
-    """Get the display source tag for a URL."""
+    """Get the source tag for a URL: OFFICIAL (government sources), LEGAL_PORTAL, NEWS_REFERENCE, or UNKNOWN."""
     tier = classify_source(url)
     return {
-        "tier2_official": "OFFICIAL_COURT",
+        "tier2_official": OFFICIAL_SOURCE_TAG,
         "tier3_legal_portal": "LEGAL_PORTAL",
         "tier4_newspaper": "NEWS_REFERENCE",
     }.get(tier, "UNKNOWN")
@@ -147,63 +148,74 @@ def search_tier2_official(
     query: str,
     jurisdiction_state: str = "",
     max_results: int = 10,
+    search_type: str = "both",
 ) -> list:
     """
     Tier 2: Search official court websites and India Code.
 
-    Constructs site-specific queries for:
-    - Supreme Court (sci.gov.in)
-    - Relevant High Court (based on jurisdiction_state)
-    - India Code (indiacode.nic.in)
+    search_type: "bare_act" = only legislation (India Code, legislative.gov.in); no court judgments.
+    "case_law" = only courts (Supreme Court, High Court judgments). "both" = all.
     """
     results = []
 
-    # Supreme Court - strict domain check: only sci.gov.in results
-    sc_query = f"{query} site:sci.gov.in judgment"
-    sc_results = _ddgs_search(sc_query, max_results=max_results)
-    for r in sc_results:
-        url = r.get("url", "")
-        if is_blocked_source(url):
-            continue
-        # Ensure result is actually from sci.gov.in (site: operator isn't always perfect)
-        if "sci.gov.in" not in url.lower():
-            continue
-        r["source_tag"] = "OFFICIAL_COURT"
-        r["tier"] = 2
-        results.append(r)
+    # India Code / legislation (for bare acts) — only when we want acts, not judgments
+    if search_type in ("bare_act", "both"):
+        ic_query = f"{query} site:indiacode.nic.in"
+        ic_results = _ddgs_search(ic_query, max_results=max_results if search_type == "bare_act" else 5)
+        for r in ic_results:
+            url = r.get("url", "")
+            if is_blocked_source(url):
+                continue
+            if "indiacode.nic.in" not in url.lower():
+                continue
+            r["source_tag"] = OFFICIAL_SOURCE_TAG
+            r["tier"] = 2
+            results.append(r)
 
-    # India Code (for bare acts) - strict domain check: only indiacode.nic.in results
-    ic_query = f"{query} site:indiacode.nic.in"
-    ic_results = _ddgs_search(ic_query, max_results=5)
-    for r in ic_results:
-        url = r.get("url", "")
-        if is_blocked_source(url):
-            continue
-        # Ensure result is actually from indiacode.nic.in
-        if "indiacode.nic.in" not in url.lower():
-            continue
-        r["source_tag"] = "OFFICIAL_COURT"
-        r["tier"] = 2
-        results.append(r)
+        # Legislative.gov.in (central acts)
+        leg_query = f"{query} site:legislative.gov.in"
+        leg_results = _ddgs_search(leg_query, max_results=3)
+        for r in leg_results:
+            url = r.get("url", "")
+            if is_blocked_source(url):
+                continue
+            if "legislative.gov.in" not in url.lower():
+                continue
+            r["source_tag"] = OFFICIAL_SOURCE_TAG
+            r["tier"] = 2
+            results.append(r)
 
-    # Relevant High Court - strict domain check
-    if jurisdiction_state:
-        state_lower = jurisdiction_state.lower().strip()
-        hc_domain = HC_DOMAIN_BY_STATE.get(state_lower)
-        if hc_domain:
-            hc_query = f"{query} site:{hc_domain}"
-            hc_results = _ddgs_search(hc_query, max_results=max_results)
-            for r in hc_results:
-                url = r.get("url", "")
-                if is_blocked_source(url):
-                    continue
-                # Ensure result is actually from the specified HC domain
-                domain_clean = hc_domain.replace("https://", "").replace("http://", "").replace("www.", "")
-                if domain_clean not in url.lower():
-                    continue
-                r["source_tag"] = "OFFICIAL_COURT"
-                r["tier"] = 2
-                results.append(r)
+    # Supreme Court & High Courts (judgments only) — only when we want case laws
+    if search_type in ("case_law", "both"):
+        sc_query = f"{query} site:sci.gov.in judgment"
+        sc_results = _ddgs_search(sc_query, max_results=max_results)
+        for r in sc_results:
+            url = r.get("url", "")
+            if is_blocked_source(url):
+                continue
+            if "sci.gov.in" not in url.lower():
+                continue
+            r["source_tag"] = OFFICIAL_SOURCE_TAG
+            r["tier"] = 2
+            results.append(r)
+
+        # Relevant High Court
+        if jurisdiction_state:
+            state_lower = jurisdiction_state.lower().strip()
+            hc_domain = HC_DOMAIN_BY_STATE.get(state_lower)
+            if hc_domain:
+                hc_query = f"{query} site:{hc_domain}"
+                hc_results = _ddgs_search(hc_query, max_results=max_results)
+                for r in hc_results:
+                    url = r.get("url", "")
+                    if is_blocked_source(url):
+                        continue
+                    domain_clean = hc_domain.replace("https://", "").replace("http://", "").replace("www.", "")
+                    if domain_clean not in url.lower():
+                        continue
+                    r["source_tag"] = OFFICIAL_SOURCE_TAG
+                    r["tier"] = 2
+                    results.append(r)
 
     # Deduplicate by URL
     seen = set()
@@ -217,32 +229,61 @@ def search_tier2_official(
     return unique
 
 
-def search_tier3_legal_portals(query: str, max_results: int = 10) -> list:
+def search_tier3_legal_portals(query: str, max_results: int = 10, search_type: str = "both") -> list:
     """
     Tier 3: Search trusted legal portals.
-    Uses site-specific searches for each portal.
+    search_type: "bare_act" = bare act / act pages only; "case_law" = judgment/case law; "both" = mixed.
     """
     results = []
-    portals = [
-        ("indiankanoon.org", "judgment case law"),
-        ("livelaw.in", "judgment legal news"),
-        ("scobserver.in", "supreme court analysis"),
-        ("barandbench.com", "legal news judgment"),
-    ]
+    if search_type == "bare_act":
+        portals = [
+            ("indiankanoon.org", "bare act section"),
+            ("indiankanoon.org", "act"),
+        ]
+        for domain, suffix in portals:
+            portal_query = f"{query} site:{domain} {suffix}"
+            portal_results = _ddgs_search(portal_query, max_results=max_results)
+            for r in portal_results:
+                if not is_blocked_source(r["url"]):
+                    r["source_tag"] = "LEGAL_PORTAL"
+                    r["tier"] = 3
+                    results.append(r)
+        general_query = f"{query} India bare act section"
+    elif search_type == "case_law":
+        portals = [
+            ("indiankanoon.org", "judgment case law"),
+            ("livelaw.in", "judgment legal news"),
+            ("scobserver.in", "supreme court analysis"),
+            ("barandbench.com", "legal news judgment"),
+        ]
+        for domain, suffix in portals:
+            portal_query = f"{query} site:{domain} {suffix}"
+            portal_results = _ddgs_search(portal_query, max_results=max_results // 2)
+            for r in portal_results:
+                if not is_blocked_source(r["url"]):
+                    r["source_tag"] = "LEGAL_PORTAL"
+                    r["tier"] = 3
+                    results.append(r)
+        general_query = f"{query} India judgment bare act section"
+    else:
+        portals = [
+            ("indiankanoon.org", "judgment case law"),
+            ("livelaw.in", "judgment legal news"),
+            ("scobserver.in", "supreme court analysis"),
+            ("barandbench.com", "legal news judgment"),
+        ]
+        for domain, suffix in portals:
+            portal_query = f"{query} site:{domain} {suffix}"
+            portal_results = _ddgs_search(portal_query, max_results=max_results // 2)
+            for r in portal_results:
+                if not is_blocked_source(r["url"]):
+                    r["source_tag"] = "LEGAL_PORTAL"
+                    r["tier"] = 3
+                    results.append(r)
+        general_query = f"{query} India judgment bare act section"
 
-    for domain, suffix in portals:
-        portal_query = f"{query} site:{domain} {suffix}"
-        portal_results = _ddgs_search(portal_query, max_results=max_results // 2)
-        for r in portal_results:
-            if not is_blocked_source(r["url"]):
-                r["source_tag"] = "LEGAL_PORTAL"
-                r["tier"] = 3
-                results.append(r)
-
-    # Also do a general search filtered to allowed portals
-    general_results = _ddgs_search(
-        f"{query} India judgment bare act section", max_results=max_results
-    )
+    # General search filtered to allowed portals
+    general_results = _ddgs_search(general_query, max_results=max_results)
     for r in general_results:
         tier = classify_source(r["url"])
         if tier == "tier3_legal_portal":
@@ -309,8 +350,8 @@ def tiered_search(
     """
     all_results = []
 
-    # Tier 2: Official court websites
-    tier2 = search_tier2_official(query, jurisdiction_state, max_per_tier)
+    # Tier 2: Official sources (courts for case_law, India Code for bare_act, or both)
+    tier2 = search_tier2_official(query, jurisdiction_state, max_per_tier, search_type=search_type)
     all_results.extend(tier2)
 
     # If we got enough from Tier 2, we can skip lower tiers for case laws
@@ -320,7 +361,7 @@ def tiered_search(
         return _filter_and_dedupe(all_results)
 
     # Tier 3: Legal portals
-    tier3 = search_tier3_legal_portals(query, max_per_tier)
+    tier3 = search_tier3_legal_portals(query, max_per_tier, search_type=search_type)
     all_results.extend(tier3)
 
     if len(all_results) >= 8:
@@ -353,6 +394,15 @@ def _filter_and_dedupe(results: list) -> list:
 # Content Fetching with PDF Detection
 # ---------------------------------------------------------------------------
 
+def _browser_headers() -> dict:
+    """Headers that reduce 404s from sites (e.g. India Code) that block non-browser requests."""
+    return {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-IN,en;q=0.9",
+    }
+
+
 def fetch_content_and_pdf(url: str, timeout: int = 30) -> tuple:
     """
     Fetch content from a URL. Returns (text_content, pdf_bytes_or_None).
@@ -362,8 +412,13 @@ def fetch_content_and_pdf(url: str, timeout: int = 30) -> tuple:
     """
     import requests
 
+    # SCI certificate is for api.sci.gov.in; www causes SSL hostname mismatch
+    if "www.api.sci.gov.in" in url:
+        url = url.replace("www.api.sci.gov.in", "api.sci.gov.in")
+
+    headers = _browser_headers()
     try:
-        response = requests.get(url, timeout=timeout, allow_redirects=True)
+        response = requests.get(url, timeout=timeout, allow_redirects=True, headers=headers)
         response.raise_for_status()
     except Exception as e:
         logger.warning(f"Failed to fetch {url}: {e}")
@@ -423,12 +478,15 @@ def fetch_content_and_pdf(url: str, timeout: int = 30) -> tuple:
 
 
 def _find_pdf_link(soup, base_url: str) -> Optional[str]:
-    """Look for PDF download links on a page."""
+    """Look for PDF download links on a page (e.g. India Code 'View PDF', bitstream links)."""
     from urllib.parse import urljoin
     for a in soup.find_all("a", href=True):
         href = a["href"]
         text = a.get_text(strip=True).lower()
-        if href.lower().endswith(".pdf") or "download" in text and "pdf" in text:
+        # Direct PDF URL, or link text suggests PDF (View PDF, Download PDF, etc.)
+        if href.lower().endswith(".pdf"):
+            return urljoin(base_url, href)
+        if "pdf" in text and ("download" in text or "view" in text or "pdf" in href.lower() or "/bitstream/" in href.lower()):
             return urljoin(base_url, href)
     return None
 
@@ -437,7 +495,7 @@ def _download_pdf(url: str, timeout: int = 30) -> Optional[bytes]:
     """Download a PDF file. Returns bytes or None."""
     import requests
     try:
-        resp = requests.get(url, timeout=timeout)
+        resp = requests.get(url, timeout=timeout, headers=_browser_headers())
         if resp.ok and len(resp.content) > 1000:
             return resp.content
     except Exception:
@@ -480,6 +538,8 @@ def search_for_gaps(
             continue
 
         logger.info(f"Searching for gap: '{query}' (type={gap_type})")
+        # Short delay between gap searches to reduce 429 rate limiting from search engines
+        time.sleep(1.5)
         results = tiered_search(
             query=query,
             search_type=gap_type,
@@ -487,12 +547,19 @@ def search_for_gaps(
         )
 
         for r in results:
-            tier = r.get("tier", 99)
             source_tag = r.get("source_tag", "")
+            url = (r.get("url") or "").lower()
+            title = (r.get("title") or "").lower()
 
             if source_tag == "NEWS_REFERENCE":
                 news_results.append(r)
             elif gap_type == "bare_act":
+                # Only keep results that look like legislation, not court judgments or case names
+                if "sci.gov.in" in url or "judgment" in title or "judgement" in title:
+                    continue
+                # Skip case-law-style titles (e.g. "Appellant vs Respondent", "X vs State of Y")
+                if " vs " in title or " v. " in title or " v/s " in title:
+                    continue
                 bare_results.append(r)
             elif gap_type == "case_law":
                 case_results.append(r)

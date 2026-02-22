@@ -21,6 +21,30 @@ body {
   color: var(--text);
 }
 
+/* Global: light scrollbars across the entire UI */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d0d0d0 #f0f0f0;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #d0d0d0;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #b8b8b8;
+}
+
 .chat-app {
   display: flex;
   flex-direction: column;
@@ -177,6 +201,10 @@ body {
   flex-direction: row-reverse;
 }
 
+.message--assistant {
+  align-items: flex-start; /* Icon aligned to first line, not center of block */
+}
+
 .message--user .message-content {
   align-items: flex-end;
 }
@@ -254,6 +282,80 @@ body {
   border: none; /* Removed border */
   color: var(--text-h);
   border-bottom-left-radius: 0; /* Removed specific radius */
+}
+
+/* Preserve user format: spaces, newlines */
+.message-bubble-text--preserve {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Edit / Copy actions on messages */
+.message-bubble-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.message-action-btn {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.message-action-btn:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.message-edit-inline {
+  width: 100%;
+}
+
+.message-edit-textarea {
+  width: 100%;
+  min-height: 120px;
+  max-height: 75vh;
+  padding: 12px 14px;
+  font-size: 0.88rem;
+  font-family: inherit;
+  line-height: 1.5;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  resize: vertical;
+  box-sizing: border-box;
+  display: block;
+}
+
+.message-edit-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.message-edit-btn {
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+}
+
+.message-edit-btn-save {
+  background: var(--accent, #2563eb);
+  color: #fff;
+  border-color: var(--accent, #2563eb);
+}
+
+.message-edit-btn-cancel {
+  background: #fff;
+  color: var(--text);
 }
 
 .message-error,
@@ -338,14 +440,38 @@ body {
   font-weight: normal;
 }
 
-/* Progress Display */
+/* System status: GPU and model (from /health) — shown under progress tracker */
+.system-status-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  padding: 8px 0;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+.system-status-model {
+  font-weight: 500;
+  color: #374151;
+}
+.system-status-gpu {
+  color: #6b7280;
+}
+
+/* Per-message "Using X model" badge (from model_used in response) */
+.model-used-badge {
+  margin: 6px 0 0;
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Progress Display — same look as left pane (Bare Acts Library, Case Laws): no box, no grey background */
 .progress-display {
   margin-top: 12px;
-  padding: 12px;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 
 .progress-display--loading {
@@ -362,7 +488,7 @@ body {
 }
 
 .progress-group {
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
 
 .progress-group:last-child {
@@ -371,35 +497,35 @@ body {
 
 .progress-group-summary {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
   gap: 8px;
-  padding: 8px 12px;
-  background: #f3f4f6;
-  border-radius: 6px;
   cursor: pointer;
+  list-style: none;
   user-select: none;
-  font-weight: 500;
-  color: #374151;
+  font-size: 0.9em;
+  color: #666;
+  padding: 0;
 }
 
-.progress-group-summary:hover {
-  background: #e5e7eb;
+.progress-group-summary::-webkit-details-marker {
+  display: none;
 }
 
-.progress-group-heading {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+.progress-group-summary::before {
+  content: "▸ ";
+  font-size: 0.85em;
+  margin-right: 4px;
 }
+
+.progress-group[open] .progress-group-summary::before {
+  content: "▾ ";
+}
+
 .progress-group-name {
-  font-weight: 600;
-  color: #1f2937;
-}
-.progress-group-description {
-  font-size: 0.75rem;
+  flex: 1;
   font-weight: normal;
-  color: #6b7280;
+  color: inherit;
 }
 
 .progress-group-stats {
@@ -409,17 +535,25 @@ body {
   flex-shrink: 0;
 }
 
-.progress-steps {
-  padding: 8px 12px;
+/* No scrollbar – collapsible content flows naturally; parent chat scrolls */
+.progress-steps-outer {
   margin-top: 4px;
+}
+
+.progress-steps-wrapper {
+  /* No fixed height – content expands; scroll via chat container */
+}
+
+.progress-steps {
+  display: block;
+  padding: 8px 12px 12px 12px;
   background: white;
   border-radius: 6px;
-  max-height: 300px;
-  overflow-y: auto;
 }
 
 .progress-step {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   padding: 6px 0;
@@ -497,6 +631,42 @@ body {
   color: #991b1b;
 }
 
+.progress-step-already-in-library {
+  flex-basis: 100%;
+  width: 100%;
+  margin-top: 4px;
+  margin-left: 60px;
+  padding: 6px 8px;
+  background: #f8fafc;
+  border-radius: 4px;
+  border-left: 3px solid #94a3b8;
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+.progress-step-already-label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.progress-step-already-list {
+  margin: 0;
+  padding-left: 1em;
+  list-style: disc;
+}
+
+.progress-step-already-list li {
+  margin: 2px 0;
+  line-height: 1.3;
+}
+
+.progress-step-already-more {
+  list-style: none;
+  margin-left: -1em;
+  font-style: italic;
+}
+
 .typing-dot {
   width: 8px;
   height: 8px;
@@ -537,10 +707,10 @@ body {
   text-align: center;
 }
 
-/* Input area - ChatGPT style fixed bottom */
+/* Input area - ChatGPT style fixed bottom (disclaimer stays in chat window, above eval pane) */
 .chat-input-wrapper {
   flex-shrink: 0;
-  padding: 16px 24px 24px;
+  padding: 16px 24px 4px;
   background: var(--bg);
   border-top: 1px solid var(--border);
   width: 100%;
@@ -619,6 +789,8 @@ body {
   opacity: 0.7;
   text-align: center;
   margin-top: 6px;
+  margin-bottom: 0;
+  flex-shrink: 0;
 }
 
 /* Quick action - I don't have more information */
@@ -910,7 +1082,7 @@ body {
   background: #e9ecef;
 }
 
-/* Left Column (Sidebar) – New chat, Bare Acts, Chat history */
+/* Left Column (Sidebar) – New chat, Bare Acts, Case Laws, Chat history, Pending indexing */
 .left-column {
   width: 280px;
   min-width: 280px;
@@ -919,16 +1091,75 @@ body {
   padding: 16px;
   border-right: 1px solid #ddd;
   font-size: 0.9rem;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   height: 100vh;
+  gap: 0;
+  overflow: hidden;
+}
+
+/* Shared scrollbar: same width and style for all three sidebar scroll areas */
+.left-column-scroll,
+.chat-history-groups,
+.pending-indexing-body {
+  scrollbar-width: thin;
+  scrollbar-color: #b0b0b0 #f0f0f0;
+  isolation: isolate;
+  pointer-events: auto;
+  touch-action: pan-y;
+}
+
+.left-column-scroll::-webkit-scrollbar,
+.chat-history-groups::-webkit-scrollbar,
+.pending-indexing-body::-webkit-scrollbar {
+  width: 12px;
+}
+
+.left-column-scroll::-webkit-scrollbar-track,
+.chat-history-groups::-webkit-scrollbar-track,
+.pending-indexing-body::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  pointer-events: auto;
+}
+
+.left-column-scroll::-webkit-scrollbar-thumb,
+.chat-history-groups::-webkit-scrollbar-thumb,
+.pending-indexing-body::-webkit-scrollbar-thumb {
+  background: #b0b0b0;
+  border-radius: 6px;
+  min-height: 48px;
+  pointer-events: auto;
+  cursor: grab;
+}
+
+.left-column-scroll::-webkit-scrollbar-thumb:active,
+.chat-history-groups::-webkit-scrollbar-thumb:active,
+.pending-indexing-body::-webkit-scrollbar-thumb:active {
+  background: #909090;
+  cursor: grabbing;
+}
+
+.left-column-scroll::-webkit-scrollbar-thumb:hover,
+.chat-history-groups::-webkit-scrollbar-thumb:hover,
+.pending-indexing-body::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+/* Scrollable top part: New chat, Bare Acts, Case Laws, Chat history – keeps fixed order */
+.left-column-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
 }
 
-.left-column > * {
+.left-column-scroll > * {
   flex-shrink: 0;
 }
+
+/* Pending indexing is inside left-column-scroll with same gap as other sections; no extra border */
 
 
 .left-column h3 {
@@ -970,13 +1201,21 @@ body {
 
 /* Collapsible Bare Acts list */
 .bare-acts-collapsible {
-  margin-top: 8px;
+  margin-top: 0;
+}
+
+/* Shared: align sidebar items */
+.sidebar-collapsible-summary {
+  display: flex;
+  align-items: center;
 }
 
 .bare-acts-collapsible-summary {
   cursor: pointer;
   list-style: none;
   user-select: none;
+  font-size: 0.9em;
+  color: #666;
 }
 
 .bare-acts-collapsible-summary::-webkit-details-marker {
@@ -994,13 +1233,47 @@ body {
 }
 
 .bare-acts-count {
-  color: #666;
+  color: inherit;
   font-weight: normal;
-  font-size: 0.9em;
+  font-size: 1em;
+}
+
+/* Same scroll area height for Bare Acts, Case Laws (36vh); scrollbar draggable, events not captured by details */
+.sidebar-list-scroll {
+  max-height: 36vh;
+  overflow-y: auto;
+  margin-top: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #b0b0b0 #f0f0f0;
+  position: relative;
+  isolation: isolate;
+  pointer-events: auto;
+  touch-action: pan-y;
+}
+.sidebar-list-scroll::-webkit-scrollbar {
+  width: 12px;
+}
+.sidebar-list-scroll::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  pointer-events: auto;
+}
+.sidebar-list-scroll::-webkit-scrollbar-thumb {
+  background: #b0b0b0;
+  border-radius: 6px;
+  min-height: 48px;
+  pointer-events: auto;
+  cursor: grab;
+}
+.sidebar-list-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+.sidebar-list-scroll::-webkit-scrollbar-thumb:active {
+  background: #909090;
+  cursor: grabbing;
 }
 
 .bare-act-list {
-  margin: 8px 0 0 0;
+  margin: 0;
   padding-left: 1.2em;
   list-style: disc;
 }
@@ -1046,16 +1319,118 @@ body {
   margin: 8px 0 0 0;
 }
 
-/* Chat history – below Bare Acts Library (left panel), ChatGPT-style */
+/* Search box inside sidebar sections (Bare Acts, Case Laws, Chat history) */
+.sidebar-search-input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 8px;
+  padding: 6px 8px;
+  font-size: 0.8rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-family: inherit;
+  color: #000;
+  background-color: #f5f5f5;
+}
+
+.sidebar-search-input::placeholder {
+  color: #666;
+}
+
+.sidebar-search-input:focus {
+  outline: none;
+  border-color: #b0b0b0;
+  background-color: #fff;
+}
+
+/* Case Laws – below Bare Acts, same styling as Bare Acts */
+.case-laws-collapsible {
+  margin-top: 0;
+}
+
+.case-laws-collapsible-summary {
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.case-laws-collapsible-summary::-webkit-details-marker {
+  display: none;
+}
+
+.case-laws-collapsible-summary::before {
+  content: "▸ ";
+  font-size: 0.85em;
+  margin-right: 4px;
+}
+
+.case-laws-collapsible[open] .case-laws-collapsible-summary::before {
+  content: "▾ ";
+}
+
+.case-laws-count {
+  color: inherit;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.case-laws-list {
+  margin: 0;
+  padding-left: 1.2em;
+  list-style: disc;
+}
+
+.case-laws-list-item {
+  margin: 3px 0;
+  line-height: 1.3;
+}
+
+.case-laws-list-item::marker {
+  font-size: 0.5em;
+}
+
+.case-laws-download-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.72rem;
+  line-height: 1.25;
+  word-break: break-word;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.case-laws-download-link:hover {
+  text-decoration: underline;
+}
+
+.case-laws-empty-message {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  margin: 8px 0 0 0;
+}
+
+/* Chat history – below Case Laws (left panel), same vertical gap as first two */
 .chat-history-section {
-  margin-top: 16px;
-  padding-top: 12px;
-  border-top: 1px solid #eee;
-  flex: 1;
-  min-height: 0;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .chat-history-new-btn {
@@ -1082,16 +1457,11 @@ body {
   margin-top: 0;
   display: flex;
   flex-direction: column;
-  min-height: 0;
-  flex: 1;
-  overflow: hidden;
 }
 
 .chat-history-collapsible[open] {
   display: flex;
   flex-direction: column;
-  min-height: 0;
-  flex: 1;
 }
 
 .chat-history-collapsible-summary {
@@ -1118,9 +1488,8 @@ body {
 
 .chat-history-groups {
   margin-top: 8px;
+  max-height: 36vh;
   overflow-y: auto;
-  flex: 1;
-  min-height: 0;
 }
 
 .chat-history-group {
@@ -1273,9 +1642,222 @@ body {
 
 .chat-history-empty {
   font-size: 0.85rem;
+}
+
+/* Pending indexing – spacing applied via .left-column > .pending-indexing-section */
+.pending-indexing-section {
+  flex-shrink: 0;
+}
+
+.pending-indexing-collapsible {
+  margin-top: 0;
+}
+
+/* Same font, color, gap as Bare Acts / Case Laws / Chat history */
+.pending-indexing-collapsible-summary {
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  font-size: 0.9em;
+  color: #666;
+  padding: 0;
+}
+
+.pending-indexing-collapsible-summary::-webkit-details-marker {
+  display: none;
+}
+
+.pending-indexing-collapsible-summary::before {
+  content: "▸ ";
+  font-size: 0.85em;
+  margin-right: 4px;
+}
+
+.pending-indexing-collapsible[open] .pending-indexing-collapsible-summary::before {
+  content: "▾ ";
+}
+
+.pending-indexing-count {
+  color: inherit;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.pending-indexing-empty {
+  font-size: 0.85rem;
   color: #666;
   font-style: italic;
   margin: 8px 0 0 0;
+}
+
+.pending-indexing-body {
+  margin-top: 8px;
+  padding: 0 0 12px 0;
+  max-height: 36vh;
+  overflow-y: auto;
+}
+
+.pending-indexing-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.pending-indexing-btn {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pending-indexing-btn:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.pending-indexing-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.pending-indexing-btn-clear {
+  background: transparent;
+  color: #666;
+  border: 1px solid #ccc;
+}
+
+.pending-indexing-btn-clear:hover:not(:disabled) {
+  background: #f1f3f5;
+  border-color: #adb5bd;
+}
+
+/* Clear pending indexing – confirmation modal */
+.clear-pending-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.clear-pending-dialog {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 24px;
+  max-width: 360px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.clear-pending-message {
+  margin: 0 0 20px 0;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+.clear-pending-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.clear-pending-btn {
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.clear-pending-btn-no {
+  background: #f1f3f5;
+  color: #333;
+  border-color: #dee2e6;
+}
+
+.clear-pending-btn-no:hover {
+  background: #e9ecef;
+}
+
+.clear-pending-btn-yes {
+  background: #dc3545;
+  color: #fff;
+}
+
+.clear-pending-btn-yes:hover {
+  background: #c82333;
+}
+
+.pending-indexing-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pending-indexing-item {
+  margin-bottom: 8px;
+}
+
+.pending-indexing-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.pending-indexing-checkbox {
+  flex-shrink: 0;
+}
+
+.pending-indexing-link {
+  flex: 1;
+  min-width: 0;
+  color: var(--accent);
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pending-indexing-link:hover {
+  text-decoration: underline;
+}
+
+/* Duplicate: same act/document already in internal store — red font, skip index */
+.pending-indexing-link--duplicate {
+  color: #b91c1c;
+  font-weight: 500;
+}
+.pending-indexing-item--duplicate .pending-indexing-link--duplicate:hover {
+  color: #991b1b;
+}
+.pending-indexing-badge {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  color: #b91c1c;
+  background: #fef2f2;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+
+.pending-indexing-dropdown {
+  flex-shrink: 0;
+  padding: 4px 6px;
+  font-size: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--text);
 }
 
 /* Final Output – below Bare Acts, same left column width (kept for any reuse) */
@@ -1362,9 +1944,19 @@ body {
 
 .chat-center-input-wrapper {
   width: 100%;
-  max-width: 640px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 16px 16px;
+}
+
+.chat-center-input-wrapper .chat-input-container {
+  padding: 15px 18px 15px 22px;
+  min-height: 56px;
+}
+
+.chat-center-input-wrapper .chat-input {
+  min-height: 36px;
+  max-height: 300px;
 }
 
 /* Middle Column (Conversation + Chat input) */
@@ -1815,4 +2407,397 @@ body {
   box-sizing: border-box;
   color: #333;
   border: 1px solid #eee;
+}
+
+/* Bottom pane: Eval Results and Architecture — always retained, below chat/disclaimer, no overlap */
+.eval-architecture-pane {
+  flex-shrink: 0;
+  margin-top: 6px;
+  padding-top: 8px;
+  padding-bottom: 12px;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  min-height: 0;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+/* Eval section — collapsible, inside tools pane (same look as left pane: Bare Acts, Case Laws) */
+.eval-section {
+  flex-shrink: 0;
+  margin-top: 0;
+  padding-top: 0;
+  border: none;
+  background: transparent;
+  border-radius: 0;
+}
+
+.eval-section-summary {
+  padding: 0;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  font-size: 0.9em;
+  color: #666;
+  font-weight: normal;
+}
+
+.eval-section-summary::-webkit-details-marker {
+  display: none;
+}
+
+.eval-section-summary::before {
+  content: "▸ ";
+  font-size: 0.85em;
+  margin-right: 4px;
+}
+
+.eval-section[open] .eval-section-summary::before {
+  content: "▾ ";
+}
+
+.eval-section-body {
+  padding: 6px 0 12px 0;
+  margin-left: 0;
+}
+
+.eval-message {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin: 0;
+}
+
+.eval-files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.eval-file-btn {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.eval-file-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.eval-file-btn--active {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+.eval-loading {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin: 0 0 8px 0;
+}
+
+.eval-file-title {
+  margin: 0 0 10px 0;
+  font-size: 0.95rem;
+  color: var(--text-h);
+}
+
+.eval-content {
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.eval-table-block {
+  margin-bottom: 16px;
+}
+
+.eval-table-toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.eval-download-btn {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.eval-download-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.eval-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 12px;
+}
+
+.eval-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.eval-table th,
+.eval-table td {
+  padding: 6px 10px;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+
+.eval-table th {
+  background: rgba(0,0,0,0.04);
+  font-weight: 600;
+}
+
+.eval-table td {
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.eval-table--keyval td:first-child {
+  font-weight: 500;
+  width: 180px;
+}
+
+.eval-table--metrics .eval-metric-name {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.eval-table--metrics td {
+  max-width: none;
+}
+
+.eval-table--metrics th:nth-child(n+2),
+.eval-table--metrics td:nth-child(n+2) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.eval-truncated {
+  font-size: 0.8rem;
+  color: var(--text);
+  margin: 4px 0 0 0;
+}
+
+.eval-empty {
+  font-size: 0.85rem;
+  color: var(--text);
+  margin: 0 0 8px 0;
+}
+
+.eval-object-wrap {
+  margin-bottom: 8px;
+}
+
+.eval-details {
+  margin-bottom: 6px;
+}
+
+.eval-summary {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.eval-details-body {
+  padding-left: 12px;
+  margin-top: 6px;
+}
+
+.eval-figures {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.eval-figures-title {
+  margin: 0 0 12px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.eval-figures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.eval-figure {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.eval-figure-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.eval-figure-caption {
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  color: var(--text);
+  border-top: 1px solid var(--border);
+}
+
+.eval-run-block {
+  margin-bottom: 20px;
+}
+
+.eval-run-title {
+  margin: 0 0 8px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.eval-kv-block {
+  margin-bottom: 12px;
+}
+
+.eval-kv-key {
+  font-weight: 500;
+  margin-right: 6px;
+}
+
+.eval-table--flat th,
+.eval-table--flat td {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+}
+
+/* Architecture section — collapsible, below Eval in tools pane (same look as left pane) */
+.architecture-section {
+  flex-shrink: 0;
+  margin-top: 8px;
+  padding-top: 0;
+  border: none;
+  background: transparent;
+  border-radius: 0;
+}
+
+.architecture-section-summary {
+  padding: 0;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  font-size: 0.9em;
+  color: #666;
+  font-weight: normal;
+}
+
+.architecture-section-summary::-webkit-details-marker {
+  display: none;
+}
+
+.architecture-section-summary::before {
+  content: "▸ ";
+  font-size: 0.85em;
+  margin-right: 4px;
+}
+
+.architecture-section[open] .architecture-section-summary::before {
+  content: "▾ ";
+}
+
+.architecture-section-body {
+  padding: 6px 0 12px 0;
+  margin-left: 0;
+}
+
+.architecture-loading,
+.architecture-message {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin: 0;
+}
+
+.architecture-content {
+  max-height: 70vh;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.architecture-content h1,
+.architecture-content h2,
+.architecture-content h3 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  color: var(--text-h);
+}
+
+.architecture-content h1 { font-size: 1.25rem; }
+.architecture-content h2 { font-size: 1.1rem; }
+.architecture-content h3 { font-size: 1rem; }
+
+.architecture-content p {
+  margin: 0.5em 0;
+  line-height: 1.5;
+}
+
+.architecture-content ul {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.architecture-content table {
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  margin: 0.75em 0;
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+.architecture-content th,
+.architecture-content td {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.architecture-content th {
+  background: var(--accent-bg);
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.architecture-content pre,
+.architecture-content code {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.architecture-content pre {
+  padding: 10px;
+  overflow-x: auto;
+  margin: 0.5em 0;
+}
+
+.architecture-content code {
+  padding: 2px 6px;
+}
+
+.architecture-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1em 0;
 }

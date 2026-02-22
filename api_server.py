@@ -22,7 +22,7 @@ from services.interactive_chat import process_chat
 from services.case_law_indexer_incremental import index_new_case_laws
 from services.bare_act_indexer_incremental import index_new_bare_acts
 from services.response_generator_v2 import generate_response_v2
-from llm.ollama_client import check_ollama_health
+from llm.ollama_client import check_ollama_health, get_last_model_used
 
 # ---------------------------------------------------------------------------
 # Structured logging setup
@@ -66,7 +66,7 @@ _RATE_LIMIT_ENABLED = os.environ.get("RATE_LIMIT_ENABLED", "false").lower() == "
 _rate_store: dict[str, list[float]] = defaultdict(list)
 
 # Only rate-limit mutation endpoints (not health, static, etc.)
-_RATE_LIMITED_PATHS = {"/submit_case", "/submit_case/stream", "/interview_step", "/interview_step/stream", "/conversation/continue", "/conversation/continue/stream", "/chat", "/chat/confirm-index", "/search"}
+_RATE_LIMITED_PATHS = {"/submit_case", "/submit_case/stream", "/interview_step", "/interview_step/stream", "/conversation/continue", "/conversation/continue/stream", "/chat", "/chat/confirm-index", "/search", "/indexing/run"}
 
 # IPs to skip rate limiting (localhost for development)
 _SKIP_RATE_LIMIT_IPS = {"127.0.0.1", "localhost", "::1"}
@@ -147,6 +147,7 @@ from config import (
     CHAT_HISTORY_DIR as _CHAT_HISTORY_DIR,
     DB_PATH as _DB_PATH,
     BARE_ACTS_DIR as _BARE_ACTS_DIR,
+    CASELAW_DIR as _CASELAW_DIR,
     VECTOR_STORE as _VECTOR_STORE,
 )
 _BASE_DIR = os.path.dirname(os.path.abspath(os.path.normpath(__file__)))
@@ -536,6 +537,23 @@ class ContinueChatRequest(BaseModel):
     message: str = ""
 
 
+class IndexingItem(BaseModel):
+    """One document to index (from Pending indexing UI)."""
+    url: str = ""
+    title: str = ""
+    category: str = "case_law"  # "bare_act" | "case_law"
+
+
+class IndexingRunRequest(BaseModel):
+    """Request to index selected documents (user-triggered from left pane)."""
+    items: list[IndexingItem] = []
+
+
+class PendingIndexingUpdateRequest(BaseModel):
+    """Request to persist pending indexing candidates (survives refresh)."""
+    items: list[dict] = []
+
+
 def _build_conv(messages: list[ChatMessage] | None) -> list[dict]:
     if not messages:
         return []
@@ -627,11 +645,19 @@ def _map_chat_result_to_ui(result: dict) -> dict:
         case_laws = resp.get("case_laws") or []
         internet_case_laws = resp.get("internet_case_laws") or []
         all_case_laws = case_laws + internet_case_laws
-        # Combine greeting/acknowledgment message with the explanation/summary
+        # Combine greeting/acknowledgment with explanation; avoid showing the same content twice
         greeting = (result.get("message") or "").strip()
         explanation = (resp.get("explanation") or "").strip()
         if greeting and explanation:
-            combined_text = f"{greeting}\n\n{explanation}"
+            # If they are the same or one contains the other, show only once (the longer)
+            if greeting == explanation:
+                combined_text = explanation
+            elif greeting in explanation:
+                combined_text = explanation
+            elif explanation in greeting:
+                combined_text = greeting
+            else:
+                combined_text = f"{greeting}\n\n{explanation}"
         else:
             combined_text = greeting or explanation
         # Ensure we never send an empty or trivial intro (e.g. just "⚖")
@@ -647,7 +673,7 @@ def _map_chat_result_to_ui(result: dict) -> dict:
                 # Only return separate case_laws if no nested case laws exist
                 separate_case_laws = all_case_laws
         
-        return {
+        out = {
             "status": "done",
             "response_type": response_type or "legal_opinion",
             "opinion_text": combined_text,
@@ -655,7 +681,11 @@ def _map_chat_result_to_ui(result: dict) -> dict:
             "case_laws": separate_case_laws,  # Empty if case laws are nested under bare acts
             "retrieved": all_case_laws + bare_acts,
             "progress": resp.get("progress"),  # Include progress tracking data
+            "model_used": get_last_model_used(),
         }
+        if resp.get("indexing_candidates"):
+            out["indexing_candidates"] = resp["indexing_candidates"]
+        return out
     if phase == "done":
         return {
             "status": "done",
@@ -664,6 +694,7 @@ def _map_chat_result_to_ui(result: dict) -> dict:
             "bare_acts": [],
             "case_laws": [],
             "retrieved": [],
+            "model_used": get_last_model_used(),
         }
     next_q = (result.get("message") or "").strip()
     if not next_q:
@@ -736,6 +767,63 @@ def bareacts_download(
         raise HTTPException(status_code=500, detail=f"Could not serve file: {e!s}")
 
 
+# ---------------------------------------------------------------------------
+# Case laws list and download (same pattern as bare acts)
+# ---------------------------------------------------------------------------
+
+def _list_case_laws_from_disk() -> list[str]:
+    """List PDF/text filenames from CaseLaws directory."""
+    if not os.path.isdir(_CASELAW_DIR):
+        return []
+    out = []
+    for f in os.listdir(_CASELAW_DIR):
+        path = os.path.join(_CASELAW_DIR, f)
+        if os.path.isfile(path) and (f.lower().endswith(".pdf") or f.lower().endswith(".txt")):
+            out.append(f)
+    return sorted(out)
+
+
+def _resolve_case_law_path(base: str):
+    """Return absolute path to file in CaseLaws if it exists, else None (case-insensitive on Windows)."""
+    path = os.path.join(_CASELAW_DIR, base)
+    if os.path.isfile(path):
+        return os.path.abspath(path)
+    if os.path.isdir(_CASELAW_DIR):
+        for f in os.listdir(_CASELAW_DIR):
+            if f.lower() == base.lower():
+                return os.path.abspath(os.path.join(_CASELAW_DIR, f))
+    return None
+
+
+@app.get("/caselaws/list")
+def caselaws_list():
+    """Return list of case law filenames from data/CaseLaws."""
+    files = _list_case_laws_from_disk()
+    return {"cases": files}
+
+
+@app.get("/caselaws/download")
+def caselaws_download(
+    name: str = Query(..., description="Filename of the case law to download"),
+    inline: bool = Query(False, description="If true, open in browser (inline) instead of download"),
+):
+    """Serve a case law file for download or inline view."""
+    base = os.path.basename(name).strip() if name else ""
+    if not base or ".." in base or "/" in name or "\\" in name:
+        raise HTTPException(status_code=400, detail="Invalid filename")
+    path = _resolve_case_law_path(base)
+    if not path:
+        raise HTTPException(status_code=404, detail="File not found")
+    media_type = "application/pdf" if base.lower().endswith(".pdf") else "text/plain"
+    try:
+        response = FileResponse(path, filename=base, media_type=media_type)
+        disposition = "inline" if inline else "attachment"
+        response.headers["Content-Disposition"] = f'{disposition}; filename="{base}"'
+        return response
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 def _normalize_content(c):
     """Ensure content is string for backend processing."""
     if isinstance(c, str):
@@ -776,6 +864,10 @@ def chat(request: ChatRequest):
             current_message=result["facts_summary"],
             phase="response_generation",
             facts_summary=result["facts_summary"],
+            intent=result.get("intent", "legal_opinion"),
+            document_types=result.get("document_types", "both"),
+            search_strategy=result.get("search_strategy", "local_then_web"),
+            result_count=result.get("result_count"),
         )
         return resp_result
 
@@ -811,6 +903,10 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
                 current_message=result["facts_summary"],
                 phase="response_generation",
                 facts_summary=result["facts_summary"],
+                intent=result.get("intent", "legal_opinion"),
+                document_types=result.get("document_types", "both"),
+                search_strategy=result.get("search_strategy", "local_then_web"),
+                result_count=result.get("result_count"),
             )
         if result.get("phase") == "done":
             increment_query_count(user["id"])
@@ -853,6 +949,10 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
                 current_message=result["facts_summary"],
                 phase="response_generation",
                 facts_summary=result["facts_summary"],
+                intent=result.get("intent", "legal_opinion"),
+                document_types=result.get("document_types", "both"),
+                search_strategy=result.get("search_strategy", "local_then_web"),
+                result_count=result.get("result_count"),
             )
         if result.get("phase") == "done":
             increment_query_count(user["id"])
@@ -893,6 +993,10 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
                 current_message=result["facts_summary"],
                 phase="response_generation",
                 facts_summary=result["facts_summary"],
+                intent=result.get("intent", "legal_opinion"),
+                document_types=result.get("document_types", "both"),
+                search_strategy=result.get("search_strategy", "local_then_web"),
+                result_count=result.get("result_count"),
             )
         if result.get("phase") == "done":
             increment_query_count(user["id"])
@@ -921,6 +1025,10 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
                 current_message=result["facts_summary"],
                 phase="response_generation",
                 facts_summary=result["facts_summary"],
+                intent=result.get("intent", "legal_opinion"),
+                document_types=result.get("document_types", "both"),
+                search_strategy=result.get("search_strategy", "local_then_web"),
+                result_count=result.get("result_count"),
                 progress_callback=progress_callback,
             )
         if result.get("phase") == "done":
@@ -952,6 +1060,10 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str) -> Non
                 current_message=result["facts_summary"],
                 phase="response_generation",
                 facts_summary=result["facts_summary"],
+                intent=result.get("intent", "legal_opinion"),
+                document_types=result.get("document_types", "both"),
+                search_strategy=result.get("search_strategy", "local_then_web"),
+                result_count=result.get("result_count"),
                 progress_callback=progress_callback,
             )
         if result.get("phase") == "done":
@@ -987,6 +1099,10 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
                 current_message=result["facts_summary"],
                 phase="response_generation",
                 facts_summary=result["facts_summary"],
+                intent=result.get("intent", "legal_opinion"),
+                document_types=result.get("document_types", "both"),
+                search_strategy=result.get("search_strategy", "local_then_web"),
+                result_count=result.get("result_count"),
                 progress_callback=progress_callback,
             )
         if result.get("phase") == "done":
@@ -1206,6 +1322,198 @@ def reset_rate_limit():
     return {"status": "ok", "message": "Rate limit store cleared"}
 
 
+# ---------------------------------------------------------------------------
+# Eval Files — serve eval JSON results for UI display
+# ---------------------------------------------------------------------------
+
+EVAL_RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "eval", "results")
+EVAL_FIGURES_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "eval", "figures")
+
+
+@app.get("/eval/list")
+def eval_list_files():
+    """List available eval JSON files (batch results, compare, threshold sweep)."""
+    files = []
+    if not os.path.isdir(EVAL_RESULTS_DIR):
+        return {"files": []}
+    for root, _dirs, fnames in os.walk(EVAL_RESULTS_DIR):
+        rel_root = os.path.relpath(root, EVAL_RESULTS_DIR)
+        if rel_root == ".":
+            rel_root = ""
+        for name in fnames:
+            if name.endswith(".json"):
+                path = os.path.join(rel_root, name) if rel_root else name
+                path = path.replace("\\", "/")
+                files.append({"path": path, "name": name})
+    return {"files": sorted(files, key=lambda x: x["path"])}
+
+
+@app.get("/eval/file")
+def eval_get_file(path: str = Query(..., description="Relative path to eval JSON file")):
+    """Serve a single eval JSON file by path."""
+    path = path.lstrip("/").replace("..", "")
+    full = os.path.normpath(os.path.join(EVAL_RESULTS_DIR, path))
+    base = os.path.realpath(EVAL_RESULTS_DIR)
+    if not os.path.isfile(full) or not os.path.realpath(full).startswith(base):
+        return JSONResponse(status_code=404, content={"detail": "File not found"})
+    try:
+        with open(full, encoding="utf-8") as f:
+            data = json.load(f)
+        return data
+    except Exception as e:
+        logger.exception("Eval file read failed: %s", path)
+        return JSONResponse(status_code=500, content={"detail": str(e)})
+
+
+@app.get("/eval/figures/list")
+def eval_list_figures():
+    """List available eval figure files (PNG, JPG, etc.) in eval/figures."""
+    figures = []
+    if not os.path.isdir(EVAL_FIGURES_DIR):
+        return {"figures": []}
+    for name in os.listdir(EVAL_FIGURES_DIR):
+        full = os.path.join(EVAL_FIGURES_DIR, name)
+        if os.path.isfile(full) and name.lower().endswith((".png", ".jpg", ".jpeg", ".gif", ".webp")):
+            figures.append({"path": name, "name": name})
+    return {"figures": sorted(figures, key=lambda x: x["name"])}
+
+
+@app.get("/eval/figures/file")
+def eval_get_figure(path: str = Query(..., description="Figure filename (e.g. fig_threshold_curve.png)")):
+    """Serve a single eval figure file by name."""
+    path = path.lstrip("/").replace("..", "").replace("\\", "/")
+    if "/" in path:
+        return JSONResponse(status_code=400, content={"detail": "path must be a filename"})
+    full = os.path.normpath(os.path.join(EVAL_FIGURES_DIR, path))
+    base = os.path.realpath(EVAL_FIGURES_DIR)
+    if not os.path.isfile(full) or not os.path.realpath(full).startswith(base):
+        return JSONResponse(status_code=404, content={"detail": "File not found"})
+    media_types = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".gif": "image/gif", ".webp": "image/webp"}
+    ext = os.path.splitext(path)[1].lower()
+    media_type = media_types.get(ext, "application/octet-stream")
+    return FileResponse(full, filename=path, media_type=media_type)
+
+
+# ---------------------------------------------------------------------------
+# Docs — serve architecture markdown for UI
+# ---------------------------------------------------------------------------
+DOCS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs")
+ARCHITECTURE_MD = os.path.join(DOCS_DIR, "CREWAI_MULTI_AGENT_ARCHITECTURE.md")
+
+
+@app.get("/docs/architecture")
+def docs_architecture():
+    """Serve the CrewAI multi-agent architecture doc as markdown text for the UI."""
+    if not os.path.isfile(ARCHITECTURE_MD):
+        return JSONResponse(status_code=404, content={"detail": "Architecture doc not found"})
+    try:
+        with open(ARCHITECTURE_MD, encoding="utf-8") as f:
+            content = f.read()
+        return {"content": content}
+    except Exception as e:
+        logger.exception("Docs architecture read failed: %s", e)
+        return JSONResponse(status_code=500, content={"detail": str(e)})
+
+
+def _load_pending_indexing() -> list:
+    """Load persisted pending indexing candidates from disk."""
+    from config import PENDING_INDEXING_PATH, DATA_ROOT
+    try:
+        if os.path.isfile(PENDING_INDEXING_PATH):
+            with open(PENDING_INDEXING_PATH, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            return data.get("items", []) if isinstance(data, dict) else (data if isinstance(data, list) else [])
+    except Exception as e:
+        logger.warning("Could not load pending indexing: %s", e)
+    return []
+
+
+def _save_pending_indexing(items: list) -> None:
+    """Persist pending indexing candidates to disk."""
+    from config import PENDING_INDEXING_PATH, DATA_ROOT
+    try:
+        os.makedirs(DATA_ROOT, exist_ok=True)
+        with open(PENDING_INDEXING_PATH, "w", encoding="utf-8") as f:
+            json.dump({"items": items, "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}, f, indent=2)
+    except Exception as e:
+        logger.warning("Could not save pending indexing: %s", e)
+
+
+def _remove_from_pending_indexing(url_title_pairs: list[tuple]) -> None:
+    """Remove indexed items from persisted pending list by (url, title) pairs."""
+    items = _load_pending_indexing()
+    if not items or not url_title_pairs:
+        return
+    seen = {(str(u).strip(), str(t).strip()) for u, t in url_title_pairs}
+    kept = [c for c in items if (str(c.get("source_url", "") or "").strip(), str(c.get("title", "") or "").strip()) not in seen]
+    if len(kept) != len(items):
+        _save_pending_indexing(kept)
+
+
+@app.get("/indexing/pending")
+def indexing_pending_get(user: dict = Depends(_user_from_token)):
+    """Return persisted pending indexing candidates (survives refresh)."""
+    items = _load_pending_indexing()
+    return {"items": items}
+
+
+@app.post("/indexing/pending")
+def indexing_pending_save(request: PendingIndexingUpdateRequest, user: dict = Depends(_user_from_token)):
+    """Persist pending indexing candidates (replace full list)."""
+    items = request.items or []
+    _save_pending_indexing(items)
+    return {"items": items, "message": "Saved"}
+
+
+@app.delete("/indexing/pending")
+def indexing_pending_clear(user: dict = Depends(_user_from_token)):
+    """Clear persisted pending indexing candidates."""
+    _save_pending_indexing([])
+    return {"items": [], "message": "Cleared"}
+
+
+@app.post("/indexing/run")
+def indexing_run(request: IndexingRunRequest, user: dict = Depends(_user_from_token)):
+    """
+    Index selected documents from the Pending indexing list.
+    For each item: fetch from source_url, then chunk and add to the appropriate index (bare_act or case_law).
+    On success, removes indexed items from persisted pending list.
+    """
+    from retrieval.auto_enricher import enrich_from_search_result
+
+    _enforce_query_limit(user)
+    items = request.items or []
+    if not items:
+        return {"indexed": 0, "errors": [], "message": "No items to index."}
+
+    indexed = 0
+    errors = []
+    for i, item in enumerate(items):
+        url = (item.url or "").strip()
+        title = (item.title or "").strip()
+        category = (item.category or "case_law").strip().lower()
+        if category not in ("bare_act", "case_law"):
+            category = "case_law"
+        if not url or not title:
+            errors.append({"index": i, "error": "Missing url or title"})
+            continue
+        try:
+            result = {"url": url, "title": title, "snippet": "", "source_tag": "USER_INDEX"}
+            enrichment = enrich_from_search_result(result, category, original_query="", skip_index=False)
+            if enrichment.get("chunks_added", 0) > 0 or enrichment.get("indexed"):
+                indexed += 1
+                _remove_from_pending_indexing([(url, title)])
+        except Exception as e:
+            logger.exception("Indexing failed for %s: %s", url[:80], e)
+            errors.append({"index": i, "url": url[:80], "error": str(e)[:200]})
+
+    return {
+        "indexed": indexed,
+        "errors": errors,
+        "message": f"Indexed {indexed} of {len(items)} document(s)." if items else "No items to index.",
+    }
+
+
 @app.get("/health")
 def health_check():
     """
@@ -1275,6 +1583,10 @@ async def startup_validation():
         logger.info("✓ Database accessible at %s", _DB_PATH)
     except Exception as e:
         logger.warning("⚠ Database error: %s", e)
+
+    # Data root (PDFs and indexes go here; must match NYAYMALAW_DATA_ROOT in .env)
+    from config import DATA_ROOT, BARE_ACTS_DIR
+    logger.info("Data root: %s (BareActs: %s)", DATA_ROOT, BARE_ACTS_DIR)
 
     # Check vector store
     from config import VECTOR_STORE, BARE_INDEX_V2, CASE_INDEX_V2

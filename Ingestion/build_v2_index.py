@@ -54,8 +54,10 @@ def _get_embedder():
     return SentenceTransformer(EMBEDDING_MODEL, device=device)
 
 
-def build_index(chunks: list, faiss_path: str, chunks_path: str, bm25_path: str, embedder):
-    """Build FAISS + BM25 indexes from a list of chunks."""
+def build_index(chunks: list, faiss_path: str, chunks_path: str, bm25_path: str, embedder, batch_size: int = None):
+    """Build FAISS + BM25 indexes from a list of chunks.
+    batch_size: embedding batch size (default 32 on CPU; 128 on GPU for faster progress).
+    """
     if not chunks:
         logger.warning("No chunks to index!")
         return
@@ -73,11 +75,18 @@ def build_index(chunks: list, faiss_path: str, chunks_path: str, bm25_path: str,
         ).strip()
         texts.append(text)
 
-    # Embed all chunks
-    logger.info(f"Embedding {len(texts)} chunks...")
+    if batch_size is None:
+        try:
+            import torch
+            batch_size = 128 if (getattr(embedder, "device", None) and "cuda" in str(embedder.device)) or torch.cuda.is_available() else 32
+        except Exception:
+            batch_size = 32
+
+    # Embed all chunks (larger batch on GPU speeds up significantly)
+    logger.info(f"Embedding {len(texts)} chunks (batch_size={batch_size})...")
     embeddings = embedder.encode(
         texts,
-        batch_size=32,
+        batch_size=batch_size,
         convert_to_numpy=True,
         normalize_embeddings=True,
         show_progress_bar=True,

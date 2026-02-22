@@ -1,13 +1,13 @@
 """
-Auto-Enricher — Downloads PDFs from internet, saves to Google Drive, indexes to vector store.
+Auto-Enricher — Fetches content from internet for display; indexing is manual via the UI.
 
-This creates a self-growing legal database: every time the system fetches a judgment
-or bare act from the internet, it saves the original PDF to Google Drive and adds
-it to the FAISS + BM25 vector store. Next time the same topic is queried, it will
-be found locally (Tier 1) without needing internet.
+When called from the response pipeline (skip_index=True), we only fetch and extract
+content for the current response. No PDFs are saved and no chunks are indexed here.
+Indexing is done manually by the user via the Pending indexing UI (official PDFs only).
 
-For articles/news (no PDF), stores metadata in a web_references table but does NOT
-index them as if they were primary legal sources.
+When skip_index=False (legacy/custom use), the enricher can save PDFs to Google Drive
+and index to the vector store. Only official PDF documents are proposed as indexing
+candidates; legal portals and news are never proposed for indexing.
 """
 
 import os
@@ -261,17 +261,23 @@ def enrich_from_search_result(
     result: dict,
     search_type: str = "both",
     original_query: str = "",
+    skip_index: bool = False,
 ) -> dict:
     """
     Process a single internet search result:
     1. Fetch content (+ check for PDF)
-    2. If PDF found → save to Google Drive, chunk, index to vector store
-    3. If no PDF → store as web reference (not indexed as primary source)
+    2. If PDF found and not skip_index → save to Google Drive, chunk, index to vector store
+    3. If no PDF and not skip_index → store as web reference (not indexed as primary source)
+
+    When skip_index=True: only fetch and score; do not save PDF or index. Used to surface
+    indexing_candidates to the UI for user-triggered indexing. Only official PDFs (acts, judgments)
+    are ever proposed as indexing candidates; news articles are never proposed for indexing.
 
     Args:
         result: Dict with url, title, snippet, source_tag, tier
         search_type: "bare_act", "case_law", or "both"
         original_query: Original user query for relevance filtering (prevents downloading irrelevant docs)
+        skip_index: If True, do not save PDF or index; still return enrichment with content for display.
 
     Returns:
         Dict with enrichment result:
@@ -317,6 +323,14 @@ def enrich_from_search_result(
             text_content = extracted
             logger.info("Extracted text from PDF in enricher (fetch had returned empty)")
 
+    # For bare_act candidates: decide from first two pages if this is actually an Act/Law (legislation) or other (notification, circular, etc.)
+    is_legislation = True
+    if search_type == "bare_act" and (text_content or "").strip() and len((text_content or "").strip()) >= 200:
+        first_two_pages = (text_content or "").strip()[:_FIRST_TWO_PAGES_CHARS]
+        is_legislation = _is_act_or_law(first_two_pages)
+        if not is_legislation:
+            logger.info("Document classified as NOT an Act/Law (notification/circular/other): %s", title[:60])
+
     enrichment = {
         "url": url,
         "title": title,
@@ -325,21 +339,43 @@ def enrich_from_search_result(
         "indexed": False,
         "source_tag": source_tag,
         "chunks_added": 0,
+        "is_legislation": is_legislation,
     }
 
     if not text_content and not pdf_bytes:
         logger.warning(f"No content fetched from {url}")
-        _save_web_reference(result, "")
+        if not skip_index:
+            _save_web_reference(result, "")
         return enrichment
 
-    # Determine if this is a bare act or case law
+    # Determine if this is a bare act or case law (content overrides search_type to prevent misclassification)
     is_case_law = _looks_like_case_law(url, title, text_content)
     doc_type = "case_law" if is_case_law else "bare_act"
 
-    if search_type == "bare_act":
-        doc_type = "bare_act"
-    elif search_type == "case_law":
+    if search_type == "case_law":
         doc_type = "case_law"
+    elif search_type == "bare_act" and not is_case_law:
+        doc_type = "bare_act"
+    # If search_type was "bare_act" but content looks like a judgment, keep doc_type = "case_law"
+    # so we do not index judgment PDFs as bare acts (saves to CaseLaws, chunks as case_law)
+
+    if skip_index:
+        # Only fetch and score; no save/index. Content still used for current response.
+        # Record if we got PDF bytes (for indexing_candidates: official PDFs only).
+        enrichment["content"] = (text_content or "")[:10000]
+        enrichment["pdf_saved"] = bool(pdf_bytes and len(pdf_bytes) > 1000)
+        if doc_type == "case_law" and original_query:
+            from retrieval.hybrid_retriever import score_query_document
+            doc_text = (text_content or "").strip()
+            if doc_text and len(doc_text) >= 100:
+                enrichment["_rerank_score"] = score_query_document(original_query, doc_text)
+            else:
+                enrichment["_rerank_score"] = 0.0
+                logger.warning(
+                    "Cannot score case law '%s': PDF text extraction failed or too short (%s chars)",
+                    title[:50], len(doc_text) if doc_text else 0
+                )
+        return enrichment
 
     # For case laws from web: score with cross-encoder using FULL PDF content; index only if score > 5.0
     HIGH_QUALITY_SCORE = 5.0
@@ -387,23 +423,28 @@ def enrich_from_search_result(
             _save_web_reference(result, text_content)
         return enrichment
 
-    # Bare acts or unscored: save and index as before
+    # Bare acts or unscored: save and index as before (only as bare act if classified as legislation)
     if pdf_bytes and len(pdf_bytes) > 1000:
-        subfolder = "CaseLaws" if doc_type == "case_law" else "BareActs"
-        saved_path = save_pdf_to_drive(pdf_bytes, title, subfolder)
-        enrichment["pdf_saved"] = bool(saved_path)
+        if doc_type == "bare_act" and not is_legislation:
+            # Document is not an Act/Law (e.g. notification, circular); do not save as BareAct or index
+            _save_web_reference(result, text_content)
+            logger.info(f"Not an Act/Law; saved as web reference only: {title[:60]}")
+        else:
+            subfolder = "CaseLaws" if doc_type == "case_law" else "BareActs"
+            saved_path = save_pdf_to_drive(pdf_bytes, title, subfolder)
+            enrichment["pdf_saved"] = bool(saved_path)
 
-        if saved_path and text_content:
-            if doc_type == "case_law":
-                chunks = chunk_case_law(text_content, saved_path)
-                added = add_case_law_chunks(chunks)
-            else:
-                chunks = chunk_bare_act(text_content, saved_path)
-                added = add_bare_act_chunks(chunks)
+            if saved_path and text_content:
+                if doc_type == "case_law":
+                    chunks = chunk_case_law(text_content, saved_path)
+                    added = add_case_law_chunks(chunks)
+                else:
+                    chunks = chunk_bare_act(text_content, saved_path)
+                    added = add_bare_act_chunks(chunks)
 
-            enrichment["indexed"] = added > 0
-            enrichment["chunks_added"] = added
-            logger.info(f"Indexed {added} chunks from PDF: {title}")
+                enrichment["indexed"] = added > 0
+                enrichment["chunks_added"] = added
+                logger.info(f"Indexed {added} chunks from PDF: {title}")
     else:
         _save_web_reference(result, text_content)
         logger.info(f"No PDF available, saved as web reference: {title}")
@@ -417,17 +458,54 @@ def enrich_from_gap_results(
     original_query: str = "",
     local_high_quality_count: int = 0,
     target_high_quality: int = 5,
+    skip_index: bool = False,
+    max_bare_acts_to_enrich: int = None,
+    max_case_laws_to_enrich: int = None,
+    progress_callback=None,
 ) -> dict:
     """
     Process all search results from gap filling.
     Case laws: only official PDFs; extract FULL PDF content, score with cross-encoder;
-    process top-ranked PDFs first, stop when we have enough results (score > 2.0).
-    Index only if score > 5.0.
+    process top-ranked PDFs first, stop when we have enough results (score >= WEB_MIN_SCORE).
+    Index only if score > 5.0 and skip_index is False.
+
+    When skip_index=True: fetch and score only; do not save or index. Caller uses
+    enriched_bare_acts/enriched_case_laws to build indexing_candidates for the UI.
+    Indexing is done manually via the Pending indexing UI (official PDFs only).
+
+    When user asked for "pull all" / "get all" / scope broad, caller should pass
+    max_bare_acts_to_enrich (e.g. 300 for pull-all) and optionally max_case_laws_to_enrich (e.g. 100 for pull-all)
+    so we enrich more official documents instead of capping at 15.
     """
     HIGH_QUALITY_SCORE = 5.0
-    WEB_MIN_SCORE = 2.0  # Lower threshold - filter unrelated ones, but include more relevant results
-    TARGET_RESULTS = 5  # Stop when we have this many case laws with score > WEB_MIN_SCORE
-    
+    WEB_MIN_SCORE = 1.0
+    TARGET_RESULTS = 5
+    DEFAULT_MAX_BARE_ACTS = 15  # Cap to reduce 429s and time; prefer official + PDF
+    DEFAULT_MAX_CASE_LAWS = 10
+    MAX_BARE_ACTS_TO_ENRICH = max_bare_acts_to_enrich if max_bare_acts_to_enrich is not None else DEFAULT_MAX_BARE_ACTS
+    MAX_CASE_LAWS_TO_ENRICH = max_case_laws_to_enrich if max_case_laws_to_enrich is not None else DEFAULT_MAX_CASE_LAWS
+
+    def _skip_low_value(result: dict) -> bool:
+        """Filter out search pages, generic home pages, and similar."""
+        url = (result.get("url") or "").lower()
+        title = (result.get("title") or "").strip()
+        if "/search/?forminput=" in url or "forminput=" in url:
+            return True
+        if title.startswith("Home | Legislative Department") or title == "Home | Legislative Department":
+            return True
+        if "indiankanoon.org/search/" in url:
+            return True
+        return False
+
+    def _sort_key_bare_act(r: dict) -> tuple:
+        """Official first, then PDF URLs, then by tier."""
+        tag = (r.get("source_tag") or "").upper()
+        url = (r.get("url") or "").lower()
+        is_off = 0 if tag in ("OFFICIAL", "OFFICIAL_COURT") else 1
+        is_pdf = 0 if (".pdf" in url or "/bitstream/" in url) else 1
+        tier = r.get("tier", 99)
+        return (is_off, is_pdf, tier)
+
     summary = {
         "pdfs_saved": 0,
         "chunks_indexed": 0,
@@ -437,49 +515,70 @@ def enrich_from_gap_results(
         "enriched_news": [],
     }
 
-    for result in gap_results.get("bare_act_results", []):
-        enrichment = enrich_from_search_result(result, "bare_act", original_query)
+    bare_act_results = [r for r in gap_results.get("bare_act_results", []) if not _skip_low_value(r)]
+    bare_act_results.sort(key=_sort_key_bare_act)
+    bare_act_results = bare_act_results[:MAX_BARE_ACTS_TO_ENRICH]
+
+    case_law_results_pre = [
+        r for r in gap_results.get("case_law_results", [])
+        if (r.get("source_tag") or "").upper() in ("OFFICIAL", "OFFICIAL_COURT") and not _skip_low_value(r)
+    ]
+    case_law_results_pre = case_law_results_pre[:MAX_CASE_LAWS_TO_ENRICH]
+    total_download = len(bare_act_results) + len(case_law_results_pre)
+    download_n = 0
+
+    for result in bare_act_results:
+        enrichment = enrich_from_search_result(result, "bare_act", original_query, skip_index=skip_index)
+        download_n += 1
+        if progress_callback:
+            progress_callback(download_n, total_download)
         if enrichment["pdf_saved"]:
             summary["pdfs_saved"] += 1
         summary["chunks_indexed"] += enrichment["chunks_added"]
-        if enrichment["content"]:
+        if enrichment["content"] and enrichment.get("is_legislation", True):
             summary["enriched_bare_acts"].append(enrichment)
 
     # Case laws: only official PDFs; process in ranking order, stop when we have enough
     web_high_quality_count = 0
     needed_high_quality = max(0, target_high_quality - local_high_quality_count)
-    case_law_results = [
-        r for r in gap_results.get("case_law_results", [])
-        if r.get("source_tag") == "OFFICIAL_COURT"
-    ]
-    # Results should already be ranked by tiered_search, process top to bottom
+    case_law_results = case_law_results_pre
+    # When pull_all (max_case_laws_to_enrich > default), allow more results; otherwise cap at TARGET_RESULTS.
+    case_law_cap = max(TARGET_RESULTS, MAX_CASE_LAWS_TO_ENRICH)
     for result in case_law_results:
-        # Early exit: stop if we have enough high-quality (score > 5.0) OR enough total results (score > 2.0)
-        if web_high_quality_count >= needed_high_quality:
+        # Early exit: stop if we have enough high-quality (score > 5.0) OR enough total results (score >= WEB_MIN_SCORE)
+        if web_high_quality_count >= needed_high_quality and MAX_CASE_LAWS_TO_ENRICH <= DEFAULT_MAX_CASE_LAWS:
             logger.info(f"Reached {target_high_quality} high-quality case laws (score > {HIGH_QUALITY_SCORE}), stopping")
             break
-        if len(summary["enriched_case_laws"]) >= TARGET_RESULTS:
-            logger.info(f"Reached {TARGET_RESULTS} case laws with score > {WEB_MIN_SCORE}, stopping enrichment")
+        if len(summary["enriched_case_laws"]) >= case_law_cap:
+            logger.info(f"Reached {case_law_cap} case laws with score >= {WEB_MIN_SCORE}, stopping enrichment")
             break
             
-        enrichment = enrich_from_search_result(result, "case_law", original_query)
+        enrichment = enrich_from_search_result(result, "case_law", original_query, skip_index=skip_index)
+        download_n += 1
+        if progress_callback:
+            progress_callback(download_n, total_download)
         source_tag = result.get("source_tag", "UNKNOWN")
         if enrichment["pdf_saved"]:
             summary["pdfs_saved"] += 1
         summary["chunks_indexed"] += enrichment["chunks_added"]
         score = enrichment.get("_rerank_score", 0)
+        title_short = (enrichment.get("title") or "Unknown")[:60]
+        passed = enrichment.get("content") and score >= WEB_MIN_SCORE
+        logger.info(
+            "Web case law: '%s' score=%.2f (threshold=%.1f) %s",
+            title_short, score, WEB_MIN_SCORE, "included" if passed else "excluded"
+        )
         
         if score > HIGH_QUALITY_SCORE:
             web_high_quality_count += 1
         
-        # Include case laws if they have content and score >= 2.0 (full PDF scoring)
-        if enrichment.get("content") and score >= WEB_MIN_SCORE:
+        if passed:
             summary["enriched_case_laws"].append(enrichment)
-            logger.debug(f"Added case law '{enrichment.get('title', 'Unknown')}' with score {score:.2f}")
 
     for result in gap_results.get("news_results", []):
-        _save_web_reference(result, "")
-        summary["web_references_saved"] += 1
+        if not skip_index:
+            _save_web_reference(result, "")
+            summary["web_references_saved"] += 1
         summary["enriched_news"].append({
             "url": result.get("url"),
             "title": result.get("title"),
@@ -487,10 +586,11 @@ def enrich_from_gap_results(
             "source_tag": "NEWS_REFERENCE",
         })
 
+    # Indexing is done manually via the Pending indexing UI; we only fetch for display here.
+    total_fetched = len(summary["enriched_bare_acts"]) + len(summary["enriched_case_laws"])
     logger.info(
-        f"Enrichment complete: {summary['pdfs_saved']} PDFs saved, "
-        f"{summary['chunks_indexed']} chunks indexed, "
-        f"{summary['web_references_saved']} web references saved"
+        f"Enrichment complete: {total_fetched} documents fetched for display. "
+        "Indexing is available via the Pending indexing UI (official PDFs only)."
     )
     return summary
 
@@ -574,9 +674,47 @@ def _is_relevant_to_query(title: str, snippet: str, original_query: str) -> bool
     return True  # Default: allow if unsure
 
 
+# Approximate "first two pages" for act vs judgment when we only have plain text (no page boundaries)
+_FIRST_TWO_PAGES_CHARS = 3000
+
+
+def _is_act_or_law(first_two_pages_text: str) -> bool:
+    """
+    Use the LLM to decide if the document (from first two pages) is an Act/Law (legislation)
+    or something else (notification, circular, order, gazette notice, etc.).
+    Returns True only when the model says it is an Act or Law; otherwise False so we don't use it as bare act.
+    """
+    if not first_two_pages_text or len(first_two_pages_text.strip()) < 150:
+        return True  # Too short to classify; allow (backward compat)
+    text = first_two_pages_text.strip()[:3000]
+    try:
+        from llm.ollama_client import ask_llm
+        prompt = f"""You are classifying a legal document from India (e.g. legislative.gov.in). Below is text from the first two pages.
+
+Is this document an **Act or Law** (legislation: Central/State Act, Ordinance, Code, Regulation) that creates or amends law?
+Or is it something **other** (e.g. notification, circular, order, gazette notice, clarification, rules notification, amendment notification that only notifies without being the Act text)?
+
+Reply with exactly one of these two words:
+ACT_OR_LAW
+OTHER
+
+Document excerpt:
+{text}
+
+Your one-word reply:"""
+        reply = (ask_llm(prompt, timeout=60) or "").strip().upper()
+        if "ACT_OR_LAW" in reply or reply == "ACT_OR_LAW":
+            return True
+        return False
+    except Exception as e:
+        logger.warning("LLM act/law classification failed: %s; treating as legislation", e)
+        return True  # On failure, allow (backward compat)
+
+
 def _looks_like_case_law(url: str, title: str, content: str) -> bool:
-    """Determine if a document is a case law (vs bare act) based on content."""
-    combined = f"{url} {title} {(content or '')[:2000]}".lower()
+    """Determine if a document is a case law (vs bare act) based on first two pages of content."""
+    first_two_pages = (content or "")[:_FIRST_TWO_PAGES_CHARS]
+    combined = f"{url} {title} {first_two_pages}".lower()
     case_indicators = [
         " v. ", " v/s ", " vs ", "appellant", "respondent",
         "petitioner", "judgment", "judgement", "hon'ble",

@@ -6,6 +6,7 @@ pydantic>=2.6,<3.0
 # CrewAI agents + LLM resolution
 crewai>=1.5.0,<2.0
 litellm>=1.30,<2.0
+apscheduler>=3.10  # required by LiteLLM logging (proxy module import)
 
 # MCP (Model Context Protocol) server
 mcp>=1.23.0,<2.0
@@ -47,3 +48,5 @@ python-dotenv>=1.0,<2.0
 
 # PowerPoint generation
 python-pptx>=0.6.23,<1.0
+
+apscheduler

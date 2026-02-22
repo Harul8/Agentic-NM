@@ -1,0 +1,562 @@
+{
+  "bm25": {
+    "bare_act_mrr": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_ndcg@10": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_ndcg@3": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_ndcg@5": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_precision@10": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_precision@3": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_precision@5": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_recall@10": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_recall@3": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_recall@5": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_rerank_auc": {
+      "mean": 0.5,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_mrr": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_ndcg@10": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_ndcg@3": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_ndcg@5": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_precision@10": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_precision@3": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_precision@5": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_recall@10": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_recall@3": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_recall@5": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_rerank_auc": {
+      "mean": 0.5,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "elapsed_seconds": {
+      "mean": 10.628,
+      "n": 10,
+      "stdev": 4.0268,
+      "ci_95": 2.4958
+    }
+  },
+  "faiss": {
+    "bare_act_mrr": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_ndcg@10": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_ndcg@3": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_ndcg@5": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_precision@10": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_precision@3": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_precision@5": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_recall@10": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_recall@3": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_recall@5": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_rerank_auc": {
+      "mean": 0.5,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_mrr": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_ndcg@10": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_ndcg@3": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_ndcg@5": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_precision@10": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_precision@3": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_precision@5": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_recall@10": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_recall@3": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_recall@5": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_rerank_auc": {
+      "mean": 0.5,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "elapsed_seconds": {
+      "mean": 7.229,
+      "n": 10,
+      "stdev": 6.5629,
+      "ci_95": 4.0677
+    }
+  },
+  "full": {
+    "bare_act_mrr": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_ndcg@10": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_ndcg@3": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_ndcg@5": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_precision@10": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_precision@3": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_precision@5": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_recall@10": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_recall@3": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_recall@5": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_rerank_auc": {
+      "mean": 0.5,
+      "n": 8,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_mrr": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_ndcg@10": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_ndcg@3": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_ndcg@5": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_precision@10": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_precision@3": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_precision@5": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_recall@10": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_recall@3": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_recall@5": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_rerank_auc": {
+      "mean": 0.5,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "elapsed_seconds": {
+      "mean": 3220.074,
+      "n": 10,
+      "stdev": 7793.439,
+      "ci_95": 4830.4235
+    }
+  },
+  "merged": {
+    "bare_act_mrr": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_ndcg@10": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_ndcg@3": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_ndcg@5": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_precision@10": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_precision@3": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_precision@5": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_recall@10": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_recall@3": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_recall@5": {
+      "mean": 0.0,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "bare_act_rerank_auc": {
+      "mean": 0.5,
+      "n": 9,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_mrr": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_ndcg@10": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_ndcg@3": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_ndcg@5": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_precision@10": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_precision@3": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_precision@5": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_recall@10": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_recall@3": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_recall@5": {
+      "mean": 0.0,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "case_law_rerank_auc": {
+      "mean": 0.5,
+      "n": 10,
+      "stdev": 0.0,
+      "ci_95": 0.0
+    },
+    "elapsed_seconds": {
+      "mean": 12.263,
+      "n": 10,
+      "stdev": 6.5881,
+      "ci_95": 4.0834
+    }
+  }
+}

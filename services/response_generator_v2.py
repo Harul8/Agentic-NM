@@ -4,7 +4,7 @@ Response Generator v2 — Full legal research pipeline with:
 - LLM-driven sufficiency analysis (no hard numeric limits)
 - Tiered internet search (official courts → legal portals → newspapers)
 - Auto-enrichment (PDFs saved to Google Drive, indexed to vector store)
-- Source tagging ([LOCAL_DB], [OFFICIAL_COURT], [LEGAL_PORTAL], [NEWS_REFERENCE])
+- Source tagging ([LOCAL_DB], [OFFICIAL] = government sources, [LEGAL_PORTAL], [NEWS_REFERENCE])
 
 This replaces the old response_generator.py's generate_response() function.
 The old module is preserved for backward compatibility — this new module is
@@ -14,6 +14,7 @@ imported and used by the API server.
 import os
 import json
 import logging
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Optional
 
@@ -23,7 +24,7 @@ from config import (
     GOOGLE_DRIVE_BARE_ACTS_FOLDER_URL,
     GOOGLE_DRIVE_CASE_LAWS_FOLDER_URL,
 )
-from llm.ollama_client import ask_llm
+from llm.ollama_client import ask_llm, get_model_display_for_prompt, get_gpu_info
 from prompts.advocate_prompts import (
     EXPAND_LEGAL_QUERY_SYSTEM,
     EXTRACT_BARE_ACT_PORTIONS_SYSTEM,
@@ -32,6 +33,8 @@ from prompts.advocate_prompts import (
     RELEVANCE_EXPLANATION_SYSTEM,
     RELEVANCE_EXPLANATION_NO_MATERIALS,
     CONVERSATIONAL_SUMMARY_SYSTEM,
+    BARE_ACT_ONLY_SUMMARY,
+    CASE_LAW_DISPUTE_ORDER_SUMMARY,
 )
 from services.progress_tracker import ProgressTracker
 
@@ -40,10 +43,13 @@ logger = logging.getLogger(__name__)
 # Relevance and quality thresholds — keep only high-quality, recent materials
 MIN_RERANK_SCORE = 3.0  # Minimum to include in pool (lowered from 4.0 to allow more local results)
 HIGH_QUALITY_SCORE = 5.0  # Case laws with score > this: "highly relevant"; stop web search if we have 5+; index web PDFs only if > this
-WEB_MIN_SCORE = 2.0  # Minimum rerank score to include a web-sourced case law (lowered to allow more results after full PDF scoring)
+WEB_MIN_SCORE = 1.0  # Minimum cross-encoder score for web case laws (ms-marco logits; 1.0 keeps on-topic official SC judgments)
 TARGET_HIGH_QUALITY_CASE_LAWS = 5  # Stop search once we have this many case laws with score > HIGH_QUALITY_SCORE
 MIN_CASE_YEAR = 1975 # Prefer cases from last 40 years; older treated as low priority
 JUNK_CASE_PATTERNS = ("unknown", "unknown (", "high court, 1908", "high court, 1972")
+
+# When user does NOT set a limit: include all with score > HIGH_QUALITY_SCORE; if fewer than this, add from >= MIN_RERANK_SCORE up to this many
+FLEXIBLE_MIN_FALLBACK = 10  # Minimum results to show when no user limit and not enough high-similarity (all must pass MIN_RERANK_SCORE)
 
 
 def _is_quality_case_law(chunk: dict) -> bool:
@@ -97,6 +103,37 @@ def _case_year_for_sort(chunk: dict) -> int:
         return int(str(raw).strip()[:4])
     except (ValueError, TypeError):
         return 0
+
+
+def _apply_flexible_result_limit(
+    items: list,
+    score_key: str = "_rerank_score",
+    user_limit: Optional[int] = None,
+    high_score: float = HIGH_QUALITY_SCORE,
+    min_score: float = MIN_RERANK_SCORE,
+    min_fallback: int = FLEXIBLE_MIN_FALLBACK,
+) -> list:
+    """
+    When user did not set a limit (user_limit is None): include all items with score > high_score;
+    if there are fewer than min_fallback, add from items with score >= min_score up to min_fallback total.
+    When user set a limit: return first user_limit items (caller ensures items already pass min_score).
+    Items without score are treated as min_score so they can be included in the fallback tier.
+    """
+    if not items:
+        return []
+    if user_limit is not None and user_limit > 0:
+        return items[:user_limit]
+    # Sort by score desc (missing score treated as min_score for inclusion in pool)
+    def _score(i):
+        s = i.get(score_key)
+        return (float(s) if s is not None else min_score)
+    sorted_items = sorted(items, key=_score, reverse=True)
+    high = [i for i in sorted_items if _score(i) > high_score]
+    rest = [i for i in sorted_items if min_score <= _score(i) <= high_score]
+    if len(high) >= min_fallback:
+        return high
+    need = min_fallback - len(high)
+    return high + rest[:need]
 
 
 # Court name → display acronym for case title (e.g. [SC] Appellant v/s Respondent)
@@ -154,12 +191,38 @@ def _court_acronym(court: str, binding_authority: str, case_name_or_source: str 
 
 
 # ---------------------------------------------------------------------------
+# Gap query generation (LLM-driven when empty or generic)
+# ---------------------------------------------------------------------------
+
+def _generate_gap_search_query(facts_summary: str, legal_query: str, gap_type: str) -> Optional[str]:
+    """Generate one web search query for a gap via LLM. Returns None on failure."""
+    kind = "bare act / legislation" if gap_type == "bare_act" else "case law / court judgment"
+    prompt = f"""You are an Indian legal research assistant. We need a short web search phrase to find {kind}.
+
+User request: {facts_summary[:400]}
+Legal query: {legal_query[:300]}
+
+Generate ONE short search phrase (5-12 words) suitable for a search engine to find relevant Indian {kind}. Include India Code or Supreme Court/High Court if appropriate. Output only the search phrase, no preamble or explanation."""
+    try:
+        out = (ask_llm(prompt) or "").strip()[:200]
+        return out if out else None
+    except Exception as e:
+        logger.debug("Gap query LLM failed: %s", e)
+        return None
+
+
+# ---------------------------------------------------------------------------
 # Query Expansion (reused from v1, improved)
 # ---------------------------------------------------------------------------
 
-def expand_legal_query(facts: str) -> str:
-    """Convert plain-language facts to a precise legal research query."""
+def expand_legal_query(facts: str, intent: dict = None) -> str:
+    """Convert plain-language facts to a precise legal research query. If intent is provided (from extract_research_intent), use it to enrich the query dynamically."""
+    from prompts.advocate_prompts import EXPAND_LEGAL_QUERY_SYSTEM, EXPAND_LEGAL_QUERY_INTENT_BLOCK
+    intent_block = ""
+    if intent and isinstance(intent, dict) and (intent.get("states") or intent.get("domains") or intent.get("topics")):
+        intent_block = EXPAND_LEGAL_QUERY_INTENT_BLOCK.format(intent_json=json.dumps(intent, indent=0))
     prompt = f"""{EXPAND_LEGAL_QUERY_SYSTEM}
+{intent_block}
 
 FACTS:
 {facts[:2000]}
@@ -208,15 +271,21 @@ def generate_response_v2(
     confirmed_materials: dict = None,
     result_count: int = None,
     progress_callback=None,
+    document_types: str = "both",
+    search_strategy: str = "local_then_web",
 ) -> dict:
     """
     Full legal research response using the v2 pipeline.
 
-    Flow:
+    Flow depends on search_strategy:
+    - local_then_web (default): local hybrid search → sufficiency → web for gaps
+    - web_only: skip local; build gaps from query → tiered web search only
+    - local_only: local search only; no web search
+
     1. Expand facts to legal search query
-    2. Hybrid search local vector store (FAISS + BM25 + re-rank)
+    2. Hybrid search local vector store (unless web_only)
     3. LLM-driven sufficiency analysis
-    4. If gaps found → tiered internet search → auto-enrich
+    4. If gaps found and not local_only → tiered internet search → auto-enrich
     5. Generate explanation with source tags
     6. Return structured response
 
@@ -240,6 +309,7 @@ def generate_response_v2(
     from retrieval.sufficiency_analyzer import (
         analyze_sufficiency,
         get_targeted_search_queries,
+        get_broad_discovery_queries,
     )
     from retrieval.tiered_search import search_for_gaps, fetch_content_and_pdf
     from retrieval.auto_enricher import enrich_from_gap_results
@@ -254,87 +324,204 @@ def generate_response_v2(
             except Exception:
                 pass
 
-    # Step 1: Expand query
-    legal_query = expand_legal_query(facts_summary)
+    # Normalize search_strategy
+    if search_strategy not in ("local_only", "web_only", "local_then_web"):
+        search_strategy = "local_then_web"
+
+    # Intent extraction for every request: extract states, domains, topics so expansion and (when web_only) broad discovery are intent-aware.
+    research_intent = None
+    try:
+        from services.intent_extractor import extract_research_intent
+        research_intent = extract_research_intent(facts_summary)
+    except Exception as e:
+        logger.debug("Intent extraction skipped: %s", e)
+
+    # Step 1: Expand query (intent-aware so expansion reflects user intent dynamically)
+    legal_query = expand_legal_query(facts_summary, intent=research_intent)
     search_query = f"{facts_summary} {legal_query}"[:500]
     logger.info(f"Expanded query: {legal_query[:200]}")
 
-    # Step 2: Hybrid search local vector store
-    progress.start_group("Internal Search", "Local vector store (FAISS + BM25 + re-ranking)")
-    _emit_progress()
-    progress.add_step("Searching local vector store (FAISS + BM25 + re-ranking)...")
-    _emit_progress()
-    logger.info("Searching local vector store (hybrid: FAISS + BM25 + re-rank)...")
-    bare_acts = search_bare_acts_auto(search_query, top_k=30)
-    case_laws = search_case_laws_auto(search_query, top_k=30)
+    # Intent + document_types: only retrieve what the user asked for (acts = government; case laws = courts)
+    retrieve_acts = intent == "lookup" or document_types == "acts_only" or (intent == "legal_opinion" and document_types != "case_laws_only")
+    retrieve_case_laws = intent == "search" or document_types == "case_laws_only" or (intent == "legal_opinion" and document_types != "acts_only")
+    if not retrieve_acts and not retrieve_case_laws:
+        retrieve_acts, retrieve_case_laws = True, True  # fallback
+
+    # Step 2: Hybrid search local vector store (skip entirely if web_only)
+    if search_strategy == "web_only":
+        bare_acts = []
+        case_laws = []
+        progress.start_group("Web Search", "User requested web-only search (skipping local database)")
+        _emit_progress()
+        progress.add_step("Skipping local search. Building web search from your query...", {"search_strategy": "web_only"})
+        _emit_progress()
+        logger.info("Search strategy: web_only — skipping local vector store")
+    else:
+        progress.start_group("Internal Search", "Local vector store (FAISS + BM25 + re-ranking)")
+        _emit_progress()
+        progress.add_step("Searching local vector store (FAISS + BM25 + re-ranking)...")
+        _emit_progress()
+        logger.info("Searching local vector store (hybrid: FAISS + BM25 + re-rank)...")
+        if not retrieve_case_laws:
+            bare_acts = search_bare_acts_auto(search_query, top_k=30)
+            case_laws = []
+            logger.info("Retrieval: bare-act-only (user asked for acts/laws only, no case laws)")
+        elif not retrieve_acts:
+            bare_acts = []
+            case_laws = search_case_laws_auto(search_query, top_k=45)
+            logger.info("Retrieval: case-law-only (user asked for judgments only, no acts)")
+        else:
+            with ThreadPoolExecutor(max_workers=2) as executor:
+                fut_ba = executor.submit(search_bare_acts_auto, search_query, 30)
+                fut_cl = executor.submit(search_case_laws_auto, search_query, 45)
+                bare_acts = fut_ba.result()
+                case_laws = fut_cl.result()
 
     logger.info(f"Local results (raw): {len(bare_acts)} bare act chunks, {len(case_laws)} case law chunks")
-    progress.add_step(f"Found {len(case_laws)} case law documents in local database", {"total_found": len(case_laws)})
-    _emit_progress()
-    # Track ALL document scans (before filtering) - this shows what was actually scanned
-    progress.add_step("Scanning case law documents for similarity...")
-    _emit_progress()
-    all_case_laws_scanned = case_laws.copy()  # Keep original list for tracking
-    for cl in all_case_laws_scanned:
-        score = cl.get("_rerank_score", 0)
-        doc_name = cl.get("case_name") or cl.get("source", "Unknown")
-        included = score >= MIN_RERANK_SCORE
-        progress.add_document_scan(doc_name, score, included, threshold=MIN_RERANK_SCORE)
+
+    # When web_only we already have empty local results; skip local progress/filter/sort and set skip_web_search=False
+    if search_strategy != "web_only":
+        # Progress messages reflect what we're actually retrieving (acts only / case laws only / both)
+        if retrieve_acts and retrieve_case_laws:
+            progress.add_step(f"Found {len(bare_acts)} bare act sections, {len(case_laws)} case law documents in local database", {"bare_acts": len(bare_acts), "case_laws": len(case_laws), "total_found": len(bare_acts) + len(case_laws)})
+        elif retrieve_acts:
+            progress.add_step(f"Found {len(bare_acts)} bare act sections in local database (acts only)", {"total_found": len(bare_acts), "bare_acts": len(bare_acts)})
+        else:
+            progress.add_step(f"Found {len(case_laws)} case law documents in local database", {"total_found": len(case_laws), "case_laws": len(case_laws)})
         _emit_progress()
+        # Track document scans: one line per phase that updates in place (use prefix so we don't overwrite doc-scan steps)
+        if retrieve_acts and bare_acts:
+            bare_to_scan = bare_acts[:20]  # cap to avoid too many steps
+            bare_scan_total = len(bare_to_scan)
+            _bare_prefix = "Scanning bare act sections for relevance"
+            for idx, ba in enumerate(bare_to_scan, 1):
+                msg = f"{_bare_prefix} ({idx}/{bare_scan_total}) done"
+                if idx == 1:
+                    progress.add_step(msg, {"current": idx, "total": bare_scan_total})
+                else:
+                    progress.update_last_step_with_prefix(_bare_prefix, msg, {"current": idx, "total": bare_scan_total})
+                _emit_progress()
+                score = ba.get("_rerank_score", 0)
+                doc_name = ba.get("act_name") or "Unknown"
+                included = score >= MIN_RERANK_SCORE
+                progress.add_document_scan(doc_name, score, included, threshold=MIN_RERANK_SCORE)
+                _emit_progress()
+        if retrieve_case_laws and case_laws:
+            case_scan_total = len(case_laws)
+            _case_prefix = "Scanning case law documents for similarity"
+            for idx, cl in enumerate(case_laws, 1):
+                msg = f"{_case_prefix} ({idx}/{case_scan_total}) done"
+                if idx == 1:
+                    progress.add_step(msg, {"current": idx, "total": case_scan_total})
+                else:
+                    progress.update_last_step_with_prefix(_case_prefix, msg, {"current": idx, "total": case_scan_total})
+                _emit_progress()
+                score = cl.get("_rerank_score", 0)
+                doc_name = cl.get("case_name") or cl.get("source", "Unknown")
+                included = score >= MIN_RERANK_SCORE
+                progress.add_document_scan(doc_name, score, included, threshold=MIN_RERANK_SCORE)
+                _emit_progress()
 
-    # Filter by relevance then by quality — no junk or very old cases
-    progress.add_step(f"Filtering documents (relevance score >= {MIN_RERANK_SCORE})...")
-    _emit_progress()
-    bare_acts_before = len(bare_acts)
-    case_laws_before = len(case_laws)
-    
-    bare_acts = [ba for ba in bare_acts if ba.get("_rerank_score", 0) >= MIN_RERANK_SCORE]
-    case_laws = [cl for cl in case_laws if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE]
-    
-    bare_acts = [ba for ba in bare_acts if _is_quality_bare_act(ba)]
-    case_laws = [cl for cl in case_laws if _is_quality_case_law(cl)]
-    
-    passed_threshold = len([cl for cl in case_laws if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE])
-    progress.add_step(f"Quality filter applied: {passed_threshold} case laws passed threshold", {
-        "passed_threshold": passed_threshold,
-        "total_searched": case_laws_before
-    })
-    _emit_progress()
-    # Sort: bare acts by relevance; case laws by year (prefer last 40 years) then relevance
-    bare_acts.sort(key=lambda x: x.get("_rerank_score", 0), reverse=True)
-    case_laws.sort(
-        key=lambda x: (
-            0 if _case_year_for_sort(x) >= MIN_CASE_YEAR else 1,
-            -x.get("_rerank_score", 0),
+        # Filter by relevance then by quality — no junk or very old cases
+        progress.add_step(f"Filtering documents (relevance score >= {MIN_RERANK_SCORE})...")
+        _emit_progress()
+        bare_acts_before = len(bare_acts)
+        case_laws_before = len(case_laws)
+        
+        bare_acts = [ba for ba in bare_acts if ba.get("_rerank_score", 0) >= MIN_RERANK_SCORE]
+        case_laws = [cl for cl in case_laws if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE]
+        
+        bare_acts = [ba for ba in bare_acts if _is_quality_bare_act(ba)]
+        case_laws = [cl for cl in case_laws if _is_quality_case_law(cl)]
+        
+        passed_threshold = len([cl for cl in case_laws if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE])
+        bare_passed = len(bare_acts)
+        if retrieve_acts and retrieve_case_laws:
+            progress.add_step(f"Quality filter applied: {bare_passed} bare acts, {passed_threshold} case laws passed threshold", {
+                "passed_threshold": passed_threshold,
+                "total_searched": bare_acts_before + case_laws_before,
+                "bare_acts_passed": bare_passed,
+                "case_laws_passed": passed_threshold,
+            })
+        elif retrieve_acts:
+            progress.add_step(f"Quality filter applied: {bare_passed} bare act sections passed threshold", {
+                "total_searched": bare_acts_before,
+                "bare_acts_passed": bare_passed,
+            })
+        else:
+            progress.add_step(f"Quality filter applied: {passed_threshold} case laws passed threshold", {
+                "passed_threshold": passed_threshold,
+                "total_searched": case_laws_before,
+                "case_laws_passed": passed_threshold,
+            })
+        _emit_progress()
+        # Sort: bare acts by relevance; case laws by year (prefer last 40 years) then relevance
+        bare_acts.sort(key=lambda x: x.get("_rerank_score", 0), reverse=True)
+        case_laws.sort(
+            key=lambda x: (
+                0 if _case_year_for_sort(x) >= MIN_CASE_YEAR else 1,
+                -x.get("_rerank_score", 0),
+            )
         )
-    )
-    logger.info(
-        f"Local results (after relevance ≥{MIN_RERANK_SCORE} + quality filter): "
-        f"{len(bare_acts)} bare acts, {len(case_laws)} case laws"
-    )
+        logger.info(
+            f"Local results (after relevance ≥{MIN_RERANK_SCORE} + quality filter): "
+            f"{len(bare_acts)} bare acts, {len(case_laws)} case laws"
+        )
 
-    # Case law early exit: if we have 5+ with score > 5.0, skip internet search
+    # Case law early exit: only when we're actually retrieving case laws and have enough (and not local_only)
     case_laws_high = [cl for cl in case_laws if cl.get("_rerank_score", 0) > HIGH_QUALITY_SCORE]
     local_high_quality_count = len(case_laws_high)
-    skip_web_search = local_high_quality_count >= TARGET_HIGH_QUALITY_CASE_LAWS
-    if skip_web_search:
-        logger.info(
-            f"Local has {local_high_quality_count} case laws with score > {HIGH_QUALITY_SCORE}. "
-            "Skipping internet search."
-        )
-        progress.add_step(f"Found {local_high_quality_count} high-quality case laws (score > {HIGH_QUALITY_SCORE}). Skipping web search.", {
-            "high_quality_count": local_high_quality_count,
-            "skipped_web": True
-        })
-        _emit_progress()
-        case_laws = case_laws_high[:TARGET_HIGH_QUALITY_CASE_LAWS]
+    skip_web_search = (
+        retrieve_case_laws
+        and local_high_quality_count >= TARGET_HIGH_QUALITY_CASE_LAWS
+    )
+    if search_strategy == "local_only":
+        skip_web_search = True
+        logger.info("Search strategy: local_only — skipping web search")
+        if progress.current_group:
+            progress.add_step("User requested local database only. Skipping web search.", {"search_strategy": "local_only"})
+            _emit_progress()
+    if search_strategy != "web_only":
+        if skip_web_search:
+            logger.info(
+                f"Local has {local_high_quality_count} case laws with score > {HIGH_QUALITY_SCORE}. "
+                "Skipping internet search."
+            )
+            progress.add_step(f"Found {local_high_quality_count} high-quality case laws (score > {HIGH_QUALITY_SCORE}). Skipping web search.", {
+                "high_quality_count": local_high_quality_count,
+                "total_found": local_high_quality_count,
+                "skipped_web": True,
+            })
+            _emit_progress()
+            # When user set a limit, cap; otherwise include all high-similarity (no rigid cap)
+            if result_count is not None and result_count > 0:
+                case_laws = case_laws_high[:result_count]
+            else:
+                case_laws = case_laws_high
+        else:
+            # Keep local case laws with score >= WEB_MIN for later merge (only if we're retrieving case laws)
+            if retrieve_case_laws:
+                case_laws = [cl for cl in case_laws if cl.get("_rerank_score", 0) >= WEB_MIN_SCORE]
+                case_passing = len(case_laws)
+                progress.add_step(f"Found {case_passing} case laws passing threshold (score >= {WEB_MIN_SCORE}). Proceeding to web search.", {
+                    "passed_threshold": case_passing,
+                    "total_found": case_passing,
+                    "skipped_web": False,
+                })
+            elif retrieve_acts:
+                bare_passing = len(bare_acts)
+                progress.add_step(f"Found {bare_passing} bare act sections. Proceeding to web search for more acts if needed.", {
+                    "passed_threshold": bare_passing,
+                    "total_found": bare_passing,
+                    "skipped_web": False,
+                })
+            else:
+                progress.add_step("Proceeding to web search.", {"skipped_web": False})
+            _emit_progress()
     else:
-        # Keep local case laws with score >= WEB_MIN for later merge
-        case_laws = [cl for cl in case_laws if cl.get("_rerank_score", 0) >= WEB_MIN_SCORE]
-        progress.add_step(f"Found {len(case_laws)} case laws passing threshold (score >= {WEB_MIN_SCORE}). Proceeding to web search.", {
-            "passed_threshold": len(case_laws),
-            "skipped_web": False
-        })
+        # web_only: always do web search (gaps will come from sufficiency with empty local)
+        skip_web_search = False
+        progress.add_step("Identifying web search queries from your question...", {"skipped_web": False})
         _emit_progress()
 
     # Add confirmed materials if provided
@@ -343,12 +530,34 @@ def generate_response_v2(
             confirmed_materials, bare_acts, case_laws
         )
 
-    # Step 3: Sufficiency analysis (only if we're doing web search)
-    sufficiency = analyze_sufficiency(facts_summary, bare_acts, case_laws)
-    gaps = get_targeted_search_queries(sufficiency)
+    # Step 3: Sufficiency analysis vs broad discovery (web_only with empty local gets multiple broad queries from intent)
+    if search_strategy == "web_only" and not bare_acts and not case_laws:
+        # Broad discovery: queries built dynamically from extracted intent (states, domains, topics)—no hardcoded scenarios.
+        gaps = get_broad_discovery_queries(
+            facts_summary, legal_query, document_types, intent=research_intent
+        )
+        sufficiency = {"overall_sufficient": False, "gaps": [], "aspects": [], "confidence": "low"}
+        logger.info("Web search: using %d broad discovery queries (web_only, no local)", len(gaps))
+    else:
+        sufficiency = analyze_sufficiency(facts_summary, bare_acts, case_laws)
+        gaps = get_targeted_search_queries(sufficiency)
+        # Respect document_types: only search for what the user asked for (acts vs case laws)
+        if document_types == "acts_only":
+            gaps = [g for g in gaps if g.get("type") == "bare_act"]
+            if not gaps and sufficiency.get("gaps"):
+                gaps = [{"query": (facts_summary or legal_query)[:200], "type": "bare_act"}]
+            logger.info("Web search: acts_only — only bare act gaps")
+        elif document_types == "case_laws_only":
+            gaps = [g for g in gaps if g.get("type") == "case_law"]
+            if not gaps and sufficiency.get("gaps"):
+                gaps = [{"query": (facts_summary or legal_query)[:200], "type": "case_law"}]
+            logger.info("Web search: case_laws_only — only case law gaps")
 
     # Step 4: If not early-exit and gaps found, search internet (tiered); only official PDFs, index only if score > 5.0
     enrichment_summary = None
+    web_bare_count = 0
+    web_case_count = 0
+    web_search_stats = None  # For data-driven no-materials summary: web_found, shortlisted, proposed, already_in_library
     internet_bare_acts = []
     internet_case_laws = []
 
@@ -357,36 +566,100 @@ def generate_response_v2(
         _emit_progress()
         progress.start_group("Web Search", "External sources (official court websites & legal portals)")
         _emit_progress()
-        logger.info(f"Gaps identified: {len(gaps)}. Searching internet (tiered, official PDFs only)...")
-        progress.add_step(f"Gaps identified: {len(gaps)}. Searching official sources...", {"gap_count": len(gaps)})
+        logger.info("Gaps identified: %d. Searching internet (tiered, official PDFs only)...", len(gaps))
+        for g in gaps:
+            logger.info("Gap query: %s (type=%s)", (g.get("query") or "")[:120], g.get("type", "both"))
+        gap_count = len(gaps)
+        progress.add_step(f"Gaps identified: {gap_count}. Searching official sources...", {"gap_count": gap_count})
         _emit_progress()
-        
+
         for g in gaps:
             q = (g.get("query") or "").strip()
             if not q or q.lower() in ("relevant indian court judgments", "relevant indian bare act sections"):
-                g["query"] = f"{legal_query} Supreme Court High Court judgment"
+                gap_type = g.get("type", "both")
+                # Model-driven: generate query from user intent; static template as fallback
+                generated = _generate_gap_search_query(facts_summary, legal_query, gap_type)
+                if generated:
+                    g["query"] = generated
+                    logger.info("Gap query from LLM: %s", generated[:80])
+                elif gap_type == "bare_act":
+                    g["query"] = f"{legal_query} India Code bare act state act"
+                else:
+                    g["query"] = f"{legal_query} Supreme Court High Court judgment"
         gap_results = search_for_gaps(gaps, jurisdiction_state)
         
-        # Track web search results
+        # Track web search results — dynamic counts for all scenarios (acts_only, case_laws_only, both)
+        web_bare_results = gap_results.get("bare_act_results", [])
         web_case_law_results = gap_results.get("case_law_results", [])
-        progress.add_step(f"Found {len(web_case_law_results)} case law results from web search", {
-            "total_found": len(web_case_law_results)
-        })
+        web_bare_count = len(web_bare_results)
+        web_case_count = len(web_case_law_results)
+        if document_types == "acts_only":
+            progress.add_step(f"Found {web_bare_count} bare act results from web search", {"total_found": web_bare_count, "bare_found": web_bare_count})
+        elif document_types == "case_laws_only":
+            progress.add_step(f"Found {web_case_count} case law results from web search", {"total_found": web_case_count, "case_found": web_case_count})
+        else:
+            progress.add_step(f"Found {web_bare_count} bare act, {web_case_count} case law results from web search", {
+                "bare_found": web_bare_count,
+                "case_found": web_case_count,
+                "total_found": web_bare_count + web_case_count,
+            })
         _emit_progress()
-        progress.add_step("Downloading and extracting PDFs...")
-        _emit_progress()
+
+        # When user asked for "pull all" / "get all" / scope broad, enrich more (cap 300 bare acts, 100 case laws).
+        pull_all = (
+            (research_intent and research_intent.get("scope") == "broad")
+            or (result_count is not None and result_count >= 25)
+        )
+        max_bare = 300 if pull_all else None
+        max_case = 100 if pull_all else None
+
+        def _download_progress(current: int, total: int):
+            msg = f"Downloading and extracting PDFs ({current}/{total}) done"
+            if current == 1:
+                progress.add_step(msg, {"current": current, "total": total})
+            else:
+                progress.update_last_step(msg, {"current": current, "total": total})
+            _emit_progress()
 
         enrichment_summary = enrich_from_gap_results(
             gap_results,
             original_query=facts_summary,
             local_high_quality_count=local_high_quality_count,
             target_high_quality=TARGET_HIGH_QUALITY_CASE_LAWS,
+            skip_index=True,  # Do not auto-index; surface as indexing_candidates for user-triggered indexing
+            max_bare_acts_to_enrich=max_bare,
+            max_case_laws_to_enrich=max_case,
+            progress_callback=_download_progress,
         )
-        
-        # Track web document scans
-        progress.add_step("Scanning web documents for similarity...")
-        _emit_progress()
-        for enriched in enrichment_summary.get("enriched_case_laws", []):
+
+        # Track web document scans: one "Scanning (n/total) done" line that updates in place (don't overwrite doc-scan steps)
+        _scan_prefix = "Scanning web documents for relevance"
+        enriched_bare = enrichment_summary.get("enriched_bare_acts", [])
+        enriched_case = enrichment_summary.get("enriched_case_laws", [])
+        scan_total = len(enriched_bare) + len(enriched_case)
+        scan_n = 0
+        for enriched in enriched_bare:
+            scan_n += 1
+            msg = f"{_scan_prefix} ({scan_n}/{scan_total}) done"
+            if scan_n == 1:
+                progress.add_step(msg, {"current": scan_n, "total": scan_total})
+            else:
+                progress.update_last_step_with_prefix(_scan_prefix, msg, {"current": scan_n, "total": scan_total})
+            _emit_progress()
+            doc_name = enriched.get("title", "Unknown")
+            progress.add_document_scan(doc_name, 1.0, True, threshold=WEB_MIN_SCORE, metadata={
+                "url": enriched.get("url", ""),
+                "source_tag": enriched.get("source_tag", "")
+            })
+            _emit_progress()
+        for enriched in enriched_case:
+            scan_n += 1
+            msg = f"{_scan_prefix} ({scan_n}/{scan_total}) done"
+            if scan_n == 1:
+                progress.add_step(msg, {"current": scan_n, "total": scan_total})
+            else:
+                progress.update_last_step_with_prefix(_scan_prefix, msg, {"current": scan_n, "total": scan_total})
+            _emit_progress()
             score = enriched.get("_rerank_score", 0)
             doc_name = enriched.get("title", "Unknown")
             included = score >= WEB_MIN_SCORE
@@ -395,11 +668,27 @@ def generate_response_v2(
                 "source_tag": enriched.get("source_tag", "")
             })
             _emit_progress()
+        web_bare_passed = len(enrichment_summary.get("enriched_bare_acts", []))
         web_passed = len([e for e in enrichment_summary.get("enriched_case_laws", []) if e.get("_rerank_score", 0) >= WEB_MIN_SCORE])
-        progress.add_step(f"Web search complete: {web_passed} case laws passed threshold (score >= {WEB_MIN_SCORE})", {
-            "passed_threshold": web_passed,
-            "total_searched": len(web_case_law_results)
-        })
+        if document_types == "acts_only":
+            progress.add_step(f"Web search complete: {web_bare_passed} bare act documents", {
+                "passed_threshold": web_bare_passed,
+                "total_searched": web_bare_count,
+                "total_found": web_bare_count,
+            })
+        elif document_types == "case_laws_only":
+            progress.add_step(f"Web search complete: {web_passed} case laws passed threshold (score >= {WEB_MIN_SCORE})", {
+                "passed_threshold": web_passed,
+                "total_searched": web_case_count,
+                "total_found": web_case_count,
+            })
+        else:
+            progress.add_step(f"Web search complete: {web_bare_passed} bare acts, {web_passed} case laws passed threshold", {
+                "passed_threshold": web_bare_passed + web_passed,
+                "total_searched": web_bare_count + web_case_count,
+                "bare_passed": web_bare_passed,
+                "case_passed": web_passed,
+            })
         _emit_progress()
         # Process internet results for display
         for enriched in enrichment_summary.get("enriched_bare_acts", []):
@@ -447,49 +736,173 @@ def generate_response_v2(
         progress.finish_group()
         _emit_progress()
 
-    # Step 5: Format bare acts first, then match case laws to them
-    all_bare_acts = _format_bare_acts(bare_acts + internet_bare_acts)
-    
-    # Apply result_count limit for bare acts
-    if result_count and result_count > 0:
-        all_bare_acts = all_bare_acts[:result_count]
-        logger.info(f"Applied result_count limit: {result_count} bare acts")
+    # Step 4b: Post-search progress — building response, opinion, indexing list
+    progress.start_group("Response", "Building final response, opinion, and indexing list")
+    progress.add_step("Building final response...", {})
+    _emit_progress()
 
-    # Step 6: Match case laws to bare act sections
-    # Combine and format case laws - need enough for at least 2 per bare act section
+    # Step 5: Apply flexible result limit (no rigid cap when user didn't set limit: all > 5.0, else up to 10 with >= 3.0)
+    combined_bare = bare_acts + internet_bare_acts
+    limited_bare = _apply_flexible_result_limit(combined_bare, user_limit=result_count)
+    all_bare_acts = _format_bare_acts(limited_bare)
+
+    # Step 6: Match case laws to bare act sections (or for search-only, wrap case laws in one section)
     combined_case_laws = case_laws + internet_case_laws
     combined_case_laws.sort(key=lambda x: x.get("_rerank_score", 0), reverse=True)
-    # Get plenty of case laws so after grouping we have enough for 2 per section
-    format_input_size = max(len(all_bare_acts) * 6, 30)
-    case_laws_for_format = combined_case_laws[:format_input_size]
+    limited_case_laws = _apply_flexible_result_limit(combined_case_laws, user_limit=result_count)
+    format_input_size = max(len(all_bare_acts) * 6, 30) if all_bare_acts else (result_count or FLEXIBLE_MIN_FALLBACK)
+    # Cap chunks per case so one judgment does not dominate (more distinct cases in the list)
+    case_laws_for_format = _diversify_case_laws_by_case(
+        limited_case_laws,
+        max_chunks_per_case=4,
+        max_total=max(format_input_size, 24),
+    )
     all_case_laws = _format_case_laws(case_laws_for_format, user_query=facts_summary)
 
-    # Match case laws to bare act sections (2 per section, no duplicates)
+    # Match case laws to bare act sections (2 per section, no duplicates); search-only has no bare acts
     all_bare_acts = _match_case_laws_to_bare_acts(all_bare_acts, all_case_laws)
 
-    # Handle intent-specific filtering
+    # Search-only: we have no bare acts; wrap all case laws in one section so UI gets them
+    if intent == "search" and not all_bare_acts and all_case_laws:
+        # When user set a limit, cap; otherwise show all we have (already limited by flexible rule)
+        limit = max(1, result_count) if result_count is not None else max(FLEXIBLE_MIN_FALLBACK, len(all_case_laws))
+        all_bare_acts = [{
+            "act_name": "Case laws",
+            "title": "Case laws (search results)",
+            "text": "",
+            "related_case_laws": all_case_laws[:limit],
+            "source_tag": "LOCAL_DB",
+        }]
+
+    # Step 6b: Generating explanation (flow-dependent)
     if intent in ("search", "lookup"):
-        all_bare_acts, _ = _filter_by_intent(
-            facts_summary, intent, all_bare_acts, []
-        )
+        progress.add_step("Generating search summary...", {})
+    else:
+        progress.add_step("Generating legal opinion...", {})
+    _emit_progress()
 
     # Step 7: Generate explanation
     # Flatten case laws for explanation generation (backward compat)
     flattened_case_laws = []
     for ba in all_bare_acts:
         flattened_case_laws.extend(ba.get("related_case_laws", []))
-    
+
+    # Add "Calling X model, GPU: Y" step here (before blocking on LLM) so it always appears in the progress tracker
+    _bare = (facts_summary or "")[:1500]
+    _bare += json.dumps([{"t": b.get("title", ""), "x": (b.get("text") or "")[:500]} for b in all_bare_acts[:15]])[:3000]
+    _bare += json.dumps([{"t": c.get("title", ""), "x": (c.get("text") or "")[:500]} for c in flattened_case_laws[:15]])[:3000]
+    _display, _switched = get_model_display_for_prompt(_bare)
+    if _display:
+        _action = "Switching to" if _switched else "Calling"
+        _msg = f"{_action} {_display} model"
+        _gpu = get_gpu_info()
+        if _gpu:
+            _msg += f", GPU: {', '.join(_gpu)}"
+        progress.add_step(_msg)
+        _emit_progress()
+
+    def _on_before_llm(prompt: str):
+        pass  # Model step already added above so it appears before ask_llm blocks
+
     if intent in ("search", "lookup"):
         explanation = _generate_conversational_summary(
-            facts_summary, all_bare_acts, flattened_case_laws
+            facts_summary, all_bare_acts, flattened_case_laws, intent=intent, on_before_llm=_on_before_llm
         )
     else:
         explanation = _generate_legal_opinion(
-            facts_summary, all_bare_acts, flattened_case_laws, sufficiency
+            facts_summary, all_bare_acts, flattened_case_laws, sufficiency, on_before_llm=_on_before_llm
         )
 
     if not (explanation or "").strip():
         explanation = "Here's what I found for your query. Below are the relevant legal provisions with related case laws."
+
+    # Build indexing candidates for UI: strictly official PDF documents only (government sources; no legal portals / HTML-only).
+    def _is_official_pdf(e):
+        if not e.get("url") or not e.get("title"):
+            return False
+        tag = (e.get("source_tag") or "").upper()
+        if tag not in ("OFFICIAL", "OFFICIAL_COURT"):
+            return False
+        if e.get("pdf_saved"):
+            return True
+        url = (e.get("url") or "").lower()
+        return ".pdf" in url or "/bitstream/" in url
+
+    indexing_candidates = []
+    if enrichment_summary:
+        raw_candidates = []
+        enriched_bare = enrichment_summary.get("enriched_bare_acts", [])
+        enriched_case = enrichment_summary.get("enriched_case_laws", [])
+        for e in enriched_bare:
+            if _is_official_pdf(e):
+                raw_candidates.append({
+                    "title": e.get("title", ""),
+                    "source_url": e.get("url", ""),
+                    "suggested_category": "bare_act",
+                    "content": (e.get("content") or "")[:2000],  # first ~2 pages for duplicate check
+                })
+        for e in enriched_case:
+            if _is_official_pdf(e):
+                raw_candidates.append({
+                    "title": e.get("title", ""),
+                    "source_url": e.get("url", ""),
+                    "suggested_category": "case_law",
+                    "content": (e.get("content") or "")[:2000],
+                })
+        n_bare = sum(1 for c in raw_candidates if c.get("suggested_category") == "bare_act")
+        n_case = sum(1 for c in raw_candidates if c.get("suggested_category") == "case_law")
+        logger.info(
+            "Indexing candidates (official PDF only): %d bare acts, %d case laws from %d/%d enriched",
+            n_bare, n_case, len(enriched_bare), len(enriched_case),
+        )
+        # Cross-check with internal store (short title + year); mark duplicates so UI can highlight and skip index
+        try:
+            progress.add_step(f"Preparing Pending indexing list (0/{len(raw_candidates)})...", {"current": 0, "total": len(raw_candidates)})
+            _emit_progress()
+            from services.indexing_duplicate_check import check_indexing_candidates
+            indexing_candidates = check_indexing_candidates(raw_candidates)
+            # Drop content from payload; keep only title, source_url, suggested_category, already_in_store
+            indexing_candidates = [
+                {"title": c["title"], "source_url": c["source_url"], "suggested_category": c["suggested_category"], "already_in_store": c.get("already_in_store", False)}
+                for c in indexing_candidates
+            ]
+            n_ready = sum(1 for c in indexing_candidates if not c.get("already_in_store"))
+            n_in_store = len(indexing_candidates) - n_ready
+            total = len(raw_candidates)
+            already_titles = [c["title"] for c in indexing_candidates if c.get("already_in_store")]
+            progress.add_step(
+                f"Pending indexing list ({n_ready}/{total}) — {n_ready} ready for indexing, {n_in_store} already in library",
+                {"current": n_ready, "total": total, "ready": n_ready, "already_in_store": n_in_store, "already_in_library_titles": already_titles},
+            )
+            _emit_progress()
+            # Only send ready-to-index items to frontend; "already in library" shown in Progress tracker only
+            indexing_candidates = [c for c in indexing_candidates if not c.get("already_in_store")]
+            # Data-driven no-materials summary: what we actually found/shortlisted/proposed/already in library
+            web_search_stats = {
+                "web_found": web_bare_count + web_case_count,
+                "shortlisted": len(enriched_bare) + len(enriched_case),
+                "proposed": n_ready,
+                "already_in_library": n_in_store,
+            }
+        except Exception as ex:
+            logger.warning("Indexing duplicate check failed: %s", ex)
+            indexing_candidates = [{"title": c["title"], "source_url": c["source_url"], "suggested_category": c["suggested_category"], "already_in_store": False} for c in raw_candidates]
+            total = len(raw_candidates)
+            progress.add_step(
+                f"Pending indexing list ({total}/{total}) — {total} ready for indexing (duplicate check skipped)",
+                {"current": total, "total": total, "ready": total, "already_in_store": 0},
+            )
+            _emit_progress()
+            web_search_stats = {
+                "web_found": web_bare_count + web_case_count,
+                "shortlisted": len(enriched_bare) + len(enriched_case),
+                "proposed": total,
+                "already_in_library": 0,
+            }
+
+    # When user has no materials for the answer: use data-driven summary if we have web search stats, else fix message for web_only
+    if explanation and "I don't have any data" in explanation:
+        explanation = _format_no_materials_message(search_strategy, web_search_stats)
 
     # Collect source tags for transparency
     sources_used = set()
@@ -507,7 +920,47 @@ def generate_response_v2(
         "needs_confirmation": False,
         "internet_case_laws": [],  # backward compat
         "progress": progress.get_progress(),  # Add progress tracking data
+        "indexing_candidates": indexing_candidates,
     }
+
+
+# ---------------------------------------------------------------------------
+# Case-level diversity (avoid one case dominating the list)
+# ---------------------------------------------------------------------------
+
+def _diversify_case_laws_by_case(
+    case_laws: list,
+    max_chunks_per_case: int = 4,
+    max_total: int = 50,
+) -> list:
+    """
+    Reduce dominance of a single case: cap chunks per case so more distinct
+    cases appear in the result. Input must be sorted by _rerank_score desc.
+    """
+    if not case_laws:
+        return []
+    per_case_count = {}
+    result = []
+    for cl in case_laws:
+        if len(result) >= max_total:
+            break
+        case_key = (
+            (cl.get("case_name") or cl.get("source") or "").strip(),
+            (cl.get("court") or "").strip(),
+            str(cl.get("year") or ""),
+            (cl.get("source") or cl.get("source_file") or "").strip(),
+        )
+        n = per_case_count.get(case_key, 0)
+        if n >= max_chunks_per_case:
+            continue
+        per_case_count[case_key] = n + 1
+        result.append(cl)
+    if result != case_laws[:len(result)]:
+        logger.info(
+            "Case diversity: %d chunks from %d cases (max %d per case, cap %d total)",
+            len(result), len(per_case_count), max_chunks_per_case, max_total,
+        )
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -819,21 +1272,20 @@ def _generate_legal_opinion(
     bare_acts: list,
     case_laws: list,
     sufficiency: dict,
+    on_before_llm=None,
 ) -> str:
-    """Generate a formal legal opinion with citations and source tags."""
+    """Generate a formal legal opinion with citations and source tags. on_before_llm(prompt) is called before LLM if provided."""
     # Check if we have any materials at all
     has_bare_acts = bool(bare_acts and len(bare_acts) > 0)
     has_case_laws = bool(case_laws and len(case_laws) > 0)
     
-    # If no materials at all, use the fallback message
+    # If no materials at all, return fixed "I don't have any data" — do NOT call LLM (no hallucination risk)
     if not has_bare_acts and not has_case_laws:
         return f"""## Brief Facts
 {facts[:200]}
 
 ## Analysis and Conclusion
-{RELEVANCE_EXPLANATION_NO_MATERIALS}
-
-*This analysis is based on general legal principles only, as no directly relevant materials were found in the database.*"""
+{RELEVANCE_EXPLANATION_NO_MATERIALS}"""
 
     bare_text = json.dumps(
         [{"title": b.get("title"), "text": b.get("text", "")[:500], "source_tag": b.get("source_tag")}
@@ -876,7 +1328,7 @@ IMPORTANT:
 - Only cite sources that appear in the arrays above. If an array is empty ([]), do not create that section.
 - For each legal statement that references retrieved materials, tag the citation with its source type:
   [LOCAL_DB] for materials from our verified database
-  [OFFICIAL_COURT] for materials from court websites
+  [OFFICIAL] for materials from government sources (legislation: state/central; judgments: courts)
   [LEGAL_PORTAL] for materials from legal portals
   [NEWS_REFERENCE] for newspaper articles (context only)
 - If no materials were retrieved (empty arrays), do NOT add any source tags.
@@ -884,6 +1336,8 @@ IMPORTANT:
 Generate the legal analysis:"""
 
     try:
+        if callable(on_before_llm):
+            on_before_llm(prompt)
         return ask_llm(prompt).strip()
     except Exception as e:
         logger.error(f"Opinion generation failed: {e}")
@@ -894,11 +1348,20 @@ def _generate_conversational_summary(
     facts: str,
     bare_acts: list,
     case_laws: list,
+    intent: str = "search",
+    on_before_llm=None,
 ) -> str:
-    """Generate a conversational summary for search/lookup queries."""
+    """Generate a conversational summary for search/lookup. For lookup use bare-act-only summary; for search use dispute+order/judgement in brief.
+    When no materials exist for the requested type, return fixed 'I don't have any data' — do NOT call LLM (anti-hallucination). on_before_llm(prompt) is called before LLM if provided."""
     has_bare_acts = bool(bare_acts and len(bare_acts) > 0)
     has_case_laws = bool(case_laws and len(case_laws) > 0)
-    
+
+    # No-LLM path: when requested type has no materials, return fixed message
+    if intent == "lookup" and not has_bare_acts:
+        return RELEVANCE_EXPLANATION_NO_MATERIALS
+    if intent == "search" and not has_case_laws:
+        return RELEVANCE_EXPLANATION_NO_MATERIALS
+
     bare_text = json.dumps(
         [{"title": b.get("title"), "text": b.get("text", "")[:300]}
          for b in bare_acts[:10]],
@@ -910,16 +1373,27 @@ def _generate_conversational_summary(
          for c in case_laws[:10]],
         indent=2,
     )[:2000]
-    
-    # Add explicit empty array indicators if needed
-    bare_array_note = ""
-    case_array_note = ""
-    if not has_bare_acts:
-        bare_array_note = "\n⚠️ NOTE: The BARE ACTS FOUND array above is EMPTY ([]). Do NOT claim you found bare act provisions."
-    if not has_case_laws:
-        case_array_note = "\n⚠️ NOTE: The CASE LAWS FOUND array above is EMPTY ([]). Do NOT claim you found case laws."
 
-    prompt = f"""{CONVERSATIONAL_SUMMARY_SYSTEM}
+    if intent == "lookup":
+        system = BARE_ACT_ONLY_SUMMARY
+        prompt = f"""{system}
+
+USER QUERY: {facts[:500]}
+BARE ACT SECTIONS FOUND: {bare_text if has_bare_acts else "[]"}
+
+Summarise only the relevant bare act sections (no case laws):"""
+    elif intent == "search":
+        system = CASE_LAW_DISPUTE_ORDER_SUMMARY
+        prompt = f"""{system}
+
+USER QUERY: {facts[:500]}
+CASE LAWS FOUND: {case_text if has_case_laws else "[]"}
+
+For each case give: facts related to dispute + court order/judgement in brief:"""
+    else:
+        bare_array_note = "\n⚠️ NOTE: The BARE ACTS FOUND array above is EMPTY ([]). Do NOT claim you found bare act provisions." if not has_bare_acts else ""
+        case_array_note = "\n⚠️ NOTE: The CASE LAWS FOUND array above is EMPTY ([]). Do NOT claim you found case laws." if not has_case_laws else ""
+        prompt = f"""{CONVERSATIONAL_SUMMARY_SYSTEM}
 
 USER QUERY: {facts[:500]}
 BARE ACTS FOUND: {bare_text}
@@ -930,10 +1404,47 @@ CASE LAWS FOUND: {case_text}
 Response:"""
 
     try:
+        if callable(on_before_llm):
+            on_before_llm(prompt)
         return ask_llm(prompt).strip()
     except Exception as e:
         logger.error(f"Summary generation failed: {e}")
         return ""
+
+
+def _format_no_materials_message(search_strategy: str, web_search_stats: Optional[dict]) -> str:
+    """
+    Return a truthful, data-driven message when no materials are shown in the answer.
+    When web search was used, report actual counts (found, shortlisted, proposed, already in library)
+    so the user sees what happened instead of a static 'I don't have any data'.
+    When user asked for web_only, never claim we 'searched the internal vector store'.
+    """
+    if web_search_stats is not None:
+        wf = web_search_stats.get("web_found", 0)
+        sl = web_search_stats.get("shortlisted", 0)
+        prop = web_search_stats.get("proposed", 0)
+        already = web_search_stats.get("already_in_library", 0)
+        if wf == 0 and sl == 0:
+            if search_strategy == "web_only":
+                return (
+                    "I searched the web only (as you requested) but found no acts or laws. "
+                    "Try rephrasing with specific section numbers, Act names, or a different legal angle."
+                )
+            return (
+                "I searched the web but found no results. "
+                "Try rephrasing with specific section numbers, Act names, or a different legal angle."
+            )
+        return (
+            f"I searched the web and found {wf} act(s)/law(s). After relevance checks, {sl} were shortlisted. "
+            f"I'm proposing {prop} for indexing; {already} are already in your library. "
+            "None of the retrieved materials met the relevance threshold for the answer above—try rephrasing with specific section numbers, Act names, or a different legal angle."
+        )
+    if search_strategy == "web_only":
+        return (
+            "I searched the web only (as you requested) but found no relevant bare act provisions or case laws. "
+            "Try rephrasing with specific section numbers, Act names, or a different legal angle."
+        )
+    return RELEVANCE_EXPLANATION_NO_MATERIALS
 
 
 # ---------------------------------------------------------------------------

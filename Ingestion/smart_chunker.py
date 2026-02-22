@@ -32,6 +32,24 @@ def extract_text_from_pdf(pdf_path: str) -> str:
     return text
 
 
+# Approximate chars for "first two pages" when page boundaries aren't available (e.g. .txt)
+FIRST_TWO_PAGES_CHARS = 3000
+
+
+def extract_text_from_pdf_first_n_pages(pdf_path: str, n: int = 2) -> str:
+    """Extract text from only the first n pages of a PDF. Used for act vs judgment detection."""
+    text = ""
+    try:
+        with pdfplumber.open(pdf_path) as pdf:
+            for page in pdf.pages[:n]:
+                page_text = page.extract_text()
+                if page_text:
+                    text += page_text + "\n"
+    except Exception as e:
+        logger.error(f"Failed to extract first {n} pages from {pdf_path}: {e}")
+    return text
+
+
 def extract_text_from_file(file_path: str) -> str:
     """Extract text from PDF or text file."""
     if file_path.lower().endswith(".pdf"):
@@ -481,11 +499,60 @@ def _safe_id(name: str) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Judgment vs Bare Act detection (prevent misclassification)
+# ---------------------------------------------------------------------------
+
+def _looks_like_judgment(text: str, filename: str = "") -> bool:
+    """
+    Return True if the document content looks like a court judgment rather than a bare act.
+    Caller must pass only the first two pages of the document (use extract_text_from_pdf_first_n_pages
+    for PDFs, or first FIRST_TWO_PAGES_CHARS for plain text).
+    """
+    if not (text or "").strip():
+        return False
+    sample = ((text or "").strip() + " " + (filename or "")).lower()
+    judgment_indicators = [
+        "in the supreme court of india",
+        "in the high court of",
+        "civil appeal no",
+        "criminal appeal no",
+        "writ petition",
+        "appellant",
+        "respondent",
+        "petitioner",
+        "j u d g m e n t",
+        "judgment",
+        "judgement",
+        "hon'ble",
+        "honble",
+        "coram",
+        "civil appellate jurisdiction",
+        "criminal appellate jurisdiction",
+    ]
+    bare_act_indicators = [
+        "bare act",
+        "act,",
+        "act no.",
+        "code,",
+        "ordinance",
+        "legislative department",
+        "indiacode",
+        "gazette of india",
+        "schedule",
+    ]
+    j_count = sum(1 for i in judgment_indicators if i in sample)
+    a_count = sum(1 for i in bare_act_indicators if i in sample)
+    return j_count > a_count
+
+
+# ---------------------------------------------------------------------------
 # Batch Processing
 # ---------------------------------------------------------------------------
 
 def process_bare_acts_directory(bare_acts_dir: str) -> list:
-    """Process all PDFs in a bare acts directory. Returns list of all chunks."""
+    """Process all PDFs in a bare acts directory. Returns list of all chunks.
+    Skips any file whose content looks like a court judgment (to avoid misclassifying judgments as bare acts).
+    """
     all_chunks = []
     if not os.path.isdir(bare_acts_dir):
         logger.warning(f"Bare acts directory not found: {bare_acts_dir}")
@@ -499,7 +566,31 @@ def process_bare_acts_directory(bare_acts_dir: str) -> list:
 
     for filename in sorted(files):
         filepath = os.path.join(bare_acts_dir, filename)
-        text = extract_text_from_file(filepath)
+        # Use only first two pages to decide act vs judgment
+        if filepath.lower().endswith(".pdf"):
+            intro_text = extract_text_from_pdf_first_n_pages(filepath, n=2)
+        else:
+            try:
+                with open(filepath, encoding="utf-8", errors="ignore") as f:
+                    full = f.read()
+            except Exception as e:
+                logger.error(f"Failed to read {filepath}: {e}")
+                continue
+            intro_text = full[:FIRST_TWO_PAGES_CHARS]
+        if not intro_text.strip():
+            logger.warning(f"Empty text from {filename}, skipping")
+            continue
+        if _looks_like_judgment(intro_text, filename):
+            logger.warning(
+                "Skipping '%s': content looks like a court judgment, not a bare act. "
+                "Move this file to the CaseLaws folder and run case law indexing.",
+                filename,
+            )
+            continue
+        if filepath.lower().endswith(".txt"):
+            text = full
+        else:
+            text = extract_text_from_file(filepath)
         if not text.strip():
             logger.warning(f"Empty text from {filename}, skipping")
             continue
