@@ -207,10 +207,13 @@ body {
 
 .message--user .message-content {
   align-items: flex-end;
+  max-width: 100%;
 }
 
 .message--user .message-bubble {
-  max-width: 85%;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Avatar */
@@ -268,6 +271,8 @@ body {
   font-size: 0.88rem;
   line-height: 1.6;
   max-width: 100%;
+  overflow: visible;
+  min-height: 0;
 }
 
 .message-bubble--user {
@@ -284,10 +289,13 @@ body {
   border-bottom-left-radius: 0; /* Removed specific radius */
 }
 
-/* Preserve user format: spaces, newlines */
+/* Preserve user format: spaces, newlines; height grows with content */
 .message-bubble-text--preserve {
   white-space: pre-wrap;
   word-break: break-word;
+  overflow: visible;
+  max-height: none;
+  min-height: 0;
 }
 
 /* Edit / Copy actions on messages */
@@ -899,8 +907,9 @@ body {
     max-width: 100%;
   }
 
-  .message-bubble--user {
-    max-width: 95%;
+  .message--user .message-bubble {
+    max-width: 100%;
+    width: 100%;
   }
 }
 
