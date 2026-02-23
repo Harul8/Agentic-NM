@@ -199,6 +199,7 @@ body {
 
 .message--user {
   flex-direction: row-reverse;
+  justify-content: flex-end;
 }
 
 .message--assistant {
@@ -212,7 +213,6 @@ body {
 
 .message--user .message-bubble {
   max-width: 100%;
-  width: 100%;
   box-sizing: border-box;
 }
 
@@ -277,7 +277,8 @@ body {
 
 .message-bubble--user {
   background: transparent;
-  color: #000;
+  color: var(--text-h);
+  font-size: 0.88rem;
   border: none;
   border-bottom-right-radius: 0; /* Removed specific radius */
 }
@@ -307,14 +308,23 @@ body {
 }
 
 .message-action-btn {
-  padding: 4px 10px;
-  font-size: 0.75rem;
+  padding: 6px;
+  font-size: 0.88rem;
   color: var(--text);
   background: transparent;
   border: 1px solid var(--border);
   border-radius: 6px;
   cursor: pointer;
   opacity: 0.85;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.message-action-btn svg {
+  width: 1em;
+  height: 1em;
 }
 
 .message-action-btn:hover {

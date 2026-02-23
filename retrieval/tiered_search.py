@@ -1,12 +1,13 @@
 """
 Tiered Internet Search — Strict domain-governed web search for legal materials.
 
-Follows the 4-tier data sourcing hierarchy:
-  Tier 2: Official government sources (legislation: state/central; judgments: courts) — tag: OFFICIAL
-  Tier 3: Known legal portals (Indian Kanoon, Live Law, etc.) — tag: LEGAL_PORTAL
-  Tier 4: News articles (context only, NOT authority) — tag: NEWS_REFERENCE
-  Rest: Discarded (blocked domains, unknown).
+Search order is fixed and never bypassed:
+  1. Official sources (Tier 2): courts (SCI, HC), India Code, legislative.gov.in — tag: OFFICIAL
+  2. Legal portals (Tier 3): only if needed — Indian Kanoon, Live Law, Bar and Bench, etc. — tag: LEGAL_PORTAL
+  3. Newspapers (Tier 4): only if still needed — context only, NOT authority — tag: NEWS_REFERENCE
+  4. Stop there — no other sources are used. Blocked and unknown domains are always discarded.
 
+All web search for legal content must go through tiered_search() so this order is enforced.
 When original PDFs are found, they are auto-saved to Google Drive and indexed.
 """
 
@@ -86,6 +87,10 @@ def is_blocked_source(url: str) -> bool:
     """Check if URL is from a blocked domain."""
     tier = classify_source(url)
     return tier in ("blocked", "unknown")
+
+
+# Only these tiers are allowed in search results. Order: official → legal portals → newspapers; stop there.
+ALLOWED_TIERS = ("tier2_official", "tier3_legal_portal", "tier4_newspaper")
 
 
 def get_source_tag(url: str) -> str:
@@ -336,52 +341,56 @@ def tiered_search(
     max_per_tier: int = 10,
 ) -> list:
     """
-    Execute the full tiered search, stopping when sufficient results are found.
+    Execute web search in strict order: Official → Legal portals → Newspapers. Stop there.
+
+    Order is never reversed or skipped (except early exit when we have enough):
+      1. Official sources (Tier 2): courts, India Code, legislative.gov.in
+      2. Legal portals (Tier 3): only if needed
+      3. Newspapers (Tier 4): only if still needed
+    No other sources are used. Results are filtered to ALLOWED_TIERS only.
 
     Args:
-        query: Specific search query (from sufficiency analysis gap)
+        query: Search query (e.g. from sufficiency analysis or case law discovery)
         search_type: "bare_act", "case_law", or "both"
-        jurisdiction_state: State for HC-specific search (e.g., "Karnataka")
+        jurisdiction_state: State for HC-specific search (e.g., "Telangana", "Karnataka")
         max_per_tier: Max results to fetch per tier
 
     Returns:
-        List of search results, each tagged with source_tag and tier.
-        Results from blocked sources are silently discarded.
+        List of search results, each with source_tag and tier. Only official, legal_portal, newspaper.
     """
     all_results = []
 
-    # Tier 2: Official sources (courts for case_law, India Code for bare_act, or both)
+    # 1) Official sources first (courts for case_law, India Code for bare_act, or both)
     tier2 = search_tier2_official(query, jurisdiction_state, max_per_tier, search_type=search_type)
     all_results.extend(tier2)
-
-    # If we got enough from Tier 2, we can skip lower tiers for case laws
-    # But for bare acts, we should still check Tier 3 (Indian Kanoon has good bare act coverage)
     if search_type == "case_law" and len(tier2) >= 5:
-        logger.info(f"Tier 2 provided {len(tier2)} case law results, skipping lower tiers")
+        logger.info("Tier 2 (official) provided %d case law results; skipping legal portals and newspapers", len(tier2))
         return _filter_and_dedupe(all_results)
 
-    # Tier 3: Legal portals
+    # 2) Legal portals only if we need more
     tier3 = search_tier3_legal_portals(query, max_per_tier, search_type=search_type)
     all_results.extend(tier3)
-
     if len(all_results) >= 8:
-        logger.info(f"Tiers 2+3 provided {len(all_results)} results, skipping newspapers")
+        logger.info("Tiers 2+3 provided %d results; skipping newspapers", len(all_results))
         return _filter_and_dedupe(all_results)
 
-    # Tier 4: Newspapers (context only)
+    # 3) Newspapers only if still needed; then stop (no further sources)
     tier4 = search_tier4_newspapers(query, max_per_tier // 2)
     all_results.extend(tier4)
-
+    logger.info("Tiered search complete: official=%d, legal_portal=%d, newspaper=%d", len(tier2), len(tier3), len(tier4))
     return _filter_and_dedupe(all_results)
 
 
 def _filter_and_dedupe(results: list) -> list:
-    """Remove blocked sources and duplicates."""
+    """
+    Keep only allowed tiers (official, legal portals, newspapers); remove duplicates.
+    Ensures we never return blocked, unknown, or any source outside Tier 2/3/4.
+    """
     seen = set()
     filtered = []
     for r in results:
         url = r.get("url", "")
-        if is_blocked_source(url):
+        if not url or classify_source(url) not in ALLOWED_TIERS:
             continue
         if url in seen:
             continue

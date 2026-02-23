@@ -96,21 +96,34 @@ _SECTION_PATTERNS = [
 
 def _detect_act_name_from_text(text: str, filename: str) -> str:
     """Try to extract the act name from the document text or filename."""
-    # Look for common patterns like "THE INDIAN PENAL CODE, 1860"
+    sample = text[:2000]
+    # 1) Look for common patterns like "THE INDIAN PENAL CODE, 1860" (ACT/CODE/ORDINANCE etc.)
     act_pattern = re.compile(
         r"(?:THE\s+)?([A-Z][A-Z\s,]+(?:ACT|CODE|BILL|ORDINANCE|REGULATION)"
         r"(?:\s*,?\s*\d{4})?)",
         re.IGNORECASE,
     )
-    match = act_pattern.search(text[:2000])
+    match = act_pattern.search(sample)
     if match:
         name = match.group(0).strip()
-        # Clean up
         name = re.sub(r"\s+", " ", name).strip()
         if len(name) > 10:
             return name.title()
 
-    # Fall back to filename
+    # 2) Fallback: "Name, YYYY" when ACT/CODE etc. is missing (e.g. "THE ANDHRA PRADESH BOARD, 1977")
+    name_year_pattern = re.compile(
+        r"\b((?:THE\s+)?[A-Za-z][A-Za-z0-9\s,\'\-()]+,\s*(?:19|20)\d{2})\b",
+        re.IGNORECASE,
+    )
+    match_ny = name_year_pattern.search(sample)
+    if match_ny:
+        name = match_ny.group(1).strip()
+        name = re.sub(r"\s+", " ", name).strip()
+        # Reject short or section-like matches (e.g. "Section 5, 1999")
+        if len(name) > 12 and not re.match(r"^(?:Section|Article|Sec\.?|Art\.?)\s", name, re.I):
+            return name.title()
+
+    # 3) Fall back to filename
     name = os.path.splitext(os.path.basename(filename))[0]
     name = name.replace("_", " ").replace("-", " ")
     # Remove purely numeric tokens

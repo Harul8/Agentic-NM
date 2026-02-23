@@ -71,6 +71,11 @@ function App() {
   const [indexingRunning, setIndexingRunning] = useState(false);
   const [showClearPendingConfirm, setShowClearPendingConfirm] = useState(false);
 
+  // Case law discovery: documents presented for indexing (persist until user Index or Clear; survives refresh/restart)
+  const [caseLawDiscoveryPending, setCaseLawDiscoveryPending] = useState([]);
+  const [caseLawDiscoveryRunning, setCaseLawDiscoveryRunning] = useState(false);
+  const [showClearCaseLawDiscoveryConfirm, setShowClearCaseLawDiscoveryConfirm] = useState(false);
+
   // Saved chats (ChatGPT-style): list of past conversations, persisted to localStorage
   const [savedChats, setSavedChats] = useState([]);
   const hasSavedCurrentChatRef = useRef(false);
@@ -139,6 +144,34 @@ function App() {
           category: c.suggested_category || "case_law",
           selected: !c.already_in_store,
           already_in_store: !!c.already_in_store,
+        })));
+      })
+      .catch(() => {});
+  }, [API_BASE]);
+
+  // Load case law discovery pending on mount (persisted; survives refresh and backend restart)
+  useEffect(() => {
+    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    fetch(`${API_BASE}/case-law-discovery/pending`, { headers })
+      .then(async (res) => {
+        if (!res.ok) return { items: [] };
+        const data = await res.json().catch(() => ({}));
+        return data;
+      })
+      .then((data) => {
+        const items = Array.isArray(data?.items) ? data.items : [];
+        setCaseLawDiscoveryPending(items.map((c, i) => ({
+          id: `cld-${Date.now()}-${i}`,
+          title: c.title || "",
+          source_url: c.source_url || "",
+          suggested_category: c.suggested_category || "case_law",
+          category: c.suggested_category || "case_law",
+          selected: !c.already_in_store,
+          already_in_store: !!c.already_in_store,
+          signature: c.signature,
+          act_name: c.act_name,
+          summary: c.summary,
         })));
       })
       .catch(() => {});
@@ -650,6 +683,27 @@ function App() {
                   });
                 }
               }
+              if (data.case_law_discovery) {
+                const headers = localStorage.getItem(AUTH_TOKEN_KEY) ? { Authorization: `Bearer ${localStorage.getItem(AUTH_TOKEN_KEY)}` } : {};
+                fetch(`${API_BASE}/case-law-discovery/pending`, { headers })
+                  .then(async (res) => (res.ok ? res.json().catch(() => ({})) : { items: [] }))
+                  .then((pendData) => {
+                    const items = Array.isArray(pendData?.items) ? pendData.items : [];
+                    setCaseLawDiscoveryPending(items.map((c, i) => ({
+                      id: `cld-${Date.now()}-${i}`,
+                      title: c.title || "",
+                      source_url: c.source_url || "",
+                      suggested_category: c.suggested_category || "case_law",
+                      category: c.suggested_category || "case_law",
+                      selected: !c.already_in_store,
+                      already_in_store: !!c.already_in_store,
+                      signature: c.signature,
+                      act_name: c.act_name,
+                      summary: c.summary,
+                    })));
+                  })
+                  .catch(() => {});
+              }
               const newAssistantMsg = {
                 role: "assistant",
                 content: {
@@ -843,6 +897,27 @@ function App() {
                   });
                 }
               }
+              if (data.case_law_discovery) {
+                const headers = localStorage.getItem(AUTH_TOKEN_KEY) ? { Authorization: `Bearer ${localStorage.getItem(AUTH_TOKEN_KEY)}` } : {};
+                fetch(`${API_BASE}/case-law-discovery/pending`, { headers })
+                  .then(async (res) => (res.ok ? res.json().catch(() => ({})) : { items: [] }))
+                  .then((pendData) => {
+                    const items = Array.isArray(pendData?.items) ? pendData.items : [];
+                    setCaseLawDiscoveryPending(items.map((c, i) => ({
+                      id: `cld-${Date.now()}-${i}`,
+                      title: c.title || "",
+                      source_url: c.source_url || "",
+                      suggested_category: c.suggested_category || "case_law",
+                      category: c.suggested_category || "case_law",
+                      selected: !c.already_in_store,
+                      already_in_store: !!c.already_in_store,
+                      signature: c.signature,
+                      act_name: c.act_name,
+                      summary: c.summary,
+                    })));
+                  })
+                  .catch(() => {});
+              }
               setMessages((prev) => [
                 ...prev,
                 {
@@ -896,10 +971,10 @@ function App() {
     if (!progress || !progress.groups || progress.groups.length === 0) return null;
 
     const isExpanded = expandedGroups[PROGRESS_TRACKER_KEY] !== undefined ? expandedGroups[PROGRESS_TRACKER_KEY] : true;
-    const allSteps = progress.groups.flatMap((g) => (g.steps || []).map((s) => ({ ...s, groupName: g.name })));
+    const allSteps = progress.groups.flatMap((g) => (g ? (g.steps || []).map((s) => ({ ...s, groupName: g.name })) : []));
     const totalStats = progress.groups.reduce(
       (acc, g) => {
-        const s = g.stats || {};
+        const s = (g && g.stats) || {};
         acc.searched += s.total_searched || 0;
         acc.passed += s.passed_threshold || 0;
         acc.included += s.included || 0;
@@ -946,14 +1021,16 @@ function App() {
                   const score = step.metadata?.score;
                   const alreadyTitles = step.metadata?.already_in_library_titles;
                   const hasAlreadyInLibrary = Array.isArray(alreadyTitles) && alreadyTitles.length > 0;
+                  const timeStr = step.timestamp != null ? `${Number(step.timestamp).toFixed(1)}s` : (step.duration_seconds != null ? `${step.duration_seconds}s` : "");
+                  const messageStr = step.message ?? step.name ?? "";
                   return (
                     <div
                       key={stepIdx}
                       className={`progress-step ${isDocScan ? (included ? "progress-step-included" : "progress-step-ignored") : ""}`}
                     >
                       <span className="progress-step-dot progress-step-dot--completed" aria-hidden />
-                      <span className="progress-step-time">{step.timestamp.toFixed(1)}s</span>
-                      <span className="progress-step-message">{step.message}</span>
+                      {timeStr && <span className="progress-step-time">{timeStr}</span>}
+                      <span className="progress-step-message">{messageStr}</span>
                       {score !== undefined && (
                         <span className={`progress-step-score ${included ? "score-included" : "score-ignored"}`}>
                           Score: {score}
@@ -2249,6 +2326,145 @@ function App() {
                 )}
               </div>
             </details>
+
+            {/* Case law discovery – documents presented for indexing (persist until Index or Clear; survives refresh/restart) */}
+            <details
+              className="pending-indexing-collapsible"
+              open={sidebarExpandedSection === "case_law_discovery"}
+              onClick={(e) => {
+                if (e.target.closest("summary")) {
+                  e.preventDefault();
+                  setSidebarExpandedSection((prev) => (prev === "case_law_discovery" ? null : "case_law_discovery"));
+                }
+              }}
+            >
+              <summary className="pending-indexing-collapsible-summary sidebar-collapsible-summary">
+                <span className="pending-indexing-count">Case law discovery – Pending ({caseLawDiscoveryPending.length})</span>
+              </summary>
+              <div className="pending-indexing-body" onMouseDown={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+                {caseLawDiscoveryPending.length > 0 ? (
+                  <>
+                    <div className="pending-indexing-actions">
+                      <button
+                        type="button"
+                        className="pending-indexing-btn"
+                        disabled={caseLawDiscoveryRunning || !caseLawDiscoveryPending.some((c) => c.selected && !c.already_in_store)}
+                        onClick={async () => {
+                          const selected = caseLawDiscoveryPending.filter((c) => c.selected && !c.already_in_store);
+                          if (!selected.length) return;
+                          setCaseLawDiscoveryRunning(true);
+                          const token = localStorage.getItem(AUTH_TOKEN_KEY);
+                          const headers = token ? { Authorization: `Bearer ${token}` } : {};
+                          const refreshPending = async () => {
+                            try {
+                              const pendRes = await fetch(`${API_BASE}/case-law-discovery/pending`, { headers });
+                              const pendData = pendRes.ok ? await pendRes.json().catch(() => ({})) : {};
+                              const items = Array.isArray(pendData?.items) ? pendData.items : [];
+                              setCaseLawDiscoveryPending(items.map((c, i) => ({
+                                id: `cld-${Date.now()}-${i}`,
+                                title: c.title || "",
+                                source_url: c.source_url || "",
+                                suggested_category: c.suggested_category || "case_law",
+                                category: c.suggested_category || "case_law",
+                                selected: !c.already_in_store,
+                                already_in_store: !!c.already_in_store,
+                                signature: c.signature,
+                                act_name: c.act_name,
+                                summary: c.summary,
+                              })));
+                            } catch (_) {}
+                          };
+                          const pollId = setInterval(refreshPending, 2000);
+                          try {
+                            const res = await fetch(`${API_BASE}/case-law-discovery/confirm-index`, {
+                              method: "POST",
+                              headers: { "Content-Type": "application/json", ...headers },
+                              body: JSON.stringify({
+                                items: selected.map((c) => ({
+                                  source_url: (c.source_url || "").trim(),
+                                  title: (c.title || "").trim(),
+                                  suggested_category: c.category || c.suggested_category || "case_law",
+                                  act_name: (c.act_name || "").trim() || undefined,
+                                  signature: (c.signature || "").trim() || undefined,
+                                  summary: (c.summary || "").trim() || undefined,
+                                })),
+                              }),
+                            });
+                            const data = res.ok ? await res.json().catch(() => ({})) : {};
+                            if (res.ok) await refreshPending();
+                            if (data.errors && data.errors.length) setError(data.message || "Some items could not be indexed.");
+                          } catch (e) {
+                            setError(e?.message || "Indexing request failed.");
+                          } finally {
+                            clearInterval(pollId);
+                            await refreshPending();
+                            setCaseLawDiscoveryRunning(false);
+                          }
+                        }}
+                      >
+                        {caseLawDiscoveryRunning ? "Indexing…" : "Index"}
+                      </button>
+                      <button
+                        type="button"
+                        className="pending-indexing-btn pending-indexing-btn-clear"
+                        disabled={caseLawDiscoveryRunning || caseLawDiscoveryPending.length === 0}
+                        onClick={() => setShowClearCaseLawDiscoveryConfirm(true)}
+                      >
+                        Clear
+                      </button>
+                    </div>
+                    <ul className="pending-indexing-list">
+                      {caseLawDiscoveryPending.map((c) => (
+                        <li key={c.id} className={`pending-indexing-item${c.already_in_store ? " pending-indexing-item--duplicate" : ""}`}>
+                          <label className="pending-indexing-row">
+                            <input
+                              type="checkbox"
+                              checked={!!c.selected}
+                              disabled={!!c.already_in_store}
+                              onChange={() => {
+                                if (c.already_in_store) return;
+                                setCaseLawDiscoveryPending((prev) =>
+                                  prev.map((x) => (x.id === c.id ? { ...x, selected: !x.selected } : x))
+                                );
+                              }}
+                              className="pending-indexing-checkbox"
+                              aria-label={c.already_in_store ? `Already in library: ${c.title}` : `Select ${c.title}`}
+                            />
+                            <a
+                              href={c.source_url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`pending-indexing-link${c.already_in_store ? " pending-indexing-link--duplicate" : ""}`}
+                              title={c.already_in_store ? `${c.title} — Already in library` : c.title}
+                            >
+                              {c.title.length > 40 ? c.title.slice(0, 40) + "…" : c.title}
+                            </a>
+                            {c.already_in_store && (
+                              <span className="pending-indexing-badge" title="Same document already in internal store">Already in library</span>
+                            )}
+                            <select
+                              value={c.category}
+                              onChange={(e) =>
+                                setCaseLawDiscoveryPending((prev) =>
+                                  prev.map((x) => (x.id === c.id ? { ...x, category: e.target.value } : x))
+                                )
+                              }
+                              className="pending-indexing-dropdown"
+                              aria-label="Category"
+                            >
+                              <option value="bare_act">Bare act</option>
+                              <option value="case_law">Case law</option>
+                            </select>
+                          </label>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <p className="pending-indexing-empty">No documents. Run case law discovery to add candidates for indexing.</p>
+                )}
+              </div>
+            </details>
             </div>
         </div>
 
@@ -2364,11 +2580,16 @@ function App() {
                                 {typeof msg.content === "string" ? msg.content : String(msg.content ?? "")}
                               </div>
                               <div className="message-bubble-actions">
-                                <button type="button" className="message-action-btn" onClick={() => startEditUserMessage(i)} title="Edit">
-                                  Edit
+                                <button type="button" className="message-action-btn" onClick={() => startEditUserMessage(i)} title="Edit" aria-label="Edit">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                                    <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" />
+                                  </svg>
                                 </button>
-                                <button type="button" className="message-action-btn" onClick={() => handleCopyMessage(msg)} title="Copy">
-                                  Copy
+                                <button type="button" className="message-action-btn" onClick={() => handleCopyMessage(msg)} title="Copy" aria-label="Copy">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                                    <path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" />
+                                    <path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.379 6H4.5z" />
+                                  </svg>
                                 </button>
                               </div>
                             </>
@@ -2378,8 +2599,11 @@ function App() {
                         <div className="message-bubble message-bubble--assistant">
                           {renderAssistantContent(msg.content)}
                           <div className="message-bubble-actions">
-                            <button type="button" className="message-action-btn" onClick={() => handleCopyMessage(msg)} title="Copy">
-                              Copy
+                            <button type="button" className="message-action-btn" onClick={() => handleCopyMessage(msg)} title="Copy" aria-label="Copy">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                                <path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" />
+                                <path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.379 6H4.5z" />
+                              </svg>
                             </button>
                           </div>
                         </div>
@@ -2514,6 +2738,33 @@ function App() {
                 } catch {}
                 setPendingIndexingCandidates([]);
                 setShowClearPendingConfirm(false);
+              }}>
+                Yes
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Confirmation: discard case law discovery pending documents */}
+      {showClearCaseLawDiscoveryConfirm && (
+        <div className="clear-pending-overlay" onClick={() => setShowClearCaseLawDiscoveryConfirm(false)}>
+          <div className="clear-pending-dialog" onClick={(e) => e.stopPropagation()}>
+            <p className="clear-pending-message">Discard all case law discovery documents presented for indexing?</p>
+            <div className="clear-pending-actions">
+              <button type="button" className="clear-pending-btn clear-pending-btn-no" onClick={() => setShowClearCaseLawDiscoveryConfirm(false)}>
+                No
+              </button>
+              <button type="button" className="clear-pending-btn clear-pending-btn-yes" onClick={async () => {
+                const token = localStorage.getItem(AUTH_TOKEN_KEY);
+                try {
+                  await fetch(`${API_BASE}/case-law-discovery/pending`, {
+                    method: "DELETE",
+                    headers: token ? { Authorization: `Bearer ${token}` } : {},
+                  });
+                } catch {}
+                setCaseLawDiscoveryPending([]);
+                setShowClearCaseLawDiscoveryConfirm(false);
               }}>
                 Yes
               </button>

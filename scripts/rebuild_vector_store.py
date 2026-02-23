@@ -1,15 +1,15 @@
 """
 Recreate the entire vector store from Google Drive: BareActs + CaseLaws.
 
-Rebuilds all FAISS indexes and BM25 indexes (v2 + BM25) from PDFs in:
-  - DATA_ROOT/BareActs
-  - DATA_ROOT/CaseLaws
+1. Bare act dedup: scans BareActs, groups by act title (from first 2 pages),
+   keeps latest by "As on the ..." date per title, removes duplicate files.
+2. Removes existing v2 and BM25 index files.
+3. Rebuilds all FAISS + BM25 from PDFs in DATA_ROOT/BareActs and DATA_ROOT/CaseLaws.
+4. Builds the bare act summary index (act_name -> summary) for all acts in the store.
 
-Uses GPU when available to speed up embedding. Run from project root:
+Uses GPU when available. Run from project root:
 
     python scripts/rebuild_vector_store.py
-
-Before rebuilding, removes existing v2 and BM25 files so the folder is fully recreated.
 """
 
 import os
@@ -32,6 +32,13 @@ from config import (
 )
 from Ingestion.build_v2_index import build_index, _get_embedder
 from Ingestion.smart_chunker import process_bare_acts_directory, process_case_laws_directory
+
+# Import dedup from same scripts dir (works when run from project root)
+_scripts_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
+if _scripts_dir not in sys.path:
+    sys.path.insert(0, _scripts_dir)
+from bare_act_dedup import run_dedup  # noqa: E402
+from build_bare_act_summary_index import build_bare_act_summary_index  # noqa: E402
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -60,7 +67,7 @@ def _remove_existing_index_files():
 
 def main():
     logger.info("=" * 60)
-    logger.info("REBUILD VECTOR STORE (FAISS + BM25 for Bare Acts and Case Laws)")
+    logger.info("REBUILD VECTOR STORE (Dedup BareActs + FAISS + BM25)")
     logger.info("=" * 60)
     logger.info("Vector store:  %s", VECTOR_STORE)
     logger.info("Bare Acts dir: %s", BARE_ACTS_DIR)
@@ -68,8 +75,15 @@ def main():
 
     os.makedirs(VECTOR_STORE, exist_ok=True)
 
-    # Remove existing v2/BM25 files so we fully recreate
-    logger.info("Removing existing v2 and BM25 index files...")
+    # 1) Bare act folder dedup: same title => keep latest by "As on" date, remove others
+    if os.path.isdir(BARE_ACTS_DIR):
+        logger.info("Step 1: Bare act duplicate check and removal...")
+        run_dedup(BARE_ACTS_DIR)
+    else:
+        logger.warning("Bare Acts directory not found: %s (skipping dedup)", BARE_ACTS_DIR)
+
+    # 2) Remove existing v2/BM25 files so we fully recreate
+    logger.info("Step 2: Removing existing v2 and BM25 index files...")
     _remove_existing_index_files()
 
     # Load embedder once (GPU if available)
@@ -98,6 +112,8 @@ def main():
             logger.info("Bare acts: %d chunks -> FAISS + chunks JSON + BM25", len(bare_chunks))
             acts = {c.get("act_name", "") for c in bare_chunks if c.get("act_name")}
             logger.info("Acts covered: %d", len(acts))
+            # Build bare act summary index (separate module; can be run standalone)
+            build_bare_act_summary_index(bare_chunks)
         else:
             logger.warning("No bare act chunks produced. Check PDFs in BareActs/")
     else:

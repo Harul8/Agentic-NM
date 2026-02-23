@@ -57,6 +57,17 @@ WEB_REFERENCES_DB = os.path.join(DATA_ROOT, "web_references.json")
 # Pending indexing candidates (survives refresh; removed on Index or Discard)
 PENDING_INDEXING_PATH = os.path.join(DATA_ROOT, "pending_indexing.json")
 
+# Case law discovery: documents presented for indexing (persist until user Index or Clear)
+CASE_LAW_DISCOVERY_PENDING_PATH = os.path.join(DATA_ROOT, "case_law_discovery_pending.json")
+CASE_LAW_DISCOVERY_SUMMARY_INDEX_PATH = os.path.join(DATA_ROOT, "case_law_discovery_summary_index.json")
+# Bare act summary index (act_name -> summary text); built on vector store rebuild and by case law discovery
+BARE_ACT_SUMMARY_INDEX_PATH = os.path.join(DATA_ROOT, "bare_act_summary_index.json")
+# Case law summary index (signature -> summary text)
+CASE_LAW_SUMMARY_INDEX_PATH = os.path.join(DATA_ROOT, "case_law_summary_index.json")
+
+# Indian Kanoon API (https://api.indiankanoon.org). Set INDIAN_KANOON_API_TOKEN in .env.
+INDIAN_KANOON_API_TOKEN = os.environ.get("INDIAN_KANOON_API_TOKEN", "").strip()
+
 # ---------------------------------------------------------------------------
 # Embedding & re-ranker model names
 # ---------------------------------------------------------------------------

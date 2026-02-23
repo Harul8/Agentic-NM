@@ -55,6 +55,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Case law discovery: separate workflow; documents persist until user Index or Clear
+try:
+    from case_law_discovery.routes import router as case_law_discovery_router
+    app.include_router(case_law_discovery_router)
+except Exception as e:
+    logger.warning("Case law discovery routes not loaded: %s", e)
+
 # ---------------------------------------------------------------------------
 # Per-IP request rate limiter (in-memory sliding window)
 # ---------------------------------------------------------------------------
@@ -845,7 +852,16 @@ def chat(request: ChatRequest):
     """
     Interactive chat endpoint.
     Phase: fact_collection | response_generation | confirm_index
+    Case-law-discovery requests (e.g. user says "case law discovery" or first N bare acts) are
+    routed to the case law discovery workflow and do not go through the main pipeline.
     """
+    message = (request.message or "").strip()
+    if message:
+        from case_law_discovery.workflow import is_case_law_discovery_request, run as run_case_law_discovery
+        if is_case_law_discovery_request(message):
+            workflow_result = run_case_law_discovery(message)
+            return _case_law_discovery_ui_result(workflow_result)
+
     conv = [
         {"role": m.role, "content": _normalize_content(m.content)}
         for m in request.conversation
@@ -879,6 +895,8 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
     """
     Initial case submission (await_facts). Frontend sends { text }.
     Returns status + next_question | opinion_text | needs_confirmation so the UI can continue the flow.
+    Case-law-discovery requests (e.g. first N bare acts, find case laws in vector store) are
+    routed to the separate case law discovery workflow and do not go through the main pipeline.
     """
     _enforce_query_limit(user)
     text = (request.text or "").strip()
@@ -889,6 +907,11 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
             "retrieved": [],
         }
     try:
+        from case_law_discovery.workflow import is_case_law_discovery_request, run as run_case_law_discovery
+        if is_case_law_discovery_request(text):
+            workflow_result = run_case_law_discovery(text)
+            increment_query_count(user["id"])
+            return _case_law_discovery_ui_result(workflow_result)
         conv = [{"role": "user", "content": text}]
         result = process_chat(
             conversation=conv,
@@ -961,11 +984,34 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
         return _chat_error_fallback(str(e)[:200])
 
 
+def _case_law_discovery_ui_result(workflow_result: dict) -> dict:
+    """Build UI result when the request was handled by the separate case law discovery workflow.
+    Use response_type generic_chat so the UI does not show 'Legal Opinion' or 'Download as PDF'.
+    """
+    msg = (workflow_result.get("message") or "").strip()
+    if not msg:
+        msg = "Case law discovery ran. Check **Case law discovery – Pending** in the left sidebar for documents to index or clear."
+    else:
+        msg = f"{msg} Check **Case law discovery – Pending** in the left sidebar to index or clear."
+    return {
+        "status": "done",
+        "response_type": "generic_chat",
+        "case_law_discovery": True,
+        "opinion_text": msg,
+        "bare_acts": [],
+        "case_laws": [],
+        "retrieved": [],
+        "model_used": get_last_model_used(),
+    }
+
+
 @app.post("/conversation/continue")
 def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_token)):
     """
     Continue a conversation from chat history. Sends full conversation + new message
     so the LLM has full context. Returns same shape as submit_case / interview_step.
+    Case-law-discovery requests (e.g. first N bare acts, find case laws in vector store) are
+    routed to the separate case law discovery workflow and do not go through the main pipeline.
     """
     _enforce_query_limit(user)
     message = (request.message or "").strip()
@@ -976,6 +1022,11 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
             "retrieved": [],
         }
     try:
+        from case_law_discovery.workflow import is_case_law_discovery_request, run as run_case_law_discovery
+        if is_case_law_discovery_request(message):
+            workflow_result = run_case_law_discovery(message)
+            increment_query_count(user.get("id", 0))
+            return _case_law_discovery_ui_result(workflow_result)
         conv = [
             {"role": m.role, "content": _normalize_content(m.content)}
             for m in (request.conversation or [])
@@ -1006,8 +1057,17 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
 
 
 def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, user_id: str) -> None:
-    """Run the same logic as continue_chat, pushing progress to queue and finally the result."""
+    """Run the same logic as continue_chat, pushing progress to queue and finally the result.
+    Case-law-discovery requests are handled by the separate workflow and do not use process_chat.
+    """
     try:
+        from case_law_discovery.workflow import is_case_law_discovery_request, run as run_case_law_discovery
+        if is_case_law_discovery_request(message):
+            queue.put(("progress", {"groups": [{"name": "Case law discovery", "steps": [{"name": "Running case law discovery workflow…", "status": "running", "duration_seconds": 0}]}]}))
+            workflow_result = run_case_law_discovery(message)
+            increment_query_count(user_id)
+            queue.put(("result", _case_law_discovery_ui_result(workflow_result)))
+            return
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
 
@@ -1040,8 +1100,17 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
 
 
 def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str) -> None:
-    """Run submit_case logic with progress streaming."""
+    """Run submit_case logic with progress streaming.
+    Case-law-discovery requests are handled by the separate workflow and do not use process_chat.
+    """
     try:
+        from case_law_discovery.workflow import is_case_law_discovery_request, run as run_case_law_discovery
+        if is_case_law_discovery_request(text):
+            queue.put(("progress", {"groups": [{"name": "Case law discovery", "steps": [{"name": "Running case law discovery workflow…", "status": "running", "duration_seconds": 0}]}]}))
+            workflow_result = run_case_law_discovery(text)
+            increment_query_count(user_id)
+            queue.put(("result", _case_law_discovery_ui_result(workflow_result)))
+            return
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
 
