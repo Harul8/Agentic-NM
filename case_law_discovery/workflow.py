@@ -8,6 +8,7 @@ without modifying them. Only limits in limits.py are fixed.
 import json
 import logging
 import os
+import re
 import sys
 import time
 
@@ -79,6 +80,43 @@ def _ask_llm(prompt: str, system: str | None = None) -> str:
         return ""
 
 
+def _line_looks_like_act_title(line: str) -> bool:
+    """True if line looks like an act/sanhita/code/constitution title (for extraction or topic check)."""
+    if not line or len(line.strip()) < 10:
+        return False
+    lower = line.strip().lower()
+    if re.match(r"^(find|get|case law|discovery|for the|below|following)", lower):
+        return False
+    # Must contain at least one act-like keyword or a 4-digit year
+    has_keyword = any(kw in lower for kw in ("act", "sanhita", "code", "constitution", "ordinance", "regulation"))
+    has_year = bool(re.search(r"\b(19|20)\d{2}\b", line))
+    if has_year and len(lower) > 15:
+        return True
+    if has_keyword and (has_year or len(lower) > 20):
+        return True
+    return False
+
+
+def _extract_act_names_from_message(user_message: str) -> list[str]:
+    """
+    Extract act name(s) directly from the user message so we don't rely on LLM
+    returning the correct act. Accepts lines that look like act/sanhita/code/constitution
+    titles (with or without year), e.g. 'The Indian Evidence Act, 1872', 'Bharatiya Nagarik
+    Suraksha Sanhita, 2023', 'The Code on Wages, 2019', 'THE CONSTITUTION OF INDIA'.
+    """
+    if not user_message or not user_message.strip():
+        return []
+    candidates = []
+    # Split by newlines and by common intro separators
+    parts = re.split(r"\n+|below acts|following acts|:\s*", user_message.strip(), flags=re.IGNORECASE)
+    for part in parts:
+        part = part.strip()
+        if not _line_looks_like_act_title(part):
+            continue
+        candidates.append(part)
+    return candidates
+
+
 def interpret_user_input(user_message: str) -> dict:
     """
     Use LLM to interpret: statement-based vs first-N-acts, and what to search for.
@@ -88,8 +126,11 @@ def interpret_user_input(user_message: str) -> dict:
         "You are a legal research assistant. Classify the user's request into exactly one of two flows. "
         "Reply with a single JSON object only, no markdown, no explanation. "
         "Keys: flow_type (either 'statement' or 'first_10_acts'), topic (short search topic or null), "
-        "act_count (number for first N acts, default 10). "
-        "If the user asks for case laws for 'first 10 bare acts' or 'first N acts in vector store', use first_10_acts. "
+        "act_count (number only when flow_type is first_10_acts, else null). "
+        "Use first_10_acts ONLY when the user explicitly asks for case laws for the 'first N' or 'first 10' acts "
+        "in the vector store (e.g. 'first 10 bare acts', 'first 5 acts from the store'). "
+        "When the user names a specific act (e.g. 'THE FAMILY COURTS ACT 1984', 'Hindu Marriage Act', 'find case laws for below acts X'), "
+        "always use flow_type statement and set topic to that act name or the main act they asked for. "
         "Otherwise use statement and set topic to the legal subject they want case laws for."
     )
     prompt = f"User request: {user_message}\n\nReply with one JSON object: flow_type, topic, act_count."
@@ -100,7 +141,8 @@ def interpret_user_input(user_message: str) -> dict:
             raw = raw.split("```")[1].replace("json", "").strip()
         obj = json.loads(raw)
         flow = (obj.get("flow_type") or "statement").strip().lower()
-        if "first" in flow or "10" in str(obj.get("act_count", "")):
+        # Only use first_10_acts when LLM explicitly returned that flow (not when act_count happens to be 10)
+        if flow == "first_10_acts":
             return {"flow_type": "first_10_acts", "topic": None, "act_count": int(obj.get("act_count", 10))}
         return {
             "flow_type": "statement",
@@ -108,7 +150,9 @@ def interpret_user_input(user_message: str) -> dict:
             "act_count": None,
         }
     except Exception:
-        if "first" in user_message.lower() and ("10" in user_message or "act" in user_message.lower()):
+        # Fallback: first_10_acts only if user explicitly said "first 10" or "first N" acts (e.g. "first 10 bare acts")
+        msg_lower = user_message.lower()
+        if re.search(r"first\s+(10|\d+)\s+(bare\s+)?acts?", msg_lower) or "first 10" in msg_lower:
             return {"flow_type": "first_10_acts", "topic": None, "act_count": 10}
         return {"flow_type": "statement", "topic": user_message[:200].strip() or "case laws", "act_count": None}
 
@@ -235,6 +279,36 @@ def _extract_signature(first_two_pages: str) -> str:
     return ""
 
 
+def _is_likely_document_url(url: str) -> bool:
+    """
+    True if URL looks like an official document (PDF or judgment page), not a home/generic page.
+    Used so only document URLs are proposed for indexing; home pages and index pages are skipped.
+    """
+    if not url or not url.strip():
+        return False
+    u = url.strip().lower()
+    if u.endswith(".pdf"):
+        return True
+    # Path after domain (skip protocol and domain)
+    for prefix in ("https://", "http://", "www."):
+        if u.startswith(prefix):
+            u = u[len(prefix):]
+            break
+    path = u.split("/", 1)[-1].split("?")[0] if "/" in u else ""
+    path = path.strip("/")
+    # Reject generic/home
+    if not path or path in ("", "index", "index.html", "search", "pdfsearch"):
+        return False
+    # Accept document-like paths
+    doc_indicators = ("/pdf", "/judgment", "/judgement", "/doc", "/view_judgment", "/order", "/judgments", "/ehcr", "/bitstream", "/supremecourt/", "/doc/")
+    if any(ind in u for ind in doc_indicators):
+        return True
+    # sci.gov.in judgment PDFs often have path like /year/num/...
+    if "sci.gov.in" in u and ("supremecourt" in u or "/20" in u):
+        return True
+    return False
+
+
 def _fetch_and_score_candidate(
     result: dict,
     query: str,
@@ -243,6 +317,7 @@ def _fetch_and_score_candidate(
     """
     Fetch URL, check it's case law from first two pages, score vs query.
     Returns dict with title, source_url, score, signature; optionally content (for summary generation).
+    Only fetches URLs that look like documents (PDF/judgment pages); skips home/generic pages.
     """
     from retrieval.tiered_search import fetch_content_and_pdf
     from retrieval.hybrid_retriever import score_query_document
@@ -250,6 +325,8 @@ def _fetch_and_score_candidate(
     url = result.get("url", "")
     title = result.get("title", "Unknown")
     if not url:
+        return None
+    if not _is_likely_document_url(url):
         return None
     try:
         text_content, _ = fetch_content_and_pdf(url, timeout=25)
@@ -317,10 +394,12 @@ def _indian_kanoon_candidates(query: str, max_results: int, include_content: boo
     """Search Indian Kanoon API and return scored candidates (same shape as web candidates)."""
     try:
         from retrieval.indian_kanoon_client import search as ik_search, get_document
-    except ImportError:
+    except ImportError as e:
+        logger.debug("Indian Kanoon client not available: %s", e)
         return []
     from config import INDIAN_KANOON_API_TOKEN
     if not INDIAN_KANOON_API_TOKEN:
+        logger.warning("Indian Kanoon API token not set (INDIAN_KANOON_API_TOKEN); act-named flow will have no IK results")
         return []
     raw = ik_search(query, pagenum=0, max_results=max_results)
     candidates = []
@@ -341,36 +420,74 @@ def _indian_kanoon_candidates(query: str, max_results: int, include_content: boo
     return candidates
 
 
+def _normalize_act_name_for_match(name: str) -> str:
+    """Lowercase, collapse spaces, remove commas so 'The Family Courts Act, 1984' matches 'THE FAMILY COURTS ACT 1984'."""
+    if not name:
+        return ""
+    s = re.sub(r"[,\.]", " ", name.lower().strip())
+    return " ".join(s.split())
+
+
 def _resolve_act_from_summary_index(user_topic: str) -> tuple[str, str]:
     """
     Resolve user's act name (e.g. 'Indian Penal Code') to (act_name, summary) from bare act summary index.
     Returns ("", "") if no match. Matches exact key or topic contained in act name / act name in topic.
+    Normalizes punctuation so "THE FAMILY COURTS ACT 1984" matches index key "The Family Courts Act, 1984".
     """
     if not user_topic or not user_topic.strip():
         return ("", "")
-    topic_norm = " ".join(user_topic.strip().lower().split())
+    topic_norm = _normalize_act_name_for_match(user_topic)
     index = load_bare_act_summary_index()
     if not index:
         return ("", "")
-    # Exact match (case-insensitive)
+    # Exact match (case-insensitive, punctuation normalized)
     for act_name, summary in index.items():
         if not act_name or not summary:
             continue
-        if act_name.strip().lower() == topic_norm:
+        if _normalize_act_name_for_match(act_name) == topic_norm:
             return (act_name.strip(), (summary or "").strip())
     # Topic contained in act name (e.g. "Indian Penal Code" in "The Indian Penal Code, 1860")
     for act_name, summary in index.items():
         if not act_name or not summary:
             continue
-        if topic_norm in act_name.strip().lower():
+        act_norm = _normalize_act_name_for_match(act_name)
+        if topic_norm in act_norm:
             return (act_name.strip(), (summary or "").strip())
     # Act name contained in topic (e.g. user said full name)
     for act_name, summary in index.items():
         if not act_name or not summary:
             continue
-        if act_name.strip().lower() in topic_norm:
+        act_norm = _normalize_act_name_for_match(act_name)
+        if act_norm in topic_norm:
             return (act_name.strip(), (summary or "").strip())
     return ("", "")
+
+
+def _topic_looks_like_act_name(topic: str) -> bool:
+    """True if topic looks like an act/sanhita/code/constitution name so we run act-named flow even when not in index."""
+    return _line_looks_like_act_title(topic)
+
+
+def _resolve_all_acts_from_summary_index(user_topic: str) -> list[tuple[str, str]]:
+    """
+    Parse topic for multiple act names (e.g. "Act A and Act B" or "Act A, Act B"), resolve each
+    from the bare act summary index, and return a list of (act_name, summary) in order, deduped by act_name.
+    """
+    if not user_topic or not user_topic.strip():
+        return []
+    # Split by common separators: " and ", ", ", " & ", newline, semicolon
+    parts = re.split(r"\s+and\s+|\s*,\s*|\s+&\s+|\n|;", user_topic.strip(), flags=re.IGNORECASE)
+    seen_act_names = set()
+    result = []
+    for part in parts:
+        candidate = " ".join(part.split()).strip()
+        if len(candidate) < 3:
+            continue
+        act_name, summary = _resolve_act_from_summary_index(candidate)
+        if act_name and act_name not in seen_act_names:
+            seen_act_names.add(act_name)
+            result.append((act_name, summary or ""))
+    return result
 
 
 def _apply_statement_selection(candidates: list[dict]) -> list[dict]:
@@ -393,26 +510,71 @@ def _apply_per_act_selection(candidates: list[dict]) -> list[dict]:
     return combined[:TOP_N_PER_ACT]
 
 
+def _web_search_act_name_and_summary(act_name: str, act_summary: str, score_query: str, seen_urls: dict, max_per_query: int = 12) -> None:
+    """Run tiered web search with act name, then with summary; fetch & score, merge into seen_urls (in-place)."""
+    from retrieval.tiered_search import tiered_search
+    if len(seen_urls) >= TOP_N_ACT_NAMED:
+        return
+    time.sleep(2)
+    for query in [act_name.strip(), (act_summary or "").strip()[:1500]]:
+        if not query:
+            continue
+        if len(seen_urls) >= TOP_N_ACT_NAMED:
+            break
+        time.sleep(1)
+        results = tiered_search(
+            query=query,
+            search_type="case_law",
+            jurisdiction_state="Telangana",
+            max_per_tier=max_per_query,
+        )
+        for r in results[:ACT_NAMED_FETCH_BUFFER]:
+            url = (r.get("url") or "").strip()
+            if not url or url in seen_urls:
+                continue
+            time.sleep(0.4)
+            doc = _fetch_and_score_candidate(r, score_query, include_content=True)
+            if doc:
+                seen_urls[url] = doc
+
+
 def run_act_named_flow(act_name: str, act_summary: str) -> tuple[list[dict], int]:
     """
-    User named an act: use bare act summary index → search Indian Kanoon with (act name + summary),
-    get top results by similarity, deduplicate, keep first TOP_N_ACT_NAMED (10) unique. If duplicates
-    in the first 10, they are discarded and we take the next in rank (11, 12, ...) until we have 10 unique.
-    Renaming on indexing is done by the enricher (case law filename logic).
+    User named an act: search Indian Kanoon (1) with act name, (2) with summary from index if present;
+    then web search (1) with act name, (2) with summary; merge by URL, score descending, deduplicate vs index,
+    keep first TOP_N_ACT_NAMED (25) unique.
     Returns (items_for_pending, duplicates_discarded_count).
     """
-    query = (act_name + " " + (act_summary or "")[:1500]).strip()
-    logger.info("Act-named flow: act=%s, fetch up to %s from Indian Kanoon, dedup, target %s unique",
+    logger.info("Act-named flow: act=%s, fetch up to %s from Indian Kanoon + web (act name, then summary), dedup, target %s unique",
                 act_name[:50], ACT_NAMED_FETCH_BUFFER, TOP_N_ACT_NAMED)
 
-    # Fetch more than TOP_N so we can fill 10 after dedup
-    scored = _indian_kanoon_candidates(query, max_results=ACT_NAMED_FETCH_BUFFER, include_content=True)
-    if not scored:
-        logger.warning("No Indian Kanoon results for act-named query")
-        return [], 0
+    score_query = (act_name + " " + (act_summary or "")[:500]).strip()
+    seen_urls = {}
+    # Indian Kanoon: act name only, then short summary phrase (IK API 502s on long queries)
+    short_summary = (act_summary or "").strip()
+    if short_summary:
+        short_summary = re.sub(r"[#*_\[\]]+", " ", short_summary)[:250].strip()
+    for query in [act_name.strip(), short_summary]:
+        if not query:
+            continue
+        batch = _indian_kanoon_candidates(query, max_results=ACT_NAMED_FETCH_BUFFER, include_content=True)
+        for c in batch:
+            url = (c.get("source_url") or "").strip()
+            if not url:
+                continue
+            if url not in seen_urls or (c.get("score") or 0) > (seen_urls[url].get("score") or 0):
+                seen_urls[url] = c
+    # Web (eCourts + DDG): only if we don't already have enough (avoids 429s when IK gives 25+)
+    if len(seen_urls) < TOP_N_ACT_NAMED:
+        _web_search_act_name_and_summary(act_name, act_summary, score_query, seen_urls, max_per_query=12)
+    else:
+        logger.info("Already have %d candidates from IK; skipping web search to avoid rate limits", len(seen_urls))
 
-    # Sort by score descending (highest first)
-    scored.sort(key=lambda x: -x["score"])
+    scored = sorted(seen_urls.values(), key=lambda x: -(x.get("score") or 0))
+
+    if not scored:
+        logger.warning("No Indian Kanoon or web results for act-named query")
+        return [], 0
 
     # Deduplicate vs existing index (and within-list): check_indexing_candidates marks already_in_store
     from services.indexing_duplicate_check import check_indexing_candidates
@@ -425,7 +587,7 @@ def run_act_named_flow(act_name: str, act_summary: str) -> tuple[list[dict], int
     for i, s in enumerate(scored):
         s["already_in_store"] = deduped[i].get("already_in_store", False) if i < len(deduped) else False
 
-    # Take first TOP_N_ACT_NAMED that are unique (not already_in_store); duplicates in top 10 → take next in rank (11, 12, ...)
+    # Take first TOP_N_ACT_NAMED that are unique (not already_in_store) and document URLs only
     unique = []
     discarded = 0
     for s in scored:
@@ -434,10 +596,15 @@ def run_act_named_flow(act_name: str, act_summary: str) -> tuple[list[dict], int
         if s.get("already_in_store"):
             discarded += 1
             continue
+        if not _is_likely_document_url(s.get("source_url") or ""):
+            discarded += 1
+            continue
         unique.append(s)
     if discarded:
         logger.info("Act-named: %s unique selected (target %s), %s duplicates discarded, next in rank used",
                     len(unique), TOP_N_ACT_NAMED, discarded)
+    if not unique and scored:
+        logger.warning("Act-named flow: 0 proposed for indexing (all %s candidates already in index)", len(scored))
 
     for s in unique:
         s["act_name"] = act_name
@@ -483,6 +650,7 @@ def run_statement_flow(topic: str) -> list[dict]:
             candidates.append(doc)
 
     selected = _apply_statement_selection(candidates)
+    selected = [s for s in selected if _is_likely_document_url(s.get("source_url") or "")]
     # Deduplicate vs existing index (same logic as main indexing)
     from services.indexing_duplicate_check import check_indexing_candidates
     dedup_list = [
@@ -533,33 +701,47 @@ def run_first_10_acts_flow(act_count: int) -> list[dict]:
     for act_info in acts:
         act_name = act_info.get("act_name", "Unknown")
         chunks = act_info.get("chunks", [])
-        act_summary = get_or_create_act_summary(act_name, chunks)
-        query = (act_name + " " + act_summary[:1500]).strip()
-        logger.info("Act %s: one search (summary), top %s judgments", act_name[:50], TOP_N_PER_ACT)
+        act_summary = get_or_create_act_summary(act_name, chunks) or ""
+        score_query = (act_name + " " + act_summary[:1500]).strip()
+        logger.info("Act %s: search with act name, then summary (IK + web), top %s judgments", act_name[:50], TOP_N_PER_ACT)
 
         scored = []
-        # First: Indian Kanoon API (if configured)
-        ik_list = _indian_kanoon_candidates(query, max_results=MAX_FETCH_PER_ACT, include_content=True)
-        scored.extend(ik_list)
+        seen_urls = {}
+        # Indian Kanoon: act name, then summary
+        for query in [act_name.strip(), (act_summary or "")[:1500].strip()]:
+            if not query:
+                continue
+            ik_list = _indian_kanoon_candidates(query, max_results=MAX_FETCH_PER_ACT, include_content=True)
+            for c in ik_list:
+                url = (c.get("source_url") or "").strip()
+                if not url:
+                    continue
+                if url not in seen_urls or (c.get("score") or 0) > (seen_urls[url].get("score") or 0):
+                    seen_urls[url] = c
+        scored = list(seen_urls.values())
 
-        # Then: tiered web search if we want more candidates
+        # Web: search with act name, then with summary (merge by URL)
         if len(scored) < TOP_N_PER_ACT:
             time.sleep(1.0)
-            results = tiered_search(
-                query=query,
-                search_type="case_law",
-                jurisdiction_state="Telangana",
-                max_per_tier=10,
-            )
-            seen_urls = {c.get("source_url") for c in scored}
-            for r in results[:MAX_FETCH_PER_ACT]:
-                if r.get("url") in seen_urls:
+            for query in [act_name.strip(), (act_summary or "")[:1500].strip()]:
+                if not query:
                     continue
-                seen_urls.add(r.get("url"))
-                time.sleep(0.4)
-                doc = _fetch_and_score_candidate(r, act_summary, include_content=True)
-                if doc:
-                    scored.append(doc)
+                time.sleep(0.5)
+                results = tiered_search(
+                    query=query,
+                    search_type="case_law",
+                    jurisdiction_state="Telangana",
+                    max_per_tier=10,
+                )
+                for r in results[:MAX_FETCH_PER_ACT]:
+                    url = (r.get("url") or "").strip()
+                    if not url or url in seen_urls:
+                        continue
+                    time.sleep(0.4)
+                    doc = _fetch_and_score_candidate(r, score_query, include_content=True)
+                    if doc:
+                        seen_urls[url] = doc
+            scored = list(seen_urls.values())
         selected = _apply_per_act_selection(scored)
         selected = [s for s in selected if (s.get("signature") or "") not in index_signatures]
         by_sig = {}
@@ -572,6 +754,8 @@ def run_first_10_acts_flow(act_count: int) -> list[dict]:
             if s.get("signature"):
                 index_signatures.add(s["signature"])
         for s in selected:
+            if not _is_likely_document_url(s.get("source_url") or ""):
+                continue
             s["act_name"] = act_name
             all_items.append(s)  # keep content for dedup
 
@@ -602,28 +786,87 @@ def run(user_message: str) -> dict:
     if flow_type == "first_10_acts":
         act_count = interpreted.get("act_count") or 10
         items = run_first_10_acts_flow(act_count)
+        if items:
+            pending = load_pending()
+            for it in items:
+                pending.append({
+                    "title": it.get("title") or "Case law",
+                    "source_url": it.get("source_url") or "",
+                    "suggested_category": it.get("suggested_category", "case_law"),
+                    "signature": it.get("signature"),
+                    "act_name": it.get("act_name"),
+                    "summary": it.get("summary"),
+                    "already_in_store": it.get("already_in_store", False),
+                })
+            save_pending(pending)
+            added = len(items)
     else:
         topic = interpreted.get("topic") or "case laws"
-        act_name, act_summary = _resolve_act_from_summary_index(topic)
-        if act_name and act_summary:
-            items, duplicates_discarded = run_act_named_flow(act_name, act_summary)
+        # Prefer act name(s) extracted from user message over LLM topic (LLM can hallucinate wrong act, e.g. Evidence Act instead of Christian Marriage Act)
+        from_message = _extract_act_names_from_message(user_message)
+        if from_message:
+            topic = from_message[0].strip()
+        acts = _resolve_all_acts_from_summary_index(topic)
+        # If no acts resolved from index but topic looks like an act name, run act-named flow with act name only (Indian Kanoon)
+        if not acts and _topic_looks_like_act_name(topic):
+            acts = [(topic.strip(), "")]
+        # If we had multiple act names in message, resolve each and merge (dedupe by act name)
+        if from_message and len(from_message) > 1:
+            seen = {a[0] for a in acts}
+            for candidate in from_message[1:]:
+                if not candidate or not _topic_looks_like_act_name(candidate):
+                    continue
+                resolved = _resolve_all_acts_from_summary_index(candidate)
+                if not resolved:
+                    resolved = [(candidate.strip(), "")]
+                for act_name, act_summary in resolved:
+                    if act_name and act_name not in seen:
+                        seen.add(act_name)
+                        acts.append((act_name, act_summary))
+        if acts:
+            # Multi-act: complete search + dedup + append for each act, then move to next
+            for act_name, act_summary in acts:
+                items, disc = run_act_named_flow(act_name, act_summary)
+                if duplicates_discarded is None:
+                    duplicates_discarded = 0
+                duplicates_discarded += disc
+                if not items:
+                    continue
+                pending = load_pending()
+                urls_in_pending = {(p.get("source_url") or "").strip() for p in pending}
+                for it in items:
+                    url = (it.get("source_url") or "").strip()
+                    if url and url in urls_in_pending:
+                        continue
+                    if url:
+                        urls_in_pending.add(url)
+                    pending.append({
+                        "title": it.get("title") or "Case law",
+                        "source_url": it.get("source_url") or "",
+                        "suggested_category": it.get("suggested_category", "case_law"),
+                        "signature": it.get("signature"),
+                        "act_name": it.get("act_name"),
+                        "summary": it.get("summary"),
+                        "already_in_store": it.get("already_in_store", False),
+                    })
+                    added += 1
+                save_pending(pending)
         else:
             items = run_statement_flow(topic)
-
-    if items:
-        pending = load_pending()
-        for it in items:
-            pending.append({
-                "title": it.get("title") or "Case law",
-                "source_url": it.get("source_url") or "",
-                "suggested_category": it.get("suggested_category", "case_law"),
-                "signature": it.get("signature"),
-                "act_name": it.get("act_name"),
-                "summary": it.get("summary"),
-                "already_in_store": it.get("already_in_store", False),
-            })
-        save_pending(pending)
-        added = len(items)
+            if items:
+                pending = load_pending()
+                for it in items:
+                    pending.append({
+                        "title": it.get("title") or "Case law",
+                        "source_url": it.get("source_url") or "",
+                        "suggested_category": it.get("suggested_category", "case_law"),
+                        "signature": it.get("signature"),
+                        "act_name": it.get("act_name"),
+                        "summary": it.get("summary"),
+                        "already_in_store": it.get("already_in_store", False),
+                    })
+                save_pending(pending)
+                added = len(items)
 
     pending = load_pending()
     message = f"Added {added} document(s) for indexing. Total pending: {len(pending)}."

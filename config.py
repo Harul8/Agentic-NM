@@ -83,32 +83,19 @@ OFFICIAL_SOURCE_TAG = "OFFICIAL"
 
 # Tier 2: Official government sources (legislation: India Code, legislative.gov.in; judgments: Supreme Court, High Courts)
 TIER2_OFFICIAL_COURT_DOMAINS = (
-    "main.sci.gov.in",
-    "sci.gov.in",
-    "api.sci.gov.in",
+    
     "indiacode.nic.in",
     "legislative.gov.in",
     "egazette.nic.in",
     "lawcommissionofindia.nic.in",
-    # High Courts (mapped by state)
-    "karnatakajudiciary.kar.nic.in",
-    "bombayhighcourt.nic.in",
-    "delhihighcourt.nic.in",
-    "mhc.tn.gov.in",
-    "allahabadhighcourt.in",
-    "highcourtchd.gov.in",
-    "phc.gov.in",
-    "ghconline.gov.in",
-    "hcraj.nic.in",
-    "jharkhandhighcourt.nic.in",
-    "orissahighcourt.nic.in",
-    "cghc.nic.in",
-    "hcmadgoa.nic.in",
-    "hckashmir.nic.in",
-    "meghalayahighcourt.nic.in",
-    "thc.nic.in",
-    "hcsikkim.gov.in",
-    "services.ecourts.gov.in",
+   
+    #Courts 
+    "https://judgments.ecourts.gov.in/",
+    "main.sci.gov.in",
+    "sci.gov.in",
+    "api.sci.gov.in",
+    "https://tshc.gov.in/ehcr/",
+    "https://tshc.gov.in/ehcr/act",
 )
 
 # Tier 3: Trusted legal portals

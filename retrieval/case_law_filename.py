@@ -3,9 +3,9 @@ Suggest a safe filename for a case law PDF from the first page.
 
 Structure (first page):
 - Court: "In the Supreme Court of India" → SC_; "In the High Court of [State]" → HC_
-- Appellant: name(s) on the left; on the right "... Appellants?". Use first name only.
-- Respondent: name(s) on the left; on the right "... Respondent(s)?". Use first name only.
-- Format: SC_Appellant_name versus Respondent_name  or  HC_Appellant_name versus Respondent_name
+- First party: name(s) to the left of "Appellant(s)" or "Petitioner(s)" (dots before the label optional).
+- Second party: name(s) to the left of "Respondent(s)" (dots optional).
+- Format: SC_FirstParty_name versus SecondParty_name  or  HC_... (same).
 
 Fallback when court not found: look for "PetitionType No. XXX of YYYY" (e.g. Criminal Appeal No. 192 of 2011,
 Civil Appeal No. ..., Writ Petition No. ...). Then: PetitionType_No_XXX_of_YYYY.
@@ -22,14 +22,14 @@ _UNSAFE_FS = re.compile(r'[<>:"/\\|?*\x00-\x1f]')
 _SUPREME_COURT = re.compile(r"\b(?:in\s+the\s+)?supreme\s+court\s+of\s+india\b", re.IGNORECASE)
 _HIGH_COURT = re.compile(r"\b(?:in\s+the\s+)?high\s+court\s+of\s+(?:the\s+state\s+of\s+)?\w+\b", re.IGNORECASE)
 
-# Appellant: on same line, text to the left of "... Appellants?" (no DOTALL = same line)
-_APPELLANT_PATTERN = re.compile(
-    r"([A-Za-z][A-Za-z0-9\s\.\,\'\-\@\&]+?)\s*\.{2,4}\s*Appellants?\b",
+# First party (appellant/petitioner): text to the left of "Appellant(s)" or "Petitioner(s)"; dots optional
+_FIRST_PARTY_PATTERN = re.compile(
+    r"([A-Za-z][A-Za-z0-9\s\.\,\'\-\@\&]+?)\s*(?:\.{2,5})?\s*(?:Appellant|Petitioner)(?:s|\([sS]\))?\b",
     re.IGNORECASE,
 )
-# Respondent: same idea
+# Second party (respondent): same idea; match "Respondent(s)" or "RESPONDENT(S)"
 _RESPONDENT_PATTERN = re.compile(
-    r"([A-Za-z][A-Za-z0-9\s\.\,\'\-\@\&]+?)\s*\.{2,4}\s*Respondents?\b",
+    r"([A-Za-z][A-Za-z0-9\s\.\,\'\-\@\&]+?)\s*(?:\.{2,5})?\s*Respondent(?:s|\([sS]\))?\b",
     re.IGNORECASE,
 )
 
@@ -39,24 +39,50 @@ _APPEAL_NO_OF_YEAR = re.compile(
     re.IGNORECASE,
 )
 
+# Max length for a party name caption (avoids treating body text as name)
+_MAX_PARTY_NAME_LEN = 80
+
+# Sentence-like patterns: if capture contains these, treat as body text not caption
+_BODY_TEXT_MARKERS = re.compile(
+    r"^\d+\.\s|\.\s+[A-Z]|\bbetween\s+the\b|\bmarriage\b|\bpetitioner\s+and\s+the\b",
+    re.IGNORECASE,
+)
+
 
 def _safe_filename(name: str) -> str:
-    """Replace unsafe filesystem chars with space; collapse spaces; strip."""
+    """Replace unsafe and special chars (&, @, etc.) with space; collapse spaces; strip."""
     s = _UNSAFE_FS.sub(" ", name)
+    # Remove & and @ so filenames are safe and never contain these
+    s = s.replace("&", " ").replace("@", " ")
     return " ".join(s.split()).strip() or "document"
 
 
+def _is_likely_caption_name(raw: str) -> bool:
+    """Return False if the capture looks like body text (e.g. '3. The marriage between...'), not a party name."""
+    if not raw or len(raw) > _MAX_PARTY_NAME_LEN:
+        return False
+    if _BODY_TEXT_MARKERS.search(raw):
+        return False
+    return True
+
+
 def _first_name_only(party_text: str) -> str:
-    """If multiple parties (e.g. 'X & ANR.' or 'X @ Y'), return first name only."""
+    """
+    Use only the main party name: if the text contains & or @, take the part before it.
+    When the line starts with @ (e.g. '@ SK SALAUDDIN & ANR.'), take the part after @ then before &.
+    """
     if not party_text or not party_text.strip():
         return ""
     s = party_text.strip()
-    # Split by " & " or " &" or "& " (multiple appellants/respondents)
-    parts = re.split(r"\s+&\s+", s, maxsplit=1)
-    s = parts[0].strip()
-    # Split by " @ " (alternate names) and take first
-    parts = re.split(r"\s+@\s+", s, maxsplit=1)
-    s = parts[0].strip()
+    # If line starts with @, the real name is after it (alias line)
+    if s.startswith("@"):
+        s = s[1:].strip()
+    # Take name before & (e.g. 'SUDHIRKUMAR SHRIVASTAVA & ORS.' -> 'SUDHIRKUMAR SHRIVASTAVA')
+    if "&" in s:
+        s = s.split("&", 1)[0].strip()
+    # Take name before @ (e.g. 'X @ Alias' -> 'X')
+    if "@" in s:
+        s = s.split("@", 1)[0].strip()
     return " ".join(s.split()).strip()
 
 
@@ -69,29 +95,34 @@ def _detect_court(text: str) -> str:
     return ""
 
 
-def _extract_appellant(text: str) -> str:
-    """Extract appellant name (first name only) from first page text."""
-    m = _APPELLANT_PATTERN.search(text)
-    if not m:
-        return ""
-    raw = m.group(1).strip()
-    # Take last line if multiline (name is often the last line before ...Appellant)
-    lines = [ln.strip() for ln in raw.splitlines() if ln.strip()]
-    if lines:
-        raw = lines[-1]
-    return _first_name_only(raw)
+def _extract_first_party(text: str) -> str:
+    """Extract first party name (Appellant or Petitioner) from first page text."""
+    for m in _FIRST_PARTY_PATTERN.finditer(text):
+        raw = m.group(1).strip()
+        lines = [ln.strip() for ln in raw.splitlines() if ln.strip()]
+        if lines:
+            raw = lines[-1]
+        if not _is_likely_caption_name(raw):
+            continue
+        name = _first_name_only(raw)
+        if name:
+            return name
+    return ""
 
 
 def _extract_respondent(text: str) -> str:
-    """Extract respondent name (first name only) from first page text."""
-    m = _RESPONDENT_PATTERN.search(text)
-    if not m:
-        return ""
-    raw = m.group(1).strip()
-    lines = [ln.strip() for ln in raw.splitlines() if ln.strip()]
-    if lines:
-        raw = lines[-1]
-    return _first_name_only(raw)
+    """Extract respondent name (first name only) from first page text. Skip captures that look like body text."""
+    for m in _RESPONDENT_PATTERN.finditer(text):
+        raw = m.group(1).strip()
+        lines = [ln.strip() for ln in raw.splitlines() if ln.strip()]
+        if lines:
+            raw = lines[-1]
+        if not _is_likely_caption_name(raw):
+            continue
+        name = _first_name_only(raw)
+        if name:
+            return name
+    return ""
 
 
 def suggest_case_law_basename(text: str, fallback_title: str = "document") -> str:
@@ -109,17 +140,17 @@ def suggest_case_law_basename(text: str, fallback_title: str = "document") -> st
     sample = re.sub(r"\r\n", "\n", sample)
 
     court = _detect_court(sample)
-    appellant = _extract_appellant(sample)
+    first_party = _extract_first_party(sample)
     respondent = _extract_respondent(sample)
 
-    if not appellant:
-        appellant = "Appellant"
+    if not first_party:
+        first_party = "Appellant"
     if not respondent:
         respondent = "Respondent"
 
     prefix = f"{court}_" if court else ""
     middle = " versus "
-    base = f"{prefix}{_safe_filename(appellant)}{middle}{_safe_filename(respondent)}"
+    base = f"{prefix}{_safe_filename(first_party)}{middle}{_safe_filename(respondent)}"
 
     if not court and base == f"Appellant{middle}Respondent":
         # Try fallback: appeal/petition number (e.g. Criminal Appeal No. 192 of 2011)

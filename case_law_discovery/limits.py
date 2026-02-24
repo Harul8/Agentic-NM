@@ -16,9 +16,9 @@ TOP_N_PER_ACT = 25
 MAX_FETCH_PER_ACT = 25
 
 # Act-named flow: user names an act → resolve from bare act summary index, search IK, dedup, target unique count
-TOP_N_ACT_NAMED = 10
+TOP_N_ACT_NAMED = 25
 # Fetch extra from Indian Kanoon so that after dedup we can fill TOP_N_ACT_NAMED
-ACT_NAMED_FETCH_BUFFER = 25
+ACT_NAMED_FETCH_BUFFER = 50
 
 # Summary character caps (for LLM-generated act/case summaries)
 ACT_SUMMARY_MAX_CHARS = 5000

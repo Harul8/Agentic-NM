@@ -29,6 +29,9 @@ from config import (
 
 logger = logging.getLogger(__name__)
 
+# Small delay before each DDG request to reduce 429 (Too Many Requests) from search backends
+DDGS_REQUEST_DELAY_SEC = 2.0
+
 
 # ---------------------------------------------------------------------------
 # Domain Classification
@@ -119,6 +122,7 @@ def _ddgs_search(query: str, max_results: int = 10) -> list:
     Suppresses primp's internal logging to avoid noise from Wikipedia/other search engine API calls.
     """
     import logging as std_logging
+    time.sleep(DDGS_REQUEST_DELAY_SEC)
     # Suppress primp's verbose logging (it logs all internal API calls to Wikipedia, Google, etc.)
     primp_logger = std_logging.getLogger("primp")
     original_level = primp_logger.level
@@ -360,10 +364,23 @@ def tiered_search(
     """
     all_results = []
 
-    # 1) Official sources first (courts for case_law, India Code for bare_act, or both)
+    # 0) Case law only: eCourts (judgments.ecourts.gov.in) first — Supreme Court + High Court Telangana
+    if search_type == "case_law":
+        try:
+            from retrieval.ecourts_client import search_ecourts_both_courts
+            ecourts_results = search_ecourts_both_courts(query, max_results_per_court=max_per_tier)
+            all_results.extend(ecourts_results)
+            if ecourts_results:
+                logger.info("eCourts (first step): %d results for case law query", len(ecourts_results))
+        except Exception as e:
+            logger.warning("eCourts search failed: %s", e)
+
+    # 1) Official sources (courts for case_law, India Code for bare_act, or both)
+    if search_type == "case_law":
+        time.sleep(2)
     tier2 = search_tier2_official(query, jurisdiction_state, max_per_tier, search_type=search_type)
     all_results.extend(tier2)
-    if search_type == "case_law" and len(tier2) >= 5:
+    if search_type == "case_law" and len(all_results) >= 5:
         logger.info("Tier 2 (official) provided %d case law results; skipping legal portals and newspapers", len(tier2))
         return _filter_and_dedupe(all_results)
 

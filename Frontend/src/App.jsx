@@ -712,6 +712,7 @@ function App() {
                   opinionText: opinion,
                   bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
                   case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
+                  case_law_discovery: !!data.case_law_discovery,
                   retrieved: retr,
                   progress: data.progress || null,
                   model_used: data.model_used || null,
@@ -928,6 +929,7 @@ function App() {
                     opinionText: opinion,
                     bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
                     case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
+                    case_law_discovery: !!data.case_law_discovery,
                     retrieved: retr,
                     progress: data.progress || null,
                     model_used: data.model_used || null,
@@ -1811,7 +1813,7 @@ function App() {
           ) : (
             caseLaws.length > 0 && renderGroupBox("Relevant Case Laws", caseLaws)
           )}
-          {bareActs.length === 0 && caseLaws.length === 0 && opinion && (
+          {bareActs.length === 0 && caseLaws.length === 0 && opinion && !content.case_law_discovery && (
             <p className="search-empty">No supporting materials were retrieved for this query.</p>
           )}
         </div>
