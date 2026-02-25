@@ -343,6 +343,7 @@ def tiered_search(
     search_type: str = "both",
     jurisdiction_state: str = "",
     max_per_tier: int = 10,
+    discovery_mode: bool = False,
 ) -> list:
     """
     Execute web search in strict order: Official → Legal portals → Newspapers. Stop there.
@@ -358,11 +359,16 @@ def tiered_search(
         search_type: "bare_act", "case_law", or "both"
         jurisdiction_state: State for HC-specific search (e.g., "Telangana", "Karnataka")
         max_per_tier: Max results to fetch per tier
+        discovery_mode: When True (bulk case law discovery), raises the Tier 2 early-exit
+            threshold from 5 to 20 so Tier 3 (Indian Kanoon, Live Law) is always searched.
+            Use False (default) for live query pipeline where speed matters.
 
     Returns:
         List of search results, each with source_tag and tier. Only official, legal_portal, newspaper.
     """
     all_results = []
+    # Early-exit threshold: higher in discovery mode so we always search legal portals (Tier 3)
+    tier2_exit_threshold = 30 if discovery_mode else 5
 
     # 0) Case law only: eCourts (judgments.ecourts.gov.in) first — Supreme Court + High Court Telangana
     if search_type == "case_law":
@@ -380,14 +386,15 @@ def tiered_search(
         time.sleep(2)
     tier2 = search_tier2_official(query, jurisdiction_state, max_per_tier, search_type=search_type)
     all_results.extend(tier2)
-    if search_type == "case_law" and len(all_results) >= 5:
-        logger.info("Tier 2 (official) provided %d case law results; skipping legal portals and newspapers", len(tier2))
+    if search_type == "case_law" and len(all_results) >= tier2_exit_threshold:
+        logger.info("Tier 2 (official) provided %d case law results; skipping legal portals and newspapers (threshold=%d, discovery_mode=%s)",
+                    len(tier2), tier2_exit_threshold, discovery_mode)
         return _filter_and_dedupe(all_results)
 
     # 2) Legal portals only if we need more
     tier3 = search_tier3_legal_portals(query, max_per_tier, search_type=search_type)
     all_results.extend(tier3)
-    if len(all_results) >= 8:
+    if len(all_results) >= (20 if discovery_mode else 8):
         logger.info("Tiers 2+3 provided %d results; skipping newspapers", len(all_results))
         return _filter_and_dedupe(all_results)
 
@@ -442,9 +449,15 @@ def fetch_content_and_pdf(url: str, timeout: int = 30) -> tuple:
     if "www.api.sci.gov.in" in url:
         url = url.replace("www.api.sci.gov.in", "api.sci.gov.in")
 
+    # tshc.gov.in uses a cert not in Python's certifi bundle (works fine in browsers)
+    ssl_verify = False if "tshc.gov.in" in url else True
+    if not ssl_verify:
+        import urllib3
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
     headers = _browser_headers()
     try:
-        response = requests.get(url, timeout=timeout, allow_redirects=True, headers=headers)
+        response = requests.get(url, timeout=timeout, allow_redirects=True, headers=headers, verify=ssl_verify)
         response.raise_for_status()
     except Exception as e:
         logger.warning(f"Failed to fetch {url}: {e}")
@@ -520,8 +533,13 @@ def _find_pdf_link(soup, base_url: str) -> Optional[str]:
 def _download_pdf(url: str, timeout: int = 30) -> Optional[bytes]:
     """Download a PDF file. Returns bytes or None."""
     import requests
+    # tshc.gov.in uses a cert not in Python's certifi bundle
+    ssl_verify = False if "tshc.gov.in" in url else True
+    if not ssl_verify:
+        import urllib3
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     try:
-        resp = requests.get(url, timeout=timeout, headers=_browser_headers())
+        resp = requests.get(url, timeout=timeout, headers=_browser_headers(), verify=ssl_verify)
         if resp.ok and len(resp.content) > 1000:
             return resp.content
     except Exception:

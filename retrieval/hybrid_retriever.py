@@ -362,13 +362,16 @@ def hybrid_search(
 
     except Exception as e:
         logger.error(f"Cross-encoder re-ranking failed: {e}")
-        # Fallback: return FAISS candidates sorted by original score
+        # Fallback: return FAISS candidates with score=0.0 to signal unavailability.
+        # NOTE: Do NOT use chunk.get("_score") — chunks have no such field.
+        # Using 0.0 makes it explicit that ranking is unknown (not artificially 0.5 uniform).
         fallback = []
         for key in faiss_candidates:
             if key in chunks:
                 chunk = dict(chunks[key])
                 chunk["_chunk_key"] = key
-                chunk["_rerank_score"] = chunk.get("_score", 0.5)
+                chunk["_rerank_score"] = 0.0   # 0.0 = unknown; cross-encoder unavailable (prev bug: used nonexistent "_score" key)
+                chunk["_rerank_fallback"] = True  # flag: cross-encoder was unavailable
                 fallback.append(chunk)
         return fallback[:rerank_top_k]
 
@@ -481,20 +484,54 @@ def search_case_laws_legacy(query: str, top_k: int = 15, min_sim: float = 0.40) 
 
 
 def search_bare_acts_auto(query: str, top_k: int = 30) -> list:
-    """Auto-detect v2 or legacy index and search accordingly."""
+    """
+    Auto-detect v2 or legacy index and search accordingly.
+
+    IMPORTANT (research integrity):
+    When the v2 index exists, we always use v2 — even if it returns 0 results.
+    We deliberately do NOT fall back to the legacy FAISS-only index when v2 is
+    present, because silent fallback would mislabel ablation results:
+      - batch_runner mode='full_pipeline' would secretly run FAISS-only (v1)
+      - Metrics would be wrong and not reproducible
+
+    If v2 returns 0 results, that IS the correct answer for that query on that
+    index — it means no relevant sections were found above the score threshold.
+    """
     from config import BARE_INDEX_V2
     if os.path.exists(BARE_INDEX_V2):
         results = search_bare_acts(query, top_k)
-        if results:
-            return results
+        if not results:
+            logger.warning(
+                "search_bare_acts_auto: v2 index found but returned 0 results for this query. "
+                "NOT falling back to legacy. Check index integrity or lower min_rerank_score."
+            )
+        return results
+    # v2 index not yet built — use legacy with a clear log message
+    logger.warning(
+        "search_bare_acts_auto: v2 index not found at %s — "
+        "using legacy FAISS-only retrieval (no BM25, no cross-encoder).", BARE_INDEX_V2
+    )
     return search_bare_acts_legacy(query, top_k)
 
 
 def search_case_laws_auto(query: str, top_k: int = 30) -> list:
-    """Auto-detect v2 or legacy index and search accordingly."""
+    """
+    Auto-detect v2 or legacy index and search accordingly.
+
+    Same research-integrity policy as search_bare_acts_auto: no silent fallback
+    when v2 index exists. See docstring above for rationale.
+    """
     from config import CASE_INDEX_V2
     if os.path.exists(CASE_INDEX_V2):
         results = search_case_laws(query, top_k)
-        if results:
-            return results
+        if not results:
+            logger.warning(
+                "search_case_laws_auto: v2 index found but returned 0 results for this query. "
+                "NOT falling back to legacy. Check index integrity or lower min_rerank_score."
+            )
+        return results
+    logger.warning(
+        "search_case_laws_auto: v2 index not found at %s — "
+        "using legacy FAISS-only retrieval (no BM25, no cross-encoder).", CASE_INDEX_V2
+    )
     return search_case_laws_legacy(query, top_k)

@@ -45,6 +45,105 @@ from case_law_discovery.store import (
 # Approximate first two pages for classification and signature (match auto_enricher)
 _FIRST_TWO_PAGES_CHARS = 3000
 
+# ---------------------------------------------------------------------------
+# Keyword extraction from raw bare act chunks (used for clean web search queries)
+# ---------------------------------------------------------------------------
+
+_LEGAL_STOP_WORDS = frozenset({
+    "the", "this", "that", "act", "any", "all", "for", "such", "where", "when",
+    "which", "who", "shall", "may", "not", "has", "have", "india", "indian",
+    "government", "state", "central", "every", "person", "persons", "order",
+    "section", "article", "clause", "rule", "schedule", "provided", "under",
+    "made", "and", "or", "by", "to", "in", "of", "on", "at", "be", "is", "are",
+    "was", "were", "been", "being", "with", "from", "as", "an", "a", "its",
+    "their", "them", "these", "those", "also", "other", "another", "each",
+    "above", "below", "herein", "thereof", "thereto", "thereunder", "hereinafter",
+    "following", "prescribed", "applicable", "specified", "aforesaid",
+})
+
+
+def _extract_act_keywords(act_name: str, chunks: list | None = None) -> str:
+    """
+    Extract 4-5 legally meaningful keywords directly from bare act vector store chunks.
+    Deterministic — no LLM call, no markdown. Returns a space-joined keyword string
+    suitable for use as a supplementary DDG/IK search query.
+
+    Priority: defined terms ("X" means...) first, then capitalized noun phrases.
+    Falls back to empty string if chunks are unavailable.
+    """
+    # Load chunks from vector store if not provided
+    if not chunks:
+        try:
+            from config import BARE_CHUNKS_V2
+            import json as _json
+            if os.path.isfile(BARE_CHUNKS_V2):
+                with open(BARE_CHUNKS_V2, "r", encoding="utf-8") as _f:
+                    _all = _json.load(_f)
+                if isinstance(_all, dict):
+                    _all = list(_all.values())
+                act_norm = act_name.lower().strip()
+                chunks = [
+                    c for c in _all
+                    if (c.get("act_name") or c.get("source") or "").lower().strip() == act_norm
+                ][:20]
+        except Exception:
+            pass
+
+    if not chunks:
+        return ""
+
+    # Combine text from first 20 chunks (500 chars each to keep it light)
+    text = " ".join((_chunk_text(c) or "")[:500] for c in chunks[:20])
+    if not text.strip():
+        return ""
+
+    # 1. Extract defined terms: "Term" means / includes / refers
+    defined = []
+    for m in re.finditer(r'"([A-Za-z][a-zA-Z\s\-]{2,40})"', text):
+        term = m.group(1).strip()
+        end = m.end()
+        snippet = text[end:end + 60].lower()
+        if any(kw in snippet for kw in (" means", " includes", " refers", " denotes")):
+            defined.append(term)
+    # Also single-quoted
+    for m in re.finditer(r"'([A-Z][a-zA-Z\s\-]{2,40})'", text):
+        term = m.group(1).strip()
+        end = m.end()
+        snippet = text[end:end + 60].lower()
+        if any(kw in snippet for kw in (" means", " includes", " refers", " denotes")):
+            defined.append(term)
+
+    # 2. Extract capitalized noun phrases (2-3 words, e.g. "Welfare Board", "Unpaid Accumulations")
+    noun_phrases = re.findall(r'\b([A-Z][a-z]{2,}(?:\s+[A-Z][a-z]{2,}){1,2})\b', text)
+
+    # Build candidate list — defined terms first (most specific), then noun phrases
+    candidates = []
+    seen = set()
+    for term in defined + noun_phrases:
+        term = term.strip()
+        if not term or len(term) < 4:
+            continue
+        words = term.lower().split()
+        # Skip if every word is a stop word
+        if all(w in _LEGAL_STOP_WORDS for w in words):
+            continue
+        norm = " ".join(words)
+        if norm in seen:
+            continue
+        seen.add(norm)
+        candidates.append(term)
+
+    # Take top 5 candidates, total keyword string ≤ 80 chars
+    keywords = []
+    total = 0
+    for term in candidates[:20]:
+        if total + len(term) + 1 > 80:
+            break
+        keywords.append(term)
+        total += len(term) + 1
+
+    return " ".join(keywords[:5])
+
 
 def is_case_law_discovery_request(message: str) -> bool:
     """
@@ -117,23 +216,59 @@ def _extract_act_names_from_message(user_message: str) -> list[str]:
     return candidates
 
 
+def _parse_act_range_from_message(user_message: str) -> tuple[int, int] | None:
+    """
+    Parse act range patterns from user message without an LLM call.
+    Returns (act_start, act_end) as 1-based integers, or None if no range found.
+
+    Understands patterns like:
+      "acts 32 to 78"         → (32, 78)
+      "acts from 32 to 78"    → (32, 78)
+      "act numbers 32-78"     → (32, 78)
+      "first 10 acts"         → (1, 10)
+      "first 5 bare acts"     → (1, 5)
+    """
+    msg = user_message.lower()
+    # Explicit range: "acts 32 to 78", "acts from 32 to 78", "act numbers 32-78", "32 to 78"
+    m = re.search(r'acts?\s+(?:from\s+)?(?:number[s]?\s+)?(\d+)\s*(?:to|-)\s*(\d+)', msg)
+    if m:
+        return int(m.group(1)), int(m.group(2))
+    # "numbers 32 to 78" / "numbered 32 to 78"
+    m = re.search(r'number(?:ed|s)?\s+(\d+)\s*(?:to|-)\s*(\d+)', msg)
+    if m:
+        return int(m.group(1)), int(m.group(2))
+    # "first N acts" / "first 10 bare acts"
+    m = re.search(r'first\s+(\d+)\s+(?:bare\s+)?acts?', msg)
+    if m:
+        return 1, int(m.group(1))
+    return None
+
+
 def interpret_user_input(user_message: str) -> dict:
     """
-    Use LLM to interpret: statement-based vs first-N-acts, and what to search for.
-    Returns dict with: flow_type ("statement" | "first_10_acts"), query/topic, act_names (if applicable).
+    Use LLM to interpret: statement-based vs acts-range, and what to search for.
+    Returns dict with: flow_type ("statement" | "first_10_acts"), query/topic,
+    act_start (1-based), act_end (1-based inclusive).
     """
+    # Try fast regex parse first (avoids LLM call for common range patterns)
+    range_match = _parse_act_range_from_message(user_message)
+    if range_match:
+        act_start, act_end = range_match
+        return {"flow_type": "first_10_acts", "topic": None, "act_start": act_start, "act_end": act_end}
+
     system = (
         "You are a legal research assistant. Classify the user's request into exactly one of two flows. "
         "Reply with a single JSON object only, no markdown, no explanation. "
         "Keys: flow_type (either 'statement' or 'first_10_acts'), topic (short search topic or null), "
-        "act_count (number only when flow_type is first_10_acts, else null). "
-        "Use first_10_acts ONLY when the user explicitly asks for case laws for the 'first N' or 'first 10' acts "
-        "in the vector store (e.g. 'first 10 bare acts', 'first 5 acts from the store'). "
-        "When the user names a specific act (e.g. 'THE FAMILY COURTS ACT 1984', 'Hindu Marriage Act', 'find case laws for below acts X'), "
-        "always use flow_type statement and set topic to that act name or the main act they asked for. "
+        "act_start (1-based start position integer, only when flow_type is first_10_acts, default 1), "
+        "act_end (1-based end position integer, only when flow_type is first_10_acts). "
+        "Use first_10_acts ONLY when the user explicitly asks for case laws for acts by position "
+        "(e.g. 'first 10 bare acts', 'first 5 acts', 'acts 32 to 78', 'acts from 10 to 50'). "
+        "When the user names a specific act (e.g. 'THE FAMILY COURTS ACT 1984', 'Hindu Marriage Act'), "
+        "always use flow_type statement and set topic to that act name. "
         "Otherwise use statement and set topic to the legal subject they want case laws for."
     )
-    prompt = f"User request: {user_message}\n\nReply with one JSON object: flow_type, topic, act_count."
+    prompt = f"User request: {user_message}\n\nReply with one JSON object: flow_type, topic, act_start, act_end."
     raw = _ask_llm(prompt, system=system)
     try:
         # Extract JSON if wrapped in markdown
@@ -141,24 +276,30 @@ def interpret_user_input(user_message: str) -> dict:
             raw = raw.split("```")[1].replace("json", "").strip()
         obj = json.loads(raw)
         flow = (obj.get("flow_type") or "statement").strip().lower()
-        # Only use first_10_acts when LLM explicitly returned that flow (not when act_count happens to be 10)
         if flow == "first_10_acts":
-            return {"flow_type": "first_10_acts", "topic": None, "act_count": int(obj.get("act_count", 10))}
+            act_start = int(obj.get("act_start") or 1)
+            act_end = int(obj.get("act_end") or obj.get("act_count") or 10)
+            return {"flow_type": "first_10_acts", "topic": None, "act_start": act_start, "act_end": act_end}
         return {
             "flow_type": "statement",
             "topic": (obj.get("topic") or user_message[:200]).strip() or "case laws",
-            "act_count": None,
+            "act_start": None,
+            "act_end": None,
         }
     except Exception:
-        # Fallback: first_10_acts only if user explicitly said "first 10" or "first N" acts (e.g. "first 10 bare acts")
-        msg_lower = user_message.lower()
-        if re.search(r"first\s+(10|\d+)\s+(bare\s+)?acts?", msg_lower) or "first 10" in msg_lower:
-            return {"flow_type": "first_10_acts", "topic": None, "act_count": 10}
-        return {"flow_type": "statement", "topic": user_message[:200].strip() or "case laws", "act_count": None}
+        return {"flow_type": "statement", "topic": user_message[:200].strip() or "case laws", "act_start": None, "act_end": None}
 
 
-def get_first_n_acts_from_vector_store(n: int = 10) -> list[dict]:
-    """Read bare act chunks from vector store; return first n acts (alphabetically) with their chunks."""
+def get_acts_from_vector_store(act_start: int = 1, act_end: int = 10) -> list[dict]:
+    """
+    Read bare act chunks from the vector store; return acts in the range [act_start, act_end]
+    (both 1-based, inclusive) sorted alphabetically. For example:
+      act_start=1,  act_end=10  → first 10 acts
+      act_start=32, act_end=78  → acts numbered 32 to 78 in alphabetical order
+
+    Logs the total act count and the slice being processed so the caller can see
+    how many acts are in the store (e.g. "Acts 32-78 of 100 total").
+    """
     try:
         from config import BARE_CHUNKS_V2
         if not os.path.isfile(BARE_CHUNKS_V2):
@@ -177,10 +318,22 @@ def get_first_n_acts_from_vector_store(n: int = 10) -> list[dict]:
             name = (c.get("act_name") or c.get("source") or "Unknown").strip()
             by_act.setdefault(name, []).append(c)
         sorted_acts = sorted(by_act.keys(), key=lambda x: x.lower())
-        return [{"act_name": name, "chunks": by_act[name]} for name in sorted_acts[:n]]
+        total = len(sorted_acts)
+        # Convert to 0-based slice: act_start=1 → index 0; act_end=10 → index 9 (inclusive)
+        start_idx = max(0, act_start - 1)
+        end_idx = min(total, act_end)  # slice end is exclusive, act_end is 1-based inclusive
+        selected = sorted_acts[start_idx:end_idx]
+        logger.info("Acts range %d-%d of %d total acts in vector store (%d selected)",
+                    act_start, act_end, total, len(selected))
+        return [{"act_name": name, "chunks": by_act[name]} for name in selected]
     except Exception as e:
         logger.warning("Could not read bare chunks: %s", e)
         return []
+
+
+def get_first_n_acts_from_vector_store(n: int = 10) -> list[dict]:
+    """Backward-compatible wrapper: returns first n acts. Use get_acts_from_vector_store() directly."""
+    return get_acts_from_vector_store(act_start=1, act_end=n)
 
 
 def _chunk_text(chunk: dict) -> str:
@@ -390,8 +543,15 @@ def _score_candidate_content(
     return out
 
 
-def _indian_kanoon_candidates(query: str, max_results: int, include_content: bool) -> list[dict]:
-    """Search Indian Kanoon API and return scored candidates (same shape as web candidates)."""
+def _indian_kanoon_candidates(query: str, max_results: int, include_content: bool, max_pages: int = 3) -> list[dict]:
+    """
+    Search Indian Kanoon API and return scored candidates (same shape as web candidates).
+
+    Fetches up to max_pages pages of search results (page 0, 1, 2) to collect a larger
+    pool of TIDs before fetching full document content. Each IK page returns ~10-20 docs,
+    so 3 pages gives ~60 TIDs, from which we fetch documents for the first max_results.
+    This triples the candidate pool without increasing the number of document fetches.
+    """
     try:
         from retrieval.indian_kanoon_client import search as ik_search, get_document
     except ImportError as e:
@@ -401,9 +561,31 @@ def _indian_kanoon_candidates(query: str, max_results: int, include_content: boo
     if not INDIAN_KANOON_API_TOKEN:
         logger.warning("Indian Kanoon API token not set (INDIAN_KANOON_API_TOKEN); act-named flow will have no IK results")
         return []
-    raw = ik_search(query, pagenum=0, max_results=max_results)
+
+    # --- Phase 1: Collect TIDs from multiple pages (fast — just metadata) ---
+    all_tids = []
+    seen_tids = set()
+    for page in range(max_pages):
+        page_results = ik_search(query, pagenum=page, max_results=20)
+        if not page_results:
+            break  # No more results for this query
+        new = [r for r in page_results if r.get("tid") and r.get("tid") not in seen_tids]
+        if not new:
+            break  # IK returned duplicates — we've likely exhausted results
+        for r in new:
+            seen_tids.add(r.get("tid"))
+        all_tids.extend(new)
+        if page < max_pages - 1:
+            time.sleep(0.5)  # Brief pause between page requests
+
+    if not all_tids:
+        return []
+
+    logger.debug("IK query '%s': collected %d TIDs across %d pages", query[:60], len(all_tids), min(max_pages, len(all_tids) // 10 + 1))
+
+    # --- Phase 2: Fetch full document content for up to max_results TIDs ---
     candidates = []
-    for r in raw[:max_results]:
+    for r in all_tids[:max_results]:
         tid = r.get("tid")
         if not tid:
             continue
@@ -510,13 +692,28 @@ def _apply_per_act_selection(candidates: list[dict]) -> list[dict]:
     return combined[:TOP_N_PER_ACT]
 
 
-def _web_search_act_name_and_summary(act_name: str, act_summary: str, score_query: str, seen_urls: dict, max_per_query: int = 12) -> None:
-    """Run tiered web search with act name, then with summary; fetch & score, merge into seen_urls (in-place)."""
+def _web_search_act_name_and_summary(act_name: str, act_summary: str, score_query: str, seen_urls: dict, max_per_query: int = 12, chunks: list | None = None) -> None:
+    """
+    Run tiered web search with (1) act name, (2) act name + legal keywords from vector store.
+    Replaces the old raw-markdown summary query that caused 400/429 errors on all search engines.
+    Uses _extract_act_keywords() to get 4-5 clean legal terms from the act's chunks.
+    Merges scored results into seen_urls (in-place).
+    """
     from retrieval.tiered_search import tiered_search
     if len(seen_urls) >= TOP_N_ACT_NAMED:
         return
     time.sleep(2)
-    for query in [act_name.strip(), (act_summary or "").strip()[:1500]]:
+
+    # Build a clean keyword-enriched query (replaces raw markdown summary)
+    keywords = _extract_act_keywords(act_name, chunks)
+    keyword_query = f"{act_name} {keywords}".strip() if keywords else ""
+
+    # Two queries: plain act name, then act name + legal keywords (different result angles)
+    queries = [act_name.strip()]
+    if keyword_query and keyword_query.strip() != act_name.strip():
+        queries.append(keyword_query[:150])
+
+    for query in queries:
         if not query:
             continue
         if len(seen_urls) >= TOP_N_ACT_NAMED:
@@ -527,6 +724,7 @@ def _web_search_act_name_and_summary(act_name: str, act_summary: str, score_quer
             search_type="case_law",
             jurisdiction_state="Telangana",
             max_per_tier=max_per_query,
+            discovery_mode=True,  # Don't short-circuit at 5 results; search all tiers
         )
         for r in results[:ACT_NAMED_FETCH_BUFFER]:
             url = (r.get("url") or "").strip()
@@ -550,11 +748,17 @@ def run_act_named_flow(act_name: str, act_summary: str) -> tuple[list[dict], int
 
     score_query = (act_name + " " + (act_summary or "")[:500]).strip()
     seen_urls = {}
-    # Indian Kanoon: act name only, then short summary phrase (IK API 502s on long queries)
-    short_summary = (act_summary or "").strip()
-    if short_summary:
-        short_summary = re.sub(r"[#*_\[\]]+", " ", short_summary)[:250].strip()
-    for query in [act_name.strip(), short_summary]:
+
+    # Extract legal keywords from vector store (used for both IK and web search)
+    act_keywords = _extract_act_keywords(act_name)
+    keyword_query = f"{act_name} {act_keywords}".strip() if act_keywords else ""
+
+    # Indian Kanoon: (1) plain act name, (2) act name + legal keywords
+    # Keywords query replaces raw markdown summary — avoids IK 502s on long/markdown queries
+    ik_queries = [act_name.strip()]
+    if keyword_query and keyword_query.strip() != act_name.strip():
+        ik_queries.append(keyword_query[:200])
+    for query in ik_queries:
         if not query:
             continue
         batch = _indian_kanoon_candidates(query, max_results=ACT_NAMED_FETCH_BUFFER, include_content=True)
@@ -566,7 +770,8 @@ def run_act_named_flow(act_name: str, act_summary: str) -> tuple[list[dict], int
                 seen_urls[url] = c
     # Web (eCourts + DDG): only if we don't already have enough (avoids 429s when IK gives 25+)
     if len(seen_urls) < TOP_N_ACT_NAMED:
-        _web_search_act_name_and_summary(act_name, act_summary, score_query, seen_urls, max_per_query=12)
+        # Pass chunks=None; _web_search_act_name_and_summary will load them from vector store
+        _web_search_act_name_and_summary(act_name, act_summary, score_query, seen_urls, max_per_query=12, chunks=None)
     else:
         logger.info("Already have %d candidates from IK; skipping web search to avoid rate limits", len(seen_urls))
 
@@ -682,20 +887,29 @@ def _signatures_from_summary_index(summary_index: dict) -> set:
 
 
 def run_first_10_acts_flow(act_count: int) -> list[dict]:
+    """Backward-compatible wrapper. Use run_acts_range_flow(act_start, act_end) directly."""
+    return run_acts_range_flow(act_start=1, act_end=act_count)
+
+
+def run_acts_range_flow(act_start: int = 1, act_end: int = 10) -> list[dict]:
     """
-    First-N-acts flow: one summary per act (from bare act summary index or generated), one web search
-    per act (act name + summary), fetch up to MAX_FETCH_PER_ACT, score each vs whole-act summary,
-    top TOP_N_PER_ACT (10) per act. Generate case law summary for each; dedup vs act-case-law map.
+    Acts-range flow: process acts numbered act_start to act_end (1-based, inclusive) in alphabetical
+    order from the vector store. For each act: IK search + keyword web search, score, dedup, keep
+    top TOP_N_PER_ACT (25) per act. Generates case law summaries; deduplicates vs act-case-law index.
     Returns list for pending (title, source_url, signature, act_name, summary).
+
+    Examples:
+      run_acts_range_flow(1, 10)   → first 10 acts (same as old run_first_10_acts_flow(10))
+      run_acts_range_flow(32, 78)  → acts 32 to 78 in alphabetical order
     """
     from retrieval.tiered_search import tiered_search
 
     summary_index = load_summary_index()
     index_signatures = _signatures_from_summary_index(summary_index)
     all_items = []
-    acts = get_first_n_acts_from_vector_store(act_count)
+    acts = get_acts_from_vector_store(act_start=act_start, act_end=act_end)
     if not acts:
-        logger.warning("No acts found in vector store")
+        logger.warning("No acts found in vector store for range %d-%d", act_start, act_end)
         return []
 
     for act_info in acts:
@@ -707,8 +921,17 @@ def run_first_10_acts_flow(act_count: int) -> list[dict]:
 
         scored = []
         seen_urls = {}
-        # Indian Kanoon: act name, then summary
-        for query in [act_name.strip(), (act_summary or "")[:1500].strip()]:
+
+        # Extract legal keywords from act chunks (available in this flow)
+        act_keywords = _extract_act_keywords(act_name, chunks)
+        keyword_query = f"{act_name} {act_keywords}".strip() if act_keywords else ""
+
+        # Indian Kanoon: (1) act name, (2) act name + legal keywords
+        # Replaces old raw markdown summary query that caused IK 502s / 400s on all search engines
+        ik_queries = [act_name.strip()]
+        if keyword_query and keyword_query.strip() != act_name.strip():
+            ik_queries.append(keyword_query[:200])
+        for query in ik_queries:
             if not query:
                 continue
             ik_list = _indian_kanoon_candidates(query, max_results=MAX_FETCH_PER_ACT, include_content=True)
@@ -720,10 +943,13 @@ def run_first_10_acts_flow(act_count: int) -> list[dict]:
                     seen_urls[url] = c
         scored = list(seen_urls.values())
 
-        # Web: search with act name, then with summary (merge by URL)
+        # Web: act name, then keyword-enriched query (no raw markdown summary)
         if len(scored) < TOP_N_PER_ACT:
             time.sleep(1.0)
-            for query in [act_name.strip(), (act_summary or "")[:1500].strip()]:
+            web_queries = [act_name.strip()]
+            if keyword_query and keyword_query.strip() != act_name.strip():
+                web_queries.append(keyword_query[:150])
+            for query in web_queries:
                 if not query:
                     continue
                 time.sleep(0.5)
@@ -732,6 +958,7 @@ def run_first_10_acts_flow(act_count: int) -> list[dict]:
                     search_type="case_law",
                     jurisdiction_state="Telangana",
                     max_per_tier=10,
+                    discovery_mode=True,  # Don't short-circuit at 5 results
                 )
                 for r in results[:MAX_FETCH_PER_ACT]:
                     url = (r.get("url") or "").strip()
@@ -777,15 +1004,17 @@ def run_first_10_acts_flow(act_count: int) -> list[dict]:
 def run(user_message: str) -> dict:
     """
     Main entry: interpret message, run the chosen flow, append results to pending store.
-    Returns { "flow_type", "topic" or "act_count", "added": int, "pending_total": int, "message" }.
+    Returns { "flow_type", "act_start", "act_end", "added": int, "pending_total": int, "message" }.
     """
     interpreted = interpret_user_input(user_message)
     flow_type = interpreted.get("flow_type", "statement")
     added = 0
     duplicates_discarded = None
     if flow_type == "first_10_acts":
-        act_count = interpreted.get("act_count") or 10
-        items = run_first_10_acts_flow(act_count)
+        act_start = int(interpreted.get("act_start") or 1)
+        act_end = int(interpreted.get("act_end") or interpreted.get("act_count") or 10)
+        logger.info("Acts-range flow: processing acts %d to %d (alphabetical order)", act_start, act_end)
+        items = run_acts_range_flow(act_start=act_start, act_end=act_end)
         if items:
             pending = load_pending()
             for it in items:
@@ -875,7 +1104,8 @@ def run(user_message: str) -> dict:
     return {
         "flow_type": flow_type,
         "topic": interpreted.get("topic"),
-        "act_count": interpreted.get("act_count"),
+        "act_start": interpreted.get("act_start"),
+        "act_end": interpreted.get("act_end"),
         "added": added,
         "pending_total": len(pending),
         "duplicates_discarded": duplicates_discarded,

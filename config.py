@@ -89,13 +89,12 @@ TIER2_OFFICIAL_COURT_DOMAINS = (
     "egazette.nic.in",
     "lawcommissionofindia.nic.in",
    
-    #Courts 
-    "https://judgments.ecourts.gov.in/",
+    #Courts
+    "judgments.ecourts.gov.in",
     "main.sci.gov.in",
     "sci.gov.in",
     "api.sci.gov.in",
-    "https://tshc.gov.in/ehcr/",
-    "https://tshc.gov.in/ehcr/act",
+    "tshc.gov.in",          # Telangana State High Court (current domain)
 )
 
 # Tier 3: Trusted legal portals
@@ -193,7 +192,7 @@ HC_DOMAIN_BY_STATE = {
     "haryana": "highcourtchd.gov.in",
     "chandigarh": "highcourtchd.gov.in",
     "andhra pradesh": "phc.gov.in",
-    "telangana": "ghconline.gov.in",
+    "telangana": "tshc.gov.in",          # Telangana State High Court (ghconline.gov.in is defunct)
     "rajasthan": "hcraj.nic.in",
     "jharkhand": "jharkhandhighcourt.nic.in",
     "odisha": "orissahighcourt.nic.in",

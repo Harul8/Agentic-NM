@@ -276,6 +276,59 @@ Output ONLY valid JSON with no preamble:
 {{ "queries": [ {{ "query": "broad search phrase", "type": "bare_act" }}, ... ] }}
 Use type "bare_act" for acts/laws; "case_law" only if they asked for judgments. Minimum 4 queries, maximum 8."""
 
+# ---------------------------------------------------------------------------
+# DISPUTE DECOMPOSITION — break a composite query into distinct legal grievances
+# ---------------------------------------------------------------------------
+
+DISPUTE_DECOMPOSITION_PROMPT = """You are a senior Indian advocate. The client has described a legal situation that may contain multiple distinct grievances.
+
+CLIENT'S SITUATION:
+{query}
+
+TASK: Identify the distinct dispute components. Each component is a separate legal grievance requiring its own research.
+
+Common dispute types:
+- Physical harm (assault, grievous hurt, injuries)
+- Property rights violations (eviction, possession, encroachment, trespass)
+- Criminal offences (theft, cheating, fraud, forgery)
+- Contract/agreement breaches
+- Domestic disputes (maintenance, custody, matrimonial)
+- Employment disputes (wrongful termination, wages, harassment)
+- Consumer disputes (defective goods, deficient services)
+
+OUTPUT: Valid JSON only, no preamble or explanation:
+{{"disputes": [{{"id": "d1", "dispute": "one-sentence description of this specific grievance", "legal_nature": "criminal|civil|both", "keywords": ["legally meaningful keyword 1", "keyword 2", "Act name if known", "section if known"]}}]}}
+
+RULES:
+- Capture ALL distinct disputes present — do not cap or omit any grievance.
+- Each dispute must be genuinely distinct in law — different statutes or different reliefs apply.
+- Do NOT group unrelated grievances just to reduce the count. Each separate legal harm deserves its own entry.
+- If the situation has only one grievance, output exactly 1 dispute.
+- Keywords must be legally meaningful: act names, legal concepts, BNS/IPC section numbers if you know them.
+- Output ONLY valid JSON. No preamble, no trailing text."""
+
+
+# Lightweight sufficiency check for bare acts covering one dispute component
+BARE_ACT_DISPUTE_SUFFICIENCY_PROMPT = """You are a senior Indian advocate.
+
+DISPUTE: {dispute}
+
+RETRIEVED BARE ACT SECTIONS:
+{bare_acts}
+
+QUESTION: Do the retrieved sections sufficiently cover the key statutory provisions needed to advise on this specific dispute?
+
+Answer "sufficient" if the main applicable provisions are present (even if not exhaustive).
+Answer "not sufficient" if clearly important provisions for this dispute type are missing.
+
+OUTPUT: One line of valid JSON only:
+{{"sufficient": true, "reason": "<max 15 words why>"}}
+or
+{{"sufficient": false, "reason": "<max 15 words what is missing>"}}
+
+Be decisive. Lean toward sufficient=true if relevant sections are present. Output ONLY valid JSON."""
+
+
 EXTRACT_BARE_ACT_PORTIONS_SYSTEM = """Extract ONLY the statutory provisions from this legal document that apply to the case facts.
 Include: section numbers, definitions, and substantive provisions. Exclude: preamble, footnotes, unrelated sections.
 Keep 2-4 paragraphs. Use clear headings if helpful (e.g. "Relevant provision")."""

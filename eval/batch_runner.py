@@ -22,8 +22,31 @@ import logging
 import os
 import sys
 import time
+import signal
+from contextlib import contextmanager
 from datetime import datetime
 from typing import Optional
+
+# ---------------------------------------------------------------------------
+# Timeout helper — prevents a single hung LLM call from stalling the batch
+# ---------------------------------------------------------------------------
+
+LLM_TIMEOUT_SECONDS = 120  # 2 minutes max per LLM call
+
+
+@contextmanager
+def time_limit(seconds: int, label: str = "operation"):
+    """Context manager that raises TimeoutError if block exceeds `seconds`."""
+    def _handler(signum, frame):
+        raise TimeoutError(f"{label} timed out after {seconds}s")
+
+    old_handler = signal.signal(signal.SIGALRM, _handler)
+    signal.alarm(seconds)
+    try:
+        yield
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, old_handler)
 
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -32,6 +55,60 @@ from config import BARE_INDEX_V2, BARE_CHUNKS_V2, BARE_BM25_INDEX
 from config import CASE_INDEX_V2, CASE_CHUNKS_V2, CASE_BM25_INDEX
 
 logger = logging.getLogger("eval.batch_runner")
+
+
+# ---------------------------------------------------------------------------
+# Pre-flight validation — fail fast before wasting time on 100 queries
+# ---------------------------------------------------------------------------
+
+def validate_data_files(mode: str) -> bool:
+    """
+    Check that all required index files exist before running any queries.
+    Prints a clear report and returns False if anything is missing.
+
+    This prevents the silent failure where all 100 queries return empty results
+    because the data root path is wrong or the index hasn't been built yet.
+    """
+    from config import (
+        BARE_INDEX_V2, BARE_CHUNKS_V2, BARE_BM25_INDEX,
+        CASE_INDEX_V2, CASE_CHUNKS_V2, CASE_BM25_INDEX,
+    )
+
+    # Which files are needed per mode
+    always_needed = [
+        ("Bare Acts FAISS index",   BARE_INDEX_V2),
+        ("Bare Acts chunk store",   BARE_CHUNKS_V2),
+        ("Case Laws FAISS index",   CASE_INDEX_V2),
+        ("Case Laws chunk store",   CASE_CHUNKS_V2),
+    ]
+    bm25_needed = [
+        ("Bare Acts BM25 index",    BARE_BM25_INDEX),
+        ("Case Laws BM25 index",    CASE_BM25_INDEX),
+    ]
+
+    checks = list(always_needed)
+    if mode not in ("faiss_only",):
+        checks += bm25_needed
+
+    missing = []
+    print("\n=== PRE-FLIGHT DATA FILE CHECK ===")
+    for label, path in checks:
+        exists = os.path.exists(path)
+        size_kb = os.path.getsize(path) / 1024 if exists else 0
+        status = f"OK   ({size_kb:,.0f} KB)" if exists else "MISSING"
+        print(f"  [{status:>20}]  {label}")
+        print(f"                           {path}")
+        if not exists:
+            missing.append((label, path))
+
+    if missing:
+        print(f"\n  *** PREFLIGHT FAILED: {len(missing)} required file(s) are missing ***")
+        print("  Fix: Run the ingestion pipeline to build the v2 index before evaluating.")
+        print("  Hint: Check that NYAYMALAW_DATA_ROOT in .env points to your data folder.\n")
+        return False
+
+    print(f"\n  All {len(checks)} required files found. Proceeding with mode='{mode}'.\n")
+    return True
 
 
 # ---------------------------------------------------------------------------
@@ -184,12 +261,16 @@ def _run_full_pipeline(query: str, intent: str, result_count: Optional[int], mod
     final_response = None
     if mode in ("full_pipeline", "no_internet"):
         try:
-            final_response = generate_response_v2(
-                query,
-                jurisdiction_state="",
-                intent=intent,
-                result_count=result_count,
-            )
+            with time_limit(LLM_TIMEOUT_SECONDS, label="generate_response_v2"):
+                final_response = generate_response_v2(
+                    query,
+                    jurisdiction_state="",
+                    intent=intent,
+                    result_count=result_count,
+                )
+        except TimeoutError as e:
+            logger.error(f"LLM call timed out after {LLM_TIMEOUT_SECONDS}s: {e}")
+            final_response = {"error": f"timeout: {e}"}
         except Exception as e:
             logger.error(f"Pipeline failed for query: {e}")
             final_response = {"error": str(e)}
@@ -249,6 +330,10 @@ def _sanitize_response(resp: dict) -> dict:
 
 def run_batch(queries_path: str, output_dir: str, mode: str = "full_pipeline"):
     """Run all queries and save results."""
+    # Pre-flight: abort immediately if required data files are missing
+    if not validate_data_files(mode):
+        sys.exit(1)
+
     with open(queries_path, encoding="utf-8") as f:
         queries = json.load(f)
 
