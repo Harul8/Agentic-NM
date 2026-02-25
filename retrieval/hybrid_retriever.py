@@ -14,6 +14,7 @@ import os
 import json
 import logging
 import math
+import re
 import numpy as np
 import faiss
 from typing import Optional
@@ -70,6 +71,98 @@ def score_query_document(query: str, document_text: str) -> float:
     except Exception as e:
         logger.warning(f"Cross-encoder score failed: {e}")
         return 0.0
+
+
+# ---------------------------------------------------------------------------
+# P4: Legal-term overlap boost
+# ---------------------------------------------------------------------------
+# Extracts section numbers and act names from the query and checks how many
+# appear verbatim in the document. Returns a value in [0, 1] representing
+# the overlap ratio — added to the cross-encoder score with a configurable weight.
+#
+# Why this works better than ms-marco alone for legal text:
+#   - ms-marco was trained on web passages, not legal judgments
+#   - A judgment that cites "section 302 IPC" is MUCH more relevant to a query
+#     about "IPC section 302 murder" than one that only mentions "punishment"
+#   - The boost nudges that judgment above similarly-scored generic passages
+
+_RE_SECTION_IN_QUERY = re.compile(r'\bsec(?:tion)?\.?\s*(\d+[a-zA-Z]*)', re.IGNORECASE)
+_RE_ACT_IN_QUERY = re.compile(r'\b([a-zA-Z][a-zA-Z\s]{3,40}(?:act|code|sanhita|rules|order))\b', re.IGNORECASE)
+
+
+def legal_term_boost(query: str, text: str) -> float:
+    """
+    Return a boost value in [0, 1] based on how many legal terms from the query
+    (section numbers + act/code names) appear in the document text.
+
+    Used as: final_score = ce_score + LEGAL_TERM_BOOST_WEIGHT * legal_term_boost(query, text)
+    """
+    if not query or not text:
+        return 0.0
+    query_lower = query.lower()
+    text_lower = text.lower()
+
+    # Extract section numbers (e.g. "302", "498a", "13b")
+    sec_nums = [m.group(1).lower() for m in _RE_SECTION_IN_QUERY.finditer(query_lower)]
+    # Extract act/code names (e.g. "indian penal code", "protection of women act")
+    act_terms = [m.group(1).lower().strip() for m in _RE_ACT_IN_QUERY.finditer(query_lower)]
+    # Deduplicate
+    act_terms = list(dict.fromkeys(act_terms))
+
+    total = len(sec_nums) + len(act_terms)
+    if total == 0:
+        return 0.0
+
+    matches = 0
+    for sec in sec_nums:
+        # Match "section 302", "s. 302", "302 ipc" patterns in text
+        if re.search(r'\bsec(?:tion)?\.?\s*' + re.escape(sec) + r'\b', text_lower):
+            matches += 1
+        elif re.search(r'\b' + re.escape(sec) + r'\s+(?:ipc|crpc|cpc|iea|mvact)\b', text_lower):
+            matches += 1
+    for term in act_terms:
+        if len(term) >= 6 and term in text_lower:
+            matches += 1
+
+    return matches / total
+
+
+# ---------------------------------------------------------------------------
+# P2: Judgment-type filter for local case law index
+# ---------------------------------------------------------------------------
+# Rejects interlocutory orders, summons, and notices from local case law search results.
+# Mirrors the same filter in case_law_discovery/workflow.py.
+
+_RE_INTERLOCUTORY_LOCAL = re.compile(
+    r'\b('
+    r'interlocutory\s+application'
+    r'|i\.a\.\s*(?:no\.?\s*)?\d'
+    r'|office\s+report'
+    r'|listing\s+order'
+    r'|defect\s+(?:no\.?|notice)'
+    r'|show\s+cause\s+notice'
+    r'|writ\s+of\s+summons'
+    r'|chamber\s+summons'
+    r'|office\s+objection'
+    r'|this\s+is\s+not\s+a\s+judgment'
+    r'|adjournment\s+(?:order|application)'
+    r'|returnable\s+(?:on|before)'
+    r')',
+    re.IGNORECASE,
+)
+
+
+def _is_final_judgment_chunk(chunk: dict) -> bool:
+    """
+    Return True if a local case law chunk looks like a final judgment.
+    Checks chunk title + first 1200 chars of text for interlocutory markers.
+    """
+    title = (chunk.get("case_name") or chunk.get("title") or chunk.get("source") or "")
+    text = (
+        chunk.get("search_text") or chunk.get("full_text") or chunk.get("text") or ""
+    )[:1200]
+    combined = (title + " " + text).lower()
+    return not _RE_INTERLOCUTORY_LOCAL.search(combined)
 
 
 # ---------------------------------------------------------------------------
@@ -334,6 +427,11 @@ def hybrid_search(
         return []
 
     try:
+        from config import LEGAL_TERM_BOOST_WEIGHT
+    except Exception:
+        LEGAL_TERM_BOOST_WEIGHT = 0.25
+
+    try:
         cross_encoder = _get_cross_encoder()
         pairs = [(query, text) for text in candidate_texts]
         scores = cross_encoder.predict(pairs, show_progress_bar=False)
@@ -341,11 +439,19 @@ def hybrid_search(
         # Combine with scores
         scored = []
         for i, (key, chunk) in enumerate(candidate_chunks):
-            rerank_score = float(scores[i])
+            ce_score = float(scores[i])
+            # P4: legal-term overlap boost — rewards docs that cite exact section numbers
+            # and act names from the query. Adds to the ms-marco cross-encoder score.
+            boost = 0.0
+            if LEGAL_TERM_BOOST_WEIGHT > 0:
+                boost = LEGAL_TERM_BOOST_WEIGHT * legal_term_boost(query, candidate_texts[i])
+            rerank_score = ce_score + boost
             if rerank_score >= min_rerank_score:
                 result = dict(chunk)
                 result["_chunk_key"] = key
                 result["_rerank_score"] = rerank_score
+                result["_ce_score"] = ce_score        # raw cross-encoder score
+                result["_legal_boost"] = boost        # P4 boost component
                 result["_in_faiss"] = key in faiss_candidates
                 result["_in_bm25"] = key in bm25_candidates
                 scored.append(result)
@@ -396,7 +502,7 @@ def search_bare_acts(query: str, top_k: int = 30) -> list:
 
 
 def search_case_laws(query: str, top_k: int = 30) -> list:
-    """Search case laws using hybrid retrieval."""
+    """Search case laws using hybrid retrieval (P2: filters interlocutory/procedural docs)."""
     from config import CASE_INDEX_V2, CASE_CHUNKS_V2, CASE_BM25_INDEX
     results = hybrid_search(
         query=query,
@@ -410,6 +516,11 @@ def search_case_laws(query: str, top_k: int = 30) -> list:
     )
     for r in results:
         r["source_tag"] = "LOCAL_DB"
+    # P2: filter out interlocutory/procedural documents from local case law index
+    before = len(results)
+    results = [r for r in results if _is_final_judgment_chunk(r)]
+    if len(results) < before:
+        logger.info("P2 filter: removed %d interlocutory/procedural docs from local case law results", before - len(results))
     return results
 
 

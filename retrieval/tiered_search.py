@@ -39,6 +39,30 @@ DDGS_REQUEST_DELAY_SEC = 2.0
 _ddgs_rate_lock = threading.Lock()
 _ddgs_last_call_ts: list[float] = [0.0]  # mutable list so all threads share one reference
 
+# ---------------------------------------------------------------------------
+# P5: URL text content cache — avoids re-fetching the same URL during
+# discovery (skip_index=True) and again during manual indexing.
+# Only caches text (not PDF bytes, which may be large); TTL = 2 hours.
+# ---------------------------------------------------------------------------
+_URL_CONTENT_CACHE_TTL_SEC = 7200.0  # 2 hours
+_url_content_cache: dict = {}       # url -> {"text": str, "ts": float}
+_url_cache_lock = threading.Lock()
+
+
+def _url_cache_get(url: str):
+    """Return cached text for url, or None if missing / expired."""
+    with _url_cache_lock:
+        entry = _url_content_cache.get(url)
+        if entry and (time.time() - entry["ts"]) < _URL_CONTENT_CACHE_TTL_SEC:
+            return entry["text"]
+        return None
+
+
+def _url_cache_set(url: str, text: str) -> None:
+    """Store text in the URL content cache."""
+    with _url_cache_lock:
+        _url_content_cache[url] = {"text": text, "ts": time.time()}
+
 
 # ---------------------------------------------------------------------------
 # Domain Classification
@@ -100,7 +124,8 @@ def is_blocked_source(url: str) -> bool:
 
 
 # Only these tiers are allowed in search results. Order: official → legal portals → newspapers; stop there.
-ALLOWED_TIERS = ("tier2_official", "tier3_legal_portal", "tier4_newspaper")
+# Only official sources (courts, India Code); legal portals and newspapers removed.
+ALLOWED_TIERS = ("tier2_official",)
 
 
 def get_source_tag(url: str) -> str:
@@ -252,106 +277,6 @@ def search_tier2_official(
     return unique
 
 
-def search_tier3_legal_portals(query: str, max_results: int = 10, search_type: str = "both") -> list:
-    """
-    Tier 3: Search trusted legal portals.
-    search_type: "bare_act" = bare act / act pages only; "case_law" = judgment/case law; "both" = mixed.
-    """
-    results = []
-    if search_type == "bare_act":
-        portals = [
-            ("indiankanoon.org", "bare act section"),
-            ("indiankanoon.org", "act"),
-        ]
-        for domain, suffix in portals:
-            portal_query = f"{query} site:{domain} {suffix}"
-            portal_results = _ddgs_search(portal_query, max_results=max_results)
-            for r in portal_results:
-                if not is_blocked_source(r["url"]):
-                    r["source_tag"] = "LEGAL_PORTAL"
-                    r["tier"] = 3
-                    results.append(r)
-        general_query = f"{query} India bare act section"
-    elif search_type == "case_law":
-        portals = [
-            ("indiankanoon.org", "judgment case law"),
-            ("livelaw.in", "judgment legal news"),
-            ("scobserver.in", "supreme court analysis"),
-            ("barandbench.com", "legal news judgment"),
-        ]
-        for domain, suffix in portals:
-            portal_query = f"{query} site:{domain} {suffix}"
-            portal_results = _ddgs_search(portal_query, max_results=max_results // 2)
-            for r in portal_results:
-                if not is_blocked_source(r["url"]):
-                    r["source_tag"] = "LEGAL_PORTAL"
-                    r["tier"] = 3
-                    results.append(r)
-        general_query = f"{query} India judgment bare act section"
-    else:
-        portals = [
-            ("indiankanoon.org", "judgment case law"),
-            ("livelaw.in", "judgment legal news"),
-            ("scobserver.in", "supreme court analysis"),
-            ("barandbench.com", "legal news judgment"),
-        ]
-        for domain, suffix in portals:
-            portal_query = f"{query} site:{domain} {suffix}"
-            portal_results = _ddgs_search(portal_query, max_results=max_results // 2)
-            for r in portal_results:
-                if not is_blocked_source(r["url"]):
-                    r["source_tag"] = "LEGAL_PORTAL"
-                    r["tier"] = 3
-                    results.append(r)
-        general_query = f"{query} India judgment bare act section"
-
-    # General search filtered to allowed portals
-    general_results = _ddgs_search(general_query, max_results=max_results)
-    for r in general_results:
-        tier = classify_source(r["url"])
-        if tier == "tier3_legal_portal":
-            r["source_tag"] = "LEGAL_PORTAL"
-            r["tier"] = 3
-            results.append(r)
-
-    # Deduplicate
-    seen = set()
-    unique = []
-    for r in results:
-        if r["url"] not in seen:
-            seen.add(r["url"])
-            unique.append(r)
-
-    logger.info(f"Tier 3 search: {len(unique)} results for '{query[:80]}'")
-    return unique
-
-
-def search_tier4_newspapers(query: str, max_results: int = 5) -> list:
-    """
-    Tier 4: Search mainstream newspapers (context only, NOT legal authority).
-    """
-    results = []
-    news_query = f"{query} India court verdict legal"
-    news_results = _ddgs_search(news_query, max_results=max_results * 2)
-    for r in news_results:
-        tier = classify_source(r["url"])
-        if tier == "tier4_newspaper":
-            r["source_tag"] = "NEWS_REFERENCE"
-            r["tier"] = 4
-            results.append(r)
-
-    # Deduplicate
-    seen = set()
-    unique = []
-    for r in results:
-        if r["url"] not in seen:
-            seen.add(r["url"])
-            unique.append(r)
-
-    logger.info(f"Tier 4 search: {len(unique)} results for '{query[:80]}'")
-    return unique[:max_results]
-
-
 def tiered_search(
     query: str,
     search_type: str = "both",
@@ -360,31 +285,22 @@ def tiered_search(
     discovery_mode: bool = False,
 ) -> list:
     """
-    Execute web search in strict order: Official → Legal portals → Newspapers. Stop there.
-
-    Order is never reversed or skipped (except early exit when we have enough):
-      1. Official sources (Tier 2): courts, India Code, legislative.gov.in
-      2. Legal portals (Tier 3): only if needed
-      3. Newspapers (Tier 4): only if still needed
-    No other sources are used. Results are filtered to ALLOWED_TIERS only.
+    Execute web search using only official sources (eCourts + Tier 2: courts, India Code).
+    Legal portals and newspapers have been removed; all callers get official-only results.
 
     Args:
         query: Search query (e.g. from sufficiency analysis or case law discovery)
         search_type: "bare_act", "case_law", or "both"
         jurisdiction_state: State for HC-specific search (e.g., "Telangana", "Karnataka")
         max_per_tier: Max results to fetch per tier
-        discovery_mode: When True (bulk case law discovery), raises the Tier 2 early-exit
-            threshold from 5 to 20 so Tier 3 (Indian Kanoon, Live Law) is always searched.
-            Use False (default) for live query pipeline where speed matters.
+        discovery_mode: Unused (kept for API compatibility).
 
     Returns:
-        List of search results, each with source_tag and tier. Only official, legal_portal, newspaper.
+        List of search results, each with source_tag and tier. Only official (tier2_official).
     """
     all_results = []
-    # Early-exit threshold: higher in discovery mode so we always search legal portals (Tier 3)
-    tier2_exit_threshold = 30 if discovery_mode else 5
 
-    # 0) Case law only: eCourts (judgments.ecourts.gov.in) first — Supreme Court + High Court Telangana
+    # 0) Case law only: eCourts (judgments.ecourts.gov.in) — Supreme Court + High Court
     if search_type == "case_law":
         try:
             from retrieval.ecourts_client import search_ecourts_both_courts
@@ -400,35 +316,22 @@ def tiered_search(
         time.sleep(2)
     tier2 = search_tier2_official(query, jurisdiction_state, max_per_tier, search_type=search_type)
     all_results.extend(tier2)
-    if search_type == "case_law" and len(all_results) >= tier2_exit_threshold:
-        logger.info("Tier 2 (official) provided %d case law results; skipping legal portals and newspapers (threshold=%d, discovery_mode=%s)",
-                    len(tier2), tier2_exit_threshold, discovery_mode)
-        return _filter_and_dedupe(all_results)
 
-    # 2) Legal portals only if we need more
-    tier3 = search_tier3_legal_portals(query, max_per_tier, search_type=search_type)
-    all_results.extend(tier3)
-    if len(all_results) >= (20 if discovery_mode else 8):
-        logger.info("Tiers 2+3 provided %d results; skipping newspapers", len(all_results))
-        return _filter_and_dedupe(all_results)
-
-    # 3) Newspapers only if still needed; then stop (no further sources)
-    tier4 = search_tier4_newspapers(query, max_per_tier // 2)
-    all_results.extend(tier4)
-    logger.info("Tiered search complete: official=%d, legal_portal=%d, newspaper=%d", len(tier2), len(tier3), len(tier4))
+    logger.info("Tiered search complete (official only): %d results", len(all_results))
     return _filter_and_dedupe(all_results)
 
 
-def _filter_and_dedupe(results: list) -> list:
+def _filter_and_dedupe(results: list, allowed_tiers: tuple = None) -> list:
     """
-    Keep only allowed tiers (official, legal portals, newspapers); remove duplicates.
-    Ensures we never return blocked, unknown, or any source outside Tier 2/3/4.
+    Keep only allowed tiers; remove duplicates. Default is official only (tier2_official).
+    When allowed_tiers is set, only those tiers are kept.
     """
+    tiers = allowed_tiers if allowed_tiers is not None else ALLOWED_TIERS
     seen = set()
     filtered = []
     for r in results:
         url = r.get("url", "")
-        if not url or classify_source(url) not in ALLOWED_TIERS:
+        if not url or classify_source(url) not in tiers:
             continue
         if url in seen:
             continue
@@ -456,12 +359,22 @@ def fetch_content_and_pdf(url: str, timeout: int = 30) -> tuple:
 
     If URL points to a PDF, downloads it and extracts text.
     If URL points to HTML, extracts readable text.
+
+    P5: Text content (not PDF bytes) is cached for _URL_CONTENT_CACHE_TTL_SEC so the same
+    URL is not re-fetched when a document is first discovered (skip_index=True) and then
+    manually indexed shortly after.
     """
     import requests
 
     # SCI certificate is for api.sci.gov.in; www causes SSL hostname mismatch
     if "www.api.sci.gov.in" in url:
         url = url.replace("www.api.sci.gov.in", "api.sci.gov.in")
+
+    # P5: Return cached text immediately (PDF bytes not cached — they may be large)
+    cached_text = _url_cache_get(url)
+    if cached_text is not None:
+        logger.debug("URL content cache hit: %s", url[:80])
+        return cached_text, None
 
     # tshc.gov.in uses a cert not in Python's certifi bundle (works fine in browsers)
     ssl_verify = False if "tshc.gov.in" in url else True
@@ -506,7 +419,11 @@ def fetch_content_and_pdf(url: str, timeout: int = 30) -> tuple:
                     logger.info("Extracted PDF text using pypdf fallback")
             except Exception as e2:
                 logger.warning(f"pypdf fallback failed for PDF at {url}: {e2}")
-        return (text.strip(), pdf_bytes) if text.strip() else ("", pdf_bytes)
+        result_text = text.strip()
+        # P5: Cache extracted PDF text (not the raw bytes)
+        if result_text:
+            _url_cache_set(url, result_text)
+        return (result_text, pdf_bytes) if result_text else ("", pdf_bytes)
 
     # HTML
     if "html" in content_type or "text" in content_type:
@@ -522,10 +439,15 @@ def fetch_content_and_pdf(url: str, timeout: int = 30) -> tuple:
             pdf_bytes = None
             if pdf_link:
                 pdf_bytes = _download_pdf(pdf_link, timeout)
+            # P5: Cache the extracted HTML text
+            if text:
+                _url_cache_set(url, text)
             return text, pdf_bytes
         except Exception as e:
             logger.warning(f"Failed to parse HTML from {url}: {e}")
-            return response.text[:5000], None
+            fallback = response.text[:5000]
+            _url_cache_set(url, fallback)
+            return fallback, None
 
     return "", None
 

@@ -90,6 +90,8 @@ def search(query: str, pagenum: int = 0, max_results: int = 20, token: str | Non
             "title": title,
             "headline": d.get("headline", ""),
             "docsource": d.get("docsource", ""),
+            # P0: citation count for quality multiplier; P5: docsource for court-tier pre-sort
+            "numciting": int(d.get("numciting") or 0),
             "url": f"https://indiankanoon.org/doc/{tid}/",
         })
     return results

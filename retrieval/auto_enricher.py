@@ -14,6 +14,8 @@ import os
 import re
 import json
 import logging
+import hashlib
+import threading
 from typing import Optional
 
 from config import (
@@ -32,6 +34,61 @@ from retrieval.tiered_search import classify_source, fetch_content_and_pdf
 from retrieval.case_law_filename import suggest_case_law_basename
 
 logger = logging.getLogger(__name__)
+
+
+# ---------------------------------------------------------------------------
+# P0: Batch-indexing mode — defer BM25 rebuilds until end of batch
+# ---------------------------------------------------------------------------
+_batch_lock = threading.Lock()
+_batch_mode: bool = False
+_bm25_dirty: dict = {}  # bm25_json_path -> chunks_json_path
+
+
+def begin_batch_indexing() -> None:
+    """Enter batch mode: BM25 rebuilds are deferred until end_batch_indexing()."""
+    global _batch_mode
+    with _batch_lock:
+        _batch_mode = True
+        _bm25_dirty.clear()
+    logger.debug("Batch indexing mode started")
+
+
+def end_batch_indexing() -> None:
+    """Exit batch mode and flush all deferred BM25 rebuilds."""
+    global _batch_mode
+    with _batch_lock:
+        _batch_mode = False
+        dirty_snapshot = dict(_bm25_dirty)
+        _bm25_dirty.clear()
+    if not dirty_snapshot:
+        return
+    from retrieval.hybrid_retriever import load_chunks, save_bm25_index, BM25
+    for bm25_path, chunks_path in dirty_snapshot.items():
+        try:
+            existing_chunks = load_chunks(chunks_path)
+            all_texts = [
+                existing_chunks[k].get("search_text") or existing_chunks[k].get("full_text") or existing_chunks[k].get("text") or ""
+                for k in sorted(existing_chunks.keys(), key=int)
+            ]
+            bm25 = BM25()
+            bm25.fit(all_texts)
+            save_bm25_index(bm25, bm25_path)
+            logger.info("Flushed BM25 for %s (%d docs)", bm25_path, len(all_texts))
+        except Exception as e:
+            logger.warning("BM25 flush failed for %s: %s", bm25_path, e)
+    logger.debug("Batch indexing ended; %d BM25 index(es) rebuilt", len(dirty_snapshot))
+
+
+# ---------------------------------------------------------------------------
+# P1: Index write lock — serialises FAISS + JSON writes for parallel indexing
+# ---------------------------------------------------------------------------
+_index_write_lock = threading.Lock()
+
+
+# ---------------------------------------------------------------------------
+# P2: LLM classification cache — avoid re-calling LLM for same document text
+# ---------------------------------------------------------------------------
+_act_classify_cache: dict = {}  # sha256(text[:3000]) -> bool
 
 
 def _extract_text_from_pdf_bytes(pdf_bytes: bytes) -> str:
@@ -212,31 +269,39 @@ def add_chunks_to_index(
         key = str(next_id + i)
         existing_chunks[key] = chunk
 
-    # Save FAISS
-    os.makedirs(os.path.dirname(faiss_index_path), exist_ok=True)
-    safe_write_faiss(faiss_index, faiss_index_path)
+    # P1: Serialise FAISS + JSON writes so parallel indexing threads don't corrupt the index
+    with _index_write_lock:
+        # Save FAISS
+        os.makedirs(os.path.dirname(faiss_index_path), exist_ok=True)
+        safe_write_faiss(faiss_index, faiss_index_path)
 
-    # Save chunks JSON
-    with open(chunks_json_path, "w", encoding="utf-8") as f:
-        json.dump(existing_chunks, f, indent=2, ensure_ascii=False)
+        # P3: Save chunks JSON — compact (no indent) for faster writes on large corpora
+        with open(chunks_json_path, "w", encoding="utf-8") as f:
+            json.dump(existing_chunks, f, separators=(",", ":"), ensure_ascii=False)
 
-    # Rebuild BM25 index (full rebuild since BM25 doesn't support incremental)
-    all_texts = []
-    for key in sorted(existing_chunks.keys(), key=int):
-        chunk = existing_chunks[key]
-        text = (
-            chunk.get("search_text")
-            or chunk.get("full_text")
-            or chunk.get("text")
-            or ""
-        )
-        all_texts.append(text)
-
-    bm25 = BM25()
-    bm25.fit(all_texts)
-    save_bm25_index(bm25, bm25_json_path)
+        # P0: Rebuild BM25 — deferred in batch mode; immediate otherwise
+        with _batch_lock:
+            if _batch_mode:
+                _bm25_dirty[bm25_json_path] = chunks_json_path
+                logger.debug("BM25 rebuild deferred (batch mode) for %s", bm25_json_path)
+            else:
+                all_texts = [
+                    existing_chunks[k].get("search_text") or existing_chunks[k].get("full_text") or existing_chunks[k].get("text") or ""
+                    for k in sorted(existing_chunks.keys(), key=int)
+                ]
+                bm25 = BM25()
+                bm25.fit(all_texts)
+                save_bm25_index(bm25, bm25_json_path)
 
     logger.info(f"Added {len(valid_chunks)} chunks. Total now: {len(existing_chunks)}")
+
+    # Invalidate the signatures cache so the next duplicate check sees fresh data
+    try:
+        from services.indexing_duplicate_check import invalidate_signatures_cache
+        invalidate_signatures_cache()
+    except Exception:
+        pass  # Non-critical; cache will expire naturally via TTL
+
     return len(valid_chunks)
 
 
@@ -692,6 +757,11 @@ def _is_act_or_law(first_two_pages_text: str) -> bool:
     if not first_two_pages_text or len(first_two_pages_text.strip()) < 150:
         return True  # Too short to classify; allow (backward compat)
     text = first_two_pages_text.strip()[:3000]
+    # P2: Check in-memory cache before calling LLM
+    cache_key = hashlib.sha256(text.encode("utf-8", errors="replace")).hexdigest()
+    if cache_key in _act_classify_cache:
+        logger.debug("Act/law classification cache hit")
+        return _act_classify_cache[cache_key]
     try:
         from llm.ollama_client import ask_llm
         prompt = f"""You are classifying a legal document from India (e.g. legislative.gov.in). Below is text from the first two pages.
@@ -708,9 +778,9 @@ Document excerpt:
 
 Your one-word reply:"""
         reply = (ask_llm(prompt, timeout=60) or "").strip().upper()
-        if "ACT_OR_LAW" in reply or reply == "ACT_OR_LAW":
-            return True
-        return False
+        result = "ACT_OR_LAW" in reply or reply == "ACT_OR_LAW"
+        _act_classify_cache[cache_key] = result
+        return result
     except Exception as e:
         logger.warning("LLM act/law classification failed: %s; treating as legislation", e)
         return True  # On failure, allow (backward compat)
