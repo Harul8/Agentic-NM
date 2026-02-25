@@ -15,6 +15,7 @@ import os
 import logging
 import json
 import time
+import threading
 from typing import Optional
 
 from config import (
@@ -31,6 +32,12 @@ logger = logging.getLogger(__name__)
 
 # Small delay before each DDG request to reduce 429 (Too Many Requests) from search backends
 DDGS_REQUEST_DELAY_SEC = 2.0
+
+# Global cross-thread DDG rate limiter — ensures minimum DDGS_REQUEST_DELAY_SEC between ANY
+# DDG call across all threads. Replaces per-thread time.sleep() which allowed simultaneous
+# calls when multiple acts ran in parallel.
+_ddgs_rate_lock = threading.Lock()
+_ddgs_last_call_ts: list[float] = [0.0]  # mutable list so all threads share one reference
 
 
 # ---------------------------------------------------------------------------
@@ -122,7 +129,14 @@ def _ddgs_search(query: str, max_results: int = 10) -> list:
     Suppresses primp's internal logging to avoid noise from Wikipedia/other search engine API calls.
     """
     import logging as std_logging
-    time.sleep(DDGS_REQUEST_DELAY_SEC)
+    # Cross-thread rate limiter: enforce minimum DDGS_REQUEST_DELAY_SEC between any DDG call
+    # globally (not just within a single thread). Safe for parallel act processing.
+    with _ddgs_rate_lock:
+        now = time.time()
+        wait = DDGS_REQUEST_DELAY_SEC - (now - _ddgs_last_call_ts[0])
+        if wait > 0:
+            time.sleep(wait)
+        _ddgs_last_call_ts[0] = time.time()
     # Suppress primp's verbose logging (it logs all internal API calls to Wikipedia, Google, etc.)
     primp_logger = std_logging.getLogger("primp")
     original_level = primp_logger.level

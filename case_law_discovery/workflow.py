@@ -11,8 +11,17 @@ import os
 import re
 import sys
 import time
+import threading
 
 logger = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# Module-level locks for parallel act processing (Fix 5)
+# ---------------------------------------------------------------------------
+# Protects bare-act summary file writes and summary index file writes
+_file_write_lock = threading.Lock()
+# Protects the shared index_signatures set across parallel threads
+_signatures_lock = threading.Lock()
 
 # Project root for imports
 if __name__ == "__main__":
@@ -891,6 +900,118 @@ def run_first_10_acts_flow(act_count: int) -> list[dict]:
     return run_acts_range_flow(act_start=1, act_end=act_count)
 
 
+def _process_single_act(
+    act_info: dict,
+    stagger_idx: int,
+    stagger_seconds: float,
+    summary_index: dict,
+    index_signatures: set,
+) -> list[dict]:
+    """
+    Process one act: IK multi-page fetch + keyword web search + score + dedup.
+    Thread-safe: uses module-level _file_write_lock and _signatures_lock for shared state.
+
+    stagger_idx > 0 causes an initial sleep of (stagger_idx * stagger_seconds) to spread
+    thread DDG bursts over time and reduce rate-limit collisions.
+
+    Returns list of scored candidates for this act (content still attached for later summary gen).
+    """
+    from retrieval.tiered_search import tiered_search
+
+    if stagger_idx > 0:
+        time.sleep(stagger_idx * stagger_seconds)
+
+    act_name = act_info.get("act_name", "Unknown")
+    chunks = act_info.get("chunks", [])
+
+    # Get act summary — read from cache first; only hold the write lock when generating new
+    act_summary = get_bare_act_summary(act_name) or ""
+    if not act_summary:
+        # LLM inference happens outside the lock (parallel Ollama queue is fine)
+        act_summary = _generate_act_summary(act_name, chunks) or act_name
+        with _file_write_lock:
+            set_bare_act_summary(act_name, act_summary)
+
+    score_query = (act_name + " " + act_summary[:1500]).strip()
+    logger.info(
+        "Act %s: search with act name, then summary (IK + web), top %s judgments",
+        act_name[:50], TOP_N_PER_ACT,
+    )
+
+    seen_urls: dict = {}
+
+    # Extract legal keywords from act chunks
+    act_keywords = _extract_act_keywords(act_name, chunks)
+    keyword_query = f"{act_name} {act_keywords}".strip() if act_keywords else ""
+
+    # Indian Kanoon: (1) act name, (2) act name + legal keywords
+    ik_queries = [act_name.strip()]
+    if keyword_query and keyword_query.strip() != act_name.strip():
+        ik_queries.append(keyword_query[:200])
+    for query in ik_queries:
+        if not query:
+            continue
+        ik_list = _indian_kanoon_candidates(query, max_results=MAX_FETCH_PER_ACT, include_content=True)
+        for c in ik_list:
+            url = (c.get("source_url") or "").strip()
+            if not url:
+                continue
+            if url not in seen_urls or (c.get("score") or 0) > (seen_urls[url].get("score") or 0):
+                seen_urls[url] = c
+    scored = list(seen_urls.values())
+
+    # Web: act name then keyword-enriched query
+    if len(scored) < TOP_N_PER_ACT:
+        time.sleep(1.0)
+        web_queries = [act_name.strip()]
+        if keyword_query and keyword_query.strip() != act_name.strip():
+            web_queries.append(keyword_query[:150])
+        for query in web_queries:
+            if not query:
+                continue
+            time.sleep(0.5)
+            results = tiered_search(
+                query=query,
+                search_type="case_law",
+                jurisdiction_state="Telangana",
+                max_per_tier=10,
+                discovery_mode=True,
+            )
+            for r in results[:MAX_FETCH_PER_ACT]:
+                url = (r.get("url") or "").strip()
+                if not url or url in seen_urls:
+                    continue
+                time.sleep(0.4)
+                doc = _fetch_and_score_candidate(r, score_query, include_content=True)
+                if doc:
+                    seen_urls[url] = doc
+        scored = list(seen_urls.values())
+
+    selected = _apply_per_act_selection(scored)
+
+    # Thread-safe: check and update shared index_signatures in one atomic block
+    with _signatures_lock:
+        selected = [s for s in selected if (s.get("signature") or "") not in index_signatures]
+        by_sig: dict = {}
+        for s in selected:
+            sig = s.get("signature") or s["source_url"]
+            if sig not in by_sig or by_sig[sig]["score"] < s["score"]:
+                by_sig[sig] = s
+        selected = list(by_sig.values())
+        for s in selected:
+            if s.get("signature"):
+                index_signatures.add(s["signature"])
+
+    act_items = []
+    for s in selected:
+        if not _is_likely_document_url(s.get("source_url") or ""):
+            continue
+        s["act_name"] = act_name
+        act_items.append(s)
+
+    return act_items
+
+
 def run_acts_range_flow(act_start: int = 1, act_end: int = 10) -> list[dict]:
     """
     Acts-range flow: process acts numbered act_start to act_end (1-based, inclusive) in alphabetical
@@ -898,11 +1019,19 @@ def run_acts_range_flow(act_start: int = 1, act_end: int = 10) -> list[dict]:
     top TOP_N_PER_ACT (25) per act. Generates case law summaries; deduplicates vs act-case-law index.
     Returns list for pending (title, source_url, signature, act_name, summary).
 
+    Uses ThreadPoolExecutor(max_workers=2) for batches > 1 act. Acts are staggered 45s apart to
+    avoid simultaneous DDG bursts. Shared state (index_signatures, file writes) is protected by
+    module-level locks. Single-act requests run sequentially with no overhead.
+
     Examples:
       run_acts_range_flow(1, 10)   → first 10 acts (same as old run_first_10_acts_flow(10))
       run_acts_range_flow(32, 78)  → acts 32 to 78 in alphabetical order
     """
-    from retrieval.tiered_search import tiered_search
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    # Parallel processing config
+    MAX_PARALLEL_WORKERS = 2   # Start at 2; bump to 3 once confirmed stable on your hardware
+    STAGGER_SECONDS = 45.0     # Each thread starts its first DDG call N*45s after the previous
 
     summary_index = load_summary_index()
     index_signatures = _signatures_from_summary_index(summary_index)
@@ -912,79 +1041,37 @@ def run_acts_range_flow(act_start: int = 1, act_end: int = 10) -> list[dict]:
         logger.warning("No acts found in vector store for range %d-%d", act_start, act_end)
         return []
 
-    for act_info in acts:
-        act_name = act_info.get("act_name", "Unknown")
-        chunks = act_info.get("chunks", [])
-        act_summary = get_or_create_act_summary(act_name, chunks) or ""
-        score_query = (act_name + " " + act_summary[:1500]).strip()
-        logger.info("Act %s: search with act name, then summary (IK + web), top %s judgments", act_name[:50], TOP_N_PER_ACT)
-
-        scored = []
-        seen_urls = {}
-
-        # Extract legal keywords from act chunks (available in this flow)
-        act_keywords = _extract_act_keywords(act_name, chunks)
-        keyword_query = f"{act_name} {act_keywords}".strip() if act_keywords else ""
-
-        # Indian Kanoon: (1) act name, (2) act name + legal keywords
-        # Replaces old raw markdown summary query that caused IK 502s / 400s on all search engines
-        ik_queries = [act_name.strip()]
-        if keyword_query and keyword_query.strip() != act_name.strip():
-            ik_queries.append(keyword_query[:200])
-        for query in ik_queries:
-            if not query:
-                continue
-            ik_list = _indian_kanoon_candidates(query, max_results=MAX_FETCH_PER_ACT, include_content=True)
-            for c in ik_list:
-                url = (c.get("source_url") or "").strip()
-                if not url:
-                    continue
-                if url not in seen_urls or (c.get("score") or 0) > (seen_urls[url].get("score") or 0):
-                    seen_urls[url] = c
-        scored = list(seen_urls.values())
-
-        # Web: act name, then keyword-enriched query (no raw markdown summary)
-        if len(scored) < TOP_N_PER_ACT:
-            time.sleep(1.0)
-            web_queries = [act_name.strip()]
-            if keyword_query and keyword_query.strip() != act_name.strip():
-                web_queries.append(keyword_query[:150])
-            for query in web_queries:
-                if not query:
-                    continue
-                time.sleep(0.5)
-                results = tiered_search(
-                    query=query,
-                    search_type="case_law",
-                    jurisdiction_state="Telangana",
-                    max_per_tier=10,
-                    discovery_mode=True,  # Don't short-circuit at 5 results
-                )
-                for r in results[:MAX_FETCH_PER_ACT]:
-                    url = (r.get("url") or "").strip()
-                    if not url or url in seen_urls:
-                        continue
-                    time.sleep(0.4)
-                    doc = _fetch_and_score_candidate(r, score_query, include_content=True)
-                    if doc:
-                        seen_urls[url] = doc
-            scored = list(seen_urls.values())
-        selected = _apply_per_act_selection(scored)
-        selected = [s for s in selected if (s.get("signature") or "") not in index_signatures]
-        by_sig = {}
-        for s in selected:
-            sig = s.get("signature") or s["source_url"]
-            if sig not in by_sig or by_sig[sig]["score"] < s["score"]:
-                by_sig[sig] = s
-        selected = list(by_sig.values())
-        for s in selected:
-            if s.get("signature"):
-                index_signatures.add(s["signature"])
-        for s in selected:
-            if not _is_likely_document_url(s.get("source_url") or ""):
-                continue
-            s["act_name"] = act_name
-            all_items.append(s)  # keep content for dedup
+    if len(acts) == 1:
+        # Single act — run sequentially, no threading overhead
+        all_items.extend(
+            _process_single_act(acts[0], 0, 0.0, summary_index, index_signatures)
+        )
+    else:
+        logger.info(
+            "Parallel processing %d acts with %d workers (%.0fs stagger between starts)",
+            len(acts), MAX_PARALLEL_WORKERS, STAGGER_SECONDS,
+        )
+        with ThreadPoolExecutor(max_workers=MAX_PARALLEL_WORKERS) as executor:
+            futures = {
+                executor.submit(
+                    _process_single_act, act_info, idx, STAGGER_SECONDS, summary_index, index_signatures
+                ): act_info
+                for idx, act_info in enumerate(acts)
+            }
+            for future in as_completed(futures):
+                act_info = futures[future]
+                try:
+                    act_items = future.result()
+                    all_items.extend(act_items)
+                    logger.info(
+                        "Act '%s' completed in parallel: %d candidates",
+                        act_info.get("act_name", "?")[:50], len(act_items),
+                    )
+                except Exception as exc:
+                    logger.error(
+                        "Act '%s' failed in parallel processing: %s",
+                        act_info.get("act_name", "?")[:50], exc,
+                    )
 
     # Deduplicate vs existing index (same logic as main indexing)
     from services.indexing_duplicate_check import check_indexing_candidates
