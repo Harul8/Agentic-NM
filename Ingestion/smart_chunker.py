@@ -69,13 +69,15 @@ def extract_text_from_file(file_path: str) -> str:
 
 # Patterns to detect section headings in Indian bare acts
 _SECTION_PATTERNS = [
-    # "Section 498A." or "Section 498-A." or "Section 498A —"
+    # Pattern 1 (primary): "Section 498A." or "Section 498-A." or "Section 498A —"
     re.compile(
         r"^[\s]*(?:Section|Sec\.?|S\.)\s*(\d+[A-Za-z]?(?:-[A-Za-z])?)"
         r"[\.\s—\-:]+(.*)$",
         re.IGNORECASE | re.MULTILINE,
     ),
-    # "498A. Husband or relative..." (just number at start of line)
+    # Pattern 2 (fallback only): "498A. Husband or relative..." (just number at start of line)
+    # Only used when Pattern 1 finds nothing — otherwise numbered sub-items within a
+    # section (e.g. "1. Emasculation.") would create false section boundaries.
     re.compile(
         r"^[\s]*(\d+[A-Za-z]?(?:-[A-Za-z])?)[\.\s—\-:]+\s*([A-Z].*?)$",
         re.MULTILINE,
@@ -92,6 +94,64 @@ _SECTION_PATTERNS = [
         re.IGNORECASE | re.MULTILINE,
     ),
 ]
+
+# ---------------------------------------------------------------------------
+# Short-name aliases for common Indian acts (used to enrich search_text so
+# that queries like "BNS Section 117" retrieve the correct chunks even though
+# the act is stored as "The Bharatiya Nyaya Sanhita 2023").
+# ---------------------------------------------------------------------------
+_ACT_ALIASES: dict = {
+    "bharatiya nyaya sanhita": "BNS",
+    "bharatiya nagarik suraksha sanhita": "BNSS",
+    "bharatiya sakshya adhiniyam": "BSA",
+    "indian penal code": "IPC",
+    "code of criminal procedure": "CrPC",
+    "indian evidence act": "IEA",
+    "transfer of property act": "TP Act",
+    "specific relief act": "SRA",
+    "negotiable instruments act": "NI Act",
+    "code of civil procedure": "CPC",
+    "hindu marriage act": "HMA",
+    "registration act": "Registration Act",
+    "indian contract act": "Contract Act",
+    "consumer protection act": "Consumer Protection Act",
+    "limitation act": "Limitation Act",
+    "arbitration and conciliation act": "Arbitration Act",
+    "hindu succession act": "HSA",
+    "protection of women from domestic violence act": "PWDVA",
+    "motor vehicles act": "MV Act",
+    "income tax act": "IT Act",
+    "constitution of india": "Constitution",
+    "land acquisition act": "LA Act",
+    "right to fair compensation": "RFCTLARR Act",
+}
+
+
+def _act_alias(act_name: str) -> str:
+    """Return the short alias for an act, or empty string if none known."""
+    name_lower = act_name.lower()
+    for key, alias in _ACT_ALIASES.items():
+        if key in name_lower:
+            return alias
+    return ""
+
+
+def _filter_min_gap(starts: list, min_gap: int = 300) -> list:
+    """
+    Remove section-start candidates that are fewer than min_gap characters
+    apart from the previous accepted candidate.
+
+    This prevents numbered sub-items within a section (e.g. the list of
+    'grievous hurt' types in BNS §117, each starting with "1.", "2." …)
+    from being treated as separate section boundaries when Pattern 2 fires.
+    """
+    if not starts:
+        return starts
+    filtered = [starts[0]]
+    for s in starts[1:]:
+        if s["pos"] - filtered[-1]["pos"] >= min_gap:
+            filtered.append(s)
+    return filtered
 
 
 def _detect_act_name_from_text(text: str, filename: str) -> str:
@@ -153,25 +213,64 @@ def chunk_bare_act(text: str, filename: str = "") -> list:
     - keywords extracted from content
     """
     act_name = _detect_act_name_from_text(text, filename)
+    act_alias = _act_alias(act_name)
     chunks = []
 
-    # Find all section boundaries
+    def _title_from_match(m) -> str:
+        """Cap section title to first line, max 120 chars."""
+        raw = (m.group(2) or "").strip()
+        first_line = raw.split("\n")[0].strip()
+        return first_line[:120]
+
+    # -----------------------------------------------------------------------
+    # Find all section boundaries.
+    # Strategy:
+    #   1) Try Pattern 1 (explicit "Section X" keyword) — works for most acts.
+    #   2) Only fall back to Pattern 2 (plain number) when Pattern 1 finds
+    #      nothing at all.  This prevents numbered sub-items within a section
+    #      (e.g. "1. Emasculation." inside the grievous hurt list) from being
+    #      misidentified as new sections.
+    #   3) Apply a minimum-gap filter to Pattern 2 results as an extra guard.
+    # -----------------------------------------------------------------------
     section_starts = []
-    for pattern in _SECTION_PATTERNS[:2]:  # Only section patterns, not chapter
-        for match in pattern.finditer(text):
-            section_starts.append({
+
+    # Pattern 1: explicit "Section X" heading
+    p1_starts = []
+    for match in _SECTION_PATTERNS[0].finditer(text):
+        p1_starts.append({
+            "pos": match.start(),
+            "section_number": match.group(1).strip(),
+            "section_title": _title_from_match(match),
+            "type": "section",
+        })
+
+    if p1_starts:
+        section_starts = p1_starts
+        logger.debug(f"Pattern 1 found {len(p1_starts)} sections in {filename}")
+    else:
+        # Pattern 2 fallback: plain number at line start
+        p2_starts = []
+        for match in _SECTION_PATTERNS[1].finditer(text):
+            p2_starts.append({
                 "pos": match.start(),
                 "section_number": match.group(1).strip(),
-                "section_title": match.group(2).strip() if match.group(2) else "",
+                "section_title": _title_from_match(match),
                 "type": "section",
             })
+        # Enforce minimum gap to avoid splitting numbered sub-items
+        section_starts = _filter_min_gap(p2_starts, min_gap=300)
+        if section_starts:
+            logger.debug(
+                f"Pattern 1 found nothing; Pattern 2 fallback yielded "
+                f"{len(section_starts)} sections (after gap filter) in {filename}"
+            )
 
-    # Also find article patterns (Constitution)
+    # Also find article patterns (Constitution / state acts with Articles)
     for match in _SECTION_PATTERNS[3].finditer(text):
         section_starts.append({
             "pos": match.start(),
             "section_number": match.group(1).strip(),
-            "section_title": match.group(2).strip() if match.group(2) else "",
+            "section_title": _title_from_match(match),
             "type": "article",
         })
 
@@ -211,11 +310,14 @@ def chunk_bare_act(text: str, filename: str = "") -> list:
         sec_num = sec["section_number"]
         sec_title = sec["section_title"]
 
-        # Build a search-friendly text representation
+        # Build a search-friendly text representation.
+        # Include the short alias (e.g. "BNS") alongside the full act name so
+        # queries like "BNS Section 117" retrieve this chunk via semantic search.
+        alias_part = f" ({act_alias})" if act_alias else ""
         search_text = (
-            f"{act_name} {sec_type.title()} {sec_num}"
-            + (f" - {sec_title}" if sec_title else "")
-            + (f" ({chapter})" if chapter else "")
+            f"{act_name}{alias_part} {sec_type.title()} {sec_num}"
+            + (f" — {sec_title}" if sec_title else "")
+            + (f" [{chapter}]" if chapter else "")
             + f"\n\n{section_text}"
         )
 
@@ -237,25 +339,74 @@ def chunk_bare_act(text: str, filename: str = "") -> list:
 
 
 def _fallback_chunk(text: str, act_name: str, filename: str) -> list:
-    """Fallback: split by paragraphs when no sections are detected."""
+    """
+    Fallback: split by paragraphs when no sections are detected.
+
+    Short consecutive paragraphs (< 500 chars each) are merged together so
+    that chunks are substantive rather than single-sentence fragments.
+    Target minimum chunk size is ~500 chars; maximum ~2000 chars.
+    """
+    _MIN_CHUNK = 500
+    _MAX_CHUNK = 2000
+
     paragraphs = re.split(r"\n\s*\n", text)
+    act_alias = _act_alias(act_name)
+    alias_part = f" ({act_alias})" if act_alias else ""
+
     chunks = []
-    for i, para in enumerate(paragraphs):
-        para = para.strip()
-        if len(para) < 50:
-            continue
-        chunks.append({
-            "chunk_id": f"{_safe_id(act_name)}_para_{i}",
+    buffer = []
+    buf_len = 0
+    chunk_idx = 0
+
+    def _flush(buf, idx):
+        combined = "\n\n".join(buf).strip()
+        if len(combined) < 50:
+            return None
+        return {
+            "chunk_id": f"{_safe_id(act_name)}_para_{idx}",
             "act_name": act_name,
             "section_number": "",
             "section_title": "",
             "chapter": "",
-            "full_text": para,
-            "search_text": f"{act_name}\n\n{para}",
-            "keywords": _extract_keywords(para),
+            "full_text": combined,
+            "search_text": f"{act_name}{alias_part}\n\n{combined}",
+            "keywords": _extract_keywords(combined),
             "source_file": os.path.basename(filename),
             "doc_type": "bare_act",
-        })
+        }
+
+    for para in paragraphs:
+        para = para.strip()
+        if len(para) < 30:
+            continue
+
+        # If adding this paragraph would exceed max, flush first
+        if buf_len + len(para) > _MAX_CHUNK and buffer:
+            c = _flush(buffer, chunk_idx)
+            if c:
+                chunks.append(c)
+                chunk_idx += 1
+            buffer = []
+            buf_len = 0
+
+        buffer.append(para)
+        buf_len += len(para)
+
+        # Flush when we've reached the minimum target size
+        if buf_len >= _MIN_CHUNK:
+            c = _flush(buffer, chunk_idx)
+            if c:
+                chunks.append(c)
+                chunk_idx += 1
+            buffer = []
+            buf_len = 0
+
+    # Flush any remaining text
+    if buffer:
+        c = _flush(buffer, chunk_idx)
+        if c:
+            chunks.append(c)
+
     return chunks
 
 

@@ -40,10 +40,12 @@ function App() {
   const messagesContainerRef = useRef(null);
 
   // New interview state from snippet
-  const [stage, setStage] = useState("await_facts"); // "await_facts" | "interview" | "done"
+  const [stage, setStage] = useState("await_facts"); // "await_facts" | "interview" | "bare_acts_review" | "done"
   const [facts, setFacts] = useState("");
   const [currentQuestion, setCurrentQuestion] = useState("");
   const [qaHistory, setQaHistory] = useState([]); // [{question, answer}]
+  const [pendingBareActs, setPendingBareActs] = useState([]); // bare acts from Phase A, sent back in Phase B
+  const [pendingFactsSummary, setPendingFactsSummary] = useState(""); // facts_summary from Phase A
   const [opinionText, setOpinionText] = useState("");
   const [retrieved, setRetrieved] = useState([]);
   const [rawResponse, setRawResponse] = useState("");
@@ -54,17 +56,38 @@ function App() {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [expandedGroups, setExpandedGroups] = useState({});
 
-  // Eval section (collapsible, below chat)
-  const [evalExpanded, setEvalExpanded] = useState(false);
+  // Bottom pane: single accordion (Eval | Architecture | Updates Tracker). Default: minimal strip at bottom; can extend up to 75% of viewport.
+  const [bottomExpandedSection, setBottomExpandedSection] = useState(null); // "eval" | "architecture" | "updates" | null
+  const EVAL_PANE_MIN_HEIGHT = 6;  // very low strip (75% lower than 24px) so pane is "hidden" by default
+  const EVAL_PANE_MAX_VH = 75;     // extend up to 75% of window height
+  const [evalPaneHeight, setEvalPaneHeight] = useState(EVAL_PANE_MIN_HEIGHT);
+  const handleEvalPaneResizeMouseDown = (e) => {
+    e.preventDefault();
+    const startY = e.clientY;
+    const startHeight = evalPaneHeight;
+    const onMove = (moveEvent) => {
+      const deltaY = moveEvent.clientY - startY;
+      // Drag cursor UP (negative deltaY) → increase pane height; DOWN → decrease (so movement follows cursor)
+      let next = startHeight - deltaY;
+      if (next < EVAL_PANE_MIN_HEIGHT) next = EVAL_PANE_MIN_HEIGHT;
+      const maxPx = typeof window !== "undefined" ? window.innerHeight * (EVAL_PANE_MAX_VH / 100) : 600;
+      if (next > maxPx) next = maxPx;
+      setEvalPaneHeight(next);
+    };
+    const onUp = () => {
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseup", onUp);
+    };
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+  };
   const [evalFiles, setEvalFiles] = useState([]);
   const [evalFigures, setEvalFigures] = useState([]);
   const [evalLoaded, setEvalLoaded] = useState(null); // { path, data }
   const [evalLoading, setEvalLoading] = useState(false);
-
-  // Architecture section (collapsible, below Eval)
-  const [architectureExpanded, setArchitectureExpanded] = useState(false);
   const [architectureContent, setArchitectureContent] = useState(null);
   const [architectureLoading, setArchitectureLoading] = useState(false);
+  const [updatesRows, setUpdatesRows] = useState([]);
 
   // Pending indexing (left pane, below Chat history) — from web enrichment; user selects and clicks Index
   const [pendingIndexingCandidates, setPendingIndexingCandidates] = useState([]);
@@ -89,9 +112,37 @@ function App() {
   // Edit user message (current and old chats)
   const [editingMessageIndex, setEditingMessageIndex] = useState(null);
   const [editDraft, setEditDraft] = useState("");
+  const [actionMenuOpenIndex, setActionMenuOpenIndex] = useState(null);
+  const [copyJustDoneIndex, setCopyJustDoneIndex] = useState(null);
 
   // Left sidebar accordion: only one of Bare Acts / Case Laws / Chat history expanded at a time
   const [sidebarExpandedSection, setSidebarExpandedSection] = useState(null);
+
+  // Left pane width (resizable: 50% smaller to 50% larger than base)
+  const LEFT_COLUMN_BASE_WIDTH = 280;
+  const LEFT_COLUMN_DEFAULT_WIDTH = LEFT_COLUMN_BASE_WIDTH * 0.75; // 25% narrower by default
+  const LEFT_COLUMN_MIN_WIDTH = LEFT_COLUMN_BASE_WIDTH * 0.5;
+  const LEFT_COLUMN_MAX_WIDTH = LEFT_COLUMN_BASE_WIDTH * 1.5;
+  const [leftColumnWidth, setLeftColumnWidth] = useState(LEFT_COLUMN_DEFAULT_WIDTH);
+
+  const handleSidebarResizeMouseDown = (e) => {
+    e.preventDefault();
+    const startX = e.clientX;
+    const startWidth = leftColumnWidth;
+    const onMove = (moveEvent) => {
+      const delta = moveEvent.clientX - startX;
+      let next = startWidth + delta;
+      if (next < LEFT_COLUMN_MIN_WIDTH) next = LEFT_COLUMN_MIN_WIDTH;
+      if (next > LEFT_COLUMN_MAX_WIDTH) next = LEFT_COLUMN_MAX_WIDTH;
+      setLeftColumnWidth(next);
+    };
+    const onUp = () => {
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseup", onUp);
+    };
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+  };
 
   // Default list so the UI always shows bare acts (e.g. when API is not running yet)
   const DEFAULT_BARE_ACTS = [
@@ -320,9 +371,9 @@ function App() {
     return () => clearInterval(id);
   }, [loading]);
 
-  // Fetch eval file list and figures when eval section is expanded
+  // Fetch eval file list and figures when Eval section is expanded in bottom pane
   useEffect(() => {
-    if (!evalExpanded) return;
+    if (bottomExpandedSection !== "eval") return;
     fetch(`${API_BASE}/eval/list`)
       .then((r) => r.json())
       .then((d) => setEvalFiles(d.files || []))
@@ -331,18 +382,58 @@ function App() {
       .then((r) => r.json())
       .then((d) => setEvalFigures(d.figures || []))
       .catch(() => setEvalFigures([]));
-  }, [evalExpanded, API_BASE]);
+  }, [bottomExpandedSection, API_BASE]);
 
-  // Fetch architecture doc when Architecture section is expanded
+  // Fetch architecture doc when Architecture section is expanded in bottom pane
   useEffect(() => {
-    if (!architectureExpanded) return;
+    if (bottomExpandedSection !== "architecture") return;
     setArchitectureLoading(true);
     fetch(`${API_BASE}/docs/architecture`)
       .then((r) => r.json())
       .then((d) => setArchitectureContent(d.content ?? null))
       .catch(() => setArchitectureContent(null))
       .finally(() => setArchitectureLoading(false));
-  }, [architectureExpanded, API_BASE]);
+  }, [bottomExpandedSection, API_BASE]);
+
+  // Load Updates Tracker CSV once (for Updates section)
+  useEffect(() => {
+    fetch("/UPDATES_TRACKER.csv")
+      .then((r) => (r.ok ? r.text() : Promise.reject(new Error("Not found"))))
+      .then((text) => {
+        const lines = text.trim().split(/\r?\n/).filter((l) => l.trim());
+        if (lines.length < 2) {
+          setUpdatesRows([]);
+          return;
+        }
+        const parseCSVLine = (line) => {
+          const out = [];
+          let cur = "";
+          let inQuotes = false;
+          for (let i = 0; i < line.length; i++) {
+            const c = line[i];
+            if (c === '"') inQuotes = !inQuotes;
+            else if (c === "," && !inQuotes) {
+              out.push(cur.trim());
+              cur = "";
+            } else if (c !== "\r") {
+              cur += c;
+            }
+          }
+          out.push(cur.trim());
+          return out;
+        };
+        const headers = parseCSVLine(lines[0]);
+        const rows = lines.slice(1).map((l) => {
+          const vals = parseCSVLine(l);
+          return headers.reduce((acc, h, i) => {
+            acc[h] = vals[i] ?? "";
+            return acc;
+          }, {});
+        });
+        setUpdatesRows(rows);
+      })
+      .catch(() => setUpdatesRows([]));
+  }, []);
 
   // -------------------------
   // SSE Stream Consumer Helper
@@ -720,6 +811,31 @@ function App() {
                 timestamp: new Date().toISOString(),
               };
               setMessages((prev) => [...prev, newAssistantMsg]);
+            } else if (data.status === "bare_acts_presented") {
+              // Phase A complete: bare acts retrieved and explained. Show them + follow-up question.
+              const bareActs = Array.isArray(data.bare_acts) ? data.bare_acts : [];
+              const disputes  = Array.isArray(data.disputes)  ? data.disputes  : [];
+              const followupQ = data.followup_question || null;
+              const introText = data.opinion_text || "Here are the relevant bare act sections I found.";
+              const savedFacts = data.facts_summary || facts;
+              setPendingBareActs(bareActs);
+              setPendingFactsSummary(savedFacts);
+              setCurrentQuestion(followupQ || "");
+              setStage("bare_acts_review");
+              setMessages((prev) => [
+                ...prev,
+                {
+                  role: "assistant",
+                  content: {
+                    type: "bare_acts_preview",
+                    text: introText,
+                    disputes: disputes,
+                    bare_acts: bareActs,
+                    followup_question: followupQ,
+                  },
+                  timestamp: new Date().toISOString(),
+                },
+              ]);
             } else if (data.needs_confirmation) {
               setPendingMaterials(data.materials_to_confirm);
               setMessages((prev) => [
@@ -823,6 +939,30 @@ function App() {
                 timestamp: new Date().toISOString(),
               };
               setMessages((prev) => [...prev, newAssistantMsg]);
+            } else if (data.status === "bare_acts_presented") {
+              const bareActs = Array.isArray(data.bare_acts) ? data.bare_acts : [];
+              const disputes  = Array.isArray(data.disputes)  ? data.disputes  : [];
+              const followupQ = data.followup_question || null;
+              const introText = data.opinion_text || "Here are the relevant bare act sections I found.";
+              const savedFacts = data.facts_summary || facts;
+              setPendingBareActs(bareActs);
+              setPendingFactsSummary(savedFacts);
+              setCurrentQuestion(followupQ || "");
+              setStage("bare_acts_review");
+              setMessages((prev) => [
+                ...prev,
+                {
+                  role: "assistant",
+                  content: {
+                    type: "bare_acts_preview",
+                    text: introText,
+                    disputes: disputes,
+                    bare_acts: bareActs,
+                    followup_question: followupQ,
+                  },
+                  timestamp: new Date().toISOString(),
+                },
+              ]);
             } else if (data.needs_confirmation) {
               setPendingMaterials(data.materials_to_confirm);
               setMessages((prev) => [
@@ -842,6 +982,90 @@ function App() {
         console.error("interview_step stream error:", err);
         setError("Error during processing: " + (err.message || "Network or server error"));
         setRawResponse("Error: " + err.message);
+      } finally {
+        setLoading(false);
+      }
+      return;
+    }
+
+    // 2b) Bare acts review — user is answering the follow-up after Phase A
+    if (stage === "bare_acts_review") {
+      const updatedHistory = [
+        ...qaHistory,
+        { question: currentQuestion || "Any additional information?", answer: raw },
+      ];
+      setQaHistory(updatedHistory);
+      setCurrentQuestion("");
+
+      try {
+        await consumeSSEStream(
+          `${API_BASE}/interview_step/stream`,
+          { facts: pendingFactsSummary || facts, qa_history: updatedHistory, bare_acts: pendingBareActs },
+          (progressPayload) => {
+            setProgress(progressPayload);
+            const groups = progressPayload.groups || [];
+            if (groups.length > 0) {
+              setExpandedGroups((prev) => {
+                const next = { ...prev };
+                groups.forEach((g) => { if (g && g.name) next[g.name] = true; });
+                return next;
+              });
+            }
+          },
+          (data) => {
+            setRawResponse(JSON.stringify(data, null, 2));
+            if (data.status === "done") {
+              setStage("done");
+              setCurrentQuestion("");
+              const opinion = data.opinion_text || "";
+              const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
+              setOpinionText(opinion);
+              setRetrieved(retr);
+              applyIndexingCandidates(data);
+              if (data.progress) {
+                setProgress(data.progress);
+                const groups = (data.progress && data.progress.groups) || [];
+                if (groups.length > 0) {
+                  setExpandedGroups((prev) => {
+                    const next = { ...prev };
+                    groups.forEach((g) => { if (g && g.name) next[g.name] = false; });
+                    return next;
+                  });
+                }
+              }
+              setMessages((prev) => [
+                ...prev,
+                {
+                  role: "assistant",
+                  content: {
+                    type: "final_opinion",
+                    response_type: data.response_type || "legal_opinion",
+                    opinionText: opinion,
+                    bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
+                    case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
+                    retrieved: retr,
+                    progress: data.progress || null,
+                    model_used: data.model_used || null,
+                  },
+                  timestamp: new Date().toISOString(),
+                },
+              ]);
+              // Clean up bare acts phase state
+              setPendingBareActs([]);
+              setPendingFactsSummary("");
+            } else if (data.status === "question") {
+              setCurrentQuestion(data.next_question);
+              setStage("interview");
+              setMessages((prev) => [
+                ...prev,
+                { role: "assistant", content: data.next_question, timestamp: new Date().toISOString() },
+              ]);
+            }
+          }
+        );
+      } catch (err) {
+        console.error("bare_acts_review stream error:", err);
+        setError("Error during processing: " + (err.message || "Network or server error"));
       } finally {
         setLoading(false);
       }
@@ -933,6 +1157,30 @@ function App() {
                     retrieved: retr,
                     progress: data.progress || null,
                     model_used: data.model_used || null,
+                  },
+                  timestamp: new Date().toISOString(),
+                },
+              ]);
+            } else if (data.status === "bare_acts_presented") {
+              const bareActs = Array.isArray(data.bare_acts) ? data.bare_acts : [];
+              const disputes  = Array.isArray(data.disputes)  ? data.disputes  : [];
+              const followupQ = data.followup_question || null;
+              const introText = data.opinion_text || "Here are the relevant bare act sections I found.";
+              const savedFacts = data.facts_summary || facts;
+              setPendingBareActs(bareActs);
+              setPendingFactsSummary(savedFacts);
+              setCurrentQuestion(followupQ || "");
+              setStage("bare_acts_review");
+              setMessages((prev) => [
+                ...prev,
+                {
+                  role: "assistant",
+                  content: {
+                    type: "bare_acts_preview",
+                    text: introText,
+                    disputes: disputes,
+                    bare_acts: bareActs,
+                    followup_question: followupQ,
                   },
                   timestamp: new Date().toISOString(),
                 },
@@ -1329,10 +1577,17 @@ function App() {
   const EvalSection = () => (
     <details
       className="eval-section"
-      open={evalExpanded}
-      onToggle={(e) => setEvalExpanded(e.target.open)}
+      open={bottomExpandedSection === "eval"}
     >
-      <summary className="eval-section-summary">Eval Results</summary>
+      <summary
+        className="eval-section-summary"
+        onClick={(e) => {
+          e.preventDefault();
+          setBottomExpandedSection((prev) => (prev === "eval" ? null : "eval"));
+        }}
+      >
+        Eval Results
+      </summary>
       <div className="eval-section-body">
         {evalFiles.length === 0 ? (
           <p className="eval-message">No eval files found. Run batch eval to generate results.</p>
@@ -1388,10 +1643,19 @@ function App() {
   const ArchitectureSection = () => (
     <details
       className="architecture-section"
-      open={architectureExpanded}
-      onToggle={(e) => setArchitectureExpanded(e.target.open)}
+      open={bottomExpandedSection === "architecture"}
     >
-      <summary className="architecture-section-summary">Architecture</summary>
+      <summary
+        className="architecture-section-summary"
+        onClick={(e) => {
+          e.preventDefault();
+          setBottomExpandedSection((prev) =>
+            prev === "architecture" ? null : "architecture"
+          );
+        }}
+      >
+        Architecture
+      </summary>
       <div className="architecture-section-body">
         {architectureLoading && <p className="architecture-loading">Loading…</p>}
         {!architectureLoading && architectureContent && (
@@ -1399,8 +1663,53 @@ function App() {
             <ReactMarkdown rehypePlugins={[rehypeRaw]}>{architectureContent}</ReactMarkdown>
           </div>
         )}
-        {!architectureLoading && !architectureContent && architectureExpanded && (
+        {!architectureLoading && !architectureContent && bottomExpandedSection === "architecture" && (
           <p className="architecture-message">Could not load architecture doc.</p>
+        )}
+      </div>
+    </details>
+  );
+
+  const UpdatesTrackerSection = () => (
+    <details
+      className="updates-tracker-section"
+      open={bottomExpandedSection === "updates"}
+    >
+      <summary
+        className="updates-tracker-summary"
+        onClick={(e) => {
+          e.preventDefault();
+          setBottomExpandedSection((prev) => (prev === "updates" ? null : "updates"));
+        }}
+      >
+        Updates Tracker
+      </summary>
+      <div className="updates-tracker-body">
+        {updatesRows.length === 0 ? (
+          <p className="eval-message">
+            No updates data. Ensure UPDATES_TRACKER.csv is present in the project root / Frontend/public.
+          </p>
+        ) : (
+          <div className="updates-tracker-table-wrap">
+            <table className="eval-table">
+              <thead>
+                <tr>
+                  {Object.keys(updatesRows[0] || {}).map((k) => (
+                    <th key={k}>{k}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {updatesRows.map((row, i) => (
+                  <tr key={i}>
+                    {Object.keys(updatesRows[0] || {}).map((k) => (
+                      <td key={k}>{row[k] ?? ""}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
       </div>
     </details>
@@ -1424,10 +1733,23 @@ function App() {
     return toApiContent(msg);
   };
 
-  const handleCopyMessage = (msg) => {
+  const handleCopyMessage = (msg, messageIndex) => {
     const str = getMessageTextForCopy(msg);
-    navigator.clipboard.writeText(str).then(() => { /* optional: toast */ }).catch(() => {});
+    navigator.clipboard.writeText(str).then(() => {
+      setCopyJustDoneIndex(messageIndex);
+      setActionMenuOpenIndex(null);
+      setTimeout(() => setCopyJustDoneIndex(null), 1500);
+    }).catch(() => {});
   };
+
+  useEffect(() => {
+    if (actionMenuOpenIndex == null) return;
+    const close = (e) => {
+      if (!e.target.closest(".message-action-menu-wrap")) setActionMenuOpenIndex(null);
+    };
+    document.addEventListener("mousedown", close);
+    return () => document.removeEventListener("mousedown", close);
+  }, [actionMenuOpenIndex]);
 
   const startEditUserMessage = (index) => {
     const msg = messages[index];
@@ -1580,6 +1902,164 @@ function App() {
     }
     if (content.type === "indexed") { // Added for indexed message type
       return <p className="message-indexed">{content.text}</p>;
+    }
+    if (content.type === "bare_acts_preview") {
+      const disputes  = content.disputes  || [];
+      const bareActs  = content.bare_acts  || [];
+      const followupQ = content.followup_question || null;
+
+      // Short names for well-known Indian acts — used in section headings
+      const ACT_SHORT_NAMES = {
+        "bharatiya nyaya sanhita 2023":              "BNS",
+        "bharatiya nyaya sanhita":                   "BNS",
+        "bharatiya nagarik suraksha sanhita 2023":   "BNSS",
+        "bharatiya nagarik suraksha sanhita":        "BNSS",
+        "bharatiya sakshya adhiniyam 2023":          "BSA",
+        "bharatiya sakshya adhiniyam":               "BSA",
+        "indian penal code 1860":                    "IPC",
+        "indian penal code":                         "IPC",
+        "code of criminal procedure 1973":           "CrPC",
+        "code of criminal procedure":                "CrPC",
+        "indian evidence act 1872":                  "IEA",
+        "indian evidence act":                       "IEA",
+        "code of civil procedure 1908":              "CPC",
+        "code of civil procedure":                   "CPC",
+        "transfer of property act 1882":             "TP Act",
+        "transfer of property act":                  "TP Act",
+        "specific relief act 1963":                  "Specific Relief Act",
+        "specific relief act":                       "Specific Relief Act",
+        "negotiable instruments act 1881":           "NI Act",
+        "negotiable instruments act":                "NI Act",
+        "hindu marriage act 1955":                   "HMA",
+        "hindu marriage act":                        "HMA",
+        "hindu succession act 1956":                 "HSA",
+        "hindu succession act":                      "HSA",
+        "consumer protection act 2019":              "Consumer Protection Act",
+        "consumer protection act":                   "Consumer Protection Act",
+        "arbitration and conciliation act 1996":     "Arbitration Act",
+        "arbitration and conciliation act":          "Arbitration Act",
+        "indian contract act 1872":                  "Contract Act",
+        "indian contract act":                       "Contract Act",
+        "registration act 1908":                     "Registration Act",
+        "limitation act 1963":                       "Limitation Act",
+        "motor vehicles act 1988":                   "MV Act",
+        "companies act 2013":                        "Companies Act",
+        "protection of women from domestic violence act 2005": "DV Act",
+        "protection of women from domestic violence act":      "DV Act",
+        "dowry prohibition act 1961":                "Dowry Act",
+        "telangana land encroachment act":           "TG Encroachment Act",
+      };
+
+      const shortActName = (actName) => {
+        const key = (actName || "").toLowerCase().trim();
+        return ACT_SHORT_NAMES[key] || actName;
+      };
+
+      // Build dispute groups: prefer grouped disputes from backend; fall back to flat list
+      const disputeGroups = disputes.length > 0
+        ? disputes
+        : bareActs.length > 0
+          ? [{ id: "d_main", dispute: "", sections: bareActs }]
+          : [];
+
+      const introText = (content.text || "").trim();
+      return (
+        <div className="message-bare-acts-preview">
+          {introText && (
+            <p className="bare-acts-preview-intro">{introText}</p>
+          )}
+          {/* Per-dispute blocks */}
+          {disputeGroups.map((group, gi) => {
+            const sections = group.sections || [];
+            const multipleDisputes = disputeGroups.length > 1;
+            return (
+              <div key={group.id || gi} className="dispute-block">
+                {/* Dispute header — "Dispute 1: description" on one line */}
+                {(multipleDisputes || group.dispute) && (
+                  <p className="dispute-block-header">
+                    {multipleDisputes && (
+                      <span className="dispute-block-number">Dispute {gi + 1}{group.dispute ? ": " : ""}</span>
+                    )}
+                    {group.dispute && (
+                      <span className="dispute-block-description">{group.dispute}</span>
+                    )}
+                  </p>
+                )}
+
+                {sections.map((ba, si) => {
+                  const actName  = ba.act_name || "Unknown Act";
+                  const short    = shortActName(actName);
+                  const secNum   = ba.section_number || "?";
+                  const secTitle = ba.section_title ? ` — ${ba.section_title}` : "";
+                  // Format: "BNS Section 117 — Voluntarily Causing Grievous Hurt"
+                  const heading  = `${short} Section ${secNum}${secTitle}`;
+                  const explanation = (ba.explanation || "").trim();
+                  const verbatim    = (ba.full_text || ba.text || "").trim();
+
+                  const isWeb     = !!ba._web_sourced;
+                  const sourceUrl = ba.url || null;
+
+                  const handleAddToIndex = async () => {
+                    try {
+                      const resp = await fetch(`${API_BASE}/propose_index`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ section: ba }),
+                      });
+                      const data = await resp.json();
+                      alert(data.message || "Saved for indexing.");
+                    } catch {
+                      alert("Could not save section. Please try again.");
+                    }
+                  };
+
+                  return (
+                    <div key={si} className={`bare-act-section-block${isWeb ? " bare-act-section-web" : ""}`}>
+                      <div className="bare-act-section-heading-row">
+                        <h4 className="bare-act-section-heading">{heading}</h4>
+                        {isWeb && <span className="web-source-badge">🌐 Web</span>}
+                      </div>
+                      {explanation && (
+                        <p className="bare-act-section-explanation">{explanation}</p>
+                      )}
+                      {verbatim && (
+                        <blockquote className="bare-act-verbatim">
+                          {verbatim}
+                        </blockquote>
+                      )}
+                      {isWeb && (
+                        <div className="web-section-actions">
+                          {sourceUrl && (
+                            <a href={sourceUrl} target="_blank" rel="noreferrer" className="web-section-source-link">
+                              View source ↗
+                            </a>
+                          )}
+                          <button className="add-to-index-btn" onClick={handleAddToIndex}>
+                            + Add to local index
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
+
+          {/* Separator + single follow-up question or next-steps prompt */}
+          <div className="bare-acts-followup-separator" />
+          {followupQ ? (
+            <div className="bare-acts-followup">
+              <p className="bare-acts-followup-text">{followupQ}</p>
+            </div>
+          ) : (
+            <p className="bare-acts-next-steps">
+              If you'd like, I can find relevant court judgments on this, or give you a full legal opinion.
+            </p>
+          )}
+
+        </div>
+      );
     }
     if (content.type === "final_opinion") {
       const opinion = content.opinionText || "";
@@ -1971,7 +2451,10 @@ function App() {
       {/* Two-pane layout: Left (sidebar) and Right (chat) */}
       <div className="main-content-wrapper">
         {/* LEFT PANE – New chat, Bare Acts, Case Laws, Chat history, Pending indexing (fixed order) */}
-        <div className="left-column">
+        <div
+          className="left-column"
+          style={{ width: leftColumnWidth, minWidth: leftColumnWidth, maxWidth: leftColumnWidth }}
+        >
             <div className="left-column-scroll">
             <button
               type="button"
@@ -2469,6 +2952,13 @@ function App() {
             </details>
             </div>
         </div>
+        <div
+          className="left-column-resizer"
+          onMouseDown={handleSidebarResizeMouseDown}
+          role="separator"
+          aria-orientation="vertical"
+          aria-label="Resize sidebar"
+        />
 
         {/* RIGHT PANE – Title at top, then chat area */}
         <div className={`right-content-wrapper${messages.some((m) => m.role === "user") ? " chat-mode" : ""}`}>
@@ -2495,33 +2985,35 @@ function App() {
                     relevant bare acts and case laws for you.
                   </p>
                 </div>
-                <div className="chat-center-input-wrapper">
-                  <div className="chat-input-container">
-                    <textarea
-                      ref={textareaRef}
-                      autoFocus
-                      value={input}
-                      onChange={(e) => setInput(e.target.value)}
-                      onKeyDown={handleKeyDown}
-                      placeholder="Describe your case or ask a question..."
-                      className="chat-input"
-                      rows={1}
-                      disabled={loading}
-                    />
-                    <button
-                      type="button"
-                      onClick={handleSubmit}
-                      disabled={loading || !input.trim()}
-                      className="chat-send"
-                      aria-label="Send message"
-                    >
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 19V5M5 12l7-7 7 7" />
-                      </svg>
-                    </button>
+                  <div className="chat-center-input-wrapper">
+                    <div className="chat-input-container">
+                      <textarea
+                        ref={textareaRef}
+                        autoFocus
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyDown={handleKeyDown}
+                        placeholder="Describe your case or ask a question..."
+                        className="chat-input"
+                        rows={1}
+                        disabled={loading}
+                      />
+                      <button
+                        type="button"
+                        onClick={handleSubmit}
+                        disabled={loading || !input.trim()}
+                        className="chat-send"
+                        aria-label="Send message"
+                      >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M12 19V5M5 12l7-7 7 7" />
+                        </svg>
+                      </button>
+                    </div>
+                    {bottomExpandedSection == null && (
+                      <p className="chat-disclaimer">Nyaymalaw AI can make mistakes. Consider checking important information.</p>
+                    )}
                   </div>
-                  <p className="chat-disclaimer">Nyaymalaw AI can make mistakes. Consider checking important information.</p>
-                </div>
               </div>
             ) : (
               <>
@@ -2577,36 +3069,65 @@ function App() {
                               </div>
                             </div>
                           ) : (
-                            <>
+                            <div className="message-bubble-inner">
                               <div className="message-bubble-text message-bubble-text--preserve" title="User message">
                                 {typeof msg.content === "string" ? msg.content : String(msg.content ?? "")}
                               </div>
                               <div className="message-bubble-actions">
-                                <button type="button" className="message-action-btn" onClick={() => startEditUserMessage(i)} title="Edit" aria-label="Edit">
-                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-                                    <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" />
-                                  </svg>
-                                </button>
-                                <button type="button" className="message-action-btn" onClick={() => handleCopyMessage(msg)} title="Copy" aria-label="Copy">
-                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-                                    <path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" />
-                                    <path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.379 6H4.5z" />
-                                  </svg>
-                                </button>
+                                <div className="message-action-menu-wrap">
+                                  <button
+                                    type="button"
+                                    className="message-action-dots-btn"
+                                    onClick={() => setActionMenuOpenIndex(actionMenuOpenIndex === i ? null : i)}
+                                    title="Actions"
+                                    aria-label="Actions"
+                                    aria-expanded={actionMenuOpenIndex === i}
+                                  >
+                                    <span className="message-action-dots">⋯</span>
+                                  </button>
+                                  {actionMenuOpenIndex === i && (
+                                    <div className="message-action-dropdown" role="menu">
+                                      <button type="button" className="message-action-dropdown-item" role="menuitem" onClick={() => { setActionMenuOpenIndex(null); startEditUserMessage(i); }}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden><path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" /></svg>
+                                        <span>Edit</span>
+                                      </button>
+                                      <button type="button" className="message-action-dropdown-item" role="menuitem" onClick={() => handleCopyMessage(msg, i)}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden><path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" /><path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.379 6H4.5z" /></svg>
+                                        <span>{copyJustDoneIndex === i ? "Copied" : "Copy"}</span>
+                                      </button>
+                                    </div>
+                                  )}
+                                </div>
                               </div>
-                            </>
+                            </div>
                           )}
                         </div>
                       ) : (
                         <div className="message-bubble message-bubble--assistant">
-                          {renderAssistantContent(msg.content)}
-                          <div className="message-bubble-actions">
-                            <button type="button" className="message-action-btn" onClick={() => handleCopyMessage(msg)} title="Copy" aria-label="Copy">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-                                <path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" />
-                                <path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.379 6H4.5z" />
-                              </svg>
-                            </button>
+                          <div className="message-bubble-inner">
+                            {renderAssistantContent(msg.content)}
+                            <div className="message-bubble-actions">
+                              <div className="message-action-menu-wrap">
+                                <button
+                                  type="button"
+                                  className="message-action-dots-btn"
+                                  onClick={() => setActionMenuOpenIndex(actionMenuOpenIndex === i ? null : i)}
+                                  title="Actions"
+                                  aria-label="Actions"
+                                  aria-expanded={actionMenuOpenIndex === i}
+                                >
+                                  <span className="message-action-dots">⋯</span>
+                                </button>
+                                {actionMenuOpenIndex === i && (
+                                  <div className="message-action-dropdown" role="menu">
+                                    <button type="button" className="message-action-dropdown-item" role="menuitem" onClick={() => { setActionMenuOpenIndex(null); handleCopyMessage(msg, i); }}>
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden><path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" /><path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.379 6H4.5z" /></svg>
+                                      <span>{copyJustDoneIndex === i ? "Copied" : "Copy"}</span>
+                                    </button>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
                           </div>
                         </div>
                       )}
@@ -2655,39 +3176,43 @@ function App() {
 
                 {/* Fixed bottom input when in chat mode */}
                 <div className="chat-input-wrapper">
-              <div className="chat-input-container">
-                <textarea
-                  ref={textareaRef}
-                  autoFocus
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  placeholder={
-                    stage === "interview" && currentQuestion
-                      ? "Type your details here..."
-                      : stage === "await_facts"
-                      ? "Describe your case facts here..."
-                      : "Type here to start a new case..."
-                  }
-                  className="chat-input"
-                  rows={1}
-                  disabled={loading}
-                />
-                <button
-                  type="button"
-                  onClick={handleSubmit}
-                  disabled={loading || !input.trim()}
-                  className="chat-send"
-                  aria-label="Send message"
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 19V5M5 12l7-7 7 7" />
-                  </svg>
-                </button>
-              </div>
-              <p className="chat-disclaimer">
-                Nyaymalaw AI can make mistakes. Consider checking important information.
-              </p>
+                  <div className="chat-input-container">
+                    <textarea
+                      ref={textareaRef}
+                      autoFocus
+                      value={input}
+                      onChange={(e) => setInput(e.target.value)}
+                      onKeyDown={handleKeyDown}
+                      placeholder={
+                        stage === "bare_acts_review"
+                          ? "Provide the additional details, or type 'proceed' to continue..."
+                          : stage === "interview" && currentQuestion
+                          ? "Type your details here..."
+                          : stage === "await_facts"
+                          ? "Describe your case facts here..."
+                          : "Type here to start a new case..."
+                      }
+                      className="chat-input"
+                      rows={1}
+                      disabled={loading}
+                    />
+                    <button
+                      type="button"
+                      onClick={handleSubmit}
+                      disabled={loading || !input.trim()}
+                      className="chat-send"
+                      aria-label="Send message"
+                    >
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 19V5M5 12l7-7 7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                  {bottomExpandedSection == null && (
+                    <p className="chat-disclaimer">
+                      Nyaymalaw AI can make mistakes. Consider checking important information.
+                    </p>
+                  )}
                 </div>
 
                 {/* Confirmation bar */}
@@ -2713,10 +3238,26 @@ function App() {
               </>
             )}
 
-            {/* Bottom pane: always retained — Eval Results + Architecture (separate from chat, below disclaimer) */}
-            <div className="eval-architecture-pane" aria-label="Eval Results and Architecture">
+            {/* Bottom pane: default minimal; drag resizer up to extend up to 75% of window */}
+            <div
+              className={`eval-architecture-pane ${evalPaneHeight <= EVAL_PANE_MIN_HEIGHT ? "eval-pane-collapsed" : ""}`}
+              aria-label="Eval Results and Architecture"
+              style={{
+                height: evalPaneHeight,
+                minHeight: EVAL_PANE_MIN_HEIGHT,
+                maxHeight: `${EVAL_PANE_MAX_VH}vh`,
+              }}
+            >
+              <div
+                className="eval-pane-resizer"
+                onMouseDown={handleEvalPaneResizeMouseDown}
+                role="separator"
+                aria-orientation="horizontal"
+                aria-label="Resize eval pane"
+              />
               <EvalSection />
               <ArchitectureSection />
+              <UpdatesTrackerSection />
             </div>
         </div>
       </div>

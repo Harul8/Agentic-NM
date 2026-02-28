@@ -1,0 +1,11 @@
+Date,Change,Details
+2025-02-26,"Message actions: three-dots menu","Replaced separate Edit/Copy buttons with a single \"⋯\" button (no border). Click opens dropdown with Edit and Copy; Copy shows \"Copied\" briefly. Click-outside closes menu."
+2025-02-26,"Chat window scrollbar","Scrollbar now visible when messages exceed viewport height. Arrow-key scroll unchanged."
+2025-02-26,"Left pane resizable","Sidebar (New chat, Bare Acts, etc.) can be resized via strip on right edge (↔ cursor). Default width 210px; range 140px–420px."
+2025-02-26,"Bottom pane (Eval) resizable","Eval Results + Architecture pane resizable via strip at top (↕ cursor). Default ~6px (collapsed); can extend up to 75% of viewport. Drag up = expand, down = collapse."
+2025-02-26,"Section caps (retrieval)","Per-dispute bare-act sections capped (e.g. 3 per dispute, 12 overall) to avoid flooding UI; web doc enrichment limited for speed."
+2025-02-26,"Structured opinion prompt","Added STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT in advocate_prompts; legal opinion uses dispute-wise structure."
+2025-02-26,"Bottom pane: accordion + Updates Tracker","Single accordion for Eval Results, Architecture, and Updates Tracker (one open at a time). Updates Tracker loads table from UPDATES_TRACKER.csv in Frontend/public. Disclaimer shown only when no bottom section is expanded. Headers at top; expanded section uses remaining space with pane scrollbar."
+2025-02-26,"Chat message layout","Reduced vertical space between messages. Three-dots actions (⋯) kept at end of message text on same line. User messages limited to ~55% of chat width with light blue background and border."
+2025-02-26,"Case law filename format","Case law file naming standardized to 'SC_YYYY_Appellant Name versus Respondent Name' for Supreme Court and 'HC_YYYY_Appellant Name versus Respondent Name' for High Courts; filename generation logic in retrieval updated accordingly."
+2025-02-26,"Legal opinion output format","Opinion structured dispute-wise (Dispute 1, Dispute 2, etc.) with each bare act section explained in plain language and important provisions shown in monospaced boxes. Follow-up question now asked once at the end, only when the answer would genuinely change which sections apply or their severity; otherwise the assistant offers to fetch case law or give a full legal opinion."

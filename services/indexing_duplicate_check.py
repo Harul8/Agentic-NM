@@ -7,10 +7,28 @@ to avoid re-indexing the same act/judgment. Uses:
 
 import re
 import logging
+import time
 from difflib import SequenceMatcher
 from typing import Optional, List, Dict, Any, Tuple
 
 logger = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# In-memory cache for existing signatures
+# ---------------------------------------------------------------------------
+# get_existing_signatures() reads the full chunk JSON(s) from disk — expensive for large corpora.
+# Cache the result for _SIGS_CACHE_TTL_SEC so repeated calls during a single discovery session
+# (processing 50+ acts) only hit disk once. Invalidated after actual indexing so the next
+# discovery session always sees fresh data.
+_SIGS_CACHE_TTL_SEC = 300.0  # 5 minutes — covers a full bulk-discovery session
+_sigs_cache: dict = {"data": None, "ts": 0.0}
+
+
+def invalidate_signatures_cache() -> None:
+    """Force-expire the signatures cache. Call after successfully indexing new documents."""
+    _sigs_cache["data"] = None
+    _sigs_cache["ts"] = 0.0
+    logger.debug("Signatures cache invalidated")
 
 # Year: 4 consecutive digits (e.g. 1948, 1984)
 _YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
@@ -92,11 +110,23 @@ def _normalize_content_for_compare(text: str) -> str:
         return ""
 
 
-def get_existing_signatures() -> dict:
+def get_existing_signatures(force_reload: bool = False) -> dict:
     """
     Load bare act and case law chunks and return sets of (normalized_short_name, year)
     so we can detect duplicates by act name + year / case name + year.
+
+    Results are cached in memory for _SIGS_CACHE_TTL_SEC (default 5 min) so bulk discovery
+    sessions processing many acts don't re-read the chunk JSON files from disk on every act.
+    Call invalidate_signatures_cache() after successfully indexing new documents to force a
+    fresh load on the next call.
+
+    force_reload=True bypasses the cache (used internally by invalidate_signatures_cache).
     """
+    now = time.time()
+    if not force_reload and _sigs_cache["data"] is not None and (now - _sigs_cache["ts"]) < _SIGS_CACHE_TTL_SEC:
+        logger.debug("Signatures cache hit (age %.1fs)", now - _sigs_cache["ts"])
+        return _sigs_cache["data"]
+
     from config import BARE_CHUNKS_V2, CASE_CHUNKS_V2
     from retrieval.hybrid_retriever import load_chunks
 
@@ -134,7 +164,11 @@ def get_existing_signatures() -> dict:
                     continue
     except Exception as e:
         logger.warning("get_existing_signatures failed: %s", e)
-    logger.debug("Existing signatures: %d bare act, %d case law", len(out["bare_act"]), len(out["case_law"]))
+    logger.debug("Existing signatures loaded from disk: %d bare act, %d case law", len(out["bare_act"]), len(out["case_law"]))
+
+    # Store in cache
+    _sigs_cache["data"] = out
+    _sigs_cache["ts"] = time.time()
     return out
 
 

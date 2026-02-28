@@ -51,6 +51,12 @@ CASE_CHUNKS_V2 = os.path.join(VECTOR_STORE, "caselaws_v2_chunks.json")
 BARE_BM25_INDEX = os.path.join(VECTOR_STORE, "bareacts_bm25.json")
 CASE_BM25_INDEX = os.path.join(VECTOR_STORE, "caselaws_bm25.json")
 
+# Act-level profile index — one rich doc per act, used for act-first identification
+# before section-level hybrid search.  Built from BARE_CHUNKS_V2 at index-rebuild time
+# and lazy-rebuilt on first use if the files are missing / stale.
+ACT_PROFILES_META  = os.path.join(VECTOR_STORE, "act_profiles_meta.json")   # {act_name: profile_text}
+ACT_PROFILES_BM25  = os.path.join(VECTOR_STORE, "act_profiles_bm25.json")   # BM25 index over profiles
+
 # Web references table (articles/news that aren't primary sources)
 WEB_REFERENCES_DB = os.path.join(DATA_ROOT, "web_references.json")
 
@@ -73,6 +79,24 @@ INDIAN_KANOON_API_TOKEN = os.environ.get("INDIAN_KANOON_API_TOKEN", "").strip()
 # ---------------------------------------------------------------------------
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 CROSS_ENCODER_MODEL = "cross-encoder/ms-marco-MiniLM-L-12-v2"
+
+# ---------------------------------------------------------------------------
+# Web search quality improvements (P0-P5)
+# ---------------------------------------------------------------------------
+
+# P0: Citation-count multiplier weight for IK results.
+# final_score = ce_score * (1 + CITATION_BOOST_WEIGHT * log(1 + numciting))
+# Set to 0.0 to disable. Default 0.15 gives a ~25% boost to heavily-cited judgments.
+CITATION_BOOST_WEIGHT = float(os.environ.get("CITATION_BOOST_WEIGHT", "0.15"))
+
+# P4: Legal-term overlap boost weight added to cross-encoder score.
+# score = ce_score + LEGAL_TERM_BOOST_WEIGHT * overlap_ratio
+# Set to 0.0 to disable. Default 0.25 gives a measurable boost for section-matched docs.
+LEGAL_TERM_BOOST_WEIGHT = float(os.environ.get("LEGAL_TERM_BOOST_WEIGHT", "0.25"))
+
+# P5: Number of IK search result pages to fetch per query (each page ≈ 10-20 results).
+# Higher = larger candidate pool; lower = fewer API calls. Default 5.
+IK_SEARCH_MAX_PAGES = int(os.environ.get("IK_SEARCH_MAX_PAGES", "5"))
 
 # ---------------------------------------------------------------------------
 # Domain whitelists for tiered internet search

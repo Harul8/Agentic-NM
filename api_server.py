@@ -533,9 +533,10 @@ class QAPair(BaseModel):
 
 
 class InterviewStepRequest(BaseModel):
-    """Follow-up answer in interview - frontend sends { facts, qa_history }."""
+    """Follow-up answer in interview - frontend sends { facts, qa_history, bare_acts? }."""
     facts: str = ""
     qa_history: list[QAPair] = []
+    bare_acts: list[dict] = []   # populated when answering a bare-acts-phase follow-up question
 
 
 class ContinueChatRequest(BaseModel):
@@ -639,6 +640,21 @@ def _map_chat_result_to_ui(result: dict) -> dict:
             "status": "question",
             "next_question": next_q,
             "retrieved": result.get("response") or [],
+        }
+    if phase == "bare_acts_presented":
+        # Intermediate phase: show retrieved bare acts with explanations + optional follow-up question
+        bare_acts = result.get("bare_acts") or []
+        disputes  = result.get("disputes") or []   # grouped for new per-dispute UI
+        followup = (result.get("followup_question") or "").strip() or None
+        intro = (result.get("message") or "").strip() or "Here are the relevant bare act sections I found."
+        return {
+            "status": "bare_acts_presented",
+            "opinion_text": intro,
+            "disputes": disputes,             # new: grouped [{id, dispute, sections}]
+            "bare_acts": bare_acts,           # kept: flat list for Phase B backward compat
+            "followup_question": followup,
+            # Pass facts_summary so the frontend can echo it back in the next request
+            "facts_summary": result.get("facts_summary") or "",
         }
     if phase == "confirm_materials":
         return {
@@ -953,18 +969,30 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
             "next_question": "",
             "retrieved": [],
         }
+    bare_acts_from_client = request.bare_acts or []
     try:
         conv = [{"role": "user", "content": facts}]
         for qa in qa_history:
             conv.append({"role": "assistant", "content": qa.question})
             conv.append({"role": "user", "content": qa.answer})
         current_message = qa_history[-1].answer
-        result = process_chat(
-            conversation=conv,
-            current_message=current_message,
-            phase="fact_collection",
-            facts_summary=None,
-        )
+
+        # If the frontend passed bare_acts, the user is answering the bare-acts follow-up question
+        if bare_acts_from_client:
+            result = process_chat(
+                conversation=conv,
+                current_message=current_message,
+                phase="bare_acts_review",
+                facts_summary=facts,
+                bare_acts=bare_acts_from_client,
+            )
+        else:
+            result = process_chat(
+                conversation=conv,
+                current_message=current_message,
+                phase="fact_collection",
+                facts_summary=None,
+            )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
             result = process_chat(
@@ -1143,7 +1171,7 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str) -> Non
         queue.put(("result", _chat_error_fallback(str(e)[:200])))
 
 
-def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue, user_id: str) -> None:
+def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue, user_id: str, bare_acts: list = None) -> None:
     """Run interview_step logic with progress streaming."""
     try:
         def progress_callback(progress_snapshot: dict):
@@ -1154,13 +1182,25 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
             conv.append({"role": "assistant", "content": qa.question})
             conv.append({"role": "user", "content": qa.answer})
         current_message = qa_history[-1].answer if qa_history else ""
-        result = process_chat(
-            conversation=conv,
-            current_message=current_message,
-            phase="fact_collection",
-            facts_summary=None,
-            progress_callback=progress_callback,
-        )
+
+        if bare_acts:
+            # User is answering the bare-acts follow-up question — go straight to final opinion
+            result = process_chat(
+                conversation=conv,
+                current_message=current_message,
+                phase="bare_acts_review",
+                facts_summary=facts,
+                bare_acts=bare_acts,
+                progress_callback=progress_callback,
+            )
+        else:
+            result = process_chat(
+                conversation=conv,
+                current_message=current_message,
+                phase="fact_collection",
+                facts_summary=None,
+                progress_callback=progress_callback,
+            )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
             result = process_chat(
@@ -1231,6 +1271,7 @@ async def interview_step_stream(request: InterviewStepRequest, user: dict = Depe
     _enforce_query_limit(user)
     facts = request.facts or ""
     qa_history = request.qa_history or []
+    bare_acts_from_client = request.bare_acts or []
     if not qa_history:
         return JSONResponse(
             status_code=400,
@@ -1241,7 +1282,7 @@ async def interview_step_stream(request: InterviewStepRequest, user: dict = Depe
     user_id = user.get("id", _ANONYMOUS_EMAIL)
 
     def run_in_thread():
-        _run_interview_step_with_progress(facts, qa_history, queue, user_id)
+        _run_interview_step_with_progress(facts, qa_history, queue, user_id, bare_acts=bare_acts_from_client)
 
     thread = __import__("threading").Thread(target=run_in_thread)
     thread.start()
@@ -1389,6 +1430,71 @@ def reset_rate_limit():
     _rate_store.clear()
     logger.info("Rate limit store cleared")
     return {"status": "ok", "message": "Rate limit store cleared"}
+
+
+# ---------------------------------------------------------------------------
+# Propose for Index — save web-sourced bare act sections to proposed_sections.json
+# The user can then run scripts/index_proposed.py to add them to the local index.
+# ---------------------------------------------------------------------------
+
+class ProposeIndexRequest(BaseModel):
+    section: dict   # Full bare-act section dict (act_name, section_number, full_text, url, …)
+
+@app.post("/propose_index")
+async def propose_index(req: ProposeIndexRequest):
+    """
+    Save a web-sourced bare act section to proposed_sections.json so the user can
+    add it to the local vector index via scripts/index_proposed.py.
+
+    The file lives alongside the vector store:
+        <VECTOR_STORE_DIR>/proposed_sections.json
+    """
+    from pathlib import Path as _Path
+    import datetime as _dt
+
+    vector_store_dir = _Path(_VECTOR_STORE).parent if _Path(_VECTOR_STORE).suffix else _Path(_VECTOR_STORE)
+    proposed_path = vector_store_dir / "proposed_sections.json"
+
+    # Load existing proposals (or start fresh)
+    try:
+        if proposed_path.exists():
+            with open(proposed_path, encoding="utf-8") as f:
+                proposals = json.load(f)
+        else:
+            proposals = []
+    except Exception:
+        proposals = []
+
+    section = req.section
+    # Deduplicate by (act_name, section_number) — don't add the same section twice
+    act  = (section.get("act_name")     or "").strip().lower()
+    sec  = (section.get("section_number") or "").strip().lower()
+    already = any(
+        (p.get("act_name","").strip().lower() == act and
+         p.get("section_number","").strip().lower() == sec)
+        for p in proposals
+    )
+    if already:
+        return {"status": "already_proposed", "message": f"{section.get('act_name')} §{section.get('section_number')} already in proposal list"}
+
+    # Strip internal pipeline keys before saving
+    clean = {k: v for k, v in section.items() if not k.startswith("_")}
+    clean["_proposed_at"] = _dt.datetime.utcnow().isoformat()
+
+    proposals.append(clean)
+    try:
+        proposed_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(proposed_path, "w", encoding="utf-8") as f:
+            json.dump(proposals, f, ensure_ascii=False, indent=2)
+        logger.info("Proposed for index: %s §%s → %s", section.get("act_name"), section.get("section_number"), proposed_path)
+        return {
+            "status": "proposed",
+            "message": f"Saved to {proposed_path.name}. Run scripts/index_proposed.py to add to local index.",
+            "total_proposed": len(proposals),
+        }
+    except Exception as e:
+        logger.error("Failed to write proposed_sections.json: %s", e)
+        raise HTTPException(status_code=500, detail=f"Could not save proposal: {e}")
 
 
 # ---------------------------------------------------------------------------
@@ -1547,8 +1653,13 @@ def indexing_run(request: IndexingRunRequest, user: dict = Depends(_user_from_to
     Index selected documents from the Pending indexing list.
     For each item: fetch from source_url, then chunk and add to the appropriate index (bare_act or case_law).
     On success, removes indexed items from persisted pending list.
+
+    P0: BM25 rebuilds deferred to end of batch (one rebuild per category instead of N).
+    P1: Up to 3 documents fetched + embedded in parallel; writes serialised via _index_write_lock.
     """
-    from retrieval.auto_enricher import enrich_from_search_result
+    import threading
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    from retrieval.auto_enricher import enrich_from_search_result, begin_batch_indexing, end_batch_indexing
 
     _enforce_query_limit(user)
     items = request.items or []
@@ -1557,24 +1668,48 @@ def indexing_run(request: IndexingRunRequest, user: dict = Depends(_user_from_to
 
     indexed = 0
     errors = []
-    for i, item in enumerate(items):
+    _results_lock = threading.Lock()
+
+    def _index_one(i: int, item) -> None:
+        nonlocal indexed
         url = (item.url or "").strip()
         title = (item.title or "").strip()
         category = (item.category or "case_law").strip().lower()
         if category not in ("bare_act", "case_law"):
             category = "case_law"
         if not url or not title:
-            errors.append({"index": i, "error": "Missing url or title"})
-            continue
+            with _results_lock:
+                errors.append({"index": i, "error": "Missing url or title"})
+            return
         try:
             result = {"url": url, "title": title, "snippet": "", "source_tag": "USER_INDEX"}
             enrichment = enrich_from_search_result(result, category, original_query="", skip_index=False)
             if enrichment.get("chunks_added", 0) > 0 or enrichment.get("indexed"):
-                indexed += 1
+                with _results_lock:
+                    indexed += 1
                 _remove_from_pending_indexing([(url, title)])
         except Exception as e:
             logger.exception("Indexing failed for %s: %s", url[:80], e)
-            errors.append({"index": i, "url": url[:80], "error": str(e)[:200]})
+            with _results_lock:
+                errors.append({"index": i, "url": url[:80], "error": str(e)[:200]})
+
+    # P0: enter batch mode so BM25 is only rebuilt once at the end
+    begin_batch_indexing()
+    try:
+        if len(items) == 1:
+            _index_one(0, items[0])
+        else:
+            # P1: parallel fetch + embed (max 3 workers); writes are serialised inside add_chunks_to_index
+            with ThreadPoolExecutor(max_workers=3) as executor:
+                futures = {executor.submit(_index_one, i, item): i for i, item in enumerate(items)}
+                for future in as_completed(futures):
+                    try:
+                        future.result()
+                    except Exception as e:
+                        logger.error("Unexpected error in indexing worker: %s", e)
+    finally:
+        # P0: flush deferred BM25 rebuilds regardless of errors
+        end_batch_indexing()
 
     return {
         "indexed": indexed,

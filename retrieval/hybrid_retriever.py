@@ -115,10 +115,15 @@ def legal_term_boost(query: str, text: str) -> float:
 
     matches = 0
     for sec in sec_nums:
-        # Match "section 302", "s. 302", "302 ipc" patterns in text
+        # Match "section 302", "s. 302" patterns in text
         if re.search(r'\bsec(?:tion)?\.?\s*' + re.escape(sec) + r'\b', text_lower):
             matches += 1
-        elif re.search(r'\b' + re.escape(sec) + r'\s+(?:ipc|crpc|cpc|iea|mvact)\b', text_lower):
+        # Match "302 IPC/BNS/BNSS/BSA/CrPC/CPC/IEA..." patterns in text
+        # Includes new Indian criminal codes (BNS, BNSS, BSA) alongside old (IPC, CrPC, IEA)
+        elif re.search(
+            r'\b' + re.escape(sec) + r'\s+(?:bns|bnss|bsa|ipc|crpc|cpc|iea|mvact|tpa)\b',
+            text_lower,
+        ):
             matches += 1
     for term in act_terms:
         if len(term) >= 6 and term in text_lower:
@@ -347,12 +352,19 @@ def hybrid_search(
     bm25_top_k: int = 50,
     rerank_top_k: int = 20,
     min_rerank_score: float = 0.0,
+    allowed_acts: Optional[frozenset] = None,
 ) -> list:
     """
     Three-stage hybrid search:
     1. FAISS semantic search (top faiss_top_k)
     2. BM25 keyword search (top bm25_top_k)
-    3. Merge, deduplicate, cross-encoder re-rank (top rerank_top_k)
+    3. Merge, deduplicate, optional act-filter, cross-encoder re-rank (top rerank_top_k)
+
+    allowed_acts: if provided (non-empty frozenset of act_name strings), candidates
+        from acts NOT in this set are dropped BEFORE the cross-encoder step.
+        This is the act-first optimisation: identify relevant acts cheaply with
+        ActProfileIndex, then cross-encode only sections from those acts.
+        Falls back to unfiltered when allowed_acts is None or empty.
 
     Returns list of chunk dicts, each with '_rerank_score' field, sorted by relevance.
     """
@@ -404,6 +416,33 @@ def hybrid_search(
         f"Hybrid search: {len(faiss_candidates)} FAISS + "
         f"{len(bm25_candidates)} BM25 = {len(all_candidate_keys)} unique candidates"
     )
+
+    # --- Act-level pre-filter (act-first optimisation) ---
+    # If the caller identified relevant acts via ActProfileIndex, drop candidates
+    # from other acts BEFORE the cross-encoder to reduce the re-ranking workload.
+    # Safety: if filtering would leave fewer than 5 candidates, skip the filter
+    # (keeps the cross-encoder from starving on edge cases where the profile index
+    # mis-identified the relevant acts).
+    if allowed_acts:
+        filtered_keys = {
+            k for k in all_candidate_keys
+            if (chunks[k].get("act_name") or "").strip() in allowed_acts
+        }
+        if len(filtered_keys) >= 5:
+            dropped = len(all_candidate_keys) - len(filtered_keys)
+            if dropped > 0:
+                logger.debug(
+                    "Act pre-filter (profile): %d → %d candidates (dropped %d from %d acts not in allowed set)",
+                    len(all_candidate_keys), len(filtered_keys), dropped,
+                    len({(chunks[k].get("act_name") or "") for k in all_candidate_keys}) - len(allowed_acts),
+                )
+            all_candidate_keys = filtered_keys
+        else:
+            logger.debug(
+                "Act pre-filter (profile): skipped — only %d candidates after filter (< 5 min); "
+                "proceeding with all %d candidates",
+                len(filtered_keys), len(all_candidate_keys),
+            )
 
     # --- Stage 3: Cross-encoder re-ranking ---
     candidate_chunks = []
@@ -496,6 +535,48 @@ def search_bare_acts(query: str, top_k: int = 30) -> list:
         min_rerank_score=-5.0,  # keep generous; sufficiency analyzer decides
     )
     # Tag each result
+    for r in results:
+        r["source_tag"] = "LOCAL_DB"
+    return results
+
+
+def search_bare_acts_filtered(
+    query: str,
+    allowed_acts: frozenset,
+    top_k: int = 15,
+) -> list:
+    """
+    Act-first variant of search_bare_acts.
+
+    Like search_bare_acts but passes ``allowed_acts`` to hybrid_search so the
+    cross-encoder only scores candidates from relevant acts.  Falls back to
+    unfiltered search_bare_acts when allowed_acts is empty.
+
+    Parameters
+    ----------
+    query : str
+        Search query (same format as search_bare_acts).
+    allowed_acts : frozenset
+        Set of act_name strings to restrict to.  Pass the return value of
+        ``retrieval.act_profile_index.identify_relevant_acts()``.
+        Empty frozenset → no act-level filter (identical to search_bare_acts).
+    top_k : int
+        Max results per call (default 15, same as retrieve_bare_acts_for_dispute).
+    """
+    from config import BARE_INDEX_V2, BARE_CHUNKS_V2, BARE_BM25_INDEX
+    if not allowed_acts:
+        return search_bare_acts(query, top_k)
+    results = hybrid_search(
+        query=query,
+        faiss_index_path=BARE_INDEX_V2,
+        chunks_path=BARE_CHUNKS_V2,
+        bm25_index_path=BARE_BM25_INDEX,
+        faiss_top_k=50,
+        bm25_top_k=50,
+        rerank_top_k=top_k,
+        min_rerank_score=-5.0,
+        allowed_acts=allowed_acts,
+    )
     for r in results:
         r["source_tag"] = "LOCAL_DB"
     return results

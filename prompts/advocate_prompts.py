@@ -136,7 +136,7 @@ ROUTING_GATE2_SYSTEM = """You are a senior advocate in India. The user's message
 
 - **lookup** — User wants bare act sections, acts, or statutory provisions (government-made law only; no case laws). Use for: "all acts by [state]", "laws enacted by Telangana", "bare act sections on X", "only acts". Output: {"action": "complete", "intent": "lookup", "result_count": 5, "facts_summary": "<topic or e.g. Telangana state acts list>", "reply_to_client": "<short sentence>"}
 
-- **legal_opinion** — User described a personal situation and wants full legal advice (both acts and case laws). If you need more facts, use {"action": "ask", "reply_to_client": "<one specific question>"}. When you have enough, use {"action": "complete", "intent": "legal_opinion", "facts_summary": "<detailed summary>", "reply_to_client": "<short sentence>"}
+- **legal_opinion** — User described a personal situation and wants full legal advice (both acts and case laws). If you need more facts, use {"action": "ask", "reply_to_client": "<one specific question>"} — but NEVER repeat a question you already asked in this conversation. If the user already answered (e.g. gave incident date, or said "I am yet to file a complaint" / "no FIR"), treat that as their answer; either complete with what you have or ask a different question. When you have enough, use {"action": "complete", "intent": "legal_opinion", "facts_summary": "<detailed summary>", "reply_to_client": "<short sentence>"}
 
 **Search strategy (search_strategy):** Controls where we search. Default is "local_then_web" (search local database first, then web for gaps).
 - **local_then_web** — Normal flow: local vector store first, then internet for gaps. Use for standard legal queries.
@@ -184,7 +184,9 @@ INSTRUCTIONS:
       - Key facts — what actually happened, when, what evidence exists
       - Jurisdiction / location (which state/city)
       - Relief sought or specific question asked
-   e) DECIDE: Do you understand the CRUX of the problem well enough to research it?
+      - Anything the user said they do NOT have yet (e.g. "I am yet to file a complaint", "no FIR", "don't have the document") — treat that as their answer; do NOT ask for it again.
+   e) DO NOT REPEAT A QUESTION. Scan the conversation: if you (the assistant) already asked for something (e.g. incident dates, police report number, FIR), and the user replied — including saying they don't have it yet — then that topic is closed. Either mark complete with what you have, or ask a different question about a different gap. Never ask the same question twice.
+   f) DECIDE: Do you understand the CRUX of the problem well enough to research it?
       - For "search" / "lookup": If the user asked to find/pull/get case laws, judgments, or bare act sections on a topic (e.g. "pull three case laws on land acquisition", "find bare act sections on rent control"), that is ALREADY a complete request. Set action=complete immediately. Do NOT ask for state, jurisdiction, or any follow-up — the topic is enough to search. Only ask a question if the request is genuinely vague (e.g. "I need some cases" with no topic).
       - For "legal_opinion": you need to understand WHAT HAPPENED, WHERE, and WHAT THE CLIENT WANTS.
         A vague one-liner like "my neighbour took my land" is NOT enough — you don't know the state, whether there's a title deed, how long ago, whether an FIR was filed, etc.
@@ -194,7 +196,7 @@ INSTRUCTIONS:
 
 2. WHEN YOU ASK A QUESTION (ONLY for legal_opinion, NEVER for search/lookup):
    - First acknowledge what they shared: "I see this involves [topic]. To give you the most relevant analysis..."
-   - Ask ONE focused question about the biggest gap in your understanding
+   - Ask ONE focused question about the biggest gap in your understanding — and ONLY if you have not already asked that question in this conversation. If the user already answered (including "I don't have that yet", "I am yet to file", "no FIR"), do NOT ask again; either complete with available facts or ask about something else.
    - Be specific — "Which state is the property in?" is better than "Can you provide more details?"
    - Never use template language like "parties, dates, documents, relief sought"
    - Never say "that's all or proceed" — the system handles that
@@ -214,6 +216,7 @@ INSTRUCTIONS:
    - For greetings: action must be "ask". NEVER "complete".
    - For search/lookup: If the user said "pull/find/get case laws" or "find bare act sections" + topic, action MUST be "complete". Do NOT ask for state/jurisdiction. The topic is sufficient.
    - For legal_opinion: if the user only gave a brief sentence or two, you almost certainly need to ask follow-up questions. A short message like "landlord not returning deposit" or "neighbour encroached my land" does NOT have enough detail — ask about jurisdiction, timeline, documents, what they want.
+   - NEVER REPEAT A QUESTION: If you already asked for something (e.g. incident dates, police report/FIR number) and the user replied — including "it happened yesterday" or "I am yet to file a complaint" or "I don't have that" — treat that as their answer. Do NOT ask the same question again. Either mark complete with the facts you have, or ask one different question about a different gap.
    - When the user has provided enough detail across the conversation (you know the dispute, location, key facts, and what they want), THEN mark complete with a thorough facts_summary.
    - Match the user's language register — formal English, casual Hinglish, whatever they used.
    - For indexing: only official PDF documents (acts from governments, judgments from courts) may be proposed. Never propose news articles or non-official sources for indexing."""
@@ -223,6 +226,8 @@ FACT_COLLECTION_RETRY_PROMPT = """You are an advocate. The client said:
 "{user_message}"
 
 CRITICAL: If the user asked to "pull", "find", "get", "show", or "search for" case laws/judgments or bare act sections ON A TOPIC, you MUST use action=complete with intent=search or lookup. Do NOT ask for state/jurisdiction.
+
+If the user said they don't have something yet (e.g. "I am yet to file a complaint", "no FIR", "don't have the document"), prefer action=complete with intent=legal_opinion and a facts_summary of what they did share — do NOT ask again for the same thing.
 
 Reply with valid JSON only (one line). Choose the FIRST option that fits:
 - Greeting/small talk (Hi, Thanks, Namaste — NO legal content): {{"action": "ask", "reply_to_client": "<warm reply, invite legal query>"}}
@@ -287,24 +292,47 @@ CLIENT'S SITUATION:
 
 TASK: Identify the distinct dispute components. Each component is a separate legal grievance requiring its own research.
 
-Common dispute types:
-- Physical harm (assault, grievous hurt, injuries)
-- Property rights violations (eviction, possession, encroachment, trespass)
-- Criminal offences (theft, cheating, fraud, forgery)
-- Contract/agreement breaches
-- Domestic disputes (maintenance, custody, matrimonial)
-- Employment disputes (wrongful termination, wages, harassment)
-- Consumer disputes (defective goods, deficient services)
-
 OUTPUT: Valid JSON only, no preamble or explanation:
-{{"disputes": [{{"id": "d1", "dispute": "one-sentence description of this specific grievance", "legal_nature": "criminal|civil|both", "keywords": ["legally meaningful keyword 1", "keyword 2", "Act name if known", "section if known"]}}]}}
+{{"disputes": [
+  {{
+    "id": "d1",
+    "dispute": "Grammatically correct one-sentence restatement of the grievance in plain English, using the client's own facts",
+    "legal_nature": "criminal|civil|both",
+    "keywords": ["assault", "grievous hurt", "physical injury"],
+    "bare_act_hints": [],
+    "search_angles": [
+      "criminal liability for physical assault causing serious injury",
+      "punishment for intentional bodily harm with a weapon",
+      "compensation for injuries caused by neighbor"
+    ]
+  }}
+]}}
 
 RULES:
 - Capture ALL distinct disputes present — do not cap or omit any grievance.
 - Each dispute must be genuinely distinct in law — different statutes or different reliefs apply.
 - Do NOT group unrelated grievances just to reduce the count. Each separate legal harm deserves its own entry.
 - If the situation has only one grievance, output exactly 1 dispute.
-- Keywords must be legally meaningful: act names, legal concepts, BNS/IPC section numbers if you know them.
+
+- dispute: rewrite the client's grievance in clear, grammatically correct English. Use their facts directly. Do NOT add legal terminology, act names, or section numbers.
+  Good: "Your neighbor struck you with a rod causing a fracture to your leg."
+  Bad:  "Neighbor's assault causing grievous hurt under BNS Section 117."
+
+- keywords: 3-5 plain descriptive words describing what happened. No act names. No section numbers. No legal codes.
+  Good: ["assault", "physical injury", "fracture", "neighbor", "rod"]
+  Bad:  ["BNS Section 117", "grievous hurt", "Bharatiya Nyaya Sanhita"]
+
+- bare_act_hints: List the 1-3 most directly applicable Indian Acts for this specific dispute. Use the official short name + year (e.g. "Bharatiya Nyaya Sanhita 2023", "Transfer of Property Act 1882", "Negotiable Instruments Act 1881"). Only include acts you are highly confident about — omit if unsure rather than guess. If the client themselves named a specific Act, always include it. Output [] only if you truly cannot identify a likely applicable act.
+  Good: ["Bharatiya Nyaya Sanhita 2023", "Bharatiya Nagarik Suraksha Sanhita 2023"]  for a criminal assault case.
+  Good: ["Transfer of Property Act 1882", "Specific Relief Act 1963"]  for a property sale dispute.
+  Good: ["Negotiable Instruments Act 1881"]  for a cheque-bounce case.
+  Bad:  ["some general law"] — vague guesses are worse than [].
+  Note: For criminal offences after July 2024, use the new codes (BNS/BNSS/BSA), NOT the old IPC/CrPC/IEA.
+
+- search_angles: 2-3 plain English phrases (6-12 words each) describing what legal provision would apply. These drive a vector database search — use natural language, not act names or section numbers. Cover different angles: criminal liability, civil remedy, and the specific nature of the harm.
+  Good: ["criminal liability for physical assault causing serious injury", "civil compensation for bodily harm caused by neighbor", "punishment for intentional grievous hurt with weapon"]
+  Bad:  ["BNS 117 grievous hurt", "Bharatiya Nyaya Sanhita section 117 assault"]
+
 - Output ONLY valid JSON. No preamble, no trailing text."""
 
 
@@ -316,17 +344,47 @@ DISPUTE: {dispute}
 RETRIEVED BARE ACT SECTIONS:
 {bare_acts}
 
-QUESTION: Do the retrieved sections sufficiently cover the key statutory provisions needed to advise on this specific dispute?
+TASK: Assess coverage. Consider ALL aspects of this dispute type:
+1. The primary offence / right / obligation section
+2. Definitions section (what constitutes the offence/right)
+3. Punishment / remedy / relief section
+4. Procedure section (if relevant — e.g. limitation, jurisdiction, complaint)
 
-Answer "sufficient" if the main applicable provisions are present (even if not exhaustive).
-Answer "not sufficient" if clearly important provisions for this dispute type are missing.
+QUESTION: Do the retrieved sections cover at least (1) and one of (2)/(3)?
 
 OUTPUT: One line of valid JSON only:
-{{"sufficient": true, "reason": "<max 15 words why>"}}
+{{"sufficient": true, "reason": "<max 15 words why>", "missing_aspects": []}}
 or
-{{"sufficient": false, "reason": "<max 15 words what is missing>"}}
+{{"sufficient": false, "reason": "<max 15 words what is missing>", "missing_aspects": ["definition section", "punishment section"]}}
 
-Be decisive. Lean toward sufficient=true if relevant sections are present. Output ONLY valid JSON."""
+Be decisive. If the core operative provision is present, lean sufficient=true. Output ONLY valid JSON."""
+
+
+# ---------------------------------------------------------------------------
+# BARE ACT MULTI-QUERY GENERATION — generates diverse search angles for one dispute
+# ---------------------------------------------------------------------------
+
+BARE_ACT_SEARCH_QUERIES_PROMPT = """You are an expert Indian legal researcher helping build a vector database search.
+
+DISPUTE: {dispute}
+KNOWN ACT HINTS: {act_hints}
+EXISTING KEYWORDS: {keywords}
+
+TASK: Generate 4 DISTINCT short search queries that together maximise coverage of the relevant bare act sections.
+Each query should approach the dispute from a DIFFERENT angle:
+1. The primary legal right / obligation (e.g. "right to wages on termination employment")
+2. The specific offence / cause of action (e.g. "cruelty husband dowry harassment criminal")
+3. The remedy or relief available (e.g. "compensation reinstatement wrongful dismissal workmen")
+4. An act-name + section approach (e.g. "Industrial Disputes Act section 25F retrenchment compensation")
+
+OUTPUT: Valid JSON only — no preamble:
+{{"queries": ["query 1", "query 2", "query 3", "query 4"]}}
+
+RULES:
+- Each query 4-10 words, no act names in queries 1-3 (so vector search returns across all acts).
+- Query 4 MUST include an act name from KNOWN ACT HINTS if any were provided.
+- Queries must be diverse — do NOT just rephrase the same idea.
+- Output ONLY valid JSON."""
 
 
 EXTRACT_BARE_ACT_PORTIONS_SYSTEM = """Extract ONLY the statutory provisions from this legal document that apply to the case facts.
@@ -510,6 +568,148 @@ PII_WARNING_PREFIX = (
     "Please avoid sharing identification numbers (Aadhaar, PAN, bank details) in chat — "
     "they are not needed for legal research. Your query is being processed.\n\n"
 )
+
+
+# ---------------------------------------------------------------------------
+# BARE ACTS PHASE — intermediate step (present sections, explain, ask follow-up)
+# ---------------------------------------------------------------------------
+
+BARE_ACT_EXPLAIN_AND_FOLLOWUP_PROMPT = """You are a senior Indian advocate. You have retrieved the relevant bare act sections for a client's dispute. Your tasks:
+
+DISPUTE:
+{dispute_facts}
+
+RETRIEVED BARE ACT SECTIONS:
+{bare_acts_list}
+
+TASK A — Section explanations:
+For each section write a SHORT explanation (1-2 sentences only) of:
+  1. What this section provides
+  2. Why it specifically applies to THIS dispute
+
+TASK B — Follow-up question (HIGH BAR — most of the time return null):
+Ask ONE question ONLY if there is a single critical missing fact that would directly change:
+  (a) WHICH bare act sections apply (e.g. hurt vs. grievous hurt determines BNS §115 vs §117), OR
+  (b) the SEVERITY of the offence or the remedy available (e.g. weapon used → enhanced punishment tier).
+Do NOT ask a question merely to "strengthen the case" or gather supporting details.
+Do NOT ask if the facts already make the applicable sections and their severity clear.
+
+Good examples (ask these):
+- "Was the attack with a weapon, or bare hands?" — determines hurt vs. grievous hurt (different sections, different punishments)
+- "Is your sale deed registered or unregistered?" — determines whether title law or agreement law applies
+
+Bad examples (do NOT ask these):
+- "Do you have witnesses?" — doesn't change which sections apply
+- "What is the value of the encroached land?" — doesn't change the applicable act
+- "Have you sent a legal notice?" — procedural, doesn't change the sections
+
+If the facts clearly establish which sections apply and their severity, set followup_question to null.
+
+OUTPUT: Respond with valid JSON only — no preamble, no trailing text:
+{{"section_explanations": [{{"act_name": "...", "section_number": "...", "explanation": "1-2 sentence explanation"}}], "followup_question": "One targeted question, or null", "followup_reason": "Why this changes the applicable sections or severity, or null"}}"""
+
+
+STRUCTURED_FINAL_OPINION_PROMPT = """You are a senior Indian advocate preparing a structured legal opinion for a client.
+
+DISPUTE FACTS:
+{dispute_facts}
+
+ADDITIONAL INFORMATION FROM CLIENT:
+{additional_info}
+
+OUTPUT: Write a structured legal opinion in EXACTLY this format. Do not add any section not listed here.
+
+## Dispute Summary
+[1-2 sentences: what happened, in plain language, neutral tone]
+
+## Applicable Sections and Case Laws
+[For each bare act section below, write:]
+**[Act Name], Section [Number] — [Section Title]**
+[2-3 sentences: what this section provides and why it applies to this specific dispute. Ground this in the retrieved section text.]
+[If case laws are available for this section:]
+Relevant precedents:
+- [Case name]: [One sentence — the legal principle established and how it applies here]
+
+## Legal Position and Next Steps
+[3-4 sentences: what the combined law says, what remedies are available (FIR, civil suit, injunction, etc.), what the client should do first. Be specific — name the acts and sections. No vague advice.]
+
+CRITICAL RULES:
+- ONLY cite sections and cases from the retrieved materials. Do NOT hallucinate.
+- If no case laws are available under a section, omit the "Relevant precedents" part.
+- Keep total length 300–450 words.
+- Do NOT add sections not listed in the format above.
+
+RETRIEVED BARE ACT SECTIONS (with explanations):
+{bare_acts_with_explanations}
+
+CASE LAWS:
+{case_laws_text}"""
+
+
+STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT = """You are a senior Indian advocate preparing a structured legal opinion for a client, organised by distinct dispute components.
+
+DISPUTE FACTS:
+{dispute_facts}
+
+ADDITIONAL INFORMATION FROM CLIENT:
+{additional_info}
+
+RETRIEVED MATERIALS GROUPED BY DISPUTE:
+{dispute_blocks_text}
+
+You must write the final opinion ONLY using the materials above. Do NOT introduce any new sections, Acts, or case laws from your own knowledge.
+
+Follow this OUTPUT FORMAT exactly (no extra headings):
+
+1. Start with a brief overall summary:
+
+Dispute Summary
+[1–2 sentences: what happened overall, in plain language, neutral tone. Integrate the key points from all dispute components.]
+
+2. Then, for each dispute component (in order), write a block like this:
+
+Dispute 1: [short plain-language title for this dispute, e.g. "Neighbor assaulted you causing a serious leg injury"]
+
+  [1–2 sentences: what this dispute is about, in plain language.]
+
+  [Act Name] Section [Number] — [Section Title]
+
+  [2–4 sentences in plain language explaining what this section says and why it matters for this dispute, tying it clearly to the client’s facts. Be specific but concise.]
+
+  ┌──────────────────────────────────────────────────────┐
+  │  [Quote or very closely paraphrase ONLY the most      │
+  │  relevant part of the section text that applies to    │
+  │  this dispute. Do NOT fabricate wording or add new    │
+  │  provisions. Keep this extract short and focused.]    │
+  └──────────────────────────────────────────────────────┘
+
+  If case laws are listed under this section in the materials, add:
+  - [Case name]: [2–3 sentences — (a) what legal principle this case establishes, and (b) exactly how that principle supports or weakens the client’s position in this dispute.]
+
+  [If there are multiple sections under this dispute, repeat the pattern:
+   "Act / Code Name Section [Number] — [Title]" + explanation + box + linked case laws.]
+
+3. After you finish all disputes, add a visual separator line on its own:
+
+─────────────────────────────────────────────────────────
+
+4. Follow-up question logic (CRITICAL):
+
+- Think carefully about whether ONE clarifying question would genuinely change which bare act sections apply or how serious the offences/remedies are.
+- ONLY if the answer could change sections or severity, ask exactly ONE focused question at the very end, like:
+
+  Was the attack carried out with any weapon, or with bare hands only? This determines whether a more serious provision applies.
+
+- If the facts are already complete enough that no such question would change the applicable sections or severity, DO NOT ask any follow-up question. Instead, end with a 1–2 sentence offer like:
+
+  If you'd like, I can find relevant court judgments on this, or give you a full legal opinion.
+
+CRITICAL RULES:
+- You are STRICTLY GROUNDED: only use Acts, sections, and case laws that appear in the retrieved materials text above. Do NOT hallucinate or guess new section numbers, Act names, or case laws.
+- When mentioning a section or case, ensure it actually appears in the retrieved materials.
+- Do NOT restate long verbatim extracts; quote only the most relevant portions already provided.
+- Keep total length roughly 400–650 words.
+- Number disputes as "Dispute 1:", "Dispute 2:", etc., in order. Output plain text paragraphs and boxes as shown above (no extra markdown headings)."""
 
 
 # ---------------------------------------------------------------------------

@@ -120,12 +120,6 @@ body {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.messages-container::-webkit-scrollbar {
-  display: none;
 }
 
 .messages-container:focus {
@@ -195,11 +189,12 @@ body {
   gap: 4px;
   align-items: center;
   width: 100%;
+  margin-bottom: 8px;
 }
 
 .message--user {
   flex-direction: row-reverse;
-  justify-content: flex-end;
+  justify-content: flex-start; /* Push user message (avatar + bubble) to the right */
 }
 
 .message--assistant {
@@ -208,12 +203,16 @@ body {
 
 .message--user .message-content {
   align-items: flex-end;
-  max-width: 100%;
+  max-width: 55%; /* User messages only till middle of chat */
+  box-sizing: border-box;
 }
 
 .message--user .message-bubble {
   max-width: 100%;
   box-sizing: border-box;
+  background: #e3f2fd; /* Light blue box */
+  border: 1px solid #90caf9;
+  border-radius: 14px;
 }
 
 /* Avatar */
@@ -276,11 +275,9 @@ body {
 }
 
 .message-bubble--user {
-  background: transparent;
   color: var(--text-h);
   font-size: 0.88rem;
-  border: none;
-  border-bottom-right-radius: 0; /* Removed specific radius */
+  border-bottom-right-radius: 14px;
 }
 
 .message-bubble--assistant {
@@ -299,12 +296,96 @@ body {
   min-height: 0;
 }
 
+/* Keep text and actions on same line: dots at end of text */
+.message-bubble-inner {
+  display: block;
+}
+.message-bubble-inner .message-bubble-text--preserve {
+  display: inline;
+}
+.message-bubble-inner .message-bubble-actions {
+  display: inline-flex;
+  margin-top: 0;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
 /* Edit / Copy actions on messages */
 .message-bubble-actions {
   display: flex;
   gap: 8px;
   margin-top: 6px;
   flex-wrap: wrap;
+}
+
+.message-action-menu-wrap {
+  position: relative;
+}
+
+.message-action-dots-btn {
+  padding: 4px 2px;
+  font-size: 0.88rem;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.75;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  outline: none;
+  box-shadow: none;
+}
+
+.message-action-dots-btn:hover {
+  opacity: 1;
+}
+
+.message-action-dots {
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.message-action-dropdown {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  margin-bottom: 4px;
+  min-width: 120px;
+  padding: 4px 0;
+  background: var(--bg, #fff);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.message-action-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  color: var(--text);
+  background: none;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.message-action-dropdown-item svg {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+
+.message-action-dropdown-item:hover {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .message-action-btn {
@@ -1104,8 +1185,8 @@ body {
 /* Left Column (Sidebar) – New chat, Bare Acts, Case Laws, Chat history, Pending indexing */
 .left-column {
   width: 280px;
-  min-width: 280px;
-  max-width: 280px;
+  min-width: 140px;
+  max-width: 420px;
   background-color: #f5f5f5;
   padding: 16px;
   border-right: 1px solid #ddd;
@@ -1115,6 +1196,29 @@ body {
   height: 100vh;
   gap: 0;
   overflow: hidden;
+}
+
+.left-column-resizer {
+  width: 6px;
+  cursor: col-resize;
+  flex-shrink: 0;
+  background: transparent;
+  position: relative;
+}
+
+.left-column-resizer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: transparent;
+}
+
+.left-column-resizer:hover::before {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 /* Shared scrollbar: same width and style for all three sidebar scroll areas */
@@ -1927,12 +2031,6 @@ body {
   overflow-x: hidden;
   min-height: 0;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.right-content-wrapper.chat-mode .messages-container::-webkit-scrollbar {
-  display: none;
 }
 
 .right-content-wrapper.chat-mode .chat-input-wrapper {
@@ -2428,16 +2526,71 @@ body {
   border: 1px solid #eee;
 }
 
-/* Bottom pane: Eval Results and Architecture — always retained, below chat/disclaimer, no overlap */
+/* Bottom pane: Eval Results / Architecture / Updates Tracker — always retained, below chat/disclaimer, no overlap */
 .eval-architecture-pane {
   flex-shrink: 0;
   margin-top: 6px;
-  padding-top: 8px;
+  padding-top: 0;
   padding-bottom: 12px;
   border-top: 1px solid var(--border);
   background: var(--bg);
   min-height: 0;
-  max-height: 50vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.eval-pane-resizer {
+  height: 6px;
+  cursor: ns-resize;
+  flex-shrink: 0;
+  background: transparent;
+  position: relative;
+}
+
+.eval-pane-resizer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  transform: translateY(-50%);
+  background: transparent;
+}
+
+.eval-pane-resizer:hover::before {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+/* When pane is collapsed (min height), hide content so only the resizer strip is visible */
+.eval-architecture-pane.eval-pane-collapsed .eval-section,
+.eval-architecture-pane.eval-pane-collapsed .architecture-section,
+.eval-architecture-pane.eval-pane-collapsed .updates-tracker-section {
+  display: none;
+}
+
+/* Accordion layout inside bottom pane: headers stay at top; open section takes remaining space */
+.eval-architecture-pane .eval-section,
+.eval-architecture-pane .architecture-section,
+.eval-architecture-pane .updates-tracker-section {
+  flex-shrink: 0;
+}
+
+.eval-architecture-pane .eval-section[open],
+.eval-architecture-pane .architecture-section[open],
+.eval-architecture-pane .updates-tracker-section[open] {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.eval-architecture-pane .eval-section-body,
+.eval-architecture-pane .architecture-section-body,
+.eval-architecture-pane .updates-tracker-body {
+  flex: 1;
+  min-height: 0;
   overflow-y: auto;
 }
 
@@ -2741,6 +2894,50 @@ body {
   margin-left: 0;
 }
 
+/* Updates Tracker section — shares look with Eval/Architecture in bottom pane */
+.updates-tracker-section {
+  flex-shrink: 0;
+  margin-top: 8px;
+  padding-top: 0;
+  border: none;
+  background: transparent;
+  border-radius: 0;
+}
+
+.updates-tracker-summary {
+  padding: 0;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  font-size: 0.9em;
+  color: #666;
+  font-weight: normal;
+}
+
+.updates-tracker-summary::-webkit-details-marker {
+  display: none;
+}
+
+.updates-tracker-summary::before {
+  content: "▸ ";
+  font-size: 0.85em;
+  margin-right: 4px;
+}
+
+.updates-tracker-section[open] .updates-tracker-summary::before {
+  content: "▾ ";
+}
+
+.updates-tracker-body {
+  padding: 6px 0 12px 0;
+  margin-left: 0;
+}
+
+.updates-tracker-table-wrap {
+  overflow-x: auto;
+  max-height: none;
+}
+
 .architecture-loading,
 .architecture-message {
   font-size: 0.9rem;
@@ -2819,4 +3016,122 @@ body {
   border: none;
   border-top: 1px solid var(--border);
   margin: 1em 0;
+}
+
+/* ============================================================
+   Phase A — Dispute-grouped bare acts preview
+   ============================================================ */
+
+.message-bare-acts-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Dispute block ── */
+.dispute-block {
+  margin-bottom: 28px;
+}
+
+/* "Dispute 1: description" — single inline line */
+.dispute-block-header {
+  margin: 0 0 14px;
+  font-size: 0.97rem;
+  line-height: 1.45;
+}
+
+.dispute-block-number {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.dispute-block-description {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+/* ── Individual section inside a dispute ── */
+.bare-act-section-block {
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+
+.bare-act-section-block + .bare-act-section-block {
+  padding-top: 16px;
+  border-top: 1px dashed var(--border);
+}
+
+.bare-act-section-heading {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-h);
+  line-height: 1.4;
+}
+
+.bare-act-section-explanation {
+  margin: 0 0 12px;
+  font-size: 0.93rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+/* ── Verbatim statutory text — full four-sided box ── */
+.bare-act-verbatim {
+  margin: 0 0 4px;
+  padding: 12px 16px;
+  background: #f7f7f7;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #444;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-style: normal;
+  font-family: inherit;
+}
+
+/* Separator between disputes */
+.dispute-block + .dispute-block {
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+
+/* ── Horizontal rule before follow-up question ── */
+.bare-acts-preview-intro {
+  margin: 0 0 18px;
+  font-size: 0.98rem;
+  color: var(--text-h);
+  line-height: 1.5;
+}
+.bare-acts-followup-separator {
+  margin: 20px 0 16px;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Follow-up question ── */
+.bare-acts-followup {
+  margin-top: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+}
+
+.bare-acts-followup-text {
+  margin: 0;
+  font-size: 0.93rem;
+  color: var(--text-h);
+  line-height: 1.55;
+  font-style: italic;
+}
+
+/* ── Next steps (when no follow-up question) ── */
+.bare-acts-next-steps {
+  margin-top: 0;
+  font-size: 0.88rem;
+  color: #888;
+  font-style: italic;
 }

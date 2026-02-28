@@ -550,13 +550,28 @@ def enrich_from_gap_results(
     HIGH_QUALITY_SCORE = 5.0
     WEB_MIN_SCORE = 1.0
     TARGET_RESULTS = 5
-    DEFAULT_MAX_BARE_ACTS = 15  # Cap to reduce 429s and time; prefer official + PDF
+    DEFAULT_MAX_BARE_ACTS = 3   # Fetch at most 3 PDFs per web round (was 15); each PDF = 100+ sections
     DEFAULT_MAX_CASE_LAWS = 10
     MAX_BARE_ACTS_TO_ENRICH = max_bare_acts_to_enrich if max_bare_acts_to_enrich is not None else DEFAULT_MAX_BARE_ACTS
     MAX_CASE_LAWS_TO_ENRICH = max_case_laws_to_enrich if max_case_laws_to_enrich is not None else DEFAULT_MAX_CASE_LAWS
 
+    # Old acts superseded in 2024 — IPC→BNS, CrPC→BNSS, IEA→BSA.
+    # Fetching their full PDFs wastes time and injects obsolete law.
+    _OLD_ACT_PDF_PATTERNS = (
+        "the-indian-penal-code",
+        "ipc_act",
+        "ipc-act",
+        "1860",          # IPC 1860 PDFs
+        "code-of-criminal-procedure",
+        "crpc",
+        "indian-evidence-act",
+        "a1872",         # Evidence Act
+        "a1860",         # IPC
+        "a1973",         # CrPC
+    )
+
     def _skip_low_value(result: dict) -> bool:
-        """Filter out search pages, generic home pages, and similar."""
+        """Filter out search pages, generic home pages, old IPC/CrPC act PDFs, and similar."""
         url = (result.get("url") or "").lower()
         title = (result.get("title") or "").strip()
         if "/search/?forminput=" in url or "forminput=" in url:
@@ -565,16 +580,25 @@ def enrich_from_gap_results(
             return True
         if "indiankanoon.org/search/" in url:
             return True
+        # Skip old-law PDFs (IPC 1860, CrPC 1973, IEA 1872) — superseded by BNS/BNSS/BSA
+        if any(pat in url for pat in _OLD_ACT_PDF_PATTERNS):
+            return True
         return False
 
     def _sort_key_bare_act(r: dict) -> tuple:
-        """Official first, then PDF URLs, then by tier."""
+        """
+        Prefer: section-level URLs > official PDFs > other.
+        Section-level URLs (indiacode.nic.in/show-data?...&orderno=X) fetch ONE section fast.
+        Whole-act PDFs (indiacode.nic.in/bitstream/...) fetch 100+ sections and are very slow.
+        """
         tag = (r.get("source_tag") or "").upper()
         url = (r.get("url") or "").lower()
         is_off = 0 if tag in ("OFFICIAL", "OFFICIAL_COURT") else 1
-        is_pdf = 0 if (".pdf" in url or "/bitstream/" in url) else 1
+        # section-level URL = best; whole-act PDF = worst
+        is_section_level = 0 if ("show-data" in url or "orderno=" in url) else 1
+        is_whole_pdf = 0 if (".pdf" in url or "/bitstream/" in url) else 1
         tier = r.get("tier", 99)
-        return (is_off, is_pdf, tier)
+        return (is_off, is_section_level, is_whole_pdf, tier)
 
     summary = {
         "pdfs_saved": 0,
@@ -597,72 +621,132 @@ def enrich_from_gap_results(
     total_download = len(bare_act_results) + len(case_law_results_pre)
     download_n = 0
 
-    for result in bare_act_results:
-        enrichment = enrich_from_search_result(result, "bare_act", original_query, skip_index=skip_index)
-        download_n += 1
-        if progress_callback:
-            progress_callback(download_n, total_download)
-        if enrichment["pdf_saved"]:
-            summary["pdfs_saved"] += 1
-        summary["chunks_indexed"] += enrichment["chunks_added"]
-        if enrichment["content"] and enrichment.get("is_legislation", True):
-            summary["enriched_bare_acts"].append(enrichment)
+    # P0: Batch mode — defer all per-document BM25 rebuilds to a single rebuild at the end.
+    # Guard against nesting: if the caller (e.g. api_server.py /indexing/run) already entered
+    # batch mode we must NOT enter or exit it here — that would clobber the caller's dirty-set.
+    _already_in_batch = _batch_mode
+    if not skip_index and not _already_in_batch:
+        begin_batch_indexing()
+        logger.debug("enrich_from_gap_results: batch indexing mode entered (%d docs)", total_download)
 
-    # Case laws: only official PDFs; process in ranking order, stop when we have enough
-    web_high_quality_count = 0
-    needed_high_quality = max(0, target_high_quality - local_high_quality_count)
-    case_law_results = case_law_results_pre
-    # When pull_all (max_case_laws_to_enrich > default), allow more results; otherwise cap at TARGET_RESULTS.
-    case_law_cap = max(TARGET_RESULTS, MAX_CASE_LAWS_TO_ENRICH)
-    for result in case_law_results:
-        # Early exit: stop if we have enough high-quality (score > 5.0) OR enough total results (score >= WEB_MIN_SCORE)
-        if web_high_quality_count >= needed_high_quality and MAX_CASE_LAWS_TO_ENRICH <= DEFAULT_MAX_CASE_LAWS:
-            logger.info(f"Reached {target_high_quality} high-quality case laws (score > {HIGH_QUALITY_SCORE}), stopping")
-            break
-        if len(summary["enriched_case_laws"]) >= case_law_cap:
-            logger.info(f"Reached {case_law_cap} case laws with score >= {WEB_MIN_SCORE}, stopping enrichment")
-            break
-            
-        enrichment = enrich_from_search_result(result, "case_law", original_query, skip_index=skip_index)
-        download_n += 1
-        if progress_callback:
-            progress_callback(download_n, total_download)
-        source_tag = result.get("source_tag", "UNKNOWN")
-        if enrichment["pdf_saved"]:
-            summary["pdfs_saved"] += 1
-        summary["chunks_indexed"] += enrichment["chunks_added"]
-        score = enrichment.get("_rerank_score", 0)
-        title_short = (enrichment.get("title") or "Unknown")[:60]
-        passed = enrichment.get("content") and score >= WEB_MIN_SCORE
-        logger.info(
-            "Web case law: '%s' score=%.2f (threshold=%.1f) %s",
-            title_short, score, WEB_MIN_SCORE, "included" if passed else "excluded"
-        )
-        
-        if score > HIGH_QUALITY_SCORE:
-            web_high_quality_count += 1
-        
-        if passed:
-            summary["enriched_case_laws"].append(enrichment)
+    # P2 (dedup cache): Pre-load existing-signatures cache once for the whole batch so that
+    # every enrich_from_search_result() call does NOT hit the chunk JSON files from disk
+    # repeatedly. get_existing_signatures() has a 5-minute TTL and invalidate_signatures_cache()
+    # is called after actual indexing, so the next batch always sees fresh data.
+    # We also store the function reference so we can use it inside the loops without
+    # repeated imports (Python caches the module, but the name lookup is cleaner this way).
+    _existing_sigs = None
+    _dup_check = None
+    if not skip_index:
+        try:
+            from services.indexing_duplicate_check import (
+                get_existing_signatures,
+                is_duplicate_of_existing as _is_dup_fn,
+            )
+            _existing_sigs = get_existing_signatures()
+            _dup_check = _is_dup_fn
+            logger.debug(
+                "Dedup cache pre-loaded: %d bare-act, %d case-law signatures",
+                len(_existing_sigs.get("bare_act", [])),
+                len(_existing_sigs.get("case_law", [])),
+            )
+        except Exception as _pre_e:
+            logger.warning("Could not pre-load dedup signatures: %s", _pre_e)
 
-    for result in gap_results.get("news_results", []):
-        if not skip_index:
-            _save_web_reference(result, "")
-            summary["web_references_saved"] += 1
-        summary["enriched_news"].append({
-            "url": result.get("url"),
-            "title": result.get("title"),
-            "snippet": result.get("snippet", ""),
-            "source_tag": "NEWS_REFERENCE",
-        })
+    try:
+        for result in bare_act_results:
+            # Dedup pre-check: skip title-matched duplicates before the expensive HTTP/PDF download.
+            if _dup_check is not None and _existing_sigs is not None:
+                _title = result.get("title", "")
+                if _dup_check(_title, existing=_existing_sigs, suggested_category="bare_act"):
+                    logger.info("Dedup: bare act already in store, skipping download: %s", _title[:60])
+                    continue
+            enrichment = enrich_from_search_result(result, "bare_act", original_query, skip_index=skip_index)
+            download_n += 1
+            if progress_callback:
+                progress_callback(download_n, total_download)
+            if enrichment["pdf_saved"]:
+                summary["pdfs_saved"] += 1
+            summary["chunks_indexed"] += enrichment["chunks_added"]
+            if enrichment["content"] and enrichment.get("is_legislation", True):
+                summary["enriched_bare_acts"].append(enrichment)
 
-    # Indexing is done manually via the Pending indexing UI; we only fetch for display here.
-    total_fetched = len(summary["enriched_bare_acts"]) + len(summary["enriched_case_laws"])
-    logger.info(
-        f"Enrichment complete: {total_fetched} documents fetched for display. "
-        "Indexing is available via the Pending indexing UI (official PDFs only)."
-    )
-    return summary
+        # Case laws: only official PDFs; process in ranking order, stop when we have enough
+        web_high_quality_count = 0
+        needed_high_quality = max(0, target_high_quality - local_high_quality_count)
+        case_law_results = case_law_results_pre
+        # When pull_all (max_case_laws_to_enrich > default), allow more results; otherwise cap at TARGET_RESULTS.
+        case_law_cap = max(TARGET_RESULTS, MAX_CASE_LAWS_TO_ENRICH)
+        for result in case_law_results:
+            # Early exit: stop if we have enough high-quality (score > 5.0) OR enough total results (score >= WEB_MIN_SCORE)
+            if web_high_quality_count >= needed_high_quality and MAX_CASE_LAWS_TO_ENRICH <= DEFAULT_MAX_CASE_LAWS:
+                logger.info(f"Reached {target_high_quality} high-quality case laws (score > {HIGH_QUALITY_SCORE}), stopping")
+                break
+            if len(summary["enriched_case_laws"]) >= case_law_cap:
+                logger.info(f"Reached {case_law_cap} case laws with score >= {WEB_MIN_SCORE}, stopping enrichment")
+                break
+
+            # Dedup pre-check: skip case laws whose title is already in the store.
+            if _dup_check is not None and _existing_sigs is not None:
+                _title = result.get("title", "")
+                if _dup_check(_title, existing=_existing_sigs, suggested_category="case_law"):
+                    logger.info("Dedup: case law already in store, skipping download: %s", _title[:60])
+                    continue
+
+            enrichment = enrich_from_search_result(result, "case_law", original_query, skip_index=skip_index)
+            download_n += 1
+            if progress_callback:
+                progress_callback(download_n, total_download)
+            source_tag = result.get("source_tag", "UNKNOWN")
+            if enrichment["pdf_saved"]:
+                summary["pdfs_saved"] += 1
+            summary["chunks_indexed"] += enrichment["chunks_added"]
+            score = enrichment.get("_rerank_score", 0)
+            title_short = (enrichment.get("title") or "Unknown")[:60]
+            passed = enrichment.get("content") and score >= WEB_MIN_SCORE
+            logger.info(
+                "Web case law: '%s' score=%.2f (threshold=%.1f) %s",
+                title_short, score, WEB_MIN_SCORE, "included" if passed else "excluded"
+            )
+
+            if score > HIGH_QUALITY_SCORE:
+                web_high_quality_count += 1
+
+            if passed:
+                summary["enriched_case_laws"].append(enrichment)
+
+        for result in gap_results.get("news_results", []):
+            if not skip_index:
+                _save_web_reference(result, "")
+                summary["web_references_saved"] += 1
+            summary["enriched_news"].append({
+                "url": result.get("url"),
+                "title": result.get("title"),
+                "snippet": result.get("snippet", ""),
+                "source_tag": "NEWS_REFERENCE",
+            })
+
+        total_fetched = len(summary["enriched_bare_acts"]) + len(summary["enriched_case_laws"])
+        if skip_index:
+            logger.info(
+                "Enrichment complete: %d docs fetched for display. "
+                "Indexing available via the Pending indexing UI (official PDFs only).",
+                total_fetched,
+            )
+        else:
+            logger.info(
+                "Enrichment complete: %d docs fetched, %d chunks indexed "
+                "(BM25 rebuild deferred to batch flush).",
+                total_fetched, summary["chunks_indexed"],
+            )
+        return summary
+
+    finally:
+        # P0: Always flush deferred BM25 rebuilds when we own the batch context.
+        # The 'finally' block runs even on 'return', so BM25 is always flushed.
+        if not skip_index and not _already_in_batch:
+            end_batch_indexing()
+            logger.debug("enrich_from_gap_results: batch indexing mode exited")
 
 
 # ---------------------------------------------------------------------------

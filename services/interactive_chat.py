@@ -16,7 +16,11 @@ import logging
 
 from llm.ollama_client import ask_llm
 from services.fact_collector import get_next_question_or_complete
-from services.response_generator_v2 import generate_response_v2 as generate_response
+from services.response_generator_v2 import (
+    generate_response_v2 as generate_response,
+    retrieve_bare_acts_phase,
+    generate_final_opinion_with_case_laws,
+)
 from services.content_guard import check_query_safety, sanitize_input, check_response_safety
 
 logger = logging.getLogger(__name__)
@@ -42,9 +46,106 @@ def _ensure_message(msg: str, facts: str, intent: str) -> str:
         return "Thank you for sharing the details. I've researched the applicable bare acts and case laws. Here's my analysis."
 
 
+def _run_bare_acts_phase(facts_summary: str, progress_callback=None, states: list = None) -> dict:
+    """
+    New Phase A: retrieve and explain bare acts, then ask a targeted follow-up question
+    (or proceed directly if no follow-up is needed).
+    Returns phase="bare_acts_presented" so the API can show sections + question to the user.
+
+    states: list of state names detected from the query (e.g. ['Telangana']).
+      Used to search BOTH Union/central acts AND state-specific acts.
+    """
+    try:
+        result = retrieve_bare_acts_phase(facts_summary, progress_callback=progress_callback, states=states or [])
+    except Exception as e:
+        logger.error("_run_bare_acts_phase: retrieval failed: %s", e, exc_info=True)
+        result = {"bare_acts": [], "followup_question": None, "intro_text": "I couldn't retrieve bare act sections right now. Proceeding with general analysis."}
+
+    bare_acts = result.get("bare_acts", [])
+    disputes   = result.get("disputes", [])   # per-dispute groupings for UI rendering
+    followup_question = result.get("followup_question")
+    intro_text = result.get("intro_text", "Here are the relevant bare act sections I found.")
+
+    # If no follow-up needed and we have sections, we can still present them before
+    # the user confirms to proceed — keep phase as bare_acts_presented in all cases.
+    return {
+        "phase": "bare_acts_presented",
+        "message": intro_text,
+        "facts_summary": facts_summary,
+        "bare_acts": bare_acts,
+        "disputes": disputes,             # forwarded to API → frontend for per-dispute layout
+        "followup_question": followup_question,
+        "response": {
+            "bare_act_sections": bare_acts,
+            "case_laws": [],
+            "internet_case_laws": [],
+            "explanation": intro_text,
+            "progress": None,
+            "indexing_candidates": [],
+        },
+        "response_type": "bare_acts_presented",
+        "materials_to_confirm": None,
+        "indexed": False,
+    }
+
+
+def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_info: str, progress_callback=None) -> dict:
+    """
+    New Phase B: given collected facts + already-retrieved bare acts + any additional user info,
+    retrieve case laws, associate them with sections, and generate the structured final opinion.
+    """
+    try:
+        resp = generate_final_opinion_with_case_laws(
+            facts_summary,
+            bare_acts,
+            additional_info=additional_info,
+            progress_callback=progress_callback,
+        )
+    except Exception as e:
+        logger.error("_run_final_with_case_laws failed: %s", e, exc_info=True)
+        resp = {
+            "bare_act_sections": bare_acts,
+            "case_laws": [],
+            "internet_case_laws": [],
+            "explanation": "I encountered an issue while preparing the final analysis. Please try again.",
+            "progress": None,
+            "indexing_candidates": [],
+        }
+
+    explanation = (resp.get("explanation") or "").strip()
+    if explanation:
+        from services.content_guard import check_response_safety
+        resp_safety = check_response_safety(explanation)
+        if not resp_safety.get("safe"):
+            explanation = "I was unable to generate a safe response for this query. Please rephrase."
+
+    return {
+        "phase": "done",
+        "message": "",
+        "facts_summary": facts_summary,
+        "response": {
+            "bare_act_sections": resp.get("bare_act_sections", []),
+            "case_laws": resp.get("case_laws", []),
+            "internet_case_laws": resp.get("internet_case_laws", []),
+            "explanation": explanation,
+            "progress": resp.get("progress"),
+            "indexing_candidates": resp.get("indexing_candidates", []),
+        },
+        "response_type": "legal_opinion",
+        "materials_to_confirm": None,
+        "indexed": False,
+    }
+
+
 def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_count: int = None, progress_callback=None, search_strategy: str = "local_then_web") -> dict:
     """Handle search/lookup intents: go straight to research and return results."""
-    document_types = "case_laws_only" if intent == "search" else "acts_only"
+    # Always retrieve both bare acts AND case laws regardless of intent.
+    # The original "acts_only"/"case_laws_only" split was too aggressive:
+    #   • "search" → "case_laws_only": if user asks "which sections apply", gets 0 bare acts
+    #   • "lookup" → "acts_only": never shows any supporting case laws
+    # With an experiment corpus that may have acts but no case laws (or vice versa),
+    # exclusive selection causes false "No results" responses.
+    document_types = "both"
     try:
         resp = generate_response(
             facts_summary,
@@ -137,7 +238,7 @@ def _empty_result(phase: str = "done", facts_summary: str = None) -> dict:
     }
 
 
-def process_chat(conversation: list, current_message: str, phase: str, facts_summary: str = None, progress_callback=None, intent: str = None, document_types: str = None, search_strategy: str = None, result_count: int = None) -> dict:
+def process_chat(conversation: list, current_message: str, phase: str, facts_summary: str = None, progress_callback=None, intent: str = None, document_types: str = None, search_strategy: str = None, result_count: int = None, bare_acts: list = None) -> dict:
     """
     Process a chat message and return the appropriate response.
 
@@ -188,20 +289,10 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
             if intent == "generic_chat":
                 return _run_generic_chat(conversation, current_message)
 
-            # Legal opinion: move to response_generation phase (API will call again with intent/document_types/search_strategy)
-            return {
-                "phase": "response_generation",
-                "message": msg,
-                "facts_summary": facts,
-                "intent": intent,
-                "document_types": result.get("document_types", "both"),
-                "search_strategy": result.get("search_strategy", "local_then_web"),
-                "result_count": result.get("result_count"),
-                "response": None,
-                "response_type": None,
-                "materials_to_confirm": None,
-                "indexed": False,
-            }
+            # Legal opinion: NEW FLOW — retrieve bare acts first, explain them, ask follow-up
+            # Pass detected states so web search covers both central + state-specific acts
+            states = result.get("states") or []
+            return _run_bare_acts_phase(facts, progress_callback=progress_callback, states=states)
 
         # Still collecting facts — return the question
         return {
@@ -288,6 +379,17 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
             "materials_to_confirm": None,
             "indexed": False,
         }
+
+    # ---- Phase: Bare Acts Review (user answered the follow-up question) ----
+    elif phase == "bare_acts_review":
+        # The user replied to the follow-up question shown after bare act presentation.
+        # additional_info = user's answer; bare_acts = sections from Phase A (passed by frontend).
+        facts = facts_summary or current_message
+        additional_info = current_message
+        stored_bare_acts = bare_acts or []
+        return _run_final_with_case_laws(
+            facts, stored_bare_acts, additional_info, progress_callback=progress_callback
+        )
 
     # ---- Phase: Confirm Index ----
     elif phase == "confirm_index":

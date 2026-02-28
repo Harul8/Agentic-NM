@@ -65,26 +65,63 @@ def decompose_disputes(facts_summary: str, llm_fn=None) -> list:
 # ---------------------------------------------------------------------------
 
 def _parse_disputes(response: str) -> list:
-    """Extract and validate disputes list from LLM JSON response."""
+    """Extract and validate disputes list from LLM JSON response.
+
+    Tries multiple extraction strategies to handle common LLM output variations:
+      1. Direct JSON parse (clean output)
+      2. Strip markdown fences (```json ... ```)
+      3. Largest {...} object in the response (LLM preamble before JSON)
+      4. Largest [...] array in the response (LLM returns array directly)
+    """
     if not response:
         return []
 
-    # Try direct parse
+    # 1. Direct parse
+    stripped = response.strip()
     try:
-        data = json.loads(response.strip())
-        return _extract_disputes_from_data(data)
-    except json.JSONDecodeError:
+        data = json.loads(stripped)
+        result = _extract_disputes_from_data(data)
+        if result:
+            return result
+    except (json.JSONDecodeError, ValueError):
         pass
 
-    # Try to find JSON block in response
-    match = re.search(r"\{[\s\S]*\}", response)
-    if match:
+    # 2. Strip markdown code fence if present
+    fence_match = re.search(r"```(?:json)?\s*([\s\S]*?)```", stripped)
+    if fence_match:
         try:
-            data = json.loads(match.group(0))
-            return _extract_disputes_from_data(data)
-        except json.JSONDecodeError:
+            data = json.loads(fence_match.group(1).strip())
+            result = _extract_disputes_from_data(data)
+            if result:
+                return result
+        except (json.JSONDecodeError, ValueError):
             pass
 
+    # 3. Find the outermost {...} object block
+    obj_match = re.search(r"\{[\s\S]*\}", stripped)
+    if obj_match:
+        try:
+            data = json.loads(obj_match.group(0))
+            result = _extract_disputes_from_data(data)
+            if result:
+                return result
+        except (json.JSONDecodeError, ValueError):
+            pass
+
+    # 4. Find a [...] array block (LLM sometimes returns the disputes array directly)
+    arr_match = re.search(r"\[[\s\S]*\]", stripped)
+    if arr_match:
+        try:
+            arr = json.loads(arr_match.group(0))
+            if isinstance(arr, list):
+                # Treat as if it were {"disputes": [...]}
+                result = _extract_disputes_from_data({"disputes": arr})
+                if result:
+                    return result
+        except (json.JSONDecodeError, ValueError):
+            pass
+
+    logger.debug("Dispute decomposer: could not extract valid JSON from LLM response (len=%d)", len(response))
     return []
 
 
@@ -108,6 +145,9 @@ def _extract_disputes_from_data(data: dict) -> list:
             "dispute": dispute_text,
             "legal_nature": str(d.get("legal_nature", "both")).lower(),
             "keywords": [str(k).strip() for k in d.get("keywords", []) if str(k).strip()],
+            # New fields from improved decomposition prompt (may be absent in old LLM output)
+            "bare_act_hints": [str(h).strip() for h in d.get("bare_act_hints", []) if str(h).strip()],
+            "search_angles": [str(s).strip() for s in d.get("search_angles", []) if str(s).strip()],
         })
 
     return valid
@@ -122,10 +162,16 @@ def _normalise_ids(disputes: list) -> list:
 
 
 def _single_dispute_fallback(facts_summary: str) -> list:
-    """Return a single dispute object wrapping the full query."""
+    """Return a single dispute object wrapping the full query.
+
+    Ensures all fields that downstream code expects are present so the fallback
+    dispute dict has the same shape as a fully decomposed one.
+    """
     return [{
         "id": "d1",
         "dispute": facts_summary[:300],
         "legal_nature": "both",
-        "keywords": [],
+        "keywords": [],       # _build_bare_act_queries will use Q5 LLM fallback to generate
+        "bare_act_hints": [], # never inject LLM-knowledge act names
+        "search_angles": [],  # empty → _web_search_bare_acts uses round1_queries
     }]

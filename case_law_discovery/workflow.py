@@ -7,6 +7,7 @@ without modifying them. Only limits in limits.py are fixed.
 
 import json
 import logging
+import math
 import os
 import re
 import sys
@@ -154,6 +155,225 @@ def _extract_act_keywords(act_name: str, chunks: list | None = None) -> str:
     return " ".join(keywords[:5])
 
 
+# ---------------------------------------------------------------------------
+# P3: Section-anchored score_query
+# ---------------------------------------------------------------------------
+
+# Words that signal operative/substantive legal content in a section
+_OPERATIVE_WORDS = frozenset({
+    "shall", "punishable", "liable", "offence", "offense", "penalty",
+    "imprisonment", "fine", "cognizable", "bailable", "non-bailable",
+    "compoundable", "warrant", "summon", "arrest", "conviction",
+    "means", "includes", "definitions", "defined",
+    "right", "duty", "obligation", "entitled", "prohibited", "unlawful",
+    "void", "voidable", "enforceable", "prescribed", "compensation",
+    "damages", "forfeiture", "disqualification", "cancellation",
+})
+
+
+def _score_chunk_substantiveness(chunk: dict) -> int:
+    """
+    Score a chunk by how many operative legal words appear in its full_text.
+    Higher = more substantively significant for a score_query.
+    """
+    text = (_chunk_text(chunk) or "").lower()
+    return sum(1 for w in _OPERATIVE_WORDS if w in text)
+
+
+def _build_section_anchored_query(
+    act_name: str,
+    chunks: list | None,
+    top_n: int = 5,
+    snippet_chars: int = 150,
+) -> str:
+    """
+    Build a focused cross-encoder query from the most legally significant sections
+    of the act (P3 improvement). Instead of the broad act summary, picks the top
+    `top_n` sections by operative-word density and includes their section number,
+    title, and a short opening snippet.
+
+    Format:
+        "{act_name} | Sec {N} {title}: {snippet} | Sec {M} {title}: {snippet} ..."
+
+    Falls back to empty string if chunks are unavailable (caller should fall back
+    to act_name + act_summary).
+    """
+    # Load chunks from vector store if not provided
+    if not chunks:
+        try:
+            from config import BARE_CHUNKS_V2
+            import json as _json
+            if os.path.isfile(BARE_CHUNKS_V2):
+                with open(BARE_CHUNKS_V2, "r", encoding="utf-8") as _f:
+                    _all = _json.load(_f)
+                if isinstance(_all, dict):
+                    _all = list(_all.values())
+                act_norm = act_name.lower().strip()
+                chunks = [
+                    c for c in _all
+                    if (c.get("act_name") or c.get("source") or "").lower().strip() == act_norm
+                ]
+        except Exception:
+            pass
+
+    if not chunks:
+        return ""
+
+    # Score every chunk and pick top_n
+    scored = sorted(chunks, key=_score_chunk_substantiveness, reverse=True)
+    top_chunks = scored[:top_n]
+
+    if not top_chunks:
+        return ""
+
+    parts = [act_name]
+    for c in top_chunks:
+        sec_num = (c.get("section_number") or "").strip()
+        sec_title = (c.get("section_title") or "").strip()
+        full_text = (_chunk_text(c) or "").strip()
+        # Build a compact label: "Sec 498A Cruelty by husband: <first 150 chars>"
+        label_parts = []
+        if sec_num:
+            label_parts.append(f"Sec {sec_num}")
+        if sec_title:
+            label_parts.append(sec_title)
+        label = " ".join(label_parts)
+        snippet = full_text[:snippet_chars].replace("\n", " ").strip()
+        if label and snippet:
+            parts.append(f"{label}: {snippet}")
+        elif label:
+            parts.append(label)
+        elif snippet:
+            parts.append(snippet)
+
+    query = " | ".join(parts)
+    # Cross-encoder works best under ~512 tokens (~2000 chars); trim if needed
+    return query[:2000]
+
+
+# ---------------------------------------------------------------------------
+# P1: Section-anchored IK search queries
+# ---------------------------------------------------------------------------
+
+def _build_section_ik_queries(act_name: str, chunks: list | None, top_n: int = 3) -> list[str]:
+    """
+    Build additional Indian Kanoon search queries that include the most operative
+    section numbers from the act's chunks.
+
+    Example: "Indian Penal Code" → [
+        "Indian Penal Code section 302 Punishment for murder",
+        "Indian Penal Code section 498A Cruelty by husband",
+        "Indian Penal Code section 376 Rape",
+    ]
+
+    These section-specific queries surface judgments that cite the exact provision,
+    rather than relying on the act name alone which may return administrative results.
+    """
+    if not chunks:
+        return []
+
+    # Score chunks and take top_n most operative
+    scored = sorted(chunks, key=_score_chunk_substantiveness, reverse=True)
+    queries = []
+    seen_secs = set()
+    for c in scored:
+        if len(queries) >= top_n:
+            break
+        sec_num = (c.get("section_number") or "").strip()
+        if not sec_num or sec_num in seen_secs:
+            continue
+        seen_secs.add(sec_num)
+        sec_title = (c.get("section_title") or "").strip()
+        # Build focused IK query: "Act section N Title"
+        parts = [act_name, "section", sec_num]
+        if sec_title:
+            # First 4 words of title to keep query short
+            title_words = sec_title.split()[:4]
+            parts.append(" ".join(title_words))
+        queries.append(" ".join(parts)[:200])
+
+    return queries
+
+
+# ---------------------------------------------------------------------------
+# P2: Judgment-type filter — reject interlocutory/procedural documents
+# ---------------------------------------------------------------------------
+
+_RE_INTERLOCUTORY = re.compile(
+    r'\b('
+    r'interlocutory\s+application'
+    r'|i\.a\.\s*(?:no\.?\s*)?\d'
+    r'|i\.a\.\s+\w'          # "I.A. filed"
+    r'|office\s+report'
+    r'|listing\s+order'
+    r'|defect\s+(?:no\.?|notice)'
+    r'|show\s+cause\s+notice'
+    r'|writ\s+of\s+summons'
+    r'|chamber\s+summons'
+    r'|master\s+summons'
+    r'|contempt\s+notice'
+    r'|registered\s+notice'
+    r'|office\s+objection'
+    r'|this\s+is\s+not\s+a\s+judgment'
+    r'|suit\s+summons'
+    r'|summons\s+for\s+judgment'
+    r'|adjournment\s+(?:order|application)'
+    r'|returnable\s+(?:on|before)'   # summons language
+    r'|interim\s+(?:stay|injunction)\s+(?:application|motion)'
+    r')',
+    re.IGNORECASE,
+)
+
+# Positive signals that strongly suggest a final judgment
+_RE_FINAL_SIGNALS = re.compile(
+    r'\b('
+    r'(?:this\s+)?(?:appeal|petition|suit|revision|writ\s+petition)\s+is\s+(?:allowed|dismissed|disposed)'
+    r'|for\s+the\s+(?:above\s+)?reasons.*judgment\s+is'
+    r'|accordingly\s+(?:the\s+)?(?:appeal|petition|suit)\s+(?:is\s+)?(?:allowed|dismissed)'
+    r'|we\s+(?:therefore\s+)?(?:allow|dismiss|affirm|set\s+aside)\s+the'
+    r'|in\s+the\s+result.*(?:allowed|dismissed)'
+    r'|operative\s+part\s+of\s+the\s+(?:order|judgment)'
+    r')',
+    re.IGNORECASE,
+)
+
+
+def _is_final_judgment(title: str, first_two_pages: str) -> bool:
+    """
+    Return True if the document looks like a final judgment or substantive order,
+    False if it appears to be an interlocutory order, summons, notice, or office report.
+
+    Uses a two-step check:
+    1. If clear interlocutory/procedural markers are present → reject.
+    2. Otherwise accept (we prefer false-negatives to false-positives here).
+    """
+    combined = (title + " " + first_two_pages[:1200]).lower()
+    if _RE_INTERLOCUTORY.search(combined):
+        return False
+    return True
+
+
+# ---------------------------------------------------------------------------
+# P5: Court-tier pre-sort for IK TIDs
+# ---------------------------------------------------------------------------
+
+def _ik_court_tier(doc: dict) -> int:
+    """
+    Return court tier integer for sorting IK TIDs before document fetch:
+        0 = Supreme Court  (highest priority)
+        1 = High Court
+        2 = Other / unknown
+
+    Uses the 'docsource' field returned by Indian Kanoon search API.
+    """
+    ds = (doc.get("docsource") or "").lower()
+    if "supreme court" in ds or ds.strip() in ("sc", "supremecourt"):
+        return 0
+    if "high court" in ds or " hc" in ds or ds.endswith("hc") or "highcourt" in ds:
+        return 1
+    return 2
+
+
 def is_case_law_discovery_request(message: str) -> bool:
     """
     Lightweight check: should this message be handled by the case law discovery workflow
@@ -251,6 +471,172 @@ def _parse_act_range_from_message(user_message: str) -> tuple[int, int] | None:
     if m:
         return 1, int(m.group(1))
     return None
+
+
+# ---------------------------------------------------------------------------
+# Search Constraints — parse user-specified filters (court type, result count,
+# extra terms) from the message and apply them throughout the discovery pipeline.
+# All constraints are *optional*: if not specified, existing defaults apply unchanged.
+# ---------------------------------------------------------------------------
+
+# Court type detection patterns: (compiled_regex, canonical_label)
+_COURT_PATTERNS = [
+    (re.compile(r'\b(supreme\s+court|sc\s+judg(?:ment|ement))\b', re.I), "Supreme Court"),
+    (re.compile(r'\b(telangana\s+high\s+court|high\s+court\s+of\s+telangana|tshc)\b', re.I), "Telangana High Court"),
+    (re.compile(r'\b(andhra\s+(?:pradesh\s+)?high\s+court|aphc)\b', re.I), "Andhra Pradesh High Court"),
+    (re.compile(r'\b(delhi\s+high\s+court|high\s+court\s+of\s+delhi)\b', re.I), "Delhi High Court"),
+    (re.compile(r'\b(bombay\s+high\s+court|high\s+court\s+of\s+bombay)\b', re.I), "Bombay High Court"),
+    (re.compile(r'\b(madras\s+high\s+court|high\s+court\s+of\s+madras)\b', re.I), "Madras High Court"),
+    (re.compile(r'\b(calcutta\s+high\s+court|high\s+court\s+at\s+calcutta)\b', re.I), "Calcutta High Court"),
+    (re.compile(r'\b(allahabad\s+high\s+court|high\s+court\s+of\s+judicature\s+at\s+allahabad)\b', re.I), "Allahabad High Court"),
+    (re.compile(r'\b(kerala\s+high\s+court)\b', re.I), "Kerala High Court"),
+    (re.compile(r'\b(karnataka\s+high\s+court|high\s+court\s+of\s+karnataka)\b', re.I), "Karnataka High Court"),
+    (re.compile(r'\b(gujarat\s+high\s+court)\b', re.I), "Gujarat High Court"),
+    (re.compile(r'\b(rajasthan\s+high\s+court)\b', re.I), "Rajasthan High Court"),
+    (re.compile(r'\b(punjab\s+(?:and\s+)?haryana\s+high\s+court)\b', re.I), "Punjab and Haryana High Court"),
+    (re.compile(r'\b(madhya\s+pradesh\s+high\s+court|m\.?p\.?\s+high\s+court)\b', re.I), "Madhya Pradesh High Court"),
+    (re.compile(r'\b(orissa\s+high\s+court|odisha\s+high\s+court)\b', re.I), "Orissa High Court"),
+    (re.compile(r'\b(patna\s+high\s+court)\b', re.I), "Patna High Court"),
+    (re.compile(r'\b(gauhati\s+high\s+court)\b', re.I), "Gauhati High Court"),
+    (re.compile(r'\b(himachal\s+(?:pradesh\s+)?high\s+court)\b', re.I), "Himachal Pradesh High Court"),
+    (re.compile(r'\b(jharkhand\s+high\s+court)\b', re.I), "Jharkhand High Court"),
+    (re.compile(r'\b(uttarakhand\s+high\s+court|nainital\s+high\s+court)\b', re.I), "Uttarakhand High Court"),
+    (re.compile(r'\b(chhattisgarh\s+high\s+court)\b', re.I), "Chhattisgarh High Court"),
+    (re.compile(r'\b(manipur\s+high\s+court|tripura\s+high\s+court|meghalaya\s+high\s+court)\b', re.I), "North-East High Court"),
+    # Generic "High Court" (any HC, no state specified)
+    (re.compile(r'\bonly\s+(?:from\s+)?high\s+courts?\b', re.I), "High Court"),
+    (re.compile(r'\b(?:only\s+)?high\s+court\s+(?:only|judgments?|judgements?|cases?|rulings?)\b', re.I), "High Court"),
+    (re.compile(r'\bhigh\s+court\s+only\b', re.I), "High Court"),
+]
+
+# Patterns for "only N case laws" / "find 5 judgments" / "top 10 results"
+_MAX_RESULTS_RE = re.compile(
+    r'\b(?:only|find|get|top|limit\s+to|maximum|max|fetch|show|give\s+me|restrict\s+to)\s+(\d+)\s*'
+    r'(?:case\s+laws?|judgments?|judgements?|results?|documents?|docs?)\b',
+    re.I,
+)
+_MAX_RESULTS_RE2 = re.compile(
+    r'\b(\d+)\s+(?:case\s+laws?|judgments?|judgements?|results?)\s+(?:only|max|maximum|at\s+most)\b',
+    re.I,
+)
+
+# Pattern for extra topic terms: "about land acquisition", "relating to dowry"
+_EXTRA_TERMS_RE = re.compile(
+    r'\b(?:about|related\s+to|relating\s+to|concerning|regarding|specific\s+to|on\s+topic\s+of|on\s+the\s+topic\s+of)\s+(.+?)(?=\s*$|\s*[,;]|\s+and\s+(?:only|just|please|also)\b)',
+    re.I,
+)
+
+
+def parse_search_constraints(user_message: str) -> dict:
+    """
+    Parse user-specified search constraints from the message (regex, no LLM call).
+
+    Returns a dict with:
+      court_type (str|None)  — canonical court label, e.g. "High Court", "Telangana High Court"
+      max_results (int|None) — user-specified result cap (overrides TOP_N_* defaults)
+      extra_terms (str)      — additional terms to append to search queries
+      court_query_prefix (str) — what to prepend to queries (same as court_type if set)
+
+    All fields default to None/"" — no-op if not specified.
+    """
+    msg = user_message or ""
+
+    # 1. Court type (first match wins; specific courts checked before generic)
+    court_type = None
+    for pattern, label in _COURT_PATTERNS:
+        if pattern.search(msg):
+            court_type = label
+            break
+
+    # 2. Max results
+    max_results = None
+    m = _MAX_RESULTS_RE.search(msg) or _MAX_RESULTS_RE2.search(msg)
+    if m:
+        try:
+            max_results = max(1, min(int(m.group(1)), 100))  # clamp 1–100
+        except (ValueError, IndexError):
+            pass
+
+    # 3. Extra terms (skip if it looks like an act name — already handled by act resolution)
+    extra_terms = ""
+    m = _EXTRA_TERMS_RE.search(msg)
+    if m:
+        raw = m.group(1).strip().rstrip(".,;:")
+        if raw and len(raw) < 80 and not _line_looks_like_act_title(raw):
+            extra_terms = raw
+
+    return {
+        "court_type": court_type,
+        "max_results": max_results,
+        "extra_terms": extra_terms,
+        "court_query_prefix": court_type or "",
+    }
+
+
+def _effective_limit(constraints: dict | None, default: int) -> int:
+    """Return user-specified max_results or the default if not set."""
+    if constraints and constraints.get("max_results"):
+        return int(constraints["max_results"])
+    return default
+
+
+def _build_constrained_query(base_query: str, constraints: dict | None) -> str:
+    """Append court type and extra terms to a query string (only if not already present)."""
+    if not constraints:
+        return base_query
+    base = base_query.strip()
+    court_prefix = (constraints.get("court_query_prefix") or "").strip()
+    extra_terms = (constraints.get("extra_terms") or "").strip()
+    parts = [base]
+    if court_prefix and court_prefix.lower() not in base.lower():
+        parts.append(court_prefix)
+    if extra_terms and extra_terms.lower() not in base.lower():
+        parts.append(extra_terms)
+    return " ".join(parts)
+
+
+def _matches_court_type(candidate: dict, court_type: str) -> bool:
+    """
+    Return True if candidate's title + first 1 KB of content matches the requested court type.
+    Gracefully returns True if court_type is empty (no-op).
+    """
+    if not court_type:
+        return True
+    text = (
+        (candidate.get("title") or "") + " " + (candidate.get("content") or "")[:1000]
+    ).lower()
+    ct_lower = court_type.lower()
+    if ct_lower == "supreme court":
+        return "supreme court" in text
+    if ct_lower == "high court":
+        return "high court" in text
+    # Specific named court: require all meaningful words to appear
+    words = [w for w in ct_lower.split() if len(w) > 2 and w not in ("and", "the", "of", "at")]
+    return all(w in text for w in words)
+
+
+def _filter_by_court(candidates: list[dict], constraints: dict | None) -> list[dict]:
+    """
+    Filter candidate list to those matching the requested court_type.
+    Falls back to returning all candidates if the filter would yield nothing
+    (prevents accidentally returning 0 results due to missing content).
+    """
+    court_type = (constraints or {}).get("court_type") if constraints else None
+    if not court_type:
+        return candidates
+    filtered = [c for c in candidates if _matches_court_type(c, court_type)]
+    if not filtered and candidates:
+        logger.info(
+            "Court filter '%s' matched 0 of %d candidates; relaxing filter (no content available for check)",
+            court_type, len(candidates),
+        )
+        return candidates  # Graceful fallback
+    if len(filtered) < len(candidates):
+        logger.info(
+            "Court filter '%s': kept %d of %d candidates",
+            court_type, len(filtered), len(candidates),
+        )
+    return filtered
 
 
 def interpret_user_input(user_message: str) -> dict:
@@ -471,6 +857,23 @@ def _is_likely_document_url(url: str) -> bool:
     return False
 
 
+def _is_pdf_url(url: str) -> bool:
+    """
+    True only if URL clearly points to a PDF document.
+    Case law discovery presents only PDF docs for indexing, not web page links.
+    """
+    if not url or not url.strip():
+        return False
+    u = url.strip().lower()
+    if u.endswith(".pdf") or u.rstrip("/").endswith(".pdf"):
+        return True
+    if ".pdf?" in u or ".pdf&" in u:
+        return True
+    if "/pdf/" in u or "/pdf?" in u:
+        return True
+    return False
+
+
 def _fetch_and_score_candidate(
     result: dict,
     query: str,
@@ -500,6 +903,10 @@ def _fetch_and_score_candidate(
         return None
     first_two = text_content[:_FIRST_TWO_PAGES_CHARS]
     if not _is_case_law_doc(url, title, first_two):
+        return None
+    # P2: reject interlocutory orders / summons / notices
+    if not _is_final_judgment(title, first_two):
+        logger.debug("P2 filter: skipping non-final document %s", url[:60])
         return None
     score = score_query_document(query, text_content)
     if score <= SIMILARITY_THRESHOLD_LOW:
@@ -534,10 +941,14 @@ def _score_candidate_content(
     text_content = (text_content or "").strip()
     if not text_content or len(text_content) < 200:
         return None
+    first_two = text_content[:_FIRST_TWO_PAGES_CHARS]
+    # P2: reject interlocutory orders / summons / notices
+    if not _is_final_judgment(title, first_two):
+        logger.debug("P2 filter: skipping non-final IK document %s", source_url[:60])
+        return None
     score = score_query_document(query, text_content)
     if score <= SIMILARITY_THRESHOLD_LOW:
         return None
-    first_two = text_content[:_FIRST_TWO_PAGES_CHARS]
     signature = _extract_signature(first_two)
     out = {
         "title": title,
@@ -552,24 +963,31 @@ def _score_candidate_content(
     return out
 
 
-def _indian_kanoon_candidates(query: str, max_results: int, include_content: bool, max_pages: int = 3) -> list[dict]:
+def _indian_kanoon_candidates(query: str, max_results: int, include_content: bool, max_pages: int | None = None) -> list[dict]:
     """
     Search Indian Kanoon API and return scored candidates (same shape as web candidates).
 
-    Fetches up to max_pages pages of search results (page 0, 1, 2) to collect a larger
-    pool of TIDs before fetching full document content. Each IK page returns ~10-20 docs,
-    so 3 pages gives ~60 TIDs, from which we fetch documents for the first max_results.
-    This triples the candidate pool without increasing the number of document fetches.
+    P5: Fetches up to IK_SEARCH_MAX_PAGES pages (default 5; was 3) to collect a larger
+    candidate pool. Each IK page returns ~10-20 docs.
+
+    P5: After collecting TIDs, pre-sorts by court tier (SC first, HC second) so the
+    most authoritative judgments get full-text fetched first — the expensive step.
+
+    P0: Applies citation-count boost to final scores:
+        boosted_score = ce_score * (1 + CITATION_BOOST_WEIGHT * log(1 + numciting))
     """
     try:
         from retrieval.indian_kanoon_client import search as ik_search, get_document
     except ImportError as e:
         logger.debug("Indian Kanoon client not available: %s", e)
         return []
-    from config import INDIAN_KANOON_API_TOKEN
+    from config import INDIAN_KANOON_API_TOKEN, IK_SEARCH_MAX_PAGES, CITATION_BOOST_WEIGHT
     if not INDIAN_KANOON_API_TOKEN:
         logger.warning("Indian Kanoon API token not set (INDIAN_KANOON_API_TOKEN); act-named flow will have no IK results")
         return []
+
+    if max_pages is None:
+        max_pages = IK_SEARCH_MAX_PAGES  # P5: default 5 pages (was hardcoded 3)
 
     # --- Phase 1: Collect TIDs from multiple pages (fast — just metadata) ---
     all_tids = []
@@ -590,7 +1008,17 @@ def _indian_kanoon_candidates(query: str, max_results: int, include_content: boo
     if not all_tids:
         return []
 
-    logger.debug("IK query '%s': collected %d TIDs across %d pages", query[:60], len(all_tids), min(max_pages, len(all_tids) // 10 + 1))
+    # P5: Sort TIDs by court tier before document fetch so SC judgments are fetched first.
+    # This means when we truncate to max_results, we preferentially fetch SC > HC > other.
+    all_tids.sort(key=_ik_court_tier)
+
+    logger.debug(
+        "IK query '%s': collected %d TIDs across %d pages (SC=%d HC=%d other=%d)",
+        query[:60], len(all_tids), min(max_pages, len(all_tids) // 10 + 1),
+        sum(1 for t in all_tids if _ik_court_tier(t) == 0),
+        sum(1 for t in all_tids if _ik_court_tier(t) == 1),
+        sum(1 for t in all_tids if _ik_court_tier(t) == 2),
+    )
 
     # --- Phase 2: Fetch full document content for up to max_results TIDs ---
     candidates = []
@@ -607,6 +1035,11 @@ def _indian_kanoon_candidates(query: str, max_results: int, include_content: boo
         url = doc.get("url") or r.get("url") or f"https://indiankanoon.org/doc/{tid}/"
         c = _score_candidate_content(title, url, text, query, include_content=include_content)
         if c:
+            # P0: apply citation-count boost to elevate heavily-cited judgments
+            numciting = int(r.get("numciting") or 0)
+            if numciting > 0 and CITATION_BOOST_WEIGHT > 0:
+                c["score"] = c["score"] * (1.0 + CITATION_BOOST_WEIGHT * math.log(1.0 + numciting))
+            c["numciting"] = numciting
             candidates.append(c)
     return candidates
 
@@ -681,24 +1114,24 @@ def _resolve_all_acts_from_summary_index(user_topic: str) -> list[tuple[str, str
     return result
 
 
-def _apply_statement_selection(candidates: list[dict]) -> list[dict]:
-    """Apply limits: all > HIGH, else top TOP_N_STATEMENT above LOW."""
+def _apply_statement_selection(candidates: list[dict], limit: int = TOP_N_STATEMENT) -> list[dict]:
+    """Apply limits: all > HIGH, else top `limit` above LOW. limit defaults to TOP_N_STATEMENT."""
     above_high = [c for c in candidates if c["score"] > SIMILARITY_THRESHOLD_HIGH]
     above_low = [c for c in candidates if SIMILARITY_THRESHOLD_LOW < c["score"] <= SIMILARITY_THRESHOLD_HIGH]
-    if len(above_high) >= TOP_N_STATEMENT:
-        return sorted(above_high, key=lambda x: -x["score"])[:TOP_N_STATEMENT]
+    if len(above_high) >= limit:
+        return sorted(above_high, key=lambda x: -x["score"])[:limit]
     combined = above_high + sorted(above_low, key=lambda x: -x["score"])
-    return combined[:TOP_N_STATEMENT]
+    return combined[:limit]
 
 
-def _apply_per_act_selection(candidates: list[dict]) -> list[dict]:
-    """Per act: all >5, else top TOP_N_PER_ACT above 3."""
+def _apply_per_act_selection(candidates: list[dict], limit: int = TOP_N_PER_ACT) -> list[dict]:
+    """Per act: all >HIGH, else top `limit` above LOW. limit defaults to TOP_N_PER_ACT."""
     above_high = [c for c in candidates if c["score"] > SIMILARITY_THRESHOLD_HIGH]
     above_low = [c for c in candidates if SIMILARITY_THRESHOLD_LOW < c["score"] <= SIMILARITY_THRESHOLD_HIGH]
-    if len(above_high) >= TOP_N_PER_ACT:
-        return sorted(above_high, key=lambda x: -x["score"])[:TOP_N_PER_ACT]
+    if len(above_high) >= limit:
+        return sorted(above_high, key=lambda x: -x["score"])[:limit]
     combined = above_high + sorted(above_low, key=lambda x: -x["score"])
-    return combined[:TOP_N_PER_ACT]
+    return combined[:limit]
 
 
 def _web_search_act_name_and_summary(act_name: str, act_summary: str, score_query: str, seen_urls: dict, max_per_query: int = 12, chunks: list | None = None) -> None:
@@ -733,11 +1166,13 @@ def _web_search_act_name_and_summary(act_name: str, act_summary: str, score_quer
             search_type="case_law",
             jurisdiction_state="Telangana",
             max_per_tier=max_per_query,
-            discovery_mode=True,  # Don't short-circuit at 5 results; search all tiers
+            discovery_mode=True,
         )
         for r in results[:ACT_NAMED_FETCH_BUFFER]:
             url = (r.get("url") or "").strip()
             if not url or url in seen_urls:
+                continue
+            if not _is_pdf_url(url):
                 continue
             time.sleep(0.4)
             doc = _fetch_and_score_candidate(r, score_query, include_content=True)
@@ -745,28 +1180,69 @@ def _web_search_act_name_and_summary(act_name: str, act_summary: str, score_quer
                 seen_urls[url] = doc
 
 
-def run_act_named_flow(act_name: str, act_summary: str) -> tuple[list[dict], int]:
+def run_act_named_flow(act_name: str, act_summary: str, constraints: dict | None = None) -> tuple[list[dict], int]:
     """
     User named an act: search Indian Kanoon (1) with act name, (2) with summary from index if present;
     then web search (1) with act name, (2) with summary; merge by URL, score descending, deduplicate vs index,
-    keep first TOP_N_ACT_NAMED (25) unique.
+    keep first n_results unique (default TOP_N_ACT_NAMED=25).
     Returns (items_for_pending, duplicates_discarded_count).
-    """
-    logger.info("Act-named flow: act=%s, fetch up to %s from Indian Kanoon + web (act name, then summary), dedup, target %s unique",
-                act_name[:50], ACT_NAMED_FETCH_BUFFER, TOP_N_ACT_NAMED)
 
-    score_query = (act_name + " " + (act_summary or "")[:500]).strip()
+    constraints (optional): parsed from user message via parse_search_constraints().
+      court_type  → filters + adds court name to queries.
+      max_results → overrides TOP_N_ACT_NAMED default.
+      extra_terms → extra terms appended to all queries.
+    """
+    n_results = _effective_limit(constraints, TOP_N_ACT_NAMED)
+    logger.info(
+        "Act-named flow: act=%s, fetch up to %s from IK + web, dedup, target %s unique%s",
+        act_name[:50], ACT_NAMED_FETCH_BUFFER, n_results,
+        f", court_filter={constraints['court_type']}" if constraints and constraints.get("court_type") else "",
+    )
+
+    # P3: Use section-anchored query (most operative sections) for better cross-encoder scoring.
+    # chunks=None causes _build_section_anchored_query to load them from the vector store.
+    score_query = (
+        _build_section_anchored_query(act_name, chunks=None)
+        or (act_name + " " + (act_summary or "")[:500]).strip()
+    )
+    logger.info(
+        "Act-named flow: score_query first 80 chars: %s",
+        score_query[:80],
+    )
     seen_urls = {}
 
     # Extract legal keywords from vector store (used for both IK and web search)
     act_keywords = _extract_act_keywords(act_name)
     keyword_query = f"{act_name} {act_keywords}".strip() if act_keywords else ""
 
-    # Indian Kanoon: (1) plain act name, (2) act name + legal keywords
-    # Keywords query replaces raw markdown summary — avoids IK 502s on long/markdown queries
-    ik_queries = [act_name.strip()]
-    if keyword_query and keyword_query.strip() != act_name.strip():
-        ik_queries.append(keyword_query[:200])
+    # P1: load chunks from vector store for section-anchored queries
+    _named_chunks: list | None = None
+    try:
+        from config import BARE_CHUNKS_V2
+        import json as _json_named
+        if os.path.isfile(BARE_CHUNKS_V2):
+            with open(BARE_CHUNKS_V2, "r", encoding="utf-8") as _f:
+                _all = _json_named.load(_f)
+            if isinstance(_all, dict):
+                _all = list(_all.values())
+            act_norm = act_name.lower().strip()
+            _named_chunks = [c for c in _all if (c.get("act_name") or c.get("source") or "").lower().strip() == act_norm]
+    except Exception:
+        pass
+
+    section_queries = _build_section_ik_queries(act_name, _named_chunks, top_n=2)
+
+    # Indian Kanoon: (1) act name [+ constraints], (2) keywords [+ constraints],
+    #               (3)+(4) section-anchored queries [P1]
+    ik_queries = [_build_constrained_query(act_name.strip(), constraints)]
+    kq_constrained = _build_constrained_query(keyword_query[:200], constraints) if keyword_query and keyword_query.strip() != act_name.strip() else ""
+    if kq_constrained and kq_constrained != ik_queries[0]:
+        ik_queries.append(kq_constrained)
+    # P1: section-specific queries (max 2 to avoid rate-limit spikes)
+    for sq in section_queries[:2]:
+        sq_c = _build_constrained_query(sq, constraints)
+        if sq_c and sq_c not in ik_queries:
+            ik_queries.append(sq_c)
     for query in ik_queries:
         if not query:
             continue
@@ -777,14 +1253,18 @@ def run_act_named_flow(act_name: str, act_summary: str) -> tuple[list[dict], int
                 continue
             if url not in seen_urls or (c.get("score") or 0) > (seen_urls[url].get("score") or 0):
                 seen_urls[url] = c
-    # Web (eCourts + DDG): only if we don't already have enough (avoids 429s when IK gives 25+)
-    if len(seen_urls) < TOP_N_ACT_NAMED:
-        # Pass chunks=None; _web_search_act_name_and_summary will load them from vector store
-        _web_search_act_name_and_summary(act_name, act_summary, score_query, seen_urls, max_per_query=12, chunks=None)
+
+    # Web (eCourts + DDG): only if we don't already have enough (avoids 429s when IK gives n_results+)
+    if len(seen_urls) < n_results:
+        constrained_act = _build_constrained_query(act_name, constraints)
+        _web_search_act_name_and_summary(constrained_act, act_summary, score_query, seen_urls, max_per_query=12, chunks=None)
     else:
         logger.info("Already have %d candidates from IK; skipping web search to avoid rate limits", len(seen_urls))
 
-    scored = sorted(seen_urls.values(), key=lambda x: -(x.get("score") or 0))
+    # Apply court-type filter (no-op if not specified)
+    all_candidates = list(seen_urls.values())
+    all_candidates = _filter_by_court(all_candidates, constraints)
+    scored = sorted(all_candidates, key=lambda x: -(x.get("score") or 0))
 
     if not scored:
         logger.warning("No Indian Kanoon or web results for act-named query")
@@ -801,22 +1281,22 @@ def run_act_named_flow(act_name: str, act_summary: str) -> tuple[list[dict], int
     for i, s in enumerate(scored):
         s["already_in_store"] = deduped[i].get("already_in_store", False) if i < len(deduped) else False
 
-    # Take first TOP_N_ACT_NAMED that are unique (not already_in_store) and document URLs only
+    # Take first n_results that are unique (not already_in_store) and PDF URLs only
     unique = []
     discarded = 0
     for s in scored:
-        if len(unique) >= TOP_N_ACT_NAMED:
+        if len(unique) >= n_results:
             break
         if s.get("already_in_store"):
             discarded += 1
             continue
-        if not _is_likely_document_url(s.get("source_url") or ""):
+        if not _is_pdf_url(s.get("source_url") or ""):
             discarded += 1
             continue
         unique.append(s)
     if discarded:
         logger.info("Act-named: %s unique selected (target %s), %s duplicates discarded, next in rank used",
-                    len(unique), TOP_N_ACT_NAMED, discarded)
+                    len(unique), n_results, discarded)
     if not unique and scored:
         logger.warning("Act-named flow: 0 proposed for indexing (all %s candidates already in index)", len(scored))
 
@@ -827,44 +1307,61 @@ def run_act_named_flow(act_name: str, act_summary: str) -> tuple[list[dict], int
     return unique, discarded
 
 
-def run_statement_flow(topic: str) -> list[dict]:
+def run_statement_flow(topic: str, constraints: dict | None = None) -> list[dict]:
     """
     Statement-based flow: Indian Kanoon API first (if token set), then tiered web search →
     fetch → score → apply limits (all >5, else top 10 above 3). Returns list for pending.
+
+    constraints (optional): parsed from user message via parse_search_constraints().
+      court_type  → filters results to matching court; adds court name to queries.
+      max_results → overrides TOP_N_STATEMENT default.
+      extra_terms → extra terms appended to search queries.
     """
     from retrieval.tiered_search import tiered_search
 
-    logger.info("Statement flow (topic=%s): limits TOP_N=%s, score>%s or top above %s",
-                topic, TOP_N_STATEMENT, SIMILARITY_THRESHOLD_HIGH, SIMILARITY_THRESHOLD_LOW)
+    n_results = _effective_limit(constraints, TOP_N_STATEMENT)
+    constrained_topic = _build_constrained_query(topic, constraints)
+
+    logger.info(
+        "Statement flow (topic=%s): limits TOP_N=%s, score>%s or top above %s%s",
+        topic, n_results, SIMILARITY_THRESHOLD_HIGH, SIMILARITY_THRESHOLD_LOW,
+        f", court_filter={constraints['court_type']}" if constraints and constraints.get("court_type") else "",
+    )
     candidates = []
     seen_urls = set()
 
-    # First: Indian Kanoon API (if configured)
-    ik_list = _indian_kanoon_candidates(topic, max_results=15, include_content=True)
+    # First: Indian Kanoon API (if configured) — use constrained query for better targeting
+    ik_list = _indian_kanoon_candidates(constrained_topic, max_results=15, include_content=True)
     for c in ik_list:
         url = c.get("source_url", "")
         if url and url not in seen_urls:
             seen_urls.add(url)
             candidates.append(c)
 
-    # Then: tiered web search (official → legal portals → newspapers)
+    # Then: tiered web search (official only: eCourts, SCI, HC)
     results = tiered_search(
-        query=topic,
+        query=constrained_topic,
         search_type="case_law",
         jurisdiction_state="Telangana",
         max_per_tier=12,
     )
     for r in results[:20]:
-        if r.get("url") in seen_urls:
+        url = r.get("url") or ""
+        if url in seen_urls:
             continue
-        seen_urls.add(r.get("url"))
+        if not _is_pdf_url(url):
+            continue
+        seen_urls.add(url)
         time.sleep(0.5)
-        doc = _fetch_and_score_candidate(r, topic, include_content=True)
+        doc = _fetch_and_score_candidate(r, constrained_topic, include_content=True)
         if doc:
             candidates.append(doc)
 
-    selected = _apply_statement_selection(candidates)
-    selected = [s for s in selected if _is_likely_document_url(s.get("source_url") or "")]
+    # Apply court-type filter (no-op if not specified)
+    candidates = _filter_by_court(candidates, constraints)
+
+    selected = _apply_statement_selection(candidates, limit=n_results)
+    selected = [s for s in selected if _is_pdf_url(s.get("source_url") or "")]
     # Deduplicate vs existing index (same logic as main indexing)
     from services.indexing_duplicate_check import check_indexing_candidates
     dedup_list = [
@@ -906,6 +1403,7 @@ def _process_single_act(
     stagger_seconds: float,
     summary_index: dict,
     index_signatures: set,
+    constraints: dict | None = None,
 ) -> list[dict]:
     """
     Process one act: IK multi-page fetch + keyword web search + score + dedup.
@@ -914,6 +1412,11 @@ def _process_single_act(
     stagger_idx > 0 causes an initial sleep of (stagger_idx * stagger_seconds) to spread
     thread DDG bursts over time and reduce rate-limit collisions.
 
+    constraints (optional): parsed from user message via parse_search_constraints().
+      court_type  → filters + appends to search queries.
+      max_results → overrides TOP_N_PER_ACT default.
+      extra_terms → extra terms appended to queries.
+
     Returns list of scored candidates for this act (content still attached for later summary gen).
     """
     from retrieval.tiered_search import tiered_search
@@ -921,6 +1424,7 @@ def _process_single_act(
     if stagger_idx > 0:
         time.sleep(stagger_idx * stagger_seconds)
 
+    n_results = _effective_limit(constraints, TOP_N_PER_ACT)
     act_name = act_info.get("act_name", "Unknown")
     chunks = act_info.get("chunks", [])
 
@@ -932,10 +1436,17 @@ def _process_single_act(
         with _file_write_lock:
             set_bare_act_summary(act_name, act_summary)
 
-    score_query = (act_name + " " + act_summary[:1500]).strip()
+    # P3: Use section-anchored query (most operative sections) for better cross-encoder scoring.
+    # Falls back to act_name + summary if no chunks are available.
+    score_query = (
+        _build_section_anchored_query(act_name, chunks)
+        or (act_name + " " + act_summary[:1500]).strip()
+    )
     logger.info(
-        "Act %s: search with act name, then summary (IK + web), top %s judgments",
-        act_name[:50], TOP_N_PER_ACT,
+        "Act %s: search with act name, then summary (IK + web), top %s judgments%s [score_query first 80: %s]",
+        act_name[:50], n_results,
+        f", court_filter={constraints['court_type']}" if constraints and constraints.get("court_type") else "",
+        score_query[:80],
     )
 
     seen_urls: dict = {}
@@ -944,10 +1455,21 @@ def _process_single_act(
     act_keywords = _extract_act_keywords(act_name, chunks)
     keyword_query = f"{act_name} {act_keywords}".strip() if act_keywords else ""
 
-    # Indian Kanoon: (1) act name, (2) act name + legal keywords
-    ik_queries = [act_name.strip()]
-    if keyword_query and keyword_query.strip() != act_name.strip():
-        ik_queries.append(keyword_query[:200])
+    # P1: Build section-anchored IK queries (act + specific section numbers).
+    # These surface judgments that cite the exact operative section, not just the act name.
+    section_queries = _build_section_ik_queries(act_name, chunks, top_n=2)
+
+    # Indian Kanoon: (1) act name [+ constraints], (2) keywords [+ constraints],
+    #               (3)+(4) section-anchored queries [P1]
+    ik_queries = [_build_constrained_query(act_name.strip(), constraints)]
+    kq_constrained = _build_constrained_query(keyword_query[:200], constraints) if keyword_query and keyword_query.strip() != act_name.strip() else ""
+    if kq_constrained and kq_constrained != ik_queries[0]:
+        ik_queries.append(kq_constrained)
+    # P1: add section-specific queries (max 2 to avoid rate-limit spikes)
+    for sq in section_queries[:2]:
+        sq_c = _build_constrained_query(sq, constraints)
+        if sq_c and sq_c not in ik_queries:
+            ik_queries.append(sq_c)
     for query in ik_queries:
         if not query:
             continue
@@ -960,12 +1482,13 @@ def _process_single_act(
                 seen_urls[url] = c
     scored = list(seen_urls.values())
 
-    # Web: act name then keyword-enriched query
-    if len(scored) < TOP_N_PER_ACT:
+    # Web: act name then keyword-enriched query (both with constraints appended)
+    if len(scored) < n_results:
         time.sleep(1.0)
-        web_queries = [act_name.strip()]
-        if keyword_query and keyword_query.strip() != act_name.strip():
-            web_queries.append(keyword_query[:150])
+        web_queries = [_build_constrained_query(act_name.strip(), constraints)]
+        kq_web = _build_constrained_query(keyword_query[:150], constraints) if keyword_query and keyword_query.strip() != act_name.strip() else ""
+        if kq_web and kq_web != web_queries[0]:
+            web_queries.append(kq_web)
         for query in web_queries:
             if not query:
                 continue
@@ -981,13 +1504,18 @@ def _process_single_act(
                 url = (r.get("url") or "").strip()
                 if not url or url in seen_urls:
                     continue
+                if not _is_pdf_url(url):
+                    continue
                 time.sleep(0.4)
                 doc = _fetch_and_score_candidate(r, score_query, include_content=True)
                 if doc:
                     seen_urls[url] = doc
         scored = list(seen_urls.values())
 
-    selected = _apply_per_act_selection(scored)
+    # Apply court-type filter (no-op if not specified)
+    scored = _filter_by_court(scored, constraints)
+
+    selected = _apply_per_act_selection(scored, limit=n_results)
 
     # Thread-safe: check and update shared index_signatures in one atomic block
     with _signatures_lock:
@@ -1004,7 +1532,7 @@ def _process_single_act(
 
     act_items = []
     for s in selected:
-        if not _is_likely_document_url(s.get("source_url") or ""):
+        if not _is_pdf_url(s.get("source_url") or ""):
             continue
         s["act_name"] = act_name
         act_items.append(s)
@@ -1012,20 +1540,26 @@ def _process_single_act(
     return act_items
 
 
-def run_acts_range_flow(act_start: int = 1, act_end: int = 10) -> list[dict]:
+def run_acts_range_flow(act_start: int = 1, act_end: int = 10, constraints: dict | None = None) -> list[dict]:
     """
     Acts-range flow: process acts numbered act_start to act_end (1-based, inclusive) in alphabetical
     order from the vector store. For each act: IK search + keyword web search, score, dedup, keep
-    top TOP_N_PER_ACT (25) per act. Generates case law summaries; deduplicates vs act-case-law index.
-    Returns list for pending (title, source_url, signature, act_name, summary).
+    top n_results per act (default TOP_N_PER_ACT=25). Generates case law summaries; deduplicates vs
+    act-case-law index. Returns list for pending (title, source_url, signature, act_name, summary).
 
     Uses ThreadPoolExecutor(max_workers=2) for batches > 1 act. Acts are staggered 45s apart to
     avoid simultaneous DDG bursts. Shared state (index_signatures, file writes) is protected by
     module-level locks. Single-act requests run sequentially with no overhead.
 
+    constraints (optional): parsed from user message via parse_search_constraints().
+      court_type  → filters results + adds court name to queries.
+      max_results → overrides TOP_N_PER_ACT default.
+      extra_terms → extra terms appended to queries.
+
     Examples:
-      run_acts_range_flow(1, 10)   → first 10 acts (same as old run_first_10_acts_flow(10))
-      run_acts_range_flow(32, 78)  → acts 32 to 78 in alphabetical order
+      run_acts_range_flow(1, 10)                               → first 10 acts (default limits)
+      run_acts_range_flow(32, 78)                              → acts 32 to 78
+      run_acts_range_flow(1, 5, constraints={"court_type": "High Court", "max_results": 5})
     """
     from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -1044,7 +1578,7 @@ def run_acts_range_flow(act_start: int = 1, act_end: int = 10) -> list[dict]:
     if len(acts) == 1:
         # Single act — run sequentially, no threading overhead
         all_items.extend(
-            _process_single_act(acts[0], 0, 0.0, summary_index, index_signatures)
+            _process_single_act(acts[0], 0, 0.0, summary_index, index_signatures, constraints)
         )
     else:
         logger.info(
@@ -1054,7 +1588,7 @@ def run_acts_range_flow(act_start: int = 1, act_end: int = 10) -> list[dict]:
         with ThreadPoolExecutor(max_workers=MAX_PARALLEL_WORKERS) as executor:
             futures = {
                 executor.submit(
-                    _process_single_act, act_info, idx, STAGGER_SECONDS, summary_index, index_signatures
+                    _process_single_act, act_info, idx, STAGGER_SECONDS, summary_index, index_signatures, constraints
                 ): act_info
                 for idx, act_info in enumerate(acts)
             }
@@ -1092,8 +1626,22 @@ def run(user_message: str) -> dict:
     """
     Main entry: interpret message, run the chosen flow, append results to pending store.
     Returns { "flow_type", "act_start", "act_end", "added": int, "pending_total": int, "message" }.
+
+    User-specified constraints (court type, result count, extra terms) are parsed from the
+    message and threaded into all sub-flows. Example messages:
+      "find only high court judgments for first 5 acts"
+      "find 5 case laws for Hindu Marriage Act"
+      "case law discovery — Telangana High Court only, limit 10"
     """
     interpreted = interpret_user_input(user_message)
+    constraints = parse_search_constraints(user_message)
+    # Log active constraints so the operator can see what was parsed
+    if constraints.get("court_type") or constraints.get("max_results") or constraints.get("extra_terms"):
+        logger.info(
+            "Search constraints parsed: court_type=%s, max_results=%s, extra_terms=%s",
+            constraints.get("court_type"), constraints.get("max_results"), constraints.get("extra_terms"),
+        )
+
     flow_type = interpreted.get("flow_type", "statement")
     added = 0
     duplicates_discarded = None
@@ -1101,7 +1649,7 @@ def run(user_message: str) -> dict:
         act_start = int(interpreted.get("act_start") or 1)
         act_end = int(interpreted.get("act_end") or interpreted.get("act_count") or 10)
         logger.info("Acts-range flow: processing acts %d to %d (alphabetical order)", act_start, act_end)
-        items = run_acts_range_flow(act_start=act_start, act_end=act_end)
+        items = run_acts_range_flow(act_start=act_start, act_end=act_end, constraints=constraints)
         if items:
             pending = load_pending()
             for it in items:
@@ -1142,7 +1690,7 @@ def run(user_message: str) -> dict:
         if acts:
             # Multi-act: complete search + dedup + append for each act, then move to next
             for act_name, act_summary in acts:
-                items, disc = run_act_named_flow(act_name, act_summary)
+                items, disc = run_act_named_flow(act_name, act_summary, constraints=constraints)
                 if duplicates_discarded is None:
                     duplicates_discarded = 0
                 duplicates_discarded += disc
@@ -1168,7 +1716,7 @@ def run(user_message: str) -> dict:
                     added += 1
                 save_pending(pending)
         else:
-            items = run_statement_flow(topic)
+            items = run_statement_flow(topic, constraints=constraints)
             if items:
                 pending = load_pending()
                 for it in items:
@@ -1197,6 +1745,11 @@ def run(user_message: str) -> dict:
         "pending_total": len(pending),
         "duplicates_discarded": duplicates_discarded,
         "message": message,
+        "constraints": {
+            "court_type": constraints.get("court_type"),
+            "max_results": constraints.get("max_results"),
+            "extra_terms": constraints.get("extra_terms") or None,
+        },
     }
 
 
