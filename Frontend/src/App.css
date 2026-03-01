@@ -2199,6 +2199,28 @@ body {
   color: #333;
 }
 
+.opinion-text-normal {
+  white-space: pre-wrap;
+}
+
+.opinion-dispute-heading {
+  color: #1a73e8;
+  font-weight: 600;
+}
+
+.opinion-quote {
+  display: inline-block;
+  width: 90%;
+  max-width: 90%;
+  margin: 0.25em 5% 0.25em 5%;
+  padding: 0.35em 0.5em;
+  background: #e5e5e5;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  box-sizing: border-box;
+  font-size: 0.95em;
+}
+
 .bare-acts-used-empty-message {
   color: #666;
   font-style: italic;
@@ -3076,6 +3098,20 @@ body {
   line-height: 1.65;
 }
 
+/* Case list under a section (opinion-format preview) — only when case laws are present */
+.bare-act-section-case-list {
+  margin: 8px 0 0;
+  padding-left: 1.2rem;
+  list-style: none;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.bare-act-section-case-item {
+  margin-bottom: 4px;
+}
+
 /* ── Verbatim statutory text — full four-sided box ── */
 .bare-act-verbatim {
   margin: 0 0 4px;
@@ -3105,6 +3141,66 @@ body {
   color: var(--text-h);
   line-height: 1.5;
 }
+
+/* ── Compact bare-acts preview: dispute line + section list only ── */
+.message-bare-acts-preview--compact .dispute-block--compact {
+  margin-bottom: 20px;
+}
+
+.message-bare-acts-preview--compact .dispute-block-header--compact {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-h);
+  line-height: 1.4;
+}
+
+.message-bare-acts-preview--compact .dispute-block-number {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.bare-act-section-list--compact {
+  margin: 0 0 0 4px;
+  padding-left: 1rem;
+  list-style: none;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.bare-act-section-item--compact {
+  margin-bottom: 6px;
+}
+
+.bare-act-section-ref {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.bare-act-section-summary {
+  font-weight: normal;
+  color: var(--text);
+}
+
+.bare-act-section-actions-inline {
+  margin-left: 6px;
+}
+
+.bare-act-section-actions-inline .web-section-source-link,
+.bare-act-section-actions-inline .add-to-index-btn-inline {
+  font-size: 0.8rem;
+  margin-left: 8px;
+}
+
+.add-to-index-btn-inline {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
 .bare-acts-followup-separator {
   margin: 20px 0 16px;
   border: none;
@@ -3124,6 +3220,32 @@ body {
   margin: 0;
   font-size: 0.93rem;
   color: var(--text-h);
+  line-height: 1.5;
+}
+
+.bare-acts-followup-list {
+  margin: 0;
+}
+
+.bare-acts-followup-intro {
+  margin: 0 0 8px;
+  font-size: 0.93rem;
+  color: var(--text-h);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.bare-acts-followup-ul {
+  margin: 0 0 0 4px;
+  padding-left: 1.2rem;
+  font-size: 0.93rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.bare-acts-followup-bullet {
+  margin-bottom: 4px;
+}
   line-height: 1.55;
   font-style: italic;
 }

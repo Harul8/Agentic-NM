@@ -29,6 +29,13 @@ VECTOR_STORE = os.path.join(DATA_ROOT, "vector_store")
 BARE_ACTS_DIR = os.path.join(DATA_ROOT, "BareActs")
 CASELAW_DIR = os.path.join(DATA_ROOT, "CaseLaws")
 
+# Feedback Log workbook — auto-filled by feedback_logger.py after every interaction.
+# Override via FEEDBACK_LOG_PATH env var or set this to an absolute path.
+FEEDBACK_LOG_PATH = os.environ.get(
+    "FEEDBACK_LOG_PATH",
+    os.path.join(_PROJECT_ROOT, "Nyaymalaw_Feedback_Log_v3.xlsx"),
+).strip()
+
 # Optional: shareable Google Drive folder URLs for local files (when using NYAYMALAW_DATA_ROOT on Drive).
 # When set, bare act / case law titles without a web URL will link to these folders.
 # Example: https://drive.google.com/drive/folders/YOUR_FOLDER_ID

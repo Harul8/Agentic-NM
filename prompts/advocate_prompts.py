@@ -571,7 +571,7 @@ PII_WARNING_PREFIX = (
 
 
 # ---------------------------------------------------------------------------
-# BARE ACTS PHASE — intermediate step (present sections, explain, ask follow-up)
+# BARE ACTS PHASE — intermediate step (present sections, explain, request additional info)
 # ---------------------------------------------------------------------------
 
 BARE_ACT_EXPLAIN_AND_FOLLOWUP_PROMPT = """You are a senior Indian advocate. You have retrieved the relevant bare act sections for a client's dispute. Your tasks:
@@ -587,26 +587,17 @@ For each section write a SHORT explanation (1-2 sentences only) of:
   1. What this section provides
   2. Why it specifically applies to THIS dispute
 
-TASK B — Follow-up question (HIGH BAR — most of the time return null):
-Ask ONE question ONLY if there is a single critical missing fact that would directly change:
-  (a) WHICH bare act sections apply (e.g. hurt vs. grievous hurt determines BNS §115 vs §117), OR
-  (b) the SEVERITY of the offence or the remedy available (e.g. weapon used → enhanced punishment tier).
-Do NOT ask a question merely to "strengthen the case" or gather supporting details.
-Do NOT ask if the facts already make the applicable sections and their severity clear.
+TASK B — Additional information needed (list all, then present as one request):
+Based on the user's input AND the retrieved bare act sections, list EVERY piece of additional information that would be needed to correctly apply the law (e.g. for land acquisition: place/district, rural or urban, extent of land, prior notification by government, public hearing conducted; for eviction: type of tenancy, notice given or not; for assault: weapon or bare hands, etc.).
+- Include only facts that would change WHICH sections apply or their SEVERITY/remedy.
+- Do NOT ask for procedural or supporting details that don't change applicability (e.g. "Do you have witnesses?").
+- If the facts already suffice to apply the retrieved sections, return an empty list.
 
-Good examples (ask these):
-- "Was the attack with a weapon, or bare hands?" — determines hurt vs. grievous hurt (different sections, different punishments)
-- "Is your sale deed registered or unregistered?" — determines whether title law or agreement law applies
-
-Bad examples (do NOT ask these):
-- "Do you have witnesses?" — doesn't change which sections apply
-- "What is the value of the encroached land?" — doesn't change the applicable act
-- "Have you sent a legal notice?" — procedural, doesn't change the sections
-
-If the facts clearly establish which sections apply and their severity, set followup_question to null.
+Output "additional_info_items" as an array of strings. Each string is one bullet point — a short question or phrase (e.g. "Which place or district?", "Rural or urban area?", "Extent of land (e.g. acreage)?", "Was any prior notification given by the government?", "Was any public hearing conducted?").
+If nothing is needed, use "additional_info_items": [].
 
 OUTPUT: Respond with valid JSON only — no preamble, no trailing text:
-{{"section_explanations": [{{"act_name": "...", "section_number": "...", "explanation": "1-2 sentence explanation"}}], "followup_question": "One targeted question, or null", "followup_reason": "Why this changes the applicable sections or severity, or null"}}"""
+{{"section_explanations": [{{"act_name": "...", "section_number": "...", "explanation": "1-2 sentence explanation"}}], "additional_info_items": ["First item?", "Second item?", ...], "followup_reason": "Why these change the applicable sections or severity, or null"}}"""
 
 
 STRUCTURED_FINAL_OPINION_PROMPT = """You are a senior Indian advocate preparing a structured legal opinion for a client.

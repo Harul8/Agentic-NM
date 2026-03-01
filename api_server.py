@@ -8,9 +8,9 @@ import secrets
 import time
 import traceback
 from queue import Queue
-from typing import Optional
+from typing import List, Optional
 
-from fastapi import FastAPI, Query, HTTPException, Depends, Header, Request
+from fastapi import BackgroundTasks, FastAPI, Query, HTTPException, Depends, Header, Request
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
@@ -23,6 +23,16 @@ from services.case_law_indexer_incremental import index_new_case_laws
 from services.bare_act_indexer_incremental import index_new_bare_acts
 from services.response_generator_v2 import generate_response_v2
 from llm.ollama_client import check_ollama_health, get_last_model_used
+
+# Feedback logging (non-critical — import errors must not crash the server)
+try:
+    from services.feedback_logger import log_interaction as _log_interaction
+    from services.ai_reviewer import run_ai_review as _run_ai_review
+    _FEEDBACK_ENABLED = True
+except Exception as _fb_import_err:
+    _FEEDBACK_ENABLED = False
+    _log_interaction = None   # type: ignore[assignment]
+    _run_ai_review   = None   # type: ignore[assignment]
 
 # ---------------------------------------------------------------------------
 # Structured logging setup
@@ -627,6 +637,56 @@ def _chat_error_fallback(detail: str = "") -> dict:
     }
 
 
+def _fire_feedback_log(result: dict, facts: str, session_ref: str = "") -> None:
+    """
+    Background helper: extract model output fields from a 'done'-phase result and
+    write one row to the Feedback Log workbook. Runs in a daemon thread so it never
+    blocks the HTTP response. Silently swallows all errors.
+    """
+    if not _FEEDBACK_ENABLED or not _log_interaction:
+        return
+    if result.get("phase") != "done" or not result.get("response"):
+        return
+    import threading
+    resp = result.get("response") or {}
+
+    disputes_list = [d.get("dispute", "") for d in (resp.get("disputes") or []) if d.get("dispute")]
+    if not disputes_list:
+        disputes_list = [str(result.get("facts_summary", "")[:80])]
+
+    bare_acts = resp.get("bare_act_sections") or []
+    sections_list = [
+        f"{ba.get('act_name','?')} § {ba.get('section_number','?')}"
+        for ba in bare_acts
+    ]
+
+    case_laws_all = (resp.get("case_laws") or []) + (resp.get("internet_case_laws") or [])
+    cl_list = [
+        (cl.get("case_name") or cl.get("title") or cl.get("citation") or "?")
+        for cl in case_laws_all
+    ]
+
+    explanation = (resp.get("explanation") or "").strip()
+    followup = (resp.get("followup_question") or result.get("followup_question") or "").strip()
+
+    def _do_log():
+        try:
+            _log_interaction(
+                facts=facts,
+                followup_question=followup,
+                disputes=disputes_list,
+                sections=sections_list,
+                case_laws=cl_list,
+                legal_opinion=explanation,
+                session_ref=session_ref,
+            )
+        except Exception as _le:
+            logger.warning("Feedback log failed (non-critical): %s", _le)
+
+    t = threading.Thread(target=_do_log, daemon=True, name="feedback-log")
+    t.start()
+
+
 def _map_chat_result_to_ui(result: dict) -> dict:
     """Map process_chat result to the shape the frontend expects (status, next_question, etc.)."""
     phase = result.get("phase")
@@ -949,6 +1009,7 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
             )
         if result.get("phase") == "done":
             increment_query_count(user["id"])
+            _fire_feedback_log(result, facts=text, session_ref=str(user.get("id", "")))
         return _map_chat_result_to_ui(result)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
@@ -1007,6 +1068,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
             )
         if result.get("phase") == "done":
             increment_query_count(user["id"])
+            _fire_feedback_log(result, facts=facts, session_ref=str(user.get("id", "")))
         return _map_chat_result_to_ui(result)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
@@ -1079,6 +1141,7 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
             )
         if result.get("phase") == "done":
             increment_query_count(user["id"])
+            _fire_feedback_log(result, facts=message, session_ref=str(user.get("id", "")))
         return _map_chat_result_to_ui(result)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
@@ -1718,6 +1781,114 @@ def indexing_run(request: IndexingRunRequest, user: dict = Depends(_user_from_to
     }
 
 
+# ---------------------------------------------------------------------------
+# Feedback / AI Gate endpoints
+# ---------------------------------------------------------------------------
+
+@app.post("/feedback/review/{case_id}")
+def feedback_review(case_id: str, user: dict = Depends(_user_from_token)):
+    """
+    Trigger AI Gate review for a logged interaction.
+
+    POST /feedback/review/NM-20260301-004
+
+    Reads the row for case_id from the Feedback Log workbook, sends the
+    model output to the configured LLM for review against the Golden Rules,
+    and writes results back into columns K–R and V–W.
+
+    Returns the review result as JSON.
+    Requires authentication (any valid user token).
+    """
+    if not _FEEDBACK_ENABLED or not _run_ai_review:
+        raise HTTPException(
+            status_code=503,
+            detail="Feedback system not available (feedback_logger / ai_reviewer import failed at startup).",
+        )
+    try:
+        review = _run_ai_review(case_id)
+        return {"success": True, "case_id": case_id, "review": review}
+    except KeyError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+    except FileNotFoundError as e:
+        raise HTTPException(status_code=500, detail=f"Feedback log not found: {e}")
+    except Exception as e:
+        logger.error("AI Gate review failed for %s: %s", case_id, e, exc_info=True)
+        raise HTTPException(status_code=500, detail=f"AI review failed: {e}")
+
+
+@app.get("/feedback/status")
+def feedback_status():
+    """Return whether the feedback logging system is active."""
+    return {
+        "feedback_enabled": _FEEDBACK_ENABLED,
+        "log_path": (
+            os.environ.get("FEEDBACK_LOG_PATH", "")
+            or getattr(__import__("config"), "FEEDBACK_LOG_PATH", "not configured")
+        ),
+    }
+
+
+# ---------------------------------------------------------------------------
+# Feedback Log Excel ↔ HTML sync
+# ---------------------------------------------------------------------------
+
+def _feedback_log_path():
+    from config import FEEDBACK_LOG_PATH
+    return FEEDBACK_LOG_PATH
+
+
+@app.get("/feedback_log/data")
+def feedback_log_get_data():
+    """
+    Return the Feedback Log Excel as JSON for HTML to load (Excel → HTML sync).
+    Rows are returned as arrays of cell values; first 3 rows are header/notes.
+    """
+    import pandas as pd
+    path = _feedback_log_path()
+    if not path or not os.path.isfile(path):
+        raise HTTPException(status_code=404, detail="Feedback log Excel file not found.")
+    try:
+        df = pd.read_excel(path, sheet_name=0, header=None)
+        rows = []
+        for i in range(len(df)):
+            row = df.iloc[i].tolist()
+            rows.append(["" if (x != x or x is None) else str(x).strip() for x in row])
+        return {"rows": rows}
+    except Exception as e:
+        logger.exception("feedback_log GET data: %s", e)
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+class FeedbackLogSaveRequest(BaseModel):
+    rows: List[List[str]] = []  # array of rows, each row array of cell values
+
+
+@app.post("/feedback_log/save")
+def feedback_log_save(request: FeedbackLogSaveRequest):
+    """
+    Save table data from HTML to the Feedback Log Excel (HTML → Excel sync).
+    Expects rows: [ notes_row, data_row_1, ... ] (tbody only). Preserves Excel header rows 0–1.
+    """
+    import pandas as pd
+    path = _feedback_log_path()
+    if not path:
+        raise HTTPException(status_code=500, detail="FEEDBACK_LOG_PATH not configured.")
+    new_rows = getattr(request, "rows", []) or []
+    if not new_rows:
+        raise HTTPException(status_code=400, detail="No rows provided.")
+    try:
+        existing = pd.read_excel(path, sheet_name=0, header=None)
+        # Keep first 2 rows (section headers + column names), replace from row 2 with payload
+        header = existing.iloc[:2] if len(existing) >= 2 else existing
+        new_df = pd.DataFrame(new_rows)
+        out = pd.concat([header, new_df], ignore_index=True)
+        out.to_excel(path, index=False, header=False)
+        return {"message": "Saved", "rows": len(new_rows)}
+    except Exception as e:
+        logger.exception("feedback_log POST save: %s", e)
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 @app.get("/health")
 def health_check():
     """
@@ -1805,6 +1976,20 @@ async def startup_validation():
         logger.warning("⚠ Vector store directory not found: %s", VECTOR_STORE)
 
     logger.info("CORS origins: %s", _cors_origins)
+
+    # Pre-load ML models to eliminate cold-start latency on the first real request.
+    # The embedder and cross-encoder are lazy-loaded on first use; calling them here
+    # during startup ensures they are in memory before any user query arrives.
+    # Failure is non-fatal — models will still load on demand.
+    try:
+        from retrieval.hybrid_retriever import _get_embedder, _get_cross_encoder
+        _get_embedder()
+        logger.info("✓ Embedding model pre-loaded (warm)")
+        _get_cross_encoder()
+        logger.info("✓ Cross-encoder model pre-loaded (warm)")
+    except Exception as _warmup_err:
+        logger.warning("⚠ Model pre-load failed (will load on first request): %s", _warmup_err)
+
     logger.info("=" * 60)
 
 

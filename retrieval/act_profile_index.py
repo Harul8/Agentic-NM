@@ -253,17 +253,28 @@ def _build_act_profiles(chunks: dict) -> dict[str, str]:
     from collections import defaultdict
 
     # --- Filter corrupted / truncated act names ---
-    # e.g. "S Property Act, 1874" (20 chars) passes; "XYZ" (3 chars) is dropped.
-    # Threshold of 15 chars excludes obvious truncation artifacts while keeping
-    # all real short act names (shortest real Indian acts are ~18 chars).
+    # Layer 1 — length guard: shortest genuine Indian act names are ~18 chars.
+    #   "XYZ" (3 chars) is obviously corrupt; 15-char floor excludes these.
+    # Layer 2 — prefix-fragment guard: chunking errors sometimes produce names
+    #   like "S Property Act, 1874" or "T Specific Relief Act" where a word was
+    #   split and only the leading capital letter survived.  A regex that matches
+    #   a single uppercase letter followed by a space and another uppercase letter
+    #   at the start of the name reliably catches these artifacts.
     _MIN_ACT_NAME_LEN = 15
+    _CORRUPT_PREFIX_RE = re.compile(r'^[A-Z]\s+[A-Z]')  # e.g. "S Property…", "T Specific…"
 
     # Group chunks by act name
     acts: dict[str, list] = defaultdict(list)
     for chunk in chunks.values():
         act_name = (chunk.get("act_name") or "").strip()
-        if act_name and len(act_name) >= _MIN_ACT_NAME_LEN:
-            acts[act_name].append(chunk)
+        if not act_name:
+            continue
+        if len(act_name) < _MIN_ACT_NAME_LEN:
+            continue
+        if _CORRUPT_PREFIX_RE.match(act_name):
+            logger.debug("Skipping corrupt act name (prefix fragment): %r", act_name)
+            continue
+        acts[act_name].append(chunk)
 
     profiles: dict[str, str] = {}
 

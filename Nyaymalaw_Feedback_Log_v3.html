@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nyaymalaw Feedback Log v3</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; }
+    body {
+      font-family: Arial, sans-serif; font-size: 12px;
+      color: #000; background: #f0f2f5;
+      display: flex; flex-direction: column;
+    }
+
+    /* ── Top bar ─────────────────────────────────────────────────────────── */
+    .topbar {
+      background: #fff; border-bottom: 1px solid #ddd;
+      padding: 10px 16px; flex-shrink: 0;
+      display: flex; align-items: baseline; gap: 14px;
+    }
+    .topbar h1 { font-size: 16px; font-weight: bold; color: #1F4E79; white-space: nowrap; }
+    .topbar .subtitle { font-size: 11px; color: #555; }
+    .topbar code { background: #eee; padding: 1px 4px; border-radius: 3px; font-family: monospace; }
+    .save-btn {
+      margin-left: auto; background: #1F4E79; color: #fff;
+      border: none; border-radius: 4px; padding: 5px 14px;
+      font-size: 11px; font-weight: bold; cursor: pointer; white-space: nowrap;
+    }
+    .save-btn:hover { background: #2E75B6; }
+    .saved-notice { font-size: 10px; color: #375623; font-weight: bold; opacity: 0; transition: opacity 0.4s; }
+
+    /* ── Layout ──────────────────────────────────────────────────────────── */
+    .main { display: flex; flex: 1; overflow: hidden; }
+
+    /* ── Sidebar ─────────────────────────────────────────────────────────── */
+    .sidebar {
+      width: 220px; min-width: 220px; overflow-y: auto;
+      background: #fff; border-right: 1px solid #ddd;
+      padding: 12px 10px; display: flex; flex-direction: column; gap: 14px;
+    }
+    .ref-box h3 {
+      font-size: 11px; font-weight: bold; color: #1F4E79;
+      margin-bottom: 6px; padding-bottom: 3px; border-bottom: 1px solid #ddd;
+    }
+    .ref-box table { width: 100%; border-collapse: collapse; }
+    .ref-box th, .ref-box td {
+      font-size: 10px; padding: 3px 5px;
+      border: 1px solid #e5e5e5; vertical-align: middle;
+    }
+    .ref-box thead th { background: #f4f4f4; font-weight: bold; color: #333; }
+    .ref-box tbody td { background: #fff; color: #000; }
+
+    /* ── Table area ──────────────────────────────────────────────────────── */
+    .table-area { flex: 1; overflow: auto; padding: 10px 12px; }
+
+    table.log { border-collapse: collapse; width: max-content; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    table.log th, table.log td {
+      border: 1px solid #ccc; padding: 5px 8px;
+      vertical-align: top; white-space: nowrap; text-align: left;
+    }
+    table.log td.wrap { white-space: normal; max-width: 220px; }
+
+    /* Sticky headers */
+    table.log thead tr:nth-child(1) th { position: sticky; top: 0;    z-index: 3; }
+    table.log thead tr:nth-child(2) th { position: sticky; top: 28px; z-index: 3; }
+
+    /* Section colours */
+    .sec-identity  { background:#1F4E79; color:#fff; font-weight:bold; text-align:center; height:28px; }
+    .sec-input     { background:#2E75B6; color:#fff; font-weight:bold; text-align:center; }
+    .sec-output    { background:#375623; color:#fff; font-weight:bold; text-align:center; }
+    .sec-aigate    { background:#7030A0; color:#fff; font-weight:bold; text-align:center; }
+    .sec-humangate { background:#833C00; color:#fff; font-weight:bold; text-align:center; }
+    .sec-feedback  { background:#404040; color:#fff; font-weight:bold; text-align:center; }
+
+    /* Column header colours */
+    .hdr-identity  { background:#1F4E79; color:#fff; font-size:11px; }
+    .hdr-input     { background:#2E75B6; color:#fff; font-size:11px; }
+    .hdr-output    { background:#375623; color:#fff; font-size:11px; }
+    .hdr-aigate    { background:#7030A0; color:#fff; font-size:11px; }
+    .hdr-humangate { background:#833C00; color:#fff; font-size:11px; }
+    .hdr-feedback  { background:#404040; color:#fff; font-size:11px; }
+
+    /* Notes row */
+    table.log tbody tr.notes td { background:#fff; color:#000; font-style:italic; font-size:10px; }
+
+    /* Data rows */
+    table.log tbody tr.data td { background:#fff; color:#000; }
+    table.log tbody tr.data:hover td { background:#f5f7fa; }
+
+    /* Badges */
+    .badge { display:inline-block; padding:1px 7px; border-radius:10px; font-size:10px; font-weight:bold; color:#fff; }
+    .badge-pass    { background:#375623; }
+    .badge-fail    { background:#7B2C2C; }
+    .badge-review  { background:#833C00; }
+    .badge-pending { background:#888; }
+
+    /* Editable cells */
+    td.editable { background:#fffef5 !important; position:relative; }
+    td.editable:focus-within { outline: 2px solid #833C00; outline-offset: -2px; }
+    td.editable select, td.editable input[type="date"] {
+      border:none; background:transparent;
+      font-family:Arial,sans-serif; font-size:12px; color:#000;
+      width:100%; cursor:pointer; outline:none; padding:0;
+    }
+    td.editable [contenteditable] { min-height:18px; min-width:120px; outline:none; white-space:normal; }
+    td.editable [contenteditable]:empty::before { content:attr(data-placeholder); color:#aaa; font-style:italic; }
+    td.editable::after { content:"✎"; position:absolute; top:2px; right:3px; font-size:9px; color:#ccc; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <h1>Nyaymalaw Feedback Log v3</h1>
+    <span class="subtitle">
+      <strong>Auto-fill</strong> <code>feedback_logger.py</code> &nbsp;·&nbsp;
+      <strong>AI Gate</strong> <code>POST /feedback/review/{case_id}</code> &nbsp;·&nbsp;
+      <strong>Human Gate ✎</strong> editable in browser &nbsp;·&nbsp;
+      <strong>Sync</strong> Save → Excel &nbsp;·&nbsp; Refresh ← Excel
+    </span>
+    <button class="save-btn" onclick="saveAll()">💾 Save</button>
+    <button class="save-btn" type="button" onclick="refreshFromExcel()" style="margin-left:6px">↻ Refresh from Excel</button>
+    <span class="saved-notice" id="savedNotice">Saved ✓</span>
+  </div>
+
+  <div class="main">
+
+    <!-- ── Sidebar ─────────────────────────────────────────────────────────── -->
+    <div class="sidebar">
+      <div class="ref-box">
+        <h3>Rating Scale</h3>
+        <table>
+          <thead><tr><th>Rating</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>5</td><td>Excellent — all correct</td></tr>
+            <tr><td>4</td><td>Good — minor omissions</td></tr>
+            <tr><td>3</td><td>Acceptable — 1–2 violations</td></tr>
+            <tr><td>2</td><td>Below avg — sections missing</td></tr>
+            <tr><td>1</td><td>Poor — wrong act / hallucinated</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ref-box">
+        <h3>AI Gate Status</h3>
+        <table>
+          <thead><tr><th>Status</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td><span class="badge badge-pending">Pending</span></td><td>Not yet run</td></tr>
+            <tr><td><span class="badge badge-pass">Pass</span></td><td>0 violations, ≥ 4</td></tr>
+            <tr><td><span class="badge badge-fail">Fail</span></td><td>Critical / ≤ 2</td></tr>
+            <tr><td><span class="badge badge-review">Review</span></td><td>1–2 minor / = 3</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ref-box">
+        <h3>Column Guide</h3>
+        <table>
+          <thead><tr><th>Section</th><th>Cols</th></tr></thead>
+          <tbody>
+            <tr><td>Identity</td><td>2</td></tr>
+            <tr><td>User Input</td><td>2</td></tr>
+            <tr><td>Model Output</td><td>4</td></tr>
+            <tr><td>AI Gate</td><td>9</td></tr>
+            <tr><td>Human Gate ✎</td><td>8</td></tr>
+            <tr><td>Final Feedback ✎</td><td>5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ref-box">
+        <h3>Trigger AI Review</h3>
+        <table>
+          <tbody>
+            <tr><td style="font-family:monospace;font-size:9px;word-break:break-all">POST /feedback/review/{case_id}</td></tr>
+            <tr><td style="font-family:monospace;font-size:9px">run_ai_review("NM-...")</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Table ─────────────────────────────────────────────────────────── -->
+    <div class="table-area">
+      <table class="log" id="logTable">
+        <thead>
+          <tr>
+            <th class="sec-identity"  colspan="1">Identity</th>
+            <th class="sec-input"     colspan="1">User Input</th>
+            <th class="sec-output"    colspan="5">Model Output</th>
+            <th class="sec-aigate"    colspan="9">AI Gate</th>
+            <th class="sec-humangate" colspan="8">Human Gate ✎</th>
+            <th class="sec-feedback"  colspan="5">Final Feedback ✎</th>
+          </tr>
+          <tr>
+            <!-- Identity -->
+            <th class="hdr-identity">Timestamp</th>
+            <!-- User Input -->
+            <th class="hdr-input">E · Facts Entered</th>
+            <!-- Model Output -->
+            <th class="hdr-output">G · Disputes Identified</th>
+            <th class="hdr-output">H · Sections Retrieved</th>
+            <th class="hdr-output">Additional information requested</th>
+            <th class="hdr-output">I · Case Laws Retrieved</th>
+            <th class="hdr-output">J · Legal Opinion</th>
+            <!-- AI Gate (9) -->
+            <th class="hdr-aigate">AI Gate Status</th>
+            <th class="hdr-aigate">AI Review Date</th>
+            <th class="hdr-aigate">AI Rule Violations</th>
+            <th class="hdr-aigate">AI Rating</th>
+            <th class="hdr-aigate">AI · F Follow-up Q</th>
+            <th class="hdr-aigate">AI · G Disputes</th>
+            <th class="hdr-aigate">AI · H Sections</th>
+            <th class="hdr-aigate">AI · I Case Laws</th>
+            <th class="hdr-aigate">AI · J Legal Opinion</th>
+            <!-- Human Gate (8) -->
+            <th class="hdr-humangate">HG Status ✎</th>
+            <th class="hdr-humangate">HG Review Date ✎</th>
+            <th class="hdr-humangate">HG Notes ✎</th>
+            <th class="hdr-humangate">HG · F Follow-up Q ✎</th>
+            <th class="hdr-humangate">HG · G Disputes ✎</th>
+            <th class="hdr-humangate">HG · H Sections ✎</th>
+            <th class="hdr-humangate">HG · I Case Laws ✎</th>
+            <th class="hdr-humangate">HG · J Legal Opinion ✎</th>
+            <!-- Final Feedback (5) -->
+            <th class="hdr-feedback">Issues in Opinion ✎</th>
+            <th class="hdr-feedback">What Should Have Been Different ✎</th>
+            <th class="hdr-feedback">Rule Extracted ✎</th>
+            <th class="hdr-feedback">Actioned ✎</th>
+            <th class="hdr-feedback">Rating ✎</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- Notes row -->
+          <tr class="notes">
+            <td>e.g. Mar 1, 2026 10:15 AM</td>
+            <td>Raw user query</td>
+            <td>Disputes from model</td><td>Act § No</td><td>Bullet list of info requested</td><td>Case citations</td><td>Full legal opinion</td>
+            <td>Pass/Fail/Review/Pending</td><td>Date AI ran</td><td>R-codes e.g. R003</td><td>1–5</td>
+            <td>AI's follow-up Q</td><td>AI's disputes</td><td>AI's sections</td><td>AI's case laws</td><td>AI's legal opinion</td>
+            <td>Pending/Approved/Override</td><td>Date reviewed</td><td>Notes/corrections</td>
+            <td>Your follow-up Q</td><td>Your disputes</td><td>Your sections</td><td>Your case laws</td><td>Your legal opinion</td>
+            <td>Enumerated issues</td><td>Corrective guidance</td><td>New rule derived</td><td>Yes/No/In Progress</td><td>1–5</td>
+          </tr>
+
+          <!-- ── DATA ROW 1 ─────────────────────────────────────────────── -->
+          <tr class="data" data-id="NM-20260301-001">
+            <td>Mar 1, 2026 10:15 AM</td>
+            <td class="wrap">Tenant has not paid rent for 3 months. What are my remedies?</td>
+            <td>Non-payment of rent</td>
+            <td>§ 12 TP Act; § 111 TP Act</td>
+            <td class="wrap">• Is the tenancy agreement registered?<br>• Has the tenant been served a legal notice?</td>
+            <td>Damadilal v Firm Parameshwari (1976)</td>
+            <td class="wrap">The landlord may initiate eviction proceedings under § 12 TP Act…</td>
+            <!-- AI Gate (9) — status/date/violations/rating read-only; assessment cols blank until AI reviewer runs -->
+            <td><span class="badge badge-pass">Pass</span></td>
+            <td>2026-03-01</td><td></td><td>4</td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <!-- Human Gate (8) — status/date/notes + 5 assessment editable -->
+            <td class="editable">
+              <select data-id="NM-20260301-001" data-field="hg-status" onchange="markDirty()">
+                <option value="">—</option>
+                <option value="Pending">Pending</option>
+                <option value="Approved" selected>Approved</option>
+                <option value="Override">Override</option>
+              </select>
+            </td>
+            <td class="editable">
+              <input type="date" data-id="NM-20260301-001" data-field="hg-date" value="2026-03-02" oninput="markDirty()">
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-001" data-field="hg-notes" data-placeholder="Notes…" oninput="markDirty()"></div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-001" data-field="hg-followup" data-placeholder="Your follow-up Q…" oninput="markDirty()">Has the tenant been served a legal notice?</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-001" data-field="hg-disputes" data-placeholder="Your disputes…" oninput="markDirty()">Non-payment of rent; Forfeiture of tenancy</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-001" data-field="hg-sections" data-placeholder="Your sections…" oninput="markDirty()">§ 12 TP Act; § 111(g) TP Act</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-001" data-field="hg-caselaws" data-placeholder="Your case laws…" oninput="markDirty()">Damadilal (1976); Ganga Dutt v Musst Kartayanee (1957)</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-001" data-field="hg-opinion" data-placeholder="Your legal opinion…" oninput="markDirty()"></div>
+            </td>
+            <!-- Final Feedback (5) -->
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-001" data-field="ff-issues" data-placeholder="Issues…" oninput="markDirty()">Missing forfeiture clause citation</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-001" data-field="ff-diff" data-placeholder="What should differ…" oninput="markDirty()">Include § 111(g) TP Act and serve demand notice first</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-001" data-field="ff-rule" data-placeholder="Rule extracted…" oninput="markDirty()">Always check forfeiture clause before eviction advice</div>
+            </td>
+            <td class="editable">
+              <select data-id="NM-20260301-001" data-field="ff-actioned" onchange="markDirty()">
+                <option value="">—</option>
+                <option value="Yes" selected>Yes</option>
+                <option value="No">No</option>
+                <option value="In Progress">In Progress</option>
+              </select>
+            </td>
+            <td class="editable">
+              <select data-id="NM-20260301-001" data-field="ff-rating" onchange="markDirty()">
+                <option value="">—</option>
+                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                <option value="4" selected>4</option><option value="5">5</option>
+              </select>
+            </td>
+          </tr>
+
+          <!-- ── DATA ROW 2 ─────────────────────────────────────────────── -->
+          <tr class="data" data-id="NM-20260301-002">
+            <td>Mar 1, 2026 11:42 AM</td>
+            <td class="wrap">Employee dismissed without cause after 8 years of service.</td>
+            <td>Wrongful termination</td>
+            <td>§ 25F Industrial Disputes Act</td>
+            <td class="wrap">• Was the dismissal preceded by a domestic enquiry?</td>
+            <td class="wrap">Workmen of Firestone v Management (1973)</td>
+            <td class="wrap">The employee is entitled to retrenchment compensation under § 25F…</td>
+            <!-- AI Gate -->
+            <td><span class="badge badge-fail">Fail</span></td>
+            <td>2026-03-01</td><td>R018, R022</td><td>3</td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <!-- Human Gate -->
+            <td class="editable">
+              <select data-id="NM-20260301-002" data-field="hg-status" onchange="markDirty()">
+                <option value="">—</option>
+                <option value="Pending">Pending</option>
+                <option value="Approved">Approved</option>
+                <option value="Override" selected>Override</option>
+              </select>
+            </td>
+            <td class="editable">
+              <input type="date" data-id="NM-20260301-002" data-field="hg-date" value="2026-03-03" oninput="markDirty()">
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-002" data-field="hg-notes" data-placeholder="Notes…" oninput="markDirty()">Add § 25G and notice to govt requirement</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-002" data-field="hg-followup" data-placeholder="Your follow-up Q…" oninput="markDirty()">Was retrenchment notice given to appropriate government?</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-002" data-field="hg-disputes" data-placeholder="Your disputes…" oninput="markDirty()">Wrongful termination; Retrenchment compensation</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-002" data-field="hg-sections" data-placeholder="Your sections…" oninput="markDirty()">§ 25F ID Act; § 25G ID Act</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-002" data-field="hg-caselaws" data-placeholder="Your case laws…" oninput="markDirty()">Workmen of Firestone (1973); Papanasam Labour Union (1995)</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-002" data-field="hg-opinion" data-placeholder="Your legal opinion…" oninput="markDirty()"></div>
+            </td>
+            <!-- Final Feedback -->
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-002" data-field="ff-issues" data-placeholder="Issues…" oninput="markDirty()">§ 25G omitted; Notice to govt not mentioned</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-002" data-field="ff-diff" data-placeholder="What should differ…" oninput="markDirty()">Always pair § 25F with § 25G in retrenchment matters</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-002" data-field="ff-rule" data-placeholder="Rule extracted…" oninput="markDirty()">R018: Retrenchment requires both § 25F and § 25G citation</div>
+            </td>
+            <td class="editable">
+              <select data-id="NM-20260301-002" data-field="ff-actioned" onchange="markDirty()">
+                <option value="">—</option>
+                <option value="Yes" selected>Yes</option>
+                <option value="No">No</option>
+                <option value="In Progress">In Progress</option>
+              </select>
+            </td>
+            <td class="editable">
+              <select data-id="NM-20260301-002" data-field="ff-rating" onchange="markDirty()">
+                <option value="">—</option>
+                <option value="1">1</option><option value="2">2</option>
+                <option value="3" selected>3</option>
+                <option value="4">4</option><option value="5">5</option>
+              </select>
+            </td>
+          </tr>
+
+          <!-- ── DATA ROW 3 ─────────────────────────────────────────────── -->
+          <tr class="data" data-id="NM-20260301-003">
+            <td>Mar 1, 2026 2:05 PM</td>
+            <td class="wrap">Cheque bounced for Rs 5 lakhs. What action can I take?</td>
+            <td>Cheque dishonour</td>
+            <td>§ 138 NI Act; § 142 NI Act</td>
+            <td class="wrap">• Has a legal notice been sent within 30 days of dishonour?</td>
+            <td>Kusum Ingots v Union of India (2004)</td>
+            <td class="wrap">A complaint under § 138 NI Act may be filed if…</td>
+            <!-- AI Gate -->
+            <td><span class="badge badge-pass">Pass</span></td>
+            <td>2026-03-01</td><td></td><td>5</td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <!-- Human Gate -->
+            <td class="editable">
+              <select data-id="NM-20260301-003" data-field="hg-status" onchange="markDirty()">
+                <option value="Pending" selected>Pending</option>
+                <option value="Approved">Approved</option>
+                <option value="Override">Override</option>
+              </select>
+            </td>
+            <td class="editable">
+              <input type="date" data-id="NM-20260301-003" data-field="hg-date" value="" oninput="markDirty()">
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-003" data-field="hg-notes" data-placeholder="Notes…" oninput="markDirty()"></div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-003" data-field="hg-followup" data-placeholder="Your follow-up Q…" oninput="markDirty()">Was the cheque issued for a legally enforceable debt?</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-003" data-field="hg-disputes" data-placeholder="Your disputes…" oninput="markDirty()">Cheque dishonour; Criminal liability</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-003" data-field="hg-sections" data-placeholder="Your sections…" oninput="markDirty()">§ 138 NI Act; § 142 NI Act</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-003" data-field="hg-caselaws" data-placeholder="Your case laws…" oninput="markDirty()">Kusum Ingots (2004); Meters &amp; Instruments v Kanchan Mehta (2017)</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-003" data-field="hg-opinion" data-placeholder="Your legal opinion…" oninput="markDirty()"></div>
+            </td>
+            <!-- Final Feedback -->
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-003" data-field="ff-issues" data-placeholder="Issues…" oninput="markDirty()"></div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-003" data-field="ff-diff" data-placeholder="What should differ…" oninput="markDirty()"></div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-003" data-field="ff-rule" data-placeholder="Rule extracted…" oninput="markDirty()"></div>
+            </td>
+            <td class="editable">
+              <select data-id="NM-20260301-003" data-field="ff-actioned" onchange="markDirty()">
+                <option value="">—</option>
+                <option value="Yes">Yes</option>
+                <option value="No" selected>No</option>
+                <option value="In Progress">In Progress</option>
+              </select>
+            </td>
+            <td class="editable">
+              <select data-id="NM-20260301-003" data-field="ff-rating" onchange="markDirty()">
+                <option value="">—</option>
+                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                <option value="4">4</option><option value="5" selected>5</option>
+              </select>
+            </td>
+          </tr>
+
+          <!-- ── DATA ROW 4 (smoke test) ────────────────────────────────── -->
+          <tr class="data" data-id="NM-20260301-004">
+            <td>Mar 1, 2026 7:49 AM</td>
+            <td class="wrap">Test: landlord refused to return security deposit after lease ended.</td>
+            <td class="wrap">Unlawful retention of security deposit</td>
+            <td class="wrap">§ 105 Transfer of Property Act; § 6 Specific Relief Act</td>
+            <td class="wrap">• Was the deposit amount agreed in writing?</td>
+            <td class="wrap">Bachhaj Nahar v Nilima Mandal (2008)</td>
+            <td class="wrap">The tenant may file a suit for recovery under § 6 Specific Relief Act...</td>
+            <!-- AI Gate -->
+            <td><span class="badge badge-pending">Pending</span></td>
+            <td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <!-- Human Gate -->
+            <td class="editable">
+              <select data-id="NM-20260301-004" data-field="hg-status" onchange="markDirty()">
+                <option value="Pending" selected>Pending</option>
+                <option value="Approved">Approved</option>
+                <option value="Override">Override</option>
+              </select>
+            </td>
+            <td class="editable">
+              <input type="date" data-id="NM-20260301-004" data-field="hg-date" value="" oninput="markDirty()">
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-004" data-field="hg-notes" data-placeholder="Notes…" oninput="markDirty()"></div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-004" data-field="hg-followup" data-placeholder="Your follow-up Q…" oninput="markDirty()"></div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-004" data-field="hg-disputes" data-placeholder="Your disputes…" oninput="markDirty()"></div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-004" data-field="hg-sections" data-placeholder="Your sections…" oninput="markDirty()"></div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-004" data-field="hg-caselaws" data-placeholder="Your case laws…" oninput="markDirty()"></div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-004" data-field="hg-opinion" data-placeholder="Your legal opinion…" oninput="markDirty()"></div>
+            </td>
+            <!-- Final Feedback -->
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-004" data-field="ff-issues" data-placeholder="Issues…" oninput="markDirty()"></div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-004" data-field="ff-diff" data-placeholder="What should differ…" oninput="markDirty()"></div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-004" data-field="ff-rule" data-placeholder="Rule extracted…" oninput="markDirty()"></div>
+            </td>
+            <td class="editable">
+              <select data-id="NM-20260301-004" data-field="ff-actioned" onchange="markDirty()">
+                <option value="">—</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="In Progress">In Progress</option>
+              </select>
+            </td>
+            <td class="editable">
+              <select data-id="NM-20260301-004" data-field="ff-rating" onchange="markDirty()">
+                <option value="">—</option>
+                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                <option value="4">4</option><option value="5">5</option>
+              </select>
+            </td>
+          </tr>
+
+          <!-- ADD NEW ROWS BELOW THIS LINE -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const STORE_KEY = 'nml_feedback_v3';
+
+    function collectData() {
+      const data = {};
+      document.querySelectorAll('tr.data').forEach(row => {
+        const id = row.dataset.id;
+        data[id] = {};
+        row.querySelectorAll('[data-field]').forEach(el => {
+          const field = el.dataset.field;
+          if (el.tagName === 'SELECT' || el.tagName === 'INPUT') {
+            data[id][field] = el.value;
+          } else if (el.hasAttribute('contenteditable')) {
+            data[id][field] = el.innerText.trim();
+          }
+        });
+      });
+      return data;
+    }
+
+    function collectFullRows() {
+      const rows = [];
+      document.querySelectorAll('#logTable tbody tr').forEach(tr => {
+        const cells = [];
+        const tds = tr.querySelectorAll('td');
+        for (let j = 0; j < tds.length; j++) {
+          const td = tds[j];
+          const sel = td.querySelector('select');
+          const inp = td.querySelector('input[type="date"]');
+          const ce = td.querySelector('[contenteditable="true"]');
+          let val = '';
+          if (sel) val = sel.value || '';
+          else if (inp) val = inp.value || '';
+          else if (ce) val = ce.innerText.trim();
+          else val = td.innerText.trim();
+          if (j === 0) {
+            cells.push(val);
+            cells.push(tr.dataset.id || '');
+          } else {
+            cells.push(val);
+          }
+        }
+        while (cells.length < 30) cells.push('');
+        rows.push(cells);
+      });
+      return rows;
+    }
+
+    async function saveAll() {
+      localStorage.setItem(STORE_KEY, JSON.stringify(collectData()));
+      const rows = collectFullRows();
+      const apiBase = (typeof window !== 'undefined' && window.location.origin) ? window.location.origin + '' : '';
+      try {
+        const r = await fetch(apiBase + '/feedback_log/save', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ rows: rows })
+        });
+        if (r.ok) {
+          const n = document.getElementById('savedNotice');
+          n.textContent = 'Saved ✓ (Excel updated)';
+          n.style.opacity = '1';
+          setTimeout(() => { n.style.opacity = '0'; n.textContent = 'Saved ✓'; }, 2500);
+        }
+      } catch (e) {
+        const n = document.getElementById('savedNotice');
+        n.textContent = 'Save to Excel failed (is API running?)';
+        n.style.opacity = '1';
+        setTimeout(() => { n.style.opacity = '0'; n.textContent = 'Saved ✓'; }, 3000);
+      }
+    }
+
+    async function refreshFromExcel() {
+      const apiBase = (typeof window !== 'undefined' && window.location.origin) ? window.location.origin + '' : '';
+      try {
+        const r = await fetch(apiBase + '/feedback_log/data');
+        if (!r.ok) return;
+        const { rows } = await r.json();
+        const trs = document.querySelectorAll('#logTable tbody tr');
+        // Excel: row 0 = section headers, row 1 = column names, row 2 = notes, row 3+ = data
+        rows.forEach((row, excelIndex) => {
+          const tbodyIndex = excelIndex - 2;
+          if (tbodyIndex < 0 || tbodyIndex >= trs.length) return;
+          const tds = trs[tbodyIndex].querySelectorAll('td');
+          // Excel has 30 cols: 0=Timestamp, 1=Case ID, 2=Facts, ...; HTML has 29 tds (no Case ID cell)
+          row.forEach((val, excelCol) => {
+            const tdIndex = excelCol === 1 ? -1 : (excelCol === 0 ? 0 : excelCol - 1);
+            if (tdIndex < 0) {
+              trs[tbodyIndex].dataset.id = val || '';
+              return;
+            }
+            if (tdIndex >= tds.length) return;
+            const td = tds[tdIndex];
+            const sel = td.querySelector('select');
+            const inp = td.querySelector('input[type="date"]');
+            const ce = td.querySelector('[contenteditable="true"]');
+            if (sel) sel.value = val || '';
+            else if (inp) inp.value = val || '';
+            else if (ce) ce.innerText = val || '';
+            else td.innerText = val || '';
+          });
+        });
+        const n = document.getElementById('savedNotice');
+        n.textContent = 'Refreshed from Excel ✓';
+        n.style.opacity = '1';
+        setTimeout(() => { n.style.opacity = '0'; }, 2000);
+      } catch (e) {
+        console.error('Refresh from Excel failed', e);
+      }
+    }
+
+    function restoreData() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+        document.querySelectorAll('tr.data').forEach(row => {
+          const id = row.dataset.id;
+          if (!saved[id]) return;
+          row.querySelectorAll('[data-field]').forEach(el => {
+            const field = el.dataset.field;
+            if (saved[id][field] === undefined) return;
+            if (el.tagName === 'SELECT') { el.value = saved[id][field]; }
+            else if (el.tagName === 'INPUT') { el.value = saved[id][field]; }
+            else if (el.hasAttribute('contenteditable')) { el.innerText = saved[id][field]; }
+          });
+        });
+      } catch(e) {}
+    }
+
+    function markDirty() {
+      localStorage.setItem(STORE_KEY, JSON.stringify(collectData()));
+    }
+
+    window.addEventListener('DOMContentLoaded', restoreData);
+  </script>
+
+</body>
+</html>

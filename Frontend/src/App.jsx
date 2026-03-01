@@ -9,6 +9,48 @@ const AUTH_TOKEN_KEY = "nyaymalaw_auth_token";
 const CURRENT_USER_KEY = "nyaymalaw_current_user";
 const CURRENT_USER_NAME_KEY = "nyaymalaw_current_user_name";
 
+/** Splits opinion text into normal segments and quote blocks (content inside ┌─┐ │ ... │ └─┘). Returns [{ type: 'normal'|'quote', text }]. */
+function parseOpinionWithQuotes(opinion) {
+  if (!opinion || typeof opinion !== "string") return [{ type: "normal", text: "" }];
+  const segments = [];
+  const lines = opinion.split("\n");
+  let i = 0;
+  const normalBuf = [];
+  const flushNormal = () => {
+    if (normalBuf.length) {
+      segments.push({ type: "normal", text: normalBuf.join("\n") });
+      normalBuf.length = 0;
+    }
+  };
+  while (i < lines.length) {
+    const line = lines[i];
+    if (/^┌─+┐\s*$/.test(line)) {
+      flushNormal();
+      const start = i;
+      i += 1;
+      const quoteLines = [];
+      while (i < lines.length && /^│\s*(.*)$/.test(lines[i])) {
+        const m = lines[i].match(/^│\s*(.*)$/);
+        quoteLines.push((m[1] || "").trimEnd());
+        i += 1;
+      }
+      if (i < lines.length && /^└─+┘\s*$/.test(lines[i])) {
+        i += 1;
+        segments.push({ type: "quote", text: quoteLines.join("\n") });
+      } else {
+        for (let j = start; j < i; j++) normalBuf.push(lines[j]);
+        if (i < lines.length) normalBuf.push(lines[i]);
+        i += 1;
+      }
+      continue;
+    }
+    normalBuf.push(line);
+    i += 1;
+  }
+  flushNormal();
+  return segments;
+}
+
 // ---------------------------------------------------
 // MAIN APP
 // ---------------------------------------------------
@@ -1963,20 +2005,20 @@ function App() {
           : [];
 
       const introText = (content.text || "").trim();
+
       return (
-        <div className="message-bare-acts-preview">
+        <div className="message-bare-acts-preview message-bare-acts-preview--compact">
           {introText && (
             <p className="bare-acts-preview-intro">{introText}</p>
           )}
-          {/* Per-dispute blocks */}
+          {/* Per-dispute: dispute line, then section number + act name + crisp summary only */}
           {disputeGroups.map((group, gi) => {
             const sections = group.sections || [];
             const multipleDisputes = disputeGroups.length > 1;
             return (
-              <div key={group.id || gi} className="dispute-block">
-                {/* Dispute header — "Dispute 1: description" on one line */}
+              <div key={group.id || gi} className="dispute-block dispute-block--compact">
                 {(multipleDisputes || group.dispute) && (
-                  <p className="dispute-block-header">
+                  <p className="dispute-block-header dispute-block-header--compact">
                     {multipleDisputes && (
                       <span className="dispute-block-number">Dispute {gi + 1}{group.dispute ? ": " : ""}</span>
                     )}
@@ -1986,62 +2028,44 @@ function App() {
                   </p>
                 )}
 
-                {sections.map((ba, si) => {
-                  const actName  = ba.act_name || "Unknown Act";
-                  const short    = shortActName(actName);
-                  const secNum   = ba.section_number || "?";
-                  const secTitle = ba.section_title ? ` — ${ba.section_title}` : "";
-                  // Format: "BNS Section 117 — Voluntarily Causing Grievous Hurt"
-                  const heading  = `${short} Section ${secNum}${secTitle}`;
-                  const explanation = (ba.explanation || "").trim();
-                  const verbatim    = (ba.full_text || ba.text || "").trim();
+                <ul className="bare-act-section-list--compact">
+                  {sections.map((ba, si) => {
+                    const actName = ba.act_name || "Unknown Act";
+                    const short = shortActName(actName);
+                    const secNum = ba.section_number || "?";
+                    const summary = (ba.explanation || "").trim() || "Relevant to this dispute.";
+                    const isWeb = !!ba._web_sourced;
+                    const sourceUrl = ba.url || null;
 
-                  const isWeb     = !!ba._web_sourced;
-                  const sourceUrl = ba.url || null;
+                    const handleAddToIndex = async () => {
+                      try {
+                        const resp = await fetch(`${API_BASE}/propose_index`, {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify({ section: ba }),
+                        });
+                        const data = await resp.json();
+                        alert(data.message || "Saved for indexing.");
+                      } catch {
+                        alert("Could not save section. Please try again.");
+                      }
+                    };
 
-                  const handleAddToIndex = async () => {
-                    try {
-                      const resp = await fetch(`${API_BASE}/propose_index`, {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ section: ba }),
-                      });
-                      const data = await resp.json();
-                      alert(data.message || "Saved for indexing.");
-                    } catch {
-                      alert("Could not save section. Please try again.");
-                    }
-                  };
-
-                  return (
-                    <div key={si} className={`bare-act-section-block${isWeb ? " bare-act-section-web" : ""}`}>
-                      <div className="bare-act-section-heading-row">
-                        <h4 className="bare-act-section-heading">{heading}</h4>
-                        {isWeb && <span className="web-source-badge">🌐 Web</span>}
-                      </div>
-                      {explanation && (
-                        <p className="bare-act-section-explanation">{explanation}</p>
-                      )}
-                      {verbatim && (
-                        <blockquote className="bare-act-verbatim">
-                          {verbatim}
-                        </blockquote>
-                      )}
-                      {isWeb && (
-                        <div className="web-section-actions">
-                          {sourceUrl && (
-                            <a href={sourceUrl} target="_blank" rel="noreferrer" className="web-section-source-link">
-                              View source ↗
-                            </a>
-                          )}
-                          <button className="add-to-index-btn" onClick={handleAddToIndex}>
-                            + Add to local index
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+                    return (
+                      <li key={si} className="bare-act-section-item--compact">
+                        <span className="bare-act-section-ref">Section {secNum}, {short}</span>
+                        <span className="bare-act-section-summary"> — {summary}</span>
+                        {isWeb && (
+                          <span className="bare-act-section-actions-inline">
+                            {" "}
+                            <a href={sourceUrl} target="_blank" rel="noreferrer" className="web-section-source-link">View source</a>
+                            <button type="button" className="add-to-index-btn-inline" onClick={handleAddToIndex}>+ Index</button>
+                          </span>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             );
           })}
@@ -2050,7 +2074,29 @@ function App() {
           <div className="bare-acts-followup-separator" />
           {followupQ ? (
             <div className="bare-acts-followup">
-              <p className="bare-acts-followup-text">{followupQ}</p>
+              {followupQ.includes("\n") ? (
+                <div className="bare-acts-followup-list">
+                  {(() => {
+                    const lines = followupQ.split("\n").filter(Boolean);
+                    const introLine = lines[0] && !lines[0].trim().startsWith("•") ? lines[0] : null;
+                    const bullets = lines.filter((l) => l.trim().startsWith("•"));
+                    return (
+                      <>
+                        {introLine && <p className="bare-acts-followup-intro">{introLine}</p>}
+                        {bullets.length > 0 && (
+                          <ul className="bare-acts-followup-ul">
+                            {bullets.map((line, i) => (
+                              <li key={i} className="bare-acts-followup-bullet">{line.trim().replace(/^•\s*/, "")}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </>
+                    );
+                  })()}
+                </div>
+              ) : (
+                <p className="bare-acts-followup-text">{followupQ}</p>
+              )}
             </div>
           ) : (
             <p className="bare-acts-next-steps">
@@ -2227,40 +2273,35 @@ function App() {
         );
       }
 
-      // ---------- legal_opinion only: formal layout with "Legal Opinion" header + PDF download ----------
+      // ---------- legal_opinion: no header/title, no standalone download button ----------
       if (responseType === "legal_opinion") {
         return (
           <div className="message-final-opinion">
-            <div className="final-output-header final-output-header--chat">
-              <h4 className="opinion-title">Legal Opinion</h4>
-              <button
-                type="button"
-                onClick={handleDownloadPdf}
-                className="download-pdf-button"
-              >
-                Download as PDF
-              </button>
-            </div>
-            {opinion && <p className="opinion-text">{opinion}</p>}
+            {opinion && (
+              <div className="opinion-text">
+                {parseOpinionWithQuotes(opinion).map((seg, idx) =>
+                  seg.type === "normal" ? (
+                    <span key={idx} className="opinion-text-normal">
+                      {seg.text.split("\n").map((line, i) =>
+                        /^Dispute \d+:/.test(line) ? (
+                          <span key={i}>{i > 0 ? "\n" : ""}<span className="opinion-dispute-heading">{line}</span></span>
+                        ) : (
+                          <span key={i}>{i > 0 ? "\n" : ""}{line}</span>
+                        )
+                      )}
+                    </span>
+                  ) : (
+                    <span key={idx} className="opinion-quote">{seg.text}</span>
+                  )
+                )}
+              </div>
+            )}
             {messageProgress && (
               <ProgressDisplay 
                 progress={messageProgress} 
                 expandedGroups={expandedGroups}
                 setExpandedGroups={setExpandedGroups}
               />
-            )}
-            {bareActs.length > 0 ? (
-              <div className="results-group-box">
-                <h4 className="results-group-heading">Relevant Bare Acts</h4>
-                <div className="results-group-items">
-                  {bareActs.map((bareAct, idx) => renderBareActWithCaseLaws(bareAct, idx))}
-                </div>
-              </div>
-            ) : (
-              caseLaws.length > 0 && renderGroupBox("Relevant Case Laws", caseLaws)
-            )}
-            {bareActs.length === 0 && caseLaws.length === 0 && (
-              <p className="search-empty">No supporting materials were retrieved for this query.</p>
             )}
           </div>
         );
@@ -2372,24 +2413,45 @@ function App() {
   };
 
   // -------------------------
-  // Download PDF handler (from snippet)
+  // Download PDF handler (matches on-screen: quotes in grey box, dispute headings in blue)
   // -------------------------
-  const handleDownloadPdf = () => {
-    const trimmedOpinion = (opinionText || "").trim();
+  const handleDownloadPdf = (opinionOverride) => {
+    const raw = (opinionOverride != null ? opinionOverride : opinionText) || "";
+    const trimmedOpinion = raw.trim();
     if (!trimmedOpinion) {
       alert("No final opinion available to download yet.");
       return;
     }
 
-    const doc = new jsPDF({
-      unit: "pt",
-      format: "a4",
-    });
+    // PDF-only: remove %%%% lines and everything from the separator onwards (no follow-up Q or "If you'd like..." in PDF)
+    let lines = trimmedOpinion.split("\n").filter((line) => !/^%+\s*$/.test(line.trim()));
+    let endIndex = lines.length;
+    for (let i = 0; i < lines.length; i++) {
+      if (/^─+$/.test(lines[i].trim())) {
+        endIndex = i;
+        break;
+      }
+    }
+    const pdfOpinion = lines.slice(0, endIndex).join("\n").trim();
+    if (!pdfOpinion) {
+      alert("No opinion content left for PDF after removing follow-up section.");
+      return;
+    }
 
+    const doc = new jsPDF({ unit: "pt", format: "a4" });
     const marginLeft = 40;
-    const maxWidth = 515;
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const maxWidth = pageWidth - marginLeft * 2; // 515 for A4
+    const lineHeight = 14;
+    const quoteMargin = maxWidth * 0.05;
+    const quoteWidth = maxWidth * 0.9;
+    const quoteLeft = marginLeft + quoteMargin;
+    const greyBg = [229, 229, 229]; // #e5e5e5
+    const blueHeading = [26, 115, 232]; // #1a73e8
+
     let y = 40;
 
+    // Title
     doc.setFont("Helvetica", "bold");
     doc.setFontSize(16);
     doc.text("Legal Opinion", marginLeft, y);
@@ -2397,44 +2459,57 @@ function App() {
 
     doc.setFont("Helvetica", "normal");
     doc.setFontSize(11);
+    doc.setTextColor(0, 0, 0);
 
-    const opinionLines = doc.splitTextToSize(trimmedOpinion, maxWidth);
-    doc.text(opinionLines, marginLeft, y);
-    y += opinionLines.length * 14 + 20;
+    const segments = parseOpinionWithQuotes(pdfOpinion);
 
-    // Relevant Bare Acts
-    if (retrieved && retrieved.length > 0) {
-      const uniqueActs = Array.from(
-        new Set(
-          retrieved.map(
-            (item) => (item.meta && item.meta.act_name) || "Unknown Act"
-          )
-        )
-      );
-
-      if (y > 780) {
+    function maybeNewPage(needed) {
+      if (y + needed > 820) {
         doc.addPage();
         y = 40;
       }
+    }
 
-      doc.setFont("Helvetica", "bold");
-      doc.setFontSize(13);
-      doc.text("Relevant Bare Acts:", marginLeft, y);
-      y += 20;
-
-      doc.setFont("Helvetica", "normal");
-      doc.setFontSize(11);
-
-      uniqueActs.forEach((act) => {
-        if (y > 780) {
-          doc.addPage();
-          y = 40;
+    for (const seg of segments) {
+      if (seg.type === "normal") {
+        const normalLines = seg.text.split("\n");
+        for (const line of normalLines) {
+          const isDisputeHeading = /^Dispute \d+:/.test(line);
+          const wrapped = doc.splitTextToSize(line, maxWidth);
+          maybeNewPage(wrapped.length * lineHeight);
+          if (isDisputeHeading) {
+            doc.setFont("Helvetica", "bold");
+            doc.setTextColor(...blueHeading);
+          }
+          doc.text(wrapped, marginLeft, y);
+          y += wrapped.length * lineHeight;
+          if (isDisputeHeading) {
+            doc.setFont("Helvetica", "normal");
+            doc.setTextColor(0, 0, 0);
+          }
         }
-        const line = `- ${act}`;
-        const lines = doc.splitTextToSize(line, maxWidth);
-        doc.text(lines, marginLeft, y);
-        y += lines.length * 14;
-      });
+      } else {
+        // quote: grey background, 5% inset, slightly smaller text
+        const quoteFontSize = 10.45; // ~95% of 11
+        doc.setFontSize(quoteFontSize);
+        const quoteWrapped = doc.splitTextToSize(seg.text, quoteWidth);
+        const quoteLineHeight = 12;
+        const boxPadding = 8;
+        const boxHeight = quoteWrapped.length * quoteLineHeight + boxPadding * 2;
+        maybeNewPage(boxHeight);
+
+        doc.setFillColor(...greyBg);
+        doc.rect(quoteLeft - 2, y, quoteWidth + 4, boxHeight, "F");
+        doc.setTextColor(0, 0, 0);
+        let quoteY = y + boxPadding + quoteFontSize * 0.4;
+        for (const qLine of quoteWrapped) {
+          doc.text(qLine, quoteLeft, quoteY);
+          quoteY += quoteLineHeight;
+        }
+        y += boxHeight + 10;
+
+        doc.setFontSize(11);
+      }
     }
 
     doc.save("legal_opinion.pdf");
@@ -3124,6 +3199,12 @@ function App() {
                                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden><path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" /><path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.379 6H4.5z" /></svg>
                                       <span>{copyJustDoneIndex === i ? "Copied" : "Copy"}</span>
                                     </button>
+                                    {msg.content?.type === "final_opinion" && (msg.content?.opinionText || "").trim() && (
+                                      <button type="button" className="message-action-dropdown-item" role="menuitem" onClick={() => { setActionMenuOpenIndex(null); handleDownloadPdf(msg.content?.opinionText); }}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden><path d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z" /><path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z" /></svg>
+                                        <span>Download</span>
+                                      </button>
+                                    )}
                                   </div>
                                 )}
                               </div>

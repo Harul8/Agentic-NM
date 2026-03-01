@@ -43,12 +43,12 @@ from services.progress_tracker import ProgressTracker
 logger = logging.getLogger(__name__)
 
 # Relevance and quality thresholds — keep only high-quality, recent materials
-MIN_RERANK_SCORE = 0.0  # Minimum score to include in pool. ms-marco cross-encoder logits:
-                        #   >2.0 = clearly relevant; 0-2 = borderline; <0 = low relevance.
-                        # 0.0 lets BNSS/TPA/BSA sections (typical scores 0.1–3.0 for plain-
-                        # language queries) pass the quality filter. The per-dispute hard cap
-                        # (MAX_SECTIONS_PER_DISPUTE_TOTAL) then keeps only the top N by score.
-                        # Previously 3.0 → then 1.0 → both silently discarded local BNSS sections.
+MIN_RERANK_SCORE = 0.5  # Minimum score to include in pool. ms-marco cross-encoder logits:
+                        #   >2.0 = clearly relevant; 0.5-2 = borderline; <0.5 = noise / off-topic.
+                        # 0.5 formally excludes near-zero scoring sections while keeping
+                        # BNSS/BNS/BSA sections (typical scores 0.5–3.0 for plain-language queries).
+                        # The per-dispute hard cap (MAX_SECTIONS_PER_DISPUTE_TOTAL) then keeps
+                        # only the top N by score. Raised from 0.0 (allowed all noise) to 0.5.
 HIGH_QUALITY_SCORE = 5.0  # Case laws with score > this: "highly relevant"; stop web search if we have 5+; index web PDFs only if > this
 BARE_ACT_HIGH_QUALITY_SCORE = 2.0  # Bare-act equivalent. ms-marco scores for on-topic legal sections
                                    # cluster around 2–3; using 2.0 (not 5.0) as the HQ threshold for
@@ -1045,6 +1045,21 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
             dispute_id,
         )
 
+    # Diagnostic: compare decomposer hints against profile-identified acts.
+    # When both are non-empty but completely disjoint, the two systems disagree
+    # on which acts apply — a strong signal for targeted tuning of either the
+    # decomposer prompts or the act profile vocabulary.
+    bare_act_hints = dispute.get("bare_act_hints", [])
+    if bare_act_hints and allowed_acts:
+        hints_lower = {h.strip().lower() for h in bare_act_hints}
+        acts_lower  = {a.strip().lower() for a in allowed_acts}
+        if not hints_lower.intersection(acts_lower):
+            logger.warning(
+                "[%s] hints/profile MISMATCH — decomposer hints=%s, profile acts=%s. "
+                "Consider updating act profile vocabulary or decomposer prompts.",
+                dispute_id, list(bare_act_hints)[:3], sorted(allowed_acts),
+            )
+
     # Build diverse query set
     queries = _build_bare_act_queries(dispute)
     logger.info(
@@ -1426,8 +1441,15 @@ def _explain_sections_and_get_followup(dispute_text: str, bare_acts: list) -> di
         )
         enriched.append({**ba, "explanation": explanation_map.get(key, "")})
 
-    followup = (parsed.get("followup_question") or "").strip() or None
-    if followup and len(followup) < 10:
+    # Build one "request for additional information" from bullet list (additional_info_items)
+    items = parsed.get("additional_info_items") or []
+    if isinstance(items, list) and len(items) > 0:
+        items = [str(x).strip() for x in items if str(x).strip()]
+    if items:
+        followup = "To better apply the relevant provisions, please provide:\n" + "\n".join("• " + x for x in items)
+    else:
+        followup = (parsed.get("followup_question") or "").strip() or None
+    if followup and len(followup) < 15:
         followup = None
 
     return {"bare_acts": enriched, "followup_question": followup}
@@ -1910,6 +1932,14 @@ def generate_response_v2(
         progress.finish_group()
         _emit_progress()
 
+        # Tag every section and case law with its originating dispute ID *before*
+        # aggregation.  The matching step (_match_case_laws_to_bare_acts) reads
+        # these tags to group by dispute instead of re-scoring every pair with the
+        # cross-encoder (O(sections × case_laws) calls → 0 calls).
+        for _ba in bare_d:
+            _ba.setdefault("_dispute_id", d_id)
+        for _cl in case_d:
+            _cl.setdefault("_dispute_id", d_id)
         dispute_results.append({"dispute": dispute, "bare_acts": bare_d, "case_laws": case_d})
 
     # Step 4: Aggregate + deduplicate across disputes
@@ -2079,66 +2109,190 @@ def _diversify_case_laws_by_case(
 
 def _match_case_laws_to_bare_acts(bare_acts: list, case_laws: list, max_per_section: int = 2) -> list:
     """
-    Match case laws to bare act sections based on relevance.
-    Each case law is assigned to the bare act section with highest relevance score.
-    Limits to max_per_section case laws per bare act section.
-    Ensures no duplicates (each case law appears only once).
-    
-    Returns bare_acts list with 'related_case_laws' field added to each section.
+    Match case laws to bare act sections using dispute-tag grouping and
+    section-number / act-keyword text matching.  Zero cross-encoder calls.
+
+    Previous implementation scored every (section, case_law) pair with the
+    cross-encoder — O(sections × case_laws) predictions after all retrieval was
+    already complete (e.g. 3 sections × 15 case laws = 45 extra predictions).
+    The information needed to make the match already exists as the _dispute_id
+    tag placed on both bare acts and case laws during retrieval, so we simply
+    use that tag to group the lists and then apply lightweight text matching
+    within each group.
+
+    Strategy (in order):
+      1. Group bare_acts and case_laws by _dispute_id.
+      2. Within each dispute group, scan each case law's concatenated text+title
+         for the section number of each bare act AND at least one act keyword.
+         If found and the section has capacity (< max_per_section), assign it.
+      3. Unmatched case laws in a dispute group fall back to the highest-scored
+         section in that same group (first entry, already sorted by score desc).
+      4. Case laws whose dispute group has no corresponding bare act group
+         (edge case: all sections for that dispute were filtered out) are
+         pushed to a _global fallback pool and matched against all remaining
+         sections using the same text-based logic.
+
+    Returns bare_acts list with 'related_case_laws' populated on each entry.
     """
-    from retrieval.hybrid_retriever import score_query_document
-    
-    if not bare_acts or not case_laws:
-        # If no bare acts or case laws, return as-is
-        for ba in bare_acts:
-            ba["related_case_laws"] = []
+    from collections import defaultdict
+
+    # Initialise related_case_laws on every section
+    for ba in bare_acts:
+        ba["related_case_laws"] = []
+
+    if not case_laws or not bare_acts:
         return bare_acts
-    
-    # Score each case law against each bare act section
-    # Create query from bare act: act_name + section_number + text
-    matches = []  # List of (bare_act_idx, case_law_idx, score)
-    
-    for ba_idx, ba in enumerate(bare_acts):
-        act_name = ba.get("act_name", "")
-        section = ba.get("section_number", "")
-        ba_text = ba.get("text", "")
-        # Create query from bare act section
-        ba_query = f"{act_name} Section {section} {ba_text[:500]}".strip()
-        
-        for cl_idx, cl in enumerate(case_laws):
-            cl_text = cl.get("text", "")
-            cl_title = cl.get("title", cl.get("case_name", ""))
-            # Score case law relevance to this bare act section
-            score = score_query_document(ba_query, f"{cl_title} {cl_text[:2000]}")
-            matches.append((ba_idx, cl_idx, score))
-    
-    # For each bare act, get its top max_per_section case laws by score (highest match first)
-    # No duplicates: each case law appears at most once (under its best-matching section)
-    assigned_case_laws = set()
-    
-    for ba_idx in range(len(bare_acts)):
-        bare_acts[ba_idx]["related_case_laws"] = []
-        # All matches for this bare act: (cl_idx, score)
-        ba_matches = [(cl_idx, score) for bai, cl_idx, score in matches if bai == ba_idx]
-        ba_matches.sort(key=lambda x: x[1], reverse=True)  # Highest score first
-        count = 0
-        for cl_idx, score in ba_matches:
-            if count >= max_per_section:
-                break
-            if cl_idx in assigned_case_laws:
-                continue
-            bare_acts[ba_idx]["related_case_laws"].append(case_laws[cl_idx])
-            assigned_case_laws.add(cl_idx)
-            count += 1
-    
+
+    # ── Step 1: Group by dispute ID ──────────────────────────────────────────
+    # bare_acts is already sorted by _rerank_score desc (from _format_bare_acts);
+    # preserving that order means "first in group = highest-scored" for fallback.
+    _GLOBAL = "_global"
+    ba_by_dispute: dict = defaultdict(list)
+    for ba in bare_acts:
+        ba_by_dispute[ba.get("_dispute_id") or _GLOBAL].append(ba)
+
+    cl_by_dispute: dict = defaultdict(list)
+    for cl in case_laws:
+        cl_by_dispute[cl.get("_dispute_id") or _GLOBAL].append(cl)
+
+    # ── Step 2: Text-based matching within each dispute group ────────────────
+    def _text_match_group(ba_group: list, cl_group: list) -> list:
+        """Assign case laws in cl_group to sections in ba_group; return unmatched."""
+        unmatched = []
+        for cl in cl_group:
+            cl_text = (
+                (cl.get("text") or cl.get("full_text") or "") + " " +
+                (cl.get("case_name") or cl.get("title") or "")
+            ).lower()
+
+            placed = False
+            for ba in ba_group:
+                if len(ba.get("related_case_laws", [])) >= max_per_section:
+                    continue
+                sec_num = str(ba.get("section_number") or "").strip()
+                act_keywords = [
+                    w for w in (ba.get("act_name") or "").lower().split()
+                    if len(w) > 3 and w not in ("the", "and", "of", "for", "act,", "act")
+                ]
+                # Section number must appear in the case law text AND at least
+                # one act keyword must match (guards against false hits on common
+                # numbers like "10" or "2" that appear in many unrelated judgments).
+                if sec_num and sec_num in cl_text:
+                    if not act_keywords or any(w in cl_text for w in act_keywords[:3]):
+                        ba["related_case_laws"].append(cl)
+                        placed = True
+                        break
+            if not placed:
+                unmatched.append(cl)
+        return unmatched
+
+    # ── Step 3: Process each dispute group ───────────────────────────────────
+    all_groups = set(ba_by_dispute.keys()) | set(cl_by_dispute.keys())
+    orphan_case_laws: list = []  # case laws whose ba group is empty
+
+    for group_id in all_groups:
+        ba_group = ba_by_dispute.get(group_id, [])
+        cl_group = cl_by_dispute.get(group_id, [])
+
+        if not cl_group:
+            continue
+
+        if not ba_group:
+            # No bare acts for this dispute — collect for global fallback
+            orphan_case_laws.extend(cl_group)
+            continue
+
+        unmatched = _text_match_group(ba_group, cl_group)
+
+        # Fallback: assign unmatched to the highest-scored section in this group
+        if unmatched and ba_group:
+            top_ba = ba_group[0]
+            for cl in unmatched:
+                if len(top_ba.get("related_case_laws", [])) < max_per_section:
+                    top_ba["related_case_laws"].append(cl)
+
+    # ── Step 4: Global fallback for orphaned case laws ───────────────────────
+    if orphan_case_laws:
+        remaining = _text_match_group(bare_acts, orphan_case_laws)
+        # Anything still unmatched goes to the overall top section
+        if remaining and bare_acts:
+            top_ba = bare_acts[0]
+            for cl in remaining:
+                if len(top_ba.get("related_case_laws", [])) < max_per_section:
+                    top_ba["related_case_laws"].append(cl)
+
     total_assigned = sum(len(ba.get("related_case_laws", [])) for ba in bare_acts)
-    logger.info(f"Matched {total_assigned} case laws to {len(bare_acts)} bare act sections (up to {max_per_section} per section)")
+    logger.info(
+        "Matched %d case laws to %d bare act sections via dispute-tag + text matching "
+        "(0 cross-encoder calls; replaced O(sections×case_laws) scoring)",
+        total_assigned, len(bare_acts),
+    )
     return bare_acts
 
 
 # ---------------------------------------------------------------------------
 # Formatting Helpers
 # ---------------------------------------------------------------------------
+
+def _extract_leading_section_number(text: str) -> str:
+    """Extract the section number from the opening line of verbatim bare-act text.
+
+    Bare act text frequently starts with its own section header, e.g.:
+        "115. Voluntarily causing grievous hurt..."
+        "[115A. Punishment for…]"
+        "Section 115 — Voluntarily causing…"
+
+    When a chunk spans multiple sections and _trim_to_one_section() crops the
+    text, the displayed section may differ from the chunk metadata's
+    section_number field.  This function parses the *actual* leading section
+    number so the UI card title and the text stay in sync.
+
+    Returns the section number string (e.g. "115", "115A") or "" if the text
+    does not begin with a recognisable section header.
+    """
+    import re as _re
+    if not text:
+        return ""
+    text = text.strip()
+    # Pattern 1: optional "[", 1-3 digits + optional uppercase letter, ". " + uppercase
+    # Matches: "115. Voluntarily" / "[115A. Some title"
+    m = _re.match(r'^\[?(\d{1,3}[A-Z]?)\.\s+[A-Z]', text)
+    if m:
+        return m.group(1)
+    # Pattern 2: "Section 115" or "section 115A" at start of text
+    m = _re.match(r'^[Ss]ection\s+(\d{1,3}[A-Z]?)\b', text)
+    if m:
+        return m.group(1)
+    return ""
+
+
+def _trim_to_one_section(text: str, max_chars: int = 1200) -> str:
+    """Trim verbatim bare-act text to roughly one section's worth.
+
+    Strategy (in order of preference):
+    1. If text fits within max_chars already — return as-is.
+    2. Look for the next section-number header after position 300
+       (e.g. "\\n52. ", "\\n[52A. ") — cut just before it.
+    3. Fall back to the last paragraph break (\\n\\n) before max_chars.
+    4. Fall back to the last sentence boundary ('. ') before max_chars.
+    5. Hard-cap at max_chars and append an ellipsis.
+    """
+    import re as _re
+    if len(text) <= max_chars:
+        return text
+    # Pattern: newline(s) followed by an optional '[', 1-3 digits, optional letter, '. ', uppercase
+    _NEXT_SEC = _re.compile(r'\n{1,2}\[?\d{1,3}[A-Z]?\.\s+[A-Z]')
+    m = _NEXT_SEC.search(text, 300)
+    if m and m.start() <= max_chars + 500:
+        return text[:m.start()].rstrip()
+    cut = text.rfind('\n\n', 200, max_chars)
+    if cut > 200:
+        return text[:cut].rstrip()
+    cut = text.rfind('. ', 200, max_chars)
+    if cut > 200:
+        return text[:cut + 1].rstrip()
+    return text[:max_chars].rstrip() + "…"
+
 
 def _format_bare_acts(bare_acts: list) -> list:
     """Format bare act results for display. Skip junk (no act/section)."""
@@ -2160,10 +2314,26 @@ def _format_bare_acts(bare_acts: list) -> list:
         ).strip()
         if not text or len(text) < 30:
             continue
+        # Trim to one section's worth — avoids dumping entire chapters into the
+        # UI verbatim box when the underlying chunk carries multi-section text.
+        text = _trim_to_one_section(text, max_chars=1200)
 
         act_name = ba.get("act_name", "")
         section = ba.get("section_number", "")
         title = ba.get("section_title", "")
+
+        # Reconcile section number with actual text content.
+        # When a chunk spans multiple sections, _trim_to_one_section() may expose
+        # text from a section whose number differs from the chunk metadata's
+        # section_number field.  Parse the leading header from the trimmed text
+        # and prefer it — this keeps the UI card title in sync with what's shown.
+        _sec_from_text = _extract_leading_section_number(text)
+        if _sec_from_text and str(_sec_from_text) != str(section):
+            logger.debug(
+                "Section# reconciled: metadata=%r → text=%r (%s)",
+                section, _sec_from_text, act_name,
+            )
+            section = _sec_from_text
 
         display_title = act_name
         if section:
@@ -2191,6 +2361,9 @@ def _format_bare_acts(bare_acts: list) -> list:
             "url": url,
             "source_tag": ba.get("source_tag", "LOCAL_DB"),
             "_rerank_score": ba.get("_rerank_score", 0),
+            # Preserve dispute tag so _match_case_laws_to_bare_acts() can group
+            # by dispute instead of re-scoring pairs with the cross-encoder.
+            "_dispute_id": ba.get("_dispute_id", ""),
         })
 
     # Sort by relevance score
@@ -2329,6 +2502,9 @@ def _format_case_laws(case_laws: list, user_query: str = "") -> list:
             "source_tag": first.get("source_tag", "LOCAL_DB"),
             "_rerank_score": top3[0]["score"],
             "_year": _case_year_for_sort(first),
+            # Carry dispute tag from the highest-scored chunk so the matching
+            # step can group case laws by dispute without cross-encoder calls.
+            "_dispute_id": first.get("_dispute_id", ""),
         })
 
     authority_order = {"supreme_court": 0, "high_court": 1, "tribunal": 2, "district_court": 3}

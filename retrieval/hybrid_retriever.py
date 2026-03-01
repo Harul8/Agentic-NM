@@ -438,9 +438,12 @@ def hybrid_search(
                 )
             all_candidate_keys = filtered_keys
         else:
-            logger.debug(
-                "Act pre-filter (profile): skipped — only %d candidates after filter (< 5 min); "
-                "proceeding with all %d candidates",
+            # Upgrade to INFO: a bypass means the profile index mis-identified the relevant
+            # acts (or they are missing from the profile).  This shows up in normal logs
+            # so it is actionable without enabling DEBUG mode.
+            logger.info(
+                "Act pre-filter (profile): BYPASSED — only %d candidates after filter (< 5 min); "
+                "proceeding with all %d candidates. Check act profile coverage for this query.",
                 len(filtered_keys), len(all_candidate_keys),
             )
 

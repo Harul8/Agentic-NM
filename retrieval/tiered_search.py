@@ -241,7 +241,19 @@ def search_tier2_official(
             url = r.get("url", "")
             if is_blocked_source(url):
                 continue
-            if "sci.gov.in" not in url.lower():
+            url_lower = url.lower()
+            if "sci.gov.in" not in url_lower:
+                continue
+            # Filter out non-judgment SCI pages: cause lists, case status trackers,
+            # NJDG portals, and SCI home/navigation pages all score -10 to -11
+            # in the cross-encoder and waste fetch time.  Only accept URLs whose
+            # path suggests actual judgment or order content.
+            _JUDGMENT_PATH_MARKERS = (
+                "/judgment", "/judgement", "/judgments", "/judgements",
+                "/order", "/supct", ".pdf",
+            )
+            if not any(marker in url_lower for marker in _JUDGMENT_PATH_MARKERS):
+                logger.debug("sci.gov.in: skipping non-judgment URL: %s", url[:100])
                 continue
             r["source_tag"] = OFFICIAL_SOURCE_TAG
             r["tier"] = 2
