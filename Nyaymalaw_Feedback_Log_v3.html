@@ -156,11 +156,11 @@
         <table>
           <thead><tr><th>Section</th><th>Cols</th></tr></thead>
           <tbody>
-            <tr><td>Identity</td><td>2</td></tr>
-            <tr><td>User Input</td><td>2</td></tr>
-            <tr><td>Model Output</td><td>4</td></tr>
-            <tr><td>AI Gate</td><td>9</td></tr>
-            <tr><td>Human Gate ✎</td><td>8</td></tr>
+            <tr><td>Identity</td><td>1</td></tr>
+            <tr><td>User Input</td><td>1</td></tr>
+            <tr><td>Model Output</td><td>5</td></tr>
+            <tr><td>AI Gate</td><td>5</td></tr>
+            <tr><td>Human Gate ✎</td><td>5</td></tr>
             <tr><td>Final Feedback ✎</td><td>5</td></tr>
           </tbody>
         </table>
@@ -184,8 +184,8 @@
             <th class="sec-identity"  colspan="1">Identity</th>
             <th class="sec-input"     colspan="1">User Input</th>
             <th class="sec-output"    colspan="5">Model Output</th>
-            <th class="sec-aigate"    colspan="9">AI Gate</th>
-            <th class="sec-humangate" colspan="8">Human Gate ✎</th>
+            <th class="sec-aigate"    colspan="5">AI Gate</th>
+            <th class="sec-humangate" colspan="5">Human Gate ✎</th>
             <th class="sec-feedback"  colspan="5">Final Feedback ✎</th>
           </tr>
           <tr>
@@ -199,23 +199,16 @@
             <th class="hdr-output">Additional information requested</th>
             <th class="hdr-output">I · Case Laws Retrieved</th>
             <th class="hdr-output">J · Legal Opinion</th>
-            <!-- AI Gate (9) -->
-            <th class="hdr-aigate">AI Gate Status</th>
-            <th class="hdr-aigate">AI Review Date</th>
-            <th class="hdr-aigate">AI Rule Violations</th>
-            <th class="hdr-aigate">AI Rating</th>
-            <th class="hdr-aigate">AI · F Follow-up Q</th>
+            <!-- AI Gate (5) — same as Model Output -->
             <th class="hdr-aigate">AI · G Disputes</th>
             <th class="hdr-aigate">AI · H Sections</th>
+            <th class="hdr-aigate">AI · Additional information requested</th>
             <th class="hdr-aigate">AI · I Case Laws</th>
             <th class="hdr-aigate">AI · J Legal Opinion</th>
-            <!-- Human Gate (8) -->
-            <th class="hdr-humangate">HG Status ✎</th>
-            <th class="hdr-humangate">HG Review Date ✎</th>
-            <th class="hdr-humangate">HG Notes ✎</th>
-            <th class="hdr-humangate">HG · F Follow-up Q ✎</th>
+            <!-- Human Gate (5) — same as Model Output -->
             <th class="hdr-humangate">HG · G Disputes ✎</th>
             <th class="hdr-humangate">HG · H Sections ✎</th>
+            <th class="hdr-humangate">HG · Additional information requested ✎</th>
             <th class="hdr-humangate">HG · I Case Laws ✎</th>
             <th class="hdr-humangate">HG · J Legal Opinion ✎</th>
             <!-- Final Feedback (5) -->
@@ -233,10 +226,8 @@
             <td>e.g. Mar 1, 2026 10:15 AM</td>
             <td>Raw user query</td>
             <td>Disputes from model</td><td>Act § No</td><td>Bullet list of info requested</td><td>Case citations</td><td>Full legal opinion</td>
-            <td>Pass/Fail/Review/Pending</td><td>Date AI ran</td><td>R-codes e.g. R003</td><td>1–5</td>
-            <td>AI's follow-up Q</td><td>AI's disputes</td><td>AI's sections</td><td>AI's case laws</td><td>AI's legal opinion</td>
-            <td>Pending/Approved/Override</td><td>Date reviewed</td><td>Notes/corrections</td>
-            <td>Your follow-up Q</td><td>Your disputes</td><td>Your sections</td><td>Your case laws</td><td>Your legal opinion</td>
+            <td>AI's disputes</td><td>AI's sections</td><td>AI's additional info</td><td>AI's case laws</td><td>AI's legal opinion</td>
+            <td>Your disputes</td><td>Your sections</td><td>Your additional info</td><td>Your case laws</td><td>Your legal opinion</td>
             <td>Enumerated issues</td><td>Corrective guidance</td><td>New rule derived</td><td>Yes/No/In Progress</td><td>1–5</td>
           </tr>
 
@@ -249,33 +240,17 @@
             <td class="wrap">• Is the tenancy agreement registered?<br>• Has the tenant been served a legal notice?</td>
             <td>Damadilal v Firm Parameshwari (1976)</td>
             <td class="wrap">The landlord may initiate eviction proceedings under § 12 TP Act…</td>
-            <!-- AI Gate (9) — status/date/violations/rating read-only; assessment cols blank until AI reviewer runs -->
-            <td><span class="badge badge-pass">Pass</span></td>
-            <td>2026-03-01</td><td></td><td>4</td>
+            <!-- AI Gate (5) -->
             <td></td><td></td><td></td><td></td><td></td>
-            <!-- Human Gate (8) — status/date/notes + 5 assessment editable -->
-            <td class="editable">
-              <select data-id="NM-20260301-001" data-field="hg-status" onchange="markDirty()">
-                <option value="">—</option>
-                <option value="Pending">Pending</option>
-                <option value="Approved" selected>Approved</option>
-                <option value="Override">Override</option>
-              </select>
-            </td>
-            <td class="editable">
-              <input type="date" data-id="NM-20260301-001" data-field="hg-date" value="2026-03-02" oninput="markDirty()">
-            </td>
-            <td class="editable wrap">
-              <div contenteditable="true" data-id="NM-20260301-001" data-field="hg-notes" data-placeholder="Notes…" oninput="markDirty()"></div>
-            </td>
-            <td class="editable wrap">
-              <div contenteditable="true" data-id="NM-20260301-001" data-field="hg-followup" data-placeholder="Your follow-up Q…" oninput="markDirty()">Has the tenant been served a legal notice?</div>
-            </td>
+            <!-- Human Gate (5) -->
             <td class="editable wrap">
               <div contenteditable="true" data-id="NM-20260301-001" data-field="hg-disputes" data-placeholder="Your disputes…" oninput="markDirty()">Non-payment of rent; Forfeiture of tenancy</div>
             </td>
             <td class="editable wrap">
               <div contenteditable="true" data-id="NM-20260301-001" data-field="hg-sections" data-placeholder="Your sections…" oninput="markDirty()">§ 12 TP Act; § 111(g) TP Act</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-001" data-field="hg-followup" data-placeholder="Your additional info…" oninput="markDirty()">Has the tenant been served a legal notice?</div>
             </td>
             <td class="editable wrap">
               <div contenteditable="true" data-id="NM-20260301-001" data-field="hg-caselaws" data-placeholder="Your case laws…" oninput="markDirty()">Damadilal (1976); Ganga Dutt v Musst Kartayanee (1957)</div>
@@ -319,33 +294,17 @@
             <td class="wrap">• Was the dismissal preceded by a domestic enquiry?</td>
             <td class="wrap">Workmen of Firestone v Management (1973)</td>
             <td class="wrap">The employee is entitled to retrenchment compensation under § 25F…</td>
-            <!-- AI Gate -->
-            <td><span class="badge badge-fail">Fail</span></td>
-            <td>2026-03-01</td><td>R018, R022</td><td>3</td>
+            <!-- AI Gate (5) -->
             <td></td><td></td><td></td><td></td><td></td>
-            <!-- Human Gate -->
-            <td class="editable">
-              <select data-id="NM-20260301-002" data-field="hg-status" onchange="markDirty()">
-                <option value="">—</option>
-                <option value="Pending">Pending</option>
-                <option value="Approved">Approved</option>
-                <option value="Override" selected>Override</option>
-              </select>
-            </td>
-            <td class="editable">
-              <input type="date" data-id="NM-20260301-002" data-field="hg-date" value="2026-03-03" oninput="markDirty()">
-            </td>
-            <td class="editable wrap">
-              <div contenteditable="true" data-id="NM-20260301-002" data-field="hg-notes" data-placeholder="Notes…" oninput="markDirty()">Add § 25G and notice to govt requirement</div>
-            </td>
-            <td class="editable wrap">
-              <div contenteditable="true" data-id="NM-20260301-002" data-field="hg-followup" data-placeholder="Your follow-up Q…" oninput="markDirty()">Was retrenchment notice given to appropriate government?</div>
-            </td>
+            <!-- Human Gate (5) -->
             <td class="editable wrap">
               <div contenteditable="true" data-id="NM-20260301-002" data-field="hg-disputes" data-placeholder="Your disputes…" oninput="markDirty()">Wrongful termination; Retrenchment compensation</div>
             </td>
             <td class="editable wrap">
               <div contenteditable="true" data-id="NM-20260301-002" data-field="hg-sections" data-placeholder="Your sections…" oninput="markDirty()">§ 25F ID Act; § 25G ID Act</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-002" data-field="hg-followup" data-placeholder="Your additional info…" oninput="markDirty()">Was retrenchment notice given to appropriate government?</div>
             </td>
             <td class="editable wrap">
               <div contenteditable="true" data-id="NM-20260301-002" data-field="hg-caselaws" data-placeholder="Your case laws…" oninput="markDirty()">Workmen of Firestone (1973); Papanasam Labour Union (1995)</div>
@@ -390,32 +349,17 @@
             <td class="wrap">• Has a legal notice been sent within 30 days of dishonour?</td>
             <td>Kusum Ingots v Union of India (2004)</td>
             <td class="wrap">A complaint under § 138 NI Act may be filed if…</td>
-            <!-- AI Gate -->
-            <td><span class="badge badge-pass">Pass</span></td>
-            <td>2026-03-01</td><td></td><td>5</td>
+            <!-- AI Gate (5) -->
             <td></td><td></td><td></td><td></td><td></td>
-            <!-- Human Gate -->
-            <td class="editable">
-              <select data-id="NM-20260301-003" data-field="hg-status" onchange="markDirty()">
-                <option value="Pending" selected>Pending</option>
-                <option value="Approved">Approved</option>
-                <option value="Override">Override</option>
-              </select>
-            </td>
-            <td class="editable">
-              <input type="date" data-id="NM-20260301-003" data-field="hg-date" value="" oninput="markDirty()">
-            </td>
-            <td class="editable wrap">
-              <div contenteditable="true" data-id="NM-20260301-003" data-field="hg-notes" data-placeholder="Notes…" oninput="markDirty()"></div>
-            </td>
-            <td class="editable wrap">
-              <div contenteditable="true" data-id="NM-20260301-003" data-field="hg-followup" data-placeholder="Your follow-up Q…" oninput="markDirty()">Was the cheque issued for a legally enforceable debt?</div>
-            </td>
+            <!-- Human Gate (5) -->
             <td class="editable wrap">
               <div contenteditable="true" data-id="NM-20260301-003" data-field="hg-disputes" data-placeholder="Your disputes…" oninput="markDirty()">Cheque dishonour; Criminal liability</div>
             </td>
             <td class="editable wrap">
               <div contenteditable="true" data-id="NM-20260301-003" data-field="hg-sections" data-placeholder="Your sections…" oninput="markDirty()">§ 138 NI Act; § 142 NI Act</div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-003" data-field="hg-followup" data-placeholder="Your additional info…" oninput="markDirty()">Was the cheque issued for a legally enforceable debt?</div>
             </td>
             <td class="editable wrap">
               <div contenteditable="true" data-id="NM-20260301-003" data-field="hg-caselaws" data-placeholder="Your case laws…" oninput="markDirty()">Kusum Ingots (2004); Meters &amp; Instruments v Kanchan Mehta (2017)</div>
@@ -459,32 +403,17 @@
             <td class="wrap">• Was the deposit amount agreed in writing?</td>
             <td class="wrap">Bachhaj Nahar v Nilima Mandal (2008)</td>
             <td class="wrap">The tenant may file a suit for recovery under § 6 Specific Relief Act...</td>
-            <!-- AI Gate -->
-            <td><span class="badge badge-pending">Pending</span></td>
-            <td></td><td></td><td></td>
+            <!-- AI Gate (5) -->
             <td></td><td></td><td></td><td></td><td></td>
-            <!-- Human Gate -->
-            <td class="editable">
-              <select data-id="NM-20260301-004" data-field="hg-status" onchange="markDirty()">
-                <option value="Pending" selected>Pending</option>
-                <option value="Approved">Approved</option>
-                <option value="Override">Override</option>
-              </select>
-            </td>
-            <td class="editable">
-              <input type="date" data-id="NM-20260301-004" data-field="hg-date" value="" oninput="markDirty()">
-            </td>
-            <td class="editable wrap">
-              <div contenteditable="true" data-id="NM-20260301-004" data-field="hg-notes" data-placeholder="Notes…" oninput="markDirty()"></div>
-            </td>
-            <td class="editable wrap">
-              <div contenteditable="true" data-id="NM-20260301-004" data-field="hg-followup" data-placeholder="Your follow-up Q…" oninput="markDirty()"></div>
-            </td>
+            <!-- Human Gate (5) -->
             <td class="editable wrap">
               <div contenteditable="true" data-id="NM-20260301-004" data-field="hg-disputes" data-placeholder="Your disputes…" oninput="markDirty()"></div>
             </td>
             <td class="editable wrap">
               <div contenteditable="true" data-id="NM-20260301-004" data-field="hg-sections" data-placeholder="Your sections…" oninput="markDirty()"></div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="NM-20260301-004" data-field="hg-followup" data-placeholder="Your additional info…" oninput="markDirty()"></div>
             </td>
             <td class="editable wrap">
               <div contenteditable="true" data-id="NM-20260301-004" data-field="hg-caselaws" data-placeholder="Your case laws…" oninput="markDirty()"></div>
@@ -567,7 +496,7 @@
             cells.push(val);
           }
         }
-        while (cells.length < 30) cells.push('');
+        while (cells.length < 23) cells.push('');
         rows.push(cells);
       });
       return rows;

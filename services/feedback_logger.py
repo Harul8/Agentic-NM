@@ -212,11 +212,11 @@ def _build_html_row(
     case_laws: str,
     opinion: str,
 ) -> str:
-    """Return an HTML <tr> string for one new log entry (29-column structure).
+    """Return an HTML <tr> string for one new log entry (22-column structure).
 
     Column layout:
       Identity (1) · User Input (1) · Model Output (5)
-      AI Gate (9) · Human Gate (8) · Final Feedback (5)
+      AI Gate (5) · Human Gate (5) · Final Feedback (5)
     """
     cid = _esc(case_id)
     opinion_short = _esc(opinion[:600] + "…" if len(opinion) > 600 else opinion)
@@ -234,32 +234,17 @@ def _build_html_row(
             <td class="wrap">{_esc(additional_info)}</td>
             <td class="wrap">{_esc(case_laws)}</td>
             <td class="wrap">{opinion_short}</td>
-            <!-- AI Gate (9): status/date/violations/rating + 5 assessment cols — AI fills later -->
-            <td></td><td></td><td></td><td></td>
+            <!-- AI Gate (5): same as Model Output -->
             <td></td><td></td><td></td><td></td><td></td>
-            <!-- Human Gate (8): status/date/notes editable + 5 assessment editable -->
-            <td class="editable">
-              <select data-id="{cid}" data-field="hg-status" onchange="markDirty()">
-                <option value="">—</option>
-                <option value="Pending" selected>Pending</option>
-                <option value="Approved">Approved</option>
-                <option value="Override">Override</option>
-              </select>
-            </td>
-            <td class="editable">
-              <input type="date" data-id="{cid}" data-field="hg-date" value="" oninput="markDirty()">
-            </td>
-            <td class="editable wrap">
-              <div contenteditable="true" data-id="{cid}" data-field="hg-notes" data-placeholder="Notes…" oninput="markDirty()"></div>
-            </td>
-            <td class="editable wrap">
-              <div contenteditable="true" data-id="{cid}" data-field="hg-followup" data-placeholder="Your follow-up Q…" oninput="markDirty()"></div>
-            </td>
+            <!-- Human Gate (5): same as Model Output, editable -->
             <td class="editable wrap">
               <div contenteditable="true" data-id="{cid}" data-field="hg-disputes" data-placeholder="Your disputes…" oninput="markDirty()"></div>
             </td>
             <td class="editable wrap">
               <div contenteditable="true" data-id="{cid}" data-field="hg-sections" data-placeholder="Your sections…" oninput="markDirty()"></div>
+            </td>
+            <td class="editable wrap">
+              <div contenteditable="true" data-id="{cid}" data-field="hg-followup" data-placeholder="Your additional info…" oninput="markDirty()"></div>
             </td>
             <td class="editable wrap">
               <div contenteditable="true" data-id="{cid}" data-field="hg-caselaws" data-placeholder="Your case laws…" oninput="markDirty()"></div>
@@ -382,20 +367,18 @@ def log_interaction(
         sections_str  = "; ".join(sections)  if sections  else ""
         case_laws_str = "; ".join(case_laws) if case_laws else ""
 
-        # 30-column layout:
-        #  0  Timestamp (12hr)  1  Case ID
-        #  2  Facts  3  Disputes  4  Sections  5  Additional information requested  6  Case Laws  7  Legal Opinion
-        #  8–16  AI Gate (9)  17–24  Human Gate (8)  25–29  Final Feedback (5)
-        row_values = [""] * 30
+        # 23-column layout: 0=Timestamp, 1=Case ID, 2=Facts, 3=Disputes, 4=Sections, 5=Addl info, 6=Case Laws, 7=Opinion,
+        # 8–12=AI Gate (5), 13–17=Human Gate (5), 18–22=Final Feedback (5)
+        row_values = [""] * 23
         row_values[0]  = _timestamp_12hr(now_iso)
         row_values[1]  = case_id
         row_values[2]  = _truncate(facts)
         row_values[3]  = disputes_str
         row_values[4]  = sections_str
-        row_values[5]  = _truncate(followup_question)  # additional information requested (bullet list)
+        row_values[5]  = _truncate(followup_question)
         row_values[6]  = case_laws_str
         row_values[7]  = _truncate(legal_opinion)
-        # cols 8–29 remain blank
+        # cols 8–22 remain blank
 
         # ── 1. Write Excel (with retry) ───────────────────────────────────────
         _write_excel(xlsx_path, row_values, case_id)
