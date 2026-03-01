@@ -170,9 +170,7 @@ def _write_excel(path: Path, row_values: list, case_id: str) -> bool:
 
     def _do_write():
         wb = load_workbook(str(path))
-        if "Feedback Log" not in wb.sheetnames:
-            raise ValueError("Workbook has no 'Feedback Log' sheet.")
-        ws = wb["Feedback Log"]
+        ws = wb["Feedback Log"] if "Feedback Log" in wb.sheetnames else wb.active
 
         next_row = max(ws.max_row + 1, 4)
 
@@ -355,7 +353,7 @@ def log_interaction(
 
         # Determine Case ID by scanning existing Excel rows
         wb_temp = _lw(str(xlsx_path))
-        ws_temp = wb_temp["Feedback Log"]
+        ws_temp = wb_temp["Feedback Log"] if "Feedback Log" in wb_temp.sheetnames else wb_temp.active
         today_str   = date.today().strftime("%Y%m%d")
         existing_max = _highest_existing_seq(ws_temp, today_str)
         _COUNTER[today_str] = max(_COUNTER.get(today_str, 0), existing_max)

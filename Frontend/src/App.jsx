@@ -51,6 +51,87 @@ function parseOpinionWithQuotes(opinion) {
   return segments;
 }
 
+/** Build maps: bareActKey -> url, signatureOrCaseKey -> url, for strict citation linking. */
+function buildCitationMaps(bareActs, caseLaws) {
+  const bareMap = new Map();
+  const caseMap = new Map();
+  const normalize = (s) => (s || "").toLowerCase().replace(/\s+/g, " ").trim();
+
+  function addBare(ba) {
+    const act = (ba.act_name || "").trim();
+    const sec = String(ba.section_number ?? "").trim();
+    const url = ba.url || ba.source_url || "";
+    if (!url) return;
+    const key = `${normalize(act)}§${sec}`;
+    if (!bareMap.has(key)) bareMap.set(key, url);
+    if (act && sec) {
+      const key2 = `${normalize(act)}, § ${sec}`;
+      if (!bareMap.has(key2)) bareMap.set(key2, url);
+    }
+  }
+
+  function addCase(cl) {
+    const url = cl.url || cl.source_url || "";
+    if (!url) return;
+    const sig = (cl.signature || "").trim().toLowerCase();
+    if (sig) caseMap.set(sig, url);
+    const title = (cl.case_name || cl.title || "").trim();
+    if (title) caseMap.set(normalize(title), url);
+  }
+
+  (bareActs || []).forEach(addBare);
+  (caseLaws || []).forEach(addCase);
+  (bareActs || []).forEach((ba) => (ba.related_case_laws || []).forEach(addCase));
+  return { bareMap, caseMap };
+}
+
+/** Split segment text into parts: plain strings and citation spans. Citations are turned into links when URL is found. */
+function linkifyOpinionSegment(text, bareMap, caseMap) {
+  if (!text || !bareMap || !caseMap) return [text];
+  const parts = [];
+  // Match [...] that may be bare act (contains §) or case law (long hex)
+  const bracketRe = /\[([^\]]+)\]/g;
+  let lastEnd = 0;
+  let m;
+  while ((m = bracketRe.exec(text)) !== null) {
+    const full = m[0];
+    const inner = m[1].trim();
+    if (lastEnd < m.index) parts.push(text.slice(lastEnd, m.index));
+
+    const isBare = /§/.test(inner);
+    const isCaseSig = /^[a-f0-9]{32,}$/i.test(inner);
+    let url = null;
+    if (isBare) {
+      const norm = inner.toLowerCase().replace(/\s+/g, " ").trim();
+      url = bareMap.get(norm) ?? bareMap.get(norm.replace(/\s*§\s*/, "§"));
+      if (!url && inner.includes("§")) {
+        const secMatch = inner.match(/§\s*(\d+[A-Za-z]*)/);
+        const actPart = inner.replace(/\s*§\s*\d+[A-Za-z]*\s*[—\-–].*$/, "").replace(/^the\s+/i, "").trim();
+        const actNorm = actPart.replace(/\s*,\s*(\d{4})\s*$/, " $1").toLowerCase().replace(/\s+/g, " ").trim();
+        if (secMatch && actNorm) {
+          url = bareMap.get(`${actNorm}§${secMatch[1]}`);
+          if (!url) url = bareMap.get(actNorm + "§" + secMatch[1]);
+        }
+      }
+    }
+    if (isCaseSig) url = url || caseMap.get(inner.toLowerCase());
+    if (!url && !isCaseSig) url = caseMap.get(inner.toLowerCase());
+
+    if (url) {
+      parts.push(
+        <a key={`${m.index}-${inner.slice(0, 20)}`} href={url} target="_blank" rel="noopener noreferrer" className="opinion-citation-link" title="View source">
+          {full}
+        </a>
+      );
+    } else {
+      parts.push(full);
+    }
+    lastEnd = m.index + full.length;
+  }
+  if (lastEnd < text.length) parts.push(text.slice(lastEnd));
+  return parts.length ? parts : [text];
+}
+
 // ---------------------------------------------------
 // MAIN APP
 // ---------------------------------------------------
@@ -1933,11 +2014,12 @@ function App() {
 
   const renderAssistantContent = (content) => {
     if (content == null) return null;
+    const trimDots = (s) => (s || "").replace(/\n+\.\.\.\s*$/, " …").replace(/\n+$/, "");
     if (typeof content === "string") {
-      return <p className="message-text">{content}</p>;
+      return <p className="message-text">{trimDots(content)}</p>;
     }
     if (content.type === "question") {
-      return <p className="message-text">{content.text}</p>;
+      return <p className="message-text">{trimDots(content.text)}</p>;
     }
     if (content.type === "error") {
       return <p className="message-error">{content.text}</p>;
@@ -2275,6 +2357,7 @@ function App() {
 
       // ---------- legal_opinion: no header/title, no standalone download button ----------
       if (responseType === "legal_opinion") {
+        const { bareMap, caseMap } = buildCitationMaps(bareActs, caseLaws);
         return (
           <div className="message-final-opinion">
             {opinion && (
@@ -2286,7 +2369,7 @@ function App() {
                         /^Dispute \d+:/.test(line) ? (
                           <span key={i}>{i > 0 ? "\n" : ""}<span className="opinion-dispute-heading">{line}</span></span>
                         ) : (
-                          <span key={i}>{i > 0 ? "\n" : ""}{line}</span>
+                          <span key={i}>{i > 0 ? "\n" : ""}{linkifyOpinionSegment(line, bareMap, caseMap)}</span>
                         )
                       )}
                     </span>
@@ -3146,7 +3229,10 @@ function App() {
                           ) : (
                             <div className="message-bubble-inner">
                               <div className="message-bubble-text message-bubble-text--preserve" title="User message">
-                                {typeof msg.content === "string" ? msg.content : String(msg.content ?? "")}
+                                {(() => {
+                                  const raw = typeof msg.content === "string" ? msg.content : String(msg.content ?? "");
+                                  return raw.replace(/\n+\.\.\.\s*$/, " …").replace(/\n+$/, "");
+                                })()}
                               </div>
                               <div className="message-bubble-actions">
                                 <div className="message-action-menu-wrap">

@@ -203,7 +203,7 @@ body {
 
 .message--user .message-content {
   align-items: flex-end;
-  max-width: 55%; /* User messages only till middle of chat */
+  max-width: 66%; /* User messages: 55% + 20% = 66% */
   box-sizing: border-box;
 }
 
@@ -296,7 +296,7 @@ body {
   min-height: 0;
 }
 
-/* Keep text and actions on same line: dots at end of text */
+/* Keep text and actions on same line: dots at end of text (inline, not on new line) */
 .message-bubble-inner {
   display: block;
 }
@@ -308,6 +308,7 @@ body {
   margin-top: 0;
   margin-left: 8px;
   vertical-align: middle;
+  white-space: nowrap; /* keep "⋯" on same line as end of text */
 }
 
 /* Edit / Copy actions on messages */
@@ -2206,6 +2207,15 @@ body {
 .opinion-dispute-heading {
   color: #1a73e8;
   font-weight: 600;
+}
+
+.opinion-citation-link {
+  color: #1a73e8;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.opinion-citation-link:hover {
+  color: #0d47a1;
 }
 
 .opinion-quote {

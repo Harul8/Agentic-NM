@@ -687,6 +687,47 @@ def _fire_feedback_log(result: dict, facts: str, session_ref: str = "") -> None:
     t.start()
 
 
+def _fire_feedback_log_bare_acts(result: dict, facts: str, session_ref: str = "") -> None:
+    """
+    When phase is 'bare_acts_presented', log one row with timestamp, user input, and
+    model output (disputes, sections, intro text as opinion, follow-up as additional info).
+    So if the user closes the chat after only bare acts, the feedback log already has the row.
+    """
+    if not _FEEDBACK_ENABLED or not _log_interaction:
+        return
+    if result.get("phase") != "bare_acts_presented":
+        return
+    import threading
+    bare_acts = result.get("bare_acts") or []
+    disputes_raw = result.get("disputes") or []
+    disputes_list = [d.get("dispute", "") for d in disputes_raw if isinstance(d, dict) and d.get("dispute")]
+    if not disputes_list:
+        disputes_list = [str((result.get("facts_summary") or "")[:80])]
+    sections_list = [
+        f"{ba.get('act_name', '?')} § {ba.get('section_number', '?')}"
+        for ba in bare_acts
+    ]
+    intro = (result.get("message") or "").strip() or "Here are the relevant bare act sections I found."
+    followup = (result.get("followup_question") or "").strip()
+
+    def _do_log():
+        try:
+            _log_interaction(
+                facts=facts,
+                followup_question=followup,
+                disputes=disputes_list,
+                sections=sections_list,
+                case_laws=[],
+                legal_opinion=intro,
+                session_ref=session_ref,
+            )
+        except Exception as _le:
+            logger.warning("Feedback log (bare acts) failed (non-critical): %s", _le)
+
+    t = threading.Thread(target=_do_log, daemon=True, name="feedback-log-bare-acts")
+    t.start()
+
+
 def _map_chat_result_to_ui(result: dict) -> dict:
     """Map process_chat result to the shape the frontend expects (status, next_question, etc.)."""
     phase = result.get("phase")
@@ -1010,6 +1051,8 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
         if result.get("phase") == "done":
             increment_query_count(user["id"])
             _fire_feedback_log(result, facts=text, session_ref=str(user.get("id", "")))
+        if result.get("phase") == "bare_acts_presented":
+            _fire_feedback_log_bare_acts(result, facts=text, session_ref=str(user.get("id", "")))
         return _map_chat_result_to_ui(result)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
@@ -1069,6 +1112,8 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
         if result.get("phase") == "done":
             increment_query_count(user["id"])
             _fire_feedback_log(result, facts=facts, session_ref=str(user.get("id", "")))
+        if result.get("phase") == "bare_acts_presented":
+            _fire_feedback_log_bare_acts(result, facts=facts, session_ref=str(user.get("id", "")))
         return _map_chat_result_to_ui(result)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
@@ -1142,6 +1187,8 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
         if result.get("phase") == "done":
             increment_query_count(user["id"])
             _fire_feedback_log(result, facts=message, session_ref=str(user.get("id", "")))
+        if result.get("phase") == "bare_acts_presented":
+            _fire_feedback_log_bare_acts(result, facts=message, session_ref=str(user.get("id", "")))
         return _map_chat_result_to_ui(result)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
@@ -1184,6 +1231,9 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
             )
         if result.get("phase") == "done":
             increment_query_count(user_id)
+            _fire_feedback_log(result, facts=message, session_ref=str(user_id))
+        if result.get("phase") == "bare_acts_presented":
+            _fire_feedback_log_bare_acts(result, facts=message, session_ref=str(user_id))
         queue.put(("result", _map_chat_result_to_ui(result)))
     except Exception as e:
         logger.exception("Stream continue_chat failed")
@@ -1228,6 +1278,9 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str) -> Non
             )
         if result.get("phase") == "done":
             increment_query_count(user_id)
+            _fire_feedback_log(result, facts=text, session_ref=str(user_id))
+        if result.get("phase") == "bare_acts_presented":
+            _fire_feedback_log_bare_acts(result, facts=text, session_ref=str(user_id))
         queue.put(("result", _map_chat_result_to_ui(result)))
     except Exception as e:
         logger.exception("Stream submit_case failed")
@@ -1279,6 +1332,9 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
             )
         if result.get("phase") == "done":
             increment_query_count(user_id)
+            _fire_feedback_log(result, facts=facts, session_ref=str(user_id))
+        if result.get("phase") == "bare_acts_presented":
+            _fire_feedback_log_bare_acts(result, facts=facts, session_ref=str(user_id))
         queue.put(("result", _map_chat_result_to_ui(result)))
     except Exception as e:
         logger.exception("Stream interview_step failed")

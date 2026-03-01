@@ -2500,6 +2500,7 @@ def _format_case_laws(case_laws: list, user_query: str = "") -> list:
             "binding_authority": first.get("binding_authority", ""),
             "url": url,
             "source_tag": first.get("source_tag", "LOCAL_DB"),
+            "signature": (first.get("signature") or "").strip() or None,
             "_rerank_score": top3[0]["score"],
             "_year": _case_year_for_sort(first),
             # Carry dispute tag from the highest-scored chunk so the matching
