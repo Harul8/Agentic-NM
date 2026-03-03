@@ -28,16 +28,109 @@ _bm25_bare = None
 _bm25_case = None
 
 
+# ---------------------------------------------------------------------------
+# Query normalisation — expand Indian legal abbreviations
+# ---------------------------------------------------------------------------
+# BM25 scores near-zero when a query says "IPC" but bare-act PDF text reads
+# "Indian Penal Code" throughout.  FAISS also produces weaker embeddings for
+# abbreviations vs. full act names.  This table expands the most common Indian
+# legal abbreviations BEFORE both FAISS encoding and BM25 scoring.
+
+_LEGAL_ABBREV: list = [
+    # New criminal codes (BNS family — must come before shorter patterns)
+    (re.compile(r'\bBNSS\b', re.IGNORECASE), 'Bharatiya Nagarik Suraksha Sanhita'),
+    (re.compile(r'\bBNS\b',  re.IGNORECASE), 'Bharatiya Nyaya Sanhita'),
+    (re.compile(r'\bBSA\b',  re.IGNORECASE), 'Bharatiya Sakshya Adhiniyam'),
+    # Old criminal codes
+    (re.compile(r'\bCrPC\b', re.IGNORECASE), 'Code of Criminal Procedure'),
+    (re.compile(r'\bIPC\b',  re.IGNORECASE), 'Indian Penal Code'),
+    # Civil procedure & evidence
+    (re.compile(r'\bCPC\b',  re.IGNORECASE), 'Code of Civil Procedure'),
+    (re.compile(r'\bIEA\b',  re.IGNORECASE), 'Indian Evidence Act'),
+    # Property & contract
+    (re.compile(r'\bTP\s+Act\b', re.IGNORECASE), 'Transfer of Property Act'),
+    (re.compile(r'\bTPA\b',      re.IGNORECASE), 'Transfer of Property Act'),
+    (re.compile(r'\bSRA\b',      re.IGNORECASE), 'Specific Relief Act'),
+    (re.compile(r'\bICA\b',      re.IGNORECASE), 'Indian Contract Act'),
+    (re.compile(r'\bRA\b',       re.IGNORECASE), 'Registration Act'),
+    # Family law
+    (re.compile(r'\bHMA\b', re.IGNORECASE), 'Hindu Marriage Act'),
+    (re.compile(r'\bHSA\b', re.IGNORECASE), 'Hindu Succession Act'),
+    (re.compile(r'\bHUF\b', re.IGNORECASE), 'Hindu Undivided Family'),
+    # Labour & insolvency
+    (re.compile(r'\bID\s+Act\b', re.IGNORECASE), 'Industrial Disputes Act'),
+    (re.compile(r'\bIBC\b',  re.IGNORECASE), 'Insolvency and Bankruptcy Code'),
+    # Securities & IP
+    (re.compile(r'\bSEBI\b', re.IGNORECASE), 'Securities and Exchange Board of India'),
+    (re.compile(r'\bTMA\b',  re.IGNORECASE), 'Trade Marks Act'),
+    # Cyber / technology
+    (re.compile(r'\bIT\s+Act\b', re.IGNORECASE), 'Information Technology Act'),
+    # Special statutes
+    (re.compile(r'\bNDPS\b',     re.IGNORECASE), 'Narcotic Drugs and Psychotropic Substances Act'),
+    (re.compile(r'\bPMLA\b',     re.IGNORECASE), 'Prevention of Money Laundering Act'),
+    (re.compile(r'\bPOCSO\b',    re.IGNORECASE), 'Protection of Children from Sexual Offences Act'),
+    (re.compile(r'\bPC\s+Act\b', re.IGNORECASE), 'Prevention of Corruption Act'),
+    (re.compile(r'\bPWDVA\b',    re.IGNORECASE), 'Protection of Women from Domestic Violence Act'),
+    (re.compile(r'\bDV\s+Act\b', re.IGNORECASE), 'Protection of Women from Domestic Violence Act'),
+    # State reorganisation
+    (re.compile(r'\bAPROR\b',      re.IGNORECASE), 'Andhra Pradesh Reorganisation Act'),
+    (re.compile(r'\bAP\s+Reorg\b', re.IGNORECASE), 'Andhra Pradesh Reorganisation Act'),
+]
+
+
+def normalize_legal_query(query: str) -> str:
+    """
+    Expand Indian legal abbreviations in a query string.
+
+    Called at the start of hybrid_search() so that both the FAISS embedding
+    and the BM25 tokeniser see full act names rather than abbreviations.
+    Example: "IPC section 302" → "Indian Penal Code section 302"
+    """
+    for pattern, expansion in _LEGAL_ABBREV:
+        query = pattern.sub(expansion, query)
+    return query
+
+
 def _get_embedder():
-    """Lazy-load the sentence-transformer embedding model."""
+    """
+    Lazy-load the sentence-transformer embedding model.
+
+    Uses explicit mean-pooling when the model is not natively packaged as a
+    sentence-transformers model (e.g. nlpaueb/legal-bert-base-uncased).
+    The explicit path gives correct mean-pooled sentence embeddings regardless
+    of whether the HuggingFace hub entry includes a sentence-transformers config.
+    Falls back gracefully to direct SentenceTransformer() for native models.
+    """
     global _embedder
     if _embedder is None:
-        from sentence_transformers import SentenceTransformer
+        from sentence_transformers import SentenceTransformer, models
         import torch
         from config import EMBEDDING_MODEL
         device = "cuda" if torch.cuda.is_available() else "cpu"
         logger.info(f"Loading embedding model '{EMBEDDING_MODEL}' on {device}")
-        _embedder = SentenceTransformer(EMBEDDING_MODEL, device=device)
+        try:
+            # Fast path: model is natively packaged as a sentence-transformers model
+            _embedder = SentenceTransformer(EMBEDDING_MODEL, device=device)
+            # Smoke-test to confirm it can encode (catches silent mis-loads)
+            _ = _embedder.encode("test", convert_to_numpy=True)
+        except Exception:
+            # Fallback: build with explicit Transformer + mean-pooling layers.
+            # Required for HuggingFace BERT models not packaged as sentence-transformers
+            # (e.g. nlpaueb/legal-bert-base-uncased).
+            logger.info(
+                "Native SentenceTransformer load failed; building with explicit "
+                "mean-pooling for '%s'", EMBEDDING_MODEL,
+            )
+            word_embedding_model = models.Transformer(EMBEDDING_MODEL)
+            pooling_model = models.Pooling(
+                word_embedding_model.get_word_embedding_dimension(),
+                pooling_mode_mean_tokens=True,
+                pooling_mode_cls_token=False,
+                pooling_mode_max_tokens=False,
+            )
+            _embedder = SentenceTransformer(
+                modules=[word_embedding_model, pooling_model], device=device
+            )
     return _embedder
 
 
@@ -192,9 +285,24 @@ class BM25:
 
     @staticmethod
     def _tokenize(text: str) -> list:
-        """Simple tokenization: lowercase, split on non-alphanumeric."""
+        """
+        Tokenize text for BM25 indexing/scoring.
+
+        Preserves hyphenated section identifiers so that queries and indexed
+        text match correctly:
+          "10-A"  → "10a"   (query "section 10a" now matches indexed "section 10-A")
+          "498-A" → "498a"
+          "17-B"  → "17b"
+
+        General pattern: digits followed by a hyphen and a single letter are
+        collapsed into a single token (digit-string + lowercase letter).
+        Other hyphens (e.g. compound words) are left to the findall step,
+        which splits them at the hyphen as before.
+        """
         import re
-        tokens = re.findall(r"[a-z0-9]+", text.lower())
+        # Lowercase first, then collapse digit-hyphen-letter section identifiers
+        text = re.sub(r'(\d+)-([a-z])\b', r'\1\2', text.lower())
+        tokens = re.findall(r"[a-z0-9]+", text)
         return tokens
 
     def fit(self, documents: list):
@@ -368,6 +476,10 @@ def hybrid_search(
 
     Returns list of chunk dicts, each with '_rerank_score' field, sorted by relevance.
     """
+    # Normalise query: expand Indian legal abbreviations before FAISS + BM25
+    # e.g. "IPC section 302" → "Indian Penal Code section 302"
+    query = normalize_legal_query(query)
+
     chunks = load_chunks(chunks_path)
     if not chunks:
         logger.warning(f"No chunks found at {chunks_path}")
@@ -474,6 +586,11 @@ def hybrid_search(
         LEGAL_TERM_BOOST_WEIGHT = 0.25
 
     try:
+        from config import FAISS_BM25_INTERSECTION_BONUS
+    except Exception:
+        FAISS_BM25_INTERSECTION_BONUS = 0.15
+
+    try:
         cross_encoder = _get_cross_encoder()
         pairs = [(query, text) for text in candidate_texts]
         scores = cross_encoder.predict(pairs, show_progress_bar=False)
@@ -487,15 +604,32 @@ def hybrid_search(
             boost = 0.0
             if LEGAL_TERM_BOOST_WEIGHT > 0:
                 boost = LEGAL_TERM_BOOST_WEIGHT * legal_term_boost(query, candidate_texts[i])
-            rerank_score = ce_score + boost
+            # Intersection bonus — chunks retrieved by BOTH FAISS (semantic similarity)
+            # AND BM25 (exact keyword match) are the most reliable candidates:
+            # the embedding model says the meaning is relevant AND the exact legal
+            # terms appear verbatim in the chunk.  This bonus lifts them above
+            # chunks that only one retriever found.
+            in_faiss = key in faiss_candidates
+            in_bm25  = key in bm25_candidates
+            intersection_bonus = FAISS_BM25_INTERSECTION_BONUS if (in_faiss and in_bm25) else 0.0
+            rerank_score = ce_score + boost + intersection_bonus
             if rerank_score >= min_rerank_score:
                 result = dict(chunk)
+                # Normalize display text: chunks may have search_text/full_text but not "text"
+                if "text" not in result or not (result.get("text") or "").strip():
+                    result["text"] = (
+                        result.get("search_text")
+                        or result.get("full_text")
+                        or result.get("text")
+                        or ""
+                    ).strip()
                 result["_chunk_key"] = key
                 result["_rerank_score"] = rerank_score
-                result["_ce_score"] = ce_score        # raw cross-encoder score
-                result["_legal_boost"] = boost        # P4 boost component
-                result["_in_faiss"] = key in faiss_candidates
-                result["_in_bm25"] = key in bm25_candidates
+                result["_ce_score"] = ce_score              # raw cross-encoder score
+                result["_legal_boost"] = boost              # P4 boost component
+                result["_intersection_bonus"] = intersection_bonus  # FAISS∩BM25 reward
+                result["_in_faiss"] = in_faiss
+                result["_in_bm25"] = in_bm25
                 scored.append(result)
 
         # Sort by re-rank score
@@ -517,6 +651,13 @@ def hybrid_search(
         for key in faiss_candidates:
             if key in chunks:
                 chunk = dict(chunks[key])
+                if "text" not in chunk or not (chunk.get("text") or "").strip():
+                    chunk["text"] = (
+                        chunk.get("search_text")
+                        or chunk.get("full_text")
+                        or chunk.get("text")
+                        or ""
+                    ).strip()
                 chunk["_chunk_key"] = key
                 chunk["_rerank_score"] = 0.0   # 0.0 = unknown; cross-encoder unavailable (prev bug: used nonexistent "_score" key)
                 chunk["_rerank_fallback"] = True  # flag: cross-encoder was unavailable

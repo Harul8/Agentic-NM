@@ -451,7 +451,8 @@ Structure your response with these sections (ONLY include sections that have ret
 
 ## Applicable Statutory Provisions
 ONLY include this section if the BARE ACT SECTIONS array below contains at least one entry.
-For each retrieved bare act provision:
+The order of sections in the retrieved list is from search ranking, not legal authority or importance. You decide which provisions are most relevant to the query; cite and present them in the order that best supports your analysis. Skip or deprioritise less relevant ones.
+For each bare act provision you choose to cite:
 - State the Act name and section number EXACTLY as shown in the retrieved material
 - In 1-2 sentences explain what the provision says and why it applies to this situation
 - If a provision doesn't add value, skip it — quality over quantity
@@ -459,8 +460,10 @@ For each retrieved bare act provision:
 
 ## Relevant Case Law
 ONLY include this section if the CASE LAWS array below contains at least one entry.
-For each case:
+The order of cases in the list is from search ranking, not importance. Cite those that best support your analysis and present them in the order that best serves the argument.
+For each case you choose to cite:
 - State the case name and court EXACTLY as shown in the retrieved material
+- Include year and court when present in the material (e.g. "State of X v. Y (2020), Supreme Court"). Never cite only a placeholder-style name (e.g. "APPELLANTS v. TUKARAM") without year or court when the material provides them.
 - In 2-3 sentences state the principle established and how it applies here
 - Note if the case is binding (Supreme Court) vs. persuasive (High Court)
 - DO NOT cite cases that are not in the retrieved materials
@@ -480,6 +483,7 @@ RULES:
 - If materials are insufficient or empty, say so clearly rather than padding or inventing citations."""
 
 CONVERSATIONAL_SUMMARY_SYSTEM = """You are a knowledgeable legal research assistant at Nyaymalaw. The user asked you to find information on a legal topic. You must strictly ground all content in the retrieved materials.
+The order of items in the arrays below is from search ranking, not importance. Use whichever provisions and cases best answer the query and present them in the order that best supports your overview.
 """ + ANTI_HALLUCINATION_GUARDRAIL + """
 🚨 CRITICAL: Check the BARE ACTS FOUND and CASE LAWS FOUND arrays below. If they are empty ([]), that means NO materials were retrieved. In that case:
 - DO NOT claim that you found materials or cite specific cases/sections
@@ -513,6 +517,7 @@ RULES:
 
 # Bare-act-only summary (when user asked specifically for bare act sections)
 BARE_ACT_ONLY_SUMMARY = """You are a legal research assistant. The user asked specifically for bare act sections. Below are the retrieved provisions. Strictly ground your summary in these provisions only — do not add any content not present in the materials.
+The order of provisions in the list is from search ranking, not importance. Choose which ones best answer the query and present them in the order that best supports your summary.
 """ + ANTI_HALLUCINATION_GUARDRAIL + """
 Your task: Write a short summary (2-4 paragraphs) that covers ONLY the relevant bare act sections. Do NOT mention or summarise case laws. Focus on:
 - What each provision/section says
@@ -582,6 +587,8 @@ DISPUTE:
 RETRIEVED BARE ACT SECTIONS:
 {bare_acts_list}
 
+The order of sections above is from search ranking, not legal importance. When explaining, prioritise the provisions that are most relevant to this dispute; you may reorder or skip less relevant ones.
+
 TASK A — Section explanations:
 For each section write a SHORT explanation (1-2 sentences only) of:
   1. What this section provides
@@ -625,6 +632,7 @@ Relevant precedents:
 [3-4 sentences: what the combined law says, what remedies are available (FIR, civil suit, injunction, etc.), what the client should do first. Be specific — name the acts and sections. No vague advice.]
 
 CRITICAL RULES:
+- The order of sections in the retrieved materials is from search ranking, not legal authority. Choose which provisions best apply and present them in the order that best supports your analysis.
 - ONLY cite sections and cases from the retrieved materials. Do NOT hallucinate.
 - If no case laws are available under a section, omit the "Relevant precedents" part.
 - Keep total length 300–450 words.
@@ -647,6 +655,8 @@ ADDITIONAL INFORMATION FROM CLIENT:
 
 RETRIEVED MATERIALS GROUPED BY DISPUTE:
 {dispute_blocks_text}
+
+The order of sections in the materials above is from search ranking, not legal authority or importance. You must decide which provisions are most relevant to each dispute and present them in the order that best supports your analysis; skip or deprioritise less relevant ones.
 
 You must write the final opinion ONLY using the materials above. Do NOT introduce any new sections, Acts, or case laws from your own knowledge.
 
@@ -700,7 +710,11 @@ CRITICAL RULES:
 - When mentioning a section or case, ensure it actually appears in the retrieved materials.
 - Do NOT restate long verbatim extracts; quote only the most relevant portions already provided.
 - Keep total length roughly 400–650 words.
-- Number disputes as "Dispute 1:", "Dispute 2:", etc., in order. Output plain text paragraphs and boxes as shown above (no extra markdown headings)."""
+- Number disputes as "Dispute 1:", "Dispute 2:", etc., in order. Output plain text paragraphs and boxes as shown above (no extra markdown headings).
+
+CASE LAW CITATIONS:
+- When citing a case, use the full citation from the retrieved materials: case name and, if present, year and court (e.g. "State of Maharashtra v. ABC Ltd. (2020), Supreme Court" or "XYZ v. State (2019) — Bombay High Court").
+- Never output placeholder-style names without year or context (e.g. "APPELLANTS v. TUKARAM" alone). If the material only has a short name, add year/court when available from the materials; if not available, cite as given but do not invent details."""
 
 
 # ---------------------------------------------------------------------------

@@ -84,7 +84,7 @@ INDIAN_KANOON_API_TOKEN = os.environ.get("INDIAN_KANOON_API_TOKEN", "").strip()
 # ---------------------------------------------------------------------------
 # Embedding & re-ranker model names
 # ---------------------------------------------------------------------------
-EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
+EMBEDDING_MODEL = "nlpaueb/legal-bert-base-uncased"
 CROSS_ENCODER_MODEL = "cross-encoder/ms-marco-MiniLM-L-12-v2"
 
 # ---------------------------------------------------------------------------
@@ -98,8 +98,13 @@ CITATION_BOOST_WEIGHT = float(os.environ.get("CITATION_BOOST_WEIGHT", "0.15"))
 
 # P4: Legal-term overlap boost weight added to cross-encoder score.
 # score = ce_score + LEGAL_TERM_BOOST_WEIGHT * overlap_ratio
-# Set to 0.0 to disable. Default 0.25 gives a measurable boost for section-matched docs.
-LEGAL_TERM_BOOST_WEIGHT = float(os.environ.get("LEGAL_TERM_BOOST_WEIGHT", "0.25"))
+# Set to 0.0 to disable. Default 0.35 (raised from 0.25) for stronger section-match signal.
+LEGAL_TERM_BOOST_WEIGHT = float(os.environ.get("LEGAL_TERM_BOOST_WEIGHT", "0.35"))
+
+# Intersection bonus — added to re-rank score when a chunk appears in BOTH
+# the FAISS top-k AND the BM25 top-k.  Semantically similar AND exact-keyword
+# match is the strongest retrieval signal.  Set 0.0 to disable.  Default 0.15.
+FAISS_BM25_INTERSECTION_BONUS = float(os.environ.get("FAISS_BM25_INTERSECTION_BONUS", "0.15"))
 
 # P5: Number of IK search result pages to fetch per query (each page ≈ 10-20 results).
 # Higher = larger candidate pool; lower = fewer API calls. Default 5.

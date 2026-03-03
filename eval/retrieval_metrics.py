@@ -134,9 +134,28 @@ def _normalize_case_name(name: str) -> str:
 
 
 def _normalize_section(act: str, section: str) -> str:
-    """Normalize bare act + section for matching."""
+    """Normalize bare act + section for robust matching.
+
+    Strips leading 'the ', trailing year (e.g. ', 1882' or ' (1882)'), and
+    common section prefixes so that gold annotations and retrieved results
+    compare equal regardless of minor formatting differences.
+    """
+    import re
     a = (act or "").lower().strip()
-    s = (section or "").lower().strip().lstrip("section ").lstrip("s. ").lstrip("s ")
+    # Strip leading "the " (retrieved names often include it)
+    if a.startswith("the "):
+        a = a[4:]
+    # Strip trailing year: ", 1882" / " 1882" / "(1882)" / ", (1882)"
+    # Covers all Indian legislation years from 1800s through 2000s
+    a = re.sub(r",?\s*\(?(1[89]\d{2}|20\d{2})\)?$", "", a).strip()
+    # Collapse extra whitespace
+    a = " ".join(a.split())
+
+    s = (section or "").lower().strip()
+    for prefix in ("section ", "sec. ", "sec ", "s. ", "§ ", "§"):
+        if s.startswith(prefix):
+            s = s[len(prefix):]
+            break
     return f"{a}|{s}"
 
 
@@ -247,7 +266,7 @@ def evaluate_query(result: dict) -> dict:
     raw_scores = result.get("raw_scores", {})
     for category, gold_list, match_fn in [
         ("bare_act", gold_bare_acts, lambda s: any(
-            _normalize_section(s.get("act_name", ""), s.get("section", "")) ==
+            _normalize_section(s.get("act_name", ""), s.get("section_number", "")) ==
             _normalize_section(g.get("act_name", ""), g.get("section_number", ""))
             for g in gold_bare_acts
         )),

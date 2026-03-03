@@ -45,13 +45,39 @@ logger = logging.getLogger(__name__)
 
 
 def _get_embedder():
-    """Load the embedding model."""
+    """
+    Load the embedding model with explicit mean-pooling support.
+
+    Mirrors hybrid_retriever._get_embedder() so that index-time and query-time
+    embeddings use identical pooling — critical for FAISS distance to be valid.
+    Native sentence-transformers models load via fast path; HuggingFace-only
+    models (e.g. nlpaueb/legal-bert-base-uncased) fall back to explicit
+    Transformer + mean-pooling layers.
+    """
     import torch
-    from sentence_transformers import SentenceTransformer
+    from sentence_transformers import SentenceTransformer, models
     from config import EMBEDDING_MODEL
     device = "cuda" if torch.cuda.is_available() else "cpu"
     logger.info(f"Loading embedding model '{EMBEDDING_MODEL}' on {device}")
-    return SentenceTransformer(EMBEDDING_MODEL, device=device)
+    try:
+        embedder = SentenceTransformer(EMBEDDING_MODEL, device=device)
+        _ = embedder.encode("test", convert_to_numpy=True)  # smoke-test
+        return embedder
+    except Exception:
+        logger.info(
+            "Native SentenceTransformer load failed; building with explicit "
+            "mean-pooling for '%s'", EMBEDDING_MODEL,
+        )
+        word_embedding_model = models.Transformer(EMBEDDING_MODEL)
+        pooling_model = models.Pooling(
+            word_embedding_model.get_word_embedding_dimension(),
+            pooling_mode_mean_tokens=True,
+            pooling_mode_cls_token=False,
+            pooling_mode_max_tokens=False,
+        )
+        return SentenceTransformer(
+            modules=[word_embedding_model, pooling_model], device=device
+        )
 
 
 def build_index(chunks: list, faiss_path: str, chunks_path: str, bm25_path: str, embedder, batch_size: int = None):

@@ -17,36 +17,84 @@ Ablation modes:
 """
 
 import argparse
+import concurrent.futures
 import json
 import logging
 import os
 import sys
 import time
-import signal
+import threading
 from contextlib import contextmanager
 from datetime import datetime
 from typing import Optional
 
 # ---------------------------------------------------------------------------
-# Timeout helper — prevents a single hung LLM call from stalling the batch
+# Feedback logger — optional, mirrors api_server.py pattern
+# ---------------------------------------------------------------------------
+try:
+    from services.feedback_logger import log_interaction as _log_interaction
+    _FEEDBACK_ENABLED = True
+except Exception as _fb_import_err:
+    _log_interaction = None  # type: ignore[assignment]
+    _FEEDBACK_ENABLED = False
+
+# ---------------------------------------------------------------------------
+# Timeout helper — cross-platform (works on Windows 11 and Linux/macOS)
 # ---------------------------------------------------------------------------
 
 LLM_TIMEOUT_SECONDS = 120  # 2 minutes max per LLM call
 
 
+def run_with_timeout(func, args=(), kwargs=None, timeout=LLM_TIMEOUT_SECONDS, label="operation"):
+    """
+    Run `func` in a thread pool with a hard timeout.
+    Works on Windows (no SIGALRM), Linux, and macOS.
+    Raises TimeoutError if the call takes longer than `timeout` seconds.
+    Note: the underlying thread may continue running in background on Windows
+    because Python cannot forcibly kill threads — but the caller gets control back.
+    """
+    if kwargs is None:
+        kwargs = {}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+        future = executor.submit(func, *args, **kwargs)
+        try:
+            return future.result(timeout=timeout)
+        except concurrent.futures.TimeoutError:
+            raise TimeoutError(f"{label} timed out after {timeout}s")
+
+
 @contextmanager
 def time_limit(seconds: int, label: str = "operation"):
-    """Context manager that raises TimeoutError if block exceeds `seconds`."""
-    def _handler(signum, frame):
-        raise TimeoutError(f"{label} timed out after {seconds}s")
+    """
+    Compatibility shim — kept so existing `with time_limit(...)` call-sites
+    continue to work.  Delegates to run_with_timeout when wrapping a function
+    call, or on Windows simply yields without a hard timeout (HTTP clients
+    carry their own socket timeouts).
+    """
+    import platform
+    if platform.system() != "Windows":
+        # Unix path: try SIGALRM (zero overhead, interrupts syscalls)
+        try:
+            import signal
 
-    old_handler = signal.signal(signal.SIGALRM, _handler)
-    signal.alarm(seconds)
-    try:
-        yield
-    finally:
-        signal.alarm(0)
-        signal.signal(signal.SIGALRM, old_handler)
+            def _handler(signum, frame):
+                raise TimeoutError(f"{label} timed out after {seconds}s")
+
+            old_handler = signal.signal(signal.SIGALRM, _handler)
+            signal.alarm(seconds)
+            try:
+                yield
+            finally:
+                signal.alarm(0)
+                signal.signal(signal.SIGALRM, old_handler)
+            return
+        except (AttributeError, OSError):
+            pass  # Fall through to Windows path
+    # Windows path: yield without signal-based timeout.
+    # Individual LLM HTTP calls carry their own socket timeouts via run_with_timeout.
+    logger_tmp = logging.getLogger("eval.batch_runner")
+    logger_tmp.debug("time_limit: SIGALRM unavailable (Windows) — using HTTP socket timeouts")
+    yield
 
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -325,17 +373,101 @@ def _sanitize_response(resp: dict) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Feedback log helper — eval edition
+# ---------------------------------------------------------------------------
+
+def _fire_feedback_log_eval(result: dict, query_text: str, query_id: str, mode: str) -> None:
+    """
+    Log one row to Nyaymalaw_Feedback_Log_v3.xlsx/.html for an eval batch query.
+
+    Mirrors _fire_feedback_log_research() in api_server.py — runs in a daemon
+    thread so it never blocks the batch loop.  Only fires when a final_response
+    is present (i.e. mode == 'full_pipeline' or 'no_internet').
+
+    Column mapping:
+      facts           → query_text
+      disputes        → [query_text[:80]]   (no dispute extraction for eval queries)
+      sections        → "act_name § section_number" per bare_act_sections entry
+      case_laws       → case_name / title / citation per case_laws entry
+      legal_opinion   → final_response["explanation"]
+      followup        → question from sufficiency dict (if present)
+      session_ref     → "eval_{mode}_{query_id}"
+    """
+    if not _FEEDBACK_ENABLED or not _log_interaction:
+        return
+
+    final = result.get("final_response") or {}
+    if not final or "error" in final:
+        return  # No usable response — skip logging
+
+    # Extract sections
+    bare_acts = final.get("bare_act_sections") or []
+    sections_list = [
+        f"{ba.get('act_name', '?')} § {ba.get('section_number', '?')}"
+        for ba in bare_acts
+        if isinstance(ba, dict)
+    ]
+
+    # Extract case laws
+    case_laws_raw = (final.get("case_laws") or []) + (final.get("internet_case_laws") or [])
+    cl_list = [
+        (cl.get("case_name") or cl.get("title") or cl.get("citation") or "?")
+        for cl in case_laws_raw
+        if isinstance(cl, dict)
+    ]
+
+    # Legal opinion
+    explanation = (final.get("explanation") or "").strip()
+
+    # Follow-up question from sufficiency analysis (if present)
+    sufficiency = final.get("sufficiency") or {}
+    if isinstance(sufficiency, dict):
+        followup = (
+            sufficiency.get("question")
+            or sufficiency.get("followup_question")
+            or sufficiency.get("questions", [""])[0] if sufficiency.get("questions") else ""
+            or ""
+        ).strip()
+    else:
+        followup = ""
+
+    session_ref = f"eval_{mode}_{query_id}"
+
+    def _do_log():
+        try:
+            _log_interaction(
+                facts=query_text,
+                followup_question=followup,
+                disputes=[query_text[:80]] if query_text else [],
+                sections=sections_list,
+                case_laws=cl_list,
+                legal_opinion=explanation,
+                session_ref=session_ref,
+            )
+            logger.debug("Feedback logged for %s (%s)", query_id, mode)
+        except Exception as _le:
+            logger.warning("Feedback log for eval query %s failed (non-critical): %s", query_id, _le)
+
+    t = threading.Thread(target=_do_log, daemon=True, name=f"feedback-log-eval-{query_id}")
+    t.start()
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
-def run_batch(queries_path: str, output_dir: str, mode: str = "full_pipeline"):
-    """Run all queries and save results."""
+def run_batch(queries_path: str, output_dir: str, mode: str = "full_pipeline", limit: Optional[int] = None):
+    """Run all queries (or first `limit` queries) and save results."""
     # Pre-flight: abort immediately if required data files are missing
     if not validate_data_files(mode):
         sys.exit(1)
 
     with open(queries_path, encoding="utf-8") as f:
         queries = json.load(f)
+
+    if limit is not None and limit > 0:
+        queries = queries[:limit]
+        logger.info("Pilot mode: running first %d of %d queries (--limit %d)", limit, len(queries), limit)
 
     os.makedirs(output_dir, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -364,6 +496,9 @@ def run_batch(queries_path: str, output_dir: str, mode: str = "full_pipeline"):
         result["gold_annotations"] = q.get("gold", {})
         all_results.append(result)
 
+        # Log to Nyaymalaw_Feedback_Log_v3 (same path as UI queries)
+        _fire_feedback_log_eval(result, query_text, query_id, mode)
+
         # Save incrementally
         with open(results_file, "w", encoding="utf-8") as f:
             json.dump(all_results, f, indent=2, ensure_ascii=False, default=str)
@@ -381,6 +516,8 @@ if __name__ == "__main__":
     parser.add_argument("--mode", default="full_pipeline",
                         choices=["full_pipeline", "faiss_only", "bm25_only", "merged_no_rerank", "no_internet"],
                         help="Ablation mode")
+    parser.add_argument("--limit", type=int, default=None,
+                        help="Run only the first N queries (pilot mode). Omit to run all.")
     args = parser.parse_args()
 
-    run_batch(args.queries, args.out, args.mode)
+    run_batch(args.queries, args.out, args.mode, limit=args.limit)

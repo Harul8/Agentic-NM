@@ -728,6 +728,56 @@ def _fire_feedback_log_bare_acts(result: dict, facts: str, session_ref: str = ""
     t.start()
 
 
+def _fire_feedback_log_research(result: dict, query: str, session_ref: str = "") -> None:
+    """
+    Log one feedback row for a raw /search (fusion research) call.
+
+    The research result has no 'phase' or AI-generated opinion — it is a pure
+    retrieval result from fuse_bare_act_and_case_law.  We map its fields directly:
+
+      facts          → the search query string
+      disputes       → [query[:80]]  (no dispute extraction on raw search)
+      sections       → act_name § section_number  from bare_act_sections
+      case_laws      → case_name / citation  from case_laws list
+      legal_opinion  → ""  (raw retrieval, no opinion generated)
+      followup       → ""
+    """
+    if not _FEEDBACK_ENABLED or not _log_interaction:
+        return
+    import threading
+
+    bare_acts = result.get("bare_act_sections") or []
+    sections_list = [
+        f"{ba.get('act_name', '?')} § {ba.get('section_number', '?')}"
+        for ba in bare_acts
+        if isinstance(ba, dict)
+    ]
+
+    case_laws_raw = result.get("case_laws") or []
+    cl_list = [
+        (cl.get("case_name") or cl.get("title") or cl.get("citation") or "?")
+        for cl in case_laws_raw
+        if isinstance(cl, dict)
+    ]
+
+    def _do_log():
+        try:
+            _log_interaction(
+                facts=query,
+                followup_question="",
+                disputes=[query[:80]] if query else [],
+                sections=sections_list,
+                case_laws=cl_list,
+                legal_opinion="",
+                session_ref=session_ref,
+            )
+        except Exception as _le:
+            logger.warning("Feedback log (research) failed (non-critical): %s", _le)
+
+    t = threading.Thread(target=_do_log, daemon=True, name="feedback-log-research")
+    t.start()
+
+
 def _map_chat_result_to_ui(result: dict) -> dict:
     """Map process_chat result to the shape the frontend expects (status, next_question, etc.)."""
     phase = result.get("phase")
@@ -831,9 +881,16 @@ def _map_chat_result_to_ui(result: dict) -> dict:
 
 
 @app.post("/search")
-def search_law(query: SearchQuery):
+def search_law(query: SearchQuery, background_tasks: BackgroundTasks):
     """Legacy search endpoint - single query, returns bare acts + case laws."""
     result = fuse_bare_act_and_case_law.run(issue=query.issue)
+    # Log the research query to the feedback log (non-critical, runs in background)
+    background_tasks.add_task(
+        _fire_feedback_log_research,
+        result if isinstance(result, dict) else {},
+        query.issue,
+        "",  # no session_ref available on raw search
+    )
     return result
 
 

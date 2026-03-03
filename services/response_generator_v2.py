@@ -152,6 +152,49 @@ def _cap_bare_acts_by_score(bare_acts: list, cap: int) -> list:
     return sorted(bare_acts, key=lambda x: x.get("_rerank_score", 0), reverse=True)[:cap]
 
 
+# Keywords that identify rent/tenant/eviction disputes for act-preference (ToPA over Contract Act 294A)
+_RENT_EVICTION_KEYWORDS = frozenset({
+    "rent", "tenant", "landlord", "eviction", "lease", "tenancy",
+    "non-payment", "non payment", "arrears", "vacat", "notice to quit",
+    "lease agreement", "rental", "defaulted on rent",
+})
+
+
+def _is_rent_eviction_dispute(dispute: dict) -> bool:
+    """True if this dispute is about rent, tenancy, eviction, or lease termination."""
+    text = (dispute.get("dispute") or "").lower()
+    keywords = [k.lower() for k in dispute.get("keywords") or []]
+    combined = text + " " + " ".join(keywords)
+    return any(kw in combined for kw in _RENT_EVICTION_KEYWORDS)
+
+
+def _reorder_bare_acts_for_rent_disputes(bare_acts: list, dispute: dict) -> list:
+    """
+    For rent/eviction disputes: prefer Transfer of Property Act and state rent/eviction acts,
+    demote Indian Contract Act § 294A (Contingent Contracts) since eviction is under ToPA/state law.
+    Returns a new list (same items, reordered); does not change scores.
+    """
+    if not bare_acts or not _is_rent_eviction_dispute(dispute):
+        return bare_acts
+
+    def _act_priority(ba: dict) -> tuple:
+        act = (ba.get("act_name") or "").strip().lower()
+        sec = (ba.get("section_number") or "").strip().lower()
+        score = ba.get("_rerank_score", 0.0)
+        # Prefer ToPA and state acts with "rent" or "eviction" or "lease" in name
+        if "transfer of property" in act:
+            return (0, -score)   # first group, then by score desc
+        if "rent" in act or "eviction" in act or "lease" in act or "tenancy" in act:
+            return (1, -score)
+        # Demote Contract Act 294A (not the primary remedy for eviction)
+        if "contract act" in act or "indian contract" in act:
+            if sec == "294a" or sec == "294":
+                return (3, -score)   # last group
+        return (2, -score)   # middle
+
+    return sorted(bare_acts, key=_act_priority)
+
+
 def _build_indexing_candidates_from_web_case_laws(case_laws: list) -> list:
     """
     Build indexing_candidates from web-sourced case laws for the Pending indexing UI.
@@ -357,6 +400,24 @@ COURT_ACRONYMS = {
     "consumer": "[Consumer]",
     "family court": "[Family Ct.]",
 }
+
+
+def _format_case_citation(cl: dict) -> str:
+    """Format case for display: name + (year) + court when available, so LLM can cite fully."""
+    name = (cl.get("case_name") or cl.get("title") or cl.get("source") or "Unknown").strip()
+    year = cl.get("year")
+    court = cl.get("court") or cl.get("binding_authority") or ""
+    if year or court:
+        parts = [name]
+        if year:
+            try:
+                parts.append(f"({int(str(year).strip()[:4])})")
+            except (ValueError, TypeError):
+                pass
+        if court:
+            parts.append(f"— {court.strip()}")
+        return " ".join(parts)
+    return name
 
 
 def _court_acronym(court: str, binding_authority: str, case_name_or_source: str = "") -> str:
@@ -1156,7 +1217,10 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
                 "Skipping LLM sufficiency call and web search.",
                 dispute_id, len(high_quality_local), _AUTO_STOP_COUNT, BARE_ACT_HIGH_QUALITY_SCORE,
             )
-            return _cap_bare_acts_by_score(local_results, MAX_SECTIONS_PER_DISPUTE_TOTAL)
+            return _cap_bare_acts_by_score(
+                _reorder_bare_acts_for_rent_disputes(local_results, dispute),
+                MAX_SECTIONS_PER_DISPUTE_TOTAL,
+            )
 
         if len(local_results) >= _AUTO_STOP_VOLUME:
             logger.info(
@@ -1164,14 +1228,20 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
                 "Skipping LLM sufficiency call and web search.",
                 dispute_id, len(local_results), _AUTO_STOP_VOLUME,
             )
-            return _cap_bare_acts_by_score(local_results, MAX_SECTIONS_PER_DISPUTE_TOTAL)
+            return _cap_bare_acts_by_score(
+                _reorder_bare_acts_for_rent_disputes(local_results, dispute),
+                MAX_SECTIONS_PER_DISPUTE_TOTAL,
+            )
 
         if high_quality_local and local_results and _check_bare_act_sufficiency(dispute_text, local_results):
             logger.info(
                 "[%s] Bare acts Round 1 sufficient (%d sections, %d high-quality). Stopping.",
                 dispute_id, len(local_results), len(high_quality_local),
             )
-            return _cap_bare_acts_by_score(local_results, MAX_SECTIONS_PER_DISPUTE_TOTAL)
+            return _cap_bare_acts_by_score(
+                _reorder_bare_acts_for_rent_disputes(local_results, dispute),
+                MAX_SECTIONS_PER_DISPUTE_TOTAL,
+            )
 
     # --- Round 2: web search ---
     logger.info("[%s] Bare acts Round 2 — web search (local had %d, force_web=%s)", dispute_id, len(local_results), force_web)
@@ -1181,6 +1251,7 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
     web_results = _web_search_bare_acts(dispute, full_query, round1_queries=queries, states=states or [])
 
     merged = _merge_deduplicate_bare_acts(local_results, web_results)
+    merged = _reorder_bare_acts_for_rent_disputes(merged, dispute)
     capped = _cap_bare_acts_by_score(merged, MAX_SECTIONS_PER_DISPUTE_TOTAL)
     logger.info(
         "[%s] Bare acts Round 2 complete: %d total → %d after cap (local=%d web=%d)",
@@ -1695,7 +1766,7 @@ def generate_final_opinion_with_case_laws(
             if related:
                 lines.append("Case laws linked to this section:")
                 for cl in related[:3]:
-                    name = cl.get("case_name") or cl.get("title") or "Unknown"
+                    name = _format_case_citation(cl)
                     body = (cl.get("text") or cl.get("full_text") or "")[:250]
                     lines.append(f"  - [{name}]: {body}")
             lines.append("")
@@ -1709,7 +1780,7 @@ def generate_final_opinion_with_case_laws(
         for ba in bare_acts[:20] if ba.get("section_number")
     ]
     _final_case_allowlist = [
-        (cl.get("case_name") or cl.get("title") or "").strip()
+        _format_case_citation(cl)
         for cl in all_case_laws[:10]
         if (cl.get("case_name") or cl.get("title") or "").strip()
     ]
@@ -2598,7 +2669,7 @@ def _build_dispute_blocks_text(dispute_results: list) -> str:
             if related:
                 lines.append("Case laws under this section (explain what parts apply and how):")
                 for cl in related[:3]:
-                    name = cl.get("case_name") or cl.get("title") or "Unknown"
+                    name = _format_case_citation(cl)
                     snippet = (cl.get("text") or cl.get("full_text") or "")[:300]
                     lines.append(f"- {name}: {snippet}")
         blocks.append("\n".join(lines))

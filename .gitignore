@@ -3,6 +3,10 @@ ai-gpu/
 
 # Data (vector store, chat history, etc.)
 data/
+vector_store/
+Nyaymalaw_Docs/
+analyse_vector_store_last_run.txt
+eval/results/
 
 # Python
 __pycache__/
