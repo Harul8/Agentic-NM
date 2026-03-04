@@ -129,14 +129,37 @@ Rules for gate_status:
 suggested_rating scale: 1=Poor 2=Below average 3=Acceptable 4=Good 5=Excellent
 """
 
-# ── column index map (1-based) — 23-column layout ────────────────────────────
-# A=Timestamp B=Case ID  C=Facts D=Disputes E=Sections F=Additional info G=Case Laws H=Opinion
-# I–M=AI Gate (5)  N–R=Human Gate (5)  S–W=Final Feedback (5)
+# ── column index map (1-based) — 26-column layout ────────────────────────────
+# A=Timestamp B=Case ID  C=Facts D=Disputes E=Sections F=Additional info
+# G=Case Laws H=Opinion I=Router classification
+# J–O=AI Gate (6)  P–U=Human Gate (6)  V–Z=Final Feedback (5)
 _COL = {
-    "A": 1,  "B": 2,  "C": 3,  "D": 4,  "E": 5,  "F": 6,  "G": 7,  "H": 8,
-    "I": 9,  "J": 10, "K": 11, "L": 12, "M": 13,
-    "N": 14, "O": 15, "P": 16, "Q": 17, "R": 18,
-    "S": 19, "T": 20, "U": 21, "V": 22, "W": 23,
+    "A": 1,
+    "B": 2,
+    "C": 3,
+    "D": 4,
+    "E": 5,
+    "F": 6,
+    "G": 7,
+    "H": 8,
+    "I": 9,
+    "J": 10,
+    "K": 11,
+    "L": 12,
+    "M": 13,
+    "N": 14,
+    "O": 15,
+    "P": 16,
+    "Q": 17,
+    "R": 18,
+    "S": 19,
+    "T": 20,
+    "U": 21,
+    "V": 22,
+    "W": 23,
+    "X": 24,
+    "Y": 25,
+    "Z": 26,
 }
 
 
@@ -309,17 +332,18 @@ def run_ai_review(
         rating = str(review.get("suggested_rating", ""))
         gate   = review.get("gate_status", "Review")
 
-        # 23-column layout — AI Gate occupies I–M (9–13): G Disputes, H Sections, Additional info, I Case Laws, J Legal Opinion
-        # Final Feedback S–W (19–23): S=Issues, T=What should differ, U=Rule, V=Actioned, W=Rating
+        # 26-column layout — AI Gate occupies J–O (10–15):
+        #   J=G Disputes, K=H Sections, L=Additional info, M=I Case Laws, N=J Legal Opinion, O=AI Router classification
+        # Final Feedback V–Z (22–26): V=Issues, W=What should differ, X=Rule, Y=Actioned, Z=Rating
         updates: dict[str, str] = {
-            "I":  review.get("actual_disputes", ""),
-            "J":  review.get("actual_sections", ""),
-            "K":  review.get("better_followup", ""),
-            "L":  review.get("actual_case_laws", ""),
-            "M":  review.get("ai_legal_opinion", ""),
-            "S":  review.get("issues_in_opinion", ""),
-            "T":  review.get("what_should_differ", ""),
-            "W":  rating,
+            "J": review.get("actual_disputes", ""),
+            "K": review.get("actual_sections", ""),
+            "L": review.get("better_followup", ""),
+            "M": review.get("actual_case_laws", ""),
+            "N": review.get("ai_legal_opinion", ""),
+            "V": review.get("issues_in_opinion", ""),
+            "W": review.get("what_should_differ", ""),
+            "Z": rating,
         }
 
         body_font = Font(name="Arial", size=9)
@@ -333,8 +357,11 @@ def run_ai_review(
 
         wb.save(str(path))
         logger.info(
-            "AI Gate complete: %s → %s | violations: %s | rating: %s | cols I–M + S,T,W written",
-            case_id, gate, violations_str or "none", rating,
+            "AI Gate complete: %s → %s | violations: %s | rating: %s | cols J–N + V,W,Z written",
+            case_id,
+            gate,
+            violations_str or "none",
+            rating,
         )
 
     return review

@@ -533,8 +533,10 @@ class ConfirmIndexRequest(BaseModel):
 
 
 class SubmitCaseRequest(BaseModel):
-    """Initial case submission - frontend sends { text }."""
+    """Initial case submission - frontend sends { text, mode }."""
     text: str = ""
+    # chat_mode: "legal_opinion" | "legal_research" | "general" (optional; default router when empty)
+    mode: str | None = None
 
 
 class QAPair(BaseModel):
@@ -543,16 +545,18 @@ class QAPair(BaseModel):
 
 
 class InterviewStepRequest(BaseModel):
-    """Follow-up answer in interview - frontend sends { facts, qa_history, bare_acts? }."""
+    """Follow-up answer in interview - frontend sends { facts, qa_history, bare_acts?, mode }."""
     facts: str = ""
     qa_history: list[QAPair] = []
     bare_acts: list[dict] = []   # populated when answering a bare-acts-phase follow-up question
+    mode: str | None = None      # "legal_opinion" | "legal_research" | "general"
 
 
 class ContinueChatRequest(BaseModel):
     """Continue a loaded chat - full conversation history + new user message."""
     conversation: list[ChatMessage] = []
     message: str = ""
+    mode: str | None = None  # "legal_opinion" | "legal_research" | "general"
 
 
 class IndexingItem(BaseModel):
@@ -650,6 +654,17 @@ def _fire_feedback_log(result: dict, facts: str, session_ref: str = "") -> None:
     import threading
     resp = result.get("response") or {}
 
+    # Router classification for this interaction: one of
+    # "Legal Opinion", "Direct search/lookup", "Non Legal".
+    response_type = (result.get("response_type") or "").strip().lower()
+    if response_type in {"search_results", "lookup_results"}:
+        router_classification = "Direct search/lookup"
+    elif response_type == "generic_chat":
+        router_classification = "Non Legal"
+    else:
+        # Default route is legal opinion (includes bare-acts-only rows)
+        router_classification = "Legal Opinion"
+
     disputes_list = [d.get("dispute", "") for d in (resp.get("disputes") or []) if d.get("dispute")]
     if not disputes_list:
         disputes_list = [str(result.get("facts_summary", "")[:80])]
@@ -678,6 +693,7 @@ def _fire_feedback_log(result: dict, facts: str, session_ref: str = "") -> None:
                 sections=sections_list,
                 case_laws=cl_list,
                 legal_opinion=explanation,
+                router_classification=router_classification,
                 session_ref=session_ref,
             )
         except Exception as _le:
@@ -719,6 +735,7 @@ def _fire_feedback_log_bare_acts(result: dict, facts: str, session_ref: str = ""
                 sections=sections_list,
                 case_laws=[],
                 legal_opinion=intro,
+                router_classification="Legal Opinion",
                 session_ref=session_ref,
             )
         except Exception as _le:
@@ -769,6 +786,7 @@ def _fire_feedback_log_research(result: dict, query: str, session_ref: str = "")
                 sections=sections_list,
                 case_laws=cl_list,
                 legal_opinion="",
+                 router_classification="Direct search/lookup",
                 session_ref=session_ref,
             )
         except Exception as _le:
@@ -1074,6 +1092,7 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
     """
     _enforce_query_limit(user)
     text = (request.text or "").strip()
+    mode = (request.mode or "").strip().lower() or None
     if not text:
         return {
             "status": "question",
@@ -1092,6 +1111,7 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
             current_message=text,
             phase="fact_collection",
             facts_summary=None,
+            chat_mode=mode,
         )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
@@ -1104,6 +1124,7 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
                 document_types=result.get("document_types", "both"),
                 search_strategy=result.get("search_strategy", "local_then_web"),
                 result_count=result.get("result_count"),
+                chat_mode=mode,
             )
         if result.get("phase") == "done":
             increment_query_count(user["id"])
@@ -1124,6 +1145,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
     _enforce_query_limit(user)
     facts = request.facts or ""
     qa_history = request.qa_history or []
+    mode = (request.mode or "").strip().lower() or None
     if not qa_history:
         return {
             "status": "question",
@@ -1146,6 +1168,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
                 phase="bare_acts_review",
                 facts_summary=facts,
                 bare_acts=bare_acts_from_client,
+                chat_mode=mode,
             )
         else:
             result = process_chat(
@@ -1153,6 +1176,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
                 current_message=current_message,
                 phase="fact_collection",
                 facts_summary=None,
+                chat_mode=mode,
             )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
@@ -1165,6 +1189,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
                 document_types=result.get("document_types", "both"),
                 search_strategy=result.get("search_strategy", "local_then_web"),
                 result_count=result.get("result_count"),
+                chat_mode=mode,
             )
         if result.get("phase") == "done":
             increment_query_count(user["id"])
@@ -1251,7 +1276,7 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
         return _chat_error_fallback(str(e)[:200])
 
 
-def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, user_id: str) -> None:
+def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, user_id: str, mode: str | None = None) -> None:
     """Run the same logic as continue_chat, pushing progress to queue and finally the result.
     Case-law-discovery requests are handled by the separate workflow and do not use process_chat.
     """
@@ -1272,6 +1297,7 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
             phase="fact_collection",
             facts_summary=None,
             progress_callback=progress_callback,
+            chat_mode=mode,
         )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": result.get("message", "")}]
@@ -1285,6 +1311,7 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
                 search_strategy=result.get("search_strategy", "local_then_web"),
                 result_count=result.get("result_count"),
                 progress_callback=progress_callback,
+                chat_mode=mode,
             )
         if result.get("phase") == "done":
             increment_query_count(user_id)
@@ -1297,7 +1324,7 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
         queue.put(("result", _chat_error_fallback(str(e)[:200])))
 
 
-def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str) -> None:
+def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: str | None = None) -> None:
     """Run submit_case logic with progress streaming.
     Case-law-discovery requests are handled by the separate workflow and do not use process_chat.
     """
@@ -1319,6 +1346,7 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str) -> Non
             phase="fact_collection",
             facts_summary=None,
             progress_callback=progress_callback,
+            chat_mode=mode,
         )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
@@ -1332,6 +1360,7 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str) -> Non
                 search_strategy=result.get("search_strategy", "local_then_web"),
                 result_count=result.get("result_count"),
                 progress_callback=progress_callback,
+                chat_mode=mode,
             )
         if result.get("phase") == "done":
             increment_query_count(user_id)
@@ -1344,7 +1373,7 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str) -> Non
         queue.put(("result", _chat_error_fallback(str(e)[:200])))
 
 
-def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue, user_id: str, bare_acts: list = None) -> None:
+def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue, user_id: str, bare_acts: list = None, mode: str | None = None) -> None:
     """Run interview_step logic with progress streaming."""
     try:
         def progress_callback(progress_snapshot: dict):
@@ -1365,6 +1394,7 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
                 facts_summary=facts,
                 bare_acts=bare_acts,
                 progress_callback=progress_callback,
+                chat_mode=mode,
             )
         else:
             result = process_chat(
@@ -1373,6 +1403,7 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
                 phase="fact_collection",
                 facts_summary=None,
                 progress_callback=progress_callback,
+                chat_mode=mode,
             )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
@@ -1386,6 +1417,7 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
                 search_strategy=result.get("search_strategy", "local_then_web"),
                 result_count=result.get("result_count"),
                 progress_callback=progress_callback,
+                chat_mode=mode,
             )
         if result.get("phase") == "done":
             increment_query_count(user_id)
@@ -1403,6 +1435,7 @@ async def submit_case_stream(request: SubmitCaseRequest, user: dict = Depends(_u
     """Same as /submit_case but streams progress via Server-Sent Events."""
     _enforce_query_limit(user)
     text = (request.text or "").strip()
+    mode = (request.mode or "").strip().lower() or None
     if not text:
         return JSONResponse(
             status_code=400,
@@ -1413,7 +1446,7 @@ async def submit_case_stream(request: SubmitCaseRequest, user: dict = Depends(_u
     user_id = user.get("id", _ANONYMOUS_EMAIL)
 
     def run_in_thread():
-        _run_submit_case_with_progress(text, queue, user_id)
+        _run_submit_case_with_progress(text, queue, user_id, mode)
 
     thread = __import__("threading").Thread(target=run_in_thread)
     thread.start()
@@ -1448,6 +1481,7 @@ async def interview_step_stream(request: InterviewStepRequest, user: dict = Depe
     facts = request.facts or ""
     qa_history = request.qa_history or []
     bare_acts_from_client = request.bare_acts or []
+    mode = (request.mode or "").strip().lower() or None
     if not qa_history:
         return JSONResponse(
             status_code=400,
@@ -1458,7 +1492,7 @@ async def interview_step_stream(request: InterviewStepRequest, user: dict = Depe
     user_id = user.get("id", _ANONYMOUS_EMAIL)
 
     def run_in_thread():
-        _run_interview_step_with_progress(facts, qa_history, queue, user_id, bare_acts=bare_acts_from_client)
+        _run_interview_step_with_progress(facts, qa_history, queue, user_id, bare_acts=bare_acts_from_client, mode=mode)
 
     thread = __import__("threading").Thread(target=run_in_thread)
     thread.start()
@@ -1494,6 +1528,7 @@ async def continue_chat_stream(request: ContinueChatRequest, user: dict = Depend
     """
     _enforce_query_limit(user)
     message = (request.message or "").strip()
+    mode = (request.mode or "").strip().lower() or None
     if not message:
         return JSONResponse(
             status_code=400,
@@ -1508,7 +1543,7 @@ async def continue_chat_stream(request: ContinueChatRequest, user: dict = Depend
     user_id = user.get("id", _ANONYMOUS_EMAIL)
 
     def run_in_thread():
-        _run_continue_chat_with_progress(conv, message, queue, user_id)
+        _run_continue_chat_with_progress(conv, message, queue, user_id, mode)
 
     thread = __import__("threading").Thread(target=run_in_thread)
     thread.start()

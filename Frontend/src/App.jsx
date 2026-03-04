@@ -179,6 +179,9 @@ function App() {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [expandedGroups, setExpandedGroups] = useState({});
 
+  // Manual mode selection: "legal_opinion" (default), "legal_research", "general"
+  const [chatMode, setChatMode] = useState("legal_opinion");
+
   // Bottom pane: single accordion (Eval | Architecture | Updates Tracker). Default: minimal strip at bottom; can extend up to 75% of viewport.
   const [bottomExpandedSection, setBottomExpandedSection] = useState(null); // "eval" | "architecture" | "updates" | null
   const EVAL_PANE_MIN_HEIGHT = 6;  // very low strip (75% lower than 24px) so pane is "hidden" by default
@@ -852,7 +855,7 @@ function App() {
       try {
         await consumeSSEStream(
           `${API_BASE}/submit_case/stream`,
-          { text: raw },
+          { text: raw, mode: chatMode },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
@@ -1002,7 +1005,7 @@ function App() {
       try {
         await consumeSSEStream(
           `${API_BASE}/interview_step/stream`,
-          { facts, qa_history: updatedHistory },
+          { facts, qa_history: updatedHistory, mode: chatMode },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
@@ -1123,7 +1126,7 @@ function App() {
       try {
         await consumeSSEStream(
           `${API_BASE}/interview_step/stream`,
-          { facts: pendingFactsSummary || facts, qa_history: updatedHistory, bare_acts: pendingBareActs },
+          { facts: pendingFactsSummary || facts, qa_history: updatedHistory, bare_acts: pendingBareActs, mode: chatMode },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
@@ -1208,7 +1211,7 @@ function App() {
         await new Promise((r) => setTimeout(r, 0));
         await consumeSSEStream(
           `${API_BASE}/conversation/continue/stream`,
-          { conversation, message: raw },
+          { conversation, message: raw, mode: chatMode },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
@@ -2212,7 +2215,13 @@ function App() {
             <div className="result-item-header">
               <span className="result-item-number">{idx + 1}.</span>
               {url ? (
-                <a href={url} rel="noopener noreferrer" className="result-item-title-link" title="Opens in this tab. Ctrl+click for new tab.">
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="result-item-title-link"
+                  title="Opens in a new tab."
+                >
                   {title}
                 </a>
               ) : (
@@ -2221,7 +2230,13 @@ function App() {
             </div>
             {cleanedText && <p className="result-item-full-text">{cleanedText}</p>}
             {url && (
-              <a href={url} rel="noopener noreferrer" className="result-item-source-link" title="Opens in this tab. Ctrl+click for new tab.">
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="result-item-source-link"
+                title="Opens in a new tab."
+              >
                 View original source
               </a>
             )}
@@ -2248,7 +2263,13 @@ function App() {
             <div className="result-item-header">
               <span className="result-item-number">{idx + 1}.</span>
               {url ? (
-                <a href={url} rel="noopener noreferrer" className="result-item-title-link" title="Opens in this tab. Ctrl+click for new tab.">
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="result-item-title-link"
+                  title="Opens in a new tab."
+                >
                   {title}
                 </a>
               ) : (
@@ -2257,7 +2278,13 @@ function App() {
             </div>
             {cleanedText && <p className="result-item-full-text">{cleanedText}</p>}
             {url && (
-              <a href={url} rel="noopener noreferrer" className="result-item-source-link" title="Opens in this tab. Ctrl+click for new tab.">
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="result-item-source-link"
+                title="Opens in a new tab."
+              >
                 View original source
               </a>
             )}
@@ -2280,7 +2307,13 @@ function App() {
                     <div key={clIdx} className="related-case-law-item">
                       <div className="case-law-header">
                         {caseUrl ? (
-                          <a href={caseUrl} rel="noopener noreferrer" className="case-law-title-link" title="Opens in this tab. Ctrl+click for new tab.">
+                          <a
+                            href={caseUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="case-law-title-link"
+                            title="Opens in a new tab."
+                          >
                             {caseTitle}
                           </a>
                         ) : (
@@ -2289,7 +2322,13 @@ function App() {
                       </div>
                       {caseCleanedText && <p className="case-law-text">{caseCleanedText}</p>}
                       {caseUrl && (
-                        <a href={caseUrl} rel="noopener noreferrer" className="case-law-source-link" title="Opens in this tab. Ctrl+click for new tab.">
+                        <a
+                          href={caseUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="case-law-source-link"
+                          title="Opens in a new tab."
+                        >
                           View judgment
                         </a>
                       )}
@@ -2449,7 +2488,13 @@ function App() {
                     )}
                     <pre>{item.text || item.content || JSON.stringify(item, null, 2)}</pre>
                     {item.url && (
-                      <a href={item.url} rel="noopener noreferrer" className="result-link" title="Opens in this tab. Ctrl+click for new tab.">
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="result-link"
+                        title="Opens in a new tab."
+                      >
                         View source
                       </a>
                     )}
@@ -3144,6 +3189,32 @@ function App() {
                   </p>
                 </div>
                   <div className="chat-center-input-wrapper">
+                    <div className="chat-mode-toggle">
+                      <button
+                        type="button"
+                        className={`chat-mode-button ${chatMode === "legal_opinion" ? "chat-mode-button--active" : ""}`}
+                        onClick={() => setChatMode("legal_opinion")}
+                        disabled={loading}
+                      >
+                        Legal opinion
+                      </button>
+                      <button
+                        type="button"
+                        className={`chat-mode-button ${chatMode === "legal_research" ? "chat-mode-button--active" : ""}`}
+                        onClick={() => setChatMode("legal_research")}
+                        disabled={loading}
+                      >
+                        Legal research
+                      </button>
+                      <button
+                        type="button"
+                        className={`chat-mode-button ${chatMode === "general" ? "chat-mode-button--active" : ""}`}
+                        onClick={() => setChatMode("general")}
+                        disabled={loading}
+                      >
+                        General
+                      </button>
+                    </div>
                     <div className="chat-input-container">
                       <textarea
                         ref={textareaRef}
@@ -3343,6 +3414,34 @@ function App() {
 
                 {/* Fixed bottom input when in chat mode */}
                 <div className="chat-input-wrapper">
+                  {messages.length === 0 && (
+                    <div className="chat-mode-toggle">
+                      <button
+                        type="button"
+                        className={`chat-mode-button ${chatMode === "legal_opinion" ? "chat-mode-button--active" : ""}`}
+                        onClick={() => setChatMode("legal_opinion")}
+                        disabled={loading}
+                      >
+                        Legal opinion
+                      </button>
+                      <button
+                        type="button"
+                        className={`chat-mode-button ${chatMode === "legal_research" ? "chat-mode-button--active" : ""}`}
+                        onClick={() => setChatMode("legal_research")}
+                        disabled={loading}
+                      >
+                        Legal research
+                      </button>
+                      <button
+                        type="button"
+                        className={`chat-mode-button ${chatMode === "general" ? "chat-mode-button--active" : ""}`}
+                        onClick={() => setChatMode("general")}
+                        disabled={loading}
+                      >
+                        General
+                      </button>
+                    </div>
+                  )}
                   <div className="chat-input-container">
                     <textarea
                       ref={textareaRef}

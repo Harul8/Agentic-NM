@@ -251,8 +251,9 @@ body {
   color: var(--text);
   border-radius: 4px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* Align Nyaymalaw icon with the first line of text */
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 /* Message content */
@@ -571,7 +572,8 @@ body {
 /* Progress Display — same look as left pane (Bare Acts Library, Case Laws): no box, no grey background */
 .progress-display {
   margin-top: 12px;
-  font-size: 0.9rem;
+  /* 25% smaller than previous 0.9rem */
+  font-size: 0.7rem;
 }
 
 .progress-display--loading {
@@ -603,8 +605,9 @@ body {
   cursor: pointer;
   list-style: none;
   user-select: none;
-  font-size: 0.9em;
-  color: #666;
+  /* Slightly smaller & lighter */
+  font-size: 0.75em;
+  color: #888;
   padding: 0;
 }
 
@@ -658,16 +661,18 @@ body {
   gap: 10px;
   padding: 6px 0;
   border-bottom: 1px solid #f3f4f6;
-  font-size: 0.8rem;
+  /* 25% smaller than previous 0.8rem */
+  font-size: 0.6rem;
 }
 
 /* Step status circle: completed (green), in-progress (light green), pending (outline) */
 .progress-step-dot {
   flex-shrink: 0;
-  width: 10px;
-  height: 10px;
+  /* 25% smaller than previous 5x5 (overall 60% smaller than original 10x10) */
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
-  border: 2px solid #d1d5db;
+  border: 1px solid #d1d5db;
 }
 .progress-step-dot--completed {
   background: #22c55e;
@@ -704,14 +709,16 @@ body {
 
 .progress-step-time {
   color: #6b7280;
-  font-size: 0.75rem;
+  /* Match the main progress text size */
+  font-size: 0.6rem;
   min-width: 50px;
   font-family: monospace;
 }
 
 .progress-step-message {
   flex: 1;
-  color: #374151;
+  /* Slightly lighter text for progress messages */
+  color: #4b5563;
 }
 
 .progress-step-score {
@@ -816,6 +823,33 @@ body {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+}
+
+.chat-mode-toggle {
+  display: inline-flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.chat-mode-button {
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  font-size: 0.7rem;
+  color: #4b5563;
+  cursor: pointer;
+}
+
+.chat-mode-button--active {
+  background: #111827;
+  color: #f9fafb;
+  border-color: #111827;
+}
+
+.chat-mode-button:disabled {
+  opacity: 0.6;
+  cursor: default;
 }
 
 .chat-input-container {

@@ -290,7 +290,13 @@ DISPUTE_DECOMPOSITION_PROMPT = """You are a senior Indian advocate. The client h
 CLIENT'S SITUATION:
 {query}
 
-TASK: Identify the distinct dispute components. Each component is a separate legal grievance requiring its own research.
+TASK: Identify and return the distinct dispute components. Each component is a separate legal grievance requiring its own research.
+
+You must do ALL of the following in ONE pass:
+- Extract every genuinely distinct grievance present in the client's description.
+- Avoid splitting a single grievance into multiple overlapping disputes.
+- Avoid missing any clear, separate grievance.
+- For each dispute, clean up the wording and fields so they are precise and usable for downstream retrieval.
 
 OUTPUT: Valid JSON only, no preamble or explanation:
 {{"disputes": [
@@ -308,32 +314,46 @@ OUTPUT: Valid JSON only, no preamble or explanation:
   }}
 ]}}
 
-RULES:
-- Capture ALL distinct disputes present — do not cap or omit any grievance.
-- Each dispute must be genuinely distinct in law — different statutes or different reliefs apply.
-- Do NOT group unrelated grievances just to reduce the count. Each separate legal harm deserves its own entry.
+RULES FOR DISPUTE SELECTION (DISTINCTNESS & COMPLETENESS):
+- Capture ALL distinct disputes present — do not cap or omit any genuine grievance.
+- Distinct dispute = a different harm, right, or remedy that a reasonable lawyer would research under meaningfully different legal theories, statutes, or reliefs.
+- If two candidate disputes are just minor rephrasings of the same grievance, MERGE them into a single, clearer dispute.
 - If the situation has only one grievance, output exactly 1 dispute.
+- Do NOT invent hypothetical disputes that are not reasonably grounded in the client's description.
 
-- dispute: rewrite the client's grievance in clear, grammatically correct English. Use their facts directly. Do NOT add legal terminology, act names, or section numbers.
-  Good: "Your neighbor struck you with a rod causing a fracture to your leg."
-  Bad:  "Neighbor's assault causing grievous hurt under BNS Section 117."
+FIELD-LEVEL RULES:
+- "id": Use "d1", "d2", "d3", ... in order, no gaps.
+- "dispute":
+  - Single, grammatically correct sentence in plain English.
+  - Use the client's own facts where possible.
+  - Do NOT include section numbers, act names, or code citations.
+- "legal_nature":
+  - One of "criminal", "civil", or "both".
+  - Choose based on the nature of the harm and likely proceedings, not specific statute labels.
+- "keywords":
+  - 3-7 short, plain-language tokens describing what happened and who is involved.
+  - Examples: ["assault", "tenant", "eviction", "cheque bounce", "loan default"].
+  - No act names and no section numbers here.
+- "bare_act_hints":
+  - 0-3 likely applicable Indian Acts for THIS dispute.
+  - Use the official short name + year where known (e.g. "Bharatiya Nyaya Sanhita 2023", "Transfer of Property Act 1882", "Negotiable Instruments Act 1881").
+  - Include an act only if you are reasonably confident; prefer [] over guessing.
+  - If the client themselves names an Act, you may include it here.
+- "search_angles":
+  - 2-4 short English phrases (6-12 words each) describing different angles for legal research on this dispute.
+  - Focus on natural language descriptions of liability, remedies, jurisdiction, limitation, or procedure.
+  - Do NOT use act names or section numbers here.
 
-- keywords: 3-5 plain descriptive words describing what happened. No act names. No section numbers. No legal codes.
-  Good: ["assault", "physical injury", "fracture", "neighbor", "rod"]
-  Bad:  ["BNS Section 117", "grievous hurt", "Bharatiya Nyaya Sanhita"]
+STYLE CONSTRAINTS:
+- Use clear, neutral, professional language.
+- Do NOT include any explanation of your reasoning, uncertainty, or meta-commentary in the output.
+- Do NOT output markdown, headings, or code fences.
 
-- bare_act_hints: List the 1-3 most directly applicable Indian Acts for this specific dispute. Use the official short name + year (e.g. "Bharatiya Nyaya Sanhita 2023", "Transfer of Property Act 1882", "Negotiable Instruments Act 1881"). Only include acts you are highly confident about — omit if unsure rather than guess. If the client themselves named a specific Act, always include it. Output [] only if you truly cannot identify a likely applicable act.
-  Good: ["Bharatiya Nyaya Sanhita 2023", "Bharatiya Nagarik Suraksha Sanhita 2023"]  for a criminal assault case.
-  Good: ["Transfer of Property Act 1882", "Specific Relief Act 1963"]  for a property sale dispute.
-  Good: ["Negotiable Instruments Act 1881"]  for a cheque-bounce case.
-  Bad:  ["some general law"] — vague guesses are worse than [].
-  Note: For criminal offences after July 2024, use the new codes (BNS/BNSS/BSA), NOT the old IPC/CrPC/IEA.
-
-- search_angles: 2-3 plain English phrases (6-12 words each) describing what legal provision would apply. These drive a vector database search — use natural language, not act names or section numbers. Cover different angles: criminal liability, civil remedy, and the specific nature of the harm.
-  Good: ["criminal liability for physical assault causing serious injury", "civil compensation for bodily harm caused by neighbor", "punishment for intentional grievous hurt with weapon"]
-  Bad:  ["BNS 117 grievous hurt", "Bharatiya Nyaya Sanhita section 117 assault"]
-
-- Output ONLY valid JSON. No preamble, no trailing text."""
+OUTPUT FORMAT (CRITICAL):
+- Output ONLY valid JSON.
+- EXACT structure: {{"disputes": [ ... ] }}
+- No preamble, no trailing text, no comments, no markdown, no ``` fences.
+- The "disputes" list must contain at least 1 dispute object."""
 
 
 # Lightweight sufficiency check for bare acts covering one dispute component
@@ -385,6 +405,128 @@ RULES:
 - Query 4 MUST include an act name from KNOWN ACT HINTS if any were provided.
 - Queries must be diverse — do NOT just rephrase the same idea.
 - Output ONLY valid JSON."""
+
+
+# ---------------------------------------------------------------------------
+# ACT SELECTION REFINEMENT — LLM layer on top of BM25 act profiles
+# ---------------------------------------------------------------------------
+
+ACT_SELECTION_PROMPT = """You are a senior Indian advocate helping a retrieval system decide which Acts to prioritise for section-level search for ONE dispute.
+
+DISPUTE (ONE ONLY):
+{dispute}
+
+CANDIDATE ACTS (JSON ARRAY):
+{candidate_acts_json}
+
+Each candidate act object has:
+- "act_name": string, the official or common name of the Act.
+- "source": string, where this candidate came from (e.g. "profile", "hint", "retrieved").
+- "note": optional short note.
+
+TASK:
+For THIS dispute, decide how relevant each candidate Act is for resolving the dispute.
+
+For EACH candidate act:
+- Assign a relevance label: "high", "medium", or "low" based on how suitable the Act is for this dispute.
+- Briefly explain your reasoning in one short sentence (max 20 words).
+
+OUTPUT FORMAT (CRITICAL):
+- Output ONLY valid JSON.
+- Exact structure:
+  {{"acts": [{{"act_name": "...", "relevance": "high|medium|low", "reason": "..."}} , ...]}}
+- Preserve only the fields "act_name", "relevance", and "reason" in each object.
+- Do NOT include "source" or "note" in the output.
+- No preamble, no explanation, no markdown, no code fences.
+
+GUIDELINES:
+- Consider the real-world subject-matter of each Act based on its name (e.g. rent/tenancy, criminal offences, contracts, property, family law).
+- "high" = clearly central to resolving this dispute.
+- "medium" = plausibly relevant or covering an important secondary angle.
+- "low" = mostly unrelated in subject-matter; should usually be ignored for this dispute.
+- Prefer a small set of "high"/"medium" Acts over marking many Acts as "high"."""
+
+
+# ---------------------------------------------------------------------------
+# BARE ACT SECTION RELEVANCE — filter candidate sections per dispute
+# ---------------------------------------------------------------------------
+
+BARE_ACT_SECTION_RELEVANCE_PROMPT = """You are a senior Indian advocate helping a retrieval system decide which bare act sections are genuinely relevant for ONE dispute.
+
+DISPUTE (ONE ONLY):
+{dispute}
+
+CANDIDATE SECTIONS (JSON ARRAY):
+{sections_json}
+
+Each candidate section object has:
+- "act_name": string, the Act the section belongs to.
+- "section_number": string, the section number (e.g. "356", "54").
+- "section_title": short title or heading, if available.
+- "snippet": 1–3 sentences of the section text or explanation.
+
+TASK:
+For THIS dispute, rate how relevant each candidate section is to resolving the dispute.
+
+For EACH candidate section:
+- Assign a relevance label: "high", "medium", or "low".
+- Briefly explain your reasoning in one short sentence (max 20 words).
+
+OUTPUT FORMAT (CRITICAL):
+- Output ONLY valid JSON.
+- Exact structure:
+  {{"sections": [{{"act_name": "...", "section_number": "...", "relevance": "high|medium|low", "reason": "..."}} , ...]}}
+- Preserve only the fields "act_name", "section_number", "relevance", and "reason" in each object.
+- No preamble, no explanation, no markdown, no code fences.
+
+GUIDELINES:
+- "high" = clearly addresses a core right/obligation/offence/remedy raised by the dispute.
+- "medium" = addresses an important supporting aspect (definition, punishment, limitation, procedure) but not the core by itself.
+- "low" = mostly off-topic in subject-matter for this dispute; should usually be ignored.
+- Prefer to keep a small set of high/medium sections rather than many weakly related ones."""
+
+
+# ---------------------------------------------------------------------------
+# CASE LAW RELEVANCE — filter candidate case laws per dispute
+# ---------------------------------------------------------------------------
+
+CASE_LAW_RELEVANCE_PROMPT = """You are a senior Indian advocate helping a retrieval system decide which case law paragraphs are genuinely relevant for ONE dispute.
+
+DISPUTE (ONE ONLY):
+{dispute}
+
+RELATED BARE ACT SECTIONS (OPTIONAL CONTEXT, MAY BE EMPTY):
+{bare_act_context}
+
+CANDIDATE CASE LAWS (JSON ARRAY):
+{cases_json}
+
+Each candidate case object has:
+- "case_name": string, the case name or title.
+- "court": string, the court (if known).
+- "year": string, the year of decision (if known).
+- "binding": string, the binding strength (e.g. "SC", "HC", "tribunal") if provided.
+- "snippet": 1–3 sentences of the judgment text or summary.
+
+TASK:
+For THIS dispute, rate how relevant each candidate case law paragraph is to resolving the dispute.
+
+For EACH candidate:
+- Assign a relevance label: "high", "medium", or "low".
+- Briefly explain your reasoning in one short sentence (max 20 words).
+
+OUTPUT FORMAT (CRITICAL):
+- Output ONLY valid JSON.
+- Exact structure:
+  {{"cases": [{{"case_name": "...", "relevance": "high|medium|low", "reason": "..."}} , ...]}}
+- Preserve only the fields "case_name", "relevance", and "reason" in each object.
+- No preamble, no explanation, no markdown, no code fences.
+
+GUIDELINES:
+- "high" = clearly applies a legal principle or holding that is directly useful to this dispute.
+- "medium" = discusses a related legal issue (definition, scope, procedure, limitation) but not the core point by itself.
+- "low" = mostly off-topic for this dispute; should usually be ignored.
+- When in doubt between "medium" and "low", choose "low" — it is better to keep fewer, stronger cases."""
 
 
 EXTRACT_BARE_ACT_PORTIONS_SYSTEM = """Extract ONLY the statutory provisions from this legal document that apply to the case facts.

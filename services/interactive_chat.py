@@ -74,6 +74,7 @@ def _run_bare_acts_phase(facts_summary: str, progress_callback=None, states: lis
         "facts_summary": facts_summary,
         "bare_acts": bare_acts,
         "disputes": disputes,             # forwarded to API → frontend for per-dispute layout
+        "states": states or [],           # so frontend can send back for Phase B (case-law search)
         "followup_question": followup_question,
         "response": {
             "bare_act_sections": bare_acts,
@@ -89,10 +90,11 @@ def _run_bare_acts_phase(facts_summary: str, progress_callback=None, states: lis
     }
 
 
-def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_info: str, progress_callback=None) -> dict:
+def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_info: str, progress_callback=None, states: list = None) -> dict:
     """
     New Phase B: given collected facts + already-retrieved bare acts + any additional user info,
     retrieve case laws, associate them with sections, and generate the structured final opinion.
+    states: optional list of state names (e.g. from Phase A) so web search is jurisdiction-aware.
     """
     try:
         resp = generate_final_opinion_with_case_laws(
@@ -100,6 +102,7 @@ def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_in
             bare_acts,
             additional_info=additional_info,
             progress_callback=progress_callback,
+            states=states or [],
         )
     except Exception as e:
         logger.error("_run_final_with_case_laws failed: %s", e, exc_info=True)
@@ -238,7 +241,20 @@ def _empty_result(phase: str = "done", facts_summary: str = None) -> dict:
     }
 
 
-def process_chat(conversation: list, current_message: str, phase: str, facts_summary: str = None, progress_callback=None, intent: str = None, document_types: str = None, search_strategy: str = None, result_count: int = None, bare_acts: list = None) -> dict:
+def process_chat(
+    conversation: list,
+    current_message: str,
+    phase: str,
+    facts_summary: str = None,
+    progress_callback=None,
+    intent: str = None,
+    document_types: str = None,
+    search_strategy: str = None,
+    result_count: int = None,
+    bare_acts: list = None,
+    states: list = None,
+    chat_mode: str | None = None,
+) -> dict:
     """
     Process a chat message and return the appropriate response.
 
@@ -268,9 +284,32 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
             "indexed": False,
         }
 
+    # Normalise chat_mode (manual override from UI)
+    mode = (chat_mode or "").strip().lower()
+
     # ---- Phase: Fact Collection ----
     if phase == "fact_collection":
-        result = get_next_question_or_complete(conversation, current_message)
+        # Manual override: general chat → skip legal routing entirely
+        if mode == "general":
+            return _run_generic_chat(conversation, current_message)
+
+        # Manual override: direct legal research (search-style workflow)
+        if mode == "legal_research":
+            # Treat message as a single research query; no multi-step interview.
+            msg = _ensure_message("", current_message, intent="search")
+            return _run_search_or_lookup(
+                current_message,
+                intent="search",
+                msg=msg,
+                result_count=None,
+                progress_callback=progress_callback,
+                search_strategy=_detect_search_strategy_from_keywords(current_message) or "local_then_web",
+            )
+
+        # Default / explicit legal opinion: use fact collector, but force LEGAL
+        # so Gate 1 can never downgrade to GENERALIST when the user chose legal mode.
+        force_legal = mode == "legal_opinion"
+        result = get_next_question_or_complete(conversation, current_message, force_legal=force_legal)
 
         if result.get("action") == "complete":
             intent = result.get("intent", "legal_opinion")
@@ -384,11 +423,12 @@ def process_chat(conversation: list, current_message: str, phase: str, facts_sum
     elif phase == "bare_acts_review":
         # The user replied to the follow-up question shown after bare act presentation.
         # additional_info = user's answer; bare_acts = sections from Phase A (passed by frontend).
+        # states = from Phase A response so case-law web search is jurisdiction-aware.
         facts = facts_summary or current_message
         additional_info = current_message
         stored_bare_acts = bare_acts or []
         return _run_final_with_case_laws(
-            facts, stored_bare_acts, additional_info, progress_callback=progress_callback
+            facts, stored_bare_acts, additional_info, progress_callback=progress_callback, states=states or []
         )
 
     # ---- Phase: Confirm Index ----

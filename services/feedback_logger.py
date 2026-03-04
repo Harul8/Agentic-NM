@@ -209,12 +209,13 @@ def _build_html_row(
     additional_info: str,
     case_laws: str,
     opinion: str,
+    router_classification: str,
 ) -> str:
-    """Return an HTML <tr> string for one new log entry (22-column structure).
+    """Return an HTML <tr> string for one new log entry (25-column structure).
 
     Column layout:
-      Identity (1) · User Input (1) · Model Output (5)
-      AI Gate (5) · Human Gate (5) · Final Feedback (5)
+      Identity (1) · User Input (1) · Model Output (6)
+      AI Gate (6) · Human Gate (6) · Final Feedback (5)
     """
     cid = _esc(case_id)
     opinion_short = _esc(opinion[:600] + "…" if len(opinion) > 600 else opinion)
@@ -226,15 +227,16 @@ def _build_html_row(
             <td>{_esc(timestamp)}</td>
             <!-- User Input (1) -->
             <td class="wrap">{_esc(facts[:400])}</td>
-            <!-- Model Output (5) -->
+            <!-- Model Output (6) -->
             <td class="wrap">{_esc(disputes)}</td>
             <td class="wrap">{_esc(sections)}</td>
             <td class="wrap">{_esc(additional_info)}</td>
             <td class="wrap">{_esc(case_laws)}</td>
             <td class="wrap">{opinion_short}</td>
-            <!-- AI Gate (5): same as Model Output -->
-            <td></td><td></td><td></td><td></td><td></td>
-            <!-- Human Gate (5): same as Model Output, editable -->
+            <td class="wrap">{_esc(router_classification)}</td>
+            <!-- AI Gate (6): same as Model Output -->
+            <td></td><td></td><td></td><td></td><td></td><td></td>
+            <!-- Human Gate (6): same as Model Output, editable -->
             <td class="editable wrap">
               <div contenteditable="true" data-id="{cid}" data-field="hg-disputes" data-placeholder="Your disputes…" oninput="markDirty()"></div>
             </td>
@@ -249,6 +251,14 @@ def _build_html_row(
             </td>
             <td class="editable wrap">
               <div contenteditable="true" data-id="{cid}" data-field="hg-opinion" data-placeholder="Your legal opinion…" oninput="markDirty()"></div>
+            </td>
+            <td class="editable">
+              <select data-id="{cid}" data-field="hg-router" onchange="markDirty()">
+                <option value="">—</option>
+                <option value="Legal Opinion">Legal Opinion</option>
+                <option value="Direct search/lookup">Direct search/lookup</option>
+                <option value="Non Legal">Non Legal</option>
+              </select>
             </td>
             <!-- Final Feedback (5): all editable -->
             <td class="editable wrap">
@@ -313,6 +323,7 @@ def log_interaction(
     sections: list[str],
     case_laws: list[str],
     legal_opinion: str,
+    router_classification: str = "",
     session_ref: str = "",
     feedback_log_path: Optional[str] = None,
 ) -> str:
@@ -365,9 +376,11 @@ def log_interaction(
         sections_str  = "; ".join(sections)  if sections  else ""
         case_laws_str = "; ".join(case_laws) if case_laws else ""
 
-        # 23-column layout: 0=Timestamp, 1=Case ID, 2=Facts, 3=Disputes, 4=Sections, 5=Addl info, 6=Case Laws, 7=Opinion,
-        # 8–12=AI Gate (5), 13–17=Human Gate (5), 18–22=Final Feedback (5)
-        row_values = [""] * 23
+        # 26-column layout:
+        # 0=Timestamp, 1=Case ID,
+        # 2=Facts, 3=Disputes, 4=Sections, 5=Addl info, 6=Case Laws, 7=Opinion, 8=Router classification,
+        # 9–14=AI Gate (6), 15–20=Human Gate (6), 21–25=Final Feedback (5)
+        row_values = [""] * 26
         row_values[0]  = _timestamp_12hr(now_iso)
         row_values[1]  = case_id
         row_values[2]  = _truncate(facts)
@@ -376,7 +389,8 @@ def log_interaction(
         row_values[5]  = _truncate(followup_question)
         row_values[6]  = case_laws_str
         row_values[7]  = _truncate(legal_opinion)
-        # cols 8–22 remain blank
+        row_values[8]  = router_classification or ""
+        # cols 9–25 remain blank (AI/HG/Final feedback)
 
         # ── 1. Write Excel (with retry) ───────────────────────────────────────
         _write_excel(xlsx_path, row_values, case_id)
@@ -393,6 +407,7 @@ def log_interaction(
                 additional_info  = _truncate(followup_question, 500),
                 case_laws        = case_laws_str,
                 opinion          = _truncate(legal_opinion, 800),
+                router_classification = router_classification or "",
             )
             _write_html(html_path, new_row)
         else:

@@ -442,6 +442,7 @@ def _fire_feedback_log_eval(result: dict, query_text: str, query_id: str, mode: 
                 sections=sections_list,
                 case_laws=cl_list,
                 legal_opinion=explanation,
+                router_classification="Direct search/lookup",
                 session_ref=session_ref,
             )
             logger.debug("Feedback logged for %s (%s)", query_id, mode)

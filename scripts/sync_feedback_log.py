@@ -4,18 +4,18 @@ Nyaymalaw Feedback Log v3 — Excel ↔ HTML sync and column layout.
 Layout:
   Identity (1): Timestamp (12hr)
   User Input (1): E · Facts Entered
-  Model Output (5): G Disputes, H Sections, Additional information requested, I Case Laws, J Legal Opinion
-  AI Gate (5), Human Gate (5), Final Feedback (5) — 23 columns total in Excel (incl. Case ID in col B); 22 visible tds in HTML.
+  Model Output (6): G Disputes, H Sections, Additional information requested, I Case Laws, J Legal Opinion, Router classification
+  AI Gate (6), Human Gate (6), Final Feedback (5) — 26 columns total in Excel (incl. Case ID in col B); 25 visible tds in HTML.
 
 - Run:
   - python scripts/sync_feedback_log.py html-to-excel   → replace Excel with content from HTML (same columns/names)
   - python scripts/sync_feedback_log.py excel-to-html   → read Excel, overwrite HTML table
-  - python scripts/sync_feedback_log.py normalize-excel → one-time: rewrite Excel to 23-col layout
+  - python scripts/sync_feedback_log.py normalize-excel → one-time: rewrite Excel to 26-col layout
 
 Usage:
   html-to-excel : Replace Excel with HTML format (headers and column names match HTML exactly). Run this to sync Excel to HTML.
-  normalize-excel: Read Excel, output 23-col layout.
-  excel-to-html : Read Excel (23 cols), generate full HTML tbody (22 visible tds; Case ID in data-id).
+  normalize-excel: Read Excel, output 26-col layout.
+  excel-to-html : Read Excel (26 cols), generate full HTML tbody (25 visible tds; Case ID in data-id).
 """
 
 import os
@@ -36,14 +36,36 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EXCEL_PATH = os.path.join(ROOT, "Nyaymalaw_Feedback_Log_v3.xlsx")
 HTML_PATH = os.path.join(ROOT, "Nyaymalaw_Feedback_Log_v3.html")
 
-# Column headers matching HTML exactly (23 cols: Timestamp, Case ID, then 21 content headers)
-EXCEL_HEADERS_23 = [
+# Column headers matching HTML exactly (26 cols: Timestamp, Case ID, then 24 content headers)
+# Layout:
+#   Identity (1) · User Input (1) · Model Output (6)
+#   AI Gate (6) · Human Gate (6) · Final Feedback (5)
+EXCEL_HEADERS_26 = [
     "Timestamp", "Case ID",
-    "E · Facts Entered", "G · Disputes Identified", "H · Sections Retrieved",
-    "Additional information requested", "I · Case Laws Retrieved", "J · Legal Opinion",
-    "AI · G Disputes", "AI · H Sections", "AI · Additional information requested", "AI · I Case Laws", "AI · J Legal Opinion",
-    "HG · G Disputes ✎", "HG · H Sections ✎", "HG · Additional information requested ✎", "HG · I Case Laws ✎", "HG · J Legal Opinion ✎",
-    "Issues in Opinion ✎", "What Should Have Been Different ✎", "Rule Extracted ✎", "Actioned ✎", "Rating ✎",
+    "E · Facts Entered",
+    "G · Disputes Identified",
+    "H · Sections Retrieved",
+    "Additional information requested",
+    "I · Case Laws Retrieved",
+    "J · Legal Opinion",
+    "Router classification",
+    "AI · G Disputes",
+    "AI · H Sections",
+    "AI · Additional information requested",
+    "AI · I Case Laws",
+    "AI · J Legal Opinion",
+    "AI · Router classification",
+    "HG · G Disputes ✎",
+    "HG · H Sections ✎",
+    "HG · Additional information requested ✎",
+    "HG · I Case Laws ✎",
+    "HG · J Legal Opinion ✎",
+    "HG · Router classification ✎",
+    "Issues in Opinion ✎",
+    "What Should Have Been Different ✎",
+    "Rule Extracted ✎",
+    "Actioned ✎",
+    "Rating ✎",
 ]
 
 
@@ -77,58 +99,100 @@ def _format_timestamp_12hr(val):
 
 
 def normalize_excel():
-    """Rewrite Excel to 23-col layout: Timestamp, Case ID, Facts, Disputes, Sections, Addl info, Case Laws, Opinion, AI Gate (5), Human Gate (5), Final Feedback (5)."""
+    """Rewrite Excel to 26-col layout: Timestamp, Case ID, Facts, Disputes, Sections, Addl info,
+    Case Laws, Opinion, Router classification, AI Gate (6), Human Gate (6), Final Feedback (5)."""
     df = pd.read_excel(EXCEL_PATH, sheet_name=0, header=None)
     ncols = df.shape[1]
     if ncols < 8:
         print("Excel has fewer than 8 columns, skipping.")
         return
-    # Target: 23 cols. If source has 30: map AI Gate 9→5 (first 5), Human Gate 8→5 (assessment 5), FF 5→5.
+    # Target: 26 cols. If source has 30: map older layout into the new 26-col schema.
     new_rows = []
-    hdr1 = EXCEL_HEADERS_23
-    notes_row = ["e.g. Mar 1, 2026 10:15 AM", "", "Raw user query", "Disputes from model", "Act § No", "Bullet list of info requested", "Case citations", "Full legal opinion",
-                 "AI's disputes", "AI's sections", "AI's additional info", "AI's case laws", "AI's legal opinion",
-                 "Your disputes", "Your sections", "Your additional info", "Your case laws", "Your legal opinion",
-                 "Enumerated issues", "Corrective guidance", "New rule derived", "Yes/No/In Progress", "1–5"]
+    hdr1 = EXCEL_HEADERS_26
+    notes_row = [
+        "e.g. Mar 1, 2026 10:15 AM",
+        "",
+        "Raw user query",
+        "Disputes from model",
+        "Act § No",
+        "Bullet list of info requested",
+        "Case citations",
+        "Full legal opinion",
+        "Router classification (model)",
+        "AI's disputes",
+        "AI's sections",
+        "AI's additional info",
+        "AI's case laws",
+        "AI's legal opinion",
+        "AI's router classification",
+        "Your disputes",
+        "Your sections",
+        "Your additional info",
+        "Your case laws",
+        "Your legal opinion",
+        "Your router classification",
+        "Enumerated issues",
+        "Corrective guidance",
+        "New rule derived",
+        "Yes/No/In Progress",
+        "1–5",
+    ]
     for i in range(len(df)):
         row = df.iloc[i]
         if i == 0:
-            new_rows.append([""] * 23)
+            new_rows.append([""] * 26)
         elif i == 1:
             new_rows.append(hdr1)
         elif i == 2:
             new_rows.append(notes_row)
         else:
-            if ncols >= 30:
-                # Map from 30-col: 0-7 same, AI Gate take 8-12, HG take 17-21, FF take 25-29
-                part1 = [row[k] if k < len(row) and not pd.isna(row[k]) else "" for k in range(8)]
-                if len(part1) > 0 and part1[0] and "T" in str(part1[0]):
-                    part1[0] = _format_timestamp_12hr(part1[0])
-                ai5 = [row[k] if k < len(row) and not pd.isna(row[k]) else "" for k in range(8, 13)]
-                hg5 = [row[k] if k < len(row) and not pd.isna(row[k]) else "" for k in range(17, 22)]
-                ff5 = [row[k] if k < len(row) and not pd.isna(row[k]) else "" for k in range(25, 30)]
-                new_rows.append(part1 + ai5 + hg5 + ff5)
-            else:
-                part1 = [row[k] if k < ncols and not pd.isna(row[k]) else "" for k in range(min(8, ncols))]
-                rest = list(row[8:8 + 15]) if ncols > 8 else []
-                rest = rest + [""] * (15 - len(rest))
-                new_rows.append((part1 + rest)[:23])
+            # Map existing rows into 26-col layout.
+            vals = [row[k] if k < ncols and not pd.isna(row[k]) else "" for k in range(ncols)]
+
+            # Start with all blanks
+            new_row = [""] * 26
+
+            # Common mapping for older 23/30-col layouts:
+            # 0=Timestamp, 1=Case ID, 2=Facts, 3=Disputes, 4=Sections, 5=Addl info,
+            # 6=Case Laws, 7=Opinion, 8-12 AI, 13-17 HG, 18-22 FF.
+            # New layout:
+            # 0 TS, 1 Case ID, 2 Facts, 3 Disputes, 4 Sections, 5 Addl, 6 Case Laws, 7 Opinion,
+            # 8 Router (model), 9-14 AI (6), 15-20 HG (6), 21-25 FF (5).
+
+            if ncols >= 8:
+                for src, dst in zip(range(0, min(8, ncols)), range(0, min(8, ncols))):
+                    new_row[dst] = vals[src]
+            # Router classification (model) left blank for legacy rows
+            # AI Gate: map first 5 AI cols, leave router blank
+            if ncols >= 13:
+                for idx in range(5):
+                    new_row[9 + idx] = vals[8 + idx]
+            # Human Gate: map first 5 HG cols
+            if ncols >= 18:
+                for idx in range(5):
+                    new_row[15 + idx] = vals[13 + idx]
+            # Final Feedback: map 5 FF cols
+            if ncols >= 23:
+                for idx in range(5):
+                    new_row[21 + idx] = vals[18 + idx]
+
+            new_rows.append(new_row)
     new_df = pd.DataFrame(new_rows)
-    new_df = new_df.iloc[:, :23]
+    new_df = new_df.iloc[:, :26]
     new_df.to_excel(EXCEL_PATH, index=False, header=False)
     print("Normalized Excel: 23 columns (AI Gate 5, Human Gate 5).")
 
 
 def excel_to_html():
-    """Read Excel (23 cols) and regenerate the HTML file table body. 22 visible tds per row (skip Excel col 1 Case ID)."""
+    """Read Excel (26 cols) and regenerate the HTML file table body. 25 visible tds per row (skip Excel col 1 Case ID)."""
     df = pd.read_excel(EXCEL_PATH, sheet_name=0, header=None)
     if df.shape[1] < 3:
         print("Excel has too few columns.")
         return
     with open(HTML_PATH, "r", encoding="utf-8") as f:
         html = f.read()
-    # Excel: 0=Timestamp, 1=Case ID, 2=Facts, ..., 22=Rating (23 total). HTML: 22 tds (skip col 1).
-    NOTES_ROW_LEN = 22
+    # Excel: 0=Timestamp, 1=Case ID, 2=Facts, ..., 25=Rating (26 total). HTML: 25 tds (skip col 1).
+    NOTES_ROW_LEN = 25
     notes = df.iloc[2] if len(df) > 2 else []
     lines = []
     lines.append("          <tr class=\"notes\">")
@@ -192,7 +256,8 @@ def _td_text(td_html: str) -> str:
 
 
 def html_to_excel():
-    """Replace Excel with content from HTML. Column names and order match the HTML table exactly (22 cols in HTML; Excel gets 23 with Case ID as col B)."""
+    """Replace Excel with content from HTML. Column names and order match the HTML table
+    exactly (25 cols in HTML; Excel gets 26 with Case ID as col B)."""
     with open(HTML_PATH, "r", encoding="utf-8") as f:
         html = f.read()
 
@@ -207,8 +272,8 @@ def html_to_excel():
         print("Could not find thead second row in HTML.")
         return
     ths = re.findall(r"<th[^>]*>([^<]+)</th>", header_row2.group(1))
-    if len(ths) != 22:
-        print(f"Expected 22 column headers, got {len(ths)}.")
+    if len(ths) != 25:
+        print(f"Expected 25 column headers, got {len(ths)}.")
         return
 
     # Excel header row: Timestamp, Case ID, then the rest (same as HTML)
@@ -222,13 +287,13 @@ def html_to_excel():
     if notes_tr:
         tds = re.findall(r"<td[^>]*>(.*?)</td>", notes_tr.group(1), re.DOTALL)
         notes_cells = [_td_text(td) for td in tds]
-    # Build notes row for Excel: 23 cols (insert blank for Case ID at index 1)
-    if len(notes_cells) >= 22:
-        notes_row = [notes_cells[0], ""] + list(notes_cells[1:22])
+    # Build notes row for Excel: 26 cols (insert blank for Case ID at index 1)
+    if len(notes_cells) >= 25:
+        notes_row = [notes_cells[0], ""] + list(notes_cells[1:25])
     else:
-        notes_row = (notes_cells + [""] * 22)[:22]
-        notes_row = [notes_row[0], ""] + notes_row[1:] if len(notes_row) > 1 else [notes_row[0], ""] + [""] * 21
-    notes_row = (notes_row + [""] * 23)[:23]
+        notes_row = (notes_cells + [""] * 25)[:25]
+        notes_row = [notes_row[0], ""] + notes_row[1:] if len(notes_row) > 1 else [notes_row[0], ""] + [""] * 24
+    notes_row = (notes_row + [""] * 26)[:26]
 
     # Extract data rows from tbody
     data_rows = []
@@ -236,12 +301,12 @@ def html_to_excel():
         case_id = tr.group(1).strip()
         tds = re.findall(r"<td[^>]*>(.*?)</td>", tr.group(2), re.DOTALL)
         cells = [_td_text(td) for td in tds]
-        if len(cells) >= 22:
-            row = [cells[0], case_id] + list(cells[1:22])
+        if len(cells) >= 25:
+            row = [cells[0], case_id] + list(cells[1:25])
         else:
-            row = (cells + [""] * 22)[:22]
-            row = [row[0], case_id] + row[1:] if len(row) > 1 else [row[0], case_id] + [""] * 21
-        row = (row + [""] * 23)[:23]
+            row = (cells + [""] * 25)[:25]
+            row = [row[0], case_id] + row[1:] if len(row) > 1 else [row[0], case_id] + [""] * 24
+        row = (row + [""] * 26)[:26]
         data_rows.append(row)
 
     # Build workbook: row 1 = headers, row 2 = notes, row 3+ = data
@@ -278,7 +343,10 @@ def html_to_excel():
         ws.row_dimensions[r_idx].height = 60
 
     wb.save(EXCEL_PATH)
-    print(f"Replaced Excel with HTML format: sheet 'Feedback Log', 23 columns, 1 header row, 1 notes row, {len(data_rows)} data rows.")
+    print(
+        "Replaced Excel with HTML format: sheet 'Feedback Log', 26 columns, "
+        f"1 header row, 1 notes row, {len(data_rows)} data rows."
+    )
 
 
 if __name__ == "__main__":

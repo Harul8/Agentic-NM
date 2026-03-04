@@ -276,8 +276,20 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
     reply = (out.get("reply_to_client") or out.get("question") or "").strip()
 
     if out["action"] == "complete":
+        # LLM-proposed intent; we will treat legal_opinion as the default and
+        # only honour search/lookup when the user has clearly used retrieval
+        # language (pull/find/get/show/search for acts/case laws).
         intent = out.get("intent", "legal_opinion")
         if intent not in ("search", "lookup", "legal_opinion", "chat", "greeting", "generic_chat"):
+            intent = "legal_opinion"
+
+        # Keyword-based intent from explicit retrieval phrases in the user's message.
+        # This is the ONLY signal that may safely upgrade legal_opinion → search/lookup.
+        keyword_intent = _detect_intent_from_keywords(user_message)
+
+        # If the LLM suggested search/lookup but the user did NOT use any explicit
+        # search/lookup phrasing, fall back to legal_opinion (default).
+        if intent in ("search", "lookup") and not keyword_intent:
             intent = "legal_opinion"
 
         # Greeting/chat must never run research
@@ -298,7 +310,6 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
                 return {"action": "ask", "question": generate_greeting_response(user_message)}
 
         # Safety net: override intent based on keywords when routing LLM said legal_opinion
-        keyword_intent = _detect_intent_from_keywords(user_message)
         if keyword_intent and intent == "legal_opinion":
             intent = keyword_intent
 
@@ -329,13 +340,12 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
         if _is_all_acts_style_request(user_message):
             result_count = None
 
-        # document_types: from intent first; fallback from routing intent + keywords
+        # document_types: from intent first; fallback from routing intent + keywords.
+        # IMPORTANT: document_types must NEVER override intent. Only keyword_intent
+        # (based on explicit user phrasing) is allowed to upgrade legal_opinion →
+        # search/lookup. Here we only decide which materials to prioritise.
         if research_intent and research_intent.get("document_types") in ("acts_only", "case_laws_only", "both"):
             document_types = research_intent["document_types"]
-            if document_types == "acts_only" and intent == "legal_opinion":
-                intent = "lookup"
-            elif document_types == "case_laws_only" and intent == "legal_opinion":
-                intent = "search"
         else:
             if intent == "lookup":
                 document_types = "acts_only"
@@ -356,12 +366,8 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
             ]
             if any(s in msg_lower for s in acts_only_signals):
                 document_types = "acts_only"
-                if intent == "legal_opinion":
-                    intent = "lookup"
             elif any(s in msg_lower for s in case_laws_only_signals):
                 document_types = "case_laws_only"
-                if intent == "legal_opinion":
-                    intent = "search"
 
         # search_strategy: from intent first; fallback from routing LLM + keywords.
         # Explicit user phrases ("avoid local", "directly go to web", "web only") always override so we never ignore them.
@@ -396,7 +402,7 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
 # Main entry point
 # ---------------------------------------------------------------------------
 
-def get_next_question_or_complete(conversation_history: list, user_message: str) -> dict:
+def get_next_question_or_complete(conversation_history: list, user_message: str, force_legal: bool = False) -> dict:
     """
     Returns:
     - {"action": "ask", "question": "..."} — follow-up for the user
@@ -444,7 +450,7 @@ def get_next_question_or_complete(conversation_history: list, user_message: str)
         reply = (gate1_result.get("reply_to_client") or "").strip()
         if g1 == "GREETING":
             return {"action": "ask", "question": reply or generate_greeting_response(user_message)}
-        if g1 == "GENERALIST":
+        if g1 == "GENERALIST" and not force_legal:
             return {
                 "action": "complete",
                 "intent": "generic_chat",
@@ -454,8 +460,9 @@ def get_next_question_or_complete(conversation_history: list, user_message: str)
                 "document_types": "both",
                 "search_strategy": "local_then_web",
             }
-        if g1 == "LEGAL":
-            # Gate 2: classify legal intent (search, lookup, legal_opinion)
+        if g1 in ("LEGAL", "GENERALIST") or force_legal:
+            # Treat as LEGAL when gate1 says LEGAL, or when caller forces legal mode
+            # even if gate1 returned GENERALIST.
             parsed = _run_gate2_legal(conversation_history, user_message)
             if parsed:
                 return parsed
