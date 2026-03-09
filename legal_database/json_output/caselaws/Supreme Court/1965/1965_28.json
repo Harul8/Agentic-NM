@@ -1,0 +1,549 @@
+{
+  "case_id": "SC_1965_1965_28",
+  "case_name": "Sundaram Finance Ltd vs State Of Kerala And Another",
+  "normalized_case_name": "SUNDARAM_FINANCE_LTD_VS_STATE_OF_KERALA_AND_ANOTHER",
+  "court": "Supreme Court of India",
+  "year": "1965",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "30 November 1965",
+  "judges": [
+    "J.C. Shah",
+    "S.M. Sikri"
+  ],
+  "author": "J.C. Shah",
+  "bench_type": "division",
+  "petitioner": "Sundaram Finance Ltd",
+  "respondent": "State Of Kerala And Another",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 9,
+  "cited_by_count": 233,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1966 AIR 1178",
+    "1966 SCR (2) 828",
+    "AIR 1966 SUPREME COURT 1178",
+    "1966 (1) SCWR 753",
+    "1966 2 SCWR 206",
+    "1966 (17) STC 489",
+    "1966 KER LJ 408",
+    "1966 2 SCR 828"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1965\\1965_28.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1965_1965_28_P001_C01",
+      "text": "ACT:\nSales-tax-Hire-purchaye agreements-Motor vehicles purchased\nwith loans taken from financiers-Financier whether liable to\nsales-tax as having effected 'sale' through hire-purchase\nagreement-Travancore Cochin General Sales-tax Act 11 of 1125\nM.E., s. 2(i), Explanation (1).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1965_1965_28_P002_C01",
+      "text": "HEADNOTE:\nThe appellants were a limited company with their registered\noffice at Madras. The Company carried on the business of\nfinancing purchases ,of motor vehicles on the security of\nthose vehicles. A customer desirous ,of purchasing a motor\nvehicle but unable to pay the price to the dealer would make\npart payment to the dealer and then approach the appellants\nfor a loan. The appellants would advance the loan to the\ncustomer on 'the strength of nine documents executed by the\ncustomer one of which 'Was a 'sale letter' purporting to\nsell the vehicle to the appellants on the date of the loan;\nanother was a promissory-note agreeing to pay the difference\nbetween the price of the vehicle and the amount paid by the\n,customer to the dealer and interest thereon at the\nstipulated rate. An,other of these documents was the hire-\npurchase agreement itself; in cl. 6 it recited that on the\ncustomer paying the entire amount due under the second\nschedule to the agreement the vehicle would become the sole\nand absolute property of the customer.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1965_1965_28_P002_C02",
+      "text": "On September 28,\n1958 the Sales-tax Officer, Ernakulam, issued a notice\ncalling upon the appellants to file returns of their\nturnover from sales in the course of business and to secure\nregistration as dealers under the Travancore-Cochin General\nSales-tax Act 11 of 1125 M.E. and to furnish details of the\ntransactions ,of sale with parties in the State of Kerala in\nthe year 1955-56, 1956-57 and 1957-58. Later another notice\nwas issued for the years 1958-59 and 1959-60. 'Me\nappellants contended that they were not liable to pay Sales-\ntax on their financing transactions as they mere financiers\nand did not enter into any transactions of sale of goods\nwith parties within 'the State of Kerala and that they were\nnot 'dealers' under the Act. The 'Sales-tax Officer however\nheld that they were dealers and that the hire purchase\ntransactions entered into by them resulted in sales which\nwere liable to sales-tax.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1965_1965_28_P002_C03",
+      "text": "According to the Sales-tax\nauthorities between the date on which the customer agreed to\npurchase a vehicle and the date ,on which he became full\nowner without any encumbrance three sale transactions were\ninterposed-a sale by the dealer of the vehicle to the\n'Customer; a sale by the customer to the appellants under\nthe 'sale letter'; and a sale by virtue of cl. 6 of the\nhire-purchase agreement-while the second transaction was not\nliable to tax, the first and third were. The appellants\nfiled petition in the High Court praying for writ of\ncertiorari and prohibition against the Sales-tax Officer. The High Court rejected these petitions. With certificate\nunder\nArt. 133(1)(a)\nof the Constitution the appellants came\nto this Court. HELD : Per Shah and Sikri, JJ. (i) The true effect of a\ntransaction may be determined from the terms of the\nagreement considered in the light of the surrounding\ncircumstances. In each case the Court has, unless\nprohibited by statute, power to go behind the documents and\nto determine the nature of the transaction, whatever may be\nthe form of the documents. An owner of goods who purports\nto convey absolutely",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1965_1965_28_P003_C01",
+      "text": "or acknowledges to have conveyed goods and subsequently\npurports to hire them under a hire-purchase agreement is not\nestopped from proving that the real bargain was intended to\nbe a loan on the security of the goods. [841 C]\n(ii) A hire-purchase agreement is a complex transaction. The owner under a hire-purchase agreement enters into a\ntransaction of hiring out goods on the terms and conditions\nset out in the agreement, and the option to purchase\nexercisable by the customer on payment of all the\ninstalments of hire arises when the instalments are paid and\nnot before. In such a hire-purchase agreement there is no\nagreement to buy goods; the hirer being under no legal\nobligation to buy, has an option either to return the goods\nor to become its owner by payment in full of the stipulated\nhire and the price for exercising the option.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1965_1965_28_P003_C02",
+      "text": "This class of\nhirepurchase agreements must be distinguished from\ntransactions in which the customer is the owner of the goods\nand with a view to finance, his purchase he enters into an\narrangement which is in the form of a hirepurchase agreement\nwith the financier, but in substance evidences a loan\ntransaction subject to a hiring agreement under which the\nlender is given the licence to seize the goods. [841 G-842\nB]\n(iii)The appellants were financiers; they were not dealing\nin motor vehicles. The motor vehicles purchased by 'the\ncustomer was registered in the name of the customer and\nremained at all material times so registered in his name. In the letter taken from the customer under which he agreed\nto keep the vehicle insured, it was expressly recited that\nthe vehicle had been given on security for the loan advanced\nby the appellants. As a security for repayment of the loan,\nthe customers executed a promissory note for the amount paid\nby the appellants to the dealer of the vehicle.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1965_1965_28_P003_C03",
+      "text": "The so-\ncalled 'sale-letter' was a formal document which was not\nmade effective by registering the vehicle in the name of the\nappellants and even the insurance of the vehicle had to be\neffected as if the customer was the owner. The appellants'\n'right to seize the vehicle was merely a licence to ensure\ncompliance with the terms of the hire-purchase agreement. The customer remained qua the world at large the owner, and\nremained in possession, and on condition of performing the\nconvenants had a right to continue to remain in possession. The right of the appellants may be extinguished by payment\nof the amount due to them under the terms of the hire-\npurchase agreement even before the date fixed for payment. The agreements undoubtedly contained several onerous\ncovenants but they were all intended to secure to the\nappellants recovery of the amounts advanced. The intention\nof the appellants in obtaining hire-purchase and allied\nagreements was to secure the return of loans advanced to\ntheir customers. The transactions were merely financial\ntransactions. [844 C-H]\nAs there was no sale no sales-tax could be levied on the\ntransactions as decided by this Court in Gannon Dunkerley &\nCo.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1965_1965_28_P003_C04",
+      "text": "State of Madras v. Gannon Dunkerley & Co., [1959] S.C.R.\n379, Re Watson Ex Parte Official Receiver in Bankruptcy,\n(1890). 25 Q.B.D. 27. Mays v. Pepper, (1905) A.C. 102 and\nPolsky v. S. And A. Services [1951] 1 All E.R. 185, referred\nto. K. L. Johar & Co. v. Deputy Commercial Tax Officer, A.I.R. (1965) S.C. 1082, distinguished. Per Subba Rao, J. (i) There was no question in the present\ncase of going behind the documents executed by the parties\nto determine their true intentions. The transactions in\nquestion were in accordance with mercantile usage. Both the\nfinanciers and the customers entered with",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1965_1965_28_P004_C01",
+      "text": "eyes open into transactions of hire-purchase. Their\nintention was ex. pressed in clear terms. They could have\nexecuted hypothecation bonds but they did not, and entered\ninstead into hire-purchase transactions. There was no\nreason to camouflage the real nature of the transactions. None was suggested. They were therefore bound by the terms\nof the agreement. [833 A-B]\n(ii)Neither the fact that the agreements were entered into\nbecause the customers had no funds to purchase the motor car\nnor the circumstance that part of the consideration was\nalready paid to the dealer affects the nature of the\ntransaction. The fact that the customer executed a pro-\nmissory note for the money advanced by the financier does\nnot affect the question for that was merged in the hire-\npurchase transaction. If the said terms were not carried\nout the customers could not claim any rights under the\nagreements and the financier continued to be the owner freed\nfrom any obligation created under the agreements. Could the\nfinancier thereafter return the promissory note ? He could\nnot.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1965_1965_28_P004_C02",
+      "text": "The transactions purported to he hire-purchase\nagreements and they must be treated as such as the common\nintention of the parties was to enter into such\ntransactions. A deeper study of the transactions showed\nthat the dealer and the financier were closely connected\nCompanies and for their own reasons they had split up the\nbusiness of hire-purchase between them. In effect and in\nsubstance, the dealer without receiving the whole money put\nthe customers in possession of the cars under the hire-\npurchase agreements. [833 H; 834 C]\n(iii) If the transactions were hire-purchase agreements in\nterms of the judgment of this Court in M/s. K. L. Johar &\nCo. when all the terms of the agreements were satisfied and\nthe option was exercised,, sales took place in the goods\nwhich till then had been hired. Having thus fructified into\nsales the transactions were liable to sales-tax. [831 B; 834\nB]\nM/s. K. L. Johar & Co. v. The Deputy Commerical Tax\nOfficer, Coimbatore III, [1965] 2 S.C.R., 112 relied on.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1965_1965_28_P005_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeals Nos. 673 and\n677 of 1964.\nAppeals from the judgment dated December 5, 1963 of the\nKerala High Court in Original Petition Nos. 1153, 1012,\n1880, 1885 and 1886 of 1962.\nA. V. Viswanatha Sastri and R. Ganapathy Iyer, for appel-\nlant.\nP. Govinda Menon and M. R. K. Pillai, for respondent No.\n1.\nSUBBA RAO, J. delivered a dissenting Opinion. The Judgment\nof SHAH and SIKRI, JJ. was delivered by Shah, J.\nSubba Rao, J. I regret my inability to agree. The facts of\nthe case and the arguments of earned counsel have been fully\nstated by my learned brother, Shah, J., and I need not\nrecapitulate them here.\nThe short question is whether the hire-purchase agreements\nentered into by the appellant with its customers are\ntransactions",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1965_1965_28_P006_C01",
+      "text": "of sale of goods or are only documents securing the return\nof the loans advanced by it to its customers. It is common case that the said documents ex facie\npurported' to be hire-purchase agreements and if that was\ntheir real character, in terms of the judgment of this Court\nin Messrs. K. L. Johar & Co. v. The Deputy Commercial Tax\nOfficer, Coimbatore III\n(1), when all the terms of the\nagreements were satisfied and the option was exercised,\nsales take place in the goods which till then had been\nhired. The contention, therefore, was that in executing the\ndocuments the common intention of the parties was that they\nshould be documents securing the loans and that the form of\nhirepurchase agreement was adopted to achieve that purpose. At the outset the nature of hire-purchase agreements may be\nbriefly noticed. Hire-purchase agreements have come to stay\nas part of the social service in the commercial world. It\nenables persons of ordinary means to buy the necessities of\nlife which the modern scientific advancement offers. Under\nthat system one can buy a car, a refrigerator, furniture,\ncooking apparatus, and as a matter of fact any article of\nutility.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1965_1965_28_P006_C02",
+      "text": "It enables the hirer to own the article of his\nchoice by paying on easy instalments, and the dealer to\nprovide it for him for profit without any risk to himself,\nIt has become a common and familiar instrument of mercantile\nsocial service. Simonds, J., in Transport and General\nCredit Corporation Ltd. v. Morgan (2) said :\n\"It must be remembered that hire-purchase\n agreements now play a very large part in the\n commercial and social life of the community,\n and the financing of those hire-purchase\n agreements is an enormous business, both in\n the city of London and elsewhere. It appears\n to me that the financiers and the dealers co-\n operate in the common venture of making\n feasible the whole business of hire-purchase\n agreements, which is now, for good or for\n evil, a necessary part of our social life. To\n regard one party to that common venture, which\n is now a recognized mercantile service, as\n carrying on the business of a money-lender is,\n as I have said before, an abuse of language.\"\nWhat is true of England is, to a lesser degree, true of\nIndia, particularly in the big cities of India. Now, let us see how this system was evolved.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1965_1965_28_P006_C03",
+      "text": "At first the-\nsaid transaction took place directly between a dealer and\nhis,\n(1) [1965] 2 S.C.R. 112. (2) [1939] 2 All E.R 17, 28.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1965_1965_28_P007_C01",
+      "text": "customer : the dealer wanted to sell his goods and the buyer\nwas not in a position to pay the entire sale price of the\ngoods in one lump sum. The parties, therefore, entered into\nhire-purchase agreement where under the dealer continued to\nbe the owner till the entire consideration was paid by the\ncustomer in terms of the agreement and till he had exercised\nhis option to buy the goods covered by the said agreement. But the dealer was not always financially sound enough to\nwait till such time as all the instalments would be paid. The second stage in the evolution in the hire-purchase\nsystem was when a financier intervened between the dealer\nand the customer. The financier used to purchase goods from\nthe dealer and then to enter into an agreement with the\ncustomer. At that stage the financier became the owner and\nthe customer became the hirer till such time as he carried\nout the terms of the agreement. A further variation of the\ntransaction was that the customer purchased the goods by\npaying the entire consideration to the dealer with the help\nof the financier; he then sold the goods to the financier\nand entered into an agreement of hire-purchase with him.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1965_1965_28_P007_C02",
+      "text": "this type of transaction, the dealer went out of the picture\naltogether : the financier took the place of the dealer and\nthe customer continued to be the hirer. Some times, as the\npresent case illustrates, the customer might find some money\nbut could not provide the whole consideration. In that\nevent also, the transaction could be put through in the\naforesaid manner either with the dealer or the financier, as\nthe case may be. The object of the hire-purchase system was to help to\nfinance the customer in order that he might purchase the\nproperty. Though that was the object, the transaction took\nthe form of hirepurchase agreement. The main feature of the\nagreement, apart from small variations, was that the dealer\nor the financier continued to be the owner till the terms of\nthe agreement were fully complied with by the customer and\nthe option to purchase the same was exercised by him. If\nthe terms were not complied with, the dealer or the\nfinancier, as the case may be, could terminate the agreement\nand take back the goods.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1965_1965_28_P007_C03",
+      "text": "In such a transaction, the common\nintention of the dealer, the financier and the customer was\nthat the transaction should take the form of a hirepurchase\nagreement which would become a sale on the compliance of the\nterms of that agreement. No doubt the financing operation\ncould have taken the form of a mortgage or pledge, but the\nparties, for their mutual benefit and convenience, entered\ninto a hire-purchase transaction.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1965_1965_28_P008_C01",
+      "text": "In the absence of any fraud or undue influence, the question\nresolves itself into a simple question of intention. The\ntransactions were in accordance with the mercantile usage. Both 'the financier and the customers with open eyes entered\ninto the transactions of hire-purchase. Their intention was\nexpressed in clear terms. They could have executed\nhypothecation bonds, but they did not, and instead entered\ninto hire-purchase transactions. There was no reason to\ncamouflage the real nature of the transactions. None was\nsuggested. They were, therefore, bound by the terms of the\nagreements. The subtle distinction sought to be made between the tran-\nsactions in question and other transactions are out of place\n: little clues have no bearing, as there was no attempt to\ncamouflage the real nature of the transactions. It may be\nthat the consideration was not the full value, but nothing\nprevented the owners from selling their cars for a smaller\nprice, for they expected to got them back on their returning\nthe amount in terms of the agreements.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1965_1965_28_P008_C02",
+      "text": "The circumstance\nthat there was no express term for reconveying is not\nmaterial, for the term that on the compliance of the terms\nof the agreement the hirer would become the owner would\nserve the same purpose. The whole fallacy of the argument lies in the attempt to\nequate such commercial transactions with ordinary sales of\nproperty and agreements to evade statutory provisions. it is\ntrue that in India there are reports replete with decisions\nwhere courts attempted to find out the real intention of the\nparties when documents were executed to hide their real\nintention. There are also decisions, both in India and in\nEngland, where courts applied various tests to find out the\nreal intention of a document when it was executed to evade\ncertain statutory provisions. These decisions have no\nbearing in the context of a hire-purchase agreement entered\ninto in the course of business. All the parties knew the\nnature of the transaction and accepted the terms embodied\nthereunder. In the present case the transactions were admittedly hire-\npurchase agreements.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1965_1965_28_P008_C03",
+      "text": "The financier purchased the cars for\nthe amounts required to be paid to the dealer and entered\ninto specific hire-purchase agreements with the customers. They contained all the usual terms that are found in a hire-\npurchase agreement. Neither the fact that the agreements\nwere entered into because the customers had no funds to\npurchase the motor-cars nor the circumstance that part of\nthe consideration was already paid to the dealer affects the\nnature of the transaction. The fact that the customer\nexecuted a promissory note for the money advanced by",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1965_1965_28_P009_C01",
+      "text": "the financier does not affect the question, for that was\nmerged in the hire-purchase transaction. If the said terms\nwere not carried out, the customers could not claim any\nrights under the agreements and the financier continued to\nbe the owner freed from any obligation created under the\nagreements. Can the financier thereafter enforce the\npromissory note ? I think he cannot. As I have stated\nearlier, the transactions purported to be hire-purchase\nagreements and they must be treated as such, as the common\nintention of the parties was to enter into such\ntransactions. A deeper scrutiny of the transactions shows\nthat the dealer and the financier were closely connected\ncompanies and for their own reasons they have split up the\nbusiness of hire-purchase between them. In effect and in\nsubstance, the dealer without receiving the whole money put\nthe customers in possession of the cars under the hire-\npurchase agreements. For the aforesaid reasons, I hold that if the agreements had\nfructified into sales, they were liable to sales-tax. The\nHigh Court, in my view, gave a correct answer to the\nquestion propounded for its opinion. In the result, the appeals fail and are dismissed with\ncosts.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1965_1965_28_P009_C02",
+      "text": "Shah, J. On September 29, 1958 the Sales Tax Officer, 1st\nCircle, Ernakulam, issued a notice calling upon the\nappellants to file returns of their turnover from sales in\nthe course of business and to secure registration as dealers\nunder the Travancore-Cochin General Sales Tax Act 11 of 1125\nM.E. and to furnish details of the transactions of sale with\nparties in the State of Kerala in the years 1955-56, 1956-57\n& 1957-58. A similar notice was issued by the Sales Tax\nOfficer on March 3, 1962 in respect of the transactions\nwithin the State for the years 1958-59 and 1959-60. The\nappellants contended that they were not liable to be\nassessed under the Act. They contended that they were mere\nfinanciers and that they did not enter into any transactions\nof sale of goods with parties within the State of Kerala and\nthat they were not \"dealers\" within the meaning of the Act. The Sales Tax Officer by orders dated March 25, 1962 and\nJuly 6, 1962 held that the transactions between the\nappellants and certain parties within the State of Kerala\nwere sales within the meaning of the Act and the appellants\nwere dealers liable to be assessed under the Act.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1965_1965_28_P009_C03",
+      "text": "The Sales\nTax Officer accordingly reiterated his demand upon the\nappellants to file returns of their turnover in respect of\nsales for the five years in question along with details of\nall transactions in the State and \"to produce evidence to.\nprove the correctness and completeness of their returns\".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1965_1965_28_P010_C01",
+      "text": "The appellants then moved the High Court of Kerala under\nArt. 226\nof the Constitution for writs of certiorari\nquashing the proceedings of the Sales Tax Officer and for\nwrits of prohibition restraining that Officer from taking\nfurther proceedings against the appellants under his orders\ndated March 25, 1962 and July 6, 1962. The High Court of\nKerala rejected these petitions upholding the view of the\nSales Tax Officer that on the transactions between the\nappellants and their customers sales tax was payable under\nthe Travancore-Cochin General Sales Tax Act. With\ncertificate granted by the High Court under\nArt. 133(1) (a)\nof the Constitution, these appeals are preferred. The appellants are a company incorporated under the\nIndian\nCompanies Act, 1913\n, and have their registered office in\nMadras. The Company carries on business of financing\npurchases of motor vehicles on the security of those\nvehicles. The manner in which these transactions were\neffected is briefly this. A customer desirous of purchasing\na motor-vehicle, but unable to pay the price to the dealer,\nagrees to purchase the vehicle and makes part payment of the\nprice to the dealer.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1965_1965_28_P010_C02",
+      "text": "He then approaches the appellants and\nrequests that a loan be advanced to him.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1965_1965_28_P010_C03",
+      "text": "On the appellants'\nagreeing to grant a loan, the customer executes nine docu-\nments-(1) an application requesting the appellants to grant\na loan of a stated amount on the security of the motor-\nvehicle; (2) a \"sale letter\" reciting that the customer had\non the date of the application for loan sold to the\nappellants the motor-,vehicle; (3) a bill which recites that\nfor the amount mentioned in the \"sale letter\" and received\nin full, the customer has sold to the appellants the vehicle\nbelonging to the customer; (4) a receipt for the amount of\nthe bill describing it as the value of the vehicle sold to\nthe appellants; (5) an agreement called the hire-purchase\nagreement under which the appellants agree to let out to the\ncustomer and. the customer agrees to take on hire the motor-\nvehicle for a specified term subject to determination on\nconditions mentioned therein; (6) a promissory-note agreeing\nto pay the difference between the price of the vehicle and\nthe amount paid by the customer to the dealer, and interest\nthereon at the stipulated rate; (7) a letter from the\ncustomer requesting the appellants to pay to the dealer the\namount agreed to be advanced to him; (8) a letter addressed",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1965_1965_28_P010_C04",
+      "text": "the appellants agreeing and undertaking to keep the\nvehicle, on the security of which the loan was granted,\ninsured against \"comprehensive risks\"; and (9) a letter\naddressed to the Motor Vehicles Authorities intimating that\nthe motor-vehicle \"is the subject of hire. purchase\nagreement between the customer \"as owner\" and the\nappellants, and requesting the Authorities to \"make a note\nof the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1965_1965_28_P011_C01",
+      "text": "hire-purchase agreement\" in the registration certificate\nstanding in the name of the customer. The scheme for\nfinancing the purchase of the vehicle is therefore that the\ncustomer purchases the vehicle from the dealer directly and\ngets it registered in his name. At his request the\nappellants agree to advance the balance of the price\nremaining to be paid, and pay it to the dealer on the cus-\ntomer's executing a promissory-note for repayment of the\namount, a hire-purchase agreement and other related\ndocuments. On repayment of the amount stipulated to be\npaid, the vehicle becomes the sole and absolute property of\nthe customer. The relevant terms of the hire-purchase agreement may now be\nset out. In the preamble of the agreement, it is recited\nthat the agreement is between the appellants to be described\nas \"the owners\" the customer to be described as \"the Hirer\"\nand \"the Guarantor\", who guarantees due performance and\nobservance by the customer of all the clauses and covenants\nof the agreement and agrees to pay on demand any monies due\nor which may become payable to the owners under the\nagreement either by way of hire expenses or damages,\nrepairs, replacements or other supplies.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1965_1965_28_P011_C02",
+      "text": "By the first\nclause it is recited that the owners (the appellants) will\nlet and the hirer (the customer) will take on hire the motor\nvehicle for a specified number of calendar months subject to\ndetermination as mentioned in the agreement. Clause 2 sets\nout the conditions of hiring.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1965_1965_28_P011_C03",
+      "text": "Thereby the customer agrees\nto pay rent to the appellants punctually; to take proper\ncare of the vehicle and keep it in good condition and to\nkeep it insured for its full value; to pay all rents, rates,\ntaxes payable by him in respect of the premises where the\nvehicle shall for the time being be garaged and all licence\nfees, insurance premium and other duties payable in respect\nof the said vehicle; to keep the vehicle in his sole custody\nand possession; and to permit the appellants to inspect the\nvehicle at all reasonable times during the hiring; not to\ncause, permit, allow or suffer any person to acquire any\nlion on the vehicle; not to cause, permit or allow or suffer\nthe vehicle to become liable to distress, execution or any\nother process levied or issued against the customer; and not\nto assign, sell, pledge, charge, under let, lend or\notherwise part with the possession, custody or beneficial\ninterest in the vehicle of the customer therein under the\nagreement without the consent of the owners. By cl. 3 all\nmonies payable to the customer by any insurer for loss or\ndamage to the motor-vehicle are assigned to the owners.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1965_1965_28_P011_C04",
+      "text": "Clause 4 sets out the conditions in which the agreement is\nto stand determined without any notice to the customer. Those conditions are",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1965_1965_28_P012_C01",
+      "text": "(a) failure to pay any of the hiring\n instalments within the stipulated time;\n(b) customer becoming insolvent or\n compounding with his creditors;\n(c) customer pledging or selling or\n attempting to pledge or sell or otherwise\n alienate or transfer the vehicle;\n(d) customer suffering any act or thing\n whereby or in consequence of which the vehicle\n may be distrained, seized or taken in\n execution under legal process;\n(e) customer breaking or failing to perform\n or observe any conditions. On the determination of the agreement all the instalments\npreviously paid by the customer stand forfeited to the\nowners who shall thereupon be entitled to sieze the vehicle\nand to sue for all the instalments due and for damages for\nbreach of the agreement. Under cl. 5 the customer has the\noption at any time to determine the agreement by delivering\nup the vehicle at his own cost to the owners, and by cl. 6\non the customer paying the entire amounts due under the\nsecond schedule, the vehicle becomes the sole and absolute\nproperty of the customer.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1965_1965_28_P012_C02",
+      "text": "By el. 7 it is provided that if\nthe appellants seize the vehicle and take possession of it\nunder cl. 4, or if the customer returns it under cl. 5, the\ncustomer shall remain liable to the appellants for arrears\nof the amount of hire up to the date of such seizure or\nreturn. Under cl. 8 it is agreed that the customer shall\nmaintain registration of the vehicle in his own name,\nprovided that the customer shall transfer the registration\nin the name of the appellants whenever required to do so by\nthem, and especially when the customer commits a breach of\nany of the conditions of the agreement. According to the sales-tax authorities, between the date on\nwhich the customer agreed to purchase a vehicle and the date\non which he became full owner of the vehicle without any\nencumbrance, three sale transactions were interposed : a\nsale by the dealer to the customer; a sale by the customer\nto the appellants under the \"sale letter\" referred to\nearlier; and a sale by virtue of cl. 6 of the hire-purchase\nagreement. It is common ground that the first transaction\nis taxable under the appropriate\nSales Tax Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1965_1965_28_P012_C03",
+      "text": "On behalf\nof the State of Kerala it is conceded that the second\ntransaction is not taxable, but it is so because the\ncustomer is ordinarily not a dealer within the meaning of\nthe Act, but they contend that inasmuch as under that\ntransaction the appellants",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1965_1965_28_P013_C01",
+      "text": "become transferees of the rights of the customer in the\nvehicle under the sale letter, when by the operation of cl.\n6 of the hirepurchase agreement the rights of the appellants\nare extinguished, there results a sale in favour of the\ncustomer which is taxable under the Act. We are in this\ncase concerned with the exigibility to tax of what the State\nof Kerala contends is a sale resulting from the payment of\nall the instalments under the hire-purchase agreement. The appellants submit that execution of a \"sale letter\" by\nthe ,customer acknowledging sale of the vehicle to them does\nnot create in them any right of ownership, the \"sale letter\"\nbeing merely one of a set of documents under which\narrangement for granting a loan and for ensuring- repayment\nof the money advanced by the appellant's is made.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1965_1965_28_P013_C02",
+      "text": "The\nappellants say that they do not become owners of the vehicle\nunder the \"sale letter\", that the true effect of the\ntransaction on the execution of the nine documents is to\nhypothecate the vehicle in favour of the appellants, that\nthe vehicle ,continues to remain of the ownership of the\ncustomer, and that under cl. 6 of the hire-purchase\nagreement there is extinction of ,encumbrance and not a\ntransfer of title which may be called a sale taxable under\nthe 'Travancore-Cochin General Tax Act. The Travancore-Cochin General Sales Tax Act 11 of 1125 M.E.\nwas brought into force in May 1950. The State authorities\nhad, it is conceded, no power to enact a statute for levying\ntax on a transaction which does not conform to the\ndefinition of 'sale' within the meaning of the Indian Sale\nof Goods Act :\nState of Madras v. Gannon Dunkerley & Co. (Madras) Ltd.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1965_1965_28_P013_C03",
+      "text": "(1) The 'Travancore-Cochin General Sales Tax\nAct by\nS. 2(j)\ndefines 'sale' as follows :\n\" ' sale' with all its grammatical variations\n and cognate expressions means every transfer\n of the property in goods by one person to\n another in the course of trade or business for\n cash or for deferred payment or other valuable\n consideration and includes also a transfer of\n property in goods involved in the execution of\n a works ,contract, but does not include a\n mortgage, hypothecation', charge or pledge;\n Explanation (1).--A transfer of goods on the\n hirepurchase or other instalment system of\n payment shall, notwithstanding the fact that\n the seller retains the title in the goods as\n security for payment of the price, be deemed\n to be a sale. (1) [1959] S.C.R. 379.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1965_1965_28_P014_C01",
+      "text": "Explanation\n (2).- . . . . .\"\nIt is in the light of this definition that the liability to\ntax of the transactions resulting from cl. 6 of the\nagreement falls to be determined. If, by the operation of\ncl. 6, title to the vehicle is, under an existing contract\nto sell, transferred to the. customer for a price, the\ntransaction is a sale, and is taxable. The appellants are financiers and their business is to\nadvance loans on favourable terms on the security of\nvehicles. This is effected by obtaining a promissory-note\nfor repayment of the amount advanced, and a hire-purchase\nagreement which provides a mechanism for recovery of the\namount. It is true that a \"sale letter\" is obtained from\nthe customer, but the consideration for the sale letter is\nonly the balance remaining payable to the dealer, after\ngiving credit against the price of the vehicle the amount\npaid by the customer. The application for a loan, and the\nletter addressed to the appellants undertaking to insure the\nvehicle expressly mention that a loan is asked for and\ngranted on the security of the motor-vehicle under the hire-\npurchase agreement.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1965_1965_28_P014_C02",
+      "text": "It is the customer who insures the\nvehicle, and in the books of the Motor Vehicle Authorities\nhe remains, with the consent of the appellants, owner of the\nvehicle. Undue importance to the acknowledgment of sale in\nthe \"sale letter\" and the recital of sale in the bill and in\nthe receipt cannot therefore be attached. These\ndocuments--\"sale letter\", bill and receipt-must be read with\nthe application for granting a loan on the security of the\nvehicle, the letter in which the customer requests the\nappellants to pay the balance of the price remaining to be\npaid by him to the dealer, the promissory-note executed by\nhim for that amount, the undertaking to insure the vehicle,\nand intimation to the Motor Vehicles Authorities to make\nnote of the hire-purchase agreement. The hire-purchase agreement executed by the customer un-\ndoubtedly contains several onerous covenants. The customer\nhas to pay all rents, rates, taxes and other out goings\nregularly, to take proper care of the vehicle, to get it\ninsured, to keep it fully repaired, and not to assign, sell,\npledge, charge, underlet, lend or otherwise to create any\nlien thereon.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1965_1965_28_P014_C03",
+      "text": "The hire-purchase agreement is liable to be\ndetermined if any of the eventualities mentioned in cl. 4 of\nthe agreement happens and the appellants have the right to\nseize the vehicle. These. covenants are only material in\nconsidering the true intention of the parties entering into\nthe hire-purchase agreement, it is irrelevant that in a\ngiven case these covenants may not be enforced by a Court in\na dispute arising between the appellants and the customer,\nor relief may be granted pCI.166-7",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1965_1965_28_P015_C01",
+      "text": "on the ground that they contain penal clauses. In\nconsidering the true intention of the parties, the terms of\ncl. 6 of the hirepurchase agreement are important : it is\nstipulated there-by that \"Upon the Hirer (customer) paying\nthe entire amount due under Second Schedule herein, the said\nvehicle shall become the sole and absolute property of the\nHirer.\" The intention clearly disclosed thereby is that on\npayment of the amount due at any time after the hire-\npurchase agreement, the vehicle would be free from\nencumbrance. It is also to be noted that the agreement does\nnot contemplate exercise of an option on payment of a\nnominal sum of money as is to be found in other hire-\npurchase agreements. Execution of the promissory-note, the\nhire-purchase agreement and the other documents, in our\njudgment, indicate that it was the intention of the parties\nnot to transfer any interest in the vehicle by the customer\nto the appellants : it was intended to give security by\nhypothecating the vehicle in favour of the appellants and\nfor ensuring repayment of the loan advanced that the\ncustomer submitted to the various onerous conditions of the\nhire-purchase agreement.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1965_1965_28_P015_C02",
+      "text": "A hire-purchase agreement is normally one under which an\nowner hires goods to another party called the hirer and\nfurther agrees that the hirer shall have an option to\npurchase the chattel when he has paid a certain sum, or when\nthe hire-rental payments have reached the hire-purchase\nprice stipulated in the agreement. But there are variations\nwhen a financier is interposed between the owner of the\ngoods and the customer. The agreement, ignoring variations\nof detail, broadly takes one or the other of two forms : (1)\nwhen the owner is unwilling to look to the purchaser of\ngoods to recover the balance of the price, and the financier\nwho pays the balance undertakes the recovery. In this form,\ngoods are purchased by the financier from the dealer, and\nthe financier obtains a hire-purchase agreement from the\ncustomer under which the latter becomes the owner of the\ngoods on payment of all the instalments of the stipulated\nhire and exercising his option to purchase the goods on\npayment of a nominal price. The decision of this Court in\nK. L. Johar & Company v. Deputy Commercial Tax Officer\n(1)\ndealt with a transaction of this character.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1965_1965_28_P015_C03",
+      "text": "(2) In the other\nform of transactions, goods are purchased by the customer,\nwho in consideration of executing a hirepurchase agreement\nand allied documents remains in possession of the goods,\nsubject to liability to pay the amount paid by the financier\non his behalf to the owner or dealer, and the financier\n(1) [1965] 2 S.C.R. 112.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1965_1965_28_P016_C01",
+      "text": "obtains a hire-purchase agreement which gives him a licence\nto seize the goods in the event of failure by the customer\nto abide by the conditions of the hire-purchase agreement. The true effect of a transaction may be determined from the\nterms of the agreement considered in the light of the\nsurrounding circumstances. In each case, the Court has,\nunless prohibited by statute, power to go behind the\ndocuments and to determine the nature of the transaction,\nwhatever may be the form of the documents. An owner of\ngoods who purports absolutely to convey or acknowledges to\nhave conveyed goods and subsequently purports to hire them\nunder a hire-purchase agreement is not estopped from proving\nthat the real bargain was a loan on the security of the\ngoods. If there is a bona fide and completed sale of goods,\nevidenced by documents, anterior to and independent of a\nsubsequent and distinct hiring to the vendor, the\ntransaction may not be regarded as a loan transaction, even\nthough the reason for which it was entered into was to raise\nmoney.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1965_1965_28_P016_C02",
+      "text": "If the real transaction is a loan of money secured\nby a right of seizure of the goods, the property ostensibly\npasses under the documents em. bodying, the transaction, but\nsubject to the terms of the hiring agreement, which become\npart of the buyer's title, and confer a licence to seize. When a person desiring to purchase goods and not having\nsufficient money on hand borrows the amount needed from a\nthird person and pays it over to the vendor, the transaction\nbetween the customer and the lender will unquestionably be a\nloan transaction. The real character of the transaction\nwould not be altered if the lender himself is the owner of\nthe goods and the owner accepts the promise of the purchaser\nto pay the price or the balance remaining due against\ndelivery of goods. But a hire-purchase agreement is a more,\ncomplex transaction. The owner under the hire-purchase\nagreement enters into a transaction of hiring out goods on\nthe terms and conditions set out in the agreement, and the\noption to purchase exercisable by the customer on payment of\nall the instalments of hire arises when the instalments are\npaid and not before.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1965_1965_28_P016_C03",
+      "text": "In 'such a hirepurchase agreement\nthere is no agreement to buy goods; the hirer being under no\nlegal obligation to buy, has an option either to return the\ngoods or to become its owner by payment in full of the\nstipulated hire and the price for exercising the option. This class of him-purchase agreements must be distinguished\nfrom transactions in which the customer is the owner of the\ngoods and with a view to finance his purchase he enters into\nan arrangement which is in the form of a hire purchase.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1965_1965_28_P017_C01",
+      "text": "agreement with the financier, but in substance evidences a\nloan transaction, subject to a hiring agreement under which\nthe lender is given the licence to seize the goods. A few illustrative cases decided by the courts in England,\nwhich do not import complications arising from the Bills of\nSale Act, 1878 and the\nHire Purchase Act, 1938\n, may be\nbriefly noticed. In Re Watson, Ex Parte Official'Receiver\nin Bankruptcy(1) it was held that in adjudging the true\nnature of a transaction purporting to be a sale of personal\nchattels, followed by a hiring and purchase agreements,\nwhereby the vendor agreed to hire the chattels from the\npurchaser and to pay quarterly sums for such hire, until a\ncertain amount was paid, when the chattels were to become\nagain the property of the vendor, and power was given to the\npurchaser to take possession of the chattels on default of\npayment, the form of the transaction cannot be given undue\nimportance. The Court held that no sale or hiring of the\nchattel was intended, the object in truth being to create a\nsecurity for a loan of money to the supposed vendor from the\nsupposed purchaser. The transaction was therefore one of\nloan. Lord Esher, M.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1965_1965_28_P017_C02",
+      "text": "R., observed at p. 37 :\n\".......... when the transaction is in truth\n merely a loan transaction, and the lender is\n to be repaid his loan and to have a security\n upon the goods, it will be unavailing to cloak\n the reality of the transaction by a sham\n purchase and hiring. It will be a question of\n fact in each case whether there is a real\n purchase and sale complete before the hiring\n agreement. If there be such a purchase and\n sale in fact and afterwards the goods are\n hired, the case is not within the Bills of\n Sale Act. The document itself must be looked\n at as part of the evidence; but it is only\n part, and the Court must look at the other\n facts, and ascertain the actual truth of the\n case.\"\nIn Mass v. Pepper(2) one M entered into a contract with a\nwine merchant under which the latter was to provide pound\n2,000 for purchasing the furniture of a hotel which was\nagreed to be purchased by M. The wine merchant paid pound\n2,000 to the vendor who gave a receipt for that sum as part\nof a purchase money of the furniture.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1965_1965_28_P017_C03",
+      "text": "M then executed a\nhire-purchase agreement in favour of the wine merchant and\nthe wine merchant let the furniture to M to be paid for by\ninstalments and the furniture not to become property of M\ntill all the instalments were paid. It was\n(1) [1890] 25 Q.B.D. 27. (2) [1905] A.C. 102.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1965_1965_28_P018_C01",
+      "text": "held by the House of Lords that the circumstances showed\nthat the transaction was merely colourable and was a loan on\nthe security of the hire-purchase agreement.\nIn Polsky v. S. and A. Services(-') the plaintiff purchased\na motor-car and gave a cheque for the price. Being unable\nto make arrangement for the cheque, he entered into a\ntransaction with the defendants who carried on the business\nof financing the purchase of motor-cars. 'Though the\nplaintiff had purchased the motor-car, and merely sought a\nloan, the transaction between him and the defendants was\ncarried out by means of documents used by the defendants\nwhen financing purchase of motor-cars, and they purported to\nbuy the motor-car from the plaintiff and to let it out to\nhim under a hire-purchase agreement. The plaintiff then\nbrought an action for a declaration claiming that hire-\npurchase agreement was void under the\nBills of Sale Act,",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1965_1965_28_P019_C01",
+      "text": ". Lord Goddard, C.J., in upholding the claim of the\nplaintiff observed at p. 188 :\n\"A considerable number of cases were\n cited...... on the point which may, I think,\n be conveniently divided into two lines of\n authority. There is on the one hand, the\n class of cases, of which Yorkshire Railway\n Wagon Co. v. Maclure-(1882) Ch. D. 309-and\n British Railway Traffic & Electric Co. v. Kahn-(1921) W.N. 52-are good examples, where\n the transaction in question has been held to\n be a genuine sale followed by a hire-purchase\n agreement, and, therefore, unaffected by the\n Bills of Sale Acts, and, on the other hand,\n there is the class, which includes Re Watson,\n Ex p. Official Receiver in Bankruptcy-(1890)\n 25 Q.B.D. 27-and Madell v. Thomas & Co.-(1891)\n 1 Q.B. 230-where the court has held, on facts\n not very dissimilar from those in the present\n case, that the real transaction was one\n of loan, and, therefore, it was avoided by\n reason of the Acts. There is no doubt, I\n think, as to the deciding principle.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1965_1965_28_P019_C02",
+      "text": "The\n Court has to determine whether the transaction\n in question is a genuine sale by the original\n owner of the chattel to the person who is\n finding the money and a genuine reletting by\n the latter to the original owner on hire\n purchase terms, or whether the\n transaction though taking that form, is\n nothing more than a loan of money on the\n security of the goods........... The Court\n is not to look merely at the\n (1) [1951] 1 All E.R. 185.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1965_1965_28_P020_C01",
+      "text": "documents. It must discover what the real\n transaction was. As Lord Esher, M.R., said\n (1891) 1 Q.B. 2341 in Madell v. Thomas & Co. :\nthe court is to look through or behind the\n documents, and to get at the reality; and, if\n in reality the documents are only given as a\n security for money, then they are bills of\n sale.\" \"\nIn the light of these principles the true nature of the\ntransactions of. the appellants may now be stated. The,\nappellants are carrying on the business of financiers : they\nare not dealing in motor-vehicles. The motor-vehicle\npurchased by the customer is registered in the name of the\ncustomer and remains at all material times so registered in\nhis name. In the letter taken from the customer under which\nthe latter agrees to keep the vehicle insured, it is\nexpressly recited that the vehicle has been given as\nsecurity for the loan advanced by the appellants. As a\nsecurity for repayment of the loan, the customer executes a\npromissory-note for the amount paid by the appellants to the\ndealer of the vehicle.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1965_1965_28_P020_C02",
+      "text": "The so-called \"sale letter\" is a\nformal document which is not made effective by registering\nthe vehicle in the name of the appellants and even the\ninsurance of the vehicle has to be effected as if the\n,customer is the owner. Their right to seize the vehicle is\nmerely a licence to ensure compliance with the terms- of the\nhire-purchase agreement. The customer remains qua the world\nat large the ,owner and remains in possession, and on\ncondition of performing the covenants has a right to\ncontinue to remain in possession. The right of the\nappellants may be extinguished by payment of the amount due\nto them under the terms of the hire-purchase agreement even\nbefore the dates fixed for payment. The agreement\nundoubtedly contains several onerous covenants, but they are\nall intended to secure to the appellants recovery of the\namount advanced. We are accordingly of the view that the\nintention of the appellants in obtaining the hire-purchase\nand the allied agreements was to secure the return of loans\nadvanced to their customers, and no real sale of the vehicle\nwas intended by the customer to the appellants. The\ntransactions were merely financing transactions.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1965_1965_28_P020_C03",
+      "text": "The\nappeals will therefore be allowed with costs in this Court\nand the High Court. One hearing fee. ORDER\nIn accordance with the opinion of the majority the appeals\nare allowed with costs in this Court and the High Court. One hearing fee.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    }
+  ],
+  "case_summary": {
+    "case_name": "Sundaram Finance Ltd vs State Of Kerala And Another",
+    "case_id": "SC_1965_1965_28",
+    "court": "Supreme Court of India",
+    "year": "1965",
+    "facts_summary": "HEADNOTE:\nThe appellants were a limited company with their registered\noffice at Madras. The Company carried on the business of\nfinancing purchases ,of motor vehicles on the security of\nthose vehicles. A customer desirous ,of purchasing a motor\nvehicle but unable to pay the price to the dealer would make\npart payment to the dealer and then approach the appellants\nfor a loan. The appellants would advance the loan to the\ncustomer on 'the strength of nine documents executed by the\ncustomer one of which 'Was a 'sale letter' purporting to\nsell the vehicle to the appellants on the date of the loan;\nanother was a promissory-note agreeing to pay the difference\nbetween the price of the vehicle and the amount paid by the\n,customer to the dealer and interest thereon at the\nstipulated rate. An,other of these documents was the hire-\npurchase agreement itself; in cl. 6 it recited that on the\ncustomer paying the entire amount due under the second\nschedule to the agreement the vehicle would become the sole\nand absolute property of the customer. or acknowledges to have conveyed goods and subsequently\npurports to hire them under a hire-purchase agreement is not\nestopped from proving that the real bargain was intended to\nbe a loan on the security of the goods. [841 C]\n(ii) A hire-purchase agreement is a complex transaction. The owner under a hire-purchase agreement enters into a\ntransaction of hiring out goods on the terms and conditions\nset out in the agreement, and the option to purchase\nexerc",
+    "legal_issues": "On September 28,\n1958 the Sales-tax Officer, Ernakulam, issued a notice\ncalling upon the appellants to file returns of their\nturnover from sales in the course of business and to secure\nregistration as dealers under the Travancore-Cochin General\nSales-tax Act 11 of 1125 M.E. and to furnish details of the\ntransactions ,of sale with parties in the State of Kerala in\nthe year 1955-56, 1956-57 and 1957-58. Later another notice\nwas issued for the years 1958-59 and 1959-60. 'Me\nappellants contended that they were not liable to pay Sales-\ntax on their financing transactions as they mere financiers\nand did not enter into any transactions of sale of goods\nwith parties within 'the State of Kerala and that they were\nnot 'dealers' under the Act. The 'Sales-tax Officer however\nheld that they were dealers and that the hire purchase\ntransactions entered into by them resulted in sales which\nwere liable to sales-tax. The transactions purported to he hire-purchase\nagreements and they must be treated as such as the common\nintention of the parties was to enter into such\ntransactions. A deeper study of the transactions showed\nthat the dealer and the financier were closely connected\nCompanies and for their own reasons they had split up the\nbusiness of hire-purchase between them. In effect and in\nsubstance, the dealer without receiving the whole money put\nthe customers in possession of the cars under the hire-\npurchase agreements. [833 H; 834 C]\n(iii) If the transactions were hire-purchase agreement",
+    "ratio_summary": "This class of\nhirepurchase agreements must be distinguished from\ntransactions in which the customer is the owner of the goods\nand with a view to finance, his purchase he enters into an\narrangement which is in the form of a hirepurchase agreement\nwith the financier, but in substance evidences a loan\ntransaction subject to a hiring agreement under which the\nlender is given the licence to seize the goods. [841 G-842\nB]\n(iii)The appellants were financiers; they were not dealing\nin motor vehicles. The motor vehicles purchased by 'the\ncustomer was registered in the name of the customer and\nremained at all material times so registered in his name. In the letter taken from the customer under which he agreed\nto keep the vehicle insured, it was expressly recited that\nthe vehicle had been given on security for the loan advanced\nby the appellants. As a security for repayment of the loan,\nthe customers executed a promissory note for the amount paid\nby the appellants to the dealer of the vehicle. State of Madras v. Gannon Dunkerley & Co., [1959] S.C.R.\n379, Re Watson Ex Parte Official Receiver in Bankruptcy,\n(1890). 25 Q.B.D. 27. Mays v. Pepper, (1905) A.C. 102 and\nPolsky v. S. And A. Services [1951] 1 All E.R. 185, referred\nto. K. L. Johar & Co. v. Deputy Commercial Tax Officer, A.I.R. (1965) S.C. 1082, distinguished. Per Subba Rao, J. (i) There was no question in the present\ncase of going behind the documents executed by the parties\nto determine their true intentions. The transactions in",
+    "final_order": "the financier does not affect the question, for that was\nmerged in the hire-purchase transaction. If the said terms\nwere not carried out, the customers could not claim any\nrights under the agreements and the financier continued to\nbe the owner freed from any obligation created under the\nagreements. Can the financier thereafter enforce the\npromissory note ? I think he cannot. As I have stated\nearlier, the transactions purported to be hire-purchase\nagreements and they must be treated as such, as the common\nintention of the parties was to enter into such\ntransactions. A deeper scrutiny of the transactions shows\nthat the dealer and the financier were closely connected\ncompanies and for their own reasons they have split up the\nbusiness of hire-purchase between them. In effect and in\nsubstance, ",
+    "outcome_summary": "the financier does not affect the question, for that was\nmerged in the hire-purchase transaction. If the said terms\nwere not carried out, the customers could not claim any\nrights under the agreements and the financier continued to\nbe the owner freed from any obligation created under the\nagreements. Can the financier thereafter enforce the\npromissory note ? I think he cannot. As I have stated\nearli",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

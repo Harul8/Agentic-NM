@@ -1,0 +1,224 @@
+{
+  "case_id": "SC_1980_1980_78",
+  "case_name": "State Of U.P vs Ram Babu Misra",
+  "normalized_case_name": "STATE_OF_U.P_VS_RAM_BABU_MISRA",
+  "court": "Supreme Court of India",
+  "year": "1980",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "19 February 1980",
+  "judges": [
+    "O. Chinnappa  Reddy",
+    "Ranjit Singh Sarkaria"
+  ],
+  "author": "O. Chinnappa  Reddy",
+  "bench_type": "division",
+  "petitioner": "State Of U.P",
+  "respondent": "Ram Babu Misra",
+  "reporter_citations": [
+    "[1979] 1 SCR 931",
+    "AIR 1961 SC 1808",
+    "AIR 1962 Patna 255"
+  ],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 19,
+  "cited_by_count": 102,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1980 AIR 791",
+    "1980 SCR (2)1067",
+    "AIR 1980 SUPREME COURT 791",
+    "1980 ALL. L. J. 350",
+    "1980 SCC(CRI) 444",
+    "(1980) 1 APLJ 40",
+    "(1980) SCWR 25",
+    "1980 BBCJ 46",
+    "(1980) 2 S C R 1067",
+    "(1980) 12 LAWYER 144",
+    "1980 U P CRI C 216",
+    "1980 UJ (SC) 386",
+    "(1980) ALLCRIC 174",
+    "1980 CHANDLR(CIV&CRI) 196",
+    "(1980) SC CR R 335",
+    "1980 (2) SCC 343",
+    "(1980) MADLW(CRI) 152",
+    "(1980) MAD LJ(CRI) 477",
+    "(1980) 1 SCJ 543",
+    "(1980) ALL WC 192",
+    "(1980) ALLCRIR 145"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1980\\1980_78.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1980_1980_78_P001_C01",
+      "text": "BENCH:\nREDDY, O. CHINNAPPA (J)\nBENCH:\nREDDY, O. CHINNAPPA (J)\nSARKARIA, RANJIT SINGH",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1980_1980_78_P002_C01",
+      "text": "ACT:\nEvidence Act, 1872\n, Section 73-Scope of-Comparison of\nsignature, writing or seal with others admitted or proved-\nCompetency of the Magistrates to give direction to the\naccused to give specimen signature when the case is still\nunder investigation.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1980_1980_78_P003_C01",
+      "text": "HEADNOTE:\n Dismissing the appeal by special leave, the Court:\n^\n HELD: Though a direction by the Magistrate to the\naccused to give his specimen writing when the case is still\nunder investigation would surely be in the interests of the\nadministration of justice,\nSection 73\nof the Evidence Act\ndoes not enable the Magistrate to give such a direction when\nthe case is still under investigation. [1068G-H]\n The second paragraph of\nSection 73\nenables the Court to\ndirect any person present in Court to give specimen writings\n\"for the purpose of enabling the Court to compare\" such\nwritings with writings alleged to have been written by such\nperson. The clear implication of the words \"for the purpose\nof enabling the Court to compare\" is that there is some\nproceeding before the Court in which or as a consequence of\nwhich it might be necessary for the Court to compare such\nwritings. The direction is to be given for the purpose of\n'enabling the Court to compare' and not for the purpose of\nenabling the investigating or other agency 'to compare'.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1980_1980_78_P003_C02",
+      "text": "the case is still under investigation there is no present\nproceeding before the Court in which or as a consequence of\nwhich it might be necessary to compare the writings. The\nlanguage of\nSection 73\ndoes not permit a Court to give a\ndirection to the accused to give specimen writings for\nanticipated necessity for comparison in a proceeding which\nmay later be instituted in the Court. [1069D-F]\n (ii)\nSection 73\nof the Evidence Act makes no\ndistinction between a Civil Court and a Criminal Court. It\nwould not be open to a person to seek the assistance of the\nCivil Court for a direction to some other person to give\nsample writing under\nsection 73\nof the Evidence Act on the\nplea that it would help him to decide whether to institute a\ncivil suit in which the question would be whether certain\nalleged writings are those of the other person or not. That\nbeing the position, it should not make any difference if the\ninvestigating agency seeks the assistance of the court under\nsection 73\nof the Evidence Act on the plea that a case might\nbe instituted before the Court where it would be necessary\nto compare the writings. [1069G-H]\n State (Delhi Admn.) v.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1980_1980_78_P003_C03",
+      "text": "Pali Ram, [1979] 1 SCR 931 and\nState of Bombay v. Kathi Kalu Oghad, AIR 1961 SC 1808;\ndistinguished. State of Bombay v. Kathi Kalu Oghad, AIR 1961 SC 1808;\nT. Subbaiah v. S. K. D. Ramaswamy Nadar, AIR 1970 Mad. 85;\nFarid Ahmed v. The State, AIR 1960 Cal. 32; Priti Ranjan\nGhosh and others v. The State, 77 C.W.N.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1980_1980_78_P004_C01",
+      "text": "865; Dharamvir Singh v. State, 1975 Crl. L.J. 884 (Pb. &\nHaryana); Brij Bhushan Raghunandan Pd. v. The State, AIR\n1957 M.P. 106; and Srikant Rout v. State of Orissa, 1972 (2)\nCuttack Weekly Reporter 1332; approved.\n Gulzar Khan and Ors. v. State, AIR 1962 Patna 255 and\nB. Rami Reddy and Ors. v. State of A.P., 1971 Crl. L.J. 1591\n(AP); over-ruled.\n [The Court suggested that suitable legislation may be\nmade on the analogy of s. 5 of the\nIdentification of\nPrisoners Act\n, to provide for the investiture of Magistrates\nwith the power to issue directions to any person, including\nan accused person, to give specimen signatures and\nwritings.]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1980_1980_78_P005_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal No. 811 of\n1979.\nAppeal by special leave from the Judgment and Order\ndated 18-12-1970 of the Allahabad High Court in Crl.\nRevision No. 170 of 1975.\nO. P. Rana and M. Ramachandran for the Appellant.\n Nemo for the Respondent.\nThe Judgment of the Court was delivered by\n CHINNAPPA REDDY, J.-The Officer who was investigating\ninto offences under\nSection 120-B\n,",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1980_1980_78_P006_C01",
+      "text": "Indian\nPenal Code alleged against the respondent, Ram Babu Misra,\nmoved the Chief Judicial Magistrate, Lucknow, to direct the\naccused to give his specimen writing for the purpose of\ncomparison with certain disputed writings. The learned\nMagistrate held that he had no power to do so when the case\nwas still under investigation. His view has been upheld by\nthe High Court. The State has preferred this appeal by\nSpecial Leave of this Court. Shri O. P. Rana, learned Counsel for the appellant,\ncontended that\nSection 73\nof the Evidence Act conferred\nample power on the Magistrate to direct the accused to give\nhis specimen writing even during the course of\ninvestigation. He also urged that it would be generally in\nthe interests of the administration of justice for the\nMagistrate to direct the accused to give his specimen\nwriting when the case was still under investigation, since\nthat would enable the investigating agency not to place the\naccused before the Magistrate for trial or enquiry, if the\ndisputed writing, as a result of comparison with the\nspecimen writing, was found not to have been made by the\naccused. While we agree with Mr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1980_1980_78_P006_C02",
+      "text": "Rana that a direction by\nthe Magistrate to the accused to give his specimen writing\nwhen the case is still under investigation would surely be\nin the interests of the administration of justice, we find\nourselves unable to agree with his submission that\ns. 73\nthe Evidence Act enables the Magistrate to give such a\ndirection even when the case is still under investigation.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1980_1980_78_P007_C01",
+      "text": "Section 73\nof the Evidence Act is as follows:\n\"73. In order to ascertain whether a signature,\n writing or seal is that of the person by whom it\n purports to have been written or made, any signature,\n writing or seal admitted or proved to the satisfaction\n of the Court to have been written or made by that\n person may be compared with the one which is to be\n proved, although that signature, writing or seal has\n not been produced or proved for any other purpose. The Court may direct any person present in Court\n to write any words or figures for the purpose of\n enabling the Court to compare the words or figures so\n written with any words or figures alleged to have been\n written by such person. This section applies also, with any necessary\n modifications to finger-impressions\". The second paragraph of\nsection 73\nenables the Court to\ndirect any person present in Court to give specimen writings\n\"for the purpose of enabling the Court to compare\" such\nwritings with writings alleged to have been written by such\nperson.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1980_1980_78_P007_C02",
+      "text": "The clear implication of the words \"for the purpose\nof enabling the Court to compare\" is that there is some\nproceeding before the Court in which or as a consequence of\nwhich it might be necessary for the Court to compare such\nwritings. The direction is to be given for the purpose of\n'enabling the Court to compare' and not for the purpose of\nenabling the investigating or other agency 'to compare'. If\nthe case is still under investigation there is no present\nproceeding before the Court in which or as a consequence of\nwhich it might be necessary to compare the writings. The\nlanguage of\nsection 73\ndoes not permit a Court to give a\ndirection to the accused to give specimen writings for\nanticipated necessity for comparison in a proceeding which\nmay later be instituted in the Court. Further\nsection 73\nthe Evidence Act makes no distinction between a Civil Court\nand a Criminal Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1980_1980_78_P007_C03",
+      "text": "Would it be open to a person to seek\nthe assistance of the Civil Court for a direction to some\nother person to give sample writing under\nsection 73\nof the\nEvidence Act on the plea that it would help him to decide\nwhether to institute a civil suit in which the question\nwould be whether certain alleged writings are those of the\nother person or not ? Obviously not. If not, why should it\nmake any difference if the investigating agency seeks the\nassistance of the Court under\ns. 73\nof the Evidence Act on\nthe plea that a case might be instituted before the Court\nwhere it would be necessary to compare the writings ?",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1980_1980_78_P008_C01",
+      "text": "We may also refer here to\nSection 5\nof the\nIdentification of Prisoners Act, 1920, which provides:\n\"5. If a Magistrate is satisfied that, for the\n purposes of any investigation or proceeding under the\nCode of Criminal Procedure\n, 1898, it is expedient to\n direct any person to allow his measurements or\n photograph to be taken, he may make an order to that\n effect, and in that case the person to whom the order\n relates shall be produced or shall attend at the time\n and place specified in the order and shall allow his\n measurements or photograph to be taken, as the case may\n be, by a police officer:\nProvided that no order shall be made directing any\n person to be photographed except by a Magistrate of the\n first class:\nProvided further, that no order shall be made\n under this section unless the person has at some time\n been arrested in connection with such investigation or\n proceeding\". Section 2(a)\nof the Act defines \"measurements\" as including\n\"finger impressions and foot print impressions\". There are two things to be noticed here.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1980_1980_78_P008_C02",
+      "text": "First,\nsignature and writing are excluded from the range of\ns. 5\nthe Identification of Prisoners Act and, second, 'finger\nimpression' are included in both\ns. 73\nof the Evidence Act\nand\ns. 5\nof the Identification of Prisoners Act. A possible\nview is that it was thought that\ns. 73\nof the Evidence Act\nwould not take in the stage of investigation and so\ns. 5\nthe Identification of Prisoners Act made special provision\nfor that stage and even while making such provision,\nsignature and writings were deliberately excluded. As we\nsaid, this is a possible view but not one on which we desire\nto rest our conclusion. Our conclusion rests on the language\ns. 73\nof the Evidence Act. Section 73\nof the Evidence Act was considered by us in\nState (Delhi Administration) v. Pali Ram\n(1), where we held\nthat a Court holding an enquiry under the\nCriminal Procedure\nCode\nwas entitled under\ns. 73\nof the Evidence Act to direct\nan accused person appearing before it to give his specimen\nhandwriting to enable the Court by which he may be tried to\ncompare it with disputed writings.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1980_1980_78_P008_C03",
+      "text": "The present question\nwhether such a direction, under\ns. 73\nof the Evidence Act,\ncan be given when the matter is still under investigation\nand there is no proceeding before the Court was expressly\nleft open. The question was also not considered in\nState of\nBombay v. Kathi Kalu Oghad\n,(2)",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1980_1980_78_P009_C01",
+      "text": "where the question which was actually decided was that no\ntestimonial compulsion under\nArt. 20(3)\nof the Constitution\nwas involved in a direction to give specimen signature and\nhand-writing for the purpose of comparison. The view expressed by us in the earlier paragraphs, on\nthe construction of\ns. 73\n, Evidence Act was the view taken\nby the Madras High Court in\nT. Subbiah v. S. K. D. Ramaswamy\nNadar\n(1), the Calcutta High Court in\nFarid Ahmed v. the\nState\n(2) (Mitter J., at page 32).\nand Priti Ranjan Ghosh &\nOrs. v. The State(3), the High Court of Punjab and Haryana\nDharamvir Singh v. State\n(4), the High Court of Madhya\nPradesh in\nBrij Bhushan Raghunandan Prasad v. The State\n(5),\nthe Orissa High Court in Srikant Rout v. State of Orissa(6)\nand the Allahabad High Court in the judgment under appeal.\ncontrary view was taken by the Patna High Court in\nGulzar\nKhan & Ors. v. State\n(7) and the High Court of Andhra Pradesh\nB. Rami Reddy & Ors. v. State of Andhra Pradesh\n.(8) We do\nnot agree with the latter view.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1980_1980_78_P009_C02",
+      "text": "We accordingly dismiss the\nappeal and while doing so we would suggest the suitable\nlegislation may be made on the analogy of s. 5 of the\nIdentification of Prisoners Act\n, to provide for the\ninvestiture of Magistrates with the power to issue\ndirections to any person, including an accused person, to\ngive specimen signatures and writings. S. R. Appeal dismissed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "State Of U.P vs Ram Babu Misra",
+    "case_id": "SC_1980_1980_78",
+    "court": "Supreme Court of India",
+    "year": "1980",
+    "facts_summary": "ACT:\nEvidence Act, 1872\n, Section 73-Scope of-Comparison of\nsignature, writing or seal with others admitted or proved-\nCompetency of the Magistrates to give direction to the\naccused to give specimen signature when the case is still\nunder investigation. HEADNOTE:\n Dismissing the appeal by special leave, the Court:\n^\n HELD: Though a direction by the Magistrate to the\naccused to give his specimen writing when the case is still\nunder investigation would surely be in the interests of the\nadministration of justice,\nSection 73\nof the Evidence Act\ndoes not enable the Magistrate to give such a direction when\nthe case is still under investigation. [1068G-H]\n The second paragraph of\nSection 73\nenables the Court to\ndirect any person present in Court to give specimen writings\n\"for the purpose of enabling the Court to compare\" such\nwritings with writings alleged to have been written by such\nperson. The clear implication of the words \"for the purpose\nof enabling the Court to compare\" is that there is some\nproceeding before the Court in which or as a consequence of\nwhich it might be necessary for the Court to compare such\nwritings. The direction is to be given for the purpose of\n'enabling the Court to compare' and not for the purpose of\nenabling the investigating or other agency 'to compare'.",
+    "legal_issues": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal No. 811 of\n1979.\nAppeal by special leave from the Judgment and Order\ndated 18-12-1970 of the Allahabad High Court in Crl.\nRevision No. 170 of 1975.\nO. P. Rana and M. Ramachandran for the Appellant.\n Nemo for the Respondent.\nThe Judgment of the Court was delivered by\n CHINNAPPA REDDY, J.-The Officer who was investigating\ninto offences under\nSection 120-B\n,",
+    "ratio_summary": "the case is still under investigation there is no present\nproceeding before the Court in which or as a consequence of\nwhich it might be necessary to compare the writings. The\nlanguage of\nSection 73\ndoes not permit a Court to give a\ndirection to the accused to give specimen writings for\nanticipated necessity for comparison in a proceeding which\nmay later be instituted in the Court. [1069D-F]\n (ii)\nSection 73\nof the Evidence Act makes no\ndistinction between a Civil Court and a Criminal Court. It\nwould not be open to a person to seek the assistance of the\nCivil Court for a direction to some other person to give\nsample writing under\nsection 73\nof the Evidence Act on the\nplea that it would help him to decide whether to institute a\ncivil suit in which the question would be whether certain\nalleged writings are those of the other person or not. That\nbeing the position, it should not make any difference if the\ninvestigating agency seeks the assistance of the court under\nsection 73\nof the Evidence Act on the plea that a case might\nbe instituted before the Court where it would be necessary\nto compare the writings. [1069G-H]\n State (Delhi Admn.) v. Pali Ram, [1979] 1 SCR 931 and\nState of Bombay v. Kathi Kalu Oghad, AIR 1961 SC 1808;\ndistinguished. State of Bombay v. Kathi Kalu Oghad, AIR 1961 SC 1808;\nT. Subbaiah v. S. K. D. Ramaswamy Nadar, AIR 1970 Mad. 85;\nFarid Ahmed v. The State, AIR 1960 Cal. 32; Priti Ranjan\nGhosh and others v. The State, 77 C.W.N. Would it be open to a person to ",
+    "final_order": "",
+    "outcome_summary": "Dismissed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

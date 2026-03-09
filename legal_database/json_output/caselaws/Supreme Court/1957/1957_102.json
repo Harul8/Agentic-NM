@@ -1,0 +1,147 @@
+{
+  "case_id": "SC_1957_1957_102",
+  "case_name": "Equitable Coal Co. Ltd. vs Algu Singh And Anr.",
+  "normalized_case_name": "EQUITABLE_COAL_CO._LTD._VS_ALGU_SINGH_AND_ANR.",
+  "court": "Supreme Court of India",
+  "year": "1957",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "11 September 1957",
+  "judges": [
+    "N.H. Bhagwati",
+    "S.K. Das",
+    "P.B. Gajendragadkar",
+    "JUDGMENT",
+    "P.B. Gajendragadkar, J."
+  ],
+  "author": "P.B. Gajendragadkar",
+  "bench_type": "constitution",
+  "petitioner": "Equitable Coal Co. Ltd.",
+  "respondent": "Algu Singh And Anr.",
+  "reporter_citations": [],
+  "outcome": "partly allowed",
+  "disposition": "partly_allowed",
+  "cites_count": 9,
+  "cited_by_count": 14,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1958SC761",
+    "AIR 1958 SUPREME COURT 761",
+    "1958 (1) LABLJ 793 1959-60 17 FJR 184",
+    "1959-60 17 FJR 184"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1957\\1957_102.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1957_1957_102_P001_C01",
+      "text": "1. This is an appeal by Special Leave against the order passed by the Labour Appellate Tribunal of India at Calcutta against the appellant under\nSection 23\nof the Industrial Disputes (Appellate Tribunal) Act, 1950.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1957_1957_102_P002_C01",
+      "text": "2. The respondents were the employees of the appellant. By their application, they complained that the appellant had illegally and unjustifiably dismissed them during the pendency of Appeal No. Cal. 167/53 before the Labour Appellate Tribunal at Calcutta without obtaining the express permission in writing of the Appellate Tribunal as required by\nSection 22\nof the Act. The case of the respondents was that they had been victimised by the appellant for their trade union activities. On the other hand, the appellant alleged that the dismissal of the respondents was fully justified under\nSection 27 (5)\nof the Certified Standing Orders of the Colliery. Before the respondents were dismissed from service as from March 11, 1954, Mr. H. W. Briggs, Group Personnel Officer of the appellant had held a regular enquiry into the matter after supplying the formal charge-sheet to both the respondents. This enquiry was held in the presence of the respondents and full opportunity was given to them to cross-examine the witnesses who gave evidence against them and to lead their own evidence if they so desired.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1957_1957_102_P002_C02",
+      "text": "The enquiring officer was satisfied that the charges of riotous and disorderly behavior and of assault framed against the respondents were fully established. The appellant denied that there was any victimisation against the respondents or that they had been punished for their trade union activities. It appears that the incidents which gave rise to the charge-sheet against the respondents and the enquiry held by the appellant against them subsequently became the subject-matter of criminal proceedings; and in those proceedings the two respondents have been convicted under\nSection 147\nof the Indian Penal Code and sentenced to undergo rigorous imprisonment for two months each and to pay a fine of Rs. 20 each, in default to undergo a further rigorous imprisonment of one month each. In regard to the contravention of the provisions of\nSection 22\n, the appellant pleaded that the said alleged contravention was purely technical and it did not justify any claim for compensation made by the respondents under\nSection 23\nof the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "IPC 147"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1957_1957_102_P002_C03",
+      "text": "The Labour Appellate Tribunal has found that the domestic enquiry conducted by the appellant was fair and satisfactory and that 'it could not be said that the view taken by the enquiring officer was \"an impossible view.\" Nevertheless, since the appellant had not obtained the requisite permission under\nSection 22\nof the Act, the Labour Appellate Tribunal held that the respondents were entitled to compensation. In the result, he directed the appellant to pay to each of the two respondents the 2/3rd of his basic wages and dear-ness allowance for the entire period, from the date of his dismissal up to the date when the order would become enforceable and also directed that the respondents should get everything that they were entitled to at the date on which they were dismissed by way of provident fund, gratuity, etc. It is this order which is challenged before us by the appellant in the present appeal.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_102_P003_C01",
+      "text": "3. Mr. Sen, for the appellant, has not disputed the fact that the appellant failed to obtain the requisite permission in writing of the Appellate Tribunal before dismissing the respondents. He, however, contends that the failure to obtain the requisite permission amounts to no more than a technical breach of\nSection 22\nin the circumstances of the present case and his argument is that the respondents are entitled to no relief Under\nSection 23\nof the Act. A declaration may be granted in favour of the respondents that there has been a technical breach of\nSection 22\non the part of the appellant; but no other consequential order can be passed in favour of the respondents and against the appellant in the present proceedings. If at all proceedings may be taken against the appellant under\nSection 29\nof the Act; that, however, would not justify the award of compensation made by the Appellate Tribunal in favour of the respondents.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1957_1957_102_P004_C01",
+      "text": "4. The scope and effect of the provisions of\nSections 22\nand\n\nof the Act have been considered by this Court in\nAutomobile Products of India Ltd. v. Rukmaji Bala\n, . \"The object of\nSection 22\n,\" observes Das, J., as he then was, in his judgment,\n \"like that of\nSection 33\nof the 1917 Act as amended is to protect the workmen concerned in disputes which form the subject-matter of pending proceedings against victimisation by the employer on account of their having raised industrial disputes or :their continuing the pending proceedings.\"\nAs the judgment points out, the grievance made by the employee under this section is two-fold. In the first place his grievance is that the employer has taken action against him without complying with\nSection 22\n; and in the second place he has also the grievance on merits \"which may be of much more seriousness and gravity for him\" viz., that in point of fact he has been unfairly dealt with and his interest has really been prejudicially affected by the high-handed act of the employer. The right given to the workman to move the authority by lodging a complaint in this case is a distinct benefit given to him.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1957_1957_102_P004_C02",
+      "text": "Under the ordinary law of master and servant, a master would be entitled to dispense with the services of his servant without having to obtain permission in that behalf from any statutory authority. Section 22\nof the Act, however, introduces restrictions on the master's right. So long as an industrial dispute is pending between the employer and his employees, the employer cannot discharge or punish, whether by dismissal or otherwise any of his employees concerned in the said dispute, without the requisite permission from the Appellate Tribunal. If the employer contravenes the provisions of\nSection 22\n,\nthe employee is entitled to make a complaint in writing in the prescribed manner to the Appellate Tribunal and, on receiving such complaint, the Appellate Tribunal has to decide the complaint as if it is an appeal pending before it. The breach of the provisions or\nSection 22\nby the employer is in a sense a condition precedent for the exercise of the jurisdiction conferred on the Labour Appellate Tribunal by\nSection 23\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1957_1957_102_P004_C03",
+      "text": "As soon as this condition precedent is satisfied the employee is given an additional right of making the employer's conduct the subject-matter of an industrial dispute without having to follow the normal procedure\nlaid down in\nthe\nIndustrial Disputes Act\n. In an enquiry held under\nSection 23\n, two questions fall to be considered : Is the fact of contravention by the employer of the provisions of\nSection 22\nproved ? If yes, is the order passed by the employer against the employee justified on the merits ? If both these questions are answered in favour of the employee, the Appellate Tribunal would no doubt be entitled to pass an appropriate order in favour of the employee. It the first point is answered in favour of the employee, but on the second point the finding is that, on the merits, the order passed by the employer against the employee is justified, then the breach of\nSection 22\nproved against the employer may ordinarily be regarded as a technical breach and it may not, unless there are compelling facts in favour of the employee, justify any substantial order of compensation in favour of the employee.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1957_1957_102_P004_C04",
+      "text": "It is unnecessary to add that, if the first issue is answered against the employee, nothing further can be done under\nSection 23\n. What orders would meet the ends of justice in case of a technical breach of\nSection 22\nwould necessarily be a question of fact to be determined in the light of the circumstances of each case. In view of the decision of this Court in , it would be impossible to accept Mr. Sen's argument that the only order which can be passed in proceedings under\nSection 23\nis to grant a declaration that the employer has committed a breach of the provisions of\nSection 22\n. Atherton West & Co., Ltd. Kanpur U. P. v. Suti Mill Mazdoor Union\n, , this Court has expressed a similar view in regard to the provisions of\nSection 23\nof the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1957_1957_102_P005_C01",
+      "text": "5. In the present case we do not think that the Appellate Tribunal was justified in passing an order of compensation in favour of respondents. On the findings made by the Appellate Tribunal, it is clear that a proper enquiry was held by the appellant and, as the judgment of the Appellate Tribunal shows, the view taken by the enquiring officer and ultimately accepted by the appellant cannot be regarded as an unreasonable view. The conduct of the respondents which was held proved by the enquiring officer would undoubtedly justify their dismissal. Having regard to the facts of this case, therefore, we hold that the order of compensation passed by the Appellate Tribunal must be reversed. Mr. Sen has fairly and, in our opinion, rightly not challenged the order passed by the Appellate Tribunal in respect of provident fund, gratuity, etc., to which the respondents were entitled at the date of their dismissal. This order would, therefore, be confirmed. The result is that the appeal is partly allowed to the extent indicated. In the circumstances of this case we direct that the parties should bear their own costs throughout.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Equitable Coal Co. Ltd. vs Algu Singh And Anr.",
+    "case_id": "SC_1957_1957_102",
+    "court": "Supreme Court of India",
+    "year": "1957",
+    "facts_summary": "2. The respondents were the employees of the appellant. By their application, they complained that the appellant had illegally and unjustifiably dismissed them during the pendency of Appeal No. Cal. 167/53 before the Labour Appellate Tribunal at Calcutta without obtaining the express permission in writing of the Appellate Tribunal as required by\nSection 22\nof the Act. The case of the respondents was that they had been victimised by the appellant for their trade union activities. On the other hand, the appellant alleged that the dismissal of the respondents was fully justified under\nSection 27 (5)\nof the Certified Standing Orders of the Colliery. Before the respondents were dismissed from service as from March 11, 1954, Mr. H. W. Briggs, Group Personnel Officer of the appellant had held a regular enquiry into the matter after supplying the formal charge-sheet to both the respondents. This enquiry was held in the presence of the respondents and full opportunity was given to them to cross-examine the witnesses who gave evidence against them and to lead their own evidence if they so desired.",
+    "legal_issues": "3. Mr. Sen, for the appellant, has not disputed the fact that the appellant failed to obtain the requisite permission in writing of the Appellate Tribunal before dismissing the respondents. He, however, contends that the failure to obtain the requisite permission amounts to no more than a technical breach of\nSection 22\nin the circumstances of the present case and his argument is that the respondents are entitled to no relief Under\nSection 23\nof the Act. A declaration may be granted in favour of the respondents that there has been a technical breach of\nSection 22\non the part of the appellant; but no other consequential order can be passed in favour of the respondents and against the appellant in the present proceedings. If at all proceedings may be taken against the appellant under\nSection 29\nof the Act; that, however, would not justify the award of compensation made by the Appellate Tribunal in favour of the respondents.",
+    "ratio_summary": "5. In the present case we do not think that the Appellate Tribunal was justified in passing an order of compensation in favour of respondents. On the findings made by the Appellate Tribunal, it is clear that a proper enquiry was held by the appellant and, as the judgment of the Appellate Tribunal shows, the view taken by the enquiring officer and ultimately accepted by the appellant cannot be regarded as an unreasonable view. The conduct of the respondents which was held proved by the enquiring officer would undoubtedly justify their dismissal. Having regard to the facts of this case, therefore, we hold that the order of compensation passed by the Appellate Tribunal must be reversed. Mr. Sen has fairly and, in our opinion, rightly not challenged the order passed by the Appellate Tribunal in respect of provident fund, gratuity, etc., to which the respondents were entitled at the date of their dismissal. This order would, therefore, be confirmed. The result is that the appeal is partly allowed to the extent indicated. In the circumstances of this case we direct that the parties should bear their own costs throughout.",
+    "final_order": "The Labour Appellate Tribunal has found that the domestic enquiry conducted by the appellant was fair and satisfactory and that 'it could not be said that the view taken by the enquiring officer was \"an impossible view.\" Nevertheless, since the appellant had not obtained the requisite permission under\nSection 22\nof the Act, the Labour Appellate Tribunal held that the respondents were entitled to compensation. In the result, he directed the appellant to pay to each of the two respondents the 2/3rd of his basic wages and dear-ness allowance for the entire period, from the date of his dismissal up to the date when the order would become enforceable and also directed that the respondents should get everything that they were entitled to at the date on which they were dismissed by way of provide",
+    "outcome_summary": "Partly allowed. The Labour Appellate Tribunal has found that the domestic enquiry conducted by the appellant was fair and satisfactory and that 'it could not be said that the view taken by the enquiring officer was \"an impossible view.\" Nevertheless, since the appellant had not obtained the requisite permission und",
+    "sections_cited": [
+      "IPC 147"
+    ],
+    "cases_cited": []
+  }
+}

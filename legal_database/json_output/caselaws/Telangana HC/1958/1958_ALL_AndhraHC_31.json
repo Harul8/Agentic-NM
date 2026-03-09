@@ -1,0 +1,498 @@
+{
+  "case_id": "SC_1958_1958_ALL_ANDHRAHC_31",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1958",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 28,
+  "cited_by_count": 4,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1958\\1958_ALL_AndhraHC_31.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P001_C01",
+      "text": "Secretary To Govt. Public Works And ... vs Adoni Ginning Factory And Ors. on 19 December, 1958\nEquivalent citations: AIR1959AP538, AIR 1959 ANDHRA PRADESH 538\nJUDGMENT\n\nP. Chandra Reddy, C.J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P002_C01",
+      "text": "1. All these writ appeals raise common questions of law and so they could be heard and disposed of together in one judgment.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P003_C01",
+      "text": "2. These appeals arise out of a judgment of our learned brother, Satyanarayana Raju J., quashing the Government Orders issued in exercise of the powers under Section 3 of the Madras Essential Articles Control and Requisitioning (Temporary Powers) Act, Madras Act 29 of 1949, as amended by the Madras Essential Articles Control and Requisitioning (Temporary Powers) Andhra Amendment Act, 1955 (hereinafter called the Act).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P004_C01",
+      "text": "3. The Government of Madras and its successor the Government of Andhra State were having a single power grid system for ihe whole State comprising Tungabhadra and Machkund Hydro Electric Systems and the Thermal Systems of Nellore. The entire energy was integrated into one power system. The Government entered into agreements with the several consumers in the State including the respondents for the supply of energy in bulk at specified rates called tariffs for the years 1951 and 1952. These agreements were to be in operation for ten years. There was no provision in the agreements authorising the Government to increase the rates during the currency thereof. The charges were fixed at graded regressive rates according to increasing slabs of consumption units, and the overall unit rates including the demand charges was not to exceed 66 anna without prejudice to the monthly minimum payment and the guaranteed consumption. The Government issued two orders G. O. No. 69 dated 28-.1-1955 relating to Machkund and Nellore areas and G. O. No. 187, dated 30-1-1955 relating to Tungabhadra and Chittor District areas, enhancing the rates agreed to between the parties.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P004_C02",
+      "text": "The increased rates were set out in A and B schedules, the first bearing on high tension energy and the second on low tension energy. In addition, a fue! surcharge was also levied which was relative to the price of fuel. These increased tariffs were to take effect from the dates on which meter readings were to be taken in the month of February of 1955 and were to operate for the future.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P005_C01",
+      "text": "4. The reasons stated for enhancing the rates were that the existing electricity tariffs were formulated 15 years before, that the price level of all materials and labour had gone up by 3 to 4 times in the post-war period, but the electric tariffs had not been increased except for small increase by way of surcharges with the result that the revenue realised from the Andhra Electricity scheme were inadequate to cover the working expenses.\nThis step seems to have been necessitated by the Accountant-General's query whether in view of the continued deficits in the working of the Andhra Power System the Government had considered the desirability of increasing the rates of sale of power. It was recited in the G. Os. that the question of revision of tariffs in Andhra area was considered in the composite State of Madras and deferred for consideration by the new Andhra State and subsequent to the formation of the Andhra State the Chief Engineer submitted proposals for revision of tariffs in all the areas covered by the above mentioned schemes.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P006_C01",
+      "text": "5. Aggrieved by this action of the Government, the respondents moved this Court under\nArticle 226\nof the Constitution to set aside the two G. Os. pleading inter alia that the Government could not put an end to the contractual rights of the petitioners therein to have the energy supplied at the stipulated prices by a unilateral act, that the Madras Temporary Powers Act 29 of 1949 had not conferred any powers on the Government to alter the terms of a contract, that there was no justification for revision of rates since the conditions relied on for justifying the revision were also present at the time of agreements and that in any event so far as Tungabhadra Hydro Electric Scheme was concerned the Government of Mysore which was supplying the Government of Andhra with energy had not increased the rate. Some of these contentions prevailed with our learned brother with the result that the G. Os. in question were quashed.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P007_C01",
+      "text": "6. It is argued by the learned Advocate-General in these appeals filed by the Sta'e of Andhra Pradesh that the impugned orders are governed by Section 3 of the Act, that the contrary view is erroneous and that the tariffs existing at the time of the contracts were those that were formulated several years ago and the fact that the Mysore Government did no! enhance the rate was not quite relevant to this enquiry, for the reason that all the electrical energy was pooled through the grid system, i. e., the steam thermal stations, Hydro stations and die-sel stations as also the bulk Hydro Supplies purchased from the Mysore Government were all interconnected and operated in co-ordination by interchange of power between the various sources.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P008_C01",
+      "text": "7. Since the decision of these appeals turns mainly upon the scope and ambit of Section 3 of the Act, it is useful to extract the terms thereof, omitting the unnecessary portions:\n\"The Provincial Government so far as it appears to them to be necessary or expedient for maintaining, increasing or securing supplies of essential articles or Eor arranging for their equitable distribution and availability at fair prices or for directing, maintaining or increasing the production of any essential article, may, by notified order, provide for regulating or prohibiting the production, supply, distribution and transport of essential articles and trade and commerce therein.\n(2) Without prejudice to the generality of the powers conferred by Sub-section (1) the order may therein provide\n(a) *****\n(b) for controlling the prices at which any essential article may be bought or sold etc.,\n(c) *****\n(d) *****\n(e) *****\n(f) for regulating or prohibiting any class of commercial or financial transactions relating to any essential article, which in the opinion of the Provincial Government are, or, if unregulated, are likely to be, detrimental to the public interest.\"",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P009_C01",
+      "text": "8. It is convenient here to consider the occasion for its legislation and history. During the course of the Second World War, the Defence of India Act was passed in 1939 for the safety of India. That Act among other things, enabled the Government to make rules to regulate supplies of articles which could be used to maintain supplies essential to the life of the community and to make orders regulating the distribution of articles requiring them to be sold in the manner indicated therein.\nThese provisions had to be inserted for the reason that wars were likely to produce scarcity of goods essential to the life of the people which in its turn would give rise to uneven distribution thereof resulting in public disorder.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P010_C01",
+      "text": "9. Pursuant to the powers conferred by this Act, Rule 81 (2) was framed conferring authority on the Governments to issue orders to prohibit or regulate the production and distribution of articles essential to the life of the community and to conirol the prices, etc. The termination of war had not eased the situation in regard to the essential commodities because the short supply of them continued and there was acute shortage of these articles.\nSo the Government in order to maintain the supply of these articles at reasonable prices and to ensure equitable distribution had to undertake legislation for that end,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P011_C01",
+      "text": "10. After the expiry of the\nDefence of India Act\nin the year 1946, the Central Legislature passed the Essential Supplies (Temporary Powers) Act. Parallel to this is the Statute enacted by the Madras Legislature already referred to in 1946.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P012_C01",
+      "text": "11. That Act\nwhich was subsequently replaced by Act 29 of 1949 defined an essential article as meaning any of the articles which were specified in the schedule to that Act or any article which may be declared by the Provincial Government by a notified order to be an essential article. The schedule annexed contained twelve articles including charcoal and electric energy.\nBy Act\nI of 1955, which received the assent of the President on the 21st of January, 1955 the Madras Essential Articles Control and Requisitioning (Temporary Powers) Andhra Amendment Act,1955 was passed extending the life of the earlier Act up to 25-1-1956.\nThis Act\ndeleted ten of the articles, enumerated in the schedule and retained only charcoal and electric energy. In the year 1956 the Andhra Legislature passed Act V of 1956 afresh repealing the earlier Acts and continuing in the schedule charcoal and electrical energy. This was to be in force up to 25-1-1957. But, its life was extended till 25-1-1959 by Act XXXI of 1956.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P013_C01",
+      "text": "12. A comparison of the relevant provisions of these Acts with Rule 81 of the Defence of India Bules, discloses that the intendment of these Acts, is the same as the rules mentioned above. It is by\nSection 3\nthat the object of the Act is designed to be accomplished. The primary question, therefore, is whether\nSection 3\ncovers the notified orders in question or whether it is inapplicable to the Government when it is a buyer or a seller as also to contracts for supply of goods.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P014_C01",
+      "text": "13. It is urged on behalf of the respondents that\nSection 3\nof the Act should not be so construed as to interfere with the rights accruing under a contract -- especially contracts to which Government Was a party -- and that its operation should be confined to ordinary sales and purchases which are not governed by contracts. We do not think we can accede to this view. This argument overlooks the form of Government which governs us and also the functions of modern state. At one time it was thought that the State was mainly concerned with the maintenance of law and order and the protection of life, liberty and property of the subject. Preservation of freedom of contract was regarded as a form of social control. That concept of State functions no longer survives. We are now having a welfare state which has to promote the prosperity and well-being of the people. Therefore, it is the duly of the State to regulate private rights in the common interest and the private interests must yield to public good subject, of course, to Constitutional restraints.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P014_C02",
+      "text": "The Government have to see that private citizens do not use their property or exercise their freedom to the detri merit of their fellow citizens. As such, neither their property nor contractual rights are absolute am they are subject to legislative interference. Various statutes are being enacted to preven the free flow of economic laws and the working of free enterprise in the interests of the communit at large. The regulation of trade and commerce and the prices of various commodities in the inte-res's of the people at large is an incident or an attribute of sovereignty. In this context, the observations of Mukherjea, J., in\nSaghir Ahmad v. State of U. P.\n, are opposite.\n\"In the last century when the laissez faire doctrine held the field, the primary function of a State was considered to be maintenance of law and order and all other activities were left to private competitors. That conception is now changed and in place of the 'police state' of old, we are now having a 'welfare State'\". Equally pertinent is a passage from the judgment in Nebbia v. New York, (1933) 78 Law Ed 940 at p. 949.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P014_C03",
+      "text": "Justice Barbour said for the Court :\n\"..... it is not only the right, but the bounden and solemn duty of a state, to advance the safety, happiness, and prosperity of its people, and to provide for its general welfare, by any and every act of legislation, which it may deem to be conducive to these ends, where the power over the particular subject, or the manner of its exercise is not surrendered or restrained, in the manner just stated.\"\nThe functions that are attributed to the State in that judgment are precisely these that are expected to be discharged by the States under our Con-stitution. The directive principles in Chapter IV of our Constitution enjoin upon the various States to initiate policies calculated 10 raise standard of living and to create a favourable climate for the pursuit of happiness and for the development of human personality. The states are under an obligation to pass laws conceived in the interests of the people as a whole, although they might curtail the freedom of contract or the propery rights, with this reservation that the laws should not be unreasonable, arbitrary or capricious or be in conflict with the fundamental rights guaranteed to its citizen.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P014_C04",
+      "text": "Therefore, it is indisputable, that a State could supersede con-traotual obligations by a legislative measure.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P015_C01",
+      "text": "14. That apar, there is a specific provision in the Act by reason of which orders under that Act would prevail over any contract. That provision is contained in\nSection 10\nof the Act.\n\"Any order made under\nSection 3\nSection 4\nSection 7\nor contained under\nSection 9\nshall have effect notwithstanding anything inconsistent therewith contained in any enactment other than this Act or in any instrument having effect by virtue of any enactment other than this Act.\"\nTherefore, the argument that\nSection 3\ncannot govern contracts is inadmissible and has to be rejected.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P016_C01",
+      "text": "15. Another point raised for the respondents is that since the contracts are piade by the Government by virtue of the powers derived under\nArticle 298\nof the Constitution they could not be controlled by any legislation. This argument founded on this Article is devoid of substance since that Article makes it explicit that these powers are subject to the laws to be enacted by the respective legislatures.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 298"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P017_C01",
+      "text": "16. As regards the later part of the contention, it has to be remembered that the Government enhanced the rates specified in the contracts not in its executive capacity but in the exercise of powers conferred on it by a statute. It is true the Government could not alter the terms of the contract unilaterally in its capacity as one of the con. tracting parties, and in fact it does not purport to do so.\nIt is only by reason of the powers conferred by the legislation that it has regulated the prices. This might have the result of varying the terms of the agreement. That, however, does not make any difference for the exercise of statutory powers. The existence of contracts made by Government does not curtail the authority of the legislature to legislate on subjects which are within its sphere. Entry 34 of the Concurrent Lis: relates to price control. By virtue of this item it is competent for either the Sfates or the Parliament to enact laws in that behalf.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P018_C01",
+      "text": "17. We are reinforced in this view of ours by\nState of Bihar v. Kameshwar Singh\n, . Dealing with the argument that 1he hereditary rights of the talukdars guaranteed to them under Oudh Estates Act I of 1956 could not be affected by any legislation made by successors-in-interest of the British Government and that the Government could not derogate from its grant, their Lordships remarked that the lands held by them are on no higher footing than the properties of the owners in Oudh. In support of this conclusion they relied on Jagannath Baksh Singh v. United Provinces, 1946 FCR 111 PC at p, 119 : (AIR 1946 PC 127 at p. 130), wherein it was observed :\n\"It is, however, desirable to examine the particular grounds on which it is sought to induce the Court to arrive at this paradoxical conclusion. Some of these are said to be based on the general principle of law that the Crown cannot derogate from its own grant, others are said to depend on particular provisions of the\nGovernment of India Act\n.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P018_C02",
+      "text": "It has not been possible for the appellant to adduce any authority for the principle involved, which their Lordships apprehend to be that Parh'ament, whether Imperial, Federal or Provincial, in the absence of express prohibition, is debarred from legislating so as to vary the effect of a Crown grant.\" It was added by Mahajan, J,, who spoke for the Court that the Crown could not deprive a legislature of its legislative authority by exercising its prerogative in making a grant of land within the territory over which such legislative authority exists.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P019_C01",
+      "text": "18. It is thus plain that it is competent for a legislature to legislate on any topic unless it is prohibited from so doing by any of the provisions of the Constitution. In our opinion the doctrine indicated above is applicable to the instant case. A judgment of the Assam High Court in Barada Kant v. State of Assam, AIR 1956 Assam 23, may also be referred to in this context with, advantage. One of the questions debated there was whether the Government was liable to make good the loss which was sustained by a firm which had the right of distribution of salt and which was required to keep on hand a specified quantity of salt.\nWhen this commodity was de-controlled the prices went down with the result the firm suffered some loss. It was ruled by the Assam High Court that granting that the arrangement between the State and the firm for maintaining certain stocks could be enforceable as a contract, the obligation was only contractual and that could not stand in the way of the state exercising statutory powers of removing controls and that the state while de-con-rolling acted in a different capacity.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P020_C01",
+      "text": "19. We may also advert to a passage in \"Gov-ernmental Liability\" by H. S. Street at page 98.--\n\"It has been suggested, fourthly, that the rule is too wide, but that the case may be regarded as an example of a general rule of public policy that a public authority cannot be prevented by an existing contract from performing functions essential to its existence and for which it was created.\nIf the Courts were to adopt this fourth and limited interpretation of the case many of the objections voiced against the case would lose their force.\nIt would be comparable, also, with the principle laid down in the United States that the United States in the exercise of its sovereign functions cannot be restrained by contracts made by it as a contractor, and that it cannot by contract fetter its right to protect public health or morals.\" The rule referred to above is the one laid down by Justice Rowlatt in Rederiaktiebolaget Amphitrite v. Rex, 1921-3 KB 500, where the learned Judge held that the Crown was not bound by an undertaking given by the Crown to the ship-owner that a ship carrying cargo would not be detained if sent there.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P021_C01",
+      "text": "20. Another point urged by the respondents was that\nSection 3\ncould be attracted only to third par-ties and would not come into play when the Government was the supplier. We are unable to assent to. this proposition. The language is couched in general terms and is not conditioned by any limitations. We do not think there is scope for reading a restriction into that section. That section is of great pervasiveness and the price control contemplated thereby is applicable to commodities to be dealt with by the Government. The words of that section are comprehensive enough to take in articles to be bought or sold by Government and no restriction is to be imposed on the amplitude or width of the powers flowing therefrom.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P022_C01",
+      "text": "21. In this context, we may cite a judgment of the Supreme Court in\nSantosh Kumar v. State\n, . There, one of the arguments advanced was that Section 3 of the Essential Supplies (Temporary Powers) Act of 1946 (Central) enabled the Government to issue orders only in the nature of rule or regulation of general application and could not make ad hoc orders. This was repelled and it was laid down that the term \"notified order\" in the sec'ion was wide enough to cover special or general orders relating to matters specified in Schedule III. This principle is only useful to support the conclusion that a restricted cons'ruction should not be placed upon\nSection 3\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P023_C01",
+      "text": "22. There is another consideration which is quite material in the context of this inquiry. That is the retention of electrical energy in the schedule annexed to the Essential Supplies (Temporary Powers) Act, even after 1955. The importance of that is this. The Madras Legislature enacted the Madras Electricity Supply Undertakings (Acquisition) Act 43 of 1949. The Supreme Court s'ruck down the statute as unconstitutional for the reason that there was no entry in any of the three legislative lis's relating to compulsory acquisition of any commercial or industrial undertaking, and it was left to the discretion of the Governor-General under\nSection 104\nof the Government of India Act to empower either the Federal Legislature or the Provincial Legislature to enact laws but the Governor-General had not so empowered the Madras Legislature to enact such a law. Subsequently, the Andhra Legislature Dass-ed Act XV of 1954 for the same purpose by virtue of the powers conferred on it by the relevant legislative list in the seventh schedule to the Constitu-tion. There was also a validating provision in this enactment thus giving a re'rospective operation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P023_C02",
+      "text": "This Act\nvested authority in the proper Government to acquire all the electrical undertakings in the State. We are told that pursuant to those powers the Government had taken over all the electrical undertakings with the result that it is the sole purveyor of electricity to consumers. Nevertheless, the Essential Articles Control Act of 1955 retained \"electrical energy\" in the schedule and this was repeated in the 1956 Act which is operative even today. It means that notwithstanding the fact that the Government is the sole agency for generating and distributing electrical energy, that article is shown as an essential article governed by the Act. This implies that\nSection 3\nis applicable to Government when it distributes the electrical energy produced or generated by it. Consequently, it is empowered to control the price of electrical energy despite the fact that it is the only purveyor of the energy to the consumers.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P024_C01",
+      "text": "23. An argument was pressed upon us that no significance need attach to the continuance of this article in the schedule since this might have been due to oversight. We do not think we can give any weight to it. We cannot attribute oversight io the legislature; nor can we ignore the fact that this is not a mere case of repeating the schedule which existed prior to 1955. Here the Legislature has removed ten of the items and retained only two. That being the case, we should take into account the legislative.) purpose and there can be little doubt that the Legislature intended that electrical energy should come within the ambit of\nSection 3\ndespite the fact that it was the Government that was the sole producer and distributor thereof. It is the cardinal rule of interpretation of stautes that effect must be given to every part of a statute. In ihese premises, it is difficult to accept the suggestion that the price regulation of electrical energy supplied by the Government falls outside the Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P024_C02",
+      "text": "Even granting that there are licensees generating electrical energy, that factor does not alter the situation because the price control would apply not only to the other licensees but to the Government doing the same thing. It will be difficult to postulate that while regulation of prices of a particular commodity would apply to third parties, it would he inapplicable to commodities sold or purchased by the Government.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P025_C01",
+      "text": "24. The respondents seek to exclude the applicability of\nSection 3\nto the offending orders on some other grounds also viz., that Clause (b) of Sub-section (2) of\nSection 3\ndoes not empower the Government to in-crease the prices, that it would enable the Government to reduce the prices, that the object of enhancing the tariff in this case is only to recoup the losses and as such it is not authorised by\nSection 3(1)\nof the Act, that the price fixation could only be done for any of the purposes enumerated in that section, and lastly the increase in question is arbitrary and capricious. In our opinion, these grounds are equally un-enable. The expression \"control of prices\" is used in a general sense and is not confined to reduction of prices. That clause confers power on the authorities concerned to fix minimum as well as maximum prices. The regulation of prices does not consist in merely fixing the maximum prices. The designation of minimum price is as much within the competence of the Government under this clause, in order to put an end to unhealthy trade practices or competition as of maximum prices. There is no warrant for importing such a limitation into that clause.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P025_C02",
+      "text": "See Hegeman Farms Corporation v. Charles H. Baldwin, (1934) 79 US 259. Hence, that part of the argument is repelled.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P026_C01",
+      "text": "25. On the question whether the upgrading of tariffs could be brought within any of the objects, indicated in\nSection 3 (1)\n, we have little doubt that this could come under \"maintaining, increasing or securing supplies\". Surely, for maintaining, increasing, or securing supplies of an article, it is essential that a fair price should be assured to the producer or seller as the case may be. If an undertaking is unremunerative, the producer would have no inducement to continue the production or the manufacture of articles. This applies to the Government as a purchaser or seller as much as to any other purchaser or seller. Merely because it is the Government that is running the undertaking it could not be required to continue to do it despite its suffering losses and resulting in the depletion of general revenue. It is true that the Government has to maintain the services which contribute to the comforts and convenience of the people, but that does not mean, that reasonable rates could not be charged or collected from the consumers. The revision of tariffs was for the immediate purpose of meeting the deficits and for maintaining effective supply and distribution of electrical energy.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P026_C02",
+      "text": "We are not also impressed with the suggestion that the G. Os. have laid an unbearable burden on the consumers, i.e., the respondents. The tabular statements filed before us by the appellant establish that the revenues from this head are not adequate to meet the working expenses incurred in this behalf. It is pointed out in both the G. Os. and also in the counter-affidavit that the tariffs adopted were those which prevailed some 15 years before. It is not the respondents' case that there was any revision of rates at the time when the agreements were entered into,\n\nIt is also stated in the G. Os. that the prices of all commodities had gone up in the post-war period by 3 to 4 times, whereas the electricity tariffs were not increased except to a small extent by way of sur-charges, with the consequence that there were large deficits in revenues on account of the working of the Andhra Power System. This is not controverted. In such a situation, it is difficult to say that the increase is arbitrary or tyrannical; and in no case has it exceeded double the contract rates.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P026_C03",
+      "text": "It is thus clear that there is nexus between increase in running expenses and the enhanced rates and the latter bears a reasonable proportion to the former. In several cases, the increase is only a small percentage. We are also told and it is also borne out by the orders of Government that since the filing of the writ petitions the Government revised again the rates to the advantage of the consumers. For all these reasons, we are disposed to think that the increase in the tariffs was justified and it could not be regarded as_an unconscionable one.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P027_C01",
+      "text": "26. Alternatively, the constitutional validity of the Act is assailed as being violative of the provi-sions of\nArticle 14\nof the Constitution on two grounds: (1) that it vests unregulated and unbridled discretion in the Government : and (2) that it clothes the Government with power to exercise discrimination in its own favour. So far as the first point is con-earned, it is sufficient to remark that the policy of I the law is laid down by the Legislature in\nSection 3\n. The principles that should guide the Government to invoke the provisions of the Act in different situations are sufficiently indicated therein, namely, maintenance or increase in supply of essential commodities, of securing equitable distribution and availability at fair prices, etc. There is therefore no force in the submission that the legislature has not laid down any standard to guide the Government in executing the law. In Harishankar Bagla v. State of Madhya Pra-desh, , Section 3 of the Essential Supplies (Temporary Powers) Act of 1946 which is in pari inateria with\nSection 3\nof the Act was attacked on the ground that it amounted to delegation of legislative powers outside the permissible limits.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P027_C02",
+      "text": "In negativing this argument, the Supreme Court laid down that the principles to govern the exercise of powers under that section were contained therein and that\n \"the preamble and body of the section sufficiently formulated the legislative policy, and the ambit and character of the Act is such that the details of that policy can only be worked out by delegating them to a subordinative authority within the framework of that policy\". Consequently, this contention lacks force.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P028_C01",
+      "text": "27. Nor could it he said that merely because there is a possibility of the discrimination being made in favour of the State as against the private individual it contravenes\nArticle 14.\nIt is incontrovertible that the State as a person does not belong to the same category as an ordinary citizen. As pointed out in several decisions of the Supreme Court, mere differentiation does not make a law offensive to the rule of equal protection of laws embodied in\nArticle 14.\nThat apart, when the State is engaged in any activity within the scope of the ordinary functions of Government, it is not hit at by\nArticle 14\nas in finch an eventuality it could not be relegated to the position of a person within the meaning of\nArticle 14\nof the Constitution See and Kesheo Prasad v. State of M. P., (S) AIR 1955 Nag 177. We may also add that when discretion is vested in Government no question of\nArticle 14\narises.\nSee\nMatajog Dobey v. H. C. Bhari\n, . Hence the argument founded on\nArticle 14\nhas to be overruled.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P029_C01",
+      "text": "28. The Act\nis also impeached on the theory that it constitutes an infraction of\nArticle 19 (f)\nand (g). The stress of the argument is that the right to enter into a contract is property and the Act deprives a citizen of such a right. But, this is to ignore the fact that\nSection 3\ndoes not in any way interfere with the right to enter into contracts. The exercise of any of the powers under that section may lead to a variation of the terms of contract. But, that is not the same as destroying the right to make contracts. Freedom of contract is one thing. Right under a contract or right to performance of a contract is another. It is only the former that is the fundamental right and not the latter. The Constitution is not concerned with rights arising under a contract which are governed by Municipal law, namely, the\nContract Act\n. Right under a contract is not protected under the Constitution since there is nothing like sanctity attached to a contract. The right conferred On the citizen is freedom to acquire, hold or dispose of property. Therefore. the alteration of rights accruing under a contract is not an invasion of fundamental right, but would only amount to a breach of contract.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P029_C02",
+      "text": "The distinction between these two is pointed out by the Supreme Court in\nPannalal Binjraj v. Union of India\n.\nand\nKishan Singh v. Rajasthan State\n, .",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P030_C01",
+      "text": "29. The point that it interferes with trade of business and consequently is abnoxious to Clause (g) of\nSection 19\nalso does not merit much consideration. We are unable to see how the controlling of prices or regulation of trade and commerce would detract; from the right to practise any trade or business. The only effect of doing either of the two things might be to reduce the quantity of profits which a businessman might make.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P031_C01",
+      "text": "30. The persons affected by any of the orders promulgated under this section could not complain if they have to pay higher prices if it was essential in the interests of maintenance or increase of supplies etc. Even if it is deemed to be a restriction, it has to be regarded as a reasonable one since such a thing is necessary for any of the purposes set out in\nSection 3(1)\n. The very ruling relied on by the respondents in\nBijay Cotton Mills Ltd. v. State of Ajmer\n, furnishes an answer to the question raised by them.\nIt was decided there that the material provisions of the\nMinimum Wages Act\nwere not illegal and ultra vires, as the restrictions imposed by them were reasonable and were imposed in the interests of the general public falling under Clause (6) of\nArticle 19.\nConsequently, effect cannot be given to the contention based on\nArticle 19\nof the Constitution also. We may here mention that the constitutionality of this Act was not brought into question before our learned brother Justice Satyanarayana Raju. Before him, the case proceeded on the footing that it was intra vires the Constitution,",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 19"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P032_C01",
+      "text": "31. We will now take up the problem presented by some of the respondents, namely, that the only course open to the Government to enhance the tariff was to resort to the provisions of the\nIndian Electricity Act\n. It Is maintained by Mr. Narasingarao for some of the respondents that that enactment has devised machinery to alter the price charged for the energy to be supplied to a consumer. Reliance is placed upon\nSection 35\nof the Act which empowers the Central Government or Provincial Government for the constitution of an advisory board for any of the objects catalogued in that section. The schedule annexed to the Act contains a provision for alteration of the maximum price to be charged by the licensee. Paragraphs XI and XI-A of the schedule are in the following words:--\n\"XI.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P032_C02",
+      "text": "Save as provided by Clause IX, Sub-clause (3) the prices charged by the licensee for energy supplied by him shall not exceed the maxima fixed by his license, or in the case of a method of charge approved by the State Government, such maxima as the State Government shall fix on approving the method:\nProvided, that, if, at any time after the expiration of seven years from the commencement of the license, the State Government considers that the maxima so fixed or approved as aforesaid should be altered, it shall refer the matter to the Advisory Board, and, if the Board recommends any alteration, may make an order in accordance with such recommendation, which shall have effect from such date as may be mentioned therein:\nProvided, also, that, where an order in pursuance of the foregoing proviso has been made, no further order altering the maxima fixed thereby shall be made until the expiration of another period of five years. XI-A.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P032_C03",
+      "text": "A licensee may charge a consumer a minimum charge for energy of such amount and determined, in such manner as may be specified by his license, and such minimum charge shall be payable notwithstanding that no energy has been used by the consumer during the period for which such minimum charge is made.\"\nFor one thing, we do not think that these provisions are attracted to a case where the Government is the purveyor of electrical energy since this provision applies to a licensee and the Government cannot be equated with licensee envisaged in that paragraph. Quite apart from that no maximum or minimum price to be charged for the energy has been fixed in this case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P033_C01",
+      "text": "32. Shri Narasinga Rao lays emphasis on the last clause of the agreement that the agreement should be read and construed as subject, in all respects, to the provisions of the\nIndian Electricity Act\n1910 and any modification or re-enactment thereof for the time being in force and the rules for the time being in force thereunder so far as the same respectively may be applicable. This clause does not come to the rescue of the petitioners. All that it conveys is that such of the provisions of the Act ex are applicable to the parties would be incorporated into the agreement.\nThat does not communicate the idea that every provision of the\nIndian Electricity Act\nirrespective of its applicability should be read into the agreement. Moreover, by force of\nSection 10\nof the Act, an order issued under\nSection 8\nwould prevail over the provisions of the\nIndian Electricity Act\n. Therefore, we cannot accept the contention that the Government was bound to act under the terms of the\nIndian Electricity Act\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P034_C01",
+      "text": "33. For all these reasons, we hold that the impugned orders are saved by\nSection 3\nof the Act and it was well within the powers of the Government to issue them. It follows that the decision under appeal cannot be upheld and has to be reversed.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_1958_1958_ALL_ANDHRAHC_31_P035_C01",
+      "text": "34. In the result, all the appeals are allowed and the writ petitions dismissed. The appellant will get costs in these appeals, advocate's fee being fixed at Rs. 50 in each case. There will be no order as to costs in the writ petitions. If the costs ordered in the writ petitions have already been collected by the respondents, the appellant is entitled to recover them.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1958_1958_ALL_ANDHRAHC_31",
+    "court": "Supreme Court of India",
+    "year": "1958",
+    "facts_summary": "1. All these writ appeals raise common questions of law and so they could be heard and disposed of together in one judgment. 2. These appeals arise out of a judgment of our learned brother, Satyanarayana Raju J., quashing the Government Orders issued in exercise of the powers under Section 3 of the Madras Essential Articles Control and Requisitioning (Temporary Powers) Act, Madras Act 29 of 1949, as amended by the Madras Essential Articles Control and Requisitioning (Temporary Powers) Andhra Amendment Act, 1955 (hereinafter called the Act). 3. The Government of Madras and its successor the Government of Andhra State were having a single power grid system for ihe whole State comprising Tungabhadra and Machkund Hydro Electric Systems and the Thermal Systems of Nellore. The entire energy was integrated into one power system. The Government entered into agreements with the several consumers in the State including the respondents for the supply of energy in bulk at specified rates called tariffs for the years 1951 and 1952. These agreements were to be in operation for ten years. There was no provision in the agreements authorising the Government to increase the rates during the currency thereof. The charges were fixed at graded regressive rates according to increasing slabs of consumption units, and the overall unit rates including the demand charges was not to exceed 66 anna without prejudice to the monthly minimum payment and the guaranteed consumption. The Government issued two",
+    "legal_issues": "5. Aggrieved by this action of the Government, the respondents moved this Court under\nArticle 226\nof the Constitution to set aside the two G. Os. pleading inter alia that the Government could not put an end to the contractual rights of the petitioners therein to have the energy supplied at the stipulated prices by a unilateral act, that the Madras Temporary Powers Act 29 of 1949 had not conferred any powers on the Government to alter the terms of a contract, that there was no justification for revision of rates since the conditions relied on for justifying the revision were also present at the time of agreements and that in any event so far as Tungabhadra Hydro Electric Scheme was concerned the Government of Mysore which was supplying the Government of Andhra with energy had not increased the rate. Some of these contentions prevailed with our learned brother with the result that the G. Os. in question were quashed. 6. It is argued by the learned Advocate-General in these appeals filed by the Sta'e of Andhra Pradesh that the impugned orders are governed by Section 3 of the Act, that the contrary view is erroneous and that the tariffs existing at the time of the contracts were those that were formulated several years ago and the fact that the Mysore Government did no! enhance the rate was not quite relevant to this enquiry, for the reason that all the electrical energy was pooled through the grid system, i. e., the steam thermal stations, Hydro stations and die-sel stations as ",
+    "ratio_summary": "4. The reasons stated for enhancing the rates were that the existing electricity tariffs were formulated 15 years before, that the price level of all materials and labour had gone up by 3 to 4 times in the post-war period, but the electric tariffs had not been increased except for small increase by way of surcharges with the result that the revenue realised from the Andhra Electricity scheme were inadequate to cover the working expenses.\nThis step seems to have been necessitated by the Accountant-General's query whether in view of the continued deficits in the working of the Andhra Power System the Government had considered the desirability of increasing the rates of sale of power. It was recited in the G. Os. that the question of revision of tariffs in Andhra area was considered in the composite State of Madras and deferred for consideration by the new Andhra State and subsequent to the formation of the Andhra State the Chief Engineer submitted proposals for revision of tariffs in all the areas covered by the above mentioned schemes. 25. On the question whether the upgrading of tariffs could be brought within any of the objects, indicated in\nSection 3 (1)\n, we have little doubt that this could come under \"maintaining, increasing or securing supplies\". Surely, for maintaining, increasing, or securing supplies of an article, it is essential that a fair price should be assured to the producer or seller as the case may be. If an undertaking is unremunerative, the producer would ",
+    "final_order": "34. In the result, all the appeals are allowed and the writ petitions dismissed. The appellant will get costs in these appeals, advocate's fee being fixed at Rs. 50 in each case. There will be no order as to costs in the writ petitions. If the costs ordered in the writ petitions have already been collected by the respondents, the appellant is entitled to recover them.",
+    "outcome_summary": "34. In the result, all the appeals are allowed and the writ petitions dismissed. The appellant will get costs in these appeals, advocate's fee being fixed at Rs. 50 in each case. There will be no order as to costs in the writ petitions. If the costs ordered in the writ petitions have already been collected by the respondents, the appellant is entitled to recover them.",
+    "sections_cited": [
+      "Constitution 226",
+      "Constitution 298",
+      "Constitution 14",
+      "Constitution 19"
+    ],
+    "cases_cited": []
+  }
+}

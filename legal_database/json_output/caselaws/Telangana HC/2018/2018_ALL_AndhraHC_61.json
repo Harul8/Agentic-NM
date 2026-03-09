@@ -1,0 +1,455 @@
+{
+  "case_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "2018",
+  "judgment_template": null,
+  "case_number": "WP 38480 of 2017",
+  "case_number_regex": "WP_SHORT",
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [
+    "AIR 1952 SC 12",
+    "AIR 1983 SC 1272",
+    "AIR 1960 SC 1156"
+  ],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 40,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\2018\\2018_ALL_AndhraHC_61.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P001_C01",
+      "text": "State Of A.P. Rep. By Its Prl. Secretary, ... vs Datla Krishna Varma & Ors on 3 April, 2018\nEquivalent citations: AIRONLINE 2018 HYD 44\nBench:\nRamesh Ranganathan\n,\nKongara Vijaya Lakshmi\nHONBLE THE ACTING CHIEF JUSTICE RAMESH RANGANATHAN AND THE HONBLE SMT JUSTICE KONGARA VIJAYA LAKSHMI",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P002_C01",
+      "text": "State of A.P. rep. by its Prl. Secretary, Revenue, A.P.Secretariat, Velagapudi, Amaravathi & Ors..Appellants-Respondents 1,",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P003_C01",
+      "text": "Counsel for Appellants-Respondents: Learned Government Pleader for Registration and Stamps.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P004_C01",
+      "text": "Counsel for respondents-writ petitioners: Sri Anand Kumar Kapoor, Learned Counsel",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P005_C01",
+      "text": "1) (1981) 4 SCC 8 \n2) (2001) 2 SCC 588 \n3) 2002 (5) ALD 1 (LB)\n4) (1973) 2 SCC 705 \n5) (2013) 9 SCC 221 : (2013) 4 SCC (Civ) 285\n6) 1952 SCR 28 : AIR 1952 SC 12 \n7) AIR 1983 SC 1272 \n8) (Judgment in Writ Appeal No.797 of 2016 dated 17.09.2016) \n9) (1984) 2 SCC 436 \n10) (1985) 1 SCC 260 \n11) (1985) 3 SCC 217 \n12) (1995) 3 SCC 257 \n13) 1994 Supp (3) SCC 220 \n14) (2009) 14 SCC 48 \n15) (2009) 5 SCC 452 \n16) (2004)11 SCC 168 \n17) (1994) 5 SCC 380 \n18) (2006) 10 SCC 261 \n19) (2011) 14 SCC 227 : (2012) 4 SCC (Civ) 935 : (2012) 2 SCC (L&S) 890 \n20) 2002 (1) ALD 280 \n21) ILR 35 Mad. 1 \n22) 2016(1) ALT 550 (FB) \n23) 1983 (67) STC 424 \n24) 2001(1) ALD 443(DB) \n25) 2012 (6) ALD 458 (DB) \n26) (1972) 2 SCC 200 \n27) 1942 AC 130 \n28) AIR 1960 SC 1156 \n29) 1990 Supp. SCC 727",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P006_C01",
+      "text": "THE HONBLE THE ACTING CHIEF JUSTICE RAMESH RANGANATHAN \nAND \nTHE HONBLE SMT JUSTICE KONGARA VIJAYA LAKSHMI",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P007_C01",
+      "text": "WRIT APPEAL Nos.36 AND 215 of 2018 \nCOMMON JUDGMENT:\n{Per the Honble the Acting Chief Justice Ramesh Ranganathan}",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P008_C01",
+      "text": "These two appeals are preferred, under Clause 15 of the\nLetters Patent, by respondents 1, 3 and 4 in W.P. No.38480 of\n2017 aggrieved by the interim orders passed by the Learned Single\nJudge in WPMP. No.47767 of 2017 in W.P. No.38480 of 2017 dated \n15.11.2017, and in WPMP No.47768 of 2017 in W.P. No.38480 of \n2017 dated 15.11.2017. Respondents 1 and 2 herein had filed the said Writ Petition\nseeking a mandamus to declare the proceedings of the District\nCollector, Visakhapatnam dated 23.08.2017, including Sy. No.187/4 for an extent of Ac.4.35 cts of Desapatrunipalem village\nin the list of prohibited properties under\nSection 22-A(i)(a)\nof the\nRegistration Act, as wholly arbitrary and opposed to the provisions\nof the\nRegistration Act\nand the rules made thereunder. A\nconsequential direction was sought to the Sub-Registrar,\nLankelapalem, Visakhapatnam to register the document presented \nby the petitioner for registration. By way of interim relief,\nrespondents 1 and 2 herein sought an order (1) in W.P.M.P.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P008_C02",
+      "text": "No.47768 of 2017 to suspend the endorsement dated 23.08.2017 \nof the District Collector, Visakhapatnam; and (2) in\nW.P.M.P.No.47767 of 2017 to direct the Sub-Registrar,\nLankelapalem to register the documents, presented by the\npetitioner for registration, in respect of the property purchased\nunder the registered sale deed No.8629 of 2005. In his order in WPMP No.47768 of 2017 in W.P. No.38480 of\n2017, the Learned Single Judge observed that, prima facie, the\norder of the District Collector dated 23.08.2017, refusing to delete\nthe subject lands from the notification issued under\nSection 22-\nA(i)(a) of the\nRegistration Act\n, on the ground that they are assigned\nlands, could not be sustained because the said order did not\nmention when the alleged assignment was made, and whether \nthere was a clause prohibiting alienation in the assignment patta\ngranted to the assignees; the condition, prohibiting alienation, was\nintroduced for the first time by G.O.Ms.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P008_C03",
+      "text": "No.1142 dated\n18.06.1954; unless the assignment is shown to have taken place\nafter the said date, on which point the order of the District\nCollector was deliberately silent, the District Collector could not\ntreat the subject land as Government land, and include it in the\nnotification issued under\nSection 22-A(i)(a)\nof the Act; and the\nsecond respondent did not also advert to the proceedings dated\n13.07.2004 and 25.06.2004, issued by the Mandal Revenue \nOfficer, Paravada stating that the said lands are private patta\nlands, and not assigned or government lands, though the said\nproceedings were relied upon by the petitioners in their application\nmade to the District Collector. The Learned Single Judge granted\ninterim suspension of the endorsement of the District Collector\ndated 23.08.2017 pending disposal of the Writ Petition. By his order, in WPMP No.47767 of 2017 in W.P.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P008_C04",
+      "text": "No.38480 \nof 2017 dated 15.11.2017, the Learned Single Judge directed the\nSub-Registrar, Lankelapalem, Visakhapatnam to receive the \ndocuments presented by the respondents-writ petitioners for\nregistration, and consider the same strictly in accordance with the\nprovisions of the\nIndian Stamp Act, 1899\nand the\nRegistration Act,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C01",
+      "text": ", without reference to the proceedings dated 23.08.2017 of the\nDistrict Collector, Visakhapantam, in view of the order dated\n12.05.2016, within two months from the date of presentation of\nthe document by the petitioners. The Learned Single Judge\nobserved that any such registration would be subject to final\norders in the Writ Petition, and in the case pending before the\nSupreme Court. While these two appeals have been preferred \nagainst the interlocutory orders passed in WPMP No.47768 of 2017 \nand WPMP No.47767 of 2017 respectively, the main Writ Petition \ni.e., W.P. No.38480 of 2017 is still pending adjudication before the\nLearned Single Judge.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C02",
+      "text": "Learned Government Pleader for Revenue (Assignment)\nwould submit that the order of the District Collector,\nVisakhapatnam dated 23.08.2017 refers to the subject lands\nhaving been included in the list of prohibited properties vide his\nproceedings dated 08.07.2016; the Learned Single Judge has in\neffect granted, by way of interim relief, a relief which could only\nhave been granted as a consequence of the Writ Petition being\nfinally allowed; in view of\nSection 22-A\nof the Registration Act all\nthose properties, included in the list of prohibited properties,\ncannot be subjected to registration; it is only if the proceedings of\nthe District Collector dated 08.07.2016 is set aside, could the\nLearned Single Judge have granted a consequential direction to the\nRegistrar to consider grant of registration of the subject property;\nsuch an order could not have been passed at the stage of\nadmission of the Writ Petition; while W.P.No.38480 of 2017 was\nfiled on 13.11.2017, the interim orders under appeal came to be\npassed within two days thereafter on 15.11.2017; an ad-interim\norder at the stage of admission of the Writ Petition, which has the\neffect of allowing the Writ Petition itself, ought not",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C03",
+      "text": "to have been\npassed by the Learned Single Judge; and the orders under appeal\nnecessitate being set aside.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C04",
+      "text": "On the other hand Sri Anand Kumar Kapoor, Learned\nCounsel for the respondent-writ petitioner, would submit that the\nLearned Single Judge has merely followed the interim order passed\nby the Supreme Court in granting the relief sought for in the Writ\nPetition; an appeal under Clause 15 of the Letters Patent is not\nmaintainable against an ad-interim order; the rights, over the\nproperty in dispute, is not affected by the order under appeal;\nSection 52\nof the Transfer of Property Act enables the Court to\npermit lis pendens sale; such lis pendens registration does not\naffect the right of parties; nowhere has the appellant stated, even\nsubsequently, that the subject document is not genuine; the order\nunder appeal is merely a facilitative order; the Learned Single\nJudge has imposed a condition that the registration is subject to\nthe result of the Special Leave Petition and the Writ Petition; and\nan interim order, which is passed taking a cue from the interim\norder of the Supreme Court, is in furtherance of the order of the\nSupreme Court, and does not necessitate interference.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C05",
+      "text": "Besides\nplacing reliance on\nSection 52\nof the Transfer of Property Act, Sri\nAnand Kumar Kapoor, Learned Counsel, would also rely on\nShah \nBabulal Khimji v. Jayaben D Kania\n;\nCentral Mine Planning and\nDesign Institute Ltd. v. Union of India\n;\nB.F. Pushpaleela Devi\nv. State of A.P.\n;\nRajender Singh v. Santa Singh\n; and\nMohd. Mehtab Khan v. Khushnuma Ibrahim Khan\n. In the impugned order dated 23.08.2017 the District\nCollector, Visakhapatnam, after referring to an earlier\nrepresentation submitted by one Sri B. Radhakrishna Varma who \nhad purchased land adjacent to that of the appellant-writ\npetitioner, held that Sri B. Radhakrishna Varma had purchased\nassigned lands which were prohibited from alienation under\nSection 3(1)\nof the A.P. Assigned Lands (Prohibition of Transfer)\nAct, 1977; as per\nSection 3(1)\nand\n3(3)\nof the A.P. Assigned Lands\n(Prohibition of Transfer) Act, 1977; the list of prohibited properties\nunder Section 22-A(1)(a) to (d) along with Form-III (Assigned lands\nlist under Section 5(1) of the A.P. Assigned Lands (Prohibition of\nTransfer) Act) had been communicated to the registration\ndepartment vide his office proceedings dated 08.07.2016; Sri B.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C06",
+      "text": "Radhakrishna Varma had no valid title over the subject lands;\nhence his request for de-notification of the lands covered by Sy. No.80/4 and 187/4 of Desapatrunipalem village, from the list of\nprohibited properties, deserved no consideration; and it was,\ntherefore, rejected. The Tahsildar, Parawada was directed to\ninitiate necessary action, under the provisions of the\nA.P. Assigned\nLands (Prohibition of Transfer) Act, 1977\n, by issuing notices in\nForms I and II to the assignee/purchasers, since the applicant had\npurchased assigned land through registered documents, and had \nblatantly violated the provisions of the said Act. The Tahsildar was\ndirected to report compliance within thirty days. In the affidavit, filed in support of W.P. No.38480 of 2017,\nthe respondent-writ petitioner has stated that, aggrieved by the\nsaid endorsement, Sri B. Radha Krishna Varma had filed an appeal \nand, on its dismissal, had filed W.P. No.4293 of 2014, which was\ndisposed of along with W.P.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C07",
+      "text": "No.4271 of 2014 dated 25.04.2014,\ndirecting the Mandal Revenue Officer, Paravada, Visakhapatnam to\nverify the genuineness of the certificates issued earlier; if the\ncertificates were genuine, he should then communicate his\ndecision to the Sub-Registrar, Lankelapalem, Visakhapanam, and \nalso to the respondent-writ petitioner; if, according to the Mandal\nRevenue Officer, the status of the land, as per the revenue records,\nwas not private patta land, the said information should then be\nfurnished to the petitioner; such exercise should be completed\nwithin four weeks; the petitioners are simultaneous purchasers\nwith Sri B. Radhakrishna Varma; on being made aware of the \nproceedings undertaken by him, and its likely impact on the\npetitioners, the first petitioner along with Sri B. Radhakrishna\nVarma had submitted a joint representation to the District\nCollector on 02.03.2017 and 20.07.2017 requesting him to delete\nthe subject survey numbers from the list made under\nSection 22-\nA(1) of the\nRegistration Act\n; and the District Collector had passed\nthe order dated 23.08.2017 even without considering the orders\npassed by this Court earlier.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C08",
+      "text": "As noted hereinabove the District Collector, by his\nproceedings dated 23.08.2017, informed that the subject lands\nwere included in the list of prohibited properties vide proceedings\ndated 08.07.2016. While the relief sought for in W.P.No.38480 of\n2017 is to declare the proceedings of the District Collector dated\n23.08.2017 as arbitrary and illegal, curiously the proceedings of\nthe District Collector dated 08.07.2016, including these lands in\nthe list of prohibited properties, has not even subjected to\nchallenge in the Writ Petition. Section 22-A\nof the Registration Act\nrelates to prohibition of registration of certain documents and,\nunder sub-section (1) thereof, the classes of documents mentioned\nin clauses (a) to (e) thereunder are prohibited from registration. On the subject lands being included by the District Collector in the\nlist of prohibited properties, the concerned Sub-Registrar was\ndisabled thereafter from registering the documents in view of\nSection 22-A(1)(a) & (b) of the\nRegistration Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C09",
+      "text": "It is only if, and\nafter, the subject lands are excluded from the list of prohibited\nproperties, and the order of the District Collector including the\nsubject lands in the said list is set aside, would the Sub-Registrar,\nthereafter, be entitled in law to register alienation of the subject\nlands. Clause (a), of\nSection 22-A(1)\nof the Registration Act, are the\ndocuments relating to transfer of immovable property, the\nalienation or transfer of which is prohibited under any statute of\nthe State or Central Government. Section 5\nof the A.P. Assigned\nLands (Prohibition of Transfer) Act, 1977 prohibits registration of\nassigned lands. The District Collector, Visakhapatnam has\nincluded the subject lands in the list of prohibited properties on\nthe ground that they are assigned lands.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C10",
+      "text": "Whether the subject\nlands are, in fact, assigned lands justifying their inclusion in the\nlist of prohibited properties; whether the proceedings dated\n13.07.2004 and 25.06.2004, issued by the Mandal Revenue \nOfficer, required the District Collector to abstain from including\nthe subject lands in the list of prohibited properties; whether the\nsubject lands are assigned lands, as is claimed by the District\nCollector as justification for inclusion of these lands in the list of\nprohibited properties, or are private patta lands rendering its\ninclusion in the list of prohibited properties illegal, are all matters\nof examination in the Writ Petition after the appellants herein\n(respondents in the Writ Petition) are given a reasonable\nopportunity of filing their counter-affidavit. By the interim order in WPMP No.47767 of 2017 dated\n15.11.2017, which is under challenge in W.A. No.36 of 2017, the\nSub-Registrar was directed to consider registration of the\ndocuments, without reference to the District Collectors\nproceedings dated 23.08.2017.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C11",
+      "text": "The said interim order is not only a\ndirection to the Sub-Registrar to violate the law (\nSection 22-A\nthe Registration Act), but also amounts to granting a relief which\ncould only have been granted consequent upon the main relief,\nsought for in the Writ Petition, being granted. Such an order\nwould, ordinarily, not be passed at the stage of admission without\nthe appellants herein (respondents in the Writ Petition) being given\nan opportunity of filing their counter-affidavit. An interim relief can be granted only in aid of, and as\nancillary to, the main relief which may be available to the party on\na final determination of his rights. (\nState of Orissa v. Madan\nGopal Rungta\n;\nCotton Corporation of India v. United\nIndustrial Bank Ltd\n; The State of A.P. v. M/s.Maheswari\nMinerals ). The main purpose of passing an interim order is to\nevolve a workable formula or a workable arrangement to the extent\ncalled for by the demands of the situation, only in order that no\nirreparable injury is occasioned. The Court has to strike a delicate\nbalance after considering the pros and cons of the matter to ensure\nthat larger public interest is not jeopardized thereby. (\nSiliguri\nMunicipality v.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C12",
+      "text": "Amalendu Das\n). Interim orders, which\npractically give the principal relief sought for in the writ petition,\nonly for the reason that a prima-facie case has been made out,\nwithout considering the balance of convenience, the public interest\nand other considerations, should not be passed. (Asstt. CCE v. Dunlop India Ltd. ;\nState of Rajasthan v. Swaika Properties\n;\nBank of Maharashtra v. Race Shipping & Transport Co. (P)\nLtd\n; M/s.Maheswari Minerals8). Interim orders are, ordinarily, made to maintain the status\nquo so that the ultimate relief to be granted, to the party\napproaching the Court, may not become futile. (\nBihar Public\nService Commission v. Shiv Jatan Thakur (Dr\n) ). Interim relief\nis granted during the pendency of proceeding so that, while\ngranting final relief, the court is not faced with a situation of the\nrelief having become infructuous or that, during the pendency of\nthe proceeding, an unfair advantage has been taken by the party in\ndefault or against whom interim relief is sought.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C13",
+      "text": "The object behind\ngranting interim relief is to maintain the status quo so that the\nfinal relief can be appropriately moulded without the party's\nposition being altered during the pendency of the proceedings. (Cotton Corporation of India7). It is settled legal position that, by\nway of interim relief, the final relief should not be granted till the\nmatter is decided one way or the other, (\nMehul Mahendra\nThakkar v. Meena Mehul Thakkar\n;\nAll India Anna Dravida\nMunnetra Kazhagam v. Govt. of T.N.\n, ), as interlocutory orders\nare made in aid of final orders and not vice versa. (\nShipping\nCorporation of India Ltd. v. Machado Brothers\n;\nKavita Trehan\nv. Balsara Hygiene Products Ltd\n; and\nPitta Naveen Kumar v. Raja Narasaiah Zangiti\n). An interim order should not be of such\na nature as to result in the writ petition being finally allowed at an\ninterim stage nor should relief be granted, at the interlocutory\nstage, by which the final relief, which is asked for and is available\nat the disposal of the matter, is granted. (UPSC v. S. Krishna\nChaitanya ; M/s. Maheswari Minerals8). While W.P.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C14",
+      "text": "No.38480 of 2017 was filed on 13.11.2017, the\nad-interim orders under appeal came to be passed on 15.11.2017 \njust two days after the Writ Petition was filed. It is evident,\ntherefore, that the interim order, which has the effect of allowing\nthe Writ Petition itself at the admission stage, was passed in\nW.P.M.P. No.47767 of 2017 without the appellants herein\n(respondents in the Writ Petition) being given a reasonable\nopportunity of being heard i.e., of filing their counter-affidavit. Clause 15 of the Letters Patent provides for an appeal from\nthe Courts of original jurisdiction to the High Court in its appellate\njurisdiction. An appeal does not lie to the Division bench of the\nsame High Court against every order passed by a Single Judge of\nthe High Court. It is only against a judgment would an intra-\nCourt Appeal lie. The Letters Patent jurisdiction is not attracted\nand available if the judgment is passed by the High Court in the\nexercise of its appellate jurisdiction in respect of a decree or order\nmade in the exercise of the appellate jurisdiction by a Court\nsubject to the superintendence of the said High Court.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C15",
+      "text": "It is also not\nattracted and available if the order is made under the revisional\njurisdiction of the High Court, and it is also not attracted in\nrespect of a sentence or order made or passed in the exercise of the\npower of superintendence under the provisions of\nSection 107\nthe Government of India Act or in the exercise of criminal\njurisdiction. If the order complained of is not a judgment, the\nappellate jurisdiction of the High Court, under Clause 15 of the\nLetters Patent. is not attracted and available. (Shah Babulal\nKhimji1;\nH. Kondal Reddy v. Central Bank of India,\nHyderabad\n; B.F. Pushpaleela Devi3). The word judgment, in Clause 15 of the Letters Patent,\nshould receive a much wider and more liberal interpretation than\nthe word judgment used in\nthe Code of Civil Procedure\n. At the same\ntime, all orders passed by a trial Judge would not amount to a\njudgment, otherwise there would be no end to the number of\norders which would be appealable under the Letters Patent. The\nword judgment has, undoubtedly, a concept of finality in a broader\nand not a narrower sense. (Shah Babulal Khimji1; Central Mine\nPlanning and Design Institute Ltd.2).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C16",
+      "text": "A judgment can be of three kinds: (1) a final judgment.in\nthis category falls a judgment by which the suit, or action, brought\nby the plaintiff is dismissed or decreed in part or full; (2) a\npreliminary judgment.this category is sub-divided into two\nclasses: (a) where the trial Judge, by an order, dismisses the suit,\nwithout going into the merits of the suit, and only on a preliminary\nobjection raised by the defendant/respondent on the ground of\nmaintainability; (b) where maintainability of the Suit is objected on\nthe ground of bar of jurisdiction, e.g., res judicata, a manifest\ndefect in the suit, absence of notice under\nSection 80\nand the like;\nand (3) intermediary or interlocutory judgment.in this category\nfall orders referred to in clauses (a) to (w) of Order 43 Rule 1 and\nalso such other orders which possess the characteristics and\ntrappings of finality, and may adversely affect a valuable right of\nthe party or decide an important aspect of the trial in an ancillary\nproceeding. (Shah Babulal Khimji1; Central Mine Planning and\nDesign Institute Ltd.2). Under the third category, every interlocutory order cannot be\nregarded as a judgment.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C17",
+      "text": "Only those orders would be judgments\nwhich decide matters of moment or affect vital and valuable rights\nof the parties, and which work serious injustice to the party\nconcerned. (Shah Babulal Khimji1; Central Mine Planning and\nDesign Institute Ltd.2). Interlocutory orders, in order to be a\njudgment, must contain the traits and trappings of finality either\nwhen the order decides the questions in controversy in an ancillary\nproceeding or in the suit itself or in a part of the proceedings. (Shah Babulal Khimji1). The following are the tests to assess the import and\ndefinition of the word 'judgment' as used in Clause I5 of the Letters\nPatent.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C18",
+      "text": "(1) It is not the form of adjudication which is to be seen\nbut its actual effect on the suit or proceeding; (2) If, irrespective of\nthe form of the suit or proceeding, the order impugned puts an end\nto the suit or proceeding it doubtless amounts to a judgment; (3)\nSimilarly, the effect of the order, if not complied with, is to\nterminate the proceedings, the said order would amount to a\njudgment; (4) Any order in an independent proceeding which is\nancillary to the suit (not being a step towards judgment) but is\ndesigned to render the judgment effective can also be termed as\njudgment within the meaning of the Letters Patent. (5) An order\nmay be a judgment even if it does not affect the merits of the suit\nor proceedings or does not determine any rights in question raised\nin the suit or proceedings. (6) An adjudication based on a refusal to\nexercise discretion the effect of which is to dispose of the suit, so\nfar as that particular adjudication is concerned, would certainly\namount to a judgment within the meaning of the Letters Patent. (\nT.V.Tuljaram Row v. M.K.R.V. Alagappa Chettiar\n; Shah\nBabulal Khimji1).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 18
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C19",
+      "text": "In order to determine the question, whether an interlocutory\norder passed by a Judge of a High Court falls within the meaning\nof judgment, for purposes of the Letters Patent, the test is whether\nthe order is a final determination affecting vital and valuable rights\nand obligations of the parties concerned. This has to be\nascertained on the facts of each case. (Shah Babulal Khimji1;\nCentral Mine Planning and Design Institute Ltd.2). In the present case, the effect of the interim order under\nappeal (i.e in W.P.M.P.No.47767 of 2017) is to grant the main relief\nsought for in the Writ Petition. The said order has the traits and\ntrappings of finality and has decided the question in controversy in\nthe Writ Petition. It also requires the Sub-Registrar to consider the\nrespondent-writ petitioners application for registration in violation\nSection 22-A\nof the Registration Act, and thereby works serious\ninjustice to the appellants herein. We are satisfied, therefore, that\nthe interim order under appeal, in W.P.M.P.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 19
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C20",
+      "text": "No.47767 of 2017\ndated 15.11.2017, constitutes a judgment within the meaning of\nClause 15 of the Letters Patent, the appellants herein are entitled\nto invoke our jurisdiction against the said order, and the appeal in\nW.A.No.36 of 2018, against the ad-interim order passed in\nW.P.M.P. No. 47767 of 2017 in W.P.No.38480 of 2017 dated \n15.11.2017, is maintainable under Clause 15 of the Letters Patent. It is no doubt true that, against the order passed by a Full\nBench of this Court in\nVinjamuri Rajagopala Chary v. State of\nAndhra Pradesh\n, the matter was carried in appeal to the\nSupreme Court; and, by its order in SLP (Civil) C.C. No. 8917/16\ndated 12.5.2016, the Supreme Court, while granting permission to\nfile Special Leave to Appeal, condoning the delay and issuing\nnotice, made it clear that registration could be done expressly\nsubject to the final outcome of the Special Leave Petition.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 20
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C21",
+      "text": "Learned Government Pleader for Revenue would contend,\nnot without justification, that pendency of the SLP before the\nSupreme Court against the order of the Full Bench in Vinjamuri\nRajagopala Chary22, and an interim order being passed therein,\nwould not obliterate the law declared by the Full Bench; and,\nnotwithstanding the fact that the order of the Full Bench is under\nchallenge before the Supreme Court, the said order would bind\nboth the Division Bench of this Court, and the Single Judge, till\nthe judgment of the Full bench is set aside by the Supreme Court. K. Venkata Reddy v. Land Acquisition Officer\n, a Division\nBench of this Court observed:\n.. When the matter came up before our learned brother\nKodandaramayya, J., he felt a doubt whether, having regard to the fact that\nthe judgment of the Full Bench is the subject-matter of an appeal before\nthe Supreme Court and the operation of\nthe said judgment\nis suspended,\nthe dicta\nlaid down by\nthe Full Bench would be binding on this Court and\nhas to be followed, and referred the matter to the Bench.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 21
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P009_C22",
+      "text": "We are of the\nview that when a judgment of the High Court is the subject-matter of an\nappeal and\nthe said judgment\nis suspended the only effect of such\nsuspension is that that judgment cannot be executed or implemented. But\nso long as the Full Bench judgment stands, the dicta laid down therein are\nbinding on all Courts including the single Judges and Division Benches of\nthis Court. The dicta laid down therein cannot be ignored unless the Court\nafter hearing a particular case doubts the correctness of the dicta and thinks it\nappropriate that it should be reconsidered. We, however, do not feel any such\ndoubt that in so far as the acquisition of the land of a person, whose holding is\nless than the ceiling area and is personally cultivating the same, is concerned,\nhe is entitled to the payment of market value in lump sum. Payment of\ncompensation in instalments is violative of the provisions of clause (2) of\narticle\n31-A(1)\nof the Constitution. (emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 22
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P010_C01",
+      "text": "Government of Andhra Pradesh v. N. Rami Reddy\n, a\nDivision Bench of this Court observed that, when a Court of appeal\nstays the operation of the judgment, it stays the further\nimplementation as between the parties, of the operative portion\nthereof, and thereby the ratio of\nthe said decision\ncannot be said to\nbe wiped off. The observations of the Division bench, in this regard,\nare as under:\n.. It is now a well settled principle of law that the ratio of a judgment is the\nreason assigned in support thereof. While a Court of appeal stays the operation\nof the judgment, it stays the further implementation, as between the parties, of\nthe operative portion thereof, and thereby the ratio of the decision cannot be\nsaid to be wiped off.\n.This aspect of the matter is no longer res integra in view of\nthe decision of a Three-Judge Bench of the Apex Court in M/s. Sree\nChamundi Mopeds Ltd. v. Church of SIT Association\n(AIR 1992 SC 1439), \nwherein the Apex Court has laid down the law in the following terms:\n\"The said stay order of the High Court cannot have the effect of\nreviving the proceedings which had been disposed of by the Appellate\nAuthority by its order dated January 7, 1991.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P010_C02",
+      "text": "While considering the effect of\nan interim order staying the operation of the order under challenge, a distinction\nhas to be made between quashing of an order and stay of operation of an order. Quashing of an order results in the restoration of the position as it stood on the\ndate of the passing of the order which has been quashed. The stay of operation\nof an order does not, however, lead to such a result. It only means that the order\nwhich has been stayed would not be operative from the date of the passing of\nthe stay order and it does not mean that the said order has been wiped out from\nexistence. This means that if an order passed by the Appellate Authority is\nquashed and the matter is remanded, the result would be that the appeal\nwhich had been disposed of by the said order of the Appellate Authority\nwould be restored and it can be said to be pending before the Appellate\nAuthority after the quashing of the order of the Appellate Authority.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P010_C03",
+      "text": "The\nsame cannot be said with regard to an order staying the operation of the\norder of the Appellate Authority because inspite of the said order, the order\nof the Appellate Authority continues to exist in law and so long as it exists,\nit cannot be said that the appeal which has been disposed of by the said\norder has not been disposed of and is still pending.. (emphasis \nsupplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P011_C01",
+      "text": "Again in\nGovernment of Andhra Pradesh vs. P. Gautam\nKumar\na Division Bench of this Court observed:\nThe other aspect of the contention, ie., that on account of stay of\noperation of the judgment, the Prakash Singhs case (supra), directive is\nitself not binding, is a contention that is wholly misconceived. Acceptance\nof this contention would lead to utter chaos and a de-construction of the\nprinciple of stare decisis, an essential integer of our system of law. To illustrate, if a judgment of the Supreme Court is referred to and relied upon\nfor conclusions or grant of relief in a judgment by a High Court; and the High\nCourt judgment is appealed against and a stay granted by the Supreme Court,\naccording to the learned Advocate-General the binding authority of the earlier\njudgment of the Supreme Court is rendered inoperative and the earlier Supreme\nCourt judgment ceases to have a precedential value, during currency of the\norder of stay. Such a proposition is productive of universal and unmitigated\nmischief and therefore does not merit acceptance.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P011_C02",
+      "text": "From the guidance derived from the precedents referred to, we are of the\nview that the stay of operation of the Yadavs case (supra), judgment only\ndisables execution of the consequences of the judgment to the parties\nthereto. Grant of stay does not extinguish the norm(s) predicated in the\njudgment . (emphasis supplied). The Learned Single Judge has erred in granting a similar\ninterim order, in W.P.M.P.No.47767 of 2017 dated 15.11.2017, as\nwas passed by the Supreme Court, as the law declared by the Full\nBench in Vinjamuri Rajagopala Chary22 would continue to bind\nthis Court. Reliance placed by Sri Anand Kumar Kapoor, Learned\nCounsel for the respondent-writ petitioners, on\nSection 52\nof the\nTransfer of Property Act, 1882, is also of no avail. Section 52\nstipulates that, during the pendency in any Court in which any\nright to immovable property is directly and specifically in question,\nthe property cannot be transferred, or otherwise dealt with, by any\nparty to the suit or proceedings so as to affect the rights of any\nother party thereto. An exception thereto is where the transfer is\nmade under the authority of the Court, and on such terms as it\nmay impose.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P011_C03",
+      "text": "Lis pendens literally means a pending suit, and the doctrine\nof lis pendens has been defined as the jurisdiction, power, or\ncontrol which a court acquires over the property involved in a suit\npending the continuance of the action, and until final judgment\ntherein. (Corpus Juris Secundum (Vol. LIV, p. 570). Expositions\nof the doctrine indicate that the need for it arises from the very\nnature of the jurisdiction of Courts, and their control over the\nsubject-matter of litigation, so that parties litigating before it may\nnot remove any part of the subject-matter outside the power of the\nCourt to deal with it and thus make the proceedings infructuous. (Rajender Singh4;\nJayaram Mudaliar v. Ayyaswami\n). The question which necessitates examination in the present\ncase is not whether this Court has the power, under\nArticle 226\nthe Constitution of India, to grant a relief of the nature sought for\nin the Writ Petition, but whether an interim order, which has the\neffect of granting the main relief sought for in the Writ Petition,\ncould have been passed without the appellants (respondents in the\nWrit Petition) being given a reasonable opportunity of being heard\nby filing their counter-affidavit.",
+      "paragraph_type": "order",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P011_C04",
+      "text": "While the High Court may have\nthe power to permit transfer of property during the pendency of\nproceedings before it, and upon such terms as it may impose, the\nquestion is not regarding existence of such a power with the High\nCourt but regarding its exercise, and whether an interim order,\ndirecting the Sub-Registrar to receive and register the document\nfor alienation of immovable property, could have been passed\nwithout giving the official respondents in the Writ Petition a\nreasonable opportunity of filing their counter-affidavit, more so as\nthe interim relief sought for, and granted, has the effect of allowing\nthe Writ Petition itself, and in the main relief sought for in the Writ\nPetition being granted. It is no doubt true that a Division bench would, ordinarily,\nnot interfere with the exercise of discretion by the Learned Single\nJudge in granting interim relief. The law as to the reversal by a\nCourt of Appeal of an order made by the Judge below in the\nexercise of his discretion is well established, and any difficulty that\narises is due only to the application of well-settled principles in an\nindividual case. (Osenton (Charles) & Co. v. Johnston ;\nPrinters\n(Mysore) (P) Ltd. v.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P011_C05",
+      "text": "Pothan Joseph\n; Mohd. Mehtab Khan5;\nWander Ltd. v. Antox India (P) Ltd.\n). Where the appeals before the Division Bench are preferred\nagainst the exercise of discretion by the Single Judge, the appellate\ncourt will not interfere with such exercise of discretion by the court\nof first instance, and substitute its own discretion, except where\nthe discretion has been shown to have been exercised arbitrarily,\nor capriciously or perversely or where the court had ignored settled\nprinciples of law regulating grant or refusal of interlocutory orders. An appeal against exercise of discretion is said to be an appeal on\nprinciple. The appellate court will not reassess the material and\nseek to reach a conclusion different from the one reached by the\ncourt below if the one reached by that court was reasonably\npossible on the material. The appellate court would, normally, not\nbe justified in interfering with the exercise of discretion under\nappeal solely on the ground that, if it had considered the matter at\nthe trial stage, it would have come to a contrary conclusion.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P011_C06",
+      "text": "If the\ndiscretion has been exercised by the trial court reasonably, and in\na judicious manner, the fact that the appellate court would have\ntaken a different view may not justify interference with the trial\ncourts exercise of discretion. The appellate court would not\ninterfere with the exercise of discretion by the learned trial Judge\nunless such exercise is found to be palpably incorrect or untenable\nor if the view taken by the Learned Single Judge is not a possible\nview. (Wander Ltd.29; Mohd. Mehtab Khan5). In the present case, the interim order under appeal, directing\nthe Sub-Registrar to consider registering the document without\nreference to the District Collectors proceedings dated 23.08.2017,\nhas the effect of granting the main relief sought for in the Writ\nPetition, though it is settled law that, ordinarily, the final relief\nsought for in the Writ Petition should not be granted, by way of\ninterim relief, and the matter should await a final decision one way\nor the other. This contention of Sri A.K. Kapoor, Learned Counsel\nfor the respondent-writ petitioner, also necessitates rejection.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P011_C07",
+      "text": "Viewed from any angle, we are satisfied that the Learned\nSingle Judge ought not to have, at the stage of admission of the\nWrit Petition, granted the interim relief, sought for in W.P.M.P. No.47767 of 2017, which has the effect of allowing the Writ Petition\nitself even without giving the appellants herein (respondents in the\nWrit Petition) a reasonable opportunity of filing their counter-\naffidavit. By the interim order passed by the Learned Single Judge, in\nWPMP No.47768 of 2017 in W.P.No.38480 of 2017 dated \n15.11.2017, the endorsement of the District Collector dated\n23.08.2017 was suspended. The said interim order is merely a\nworkable arrangement to ensure that no irreparable injury is\notherwise occasioned. As a result of the said order, status-quo is\nsought to be maintained so that, in the meanwhile, no further\naction is taken pursuant to the endorsement dated 23.08.2017\nwhereby the Tahsildar was directed to initiate action under the\nprovisions of the\nA.P. Assigned Lands (Prohibition of Transfer) Act,",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P012_C01",
+      "text": "by issuing Form-I and Form-II notices to the\nassignees/purchasers on the ground that assigned land had been \npurchased, through a registered document, in violation of the\nprovisions of the said Act. We may not be understood to have upheld the said interim\norder. All that we have held is that the said order, in WPMP\nNo.47768 of 2017 in W.P.No.38480 of 2017 dated 15.11.2017, may \nnot constitute a judgment justifying exercise of jurisdiction, under\nClause 15 of the Letters Patent, at this stage. Suffice it to make it\nclear that the order now passed by us shall not disable the\nappellants, after they have filed their counter-affidavit in\nW.P.No.38480 of 2017, to seek vacation of the interim order passed\nin WPMP No.47768 of 2017 in W.P.No.38480 of 2017 dated \n15.11.2017. Any such application, filed by the appellants later,\nshall be decided on its merits uninfluenced by any observations\nmade in this order. The order passed in WPMP No.47767 of 2017 in \nW.P.No.38480 of 2017 dated 15.11.2017 is set aside and WPMP \nNo.47767 of 2017 is restored to file. The appellants herein shall\nfile their counter-affidavit in W.P.No.38480 of 2017 within three\nweeks from today.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA_P012_C02",
+      "text": "It is open to Sri Anand Kumar Kapoor, Learned\nCounsel for the petitioners, to request the Learned Single Judge to\ntake up WPMP No.47767 of 2017 for hearing any day after three \nweeks from today. Writ Appeal No.215 of 2018 is dismissed, and Writ Appeal\nNo.36 of 2018 is disposed of in terms of the directions given\nhereinabove. Miscellaneous Petitions, if any pending, shall also\nstand disposed of. However, in the circumstances, without costs.\n____________________________ \n(RAMESH RANGANATHAN, ACJ) \n___________________________ \n(KONGARA VIJAYA LAKSHMI, J) \nDate: 03.04.2018",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_2018_ANDHRA_HC_PRE-TELANGANA",
+    "court": "Supreme Court of India",
+    "year": "2018",
+    "facts_summary": "State of A.P. rep. by its Prl. Secretary, Revenue, A.P.Secretariat, Velagapudi, Amaravathi & Ors..Appellants-Respondents 1, Counsel for Appellants-Respondents: Learned Government Pleader for Registration and Stamps. 1) (1981) 4 SCC 8 \n2) (2001) 2 SCC 588 \n3) 2002 (5) ALD 1 (LB)\n4) (1973) 2 SCC 705 \n5) (2013) 9 SCC 221 : (2013) 4 SCC (Civ) 285\n6) 1952 SCR 28 : AIR 1952 SC 12 \n7) AIR 1983 SC 1272 \n8) (Judgment in Writ Appeal No.797 of 2016 dated 17.09.2016) \n9) (1984) 2 SCC 436 \n10) (1985) 1 SCC 260 \n11) (1985) 3 SCC 217 \n12) (1995) 3 SCC 257 \n13) 1994 Supp (3) SCC 220 \n14) (2009) 14 SCC 48 \n15) (2009) 5 SCC 452 \n16) (2004)11 SCC 168 \n17) (1994) 5 SCC 380 \n18) (2006) 10 SCC 261 \n19) (2011) 14 SCC 227 : (2012) 4 SCC (Civ) 935 : (2012) 2 SCC (L&S) 890 \n20) 2002 (1) ALD 280 \n21) ILR 35 Mad. 1 \n22) 2016(1) ALT 550 (FB) \n23) 1983 (67) STC 424 \n24) 2001(1) ALD 443(DB) \n25) 2012 (6) ALD 458 (DB) \n26) (1972) 2 SCC 200 \n27) 1942 AC 130 \n28) AIR 1960 SC 1156 \n29) 1990 Supp. SCC 727",
+    "legal_issues": "Counsel for respondents-writ petitioners: Sri Anand Kumar Kapoor, Learned Counsel No.1142 dated\n18.06.1954; unless the assignment is shown to have taken place\nafter the said date, on which point the order of the District\nCollector was deliberately silent, the District Collector could not\ntreat the subject land as Government land, and include it in the\nnotification issued under\nSection 22-A(i)(a)\nof the Act; and the\nsecond respondent did not also advert to the proceedings dated\n13.07.2004 and 25.06.2004, issued by the Mandal Revenue \nOfficer, Paravada stating that the said lands are private patta\nlands, and not assigned or government lands, though the said\nproceedings were relied upon by the petitioners in their application\nmade to the District Collector. The Learned Single Judge granted\ninterim suspension of the endorsement of the District Collector\ndated 23.08.2017 pending disposal of the Writ Petition. By his order, in WPMP No.47767 of 2017 in W.P. Besides\nplacing reliance on\nSection 52\nof the Transfer of Property Act, Sri\nAnand Kumar Kapoor, Learned Counsel, would also rely on\nShah \nBabulal Khimji v. Jayaben D Kania\n;\nCentral Mine Planning and\nDesign Institute Ltd. v. Union of India\n;\nB.F. Pushpaleela Devi\nv. State of A.P.\n;\nRajender Singh v. Santa Singh\n; and\nMohd. Mehtab Khan v. Khushnuma Ibrahim Khan\n. In the impugned order dated 23.08.2017 the District\nCollector, Visakhapatnam, after referring to an earlier\nrepresentation submitted by one Sri B. Radhakrishna Varma who ",
+    "ratio_summary": "Government of Andhra Pradesh v. N. Rami Reddy\n, a\nDivision Bench of this Court observed that, when a Court of appeal\nstays the operation of the judgment, it stays the further\nimplementation as between the parties, of the operative portion\nthereof, and thereby the ratio of\nthe said decision\ncannot be said to\nbe wiped off. The observations of the Division bench, in this regard,\nare as under:\n.. It is now a well settled principle of law that the ratio of a judgment is the\nreason assigned in support thereof. While a Court of appeal stays the operation\nof the judgment, it stays the further implementation, as between the parties, of\nthe operative portion thereof, and thereby the ratio of the decision cannot be\nsaid to be wiped off.\n.This aspect of the matter is no longer res integra in view of\nthe decision of a Three-Judge Bench of the Apex Court in M/s. Sree\nChamundi Mopeds Ltd. v. Church of SIT Association\n(AIR 1992 SC 1439), \nwherein the Apex Court has laid down the law in the following terms:\n\"The said stay order of the High Court cannot have the effect of\nreviving the proceedings which had been disposed of by the Appellate\nAuthority by its order dated January 7, 1991.",
+    "final_order": "These two appeals are preferred, under Clause 15 of the\nLetters Patent, by respondents 1, 3 and 4 in W.P. No.38480 of\n2017 aggrieved by the interim orders passed by the Learned Single\nJudge in WPMP. No.47767 of 2017 in W.P. No.38480 of 2017 dated \n15.11.2017, and in WPMP No.47768 of 2017 in W.P. No.38480 of \n2017 dated 15.11.2017. Respondents 1 and 2 herein had filed the said Writ Petition\nseeking a mandamus to declare the proceedings of the District\nCollector, Visakhapatnam dated 23.08.2017, including Sy. No.187/4 for an extent of Ac.4.35 cts of Desapatrunipalem village\nin the list of prohibited properties under\nSection 22-A(i)(a)\nof the\nRegistration Act, as wholly arbitrary and opposed to the provisions\nof the\nRegistration Act\nand the rules made thereunder. A\nconsequential direction was ",
+    "outcome_summary": "These two appeals are preferred, under Clause 15 of the\nLetters Patent, by respondents 1, 3 and 4 in W.P. No.38480 of\n2017 aggrieved by the interim orders passed by the Learned Single\nJudge in WPMP. No.47767 of 2017 in W.P. No.38480 of 2017 dated \n15.11.2017, and in WPMP No.47768 of 2017 in W.P. No.38480 of \n2017 dated 15.11.2017. Respondents 1 and 2 herein had filed the said Writ Petition\nseeking",
+    "sections_cited": [
+      "Constitution 226"
+    ],
+    "cases_cited": []
+  }
+}

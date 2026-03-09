@@ -1,0 +1,611 @@
+{
+  "case_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD",
+  "case_name": "Central Gst Delhi Iii vs Delhi International Airport Ltd",
+  "normalized_case_name": "CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD",
+  "court": "Supreme Court of India",
+  "year": "2023",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 2465 of 2020",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "19 May 2023",
+  "judges": [
+    "Dipankar Datta",
+    "S. Ravindra Bhat"
+  ],
+  "author": "S. Ravindra Bhat",
+  "bench_type": "division",
+  "petitioner": "Central Gst Delhi Iii",
+  "respondent": "Delhi International Airport Ltd",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 22,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2023\\MAY\\2023_MAY_70.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO(S). 8996 OF 2019\n\n CENTRAL GST DELHI - III …APPELLANT(S)\n\n VERSUS\n\n DELHI INTERNATIONAL AIRPORT LTD …RESPONDENT(S)\n\n WITH\n\n CIVIL APPEAL NO. 2465 OF 2020\n\n CIVIL APPEAL NO(S). 4751-4753 OF 2021\n\n JUDGMENT\nS. RAVINDRA BHAT, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P002_C01",
+      "text": "1. In all these appeals, orders of the Customs, Excise and Service Tax\n\n Appellate Tribunal1 (hereafter “CESTAT”) are impugned by the service tax\n\n authorities (hereafter “the revenue”), who argue that user development fee\n\n levied and collected by the airport operation, maintenance and development\n\n entities (i.e., the Mumbai International Airport Pvt. Ltd., the Delhi International\n\nAirport Pvt. Ltd., and the Hyderabad International Airport Pvt. Ltd., (hereafter\n\ncollectively called “the assessees”) is subjected to service tax levy, under the\n\nprovisions of the\nFinance Act, 1994\n(hereafter “the Act”).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P003_C01",
+      "text": "2. All the assessees had entered into joint venture arrangements/agreements\n\n(hereafter “OMDA”) with the Airports Authority of India (hereafter “AAI”, a\n\nbody corporate created by the\nAirports Authority of India Act, 1994\n[hereafter\n\n“\nAAI Act\n”]. Under OMDA, the assesses agreed to undertake some activities\n\nenjoined upon the AAI, by the\nAAI Act\n. The assessees were authorised,\n\nby various notifications (dated 27th February 2009) issued by the Central\n\nGovernment under\nSection 22A\nof the AAI Act to collect a “development fee”\n\n@ Rs. 100/- for every departing domestic passenger and Rs. 600/- for every\n\ndeparting international passenger at the concerned airports for a period of 48\n\nmonths.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P004_C01",
+      "text": "3. The Commissioner of Service Tax, through various show cause notices\n\ndemanded payment of tax on the development fee collected for various periods.\n\nThese notices were adjudicated and confirmed; the CESTAT remanded the\n\nmatter to the original authority requiring fresh adjudication after taking into\n\nconsideration the decisions of this court in\nConsumer Online\n\nFoundation v. Union of India2\n,\nCommissioner of Central Excise v. Cochin\n\nInternational Airport Ltd.,3\n, Acer India Ltd. and Orissa Cement Ltd. v. State\n\n(2011) 5 SCC 360\n\n2010 (17) STR J 79 (S.C.)\n\nof Orissa4 and various instructions issued by the Central Board of Excise and\n\nCustoms (hereafter “CBEC”). The original authority disposed of all show cause\n\nnotices by confirming demands, and also levying penalties under the Act. The\n\nadjudicating authority accorded the benefit of “cum-tax” valuation. These\n\norders were challenged before the CESTAT, which, by the orders impugned,\n\nallowed the assessees’ appeals, holding that the development fee collected was\n\nnot liable to service tax levy.\nThe relevant provisions",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P005_C01",
+      "text": "4. Section 65 (105) (zzm) of the Finance Act, 1994, contains the definition\n\nof “airport service” (with effect from 01.07.2010) and states that such service is:\n“any service provided or to be provided by airports authority or by\n any other person in any airport or a civil enclave”\n\nBefore the amendment, i.e., before 1 July 2010, the definition, of airport service\n\nwas as follows:\n“to any person, by airports authority or any person authorised by it,\n in an airport or a civil enclave\"\nSection 65 (3d) defines airport authority as:\n“Airports Authority of India constituted under\nsection 3\nof the\n Airports Authority of India Act, 1994 (55 of 1994) and also includes\n any person having the charge of management of an airport or civil\n enclave”.\n\n1991 Supp (1) SCC 430\n5. Section 68 (1)\nof the Finance Act provides that every person providing\n\ntaxable service to any person shall pay service tax at the rate specified in section",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P006_C01",
+      "text": "66. Section 67 (1)\nof the Finance Act, provides that where service tax is\n\nchargeable on any taxable service with reference to its value then such value\n\nshall be the gross amount charged by the service provider for such service\n\nprovided or to be provided by him.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P007_C01",
+      "text": "6. The relevant provisions of the\nAirports Economic Regulatory Authority\n\nof India Act, 2008\nand the Aircraft Rules, 1937 are extracted below:\nSection 13\nof the Airports Economic Regulatory Authority of India Act,\n\n2008 sets out the functions of the authority, and inter alia, reads as follows:\n“13. Functions of Authority. (1) The Authority shall perform the following functions in respect of\n major airports, namely:--\n(a) to determine the tariff for the aeronautical services taking into\n consideration--\n****************\n(b) to determine the amount of the development fees in respect of\n major airports;\n(c) to determine the amount of the passengers service fee levied under\n rule 88 of the Aircraft Rules, 1937 made under the\nAircraft Act, 1934\n(22 of 1934);…”\n\nProvisions of the Aircraft Rules, 1937:\n“Rule 88. Passenger Service Fee. —The licensee is entitled to collect\n fees to be called as Passenger Service Fee from the embarking\n passengers at such rate as the Central Government may specify and is\n also liable to pay for security component to any security agency\n designated by the Central Government for providing the security\n service.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P007_C02",
+      "text": "Provided that in respect of a major airport such rate shall be\n as determined under clause (c) of sub-section (1) of\nsection 13\nof the\n Airports Economic Regulatory Authority of India Act, 2008. Rule 89. User Development Fee —The licensee may, -\n\n(i) levy and collect at a major airport the User Development Fee at\n such rate as may be determined under clause (b) of sub-section (1) of\nsection 13\nof the Airports Economic Regulatory Authority of India\n Act, 2008;\n(ii) levy and collect at any other airport the User Development Fees at\n such rate as the Central Government may specify.”\n\nThe relevant provisions of the\nAAI Act\nare extracted below:\n“\nSection 22\n.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P007_C03",
+      "text": "The Authority may,-\n(i) With the previous approval of the Central Government, charge\n fees, or rent-\n(a) for the landing, housing or parking of aircraft or for any other\n service or facility offered in connection with aircraft operations at any\n airport, heliport or airstrip\n\n Explanation. -\nIn this sub-clause “aircraft” does not include an aircraft belonging to\n any armed force of the Union and “aircraft operations” does not\n include operations of any aircraft belonging to the said force;\n(b) for providing air traffic services, ground safety services,\n aeronautical communications and navigational aids and\n meteorological services at any airports and at any aeronautical\n communication station;\n(c) for the amenities given to the passengers and visitors at any\n airport, civil enclave, heliport or airstrip;\n(d) for the use and employment by persons of facilities and other\n services provided by the authority at any airport, civil enclave heliport\n or airstrip;\n(ii) with due regard to the instructions that the Central Government\n may give to the authority, from time to time, charge fees or rent from\n persons who are given by the authority any facility for carrying on\n any trade or",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P007_C04",
+      "text": "business at any airport, heliport or airstrip.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P007_C05",
+      "text": "Section 22A. The Authority may, after the previous approval of the\n Central Government in this behalf, levy on, and collect from, the\n embarking passengers at an airport, the development fees at the rate\n as may be prescribed and such fees shall be credited to the Authority\n and shall be regulated and utilized in the prescribed manner, for the\n purposes of-\n(a) funding or financing the costs of upgradation, expansion or\n development of the airport at which the fee is collected; or\n(b) establishment or development of a new airport in lieu of the\n airport referred to in clause (a); or\n(c) investment in the equity in respect of shares to be subscribed by\n the Authority in companies engaged in establishing, owning,\n developing, operating or maintaining a private airport in lieu of the\n\nairport referred to in clause (a) or advancement of loans to such\n companies or other persons engaged in such activities.”\n III\n\nContentions of the parties",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P008_C01",
+      "text": "7. Ms. Nisha Bagchi, learned counsel for the revenue, submits that assessees\n\nfunction as licensees of Airports. The airports are capable of being licensed by\n\nthe AAI to operate as aerodromes. It was submitted that grant of licenses is\n\nsubject to express conditions. Rule 88 provides for collection of fees known as\n\n“passenger services fees” from the embarking passengers; Rule 89 provides for\n\ncollection of “User Development Fee” (hereafter “UDF”) by licensees. Ms\n\nBagchi argued that user development fees are nothing but amounts collected for\n\nextending or enhancing various services like providing passenger lounges,\n\npassenger amenities, toilets, rest rooms and other facilities inside airports. Even\n\nthe agreement entered by the assessees with AAI, indicates that UDF is to\n\nenhance passenger amenities, services and facilities. Those amounts are to be\n\nused for development, management, maintenance and operation and expansion\n\nof facilities at the airport.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P009_C01",
+      "text": "8. It was urged that the nature of UDF indicates that such fees are amounts\n\ncollected for rendering various services. The amounts collected is nothing but\n\ndevelopment fee, meant to be used for funding and financing specific\n\nrenovation, maintenance, development and upgradation of airports. These are\n\nnecessary due to cost escalation. These amounts are for services rendered, and\n\nproviding access by the airport. Such amounts are taxable. Learned counsel\n\nalso relied on the circular No. 106/Commr (ST)/2009 dated 08.07.2011, which\n\nspecifically stated that service tax is paid by the various airports on passenger\n\nservices fee and UDF but no tax is paid on development fees. It was argued that\n\nCBEC has clarified that passenger service fee, user development fee and\n\ndevelopment fee are different and development fee is to be taxed under “airport\n\nservices”.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P010_C01",
+      "text": "9. Learned counsel sought to distinguish the decision of the Kerala High\n\nCourt in the case of Cochin International Airport Ltd. because in that case, what\n\nwas in issue was user fee while in the case in hand it is UDF. Counsel reiterated\n\nthat the findings of the lower authorities are correct and submits that the\n\nimpugned orders of CESTAT call for interference.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P011_C01",
+      "text": "10. Learned counsel pointed out that by\nSection 22A\nof the AAI Act, the\n\nauthority “may”, after the previous approval of the Central Government “levy\n\non, and collect from, the embarking passengers at, an airport, the Development\n\nFees”. It was contended that such levy cannot be called a tax because it is\n\ndiscretionary and subject to the approval of the Central Government, meant for\n\nfunding or financing the costs of upgradation, expansion or development of the\n\nairport at which the fee is collected; or establishment or development of a new\n\nairport in lieu of the existing airport or towards investment in the equity in\n\nrespect of “shares to be subscribed by the authority in companies engaged in\n\nestablishing, owning, developing, operating or maintaining a private airport in\n\nlieu of the airport” or “advancement of loans to such companies or other\n\npersons engaged in such activities.” It was also urged that the amounts cannot\n\nbe termed as levy, because they are not deposited with the government treasury.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P012_C01",
+      "text": "11. It was submitted that from a reading of Section 22A, it is clear that it\n\nallows for funding or financing the cost of upgradation, expansion or\n\ndevelopment of the airport at which the fee is collected and establishment or\n\ndevelopment of a new Airport in lieu of the airport at which the fee is collected.\n\nThis is a pre-funding collection and imposed for the facility to be provided by\n\nthe assessees and to be used for funding of project cost which ultimately would\n\nresult in creation of better facilities and amenities for passengers. The assessees\n\nentered into agreements for the purpose of its operation, management and\n\ndevelopment of airports (OMDA). In terms of such OMDAs, assessees are\n\nresponsible for the development, design, upgradation of airport. It is for this\n\npurpose that they have been permitted to collect UDF from the passengers.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P013_C01",
+      "text": "12. It is further submitted that the assessees are authorized to collect UDF by\n\nthe Ministry of Civil Aviation which granted approval under\nSection 22A\nof the\n\nAAI Act. Once it is clear that the purpose and object of the UDF is for funding\n\nor financing the costs of upgradation, expansion or development of the major\n\nAirports, only the rate of fees are determined by the Airport Economic\n\nRegulatory Authority. The upgradation or development of an airport results in\n\nbetter infrastructure and services to passengers. Collection of the DF could\n\nfacilitate and provide better services to the passengers who would be the\n\nrecipient of the airport service. Therefore, the amount cannot be called a tax or\n\nlevy, but is actually a collection for service, and consequently liable to service\n\ntax.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P014_C01",
+      "text": "13. The revenue argues that the definition of airport service is wide and\n\nincludes any service provided or to be provided by any person in the airport. It\n\nis a taxable service. Further, without payment of such levy, passengers cannot\n\nenter the airport nor can have access to the plane. Thus, the UDF collected by\n\nDIAL is covered by the definition of “airport service” and would be liable to\n\npayment of service tax. The impugned order has failed to appreciate this\n\nsubmission and hence, the same is liable to be set aside.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P015_C01",
+      "text": "14. It was argued that the decision of this court in the case of\nConsumer\n\nOnline Foundation v Union of India5\nhad expressed the view that DF appeared\n\nto be in the form of tax or cess, but was not a legally collected tax. It was argued\n\nthat Section 22A provided for the “levy” of DF, but the rate at which the said\n\nlevy was to be collected had not been prescribed by framing of a separate rule\n\nby the Airports Economic Regulatory Authority (AERA) as amended by the\n\n2008 Act. This court held that the collection of UDF by the assessees prior to\n\nthe notification issued by AERA was considered to be levied and collected\n\nwithout the authority of law. It further found that the levy and collection of\n\n2011 (5) SCR 911\n\nUDF by the two airport concessionaires at the rates fixed by the Central\n\nGovernment (by two letters dated 9.2.2009 and 27.2.2009) respectively were\n\nultra vires the\nAAI Act\n, and were not saved by\nSection 6\nof the General Clauses\n\nAct, 1897.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P016_C01",
+      "text": "15. It is submitted that in\nthe above decision\n, there is no clear finding that DF\n\nis a tax or cess and the same was held to be ultra vires the\nAAI Act\non the\n\nground that the rate could not have been fixed by the Central Government, but\n\nonly by making a rule by AERA which has not been done. In the present case,\n\nwe are concerned with the levy of service tax on DF collected by the\n\nrespondents from the passengers. Also in that decision, this court was not\n\nconcerned with levy or otherwise of service tax on DF. It was argued that DF\n\nhas not been collected as tax or cess and therefore, the contention that DF is a\n\ntax on which there cannot be any service tax is incorrect. The nature of DF is\n\nthat these are the charges collected by the respondents for development of\n\nfacilities for the use of the airport. In fact, the assesses’ contention was these are\n\nthe charges for the use of the airport services by the passengers and is not a tax.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P017_C01",
+      "text": "16. Learned counsel relied on the judgment reported as\nKrishi Upaj Mandi\n\nSamiti v Commissioner of Central Excise6\nand urged that the nature of UDF is\n\nsimilar to the optional collection made by market committees who perform\n\nservices, which are not in the nature of a statutory activity or a sovereign\n\n2022 (1) SCR 700\n\nfunction, and if such services are rendered for a consideration, they are\n\nsubjected to levy.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [
+        "Krishi Upaj Mandi\n\nSamiti v Commissioner of Central Excise6\nand urged"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P018_C01",
+      "text": "17. Mr. Arvind Datar, Mr. Tarun Gulati and Mr. Pritesh Kapoor, learned\n\nsenior counsel appearing for the assessees, contended that the decision in\nConsumer Online\n(supra) has concluded the nature of collections; it is a tax,\n\nunrelated to any service provided, and has to be borne in mind that there is no\n\nconsideration. Learned counsel relied on the following observation in Consumer\n\nOnline Foundation:\n“the object 8 of Parliament in inserting Section 22A in the 2004 Act\n by the Amendment Act of 2003 is to authorize by law the levy and\n collection of development fees from every embarking passenger de\n hors the facilities that the embarking passengers get at the existing\n airports. The nature of the levy under Section 22A of the 2004 Act, in\n our considered opinion, is not charges C or any other consideration\n for services for the facilities provided by the Airports Authority.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P019_C01",
+      "text": "18. It was argued by learned counsel that the taxable activity did not occur in\n\nthis case, as the collections were intended for future developments whereas the\n\n‘airport’ referred to in Section 65(105) (zzm) is an existing airport. Counsel\n\nurged that such statutory levies were in the nature of cess or tax and were not\n\nliable to taxation. Counsel emphasized that the ruling of the Kerala High Court\n\nCochin International Airport Limited vs. Collector Central Excise\n7 has held\n\nthat UDF is collected to fulfil the funding gap for development of airports, and\n\ncannot be termed as service. This ruling was upheld by this court 8 . In these\n\n2009 (16) STR 401 (Ker.)\n\nin 2010 (17) S.T.R. J79 (S.C.)\n\ncircumstances, there is no merit in the revenue’s submission that development\n\nfee is collected for rendering services.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [
+        "High Court\n\nCochin International Airport Limited v Collector Central Excise\n7 has held"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P020_C01",
+      "text": "19. Learned counsel relied on the impugned orders to say that to be liable to\n\ntax, service should be rendered to a person by a specifically described service\n\nprovider in an airport. The scope of activities of the assessee vis-a-vis\n\npassengers who bear the burden of development fee needs a closer look.\n\nPassengers in an airport intend to travel by an airline which has the said airport\n\nas a scheduled port of call. The contractual nature of this relationship is\n\nenshrined in the ticket which provides access to the airport, process through\n\ncheck-in and security, space for waiting and necessary amenities and provision\n\nfor boarding an aircraft. There is nothing to show that passengers have to make\n\npayments for any of these activities. These facilities were available without any\n\nadditional charge before the imposition of ‘development fee’. Such services\n\ncontinue to be available after its quashing. No additional benefit accrues to the\n\npassenger during the period of levy of ‘development fee.’ All facilities are basic\n\nfacilities inherent in the civil aviation sector in which the appellant, a non-\n\npublic sector entity, is a recent entrant.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P021_C01",
+      "text": "20. It was emphasized that moving away from state control, airports entered\n\nthe phase of regulatory control with the advent of the\nAAI Act\n. This transition\n\nalso had to factor in the larger public interest in safety and security, which\n\nmeant that some level of control, de-regulation was limited and confined to the\n\nfinancial aspects of airport management. Having created a statutory authority,\n\nthe statute should have been specific to contain the scope of functions of the\n\nAAI. Despite granting financial autonomy, the need for dependence on the State\n\nexchequer could not be eliminated and hence appropriate types of levies as well\n\nas restrictions on their utilization were incorporated in the statute. It was\n\ncontended that\nSections 22\nand\n22A\nof the AAI Act are in the context\n\nof substitution of the constitutional funds of the Union of India, for deposit and\n\ndrawing with that of the accounts of AAI.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P022_C01",
+      "text": "21. The assesses urge that\nSection 22\nof the AAI Act enables AAI to charge\n\nfor the facilities it provides. However, the levy under Section 22A [of the\nAAI\n\nAct\n] is compulsorily charged from passengers; it is placed in an escrow account\n\nowing to the restricted purpose for which such fee collected can be used. Hence,\n\nthere is a substantive difference between a charge under\nSection 22\nand levy\n\nunder Section 22A. The charge under\nSection 22\n, paid by any passenger, may\n\nbe a consideration for a service and subjected to service tax. However, the same\n\nprinciples are not applicable to a levy under Section 22A, which is independent\n\nSection 22\nand is not for any service rendered.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P023_C01",
+      "text": "22. Counsel underlines that this court in\nConsumer Online Foundation\n(Supra) has declared the law and has interpreted both\nSection 22\nand\nSection\n\n22A\nof the AAI Act. This court has held that charges collected under\nSection 22\nare for different services and facilities provided to the third parties by the lessee\n\nof AAI. Collections under\nSection 22A\nof the AAI Act, this court has ruled, are\n\n\"dehors the facilities that the embarking passengers get at the existing\n\nairports\". There is also a specific finding that there is no contractual\n\nrelationship between the passengers and the AAI for the funds collected under\nSection 22A\nof the AAI Act. Further, it was highlighted that in the same\n\njudgment, it was held that charges under Section 22A:\n“are not charges or any other consideration for services for the\n facilities provided by the Airports Authority.”\n\nThe court decisively held that development fee is “really in the nature of a cess\n\nor a tax for generating revenue for specific purpose.” And, further, that\n\namounts collected are accountable to the AAI, which would ensure that such\n\nfee levied and collected are “utilized for the purposes mentioned in\nSection\n\n22A (a)\nof the AAI Act.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P024_C01",
+      "text": "23. It was argued that in view of the declaration of law, CESTAT correctly\n\nheld that the charges collected by the assesses under\nSection 22A\nof the AAI\n\nAct cannot be regarded as considered for services rendered.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P025_C01",
+      "text": "24. Learned counsel submitted that the decision in\nKrishi Upaj Mandi Samiti\n(supra) is distinguishable. In that case, the court was concerned only with\nSection 9 (2)\nof the Rajasthan Agricultural Produce Markets Act, 1961, which\n\nwas held not to relate to a statutory function but only a discretionary charge,\n\ni.e., renting of premises.\nRent for immovable property is materially different\n\nfrom a collection under\nSection 22A\nof the AAI Act, which, according to this\n\ncourt, is in the nature of cess or tax and a compulsory exaction in\nConsumer\n\nOnline Foundation\n(supra).",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P026_C01",
+      "text": "25. The assesses also rely on the decision of this court in\nCommissioner of\n\nService Tax vs. Bhayana Builders (P) Ltd9\n, where it was stated that under\nSection 67\nof the Finance Act, 1994, not every amount charged by the service\n\nprovider is taxable. Upon an analysis of Section 67, it was held that the amount\n\ncharged should be \"for such service provided\" to be taxable. The court\n\nemphasized the connection between the service and the amount by stating that:\n\"the Act has provided for a nexus between the amount charged and\n the service provided\".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Commissioner of\n\nService Tax v Bhayana Builders"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P027_C01",
+      "text": "26. Counsel pointed out that\nConsumer Online Foundation\n(supra) has ruled\n\nthat there is no nexus between the amounts charged under\nSection 22A\nof the\n\nAAI Act and any service provided. In the absence of a nexus between the\n\namount charged as DF/UDF and any service rendered, such amounts cannot be\n\nliable to service tax.\n\nAnalysis and Conclusions",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P028_C01",
+      "text": "27. In the decision of this court, in\nConsumer Online Foundation\n(Supra), the\n\ncontext was the validity of the levy of development fees and their collection\n\nfrom embarking passengers by lessees of airports, under OMDAs, including the\n\n2018 (1) SCR 1128\n\nDIAL in this case. The court examined the history of airport regulation in India,\n\nincluding the legislation concerning it, and, after analysing the provisions of the\nAAI Act\n, including the amendment to it, in 2003, held that:\n“12. The functions of the Airports Authority under clause (aa) of sub-\n section (3) of\nSection 12\nalso inserted by the Amendment Act of 2003\n to establish airports, or assist in the establishment of private airports\n by rendering such technical, financial or other assistance which the\n Central Government may consider necessary for such purposes\n cannot be assigned to the lessee under Section 12A Section 12A of the\n 1994 Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P028_C02",
+      "text": "The Amendment Act of 2003 which also inserted Section\n 12A therefore provides in sub-section (1) of Section 12A that the\n Airports Authority can make a lease of the premises of an airport\n (including buildings and structures thereon and appertaining thereto)\n to carry out \"some\" of its functions under\nSection 12\nas the Airports\n Authority may, in the public interest or in the interest of better\n management of airports, deem fit. Obviously, \"a lease of premises of\n an airport\" as contemplated in sub-section (1) of Section 12A cannot\n include establishing an airport or assisting in establishment of private\n airports as contemplated in clause (aa) of sub-section (3) of\nSection\n\nof the Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P029_C01",
+      "text": "13. To enable the Airports Authority to perform its statutory function\n of establishing a new airport or to assist in the establishment of\n private airports, the legislature has thought it fit to empower the\n Airports Authority to levy and collect development fees as will be\n clear from clauses (b) and (c) of Section 22A of the 1994 Act. Such\n development fees levied and collected under Section 22A can also be\n utilized for funding or financing the costs of up-gradation, expansion\n and development of an existing airport at which the fees is collected\n as provided in clause (a) of\nSection 22A\nof the Act and in case the\n lease of the premises of an existing airport (including buildings and\n structures thereon and appertaining thereto) has been made to a\n lessee under\nSection 12A\nof the Act, the Airports Authority may meet\n the costs of up-gradation, expansion and development of such leased\n out airport to a lessee, but this can be done only if the rules provide\n for such payment to the lessee of an airport because Section\n 22A says that the development fees are to be regulated and utilized in\n the manner prescribed by the Rules.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P029_C02",
+      "text": "Since the lessee of an airport\n cannot be assigned the function of the Airports Authority to establish\n airports or assist in establishing private airports in lieu of the existing\n airports at which the development fees is being collected, the lessee\n cannot under sub-section (4) of Section 12A have the power of the\n Airports Authority under Section 22A of the 1994 Act to levy and\n collect development fees. This is because sub-section (4) of Section\n 12A provides that the lessee can have all those powers of the Airports\n Authority which are necessary for performance of such functions as\n\nassigned to it under sub-section (1) of Section 12A in terms of the\n lease.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P029_C03",
+      "text": "Moreover, since we have held that the function of establishment\n and development of a new airport in lieu of an existing airport and the\n function of establishing a private airport are exclusive functions of the\n Airports Authority under the 2004 Act, and these statutory functions\n cannot be assigned by the Airports Authority under lease to a lessee\n under\nSection 12A\nof the Act, the lease agreements, namely, the\n OMDA and the State Support agreement could not make a provision\n conferring the right on the lessee to levy and collect development fees\n for the purpose of discharging these statutory functions of the Airports\n Authority. We, therefore, do not think it necessary to refer to the\n clauses of the OMDA and the State Support Agreements executed in\n favour of the two lessees to find out whether the right of levying and\n collecting the development fees has been assigned to the lessees or\n not.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P030_C01",
+      "text": "28. This court further held as follows:\n“It will be clear from a bare reading of\nSections 22\nand 22A that there\n is a distinction between the charges, fees and rent collected\n under\nSection 22\nand the development fees levied and collected\n under Section 22A of the 1994 Act. The charges, fees and rent\n collected by the Airports Authority under\nSection 22\nare for the\n services and facilities provided by the Airports Authority to the\n airlines, passengers, visitors and traders doing business at the airport. Therefore, when the Airports Authority makes a lease of the premises\n of an airport (including buildings and structures thereon and\n appertaining thereto) in favour of a lessee to carry out some of its\n functions under\nSection 12\n, the lessee, who has been assigned such\n functions, will have the powers of the Airports Authority under\nSection\n\nof the Act to collect charges, fees or rent from the third parties for\n the different facilities and services provided to them in terms of the\n lease agreement.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P030_C02",
+      "text": "The legal basis of such charges, fees or rent\n enumerated in\nSection 22\nof the 2008 Act is the contract between the\n Airports Authority or the lessee to whom the airport has been leased\n out and the third party, such as the airlines, passengers, visitors and\n traders doing business at the airport. But there can be no such\n contractual relationship between the passengers embarking at an\n airport and the Airports Authority with regard to the upgradation,\n expansion or development of the airport which is to be funded or\n financed by development fees as provided in clause (a) of Section 22A. Those passengers who embark at the airport after the airport is\n upgraded, expanded or developed will only avail the facilities and\n services of the upgraded, expanded and developed airport. Similarly,\n there can be no contractual relationship between the Airports\n Authority and passengers embarking at an airport for establishment of\n a new airport in lieu of the existing airport or establishment of a\n private airport in lieu of the existing airport as mentioned in Clauses\n\n(b) and (c) of Section 22A of the 1994 Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P030_C03",
+      "text": "In the absence of such\n contractual relationship, the liability of the embarking passengers to\n pay development fees has to be based on a statutory provision and for\n this reason Section 22A has been enacted empowering the Airports\n Authority to levy and collect from the embarking passengers the\n development fees for the purposes mentioned in clauses (a), (b) and\n(c) of\nSection 22A\nof the Act. In other words, the object of Parliament\n in inserting Section 22A in the 2004 Act by the Amendment Act of\n 2003 is to authorize by law the levy and collection of development fees\n from every embarking passenger de hors the facilities that the\n embarking passengers get at the existing airports. The nature of the\n levy under Section 22A of the 2004 Act, in our considered opinion, is\n not charges or any other consideration for services for the facilities\n provided by the Airports Authority. This Court has held in\nVijayalakshmi Rice Mills & Ors v Commercial Tax Officers, Palakot\n & Ors\n(supra) that a cess is a tax which generates revenue which is\n utilized for a specific purpose.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P030_C04",
+      "text": "The levy under Section 22A though\n described as fees is really in the nature of a cess or a tax for\n generating revenue for the specific purposes mentioned in clauses (a),\n(b) and (c) of Section 22A.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P031_C01",
+      "text": "15. Once we hold that the development fees levied under Section\n 22A is really a cess or a tax for a special purpose,\nArticle 265\nof the\n Constitution which provides that no tax can be levied or collected\n except by authority of law gets attracted and the decisions of this\n Court starting from The Trustees of the Port of Madras v M/s\n Aminchand Pyarelal (supra), cited on behalf of the Union of India and\n DIAL and MIAL on the charges or tariff levied by a service or facility\n provided are of no assistance in interpreting Section 22A. It is a\n settled principle of statutory interpretation that any compulsory\n exaction of money by the Government such as a tax or a cess has to be\n strictly in accordance with law and for these reasons a taxing statute\n has to be strictly construed. As observed by this Court in\nAhmedabad\n Urban Development Authority v Sharadkumar Jayantikumar\n Pasawalla & Ors. (supra), it has been consistently held by this Court\n that whenever there is compulsory exaction of money, there should be\n specific provision for the same and there is no room for intendment\n and nothing is to be read or nothing is to be implied and one should\n look fairly to the language used.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 265"
+      ],
+      "cited_cases": [
+        "Court in\nAhmedabad\n Urban Development Authority v Sharadkumar Jayantikumar\n Pasawalla & Ors"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P031_C02",
+      "text": "Looking strictly at the plain language\n of Section 22A of 1994 Act before its amendment by the 2008 Act, the\n development fees were to be levied on and collected from the\n embarking passengers \"at the rate as may be prescribed\".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P032_C01",
+      "text": "29. The observations and findings extracted above are decisive about the\n\nnature of development fee, collected under Section 22A; they are statutory\n\nexactions and not fees or tariffs, as was contended by the Union of India. In\n\nfact, the court even underlined that the “nature of the levy under Section 22A of\n\nthe 2004 Act, in our considered opinion, is not charges or any other\n\nconsideration for services for the facilities provided by the Airports Authority.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P033_C01",
+      "text": "30. By virtue of\nSection 67\nof the Finance Act, the basis of charge is the\n\nvalue of taxable service. Section 67 as it stood, before amendment w.e.f. April\n\n18, 2006, read as follows:\n“67.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P033_C02",
+      "text": "Valuation of taxable services for charging service tax. - For the\n purposes of this Chapter, the value of any taxable service shall be the\n gross amount charged by the service provider for such service\n provided or to be provided by him.\n******************\n ******************\n Explanation 3.-For the removal of doubts, it is hereby declared that\n the gross amount charged for the taxable service shall include any\n amount received towards the taxable service before, during or after\n provision of such service.”\n(i) in a case where the provision of service is for a consideration in\n money, be the gross amount charged by the service provider for such\n service provided or to be provided by him;\n(ii) in a case where the provision of service is for a consideration not\n wholly or partly consisting of money, be such amount in money as,\n with the addition of service tax charged, is equivalent to the\n consideration;\n(iii) in a case where the provision of service is for a consideration\n which is not ascertainable, bet he amount as may be determined in the\n prescribed manner.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P033_C03",
+      "text": "After Section 67 (4), the following explanation to the entire section\n read as follows:\n“Explanation.- For the purposes of this section. (a) “consideration” includes any amount that is payable for the\n taxable services provided or to be provided;\n(b) “money” includes any currency, cheque, promissory note, letter of\n credit, draft, pay order, travellers cheque, money order, postal\n remittance and other similar instruments but does not include\n currency that is held for its numismatic value.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P034_C01",
+      "text": "31. After the amendment,\nSection 67\nof the Act read as follows:\n\n“Section 67. Valuation of taxable services for charging service tax (1)\n Subject to the provisions of this Chapter, service tax chargeable on\n any taxable service with reference to its value shall-\n(i) in a case where the provision of service is for a consideration in\n money, be the gross amount charged by the service provider for such\n service provided or to be provided by him;\n(ii) in a case where the provision of service is for a consideration not\n wholly or partly consisting of money, be such amount in money, with\n the addition of service tax charged, is equivalent to the consideration;\n(iii) in a case where the provision of service is for a consideration\n which is not ascertainable, be the amount as may be determined in the\n prescribed manner.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P035_C01",
+      "text": "32. This court, in\nBhayana Builders\n(supra), ruled that to attract service tax\n\nlevy, a taxable service has to be provided to a recipient, by a service provider,\n\nfor a consideration and in the absence of any nexus to any service rendered, an\n\namount charged, or value of service or goods provided without a consideration,\n\nwould not be a taxing incident. The court held that:\n“Section 67 clearly indicates that the gross amount charged by the\n service provider has to be for the service provided. Therefore, it is not\n any amount charged which can become the basis of value on which\n service tax becomes payable but the amount charged has to be\n necessarily a consideration for the service provided which is taxable\n under the Act. By using the words \"for such service provided\" the Act\n has provided for a nexus between the amount charged and the service\n provided.\nTherefore, any amount charged which has no nexus with the taxable\n service and is not a consideration for the service provided does not\n become part of the value which is taxable under Section 67.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P036_C01",
+      "text": "33. On 02.08.2011, the Airports Authority of India (Major Airports)\n\nDevelopment Fees Rules 2011 (hereafter “the 2011 Rules”) came into force.\n\nThey, by Rule 3, authorized the collection of development fees; by Rule 4 (1),\n\nan Escrow account had to be opened in respect of each airport into which the\n\ndevelopment fee collections were to be deposited; by Rule 4 (2), AAI is\n\nempowered to monitor and regulate the receipts and utilization of fees; by Rule\n\n4 (3), various sub accounts were to be opened [(a) Development Fees Receipt\n\nAccount; (b) Development Fees Statutory Dues Account; (c) Development Fees\n\nDisbursement Account; (d) Development Fees Surplus Account]. By Rule 4 (4),\n\nthe money collected as development fees is to be deposited in the Development\n\nFees Receipt Account.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P037_C01",
+      "text": "34. Besides the rules, the assessee, in the case of DIAL, has placed on the\n\nrecord, a letter issued to it, by AAI which imposes controls on the utilization of\n\namounts collected as development fee; apart from the fact that the amounts are\n\ndeposited in an escrow, any plan for utilization has to be approved. Unlike fees,\n\nrent, charges etc., provided under\nSection 22\nof AAI Act, assessee companies\n\nare authorized on behalf of the AAI to levy and collect 'development fee' under\nSection 22A\nof the AAI Act on behalf of the AAI and was applied for\n\ngenerating revenue for utilization of the same for the specific purpose provided\n\nunder sub- clause (a), (b) and (c) of\nsection 22(A)\nof the AAI Act. The UDF\n\ncollected by the assessee is to bridge the funding gap of project cost for the\n\ndevelopment of future establishment at the airports. There is nothing on record\n\nto show that any additional benefit has accrued to passengers, visitors, traders,\n\nairlines etc., upon levy of UDF during the period in question in the present case.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P038_C01",
+      "text": "35. There is a distinction between the charges, fee and rent etc. collected\n\nunder\nSection 22\nof the AAI Act and the UDF levied and collected under\n\nSection 22A\nof the AAI Act. It is that the UDF is in the form of 'tax or cess'\n\ncollected for financing the cost of future projects and there was no consideration\n\nfor services provided by the assessee to the customer, visitors, passengers,\n\nvendors etc. The aggregate of collections in the bank accounts do not form part\n\nof profit and loss account.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P039_C01",
+      "text": "36. It is also useful to notice that by a circular issued by the CBEC 10, on\n\n18.12.2006, it was clarified that collection of amounts, by way of taxes,\n\nsovereign or statutory dues, would not be subjected to service tax levy:\n“Subject: Applicability of service tax on fee collected by Public\n Authorities while performing statutory functions /duties under the\n provisions of a law – regarding\n A number of sovereign/public authorities (i.e. an agency\n constituted/set up by government) perform certain functions/ duties,\n which are statutory in nature. These functions are performed in terms\n of specific responsibility assigned to them under the law in force. For\n example, the Regional Reference Standards Laboratories (RRSL)\n undertake verification, approval and calibration of weighing and\n measuring instruments; the Regional Transport Officer (RTO) issues\n fitness certificate to the vehicles; the Directorate of Boilers inspects\n and issues certificate for boilers; or Explosive Department inspects\n and issues certificate for petroleum storage tank, LPG/CNG tank in\n terms of provisions of the relevant laws.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P039_C02",
+      "text": "Fee as prescribed is charged\n and the same is ultimately deposited into the Government Treasury. A\n doubt has arisen whether such activities provided by a\n sovereign/public authority required to be provided under a statute can\n be considered as ‘provision of service’ for the purpose of levy of\n service tax.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P040_C01",
+      "text": "2. The issue has been examined. The Board is of the view that the\n activities performed by the sovereign/public authorities under the\n provision of law are in the nature of statutory obligations which are to\n be fulfilled in accordance with law. The fee collected by them for\n performing such activities is in the nature of compulsory levy as per\n the provisions of the relevant statute, and it is deposited into the\n Government treasury. Such activity is purely in public interest and it\n is undertaken as mandatory and statutory function. These are not in\n the nature of service to any particular individual for any\n\nCircular No. 89/7/2006- ST dated 18.12.2006\n\nconsideration. Therefore, such an activity performed by a\n sovereign/public authority under the provisions of law does not\n constitute provision of taxable service to a person and, therefore, no\n service tax is leviable on such activities.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P041_C01",
+      "text": "3. However, if such authority performs a service, which is not in the\n nature of statutory activity and the same is undertaken for a\n consideration not in the nature of statutory fee/levy, then in such\n cases, service tax would be leviable, if the activity undertaken falls\n within the ambit of a taxable service.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P042_C01",
+      "text": "37. This circular was interpreted in\nKrishi Upaj Samiti\n(supra). The court\n\nheld that the fee collected\nin that case\ncould not be said to be a statutory\n\nexaction or levy, but was for consideration:\n“10. The aforesaid submission seems to be attractive but has no\n substance. Section 9(2)\nis an enabling provision and the words used is\n “market committee may”. It is to be noted that insofar as sub-section\n (1) of\nSection 9\nis concerned, the word used is “shall”. Therefore,\n wherever the legislature intended that the particular activity is a\n mandatory statutory, the legislature has used the word “shall”. Therefore, when under sub-section (2) of\nSection 9\n, the word used is\n “may”, the activities mentioned in\nSection 9(2)(xvii)\ncannot be said to\n be mandatory statutory duty and/or activity. Under\nSection 9(2)\n, it is\n not a mandatory statutory duty cast upon the Market Committees to\n allot/lease/rent the shop/platform/land/space to the traders. Hence,\n such an activity cannot be said to be a mandatory statutory activity as\n contended on behalf of the appellants. Even the fees which is collected\n is not deposited into the Government treasury.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P042_C02",
+      "text": "It will go to the market\n committee fund and will be used by the market committee(s). In the\n facts of the case on hand, such a fee collected cannot have the\n characteristics of the statutory levy/statutory fee. Thus, under the\n 1961 Act, it cannot be said to be a mandatory statutory obligation of\n the Market Committees to provide shop/land/platform on rent/lease. If\n the statute mandates that the Market Committees have to provide the\n land/shop/platform/space on rent/lease then and then only it can be\n said to be a mandatory statutory obligation otherwise it is only a\n discretionary function under the statute. If it is discretionary function,\n then, it cannot be said to be a mandatory statutory\n obligation/statutory activity. Hence, no exemption to pay service tax\n can be claimed.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P043_C01",
+      "text": "38. The principal holding, so to say, was that the discretionary fee could be\n\nlevied, and that there was no “duty cast upon the Market Committees to\n\nallot/lease/rent the shop/platform/land/space to the traders”. The second reason\n\nwas that the amounts were credited to a market fund, which was later deposited\n\nin the government treasury, even after which it remained a market committee\n\nfund.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P044_C01",
+      "text": "39. In the present case, undoubtedly, neither is there any compulsion to levy\n\ndevelopment fee nor is the collection conditional upon its deposit in the\n\ngovernment treasury. However, the absence of these features in this court’s\n\nopinion, does not render UDF any less a statutory levy. Firstly, the ruling in\nConsumer Online Foundation\n(Supra) is conclusive that UDF is a statutory\n\nlevy. Secondly, the collection is not premised on rendering of any service. Thirdly, the amounts collected are deposited in an escrow account, not within\n\nthe control of the assesses. Fourthly, the utilization of funds, is monitored and\n\nregulated by law. In this regard, the fact that the amount is not deposited in a\n\ngovernment treasury, per se, does not make it any less a statutory levy or\n\ncompulsory exaction. Nor does its discretionary nature, (in the sense that it may\n\nnot be necessarily levied always) render it any less a statutory levy. Airport\n\nmanagement has evolved; it is no longer the monopoly of the government;\n\nprivate participation is recognized. This sector is now regulated through a new\n\nregulator, i.e., the Airports Economic Regulatory Authority of India.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P044_C02",
+      "text": "As part of\n\nthe Union’s economic policies, the upgradation and renovation of airports are\n\nfunded through UDF, which is a statutory levy. Instead of the conventional\n\npractise of ensuring that amounts collected are deposited with the Government,\n\nan entirely new regulatory regime has been envisioned, under the 2011 Rules,\n\nread with specific conditions imposed by the AAI on each assessee, which\n\nincludes monitoring of amounts, nature of expenditure, submission of plans for\n\nexpansion, renovation, their sanctioning etc. These rules and controls are in the\n\npublic interest, and evidently intended to further efficiency in funding and swift\n\ntaking up and completion of works, rather than funding through Finance Rules,\n\nwhich might entail delay, and cost overruns. However, the public nature of\n\nthese funds does not in any manner get undermined, merely because they are\n\nkept in an escrow account, and their utilization is monitored separately.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD_P045_C01",
+      "text": "40. In view of the foregoing reasons, this court is of opinion that the\n\nimpugned orders cannot be faulted. The revenue’s appeals therefore fail and are\n\ndismissed; in the circumstances, without order on costs.\n…………………………………. J.\n[S. RAVINDRA BHAT]\n\n .…………………………………J.\n [DIPANKAR DATTA]\nNEW DELHI;\nMAY 19, 2023.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Central Gst Delhi Iii vs Delhi International Airport Ltd",
+    "case_id": "SC_2023_CENTRAL_GST_DELHI_III_VS_DELHI_INTERNATIONAL_AIRPORT_LTD",
+    "court": "Supreme Court of India",
+    "year": "2023",
+    "facts_summary": "1. In all these appeals, orders of the Customs, Excise and Service Tax\n\n Appellate Tribunal1 (hereafter “CESTAT”) are impugned by the service tax\n\n authorities (hereafter “the revenue”), who argue that user development fee\n\n levied and collected by the airport operation, maintenance and development\n\n entities (i.e., the Mumbai International Airport Pvt. Ltd., the Delhi International\n\nAirport Pvt. Ltd., and the Hyderabad International Airport Pvt. Ltd., (hereafter\n\ncollectively called “the assessees”) is subjected to service tax levy, under the\n\nprovisions of the\nFinance Act, 1994\n(hereafter “the Act”). 2. All the assessees had entered into joint venture arrangements/agreements\n\n(hereafter “OMDA”) with the Airports Authority of India (hereafter “AAI”, a\n\nbody corporate created by the\nAirports Authority of India Act, 1994\n[hereafter\n\n“\nAAI Act\n”]. Under OMDA, the assesses agreed to undertake some activities\n\nenjoined upon the AAI, by the\nAAI Act\n. The assessees were authorised,\n\nby various notifications (dated 27th February 2009) issued by the Central\n\nGovernment under\nSection 22A\nof the AAI Act to collect a “development fee”\n\n@ Rs. 100/- for every departing domestic passenger and Rs. 600/- for every\n\ndeparting international passenger at the concerned airports for a period of 48\n\nmonths. 3. The Commissioner of Service Tax, through various show cause notices\n\ndemanded payment of tax on the development fee collected for various periods.\n\nThese notices were adjudicated and confirm",
+    "legal_issues": "7. Ms. Nisha Bagchi, learned counsel for the revenue, submits that assessees\n\nfunction as licensees of Airports. The airports are capable of being licensed by\n\nthe AAI to operate as aerodromes. It was submitted that grant of licenses is\n\nsubject to express conditions. Rule 88 provides for collection of fees known as\n\n“passenger services fees” from the embarking passengers; Rule 89 provides for\n\ncollection of “User Development Fee” (hereafter “UDF”) by licensees. Ms\n\nBagchi argued that user development fees are nothing but amounts collected for\n\nextending or enhancing various services like providing passenger lounges,\n\npassenger amenities, toilets, rest rooms and other facilities inside airports. Even\n\nthe agreement entered by the assessees with AAI, indicates that UDF is to\n\nenhance passenger amenities, services and facilities. Those amounts are to be\n\nused for development, management, maintenance and operation and expansion\n\nof facilities at the airport. 8. It was urged that the nature of UDF indicates that such fees are amounts\n\ncollected for rendering various services. The amounts collected is nothing but\n\ndevelopment fee, meant to be used for funding and financing specific\n\nrenovation, maintenance, development and upgradation of airports. These are\n\nnecessary due to cost escalation. These amounts are for services rendered, and\n\nproviding access by the airport. Such amounts are taxable. Learned counsel\n\nalso relied on the circular No. 106/Commr (ST)/2009 dated 08.07.2011, ",
+    "ratio_summary": "15. Once we hold that the development fees levied under Section\n 22A is really a cess or a tax for a special purpose,\nArticle 265\nof the\n Constitution which provides that no tax can be levied or collected\n except by authority of law gets attracted and the decisions of this\n Court starting from The Trustees of the Port of Madras v M/s\n Aminchand Pyarelal (supra), cited on behalf of the Union of India and\n DIAL and MIAL on the charges or tariff levied by a service or facility\n provided are of no assistance in interpreting Section 22A. It is a\n settled principle of statutory interpretation that any compulsory\n exaction of money by the Government such as a tax or a cess has to be\n strictly in accordance with law and for these reasons a taxing statute\n has to be strictly construed. As observed by this Court in\nAhmedabad\n Urban Development Authority v Sharadkumar Jayantikumar\n Pasawalla & Ors. (supra), it has been consistently held by this Court\n that whenever there is compulsory exaction of money, there should be\n specific provision for the same and there is no room for intendment\n and nothing is to be read or nothing is to be implied and one should\n look fairly to the language used.",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [
+      "Constitution 265"
+    ],
+    "cases_cited": [
+      "Krishi Upaj Mandi\n\nSamiti v Commissioner of Central Excise6\nand urged",
+      "High Court\n\nCochin International Airport Limited v Collector Central Excise\n7 has held",
+      "Commissioner of\n\nService Tax v Bhayana Builders",
+      "Court in\nAhmedabad\n Urban Development Authority v Sharadkumar Jayantikumar\n Pasawalla & Ors"
+    ]
+  }
+}

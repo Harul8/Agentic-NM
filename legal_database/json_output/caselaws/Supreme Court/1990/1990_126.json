@@ -1,0 +1,119 @@
+{
+  "case_id": "SC_1990_VIJAYA_BANK_LTD_VS_ADDITIONAL_COMMISSIONER_OF",
+  "case_name": "Vijaya Bank Ltd. vs Additional Commissioner Of ...",
+  "normalized_case_name": "VIJAYA_BANK_LTD._VS_ADDITIONAL_COMMISSIONER_OF_...",
+  "court": "Supreme Court of India",
+  "year": "1990",
+  "judgment_template": null,
+  "case_number": "Petition 33 of 1973",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": "19 September 1990",
+  "judges": [
+    "T.K. Thommen",
+    "S.C. Agrawal",
+    "JUDGMENT"
+  ],
+  "author": "T.K. Thommen",
+  "bench_type": "constitution",
+  "petitioner": "Vijaya Bank Ltd.",
+  "respondent": "Additional Commissioner Of ...",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 4,
+  "cited_by_count": 66,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1991SC239",
+    "[1991]187ITR541(SC)",
+    "1991SUPP(2)SCC147",
+    "AIR 1991 SUPREME COURT 239",
+    "1990 TAX. L. R. 1015",
+    "1991 (2) SCC(SUPP) 147",
+    "(1991) 187 ITR 541",
+    "(1991) 94 CURTAXREP 216",
+    "(1991) 2 BANKCLR 240"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1990\\1990_126.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1990_VIJAYA_BANK_LTD_VS_ADDITIONAL_COMMISSIONER_OF_P001_C01",
+      "text": "1. This appeal arises from the judgment of the Karnataka High Court in I.T. Referred Case No. 33 of 1973 (reported in 1976 Tax LR 524). The question which arose for consideration was :\nWhether, on the facts and in the circumstances of the case, the Tribunal was right in law in holding that the following two sums were admissible as deductions under\nSections 19\n,\n\nand\n\nof the Income-tax Act 1961 :\n(a) Rs. 58,568/-, interest accrued on securities taken over by the assessee baujs. from Jayalakshmi Bank Ltd., and\n(b) Rs. 11,630/-, interest accrued up to the date of purchase in the case of securities purchased by the assessee bank, from the open market?",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1990_VIJAYA_BANK_LTD_VS_ADDITIONAL_COMMISSIONER_OF_P002_C01",
+      "text": "2. During the accounting year relevant to the assessment year 1968-69, the assessee which is a banking company received the above mentioned amounts as interest on securities purchased from another banking company as well as in the open market. These two amounts were brought to tax by the Income-tax Officer under\nSection 18\nof the Income-tax Act, 1961. The assessee's claim that these amounts were deductible under\nSections 19\n,\n\nand\n\nwas rejected by the officer. The order of assessment was confirmed by the Appellate Assistant Commissioner. However, on further appeal, the Income-tax Appellate Tribunal held that the interest earned from the securities was deductible under\nSections 19\n,\n\nand\n\n.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1990_VIJAYA_BANK_LTD_VS_ADDITIONAL_COMMISSIONER_OF_P003_C01",
+      "text": "3. The High Court on a reference at the instance of the revenue held that the amounts received by the assessee as interest on securities were taxable under\nSection 18\nof the Act. The High Court referred to Commissioners of Inland Revenue v. Pilcher (1949) 31 Tax Cases 314, and other cases, and observed that the amounts expended by the assessee for the purchase of securities were in the nature,, of capital outlay, and they could not be set off as expenditure against income accruing on the securities.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1990_VIJAYA_BANK_LTD_VS_ADDITIONAL_COMMISSIONER_OF_P004_C01",
+      "text": "4. In Commissioners of Inland Revenue v. Pilcher (1949) 31 Tax Cas 314, Lord Justice Jenkins stated (at p. 332) :\nIt is a well settled principle that outlay on the purchase of an income-bearing asset is in the nature 6f capital outlay, and no part of the capital so laid out can, for income-tax purposes, be set off as expenditure against income accruing from the asset in question.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1990_VIJAYA_BANK_LTD_VS_ADDITIONAL_COMMISSIONER_OF_P005_C01",
+      "text": "5. In the instant case, the assessee purchased securities. It is contended that the price paid for the securities was determined with reference to their actual value as well as the interest which had accrued on them till the date of purchase. But the fact is, whatever was the consideration which prompted the assessee to purchase the securities, the price paid for them was in the nature of a capital outlay, and no part of it can be set off as expenditure against income accruing on those securities. Subsequently when these securities yielded income by way of interest, such income was attracted by\nSection 18\n.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1990_VIJAYA_BANK_LTD_VS_ADDITIONAL_COMMISSIONER_OF_P006_C01",
+      "text": "6. Claim for deduction can be sustained only when the assessee is in a position to show that any reasonable expenditure had been incurred for the purpose of realising the interest on securities. The amounts claimed by the assessee for deduction are not shown to have been expended for the purpose of realising the interest, and are therefore not allowable as deductible expenditure.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1990_VIJAYA_BANK_LTD_VS_ADDITIONAL_COMMISSIONER_OF_P007_C01",
+      "text": "7. We see no merit in the appeal. It is accordingly dismissed with costs throughout.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Vijaya Bank Ltd. vs Additional Commissioner Of ...",
+    "case_id": "SC_1990_VIJAYA_BANK_LTD_VS_ADDITIONAL_COMMISSIONER_OF",
+    "court": "Supreme Court of India",
+    "year": "1990",
+    "facts_summary": "2. During the accounting year relevant to the assessment year 1968-69, the assessee which is a banking company received the above mentioned amounts as interest on securities purchased from another banking company as well as in the open market. These two amounts were brought to tax by the Income-tax Officer under\nSection 18\nof the Income-tax Act, 1961. The assessee's claim that these amounts were deductible under\nSections 19\n,\n\nand\n\nwas rejected by the officer. The order of assessment was confirmed by the Appellate Assistant Commissioner. However, on further appeal, the Income-tax Appellate Tribunal held that the interest earned from the securities was deductible under\nSections 19\n,\n\nand\n\n. 3. The High Court on a reference at the instance of the revenue held that the amounts received by the assessee as interest on securities were taxable under\nSection 18\nof the Act. The High Court referred to Commissioners of Inland Revenue v. Pilcher (1949) 31 Tax Cases 314, and other cases, and observed that the amounts expended by the assessee for the purchase of securities were in the nature,, of capital outlay, and they could not be set off as expenditure against income accruing on the securities.",
+    "legal_issues": "5. In the instant case, the assessee purchased securities. It is contended that the price paid for the securities was determined with reference to their actual value as well as the interest which had accrued on them till the date of purchase. But the fact is, whatever was the consideration which prompted the assessee to purchase the securities, the price paid for them was in the nature of a capital outlay, and no part of it can be set off as expenditure against income accruing on those securities. Subsequently when these securities yielded income by way of interest, such income was attracted by\nSection 18\n.",
+    "ratio_summary": "1. This appeal arises from the judgment of the Karnataka High Court in I.T. Referred Case No. 33 of 1973 (reported in 1976 Tax LR 524). The question which arose for consideration was :\nWhether, on the facts and in the circumstances of the case, the Tribunal was right in law in holding that the following two sums were admissible as deductions under\nSections 19\n,\n\nand\n\nof the Income-tax Act 1961 :\n(a) Rs. 58,568/-, interest accrued on securities taken over by the assessee baujs. from Jayalakshmi Bank Ltd., and\n(b) Rs. 11,630/-, interest accrued up to the date of purchase in the case of securities purchased by the assessee bank, from the open market?",
+    "final_order": "7. We see no merit in the appeal. It is accordingly dismissed with costs throughout.",
+    "outcome_summary": "7. We see no merit in the appeal. It is accordingly dismissed with costs throughout.",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

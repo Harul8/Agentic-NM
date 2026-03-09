@@ -1,0 +1,235 @@
+{
+  "case_id": "SC_1970_1970_53",
+  "case_name": "Bimal Chandra Ranerjee vs State Of Madhya Pradesh",
+  "normalized_case_name": "BIMAL_CHANDRA_RANERJEE_VS_STATE_OF_MADHYA_PRADESH",
+  "court": "Supreme Court of India",
+  "year": "1970",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "19 August 1970",
+  "judges": [
+    "K.S. Hegde",
+    "J.C. Shah",
+    "A.N. Grover"
+  ],
+  "author": "K.S. Hegde",
+  "bench_type": "constitution",
+  "petitioner": "Bimal Chandra Ranerjee",
+  "respondent": "State Of Madhya Pradesh",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 15,
+  "cited_by_count": 73,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1971 AIR 517",
+    "1971 SCR (1) 844",
+    "AIR 1971 SUPREME COURT 517",
+    "1971 (1) SCR 844",
+    "1971 (1) SCJ 678",
+    "1971 MPLJ 168",
+    "81 ITR 105",
+    "1970 JABLJ 902"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1970\\1970_53.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1970_1970_53_P001_C01",
+      "text": "CITATION:\n 1971 AIR 517 1971 SCR (1) 844\n 1970 SCC (2) 467\n CITATOR INFO :\n D 1975 SC2008 (33)\n F 1976 SC 633 (2,6)\n D 1976 SC2020 (12)\n F 1976 SC2237 (14,15)\n RF 1980 SC2018 (16)\n RF 1987 SC 993 (10,13)\n RF 1991 SC 735 (8,9)\n R 1992 SC1393 (8,9)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1970_1970_53_P002_C01",
+      "text": "ACT:\nMadhya Pradesh Excise Act\n(M.P. 2 of 1915), ss. 25, 26, 27,\n62(1) and 62(2) cls. (d) and (h)--Condition in licence\nprescribing minimum liquor to be purchased from the\nGovernment and payment of excise duty on liquor not taken\ndelivery of--Validity.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1970_1970_53_P003_C01",
+      "text": "HEADNOTE:\nThe appellants were excise contractors. In purported\nexercise of its powers under cls. (d) and (h) of\ns.62(2)\nthe Madhya Pradesh Excise Act 9 1915, which confers power on\nthe State Government to make rules, the State Government\nintroduced a condition in the licences of the appellants\nprescribing the minimum quantity of liquor which the\nappellants should purchase from the Government and the\ncompulsory payment of excise duty on the quantity of liquor\nwhich they failed to take delivery of. The State Government\nissued notices demanding the duty.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1970_1970_53_P003_C02",
+      "text": "On the question of their validity,\nHELD : Assuming the power to tax can be delegated to the\nexecutive, no tax can be imposed by any bye-law or rule or\nregulation unless the statute under which the subordinate\nlegislation is made specially authorises its imposition.\n[850 C-D]\nIn the present case, the Legislature has levied excise duty\nor countervailing duty only on the excisable articles which\nhave been either imported, exported, transported,\nmanufactured, cultivated or collected under any licence\ngranted under\ns.13\n, or manufactured in any distillery or\nbrewery established or licensed under the Act; and the State\nGovernment has not been empowered to levy any duty on liquor\nwhich the contractors failed to lift. Therefore, the State\nGovernment was exercising a power which it did not possess\nand hence the rule imposing the, condition in the licences\nand the demand notices are invalid. [849 H; A-C]",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1970_1970_53_P004_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION Civil Appeals Nos. 2214\nof 1969 and 308 of 1970.\nAppeals from the judgments and orders dated April 9, 1965 of\nthe Madhya Pradesh High Court in Misc. Petitions Nos. 426\nand 524 of 1964 respectively.\nM. C. Chagla, R. A. Roman and S. S. Khanduja, for the\nappellant (in C.A. No. 2214 of 1969).\nR. A. Roman, S. S. Khanduja and N. K. Shejwalkar, for the\nappellants (in C.A. No. 308 of 1970).\nI. N. Shroff, for the respondents (in both appeals).\nThe Judgment of the Court was delivered by\nHegde, J. These appeals by certificates granted by the High\nCourt of Madhya Pradesh raise common questions of law.\nHence we propose to dispose them of by a common order.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1970_1970_53_P005_C01",
+      "text": "The appellants herein are excise contractors. They are the\nsuccessful bidders for some of the shops in Madhya Pradesh\nfor the financial year 1964-65. The sale memorandum on the\nstrength of which auction was held intimated that the\nsuccessful bidders will have to sell a prescribed minimum\nquantity of liquor in their shops and if they fail to take\ndelivery of the prescribed minimum quantity of liquor, they\nwill have to pay excise duty on the quantity of liquor which\nthey failed to take delivery. On March 20, 1964, the\nGovernment in the purported exercise of its powers under\ncls. (d) and (h) of\ns. 62\nof the Madhya Pradesh Excise Act,\n1915 (Act 11 of 1915) (the hereinafter referred to as the\nAct) issued the notification No. 144401089/V-SR amending the\nrules published on January 7, 1960. This notification\nprescribed that the conditions mentioned therein should be\ninserted in the licences to be issued to the successful\nbidders. At present we are only concerned with cl. 2(C)\nthereof. That clause reads\n \"The minimum quantity for taking issues from\n the Warehouse for sale is fixed at 3213 p.\n liters spiced spirit and 25940 p. liters plain\n spirit.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1970_1970_53_P005_C02",
+      "text": "You shall be liable to make good\n every month the deficit of monthly average of\n the total minimum duty on or before the 10th\n day of each month following the month to which\n the deficit duty relates.\"\nThe appellants are challenging the validity of this\nnotification. An excise licensee in Madhya Pradesh as in other places has\nto meet three charges namely (1) he has to pay the\nprescribed licence fee for obtaining the privilege of\nvending liquor in a shop (2) he has to pay the price of the\nliquor purchased by him generally the Government has a\nmonopoly of liquor manufacture and (3) he has to pay excise\nduty on the liquor purchased by him. In this case there is no dispute that the appellants had\npaid the prescribed licence fee, the price of the liquor\npurchased by them and also the duty on the liquor taken\ndelivery of by them. The dispute centers round the, duty\nrequired to be paid by them under the impugned clause in the\nnotification of March 20, 1964 referred to earlier. The\ncontroversy is whether the said clause is valid in law.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1970_1970_53_P005_C03",
+      "text": "The Government of Madhya Pradesh have issued demand notices\non the appellants demanding the duty said to be due from\nthem as per the impugned clause in the notification. The\nappellants have challenged the validity of these notices as\nwell. It is contended on behalf of the appellants that excise\nduty is a tax. The same can be levied on the basis of a\nvalid law. No",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1970_1970_53_P006_C01",
+      "text": "tax can be levied on the basis of a contract nor can tax be\nlevied by executive orders. Tax can only be levied by the\nlegislature. Hence the fact that cl. 2(C) in the\nnotification of March 20, 1964 has been made a part of the\nlicence condition is immaterial. It was contended that the\nquestion for decision is whether the Government of Madhya\nPradesh was entitled to amend its rules and add the impugned\nclause as a part of the licence conditions. The scheme of the Act is similar to the scheme of other\nexcise Acts in this country.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1970_1970_53_P006_C02",
+      "text": "In the Act\nExcise Duty' and\n\"countervailing duty\" have been defined [in\ns. 2\n(6-A)] as\nmeaning any, such excise duty or countervailing duty, as the\ncase may be, as is mentioned in Entry 51 of List II in the\nSeventh Schedule to the Constitution, which entry reads\n \"Duties of excise on the following goods\n manufactured or produced in the State and\n countervailing duties at the same or lower\n rates on similar goods manufactured or\n produced elsewhere in India :-\n(a) alcoholic liquors for human consumption;\n(b) opium, Indian hemp and other narcotic\n drugs and narcotics;\nbut not including medicinal and toilet\n preparations containing alcohol or any\n substance included in subparagraph (b) of this\n entry.\"\nIn view of this entry the State is competent\n to levy excise duty only on goods manufactured\n or produced in the State. The expression\n \"export\" is defined in\ns. 2(9)\nof the Act as\n meaning to take out of the State otherwise\n than across customs frontier as defined by the\n Central Government. The term manufacture is\n defined in\ns. 2 (14)\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1970_1970_53_P006_C03",
+      "text": "It reads\n manufacture' includes every process whether\n natural or artificial by which any intoxicant\n is produced or prepared and also\n redistillation and every process for the\n rectification, flavouring, blending or\n colouring of liquor.\"\nThe word \"transport\" is defined in\ns. 2 (19)\nto mean to move\nfrom one place to another within the State. The excise duty is a duty on Manufacture or production and\ncountervailing duty is a tax imposed on excisable articles\nbrought into the State from other parts of the country. Chapter V of the Act\ndeals with Duties and Fees. That\nChapter contains four sections viz. ss. 25, 26, 27 and 27A. Section 25\ndeals with duty on excisable articles. Section",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1970_1970_53_P007_C01",
+      "text": "such duty. Section 27\nprovides for payment for grant of\nleases licence fee. Section 27A\nsaves the duties that were\nbeing levied at commencement of the Constitution. Herein we\nare not concerned with\nS. 27-A\n. Section 25\nreads\n Duty on excisable\narticles :-(1)\nAn excise\n duty or a countervailing duty as the case may\n be, shall, if the State Government so\n direct, be levied on excisable articles-\n(a) imported; or\n(b) exported; or\n(c) transported; or\n(d) manufactured, cultivated or collected\n under any\n licence granted under s. 13; or\n(e) manufactured in any distillery\n established, or any distillery or brewery\n licensed under this Act;\nProvided that it shall be lawful for the State\n Government to exempt any excisable article\n from any duty to which the same may be liable\n under this Act. (2) Duty may be imposed under sub-section\n (1) at different rates according to the places\n to which any excisable article is to be\n removed or according to the strength and\n quality of such article.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1970_1970_53_P007_C02",
+      "text": "(3) Notwithstanding anything contained in\n subsection (1) duty shall not be imposed\n thereunder on any article which has been\n imported into India and was liable, on such\n importation, to duty under the Sea Customs\n Act, VIII of 1878 or the Indian Tariff Act,\n VIII of 1894.\"\nUnder this section excise duty or\n countervailing duty can be imposed on\n excisable article when they are either\n imported or exported or transported or\n manufactured or cultivated or collected and\n not otherwise. Section 26\ndeals with the manner of levying\n the duty. It says\n \"Subject to such rules regulating the time,\n place and manner as the State Government may\n prescribe, such duty shall be levied ratably\n on the quantity of exisable article imported,\n exported, transported collected or\n manufactured in or issued from a distillery,\n brewery or warehouse.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1970_1970_53_P008_C01",
+      "text": "Provided that\n (1) duty may be levied-\n(a) on intoxicating drugs by an acreage rate\n levied on the cultivation of the hemp plant or\n by a rate charged on the quantity collected;\n(b) on spirit or bear manufactured in any\n distillery established or any distillery or\n brewery licensed- under this' Act-\n(i) in accordance with such scale of equi-\n valents calculated on the quantity of\n materials used, or by the degree of\n attenuation of the wash or wort, as the case\n may be, as the State Government may prescribe,\n(ii) by rate charged directly on the mate-\n rials used;\n(c) on tari, by a tax on each tree from\n which the tari is drawn. (2) where payment is made upon the issue of\n an excisable article for sale from a\n warehouse, it shall be at the rate of duty in\n force on the date of issue of such article\n from the warehouse.\"\n'\nSection 27\nsays\n \"Payment for grant of leases Instead of or in\n addition to any duty leviable under this\n chapter, the State Government may accept\n payment of a sum in consideration of the grant\n of any lease under\nsection 18\n.\"\nSection 18\ndeals with power to grant I ease of\n right to manufacture or right to sell\n excisable articles.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1970_1970_53_P008_C02",
+      "text": "The only other relevant section for our\n present purpose is\nS. 62\nwhich confers power\n on the State Government to make rules. Clause\n (1) of that section gays\n \"The State Government may make rules for the\n purpose of carrying out the pro-visions of\n this Act.\"\nIn Clause 2 reliance was placed on sub-cls. (d) and (h). Those sub-clauses read\n \"In particular, and without prejudice to the\n generality of the foregoing provision, the\n State Government may make rules.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1970_1970_53_P009_C01",
+      "text": "(d) regulating the import, export,\n transport, manufacture, collection,\n possession, supply or storage of any\n intoxicant, or the cultivation of the hemp\n plant and may by such rules, among other\n matters.-\n(i) regulate the tapping of tari producing\n trees, the drawing by tari from such trees,\n the marking of the same and the maintenance of\n such marks;\n(ii) declare the process by which spirit\n shall be denatured and the denaturation of\n spirit ascertained', and\n(iii) cause spirit to be denatured through the\n agency or under the supervision of its own\n officers;\n(d-1) regulating the import, export,\n transport, collection possession, supply,\n storage or sale of Mahua flowers prescribing\n licences and permits therefore, throughout the\n State or in any specified area or for any\n specified period.\"\n(h) prescribing the authority by the form in\n which and the terms and conditions on and\n subject to which any licence, permit or pass\n shall be granted, and may by such rules among\n other matters-\n(i) fix the period for which any licence,\n permit or pass shall continue in force,\n(ii) prescribe the scale of fees or the\n manner of fixing the fees payable in respect\n of any such license,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1970_1970_53_P009_C02",
+      "text": "permit or pass.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1970_1970_53_P009_C03",
+      "text": "(iii) prescribe amount of security to be\n deposited by holder of any licence, permit or\n pass for the performance of the conditions of\n the same;\n(iv) prescribe the account to be maintained\n and the returns to be submitted by licence\n holders, and\n(v) prohibit or regulate the partnership in,\n or the transfer of, licences.\"\nNeither\ns. 25\ns. 26\ns. 27\nS. 62(1)\nor cls. (d) and\n(h) of\ns. 62(2)\nempower the rule making authority viz. the\nState Government to levy tax on excisable articles which\nhave not been either imported, exported, transported,\nmanufactured, cultivated or collected under any licence\ngranted under\ns. 13\nor manufactured in any distillery\nestablished or any distillery or brewery licensed under the\nAct. The legislature has levied excise duty only on\nSup. Cl/71 (P)-71",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1970_1970_53_P010_C01",
+      "text": "those articles which come within the scope of\nS. 25\n. The\nrule making authority has not been conferred with any power\nto levy duty on any articles which do not fall within the\nscope of\nS. 25\n. Therefore it is not necessary to consider\nwhether any such power can be conferred on that authority. Quite clearly the State Government purported to levy duty on\nliquor which the contractors failed to lift. In so doing it\nwas attempting to exercise a power which it did not possess. No tax can be imposed by any bye-law or rule or regulation\nunless the statute under which the subordinate legislation\nis made specially authorises the imposition even if it is\nassumed that the power to tax can be delegated to the\nexecutive. The basis of the statutory power conferred by\nthe statute cannot be transgressed by the rule making\nauthority. A rule making authority has no plenary power. It has to act within the limits of the power granted to it. We are of the opinion that the impugned rule as well as' the\ndemands are not authorised by law. Hence we allow these\nappeals as well as the writ petitions from which these\nappeals arise and quash the impugned notification as well as\nthe demand notices.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1970_1970_53_P010_C02",
+      "text": "The State of Madhya Pradesh shall pay\nthe costs of the :appellants in both these appeals-hearing\nfee one set. V.P.S. Appeals allowed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "Bimal Chandra Ranerjee vs State Of Madhya Pradesh",
+    "case_id": "SC_1970_1970_53",
+    "court": "Supreme Court of India",
+    "year": "1970",
+    "facts_summary": "ACT:\nMadhya Pradesh Excise Act\n(M.P. 2 of 1915), ss. 25, 26, 27,\n62(1) and 62(2) cls. (d) and (h)--Condition in licence\nprescribing minimum liquor to be purchased from the\nGovernment and payment of excise duty on liquor not taken\ndelivery of--Validity. HEADNOTE:\nThe appellants were excise contractors. In purported\nexercise of its powers under cls. (d) and (h) of\ns.62(2)\nthe Madhya Pradesh Excise Act 9 1915, which confers power on\nthe State Government to make rules, the State Government\nintroduced a condition in the licences of the appellants\nprescribing the minimum quantity of liquor which the\nappellants should purchase from the Government and the\ncompulsory payment of excise duty on the quantity of liquor\nwhich they failed to take delivery of. The State Government\nissued notices demanding the duty.",
+    "legal_issues": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION Civil Appeals Nos. 2214\nof 1969 and 308 of 1970.\nAppeals from the judgments and orders dated April 9, 1965 of\nthe Madhya Pradesh High Court in Misc. Petitions Nos. 426\nand 524 of 1964 respectively.\nM. C. Chagla, R. A. Roman and S. S. Khanduja, for the\nappellant (in C.A. No. 2214 of 1969).\nR. A. Roman, S. S. Khanduja and N. K. Shejwalkar, for the\nappellants (in C.A. No. 308 of 1970).\nI. N. Shroff, for the respondents (in both appeals).\nThe Judgment of the Court was delivered by\nHegde, J. These appeals by certificates granted by the High\nCourt of Madhya Pradesh raise common questions of law.\nHence we propose to dispose them of by a common order. The Government of Madhya Pradesh have issued demand notices\non the appellants demanding the duty said to be due from\nthem as per the impugned clause in the notification. The\nappellants have challenged the validity of these notices as\nwell. It is contended on behalf of the appellants that excise\nduty is a tax. The same can be levied on the basis of a\nvalid law. No such duty. Section 27\nprovides for payment for grant of\nleases licence fee. Section 27A\nsaves the duties that were\nbeing levied at commencement of the Constitution. Herein we\nare not concerned with\nS. 27-A\n. Section 25\nreads\n Duty on excisable\narticles :-(1)\nAn excise\n duty or a countervailing duty as the case may\n be, shall, if the State Government so\n direct, be levied on excisable articles-\n(a) imported; or\n(b) exported; or\n(c) transpor",
+    "ratio_summary": "On the question of their validity,\nHELD : Assuming the power to tax can be delegated to the\nexecutive, no tax can be imposed by any bye-law or rule or\nregulation unless the statute under which the subordinate\nlegislation is made specially authorises its imposition.\n[850 C-D]\nIn the present case, the Legislature has levied excise duty\nor countervailing duty only on the excisable articles which\nhave been either imported, exported, transported,\nmanufactured, cultivated or collected under any licence\ngranted under\ns.13\n, or manufactured in any distillery or\nbrewery established or licensed under the Act; and the State\nGovernment has not been empowered to levy any duty on liquor\nwhich the contractors failed to lift. Therefore, the State\nGovernment was exercising a power which it did not possess\nand hence the rule imposing the, condition in the licences\nand the demand notices are invalid. [849 H; A-C] tax can be levied on the basis of a contract nor can tax be\nlevied by executive orders. Tax can only be levied by the\nlegislature. Hence the fact that cl. 2(C) in the\nnotification of March 20, 1964 has been made a part of the\nlicence condition is immaterial. It was contended that the\nquestion for decision is whether the Government of Madhya\nPradesh was entitled to amend its rules and add the impugned\nclause as a part of the licence conditions. The scheme of the Act is similar to the scheme of other\nexcise Acts in this country.",
+    "final_order": "",
+    "outcome_summary": "Allowed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

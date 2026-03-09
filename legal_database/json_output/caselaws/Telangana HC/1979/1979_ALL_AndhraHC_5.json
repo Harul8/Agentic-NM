@@ -1,0 +1,483 @@
+{
+  "case_id": "SC_1979_1979_ALL_ANDHRAHC_5",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1979",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 36,
+  "cited_by_count": 19,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1979\\1979_ALL_AndhraHC_5.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P001_C01",
+      "text": "Additional Commissioner Of Income-Tax vs Burugupalli China Krishnamurthy ... on 29 June, 1979\nEquivalent citations: [1980]121ITR326(AP)\nJUDGMENT\n\nKondaiah, C.J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P002_C01",
+      "text": "1. This is a reference under\nSection 256(2)\nof the Income-tax Act, 1961 (hereinafter called \" the Act \"), at the instance of the CIT.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P003_C01",
+      "text": "2. The Income-tax Appellate Tribunal, Hyderabad Bench 'B', has submitted a statement of case for the opinion of this court on the following question of law :\n\" Whether, on the facts and in the circumstances of the case, the Tribunal was right in cancelling the penalty imposed on the assessee ?\"",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P004_C01",
+      "text": "3. In order to appreciate the scope of the question we may briefly state the material facts admitted or found by the Tribunal which gave rise to this question. The deceased-first respondent, an individual, who derived income from money-lending and rice mill business, filed his return of income on June 12, 1967, for the assessment year 1966-67, corresponding to the accounting year ending with March 31, 1966, declaring an income of Rs. 20,120. In the course of the assessment proceedings the ITO noticed in the rice mill business an aggregate amount of Rs. 25,490, which was credited periodically in the name of the assessee. The assessee was required by the assessing authority to adduce evidence in support of the said credits. He filed a revised return on March 11, 1969, at the time of the hearing of the case, declaring an income of Rs. 45,600. The ITO determined the total income at Rs. 65,800. On appeal it was reduced by the AAC to Rs. 51.760.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P005_C01",
+      "text": "4. Before completing the assessment, the ITO initiated proceedings under\nSection 271(1)(c)\nof the Act and referred the matter under\nSection 274(2)\nof the Act to the J A,C, who held that the assessee did not come forward voluntarily to file the revised return but did so only when he found that the ITO was on the right track and detected concealment and levied a penalty of Rs. 15,000 resorting to the provisions of the Explanation to\nSection 271(1)(c)\nof the Act. On appeal, the Appellate Tribunal found that the assessee categorically asserted that the loans are of genuine nature and included the same in the revised return on the ground that he was not in a position to prove the genuineness and that there is no question of fraud or wilful or gross negligence on the part of the assessee. It further held that there was no other material, other than the inability of the assessee to prove either the genuineness of the loans or that these unproved cash credits represented concealed income of the assessee and, consequently, it allowed the appeal. Hence, this reference.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P006_C01",
+      "text": "5. Mr. P. Rama Rao, learned standing counsel for the revenue, contended that the unproved cash credits represented concealed income and, in any event; the assessee has furnished inaccurate particulars of his income and that the provisions of\nSection 271(1)(c)\nread with its Explanation are attracted in the present case. This claim of the department is misted by Ac assessee's counsel contending, inter alia, that the order of the Tribunal does not give rise to any question of law, that in any event there is no material to hold that the addition represented concealed income, that there was neither fraud nor wilful nor gross negligence on the part of the assessee and that, therefore, the Tribunal was justified in cancelling the penalty imposed on the assessee by the IAC.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P007_C01",
+      "text": "6. Before adverting to the facts of the case, we may profitably refer to the law relating to the concept and content of penalty and the onus of proof.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P008_C01",
+      "text": "7. The concepts of tax, penalty and interest are not only not the same but also separate and distinct. These three expressions are, in fact, used in Section 29 of the Indian I. T. Act, 1922, as well as in\nSection 156\nof the Act, to denote that each is distinct and independent of the other. Hence, tax cannot be equated to penalty or interest. Tax and interest are held by the Supreme Court in\nBhor Industries Ltd. v. CIT\nand\nP. S. Subramanyan, ITO v. Simplex Mills Ltd.\n[1963] 48 ITR (SC) 182, to be distinct and different concepts under the\nI. T. Act\n. Hence, the assessment proceedings and penalty proceedings are distinct and different, and not one and the game. Penalty is levied in addition to the income-tax imposed under the Act. But each case has got its own separate concept and content.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P009_C01",
+      "text": "8. The burden of proof would depend upon the nature and character of the penalty proceedings. Two views are manifest with regard to the true nature and character of the penalty : (1) It is only an additional tax designated as penalty and levied on account of the dishonest and contumacious conduct of the assessee; and (2) it is penal in character and is akin to criminal proceedings.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P010_C01",
+      "text": "9. We may at this stage notice the decided cases on this aspect. In England penalty proceedings were never doubted to be of penal character : vide Fattoritti (Thomas) (Lancashire) Ltd. v. IRC [1943] 11 ITR (Suppl) 50 (HL).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P011_C01",
+      "text": "10. The earliest Indian decision worth noticing is that of the Bombay High Court in\nCIT v. Gokuldas Harivallabhdas\n[1958] 34 ITR 98, wherein it was held that proceedings under Section 28(1)(c) of Indian I. T. Act, 1922, are penal in character and the onus is on the revenue to establish that the assessee was guilty of concealment of particulars of income and that the mere false explanation without further proof that a particular receipt necessarily constituted income of the assessee would not justify the levy of penalty although it was open to the revenue, where the explanation of the assessee was found to bs false, to treat the receipts as the asses see's income from undisclosed sources. With regard to the onus of proof and the nature of penalty proceedings Chagla C.J. observed (pp. 105, 106) :\n\".........the assessee is not being prosecuted for giving a false explanation. The charge against him is that he gave inaccurate particulars about his income, and it is hot possible to infer from the falseness of the assessee's explanation that the receipt necessarily constitutes an income of the assessee.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P011_C02",
+      "text": "It is hardly necessary to emphasise that the assessee is not called upon to prove his innocence; it is for the department to establish his guilt...... each proceeding under the\nIncome-tax Act\nis a self-contained proceeding and the findings in one proceeding do not become binding in respect of other proceedings. Now, it is difficult to understand why this well-known principle should be departed from in penalty preceedings.......The assessment proceedings are taxing proceedings; the penalty proceedings are criminal proceedings in their very nature, and a decision given in an assessment proceeding cannot possibly be binding upon the authority who tries the assessee for an offence.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P012_C01",
+      "text": "11. The Patna High Court in\nCIT v. Mohan Mallah\n[1964] 54 ITR 499 and the Gujarat High Court in\nCIT v. L. H. Vora\n[1965] 56 ITR 126 followed the view of the Bombay High Court\nthe above case\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P013_C01",
+      "text": "12. The basis for the view that penalty is nothing but an additional tax levied on account of the dishonest and contumacious conduct of the assessee is the decisions of the Supreme Court in\nC. A. Abraham v. ITO\nand\nBhor Industries Ltd. v. CIT\n. C. A. Abraham\n's case, while construing the expression \" assessment \" occurring in Section 44 of the Indian I. T.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P013_C02",
+      "text": "Act, 1922, for the purpose of finding out whether that expression included the procedure for imposition of penalty of a dissolved firm, it was observed by the Supreme Court thus :\n\" The expression 'assessment' used in the sections of\nChapter IV of the Income-tax Act\nis not used merely in the sense of computation of income and when\nSection 44\ndeclares that the partners or members of the firm or association shall be jointly and severally liable to assessment, it refers to the liability to computation of income under\nSection 23\nas well as the application of the procedure for declaration and imposition of tax liability and the machinery for enforcement thereof....By\nSection 28\n, the liability to pay additional tax which is designated penalty is imposed in view of the dishonest contumacious conduct of the assessee....The penalty is not uniform and its imposition depends upon the exercise of discretion by the taxing authorities ; but it is imposed as a part of the machinery for assessment of tax liability.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P014_C01",
+      "text": "13. This view was reiterated again in\nCIT v. Bhikaji Dadabhai & Co.\n, and it was observed thus at page 128 :\n\" This court regarded penalty as an additional tax imposed upon a person in view of his dishonest or contumacious conduct. \"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P015_C01",
+      "text": "14. The Allahabad High Court in\nLal Chand Gopal Das v. CIT\n[1963] 48 ITR 324 followed the view of the Supreme Court in\nC. A. Abraham\n's case .",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P016_C01",
+      "text": "15. As ruled by the Supreme Court in CIT v. Anwar Alt :\n\" It is significant that in\nC. A. Abraham\n's case, this court was not called upon to determine whether penalty proceedings were penal or of quasi-penal nature and the observations made with regard to penalty being an additional tax were made in a different context and for a different purpose. \"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P017_C01",
+      "text": "16. Therein the assessee's explanation regarding the undisclosed bank account of the cash deposit of Rs. 87,000 that the same represented diverse amounts entrusted to him by relatives who had got panicky during communal riots in Bihar in 1947, was rejected by the I.T. authorities who brought the same to tax as the assessee's income from undisclosed sources. The correctness or otherwise of the imposition of levy of penalty of Rs. 66,000 by the I.T. authorities felt for decision. The Supreme Court, approving the view taken by the Bombay High Court in the case of Gokuldas Harivallabhdas [1958] 34 ITR 98, held that penalty cannot be levied simply because the explanation of the assessee regarding the amount in question was not satisfactory or it was found to be false without any positive proof that it represented concealed income of the assessee. The learned judge, Grower J., speaking for the court, succinctly laid down the law on this aspect thus (pp. 700, 701):\n\" It is true that penalty proceedings under\nSection 28\nare included in the expression ' assessment ' and the true nature of penalty has been held to be additional tax.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P017_C02",
+      "text": "But one of the principal objects in enacting\nSection 28\nis to provide a deterrent against recurrence of default on the part of the assessee. The section is penal in the sense that its consequences are intended to be an effective deterrent which will put a stop to practices which the legislature considers to be against the public interest....the proceedings under\nSection 28\nare of a penal nature and the burden is on the department to prove that a particular amount is a revenue receipt. It would be perfectly legitimate to say that the mere fact that the explananation of the assessee is false does not. necessarily give rise to the inference that the disputed amount represents income. It cannot be said that the finding given in the assessment proceedings for determining or computing the tax is conclusive. However, it is good evidence. Before penalty can be imposed the entirety of circumstances must reasonably point to the conclusion that the disputed amount represented income and that the assessee had consciously concealed the particulars of his income or had deliberately furnished inaccurate particulars. \"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P018_C01",
+      "text": "17. The aforesaid view has been reiterated by the Supreme Court in\nCIT v. Khoday Eswarsa and Sons\n, wherein the learned judge, C. A. Vaidialingam J., speaking for the court, held at page 376 thus ;\n\" ...it is clear that penalty proceedings being penal in character, the department must establish that the receipt of the amount in dispute constitutes income of the assessee. Apart from the falsity of the explanation given by the assessee, the department must have before it before levying penalty cogent material or evidence from which it could be inferred that the assessee has consciously concealed the particulars of his income or had deliberately furnished inaccurate particulars in respect of the same and that the disputed amount is a revenue receipt. No doubt the original assessment proceedings, for computing the tax may be a good item of evidence in the penalty proceedings but the penalty cannot be levied solely on the bask; of the reasons given in the original order of assessment. \"",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P019_C01",
+      "text": "18. A Division Bench of this court in\nCIT v. Koduri Papa Rao\n[1976] 102 ITR 834 has held that falsity of the explanation relating to an item of income in the assessment proceedings without any material could not be sufficient to justify levy of penalty under\nSection 28(1)(c)\nof the Indian I.T. Act, 1922.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P020_C01",
+      "text": "19. The Division Bench of this court consisting of one of us (Kondaiah J., as he then was) and A. D. V. Reddy J., summed up the legal position relating to the true nature and character of the penalty and the onus of proof thus at page 837 :\n\" It is well settled that the penalty proceeding is penal in character and the onus is on the department to show that a particular receipt or amount is of revenue nature. In order to determine whether any particular receipt or amount represented income and whether the assessee had consciously concealed the particulars of his income or had deliberately furnished inaccurate particulars thereof warranting the imposition of penalty, the entirety or totality of facts and circumstances, but not each or some of the factors, should be taken into consideration. In other words, the income-tax authorities must be satisfied on examination of the cumulative effect or the entirety of circumstances, that the only reasonable inference from such factors or material that could be drawn was that the amount in question represented income and that the assessee had concealed particulars of his income or had deliberately furnished inaccurate particulars thereof.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P020_C02",
+      "text": "Where there is no positive evidence warranting the inference that the disputed amount was concealed income of the assessee or that he had deliberately furnished inaccurate particulars of his income, no penalty is exigible. Where the explanation offered by the assessee has been found to be false and there is no other material or evidence except the conduct of the assessee in giving false explanation regarding the source of the amount in dispute, no penalty can be levied as it cannot be* said that the only inference that can be reasonably and safely drawn on such facts is that the receipt constituted the taxable income of the assessee. The findings arrived at by the income-tax authorities in the assessment proceedings for the determination or computation of tax are not conclusive for the purposes of levying penalty although they may be good evidence. However, penalty cannot be levied solely on the basis of reasons or findings given in the assessment proceedings.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P021_C01",
+      "text": "20. We reiterate the above legal position, which equally applies to the penalty proceedings Under\nSection 271(1)(c)\nof the I.T. Act of 1961. Therefore, under the 1961 Act also the onus is upon the revenue to establish that the assessee has concealed particulars of his income or furnished inaccurate particulars of such income to make him liable to penalty.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P022_C01",
+      "text": "21. We shall now examine the question as to whether the Explanation to\nSection 271(1)(c)\n, which has been inserted by the\nFinance Act, 1964\n, with effect from April 1, 1964, has changed the content and concept of penalty and the onus of proof thereof. The Explanation reads thus :\n\" Explanation.--Where the total income returned by any person is less than eighty per cent. of the total income (hereinafter in this Explanation referred to as the correct income) as assessed under\nSection 143\nSection 144\nSection 147\n(reduced by the expenditure incurred bona fide by him for the purpose of making or earning any income included in the total income but which has been disallowed as a deduction), such person shall, unless he proves that the failure to return the correct income did not arise from any fraud or any gross or wilful neglect on his part, be deemed to have concealed the particulars of his income or furnished inaccurate particulars of such income for the purposes of Clause (c) of this sub-section.\"",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P023_C01",
+      "text": "22. From a close reading of the provisions of this Explanation, we have no hesitation to hold that the Explanation creates a legal fiction whereunder the assessee is straightaway brought within the ambit of\nSection 271(1)(c)\n, provided the conditions specified therein are satisfied. The mere fact that the total returned income is less than eighty per cent. of the total income assessed would be sufficient to bring the case of the assessee within the provisions of\nSection 271(1)(c)\n. However, this fiction can be displaced by the assessee by proving that his failure to return the correct income did not arise from any fraud or gross or wilful neglect on his part. The Explanation only places an initial burden, which is not absolute, on the assessee to prove that he has not concealed particulars of his income or furnished inaccurate particulars of such income. The Explanation does not absolve the department from establishing the necessary facts for levying penalty under the provisions of\nSection 271(1)(c)\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P024_C01",
+      "text": "23. The initial burden imposed by the legal fiction, which is enacted in the Explanation, is akin to that of one in civil cases. Where the determination is made on preponderance of probabilities, the assessee need not prove by any positive evidence, to discharge this burden. He may rely upon the material already on record. The burden placed on the revenue to bring a case within the four corners of\nSection 271(1)(c)\nis akin to that of the prosecution in criminal cases. To put it differently, the onus created by the legal fiction uuder the Explanation is not absolute but it is rebuttable, whereas the burden on the revenue to prove the penal character of the provision so as to entitle it to levy penalty on the assessee is absolute and of irrebuttable nature. This difference must be kept in view while examining the provisions of the Explanation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P025_C01",
+      "text": "24. In spite of the Explanation, the penalty proceeding being penal in character, the original statutory onus cast on the department to establish that the assessee has concealed his income or furnished consciously inaccurate particulars of his income still remains to be discharged. The aforesaid burden is akin to that of the prosecution to establish the guilt of the accused beyond reasonable doubt. The mere fact that the word \"deliberately\" was omitted by the\nFinance Act, 1964\n, would not in any way alter the legal position with regard to the revenue's burden to prove that the assessee has concealed his income or furnished inaccurate particulars of such income. The assessee need not adduce specific evidence in this regard as to absolve himself from it being held that he has failed to return the total assessed income on account of any fraud or gross or wilful neglect on his part. He can certainly take advantage of the material available on record and substantiate his stand in this regard.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P025_C02",
+      "text": "Where there is no material other than the falsity of the explanation relating to the addition of income in the assessment proceeding, it cannot be said that the revenue had discharged its onus to establish that the assessee has concealed particulars of his income or furnished inaccurate particulars of such income, so as to attract the penal provisions of\nSection 271(1)(c)\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P026_C01",
+      "text": "25. The nature of proof required to be established by the assessee under the Explanation being of a negative character is different from that of the revenue to prove the positive fact relating to income.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P027_C01",
+      "text": "26. As pointed out earlier, the findings in the assessment proceedings, though prima facie good evidence, are not conclusive to prove that the addition of the items to the returned income is really concealed income or amounts to furnishing of inaccurate particulars of income within the meaning of\nSection 271(1)(c)\n. Nor the Explanation can be said to make the findings in the assessment order conclusive evidence or proof that the amount assessed was in fact the real income of the assessee. Where the facts and circumstances are consistent with the theory that the amount does not represent concealed income, no penalty can be imposed. The levy of penalty can be justified only on proof of two factors, viz., (1) there must be sufficient material to conclude that the disputed amount really represents the assessee's income, apart from the false explanation or inability of the assessee to satisfactorily prove that it is not income; (2) there was concious concealment or conscious furnishing of inaccurate particulars of his income. No penalty can be levied in cases of mere inadvertence or innocent mistake. There must be positive proof that the disputed income was the income of the assessee.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P028_C01",
+      "text": "27. On a careful reading of the provisions of\nSection 271(1)(c)\nwith the Explanation, we have no hesitation to hold that the penal character of the proceedings under\nSection 271(1)(c)\nand the onus of proof in that regard which were enunciated by the Supreme Court in Anwar Alt's case , and\nCIT v. Khoday Eswarsa and Sons\nhave not been materially altered by the insertion of the Explanation.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P029_C01",
+      "text": "28. This view of ours gains support from the decisions of the various High Courts in\nCIT v. S. P. Bhatt , Addl\n.\nCIT v. Karnail Singh Kaleran\n, D. Halappa Sons v..\nCIT , CIT v. Mansa Ram and Sons , Addl\n.\nCIT v. Kiskan Singh Chand\nand\nCIT v. Patna Timber Works\n[1977) 106 ITR 452 (Pat).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P030_C01",
+      "text": "29. This brings us to examine the next contention of Mr. P. Rama Rao, the learned standing counsel for the revenue, that in the case on hand the assessee himself has agreed to have the addition of the income relating to the cash payments and, therefore, it is not open to him now to contend in the penalty proceedings that such income is not his concealed income for the purpose of the provisions of\nSection 271(1)(c)\n. This submission of the learned standing counsel for the revenue is based not on sound legal principles, but on the fallacy that the assessee can empower the I.T. authorities to levy penalty even if the case does not fall within the four corners of\nSection 271(1)(c)\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P031_C01",
+      "text": "30. In the case on hand, the assessee filed a revised return declaring an income of Rs. 45,600 by adding Rs. 24,490 as income from a rice mill, since he found it difficult to get the evidence of his creditors, although he was definite that they are true borrowings. This fact alone would not make him liable for the penalty under\nSection 271(1)(c)\n, although he filed the revised return when the ITO doubted the true nature of the cash credits. The mere admission or confession of an assessee by itself does not give any right to the I.T. authorities to levy penalty under\nSection 271(1)(c)\n, nor does it confer jurisdiction on them to initiate penal proceedings under the aforesaid section. It is a statutory power provided under\nSection 271(1)(c)\n. That apart, it is a penal provision. It must be strictly construed. Unless and until the provisions oi\nSection 271(1)(c)\nare attracted in a given case the ITO or the IAC has no jurisdiction, much less power, to levy penalty on any assessee under any circumstances.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P031_C02",
+      "text": "The stand taken by the revenue that the assessee himself has agreed to the addition of the income relating to the unexplained cash credits cannot be a valid ground to initiate penal proceedings. That apart, what has been agreed to by the assessee is only to have the items of the unexplained cash credits added for the purpose of determining his income in the assessment proceedings. It is not the case of the assessee that those items are his concealed income, nor has he admitted that he has furnished deliberately inaccurate particulars of his income. He asserted that these cash credits are really genuine borrowings. He genuinely expected that the creditors would come and support his case before the I.T, authorities. However, for some reason or other, he was unable to procure the evidence of the creditors in support of these cash credits. Finding it difficult to secure the evidence of the creditors in support of his plea and perhaps with a view to purchase peace with the I.T. dept., he seems to have agreed to have those items added to his income.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P031_C03",
+      "text": "Even if the assessee gave false explanation in respect of the source of the unexplained cash credits or disputed items, which were ultimately added in the assessment proceedings to the returned income, it cannot be said that the assessee would be liable for penalty unless there is any other material on record by which the revenue can satisfactorily prove and establish that those items are really concealed income, or that the assessee furnished consciously inaccurate particulars of his income. The conduct of the assessee in the present case is such that he has not accepted nor conceded that the unexplained cash credits are his concealed income or that he had furnished consciously inaccurate particulars of his income so as to attract the penal provisions of\nSection 271(1)(c)\n.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P032_C01",
+      "text": "31. We are unable to agree with the view expressed by the Allahabad High Court in\nCIT v. Mansa Ram and Sons\n, that where an assessee admits a cash credit or a deposit to be his income and surrenders it for assessment to tax, no further onus is left upon the department to prove the charge of concealment. Even if an assessee admits a cash credit or deposit to be his income and surrenders it for assessment to tax, no penalty can be levied if there was no other material to conclusively prove the charge of concealment of the assessee's income even though the assessee's surrender was made to escape the penal liability.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P033_C01",
+      "text": "32. The addition made by the ITO to the returned income on account of the low rate of gross profit was sufficient to impose penalty by invoking the provisions of the Explanation to\nSection 271(1)(c)\n.\nCIT v. Patna Timber Works\n[1977] 106 ITR 452 (Pat), it was held that mere denial of the assessee or its representative at the time of the argument before the IAC was sufficient to shift the onus to the department which thereafter has to place further materials to show that over and above the materials in the assessment order, there are facts and circumstances on which the failure of the assessee to return the correct income could be attributed to the act of fraud or gross or wilful neglect.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P034_C01",
+      "text": "33. To the same effect is the decision of the Allahabad High Court in Addl.\nCIT v. Kishan Singh Chand\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P035_C01",
+      "text": "34. CIT v. Mohamed Haneef\n, a sum of Rs. 31,858.78, which was the difference between the amount shown in the assessee's balance-sheet as due to a bank on key-loans and overdrafts and the information supplied by the bank, was added by the I.T. authorities as income from undisclosed sources. There was no other material to conclude that the assessee deliberately furnished wrong particulars. The Supreme Court held, agreeing with the High Court of Kerala, that there was no basis for coming to a firm conclusion that the assessee had deliberately submitted a wrong return and, therefore, the levy of penalty was not justified.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P036_C01",
+      "text": "35. It admits of no doubt that the levy of penalty, which is penal in character, must be justified on the facts and circumstances of each case. The mere agreement or concession of the assessee to the inclusion of either the disputed cash credits or any amount in the total income due to his inability to establish the source or with a view to avoid protracted litigation with the I.T. dept, would not entitle the I.T. authorities, without conclusive proof of concealment of the particulars of income or furnishing of inaccurate particulars to levy penalty under\nSection 271(1)(c)\n. See\nCIT v. Asholta Marketing Ltd.\n, Clf v. Net Ram Ram Swarup and\nCIT v. C. V. C. Mining Co.\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P037_C01",
+      "text": "36. The seizure of cash in a raid which was assessed under\nSection 69(a)\nas the assesses failed to satisfactorily explain the source also would not justify the levy of penalty : See\nCIT v. Jewels Paradise\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P038_C01",
+      "text": "37. The concussion of the representative of the assessee to impose a minimum penalty before the IAC of Income-tax was held to be not a justifiable ground to levy penalty under\nSection 271(1)(c)\n: vide D. Halappa Sons .",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P039_C01",
+      "text": "38. Mere submission of wrong return itself would not be a valid ground to hold that the assessee had deliberately furnished inaccurate particulars of income which would make him liable for the levy of penalty under\nSection 271(i)(c)\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P040_C01",
+      "text": "39. The mere fact that a revised return has been filed by the assessee either with a view to satisfy the ITO or to purchase peace with the department or to avoid penalty when the assessee finds that he is unable to satisfactorily explain the source alone would not justify the levy of penalty. The Explanation would not come to the aid of the revenue to shift the onus in this regard. However, where the assessee or his authorised representative specifically admits in the course of the assessment proceedings that a particular disputed amount or receipt is true income or concealed income or that he has consciously furnished inaccurate particulars, it cannot be said that there was no sufficient material for the revenue to validly initiate penalty proceedings and levy penalty. In such a case, there is nothing for the department to conclusively prove or establish.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P040_C02",
+      "text": "However, the assessee would bo entitled to satisfactorily establish that any such statement made by him during the assessment proceedings in this regard was not true or was made under particular circumstances and it is for the concerned authorities and, in particular, the Tribunal, which is the final fact-finding authority, to determine the same as a fact. There is no hard and fa.st rule of universal application in this regard. In each case it has to be considered as a fact whether the assessee has in fact concealed the particulars of his income or furnished consciously inaccurate particulars of income which is a finding of fact. We see no reason to disagree with the finding of the Tribunal in the case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_1979_1979_ALL_ANDHRAHC_5_P041_C01",
+      "text": "40. For all the reasons stated above, we answer the question referred to us in the affirmative and against the department with costs. Advocate's fee Rs. 300.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1979_1979_ALL_ANDHRAHC_5",
+    "court": "Supreme Court of India",
+    "year": "1979",
+    "facts_summary": "1. This is a reference under\nSection 256(2)\nof the Income-tax Act, 1961 (hereinafter called \" the Act \"), at the instance of the CIT. 2. The Income-tax Appellate Tribunal, Hyderabad Bench 'B', has submitted a statement of case for the opinion of this court on the following question of law :\n\" Whether, on the facts and in the circumstances of the case, the Tribunal was right in cancelling the penalty imposed on the assessee ?\" 4. Before completing the assessment, the ITO initiated proceedings under\nSection 271(1)(c)\nof the Act and referred the matter under\nSection 274(2)\nof the Act to the J A,C, who held that the assessee did not come forward voluntarily to file the revised return but did so only when he found that the ITO was on the right track and detected concealment and levied a penalty of Rs. 15,000 resorting to the provisions of the Explanation to\nSection 271(1)(c)\nof the Act. On appeal, the Appellate Tribunal found that the assessee categorically asserted that the loans are of genuine nature and included the same in the revised return on the ground that he was not in a position to prove the genuineness and that there is no question of fraud or wilful or gross negligence on the part of the assessee. It further held that there was no other material, other than the inability of the assessee to prove either the genuineness of the loans or that these unproved cash credits represented concealed income of the assessee and, consequently, it allowed the appeal. Hence, this refer",
+    "legal_issues": "5. Mr. P. Rama Rao, learned standing counsel for the revenue, contended that the unproved cash credits represented concealed income and, in any event; the assessee has furnished inaccurate particulars of his income and that the provisions of\nSection 271(1)(c)\nread with its Explanation are attracted in the present case. This claim of the department is misted by Ac assessee's counsel contending, inter alia, that the order of the Tribunal does not give rise to any question of law, that in any event there is no material to hold that the addition represented concealed income, that there was neither fraud nor wilful nor gross negligence on the part of the assessee and that, therefore, the Tribunal was justified in cancelling the penalty imposed on the assessee by the IAC.",
+    "ratio_summary": "3. In order to appreciate the scope of the question we may briefly state the material facts admitted or found by the Tribunal which gave rise to this question. The deceased-first respondent, an individual, who derived income from money-lending and rice mill business, filed his return of income on June 12, 1967, for the assessment year 1966-67, corresponding to the accounting year ending with March 31, 1966, declaring an income of Rs. 20,120. In the course of the assessment proceedings the ITO noticed in the rice mill business an aggregate amount of Rs. 25,490, which was credited periodically in the name of the assessee. The assessee was required by the assessing authority to adduce evidence in support of the said credits. He filed a revised return on March 11, 1969, at the time of the hearing of the case, declaring an income of Rs. 45,600. The ITO determined the total income at Rs. 65,800. On appeal it was reduced by the AAC to Rs. 51.760. 21. We shall now examine the question as to whether the Explanation to\nSection 271(1)(c)\n, which has been inserted by the\nFinance Act, 1964\n, with effect from April 1, 1964, has changed the content and concept of penalty and the onus of proof thereof. The Explanation reads thus :\n\" Explanation.--Where the total income returned by any person is less than eighty per cent. of the total income (hereinafter in this Explanation referred to as the correct income) as assessed under\nSection 143\nSection 144\nSection 147\n(reduced by the expenditure inc",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

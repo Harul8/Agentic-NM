@@ -1,0 +1,186 @@
+{
+  "case_id": "SC_1959_1959_116",
+  "case_name": "State Of Punjab vs Shadi Lal",
+  "normalized_case_name": "STATE_OF_PUNJAB_VS_SHADI_LAL",
+  "court": "Supreme Court of India",
+  "year": "1959",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "4 September 1959",
+  "judges": [
+    "S. Jafer Imam",
+    "K.N. Wanchoo",
+    "JUDGMENT",
+    "S. Jafer Imam, J."
+  ],
+  "author": "S. Jafer Imam",
+  "bench_type": "constitution",
+  "petitioner": "State Of Punjab",
+  "respondent": "Shadi Lal",
+  "reporter_citations": [
+    "AIR 1952 Punj 89"
+  ],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 18,
+  "cited_by_count": 17,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1960SC397",
+    "AIR 1960 SUPREME COURT 397"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1959\\1959_116.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1959_1959_116_P001_C01",
+      "text": "1. These appeals are on a certificate under\nArticle 134(1)(c)\nof the Constitution granted by the High Court of Punjab.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1959_1959_116_P002_C01",
+      "text": "2. The respondent was employed as an Accountant in the office of the Deputy Inspector General of Police, Jullundur in 1949. He is said to have embezzled certain sums of money in 1949 which came to light in 1950. A case was registered against him at the Jullundur Cantonment Police Station on the 15th of August, 1950. Three cases were started against the respondent. In those cases charges were framed against him under\nSections 409\nand\n\nof the Indian Penal Code and\nSection 5(2)\nof the Prevention of Corruption Act. These cases had almost reached the stage of decision when the\nCriminal Law (Amendment) Act, 1952\n(Act 46 of 1952) came into force. According to the provisions of that Act all offences covered by the\nPrevention of Corruption Act\nwere triable by the Court of a Special Judge. Accordingly, the three cases against the respondent were sent to a Special Judge. The respondent was discharged by the Special Judge on an objection taken by him that the cases had not been investigated in accordance with the provisions of the\nPrevention of Corruption Act\n. The High Court of Punjab set aside the orders of discharge and directed the Special Judge to proceed with the trial of the cases.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1959_1959_116_P002_C02",
+      "text": "The learned Judge of the High Court took this course as he followed the decision of a Full Bench of the Punjab High Court which governed the matter.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1959_1959_116_P003_C01",
+      "text": "3. When the trials were resumed an objection was raised to the effect that the charges under\nSection 409\nof the Indian Penal Code and\nSection 5(2)\nof the Prevention of Corruption Act could not proceed side by side in view of a certain decision of the Punjab High Court. The Public Prosecutor conceded that that was so and the charge under\nSection 5(2)\nof the Prevention of Corruption Act was formally withdrawn. The Special Judge accordingly discharged the respondent. The three cases against the respondent were then sent to a Magistrate. The respondent again objected that the charges under Section 409 could not be tried by the Magistrate. The objection was allowed and the Magistrate held that the trial of the respondent could only proceed under the other charges, namely,\nSections 420\n\n,\n\nand\n\nof the Indian Penal Code.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 409"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1959_1959_116_P004_C01",
+      "text": "4. The State of Punjab considered this order as one of acquittal under Section 409, I. P. C. It accordingly preferred three appeals in the High Court under Section 417 of the Cr. P. C. The appeals were dismissed by the High Court and reliance was placed upon the decision of that Court in\nThe State v. Gurcharan Singh\n, AIR 1952 Punj 89, which held that so long as\nSection 5\nof the Prevention of Corruption Act was in force,\nSection 409\nof the Indian Penal Code stands pro tanto repealed as regards offences alleged to have been committed by public servants.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 409"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1959_1959_116_P005_C01",
+      "text": "5. After the decision of this Court in\nOm Prakash Gupta v. State of U. P.\n, , it is apparent that the law enunciated by the Punjab High Court in\nGurcharan Singh\n's case is no longer good law. The High Court was of the opinion that since the decision of the Supreme Court was against the decision of the Punjab High Court, the appellant was entitled to a grant of a certificate to appeal to the Supreme Court under\nArticle 134(1)(c)\nof the Constitution. Hence the present appeal.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1959_1959_116_P006_C01",
+      "text": "6. A preliminary objection was taken on behalf of the respondent that the certificate could not be granted in view of what was observed by this Court in the case of\nState Govt., Madhya Pradesh v. Ramkrishna Ganpat Rao Limsey\n, . It was observed by this Court :\n\"As above stated, this appeal is before us by special leave. Article 134\nof the Constitution permits an appeal to this Court from any judgment, final order or sentence in a criminal proceeding of a High Court in the territory of India if the High Court has on appeal reversed an order of acquittal of an accused person and sentenced him to death. It does not provide for an appeal from a judgment, final order or sentence in a criminal proceeding of a High Court if the High Court has on appeal reversed an order of conviction of an accused person and has ordered his acquittal. In other words, there is no provision in the Constitution corresponding to Section 417, Criminal P. C., and such an order is final, subject, however, to the overriding powers vested in this Court by\nArticle 136\nof the Constitution.\"\nIn support of this objection reliance was also placed on the case of\nState of Orissa v.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 134",
+        "Constitution 136"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1959_1959_116_P006_C02",
+      "text": "Minaketan\n, , and on the case of\nSuperintendent & Remembrancer of Legal Affairs, Government of West Bengal v. Anwar Ali Sarkar\n, 59 Cal WN 1042: . The decision in the latter case is based on the observations of this Court in\nRamkrishna Ganpat Rao Limsey\n's case, . The decision of the High Court of Orissa in the case cited sets out the principles upon which that Court would grant a certificate. So far as the observation of this Court in the case of (supra) is concerned it is to be observed that this Court was not considering Clause (c) of\nArticle 134(1)\nof the Constitution. The observation made\nin that case\nwas with reference to Clause (a) of\nArticle 134(1)\nof the Constitution apparently with a view to showing that in an appeal by special leave by the State against a judgment of acquittal the State could nut claim us of right to be heard on questions of fact.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1959_1959_116_P006_C03",
+      "text": "The decision of this Court did not purport to state that a certificate could not be granted under Clause (c) of\nArticle 134(1)\nin a case where a High Court affirmed an acquittal and yet was of the opinion that a substantial question of law was involved, particularly where the law declared by the Supreme Court was in conflict with the decision of the High Court on that very question. In our opinion, the preliminary objection raised is without foundation and must be rejected. It may be pointed out that even if the High Court could not have granted a certificate this Court always has the power to grant special leave in an appropriate case. There can be no question in the present case that this Court would have granted special leave even if the High Court had refused to grant a certificate or was not in a position to grant one. From that point of view the preliminary objection raised could not stand in the way of this Court hearing the present appeal if we granted special leave.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1959_1959_116_P006_C04",
+      "text": "It is, however, unnecessary to say anything further, since, in our opinion, the preliminary objection fails on the ground that the decision of this Court on which reliance is being placed is no authority for the proposition that the High Court could not have granted the certificate in the circumstances of the present case. In our opinion, the High Court had the power to g ant the certificate under\nArticle 134(1)(c)\nof the Constitution and in the circumstances of the present case it rightly granted such a certificate.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1959_1959_116_P007_C01",
+      "text": "7. In view of the decision of this Court in\nOm Prakash Gupta\n's case there can be no question that the respondent could be tried for an offence under\nSection 409\nof the Indian Penal Code and the courts below were wrong in coming to the conclusion that the respondent could not be tried for that offence. The decision of the courts below in that respect must therefore be set aside and it must be held that the respondent could be tried for an offence under\nSection 409\nof the Indian Penal Code.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "IPC 409"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1959_1959_116_P008_C01",
+      "text": "8. It was urged on behalf of the respondent that the incident out of which the respondent is being prosecuted under\nSection 409\nof the Indian Penal Code took place nearly 10 years ago and he has been sufficiently harassed. It is unfortunate that the cases against the respondent have been pending so long but that has largely been due to the various objections raised at various stages of the trial by the respondent himself and also because the State appealed against the order of the Magistrate declining to proceed with the charge under Section 409, I. P. C. That order was entirely wrong and it is set aside and accordingly the trial must proceed.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "IPC 409"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1959_1959_116_P009_C01",
+      "text": "9. The appeals are accordingly allowed and the decisions of the Magistrate and the High Court are set aside. The trial Court is directed to proceed with the trial of the respondent under\nSection 409\nof the Indian Penal Code also.",
+      "paragraph_type": "order",
+      "sections_cited": [
+        "IPC 409"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "State Of Punjab vs Shadi Lal",
+    "case_id": "SC_1959_1959_116",
+    "court": "Supreme Court of India",
+    "year": "1959",
+    "facts_summary": "2. The respondent was employed as an Accountant in the office of the Deputy Inspector General of Police, Jullundur in 1949. He is said to have embezzled certain sums of money in 1949 which came to light in 1950. A case was registered against him at the Jullundur Cantonment Police Station on the 15th of August, 1950. Three cases were started against the respondent. In those cases charges were framed against him under\nSections 409\nand\n\nof the Indian Penal Code and\nSection 5(2)\nof the Prevention of Corruption Act. These cases had almost reached the stage of decision when the\nCriminal Law (Amendment) Act, 1952\n(Act 46 of 1952) came into force. According to the provisions of that Act all offences covered by the\nPrevention of Corruption Act\nwere triable by the Court of a Special Judge. Accordingly, the three cases against the respondent were sent to a Special Judge. The respondent was discharged by the Special Judge on an objection taken by him that the cases had not been investigated in accordance with the provisions of the\nPrevention of Corruption Act\n. The High Court of Punjab set aside the orders of discharge and directed the Special Judge to proceed with the trial of the cases. The learned Judge of the High Court took this course as he followed the decision of a Full Bench of the Punjab High Court which governed the matter.",
+    "legal_issues": "6. A preliminary objection was taken on behalf of the respondent that the certificate could not be granted in view of what was observed by this Court in the case of\nState Govt., Madhya Pradesh v. Ramkrishna Ganpat Rao Limsey\n, . It was observed by this Court :\n\"As above stated, this appeal is before us by special leave. Article 134\nof the Constitution permits an appeal to this Court from any judgment, final order or sentence in a criminal proceeding of a High Court in the territory of India if the High Court has on appeal reversed an order of acquittal of an accused person and sentenced him to death. It does not provide for an appeal from a judgment, final order or sentence in a criminal proceeding of a High Court if the High Court has on appeal reversed an order of conviction of an accused person and has ordered his acquittal. In other words, there is no provision in the Constitution corresponding to Section 417, Criminal P. C., and such an order is final, subject, however, to the overriding powers vested in this Court by\nArticle 136\nof the Constitution.\"\nIn support of this objection reliance was also placed on the case of\nState of Orissa v. 8. It was urged on behalf of the respondent that the incident out of which the respondent is being prosecuted under\nSection 409\nof the Indian Penal Code took place nearly 10 years ago and he has been sufficiently harassed. It is unfortunate that the cases against the respondent have been pending so long but that has largely been due to t",
+    "ratio_summary": "The decision of this Court did not purport to state that a certificate could not be granted under Clause (c) of\nArticle 134(1)\nin a case where a High Court affirmed an acquittal and yet was of the opinion that a substantial question of law was involved, particularly where the law declared by the Supreme Court was in conflict with the decision of the High Court on that very question. In our opinion, the preliminary objection raised is without foundation and must be rejected. It may be pointed out that even if the High Court could not have granted a certificate this Court always has the power to grant special leave in an appropriate case. There can be no question in the present case that this Court would have granted special leave even if the High Court had refused to grant a certificate or was not in a position to grant one. From that point of view the preliminary objection raised could not stand in the way of this Court hearing the present appeal if we granted special leave.",
+    "final_order": "9. The appeals are accordingly allowed and the decisions of the Magistrate and the High Court are set aside. The trial Court is directed to proceed with the trial of the respondent under\nSection 409\nof the Indian Penal Code also.",
+    "outcome_summary": "9. The appeals are accordingly allowed and the decisions of the Magistrate and the High Court are set aside. The trial Court is directed to proceed with the trial of the respondent under\nSection 409\nof the Indian Penal Code also.",
+    "sections_cited": [
+      "IPC 409",
+      "Constitution 134",
+      "Constitution 136"
+    ],
+    "cases_cited": []
+  }
+}

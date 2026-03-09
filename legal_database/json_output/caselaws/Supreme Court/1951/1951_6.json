@@ -1,0 +1,256 @@
+{
+  "case_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE",
+  "case_name": "Surajpal Singh And Others vs The State",
+  "normalized_case_name": "SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE",
+  "court": "Supreme Court of India",
+  "year": "1951",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 16 of 1950",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "20 December 1951",
+  "judges": [
+    "Saiyid Fazal Ali",
+    "Vivian Bose"
+  ],
+  "author": "Saiyid Fazal Ali",
+  "bench_type": "division",
+  "petitioner": "Surajpal Singh And Others",
+  "respondent": "The State",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 9,
+  "cited_by_count": 384,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1952 AIR 52",
+    "1952 SCR 193",
+    "AIR 1952 SUPREME COURT 52"
+  ],
+  "jurisdiction_type": "CRIMINAL  APPELLATE\t JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\1951\\1951_6.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P001_C01",
+      "text": "CITATION:\n 1952 AIR 52 1952 SCR 193\n CITATOR INFO :\n R 1953 SC 459 (10)\n R 1954 SC 645 (2)\n R 1955 SC 585 (4)\n R 1955 SC 807 (5)\n F 1956 SC 217 (2,34)\n R 1956 SC 425 (5)\n R 1956 SC 643 (39)\n R 1957 SC 216 (12)\n R 1957 SC 589 (16)\n RF 1961 SC 715 (7)\n RF 1962 SC 439 (8)\n RF 1963 SC 200 (17)\n F 1972 SC 116 (22)\n R 1973 SC2622 (7)\n F 1974 SC 606 (6)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P002_C01",
+      "text": "ACT:\nCriminal Procedure Code\n(Act V of 1898), s. 417--Appeal\nagainst acquittal--Interference--Guiding principle.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P003_C01",
+      "text": "HEADNOTE:\n It is well settled that in an appeal under\ns. 417\nof the\nCriminal Procedure Code, the High Court has full power to\nreview the evidence upon which the order of acquittal was\nfounded. But it is equally well settled that the presumption\nof innocence of the accused is further reinforced by his\nacquittal by the trial Court and the findings of the trial\nCourt which had the advantage of seeing the witnesses and\nhearing their evidence can be reversed only for very sub-\nstantial and compelling reasons.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P004_C01",
+      "text": "JUDGMENT:\nCRIMINAL APPELLATE JURISDICTION: Criminal Appeal No.\n16 of 1950. Appeal by special leave from the judgment and\norder dated 8th May, 1947, of the High Court of Judicature\nat Allahabad (Sankar Saran and Akbar Hussain JJ.) in Crimi-\nnal Appeal No. 80 of 1946.\nS.P. Sinha (G.C. Mathur, with him), for the appellant.\nK.B. Asthana, for the respondent.\n1951. December 20. The Judgment of the Court was deliv-\nered by\nFAZL ALl J.--This is an appeal against a judgment of the\nHigh Court of Judicature at Allahabad reversing the decision\nof the Sessions Judge of Aligarh in a criminal case. The\nappellants were tried by the Sessions Judge on charges under\nsection 302\nread with\nsection 149\n,\nsection 148\n,\nsections 325\nand",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P005_C01",
+      "text": "read with\nsection 149\n, and\nsection 201\nof the Indian\nPenal Code, but were acquitted. On appeal by the State\nGovernment, the High Court reversed the Sessions Judge's\ndecision, and convicted the appellants and sentenced them to\ntransportation for life under\nsection 302\nread with\nsection",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 201"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P006_C01",
+      "text": "read with\nsection 149\n, and to two years' rigorous\nimprisonment under\nsection 147\nof the Indian Penal Code, all\nthe sentences being made to run concurrently. The appellants\nthereafter applied to the Privy Council for special leave,\nwhich was granted on the 28th October, 1947.\n The facts which were put before the court on behalf of\nthe prosecution may be briefly stated as follows. There is a\nplot No. 518 in Nagaria Patti Chaharum, village Shahgarh in\nthe district of Aligarh which is about 30 bighas in area and\nis known as the \"teesa\" field. This plot was the \"sir\" land\nof several landlords including Mst. Bhagwati Kuer and Ratan\nSingh and had been let out to certain tenants. In 1944,\nMst. Bhagwati Kuer, Ratan Singh and their co-sharers filed a\nsuit for the ejectment of the tenants, and the",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "IPC 147"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P007_C01",
+      "text": "suit was decreed. On the 7th June, 1945, possession over the\nplot was delivered by the Amin to Surajpal Singh, the first\nappellant, who was the mukhtar-i-Am of Mst. Bhagwati Kuer. It was contended on behalf of Surajpal Singh that he took\npossession on behalf of all the co-sharers, but certain\nstatements made by Ratan Singh in his evidence do not sup-\nport this contention. However that may be, it appears that\non the 17th June, 1945, Ratan Singh reported to the police\nthat he had sent his labourers to irrigate the \"teesa\"\nfield, and while they were irrigating it Surajpal Singh and\ncertain other persons came and tried to stop the irrigation\nand damaged the ploughs of Ratan Singh. On the 18th June, at\nabout 7 A.M., the occurrence which is the subject-matter of\nthe present trial took place. The prosecution version of the\noccurrence was that while Ratan Singh's labourers were\nworking in the field under the supervision of one Behari\nSingh, the appellants with many other persons came armed\nwith guns, spears and lathis, and some of the members of the\nappellants' party entered the field, cut off the nosestrings\nof the bullocks and abused and assaulted the labourers, most\nof whom ran away.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P007_C02",
+      "text": "Thereupon, Deva Sukh, who was there to\nsupply water to the labourers, protested and was beaten with\nlathis. At that point of time, Behari Singh and 10 to 15\npersons came and fight took place between the parties. During the fight, one of the accused persons, Rajendra\nSingh, a young lad, fired his gun twice in the air, and\nthereafter Surajpal Singh took the gun from him and fired\ntwo shots hitting Nawab Mewati, who died instantaneously,\nand Behari Singh, who died later in the day. Three other\npersons, Zorawar, Rajpal and Lakhan also received gun-shot\ninjuries. Sometime later, Surajpal Singh along with the\nother three appellants came to the spot and removed the dead\nbody of Nawab in a cart. The body was thrown into a river\nand was recovered on the 20th June, 1945. After investiga-\ntion 25 persons including the appellants were sent up for\ntrial. After hearing the evidence in the case, the Ses-\nsions Judge delivered judgment on the 20th February, 1946.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P008_C01",
+      "text": "He held that the \"teesa\" field was in the possession of\nSurajpal Singh, that Behari Singh and Ratan Singh's men were\naggressors and wished to take forcible possession of the\nfield, that when resisted they had attacked the appellants'\nparty, that the person who fired the gun had done so in\nself-defence and not with a view to killing Behari Singh and\nNawab Mewati, and that the evidence adduced by the prosecu-\ntion was so unsatisfactory that it was unsafe to convict the\naccused upon it. As to the charge of concealing evidence of\nthe offence of murder by the removal of the dead body of\nNawab, the Sessions Judge expressed the opinion that in\norder to convict a person on that charge it must be proved\nthat the offence, the evidence of which the accused is\nalleged to have caused to disappear had actually been com-\nmitted, but since in the present case the charge of murder\nwas not proved the accused could not be convicted for having\ncaused disappearance of evidence connected with it. The\nJudge also held that the evidence being unreliable the\ncharge under\nsection 201\nof the Indian Penal Code had not\nbeen established beyond reasonable doubt.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 201"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P008_C02",
+      "text": "The High Court delivered its judgment on the 8th May,\n1947, allowing the appeal of the State Government. Shortly\nstated, the conclusion arrived at by the High Court was that\nRatan Singh had as much right to the possession of the field\nas Bhagwati Kuer, that both parties were trying to take\nexclusive possession of the field, that both parties were\nprepared for all contingencies to vindicate and enforce\ntheir rights, and hence the question of possession was\nwholly immaterial and no right of private defence could be\nsuccessfully pleaded by the appellants. A perusal of the two judgments before us shows that\nwhile the Sessions Judge took great pains to discuss all the\nimportant aspects of the case and to record his opinion on\nevery material point, the learned Judges of the High Court\nhave reversed his decision without displacing the very\nsubstantial reasons given by him in support of his conclu-\nsion. The difference in the treatment of the case by the\ntwo courts below",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P009_C01",
+      "text": "is particularly noticeable in the manner in which they have\ndealt with the prosecution evidence. We find that while the\nSessions Judge took up the evidence of each witness and\nrecorded his finding with regard to his credibility after\ndiscussing the minutest details of the evidence, all that\nthe learned Judges of the High Court have to say about the\nprosecution evidence as a whole is as follows :-\n\"In Prag Dat's case their Lordships observed: usual in\ncases of this kind the police have found it difficult to\nsecure independent testimony of what did take place. Those\nof the villagers who were present and looking on would\nprobably by sympathy and bias be so attached to one or other\nof the disputing parties that it would be hopeless to get\ndisinterested and reliable evidence from them.'\n This difficulty the police find in most riot cases and\nthis case is not free from it. But as in Prag Dat's case,\nin this case there are four witnesses, viz., Deo Sukh, Rori\nSingh, Ram Singh, and Ratan Singh, who could be characte-\nrised as independent witnesses and they support the case for\nthe prosecution, in the main.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P009_C02",
+      "text": "In our judgment their testimo-\nny is on the whole worthy of credence and sufficient to\njustify the conviction of the respondents.\"\nIn view of the summary treatment of the evidence by the\nHigh Court, we had to read the evidence adduced in the case\nwith great care, and what we find is that the four witness-\nes, whose evidence has been accepted by the High Court, are\njust the persons against whom very serious criticism was\noffered by the Sessions Judge. Of these witnesses, Ratan\nSingh not being an eye-witness may be ruled out. As to the\nremaining witnesses, we are on the whole inclined to agree\nwith the view expressed by the Sessions Judge. According to\nthe Sessions Judge, the manner in which Deva Sukh was\nbrought into the picture and the circumstances attendant on\nhis evidence, furnish strong reasons. for rejecting the\nprosecution version. What has been held is that the whole\ncase of the prosecution",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P010_C01",
+      "text": "that Deva Sukh had received injuries in the course of the\nalleged occurrence was false and his injuries \"were made up\nso as to create evidence of private defence\" to be utilized\nby the prosecution to meet the charge of having caused\ninjuries to the members of the appellants' party. It has\nbeen established that at least four persons on the side of\nthe accused had received injuries. Mahindarpal had received\nno less than 16 injuries, and his condition was serious for\nsome time. Karan Singh had 12 injuries, one of which was\ngrievous. Hari Singh had received 7 injuries including a\ngrievous injury, and Nikka Singh also was injured, his\ninjury having been noticed by the investigating sub-inspec-\ntor. In the prosecution evidence, it was stated that many of\nthe accused persons were armed with lathis and had used\nthem, and it would be strange if it was not proved that any\nof the persons on their side had any injuries attributable\nto lathis. It has been established that the four injured\npersons of Ratan Singh's party, viz., Rajpal Singh, Lakhan\nSingh, Behari Singh and Zorawar Singh, had only gun-shot\nwounds.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P010_C02",
+      "text": "A serious question which arises in this case is at\nwhat stage the gun was used, and whether it was used in\nself-defence after the members of the appellants' party were\nassaulted with lathis or it was used before they were as-\nsaulted. The prosecution witnesses had to admit that at first a\ngun was fired twice in the air and then the actual firing\ntook place. This version of the firing lends support to the\ndefence story that the gun was fired in self-defence when\nRatan Singh's men attacked members of the accused's party. The Sessions Judge has expressed the view that in order to\nmeet the defence case the prosecution introduced the story\nof Deva Sukh having been assaulted with a lathi in the first\ninstance so as to make the appellants' party the aggressors,\nit being the prosecution case that Behari Singh and his men\nhad used lathis in order to defend themselves. In order to\nresolve the conflict in the cases of the parties and to get\nat the true picture, the",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P011_C01",
+      "text": "Sessions Judge went very minutely into the question as to\nwhether there was trustworthy evidence about Deva Sukh\nhaving received any injury at all in the occurrence. It\nseems to us that there is a formidable array of circum-\nstances to support the conclusion ultimately reached by the\nSessions Judge. It appears that in the first information\nreport there is no reference to Deva Sukh or to the injuries\nsaid to have been received by him. The Sessions Judge has\npointed out that there was a considerable interval of time\nbetween the occurrence and the lodging of the first informa-\ntion report, and therefore it is surprising that the most\nimportant incident of the occurrence and the name of the\nmost important witness was omitted in the report. Again, no\nreference was made to Deva Sukh or to his injuries in the\ndying declaration of Behari Singh which was recorded by one\nDr. Shankar Deo, and also in that of Lakhan Singh. The\nSessions Judge has further pointed out that the prosecution\nwitnesses, Chokha, Prempal, Cheta and Gangola Singh, who\nwere examined by the investigating officer on the 18th June,\ndid not also refer to Deva Sukh.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P011_C02",
+      "text": "The investigating sub-\ninspector was informed of the injuries on Deva Sukh and his\npresence at the time of the occurrence for the first time on\nthe 19th June, 1945, and Deva Sukh's explanation for not\nappearing before him at the earliest opportunity was that he\nwas frightened and had concealed himself in his house for\nabout two days and had directed his relations not to inform\nthe police of his presence. He also stated that on his\narrival in his house after the occurrence he did not inform\nhis relations of what had happened. Some of these matters\nmight have been overlooked if there had been convincing\nevidence about his having actually received injuries, but we\nare satisfied that such evidence as is before us is extreme-\nly unsatisfactory and suspicious and we entertain grave\ndoubts as to whether Deva Sukh received any injuries at all. Dr. Shanker Deo, who examined Deva Sukh, is a retired\nSub-Assistant Surgeon practising in Kauiraganj, which is\nnot far from village Shahgarh.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P012_C01",
+      "text": "He admits that he had known Ratan Singh since his childhood,\nand when he was a child he used to be taught at the house of\nRatan Singh by a teacher employed by Ratan Singh's uncle. He has stated that Deva Sukh had two bruises across the back\nof the middle of the left forearm, and one of them was\ngrievous since the left ulna was fractured. He further says\nthat at the time of examination he did charge fees from Deva\nSukh, that he was brought to him three days after the other\ninjured persons, that when the latter group of persons came\nto him none of them told him that there was one more injured\nperson to be examined, and that Deva Sukh was brought to him\nby Ratan Singh's servant. There are unsatisfactory fea-\ntures in the evidence of this doctor relating to other\nmatters which need not be referred to, but what is somewhat\nremarkable is that though there is a District Board Hospital\nat Jalali about four miles from Kauirganj, Deva Sukh did not\nobtain an injury certificate from the doctor in charge of\nthat hospital. Deva Sukh says that he did go to that hospi-\ntal to have his injuries attended to, but there is no evi-\ndence to corroborate this.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P012_C02",
+      "text": "These facts as well as a number\nof other facts relied upon by the Sessions Judge do go to\nsupport his theory, and once it is held that the prosecution\nhas to rely on fabricated evidence, it throws doubts on the\nentire case. From the record, it appears that Surajpal Singh was the\nperson who had been taking an active interest in the eject-\nment suit, and he was admittedly spending money. Ratan Singh\nsays that he had also paid money to Surajpal Singh towards\nthe expenditure, but this is not probable because he and\nSurajpal had been on bad terms. It is admitted that Suraj-\npal is the person to whom the Amin gave possession of the\nland, but in spite of this fact, Ratan Singh's men started\noperations on the land ignoring Bhagwati Kuer, which Ratan\nSingh had no right to do, even assuming that the land was\njoint property. If Behari Singh and the other men sent by\nRatan Singh were trying to take exclusive possession of the\nland and had started",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P013_C01",
+      "text": "operations thereon, Surajpal Singh had every right to pro-\ntest, and if his men were beaten first, of which there are\nstrong indications in the case, he was entitled ' to repel\nthe attack in exercise of the right of private defence. That Ratan Singh had made ample preparations through\nBehari Singh is quite clear. Admittedly, there were a\nnumber of persons armed with lathis present at the scene on\nhis behalf including outsiders like Nawab Mewati, who is\nsaid to have been a well-known fighter, Zorawar and others. As regards the remaining two witnesses, to whom the High\nCourt has made reference, viz., Rori Singh and Pransukh, it\nseems to us that the High Court has overlooked the comments\nmade by the Sessions Judge upon their evidence, some of\nwhich are of considerable force. What has impressed us is\nthat they were not independent witnesses and were not\nmentioned in the first information report as witnesses to\nthe occurrence, and they were examined by the sub-inspector\nas late as the 20th and 21st June, 1945.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P013_C02",
+      "text": "After reading the\ntwo judgments, we see no reason why the opinion of the\nSessions Judge regarding these witnesses should not receive\nthe weight which should normally be attached to that of the\ntrial court. It is well-established that in an appeal under\nsection",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P014_C01",
+      "text": "of the Criminal Procedure Code, the High Court has full\npower to review the evidence upon which the order of acquit-\ntal was founded, but it is equally well-settled that the\npresumption of innocence of the accused is further rein-\nforced by his acquittal by the trial court, and the findings\nof the trial court which had the advantage of seeing the\nwitnesses and hearing their evidence can be reversed only\nfor very substantial and compelling reasons.\n On the whole, we are inclined to hold that the Sessions\nJudge had taken a reasonable view of the facts of the case,\nand in our opinion there were no good reasons for reversing\nthat view. The assessors with whose aid the trial was held,\nwere unanimously of the opinion that the accused were not\nguilty, and",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE_P015_C01",
+      "text": "though 25 persons were placed on trial on identical evi-\ndence, the State Government preferred an appeal only against\n5 of them on the sole ground that the acquittal was against\nthe weight of evidence on the record.\nIn the result, we allow the appeal, set aside the con-\nviction and sentences of the appellants and acquit them of\nall the charges.\nAppeal allowed.\nAgent for the appellant: P.K. Chatterjee.\nAgent for the respondent: I. N. Shroff for P.K.\nBose.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Surajpal Singh And Others vs The State",
+    "case_id": "SC_1951_SURAJPAL_SINGH_AND_OTHERS_VS_THE_STATE",
+    "court": "Supreme Court of India",
+    "year": "1951",
+    "facts_summary": "ACT:\nCriminal Procedure Code\n(Act V of 1898), s. 417--Appeal\nagainst acquittal--Interference--Guiding principle. HEADNOTE:\n It is well settled that in an appeal under\ns. 417\nof the\nCriminal Procedure Code, the High Court has full power to\nreview the evidence upon which the order of acquittal was\nfounded. But it is equally well settled that the presumption\nof innocence of the accused is further reinforced by his\nacquittal by the trial Court and the findings of the trial\nCourt which had the advantage of seeing the witnesses and\nhearing their evidence can be reversed only for very sub-\nstantial and compelling reasons. A serious question which arises in this case is at\nwhat stage the gun was used, and whether it was used in\nself-defence after the members of the appellants' party were\nassaulted with lathis or it was used before they were as-\nsaulted. The prosecution witnesses had to admit that at first a\ngun was fired twice in the air and then the actual firing\ntook place. This version of the firing lends support to the\ndefence story that the gun was fired in self-defence when\nRatan Singh's men attacked members of the accused's party. The Sessions Judge has expressed the view that in order to\nmeet the defence case the prosecution introduced the story\nof Deva Sukh having been assaulted with a lathi in the first\ninstance so as to make the appellants' party the aggressors,\nit being the prosecution case that Behari Singh and his men\nhad used lathis in order to defend themselves. In or",
+    "legal_issues": "JUDGMENT:\nCRIMINAL APPELLATE JURISDICTION: Criminal Appeal No.\n16 of 1950. Appeal by special leave from the judgment and\norder dated 8th May, 1947, of the High Court of Judicature\nat Allahabad (Sankar Saran and Akbar Hussain JJ.) in Crimi-\nnal Appeal No. 80 of 1946.\nS.P. Sinha (G.C. Mathur, with him), for the appellant.\nK.B. Asthana, for the respondent.\n1951. December 20. The Judgment of the Court was deliv-\nered by\nFAZL ALl J.--This is an appeal against a judgment of the\nHigh Court of Judicature at Allahabad reversing the decision\nof the Sessions Judge of Aligarh in a criminal case. The\nappellants were tried by the Sessions Judge on charges under\nsection 302\nread with\nsection 149\n,\nsection 148\n,\nsections 325\nand read with\nsection 149\n, and to two years' rigorous\nimprisonment under\nsection 147\nof the Indian Penal Code, all\nthe sentences being made to run concurrently. The appellants\nthereafter applied to the Privy Council for special leave,\nwhich was granted on the 28th October, 1947.\n The facts which were put before the court on behalf of\nthe prosecution may be briefly stated as follows. There is a\nplot No. 518 in Nagaria Patti Chaharum, village Shahgarh in\nthe district of Aligarh which is about 30 bighas in area and\nis known as the \"teesa\" field. This plot was the \"sir\" land\nof several landlords including Mst. Bhagwati Kuer and Ratan\nSingh and had been let out to certain tenants. In 1944,\nMst. Bhagwati Kuer, Ratan Singh and their co-sharers filed a\nsuit for the ejectment of",
+    "ratio_summary": "The High Court delivered its judgment on the 8th May,\n1947, allowing the appeal of the State Government. Shortly\nstated, the conclusion arrived at by the High Court was that\nRatan Singh had as much right to the possession of the field\nas Bhagwati Kuer, that both parties were trying to take\nexclusive possession of the field, that both parties were\nprepared for all contingencies to vindicate and enforce\ntheir rights, and hence the question of possession was\nwholly immaterial and no right of private defence could be\nsuccessfully pleaded by the appellants. A perusal of the two judgments before us shows that\nwhile the Sessions Judge took great pains to discuss all the\nimportant aspects of the case and to record his opinion on\nevery material point, the learned Judges of the High Court\nhave reversed his decision without displacing the very\nsubstantial reasons given by him in support of his conclu-\nsion. The difference in the treatment of the case by the\ntwo courts below Sessions Judge went very minutely into the question as to\nwhether there was trustworthy evidence about Deva Sukh\nhaving received any injury at all in the occurrence. It\nseems to us that there is a formidable array of circum-\nstances to support the conclusion ultimately reached by the\nSessions Judge. It appears that in the first information\nreport there is no reference to Deva Sukh or to the injuries\nsaid to have been received by him. The Sessions Judge has\npointed out that there was a considerable interval of time\nbe",
+    "final_order": "though 25 persons were placed on trial on identical evi-\ndence, the State Government preferred an appeal only against\n5 of them on the sole ground that the acquittal was against\nthe weight of evidence on the record.\nIn the result, we allow the appeal, set aside the con-\nviction and sentences of the appellants and acquit them of\nall the charges.\nAppeal allowed.\nAgent for the appellant: P.K. Chatterjee.\nAgent for the respondent: I. N. Shroff for P.K.\nBose.",
+    "outcome_summary": "Allowed. though 25 persons were placed on trial on identical evi-\ndence, the State Government preferred an appeal only against\n5 of them on the sole ground that the acquittal was against\nthe weight of evidence on the record.\nIn the result, we allow the appeal, set aside the con-\nviction and sentences of the ",
+    "sections_cited": [
+      "IPC 201",
+      "IPC 147"
+    ],
+    "cases_cited": []
+  }
+}

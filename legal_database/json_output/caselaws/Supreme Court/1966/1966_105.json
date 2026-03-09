@@ -1,0 +1,311 @@
+{
+  "case_id": "SC_1966_1966_105",
+  "case_name": "Commissioner Of Income-Tax, Bombay ... vs Godavari Sugar Mills Ltd",
+  "normalized_case_name": "COMMISSIONER_OF_INCOME-TAX,_BOMBAY_..._VS_GODAVARI_SUGAR_MILLS_LTD",
+  "court": "Supreme Court of India",
+  "year": "1966",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "10 October 1966",
+  "judges": [
+    "V. Ramaswami",
+    "J.C. Shah",
+    "Vishishtha Bhargava"
+  ],
+  "author": "V. Ramaswami",
+  "bench_type": "constitution",
+  "petitioner": "Commissioner Of Income-Tax, Bombay ...",
+  "respondent": "Godavari Sugar Mills Ltd",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 23,
+  "cited_by_count": 38,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1967 AIR 556",
+    "1967 SCR (1) 798",
+    "AIR 1967 SUPREME COURT 556"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1966\\1966_105.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1966_1966_105_P001_C01",
+      "text": "ACT:\nIncome Tax Act, 1922\n, s. 23A--Company restricted from\ndeclaring dividend to limit prescribed by\nss. 3\nand",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1966_1966_105_P002_C01",
+      "text": "Public Companies (Limitation of Dividends)Ordinance 1948-\nTherefore not declaring dividend at annual general meeting\nas contemplated in\ns. 23\nA-Public companies (Limitation\nDividedends) Act, 1949 repealing Ordinance within six months\nof meeting not aplicable to asessee company-Whether order\nunder s. 23 A valid- Whether repealed Ordinance applied on\ndate of meeting by virtue of\ns. 6(c)\n, and (e)\nGeneral\nClauses Act, 1897\n.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1966_1966_105_P003_C01",
+      "text": "HEADNOTE:\nAt its annual general meeting hold on December 13, 1948 the\nrespondent company declared a dividend of Rs. 3,68,433 for\nits accounting year ended May 31, 1948. In the course of\nits assessment to income-tax for the assessment year 1949-50\nthe Income-tax Officer passed an order on March 11, 1955,\nunder the provisions of\ns. 23A\nof the Income-tax Act, 1922,\nthat an undistributed -portion of the assessable income of\nthe respondent would be deemed to have been distributed as\ndividend amongst the share-holders as at the date of the\ngeneral meeting. The respondent raised an objection that it was not legally\npossible for it to declare a higher dividend than that\ndeclared in view of SS-. 3 and 12 of the Public Companies\n(Limitation of Dividends) Ordinance No. XXIX of 1948. This\nobjection was rejected a by the Income-tax Officer whose\nview was confirmed in appeal by the Appellate Assistant\nCommissioner and also by the Tribunal.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1966_1966_105_P003_C02",
+      "text": "Thereafter, a\nreference was made to the High Court on the question whether\nthe order under s. 23A was validly made in the case of the\nrespondent company to which the Ordinance applied an the\ndate of the annual general meeting, but to which the Public\nCompanies (Limitation of Dividends) Act, 1949, which\nrepealed the Ordinance ceased to apply within the period of\n6 months referred to in S. 23A(1). The High Court decided\nthe question in favour of the respondent. In the appeal to this Court it was contended on behalf of\nthe appellant that (i) s. 23A contemplated the declaration\nof dividend not only on the date of the annual general\nmeeting but also at any further point of time within a\nperiod of 6 months thereafter and that it was possible for\nthe respondent company to declare a further dividend within\nthe said period of 6 months; (ii) that in any event\ns. 13\n1949 Act repealed the Ordinance completely and the effect\nwas that the Ordinance was obliterated from the statute\nbook, as if it never existed, and therefore, there was no\nbar in the way of the Income-tax Officer making the order of\nMarch 11, 1955.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1966_1966_105_P003_C03",
+      "text": "HELD : (i) As the Ordinance was in force on the date of the\nannual general meeting of the respondent company, the\nIncome-tax Officer had no power to pass any order under s.\n23A. The order which the Income-tax Officer is empowered to make\nunder s. 23A is that the undistributed income shall be\ndeemed to have been distributed amongst the shareholders \"as\nat the date of the annual general meeting.\" If, -in\nactuality, a higher dividend could not lawfully have been",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1966_1966_105_P004_C01",
+      "text": "date of the General Meeting. Section 23A\nof the Act, as it\nstood at the material time, stated as follows:\n\"23A.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1966_1966_105_P004_C02",
+      "text": "Power to assess individual members of certain\ncompanies.-(1) Where the Income-tax Officer is satisfied\nthat in respect of any previous year the profits and gains\ndistributed as dividends by any company up to the end of the\nsixth month after its accounts for that previous year are\nlaid before the company in general meeting are less than\nsixty per cent of the assessable income of the company of\nthat previous year, as reduced by the amount of income-tax\nand super-tax payable by the company in respect thereof he\nshall, unless he is satisfied that having regard to losses\nincurred by the company in earlier years or to the smallness\nof the profits made, the payment of a dividend or a larger\ndividend than that declared would be unreasonable, make with\nthe previous approval of the Inspecting Assistant\nCommissioner an order in writing that the undistributed\nportion of the assessable income of the company of that\nprevious year as computed for income-tax purposes and\nreduced by the amount of income-tax and super-tax payable by\nthe company in respect thereof shall be deemed to have been\ndistributed as dividends amongst the shareholders as at the\ndate of the general meeting aforesaid; and",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1966_1966_105_P004_C03",
+      "text": "thereupon the\nproportionate share thereof of each shareholder shall be\nincluded in the total income of such shareholder for the\npurpose of assessing his total income.\"\nThe respondent raised an objection that it was not legally\npossible for it to declare a higher dividend than that\ndeclared in view of\nss. 3\nand",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1966_1966_105_P005_C01",
+      "text": "of the Public Companies\n(Limitation of Dividends) Ordinance No. XXIX of 1948\n(hereinafter referred to as the 'Ordinance') which was\npromulgated on October 29, 1948.\nSection 3\nof the Ordinance\nprovided:\n\"No company shall, after the commencement of this Ordinance,\ndistribute as dividend during any financial year, any sum\nwhich exceeds, or which when taken with any sum already\ndistributed as dividend during the same year whether before\nor after the commencement of this Ordinance will exceed:\n(a) six per cent of the paid up capital of the company as\non the last date of the period in respect of which the\ndividend is distributed, after deducting from such capital\nall amounts attributable to the capitalisation on or after\nthe first day of April 1946 of one or more of",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1966_1966_105_P006_C01",
+      "text": "declared by the respondent, the Income-tax Officer could not\nPass an order that such higher dividend should be deemed to\nhave been declared, for the deemed declaration will suffer\nfrom the same legal restriction which an actual declaration\nis subject to. The prohibition imposed by a. 3 of the\nOrdinance applies not only to the actual dividend declared\nbut also to the notional dividend deemed to have been\ndeclared under a. 23\nA of the Act\n. There is a manifest\nrepugnancy between the provisions of the Ordinance and of\ns.\n23A\nof the Act and it must be taken that there was an im-\nplied repeal of a. 23\nA of the Act\nto the extent of that\nrepugnancy to long as the Ordinance remained in force. [803\nC-F]\nRaghunandan Neotla v. Swadeshi Cloth Dealers Ltd., 34 Com. Cas. 570; East, End Dwellings Co. Ltd. v. Finsbury Borough\nCouncil; [1952] A.C. 109, 132; referred to. Since the notional distribution contemplated by s. 23A is as\nif the notional distribution took place at the date of the\nannual gener it is the law which prevailed is on that date\nwhich is to be account in considering the legal validity of\nthe order made by the Income-tax Officer.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1966_1966_105_P006_C02",
+      "text": "The effect of S.-\n13 of the 1949 Act is not to-obliterate the Ordinance\ncompletely from the statute book because the provisions of\nSection 6(c)\n, (d) and (e) of the\nGeneral Clauses Act\nwould\napply to this case since there was no contrary intention\nappearing in the repealing statute [804 F-G; 806 C]\nState of Punjab v. Mohar Singh [1955] 1 S.C.R. 893, 897,\nreferred to.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1966_1966_105_P007_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeal No. 28 of 1966. Appeal by special leave from the judgment and Order dated\nSeptember 27, 1962 of the Bombay High Court in Income-tax\nReference No. 39 of 1961. S. T. Desai, Gopal Singh and R. N. Sachthey, for the\nappellant,\nA. K. Sen, O. P. Malhotra, Y. P. Tarvei and Ravinder\nNarain\nfor the respondent. The Judgment of the Court was delivered by\nRamaswami, J. This appeal is brought, by special leave, from\nthe judgment of the High Court of Bombay dated September 27,\n1962 in income-tax Reference No.39 of 1961. The respondent-\nGodavari Sugar Mills Ltd.-is a Public limited company. The\nassessment year in this case is 1949-50. The relevant\naccounting year ended on May 31, 1948. The Annual General\nMeeting of the respondent was held on December 30, 1948. At\nthat meeting a sum of Rs. 3,68,433/- was declared as the\ndividend.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1966_1966_105_P007_C02",
+      "text": "Since the dividend fell short of the requisite\npercentage under s. 23A of the Income-tax Act (hereinafter\ncalled the 'Act') the Income-tax Officer passed an order, on\nMarch 11, 1955 under the provisions of s. 23A of the Act\nthat the undistributed portion of the assessable income of\nthe respondent of the previous year as computed for incomE-\ntax purposes and reduced by the amount of income-tax and\nsuper-tax payable by the company in respect thereof shall be\ndeemed to have been distributed as dividend amongst the\nshareholders as at the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1966_1966_105_P008_C01",
+      "text": "the following, namely, reserves, profits and appreciation of\nassets, or\n(b) the average annual dividend of the company determined\nin the manner specified in\nsections 5",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1966_1966_105_P009_C01",
+      "text": ",\nwhichever is higher.\"\nSection 12\nprovided:\n\"Any Director, Managing Agent, Manager or other Officer or\nemployee of a company who contravenes or attempts to\ncontravene or abets the contravention of or attempt to\ncontravene any of the provisions relating to the\ndistribution of dividend or the issue of preference shares,\ncontained in this Ordinance or in any rule, notification or\norder issued thereunder, shall be punishable with\nimprisonment for a term which may extend to two years, or\nwith fine, or with both.\"\nSection 2(b)\nof the Ordinance defines a \"Company\" to mean \"A\npublic company as defined in clause (13-A) of\nsection 2\nthe Companies Act.\" It is not disputed by the parties that\nthe respondent-company was a company within the meaning of\nthe Ordinance and that the provisions of the Ordinance\napplied to it. It was also admitted that the dividend\ndeclared by the respondent complied with the requirements of\nthe Ordinance. It was contended by the respondent that the\nOrdinance prohibited it from declaring any larger amount as\ndividend than that already declared by it. The contention\nwas rejected by the Income Tax Officer. The order of the\nIncome-tax.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1966_1966_105_P009_C02",
+      "text": "Officer dated March 11, 1955 was confirmed by\nthe Appellate Assistant Commissioner in appeal and, on\nfurther appeal, by the Tribunal. At the instance of the\nrespondent the Tribunal referred the following question of\nlaw for the determination of the High Court:\n\"Whether on the facts of this case, an order under section\n23A for the assessment year 1949-50 was validly made in the\ncase of this company to which the provisions of the Public\nCompanies (Limitation of Dividends) Ordinance, 1948, applied\non the date of the Annual General Meeting but to which the\nAct replacing the Ordinance ceased to apply within the\nperiod of 6 months referred to in Section 23A (1)?\"\nBy its judgment dated September 27, 1962, the High Court\nanswered the question of law in favour of the respondent. In support of this appeal Mr. S. T. Desai put forward the\nargument that\ns. 23A\nof the Act contemplated a declaration\nof dividend not only on the date of the Annual General\nMeeting\n802 .\nbut also at any further point of time within a period of 6\nmonths from the date of the Annual General Meeting.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1966_1966_105_P009_C03",
+      "text": "It was\npointed out that the Ordinance was repealed by the Public\nCompanies (Limitation of Dividends) Act (Act No. 30 of 1949)\n(hereinafter referred to as the '1949 Act') which came into\nforce on April 26, 1949. S. 2(3)(1)\nof the,1949 Act removed\nthe restriction imposed by the Ordinance with regard to\nPublic Companies to which the provisions of sub-s. (1) of\ns.\n23A\nof the Act applied. It was submitted that it was\npossible for the respondent-company to declare further\ndividends within the said period of 6 months contemplated by\ns. 23A\nof the Act. The Annual General Meeting was held on\nDecember 30, 1948 and the six months' period from that date\nexpired on June 30, 1949. The restrictions imposed by the\nOrdinance were lifted on April 26, 1949 and so during the\nperiod from April 26, 1949 to June 30, 1949 it was possible\nfor the respondent company to declare further dividends and\nto comply with the requirements of\ns. 23A\nof the Act. It\nwas argued that as the respondent-company failed to do so\nthe Income-tax Officer was legally justified in making the\norder under s. 23A. On behalf of the respondent Mr.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1966_1966_105_P009_C04",
+      "text": "Sen\ncontended that s. 23A (1) of the -Act did not contemplate\ndeclaration of further dividend after the holding of the\nAnnual General Meeting and, in any event, the provisions of\nthe\nCompanies Act\ndid not permit the declaration of any\nfurther dividend after the holding of the Annual General\nMeeting. Mr. Sen referred to the decision of the Calcutta\nHigh Court in\nRaghunandan Neotia v. Swadeshi Cloth\nDealers\n(). Ltd. in support of this argument. It is not, in\nour opinion, necessary to express any concluded opinion on\nthis aspect of the case, because we consider that, in any\nevent, in view of the fact that the Ordinance was in force\non the date of the holding of the Annual General Meeting of\nthe respondent the Income tax Officer had no power to pass\nany order under\ns. 23A\nof the Act. The Ordinance was in\nforce on December 30, 1948 on which date the Annual General\nMeeting of the respondent took place and a sum of Rs.\n3,68,433/- was declared as dividend.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1966_1966_105_P009_C05",
+      "text": "Section 23A provides\nthat on the fulfilment of certain conditions set out therein\nthe Income-tax Officer shall make an order in writing that\nthe undistributed portion of the assessable income of the\nrespondent of the previous year as computed for income-tax\npurposes and reduced by the .amount of income-tax and super-\ntax \"shall be deemed to have been distributed as dividend\namongst the shareholders as at the date of the General\nMeeting aforesaid\". It is clear therefore that the order\nwhich the Income-tax Officer is empowered to make under s.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1966_1966_105_P010_C01",
+      "text": "A of the Act\nis that the undistributed income shall be\ndeemed to have been distributed amongst the shareholders \"as\nat the date of the Annual General Meeting\". Now, the\nquestion is whether\n(1) 34 Com. Cu. 570.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1966_1966_105_P011_C01",
+      "text": "it was legally permissible for the Income-tax Officer to\nmake the order which he has made on March 11, 1955 in the\npresent case. The legal fiction as enacted under\ns. 23A\nthe Act is that the undistributed portion of the assessable\nincome is deemed to have been distributed as dividend\namongst the shareholders as at the date of the Annual\nGeneral Meeting. In other words, the notional distribution\nis not by the Income-tax Officer but is by the Company\nitself at its Annual General Meeting. Since the provisions\nof the Ordinance imposed the restriction on the declaration\nof dividend beyond a particular limit that restriction will\nequally be binding for the Income-tax. Officer; and if the\nrespondent is prevented from declaring a higher dividend\nthan that declared on the date of the Annual General\nMeeting, the Income-tax Officer would be likewise prohibited\nby the Ordinance from passing an order that a higher\ndividend than that actually declared shall be deemed to have\nbeen declared at the date of the respondent's Annual General\nMeeting.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1966_1966_105_P011_C02",
+      "text": "To put it differently, if in actuality a higher\ndividend could not lawfully have been declared by the\nrespondent, the Income-tax Officer could not pass an order\nthat such higher dividend should be deemed to have been\ndeclared, for the deemed declaration will suffer from the\nsame legal restrictions which an actual declaration is\nsubject to. In our opinion, the prohibition imposed by\ns. 3\nof the Ordinance applies not only to the actual dividend\ndeclared but also to notional dividend deemed to have been\ndeclared under s. 23\nA of the Act\n. There is a manifest\nrepugnancy between the provisions of the Ordinance and of\ns.\n23A\nof the Act and it must be taken that there is an implied\nrepeal of\ns. 23A\nof the Act to the extent of that repugnancy\ncreated by s. 3 of the Ordinance and so long as the\nOrdinance remains in force. In view of the provisions of\nss. 3\nand",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1966_1966_105_P012_C01",
+      "text": "of the Ordinance the fiction created by s. 23A\ncannot, therefore, be brought into existence and the Income-\ntax Officer cannot pass an order under the provisions of\nthat section. As observed by Lord Asquith of Bishopstone in\nEast End Dwellings Co. Ltd. v. Finsbury Borough Council('):\n\"If you are bidden to treat an imaginary state of affairs as\nreal, you must surely, unless prohibited from doing so, also\nimagine as real the consequences and incidents which, if the\nputative state of affairs had in fact existed, must\ninevitably have flowed from or accompanied it. One of those\nin this case is emancipation from the 1939 level of rents.\nThe statute says that you must imagine a certain state of\naffairs; it does not say that having done so, you must cause\nor permit your imagination to boggle when it comes to the\ninevitable corollaries of that state of affairs.\"\n(1) 11952] A.C. 109, 132.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1966_1966_105_P013_C01",
+      "text": "It is, indeed, true that as a result of the order of the\nIncome-tax Officer there is no factual distribution of\ndividend but it is only a fictional or notional distribution\nof dividend which was not, in fact, received by the\nshareholders. The section merely enacts that notional\ndividend is deemed to have been distributed as at the date\nof the Annual. General Meeting, but even for bringing Into\nexistence that legal fiction there must be no statutory\nprohibition as the Ordinance in the present case.\nWe proceed to consider the next contention of the appellant\nthat\ns. 13\nof the 1949 Act repealed the Ordinance completely\nand the effect of this section was that the Ordinance was\nobliterated from the Statute Book as if it never existed\nand, therefore, there was no bar in the way of the Income-\ntax Officer to make. the order on March 11, 1955.\nSection",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1966_1966_105_P014_C01",
+      "text": "of the 1949 Act provides as follows :\n\" 13( (1). The Public Companies (Limitation of\n Dividends) Ordinance 1948 (XXIX of 1948) is\n hereby repealed. (2)Notwithstanding such repeal, any rules made, action taken\nor thing done in exercise of any power conferred by or under\nthe said ordinance shall be deemed to have been made, taken\nor done in exercise of the powers conferred by or under this\nAct as if this Act had come into force on the 29th day of\nOctober 1948.\"\nWe are unable to accept this argument as correct. In the\nfirst place, the repeal of the Ordinance under\ns. 13\nof the\n1949 Act is immaterial, for, as we have already stated, s.\n23A has created a fiction of distribution of the\nundistributed income as dividend and the section further\nstates that it would be deemed as if it was distributed on\nthe date of the Annual General Meeting.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1966_1966_105_P014_C02",
+      "text": "Since the notional\ndistribution contemplated by\ns. 23A\nof the Act is as if the\nnotional distribution took place at the date of the Annual\nGeneral Meeting it is the law which prevailed as on the date\nof the Annual General Meeting which has to be taken into\naccount in considering the issue as to the legal validity of\nthe order made by the Income-tax Officer. In the second\nplace, Mr. S. T. Desai is not right in his contention that\nthe effect of\ns. 13\nof the 1949 Act is to obliterate the\nOrdinance completely from the Statute Book. Section 6\nthe General Clauses Act (Act 10 of 1897) states as follows :\n\"6. Where this Act, or any Central Act or Regulation made\nafter the commencement of this Act, repeals any enactment\nhitherto made or hereafter, to be made, then, unless a\ndifferent intention appears, the repeal shall not-",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1966_1966_105_P015_C01",
+      "text": ".lm15\n(a) revive anything not in force or existing at the time at\nwhich the repeal takes effect; or\n(b) affect the previous operation of any enactment so\nrepealed or anything duly done or suffered thereunder; or\n(c) affect any right, privilege, obligation or liability\nacquired, accrued or incurred under any enactment so\nrepealed; or\n(d) affect any penalty, forfeiture or punishment incurred\nin respect of any offence committed against any enactment so\nrepealed; or\n(e) affect any investigation, legal proceeding or remedy in\nrespect of any such right, privilege, obligation, liability,\npenalty, forfeiture or punishment as aforesaid;\nand any such investigation, legal proceeding or remedy may\nbe instituted, continued or enforced, and any such penalty,\nforfeiture or punishment may be imposed as if the repealing\nAct or Regulation had not been passed.\"\nThe reason for enacting\nS. 6\nof the General Clauses Act has\nbeen described by this Court in\nState of Punjab v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1966_1966_105_P015_C02",
+      "text": "Mohar\nSingh\n(') as follows :\n\"Under the law of England, as it stood prior to the\nInterpretation Act of 1889, the effect of repealing a\nstatute was said to be to obliterate it as completely from\nthe records of Parliament as if it had never been passed,\nexcept for the purpose of those actions, which were\ncommenced, prosecuted and concluded while it was an existing\nlaw. A repeal therefore without any saving clause would\ndestroy any proceeding whether not yet begun or whether\npending at the time -of the enactment of the\nRepealing Act\nand not already prosecuted to a final judgment so as to\ncreate a vested right. To obviate such results a practice\ncame into existence in England to insert a saving clause in\nthe repealing statute with a view to preserve rights and\nliabilities already accrued or incurred under the repealed\nenactment. Later on, to dispense with the necessity of\nhaving to insert a saving .clause on each occasion, section\n38(2) was inserted in the Interpretation Act of 1889 which\nprovides that a repeal, unless the contrary intention\nappears, does not affect the\n(1) [1955] I S.C.R. 893, 897.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1966_1966_105_P016_C01",
+      "text": "previous operation of the repealed enactment or anything\nduly done or suffered under it and any investigation, legal\nproceeding or remedy may be instituted, continued or\nenforced in respect of any right, liability and penalty\nunder the repealed Act as if the\nRepealing Act\nhad not been\npassed.\nSection 6\nof the General Clauses Act, as is well\nknown, is on the same lines as section 38(2) of the\nInterpretation Act of England.\"\nSection 13\nof the 1949 Act is almost identical in language\nwith s. I I of Punjab Act XII of 1948 which was the subject-\nmatter of consideration in\nState of Punjab v. Mohar Singh\n(')\nand for the reason given by this Court\nin that case\nthe\nprovisions of\ns. 6 (c)\n, (d) and (e) of the\nGeneral Clauses\nAct\nare applicable to this case since there is no contrary\nintention appearing in the repealing statute. Mr. S. T.\nDesai is, therefore, unable to make good his submission on\nthis aspect of the case.\nFor these reasons we affirm the judgment of the Bombay High\nCourt dated September 27, 1962 and dismiss this appeal with\ncosts.\nR. K. P. S. Appeal\ndismissed.\n(1) [1955] 1 S.C.R. 893.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Commissioner Of Income-Tax, Bombay ... vs Godavari Sugar Mills Ltd",
+    "case_id": "SC_1966_1966_105",
+    "court": "Supreme Court of India",
+    "year": "1966",
+    "facts_summary": "Public Companies (Limitation of Dividends)Ordinance 1948-\nTherefore not declaring dividend at annual general meeting\nas contemplated in\ns. 23\nA-Public companies (Limitation\nDividedends) Act, 1949 repealing Ordinance within six months\nof meeting not aplicable to asessee company-Whether order\nunder s. 23 A valid- Whether repealed Ordinance applied on\ndate of meeting by virtue of\ns. 6(c)\n, and (e)\nGeneral\nClauses Act, 1897\n. HEADNOTE:\nAt its annual general meeting hold on December 13, 1948 the\nrespondent company declared a dividend of Rs. 3,68,433 for\nits accounting year ended May 31, 1948. In the course of\nits assessment to income-tax for the assessment year 1949-50\nthe Income-tax Officer passed an order on March 11, 1955,\nunder the provisions of\ns. 23A\nof the Income-tax Act, 1922,\nthat an undistributed -portion of the assessable income of\nthe respondent would be deemed to have been distributed as\ndividend amongst the share-holders as at the date of the\ngeneral meeting. The respondent raised an objection that it was not legally\npossible for it to declare a higher dividend than that\ndeclared in view of SS-. 3 and 12 of the Public Companies\n(Limitation of Dividends) Ordinance No. XXIX of 1948. This\nobjection was rejected a by the Income-tax Officer whose\nview was confirmed in appeal by the Appellate Assistant\nCommissioner and also by the Tribunal. HELD : (i) As the Ordinance was in force on the date of the\nannual general meeting of the respondent company, the\nIncome-tax Officer h",
+    "legal_issues": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeal No. 28 of 1966. Appeal by special leave from the judgment and Order dated\nSeptember 27, 1962 of the Bombay High Court in Income-tax\nReference No. 39 of 1961. S. T. Desai, Gopal Singh and R. N. Sachthey, for the\nappellant,\nA. K. Sen, O. P. Malhotra, Y. P. Tarvei and Ravinder\nNarain\nfor the respondent. The Judgment of the Court was delivered by\nRamaswami, J. This appeal is brought, by special leave, from\nthe judgment of the High Court of Bombay dated September 27,\n1962 in income-tax Reference No.39 of 1961. The respondent-\nGodavari Sugar Mills Ltd.-is a Public limited company. The\nassessment year in this case is 1949-50. The relevant\naccounting year ended on May 31, 1948. The Annual General\nMeeting of the respondent was held on December 30, 1948. At\nthat meeting a sum of Rs. 3,68,433/- was declared as the\ndividend. ,\nwhichever is higher.\"\nSection 12\nprovided:\n\"Any Director, Managing Agent, Manager or other Officer or\nemployee of a company who contravenes or attempts to\ncontravene or abets the contravention of or attempt to\ncontravene any of the provisions relating to the\ndistribution of dividend or the issue of preference shares,\ncontained in this Ordinance or in any rule, notification or\norder issued thereunder, shall be punishable with\nimprisonment for a term which may extend to two years, or\nwith fine, or with both.\"\nSection 2(b)\nof the Ordinance defines a \"Company\" to mean \"A\npublic company as defined in clause (13-A) of",
+    "ratio_summary": "Thereafter, a\nreference was made to the High Court on the question whether\nthe order under s. 23A was validly made in the case of the\nrespondent company to which the Ordinance applied an the\ndate of the annual general meeting, but to which the Public\nCompanies (Limitation of Dividends) Act, 1949, which\nrepealed the Ordinance ceased to apply within the period of\n6 months referred to in S. 23A(1). The High Court decided\nthe question in favour of the respondent. In the appeal to this Court it was contended on behalf of\nthe appellant that (i) s. 23A contemplated the declaration\nof dividend not only on the date of the annual general\nmeeting but also at any further point of time within a\nperiod of 6 months thereafter and that it was possible for\nthe respondent company to declare a further dividend within\nthe said period of 6 months; (ii) that in any event\ns. 13\n1949 Act repealed the Ordinance completely and the effect\nwas that the Ordinance was obliterated from the statute\nbook, as if it never existed, and therefore, there was no\nbar in the way of the Income-tax Officer making the order of\nMarch 11, 1955. Officer dated March 11, 1955 was confirmed by\nthe Appellate Assistant Commissioner in appeal and, on\nfurther appeal, by the Tribunal. At the instance of the\nrespondent the Tribunal referred the following question of\nlaw for the determination of the High Court:\n\"Whether on the facts of this case, an order under section\n23A for the assessment year 1949-50 was validly made in the\ncas",
+    "final_order": "",
+    "outcome_summary": "Dismissed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

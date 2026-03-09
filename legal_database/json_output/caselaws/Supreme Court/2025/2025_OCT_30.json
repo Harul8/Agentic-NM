@@ -1,0 +1,280 @@
+{
+  "case_id": "SC_2025_2025_OCT_30",
+  "case_name": "Pride Foramer S.A vs Commissioner Of Income Tax",
+  "normalized_case_name": "PRIDE_FORAMER_S.A_VS_COMMISSIONER_OF_INCOME_TAX",
+  "court": "Supreme Court of India",
+  "year": "2025",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "17 October 2025",
+  "judges": [
+    "Surya Kant"
+  ],
+  "author": "Surya Kant",
+  "bench_type": "single",
+  "petitioner": "Pride Foramer S.A",
+  "respondent": "Commissioner Of Income Tax",
+  "reporter_citations": [
+    "2025 INSC 1247"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 15,
+  "cited_by_count": 0,
+  "neutral_citation": "2025 INSC 1247",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2025\\OCT\\2025_OCT_30.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2025_2025_OCT_30_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n Civil Appeal Nos. 4395-4397/2010\n\n Pride Foramer S.A. Appellant(s)\n\n VERSUS\n\n Commissioner of Income Tax & Anr. Respondent(s)\n\n JUDGMENT\nJoymalya Bagchi, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2025_2025_OCT_30_P002_C01",
+      "text": "1. These appeals are directed against common judgment and order\n\n dated 12.06.2009 passed by the High Court of Uttarakhand in\n\n Income Tax Appeal Nos. 49 of 2005, 91 & 98 of 2006 (Assessment\n\n Years 1997-98, 1996-97 and 1999-2000, respectively) whereby\n\n the High Court set aside the orders passed by the ITAT 1 and\n\n affirmed the orders passed by CIT (Appeals) whereby the CIT\n\n (Appeals) had disallowed the deduction of business expenditure\n\nHereinafter, ‘the Act’.\n\nforward of unabsorbed depreciation under\nSection 32(2)\nof the Act\n\n for the Assessment Years 1996-1997, 1997-1998 and 1999-2000.\n\nFACTS:",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_2025_OCT_30_P003_C01",
+      "text": "2. Relevant facts for adjudication of the appeals are set out\n\n hereinunder:\na. Appellant is a non-resident company incorporated in France\n\n and is engaged in oil drilling activities. In 1983, the appellant\n\n was awarded a 10-year contract for drilling operations in\n\n offshore Mumbai from 1983 till 1993.\nb. Thereafter, the appellant was awarded another drilling\n\n contract in October, 1998, which came to be formalised in\n\n January, 1999.\nc. In the interregnum i.e., during the relevant assessment years,\n\n though no drilling contract was awarded, the appellant carried\n\n on business correspondences with ONGC from its office at\n\n Dubai and headquarters at France and had also submitted a\n\n bid for oil exploration in 1996.\nd. During this period, appellant undertook various expenditures\n\n including administrative charges, audit fees etc. with the\n\nintention of carrying out its business activities as well as\n\n realising tax refunds from the Income Tax Department. 3\n\n e. For the relevant assessment years, the appellant filed its\n\n return showing ‘NIL’ income.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_2025_OCT_30_P003_C02",
+      "text": "The only income credited was\n\n under the head ‘Income from Business’ on account of interest\n\n received on income tax refunds amounting to Rs.\n1,69,57,395/- for Assessment Year 1996-1997, Rs. 5,49,628/-\nfor Assessment Year 1997-1998 and Rs. 11,29,957/- for\n\n Assessment Year 1999-2000.\nf. Against this, business expenditures aggregating to Rs.\n2,50,000/-, Rs. 5,55,152/- and Rs. 11,29,957/-, respectively,\n\n were claimed as deductions and appellant also claimed set-off\n\n against unabsorbed depreciation on furniture and fixtures\n\n brought forward from earlier years. FINDINGS OF ASSESSING OFFICER AND CIT (APPEAL):",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_2025_OCT_30_P004_C01",
+      "text": "3. The Assessing Officer4 disallowed deduction of business\n\n expenditure as well as carry forward of unabsorbed depreciation on\n\n the ground that the appellant was not carrying on any business\n\nHereinafter, ‘Department’.\n\nHereinafter, ‘AO’.\n\nduring the relevant assessment years. The findings of the AO were\n\n upheld by CIT (Appeals).\nFINDINGS OF THE ITAT:",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_2025_OCT_30_P005_C01",
+      "text": "4. ITAT, however, reversed the findings of the CIT (Appeals), holding a\n\n temporary lull in business for whatever reason cannot be termed\n\n as cessation of business. It proceeded to hold as follows:\n“6.……. In the present case, undoubtedly,\n after 1992-93, the assessee did not have any\n business activity. However, there is enough\n evidence on record to suggest that the\n assessee had not completely gone out of\n business. Copies of correspondence dated\n 1996 with ONGC show that the assessee was\n in constant touch with ONGC for supply of\n manpower in respect of expert key personnel\n for deep water drilling and a tender in this\n regard was in fact submitted in September",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_2025_OCT_30_P006_C01",
+      "text": "1996. This proves that even after the\n completion of the earlier contract in 1993,\n the assessee was contemplating to bid for\n another contract. The efforts of the assessee\n finally culminated in a firm contract being\n awarded to it in 1998 which was formalized\n in 1999. A copy of the said contract is on\n record. As held by the Bombay High Court in\n the case of\nHindustan Chemical Works Ltd. V. CIT\nin 124 ITR 561, there is a marked\n distinction between “lull in business” and\n “going out of business”. A temporary\n discontinuance of business may, in certain\n circumstances, give rise to an inference that\n a business is going through a lean period of\n transition and it could be revived if proper\n circumstances arise. In the present case, the\n period between 1993 and 1998 was of such\n temporary discontinuance only which can be\n\ntermed as a “lull in business”. Thus, when\nthe intention of the assessee was never to go\ncompletely out of business, it cannot be\nconcluded that the assessee had\ndiscontinued its business. To our mind, it\nmakes no difference if the correspondence\nwas by the Dubai Office of the assessee or by\nits office in France as was one of the\ncontentions of the ld. DR.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_2025_OCT_30_P006_C02",
+      "text": "In fact, in the\naccounting year 1995-96, the assessee had\nalso paid consultancy Charges to follow up\nthe aforesaid ONGC bid. Further, the\nreceipts from this contract were offered for\ntaxation in assessment year 2000-03 as\nreflected by the copy of the statement of total\nincome placed on record. Another factor\nwhich weighed with the revenue authorities\nto conclude that the assessee had\ndiscontinued business in India, was the so\ncalled admission by the assessee that it had\nno permanent establishment in India. No\ndoubt, the authorized representative had\naverred in the affidavit dated 22.1.01 that the\nassessee did not establish nor had any\nexisting permanent establishment in India. However, the revenue authorities have\nconsidered this affidavit out of context. The\naffidavit had to be sworn in context of the\nassessee’s claim for concessional rate of tax\nwith regard to interest income. Since the\nassessee had claimed concessional rate of\ntax, the Assessing Officer inferred that there\nwas a permanent establishment in India. On\naccount of this wrong inference, the assessee\nhad to swear an affidavit denying the\nexistence of a permanent establishment in\nIndia.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_2025_OCT_30_P006_C03",
+      "text": "However, taking this as the base, the\nAssessing Officer and the CIT(A) concluded\nthat since there was no permanent\nestablishment in India, the assessee was out\nof business. It is not well appreciated by the\nauthorities below that whether there is a\npermanent establishment in India or not, has\nto be determined as per the provisions of the\nrelevant DTAA. As per the DTAA, the\n\nassessee may not have a permanent\n establishment in India, but that does not\n necessarily lead to the conclusion that the\n assessee is not in business. The assessee can\n be in business, depending upon the facts and\n circumstances of the case de hors’ the\n permanent establishment which we do find\n in the present case. Thus, considering all the\n facts and circumstances of the case, we hold\n that the assessee was in business during the\n period relevant to the assessment year in\n question.”\n\n (emphasis supplied)",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_2025_OCT_30_P007_C01",
+      "text": "5. In light of such finding that the appellant had not ceased to carry\n\n on business, the Tribunal though holding income on account of\n\n interest on tax refunds was chargeable under the head ‘Income\n\n from Other Sources’ and not ‘Income from Business’, allowed set\n\n off of the expenses on account of administrative charges, legal\n\n professional fees undertaken by the appellant as business\n\n expenses from ‘income from other sources’ under\nSection 71\nof the\n\n Act. For similar reason unabsorbed depreciation from previous\n\n years was allowed under\nSection 32(2)\nof the Act.\n\nFINDINGS OF THE HIGH COURT:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_2025_OCT_30_P008_C01",
+      "text": "6. The Department challenged the ITAT orders in appeals arising out\n\n of Assessment Years 1996-1997 and 1999-2000 before the High\n\n Court. The High Court reversed the ITAT orders which were\n\n challenged before the Apex Court and remanded for fresh\n\nconsideration5. Thereupon, the appeals arising out of all the\n\n Assessment Years 1996-1997, 1997-1998 and 1999-2000 were\n\n reheard analogously and disposed of by the impugned order.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_2025_OCT_30_P009_C01",
+      "text": "7. The High Court while agreeing with the proposition that mere lull\n\n in business does not mean the assessee had ceased to do business\n\n in India, reversed the finding of ITAT, holding as follows:\n“..when the assessee has neither permanent\n office, nor any other office in India, nor any\n contract was in execution during the relevant\n period, it cannot be said that they were in\n business in India, as such, it cannot be said\n that assessee was entitled to set off claimed\n by it under\nSection 71\nof the Act.”\n\nISSUE:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_2025_OCT_30_P010_C01",
+      "text": "8. Having heard learned counsel for the parties, we are of the opinion\n\n that the moot issue which falls for our consideration is:\n‘Whether, in the facts of the case, the appellant can be said to have\n been carrying on business during the relevant period, so as to avail\n deduction of business expenditure under\nSection 37(1)\nread with\nSection 71\nof the Act, and carry forward unabsorbed depreciation\n of previous years under\nSection 32(2)\nof the Act?’\n\nVide order dated 13.10.2008 in SLP(C) No. 4510 of 2008.\n\nANALYSIS:",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_2025_OCT_30_P011_C01",
+      "text": "9. Section 37(1)\n, inter alia, provides any expenditure (not being an\n\n expenditure in the nature described in\nSection 30\n\nor in the\n\n nature of capital expenditure or personal expenses of the assessee)\n\n which is undertaken wholly and exclusively for the purpose of\n\n business and profession shall be allowed to be deducted in\n\n computing income chargeable under the head ‘Profits and Gains\n\n from Business and Profession’ and consequently, may be set off as\n\n loss against income under any other head subject to the conditions\n\n provided in\nSection 71\nof the Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_2025_OCT_30_P012_C01",
+      "text": "10. Section 32(2)\nprovides unabsorbed depreciation allowance of a\n\n previous year may be carried forward and set off against income of\n\n the following assessment years in the manner and subject to the\n\n conditions provided therein. The first proviso to the said sub-\n\n section further provided such depreciation allowance can be\n\n carried forward if the business or profession for which the\n\n depreciation allowance was originally computed, continued in the\n\n previous year relevant to the assessment year in question. It may\n\n be apposite to note that the said proviso has since been omitted by\n\n the\nFinance Act, 2001\nw.e.f. 1st April, 2002.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_2025_OCT_30_P013_C01",
+      "text": "11. It is evident that to avail the benefit of the aforesaid provisions, the\n\n appellant had to demonstrate that it was carrying on business in\n\n India during the relevant period. While the Tribunal was of the view\n\n mere failure to procure a business contract or maintain a\n\n permanent establishment in India was not a sine qua non to\n\n demonstrate the assessee’s intention to carry on business, the High\n\n Court held to the contrary and disallowed the claim of the\n\n appellant.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_2025_OCT_30_P014_C01",
+      "text": "12. In the present case, the appellant, a non-resident company had\n\n been awarded 10 years’ drilling contract by ONGC in 1983. The\n\n contract continued till 1993. Thereafter, the appellant failed to\n\n procure another contract till October, 1998. But ample materials\n\n have been placed on record to show during the interregnum, the\n\n appellant had continuous business correspondences with ONGC\n\n with regard to hiring of manpower services in respect of expert key\n\n personnel for drilling in deep waters and had even unsuccessfully\n\n submitted a bid in 1996.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2025_2025_OCT_30_P015_C01",
+      "text": "13. Whether failure to procure the drilling contract with ONGC was\n\n owing to the appellant’s disinterest to carry on business during\n\n relevant period and amounted to cessation of business or not must\n\n be construed from the appellant’s conduct. If such conduct, from\n\n the standpoint of a prudent businessman, evinces intention to\n\ncarry on business, mere failure to obtain a business contract by\n\n itself would not be a determining factor to hold the appellant had\n\n ceased its business activities in India.6\n14. The Tribunal rightly noted a business going through a lean period\n\n of transition which could be revived if proper circumstances arose,\n\n must be termed as lull in business and not a complete cessation of\n\n the business.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2025_2025_OCT_30_P016_C01",
+      "text": "15. The word ‘business’ has a wide import and connotes some real,\n\n substantial and systemic or organised course of activity or activity\n\n with a set purpose.7 In\nCIT v. Malayalam Plantations Ltd.8\nthis\n\n Court further underlined that the expression ‘for the purpose of\n\n business’ is wider in scope than the expression ‘for the purpose of\n\n earning profits’ and would encompass in its fold “many other acts\n\n incidental to the carrying on of a business”. The Bench observed as\n\n follows:\n“The expression ‘for the purpose of business’\n is wider in scope than the expression ‘for the\n purpose of earning profits’. Its range is wide:\nit may take in not only the day-to-day\n running of a business but also the\n rationalisation of its administration and\n modernisation of its machinery; it may\n include measures for preservation of\n\nCIT v. Vikram Cotton Mills\n, (1988) 169 ITR 597 (SC), para 15. Narain Swadeshi Weaving Mills v. Commissioner\nof excess Profits Tax (1954) 2 SCC 546.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2025_2025_OCT_30_P016_C02",
+      "text": "(1964) 53 ITR 140 (SC).\n\nbusiness and for protection of its assets and\n property from expropriation, coercive process\n or assertion of hostile title; it may also\n comprehend payment of statutory dues and\n taxes imposed as a pre-condition to\n commence or for carrying on a business; it\n may comprehend many other acts incidental\n to the carrying on of a business.”\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_2025_OCT_30_P017_C01",
+      "text": "16. Continuous correspondences between the appellant and ONGC\n\n with regard to supply of manpower for oil drilling purposes and its\n\n unsuccessful bid in 1996 demonstrates various acts aimed at\n\n carrying on business in India which unfortunately did not fructify\n\n in procuring a contract.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2025_2025_OCT_30_P018_C01",
+      "text": "17. In this factual backdrop, the High Court erred in holding that the\n\n appellant was not carrying on business as it had no subsisting\n\n contract with ONGC during the relevant period.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2025_2025_OCT_30_P019_C01",
+      "text": "18. The other issue on which the High Court misdirected itself was to\n\n infer as the appellant did not have a permanent establishment and\n\n corresponded with ONGC from its foreign office, it cannot be said\n\n to carry on business in India. This view is wholly fallacious and\n\n contrary to the very scheme of the Act which does not require a\n\n non-resident company to have a permanent office within the\n\n country to be chargeable to tax on any income accruing in India.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2025_2025_OCT_30_P020_C01",
+      "text": "19. A combined reading of the charging provisions under\nSection 4\nand\nSection 5(2)\nof the Act read with\nSection 9(1)(i)\nmakes it amply clear\n\n that a non-resident person shall be liable to pay tax on income\n\n which is deemed to accrue or arise in India. Under\nSection 9(1)(i)\n,\n\n income accruing or arising, directly or indirectly, through or from\n\n any business connection in India is deemed to accrue or arise in\n\n India and is accordingly chargeable to tax as business income\n\n under\nSection 28\nof the Act. None of these provisions make it\n\n mandatory for a non-resident assessee to have a permanent\n\n establishment in India to carry on business or have any business\n\n connection in India. The issue of ‘permanent establishment’ may\n\n be relevant for the purposes of availing the beneficial provisions of\n\n the Double Tax Avoidance Agreement (DTAA) between India and\n\n France which is not a relevant consideration for the purposes of\n\n this case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_2025_OCT_30_P021_C01",
+      "text": "20. In an era of globalisation whose life blood is trans-national trade\n\n and commerce, the High Court’s restrictive interpretation that a\n\n non-resident company making business communications with an\n\n Indian entity from its foreign office cannot be construed to be\n\n carrying on business in India is wholly anachronistic with India’s\n\n commitment to Sustainable Development Goal relating to ‘ease of\n\n doing business’ across national borders.\n\nCONCLUSION:",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_2025_OCT_30_P022_C01",
+      "text": "21. For the aforesaid reasons, we allow the appeals and set aside the\n\n judgment and order of the High Court. Orders passed by the ITAT\n\n are revived and Assessing Officer is directed to pass fresh\n\n Assessment Orders for the relevant Assessment Years in terms of\n\n the ITAT orders.\n……………………………………………., J\n (MANOJ MISRA)\n\n …………………………………………, J\n (JOYMALYA BAGCHI)\nNew Delhi,\nOctober 17, 2025",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Pride Foramer S.A vs Commissioner Of Income Tax",
+    "case_id": "SC_2025_2025_OCT_30",
+    "court": "Supreme Court of India",
+    "year": "2025",
+    "facts_summary": "1. These appeals are directed against common judgment and order\n\n dated 12.06.2009 passed by the High Court of Uttarakhand in\n\n Income Tax Appeal Nos. 49 of 2005, 91 & 98 of 2006 (Assessment\n\n Years 1997-98, 1996-97 and 1999-2000, respectively) whereby\n\n the High Court set aside the orders passed by the ITAT 1 and\n\n affirmed the orders passed by CIT (Appeals) whereby the CIT\n\n (Appeals) had disallowed the deduction of business expenditure\n\nHereinafter, ‘the Act’.\n\nforward of unabsorbed depreciation under\nSection 32(2)\nof the Act\n\n for the Assessment Years 1996-1997, 1997-1998 and 1999-2000.\n\nFACTS: 2. Relevant facts for adjudication of the appeals are set out\n\n hereinunder:\na. Appellant is a non-resident company incorporated in France\n\n and is engaged in oil drilling activities. In 1983, the appellant\n\n was awarded a 10-year contract for drilling operations in\n\n offshore Mumbai from 1983 till 1993.\nb. Thereafter, the appellant was awarded another drilling\n\n contract in October, 1998, which came to be formalised in\n\n January, 1999.\nc. In the interregnum i.e., during the relevant assessment years,\n\n though no drilling contract was awarded, the appellant carried\n\n on business correspondences with ONGC from its office at\n\n Dubai and headquarters at France and had also submitted a\n\n bid for oil exploration in 1996.\nd. During this period, appellant undertook various expenditures\n\n including administrative charges, audit fees etc. with the\n\nintention of carrying out its business act",
+    "legal_issues": "8. Having heard learned counsel for the parties, we are of the opinion\n\n that the moot issue which falls for our consideration is:\n‘Whether, in the facts of the case, the appellant can be said to have\n been carrying on business during the relevant period, so as to avail\n deduction of business expenditure under\nSection 37(1)\nread with\nSection 71\nof the Act, and carry forward unabsorbed depreciation\n of previous years under\nSection 32(2)\nof the Act?’\n\nVide order dated 13.10.2008 in SLP(C) No. 4510 of 2008.\n\nANALYSIS: 11. It is evident that to avail the benefit of the aforesaid provisions, the\n\n appellant had to demonstrate that it was carrying on business in\n\n India during the relevant period. While the Tribunal was of the view\n\n mere failure to procure a business contract or maintain a\n\n permanent establishment in India was not a sine qua non to\n\n demonstrate the assessee’s intention to carry on business, the High\n\n Court held to the contrary and disallowed the claim of the\n\n appellant.",
+    "ratio_summary": "However, taking this as the base, the\nAssessing Officer and the CIT(A) concluded\nthat since there was no permanent\nestablishment in India, the assessee was out\nof business. It is not well appreciated by the\nauthorities below that whether there is a\npermanent establishment in India or not, has\nto be determined as per the provisions of the\nrelevant DTAA. As per the DTAA, the\n\nassessee may not have a permanent\n establishment in India, but that does not\n necessarily lead to the conclusion that the\n assessee is not in business. The assessee can\n be in business, depending upon the facts and\n circumstances of the case de hors’ the\n permanent establishment which we do find\n in the present case. Thus, considering all the\n facts and circumstances of the case, we hold\n that the assessee was in business during the\n period relevant to the assessment year in\n question.”\n\n (emphasis supplied)",
+    "final_order": "",
+    "outcome_summary": "Allowed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

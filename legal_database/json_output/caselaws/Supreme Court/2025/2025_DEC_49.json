@@ -1,0 +1,563 @@
+{
+  "case_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT",
+  "case_name": "Pradeep Arora vs Director, Health Department",
+  "normalized_case_name": "PRADEEP_ARORA_VS_DIRECTOR,_HEALTH_DEPARTMENT",
+  "court": "Supreme Court of India",
+  "year": "2025",
+  "judgment_template": null,
+  "case_number": "Civil Appeal  of 2025",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "11 December 2025",
+  "judges": [
+    "Pamidighantam Sri Narasimha"
+  ],
+  "author": "Pamidighantam Sri Narasimha",
+  "bench_type": "single",
+  "petitioner": "Pradeep Arora",
+  "respondent": "Director, Health Department",
+  "reporter_citations": [
+    "2025 INSC 1420"
+  ],
+  "outcome": "disposed of",
+  "disposition": "disposed",
+  "cites_count": 10,
+  "cited_by_count": 0,
+  "neutral_citation": "2025 INSC 1420",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2025\\DEC\\2025_DEC_49.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO. OF 2025\n SPECIAL LEAVE PETITION (C) NO. 16860 OF 2021\n\n PRADEEP ARORA & ORS. ...APPELLANT(S)\n\n VERSUS\n\n DIRECTOR, HEALTH DEPARTMENT,\n GOVT. OF MAHARASHTRA & ORS. …RESPONDENT(S)\n\n JUDGMENT",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P002_C01",
+      "text": "2. The onset of COVID-19 pandemic at the dawn of 2020 was\n\n unprecedented in its global sweep and consequence. Not since the 1918\n\n influenza pandemic, an event coeval with the first world war, had a single\n\n infectious disease inflicted such widespread crisis on human civilisation.\n\n The global death toll rising to millions, as revealed in the World Health\n\n Organisation’s data, presents a tragic picture of this disruption. While\n\n COVID-19 pandemic exposed an acute systemic fragility within the\n\n global healthcare sector, highlighted lack of preparedness and strained\n\ndoctors' deaths in the first wave and hundreds more in subsequent\n\nwaves; one estimate noted around 798 doctors lost during the second\n\nwave alone.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P003_C01",
+      "text": "3. Four years after the pandemic, when we are called upon to\n\ninterpret the Government’s assurance under the Pradhan Mantri Garib\n\nKalyan Yojna, an insurance scheme for doctors and healthcare workers\n\nfighting Covid-19, we can neither forget the situation that prevailed in\n\n2020, nor the purport of State’s assurance to the doctors who were\n\n‘requisitioned’ invoking special laws and regulations. A claim for\n\ninsurance by appellant no. 3, wife of a deceased doctor was rejected on\n\nthe ground that there is no proof of ‘requisitioning’ of his services for\n\nCovid related duties. This decision was upheld by the High Court in the\n\norder impugned before us. We are called upon to examine if there is\n\n‘requisitioning’ of the services of appellant no. 2. Tasked with this duty,\n\nwe will now proceed to examine the laws, rules and regulation, by which\n\nrequisitioning was done.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P004_C01",
+      "text": "4. In exercise of powers conferred by\nsections 2\n,\n\n&\n\nof the\n\nEpidemic Diseases Act, 1897, the Government of Maharashtra issued\n\nPrevention and Containment of Coronavirus Disease 2019 (COVID-19)\n\nRegulations on 14.03.2020. Regulation 10 empowered the Municipal\n\nCommissioner to requisition the services of any person if so required. Regulations 10 to 13 are extracted hereinbelow for ready reference:\n“GOVERNMENT OF MAHARASHTRA\n PUBLIC HEALTH DEPARTMENT\n G.T. Hospital Compound, 10th Floor, New Mantralaya,\n Mumbai 400 001\n Dated 14th March, 2020\n\n NOTIFICATION\n\n No.Corona-2020/CR-58/Aarogya-5: Whereas State Government has\n decided to invoke provisions of\nEpidemic Disease Act, 1897\nvide\n Notification No. Corona 2020/CR 58/Aarogya-5, dated 13th March,\n 2020 from the date of issue of the notification,\n\n Therefore in exercise of the powers conferred under\nsection 2\n,\n\n&\n\n the Epidemic Diseases Act, 1897, Government of Maharashtra is\n pleased to frame following Regulations for prevention and containment\n of Coronavirus Disease-2019 (COVID-19). (…)\n Regulation 10.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P004_C02",
+      "text": "In the event of COVID-19 being reported from a defined\n geographic area such as village, town, ward, colony, settlement, the\n Collector of the concerned District/Municipal Commissioner of the\n concerned Municipal Corporation shall be competent to implement\n following containment measures, but not limited to these, in order to\n prevent spread of the disease.\ni. Sealing of the geographical area.\nii. Barring entry and exit of population from the containment area.\n iii. Restricting Vehicular Movement in the area.\n iv. Closure of schools, offices, cinema halls, swimming pools,\n gyms, etc. and banning mass congregations, functions as may be\n deemed necessary.\nv. Initiating active and passive surveillance of COVID-19 cases.\n vi. Hospital isolation of all suspected cases and their contacts.\n vii. Designating any Government or Private Building as a\n quarantine facility.\nviii. Any other measure as directed by Public Health Department\n of Government of Maharashtra. Staff of all Government Departments and Organisations of the\n concerned area will be at the disposal of Collector/ Municipal\n Commissioner for discharging the duty of containment measures.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P004_C03",
+      "text": "required, Collector/ Municipal Commissioner may requisition the\n services of any other person also. Regulation 11. Any person / Institution / organization found violating\n any provision of these Regulations shall be deemed to have committed\n an offence punishable under\nsection 188\nof Indian Penal Code (45 of\n 1860). Empowered Officers may penalize any person institution /\n\norganization found violating provisions of these Regulations or any\n further orders issued by Government under these Regulations. Regulation 12. No suit or legal proceedings shall lie against any\n person for anything done or intended to be done in good faith under this\n Regulation unless proved otherwise\n\n Regulation 13. These regulations shall come into force immediately\n and shall remain valid for a period of one year, or until further orders,\n whichever is earlier from the date of publication of this Notification. By order and in the name of Governor of Maharashtra.”",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 188"
+      ],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P005_C01",
+      "text": "5. In exercise of powers under Regulation 10, the Commissioner,\n\nNavi Mumbai Municipal Corporation (‘NMMC’) issued a notice on\n\n31.03.2020 directing the late husband of Appellant No. 3 to keep his\n\nhospital/dispensary open during the lockdown period. The notice\n\nspecifically invokes Regulation 10 of the COVID Regulations and also\n\nwarns the addressee of criminal prosecution in the event of non-\n\ncompliance. The notice dated 31.03.2020 is as follows:\n“Navi Mumbai Municipal Corporation\n Notice to keep the hospital /dispensary open in lock down period\n No NMMC/Health\n /1855/2020\n Date:- 31.03.2020\n\n Notice to keep the hospital/dispensary open in lock down\n period\n\n SUB:- Explanation as to why your hospital/dispensary is kept closed in\n the lock down period\n\n WHEREAS the Government of Maharashtra, in the exercise of the\n power conferred under\nsection 2\n,\n\nand\n\nof the Epidemic Diseases Act,\n 1897, has framed Regulation vide Notification dated 14th March 2020,\n for prevention and containment of Coronavirus Disease-2019 (COVID-\n19).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P005_C02",
+      "text": "AND WHEREAS under rule 10 of the said Regulations the Municipal\n Commissioner/Empowered Officer are authorized to take any measures\n for prevention, containment measures in order to prevent spread of\n COVID-19. I Annasaheb Misal, Municipal Commissioner of Navi Mumbai Municipal\n Corporation, in exercise of powers conferred upon me, had hereby\n directed you vide order no 123/2020 to keep your hospital/dispensary\n open. And therefore it has been observed that your hospital/dispensary is\n kept closed. I hereby order you open your hospital/dispensary in the\n lock down period immediately after the receipt of the said notice by\n following the containment measures of social distancing, every persons\n face covered by mask and keeping hand sanitiser for every patient\n visiting the hospital/dispensary, failing of which the Navi Mumbai\n Municipal Corporation will be forced to file an FIR against you under\nSection 188\nof IPC 1860. (Annasaheb Misal)\n Commissioner\n Navi Mumbai Municipal Corporation”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P006_C01",
+      "text": "6. While government and the corporations mandated availability of\n\ndoctors for COVID duty, the Central Government also announced\n\nmeasures to assure doctors and frontline workers fighting the battle\n\nagainst the Coronavirus. Press release dated 26.03.2020 announced\n\nthat, “Finance Minister announces Rs 1.70 Lakh Crore relief package\n\nunder Pradhan Mantri Garib Kalyan Yojana for the poor to help them\n\nfight the battle against Corona Virus”. The relief package inter alia\n\nincluded:\n“I. Insurance scheme for health workers fighting COVID-19 in\n Government Hospitals and Health Care Centres\n  Safai karamcharis, ward-boys, nurses, ASHA workers, paramedics,\n technicians, doctors and specialists and other health workers would be\n covered by a Special insurance Scheme.\n Any health professional, who while treating Covid-19 patients, meet\n with some accident, then he/she would be compensated with an\n amount of Rs 50 lakh under the scheme.\n All government health centres, wellness centres and hospitals of\n Centre as well as States would be covered under this scheme\n approximately 22 lakh health workers would be provided insurance\n cover to fight this pandemic. II.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P006_C02",
+      "text": "PM Garib Kalyan Ann Yojana\n\nGovernment of India would not allow anybody, especially any poor family, to\n suffer on account of non-availability of foodgrains due to disruption in the next\n three months.\n 80 crore individuals, i.e., roughly two-thirds of India's population would\n be covered under this scheme.\n Each one of them would be provided double of their current entitlement\n over next three months.\n This additionality would be free of cost.\n To ensure adequate availability of protein to all the above mentioned\n individuals, 1 kg per family, would be provided pulses according to\n regional preferences for next three months.\n  These pulses would be provided free of cost by the Government of\n India.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P007_C01",
+      "text": "7. Following the announcement of the scheme, the Ministry of Health\n\n& Family Welfare, Government of India, issued an order dated\n\n28.03.2020 launching the insurance scheme for Health Workers fighting\n\nCOVID-19 named as the Pradhan Mantri Garib Kalyan Yojana Package:\nInsurance Scheme for Health Workers Fighting COVID-19 (‘PMGKY-\nPackage’). The said scheme assures next of kin of eligible healthcare\n\nworkers an insurance cover of Rs 50 lakhs. The order dated 28.03.2020\n\nis extracted herein:\n“Ministry of Health and Family Welfare\n Department of Health and Family Welfare\n\n Nirman Bhawan, New Delhi\n Dated 28.03.2020\n\n ORDER\n As per the announcement made under the Pradhan Mantri Garib\n Kalyan Package, the competent authority has approved the launch of\n 'Pradhan Mantri Garib Kalyan Package: Insurance Scheme for Health\n Workers Fighting COVID-19' with the following conditions:\ni. It will be a comprehensive personal accident cover of Rs. 50\n lakh for ninety (90) days to a total of around 22.12 lakh public\n healthcare providers, including community health workers, who\n may have to be in direct contact and care of COVID-19 patients\n and who may be at risk of being impacted by this.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P007_C02",
+      "text": "It will also\n include accidental loss of life on account of contracting COVID-\n 19;\n\nii. On account of the unprecedented situation, private hospital\n staff/retired/volunteer/local urban bodies/contract/daily wage/ad-\n hoc/outsourced staff requisitioned by States/Central\n hospitals/autonomous hospitals of Central/States/UTs, AIIMS &\n INIs/hospitals of Central Ministries can also be drafted for\n COVID19 related responsibilities. These cases will also be\n covered subject to numbers indicated by MoHFW;\niii. The scheme will be funded through the NDRF Budget\n operated by the Health Ministry for this purpose;\niv. Actual payment by the Insurance Company to the beneficiary\n will be under certification of the authorised Central State\n Government Officials; and\n\n v. The insurance provided under this scheme would be over and\n above any other insurance cover being availed by the\n beneficiary.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P008_C01",
+      "text": "2. This Order is issued with the concurrence of Integrated Finance\n Division vide their CD no. 4593.\n(Alok Saxena)\n Joint Secretary to the Government of India”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P009_C01",
+      "text": "8. An explanatory letter dated 03.04.2020 was addressed to all\n\nstakeholders to dispel any notion of limited coverage while informing\n\nthem that the scheme benefits were inclusive of healthcare providers. It\n\nwas intended to encourage doctors to come forward without a sense of\n\ninsecurity about their health or that of their families. The relevant extract\n\nof the explanatory letter is extracted below:\n“Dated 03rd April, 2020\n Dear All,\n\n In continuation of letters by Secretary, MoHFW (D.O. No. Z.21020/16/2020- PH, dated 30th March 2020), addressed to all the\n Chief Secretaries/Administrators of the States/UTs and the Heads of\n all the Associations of Doctors/Healthcare providers regarding\n 'Pradhan Mantri Garib Kalyan Package: Insurance Scheme for Health\n Workers Fighting COVID-19', you are requested to kindly inform all\n such health care providers through various mediums like SMS,\n whatsapp, e-mail etc. in local language about their inclusion under\n Pradhan Mantri Garib Kalyan Package: Insurance Scheme for Health\n\nWorkers Fighting COVID-19 in line with the enclosed order regarding\n this scheme.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P009_C02",
+      "text": "The claim Form-I (Personal Accident Insurance Claim Form for loss of\n life due to COVID19) and Form-II (Personal Accident Insurance Claim\n Form for accidental loss of life on account of COVID-19 related duty)\n for the above scheme detailing the procedure, claim certifying\n authority and documents to be submitted along with claim form is also\n attached for your reference and disbursal. I request you to give more publicity to this initiative to instill a sense of\n security among healthcare providers. In case of any clarifications, Dr. Manohar Agnani, JS (RCH) may be contacted by the States / UTs at\n[email protected]\n.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P010_C01",
+      "text": "9. To provide further clarity on the eligibility of the beneficiaries under\n\nthe PMGKY-Program, a Frequently Asked Questions (FAQs) was also\n\nreleased, elaborating on the coverage under the scheme, time duration,\n\nwho should to pay the premium, procedure to follow, and the documents\n\nrequired to avail the benefits under the scheme. Answers to the FAQs\n\nmake it clear that it PMGKY-Package covers a variety of private\n\nhealthcare workers if their services were ‘requisitioned by States’. The\n\nrelevant portion of the FAQs is extracted below:\n“Pradhan Mantri Garib Kalyan Package: Insurance Scheme for\n Health Workers Fighting COVID-19\n FAQ’s\n Question 1: What does this Scheme cover? This accident insurance scheme covers;\nLoss of life due to COVID19, and\n Accidental death on account of COVID-19 related duty. Question 2: What is the definition of Accident? An accident is sudden, unforeseen and involuntary event caused by\n external, visible and violent means.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P010_C02",
+      "text": "Question 3: Who all are covered under the scheme?\n Public healthcare providers including healthcare community providers\n health workers, who may have to be in direct contact and care of\n COVID 19 patients and who may be at risk of being impacted by this.\n\nPrivate hospital staff and retired /volunteer /local urban bodies/\ncontracted /daily wage /ad hoc/outsourced staff requisitioned by\nStates/ Central hospitals/ autonomous hospitals of Central/States/UTs,\nAIIMS and INIs/ hospital of Central Ministries can also be drafted for\nCOVID 19 related responsibilities. Question 4: Who can be a volunteer under this scheme? Volunteers are those who are drafted by the Government Official\nauthorized by Central/State/ UT Government for care and may have\ncome in direct contact of the COVID 19 patient\n\nQuestion 5: Who are ‘Private persons’ under this scheme?\nPrivate persons are those who are engaged by both public & private\nhealth care institutions/organization through an agency and were\ndeployed /drafted for care and may have come in direct contact of the\nCOVID-19 patient (with the proof that the service of the agencies were\nengaged by the institution/organization).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P010_C03",
+      "text": "Question 6: When does insurance coverage policy begins and ends?\nThe duration of the policy is for a period of 90 days, starting from\nMarch 30, 2020. Question 7: Is there any age-limit for health workers under this\nscheme? There’s no age limit for this scheme. Question 8: Is individual enrolment required?\nIndividual enrolment is not required. Question 9: Whether an individual is required to pay any premium to\nbe eligible under the scheme?\nThe entire amount of premium for this scheme is being borne by the\nMinistry of Health and Family Welfare, Government of India. Question 10: What is the benefit available to the insured persons?\nINR 50 LAKHS will be paid to the claimant of the insured person. Question 11: Is COVID-19 laboratory test mandatory for claiming the\nbenefit?\nLaboratory report certifying positive medical test is required for loss of\nlife on account of COVID-19. However, it is not required in case of\nAccidental loss of life on account of COVID-19 related duty. Question 12: Whether expenses incurred on treatment or during\nquarantine are covered under the scheme?\nAny type of expenses related to treatment or quarantine is not\ncovered.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P010_C04",
+      "text": "Question 13: If a person is having another Personal accident policy or\nlife insurance policy, what is the effect of the same on claim under this\npolicy?\n\nThe benefit/claim under this policy is in addition to the amount payable\n under any other policies. Question 14: Documents required to claim benefits under this\n scheme? a. In case of Loss of life due to COVID19 following\n documents are required:\nI. Claim form duly filled and signed by the nominee/claimant. II. Identity proof of Deceased (Certified copy)\n III. Identity proof of the Claimant (Certified copy)\n IV. Proof of relationship between the Deceased and the Claimant\n (Certified copy)\n V. Laboratory Report certifying having tested Positive for COVID-19\n (in Original or Certified copy)\n VI. Death summary by the Hospital where death occurred (in case\n death occurred in hospital) (Certified copy). VII. Death Certificate (in Original)\n VIII. Certificate by the Healthcare Institution/ organization/office that\n the deceased was an employee of /engaged by the institution\n and was deployed/drafted for care and may have come in direct\n contact of the COVID-19 patient.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P010_C05",
+      "text": "For community health care\n workers, the Certificate should be from Medical Officer of\n Primary Health Centre (PHC) that ASHA/ASHA Facilitator was\n drafted for work related to COVID-19.\n******”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P011_C01",
+      "text": "10. On 08/09.05.2020, the Director of Medical Education & Research\n\n(‘DMER’), Respondent No. 3 herein, issued an order directing all\n\nregistered doctors of homoeopathy and Ayurved to make their services\n\navailable for the COVID-19 cure. The said letter was also issued to the\n\nDr. Surgade, late husband of appellant no. 3. The relevant extract of the\n\nsaid order is as follows:\n“DIRECTORATE OF MEDICAL EDUCATION & RESEARCH\n Govt. Dental College & Hospital Building,\n St. George's Hospital Compound, Near V.T., Mumbai,\n Maharashtra 400001\n No. DMER/COVID-19/RMP's/MCIM/262/2020/A\n Date: 09.05.2020\n NOTIFICATION\n\n To,\n ALL R.M.P’s\n Registered in MCIM (only Ayurved faculty)\n\nSub: Utilization of services of Registered R.M.P’s in MCIM (Only\n Ayurved Faculty) for COVID-19 Patients in Mumbai and suburban\n district-\nRef.: 1.\nThe Epidemic Diseases Act, 1897\n;",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P012_C01",
+      "text": "3. The Maharashtra Essential Service Maintenance (Amendment)\n Act, 2011\n;",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P013_C01",
+      "text": "4. The Mumbai Nursing Home Registration (Amendment) Act,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P014_C01",
+      "text": "5. The Bombay Public Trusts Act, 1950\n(for short\nB.P.T. Act\n)\n\n As you are aware, Nation is facing COVID-19 pandemic. The State and\n Central Government is taking every precaution to fight against this\n deadly viral infection In Mumbai city, the outbreak of COVID-19 is\n spreading very fast as compared to other parts of the State. Hence the\n State Government has taken rigorous steps towards Prevention,\n Control and Treatment of COVID-19 patient.\nWhereas the Government of Maharashtra, in exercise of the powers\n conferred under\nSection 2\n\n. & 4 of the\nEpidemic Diseases Act\n\n has framed Regulations for Prevention, Control and Treatment of\n COVID-19 under No. corona 2020/CR/58/Aarogya-5, dated 13th March",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P015_C01",
+      "text": "2020. And where Director of Medical Education and Research, has been\n declared as \"Empowered Officer\" & is empowered to take such\n measures as are necessary to prevent the outbreak of COVID-19 or\n spread thereof within his respective jurisdiction,\n\n I Dr. T.P. Lahane, in the larger public interest and in exercise of the\n powers conferred upon me request you as follows:\nthat your services are required for the prevention and treatment of\n COVID-19 patient at least for 15 days. You shall therefore convey your\n willingness and place of choice where you would like to render your\n services to https://forms.gle/ucfYQB7s2pwBVDL98 within 3 days. Non-\n attendance of the duty will be considered as breach of Hippocratic Oath\n that we administered at the time of obtaining degree and action will be\n initiated according to the provisions of\nEpidemic Diseases Act, 1897\nand other Acts referred above.\n(Dr. T. P. Lahane)\n Director,\n Medical Education & Research, Mumbai”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P016_C01",
+      "text": "11. Facts: The facts relevant to the appeal are that, husband of\n\nappellant no. 3, Late Dr. B S Surgade, was a medical practitioner\n\nrunning a private medical clinic. It was contended on behalf of appellant\n\nno. 3 that her husband Dr. Surgade was directed to keep his clinic open\n\nas per the NMMC notice dated 31.03.2020 reproduced above, and his\n\nservices were also requisitioned by the communication dated 09.05.2020\n\nextracted above.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P017_C01",
+      "text": "12. Dr. Surgade was infected and tested positive for COVID-19\n\ninfection on 08.06.2020, and succumbed to the infection on 10.06.2020. Appellant no. 3 applied to the insurance company, respondent No. 6,\n\nseeking insurance benefits under the PMGKY-Package. However, by\n\nletter dated 07.09.2020 Joint Director, Medical Services, communicated\n\nto Medical Health Officer of the corporation rejecting the claim on three\n\ngrounds. Firstly, on the ground that the late Dr Surgade was carrying out\n\na private practice and hence his next of kin was ineligible for the benefit\n\nunder the scheme. Secondly, that Dr Surgade’s dispensary was not a\n\nCOVID-19 designated dispensary, and thirdly, that Dr Surgade’s services\n\nwere not requisitioned. The relevant portions of the order dated\n\n07.09.2020, containing the reasons for the denial of insurance benefit,\n\nare extracted below:\n“To,\n Medical Health Officer,\n Navi Mumbai Municipal Corporation\n\n Sub: - Covid-19 infected/Officers who died in the accident\n /Employee nomination for insurance claim sanction under PM\n Garib Kalyan Package deceased Dr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P017_C02",
+      "text": "Bhaksar Surgade, Private\n Medical Professional A-1002, Satyam Imperialites, Plot-2, Sector-\n 22, Ghansoli, Navi Mumbai 400701\n\nMangirishRangnekar <\n[email protected]\n>\n\nRef: - 1) Ministry of Health and Family Welfare, New Delhi order\ndt.28.03.2020\n2) Government Ltr. No. Carona2020/P.K. 84/Health-5, dt.11 April,2020\n3) Mr. Mangirish Regnekar Email dt. 19.08.2020\n4) 4) This office letter Out. No. SAS/Director room/Prime minister poor\nwelfare package/Insurance/ Perfect Proposal/7623-29/2020, dt.\n20.08.2020\n5) Your letter No. N.M.M.P./Health/9504/2020, dated 01.09.2020. Above mentioned matter reference no. 1 and 2, treatment of patients\nrelated to Covid-19 diseases by Central Government, investigating\nofficers providing all types of health services and employees under this\npackage Rs. 50 lakh insurance cover is for the first 90 days. Accordingly, in case of covid infection and death under this package,\namount of Rs 50 lakh will be provided through the accident insurance\nscheme of New India Assurance Company for the families of the\nofficers and employees providing health services.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P017_C03",
+      "text": "This insurance cover\nwill be available to all those involved in the investigation and treatment\nof COVID - 19 infestation. This includes private hospital staff / retired\nstaff / contract staff / salaried staff / staff provided by external agencies,\nAsha, Anganwadi staff, Central State Local Self Government\nInstitutions etc. In order to get this sum assured to the beneficiaries, it is\nnecessary for the concerned State or Central Government to certify that\nthe death of the insured was due to COVID-19 obstruction and related\nto this work. Under\nSection 2\nSection 2\n, the Director, Health Services\nhas been declared as the competent authority to certify the application\nfiled under the State and submit it to the insurance company. According to Reference No.3 the deceased Dr. Bhaskar Surgade in our\njurisdiction, Private medical professional, Navi Mumbai the office\nreceived an email about him. Accordingly, reference No. 4, the\ninformation was sought from us about the services of private Medical\nprofessional deceased Dr. Bhaskar Surgade in this case,\nWith regard to reference No.5, deceased Dr. Bhaskar Surgade, a\nprivate medical professional, was serving in his own private hospital.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P017_C04",
+      "text": "His service has not been acquired by Navi Mumbai Municipal\nCorporation. Also the hospital providing the service has not been\nacquired as Covid Hospital. Such clear feedback has been submitted to\nthis office. Therefore, the late Dr. Bhaskar Surgade's service at first sight reference\nNo. 1 and 2 respectively not included in the terms and conditions of the\nsaid scheme, it will not be possible to send their insurance proposal for\nfurther action. (Dr. Nandkumar Deshmukh)\nJoint Director, Health Services, (Malaria, Elephantiasis and Waterborne\nDiseases) Pune – 1”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P018_C01",
+      "text": "13. It is against the above-referred order denying the claim of the\n\nappellant no. 3, that Writ Petition No. 93840/2020 was filed by appellant\n\nno. 3 before the High Court of Judicature at Bombay, inter alia, praying\n\nfor:\n“a) That this Court be pleased be exercise its jurisdiction under\n Constitution of India and issue writ or direction calling for the record and\n proceedings from the office of the respondents Nos.1 and 2 and after\n examining the validity, legality and propriety and correctness be given\n order and or direction to the respondent Nos.1 and 4 to quash and set\n aside the Impugned Order annexed as Exhibit- \"O\" and allow the claim\n of the Petitioner that annexed as Exhibit-\"J\".\nb) The Court be pleased to give an order and or direction to the\n respondent No.6 - The New India Assurance Co. Ltd. to immediately\n disburse the claim of the Petitioner annexed as Exhibit- \"J\" in time\n bound schedule.\nc) Pending the hearing and final disposal of the writ petition be pleased\n to direct the respondents except respondent No.6 to file their respective\n affidavit in respect of claim of the Petitioner.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P019_C01",
+      "text": "14. The said writ petition came to be dismissed by the order impugned\n\nbefore us. After rejection of appellant’s claim, the Principal Secretary,\n\nGovernment of Maharashtra, communicated to the Secretary,\n\nDepartment of Health and Family Welfare, Government of India, dated\n\n01.10.2020, requesting the Union to extend the benefits of insurance\n\ncoverage to all private practitioners. The letter was responded to by the\n\nDeputy Secretary, Department of Health and Family Welfare,\n\nGovernment of India, on 15.10.2020 clarifying as under:\n“Sir,\n I am directed to refer to your letter No. Corona-2020/CR430/Aa5\n dated 01.10.2020 regarding the subject mentioned above and to\n state the following:-\n(i) PMGKP: Insurance Scheme for Health workers fighting COVID-19\n was launched w.e.f. 30.03.2020 to provide comprehensive personal\n accident cover of Rs. 50 lakh to public healthcare providers,\n including community health workers, who may have to be in direct\n\ncontact and care of COVID-19 patients and who may be at risk of\n being impacted by this.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P019_C02",
+      "text": "(ii) On account of the unprecedented situation, private hospital staff/\n retired/volunteer/ local urban bodies/contract/daily wage/ ad-\nhoc/outsourced staff requisitioned by States/Central\n hospitals/autonomous hospitals of Central/States/UTs, AIIMS\n &INIS/hospitals of Central Ministries can also be drafted for\n COVID19 related responsibilities. These cases are also covered\n under the scheme subject to fulfilment of the following conditions -\n(a) They should have been drafted by the States/ Central\n hospitals/ autonomous hospitals of Central/ States/ UTs, AIIMS &\n INIS/hospitals of Central Ministries for COVID 19 related\n responsibilities. (b) They should have been working as a front-line health workers,\n who may have to be in direct contact and care of COVID-19\n patients and who may be at risk of being impacted by this. (c) The loss of life is due to COVID-19 or accidental death on\n account of COVID-19 related duty.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P020_C01",
+      "text": "2. In view of the above, no other group of healthcare workers other\n than those mentioned under (i) & (ii) above, can be included under\n PMGKP: Insurance Scheme for Health Workers Fighting COVID-19.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P021_C01",
+      "text": "15. High Court placed great emphasis on the words ‘drafted’ and\n\n‘requisitioned’ for ‘COVID-19 related responsibilities’ which appear in the\n\nletter dated 15.10.2020 and similar wordings in the FAQs to the scheme. Reading these documents, the High Court came to the conclusion that,\n\nwhile private medical practitioners fall under the ambit of the Insurance\n\nScheme, claims for insurance must necessarily establish that the\n\nservices of the deceased medical professional were requisitioned in\n\nrelation to COVID-19-related duty. The relevant portion of the impugned\n\norder is as under:\n“21. In order to demonstrate that Dr. Surgade’s services were\n requestioned, the Petitioner has placed paramount reliance on the NMMC\n Notice dated 31st March, 2020. Therefore, we propose to analyse the\n NMMC Notice reproduced hereinabove. By this notice, the NMMC called\n upon inter alia Dr. Surgade to explain why his private dispensary was\n kept closed during the lock down. It stated that despite earlier Orders, Dr. Surgade’s dispensary was kept closed. Resultantly, the NMMC Notice\ncame to be issued calling upon Dr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P021_C02",
+      "text": "Surgade to keep open his dispensary\nafter following the prescribed measures for social distancing etc. In our\nopinion, a plain reading of this NMMC Notice cannot be construed as a\nnotice requisitioning Dr. Surgade’s services for the specific purpose of\ntreating COVID-19 patients and/or working in a COVID-19 centre /\nhospital. There is a difference between specifically requisitioning / drafting\nservices and directing private practitioners to not keep their clinic closed. In the present case, this distinction is evident from the record. The intent\nand object of the NMMC Notice was to encourage medical practitioners to\nkeep open their dispensaries which were otherwise closed due to the fear\nof COVID-19. This notice did not mandate that the said dispensaries are\nto be kept open for COVID-19. As opposed to this letter, the Medical\nEducation & Research, Mumbai’s circular dated 8th May, 2020\nspecifically stated “that your services are required for the prevention and\ntreatment of COVID-19 patient atleast for 15 days”. Clearly therefore, the\ncircular dated 8th May, 2020 was a specific requisition within the meaning\nof the Scheme and not the NMMC Notice dated 31st March, 2020.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P021_C03",
+      "text": "We do\nnot agree with the Petitioner’s reliance on the words “prevention,\ncontainment measures in order to prevent the spread of Covid-19”. The\nNMMC Notice has to be read as a whole and not in isolation. Resultantly,\nwe hold that the NMMC Notice would not amount to a requisition for the\npurposes of the Scheme. Resultantly, the question of estoppel applying\nwould not arise. As stated earlier, Dr. Surgade had not responded to the\nnotification /circular dated 8th May, 2020 by offering/giving his services as\nrequested therein.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P022_C01",
+      "text": "22. We now consider the overwhelming evidence produced by the\nRespondents explicitly demonstrating that Dr. Surgade’s services were\nnot requisitioned for the purposes of treating COVID-19 patients and/or\nworking in a COVID-19 centre/hospital:\ni. The Respondents have pleaded before us on oath that Dr.\nSurgade’s services were not requisitioned;\n ii. The Medical Officer, Primary Health Centre, Turbhe has submitted a\n report dated 21st August, 2020 stating that the information with\n respect to Dr. Surgade’s services being requestioned are not available\n and instead; he was carrying out his private practice;\n iii. Following the aforesaid, the report dated 1st September, 2020\n issued by the Medical Officer of Health, NMMC categorically stated\n that Dr. Surgade’s services were neither requisitioned by NMMC for\n COVID-19 related responsibilities nor was his clinic requisitioned as a\n COVID-19 hospital;\niv. NMMC has addressed a letter dated 1st September, 2020 also\n stating that Dr. Surgade’s services were not requisitioned by NMMC.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P023_C01",
+      "text": "23. In view of the aforesaid overwhelming correspondence, we would be\nrequired to accept the Respondents’ contention and assertion that Dr.\nSurgade’s services were not requisitioned as mandated under the\nScheme and therefore, the Petitioner cannot now avail of the Scheme. As\nopposed to the aforesaid documentary record produced by the\n\nRespondents, the Petitioner has, barring the NMMC Notice, been unable\n to bring on record any documentary proof to establish that Dr. Surgade’s\n services were availed for the purpose of treating and/or in relation to\n COVID-19. As a result, we hold that Dr. Surgade’s services were not\n requisitioned as required under the Scheme and therefore, the Scheme\n would be inapplicable in the present matter.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P024_C01",
+      "text": "24. Considering that Dr. Surgade’s services were not requisitioned as\n mandated under the Scheme, we are unable to extend the applicability of\n the Scheme to persons who fall outside the ambit thereof. Resultantly, no\n relief can be granted to the Petitioner. This being so, we also find no merit\n in the contention that Dr. Surgade duly completed the AYUSH training for\n COVID-19 preparedness, response and containment. The completeness\n or otherwise of AYUSH training bears no relevance to the applicability of\n the Scheme.\n(…)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P025_C01",
+      "text": "16. Taking into account the requirement of ‘requisitioning’, the High\n\nCourt concluded that the appellant’s claim under the insurance policy is\n\nunsubstantiated as Mr. Surgade’s services were not requisitioned. Referring to NMMC notice dated 31 st March, 2020, the High Court drew\n\na distinction between specific requisitioning/drafting of services and\n\ndirecting private practitioners not to keep their clinic closed and\n\nconcluded that:\na) The purpose of NMMC notice is only to encourage medical\n\n practitioners to keep open their dispensaries, which were\n\n otherwise closed due to fear of COVID-19.\nb) The notice does not mandate that dispensaries be kept open\n\n for COVID-19.\nc) The notice called upon Dr. Surgade to explain why his\n\n private dispensary was kept closed during lockdown despite\n\n orders. Resultantly, the notice calls upon Dr. Surgade to\n\nkeep the dispensary open after following the prescribed\n\n measures.\nd) As opposed to the 31st March, 2020 notice, circulars dated\n\n 8th May-9th May, 2020 specifically requisition the services\n\n within the meaning of the scheme.\ne) However, Dr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P025_C02",
+      "text": "Surgade did not respond to the circular dated\n\n 8th May, 2020 and did not offer or give his services\n\n requisitioned.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P026_C01",
+      "text": "17. On the basis of the material on record, the High Court dismissed\n\nthe Writ Petition relying on the following evidences, which in High Court’s\n\nview established conclusively that Dr. Surgade’s services were not\n\nrequisitioned;\n(i) Affidavit filed on behalf of the Government indicating that the\n\n services of Dr. Surgade were not requisitioned.\n(ii) Report dated 21st August, 2020, of Medical Officer Primary\n\n Health Centre, Turbhe, stating that there is no evidence that\n\n Dr. Surgade’s services were requisitioned.\n(iii) Report dated 1st September, 2020, issued by Medical Officer\n\n NMMC categorically stating that Dr. Surgade’s services were\n\n neither requisitioned by NMMC nor was his clinic a\n\n requisitioned medical facility.\n(iv) Letter dated 1st September, 2020 of NMMC stating that Dr.\n\n Surgade’s services were not requisitioned.\n\n(v) The Ayush training for Covid-19 preparedness of Dr.\n\n Surgade has no relevance to the applicability of the scheme.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P027_C01",
+      "text": "18. We heard Dr. Pradeep Arora, appellant no. 1-in person on behalf of\n\nall the appellants and Ms. Aishwarya Bhati, Ld. Additional Solicitor\n\nGeneral for the respondent. At the time of reserving our judgment, we\n\nhad conveyed to the stakeholders that we will examine the appeal only\n\nto the extent of interpreting the policy under PMGKY-Package and to see\n\nif there is requisition of services of appellant no. 3’s husband under the\n\nAct and the Regulation and will not undertake a factual inquiry in relation\n\nto the individual claims.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P028_C01",
+      "text": "19. Ms. Aishwarya Bhati, learned ASG, argues that the purpose of the\n\nNMMC notice issued under the provisions of the Prevention and\n\nContainment of COVID-19 Regulations 2020, directing hospitals and\n\ndispensaries to remain operational, was to ensure the continuity of\n\nessential healthcare services and to prevent disruption of routine\n\nmedical care. Submitting so, Ms. Bhati argued that the impugned order\n\nwas well-reasoned and does not warrant any interference. Ld. ASG also\n\nbrought to our notice that the insurance cover under PMGKY-Package is\n\nover and above other insurance policies that cover life and provide\n\nrehabilitation and restitution.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P029_C01",
+      "text": "20. As there is no prescribed procedure for requisitioning services of\n\ndoctors or other medical professionals, and the High Court came to the\n\nconclusion that there is no document, letter or material evidencing such\n\nrequisitioning, we have to decide the question as to how requisitioning of\n\nservices can be inferred and concluded. This is necessary because a\n\nclaim for insurance under PMGKY-Package necessitates requisition of\n\nservice and the consequent loss of life while performing COVID-19-\n\nrelated duties. In the circumstances, requisitioning has to be seen and\n\nassessed in the context of the situation that prevailed, coupled with the\n\napplicable laws and the executive actions that were resorted to.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P030_C01",
+      "text": "21. Circumstances that prevailed at the dawn of 2020, required\n\nimmediate implementation of certain compelling measures to control and\n\nhandle the ill effects of the pandemic, and this included invocation of the\nEpidemic Diseases Act, 1897\nand issuance of necessary Rules and\n\nRegulations for implementation of Covid-19-related measures. Insofar as\n\nthe State of Maharashtra is concerned, Prevention and Containment of\n\nCovid-19 Regulation 2020 were issued, inter alia providing that the\n\nCollector or the Municipal Commissioner shall be competent to take\n\nmeasures, such as sealing of the geographical area, requisition, if\n\nnecessary, staff of Government Departments and organizations. It also\n\nprovides that “if required the Collector, Municipal Commissioner may\n\nrequisition the services of any other person also”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P031_C01",
+      "text": "22. Regulation 11 declares that any person found to be violating the\n\nprovisions of the regulations will be punished under the provisions of the\nIndian Penal Code\n. Therefore, there is no gainsaying about the fact that\n\ncircumstances in which the country was reeling under the COVID-19\n\npandemic required States and their instrumentalities to take immediate\n\nmeasures. This included requisitioning and drafting of doctors and other\n\nhealthcare professionals as an emergent measure, as many as possible\n\nand as early as State can.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P032_C01",
+      "text": "23. It is in the above referred context that, invoking powers under the\n\nAct and the 2020 Regulation, the Commissioner, Navi Mumbai issued\n\nnotice dated 31.03.2020 calling upon Dr. Surgade to explain the reason\n\nfor not keeping the hospital/dispensary open during the lockdown period.\n\nThis notice clearly refers to the\nEpidemic Diseases Act, 1897\nand the\n\npowers thereunder (\nSections 2\n,\n\nand\n\n). Intimating Dr. Surgade that\n\nvide order no. 123/2020 he was already directed to keep his\n\nhospital/dispensary open, the notice dated 31.03.2020 directs and\n\norders Dr. Surgade to open the hospital/dispensary immediately, failing\n\nwhich, the Corporation will be forced to file an FIR under\nSection 188\n\nthe IPC.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P033_C01",
+      "text": "24. Taking into account the live situation that existed as on March\n\n2020, coupled with the invocation of the\nEpidemic Diseases Act, 1897\n\nand the Regulations 2020 thereunder, there cannot be any doubt about\n\nthe compelling situation in which the Governments and their\n\ninstrumentalities requisitioned services of doctors and other health\n\nprofessionals to be on the frontline for containing the fast-spreading\n\ninfection. It is not difficult to conceive the situation, in which individual\n\nletter of appointment or requisitioning would not have been possible and\n\nthat exactly the reason for invoking the\nEpidemic Diseases Act, 1897\nand the Regulation 2020 for implementing immediate measures. Further,\n\npowers under the Act and Regulation 2020 were also exercised while\n\nissuing the order dated 31.03.2020 issued in the nature of show cause\n\nnotice to Late Dr. Surgade. In this view of the matter, we have no\n\nhesitation in holding that there was a “requisition” of doctors and other\n\nmedical professionals. We are not inclined to accept the rather simplistic\n\nsubmission that there was no specific requisition and therefore the claim\n\nfor insurance must fail on this ground alone.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P034_C01",
+      "text": "25. The truth and reality of requisitioning is also evident from the\n\ndecisions of the government, made almost at the same time. In the\n\nsame month, i.e., in March 2020, the Finance Ministry issued the press\n\nrelease dated 26.03.2020, and this was followed by the declaration of\n\nthe PMGKY-Package on 28.03.2020. The FAQs and the clarificatory\n\nletter dated 03.04.2020 issued thereafter also prove that large number of\n\ndoctors and healthcare professionals were requisitioned, and this\n\ncompelling measure is not confined to Government employees, but also\n\nextended to private doctors and hospitals. The insurance cover under\n\nPMGKY-Package was extended to all those who were requisitioned by\n\nlaw and the executive actions under the compelling circumstances.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P035_C01",
+      "text": "26. In view of the above discussion, we are not inclined to take a\n\nnarrow view of the intent and application of Regulation 14.03.2020 and\n\nthe NMMC notice dated 31.03.2020 to conclude, as the High Court did,\n\nthat there was no requisition.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P036_C01",
+      "text": "27. The country has not forgotten the situation that prevailed at the\n\nonset of Covid-19, when every citizen contributed in some measure,\n\ndespite fear of infection or imminent death. That is also a moment of\n\npride and recognition of the strength of character and discipline that our\n\npeople demonstrated when circumstances demanded it.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P037_C01",
+      "text": "28. The courage and sacrifice of by our doctors remain indelible, as\n\nfive years following the pandemic that spared us, we are now called\n\nupon to interpret the laws and regulations enacted for urgent requisition\n\nof doctors and health professionals to safeguard public from the\n\nseemingly overwhelming onslaught of Covid 2019. We have no\n\nhesitation in concluding that invocation of laws and Regulations were\n\nintended to leave no stone unturned in requisitioning the doctors and the\n\ninsurance scheme was equally intended to assure doctors and health\n\nprofessionals in the front line that the country is with them. In this view of\n\nthe matter, we are not inclined to take the view that there was no\n\nrequisitioning of the doctors and medical professionals.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P038_C01",
+      "text": "29. Once we have decided that there was ‘requisition’, the applicability\n\nof the insurance policy will then depend upon actual evidence. Whether\n\nthe doctor or healthcare professional has, and in fact, presented and\n\noffered his or her services in furtherance of COVID-19-related\n\nresponsibilities is a matter of evidence. If there is clear evidence that the\n\ndeceased lost his life while performing COVID-19-related duties, the\n\npolicy will have to be applied. We have already indicated that our enquiry\n\nis confined to determining the question as to whether there is ‘requisition’\n\nof the services of doctors and health professionals. We are not\n\nexamining the credibility of individual claims. It is for the concerned\n\noffices or agencies to look into individual claims on the basis of clear\n\nevidence.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P039_C01",
+      "text": "30. In view of the above, in partial modification of the judgment and\n\norder of the High Court, we declare that;\na) there is a requisition of services of doctors, and this is evident\n\n from the conjoint reading of provisions of the Act, the Maharashtra\n\n Prevention and Containment of Covid-19 Regulations 2020, the\n\n NMMC Order dated 31.03.2020, PMGKY-Package Scheme,\n\nexplanatory communication to the PMGKY policy, and the FAQs\n\n released.\nb) Individual claims for insurance made as per the PMGKY-Package\n\n will be considered and decided in accordance with the law and on\n\n the basis of the evidence. The onus to prove that a deceased lost\n\n his life while performing a COVID-19-related duty is on the\n\n claimant, and the same needs to be established on the basis of\n\n credible evidence.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT_P040_C01",
+      "text": "31. With the above observations, the appeal stands disposed of.\n\nPending applications including the application for\n\nintervention/impleadment are also disposed of.\n………………………………....J.\n [PAMIDIGHANTAM SRI NARASIMHA]\n\n ………………………………....J.\n [R. MAHADEVAN]\n\n NEW DELHI;\nDECEMBER 11, 2025",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Pradeep Arora vs Director, Health Department",
+    "case_id": "SC_2025_PRADEEP_ARORA_VS_DIRECTOR_HEALTH_DEPARTMENT",
+    "court": "Supreme Court of India",
+    "year": "2025",
+    "facts_summary": "2. The onset of COVID-19 pandemic at the dawn of 2020 was\n\n unprecedented in its global sweep and consequence. Not since the 1918\n\n influenza pandemic, an event coeval with the first world war, had a single\n\n infectious disease inflicted such widespread crisis on human civilisation.\n\n The global death toll rising to millions, as revealed in the World Health\n\n Organisation’s data, presents a tragic picture of this disruption. While\n\n COVID-19 pandemic exposed an acute systemic fragility within the\n\n global healthcare sector, highlighted lack of preparedness and strained\n\ndoctors' deaths in the first wave and hundreds more in subsequent\n\nwaves; one estimate noted around 798 doctors lost during the second\n\nwave alone. 3. Four years after the pandemic, when we are called upon to\n\ninterpret the Government’s assurance under the Pradhan Mantri Garib\n\nKalyan Yojna, an insurance scheme for doctors and healthcare workers\n\nfighting Covid-19, we can neither forget the situation that prevailed in\n\n2020, nor the purport of State’s assurance to the doctors who were\n\n‘requisitioned’ invoking special laws and regulations. A claim for\n\ninsurance by appellant no. 3, wife of a deceased doctor was rejected on\n\nthe ground that there is no proof of ‘requisitioning’ of his services for\n\nCovid related duties. This decision was upheld by the High Court in the\n\norder impugned before us. We are called upon to examine if there is\n\n‘requisitioning’ of the services of appellant no. 2. Tasked with this duty",
+    "legal_issues": "11. Facts: The facts relevant to the appeal are that, husband of\n\nappellant no. 3, Late Dr. B S Surgade, was a medical practitioner\n\nrunning a private medical clinic. It was contended on behalf of appellant\n\nno. 3 that her husband Dr. Surgade was directed to keep his clinic open\n\nas per the NMMC notice dated 31.03.2020 reproduced above, and his\n\nservices were also requisitioned by the communication dated 09.05.2020\n\nextracted above. 17. On the basis of the material on record, the High Court dismissed\n\nthe Writ Petition relying on the following evidences, which in High Court’s\n\nview established conclusively that Dr. Surgade’s services were not\n\nrequisitioned;\n(i) Affidavit filed on behalf of the Government indicating that the\n\n services of Dr. Surgade were not requisitioned.\n(ii) Report dated 21st August, 2020, of Medical Officer Primary\n\n Health Centre, Turbhe, stating that there is no evidence that\n\n Dr. Surgade’s services were requisitioned.\n(iii) Report dated 1st September, 2020, issued by Medical Officer\n\n NMMC categorically stating that Dr. Surgade’s services were\n\n neither requisitioned by NMMC nor was his clinic a\n\n requisitioned medical facility.\n(iv) Letter dated 1st September, 2020 of NMMC stating that Dr.\n\n Surgade’s services were not requisitioned.\n\n(v) The Ayush training for Covid-19 preparedness of Dr.\n\n Surgade has no relevance to the applicability of the scheme. 18. We heard Dr. Pradeep Arora, appellant no. 1-in person on behalf of\n\nall the appellants and Ms. ",
+    "ratio_summary": "We do\nnot agree with the Petitioner’s reliance on the words “prevention,\ncontainment measures in order to prevent the spread of Covid-19”. The\nNMMC Notice has to be read as a whole and not in isolation. Resultantly,\nwe hold that the NMMC Notice would not amount to a requisition for the\npurposes of the Scheme. Resultantly, the question of estoppel applying\nwould not arise. As stated earlier, Dr. Surgade had not responded to the\nnotification /circular dated 8th May, 2020 by offering/giving his services as\nrequested therein. 23. In view of the aforesaid overwhelming correspondence, we would be\nrequired to accept the Respondents’ contention and assertion that Dr.\nSurgade’s services were not requisitioned as mandated under the\nScheme and therefore, the Petitioner cannot now avail of the Scheme. As\nopposed to the aforesaid documentary record produced by the\n\nRespondents, the Petitioner has, barring the NMMC Notice, been unable\n to bring on record any documentary proof to establish that Dr. Surgade’s\n services were availed for the purpose of treating and/or in relation to\n COVID-19. As a result, we hold that Dr. Surgade’s services were not\n requisitioned as required under the Scheme and therefore, the Scheme\n would be inapplicable in the present matter. 20. As there is no prescribed procedure for requisitioning services of\n\ndoctors or other medical professionals, and the High Court came to the\n\nconclusion that there is no document, letter or material evidencing such\n\nrequisitioning,",
+    "final_order": "",
+    "outcome_summary": "Disposed of",
+    "sections_cited": [
+      "IPC 188"
+    ],
+    "cases_cited": []
+  }
+}

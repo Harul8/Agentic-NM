@@ -1,0 +1,1282 @@
+{
+  "case_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD",
+  "case_name": "Cox And Kings Ltd. vs Sap India Pvt. Ltd.",
+  "normalized_case_name": "COX_AND_KINGS_LTD._VS_SAP_INDIA_PVT._LTD.",
+  "court": "Supreme Court of India",
+  "year": "2022",
+  "judgment_template": null,
+  "case_number": "Petition 38 of 2020",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": "6 May 2022",
+  "judges": [
+    "Surya Kant",
+    "N.V. Ramana"
+  ],
+  "author": "N.V. Ramana",
+  "bench_type": "division",
+  "petitioner": "Cox And Kings Ltd.",
+  "respondent": "Sap India Pvt. Ltd.",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 28,
+  "cited_by_count": 21,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL ORIGINAL JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2022\\MAY\\2022_MAY_20.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P001_C01",
+      "text": "CIVIL ORIGINAL JURISDICTION\n\n ARBITRATION PETITION (CIVIL) NO. 38 OF 2020\n\n COX AND KINGS LIMITED …PETITIONER\n\n VERSUS\n\n SAP INDIA PRIVATE LIMITED & ANOTHER …RESPONDENTS\n\n JUDGMENT\nN.V. RAMANA, CJI",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P002_C01",
+      "text": "1. This petition calls on us to examine the ‘group of companies\n\n doctrine’. In particular, it requires us to examine whether the\n\n principles of party autonomy under arbitration law and\n\n corporate personality in company law have been adequately\n\n safeguarded in outlining the scope and applicability of the\n\n doctrine being followed at present in Indian jurisprudence.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P003_C01",
+      "text": "2. The present Arbitration Petition has been preferred by the\n\n Petitioner­Applicant under Section 11(6) and Section l1(12)(a) of\n\n the\nArbitration and Conciliation Act, 1996\n(hereinafter the\n\nArbitration Act\n, on the ground\n\nthat there has been a failure with respect to the appointment of\n\n an Arbitral Tribunal in accordance with the agreements\n\n between the parties.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P004_C01",
+      "text": "3. The facts necessary for the adjudication of the dispute are as\n\n follows: on 14.12.2010, the Applicant and Respondent No. l\n\n entered into an SAP Software End User License Agreement and\n\n SAP Enterprise Support Schedule under which the Applicant\n\n was made a licensee of certain ERP software developed and\n\n owned by the Respondents. This is an overall licensing\n\n agreement that all customers of the Respondents have to enter\n\n into compulsorily in advance in order to utilize any software of\n\n the Respondents. In 2015, while the Applicant was developing\n\n its own e­commerce platform, the Respondents approached the\n\n Applicant and recommended their Hybris Solution as it would\n\n be 90% compatible with the Applicant’s software. The\n\n Respondents indicated that the remaining 10% customisation\n\n would take only 10 months, a much shorter solution than the\n\n Applicant developing the software itself.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P005_C01",
+      "text": "4. The aforesaid agreement was divided into 3 separate\n\n transactions: first, the Software License and Support Agreement\n\n­ Software Order Form 3, dated 30.10.2015, was signed\n\n between the Applicant and Respondent No. 1 for the purchase\n\n of the SAP Hybris Software License. Second, an agreement\n\n dated 30.10.2015 was signed between the parties containing\n\n the terms and conditions governing the implementation of the\n\n SAP Hybris software. This agreement is called the Services\n\n General Terms and Conditions Agreement (\"GTC\"). Third, on\n\n 16.11.2015, an agreement was entered into for the\n\n customization of the software.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P006_C01",
+      "text": "5. Clause 15.7 of the GTC contains the arbitration clause which\n\n we are concerned with in the present matter. The clause reads\n\n as follows:\n\"15.7 Dispute Resolution: In the event of any\n dispute or difference arising out of the subject\n matter of this Agreement, the Parties shall\n undertake to resolve such disputes\n amicably. If disputes and differences cannot\n be settled amicably then such disputes shall be\n referred to bench of three arbitrators, where\n each party will nominate one arbitrator and the\n two arbitrators shall appoint a third arbitrator.\n Arbitration award shall be binding on both\n parties. The arbitration shall be held in\n Mumbai and each party will bear the expenses\n of their appointed arbitrator. The expense of the\n third arbitrator shall be shared by the parties.\n\nThe arbitration process will be governed by\n the\nArbitration & Conciliation Act, 1996\n.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P007_C01",
+      "text": "6. Till August 2016, the Applicant listed out various issues in\n\n project implementation to Respondent No. 1 and requested\n\n Respondent no. 2 to intervene. Respondent No. 2, in turn, gave\n\n certain assurances to the Applicant. As the contract could not\n\n be fulfilled even with the extended timelines and additional\n\n manpower, the contractual framework pertaining to SAP Hybris\n\n Solution was rescinded on 15.11.2016 after which the\n\n Respondents immediately withdrew their resources from the\n\n said project. Pursuant to the same, the Applicant demanded a\n\n refund of Rs. 45 crores that was paid towards the License\n\n Agreement, Annual Maintenance Charges, and implementation\n\n services. Respondent No. 2 in response to the said demand\n\n proposed a solution which was rejected by the Applicant.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P008_C01",
+      "text": "7. Finally, after several correspondences and meetings, the matter\n\n could not be settled amicably. On 29.10.2017, Respondent No.\n\n 1 issued a notice invoking arbitration for the alleged wrongful\n\n termination of the contract and demanded payment of Rs. 17\n\n crores. An Arbitral Tribunal comprising of Hon'ble Mr. Justice\n\n Madan B. Lokur (Retd.), Hon'ble Mr. Justice Dilip Bhosale\n\n(Retd.), and Hon'ble Mr. Justice V. C. Daga (Retd.) was\n\n constituted to adjudicate the disputes between the parties.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P009_C01",
+      "text": "8. Respondent No. l initiated proceedings under Clause 15.7 of the\n\n GTC entered between the parties on 30.10.2015. It may be\n\n noted here that Respondent No. 2 was not made a party in the\n\n aforesaid proceedings. During these proceedings, the Applicant\n\n herein filed an application under\nSection 16\nof the Arbitration\n\n Act, before the Hon'ble Tribunal, contending that the four\n\n agreements entered between the parties are a part of a\n\n composite transaction and the same should be a part of a\n\n singular proceeding.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P010_C01",
+      "text": "9. Meanwhile, on 22.10.2019, NCLT, admitted an application\n\n under\nSection 7\nof the Insolvency and Bankruptcy Code, 2016\n\n preferred against the Applicant and appointed an Interim\n\n Resolution Professional. On 05.11.2019, the NCLT directed the\n\n parties to adjourn the arbitration proceedings sine die in view of\n\n the moratorium imposed upon the claims against the Applicant\n\n due to the initiation of the Corporate Insolvency Resolution\n\n Process (CIRP).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P011_C01",
+      "text": "10. On 07.11.2019, the Applicant sent a fresh notice invoking\n\n Arbitration arraying Respondent No. 2 in the Arbitration\n\n Proceedings. In the said Notice, the Applicant appointed Hon'ble\n\n Dr. Justice Arijit Pasayat as its nominated arbitrator and called\n\n upon the Respondents to appoint their Arbitrator for the\n\n constitution of the Tribunal. However, there was no response\n\n from the Respondents. Hence, the Applicant has preferred this\n\n Application under\nSection 11\nof the Arbitration Act seeking\n\n appointment of the Arbitrator in an International Commercial\n\n Arbitration.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P012_C01",
+      "text": "11. Mr. Kailash Vasdev, learned Senior Advocate appearing on\n behalf of the Applicant made the following submissions:\ni. Respondent No. 1 is a wholly owned subsidiary and\n proprietary concern of Respondent No. 2. Since the\n software is licensed by Respondent No. 2 to Respondent\n No. 1, the customisation would not be possible without\n the aid of Respondent No. 2. Therefore, all the four\n agreements together form a composite agreement and\n are a part of a single, interlinked transaction by both\n Respondent Nos. 1 and 2.\nii. The agreements and email correspondences clearly\n show that Respondent Nos. 1 and 2 and the Applicant\n were in ad idem for the implementation and the\n execution of the agreements. Especially, when\n Respondent No. 1 failed to execute the agreement,\n Respondent No. 2 took the responsibility to resolve the\n grievances of the applicant.\n\niii. Considering the holding in the three Judge Bench\n decision of\nChloro Controls India Private Limited v. Severn Trent Water Purification Inc.\n, (2013) 1 SCC\n 641, arbitration can be invoked even against the non­\n signatories, if the circumstances demonstrate that it\n was the mutual intention of the parties.\niv.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P012_C02",
+      "text": "There is no commonality of claims between the present\n arbitration proceedings and the earlier proceedings.\nv. Considering, the limited scope under\nSection 11\nof the\n Arbitration Act, the intervention of the Court should be\n as minimal as the Court is only required to examine the\n existence of the arbitration agreement.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P013_C01",
+      "text": "12. Mr. Ritin Rai, learned Senior Advocate appearing on behalf of\n\n the Respondent No. 1 made the following submissions:\ni. The Applicant has suppressed material facts regarding\n its previous attempts to resist constitution of an\n Arbitral Tribunal. It ought to be noted that when\n Respondent No. 1 had earlier invoked Clause 15.7 of\n the GTC, it was the Applicant who had challenged the\n same for being void ab initio. Now, the Applicant himself\n is invoking the same provision seeking the appointment\n of an Arbitrator.\nii. Immediately one day after the commencement of the\n CIRP and the consequent imposition of the moratorium,\n the Applicant has chosen to raise similar claims\n through a fresh notice and has obliquely arrayed\n Respondent No. 2 as a party to inflate its claim. It is a\n settled principle of law that the principle of res­judicata\n applies to arbitral proceedings as well.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P014_C01",
+      "text": "13. Mr. Neeraj Kishan Kaul, learned Senior Advocate appearing on\n\n behalf of Respondent No. 2 made the following submissions:\n\ni. Respondent No. 2 is neither a signatory, nor has it ever\n agreed (expressly or impliedly) to be bound by the\n agreements between the Applicant and the Respondent\n No. 1. Respondent No. 2, being a foreign entity does not\n have any business dealings in India and is a separate\n and independent legal entity from Respondent No. 1.\nii. The emails relied upon by the Applicant do not indicate\n any undertaking by Respondent No. 2. Especially, when\n the Applicant himself approached Respondent No. 2\n seeking assistance much after the execution of the\n License Agreement and Service Agreement. Admittedly,\n Respondent No. 2 was not involved in the contract\n negotiation process.\niii. The “Group of Companies” doctrine is not applicable in\n the present case. Respondent No. 2 is not only a non­\n signatory but also never participated in the negotiation\n process during the drafting of the contract. Moreover,\n there is no consensus of the parties to be bound by the\n contract.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P015_C01",
+      "text": "14. After hearing the counsel appearing on both sides and\n\n considering the ramifications it may have by the adjudication of\n\n the subject matter, this Court must examine the ambit of the\n\n “Group of Companies” doctrine. Ever since this doctrine was\n\n expounded in the\nChloro Control\n(supra) case, it has been\n\n utilised in a varied manner.\nIt is in this context we felt that\n\n there is a further need to examine the rationality behind the\n\n doctrinal approach taken by this Court in the\nChloro Control\n(supra) case.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P016_C01",
+      "text": "15. Arbitration is a creature of contract which has been provided\n\n statutory backing under the\nArbitration Act\n, to usher in party\n\n autonomy, quick disposal, and an efficacious alternative\n\n remedy. Arbitration has been a great boon for Indian\n\n jurisprudence, wherein numerous cases have been\n\n methodically dealt with in an effective manner without taking\n\n the meandering course of litigation before Courts.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P017_C01",
+      "text": "16. One of the most challenging areas of Arbitration practice, both\n\n theoretical and practical, relates to multi­party and multi­claim\n\n proceedings. Usually, arbitration involves parties who have\n\n explicitly entered into an arbitration agreement, or parties with\n\n successor interests, claiming under them. In some cases, it\n\n happens that third parties are bound by an arbitration clause\n\n by tacit consent, etc.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P018_C01",
+      "text": "17. Doctrine of group of companies is one such area which is\n\n utilized to bind third parties to an arbitration agreement.\n\n Theoretically, the policy consideration of efficiency is argued to\n\n allow such joinders. However, until a legal basis for the same is\n\n provided, efficiency cannot itself be the sole ground to bind a\n\n party to arbitration.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P019_C01",
+      "text": "18. Section 7\nof the Arbitration Act defines an arbitration\n\n agreement. Being a creature of contract, the realm of arbitration\n\n is one of consent. The bare reading of the aforesaid provision\n\n indicates that parties must reduce their intention to submit\n\n their existing or future disputes to arbitration, in writing. The\n\n statute does not mandate a particular form for an arbitration\n\n agreement. The intention of the parties can be inferred from an\n\n exchange of letters, telex, telegram, and even electronic means. The existence of the arbitration agreement can be deduced once\n\n it is ascertained that the parties were at ad idem either through\n\n a contract, conduct or correspondences. (See\nGovind Rubber\n\n Ltd. v. Louis Dreyfus Commodities Asia (P) Ltd.\n, (2015) 13\n\n SCC 477).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P019_C02",
+      "text": "Therefore, the question of the extension of an\n\n arbitration agreement to non­signatories necessarily also\n\n involves the question of the extension of the scope and the\n\n effects of the jurisdiction of the arbitration tribunal over such\n\n companies.1\n\n 1 Pietro Ferrario, 'The Group of Companies Doctrine in International\n Commercial Arbitration: Is There any Reason for this Doctrine to Exist?',\n Journal of International Arbitration, (© Kluwer Law International; Kluwer\n Law International 2009, Volume 26 Issue 5) pp. 647 ­ 673\n19. This doctrine can be clearly stated to have originated in the\n\n Dow Chemical France, the Dow Chemical Company v. Isover Saint Gobain, (ICC Case No. 4131). In the case of Dow\n\n Chemicals (supra), it was the subsidiaries of Dow Chemicals\n\n which initiated Arbitration proceedings against Isover. In that\n\n case, Isover objected to the basis on which the subsidiaries of\n\n Dow Chemicals chose to arbitrate, without some of them having\n\n entered a valid arbitration agreement with Isover.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P019_C03",
+      "text": "The Tribunal,\n\n while disregarding the contention of Isover, held that Dow\n\n Chemicals Group operated as a single economic reality and\n\n thus the non­signatories were also bound by the arbitration\n\n agreement. We may note that the Dow Chemicals (supra) case\n\n related to a situation where a non­signatory did not resist\n\n arbitration. Rather they wished to join an arbitration already\n\n initiated by its affiliates. The effect of this position has not been\n\n evaluated in any precedents of this Court and needs to be\n\n examined.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P020_C01",
+      "text": "20. The first case which dealt with group of companies doctrine for\n\n domestic arbitrations was\nSukanya Holdings Pvt. Ltd. v.\n\n Jayesh H. Pandya\n, (2003) 5 SCC 531. In that case, disputes\n\nhad arisen between multiple parties over the same transaction.\n\n Some of the parties in the dispute were not a part of the\n\n arbitration agreement. The appellant was claiming relief against\n\n some of these parties who were not party to the agreement. The\n\n Court held, under\nSection 8\nof the Arbitration Act, that causes of\n\n action cannot be bifurcated in an arbitration, and non­parties to\n\n an arbitration agreement cannot be included in the same\n\n arbitration.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P021_C01",
+      "text": "21. The next important case which dealt with the group of\n\n companies doctrine was the\nChloro Control\n(supra) case. The\n\n Court at the outset acknowledged that there were various\n\n school of thoughts when it came to the doctrine in arbitration\n\n jurisprudence. It was in this context that the Court had to\n\n formulate an opinion to provide a best fit for the doctrine for\n\n Indian jurisdiction under part II of the Arbitration Act. As many\n\n foreign parties were involved, the Court had to invoke\nSection\n\nof the Arbitration Act for appointment of an arbitrator.\nSection 45\nof the Arbitration Act stood as under:\n“45. Power of judicial authority to refer\n parties to arbitration.—Notwithstanding\n anything contained in Part I or in the Code of\n\nCivil Procedure, 1908 (V of 1908), a judicial\n authority, when seized of an action in a matter\n in respect of which the parties have made an\n agreement referred to in\nSection 44\n, shall, at\n the request of one of the parties or any person\n claiming through or under him, refer the\n parties to arbitration, unless it finds that the\n said agreement is null and void, inoperative or\n incapable of being performed.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P022_C01",
+      "text": "22. The Court compared\nSection 45\nof the Arbitration Act to\nArticle\n\nof UNCITRAL Model Law and formulated the following\n\n ingredients for a Judicial Authority to examine at a referral\n\n stage:\n“1. Does the arbitration agreement fall under\n the scope of the Convention?",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P023_C01",
+      "text": "2. Is the arbitration agreement evidenced in\n writing?",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P024_C01",
+      "text": "3. Does the arbitration agreement exist and is\n it substantively valid?",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P025_C01",
+      "text": "4. Is there a dispute, does it arise out of a\n defined legal relationship, whether\n contractual or not, and did the parties\n intend to have this particular dispute settled\n by arbitration?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P026_C01",
+      "text": "5. Is the arbitration agreement binding on the\n parties to the dispute that is before the\n court?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P027_C01",
+      "text": "23. The Court noticed distinction in the language under\nSection 45\nand\nSection 8\nof the Arbitration Act in the following manner:\n“69. We have already noticed that the\n language of\nSection 45\nis at a substantial\n variance to the language of\nSection 8\nin this\n regard. In\nSection 45\n, the expression “any\n person” clearly refers to the legislative\n intent of enlarging the scope of the words\n beyond “the parties” who are signatory to\n the arbitration agreement. Of course, such\n applicant should claim through or under\n the signatory party. Once this link is\n established, then the court shall refer them to\n arbitration. The use of the word “shall” would\n have to be given its proper meaning and\n cannot be equated with the word “may”, as\n liberally understood in its common parlance. The expression “shall” in the language of\nSection 45\nis intended to require the court to\n necessarily make a reference to arbitration, if\n the conditions of this provision are satisfied. To that extent, we find merit in the submission\n that there is a greater obligation upon the\n judicial authority to make such reference, than\n it was in comparison to the 1940 Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P027_C02",
+      "text": "However,\n the right to reference cannot be construed\n strictly as an indefeasible right. One can claim\n the reference only upon satisfaction of the\n prerequisites stated under\nSections 44\nand\n\nread with Schedule I of the 1996 Act. Thus, it\n is a legal right which has its own contours and\n is not an absolute right, free of any\n obligations/limitations.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P028_C01",
+      "text": "70. Normally, arbitration takes place between\n the persons who have, from the outset, been\n parties to both the arbitration agreement as\n well as the substantive contract underlining\n\n(sic underlying) that agreement. But, it does\noccasionally happen that the claim is made\nagainst or by someone who is not originally\nnamed as a party. These may create some\ndifficult situations, but certainly, they are\nnot absolute obstructions to law/the\narbitration agreement. Arbitration, thus,\ncould be possible between a signatory to an\narbitration agreement and a third party. Of\ncourse, heavy onus lies on that party to\nshow that, in fact and in law, it is claiming\n“through” or “under” the signatory party as\ncontemplated under\nSection 45\nof the 1996\nAct. Just to deal with such situations\nillustratively, reference can be made to the\nfollowing examples in Law and Practice of\nCommercial Arbitration in England (2nd Edn.)\nby Sir Michael J. Mustill:\n“1. The claimant was in reality always a party\nto the contract, although not named in it.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P029_C01",
+      "text": "2. The claimant has succeeded by operation of\nlaw to the rights of the named party.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P030_C01",
+      "text": "3. The claimant has become a party to the\ncontract in substitution for the named party by\nvirtue of a statutory or consensual novation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P031_C01",
+      "text": "4. The original party has assigned to the\nclaimant either the underlying contract,\ntogether with the agreement to arbitrate which\nit incorporates, or the benefit of a claim which\nhas already come into existence.”\n\n (emphasis supplied)\n\nFrom the above it is clear that the Court was of the firm\n\n opinion that there must be a legal relationship between the\n\n non­signatory and the party to the arbitration agreement.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P032_C01",
+      "text": "24. While expounding on the legal relationship, the Court accepted\n\n the group of companies doctrine as a sufficient basis to\n\n establish this legal relationship. However, while expounding on\n\n the ingredients of doctrine itself, the Court brought in the\n\n intention of the parties as to whether they were ad­idem to\n\n treat a non­signatory as being a party to the arbitration\n\n agreement. This postulation conflates a contractual\n\n understanding of the group of companies doctrine, which has\n\n evolved within the framework of arbitration, without alluding to\n\n contractual principles.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P033_C01",
+      "text": "25. On one hand, this Court reduced the threshold of arbitration\n\n being a consensual affair. On the other, the doctrine of group of\n\n companies is transposed on requirements under contract law\n\n to bind a party to an arbitration.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P034_C01",
+      "text": "26. An attempt was made by the Court to find a basis for reading\n\n the group of companies doctrine within the language of\nSection\n\nof the Arbitration Act in the following manner:\n\n“99. Having examined both the above stated\n views, we are of the considered opinion that it\n will be the facts of a given case that would act\n as precept to the jurisdictional forum as to\n whether any of the stated principles should be\n adopted or not. If in the facts of a given case, it\n is not possible to construe that the person\n approaching the forum is a party to the\n arbitration agreement or a person claiming\n through or under such party, then the case\n would not fall within the ambit and scope of\n the provisions of the section and it may not be\n possible for the court to permit reference to\n arbitration at the behest of or against such\n party.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P035_C01",
+      "text": "100. We have already referred to the\n judgments of various courts that state that\n arbitration could be possible between a\n signatory to an agreement and a third\n party. Of course, heavy onus lies on that\n party to show that in fact and in law, it is\n claiming under or through a signatory\n party, as contemplated under\nSection 45\n the 1996 Act.”\n\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P036_C01",
+      "text": "27. It is interesting to note that this Court discusses some\n\n judgments from the United Kingdom in this regard. In Roussel­\n\n Uclaf v. G.D. Searle & Co. Limited and G. D. Searle & Co.,\n\n [1978] F.S.R 95, the Court interpreted the term ‘claiming\n\n through or under’ while staying a case against a company that\n\n was neither party nor privy to an arbitration agreement. Here,\n\nthe non­signatory was a fully owned subsidiary, and its parent\n\n company was a signatory to an arbitration agreement. The\n\n subsidiary had claimed that it had the right to sell patented\n\n articles which it had obtained from the parent company\n\n because the parent company had ordered the sale of the\n\n patented articles. A stay on the litigation was granted, but the\n\n Court concluded that the subsidiary was ‘claiming through or\n\n under’ the parent company. This meant that if the parent\n\n company was entitled under the license agreement to sell the\n\n articles, then the same right flowed to the subsidiary company\n\n as well.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P036_C02",
+      "text": "Although this case did not explicitly indicate the\n\n acceptance of group of companies doctrine under the English\n\n Law, the wordings can only be said to have left the door open to\n\n possibility of such inclusion.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P037_C01",
+      "text": "28. In any case, the Court of Appeal in the case of The Mayor and\n\n Commonalty & Citizens of the City of London v. Ashok\n\n Sancheti, [2008] EWCA Civ 1283 overruled the Uclaf Case\n\n (supra). The Court pronounced that a ‘mere legal or commercial\n\n connection is insufficient’. In essence, this restricted the phrase\n\n ‘claiming through or under’ to only those third persons who\n\nassert their right on the basis of the rights of a signatory to an\n\narbitration agreement. It is noticed that this Court in\nChloro\n\nControl\n(supra), while observing both cases as persuasive,\n\nhowever, does not provide reasoning to favour one\n\ninterpretation over the other, in the following manner:\n“98. In Roussel­Uclaf v. G.D. Searle & Co. Ltd.\n [(1978) 1 Lloyd's Rep 225] the Court held:\n“The argument does not admit of\n much elaboration, but I see no\n reason why these words in the Act\n should be construed so narrowly as\n to exclude a wholly­owned\n subsidiary company claiming, as\n here, a right to sell patented articles\n which it has obtained from and been\n ordered to sell by its parent.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P037_C02",
+      "text": "course, if the arbitration\n proceedings so decide, it may\n eventually turn out that the parent\n company is at fault and not entitled\n to sell the articles in question at all;\n and, if so, the subsidiary will be\n equally at fault. But, if the parent is\n blameless, it seems only common\n sense that the subsidiary should be\n equally blameless. The two parties\n and their actions are, in my\n judgment, so closely related on\n the facts in this case that it would\n be right to hold that the\n subsidiary can establish that it is\n within the purview of the\n arbitration clause, on the basis\n\nthat it is ‘claiming through or\n under’ the parent to do what it is\n in fact doing whether ultimately\n held to be wrongful or not.”\n\n However, the view expressed by the Court in\n Roussel­Uclaf case [(1978) 1 Lloyd's Rep 225]\n does not find approval in the decision of the\n Court of Appeal in City of London v. Sancheti\n [2008 EWCA Civ 1283 : (2009) 1 Lloyd's Rep\n 117 (CA)] .",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P037_C03",
+      "text": "In para 34, it was held that the view\n in Roussel­Uclaf [(1978) 1 Lloyd's Rep 225]\n need not be followed and stay could not be\n obtained against a party to an arbitration\n agreement or a person claiming through or\n under such a party, as mere local or\n commercial connection is not sufficient. But\n the Court of Appeal hastened to add that, in\n cases such as the one of Mr Sancheti,\n Corporation of London was not party to the\n arbitration agreement, but the relevant party is\n the United Kingdom Government. The fact that\n in certain circumstances, the State may be\n responsible under international law for the\n acts of one of its local authorities, or may have\n to take steps to redress wrongs committed by\n one of the local authorities, does not make the\n local authority a party to the arbitration\n agreement.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P038_C01",
+      "text": "29. This Court ultimately concluded that\nSukanya Holdings\n(supra) was not applicable for interpreting\nSection 45\nof the\n\n Arbitration Act.\nThe ratio of the\nSukanya Holdings\n(supra)\n\n was restricted to arbitrations under\nPart I of the Arbitration Act\nas such.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P039_C01",
+      "text": "30. It may be noted that following the ratio in\nChloro Control\n(supra), the 246th Law Commission Report recommended an\n\n amendment to\nSection 2(1)(h)\nand\n\nof the Arbitration Act to\n\n modify the definition of ‘party’ under\nPart I of the Arbitration\n\n Act\n, to “a party to an arbitration agreement or any person\n\n claiming or through or under such party” to cure the anomaly\n\n pointed out by this Court in the\nChloro Control\n(supra) case. The relevant observations by the 246 th Law Commission Report\n\n are extracted below:\n“61… It would thus be incongruous and\n incompatible with this “consensual” and\n “agreement based” status of arbitration as a\n method of dispute resolution, to hold persons\n who are not “parties” to the arbitration\n agreement to be bound by the same.\n62.However, a party does not necessarily\n mean only the “signatory” to the\n arbitration agreement. In appropriate\n contexts, a “party” means not just a\n signatory, but also persons “claiming\n through or under” such signatory – for\n instance, successors­of­interest of such\n parties, alter­ego’s of such parties etc.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P039_C02",
+      "text": "This\n is particularly true in the case of\n unincorporated entities, where the issue of\n “personality” is usually a difficult legal\n question and raises a host of other issues. This principle is recognized by the New\n York Convention, 1985 which in article II\n (1) recognizes an agreement between parties\n\n“in respect of a defined legal relationship,\nwhether contractual or not.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P040_C01",
+      "text": "63. The Arbitration and Conciliation Act, 1996\nunder\nsection 7\nborrows the definition of the\n“arbitration agreement” from the corresponding\nprovision at\narticle 7\nof the UNCITRAL Model\nLaw which in turn borrows this from article II\nof the New York Convention. However, the\ndefinition of the word “party” in\nsection 2(1)(h)\nrefers to a “party” to mean “a party to an\narbitration agreement.” This cannot be read\nrestrictively to imply a mere “signatory” to an\narbitration agreement, since there are many\nsituations and contexts where even a “non­\nsignatory” can be said to be a “party” to an\narbitration agreement. This was recognized by\nthe Hon’ble Supreme Court in\nChloro Controls\nv.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P040_C02",
+      "text": "Severn Trent Water Purification\n, (2013) 1\nSCC 641, where the Hon’ble Supreme Court\nwas dealing with the scope and interpretation\nsection 45\nof the Act and, in that context,\ndiscussed the scope of the relevant doctrines\non the basis of which “non­signatories” could\nbe said to be bound by the arbitration\nagreement, including in cases of inter­related\ncontracts, group of companies doctrine etc.\n64.This interpretation given by the Hon’ble\nSupreme Court follows from the wording of\nsection 45\nof the Act which recognizes the right\nof a “person claiming through or under [a\nparty]” to apply to a judicial authority to refer\nthe parties to arbitration. The same language\nis also to be found in\nsection 54\nof the Act. This language is however, absent in the\ncorresponding provision of\nsection 8\nof the Act. It is similarly absent in the other relevant\nprovisions, where the context would demand\nthat a party includes also a “person claiming\nthrough or under such party”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P040_C03",
+      "text": "To cure this\nanomaly, the Commission proposes an\n\namendment to the definition of “party” under\nsection 2 (h)\nof the Act.”\n\n (emphasis supplied)\n\n We must here also state that the Law Commission did not\n examine the interpretation of ‘claiming through or under’. Rather,\n it simply recognized that there may be a need to extend the same\n to arbitrations under\nPart I of the Arbitration Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P041_C01",
+      "text": "31. Pursuant to the aforesaid recommendation, the legislature\n\n made the following amendment to\nSection 8(1)\nof the\n\n Arbitration Act. SECTION 8(1) PRIOR TO ACT 3 OF 2016 SECTION 8(1) AFTER ACT 3 OF 2016\n\n“8. Power to refer parties to 8. Power to refer parties to\narbitration where there is an arbitration where there is an\narbitration agreement.—(1) A arbitration agreement.—(1) A\njudicial authority before which an judicial authority, before which an\naction is brought in a matter which is action is brought in a matter which\nthe subject of an arbitration agreement is the subject of an arbitration\nshall, if a party so applies not later agreement shall, if a party to the\nthan when submitting his first arbitration agreement or any\nstatement on the substance of the person claiming through or\ndispute, refer the parties to under him, so applies not later than\narbitration.\nthe date of submitting his first\n statement on the substance of the\n\ndispute, then, notwithstanding any\n judgment, decree or order of the\n Supreme Court or any court, refer\n the parties to arbitration unless it\n finds that prima facie no valid\n arbitration agreement exists.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P041_C02",
+      "text": "The 2015 Amendment brought in four amendments to\nSection\n\n8(1)\n. Firstly, the scope of the concept of “party” has been\n\nexpanded to include persons claiming “through or under”. Secondly, the amendment also clarified the scope of judicial\n\ninterference, and that the same is to be limited only to the prima\n\nfacie examination regarding the existence of the arbitration\n\nagreement. Thirdly, the cut­off for submitting an application\n\nunder\nSection 8\nof the Arbitration Act has been stated to be “the\n\ndate of” submitting the first statement on the substance of the\n\ndispute. Fourthly, the aforesaid amendment shall apply\n\nnotwithstanding prior judicial precedent. However, it may be\n\nobserved that the Parliament has not carried out any\n\namendment to\nSection 2(1)(h)\nof the Arbitration Act. The impact\n\nof the absence of such an amendment needs to be clearly\n\nexamined by this Court. This has created an anomalous\n\nsituation wherein potentially a party “claiming through or\n\nunder” could be referred to an arbitration, but would not have\n\n the right to seek relief under\nSection 9\nof the Arbitration Act. This is merely an illustrative example to indicate a potentially\n\n anomalous result.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P042_C01",
+      "text": "32. In the case of\nAmeet Lalchand Shah v. Rishabh\n\n Enterprises\n, (2018) 15 SCC 678, this Court had to deal with a\n\n case wherein four parties had executed four agreements for the\n\n single purpose of commissioning a Photovoltaic Solar Plant in\n\n Uttar Pradesh. A Division Bench of this Court treated the\n\n contracts as interconnected. Although the parties were\n\n different, yet the agreements were effectuated in light of a\n\n single commercial project. Thereafter, the Court applied the\n\n amended\nSection 8(1)\nof the Arbitration Act and extended the\n\n arbitration to non­signatory and opined that the dispute could\n\n be resolved only by referring all four agreements and parties\n\n thereon to arbitration. The Court observed therein:\n“25. Parties to the agreements, namely,\n Rishabh and Juwi India: (i) Equipment and\n Material Supply Agreement; and (ii)\n Engineering, Installation and Commissioning\n Contract and the parties to Sale and Purchase\n Agreement between Rishabh and Astonfield are\n one and the same as that of the parties in the\n\nmain agreement, namely, Equipment Lease\n Agreement (14­3­2012). All the four\n agreements are inter­connected.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P042_C02",
+      "text": "This is a case\n where several parties are involved in a\n single commercial project (Solar Plant at\n Dongri) executed through several\n agreements/contracts. In such a case, all\n the parties can be covered by the\n arbitration clause in the main agreement\n i.e. Equipment Lease Agreement (14­3­\n 2012).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P043_C01",
+      "text": "26. Since all the three agreements of Rishabh\n with Juwi India and Astonfield had the\n purpose of commissioning the Photovoltaic\n Solar Plant project at Dongri, Raksa, District\n Jhansi, Uttar Pradesh, the High Court was not\n right in saying that the Sale and Purchase\n Agreement (5­3­2012) is the main agreement.\n The High Court, in our view, erred in not\n keeping in view the various clauses in all the\n three agreements which make them as an\n integral part of the principal agreement,\n namely, Equipment Lease Agreement (14­3­\n 2012) and the impugned order of the High\n Court cannot be sustained.”\n\n (emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P044_C01",
+      "text": "33. The interpretation of\nChloro Control\n(supra) was further\n\n expanded in the three Judge Bench decision of this Court in\nCheran Properties Ltd. v. Kasturi & Sons Ltd.\n, (2018) 16\n\n SCC 413. In that case, this Court interpreted\nSection 35\nof the\n\n Arbitration Act to enforce an Award against a non­signatory,\n\n even though it did not participate in the proceedings.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P045_C01",
+      "text": "34. This court in the case,\nReckitt Benckiser (India) (P) Ltd. v. Reynders Label Printing (India) (P) Ltd.\n, (2019) 7 SCC 62,\n\n wherein the two­Judge Bench of this Court refused to apply the\n\n “group of companies” doctrine as the applicant failed to prove\n\n the commonality of intention of the Respondents to be bound\n\n by the arbitration agreement:\n“4. Keeping in mind the exposition in Chloro\n Controls... In other words, whether the\n indisputable circumstances go to show that\n the mutual intention of the parties was to\n bind both the signatory as well as the non­\n signatory parties, namely, Respondent 1\n and Respondent 2, respectively, qua the\n existence of an arbitration agreement\n between the applicant and the said\n respondents.\n…\n …\n12.Thus, Respondent 2 was neither the\n signatory to the arbitration agreement nor\n did have any causal connection with the\n process of negotiations preceding the\n agreement or the execution thereof,\n whatsoever.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P045_C02",
+      "text": "If the main plank of the\n applicant, that Mr Frederik Reynders was\n acting for and on behalf of Respondent 2 and\n had the authority of Respondent 2, collapses,\n then it must necessarily follow that\n Respondent 2 was not a party to the stated\n agreement nor had it given assent to the\n arbitration agreement and, in absence thereof,\n\neven if Respondent 2 happens to be a\n constituent of the group of companies of\n which Respondent 1 is also a constituent, that\n will be of no avail. For, the burden is on the\n applicant to establish that Respondent 2\n had an intention to consent to the\n arbitration agreement and be party\n thereto, maybe for the limited purpose of\n enforcing the indemnity Clause 9 in the\n agreement, which refers to Respondent 1\n and the supplier group against any claim of\n loss, damages and expenses, howsoever\n incurred or suffered by the applicant and\n arising out of or in connection with\n matters specified therein. That burden has\n not been discharged by the applicant at all. On this finding, it must necessarily follow that\n Respondent 2 cannot be subjected to the\n proposed arbitration proceedings.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P045_C03",
+      "text": "Considering\n the averments in the application under\n consideration, it is not necessary for us to\n enquire into the fact as to which other\n constituent of the group of companies, of\n which the respondents form a part, had\n participated in the negotiation process.”\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P046_C01",
+      "text": "35. In the Division Bench decision of this Court in\nMahanagar\n\n Telephone Nigam Ltd. v. Canara Bank\n, (2020) 12 SCC 767,\n\n it was observed that the group of companies doctrine can be\n\n utilized to bind a third party to an arbitration, if a tight\n\n corporate group structure constituting a single economic reality\n\n existed. The Court held as under:\n\n“10.6. The circumstances in which the “group\n of companies” doctrine could be invoked to\n bind the non­signatory affiliate of a parent\n company, or inclusion of a third party to an\n arbitration, if there is a direct relationship\n between the party which is a signatory to the\n arbitration agreement; direct commonality of\n the subject­matter; the composite nature of the\n transaction between the parties. A “composite\n transaction” refers to a transaction which is\n interlinked in nature; or, where the\n performance of the agreement may not be\n feasible without the aid, execution, and\n performance of the supplementary or the\n ancillary agreement, for achieving the common\n object, and collectively having a bearing on the\n dispute.\n10.7.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P046_C02",
+      "text": "The group of companies doctrine has\n also been invoked in cases where there is a\n tight group structure with strong\n organisational and financial links, so as to\n constitute a single economic unit, or a\n single economic reality. In such a situation,\n signatory and non­signatories have been\n bound together under the arbitration\n agreement. This will apply in particular\n when the funds of one company are used to\n financially support or restructure other\n members of the group. [ ICC Case No. 4131 of\n 1982, ICC Case No. 5103 of 1988.]”\n\n (emphasis supplied)\n\nWe may notice that these cases have been decided by this\n\nCourt, without referring to the ambit of the phrase ‘claiming\n\nthrough or under’ as occurring under\nSection 8\nof the\n\nArbitration Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P047_C01",
+      "text": "36. The ratio of the\nChloro Control\n(supra) case alludes to the\n\n subjective intention of parties to be bound by arbitration\n\n agreement when the parties have clearly not been signatory to\n\n the agreement. Reconciling the two is difficult and requires\n\n exposition by this Court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P048_C01",
+      "text": "37. It may be noted that the doctrine, as expounded, requires the\n\n joining of non­signatories as ‘parties in their own right’. This\n\n joinder is not premised on non­signatories ‘claiming through or\n\n under’. Such a joinder has the effect of obliterating the\n\n commercial reality, and the benefits of keeping subsidiary\n\n companies distinct. Concepts like single economic entity are\n\n economic concepts difficult to be enforced as principles of law.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P049_C01",
+      "text": "38. The areas which were left open by this Court in\nChloro\n\n Control\n(supra) case has created certain broad­based\n\n understanding of this doctrine which may not be suitable and\n\n would clearly go against distinct legal identities of companies\n\n and party autonomy itself. The aforesaid exposition\nthe\n\n above case\nclearly indicates an understanding of the doctrine\n\n which cannot be sustainable in a jurisdiction which respects\n\n party autonomy. There is a clear need for having a re­look at\n\nthe doctrinal ingredients concerning the group of companies\n\n doctrine.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P050_C01",
+      "text": "39. Internationally, the group of companies doctrine has been\n\n accepted in varying degrees. Swiss Courts usually do not\n\n recognize such a doctrine under their Switzerland de lege lata.2\n\n One English Court has observed as under:\n“Mr. Hoffmann suggested beguilingly that it\n would be technical for us to distinguish\n between parent and subsidiary company in\n this context; economically, he said, they were\n one. But we are concerned not with\n economics but with law. The distinction\n between the two is, in law, fundamental and\n cannot here be bridged.”3\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P051_C01",
+      "text": "40. Similarly, in the case of Peterson Farms Inc. v. C & M\n\n Farming Ltd.,4 an arbitral award was challenged wherein the\n\n claimant received damages on its behalf as well as on behalf of\n\n its group entities before the Queen's Bench Division\n\n (Commercial Court). The Court partly set aside the award and\n\n stated that the group of companies doctrine does not form a\n\n part of English law. It further stated that a corporate structure\n 2 Award in Geneva Chamber of Commerce Case of 24 March 2000, 21 ASA\n Bull. 781 (2003).\n3 Bank of Tokyo v. Karoon, [1987] AC 45\n 4 [2004] EWHC 121 (Comm)\n\nexists to create separate legal entities, and a general agency\n\n relationship would defeat this purpose. The Court held therein:\n“65. In commercial terms the creation of a\n corporate structure is by definition designed to\n create separate legal entities for entirely\n legitimate purposes which would often if not\n usually be defeated by any general agency\n relationship between them…”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P052_C01",
+      "text": "41. The High Court of Australia, in the case of Tanning Research\n\n Laboratories Inc v. O'Brien, (1990) 169 CLR 332 interpreted\n\n the phrase “claiming through and under” in the following\n\n manner:\n“…A person who claims through or under a\n party may be either a person seeking to\n enforce or a person seeking to resist the\n enforcement of an alleged contractual right. The subject of the claim may be either a cause\n of action or a ground of defence. Next, the\n prepositions ‘through’ and ‘under’ convey\n the notion of a derivative cause of action or\n ground of defence, that is to say, a cause of\n action or ground of defence derived from\n the party. In other words, an essential\n element of the cause of action or defence\n must be or must have been vested in or\n exercisable by the party before the person\n claiming through or under the party can\n rely on the cause of action or ground of\n defence…”\n\n (emphasis supplied)\n\nIn the aforesaid case, a company and its creditor had entered a\n\n contract having an arbitration clause. Subsequently, litigation\n\n ensued, and a question arose as to whether the liquidator of\n\n the company could rely on the arbitration clause.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P052_C02",
+      "text": "The Court\n\n held that a liquidator may be a person who can claim through\n\n or under the company because the grounds of defence and the\n\n causes of action he depends on are vested in the company or\n\n are exercisable by the company. This meant that an essential\n\n element of a cause of action or defence must be, or have been,\n\n vested or exercisable by the original party before the person\n\n claiming through or under the said party can rely on the same.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P053_C01",
+      "text": "42. Viewed from a different angle, this Court in the case of\nVidya\n\n Drolia v. Durga Trading Corporation\n, (2021) 2 SCC 1 noted\n\n that ambit of judicial interference under\nSection 8\nand\nSection\n\nof the Arbitration Act is similar. The relevant observations of\n\n this Court in the aforesaid case in relation to the power under\nSection 8\nand\nSection 11\nis as follows:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P054_C01",
+      "text": "239. Moreover, the amendment to\nSection 8\nnow rectifies the shortcomings pointed out\nChloro Controls\ncase [\nChloro Controls (India)\n (P) Ltd. v. Severn Trent Water Purification Inc.\n,\n (2013) 1 SCC 641 : (2013) 1 SCC (Civ) 689]\n\nwith respect to domestic arbitration.\nJurisdictional issues concerning whether\ncertain parties are bound by a particular\narbitration, under group­company doctrine\nor good faith, etc., in a multi­party\narbitration raises complicated factual\nquestions, which are best left for the\ntribunal to handle. The amendment to\nSection 8\non this front also indicates the\nlegislative intention to further reduce the\njudicial interference at the stage of\nreference.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P055_C01",
+      "text": "240. Courts, while analysing a case under\nSection 8\n, may choose to identify the issues\nwhich require adjudication pertaining to the\nvalidity of the arbitration agreement. If the\ncourt cannot rule on the invalidity of the\narbitration agreement on a prima facie basis,\nthen the court should stop any further\nanalysis and simply refer all the issues to\narbitration to be settled.\n…",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P056_C01",
+      "text": "242. We are cognizant of the fact that the\nstatutory language of\nSections 8\nand\n\nare\ndifferent, however materially they do not\nvary and both sections provide for limited\njudicial interference at reference stage, as\nenunciated above.\n…\n\n244.1.\nSections 8\nand\n\nof the Act have the\nsame ambit with respect to judicial\ninterference.\n…\n\n244.3. The court, under\nSections 8\nand\n\n,\nhas to refer a matter to arbitration or to\n\nappoint an arbitrator, as the case may be,\n unless a party has established a prima facie\n (summary findings) case of non­existence of\n valid arbitration agreement, by summarily\n portraying a strong case that he is entitled\n to such a finding.”\n\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P057_C01",
+      "text": "43. In the aforesaid case of\nVidya Drolia\n(supra), this Court\n\n primarily delineated the threshold standard of reference to\n\n arbitration. The aforesaid case predominantly laid down that\n\n when an application is made under\nSection 11\nof the\n\n Arbitration Act, considering the scope of judicial intervention,\n\n the Courts are only required to look into the prima existence of\n\n an arbitration agreement.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P058_C01",
+      "text": "44. The aforesaid case pre­dominantly dealt with the scope of\n\n judicial interference at the referral stage. However, this Court\n\n did not have an occasion to explore the jurisprudential basis of\n\n group of companies doctrine and required ingredients to refer a\n\n “non­signatory” to arbitration. Especially, the scope of judicial\n\n reference at the stage of\nSections 8\nand\n\nof the Arbitration\n\n Act, needs to be relooked considering the ambit of unamended\nSection 2(1)(h)\nof the Arbitration Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P059_C01",
+      "text": "45. An arbitration agreement may be binding on parties, whether\n\n signatories or non­signatories, provided there is sufficient legal\n\n basis to bind them. Most legal bases for binding non­\n\n signatories to an arbitration agreement are of contractual\n\n origin, like agency, etc. Jurisprudence has shown that\n\n arbitration being a creature of contract, does not sit very well in\n\n binding non­signatories. Expounding on the same, Professor\n\n William Park, in one of his key works, captures the dilemma\n\n while attaching a non­signatory to the arbitral process5 as\n\n under:\n“For arbitrators, motions to join non­\n signatories create a tension between two\n principles: maintaining arbitration’s\n consensual nature, and maximizing an award’s\n practical effectiveness by binding related\n persons. Pushed to the limit of\n their logic, each goal points in an opposite\n direction. Resolving the tension usually\n implicates the two doctrines discussed below:\nimplied consent and disregard of corporate\n personality…\n\n The term “non­signatory” remains useful\n for what might be called “less­than­obvious”\n parties to an arbitration clause: individuals\n and entities that never put pen to paper,\n\n 5 William W.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P059_C02",
+      "text": "Park, Non­Signatories and International Contracts: An\n Arbitrator’s Dilemma, in Multiple Parties in International Arbitration\n (Oxford University Press) (2009).\n\nbut still should be part of the arbitration\n under the circumstances of the relevant\n business relationship. The label does little\n harm if invoked merely for ease of expression,\n to designate someone whose right or obligation\n to arbitrate may be real but not self­evident... Most significantly, the fact that a “non­\n signatory” might be bound to arbitrate does\n not dispense with the need for an\n arbitration agreement. Rather, it means\n only that the agreement takes its binding\n force through some circumstance other\n than the formality of signature.”\n\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P060_C01",
+      "text": "46. It is evident from the discussion above that the group of\n companies doctrine must be applied with caution and mere fact\n that a non­signatory is a member of a group of affiliated\n companies will not be sufficient to claim extension of the\n arbitration agreement to the non­signatory. In this context Gary\n Born6 notes as under:\n“GROUP OF COMPANIES” DOCTRINE\n Another significant, but controversial, basis\n for binding non­signatories to an arbitration\n agreement is the “group of companies”\n doctrine. Under this principle, non­signatories\n of a contract may be deemed parties to the\n associates arbitration clause based on factors\n which are often roughly comparable to those\n relevant to an alter ego analysis.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P060_C02",
+      "text": "In particular,\n where a company is a part of a corporate\n group, is subject to the control of (or controls)\n a corporation affiliate that has executed a\n 6 Gary B.Born’s, International Commercial Arbitration, 3rd Edition, Volume I, Page 1558 ­\n\ncontract and is involved in the negotiation or\n performance of that contract, then that\n company may in some circumstances invoke\n or be subject to an arbitration clause\n contained in that contract, notwithstanding\n the fact that it has not executed the contract\n itself. Unlike other bases for binding a non­\n signatory to an arbitration agreement (such as\n agency, alter ego, estoppel, third party\n beneficiary, or assignment), the group of\n companies doctrine was developed specifically\n in the arbitration context and is not typically\n invoked outside that context. At least thus far,\n the group of companies doctrine has also been\n explicitly accepted sin only a limited number\n of jurisdictions (in particular, as discussed\n below, France). In part for that reason, the\n doctrine has given rise to substantial\n controversy.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P060_C03",
+      "text": "Gary B Born also refers (in footnotes 222 and 223) to the fact\n\n that only a small number of jurisdictions France and India,\n\n appear to have applied the group of companies doctrine in the\n\n context of International Arbitration and to the prevalent\n\n criticism of the group of companies doctrine.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P061_C01",
+      "text": "47. In view of the aforesaid discussion, we feel it appropriate to\n\n refer the aspect of interpretation of ‘claiming through or under’\n\n as occurring in amended\nSection 8\nof the Arbitration Act qua\n\n the doctrine of group of companies to a larger Bench to provide\n\n clarity on this aspect. The law\nlaid down in\nChloro Control\n\n(supra) and the cases following it, appear to have been based,\n\n more on economics and convenience rather than law. This may\n\n not be a correct approach.\nThe Bench doubts the correctness of\n\n the law laid down in Chloro Control (supra) and cases\n\n following it.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 62,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P062_C01",
+      "text": "48. On a different note, we are cognizant that reference to a larger\n\n Bench should not be made in a casual and cavalier manner.\n\n However, we see that the questions raised herein are\n\n fundamental to the arbitration practice in India and have large\n\n scale repercussions.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P063_C01",
+      "text": "49. It is in this context that we deem it appropriate to refer the\n\n matter to a larger Bench as the threshold\nlaid down by\nShah\n\n Faesal v. Union of India\n, (2020) 4 SCC 1 stands adequately\n\n satisfied.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 64,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P064_C01",
+      "text": "50. In view of the aforesaid discussion, we deem it appropriate to\n\n refer this matter to a larger Bench to expound on the\n\n intricacies of the Group of Companies doctrine and answer the\n\n following questions:\n\na. Whether phrase ‘claiming through or under’ in\nSections\n\nand\n\ncould be interpreted to include ‘Group of\n Companies’ doctrine?\nb. Whether the ‘Group of companies’ doctrine as expounded\nChloro Control\nCase (supra) and subsequent\n judgments are valid in law?\n............................CJI.\n(N. V. RAMANA)\n\n .........…………….......J.\n (A.S. BOPANNA)\n\nNEW DELHI;\nMAY 06, 2022.\n\nREPORTABLE\n\n CIVIL ORIGINAL JURISDICTION\n\n ARBITRATION PETITION NO. 38 of 2020\n\nCox and Kings Ltd. ..... Appellant\n VERSUS\n\nSAP India Pvt. Ltd. & Anr. ..... Respondents\n\n JUDGEMENT\n\nSurya Kant, J:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 65,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P065_C01",
+      "text": "1. I have had the advantage of going through a scholarly and self­\n\nspeaking order prepared by Hon’ble the Chief Justice, doubting the\n\ncorrectness of a three judge bench judgment of this Court in\nChloro\n\nControls India (P) Ltd. v. Severn Trent Water Purification Inc.&\n\nAnr1\nand formulating the questions of law to be determined by a larger\n\nbench. While at the outset, I concur that the contours of the Group of\n\nCompanies Doctrine need to be settled by a larger bench, my thoughts\n\nare oriented in favour of the Doctrine as an integral part of Indian\n\narbitral jurisprudence for the reasons assigned below.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 66,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P066_C01",
+      "text": "2. The question which has fallen for consideration in this case is\n\nwhether the parent company of Respondent No. 1, namely Respondent\n\n2013 1 SCC 641.\nPage | 1\nNo. 2, should be joined to this arbitration petition regardless of the\n\nfact that the Petitioner had entered into an SAT­Software End User\n\nLicense Agreement and SAP­Enterprise Support Schedule with only\n\nthe subsidiary. Petitioner sought greenfield solutions for its E­\n\nCommerce problems, for which Respondent No. 1 provided its Hybris\n\nsolution system. Overtime, disputes arose between the parties. During\n\nthis phase, the Petitioner had requested Respondent No. 2 to mediate\n\nbetween the parties. However, the disputes could not be resolved.\n\nConsequently, the Petitioner initiated arbitration proceedings and has\n\nsought to bind Respondent No. 2 to the proceedings even though the\n\nsaid Respondent is not a signatory to the arbitration agreement.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 67,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P067_C01",
+      "text": "3. On the issue of whether Respondent No. 2 may be roped into the\n\narbitration pending between the Petitioner and Respondent No. 1,\n\nHon’ble the Chief Justice has noted that the basis under Indian law\n\nfor joining non­signatories to arbitral proceedings has been the Group\n\nof Companies Doctrine. While discussing the holdings in\nChloro\n\nControls and Cheran Properties Ltd. v. Kasturi and Sons Ltd. &\n\nOrs2\n, Hon’ble the Chief Justice felt it necessary to revisit certain\n\naspects of these decisions and determine whether the manner in\n\nwhich they have invoked the Group of Companies Doctrine within\n\nIndian jurisprudence is consistent and sound.\n\n2018 16 SCC 413. Page | 2\n4. Hon’ble the Chief Justice has very eruditely analysed the\n\nsustainability of the Group of Companies Doctrine and inter alia\n\npointed out that­\ni) The application of the Group of Companies Doctrine in Chloro\n\nControls relies upon the intent of the parties to include a non­\n\nsignatory to the arbitral proceedings.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 67,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P067_C02",
+      "text": "However, the Court in that\n\ndecision failed to adhere to contractual principles on the basis of\n\nwhich such intent is interpreted;\nii) Joinder of non­signatories based on the notion of “single\n\neconomic unit” ignores commercial reality and the importance of\n\ntreating different parties within the same group of companies as\n\nseparate legal entities;\niii) Following Chloro Controls there has been an expansion of the\n\nGroup of Companies Doctrine. A broad interpretation of the Doctrine\n\nis at odds with the principle of party autonomy;\niv) The line of judgments by this Court, beginning with Chloro\n\nControls, seem to be premised more on convenience and economic\n\nefficiency in resolution of disputes rather than a consistent and clear\n\nlegal doctrine which respects party autonomy and intent;\nv) The phrase “claiming through or under” as provided in\nSection\n\nof the Arbitration and Conciliation Act, 1996 (hereinafter, “the Act”),\n\nas amended via the Arbitration Amendment Act, 2016, may not be a\n\nlegitimate basis for reading the Group of Companies Doctrine into\n\nIndian law. A. Origin of the Group of Companies Doctrine\n\n Page | 3\n5.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 67,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P067_C03",
+      "text": "The Group of Companies Doctrine has generally been invoked by\n\ncourts and tribunals in arbitrations to either ‘extend’ the arbitration\n\nagreement or ‘bind’ a non­signatory affiliate of the contracting party to\n\nthe arbitration clause. As the name suggests, where an arbitration\n\nagreement is entered into by one of the companies in a group, the\n\nother members of the group may be bound by the arbitration\n\nagreement if the facts and circumstances, including the conduct of the\n\nparties, indicate that the true intention of parties was to bind the\n\nsignatories as well as the non­signatories.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 68,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P068_C01",
+      "text": "6. The Group of Companies Doctrine was first espoused explicitly\n\nby an arbitral tribunal in the case of Dow Chemicals v. Isover Saint\n\nGobain3. The International Chamber of Commerce (hereinafter “ICC”)\n\nTribunal opined that the scope and effect of the arbitration agreement\n\nshould be determined on the basis of the “common intent of the\n\nparties” as ascertainable from the circumstances related to\n\n‘conclusion, performance, and termination, of the contract’. The\n\nTribunal therein determined that the Dow Chemical Group had not\n\nattached any significance to which of them performed the distribution\n\nagreements with Saint Gobain and the common intent of all the\n\nparties was that they would be playing a role in performance of the\n\ncontract. The Tribunal further held that the companies within the Dow\n\nChemical group had acted as a single ‘economic reality’ or unit and\n\nRev Arb 137 1984; 110 JDI 899 (1983).\nPage | 4\nthat the non­signatories to the distribution agreements with Saint\n\nGobain would be bound to the arbitration agreement, regardless of\n\nwhether they had performed the contract.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 69,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P069_C01",
+      "text": "7.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 69,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P069_C02",
+      "text": "The Tribunal in Dow Chemicals laid down the elements\n\nrequired to attract the Group of Companies Doctrines, which read as\n\nfollows:\n“…irrespective of the distinct juridical identity of each of its\n members, a group of companies constitutes one and the\n same economic reality of which the Arbitral tribunal\n should take account when it rules on its own\n jurisdiction...”\n xxx\n Considering that the tribunal shall, accordingly, determine the\n scope and effects of the arbitration clauses in question, and\n thereby reach its decision regarding jurisdiction, by reference to\n the common intent of the parties to these proceedings, such as\n it appears from the circumstances that surround the conclusion\n and characterize the performance and later the termination of\n the contracts in which they appear.….\nxxx\n Considering, in particular, that the arbitration clause\n expressly accepted by certain of the companies of the\n group should bind the other companies which, by virtue\n of their role in the conclusion, performance, or\n termination of the contracts containing said clauses,\n and in accordance with the mutual intention of all\n parties to the proceedings, appear to have been veritable\n parties",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 69,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P069_C03",
+      "text": "to these contracts or to have been principally\n concerned by them and the disputes to which they may\n\n give rise.”\n\n (Emphasis Supplied)\n\n Page | 5\n B.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 69,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P069_C04",
+      "text": "Group of Companies Doctrine in Foreign Jurisdictions",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 70,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P070_C01",
+      "text": "8. It is important to recount the evolution of the Group of\n\n Companies Doctrine in France and other jurisdictions in order to\n\n understand some visible anomalies that have emerged in the Indian\n\n context.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 71,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P071_C01",
+      "text": "9. The practice by Courts and tribunals in terms of usage of the\n\n Group of Companies Doctrine has gravitated toward being a fact\n\n intensive exercise. In this context, what has emerged even in France\n\n where the Doctrine originated is that the existence of a group of\n\n companies is not the sole sufficient condition for the joinder of a non­\n\n signatory to arbitration proceedings. The Tribunal in ICC Case Nos.\n\n 7604 & 76104 had summed up the steps in the application of the\n\n doctrine and held:\n“…Although the existence of a group is the first\n condition for joining a third party to the arbitration\n proceedings, it is also necessary to determine the\n parties’ actual intention at the time of the facts or, at\n the very least the intention of the non­signatory third\n party.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 72,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P072_C01",
+      "text": "10. The Final Award in ICC Case No. 107585 elaborated as follows,\n “The extension of an arbitration agreement to a non­\n signatory is not a mere question of corporate structure\n or control, but rather one of the non­signatory’s\n participation in the negotiations, conclusion or\n\nICC award in Cases No. 7604 and 7610 of 1995, 125 J Droit Int’l 1027 (1998) and 4 ICC Awards 510.\n\nICC award in Case No. 10758 of 2000, 6 ICC Ct Bull 87 (No. 2, 2005), 5 ICC Awards 537, JDI\n 2001, 1171.\nPage | 6\n performance of the contract, or its conduct towards the\n other party that the Arbitral Tribunal can infer.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 73,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P073_C01",
+      "text": "11. Bernard Hanotiau, arguably France’s leading scholar on\n\ninternational arbitration, while referring to French jurisprudence since\n\nDow Chemicals, has opined that,\n “The existence of a group of companies gives a\n special dimension to the issue of conduct or consent. As several authors have pointed out, when there is a\n group of companies, one may presume that the\n parent company binds its subsidiaries; but on the\n other hand, only the companies that have been\n substantially involved in the negotiation and\n performance of the agreement containing the\n arbitration clause will be considered parties to the\n latter. The case law is not always entirely clear in this\n respect. In most cases, it seems that only a substantial\n involvement is considered sufficient to constitute consent\n or ratification.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 73,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P073_C02",
+      "text": "Some cases, however, suggest that a\n party’s conduct should not necessarily be regarded as an\n expression of a party’s implied consent; rather a party’s\n substantial involvement in the negotiation and\n performance of the contract and the knowledge of the\n existence of the arbitration clause have a standing of their\n own, as a substitute for consent”6\n (Emphasis Supplied)\n\nBernard Hanotiau, ‘Who Are the Parties to the Contract(s) or to the Arbitration Clause(s) Contained Therein? The Theories Applied by Courts and Arbitral Tribunals’ in Bernard Hanotiau (eds), Complex Arbitrations:\nMulti-party, Multicontract, Multi-issue – A comparative Study (Kluwer Law International 2020). Page | 7\n12. Thus, the relevance of the Group of Companies Doctrine in its\n\njurisdiction of origin is that of being a special lens through which the\n\nparties’ intentions are interpreted. The existence of a close group\n\nstructure would be only one of the considerations when determining\n\nthe implied consent of a third party to arbitrate.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 74,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P074_C01",
+      "text": "13. Subsequent French court decisions have taken a similar stance.\nLakovoglou Prodomos and Co. v. SAS Amplitude\n7, the Cour de\n\nCassation reiterated the requirement of involvement of the third party\n\nin the performance of the main agreement in order it to be bound by\n\nthe arbitration agreement contained therein. Simply the existence of a\n\nclosely knit group of companies would be insufficient.\nIn Societe\n\nAlcatel Business Systems v. Societe Akmor Technology 8 as well,\n\nthe Cour de Cassation noted that arbitral proceedings may bind non­\n\nsignatories involved in the substantive dispute itself.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 75,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P075_C01",
+      "text": "14. In yet another ICC Award9, the Tribunal held,“…There is no\n\ngeneral rule, in French international arbitration law, that would\n\nprovide that non­signatory parties members of a same group of\n\ncompanies would be bound by an arbitration clause, whether\n\nalways or in determined circumstances.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 76,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P076_C01",
+      "text": "15. The reception to the Group of Companies Doctrine in other\n\njurisdictions has been mixed. The Swiss Federal Tribunal rejected the\n\nGroup of Companies Doctrine10 but has accepted that a third party\n\nCour de Cas, 1st Civ Ch, 27 Mar 2007, no 04-20842, JCP E 2007, 2018. Cour de Cas, 1st Civ Ch, 7 Nov. 2012, No. 11-25.891, JCP 2012, I, 1354 No 5. ICC Case No 11405, Interim award of 29 Nov 2001, Unpublished (Sole Arbitrator, Paris). Judgment of 29 January 1996, 14 ASA Bull 496 (Swiss Fed Trib) (1996); Jean Francois Poudret, ‘The\n\n Page | 8\nmay ‘implicitly’ consent to be bound to arbitration in certain\n\ncircumstances. In general, the involvement of the non­signatory in the\n\nperformance of the contract will be interpreted as intent to be bound\n\nto the arbitration agreement.11 However, this requires an active\n\ninvolvement which shows clear and unambiguous intent, thus setting\n\na high threshold for a third party to be joined.12\n16.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 76,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P076_C02",
+      "text": "The Swiss sentiment vis­à­vis the Group of Companies Doctrine\n\nis mirrored by British jurisprudence where there has been an\n\nunequivocal rejection of the Doctrine. 13 Further, the expression\n\n“claiming under or through” in Sec. 82(2) of the English Arbitration\n\nAct, 1996, which is similar to\nSec. 8\nof the amended Indian Act, 1996,\n\nhas been interpreted to refer to instances that are unrelated to the\n\nGroup of Companies Doctrine. British Courts have deemed it to mean\n\ninter alia assignees14, subrogated insurer15, novatees16, and\n\nsuccessors17.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 77,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P077_C01",
+      "text": "17. American Courts usually do not refer to the Group of Companies\n\nDoctrine and rely primarily on aspects of American Contract Law and\n\nAgency Law.18 Company law principles such as alter ego and piercing\n\nthe veil are additionally invoked by American Courts though the\n\nExtension of the Arbitration Clause: French and Swiss Approaches’ 122 JDI (Clunet) 893 (1995). Judgment of 19 August 2008, DFT 4A_128/2008 (Swiss Fed Trib) (2008). Gabrielle Kaufmann-Kohler & A Rigozzi, International Arbitration: Law and Practice in Switzerland (OUP\n2015). Peterson Farms Inc v C&M Farming Ltd [2004] EWHC 121. Through Transport Mutual Insurance Association (Euasia) Ltd v New India Assurance Co. Ltd [2005] EWHC\n455 Moore-Bick J. Starlight Shipping Co. and Anor v Tai Ping Insurance Co Ltd, Hubei Branch and Anor, [2007] EWHC 1893. Charles M Willie & Co (Shipping) Ltd v Ocean Laser Shipping Ltd (The Smaro) [1998] EWHC 1206. Hanotiau (n 6). Gary Born, ‘Parties to International Arbitration Agreements, International Commercial Arbitration’ in Gary\nBorn (eds) International Commercial Arbitration (Kluwer Law International 2021).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Peterson Farms Inc v C&M Farming Ltd"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 77,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P077_C02",
+      "text": "Page | 9\nthreshold for their application remains relatively high. 19 American\n\nCourts have sometimes reached conclusions through reasoning that\n\nresembles the Group of Companies Doctrine but which are actually\n\nbased on the principle of equitable estoppel. 20\n18. The common theme among all these jurisdictions is that each of\n\nthem has negotiated a compromise with the formalistic requirement of\n\nexplicit assent through a signed contract. In other words, these\n\njurisdictions have moved away from this need for explicit consent in\n\neach and every instance and have instead attempted to identify\n\nconstructive consent via examination of the actions of the parties\n\nwhen the circumstances of the case require it. In some instances,\n\nthese jurisdictions have even applied standards that are not based\n\nupon consent at all such as equitable estoppel and piercing the veil. C. Evolution of the Group of Companies Doctrine in India",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 78,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P078_C01",
+      "text": "19. Indian arbitral jurisprudence with respect to binding a non­\n\nsignatory to an arbitration agreement has seen considerable\n\ntransformation. Sukanya Holdings (P) Ltd. v. Jayesh H. Pandya\n\n& Anr21\ncertain disputes had arisen between multiple parties relating\n\nto the same transaction, however, not all parties were signatories to\n\nthe agreement containing the arbitration clause. The Court therein,\n\nrelying upon the unamended\nSection 8\nof the Act, held that it would\n\nHicks v. Bank of Am, NA, 218 F App’x 739, 746 (2007); Bridas SAPIC v. Turkmenistan, 447 F 3d 411, 416-\n20 (2006). Astra Oil Co v Rover Navigation, Ltd, 344 F 3d 276, 277 (2003); Choctaw Generation LP v. Am Home Assur\nCo, 271 F 3d 403, 406-07 (2001).\n\n2003 5 SCC 531. Page | 10\nnot be possible to refer the non­signatories to arbitration. Thereafter,\n\nIndowind Energy Ltd. v. Wescare (I) Ltd.& Anr\n22 this Court\n\ninterfered with an order of the Madras High Court which had allowed\n\nthe application under\nSection 11\nof the Act and joined Indowind to\n\nproceedings even though Indowind was not a signatory to the\n\nagreement. This Court, while allowing the appeal, held:\n“18.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 78,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P078_C02",
+      "text": "The very fact that the parties carefully avoided making\n Indowind a party and the fact that the Director of Subuthi though a\n Director of Indowind, was careful not to sign the agreement as on\n behalf of Indowind, shows that the parties did not intend that\n Indowind should be a party to the agreement. Therefore the mere\n fact that Subuthi described Indowind as its nominee or as a\n company promoted by it or that the agreement was purportedly\n entered by Subuthi on behalf of Indowind, will not make Indowind a\n party in the absence of a ratification, approval, adoption or\n confirmation of the agreement dated 24­2­2006 by Indowind.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 79,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P079_C01",
+      "text": "20. With utmost respect, it appears that the Court in Indowind\n\nadopted a rigid and restrictive understanding of the Act. In order to\n\nhold that a third party cannot be subjected to the arbitration\n\nproceedings, the two judge bench placed an undue emphasis on the\n\nissue of formal consent. However, as noticed earlier, several\n\njurisdictions have recognized that formal consent to an arbitration\n\nagreement is not a sine qua non to adduce the intention of a third\n\nparty to be bound to an arbitration agreement. In fact, certain\n\n2010 5 SCC 306.\nPage | 11\nprinciples by which Courts across jurisdictions join non­signatories to\n\narbitration do not depend upon intent of the parties at all.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 80,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P080_C01",
+      "text": "21. The principle\nlaid down in\nIndowind was then followed in\nS.N. Prasad v. Monnet Finance & Ors23\nas well. Eventually, this position\n\nof law regarding the joinder of non­signatories was radically\n\ntransformed after the decision of this Court in Chloro Controls,\n\nwhereby, the Group of Companies Doctrine was introduced into Indian\n\njurisprudence. In that case, there was a Shareholders Agreement\n\nbetween an Indian party and a foreign entity. The Shareholders\n\nAgreement was the principal or the ‘parent’ agreement with English\n\nlaw governing the transaction and the seat of arbitration as London. Beyond the Shareholders Agreement, there were various other inter­\n\nlinked agreements but not all these agreements had the same parties. These other agreements, however, were part of a ‘composite\n\ntransaction’ and all arose out of the mother agreement. The question\n\nbefore the Court was whether all these parties could be referred to a\n\nsingle and composite arbitral tribunal. Noting earlier precedents, this\n\nCourt stated that while Sukanya Holdings was decided under the\n\nambit of\nSection 8\nof the Act, this case fell within the purview of\nSection 45\nof the Act which had a much wider scope.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 80,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P080_C02",
+      "text": "Relying upon the\n\nexpression “person claiming through or under” in\nSection 45\n, this\n\nCourt ruled that it had the power to refer parties in a multi­party\n\n2011 1 SCC 320. Page | 12\nagreement to Arbitration while invoking the Group of Companies\n\nDoctrine. It was further elucidated:\n“69. We have already noticed that the language of\nSection 45\nis at a substantial variance to the language\nSection 8\nin this regard. In\nSection 45\n, the expression\n “any person” clearly refers to the legislative intent of\n enlarging the scope of the words beyond “the parties”\n who are signatory to the arbitration agreement. Of\n course, such applicant should claim through or under\n the signatory party. Once this link is established, then\n the court shall refer them to arbitration. The use of the\n word “shall” would have to be given its proper meaning\n and cannot be equated with the word “may”, as liberally\n understood in its common parlance. The expression\n “shall” in the language of\nSection 45\nis intended to\n require the court to necessarily make a reference to\n arbitration, if the conditions of this provision are\n satisfied.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 80,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P080_C03",
+      "text": "To that extent, we find merit in the submission\n that there is a greater obligation upon the judicial\n authority to make such reference, than it was in\n comparison to the 1940 Act. However, the right to\n reference cannot be construed strictly as an indefeasible\n right. One can claim the reference only upon satisfaction\n of the prerequisites stated under\nSections 44\nand\n\nread with Schedule I of the 1996 Act. Thus, it is a legal\n right which has its own contours and is not an absolute\n right, free of any obligations/limitations.\nxxx\n 72….In other words, ‘intention of the parties’ is a very\n significant feature which must be established before the\n\n Page | 13\n scope of arbitration can be said to include the signatory\n as well as the non­signatory party.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 81,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P081_C01",
+      "text": "73. A non­signatory or third party could be subjected to\n arbitration without their prior consent, but this would\n only be in exceptional cases. The court will examine\n these exceptions from the touchstone of direct\n relationship to the party signatory to the arbitration\n agreement, direct commonality of the subject­matter and\n the agreement between the parties being a composite\n transaction. The transaction should be of a composite\n nature where performance of the mother agreement may\n not be feasible without aid, execution and performance\n of the supplementary or ancillary agreements, for\n achieving the common object and collectively having\n bearing on the dispute. Besides all this, the court would\n have to examine whether a composite reference of such\n parties would serve the ends of justice. Once this\n exercise is completed and the court answers the same in\n the affirmative, the reference of even non­signatory\n parties would fall within the exception afore­discussed.”\n\n (Emphasis Supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 82,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P082_C01",
+      "text": "22. To give legislative effect to the decision in Chloro Controls, the\n\nLaw Commission in its 246 th Report made the following\n\nrecommendation:\n“64. This interpretation given by the Hon’ble Supreme Court\n follows from the wording of\nsection 45\nof the Act which recognizes\n the right of a “person claiming through or under [a party]” to apply\n to a judicial authority to refer the parties to arbitration. The same\n language is also to be found in\nsection 54\nof the Act. This language\n\n Page | 14\n is however, absent in the corresponding provision of\nsection 8\n the Act. It is similarly absent in the other relevant provisions,\n where the context would demand that a party includes also a\n “person claiming through or under such party”. To cure this\n anomaly, the Commission proposes an amendment to the\n definition of “party” under\nsection 2 (h)\nof the Act.”24\n23. The Legislature in its wisdom did not amend the definition of\nSection 2(1)(h)\nof the Act but\nSection 8\nof the Act was amended\n\nthrough Act 3 of 2016, which now reads as follows:\n“(1).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 82,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P082_C02",
+      "text": "A judicial authority, before which an action is brought in a\n matter which is the subject of an arbitration agreement shall, if a\n party to the arbitration agreement or any person claiming\n through or under him, so applies not later than the date of\n submitting his first statement on the substance of the dispute,\n then, notwithstanding any judgment, decree or order of the\n Supreme Court or any court, refer the parties to arbitration unless\n it finds that prima facie no valid arbitration agreement exists.”\n (Emphasis Supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 83,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P083_C01",
+      "text": "24. Following the post amendment provision(s), the Group of\n\nCompanies Doctrine in the Indian Context was further expanded by a\n\nthree judge bench of this Court in Cheran Properties Ltd. This Court\n\ninvoked the Group of Companies Doctrine and laid down that even\n\nthough Cheran was not a party to the arbitration agreement and had\n\nnot appeared before the Tribunal, the arbitral award could be enforced\n\nagainst it as Cheran was a ‘party claiming under’ one of the\n\nsignatories to the agreement. Speaking on the importance of this\n\ndoctrine in modern commercial transactions, the Court held that, “ The\n\nLaw Commission of India, Amendments to the Arbitration and Conciliation Act 1996 ¶ 64.\nPage | 15\neffort is to find the true essence of the business arrangement and to\n\nunravel from a layered structure of commercial arrangements, an\n\nintent to bind someone who is not formally a signatory but has\n\nassumed the obligation to be bound by the actions of a signatory .”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 84,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P084_C01",
+      "text": "25. Reckitt Benckiser (India) (P) Ltd. v. Reynders Label\n\nPrinting (India) (P) Ltd & Anr\n25, while acknowledging the Group of\n\nCompanies Doctrine, this Court refused to allow the joinder of a non­\n\nsignatory as it could not be proved that the non­signatory company\n\nhad negotiated the contract on behalf of the signatory.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 85,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P085_C01",
+      "text": "26. A two judge bench of this Court in\nMahanagar Telephone\n\nNigam Limited v. Canara Bank & Ors\n26, was concerned with the\n\njoinder of CANFINA, which was a non­signatory to the agreement but a\n\nwholly owned subsidiary of Canara Bank. Upon considering the nature\n\nof transaction involved and the conduct of the parties, the Court held\n\nthat this was a case of “tacit or implied consent” and accordingly it\n\nwas necessary to join CANFINA to the arbitral proceedings. The Court\n\nstated the principles governing the group of companies doctrine to be\n\nas follows:\n“10.7. The group of companies doctrine has also been\n invoked in cases where there is a tight group structure\n with strong organisational and financial links, so as to\n constitute a single economic unit, or a single economic\n reality. In such a situation, signatory and non­signatories\n have been bound together under the arbitration\n\n2019 7 SCC 62.\n\n2020 12 SC 767.\nPage | 16\n agreement. This will apply in particular when the funds of\n one company are used to financially support or restructure\n other members of the group. [ICC Case No. 4131 of 1982,\n ICC Case No. 5103 of 1988.]”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 86,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P086_C01",
+      "text": "27. A three judge bench of this Court (in which I was a member), has\n\nin a very recent decision dated 27.04.2022 in Oil and Natural Gas\n\nCorporation Ltd. v. M/s Discovery Enterprises Pvt. Ltd. & Anr 27,\n\nreiterated the deep rooted existence of the Doctrine in the Indian\n\ncontext. The Court held that the following factors may be considered\n\nwhen deciding whether a non­signatory company within a group of\n\ncompanies would be bound by the arbitration agreement:\n“i) The mutual intent of the parties;\n(ii) The relationship of a non­signatory to a party\n which is a signatory to the agreement;\n(iii) The commonality of the subject matter;\niv) The composite nature of the transaction; and\n(v) The performance of the contract.”\n (Emphasis Supplied)\n\nD. Current State of the Group of Companies Doctrine",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 87,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P087_C01",
+      "text": "28. At the outset, it must be candidly acknowledged that certain\n\ninconsistencies do exist in terms of the judgments of this Court\n\nregarding the underlying basis for the Group of Companies Doctrine.\n\nFor instance, in Chloro Controls, the Court seemed to adopt\n\nCivil Appeal No 2042 of 2022.\nPage | 17\ncontradictory positions in terms of when a third party may be bound to\n\nthe arbitration agreement. On the one hand, the Court emphasized on\n\nthe intention of the parties to include the non­signatory party, but on\n\nother, it went on to add that non­signatories may be added to the\n\narbitration proceedings without their consent in “exceptional cases”.\n\nThus, it seems that while the Chloro Controls places a premium on\n\nthe intent of parties, it also advocates taking an equity based approach\n\nto discard intent completely if so required in the interest of justice.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 88,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P088_C01",
+      "text": "29. In Mahanagar Telephone Nigam Ltd. the Court had applied\n\nthe Group of Companies Doctrine where a tight structure with deep\n\nfinancial and organization links existed between a signatory and non­\n\nsignatory to the extent where they constituted a “single economic\n\nunit”. Such an approach has the tendency to overlook the principle of\n\nseparate legal entity and seems to dispense almost entirely with the\n\nintent and/or consent of parties.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 89,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P089_C01",
+      "text": "30. It is also worth noting that in Cheran Properties, this Court\n\nenforced an award against a party that had not even participated in\n\nthe arbitral proceedings, by relying on the phrase “persons claiming\n\nunder them” in\nSection 35\nof the Act. This presents the highest\n\nexpansion of the Group of Companies Doctrine, whereby, a party is\n\nbound to the final award itself on the basis of the doctrine without\n\nhaving a chance to present its case or defend itself in the arbitral\n\nproceedings. This Court in Reckitt Benckiser fixed a higher threshold\n\n Page | 18\nof evidence for the Group of Companies Doctrine to apply as compared\n\nto earlier judgments. Finally, in ONGC, the Court has upheld the\n\nnecessity for a deeper probe to determine whether the Doctrine is\n\nattracted in the facts and circumstances of a given case. This leads to\n\nquestions regarding which standard of proof must be fulfilled to apply\n\nthe Doctrine.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 90,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P090_C01",
+      "text": "31. An overall analysis of the above cited judgments reveals an\n\nunwitting, but nonetheless discordant note with implicit\n\ncontradictions. However, in my humble view, the appropriate response\n\nto such uncertainty would be an authoritative determination of the\n\ncontours of the Doctrine rather than a wholesale uprooting of it from\n\nIndian arbitration law altogether.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 91,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P091_C01",
+      "text": "32. It is important to note that the Doctrine has now travelled a\n\nreasonable distance in Indian law. While the opinion of Hon’ble the\n\nChief Justice correctly notes that the term “parties” under\nSection 2(1)\n(h) has not been amended despite the changes introduced in\nSection 8\nof the Act, it appears to me that one of the objectives in introducing\n\nthe amended\nSection 8\nwas to accord tacit recognition and acceptance\n\nof the Group of Companies Doctrine in India.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 92,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P092_C01",
+      "text": "33. It may also be noted that the question as to which entities are\n\nparties to the arbitration agreement is usually left to judicial\n\ndiscretion, especially when there is a limited statutory guidance. 28\n\nThus, the perception regarding the questionable sourcing of the Group\n\nBorn (n 18).\nPage | 19\nof Companies Doctrine from the wording of\nSection 8\nof the Act, does\n\nnot imply that it is barred from Indian arbitration law. Undoubtedly,\n\nthe Courts have the judicial discretion to invoke and apply the\n\nDoctrine in Indian arbitral jurisprudence.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 93,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P093_C01",
+      "text": "34. The earlier analysis on the interpretation of the Group of\n\nCompanies doctrine fortifies that when formulated in its most modern\n\nsense, it does not affect the separate legal entity principle in company\n\nlaw. Gary Born29 notes that the Doctrine,\n “…is ordinarily a means of identifying the parties’\n intentions, which does not disturb or affect the legal\n\n personality of the entities in question. Rather, as usually\n formulated, the group of companies doctrine is akin to\n principles of agency or implied consent, whereby the\n corporate affiliations among distinct legal entities\n provide the foundation for concluding that they were\n intended to be parties to an agreement, notwithstanding\n their formal status as non­signatories.” Commentators\n have observed the same distinctions between the group of\n companies doctrine and veil­piercing principles.”\n (Emphasis Supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 94,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P094_C01",
+      "text": "35. It therefore appears that the current interpretation of the\n\nDoctrine ‘does not disturb or affect’ the separate corporate form of\n\ndifferent entities within a group of companies. Neither does the act of\n\npiercing the corporate veil necessarily cause the separate legal entity of\n\nthe third party to collapse. In this context, corporate law doctrines\n\nsuch as piercing the veil and alter ego are a means by which to identify\n\nBorn (n 18).\nPage | 20\nfraudulent activity by a non­signatory which would then provide the\n\nlegal justification for application of the Group of Companies Doctrine\n\nto bind that non­signatory to the arbitration. This is a departure from\n\nthe “single economic reality” approach which views the entire group of\n\ncompanies as a singular entity and overrides the separate legal\n\npersonalities of the different members of the group.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 95,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P095_C01",
+      "text": "36. Thus, in this approach, the separate legal form of the parent\n\ncompany remains undisturbed and the application of veil piercing or\n\nalter ego is merely for identification of duplicitous acts by a third party\n\nwhich would then lead to application of the Group of Companies\n\nDoctrine to bind them to arbitration. The function of this is to identify\n\nparties which have no actual intent to be part of the arbitration and\n\ndeliberately use the corporate form as a shield to avoid being subjected\n\nto the arbitration proceedings. For such scenarios, a formal intent­\n\nbased approach to Group of Companies Doctrine may be insufficient to\n\naddress the dispute.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 96,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P096_C01",
+      "text": "37. From the analysis above, it appears that joining a third party to\n\narbitration based on the convergence of a group of companies as a\n\n“single economic unit” is no longer the norm under the Group of\n\nCompanies Doctrine. Instead, the standard is premised primarily on\n\nimplied consent drawn from the acts and conduct of an entity within\n\nthe group of companies. Where a closely knit group exists, the\n\ninterpretation of a third party’s intent to be bound to the arbitration\n\nwould be construed from facts and circumstances specific to that\n Page | 21\ngroup and the manner in which it functions. This maintains the\n\nseparate legal personality of the non­signatory and joins it to the\n\narbitration proceedings on the basis of its implied acceptance to be\n\nbound.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 97,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P097_C01",
+      "text": "38. It must be emphasized that the Doctrine is an exception to the\n\ngeneral rule of arbitration. However, where the facts of a case indicate\n\nthat the intention of the parties was to bind the non­signatory, the\n\nCourts, after exercising due care and caution, will be justified in\n\ninvoking the Doctrine to do substantial and complete justice. After the\n\n2016 amendment to the Act, this Court has continued to acknowledge\n\nand apply the Doctrine in exceptional cases. When all of these factors\n\nare viewed in consonance, it emerges that the Doctrine has found firm\n\nfooting in Indian jurisprudence.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 98,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P098_C01",
+      "text": "39. This is not without reason. On a practical front, the Doctrine is a\n\nmeans of grappling with complex multi­party business transactions\n\nwhich necessarily involve more than two parties, even if these\n\nadditional parties do not finally and formally sign the contract. To that\n\nextent, the Doctrine helps to ensure that arbitration as a dispute\n\nresolution mechanism is able to adapt to this reality. Failure to do so\n\nwould make arbitration an ineffective dispute resolution forum as\n\nparties which are important for the complete and proper resolution of\n\nthe dispute will be left out of the adjudication.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 99,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P099_C01",
+      "text": "40. The Doctrine also ensures that multiplicity of proceedings are\n\navoided. A party may be involved in the negotiation and even\n\n Page | 22\nperformance of an agreement but still be able to circumvent the\n\narbitral process on the ground that it did not sign the contract. Such a\n\nparty would then have to be proceeded against in court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 100,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P100_C01",
+      "text": "41. There are additional benefits of having the Group of Companies\n\nDoctrine in Indian jurisprudence. These arise from the peculiar\n\ncircumstances and manner in which Indian business entities transact\n\nwith each other and establish commercial relations. A large chunk of\n\nIndian business houses are composed of family run entities or groups.\n\nThe individuals running these entities often occupy multiple roles in\n\ndifferent companies within the group. Thus, the commonality in terms\n\nof key managerial personnel and the preponderance of family\n\nmembers occupying these positions moulds the way these companies\n\nconduct business. Entering into commercial transactions involves\n\ninformal understandings based on familiarity with persons who run\n\nthe overall group of companies even if not the specific entity with\n\nwhich a contract is formally executed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 101,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P101_C01",
+      "text": "42. In this scenario it becomes even more relevant to have a doctrine\n\nsuch as the Group of Companies in Indian arbitration law. A third\n\nparty outside the group of companies may transact with a subsidiary\n\ndue to its faith in the bona fides and commercial know­how of the\n\nparent. The third party in question relies upon the stature or presence\n\nof the larger parent company, either due to its reputation or personal\n\nfamiliarity with its promoters, directors or executives.\nPage | 23\n43. The Doctrine itself may also provide greater stimulus for\n\nbusiness with new entities that are starting out. Due to the\n\naforementioned peculiarities in Indian business relations, newer\n\ncompanies have significant difficulty in gaining traction. One of the\n\nmeans by which such companies can then gain a foothold is by being\n\npart of a large (often family held) group of companies. These new\n\nentities are then able to feed off the goodwill or relations that the\n\nlarger group has with the rest of the business world. Given that the\n\nconnection to the larger group is intrinsic to the way in which\n\nbusiness is conducted, arbitration law must acknowledge and address\n\nthis reality.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 102,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P102_C01",
+      "text": "44. In fact, Tribunals have already recognized the reliance that is\n\noften placed by a company upon the conduct of the non­signatory\n\nparent company when entering into an agreement with its subsidiary.\n\nThe Tribunal in\nPetroAlliance Services Company Ltd. v. Yukos\n\nOil30\nunder the aegis of the Arbitration Institute of the Stockholm\n\nChamber of Commerce is a prime example of international arbitration\n\ngrappling with this issue.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 103,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P103_C01",
+      "text": "45. Therein, the tribunal noted that Yukos Oil, via its actions, had\n\ncreated an expectation in the mind of PetroAlliance that it was willing\n\nand ready to back up/step into the shoes of its subsidiary YNG with\n\nwhich PetroAlliance had entered into a contract. While there were\n\nseveral factors that contributed to the decision of the tribunal to bind\n\nSCC Case No 108/1997, 2000.\nPage | 24\nYukos to the arbitral proceedings, the most relevant takeaway for our\n\npurposes is the manner in which the tribunal enunciated the “theory\n\nof trust” that exists under Swedish contract law.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 104,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P104_C01",
+      "text": "46. The important consideration under this theory, similar to\n\ncompany law principles such as alter ego, is not the actual intent of\n\nthe party as the non­signatory may be acting duplicitously to\n\nrepresent itself as the driver of the contract while avoiding any\n\nliabilities arising from it by not signing the contract. Hence, what the\n\ntheory examines is what intent the non­signatory has conveyed to a\n\nreasonable party in the same position as the contracting entity. The\n\ndecisive factor is the extent to which the contracting party has placed\n\n“trust” in the other party, reasonably, and on the basis of the non­\n\nsignatory’s actions.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 105,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P105_C01",
+      "text": "47. To clarify, the wholesale adoption of the Swedish theory of trust\n\ninto Indian law is not being advocated. Rather, the notion of how we\n\nmay apply the Group of Companies Doctrine in situations where non­\n\nsignatory parties are acting in a fraudulent or deceitful manner can be\n\naddressed by examining the impression that was conveyed to the\n\ncontracting parties by the third party. This is in addition to the\n\nalready well­established principles of piercing the veil and alter ego.\n\nThis may also address the legitimate critique of Chloro Controls and\n\nCheran Properties, that despite placing an emphasis on legal\n\nstandards of intent, the Court eventually resorted to principles of\n\n Page | 25\nequity and commercial/economic expediency to apply the Group of\n\nCompanies Doctrine in those cases.\nE. Conclusion",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 106,
+      "chunk_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD_P106_C01",
+      "text": "48. In view of the above discussion, respectfully, I am of the opinion\n\nthat the questions that are sought to be referred to a larger bench\n\ndeserve further elaboration. With all the humility at my command, the\n\nfollowing substantial questions of law also arise for authoritative\n\ndetermination by a larger bench in addition and in conjunction with\n\nthose formulated by Hon’ble the Chief Justice:\nA. Whether the Group of Companies Doctrine should be read into\nSection 8\nof the Act or whether it can exist in Indian jurisprudence\n independent of any statutory provision?\nB. Whether the Group of Companies Doctrine should continue to be\n invoked on the basis of the principle of ‘single economic reality’?\nC. Whether the Group of Companies Doctrine should be construed as\n a means of interpreting the implied consent or intent to arbitrate\n between the parties?\nD. Whether the principles of alter ego and/or piercing the corporate\n veil can alone justify pressing the Group of Companies Doctrine\n into operation even in the absence of implied consent?\n………..………………… J.\n(SURYA KANT)\nNEW DELHI\nDATED :06.05.2022\n Page | 26",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Cox And Kings Ltd. vs Sap India Pvt. Ltd.",
+    "case_id": "SC_2022_COX_AND_KINGS_LTD_VS_SAP_INDIA_PVT_LTD",
+    "court": "Supreme Court of India",
+    "year": "2022",
+    "facts_summary": "1. This petition calls on us to examine the ‘group of companies\n\n doctrine’. In particular, it requires us to examine whether the\n\n principles of party autonomy under arbitration law and\n\n corporate personality in company law have been adequately\n\n safeguarded in outlining the scope and applicability of the\n\n doctrine being followed at present in Indian jurisprudence. 2. The present Arbitration Petition has been preferred by the\n\n Petitioner­Applicant under Section 11(6) and Section l1(12)(a) of\n\n the\nArbitration and Conciliation Act, 1996\n(hereinafter the\n\nArbitration Act\n, on the ground\n\nthat there has been a failure with respect to the appointment of\n\n an Arbitral Tribunal in accordance with the agreements\n\n between the parties. 3. The facts necessary for the adjudication of the dispute are as\n\n follows: on 14.12.2010, the Applicant and Respondent No. l\n\n entered into an SAP Software End User License Agreement and\n\n SAP Enterprise Support Schedule under which the Applicant\n\n was made a licensee of certain ERP software developed and\n\n owned by the Respondents. This is an overall licensing\n\n agreement that all customers of the Respondents have to enter\n\n into compulsorily in advance in order to utilize any software of\n\n the Respondents. In 2015, while the Applicant was developing\n\n its own e­commerce platform, the Respondents approached the\n\n Applicant and recommended their Hybris Solution as it would\n\n be 90% compatible with the Applicant’s software. The\n\n Respondents indic",
+    "legal_issues": "11. Mr. Kailash Vasdev, learned Senior Advocate appearing on\n behalf of the Applicant made the following submissions:\ni. Respondent No. 1 is a wholly owned subsidiary and\n proprietary concern of Respondent No. 2. Since the\n software is licensed by Respondent No. 2 to Respondent\n No. 1, the customisation would not be possible without\n the aid of Respondent No. 2. Therefore, all the four\n agreements together form a composite agreement and\n are a part of a single, interlinked transaction by both\n Respondent Nos. 1 and 2.\nii. The agreements and email correspondences clearly\n show that Respondent Nos. 1 and 2 and the Applicant\n were in ad idem for the implementation and the\n execution of the agreements. Especially, when\n Respondent No. 1 failed to execute the agreement,\n Respondent No. 2 took the responsibility to resolve the\n grievances of the applicant.\n\niii. Considering the holding in the three Judge Bench\n decision of\nChloro Controls India Private Limited v. Severn Trent Water Purification Inc.\n, (2013) 1 SCC\n 641, arbitration can be invoked even against the non­\n signatories, if the circumstances demonstrate that it\n was the mutual intention of the parties.\niv. 12. Mr. Ritin Rai, learned Senior Advocate appearing on behalf of\n\n the Respondent No. 1 made the following submissions:\ni. The Applicant has suppressed material facts regarding\n its previous attempts to resist constitution of an\n Arbitral Tribunal. It ought to be noted that when\n Respondent No. 1 had earlier invoked C",
+    "ratio_summary": "Therefore, the question of the extension of an\n\n arbitration agreement to non­signatories necessarily also\n\n involves the question of the extension of the scope and the\n\n effects of the jurisdiction of the arbitration tribunal over such\n\n companies.1\n\n 1 Pietro Ferrario, 'The Group of Companies Doctrine in International\n Commercial Arbitration: Is There any Reason for this Doctrine to Exist?',\n Journal of International Arbitration, (© Kluwer Law International; Kluwer\n Law International 2009, Volume 26 Issue 5) pp. 647 ­ 673\n19. This doctrine can be clearly stated to have originated in the\n\n Dow Chemical France, the Dow Chemical Company v. Isover Saint Gobain, (ICC Case No. 4131). In the case of Dow\n\n Chemicals (supra), it was the subsidiaries of Dow Chemicals\n\n which initiated Arbitration proceedings against Isover. In that\n\n case, Isover objected to the basis on which the subsidiaries of\n\n Dow Chemicals chose to arbitrate, without some of them having\n\n entered a valid arbitration agreement with Isover. 28. In any case, the Court of Appeal in the case of The Mayor and\n\n Commonalty & Citizens of the City of London v. Ashok\n\n Sancheti, [2008] EWCA Civ 1283 overruled the Uclaf Case\n\n (supra). The Court pronounced that a ‘mere legal or commercial\n\n connection is insufficient’. In essence, this restricted the phrase\n\n ‘claiming through or under’ to only those third persons who\n\nassert their right on the basis of the rights of a signatory to an\n\narbitration agreement. It is noticed",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": [
+      "Peterson Farms Inc v C&M Farming Ltd"
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "case_id": "SC_1977_1977_276",
+  "case_name": "Heavy Engineering Corpn. Ltd., Ranchi vs K. Singh & Co., Ranchi",
+  "normalized_case_name": "HEAVY_ENGINEERING_CORPN._LTD.,_RANCHI_VS_K._SINGH_&_CO.,_RANCHI",
+  "court": "Supreme Court of India",
+  "year": "1977",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "19 January 1977",
+  "judges": [
+    "A.C. Gupta",
+    "V.R. Krishna Iyer",
+    "JUDGMENT",
+    "v.R. Krishna Iyer, J."
+  ],
+  "author": "V.R. Krishna Iyer",
+  "bench_type": "constitution",
+  "petitioner": "Heavy Engineering Corpn. Ltd., Ranchi",
+  "respondent": "K. Singh & Co., Ranchi",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 4,
+  "cited_by_count": 6,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1977SC2031",
+    "(1977)2SCC515",
+    "AIR 1977 SUPREME COURT 2031",
+    "1977 2 SCC 515"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1977\\1977_276.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1977_1977_276_P001_C01",
+      "text": "1. The appellant, a public sector institution, has come up in appeal by special leave granted under\nArticle 136\ncomplaining against the decision of the High Court that the objection to the award made by the appellant, was beyond time.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1977_1977_276_P002_C01",
+      "text": "2. An engineering contract contained a clause whereby any disputes that might arise in respect of the matters under the contract were to be settled by arbitration. Such a dispute arose between the two parties in this case and the nominee of the appellant, a Deputy Chief Engineer and a nominee of the respondent, a Chartered Engineer gave an award Certain other facts which need not be stated for the purpose of this case follow. However, after taking adjournments for filing objections the appellant did file objections to the award but beyond the period of thirty days prescribed by the law. The short question which was urged before us by Shri Prasad on behalf of the appellant was that\nSection 5\nof the Limitation Act operated in his favour and that the period of 30 days could therefore be extended, the view that it was an inelastically rigid period being wrong.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1977_1977_276_P003_C01",
+      "text": "3. We have heard counsel on both sides but we are satisfied that although leave has been granted under\nArticle 136\nof the Constitution by this Court the circumstances are such that the ends of justice do not justify our interference in the present case. It is not as if, in an appeal with leave under\nArticle 136\n, this Court is bound to decide the question if on the facts at the later hearing the Court feels that the ends of justice do not make it necessary to decide the point. This Court in\nB. Trivedi v. Nagrashna\nhas held that although the powers of this Court are wide under\nArticle 136\nit cannot be urged that because a leave has been granted the Court must always and in every case deal with the merits even though it is satisfied that the ends of justice do not justify its interference in a given case.\nTo the same effect is the decision in the\nStatesman Ltd. v. Workmen\n.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 136"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1977_1977_276_P004_C01",
+      "text": "4. Following the above decisions we dismiss this appeal, In the circumstances, we direct the parties to bear their own costs throughout.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Heavy Engineering Corpn. Ltd., Ranchi vs K. Singh & Co., Ranchi",
+    "case_id": "SC_1977_1977_276",
+    "court": "Supreme Court of India",
+    "year": "1977",
+    "facts_summary": "",
+    "legal_issues": "2. An engineering contract contained a clause whereby any disputes that might arise in respect of the matters under the contract were to be settled by arbitration. Such a dispute arose between the two parties in this case and the nominee of the appellant, a Deputy Chief Engineer and a nominee of the respondent, a Chartered Engineer gave an award Certain other facts which need not be stated for the purpose of this case follow. However, after taking adjournments for filing objections the appellant did file objections to the award but beyond the period of thirty days prescribed by the law. The short question which was urged before us by Shri Prasad on behalf of the appellant was that\nSection 5\nof the Limitation Act operated in his favour and that the period of 30 days could therefore be extended, the view that it was an inelastically rigid period being wrong.",
+    "ratio_summary": "3. We have heard counsel on both sides but we are satisfied that although leave has been granted under\nArticle 136\nof the Constitution by this Court the circumstances are such that the ends of justice do not justify our interference in the present case. It is not as if, in an appeal with leave under\nArticle 136\n, this Court is bound to decide the question if on the facts at the later hearing the Court feels that the ends of justice do not make it necessary to decide the point. This Court in\nB. Trivedi v. Nagrashna\nhas held that although the powers of this Court are wide under\nArticle 136\nit cannot be urged that because a leave has been granted the Court must always and in every case deal with the merits even though it is satisfied that the ends of justice do not justify its interference in a given case.\nTo the same effect is the decision in the\nStatesman Ltd. v. Workmen\n.",
+    "final_order": "",
+    "outcome_summary": "Dismissed",
+    "sections_cited": [
+      "Constitution 136"
+    ],
+    "cases_cited": []
+  }
+}

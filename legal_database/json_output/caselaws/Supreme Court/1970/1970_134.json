@@ -1,0 +1,186 @@
+{
+  "case_id": "SC_1970_1970_134",
+  "case_name": "Corporation Of Calcutta vs Life Insurance Corporation Of India",
+  "normalized_case_name": "CORPORATION_OF_CALCUTTA_VS_LIFE_INSURANCE_CORPORATION_OF_INDIA",
+  "court": "Supreme Court of India",
+  "year": "1970",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "9 April 1970",
+  "judges": [
+    "J.C. Shah",
+    "K.S. Hegde"
+  ],
+  "author": "J.C. Shah",
+  "bench_type": "division",
+  "petitioner": "Corporation Of Calcutta",
+  "respondent": "Life Insurance Corporation Of India",
+  "reporter_citations": [
+    "[1962] 3 S.C.R. 49"
+  ],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 10,
+  "cited_by_count": 42,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1970 AIR 1417",
+    "1971 SCR (1) 248",
+    "AIR 1970 SUPREME COURT 1417"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1970\\1970_134.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1970_1970_134_P001_C01",
+      "text": "CITATION:\n 1970 AIR 1417 1971 SCR (1) 248\n 1970 SCC (2) 44\n CITATOR INFO :\n RF 1977 SC 308 (4,7)\n R 1980 SC 541 (1,4,5,8,9,10)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1970_1970_134_P002_C01",
+      "text": "ACT:\nWest Bengal Premises Rent Control (Temporary Provisions) Act\n(17 of 1950), s. 2(10)(b) and\nCalcutta Municipal Corporation\nAct\n(33 of 1951), s. 168(1),Premises let out-Sub-letting for\nlarger rent by tenant-Fixation of annual value-Standard rent\npayable by tenant or rent received by tenant from sub-\ntenants to be considered.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1970_1970_134_P003_C01",
+      "text": "HEADNOTE:\nThe respondent was the owner of a building whose tenant was\npaying a certain amount as rent. No standard rent under s.\n9 of the West Bengal Rent Control (Temporary Provisions)\nAct, 1950 was fixed but the amount of rent was such that it\nwould have been fixed as standard rent if application for\nsuch fixation was made under that Act. The tenant had sub-\nlet the promises and was receiving a much larger sum from\nthe sub-tenants. For the purpose of assessment to the\nconsolidated rate under\ns. 168(1)\nof the Calcutta Municipal\nCorporation Act, 1951, the annual rent at which the building\nmight be reasonably expected to be let from year to year\nshould be taken into consideration. The appellant\ndetermined the annual value of the building on the basis of\nthe rental received by the tenant from its sub-tenants. In\nappeal by the respondent the Court of Small Causes held that\nonly the rent paid by the tenant to the respondent should be\ntaken as the basis; and the High Court confirmed\nthe order.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1970_1970_134_P003_C02",
+      "text": "In appeal to this Court it was contended that under the\nproviso to\ns. 168(i)\n, if standard rent had been fixed under\nthe West Bengal Rent Control (Temporary Provisions) Act, it\nwould form the, basis of annual rent, but, if there was no\nsuch fixation, the appellant was competent to take into\naccount all relevant circumstances including the rent at\nwhich the building- was sub-let. HELD : (1) The corresponding section, s. 127(a) of the\nCalcutta Municipal Act, 1923 did not contain a proviso\nsimilar to the one in\ns. 168(1)\nof the 1951-Act. But the\ndecision in Corporation of Calcutta v. Smt. Padma Debi,\n[1962] 3 S.C.R. 49, interpreting\ns. 127(a)\nof the 1923Act\nand holding that the annual value should be determined only\non the footing of the standard rent applies. In determining\nthe annual rent statutory limitation of rent circumscribes\nthe scope of the bargain in the market and the rent at which\nthe premises could be let out from year to year can never\nexceed the standard rent.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1970_1970_134_P003_C03",
+      "text": "Under s. 2(10) of the West Bengal\nPremises Rent Control (Temporary Provisions) Act, when there\nis no order of the Controller fixing the standard rent under\ns. 9\nof that Act, the standard, rent would be the amount at\nwhich it would have been fixed if application were made for\nsuch fixation. Therefore, in the present case the annual\nrent at which the building, might reasonably be expected to\nbe let from year to year, would be rent which the tenant was\npaying to the respondent and not the rent which the tenant\nwas receiving from the sub-tenants. [251 D-H]\n(2)\nSection 193\nof the Calcutta Municipal Corporation Act,\nwhich only provides for apportionment of consolidated rates,\nis irrelevant in determining the annual value. [252 G]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1970_1970_134_P004_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeal No. 1559 of\n1966. Appeal from the judgment and order dated February 15, 1963 A\nthe Calcutta High Court in Appeal from original order No. 6\nof 1959. P. K. Mukherjee, A. N. Sinha and Rathin Das, for the\nappellant. G. L. Sanghi and K. L. Hathi, for the respondent. The Judgment of the Court was delivered by-\nShah, J. Messrs. A. Firpo Ltd. held as tenants premises No.\n11, Government Place East, Calcutta, belonging to the\nAsiatic Assurance Company Ltd., under a lease dated August\n6, 1941, ,it a monthly rental of Rs. 2,000, The rent was\nincreased by mutual agreement with effect from November 1953\nto Rs. 2,800 per month. Messrs. A. Firpo Ltd. had sublet a\nmajor part of the premises to five different tenants and the\naggregate rent received from the sub-tenants amounted to Rs.\n4,520. The Corporation of Calcutta assessed the annual value of the\npremises at Rs. 32,076 for six years prior to April 1, 1955. With effect from April 1, 1955, the Corporation assessed the\nannual value of the premises at Rs. 62,761. The objection\nraised by the owner against the determination of annual\nvalue was rejected by the Special Officer of the\nCorporation.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1970_1970_134_P004_C02",
+      "text": "In appeal by the Life Insurance Corporation of\nIndia (which had statutorily acquired the rights of the\nowner) the Court of Small Causes assessed Rs. 30,240 as the\nannual value. The order was confirmed in appeal to the High\nCourt under\nS. 183(3)\nof the Calcutta Municipal Corporation\nAct, 1951. With certificate granted by the High Court, this\nappeal has been preferred. In this appeal the Corporation claims that in determining\nthe annual value of the premises the assessing authority was\nentitled to take into consideration the rental received by\nMessrs Firpo Ltd. from its sub-tenants. This Court in\nThe\nCorporation of Calcutta v. Smt. Padma Debi and Others\n(1)-'a\ncase arising under the Calcutta Municipal Act, 1923-held\nthat in assessing the annual value under s. 127(a) of the\nCalcutta Municipal Act, 1923, the rent which the landlord\nmay realise if the house was let is the basis for fixing the\nannual value of the buildings : the criterion being the rent\nrealisable by the landlord and not the value of the building\nin the hands of the tenant. The test of reasonableness of\nthe gross annual rent at which the building may at the time\n(1) [1962] 3 S.C.R. 49.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1970_1970_134_P005_C01",
+      "text": "assessment reasonably be expected to let in\ns. 127 (a)\nthe rent which the landlord may realize if the house is let\nunder a bargain between a willing lessor and a willing\nlessee uninfluenced by extraneous considerations, and in\ndetermining the reasonableless of the expectation of the\nlandlord in the matter of rent a law which imposes penal\nconsequences cannot be ignored. The law must be taken as\none of the circumstances obtaining in the open market\nplacing an, upper limit on the rate of rent for which a\nbuilding can reasonably be expected to let, and since a\nstatutory limitation of rent circumscribes the scope of the\nbargain in the market, in no circumstances can the\nhypothetical rent exceed the limit prescribed by the law. It was there fore clearly\nlaid down by\nthis Court in\nSmt. Padma Debi\n's case(1) that in determining the 'annual value\nof the land or building for the purpose of ascertaining the\nconsolidated rate, the standard rent is the maximum amount\nwhich can be taken into account.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1970_1970_134_P005_C02",
+      "text": "In the present case the Court of Small Causes and the High\nCourt have determined the annual value on the footing of the\nstandard rent.,\nCounsel for the Corporation, however, contended that the\ndecision in\nSmt. Padma Debi\n's case(1) has no application to\nthis case, since that case was decided on the interpretation\nof s. 127(a) of the Calcutta Municipal Act, 1923, whereas\nthe present case falls to be determined on the\ninterpretation of s. 168 of the\nCalcutta Municipal\nCorporation Act, 1951\n, of which the scheme is different. Section 168(1)\nat the relevant time provided\n \"For the purpose of assessment to the\n consolidated rate the annual value of any land\n or building shall be deemed to be the gross\n annual rent at which the land or building\n might at the time of assessment be reasonably\n expected to let from year to year,\n less.........",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1970_1970_134_P005_C03",
+      "text": "Provided that in respect of any land or\n building the standard rent of which has been\n fixed under Section 9 of the West Bengal\n Premises Rent Control (Temporary Provisions)\n Act, 1950, the annual value thereof shall not\n exceed the annual amount of the standard rent\n so fixed.\"\nCounsel urged that under the proviso, gross rent for which\nthe Laid or building might reasonably be expected to let is\nsubject to the maximum limit of the annual standard rent,\nonly in those cases in which standard rent under\ns. 9\nof the\nWest Bengal Premises\n(1) [1962] 3 S.C.R. 49.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1970_1970_134_P006_C01",
+      "text": "Rent Control (Temporary Provisions) Act, 1950 is fixed by\norder of the Controller, and since no such standard rent is\nfixed by order of the Controller, the proviso to\ns. 168\ndoes\nnot apply, and the assessing authority was, in determining\nthe annual value, competent to take into account all\nrelevant circumstances including the rent at which the\npremises were or could be sublet. It is true that the assessment of annual value in\nSmt. Padma Debi\n's case(1) was for the year 1950-51 and s. 127(a)\nof the Calcutta Municipal Act, 1923, was in these terms :\n\"the annual value of land, and the annual\n value of any building erected for letting\n purposes or ordinarily let, shall be deemed to\n be the gross annual rent at which the land or\n building might at the time of assessment rea-\n sonably be expected to be let from year to\n year, less,\nThat section did not contain a proviso in the form of the\nproviso to\ns. 168(1)\nof the Calcutta Municipal Corporation\nAct, 1951. But the enactment of the proviso does not alter\nthe law. This Court in\nSmt.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1970_1970_134_P006_C02",
+      "text": "Padma Debi\n's case()\ninterpreted the words \"gross annual rent at which the land\nor building might at the time of assessment reasonably be\nexpected to let from year to year\" in\ns. 127(a)\n, and held\nthat in determining the gross annual rent statutory\nlimitation of rent circumscribes the scope of the bargain in\nthe market and therefore in no circumstances the\nhypothetical rent may exceed the limit. By the addition of the proviso, in our judgment, the meaning\nof the expression \"gross rent at which the land or building\nmight reasonably be expected to let\" is not altered. In the\npresent case, there is no order of the Controller fixing\nstandard rent under s. 9 of the West Bengal Premises Rent\nControl (Temporary Provisions) Act, 1950. but the standard\nrent stands determined by the definition of that expression\nin s. 2(10)(b) of that Act, which provides (omitting parts\nnot relevant)\n standard rent' in relation to any premises\n means(a).............",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1970_1970_134_P006_C03",
+      "text": "(b) where the rent has been fixed under\nsection 9\n, the rent so fixed; or at which it\n would have been fixed if application were made\n under the said section.\"\nWe are therefore of the view that the High Court was right\nin assessing the annual value on the basis of the standard\nrent as statutorily determined. It is common ground that\nthe standard rent of the premises was Rs. 2,800 per month by\nvirtue of the second part of\ns. 2\n( 1 0) (b). (1) [1962] 3 S.C.R. 49.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1970_1970_134_P007_C01",
+      "text": "It was then urged that in any event where there are\ndifferent grades of owners of a building, the assessing\nauthority is bound to take into consideration the value to\neach grade of owner for the purpose of determining the\nstandard rent. It was submitted that qua their sub-tenants,\nMessrs. A. Firpo Ltd. were the owners of the premises and\nthe rent which they received had also to be taken into\naccount in determining the standard rent. Reliance in that\nbehalf was placed upon the definition of \"owner\" in\ns. 5(53)\nand\ns. 193\nof the Calcutta Municipal Corporation Act, 1951.\nSection 5(53)\ndefines \"owner\" as including \"the person for\nthe time being receiving the rent of any land or building or\nof any part of any land or building, whether on his own\naccount or as agent or trustee for any person or society or\nfor any religious or charitable purpose, or as a receiver or\nwho would so receive such rent if the land, building or part\nthereof were let to a tenant\".\nSection 193\nprovides :\n\"Where there are gradations of owners of any\n land or building, the Commissioner may,\n notwithstanding anything contained in\nsection",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1970_1970_134_P008_C01",
+      "text": ", apportion the owner's share of the\n consolidated rate in respect of such land or\n building among such owners in proportion to\n the amount of the net rent receivable by each\n of them and thereupon the owner's share of the\n consolidated rate shall be paid by such owners\n accordingly.\nExplanation.-\nBut under the Act the quantum of the consolidated rate\ndepends upon the annual value of land or building on the\ngross rent for which the land or building might reasonably\nbe expected to let, and not the gross rent at which the\nsubordinate interest of a tenant may be expected to sublet.\nIn determining the assessment of annual value, the assessing\nauthority is not concerned with the rent which the tenant\nmay receive from his sub-tenant. It is the gross rent which\nthe owner may realize by letting the land or building under\na bargain \"uninfluenced by extraneous considerations\" which\ndetermines the-annual value.\nSection 193\nonly provides for\napportionment of consolidated rate : it is irrelevant in\ndetermining annual value.\nThe appeal fails and is dismissed with costs.\nV.P.S. Appeal dismissed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Corporation Of Calcutta vs Life Insurance Corporation Of India",
+    "case_id": "SC_1970_1970_134",
+    "court": "Supreme Court of India",
+    "year": "1970",
+    "facts_summary": "ACT:\nWest Bengal Premises Rent Control (Temporary Provisions) Act\n(17 of 1950), s. 2(10)(b) and\nCalcutta Municipal Corporation\nAct\n(33 of 1951), s. 168(1),Premises let out-Sub-letting for\nlarger rent by tenant-Fixation of annual value-Standard rent\npayable by tenant or rent received by tenant from sub-\ntenants to be considered. HEADNOTE:\nThe respondent was the owner of a building whose tenant was\npaying a certain amount as rent. No standard rent under s.\n9 of the West Bengal Rent Control (Temporary Provisions)\nAct, 1950 was fixed but the amount of rent was such that it\nwould have been fixed as standard rent if application for\nsuch fixation was made under that Act. The tenant had sub-\nlet the promises and was receiving a much larger sum from\nthe sub-tenants. For the purpose of assessment to the\nconsolidated rate under\ns. 168(1)\nof the Calcutta Municipal\nCorporation Act, 1951, the annual rent at which the building\nmight be reasonably expected to be let from year to year\nshould be taken into consideration. The appellant\ndetermined the annual value of the building on the basis of\nthe rental received by the tenant from its sub-tenants. In\nappeal by the respondent the Court of Small Causes held that\nonly the rent paid by the tenant to the respondent should be\ntaken as the basis; and the High Court confirmed\nthe order.",
+    "legal_issues": "In appeal to this Court it was contended that under the\nproviso to\ns. 168(i)\n, if standard rent had been fixed under\nthe West Bengal Rent Control (Temporary Provisions) Act, it\nwould form the, basis of annual rent, but, if there was no\nsuch fixation, the appellant was competent to take into\naccount all relevant circumstances including the rent at\nwhich the building- was sub-let. HELD : (1) The corresponding section, s. 127(a) of the\nCalcutta Municipal Act, 1923 did not contain a proviso\nsimilar to the one in\ns. 168(1)\nof the 1951-Act. But the\ndecision in Corporation of Calcutta v. Smt. Padma Debi,\n[1962] 3 S.C.R. 49, interpreting\ns. 127(a)\nof the 1923Act\nand holding that the annual value should be determined only\non the footing of the standard rent applies. In determining\nthe annual rent statutory limitation of rent circumscribes\nthe scope of the bargain in the market and the rent at which\nthe premises could be let out from year to year can never\nexceed the standard rent. JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeal No. 1559 of\n1966. Appeal from the judgment and order dated February 15, 1963 A\nthe Calcutta High Court in Appeal from original order No. 6\nof 1959. P. K. Mukherjee, A. N. Sinha and Rathin Das, for the\nappellant. G. L. Sanghi and K. L. Hathi, for the respondent. The Judgment of the Court was delivered by-\nShah, J. Messrs. A. Firpo Ltd. held as tenants premises No.\n11, Government Place East, Calcutta, belonging to the\nAsiatic Assurance Company Ltd., under a",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "Dismissed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

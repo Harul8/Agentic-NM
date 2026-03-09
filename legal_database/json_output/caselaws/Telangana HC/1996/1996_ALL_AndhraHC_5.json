@@ -1,0 +1,429 @@
+{
+  "case_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1996",
+  "judgment_template": null,
+  "case_number": "Writ Petition 8060 of 1992",
+  "case_number_regex": "WRIT_PETITION",
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 27,
+  "cited_by_count": 22,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1996\\1996_ALL_AndhraHC_5.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P001_C01",
+      "text": "Suryalatha Spinning Mills Ltd. And Anr. ... vs Union Of India And Anr. on 20 February, 1996\nEquivalent citations: [1997]223ITR713(AP), [1997]93TAXMAN310(AP)\nAuthor:\nSyed Shah Mohammed Quadri\nBench:\nS.S. Mohammed Quadri\n,\nY.V. Narayana\nJUDGMENT\nSyed Shah Mohammed Quadri J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P002_C01",
+      "text": "1. In these four writ petitions, the constitutional validity of\nsection 115J\nof the Income-tax Act, 1961, is questioned. As the question raised in these writ petitions is common, they were heard together and are being disposed of by a common judgment. For appreciating the contentions raised in these writ petitions, we would refer to the facts in Writ Petition No. 8060 of 1992.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P003_C01",
+      "text": "2. The first petitioner in this writ petition is a public limited company which is registered under the\nCompanies Act, 1956\n. The second petitioner is one of the equity shareholders of the first petitioner-company. It is stated that under the provisions of the\nCompanies Act\n, the petitioner is required to prepare the balance-sheet and the profit and loss account in accordance with Schedule VI to the said Act. For the financial year 1989-90, i.e., April 1, 1989, to March 31, 1990, the petitioner disclosed Rs. 65,52,925 as the net profit. The petitioner filed income-tax returns for the said year claiming that under\nsection 32(2)\nof the Act, the company has unabsorbed depreciation allowance of Rs. 11,99,745 which the petitioner was entitled to carry forward; the petitioner had also investment allowance computed in accordance with the provisions of\nsection 32A\nof the Act at Rs. 49,59,734 which remained unabsorbed. After necessary adjustment of the other allowances and expenses, the income for that year was determined at Rs. 61,59,479.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P003_C02",
+      "text": "But after setting off the brought forward depreciation and investment allowance for the assessment year, the income of the petitioner for the assessment year 1990-91 became nil. The petitioner says that section 115J was inserted by the Finance Act, 1987; and a new concept of book profit was introduced; and the provisions of section 80VVA were deleted. By virtue of the operation of the newly inserted provision 115J, the books profits liable to tax were determined at Rs. 29,25,878 and tax of Rs. 14,62,939 computed at 50 per cent. and surcharge of Rs. 1,17,035 at eight per cent. of the income-tax, totalling to Rs. 15,79,974 were paid along with returns of income for the year 1990-91. It is added that for the assessment year 1991-92, the petitioner had the profit of Rs. 1,10,64,691. After making necessary adjustments as per the Act and the rules framed thereunder, the taxable income was arrived at Rs. 18,63,394 on which tax together with surcharge was paid at Rs. 8,57,160. The petitioner-company deducted the income determined for the assessment year 1991-92 under the provisions of section 115J and claimed to set off the notional income on which it has suffered tax for the year 1990-91.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P003_C03",
+      "text": "That was not allowed by the Income-tax Officer. The petitioner, therefore, challenges the constitutional validity of section 115J saying, it is unconstitutional and violative of\narticles 14\nand\n19(1)(g)\nof the Constitution of India.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P004_C01",
+      "text": "3. In the counter-affidavit filed by the Revenue, it is stated that the minimum tax on companies was dealt with by section 80VVA which was inserted in 1983 but from the year 1988-89 that provision was deleted and section 115J was inserted. Sample studies carried out by the Central Board of Direct Taxes revealed that while the provisions of section 80VVA have had the effect of subjecting the companies to minimum tax which they would not have otherwise paid, there were still companies which had no income-tax liability despite substantial profits. This was due to the fact that the companies were availing of depreciation in full under the\nIncome-tax Act\n, and thus the phenomena of prosperous zero-tax companies continued. There were about 650 such companies during the relevant assessment year 1984-85. About 28 per cent. of the companies (139 companies) accounting for a net profit of Rs. 274 crores showed no tax liability. So after conducting a careful study, by the Finance Act, 1987,\nsection 80VVA\nwas deleted and\nsection 115J\nwas introduced by way of an independent\nChapter XII-B in the Income-tax Act\nand it came into force from the assessment year 1988-89.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P004_C02",
+      "text": "It is only when the total income of a company under the provisions of the\nIncome-tax Act\n, in respect of any accounting year, of any company, is less than 30 per cent. of its book profits for purposes of charging income-tax, that 30 per cent. of the book profit is treated as income. Subject to some adjustments, the book profits became the basis of taxation or assessability of income-tax. The figures given by the petitioner company in its return for the assessment year 1991-92 are not disputed. But it is stated that there is no rationality in claiming deduction of the income assessed under\nsection 115J\nfor the assessment year 1990-91 and there is no substance in the contention that there would be double taxation. It is not correct that\nsection 115J\ncreates any hostile discrimination as alleged. Parliament in its wisdom chose the corporate sector for taxing under\nsection 115J\nof the Act and the same is not open to challenge on the ground of discrimination.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P004_C03",
+      "text": "The Government policy of taxation strikes a balance between promotion of investment in development and levy and recovery of taxes for the purposes of developmental activities and keeping in view these factors amongst others, the Government formulated the taxation policy. For these reasons, it prayed that the writ petitions be dismissed.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P005_C01",
+      "text": "4. Sri Ravi, learned counsel for the petitioners, who led the batch, concentrated on the question of carry forward of unabsorbed losses and unadjusted allowances under sub-section (2) of\nsection 115J\nwhen notional income becomes the subject-matter of assessment under sub-section (1) of\nsection 115J\nof the Act. In other words, his submission is that where the notional income of a company is taxed, having regard to the provisions of\nsection 115J(1)\n, the unabsorbed loss and unadjusted allowances. etc., of an amount equal to the extend income should be allowed to be carried forward, otherwise it would result in double taxation.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P005_C02",
+      "text": "He has elaborated his argument with reference to the example given in the Board's Circular No. 495, dated September 22, 1987 (see [1987] 168 ITR (St.) 87); if unabsorbed losses or unadjusted allowances, equal in quantum to the income which is subject to tax under\nsection 115J(1)\n. are not allowed to be carried forward to the next year, then submits the learned counsel, the provisions of\nsection 115J(1)\nwould be liable to be struck down on the ground of violation of\narticle 14\nas well as on the ground of double taxation so to save them from the vice of unconstitutionality it is necessary to interpret sub-section (2) of\nsection 115J\nin such a manner as to make the carry forward of the unabsorbed losses and unadjusted allowances, equal in amount to the income calculated under\nsection 115J(1)\n, permissible.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P006_C01",
+      "text": "5. Sri Muralikrishna, learned counsel appearing for the petitioner in Writ Petition No. 2221 of 1993, while adopting the arguments of Sri Ravi, adds that once the taxable income of the company is determined under sub-section (1) of\nsection 115J\nthat should form the basis for the purpose of determining the unabsorbed depreciation, business losses and other allowances to be carried forward and set-off against the income for the subsequent year, in other words, he submits that on determining the taxable income under\nsection 115J(1)\nthe corresponding amount of the scientific research expenditure that could be absorbed against that income, should be allowed to be carried forward to the next assessment year under sub-section (2) of\nsection 115J\n; if any other interpretation is given to\nsection 115J(2)\n, then\nsection 115J(1)\nwould be rendered unconstitutional.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P007_C01",
+      "text": "6. Sri S.R. Ashok, learned standing counsel appearing for the Revenue, has contended that under the garb of interpreting sub-section (2) of\nsection 115J\n, the assessee cannot nullify the purpose of the legislation and the scheme introduced under\nsection 115J(1)\nof the Act. His contention is if sub-section (2) of\nsection 115J\nis interpreted in the manner suggested by learned counsel for the petitioners, it would lead to anomalous consequences as the amounts that could be carried forward under sub-section (2) of\nsection 115J\nwould fall either under unabsorbed investment allowance or unabsorbed depreciation or unabsorbed loss or benefit under\nsection 80J\nand each of them had its own restriction both with regard to time-limit as also with regard to computation. Had Parliament intended to provide such a relief under sub-section (2) of\nsection 115J\n, it should have said so in that provision and it is not open for the petitioners to read in sub-section (2) something which has not been provided by Parliament.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P007_C02",
+      "text": "He submits that the example given in Board's Circular No. 495, dated September 22, 1987 (see [1987] 168 ITR (St.) 87), is the correct interpretation of sub-section (2) of\nsection 115J\n. He has also contended that\nsection 115J(1)\nis not open to challenge on any of the grounds urged by the petitioners.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P008_C01",
+      "text": "7. We shall first deal with the contention of learned counsel for the petitioners in regard to carry forward of unabsorbed losses or unadjusted allowances, etc., under sub-section (2) of\nsection 115J\n.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P009_C01",
+      "text": "8. It will be useful to read here\nsection 115J\nwhich runs as under :\n\"115J. Special provisions relating to certain companies. - (1) Notwithstanding anything contained in any other provision of this Act, where in the case of an assessee being a company (other than a company engaged in the business of generation of distribution of electricity), the total income, as computed under this Act in respect of any previous year relevant to the assessment year commencing on or after the 1st day April, 1988, but before the 1st day of April, 1991 (hereafter in this section referred to as the relevant previous year), is less than thirty per cent. of its book profit, the total income of such assessee chargeable to tax for the relevant previous year shall be deemed to be an amount equal to thirty per cent. of such book profit. (1A) Every assessee, being a company, shall, for the purpose of this section, prepare its profit and loss account for the relevant previous year in accordance with the provisions of\nParts II and III of Schedule VI to the Companies Act, 1956\n(1 of 1956).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P009_C02",
+      "text": "Explanation. - For the purposes of this section, 'book profit' means the net profit as shown in the profit and loss account for the relevant previous year prepared under sub-section (1A), as increased by -\n(a) the amount of income-tax paid or payable, and the provision therefor; or\n(b) the amounts carried to any reserves (other than the reserves specified in section 80HHD or sub-section (1) of section 33AC), by whatever name called; or\n(c) the amount or amounts set aside to provisions made for meeting liabilities other than ascertained liabilities; or\n(d) the amount by way of provision for losses of subsidiary companies; or\n(e) the amount or amounts of dividends paid proposed; or\n(f) the amount or amounts of expenditure relatable to any income to which any of the provisions of Chapter III applies; or\n(g) the amount withdrawn from the reserve account under section 80HHD, where it has been utilised for any purpose other than those referred to in sub-section (4) of that section; or\n(h) the amount credited to the reserve account under\nsection 80HHD\n, to the extent that amount has not been utilised within the period specified in sub-section (4) of that section; or \n\n(ha) the amount",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P009_C03",
+      "text": "deemed to be the profits under sub-section (3) of\nsection 33AC\n;\nif any amount referred to in clauses (a) to (f) is debited or, as the case may be, the amount referred to in clauses (g) and (h) is not credited to the profit and loss account, and as reduced by, -\n(i) the amount withdrawn from reserves (other than the reserves specified in\nsection 80HHD\n) or provisions, if any such amount is credited to the profit and loss account :\nProvided that, where this section is application to an assessee in any previous year (including the relevant previous year), the amount withdrawn from reserves created or provisions made in a previous year relevant to the assessment year commencing on or after the 1st day of April, 1988, shall not be reduced from the book profit unless the book profit of such year has been increased by those reserves or provisions (out of which the said amount withdrawn) under this Explanation; or\n(ii) the amount of income to which any of the provisions of Chapter III applies, if any such amount is credited to the profit and loss account; or\n(iii) the amounts (as arrived at after increasing the net profit by the amounts referred to in clauses (a) to (f) and reducing the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P009_C04",
+      "text": "net profit by the amounts referred to in clauses (i) and (ii) attributable to the business, the profits from which are eligible for deduction under section 80HHC or section 80HHD; so, however, that such amounts are computed in the manner specified in sub-section (3) or sub-section (3A) of section 80HHC or sub-section (3) of section 80HHD, as the case may be; or\n(iv) the amount of the loss or the amount of depreciation which would be required to be set-off against the profit of the relevant previous year as if the provisions of clause (b) of the first provision (1) of\nsection 205\nof the Companies Act, 1956 (1 of 1956), are applicable.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P009_C05",
+      "text": "(2) Nothing contained in sub-section (1) shall affect determination of the amounts in relation to the relevant previous year to be carried forward to the subsequent year to years under the provisions of sub-section (2) of\nsection 32\nor sub-section (3) of\nsection 32A\nor clause (ii) of sub-section (1) of\nsection 72\nsection 73\nsection 74\nor sub-section (3) of\nsection 74A\nor sub-section (3) of\nsection 80J\n.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P010_C01",
+      "text": "9. By the Finance Act, 1987, Chapter XIIB containing a lone section, viz.,\nsection 115J\n, extracted above, was inserted with effect from April 1, 1988. It replaced\nsection 80VVA\nand remained in force for three years, viz., 1988-89, 1989-90 and 1990-91. Section 80VVA\nhad placed certain restrictions on allowances of various incentives allowable under the Act. But the unabsorbed part of the allowances was allowed to be carried forward to the subsequent year; however, that does not cover depreciation allowances or settings off business losses. The object of insertion of\nsection 115J\nis to ensure levy of minimum tax on what are known as \"prosperous zero-tax companies\". Such companies were showing huge profits in the profit and loss account and were also declaring dividends to the shareholders but on account of various incentives and increase in depreciation rates, among others, were showing very less or \"Nil\" taxable total income.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P010_C02",
+      "text": "Under the scheme of the above section which is a self-contained provision, certain companies whose total income as computed under the provisions of the\nIncome-tax Act\n, in respect of the previous year relevant to the assessment year after April 1, 1988, is less than 30 per cent. of their book profits the total income of such companies chargeable to income-tax for the relevant previous year, is treated as an amount equal to 30 per cent. of such book profits and is taxed accordingly. It also provides for certain adjustments by way of adding amounts and granting deductions for computing the chargeable income under\nsection 115J(1)\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P011_C01",
+      "text": "10. Sub-section (2), with which we are concerned, says that the provisions of sub-section (1) shall not affect the determination of the amounts in relation to the relevant previous year to be carried forward to the subsequent year or years under : (a) sub-section (2) of\nsection 32\n; or (b) sub-section (3) of\nsection 32A\n; or (c) clause (ii) of sub-section (1) of\nsection 72\n; or (d)\nsection 73\n; or (e)\nsection 74\n; or (f) sub-section (3) of\nsection 74A\n; or (g) sub-section (3) of\nsection 80J\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P012_C01",
+      "text": "11. Sub-section (2) is only a saving provision. It provides that determination of the amounts in relation to the relevant previous year to be carried forward to the subsequent year or years under the provisions, enumerated above, will have to be made unaffected by the provisions in sub-section (1) of\nsection 115J\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P013_C01",
+      "text": "12. It is argued that having regard to sub-section (1), determination of the amounts to be carried forward of losses, etc., referred to above, three propositions are possible, viz. :\n(i) Once the income is determined under sub-section (1) in an assessment year, from that year unabsorbed losses and unadjusted allowances, etc., mentioned above, cannot be carried forward any more because by operation of sub-section (1) of\nsection 115J\n, a new scheme has come into effect which puts an end to the carrying forward of losses, etc.;\n(ii) On the determination of the taxable income, under the relevant provisions of the Act, whatever amounts remain to be carried forward as per regular computation, either by way of unabsorbed losses or unadjusted allowances, etc. the same be carried forward to the next year ignoring the fact that a notional income is made taxable under sub-section (1);\n(iii) The taxable income arrived at under sub-section (1) of\nsection 115J\nshould be deemed as available for purposes of setting of unabsorbed losses or unadjusted allowances, etc., in that assessment year but postponed to the next year without allowing the actual adjustment.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P014_C01",
+      "text": "13. In our considered view sub-section (2) gives statutory recognition to the proposition (ii) and gives no scope to entertain propositions (i) and (iii). We would examine these propositions and the merits of the Board's Circular No. 495, dated September 22, 1987 (see [1987] 168 ITR (St.) 87), interpreting sub-section (2) of\nsection 115J\n. The circular recites that it is an accepted canon of taxation to levy tax on the basis of ability to pay; however, as a result of various tax concessions and incentives, some companies which are marking huge profits and also declaring substantial dividends, have been managing their affairs in such a way as to avoid payment of income-tax and accordingly as a measure of equity\nsection 115J\nhas been introduced by the Finance Act, 1987. Under the new provision, in the case of a company whose total income, as computed under the provisions of the\nIncome-tax Act\nis less than 30 per cent. of the book profit, computed under the section, the total income chargeable to tax will be 30 per cent. of the book profit as computed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P014_C02",
+      "text": "The book profit will be the net profit as shown in the profit and loss account prepared in accordance with the provisions of the\nSixth Schedule to the Companies Act, 1956\n, after certain adjustments. This provision involves two processes. First, the assessing authority has to determine the income of the company under the provisions of the\nIncome-tax Act\nand, secondly, the book profit has to be worked out in accordance with the Explanation below\nsection 115J(1A)\n, then it will have to be seen whether the total income determined under the first process is less than 30 per cent. of the book profit; if so, sub-section (1) would be invoked and the total income of such company chargeable to income-tax for the relevant previous year shall be equal to 30 per cent. of such book profit.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P015_C01",
+      "text": "14. Sub-section (2) of\nsection 115J\nprovides that the application of this process shall not affect the carry forward of unabsorbed depreciation, unabsorbed investment allowance, business losses, deficiency under sub-section (3) of\nsection 80J\nto the extent not set-off, as computed under the\nIncome-tax Act\n. It is illustrated in the said Board's circular as under (see [1987] 168 ITR (St.) 111) :\n----------------------------------------------------------------------\nBook profits for the purposes of Profit under the Income-tax\nCompanies Act, 1956 Act\n----------------------------------------------------------------------\n(1) (2)\n----------------------------------------------------------------------\nYear 1984\n (Rs.) (Rs.)\nLoss excluding Loss excluding\n depreciation 3,00,000 depreciation 80,000\n Depreciation 1,00,000 Depreciation 4,00,000\n Year 1985 \nProfit before Profit before\n depreciation 5,00,000 depreciation 5,00,000\nLess : Depreciation Less : Depreciation 4,00,000\n as per books 2,00,000\n -------- --------\n 3,00,000 1,00,000\nLess : Deduction under Less : Business loss\nsection 205(2)\nfor for 1984 80,000\n the year 1984 1,00,000\n -------- --------\n 2,00,000 20,000\nC.F.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P015_C02",
+      "text": "Business loss Less : Unabsorbed\n 1984 3,00,000 depreciation 20,000\n -------- --------\n Nil\n C.F. unabsorbed\n depreciation 1985 3,80,000\n Year 1986\nNet loss as per books Business loss (-) 10,00,000\nbefore depreciation (-) 10,00,000\nDepreciation 2,00,000 Add : Depreciation\n as per I.T.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P015_C03",
+      "text": "Rules (-) 4,00,000\nBusiness loss to be\ncarried forward (-) 10,00,000\nUnabsorbed\ndepreciation\nto be carried\nforward (-) 2,00,000\n Year 1987\nNet Profit 10,00,000 Profit before\n depreciation 10,00,000\nBook depreciation 2,00,000 Less : Depreciation \n as per I.T.Rules 8,00,000\n 2,00,000\n Less : Carried\n forward business loss\n for 1986 to the\n extent adjusted 2,00,000\n ---------\n Assessed income Nil\n ---------\n (Rs.)\n Application of\nsection 115J\nProfit before depreciation 10,00,000\n\n Less : Book depreciation 2,00,000\n ---------\n 8,00,000\n Less : Deduction under\nsection 205(2)\n\n,00,000\n ---------\n 6,00,000\nOut of the amount whichever is less :\n 1984 : Business loss 3,00,000\n 1986 : Business loss 10,00,000\n ---------\n Total loss 13,00,000\n1986 : Depreciation 2,00,000\nAssessable income 30 per cent. of Rs. 6 lakhs, i.e.,\nRs. 1.8. lakhs\nAmount to be carried forward as per sub-section (2)\nsection 115J\n1984 : Unabsorbed depreciation 3,80,000\n\n 1986 : Business loss 8,00,000 \n\n Unabsorbed depreciation 4,00,000\n15.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P015_C04",
+      "text": "The contents of the above circular read with the example given thereunder, extracted above, would make it evident that there is no scope for the Revenue to contend that in view of the provision of sub-section (1), the unabsorbed depreciation allowance, unadjusted loss or deficiency, etc., as the case may be, can no longer be carried forward to the subsequent year to years. The second proposition represents the stand of the Revenue, while the assessee presses into service the third proposition. In the light of the example given in the circular of the Board, we shall consider these aspects. At the end of the year 1985, it is noted, the company was having carried forward unabsorbed depreciation of Rs. 3,80,000. In the year 1986, the company was having net loss of Rs. 10,00,000, depreciation of Rs. 2,00,000 and unabsorbed depreciation of Rs. 2,00,000 to be carried forward; further business loss to be carried forward in a sum of Rs. 10,00,000, thus it was having business loss of Rs. 10,00,000 and total depreciation of Rs. 4,00,000.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P015_C05",
+      "text": "But in the year 1987, the company had net profit of Rs. 10,00,000 and book depreciation of Rs. 2,00,000; the depreciation as per the Income-tax Rules was Rs. 8,00,000. After deducting depreciation under the Income-tax Rules, the income was reduced to Rs. 2,00,000. Against this income of Rs. 2,00,000, out of the unadjusted loss of 1986 amounting to Rs. 10,00,000, a sum of Rs. 2,00,000 would get adjusted leaving the assessable income as nil. Now under the\nCompanies Act\n, from out of the profits of Rs. 10,00,000, the book depreciation of Rs. 2,00,000 was deducted reducing the income to Rs. 8,00,000; under\nsection 205(2)\nof the Companies Act, a sum of Rs. 2,00,000 was deducted leaving the income of Rs. 6,00,000, after adjusting under the Explanation, 30 per cent. of Rs. 6,00,000, i.e., 1.8 lakhs would be taxable under sub-section (1) of\nsection 115J\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P016_C01",
+      "text": "16. Proposition (ii) which in accordance with sub-section (2) of\nsection 115J\nwould entitle the company to carry forward unabsorbed depreciation of Rs. 3,80,000 unadjusted depreciation of Rs. 4,00,000 and business loss of Rs. 8,00,000. So far as the first two items are concerned, there is no controversy. Regarding the unabsorbed business loss of Rs. 8,00,000, what to contained is that out of carried forward business losses of Rs. 10,00,000, only Rs. 2,00,000 of business loss was adjusted as the amount of income was reduced to nil; however, as the Revenue is assessing the company to income-tax on Rs. 1.8 lakhs, the income arrived at under\nsection 115J(1)\n, whereas, in fact, income as per income-tax calculations is nil; the unadjusted depreciation and/or business loss which is available for adjustment but could not be adjusted against the said taxable income, that is, so much of the loss as can be adjusted against Rs. 1.80 lakhs should be allowed to be carried forward to the next year. We find it difficult to accede to the contention of learned counsel for the petitioners for reasons more than one.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P016_C02",
+      "text": "Firstly, for the purpose of arriving at the total taxable income under the provisions of the\nIncome-tax Act\n, out of the carried forward loss, a sum of Rs. 2 lakhs was already adjusted and that resulted in the nil income and business loss, unabsorbed of Rs. 8,00,000 which is allowed to be carried forward, as such the claim to carry forward Rs. 1,80,000, equal to taxable income under sub-section (1) is misconceived. Secondly, because sub-section (2) of\nsection 115J\nof the Act is saving provision and does not confer any further right, the amount of income arrived at for the purpose of exigibility of income-tax under sub-section (1) of\nsection 115J\n, cannot be taken note of, while considering the question of carrying forward of unadjusted loss.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P016_C03",
+      "text": "Thirdly, the very object of the provision of\nsection 115J\nis to tax such companies which are making huge profits and also declaring substantial dividends, but are managing their affairs in such a way as to avoid payment of income-tax, as a result of various tax concessions and incentives and for that purpose the taxable income is determine under sub-section (1) of\nsection 115J\n, if any loss equal to the income thus determined is allowed to be adjusted, then that would frustrate and nullify the very object of enacting the provision. In our view, from a plain reading of sub-section (2) of\nsection 115J\n, it is very clear that the quantum of unabsorbed losses, unadjusted depreciation, etc., for the purpose of carrying forward as to be under the provisions of the Act, irrespective of the quantum of income determined under the provisions of sub-section (1) of\nsection 115J\n. We, therefore, find no illegality in the example of calculations given in the Board Circular No. 495, dated September 22, 1987 (see [1987] 168 ITR (St.) 87).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P017_C01",
+      "text": "17. This takes us to the second contention which was somewhat faintly contended and that is, if operation of sub-section (2) of\nsection 115J\n, as given in the Board's circular is accepted, the provision of sub-section (1) of\nsection 115J\nwould be rendered unconstitutional, as it will be discriminatory and violative of\narticles 14\nand\n19(1)(g)\nof the Constitution of India. The discrimination alleged is that the provision is applicable only to companies but not to other units of taxation. This contention in our view is without any substance. Jain Brothers v. Union of India\n, the Supreme Court observed that it was well-settled that in fiscal enactments the Legislature had a larger discretion in the matter of classification so long as there is no departure from the rule that persons included in a class were not singled out for special treatment. In that case the classification of firms as the registered firm and the unregistered firm and taxing them differently, was questioned as arbitrary and violative of\narticle 14.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P017_C02",
+      "text": "It was held that it was open to the Legislature to say that once a registered firm committee a default attracting penalty, it should be deemed or considered to be an unregistered firm for the purpose of imposition of penalty and no question of discrimination under\narticle 14\ncould arise in such a situation. It was also observed that there was nothing to prevent the Legislature from giving the benefit of a reduced rate to a registered firm for the purpose of tax but withholding the same when it committed a default and became liable to imposition of penalty.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P018_C01",
+      "text": "18. On the question of applicability of\narticle 14\nto fiscal legislation, in\nITO v. N. Takin Roy Rymbai\n, the Supreme Court has laid down as under :\n\"In taxation laws the State has, in view of the intrinsic complexity of fiscal adjustments of diverse elements, a considerably wide discretion in the matter of classification for taxation purposes. Legislature has ample freedom to select and classify persons, districts, goods, properties, incomes and objects which it would be tax and which it would not tax. So long as the classification made within this wide and flexible range by a taxing statue does not transgress the doctrine of equality it is not vulnerable to attack on the ground of discrimination merely because it taxes of exempts from taxation, some incomes or objects and not others. Nor is the mere fact that a tax falls more heavily on some in the same category, by itself a ground to render the law invalid.\"",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P019_C01",
+      "text": "19. The same principle is reiterated in\nR.K. Garg v. Union of India\n[1982] 133\nITR (SC) and Kerala Hotel and Restaurant Association v. State of Kerala\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P020_C01",
+      "text": "20. Before concluding the discussion on this aspect, we may usefully refer to the judgment of the Division Bench of the Delhi High Court in\nNational Thermal Power Corpn. Ltd. v. Union of India\n, wherein the Division Bench has held that the provision of\nsection 115J\nis not violative of\narticle 14\nor 19(1) of the Constitution.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P021_C01",
+      "text": "21. We are in respectful agreement with the view expressed by the learned judges.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P022_C01",
+      "text": "22. The next contention is that sub-section (1) of\nsection 115J\nresults in double taxation. We are unable to appreciate this contention. Firstly, because what is being taxed is income determined on the basis prescribed under the said impugned provision and there is no provision to re-tax the same income as such, as of fact there is no double taxation. And, secondly, because double taxation per se would not render an otherwise valid provision, invalid. (See\nJain Brothers v. Union of India\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P023_C01",
+      "text": "23. However, learned counsel submits that if the losses, etc., which are not set-off or adjusted against the income determined as taxable under\nsection 115J(1)\nand are not allowed to be carried forward, it would result in double taxation. We do not think so. The right to carry forward, it would result in double taxation. We do not think so. The right to carry forward losses, unadjusted allowances, etc., is kept intact by sub-section (2) of\nsection 115J\n; merely because the amount equal to the income determined as taxable under sub-section (1) is not treated as unabsorbed loss, etc., which under no provision of the Act can be so treated, it cannot be said that there is double taxation.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA_P024_C01",
+      "text": "24. For the aforementioned reasons, the writ petitions are without any substance and accordingly we dismiss them; having regard to the circumstances of the cases, we make no order as to costs.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1996_ANDHRA_HC_PRE-TELANGANA",
+    "court": "Supreme Court of India",
+    "year": "1996",
+    "facts_summary": "2. The first petitioner in this writ petition is a public limited company which is registered under the\nCompanies Act, 1956\n. The second petitioner is one of the equity shareholders of the first petitioner-company. It is stated that under the provisions of the\nCompanies Act\n, the petitioner is required to prepare the balance-sheet and the profit and loss account in accordance with Schedule VI to the said Act. For the financial year 1989-90, i.e., April 1, 1989, to March 31, 1990, the petitioner disclosed Rs. 65,52,925 as the net profit. The petitioner filed income-tax returns for the said year claiming that under\nsection 32(2)\nof the Act, the company has unabsorbed depreciation allowance of Rs. 11,99,745 which the petitioner was entitled to carry forward; the petitioner had also investment allowance computed in accordance with the provisions of\nsection 32A\nof the Act at Rs. 49,59,734 which remained unabsorbed. After necessary adjustment of the other allowances and expenses, the income for that year was determined at Rs. 61,59,479. But after setting off the brought forward depreciation and investment allowance for the assessment year, the income of the petitioner for the assessment year 1990-91 became nil. The petitioner says that section 115J was inserted by the Finance Act, 1987; and a new concept of book profit was introduced; and the provisions of section 80VVA were deleted. By virtue of the operation of the newly inserted provision 115J, the books profits liable to tax we",
+    "legal_issues": "He has elaborated his argument with reference to the example given in the Board's Circular No. 495, dated September 22, 1987 (see [1987] 168 ITR (St.) 87); if unabsorbed losses or unadjusted allowances, equal in quantum to the income which is subject to tax under\nsection 115J(1)\n. are not allowed to be carried forward to the next year, then submits the learned counsel, the provisions of\nsection 115J(1)\nwould be liable to be struck down on the ground of violation of\narticle 14\nas well as on the ground of double taxation so to save them from the vice of unconstitutionality it is necessary to interpret sub-section (2) of\nsection 115J\nin such a manner as to make the carry forward of the unabsorbed losses and unadjusted allowances, equal in amount to the income calculated under\nsection 115J(1)\n, permissible. 5. Sri Muralikrishna, learned counsel appearing for the petitioner in Writ Petition No. 2221 of 1993, while adopting the arguments of Sri Ravi, adds that once the taxable income of the company is determined under sub-section (1) of\nsection 115J\nthat should form the basis for the purpose of determining the unabsorbed depreciation, business losses and other allowances to be carried forward and set-off against the income for the subsequent year, in other words, he submits that on determining the taxable income under\nsection 115J(1)\nthe corresponding amount of the scientific research expenditure that could be absorbed against that income, should be allowed to be carried forward to",
+    "ratio_summary": "1. In these four writ petitions, the constitutional validity of\nsection 115J\nof the Income-tax Act, 1961, is questioned. As the question raised in these writ petitions is common, they were heard together and are being disposed of by a common judgment. For appreciating the contentions raised in these writ petitions, we would refer to the facts in Writ Petition No. 8060 of 1992. 4. Sri Ravi, learned counsel for the petitioners, who led the batch, concentrated on the question of carry forward of unabsorbed losses and unadjusted allowances under sub-section (2) of\nsection 115J\nwhen notional income becomes the subject-matter of assessment under sub-section (1) of\nsection 115J\nof the Act. In other words, his submission is that where the notional income of a company is taxed, having regard to the provisions of\nsection 115J(1)\n, the unabsorbed loss and unadjusted allowances. etc., of an amount equal to the extend income should be allowed to be carried forward, otherwise it would result in double taxation. Firstly, for the purpose of arriving at the total taxable income under the provisions of the\nIncome-tax Act\n, out of the carried forward loss, a sum of Rs. 2 lakhs was already adjusted and that resulted in the nil income and business loss, unabsorbed of Rs. 8,00,000 which is allowed to be carried forward, as such the claim to carry forward Rs. 1,80,000, equal to taxable income under sub-section (1) is misconceived. Secondly, because sub-section (2) of\nsection 115J\nof the Act is savi",
+    "final_order": "24. For the aforementioned reasons, the writ petitions are without any substance and accordingly we dismiss them; having regard to the circumstances of the cases, we make no order as to costs.",
+    "outcome_summary": "Dismissed. 24. For the aforementioned reasons, the writ petitions are without any substance and accordingly we dismiss them; having regard to the circumstances of the cases, we make no order as to costs.",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

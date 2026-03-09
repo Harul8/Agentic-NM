@@ -1,0 +1,599 @@
+{
+  "case_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA",
+  "case_name": "Wadla Bheemaraidu vs The State Of Telangana",
+  "normalized_case_name": "WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA",
+  "court": "Supreme Court of India",
+  "year": "2024",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 1078 of 2016",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "3 December 2024",
+  "judges": [
+    "Dipankar Datta"
+  ],
+  "author": "Dipankar Datta",
+  "bench_type": "single",
+  "petitioner": "Wadla Bheemaraidu",
+  "respondent": "The State Of Telangana",
+  "reporter_citations": [
+    "2024 INSC 923"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 21,
+  "cited_by_count": 0,
+  "neutral_citation": "2024 INSC 923",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": false,
+  "source_file": "Supreme Court\\2024\\DEC\\2024_DEC_24.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P001_C01",
+      "text": "CRIMINAL APPELLATE JURISDICTION\n\n CRIMINAL APPEAL NO(S). 573 OF 2023\n\n WADLA BHEEMARAIDU .…APPELLANT(S)\n\n VERSUS\n\n STATE OF TELANGANA ….RESPONDENT(S)\n\n JUDGMENT\nMehta, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P002_C01",
+      "text": "1. The instant appeal by special leave arises out of the judgment\n\n and order dated 20th March, 2019, passed by the Division Bench\n\n of the High Court of Telangana at Hyderabad, dismissing the\n\n Criminal Appeal No. 1078 of 2016 preferred by the appellant and\n\n affirming the judgment dated 13th October, 2016 rendered by the\n\n Family Court-cum-VII-Additional Sessions Judge,\n\n Mahabubnagar1.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P003_C01",
+      "text": "2. Eight accused persons were put up for trial. The appellant\n\n (A1) and two co-accused (A2 and A3) were charged and tried for\n\n,\n\n,\n\nand\n\nthe Indian Penal Code, 18602, whereas the remaining co-accused\n\n(A4-A8) were charged and tried for the offences punishable under\nSections 302\n,\n\nread with\nSection 109\nIPC.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 109"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P004_C01",
+      "text": "3. Vide judgment dated 13th October, 2016, the trial Court\n\nacquitted A4 to A8 of all the charges. The appellant (A1) and the\n\ntwo co-accused (A2 and A3) were convicted and sentenced as\n\nbelow:\n(i)\nSection 302\nIPC: Life Imprisonment and a fine of Rs. 5,000/-\n(in default to undergo Simple Imprisonment for six months)\n(ii)\nSection 364\nIPC: Rigorous Imprisonment for 10 years and a\n fine of Rs. 5,000/- (in default to undergo Simple Imprisonment\n for six months).\n(iii)\nSection 384\nIPC: Rigorous Imprisonment for 3 years and a\n fine of Rs. 5,000/- (in default to undergo Simple Imprisonment\n for six months).\n(iv)\nSection 201\nIPC: Rigorous Imprisonment for 5 years and a\n fine of Rs. 5,000/- (in default to undergo Simple Imprisonment\n for six months).",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 302",
+        "IPC 364",
+        "IPC 384",
+        "IPC 201"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P005_C01",
+      "text": "4. A common appeal was preferred by the appellant herein(A1),\n\nA2 and A3, before the High Court of Telangana assailing the\n\njudgment of the trial Court. The Division Bench of the High Court\n\nof Telangana proceeded to uphold the conviction and sentence\n\nawarded to the appellant herein and at the same time, acquitted\n\n2 Hereinafter, being referred to as ‘\nIPC\n’.\n\nA2 and A3 of all the charges vide judgment dated 20th March, 2019\n\nwhich is the subject matter of challenge in this appeal.\n\nBrief facts:-",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P006_C01",
+      "text": "5. As per the prosecution case, K. Nagesh (the deceased) and\n\nSmt. Shivaleela @ Wadla Anjali, wife of the appellant herein (A1),\n\ndeveloped an extra-marital affair with each other. On 7th January,\n\n2013, they eloped from their village Thipraspally3, District\n\nRangareddy, Telangana. Smt. Shivaleela @ Wadla Anjali returned\n\nto the village after four days, but K. Nagesh failed to turn up.\nConsequently, on 8th January, 2013, the mother of K. Nagesh\n\nnamely, Smt. B. Laxmamma (PW-1) lodged a missing complaint4\n\nat Police Station Utkoor, Telangana5.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P007_C01",
+      "text": "6. Based on the said complaint, V. Sampath, Sub-Inspector, PS\n\nUtkoor registered a case6, under the caption ‘man missing’ and\n\ninitiated an enquiry. It is stated that during the course of enquiry,\n\nit came to light that K. Nagesh and Smt. Shivaleela @ Wadla Anjali,\n\nwife of the appellant (A1) were involved in an extra-marital affair,\n\nand a panchayat was convened in relation thereto in the village.\n\nThe appellant (A1), being the husband of Smt. Shivaleela, and the\n\n3 Hereinafter being referred to as ‘village’.\n4 Exhibit P-38\n5 Hereinafter being referred to as ‘PS Utkoor’.\n6 Crime No. 15 of 2013.\n\nother accused persons threatened the family members of K.\n\nNagesh in the panchayat and under the fear of retribution, the\n\nfamily members agreed to pay a compensation of Rs. 3,50,000/-\n\nto the appellant (A1) within 10 days. It is further the case of the\n\nprosecution that the appellant (A1) was not satisfied with the above\n\nresolution and thus, he hatched a plan to eliminate K. Nagesh.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P008_C01",
+      "text": "7. In furtherance of this nefarious design, the appellant (A1)\n\ncontacted his wife (Smt. Shivaleela) over phone and asked her to\n\nreturn to the village to which she agreed. The appellant was in\n\ncontinuous contact with his father-in-law (G. Hanumanth) who\n\nconveyed that Smt. Shivaleela (wife of the appellant) and K. Nagesh\n\nwould be reaching Raichur railway station on 11th January 2013. In order to carry out the plan to eliminate K. Nagesh, the appellant\n\n(Al), along with his brother (A2) on one motorcycle and his brother-\n\nin-law (A3) on another proceeded to Raichur railway station. The\n\naccused (A4 to A8) were also informed about the arrival of K. Nagesh and accordingly, they too proceeded to Raichur railway\n\nstation in a car. At about 00:30 hours, K. Nagesh and Smt. Shivaleela, wife of the appellant (Al), got down at Raichur railway\n\nstation. K. Nagesh proceeded to Raichur bus stand in an auto\n\nrickshaw. He was pursued by A1, A2, and A3, who abducted him\n\nand took him towards Shakthi Nagar on their motorcycles. A1\n\ndirected A4, A5, A6, A7 and A8 to return. A1, A2 and A3 disrobed\n\nK. Nagesh. A1 and A2 strangled and killed him with a towel\n\nbrought by A1.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P008_C02",
+      "text": "The assailants then crushed the face of K. Nagesh\n\nby a big boulder so as to destroy his identity. The dead body was\n\nconcealed in a nearby water channel. The clothes worn by K. Nagesh (the deceased) were tied up in the towel used to murder\n\nhim and were thrown in the Krishna River near Devasugur.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P009_C01",
+      "text": "8. On 19th January, 2013, the family members of the deceased,\n\non a demand made by the accused persons paid a penalty of\n\nRs.3,50,000/- to the appellant (A1). On 8th February, 2013, the\n\nappellant (Al), along with his family members went to the house of\n\nhis in-laws at Makthal and divorced his wife Smt. Shivaleela and\n\nalso took an undertaking from her. When A1 came to know about\n\na case having been registered at PS Utkoor regarding the\n\ndisappearance of K. Nagesh, out of fear, he approached P.\n\nRamalingappa (PW-6), a resident of the village, and prayed for\n\nbeing provided protection. V. Sampath, Sub-Inspector, PS Utkoor\n\npurportedly recorded the statement of PW-6 and based thereupon,\n\nhe proceeded to apprehend the accused (A1) and recorded his\n\nconfessional statement. Based on the confession so made by the\n\nappellant herein (A1), the missing person complaint was converted\n\ninto an FIR7 for the offences punishable under\nSections 384\n,\n\n,\n\n,\n\nread with\nSection 109\nIPC.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 109"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P010_C01",
+      "text": "9. Further investigation of the case was assigned to N. Venkateshwarla, Circle Inspector of Police, Makthal8 (PW-22). All\n\nthe accused persons were arrested in furtherance of the confession\n\nmade by the appellant (A1). During the course of investigation, the\n\nInvestigating Officer (PW-22) claims to have recorded the\n\ninformation memo/confessional panchnama9 of the appellant (A1)\n\nand thereafter, he forwarded a letter to the S.P., Mahabubnagar\n\nseeking permission to visit the crime scene located at Egsanhally\n\nvillage of Raichur district. A requisition was sent to H.B. Sanamani, PSI, Raichur Rural (PW-21) for arranging local panchas\n\nto conduct the spot panchnama. Accordingly, PW-21 arranged two\n\nlocal panch witnesses namely Javeed (PW-9) and Baswaraj Patil\n\n(PW-19). The Investigating Officer (PW-22) thereafter, proceeded to\n\nthe crime scene and prepared the spot panchnama in the presence\n\nof Javeed (PW-9), Mallikarjun (PW-16), V. Venkataiah (PW-17) and\n\nBaswaraj Patil (PW-19). The crime scene was photographed by K.\n7 FIR No. 15/2013, PS Utkoor.\n8 Hereinafter, being referred to as ‘Investigating Officer (PW-22)’.\n9 Exhibit P22-A. Papireddy (PW-7).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P010_C02",
+      "text": "No human dead body was found at the spot. However, the Investigating Officer (PW-22) noticed some remains\n\nviz hair, lower jaw embedded with teeth, three rib bones, one piece\n\nof underwear(MO5), two shirt buttons (MO1), one jeans pant\n\nbutton (MO2) and a boulder (MO4) at the spot which he seized vide\n\nseizure panchnama10 dated 19th March, 2013 with the assistance\n\nof Dr. Syed Irshad, Medical Officer (PW-15). The material objects\n\ni.e. the bones and hair etc. found at the spot were packed by the\n\nMedical Officer (PW-15), who handed the same over to the\n\nInvestigating Officer (PW-22). He in turn forwarded these human\n\nremains along with the seized material objects to the FSL11.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P011_C01",
+      "text": "10. The DNA profiling report12 was received which purportedly\n\nindicated that the DNA profile of the skeletal remains collected\n\nfrom the crime scene matched the DNA profile of Smt. B.\n\nLaxmamma (mother of the deceased) (PW-1).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P012_C01",
+      "text": "11. Upon concluding the investigation, the Investigating Officer\n\n(PW-22) proceeded to file a charge sheet against A1 to A8 for the\n\noffences mentioned above13. The offence punishable under\nSection\n\nIPC being exclusively sessions triable, the case was committed\n\n10 Exhibit P-34\n11 Forensic Science Laboratory\n12 Exhibit P-42\n13 Supra, Para No. 2\n\nand transferred for trial to the Court of Sessions Judge,\n\nMahabubnagar vide committal order dated 28th March, 2014. The\n\ntrial Court framed charges against the accused persons (A1 to A8)\n\nfor the above offences14. The accused persons pleaded not guilty\n\nand claimed trial. In order to bring home the charges, the\n\nprosecution examined as many as 22 witnesses and exhibited 42\n\ndocuments and 23 material objects.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P013_C01",
+      "text": "12. The accused, upon being questioned under\nSection 313\nof the\n\nCode of Criminal Procedure, 197315 denied the prosecution’s\n\nallegation and claimed to be innocent. Upon hearing the\n\narguments advanced by the prosecution and defence, and after\n\nappreciating the evidence available on record, the trial Court vide\n\njudgment dated 13th October, 2016, proceeded to acquit A4 to A8\n\nof the charges. A1(the appellant herein), A2 and A3 were convicted\n\nand sentenced in the above terms16.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P014_C01",
+      "text": "13. The Division Bench of the High Court of Telangana in\n\nappeal17 reversed the conviction of A2 and A3 and acquitted them\n\nwhile affirming the conviction and sentence awarded by the trial\n\n14 Ibid\n15 Hereinafter being referred to as ‘\nCrPC\n’.\n16 Supra, Para No. 3.\n17 Criminal Appeal No. 1078 of 2016.\n\nCourt to the appellant (A1). Aggrieved, the appellant (A1) is before\n\nus in the present appeal by special leave.\nSubmissions on behalf of the accused-appellant: -",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P015_C01",
+      "text": "14. Shri A. Sirajudeen, learned senior counsel representing the\n\naccused appellant advanced the following pertinent submissions\n\nto assail the impugned judgments seeking acquittal for the\n\naccused appellant: -\n(i) That the entire case of the prosecution is false and\n\n fabricated. The prosecution has failed to prove the motive\n\n attributed to the appellant (A1) for commission of the\n\n offence, because neither B. Laxmamma (PW-1), the mother\n\n of the deceased nor G. Hanumanth (PW-2), the father of the\n\n deceased, supported the prosecution case regarding the\n\n alleged theory of motive which was based upon the so called\n\n extra-marital affair of the deceased with Smt. Shivaleela\n\n (PW-8), the wife of the appellant, who also did not support\n\n the prosecution case on this aspect. (ii) That the sole circumstance of recovery of the skeletal\n\n remains relied upon by the High Court for convicting the\n\n accused appellant could not be proved by the prosecution\n\n by leading cogent and clinching evidence.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P015_C02",
+      "text": "In this regard, it\n\nwas contended that the information provided by the accused\n\n (A1) to the Investigating Officer (PW-22) under Section 27 of\n\n the Indian Evidence Act, 187218 was never proved as per law\n\n and thus, the discovery pales into insignificance and cannot\n\n be read in evidence. (iii)That the clothes which were allegedly discovered at the\n\n crime scene were not identified by any of the witnesses\n\n examined during the course of the trial as belonging to the\n\n deceased K. Nagesh. (iv) That the prosecution heavily relied upon DNA profiling\n\n report19 to claim that the DNA of the skeletal remains\n\n collected from the crime scene matched with the DNA of\n\n Smt. B. Laxmamma (PW-1), the mother of the deceased. But\n\n the fact remains that the prosecution led no evidence\n\n whatsoever to establish that the blood samples of B. Laxmamma (PW-1) (the mother of the deceased) were\n\n actually collected during the course of investigation.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P015_C03",
+      "text": "In this\n\n regard, the attention of the Court was drawn to the\n\n testimony of PW-1 to urge that the witness never stated that\n\n her blood samples were collected during the course of the\n18 Hereinafter being referred to as ‘IEA’.\n19 Exhibit P-42.\n\ninvestigation. Even the Medical Officer (PW-15) did not state\n\n that he collected blood samples of any person related to the\n\n deceased for the purpose of DNA finger printing. It was\n\n submitted that the testimony of Smt. B. Laxmamma (PW-1)\n\n and the Medical Officer (PW-15) totally contradicts the\n\n version of the Investigating Officer (PW-22) on this aspect of\n\n the prosecution case. (v) That the crime scene was not pointed out by the appellant\n\n (A1) to the Investigating Officer (PW-22). The Medical Officer\n\n (PW-15) categorically admitted in his cross-examination that\n\n the police and other persons had shown him the scene of\n\n incident from where he collected the skeletal remains. Thus,\n\n the circumstance of discovery of the incriminating evidence\n\n at the instance of the accused could not be proved by proper\n\n evidence.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P015_C04",
+      "text": "(vi) That the alleged incident took place on 11th January, 2013\n\n whereas, the skeletal remains were recovered on 19th March,\n\n 2013 i.e. nearly after two months of the incident and it is\n\n absolutely impossible to believe that the skeletal remains\n\n would still be lying at the crime scene after such a long\n\n duration. (vii) That it is settled law that in a case purely based on\n\n circumstantial evidence, the chain of circumstances must\n\n be proved beyond all manner of doubt. Even if one of the\n\n links in the chain of incriminating circumstances is broken,\n\n the accused becomes entitled to the benefit of doubt. Reliance in this regard was placed on\nBhim Singh v. State\n\n of Uttarakhand20\nand\nDarshan Singh v. State of Punjab21\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P016_C01",
+      "text": "15. Learned senior counsel concluded his submissions by urging\n\nthat the prosecution could not prove the chain of incriminating\n\ncircumstances by leading cogent/reliable evidence and failed to\n\neven remotely establish that the appellant was in any manner\n\nconnected with the alleged crime.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P017_C01",
+      "text": "16. On these grounds, the learned counsel representing the\n\nappellant implored the Court to accept the appeal, set aside the\n\nimpugned judgment and acquit the accused appellant by giving\n\nhim the benefit of doubt.\nSubmissions on behalf of Respondent-State: -",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P018_C01",
+      "text": "17. Per contra, Ms. Devina Sehgal, learned Standing Counsel\n\nrepresenting the State, vehemently and fervently opposed the\n\nsubmissions advanced by the learned counsel for the appellant\n\n20 (2015) 4 SCC 281.\n21 2024 INSC 19.\n\nand submitted that every reasonable hypothesis based on the\n\nevidence led by the prosecution irrefutably points toward the guilt\n\nof the accused appellant. She urged that the two Courts, i.e., the\n\ntrial Court as well as the High Court after appreciating and\n\nreappreciating the evidence, have recorded concurrent findings of\n\nfacts for convicting the appellant and for affirming his conviction\n\nand hence, this Court in exercise of its jurisdiction under\nArticle\n\nof the Constitution of India should be slow to interfere in such\n\nconcurrent findings of facts. She advanced the following\n\nsubmissions seeking dismissal of the appeal: -\ni. That the prosecution has led cogent evidence that K. Nagesh\n\n (the deceased) was involved in an illicit affair with the wife of\n\n the accused appellant and fueled with the said motive, he\n\n hatched a conspiracy with the co-accused and acting in\n\n furtherance of such nefarious design, K.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P018_C02",
+      "text": "Nagesh (the\n\n deceased) was murdered and his dead body was concealed\n\n so as to destroy the evidence of the crime.\nii. That crime scene was in the exclusive knowledge of the\n\n appellant(A1). He suffered a disclosure statement22 to the\n\n Investigating Officer (PW-22), and based thereupon, the\n\n22 Exhibit P22-A\n\nInvestigating Officer along with the panch witnesses (PW-9\n\n and PW-19) proceeded to the crime scene and recovered the\n\n skeletal remains of the deceased K. Nagesh. Since the place\n\n of concealment of the skeletal remains of the deceased was\n\n in the exclusive knowledge of the appellant (A1), the recovery\n\n thereof at his instance would give rise to the only inference\n\n that it was the appellant (A1) and no one else who murdered\n\n K. Nagesh (the deceased) and then tried to destroy the\n\n evidence by hiding his dead body.\niii. That there was a gap of two months between the time of\n\n murder and the discovery of the skeletal remains,\n\n apparently thus, the dead body must have been destroyed\n\n by the scavengers/natural elements.\niv. That the DNA of the skeletal remains recovered from the\n\n crime scene matched with the blood samples of Smt. B.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P018_C03",
+      "text": "Laxmamma (PW-1), the mother of the deceased, as is clearly\n\n proved by the DNA profiling report23. This incriminating\n\n circumstance irrefutably points towards the guilt of the\n\n accused.\n23 Exhibit P-42\n\nOn these grounds, learned counsel contended that the\n\n present appeal against the judgment of the trial Court and the\n\n High Court deserve to be dismissed. Discussion and Conclusion: -",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P019_C01",
+      "text": "18. We have given our thoughtful consideration to the\n\nsubmissions advanced at the bar and have gone through the\n\nmaterial placed on record.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P020_C01",
+      "text": "19. There is no dispute that the case of prosecution is based\n\npurely on circumstantial evidence, since no witness claims to have\n\nseen the alleged incident wherein K. Nagesh (the deceased) was\n\nmurdered.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P021_C01",
+      "text": "20. The law is well-settled that in a case based purely on\n\ncircumstantial evidence, the prosecution is under an obligation to\n\nprove each and every link in the chain of incriminating\n\ncircumstances beyond all manner of doubt and that the\n\ncircumstances so relied upon by the prosecution should point\n\nunequivocally towards the guilt of the accused and should be\n\ninconsistent with the guilt of anyone else or the innocence of the\n\naccused. Only in the event of the complete/unbroken chain of\n\ncircumstances being proved by cogent and clinching evidence\n\nwhich does not admit of any other inference, otherwise that of the\n\nguilt of the accused, the conviction can be recorded. Reference in\n\nthis regard may be made to\nSharad Birdhichand Sarda v. State\n\nof Maharashtra24\n, the relevant extract of which reads as under: -\n“153. A close analysis of this decision would show that the\n following conditions must be fulfilled before a case against an\n accused can be said to be fully established:\n\n (1) the circumstances from which the conclusion of guilt is to\n be drawn should be fully established.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P021_C02",
+      "text": "It may be noted here that this Court indicated that the\n circumstances concerned “must or should” and not “may be”\n established. There is not only a grammatical but a legal\n distinction between “may be proved” and “must be or should be\n proved” as was held by this Court in\nShivaji Sahabrao Bobade\n v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P021_C03",
+      "text": "State of Maharashtra\n[(1973) 2 SCC 793] where the\n observations were made: [SCC para 19, p. 807]\n\n “Certainly, it is a primary principle that the accused\n must be and not merely may be guilty before a court\n can convict and the mental distance between ‘may\n be’ and ‘must be’ is long and divides vague\n conjectures from sure conclusions.”\n\n (2) the facts so established should be consistent only with the\n hypothesis of the guilt of the accused, that is to say, they should\n not be explainable on any other hypothesis except that the\n accused is guilty,\n\n (3) the circumstances should be of a conclusive nature and\n tendency,\n\n (4) they should exclude every possible hypothesis except the\n one to be proved, and\n\n (5) there must be a chain of evidence so complete as not to\n leave any reasonable ground for the conclusion consistent\n with the innocence of the accused and must show that in\n all human probability the act must have been done by the\n accused.\n24 (1984) 4 SCC 116.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P022_C01",
+      "text": "154. These five golden principles, if we may say so, constitute\n the panchsheel of the proof of a case based on circumstantial\n evidence.”\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P023_C01",
+      "text": "21. Having noted the principles governing the case based purely\n\non circumstantial evidence, we now proceed to discuss the case\n\nset up by the prosecution in order to bring home the guilt of the\n\naccused appellant.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P024_C01",
+      "text": "22. In view of the detailed discussion of the facts enumerated\n\nabove, it is apparent that the following circumstances were\n\nportrayed by the prosecution in its endeavour to establish the\n\ncharges against the accused appellant: -\n(i) Motive, i.e. to say that K. Nagesh (the deceased) and Smt.\n\n Shivaleela, the wife of the appellant (PW-8) were involved in\n\n an illicit extra-marital affair which fueled the appellant\n\n herein with such animosity that he hatched a plan to\n\n eliminate K. Nagesh (the deceased).\n(ii) Incriminating recoveries in the form of skeletal remains of\n\n the deceased and the clothes and other articles such as a\n\n cover containing an amount to a tune of Rs. 3,50,000/- and\n\n motorcycle used in commission of the crime allegedly\n\nrecovered in furtherance of the information25 provided by the\n\n appellant (A1) to the Investigating Officer (PW-22).\n(iii)The DNA profiling report26, which establishes that the\n\n profiling of the blood collected from the mother of the\n\n deceased (PW-1) matched with the DNA profile of the\n\n allegedly recovered skeletal remains.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P025_C01",
+      "text": "23. Firstly, we proceed to consider the theory of motive. On going\n\nthrough the entire evidence led by the prosecution, we do not find\n\nan utterance of a single word by any of the prosecution witnesses\n\nincluding the mother of the deceased (PW-1), the father of the\n\ndeceased (PW-2), that there was any complaint of an illicit affair\n\nbetween K. Nagesh (the deceased) and Smt. Shivaleela, the wife of\n\nthe appellant.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P026_C01",
+      "text": "24. The prosecution alleged that owing to this illicit affair, the\n\nappellant got convened a panchayat wherein, he demanded and\n\nextorted a sum of Rs. 3,50,000/- from the family members of the\n\ndeceased. However, such a suggestion was totally denied by PW-1\n\nand PW-2. Both these witnesses stated that it was the chit amount\n\ncollected by their son (the deceased) which was paid by them.\n\nFurther, on going through the testimony of the Investigating\n\n25 Exhibit P22-A\n26 Exhibit P-42\n\nOfficer (PW-22), we find that even he did not state that any\n\ninformation was provided to him regarding the so-called illicit\n\naffair between the deceased and the wife of the appellant (PW-8)\n\nduring the entire course of investigation. The only evidence\n\nprovided regarding this aspect of motive, as per the testimony of\n\nInvestigating Officer (PW-22) was in the form of a photograph\n\n(Exhibit P-37). However, the fact remains that even the parents of\n\nthe deceased (PW-1 and PW-2) were not made to identify this\n\nphotograph. Thus, the theory of motive attributed by the\n\nprosecution to the accused appellant could not be established by\n\nany credible evidence.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P027_C01",
+      "text": "25. The second and most vital link of circumstantial evidence\n\nsought to be relied upon by the prosecution was the alleged\n\ndiscovery and recovery of the skeletal remains of the deceased in\n\nfurtherance of the information27 provided by the accused appellant\n\n(A1) to the Investigating Officer (PW-22).",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P028_C01",
+      "text": "26. The law is well settled by a catena of judgments of this Court\n\nthat the information under\nSection 27\nIEA which leads to discovery\n\nof an incriminating material/evidence must be proved by the\n\nInvestigating Officer as being voluntary and uninfluenced by\n\n27 Exhibit P22-A\n\nthreat, duress or coercion. The Investigating Officer is also\n\nrequired to prove the contents of the information/confessional\n\nmemo to the extent they relate to the facts discovered.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "IEA 27"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P029_C01",
+      "text": "27. This Court in the recent judgment of\nBabu Sahebgouda\n\nRudragoudar v. State of Karnataka28\n, while referring to the\n\nearlier judgments on this point, examined the aspect regarding the\n\nstandard of proof of information provided by the accused to the\n\nInvestigating Officer under\nSection 27\nIEA in the following terms:-\n“60. We would now discuss about the requirement under law\n so as to prove a disclosure statement recorded under\nSection\n\nof the Evidence Act, 1872 (hereinafter being referred to as\n “the\nEvidence Act\n”) and the discoveries made in furtherance\n thereof.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IEA 27"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P030_C01",
+      "text": "61. The statement of an accused recorded by a police officer\n under\nSection 27\nof the Evidence Act is basically a\n memorandum of confession of the accused recorded by the\n investigating officer during interrogation which has been taken\n down in writing. The confessional part of such statement is\n inadmissible and only the part which distinctly leads to\n discovery of fact is admissible in evidence as\nlaid down by\nthis\n Court in\nState of U.P. v. Deoman Upadhyaya [State of U.P.\nv. Deoman Upadhyaya, 1960 SCC OnLine SC 8 : AIR 1960\n SC 1125] .",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P031_C01",
+      "text": "62. Thus, when the investigating officer steps into the\n witness box for proving such disclosure statement, he\n would be required to narrate what the accused stated to\n him. The investigating officer essentially testifies about\n the conversation held between himself and the accused\n which has been taken down into writing leading to the\n discovery of incriminating fact(s).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P032_C01",
+      "text": "63. As per\nSection 60\nof the Evidence Act, oral evidence in all\n cases must be direct. The section leaves no ambiguity and\n mandates that no secondary/hearsay evidence can be given in\n case of oral evidence, except for the circumstances enumerated\n28 (2024) 8 SCC 149.\n\nin the section. In the case of a person who asserts to have heard\na fact, only his evidence must be given in respect of the same.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P033_C01",
+      "text": "64. The manner of proving the disclosure statement under\nSection 27\nof the Evidence Act has been the subject matter of\nconsideration by this Court in various judgments, some of\nwhich are being referred to below.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P034_C01",
+      "text": "65. In Mohd. Abdul Hafeez v. State of A.P. [Mohd. Abdul\nHafeez v. State of A.P., (1983) 1 SCC 143 : 1983 SCC (Cri)\n139] , it was held by this Court as follows : (SCC p. 146, para\n5)\n\n “5. … If evidence otherwise confessional in character\n is admissible under\nSection 27\nof the Evidence Act, it\n is obligatory upon the investigating officer to state\n and record who gave the information; when he is\n dealing with more than one accused, what words were\n used by him so that a recovery pursuant to the\n information received may be connected to the person\n giving the information so as to provide incriminating\n evidence against that person.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P035_C01",
+      "text": "66. Further, in\nSubramanya v. State of Karnataka\n[Subramanya\nv. State of Karnataka, (2023) 11 SCC 255] ,\nit was held as under : (SCC pp. 299-300, paras 76 to 78)\n\n “76. Keeping in mind the aforesaid evidence, we\n proceed to consider whether the prosecution has been\n able to prove and establish the discoveries in\n accordance with law.\nSection 27\nof the Evidence Act\n reads thus:\n‘27. How much of information received from\n accused may be proved.—Provided that,\n when any fact is deposed to as discovered in\n consequence of information received from a\n person accused of any offence, in the\n custody of a police officer, so much of such\n information, whether it amounts to a\n confession or not, as relates distinctly to the\n fact thereby discovered, may be proved.’",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P036_C01",
+      "text": "77. The first and the basic infirmity in the\n evidence of all the aforesaid prosecution\n witnesses is that none of them have deposed the\n exact statement said to have been made by the\n appellant herein which ultimately led to the\n\ndiscovery of a fact relevant under\nSection 27\nthe Evidence Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P037_C01",
+      "text": "78. If, it is say of the investigating officer that the\nappellant-accused while in custody on his own free\nwill and volition made a statement that he would\nlead to the place where he had hidden the weapon\nof offence, the site of burial of the dead body,\nclothes, etc. then the first thing that the\ninvestigating officer should have done was to call\nfor two independent witnesses at the police\nstation itself. Once the two independent witnesses\nwould arrive at the police station thereafter in\ntheir presence the accused should be asked to\nmake an appropriate statement as he may desire\nin regard to pointing out the place where he is said\nto have hidden the weapon of offence, etc. When\nthe accused while in custody makes such\nstatement before the two independent witnesses\n(panch witnesses) the exact statement or rather\nthe exact words uttered by the accused should be\nincorporated in the first part of the panchnama\nthat the investigating officer may draw in\naccordance with law.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P037_C02",
+      "text": "This first part of the\npanchnama for the purpose of\nSection 27\nof the\nEvidence Act is always drawn at the police station\nin the presence of the independent witnesses so\nas to lend credence that a particular statement\nwas made by the accused expressing his\nwillingness on his own free will and volition to\npoint out the place where the weapon of offence\nor any other article used in the commission of the\noffence had been hidden. Once the first part of the\npanchnama is completed thereafter the police\nparty along with the accused and the two\nindependent witnesses (panch witnesses) would\nproceed to the particular place as may be led by\nthe accused. If from that particular place anything\nlike the weapon of offence or bloodstained clothes\nor any other article is discovered then that part of\nthe entire process would form the second part of\nthe panchnama. This is how the law expects the\ninvestigating officer to draw the discovery\npanchnama as contemplated under\nSection 27\nthe Evidence Act. If we read the entire oral\nevidence of the investigating officer then it is\nclear that the same is deficient in all the aforesaid\nrelevant aspects of the matter.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P038_C01",
+      "text": "67. Similar view was taken by this Court in\nRamanand v. State\n of U.P. [Ramanand\nv. State of U.P., (2023) 16 SCC 510 : 2022\n SCC OnLine SC 1396] , wherein this Court held that mere\n exhibiting of memorandum prepared by the investigating officer\n during investigation cannot tantamount to proof of its contents.\n While testifying on oath, the investigating officer would be\n required to narrate the sequence of events which transpired\n leading to the recording of the disclosure statement.”\n\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P039_C01",
+      "text": "28. Keeping the above principle in mind, let us now examine the\n\ntestimony of the Investigating Officer (PW-22) on the aspect of\n\ndisclosure and discovery of incriminating facts at the instance of\n\nthe accused. The relevant extracts of his testimony are reproduced\n\nhereunder:-\n“The L.W.24-Sampat, S.I. of Police, produced A1-Bheem Raidu\n before me. On my interrogation he admitted commission of\n offence and when he about mood of confess I secured the\n mediators P.W.s 16 and 17. In their presence I prepared\n confession panchanama of A1. Ex.P.22-A, after preparing the\n confession panchanama I send letter to the S.P.,\n Mahabubnagar, for obtaining the permission to visit the scene\n of offence situated at Egsanhally village of Raichur District of\n Karnataka State along with panchas and P.W.7, to Photograph\n the scene. After applying the permission from S.P. Mahabubnagar, I also filed requisition before the police,\n P.W.21, of Raichur Rural with a request to provide two panch\n witnesses and to visit the scene. Accordingly, P.W.21 provided\n two panch witnesses P. Ws.9, and 19.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P039_C02",
+      "text": "Accordingly with the help of P.Ws.9 and 19 along with P.Ws. 16\n and 17 I prepared scene of offence panchanama and\n photographed the scene of offence with the help of P.W.7. At the\n scene of offence there was no dead body was found but some\n hair, lower jaw embedded with teeth, 3-rip bones, one piece of\n under wear two shirt buttons, one jean pant button, one\n boulder, were found. Alongwith panchas PW.16 and P.W.17 and myself went with\n A.1. Al lead us to his village of Tipraspally village of\n\nUtkurmandal of Mahabubnagar District, there A2 and A3 were\n also present in the house. Thereafter Al went in side his house\n and brought a cover containing Rs.3,50,000/- (Rupees Three\n Lakhs fifty thousand only) cash and one cell phone. Al also\n shown the Hero Honda motor bearing No. AP22-N-7927 Hero\n Honda C.D. Delux, Black Colour as crime vehicle which was\n used in the commission of offence. M.O.6 is cash of\n Rs.3,50,000/- later it was deposited in FDR No.0919458,\n 26.05.2014 in the JMFC, Narayanpet, M.O.7 is cell phone\n Samsung Company, MO.8 Hero Honda Motor Cycle br. No.AP\n 22 N 7927.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P040_C01",
+      "text": "29. On going through the aforesaid version of Investigating\n\nOfficer (PW-22), it is clear that the accused appellant (A1) was\n\nproduced before him by V. Sampath (LW-24) (IO in the ‘man\n\nmissing’ case). The said LW-24 was not examined by the\n\nprosecution in this case. Pursuant to production of the accused,\n\nthe Investigating Officer (PW-22) proceeded to interrogate him and\n\nallegedly recorded his confession/information followed by the so-\n\ncalled recovery of the skeletal remains of the deceased.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P041_C01",
+      "text": "30. From the aforesaid version of PW-22, it can clearly be\n\ndiscerned that neither did the witness narrate the words spoken\n\nby the accused regarding the place of concealment of the dead body\n\nof K. Nagesh nor that the said fact/place was exclusively in his\n\nknowledge and that he could get the same recovered. Rather, there\n\nis a very startling fact which is evident from the aforesaid extract\n\nof the Investigating Officer’s evidence inasmuch as the\n\nInvestigating Officer did not utter a single word that the accused\n\nalso accompanied him and the panch witnesses for pointing out\n\nand getting recovered the skeletal remains and the clothes\n\npurported to be of the deceased.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P042_C01",
+      "text": "31. Contrary thereto, on the aspect of recovery of Rs. 3,50,000/-\n\nfrom the house of the accused, the Investigating Officer (PW-22)\n\nmade a pertinent deposition that he along with the panchas (PW-\n\n16 and PW-17), accompanied by the accused went to the accused’s\n\nhouse. The accused(A1) led them inside his house and brought out\n\na cover containing Rs. 3,50,000/-. Thus, so far as the aspect of\n\nrecovery of the currency notes is concerned, the Investigating\n\nOfficer categorically stated that it was the accused who led them\n\nto the place of discovery, but so far as the crime scene is\n\nconcerned, there is not even a slightest utterance by the\n\nInvestigating Officer (PW-22) that the accused made the disclosure\n\nor led them to the place where the skeletal remains were found.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P043_C01",
+      "text": "32. In addition, thereto, we may also refer to the testimony of Dr.\n\nSyed Irshad, Medical Officer (PW-15) who also admitted in his\n\ncross-examination that police and other persons had shown him\n\nthe skeletal remains. The panch witness (PW-9 and PW-19) also\n\ndid not make a whisper regarding the accused, leading them to the\n\nplace from where the incriminating articles were recovered.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P044_C01",
+      "text": "33. Hence, we have no hesitation in holding that neither was the\n\ndisclosure allegedly suffered by the accused before the\n\nInvestigating Officer (PW-22) under\nSection 27\nIEA proved as per\n\nlaw nor did the prosecution establish that the discovery was made\n\non being pointed out by the accused. Since the very factum of the\n\ndiscovery/recovery of incriminating skeletal remains was not\n\nproved by proper evidence, the same cannot be linked to the\n\naccused appellant.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "IEA 27"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P045_C01",
+      "text": "34. The third link of circumstantial evidence is that the recovered\n\nskeletal remains were purportedly matched with the blood of the\n\nmother of the deceased (PW-1) by the process of DNA profiling.\n\nHowever, as has been noted above, PW-1 did not utter a single\n\nword that her blood sample was collected by the Investigating\n\nOfficer (PW-22) during the course of the investigation. Also, even\n\nDr. Syed Irshad, Medical Officer (PW-15) did not state that he\n\ncollected the blood samples of PW-1. Thus, the DNA profiling\n\nreport29 pales into insignificance and cannot be treated as an\n\nincriminating circumstance against the accused.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P046_C01",
+      "text": "35. As a consequence of the above discussion, we have no\n\nhesitation in holding that none of the incriminating circumstances\n\n29 Exhibit P-42\n\nportrayed by the prosecution in its endeavour to bring home the\n\ncharges against the accused appellant were established by cogent\n\nand clinching evidence, and therefore, the conviction of the\n\naccused appellant as recorded by the trial Court and affirmed by\n\nthe High Court cannot be sustained.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P047_C01",
+      "text": "36. Resultantly, the impugned judgments dated 13th October,\n\n2016 and 20th March, 2019 are hereby quashed and set aside. The\n\naccused appellant is acquitted of the charges. He is in custody and\n\nshall be released forthwith, if not wanted in any other case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA_P048_C01",
+      "text": "38. Pending application(s), if any, shall stand disposed of.\n………………….……….J.\n (DIPANKAR DATTA)\n\n ………………………….J.\n (SANDEEP MEHTA)\n\nNew Delhi;\nDecember 03, 2024",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Wadla Bheemaraidu vs The State Of Telangana",
+    "case_id": "SC_2024_WADLA_BHEEMARAIDU_VS_THE_STATE_OF_TELANGANA",
+    "court": "Supreme Court of India",
+    "year": "2024",
+    "facts_summary": "1. The instant appeal by special leave arises out of the judgment\n\n and order dated 20th March, 2019, passed by the Division Bench\n\n of the High Court of Telangana at Hyderabad, dismissing the\n\n Criminal Appeal No. 1078 of 2016 preferred by the appellant and\n\n affirming the judgment dated 13th October, 2016 rendered by the\n\n Family Court-cum-VII-Additional Sessions Judge,\n\n Mahabubnagar1. 2. Eight accused persons were put up for trial. The appellant\n\n (A1) and two co-accused (A2 and A3) were charged and tried for\n\n,\n\n,\n\nand\n\nthe Indian Penal Code, 18602, whereas the remaining co-accused\n\n(A4-A8) were charged and tried for the offences punishable under\nSections 302\n,\n\nread with\nSection 109\nIPC. 3. Vide judgment dated 13th October, 2016, the trial Court\n\nacquitted A4 to A8 of all the charges. The appellant (A1) and the\n\ntwo co-accused (A2 and A3) were convicted and sentenced as\n\nbelow:\n(i)\nSection 302\nIPC: Life Imprisonment and a fine of Rs. 5,000/-\n(in default to undergo Simple Imprisonment for six months)\n(ii)\nSection 364\nIPC: Rigorous Imprisonment for 10 years and a\n fine of Rs. 5,000/- (in default to undergo Simple Imprisonment\n for six months).\n(iii)\nSection 384\nIPC: Rigorous Imprisonment for 3 years and a\n fine of Rs. 5,000/- (in default to undergo Simple Imprisonment\n for six months).\n(iv)\nSection 201\nIPC: Rigorous Imprisonment for 5 years and a\n fine of Rs. 5,000/- (in default to undergo Simple Imprisonment\n for six months).",
+    "legal_issues": "13. The Division Bench of the High Court of Telangana in\n\nappeal17 reversed the conviction of A2 and A3 and acquitted them\n\nwhile affirming the conviction and sentence awarded by the trial\n\n14 Ibid\n15 Hereinafter being referred to as ‘\nCrPC\n’.\n16 Supra, Para No. 3.\n17 Criminal Appeal No. 1078 of 2016.\n\nCourt to the appellant (A1). Aggrieved, the appellant (A1) is before\n\nus in the present appeal by special leave.\nSubmissions on behalf of the accused-appellant: - 14. Shri A. Sirajudeen, learned senior counsel representing the\n\naccused appellant advanced the following pertinent submissions\n\nto assail the impugned judgments seeking acquittal for the\n\naccused appellant: -\n(i) That the entire case of the prosecution is false and\n\n fabricated. The prosecution has failed to prove the motive\n\n attributed to the appellant (A1) for commission of the\n\n offence, because neither B. Laxmamma (PW-1), the mother\n\n of the deceased nor G. Hanumanth (PW-2), the father of the\n\n deceased, supported the prosecution case regarding the\n\n alleged theory of motive which was based upon the so called\n\n extra-marital affair of the deceased with Smt. Shivaleela\n\n (PW-8), the wife of the appellant, who also did not support\n\n the prosecution case on this aspect. (ii) That the sole circumstance of recovery of the skeletal\n\n remains relied upon by the High Court for convicting the\n\n accused appellant could not be proved by the prosecution\n\n by leading cogent and clinching evidence. In this regard, it\n\nwas con",
+    "ratio_summary": "26. The law is well settled by a catena of judgments of this Court\n\nthat the information under\nSection 27\nIEA which leads to discovery\n\nof an incriminating material/evidence must be proved by the\n\nInvestigating Officer as being voluntary and uninfluenced by\n\n27 Exhibit P22-A\n\nthreat, duress or coercion. The Investigating Officer is also\n\nrequired to prove the contents of the information/confessional\n\nmemo to the extent they relate to the facts discovered.",
+    "final_order": "",
+    "outcome_summary": "Allowed",
+    "sections_cited": [
+      "IPC 109",
+      "IPC 302",
+      "IPC 364",
+      "IPC 384",
+      "IPC 201",
+      "IEA 27"
+    ],
+    "cases_cited": []
+  }
+}

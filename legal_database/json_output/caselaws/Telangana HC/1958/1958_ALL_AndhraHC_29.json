@@ -1,0 +1,514 @@
+{
+  "case_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1958",
+  "judgment_template": null,
+  "case_number": "Petition 36 of 1950",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 19,
+  "cited_by_count": 3,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1958\\1958_ALL_AndhraHC_29.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P001_C01",
+      "text": "Sitaram Reddy vs Chinna Ram Reddy And Ors. on 16 April, 1958\nEquivalent citations: AIR1959AP159, AIR 1959 ANDHRA PRADESH 159\nJUDGMENT\n\n Jaganmohan Reddy, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P002_C01",
+      "text": "1. This is an execution appeal against the judgment of the Sadar Adalat, Gulbarga, dated 16-10-1950 rejecting the objection of the judgment-debtor that the decree passed by the Judicial Committee was without jurisdiction and void.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P003_C01",
+      "text": "2. The following facts may be stated for an appreciation of the several contentions raised in this appeal. The plaintiff-appellant had filed a suit in Sadar Adalat, Gulbarga, on the basis that he was an illatom son-in-law, to declare invalid and to set aside the adoption of the 2nd defendant by the 1st defendant, Tulasamma as also the several transfers made by the said first defendant in favour of defendants 3 and 4. The 2nd and 4th defendants challenged the illatom adoption. The 4th defendant further stated that the transfers were made for consideration. The 1st and 3rd defendants admitted the plaintiff's claim. The Sadar Adalat, Gulbarga, dismissed the suit which was confirmed by the High Court on appeal. Against this judgment and decree, an appeal was filed under Section 4, Clause (a) to the State Judicial Committee which submitted its opinion for allowing the appeal and declaring invalid the adoption of the 2nd defendant and the transfers in favour of defendants 3 and 4. An Arazdasht was submitted to H.E.H. the Nizam on 24-1-1950 and H.E.H. the Nizam by his Firman-Mubarak dated 25-1-1950 accepted the opinion of the Judicial Committee and decreed the suit in plaintiff's favour.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P003_C02",
+      "text": "This firman was communicated to the Judicial Committee by the Home Department by its letter dated 20-2-1950 and the notice of the judgment was published on 21-2-1950 along with other judgments calling the parties and their advocates to affix their signature after inspection. The case of appellant was 26th in the list. In accordance with the judgment, a decree was prepared and signed by the then Chief Justice late Sri R.S. Naik and the Registrar of the High Court, Sri J. Jurien on 8-3-1950. The 2nd defendant, Seetharam Reddi applied for a copy of the list through which the judgment was published on 17-3-1950. But this request was rejected on 18-3-1950. On 15-4-1950 the decree-holder filed an execution petition No. 36 of 1950 in the Sadar Adalat, Gulbarga. The judgment-debtor filed an application to declare the decree null and void and therefore not executable on the ground that the finnan was antedated after the 26th of January 1950 by making it appear that it was issued on 25-1-1950, that after the Constitution the Nizam had no powers to issue any such firman and that therefore the judgment was without jurisdiction.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P003_C03",
+      "text": "The application further raised an objection that the Chief Justice of the High Court of Hyderabad also had no power or authority to sign the decree after the jurisdiction of the Judicial Committee was abolished.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P004_C01",
+      "text": "3. On these objections, the trial court framed two issues, viz ;\n(1) Whether the decree under execution is void, ineffective and unenforceable under the law as contended by the judgment-debtor; and \n\n (2) Whether it is necessary to appoint a Receiver to protect the rights of the petitioners on behalf of the judgment-debtor ?",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P005_C01",
+      "text": "4. In order to prove his contention that the decree was void, the judgment-debtor filed an application to summon the Judicial Committee's file and a further application to record the evidence on commission of Nawab Zain Yar Jung. Sri B. Bam Krishna Rao then Revenue Minister, Sri Shivashenkar, Ex-Home Secretary, Sri Shiv Kumar Lal, another Ex-Home Secretary, Sri M. Hanumantha Rao, Ex-Dy. Home Secratary and Abdul Sattar Peshi Secretary to H.E.H. the Nizam and Sri D.S. Bhakale, Ex-Chief Minister. The file of the Judicial Committee was summoned but the Judicial Committee Office of the High Court wrote back stating that it was not the practice to send its fifes to the lower Courts but the party could obtain certified copies if he so chose and file the same and with respect to the other application to record the evidence of the various persons stated in the application, the Sadar Adalat rejected the prayer on the ground that the D.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P005_C02",
+      "text": "O. communicating the finnan of H.E.H. the Nizam was dated 25-1-1950 was issued from the Pehi of H.E.H. the Nizam and therefore it was evident that H.E.H. the Nizam had issued the firman on that date and that as the firman could be proved by a certified copy of the same under Section 62 of the Hyderabad Evidence Act, oral evidence could not be allowed and consequently the application was dismissed and orders for execution were accordingly made. This appeal has been filed against the said order.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P006_C01",
+      "text": "5. The appellant contends that the evidence of the persons mentioned in the application was necessary to prove that the firman was antedated and that the lower Court was wrong in disallowing it and also in rejecting his prayer to summon file No. 178/54 of the Judicial Committee. In his application dated 10-7-1950, accompanied by an affidavit, 2nd defendant stated that it was necessary to summon the file as the copy of the Notification dated 21-2-1950, in which the petitioner's case was listed as 26, had not been furnished to him as was evident from the memorandum issued to him. It was therefore necessary to obtain a copy of that notification as well as the copy of the D.O. containing the firman of H.E.H. the Nizam and to inspect certain other documents in the file.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P007_C01",
+      "text": "6. The question whether this petition was rejected properly or not -- would depend upon the provisions of Section 172 of the Hyderabad Civil Procedure Code which relate to the summoning of the files of other Courts or from the departments of the Government. An English translation of Section 172 is as under:\n\"(1) The Court may, of its own notion and may in its discretion upon the application of any of the parties to a suit, send for, either from its own records or from any other Court or the department of the Government, the record of any other suit or proceeding and inspect the same. (2) Every application made under this Section shall (unless the Court otherwise directs) be supported by an affidavit showing how the record is material to the suit in which the application is made, and that the applicant cannot without unreasonable delay or expense obtain a duly authenticated copy of the record or of such portion thereof as the applicant requires, or that the production of the original is necessary for the purposes of justice.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P007_C02",
+      "text": "(3) Nothing contained in this Section shall ba deemed to enable the Court to use in evidence any document which under the Law of evidence would be inadmissible in the suit.\"\nThis section is similar to Order 13, Rule 10,\nC.P.C\n. except that it was made subject to Section 126 of the Hyderabad Evidence Act and that files of the Departments of the Government could also be summoned thereunder. Section 126 of the Hyderabad Evidence Act is in the following terms ;\n\"(1) A witness summoned to produce a document shall, if it is in his possession or power, bring it to Court, notwithstanding any objection which! there may be to its production or to its admissibility. The validity of any such abjection shall be decided on by the Court; and the Court, if it sees fit, may inspect the document, except where it refers to matters of State and the Head of the Department objects to its inspection.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P007_C03",
+      "text": "(2) The provisions of Sub-section (1) do not authorize any Court either by itself or on the application of any party to a case to compel any Government department to produce any such document or any copies thereof by the production of which the secrets of the Government are likely to disclose or are likely to cause a disturbance to peace and public security. Explanation: For the purposes of this subsection, the decision of every Head of the Deparf ment in relation to that department or--the decision of the Minister in relation to the Office of the Secretariat is final on the question whether any document or a copy thereof can be filed in Court or not.\"",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P008_C01",
+      "text": "7. So far as the summoning of the Judicial Committee's file for the purpose of obtaining a copy of the notification issued by the Judicial Committee on 21-2-1950 copy of which was refused to the appellant by the Judicial Committee, the summoning of the file was not necessary for the purpose of showing, as the appellant intended to show, that the notice of judgment was given after 26-1-1950 and that the decree was prepared thereafter, because the decree-holder admitted these facts.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P009_C01",
+      "text": "8. With respect to the copy of the firman and copies of other documents, which the appellant intended to obtain by the summoning of the file, the procedure followed by him was not in accordance with Section 172 of the Civil Procedure Code. He ought to have applied for copies of the firman or other\" papers and filed the same and it was only then that where it was necessary to prove any such document, he could have asked for the file to he summoned. He could have filed an application for inspection of the file of the Judicial Committee in the Judicial Committee section of the High Court but it does not appear that he had taken any steps or obtained any copies or filed them before the Executing Court. His prayer for the summoning of the Judicial Committee file was therefore properly rejected.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P010_C01",
+      "text": "9. It may further be stated that subsequently a copy of the D. O. containing the firman of the H.E.H. the Nizam dated 25-1-1950 was obtained and filed and held to be proved under Section 62 of the Hyderabad Evidence Act being a copy of a public document. We have not been able to find any application for the summoning of the witnesses in the records though it would appear that one such was filed. There is nothing in the records to specify the purpose for which they were summoned or the knowledge which any of these witnesses had with respect to any fact which the appellant intended to prove. We have, with a view to satisfy ourselves, sent for the file of the Judicial Committee No. 178 of 1954 and inspected the same. We gavo opportunity to the parties to inspect the same to find out if there is any document on which they may rely. Nothing appears from this file which can cast a doubt as to the firman being antedated, It would appear that Arzdasht was sent on 24-1-1950 and that the D.O. containing the firman is dated 25-1-1950.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P010_C02",
+      "text": "Further, it would appear that the officers summoned were not occupying the posts specified against them, as such they could not be said to have any file or document in their power or possession which they could be asked to produce in Court within the meaning of Section 173 of the Hyderabad\nC.P.C\n. In the circumstances, the lower Court was right in rejecting the application for commission as it was not satisfied that these persons were in a position to give evidence contrary to what' was contained on the face of the documents.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P011_C01",
+      "text": "10. The appellant has now filed before us a petition and an affidavit of one Chinna Reddy, the father of the appellant. In this the deponent stated that ho was conducting the suit on behalf of his son during 1949-1950, that after the arguments were heard, judgment was not pronounced and that he was therefore enquiring from time to time in the Judicial Committee office with respect to this matter. He also enquired in the Home Department which was then dealing with the matter but it refused to give him any information but merely informed him that the files were being despatched (presumably to H.E.H. the Nizam.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P011_C02",
+      "text": "He was thereafter daily visiting the Office of the Judicial Committee and during the later half of January during which period he was informed that about 72 cases of the Judicial Committee were pending to be disposed of by H.E.H. the Nizam out of which firmans were received only in 68 cases out of 69 sent to him before 26-1-1950, that one case was still pending with H.E.H the Nizam, that file was 178/54 which concerned his son's case, that he was further informed that so late as middle of February 1950, the Home Department was having correspondence with the Paishi Office about his case and that an endorsement was made in a separate file C.R. 80/59 F. (General Judicial).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P011_C03",
+      "text": "In paragraph 4 the deponent says that he was finally informed by the officers concerned that his son's file had gone on along with some other cases only on 24-1-1950 to Paishi Mubarak but his enquiries elicited that the file was not despatched from the Paishi Office till about the middle of February 1950 and that he further came to know that the Chief Civil Administrator drew the attention of Nawab Zain Yar Jang who was the Minister in Charge of obtaining the signatures of H.E.H the Nizam regarding the appellant's file but his enquiry at the Paishi Office revealed that the file was sent for the signature of the H.E.H. the Nizam by the Paishi Office sometime in the first week of February. He further states that his son, the appellant had filed an application on 19-11-1958 to inspect the files Nos. C.R. 80/59 F. addressed to the Chief Secretary to the Government but the appellant received the information that those files were not the files of the Judicial Committee and therefore could not be given for inspection.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P011_C04",
+      "text": "This affidavit was filed during the course of the arguments before us, when it was discovered that the application filed for the summoning of the Judicial Committee's file in the lower Court was defective and did not disclose the purpose which is now sought to be established. It may be stated that the appellant filed an application for the inspection of the tiles A.D. 168/58 F. and C.R. 80/59 F. (General Judicial) on 19-11-1950. The application to the Chief Secretary is in the following terms :\n\"I am a party to one of the files relating to the ex-Judicial Committee of the Hyderabad State viz., Chinna Ram Reddy v. Tulsamma and others, files NOS: 1. AD/166/58 F. Seetharama Reddy, 2. C.R. 80/59-F. General Judicial which I now understand is kept in your Secretariat. I wish to have the said files inspected and obtain copies of some of the papers as there is some execution matter pending in the High Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P011_C05",
+      "text": "I therefore request that I may be permitted to inspect the said files on payment of the requisite fee.\"\nTo this application, the Secretary to Government, Home Department, issued a memorandum dated 31-12-1956 informing Sri Seethuram Reddy that the files referred to by him in the petition cited were not the files of the Judicial Committee and that it was therefore regretted that they could not be given to him for inspection. The purpose for which the files were required for inspection had not been stated and the mere assertion that they related to the Judicial Committee of the Hyderabad State pertaining to his case had been rejected by the Government informing the appellant that they did not pertain to the Judicial Committee. These allegations were not made in the lower Court; nor had the information, which was alleged to have been obtained by the father of the appellant prior to the application for the execution of the decree, been disclosed and consequently, the refusal by the lower Court to summon the files or allow evidence to be adduced was not unjustified.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P012_C01",
+      "text": "11. The present application is presumably under Order XLI, Rule 27,\nC.P.C\n., which is in the following terms :\n\"(1) The parties to an appeal shall not be entitled to produce additional evidence, whether oral or documentary, in the appellate Court. But if -\n(a) the Court from whose decree the appeal is preferred has refused to admit evidence which ought to have been admitted or\n(b) the party seeking to adduce additional evidence satisfies the appellate Court that such evidence notwithstanding the exercise of due diligence, was not within his knowledge or could not be produced by him at or before the time when the decree under appeal was passed, or\n(c) the appellate Court requires any documents to be produced or any witness to be examined to enable it to pronounce judgment or for any other substantial cause, \n\n the appellate Court may allow such evidence or document to be produced, or witness to be examined.\"\nIt will be seen from the above provision that conditions in (a) and (b) are not satisfied; nor can it be said that we cannot pronounce any judgment without requiring any documents or oral evidence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P013_C01",
+      "text": "12. The learned Advocate for the appellant relies on Order XVI, Rule 7,\nC.P.C\n,, which empowers a Court to require any person present in Court to give evidence or to produce any document then and there in his possession or power. We do not understand how this provision can help the appellant as there is no question of any person present in Court whom the Court can compel to give evidence or produce any document.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P014_C01",
+      "text": "13. Apart from the inability of the appellant to comply with the provisions of law regarding the summoning of files, the contention urged by the learned advocate for the respondent is that the appellant cannot be allowed to go behind the decree; nor can he be permitted in execution proceedings to challenge the validity of the decree except within a narrow limit.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P015_C01",
+      "text": "14. The appellant contends that H.E.H. the Nizam had no jurisdiction after 26-1-1950 as the same ceased to exist by virtue of clause 4 of\nArticle 374\nof the Constitution and consequently any judgment or decree passed by the Judicial Committee would be without jurisdiction and he would be entitled to lead evidence to establish the fact, The question is whether this is a matter which falls for determination by the Executing Court within the meaning of\nSection 47\n, C.P.C. In other words, is it one relating to execution, discharge or satisfaction of the decree? It is contended that the general principle is that the jurisdiction of the Court executing the decree must be determined with reference to the directions contained in the decree and that it cannot go behind it and has no power to question the legality or the correctness of the decree.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 374"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P015_C02",
+      "text": "But the learned advocate for the appellant states that the principle upon which this rule is based, is that the parties, who had an opportunity of raising such an objection in the original Court at the earliest opportunity, are precluded from raising it in the executing Court and since the facts now alleged could not be raised in the original Court or at the appellate stage, the appellant cannot be precluded from raising the same at the time of the execution of the decree if it goes to the root of the jurisdiction, and therefore the executing Court cati enquire into the want of jurisdiction. It may be stated that the objections relating to jurisdiction, which are generally raised before the Executing Court, can be broadly classified as stated by one of us in the Full Bench judgment in Anand Raov. Kishendas, ILR 1954 Hyd 353 at p. 361: (AIR 1954 Hyd 190 at p. 193). which is as follows :\n\"(a) The decree of the civil Court is a nullity either by reason of some inherent defect of jurisdiction of the civil Court to pass it or otherwise;\n(b) The Court passing the decree has no territorial or pecuniary jurisdiction as specified in the Civil Procedure Code.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P015_C03",
+      "text": "This may arise in two days, either -\n(i) with respect to a suit being instituted in a Court which has no territorial jurisdiction over it but no objection has been raised by the defendant with respect to want of jurisdiction and a decree is passed therein; or\n(ii) with respect to a decree passed by a Court which was competent to pass it but after it is passed the territory with reference to which the suit was filed is transferred to the jurisdiction of another Court but that Court which passed it nevertheless proceeds to execute the decree against properties in the territory of the Court to which it is transferred, and the judgment-debtor does not object to the jurisdiction at the earliest possible moment during tile execution proceedings. With respect to objection (a) above, if the decree is nullity the executing Court can refuse to execute it. With respect to (b) there is authority for the proposition that the defendant's inactivity in not raising any objection to the territorial or pecuniary jurisdiction in the Court of the first instance precludes him from objecting to the jurisdiction in execution proceedings.\"",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P016_C01",
+      "text": "15. The objection now raised is not one which comes within those classes of cases enumerated in (b) but is one pertaining to (a). If a decree is a nullity, the executing Court can refuse to execute it. But the question is, if the inherent defect of jurisdiction is not patent on the face of the decree or is not evident without an elaborate enquiry to establish that the Court passing the decree had no jurisdiction, can the executing Court go behind the decree and hold such an enquiry? In most of the cases where the executing Court refuses to execute a decree on the basis of nullity, the matter arose out of the admitted facts of that case or were apparent without an elaborate enquiry. Ranga Ayyar v. Sundararaja Ayyangar\n, AIR 1933 Mad 362, it was held :\n\"When there is no want of the jurisdiction apparent on the face of the decree the party in execution cannot raise a disputed point of fact which, if his contention is true, would have deprived the Court of its jurisdiction to pass a decree in that matter.\"\nIn that case the objection raised was that the land in question was service inam and not alienable, and consequently the Court had no jurisdiction to pass a decree.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P016_C02",
+      "text": "After referring to the several decisions i.e.,\nAnjaneyalu v. Sri Venugopala Rice Mills Ltd., ILR\n45 Mad 620; (AIR 1922 Mad 197) (FB); and Katwari v. Sita Ram Tiwari, ILR 43 All 547: (AIR 1921 All 1118) (FB), Walsh, J. observed at page 363 as follows :\n\"The question therefore in this case is very simple, and it is whether when there is no want of jurisdiction apparent on the face of the decree the .party in execution can raise a disputed point of fact which if his contention is true would have deprived the Court of its jurisdiction to pass a decree in that matter.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P016_C03",
+      "text": "I am quite clear that there is no authority quoted to this effect and the doctrine would obviously have most disastrous consequences; for instance in a suit for rent in raiyati lands in an estate tried by a revenue Court without objection and where a decree passed therein becomes final it is clearly not open, in execution proceedings for the judgment-debtor to urge that after all the lands are not raiyati lands but kamatom lands and that therefore the trying Court had no jurisdiction, and it would be clearly most improper for the executing Court to embark in execution on an investigation into a disputed matter of fact of this sort.\"\nHe was therefore of the opinion that the Courts had no jurisdiction to go into the disputed questions of fact at all and if there was no want of jurisdiction apparent on the face of the decree, they were bound to execute it.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P017_C01",
+      "text": "16. Govindan Nadar v. Natesa Pillai\n, AIR 19S2 Mad 7, the question was whether the defendant was a lunatic and was unrepresented at the time of the passing of the decree and whether an enquiry could be made into that fact. Jackson, J. considered the statement of the Fidl Bench of the Calcutta High Court in Gorachand Haldar v. Prafulla Kumar Roy, ILR 53 Cal 166: (AIR 1925 Cal 907) (FB) which laid down the principle in the following words :\n\"Where the decree presented for execution was made by a Court which apparently had no jurisdiction, whether pecuniary, territorial or in respect of the judgment-debtor's person, to make the decree, the executing Court is entitled to refuse to execute it.\"\nIn his view, the word \"apparently\" in the above statement was important and was a third way of expressing the same principle by the same metaphor, being synonymous with \"on its face\" or 'without going behind'. The learned Judge after referring to Kalipada Sirkar v. Hari Mohan Dalai, ILR 44 Cal 627: (AIR 1917 Cal 844) observed :\n\"If a decree is apparently a nullity, so that without going behind it the executing Court can see from its face it is void, the executing Court is not bound to execute it.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P017_C02",
+      "text": "But in the vast majority of cases, and in the case now under appeal, the decree is not on its face void, and the executing Court has no ground for doubling its validity unless it goes behind it.\"\n(In the circumstances, he held that it is an accepted principle that the executing Court cannot go behind file decree, that to employ other words but the same metaphor, it must take the decree at its face value, that it can inquire whether the Court as evidenced on the face of the decree by seal and signature was a properly constituted Court competent to pass the decree, but it need not inquire, having satisfied itself of the competence, whether it is a decree which the Court ought to have passed and that for such an inquiry it would obviously be necessary to go behind the decree. The statement of law made in this judgment was approved, though obiter, by a Bench of the Madras High Court, Curgenven and Cornish JJ. in\nLakshmanan Chettiar v. Chidambaram Chettiar\n, AIR 1935 Mad 236. In another Division Bench case, Beasley C. J. in\nPresident, Board of Commissioners Hindu Religious Endowments, Madras v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P017_C03",
+      "text": "Nagarathina Mudaliar\n, AIR 1935 Mad 417 dealing with an objection that the District Board acted without jurisdiction in assessing the respondent with the contribution, observed at page 418:\n\"It is admitted here that the kattalai in question is a specific endowment and that the respondents are the trustees thereof. This, in my view, concludes the matter. The position therefore was that the executing Court had before it a decree which it was bound to extcute. On the face of it there was nothing which showed that the Board had acted without jurisdiction in making the order upon the respondents which has the effect of a decree. It is only in cases where a Court has passed a decree which it obviously has no jurisdiction to pass that it can even faintly be argued that an executing Court can refuse to execute a decree which it has before it.\"\nAfter\nthe above case\n. Burn and Lakshmana Rao JJ. in\nAnnamalai v. Kumarappan Sriranga\n, AIR 1937 Mad 134 also held that the executing Court had no power to go into the disputed question of facts which if proved would take away its jurisdiction to order sale.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P017_C04",
+      "text": "When the decree on the face of it discloses no want of jurisdiction and there is nothing in the proceedings from which the executing Court can take notice that the land is inalienable, the executing Court is not entitled to go behind the decree. The several cases\nreferred to above\nwere also considered.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P018_C01",
+      "text": "17. Wadsworth, J. in Ramu Mudali v. Shohagmul, AIR 1940 Mad 628 expressed the proposition a little differently thus :\n\"Where on the face of the decree, it can be seen that the Court which passed the decree had no jurisdiction, or if there are apparent reasons for doubting its jurisdiction to pass that decree, the executing Court can go into the question whether or not the decree is a nullity. The extent to which the executing Court can go into the validity of a decree, which is not on its face one passed without jurisdiction, is very limited.\"\nIn that case, the question of nullity was sought to be raised on the ground that the suit was bad and the decree a nullity because the plaintiffs at the time of the filing of the suit constituted an unregistered firm. Of course, this was an objection which could have been urged in the suit itself and subsequently in the appeal and therefore the decree-holder could not raise that question.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P019_C01",
+      "text": "18. It appears to us on a due consideration of the several authorities that while a decree passed without jurisdiction is a nullity and can be questioned in execution proceedings or in collateral proceedings, want or absence of jurisdiction must be apparent or must appear from the face of the decree that ft was passed by a Court which was incompetent to pass it. But if the question of want or absence of jurisdiction in the Court passing the decree cannot be determined without an amount of research, investigation or elaborate inquiry, the executing Court is not competent to permit that enquiry or investigation to be made which would require that Court to take evidence pro and contra and to give a finding as if it was a trial Court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P020_C01",
+      "text": "19. In this case, on the face of the decree, it is apparent that the opinion of the Judicial Committee was accepted by H.E.H the Nizam on 25-1-1950 and the copy of the firman filed in the case being a copy of a public document, it does not, on the face of it, show that it was antedated or was not made on the day purported to have been made. The appellant wishes the executing Court to hold an elaborate enquiry on the alleged information supposed to have been obtained by him from some of the clerks of the department in order to virtually prove that H.E.H the Nizam had, on the persuasion of Mr. Bakhle and others in the Government, issue a firman when he was not competent to do so and antedated the same to 25-1-1950. It is obvious that this would entail an 1 elaborate enquiry and which up to the present is a mere assertion by him without any prima facie basis.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P021_C01",
+      "text": "20. For tile aforesaid reasons, we reject the appellant's application to call for the files now specified by him and permit an enquiry to be held to establish that the decree passed was without jurisdiction.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P022_C01",
+      "text": "21. The next contention urged by the learned advocate for the appellant is that the Chief Justice was not competent to sign the decree because the Judicial Committee Regulation was repealed and there was no power in the High Court as such to draw up a decree; nor was the Chief Justice empowered to sign the same. This argument is based on the assumption that Regulation XXI of 1358 F. has been repealed by virtue of Clause 4 of\nArticle 374\nof the Constitution and that it had been so held by a Bench of the erstwhile Hyderabad High Court in ILR (1954) Hyd 353: (AIR 1954 Hyd 190). In our view this contention has no force. In order to better understand the scheme of the Appeals to H.E.H. the Nizam's Regulation, 1358 F., it is necessary to notice\nSections 7\n\n. Prior to the Regulation, appeals to H.E.H. the Nizam were governed by the Zabthe Judicial Committee which was repealed; by the later Regulation now referred to. Section 7\ndeals with the constitution of the Judicial Committee by the Chief Justice from out of a Council consisting of not more than 9 members approved by H.E.H. the Nizam and the taking of oath by the members of the Council in the presence of H.E.H. the Nizam.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 374"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P022_C02",
+      "text": "Section 8\ndeals with the qualifications of the members of the Council and\nSection 9\nwith Honorarium. Sections 10\nand\n\nare in the following terms :\n\"\nSection 10 (1)\n. After the parties are heard on an appeal or a petition under this Regulation, provided they appear in pursuance of a notice issued to them, advice shall be tendered to H.E.H. the Nizam for orders in the name of the Judicial Committee by a majority of the members present at the hearing and concurring in such advice. (9) It shall be lawful for the Judicial Committee to pass interim orders in the name of H.E.H. the Nizam. Section 11\n: A copy of the order of H.E.H. the Nizam certified by such person as he may appoint, shall be sent to the High Court, or the final authority, as the case may be, whereupon it shall pass a decree or an order in conformity with the said order.\"\nArticle 374(4)\nof the Constitution did not repeal this Regulation but merely abolished the jurisdiction of the Judicial Committee on and from the date when the Constitution came in force viz., 26-1-1950.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P022_C03",
+      "text": "Article 374 (3)\nreads thus :\n\"On and from the commencement of this Constitution the jurisdiction of the authority functioning as the Privy Council in a State specified in Part B of the First Schedule to entertain and dispose of appeals and petitions from or in respect of any judgment, decree or order of any Court within that state shall cease, and all appeals and Other proceedings pending before the said authority at such commencement shall be transferred to, and disposed of by, the Supreme Court.\"\nThere is nothing in this provision of the Constitution from which it can be assumed that the Regulation itself had been repealed, All that Clause 4 of\nArticle 374\ndoes is to abolish the jurisdiction of the Judicial Committee to entertain and dispose of appeals and petitions from or in respect of any judgment, decree or orders of any Court within that State and consequently to direct the transfer of all appeals and other proceedings pending before the said authority.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P022_C04",
+      "text": "Once the Judicial Committee had tendered its advice and H.E.H. the Nizam had passed the orders thereon, there was no appeal or petition from or in respect of any judgment, decree or order of any Court in the Hyderabad State pending, which could have been transferred to the Supreme Court. The learned advocate contends that the drawing up of a decree from proceedings within the meaning or Clause 4 was said to be pending before the Judicial Committee at such commencement and that this should have been transferred to the Supreme Court to be disposed of. In our view, this contention is not well-founded because the words \"all appeals and other proceedings pending\" are in relation to matters which the Judicial Committee was seized of and which fell for determination by that Committee. Once the Judicial Committee gave its advice in so far as that case was concerned, there was no further proceeding pending before it and after the advice was accepted by H.E.H. the Nizam and orders were passed thereon, it was not the Judicial Committee that drew up the decree but it was the High Court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P022_C05",
+      "text": "If it was the intention to transfer even drawing up of decrees etc., after the judgments were passed by the Judicial Committee, the framers of the Constitution would have specifically said so. By way of contrast, Clauses 2 and 3 of\nArticle 374\nmay he perused. These clauses deal with all suits, appeals and proceedings, civil or criminal, pending in the Federal Court at the commencement of the Constitution and the judgments and orders of the Federal Court delivered or made before the commencement of the Constitution. In pending cases, they are directed to be removed to the Supreme Court and the Supreme Court is vested with the jurisdiction to hear and determine the same and with respect to judgments and orders of the Federal Court delivered or made before the commencement of the Constitution, they shall have the same force and effect as if they had been deliver--ed and made by the Supreme Court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P022_C06",
+      "text": "Similarly, with respect to appeals to His Majesty in Council clause 3, provides that any order of His Majesty in Council made on any appeal or petition after the commencement of the Constitution shall for all purposes have effect as if it were an order or decree made by the Supreme Court in the exercise of the jurisdiction conferred on such Court by the Constitution. In both the cases, the framers of the Constitution have used language from which the judgments and orders passed by the Federal Court prior to the Constitution or by His Majesty in Council after the Constitution are deemed to be decrees and orders of the Supreme Court in the exercise of the jurisdiction conferred on such Court by the Constitution. In both the cases, the framers of the Constitution have used language from which the judgments and orders passed by the Federal Court prior to the Constitution or by His Majesty in Council after the Constitution are deemed to be decrees and orders of the Supreme Court. If it was intended to treat the judgments and decrees of the Judicial Committees in Part B States in the same manner, different language to that used in Clause 4 would have been employed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P022_C07",
+      "text": "As we have already observed, the duty of drawing up of the decree was vested specifically in the Hyderabad High Court by\nSection 11\nof the Regulation of 1358 F. and there is nothing in clause 4 of\nArticle 374\nwhich is in conflict with that provision. The drawing up of the decree is said to be a judicial proceeding but even so, it must be a matter pending before the Judicial Committee on the commencement of the Constitution before it could be transferred to the Supreme Court. In our view, the abolition of the jurisdiction of the Judicial Committee does not have the effect of repealing the Regulation as a whole.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P023_C01",
+      "text": "22. No: doubt, in Ambarao v. Lakhiram, AIR 1951 Hyd 96, some observations were made which would indicate that\nArticle 374\nhad repealed the appeals to H.E.H. the Nizam's Regulation. But, a closer scrutiny would show that those observations must be confined to the facts of that case. The question before that Bench was whether the High Court had jurisdiction to grant a certificate to appeal to H.E.H. the Nizam under the Appeals to H. E. H.'s Regulation (XXI of 1358 P.). It was argued that by virtue of Section 374 of the Constitution, the Regulation was still in force. Janardan Reddy v. The State\n, , it was held that the High Court of Hyderabad before 26-1-1950, was not a High Court within the territory of India for the purposes of the Constitution and that being so, no question of grant of any certificate would arise at all.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P023_C02",
+      "text": "Their Lordships in AIR 1951 Hyd 98 having regard to\nArticle 374\nof the Constitution and the judgment in the Supreme Court case cited above, observed that\nArticle 374 (4)\nof the Constitution abolishes the jurisdiction of the Privy Council of the Hyderabad State after the Constitution of India came into force and that that body and its jurisdiction altogether ceased to exist. After pointing that on and from the commencement of the Constitution, there was no authority which could exercise the powers under the Appeal to H.E.H. the Nizam's Regulation inasmuch as the Rajpramukh could only exercise the powers vested in the Governors under\nArticle 161\nof the Constitution which did not confer any powers of hearing appeals; nor did the Constitution vest in the Rajpramukh any power to appoint a Judicial Committee, they went on to observe at page 97 thus:\n\"On the contrary,\nArticle 374\n, Clause 4 clearly enacts that the authority shall cease to exist. When the Rajpramukh has no power to hear appeals or appoint a Committee for the same, the contention that the Dastoor-ul-Ammal (XXI of 1358 F.) is still in force cannot hold good.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 374",
+        "Constitution 161"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P023_C03",
+      "text": "Thus, to my mind the Dastoor-ul-Ammal is not only inoperative but has become ineffective and so no certificate can be granted under the Dastoor-ul-Ammal.\"\nFrom this passage, it is sought to be contended that their Lordships of the Hyderabad High Court held that the Regulation was repealed by\nArticle 374 (4)\nof the Constitution. It is one thing to say that some of the provisions of a law have become invalid and ineffective and it is another thing to say that the Act itself has been repealed. Article 672 of the Constitution enjoins that subject to the other provisions of the Constitution, all the laws in force in the territory of India immediately before the commencement of the Constitution shall continue in force therein until altered or repealed or amended by a competent Legislature or other competent authority.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 672"
+      ],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P023_C04",
+      "text": "In our view, if the several provisions of an Act can, without conflict with the provisions of the Constitution, exist, then notwithstanding the provisions of the Constitution making ineffective certain other provisions of the said law, the law itself cannot be held to be repealed and those provisions which are not inconsistent with the provisions of the Constitution, will be in force. In this view\nSection 11\nnot being in conflict with any of the provisions of the Constitution must be held to be in force and the duty enjoined on the High Court to prepare decrees in conformity with the orders of H.E.H. the Nizam subsists even after the jurisdiction of the Judicial Committee to entertain appeal from the judgment and orders of the High Court had been abolished after 26-1-1950.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P024_C01",
+      "text": "23. Further, the fact that the decree was signed later does not materially affect the question because under Order XX, Rule 7 a decree bears the date of judgment and not the date when it is actually drawn up and signed.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA_P025_C01",
+      "text": "24. We are, therefore, of the view that the contentions urged by the appellant are without force and the appeal fails and is dismissed with costs.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1958_ANDHRA_HC_PRE-TELANGANA",
+    "court": "Supreme Court of India",
+    "year": "1958",
+    "facts_summary": "1. This is an execution appeal against the judgment of the Sadar Adalat, Gulbarga, dated 16-10-1950 rejecting the objection of the judgment-debtor that the decree passed by the Judicial Committee was without jurisdiction and void. 2. The following facts may be stated for an appreciation of the several contentions raised in this appeal. The plaintiff-appellant had filed a suit in Sadar Adalat, Gulbarga, on the basis that he was an illatom son-in-law, to declare invalid and to set aside the adoption of the 2nd defendant by the 1st defendant, Tulasamma as also the several transfers made by the said first defendant in favour of defendants 3 and 4. The 2nd and 4th defendants challenged the illatom adoption. The 4th defendant further stated that the transfers were made for consideration. The 1st and 3rd defendants admitted the plaintiff's claim. The Sadar Adalat, Gulbarga, dismissed the suit which was confirmed by the High Court on appeal. Against this judgment and decree, an appeal was filed under Section 4, Clause (a) to the State Judicial Committee which submitted its opinion for allowing the appeal and declaring invalid the adoption of the 2nd defendant and the transfers in favour of defendants 3 and 4. An Arazdasht was submitted to H.E.H. the Nizam on 24-1-1950 and H.E.H. the Nizam by his Firman-Mubarak dated 25-1-1950 accepted the opinion of the Judicial Committee and decreed the suit in plaintiff's favour. The application further raised an objection that the Chief Justice of",
+    "legal_issues": "3. On these objections, the trial court framed two issues, viz ;\n(1) Whether the decree under execution is void, ineffective and unenforceable under the law as contended by the judgment-debtor; and \n\n (2) Whether it is necessary to appoint a Receiver to protect the rights of the petitioners on behalf of the judgment-debtor ? 12. The learned Advocate for the appellant relies on Order XVI, Rule 7,\nC.P.C\n,, which empowers a Court to require any person present in Court to give evidence or to produce any document then and there in his possession or power. We do not understand how this provision can help the appellant as there is no question of any person present in Court whom the Court can compel to give evidence or produce any document. 13. Apart from the inability of the appellant to comply with the provisions of law regarding the summoning of files, the contention urged by the learned advocate for the respondent is that the appellant cannot be allowed to go behind the decree; nor can he be permitted in execution proceedings to challenge the validity of the decree except within a narrow limit.",
+    "ratio_summary": "6. The question whether this petition was rejected properly or not -- would depend upon the provisions of Section 172 of the Hyderabad Civil Procedure Code which relate to the summoning of the files of other Courts or from the departments of the Government. An English translation of Section 172 is as under:\n\"(1) The Court may, of its own notion and may in its discretion upon the application of any of the parties to a suit, send for, either from its own records or from any other Court or the department of the Government, the record of any other suit or proceeding and inspect the same. (2) Every application made under this Section shall (unless the Court otherwise directs) be supported by an affidavit showing how the record is material to the suit in which the application is made, and that the applicant cannot without unreasonable delay or expense obtain a duly authenticated copy of the record or of such portion thereof as the applicant requires, or that the production of the original is necessary for the purposes of justice. (2) The provisions of Sub-section (1) do not authorize any Court either by itself or on the application of any party to a case to compel any Government department to produce any such document or any copies thereof by the production of which the secrets of the Government are likely to disclose or are likely to cause a disturbance to peace and public security. Explanation: For the purposes of this subsection, the decision of every Head of the Deparf ment in ",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [
+      "Constitution 374",
+      "Constitution 161",
+      "Constitution 672"
+    ],
+    "cases_cited": []
+  }
+}

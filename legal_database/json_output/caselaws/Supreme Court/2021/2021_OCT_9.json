@@ -1,0 +1,697 @@
+{
+  "case_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR",
+  "case_name": "Sarabjeet Singh Mokha vs The District Magistrate, Jabalpur",
+  "normalized_case_name": "SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE,_JABALPUR",
+  "court": "Supreme Court of India",
+  "year": "2021",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 1301 of 2021",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "29 October 2021",
+  "judges": [
+    "B V Nagarathna",
+    "Vikram Nath",
+    "Dhananjaya Y Chandrachud"
+  ],
+  "author": "D.Y. Chandrachud",
+  "bench_type": "constitution",
+  "petitioner": "Sarabjeet Singh Mokha",
+  "respondent": "The District Magistrate, Jabalpur",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 64,
+  "cited_by_count": 67,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2021\\OCT\\2021_OCT_9.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P001_C01",
+      "text": "CRIMINAL APPELLATE JURISDICTION\n\n Criminal Appeal No. 1301 of 2021\n\n Sarabjeet Singh Mokha ....Appellant\n\n Versus\n\n The District Magistrate, Jabalpur & Ors. ....",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P001_C02",
+      "text": "Respondents\n\nDr Dhananjaya Y Chandrachud, J\n\nA Facts ....................................................................................................................3\n\nB Submissions of counsel ....................................................................................9\n\nC Right to make a representation: Constitutional safeguards and legislative\n\nscheme of the NSA .................................................................................................17\n\nD Analysis .............................................................................................................25\n\n D.1 Delay in considering the representation ..................................................25\n\n D.2 Failure to communicate decision on the representation........................38\n\nE Conclusion ........................................................................................................43\n\nPART A\n\n1 By a judgment dated 24 August 2021, a Division Bench at the Indore Bench\n\nof the High Court of Madhya Pradesh rejected a petition under\nArticle 226\nof the\n\nConstitution of India challenging a detention order passed against the appellant\n\nunder\nSection 3(2)\nof National Security",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P001_C03",
+      "text": "Act 1980 1.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P001_C04",
+      "text": "The detenu is in appeal. A Facts\n\n2 The appellant is a Director of City Hospital, Jabalpur. On 10 May 2021, FIR\nNo. 252/2021 was registered at Police Station Omti, Jabalpur under Sections 274,\n\n275, 308, 420 and 120B of the India Penal Code 1860 2;\nSection 53\nof the Disaster\n\nManagement Act 2005; and\nSection 3\nof the Epidemic Diseases Act 1897. The\n\nappellant was arrested in connection with the FIR on 26 May 2021. After the\n\ninvestigation, a final report under\nSection 173\nof the Code of Criminal Procedure\n\n1973 3 was submitted on 6 August 2021.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P001_C05",
+      "text": "The allegation against the appellant is that\n\nin connivance with certain others, he procured fake Remdesivir injections which\n\nwere administered to patients during the Covid-19 pandemic in order to make illegal\n\nprofits thereby endangering the life of the general public.\n\n3 On 12 May 2021, the appellant was detained in pursuance of an order of\n\ndetention dated 11 May 2021 under\nSection 3(2)\nof the NSA, for a period of three\n\nmonths.\n\n“NSA”\n\n“\nIPC\n”\n\n“\nCrPC\n”\n\nPART A\n\n4 It is alleged that the Police Station of ‘B’ Division in District Morbi of Gujarat\n\nseized fake Remdesivir injections from a factory where they were manufactured and\n\nan FIR was registered in that regard. On 10 May 2021, the statement under\nSection\n\nof the CrPC of a co-accused by the name of Devesh Chaurasia, who was\n\nrunning a pharmacy in the hospital owned by the appellant, was recorded to the\n\neffect that the appellant had procured fake Remdesivir injections without a bill. The\n\nappellant is said to have collected the injections through a person named Prakhar\n\nKohli from Indore, who sent the cartons through a transporter called Amba Travels.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P001_C06",
+      "text": "The fake Remdesivir injections were stated to have been administered to 50 patients\n\nat the City Hospital on 30 April 2021. In his statement under\nSection 161\nof the\n\nCrPC recorded on 10 May 2021, Prakhar Kohli stated that the appellant’s son had\n\non 21 April 2021 asked him to send the fake Remdesivir injections from Indore to\n\nJabalpur. Prakhar Kohli was made to speak to the appellant in that connection. Prakhar Kohli is stated to have sent the fake injections through Amba Travels, and\n\nthese injections were received at Jabalpur by the co-accused, Devesh Chaurasia,\n\non behalf of the appellant.\n5 On 11 May 2021, the Superintendent of Police, Jabalpur 4 made a request to\n\nthe District Magistrate to take action against the appellant under the NSA. The SP\n\nreiterated the allegations against the appellant of having procured and administered\n\nfake Remdesivir injections to Covid-19 patients. The appellant is alleged to have\n\nprocured 500 injections worth Rs.15 lakhs. The SP stated that the newspapers had\n\n“SP”\n\nPART A\n\nwidely reported that there was a public outcry following the appellant’s actions,\n\nwhich were likely to disturb the public order.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P001_C07",
+      "text": "Following the recommendation of the\n\nSP, the District Magistrate passed an order on 11 May 2021 under\nSection 3(2)\n\nthe NSA, detaining the appellant for a period of three months. The grounds of\n\ndetention which were supplied to the appellant were to the following effect:\n(i) Spurious Remdesivir injections had been administered to patients which\n\n resulted in several untimely deaths;\n(ii) The spurious injections had caused casualties which had been reported in the\n\n newspapers;\n(iii) There was anger and resentment in the public in Jabalpur and its adjoining\n\n districts which may explode at any time;\n(iv) The appellant had criminal antecedents but had been acquitted in certain\n\n cases due to his ‘money power’. The criminal cases against the appellant\n\n were:\n(a) FIR No. 252 of 2021 dated 10 May 2021, relating to the sale of\n\n spurious Remdesivir injections in the midst of the Covid-19 pandemic;\n(b) Crime No. 400 of 2004 dated 23 May 2004 under\nSections 395\n,\n\n,\n\n and\n120B\nof the IPC, and\nSections 25\nand\n\nof the Arms Act 1959\n\n registered at Police Station Gorakhpur, in which the appellant was\n\n accused of attacking a person with deadly weapons.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P001_C08",
+      "text": "The appellant was\n\n acquitted in this case;\n\nPART A\n(v) City Hospital and Research Centre owned by the appellant had ordered 500\n\n fake Remdesivir injections worth Rs.15 lakhs at the rate of Rs.3,000/- per\n\n piece by an invoice no. 0063 dated 20 April 2021, which were procured by\n\n means of fake bills from a manufacturing company situated in Gujarat against\n\n whom an FIR had been registered by the Gujarat Police;\n(vi) A public agitation and outcry had spread across the city of Jabalpur with news\n\n items being published leading to an apprehension of a law-and-order situation\n\n in the area;\n(vii) Fake injections had been procured from Indore and arrived in Jabalpur\n\n through Amba Travels in collusion with Devesh Chaurasia and the payment\n\n for these injections was made by one Sapan Jain;\n(viii) In the wake of the Covid-19 pandemic, several cases were reported where\n\n the patients needed Remdesivir injections; and\n(ix) Cheating patients for administering fake essential drugs is a punishable\n\n offence.\n6 The order of detention was communicated to the appellant on 11 May 2021. The appellant was detained on 12 May 2021.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P001_C09",
+      "text": "The Government of Madhya Pradesh5\n\napproved the order of detention on 13 May 2021 in terms of the provisions of\nSection 3(4)\nof the NSA. The State Government submitted a report in regard to the\n\norder of detention to the Government of India 6 on 13 May 2021. On 18 May 2021,\n\n“State Government”\n\n“Central Government”\n\nPART A\n\nthe appellant submitted a representation 7 against the order of detention both to the\n\nHome Department of the State Government and the Ministry of Home Affairs of the\n\nCentral Government. In terms of the provisions of\nSection 10\nof the NSA, the State\n\nGovernment submitted the grounds for detention and the representation of the\n\nappellant to the Advisory Board constituted under\nSection 10\n. The Advisory Board\n\nsubmitted its report to the State Government under\nSection 11\non 15 June 2021\n\nopining that there was sufficient cause for the detention of the appellant.\n\n7 In its affidavit submitted before the High Court, the Central Government stated\n\nthat it rejected the representation of the appellant on 24 June 2021, which was\n\ncommunicated to the Superintendent of the Jail and the State Government by a\n\nwireless message on 28 June 2021.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P001_C10",
+      "text": "Pursuant to the report of the Advisory Board,\n\nthe State Government approved the order of detention, under\nSection 12(1)\n, on 29\n\nJune 2021.\n8 On 29 June 2021, the SP recommended to the District Magistrate to extend\n\nthe order of detention which had initially been passed for a period of three months. By an order dated 5 July 2021, the District Magistrate Jabalpur 8 extended the\n\ndetention of the appellant by a further period of three months, to end on 12\n\nNovember 2021 and forwarded the order of extension to the State Government.\n\n9 Meanwhile, on 3 July 2021, the appellant instituted a petition under\nArticle\n\nof the Constitution to challenge the order of detention. The writ petition before\n\n“first representation”\n\n“District Magistrate”\n\nPART A\n\nthe High Court was amended to challenge both- the original order of detention dated\n\n11 May 2021 as well as the extension dated 5 July 2021.\n\n10 On 15 July 2021, the State Government allegedly rejected the first\n\nrepresentation of the appellant and extended the order of detention till 12 November",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P002_C01",
+      "text": "2021. The District Magistrate, by a letter dated 22 July 2021, informed the appellant,\n\nwho was in custody, of the extension of the order of detention by the State\n\nGovernment. Another representation 9 of the appellant against the extension of his\n\ndetention was rejected by the State Government on 5 August 2021 and was\n\ncommunicated to the appellant by the District Magistrate on the same day.\n\n11 The writ petition of the appellant was dismissed by the High Court by the\n\nimpugned judgment on 24 August 2021.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P002_C02",
+      "text": "The Division Bench of the High Court, in\n\nupholding the detention order, inter alia, observed that:\n(i) There was no undue delay in sending the order of detention to the State\n\n Government, as the order was passed on 11 May 2021 and was sent to the\n\n State Government on 13 May 2021;\n(ii) A singular solitary act, of administering fake Remdesivir injections in the\n\n present case, is sufficient to attract\nSection 3\nof the NSA;\n(iii) The detention order as well as the affidavit before the High Court reflect the\n\n subjective satisfaction of the authorities in invoking\nSection 3\nof the NSA; and\n\n“second representation”\n\nPART B\n(iv) The District Magistrate had applied their mind to the SP’s recommendation\n\n regarding the detention of the appellant, and the detention order was not\n\n passed mechanically, without reason.\n12 Following the dismissal of the writ petition by the High Court, the appellant\n\nmoved this Court in proceedings under\nArticle 136\nof the Constitution.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "Constitution 136"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P002_C03",
+      "text": "Notice was\n\nissued by this Court on 20 September 2021.\n13 During the pendency of the proceedings, by an order dated 30 September\n\n2021, the order of detention has been extended for a further period of three months,\n\nending on 12 February 2022. B Submissions of counsel\n\n14 Mr Sidharth Luthra, senior counsel appearing on behalf of the appellant, has\n\nurged the following arguments:\n\n(i) On 18 May 2021, the appellant’s son had made a representation to the\nDistrict Magistrate, the State Government and the Central Government,\n\n against the detention order dated 11 May 2021:\n(a) The Central Government incorrectly averred before the High Court that\n\n the rejection of representation dated 24 June 2021 was communicated\n\n to the appellant by wireless message on 28 June 2021. The Central\n\n Government furnished a copy of their rejection of representation dated\n\n 24 June 2021, only in the form of an annexure in their counter affidavit\n\nPART B\n\n dated 26 July 2021 to the appellant’s writ petition before the High\n\n Court; and\n(b) The appellant’s representation dated 18 May 2021 was forwarded by\n\n the District Magistrate on 20 May 2021 and received by the Central\n\n Government on 24 May 2021.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P002_C04",
+      "text": "Thereafter, the Central Government\n\n sought para-wise comments from the District Magistrate and the State\n\n Government on 2 June 2021. The Central Government’s wireless\n\n message dated 28 June 2021 rejecting the representation by order\n\n dated 24 June 2021, directed the Jail Superintendent to forward the\n\n appellant’s acknowledgement. The respondents do not have a copy of\n\n this acknowledgement since the appellant has never received the\n\n rejection of his representation;\n(ii) The State Government also did not furnish a reply to the appellant’s\n\n representation, allegedly rejected by it on 15 July 2021, except in its\n\n additional reply that was filed before the High Court on 12 August 2021;\n(iii) This Court has held that a delay in considering a detenu’s representation\n\n could be fatal to the detention order in\nAnkit Ashok Jalan v. Union of\n\n India10\n,\nHarish Pahwa v. State of Uttar Pradesh\n11,\nRaj Kishore Prasad v. State of Bihar12\nand\nWasiuddin Ahmed v. District Magistrate, Aligarh",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C01",
+      "text": "13. 2020 (16) SCC 127\n\n1981 (2) SCC 710\n\n1982 (3) SCC 10\n\n1981 (4) SCC 521\n\nPART B\n(iv) The appellant was not served with a copy of the State Government’s approval\n\n of the detention order dated 13 May 2021;\n(v) Approval of the detention order and communication of the rejection of\n\n representation should be made forthwith, according to this Court’s decisions\n\nBiren Dutta v. Chief Commissioner of Tripura\n14 and\nKhaja Bilal Ahmed\n\n v. State of Telangana\n; 15\n(vi) The High Court of Madhya Pradesh in\nAnshul Jain v. The State of Madhya\n\n Pradesh\n16 interpreted\nSection 3(5)\nof the NSA Act to hold that original record\n\n produced from the office of the District Magistrate should contain the exact\n\n date of dispatch and receipt by the Central Government of the order of\n\n approval of the State Government along with grounds.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C02",
+      "text": "In this case, the\n\n Central Government had to seek the aforementioned report from the District\n\n Magistrate;\n(vii) The extension of the appellant’s detention under the NSA on 15 July 2021 for\n\n alleged black-marketing of Remdesivir is illegal, since the Explanation to\nSection 3(2)\nof the NSA states that no order of detention can be made under\n\n it if the order can be made under Prevention of Black Marketing &\n\n Maintenance of Supplies of Essential Commodities Act 1980;\n(viii) The appellant has relied on this Court’s decisions in Ghanshyam Upadhyay\n\n v. State of Uttar Pradesh17 and the Madhya Pradesh High Court’s decision in\n\nAIR 1965 SC 596\n\n2020 (13) SCC 632\n\nWP No. 1118 of 2021\n\n2020 (16) SCC 811\n\nPART B\n\n Tanveer Patel v. State of Madhya Pradesh 18 to argue that mere allegations\n\n of media outrage or purported public agitation cannot be the basis of\n\n detention.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C03",
+      "text": "Furthermore, since an order under\nSection 144\nof the CrPC was in\n\n force at the time, the ground of public order could not be justified for\n\n detention;\n(ix) The appellant was acquitted by the trial court in Case Crime No. 400/2004\n\n and Case Challan No. 547/2004 under\nSections 395\n,\n\n,\n\nof the IPC and\nSections 25\n,\n\nArms Act at PS Gorakhpur. Yet, the detention order dated 11\n\n May 2021 has relied upon this past antecedent without it having any live or\n\n proximate link with the present allegations. This stale reliance on past\n\n antecedents to justify detention is in breach of this Court’s decisions in Khaja\n\n Bilal Ahmed v. State of Telangana,19 Sama Aruna v. State of Telangana,20\n\n Ramesh Yadav v. District Magistrate Etah\n, 21 Lakshman Khatik v. State of\n\n West Bengal,22 Yumman Ongbi Lembi Liema v. State of Manipur 23 and\n\n Rameshwar Shaw v. District Magistrate Burdwan\n24;\n(x) The detention is based on a solitary action and ought to be set aside, as held\n\n by this Court in\nRamveer Jatav v. State of Uttar Pradesh\n25 and\nVijay Narain\n\n Singh v.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C04",
+      "text": "State of Bihar\n26;\n\n2020 SCC Online MP 2021\n\n2020 (13) SCC 632\n\n(2018) 12 SCC 150\n\n(1985) 4 SCC 232\n\n(1974) 4 SCC 1\n\n(2012) 2 SCC 176\n\nAIR 1964 SC 334\n\n(1986) 4 SCC 726\n\n(1984) 3 SCC 14\n\nPART B\n(xi) A mere apprehension of the grant of bail in the FIR cannot be the cause for\n\n detention, as held by this Court in\nPP Rukhiya v. Joint Secretary27\n. In any\n\n event, this apprehension is unfounded since the appellant has not applied for\n\n bail;\n(xii) There is no substantial evidence of death/harm due to the allegedly fake\n\n Remdesivir injections procured by the appellant. As held by this Court in\nPebam Ningol Mikoi Devi v. State of Manipur\n28 and\nRajendra Singh v. State of Uttar Pradesh\n29 , statements recorded under\nSection 161\nof the\n\n CrPC cannot be relied on to pass a detention order;\n(xiii) In view of this Court’s decision in\nMohinder Singh Gill v. Chief Election\n\n Commissioner, New Delhi\n30, the validity of the detention has to be seen on\n\n the grounds in the original detention order and cannot be supplemented by\n\n additional grounds;\n(xiv) The extension of the order of detention on 15 July 2021 and 30 September\n\n 2021 is on vague and unjustifiable grounds.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C05",
+      "text": "This violates the appellant’s right\n\n to life and personal liberty under Article 21; and\n(xv) The appellant had tested positive for Covid-19 and suffered a heart attack on\n\n 6 May 2021. Despite the appellant’s critical health condition and medical\n\n advice, he was detained on 12 May 2021. (2019) 20 SCC 740\n\n2010 (9) SCC 618\n\n2007 (7) SCC 378\n\n(1978) 1 SCC 405\n\nPART B\n\n15 Mr Saurabh Mishra, Additional Advocate General 31 for the State of Madhya\n\nPradesh, appearing on behalf of the respondents, has urged the following\n\nsubmissions in support of the validity of the detention order:\n(i) NSA being a complete code, provides several safeguards for the detenu that\n\n have been duly observed:\n(a) The District Magistrate’s detention order of 11 May 2021 was\n\n communicated on the same day to the appellant, in compliance with\n\n the outer-limit of five days under\nSection 8(2)\nof the NSA. The\n\n detention order was duly approved by the State Government on 13\n\n May 2021, in compliance with\nSection 3(4)\n;\n(b) The State Government duly reported the appellant’s detention to the\n\n Central Government on 13 May 2021, within the seven-day time limit\n\n under\nSection 3(5)\nof the NSA.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C06",
+      "text": "In compliance with\nSection 10\n, the\n\n State Government also forwarded the detention order to the Advisory\n\n Board. On 15 June 2021, the Advisory Board examined the record,\n\n under\nSection 11\n, and noted that there was sufficient cause for\n\n detention. The State Government accordingly approved the detention\n\n order on 29 June 2021 under Section 12(1); and\n(c) The appellant’s representation was considered and decided by the\n\n Central Government and State Government in a timely fashion. The\n\n State Government forwarded the appellant’s representation to the\n\n“AAG”\n\nPART B\n\n Central Government on 20 May 2021 and the service was complete on\n\n 1 June 2021. The Central Government sought para-wise comments\n\n from the District Magistrate on 2 June 2021. The District Magistrate\n\n forwarded comments on 10 June 2021 and they were received by the\n\n Central Government on 11 June 2021. After due consideration, the\n\n Central Government rejected the appellant’s representation on 24 June\n\n 2021 and communicated it to him by a wireless message dated 28\n\n June 2021. The State Government rejected the appellant’s\n\n representation on 15 July 2021.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C07",
+      "text": "In any event, the appellant has not\n\n urged the delay in consideration of its representation before the High\n\n Court;\n(ii) It is well settled that the subjective satisfaction of the detaining authority is not\n\n justiciable, as held by this Court in\nRameshwar Shah v. District\n\nMagistrate\n. Neither can the reasonableness of its satisfaction be\n\n questioned in a court of law, nor can the adequacy of the material be\n\n scrutinized. The respondents relied on this Court’s decisions in\nState of\n\n Punjab v. Sukhpal Singh\n33 and\nPebam Ningol Mikoi Devi v. State of\n\n Manipur34\n;\n(iii) When an order of preventive detention is challenged, the detaining authority\n\n does not have to prove an offence or formulate a charge. The justification for\n\n an order of detention at best can be established on the basis of suspicion and\n\n(1964) 4 SCR 921\n\n(1990) 1 SCC 35\n\n(2010) 9 SCC 618\n\nPART B\n\n reasonability, there being no criminal conviction on the basis of evidence, as\n\n held by this Court in State of Tamil Nadu v. Nabila 35;\n(iv) The Covid-19 pandemic has resulted in devastating effects worldwide.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C08",
+      "text": "The\n\n conduct of the appellant, as the owner of a specialty hospital selling spurious\n\n essential drugs, had caused a public outcry and a media outrage. Hence, in\n\n the subjective satisfaction of the detaining authority, the detention was\n\n required to prevent further sale of fake Remdesivir that would be prejudicial to\n\n public order;\n(v) A valid order of detention can be based even on a solitary act of commission\n\n and omission, as held by this Court in\nSubhash Bhandari v. District\n\n Magistrate36\nand\nDavid Patrick Ward v. Union of India37\n;\n(vi) Even if the appellant’s argument of stale reliance on the past antecedents or\n\n any other ground were to succeed, Section 5A of the NSA provides for\n\n severability of the grounds of detention and the rest of the order will sustain. This position in law has been accepted by this Court in\nShafiq Ahmed v. District Magistrate38\n;\n(vii\n)\nThe present case\nis not a simple act of black marketing, but involves the\n\n purchase and administration of fake Remdesivir vials for Covid-19 patients.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C09",
+      "text": "Hence, the Prevention of Black Marketing and Maintenance of Supplies of\n\n Essential Commodities Act 1980 does not apply;\n\n(2015) 12 SCC 127\n\n(1987) 4 SCC 685\n\n(1992) 4 SCC 154\n\n(1989) 4 SCC 556\n\nPART C\n(viii) There was no violation of the provisions of Section 3(5) of the NSA since the\n\n State Government approved the order of detention on 13 May 2021 and\n\n immediately reported it to the Central Government; and\n(ix) In the counter affidavit filed before the High Court, the Central Government\n\n has clearly stated that its order rejecting the representation dated 24 June\n\n 2021 was duly communicated.\n16 The rival submissions need to be analyzed. C Right to make a representation: Constitutional safeguards and\n\n legislative scheme of the NSA\n\nArticle 22\nof the Constitution provides specific protections to undertrials and\n\ndetainees in India. The framers of the Constitution, who were also our freedom\n\nfighters, were conscious of founding a polity that secured civil and political freedoms\n\nto its citizens.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 22"
+      ],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C10",
+      "text": "Dr B R Ambedkar, while proposing the article, noted the necessity of\n\nretaining the concept of preventive detention “in the present circumstances of the\n\ncountry”. 39 However, the discontinuity from the colonial regime lay in the introduction\n\nof strict countervailing measures that ensured that “exigency of liberty of the\n\nindividual [is not] placed above the interests of the State” in all cases.40\n\n18 The specific provisions relating to preventive detention under\nArticle 22\nwere\n\nframed in the following terms:\n\nSpeech of Dr. B.R. Ambedkar, Constituent Assembly Debates, Vol. IX, 9.141.38 (15/09/1949)\n\nId.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C11",
+      "text": "PART C\n\n“(4) No law providing for preventive detention shall authorise\nthe detention of a person for a longer period than three\nmonths unless—\n(a) an Advisory Board consisting of persons who are, or have\nbeen, or are qualified to be appointed as, Judges of a High\nCourt has reported before the expiration of the said period of\nthree months that there is in its opinion sufficient cause for\nsuch detention:\nProvided that nothing in this sub-clause shall authorise the\ndetention of any person beyond the maximum period\nprescribed by any law made by Parliament under sub-clause\n(b) of clause (7); or\n(b) such person is detained in accordance with the provisions\nof any law made by Parliament under sub-clauses (a) and (b)\nof clause (7). (5) When any person is detained in pursuance of an order\nmade under any law providing for preventive detention,\nthe authority making the order shall, as soon as may be,\ncommunicate to such person the grounds on which the\norder has been made and shall afford him the earliest\nopportunity of making a representation against the order.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C12",
+      "text": "(6) Nothing in clause (5) shall require the authority making\nany such order as is referred to in that clause to disclose facts\nwhich such authority considers to be against the public\ninterest to disclose. (7) Parliament may by law prescribe—\n(a) the circumstances under which, and the class or classes\nof cases in which, a person may be detained for a period\nlonger than three months under any law providing for\npreventive detention without obtaining the opinion of an\nAdvisory Board in accordance with the provisions of sub-\nclause (a) of clause (4);\n(b) the maximum period for which any person may in any\nclass or classes of cases be detained under any law providing\nfor preventive detention; and\n(c) the procedure to be followed by an Advisory Board in an\ninquiry under sub-clause (a) of clause (4).”\n (emphasis supplied)\n\nPART C\n19 The text of\nArticle 22\nenshrines certain procedural safeguards, many of which\n\nare otherwise available in the\nCrPC\n. In elevating these safeguards to a constitutional\n\nstatus, the framers imposed a specific “limitation upon the authority both of\n\nParliament as well as [State] Legislature [to] not abrogate” 41 rights that are\n\nfundamental to India’s constitution.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C13",
+      "text": "Dr Bakshi Tek Chand, a conscientious dissenter\n\nto preventive detention in peaceful times, proposed a further safeguard in the\n\nprovision of a right to make representation to the detenu,42 which was eventually\n\naccepted by the Constituent Assembly as a reasonable compromise 43 Therefore,\n\npreventive detention in independent India is to be exercised with utmost regard to\n\nconstitutional safeguards.\n20 This history of the framing of\nArticle 22\nis critical for the judiciary’s evaluation\n\nof a detenu’s writ petition alleging, inter alia, a denial of the timely consideration of\n\nhis representation. While several arguments have been preferred by the appellant to\n\nargue for his release from preventive detention, we are confining our analysis to the\n\nmost clinching aspect of this case - the failure of the Central Government and the\n\nState Government to consider his representation dated 18 May 2021 in a timely\n\nmanner. Article 22(5)\nof the Constitution mandates that (i) the authority making the\n\norder shall “as soon as may be” communicate the grounds on which the order has\n\nSpeech of Dr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C14",
+      "text": "B R Ambedkar, supra note 37, 9.141.35; Speech of Alladi Krishnaswami Ayyar, Constituent\nAssembly Debates, Vol. IX, 9.141.229 (15/09/1949)\n\nSpeech of Dr. Bakshi Tek Chand, Constituent Assembly Debates, Vol. IX, 9.141.181 (15/09/1949)\n\nConstituent Assembly Debates, Vol. IX (16/09/1949)\n\nPART C\n\nbeen made to the person detained; and (ii) the detaining authority shall afford to the\n\nperson detained “the earliest opportunity of making a representation against the\n\norder” 44. Clause 5 of\nArticle 22\nincorporates a dual requirement: first, of requiring the\n\ndetaining authority to communicate the grounds of detention as soon as may be;\n\nand second, of affording to the detenu “an earliest opportunity” of making a\n\nrepresentation. Both these procedural requirements are mutually reinforcing. The\n\ncommunication, as soon as may be, of the grounds of detention is intended to inform\n\nthe detenu of the basis on which the order of detention has been made. The\n\nexpression “as soon as may be” imports a requirement of immediacy.\n\n22 The communication of the grounds is in aid of facilitating the right of the\n\ndetenu to submit a representation against the order of detention.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C15",
+      "text": "In the absence of\n\nthe grounds being communicated, the detenu would be left in the dark in regard to\n\nthe reasons which have led to the order of detention. The importance which the\n\nconstitutional provision ascribes to the communication of the grounds as well as the\n\naffording of an opportunity to make a representation is evident from the use of the\n\nexpression “as soon as may be” in the first part in relation to communicating the\n\ngrounds and allowing the detenu “the earliest opportunity” of availing of the right to\n\nsubmit a representation. Article 22(5)\nreflects a keen awareness of the framers of\n\nthe Constitution that preventive detention leads to the detention of a person without\n\nArticle 22(5):\nWhen any person is detained in pursuance of an order made under any law providing for preventive\ndetention, the authority making the order shall, as soon as may be, communicate to such person the grounds on\nwhich the order has been made and shall afford him the earliest opportunity of making a representation against the\norder. PART C\n\ntrial and hence, it incorporates procedural safeguards which mandate an immediacy\n\nin terms of time.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C16",
+      "text": "The significance of\nArticle 22\nis that the representation which has\n\nbeen submitted by the detenu must be disposed of at an early date. The\n\ncommunication of the grounds of detention, as soon as may be, and the affording of\n\nthe earliest opportunity to submit a representation against the order of detention will\n\nhave no constitutional significance unless the detaining authority deals with the\n\nrepresentation and communicates its decision with expedition.\n\n23 The provisions of the NSA subscribe to the mandate of\nArticle 22(5). Section\n\n3(4)\ncontains a requirement that once an order of detention has been made, the\n\nofficer making the order must forthwith report the fact to the State Government,\n\ntogether with the grounds on which the order has been made and other particulars\n\nwhich have a bearing on the matter. No such order should remain in force for more\n\nthan twelve days, unless it has been approved by the State Government.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C17",
+      "text": "In the\n\nmeantime, this period is subject to the proviso which stipulates that where the\n\ngrounds of detention are communicated by the officer after five days (under Section\n8) but not later than ten days from the date of the detention, sub-section (4) will\n\napply as if the words fifteen days stands substituted for twelve days. Upon the State\n\nGovernment either making or approving the order under\nSection 3\n, it is under a\n\nmandate under\nSection 3(5)\nto report the fact to the Central Government within\n\nseven days, together with the grounds on which the order has been made and other\n\nnecessary particulars. PART C\n\nSection 8\nof the NSA contains statutory provisions governing the disclosure of\n\nthe grounds of detention. Section 8\nis in the following terms:\n“8.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C18",
+      "text": "Grounds of order of detention to be disclosed to persons\n affected by the order.—(1) When a person is detained in\n pursuance of a detention order, the authority making the\n order shall, as soon as may be, but ordinarily not later than\n five days and in exceptional circumstances and for reasons to\n be recorded in writing, not later than [ten days] from the date\n of detention, communicate to him the grounds on which the\n order has been made and shall afford him the earliest\n opportunity of making a representation against the order to\n the appropriate Government. (2) Nothing in sub-section (1)\n shall require the authority to disclose facts which it considers\n to be against the public interest to disclose.”\n\nAs noticed earlier,\nArticle 22(5)\nof the Constitution provides for the communication of\n\nthe grounds on which the order of detention has been made by the detaining\n\nauthority “as soon as may be”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 18
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C19",
+      "text": "Section 8(1)\nuses the expression “as soon as may\n\nbe”, qualifying it with the requirement that the communication of grounds should\n\nordinarily not be later than five days and, in exceptional circumstances, for reasons\n\nto be recorded in writing not later than ten days from the date of detention. Section\n\n8(1)\nalso embodies the second requirement of\nArticle 22(5)\nof affording to the\n\ndetenu the earliest opportunity of making a representation against the order to the\n\nappropriate government. PART C\n\nSection 10\nmandates a reference to the Advisory Board constituted under the\n\nprovisions of\nSection 9\n:\n“10.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 19
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C20",
+      "text": "Reference to Advisory Boards.—Save as otherwise\n expressly provided in this Act, in every case where a\n detention order has been made under this Act, the\n appropriate Government shall, within three weeks from the\n date of detention of a person under the order, place before\n the Advisory Board constituted by it under\nsection 9\n, the\n grounds on which the order has been made and the\n representation, if any, made by the person affected by the\n order, and in case where the order has been made by an\n officer mentioned in sub-section (3) of\nsection 3\n, also the\n report by such officer under sub-section (4) of that section.”\n\nUnder\nSection 10\n, the appropriate government has to place the grounds on which\n\nthe order of detention has been made within three days from the date of detention of\n\nthe person together with a representation, if any, made by the person affected by the\n\norder. The Advisory Board, under the provisions of\nSection 11\n, has to submit its\n\nreport to the appropriate government within seven weeks from the date of detention\n\norder after considering the relevant materials.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 20
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C21",
+      "text": "It may call for further information from\n\nthe appropriate government, or any person, or even the person concerned if they\n\ndesire an opportunity to be heard in person.\n26 Action on the report of the Advisory Board falls within the ambit of\nSection 12\n:\n“12. Action upon the report of the Advisory Board.—\n (1) In any case where the Advisory Board has reported that\n there is, in its opinion, sufficient cause for the detention of a\n person, the appropriate Government may confirm the\n detention order and continue the detention of the person\n concerned for such period as it thinks fit. PART C\n\n (2) In any case where the Advisory Board has reported that\n there is, in its opinion, no sufficient cause for the detention of\n a person, the appropriate Government shall revoke the\n detention order and cause the person concerned to be\n released forthwith.”\n\n27 When the Advisory Board has reported that in its opinion there is a sufficient\n\ncause for the detention of a person, the appropriate government may approve an\n\norder of detention and continue the detention of the person for such period as it\n\nthinks fit.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 21
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C22",
+      "text": "On the other hand, where the Advisory Board reports that in its opinion\n\nthere is insufficient cause for detention, the appropriate government shall revoke the\n\ndetention order and cause the person to be released forthwith. Section14\nprovides for the revocation of detention orders in the following\n\nterms:\n“14. Revocation of detention orders.—\n (1) Without prejudice to the provisions of\nsection 21\nof the\n General Clauses Act, 1897 (10 of 1897), a detention order\n may, at any time, be revoked or modified,—\n(a) notwithstanding that the order has been made by an\n officer mentioned in sub-section (3) of\nsection 3\n, by the State\n Government to which that officer is subordinate or by the\n Central Government;\n(b) notwithstanding that the order has been made by a State\n Government, by the Central Government.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 22
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C23",
+      "text": "(2) The expiry or revocation of a detention order (hereafter in\n this sub-section referred to as the earlier detention order)\n shall not [whether such earlier detention order has been\n made before or after the commencement of the National\n Security (Second Amendment) Act, 1984 (60 of 1984) bar the\n making of another detention order (hereafter in this sub-\n\nPART C\n\n section referred to as the subsequent detention order) under\nsection 3\nagainst the same person:\nProvided that in a case where no fresh facts have arisen after\n the expiry or revocation of the earlier detention order made\n against such person, the maximum period for which such\n person may be detained in pursuance of the subsequent\n detention order shall, in no case, extend beyond the expiry of\n a period of twelve months from the date of detention under\n the earlier detention order.”\n29 In terms of clause (a) and (b) of sub-section (1) of\nSection 14\n, both the State\n\nGovernment and the Central Government have the power to revoke an order of\n\ndetention.\n30 We shall now proceed to analyse the facts of the present case.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 23
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C24",
+      "text": "At the outset,\n\nwe would like to note that our analysis is limited to the order of detention, the\n\nextension orders passed and the rejection of the first representation dated 18 May\n\n2021 made by the appellant. D Analysis\n\nD.1 Delay in considering the representation\n\n31 Mr Saurab Mishra, AAG has submitted that there was no unreasonable delay\nin considering the representation of the appellant dated 18 May 2021, which was\n\ncommunicated by the District Magistrate to the State and Central Government on 20\n\nMay 2021. Thereafter, the State Government awaited the report from the Advisory\n\nBoard, to which it had submitted the detention order and other information, and\n\nconsidered the comments of the District Magistrate, before formulating its opinion. PART D\n\nFollowing the report of the Advisory Board, the State Government rejected the\n\nrepresentation of the appellant on 15 July 2021. Thus, the representation made by\n\nthe appellant on 18 May 2021, was allegedly rejected after almost two months on 15\n\nJuly 2021 by the State Government.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 24
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C25",
+      "text": "The State Government’s order rejecting the\n\nrepresentation has not been filed before this Court.\n\n32 The issue that arises for our consideration is whether the procedural rights of\n\nthe detenu emanating from\nArticle 22\nof the Constitution and\nSection 8\nof the NSA\n\nwere sufficiently protected in the present case.\n33 The requirement under\nSection 8\nof the disclosure and communication of the\n\ngrounds of detention and the affording of an opportunity to the detenu of making a\n\nrepresentation against such an order to the appropriate government, is distinct from\n\nthe reference to the Advisory Board. Jayanarayan Sukul v. State of West\n\nBengal\n45 , a Constitution Bench of this Court laid emphasis on the expeditious\n\nconsideration of the representation by the appropriate government. In that case, a\n\nrepresentation was made by the petitioner against an order of detention passed\n\nunder\nSection 3(2)\nof the Preventive Detention Act 1950. The petitioner made a\n\nrepresentation to the State Government on 23 June 1969, which was rejected on 19\n\nAugust 1969, as a reference regarding the detention order was pending before the\n\nAdvisory Board.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 22"
+      ],
+      "cited_cases": [],
+      "chunk_number": 25
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P003_C26",
+      "text": "The Court held that there was an inordinate delay in considering the\n\nrepresentation of the petitioner. Justice AN Ray (as the learned Chief Justice then\n\nwas), speaking for the Bench, observed:\n\n(1970) 1 SCC 219\n\nPART D\n\n“18. It is established beyond any measure of doubt that the\nappropriate authority is bound to consider the representation\nof the detenu as early as possible. The appropriate\nGovernment itself is bound to consider the representation as\nexpeditiously as possible. The reason for immediate\nconsideration of the representation is too obvious to be\nstressed. The personal liberty of a person is at stake. Any\ndelay would not only be an irresponsible act on the part of the\nappropriate authority but also unconstitutional because the\nConstitution enshrines the fundamental right of a detenu to\nhave his representation considered and it is imperative that\nwhen the liberty of a person is in peril immediate action\nshould be taken by the relevant authorities.\n[…]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 26
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P004_C01",
+      "text": "20. Broadly stated, four principles are to be followed in regard\nto representation of detenus. First, the appropriate authority is\nbound to give an opportunity to the detenu to make a\nrepresentation and to consider the representation of the\ndetenu as early as possible. Secondly, the consideration of\nthe representation of the detenu by the appropriate\nauthority is entirely independent of any action by the\nAdvisory Board including the consideration of the\nrepresentation of the detenu by the Advisory Board. Thirdly, there should not be any delay in the matter of\nconsideration. It is true that no hard and fast rule can be\nlaid down as to the measure of time taken by the\nappropriate authority for consideration but it has to be\nremembered that the Government has to be vigilant in\nthe governance of the citizens. A citizen's right raises a\ncorrelative duty of the State. Fourthly, the appropriate\nGovernment is to exercise its opinion and judgment on the\nrepresentation before sending the case along with the\ndetenu's representation to the Advisory Board. If the\nappropriate Government will release the detenu the\nGovernment will not send the matter to the Advisory Board.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P004_C02",
+      "text": "however the Government will not release the detenu the\nGovernment will send the case along with the detenu's\nrepresentation to the Advisory Board. If thereafter the\nAdvisory Board will express an opinion in favour of release of\nthe detenu the Government will release the detenu. If the\nAdvisory Board will express any opinion against the release\nof the detenu the Government may still exercise the power to\nrelease the detenu.” (emphasis\nsupplied)\n\nPART D\n\n34 A Constitution Bench in\nHaradhan Saha v. State of West Bengal\n46 made a\n\nclear distinction between the right of the detenu to have their representation\n\nconsidered by the appropriate government and the power which is entrusted to the\n\nAdvisory Board. The Court observed:\n“24. The representation of a detenu is to be considered. There is an obligation on the State to consider the\n representation. The Advisory Board has adequate power to\n examine the entire material. The Board can also call for more\n materials. The Board may call the detenu at his request. The\n constitution of the Board shows that it is to consist of Judges\n or persons qualified to be Judges of the High Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P004_C03",
+      "text": "The\n constitution of the Board observes the fundamental of fair\n play and principles of natural justice. It is not the requirement\n of principles of natural justice that there must be an oral\n hearing. Section 8\nof the Act which casts an obligation on the\n State to consider the representation affords the detenu all the\n rights which are guaranteed by\nArticle 22(5). The Government\n considers the representation to ascertain essentially whether\n the order is in conformity with the power under the law. The\n Board, on the other hand, considers whether in the light of the\n representation there is sufficient cause for detention.”\n35 In\nFrances Coralie Mullin v. W.C.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P004_C04",
+      "text": "Khambra\n47 a Bench of two judges of this\n\nCourt reiterated the principles enunciated in the precedents of this Court by\n\nobserving:\n“5. […] We agree : (1) the detaining authority must provide\n the detenu a very early opportunity to make a representation,\n (2) the detaining authority must consider the representation\n as soon as possible, and this, preferably, must be before the\n representation is forwarded to the Advisory Board, (3) the\n representation must be forwarded to the Advisory Board\n before the Board makes its report, and (4) the consideration\n\n(1975) 3 SCC 198 [“Haradhan Saha”]\n\n(1980) 2 SCC 275\n\nPART D\n\n by the detaining authority of the representation must be\n entirely independent of the hearing by the Board or its report,\n expedition being essential at every stage.”\n\nAt the same time the Court observed that “the time – imperative [for consideration of\n\nrepresentation] can never be absolute or obsessive.” This view was approved by a\n\nConstitution Bench of this Court in\nK.M. Abdulla Kunhi v. Union of India",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P005_C01",
+      "text": "48. 36 The distinction between the consideration of a representation by the\n\nappropriate government and by the Advisory Board is well settled. Haradhan\n\nSaha\n(supra) the Court noted that the State Government, while the considering the\n\nrepresentation, has to ascertain whether the order is in conformity with the power\n\nunder the law, while the Board on the other hand, considers whether there is\n\nsufficient cause for detention in the light of the representation.\n37 A two-judge Bench of this Court, in\nHarish Pahwa v. State of Uttar\n\nPradesh\n49, held that a representation by a detenu must be considered expeditiously\n\nand can be kept pending, only when seeking assistance is absolutely necessary. This Court was considering a detention order dated 16 May 1980, a representation\n\nby the detenu dated 3 June 1980 and the rejection of such representation on 24\n\nJune 1980, which was communicated to the detenu within two days. Justice AD\n\nKoshal held the unexplained delay as fatal to the detention by holding the following:\n“5.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P005_C02",
+      "text": "In our opinion, the manner in which the representation\n made by the appellant has been dealt with reveals a sorry\n\n(1991) 1 SCC 476\n\n(1981) 2 SCC 710\n\nPART D\n\n state of affairs in the matter of consideration of\n representations made by persons detained without trial. There is no explanation at all as to why no action was taken\n in reference to the representation on June 4, 5 and 25, 1980. It is also not clear what consideration was given by the\n government to the representation from June 13, 1980 to June\n 16, 1980 when we find that it culminated only in a reference\n to the Law Department, nor it is apparent why the Law\n Department had to be consulted at all. Again, we fail to\n understand why the representation had to travel from table to\n table for six days before reaching the Chief Minister who was\n the only authority to decide the representation. We may make\n it clear, as we have done on numerous earlier occasions, that\n this Court does not look with equanimity upon such delays\n when the liberty of a person is concerned.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P005_C03",
+      "text": "Calling comments\n from other departments, seeking the opinion of Secretary\n after Secretary and allowing the representation to lie without\n being attended to is not the type of action which the State is\n expected to take in a matter of such vital import. We would\n emphasise that it is the duty of the State to proceed to\n determine representations of the character above mentioned\n with the utmost expedition, which means that the matter must\n be taken up for consideration as soon as such a\n representation is received and dealt with continuously (unless\n it is absolutely necessary to wait for some assistance in\n connection with it) until a final decision is taken and\n communicated to the detenu. This not having been done in\n the present case we have no option but to declare the\n detention unconstitutional. We order accordingly, allow the\n appeal and direct that the appellant be set at liberty forthwith.”\n\n38 In another decision in the case of\nMohinuddin v. District Magistrate, Beed\n\nand Others\n50, the petitioner made two representations, one to the Advisory Board\n\nand the other to the Chief Minister.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P005_C04",
+      "text": "While the representation to the Advisory Board\n\nwas considered, the representation dated 22 September 1986 was disposed of on\n\n(1987) 4 SCC 58\n\nPART D\n\n17 November 1986. Rejecting the submission of the State Government, Justice AP\n\nSen, speaking for the two judge Bench, held:\n“6. […] When the life and liberty of a citizen is involved, it is\n expected that the Government will ensure that the\n constitutional safeguards embodied in\nArticle 22(5)\nare strictly\n observed. We say and we think it necessary to repeat that the\n gravity of the evil to the community resulting from anti-social\n activities can never furnish an adequate reason for invading\n the personal liberty of a citizen, except in accordance with the\n procedure established by the Constitution and the laws. The\n history of personal liberty is largely the history of insistence\n on observance of the procedural safeguards.\n[…]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P006_C01",
+      "text": "8. […] The counter-affidavit filed by Shri S.V. Joshi, District\n Magistrate contains a bare denial in para that there was any\n unreasonable delay in the disposal of the representation. […]\n It is accepted that the representation made by the appellant to\n the Chief Minister on September 22, 1986, forwarded by the\n Superintendent, Aurangabad Central Prison on the 24th, was\n received in the Home Department on the 26th which in its turn\n forwarded the same to the detaining authority i.e. the District\n Magistrate on the same day i.e. 26th for his comments. The\n District Magistrate returned the representation along with his\n comments dated October 3, 1986 which was received by the\n government on the 6th. It is said that thereafter the\n representation was processed together with the report of the\n Advisory Board and was forwarded to the Chief Minister's\n Secretariat where the same was received on October 23,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P007_C01",
+      "text": "1986. It is enough to say that the explanation that the Chief\n Minister was “preoccupied with very important matters of the\n State which involved tours as well as two Cabinet meetings at\n Pune on October 28 and 29, 1986 and at Aurangabad on\n November 11 and 12, 1986” was no explanation at all why the\n Chief Minister did not attend to the representation made by\n the appellant till November 17, 1986 i.e. for a period of 25\n days. There was no reason why the representation submitted\n by the appellant could not be dealt with by the Chief Minister\n with all reasonable promptitude and diligence and the\n\nPART D\n\n explanation that he remained away from Bombay is certainly\n not a reasonable explanation. In view of the wholly\n unexplained and unduly long delay in the disposal of the\n representation by the State Government, the further detention\n of the appellant must be held illegal and he must be set at\n liberty forthwith.”\n\n39 In a recent decision of a three judge Bench of this Court in\nAnkit Ashok\n\nJalan v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P007_C02",
+      "text": "Union of India\n51, Justice UU Lalit revisited the body of precedent on the\n\nsubject and noticed the qualitative difference between the consideration of a\n\nrepresentation by the appropriate government on the one hand and by the Advisory\n\nBoard on the other. Justice UU Lalit, speaking for himself and Justice Indu Malhotra\n\n(with Justice Hemant Gupta dissenting 52) observed:\n“16. These decisions clearly laid down that the consideration\n of representations by the appropriate Government and by the\n Board would always be qualitatively different and the power of\n consideration by the appropriate Government must be\n completely independent of any action by the Advisory Board. In para 12 of the decision in\nPankaj Kumar\n Chakrabarty [Pankaj Kumar Chakrabarty v. State of W.B.\n,\n (1969) 3 SCC 400 : (1970) 1 SCR 543] it was stated that the\n obligation on the part of the Government to consider\n representation would be irrespective of whether the\n representation was made before or after the case was\n referred to the Advisory Board.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P007_C03",
+      "text": "As stated in para 18, this was\n stated so, as any delay in consideration of the representation\n would not only be an irresponsible act on the part of the\n appropriate authority but also unconstitutional. The\n contingency whether the representations were received\n before or after was again considered in para 29 of the\n\n(2020) 16 SCC 127 [“Ankit Ashok Jalan”]\n\nJustice Hemant Gupta’s dissent is on the ground that once the representation has been referred to the Advisory\nBoard by the appropriate government, it is a matter of prudence for the detaining authority to consider the view of the\nAdvisory Board and any delay owing to this process is not prejudicial to the detenu. PART D\n\n decision in\nHaradhan Saha [Haradhan Saha v. State of W.B.\n,\n (1975) 3 SCC 198 : 1974 SCC (Cri) 816] .”\n\nJustice UU Lalit categorized the different stages for when a representation is\n\nreceived and disposed, with the underlying principle that the representation must be\n\nexpeditiously disposed of, at every stage:\n“17. In terms of these principles, the matter of consideration\n of representation in the context of reference to the Advisory\n Board, can be put in the following four categories:\n17.1.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P007_C04",
+      "text": "If the representation is received well before the\n reference is made to the Advisory Board and can be\n considered by the appropriate Government, the\n representation must be considered with expedition. Thereafter the representation along with the decision taken\n on the representation shall be forwarded to and must form\n part of the documents to be placed before the Advisory\n Board.\n17.2. If the representation is received just before the\n reference is made to the Advisory Board and there is not\n sufficient time to decide the representation, in terms of law\nlaid down in\nJayanarayan Sukul [Jayanarayan Sukul v. State\n of W.B.\n, (1970) 1 SCC 219 : 1970\nSCC (Cri) 92]\n and Haradhan Saha [Haradhan Saha v. State of W.B.\n, (1975)\n 3 SCC 198 : 1974 SCC (Cri) 816] the representation must be\n decided first and thereafter the representation and the\n decision must be sent to the Advisory Board. This is premised\n on the principle that the consideration by the appropriate\n Government is completely independent and also that there\n ought not to be any delay in consideration of the\n representation.\n17.3.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P007_C05",
+      "text": "If the representation is received after the reference is\n made but before the matter is decided by the Advisory Board,\n according to the principles\nlaid down in\nHaradhan\n Saha [Haradhan Saha v. State of W.B.\n, (1975) 3 SCC 198 :\n1974 SCC (Cri) 816] , the representation must be decided. The decision as well as the representation must thereafter be\n immediately sent to the Advisory Board.\n17.4. If the representation is received after the decision of the\n Advisory Board, the decisions are clear that in such cases\n there is no requirement to send the representation to the\n\nPART D\n\n Advisory Board. The representation in such cases must be\n considered with expedition.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P008_C01",
+      "text": "18. […] it is well accepted that the representation must be\n considered with utmost expedition; and the power of the\n Government is completely independent of the power of the\n Advisory Board; and the scope of consideration is also\n qualitatively different, there is no reason why the\n consideration by the Government must await the decision by\n the Advisory Board. None of the aforesaid cases even\n remotely suggested that the consideration must await till the\n report was received from the Advisory Board.”\n\n40 At this stage, it would be also important to note the principle of making\n\nsimultaneous representations by the detenu to the State and Central Governments,\n\nas enunciated by a two-judge Bench of this Court in\nHaji Mohd. Akhlaq v. District\n\nMagistrate\n53 . In that case, the petitioner challenged the validity of his detention\n\nunder the NSA on the ground that there was undue delay on part of the State\n\nGovernment to forward his representation to the Central Government.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P008_C02",
+      "text": "The Court\n\nnoted that the power which is conferred upon the Central Government to revoke an\n\norder of detention under\nSection 14(1)\n, even if it is made by the State Government,\n\nwould only have real meaning and content, if the detenu is entitled to make a\n\nrepresentation to the Central Government. The failure of the State Government to\n\ncomply with the request of the detenu for onward transmission of the representation\n\nof the Central Government deprives the detenu of a valuable right to have the\n\ndetention revoked by the Central Government.\n41 In the present appeal, the order of detention was passed on 11 May 2021 and\n\nthe appellant was detained on 12 May 2021. The order of detention was approved\n\n1988 Supp. SCC 538, 540, para 3\n\nPART D\n\nby the State Government on 13 May 2021, upon which the State Government\n\nsubmitted the order of detention to the Central Government on the same day. On 18\n\nMay 2021, the detenu submitted a simultaneous representation before the District\n\nMagistrate, State Government and the Central Government. The representation was\n\ncommunicated by the District Magistrate to the State Government and the Central\n\nGovernment on 20 May 2021.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P008_C03",
+      "text": "According to the appellant, the records of the\n\nDepartment of Post and Telegraph indicate that service was effected on the Central\n\nGovernment on 24 May 2021. However, the Central Government, in its counter\n\naffidavit before the High Court, has submitted that it was received in the concerned\n\nsection on 1 June 2021.\n42 On 2 June 2021, the Central Government sought para-wise comments from\n\nthe detaining authority. The District Magistrate forwarded comments on 10 June\n\n2021 which were received on 11 June 2021. The representation made by the\n\nappellant dated 18 May 2021, along with the comments of the District Magistrate,\n\nwere processed for consideration by the Union Home Secretary on 14 June 2021. On 24 June 2021, the Union Home Secretary rejected the representation of the\n\nappellant, which is alleged to have been communicated by a wireless message to\n\nthe detenu on 28 June 2021. There was a one-and-a-half-month delay on the part of\n\nthe Central Government in considering the representation dated 18 May 2021 and\n\nrejecting the same only on 24 June 2021.\n43 The appellant had also submitted a representation against the order of\n\ndetention to the State Government on 18 May 2021.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P008_C04",
+      "text": "An additional reply was filed by\n\nPART D\n\nthe District Magistrate on 12 August 2021 before the High Court. Paragraph 2 of the\n\nreply is extracted below:\n“2 That it is submitted that against the impugned order dated\n 11.05.2021, the petitioner Sarabjeet Singh Mokha submitted\n a representation on 18.05.201 (Annexnre RI .IP..) through\n Amarjit Mokha before the District Magistrate, State\n Government and the Central Government. The learned\n District Magistrate received the representation and\n communicated the same to the Secretary, Home\n Department, Govt. of M.P and to the Secretary, Ministry\n of Home Affairs, Govt. of India on 20.05.2021. It is humbly\n submitted that after consideration of the comments of\n the District Magistrate as also the decision dated\n 29.06.2021 taken by the Advisory Board, and thereafter\n the State Government also rejected the representation of\n the Petitioner /Detenue and communicated the same to\n the petitioner.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P008_C05",
+      "text": "Copy of the decision of the State Government\n is annexed herewith as ANNEXURE R-11.”\n (emphasis supplied)\n44 The above extract makes it abundantly clear that the District Magistrate\n\nhaving received the representation on 18 May 2021, communicated it to the State\n\nGovernment and the Central Government on 20 May 2021. The State Government\n\nrejected the representation, after the decision of the Advisory Board. The above\n\nextract from the affidavit, which was filed before the High Court, does not specify the\n\ndate on which the representation was rejected by the State Government, but leaves\n\nno manner of doubt that until the representation was rejected by the Advisory Board\n\non15 June 2021, no steps had been taken by the State Government to deal with the\n\nappellant’s representation dated 18 May 2021. In the counter-affidavit of the District\n\nMagistrate before this Court as well as in the written submissions supplied by the\n\nAAG, it appears that the representation was rejected by the State Government on 15\n\nJuly 2021.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P008_C06",
+      "text": "However, this Court has neither been provided with a copy of such\n\nPART D\n\nrejection or proof of communication of this rejection to the detenu, nor an\n\nexplanation for the almost 60 day delay in considering the appellant’s\n\nrepresentation.\n45 There is absolutely no reasonable basis for explaining the circumstances in\n\nwhich the representation dated 18 May 2021 was not considered by the State\n\nGovernment until after the Advisory Board had submitted its report on 15 June 2021. As we have indicated on the basis of the precedents of this Court, the consideration\n\nof the representation by the State Government is qualitatively different from the\n\nreference to the Advisory Board. This Court,\nAnkit Ashok Jalan\n(supra) had held\n\nthat in State Government is not bound to wait on the Advisory Board’s report before\n\ndeciding the representation and must do so, as expeditiously as possible. In spite of\n\nawaiting the receipt of the report of the Advisory Board which was eventually issued\n\non 15 June 2021, the State Government took another one month in arriving at a\n\ndecision on the appellant’s representation dated 18 May 2021.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P008_C07",
+      "text": "The State\n\nGovernment did not furnish any valid reasons for either of the two courses of action.\n\n46 By delaying its decision on the representation, the State Government\n\ndeprived the detenu of the valuable right which emanates from the provisions of\nSection 8(1)\nof having the representation being considered expeditiously. As we\n\nhave noted earlier, the communication of the grounds of detention to the detenu “as\n\nsoon as may be” and the affording to the detenu of the earliest opportunity of making\n\na representation against the order of detention to the appropriate government are\n\nintended to ensure that the representation of the detenu is considered by the\n\nPART D\n\nappropriate government with a sense of immediacy. The State Government failed to\n\ndo so. The making of a reference to the Advisory Board could not have furnished\n\nany justification for the State Government to not deal with the representation\n\nindependently at the earliest. The delay by the State Government in disposing of the\n\nrepresentation and by the Central and State Government in communicating such\n\nrejection, strikes at the heart of the procedural rights and guarantees granted to the\n\ndetenu.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P008_C08",
+      "text": "It is necessary to understand that the law provides for such procedural\n\nsafeguards to balance the wide powers granted to the executive under the NSA. The\n\nState Government cannot expect this Court to uphold its powers of subjective\n\nsatisfaction to detain a person, while violating the procedural guarantees of the\n\ndetenu that are fundamental to the laws of preventive detention enshrined in the\n\nConstitution. D.2 Failure to communicate decision on the representation\n\n47 Apart from the above position, there is a more fundamental reason for\n\ninterreference with the order of detention- the failure to communicate the rejection to\n\nthe appellant. The respondent could not furnish proof of the appellant’s receipt of the\n\nCentral Government’s rejection of representation dated 24 June 2021. The wireless\n\nmessage dated 28 June 2021, issued from the Ministry of Home Affairs of the\n\nCentral Government to the Home Department of the State Government,\n\ncommunicated the rejection of the representation submitted by the detenu. The SP\n\nof the Central Jail, Jabalpur was directed to serve a copy meant for the detenu. The\n\nState Government was also directed to inform the detenu.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P008_C09",
+      "text": "Though in the writ petition\n\nPART D\n\nas it was originally filed, there was no specific ground that the rejection of the\n\nrepresentation was not communicated to the detenu, a specific ground to that effect\n\nwas raised in the rejoinder filed before the High Court. Be that is it may, there is\n\nabsolutely no material coming forthwith to indicate that the rejection of the\n\nrepresentation by the Central Government was communicated to the detenu. The\n\nappellant has submitted that it was notified of the rejection of its representation by\n\nthe Central Government, only when such rejection was furnished as an annexure to\n\nthe Central Government’s counter-affidavit before the High Court. The Central\n\nGovernment’s wireless message dated 28 June 2021 directed the SP to collect the\n\nappellant’s acknowledgement of receipt. However, the respondents were unable to\n\nfurnish any proof of such acknowledgement. This lends credibility to the appellant’s\n\ncontention that he was never served with a copy of Central Government’s rejection\n\nof his representation.\n48 Similarly, the AAG has submitted that the State Government rejected the\n\nappellant’s representation on 15 July 2021.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P008_C10",
+      "text": "However, with the exception of the\n\nrejection order forming a part of the annexures to the respondents’ additional reply\n\nbefore the High Court, there is no proof of the appellant having knowledge of the\n\nrejection of its representation by the State or Central Government before he filed his\n\nwrit petition before the High Court. Article 22(4)\n, in guaranteeing a right to make a representation to the detenu,\n\nunderstandably creates a corresponding duty on the State machinery to render this\n\nright meaningingful. In Section D.1 of the judgement, we have detailed this Court’s\n\nPART D\n\nsettled precedent on the detenu’s right to make a representation and for it to be\n\nconsidered expeditiously- failing which the detention order would be invalidated. However, this right would ring hollow without a corollary right of the detenu to\n\nreceive a timely communication from the appropriate government on the status of its\n\nrepresentation- be it an acceptance or a rejection.\n\n50 This Court, in considering claims of delay in the appropriate government’s\n\ndealing with the representation of a detenu, has included delays in communication of\n\nsuch rejection.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P008_C11",
+      "text": "A two judge Bench of this Court in\nState of Punjab v. Sukhpal\n\nSingh\n54 had noted that such a delay formed a part of the infraction on the detenu’s\n\nconstitutional right under\nArticle 22(4). Justice K N Saikia, speaking on behalf of this\n\nCourt, had held:\n“19. In the instant case we are satisfied that after receipt of\n the zerox copy from the Central Government, the State\n Government took only 13 days including 4 holidays is\n disposing of the representation. Considering the situation\n prevailing and the consultation needed in the matter, the\n State Government could to have been unmindful of urgency\n in the matter. But the facts remain that it took more than\n two months from the date of submission of the\n representation to the date of informing the detenu of the\n result of his representation. Eight days were taken after\n disposal of the representation by the State Government. The result is that the detenu's constitutional right to\n prompt disposal of his representation was denied and\n the legal consequences must follow.”\n (emphasis supplied)\n\n(1990) 1 SCC 35\n\nPART D\n51 Similarly, a two judge Bench of this Court in\nMadan Lal Anand v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P008_C12",
+      "text": "Union of\n\nIndia\n55 considered an explanation for a two day delay in communicating a rejection\n\nof representation to the detenu in determining laches or negligence on the part of\n\nthe detaining authority. It noted:\n“37. At the hearing of this appeal, the learned counsel for the\n respondents handed over to us a list of dates showing that a\n number of holidays intervened between one date and another\n and hence the apparent delay. It appears that the Collector of\n Central Excise & Customs received the representation for his\n comments on January 23, 1989 and handed over the same to\n the dealing officer for comments on January 24, 1989 and the\n Collector's comment was made on February 9, 1989. Between January 25, 1989 and February 8, 1989 a number of\n holidays intervened, namely January 26, 1989 (Republic day),\n January 28, 1989 and January 29, 1989 (Saturday and\n Sunday), and February 4, 1989 and February 5, 1989\n (Saturday and Sunday). On February 9, 1989, it was sent to\n the Ministry of Finance (COFEPOSA Cell), New Delhi, and\n was received by that Ministry on February 10, 1989. February\n 11, 1989 and February 12, 1989 being Saturday and Sunday\n were holidays.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P008_C13",
+      "text": "On February 13, 1989, it was put up before the\n Joint Secretary, COFEPOSA, and was sent to the Minister of\n State (Revenue). The file was received back after the\n rejection of the representation and such rejection was\n communicated to the detenu on February 20, 1989. The\n two intervening dates, namely, February 18, 1989 and\n February 19, 1989 being Saturday and Sunday were\n holidays.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P009_C01",
+      "text": "38. It is clear from the above statement that there was no\n laches or negligence on the part of the detaining authority or\n the other authorities concerned in dealing with the\n representation of the detenu. L.M.S. Ummu\n Saleema v. B.B. Gujaral\n[(1981) 3 SCC 317 : 1981 SCC (Cri)\n 720] it has been observed that the time imperative can\n never be absolute or obsessive, and that the occasional\n\n(1990) 1 SCC 81\n\nPART D\n\n observations made by this Court that each day's delay in\n dealing with the representation must be adequately\n explained are meant to emphasise the expedition with\n which the representation must be considered and not\n that it is a magical formula, the slightest breach of which\n must result in the release of the detenu. In the instant\n case, the detaining authority has explained the delay in the\n disposal of the representation made by the detenu and,\n accordingly, the order of detention cannot be rendered invalid\n on that ground.”\n (emphasis supplied)\n52 At this point, it would also be relevant to mention that this Court in\nUnion of\n\nIndia v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P009_C02",
+      "text": "Saleena\n56, considered the issue of whether non-communication of the order\n\nrejecting the representation by the competent authority would invalidate or vitiate the\n\norder of detention. In the facts of that case, though the order of the competent\n\nauthority rejecting the detenu’s representation was not communicated to him, the\n\nUnder Secretary had informed the detenu of the outcome of the decision. The Court\n\nobserved that the procedural safeguards under\nArticle 22(5)\nof the Constitution do\n\nnot require a communication of the order rejecting the representation by the\n\ncompetent authority or incorporation of the order passed by the competent authority\n\nin the order of communication to the detenu. Without commenting on the merits of\nSaleena\n(supra), we note that the decision was limited to the issue framed which\n\nrelates to whether an order rejecting the representation must be mandatorily\n\ncommunicated to the detenu by the competent authority.\n\n53 In the present case, let alone the order rejecting the representation, even the\n\noutcome of the representation, that is whether it has been rejected or not, was not\n\n(2016) 3 SCC 437\n\nPART D\n\ncommunicated to the appellant.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P009_C03",
+      "text": "Thus, the decision in\nSaleena\n(supra) does not find\n\napplication in the facts of the present case.\n54 The AAG has furnished no reasons for the failure to communicate the State\n\nGovernment or Central’s government rejection of the appellant’s representation. This failure in timely communication of the rejection of representation is a relevant\n\nfactor for determining the delay that the detenu is protected against under\nArticle\n\n22(5). Based on the precedents of this Court, we hold that the failure of the Central\n\nand the State Government to communicate the rejection of the appellant’s\n\nrepresentation in a time-bound manner is sufficient to vitiate the order of detention. E Conclusion\n\n55 Accordingly, the order of detention is invalidated on two grounds: first, the\nunexplained delay on part of the State Government in deciding the representation of\n\nthe appellant and second, the failure of the Central and State Governments to\n\ncommunicate the rejection of the representation to the appellant in a timely manner. The basis of the extensions which have been issued on 15 July 2021 and 30\n\nSeptember 2021, finds its genesis in the original order of detention dated 11 May",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR_P010_C01",
+      "text": "2021. Once the order of detention stands invalidated, the consequential extensions\n\nwould follow the same course. During the course of the proceedings, both parties\n\nhave advanced submissions on the merits of the order of detention. In the view\n\nwhich we have taken, it is not necessary to consider these other grounds of\n\nPART E\n\nchallenge since the appellant is entitled to succeed on the violation of his procedural\n\nrights under the Constitution and the statute.\n56 For the reasons we have indicated above, the appeal is accordingly allowed.\n\nThe impugned judgment of the High Court dated 24 August 2021 shall stand set\n\naside. The order of detention dated 11 May 2021 and the extensions dated 15 July\n\n2021 and 30 September 2021 shall accordingly stand quashed and set aside.\n\n57 Pending application(s), if any, shall stand disposed of.\n…….…………………………...............................J.\n [Dr Dhananjaya Y Chandrachud]\n\n …….…………………………...............................J.\n [Vikram Nath]\n\n …….…………………………...............................J.\n [B V Nagarathna]\n\nNew Delhi;\nOctober 29, 2021",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Sarabjeet Singh Mokha vs The District Magistrate, Jabalpur",
+    "case_id": "SC_2021_SARABJEET_SINGH_MOKHA_VS_THE_DISTRICT_MAGISTRATE_JABALPUR",
+    "court": "Supreme Court of India",
+    "year": "2021",
+    "facts_summary": "The allegation against the appellant is that\n\nin connivance with certain others, he procured fake Remdesivir injections which\n\nwere administered to patients during the Covid-19 pandemic in order to make illegal\n\nprofits thereby endangering the life of the general public.\n\n3 On 12 May 2021, the appellant was detained in pursuance of an order of\n\ndetention dated 11 May 2021 under\nSection 3(2)\nof the NSA, for a period of three\n\nmonths.\n\n“NSA”\n\n“\nIPC\n”\n\n“\nCrPC\n”\n\nPART A\n\n4 It is alleged that the Police Station of ‘B’ Division in District Morbi of Gujarat\n\nseized fake Remdesivir injections from a factory where they were manufactured and\n\nan FIR was registered in that regard. On 10 May 2021, the statement under\nSection\n\nof the CrPC of a co-accused by the name of Devesh Chaurasia, who was\n\nrunning a pharmacy in the hospital owned by the appellant, was recorded to the\n\neffect that the appellant had procured fake Remdesivir injections without a bill. The\n\nappellant is said to have collected the injections through a person named Prakhar\n\nKohli from Indore, who sent the cartons through a transporter called Amba Travels. The appellant was\n\n acquitted in this case;\n\nPART A\n(v) City Hospital and Research Centre owned by the appellant had ordered 500\n\n fake Remdesivir injections worth Rs.15 lakhs at the rate of Rs.3,000/- per\n\n piece by an invoice no. 0063 dated 20 April 2021, which were procured by\n\n means of fake bills from a manufacturing company situated in Gujarat against\n\n whom an FIR",
+    "legal_issues": "The fake Remdesivir injections were stated to have been administered to 50 patients\n\nat the City Hospital on 30 April 2021. In his statement under\nSection 161\nof the\n\nCrPC recorded on 10 May 2021, Prakhar Kohli stated that the appellant’s son had\n\non 21 April 2021 asked him to send the fake Remdesivir injections from Indore to\n\nJabalpur. Prakhar Kohli was made to speak to the appellant in that connection. Prakhar Kohli is stated to have sent the fake injections through Amba Travels, and\n\nthese injections were received at Jabalpur by the co-accused, Devesh Chaurasia,\n\non behalf of the appellant.\n5 On 11 May 2021, the Superintendent of Police, Jabalpur 4 made a request to\n\nthe District Magistrate to take action against the appellant under the NSA. The SP\n\nreiterated the allegations against the appellant of having procured and administered\n\nfake Remdesivir injections to Covid-19 patients. The appellant is alleged to have\n\nprocured 500 injections worth Rs.15 lakhs. The SP stated that the newspapers had\n\n“SP”\n\nPART A\n\nwidely reported that there was a public outcry following the appellant’s actions,\n\nwhich were likely to disturb the public order. Notice was\n\nissued by this Court on 20 September 2021.\n13 During the pendency of the proceedings, by an order dated 30 September\n\n2021, the order of detention has been extended for a further period of three months,\n\nending on 12 February 2022. B Submissions of counsel\n\n14 Mr Sidharth Luthra, senior counsel appearing on behalf of the appell",
+    "ratio_summary": "Thus, the decision in\nSaleena\n(supra) does not find\n\napplication in the facts of the present case.\n54 The AAG has furnished no reasons for the failure to communicate the State\n\nGovernment or Central’s government rejection of the appellant’s representation. This failure in timely communication of the rejection of representation is a relevant\n\nfactor for determining the delay that the detenu is protected against under\nArticle\n\n22(5). Based on the precedents of this Court, we hold that the failure of the Central\n\nand the State Government to communicate the rejection of the appellant’s\n\nrepresentation in a time-bound manner is sufficient to vitiate the order of detention. E Conclusion\n\n55 Accordingly, the order of detention is invalidated on two grounds: first, the\nunexplained delay on part of the State Government in deciding the representation of\n\nthe appellant and second, the failure of the Central and State Governments to\n\ncommunicate the rejection of the representation to the appellant in a timely manner. The basis of the extensions which have been issued on 15 July 2021 and 30\n\nSeptember 2021, finds its genesis in the original order of detention dated 11 May",
+    "final_order": "2021. Once the order of detention stands invalidated, the consequential extensions\n\nwould follow the same course. During the course of the proceedings, both parties\n\nhave advanced submissions on the merits of the order of detention. In the view\n\nwhich we have taken, it is not necessary to consider these other grounds of\n\nPART E\n\nchallenge since the appellant is entitled to succeed on the violation of his procedural\n\nrights under the Constitution and the statute.\n56 For the reasons we have indicated above, the appeal is accordingly allowed.\n\nThe impugned judgment of the High Court dated 24 August 2021 shall stand set\n\naside. The order of detention dated 11 May 2021 and the extensions dated 15 July\n\n2021 and 30 September 2021 shall accordingly stand quashed and set aside.\n\n57 Pending applica",
+    "outcome_summary": "2021. Once the order of detention stands invalidated, the consequential extensions\n\nwould follow the same course. During the course of the proceedings, both parties\n\nhave advanced submissions on the merits of the order of detention. In the view\n\nwhich we have taken, it is not necessary to consider these other grounds of\n\nPART E\n\nchallenge since the appellant is entitled to succeed on the violation",
+    "sections_cited": [
+      "Constitution 226",
+      "Constitution 136",
+      "Constitution 22"
+    ],
+    "cases_cited": []
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "case_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT",
+  "case_name": "Jasminbhai Bharatbhai Kothari vs The State Of Gujarat",
+  "normalized_case_name": "JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT",
+  "court": "Supreme Court of India",
+  "year": "2025",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 417 of 2009",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "30 January 2025",
+  "judges": [
+    "Vikram Nath"
+  ],
+  "author": "Vikram Nath",
+  "bench_type": "single",
+  "petitioner": "Jasminbhai Bharatbhai Kothari",
+  "respondent": "The State Of Gujarat",
+  "reporter_citations": [
+    "2025 INSC 172"
+  ],
+  "outcome": "disposed of",
+  "disposition": "disposed",
+  "cites_count": 9,
+  "cited_by_count": 0,
+  "neutral_citation": "2025 INSC 172",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2025\\JAN\\2025_JAN_103.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT_P001_C01",
+      "text": "CRIMINAL APPELLATE JURISDICTION\n\n SPECIAL LEAVE PETITION (CRIMINAL) NO(S). OF 2025\n (Diary No. 45970 of 2023)\n\n JASMINBHAI BHARATBHAI KOTHARI …PETITIONER(S)\n\n VERSUS\n\n STATE OF GUJARAT …RESPONDENT(S)\n\n ORDER",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT_P002_C01",
+      "text": "1. This present petition is directed against the order dated 19 th\n\n October, 2023 passed by the High Court of Gujarat1, whereby the\n\n Division Bench had refused to extend the period of temporary bail\n\n granted to the petitioner in Criminal Appeal No. 417 of 2009,\n\n preferred by the petitioner herein, which is pending adjudication\n\n before the High Court. In the said criminal appeal, the petitioner\n\nAdditional Sessions Judge, District Court Bhavnagar vide\n\njudgment dated 3rd November, 2018, for the offences punishable\n\nunder\nSection 302\nof the Indian Penal Code, 1860 read with\nSection 34\nand\nSection 25 (1) (B) (A)\nof Arms Act, 1959.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 302"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT_P003_C01",
+      "text": "2. We have noticed an apparent anomaly in the listing of this\n\npetition which we propose to clarify and address.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT_P004_C01",
+      "text": "3. While preferring the present special leave petition, the\n\npetitioner also filed an Interlocutory Application2 seeking\n\nexemption from surrendering. The said application was registered\n\nby the Registry and stands rejected by the Hon’ble Judge-in-\n\nChamber vide order dated 8th December 2023.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT_P005_C01",
+      "text": "4. We are of the prima facie opinion that the above application\n\ncould not have been entertained in the very first instance. Our\n\nconclusion is based on plain reading and interpretation of Order\n\nXXII Rule 5 of the Supreme Court Rules, 20133 which is\n\nreproduced hereinbelow: -\n“Where the appellant has been sentenced to a term of\n imprisonment, the petition of appeal shall state whether\n the appellant has surrendered and if he has surrendered\n then the appellant shall, by way of proof of such surrender,\n file the certified copy of the order of the Court in which he\n has surrendered or a certificate of the competent officer of\n2 IA No. 248997 of 2023.\n3 For short, ‘SC Rules 2013.’\n\nthe Jail in which he is undergoing the sentence. A mere\n attestation of the signatures on the Vakalatnama from the Jail\n authorities shall not be considered as sufficient proof of\n surrender. Where the appellant has not surrendered to the\n sentence, the petition of appeal shall not be accepted by\n the Registry unless it is accompanied by an application for\n seeking exemption from surrendering.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT_P005_C02",
+      "text": "Where the petition of\n appeal is accompanied by an application for exemption from\n surrendering, that application alone shall be posted for hearing\n orders before the Court in the first instance.”\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT_P006_C01",
+      "text": "5. On perusal of the aforesaid Rule, it is clear that an\n\nInterlocutory Application for exemption from surrendering is\n\nadmissible only where the petitioner in the special leave petition\n\nhas been ‘sentenced to a term of imprisonment’ and not in any other\n\nsituation.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT_P007_C01",
+      "text": "6. We have observed that the Registry of this Court has been\n\nentertaining applications for exemption from surrendering in\n\nvarious other categories of cases, such as the rejection of\n\nanticipatory bail, rejection of a prayer for an extension of interim\n\nbail, etc.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT_P008_C01",
+      "text": "7. In the case of\nMahavir Arya v. State Government NCT of\n\nDelhi and Anr4\n, Hon’ble Shri Justice Pamidighantam Sri\n\nNarasimha, sitting in Chambers, interpreted Order XXII Rule 5 of\n\nthe SC Rules, 2013 and held that the said Order applies only to\n\n4 Special Leave Petition (Criminal) [Diary No. 8160 of 2021].\n\ncases where the petitioner is ‘sentenced to a term of imprisonment’\n\nand it cannot be confused with simple orders of cancellation of\n\nbail.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT_P009_C01",
+      "text": "8. Kapur Singh v. State of Haryana5\n, this Court in a\n\nspecial leave petition, challenging the order of cancellation of the\n\nbail, dismissed the Interlocutory Application seeking exemption\n\nfrom surrendering on a similar rationale. The Court noted that:\n“6. In my considered view, the question of the petitioner\n surrendering before the trial court, as a precondition for\n entertaining the above SLP, does not arise. Order XXII Rule 5\n of the Supreme Court Rules, 2013, makes it mandatory for\n a person to surrender or seek exemption from surrendering\n only when he has been sentenced to a term of\n imprisonment. The petitioner has not been sentenced to\n any term of imprisonment, by the orders impugned in the\n SLP. The orders out of which the above SLP arises, are orders\n passed for failure to comply with the directions issued under\nSection 143-A\nof the NI Act.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT_P010_C01",
+      "text": "9. When\nSection 143-A(5)\nof the NI Act read with\nSection\n 421(1)\nCrPC does not prescribe a term of imprisonment and\n when the orders impugned in the SLP do not challenge any\n penalty of imprisonment for a particular term, the question\n of the petitioner surrendering or seeking exemption from\n surrendering does not arise. In other words, in cases of this\n nature, the Registry cannot insist upon either a surrender\n certificate or an application for exemption from\n surrendering under Order XXII Rule 5 of the Rules.”\n\n (emphasis supplied)",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT_P011_C01",
+      "text": "9. A similar view was taken by this Court in\nMayuram\n\nSubramanian Srinivasan v. CBI6\n; Vivek Rai and Another v.\n\n5 (2021) 18 SCC 579.\n6 (2006) 5 SCC 752.\n\nHigh Court of Jharkhand7;\nDilip Majumder v. Nikunja Das &\n\nAnr.8\n; and Sanjit Saha and Another. v. State of West Bengal.9\n10. In view of the clear language of Order XXII Rule 5 of the SC\n\nRules 2013 and successive orders passed by this Court as\n\nmentioned above, we are firmly of the opinion that an application\n\nseeking exemption from surrendering cannot be entertained or\n\nlisted before the Hon’ble Judge-in-Chambers in any special leave\n\npetition, except where the petitioner has been sentenced to a term\n\nof imprisonment. This order shall be placed before Hon’ble the\n\nChief Justice of India for seeking formal instructions to the\n\nconcerned filing, scrutiny and numbering Sections concerning\n\nmatters in which Order XXII Rule 5 will apply.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT_P012_C01",
+      "text": "11. Returning to the facts of the present case, since the petitioner\n\nhas already surrendered upon the rejection of the Interlocutory\n\nApplication(supra), the present special leave petition challenging\n\nthe High Court's refusal to extend the temporary bail has become\n\ninfructuous.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT_P013_C01",
+      "text": "12. Accordingly, the special leave petition is disposed of as\n\ninfructuous.\n7 (2015) 12 SCC 86.\n8 Special Leave Petition (Criminal) [Diary No.6517 of 2020].\n9 2023 SCC OnLine SC 1693.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT_P014_C01",
+      "text": "13. Pending application(s), if any, shall stand disposed of.\n……..……………………J.\n (VIKRAM NATH)\n\n ……..……………………J.\n (SANDEEP MEHTA)\n\nNEW DELHI;\nJANUARY 30, 2025.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Jasminbhai Bharatbhai Kothari vs The State Of Gujarat",
+    "case_id": "SC_2025_JASMINBHAI_BHARATBHAI_KOTHARI_VS_THE_STATE_OF_GUJARAT",
+    "court": "Supreme Court of India",
+    "year": "2025",
+    "facts_summary": "1. This present petition is directed against the order dated 19 th\n\n October, 2023 passed by the High Court of Gujarat1, whereby the\n\n Division Bench had refused to extend the period of temporary bail\n\n granted to the petitioner in Criminal Appeal No. 417 of 2009,\n\n preferred by the petitioner herein, which is pending adjudication\n\n before the High Court. In the said criminal appeal, the petitioner\n\nAdditional Sessions Judge, District Court Bhavnagar vide\n\njudgment dated 3rd November, 2018, for the offences punishable\n\nunder\nSection 302\nof the Indian Penal Code, 1860 read with\nSection 34\nand\nSection 25 (1) (B) (A)\nof Arms Act, 1959. 2. We have noticed an apparent anomaly in the listing of this\n\npetition which we propose to clarify and address. 4. We are of the prima facie opinion that the above application\n\ncould not have been entertained in the very first instance. Our\n\nconclusion is based on plain reading and interpretation of Order\n\nXXII Rule 5 of the Supreme Court Rules, 20133 which is\n\nreproduced hereinbelow: -\n“Where the appellant has been sentenced to a term of\n imprisonment, the petition of appeal shall state whether\n the appellant has surrendered and if he has surrendered\n then the appellant shall, by way of proof of such surrender,\n file the certified copy of the order of the Court in which he\n has surrendered or a certificate of the competent officer of\n2 IA No. 248997 of 2023.\n3 For short, ‘SC Rules 2013.’\n\nthe Jail in which he is undergoing the sentence. A mere\n ",
+    "legal_issues": "5. On perusal of the aforesaid Rule, it is clear that an\n\nInterlocutory Application for exemption from surrendering is\n\nadmissible only where the petitioner in the special leave petition\n\nhas been ‘sentenced to a term of imprisonment’ and not in any other\n\nsituation. 9. A similar view was taken by this Court in\nMayuram\n\nSubramanian Srinivasan v. CBI6\n; Vivek Rai and Another v.\n\n5 (2021) 18 SCC 579.\n6 (2006) 5 SCC 752.\n\nHigh Court of Jharkhand7;\nDilip Majumder v. Nikunja Das &\n\nAnr.8\n; and Sanjit Saha and Another. v. State of West Bengal.9\n10. In view of the clear language of Order XXII Rule 5 of the SC\n\nRules 2013 and successive orders passed by this Court as\n\nmentioned above, we are firmly of the opinion that an application\n\nseeking exemption from surrendering cannot be entertained or\n\nlisted before the Hon’ble Judge-in-Chambers in any special leave\n\npetition, except where the petitioner has been sentenced to a term\n\nof imprisonment. This order shall be placed before Hon’ble the\n\nChie",
+    "ratio_summary": "8. Kapur Singh v. State of Haryana5\n, this Court in a\n\nspecial leave petition, challenging the order of cancellation of the\n\nbail, dismissed the Interlocutory Application seeking exemption\n\nfrom surrendering on a similar rationale. The Court noted that:\n“6. In my considered view, the question of the petitioner\n surrendering before the trial court, as a precondition for\n entertaining the above SLP, does not arise. Order XXII Rule 5\n of the Supreme Court Rules, 2013, makes it mandatory for\n a person to surrender or seek exemption from surrendering\n only when he has been sentenced to a term of\n imprisonment. The petitioner has not been sentenced to\n any term of imprisonment, by the orders impugned in the\n SLP. The orders out of which the above SLP arises, are orders\n passed for failure to comply with the directions issued under\nSection 143-A\nof the NI Act. 9. When\nSection 143-A(5)\nof the NI Act read with\nSection\n 421(1)\nCrPC does not prescribe a term of imprisonment and\n when the orders impugned in the SLP do not challenge any\n penalty of imprisonment for a particular term, the question\n of the petitioner surrendering or seeking exemption from\n surrendering does not arise. In other words, in cases of this\n nature, the Registry cannot insist upon either a surrender\n certificate or an application for exemption from\n surrendering under Order XXII Rule 5 of the Rules.”\n\n (emphasis supplied)",
+    "final_order": "",
+    "outcome_summary": "Disposed of",
+    "sections_cited": [
+      "IPC 302"
+    ],
+    "cases_cited": []
+  }
+}

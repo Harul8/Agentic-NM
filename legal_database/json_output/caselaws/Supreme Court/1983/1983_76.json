@@ -1,0 +1,272 @@
+{
+  "case_id": "SC_1983_1983_76",
+  "case_name": "C.I.T. West Bengal - Iii & Ors. Etc vs Oriental Rubber Works Etc",
+  "normalized_case_name": "C.I.T._WEST_BENGAL_-_III_&_ORS._ETC_VS_ORIENTAL_RUBBER_WORKS_ETC",
+  "court": "Supreme Court of India",
+  "year": "1983",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "15 November 1983",
+  "judges": [
+    "V.D. Tulzapurkar",
+    "V. Balakrishna  Eradi",
+    "D.P. Madon"
+  ],
+  "author": "V.D. Tulzapurkar",
+  "bench_type": "constitution",
+  "petitioner": "C.I.T. West Bengal - Iii & Ors. Etc",
+  "respondent": "Oriental Rubber Works Etc",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 9,
+  "cited_by_count": 77,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1984 AIR 230",
+    "1984 SCR (1) 817",
+    "AIR 1984 SUPREME COURT 230",
+    "1984 (1) SCC 700",
+    "1984 TAX. L. R. 145",
+    "(1983) 3 COMLJ 381",
+    "1984 UJ (SC) 214",
+    "(1983) 15 TAXMAN 51",
+    "1983 (15) TAX LAW REV 585",
+    "(1984) 57 STC 56",
+    "1984 SCC (TAX) 106",
+    "1984 ALL TAX J 194",
+    "1984 UPTC 141",
+    "1983 TAXATION 71 (3) 245",
+    "(1984) 145 ITR 477",
+    "(1984) 12 ITC 230",
+    "(1983) 38 CURTAXREP 154",
+    "(1984) ECR 1233"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1983\\1983_76.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1983_1983_76_P001_C01",
+      "text": "PETITIONER:\nC.I.T. WEST BENGAL - III & ORS. ETC. Vs. RESPONDENT:\nORIENTAL RUBBER WORKS ETC. DATE OF JUDGMENT15/11/1983\n\nBENCH:\nTULZAPURKAR, V.D. BENCH:\nTULZAPURKAR, V.D. ERADI, V. BALAKRISHNA (J)\nMADON, D.P. CITATION:\n 1984 AIR 230 1984 SCR (1) 817\n 1984 SCC (1) 700 1983 SCALE (2)682\n\nACT:\nIncome Tax Act, 1961\n-\nSec.132-\nInterpretation of Sub-\nsec.(1) -Seizure of books of account and documents-Sub-\nsec.(8) retention of books beyond 180 days of seizure-Read\nwith sub-secs. (10) & (12) -Impose statutory obligation on\nRevenue to communicate Commissioner's approval and recorded\nreasons of the authorised officer to person entitled for\nreturn of books. Retention of books-Without such\ncommunication-unlawful. HEADNOTE:\n The Revenue who had seized the books of account and\ndocuments of the assessee under\nsec. 132(1)\nof the Income\nTax Act, 1961 did not return the same to the assessee after\na period of 180 days of the seizure. The assessee filed a\nwrit petition in the High Court inter alia praying for a\ndirection to the Revenue to return the said books of\naccount.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1983_1983_76_P001_C02",
+      "text": "The assessee submitted that the retention of the\nseized books of accounts and documents beyond the period of\n180 days was illegal and invalid inasmuch as neither the\napproval accorded by the Commissioner of Income Tax for such\nextended retention nor the recorded reasons of the Income\nTax Officer on which such approval was based had been\ncommunicated to him. A single Judge of the High Court held\nthat the retention of the books and documents beyond 180\ndays was unlawful. A Division Bench dismissed the Revenue's\nappeal. In these appeals the Revenue submitted that\nsec.\n132(8)\nof the Act did not impose any obligation on the\nRevenue to communicate the approval of the commissioner or\nthe recorded reason of the Income Tax Officer on which it is\nbased to the person from whose custody the books of accounts\nand documents had been seized.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1983_1983_76_P001_C03",
+      "text": "Dismissing the appeals,\n^\n HELD: It is true that sub-sec.(8) of\nsec. 132\nof the\nIncome Tax Act, 1961 does not in terms provide that the\nCommissioner's approval of the recorded reasons on which it\nmight be based should be communicated to the concerned\nperson but since the person concerned is bound to be\nmaterially prejudiced in the enforcement of his right to\nhave such books and documents returned to him by being kept\nignorant about the factum of fulfilment of either of the two\nconditions laid down therein it is obligatory upon the\nRevenue to communicate the Commissioner's approval as also\nthe recorded reasons to the person concerned.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1983_1983_76_P001_C04",
+      "text": "In the absence\nof such communication the Commissioner's decision according\nhis approval will not become effective. [823 H; 824 A]\n Moreover, sub-sec.(10) of\nsec.132\nconfers upon the\nperson legally entitled to the return of the seized books\nand documents a right to object to the\n\napproval given by the Commissioner under sub-sec.(8) by\nmaking an application to the Central Board stating therein\nthe reasons for such objection and under sub-sec.(12) of\nsec.132\nit is provided that the Central Board may, after\ngiving the applicant an opportunity of being heard pass such\norders as it thinks fit.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1983_1983_76_P001_C05",
+      "text": "It is obvious that without the\nknowledge of the factum of the Commissioner's approval as\nalso of the recorded reasons on the basis of which such\napproval has been obtained it will not be possible for the\nperson to whom the seized books or documents belong to make\nany effective objection to the approval before the Board and\nget back his books or documents. [824 B-C]\n The scheme of sub-secs (8), (10) and (12) of\nsec.132\nmakes it amply clear that there is a statutory obligation on\nthe Revenue to communicate to the person concerned not\nmerely the Commissioner's approval but the recorded reasons\non which the same has been obtained and that such\ncommunication must be made as expeditiously as possible\nafter the passing of the order of approval by the\nCommissioner and in default of such expeditious\ncommunication any further retention of the seized books or\ndocuments would become invalid and unlawful. It is obvious\nthat such obligation arises in regard to every approval of\nthe Commissioner that might have been accorded from time to\ntime. [824 D-F]\n\nJUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal No. 1652 of",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1983_1983_76_P002_C01",
+      "text": "1973. Appeal by Special leave from the Judgment and Order\ndated the 25th June, 1973 of the Calcutta High Court in\nAppeal No. 233 of 1970.\nWITH\n Civil Appeal Nos. 759-760 of 1973\n From the Judgment and Order dated the 2nd June, 1972 of\nthe Calcutta High Court in Appeal from Original Order Nos.\n155 & 158 of 1970.\nAND\nCivil Appeal No. 661 of 1975\nFrom the Judgment and Order dated the 15th March, 1974\nof the Calcutta High Court in Appeal No. 96 of 1972.\nV.S. Desai, B.B. Ahuja and Miss A. Subhashini for the\nAppellant, in CA. 1652 of 1973.\n\nS.T. Desai, Miss A. Subhashini for the Appellants in\nCA. Nos. 759-760 of 1973 & 661 of 1975.\nSanjay Bhattacharya, Rathindas and K. Kathazarika for\nthe Respondent in CA. No. 1652 of 1973.\nV.B. Saharya for the Respondent in CA. No. 759 of 1973.\n N.S. Das Behl for the Respondent in CA. No.760 of 1973.\n D.N. Mukherjee for the Respondent in CA. No.661 of",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C01",
+      "text": "1975. The Judgment of the Court was delivered by\n TULZAPURKAR, J. All these appeals, at the instance of\nthe Commissioner of Income-tax, raise a common question\nwhether the Revenue is under a statutory obligation to\ncommunicate to the person (from whose custody books of\naccount and documents have been seized under\nsection 132(1)\nof the Income-tax Act, 1961) the approval obtained from the\nCommissioner of Income-tax and the recorded reasons of the\nAuthorised Officer/Income Tax Officer on which such approval\nis based for the retention of the seized books of account\nand documents by the Department for a period exceeding 180\ndays from the date of seizure under\nsec. 132 (8)\nof the\nIncome-tax Act, 1961 ? Since in all these appeals the facts giving rise to\naforesaid question are almost similar, it will suffice to\nindicate briefly the facts obtaining in M/s. Oriental Rubber\nWork's case (Civil Appeal No. 1652 of 1973).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C02",
+      "text": "Under a proper\nauthorisation issued in that behalf under\nsec. 132(1)\nof the\nAct, on 17th February, 1965 a search was conducted by the\nIncome-tax Department in the factory premises at Kantalia as\nwell as the offices and godown at Mahatma Gandhi Road\nCalcutta belonging to the respondent-assessee and various\nbooks of account and documents were seized from the\naforesaid premises. After lawfully carrying out the\naforesaid search and seizure, the respondent-assessee was\ngiven opportunity to inspect the seized books and documents\nas also to make copies of the entries. The concerned Income\nTax Officer then issued a notice to the respondent assessee\nunder\nSec. 142(1)\nof the Act in connection with its\nassessment for the assessment year 1964-65 and after giving\nseveral hearings which were attended by the respondent-\nassessee or its representative the assessment for the said\nyear was completed under\nsection 143(3)\n\nthe Act on 5th February, 1969.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C03",
+      "text": "Notwithstanding the passing\nof such assessment order on 5th February, 1969, the\nrespondent-assessee on 27th February, 1969 moved the\nCalcutta High Court by way of a writ under\nArt. 226\nof the\nConstitution inter alia praying (a) for a direction to the\nCommissioner of Income-tax and the concerned Authorized\nOfficer/Income Tax Officer to return forthwith the said\nbooks of account, documents and papers etc. seized as\naforesaid and to cancel or rescind the warrant of\nauthorisation issued under\nsec. 132(1)\nof the Act and (b)\nfor a mandamus commanding the concerned Income Tax Officer\nnot to proceed with the assessment for the assessment year\n1964-65 until the return of documents seized on 17th\nFebruary, 1965.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C04",
+      "text": "The main submission of the respondent-\nassessee was that the retention of the seized books of\naccount and documents beyond the period of 180 days from the\ndate of the seizure (17th February, 1965) was illegal and\ninvalid inasmuch as neither the approval accorded by the\nCommissioner of Income-tax for such extended retention nor\nthe recorded reasons of the Authorized Officer/Income Tax\nOfficer on which such approval was based had been\ncommunicated to the respondent/assessee and that without the\nreturn of the seized books of account and documents no\nassessment for the concerned assessment year 1964-65 could\nbe proceeded with or made.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C05",
+      "text": "On behalf of the Revenue it was\npointed out that the concerned Income Tax Officer had\nrecorded his reasons seeking approval of the Commissioner of\nIncome-tax for extended retention of the seized books of\naccount and documents and had obtained approval of the\nCommissioner of Income-tax for such extended retention from\ntime to time and therefore such retention of the seized\nbooks and documents beyond 180 days was perfectly legal and\nvalid that there was no obligation under\nsec. 132(8)\nof the\nAct to communicate the Commissioner's approval for such\nextended retention or the, recorded reasons of the Income\nTax Officer therefor to the respondent-assessee and that in\nany event due inspection of the seized books and documents\nwas afforded to the respondent assessee who was also\npermitted to take copies of the entries in the books and\nafter giving proper hearing to the respondent-assessee the\nassessment for the year 1964-65 had been validly completed\non 5th February, 1969 long before the respondent-assessee\napproached the Court and obtained a Rule Nisi.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C06",
+      "text": "A learned\nSingle Judge of the High Court held that the seized books of\naccount and other documents could not be retained beyond the\nperiod of 180 days without a complete and effective order of\napproval for such extended retention of the said books and\ndocuments and that since the approval of\n\nthe Commissioner and the recorded reasons therefore had not\nbeen communicated to the respondent-assessee, the retention\nof the books and documents beyond 180 days was unlawful. The\nlearned Judge, therefore, ordered the issuance of a mandamus\ndirecting the Commissioner and the concerned Income Tax\nOfficer to return all the seized books and documents and he\nfurther ordered that the concerned Income Tax Officer shall\nbe at liberty to complete the assessment for the year 1964-\n65 after the return of the said books and documents and\nafter issuing afresh statutory notices under\nsection\n142(1)\n/\n143(2)\nof the Income-tax Act to the respondent-\nassessee. In rendering the aforesaid decision, the learned\nJudge followed two earlier decisions of his own High Court\nin Mahabir Prasad Poddar's case decided by T. K. Basu, J.\nand his own decision in C. K.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C07",
+      "text": "Wadhwa's case (which is the\nsubject matter of the companion Civil Appeal No.760 of 1973\nbefore us). At the instance of the Commissioner of Income-\ntax, an appeal was preferred to the Division Bench of the\nHigh Court being Appeal No. 233 of 1970. The self-same\ncontentions were urged on behalf of the Revenue in the\nappeal and it was specifically submitted that the assessment\nfor the assessment year 1964-65 having been completed on 5th\nFebruary, 1969 long before the rule nisi had been issued,\nthe direction given by the learned Single Judge with regard\nto the liberty to complete the assessment for the said\nassessment year had become infructuous. The Division Bench,\nhowever, negatived all the contentions a dismissed the\nappeal affirming all the directions given by the learned\ntrial Judge. The Revenue has come up in appeal to this\nCourt. Counsel for the Revenue urged two points before us in\nsupport of this appeal.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C08",
+      "text": "In the first place, the counsel\nurged that\nsection 132(8)\nof the Income-tax Act, which deals\nwith the extended retention of the seized books and\ndocuments in excess of the period of 180 days from the date\nof the seizure merely provides that for such extended\nretention the Authorised Officer/the concerned Income Tax\nOfficer has to record his reasons in writing in that behalf\nand has to obtain the approval of the Commissioner of\nIncome-tax for such extended retention and there is no\nobligation imposed by the said sub-section to communicate\nthe approval of the Commissioner of the recorded reasons of\nthe I.T.O. on which it is based to the person from whose\ncustody the books and documents have been seized or to the\nperson legally entitled to such books and documents and\ntherefore the High Court erroneously held that such extended\nretention of the seized books and documents without\ncommunicating the\n\nCommissioner's approval and the reasons on which it is based\nwas unlawful or illegal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C09",
+      "text": "Secondly, the counsel contended\nthat in any event since proper opportunity to inspect the\nseized books and documents and to make copies of the entries\nwas given to the respondent/assessee and since after issuing\nproper notices and giving hearing to the respondent-\nassessee, the assessment for the assessment year 1964-65 had\nbeen completed long before the issuance of the rule nisi,\nthe same ought to have been upheld as binding on the\nrespondent assessee. In other words, according to the\ncounsel for the Revenue, the unauthorised retention of the\nseized books and documents beyond 180 days, if any, could\nnot render the assessment for the year 1964-65 properly made\ninvalid. Counsel further pointed out that the respondent-\nassessee had even preferred appeals to higher authorities\nchallenging the said assessment on merits. It may be stated\nthat Counsel for the respondent-assessee in this appeal\nconceded that in all the circumstances of the case the\nassessment already made on 5th February, 1969 should be\nallowed to stand subject of course to the result of the\nappeals that have been preferred by the respondent assessee\nagainst it.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C10",
+      "text": "In this view of the matter, the second\ncontention urged by Counsel for the Revenue in this appeal\nhas to be accepted and the assessment for the assessment\nyear 1964-65 made on 5th February, 1969 subject as aforesaid\nto be upheld. That leaves for consideration the first\ncontention, which as we have indicated earlier, is common to\nall the appeals.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C11",
+      "text": "In order to decide the aforesaid contention it will be\ndesirable to set out the material provisions of\nsec.132\nthe Act, namely, sub-secs.(8), (10) and (12) thereof, which\nrun as follows:\n\"132 (8) The books of account or other documents\n seized under sub-section (1) or sub-section (1A) shall\n not be retained by the authorised officer for a period\n exceeding one hundred and eighty days from the date of\n the seizure unless the reasons for retaining the same\n are recorded by him in writing and the approval of the\n Commissioner for such retention is obtained:\nProvided that the Commissioner shall not authorise\n the retention of the books of account and other\n documents for a period exceeding thirty days after all\n the proceedings under the\nIndian Income-tax Act, 1922\n(XI of 1922), or this Act in respect of the years for\n\nwhich the books of account or other documents are\n relevant are completed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C12",
+      "text": "(10) If a person legally entitled to the books of\n account or other documents seized under sub-section (1)\n or sub-section (1A) objects for any reason to the\n approval given by the Commissioner under sub-section\n (8), he may make an application to the Board stating\n therein the reasons for such objection and requesting\n for the return of the books of account or other\n documents.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C13",
+      "text": "(12) On receipt of the application under sub-\nsection (10) the Board may, after giving the applicant\n an opportunity of being heard, pass such orders as it\n thinks fit.\"\nOn a plain reading of the aforesaid provisions it will\nbe clear that ordinarily the books of account or other\ndocuments that may be seized under an authorisation issued\nunder sub-sec.(1) of\nsec.132\ncan be retained by the\nauthorised officer or the concerned Income-tax officer for a\nperiod of one hundred and eighty days from the date of\nseizure, whereafter the person from whose custody such books\nor documents have been seized or the person to whom such\nbooks or documents belong becomes entitled to the return of\nthe same unless the reasons for any extended retention are\nrecorded in writing by the authorised officer/the concerned\nIncome Tax Officer and approval of the Commissioner for such\nretention is obtained.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C14",
+      "text": "In other words two conditions must be\nfulfilled before such extended retention becomes permissible\nin law: (a) reasons in writing must be recorded by the\nauthorised officer or the concerned Income-tax Officer\nseeking the Commissioner's approval and (b) obtaining of the\nCommissioner's approval for such extended retention and if\neither of these conditions is not fulfiled such extended\nretention will become unlawful and the concerned person\n(i.e. the person from whose custody such books or documents\nhave been seized or the person to whom these belong)\nacquires a right to the return of the same forthwith. It is\ntrue that sub-sec.(8) does not in terms provide that the\nCommissioner's approval or the recorded reasons on which it\nmight be based should be communicated to the concerned\nperson but in our view since the person concerned is bound\nto be materially prejudiced in the enforcement of his right\nto have such books and documents returned to him by being\nkept ignorant about the factum of fulfilment of either of\nthe\n\nconditions it is obligatory upon the Revenue to communicate\nthe Commissioner's approval as also the recorded reasons to\nthe person concerned.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C15",
+      "text": "In the absence of such communication\nthe Commissioner's decision according his approval will not\nbecome effective. Moreover, sub-sec.(10) confers upon the person legally\nentitled to the return of the seized books and documents a\nright to object to the approval given by the Commissioner\nunder sub-sec.(8) by making an application to the Central\nBoard stating therein the reasons for such objection and\nunder sub-sec.(12) it is provided that the Central Board\nmay, after giving the applicant an opportunity of being\nheard pass such orders as it thinks fit. It is obvious that\nwithout the knowledge of the factum of the Commissioner's\napproval as also of the recorded reasons on the basis of\nwhich such approval has been obtained it will not be\npossible for the person to whom the seized books or\ndocuments belong to make any effective objection to the\napproval before the Board and get back his books or\ndocuments. In our view the scheme of sub-secs.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C16",
+      "text": "(8), (10) and\n(12) of\nsec.132\nmakes it amply clear that there is a\nstatutory obligation on the Revenue to communicate to the\nperson concerned not merely the Commissioner's approval but\nthe recorded reasons on which the same has been obtained and\nthat such communication must be made as expeditiously as\npossible after the passing of the order of approval by the\nCommissioner and in default of such expeditious\ncommunicating any further retention of the seized books or\ndocuments would become invalid and unlawful. It is obvious\nthat such obligation arises in regard to every approval of\nthe Commissioner that might have been accorded from time to\ntime. In the result the orders passed by the High Court\ndirecting the return of the seized books of account and\ndocuments to the respondents in each of the appeals are\nconfirmed and the appeals (subject to the directions given\nbelow in two of them) are dismissed with no order as to\ncosts. In Civil Appeal No.1652 of 1973 the assessment order\npassed on 5th February, 1969 is upheld subject to the result\nof the appeals that may have been preferred against it.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_76_P003_C17",
+      "text": "Civil Appeal No.661 of 1975 it is directed that the\nassessment orders passed for the concerned assessment years\nwould be subject to the appeals already preferred if any or\nsuch as might be preferred in accordance with law, against\nthe same. H.S.K. Appeals dismissed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    }
+  ],
+  "case_summary": {
+    "case_name": "C.I.T. West Bengal - Iii & Ors. Etc vs Oriental Rubber Works Etc",
+    "case_id": "SC_1983_1983_76",
+    "court": "Supreme Court of India",
+    "year": "1983",
+    "facts_summary": "",
+    "legal_issues": "The assessee submitted that the retention of the\nseized books of accounts and documents beyond the period of\n180 days was illegal and invalid inasmuch as neither the\napproval accorded by the Commissioner of Income Tax for such\nextended retention nor the recorded reasons of the Income\nTax Officer on which such approval was based had been\ncommunicated to him. A single Judge of the High Court held\nthat the retention of the books and documents beyond 180\ndays was unlawful. A Division Bench dismissed the Revenue's\nappeal. In these appeals the Revenue submitted that\nsec.\n132(8)\nof the Act did not impose any obligation on the\nRevenue to communicate the approval of the commissioner or\nthe recorded reason of the Income Tax Officer on which it is\nbased to the person from whose custody the books of accounts\nand documents had been seized. 1973. Appeal by Special leave from the Judgment and Order\ndated the 25th June, 1973 of the Calcutta High Court in\nAppeal No. 233 of 1970.\nWITH\n Civil Appeal Nos. 759-760 of 1973\n From the Judgment and Order dated the 2nd June, 1972 of\nthe Calcutta High Court in Appeal from Original Order Nos.\n155 & 158 of 1970.\nAND\nCivil Appeal No. 661 of 1975\nFrom the Judgment and Order dated the 15th March, 1974\nof the Calcutta High Court in Appeal No. 96 of 1972.\nV.S. Desai, B.B. Ahuja and Miss A. Subhashini for the\nAppellant, in CA. 1652 of 1973.\n\nS.T. Desai, Miss A. Subhashini for the Appellants in\nCA. Nos. 759-760 of 1973 & 661 of 1975.\nSanjay Bhattacharya, Rathin",
+    "ratio_summary": "",
+    "final_order": "A learned\nSingle Judge of the High Court held that the seized books of\naccount and other documents could not be retained beyond the\nperiod of 180 days without a complete and effective order of\napproval for such extended retention of the said books and\ndocuments and that since the approval of\n\nthe Commissioner and the recorded reasons therefore had not\nbeen communicated to the respondent-assessee, the retention\nof the books and documents beyond 180 days was unlawful. The\nlearned Judge, therefore, ordered the issuance of a mandamus\ndirecting the Commissioner and the concerned Income Tax\nOfficer to return all the seized books and documents and he\nfurther ordered that the concerned Income Tax Officer shall\nbe at liberty to complete the assessment for the year 1964-\n65 after the return of the s",
+    "outcome_summary": "A learned\nSingle Judge of the High Court held that the seized books of\naccount and other documents could not be retained beyond the\nperiod of 180 days without a complete and effective order of\napproval for such extended retention of the said books and\ndocuments and that since the approval of\n\nthe Commissioner and the recorded reasons therefore had not\nbeen communicated to the respondent-assessee, ",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

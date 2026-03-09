@@ -1,0 +1,94 @@
+{
+  "case_id": "SC_1979_1979_237",
+  "case_name": "Deputy Commissioner Of Agricultural ... vs Aluminium Industries Ltd., Kundara",
+  "normalized_case_name": "DEPUTY_COMMISSIONER_OF_AGRICULTURAL_..._VS_ALUMINIUM_INDUSTRIES_LTD.,_KUNDARA",
+  "court": "Supreme Court of India",
+  "year": "1979",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "12 October 1979",
+  "judges": [
+    "N.L. Untwalia",
+    "R.S. Pathak",
+    "JUDGMENT",
+    "R.S. Pathak, J."
+  ],
+  "author": "R.S. Pathak",
+  "bench_type": "constitution",
+  "petitioner": "Deputy Commissioner Of Agricultural ...",
+  "respondent": "Aluminium Industries Ltd., Kundara",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 3,
+  "cited_by_count": 20,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1980SC839",
+    "(1980)1SCC467",
+    "1980(SUPP)SCC467",
+    "[1980]45STC251(SC)",
+    "1979(11)UJ848(SC)",
+    "AIR 1980 SUPREME COURT 839",
+    "1980 TAX. L. R. 1667",
+    "1979 UJ(SC) 848",
+    "1979 STI 96 (SC)",
+    "(1980) 45 STC 251"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1979\\1979_237.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1979_1979_237_P001_C01",
+      "text": "1. Special leave to appeal granted.\nORDER ON THE APPEALS",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1979_1979_237_P002_C01",
+      "text": "2. These appeals raise the question whether for the purpose of determining the taxable turnover for assessment under the\nCentral Sales Tax Act, 1956\n, the sale price must be computed by including the amount allowed by way of trade discount.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1979_1979_237_P003_C01",
+      "text": "3. The assessee effected sales of goods to its dealers and allowed a trade discount on the catalogue price to cover the expenses incurred by the dealers and permit a margin of profit to them. The dealers were required to sell the goods at the catalogue price. For the assessment years 1960-61 to 1963-64, the High Court of Kerala has held that the amount allowed as trade discount could not be included in the taxable turnover. It has relied on\nOrient Paper Mills v. State of Orissa\n[1975] 35 S.T.C. 84.\nFor the reasons contained in our judgment delivered today in\nDeputy Commissioner of Sales Tax (Law), Board of Revenue (Taxes), Ernakulam v. Advani Oerlikon (P\n.) Ltd., Trivandrum , we are of the opinion that the High Court is right.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1979_1979_237_P004_C01",
+      "text": "4. The appeals are dismissed with costs. Costs to be in one set only.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Deputy Commissioner Of Agricultural ... vs Aluminium Industries Ltd., Kundara",
+    "case_id": "SC_1979_1979_237",
+    "court": "Supreme Court of India",
+    "year": "1979",
+    "facts_summary": "",
+    "legal_issues": "3. The assessee effected sales of goods to its dealers and allowed a trade discount on the catalogue price to cover the expenses incurred by the dealers and permit a margin of profit to them. The dealers were required to sell the goods at the catalogue price. For the assessment years 1960-61 to 1963-64, the High Court of Kerala has held that the amount allowed as trade discount could not be included in the taxable turnover. It has relied on\nOrient Paper Mills v. State of Orissa\n[1975] 35 S.T.C. 84.\nFor the reasons contained in our judgment delivered today in\nDeputy Commissioner of Sales Tax (Law), Board of Revenue (Taxes), Ernakulam v. Advani Oerlikon (P\n.) Ltd., Trivandrum , we are of the opinion that the High Court is right. 4. The appeals are dismissed with costs. Costs to be in one set only.",
+    "ratio_summary": "2. These appeals raise the question whether for the purpose of determining the taxable turnover for assessment under the\nCentral Sales Tax Act, 1956\n, the sale price must be computed by including the amount allowed by way of trade discount.",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

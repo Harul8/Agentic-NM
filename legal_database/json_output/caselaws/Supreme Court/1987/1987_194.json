@@ -1,0 +1,84 @@
+{
+  "case_id": "SC_1987_1987_194",
+  "case_name": "Trikha Ram vs V.K. Seth And Anr.",
+  "normalized_case_name": "TRIKHA_RAM_VS_V.K._SETH_AND_ANR.",
+  "court": "Supreme Court of India",
+  "year": "1987",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "9 January 1987",
+  "judges": [
+    "B.C. Ray",
+    "M.P. Thakkar",
+    "JUDGMENT"
+  ],
+  "author": "B.C. Ray",
+  "bench_type": "constitution",
+  "petitioner": "Trikha Ram",
+  "respondent": "V.K. Seth And Anr.",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 3,
+  "cited_by_count": 33,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1988SC285",
+    "1988LABLC383",
+    "1987SUPP(1)SCC39",
+    "AIR 1988 SUPREME COURT 285",
+    "1988 LAB. I. C. 383",
+    "1987 SCC (SUPP) 39",
+    "(1988) IJR 26 (SC)",
+    "1987 SCC (L&S) 282",
+    "(1988) 1 SERVLR 2",
+    "(1987) 4 ATC 208"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1987\\1987_194.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1987_1987_194_P001_C01",
+      "text": "1. The question raised in this appeal as to whether or not the appellant who was convicted for a criminal offence should have been heard by the disciplinary authority before imposing the punishment is concluded against the appellant by a decision of a five Judge Bench of this Court in Union of India v. Tulsi Ram Patel . As a matter of fact in the case of Tulsi Ram Patel which has been dealt with (sic) onwards was very similar to the facts of the present case. Under the circumstances, so far as this point is concerned, the appellant cannot succeed. Learned Counsel for the appellant has, however, called our attention to the fact that the appellant was released on probation by the learned Magistrate who recorded the order of conviction. It is contended with justification that having regard to\nSection 12\n, Probation of Offenders Act, 1958, the punishment of dismissal from service which would disqualify him from future government service should not have been imposed.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1987_1987_194_P001_C02",
+      "text": "Section 12\n, Probation of Offenders Act, 1958 reads thus :\nNotwithstanding anything contained in any other law, a person found guilty of an offence and dealt with under the provisions of\nSection 3\nSection 4\nshall not suffer disqualification, if any, attaching to a conviction of an offence under such law :",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1987_1987_194_P002_C01",
+      "text": "Provided that nothing in this section shall apply to a person who, after his release under\nSection 4\n, is subsequently sentenced for the original offence.\nSince it is statutorily provided that an offender who has been released on probation shall not suffer disqualification attaching to a conviction of the offence for which he has been convicted notwithstanding anything contained in any other law, instead of dismissing him from service he should have been removed from service so that the order of punishment did not operate as a bar and disqualification for future employment with the Government. Under the circumstances, the impugned order of dismissal is converted into an order of removal from service. Subject to this modification the appeal fails and is dismissed. There will be no order as to costs.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Trikha Ram vs V.K. Seth And Anr.",
+    "case_id": "SC_1987_1987_194",
+    "court": "Supreme Court of India",
+    "year": "1987",
+    "facts_summary": "",
+    "legal_issues": "Section 12\n, Probation of Offenders Act, 1958 reads thus :\nNotwithstanding anything contained in any other law, a person found guilty of an offence and dealt with under the provisions of\nSection 3\nSection 4\nshall not suffer disqualification, if any, attaching to a conviction of an offence under such law :",
+    "ratio_summary": "1. The question raised in this appeal as to whether or not the appellant who was convicted for a criminal offence should have been heard by the disciplinary authority before imposing the punishment is concluded against the appellant by a decision of a five Judge Bench of this Court in Union of India v. Tulsi Ram Patel . As a matter of fact in the case of Tulsi Ram Patel which has been dealt with (sic) onwards was very similar to the facts of the present case. Under the circumstances, so far as this point is concerned, the appellant cannot succeed. Learned Counsel for the appellant has, however, called our attention to the fact that the appellant was released on probation by the learned Magistrate who recorded the order of conviction. It is contended with justification that having regard to\nSection 12\n, Probation of Offenders Act, 1958, the punishment of dismissal from service which would disqualify him from future government service should not have been imposed.",
+    "final_order": "Provided that nothing in this section shall apply to a person who, after his release under\nSection 4\n, is subsequently sentenced for the original offence.\nSince it is statutorily provided that an offender who has been released on probation shall not suffer disqualification attaching to a conviction of the offence for which he has been convicted notwithstanding anything contained in any other law, instead of dismissing him from service he should have been removed from service so that the order of punishment did not operate as a bar and disqualification for future employment with the Government. Under the circumstances, the impugned order of dismissal is converted into an order of removal from service. Subject to this modification the appeal fails and is dismissed. There will be no order as ",
+    "outcome_summary": "Provided that nothing in this section shall apply to a person who, after his release under\nSection 4\n, is subsequently sentenced for the original offence.\nSince it is statutorily provided that an offender who has been released on probation shall not suffer disqualification attaching to a conviction of the offence for which he has been convicted notwithstanding anything contained in any other law, ",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

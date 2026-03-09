@@ -5,7 +5,7 @@
 - The **workflow is not fixed**: specific lookups (bare act / case law) go straight to search; legal-opinion requests trigger conversation to gather details first.
 - The design is **modular** and **parallelizable**, and **cloud-ready** (e.g. RunPod) for scaling later.
 
-For a high-level diagram of agents and data flow, see `docs/Architecture.txt`.
+For a high-level diagram of agents and data flow, see `docs/Architecture.txt`. For latency targets, three-tier retrieval, and when not to run web/indexing in the request, see `docs/IMPROVEMENT_ROADMAP.md`.
 
 ---
 
@@ -113,6 +113,8 @@ No retrieval; user uses the **Index all** button in the Pending indexing section
 ## 5. Web / Enricher and Indexing Candidates
 
 The **web enricher** runs tiered web search and fetches content **for the current response only**. It does **not** auto-index. When it finds documents suitable for the library, it outputs **indexing_candidates** (title, source_url, suggested_category, snippet). These are sent to the frontend and shown in the Indexing UI; the user chooses what to index and triggers **Index** (selected) or **Index all** (all listed).
+
+**Important:** The **response path must not run web search or indexing synchronously** inside the request. Web discovery and PDF download/chunk/index should run only when the user triggers **Index** (or a background job), so that chat responses stay fast (target 3–6 s). For the three-tier design (fast local → optional background web → offline index enrichment), see **docs/IMPROVEMENT_ROADMAP.md** and **docs/Architecture.txt**.
 
 ---
 

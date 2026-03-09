@@ -1,0 +1,640 @@
+{
+  "case_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1995",
+  "judgment_template": null,
+  "case_number": "Petition 327 of 1992",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 40,
+  "cited_by_count": 16,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1995\\1995_ALL_AndhraHC_5.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P001_C01",
+      "text": "Annamdevula Srinivasa Rao And Anr., ... vs State Of Andhra Pradesh And Etc. on 11 August, 1995\nEquivalent citations: 1995(2)ALT(CRI)447, 1995CRILJ3964, I(1996)DMC239\nAuthor:\nB. Sudershan Reddy\nBench:\nB. Sudershan Reddy\nORDER",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P002_C01",
+      "text": "1. In all these criminal petitions, a short but interesting and importing question of law arises for consideration of this Court as to whether this Court, in exercise of its inherent jurisdiction under\nSection 482\nCode of Criminal Procedure (for short 'the Code'), can direct the subordinate criminal courts to accord permission to compound an offence which is otherwise non-compoundable under the Code ?",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P003_C01",
+      "text": "2. Directions are sought from this Court to compound variety of non-compoundable offences such as\nSection 138\nof the Negotiable Instruments Act (Criminal Petitions Nos. 3460 and 3461 of 1994),\nSection 498-A\nof the Indian Penal Code (Crl.P. No. 277 and 932 of 1994 and 2633 and 2685 of 1995),\nSections 494\nand\n498-A\n, I.P.C. (Crl.Ps. Nos. 748 of 1994 and 1662 of 1995),\nSection 307\nof Indian Penal Code (Crl.M.P. No. 1182/94),\nSection 452\n, I.P.C. (Crl. Petns. Nos. 2951 and 2952 of 1995).",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 307"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P004_C01",
+      "text": "3. In Crl.P. No. 277 of 1994, the petitioner-accused was already convicted and sentenced by the Judicial Magistrate of First Class, Sattenapalli by judgment dated 8-4-1993 for the offence\nu/s. 498-A\n, I.P.C. and Crl.A. No. 36 of 1993 preferred by him was pending before the learned Sessions Judge, Khammam. In Crl. Petitions Nos. 3460 and 3461 of 1993, the petitioners-accused in the said cases were convicted and sentenced to suffer imprisonment for one year and pay fine for the offence punishable under\nSection 138\nof the Negotiable Instruments Act by the II Additional Judicial Magistrate of First Class, Rajahmundry in C.C. Nos. 74 and 75 of 1990 and the appeals - Cr.A. Nos. 121 and 122 of 1991 preferred by them are pending before the learned II Additional Sessions Judge, Rajahmundry. Similarly in Crl.P. No. 1182 of 1994 3rd petitioner who is the accused in S.C. No. 327 of 1992 was convicted and sentenced to suffer rigorous imprisonment for 7 years by the Assistant Sessions Judge, Karimnagar for the offence under\nSection 307\n, I.P.C. against the accused preferred Crl.A. No. 6 of 1993 and the same is pending before the II Additional Sessions Judge, Karimnagar.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P005_C01",
+      "text": "4. Admittedly, the offences which are subject-matter of the proceedings in the Courts below are non-compoundable offences.\nCAN THIS COURT GIVE DIRECTIONS TO THE SUBORDINATE CRIMINAL COURTS TO PERMIT COMPOUNDING OF OFFENCES WHICH ARE OTHERWISE NON-COMPOUNDABLE UNDER SECTION 482,\nCr.P.C\n. ?",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P006_C01",
+      "text": "5. In view of the importance of the question of law involved, I have requested Shri C. Padmanabha Reddy, learned Senior Counsel to assist the Court as Amicus Curiae and accordingly, the learned Senior Counsel assisted the Court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P007_C01",
+      "text": "6. The learned Senior Counsel submits that the High Court, in exercise of its inherent jurisdiction under Section 482 of the Code cannot direct compounding of offences which are otherwise non-compoundable. The learned counsel submits that in the absence of specific provisions, no Court can grant permission to compound any non-compoundable offence. It is submitted that the compounding of offences is specifically regulated by the\nCode of Criminal Procedure\nand any direction in this regard by the High Court to compound the offence which is non-compoundable, would be against the public policy and therefore wholly barred.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P008_C01",
+      "text": "7. Before adverting to the submissions made by the learned Senior counsel, it would be appropriate to make a brief survey with regard to the nature, scope and power of this Court under Section 482 of the Code. It is fairly well settled that Section 482 of the Code does not confer any new powers on the High Court. It merely safeguards the existing inherent powers possessed by the Court necessary to secure the ends of justice. The power is to be sparingly used. The power is conferred upon the High Court to pass orders that may be necessary to give effect to any order passed under the Code or to prevent abuse of the process of any Court. Necessary orders can always be made by invoking this provision to secure the ends of justice.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P009_C01",
+      "text": "8. Before analysing the nature and scope of the jurisdiction of the High Court under Section 482 of the Code in the context of the present question, it is necessary to refer to some relevant provisions of the Code.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P010_C01",
+      "text": "9. Section 2(n)\ndefines 'offence'. According to the said definition, 'offence' means any act or omission made punishable by any law for the time being in force and includes any act in respect of which a complaint may be made under\nSection 20\nof the Cattle Trespass Act.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P011_C01",
+      "text": "10. It is\nSection 320\nof the Code of Criminal Procedure which deals with compounding of offences. The provisions are exhaustive in their nature and the whole scheme of compounding of the offences is dealt with and regulated by Section 320 of the Code. The relevant provisions contained in Section 320 read as follows :-\n\"320. Compounding of offences. - (1) The offences punishable under the Sections of the\nIndian Penal Code\nspecified in the first two columns of the Table next following may be compounded by the persons mentioned in the third column of that Table \n\n (Table - Omitted) \n\n(2) The offences punishable under the sections of the\nIndian Penal Code\nspecified in the first two columns of the Table next following may, with the permission of the Court before which any prosecution for such offence is pending, be compounded by the persons mentioned in the third column of that Table \n\n (Table - Omitted) \n\n(3) When any offence is compoundable under this section, the abetment i of such offence or an attempt to commit such offence (when such attempt is itself an offence), may be compounded in like manner.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P011_C02",
+      "text": "(4)(a) When the person who would otherwise be competent to compound an offence under this section is under the age of eighteen years, or is an idiot or a lunatic, any person competent to contract on his behalf may, with the permission of the Court, compound such offence. (b) When the person who would otherwise be competent to compound an offence under this Section is dead, the legal representative as defined in\nthe Code of Civil Procedure\n, 1908, of such person may, with the consent of the Court compound such offence. (5) When the accused has been committed for trial or when he has been convicted and an appeal is pending, no composition for the offence shall be allowed without the leave of the Court to which he is committed, or as the case may be, before which the appeal is to be heard. (6) A High Court or Court of Session acting in the exercise of its powers of revision under Section 401 may allow any person to compound any offence which such person is competent to compound under this Section. (7) No offence shall be compounded if the accused is, by reason of a previous conviction, liable either to enhanced punishment or to a punishment of a different kind for such offence.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P011_C03",
+      "text": "(8) The composition of an offence under this section shall have the effect of an acquittal of the accused with whom the offence has been compounded. (9) No offence shall be compounded except as provided by this Section.\"\nIt would also be appropriate to refer to Section 482 of the Code which runs as follows :-\n\"482. Saving of inherent powers of High Court :\nNothing in this Code shall be deemed to limit or affect the inherent powers of the High Court to make such orders as may be necessary to give effect to any order under this Code, or to prevent abuse of the process of any Court or otherwise to secure the ends of justice.\"\nSection 482\n, Cr.P.C., corresponds to Section 561-A of the Old\nCriminal Procedure Code\n, 1898.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P012_C01",
+      "text": "11. R. P. Kapur v. State of Punjab\n, , the Supreme Court in categorical terms held (Para 6) :\n\"There is no doubt that this inherent power cannot be exercised in regard to matters specifically covered by the other provisions of the Code.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P013_C01",
+      "text": "12. Palaniappa Gounder v. State of Tamil Nadu\n, , the issue before the apex Court was whether, in view of the express provision contained in\nSection 357\nof the Code of Criminal Procedure, the High Court had power to pass an order for compensation, in exercise of its inherent powers. The apex Court held as follows (Para 3 of Cri LJ) :\n\"Section 482 of the Code under which the heirs of the deceased filed the application for compensation corresponds to\nS. 561-A\nof the Criminal Procedure Code, 1898. It saves the inherent powers of the High Court to make such orders as may be necessary to give effect to any order under the Code or to prevent abuse of the process of any Court or otherwise to secure the ends of justice. A provision which saves the inherent powers of a Court cannot override any express provision contained in the Statute which saves that power. This is put in another form by saying that if there is an express provision in a statute governing a particular subject-matter there is no scope for invoking or exercising the inherent powers of the Court because the Court ought to apply the provisions of the statute which are made advisedly to govern the particular subject-matter.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P013_C02",
+      "text": "From this it will be clear that the application made by the heirs of the deceased for compensation could not have been made under Section 482 since S. 357 expressly confers power on the Court to pass an order for payment of compensation in the circumstances mentioned therein.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P014_C01",
+      "text": "13. Madhu Limaye v. State of Maharashtra\n, , the apex Court, held (Para 8 of Cri LJ) :\n\"The High Court possessed and possesses the inherent powers to be exercised ex debito justitiae to do the real and the substantial justice for the administration of which alone Courts exist.\"\nThe apex Court, while laying down the parameters of the jurisdiction of the High Court under\nSection 482\nof the Code of Criminal Procedure said (Para 8 of Cri LJ) :\n\"At the outset the following principles may be noticed in relation to the exercise of the inherent power of the High Court which have been followed ordinarily and generally, almost invariably, barring a few exceptions :-\n(1) That the power is not to be restored to if there is a specific provision in the Code for the redress of the grievance of the aggrieved party;\n(2) That it should be exercised very sparingly to prevent abuse of process of any Court or otherwise to secure the ends of justice;\n(3) That it should not be exercised as against the express bar of law engrafted in any other provision of the Code.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P015_C01",
+      "text": "14. In Simirkhia v. Dolley Mukherjee, AIR 1990 SC 1605, 1990 Cri LJ 1599 while considering whether the High Court is empowered to review its own decision under the purported inherent power, the Supreme Court held : (Paras 2 and 4 of Cri LJ) \n\n\"The inherent power under Section 482 is intended to prevent the abuse of the process of the Court and to secure ends of justice. Such power cannot be exercised to do something which is expressly barred under the Code.\nxxx xxx xxx \n \"If a matter is covered by an express letter of law, the Court cannot give a go by to the statutory provisions and instead evolve a new provision in the garb of inherent jurisdiction.\"\nWhile saying so, the Supreme Court referred to its earlier decision in Sooraj Devi v. Pyarelal, , wherein the apex Court held (para 5 of Cri LJ) :\n\"Now it is well settled that the inherent power of the Court cannot be exercised for doing that which is specifically prohibited by the Code.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P016_C01",
+      "text": "15. Shri Padmanabha Reddy, the learned Senior Counsel brings to my notice the decision rendered by the Constitutional Bench of the Supreme Court in\nUnion Carbide Corporation v. Union of India\n, , and submits that the matter is now authoritatively decided by the Supreme Court that this Court, in exercise of its inherent jurisdiction cannot direct compounding of offences which are otherwise non-compoundable under the Code. It is necessary to refer to a few facts of that case so as to appreciate as to in what context, the apex Court laid down the law which is relevant for our purpose. An action for compensation was initiated by the Union as parens patriae before the District Court, Bhopal in O.S. No. 1113 of 1986 Under Bhopal Gas Leak Disaster (Proceesing of Claims) Act, 1985. When an interlocutory matter pertaining to the interim-compensation came up for hearing before the Supreme Court there was a Court assisted settlement of the main suit claim itself. The criminal liability of the Union Carbide Corporation was also finally terminated and put to an end by that Court assisted settlement of the main suit.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P016_C02",
+      "text": "It was specifically urged before the Supreme Court that the termination of the pending criminal proceedings brought about by the orders dated 14th and 15th February, 1989 is bad in law and were liable to be set aside on the ground that if the orders are construed as permitting a compounding of offences, they run in the teeth of the statutory prohibition contained in\nSection 320(9)\nof the Code of Criminal Procedure. While dealing with this issue, the Supreme Court held : (At page 278 of AIR) \n \"The order terminating the pending criminal proceedings is not supportable on the strict terms of Ss. 320 of 321 or 482,\nCr.P.C\n.\"\nHaving said that, the Supreme Court justified its earlier court assisted settlement with reference to its powers under\nArt. 142\nof the Constitution of India, for doing complete justice between the parties. In categorical terms, the apex court held : (At pp. 278, Para 43 of AIR) \n \"The proposition that a provision in any ordinary law irrespective of the importance of the public policy on which it is founded, operates to limit the powers of the apex court under\nArt. 142(1)\nis unsound and erroneous.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P016_C03",
+      "text": "In both Garg's as well as Antulay's case the point was one of violation of constitutional provisions and constitutional rights. The observations as to the effect of inconsistency with statutory provisions were really unnecessary in those cases as the decisions in the ultimate analysis turned on the breach of constitutional rights. We agree with Shri Nariman that the power of the Court under\nArt. 142\nin so far as quashing of criminal proceedings is concerned is not exhausted by Ss. 320 or 321 or 482,\nCr.P.C\n. or all of them put together. The power under\nArt. 142\nis at an entirely different level and of a different quality. Prohibitions or limitations in the Statute might embody and reflect the scheme of a particular law, taking into account the nature and status of the authority or the Court on which conferment of powers ..... limited in some appropriate ..... way is contemplated.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P016_C04",
+      "text": "The limitations may not necessarily reflect or be based on any fundamental considerations of public policy.\"\nA close reading of the said decision of the Supreme Court would show that even the Supreme Court, in the absence of its plenary jurisdiction under\nArticle 142\nof the Constitution of India, would not have compounded the offence which is otherwise non-compoundable.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 142"
+      ],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P017_C01",
+      "text": "16. The learned Senior Counsel also relied upon a decision of Madras High Court in\nSankar Rangayya v. Sankar Ramayya\n, AIR 1916 Mad 483 : (1915) 16 Cri LJ 750) in support of the proposition that an order allowing composition of the offence is not an incidental order and that an offence cannot be allowed to be compounded when the case comes before the High Court in revision. In the said case, it is categorically held that no offences shall be compounded except where the provisions of Section 345 (present Section 320) are satisfied as to each of the contingencies provided for in the section itself.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P018_C01",
+      "text": "17. Shri Padmanabha Reddy, learned senior counsel refers to a decision of the Supreme Court in\nDharampal v. Ramshri\n, . The Supreme Court in the said case was concerned with a question as to whether the High Court could have invoked its jurisdiction under Section 482 of the Code in entertaining a second revision application which is expressly barred by Section 397(3) of the Code. In the said context, the Supreme Court held (Para 4) :\n\"It is now well settled that the inherent powers under Section 482 of the Code cannot be utilised for exercising powers which are expressly barred by the Code.\"",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P019_C01",
+      "text": "18. Ganesh Narayan Hegde v. S. Bangarappa\n, (1995) 2 All Cri LR 211 while dealing with the power of the High Court under Section 482 of the Code. No doubt the Supreme Court held :\n\"While it is true that availing of the remedy of the revision to the Sessions Judge under Section 399 does not bar a person from invoking the power of the High Court under Section 482, it is equally true that the High Court should not act as second Revisional Court under the garb of exercising inherent powers.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P020_C01",
+      "text": "19. On an conspectus and analysis of all these decisions, it is absolutely clear that the inherent jurisdiction of the High Court under\nSection 482\n, Cr.P.C., is available to be exercised for advancement of justice and if any attempt is made to abuse the process of any Court, the High Court shall interfere and exercise its jurisdiction to prevent the same. It is also manifestly clear that this court in exercise of its jurisdiction under\nSection 482\n, Cr.P.C. shall not pass any order or issue any direction contrary to the provisions of the Code. The inherent jurisdiction conferred upon this Court merely enables the Court to deal with the situation which is not contemplated by the Code to give effect to any order passed under the Code. This inherent power of the High Court can never be exercised compelling the subordinate criminal courts to act in any manner contravening the provisions of the Code. Such an order can never be termed as an order passed to prevent the abuse of the process of any court. It cannot also be said that such order would secure the ends of justice. Every legal power has its own limitations. There is nothing like unlimited power.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P020_C02",
+      "text": "So also the power conferred upon this Court under\nSection 482\nof the Code of Criminal Procedure.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P021_C01",
+      "text": "20. The legislative mandate enshrined in Section 320(9) of the Code is manifestly clear. It is couched in a mandatory form. This court, in exercise of the jurisdiction under Section 482 of the Code cannot add, vary or amend a statutory provision. Section 320 of the Code which deals with compounding of offences is exhaustive in its nature and only those offences can be compounded in accordance with the provisions of Section 320 of the Code and not in any other manner.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P022_C01",
+      "text": "21. It is not the duty of the Court either to enlarge the scope of the legislation or the intention of the legislature when the language of a provision is plain and unambiguous. The Court cannot re-writ, recast or reframe the legislation for the very good reason that it has no power to legislate. (see\nUnion of India v. Deoki Nandan Aggarwal\n1991 AIR SCW 2754.)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P023_C01",
+      "text": "22. Dealing with the similar situation, the apex Court in\nState of Kerala v. Mathai Verghese\n, said (Para 1 of Cri LJ) :\n\"When the legislature does not speak the Court interpreting the relevant provision of law cannot substitute the ..... The High Court cannot do so for, the court can merely interpret the section; it cannot re-write, recast, or redesign the section. In interpreting the provision the exercise undertaken by the Court is to make explicit the intention which enacted the legislation. It is not for the court to reframe the legislation for the very good reason that the powers to 'legislate' have not been conferred on the court.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P024_C01",
+      "text": "23. Can the High Court in exercise of its jurisdiction under\nSection 482\n, Cr.P.C., convert a non-bailable offence into a bailable offence or vice versa ? Can the High Court in exercise of its powers under\nSection 482\n, Cr.P.C., make a non-cognizable offence as a cognizable offence or otherwise ? The answer should be an emphatic No. Likewise, the High Court, in exercise of its inherent jurisdiction under Section 482 of the Code cannot command the sub-ordinate criminal courts to permit the parties to compound an offence which is not otherwise compoundable. An argument was sought to be raised that such an order can be passed to meet the ends of justice. The court renders justice in accordance with law and not in accordance its own notion. Administration of justice in accordance with the provisions of the\nCode of Criminal Procedure\nby the Sub-ordinate criminal courts can never be said that Courts are acting contrary to justice. Can it be said that the refusal to compound the offence by the subordinate criminal court is an abuse of the process of the Court ? It is not.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P024_C02",
+      "text": "Therefore, the question of this Court exercising jurisdiction under\nSection 482\n, Cr.P.C. in such a situation as if to prevent the abuse of the process of the Court does not arise.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P025_C01",
+      "text": "24. Parliament, in its wisdom, thought that only certain offences specified under Section 320 of the Code alone can be compounded and no other offences. Variety of factors must have been taken into consideration by the Parliament in limiting the offences which can be compounded. It is not possible for this Court to ascertain as to what were the legislative inputs in enacting Section 320 in to the\nCode of Criminal Procedure\n. Parliament knows better as to what facts constitute an offence and as to whether such an offence should be compounded. It is a matter of social policy concerning social order. May be, Parliament thought that such of those offences which are not compoundable under the Code are offences where larger interests of the society is involved. Any orders passed by this Court directing the subordinate criminal courts to compound the offences which are not otherwise compoundable would amount to compelling the subordinate criminal courts to act in contravention of law. Such directions would be destructive of the Rule of Law.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P026_C01",
+      "text": "25. This Court, by issuing such directions, could not confer jurisdiction on the criminal courts to compound a non-compoundable offence which it did not possess such jurisdiction under the scheme of the Code. It is well settled that the power to create or enlarge the jurisdiction is in the exclusive domain of the legislature and such power being legislative in character, the legislature alone can do it by law. This Court can neither divest nor enlarge the jurisdiction of any court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P027_C01",
+      "text": "26. However, certain decisions were brought to my notice whereunder the High Courts, in exercise of jurisdiction under\nSection 482\n, Cr.P.C. directed compounding of offences particularly in the offences relating to matrimonial matters. The learned counsel refers to Arivind Bhushan Chugh v. Dr. Promila alias Ritu, (1992) 3 Cur Cri R 2272 (Delhi), Manoj Kumar Behl v. State, (1992) 3 Cur Cri R 2939 (Delhi), State of Rajasthan v. Gopal Lal (1992) 3 Cur Cri R 2953 (Raj).",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P028_C01",
+      "text": "27. State of Rajasthan v. Gopal Lal\n(1992 (3) Cur Cri R 2953) (supra), the Rajasthan High Court expressed its opinion that it is high time the legislature should consider whether offence punishable under\nSection 498-A\n, I.P.C. should be included in the list of offences under\nSection 320\n, Cr.P.C. I am in entire agreement with the view and endorse the opinion expressed by the learned Judge of the Rajasthan High Court. But I am not in agreement with the said decision of the Rajasthan High Court upholding compounding of offence ordered by the Additional Chief Judicial Magistrate, Jaipur.\nSo also, the judgment of the Punjab and Haryana High Court in\nParkash Singh v. Smt. Santosh Kaur\n, (1994) 1 All Cri LR 319 wherein the offences punishable under\nSections 406\n,\n498A\nand\n\nof the Indian Penal Code were quashed by the High Court in exercise of its jurisdiction under\nSection 482\n, Cr.P.C. as the matter was compromised between the parties.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P029_C01",
+      "text": "28. The learned counsel Sri C. Padmanabha Reddy also referred to decisions of this Court in G. Srinivasulu v. S.H.O., Kandukur (1992) 1 APLJ 452 and M. Padma Balaji v. A. Krishnam Raju (1995) 2 Andh LT 10 (NRC). In none of these decisions, there is any discussion whatsoever about the nature, scope and power and jurisdiction of the High Court under\nSection 482\nof the Code of Criminal Procedure.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P030_C01",
+      "text": "29. The learned Senior Counsel also brought to my notice a decision of the Supreme Court in\nMahesh Chand v. State of Rajasthan\n, . It is obvious that the apex court has not declared any law as such, but in the facts and circumstances of that particular case on hand, it appears, the Supreme Court itself had compounded the offence and directed the trial court to record the compounding of the offence. The power for issuing such direction is traceable to\nArt. 142\nof the Constitution of India in view of the peculiar facts and circumstances of that case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P031_C01",
+      "text": "30. However, Sri Padmanabha Reddy, the learned senior Counsel referred to a decision of the Division Bench of this Court in D. Vijayalakshmi v. State (1993) 2 Andh LT (Cri) 159. In the said case, the Division Bench of this Court took the view that in exceptional circumstances only and not as a matter of course, the High Court can direct the subordinate criminal courts to permit the parties to compound the offence punishable under\nS. 498-A\n, I.P.C., only. After an elaborate consideration, the Division Bench held :\n\"the permission sought for to compound the offence under\nSection 498-A\n, I.P.C. pursuant to the settlement or compromise and understanding between the spouses can be accorded by the High Court under\nSection 482\n, Cr.P.C. is not justified to be used as a matter of course in each and every case.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P031_C02",
+      "text": "We are of the firm view that in matrimonial cases, that too, in exceptional circumstances where the disputes arose between the wife and the husband resulting in filing a complaint and a petition for divorce which ultimately resulted in the form of compromise either for divorce or for re-union, and where some of the Sections complained of are compundable and some non-compoundable, the High Court alone is competent, exercising the inherent power vested in it under\nSection 482\n, Cr.P.C. to permit the parties to compound a non-compoundable offence along with other compoundable offences, after being satisfied with the compromise entered into between the parties.\"\nHowever, the Division Bench held :\n\"We are still of the firm view that in the case of non-compoundable offences in general the High Court has no power to permit the parties to compound the same. Sympathy towards the accused shown in special set of circumstances is different from applying the provisions of the Act. Sympathy cannot be a ground for applying the inherent powers vested in the High Court under\nSection 482\n, Cr.P.C.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P031_C03",
+      "text": "It is should be exercised in exceptional cases only to prevent the abuse of the process of the Court or to meet the ends of justice. Sympathy has no place to outweigh the powers given under a particular statute.\"\nThe learned Judges further observed :\n\"The Legislature has introduced this special Chapter bringing a new Section 498A considering the plight of women in the society at the hands of their husbands and in-laws. However, when under the\nHindu Marriage Act\n, reconciliation proceedings are there in spite of serious allegations, we feel that in case of genuine compromise effected between the parties (husband and wife) and if an application has been filed voluntarily by the two parties and if the Court satisfies that any special circumstances exist warranting granting of permission to compound a non-compoundable offence and if it is in the interests of both the parties, the High Court under special circumstances, exercising the inherent power under\nSection 482\n, Cr.P.C. may allow the parties to compound such offences. We are not here to lay down a general proposition that the Court is competent to permit the parties in all the cases to compound a non-compoundable offence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P031_C04",
+      "text": "The law with regard to exercising of the inherent power is very clear. To prevent abuse of any Court or otherwise secure the ends of justice, the High Court has got inherent powers under\nSection 482\n, Cr.P.C., to pass such order as is necessary in the facts and circumstances of the case.\"\nI have carefully gone through the judgment. The learned Judges of the Division Bench undoubtedly held that this Court, in exercise of its powers under\nSections 482\n, Cr.P.C. in a given case, can direct an offence punishable under\nSection 498-A\n, I.P.C., to be compounded. The Division Bench has not expressed any opinion with regard to other non-compoundable offences. The Division Bench never expressed any opinion as to whether any non-compoundable offence, except the offence under\nSection 498-A\n, I.P.C. can be ordered to be compounded by this Court in exercise of the powers under\nSection 482\n, Cr.P.C. The Division Bench seems to be of the opinion that even this power should be sparingly used in a given case after satisfying itself to its genuineness, the background of the settlement between the husband and wife.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P031_C05",
+      "text": "Therefore, the Division Bench decision is not an authorative pronouncement for the propostion that this Court has the power or jurisdiction to direct compounding of the offences which are otherwise non-compoundable.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P032_C01",
+      "text": "31. It is fairly well-settled that a single Judge is definitely bound by the judgment of the Division Bench with regard to the same subject-matter. The doctrine of precedent requires such compliance.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P033_C01",
+      "text": "32. The question before me is a larger one than that was canvassed before and dealt with by the Division Bench. The question of jurisdiction was not pointedly projected before the said Division Bench and obviously, therefore, was not dealt with.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P034_C01",
+      "text": "33. The Division Bench was concerned with one particular aspect as to whether the offence under\nSection 498A\nof the Indian Penal Code can be directed to be compounded, whereas the cases before me involve other offences also including the one under\nSection 307\n, I.P.C.\nSection 138\nof the Negotiable Instruments Act. In Criminal Petitions Nos. 2951 and 2952 of 1995, the offence, alleged to have been committed by the petitioners accused included the offence under\nSection 452\n, I.P.C. also which is non-compoundable, for which now permission is sought for compounding the same. Even with regard to the jurisdiction of this Court for directing the offence punishable under\nSection 498-A\n, I.P.C. to be compounded, I express my inability to agree with the view taken by the learned Judges of the Division Bench. Then the question would be as to whether am I bound by the said judgment ?",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "IPC 498A"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P035_C01",
+      "text": "34. In the entire judgment of the Division Bench, nowhere there is a reference to sub-section (9) of Section 320 of the Code which is mandatory in its nature containing the legislative command to the effect that no other offence except the offences stated in Section 320 itself can be compounded. Had the Division Bench noticed sub-section (9) of Section 320 of the Code in my humble opinion, the result would have been different. Therefore, the judgment rendered by the Division Bench is without reference to the relevant mandatory provision of law and also prestigious binding authorities. Therefore, the judgment must be regarded as given in per incuriam with regard to exercise of jurisdiction under\nSection 482\n, Cr.P.C. in relation to compounding of non-compoundable offences.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P036_C01",
+      "text": "35. That apart, the binding precedent in\nUnion Carbide Corporation\n's case (supra) is not brought to the notice of the Division Bench.\nAnother binding precedent of the Supreme Court in\nDharampal\n's case (1993 Cri LJ 1049) (supra) was also not brought to the notice of the Division Bench.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P037_C01",
+      "text": "36. The question directly came up for consideration before the Supreme Court in\nRam Pujan v. State of Uttar Pradesh\n, . In the said case, the offence punishable under\nSection 326\nof the Indian Penal Code was compromised between the parties at the appeal stage and the High Court referred the matter to the trial court for verification of the compromise. After the compromise was got verified, the High Court passed an order stating that the offence under\nSection 326\n, I.P.C. was non-compoundable and permission to compound the said offence could not be granted, but reduced the sentence in view of the compromise from four years to two years. The Supreme Court, speaking through Khanna, J. held (Para 7) :\n\"The Major offence for which the appellants have been convicted is no doubt non-compoundable, but the fact of compromise can be taken into account in determining the quantum of sentence.\"\nClearly, the order of the High Court in refusing permission to compound the offence is upheld by the Supreme Court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "IPC 326"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P038_C01",
+      "text": "37. Similarly, in Rajinder Singh v. State (Delhi Admn.) , the Supreme Court was dealing with an appeal regarding conviction of the petitioner therein under\nSections 325\nand\n\n, I.P.C. The matter was compromised between the parties. The Supreme Court stated thus :-\n\"The former offence can be compounded with the permission of the court. We grant permission to the parties to compound the said offence. The effect of that is the acquittal of the petitioner in view of the provision of law contained in\nSection 320(8)\nof Cr.P.C. for the offence under Section 325.\nThe other offence under Section 452 is not compoundable. Under the circumstances, while maintaining conviction of the petitioner under the said provision of law we reduced the sentence to the period already undergone.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P039_C01",
+      "text": "38. Biswabahan v. Gopen Chandra\n, the Supreme Court in categorical terms said : It is therefore clear that to have the effect of an acquittal the offence compounded must be one specified either under sub-section (1) or sub-section (2) of Section 345 of the old Code (Section 320 new). The principle behind the scheme seems to that wrongs of certain classes which affect mainly a person in his individual capacity or character may be sufficient redressed by composition with or without the leave of the court as the case may be. The Supreme Court categorically held :\n\"If a person is charged with an offence, then unless there is some provision for composition of it the law must take its course and the charge enquired into resulting either in conviction or acquittal. If composition of an offence was permissible under the law, the effect of such composition would depend on what the law provided for.\"\nNone of these binding precedents are noticed by the Division Bench. The law declared by the Supreme Court is binding upon this Court and is the constitutional command enshrined under\nArt. 141\nof the Constitution of India.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P040_C01",
+      "text": "39. Compounding of offences which are otherwise non-compundable under Section 320 of the Code are expressly barred by sub-section (9) of Section 320 of the Code. Therefore, the judgment of the Division Bench even with regard to its applicability to the offence under\nSection 498A\n, I.P.C. is given per incuriam.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P041_C01",
+      "text": "40. The doctrine of per incuriam is explained by the apex court in Mamleshwar v. Kanayaiya Lal, :-\n\"We do not intend to detract from the rule that, in exceptional instances, whereby obvious inadvertence or oversight a judgment fails to notice a plain statutory provision or obligatory authority running counter to the reasoning and result reached, it may not have the sway of binding precedents. It should be a glaring case, an obstrusive omission.\"\nThe doctrine is undestood by the Court of Appeal in Young v. Bristol Aeroplane Company Ltd. (1944) 1 KB 718 as follows :\n\"Where the court has construed a statute or a rule having the force of a stuatute its decision stands on the same footing as any other decision on a question of law, but where the court is satisfied that an earlier decision was given in ignorance of the terms of a statute or a rule having the force of a statute the position is very different. It cannot in our opinion, be right to say that in such a case the court is entitled to disregard the statutory provisions and is bound to follow a decision of its own given when that provision was not present to its mind.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P041_C02",
+      "text": "Cases of this description are examples of decisions given in per incuriam. We do not think that it would be right to say that there may not be other cases of decisions given per incuriam in which this court might properly consider itself entitled not to follow an earlier decision of its own. Such cases would obviously be of the rarest occurrence and must be dealt with in accordance with their special facts. Two classes of decisions per incuriam fall outside the scope of our inquiry, namely, those where the court has acted in ignorance of a previous decision of its own or of a court of co-ordinate jurisdiction which covers the case before it - in such a case a subsequent court must decide which of the two decisions it ought to follow; and those where it had acted in ignorance of the House of Lords which covers the point in such a case, a subsequent Court is bound by the decision of the House of Lords.\"\n\"A decision is given per incuriam when the court has acted in ignorance of a previous decision of its own or of a court of co-ordinate jurisdiction which covered the case before it or when it has acted in ignorance of a decision of the House of Lords.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P041_C03",
+      "text": "A decision may also be given per incuriam when it is given in ignorance of the terms of a statute or of a rule having the force of a statute. As a general rule, the only cases in which decisions should be held to be given per incuriam are those given in ignorance of some inconsistent statute or binding authority.\" (See Hallsbury's Law of England, 3rd Edition, Vol. 22 at page 800).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P042_C01",
+      "text": "41. A seven Judges Constitutional Bench of the Supreme Court authoritatively declared the Law as to what constitutes 'per incuriam' in\nA. R. Antulay v. R. S. Nayak\n, as follows :-\n\"'Per incuriam' are those decisions given in ignorance or forgetfulness of some inconsistent statutory provision or of some authority binding on the court concerned, so that in such cases some part of the decision or some step in the reasoning on which it is based, is found, on that account to be demonstrably wrong.\"\n\"The principle that the size of the Bench whether it is comprised of two or three or more Judges - does not matter.\"\nIt is settled rule that if a decision is given in per incuriam, the Court can ignore it.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P043_C01",
+      "text": "42. My learned brother Justice M. N. Rao had an occasion to consider the doctine of 'per incuriam' in a judgment rendered in Smt. Kannamma v. Dist. Collector Ranga Reddy (1990) 1 Andh WR 722 and put the law very succinctly as follows :\n\"Unfortunately, without noticing the above binding precedent, it was held by this Court - These cases, I must declare with due respect to the learned Judges are per incuriam - Even if any Division Bench of this Court or for that matter a Full Bench of this Court had taken the view - it must be deemed to be no longer good law after the authoritative pronouncement of the Supreme Court in Laxman Ambaji's case - I do not consider it appropriate to refer the matter to a Division Bench for the obvious reason that on the question under consideration the decision of the Supreme Court in Laxman Ambaji's case holds the field and without noticing the same, this court had taken a contrary view.\"\nFor the aforesaid reasons, the decision of the Division Bench which is rendered in per incuriam is not a binding precedent. There is no need to refer the matter to Division Bench or Full Bench. I need to say no more on this aspect.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P044_C01",
+      "text": "43. The power conferred upon this Court under\nSection 482\n, Cr.P.C., is general in nature. The provision protects the inherent jurisdiction of this Court to meet any eventuality not contemplated by the\nCode of Criminal Procedure\nto give effect to the orders passed by the Courts and to prevent the abuse of the process of the Court and to pass appropriate orders to meet the ends of justice. Whereas Section 320 of the Code is a special provision dealing with compounding of offences. It exhaustively deals with as to what are the offences that there compoundable and the manner in which they are to be compounded and further it specifically commands that no other offence other than those mentioned in Section 320 of the Code shall be allowed to be compounded. The effect of compounding of an offence is the acquittal of the accused in the case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P045_C01",
+      "text": "44. It is well established doctrine of interpretation that the provisions contained in a statutory enactment have to be construed as to be in harmony with each other and that where, under a specific section or rule a particular subject has received special treatment, such special provision will exclude the applicability of any general provision which might otherwise cover the said topic. (See\nMaharashtra State Board of Secondary and Higher Secondary Education v. Paritosh Bhupesh Kumar Sheth\n).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P046_C01",
+      "text": "45. Application of any general principle must yield to the limiting terms of the statutory principle itself (see\nUnion of India v. Raghubir Singh\n).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P047_C01",
+      "text": "46. A similar situation arose under Criminal Justice (Temporary provisions) Act (Northern Ireland), 1970 in Kennedy v. Spraft, (1971) 2 WLR 667 (HL). By Section 1 of the Criminal Justice (Temporary Provision) Act (Northern Ireland), 1970, it was provided that 'any person' who is convicted of an offence, committed during the period of present emergency, under any of the statutory provisions mentioned in column 1 of the Schedule, shall, notwithstanding anything to the contrary contained in that or any other statutory provision, be sentenced to imprisonment for not less than the period specified opposite that provision in column No. 2 of the Schedule II'. The question that arose was whether a court sentencing an accused under the aforesaid provision had power to suspend the sentence and release the accused on probation under Section 18 of the Treatment of Offenders Act, 1968.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P047_C02",
+      "text": "Having regard to the mischief at which the Act was aimed, i.e., to ensure greater uniformity of sentences and to deter further out-breaks of violence, it was held that the court had no power to award suspended sentence and the words in the section 'shall be sentenced to imprisonment' for a specified period, meant that the accused be punished by sending him to prison.\" (See G. P. Singh's Interpretation of Statutes).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P048_C01",
+      "text": "47. In view of the aforesaid, discussion, I hold that this court has no power and jurisdiction to direct the subordinate criminal courts to permit the parties to compound the offences which are otherwise non-compoundable in exercise of the inherent jurisdiction under\nSection 482\nof the Code of Criminal Procedure.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P049_C01",
+      "text": "48. In the view I have taken supra, the petitions cannot be entertained by this Court and all the petitions are accordingly dismissed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA_P050_C01",
+      "text": "49. Before parting with the case, this Court with gratitude acknowledges the invaluable assistance rendered by Sri C. Padmanabha Reddy, the learned Senior counsel for his assistance was in the spirit of a real and true friend of the Court.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1995_ANDHRA_HC_PRE-TELANGANA",
+    "court": "Supreme Court of India",
+    "year": "1995",
+    "facts_summary": "1. In all these criminal petitions, a short but interesting and importing question of law arises for consideration of this Court as to whether this Court, in exercise of its inherent jurisdiction under\nSection 482\nCode of Criminal Procedure (for short 'the Code'), can direct the subordinate criminal courts to accord permission to compound an offence which is otherwise non-compoundable under the Code ? 2. Directions are sought from this Court to compound variety of non-compoundable offences such as\nSection 138\nof the Negotiable Instruments Act (Criminal Petitions Nos. 3460 and 3461 of 1994),\nSection 498-A\nof the Indian Penal Code (Crl.P. No. 277 and 932 of 1994 and 2633 and 2685 of 1995),\nSections 494\nand\n498-A\n, I.P.C. (Crl.Ps. Nos. 748 of 1994 and 1662 of 1995),\nSection 307\nof Indian Penal Code (Crl.M.P. No. 1182/94),\nSection 452\n, I.P.C. (Crl. Petns. Nos. 2951 and 2952 of 1995). 3. In Crl.P. No. 277 of 1994, the petitioner-accused was already convicted and sentenced by the Judicial Magistrate of First Class, Sattenapalli by judgment dated 8-4-1993 for the offence\nu/s. 498-A\n, I.P.C. and Crl.A. No. 36 of 1993 preferred by him was pending before the learned Sessions Judge, Khammam. In Crl. Petitions Nos. 3460 and 3461 of 1993, the petitioners-accused in the said cases were convicted and sentenced to suffer imprisonment for one year and pay fine for the offence punishable under\nSection 138\nof the Negotiable Instruments Act by the II Additional Judicial Magistrate of First Clas",
+    "legal_issues": "6. The learned Senior Counsel submits that the High Court, in exercise of its inherent jurisdiction under Section 482 of the Code cannot direct compounding of offences which are otherwise non-compoundable. The learned counsel submits that in the absence of specific provisions, no Court can grant permission to compound any non-compoundable offence. It is submitted that the compounding of offences is specifically regulated by the\nCode of Criminal Procedure\nand any direction in this regard by the High Court to compound the offence which is non-compoundable, would be against the public policy and therefore wholly barred. 7. Before adverting to the submissions made by the learned Senior counsel, it would be appropriate to make a brief survey with regard to the nature, scope and power of this Court under Section 482 of the Code. It is fairly well settled that Section 482 of the Code does not confer any new powers on the High Court. It merely safeguards the existing inherent powers possessed by the Court necessary to secure the ends of justice. The power is to be sparingly used. The power is conferred upon the High Court to pass orders that may be necessary to give effect to any order passed under the Code or to prevent abuse of the process of any Court. Necessary orders can always be made by invoking this provision to secure the ends of justice. 15. Shri Padmanabha Reddy, the learned Senior Counsel brings to my notice the decision rendered by the Constitutional Bench of the Supreme",
+    "ratio_summary": "5. In view of the importance of the question of law involved, I have requested Shri C. Padmanabha Reddy, learned Senior Counsel to assist the Court as Amicus Curiae and accordingly, the learned Senior Counsel assisted the Court. Therefore, the question of this Court exercising jurisdiction under\nSection 482\n, Cr.P.C. in such a situation as if to prevent the abuse of the process of the Court does not arise. 32. The question before me is a larger one than that was canvassed before and dealt with by the Division Bench. The question of jurisdiction was not pointedly projected before the said Division Bench and obviously, therefore, was not dealt with.",
+    "final_order": "48. In the view I have taken supra, the petitions cannot be entertained by this Court and all the petitions are accordingly dismissed.",
+    "outcome_summary": "Dismissed. 48. In the view I have taken supra, the petitions cannot be entertained by this Court and all the petitions are accordingly dismissed.",
+    "sections_cited": [
+      "IPC 307",
+      "Constitution 142",
+      "IPC 498A",
+      "IPC 326"
+    ],
+    "cases_cited": []
+  }
+}

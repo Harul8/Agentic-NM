@@ -1,0 +1,888 @@
+{
+  "case_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA",
+  "case_name": "Manjunath vs State Of Karnataka",
+  "normalized_case_name": "MANJUNATH_VS_STATE_OF_KARNATAKA",
+  "court": "Supreme Court of India",
+  "year": "2023",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 866 of 2011",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "6 November 2023",
+  "judges": [
+    "Sanjay Karol",
+    "Abhay S. Oka"
+  ],
+  "author": "Sanjay Karol",
+  "bench_type": "division",
+  "petitioner": "Manjunath",
+  "respondent": "State Of Karnataka",
+  "reporter_citations": [
+    "2023 INSC 978"
+  ],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 48,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2023\\NOV\\2023_NOV_6.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P001_C01",
+      "text": "2023 INSC 978\n\n CRIMINAL APPELLATE JURISDICTION\n\n CRIMINAL APPEAL NO. 866 OF 2011\n\n MANJUNATH & ORS. …APPELLANTS\n\n Versus\n\n STATE OF KARNATAKA …RESPONDENT\n\n JUDGMENT\nSANJAY KAROL J.,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P002_C01",
+      "text": "1. Appellants1 (six in number) have filed this appeal against the\n\n judgment and order dated 21st September 2010 passed by the\n\n High Court of Karnataka at Bangalore in Criminal Appeal No.1795\n\n of 2004 whereby the appeal filed by the State against the verdict\n\n of acquittal in favour of all 29 accused, vide judgment and order\n\n dated 25th September, 2004 in S.C. No.162 of 1999, passed by the\n\n Additional Sessions Judge - Presiding Officer, Fast Track Court-\n\nII, Kolar, was partly allowed. Overturning the same in respect of\n\nA-1 to A-5 and A-7, the Court while convicting them for having\n\ncommitted an offence punishable under Sections 143, 144, 146,\n\n147, 148, 447, 324, 326, 504 and 506 r/w\nSection 149\nof Indian\n\nPenal Code, 1860 sentenced each one of them to undergo rigorous\n\nimprisonment for a period of 4 years and pay a fine of ₹ 5000 each.\n\nFACTUAL PRISM",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 149"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P003_C01",
+      "text": "2. The facts, as set out by the Courts below, shorn of\n\nunnecessary details are :-\n2.1 On 6th August 1997, the deceased namely Byregowda2\n\n and his brothers, T.V. Narayanaswamy (PW4), T.V. Gopalreddy (PW5), T.V. Rajanna (PW10) and Marappa (PW2)\n\n had gone to the fields to work when, allegedly, all the accused\n\n armed with weapons such as clubs, iron rods and choppers\n\n came and threatened them. PW2, PW4, PW5 and PW10\n\n managed to escape but while the deceased, was attempting to\n\n do so, he was greviously assaulted by A1, A2 and A3 by means\n\n of iron rod and a steel edged weapon (chopper). Immediate\n\n medical treatment was administered to the deceased at the\n\n2 Hereinafter, the deceased\n\n 2- [Cr. A No. 866 of 2011]\n Sidlaghatta General Hospital by Dr. Loganayaki (PW1) who\n\n also informed the police. V.M. Sonnappa (PW19), the then\n\n Sub-Inspector of Police took his statement (Ex. P1) and as a\n\n consequence therefore, registered FIR being Crime No.\n\n 249/1997 dated 08.08.1997 under several penal provisions.\n\n 2.2 After due investigation, the challan came to be filed and\n\n the case was committed to the Court of Additional Sessions\n\n Judge-Presiding Officer, Fast Track Court-II, Kolar.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P003_C02",
+      "text": "All the\n\n accused denied the charges under\nsection 120B\n,\n\n,\n\n,\n\nread with\nSection 149\nIPC and claimed trial. Accused\n\n Nos.6 and 8 are recorded to have died and therefore, the\n\n proceedings against them stood abated at this stage. FINDINGS OF THE TRIAL COURT",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 149"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P004_C01",
+      "text": "3. The prosecution in order to prove the charges levied,\n\nexamined 28 witnesses; exhibited 24 documents and three\n\nmaterial objects. The accused did not lead any evidence save and\n\nexcept producing five witnesses to contradict the version of PW 4,\n\nGopala Reddy (PW5), Chandrappa (PW15), T.V Krishnappa\n\n(PW17) and T.S Ramakrishna (PW13) respectively.\n3- [Cr. A No. 866 of 2011]",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P005_C01",
+      "text": "4. The evidence led was categorized into five heads – (a) ocular;\n(b) Dying declaration; (c) circumstantial evidence; (d) recovery of\n\nincriminating material; and (e) motive.\n4.1 PW2, PW3 and PW15 are eyewitnesses and PW2 and\n\n PW15 have not supported the case of the prosecution. PW2 has deposed that he had heard from the family\n\n members of the deceased that he had sustained various\n\n injuries and upon reaching there found the latter to be\n\n lying a little away from his own lands and later find out\n\n that he had died. PW3 has deposed that he had seen the\n\n accused persons assaulting the deceased, and it is they\n\n who had laid the deceased, post such assault, on the\n\n eucalyptus leaves on the fields of PW11. PW15 stated that\n\n he saw the deceased lying on southern side of the\n\n eucalyptus plantation where PW2, PW4 and PW5 were\n\n also present. PW15 has deposed that he saw the accused\n\n persons armed with weapons and proceeding towards the\n\n garden. He followed them and found that the accused had\n\n chased and assaulted the deceased. It is a point of conflict\n\n whether the accused had, as per the statement of PW3,\n\n laid the deceased down on the eucalyptus fields of PW11\n\n 4- [Cr.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P005_C02",
+      "text": "A No. 866 of 2011]\n- Raghava or was it PW15 who had done so. No other\n\n witnesses have deposed to that effect. The Trial Court, therefore, did not rely on the ocular\n\nevidence.\n4.2 In respect of the dying declaration, it was observed that\n\n the evidence clearly shows PW19 to not have recorded the\n\n declaration. It has borne out from cross examination of\n\n this witness that it was one of his staff members, namely\n\n Nataraj who had recorded the statement who was neither\n\n cited nor examined as a witness. Moreover, this deponent\n\n has not even endorsed such a statement.\n\n4.3 In respect of the medical evidence furnished, it was\n\n observed that PW1 admitted non stating of who\n\n furnished history of injuries- whether it was injured\n\n himself or another person who had brought him to the\n\n hospital. This, read alongside PW1’s earlier statement\n\n that numerous persons were present with the\n\n injured/deceased led the Trial Court to believe that, on\n\n account of severe head injury he was not in a position to\n\n give a statement and it was other persons present who\n\n furnished necessary details to form the same.\n5- [Cr.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P005_C03",
+      "text": "A No. 866 of 2011]\n4.4 In respect of circumstantial evidence, it was observed\n\n that PW2 has not implicated any of the accused in the\n\n circumstance relating to a mob approaching the fields in\n\n the morning of 6 August 1997. PW15 had deposed, as\n\n noted above that the deceased was laid on eucalyptus\n\n leaves in an injured state. It was however not his case\n\n that the deceased had informed him about who caused\n\n his injuries. This, led the Trial Court to observe “falsity”\n\n in the evidence of PWs 4,5,6 and 7 who stated the\n\n deceased had told that the accused assaulted him.\n\n 4.4.1 For PW3 and PW13, it was observed that their\n\n conduct did not reflect that of an “ordinary prudent\n\n man” as the former did not rush to the village or to the\n\n rescue of the deceased but instead, ostensibly, to invite\n\n the villagers to a hiding place; and the letter since he\n\n claimed to have heard the accused persons conspiring\n\n to attempt to take the lives of the deceased and his\n\n brothers and further claimed that later he heard the\n\n persons state that while one of them was caught, others\n\n ran away. Despite hearing this he proceeded to leave to\n\n attend the marriage of someone at Vijayapura.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P005_C04",
+      "text": "This, the\n\n 6- [Cr. A No. 866 of 2011]\n Court, found to be a conduct, against of a prudent\n\n person who proceeded as normal, despite hearing of a\n\n conspiracy to kill a fellow man.\n4.4.2 It is in light of above conclusions that the Trial\n\n Court held the web of circumstances to be unable to\n\n point “unerring, cogently and positively” to the guilt of\n\n the accused.\n4.5 On recovery of weapons, the Court observed that\n\n although the weapons had been recovered at the instance\n\n of accused persons - clubs at the instance of A10, A3, A5,\n\n A6 and A7; iron rod at the instance of A1 and A2 and\n\n chopper at the instance of A4, but doubted the veracity\n\n of the seizure on the ground that the clubs were recovered\n\n from a place of common access and the chopper as well\n\n as the rods were recovered from places where others also\n\n resided. Further, it was observed that the clubs seized\n\n (M.O. 3) were of 4 ft in length and 3 inches, in diameter\n\n which could cause such as abrasion(s), contusion(s), and\n\n laceration(s). However, the medical evidence of PW1 did\n\n not record any such injury. The Court, therefore,\n\n 7- [Cr.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P005_C05",
+      "text": "A No. 866 of 2011]\n concluded that the incriminating objects or weapons were\n\n not of any assistance in the case against the accused.\n\n 4.6 On motive, it was observed that although a dispute had\n\n taken place on the night of 4th August, 1997 between PW4\n\n and A1, A2, A4, A7, A8, A9, A11 and A12 regarding the\n\n obstruction of a pathway, resulting into criminal\n\n prosecution against the persons involved but leading only\n\n to their acquittals. Therefore, in view of the Court, motive\n\n was absent.\n4.7 Two other aspects were also urged on behalf of the\n\n prosecution, one; regarding the place of occurrence of\n\n offence and two; the delay in recording the statements of\n\n the ocular and circumstantial witnesses. On both these\n\n grounds as well, the court did not find anything to be\n\n pointing towards the guilt of the accused persons.\n\n 4.8 In view of such findings, the court acquitted all accused\n\n persons.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P006_C01",
+      "text": "5. The State, aggrieved by the acquittals en masse, appealed to\n\nthe High Court.\n8- [Cr. A No. 866 of 2011]\nFINDINGS OF THE HIGH COURT",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P007_C01",
+      "text": "6. It was noted that the deceased had specifically named as\n\ncertain accused as also attributed specific roles to them. Having\n\nappreciated the evidence on record and the submissions of the\n\nlearned counsel for the accused, who stated that the doctor had\n\nnot certified the deceased fit to give a statement and in the\n\nabsence of such a certificate of fitness, his declaration could not\n\nbe relied upon; and the learned counsel for the state who\n\nsubmitted that the dying declaration categorically indicts A1-A7.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P008_C01",
+      "text": "7. The Court found :-\n7.1 The dying declaration makes a clear case against A1 to A7;\n\n 7.2 The injuries sustained by the deceased correspond to\n\n narration of the incident to PW19 (S. Narayanaswamy) and\n\n that PW1 (Dr. Loganayagi) certified the deceased to have\n\n been in a fit condition to give a statement.\n\n 7.3 The dying declaration of the deceased stood corroborated\n\n by PW3, PW4, PW5 as well as other witnesses.\n\n 7.4 On submission of the learned counsel for the accused that\n\n the injuries inflicted upon the deceased were on non-vital\n\n parts of the body, no intention could be gathered on part of\n\n 9- [Cr. A No. 866 of 2011]\n the accused; hence the Court, in its wisdom, convicted the\n\n above specified accused under\nSection 304\nPart II,\nIPC\n\n undergo a sentence of rigorous imprisonment for a period\n\n of four years and pay fine of Rs. 5000/- each. All other\n\n accused were acquitted.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P009_C01",
+      "text": "8. The position of the accused persons as it presently stands is\n\nindicated in a tabular form as under :-\nSl Name of Accused Sentenced Sentenced by Punishment\nno. by Trial High Court awarded\n Court",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P010_C01",
+      "text": "1. Manjunath Acquitted Convicted\nu/s 304\n\nyears RI and fine\n S/o Bachanna Part II,\nIPC\nof Rs. 5000/-",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P011_C01",
+      "text": "2. Ramegowda Acquitted Convicted\nu/s 304\n\nyears RI and fine\n S/o Bachanna Part II,\nIPC\nof Rs. 5000/-",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P012_C01",
+      "text": "3. Ramappa Acquitted Convicted\nu/s 304\n\nyears RI and fine\n S/o Narayanappa Part II,\nIPC\nof Rs. 5000/-",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P013_C01",
+      "text": "4. Ramesh Acquitted Convicted\nu/s 304\n\nyears RI and fine\n S/o Chikka Part II,\nIPC\nof Rs. 5000/-\nVenkatarayappa",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P014_C01",
+      "text": "5. Manjunatha Acquitted Convicted\nu/s 304\n\nyears RI and fine\n S/o Ramappa Part II,\nIPC\nof Rs. 5000/-",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P015_C01",
+      "text": "6. Ramanjanappa Expired -\nS/o Muniswamappa\n (Dead)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P016_C01",
+      "text": "7. Dyavappa Acquitted Convicted\nu/s 304\n\nyears RI and fine\n S/o Narayanappa Part II,\nIPC\nof Rs. 5000/-",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P017_C01",
+      "text": "8. Dyavappa S/o Abated -\nChikka\n Miniswamappa\n (Abated)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P018_C01",
+      "text": "10. Chowda Reddy Acquitted Acquitted\n S/o Narayanappa",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P019_C01",
+      "text": "11. Jayachandra S/o Acquitted Acquitted\n Bachappa\n\n 10- [Cr. A No. 866 of 2011]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P020_C01",
+      "text": "12. Narayana Swamy @ Acquitted Acquitted\n Beema S/o\n Munegowda",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P021_C01",
+      "text": "14. Narayana Swamy Acquitted Acquitted\n S/o Pillappa",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P022_C01",
+      "text": "16. Mune Gowda Acquitted Acquitted\n S/o Venkatarayappa",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P023_C01",
+      "text": "18. Aswathappa Acquitted Acquitted\n S/o Nanjegowda",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P024_C01",
+      "text": "24. Naryanaswamy Acquitted Acquitted\n S/o Bachappa",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P025_C01",
+      "text": "25. Ramappa Acquitted Acquitted\n S/o Chennarayappa",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P026_C01",
+      "text": "26. Manjunatha Acquitted Acquitted\n S/o Naryanappa",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P027_C01",
+      "text": "27. Sonne Gowda Acquitted Acquitted\n S/o Chennarayappa",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P028_C01",
+      "text": "9. Proceeding further, we notice, that this is a case involving\n\nprimarily a dying declaration made by the accused in addition to\n\nthe ocular and circumstantial evidence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P029_C01",
+      "text": "10. In fact, the dying declaration (Ext. P1) proven by PW19, is\n\nthe main foundation of the prosecution case. It would be\n 11- [Cr. A No. 866 of 2011]\nbeneficial to appreciate the principles that the courts must adhere\n\nto when adjudicating a case of this nature.\n\nPRINCIPLES IN REGARD TO DYING DECLARATIONS",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P030_C01",
+      "text": "11. Section 32 the Indian Evidence Act, 18723 relates to\n\nstatements, written or verbal of relevant fact made by a person\n\nwho is dead or who cannot be found, in other words, dying\n\ndeclaration. The various principles laid down by pronouncements\n\nof this court in respect of dying declarations can be summarised\n\nas under: –\n\n 11.1 The basic premise is “nemo moriturus praesumitur\n\n mentire” i.e. man will not meet his maker with a lie in his\n\n mouth.\n11.1.1 In\nLaxman v. State of Maharashtra4\n\n Constitution bench of this court observed: –\n\n “when the party is at the point of death and when every\n hope of this world is gone, when every motive to\n falsehood is silenced, and the man is induced by the\n most powerful consideration to speak only the truth The\n situation in which a man is on the deathbed is so solemn\n and serene, is the reason in law to accept the veracity of\n his statement.”\n\n 11.2 For a statement to be termed a “dying declaration”, and\n\n thereby be admissible under\nSection 32\nof IEA, the\n\n3 For brevity, \"IEA\"\n4 (2002) 6 SCC 710 [5 Judge Bench]\n\n 12- [Cr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P030_C02",
+      "text": "A No. 866 of 2011]\n circumstances discussed/disclosed therein “must have\n\n some proximate relation to the actual occurrence”.\n\n 11.3 The Privy Council in Pakala Narayana Swamy v. Emperor5 explained the phrase “circumstances of the\n\n transaction” as under:-\n“The circumstances must be circumstances of the\n transaction : general expressions indicating fear or\n suspicion whether of a particular individual or\n otherwise and not directly related to the occasion of the\n death will not be admissible. But statements made by\n the deceased that he was proceeding to the spot where\n he was in fact killed, or as to his reasons for so\n proceeding, or that he was going to meet a particular\n person, or that he had been invited by such person to\n meet him would each of them be circumstances of the\n transaction, and would be so whether the person was\n unknown, or was not the person accused. Such a\n statement might indeed be exculpatory of the person\n accused. ‘Circumstances of the transaction’ is a phrase\n no doubt that conveys some limitations. It is not as\n broad as the analogous use in ‘circumstantial evidence’\n which includes evidence of all relevant facts.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P030_C03",
+      "text": "It is on the\n other hand narrower than ‘res gestae’. Circumstances\n must have some proximate relation to the actual\n occurrence : though, as for instance, in a case of\n prolonged poisoning they may be related to dates at a\n considerable distance from the date of the actual fatal\n dose. It will be observed that ‘the circumstances’ are of\n the transaction which resulted in the death of the\n declarant. It is not necessary that there should be a\n known transaction other than that the death of the\n declarant has ultimately been caused, for the condition\n of the admissibility of the evidence is that ‘the cause of\n (the declarant's) death comes into question’.”\n\n 11.3.1 In the well-known case of\nSharad Birdhichand\n\n Sarda v. State of Maharashtra,6\nprinciples in\n\n5 AIR 1939 PC 47 [5 Judge Bench]\n6 (1984) 4 SCC 116 [3 Judge Bench]\n\n 13- [Cr. A No. 866 of 2011]\n respect of the application of\nsection 32\nhave been\n\n noted as under: –\n\nPer S.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P030_C04",
+      "text": "Murtaza Fazal Ali J.,-\n“21. …\n (1)\nSection 32\nis an exception to the rule of hearsay and\n makes admissible the statement of a person who dies,\n whether the death is a homicide or a suicide, provided\n the statement relates to the cause of death, or exhibits\n circumstances leading to the death. In this respect, as\n indicated above, the\nIndian Evidence Act\n, in view of the\n peculiar conditions of our society and the diverse nature\n and character of our people, has thought it necessary to\n widen the sphere of\nSection 32\nto avoid injustice. (2) The test of proximity cannot be too literally construed\n and practically reduced to a cut-and-dried formula of\n universal application so as to be confined in a\n straitjacket. Distance of time would depend or vary with\n the circumstances of each case. For instance, where\n death is a logical culmination of a continuous drama\n long in process and is, as it were, a finale of the story,\n the statement regarding each step directly connected\n with the end of the drama would be admissible because\n the entire statement would have to be read as an organic\n whole and not torn from the context.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P030_C05",
+      "text": "Sometimes\n statements relevant to or furnishing an immediate\n motive may also be admissible as being a part of the\n transaction of death. It is manifest that all these\n statements come to light only after the death of the\n deceased who speaks from death. For instance, where\n the death takes place within a very short time of the\n marriage or the distance of time is not spread over more\n than 3-4 months the statement may be admissible\n under\nSection 32\n. (3) The second part of clause (1) of\nSection 32\nis yet\n another exception to the rule that in criminal law the\n evidence of a person who was not being subjected to or\n given an opportunity of being cross-examined by the\n accused, would be valueless because the place of cross-\n examination is taken by the solemnity and sanctity of\n oath for the simple reason that a person on the verge of\n death is not likely to make a false statement unless\n there is strong evidence to show that the statement was\n secured either by prompting or tutoring.\n14- [Cr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P030_C06",
+      "text": "A No. 866 of 2011]\n (4) It may be important to note that\nSection 32\ndoes not\n speak of homicide alone but includes suicide also, hence\n all the circumstances which may be relevant to prove a\n case of homicide would be equally relevant to prove a\n case of suicide. (5) Where the main evidence consists of statements and\n letters written by the deceased which are directly\n connected with or related to her death and which reveal\n a tell-tale story, the said statement would clearly fall\n within the four corners of\nSection 32\nand, therefore,\n admissible. The distance of time alone in such cases\n would not make the statement irrelevant.”\n\n 11.4 Numerous judgments have held that provided a dying\n\n declaration inspires confidence of the court it can, even sans\n\n corroboration, form the sole basis of conviction. In this\n\n regard, reference may be made to\nKhushal Rao v. State of\n\n Bombay7\n,\nSuresh Chandra Jana v. State of West Bengal8\nand\nJayamma v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P030_C07",
+      "text": "State of Karnataka9\n.\n11.5 In order to rely on such a statement, it must fully\n\n satisfy the confidence of the court, since the person who\n\n made such a statement is no longer available for cross-\n\n examination or clarification or for any such like activity.\n\n 11.5.1 In\nMadan v. State of Maharashtra10\n, while\n\n referring to an earlier decision in\nRam Bihari Yadav v. State of Bihar11\nit was observed that a Court must rely\n\n7 AIR 1958 SC 22 [3 Judge Bench]\n8 (2017) 16 SCC 466 [2 Judge Bench]\n9 (2021) 6 SCC 213 [3 Judge Bench]\n10 (2019) 13 SCC 464 [2 Judge Bench]\n11 (1998) 4 SCC 517 [2 Judge Bench]\n\n 15- [Cr. A No. 866 of 2011]\n on dying declaration if it inspires confidence in the\n\n mind of the court.\n11.5.2 On a similar note, this Court in\nPanneerselvam\n\n v. State of T.N12\nhas observed: –\n\n “Though a dying declaration is entitled to great\n weight, it is worthwhile to note that the accused has\n no power of cross-examination. Such a power is\n essential for eliciting the truth as an obligation of oath\n could be.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P030_C08",
+      "text": "This is the reason the court also insists that\n the dying declaration should be of such nature as to\n inspire full confidence of the court in its correctness.”\n\n 11.5.3 However, a note of caution has also been\n\n sounded. If such a declaration does not inspire\n\n confidence in the mind of the court, i.e., there exist\n\n doubts about the correctness and genuineness\n\n thereof, it should not be acted upon, in the absence of\n\n corroborative evidence.\n11.5.3.1 In\nPaniben v. State of Gujarat13\nit was\n\n observed-\n“The Court has to be on guard that the statement of\n deceased was not as a result of either tutoring,\n prompting or a product of imagination.”\n\n A reference may also be made to\nK. Ramachandra\n\n Reddy v. Public Prosecutor14\n12 (2008) 17 SCC 190 [3 Judge Bench]\n13 (1992) 2 SCC 474 [2 Judge Bench]\n14 (1976) 3 SCC 618 [2 Judge Bench]\n\n 16- [Cr. A No. 866 of 2011]\n 11.6 The Court must be satisfied that at the time of making\n\n such a statement, the deceased was in a “fit state of mind”. Shama v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P030_C09",
+      "text": "State of Haryana,15\na fit state of mind has\n\n been held to be a prerequisite, alongside the ability to\n\n recollect the situation and the state of affairs at that point\n\n in time in relation to the incident, to the satisfaction of the\n\n court.\n11.6.1 In\nUttam v. State of Maharashtra16\n, it was\n\n discussed that it is for the court to determine, from\n\n the evidence available on record, the state of mind\n\n being fit or not.\n11.6.2 In order to make a determination of the state of\n\n mind of the person making the dying declaration, the\n\n court ordinarily relies on medical evidence.17\n\n However, equally, it has been held that if witnesses\n\n present, while the statement is being made, state that\n\n the deceased while making the statement was in a fit\n\n state of mind, such statement would prevail over the\n\n medical evidence.18 The statement of witnesses\n\n15 (2017) 11 SCC 535 [2 Judge Bench]\n16 (2022) 8 SCC 576 [2 Judge Bench]\n17 (2008) 4 SCC 265 [2 Judge Bench]\n18 (2002) 6 SCC 710 [5 Judge Bench]\n\n 17- [Cr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P030_C10",
+      "text": "A No. 866 of 2011]\n present prevailing over the opinion of the doctor has\n\n been reiterated in\nUttam\n(supra).\n11.6.3 It has also, however, been held in\nLaxman\n(supra)\n\n that the mere absence of a doctor’s certificate in\n\n regard to the “fit state of mind” of the dying declarant,\n\n will not ipso facto render such declaration\n\n unacceptable. This position had been once again\n\n recognised in\nSurendra Bangali @ Surendra Singh\n\n Routele v. State of Jharkhand19\n.\n11.7 In case of a plurality of such statements, it has been\n\n observed that it is not the plurality but the reliability of\n\n such declaration determines its evidentiary value. The\n\n principle as held in\nAmol Singh v. State of M.P20\nwas:-\n“13. … it is not the plurality of the dying declarations\n but the reliability thereof that adds weight to the\n prosecution case.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P030_C11",
+      "text": "If a dying declaration is found to be\n voluntary, reliable and made in fit mental condition,\n it can be relied upon without any corroboration [but]\n the statement should be consistent throughout. …\n However, if some inconsistencies are noticed between\n one dying declaration and the other, the court has to\n examine the nature of the inconsistencies, namely,\n whether they are material or not [and] while\n scrutinising the contents of various dying\n declarations, in such a situation, the court has to\n examine the same in the light of the various\n surrounding facts and circumstances.”\n\n19 Criminal Appeal No. 1078 of 2010 [2 Judge Bench]\n20 (2008) 5 SCC 468 [2 Judge Bench]\n\n 18- [Cr. A No. 866 of 2011]\n 11.7.1 Faced with multiple dying declarations, this Court\n\nLakhan v. State of M.P21\nobserved-\n“21. …. In such an eventuality no corroboration is\n required. In case there are multiple dying declarations\n and there are inconsistencies between them,\n generally, the dying declaration recorded by the\n higher officer like a Magistrate can be relied upon,\n provided that there is no circumstance giving rise to\n any suspicion about its truthfulness.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P030_C12",
+      "text": "In case there are\n circumstances wherein the declaration had been\n made, not voluntarily and even otherwise, it is not\n supported by the other evidence, the court has to\n scrutinise the facts of an individual case very\n carefully and take a decision as to which of the\n declarations is worth reliance.”\n\n 11.7.2 This Court, in\nJagbir Singh v. State (NCT of\n\n Delhi\n)22, in this respect, concluded as under: –\n\n “32. We would think that on a conspectus of the law\nlaid down by\nthis Court, when there are more than\n one dying declaration, and in the earlier dying\n declaration, the accused is not sought to be roped in\n but in the later dying declaration, a somersault is\n made by the deceased, the case must be decided on\n the facts of each case. The court will not be relieved\n of its duty to carefully examine the entirety of\n materials as also the circumstances surrounding the\n making of the different dying declarations.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P030_C13",
+      "text": "If the court\n finds that the incriminatory dying declaration brings\n out the truthful position particularly in conjunction\n with the capacity of the deceased to make such\n declaration, the voluntariness with which it was made\n which involves, no doubt, ruling out tutoring and\n prompting and also the other evidence which support\n the contents of the incriminatory dying declaration, it\n can be acted upon. Equally, the circumstances which\n render the earlier dying declaration, worthy or\n unworthy of acceptance, can be considered.”\n\n21 (2010) 8 SCC 514[2 Judge Bench]\n22 (2019) 8 SCC 779 [2 Judge Bench]\n\n 19- [Cr. A No. 866 of 2011]\n 11.8 The presence of a Magistrate in recording of a dying\n\n declaration, is not a necessity but only a rule of Prudence. To this effect in\nJayamma\n(supra), this Court observed :\n“…law does not compulsorily require the presence of\n a judicial or executive Magistrate to record a dying\n declaration or that a dying declaration cannot be\n relied upon as the solitary piece of evidence unless\n recorded by judicial or executive Magistrate.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P030_C14",
+      "text": "It is only\n a rule of prudence, and if so permitted by the facts\n and circumstances, the dying declaration may\n preferably be recorded by a judicial or executive\n Magistrate so as to muster additional strength to the\n prosecution case.”\n\n Referring to the Constitution bench in\nLaxman\n(supra) the principle of a dying declaration not necessarily\n\n to be recorded by a Magistrate stands reiterated in\nRajaram v. State of Madhya Pradesh23\n11.9 Dying Declaration is not to be discarded by reason of\n\n its brevity is what is held in\nSurajdeo Ojha v. State of\n\n Bihar24\n.\n11.9.1 It was observed in the\nState of Maharashtra v. Krishnamurti Laxmipati Naidu25\nthat if the dying\n\n declaration, while being brief, contains essential\n\n information, the courts would not be justified in ignoring\n\n the same.\n23 2022 SCC OnLine SC 1733 [2 Judge Bench]\n24 1980 Supp SCC 769 [2 Judge Bench]\n25 1980 Supp SCC 455 [2 Judge Bench]\n\n 20- [Cr.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P030_C15",
+      "text": "A No. 866 of 2011]\n 11.9.2 In fact, the Constitution bench in Laxman\n\n reiterated this principle, stating: –\n\n “Marely because a dying declaration does not contain\n the details of the occurrence, it cannot be rejected and\n in case there is merely a brief statement, it is more\n reliable for the reason that the shortness of the\n statement is itself a guarantee of its veracity.”\n\n 11.10 Examination of the person who reduced into writing, the\n\n dying declaration, is essential. Particularly, in the absence\n\n of any explanation forthcoming for the production of\n\n evidence is what stands observed in\nGovind Narain v. State of Rajasthan26\n.\n11.10.1 In fact, in\nKans Raj v. State of Punjab27\nit was\n held: –\n\n “11. …To make such statement as substantive\n evidence, the person or the agency relying upon it is\n under a legal obligation to prove the making of such\n statement as a fact. If it is in writing, the scribe must\n be produced in the Court and if it is verbal, it should\n be proved by examining the person who heard the\n deceased making the statement.” and;\nSudhakar v. State of Maharashtra28\n, this\n\n Court categorically observed: -\n“5.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P030_C16",
+      "text": "If it is in writing, the scribe must be produced in\n the court and if it is verbal, it should be proved by\n examining the person who heard the deceased\n\n26 1993 Supp (3) SCC 343 [2 Judge Bench]\n27 (2000) 5 SCC 207 [3 Judge Bench]\n28 (2000) 6 SCC 671[3 Judge Bench]\n 21- [Cr. A No. 866 of 2011]\n making the statement. However, in cases where the\n original recorded dying declaration is proved to have\n been lost and not available, the prosecution is entitled\n to give secondary evidence thereof.”\n\n 11.11 The questions that a court must ask when dealing with\n\n a case concerning a dying declaration, as listed out by\n\n this Court in\nIrfan@Naka v. State of U.P.29\nalong with\n\n the principles culled out hereinabove form the complete\n\n gamut of consideration required on part of a court when\n\n deciding the weightage to be awarded to a dying\n\n declaration.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P031_C01",
+      "text": "12. Ocular evidence undoubtedly fares better than other kinds\n\nof evidence and is considered evidence of a strong nature. The\n\nprinciple is that if the eyewitness testimony is “wholly reliable”,\n\nthen the court can base conviction thereupon. This applies even\n\nin cases where there is a sole eyewitness.30\n13. The facts at hand, the trial court has disbelieved such\n\nevidence. The discarding of eye-witness testimony is a fact-\nspecific inquiry, and therefore the correction of such an action by\n\nthe trial court shall be discussed later.\n\n29 2023 SCC Online SC 1060 [3-Judge Bench]\n30 (1993) 3 SCC 282 [2 Judge Bench]\n\n 22- [Cr. A No. 866 of 2011]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P032_C01",
+      "text": "14. The law on circumstantial evidence, is well settled. The locus\n\nclassicus on the issue is\nSharad Birdhichand Sarda\n, (supra)\n\nwhich stands consistently followed up until very recently in\nKamal v. State (NCT of Delhi\n)31.\n14.1 Illustratively, in\nGargi v. State of Haryana32\nthis court\n\n has, referring to various earlier judgments, summarised\n\n the principles relating to circumstantial evidence. The\n\n principle, is that the sum total of circumstances, when\n\n examined should point to the guilt of the accused, while\n\n ruling out all other possible hypotheses including his\n\n innocence and absence of second party guilt.\nFurther\n\n reference may be made to\nIndrajit Das v. State of\n\n Tripura33\nand\nPrakash Nishad v. State of\n\n Maharashtra34\n.\nCONSIDERATION BY THIS COURT",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P033_C01",
+      "text": "15. The dying declaration, which forms the primary basis for\n\nprosecution of the above-named accused, reads as follows-\n“T.V. Byregowda S/o Venkatappa, 41 years, Vokkaliga,\n Agriculture, R/o Thotliganahalli, Shidlaghatta Taluk. I am residing at the above mentioned address and eking\n out livelihood from agriculture. This day i.e., on 6/8/97\n\n31 2023 SCC OnLine SC 933 [2 Judge Bench]\n32 (2019) 9 SCC 738 [2 Judge Bench]\n33 2023 SCC OnLine SC 201 [2 Judge Bench]\n34 2023 SCC OnLine SC 666 [3 Judge Bench]\n 23- [Cr. A No. 866 of 2011]\n at about 8 AM, myself and my brothers, Nrayanaswamy,\n Rajanna and Gopalreddy and our workers Marappa\n went to our land for work. When we were doing our work\n in our land, at about 9.30 AM, the sons of bacchanna of\n our village namely (1) Manjunath, (2) Ramegowda (3)\n Rayappa S/o Narayanappa sons of Bacchanna (4)\n Ramesh s/o Chikkavenkatarayappa (5) Manjunatha (6)\n Ramanjanappa (7) Dyavappa S/o Narayanappa (8)\n Dyavappa S/o Chikka Munishamappa and others\n formed unlawful assembly and holding deadly weapons\n in their hands, came to our land and abused myself and\n my brothers in filthy language and assaulted with\n weapons.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P033_C02",
+      "text": "On seeing the Accused persons, my workers\n and my brothers ran away to escape from the accused\n persons. I also tried to escape from the Accused, at that\n time Manjunath forcibly assaulted with iron rod at my\n head, I fell down and immediately Ramesh assaulted me\n with sickle at my legs, Ramegowda assaulted me with\n sickle at right leg. Rayappa and others assaulted me\n with clubs holding in their hands and all over my body. My both hands and legs got dislocated resulting in blood\n injuries. I also sustained blood injuries. Thereafter,\n Marappa S/o Anjanappa, B.K. Ramesh Gowda, S/o\n Krishnappa and Chandrappa S/o Venkate gowda,\n residents of our village released me from the hands of\n the Accused and admitted me to Government Hospital,\n Shidlaghatta for treatment. I request to take legal action\n against the accused persons who have assaulted me\n causing grievous injuries and provide protection to us. Read over and found correct\n LTM of T.V. Byregowda”\n\n (Emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P034_C01",
+      "text": "16. It emanates from the testimony of the PW1(The Doctor) and\n\nPW19 (The Police Officer) that the dying declaration of the\n\ndeceased was made in their presence. PW1 stated “When police\n\nrecorded the statement of the injured. I was present and also\n\nendorsed that statement in Ex.P.1 statement now marked,\n\nEx.P.1 (a) is my endorsement and Ex.P.1 (b) is my signature” and\n\nPW19 stated “I rushed to the hospital and enquired the injured\n 24- [Cr. A No. 866 of 2011]\nByregowda in presence of the doctor and recorded the statement.\n\nThe statement is marked as Ex. P.1 and my signature is marked\n\nEx. P.1 (b). The Doctor has also signed on the said statement”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P035_C01",
+      "text": "17. It further emanates from the record, i.e., the testimony of\n\nPW19 that although he signed on the dying declaration made by\n\nthe deceased, but the cross-examination reveals that he had not\n\nhimself written the same. It was stated: -\n“The contents in Ex. P.1 are not in my handwriting. The\n said document does not contain the endorsement as\n who has written the said document.”\n\n Further, in his re-examination, he states that-\n\n “The contents in Ex. P1 are in the hand writing of\n Nataraj, staff of our station. The said statement was\n taken as stated by the deceased and as told by me. Since\n the deceased had sustained injury on his right hand\n also, he was not in a position to sign the same…”\n\n And PW1 stated in regards of the person who recorded the\n\ndying declaration as under :-\n“I cannot say by name designation of the police person\n who recorded the statement of the injured. Again our\n records also do not disclose as to the time of recording\n of alleged statement of the injured. It is true that, before\n recording of the alleged statement of injured, neither the\n police had requested me to writing nor I had permitted\n them in writing for recording the statement of the\n injured.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P035_C02",
+      "text": "It is true when alleged statement of injured was\n recorded there were many persons around him. It is not\n true to suggest that on that day the injured was not in\n a position to give any statement and police did not\n 25- [Cr. A No. 866 of 2011]\n record his statement at that point of time as stated in\n Ex. P.1.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P036_C01",
+      "text": "18. Well then, who recorded the same?, What was his name?,\n\nWhat was his designation if he was a police personnel? remains\n\nunstated by her. Significantly, this witness also does not testify to\n\nthe correctness or otherwise of the contents thereof. It was\n\ntestified that at the time of recording of such statement “there were\n\nmany persons around”. Who these persons were, is another\n\naspect that remains unclear. Whether these persons were\n\nexamined is unknown. The dying declaration was signed by\n\nthumb impression by the deceased but, it is not the case of the\n\nprosecution that the deceased was illiterate. The Doctor also does\n\nnot state that the injured was in a condition to sign. Then why the\n\nthumb impression, remains a mystery casting a serious doubt\n\nabout its authenticity or correctness of such declaration.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P037_C01",
+      "text": "19. The reason for the non-examination of the scribe, however,\n\ndoes not bear itself. Nowhere has it been stated, either by the trial\n\ncourt or the High Court that scribe could not be examined for\n\nwhich or what particular reason.\nSudhakar\n(supra) this Court\n\nhas held that if the original dying declaration is lost and therefore\n\nnot available, the prosecution could adduce secondary evidence\n\nin support thereof. The logical extension of such holding would be\n\n 26- [Cr. A No. 866 of 2011]\nthat, if the scribe, for reasons beyond control, such as\n\nincapacitation or death, would be unavailable, it would be open\n\nfor the prosecution to take necessary aid of secondary evidence.\nThat not being the case however, such unexplained non-\n\nexamination would, as a consequence of the holdings in\nGovind\n\nNarain\n(supra),\nKans Raj\n(supra) and\nSudhakar\n(supra), render\n\nthe case to be doubtful if not, land a fatal blow to the prosecution\n\ncase.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P038_C01",
+      "text": "20. It is trite in law that given the nature of a dying declaration,\n\nit is required that such statement be free from tutoring,\n\nprompting, or not be a product of imagination. But it has\n\nemanated from the statement of the Doctor, PW1, that at the time\n\nof the dying declaration being made, there were numerous people\n\npresent near him. In such a case, can it be categorically ruled out\n\nthat the statement made by the deceased, is free from tutoring or\n\nprompting?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P039_C01",
+      "text": "21. For finding an answer, we have independently evaluated the\n\ntestimonies, relevant to adjudication of the present appeal,\n\nforming part of record.\n27- [Cr. A No. 866 of 2011]\n21.1 Prosecution has endeavoured to establish the guilt of the\n\n accused by way of ocular evidence through the\n\n testimonies of numerous independent witnesses.\n\n21.2 PW-2 has not supported the prosecution and despite\n\n being declared hostile and cross examined extensively,\n\n nothing fruitful, benefitting the prosecution case could\n\n be elicited from his testimony. All that he states is that\n\n “a group of 50 to 60 persons from the direction of the\n\n village approached towards the land. Seeing the same, I\n\n went towards the village.” The ladies of the house of the\n\n deceased came and informed that the deceased had to be\n\n treated in the hospital for he has sustained injuries.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P039_C02",
+      "text": "has denied having affixed his thumb impression on the\n\n documents prepared by the police and significantly the\n\n same has not been proved through any scientific\n\n evidence.\n21.3 On this issue we also take note of the testimony of PW-9\n\n (mother of the deceased) who only states that in the\n\n hospital, the deceased informed her that the “accused\n\n persons before the Court” had beaten and wounded him\n\n but then this does not in any manner help the\n\n prosecution for the same is in the nature of not only\n 28- [Cr. A No. 866 of 2011]\n hearsay but also not to have been taken note by the\n\n police during the course of the investigation and as such\n\n appears to be a mere improvement and exaggeration. To\n\n similar effect, is the testimony of PW-10 (wife of the\n\n deceased). Testimony of PW-11 and PW-12 is of no\n\n consequence for they are not witnesses to the occurrence\n\n of the incident.\n21.4 PW3 stated that a group of 25 to 30 people were\n\n proceeding towards the deceased and others, i.e., PW5,\n\n PW6, PW7, and PW2, who were working in lands near the\n\n village. It is he who had taken the deceased to the\n\n hospital.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P039_C03",
+      "text": "However, in the cross-examination part of his\n\n questioning, it comes forth that his recollection of events\n\n on the fateful day was vague. He had been examined\n\n thrice. It also is revealed that numerous aspects, this\n\n witness had not deposed before the investigating\n\n authorities. He does state the presence of eucalyptus\n\n trees at the place where the deceased was laid. It however\n\n does not appear in his testimony as to who laid the\n\n accused at that particular spot.\n21.5 According to PW4, the brother of the deceased, prior\n\n to the date of the incident, on 4th August, 1997 another\n 29- [Cr. A No. 866 of 2011]\n quarrel had taken place, in regards to the use of a\n\n pathway, between PW4 and one Shankarappa. On the\n\n fateful day, he has testified that a group of 25 to 30\n\n persons holding weapons such as iron chains, sticks,\n\n and sickles came to the lands where he along with\n\n others, were working. He stated that when they returned,\n\n after 10 or 15 minutes, having run away out of fear, upon\n\n approach by this armed group of persons, others\n\n including PW6 were present near the deceased person.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P039_C04",
+      "text": "He has also testified to the fact of enmity between the\n\n accused persons and the family of the deceased. He has\n\n stated it to be false that after assaulting his brother,\n\n certain persons had dumped him in the land of PW11.\n\n21.6 PW15, in his testimony has stated that upon returning\n\n from the eucalyptus plantation he found the accused in\n\n an injured state lying towards the southern side of the\n\n Plantation Garden. PWs 4 and 5 were present there. With\n\n the deceased having been taken to the hospital, this\n\n witness returned to the village. He testified that,\n\n approximately a week after the incident several\n\n recoveries were made and he, being present there signed\n\n on various mahazars. In respect of the enmity between\n 30- [Cr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P039_C05",
+      "text": "A No. 866 of 2011]\n the accused and the deceased, he submitted that the\n\n same had ended in a compromise.\n21.7 Having noted that no other witness has deposed the\n\n manner in which they saw the deceased laid on the\n\n eucalyptus leaves, similar to the manner as deposed by\n\n PW15, the trial court concluded that not much was to be\n\n gained from the ocular evidence on record.\n\n21.8 We find that none of these witnesses, eye-witnesses as\n\n they may be, to have established beyond reasonable\n\n doubt, the guilt of the accused persons. There is a\n\n contradiction in testimonies in regard to the number of\n\n persons who formed part of the unlawful assembly- one\n\n witness testified the presence of 50-60 persons while\n\n others testified to the group being of 25-30 persons; there\n\n is no clarity as to how the deceased ended up in the lands\n\n of PW11 - a material contradiction between two supposed\n\n eye-witnesses, PW3 and PW15. PW3 in his Examination\n\n in Chief stated that he had signed the mahazar, but, in\n\n his cross-examination, it was stated that he was not able\n\n to read/write.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P039_C06",
+      "text": "No reasons stand supplied for his presence\n\n at the scene of the incident- neither is he a resident of\n\n the village, nor does he have lands in said village.\n31- [Cr. A No. 866 of 2011]\nFurther, the reasons for him being examined thrice, are\n\nleft to imagination. Similarities, differences in such\n\nstatements, if any, have not been brought forth. After all,\n\nit is also well-settled that a testimony cannot be given\n\nvalue, in isolation. It does not apply to logic that a person\n\nwho is not a resident of the village would visit the spot\n\nonly to see as to what is happening, whereas the other\n\nclose relative(s) have attempted to flee from the scene. We\n\nnotice that the police had thrice made enquiries from him\n\nand recorded his statements. Why is it so? Is left to the\n\nimagination. His version that the accused had said “this\n\nfellow has come to end now and come let us go” is not\n\nrecorded in his previous statement in which he was\n\nconfronted. It has to be read as a whole.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P039_C07",
+      "text": "It is evident from\n\na bare perusal of the testimony of PW15 that the\n\ndeceased was seen by him in an already injured state,\n\nmeaning thereby that he has not actually witnessed the\n\naccused persons assaulting the deceased. Therefore, his\n\nstatus as an ocular witness is rendered questionable. PW2 has deposed that he had seen a large group of\n\npeople approaching from the direction of the village\n\ntowards the lands where they were and seeing the same,\n 32- [Cr. A No. 866 of 2011]\n he had proceeded towards the village, i.e., in the opposite\n\n direction. PW-4 is the brother of the deceased, but his\n\n conduct at best can be described as unusual, or it other\n\n words, one that defies logic. Despite being a relative, his\n\n act, is that of a stranger, i.e., running away from the\n\n dispute; leaving the deceased defenceless; he did not\n\n accompany the deceased who was in an injured state to\n\n the hospital. After all, immediately preceding the instant\n\n occurrence was the altercation involving him, and\n\n therefore, if the assailants had any motive- the same\n\n would be against him, and none else.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P039_C08",
+      "text": "Having noticed\n\n such conduct, we do not find his testimony worthy of\n\n credence.\n21.9 We cannot, in our considered view, say that this\n\n witness, has deposed the truth. Not only that, when we\n\n perused the cross-examination part of the testimony, we\n\n found his version to be uninspiring in confidence. He\n\n does not remember as to whether the police have carried\n\n out an investigation on the spot where his brother was\n\n lying. He does not remember the police having visited the\n\n village. Does such an unexplained denial render the\n\n witness unreliable and unworthy of credit? It appears\n 33- [Cr. A No. 866 of 2011]\n that the witness was not present on the spot and was\n\n introduced by the prosecution with suggestions, in fact,\n\n as put to him by the accused.\n21.10 We notice that the testimony of PW-5 is on similar\n\n lines as that of PW-4. He added that the accused persons\n\n came armed and started shouting “catch hold them, and\n\n we shall kill them”. He also states that seeing the\n\n accused all the members of the victim party fled away\n\n from the spot, while the deceased was fleeing, and the\n\n assailants attacked him with rod, stick and sickle.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P039_C09",
+      "text": "Significantly, in his cross-examination, he admits several\n\n improvements made by him; he does not remember\n\n having informed the police of the accused moving\n\n towards the village holding the weapons they had\n\n brought. In fact, not only is his version self-contradictory\n\n but also in contradiction to that of other witnesses. He\n\n states that persons other than the assailants were also\n\n present and were part of their group. The whereabouts\n\n of such persons are undisclosed and, significantly, this\n\n witness does not state as to which one of the accused\n\n was carrying which weapon and which one of them had\n\n actually assaulted or inflicted injuries on the body of the\n 34- [Cr. A No. 866 of 2011]\n deceased. He admits to having run to a distance of about\n\n a furlong and hidden under/behind the trees for about\n\n 10 minutes and returned to the spot only after the\n\n accused had left the spot and since long.\n\n 21.11 PW-19 admits that “on 06.08.1997, the AW2 to 10, 12\n\n to 17 did not inform me as to who assaulted the\n\n deceased, where and how.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P039_C10",
+      "text": "All the said persons were not\n\n available for giving statement”.\n21.12 Having noted the above aspects of the testimonies of\n\n the prosecution witnesses we find them to be unreliable,\n\n unworthy of credence. The testimonies differ on essential\n\n material facts, such as the number of persons, how the\n\n accused came to lay where he did, when discovered etc.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P040_C01",
+      "text": "22. For an eye-witness to be believed, his evidence, it has been\n\nheld, should be of sterling quality. It should be capable of being\n\ntaken at face value. The principle has been discussed in Rai\n\nSandeep @ Deepu alias\nDeepu v. State (NCT of Delhi\n)35 as\n\nfollows-\n“22. In our considered opinion, the “sterling witness”\n should be of very high quality and caliber whose version\n should, therefore, be unassailable. The court\n considering the version of such witness should be in a\n position to accept it for its face value without any\n hesitation. To test the quality of such a witness, the\n status of the witness would be immaterial and what\n\n35 (2012) 8 SCC 21 [2 Judge Bench]\n\n 35- [Cr. A No. 866 of 2011]\n would be relevant is the truthfulness of the statement\n made by such a witness. What would be more relevant\n would be the consistency of the statement right from the\n starting point till the end, namely, at the time when the\n witness makes the initial statement and ultimately\n before the court. It should be natural and consistent\n with the case of the prosecution qua the accused. There\n should not be any prevarication in the version of such a\n witness.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P040_C02",
+      "text": "The witness should be in a position to\n withstand the cross-examination of any length and\n howsoever strenuous it may be and under no\n circumstance should give room for any doubt as to the\n factum of the occurrence, the persons involved, as well\n as the sequence of it. Such a version should have co-\n relation with each and every one of other supporting\n material such as the recoveries made, the weapons\n used, the manner of offence committed, the scientific\n evidence and the expert opinion. The said version\n should consistently match with the version of every\n other witness. It can even be stated that it should be\n akin to the test applied in the case of circumstantial\n evidence where there should not be any missing link in\n the chain of circumstances to hold the accused guilty of\n the offence alleged against him. Only if the version of\n such a witness qualifies the above test as well as all\n other such similar tests to be applied, can it be held that\n such a witness can be called as a “sterling witness”\n whose version can be accepted by the court without any\n corroboration and based on which the guilty can be\n punished.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P040_C03",
+      "text": "To be more precise, the version of the said\n witness on the core spectrum of the crime should\n remain intact while all other attendant materials,\n namely, oral, documentary and material objects should\n match the said version in material particulars in order\n to enable the court trying the offence to rely on the core\n version to sieve the other supporting materials for\n holding the offender guilty of the charge alleged.”\n (emphasis supplied)\n\nThis was quoted with profit by this Court in\nGanesan v State36\n. Recently, this principle was further reiterated in\nNaresh @ Nehru\n\nv State of Haryana37\n.\n36 (2020) 10 SCC 573 [3 Judge Bench]\n37 Criminal Appeal No.1786 Of 2023 [2 Judge Bench]\n\n 36- [Cr. A No. 866 of 2011]",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [
+        "Nehru v State of Haryana37\n.\n36"
+      ],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P041_C01",
+      "text": "23. As the above discussion would show vis-à-vis the delineation\n\non the qualities of a sterling witness, none of the witnesses of the\n\nprosecution would qualify per this standard. Numerous\n\ncontradictions and inconsistencies have borne from record,\n\nrendering such witnesses to be unreliable and undependable so\n\nas to place reliance on the same to hold the accused persons guilty\n\nof having committed an offence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P042_C01",
+      "text": "24. On circumstantial evidence, the trial court has examined the\n\ntestimonies of PWs 1-5, 10, 13 and 15. We have, above, discussed\n\nPWs 1, 2, 3, and 4 along with 15. We now proceed to discuss PWs\n\n10, and 13, independently. PW5, although classified as a\n\ncircumstantial witness, a reading of the same suggests the\n\nwitness to be an eyewitness.\n24.1 PW10 stated that upon seeing the group of persons,\n\n I ran in different directions with him running\n\n towards Thadhooru. While there, he heard of his\n\n brother (deceased) having sustained various\n\n injuries. Pursuant to such information he went to\n\n the hospital where he stated that the deceased\n\n himself stated that “Manjunath and his henchmen\n\n of our village assaulted him” he stated, he never\n\n went to the place where the deceased was lying nor\n 37- [Cr. A No. 866 of 2011]\n could he say who informed him of his brother’s\n\n injuries. Hence, his statement is the nature of\n\n hearsay.\n24.2 The circumstances, which are mentioned within the\n\n testimonies relied on by the trial court, we find, that\n\n they do not, conclusively point to the guilt of all the\n\n accused.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P042_C02",
+      "text": "The following conclusions from the\n\n circumstantial evidence on record, support our\n\n conclusion- apart from PW15 none of the witnesses\n\n relied on, name all accused persons; a group of 25\n\n to 30 people is generally referred to- a general\n\n description does not indicate guilt. Secondly, the\n\n factum of enmity although repeatedly testified to by\n\n numerous witnesses, upon itself cannot thrust upon\n\n the accused, the guilt for having killed the deceased\n\n person. This view is supported by the fact that the\n\n criminal case lodged as a result of the altercation\n\n between a brother of the deceased and certain\n\n accused persons resulted in their acquittal, as has\n\n been noted by the trial court.\n38- [Cr. A No. 866 of 2011]\n24.3 It is true that certain witnesses such as PW4\n\n categorically mentioned certain accused persons\n\n holding particular weapons. As a solitary aspect, it\n\n can be seen as indicating a particular act done by\n\n the accused, aiding the death of the deceased\n\n person. However, the medical evidence of PW1\n\n negates that possibility as well.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P042_C03",
+      "text": "The relevant extract\n\n of the testimony is reproduced: –\n\n “ I see the clubs at M.O. 3. they are of about 4 feet length\n and 3 inches in diameter. If a person is assaulted\n repeatedly by such clubs, he would sustain several\n abrasions, contusions and lacerations. When I examined the deceased Byregowda clinically, I\n did not found any abrasions lacerations of contusions\n on his back or chest and so also on the abdomen. I did\n not find any incised injury on the body of the deceased.”\n\n24.4 While it may be true that the deceased had died due\n\n to injuries sustained, as the above-extracted\n\n testimony of PW1 shows, the said injuries could not\n\n have been caused as a result of the weapons that\n\n the accused persons were allegedly yielding, and\n\n the ones that were supposedly recovered at their\n\n instance.\n24.5 It is on both these counts, we find the\n\n circumstantial evidence on record, not to\n 39- [Cr. A No. 866 of 2011]\n conclusively point towards guilt of the accused\n\n persons.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P042_C04",
+      "text": "We further find the eyewitness testimony\n\n to also be rendered questionable, since the\n\n weapons, which the accused were holding, and\n\n were subsequently recovered at their instance, do\n\n not correspond to the injuries found on the body of\n\n the deceased, as borne out from the cross-\n\n examination of PW1, reproduced supra.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P043_C01",
+      "text": "25. The next aspect is the recovery of the alleged weapons, we\n\nhave noted the particulars thereof while discussing the findings\n\nof the Trial Court. Such recoveries were discarded by the trial\n\ncourt stating that the clubs were recovered from a place\n\naccessible to the public and, the chopper and the rods were\n\nrecovered from a house where other persons were also residing\n\nwhich compromises the sanctity of such recovery and takes away\n\nfrom the veracity thereof.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P044_C01",
+      "text": "26. Further discovery made, to be one satisfying the\n\nrequirements of\nSection 27\n, Indian Evidence Act it must be a fact\n\nthat is discovered as a consequence of information received from\n\na person in custody. The conditions have been discussed by the\n\n 40- [Cr. A No. 866 of 2011]\nPrivy Council in\nPulukuri Kotayya v. King Emperor38\nand the\n\nposition was reiterated by this Court in\nMohd. Inayatullah v. State of Maharashtra39\n, in the following terms:-\n“12…It will be seen that the first condition necessary for\n bringing this section into operation is the discovery of a\n fact, albeit a relevant fact, in consequence of the\n information received from a person accused of an\n offence. The second is that the discovery of such fact\n must be deposed to. The third is that at the time of the\n receipt of the information the accused must be in police\n custody. The last but the most important condition is\n that only “so much of the information” as relates\n distinctly to the fact thereby discovered is admissible. The rest of the information has to be excluded. The word\n “distinctly” means “directly”, “indubitably”, “strictly”,\n “unmistakably”.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P044_C02",
+      "text": "The word has been advisedly used to\n limit and define the scope of the provable information. The phrase “distinctly relates to the fact thereby\n discovered” is the linchpin of the provision. This phrase\n refers to that part of the information supplied by the\n accused which is the direct and immediate cause of the\n discovery…”\n (Emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P045_C01",
+      "text": "27. Prima facie, in the present facts, the 3 conditions above\n\nappear to be met. However, the Trial Court held, given that the\n\ndiscoveries made were either from a public place or from an area\n\nwhere other persons also resided, reliance thereupon, could not\n\nbe made. We find this approach of the trial court to be correct.\n\n38 1946 SCC OnLine PC 47\n39 (1976) 1 SCC 828\n\n 41- [Cr. A No. 866 of 2011]\n 27.1 This court has, in various judgments, clarified this\n\n position. Illustratively, in\nJaikam Khan v. State of U.P40\nit was observed: –\n\n “One of the alleged recoveries is from the room where\n deceased Asgari used to sleep. The other two recoveries\n are from open field, just behind the house of deceased\n Shaukeen Khan i.e. the place of incident. It could thus\n be seen that the recoveries were made from the places,\n which were accessible to one and all and as such, no\n reliance could be placed on such recoveries.”\n\n (Emphasis supplied)\n\n 27.2 Also, in\nNikhil Chandra Mondal v. State of W.B.41\nthe\n\n Court held:-\n“20. The trial court disbelieved the recovery of clothes\n and weapon on two grounds.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P045_C02",
+      "text": "Firstly, that there was no\n memorandum statement of the accused as required\n under\nSection 27\nof the Evidence Act, 1872 and\n secondly, the recovery of the knife was from an open\n place accessible to one and all. We find that the\n approach adopted by the trial court was in accordance\n with law. However, this circumstance which, in our\n view, could not have been used, has been employed by\n the High Court to seek corroboration to the extra-\n judicial confession.”\n\n (Emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P046_C01",
+      "text": "28. As reflected from record, and in particular the testimony of\n\nPW-15 it is clear that the discoveries (stick as shown by A10, for\n\ninstance) was a eucalyptus stick, found from the eucalyptus\n\n40 (2021) 13 SCC 716\n41 (2023) 6 SCC 605\n\n 42- [Cr. A No. 866 of 2011]\nplantation, which indisputably, is a public place and was found\n\na week later. A second and third stick purportedly found half\n\nkilometre away on that day itself, was found by a bush, once\n\nagain, a place of public access. Two further sticks recovered at\n\nthe instance A6 and A7, were also from public places. An iron\n\nchain produced from the house of A1 and A2, is not free from the\n\npossibility that any of the other occupants of their house were\n\nnot responsible for it. We, further cannot lose sight of the fact\n\nthat sticks, whether bamboo or otherwise, are commonplace\n\nobjects in village life, and therefore, such objects, being hardly\n\nout of the ordinary, and that too discovered in places of public\n\naccess, cannot be used to place the gauntlet of guilt on the\n\naccused persons.\nCONCLUSIONS",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P047_C01",
+      "text": "29. Our conclusions, therefore, are thus:\n29.1 The dying declaration, although undoubtedly a\n\n substantive piece of evidence upon which reliance can\n\n be placed, in the present facts is rendered nugatory as\n\n the person who took down such declaration was not\n\n examined, nor did the police officer (PW19) endorse\n\n the said document with details of who took down the\n\n 43- [Cr. A No. 866 of 2011]\n declaration. It is also not clear as to in front of which\n\n of the relatives of deceased was the same taken down.\n\n 29.2 The circumstantial evidence present on record does\n\n not point to the hypothesis of the guilt of the accused\n\n persons, for the reasons discussed above.\n\n 29.3 None of the eyewitnesses-PWs 2, 3, 15, as referred to\n\n by the trial court have succeeded in attributing a\n\n particular role to any of the accused persons and\n\n equally so, to A-1 to A-5 and A-7, whose acquittals\n\n have been overturned by the High Court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P048_C01",
+      "text": "30. In our considered view, the view taken by the Trial Court was\n\na possible view and there being no error in correct and complete\n\nappreciation of evidence as also application of law; the High Court,\n\nwithout assigning any cogent reasons ought not to have interfered\n\nwith such findings.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P049_C01",
+      "text": "31. For the aforesaid reasons, the judgment impugned before us\n\nin Criminal Appeal Number 1795 of 2004 dated 21 September\n\n2010, is set aside. The appeal is, accordingly, allowed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P050_C01",
+      "text": "32. Having allowed the appeals as above, we are constrained to\n\nobserve that the Criminal Appeal\nu/s 378\nCode of Criminal\n\nProcedure, 1973 the High Court has not appreciated the severity\n\n 44- [Cr. A No. 866 of 2011]\nof the allegations involved to the full extent. That a Court of Appeal\n\nshould be circumspect in overturning its judgment of acquittal, is\n\nnot a principle that requires reiteration. It has been held time and\n\nagain that an acquittal will only be overturned in the presence of\n\nvery compelling reasons.42 Further, right from the Privy Council43\n\nonwards, it is been held that the presumption of innocence in\n\nfavour of the accused is bolstered if the trial court hands down an\n\nacquittal.44 We find the High Court not to have observed the said\n\nprinciples in deciding the appeals. Quite opposite thereto,\n\nperfunctory reasons stand recorded to restore the convictions of\n\nthe Appellants herein. The observations of the trial court along\n\nwith the principle of a bolstered principle of innocence, were\n\nsummarily cast aside. The same cannot be said to be in\n\naccordance with the law.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P051_C01",
+      "text": "33. As a result, the acquittals handed down by judgment and\n\norder dated 25th September 2004 in S.C. No. 162 of 1999, passed\n\nby the Additional Sessions Judge- Presiding Officer, Fast Track\n\nCourt-II, Kolar, are restored. The judgment of conviction and\n\nsentence, as awarded by the High Court, stands set aside.\n\n42 Tulsiram Kanu v State\nAIR 1954 SC 1\n43 Sheo Swarup v King Emperor\nAIR 1934 PC 227(2)\n44 Ghurey Lal v State of U.P. (2008) 10 SCC 450\n\n 45- [Cr. A No. 866 of 2011]",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [
+        "Ghurey Lal v State of U.P"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P052_C01",
+      "text": "34. Since the sentence awarded by the High Court under Section\n\n304 Part II of the\nIPC\nwas for 4 years, and the application of\n\nexemption from surrender was disallowed by this Court, vide\n\norder dated 13th December 2010, the Appellants appear to have\n\nalready served the sentence awarded to them.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P053_C01",
+      "text": "35. It is however directed, that the fine made payable by each of\n\nthe accused, as a result of the impugned judgment be refunded to\n\nthem. Consequently, bail bonds, if in effectuation, shall stand\n\ndischarged. The appeal is accordingly, allowed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA_P054_C01",
+      "text": "36. In view of the above, interlocutory applications, if any, shall\n\nstand disposed of.\n……..……………..J.\n (ABHAY S. OKA)\n\n …………………….J.\n (SANJAY KAROL)\n\n Date: 6th November, 2023;\nPlace: New Delhi.\n46- [Cr. A No. 866 of 2011]",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Manjunath vs State Of Karnataka",
+    "case_id": "SC_2023_MANJUNATH_VS_STATE_OF_KARNATAKA",
+    "court": "Supreme Court of India",
+    "year": "2023",
+    "facts_summary": "1. Appellants1 (six in number) have filed this appeal against the\n\n judgment and order dated 21st September 2010 passed by the\n\n High Court of Karnataka at Bangalore in Criminal Appeal No.1795\n\n of 2004 whereby the appeal filed by the State against the verdict\n\n of acquittal in favour of all 29 accused, vide judgment and order\n\n dated 25th September, 2004 in S.C. No.162 of 1999, passed by the\n\n Additional Sessions Judge - Presiding Officer, Fast Track Court-\n\nII, Kolar, was partly allowed. Overturning the same in respect of\n\nA-1 to A-5 and A-7, the Court while convicting them for having\n\ncommitted an offence punishable under Sections 143, 144, 146,\n\n147, 148, 447, 324, 326, 504 and 506 r/w\nSection 149\nof Indian\n\nPenal Code, 1860 sentenced each one of them to undergo rigorous\n\nimprisonment for a period of 4 years and pay a fine of ₹ 5000 each.\n\nFACTUAL PRISM 2. The facts, as set out by the Courts below, shorn of\n\nunnecessary details are :-\n2.1 On 6th August 1997, the deceased namely Byregowda2\n\n and his brothers, T.V. Narayanaswamy (PW4), T.V. Gopalreddy (PW5), T.V. Rajanna (PW10) and Marappa (PW2)\n\n had gone to the fields to work when, allegedly, all the accused\n\n armed with weapons such as clubs, iron rods and choppers\n\n came and threatened them. PW2, PW4, PW5 and PW10\n\n managed to escape but while the deceased, was attempting to\n\n do so, he was greviously assaulted by A1, A2 and A3 by means\n\n of iron rod and a steel edged weapon (chopper). Immediate\n\n medical treatment was ",
+    "legal_issues": "A No. 866 of 2011]\n concluded that the incriminating objects or weapons were\n\n not of any assistance in the case against the accused.\n\n 4.6 On motive, it was observed that although a dispute had\n\n taken place on the night of 4th August, 1997 between PW4\n\n and A1, A2, A4, A7, A8, A9, A11 and A12 regarding the\n\n obstruction of a pathway, resulting into criminal\n\n prosecution against the persons involved but leading only\n\n to their acquittals. Therefore, in view of the Court, motive\n\n was absent.\n4.7 Two other aspects were also urged on behalf of the\n\n prosecution, one; regarding the place of occurrence of\n\n offence and two; the delay in recording the statements of\n\n the ocular and circumstantial witnesses. On both these\n\n grounds as well, the court did not find anything to be\n\n pointing towards the guilt of the accused persons.\n\n 4.8 In view of such findings, the court acquitted all accused\n\n persons. 6. It was noted that the deceased had specifically named as\n\ncertain accused as also attributed specific roles to them. Having\n\nappreciated the evidence on record and the submissions of the\n\nlearned counsel for the accused, who stated that the doctor had\n\nnot certified the deceased fit to give a statement and in the\n\nabsence of such a certificate of fitness, his declaration could not\n\nbe relied upon; and the learned counsel for the state who\n\nsubmitted that the dying declaration categorically indicts A1-A7. 7. The Court found :-\n7.1 The dying declaration makes a clear case against",
+    "ratio_summary": "To be more precise, the version of the said\n witness on the core spectrum of the crime should\n remain intact while all other attendant materials,\n namely, oral, documentary and material objects should\n match the said version in material particulars in order\n to enable the court trying the offence to rely on the core\n version to sieve the other supporting materials for\n holding the offender guilty of the charge alleged.”\n (emphasis supplied)\n\nThis was quoted with profit by this Court in\nGanesan v State36\n. Recently, this principle was further reiterated in\nNaresh @ Nehru\n\nv State of Haryana37\n.\n36 (2020) 10 SCC 573 [3 Judge Bench]\n37 Criminal Appeal No.1786 Of 2023 [2 Judge Bench]\n\n 36- [Cr. A No. 866 of 2011]",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [
+      "IPC 149"
+    ],
+    "cases_cited": [
+      "Nehru v State of Haryana37\n.\n36",
+      "Ghurey Lal v State of U.P"
+    ]
+  }
+}

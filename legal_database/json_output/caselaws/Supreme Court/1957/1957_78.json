@@ -1,0 +1,231 @@
+{
+  "case_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR",
+  "case_name": "G.X. Francis And Ors. vs Banke Bihari Singh And Anr.",
+  "normalized_case_name": "G.X._FRANCIS_AND_ORS._VS_BANKE_BIHARI_SINGH_AND_ANR.",
+  "court": "Supreme Court of India",
+  "year": "1957",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 1 of 1956",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "4 December 1957",
+  "judges": [
+    "J.L. Kapur",
+    "JUDGMENT",
+    "Vivian Bose, J."
+  ],
+  "author": "J.L. Kapur",
+  "bench_type": "constitution",
+  "petitioner": "G.X. Francis And Ors.",
+  "respondent": "Banke Bihari Singh And Anr.",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 4,
+  "cited_by_count": 33,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1958SC309",
+    "1958CRILJ569",
+    "AIR 1958 SUPREME COURT 309",
+    "1958 MPLJ 81"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1957\\1957_78.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P001_C01",
+      "text": "1. This is an application under\nSection 527\nof the Criminal Procedure Code for the transfer of a criminal case from Jashpurnagar in the State of Madhya Pradesh to some other State, preferably New Delhi or Orissa, and for a request that the case be tried by a \"Superior Court\" such as a District Magistrate or a Sessions Judge.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P002_C01",
+      "text": "2. The case is a prosecution for defamation under\nSections 501\nand\n\nof the Indian Penal\nCode read with\nSection 34\n.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P003_C01",
+      "text": "3. The complainant is a member of the royal family of Jashpur. He resides at Jashpurnagar.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P004_C01",
+      "text": "4. There are now seven accused, all of whom are Roman Catholics except one who is a Jacobite Christian. Originally, there were nine but one died and one other does not appear to have joined in the application, so that leaves seven who have.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P005_C01",
+      "text": "5. The accused are scattered over India and reside at Nagpur (Bombay State), Patna (Bihar), Allahabad (Uttar Pradesh) and Raigarh (Madhya Pradesh). Two of them are priests and one a bishop. The rest are laymen.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P006_C01",
+      "text": "6. The complainant alleges that the accused were concerned in one way and another (2) with bringing out several (publications - that attacked the publication known as the Niyogi Report and sought to question the accuracy of the statements made in it. In doing so they defamed the complainant, and in his complaint the complainant sets out the passages of which he complains.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P007_C01",
+      "text": "7. But the complainant has not rested content with passages that are said to defame him personally. He has gone on to claim that:\n\"similar aspersions have been cast elsewhere against the high and low officers of the Government administration. These clearly indicate the intention of the accused to influence the people to doubt the veracity of the judgments delivered in favour of the complainant to perpetuate a sense of false moral culpability against the complainant in spite of his legal exoneration.\"\nNow we are not concerned with the truth or otherwise of these allegations but they do form material that might lead the accused to believe, along with other matter to which we shall refer presently, that the complainant is trying here to bias the magistracy and other officers, \"high and low\", against them.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P008_C01",
+      "text": "8. Among the grounds of transfer are certain allegations made against the learned trying Magistrate. It seems that a complaint was made against the complainant by certain Christians at Jashpurnagar early in 1955 in Criminal Case No. 5 of 1955 for desecrating a Christian church there. The first Court convicted him but released him under\nSection 562\nof the Criminal Procedure Code. The complainant appealed and the appeal was heard by the Magistrate who is trying the present matter, Shri K T. Damle. He disbelieved the prosecution evidence and, relying on the defence evidence, acquitted the complainant on November 6, 1956, in Criminal Appeal No. 1 of 1956. It is said that this indicates bias or, at any rate, creates a reasonable apprehension of bias in the minds of the accused. We are unable to draw any such inference nor do we think that an apprehension based on such a ground is reasonable. We discourage such accusations and would be extremely slow to allow a transfer on such a ground. We do not think it necessary to call upon the learned Magistrate tor an explanation because we reject this ground outright.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P009_C01",
+      "text": "9. We also reject outright the allegation that the accused will not get a fair trial any where in Madhya Pradesh. That is much too wide and sweeping a statement and we can find nothing on the record to justify such an apprehension. There are large areas of the new State of Madhya Pradesh that had no concern with the old State and we can find nothing to justify a fear that Courts in areas like Bhopal, Gwalior or Indore, or even in other areas of the old Madhya Pradesh remote from the immediate scene of controversy, would be influenced by events that happened in and around Jashpur and the neighbouring areas. But we do feel that good grounds for transfer from Jashpurnagar are made out because of the bitterness of local communal feeling and the tenseness of the atmosphere there. Public confidence in the fairness of a trial held in such an atmosphere would be seriously undermined, particularly among reasonable Christians all over India, not because the Judge was unfair or biased but because the machinery of justice is not geared to work in the midst of such conditions.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P009_C02",
+      "text": "The calm detached atmosphere of a fair and impartial judicial trial would be wanting, and even if justice were done it would not be \"seen to be done\". This Court has ordered a transfer on previous occasions when such conditions are found to be present, particularly in certain cases in South India when feelings ran high over the merger and reorganisation of certain States in that area and also in certain cases where Communists were accused and the local feelings against them were strong. In our opinion, the position is the same here. Our reasons for reaching this conclusion are as follows :",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P010_C01",
+      "text": "10. In his affidavit dated October 26, 1957, the complainant states that\n \"In or about 1922 there was a rebellion in Jashpur State against the Ruling Dynasty secretly aimed at installing a Christian convert on the Gaddi of Jashpur. The Missionaries of Jashpur were responsible for it. Since this time the Catholic Missionaries entertain a deep-rooted ill-will, enmity and hatred towards the complainant. Now this may or may not be true but it is material to indicate, coming as it does from the complainant himself, that that is what a section of the community in that area believe and feel. Had the ill-will rested all on one side, we would probably not have allowed the accused, who are Christians, to take advantage of a situation that they themselves, or rather the community to which they belong, are said to have engendered. We do not mean that we accept this statement as true - far from it: we have no material on which we can base such a conclusion and the mere assertion of these facts by the complainant is not proof of their accuracy and truth.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P010_C02",
+      "text": "But it is good evidence on which to reach a conclusion about the local beliefs and feelings, in a section of the local community, about the Christians there.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P011_C01",
+      "text": "11. Next comes the fact that the complainant was convicted in Sessions Case No. 4 of 1929 of an attempt to murder two Catholic priests. The complainant admits this but he links this up with his earlier assertion about the continued hostility of the Catholic Missionaries against him from the year 1922. Therefore, whether or not it is true that the Christians and Missionaries were hostile to him, it is more than evident that for good reason or bad the hostility was not one-sided. If the complainant is to be believed, there is intense bitterness by the Christians of this area against the local non-Christians and equally tense communal feelings by the other community against them.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P012_C01",
+      "text": "12. Then we have the affidavit on behalf of the accused stating that the local Christians had made a report to the police about desecration of a church in a particularly revolting way and that nothing came of it because of the influence wielded by the complainant. The complainant says he knows nothing about this, so that in itself would not amount to much. But the affidavit goes on to say that this report figured in certain starred interpellations in the Madhya Pradesh Assembly and that Government gave no reply. That, coupled with the other matter we have outlined above, would be enough to engender an uneasy feeling in the minds of fair-minded persons that even the State Government felt that this smoke was not without fire.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P013_C01",
+      "text": "13. The bitterly communal twist of the case is evident from the complaint where it is\nsaid that \n \"All the accused have displayed themselves as the haters of the Hindu religion to which the complainant belongs. It appears that their policy has been to lower the prestige of prominent Hindu citizens to make their field more fertile for their activities.\"",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P014_C01",
+      "text": "14. Two of the accused state that they apprehend danger of personal violence if the trial is held in any subordinate Court in Madhya Pradesh, and the complainant entertains a\nsimilar apprehension, for he says\n \"The accused have made an offensive misuse of their high positions and unity of such criminal behavior on their part has betrayed a sure tendency towards causing breach of peace amongst the peaceful citizens exposing the complainant to a risk of his life.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P015_C01",
+      "text": "15. In view of the unanimity of testimony from both sides about the nature of the surcharged tension in this area, we consider that the local atmosphere is not conducive to a fair and impartial trial and so, following our earlier precedents, we are of opinion that there must be a transfer.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P016_C01",
+      "text": "16. Now in the ordinary way, we would have left this to the High Court of Madhya Pradesh, for, as we have said, we give no countenance to the wild allegation that no Court in Madhya Pradesh would be unbiased or impartial. But it is evident that all the area round and about Jashpurnagar is stirred up by local happenings so we do not think it would be right to have the trial anywhere there. But the geography of the new State and the state of its communications is such that it will be nearer and easier for the trial to be held in the neighbouring State of Orissa which is much nearer and easier of access than Bhopal, Gwalior and Indore, or even of Jabalpur, Saugor or Hoshangabad. We therefore direct that this case be transferred to such Magistrate in Sambalpur in the State of Orissa competent to try it as the District Magistrate of that place shall direct. We reject the prayer that it be tried in a \"superior Court\".",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P017_C01",
+      "text": "17. We desire to emphasise that we are taking this step because what would otherwise be a petty defamation case has been magnified by the complainant and by local passion into a communal conflict in which large sections of the local population appear to be ranged on one side or the other, and the words that are bandied back and forth are not aimed at this individual or that but are by one community against another.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR_P018_C01",
+      "text": "18. We note in passing that the State of Madhya Pradesh has not appeared to oppose this application though notice was issued to it.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "G.X. Francis And Ors. vs Banke Bihari Singh And Anr.",
+    "case_id": "SC_1957_GX_FRANCIS_AND_ORS_VS_BANKE_BIHARI_SINGH_AND_ANR",
+    "court": "Supreme Court of India",
+    "year": "1957",
+    "facts_summary": "2. The case is a prosecution for defamation under\nSections 501\nand\n\nof the Indian Penal\nCode read with\nSection 34\n. 3. The complainant is a member of the royal family of Jashpur. He resides at Jashpurnagar. 4. There are now seven accused, all of whom are Roman Catholics except one who is a Jacobite Christian. Originally, there were nine but one died and one other does not appear to have joined in the application, so that leaves seven who have.",
+    "legal_issues": "12. Then we have the affidavit on behalf of the accused stating that the local Christians had made a report to the police about desecration of a church in a particularly revolting way and that nothing came of it because of the influence wielded by the complainant. The complainant says he knows nothing about this, so that in itself would not amount to much. But the affidavit goes on to say that this report figured in certain starred interpellations in the Madhya Pradesh Assembly and that Government gave no reply. That, coupled with the other matter we have outlined above, would be enough to engender an uneasy feeling in the minds of fair-minded persons that even the State Government felt that this smoke was not without fire.",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

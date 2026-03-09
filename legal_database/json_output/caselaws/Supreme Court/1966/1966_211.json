@@ -1,0 +1,240 @@
+{
+  "case_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR",
+  "case_name": "Nand Kishore vs Ram Kishan & Anr",
+  "normalized_case_name": "NAND_KISHORE_VS_RAM_KISHAN_&_ANR",
+  "court": "Supreme Court of India",
+  "year": "1966",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 467 of 1966",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "25 August 1966",
+  "judges": [
+    "K. Subba  Rao",
+    "J.M. Shelat"
+  ],
+  "author": "K. Subba  Rao",
+  "bench_type": "division",
+  "petitioner": "Nand Kishore",
+  "respondent": "Ram Kishan & Anr",
+  "reporter_citations": [
+    "[1966] 1 S.C.R. 128"
+  ],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 21,
+  "cited_by_count": 7,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1967 AIR 1196",
+    "1967 SCR (1) 167",
+    "AIR 1967 SUPREME COURT 1196"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1966\\1966_211.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P001_C01",
+      "text": "ACT:\nDelhi Rent Control Act\n(59 of 1958), ss. 17(3), 18(2) and\n50, and\nDelhi and Ajmer Rent Control Act\n(38 of 1952), s.\n20-Tenancy determined before commencement of the Act of\n1958-Suit by sub-tenant claiming to be statutory tenant-If\nmaintainable.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P002_C01",
+      "text": "HEADNOTE:\nThe landlord of the premises in dispute, obtained a decree\nfor ejectment against his tenant before the commencement of\nthe\nDelhi Rent Control Act, 1958\n. The sub-tenant was not a\nparty to that suit and the sub-tenancy was not determined by\nthat decree. In 1962, the subtenant filed a suit against\nthe landlord claiming to have become a statutory tenant of\nthe premises. The landlord contended that under\ns. 50\nthe Act, no civil court shall entertain any suit in respect\nof a matter which the Controller is empowered by or under\nthe Act to decide, and that as\ns. 17(3)\nof the Act empowered\nthe Controller to decide a dispute in regard to the question\nwhether a person was a sub-tenant or not, the ,suit was not\nmaintainable. HELD :\nSection 50\nwas not a bar to the suit. The provision of the Act applicable to a case where the\ninterest of a tenant had been determined before the\ncommencement of the Act, but the interest of the sub-tenant\nwas allowed to subsist is\ns. 18(2)\n. Under this sub-section\nthe sub-tenant shall, with effect from the date of the\ncommencement of the Act, be deemed to have become, by a\nstatutory fiction, a tenant under the landlord.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P002_C02",
+      "text": "There is no\nprovision in the Act under which a dispute in respect of\nsuch a sub-tenancy could be decided by the Controller. Any\ndispute raised by such a sub-tenant does not fall under s.\n17(3), for, s. 17(3) applies only to a case where a dispute\narises during the subsistence of the main tenancy after the\nAct came into force, and where the dispute was raised within\ntwo months of the issue of the notice of sub-letting, by the\ntenant or sub-tenant. [171 A-C]\nMohd. Mamood v. Tikam Das, [1966] 1 S.C.R. 128, explained. Moreover, under\ns. 20\nof the Delhi and Ajmer Rent Control\nAct, 1952, on the eviction of the tenant, the sub-tenant\nwould be deemed to have become a tenant of the landlord. There is no provision in the\nDelhi Rent Control Act, 1958\n,\nwhich took away that vested right or empowered the\nController to decide a dispute raised in regard to it. Section 50, therefore could not have any bearing on the\nmaintainability of the suit. [171 E-G]",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P003_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal No. 467 of 1966.\nAppeal by special leave from the judgment and decree dated\nMarch 4, 1965 of the Punjab High Court (Circuit Bench) at\nDelhi in Civil Regular Second Appeal No. 125-D of 1964.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P004_C01",
+      "text": "A.K. Sen, E. C. Agarwal and P. C. Agarwala, for the\nappellant. Gauri Dayal for the respondents. The Judgment of the Court was delivered by\nSubba Rao, C. J. This appeal by special leave raises the\nquestion of the construction of some of the provisions of\nthe\nDelhi Rent Control Act, 1958\n(Act 59 of 1958),\nhereinafter called the Act. Appellant-1st defendant is the owner of premises No. 6022,\nGali Mandir Wali, Arya Samaj, Delhi. Ram Saran Das, res-\npondent No. 2 herein, was the tenant of the appellant in\nrespect of the said premises and Ram Kishan Das, respondent\nNo. 1 herein, was a sub-tenant. On January 30, 1959 the\nappellant obtained a decree for ejectment against the 2nd\nrespondent from the court of the Subordinate Judge, Delhi. To that suit the 1st respondent, the sub-tenant, was not\nmade a party. When that decree was sought to be executed\nagainst the 2nd respondent, the 1st respondent obstructed\ndelivery of possession of the premises on the ground that\nhe, as a sub-tenant, had become a tenant under the\nprovisions of the Act. The executing court rejected his\nclaim.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P004_C02",
+      "text": "Thereafter, on May 22, 1962, the 1st respondent\nfiled a suit in the Court of the Senior Subordinate Judge,\nDelhi, against the appellant and respondent 2 praying for a\ndecree for a permanent injunction against the appellant and\nthe 2nd respondent restraining the appellant from taking\npossession of the said premises. The appellant inter alia\ncontended that\nS. 50\nof the Act was a bar to the main-\ntainability of the suit in a civil court. It is not\nnecessary to state the other defences, as nothing turns on\nthem in this appeal. The said plea was rejected in the\nfirst instance by the learned Subordinate Judge, on appeal\nby the learned Senior Subordinate Judge and on Second Appeal\nby the High Court. Hence the appeal. The only question that arises in this appeal is, whether s.\n50 of the Act is a bar to the maintainability of the suit\nfiled by the 1st respondent against the appellant. The learned counsel for the appellant contended that\ns. 50\nof the Act was a bar to the maintainability of the suit, as\ns. 17\nof the Act empowered the Rent Controller to decide a\ndispute in regard to the question whether a person was a\nsub-tenant or not.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P004_C03",
+      "text": "The learned counsel for the 1st respondent contended that\ns.\n17(3)\nof the Act applied only to a case where a dispute\narose during the subsistence of tenancy, that in the instant\ncase the tenancy had come to an end before the Act came into\nforce, that the 1st respondent became a tenant under Sub-s. (2) of\ns. 18\n, that a dispute",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P005_C01",
+      "text": "in regard to the question whether he had become a statutory\ntenant thereunder was not a dispute triable by the Rent\nController and that, therefore\ns. 50\nof the Act was not a\nbar to the maintainability of the suit. Alternatively, the learned counsel for the 1st respondent\ncontended that the 1st respondent had become a tenant under\ns. 20\nof the Delhi and Ajmer Rent Control Act, 1952, that\nthere was no provision in the Act conferring exclusive\njurisdiction on the Rent Controller in respect of the said\nright vested in him before the Act and that, therefore, the\nsuit for a declaration of the said pre-existing right was\nmaintainable in the civil court. The solution to the rival contentions depends on the true\nconstruction of the relevant provisions of the Act. Under\ns. 50\nof the Act, no civil court shall entertain any suit in\nrespect of a matter which the Controller is empowered by or\nunder the Act to decide. If the Controller, in exercise of\nthe power conferred on him under the Act, can decide the\ndispute in respect of the claim of the 1st respondent to a\nstatutory tenancy, there cannot by any doubt that his suit\nis not maintainable in a civil court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P005_C02",
+      "text": "S. 17(3)\nof the Act\non which reliance is placed for invoking the aid of s. 50\nreads:\n\"Where in any case mentioned in sub-section\n (2), the landlord contests that the premises\n were not lawfully sublet, and an application\n is made to the Collector in this behalf,\n either by the landlord or by the sub-tenant,\n within two months of the date of the\n receipt of the notice of subletting by the\n landlord or the issue of the notice by the\n tenant or the sub-tenant, as the case may be,\n the Controller shall decide the dispute.\"\nUnder this sub-section, the Controller is empowered to\ndecide a dispute between the landlord and his sub-tenant in\nrespect of any case mentioned in sub-s. (2) of\ns. 17\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P005_C03",
+      "text": "Sub-\nsection (2) of\ns. 17\nof the Act says :\n\"Where, before the commencement of this Act,\n any premises have been lawfully sub-let either\n in whole or in part by the tenant, the tenant\n or the sub-tenant to whom the premises have\n been sub-let may, in the prescribed manner,\n give notice to the landlord of the creation of\n the subtenancy within six months of the\n commencement of this Act, and notify the\n termination of such sub-tenancy within one\n month of such termination.\"\nTo invoke this sub-section three conditions shall be\ncomplied with, namely, (i) the premises shall have been\nlawfully sub-let by the tenant, (ii) the sub-letting shall\nhave been before the commence-\nSup.Cl/66-12",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P006_C01",
+      "text": "ment of the Act, and (iii) such tenant or sub-tenant shall\nhave given a notice to the landlord of the creation of the\nsub-tenancy within six months of the commencement of the Act\nand notified the termination of such sub-tenancy within one\nmonth of such termination. The dispute referred to in sub.\ns. (3) of\ns. 17\nis in regard to such sub-tenancy. It is\nmanifest from the provisions of sub-s. (2) that the said\nprovision applies only during the period ,of subsistence of\nthe tenancy created before the commencement of the Act. But, if the tenancy itself ceased to exist before the corn-\nmencement of the Act, the said sub-section has no\napplication. If the tripartite relationship of landlord,\ntenant and sub-tenant had ceased to exist before the\ncommencement of the Act, no question of giving notice\nprescribed thereunder would arise. If subs. (2) does Dot\napply to such a case, a dispute raised between them cannot\nbe raised before the Controller under sub-s. (3) of\ns. 17\nof the Act. If that be the construction of sub-s. (2) and\n(3) of\ns. 17\nof the Act, s. 18(1) thereof would not equally\nhelp the appellant. Under sub-s.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P006_C02",
+      "text": "(1) of\ns. 18\nwhere an\norder for eviction ill respect of' any premises is made\nunder s. 14 against a tenant but not against a sub-tenant\nreferred to in\ns. 17\nand a notice of the subtenancy has been\ngiven to the landlord, the sub-tenant shall, with effect\nfrom the date of the order, be deemed to become a tenant\nholding directly under the landlord in respect of the\npremises in his occupation on the same terms and conditions\non which the tenant would have held from the landlord, if\nthe tenancy had continued. This section also applies to a\ncase of subsisting tenancy after the Act came into force. The reference to\ns. 14\npresupposes that an eviction order\nhas been made against the tenant after the Act came into\nforce. The sub-tenant mentioned therein is the sub-tenant\nreferred to in\ns. 17\nand in respect of whose sub-tenancy a\nnotice has been given to the landlord, that is to say, a\nsub-tenant of a tenant during the subsistence of' his\ntenancy. In such a case the sub-tenant becomes a statutory\ntenant. This section cannot have any application to a case\nwhere the tenancy ceased to exist before the commencement of\nthe Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P006_C03",
+      "text": "Sub-section (2) of\ns. 18\nreads:\n\"Where, before the commencement of this Act,\n the interest of a tenant in respect of any\n premises has been determined without\n determining the interest of any sub-tenant to\n whom the premises either in whole or in part\n had been lawfully sub-let, the sub-tenant\n shall, with effect from the date of the\n commencement or this Act, be deemed to have\n become a tenant holding directly under the\n landlord on the same terms and conditions on\n which the tenant would have held from the\n landlord, if the tenancy had continued.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P007_C01",
+      "text": "This sub-section applies to a case where the interest of a\ntenant had been determined before the commencement of the\nAct, but the interest of the sub-tenant was allowed to\nsubsist. In such a case, the sub-tenant shall with effect\nfrom the date of the commencement of the Act be deemed to\nhave become, by a statutory fiction, a tenant under the\nlandlord. This situation could arise before the\ncommencement of the Act either because of a statute,\ncontract or a decree. Any dispute raised by such a sub-\ntenant does not fall under sub-s. (3) of\nS. 17\nof the Act,\nfor, as we have said, the said sub-section applies only to a\ncase where a dispute arises during the subsistence of the\nmain tenancy after the Act came into force. If so, as there\nis no other provision in the Act under which a dispute in\nrespect of such a sub-tenancy could be decided by the\nController, S. 50 cannot have a bearing on the maintain-\nability of a suit filed in respect of such a sub-tenancy. If that be the construction of the relevant provisions of\nthe Act, the 1st respondent is not hit by the provisions of\nS. 50\nof the Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P007_C02",
+      "text": "The landlord by obtaining a decree for\neviction against the 2nd respondent put an end to the\ntenancy before the commencement of the Act. The Sub-tenancy\nof the 1st respondent was not determined by the decree, is\nlie was neither a party to the suit nor his rights were put\nin issue therein. He can, therefore, claim to be a tenant\nunder\nS. 18(2)\nof the Act. As S. 50 does not apply to him,\nhe can file a Suit in a. civil Court for a declaration of\nhis right thereunder. The same result will flow if we look at the matter from a\ndifferent aspect. Under S. 20 of the Delhi and Ajmer Reiit\nControl Act, 1962, on the eviction of the tenant, the sub-\ntenant would be deemed to have become a tenant of the\nlandlord. The appellant obtained a decree for eviction\nagainst the 2nd respondent on January 30, 1959. The Act\ncame into force subsequently. He had therefore acquired a\nvested right under the Act of 1952. No provision of the Act\nhas been pointed Out to us which took way that right. There\nwas also no provision under the Act empowering the Controler\nto decide a dispute raised in regard to the said right\nvested in the 1st respondent.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P007_C03",
+      "text": "If so, it follows that\nS. 50\nof the Act cannot be a bar to the suit filed by the 1st\nrespondent for a declaration of his said right. The view expressed by us finds support in the unreported\njudgment of Mehar Singh, J. of the Punjab High Court,\nCircuit BeBench at Delhi in Smt. Viran Wati Devi and\nanother v. Jaswant Rai and mother(1). There, the learned\nJudge, after considering the provisions of sub-ss. (2) and\n(3) of\nS. 17\nof the Act, observed\n \"It ippeai-s to me obvious on a plain reading\n of those two sub-sections of\nsection 17\nthat\n the procedure provided\n (1)Civil Revision No. 558-D of 1961 (Decided\n oil 15-2-t962).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P008_C01",
+      "text": "by those sub-sections is available to a tenant\n and his sub-tenant, during the subsistence of\n the tenancy and the sub-tenancy, but where the\n tenancy has ceased to exist or the sub-tenancy\n has ceased to exist those sub-sections are\n apparently not attracted and resort cannot be\n had to their provisions.\"\nThe learned counsel for the appellant relied upon a decision\nof this Court in\nMohd. Mahmood v. Tikam Das\n(1) in support\nof his contention. That case arose under the provisions of\nthe\nMadhya Pradesh Accommodation Control Act, 1961\n. The\nprovisions of that Act, though not in pari materia with the\nprovisions of the Act now in question, are similar to those\nof the Act in many respects. There, the landlord terminated\nthe tenancy before the said Act came into force, filed a\nsuit for ejectment and obtained a decree for eviction on\nJune 23, 1962, after the said Act came into force. The said\nAct came into force on December 40, 1961.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P008_C02",
+      "text": "On June 25 and\n26, 1962, the appellants served notices on the landlord\nunder s. 15(2) of the said Act claiming that as the tenant\nhad sub-let the premises to them before the Act had come\ninto force with the consent of the landlord, they had become\nhis direct tenants under\ns. 16(2)\nof the said Act and on\nJune 28, 1962, the appellants filed a suit against both the\nlandlord and the tenant in a civil court praying for a\ndeclaration that they had, in the circumstances, become\ndirect tenants of the premises under the landlord. On June\n30, 1962, the landlord sent a reply to the notices sent by\nthe appellants in which he denied that the sub-letting by\nthe tenant had been with his consent or was lawful. Here it\nmay be mentioned that\ns. 15(2)\nof that Act corresponds to\ns.\n17(2)\nof the Act and sub-s. (3) of\ns. 15\nof that Act\ncorresponds to sub-s. (3) of\ns. 17\nof the Act. Section\n45(1)\nof that Act, which bars a suit in a civil court is\nanalogous to\ns. 50(1)\nof the Act. If the dispute was one\nthat could be decided by the Rent Controlling Authority\nunder s. 15(3) of that Act, the suit in respect of the\ndispute would not be maintainable by reason of\ns. 45(1)\nthe said Act. Under sub-s.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P008_C03",
+      "text": "(3) of\ns. 15\nof that Act, a sub-\ntenant could make an application to the Rent Controlling\nAuthority for deciding a dispute within two months of the\ndate of issue of notice by him. Instead of filing such an\napplication, the tenants filed a suit in the civil court\nwithin the said time prescribed. On those facts, this Court\nheld by reason of\ns. 45(1)\nof that Act, the suit was not\nmaintainable. But in so holding this Court left open the\nquestion whether such a suit could be filed in a civil court\nafter the period of limitation prescribed under\ns. 15(3)\nthat Act had expired.- This Court observed:\n\"Another question mooted was that the two\n months mentioned in sub-s. (3) only provided a\n special period of\n(1) [1966] 1 S.C.R. 128,131.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P009_C01",
+      "text": "limitation for the application mentioned in it\n and the provision of the period did not mean\n that a Rent Controlling Authority had power to\n decide the matter only if an application had\n been made within that period, so that if no\n such application had been made, after the\n expiry of the period a civil court would have\n jurisdiction to decide a dispute as to whether\n a sub-letting was lawful. The point is that\n the real effect of\ns. 15(3)\nwas to deprive the\n civil court of the jurisdiction to decide that\n dispute for all time. We do not feel called\n upon to decide these questions. They do not\n arise in the present case and it was not said\n that these questions affect the question of\n the competence of the civil court to try the\n present suit. The suit was filed within the\n period of two months during which admittedly\n the Rent Controlling Authorities had\n jurisdiction to decide the dispute on which it\n was based. Whatever may be the jurisdiction\n of a civil court on other facts, in the\n present case it clearly had no jurisdiction to\n entertain the appellants' suit.\"\nThe decision of this Court, therefore, has a limited scope.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR_P009_C02",
+      "text": "It has only held that during the prescribed period under s.\n15(3) of the said Act, no suit would lie in a civil court. In the present case, the suit was filed in the civil court\nbeyond the period prescribed. In the result, the appeal fails and is dismissed with costs. V.P.S. Appeal dismissed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "Nand Kishore vs Ram Kishan & Anr",
+    "case_id": "SC_1966_NAND_KISHORE_VS_RAM_KISHAN_ANR",
+    "court": "Supreme Court of India",
+    "year": "1966",
+    "facts_summary": "There is no\nprovision in the Act under which a dispute in respect of\nsuch a sub-tenancy could be decided by the Controller. Any\ndispute raised by such a sub-tenant does not fall under s.\n17(3), for, s. 17(3) applies only to a case where a dispute\narises during the subsistence of the main tenancy after the\nAct came into force, and where the dispute was raised within\ntwo months of the issue of the notice of sub-letting, by the\ntenant or sub-tenant. [171 A-C]\nMohd. Mamood v. Tikam Das, [1966] 1 S.C.R. 128, explained. Moreover, under\ns. 20\nof the Delhi and Ajmer Rent Control\nAct, 1952, on the eviction of the tenant, the sub-tenant\nwould be deemed to have become a tenant of the landlord. There is no provision in the\nDelhi Rent Control Act, 1958\n,\nwhich took away that vested right or empowered the\nController to decide a dispute raised in regard to it. Section 50, therefore could not have any bearing on the\nmaintainability of the suit. [171 E-G] JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal No. 467 of 1966.\nAppeal by special leave from the judgment and decree dated\nMarch 4, 1965 of the Punjab High Court (Circuit Bench) at\nDelhi in Civil Regular Second Appeal No. 125-D of 1964.",
+    "legal_issues": "The learned counsel for the 1st respondent contended that\ns.\n17(3)\nof the Act applied only to a case where a dispute\narose during the subsistence of tenancy, that in the instant\ncase the tenancy had come to an end before the Act came into\nforce, that the 1st respondent became a tenant under Sub-s. (2) of\ns. 18\n, that a dispute by those sub-sections is available to a tenant\n and his sub-tenant, during the subsistence of\n the tenancy and the sub-tenancy, but where the\n tenancy has ceased to exist or the sub-tenancy\n has ceased to exist those sub-sections are\n apparently not attracted and resort cannot be\n had to their provisions.\"\nThe learned counsel for the appellant relied upon a decision\nof this Court in\nMohd. Mahmood v. Tikam Das\n(1) in support\nof his contention. That case arose under the provisions of\nthe\nMadhya Pradesh Accommodation Control Act, 1961\n. The\nprovisions of that Act, though not in pari materia with the\nprovisions of the Act now in question, are similar to those\nof the Act in many respects. There, the landlord terminated\nthe tenancy before the said Act came into force, filed a\nsuit for ejectment and obtained a decree for eviction on\nJune 23, 1962, after the said Act came into force. The said\nAct came into force on December 40, 1961.",
+    "ratio_summary": "HEADNOTE:\nThe landlord of the premises in dispute, obtained a decree\nfor ejectment against his tenant before the commencement of\nthe\nDelhi Rent Control Act, 1958\n. The sub-tenant was not a\nparty to that suit and the sub-tenancy was not determined by\nthat decree. In 1962, the subtenant filed a suit against\nthe landlord claiming to have become a statutory tenant of\nthe premises. The landlord contended that under\ns. 50\nthe Act, no civil court shall entertain any suit in respect\nof a matter which the Controller is empowered by or under\nthe Act to decide, and that as\ns. 17(3)\nof the Act empowered\nthe Controller to decide a dispute in regard to the question\nwhether a person was a sub-tenant or not, the ,suit was not\nmaintainable. HELD :\nSection 50\nwas not a bar to the suit. The provision of the Act applicable to a case where the\ninterest of a tenant had been determined before the\ncommencement of the Act, but the interest of the sub-tenant\nwas allowed to subsist is\ns. 18(2)\n. Under this sub-section\nthe sub-tenant shall, with effect from the date of the\ncommencement of the Act, be deemed to have become, by a\nstatutory fiction, a tenant under the landlord. A.K. Sen, E. C. Agarwal and P. C. Agarwala, for the\nappellant. Gauri Dayal for the respondents. The Judgment of the Court was delivered by\nSubba Rao, C. J. This appeal by special leave raises the\nquestion of the construction of some of the provisions of\nthe\nDelhi Rent Control Act, 1958\n(Act 59 of 1958),\nhereinafter called the Act. A",
+    "final_order": "It has only held that during the prescribed period under s.\n15(3) of the said Act, no suit would lie in a civil court. In the present case, the suit was filed in the civil court\nbeyond the period prescribed. In the result, the appeal fails and is dismissed with costs. V.P.S. Appeal dismissed.",
+    "outcome_summary": "Dismissed. It has only held that during the prescribed period under s.\n15(3) of the said Act, no suit would lie in a civil court. In the present case, the suit was filed in the civil court\nbeyond the period prescribed. In the result, the appeal fails and is dismissed with costs. V.P.S. Appeal dismissed.",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

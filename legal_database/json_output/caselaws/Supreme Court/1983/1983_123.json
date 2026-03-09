@@ -1,0 +1,401 @@
+{
+  "case_id": "SC_1983_1983_123",
+  "case_name": "Charanji Lal vs State Of Punjab",
+  "normalized_case_name": "CHARANJI_LAL_VS_STATE_OF_PUNJAB",
+  "court": "Supreme Court of India",
+  "year": "1983",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "25 October 1983",
+  "judges": [
+    "A.P.  Sen",
+    "D.P. Madon"
+  ],
+  "author": "A.P.  Sen",
+  "bench_type": "division",
+  "petitioner": "Charanji Lal",
+  "respondent": "State Of Punjab",
+  "reporter_citations": [],
+  "outcome": "partly allowed",
+  "disposition": "partly_allowed",
+  "cites_count": 11,
+  "cited_by_count": 48,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1984 AIR 80",
+    "1984 SCR (1) 513",
+    "AIR 1984 SUPREME COURT 80",
+    "1984 (1) SCC 329",
+    "1984 UJ (SC) 170",
+    "1983 (2) FAC 186",
+    "1983 CURCRIJ 39",
+    "1983 UP CRIR 325",
+    "1983 FAJ 435",
+    "1984 SCC(CRI) 77",
+    "1984 ALL WC 11",
+    "1984 BBCJ 35",
+    "1984 CRIAPPR(SC) 38",
+    "(1984) SC CR R 84",
+    "(1983) 2 FAC 186",
+    "(1983) 2 CRIMES 850",
+    "(1984) EFR 56",
+    "(1984) 1 RECCRIR 155",
+    "(1984) ALLCRIR 1",
+    "(1984) ALLCRIC 82",
+    "(1984) CHANDCRIC 8",
+    "(1984) ALLCRILR 136"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1983\\1983_123.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1983_1983_123_P001_C01",
+      "text": "ACT:\nPrevention of Food Adulteration Act, 1954\n-Proviso to\nsub-s. (2C) of\ns. 13\n-Words-Lost or damaged-Appearing in\nproviso-Interpretation of. Lost-Not confined to loss only\nafter actual despatch of sample but includes loss after\ncourt order for despatch of sample. Damage-means damage due\nto any reason including decomposition taking place either\nbefore or after order of the court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1983_1983_123_P002_C01",
+      "text": "HEADNOTE:\n Interpretation of statute-Rule of-Words used by\nlegislature do not always bear a plain meaning. Words and phrases-Damage-Meaning of.\n^\n A Food Inspector took a sample of kutcha khoya from the\nshop of the appellant and after dividing it into three equal\nparts and sealing them, sent one part to the public analyst\nand the other two parts to the Local (Health) Authority. On\nanalysis the public analyst found the sample to be\nadulterated, but the fat content of the sample was reported\nto be 25%. Prosecution was launched against the appellant\nunder the\nPrevention of Food Adulteration Act, 1954\n. On\nappellant's request under sub-s. (2) of\ns. 13\nof the Act the\ntrial court sent one of the remaining two parts of the\nsample to the Director, Central Food Laboratory, Calcutta\nfor purposes of analysis under sub-s. (2B). The Director\nintimated that the sample received by him was decomposed and\ntherefore unfit for analysis and asked for the counter-part\nof the sample.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1983_1983_123_P002_C02",
+      "text": "After a period of six months the trial court\nforwarded the remaining part of the sample to the Director,\nCentral Food Laboratory, Ghaziabad who reported that the\nsample was adulterated, but found that the fat content of\nthe sample was 33.12%. The trial court acquitted the\nappellant. On appeal by the State the High Court convicted\nthe appellant. The questions which arose in this appeal\nwere: (i) whether the part of the sample sent by the trial\ncourt to the Director, Central Food Laboratory Calcutta was\ndamaged within the meaning of proviso to sub-s. (2C) of\ns.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1983_1983_123_P003_C01",
+      "text": "of the Act and (ii) whether the katcha khoya sold by the\nappellant was adulterated within the meaning of\ns. 2 (ia)\n(1)\nof the Act.\n Partly allowing the appeal and partly remitting the\nmatter to the High Court,\n^\n HELD : The problem of interpretation is a problem of\nmeaning of words and their effectiveness to communicate a\nparticular thought. In all ordinary cases primarily the\nlanguage employed is the determining factor, but words used\nby the Legislature do not always bear a plain meaning.\n[520H; 521A]",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1983_1983_123_P004_C01",
+      "text": "The word \"damaged\" in the collocation of the words\n\"lost or damaged\" appearing in the proviso to sub-s. (2C) of\ns. 13\nin relation to the part of the sample sent by the\ncourt to the Director of the Central Food Laboratory must,\nin the context, mean \"damaged due to any cause, including\ndecomposition\". The word \"damaged\" must be construed in\nfurtherance of the object and purpose of inserting the\nprovisions. The whole purpose of depositing two parts of the\nsample with the Local (Health) Authority is that if one of\nthe parts of the sample is lost or damaged for any reason\nwhatever the remaining part may still be available for\nanalysis. [522 E; G-H]\n State v. Joginder Lal Kapoor, (1980) 1 FAC 86 approved. Ram Prakash v. State of Himachal Pradesh (1979) Crl. L.J. 750 and Darshan Lal v. State of Punjab (1982) 1 FAC 290\noverruled. It is not necessary that the loss contemplated by the\nproviso to sub-s. (2C) of\ns. 13\nshould take place only after\nthe actual despatch of the part of the sample to the Central\nFood Laboratory has commenced.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1983_1983_123_P004_C02",
+      "text": "Even if that part of the\nsample is lost after the court has directed it to be sent\nand before the actual transit has commenced, that part of\nthe sample would be \"lost\" within the meaning of the proviso\nto sub s. (2C) of\ns. 13\n. So far as damage in the sense of\ndecomposition of that part of the sample sent to the Central\nFood Laboratory is concerned, it may take place either\nbefore or after the Court directs its despatch to the\nCentral Food Laboratory. If damage in the sense of\ndecomposition were to be interpreted to mean decomposition\ntaking place during the course of transit, it would\nfrustrate the very object of Parliament in enacting the\nproviso to sub-s. (2C) of\ns. 13\n. [524 B-D]\n State v. Joginder Lal Kapoor (1980) 1 FAC 86 overruled. In the instant case there are certain aspects which are\nrather disturbing. It is not clear as to how the fat content\nof the same article of food the sample of which, according\nto the report of the Public Analyst was 25% went up to\n33.12% as appears from the report of the Director, Central\nFood Laboratory, Ghaziabad dated December 7,1978. Further,\nit is also not clear that when the fat content of the sample\nwas 33.12% and the R.M.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1983_1983_123_P004_C03",
+      "text": "Value of the extracted fat was\n20.37%, still the Director on analysis found the sample to\nbe adulterated Was it due to the presence of any substance\nnot found in milk like sesame oil (til oil) as found by the\nPublic Analyst, Chandigarh or was it that there was a higher\nfat content prescribed for khoya for the State of Punjab as\nappears from the appended note to the report ? These are\nsome of the aspects which require investigation. There is no\nother alternative but to remit the matter to the High Court\nfor a decision a fresh.[526 D-F]",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1983_1983_123_P005_C01",
+      "text": "JUDGMENT:\nCRIMINAL APPELLATE JURISDICTION : Criminal Appeal No.\n462 of 1983.\nAppeal by Special leave from the Judgment and Order\ndated the 5th March, 1980 of the Punjab and Haryana High\nCourt in Criminal Appeal No. 525 DBA of 1980.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1983_1983_123_P006_C01",
+      "text": "P.P. Rao, R. Venkataramani and A. Mariaaputham, for the\nAppellant. S.K. Bagga for the Respondent. The Judgment of the Court was delivered by\n SEN, J. This appeal by special leave is directed\nagainst the judgment and sentence of the Punjab & Haryana\nHigh Court dated March 3, 1982 by which the High Court has\nset aside the order of acquittal recorded by the Judicial\nMagistrate, First Class, Moga dated March 14, 1980 and\nconvicted the appellant under s. 7 read with s. 16 (i) (a)\n(i) of the\nPrevention of Food Adulteration Act, 1954\n(`Act'\nfor short) and sentenced him to undergo rigorous\nimprisonment for a period of six months and fine of Rs.\n1000/-, and in default, rigorous imprisonment for a further\nperiod of three months. The questions in this appeal are, firstly, a question\nof law as to whether the word `damaged' appearing in the\nproviso to sub-s. (2C) of\ns. 13\nof the Act is susceptible of\na wider construction as to include damage due to any cause\nincluding decomposition; and secondly a mixed question of\nfact and law, as to whether the kutcha khoya sold by the\nappellant was `adulterated' i.e. not of the nature,\nsubstance or quality prescribed by law. The relevant facts are these.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1983_1983_123_P006_C02",
+      "text": "The appellant runs a\nsweetmeat shop at Sadar Bazar, Moga. On January 3, 1978 Dr. Paramjit Singh, Medical Officer, R.D. Ramnagar, district\nFaridkot, PW 2 along with Dr. Narinder Kumar, PW 3 visited\nthe shop of the appellant, disclosed his identity as a Food\nInspector and demanded 750 grammes of kutcha khoya for\nanalysis and purchased the same. The Food Inspector divided\nthe kutcha khoya so purchased into three equal parts, put\nthem into three polythene packs and added 18 drops of\nformalin to each. The polythene packs were wrapped, labelled\nand sealed as required under\ns. 11 (1) (b)\n. One part of the\nsample was sent by the Food Inspector to the Public Analyst,\nChandigarh and the remaining two parts to the Local (Health)\nAuthority, Faridkot as required by cl. (a) of sub-s. (1) of\ns. 11\nfor purposes of sub-s. (2) thereof and sub-s. (2A) and\n(2E) of s. 13. The Public Analyst, Chandigarh by his report\ndated February 3, 1978 found the sample to be adulterated\nwith sesame oil (til oil) besides being insect",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1983_1983_123_P007_C01",
+      "text": "infested. The fat content of the sample was reported to be\n25%. On the basis of the report of the Public Analyst, the\nFood Inspector lodged a complaint against the appellant\nbefore the Judicial Magistrate, First Class, Moga. The\nappellant entered appearance and duly exercised his right\nunder sub-s. (2) of s. 13. The learned Magistrate sent one\nof the two parts of the sample to the Director of the\nCentral Food Laboratory, Calcutta for purposes of analysis\nunder sub s. (2B) and the remaining part to the Local\n(Health) Authority as required under sub-s. (2C) of\ns. 13\nthe Act. The Director by his letter dated May 2, 1978\nintimated that the sample received by him was decomposed and\ntherefore unfit for analysis and added that the counter-part\nof the sample may be sent to him immediately for analysis\nand report. It appears that for a period of six months\napparently nothing was done. On November 10, 1978 the\nlearned Magistrate forwarded the remaining part of the\nsample to the Director of Central Food Laboratory, Ghaziabad\nfor purposes of analysis. The report of the Director,\nCentral Food Laboratory, Ghaziabad dated December 7, 1978\nrevealed that the sample was adulterated.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1983_1983_123_P007_C02",
+      "text": "The fat content\nwas however stated to be 33.12% with a note added that \"the\nextracted fat of 20.37% did not comply with the standards of\nmilk fat for the State of Punjab\". At the conclusion of the\narguments, an application was made by the prosecution for\nclarification to be sought from the Director, Central Food\nLaboratory, Ghaziabad since the report was not clear, The\nlearned Magistrate however rejected the application and\nproceeded to judgment. He held that the certificate of the\nDirector, Central Food Laboratory, Ghaziabad had the effect\nof superseding the report of the Public Analyst, Chandigarh\nunder sub-s. (3) of s. 13 and therefore it could not be\nlooked into. He further relied upon a decision of the\nHimachal Pradesh High Court in Ram Prakash v. State of\nHimachal Pradesh(1) and held that the certificate of the\nDirector, Central Food Laboratory, Calcutta that the sample\nhad become unfit for analysis had become final and therefore\nthere was no occasion for sending the remaining part of the\nsample to the Director, Central Food Laboratory, Ghaziabad\nfor analysis.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1983_1983_123_P007_C03",
+      "text": "He also held that even assuming that the\nsample sent to the Director, Central Food Laboratory,\nCalcutta had become `damaged' within the meaning of proviso\nto sub-s. (2C) of s. 13 and therefore he could proceed in\nthe manner provided by sub-s. (2B), the report of the\nDirector, Central Food Laboratory, Ghaziabad showed the fat\ncontent to be 33.12% i.e. in",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1983_1983_123_P008_C01",
+      "text": "excess over the minimum standard of 20% for khoya prescribed\nunder the rules and therefore the khoya could not be treated\nto be adulterated. In this view, the learned Magistrate\nacquitted the appellant of the charge under\ns. 7\nread with\ns. 16 (i) (a) (i)\nof the Act. On appeal preferred by the State Government, the High\nCourt disagreed with the view taken by the Himachal Pradesh\nHigh Court in Ram Prakash's case, supra, and held that it\nwas not permissible to put a narrow construction on the word\n`damaged' used in proviso to sub-s. (2C) of\ns. 13\n. According\nto the High Court, a sample may be `lost or damaged' within\nthe meaning of proviso to sub-s. (2C) of s. 13 while in\ntransit due to contamination or for various other reasons\nand therefore if another part of the sample was available,\nit could still be examined afresh. Further, it observed that\nthe remaining part of the sample was sent to the Director,\nCentral Food Laboratory, Ghaziabad for analysis without any\nobjection by the appellant nor had any prejudice been caused\nto him. The High Court dealt with the evidence and relying\nupon the testimony of Dr. Paramjit Singh, PW 2 and Dr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1983_1983_123_P008_C02",
+      "text": "Narinder Kumar, PW 3 held that the appellant had sold an\narticle of adulterated food and was therefore guilty of an\noffence punishable under\ns. 7\nread with\ns. 16 (i) (a) (i)\nthe Act and sentenced him as above. In this appeal, two questions are involved, namely :\n(1) Whether the part of the sample sent by the learned\nMagistrate to the Director, Central Food Laboratory,\nCalcutta was `damaged' within the meaning of proviso to sub-\ns. (2C) of\ns. 13\nof the Act to enable him to proceed in the\nmanner provided in sub-s. (2B) i.e. forward the remaining\npart of the sample to the Director, Central Food Laboratory,\nGhaziabad; and (2) Whether the kutcha khoya sold by the\nappellant was adulterated within the meaning of\ns. 2 (ia)\n(1)\nof the Act. To appreciate the contentions raised, it is necessary\nto set out the relevant provisions. The expression\n`adulterated' is defined in s. 2 (ia) (1) of the Act which\nreads :\n\"2. Definitions : In this Act unless the context\n otherwise requires,-\n(ia) \"adulterated\"-an article of food shall be\n deemed to be adulterated-",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1983_1983_123_P009_C01",
+      "text": "(1) if the quality or purity of the article falls\n below the prescribed standard or its\n constituents are present in quantities not\n within the prescribed limits of variability,\n which renders it injurious to health.\"\nSub-ss.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1983_1983_123_P009_C02",
+      "text": "(2B) and (2C) of s. 13 of the Act provide as follows\n:\n\"(2B) : On receipt of the part or parts of the\n sample from the Local (Health) Authority under sub-\nsection (2A), the court shall first ascertain that the\n mark and seal or fastening as provided in clause (b) of\n sub-section (1) of\nSection 11\nare intact and the\n signature or thumb-impression, as the case may be, is\n not tampered with, and despatch the part or, as the\n case may be, one of the parts of the sample under its\n own seal to the Director of the Central Food Laboratory\n who shall thereupon send a certificate to the court in\n the prescribed from within one month from the date of\n receipt of the part of the sample specifying the result\n of the analysis.\"\n\"(2C) : Where two parts of the sample have been\n sent to the court and only one part of the sample has\n been sent by the court to the Director of the Central\n Food Laboratory under sub-section (2B), the court\n shall, as soon as possible, return the remaining part\n to the Local (Health) Authority and that Authority\n shall destroy that part after the certificate from the\n Director of the Central Food Laboratory has been\n received by the court :\nProvided that where the part",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1983_1983_123_P009_C03",
+      "text": "of the sample sent by\n the court to the Director of the Central Food\n Laboratory is lost or damaged, the court shall require\n the Local (Health) Authority to forward the part of the\n sample, if any, retained by it to the court and on\n receipt thereof, the court shall proceed in the manner\n provided in subsection (2B).\"\nThe question is whether the kutcha khoya sold by the\nappellant was not of the nature, substance or quality which\nit purported or represented to be.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1983_1983_123_P009_C04",
+      "text": "Sub-s. (1) of s. 23\nconfers powers on the Central Government, after consultation\nwith the Central Committee for Food",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1983_1983_123_P010_C01",
+      "text": "Standards constituted under\ns. 4\n, to make rules to carry out\nthe purposes of the Act. In particular and without prejudice\nto the generality of the foregoing power, sub-s. (1A) enacts\nthat such rules may provide for all or any of the matters\nenumerated therein. One of the subjects upon which rules can\nbe made is defining the standards of quality for, and fixing\nthe limits of variability permissible in respect of, any\narticle of food. In exercise of the powers conferred by\ns.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1983_1983_123_P011_C01",
+      "text": "of the Act, the Central Government framed the Prevention\nof Food Adulteration Rules, 1955 (`Rules' for short). R. 5\nof the Rules provides that the standards of quality of the\nvarious articles of food specified in Appendix to the Rules\nshall be as defined therein. Standards of quality and limits\nof variability fixed by the Central Government in Appendix B\nare not subject to alteration or variation by the courts. Definitions of milk of various descriptions for each of\nwhich standards have been laid down are in A. 11.01. There\nis a separate provision made with regard to milk products. A.11.02 defines milk products obtained from milk such as\ncream malai, curd, skimmed milk curd, chhanna, skimmed milk\nchhanna etc. and includes khoya. A.11.02.01 contains the\nfollowing prescription :\n\"Milk products specified in Appendix B shall not\n contain any substance not found in milk unless\n specified in the standards.\"\nA.11.02.17 prescribes the standards of quality for khoya and\nit reads:\n\"Khoya means the product obtained from cow or\n buffalo or goat or sheep milk or a combination thereof\n by rapid drying.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1983_1983_123_P011_C02",
+      "text": "The milk fat content shall not be less\n than 20 per cent of the finished product.\"\nIt appears that the attention of the High Court was not\ndrawn to the finding reached by the learned Magistrate based\non the report of the Director, Central Food Laboratory,\nGhaziabad. It revealed the fat content of the sample to be\n33.12% and R.M. value of extracted fat to be 2037% i.e. more\nthan the minimum prescribed standard of 20% under item A.\n11.02.17 of Appendix B to the Rules. The High Court has not\ntouched upon the finding recorded by the learned Magistrate\nthat the article of food was not adulterated and that the\nreport of the Director, Central Food Laboratory, Ghaziabad",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1983_1983_123_P012_C01",
+      "text": "could not form the basis for conviction. True it is, under\nproviso to sub-s. (5) of\ns. 13\nof the Act, the certificate\nof the Director, Central Food Laboratory, Ghaziabad is final\nand conclusive evidence of the facts stated therein, and it\nstates that the sample was `adulterated'. At the same time,\nthe fat content in the report was shown to be in excess of\nthe minimum fat content prescribed under item A. 11.02.17\nwith a note appended that `the extracted fat content did not\ncomply with the standards of milk fat for the State of\nPunjab'. There is no material on record to show that any\nseparate fat content for khoya has been prescribed under\nitem A. 11.02.17 for the State of Punjab. We gave time to\nlearned counsel for the State to enlighten us on the\nsubject, but he has not been able to place on record any\nnotification issued by the Central Government in that\nbehalf. The contention is that unless the khoya was found to\nbe adulterated within the meaning of\ns. 2 (ia) (1)\nof the\nAct, the appellant could not obviously be convicted for\nhaving committed an offence punishable under\ns. 7\nread with\ns. 16 (i) (a) (i)\nof the Act. There are certain aspects of the case which are rather\ndisturbing.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1983_1983_123_P012_C02",
+      "text": "It is not clear as to how the fat content of the\nsame article of food the sample of which, according to the\nreport of the Public Analyst, Chandigarh dated February 3,\n1978 was 25%, went up to 33.12% as appears from the report\nof the Director, Central Food Laboratory, Ghaziabad dated\nDecember 7, 1978. Further, it is also not clear that when\nthe fat content of the sample was 33.12% and the R.M. value\nof the extracted fat was 20.37%, still the Director on\nanalysis found the sample to be adulterated. Was it due to\nthe presence of any substance not found in milk like sesame\noil (til oil) as found by the Public Analyst, Chandigarh or\nwas it that there was a higher fat content prescribed for\nkhoya for the State of Punjab as appears from the appended\nnote ? These are some of the aspects which require\ninvestigation. There is no other alternative but to remit\nthe matter to the High Court for a decision afresh. The High\nCourt may call for a clarification from the Director,\nCentral Food Laboratory, Ghaziabad, or take such other steps\nas it deems fit. Turning now to the main question as to the real meaning\nof the word \"damaged\" which occurs in the proviso to sub-s.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1983_1983_123_P012_C03",
+      "text": "(2C) of s. 13 of the Act, it must be construed in\nfurtherance of the intention of the Legislature. The problem\nof interpretation is a problem of meaning of words and their\neffectiveness to communicate a particular thought. In all\nordinary cases primarily the language employed is",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1983_1983_123_P013_C01",
+      "text": "the determining factor, but words used by the Legislature do\nnot always bear a plain meaning. The word \"damaged\" must\ntake its colour from the context in which it appears. It\nwill be seen that the word \"damaged\" in the collocation of\nthe words \"lost or damaged\" appears both in sub-s. (2) of\ns.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1983_1983_123_P014_C01",
+      "text": "and in the proviso to sub-s. (2C) of\ns. 13\nand it is\ntherefore necessary to ascertain the purpose and object of\ninserting these provisions, and the mischief sought to be\navoided by the Legislature. It is necessary to keep in view\nthe fact that Act 34 of 1976 has changed the whole procedure\nof taking samples for purposes of analysis. These changes\nhave been brought about by Parliament with a view to prevent\ncertain malpractices. It is clearly plain from the report of\nthe Joint Select Committee on the Bill to amend the Act that\nthese provisions are intended and meant to check the Food\nInspectors from indulging in corrupt practices. The\nprocedure prescribed under the Act prior to the amendment\nwas that a Food Inspector was under an obligation to give\none of the parts of the sample to the person from whom the\nsample was taken, send another part to the Public Analyst,\nand retain the third part for production in case any legal\nproceedings were taken, or for analysis by the Director of\nthe Central Food Laboratory, as the case may be.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1983_1983_123_P014_C02",
+      "text": "Experience\nin the past showed that after a Food Inspector had sent one\npart of the sample for analysis, the remaining part i.e. one\ngiven to the vendor, and the other kept with the Food\nInspector, were usually tampered with, with the result that\nprosecutions under s. 7 read with\ns. 16 (i) (a) (i)\nof the\nAct invariably failed because of the breach of the\nprovisions of sub-s. (2) of\ns. 13\nof the Act which entitles\nthe accused to have the remaining part of the sample sent to\nthe Director of the Central Food Laboratory for analysis. It is pertinent to observe that along with the changes\nbrought about in\ns. 11\ndealing with the procedure to be\nfollowed by a Food Inspector, a new\ns. 13\nhas been inserted\nby Act 34 of 1976. After the amendment when a sample of\narticle of food is taken, there is a duty cast upon a Food\nInspector under s. 11 (1) (c) (i) to send one of the three\nparts of the sample for analysis to the Public Analyst under\nintimation to the Local (Health) Authority. Under\ns. 11 (3)\nhe must do so by the immediately succeeding working day.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1983_1983_123_P014_C03",
+      "text": "is further required under s. 11 (1) (c) (ii) to send the\nremaining two parts to the Local (Health) Authority for the\npurpose of being utilized under sub-s. (2) of\ns. 11\n, or sub-\nss. (2A) and (2E) of\ns. 13\n, also not later than by the\nsucceeding working day under r. 17 (b).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1983_1983_123_P015_C01",
+      "text": "Under sub-s. (2) of\ns. 11\n, if the sample sent to the Public\nAnalyst it lost or damaged, the Local (Health) Authority is\nempowered, on a requisition made by the Public Analyst or\nthe Food Inspector, to despatch one of the parts of the\nsample sent to it under\ns. 11 (1) (c) (ii)\nfor analysis. Under the scheme of the Act, the remaining two parts of\nthe sample are kept with the Local (Health) Authority in\norder that in case the part of the sample sent to the Public\nAnalyst under s. 11 (1) (c) (i) is lost or damaged, or one\nof the remaining two parts of the sample sent by the Court\nto the Director of the Central Food Laboratory under sub-s. (2B) of s. 13 is lost or damaged, the remaining part or\nparts are preserved for further analysis by the Public\nAnalyst, or the Director of the Central Food Laboratory, as\nthe case may be. It would be seen that the phrase `lost or\ndamaged' appears both in sub-s. (2) of\ns. 11\nand in the\nproviso to sub-s. (2C) of\ns. 13\n, and these provisions have\nbeen inserted by Parliament with a definite object. The word \"damaged\" in the collocation of the words\n\"lost or damaged\" appearing in the proviso to sub-s.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1983_1983_123_P015_C02",
+      "text": "(2C) of\ns. 13\nin relation to the part of the sample sent by the\ncourt to the Director of the Central Food Laboratory must,\nin the context, mean \"damaged due to any cause, including\ndecomposition\". The part of the sample sent by the Court to\nthe Director of the Central Food Laboratory under the\nproviso to sub-s. (2C) of\ns. 13\nmay be either damaged due to\nthe container not being properly sealed or fastened, or due\nto various other causes including breakage of the container,\nor because decomposition has occurred, or it may be lost in\ntransit. The word \"damaged\" in the collocation of the words\n\"lost or damaged\" occurring in sub-s. (2) of\ns. 11\nand in\nthe proviso to sub-s. (2C) of s. 13 must be construed in\nfurtherance of the object and purpose of inserting these\nprovisions. The whole purpose of depositing two parts of the\nsample with the Local (Health) Authority is that if one of\nthe parts of the sample is lost or damaged for any reason\nwhatever, the remaining part may still be available for\nanalysis. There is a conflict of opinion between the High Courts\nand also within the same High Court as to the construction\nof the word",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1983_1983_123_P016_C01",
+      "text": "\"damaged\" used in the proviso to sub-s. (2C) of\ns. 13\nof the\nAct, some of which we have been able to trace out. The\nPunjab & Haryana High Court has itself taken two contrary\nviews, one in the instant case, and the other in\nDarshan Lal\nv. State of Punjab\n(1). The view of the Himachal Pradesh High\nCourt in Ram Prakash's case, supra, and that of the Punjab &\nHaryana High Court in\nDarshan Lal\n's case, supra, is that the\nmeaning of the word \"damaged\" occurring in the proviso to\nsub-s. (2C) of\ns. 13\nmust be controlled by the context and\nit means \"damaged due to the container not being properly\nsealed or fastened\". The view to the contrary has been\nexpressed by the Delhi High Court in\nState v. Joginder Lal\nKapoor\n(2) and by the Punjab & Haryana High Court in the\npresent case that the word \"damaged\" used in the proviso\nmust be given a wider meaning as to include \"damaged due to\nany cause, including decomposition\". Joginder Lal\nKapoor\n's case, supra the Delhi High Court observed that the\nloss or damage contemplated in the proviso to sub-s.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1983_1983_123_P016_C02",
+      "text": "(2C) of\ns. 13\nof the Act must occur after the sample is despatched\nfor analysis to the Central Food Laboratory, and added:\n\"A sample can get damaged for a number of reasons\n including breakage, Leakage and decomposition. The\n possibility of a sample getting decomposed because of\n delay in transit cannot to ruled out. In my view the\n word \"damage\" used in sub-s. (2C) has to be given a\n wider meaning and it would include damage of any nature\n including decomposition but the damage must occur after\n the sample is despatched.\"\nIn Stroud's Judicial Dictionary of Words & Phrases, 3rd\nedn., p. 710, para 9, it is stated: \"You `damage' a thing if\nyou render it imperfect or inoperative\". Decomposition would\nrender a sample useless and of no value for analysis. While\nthe Delhi High Court is right in holding in\nJoginder Lal\nKapoor\n's case, supra, that the word \"damaged\" used in sub-s. (2C) has to be given a wider meaning, it is not possible for\nus to subscribe to the view that the loss or damage",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1983_1983_123_P017_C01",
+      "text": "must occur after the sample is despatched for analysis to\nthe Central Food Laboratory. We are inclined to think that\nthe word \"damaged\" is wide enough to mean \"damaged due to\nany cause whatever, including decomposition\". To restrict\nthe meaning of the phrase `lost or damaged' would be to\ndefeat the object for which the new\ns. 13\nwas inserted by\nParliament by Act 34 of 1976. It is not necessary that loss\nshould take place only after the actual despatch of the part\nof the sample to the Central Food Laboratory has commenced. From the nature of things, the loss contemplated by the\nproviso to sub-s. (2C) of\ns. 13\nmust take place after the\ncourt has directed one part of the sample to be despatched\nto the Central Food Laboratory, but the course of such\ndespatch is not required to be confined to the period of\nactual transit. Even if that part of the sample is lost\nafter the court has directed it to be sent to the Director\nof the Central Food Laboratory and before the actual transit\nhas commenced, that part of the sample would be \"lost\"\nwithin the meaning of the proviso to sub-s. (2C) of\ns. 13\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1983_1983_123_P017_C02",
+      "text": "So far as the damage to that part of the sample is\nconcerned, if damage in the sense of decomposition were to\nbe interpreted to mean decomposition taking place during the\ncourse of transit, it would frustrate the very object of\nParliament in enacting the proviso to sub-s. (2C) of\ns. 13\n. Decomposition is not something which always takes place\nsuddenly or immediately. It is a process which in some cases\nmay be slow and in some cases quick. Decomposition cannot be\nnoticed or ascertained by the Court when it inspects the\npart of the sample under sub-s. (2B) of\ns. 13\nto ascertain\nwhether the mark and seal or fastening are intact and the\nsignature or thumb-impression, as the case may be, not\ntempered with, before despatching that part to the Central\nFood Laboratory. Even with the mark and seal intact, and the\nsignature or thumb-impression, as the case may be, not\ntampered with, the sample might have already decomposed or\ndecomposing might have already commenced. Whether a sample\nhas decomposed or not can only be ascertained when the\nsealed container is opened in the Central Food Laboratory\nfor the purpose of analysis.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1983_1983_123_P017_C03",
+      "text": "Thus, while from the nature of\nthings loss or external damage to the sample must take place\nafter the Court directs under sub-s. (2B) of\ns. 13\ndespatch\nof the part of the sample, damage in the sense of\ndecomposition of that part of the sample sent to the Central\nFood Laboratory may take place either before or after the\nCourts directs its despatch to the Central Food Laboratory. In either event, that part of the sample would be \"damaged\"\nwithin the meaning of that expression in the proviso to sub-\ns. (2C) of\ns. 13\nof the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1983_1983_123_P018_C01",
+      "text": "With these observations, the appeal partly succeeds and\nis allowed. The judgment and sentence passed by the High\nCourt are set aside and the appeal is remanded to the High\nCourt for a decision afresh with advertence to the\nobservations made above.\nH.S.K. Appeal partly allowed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Charanji Lal vs State Of Punjab",
+    "case_id": "SC_1983_1983_123",
+    "court": "Supreme Court of India",
+    "year": "1983",
+    "facts_summary": "HEADNOTE:\n Interpretation of statute-Rule of-Words used by\nlegislature do not always bear a plain meaning. Words and phrases-Damage-Meaning of.\n^\n A Food Inspector took a sample of kutcha khoya from the\nshop of the appellant and after dividing it into three equal\nparts and sealing them, sent one part to the public analyst\nand the other two parts to the Local (Health) Authority. On\nanalysis the public analyst found the sample to be\nadulterated, but the fat content of the sample was reported\nto be 25%. Prosecution was launched against the appellant\nunder the\nPrevention of Food Adulteration Act, 1954\n. On\nappellant's request under sub-s. (2) of\ns. 13\nof the Act the\ntrial court sent one of the remaining two parts of the\nsample to the Director, Central Food Laboratory, Calcutta\nfor purposes of analysis under sub-s. (2B). The Director\nintimated that the sample received by him was decomposed and\ntherefore unfit for analysis and asked for the counter-part\nof the sample. After a period of six months the trial court\nforwarded the remaining part of the sample to the Director,\nCentral Food Laboratory, Ghaziabad who reported that the\nsample was adulterated, but found that the fat content of\nthe sample was 33.12%. The trial court acquitted the\nappellant. On appeal by the State the High Court convicted\nthe appellant. The questions which arose in this appeal\nwere: (i) whether the part of the sample sent by the trial\ncourt to the Director, Central Food Laboratory Calcutta was\ndamaged within t",
+    "legal_issues": "Value of the extracted fat was\n20.37%, still the Director on analysis found the sample to\nbe adulterated Was it due to the presence of any substance\nnot found in milk like sesame oil (til oil) as found by the\nPublic Analyst, Chandigarh or was it that there was a higher\nfat content prescribed for khoya for the State of Punjab as\nappears from the appended note to the report ? These are\nsome of the aspects which require investigation. There is no\nother alternative but to remit the matter to the High Court\nfor a decision a fresh.[526 D-F] P.P. Rao, R. Venkataramani and A. Mariaaputham, for the\nAppellant. S.K. Bagga for the Respondent. The Judgment of the Court was delivered by\n SEN, J. This appeal by special leave is directed\nagainst the judgment and sentence of the Punjab & Haryana\nHigh Court dated March 3, 1982 by which the High Court has\nset aside the order of acquittal recorded by the Judicial\nMagistrate, First Class, Moga dated March 14, 1980 and\nconvicted the appellant under s. 7 read with s. 16 (i) (a)\n(i) of the\nPrevention of Food Adulteration Act, 1954\n(`Act'\nfor short) and sentenced him to undergo rigorous\nimprisonment for a period of six months and fine of Rs.\n1000/-, and in default, rigorous imprisonment for a further\nperiod of three months. The questions in this appeal are, firstly, a question\nof law as to whether the word `damaged' appearing in the\nproviso to sub-s. (2C) of\ns. 13\nof the Act is susceptible of\na wider construction as to include damage due to any cause",
+    "ratio_summary": "The word \"damaged\" in the collocation of the words\n\"lost or damaged\" appearing in the proviso to sub-s. (2C) of\ns. 13\nin relation to the part of the sample sent by the\ncourt to the Director of the Central Food Laboratory must,\nin the context, mean \"damaged due to any cause, including\ndecomposition\". The word \"damaged\" must be construed in\nfurtherance of the object and purpose of inserting the\nprovisions. The whole purpose of depositing two parts of the\nsample with the Local (Health) Authority is that if one of\nthe parts of the sample is lost or damaged for any reason\nwhatever the remaining part may still be available for\nanalysis. [522 E; G-H]\n State v. Joginder Lal Kapoor, (1980) 1 FAC 86 approved. Ram Prakash v. State of Himachal Pradesh (1979) Crl. L.J. 750 and Darshan Lal v. State of Punjab (1982) 1 FAC 290\noverruled. It is not necessary that the loss contemplated by the\nproviso to sub-s. (2C) of\ns. 13\nshould take place only after\nthe actual despatch of the part of the sample to the Central\nFood Laboratory has commenced. Even if that part of the\nsample is lost after the court has directed it to be sent\nand before the actual transit has commenced, that part of\nthe sample would be \"lost\" within the meaning of the proviso\nto sub s. (2C) of\ns. 13\n. So far as damage in the sense of\ndecomposition of that part of the sample sent to the Central\nFood Laboratory is concerned, it may take place either\nbefore or after the Court directs its despatch to the\nCentral Food Laboratory. If ",
+    "final_order": "With these observations, the appeal partly succeeds and\nis allowed. The judgment and sentence passed by the High\nCourt are set aside and the appeal is remanded to the High\nCourt for a decision afresh with advertence to the\nobservations made above.\nH.S.K. Appeal partly allowed.",
+    "outcome_summary": "Partly allowed. With these observations, the appeal partly succeeds and\nis allowed. The judgment and sentence passed by the High\nCourt are set aside and the appeal is remanded to the High\nCourt for a decision afresh with advertence to the\nobservations made above.\nH.S.K. Appeal partly allowed.",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

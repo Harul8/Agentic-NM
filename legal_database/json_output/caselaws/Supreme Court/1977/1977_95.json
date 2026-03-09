@@ -1,0 +1,512 @@
+{
+  "case_id": "SC_1977_1977_95",
+  "case_name": "Bata Shoe Co vs City Of Jabalpur Corporati",
+  "normalized_case_name": "BATA_SHOE_CO_VS_CITY_OF_JABALPUR_CORPORATI",
+  "court": "Supreme Court of India",
+  "year": "1977",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "11 March 1977",
+  "judges": [
+    "Y.V. Chandrachud",
+    "P.N. Shingal"
+  ],
+  "author": "Y.V. Chandrachud",
+  "bench_type": "division",
+  "petitioner": "Bata Shoe Co",
+  "respondent": "City Of Jabalpur Corporati",
+  "reporter_citations": [
+    "[1968] 3 SCR 662"
+  ],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 24,
+  "cited_by_count": 54,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1977 AIR 955",
+    "1977 SCR (3) 182",
+    "AIR 1977 SUPREME COURT 955",
+    "1977 2 SCC 472 1977 3 SCR 182",
+    "1977 3 SCR 182"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1977\\1977_95.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1977_1977_95_P001_C01",
+      "text": "ACT:\n Central Provinces & Berar Municipalities Act,\n 1922 s. 84(3)--Scope of--Act self-contained Code-\"Objec-\n tions regarding assessment, levy etc. of octroi duty\n shall not be taken in any manner or by any other authority\n than is provided in the Act\"--Suit in a Civil Court--If\n lies.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1977_1977_95_P002_C01",
+      "text": "HEADNOTE:\n The Central Provinces and Berar Municipalities .Act,\n 1922, empowers a municipality to assess and recover octroi\n duty on goods brought within the municipal limits for sale.\n consumption and use therein. Under the Act an appeal\n against assessment or levy or refusal to refund any tax lies\n to a designated official. A person aggrieved by the decision\n of the appellate authority has a right to apply to the State\n Government for revision. The Act also provides for refer-\n ence to the High Court on questions like liability to as-\n sessment or principles of assessment and so on. Section 84\n (3) lays down that \"no objection shall be taken to any\n valuation. assessment or levy nor shall the liability of\n any person to be taxed or assessed be questioned in any\n other manner or by any other authority than is provided in\n the Act.\" Rule 14(b) of the Rules framed under the Act\n provides that any person importing or bringing any dutiable\n articles within the octroi limits of a municipality without\n paying the duty or without giving a declaration to the\n octroi Moharrir, shall be liable to pay double the duty and\n shall in addition be liable to be prosecuted for evasion of\n duty.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1977_1977_95_P002_C02",
+      "text": "The plaintiffs imported within the municipal limits\n for sale in their retail shops articles manufactured by them\n in their factories situated at different places in the\n country. They paid the octroi levied by the municipality\n at a certain rate. But Sometime later the municipality\n reopened and revised the assessment and charged octroi at a\n different rate. It also levied double the duty by way of\n penalty on the ground that the plaintiffs had intentionally\n evaded payment of duty on the goods. The appellate author-\n ity modified the decision of the municipality but upheld the\n assessment of double duty. The plaintiffs' revision appli-\n cation was rejected by the Board of Revenue. The plaintiffs paid the duty and penalty under protest\n and filed a suit for recovery of the amount on the ground\n that the municipality was not entitled to recover the amount\n of octroi duty and penalty. Overruling the defendant munic-\n ipality's objection as regards the civil court's jurisdic-\n tion to entertain the suit the trial court decreed the suit.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1977_1977_95_P002_C03",
+      "text": "On appeal, the High Court held that the defendants were\n entitled to revise and reopen the assessment and that the\n reassessment of duty fixed in appeal by the appellate au-\n thority could not be questioned by the plaintiffs in a civil\n court. In appeal it was contended in this Court by the plain-\n tiffs that s. 84(3) may bar a suit to challenge an act which\n was within the purview of the Act, but it could not bar a\n suit to challenge an act which was outside the Act or the\n Rules and since in this case the defendant had no power to\n revise or reopen the assessment. its action was wholly\n lacking in jurisdiction and so the suit was competent. Dismissing the appeal,\n HELD: Since s. 84(3) expressly prohibits a challenge\n to valuation, assessment or levy \"in any other\n manner ............ than is provided in this Act\" and\n since the Act has devised its own special machinery for\n inquiring into and adjudicating upon such challenges, the\n common remedy .of a suit stands necessarily cxcluded and\n cannot be availed of by a person aggrieved by an order",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1977_1977_95_P003_C01",
+      "text": "assessment to octroi duty. Similarly the sub-section\n excludes expressly the power of \"any other authority than is\n provided in this Act\" to entertain an objection to any\n valuation, assessment or levy of octroi. This art of the\n provision-is in the nature of ouster of jurisdiction of\n civil courts, at least by necessary implication, to enter-\n tain an objection to any valuation, assessment or levy..[187\n A]\n 1. Two of the propositions bearing on the construction\n of statutes which expressly or by necessary implication bar\n the jurisdiction of civil courts stated in Dhulabhai & Ors.\n v. The State of Madhya Pradesh [1968] 3 SCR 662 and which\n are relevant for the purposes of this case are: (i)\n where the statute gives finality to the orders of special\n tribunals the civil court's jurisdiction must be held to be\n excluded if there is an adequate remedy to do what the civil\n courts would normally do in a suit.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1977_1977_95_P003_C02",
+      "text": "Such provision, howev-\n er, does not exclude cases where the provisions of the\n particular Act have not been complied with or the statutory\n tribunal has not acted in conformity with the fundamental\n principles of judicial procedure, (ii) questions of the\n correctness of the assessment, apart from its constitution-\n ality, are for the decision of the authorities and a civil\n suit does not lie. if the orders of the authorities are\n declared to be final or there is an express prohibition in\n the particular Act, In either case the scheme of the par-\n ticular Act must be examined because it is a relevant en-\n quiry. [189 D-F]\n (a) In the instant case, the various provisions of the Act\n show in the first place that the municipality possesses the\n right and the power to assess and recover octroi duty and\n double duty on goods brought within the municipal limits for\n sale, consumption or use therein. The circumstance that the\n municility might have acted in excess of or irregularly in\n the exercise of that power could not support the conclusion\n that the assessment or recovery of the tax was without\n jurisdiction.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1977_1977_95_P003_C03",
+      "text": "If the appropriate authority, while exercis-\n ing its jurisdiction and powers under the relevant provi-\n sions of the. Act, holds erroneously that an assessment\n already made can be corrected or that an ,assessee is liable\n to, pay double duty, it cannot be said that the decision of\n the authority is without jurisdiction. [192 E-F]\n (b) Both the Act and the Rules contain provisions ena-\n bling the aggrieved party to challenge an illegal assessment\n or levy of double duty. By reason of the existence and\n availability of those special remedies, the ordinary remedy\n by way of a suit would be excluded on a true interpretation\n of s. 84(3) of the Act. [193 H]\n (c) Levy of double duty, though not justified by the\n terms of r. 14(b) goes to the correctness of the levy and\n not to the jurisdiction of the assessing authority. Assuming\n that neither of the two eventualities mentioned in r. 14(b)\n occurred and, therefore, there was no justification for\n imposing double duty, the error could be corrected only in\n the manner provided in the Act and by the authority pre-\n scribed therein.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1977_1977_95_P003_C04",
+      "text": "The remedy by way of a suit is barred.\n [193 A-B]\n (d) The suit for refund of double duty or revised duty\n is not maintainable because in the first place the assess-\n ment was made by the authority duly empowered to do so and\n secondly the authority was acting under the Act while revis-\n ing the assessment and imposing double duty. It had the\n power to assess and levy double duty. If it exceeded that\n power it acted wrongly, but not without jurisdiction. [193\n C-D]\n (e) It is not correct to say that the Act protects\n correct assessments only and that every incorrect or wrong\n order of assessment can be challenged by a suit though the\n statute gives it finality and provides full and effective\n remedies to challenge it. Except in matters of constitu-\n tionality and the like a selfcontained Code must have\n priority over the common means of vindicating rights. If\n the appropriate authority, while exercising its jurisdic-\n tion anti power under the relevant provisions of the Act.\n comes to an erroneous conclusion it cannot be said that the\n decision is without jurisdiction. [193 F.-G]\n Dhulabhai and Others v. The State of Madhya Pradesh [1968] 3\n SCR 662 Kamla Mills Ltd. v.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1977_1977_95_P003_C05",
+      "text": "State of Bombay [1966] 1 SCR 64\n applied.\n 13--240SCI/77",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1977_1977_95_P004_C01",
+      "text": "Bharat Kala Bhandar Ltd. v. Municipal Committee, Dha-\n mangaon, [1965] 3 SCR 499, B.M. Lahani v. Malkapur Munici-\n pality, AIR 1970 S.C. 1002 and Firm Seth Radka Kishan v. Administrator, Municipal Committee, Ludhiana [19541 2 SCR\n 273, 284 distinguished. Wolverhamton New Waterworks Company v. Hawkerford [1859]\n 6 C.B. (N.S.) 336. Secretary of State v. Mask & Company, 67\n I.R. 222, Naville v. London \"Express\" Newspaper, Limited,\n [1919] A.C. 368, Bengal Immunity Co. Ltd. v. State of\n Bihar. [1955] 2 SCR 603 and Firm and Illuri Subbaya Chetty\n & Sons. v. The State of Andhra Pradesh, [1964] 1 SCR 752\n referred to. (f) The instant case does not fall within the proposi-\n tions in Dhulabhai's case because s. 84(3) not merely gives\n finality to the orders passed by the special tribunal but\n expressly provides that such orders shall not be questioned\n in any other manner or by any other authority than is pro-\n vided in the Act. [194 B]\n (g) In the instant case, the plaintiffs availed them-\n selves of the remedies provided under the Act and. succeeded\n to art extent.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1977_1977_95_P004_C02",
+      "text": "Having exhausted their remedies under the\n Act and having been benefited by the appellate decision,\n they turned to the civil court to claim refund. This is\n impermissible under s. 84(3). [194 F-G]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1977_1977_95_P005_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION:CIVIL Appeal Nos. 1923-1924\n of 1972. (From the Judgment and Decree dated 25-10-1957 of the\n Madhya Pradesh High Court in First Appeal No. 138/52)\n A.K. Sen, B.P. Maheshwari and Suresh Sethi, for the\n appellant in C.A. No. 1923/72 and respondent in CA No.\n 1924/72. D.N. Mukherjee, for the respondent in CA No. 1923/72 and\n for appellant in CA 1924/72. CHANDRACHUD, J.--These are cross appeals arising out of\n a judgment rendered by the Madhya Pradesh High Court in\n First Appeal No. 138 of 1952 modifying the decree passed by\n the First Additional District Judge, Jabalpur in Civil Suit\n No. 6-B of 1949. It would be convenient to refer to the\n parties as plaintiffs and defendants, plaintiffs being the\n Bata Shoe Co. Ltd. and the defendants being the Corporation\n for the City of Jabalpur. Plaintiffs are a limited company having their registered\n office at Calcutta. At the relevant time they had their\n factories at Batanagar in West Bengal, Batapur in West\n Punjab, Palsia-Digha in Bihar and Faridabad near Delhi.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1977_1977_95_P005_C02",
+      "text": "The\n sale's organisation of the plaintiffs is situated at Cal-\n cutta, and that organisation sells manufactured articles\n through the Company's retail shops situated in different\n parts of India and Pakistan. Three such retail shops were\n situated at Jabalpur. In respect of the articles which were imported by the\n retail shops at Jabalpur within the limits of the then\n Jabalpur Municipal Committee between April 1, 1943 and March\n 31, 1945 the plaintiffs had paid to the Municipal Committee\n a sum of Rs. 16,528 odd as control duty. This duty was\n assessed by the Muncipal Committee on an amount which was\n 40% less than the retail price of the goods which were\n brought within the municipal limits. In the year 194.6-47\n the Municipal Committee decided to reopen and revise. the\n assessment by",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1977_1977_95_P006_C01",
+      "text": "charging the octroi duty on an amount which was only 6-1/4%\n less than the retail price of the goods. The Municipal\n Committee further decided to levy double the duty by way of\n penalty for the aforesaid period on the ground that the\n plaintiffs bad intentionally evaded the payment of the duty\n payable on the goods. Plaintiffs preferred an appeal\n against the decision of the Municipal Committee to the Sub-\n Divisional Officer, Jabalpur who by an order dated July 14,\n 1948 modified the decision of the Municipal Committee by\n permitting them to charge the octroi duty on an amount which\n was less by 12-1\\2 % than the retail price of the goods. The Sub-Divisional Officer however upheld the assessment of\n double duty. The revision application preferred by the\n plaintiffs to the Board of Revenue was rejected on October\n 4, 1948 on the ground that it was not maintainable. In conformity with the appellate order, but under\n protest, plaintiffs paid to the Municipal Committee a sum of\n Rs. 21,071-1-3 on August 6, 1948. Defendants demanded a\n further sum of Rs, 10,604-2-6 alleging that they had over-\n looked asking for it through mistake.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1977_1977_95_P006_C02",
+      "text": "Plaintiffs paid that\n amount too on September 22, 1948 under protest. On June 20,\n 1949 they filed a suit against the Municipal Committee for\n recovery of the total amount of Rs. 31,675-3-9 with interest\n at 6% per annum on the ground that the defendants were not\n entitled to recover the amount by way of octroi duty and\n penalty. During the pendency of the suit the Municipal\n Committee was succeeded by the Corporation for the City of\n Jabalpur who were substituted as defendants to the suit. The Trial Court decreed the suit to the extent of\n Rs. 32,629-7-0 calculating the interest at 4%, holding that\n the defendants could not charge octroi duty on an amount\n arrived at by anything less than 40% from the retail sale\n price, that the recovery of octroi duty by deducting a sum\n of 12-1/2% only from the retail price was illegal and that\n the defendants were not justified in recovering double duty\n by way of penalty since the plaintiffs had not intentional-\n ly evaded the payment of proper duty.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1977_1977_95_P006_C03",
+      "text": "Defendants had raised\n contentions both as regards the jurisdiction of the Civil\n Court to entertain the suit and as regards limitation but\n the Trial Court rejected those contentions and held that it\n had jurisdiction to entertain the Suit and that it was not\n barred by limitation. In appeal the High Court held that the defendants\n were entitled to revise and reopen the assessment and that\n the re-assessment. of octroi duty which was ultimately fixed\n in appeal by the Sub-Divisional Officer could not be ques-\n tioned by the plaintiffs in the Civil Court. On the ques-\n tion of limitation the High Court held that applying the\n special period of limitation provided in s. 48 of the Cen-\n tral Provinces and Berar Municipalities Act, 1922 the suit\n was within limitation as regards the payment made by the\n plaintiffs on September 22, 1948 but that it was barred by\n limitation as regards the payment made on August 6, 1948. The suit in regard to the amount paid to the Municipal\n Committee in September 1948 was held to be within limitation\n on account",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1977_1977_95_P007_C01",
+      "text": "of the intervening summer vacation during which the Courts\n were closed. According to the High Court the exaction of\n the double duty being beyond the' powers of the defendants,\n the special period of limitation was not attracted and the\n plaintiffs were therefore entitled to recover the sum paid\n by way of double duty. In the result the High Court passed\n a decree in the sum of Rs. 24,103-13-3 which, according to\n it, represented the double duty wrongly recovered by the\n defendants from the plaintiffs. The High Court has granted\n to both the parties a certificate to file an appeal to this\n Court under\nart. 133(1 )\nof the Constitution and both par-\n ties being partly aggrieved by the decree of the High Court\n have filed cross appeals. The first question for consideration is whether the\n civil court has jurisdiction to entertain the suit brought\n by the plaintiffs. It is undisputed that the Municipal\n Committee had the power under s. 65(1)(e) of the Act of 1922\n to impose octroi tax on the goods brought within the Munici-\n pal limits for sale, consumption or use therein.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1977_1977_95_P007_C02",
+      "text": "Under rule\n 6(b) framed by the Provincial Government in exercise of the\n powers conferred by ss. 71, 76 and 85 of that Act, octroi\n duty was payable on the \"current price of articles\" which is\n equivalent to the cost price of the articles to the importer\n plus the cost of carriage and not the price prevailing in\n the local market. Prior to 1940, plaintiffs used to submit\n to the defendants an invoice relating to the imported goods\n wherein the cost price used to be shown by deducting from\n the retail price the aggregate amount of expenses amounting\n to 40%. Defendants later disputed the deduction claimed by\n the plaintiffs and informed the latter by a letter of May 7,\n 1940 that octroi duty was leviable on the cost price of the\n goods as shown in the invoice plus the freight charges. Plaintiffs accepted that view and started showing in the\n invoices the cost price of the articles and the freight\n charges.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1977_1977_95_P007_C03",
+      "text": "Defendants used to assess octroi duty on those\n invoices until the dispute giving rise to the present suit\n arose during the year 1946-47, when the basis for charging\n the duty was fixed at 61/4% less than the retail price of\n the goods and the assessments already made were reopened\n with a view to revising them. Section 83(1) of the Act of 1922 provides for appeal\n against the assessment or levy of any tax under the Act to\n the Deputy Commissioner or to such other officer as may be\n empowered by the Provincial Government in that behalf. Section 84(3) of the Act which bears directly on the\n question of jurisdiction reads thus:\n\"84(3) No objection shall be taken to\n any valuation, assessment or levy nor shah\n the liability of any person to. be assessed or\n taxed be questioned, in any other manner or by\n any other authority than is provided in this\n Act.\"\nIt is plain from this sub-section that any valuation, as-\n sessment or levy and the liablity of any person to be as-\n sessed or taxed can be questioned only in the manner pre-\n scribed by the-Act and by the authority mentioned in the\n Act and in no other manner or by any other authority.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1977_1977_95_P007_C04",
+      "text": "Since\n the sub-section expressly prohibits a challenge to a\n valuation, assessment or levy \"in any other manner ....\n than is provided in this",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1977_1977_95_P008_C01",
+      "text": "Act\" and since the Act has devised its own special machin-\n ery for inquiring into and adjudicating upon such chal-\n lenges, the common remedy of a suit stands necessarily\n excluded and cannot be availed of by a person aggrieved by\n an order of assessment to octroi duty. Similarly, the\n sub-section excludes expressly the power of \"any other\n authority than is provided in this Act\" to entertain an\n objection to any valuation, assessment or levy of octroi.-\n This part of the provision is in the nature of ouster of the\n jurisdiction of Civil Courts, at least by necessary impli-\n cation, to entertain an objection to any valuation,,assess-\n ment or levy. This is the evident intendment, meaning and\n implication of the provision. In Wolverhmpton New Waterworks Company v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1977_1977_95_P008_C02",
+      "text": "Hawkesford(1)\n willes J. referred to various classes of cases in which the\n jurisdiction of ordinary courts is excluded; the third class\n of such cases being \"where a liability not existing at\n common law is created by a statute which at the same time\n gives a special and particular remedy for enforcing it.\"\nThe view of Willes J., that with respect to that class of\n cases the party must adopt the form of remedy given by the\n statute and no other, was accepted by the Privy Council in\nSecretary of State v. Mask & Company\n(2) and by the House of\n Lords in Neville v. London \"'Express\" Newspaper, Limited(3). In Mask & Company's('2) case the Privy Council was\n dealing with the provisions of the Sea Customs Act, 1876\n section 186 whereof gave a right of appeal to the person\n aggrieved by any decision or order passed by the Customs\n Officers under that Act. Section 191 further gave the\n aggrieved person a right to make an application to the Local\n Government for revision of the appellate decision or order. The last paragraph of section 188 provided: \"Every order\n passed in appeal under this section shall, subject to the\n power of revision conferred by section .191, be. final\".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1977_1977_95_P008_C03",
+      "text": "The.re was no express exclusion of the civil courts' Juris-\n diction to entertain a suit challenging an order passed by a\n Customs Officer but the Judicial Committee, while recognis-\n ing that the exclusion of the jurisdiction of civil courts\n was not to be readily inferred and that such exclusion must\n either be explicitly expressed or clearly implied, observed\n that looking at the last paragraph of section 188 of the Sea\n Customs Act it was difficult to conceive what further chal-\n lenge of the order was intended to be excluded other than a\n challenge in the Civil Courts. If a provision merely\n giving finality to an order could be construed as ousting\n the civil Court's jurisdiction, s. 84(3) of the Act, which\n is far more expressive, can legitimately be construed to\n have the same effect. It excludes in terms a challenge to\n the various things therein mentioned, in any other manner or\n by any other authority than is provided in the Act. But counsel for the plaintiffs contends that s. 84(3)\n cannot oust the civil Court's jurisdiction to entertain the\n present suit because the defendant have no power at all\n either under the Act or under the\n (1) [1859] 6 C.B. (N.S.) 336.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1977_1977_95_P008_C04",
+      "text": "(2) 67 I.A. 222. (3) [1919] A.C. 368.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1977_1977_95_P009_C01",
+      "text": "Rules framed thereunder to reopen or revise an assessment to\n octroi duty. An assessment once made is final subject to\n the remedies which the Act provides to the aggrieved party\n and since, according to the counsel, the reopening of\n assessment is wholly without jurisdiction the suit to chal-\n lenge it is competent. The argument, in other words, is\n that s. 84(3) may bar a suit to challenge an act which is\n within the purview of the Act or the Rules but it cannot bar\n a suit to challenge an act which is outside the Act or the\n Rules and is therefore wholly lacking in jurisdiction. In support of the contention that the civil Court has\n jurisdiction to entertain the suit plaintiffs'rely princi-\n pally on the decisions of this Court in\nBharat Kala\n Bhandar Ltd. v. Municipal Committee\n, Dhamangaon(1), B.M. Lakhani v. Malkapur Municipality() and\nDhulabhai and others\n v. The State of Madhya Pradesh\n(3).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1977_1977_95_P009_C02",
+      "text": "The appellants in\n Bharat Kala Bhandar's(1) case filed a suit for recovery of\n excise tax paid by them under s. 66(1)(b) of the Central\n Provinces Municipalities Act, 1922 on the ground that after\n the coming into force of\ns. 142A\nof the Government of India\n Act, 1935 till January 25, 1950 a tax in excess of Rs.\n 50/--per annum could not be imposed by the Municipal Commit-\n tee and that after the coming into force of the, Constitu-\n tion, imposition of tax in excess of Rs. 250/- per annum was\n tinconstitutional. The Trial Court decreed the suit but on\n appeal the High Court held that the suit was bad for non-\n compliance with\ns. 48\nof the C.P. Act according to which a\n suit for anything done or purported to be done under the Act\n had to be instituted within six months from the date of the\n accrual of the cause of action. In answer the Municipal\n Committee contended that apart from the provisions of\ns. 48\n,\n the suit was barred by\ns. 84(3)\nunder which no objection\n could be taken to any assessment in any other manner than\n is provided in the Act.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1977_1977_95_P009_C03",
+      "text": "That section is the very same provi-\n sion under which the present suit, according to the defend-\n ants, is said to be barred from the cognisance of the civil\n Courts. It was held by this Court by majority that since\n the Municipal Committee had no authority to levy a tax\n beyond what was permitted by\ns. 142A\nof the Government of\n India Act or\nart. 276\nof the Constitution, the assessment\n proceedings were totally void insolaf as they purported to\n levy a tax in excess of the constitutionally permissible\n limits and therefore the suit was maintainable. The question involved in B.M. Lakhani v. Malkapur Munic-\n ipality (supra) was similar, the contention being that the\n recoveries which were made in contravention of\ns. 142-A\n the Government of India Act, 1935 and\nart. 276(2)\nof the\n Constitution were wholly without jurisdiction and therefore\n a suit for refund of tax recovered by the Municipality in\n violation of the constitutional provisions was maintainable. That contention was accepted by this Court which treated the\n matter as concluded by the decision in Bharat Kala Bhandar's\n (supra) case. (1) [1965] 3 S.C.R, 499. (2) A.I.R. 1970 S.C. 1002. (3) [1968] 3 S.C.R. 662.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1977_1977_95_P010_C01",
+      "text": "Dhulabhai and others v. The State of Madhya Pradesh\n(supra) the position was similar to that in the two cases\n noticed above. Section 17 of the Madhya Bharat Sales Tax\n Act provided that no assessment made and no order passed\n under the Act or the Rules made thereunder shall be called\n in question in any Court. It was conceded by the State\n Government that the sales tax levied on the appellants was\n unconstitutional in view of\nart. 301\nof the Constitution but\n it was contended that the civil Court had no jurisdiction to\n entertain the appellants' suit for refund of the tax in\n view of\ns. 17\nof the Act. After an examination of various\n decisions including those to which we have referred in\n this judgment Hidayatullah, J., who spoke for the Constitu-\n tion Bench formulated seven propositions bearing on the\n construction of statutes which, expressly or by necessary\n implication, bar the jurisdiction of civil Courts. It is\n unnecessary to examine each One of those propositions for\n the short reason that as in the case of Bharat Kala Bhan-\n dar and B.M.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1977_1977_95_P010_C02",
+      "text": "Lakhani, (supra) so in the case of\nDhulabhai\n(supra) the recovery of sales tax was unconstitutional and\n the suit, for that reason, was held maintainable. Attention\n must, however, be drawn to propositions (1), (4) and (6). The 1st proposition states that where the statute gives-a\n finality to the orders of the special tribunals the Civil\n Courts' jurisdiction must be held to be excluded if there is\n adequate remedy to do what the Civil Courts would normally\n do in a suit. Such provision, however, does not exclude\n those cases where the provisions of the particular Act have\n not been complied with or the statutory tribunal has not\n acted in conformity with the fundamental principles of\n judicial procedure. The 4th proposition is that when a\n provision is already declared unconstitutional or the con-\n stitutionality of any provision is to be challenged, a suit\n is open.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1977_1977_95_P010_C03",
+      "text": "The 6th proposition which bears more appropriately\n on the instant case says that questions of the correctness\n of the assessment, apart from its constitutionality, are for\n the decision of the authorities and a civil suit does not\n lie if the orders of the authorities are declared to be\n final or there is an express prohibition in the particular\n Act. In either case the scheme of the particular Act must\n be examined because it is a relevant enquiry. The plaintiffs' contention that the suit is not barred\n from the cognizance of the civil Court is effectively an-\n swered by these propositions but even so, a discussion of\n the jurisdictional issue will not be complete without\n reference to a decision rendered by a seven-Judge Bench of\n this Court in\nKamla Mills Ltd. v. State of Bombay\n(1). The\n appellants therein were assessed to sales tax on sales which\n were treated by the Sales Tax authorities as 'inside sales'\n but which according to the decision in\nBengal Immunity Co. Ltd. v. State of Bihar\n(2) were 'outside sales' and therefore\n non-taxable under the Bombay Sales Tax Act, 1946.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1977_1977_95_P010_C04",
+      "text": "After the\n decision in Bengal Immunity(2) case which came on September\n 6, 1955 the appellants discovered that they were illegally\n subjected to sales tax and since the period prescribed by\n the Act for adopting the remedies thereunder had expired,\n the appellants flied a suit for recovery of the sales tax\n illegally collected from them in respect\n (1) [19661] S.C.R. (2) [1955] 2 S.C.R. 603.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1977_1977_95_P011_C01",
+      "text": "of the outside sales. The State of Bombay contended that\n the suit was. barred by\ns. 20\nof the Act which provided, to\n the extent material, that no assessment made and no order\n passed under the Act or the Rules. shall be called into\n question in any civil Court. It was held by this. Court\n that s. 20 protected all assessments made under the Act or\n the Rules made thereunder and that the protection was wide\n enough to cover assessments made by the appropriate author-\n ities under the Act whether the assessments were made cor-\n rectly or not. Observing that if the appropriate authority\n while exercising its jurisdiction and powers under the\n relevant provisions of the Act comes erroneously to the\n conclusion that a transaction which is an outside sale is\n not an ,outside sale and proceeds to levy sales tax on it\n its decision cannot be said to be without jurisdiction, the\n Court held that the suit was barred from the cognizance of\n the civil Court. In coming to this conclusion,the Court\n relied upon the decision in Firm and Illuri Subhaya Chetty &\n sons v.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1977_1977_95_P011_C02",
+      "text": "The state of Andhra Pradesh(1) which had taken the\n view, while interpreting a similar provision in s. 18A of\n the Madras General Sales Tax. Act, that the expression \"any\n assessment made under this Act\" was wide enough to cover\n all assessments made by the appropriate authorities under\n the Act, whether the said assessments were made correctly or\n not. The decision in\nBharat Kala Bhandar\n(supra) was\n brought to the notice of the Court in\nKamla Mills\n(supra)\n case but that decision was distinguished on the ground that\n the provision which fell for construction therein was worded\n differently and as observed in\nMask & Co. (supra)' \"deci-\n sions on other statutory provisions are not of materrial\n assistance, except in so far as general principles of con-\n struction are laid down\". With great respect, the decision\nBharat Kala Bhandar\n(supra) is distinguishable for the\n weightier reason that the tax recovered\nin that case\nwas\n unconstitutional and no provision of a statute could' be\n construed as laying down that no Court shall have jurisdic-\n tion to order a refund of a tax collected in violation of a\n constitutional provision.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1977_1977_95_P011_C03",
+      "text": "If there were a provision which\n so provided or which could be so construed, that provision\n would itself be unconstitutional. Kamla Mills\n(supra) case it was observed that\n if a statute creates a special right or liability, pro-\n vides for the determination of that right or liability by\n tribunals specially constituted in that behalf and lays\n down that all questions in regard to that right or liability\n shall exclusively determined by the tribunals so constitut-\n ed, it becomes pertinent to enquire whether remedies nor-\n mally associated with actions a civil Court are prescribed\n by the said statute or not. If the Court is satisfied that\n the Act provides no remedy for making a claim for the recov-\n ery of an illegally collected tax the Court might hesitate\n to construe a provision giving finality to the orders passed\n by the tribunals specially created by the Act as creating\n an absolute bar to the suit and if such a construction was\n not reasonably possible, the Court would be called upon to\n examine the constitutionality of the provision excluding the\n civil Court's jurisdiction in the light of arts. 19 and 31\n of the Constitution.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1977_1977_95_P011_C04",
+      "text": "According to the 1st proposition in\nDhulabhai\n's (supra) case, if the statute gives finality to\n the orders passed by the special\n (1) [1964] 1 S.C.R. 752.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1977_1977_95_P012_C01",
+      "text": "tribunals created by it, the civil Courts jurisdiction would\n be excluded if the statute provides adequate remedies to do\n what the civil Courts are normally empowered to do in a\n suit. The 6th proposition\nin that case\nstates that ques-\n tions of the correctness of the assessment apart from its\n constitutionality are for the decision of the authorities\n and a civil suit does not lie if the orders of the authori-\n ties are declared to be final or there is an express prohi-\n bition in the particular Act. Further, that in either case\n the scheme of the particular Act must be examined because it\n is a relevant enquiry. These considerations make it neces-\n sary to examine the relevant provisions of the Act of 1922\n and the Rules framed thereunder with a view to seeing\n whether they provide adequate remedies to the aggrieved\n party to challenge a wrong or illegal exaction of octroi\n duty and whether correspondingly, the authorities specially\n created by the Act have the power to do what civil Courts\n are generally empowered to do.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1977_1977_95_P012_C02",
+      "text": "This inquiry is relevant\n even though s. 84(3) of the Act does not merely say that\n orders passed by the special tribunals shall be final but\n provides that no objection shall be taken to any assessment,\n levy etc., in any other manner or by any other authority\n than is provided in the Act. Section 66(1)(b)\nof the C.P. and Berar Municipali-\n ties Act, 1922 empowers the Municipal Committee to impose an\n octroi on animals or goods brought within the limits of the\n municipality for sale, consumption or use within those\n limits.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1977_1977_95_P012_C03",
+      "text": "Section 83(1)\nprovides that an appeal against the\n assessment or levy of, or refusal to refund, any tax under\n the Act shall lie to the Deputy Commissioner or to such\n other officer as may be empowered by the Provincial Govern-\n ment in that behalf Sub-section 1-A of s. 83 gives to the\n person aggrieved by the decision the appellate authority the\n right to apply to the State Government for revision of the\n decision on the ground (a) that the decision is contrary\n to law or is repugnant to any principle of assessment of a\n tax, or (b) that the appellate authority has exercised a\n jurisdiction not vested in it by law or has failed to\n exercise the jurisdiction vested in it by law. Section\n 83(2)\nempowers the appellate or revision authority to draw\n up a statement of the case and make a reference to the High\n Court for its decision if any. question as to the liability\n to assessment or as to the principle of assessment arises in\n the matter on which the authority entertains a reasonable\n doubt. Then comes\ns. 84\nwhich by sub-s. (1 ) provides for a\n limitation of 30 days for appeal and by sub-s.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1977_1977_95_P012_C04",
+      "text": "(3) lays down\n the injunction which is the bone of contentions in the\n instant case that no objection shall be taken to any valua-\n tion, assessment or levy nor shall the liability of any\n person to be taxed or assessed be questioned in any other\n manner or by any other authority than to is provided in the\n Act. Section 71\nof the Act empowers the Provincial\n Government make rules regulating the assessment of taxes and\n for preventing evasion of assessment. Section 76\nwhich\n appears under the heading \"Collection of taxes\" empowers the\n government to make rules regulating the collection of taxes\n including the prevention of evasion of payment and payment\n of lump sums in composition. Section 85\nconfers similar\n empowerment to make rules regulating the refund of taxes.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1977_1977_95_P013_C01",
+      "text": "and in supersession of the earlier rules, the Provincial\n Government made rules \"for the assessment, collection and\n refund of the octroi tax\" which were gazetted on April 9,\n 1929 and were amended from time to time. Rule provides that\n articles subject to octroi duty are liable to duty as soon\n as they enter the octroi limits. Rule 6(b) which prescribes\n the mode of calculating octroi duty provides that the cur-\n rent prices of articles liable to ad valorem duty shall be\n the cost price to the importer plus the cost of carriage and\n not the price prevailing in the local market. Rule 8 pre-\n scribes the details of the procedure for assessing the\n octroi duty. The note to that rule says that the duty shall\n be assessed on invoice and not on V.P. covers, Bank re-\n ceipts, letters and hundies. Rules 9(a) (b) (c), 10(b), 12,\n 13(a) and 13(b) provide for various matters relating to\n assessment and levy of octroi duty.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1977_1977_95_P013_C02",
+      "text": "Rule l4(b) 'provides\n that any person importing or bringing any dutiable articles\n within the octroi limits of the municipality \"without paying\n the duty\" or without giving declaration to the Octroi Mohar-\n rir shall be liable to pay double the duty and shall in\n addition be liable to be prosecuted to evasion of duty. Rules 29 onwards deal with \"Refund of Octroi\". Rule 31 out\n of that collocation of rules prescribes how and when\n applications for. refunds may be made. These provisions show in the first place that the de-\n fendants indubitably possess the right and the power to\n assess and recover octroi duty and double duty on goods\n which are brought within the municipal limits for sale,\n consumption or use therein. The circumstance that the\n defendants might have acted in excess of or irregularly in\n the exercise of that power cannot support the conclusion\n that the assessment or recovery of the tax is without\n jurisdiction.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1977_1977_95_P013_C03",
+      "text": "Applying the test in\nKamla Mills\n(supra),\n if the appropriate authority while exercising its Jurisdic-\n tion and powers under the relevant provisions of the Act,\n holds erroneously that an assessment already made can be\n corrected or that an assessee is liable to pay double duty\n when rule 14(b), in fact, does not justify such an imposi-\n tion, it cannot be said that the decision of the authority\n is without jurisdiction. Questions of the correctness of\n the assessment apart from its constitutionality are, as\n held in\nDhulaBhai\n(supra), for the decision of the author-\n ities set up by the Act and a civil suit cannot lie if the\n orders of those authorities are given finality. There is no\n constitutional prohibition to the assessment which is im-\n peached in the instant case as there was in\nBharat Kala\n Bhandar\n(supra), B.M. Lakhani (supra), and\nDhulabhai\n(supra).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1977_1977_95_P013_C04",
+      "text": "The tax imposed in those cases being unconstitu-\n tional, its levy, as said by Mudholkar J. who spoke for the\n majority in\nBharat Kala Bhandar\n(supra), was \"without a\n vestige or semblance of authority or even a shadow of\n right.\"\nThat is in regard to the power of the authority concerned\n to reassess and to levy double duty. Secondly, both\n the Act and the Rules contain provisions which we have\n noticed above, enabling the aggrieved party effectively to\n challenge an illegal assessment or levy of double duty. By\n reason of the existence and availability of those special\n remedies, the ordinary remedy by way of a suit would be\n excluded on a true interpretation of\ns. 84(3)\nof the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1977_1977_95_P014_C01",
+      "text": "The argument that double duty was levied on the plaintiffs\n though justified by the terms of rule 14(b) goes to the\n correctness of the levy, not to the jurisdiction of the\n assessing authority. That rule ;authorizes the imposition\n of double duty if dutiable articles are imported (a) without\n paying the duty or (b) without giving declaration to the\n Octroi Moharrir. It may be that neither of these two\n eventualities occurred and therefore there was no justifica-\n tion for imposing double duty. But the error could be\n corrected only in the manner provided in the Act and by the\n authority prescribed therein. The remedy by way of a suit\n is barred. Plaintiffs sought support to their contention as regards\n the maintainability of the suit for refund of double duty\n and revised duty, from certain observations contained in\n Firm Seth Radha Kishan v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1977_1977_95_P014_C02",
+      "text": "Administrator, Municipal Commit-\n tee, Ludhiana(1) to the effect that \"a suit in a civil Court\n will always lie to question the order of a tribunal created\n by a statute, even if its order is, expressly or by neces-\n sary implication, made final, if the said tribunal abuses\n its power or does not act under the Act but in violation of\n its provisions.\" In the first place, the assessment in the\n instant case was made by the authority duly empowered to do\n so and secondly the authority was acting under the Act while\n revising the assessment and imposing double duty. It had\n the power to assess and levy double duty. If it exceeded\n that power it acted wrongly, .not without jurisdiction. In\n Firm Seth Radha Kishan (supra), the Municipal Committee\n being entitled to impose a certain rate of tax on common\n salt and higher rate in respect of salt of other kinds,\n imposed tax at the higher rate on \"sambhar salt\" which was a\n variety of common salt. Section 86\nof the Punjab Municipal\n Act, 1911, provided that the liability of any person to be\n taxed cannot be questioned in any manner or by any authority\n other than that provided in the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1977_1977_95_P014_C03",
+      "text": "That provision is\n identical with s. 84(3) of the C.P. Municipalities Act,\n 1922, with which we are concerned in the instant case. Section 86(2) of the Punjab Act provided that no refund\n of any tax shall be claimed by any person otherwise than in\n accordance with the provisions of the Act and the Rules\n thereunder. It was held by this Court that the liability to\n pay terminal tax was created by the Act and since a\n remedy was given to the party aggrieved in the enforcement\n of that liability, the suit for refund was not maintainable\n by reason of\ns. 86\n. The observations on which plaintiffs\n rely 'cannot, in the context, be taken to mean that the Act\n protects correct assessments only and that every incorrect\n or wrong order of assessment can be challenged by a suit\n though the statute gives it finality and provides full and\n effective remedies to challenge it. Except in matters of\n constitutionality and the like, a self-contained Code must\n have priority over the common means of vindicating rights.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1977_1977_95_P014_C04",
+      "text": "We would like to add that if the observations on which\n plaintiffs rely are to be understood literally, they are\n contrary to the decision in\nKamla Mills\n(supra) ,case where,\n speaking for a seven-Judge Bench, Gajendragadkar C.J. ob-\n served that if the appropriate authority while exercising\n its jurisdiction and powers under the relevant provisions of\n the Act comes to an erroneous conclusion, it cannot be said\n that the decision is without jurisdiction (p. 78). (1) [19641 2 S.C.R. 273, 284.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1977_1977_95_P015_C01",
+      "text": "Plaintiff's reliance on the 1st proposition in Dhuabhw s\n (supra) case is equally misconceived. The first two propo-\n sitions formulated\nin that case\ncontain a dichotomy. The l\n st proposition refers to cases where the statute merely\n gives finality to orders .of special tribunals. In such\n cases, according to that proposition, the civil Court's\n jurisdiction would not be excluded if \"the provisions of the\n particular Act arc not complied with\". The instant case\n does not fall under the 1st. proposition because\ns. 84(3)\n the Act does not merely give finality to the orders passed\n by the, special tribunals. It provides, expressly, that\n such orders shall not be questioned in any other manner or\n by any other authority than is provided in the Act. The\n 2nd proposition deals in its first paragraph with cases\n where there is an express bar to the civil Courts' jurisdic-\n tion. The second paragraph of that proposition deals with\n cases where there is no express exclusion.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1977_1977_95_P015_C02",
+      "text": "The instant case\n falls under either one or the other paragraph of this\n proposition, which rendered it necessary to examine whether\n the Act creates special rights and liabilities, provides for\n their determination by laying down that such rights and\n liabilities shall be determined by the special tribunals\n constituted under it and whether remedies normally associat-\n ed with actions in civil Courts are prescribed by the Act. Upon that examination we concluded that the suit is barred\n from the cognizance of the Civil Court. Not only that the Act of 1922 provides an effective\n remedy to an aggrieved party to challenge the assessment of\n octroi duty and to claim refund of duty illegally paid or\n recovered, but the plaintiffs in fact availed themselves\n of these remedies.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1977_1977_95_P015_C03",
+      "text": "In 1946-47 when the Municipal Committee\n reopened and revised the past assessments by charging octroi\n duty on an amount which was only 61/4% less than the retail\n price of the goods and when it levied double duty by way of\n penalty plaintiffs preferred an appeal against the decision\n of the Municipal Committee to the Sub-Divisional Officer,\n Jabalpur, who by an order dated' July 14, 1946 modified the\n decision of the Committee by asking them to charge octroi\n duty on an amount which was less by 121/2%instead of 61/4%\n than the retail price of the goods. Plaintiffs succeeded\n to an extent though the Sub-Divisional Officer upheld the\n assessment of double duty. Having exhausted their remedies\n under the Act and having been benefited by the appellate\n decision, though partly, plaintiffs turned to the civil\n Court to claim the refund. That is impermissible in view of\n the provision contained in\ns. 84(3)\nof the Act. In the result, Civil Appeal No. 1923 of 1972 filed by\n the plaintiffs fails and is dismissed. Civil Appeal No.\n 1924 of 1972 filed by the defendants succeeds and is allowed\n with the result that the plaintiffs' suit will stand dis-\n missed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1977_1977_95_P015_C04",
+      "text": "Considering that the defendants revised the assess-\n ment after a lapse of time parties will bear their costs\n throughout. P.B.R. C.A. 1923/72 dismissed. C.A. 1924/72 allowed.\n ?195",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    }
+  ],
+  "case_summary": {
+    "case_name": "Bata Shoe Co vs City Of Jabalpur Corporati",
+    "case_id": "SC_1977_1977_95",
+    "court": "Supreme Court of India",
+    "year": "1977",
+    "facts_summary": "HEADNOTE:\n The Central Provinces and Berar Municipalities .Act,\n 1922, empowers a municipality to assess and recover octroi\n duty on goods brought within the municipal limits for sale.\n consumption and use therein. Under the Act an appeal\n against assessment or levy or refusal to refund any tax lies\n to a designated official. A person aggrieved by the decision\n of the appellate authority has a right to apply to the State\n Government for revision. The Act also provides for refer-\n ence to the High Court on questions like liability to as-\n sessment or principles of assessment and so on. Section 84\n (3) lays down that \"no objection shall be taken to any\n valuation. assessment or levy nor shall the liability of\n any person to be taxed or assessed be questioned in any\n other manner or by any other authority than is provided in\n the Act.\" Rule 14(b) of the Rules framed under the Act\n provides that any person importing or bringing any dutiable\n articles within the octroi limits of a municipality without\n paying the duty or without giving a declaration to the\n octroi Moharrir, shall be liable to pay double the duty and\n shall in addition be liable to be prosecuted for evasion of\n duty. The plaintiffs imported within the municipal limits\n for sale in their retail shops articles manufactured by them\n in their factories situated at different places in the\n country. They paid the octroi levied by the municipality\n at a certain rate. But Sometime later the municipality\n reopened and revis",
+    "legal_issues": "On appeal, the High Court held that the defendants were\n entitled to revise and reopen the assessment and that the\n reassessment of duty fixed in appeal by the appellate au-\n thority could not be questioned by the plaintiffs in a civil\n court. In appeal it was contended in this Court by the plain-\n tiffs that s. 84(3) may bar a suit to challenge an act which\n was within the purview of the Act, but it could not bar a\n suit to challenge an act which was outside the Act or the\n Rules and since in this case the defendant had no power to\n revise or reopen the assessment. its action was wholly\n lacking in jurisdiction and so the suit was competent. Dismissing the appeal,\n HELD: Since s. 84(3) expressly prohibits a challenge\n to valuation, assessment or levy \"in any other\n manner ............ than is provided in this Act\" and\n since the Act has devised its own special machinery for\n inquiring into and adjudicating upon such challenges, the\n common remedy .of a suit stands necessarily cxcluded and\n cannot be availed of by a person aggrieved by an order JUDGMENT:\nCIVIL APPELLATE JURISDICTION:CIVIL Appeal Nos. 1923-1924\n of 1972. (From the Judgment and Decree dated 25-10-1957 of the\n Madhya Pradesh High Court in First Appeal No. 138/52)\n A.K. Sen, B.P. Maheshwari and Suresh Sethi, for the\n appellant in C.A. No. 1923/72 and respondent in CA No.\n 1924/72. D.N. Mukherjee, for the respondent in CA No. 1923/72 and\n for appellant in CA 1924/72. CHANDRACHUD, J.--These are cross appeals arisin",
+    "ratio_summary": "Bharat Kala Bhandar Ltd. v. Municipal Committee, Dha-\n mangaon, [1965] 3 SCR 499, B.M. Lahani v. Malkapur Munici-\n pality, AIR 1970 S.C. 1002 and Firm Seth Radka Kishan v. Administrator, Municipal Committee, Ludhiana [19541 2 SCR\n 273, 284 distinguished. Wolverhamton New Waterworks Company v. Hawkerford [1859]\n 6 C.B. (N.S.) 336. Secretary of State v. Mask & Company, 67\n I.R. 222, Naville v. London \"Express\" Newspaper, Limited,\n [1919] A.C. 368, Bengal Immunity Co. Ltd. v. State of\n Bihar. [1955] 2 SCR 603 and Firm and Illuri Subbaya Chetty\n & Sons. v. The State of Andhra Pradesh, [1964] 1 SCR 752\n referred to. (f) The instant case does not fall within the proposi-\n tions in Dhulabhai's case because s. 84(3) not merely gives\n finality to the orders passed by the special tribunal but\n expressly provides that such orders shall not be questioned\n in any other manner or by any other authority than is pro-\n vided in the Act. [194 B]\n (g) In the instant case, the plaintiffs availed them-\n selves of the remedies provided under the Act and. succeeded\n to art extent. Defendants used to assess octroi duty on those\n invoices until the dispute giving rise to the present suit\n arose during the year 1946-47, when the basis for charging\n the duty was fixed at 61/4% less than the retail price of\n the goods and the assessments already made were reopened\n with a view to revising them. Section 83(1) of the Act of 1922 provides for appeal\n against the assessment or levy of any tax under the Act ",
+    "final_order": "of the intervening summer vacation during which the Courts\n were closed. According to the High Court the exaction of\n the double duty being beyond the' powers of the defendants,\n the special period of limitation was not attracted and the\n plaintiffs were therefore entitled to recover the sum paid\n by way of double duty. In the result the High Court passed\n a decree in the sum of Rs. 24,103-13-3 which, according to\n it, represented the double duty wrongly recovered by the\n defendants from the plaintiffs. The High Court has granted\n to both the parties a certificate to file an appeal to this\n Court under\nart. 133(1 )\nof the Constitution and both par-\n ties being partly aggrieved by the decree of the High Court\n have filed cross appeals. The first question for consideration is whether the\n ci",
+    "outcome_summary": "of the intervening summer vacation during which the Courts\n were closed. According to the High Court the exaction of\n the double duty being beyond the' powers of the defendants,\n the special period of limitation was not attracted and the\n plaintiffs were therefore entitled to recover the sum paid\n by way of double duty. In the result the High Court passed\n a decree in the sum of Rs. 24,103-13-3 wh",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

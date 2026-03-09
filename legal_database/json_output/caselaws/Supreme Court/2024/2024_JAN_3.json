@@ -1,0 +1,1327 @@
+{
+  "case_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH",
+  "case_name": "Nara Chandrababu Naidu vs The State Of Andhra Pradesh",
+  "normalized_case_name": "NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH",
+  "court": "Supreme Court of India",
+  "year": "2024",
+  "judgment_template": null,
+  "case_number": "Petition 12289 of 2023",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": "16 January 2024",
+  "judges": [
+    "Bela M. Trivedi",
+    "Aniruddha Bose"
+  ],
+  "author": "Aniruddha Bose",
+  "bench_type": "division",
+  "petitioner": "Nara Chandrababu Naidu",
+  "respondent": "The State Of Andhra Pradesh",
+  "reporter_citations": [
+    "2024 INSC 41"
+  ],
+  "outcome": "partly allowed",
+  "disposition": "partly_allowed",
+  "cites_count": 70,
+  "cited_by_count": 0,
+  "neutral_citation": "2024 INSC 41",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2024\\JAN\\2024_JAN_3.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P001_C01",
+      "text": "CRIMINAL APPELLATE JURISDICTION\n\n CRIMINAL APPEAL NO._______________OF 2024\n (Arising out of Petition for Special Leave to Appeal (Criminal)\n No.12289 of 2023)\n\n NARA CHANDRABABU NAIDU …APPELLANT(S)\n\n VERSUS\n\n THE STATE OF ANDHRA PRADESH\n & ANR. …RESPONDENT(S)\n\n JUDGMENT\nANIRUDDHA BOSE, J.\nLeave granted.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P002_C01",
+      "text": "2. The appellant is aggrieved by initiation of a criminal\n\n proceeding against him and his detention in connection with the\n\n same by the respondent State through its CID. Allegations have\n\nread with Sections 120­B, 34 and 37 of the\nIndian Penal Code\n,\n\n1860 and\nSection 12\nand\n13(2)\nread with\nSections 13(1)(c)\nand (d)\n\nof the\nPrevention of Corruption Act, 1988\n. The said offences are\n\nalleged to have been committed between the years 2015 and\n\n2019, during which period he was the Chief Minister of the State\n\nof Andhra Pradesh. Initially, a First Information Report dated\n\n09.12.2021 was lodged with CID Police Station, Andhra Pradesh,\n\nMangalagiri implicating twenty­six persons as accused. On that\n\nbasis, CR No. 29/2021 was registered. The appellant was not\n\nincluded in the array of accused persons in that F.I.R. The\n\noffences primarily relate to siphoning of public funds and I shall\n\nrefer broadly to the allegations forming the basis of the F.I.R. in\n\nthe succeeding paragraphs of this judgment.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P002_C02",
+      "text": "The list of accused\n\npersons was subsequently expanded and the appellant was also\n\narraigned as an accused by an “Accused Adding Memo” dated\n\n08.09.2021 lodged before the Special Judge, SPE & ACB cases\n\n(hereinafter referred to as “the Special Judge”). The appellant was\n\nimplicated as accused no.37, whereas another individual,\n\nKinjarapu Atchannaidu was made the 38th accused. The latter is\n\na former minister of Andhra Pradesh and appears to be a\n\nmember of the legislative assembly of that State at present. The\n\nappellant was arrested on 09.09.2023 and was produced before\n\nthe Special Judge on 10.09.2023. He was remanded to judicial\n\ncustody by the Special Judge. The appellant applied before the\n\nHigh Court on 12.09.2023 for quashing the F.I.R. in Crime No.\n\n29 of 2021 implicating him, invoking the jurisdiction of the Court\n\nunder\nSection 482\nof the Code of Criminal Procedure, 1973 (1973\n\nCode). The legality of the remand order dated 10.09.2023 was\n\nalso challenged in the same petition before the High Court. The\n\nappellant’s plea was rejected and his petition was dismissed on\n\n22.09.2023 by a learned Single Judge.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P002_C03",
+      "text": "The present appeal is\n\nagainst this judgment of dismissal of the said petition.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P003_C01",
+      "text": "3. The primarily allegation against the appellant is facilitating\n\ndiversion of public money in the approximate range of\n\nRs.370/­ crores, which was to be used for setting up of six\n\nclusters of skill development centres in Andhra Pradesh. For this\n\npurpose, Andhra Pradesh State Skill Development Corporation\n\n(hereinafter referred to as “APSSDC”) was established through a\n\nmemorandum numbered as G.O.Ms. No.47 dated 10.09.2014\n\n(referred to as 13.12.2014 in the order of the Special Judge dated\n\n10.09.2023) issued by the Higher Education (EC A2) Department. APSSDC entered into an agreement with two corporate entities,\n\nSiemens Industry Software India Pvt. Ltd. (“SIEMENS” in short)\n\nand Design Tech India Pvt. Ltd. (we shall refer to it henceforth as\n\n“Design Tech”). The original object, in terms of a memorandum\n\nnumbered as G.O.Ms. No. 4 dated 30.06.2015 issued by the Skill\n\nDevelopment, Entrepreneurship & Innovation (Skills) Department\n\napproving the said Agreement, was to set up six different clusters\n\ncomprising of one Centre of Excellence and five Technical Skill\n\nDevelopment Institutions and Skill Development Centres in\n\nAndhra Pradesh.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P003_C02",
+      "text": "The total project cost was conceived to be\n\nRs.3281,05,13,448/­ with each of the six clusters costing\n\nRs.546,84,18,908/­. Government contribution was limited to 10\n\npercent of the cost amounting to Rs.55,00,00,000/­, with\n\nSIEMENS and Design Tech providing grant­in­aid of 90% i.e.,\n\nRs.491,84,18,908/­. It is the State’s case that requirement of\n\ncontribution of the two corporate entities was ignored and the\n\nfinal memorandum of agreement only entailed outflow of\n\nRs.330/­ crores from the State to Design Tech. A signed copy of\n\nthis memorandum, which does not carry any date, has been\n\nmade Annexure R­15 to the counter­affidavit of the State (Volume\n\nIV at page 206).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P004_C01",
+      "text": "4. Submission on the part of the State is that in course of an\n\ninvestigation by the Additional Director General, GST Intelligence\n\nat Pune, while examining claims of availing CENVAT credit by\n\nDesign Tech and one Skillar Enterprises India Pvt. Ltd. (“Skillar”),\n\na financial scam was unearthed involving both SIEMENS and\n\nDesign Tech. This was in relation to funds pertaining to the\n\nproject of setting up skill development centres. The complaint of\n\nthe taxing body was that SIEMENS and Design Tech had\n\nsubcontracted substantial part of their work to Skillar despite\n\nthere being no provision of any sub­contract in the Agreement. Design Tech had claimed that Skillar provided training software\n\ndevelopment including various sub­modules designed for high\n\nend software for advance manufacturing of CAD/CAM. As per\n\nDesign Tech, royalty and subscription were paid to Skillar, as\n\nthey developed the software and Skillar had directly supplied the\n\nsame to the Skill Development Centres in Andhra Pradesh.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P004_C02",
+      "text": "recorded in the judgment under appeal, when the tax authorities\n\nconfronted Skillar, they took a stand that no technical work was\n\nsub­contracted and the training software development modules,\n\nwhich were provided, were technical materials. According to\n\nSkillar royalty and subscription were wrongly mentioned in the\n\ninvoices. It appears that an in­depth scrutiny by the tax\n\nauthorities showed that the concerned software including various\n\nsub­modules purported to have been supplied by Skillar to\n\nDesign Tech was purchased by Skillar from different companies. It is also the State’s stand that these companies were\n\nshell/defunct companies and they had issued invoices without\n\nproviding any services and that they were used as vehicles for\n\ndiverting funds. The APSSDC had conducted a forensic audit in\n\nthe year 2020 and the audit found flaws and irregularities in the\n\nsystems and in utilisation of funds between the financial years\n\n2014­2015 and 2018­2019.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P005_C01",
+      "text": "5. As per the investigating authorities a sum of\n\nRs.370/­ crores from the government funds of the APSSDC has\n\nbeen siphoned off. Case of the State against the appellant is that\n\nhe was the mastermind, who had unilaterally appointed G. Subbarao and K Lakshminarayana (accused nos. 1 and 2) as MD\n\nand CEO, and Director for the Skill Development Corporation\n\nwithout getting approval from the Andhra Pradesh Cabinet. It\n\nwas the appellant who had approved the same and as per his\n\ninstruction, Memorandum of Association and Articles of\n\nAssociation of APSSDC were also approved. As per estimation,\n\ncosts for six clusters, were projected as Rs.3319.68 crores but\n\nthe private participants did not infuse any fund as per their\n\noriginal obligation. It is recorded in the impugned judgement that\n\nthe Andhra Pradesh Cabinet headed by the appellant at the\n\ninstance of the accused no.1 had approved sanction of a budget\n\nof Rs.370/­ crores towards 10% contribution of the government\n\nin the project and G.O.Ms. No.4 dated 30.06.2015 was issued to\n\nthat effect.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P005_C02",
+      "text": "The main complaint against the appellant is that he\n\nhad fast tracked the project and approved the cost estimation\n\nwith criminal intent and by pursuing the government officials, he\n\nhad ensured release of Rs.370/­ crores. The project was allotted\n\nto Design Tech and SIEMENS on nomination basis, without\n\nfollowing any tender process. Misappropriation of government\n\nfunds through corrupt and illegal methods has been alleged and\n\nabuse of official position has been attributed to the appellant. Summary of the allegations against the appellant is revealed from\n\nthe Memorandum dated 08.09.2023, filed on behalf of the\n\nprosecution, for adding the appellant as an accused. These\n\nallegations, inter­alia, are to the following effect: ­\n\n “….A­37 by abusing his (A­37) official position,\n fraudulently committed criminal breach of trust with a\n common intention, caused wrongful loss to the\n Government exchequer by allowing accused and others\n to divert APSSDC funds by using fake invoices as\n genuine one for purpose of cheating through the shell,\n defunct companies without providing\n materials/services to the APSSDC­Siemens project.”",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P006_C01",
+      "text": "6. On behalf of the appellant, the main argument, which was\n\nalso made before the High Court, revolves around non­\n\ncompliance of\nSection 17A\nof the Prevention of Corruption Act,\n\n1988 in implicating the appellant under\nSections 12\n,\n13(2)\nread\n\nwith 13(1) (c) and (d) of the 1988 Act and proceeding against him\n\ninter­alia, under the aforesaid provisions. The arguments on\n\nbehalf of the appellants have been mainly advanced by\n\nMr. Harish N. Salve and Mr. Siddharth Luthra, learned Senior\n\nAdvocates. Mr. Mukul Rohatgi with Mr. Ranjit Kumar, both\n\nlearned Senior Counsel have primarily argued on behalf of the\n\nState. It is also the appellant’s case that once fault is found with\n\nimplicating the appellant under the aforesaid provisions of the\n\n1988 Act, the entire proceeding qua the appellant before the\n\nSpecial Judge would also collapse because in such a case the\n\nSpecial Judge under the\nPC Act\nwould have had acted beyond his\n\njurisdiction and the remand order would become non­est.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P007_C01",
+      "text": "7. Section 17A\nwas introduced to the 1988 Act with effect\n\nfrom 26.07.2018. The said provision reads: ­\n\n “17A.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P007_C02",
+      "text": "Enquiry or Inquiry or investigation of\n offences relatable to recommendations made or\n decision taken by public servant in discharge\n of official functions or duties.—No police officer\n shall conduct any enquiry or inquiry or investigation\n into any offence alleged to have been committed by\n a public servant under this Act, where the alleged\n offence is relatable to any recommendation made or\n decision taken by such public servant in discharge\n of his official functions or duties, without the\n previous approval—\n(a) in the case of a person who is or was\n employed, at the time when the offence was\n alleged to have been committed, in\n connection with the affairs of the Union, of\n that Government;\n(b) in the case of a person who is or was\n employed, at the time when the offence was\n alleged to have been committed, in\n connection with the affairs of a State, of that\n Government;\n(c) in the case of any other person, of the\n authority competent to remove him from his\n office, at the time when the offence was\n alleged to have been committed:\nProvided that no such approval shall be necessary\n for cases involving arrest of a person on the spot on\n the charge of accepting or attempting to",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P007_C03",
+      "text": "accept any\n undue advantage for himself or for any other\n person:\nProvided further that the concerned authority shall\n convey its decision under this section within a\n period of three months, which may, for reasons to be\n\nrecorded in writing by such authority, be extended\n by a further period of one month.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P008_C01",
+      "text": "8. The High Court, inter­alia, held that the said provision\n\ncannot be applied to any offence committed prior to 26.07.2018.\n\nIt has also been highlighted before us on behalf of the State that\n\noffences under\nSection 13 (1) (c)\n& (d) were deleted from the said\n\nstatute by the Prevention of Corruption (Amendment) Act, 26 of",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P009_C01",
+      "text": "2018. It was by the same Amendment Act, that\nSection 17A\nwas\n\nincorporated in the said statute. On this basis, it is urged, that\n\nany protective measure, which is conceived in the Amendment\n\nAct could not extend to offences committed when such protective\n\nmeasure for obtaining prior approval was not a part of the\n\nstatutory scheme. The High Court primarily decided the case on\n\nthe premise that the aforesaid provision cannot be given\n\nretrospective effect.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P010_C01",
+      "text": "9. The other limb of argument of the State, which was also\n\nsustained by the High Court is that a regular inquiry was already\n\nordered on 05.06.2018 regarding the allegations of corruption\n\nagainst the officials of APSSDC. This was ordered by the Director\n\nGeneral of Anti­Corruption Bureau, Andhra Pradesh. A redacted\n\nversion of this letter dated 05.06.2018 has been annexed in\n\nVolume V of the compilation of documents submitted by the\n\nState (at page 2 thereof). This compilation of documents (pages 2\n\nto 7A of the said volume) suggests that Anti­Corruption Bureau\n\nhad been asking for information in that regard. I quote below the\n\nredacted version of the said letter:­\n\n “ Office of the Director General\n Anti­Corruption Bureau,\n Andhra Pradesh,\n Vijayawada\n Rc No.10/RE­CIU/2018 Dated:5­6­2018\n MEMORANDUM\n Sub:­ Public Servants­Industries Department­Allegations of\n corruption against the officials of A.P. State Skill\n Development Corporation, Vijayawada­Regular Enquiry­\n ordered­Reg.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P010_C02",
+      "text": "Ref: 1) Letter of Sri <OMITTED> Pune, dt. 14­5­2018.\n2) CBI Letter No.122 2017 (CE­117/2017) CBI/Pune/3865,\n dated 2­10­2017\n ***\n The letter of <OMITTED> Pune and letter of CBI, Pune are\n enclosed herewith. You are instructed to conduct a Regular\n Enquiry into the contents letter of petition and submit a RE\n report within the stipulated time. You are also directed to\n submit Plan of Action duly approved by the LA­cum­Special\n PP, ACB, HO, Vijayawada.\n­Sd/­\n For Director General,\n Anti­Corruption Bureau,\n A.P., Vijayawada\n\n To:\nSri Narra Venkateswara Rao,\n DSP, CIU, ACB, Vijayawada.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P011_C01",
+      "text": "10. The High Court has accepted the argument of the State that\n\na regular enquiry was ordered on 05.06.2018 regarding the\n\nallegations of corruption against the officials of APSSDC by the\n\nDG Anti­Corruption Bureau AP before\nSection 17A\nof the 1988\n\nAct came into operation i.e. on 25.07.2018. As a corollary, the\n\nrequirement of previous approval as contemplated in the\n\naforesaid provision would not be applicable in the case of the\n\nappellant.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P012_C01",
+      "text": "11. First, I shall examine the point as to whether enquiry had\n\ncommenced by the letter of 05.06.2018. I have quoted the letter\n\nof 05.06.2018 in the preceding paragraph. This letter refers to an\n\nearlier letter dated 14.05.2018 addressed to the Andhra Pradesh\n\nAnti­Corruption Bureau by the Director General of GST\n\nIntelligence, Pune submitting information regarding corruption\n\nand siphoning of Government funds pertaining to APSSDC. The\n\nletter dated 05.06.2018 essentially carries a request for enquiry. There is no indication in the materials produced before us as to\n\nwhether any step was taken in pursuance of such request till the\n\nyear 2021. The first suggestion of any active enquiry can be seen\n\nin a letter of 22.02.2021 originating from the Deputy\n\nSuperintendent of Police, Anti­Corruption Bureau of that State,\n\nwhich states that the bureau is investigating a regular enquiry\n\npertaining to allegations of corruption, misappropriation of funds\n\nand procedural lapses in relation to collaboration of APSSDC/AP\n\nGovernment with Design Tech. It appears that there was a\n\nprevious communication in this regard dated 09.02.2021.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P012_C02",
+      "text": "Even\n\nthough reference is made to the letter of 05.06.2018 in this\n\ncommunication, there are no specific particulars of such enquiry\n\nor the date on which such enquiry was started. There are\n\nsubsequent letters dated 22.02.2021, 30.03.2021, 23.06.2021\n\nand 18.08.2021, all referring to the letter of 05.06.2018. But as\n\nit has been already observed earlier, there are no specific\n\nparticulars regarding when and in what form the enquiry has\n\nstarted. There obviously was a time gap between the date of issue\n\nof the letter of 05.06.20218 and actual date on which the enquiry\n\nwas commenced. The State has justified this delay in its counter\n\naffidavit. It has been stated that instead of acting on the letter of\n\nthe taxing authorities dated 14.05.2018, which in turn has been\n\nreferred to in the communication of 05.06.2018, the note file\n\npertaining to the project was removed by the appellant from the\n\nsecretariate in collaboration with other accused persons and this\n\nwas done to temper with evidence and to ensure that the offences\n\nwere not brought to light. This act of removal of file may\n\nconstitute a or an independent offence.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P012_C03",
+      "text": "But if otherwise no\n\nenquiry was started because of such alleged wrong, this time gap\n\ncannot be treated to have caused the date of issue of the letter of\n\n05.06.2018 to be starting point of an enquiry, in the nature\n\ncontemplated in\nSection 17A\nof the 1988 Act.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P013_C01",
+      "text": "12. Section 17A\nthereof postulates prior approval from the\n\nappointing authority in relation to any enquiry, inquiry, or\n\ninvestigation under the 1988 Act. While the expression “inquiry”\n\nhas been defined in the 1973 code, there is no specific definition\n\nof the word “enquiry”. The Concise Oxford English Law\n\nDictionary, Revised Tenth Edition, defines the said expression as\n\n“an act of asking for an information”. It entails commencement of\n\nan active search to ascertain the truth or falsity of an alleged\n\nwrongful act.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P014_C01",
+      "text": "13. In ordinary perception, “enquiry” by a police officer would\n\nimply positive exercise for searching certain details or particulars\n\npertaining to allegations of commission of an offence by an\n\naccused persons or a set of accused persons. “Inquiry” is defined\n\nSection 2 (g)\nof the 1973 and implies inquiry conducted under\n\nthe Code by a Magistrate or Court. Similarly, “investigation” in\n\nterms of\nSection 2 (h)\nof the same Code includes all the\n\nproceedings conducted thereunder for collection of evidence by a\n\npolice officer or a person authorised by a Magistrate in that\n\nbehalf. The nature of actions undertaken by the State after\n\n05.06.1988 constitutes neither inquiry nor investigation, as no\n\nstep under the 1973 Code was taken by the State prior to the\n\nyear 2021. If that is the meaning attributed to this expression,\n\nthe letter of 05.06.2018 or the earlier letter from taxing authority\n\ndated 14.05.2018 cannot be construed to be the commencing\n\npoint of any enquiry. These were requests for starting an enquiry,\n\nwhich obviously did not commence prior to the aforesaid dates in\n\nthe year 2021.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P014_C02",
+      "text": "Thus, on this point I cannot accept the finding of\n\nthe High Court that a regular enquiry was already initiated on\n\n05.06.2018. The restriction in\nSection 17A\nof the 1988 Act is on\n\nconducting an enquiry by a police officer without the prior\n\napproval of the authority specified therein. A request to conduct\n\nan enquiry by itself cannot be the starting point of the enquiry\n\nunder the said provision to bypass the restriction postulated\n\ntherein. Moreover, in the facts of this case, actual search for\n\ninformation had commenced in the year 2021, as I have already\n\nindicated, and lack of action on this count has been attributed by\n\nthe State to the appellant and the other accused persons\n\nthemselves. We are not going into the truth of such allegations. But if such allegations are assumed to be correct, the same shall\n\nonly support the appellant’s case that no enquiry was initiated\n\nbefore incorporation of\nSection 17A\nin the statute book. Further,\n\nin the F.I.R. or the preliminary enquiry report dated 09.12.2021,\n\nthere was no reference to the communication of 05.06.2018.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P014_C03",
+      "text": "I,\n\naccordingly, hold that before\nSection 17A\nof the 1988 Act had\n\nbecome operational, no enquiry, inquiry or investigation had\n\ncommenced as against the appellant in relation to the subject\n\ncrime.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P015_C01",
+      "text": "14. Mr. Salve has also relied on a Standard Operating Procedure\n\n(hereinafter referred to as “SOP”) for processing cases under\nSection 17A\nof the 1988 Act. This has been issued under Memo\n\nno.428/07/2021­AVD.IV(B) dated 03.09.2021 by the Department\n\nof Personnel and Training of the Government of India. This\n\nmemo in detail records how the aforesaid provisions shall apply.\n\nClause 4.2 thereof stipulates: ­\n\n“Enquiry for the purposes of these SOPs, means any\n action taken, for verifying as to whether the information\n pertains to commission of offence under the Act.”",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P016_C01",
+      "text": "15. As there is no authoritative guideline defining what\n\nconstitutes an enquiry, I find it safe to rely on the explanation\n\ngiven in the aforesaid clause of the SOP. This explanation also\n\ncontemplates any action taken for verifying as to whether the\n\ninformation pertains to commission of offences under the Act or\n\nnot. Again, the memo of 05.06.2018, if tested standalone, cannot\n\nbe construed to imply taking any action.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P017_C01",
+      "text": "16. The High Court citing the judgments of this Court in the\n\ncases of Shambhoo Nath Misra ­vs­ State of U.P. & Others\n\n[(1997) 5 SCC 326] and State of Uttar Pradesh ­vs­ Paras Nath\n\nSingh [(2009) 6 SCC 372], has held that the protection of\n\nsanction sought by the accused persons therein cannot be\n\napplied because when a public servant is alleged to have\n\ncommitted the offence of fabrication of records or\n\nmisappropriation of public funds, it cannot be said that he acted\n\nin discharge of his official duty. Obviously, it cannot be said that\n\nsuch misdemeanour on the part of a public servant can be\n\nequated to his official duties. But these judgments were delivered\n\nwhile interpreting the provisions of Section 197 of 1973 Code. The requirement of previous sanction contemplated in Section\n\n197 of the 1973 Code comes at the stage of taking cognizance of\n\nan offence. Thus, a judicial authority, in such a context has the\n\nadvantage of coming to some form of opinion as to whether the\n\noffending acts can be said to have been committed in discharge of\n\nhis official duty or not. In the case of Dr. S.M.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P017_C02",
+      "text": "Mansoori(Dead)\n\nThrough Legal Representatives ­vs­ Surekha Parmar and\n\nOthers [(2023) 6 SCC 156], the complaint related to offences\n\npunishable under Sections 498­A and 506 read with\nSection 34\nof IPC as well as\nSections 3\nand\n\nof the Dowry Prohibition Act,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P018_C01",
+      "text": "1961. The police personnel had entered the house of the\n\nappellant therein without any previous sanction and the charges\n\nframed against the accused were quashed by the High Court on\n\nthe ground that prior sanction under Section 197 of 1973 Code\n\nwas not taken. In that context, it was held by a Coordinate\n\nBench of this Court that looking at the nature of allegations in\n\nthe complaint, at that stage it was impossible to conclude that\n\nthe acts alleged to have been done by the accused were\n\ncommitted by her while in discharge of official duty. The High\n\nCourt judgment was set aside and it was opined by the\n\nCoordinate Bench in the facts of that case, that a final view on\n\nthat issue would be taken only after the evidence was recorded.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P019_C01",
+      "text": "17. So far as the provision of Section 197 of the 1973 Code is\n\nconcerned, the requirement for deciding the question on\n\nobtaining sanction is at the stage of taking cognizance. Thus,\n\nsome element of application of mind is necessary while examining\n\nthat issue. In the case of Matajog Dobey ­vs­ H. C. Bhari (AIR\n\n1956 SC 44), there was use of force when a tax raiding party was\n\nresisted from conducting a search. This gave rise to two\n\ncomplaints, which were sent to two magistrates for judicial\n\nenquiry. Summonses were issued against the income tax officials\n\nand the accompanying policemen over use of force. Matajog\n\nDobey (supra), the resistor, contended that use of such force was\n\nnot in discharge of official duty. Objection was raised against the\n\nissuance of summons on the ground of lack of sanction as\n\ncontemplated in\nSection 197\nof the Criminal Procedure Code,\n\nwhich was prevalent at that point of time (1950). Negating such a\n\ncontention, a Constitution Bench of this Court observed:­\n\n“20. Is the need for sanction to be considered as soon as\nthe complaint is lodged and on the allegations therein\ncontained?",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P019_C02",
+      "text": "At first sight, it seems as though there is some\nsupport for this view in Hori Ram case and also in Sarjoo\nPrasad v. King­Emperor. Sulaiman, J. says that as the\nprohibition is against the institution itself, its applicability\nmust be judged in the first instance at the earliest stage of\ninstitution. Varadachariar, J. also states that the question\nmust be determined with reference to the nature of the\nallegations made against the public servant in the criminal\nproceeding. But a careful perusal of the later parts of their\njudgments shows that they did not intend to lay down any\nsuch proposition. Sulaiman, J. refers (at P­179) to the\nprosecution case as disclosed by the complaint or the police\nreport and he winds up the discussion in these words:“Of\ncourse, if the case as put forward fails or the defence\nestablishes that the act purported to be done is in execution\nof duty, the proceedings will have to be dropped and the\ncomplaint dismissed on that ground”.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P019_C03",
+      "text": "The other learned\nJudge also states at p. 185, “At this stage we have only to\nsee whether the case alleged against the appellant or\nsought to be proved against him relates to acts done or\npurporting to be done by him in the execution of his duty”. It\nmust be so. The question may arise at any stage of the\nproceedings. The complaint may not disclose that the act\nconstituting the offence was done or purported to be done in\nthe discharge of official duty; but facts subsequently coming\nto light on a police or judicial inquiry or even in the course of\nthe prosecution evidence at the trial, may establish the\nnecessity for sanction. Whether sanction is necessary or not\nmay have to be determined from stage to stage. The\nnecessity may reveal itself in the course of the progress of\nthe case.\nxxx xxx xxx",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P020_C01",
+      "text": "23. Where a power is conferred or a duty imposed by\nstatute or otherwise, and there is nothing said expressly\ninhibiting the exercise of the power or the performance of\nthe duty by any limitations or restrictions, it is reasonable\nto hold that it carries with it the power of doing all such acts\nor employing such means as are reasonably necessary for\nsuch execution. If in the exercise of the power or the\nperformance of the official duty, improper or unlawful\nobstruction or resistance is encountered, there must be the\nright to use reasonable means to remove the obstruction or\novercome the resistance. This accords with commonsense\n\nand does not seem contrary to any principle of law. The\n true position is neatly stated thus in Broom's Legal Maxims,\n 10th Edn. at p. 312:“ It is a rule that when the law\n commands a thing to be done, it authorises the performance\n of whatever may be necessary for executing its command.”\n\nThe scope of operation of\nSection 17A\nof the 1988 Act is,\n\nhowever, different from that of Section 197 of the Code. The\n\nrequirement of taking sanction under\nSection 19\nof the 1988 Act\n\nalso is at the same stage.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P020_C02",
+      "text": "Unlike Section 197 of 1973 Code (which\n\nis near identically phrased as the same section in the earlier\n\nversion of the Code),\nSection17A\nof the 1988 Act imposes\n\nrestriction on police officer at the enquiry stage itself, from\n\nproceeding against a public servant in relation to any offence\n\nalleged to have been committed by him, relatable to any\n\nrecommendation made or decision taken by such public\n\nservant (emphasis added), without previous approval of the\n\nauthorities stipulated in the said Section. We do not think the\n\ncases arising out of Section 197 of the 1973 Code would give\n\nproper guidance for interpreting the provision of\nSection 17A\n\nthe 1988 Act because, in the cases under Section 197, the\n\ndecision on requirement for sanction is to be taken at the stage of\n\ntaking cognizance. Thus, there is in­built scope of application of\n\njudicial mind to assess, at least prima­facie, if an alleged act falls\n\nwithin discharge of official duty or not.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P020_C03",
+      "text": "Under the provisions of\nSection 17A\nof the 1988 Act, there is no scope of judicial\n\napplication of mind in determining if the flaw in making\n\nrecommendation or taking decision is interwoven with discharge\n\nof official duty or function or not. Moreover, the qualified\n\nembargo therein is on a police officer. On the point as to\n\nassessing whether the offending act is in discharge of official duty\n\nor not, having regard to the nature of duties of a police officer, he\n\nis less equipped to assess that factor, which involves some form\n\nof judicial application of mind. No material has been placed\n\nbefore us to demonstrate that the concerned police officer had\n\nundertaken any exercise for prima facie forming his opinion as to\n\nwhether the offence alleged against the appellant was relatable to\n\nany recommendation made or decision taken by the appellant in\n\ndischarge of his official duty. Unlike in the case of Dr. S.M.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P020_C04",
+      "text": "Mansoori (supra), in which the offences involved, by their very\n\nnature, were prima facie not relatable to discharge of official duty\n\nby the accused, here the appellant’s actions relate to making\n\nrecommendations or taking decisions and these decisions and\n\nrecommendations otherwise, prima face, relate to discharge of\n\nofficial functions. In the case of State of Telangana ­vs­\n\nManagipet alias Mangipet Sarveshwar Reddy [(2019) 19 SCC\n\n87] the accused questioned the authorisation of the investigating\n\nofficer in terms of\nSection 17\nof the 1988 Act. This Court held :­\n\n “36. The High Court has rightly held that no\n ground is made out for quashing of the\n proceedings for the reason that the investigating\n agency intentionally waited till the retirement of\n the accused officer. The question as to whether a\n sanction is necessary to prosecute the accused\n officer, a retired public servant, is a question\n which can be examined during the course of the\n trial as held by this Court in\nK. Kalimuthu [K. Kalimuthu v. State\n, (2005) 4 SCC 512 : 2005 SCC\n (Cri) 1291] . In fact, in a recent judgment in\nVinod\n Kumar Garg v. State (NCT of Delhi) [Vinod Kumar\n Garg\nv.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P020_C05",
+      "text": "State (NCT of Delhi), (2020) 2 SCC 88 :\n(2020) 1 SCC (Cri) 545 : (2020) 1 SCC (L&S) 146] ,\n this Court has held that if an investigation was\n not conducted by a police officer of the requisite\n rank and status required under\nSection 17\nof the\n Act, such lapse would be an irregularity, however\n unless such irregularity results in causing\n prejudice, conviction will not be vitiated or be bad\n in law. Therefore, the lack of sanction was rightly\n found not to be a ground for quashing of the\n proceedings.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P021_C01",
+      "text": "18. I shall test later in this judgment as to whether the remand\n\nproceeding before the Special Judge was mere irregularity or\n\nfatal, but before that I have to answer the question as to whether\n\nthe protection of\nSection 17A\nis applicable in the case of the\n\nappellant.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P022_C01",
+      "text": "19. Large part of Mr. Salve’s arguments was devoted to the\n\nproposition that the content of\nSection 17A\nof the 1988 Act was\n\nprocedural in nature and relying on the judgments of this court\n\nin the cases of (i) Anant Gopal Sheorey ­vs­ State of Bombay\n\n[AIR 1958 SC 915]; (ii) Rattan Lal ­vs­ State of Punjab [AIR\n\n1965 SC 444]; and (iii) CBI ­vs­ R.R. Kishore [2023 INSC 817],\n\nhe has argued that the said provision is retroactive and not\n\nretrospective. His submission is that the amended provision\n\napplies at the starting point of enquiry, inquiry, or investigation,\n\neven though the offence may relate back to a period when the\n\nrequirement of obtaining previous sanction was not necessary for\n\nstarting these processes. I have already referred to\nSection 19\n\nthe 1988 Act which requires the Court to satisfy itself whether\n\nsuch sanction stated therein has been taken at the stage of\n\ntaking cognizance. So far as acts of a public servant in making\n\nrecommendation or taking decision in discharge of official duties\n\nare concerned, an entry point check, prior in time has been\n\ncontemplated for the investigating agencies.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P022_C02",
+      "text": "Thus, the\n\nrequirement of taking prior approval would arise at that stage,\n\nbeing the beginning or commencing of enquiry, inquiry, or\n\ninvestigation. In my view a plain reading of the said Section\n\nleads to such an interpretation. Section 17A\ndoes not distinguish\n\nbetween alleged commission of offence prior to 26.07.2018 or\n\npost thereof. This provision stipulates the time when any\n\nenquiry, inquiry or investigation is commenced by a police officer. Mr. Rohtagi drew my attention to the judgment of this Court in\n\nthe case of State of Rajasthan ­vs­ Tejmal Choudhary [2021\n\nSCC Online SC 3477] to refute Mr. Salve’s submissions on this\n\npoint. In this judgment, a Coordinate Bench has held that the\nSection 17A\nof the 1988 Act is substantive in nature and is\n\ntherefore applicable prospectively. The same view has been taken\n\nby different High Courts but as I have an authority of this Court\n\non this point, I do not consider it necessary to refer to all these\n\nHigh Court Judgements.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P023_C01",
+      "text": "20. In the case of Tejmal Choudhary (supra) the FIR was\n\nregistered on 01­01­2018 and the accused public servant sought\n\nquashing of the FIR on the ground of introduction of\nSection 17A\nin the 1988 Act. In para 10 of this judgment, the Coordinate\n\nBench observed that:­\n\n “10.\nState of Telangana v. Managipet\nalias\n Mangipet Sarveshwar Reddy reported (2019) 19 SCC\n\n87, this Court rejected the arguments that amended\n provisions of the\nPC Act\nwould be applicable to an\n FIR, registered before the said amendment came into\n force and found that the High Court had rightly held\n that no grounds had made out for quashing the\n proceedings.”\n\nIn the present case, original FIR was registered on 09.12.2021\n\nand the appellant was implicated in the aforesaid offences on\n\n08.09.2023. There is no evidence of any substantive enquiry,\n\ninquiry, or investigation made against him prior to coming into\n\noperation of the\nSection 17A\nof the 1988 Act.\nHence, the case at\n\nhand is distinguishable from the\nratio\nlaid down in\nthe judgment\n\nof this Court of in the case of Tejmal Choudhary (supra).",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P024_C01",
+      "text": "21. The Amendment Act by which\nSection 17A\nof the 1988 Act\n\nwas brought into the said statute also deleted the provisions of\n\nsub­clauses (c) and (d) of\nSection 13 (1)\nthereof. At the time the\n\nmemorandum of adding the appellant as accused was issued, the\n\nsaid Amendment Act had become operational, but at the time of\n\nalleged commission of offence, aforesaid two sub­clauses were\n\npart of the statute book. Thus, per se, the appellant could be\n\nheld liable for commission of offences stipulated in the said\n\nprovisions, though their subsequent deletion might have some\n\nimpact on the ultimate outcome of the case. We are not\n\nconcerned with that aspect of the controversy at this stage. It\n\nhas been asserted by Mr. Rohtagi, however, that since at the time\n\nof commission of offence, the protective shield of\nSection 17A\nwas\n\nnot in force, the appellant could not claim the benefits thereof. I,\n\nhowever, do not accept this argument. It has been already\n\nobserved by me that the point of time\nSection 17A\nof 1988 Act\n\nwould become applicable is the starting point of enquiry, inquiry,\n\nor investigation and not the time of commission of the alleged\n\noffence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P024_C02",
+      "text": "In the event any of the three acts on the part of the\n\nprosecution is triggered off post 26.07.2018, the mandate of\nSection 17A\nwould be applicable. The wording of\nSection 17A\nrestricts the power of a police officer to conduct any of the three\n\nacts into any offence by a public servant “under this act”. Thus,\n\nif the process of enquiry commences at a time attracting specific\n\nprovisions of the 1988 Act which stand deleted by the\n\nAmendment Act of 2018, the restrictive protection in form of\nSection 17A\nought to be granted. The phrase “under this act”, on\n\nsuch construction ought to include offences which were in the\n\nstatue book at the time the subject­offences are alleged to have\n\nbeen committed. Mr. Rohatgi, however, wants me to construe this\n\nexpression, i.e. “under this Act” to mean the 1988 Act, as it\n\nexisted on and from the date the provisions of\nSection 17A\nwas\n\nintroduced. As the said section did not exist at the time of alleged\n\ncommission of the offences, his submission is that the said\n\nprovision could not apply in the case of the appellant. The said\n\nsection, however, as I have already narrated, had become\n\noperational when the enquiry started.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P024_C03",
+      "text": "Thus, proceeding on the\n\nbasis that the said provision is prospective in its operation, the\n\nmaterial point of time for determining its prospectivity would be\n\nthe starting point of enquiry or inquiry and investigation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P025_C01",
+      "text": "22. The question as to whether the phrase “under this Act” used\n\nSection 17A\nof the 1988 Act, would mean to be “the Act”, as it\n\nexisted at the time of alleged commission of offence or “the Act”\n\nas it stood post amendment when the enquiry commenced would\n\nalso have to be answered by this Court. While dealing with the\n\nissue of necessity for obtaining prior approval, I have already held\n\nthat the appellant could be implicated under\nSection 13 (1)(c)\nand\n(d), as at the time of alleged commission of the offences, these\n\nprovisions were alive. Once certain offences are deleted from an\n\nenactment, they do not vanish totally unless the lawmakers say\n\nso. They move to the back pages and can be revived if they were\n\ncommitted before being enacted out of the legislation. But I\n\ncannot give a restrictive interpretation to the expression “under\n\nthis Act” to give an isolated retrospective operation to the said\n\nphrase, detaching it from rest of the provisions of\nSection 17A\n\nthe Act and remove the protective shield in a situation where an\n\nenquiry has started after introduction of the said provision but\n\nrelates to an offence committed prior to its introduction in 2018.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P025_C02",
+      "text": "The said phrase ought to be relatable to the date of starting of the\n\nenquiry, inquiry or investigation and not to the time or date of\n\ncommission of offence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P026_C01",
+      "text": "23. Otherwise, if I apply an interpretation of the expression\n\n“under this Act” to mean the statute as it exists at the time the\n\nenactment is invoked, the same phrase is invoked, the same\n\nmight result in divesting the Special Judge of his power to\n\nproceed against the appellant, as at the time the appellant’s case\n\nwas brought to the Special Judge, the aforesaid two sub­sections\n\nstood deleted from\nSection 13 (1)\nof the 1988 Act. I am making this observation because the Special Judge’s\n\njurisdiction is derived from\nSections 3\nand\n\nof the 1988 Act. These provisions read:­\n\n“3. Power to appoint special Judges.—(1) The\nCentral Government or the State Government may, by\nnotification in the Official Gazette, appoint as many\nspecial Judges as may be necessary for such area or\nareas or for such case or group of cases as may be\nspecified in the notification to try the following\noffences, namely:—\n(a) any offence punishable under this Act; and\n(b) any conspiracy to commit or any attempt to\n commit or any abetment of any of the offences\n specified in clause (a).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P026_C02",
+      "text": "(2) A person shall not be qualified for appointment as a\nspecial Judge under this Act unless he is or has been a\nSessions Judge or an Additional Sessions Judge or an\nAssistant Sessions Judge under the\nCode of Criminal\nProcedure\n, 1973 (2 of 1974).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P027_C01",
+      "text": "4. Cases triable by special Judges.—(1)\nNotwithstanding anything contained in the\nCode of\nCriminal Procedure\n, 1973 (2 of 1974), or in any other\nlaw for the time being in force, the offences specified in\nsub­section (1) of\nsection 3\nshall be tried by special\nJudges only. (2) Every offence specified in sub­section (1) of\nsection\n\nshall be tried by the special Judge for the area\nwithin which it was committed, or, as the case may be,\nby the special Judge appointed for the case, or where\nthere are more special Judges than one for such area,\nby such one of them as may be specified in this behalf\nby the Central Government. (3) When trying any case, a special Judge may also\ntry any offence, other than an offence specified in\nsection 3\n, with which the accused may, under the\nCode of Criminal Procedure\n, 1973 (2 of 1974), be\ncharged at the same trial.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P027_C02",
+      "text": "(4) Notwithstanding anything contained in the\nCode of\nCriminal Procedure\n, 1973 (2 of 1974), the trial of an\noffence shall be held, as far as practicable, on day­to­\n\nday basis and an endeavour shall be made to ensure\n that the said trial is concluded within a period of two\n years:\nProvided that where the trial is not concluded within\n the said period, the special Judge shall record the\n reasons for not having done so:\nProvided further that the said period may be extended\n by such further period, for reasons to be recorded in\n writing but not exceeding six months at a time; so,\n however, that the said period together with such\n extended period shall not exceed ordinarily four years\n in aggregate.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P028_C01",
+      "text": "24. Now if I accept the meaning Mr. Rohtagi wants us to give to\n\nthe said expression as employed in\nSection 17A\nof the 1988 Act,\n\nthe same expression i.e. “under this Act” as contained in\nSection\n\n3 (1) (a)\nwould also have to be read to mean as “the Act”\n\nprevailing at the point of time the appellant’s case is brought to\n\nthe Special Judge. This would result in shrinking the jurisdiction\n\nof the Special Judge to try offences which have been repealed by\n\nthe Amendment Act of 2018. I am unable to agree with\n\nMr. Rohatgi on this point. It is an established principle of\n\nstatutory interpretation that if a particular phrase is employed in\n\ndifferent parts of an enactment, Courts ought to proceed with an\n\nunderstanding that the legislature intended to assign the same\n\nmeaning to that expression used in different provisions thereof,\n\nunless of course, a contrary intention appears from the statute\n\nitself. Here I find no such contrary intention.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P029_C01",
+      "text": "25. Now I shall examine the legality of a proceeding which is\n\nstarted without complying with the requirement of previous\n\napproval under\nSection 17A\nof the 1988 Act. In the case of\n\nYashwant Sinha and Others ­vs­ Central Bureau of\n\nInvestigation through its Director and Another [(2020) 2 SCC\n\n338], a Bench of this Court comprising of three Hon’ble Judges,\n\nwhile dealing with power of review had also examined this\n\nquestion. The Bench was unanimous in rejecting the review plea. In a concurring judgment one of the Hon’ble Judges, (K. M. Joseh, J.) held:­\n\n “116. In the year 2018, the Prevention of Corruption\n (Amendment) Act, 2018 (hereinafter referred to as “the\n 2018 Act”, for short) was brought into force on 26­7­2018. Thereunder,\nSection 17\n­A, a new section was inserted,\n which reads as follows:\n“17­A.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P029_C02",
+      "text": "Enquiry or inquiry or investigation of\n offences relatable to recommendations made\n or decision taken by public servant in\n discharge of official functions or duties.—(1)\n No police officer shall conduct any enquiry or\n inquiry or investigation into any offence alleged to\n have been committed by a public servant under\n this Act, where the alleged offence is relatable to\n any recommendation made or decision taken by\n such public servant in discharge of his official\n functions or duties, without the previous approval\n —\n\n(a) in the case of a person who is or was\n employed, at the time when the offence was\n alleged to have been committed, in\n connection with the affairs of the Union, of\n that Government;\n(b) in the case of a person who is or was\n employed, at the time when the offence was\n alleged to have been committed, in\n connection with the affairs of a State, of\n that Government;\n(c) in the case of any other person, of the\n authority competent to remove him from his\n office, at the time when the offence was\n alleged to have been committed:\nProvided that no such approval shall be necessary\n for cases involving arrest of a person on the spot on\n the charge of accepting or",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P029_C03",
+      "text": "attempting to accept any\n undue advantage for himself or for any other\n person:\nProvided further that the concerned authority shall\n convey its decision under this section within a\n period of three months, which may, for reasons to\n be recorded in writing by such authority, be\n extended by a further period of one month.”\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P030_C01",
+      "text": "117. In terms of\nSection 17\n­A, no police officer is permitted\nto conduct any enquiry or inquiry or conduct investigation\ninto any offence done by a public servant where the\noffence alleged is relatable to any recommendation made\nor decision taken by the public servant in discharge of his\npublic functions without previous approval, inter alia, of\nthe authority competent to remove the public servant from\nhis office at the time when the offence was alleged to have\nbeen committed. In respect of the public servant, who is\ninvolved in this case, it is clause (c), which is applicable. Unless, therefore, there is previous approval, there could\nbe neither inquiry or enquiry or investigation. It is in this\ncontext apposite to notice that the complaint, which has\nbeen filed by the petitioners in Writ Petition (Criminal) No.\n298 of 2018, moved before the first respondent CBI, is\ndone after\nSection 17\n­A was inserted. The complaint is\ndated 4­10­2018. Para 5 sets out the relief which is sought\nin the complaint which is to register an FIR under various\n\nprovisions. Paras 6 and 7 of the complaint are relevant in\n the context of\nSection 17\n­A, which read as follows:\n“6.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P030_C02",
+      "text": "We are also aware that recently,\nSection 17\n­\nA of the Act\nhas been brought in by way of an\n amendment to introduce the requirement of prior\n permission of the Government for investigation or\n inquiry under the\nPrevention of Corruption Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P031_C01",
+      "text": "7. We are also aware that this will place you in\n the peculiar situation, of having to ask the\n accused himself, for permission to investigate a\n case against him. We realise that your hands\n are tied in this matter, but we request you to at\n least take the first step, of seeking permission of\n the Government under\nSection 17\n­\nA of the\n Prevention of Corruption Act\nfor investigating this\n offence and under which, “the concerned\n authority shall convey its decision under this\n section within a period of three months, which\n may, for reasons to be recorded in writing by\n such authority, be extended by a further period\n of one month”.”\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P032_C01",
+      "text": "118. Therefore, the petitioners have filed the complaint\n fully knowing that\nSection 17\n­A constituted a bar to any\n inquiry or enquiry or investigation unless there was\n previous approval. In fact, a request is made to at least\n take the first step of seeking permission under\nSection 17\n­\n A of the 2018 Act. Writ Petition (Criminal) No. 298 of 2018\n was filed on 24­10­2018 and the complaint is based on\n non­registration of the FIR. There is no challenge to\nSection\n\n­A. Under the law, as it stood, both on the date of filing\n the petition and even as of today,\nSection 17\n­A continues\n to be on the statute book and it constitutes a bar to any\n inquiry or enquiry or investigation. The petitioners\n themselves, in the complaint, request to seek approval in\n terms of\nSection 17\n­A but when it comes to the relief\n sought in the writ petition, there was no relief claimed in\n this behalf.”\n\nThe same view has been reflected in the case of Tejmal\n\nChoudhary (supra).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P033_C01",
+      "text": "26. One point which has been urged in relation to this authority\n\nis that this was not a contention raised by the parties in the\n\njudgment of Yashwant Sinha (supra) and was not dealt with by\n\nthe majority opinion. Hence, according to the respondents a\n\nconcurring opinion could not be a binding authority on a point\n\nwhich has not been dealt with by the majority of the Hon’ble\n\nJudges in the Bench. Mr. Rohatgi relied on a decision in the case\n\nof Rameshbhai Dabhai Naika ­vs­ State of Gurajat and Others\n\n[(2012) 3 SCC 400] on this point. The ratio of this decision would\n\nnot apply in the context of the judgment delivered in the case of\n\nYashwant Sinha (supra), as in the latter authority the majority\n\nview does not reflect any discord over the concurring view. In my\n\nopinion, however, position of law laid down in a concurring\n\njudgment ought to be treated as part of the main judgment and\n\nthat opinion would form a binding authority.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P033_C02",
+      "text": "I should not\n\ndistinguish between the main judgment and the concurring view\n\nand isolate the reasoning contained in the concurring opinion\n\nand hold the reasoning contained in the main opinion (of majority\n\nof the judges) only to have the status of a binding precedent. The\n\nconcurring view is just as much part of the main opinion (of\n\nmajority of the judges) and will be a binding precedent, composite\n\nwith the majority view. The position of law would be different if\n\nthe majority view had expressed, either directly or by implication,\n\na contrary view. That is not the case so far as the judgment in\n\nthe case of Yashwant Sinha (supra) is concerned. Hence this\n\nprinciple of law contained in the concurring judgment would\n\nconstitute precedent even though it was expressed in a\n\nconcurring judgment of a learned Single Judge which the\n\nmajority members of the Bench have not differed. Thus, the steps\n\ntaken against the appellant under the 1988 Act ought to be\n\ninvalidated as the same did not commence with prior approval as\n\nlaid down under\nSection 17A\nof the 1988 Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P034_C01",
+      "text": "27. The cases of\nNeeharika Infrastructure Pvt. Ltd. vs. State\n\nof Maharashtra\n[AIR 2021 SC 315] and State ­vs­ M. Maridoss\n\n[(2023) 4 SCC 338] were cited by the respondents to contend that\n\ninvestigation ought not be scuttled at a nascent stage and it was\n\nalso highlighted that the petition for quashing of an FIR was\n\nmade within five days from the date the appellant was arraigned\n\nas an accused. It is a fact that the appellant had approached the\n\nquashing Court with extraordinary speed but that factor by itself\n\nwould not render his action untenable, ousting him from the\n\njudicial forum to have the proceeding against him invalidated. In\n\nthe cases of R.P. Kapur ­vs­ State of Punjab [AIR 1960 SC 866]\n\nand State of Haryana ­vs­ Bhajan Lal [(1992) Supp. (1) SCC\n\n335], it has been held that prosecution undertaken in violation of\n\na legal bar would be a valid ground for quashment of the\n\nproceeding. Further, in the case of Mahmood Ali & others ­vs­\n\nState of UP [2023 INSC 684] a Coordinate Bench of this Court\n\nhas observed :­\n\n “13.….",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P034_C02",
+      "text": "The Court while exercising its jurisdiction under\nSection 482\nof the CrPC or\nArticle 226\nof the Constitution\n need not restrict itself only to the stage of a case but is\n empowered to take into account the overall circumstances\n leading to the initiation/registration of the case as well as\n the materials collected in the course of investigation.….”",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P035_C01",
+      "text": "28. Now I shall address the issue as to whether striking down\n\nthe set of offences under the 1988 Act from the FIR would render\n\nthe remand order passed by the Special Judge appointed in\n\nterms of\nSection 3\nof the aforesaid statute illegal and non­est. For\n\nthe purpose of testing this legal issue, which was raised on behalf\n\nof the appellant, it would be necessary to refer to the provisions\n\nSections 3\nand\n\nof the 1988 Act which have been reproduced\n\nabove.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P036_C01",
+      "text": "29. The question of lack of prior approval under the 1988 Act\n\nwas raised before the Special Judge at the time of remand but\n\nthis argument was rejected on the ground that time for\n\ncommission of the alleged offences related to a period prior to\n\n26.07.2018. I have in the earlier part of this judgment discussed\n\nthis question and held the point in favour of the appellant.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P037_C01",
+      "text": "30. There are allegations of commission of offences against the\n\nappellant under different provisions of the 1860 Code. I have\n\nbeen taken through the memorandum for adding the appellant as\n\naccused and also the order of the remand Court. The\nIPC\noffences\n\nalso relate to the same or similar set of transactions, for which\n\nthe aforesaid provisions of the 1988 Act were applied. The\n\nsubstantive offences alleged against the appellant are\nSection 12\nand\nSections 13(1) (c)\nand (d) read with\nSection 13(2)\n, which is\n\nthe provisions prescribing punishment. I am not satisfied, at this\n\nstage, that the 1988 Act offences are so dominant in the set of\n\nallegations against the appellant that once I consider the\n\nallegations against the appellant de hors the alleged offences\n\nunder 1988 Act, the allegations of commission of the\nIPC\noffences\n\nwould automatically collapse. At this stage, in my opinion, the\n\nalleged commission of\nIPC\noffences are not mere ancillary to the\n\n1988 Act offences, as has been argued by Mr. Salve and Mr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P037_C02",
+      "text": "Luthra and if commission of offences by the appellant under the\nIPC\nprovisions is proved, could form the basis of conviction\n\nindependent of the offences under the 1988 Act. Thus, the ratio\n\nof the judgement of this Court in the case of Ebha Arjun Jadeja\n\nand others ­vs­ State of Gujarat [(2019) 9 SCC 789], to which I\n\nwas a party, would not aid the appellant. In this judgment, it was\n\nheld:­\n\n “18. In the case in hand, the only information recorded\n which constitutes an offence is the recovery of the arms. The police officials must have known that the area is a\n notified area under the\nTADA Act\nand, therefore, carrying\n such arms in a notified area is itself an offence under the\nTADA Act\n. It is true that this may be an offence under the\nArms Act\nalso but the basic material for constituting an\n offence both under the\nArms Act and the TADA Act\n identical i.e. recovery of prohibited arms in a notified area\n under the\nTADA Act\n. The evidence to convict the accused\n for crimes under the\nArms Act and the TADA Act\nis also\n the same. There are no other offences of rape, murder, etc.\n in this case.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P037_C03",
+      "text": "Therefore, as far as the present case is\n concerned, non­compliance with\nSection 20\n­A(1) of the\nTADA Act\nis fatal and we have no other option but to\n discharge the appellants insofar as the offence under the\n\nTADA Act\nis concerned. We make it clear that they can be\n proceeded against under the provisions of the\nArms Act\n.”\n\n As would be evident from quoted portion of the judgment in\n\nthe case of Ebha Arjun Jadeja (supra), the Coordinate Bench\n\nhad permitted proceeding against the appellant therein under the\n\nprovisions of the\nArms Act\nthough basic material for constituting\n\nthe offences was both under the\nArms Act\nand the TADA.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P038_C01",
+      "text": "31. In the case of State through Central Bureau of\n\nInvestigation, New Delhi ­vs­ Jitender Kumar Singh [(2014) 11\n\nSCC 724] certain persons who were not public servants were\n\nbeing tried with a public servant in relation to offences outside\n\nthe purview of the 1988 Act. The public servant however was\n\nimplicated in offences under the aforesaid statute. It has been\n\nheld and observed in this judgment:­\n\n “46. We may now examine Criminal Appeal No. 161 of\n 2011, where the FIR was registered on 2­7­1996 and the\n charge­sheet was filed before the Special Judge on 14­9­\n 2001 for the offences under Sections 120­B, 420\nIPC\nread\n with\nSections 13(2)\nand\n13(1)\nof the PC Act. Accused 9 and\n 10 died even before the charge­sheet was sent to the\n Special Judge. The charge against the sole public servant\n under the\nPC Act\ncould also not be framed since he died on\n 18­2­2005. The Special Judge also could not frame any\n charge against non­public servants. As already indicated,\n under sub­section (3) of\nSection 4\n, the Special Judge could\n\ntry non­PC offences only when “trying any case” relating\n to PC offences.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P038_C02",
+      "text": "In the instant case, no PC offence has been\n committed by any of the non­public servants so as to fall\n under\nSection 3(1)\nof the PC Act. Consequently, there was\n no occasion for the Special Judge to try any case relating\n to the offences under the\nPC Act\nagainst the appellant. The\n trying of any case under the\nPC Act\nagainst a public\n servant or a non­public servant, as already indicated, is a\n sine qua non for exercising powers under sub­section (3) of\nSection 4\nof the PC Act. In the instant case, since no PC\n offence has been committed by any of the non­public\n servants and no charges have been framed against the\n public servant, while he was alive, the Special Judge had\n no occasion to try any case against any of them under the\nPC Act\n, since no charge has been framed prior to the death\n of the public servant. The jurisdictional fact, as already\n discussed above, does not exist so far as this appeal is\n concerned, so as to exercise jurisdiction by the Special\n Judge to deal with non­PC offences.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P039_C01",
+      "text": "47. Consequently, we find no error in the view taken by\n the Special Judge, CBI, Greater Mumbai in forwarding the\n case papers of Special Case No. 88 of 2001 in the Court of\n the Chief Metropolitan Magistrate for trying the case in\n accordance with law. Consequently, the order passed by\n the High Court is set aside. The competent court to which\n Special Case No. 88 of 2001 is forwarded, is directed to\n dispose of the same within a period of six months. Criminal Appeal No. 161 of 2011 is allowed accordingly.”\n\n Citing this authority along with the judgement of this court\n\nin the cases of (i) Chiranjilal Goenka ­vs­ Jasjit Singh &\n\nOthers [(1993) 2 SCC 507], (ii) State of Tamil Nadu ­vs­\n\nParamasiva Pandian [(2002) 1 SCC 15], (iii) State of Punjab ­vs­\n\nDavinder Pal Singh Bhullar [(2011) 14 SCC 427] and (iv)\n\nKaushik Chaterjee ­vs­ State of Haryana [(2020) 10 SCC 92] it\n\nwas argued that the defect of jurisdiction strikes at the very\n\npower or authority of the Court and hence the Special Judge\n\ncould not have passed the remand order and hence the entire\n\nproceeding against the appellant before the Special Judge ought\n\nto fail.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P039_C02",
+      "text": "On the same point, certain other authorities were also\n\nreferred to but we do not consider it necessary to individually cite\n\nthose authorities and deal with them separately.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P040_C01",
+      "text": "32. So far as the present case is concerned, the principle of law\n\nlaid down in the authorities referred to in the preceding\n\nparagraph would not apply. In\nSection 4(3)\nof the 1988 Act it has\n\nbeen stipulated that when trying any case, a Special Judge may\n\nalso try any offence other than an offence specified in\nSection 3\n,\n\nwith which the accused may be charged with under the 1973\n\nCode, at the same trial. In the case of\nJitender Kumar Singh\n(supra), the public servant against whom allegations of\n\ncommission of offences under the 1988 Act were brought, had\n\ndied before framing of charge and other accused persons were\n\nnot public servants. They were not charged with any offence\n\nunder the 1988 Act. It was in this context the aforesaid\n\njudgment was delivered. It has been submitted before us on\n\nbehalf of the State that other co­accused persons have been\n\nimplicated in offences under the 1988 Act. A similar line of\n\nreasoning was followed in the case of A. Sreenivasa Reddy ­vs­\n\nRakesh Sharma and Another [2023 INSC 682].",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P040_C02",
+      "text": "I have earlier\n\nobserved that the offences against the appellant relate to the\n\nsame or similar set of transactions in relation to which the\n\nSpecial Judge is proceeding with the case initiated by the F.I.R.\n\ndated 09.12.2021 against the other accused persons. In this\n\ncontext, I shall refer to Section 223 of the 1973 Code, which\n\nstipulates :­\n\n “223.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P040_C03",
+      "text": "What persons may be charged jointly.—The\n following persons may be charged and tried together,\n namely:—\n(a) persons accused of the same offence committed in the\n course of the same transaction;\n(b) persons accused of an offence and persons accused of\n abetment of, or attempt to commit, such offence;\n(c) persons accused of more than one offence of the same\n kind, within the meaning of section 219 committed by\n them jointly within the period of twelve months;\n(d) persons accused of different offences committed in the\n course of the same transaction;\n(e) persons accused of an offence which includes theft,\n extortion, cheating, or criminal misappropriation, and\n\npersons accused of receiving or retaining, or assisting in\n the disposal or concealment of, property possession of\n which is alleged to have been transferred by any such\n offence committed by the first­named persons, or of\n abetment of or attempting to commit any such last named\n offence;\n(f) persons accused of offences under\nsections 411\nand\n\nof the Indian Penal Code (45 of 1860) or either of\n those sections in respect of stolen property the possession\n of which has been transferred by one offence;\n(g) persons accused of any",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P040_C04",
+      "text": "offence under Chapter XII of\n the\nIndian Penal Code\n(45 of 1860) relating to counterfeit\n coin and persons accused of any other offence under the\n said Chapter relating to the same coin, or of abetment of or\n attempting to commit any such offence; and the provisions\n contained in the former part of this Chapter shall, so far as\n may be, apply to all such charges:\nProvided that where a number of persons are charged\n with separate offences and such persons do not fall within\n any of the categories specified in this section, the\n [Magistrate or Court of Session] may, if such persons by\n an application in writing, so desire, and [if he or it is\n satisfied] that such persons would not be prejudicially\n affected thereby, and it is expedient so to do, try all such\n persons together.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P041_C01",
+      "text": "33. Sub clause (a) of the aforesaid provision of the 1973 Code,\n\nso far as charging and trying of an accused is concerned, could\n\napply in the present case, as the non­obstante clause with which\nSection 4\nof the 1988 Act is couched, would not oust the\n\nprinciples contained in Section 223 of the 1973 Code. There is\n\nno incompatibility in applying the aforesaid principle considering\n\nthe content of sub­\nsection 3\nSection 4\nof 1988 Act. In the case\n\nof Vivek Gupta ­vs­ Central Bureau Investigation and Another\n\n[(2003) 8 SCC 628] decided by a Coordinate Bench of this Court,\n\nit has been held:­\n\n “14. The only narrow question which remains to be\n answered is whether any other person who is also\n charged of the same offence with which the co­accused is\n charged, but which is not an offence specified in\nSection 3\nof the Act, can be tried with the co­accused at the same\n trial by the Special Judge.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P041_C02",
+      "text": "We are of the view that since\n sub­section (3) of\nSection 4\nof the Act authorizes a Special\n Judge to try any offence other than an offence specified in\nSection 3\nof the Act to which the provisions of Section 220\n apply, there is no reason why the provisions of Section\n 223 of the Code should not apply to such a case. Section\n 223 in clear terms provides that persons accused of the\n same offence committed in the course of the same\n transaction, or persons accused of different offences\n committed in the course of the same transaction may be\n charged and tried together. Applying the provisions of\nSections 3\nand\n\nof the Act and\nSections 220\nand\n\n the Code of Criminal Procedure, it must be held that the\n appellant and his co­accused may be tried by the Special\n Judge in the same trial.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P042_C01",
+      "text": "15. This is because the co­accused of the appellant who\n have been also charged of offences specified in\nSection 3\nof the Act must be tried by the Special Judge, who in view\n of the provisions of sub­section (3) of\nSection 4\nand Section\n 220 of the Code may also try them of the charge under\n Section 120­B read with\nSection 420\nIPC. All the three\n accused, including the appellant, have been charged of the\n offence under Section 120­B read with\nSection 420\nIPC. If\n the Special Judge has jurisdiction to try the co­accused for\n the offence under Section 120­B read with\nSection 420\nIPC, the provisions of Section 223 are attracted. Therefore,\n it follows that the appellant who is also charged of having\n committed the same offence in the course of the same\n transaction may also be tried with them. Otherwise it\n appears rather incongruous that some of the conspirators\n charged of having committed the same offence may be\n\ntried by the Special Judge while the remaining\n conspirators who are also charged of the same offence will\n be tried by another court, because they are not charged of\n any offence specified in\nSection 3\nof the Act.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "IPC 420"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P043_C01",
+      "text": "34. A question has also been raised by the appellant as to\n\nwhether the Special Judge could have passed the remand order\n\nin the event the remand was asked for only in respect of alleged\n\ncommission of the\nIPC\noffences. We are apprised in course of\n\nhearing that the appellant has been enlarged on bail. Hence, this\n\nquestion need not be addressed by me in this judgment. I,\n\naccordingly, dispose of this appeal with the following directions:­\n(i) If an enquiry, inquiry or investigation is intended in\n\n respect of a public servant on the allegation of commission of\n\n offence under the 1988 Act after\nSection 17A\nthereof becomes\n\n operational, which is relatable to any recommendation made\n\n or decision taken, at least prima facie, in discharge of his\n\n official duty, previous approval of the authority postulated in\n\n sub­section (a) or (b) or (c) of\nSection 17A\nof the 1988 Act\n\n shall have to be obtained. In absence of such previous\n\n approval, the action initiated under the 1988 Act shall be\n\n held illegal. (ii) The appellant cannot be proceeded against for offences\n\nunder the\nPrevention of Corruption Act, 1988\nas no previous\n\napproval of the appropriate authority has been obtained.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P043_C02",
+      "text": "This\n\nopinion of this Court, however, shall not foreclose the option\n\nof the concerned authority in seeking approval in terms of\n\nthe aforesaid provision. In this case, liberty is preserved for\n\nthe State to apply for such approval as contained in the said\n\nprovision. (iii) I decline to interfere with the remand order dated\n\n10.09.2023 as I am of the view that the Special Judge had\n\nthe jurisdiction to pass such order even if the offences under\n\nthe 1988 Act could not be invoked at that stage. Lack of\n\napproval in terms of\nSection 17A\nwould not have rendered\n\nthe entire order of remand non­est. (iv) The appellant, however, could be proceeded against\n\nbefore the Special Judge for allegations of commission of\n\noffences under the\nIndian Penal Code\n, 1860 for which also he\n\nhas been implicated.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P044_C01",
+      "text": "35. The appeal stands partly allowed, in the above terms.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P045_C01",
+      "text": "36. All connected applications stand disposed of.\n……………………….. J.\n(ANIRUDDHA BOSE)\n\nNEW DELHI;\n16th January, 2024\n\nREPORTABLE\n\n CRIMINAL APPELLATE JURISDICTION\n\n CRIMINAL APPEAL NO. OF 2024\n(@SPECIAL LEAVE PETITION (Crl.) No. 12289 OF 2023\n\nNARA CHANDRABABU NAIDU …APPELLANT(S)\n\n VERSUS\n\nTHE STATE OF ANDHRA PRADESH & ANR. …RESPONDENT(S)\n\n JUDGMENT\n\nBELA M. TRIVEDI, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P046_C01",
+      "text": "2. The entire controversy in the instant Appeal centres around the\n\n interpretation of\nSection 17A\nof the Prevention of Corruption\n\n Act,1988 (hereinafter referred to as the “\nPC Act\n”), and its\n\n applicability to the facts of the present case. Having had the\n\n benefit of going through the draft opinion of my esteemed Brother\n\n Justice Aniruddha Bose, I deem it appropriate to pen down my\n\n views on the issues involved in the Appeal.\n\nFACTUAL MATRIX:",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P047_C01",
+      "text": "3. Bereft of unnecessary details, the bare minimum facts required to\n\n decide the present Appeal are that the appellant, who is sought to\n\n be added as the accused No. 37 vide the “Accused Adding\n\n Memo” dated 08.09.2023, in the FIR No. 29/2021 registered at\n\n the P.S. CID P.S., AP, Amarvathi, Mangalalagiri, on 09.12.2021,\n\n was the Chief Minister of Andhra Pradesh between 2014-2019.\n\n The said FIR No.29/2021 was initially registered against 26\n\n accused on the basis of the report of the Chairman APSSDC\n\n dated 07.09.2021 and the preliminary enquiry report dated\n\n 09.12.2021, for the offences under Sections 166, 167, 418, 420,\n\n 465, 468, 471, 409, 201, 109 read with 120-B\nIPC\nand\nSection\n\n 13(2)\nread with\nSection 13(1)(c)\nand\n13(1)(d)\nof the PC Act, in\n\n connection with the alleged swindling of funds by the then Special\n\n Secretary and other officers of the Government and by the\n\n Directors, Project team members and other officers of M/s\n\n Siemens and M/s DesignTech and their shell/defunct allies, by\n\n creating bogus invoices and thereby siphoning of funds of the\n\n government.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P048_C01",
+      "text": "4. As per the case of the respondent state, the office of Director\n\n General, Anti-corruption Bureau, A.P, Vijayawada, vide the\n\n memorandum dated 05.06.2018 had directed the DSP, CIU, ACB,\n\nVijayawada to conduct a Regular Inquiry into the letter/complaint\n\n dated 14.05.2018 received by it in respect of the allegations of\n\n corruption made against the officials of the A.P. State Skill\n\n Development Corporation Vijayawada. Based on the report of the\n\n complainant Sri Konduru Ajay Reddy, Chairman, APSSDC; and\n\n the PE Report of Sri N. Surendra, Dy. S.P. EOW-II, CID, A.P.\n\n Mangalagiri, the case being FIR No. 29/2021 was registered on\n\n 09.12.2021.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P049_C01",
+      "text": "5. It was stated in the “Accused Adding Memo” dated 08.09.2023\n\n filed in CR No. 29/2021 against the appellant (A-37) inter alia\n\n that–\n “As per the investigation so far done, prima facie\n\n established that A36 committed the offence through a\n\n prior conspiracy led by A-37 along with A-1 A-2 and\n\n others. A-38 colluded with A-37, on 16.2.2015, as a\n\n minister in the AP cabinet led by A-37, approved the cost\n\n estimation of Siemens project received through A-1,\n\n without getting any assessment, verification, proper DPR\n\n and evaluation. The accused A-38 while holding office\n\n as public servant as a Minister holding departments i.e\n\n SDEI & APSSDC, conspired, colluded with A-37, A-2, A-\n\n 6 to A-10 and with criminal intention, released the Govt\n\nfunds through the accused without verifying the\n\ncontribution of Technology partners, allowed other\n\naccused to do fraudulent and illegal acts, committed\n\nmisappropriation of Government funds to the tune of\n\naround Rs.279 Crores which were entrusted to them or\n\nunder their control by corrupt and illegal methods.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P049_C02",
+      "text": "A-37\n\n& A-38 through A-1, allowed other accused to divert\n\nAPSSDC funds by using fake invoices as genuine one\n\nfor purpose of cheating through the shell, defunct\n\ncompanies without providing materials/services to the\n\nAPSSDC-Siemens project by the M/s DesignTech, by\n\nconspiring, colluding and intentionally co-operating in the\n\ncommission offence with several acts of by the\n\nconcerned Directors of companies and private persons. A-38 as a Minister holding a concerned department i.e\n\nSDE&I & APSSDC did not review the project and caused\n\nthe wrongful loss to the Govt. and wrongful gain to\n\nhimself and others. Therefore, a prima-facie case was established for the\n\noffences U/s 120(B), 418, 420, 465, 468, 471, 409, 201,\n\n109 r/w 34 & 37\nIPC\n&\nSection 12\n,\n13(2)\nr/w 13(1) (c)\n\nand (d) of\nPrevention of Corruption Act, 1988\nagainst Sri\n\n Nara Chandra Babu Naidu (A- 37), formerly Chief\n\n Minister of Andhra Pradesh and against Sri K. Atchannaidu, the then Minister for Labour &\n\n Employment, Factories, Youth & Sports, Skill\n\n Development and Entrepreneurship, Govt. of A.P were\n\n added as accused no. 37 and A-38 respectively to this\n\n case.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P050_C01",
+      "text": "6. The appellant was arrested on 09.09.2023 and was produced\n\n before the Special Court for SPE and ACB cases Vijayawada,\n\n A.P. The Special Court on 10.09.2023, passed the order\n\n remanding the appellant (accused no.37) to the judicial custody\n\n till 22.09.2023 under\nSection 167\nCr.PC by holding inter alia that\n\n the material on record prima facie showed that accused no. 37\n\n had in pursuance of criminal conspiracy, while holding his office\n\n as a public servant, colluded with the other accused and\n\n committed misappropriation of government funds to the tune of\n\n Rs.279 crores by corrupt and illegal methods, causing huge loss\n\n to the Government exchequer. It was also observed that there\n\n was a prima facie material to show the nexus of accused no.37\n\n with the other accused no. 1, 2, 6 and 38 and the other\n\nrepresentatives of shell companies, and also sufficient material\n\n eliciting the role of A-37 in the approval of the Skill Development\n\n Project and its activities, attracting the offences under IPC and\n\n PC Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P051_C01",
+      "text": "7. The appellant thereafter filed a petition being Criminal Petition no.\n\n 6942/2023 in the High Court under\nSection 482\nof Cr.PC seeking\n\n to quash the FIR being no.29/2021 qua him and the\n\n consequential order of remand dated 10.09.2023 passed by the\n\n Special Court. The said Criminal Petition came to be dismissed\n\n by the High Court vide the impugned order dated 22.09.2023\n\n which is under challenge before this Court by way of the present\n\n Appeal.\nSUBMISSIONS",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P052_C01",
+      "text": "8. During the course of lengthy arguments made by a battery of\n\n lawyers led by learned Senior Advocate Mr. Harish N. Salve\n\n appearing for the appellant, broadly following submissions were\n\n made:\n(i) The absence of a prior approval as mandated by\nSection 17A\nof the PC Act, vitiated the conduct of enquiry or inquiry or\n\n investigation; the initiation and continuation of investigation in\n\n FIR No. 29 of 2021 dated 09.12.2021, including the various\n\n investigative steps of adding of the appellant as Accused No.\n\n 37 and arresting the appellant on 08.09.2023; and the\n\nremand of the appellant into the custody pursuant to the\n\n orders passed by the Special Court. (ii)\nSection 17A\nof the PC Act which was introduced with effect\n\n from 26.07.2018, interdicts “…. any enquiry or inquiry or\n\n investigation into an offence alleged to have been committed\n\n by a public servant ……”, without the previous approval of\n\n functionaries specified in Clauses (a), (b) or (c), as the case\n\n may be, the only exception being where a public servant is\n\n apprehended “red handed”.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P052_C02",
+      "text": "(iii)\nSection 17A\nconstitutes a complete legal bar to the very\n\n initiation of any enquiry, inquiry or investigation as was noted\n\n by this Court in\nYashwant Sinha & Ors. Vs. Central Bureau\n\n of Investigation1\n. (iv)\nSection 17A\nrelates to the procedure by which an enquiry,\n\n inquiry or investigation into an offence is to be conducted. It is\n\n a procedural provision, which does not impair any right of the\n\n investigating agencies. In this regard reliance is placed on\nAnant Gopal Sheorey vs. State of Bombay\n2 and on\nRattan\n\n Lal Alias Ram Rattan Vs. State of Punjab3\n. (v) No person has a “vested right in the remedies and the\n\n methods of procedure in trials for crime.” A law that draws\n\n upon antecedent facts in its prospective operation is not\n\n1 (2020) 2 SCC 338\n2 AIR 1958 SC 915\n3 AIR 1965 SC 444\n\nretrospective - it is sometimes referred to as being\n\n retroactive.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P052_C03",
+      "text": "(vi)\nSection 17A\nis retroactive in the sense that it would apply in\n\n future in relation to all enquires, inquires or investigations\n\n being conducted, even though such enquiries, inquires or\n\n investigations may be in respect of offences which may have\n\n allegedly been committed prior to coming into force of\nSection\n\n 17A\n. (vii)\nSection 17A (c)\nuses the phrase “at the time when the offence\n\n was alleged to have been committed”. Meaning thereby it\n\n suggest that the provision is intended to apply to offences\n\n committed in the past without any limitation. (viii) The question whether a prosecution can be initiated after a\n\n substantive offence is deleted is not being raised in the\n\n present case - the appellant’s case will be that in such\n\n matters, if the law does not consider an act to be an offence\n\n anymore, initiating a prosecution after the offence is deleted\n\n violates\nArticle 21. However, that will arise in the Trial and the\n\n issue is not being raised at this stage.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P052_C04",
+      "text": "(ix) The conclusion of the High Court that the provision cannot be\n\n applied in the case of any offence committed prior to\n\n 26.07.2018 is erroneous, as in the instant case the alleged\n\n offences have taken place till 2019, as for the case of the\n\n prosecution. (x) The SOP issued in relation to\nSection 17A\ncontemplates a\n\n step-by-step approval requirement as per the notification\n\n issued in this behalf. (xi) The alleged offences in the present case relate to the\n\n recommendations made/decisions taken by the appellant in\n\n discharge of his official functions or duties. The focus of the\n\n provision under\nSection 17A\nis the person who has committed\n\n the offence and not merely the offence. The private acts of a\n\n person, not in his or her capacity as a public servant are not\n\n protected by this provision, however, if the offences are\n\n based on the allegations in connection with recommendations\n\n or decisions taken in discharge of his official functions or\n\n duties,\nsection 17A\nwould apply. The allegations levelled\n\n against the appellant have a clear nexus to his post of Chief\n\n Minister. (xii)\nSection 17A\nuses the phrase “any offence”.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P052_C05",
+      "text": "Hence the\n\n requirement of obtaining prior approval under\nSection 17A\n\n applicable to all offences, and not just offences under the\n\n Act\n. In any event, even if the prior approval under\nSection\n\n 17A\napplies only to allegations of offences under the\nPC Act\n,\n\n the continuation of investigation under\nIPC\noffences cannot\n\n be countenanced as the basic material for constituting both\n\n kinds of offences is the same. (xiii) It is trite law that if the initial action is not in consonance\n\n with law, all subsequent and consequential proceedings\n\n would fall. In the present case, once offences under the\n\n Act\nare effaced from existence, the custody of the appellant\n\n pursuant to the orders passed by the Special Court from time\n\n to time was without any sanction of law, as the Special Court\nin that case\nhad no powers to remand persons accused of\n\n offences under the\nIPC\nalone. The jurisdictional fact for the\n\n exercise of jurisdiction by the Special Court is the existence\n\n of an offence under the\nPC Act\n, and once such jurisdictional\n\n fact ceases to exist, the orders of Special Court are required\n\n to be treated as without any sanction of law and non-est.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P052_C06",
+      "text": "this regard, reliance is placed on\nState of Punjab vs. Davinder Pal Singh Bhullar & Others4\n. (xiv)A legal bar to a prosecution is a valid ground for quashing the\n\n proceedings as held by this Court in\nR.P. Kapur vs. State of\n\n Punjab5\nand\nState of Haryana Vs. Bhajan Lal6\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "State of Punjab v Davinder Pal Singh Bhullar & Others4\n"
+      ],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P053_C01",
+      "text": "9. Learned Senior Advocate Mr. Mukul Rohtagi for the Respondent –\n\n State of Andhra Pradesh made following submissions: -\n(i) None of the facets contained in\nSection 17A\nwould be\n\n applicable to the facts of the present case in as much as\n\n4 (2011) 14 SCC 770\n5 AIR 1960 SC 866\n6 1992 (Suppl.) SCC 335\n\nSection 17A\nof the PC Act came into force with effect from\n\n 26.07.2018, whereas the Regular Enquiry was initiated in\n\n respect of the alleged scam against the appellant and\n\n others by ACB vide the letter dated 05.06.2018, on the\n\n basis of the complaint received from within the DGSTI on\n\n 14.05.2018. When the Enquiry began,\nSection 17A\nwas not\n\n in existence and therefore cannot be made applicable to the\n\n present case.\n(ii) On 11.07.2021, the State issued a memo at the request of\n\n the M.D. of APSSDC entrusting a detailed investigation into\n\n the very alleged scam. As long as the enquiry into the\n\n offence. i.e. facts constituting the offence by the ACB and\n\n the CID enquiry are one and the same i.e. about the\n\n siphoning of funds from APSSDC during the period 2015-",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P054_C01",
+      "text": "2018. Therefore, the date of initiation of Enquiry into the\n\n said offence for the purpose of deciding the applicability of\nSection 17A\nof the PC Act is the date on which the Enquiry\n\n was first initiated into that particular offence, i.e. 05.06.2018\n\n in the instant case. (iii) The word “Enquiry” is neither defined in the\nCode of\n\n Criminal Procedure\nnor in the\nPC Act\n. As per the Standard\n\n Operating Procedure issued by the Government of India\n\n however describes “enquiry” as – “enquiry for the purposes\n\nof the SOPs means any action taken, for verifying as to\n\n whether the information pertains to commission of an\n\n offence under the Act.” Hence, the date of initiation of\n\n Enquiry is only offence specific and not investigation agency\n\n specific or complaint/ complainant specific, and does not\n\n change by the mere change of investigating agency. (iv) The Enquiry, which was initiated by the ACB on 05.06.2018\n\n i.e. much prior to the incorporation of\nSection 17A\ninto the\nPC Act\n, was later entrusted to the AP CID. All the decisions\n\n that formed part of the offences were taken much prior to\n\n the amendment of the\nPC Act\ni.e. between 2015 and 2017.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P054_C02",
+      "text": "Therefore, no approval as contemplated under\nSection 17A\nwould be required. (v) The offences allegedly committed by the appellant were not\n\n in discharge of his official functions or duties. Even as per\n\n the appellants case, he was neither the Minister In-Charge\n\n of the concerned Project, nor had he had anything to do\n\n with the concerned corporation (APSSDC). (vi) In the instant case, the alleged offences have been\n\n registered not only under the\nPC Act\nbut also under various\n\n offences of\nIndian Penal Code\n(\nIPC\n) like Sections 409, 166,\n\n 167, 418, 420, 465, 468, 471, 201 and 109 read with\nSection 120(B)\nof IPC. Committing criminal breach of\n\ntrust/misappropriation of funds could never be construed to\n\n fall under the discharge of official duties. In any case the\n\n question whether an act is within one’s official capacity or\n\n not can only be decided in the course of trial. (vii) As held in State of Rajasthan vs. Tejmal Choudhary,7\nSection 17A\nof PC Act is ‘a Substantive Provision’ and is\n\n therefore applicable only prospectively.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P054_C03",
+      "text": "Section 17A\nenvisages a substantive right against non-prosecution of\n\n innocent acts in course of official duty; and not an obstacle/\n\n hurdle in the investigation process of the prosecution,\n\n especially when the sanction is denied. Section 17A\ncreates\n\n new rights, disabilities and obligations and therefore it ought\n\n not to be applied retrospectively as held in\nG.J. Raja vs. Tejraj Surana",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "G.J. Raja v Tejraj Surana"
+      ],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P055_C01",
+      "text": "8. (viii) Under the 2018 amendment, other than introducing\nSection 17A\n, other sections like\nSection 13 (1)(c)\nand\n13(1)\n(d) i.e. the offences for which the appellant is charged, were\n\n specifically repealed and the offences were redefined. Section 17A\ncan have no application to the offences as they\n\n existed prior to the 2018 amendment. (ix) Even if\nSection 17A\nof the PC Act were to be applicable to\n\n the present case, the\nIPC\noffences would survive and\n\n7 2021 SCC Online SC 3477\n8 (2019) 9 SCC 469\n\ntherefore also the FIR qua the appellant cannot be\n\n quashed. The question of competence of a particular court\n\n to try the offences would arise only after the investigation is\n\n complete and a chargesheet is filed. (x) When one of the co-accused has been charged under the\n\n offences under both the\nPC Act\nand the\nIPC\n, while the other\n\n co-accused have only been charged under the\nIPC\n, the\n\n Special Court would have jurisdiction to try both the\n\n accused persons in view of\nSections 3\n,\n\nand\n\nof the PC\n\n Act.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P055_C02",
+      "text": "In the instant case 38 persons including multiple public\n\n servants have been arrayed as the accused in Crime No.\n\n 29 of 2021 before the AP CID Police Station, and therefore\n\n the Special Court under the\nPC Act\nhas the jurisdiction to try\n\n all the accused involved in the case. (xi) In case of two possible constructions of a provision in the\nPC Act\n, it is the duty of the Court to interpret it in the\n\n manner which roots out corruption, as opposed to creating\n\n a road block in the fight against corruption. (xii)\nSection 17A\nof the PC Act is substantially similar to\nSection\n\nof the Cr.P.C., and this Court has interpretively\n\n narrowed down the circumstances in which sanction under\nSection 197\nof Cr.P.C. needs to be obtained, by holding that\n\n official duties, when discharged for collateral or other\n\nbenefits, would fall outside the scope of the term “official\n\n duties”. (xiii) The judgment in case of\nYaswant Sinha vs. CBI\n(supra),\n\n relied upon by the appellant was not a binding precedent,\n\n as the portion thereof relied upon was a discordant note in\n\n Hon’ble Justice Joseph’s judgment, which was in variance\n\n with the main judgment.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P055_C03",
+      "text": "(xiv)The appellant was added as an accused by filing the\n\n “Accused Adding Memo” on 07.09.2023 and the petition for\n\n quashing the FIR was filed by the appellant merely 5 days\n\n later, on 12.09.2023. There was a clear attempt on the part\n\n of the appellant therefore to scuttle the investigation at the\n\n preliminary stage qua him. When there are adequate\n\n grounds to initiate a criminal investigation, the same cannot\n\n be scuttled more particularly when the other central\n\n agencies are also investigating the same scam alleged\n\n against the appellant. ANALYSIS:",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P056_C01",
+      "text": "10. At the outset, it may be noted that the\nPC Act\n1988 sets the\n\n framework for prosecuting individuals involved in corrupt activities\n\n and provides measures to prevent corruption in various spheres\n\n of the society. By emphasizing accountability, transparency and\n\nstrict legal consequences, the\nPC Act\nstands to combat corruption\n\nand to foster and uphold the culture of ethical conduct. The very\n\nobjectives of the Act are to prevent corruption, to promote\n\ntransparency and accountability in the public administration, to\n\ndeter individuals from engaging in corrupt practices by imposing\n\nstrict penalties, protects whistleblowers etc. It also provides for\n\nthe investigation and prosecution of corruption cases, outlining\n\nthe procedure for gathering evidence, conducting trials and\n\nensuring a fair and expeditious legal process.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P056_C02",
+      "text": "By the Prevention\n\nof Corruption (Amendment) Act\n2018 (hereinafter referred to as\n\nthe Amendment Act, 2018), the\nPC Act\n1988 was further\n\namended, to fill in the gaps in the description and coverage of the\n\noffence of bribery so as to bring it in line with the current\n\ninternational practices and also to meet more effectively the\n\ncountry’s obligations under the United Nations Convention\n\nAgainst Corruption. The Central Government in exercise of the\n\npowers conferred by sub section (2) of Section (1) of the\n\nAmendment Act, 2018, had vide the Notification dated 26.07.2018\n\nappointed the 26th July 2018 as the date on which the provisions\n\nof the said Amendment shall come into force. Accordingly, the\n\nsaid provisions of the Amendment Act, 2018 came into force on\n\n26.07.2018.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P057_C01",
+      "text": "11. By the Amendment Act 2018, several provisions more particularly\n\n the offences described under\nSection 7\n,\n\n,\n\n,\n\nand\n\nin the\n\n Act, 1988\nwere substituted with the new provisions; and several\n\n new provisions like\nSection 7A\n,\n17A\n,\n18A\n,\n29A\netc. were inserted. Certain provisions pertaining to the punishments of the offences\n\n under the Act were also amended. The newly added\nSection 17A\nbeing relevant for this Appeal, is reproduced as under: -\n“17A.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P057_C02",
+      "text": "Enquiry or Inquiry or investigation of\n offences relatable to recommendations made or\n decision taken by public servant in discharge of\n official functions or duties.—\n\n No police officer shall conduct any enquiry or inquiry or\n investigation into any offence alleged to have been\n committed by a public servant under this Act, where the\n alleged offence is relatable to any recommendation\n made or decision taken by such public servant in\n discharge of his official functions or duties, without the\n previous approval—\n(a) in the case of a person who is or was employed, at\n the time when the offence was alleged to have been\n committed, in connection with the affairs of the Union,\n of that Government;\n(b) in the case of a person who is or was employed, at\n the time when the offence was alleged to have been\n committed, in connection with the affairs of a State, of\n that Government;\n(c) in the case of any other person, of the authority\n competent to remove him from his office, at the time\n when the offence was alleged to have been committed:\nProvided that no such approval shall be necessary for\n cases involving arrest of a person on the spot on the\n charge of accepting or attempting to",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P057_C03",
+      "text": "accept any undue\n advantage for himself or for any other person:\n Provided further that the concerned authority shall\n convey its decision under this section within a period of\n\nthree months, which may, for reasons to be recorded in\n writing by such authority, be extended by a further\n period of one month.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P058_C01",
+      "text": "12. Since the main issue involved in the present Appeal is in respect\n\n of the interpretation of the newly inserted provision\nSection 17A\n,\n\n let us regurgitate the basic principles of Statutory interpretation as\n\n propounded by this Court from time to time. It is well known rule\n\n of interpretation of statutes that the courts must look to the object\n\n which the Statute seeks to achieve while interpreting any of the\n\n provisions of the Act. A purposive approach for interpreting the Act\n\n is necessary9. The purport and object of the Act must be given its\n\n full effect10. The text and the context of the entire Act must be\n\n looked into while interpreting any of the expressions used in the\n\n Statue. If two views are possible, the view which most accords\n\n the object of the Act, and which makes the Act workable must\n\n necessarily be the controlling view. Even penal Statutes are\n\n governed not only by their literal language, but also by the object\n\n sought to be achieved by Parliament 11. Even if the words\n\n occurring in the Statute are plain and unambiguous, they have to\n\n be interpreted in a manner which would fit in the context of the\n\nS. Gopal Reddy Vs.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P058_C02",
+      "text": "State of A.P.\n; 1996 (4) SCC 596. Indian Handicrafts Emporium & Ors. Vs. Union of India & Ors.\n; 2003 (7) SCC",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P059_C01",
+      "text": "589. Asian Resurfacing of Road Agency Pvt. Ltd. & Anr. Vs. Central Bureau of\nInvestigation\n; 2018 (16) SCC 299.\n\nother provisions of the Statutes and bring about the real intention\n\n of the legislature12.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P060_C01",
+      "text": "13. Although not specifically mentioned in the Statement of Objects\n\n and Reasons of the Amendment Act, 2018, the object of inserting\nSection 17A\nin the\nPC Act\n, which is in pari materia with the\n\n provisions contained in\nSection 6A\nof the Delhi Special Police\n\n Establishment Act 1946, is to protect the honest public servants\n\n from the harassment by way of inquiry or investigation in respect\n\n of the decisions taken or acts done in bonafide performance of\n\n their official functions or duties. Whereas\nSection 19\nbars the\n\n courts from taking the cognizance of an offence punishable under\n\n the\nPC Act\n, alleged to have been committed by public servants\n\n except with the prior sanction of the concerned authorities\n\n mentioned therein,\nSection 17A\nbars the police officer from\n\n conducting any enquiry or inquiry or investigation of offences\n\n relatable to recommendations made or decision taken by public\n\n servant in discharge of official functions or duties, without the\n\n previous approval of the concerned authorities mentioned therein. From the bare reading, it is discernible that\nSection 17A\nhas the\n\n following main four facets.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P060_C02",
+      "text": "(I) Enquiry or inquiry or investigation of offences under the\n\n Act\n. R.M.D. Chamarbaugwalla & Anr. Vs. Union of India & Anr\n; AIR 1957 SC 628. (ii) Alleged offences should be relatable to the recommendation\n\n made or decision taken by a public servant. (iii) Such recommendation made or decision taken by a public\n\n servant should be in discharge of official functions or duties\n\n and\n(iv) Previous approval of the authorities mentioned therein.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P061_C01",
+      "text": "14. Though the word ‘Enquiry’ as contained in\nSection 17A\nhas\n\n neither been defined in the\nPC Act\nnor in the\nCrPC\n, as per the\n\n Standard Operating Procedures (SOPs) issued by the Ministry of\n\n Personnel, Public Grievances and Pensions (Department of\n\n Personnel& Training) dated 3 rd September, 2021 for processing\n\n of cases under\nSection 17A\n, “Enquiry” means any action taken,\n\n for verifying as to whether the information received by the Police\n\n Officer pertains to the commission of an offence under the Act\n\n (Para 4.2 of the said SOPs). The meaning of the words ‘inquiry’\n\n and ‘investigation’ for the purposes of\nSection 17A\ncould be\n\n imported from the definitions contained in\nSection 2(g)\n&\nSection\n\n 2(h)\nrespectively of\nCr.PC\n, the same being made applicable\n\n subject to certain modifications in view of\nSection 22\nof the PC\n\n Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 62,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P062_C01",
+      "text": "15. As stated earlier, the provisions pertaining to the offences under\n\n the\nPC Act\nparticularly the offences under\nSection 7\n,\n\n,\n\n,\n\nand\n\n, have been substantially amended, and the new offence under\n\nSection 7(A)\n, has been inserted by the Amendment Act 16/2018.\n\n Such substitution in place of existing provisions and such\n\n insertion of new provisions in the\nPC Act\n, have created new set of\n\n rights and liabilities under the Act.\nSection 17A\nhaving been newly\n\n inserted simultaneously with such amendments in the provisions\n\n pertaining to the offences, in my opinion,\nSection 17A\ncould be\n\n made applicable only to the said amended/ newly inserted\n\n offences under the\nPC Act\n.\nSection 17A\nhaving been introduced\n\n as a part of larger legislative scheme, and the other offences\n\n under the\nPC Act\nhaving been redefined or newly inserted by way\n\n of Amendment Act, 2018,\nSection 17A\nis required to be treated as\n\n a substantive and not merely a procedural in nature. Such a\n\n substantive amendment could not be made applicable\n\n retrospectively to the offences like\nSection 13(1)(c)\nand\n13(1)(d)\n,\n\n which have been deleted under the Amendment Act, 2018.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P063_C01",
+      "text": "16. The submission of ld. Senior Advocate Mr. Salve that since\nSection 17A\nconstitutes a legal bar to the very initiation of enquiry,\n\n inquiry or investigation into the offence alleged to have been\n\n committed by a public servant, without the previous approval of\n\n the functionaries specified in the said provision, such a provision\n\n is procedural in nature, and therefore the mandate of\nSection 17A\nshould be made retroactively applicable i.e. even to the pending\n\nenquiry, inquiry or investigation, if not made applicable\n\n retrospectively, also can not be accepted. The cardinal principle\n\n of construction is that every statute would have prospective\n\n operation, unless it is expressly or by necessary implication made\n\n to have a retrospective operation. There could not be a\n\n presumption against the retrospectivity. In the instant case, the\n\n Amendment Act, 2018, by which\nSection 17A\nwas inserted, was\n\n specifically made applicable with effect from 26.07.2018 by the\n\n Central Government vide the Notification of the even date.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P063_C02",
+      "text": "Hence,\n\n the intention of the Legislature was also to make the amendments\n\n applicable prospectively from a particular date and not\n\n retrospectively or retroactively. Vineeta Sharma vs. Rakesh\n\n Sharma and Others13\n, a three-judge bench has very aptly\n\n distinguished the effect of retrospective statute, retroactive statute\n\n and prospective statute, and has observed as under: -\n“61. The prospective statute operates from the date of\n its enactment conferring new rights. The retrospective\n statute operates backwards and takes away or impairs\n vested rights acquired under existing laws. A\n retroactive statute is the one that does not operate\n retrospectively. It operates in futuro. However, its\n operation is based upon the character or status that\n arose earlier. Characteristic or event which happened\n in the past or requisites which had been drawn from\n antecedent events. Under the amended\nSection 6\n,\n since the right is given by birth, that is, an antecedent\n event, and the provisions operate concerning claiming\n rights on and from the date of the Amendment Act.\n\n13 2020 (9) SCC 1\n62. The concept of retrospective and retroactive statute\nwas stated by this Court in\nDarshan Singh v.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P063_C03",
+      "text": "Ram Pal\nSingh [Darshan Singh\nv. Ram Pal Singh, 1992 Supp (1)\nSCC 191] , thus: (SCC pp. 211-13, paras 35-37)\n\n “35. Mr Sachar relies on\nGokal Chand v. Parvin\n Kumari [Gokal Chand\nv. Parvin Kumari, (1952)\n 1 SCC 713 : AIR 1952 SC 231] , Garikapati\n Veeraya v. N. Subbiah Choudhry [Garikapati\n Veeraya v. N. Subbiah Choudhry, AIR 1957 SC\n 540] , Jose Da Costa v. Bascora Sadasiva\n Sinai Narcornim [Jose Da Costa v. Bascora\n Sadasiva Sinai Narcornim, (1976) 2 SCC\n 917] , Govind Das v. CIT [Govind Das v. CIT,\n (1976) 1 SCC 906 : 1976 SCC (Tax)\n 133] , Henshall v. Porter [Henshall v. Porter,\n (1923) 2 KB 193] , United Provinces v. Atiqa\n Begum [United Provinces v. Atiqa Begum,\n 1940 SCC OnLine FC 11 : AIR 1941 FC 16] , in\n support of his submission that the Amendment\n Act was not made retrospective by the\n legislature either expressly or by necessary\n implication as the Act itself expressly provided\n that it shall be deemed to have come into force\n on 23-1-1973; and therefore there would be no\n justification to giving it retrospective operation.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P063_C04",
+      "text": "The vested right to contest which was created\n on the alienation having taken place and which\n had been litigated in the court, argues Mr\n Sachar, could not be taken away. In other\n words, the vested right to contest in appeal\n was not affected by the Amendment Act. However, to appreciate this argument we have\n to analyse and distinguish between the two\n rights involved, namely, the right to contest and\n the right to appeal against the lower court's\n decision. Of these two rights, while the right to\n contest is a customary right, the right to appeal\n is always a creature of statute. The change of\n the forum for appeal by enactment may not\n affect the right of appeal itself. In the instant\n case we are concerned with the right to contest\n and not with the right to appeal as such. There\n is also no dispute as to the propositions of law\n regarding vested rights being not taken away\n by an enactment which is ex facie or by\n implication not retrospective. But merely\n because an Act envisages a past act or event\n in the sweep of its operation, it may not\n\nnecessarily be said to be retrospective.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P063_C05",
+      "text": "Retrospective, according to Black's Law\n Dictionary, means looking backward;\ncontemplating what is past; having reference to\n a statute or things existing before the Act in\n question. Retrospective law, according to the\n same dictionary, means a law which looks\n backwards or contemplates the past; one\n which is made to affect acts or facts occurring,\n or rights occurring, before it came into force. Every statute which takes away or impairs\n vested rights acquired under existing laws, or\n creates a new obligation, imposes a new duty,\n or attaches a new disability in respect to\n transactions or considerations already past. Retroactive statute means a statute which\n creates a new obligation on transactions or\n considerations already past or destroys or\n impairs vested rights.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 64,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P064_C01",
+      "text": "17. Thus, whereas the prospective statute operates from the date of\n\n its enactments conferring new rights, the retrospective statute\n\n operates backwards and takes away or impairs vested rights\n\n acquired under the existing laws. A retroactive statute is one that\n\n does not operate retrospectively, however depending upon the\n\n status and nature of the events or transactions, the operation of\n\n the statute is extended or given effect from the date prior to its\n\n enactment. So far as the Amendment Act, 2018 is concerned, it\n\n has been made applicable specifically from the date of its\n\n notification i.e. 26.07.2018.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 65,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P065_C01",
+      "text": "18. Hitendra Vishnu Thakur and Others vs. State of\n\n Maharashtra and Others14\n, it was held by this Court that a\n\n14 (1994) 4 SCC 602\n\nstatute which not only changes the procedure but also creates\n\n new rights and liabilities shall be construed to be prospective in\n\n operation unless otherwise provided either expressly or by\n\n necessary implication.\nThe ratio of\nthe said judgment\nin Hitendra\n\n Vishnu Thakur was also followed in\nG.J. Raja vs. Tejraj\n\n Surana15\n.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 66,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P066_C01",
+      "text": "19. State of Telangana vs. Managipet @ Mangipet Sarveshwar\n\n Reddy16\n, this Court rejected the arguments that the amended\n\n provisions of the\nPC Act\nwould be applicable to an FIR registered\n\n before the said amendment came into force.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [
+        "State of Telangana v Managipet"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 67,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P067_C01",
+      "text": "20. In a very recent decision in the case of\nState of Rajasthan vs.\n\n Tejmal Choudhary17\n, this Court set-aside the interim order\n\n passed by the High Court which had quashed the proceedings\n\n only on the ground that the approval was not obtained under\nSection 17A\nof the PC Act, by observing inter alia that the\n\n legislative intent in the enactment of a statute is to be gathered\n\n from the express words used in the statute, unless the plain\n\n words literally construed give rise to absurd results. It has been\n\n further observed therein that this Court has to go by the plain\n\n words of the statute to construe the legislative intent, and that it\n\n could not possibly have been the intent of the legislature that all\n\n15 (2019) 19 SCC 469\n16 (2019) 19 SCC 87\n17 (2021) SCC OnLine SC 3477\n\npending investigations up to July 2018 should be rendered\n\n infructuous.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [
+        "State of Rajasthan v Tejmal Choudhary17\n, this Court set"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 68,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P068_C01",
+      "text": "21. Apart from the afore-stated legal position, it is also required to be\n\n noted that while passing the Amendment Act 2018 by which the\n\n then existing offences under the\nPC Act\nwere deleted and\n\n redefined, and by which some new offences were inserted, the\n\n Legislature had simultaneously introduced\nSection 17A\n. It was\n\n also stated in the Amendment Act that the same shall come into\n\n force from the date as may be notified by the Central\n\n Government. Therefore, it is required to be presumed that the\n\n intention of the legislature was to make\nSection 17A\napplicable\n\n only to the new offences as amended by Amendment Act, 2018\n\n and not to the offences which existed prior to the coming into\n\n force of the Amendment Act 2018. Any other interpretation may\n\n lead to an anomalous situation resulting into absurdity in as much\n\n as there could not be prior approval of the authorities as\n\n contemplated under\nSection 17A\nfor the offences which have\n\n been deleted by the Amendment Act, 2018. If the submission of\n\n Mr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 68,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P068_C02",
+      "text": "Salve that\nSection 17A\nis retroactive in operation is accepted,\n\n then all the pending proceedings of enquiry, inquiry and\n\n investigation as on 26.7.2018, carried out in respect of the\n\noffences which existed prior to the amendment would become\n\n infructuous, frustrating the very object of the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 69,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P069_C01",
+      "text": "22. As stated earlier, the very object of the\nPC Act\nis to combat the\n\n corruption, and the object of\nSection 17A\nis to protect the honest\n\n and innocent public servants from undergoing the harassment by\n\n the police for the recommendations made or decisions taken in\n\n discharge of official functions or duties. It cannot be the object of\nSection 17A\nto give benefit to the dishonest and corrupt public\n\n servants. If any enquiry or inquiry or investigation carried out by a\n\n police officer in respect of the offence committed by a public\n\n servant is held to be non est or infructuous by making\nSection\n\n 17A\nretrospectively or retroactively applicable, the same would\n\n not only frustrate the object of the\nPC Act\nbut also would be\n\n counter-productive. It is axiomatic that no proceeding could stand\n\n vitiated or could become infructuous on account of the\n\n subsequent amendment in the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 69,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P069_C02",
+      "text": "The well-known and well\n\n accepted rule of interpretation of statute is that the courts should\n\n take into consideration the other provisions of the Act also while\n\n interpreting a particular provision, and should avoid such\n\n interpretation as would lead to an anomalous situation or to\n\n frustration of the object of the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 70,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P070_C01",
+      "text": "23. As held in\nSubramanian Swamy vs. Manmohan Singh and\n\n Another18\n, in case of two possible constructions of a provision in\n\n the\nPC Act\n, it would be the duty of the court to accept the one that\n\n seeks to eradicate corruption to the one which seeks to\n\n perpetuate it. In\nSubramanian Swamy vs. Director, Central\n\n Bureau of Investigation and Another\n19, the Constitution Bench\n\n had observed while dealing with\nSection 19\nof the P.C. Act that\n\n the protection against malicious prosecution which is extended in\n\n public interest, cannot become a shield to protect corrupt officials.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 71,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P071_C01",
+      "text": "24. The judgment in case of\nYashwant Sinha and Others vs. Central Bureau of Investigation\n(supra), relied upon by Mr. Salve also would not be of any help to the appellant. Mr. Salve\n\n has relied upon the observations made by Hon’ble Justice Joseph\n\n in his concurring judgment, which according to Mr. Rohtagi was a\n\n discordant note in variance with the main judgment of two judges. Be that as it may, what has been observed by Justice Joseph is\n\n that\nSection 17A\nconstitutes a bar of any enquiry, inquiry or\n\n investigation without the previous approval of the concerned\n\n authority. The said observation nowhere states that\nSection 17A\nshall operate retrospectively or retroactively.\n\n18 (2012) 3 SCC 64\n19 (2014) 8 SCC 682\n25. Even otherwise, absence of approval before conducting any\n\n enquiry or inquiry or investigation into an offence alleged to have\n\n been committed by a public servant, as contemplated in\nSection\n\n 17A\ncould never be the ground for quashing the FIR registered\n\n against the public servant or the proceedings conducted against\n\n him, more particularly when he is also charged for the other\n\n offences under the\nIPC\nin respect of the same set of allegations.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 71,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P071_C02",
+      "text": "As stated earlier, there are other important facets contained in\nSection 17A\n, like whether the alleged offence is relatable to the\n\n recommendation made or decision taken by the public servant or\n\n not, and whether such recommendation or decision was made or\n\n taken in discharge of his official functions or duties or not etc. Such facets could be examined only when the evidence is led\n\n during the course of trial. The alleged acts which prima facie\n\n constitute the offences, though done under the purported exercise\n\n of official function or duty, could not fall within the purview of\nSection 17A\n. The Protection sought to be granted to a public\n\n servant under\nSection 17A\ncould not be extended to his acts\n\n which prima facie were not in discharge of his official functions or\n\n duties. Any other interpretation would certainly tantamount to\n\n scuttling the investigation at a very nascent stage. Such could\n\n neither be the intention of the legislature nor could such provision\n\nbe interpreted in the manner which would be counter productive\n\n or frustrating the very object of the\nPC Act\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 72,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P072_C01",
+      "text": "26. In response to the court’s query as to how an FIR could have\n\n been registered in 2021 for the offences under\nSection 13(1)(c)\nand\n13(1)(d)\nwhich have already been deleted by the Amendment\n\n Act 2018, Mr. Rohtagi submitted that though the old provision of\nSection 13\nhas been substituted by the new provision, and though\nSection 13(1)(c)\nand\n13(1)(d)\nare no more offences under the\n\n amended provision of\nSection 13\n, the right of the investigating\n\n agency which had accrued to investigate the crime which took\n\n place prior to the amended provision of\nSection 13\n, continues in\n\n view of Clauses ‘c’ and ‘e’ of\nSection 6\nof the General Clauses\n\n Act. According to him, unless a different intention appears in the\n\n Amendment Act 2018, the right of the investigating agency to\n\n investigate the offences under\nSection 13(1)(c)\nand\n13(1) (d)\ncould not be said to have been affected by the Amendment Act",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 73,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P073_C01",
+      "text": "2018. I find substance in the said submission of Mr. Rohtagi, in\n\n view of the observations made by this Court in\nM.C. Gupta vs. Central Bureau of Investigation, Dehradun\n20, which clinches\n\n the issue.\n“14. Viewed from this angle, clauses (c) and (e) of\nSection 6\nof the GC Act become relevant for the\n\n20 (2012) 8 SCC 669\n\npresent case. Sub-clause (c) says that if any Central\n Act repeals any enactment, the repeal shall not affect\n any right, privilege, obligation or liability acquired,\n accrued or incurred under any enactment so repealed. In this case, the right which had accrued to the\n investigating agency to investigate the crime which\n took place prior to the coming into force of the new Act\n and which was covered by the 1947 Act remained,\n unaffected by reason of clause (c) of\nSection 6\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 73,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P073_C02",
+      "text": "Clause\n(e) says that the repeal shall not affect any\n investigation, legal proceeding or remedy in respect of\n any such right, privilege, obligation, liability, penalty,\n forfeiture or punishment and\nSection 6\nfurther states\n that any such investigation, legal proceeding or remedy\n may be instituted, continued or enforced and such\n penalty, forfeiture or punishment may be imposed as if\n the repealing Act had not been passed. Therefore, the\n right of CBI to investigate the crime, institute\n proceedings and prosecute the appellants is saved and\n not affected by the repeal of the 1947 Act. That is to\n say, the right to investigate and the corresponding\n liability incurred are saved. Section 6\nof the GC Act\n qualifies the effect of repeal stated in sub-clauses (a) to\n(e) by the words “unless a different intention appears”. Different intention must appear in the repealing Act\n (see Bansidhar [(1989) 2 SCC 557] ). If the repealing\n Act discloses a different intention, the repeal shall not\n result in situations stated in sub-clauses (a) to (e).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 73,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P073_C03",
+      "text": "different intention is disclosed in the provisions of the\n new Act to hold that the repeal of the 1947 Act affects\n the right of the investigating agency to investigate\n offences which are covered by the 1947 Act or that it\n prevents the investigating agency from proceeding with\n the investigation and prosecuting the accused for\n offences under the 1947 Act. In our opinion, therefore,\n the repeal of the 1947 Act does not vitiate or invalidate\n the criminal case instituted against the appellants and\n the consequent conviction of the appellants for\n offences under the provisions of the 1947 Act.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 74,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P074_C01",
+      "text": "27. In view of the afore-stated legal position, unless a different\n\n intention is disclosed in the new Act or repealing Act, a repeal of\n\n an Act would not affect the right of the investigating agency to\n\n investigate the offences which were covered under the repealed\n\nAct. If the offences were committed when the repealed Act was in\n\n force, then the repeal of such Act would neither affect the right of\n\n the investigating agency to investigate the offence nor would\n\n vitiate or invalidate any proceedings instituted against the\n\n accused. In the instant case also the offences under\nSection\n\n 13(1)(c)\nand\n13(1)(d)\nwere in force when the same were allegedly\n\n committed by the appellant. Hence, the deletion of the said\n\n provisions and the substitution of the new offence under\nSection\n\nby the Amendment Act, 2018 would not affect the right of the\n\n investigating agency to investigate nor would vitiate or invalidate\n\n any proceedings initiated against the appellant.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 75,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P075_C01",
+      "text": "28. Having considered the different contours of\nSection 17A\n, I am of\n\n the opinion that\nSection 17A\nwould be applicable to the offences\n\n under the\nPC Act\nas amended by the Amendment Act, 2018, and\n\n not to the offences existing prior to the said amendment. Even\n\n otherwise, absence of an approval as contemplated in\nSection\n\n 17A\nfor conducting enquiry, inquiry or investigation of the offences\n\n alleged to have been committed by a public servant in purported\n\n exercise of his official functions or duties, would neither vitiate the\n\n proceedings nor would be a ground to quash the proceedings or\n\n the FIR registered against such public servant.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 76,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P076_C01",
+      "text": "29. In the instant case, the Appellant having been implicated for the\n\n other offences under\nIPC\nalso, the Special Court was completely\n\nwithin its jurisdiction to pass the remand order in view of the\n\n powers conferred upon it under\nSection 4\nand\n\nof the PC Act.\n\n There was no jurisdictional error committed by the Special Court\n\n in passing the impugned order of remand. The impugned\n\n judgment and order passed by the High Court also does not\n\n suffer from any illegality or infirmity which would warrant\n\n interference of this Court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 77,
+      "chunk_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH_P077_C01",
+      "text": "30. In that view of the matter, the appeal being devoid of merits is\n\n dismissed.\n…………………………. J.\n[BELA M. TRIVEDI]\n\nNEW DELHI;\nJANUARY, 16th 2024.\n\n CRIMINAL APPELLATE JURISDICTION\n\n CRIMINAL APPEAL NO._______________OF 2024\n (Arising out of Petition for Special Leave to Appeal (Criminal)\n No.12289 of 2023)\n\nNARA CHANDRABABU NAIDU … APPELLANT(S)\n VERSUS\nTHE STATE OF ANDHRA PRADESH\n& ANR. … RESPONDENT(S)\n\n ORDER\n\n As we have expressed opinions taking different views\non the interpretation of\nSection 17A\nof the Prevention of\nCorruption Act, 1988 as also its applicability to the\nappellant in the subject-case, we refer the matter to the\nHon’ble the Chief Justice of India. The Registry to place\nthe papers before the Hon’ble the Chief Justice of India\nso that appropriate decision can be taken for the\nconstitution of a Larger Bench in this case for\nadjudication on the point on which contrary opinions have\nbeen expressed by us.\n……………………….. J.\n(ANIRUDDHA BOSE)\n\n ……………………….. J.\n(BELA M. TRIVEDI)\nNEW DELHI;\n16TH JANUARY, 2024.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Nara Chandrababu Naidu vs The State Of Andhra Pradesh",
+    "case_id": "SC_2024_NARA_CHANDRABABU_NAIDU_VS_THE_STATE_OF_ANDHRA_PRADESH",
+    "court": "Supreme Court of India",
+    "year": "2024",
+    "facts_summary": "2. The appellant is aggrieved by initiation of a criminal\n\n proceeding against him and his detention in connection with the\n\n same by the respondent State through its CID. Allegations have\n\nread with Sections 120­B, 34 and 37 of the\nIndian Penal Code\n,\n\n1860 and\nSection 12\nand\n13(2)\nread with\nSections 13(1)(c)\nand (d)\n\nof the\nPrevention of Corruption Act, 1988\n. The said offences are\n\nalleged to have been committed between the years 2015 and\n\n2019, during which period he was the Chief Minister of the State\n\nof Andhra Pradesh. Initially, a First Information Report dated\n\n09.12.2021 was lodged with CID Police Station, Andhra Pradesh,\n\nMangalagiri implicating twenty­six persons as accused. On that\n\nbasis, CR No. 29/2021 was registered. The appellant was not\n\nincluded in the array of accused persons in that F.I.R. The\n\noffences primarily relate to siphoning of public funds and I shall\n\nrefer broadly to the allegations forming the basis of the F.I.R. in\n\nthe succeeding paragraphs of this judgment. The present appeal is\n\nagainst this judgment of dismissal of the said petition. 3. The primarily allegation against the appellant is facilitating\n\ndiversion of public money in the approximate range of\n\nRs.370/­ crores, which was to be used for setting up of six\n\nclusters of skill development centres in Andhra Pradesh. For this\n\npurpose, Andhra Pradesh State Skill Development Corporation\n\n(hereinafter referred to as “APSSDC”) was established through a\n\nmemorandum numbered as G.O.Ms. No.47",
+    "legal_issues": "The main complaint against the appellant is that he\n\nhad fast tracked the project and approved the cost estimation\n\nwith criminal intent and by pursuing the government officials, he\n\nhad ensured release of Rs.370/­ crores. The project was allotted\n\nto Design Tech and SIEMENS on nomination basis, without\n\nfollowing any tender process. Misappropriation of government\n\nfunds through corrupt and illegal methods has been alleged and\n\nabuse of official position has been attributed to the appellant. Summary of the allegations against the appellant is revealed from\n\nthe Memorandum dated 08.09.2023, filed on behalf of the\n\nprosecution, for adding the appellant as an accused. These\n\nallegations, inter­alia, are to the following effect: ­\n\n “….A­37 by abusing his (A­37) official position,\n fraudulently committed criminal breach of trust with a\n common intention, caused wrongful loss to the\n Government exchequer by allowing accused and others\n to divert APSSDC funds by using fake invoices as\n genuine one for purpose of cheating through the shell,\n defunct companies without providing\n materials/services to the APSSDC­Siemens project.” 6. On behalf of the appellant, the main argument, which was\n\nalso made before the High Court, revolves around non­\n\ncompliance of\nSection 17A\nof the Prevention of Corruption Act,\n\n1988 in implicating the appellant under\nSections 12\n,\n13(2)\nread\n\nwith 13(1) (c) and (d) of the 1988 Act and proceeding against him\n\ninter­alia, under the aforesaid provisions. The ",
+    "ratio_summary": "17. So far as the provision of Section 197 of the 1973 Code is\n\nconcerned, the requirement for deciding the question on\n\nobtaining sanction is at the stage of taking cognizance. Thus,\n\nsome element of application of mind is necessary while examining\n\nthat issue. In the case of Matajog Dobey ­vs­ H. C. Bhari (AIR\n\n1956 SC 44), there was use of force when a tax raiding party was\n\nresisted from conducting a search. This gave rise to two\n\ncomplaints, which were sent to two magistrates for judicial\n\nenquiry. Summonses were issued against the income tax officials\n\nand the accompanying policemen over use of force. Matajog\n\nDobey (supra), the resistor, contended that use of such force was\n\nnot in discharge of official duty. Objection was raised against the\n\nissuance of summons on the ground of lack of sanction as\n\ncontemplated in\nSection 197\nof the Criminal Procedure Code,\n\nwhich was prevalent at that point of time (1950). Negating such a\n\ncontention, a Constitution Bench of this Court observed:­\n\n“20. Is the need for sanction to be considered as soon as\nthe complaint is lodged and on the allegations therein\ncontained? At first sight, it seems as though there is some\nsupport for this view in Hori Ram case and also in Sarjoo\nPrasad v. King­Emperor. Sulaiman, J. says that as the\nprohibition is against the institution itself, its applicability\nmust be judged in the first instance at the earliest stage of\ninstitution. Varadachariar, J. also states that the question\nmust be determined wit",
+    "final_order": "The list of accused\n\npersons was subsequently expanded and the appellant was also\n\narraigned as an accused by an “Accused Adding Memo” dated\n\n08.09.2021 lodged before the Special Judge, SPE & ACB cases\n\n(hereinafter referred to as “the Special Judge”). The appellant was\n\nimplicated as accused no.37, whereas another individual,\n\nKinjarapu Atchannaidu was made the 38th accused. The latter is\n\na former minister of Andhra Pradesh and appears to be a\n\nmember of the legislative assembly of that State at present. The\n\nappellant was arrested on 09.09.2023 and was produced before\n\nthe Special Judge on 10.09.2023. He was remanded to judicial\n\ncustody by the Special Judge. The appellant applied before the\n\nHigh Court on 12.09.2023 for quashing the F.I.R. in Crime No.\n\n29 of 2021 implicating him, invo",
+    "outcome_summary": "Partly allowed. The list of accused\n\npersons was subsequently expanded and the appellant was also\n\narraigned as an accused by an “Accused Adding Memo” dated\n\n08.09.2021 lodged before the Special Judge, SPE & ACB cases\n\n(hereinafter referred to as “the Special Judge”). The appellant was\n\nimplicated as accused no.37,",
+    "sections_cited": [
+      "Constitution 226",
+      "IPC 420"
+    ],
+    "cases_cited": [
+      "State of Punjab v Davinder Pal Singh Bhullar & Others4\n",
+      "G.J. Raja v Tejraj Surana",
+      "State of Telangana v Managipet",
+      "State of Rajasthan v Tejmal Choudhary17\n, this Court set"
+    ]
+  }
+}

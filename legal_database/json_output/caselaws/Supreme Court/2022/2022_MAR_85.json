@@ -1,0 +1,99 @@
+{
+  "case_id": "SC_2022_DHEERAJ_BHADVIYA_VS_THE_STATE_OF_RAJASTHA",
+  "case_name": "Dheeraj Bhadviya vs The State Of Rajastha",
+  "normalized_case_name": "DHEERAJ_BHADVIYA_VS_THE_STATE_OF_RAJASTHA",
+  "court": "Supreme Court of India",
+  "year": "2022",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 358 of 2022",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "7 March 2022",
+  "judges": [
+    "S. Ravindra Bhat",
+    "Uday Umesh Lalit"
+  ],
+  "author": "Uday Umesh Lalit",
+  "bench_type": "division",
+  "petitioner": "Dheeraj Bhadviya",
+  "respondent": "The State Of Rajastha",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 2,
+  "cited_by_count": 1,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2022\\MAR\\2022_MAR_85.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2022_DHEERAJ_BHADVIYA_VS_THE_STATE_OF_RAJASTHA_P001_C01",
+      "text": "O R D E R\nLeave granted.\nThis appeal challenges the judgment and order dated 05.02.2018",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2022_DHEERAJ_BHADVIYA_VS_THE_STATE_OF_RAJASTHA_P002_C01",
+      "text": "S.B. Criminal Misc. Bail No.9433 of 2017.\nApprehending arrest in connection with crime registered",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_DHEERAJ_BHADVIYA_VS_THE_STATE_OF_RAJASTHA_P003_C01",
+      "text": "relief of stay of arrest was granted to the appellant, which relief\nmatter, we allow this appeal, set-aside the order passed by the",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_DHEERAJ_BHADVIYA_VS_THE_STATE_OF_RAJASTHA_P004_C01",
+      "text": "High Court, and direct as under:\na) In case the appellant is arrested in connection with",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2022_DHEERAJ_BHADVIYA_VS_THE_STATE_OF_RAJASTHA_P005_C01",
+      "text": "furnishing cash security in the sum of Rs.50,000/-\n(Rupees Fifty Thousand Only) with two like sureties.\nb) The appellant shall extend complete co-operation in",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2022_DHEERAJ_BHADVIYA_VS_THE_STATE_OF_RAJASTHA_P006_C01",
+      "text": "the entire week.\nWith these observations, the appeal is allowed.\n........................J.\n (UDAY UMESH LALIT)",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Dheeraj Bhadviya vs The State Of Rajastha",
+    "case_id": "SC_2022_DHEERAJ_BHADVIYA_VS_THE_STATE_OF_RAJASTHA",
+    "court": "Supreme Court of India",
+    "year": "2022",
+    "facts_summary": "S.B. Criminal Misc. Bail No.9433 of 2017.\nApprehending arrest in connection with crime registered relief of stay of arrest was granted to the appellant, which relief\nmatter, we allow this appeal, set-aside the order passed by the",
+    "legal_issues": "furnishing cash security in the sum of Rs.50,000/-\n(Rupees Fifty Thousand Only) with two like sureties.\nb) The appellant shall extend complete co-operation in",
+    "ratio_summary": "",
+    "final_order": "the entire week.\nWith these observations, the appeal is allowed.\n........................J.\n (UDAY UMESH LALIT)",
+    "outcome_summary": "Allowed. the entire week.\nWith these observations, the appeal is allowed.\n........................J.\n (UDAY UMESH LALIT)",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

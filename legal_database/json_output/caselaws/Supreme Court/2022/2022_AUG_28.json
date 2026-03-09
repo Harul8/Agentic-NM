@@ -1,0 +1,1238 @@
+{
+  "case_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA",
+  "case_name": "Zakir Abdul Mirajkar vs The State Of Maharashtra",
+  "normalized_case_name": "ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA",
+  "court": "Supreme Court of India",
+  "year": "2022",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 1125 of 2022",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "24 August 2022",
+  "judges": [
+    "Surya Kant",
+    "Dhananjaya Y Chandrachud"
+  ],
+  "author": "D.Y. Chandrachud",
+  "bench_type": "division",
+  "petitioner": "Zakir Abdul Mirajkar",
+  "respondent": "The State Of Maharashtra",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 105,
+  "cited_by_count": 12,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2022\\AUG\\2022_AUG_28.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P001_C01",
+      "text": "CRIMINAL APPELLATE JURISDICTION\n\n Criminal Appeal No. 1125 of 2022\n Special Leave Petition (Criminal) No. 3213 of 2020\n\n Zakir Abdul Mirajkar …Appellant\n\n Versus\n\n The State of Maharashtra & Ors. …Respondents\n\n With\n\n Criminal Appeal No. 1127 of 2022\n Special Leave Petition (Criminal) No. 3722 of 2020\n\n With\n\n Criminal Appeal No. 1126 of 2022\n Special Leave Petition (Criminal) No. 3629 of 2020\n\n With\n\n Criminal Appeal No. 1129 of 2022\n Special Leave Petition (Criminal) No. 3915 of 2020\n\n With\n\n Criminal Appeal No. 1128 of 2022\n Special Leave Petition (Criminal) No. 3943 of 2020\n\n And With\n\n Criminal Appeal No. 1130 of 2022\n Special Leave Petition (Criminal) No. 4170 of 2020\n\n JUDGMENT\n\nDr. Dhananjaya Y. Chandrachud, J. Contents\n\nA. Facts............................................................................................................... 3\n\nB. Issues ............................................................................................................. 8\n\nC. Submissions.................................................................................................. 9\n\nD.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P001_C02",
+      "text": "Analysis ....................................................................................................... 18\n\n i. An overview of the Maharashtra Control of Organized Crime Act 1999 18\n\n ii. Confession made before a police officer “not below the rank of the\n\n Superintendent of Police”………………………………………………. 22\n\n iii. Conditions for invocation of the MCOCA……………………. 65\n\nPART A\n\nA. Facts",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P002_C01",
+      "text": "1. The prosecution alleges that the appellants are members of an organized\n\n crime syndicate which has engaged in a systematic course of activities for\n\n cheating members of the public by conducting the ‗Mumbai Matka‘. To\n\n explain ‗matkas‘ in simple terms, those who wish to gamble place bets on\n\n numbers / playing cards. At the end of the cycle, the results are to be\n\n declared based on a random draw of numbers / playing cards and those\n\n who correctly guess the winning digits / playing cards win while the others\n\n lose. Instead of declaring the winning digits on the basis of a random draw,\n\n the organizers of the Mumbai Matka are alleged to identify the number on\n\n which the least bets are placed and declare that to be the winning digit. This\n\n is allegedly done in order to ensure that the pay-out is minimal and the profit\n\n is as large as possible.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P003_C01",
+      "text": "2. Salim Mulla is alleged to be a bookie who accepts bets for the Mumbai\n\n Matka. It is the prosecution‘s case that he would transfer the money he\n\n received through the Mumbai Matka to Rakesh Agarwal and Manish\n\n Agarwal if he anticipated that he would be unable to repay in the event that\n\n the number on which he accepted the highest number of bets was declared\n\n the winning number. Rakesh Agarwal and Manish Agarwal would allegedly\n\n accept the risk and discharge the obligation to pay the gamblers if that\n\n particular number was indeed declared the winning number. Further, they\n\n would in turn allegedly transfer the money they received from Salim Mulla to\n\n Samrat Korane, the appellant in SLP (Criminal) No. 3722 of 2020, and Zakir\n\nPART A\n\n Mirajkar, the appellant in SLP (Criminal) No. 3213 of 2020. The latter two,\n\n along with Sharad Korane, the appellant in SLP (Criminal) No. 3629 of 2020\n\n would assume the risk and transfer the money once again to Viral Savla, the\n\n appellant in SLP (Criminal) No. 3915 of 2020 and Jayesh Savla, the\n\n appellant in SLP (Criminal) No. 4170 of 2020, amongst others.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P003_C02",
+      "text": "It is alleged\n\n that in this fashion, the petitioners and various others are members of an\n\n organized crime syndicate, of which the lynchpin is Salim Mulla. The main\n\n organizers of the Mumbai Matka are alleged to be Prakash Savla, the\n\n appellant in SLP (Criminal) No. 3943 of 2020, his son Viral Savla and his\n\n brother Jayesh Savla. Finally, Rajendra Dave, the appellant in SLP\n\n (Criminal) No. 6034 of 2022 is alleged to assist Salim Mulla and the Savla\n\n family by distributing protection money to various gangsters and purchasing\n\n property from the proceeds of the illegal gambling business. According to\n\n the prosecution, the proceeds from the matka business are used to finance\n\n criminal gangs and underworld dons.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P004_C01",
+      "text": "3. On 8 April 2019, the Assistant SP, Kolhapur and a team of police personnel\n\n raided what is alleged to be a gambling den (colloquially known as a ‗matka‘\n\n den) controlled by Salim Mulla. It is the prosecution‘s case that Salim\n\n Mulla‘s wife, Shama Mulla, along with some others, assaulted the police\n\n team when they were recording the panchnama at the gambling den.\n\nPART A",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P005_C01",
+      "text": "4. FIR 136 of 2019 for offences punishable under\nSections 143\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\nand\n\nof the Indian Penal Code 1860,1\nSections 4\nand\n\nof the Maharashtra Prevention of Gambling Act 1887, 2\nSection 65(e)\nof the Maharashtra Prohibition Act 1949 and\nSections 37\nand\n\nof the Bombay Police Act 1951 was registered in PS Rajarampuri,\n\n Kolhapur on the basis of a complaint made by one of the members of the\n\n raiding party. The Investigating Officer was of the opinion that the accused\n\n were members of an organized crime syndicate led by Salim Mulla, as\n\n defined in Section 2(1)(f) Maharashtra Control of Organized Crime Act\n\n 1999.3 She consequently submitted a proposal seeking to invoke offences\n\n punishable under the MCOCA, to the competent authority under Section\n\n 23(1)(a). The competent authority approved the proposal on 10 April 2019\n\n and\nSections 3(1)(ii)\n,\n3(2)\n,\n3(4)\n, and\n3(5)\nMCOCA were added to the FIR.\n\n During the course of investigation, the Additional Superintendent of Police4\n\n recorded the confessions made by many of the accused, including the\n\n appellants. Statements of various persons under\nSection 161\nCode of\n\n Criminal Procedure 19735 were also recorded.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P006_C01",
+      "text": "5. On 4 October 2019, the competent authority sanctioned the prosecution of\n\n the appellants (amongst others) for offences under the MCOCA. Upon the\n\n―\nIPC\n‖\n\n―\nGambling Act\n‖\n\n―MCOCA‖\n\n―Addl. SP‖\n\n―\nCrPC\n‖\n\nPART A\n\n completion of the investigation, the IO submitted a charge-sheet / final\n\n report under\nSection 173\nCrPC on 5 October 2019. The charge-sheet was\n\n filed with reference to\nSections 109\n,\n120(B)\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\nand\n\nIPC,\nSections 21(2)\n,\n21(3)\nand\n\nof the Banning of\n\n Unregulated Deposit Schemes Act 2019,\nSections 4\nand\n\nof the Gambling\n\n Act,\nSection 65(e)\nof the Maharashtra Prohibition Act 1949,\nSections 37\nand\n\nof the Bombay Police Act 1951, and\nSections 3(1)(ii)\n,\n3(2)\n,\n3(4)\n, and\n3(5)\nof the MCOCA.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "CrPC 173"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P007_C01",
+      "text": "6. Some of the appellants as well as other accused were arrested at different\n\n points in time following the registration of the FIR. Two of them (Samrat\n\n Korane and Prakash Savla) are absconding. The petitioners in SLP\n\n (Criminal) Nos. 3213 of 2020, 3722 of 2020, 3629 of 2020, 3915 of 2020,\n\n 3943 of 2020 and 4170 of 2020 instituted writ petitions before the Bombay\n\n High Court for quashing of the FIR. By a judgment dated 21 April 2020 a\n\n Division Bench of the Bombay High Court dismissed the petitions for the\n\n following reasons:\na. Though gambling may not by itself constitute an organized crime, an\n\n organized crime syndicate may utilize the profits from the illegal activity\n\n for other unlawful activities such as contract killing, abduction and\n\n dacoity. If the state becomes aware of the existence of an organized\n\n crime syndicate while conducting a raid on a gambling establishment, it\n\n may take recourse to MCOCA and carry out an investigation;\n\nPART A\n\n b. MCOCA penalizes not only persons who engage in organized crime\n\n but also those who are members of an organized crime syndicate and\n\n those who abet the commission of organized crime.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P007_C02",
+      "text": "The appellants are\n\n alleged to have assisted Salim Mulla by providing him accommodation\n\n in the contingency of excessive risks incurred by him. Such assistance\n\n is sufficient to invoke the provisions of the MCOCA;\n\n c. Some of the appellants are absconding and their interrogation is\n\n necessary for a proper investigation;\nd. If certain persons are found to be involved in the commission of\n\n organized crime and their names were not mentioned in the order\n\n granting approval to record information under\nSection 23(1)(a)\nMCOCA, they may nevertheless be proceeded against once sanction\n\n is obtained under\nSection 23(2)\nMCOCA;\ne. The confessions recorded by the Addl. SP are admissible because\n\n Addl. SPs are in the same rank as Superintendents of Police,6 in terms\n\n of clause 25(2) of the Bombay Police Manual 1959.7\n\n Aggrieved by the judgment of the High Court, the appellants invoked the\n\n jurisdiction of this court under\nArticle 136\nof the Constitution.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "Constitution 136"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P007_C03",
+      "text": "Rajendra\n\n Dave, filed SLP (Criminal) No. 6034 of 2022 to challenge an order of a\n\n―SP‖\n\n―Police Manual‖\n\nPART B\n\n Single Judge of the Bombay High Court dated 11 August 2021 declining\n\n bail in connection with the same FIR for the following reasons:\na. Prima facie, there is sufficient evidence to show the complicity in the\n\n commission of the alleged offences;\nb. The charge-sheet alludes to sufficient material to show active\n\n membership of an organized crime syndicate.\nc. A case for the grant of bail is not made out in light of the restrictions\n\n contained in\nSection 21(4)\nMCOCA. B. Issues",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P008_C01",
+      "text": "7. Based on the submissions which have been canvassed on behalf of the\n\n appellants, two questions arise for determination:\na. Whether a confession recorded by an Addl. SP under\nSection 18\nMCOCA can be proved as against the accused; and\n\n b. Whether the provisions of MCOCA have been validly invoked.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P009_C01",
+      "text": "8. Since similar issues arise in the batch of cases, the appeals have been\n\n heard together.\n\nPART C\n\nC. Submissions",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P010_C01",
+      "text": "9. Mr. Amit Desai, Mr. Siddharth Luthra, Mr. Abad Ponda, Mr. V. Giri, Mr.\n\n Pradeep Rai, and Mr. ANS Nadkarni, senior counsel, led arguments on\n\n behalf of the appellants. Mr. Amit Desai, learned senior counsel who led the\n\n arguments (supported by Mr. Abad Ponda) specifically stated that the\n\n challenge in the cases he is arguing is confined to the authority of an Addl.\n\n SP to record a confession, in view of the interdict of\nSection 18\n. Mr Desai\n\n submitted that the individual facts in the appeal are not being put forth in this\n\n proceeding since the appellants would follow their remedies at the\n\n appropriate stage when they apply for regular bail.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P011_C01",
+      "text": "10. Their submissions were:\na. Several statutory safeguards have been introduced in the MCOCA\n\n including:\ni. Informing the accused that the statement would be used against\n\n them;\nii. Certification of the statement in writing;\niii. Transmission of the statement to the CJM/CMM to ensure that no\n\n tampering takes place and requiring that the statement be forwarded\n\n to the court taking cognizance; and\n\n iv. Mandate of production before the CMM/CJM who has to record\n\n either a complaint or an absence of a complaint. PART C\n\n These statutory safeguards are a facet of\nArticle 21\nof the Constitution, to\n\n ensure the protection of the accused who has made the statement to a\n\n police officer while in custody. Their object is to ensure a fair trial in a\n\n serious crime involving an organized crime syndicate.\n\n b. Section 25\ncommences with a non-obstante provision conferring\n\n overriding effect to the MCOCA, notwithstanding anything inconsistent\n\n contained in other legislations. The High Court has erred in holding that\n\n an Addl. SP is empowered to record a confession under the MCOCA,\n\n by relying on Para 25(2) of the Police Manual.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "Constitution 21"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P011_C02",
+      "text": "Moreover, the Police\n\n Manual is a compendium of administrative circulars and cannot\n\n override the statutory provisions contained in\nSection 18\nof the\n\n MCOCA which mandate that no police officer below the rank of an SP\n\n can record a confession;\nc. Section 18\nMCOCA, which stipulates that confessions made to ―a\n\n police officer not below the rank of Superintendent of Police‖ are\n\n admissible in evidence, is an exception to the general rule in\nSection\n\nof the Indian Evidence Act 18728 and must be construed strictly. An\n\n Addl. SP is not of the same rank as an SP because:\ni. Section 8\nof the Bombay Police Act 1951 provides that the state\n\n government ―may empower an Additional Superintendent to\n\n―\nEvidence Act\n‖\n\nPART C\n\n exercise and perform … all or any of the powers, functions or\n\n duties to be exercised or performed by a Superintendent …‖. Hence, the power vested in the Addl. SP is not inherent but must\n\n be conferred by the state government. The State of Maharashtra\n\n has not empowered Addl. SPs to exercise the powers of SPs.\n\nii. Para 25(2) of the Police Manual indicates that an Addl.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P011_C03",
+      "text": "―performs such duties and exercises such powers of the\n\n Superintendent the State Government might have assigned to\n\n him‖. The manual recognizes that the Addl. SP is not in the same\n\n rank as the SP. It is only by a fiction of law that they become of\n\n the same rank. The State of Maharashtra has not issued a\n\n notification assigning the power of recording a confession under\n\n MCOCA to Addl. SPs;\niii. Even if such notifications existed or were to be issued, they would\n\n be contrary to\nSection 25\nMCOCA which is an overriding\n\n provision.\niv. The insignia on the Addl. SP‘s uniform is different from that on the\n\n SP‘s uniform, indicating that their ranks are not the same.\n\nv. The Model Police Act 2006 prepared by the Union Government is\n\n meant to serve as a benchmark for the states to follow. Clause\n\n 32, of the Model Police Act 2006 stipulates that a commandant\n\n ―equivalent in rank to Superintendent of Police, shall head each\n\nPART C\n\n Armed Police Battalion. The Commandant shall be assisted by a\n\n Deputy Commandant, equivalent in rank to Additional\n\n Superintendent of Police‖. This recognizes the difference in rank\n\n between an Addl. SP and an SP.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P011_C04",
+      "text": "The Police Acts in Sikkim and\n\n Himachal Pradesh contain similar provisions.\nd. Trial courts must not be required to answer the question of whether\n\n one post is equivalent to another. Rather, they must be required to ask\n\n and answer the simple question of whether the police officer recording\n\n the confession is an SP. To allow persons other than SPs to record the\n\n confession would lead criminal justice down a slippery slope;\n\ne. In Sangli district, the post of an SP was in fact available and hence there\n\n was no reason to pick and choose officers from the rank of Addl. SP for\n\n the purpose of recording the confession.\nf. It is a well settled principle of law that where the statute lays down a\n\n procedure, it must be scrupulously followed. In the MCOCA, the\n\n legislature has disclosed an intent of seeking a proper investigation of a\n\n serious crime while at the same time preserving fairness to the accused.\n\ng. The legislative intent behind\nSection 18\nMCOCA is to prevent the\n\n harassment of the accused. The provision is mandatory and must be\n\n strictly construed.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P011_C05",
+      "text": "There exists a legal presumption that senior,\n\n experienced officers will not indulge in inappropriate methods of\n\n interrogation during the course of investigation. There is a significant\n\nPART C\n\n misuse of police powers and hence there is a need to exercise caution\n\n while expanding the scope of\nSection 18\nMCOCA. Recording a\n\n confession is different from exercising the ordinary power of\n\n investigation. The recording of a confession is not a ministerial act – a\n\n confession recorded under the MCOCA is a piece of substantive\n\n evidence and can be used against the maker of the statement. The\n\n MCOCA embodies stringent provisions for bail in\nsection 21(4)\n;\n\n h. The mere existence of sanction under\nSection 23(2)\nMCOCA does not\n\n cure the defect in following the procedure under\nSection 23(1)\nMCOCA, as it is non-est and suffers from non-application of mind.\n\n i. Gambling by itself is not an organized crime. Gambling is punishable\n\n with a maximum sentence of 2 years and does not, therefore, fall within\n\n the scope of MCOCA (which requires the commission of a crime\n\n punishable with imprisonment of 3 years or more).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P011_C06",
+      "text": "The offences under\n\n the\nIPC\ndo not fall within the ambit of\nSection 2(d)\nMCOCA and do not\n\n constitute a continuing unlawful activity. MCOCA has been incorrectly\n\n invoked; it is impermissible to invoke MCOCA for ordinary crimes.\n\n j. Rule 3(4) of the Maharashtra Control of Organised Crime Rules 1999 9\n\n stipulates that the police officer recording the confession must give the\n\n―MCOC Rules‖\n\nPART C\n\n accused not less than 24 hours to reconsider their decision to confess. This rule was not adhered to in the present case.\nk. The legislature was cognizant of the difference between various ranks\n\n while enacting MCOCA. Section 23(1)(b)\nrefers to a Deputy SP. Sections 14(10)\nand\n23(2)\nrefer to the Additional Director General of\n\n Police. In contrast,\nSection 18\nMCOCA does not refer either to Deputy\n\n SPs or to Addl. SPs. If the legislature intended to include Addl. SPs\n\n within the ambit of\nSection 18\nMCOCA, it would have done so\n\n expressly.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P012_C01",
+      "text": "11. Apart from the above submissions, Mr. Siddharth Luthra, learned senior\n\n counsel made the following submissions with respect to Sharad Korane,\n\n Prakash Savla, Jayesh Savla, Suresh Sawant and Meghraj Kambhar:\na. They are not named either in the FIR or in the approval order; and\n\n b. There is no connection between them and the activities of the gang in\n\n question;\nc. All the confessions barring one are not recorded by an officer of the\n\n rank of an SP but by an Addl. SP.\nLearned counsel also submitted that there was no confession as against\n\n Suresh Sawant.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P013_C01",
+      "text": "12. Mr. ANS Nadkarni, learned senior counsel urged that the name of Viral\n\n Savla is missing regarding the filing of a charge sheet against him. Mr.\n\nPART C\n\n Pradeep Rai submitted that Samrat Korane was named for the first time in\n\n the sanction order, and that he had been discharged in 3 out of 5 FIRs\n\n registered in relation to his alleged gambling activities.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P014_C01",
+      "text": "13. Shree Prakash Sinha appeared on behalf of Rajendra Dave i.e., the\n\n petitioner who was denied bail. He submitted that his client‘s name was not\n\n mentioned either in the FIR or in the order granting approval under\nSection\n\n 23(1)(a)\n. He also argued that his client has been in custody for 3 years and\n\n deserves to be released on bail.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P015_C01",
+      "text": "14. The submissions urged on behalf of the petitioners have been opposed by\n\n the State of Maharashtra. Mr. Raja Thakare, learned senior counsel made\n\n the following submissions:\na. Section 18\nMCOCA confers the power to record confessions by rank\n\n and hence, no separate authorisation from the state government is\n\n necessary. Section 25\ncontains an overriding provision and MCOCA\n\n does not require a separate authorisation under any other statute.\nb. Addl. SPs and SPs are of the same rank because:\n\n i. The posts of Addl. SP, SP, Deputy Commissioner of Police,10\nand Commandant are interchangeable upon transfer. The post of\n\n DCP is attached to a Commissionerate. A DCP posted in a\n\n―DCP‖\n\nPART C\n\n Commissionerate can be transferred to a district either as an\n\n Addl. SP or as an SP. Likewise an Addl. SP or SP in a district can\n\n be posted on transfer as a DCP in a Commissionerate. Illustratively, Mr. Nikhil Pingale and Mr. Samadhan Pawar were\n\n DCPs who became Addl. SPs upon being transferred in 2018. MCOCA does not mention DCPs or their powers under the\n\n enactment. Yet, a DCP may record a confession under Section\n\n because she would not be below the rank of an SP.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P015_C02",
+      "text": "If the\n\n petitioner‘s arguments were to be accepted, a person can record\n\n a confession under MCOCA while posted as a DCP in a particular\n\n district but the same person would be unable to record a\n\n confession upon transfer to another district as Addl. SP.\nii. The pay scale for Addl. SPs and SPs is the same.\n\n iii. SPs as well as Addl. SPs can be promoted to the post of Deputy\n\n Inspector General of Police.\n\n iv. Addl. SP is a non-cadre post. Specific rules in that regard have\nbeen framed under\nArticle 309\nof the Constitution on 25 August",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "Constitution 309"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P016_C01",
+      "text": "1975. The appointment on promotion is from the rank of ACP,\n\n Deputy SP or SDPO with a stipulated number of years of service.\n\nc. The State of Maharashtra has complied with the requirements of\nSection 18\nMCOCA and Rule 3, MCOC Rules. PART C\n\nd. The approval granted by the competent authority under\nSection\n\n 23(1)(a)\nMCOCA is with respect to the offence and not with respect to\n\n the offender. The approval granted is akin to an FIR, where the names\n\n of all the offenders need not be mentioned. Hence, non-inclusion of\n\n any accused person‘s name in the order of approval is not fatal to the\n\n investigation. The approval was granted on the basis of a proposal\n\n submitted by the Police Inspector, Rajarampuri Police Station to the\n\n Special IG.\ne. The validity of the approval granted under\nSection 23(1)(a)\nor of the\n\n sanction under\nSection 23(1)(b)\ncannot be tested at this stage. Their\n\n validity can only be determined at the stage of trial, when the\n\n prosecution has the opportunity to adduce evidence.\n\nf. Sub-\nsections 1\n,\n\n,\n\nand\n\nSection 3\ncommence with the expression\n\n ―whoever‖.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P016_C02",
+      "text": "Unlike the above provisions, sub-\nsection 4\nSection 3\ndoes not contain the word ‗whoever‘ and hence any person who is a\n\n member of an organised crime syndicate is liable. The MCOCA was\n\n validly invoked as the petitioners have abetted organized crime by\n\n rendering financial assistance to the organized crime syndicate by\n\n taking on any potential losses from the matka. The material on record\n\n points towards a financial link between the petitioners and the\n\n organized crime syndicate. PART D\n\nD. Analysis\n\n i. An overview of the Maharashtra Control of Organized Crime Act",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P017_C01",
+      "text": "15. The Maharashtra Control of Organized Crime Act 1999, as its long title\n\n indicates, is ―an Act to make special provisions for the prevention and control\n\n of, and for coping with, criminal activity by organized crime syndicate or gang\n\n and for matters connected therewith or incidental thereto‖.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P017_C02",
+      "text": "The statement of\n\n objects and reasons contains the reasons which constituted the foundation for\n\n the legislature to step in:\nFirstly, organized crime which is in existence for some years poses a serious\n\n threat to society;\nSecondly, organized crime is not confined by national boundaries;\n\n Thirdly, organized crime is fuelled by illegal wealth generated by contract killing,\n\n extortion, smuggling and contraband, illegal trade in narcotics, kidnapping for\n\n ransom, collection of protection money and money laundering, and other\n\n activities;\nFourthly, the illegal wealth and black money generated by organized crime\n\n pose adverse effects on the economy;\nFifthly, organized crime syndicates make common cause with terrorists\n\n fostering narcoterrorism which extends beyond national boundaries;\n\nPART D\n\n Sixthly, the existing legal framework in terms of penal and procedural laws and\n\n the adjudicatory system were found inadequate to curb and control organized\n\n crime; and\n\n Seventhly, the special law was enacted with ―stringent and deterrent provisions‖\n\n including in certain circumstances, the power to intercept wire, electronic or oral\n\n communication.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P018_C01",
+      "text": "16. In understanding the ambit of the enactment, emphasis must be given to three\n\n definitions:\na. Organized crime (\nSection 2(1)(e)\n);11\n\n b. Organized crime syndicate (\nSection 2(1)(f)\n);12 and\n\n c. Continuing unlawful activity (\nSection 2(1)(d)\n.13\n17. The expression ‗organised crime‘ is defined with reference to a continuing\n\n unlawful activity. The definition is exhaustive since it is prefaced by the word\n\n ―means‖. The ingredients of an organized crime are:\na. The existence of a continuing unlawful activity;\n\nSection 2(1)(e)\n– ―organized crime‖ means any continuing unlawful activity by an individual, singly or jointly,\neither as a member of an organized crime syndicate or on behalf of such syndicate, by use of violence or threat\nof violence or intimidation or coercion, or other unlawful means, with the objective of gaining pecuniary benefits,\nor gaining undue economic or other advantage for himself or any other person or promoting insurgency. Section 2(1)(f)\n– ―organised crime syndicate‖ means a group of two or more persons who, acting either singly\nor collectively, as a syndicate or gang indulge in activities of organised crime.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P018_C02",
+      "text": "Section 2(1)(d)\n– ―continuing unlawful activity‖ means an activity prohibited by law for the time being in force,\nwhich is a cognizable offence punishable with imprisonment of three years or more, undertaken either singly or\njointly, as a member of an organised crime syndicate or on behalf of such syndicate in respect of which more\nthan one charge-sheets have been filed before a comptent Court within the preceding period of ten years and\nthat Court has taken cognizance of such offence ;\n\nPART D\n\n b. Engagement in the above activity by an individual;\n\n c. The individual may be acting singly or jointly either as a member of an\n\n organized crime syndicate or on behalf of such a syndicate;\n\n d. The use of violence or its threat or intimidation or coercion or other\n\n unlawful means; and\n\n e. The object being to gain pecuniary benefits or undue economic or other\n\n advantage either for the person undertaking the activity or any other\n\n person or for promoting insurgency.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P019_C01",
+      "text": "18. The above definition of organized crime, as its elements indicate, incorporates\n\n two other concepts namely, a continuing unlawful activity and an organized\n\n crime syndicate. Hence, it becomes necessary to understand the ambit of both\n\n those expressions. The ingredients of a continuing unlawful activity are:\na. The activity must be prohibited by law for the time being in force;\n\n b. The activity must be a cognizable act punishable with imprisonment of\n\n three years or more;\nc. The activity may be undertaken either singly or jointly as a member of an\n\n organized crime syndicate or on behalf of such a syndicate;\n\n d. More than one charge-sheet should have been filed in respect of the\n\n activity before a competent court within the preceeding period of ten\n\n years; and\n\n e. The court should have taken cognizance of the offence.\n\nPART D",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P020_C01",
+      "text": "19. The elements of the definition of ―organized crime syndicate‖ are :\na. A group of two or more persons;\n\n b. Who act singly or collectively, as a syndicate or gang; and\n\n c. Indulge in activities of organized crime.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P021_C01",
+      "text": "20. Both\nSection 2(1)(d)\nwhile defining ―continuing unlawful activity‖ and\nSection\n\n 2(1)(e)\nwhile defining ―organized crime‖ contain the expression ―as a member of\n\n an organized crime syndicate or on behalf of such syndicate‖. While defining an\n\n organized crime syndicate,\nSection 2(1)(f)\nrefers to ―activities of organized\n\n crime‖.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P022_C01",
+      "text": "21. Section 3\nprovides for the punishment for organized crime.14 Sub Section (1) of\nSection 3\ncovers ―whoever commits an offence of organized crime‖. Sub\n\n Section (2) covers whoever conspires or attempts to commit or advocates,\n\nSection 3\n– (1) Whoever commits an offence of organised crime shall,— (i) if such offence has resulted in the\ndeath of any person, be punishable with death or imprisonment for life and shall also be liable to a fine, subject to\na minimum fine of rupees one lac;\n(ii) in any other case, be punishable with imprisonment for a term which shall not be less than five years but\nwhich may extend to imprisonment for life and shall also be liable to a fine, subject to a minimum fine of rupees\nfive lacs. (2) Whoever conspires or attempts to commit or advocates, abets or knowingly facilitates the\ncommission of an organised crime or any act preparatory to organised crime, shall be punishable with\nimprisonment for a term which shall be not less than five years but which may extend to imprisonment for life and\nshall also be liable to a fine, subject to a minimum fine of rupees five lacs.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P022_C02",
+      "text": "(3) Whoever harbours or conceals or attempts to harbour or conceal, any member of an organised crime\nsyndicate shall be punishable with imprisonment for a term which shall not be less than five years but which may\nextent to imprisonment for life, and shall also be liable to a fine, subject to a minimum fine of rupees five lacs. (4) Any person who is a member of an organised crime syndicate shall be punishable with imprisonment for a\nterm which shall not be less than five years but which may extend to imprisonment for life and shall also be liable\nto a fine, subject to a minimum fine of rupees five lacs. (5) Whoever holds any property derived or obtained from commission of an organised crime or which has been\nacquired through the organised crime syndicate funds shall be punishable with a term which shall not be less\nthan three years but which may extend to imprisonment for life and shall also be liable to fine, subject to a\nminimum fine of rupees two lacs. PART D\n\n abets or knowingly facilitates the commission of an organized crime or any act\n\n preparatory to organized crime.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P022_C03",
+      "text": "Sub Section (3) covers whoever harbours or\n\n conceals or attempts to harbour or conceal any member of an organized crime\n\n syndicate. Sub Section (4) covers any person who is a member of an organized\n\n crime syndicate. Sub Section (5) covers whoever holds any property derived or\n\n obtained from the commission of an organized crime or which has been\n\n acquired through the funds of an organized crime syndicate. Section 4\npunishes the possession of unaccountable wealth on behalf of a member of an\n\n organized crime syndicate.\nii. Confession made before a police officer “not below the rank of\n\n the Superintendent of Police”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P023_C01",
+      "text": "22. The crux of the controversy in the present batch of cases turns on the\n\n interpretation of the provisions of\nSection 18\n.15 Sub Section (1) of\nSection 18\n\nSection 18\n– (1) Notwithstanding anything in the Code or in the\nIndian Evidence Act, 1872\n, but subject to the\nprovisions of this section, a confession made by a person before a police officer not below the rank of the\nSuperintendent of Police and recorded by such police officer either in writing or on any mechanical devices like\ncassettes, tapes or sound tracks from which sounds or images can be reproduced, shall be admissible in the trial\nof such person or co-accused, abettor or conspirator:\nProvided that, the co-accused, abettor or conspirator is charged and tried in the same case together with the\naccused. (2) The confession shall be recorded in a free atmosphere in the same language in which the person is examined\nand as narrated by him.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P023_C02",
+      "text": "(3) The police officer shall, before recording any confession under sub-section (1), explain to the person making\nit that he is not bound to make a confession and that, if he does so, it may be used as evidence against him and\nsuch police officer shall not record any such confession unless upon questioning the person making it, he is\nsatisfied that it is being made voluntarily. The concerned police officer shall , after recording such voluntry\nconfession, certify in writing below the confession about his personal satisfaction of the voluntary character of\nsuch confession, putting the date and time of the same. (4) Every confession recorded under sub-section (1) shall be sent forthwith to the Chief Metropolitan Magistrate\nor the Chief Judicial Magistrate having jurisdiction over the area in which such confession has been recorded and\nsuch Magistrate shall forward the recorded confession so recived to the Special Court which may take\ncognizance of the offence. PART D\n\n prefaced with a non obstante provision which operates notwithstanding\n\n anything contained in the\nCrPC\n16 or the\nEvidence Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P024_C01",
+      "text": "23. Having incorporated a non obstante clause in sub Section (1), the statute uses\n\n the expression ―but subject to the provisions of this section‖. Sub Section (1)\n\n stipulates that a confession made by a person before a police officer ―not below\n\n the rank of the Superintendent of Police‖ shall be admissible at the trial of such\n\n a person or a co-accused, abettor or conspirator, if it has been recorded by\n\n such police officer either in writing or on any mechanical devices like cassettes,\n\n tapes or sound tracks from which sounds and images can be reproduced. The\n\n confession can be used against a co-accused, abettor or conspirator if they are\n\n charged and tried in the same case together with the accused.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P025_C01",
+      "text": "24. The reason why\nSection 18(1)\ncontains a non obstante provision overriding the\nEvidence Act\nis because\nSection 25\nof the Evidence Act stipulates that no\n\n confession made to a police officer shall be proved as against a person\n\n accused of an offence. The bar contained in\nSection 25\nis limited by sub\n\n Section (1) of\nSection 18\nof the MCOCA. Evidently, the Legislature while lifting\n\n the bar was conscious of the underlying rationale for\nSection 25\nof the\n\n(5) The person from whom a confession has been recorded under subsection (1) shall also be produced before\nthe Chief Metropolitan Magistrate or the Chief Judicial Magistrate to whom the confession is required to be sent\nunder sub-section (4) alongwith the original statement of confession, written or recorded on mechanical device\nwithout unreasonable delay. (6) The Chief Metropolitan Magistrate or the Chief Judicial Magistrate shall scrupulously record the statement, if\nany, made by the accused so produced and get his signature and in case of any complaint of torture, the person\nshall be directed to be produced for medical examination before a Medical Officer not lower in rank than of an\nAssistant Civil Surgeon.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P025_C02",
+      "text": "The expression Code which used in\nSection 18(1)\nis defined in\nSection 2(b)\nto mean the\nCode of Criminal\nProcedure",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P026_C01",
+      "text": "1973. PART D\n\n Evidence Act\n.\nSection 25\nof the Evidence Act is based on a legislative\n\n understanding that there is a grave danger that a confession made to a police\n\n officer may have been obtained under coercion, torture, or duress.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P027_C01",
+      "text": "25. Hence, while lifting the bar contained in the provisions of the\nEvidence Act\n, the\n\n legislature has employed the expression ―subject to the provisions of this\n\n section‖. In doing so the legislature has indicated an intent that the admissibility\n\n of a confession recorded under sub Section (1) of\nSection 18\nis subject to\n\n compliance with the statutory safeguards which are embodied in the provision.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P028_C01",
+      "text": "26. Sub Section (1) of\nSection 18\ncontains two safeguards, the first being with\n\n reference to the person who records the confession and the second in terms of\n\n the modalities for recording the confession. As for the former, sub Section (1)\n\n stipulates that the confession must be made before a police officer ―not below\n\n the rank of the Superintendent of Police‖. The other safeguards which the\n\n statute has embodied in\nSection 18\nare:\na. the requirement that the confession should be recorded either in writing or\n\n on any mechanical devices from which sounds or images can be\n\n reproduced (sub Section (1));\nb. the confession (besides being admissible at the trial of the maker) is\n\n admissible at the trial of a co-accused, abettor or conspirator only when\n\n the co-accused abettor or conspirator are charged and tried in the same\n\n case together with the accused (proviso to sub Section (1)).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P028_C02",
+      "text": "PART D\n\nc. the recording of the confession in ―a free atmosphere‖, in the same\n\n language in which the person is examined and as narrated by him (sub\n\n Section (2));\nd. the duty of the police officer to disclose to the person making the\n\n confession, before recording the confession under sub Section (1), that:\ni. he is not bound to make a confession;\n\n ii. if he does so, it may be used as evidence against him (sub Section\n\n (3));\n\ne. the mandate that the police officer shall not record any confession unless\nupon questioning the person making it, he is satisfied that it is being made\n\n voluntarily (sub Section (3));\nf. the requirement that upon being satisfied that the confession is being\n\n recorded voluntarily, the police officer shall certify the same in writing\n\n below the confession along with the date and time (sub Section (3));\n\ng. the transmission of the confession forthwith to the Chief Metropolitan\n\n Magistrate or the Chief Judicial Magistrate having jurisdiction of the area\n\n and the forwarding of the confession so received to the Special Court\n\n which may take cognizance of the offence (sub Section (4));\n\nh. the production of the maker of the confession before the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P028_C03",
+      "text": "Chief\n\n Metropolitan Magistrate or the Chief Judicial Magistrate to whom the\n\n confession is required to be sent under sub\nSection 4\n, together with the\n\nPART D\n\n original statement of the confession, without unreasonable delay (sub\n\n Section (5)); and\n\n i. the duty of the Chief Metropolitan Magistrate or the Chief Judicial\n\n Magistrate to scrupulously record the statement made by the accused\n\n produced before him and get his signatures, and in the event of a\n\n complaint of torture, to direct the production of the accused for medical\n\n examination before a Medical Officer not lower in rank than an Assistant\n\n Civil Surgeon.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P028_C04",
+      "text": "(sub Section (6)). The legislature has made the admissibility of a confession recorded in terms of\n\n sub Section (1) of\nSection 18\nconditional on the observance of the above\n\n statutory safeguards.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P029_C01",
+      "text": "27. The outcome of these appeals depends on the construction of the expression\n\n ―before a police officer not below the rank of the Superintendent of Police‖. The\n\n provisions contained in\nSection 18(1)\nare an exception to the general principle\n\n embodied in\nSection 25\nof the Evidence Act and must be strictly construed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P030_C01",
+      "text": "28. The issue as to whether a confession recorded by an Addl. SP is a confession\n\n made ―before a police officer not below the rank of the Superintendent of\n\n Police‖ was raised before the High Court. The submission of the appellants was\n\n that since\nSection 18\ncontemplates the recording of confessions by a police\n\n officer not below the rank of SP, almost all the confessions in connection with\n\n the present FIR were inadmissible, having been recorded by an Addl. SP. It\n\n appears from the judgment of the High Court that the Special Public\n\n Prosecutor, while responding to this submission, placed reliance on para 25(2)\n\nPART D\n\n of the Police Manual to urge that the Addl. SP (as the High Court noted the\n\n submission) ―is in the same position as the SP in the area for which he is\n\n appointed‖. The High Court rejected the appellants‘ submission in the absence\n\n of a challenge to para 25(2) of the Police Manual.17\n29. It is necessary to clear the air of the argument which was founded on para 25 of\n\n the Police Manual. The Police Manual purports to contain rules under the\nBombay Police Act\n1951, the Bombay Police (Extension and Amendment) Act\n\n 1959 and other departmental regulations.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P030_C02",
+      "text": "Para 25 of the Police Manual\n\n provides that:\n―25. Superintendent of Police:\n(1) Subject to the orders of the District Magistrate and the Inspector General of\n Police in their respective spheres of authority, the direction and regulation of\n the Police through-out a district is vested in the Superintendent as the\n executive head of the force and he has full control over the internal economy of\n the force under him including arms, drill, exercise, prevention and investigation\n of crime, prosecution, discipline and other matters of executive detail;\n (2) An Additional Superintendent of Police is in the same position as the\n Superintendent of Police in the area he is appointed and performs such duties\n and exercise such powers of the Superintendents the State Government might\n have assigned to him. Para 19 of the impugned judgment of the High Court reads as follows:\n―19] One more contention came to be raised on behalf of the petitioners to the effect that the confessions\nrecorded in the present matter are inadmissible and they need to be ignored.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P030_C03",
+      "text": "It is submitted that\nSection 18\nof the\nMCOC Act contemplates recording of confessions by a police officer not below the rank of Superintendent of\nPolice. It is submitted that in the present matter almost all confessions are recorded by Additional Superintendent\nof Police. As against this, the learned Spl. P.P. has pointed out clause 25 (2) of Bombay Police Manual, 1959,\nwhich inter-alia states that Additional Superintendent of Police is in the same position as the Superintendent of\nPolice in the area for which he is appointed. In absence of any challenge to the said clause, we are compelled to\nreject this contention.‖\n\nPART D",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P031_C01",
+      "text": "30. Sub-para 1 of para 25 indicates that the direction and regulation of the Police\n\n throughout the district is vested in the Superintendent as the head of the force,\n\n subject to the orders of the D.M. and the IGP in their spheres of authority. Sub\n\n para 2 indicates that an Addl. SP ―is in the same position as‖ the SP in the area\n\n for which he is appointed and ―exercises such powers of the Superintendents\n\n the State government might have assigned to him‖.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P032_C01",
+      "text": "31. Dealing with the provisions of para 25 (2) of the Police Manual, Mr Amit Desai\n\n urged:\na. The Addl. SP is not in the same rank as the SP;\nb. By extension, the Addl. SP is in the same position as an SP and performs\n\n such duties and exercises such powers which are assigned by the State\n\n government; and\n\n c. There is no notification by the Government of Maharashtra assigning the\n\n power of recording confessions under the MCOCA to the Addl. SP in\n\n terms of para 25(2) of the Police Manual.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P033_C01",
+      "text": "32. The reliance on para 25(2) of the Police Manual by the Special Public\n\n Prosecutor was misconceived for more than one reason. The High Court and\n\n this Court, in appeal, have been called upon to interpret the provisions of a\n\n special Act, the MCOCA. Section 18(1)\nMCOCA does not envisage a specific\n\n delegation of authority to a police officer ―not below the rank of the SP‖ for the\n\n purpose of recording a confession. The admissibility of the confession is\n\n determined by whether it has been recorded by a police officer ―not below the\n\n rank of the SP‖ and by whether the statutory safeguards have been complied\n\nPART D\n\n with. Section 25\nMCOCA gives overriding effect to the provisions of the Act and\n\n to any rules made under it as well as to orders issued under a rule\n\n notwithstanding anything inconsistent contained in any other law for the time\n\n being in force or any instrument having the force of law.18\n33.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P033_C02",
+      "text": "Section 18(1)\ndoes not interpose an additional requirement of a specific\n\n authorization by the state government for recording a confession under the\n\n MCOCA, the requirement of the statute being that the police officer who\n\n records such confession is not below the rank of SP. The effort on the part of\n\n the Special Public Prosecutor to justify the authority of the Addl. SP to record a\n\n confession under\nSection 18(1)\non the basis of the provisions of para 25(2) of\n\n the Police Manual was therefore fraught with error. As a matter of fact, Mr\n\n Thakare, learned senior counsel appearing on behalf of the state is therefore\n\n right in submitting that there is no question of importing the requirement of an\n\n authorization into\nSection 18(1)\nby reading it together with para 25(2) of the\n\n Police Manual. The High Court was led into relying on the Police Manual by the\n\n submission of the public prosecutor. A submission which is made on a question\n\n of law by counsel appearing for a party (in this case, the state) cannot bind that\n\n party or for that matter, preclude this Court from correctly interpreting the law.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P033_C03",
+      "text": "During the course of the submissions, the provisions of\nSection 8\nof the\n\nSection 25\nof the MCOCA is as follows:\nThe provisions of this Act or any rule made thereunder or any order made under any such rule shall, have effect\nnotwithstanding anything inconsistent therewith contained in any other law for the time being in force or in any\ninstrument having the force of law. PART D\n\n Maharashtra Police Act\n1951 have been adverted to.19\nSection 8\nprovides as\n\n follows:\n―8. Appointment of [Superintendent and] Additional, Assistant and Deputy\n Superintendents. The State Government may appoint for each District or for a part of a district or\n for one or more Districts [a Superintendent of Police] and one or more\n Additional, Assistant and Deputy Superintendents of Police, as it may think\n expedient. The State Government may by a general or special order, empower an\n Additional Superintendent to exercise and perform in the district for which he is\n appointed or in any part thereof, all or any of the powers, functions or duties to\n be exercised or performed by a [Superintendent] under this Act or under any\n law for the time being in force.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P033_C04",
+      "text": "The District Superintendent may, with the previous permission of the State\n Government delegate any of the powers and functions conferred on him by or\n under this Act to an Assistant or Deputy Superintendent;\n\n 4 [Provided that, the powers, to be exercised by the Superintendent of making,\n altering or re\n\n Gujarat Amendment: In\nSec. 8\nof the Bombay Police Act, 1951 in Sub-section\n (3), for the words ―conferred on him by or under this Act to an Assistant or\n Deputy Superintendent‖, the words ―conferred on him by or under this Act,\n except the power to make, alter or rescind rules or orders under\nSec. 33\n, to an\n Assistant or Deputy Superintendent‖ shall be substituted.\n[8-A.] 2 (Appointment of Director of Police Wireless and Superintendent],\n Assistant and Deputy Superintendents for Wireless System, Motor Transport\n System or any specific duty.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P033_C05",
+      "text": "The State Government may appoint for the whole of the State or for any part\n thereof- 3 [(i) one or more Directors of Police Wireless and Deputy Inspector\n General of Police for the Police Wireless System (hereinafter referred to as\n ―the Director of Police Wireless)as it thinks fit; and (ii) one or more\n Superintendents of Police and Assistant and Deputy Superintendent of Police\n as it thinks fit]. a) For the Police Wireless System; b) For Police Motor\n Transport System; or c) For the performance of such specified duties as the\n State Government may from time to time determine in this behalf.\n\n―\nPolice Act\n‖\n\nPART D\n\n 4 [Any Director of Police Wireless and Superintendent] appointed shall\n exercise such powers and perform such functions as the State Government\n may from time to time 5 [assign to each of them]. [The Director may, with the\n previous permission of the State Government, delegate any of the powers and\n functions conferred on him by or under this Act to a Superintendent, or to an\n Assistant or deputy Superintendent and the Superintendent may, subject to the\n like previous permission, delegate such powers and functions to an Assistant\n or Deputy Superintendent:] Provided",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P033_C06",
+      "text": "that the powers and functions aforesaid\n shall be exercised or performed by 6 [the District Superintendent or Assistant\n or Deputy Superintendent, subject to the control of Inspector-General.].‖",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P034_C01",
+      "text": "34. Sub-section (1) of\nSection 8\nempowers the State government to appoint an SP\n\n and one or more Addl. SP, Assistant SPs and Deputy SPs as it may think\n\n expedient for each district, a part of a district or for one or more districts. In\n\n terms of sub-Section (2) the State government, by a general or special order,\n\n may empower an Addl. SP to exercise and perform in the district for which he is\n\n appointed or in any part thereof, all or any of the powers, functions or duties to\n\n be exercised or performed by an SP under the\nPolice Act\nor under any law for\n\n the time being in force. Sub-Section (3) empowers the SP to delegate his\n\n powers and functions to an Assistant SP or Deputy SP, with the previous\n\n permission of the State government.\nSection 8\nis adverted to by the appellants\n\n for the purpose of indicating that:\na. There exists a specific statutory conferment of power on the state\n\n government to appoint inter alia SPs and Addl. SPs in any given district;\n\n and\n\n b. Addl. SPs may exercise and perform the powers, functions and duties\n\n entrusted to an SP in that district, upon being empowered by the State\n\n government by a general or special order.\n\nPART D",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P035_C01",
+      "text": "35. The argument of the appellants is that the enabling power in sub-section (2) of\nSection 8\nhas not been exercised by the State government by empowering the\n\n Addl. SP to exercise the power conferred on an SP under\nSection 18(1)\nof the\n\n MCOCA misses the crux of the matter. The MCOCA is a special Act enacted\n\n with an overriding provision in\nSection 25\n. The tenability of the submission that\n\n an Addl. SP does not fit the description of an officer not below the rank of SP\n\n cannot be determined by reading into the MCOCA provisions for authorization\n\n contained either in the Police Manual (para 25(2) as noticed above) or in\n\n another statute (\nSection 8(2)\nof the Police Act). The answer to the challenge\n\n which was raised before the High Court and on behalf of the appellants before\n\n this Court must turn on the interpretation of the provisions of\nSection 18(1)\nMCOCA itself. Section 18(1) renders admissible a confession made by a\n\n person before a police officer ―not below the rank‖ of the SP.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P036_C01",
+      "text": "36. Mr Amit Desai, learned senior counsel placed reliance on a judgment of a\n\n Single Judge of the Bombay High Court dated 1 September 1977 in State of\n\n Maharashtra v. Keshav Bhaurao Mulik,20 where the respondent had been\n\n acquitted by the JMFC Solapur on the charge of having committed offences\n\n punishable under\nSections 4\nand\n\nof the Gambling Act. The prosecution was\n\n based on the allegation that one of the accused was using a house in Solapur\n\n as a common gaming house for accepting matka bets. This house was raided\n\n by certain officers led by the Addl. SP of that area; no warrant was obtained\n\n before the raid was effected. The prosecution argued that a warrant was not\n\nCriminal Appeal No 835 of 1974\n\nPART D\n\n necessary as the Addl. SP was empowered to conduct the raid. In exercise of\n\n the power conferred by\nSection 8(2)\nof the Police Act, the Government of\n\n Maharashtra issued a notification on 24 November 1971 empowering the Addl. SP, Solapur to exercise and perform in Solapur district ―all the powers,\n\n functions and duties to be exercised and performed by a District\n\n Superintendent of Police under said Act‖.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P036_C02",
+      "text": "The Single Judge of the High Court\n\n held that by virtue of this order, the Addl. SP was only empowered to exercise\n\n the powers, functions and duties of an SP under the\nPolice Act\nand not under\n\n any other law for the time being in force. Section 6\nof the Gambling Act\n\n stipulated that it shall be lawful for a police officer not below the rank of a Sub-\n\n Inspector and either empowered by general order in writing or authorized in\n\n each case by a special warrant issued by the Commissioner of Police to enter\n\n any house, room, or place which he has reason to suspect was being used as a\n\n common gaming house, to conduct a search. A similar provision was contained\n\n for areas other than those within the jurisdiction of a Commissioner of Police.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P037_C01",
+      "text": "37. The decision of the Single Judge of the High Court in the above case is clearly\n\n distinguishable since the\nGambling Act\nspecifically contained a requirement of\n\n a warrant of authorization. The warrant of authorization which was relied upon\n\n by the State under\nSection 8(2)\nof the Police Act only related to the\n\n performance of functions under the\nPolice Act\n. It was in this backdrop that the\n\n Single Judge held that the Addl. SP could not have exercised the powers of an\n\n SP under the\nGambling Act\nand could not have issued a warrant to carry out a\n\n search. In other words, there was a specific requirement of an authorization\n\nPART D\n\n under the\nGambling Act\nfor carrying out a search and in the absence of such an\n\n authorization, the search was itself held to be unlawful.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P038_C01",
+      "text": "38. At this stage, it would be necessary to advert to some of the decisions of this\n\n Court bearing on the issue.\nKartar Singh v. State of Punjab,21\n\n Constitution Bench of this Court inter alia considered the validity of\nSection 15\nof the Terrorist and Disruptive Activities (Prevention) Act 198722 on a challenge\n\n that it violated\nArticle 14\nof the Constitution. While rejecting the challenge, the\n\n Court held :\n―254. In view of the legal position vesting authority on higher police officer to\n record the confession hitherto enjoyed by the judicial officer in the normal\n procedure, we state that there should be no breach of procedure and the\n accepted norms of recording the confession which should reflect only the true\n and voluntary statement and there should be no room for hyper criticism that\n the authority has obtained an invented confession as a source of proof\n irrespective of the truth and creditability (sic) as it could be ironically put that\n when a Judge remarked, ―Am I not to hear the truth‖, the prosecution giving a\n startling answer, ―No, Your Lordship is to hear only the evidence‖.‖",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P039_C01",
+      "text": "39. The Court upheld the statutory provision under challenge, noting that the power\n\n to record confessions had been vested in a ―higher police officer‖ which had\n\n hitherto been enjoyed by a judicial officer. The court held that there should be\n\n no breach of procedure or accepted norms while recording the confession,\n\n which should reflect only true and voluntary statements. The Court proceeded\n\n(1994) 3 SCC 569\n\n―TADA‖\n\nPART D\n\n to formulate guidelines to ensure that a confession obtained in a pre-indictment\n\n interrogation by a police officer not lower in rank than an SP was not tainted.23\n40. State of Rajasthan v. Ajit Singh,24\na two judge Bench of this Court while\n\n considering the provisions of\nSection 15\nof the TADA adverted to the decision\n\n in Kartar Singh, observing:\n―10. It will be seen that\nSection 15\nis a clear departure from the general law\n that a statement made to a police officer is not permissible in evidence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P039_C02",
+      "text": "Kartar Singh\ncase [(1994) 3 SCC 569 : 1994 SCC (Cri) 899] this Court while\n upholding the vires of\nSection 15\nrepeatedly dwelt on the severity of this\n provision as one laying down altogether a new procedure and emphasised that\n the provisions of the Act and the Rules must be scrupulously observed with\n particular reference to the provisions relating to the recording of confessions.‖",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P040_C01",
+      "text": "41. The decision of a two judge Bench in\nState of Maharashtra v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P040_C02",
+      "text": "Kamal\n\n Ahmed25\ndealt with the validity of a confession which was recorded under the\n\nThe guidelines which have been formulated in paragraph 263 of the judgment are as follows:\n―(1) The confession should be recorded in a free atmosphere in the same language in which the person is\nexamined and as narrated by him;\n(2) The person from whom a confession has been recorded under\nSection 15(1)\nof the Act, should be produced\nbefore the Chief Metropolitan Magistrate or the Chief Judicial Magistrate to whom the confession is required to be\nsent under Rule 15(5) along with the original statement of confession, written or recorded on mechanical device\nwithout unreasonable delay;\n(3) The Chief Metropolitan Magistrate or the Chief Judicial Magistrate should scrupulously record the statement, if\nany, made by the accused so produced and get his signature and in case of any complaint of torture, the person\nshould be directed to be produced for medical examination before a Medical Officer not lower in rank than of an\nAssistant Civil Surgeon;\n(4) Notwithstanding anything contained in the\nCode of Criminal Procedure\n, 1973, no police officer below the rank\nof an Assistant Commissioner of Police in the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P040_C03",
+      "text": "Metropolitan cities and elsewhere of a Deputy Superintendent of\nPolice or a police officer of equivalent rank, should investigate any offence punishable under this Act of 1987.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P040_C04",
+      "text": "This is necessary in view of the drastic provisions of this Act. More so when the\nPrevention of Corruption Act,\n\nunder\nSection 17\nand the\nImmoral Traffic Prevention Act, 1956\nunder\nSection 13\n, authorise only a police\nofficer of a specified rank to investigate the offences under those specified Acts. (5) The police officer if he is seeking the custody of any person for pre-indictment or pre-trial interrogation from\nthe judicial custody, must file an affidavit sworn by him explaining the reason not only for such custody but also\nfor the delay, if any, in seeking the police custody;\n(6) In case, the person, taken for interrogation, on receipt of the statutory warning that he is not bound to make a\nconfession and that if he does so, the said statement may be used against him as evidence, asserts his right to\nsilence, the police officer must respect his right of assertion without making any compulsion to give a statement\nof disclosure‖\n\n(2008) 1 SCC 601\n\nPART D\n\n MCOCA.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P040_C05",
+      "text": "The Court observed that since\nSection 18\nof the MCOCA is an\n\n exception to the rule\nlaid down in\nSections 25\nand\n\nof the Evidence Act, it\n\n would have to be interpreted strictly ―for the limited purpose contemplated there\n\n under‖. Yakub Abdul Razak Memon v. State of Maharashtra,26\na two\n\n judge Bench of this Court held that compliance with the provisions of\nSection\n\nand Rule 15 of the TADA is required before a confession made to a police\n\n officer is admissible in law. Ranjit Singh v. State of Punjab,27\na two judge\n\n Bench of this Court noted that an Addl. SP (PW4) recorded the confessional\n\n statements of two of the accused on the oral directions of the SP (PW3) who he\n\n admitted was above him in the administrative hierarchy,. Half an hour had been\n\n granted to the accused, who had emerged from police custody of 18-20 days,\n\n to reflect on whether they should make their statements. This Court held half an\n\n hour was inadequate to enable the accused to reflect. After noticing the\n\n admission of the Addl. SP that the SP who had instructed him to record the\n\n confession was above him in the administrative hierarchy, the court held :\n―19.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P040_C06",
+      "text": "There is another aspect of recording of confessional statements by PW 4. As already noticed, he was Additional SP. In the administrative hierarchy he\n was lower in rank than PW 3 Shri Niwas Vashisht, SP. Learned counsel for the\n State has not been able to show any rule, regulation or other provision to\n establish the status of PW 4 — a police officer, an Additional Superintendent of\n Police. Nothing was brought to our notice to establish that he was a police\n officer not lower in rank than the Superintendent of Police. It was, however,\n submitted by the learned counsel that even if the two confessional statements\n recorded by PW 4 are kept out of consideration still the conviction can be\n upheld only on the basis of the confessional statements recorded by PW 3. We\n\n(2013) 12 SCC 17\n\n(2013) 13 SCC 1\n\n(2002) 8 SCC 73\n\nPART D\n\n have already expressed hereinbefore our views in respect of the confessional\n statements recorded by PW 3.‖",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P041_C01",
+      "text": "42. The above finding, therefore, turned on a specific admission by the Addl. SP\n\n that the SP was above him in the administrative hierarchy and on the inability\n\n of the State to produce any rule, regulation or provision to establish the status\n\n of the Addl. SP",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P042_C01",
+      "text": "43. Section 18(1)\nMCOCA stipulates that ―a confession made by a person before a\n\n police officer not below the rank of the Superintendent of Police‖ shall be\n\n admissible subject to other statutory stipulations. The expression ―not below the\n\n rank of‖ is used in certain other provisions of the MCOCA. Section 14(10)\nuses\n\n the expression ―an Officer not below the rank of Additional Director General of\n\n Police‖ while specifying who is empowered to authorize an investigating police\n\n officer to intercept wire, electronic or oral communications. Section 23\nuses the\n\n expression ―police officer not below the rank of‖ or, as the case may be, ―police\n\n officer below the rank of‖ in three contexts: first, in relation to the recording of\n\n information about the commission of an offence of organized crime; second, in\n\n relation to an investigation into an offence under the provisions of the MCOCA;\nand third, taking of cognizance of an offence under the MCOCA by a court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P042_C02",
+      "text": "the recording of information about the commission of an offence of organized\n\n crime under the Act,\nSection 23(1)(a)\nrequires the prior approval of a police\n\n officer not below the rank of Deputy Inspector General of Police. Section\n\n 23(1)(b)\nprohibits the investigation of an offence under the MCOCA by a police\n\n officer below the rank of Deputy SP. Before the court takes cognizance of an\n\n offence under the Act,\nSection 23(2)\nrequires the previous sanction of a police\n\n officer not below the rank of Additional Director General Of Police. PART D",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P043_C01",
+      "text": "44. The submission of the appellants is that the legislature was conscious of\n\n different ranks in the hierarchy of Maharashtra Police and has consciously used\n\n the expression ―Additional‖ in\nSection 14(1)\nwhile referring to the Additional\n\n Director General of Polic). Similarly, it has been urged that the legislature has\n\n consciously used the expression ―Deputy‖ while referring to the Deputy\n\n Inspector General of Police in\nSection 23(1)(a)\nand the Deputy SP in\nSection\n\n 23(1)(b)\n. By a process of deduction, it has been urged that when in\nSection\n\n 18(1)\n, the legislature has used the expression ―Superintendent of Police‖ it\n\n could well have employed the words ―or Additional Superintendent of Police‖ as\n\n it has used the expression ―Additional‖ in the statutory provisions noted above.\n\n Based on this reasoning, it has been urged that the absence of the expression\n\n ―Additional‖ in\nSection 18(1)\nshould lead to the conclusion that the legislature\n\n intended that only the SP should record a confession.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P044_C01",
+      "text": "45. The submission which has been urged on behalf of the appellants by drawing a\n\n comparison with certain other provisions of the MCOCA, must on close\n\n reflection be treated with caution.\nSection 18(1)\n, like certain other provisions of\n\n the MCOCA which have been noted earlier, uses the expression ―rank‖. The\n\n expression ―rank‖ cannot be conflated or equated with a designation or post. In\n\n P Ramanatha Aiyar‘s Law Lexicon (1997 edition), the expression rank has\n\n been defined in the following terms:\n―Rank-Precedence . The word ‗rank‘ in common parlance, as also in English\n diction refers to a position, especially an official one within a social\n organization, of high social order or other standing status. Likewise, the word\n ‗precedence‘ denotes the ceremonial order or priority to be observed on formal\n occasions, or a right to preferential treatment. S.C. Advocates on\nRecord\n Association v. Union of India\n, AIR 1994 SC 268, 445.‖\n\nPART D",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P045_C01",
+      "text": "46. Black‘s Law Dictionary (fifth edition) similarly defines the expression ―rank‖ as:\n―Rank, n. Position in society. Grade of quality or value. Grade of official\n standing. The order or place in which certain officers are placed in the army\n and navy, in relation to others. Rank is often used to express something\n different from office. It then becomes a designation or title of honor, dignity, or\n distinction conferred upon an officer in order to fix his relative position in\n reference to other officers in matters of privilege, precedence, and sometimes\n of command, or by which to determine his pay and emoluments. This is the\n case with the staff officers of the army. Wood v. U.\nS., 15\nCt.Cl. 151, 159.‖",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P046_C01",
+      "text": "47. In Supreme Court\nAdvocates-on-Record Association v. Union of India,28\n\n nine-judge Bench of this Court observed that the word ―rank‖ was intimately\n\n associated with primacy:\n―494. … In the same strain the word ―primacy‖ denotes the state of being first in\n rank or being in formal state i.e. the most important state. Thus it would be\n seen that not only is the word ―primacy‖ inextricably linked up with the words\n ―rank‖ and ―precedence‖ but conceptually they all are of the same family and\n breed, block and substance.‖",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P047_C01",
+      "text": "48. The legislature has not used the expression ―designation‖ or ―post‖ in\nSection\n\nbut, on the other hand, has used the expression ―rank‖. The true question is\n\n whether the rank of the SP comprehends within it an Addl. SP. If an Addl. SP is\n\n of a rank inferior to that of an SP then clearly the holder of the rank of an Addl.\n\n SP would not be competent to record a confession under\nSection 18(1)\n.\n\n Contrariwise, if an Addl. SP belongs to the same rank as an SP there would be\n\n no statutory bar on an Addl. SP recording a confession. Whether an Addl. SP\n\n fulfils the description of a police officer ―not below the rank of the\n\n Superintendent of Police‖ cannot be deduced on a superficial consideration of\n\n(1993) 4 SCC 441\n\nPART D\n\n other provisions of the MCOCA but the answer to the question must be\n\n deduced independently.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P048_C01",
+      "text": "49. Section 2\nof the All India Services Act 1951 defines the expression ―an all India\n\n Service‖ to mean ―the service known as the Indian Administrative Service or the\n\n service known as the Indian Police Service or any other service specified in\n\n Section 2A‖. Section 3(1)\nempowers the Central Government, after consulting\n\n the governments of the states concerned, to make rules for regulating the\n\n recruitment and the conditions of service of persons appointed to an all India\n\n Service. In exercise of the powers conferred by\nSection 3(1)\n, the Union\n\n Government has framed the Indian Police Service (Cadre) Rules 1954. Rule\n\n 2(a) defines the expression ‗cadre officer‘ as ―a member of the Indian Police\n\n Service‖. Rule 2(b) defines ‗cadre post‘ to mean any of the posts specified\n\n under item 1 of each cadre in the schedule to the Indian Police Service\n\n (Fixation of Cadre Strength) Rules 1955. Rule 1(2) stipulates that the posts\n\n which are borne on and the strength and composition of the cadre of the Indian\n\n Police Service of the various states shall be as specified in the schedule to the\n\n regulations.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P048_C02",
+      "text": "The schedule contains entries pertaining to the states, among\n\n them, the State of Maharashtra. The entry relating to Maharashtra is extracted\n\n below. PART D\n\nPART D\n\nPART D\n\nPART D\n\nPART D\n\nPART D\n\nPART D",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P049_C01",
+      "text": "50. The schedule indicates that the cadre strength is distributed between\n\n various posts including:\na. Director General of Police;\nb. Additional Director General of Police;\nc. Commissioner of Police;\nd. Special Inspector General of Police;\ne. Joint Commissioner of Police;\nf. Additional Commissioner of Police;\ng. Deputy Inspector General of Police;\nh. Superintendent of Police;\ni. Commandant, State Reserve Police Force; and\n\n j. Deputy Commissioner of Police.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P050_C01",
+      "text": "51. On 16 October 2018, the Central Government, in exercise of the powers\n\n conferred by\nSection 3(1)\nof the All India Services Act 1951 read with sub-\n\n rules 1 and 2 of Rule 4 of the IPS (Cadre) Rules 1954, notified the Indian\n\n Police Service (Fixation of Cadre Strength) Second Amendment\n\n Regulations 2018. The schedule to the Indian Police Service (Fixation of\n\n Cadre Strength) Regulations 1955 in relation to the State of Maharashtra\n\n has been amended. The amended entry in the schedule is as follows:\n\nPART D\n\nPART D\n\nPART D\n\nPART D\n\nPART D",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P051_C01",
+      "text": "52. We have adverted to the\nAll India Services Act\n1951 and the Indian Police\n\n Service (Cadre) Rules 1954 and the\nAll India Services Act",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P052_C01",
+      "text": "1951. Apart from\n\n the cadre strength as constituted on the basis of the above provisions, it\n\n becomes necessary to advert to the rules which have been framed by the\n\n State government on 25 August 1975 in pursuance of the provisions of\nArticle 309\nof the Constitution for recruitment to the non-cadre posts of SP\n\n and Deputy Commissioner of Police. These rules which govern the non-\n\n cadre posts are called the Superintendent of Police and Deputy\n\n Commissioner of Police (Non-Cadre) Recruitment Rules 1976.29 Rule 2\n\n provides as follows:\n―2. Unless the post is filled by appointment of an I.P.S. Officer appointment to\n the non-cadre post of Superintendent of Police (including Deputy\n Commissioner of Police) may be made by promotion of a suitable officer from\n the State Police Service, who has to his credit six years of continuous service\n as a Deputy Superintendent of Police or Assistant Commissioner of Police or in\n a post which in the opinion of the State Government is of an equivalent rank.‖",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 309"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P053_C01",
+      "text": "53. These rules were amended on 9 June 1987. Rule 2 of the 1976 Rules was\n\n amended so as to substitute the requirement of seven years of continuous\n\n service for six years of continuous service. These rules which have been\n\n framed under\nArticle 309\nof the Constitution indicate that besides the cadre\n\n strength of SPs drawn from the IPS, there are non-cadre SPs and DCPs\n\n who are appointed in accordance with the 1975 Rules.\n\n―1976 Rules‖\n\nPART D",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 309"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P054_C01",
+      "text": "54. The Counter Affidavit which has been filed by the State indicates that fifteen\n\n confessional statements have been recorded in the present batch of cases. The details of the confessions are set out below:\na. Confessional Statement dated 13 April 2019 of Mr. Shridhar Shijavi\n\n Kamble (Accused No. 17), recorded by the Addl. SP, Satara;\n\n b. Confessional Statement dated 13 April 2019 of Mr Mushfiq Nibikhan\n\n Pathan (Accused no. 20), recorded by the Addl. SP, Satara;\n\n c. Confessional Statement dated 13 April 2019 of Mr Sahil Niyaj Mujawar\n\n (Accused no. 15), recorded by the Addl. SP, Satara;\n\n d. Confessional Statement dated 14 April 2019 of Mr. Ajay Balaso\n\n Kamble (Accused no. 13), recorded by the Addl. SP, Sangli;\n\n e. Confessional Statement dated 9 May 2019 of Mr Zakir Abdul Miajkar\n\n (Accused no. 31) (Petitioner) recorded by the Addl. SP, Sangli;\n\n f. Confessional Statement dated 13 May 2019 of Mr Rakesh Madanlal\n\n Agrawal (Accused no. 30) recorded by the Addl. SP, Baramati, Dist. Pune (Rural);\ng. Confessional Statement dated 13 May 2019 of Mr Ankush Maruti\n\n Vagre (Accused no. 32), recorded by the Addl. SP, Baramati Dist. Pune (Rural);\n\nPART D\n\nh.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P054_C02",
+      "text": "Confessional Statement dated 6 June 2019 of Mr Suresh Jaywant\n\n Sawant (Accused no. 34) recorded by the Addl. SP, Sangli;\n\ni. Confessional Statement dated 16 June 2019 of Mr Shailesh\n\n Gunvantrao Maniyar (Accused no. 37) recorded by the Addl. SP,\n\n Baramati, Dist. Pune (Rural);\nj. Confessional Statement dated 18 June 2019 of Mr Jayesh Shevantilal\n\n Shah (Accused no. 36) recorded by the Addl. SP, Baramati Dist. Pune\n\n (Rural);\nk. Confessional Statement dated 24 June 2019 of Mr Viral Prakash\n\n Savla (Accused no. 38) recorded by the Addl. SP, Baramati Dist. Pune\n\n (Rural);\nl. Confessional Statement dated 27 June 2019 of Mr Jitendra @ Jitu\n\n Kantilal Gosaliya (Accused no. 39) recorded by the SP, Satara;\n\nm. Confessional Statement dated 25 July 2019 of Mr Jayesh Hirji Savla\n\n (Accused no. 40) recorded by the Addl. SP, Pune (Rural);\n\nn. Confessional Statement dated 12 August 2019 of Mr Rajendra @\n\n Raju Dharamse Dave @ Topi (Accused no. 41) recorded by the Addl. SP, Satara; and\n\no. Confessional Statement dated 23 September 2019 of Mr Manish\n\n Kishor Agarwal (Accused no. 42) recorded by the Addl. SP, Baramati\n\n Pune (Rural). PART D",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P055_C01",
+      "text": "55. Thus fourteen of the fifteen confessions have been recorded by Addl. SPs. The fifteenth (at serial ‗l‘ above) has been recorded by the SP, Satara. The\n\n State Government has stated in its Counter Affidavit that ―ranks‖ and ―posts‖\n\n have distinct connotations. Moreover, it has been stated that an Addl. SP is\n\n of the rank of an SP and is vested with all the powers, duties and functions\n\n of an SP. The state government seeks to contrast the provisions of\nSection\n\n 8(2)\nwith\nSection 8(3)\nof the Maharashtra Police Act. Under\nsection 8(2)\nthe\n\n State Government may by general order empower Addl. SPs to exercise or\n\n perform the powers, duties and functions of SPs. On the other hand, sub-\nsection 3\nSection 8\nprovides that the District SP may, with the previous\n\n permission of the State Government, delegate any of the powers and\n\n functions conferred upon him to the Assistant or Deputy SP.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P055_C02",
+      "text": "The State\n\n Government argues that while\nsection 8(3)\nprovides for the delegation of the\n\n powers of an SP to an Assistant or Deputy SP, it does not envisage a\n\n delegation of the powers of the SP to an Addl SP because the Addl SP is\n\n of the same rank and hence, no question of the delegation of powers arises.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P056_C01",
+      "text": "56. We have already noted earlier that\nSection 18(1)\nMCOCA does not\n\n contemplate any specific authorisation of a police officer not below the rank\n\n of SP for the purpose of recording confessions. The stand of the State\n\n Government with reference to the provisions of clause 25(2) of the Police\n\n Manual and\nSection 8\nof the Maharashtra Police Act would therefore have to\n\n be read subject to the analysis in the earlier part of this judgment.\n\nPART D",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P057_C01",
+      "text": "57. The State Government has explained in its Counter Affidavit that an officer\n\n having the same rank can be posted at various positions/posts in different\n\n parts of the police organisation. The rank of SP has a grade pay of Rs.\n\n 6,600/- and includes Addl. SP, DCP, Commandants and Principals. If an\n\n officer having the rank of SP is posted in:\na. a Commissionerate area, then he/she is posted as a DCP;\n\n b. a District area, then he/she is posted as an SP or Addl. SP;\n\n c. Crime Investigation Department (CID) or Anti-Terrorist Squad (ATS),\n\n then he/she is posted as SP.\nA DCP is competent to record confessions under the MCOCA. lf an SP or\n\n Addl. SP is transferred to the area of a Commissionerate, he / she is posted\n\n as a DCP and is competent to record the confession under the MCOCA.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P058_C01",
+      "text": "58. The above explanation by the State Government on affidavit has been duly\n\n supported during the course of the hearing on the basis of orders of\n\n promotion or posting which have been produced on record. The rules of\n\n 1975 provide for the creation of Addl. SP non-cadre posts of Addl SP and\n\n DCP. An ACP in a Commissionerate or a Deputy SP in a district or a Sub-\n\n Divisional Police Officer with the stipulated period of continuous service can\n\n be posted on promotion as a DCP (in a Commissionerate) or, as the case\n\n may be, as an Addl. SP or Commandant in the State Reserve Police Force.\n\n An Addl. SP, DCP and Commandant are in the same rank as an SP and\n\n these posts are interchangeable on transfer.\n\nPART D",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P059_C01",
+      "text": "59. During the course of his submissions, Mr Raja Thakare, learned senior\n\n counsel has adverted to a notification dated 1 October 2016 issued by the\n\n Home Ministry of the Government of Maharashtra notifying the promotion\n\n list for 2015-2016. Learned senior counsel has pointed out that, for instance,\n\n Serial No. 11 (Vivek Gopalrao Patil) who was a Sub-Divisional Police Officer\n\n was promoted as DCP in the State Intelligence Department. Mr Thakare has\n\n also relied upon a notification dated 27 July 2018 by the Home Ministry,\n\n Government of Maharashtra notifying the transfer and posting of police\n\n officers. Serial Nos. 86 (Samadhan N Pawar) and 87 (Sandip Jadhav) were\n\n persons who were posted as DCPs and were transferred to the post of Addl.\n\n SPs. A DCP when posted in the Commissionerate may record a confession\n\n since the incumbent is in the same rank as an SP. On transfer, a DCP can\n\n be posted as an Addl. SP and continues to be in the same rank as an SP.\n\n There is therefore no basis to conclude that an Addl. SP does not fulfil the\n\n description specified in\nSection 18(1)\nMCOCA as being ―a police officer not\n\n below the rank of the Superintendent of Police‖.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P060_C01",
+      "text": "60. The appellants have produced during the course of the hearing the\n\n structure of the Mumbai police from the website of the Maharashtra Police. For convenience of reference, it is extracted below:\n\nPART D\n\n Designation Short Form Rank\n\nCommissioner of Police C.P. Director General of\n Police/Additional Director\n General of Police\n\nJoint Commissioner of Jt. C.P. Special Inspector General of\nPolice Police\n\nAdditional Commissioner of Addl. C.P. Deputy Inspector General of\nPolice Police\n\nDeputy Commissioner of D.C.P. Superintendent of Police\nPolice (Selection Grade)\n\nDeputy Commissioner of D.C.P. Superintendent of Police\nPolice\n (Junior Management Grade)\n\nDeputy Commissioner of D.C.P. Addl. Superintendent of Police\nPolice (Less than 10 years of service)\n\nDeputy Commissioner of D.C.P. Addl. Superintendent of Police\nPolice (State Police Service)\n\nAssistant Commissioner of A.C.P. Deputy Superintendent of\nPolice Police\n\nSr Police Inspector /Police Sr. P.I./P.I. Police Inspector\nInspector\n\nAssistant Police Inspector A.P.I. Assistant Police Inspector\n\nPolice Sub Inspector P.S.I. Police Sub Inspector\n\nAssistant Police Sub A.S.I. Assistant Police Sub Inspector\nInspector\n\nHead Constable H.C.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P060_C02",
+      "text": "Head Constable\n\nPolice Naik P.N. Police Naik\n\nPolice Constable P.C. Police Constable\n\nPART D",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P061_C01",
+      "text": "61. Mr Amit Desai, learned Senior Counsel has relied upon the above depiction. The structure as set out on the website has no bearing on the power,\n\n functions, or authority which is exercised by non-cadre officers of the rank of\n\n DCP (within a Commissionerate) or, as the case may be, by Addl. SPs (in a\n\n district posting). The above structure indicates that a DCP may be in the\n\n rank of SP (selection grade), SP (junior management grade), Addl. SP (less\n\n than ten years‘ service) or Addl. SP (state police service). This internal\n\n classification, however, does not disturb the basic position that all these\n\n ranks are subsumed within the designation of DCP. A DCP, when posted in\n\n a Commissionerate, is of the same rank as an SP and can therefore record\n\n a confession under\nSection 18(1)\n. A DCP is interchangeable upon transfer\n\n with an Addl. SP or SP. The authority which attaches to the post of a DCP to\n\n record a confession under\nSection 18(1)\nis not diluted when the posting is in\n\n a district either as an Addl. SP or, as the case may be, as an SP. Accepting\n\n the submission of the appellants will lead to an obvious incongruity.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P061_C02",
+      "text": "A DCP,\n\n while being posted in a Commissionerate, can record a confession under\nSection 18(1)\nof the MCOCA (a point which is not disputed during the\n\n course of submissions by the appellants). Yet, if the submission of the\n\n appellants were to be accepted, a DCP who is on transfer posted as an Addl\n\n SP in a district would be disentitled to record a confession under\nsection\n\n 18(1)\n. Hence, there is an obvious fallacy in the submissions of the\n\n appellants. PART D",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 62,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P062_C01",
+      "text": "62. This Court‘s observations in\nNyadar Singh v. Union of India30\n(albeit in the\n\n context of\nArticle 311\nof the Constitution) are useful to understand the\n\n meaning of the expression ―rank‖:\n―13. … In\nArticle 311(2)\nthe penalty of ―reduction in rank‖ is classed along with\n ―dismissal‖ and ―removal‖ for the reason that the penalty of reduction in rank\n has the effect of removing a government servant from a class or grade or\n category of post to a lesser class or grade or category. Though the\n government servant is retained in service, however, as a result of the penalty\n he is removed from the post held by him either temporarily or permanently and\n retained in service in a lesser post. The expression ―rank‖, in ―reduction in rank‖\n has for purposes of\nArticle 311(2)\nan obvious reference to the stratification of\n the posts or grades or categories in the official hierarchy. It does not refer to\n the mere seniority of the government servant in the same class or grade or\n category.‖\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 311"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P063_C01",
+      "text": "63. It is our view that the expression \"rank\" must be understood as a class or\n\n category which encompasses multiple posts. The posts of SP, Addl. SP,\n\n and DCP all fall within the same rank as they exercise similar functions and\n\n powers and operate within similar spheres of authority. Every person within\n\n a particular rank will not be of the same seniority. Officers of the same rank\n\n may have been in service for a different number of years. At times, this may\n\n even bear on the post to which they are appointed but their rank remains\n\n undisturbed. A difference in the seniority of a particular officer is not the\n\n same as a difference in their ranks. The insignia on officers‘ uniforms\n\n denote, in this case, their seniority as well as their designations.\n\n(1988) 4 SCC 170\n\nPART D",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 64,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P064_C01",
+      "text": "64. Mr Amit Desai has sought to rely on the Model Police Code 2006. The\n\n provisions of a model code cannot be deployed to bear upon the true\n\n interpretation of the statutory provision enacted in\nSection 18(1)\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 65,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P065_C01",
+      "text": "65. The appellants have relied on the decision of this court in\nState Inspector\n\n of Police Vishakhapatnam v. Surya Sankaram Karri31\nto urge that an\n\n Addl. SP is not authorized to record confessions under the MCOCA.\nThe\n\n decision in\nSurya Sankaram Karri\n(supra) related to an offence punishable\n\n under the\nPrevention of Corruption Act",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 66,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P066_C01",
+      "text": "1988. 32 The second proviso to\nSection 17\nof the PC Act provides that an offence under\nSection 13(1)(e)\nshall not be investigated without the order of a police officer not below the\n\n rank of an SP. In other words, a police officer of the rank of SP must\n\n authorize any investigation into an offence alleged to have been committed\n\n under\nSection 13(1)(e)\n. The Investigating Officer\nin that case\nwas unable to\n\n produce any record which established that he had been duly authorized by\n\n the SP to conduct the investigation. Therefore, this Court found that the\n\n statutory requirements under the\nPC Act\nhad not been met.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 67,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P067_C01",
+      "text": "66. The judgment in\nSurya Sankaram Karri\n(supra) is of no assistance to the\n\n appellants as the court did not have occasion to discuss the distinction\n\n between rank and designation or to explore the conditions under which\n\n officers could be said to be of equivalent ranks. The question for\n\n(2006) 7 SCC 172\n\n―\nPC Act\n‖\n\nPART D\n\n consideration\nin that case\nwas not whether an officer who had authorized\n\n the investigation could be said to be of the same rank as an SP, but whether\n\n any authorization existed at all. In the present case, no question of\n\n authorization arises as the MCOCA itself empowers any officer not below\n\n the rank of SP to record a confession. The SP (or an officer of equivalent\n\n rank) is not required to obtain authorization from an officer senior to her or\n\n from the government, prior to recording confessions.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 68,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P068_C01",
+      "text": "67. The appellants also rely on\nState of Madhya Pradesh v. Chunni Lal33\n\n urge that confessions recorded by an Addl. SP are inadmissible in evidence\n\n because an Addl. SP is not of the same rank as an SP. In\nChunni Lal\n(supra), the respondent was accused of committing an offence under the\nScheduled Castes and Scheduled Tribes (Prevention of Atrocities) Act\n1989.34\nSection 9\nof the SC/ST Act read with Rule 7(1) of the Scheduled\n\n Castes and Scheduled Tribes (Prevention of Atrocities) Rules 1995 35\n\n stipulates that an investigation into an offence under the Act shall be\n\n conducted by an officer ―not below the rank of a Deputy Superintendent of\n\n Police‖. The investigation in\nChunni Lal\n(supra) was conducted by a Sub-\n\n Inspector and was, therefore, found to be illegal and invalid. This Court held\n\n that an officer below the rank of Deputy SP could not act as an investigating\n\n officer with respect to offences under the Act due to the statutory\n\n(2009) 12 SCC 649\n\n―SC/ST Act‖\n\n―SC/ST Rules‖\n\nPART D\n\n requirement in\nSection 9\nand Rule 7(1). It was not in dispute that a Sub-\n\n Inspector was lower in rank to the Deputy SP.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 68,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P068_C02",
+      "text": "The competent authority had\n\n mistakenly appointed an officer who could not be empowered to conduct an\n\n investigation into offences under the Act. Similarly, the decision in\nState of\n\n Madhya Pradesh v. Babbu Rathore36\npertains to a case where a Sub-\n\n Inspector conducted the investigation into an offence under the SC/ST Act. The investigation there was also found to be invalid and illegal for similar\n\n reasons as in\nChunni Lal\n(supra). These cases did not necessitate a\n\n discussion on when an officer could be said to be of the same rank as the\n\n Deputy SP. It is for this reason that the decisions in\nChunni Lal\n(supra) and\nBabbu Rathore\n(supra) cannot be relied upon to support the submission of\n\n the appellants that an Addl. SP is not of the same rank as an SP.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 69,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P069_C01",
+      "text": "68. State of Punjab v. Hardial Singh,37 the SP(D\n) authorized a Deputy SP\n\n to conduct an investigation into offences under the SC/ST Act. However,\n\n Rule 7(1) of the SC/ST Rules stipulates that the Investigating Officer is to be\n\n appointed by the State Government or the Director General of Police or the\n\n SP. The High Court of Punjab and Haryana ruled that an SP(D) was not\n\n competent to appoint a Deputy SP to conduct an investigation as an SP(D)\n\n was not in charge of her district. The power to do so lay only with the three\n\n authorities specified in the SC/ST Rules i.e., the State Government, the\n\n(2020) 2 SCC 577\n\n(2009) 15 SCC 106\n\nPART D\n\n Director General of Police, and the SP. It is important to note the language\n\n used in the SC/ST Rules and in MCOCA respectively. Rule 7(1) of the\n\n SC/ST Rules states:\n―An offence committed under the Act shall be investigated by a police officer\n not below the rank of a Deputy Superintendent of Police.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 69,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P069_C02",
+      "text": "The investigating\n officer shall be appointed by the State Government /Director General of\n Police/Superintendent of Police after taking into account his past experience,\n sense of ability and justice to perceive the implications of the case and\n investigate it along with right lines within the shortest possible time.‖\n\n (emphasis supplied)\n\n In contradistinction,\nSection 18(1)\nof MCOCA states:\nNotwithstanding anything in the Code or in the\nIndian Evidence Act, 1872\n, but\n subject to the provisions of this section, a confession made by a person before\n a police officer not below the rank of the Superintendent of Police and\n recorded by such police officer either in writing or on any mechanical devices\n like cassettes, tapes or sound tracks from which sounds or images can be\n reproduced, shall be admissible in the trial of such person or co-accused,\n abettor or conspirator :\nProvided that, the co-accused, abettor or conspirator is charged and tried in the\n same case together with the accused\n\n (emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 70,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P070_C01",
+      "text": "69. Rule 7(1) of the SC/ST Rules indicates that other than the State\n\n Government, only those persons designated as the Director General of\n\n Police or as the SP may appoint an investigating officer. Unlike\nSection\n\n 18(1)\nMCOCA, Rule 7(1) does not provide for officers of a rank equivalent to\n\n the Director General of Police or to the SP to appoint investigating officers.\n\n In contrast,\nSection 18(1)\nMCOCA clearly vests those officers who are of the\n\n same rank as the SP with the power to record confessions, in addition to\n\n vesting that power with the SP. This is clearly evident from the use of the\n\n expression ―not below the rank of Superintendent of Police‖. The SC/ST\n\nPART D\n\n Rules are concerned with the designation of the competent authority while\n\n MCOCA is concerned with the rank of the relevant officer. Hence, the\n\n appellants cannot rely on\nHardial Singh\n(supra) to argue that an Addl.\nSP is\n\n not the same rank as an SP.\niii. Conditions for invocation of the MCOCA",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 71,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P071_C01",
+      "text": "70. It is the appellants‘ case that the provisions of the MCOCA have not been\n\n validly invoked. Their arguments (which have been noted in the segment on\n\n submissions) are addressed below.\na. The approval order under\nSection 23(1)(a)\nMCOCA is with respect to\n\n the offence and not with respect to the offender.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 72,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P072_C01",
+      "text": "71. The appellants rely on\nState of Maharashtra v. Lalit Somdatta Nagpal38\n\n argue that the order of approval dated 10 April 2019 is vitiated by non-\n\n application of mind. This Court observed that the approval order under\nSection 23(1)(a)\nin that case\ndid not mention the name of one of the\n\n accused persons. This omission was partly the reason for its decision to set\n\n aside the proceedings under the MCOCA with respect to said accused.\n\n However, this was not the only factor which had a bearing on the Court‘s\n\n decision. The Court was also persuaded to set aside the proceedings\n\n because the authorities had arraigned the concerned accused on charges\n\n under MCOCA in respect of violations of sales tax and excise laws. The\n\n(2007) 4 SCC 171\n\nPART D\n\n Court found that violations of sales tax and excise laws were not intended\n\n to attract MCOCA and that some degree of coercion or violence was\n\n required to charge an accused under the provisions of the MCOCA.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 73,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P073_C01",
+      "text": "72. The order of approval under\nSection 23(1)(a)\nMCOCA need not name every\n\n accused person at the outset. Often, limited information is available to the\n\n investigating authorities at the time of recording information about the\n\n commission of an offence. The involvement of persons other than those\n\n named initially may come to light during the course of investigation by the\n\n police. In fact, the very purpose of an investigation is to determine whether a\n\n crime has been committed and if so, to shed light on the details of the crime\n\n including the identity of the perpetrators. This is true of every crime but\n\n especially true in the case of organized crime, where an organized crime\n\n syndicate may consist of scores of persons involved in unlawful activities in\n\n different capacities.\nSection 23(1)(a)\nMCOCA speaks of recording\n\n information about the commission of an offence of organized crime, and not\n\n of recording information about the offender. The competent authority may\n\n record information under\nSection 23(1)(a)\nonce it is satisfied that an\n\n organized crime has been committed by an organized crime syndicate.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 74,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P074_C01",
+      "text": "73. Vinod G. Asrani v. State of Maharashtra,39\nthis Court noticed the\n\n similarities of the scheme of MCOCA and of the\nCrPC\nin that persons could\n\n(2007) 3 SCC 633\n\nPART D\n\n be charged with committing offences, following the completion of\n\n investigation:\n―9. … The scheme of the\nCode of Criminal Procedure\nmakes it clear that once\n the information of the commission of an offence is received under\nSection 154\nof the Code of Criminal Procedure, the investigating authorities take up the\n investigation and file charge-sheet against whoever is found during the\n investigation to have been involved in the commission of such offence. There is\n no hard-and-fast rule that the first information report must always contain the\n names of all persons who were involved in the commission of an offence. Very\n often the names of the culprits are not even mentioned in the FIR and they\n surface only at the stage of the investigation. The scheme under\nSection 23\nof MCOCA is similar and\nSection 23(1)(a)\nprovides a safeguard that no\n investigation into an offence under MCOCA should be commenced without the\n approval of the authorities concerned.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 74,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P074_C02",
+      "text": "Once such approval is obtained, an\n investigation is commenced. Those who are subsequently found to be involved\n in the commission of the organised crime can very well be proceeded against\n once sanction is obtained against them under\nSection 23(2)\nof MCOCA.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 75,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P075_C01",
+      "text": "10. As to whether any offence has at all been made out against the petitioner\n for prosecution under MCOCA, the High Court has rightly pointed out that the\n accused will have sufficient opportunity to contest the same before the Special\n Court.‖",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 76,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P076_C01",
+      "text": "74. Kavitha Lankesh v. State of Karnataka,40\na three-judge bench of this\n\n Court held that prior approval under the Karnataka Control of Organized\n\n Crime Act 2000 was concerned with the offence and not with the offender:\n―27. At the stage of granting prior approval under\nSection 24(1)(a)\nof the 2000\n Act, therefore, the competent authority is not required to wade through the\n material placed by the Investigating Agency before him along with the proposal\n for grant of prior approval to ascertain the specific role of each accused. The\n competent authority has to focus essentially on the factum whether the\n information/material reveals the commission of a crime which is an organized\n crime committed by the organized crime syndicate. In that, the prior approval is\n qua offence and not the offender as such.‖\n\n2021 SCC OnLine SC 956\n\nPART D\n\n Section 24(1)(a) of the Karnataka Control of Organized Crime Act 2000 is\n\n pari materia to\nSection 23(1)(a)\nMCOCA. Whether the appellants were\n\n named in the approval order under\nSection 23(1)(a)\nis immaterial while\n\n determining its validity.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 77,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P077_C01",
+      "text": "75. Kavitha Lankesh\n(supra), the Court also held:\n―27. … As long as the incidents referred to in earlier crimes are committed\n by a group of persons and one common individual was involved in all the\n incidents, the offence under the 2000 Act can be invoked.‖\n\n b. The appellants may be charged with some offences punishable under\n\n MCOCA in relation to the charge of illegal gambling.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 78,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P078_C01",
+      "text": "76. The appellants argued that gambling is punishable with a maximum\n\n sentence of 2 years and does not, therefore, fall within the scope of MCOCA\n\n (which requires the commission of a crime punishable with imprisonment of\n\n 3 years or more). However, not all the offences punishable under MCOCA\n\n have this requirement. The appellants have been charged under the\n\n following provisions of MCOCA:\na. Section 3(1)\ni.e., the offence of committing organized crime requires\n\n the accused to have committed a cognizable offence which is\n\n punishable with imprisonment of three years or more.\n\n b. One part of\nSection 3(2)\nalso contains a similar requirement to\nSection\n\n 3(1)\n, namely persons can be accused of conspiring, attempting to\n\n commit, advocating, or knowingly facilitating the commission of an\n\n organised crime or any act preparatory to organised crime, only if the\n\nPART D\n\n offence in question is a cognizable one, which is punishable with\n\n imprisonment of at least three years. However, those accused of\n\n abetting the commission of organized crime need not themselves be\n\n charged with committing a cognizable offence punishable with\n\n imprisonment of at least three years.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 78,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P078_C02",
+      "text": "They need only be abetting those\n\n who are guilty of committing a cognizable offence punishable with\n\n imprisonment of at least three years, which offence amounts to an\n\n organized crime. The definition of ―abet‖ in\nSection 2(1)(a)\nwould be\n\n applicable in such cases.\nc. Section 3(4)\nprovides that any person who is a member of an\n\n organized crime syndicate is liable to be penalized. The definition of an\n\n organized crime syndicate in\nSection 2(1)(f)\nindicates that it is\n\n necessary to indulge in organized crime to be considered a member. Section 2(1)(e)\nindicates that persons are said to commit organized\n\n crime when they are involved in continuing unlawful activity. Continuing\n\n unlawful activity, in turn, means a prohibited activity which is a\n\n cognizable offence punishable with imprisonment of at least three\n\n years.\nd. Section 3(5)\nstipulates that those who hold any property derived or\n\n obtained from commission of an organised crime or which has been\n\n acquired through the organised crime syndicate funds are liable to be\n\n punished.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 78,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P078_C03",
+      "text": "Once again, the definition of an organized crime requires the\n\n commission of a cognizable offence punishable with imprisonment of\n\nPART D\n\n three years of more. Hence,\nSection 3(5)\nMCOCA may be invoked only\n\n with respect to offences which are punishable with imprisonment of\n\n three years of more.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 79,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P079_C01",
+      "text": "77. From the analysis above, the appellants‘ submission that the allegation of\n\n engaging in illegal gambling would not sustain the invocation of the penal\n\n provisions of\nSection 3(2)\nMCOCA is simplistic. Although gambling may\n\n not, by itself, constitute an organized crime, it may be the route through\n\n which the accused are abetting the commission of organized crime. The\n\n question of whether the appellants are in fact abetting organized crime in\n\n this manner, is to be determined at the stage of trial. Similarly, the question\n\n of whether offences under the\nIPC\nwould attract MCOCA in the present\n\n case is to be determined at the stage of trial and depends on the facts and\n\n circumstances of each case. The observation in\nLalit Somdatta Nagpal\n(supra) that some degree of coercion or violence is required to charge an\n\n accused under provisions of MCOCA must be read together with\nSection\n\n 2(1)(e)\nwhich recognizes that ―other unlawful means‖ may be used while\n\n committing organized crime, in addition to coercion and violence.\nc. More than one charge-sheet is not required to be filed with respect to\n\n each accused person.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 79,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P079_C02",
+      "text": "The appellants have argued that in the preceding ten years, more than one\n\n charge-sheet has not been filed in respect of each of them. This submission\n\n does not hold water. It is settled law that more than one charge sheet is\n\nPART D\n\n required to be filed in respect of the organized crime syndicate and not in\n\n respect of each person who is alleged to be a member of such a syndicate.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 80,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P080_C01",
+      "text": "78. Govind Sakharam Ubhe v. State of Maharashtra,41\na two-judge Bench\n\n of the Bombay High Court, speaking through Justice Ranjana Desai (as the\n\n learned judge then was) held that:\n―37. …\nSection 2(1)(d)\nwhich defines ‗continuing unlawful activity‘ sets down a\n period of 10 years within which more than one charge-sheet have to be filed …\n It is the membership of organized crime syndicate which makes a person liable\n under the MCOCA. This is evident from\nsection 3(4)\nof the MCOCA which\n states that any person who is a member of an organized crime syndicate shall\n be punished with imprisonment for a term which shall not be less than five\n years but which may extend to imprisonment for life and shall also be liable to\n fine, subject to a minimum of fine of Rs. 5 lakhs. The charge under the MCOCA\n ropes in a person who as a member of the organized crime syndicate commits\n organized crime i.e. acts of extortion by giving threats, etc. to gain economic\n advantage or supremacy, as a member of the crime syndicate singly or jointly. Charge is in respect of unlawful activities of the organized crime syndicate.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 80,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P080_C02",
+      "text": "Therefore, if within a period of preceding ten years, one charge-sheet has been\n filed in respect of organized crime committed by the members of a particular\n crime syndicate, the said charge-sheet can be taken against a member of the\n said crime syndicate for the purpose of application of the MCOCA against him\n even if he is involved in one case. The organized crime committed by him will\n be a part of the continuing unlawful activity of the organized crime syndicate. What is important is the nexus or the link of the person with organized crime\n syndicate. The link with the ‗organized crime syndicate‘ is the crux of the term\n ‗continuing unlawful activity‘. If this link is not established, that person cannot\n be roped in.‖",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 81,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P081_C01",
+      "text": "79. Other courts, too, have held that persons who are alleged to be members of\n\n an organized crime syndicate need not have more than one charge-sheet\n\n filed against them in an individual capacity. Rather, charge-sheets with\n\n2009 SCC OnLine Bom 770\n\nPART D\n\n respect to the organized crime syndicate are sufficient to fulfil the condition\n\nSection 2(1)(d)\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 82,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P082_C01",
+      "text": "80. For the above reasons, we find no merit in the appeals. The appeals shall\n\n stand dismissed. However, it is clarified that: (i) the appellants are at liberty\n\n to approach the High Court for release on bail; and (ii) the evidentiary value\n\n of confessions alleged to have been made by the appellants shall be\n\n considered by the trial court and the mere validation of their being recorded\n\n by an officer in the rank of Superintendent of Police shall not be construed\n\n as the approval of the contents or voluntary nature of the alleged\n\n confessions by this Court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 83,
+      "chunk_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA_P083_C01",
+      "text": "81. Pending application(s), if any, stand disposed of.\n..………….....…........……………….…........J.\n [Dr Dhananjaya Y Chandrachud]\n\n …….....…........……………….…........J.\n [Surya Kant]\n\nNew Delhi;\nAugust 24, 2022",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Zakir Abdul Mirajkar vs The State Of Maharashtra",
+    "case_id": "SC_2022_ZAKIR_ABDUL_MIRAJKAR_VS_THE_STATE_OF_MAHARASHTRA",
+    "court": "Supreme Court of India",
+    "year": "2022",
+    "facts_summary": "1. The prosecution alleges that the appellants are members of an organized\n\n crime syndicate which has engaged in a systematic course of activities for\n\n cheating members of the public by conducting the ‗Mumbai Matka‘. To\n\n explain ‗matkas‘ in simple terms, those who wish to gamble place bets on\n\n numbers / playing cards. At the end of the cycle, the results are to be\n\n declared based on a random draw of numbers / playing cards and those\n\n who correctly guess the winning digits / playing cards win while the others\n\n lose. Instead of declaring the winning digits on the basis of a random draw,\n\n the organizers of the Mumbai Matka are alleged to identify the number on\n\n which the least bets are placed and declare that to be the winning digit. This\n\n is allegedly done in order to ensure that the pay-out is minimal and the profit\n\n is as large as possible. 2. Salim Mulla is alleged to be a bookie who accepts bets for the Mumbai\n\n Matka. It is the prosecution‘s case that he would transfer the money he\n\n received through the Mumbai Matka to Rakesh Agarwal and Manish\n\n Agarwal if he anticipated that he would be unable to repay in the event that\n\n the number on which he accepted the highest number of bets was declared\n\n the winning number. Rakesh Agarwal and Manish Agarwal would allegedly\n\n accept the risk and discharge the obligation to pay the gamblers if that\n\n particular number was indeed declared the winning number. Further, they\n\n would in turn allegedly transfer the money they ",
+    "legal_issues": "7. Based on the submissions which have been canvassed on behalf of the\n\n appellants, two questions arise for determination:\na. Whether a confession recorded by an Addl. SP under\nSection 18\nMCOCA can be proved as against the accused; and\n\n b. Whether the provisions of MCOCA have been validly invoked. 9. Mr. Amit Desai, Mr. Siddharth Luthra, Mr. Abad Ponda, Mr. V. Giri, Mr.\n\n Pradeep Rai, and Mr. ANS Nadkarni, senior counsel, led arguments on\n\n behalf of the appellants. Mr. Amit Desai, learned senior counsel who led the\n\n arguments (supported by Mr. Abad Ponda) specifically stated that the\n\n challenge in the cases he is arguing is confined to the authority of an Addl.\n\n SP to record a confession, in view of the interdict of\nSection 18\n. Mr Desai\n\n submitted that the individual facts in the appeal are not being put forth in this\n\n proceeding since the appellants would follow their remedies at the\n\n appropriate stage when they apply for regular bail. 11. Apart from the above submissions, Mr. Siddharth Luthra, learned senior\n\n counsel made the following submissions with respect to Sharad Korane,\n\n Prakash Savla, Jayesh Savla, Suresh Sawant and Meghraj Kambhar:\na. They are not named either in the FIR or in the approval order; and\n\n b. There is no connection between them and the activities of the gang in\n\n question;\nc. All the confessions barring one are not recorded by an officer of the\n\n rank of an SP but by an Addl. SP.\nLearned counsel also submitted that there was no confession ",
+    "ratio_summary": "The Police Acts in Sikkim and\n\n Himachal Pradesh contain similar provisions.\nd. Trial courts must not be required to answer the question of whether\n\n one post is equivalent to another. Rather, they must be required to ask\n\n and answer the simple question of whether the police officer recording\n\n the confession is an SP. To allow persons other than SPs to record the\n\n confession would lead criminal justice down a slippery slope;\n\ne. In Sangli district, the post of an SP was in fact available and hence there\n\n was no reason to pick and choose officers from the rank of Addl. SP for\n\n the purpose of recording the confession.\nf. It is a well settled principle of law that where the statute lays down a\n\n procedure, it must be scrupulously followed. In the MCOCA, the\n\n legislature has disclosed an intent of seeking a proper investigation of a\n\n serious crime while at the same time preserving fairness to the accused.\n\ng. The legislative intent behind\nSection 18\nMCOCA is to prevent the\n\n harassment of the accused. The provision is mandatory and must be\n\n strictly construed. 22. The crux of the controversy in the present batch of cases turns on the\n\n interpretation of the provisions of\nSection 18\n.15 Sub Section (1) of\nSection 18\n\nSection 18\n– (1) Notwithstanding anything in the Code or in the\nIndian Evidence Act, 1872\n, but subject to the\nprovisions of this section, a confession made by a person before a police officer not below the rank of the\nSuperintendent of Police and recorded by ",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [
+      "CrPC 173",
+      "Constitution 136",
+      "Constitution 21",
+      "Constitution 309",
+      "Constitution 14",
+      "Constitution 311"
+    ],
+    "cases_cited": []
+  }
+}

@@ -1,3 +1,6 @@
+# Dependencies
+node_modules/
+
 # Virtual environment
 ai-gpu/
 
@@ -7,6 +10,7 @@ vector_store/
 Nyaymalaw_Docs/
 analyse_vector_store_last_run.txt
 eval/results/
+legal_database/
 
 # Python
 __pycache__/

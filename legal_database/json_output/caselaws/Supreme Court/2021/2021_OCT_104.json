@@ -1,0 +1,89 @@
+{
+  "case_id": "SC_2021_MINAL_SHARDUL_SHAH_VS_SHARDUL_NARENDRA_SAHA",
+  "case_name": "Minal Shardul Shah vs Shardul Narendra Saha",
+  "normalized_case_name": "MINAL_SHARDUL_SHAH_VS_SHARDUL_NARENDRA_SAHA",
+  "court": "Supreme Court of India",
+  "year": "2021",
+  "judgment_template": null,
+  "case_number": "Petition 2487 of 2019",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": "1 October 2021",
+  "judges": [
+    "J.K. Maheshwari"
+  ],
+  "author": "J.K. Maheshwari",
+  "bench_type": "single",
+  "petitioner": "Minal Shardul Shah",
+  "respondent": "Shardul Narendra Saha",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 2,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL ORIGINAL JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2021\\OCT\\2021_OCT_104.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_MINAL_SHARDUL_SHAH_VS_SHARDUL_NARENDRA_SAHA_P001_C01",
+      "text": "Gujarat to the Family Court at Nashik, Maharashtra.\nHeard learned counsel appearing on behalf of both the parties.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_MINAL_SHARDUL_SHAH_VS_SHARDUL_NARENDRA_SAHA_P002_C01",
+      "text": "Family Court at Nashik, Maharashtra.\nConsequently, the petition bearing H.M.P. No. 2487 of 2019,",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_MINAL_SHARDUL_SHAH_VS_SHARDUL_NARENDRA_SAHA_P003_C01",
+      "text": "Court at Nashik, Maharashtra.\nThe transferee Court shall decide the case so transferred as",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_MINAL_SHARDUL_SHAH_VS_SHARDUL_NARENDRA_SAHA_P004_C01",
+      "text": "expeditiously as possible.\nThe Registry is directed to send a copy of this Order to both",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_MINAL_SHARDUL_SHAH_VS_SHARDUL_NARENDRA_SAHA_P005_C01",
+      "text": "The transfer petition is, therefore, allowed.\n……………………………………………………J\n [J.K. MAHESHWARI]",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Minal Shardul Shah vs Shardul Narendra Saha",
+    "case_id": "SC_2021_MINAL_SHARDUL_SHAH_VS_SHARDUL_NARENDRA_SAHA",
+    "court": "Supreme Court of India",
+    "year": "2021",
+    "facts_summary": "Family Court at Nashik, Maharashtra.\nConsequently, the petition bearing H.M.P. No. 2487 of 2019, Court at Nashik, Maharashtra.\nThe transferee Court shall decide the case so transferred as",
+    "legal_issues": "Gujarat to the Family Court at Nashik, Maharashtra.\nHeard learned counsel appearing on behalf of both the parties.",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

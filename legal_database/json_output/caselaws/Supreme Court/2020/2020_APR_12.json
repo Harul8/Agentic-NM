@@ -1,0 +1,1442 @@
+{
+  "case_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA",
+  "case_name": "Arvind Singh vs The State Of Maharashtra",
+  "normalized_case_name": "ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA",
+  "court": "Supreme Court of India",
+  "year": "2020",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 640-641 of 2016",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "24 April 2020",
+  "judges": [
+    "Hemant Gupta",
+    "Indu Malhotra",
+    "Uday Umesh Lalit"
+  ],
+  "author": "Hemant Gupta",
+  "bench_type": "constitution",
+  "petitioner": "Arvind Singh",
+  "respondent": "The State Of Maharashtra",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 48,
+  "cited_by_count": 18,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR 2020 SUPREME COURT 2451",
+    "AIRONLINE 2020 SC 511"
+  ],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2020\\APR\\2020_APR_12.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P001_C01",
+      "text": "CRIMINAL APPELLATE JURISDICTION\n\n CRIMINAL APPEAL NOS. 640-641 OF 2016\n\n ARVIND SINGH .....APPELLANT(S)\n\n VERSUS\n THE STATE OF MAHARASHTRA\n .....RESPONDENT(S)\n\n WITH\n\n CRIMINAL APPEAL NOS. 1515-1516 OF 2017\n\n JUDGMENT\nHEMANT GUPTA, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P002_C01",
+      "text": "1. The present appeals are directed against the judgment and order\n\n passed by the High Court of Judicature at Bombay (Nagpur Bench)\n\n on 5th May, 2016 whereby the appeals filed by the appellants\n\n Rajesh Daware1 and Arvind Singh2 against their conviction for\n\n offences punishable under Section 364A read with\nSection 34\n\n the Indian Penal Code, 18603 and\nSection 302\nread with\nSection 34\nIPC was dismissed by confirming the death sentence imposed upon\n\n them by the learned Sessions Judge, Nagpur vide its order dated\n\n 4th February, 2016.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 34"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P003_C01",
+      "text": "2. The prosecution process was set in motion on the basis of an oral\n’\n\nstatement made by Dr. Mukesh Ramanlal Chandak (PW-1) to the\n\n Police Sub-Inspector, Police Station Lakadganj, Nagpur City on\n\n 1st September, 2014 about his son Yug, aged 8 years being\n\n missing. Dr. Chandak stated that, on 1st September, 2014, when\n\n he was present with his wife at the hospital, she told him that their\n\n driver Raju Tote had informed her on the phone that their son went\n\n along with somebody. Dr. Chandak (PW-1) came home and\n\n inquired from Arun Parmanand Meshram (PW-31), the watchman of\n\n their housing society, “Guru Vandana Apartment 4”, who informed\n\n him that at about 3:45 pm, when he was sitting near the gate of\n\n the Apartment, an unknown, fair complexioned boy, aged about\n\n 20-25 years, wearing a red half sleeves T-shirt, full white pants with\n\n a white handkerchief wrapped around his face, came to him, riding\n\n a black scooty. This boy parked his vehicle near the footpath in\n\n front of the gate and asked Arun Parmanand Meshram (PW-31)\n\n whether Yug has come home.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P003_C02",
+      "text": "Arun Parmanand Meshram (PW-31)\n\n replied in the negative and asked him to go inside and find out for\n\n himself but the boy remained at the gate itself. He had worn the\n\n clothes (uniform) like that of the clothes of the employees of Dr. Chandak’s clinic. After about 15 minutes, Yug, came in his school\n\n dress. He kept his school bag on chair meant for him and told Arun\n\n Parmanand Meshram (PW-31) to leave the school bag at his\n\n Apartment, who told him that he will require half an hour to do the\n\n same. Thereafter, he saw Yug going towards Chhapru Nagar\n\n Chowk along with the boy on his scooty. Arun Parmanand\n4 for short, ‘Apartment’\n\nMeshram (PW-31) was under the impression that the said boy\n\n might be an employee of Dr. Chandak’s clinic because his clothes\n\n were like the uniform that his employees wear.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P004_C01",
+      "text": "3. On the basis of such statement received in the Police Station at\n\n 17:10 hours, FIR No. 287 of 2014 was registered for an offence\n\n under\nSection 363\nIPC but after the information of kidnapping and\n\n death was received, offences under\nSection 364A\nand\nSection 302\nread with\nSection 34\nIPC were added. The initial investigation was\n\n taken over by N.T. Gosawi (PW-25) and later taken over by S.K.\n\n Jaiswal (PW-50). On completion of the investigation, including the\n\n recovery of dead body, the prosecution presented a charge sheet\n\n for the trial of the accused. The prosecution examined 50\n\n witnesses in support of the charges levelled against A-1 and A-2.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 363",
+        "IPC 34"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P005_C01",
+      "text": "4. The learned trial court in its judgment dated 30 th January, 2016\n\n examined the prosecution evidence under the following heads:\n“A) Ocular evidence of prosecution witnesses relating to\n kidnapping/abduction of victim-Yug by the accused,\n\n B) The theory of doctrine of last seen together of victim-\nYug in the company of accused,\n\n C) The evidence of T.I. parade,\n\n D) The evidence of CCTV footage,\n\n E) The evidence of demand of ransom from the accused,\n\n F) The evidence of recovery of dead body as well as\n incriminating articles etc. u/s. 27 of the\nEvidence Act\n,\n\n G) The circumstances of motive, preparation and\n previous conduct of the accused\nu/s. 8\nof the Evidence\n\nAct,\n\n H) The evidence of criminal conspiracy,\n\n I) The evidence of CDR & SDR of the relevant telephonic\n conversation,\n\n J) Presumption of factum of murder of victim-Yug on the\n part of accused,\n\n K) The C.A. report/DNA report inculpatory in nature.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P006_C01",
+      "text": "5. The learned trial court convicted A-1 and A-2 for the offences\n\n punishable under Sections 120-B, 364A, 302, 201 read with\nSection\n\nIPC. By a subsequent order, A-1 and A-2 were sentenced to\n\n death for the offences punishable under Section 364A read with\nSection 34\nIPC and Section 302 read with\nSection 34\nIPC on both\n\n offences. The learned trial court also convicted A-1 and A-2 for\n\n offences punishable under\nSection 120-B\nof IPC, to suffer\n\n imprisonment for life and to pay fine of Rs.10,000/- and for an\n\n offence punishable under Section 201 read with\nSection 34\nIPC,\n\n A-1 and A-2 were sentenced to rigorous imprisonment for 7 years\n\n and to pay fine of Rs.5,000/-. It is the said order of the learned\n\n Sessions Judge which was affirmed by the High Court.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 34"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P007_C01",
+      "text": "6. The prosecution had led evidence of the boy, Yug, last seen in the\n\n company of the accused from 16:15 hrs. approximately to 17:30\n\n hrs. approximately on 1st September 2014. The post mortem was\n\n conducted on 3rd September 2014 between 12.00 hrs. to 13:45 hrs.\n\n by a team of three Doctors. Dr. Avinash Waghmode (PW-27) had\n\n been examined to prove the postmortem report (Ex.103). The\n\ncause of death was found to be smothering and the time since\n\n death was 36 to 48 hours. There were as many as 26 injuries found\n\n on the dead body which included Injury Nos. 22 to 26 as post\n\n mortem injuries. Dr. Avinash Waghmode (PW-27) deposed that\n\n Injury Nos. 1 -21 and 26 may have been perimortem injuries i.e.\n\n the injuries were caused during the activation and working of vital\n\n functions. With this background, the evidence of the prosecution is\n\n examined in the present appeals in the following manner:\n(A) The evidence of last seen\n (B) Discovery of incriminating facts\n (C) Demand of Ransom\n (D) Motive and Conspiracy\n (E) Corroborative Evidence",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P008_C01",
+      "text": "7. The undisputed location of different places which are referred to by\n\n the witnesses is broadly Guru Vandana Apartment (place of\n\n kidnapping) leading to Outer Ring Road on the inter section of\n\n Kalmana Market; then to Vinoba Bhave Nagar; then to Koradi\n\n Saoner Chindwara Road leading to Loankhairi, Loankhairi Nullah;\n\n Patansawangi Village and then to Itangoti Village leading to a lake\n\n and a pump house. The Lakadganj Police Station is close to the\n\n Itawari Railway Station on a road from the Itabutti Chowk on the\n\n outer ring road.\n(A) The evidence of last seen\n(i) The kidnapping of the boy Yug from the Apartment.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P009_C01",
+      "text": "8. The prosecution, as stated earlier, examined Arun Parmanand\n\n Meshram (PW-31), the watchman of the Apartment, who deposed\n\n that Dr. Chandak and his family of four were residents on the\n\n 2nd floor of the said Apartment. He stated that Dr. Chandak and his\n\nwife are dentists and have their own clinic in Nagpur city. The\n\nemployees of Dr. Chandak used to wear red T-shirts as part of the\n\nuniform of the clinic. Arun Parmanand Meshram (PW-31) deposed\n\nthat he was aware of such uniform as Dr. Chandak’s employees\n\nused to visit his residence frequently. He stated that he was on\n\nduty on 1st September, 2014 and at about 16:00 hrs. on that day,\n\na boy, aged approximately 21-22 years came on a purple scooty,\n\nwearing a red T-shirt with a scarf wrapped on his face. This person\n\nremoved his scarf, showing his face and inquired from him as to\n\nwhether Yug had returned home. Arun Parmanand Meshram (PW-\n31) told him to visit Dr. Chandak’s house and verify the same,\n\nhowever, he did not go upstairs and remained standing on the\n\nfootpath, where he had parked his vehicle. After sometime, Yug\n\nreturned from school, wearing his sky-blue T-shirt and blue shorts\n\nwhich was his school uniform.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P009_C02",
+      "text": "The boy standing on the footpath\n\ngave out a call to him. Arun Parmanand Meshram (PW-31)\n\ndeposed that there was some conversation between the two. Thereafter, Yug came back to Arun Parmanand Meshram (PW-31),\n\nkept his school bag on his chair and told him to leave the same at\n\nhis Apartment. Yug also told him that he was going to his father’s\n\nclinic. Yug then sat on the boy’s purple scooty and the two drove\n\naway. At about 16:15 hrs., Arun Parmanand Meshram (PW-31)\n\nwent to Dr. Chandak’s Apartment to leave Yug’s school bag when a\n\nmaid-servant in the Apartment inquired about Yug’s whereabouts. He informed her that Yug had gone to his father’s clinic. After\n\nsometime, Dr. Chandak’s driver came to the building and inquired\n\n about Yug as well. Arun Parmanand Meshram (PW-31) told him\n\n that Yug had gone to his father’s clinic with one of its employees. Dr. Chandak was thereafter contacted and he returned from his\n\n clinic. Mrs. Chandak also rushed to the Apartment. Later, the\n\n Police arrived at about 18:00 hrs. and started inquiry.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P010_C01",
+      "text": "9. Arun Parmanand Meshram (PW-31) received notice regarding the\n\n conduct of Test Identification Parade5 in the Central Jail premises\n\n for 25th September, 2014. He identified the boy standing at Sl. No.\n\n 4 as the same youngster who came to the Apartment on a purple\n\n scooty and took away Yug, in the TIP so conducted. This boy\n\n disclosed his name as Arvind Singh (A-2) to the Officer who was\n\n present there. In cross-examination, Arun Parmanand Meshram\n\n (PW-31) deposed that Dr. Chandak returned from his clinic on the\n\n day of incident at about 16:45 hrs. He denied that he was tutored\n\n to give evidence in the case. He also denied that the Officer\n\n present in the room at the TIP disclosed to him that A-2 was the\n\n same person in this crime who was identified. He further denied\n\n having seen the photographs of A-1 and A-2 in the Newspaper as\n\n well as that Dr. Chandak showed him the photographs prior to TIP\n\n conducted.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P011_C01",
+      "text": "10. Rajan Tiwari (PW-2) is a shopkeeper who has a firewood shop in\n\n front of the Apartment. He deposed that at about 16:00 hrs. on\n\n 1st September, 2014, he was sitting in front of his shop and saw\n\n two unknown boys coming from the side of Chhapru Nagar on a\n5 for short, ‘TIP’\n\npurple scooty. They stopped in front of his shop. The boy driving\n\n the scooty alighted in front of his shop and the boy who was the\n\n pillion rider started proceeding further with the vehicle. The boy\n\n who alighted in front of his shop used abusive language and told\n\n the pillion rider to go straight by riding on the wrong side of the\n\n road. The rider did the same and went towards the side of the\n\n Apartment. Rajan Tiwari (PW-2) deposed that there is a showroom\n\n of Mahindra Vehicles adjoining his shop and whilst he was having\n\n tea at a stall near such Showroom, he saw that the earlier boy\n\n riding the scooty, wearing a red T-shirt, had returned and brought a\n\n boy, aged about 8 years with him. This minor boy was wearing a\n\n sky blue colour school uniform. The boy who was standing in front\n\n of his shop went running towards the scooty and sat on the seat\n\n behind the minor boy.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P011_C02",
+      "text": "The boy who sat as pillion rider on the\n\n scooty was wearing an almond coloured shirt. Rajan Tiwari (PW-2)\n\n deposed that he can identify both the boys on the scooty. Thereafter, when he was called for the TIP at Central Jail, Nagpur\n\n on 30th October, 2014, in the presence of the Magistrate, he\n\n identified both A-1 and A-2 therein. In the cross-examination, Rajan\n\n Tiwari (PW-2) deposed that on the day of incident, both A-1 and A-2\n\n covered their face with scarfs. He also denied knowledge of news\n\n published in the daily Newspaper.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P012_C01",
+      "text": "11. Biharilal Sadhuram Chhabariya (PW-17) is another witness of the\n\n kidnapping of the boy from the Apartment. He deposed that he\n\n has a grocery shop in Maskasath Square, Nagpur and is also a\n\nresident of the Apartment. On the day of incident, he came back\n\n home to the Apartment for lunch on his Scooter at 16:00 hrs. He\n\n deposed that he saw a boy stationed behind a car owned by him,\n\n in front of the building of the Apartment. He had suspicion that\n\n this boy, wearing red T-shirt and sitting on a purple scooty, would\n\n cause mischief to his vehicle. Biharilal Sadhuram Chhabariya (PW-\n17) deposed that the boy took out a white handkerchief and tied it\n\n on his face. After 10-15 minutes, when Biharilal Sadhuram\n\n Chhabariya (PW-17) came back down, after having lunch, the boy\n\n and his vehicle were not present. It is at about 17:15 hrs., he\n\n received a telephone call from his wife that Dr. Chandak’s son was\n\n kidnapped by a person wearing a red T-shirt and riding a purple\n\n scooty. Biharilal Sadhuram Chhabariya (PW-17) rushed home at\n\n around 17:30 hrs. and at about 19:00 hrs., Dr. Chandak met him in\n\n the campus of the building.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P012_C02",
+      "text": "Biharilal Sadhuram Chhabariya (PW-17)\n\n informed Dr. Chandak that he had seen a boy of the mentioned\n\n description standing by the road outside the Apartment.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P013_C01",
+      "text": "12. Biharilal Sadhuram Chhabariya (PW-17) was called for TIP on\n\n 25th September, 2014 in Central Jail, Nagpur. He identified the boy\n\n standing at Sl. No. 4 as A-2. In cross-examination, he deposed that\n\n on the day of incident, he returned home at around 15:45-16:00\n\n hrs. and went back to his shop again after lunch at about 16:15\n\n hrs. on his Scooter. He denied that he had not seen the boy\n\n wearing a handkerchief on his face.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P014_C01",
+      "text": "13. From the evidence of Arun Parmanand Meshram (PW-31) and\n\nBiharilal Sadhuram Chhabariya (PW-17), identity of A-2 is\n\n established whereas Rajan Tiwari (PW-2) has identified both A-1\n\n and A-2. It is on the basis of this evidence, the prosecution\n\n established the identity of the accused at the time of the\n\n kidnapping of the boy, Yug.\n(ii) The evidence of A-2 visiting the house of A-1.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P015_C01",
+      "text": "14. The prosecution has further led evidence that A-2 went to the\n\n house of A-1. Rupali (PW-23), the neighbour of A-1, appeared as a\n\n witness to identify both accused. She deposed that she is a\n\n resident of the Pandurang Nagar area and is acquainted with A-1\n\n being her neighbour. Smt. Bhumeshwari is the mother of A-1 and\n\n Ankush his younger brother. Ankush was also apprehended in the\n\n crime but was dealt with by the Juvenile Justice Board being a\n\n Juvenile. Rupali (PW-23) deposed that at about 16:30 hrs. on 1 st\n\n September, 2014, she was washing clothes in the courtyard of her\n\n house. A-1, accompanied by a friend, arrived on his scooty. There\n\n was a minor boy, aged about 5-6 years, sitting on the scooty\n\n between them. A-1 gave dash to the wooden entrance gate of\n\n the boundary wall of his house. Rupali (PW-23) told A-1 that if he\n\n drives the vehicle in such manner, it would hurt the boy sitting in\n\n between them. However, she deposed that she had not seen the\n\n clothes of the boy sitting on the scooty due to plants and trees of\n\n the courtyard shrouding the same. When she asked about the\n\n minor boy, A-1 informed her that he is the younger brother of his\n\n friend.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P015_C02",
+      "text": "A-1 parked his scooty in the courtyard. Thereafter, A-1 took\n\n his motorbike and trio went away. Rupali (PW-23) identified A-2 as\n\nthe person who was with A-1 on that day. She also deposed that at\n\n about 19:30 hrs., A-1’s father took her cellphone No. 8408025528\n\n for his use as there was no balance in his own cellphone. In the\n\n cross-examination by A-2, she deposed that she had delivered a\n\n child on 7th October, 2014 and was in the hospital even on 1 st\n\n September, 2014 for a related ailment. Thereafter she was resting,\n\n but later got up to wash her clothes. She denied that there was any\n\n dispute between her and the family of the accused on account of\n\n boundary wall. Thus, the next link of the prosecution evidence is\n\n that both the accused were seen together on a scooty with the\n\n kidnapped boy and that the three went away on a Hero Motor bike. (iii) The evidence of taking fuel for the Motorcycle by A-1 and A-2\n with the kidnapped boy at petrol station",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P016_C01",
+      "text": "15. The next link of prosecution evidence is of the accused being in the\n\n company of Yug at Sunder Auto Center, Bhokara, on Koradi Road.\n\n The prosecution examined Hitesh Tulsiram Rathod (PW-30),\n\n Shrikant Walmik Sharma (PW-35), Pratik Rathi (PW-48), Ajay Aba\n\n Salunke (PW-38), Chitra Sanjay Kamat (PW-47) and Madhuri\n\n Permanand Dhawalkar (PW-34) in respect of the CCTV camera\n\n footage of Sunder Auto Centre, Bhokara, Nagpur.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P017_C01",
+      "text": "16. Ms. Madhuri Permanand Dhawalkar (PW-34) is the witness who had\n\n filled petrol in the motorcycle of A-1 and A-2. She deposed that on\n\n 1st September, 2014 at about 16:00 hrs. - 16:30 hrs., she saw that\n\n two boys came to the petrol pump to take petrol for their Hero\n\n Honda bike. A minor boy was seen sitting in between both the\n\n riders. She deposed that the boy who was driving the bike wore an\n\nalmond shirt and that the pillion rider was wearing a red one. The\n\n minor boy sitting in between them wore a sky blue colour T-shirt. The boy who was driving the bike paid the money for fuel and\n\n thereafter they went away. She deposed that both A-1 and A-2\n\n present are the same motorbike riders who arrived at petrol pump\n\n on 1st September, 2014 to take fuel for their Hero Honda bike. She\n\n also deposed that she can identify the minor boy sitting in between\n\n them, if shown to her. She identified Yug from the photograph\n\n (Ex.26). Ms. Madhuri Permanand Dhawalkar (PW-34) further stated\n\n that there were eight CCTV Cameras installed at the premises of\n\n the petrol pump. Such CCTV footage was taken by the Police on\n\n 4th September, 2014.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P017_C02",
+      "text": "The Police had shown her the recording of\n\n CCTV No. 3 of the petrol pump through which she identified A-1\n\n and A-2. In the cross-examination by A-1, she volunteered that the\n\n cameras were kept on for 24 hours and the services of the petrol\n\n pump were also rendered round the clock, 24x7. In cross-\n\n examination by A-2, she deposed that after seeing the CCTV\n\n footage, it is difficult for her to draw an inference as to whether the\n\n minor boy was sleeping in between both the riders, or whether he\n\n was dead, or whether he was in a withered condition at the\n\n relevant time.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P018_C01",
+      "text": "17. The CCTV footages were played in this court during the course of\n\n hearing as well. It shows that the boy is sitting in between the two\n\n riders on the motor bike, but he is inert as one of the riders was\n\n always supporting the child.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P019_C01",
+      "text": "18. There are other witnesses who have deposed regarding the\n\n recovery of CCTV footage, and the fact that it was not tampered\n\n with. Hitesh Tulsiram Rathod (PW-30) is an employee of Kores India\n\n Ltd. who installed the CCTV camera at the petrol pump. Shrikant\n\n Walmik Sharma (PW-35) is the Manager of the petrol pump who\n\n deposed regarding the seizure of the CCTV footage by the Police.\n\n Pratik Ram Rathi (PW-48) is a panch witness of such seizure of the\n\n CCTV footage whereas Chitra Sanjay Kamat (PW-47), an Assistant\n\n Director, Govt. Forensic Laboratory and Ajay Aba Salunke (PW-38)\n\n are the witnesses of the Chemical Analyser’s Report (Ex.160) dated\n\n 21st November, 2014.\n(iv) The evidence of last seen near Itangoti lake.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P020_C01",
+      "text": "19. From the petrol pump, A-1 and A-2 moved to Itangoti Lake. Divya\n\n Chandel (PW-9), a student of Adarsh Vidyalaya of Village\n\n Patansaongi deposed that her friend Tanushri Keche was residing in\n\n the neighbourhood of her house. The timing of her school was\n\n 12 noon to 17:15 hrs. The school was at a distance of 5-6 km from\n\n her house and she and her friend used to attend the school on\n\n bicycle. They left school at about 17:15 hrs. on their bicycle for\n\n returning home. In doing so, they saw a motorbike parked on the\n\n road nearby the Pump House of Itangoti Lake. Divya Chandel\n\n (PW-9) deposed that the motorbike was in a stationary condition\n\n and three persons were sitting on it. She further deposed that the\n\n motorbike riders started the vehicle after seeing her and her friend\n\n and proceeded ahead towards them. The boy who was driving the\n\n bike wore an almond colour shirt and the pillion rider wore a red\n\none. The boy in between both riders appeared to be in a sleeping\n\n condition. The motorbike riders proceeded towards the\n\n Patansaongi area. She deposed that all these events occurred at\n\n about 17:30 hrs. On 25th September, 2014, she was called for the\n\n TIP.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P020_C02",
+      "text": "She identified A-1 and A-2 as the persons who were the\n\n motorbike riders and Yug from the photograph produced by the\n\n Police. In cross-examination by A-1, she deposed the road on which\n\n the motorbike riders were passing on the day of the incident\n\n leading from Dhapewada to Patansaongi village. In cross-\n\n examination by A-2, she deposed that she had seen the motorbike\n\n riders from a distance of 15 feet approximately. She deposed that\n\n initially she had not seen the back side of the motorbike riders, but\n\n had seen the same thereafter.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P021_C01",
+      "text": "20. Namdeo Dhawale (PW-11) is a resident of the Village Itangoti. He\n\n deposed that on 1st September, 2014 at about dusk, he was\n\n returning home whilst herding his goats, and saw a motorbike\n\n coming from the opposite side of the road, with two persons and a\n\n minor boy riding upon it. The motorbike riders were about 20-22\n\n years old whereas the minor boy sitting in between them was aged\n\n about 8-10 years. Namdeo Dhawale (PW-11) deposed that the\n\n minor boy was in sleeping condition as his head was tilted on the\n\n shoulder. He attempted to proceed towards the motorbike riders\n\n but on seeing him, the riders took a U turn and went back. It is\n\n after 2-3 days, that the Police arrived in his village. The Police had\n\n shown the photograph of the boy and Namdeo Dhawale (PW-11)\n\nthen disclosed all the facts to the Police. In cross-examination by\n\n A-2, he deposed that there was no scarf tied on the face of\n\n motorbike riders. The statement of this witness is relevant only for\n\n the purpose of corroborating the statement of Divya Chandel\n\n (PW-9) that he had seen two persons on a motorcycle with a minor\n\n boy.\n(v) Near patansaongi lake",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P022_C01",
+      "text": "21. The last witness who had seen A-1 and A-2 with the kidnapped boy\n\n is Shriram Shankarrao Khadatkar (PW-10). He deposed that he has\n\n agricultural land, within the vicinity of Tandulwani village. On\n\n 1st September, 2014, he came to work on his field at about 11:00-\n\n 11:30 hrs. on the motorbike of his son. He remained in the field up\n\n till 17:15 hrs. to 17:30 hrs. and thereafter waited at the road for\n\n the motorbike his son to go back home. Whilst doing so, he saw a\n\n black motorbike coming from Patansaongi village upon which two\n\n boys aged about 20-22 years were sitting along with a young boy\n\n between them. Shriram Shankarrao Khadatkar (PW-10) deposed\n\n that the motorbike riders went ahead up to 100-150 ft. on the road,\n\n and then stopped their vehicle after crossing the bridge. The boy\n\n who was driving the motorbike stepped down from the vehicle. The pillion rider caught-hold of the boy sitting in between them. They both parked the vehicle and the driver lifted the boy on his\n\n shoulder, proceeding towards the culvert. In the meantime, Pw-\n\n 10’s son arrived on his motorbike and he went away towards his\n\n village.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P022_C02",
+      "text": "He deposed that he was called for the TIP on 25 th\n\nSeptember, 2014 and identified both A-1 and A-2 as the persons\n\n who were on the motorbike. He identified the clothes (Arts. No. 1,\n\n 2 and 19) which were on the person of A-1 and A-2 and the minor\n\n boy. He further deposed that Ex.26 is the photograph of the same\n\n boy who was on motorbike by A-1 and A-2 on the day of incident. (B) Discovery of incriminating facts\n(i) Recovery of Dead Body",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P023_C01",
+      "text": "22. As per the prosecution, A-1 was arrested around 14:30 hrs.\n\n whereas A-2 was arrested around 16:30 hrs. on 2 nd September,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P024_C01",
+      "text": "2014. Mahesh Chandulal Fulwani (PW-28) is the witness of\n\n disclosure statement (Ex.106) of A-1 along with Girish Malpani. Mahesh Chandulal Fulwani (PW-28) deposed that while passing\n\n from Lakadganj Police Station, he saw a crowd there which\n\n included some of his friends and, therefore, he stopped. The Police\n\n called him into the Police Station where the IO sought his consent\n\n to be a Panch. The Police personnel brough a person in the\n\n chamber of IO who disclosed his name as A-1 as well as his age\n\n and address. Mahesh Chandulal Fulwani (PW-28) identified A-1 as\n\n the person who was brought in the chamber of the IO. He deposed\n\n that he along with Girish Malpani; A-1, the IO and other police\n\n personnel boarded a police vehicle. At that time, Dr. Chandak\n\n followed them in his car separately. The police vehicle proceeded\n\n as per the directions of A-1 whereas the car of Dr. Chandak was\n\n following their car. A-1 led them up to vicinity of Patansaongi\n\n village and thereafter towards village Babulkheda after which he\n\nasked them to stop the vehicle near bridge.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P024_C02",
+      "text": "A-1 started\n\n proceeding towards other end of the bridge on the road and\n\n pointed out a pathway for going beneath the bridge. A-1 went\n\n down under the bridge, towards the Rivulet and the rest followed\n\n him. Mahesh Chandulal Fulwani (PW-28) deposed that there were\n\n about seven to eight compartments of 30 feet length and 6 feet\n\n width to allow water in the Rivulet to pass through but there was\n\n no water in it. A-1 pointed out a place in the first channel of the\n\n Rivulet where the dead body of a young boy was found covered\n\n with leaves and sand particles. There was also a boulder/stone\n\n covering the face of the victim. Mahesh Chandulal Fulwani (PW-28)\n\n further deposed that the police personnel called an ambulance and\n\n a photographer and also removed the leaves and other\n\n obstructions from the dead body. Thereafter, Dr. Chandak who was\n\n standing on the road near the bridge was called to come down and\n\n he identified the dead body as that of his son, Yug. The panchnama\n\n of the spot commenced at 21:15 hrs. and lasted up to 23:45 hrs. The recovery of dead body is deposed by Dr. Chandak (PW-1) as\n\n well as Shirish Sharadchandra Varhadpande (PW-18), the\n\n photographer.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P024_C03",
+      "text": "On the basis of the disclosure statement of A-1, the\n\n dead body was recovered, concealed under the bridge in the first\n\n channel of the Rivulet.\nii) The recovery of other incriminating facts",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P025_C01",
+      "text": "23. The prosecution also examined Ajay Shankarrao Samarth (PW-21)\n\n who is panch witness of the recovery of clothes at the instance of\n\nA-1. A-1 had disclosed that he had concealed the clothes in his\n\n house. Ajay Shankarrao Samarth (PW-21) deposed that A-1’s\n\n mother was also present when A-1 entered the house along with\n\n the panch and the police. A-1 produced an ATM Card,\n\n handkerchief, shirt, pant which were wrapped and kept in a box. A-\n\n 1 pointed out two vehicles which were parked in front of his house,\n\n in the courtyard - A black Honda motorbike and a purple scooty.\n\n The footrest of the motorbike was smeared with sand particles\n\n which were removed and seized in a plastic bag. Both the vehicles\n\n were taken in possession.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P026_C01",
+      "text": "24. Sunil Kothari (PW-26) is a Panch witness of the disclosure\n\n statement of A-2. A-2 had disclosed that the blue T-shirt of the\n\n deceased was taken from his person and thrown it in the Rivulet\n\n located within the vicinity of the Village Lonkhairi. A-2 showed his\n\n readiness to point out such place. One Arun is another Panch\n\n witness of A-2’s disclosure statement. A-2 led the Panches and the\n\n Police to the spot mentioned, where he had thrown the clothes and\n\n pointed out such place. The IO called the sweepers for proceeding\n\n towards the spot and instructed them to search for the clothes.\n\n After searching for about 45 to 60 minutes, a sweeper fished out a\n\n blue colour T-shirt from the the Rivulet. A-2 stated that it was the\n\n same T-shirt of the deceased which was thrown by him in the\n\n Rivulet.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P027_C01",
+      "text": "25. Harsh Prakashchand Firodiya (PW-29) is a witness of disclosure\n\nstatement of A-2 made on 9th September, 2014 at about 19:00 hrs. (Ex.111). The same was made in the presence of another Panch\n\n witness as well, one Sunil Ajitmal Kothari. Harsh Prakashchand\n\n Firodiya (PW-29) deposed that A-2 took the Police and the Panches\n\n to his house, at some distance from Jaripatka Police Station. A-2’s\n\n father was present outside, when A-2 entered his house. In his\n\n room, A-2 removed a bag from an almirah within which there was a\n\n Maroon school bag, a red T-shirt, black jeans, a cream shirt, and a\n\n white knotted handkerchief. After opening the knot of such\n\n handkerchief, A-2 produced an ear ring kept therein, which was\n\n disclosed to be that of the deceased. The accused also took out a\n\n pair of sandals as well as the bicycle kept in the adjoining room\n\n used by him in the commission of the crime. All these articles\n\n were taken in possession vide recovery memo (Ex.111/A). Further,\n\n Dr. Chandak (PW-1) has identified the ear ring produced to be that\n\n of his son.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P027_C02",
+      "text": "The prosecution also examined Pravin Chudamanji\n\n Ganuwala (PW-20) who was a witness of the identification of the\n\n red T-shirt being one supplied to the staff of Dr. Chandak (PW-1) at\n\n his clinic.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P028_C01",
+      "text": "26. Prashant Pandhari Motghare (PW-43) is a witness of another\n\n disclosure statement (Ex.192) suffered by A-2 on 11 th September,\n\n 2014 at about 14:30 hrs. He marked the place where the murder\n\n of the deceased was committed by throttling and smothering.\n\n (C) Demand of Ransom",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P029_C01",
+      "text": "27. Manoj Thakkar (PW-4) is the panch witness in whose presence the\n\n personal search of both the accused was conducted. From A-1, the\n\npolice recovered a black, Max Mobile Company cell phone and two\n\n SIM cards. From the personal search of A-2, a black-silver Samsung\n\n cell phone and two SIM cards were taken into possession.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P030_C01",
+      "text": "28. Dr. Chandak (PW-1) deposed that he received a call at 20:17 hrs.\n\n on his cell phone from the landline No. 3220601 on 1 st September,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P031_C01",
+      "text": "2014. The caller disclosed his name as Mohsin Khan and asked Dr.\n\n Chandak (PW-1) to bring him Rs.10 crores as Yug, PW-1’s son, was\n\n in his custody. Thereafter at about 20:40 hrs. on the same day, he\n\n received another call on his cell phone from the phone No.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P032_C01",
+      "text": "8380927706. The caller disclosed that he should bring Rs.5 crores\n\n on the following day at about 15:00 hrs. in Mumbai. Dr. Chandak\n\n (PW-1) tried to ask him about the place in Mumbai but the caller\n\n disconnected the phone.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P033_C01",
+      "text": "29. The prosecution produced a copy of the customer application form\n\n of landline No.3220601 as Exs.179 and 179/1 whereas the Call\n\n Detail Record6 of landline No. 3220601 has been produced on\n\n record as Ex.178/1. There was a call to PW-1’s cell phone at\n\n 20:17:28 hours. It has come on record that such number was that\n\n of a Public Call Office (PCO). However, it is not available on record\n\n as to who is the owner of the PCO was as well as who had seen the\n\n person making the call. The customer application form of phone\n\n No. 8380927706 is produced on record as Exs.215/1 and 215/2\n\n whereas the CDR is Ex.214/1. There was a call at 20:38:03 hrs. of\n\n 31 seconds to Dr. Chandak (PW-1). Mohandas Mitharam Balani\n\n (PW-16) is the person who owns the PCO from where the second\n6 for short, ‘CDR’\n\ncall was made. He deposed that there was a coin box telephone\n\n installed on the counter of his shop and that at around 20:30 hrs.\n\n on 1st September, 2014, a boy came to his shop on a bicycle,\n\n wanting to make a call from it. Mohandas Mitharam Balani (PW-16)\n\n saw that the boy was talking on the phone from his coin box said,\n\n “Paanch Karod Leke Ana” (Bring Five Crore Rupees).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P033_C02",
+      "text": "He also\n\n deposed that before he could pay more attention, the boy left the\n\n shop and went away on his bicycle. Mohandas Mitharam Balani\n\n (PW-16) thereafter received information about the conduct of a TIP\n\n on 30th October, 2014 at the Central Jail. He identified the person\n\n making the call from the persons present therein. Such person\n\n disclosed his name as Arvind Singh to the Magistrate. Vikas Mali\n\n (PW-41) is the witness who produced the CDR of the cellphone of\n\n Dr. Chandak (PW-1) vide Ex.187/2. He had also prepared the\n\n certificate under\nSection 65(B)\nof the Indian Evidence Act, 1872 7\n\n which was produced vide Ex.187/3.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P034_C01",
+      "text": "30. Dattaram Shantaram Angre (PW-46) produced the CDR of Phone\n\n No. 8380927706, from which the second ransom call was made.\n\n The same is Ex.218/1 whereas the certificate issued under\nSection\n\n 65(B)\nof the Evidence Act is Ex.218/4 and the customer application\n\n forms are Exs.218/2 and 218/3. The CDR of cellphone No.\n\n 7745855431 of Smt. Bhumeshwari Daware, A-1’s mother, is Ex.219\n\n and Ex 219/1 whereas the certificate issued under\nSection 65(B)\n\n the Evidence Act is Ex.219/4 and the customer application forms\n7 for short, ‘\nEvidence Act\n’\n\nare Exs.219/2 and 219/3.\n(D) Motive and Conspiracy",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P035_C01",
+      "text": "31. Motive and conspiracy are quite interlinked in the present appeals\n\n and are, therefore, taken up for consideration together. Firstly, the\n\n motive herein is the grievance of A-1 against Dr. Chandak (PW-1).\n\n The daughter of Naresh Machale (PW-6) was a patient of Dr.\n\n Chandak (PW-1). Naresh Machale (PW-6) deposed that on\n\n 4th August, 2014, Dr. Chandak (PW-1) told him to pay of sum of Rs.\n\n 500/- towards the treatment of his daughter but the person at\n\n reception charged him Rs. 600/-. The person who charged Rs. 600/-\n\n was identified by him as A-1. On his second visit, Dr. Chandak\n\n (PW-1) told Naresh Machale (PW-6) to deposit Rs. 1500/- towards\n\n the treatment of his daughter but A-1 who was at the reception\n\n again, asked him to deposit Rs. 1600/-. Later, Naresh Machale\n\n (PW-6) informed Dr. Chandak (PW-1) about the extra charges and\n\n Dr. Chandak (PW-1) told him to visit his clinic for the verification of\n\n the same.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P036_C01",
+      "text": "32. Dr. Chandak (PW-1) deposed that he confronted A-1 as to why he\n\n had charged extra sums from Naresh Machale (PW-6), but A-1 did\n\n not accept his fault and claimed innocence. He told him that he will\n\n confront him with Naresh Machale (PW-6) on the following day but\n\n when Naresh Machale (PW-6) came to the clinic, A-1 was not on\n\n duty. Thereafter, A-1 stopped attending PW-1’s clinic altogether\n\n and left his employment without giving any information to him.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P037_C01",
+      "text": "33. The excess amount being charged from Naresh Machale (PW-6) has\n\nbeen corroborated by Sonam Meshram (PW-19), A-1’s friend. She\n\n deposed that A-1 disclosed to her that he was charging Rs. 100/- to\n\n Rs. 200/- more from Dr. Chandak’s patients. She further deposed\n\n that A-1 told her that Dr. Chandak was paying him a meagre salary\n\n of Rs. 3000/- whilst taking lot of work. Sonam Meshram (PW-19)\n\n also deposed that A-1 abused Dr. Chandak and said that he would\n\n teach him a lesson.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P038_C01",
+      "text": "34. It appears that A-1 had an ambition to be rich at the earliest. Such\n\n intention is proved by the prosecution examining Sandeep Katre\n\n (PW-8), another friend of A-1’s. Sandeep Katre (PW-8) deposed\n\n that A-1 was always in a hurry to become an affluent person. He\n\n stated that on the day of Raksha Bandhan in 2014, A-1 came to his\n\n house with A-2. A-1 inquired from him as to when and in what\n\n manner his employer carries the cash from the office. Sandeep\n\n Katre (PW-8) shared with him the relevant time during which his\n\n employer carries the bag of cash. A-1 thereafter told Sandeep\n\n Katre (PW-8) that whenever his employer starts proceeding with\n\n cash out of the office, he should inform him on cellphone so that he\n\n would be able to intercept PW-8’s employer and loot the cash from\n\n him. A-1 stated that such cash would be distributed among all of\n\n them. On 14th August, 2014, Sandeep Katre (PW-8) received a\n\n phone call from A-1 as to whether his employer would carry cash\n\n from his office. He told A-1 that there was less cash and, therefore,\n\n not to come on that day.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P038_C02",
+      "text": "On 16th August, 2014, he again received\n\n call from A-1 who informed him that his friend A-2, and two others\n\ncame with full preparation and awaited his phone call, but he did\n\nnot give him any response. A-1 repeatedly tried to contact\n\nSandeep Katre (PW-8) on his mobile phone inquiring about his\n\nemployer. Again, on the following day, A-1 informed him that he\n\nwould come with full preparation and was waiting for his call. Sandeep Katre (PW-8) deposed that he again did not give them any\n\ninformation. A-1 called Sandeep Katre (PW-8) to meet him at Pili\n\nRiver area and upon reaching there he found that A-1, A-2 and two\n\nothers, who were friends of A-1 were all present. A-1 disclosed to\n\nhim that he was intending to kidnap a boy for ransom whose father\n\nwas an affluent person. He also stated that he would get a huge\n\namount after such kidnapping, but would disclose the name of the\n\nboy to be kidnapped later on. A-1 further told him that the\n\nkidnapped boy would be kept at his house under the surveillance\n\nof his younger brother Ankush.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P038_C03",
+      "text": "Sandeep Katre (PW-8) deposed\n\nthat he along with A-1’s other two friends opposed A-1 for wanting\n\nto commit such illegality, but A-1 went away on his bike. On 30 th\n\nAugust, 2014, A-1 called him on his cellphone No. 9595517745 and\n\ntold him that he was intending to complete the task of kidnapping\n\non the following day. Again, on 1 st September, 2014 at about\n\n15:30 hrs. to 15:45 hrs., A-1 contacted him from his cellphone and\n\ntold him that he wanted to kidnap a young boy. Sandeep Katre\n\n(PW-8) told him that he does not want to get involved in such type\n\nof illegal activities. However, on the following day, Sandeep Katre\n\n(PW-8) came to know that Dr. Chandak’s son was kidnapped. He\n\ncontacted Dr. Chandak and informed him that such act of\n\n kidnapping might have been committed by his employee i.e. A-1. The police called Sandeep Katre (PW-8) on 4 th September, 2014\n\n and the Magistrate recorded his statement under Section 164\n\n Cr.P.C.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P039_C01",
+      "text": "35. Sonam Meshram (PW-19), as mentioned earlier, who had deposed\n\n that A-1 used to charge excess amounts from Dr. Chandak’s\n\n patients had also deposed that A-1 proposed to her for marriage. However, she asked him how he would bear the expenditure of\n\n Rs.2 lakhs to be incurred for her course, when he had previously\n\n disclosed to her that he left Dr. Chandak’s employment as he was\n\n supposedly paying him a meagre salary. A-1 told her that she\n\n should not worry about the money as he would be earning huge\n\n amounts after completing a job. A-1 then told her that he was\n\n planning to abduct the son of a rich person. Sonam Meshram (PW-\n19) further deposed that on 1 st September, 2014, she made call to\n\n A-1 from the cellphone of her room partner, but A-1 did not\n\n respond. At about 11:30 hrs., when she contacted A-1 again, he\n\n told her that he was busy in work. All these calls find mention in\n\n CDR of A-1. The record shows that calls were exchanged between\n\n Sonam Meshram (PW-19) and A-1 through the mobile of her friend\n\n and room partner at 07:31:55 hrs.; 08:45:56 hrs., 08:46:51 hrs.,\n\n 11:36:46 hrs., 11:38:34 hrs. and 11:42:20 hrs.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P039_C02",
+      "text": "All these calls show\n\n tower location as that in Vinoba Bhave Nagar. There is also a call\n\n from A-1 to A-2 at 16:12:54 hrs. and the location of the tower is\n\nGuru Darshan Complex Chhapru Nagar, Lakadganj Nagpur. There\n\n are calls between A-1 and Ankush (A-3), the juvenile brother of A-1,\n\n at 16:17:44 hrs.,16:56:08 hrs. and 17:36:53 hrs. as well.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P040_C01",
+      "text": "36. Nilesh Gosavi (PW-25) who was posted at Lakadganj Police Station\n\n as PSO had made a call to A-1 at 17:50:49 hrs., when the tower\n\n location on record is at Patansaongi Tal Saoner. Thereafter,\n\n Satyanarayan Jaiswal (PW-50), the Investigating Officer (IO) had\n\n called A-1 at 18:33:59 hrs., when the tower location is at Vinoba\n\n Bhave Nagar i.e. the area of A-1’s house. The IO made a second\n\n call to A-1 at 18:46:52 hrs. when the tower location was near the\n\n Itwari Railway Station i.e. on way to Police Station. There was also\n\n a call from the mobile number of Rupali (PW-23) to A-1 at 18:50:24\n\n hrs. A-1 had made a call to another mobile no. 7745855431 at\n\n 19:00:53 hrs. Further, there is another call by A-1 to N.T. Gosawi\n\n (PW-25) at 19:49:06 hrs. These calls are from the Lakadganj area\n\n as per location tower.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P041_C01",
+      "text": "37. Dharmendra Yadav (PW-24) an employee of Dr. Chandak, deposed\n\n that he had received a call from A-2. He was acquainted with A-1\n\n as he was also working in the clinic. He deposed that A-1 used to\n\n chat with him about big things. Therefore, he believed that he was\n\n a person of great influence. He sought his help for admission in\n\n college. A-1 asked him to meet him in the college and bring\n\n Rs.5,000/- with him. A-1 introduced A-2 to him as well, who had\n\n taken his mobile number at that time. There were three calls\n\n exchanged between A-2 and Dharmendra Yadav (PW-24) from\n\n19:28:15 hrs. to 19:32:50 hrs. of duration of 80 seconds, 31\n\n seconds and 20 seconds when the mobile of A-2 was covered by\n\n tower location in Vinoba Bhave Nagar. From the call details of A-2,\n\n it transpires that A-2 was in Vinoba Bhave Nagar from 18:41:45\n\n hrs. till 19:33:41 hrs. During this period, A-2 made a call to Pankaj\n\n Khurpade (PW-15) at 19:33:41 hrs. Pankaj Khurpade (PW-15)\n\n further deposed that A-2 sought Dr. Chandak’s number.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P041_C02",
+      "text": "The last\n\n call at 20:55:35 hrs. had been made by A-2 to A-3 when tower\n\n location was Zingabai Takali Koradi Road, Nagpur, i.e. the road from\n\n Vinobha Bhave Nagar to Patansaongi Lake. (E) Corroborative Evidence",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P042_C01",
+      "text": "38. The prosecution also examined Chitra Kamat (PW-47) who was an\n\n Assistant Director in the Government Forensic Laboratory, Kalina,\n\n Mumbai. Chitra Kamat (PW-47) received two parcels, one\n\n containing hard disks and CD’s and another containing four sealed\n\n envelopes. In one of the envelopes there were photographs of a\n\n vehicle whereas in the other three, there were photographs of a\n\n person for analysis. She assigned all the articles to Ajay Salunke\n\n (PW-38) for analysis in the forensic laboratory. Ajay Salunke\n\n (PW-38) prepared a report on 22 nd November, 2014. He deposed\n\n that the CD had six videos files and such video files were\n\n continuous and not edited at any point of time. He matched the\n\n photographs on the CD with the photographs referred to by the\n\n Police. He prepared a report Exh.160. As per the report, the person\n\n in the videos resembles the photographs (Ex. 2, 3, 4 and 5) i.e. the\n\nphotographs of motor cycle, the two accused A-1, A-2 and the\n\n deceased victim.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P043_C01",
+      "text": "39. The CDRs of A-1 (Ex.176/1) corroborate the six phone calls\n\n exchanged between A-1 and Sonam Meshram (PW-19) on\n\n 1st September, 2014 from 07:31:55 hrs. till 11:42:20 hrs., as\n\n deposed by Sonam Meshram (PW-19). Such call details further\n\n corroborate that Pankaj Khurpade (PW-15), an employee at Dr.\n\n Chandak’s clinic had received a phone call from A-1 on his mobile\n\n wherein, A-1 inquired about Dr. Chandak and his wife. Such call\n\n was made soon before the kidnapping at 15:20:59 hrs. and stands\n\n corroborated by the statement of Dharmendra Yadav (PW-24).\n\n Dharmendra Yadav (PW-24) had deposed that he had received a\n\n call from A-1 to find out as to whether Dr. Chandak and his wife are\n\n in the clinic. Such CDRs also corroborate the statement of\n\n Sandeep Katre (PW-8), when he deposed that he received a phone\n\n call from A-1 on 1st September, 2014 at about 15:30 hrs. to 15:45\n\n hrs. informing him that he wanted to kidnap a boy. The CDR shows\n\n that such call was exchanged between A-1 and Sandeep Katre (PW-\n8) at 15:44:31 hrs. The CDRs also corroborate the call made by\n\n N.T. Gosawi (PW-25) and the IO to A-1.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P044_C01",
+      "text": "40. On the other hand, the CDRs of A-2 (Ex.150/1) corroborate the calls\n\n exchanged between A-2 and Dharmendra Yadav (PW-24) on\n\n 1st September, 2014 from 19:28 hrs. till 19:32 hrs. to inquire about\n\n Dr. Chandak’s contact details, as also the call made by A-2 to\n\n Pankaj Khurpade (PW-15), who had given the mobile number of Dr. Chandak to A-2. The CDR’s also corroborate the call A-2 had made\n\n to Dr. Chandak at 19:39:17 hrs. presumably to verify the number\n\n given by Pankaj Khurpade (PW-15). It is thereafter the ransom call\n\n was made at 20:53:18 hrs. and received by Dr. Chandak. Mohandas Mitharam Balani (PW-16) has also corroborated such call\n\n from his PCO. Thus, the oral testimonies of the prosecution\n\n witnesses stand corroborated by the CDRs of both the accused. Submissions on behalf of A-1\n41. Before this Court, Mr. Yug Chaudhary, learned counsel for A-1\n\n vehemently argued that both the Courts have overlooked material\n\n evidence that A-1 was in Police custody from 18:50 hrs. on\n\n 1st September, 2014, though his formal arrest was reflected in the\n\n records on 2nd September, 2014 at 17:10 hrs.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P044_C02",
+      "text": "The disclosure\n\n statement was, thus, a direct result of his illegal custody and was\n\n actuated by undue influence and coercion. It was also argued that\n\n since A-1 was in custody of the Police, a fact admitted by the IO,\n\n A-1 could not have played any role in the ransom call made on\n\n 1st September, 2014 at 20:38 hrs. Reliance herein was placed upon\nAbdul Subhan & Anr. v. Emperor8\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P045_C01",
+      "text": "42. It was argued that the prosecution had not led any evidence to\n\n suggest that the deceased died before 18:00 hrs. i.e. the period\n\n during which the deceased can be said to be in custody of the\n\n accused as A-1 had received a call from N.T. Gosawi (PW-25) at\n\n 17:50 hrs., when he was in the area of Patansaongi lake which is\n\n about 26 kms and 33 minutes away from his house. Since he was\n8 AIR 1940 All. 46\n\nat his house by 18:33 hrs., he must have left the area of\n\n Patansaongi lake latest by 18:00 hrs. No question has been put to\n\n A-1 in the statement under\nSection 313\nCr.P.C. that the deceased\n\n died before 18:00 hrs. It was argued that A-1 can be held guilty of\n\n an offence under\nSection 302\nIPC only if death is proved to have\n\n been caused before 18:00 hrs. i.e. before he left the Patansaongi\n\n lake. Reliance was placed upon\nHate Singh Bhagat Singh v. State of Madhya Bharat9\nand\nSharad Birdhichand Sarda v. State of Maharashtra10\n. Further, a recent judgment of this Court\n\n reported as\nReena Hazarika v. State of Assam11\nwas also\n\n referred to, to contend that the statement of an accused under\nSection 313\nCr.P.C. is required to be considered.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "IPC 302"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P045_C02",
+      "text": "Non-consideration\n\n therein would vitiate conviction.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P046_C01",
+      "text": "43. It was argued that the deceased was sedated at the time of the\n\n act of his smothering, a fact made out from the CCTV footage\n\n played in the Court. However, the 13 abrasions on the face and\n\n neck of the deceased shows that he resisted smothering and,\n\n therefore, could not have been killed prior to 18:00 hrs. Since there\n\n is a possibility that the deceased died after 18:00 hrs. i.e. after the\n\n accused has surrendered, conviction for an offence under\nSection\n\nIPC could not be sustained. It was further argued that the\n\n ransom call was made after the arrest of A-1, therefore, the\n\n conviction of A-1 for an offence under\nSection 364A\nIPC was not\n\n sustainable.\n9 AIR 1953 SC 468\n10 (1984) 4 SCC 116\n11 (2019) 13 SCC 289\n44. The learned counsel for A-1 also argued that A-1 surrendered in the\n\n Lakadganj Police Station at 18:50 hrs. Such surrender terminated\n\n any conspiracy as he had withdrawn from it. The subsequent\n\n conduct of a ransom call by his co-conspirator would not bind A-1,\n\n especially in view of him being in custody when the ransom call\n\n was made at 20:17 hrs. and 20:38 hrs. Reliance herein was\n\n placed upon a judgment of this Court reported as\nState v.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "IPC 364A"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P046_C02",
+      "text": "Nalini\n\n & Ors.12\n. It was also argued that Madhuri Dhawalkar (PW-34) or\n\n Shriram Khadatkar (PW-10) had not noticed any injury on the\n\n person of the boy. There was no evidence of any blood or saliva on\n\n the clothes of A-1 when the child was sitting in between two\n\n accused or when A-1 had carried the child on his shoulders, as\n\n deposed by Shriram Khadatkar (PW-10). It was, thus, argued that\n\n if the victim had these injuries, the blood or saliva was bound to be\n\n on A-1’s clothes. In this light, such injuries were possibly caused\n\n after 18:00 hrs. when A-1 had left his co-conspirator from the\n\n Patansaongi lake.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P047_C01",
+      "text": "45. It was further argued that A-1 may have had the intention to\n\n kidnap for ransom, but since the ransom call was made after the\n\n conspiracy terminated and there was no evidence of threat to\n\n cause death in the event of the ransom not being paid, an offence\n\n under\nSection 363\nIPC alone can be made out. It is also argued\n\n that when A-2 had allegedly made ransom call, such call\n\n necessarily meant that the victim was alive, as human conduct in\n\n12 (1999) 5 SCC 253\n\nterms of\nSection 114\nof the Evidence Act defies the logic of making\n\n a ransom call when a victim has already been killed. Therefore, A-\n\n 1 could not have participated in the killing of the deceased in view\n\n of the fact that he was in Police custody from 18:50 hrs. It was\n\n also pointed out that since there was no repeat call of ransom, it\n\n only showed that the victim was killed after the ransom call was\n\n made at 20:38 hrs. It was argued that the intention of the accused\n\n under\nSection 34\nIPC must continue to exist till the completion of\n\n the crime of the offence. Reliance herein was placed upon\nJai\n\n Bhagwan & Ors. v. State of Haryana13\nand\nSuresh & Anr. v. State of U.P.14\n46.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "IPC 363",
+        "IPC 34"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P047_C02",
+      "text": "Further, it was submitted that the argument that the victim died\n\n before 18:00 hrs. is an argument raised in appeal before this Court\n\n for the first time and, therefore, the prosecution cannot be\n\n permitted to change the manner of commission of crime. Reliance\n\n was placed upon\nKaranpura Development Co. Ltd. v. Raja\n\n Kamakshya Narain Singh\n, etc.15 and Sri Venkataramana\n\n Devaru & Ors. v. State of Mysore & Ors.16.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P048_C01",
+      "text": "47. Learned Counsel for A-1 also disputed the recovery of the dead\n\n body pursuant to the disclosure statement suffered by A-1. It was\n\n argued that in such disclosure statement, no fact has been\n\n disclosed about the manner of causing death. The disclosure\n\n statement has to be recorded in the exact words used by the\n\n13 (1999) 3 SCC 102\n14 (2001) 3 SCC 673\n15 AIR 1956 SC 446\n16 AIR 1958 SC 255\n\naccused as held by this Court in\nState of Karnataka v. David\n\n Rozario & Anr.17 It\nwas argued that since the manner of killing is\n\n not mentioned in the disclosure statement, A-1 cannot be held\n\n guilty of causing death.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P049_C01",
+      "text": "48. In the alternative, it was argued that the recovery of the dead body\n\n will only lead to an inference that the accused had knowledge of\n\n the spot of concealment. It was argued that as per the statement\n\n of S.K. Jaiswal (PW-50), the IO, A-1 confessed to crime on\n\n interrogation but it has not been explained that how and why the\n\n disclosure statement came to be recorded almost 24 hours after\n\n his surrender. Learned counsel for A-1 also doubted the recovery\n\n of clothes and the handkerchief from the house of A-1 on 8 th\n\n September, 2014. Such handkerchief had two blood stains, one of\n\n the deceased and the other of an unknown male. There was a\n\n blood stain on the jeans as well. The blood stain on the jeans and\n\n unknown blood stain on the handkerchief matched. Therefore, A-1\n\n could not be held guilty of taking life of the deceased in the\n\n absence of blood stain of the victim on his clothes. Submissions on behalf of A-2\n49. On the other hand, learned counsel for A-2 argued that there was\n\n no motive attributed to A-2 as the prosecution relied upon\n\n circumstantial evidence.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P049_C02",
+      "text": "There was no evidence of A-2 conspiring\n\n with A-1 or that he had any idea about the real motive of A-1 of\n\n taking vengeance from Dr. Chandak (PW-1), the complainant. A-1\n\n first planned to execute the kidnapping with the help of Sandeep\n17 (2002) 7 SCC 728\n\nKatre (PW-8). This was discussed at the time when both A-1 and\n\n Sandeep Katre (PW-8) were conspiring to loot the employer of\n\n Sandeep Katre (PW-8). It was also argued that Rupali (PW-23) had\n\n identified A-2 in the witness box for the first time as no TIP was\n\n conducted to identify the A-2 by her. Further, it was submitted that\n\n Rupali (PW-23) admitted that she had delivered a child by\n\n caesarean surgery on 7th October, 2014 and was advised bed rest\n\n on 1st September, 2014. Therefore, it is highly improbable that\n\n during the advance stage of her pregnancy, she was able to wash\n\n clothes and see both the accused along with a minor child.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P050_C01",
+      "text": "50. Learned counsel for A-2 further argued that there was no TIP\n\n conducted to identify the accused by Namdeo Dhawale (PW-11). It\n\n was obvious that the said witness had seen the motorbike of the\n\n accused in a running condition when he was managing his herd of\n\n goats. The testimony of Divya Chandel (PW-9) was also criticized\n\n for the reason that she saw the motorbike from a distance of 15\n\n feet as it would take only 2-3 seconds for the motorbike to pass\n\n through, therefore, it was highly improbable that she was able to\n\n see the faces of the motorbike riders. It was also argued that the\n\n dead body was recovered at the instance of A-1. A-2 remained near\n\n the bridge and did not take any part in the commission of the\n\n crime of murder of the minor child and, therefore, in all\n\n probabilities, the crime has been committed by A-1 between 17:30\n\n hrs. to 18:00 hrs. to wreak vengeance upon the complainant.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P051_C01",
+      "text": "51. It was also argued that veracity of demand of ransom by A-2 was\n\ndoubtful. The FIR was lodged at 17:10 hrs. but the IO did not make\n\n any arrangement for the recording of the ransom call. The IO did\n\n not take the voice sample of the accused for identification by Dr.\n\n Chandak (PW-1). A-2 was said to be identified by Mohandas\n\n Mitharam Balani (PW-16) on 30th October, 2014 after much delay.\n\n Further, the statement of Mohandas Mitharam Balani (PW-16) was\n\n also doubted, that he had heard A-2 raising a demand of ransom as\n\n a PCO would have some kind of privacy mechanism between the\n\n caller and the owner.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P052_C01",
+      "text": "52. It was further argued that the disclosure statement in respect of\n\n articles said to be concealed in house of A-2 did not stand proved\n\n as his house was locked after 3rd September, 2014. Haribhau\n\n Dahake (DW-1), the landlord of the said house deposed that the\n\n family of A-2 had left the house on 3rd September, 2014 and did not\n\n return whereas the father of A-2 came to pay rent in October,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P053_C01",
+      "text": "2014. It was also argued that an offence under\nSection 364A\nIPC is\n\n not made out against A-2 as the ransom call did not include a\n\n threat to life, which is a necessary ingredient of an offence under\nSection 364A\nIPC.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 364A"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P054_C01",
+      "text": "53. Apart from disputing the findings recorded by both the courts, it\n\n was argued that the sentence of death imposed upon the accused\n\n was not justified as the accused were young, students of\n\n undergraduate classes, had jobs to sustain them and had no\n\n criminal antecedents. It was not a rarest of the rare case,\n\n warranting death sentence. In respect of A-1, it was additionally\n\nargued that A-1 immediately surrendered at the first available\n\n opportunity and he did not even delay or tried to abscond. He fully\n\n cooperated with the investigation. He confessed to the IO which\n\n shows remorse. Findings\ni) Whether A-1 was arrested on 1st September 2014\n54. We have heard learned counsel for the parties at length and find\n\n no reason to take a different view than what has been taken by the\n\n trial court and the High Court in the matter of conviction. The\n\n entire sheet anchor of the argument of learned counsel for A-1 is\n\n that A-1 was in Police custody from 18:50 hrs. on 1 st September,\n\n 2014 and such aspect has not been considered either by the trial\n\n court or by the High Court.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P054_C02",
+      "text": "In the written notes of the arguments\n\n submitted by A-1 before the trial court, nothing has been raised\n\n regarding A-1 being in custody from 18:50 hrs. on 1 st September,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P055_C01",
+      "text": "2014. Such an argument was not raised for good reasons, which\n\n are delineated hereinafter.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P056_C01",
+      "text": "55. Manoj Thakkar (PW-4) is the witness of seizure of mobile phones\n\n and sim cards of A-1 and A-2. A-1 was arrested at 14:30 hrs.\n\n whereas A-2 was arrested at 16:30 hrs. on 2 nd September, 2014\n\n as per column 8 of the arrest memo. 17.10 hrs. is the time, when\n\n the accused were in the Police Station Lakadganj. As per\n\n statement of Manoj Thakkar (PW-4), he was called upon to become\n\n panch witness when he was returning from Wardhman Nagar to his\n\n residence at Qweta Colony in Nagpur. Manoj Thakkar (PW-4)\n\ndeposed that the Police took personal search of the accused in his\n\n presence and recovered the mobile phones. However, no cross-\n\n examination has been conducted that the personal search was\n\n done at any point earlier than the arrest. Still further, A-1 had\n\n made a call to N.T. Gosawi (PW-25) at 19:49:06 hrs. An accused in\n\n custody will not be permitted to make a call to a Police official. It\n\n corroborates the stand of the prosecution that A-1 was arrested on\n\n 2nd September, 2014. Still further, the IO had admitted in the\n\n cross-examination that he called A-1 in the Police Station on 1 st\n\n September, 2014 for investigation. He denied that A-1 was in\n\n police custody.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P056_C02",
+      "text": "He deposed that A-1 visited police station on the\n\n day after he had called A-1 on his cell phone. A-1 was called for\n\n inquiry as he was one of the former employees of the clinic of Dr. Chandak.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P057_C01",
+      "text": "56. A witness is required to be cross-examined in a criminal trial to test\n\n his veracity; to discover who he is and what his position in life is; or\n\n to shake his credit, by injuring his character, although the answer\n\n to such questions may directly or indirectly incriminate him or may\n\n directly or indirectly expose him to a penalty or forfeiture (\nSection\n\nof the Evidence Act). A witness is required to be cross-\n\n examined to bring forth inconsistencies, discrepancies and to prove\n\n the untruthfulness of the witness. A-1 set up a case of his arrest\n\n on 1st September, 2014 from 18:50 hrs., therefore, it was required\n\n for him to cross-examine the truthfulness of the prosecution\n\n witnesses with regard to that particular aspect. The argument that\n\nthe accused was shown to be arrested around 19:00 hrs. is an\n\n incorrect reading of the arrest form (Ex.17). In Col. 8, it has been\n\n specifically mentioned that the accused was taken into custody on\n\n 2nd September, 2014 at 14:30 hrs. at Wanjri Layout, Police Station,\n\n Kalamna. The time i.e. 17:10 hrs. mentioned in Col. 2, appears to\n\n be when A-1 was brought to the Police Station, Lakadganj.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P057_C02",
+      "text": "As per\n\n the IO, A-1 was called for interrogation as the suspicion was on an\n\n employee of Dr. Chandak since the kidnapper was wearing red\n\n colour T-shirt which was given by Dr. Chandak to his employees. A-\n\n 1 travelled from the stage of suspect to an accused only on 2 nd\n\n September, 2014. Since, no cross-examination was conducted on\n\n any of the prosecution witnesses about the place and manner of\n\n the arrest, such an argument that the accused was arrested on 1 st\n\n September, 2014 at 18:50 hrs. is not tenable.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P058_C01",
+      "text": "57. The House of Lords in a judgment reported as Browne v. Dunn18\n\n considered the principles of appreciation of evidence. Lord\n\n Chancellor Herschell, held that it is absolutely essential to the\n\n proper conduct of a cause, where it is intended to suggest that a\n\n witness if not speaking the truth on a particular point, to direct his\n\n attention to the fact by some questions put in cross-examination\n\n showing that imputation is intended to be made, and not to take\n\n his evidence and pass it by as a matter altogether unchallenged.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P058_C02",
+      "text": "was held as under:\n“Now, my Lords, I cannot help saying that it seems to\n me to be absolutely essential to the proper conduct of a\n cause, where it is intended to suggest that a witness is\n18 (1894) VI The Reports 67 (HL)\n\nnot speaking the truth on a particular point, to direct his\n attention to the fact by some questions put in cross-\nexamination showing that that imputation is intended to\n be made, and not to take his evidence and pass it by as\n a matter altogether unchallenged, and then, when it is\n impossible for him to explain, as perhaps he might have\n been able to do if such questions had been put to him,\n the circumstances which it is suggested indicate that\n the story he tells ought not to be believed, to argue that\n he is a witness unworthy of credit. My Lords, I have\n always understood that if you intend to impeach a\n witness you are bound, whilst he is in the box, to give\n him an opportunity of making any explanation which is\n open to him; and, as it seems to me, that is not only a\n rule of professional practice in the conduct of a case,\n but is essential to fair play and fair dealing with\n witnesses.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P058_C03",
+      "text": "Sometimes reflections have been made\n upon excessive cross-examination of witnesses, and it\n has bene complained of as undue; but it seems to me\n that a cross-examination of a witness which errs in the\n direction of excess may be far more fair to him than to\n leave him without cross-examination, and afterwards to\n suggest that he is not a witness of truth, I mean upon a\n point on which it is not otherwise perfectly clear that he\n has had full notice beforehand that there is an intention\n to impeach the credibility of the story which he is\n telling.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P059_C01",
+      "text": "58. Lord Halsbury, in a separate but concurring opinion, held as under:\n“My Lords, with regard to the manner in which the\n evidence was given in this case, I cannot too heartily\n express my concurrence with the Lord Chancellor as to\n the mode in which a trial should be conducted. To my\n mind nothing would be more absolutely unjust than not\n to cross-examine witnesses upon evidence which they\n have given, so as to give them notice, and to give them\n an opportunity of explanation, and an opportunity very\n often to defend their own character, and, not having\n given them such an opportunity, to ask the jury\n afterwards to disbelieve what they have said, although\n not one question has been directed either to their credit\n or to the accuracy of the facts they have deposed to.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P060_C01",
+      "text": "59. This Court in a judgment reported as\nState of U.P. v. Nahar\n\nSingh19\n, quoted from Browne to hold that in the absence of cross-\nexamination on the explanation of delay, the evidence of PW-1\n\n remained unchallenged and ought to have been believed by the\n\n High Court. Section 146\nof the Evidence Act confers a valuable\n\n right of cross-examining the witness tendered in evidence by the\n\n opposite party. This Court held as under: -\n“13. It may be noted here that that part of the\n statement of PW 1 was not cross-examined by the\n accused. In the absence of cross-examination on the\n explanation of delay, the evidence of PW 1 remained\n unchallenged and ought to have been believed by the\n High Court. Section 138\nof the Evidence Act confers a\n valuable right of cross-examining the witness tendered\n in evidence by the opposite party.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P060_C02",
+      "text": "The scope of that\n provision is enlarged by\nSection 146\nof the Evidence Act\n by allowing a witness to be questioned:\n(1) to test his veracity,\n\n (2) to discover who he is and what is his position in life,\n\n (3) to shake his credit by injuring his character,\n although the answer to such questions might tend\n directly or indirectly to incriminate him or might expose\n or tend directly or indirectly to expose him to a penalty\n or forfeiture.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P061_C01",
+      "text": "60. This Court in a judgment reported as Muddasani Venkata\n\n Narsaiah (Dead) through LRs. v. Muddasani Sarojana20 laid\n\n down that the party is obliged to put his case in cross-examination\n\n of witnesses of opposite party. The rule of putting one's version in\n\n cross-examination is one of essential justice and not merely\n\n technical one. It was held as under:\n“15. Moreover, there was no effective cross-\n examination made on the plaintiff's witnesses with\n19 (1998) 3 SCC 561\n20 (2016) 12 SCC 288\n\nrespect to factum of execution of sale deed, PW 1 and\nPW 2 have not been cross-examined as to factum of\nexecution of sale deed. The cross-examination is a\nmatter of substance not of procedure one is required to\nput one's own version in cross-examination of opponent. The effect of non-cross-examination is that the\nstatement of witness has not been disputed. The effect\nof not cross-examining the witnesses has been\nconsidered by this Court in\nBhoju Mandal v. Debnath\nBhagat [Bhoju Mandal\nv. Debnath Bhagat, AIR 1963 SC\n1906] . This Court repelled a submission on the ground\nthat the same was not put either to the witnesses or\nsuggested before the courts below.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P061_C02",
+      "text": "Party is required to\nput his version to the witness. If no such questions are\nput the Court would presume that the witness account\nhas been accepted as held in\nChuni Lal Dwarka\nNath v. Hartford Fire Insurance Co. Ltd. [Chuni Lal\nDwarka Nath\nv. Hartford Fire Insurance Co. Ltd., 1957\nSCC OnLine P&H 177 : AIR 1958 P&H 440]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 62,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P062_C01",
+      "text": "16. In Maroti Bansi Teli v. Radhabai [Maroti Bansi\nTeli v. Radhabai, 1943 SCC OnLine MP 128 : AIR 1945\nNag 60] , it has been laid down that the matters sworn\nto by one party in the pleadings not challenged either in\npleadings or cross-examination by other party must be\naccepted as fully established. The High Court of Calcutta\nA.E.G. Carapiet v. A.Y. Derderian [A.E.G. Carapiet\nv. A.Y. Derderian, 1960 SCC OnLine Cal 44 : AIR\n1961 Cal 359] has laid down that the party is obliged to\nput his case in cross-examination of witnesses of\nopposite party. The rule of putting one's version in cross-\nexamination is one of essential justice and not merely\ntechnical one. A Division Bench of the Nagpur High\nCourt in Kuwarlal Amritlal v. Rekhlal Koduram [Kuwarlal\nAmritlal v. Rekhlal Koduram, 1949 SCC OnLine MP 35 :\nAIR 1950 Nag 83] has laid down that when attestation is\nnot specifically challenged and witness is not cross-\nexamined regarding details of attestation, it is sufficient\nfor him to say that the document was attested. If the\nother side wants to challenge that statement, it is their\nduty, quite apart from raising it in the pleadings, to\ncross-examine the witness along those lines.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 62,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P062_C02",
+      "text": "A Division\nBench of the Patna High Court in Karnidan\nSarda v. Sailaja Kanta Mitra [Karnidan Sarda v. Sailaja\nKanta Mitra, 1940 SCC OnLine Pat 288 : AIR 1940 Pat\n683] has laid down that it cannot be too strongly\nemphasised that the system of administration of justice\nallows of cross-examination of opposite party's\n\nwitnesses for the purpose of testing their evidence, and\n it must be assumed that when the witnesses were not\n tested in that way, their evidence is to be ordinarily\n accepted. In the aforesaid circumstances, the High\n Court has gravely erred in law in reversing the findings\n of the first appellate court as to the factum of execution\n of the sale deed in favour of the plaintiff.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P063_C01",
+      "text": "61. The rule of evidence is common both to the civil and the criminal\n\n trials. Though, in a criminal trial, this court in K.M. Nanavati v. State of Maharashtra21, held that there is a presumption of\n\n innocence in favour of the accused as a general rule, and it is the\n\n duty of the prosecution to prove the guilt of the accused; to put it\n\n in other words, the accused is presumed to be innocent until his\n\n guilt is established by the prosecution. This Court held as follows:\n“18….. In India, as it is in England, there is a\n presumption of innocence in favour of the accused as a\n general rule, and it is the duty of the prosecution to\n prove the guilt of the accused; to put it in other words,\n the accused is presumed to be innocent until his guilt is\n established by the prosecution. But when an accused\n relies upon the general exceptions in the\nIndian Penal\n Code\nor on any special exception or proviso contained in\n any other part of the Penal Code, or in any law defining\n an offence,\nSection 105\nof the Evidence Act raises a\n presumption against the accused and also throws a\n burden on him to rebut the said presumption.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P063_C02",
+      "text": "Under\n that Section the Court shall presume the absence of\n circumstances bringing the case within any of the\n exceptions, that is, the court shall regard the non-\n existence of such circumstances as proved till they are\n disproved……..”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 64,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P064_C01",
+      "text": "62. Dahyabhai Chhaganbhai Thakkar v. State of Gujarat22\n, this\n\n court while examining an argument of the accused that he was\n\n medically insane person, it was held that it is a fundamental\n21 AIR 1962 SC 605\n22 AIR 1964 SC 1563\n\nprinciple of criminal jurisprudence that an accused is presumed to\n\n be innocent and, therefore, the fact that the accused was\n\n incapable of knowing the nature of his act, the burden of proving\n\n the existence of circumstances bringing the case within the\n\n exception under\nSection 105\nof Evidence Act lies on the accused. It was held as under:\n“5. ..…It is a fundamental principle of criminal\n jurisprudence that an accused is presumed to be\n innocent and, therefore, the burden lies on the\n prosecution to prove the guilt of the accused beyond\n reasonable doubt. The prosecution, therefore, in a case\n of homicide shall prove beyond reasonable doubt that\n the accused caused death with the requisite intention\n described in\nSection 299\nof the Indian Penal Code. This\n general burden never shifts and it always rests on the\n prosecution.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 64,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P064_C02",
+      "text": "But, as\nSection 84\nof the Indian Penal Code\n provides that nothing is an offence if the accused at the\n time of doing that act, by reason of unsoundness of\n mind was incapable of knowing the nature of his act or\n what he was doing was either wrong or contrary to law. This being an exception, under\nSection 105\nof the\n Evidence Act the burden of proving the existence of\n circumstances bringing the case within the said\n exception lies on the accused; ……….”",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 84"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 65,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P065_C01",
+      "text": "63. Thus, the prosecution is required to bring home the guilt beyond\n\n reasonable doubt. It is open to an accused to raise such\n\n reasonable doubt by cross-examination of the prosecution\n\n witnesses to discredit such witness in respect of truthfulness and\n\n veracity. However, where the statement of prosecution witnesses\n\n cannot be doubted on the basis of the touchstone of truthfulness,\n\n contradictions and inconsistencies, and the accused wants to\n\n assert any particular fact which cannot be made out from the\n\n prosecution evidence, it is incumbent upon the accused to cross-\n\nexamine the relevant witnesses to that extent. The witness, in\n\n order to impeach the truthfulness of his statement, must be cross-\n\n examined to seek any explanation in respect of a version, which\n\n accused wants to rely upon rather to raise an argument at the trial\n\n or appellate stage to infer a fact when the opportunity given was\n\n not availed of as part of fair play while appreciating the statement\n\n of the witnesses.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 65,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P065_C02",
+      "text": "Thus, we hold that a party intending to bring\n\n evidence to impeach or contradict the testimony of a witness must\n\n give an opportunity to explain or answer when the witness is in the\n\n witness box.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 66,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P066_C01",
+      "text": "64. The testimony of the prosecution witnesses does not lead to any\n\n inference that A-1 was in Police custody from 18:50 hrs. He was\n\n only called for an inquiry for the reason that the employees\n\n engaged by Dr. Chandak used to wear a red colour T-shirt in his\n\n clinic and as the information at that stage was that one of the\n\n accused was wearing a red colour T-shirt, A-1 was called for\n\n information. His presence in the Police Station on 1st September,\n\n 2014 was only as a suspect. He became an accused only when he\n\n was arrested on 2nd September, 2014 at 14:30 hrs.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 67,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P067_C01",
+      "text": "65. Mr. Chaudhary also pointed out that the CDR of A-1 (Ex.176/1)\n\n shows that his mobile phone was always in the range of Police\n\n Station Lakadganj from 18:50 hrs. The best witness to seek\n\n information of his arrest was the IO. He denied the arrest on\n\n 1st September, 2014. The other witness who could be cross-\n\n examined was Manoj Thakkar (PW-4). But he was not cross\n\nexamined in this respect. At this stage, it is not open to this Court\n\n to infer any such fact, in the absence of any evidence to the\n\n contrary on record. He had access to his mobile all through before\n\n his arrest on 2nd September, 2014. An accused will not be provided\n\n access to mobile phone when in custody. He has called N.T. Gosawi\n\n (PW-25) at 19:49:06 hrs. on 1 st September, 2014. In fact, the\n\n statement of DW-1, the mother of the A-1, contradicts the entire\n\n argument of A-1 voluntary going to police station on 1 st\n\n September, 2014. She deposed that 4-5 policemen had taken A-1\n\n from her house as per the information of Ankush, the juvenile.\n\n Thus, the accused has not been able to create doubt in respect of\n\n his arrest on 2nd September 2014.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 68,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P068_C01",
+      "text": "66. Pankaj Khurpade (PW-15) deposed that he was employed as an\n\n attendant in the clinic of Dr. Chandak. He is acquainted with other\n\n staff members of the clinic including Dharmendra Yadav and A-1.\n\n He deposed that at 19:30 hrs., he received a phone call from A-2.\n\n The caller disclosed his name as Arvind, friend of A-1. He wanted\n\n cell number of Dr. Chandak. He gave the cell number of Dr.\n\n Chandak to him. Such statement is corroborated by CDRs of A-2.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 69,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P069_C01",
+      "text": "67. Mr. Chaudhary admitted the presence of A-1 with the kidnapped\n\n boy from 16:00 hrs. till 17:30 hrs. or so, a finding which has been\n\n recorded by the trial court as well as by the High Court. Such\n\n finding is, in fact, unassailable at the instance of A-1 as well. The\n\n argument is that the prosecution had failed to prove that A-1 was\n\n responsible for causing death of the boy. He was near Patansaongi\n\nlake, when he received a call from N.T. Gosawi (PW-25) at 17:50:49\n\n hrs. He was to his house in Vinoba Bhave Nagar at 18:31:46 hrs.\n\n and in the Police Station at 18:50 hrs. Thus, he must have left the\n\n area of Patansaongi any time before 18:00 hrs. Therefore, to prove\n\n the charge of culpable homicide amounting to murder against the\n\n accused, the prosecution must prove that the victim died before\n\n 18:00 hrs. It is argued that in the absence of evidence of causing\n\n death by accused, and in the absence of call of ransom before\n\n 18:00 hrs., he can at best be convicted for an offence under\nSection 363\nIPC. For an offence under\nSection 364A\nIPC, according\n\n to Mr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 363",
+        "IPC 364A"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 69,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P069_C02",
+      "text": "Chaudhary, the prosecution is required to prove demand of\n\n ransom, and threat to cause death in case of non-payment of\n\n ransom. Since the ransom call is said to have been made by A-2 at\n\n 20:38 hrs. when A-1 was in the Police Station, therefore, the\n\n prosecution has failed to prove that such ransom call is attributed\n\n to A-1 and that there was a threat to take life of the victim.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 70,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P070_C01",
+      "text": "68. We do not find any merit in the said argument as well. There is\n\n overwhelming evidence of A-1 having motive to cause damage to\n\n Dr. Chandak on account of payment of less salary, more work and\n\n scolding on account of over-charging customers. Such motive gets\n\n further strengthened by the desire in A-1 to get rich even by\n\n robbing employer of Sandeep Katre (PW-8), when he planned\n\n looting of cash. Such evidence is corroborated by Sonam Meshram\n\n (PW-19), the friend of A-1. The desire to get rich by whatever\n\n means was a driving force with A-1 to kidnap a young child of 8\n\nyears, who was a school going innocent child, who happened to be\n\n a son of well-to-do dentist couple. Initially, A-1 conspired with\n\n Sandeep Katre (PW-8) but on his developing cold-feet, he\n\n associated A-2 in his nefarious design to make money by the\n\n abduction of a young child. The conduct of A-1 in seeking\n\n assistance of Sandeep Katre (PW-8) and the calls exchanged\n\n between Sonam Meshram (PW-19) and A-1 shows the\n\n desperation of A-1 to kidnap for ransom. The intention to kidnap\n\n was only with a motive of becoming rich by obtaining a ransom.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 70,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P070_C02",
+      "text": "achieve that motive, A-1 had associated A-2, a fact deposed by\n\n Sandeep Katre (PW-8) and Sonam Meshram (PW-19). A-1 and A-2\n\n were together at different stages of the commission of the crime\n\n from almost 16:00 hrs. till almost 18:00 hrs., and later till 18:33:59\n\n hrs., when both of them were at the house of A-1 in Vinoba Bhave\n\n Nagar. Such facts have come on evidence from the testimony of\n\n Arun Meshram (PW-31); Rajan Tiwari (PW-2); Rupali (PW-23)-the\n\n neighbour of A-1; Ms. Madhuri Permanand Dhawalkar (PW-34)-the\n\n dispenser at the petrol pump; Divya Chandel (PW-9); Shriram\n\n Shankarrao Khadatkar (PW-10) and Namdeo Dhawale (PW-11) and\n\n the call details of both the accused. It has also come on record\n\n that A-1 and Sonam Meshram (PW-19) had earlier visited the area\n\n in question while on the way to visit the temple of Lord Ganesha. Thus A-1 was familiar with the area, therefore, he found it\n\n appropriate to achieve his nefarious design at that place.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 71,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P071_C01",
+      "text": "69. The argument of Mr. Chaudhary is that the prosecution has not\n\nproved the time of death i.e. before 18:00 hrs. If the prosecution is\n\n able to the prove the death before 18:00 hrs., only then, A-1 can\n\n be said to be guilty of an offence under\nSection 302\nIPC, otherwise,\n\n the accused cannot be held guilty of a culpable homicide\n\n amounting to murder.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 302"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 72,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P072_C01",
+      "text": "70. From the CDR, A-1 was in the area of Patansaongi Lake from\n\n 17:36:53 hrs. to 17:50:49 hrs.; in Vinoba Bhave Nagar, i.e. from\n\n 18:31:46 hrs. to 18:33:59 hrs.; whereas, A-2 was in Vinoba Bhave\n\n Nagar area from 18:41:45 hrs. till 19:39:17 hrs. A-2 had called\n\n Ankush - the juvenile at 20:55:35 hrs., when he was on Takali\n\n Koradi Road i.e. the road between Patansaongi and Vinoba Bhave\n\n Nagar. The calls between A-1, A-2 and Dharmendra Yadav (PW-24)\n\n were exchanged between 19:28:15 hrs. to 19:32:50 hrs.\n\n Dharmendra Yadav (PW-24) was also in employment in the clinic of\n\n Dr. Chandak. He was acquainted with A-1 as he was also working\n\n in that clinic. He deposed that at about 19:00 hrs., A-2 called him\n\n and inquired about A-1. He also demanded the cellphone number\n\n of Dr. Chandak disclosing his name as Arvind, friend of A-1. He had\n\n not given him the cellphone number of Dr. Chandak as it was not\n\n available with him. After sometime, the phone was disconnected\n\n and within 5-10 minutes, he received another call from A-2 who\n\n sought the cellphone number of Pankaj Khurpade (PW-15). He had\n\n given cellphone number of Pankaj Khurpade (PW-15) to him.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 73,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P073_C01",
+      "text": "71. The judgment in Abdul Subhan is not applicable to the facts of\n\n the present case for the reason that A-1 was not proved to be\n\narrested on 1st September, 2014. In the reported judgment, the\n\n person who was said to have arrested the accused prior to the\n\n actual date of arrest, was examined before the High Court. It was\n\n on the basis of the additional evidence recorded, the High Court\n\n observed “that the statement made by Punwan, accused, in his\n\n confession to the effect that he was apprehended on 1 st March,\n\n 1938 is very probably true”. The IO in his statement before the\n\n High Court could not convince the Court that he had not arrested\n\n Punnu, accused, till 6th March, 1938. But the facts in the present\n\n appeals does not lead to any inference of the arrest of A-1 on 1 st\n\n September, 2014.\nii) Whether Common intention was terminated before the\n demand of ransom and death of victim",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 74,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P074_C01",
+      "text": "72. The argument that the conspiracy terminated the moment, A-1\n\n surrendered in the Lakadganj Police Station at 18:50 hrs. on\n\n 1st September, 2014, is again not tenable. In Nalini’s case itself, it\n\n has been held as under:\n“662. … It is not necessary that all the conspirators\n should participate from the inception to the end of the\n conspiracy; some may join the conspiracy after the time\n when such intention was first entertained by any one of\n them and some others may quit from the conspiracy. All\n of them cannot but be treated as conspirators. Where in\n pursuance of the agreement the conspirators commit\n offences individually or adopt illegal means to do a legal\n act which has a nexus to the object of conspiracy, all of\n them will be liable for such offences even if some of\n them have not actively participated in the commission\n of those offences.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 75,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P075_C01",
+      "text": "73. The said judgment was quoted with approval in\nCentral Bureau\n\nof Investigation & Anr. v. Mohd. Parvez Abdul Kayuum &\n\n Ors.23\n. Thus, it is not necessary that A-1 should participate till the\n\n end of conspiracy as some may quit from the conspiracy but all of\n\n them would be treated as conspirators. The common intention\n\n requires a pre-arranged plan and prior concert. Thus, there must\n\n be prior meeting of minds. The common intention must exist prior\n\n to the commission of the act in a point of time.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 76,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P076_C01",
+      "text": "74. A-1 is the driving force behind the conspiracy to kidnap for ransom. Merely because A-1 was physically separated from co-conspirator\n\n either before or after the death of the victim will not absolve him of\n\n offence under\nSection 302\nIPC or Section 364A as both A-1 and A-2\n\n were acting in tandem with each other. It is so evident that A-1\n\n received a phone call from A-2 when he was in Police Station at\n\n 19:04:17 hrs. when Dr. Chandak was also present in Police Station. Though, the ransom call was made by A-2 but in view of\nSection 34\nIPC, the consequence of such ransom call will be equally borne by\n\n A-1 also, as the planning of kidnapping for the purpose of ransom\n\n was that of A-1. It is the A-1 who had the motive to harm Dr. Chandak and also to be rich at the earliest. We do not find any\n\n merit in the argument that to make out an offence under\nSection\n\nIPC against A-1, the prosecution must prove the factum of\n\n death of the victim prior to 18:00 hrs. The medical evidence\n\n corroborates the time of death i.e. from 12 noon to midnight. The\n\n opinion of the expert can only suggest the time range, and not the\n\n precise time of death.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 302",
+        "IPC 34"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 76,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P076_C02",
+      "text": "The fact is that victim is proved to be in\n23 (2019) 12 SCC 1\n\ncustody of A-1 and A-2 till 18:00 hrs. or so and, thus, in terms of\n\n provisions of\nSection 106\nof the Evidence Act, it is for the accused\n\n to explain what happened to the victim before he was done to\n\n death. Since the victim was in custody of A-1 and A-2 and there is\n\n no evidence of any intervening factor to doubt that there could be\n\n a possibility of third person, it is for them to discharge the burden\n\n of such fact which is within their knowledge.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 77,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P077_C01",
+      "text": "75. This Court in Jai Bhagwan relied upon by the appellant, held that\n\n to apply\nSection 34\nIPC apart from the fact that there should be\n\n two or more accused, two factors must be established: ( i) common\n\n intention and (ii) participation of the accused in the commission of\n\n an offence. If a common intention is proved but no overt act is at-\n\n tributed to the individual accused,\nSection 34\nIPC will be attracted\n\n as it essentially involves vicarious liability but if participation of the\n\n accused in the crime is proved and a common intention is absent,\nSection 34\nIPC cannot be invoked. In every case, it is not possible\n\n to have direct evidence of a common intention. It has to be in-\n\n ferred from the facts and circumstances of each case. In Suresh,\n\n this Court held that the concept of presence of the co-accused at\n\n the scene is not a necessary requirement to attract\nSection 34\nIPC. The one line in the para can be read in isolation to argue that phys-\n\n ical presence of an accused is necessary. In fact, this Court held as\n\n under:\n“40.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "IPC 34"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 77,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P077_C02",
+      "text": "Participation in the crime in furtherance of the\n common intention cannot conceive of some\n independent criminal act by all accused persons,\n besides the ultimate criminal act because for that\n\nindividual act law takes care of making such accused\n responsible under the other provisions of the Code. The\n word “act” used in\nSection 34\ndenotes a series of acts\n as a single act. What is required under law is that the\n accused persons sharing the common intention must be\n physically present at the scene of occurrence and be\n shown not to have dissuaded themselves from the\n intended criminal act for which they shared the common\n intention. Culpability under\nSection 34\ncannot be\n excluded by mere distance from the scene of\n occurrence. The presumption of constructive intention,\n however, has to be arrived at only when the court can,\n with judicial servitude, hold that the accused must have\n preconceived the result that ensued in furtherance of\n the common intention. A Division Bench of the Patna\n High Court in Satrughan Patar v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 77,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P077_C03",
+      "text": "Emperor [AIR 1919 Pat\n 111 : 20 Cri LJ 289] held that it is only when a court with\n some certainty holds that a particular accused must\n have preconceived or premeditated the result which\n ensued or acted in concert with others in order to bring\n about that result, that\nSection 34\nmay be applied.”\n (Emphasis Supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 78,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P078_C01",
+      "text": "76. In the present appeals, the facts speak volumes about the common\n\n intention shared by both the appellants. Both the accused planned\n\n the kidnapping and executed it together. A-1 called Dharmendra\n\n Yadav (PW-24), even before the victim could be kidnapped to make\n\n sure that the parents of the child were not at home. A-2 is the one\n\n who picked up the child from the gate of the Apartment building.\n\n They were together till at least 18:33 hrs. whereas; the tower loca-\n\n tion of the mobile of A-2 was Vinoba Bhave Nagar till 19.39 hrs.,\n\n which is the area of the House of A-1. The conspiracy never came\n\n to an end when A-2 called Dr. Chandak (PW-1) demanding ransom,\n\n which was the reason of kidnapping the boy. Thus, the facts prove\n\n that both the accused had a common intention to kidnap the child.\n\niii) Applicability of Section 106 of the Evidence Act",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 79,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P079_C01",
+      "text": "77. The most important aspect in the present appeals is presumption\n\n under\nSection 106\nof the Evidence Act. This Court has examined\n\n the scope of\nSection 106\nof the Evidence Act in\nShambu Nath\n\n Mehra v. State of Ajmer24\n,\nState of W.B. v. Mir Mohammad\n\n Omar & Ors.25\n,\nSucha Singh v. State of Punjab26\n,\nRajender v. State (NCT of Delhi\n)27. In Shambu Nath Mehra, this court held\n\n that\nSection 106\nmust be considered in a commonsense way; and\n\n the balance of convenience and the disproportion of the labour\n\n that would be involved in finding out and proving certain facts\n\n balanced against the triviality of the issue at stake and the ease\n\n with which the accused could prove them, are all matters that\n\n must be taken into consideration. The section cannot be used to\n\n undermine the well-established rule of law that, save in a very\n\n exceptional class of case, the burden is on the prosecution and\n\n never shifts. This Court held as under:\n“9. This lays down the general rule that in a criminal\n case the burden of proof is on the prosecution and\nSection 106\nis certainly not intended to relieve it of that\n duty.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 79,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P079_C02",
+      "text": "On the contrary, it is designed to meet certain\n exceptional cases in which it would be impossible, or at\n any rate disproportionately difficult, for the prosecution\n to establish facts which are “especially” within the\n knowledge of the accused and which he could prove\n without difficulty or inconvenience. The word\n “especially” stresses that. It means facts that are pre-\n eminently or exceptionally within his knowledge. If the\n section were to be interpreted otherwise, it would lead\n to the very startling conclusion that in a murder case\n\n24 AIR 1956 SC 404\n25 (2000) 8 SCC 382\n26 (2001) 4 SCC 375\n27 (2019) 10 SCC 623\n\nthe burden lies on the accused to prove that he did not\n commit the murder because who could know better than\n he whether he did or did not. It is evident that that\n cannot be the intention and the Privy Council has twice\n refused to construe this section, as reproduced in\n certain other Acts outside India, to mean that the\n burden lies on an accused person to show that he did\n not commit the crime for which he is tried. These cases\n are\nAttygalle v. Emperor\n[AIR 1936 PC 169]\n and Seneviratne v. R. [(1936) 3 All ER 36, 49]”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 80,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P080_C01",
+      "text": "78. The Mir Mohammad Omar\ncase was a case of abduction. This\n\n Court after finding that the accused have abducted the deceased,\n\n held as under:\n“30. The abductors have not given any explanation as to\n what happened to Mahesh after he was abducted by\n them. But the learned Sessions Judge after referring to\n the law on circumstantial evidence concluded thus:\n“On a careful analysis and appreciation of the evidence I\n think that there is a missing link in the chain of events\n after the deceased was last seen together with the\n accused persons and the discovery of the dead body of\n the deceased at Islamia Hospital. Therefore, the\n conclusion seems irresistible that the prosecution has\n failed to establish the charge of murder against the\n accused persons beyond any reasonable doubt.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 81,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P081_C01",
+      "text": "31. The pristine rule that the burden of proof is on the\n prosecution to prove the guilt of the accused should not\n be taken as a fossilised doctrine as though it admits no\n process of intelligent reasoning. The doctrine of\n presumption is not alien to the above rule, nor would it\n impair the temper of the rule. On the other hand, if the\n traditional rule relating to burden of proof of the\n prosecution is allowed to be wrapped in pedantic\n coverage, the offenders in serious offences would be the\n major beneficiaries and the society would be the\n casualty.\nxx xx xx",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 82,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P082_C01",
+      "text": "33. Presumption of fact is an inference as to the\n existence of one fact from the existence of some other\n\nfacts, unless the truth of such inference is disproved.\nPresumption of fact is a rule in law of evidence that a\n fact otherwise doubtful may be inferred from certain\n other proved facts. When inferring the existence of a\n fact from other set of proved facts, the court exercises a\n process of reasoning and reaches a logical conclusion as\n the most probable position. The above principle has\n gained legislative recognition in India when\nSection 114\nis incorporated in the\nEvidence Act\n. It empowers the\n court to presume the existence of any fact which it\n thinks likely to have happened. In that process the court\n shall have regard to the common course of natural\n events, human conduct etc. in relation to the facts of\n the case.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 83,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P083_C01",
+      "text": "34. When it is proved to the satisfaction of the Court\n that Mahesh was abducted by the accused and they\n took him out of that area, the accused alone knew what\n happened to him until he was with them. If he was\n found murdered within a short time after the abduction\n the permitted reasoning process would enable the Court\n to draw the presumption that the accused have\n murdered him. Such inference can be disrupted if the\n accused would tell the Court what else happened to\n Mahesh at least until he was in their custody.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 84,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P084_C01",
+      "text": "79. This Court in Sucha Singh held as under:\n“19. We pointed out that\nSection 106\nof the Evidence\n Act is not intended to relieve the prosecution of its\n burden to prove the guilt of the accused beyond\n reasonable doubt, but the section would apply to cases\n where the prosecution has succeeded in proving facts\n for which a reasonable inference can be drawn\n regarding the existence of certain other facts, unless the\n accused by virtue of special knowledge regarding such\n facts failed to offer any explanation which might drive\n the court to draw a different inference.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 85,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P085_C01",
+      "text": "80. This Court in Rajender was examining the applicability of\nSection\n\nof the Evidence Act when the place of the murder of the de-\n\n ceased was a secluded area. The deceased was last been seen\n\n with the accused. The explanation in her statement under\nSection\n\nCr.P.C. was that she parted company with the deceased, when\n\nthe deceased got down from her car at the Inter-State Bus Termi-\nnus (ISBT). This explanation has been disbelieved by the trial court\n\n and the High Court. This Court held that the time-gap between the\n\n last seen and the time of the death of the deceased is so small so\n\n as to make it impossible for the deceased to come in the contact of\n\n any other person. It was held as under:\n“12.2.4. Having observed so, it is crucial to note that the\n reasonableness of the explanation offered by the\n accused as to how and when he/she parted company\n with the deceased has a bearing on the effect of the last\n seen in a case. Section 106\nof the Evidence Act, 1872\n provides that the burden of proof for any fact that is\n especially within the knowledge of a person lies upon\n such person.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 85,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P085_C02",
+      "text": "Thus, if a person is last seen with the\n deceased, he must offer an explanation as to how and\n when he parted company with the deceased. In other\n words, he must furnish an explanation that appears to\n the court to be probable and satisfactory, and if he fails\n to offer such an explanation on the basis of facts within\n his special knowledge, the burden cast upon him under\nSection 106\nis not discharged. Particularly in cases\n resting on circumstantial evidence, if the accused fails\n to offer a reasonable explanation in discharge of the\n burden placed on him, such failure by itself can provide\n an additional link in the chain of circumstances proved\n against him. This, however, does not mean that\nSection\n\nshifts the burden of proof of a criminal trial on the\n accused. Such burden always rests on the prosecution. Section 106\nonly lays down the rule that when the\n accused does not throw any light upon facts which\n are specially within his/her knowledge and which cannot\n support any theory or hypothesis compatible with his\n innocence, the court can consider his failure to adduce\n an explanation as an additional link which completes the\n chain of incriminating circumstances.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 86,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P086_C01",
+      "text": "81. The Judgments referred to by\nMr. Chaudhary, Sawal Das v. State\n\n of Bihar28\n,\nReena Hazarika and Gargi v. State of Haryana29\n,\n\n were to argue that the last seen evidence will not absolve the\n\n28 (1974) 4 SCC 193\n29 (2019) 9 SCC 738\n\nprosecution from the duty of discharging its general or primary\n\n burden of proving the prosecution case beyond reasonable doubt. It is only when the prosecution has led evidence which, if believed,\n\n will sustain a conviction, or which makes out a prima facie case,\n\n that the question arises of consideration of facts of which the\n\n burden of proof may lie upon the accused. However, the principles\nlaid down in\nthe aforesaid judgment are not applicable to the facts\n\n of the present case, when the prosecution has proved the act of\n\n kidnapping and the last seen evidence soon before the\n\n approximate time of death of victim. Therefore, the prosecution\n\n has discharged the onus of proof beyond reasonable doubt. It was\n\n then for the accused to rebut the presumption of any other\n\n intervening fact before the death of the victim.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 86,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P086_C02",
+      "text": "In fact, none of the\n\n prosecution witnesses have been cross- examined on that\n\n possibility at all.\niv) Changing version of the prosecution case",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 87,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P087_C01",
+      "text": "82. The Judgments of this court reported as Karanpura\nDevelopment Co. Ltd. and Sri Venkataramana Devaru have\n\n been relied upon to argue that an argument of fact cannot be\n\n raised for the first time before this Court. The reliance on such\n\n judgments is not tenable. In both the Judgments, no fact sought to\n\n be raised in appeal before this court, was pleaded in civil\n\n proceedings. The reference to such judgments is inappropriate. In\n\n the present appeals, the arguments raised by the prosecution are\n\n on the basis of evidence led and available on record.\nv) Recovery of dead body at the instance of A-1 cannot be\n\nbelieved",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 88,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P088_C01",
+      "text": "83. The dead body was recovered on the basis of disclosure statement\n\n of A-1. The body was lying concealed under a bridge constructed\n\n over a Rivulet. The body could not be visible to any person\n\n passing through that road. The photograph (Ex. Art./6) produced\n\n by the prosecution shows that the compartment under the bridge\n\n was more than 6 feet of diameter in which, one person could stand\n\n erect. Since the body was recovered from a concealed area\n\n covered by leaves and sand, it is the A-1 alone who could point out\n\n the concealment of dead body.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 89,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P089_C01",
+      "text": "84. It is wholly immaterial whether the death was caused before 18:00\n\n hrs. or afterwards as both the accused were seen with the victim\n\n together and the victim was in an inert condition. The injuries and\n\n the placement of the boulder/stone on the face of the victim was to\n\n hide the identity of the victim. As per Dr. Avinash Waghmode\n\n (PW-27), the injuries were perimortem i.e. when the vitals of the\n\n victim were functioning. That part of the statement corroborates\n\n the oral evidence led by the prosecution about the inert condition\n\n of the victim and the fact that he was carried on the shoulder by A-\n\n 1 as deposed by Shriram Shankarrao Khadatkar (PW-10) near\n\n Patansaongi Lake. It is matter of conjectures that such injuries\n\n could be caused by one person or two persons as the injuries could\n\n be caused even without any resistance by the victim in view of his\n\n inert condition. In fact, the statement of Dr. Avinash Waghmode\n\n (PW-27) is to the effect that the injuries caused to the victim\n\noccurred when the vitals were functioning, but the victim may not\n\n be in position to resist the physical assault on him.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 90,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P090_C01",
+      "text": "85. The argument that the disclosure statement was not recorded in\n\n the exact language of the accused since the manner of killing is\n\n not recorded in such disclosure statement, is immaterial. In terms\n\nSection 27\nof the Evidence Act, the discovery of facts alone is\n\n admissible evidence when the accused is in police custody. The\n\n manner of killing is inculpatory and, therefore, not admissible in\n\n evidence. In such a case, the mere fact that the disclosure\n\n statement does not record the manner of killing of the victim is\n\n wholly inconsequential. Thus, we do not find any merit in the\n\n argument raised by the learned counsel for A-1.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 91,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P091_C01",
+      "text": "86. The reliance of Mr. Chaudhary on the Judgment of this court in\nBakhshish Singh v. State of Punjab30\nis clearly erroneous. In\n\n the said case, the recovery of dead body was not believed as it\n\n was found to be possible for the accused to know the place where\n\n dead body was thrown in the river as broken teeth and parts of\n\n human body was lying near the place of recovery. In the present\n\n case, the dead body was lying in a concealed place and that there\n\n was no possible explanation on behalf of the accused as to how the\n\n body came to be concealed at that particular place, when the\n\n prosecution evidence proves that the accused were near the place\n\n of recovery of dead body almost at the probable time of death.\nvi) The effect of putting of incriminating evidence to the\n accused under Section 313 of the Code.\n30 (1971) 3 SCC 182\n87. In Reena Hazarika, a two Judge Bench has taken a view that the\n\n Court is duty bound to consider defense taken by the accused\n\n under Section 313 of the Code. Factually, in this case, A-1 and A-2\n\n have not taken any defense except the statement that they have\n\n been implicated falsely.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 91,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P091_C02",
+      "text": "A-1 has been put as many as 848\n\n questions whereas A-2 has been put as many as 754 questions but\n\n the accused have not taken any other stand except of denial of\n\n material facts. In fact, A-1 admitted to Question No. 54 that all the\n\n staff of Dr. Chandak’s clinic were called in to the police station. Dr. Chandak received calls of ransom when he was in the police\n\n station. Therefore\n,\nthe said judgment\nis of no help to the accused. An accused, as mentioned earlier, is required to cross-examine the\n\n prosecution witnesses to give him an opportunity to make any\n\n explanation which is open to him. It is a rule of professional\n\n practice in the conduct of a case. However, in the absence of any\n\n cross-examination of the prosecution witnesses, an argument\n\n cannot be built, in the absence of any evidence to that effect.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 92,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P092_C01",
+      "text": "88. The judgments in Hate Singh Bhagat Singh and Sharad\n\n Birdhichand Sarda are not applicable to the facts of the present\n\n case. Therein, it has been laid down that in a prosecution based\n\n upon a circumstantial evidence, the prosecution is required to rule\n\n out all other probabilities except that the offence was committed\n\n by the accused and no one else. In the present case, there is\n\n overwhelming evidence that shows the victim to be in company of\n\n the accused at five different places from 16:00 hrs. to 17:30 hrs –\n\n18.00 hrs. Thereafter, the burden shifts to the accused to explain\n\n the circumstances which occurred thereafter till the time of the\n\n recovery of dead body. There is no evidence to create a doubt on\n\n the prosecution version that somebody else had access to the\n\n victim before he died. The fact that the child was carried on\n\n shoulder by A-1 shows that the child was not in a position to move\n\n and was done to death in that condition which is corroborated by\n\n medical evidence of injuries being perimortem. Arguments on behalf of A-2\n89.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 92,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P092_C02",
+      "text": "Learned counsel for A-2 argued that A-1 had planned to commit a\n\n crime in terms of looting PW-8’s employer for money, but at the\n\n last minute, A-2 was joined in the kidnapping of the victim and he\n\n had no idea about the real motive of A-1 of seeking vengeance\n\n from the complainant and his family. However, such an argument\n\n is wholly untenable as he is the one who picked up the child from\n\n the gate of the Apartment where the family of the child used to\n\n stay and had been seen by a number of persons up to 17:30 hrs. It\n\n is thereafter that a ransom call is proved to have been made by A-\n\n 2 on the basis of statement of Mohandas Mitharam Balani (PW-16)\n\n from whose PCO, A-2 made the call. He was an active participant\n\n in the orchestration of the crime with A-1. Still further, the blue T-\n\n shirt worn by the victim was recovered on the basis of disclosure\n\n statement of A-2. Such disclosure statement corroborates that it is\n\n he who had taken off the shirt and thrown it in a rivulet /nullah\n\n which was at a distance of 5 kms. from the place of occurrence.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 93,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P093_C01",
+      "text": "90. An argument was raised that the child was kidnapped for ransom\n\nbut there was no intention to take life of the child, therefore, an\n\n offence under Section 364A is not made out. To appreciate the\n\n arguments,\nSection 364A\nof the IPC is reproduced as under:\n“364A. Kidnapping for ransom, etc.—Whoever kidnaps\n or abducts any person or keeps a person in detention\n after such kidnapping or abduction and threatens to\n cause death or hurt to such person, or by his conduct\n gives rise to a reasonable apprehension that such\n person may be put to death or hurt, or causes hurt or\n death to such person in order to compel the\n Government or any foreign State or international inter-\n governmental organisation or any other person to do or\n abstain from doing any act or to pay a ransom, shall be\n punishable with death, or imprisonment for life, and\n shall also be liable to fine.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 94,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P094_C01",
+      "text": "91. Section 364A\nIPC has three ingredients relevant to the present\n\n appeals, one, the fact of kidnapping or abduction, second,\n\n threatening to cause death or hurt, and last, the conduct giving\n\n rise to reasonable apprehension that such person may be put to\n\n death or hurt.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "IPC 364A"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 95,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P095_C01",
+      "text": "92. The kidnapping of an 8-year-old child was unequivocally for\n\n ransom. The kidnapping of a victim of such a tender age for\n\n ransom has inherent threat to cause death as that alone will force\n\n the relatives of such victim to pay ransom. Since the act of\n\n kidnapping of a child for ransom has inherent threat to cause\n\n death, therefore, the accused have been rightly been convicted for\n\n an offence under Section 364A read with\nSection 34\nIPC. The threat\n\n will remain a mere threat, if the victim returns unhurt. In the\n\n present case, the victim has been done to death. The threat had\n\n become a reality. There is no reason to take different view that the\n\nview taken by learned Sessions Judge as well by the High Court.\nSentence",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "IPC 34"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 96,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P096_C01",
+      "text": "93. We have heard learned counsel for the parties on the question of\n\n sentence. Mr. Chaudhary argued that this Court has imposed a\n\n higher standard of proof for the purposes of a death sentence over\n\n and above “beyond reasonable doubt” necessary for criminal\n\n conviction similar to “residual doubt”. He referred to a judgment of\n\n this court in\nAshok Debbarma v. State of Tripura31\nwherein it\n\n was held as under:\n“31. … In our criminal justice system, for recording guilt\n of the accused, it is not necessary that the prosecution\n should prove the case with absolute or mathematical\n certainty, but only beyond reasonable doubt. Criminal\n courts, while examining whether any doubt is beyond\n reasonable doubt, may carry in their mind, some\n “residual doubt”, even though the courts are convinced\n of the accused persons' guilt beyond reasonable doubt.”",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 97,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P097_C01",
+      "text": "94. This Court following the principle of residual doubt in a judgment\n\n reported as\nRavishankar v. State of Madhya Pradesh32\n, held\n\n that “another nascent evolution in the theory of death sentencing\n\n can be distilled. This Court has increasingly become cognizant of\n\n “residual doubt” in many recent cases which effectively create a\n\n higher standard of proof over and above the “beyond reasonable\n\n doubt” standard used at the stage of conviction, as a safeguard\n\n against routine capital sentencing, keeping in mind the irre-\n\n versibility of death”.\n31 (2014) 4 SCC 747\n32 (2019) 9 SCC 689\n95. Mr. Rohatgi, learned Senior Counsel representing the State submit-\nted that apart from aggravating circumstances considered by the\n\n learned Sessions Judge and the High Court, there is an additional\n\n fact brought on record of this appeal by an affidavit of Senior Po-\n\n lice Inspector, Police Station Lakadganj, Nagpur City that the A-1 is\n\n in fact an accused in FIR No. 3 of 2015 for the offences under Sec-\n\n tions 457, 380, 109, 120-B and 34 of\nIPC\n. A supplementary charge\n\n sheet has been filed against A-1 on 30 th July, 2019.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 97,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P097_C02",
+      "text": "The allegations\n\n are that two accused who committed house burglary were to-\n\n gether with A-1 in the cell of Police Station Sadar Nagpur. It is A-1\n\n who gave a tip to the other accused that there remains huge cash\n\n in the Dental Clinic of the PW-1. The accused, after they were\n\n released on bail, breached into the clinic of PW-1. Stolen goods\n\n such as cash, mobiles, camera and an ipad were recovered from\n\n the other accused. Therefore, it was argued that the accused has\n\n not left his activities even after the present case.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 98,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P098_C01",
+      "text": "96. We do not wish to take into consideration the subsequent charge\n\n sheet filed against A-1 to avoid any prejudice in a trial which may\n\n proceed on the basis of charge sheet already filed against ac-\n\n cused. We find that the accused have taken the life of a young\n\n school going boy of only 8 years of age to become rich by ransom\n\n and to take vengeance against Dr. Chandak. The argument is that\n\n since the accused are young, aged about 19 years, and have no\n\n criminal antecedents, the sentence of death imposed upon them\n\n is not warranted. It is argued that A-1 surrendered at the first\n\navailable opportunity and he was fully cooperative with the inves-\ntigation, therefore, there are the mitigating circumstances to ab-\n\n solve them from noose. We do not find any merit in the argument\n\n that being young or having no criminal antecedents are mitigating\n\n circumstances.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 98,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P098_C02",
+      "text": "What is required to be examined is whether there\n\n is a possibility of rehabilitation and whether it is the rarest of the\n\n rare case where the collective conscience of the community is so\n\n shocked that it will expect the holders of judicial power to inflict\n\n death penalty irrespective of their personal opinion as regards de-\n\n sirability or otherwise of retaining death penalty. The manner of\n\n commission of murder when committed in an extremely brutal,\n\n grotesque, diabolical, revolting or dastardly manner are aggravat-\n\n ing factors.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 99,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P099_C01",
+      "text": "97. The circumstances which are required to be taken into considera-\ntion are by now well settled. We would not like to repeat such cir-\n\n cumstances again. This court in\nMachhi Singh & Ors. v. State\n\n of Punjab33\nheld that as part of the “rarest of rare” test, the court\n\n should address itself as to whether:\n“(i) there is something uncommon about the crime\n which renders sentence of imprisonment for life\n inadequate and calls for a death sentence;\n(ii) the circumstances are such that there is no\n alternative but to impose death sentence even after\n according maximum weightage to the mitigating\n circumstances which speak in favour of the offender.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 100,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P100_C01",
+      "text": "98. Further, this Court ruled that: (SCC p. 489, para 38)\n\n “(i) The extreme penalty of death need not be inflicted\n\n33 (1983) 3 SCC 470\n\nexcept in gravest cases of extreme culpability.\n(ii) Before opting for the death penalty the\n circumstances of the “offender” also require to be taken\n into consideration along with the circumstances of the\n “crime”.\n(iii) Life imprisonment is the rule and death sentence is\n an exception. In other words death sentence must be\n imposed only when life imprisonment appears to be an\n altogether inadequate punishment having regard to the\n relevant circumstances of the crime, and provided, and\n only provided, the option to impose sentence of\n imprisonment for life cannot be conscientiously\n exercised having regard to the nature and\n circumstances of the crime and all the relevant\n circumstances.\n(iv) A balance sheet of aggravating and mitigating\n circumstances has to be drawn up and in doing so the\n mitigating circumstances have to be accorded full\n weightage and a just balance has to be struck between\n the aggravating and the mitigating circumstances\n before the option is exercised.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 101,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P101_C01",
+      "text": "99. Later this Court in\nSwamy Shraddananda (2) v. State of\n\n Karnataka34\n, held that in, the interest of justice, the court could\n\n commute the death sentence imposed on the convict and\n\n substitute it with life imprisonment with a direction that the convict\n\n would not be released from prison for the rest of his life. This view\n\n stands approved by a Constitution Bench of this Court in\nUnion of\n\n India v. V. Sriharan & Ors.35\nholding that the power to impose a\n\n modified punishment providing for any specific term of\n\n incarceration or till the end of the convict's life as an alternate to\n\n death penalty, can be exercised only by the High Court and the\n\n34 (2008) 13 SCC 767\n35 (2016) 7 SCC 1\n\nSupreme Court and not by any other inferior court. This Court held\n\n as under:\n“105. We, therefore, reiterate that the power derived\n from the Penal Code for any modified punishment within\n the punishment provided for in the Penal Code for such\n specified offences can only be exercised by the High\n Court and in the event of further appeal only by the\n Supreme Court and not by any other court in this\n country.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 101,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P101_C02",
+      "text": "To put it differently, the power to impose a\n modified punishment providing for any specific term of\n incarceration or till the end of the convict's life as an\n alternate to death penalty, can be exercised only by the\n High Court and the Supreme Court and not by any other\n inferior court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 102,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P102_C01",
+      "text": "106. Viewed in that respect, we state that the\nratio\nlaid\n down in\nSwamy Shraddananda (2) [Swamy\n Shraddananda (2) v. State of Karnataka\n, (2008) 13 SCC\n 767 : (2009) 3 SCC (Cri) 113] that a special category of\n sentence; instead of death; for a term exceeding 14\n years and put that category beyond application of\n remission is well founded and we answer the said\n question in the affirmative.\nWe are, therefore, not in\n agreement with the opinion expressed by this Court\nSangeet v. State of Haryana [Sangeet\nv. State of\n Haryana, (2013) 2 SCC 452 : (2013) 2 SCC (Cri) 611]\n that the deprival of remission power of the appropriate\n Government by awarding sentences of 20 or 25 years or\n without any remission as not permissible is not in\n consonance with the law and we specifically overrule\n the same.”",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 103,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P103_C01",
+      "text": "100. The motive of the accused to take life was to become rich by not\n\n doing hard work but by demanding ransom after kidnapping a\n\n young, innocent boy of 8 years. Thus, having considered all the\n\n circumstances and facts on record, we are of the considered view\n\n that the present case falls short of the “rarest of rare” cases where\n\n a death sentence alone deserves to be awarded to the appellants. It appears to us in light of all cumulative circumstances that the\n\ncause of justice will be effectively served by invoking the concept\n\n of special sentencing as evolved by this Court in the cases of\n\n Swamy Shraddananda and Sriharan. Thus, the present appeals\n\n succeed in part. The Judgment and Order passed by the learned\n\n Trial Court and confirmed by the High Court convicting the accused\n\n for the offences punishable under Sections 302 and 364A read with\nSection 34\nIPC is hereby confirmed. However, the death sentence\n\n imposed by the learned Trial Court, confirmed by the High Court, is\n\n converted into the life imprisonment.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "IPC 34"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 103,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P103_C02",
+      "text": "It is further observed and di-\n\n rected that the life means till the end of the life with the further ob-\n\n servation and direction that there shall not be any remission till the\n\n accused completes 25 years of imprisonment.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 104,
+      "chunk_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA_P104_C01",
+      "text": "101. The appeals stand dismissed except modification in respect of sen-\ntence.\n.............................................J.\n (UDAY UMESH LALIT)\n\n .............................................J.\n (INDU MALHOTRA)\n\n .............................................J.\n (HEMANT GUPTA)\n\nNEW DELHI;\nAPRIL 24, 2020.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Arvind Singh vs The State Of Maharashtra",
+    "case_id": "SC_2020_ARVIND_SINGH_VS_THE_STATE_OF_MAHARASHTRA",
+    "court": "Supreme Court of India",
+    "year": "2020",
+    "facts_summary": "1. The present appeals are directed against the judgment and order\n\n passed by the High Court of Judicature at Bombay (Nagpur Bench)\n\n on 5th May, 2016 whereby the appeals filed by the appellants\n\n Rajesh Daware1 and Arvind Singh2 against their conviction for\n\n offences punishable under Section 364A read with\nSection 34\n\n the Indian Penal Code, 18603 and\nSection 302\nread with\nSection 34\nIPC was dismissed by confirming the death sentence imposed upon\n\n them by the learned Sessions Judge, Nagpur vide its order dated\n\n 4th February, 2016. 2. The prosecution process was set in motion on the basis of an oral\n’\n\nstatement made by Dr. Mukesh Ramanlal Chandak (PW-1) to the\n\n Police Sub-Inspector, Police Station Lakadganj, Nagpur City on\n\n 1st September, 2014 about his son Yug, aged 8 years being\n\n missing. Dr. Chandak stated that, on 1st September, 2014, when\n\n he was present with his wife at the hospital, she told him that their\n\n driver Raju Tote had informed her on the phone that their son went\n\n along with somebody. Dr. Chandak (PW-1) came home and\n\n inquired from Arun Parmanand Meshram (PW-31), the watchman of\n\n their housing society, “Guru Vandana Apartment 4”, who informed\n\n him that at about 3:45 pm, when he was sitting near the gate of\n\n the Apartment, an unknown, fair complexioned boy, aged about\n\n 20-25 years, wearing a red half sleeves T-shirt, full white pants with\n\n a white handkerchief wrapped around his face, came to him, riding\n\n a black scooty. This boy parked his v",
+    "legal_issues": "40. On the other hand, the CDRs of A-2 (Ex.150/1) corroborate the calls\n\n exchanged between A-2 and Dharmendra Yadav (PW-24) on\n\n 1st September, 2014 from 19:28 hrs. till 19:32 hrs. to inquire about\n\n Dr. Chandak’s contact details, as also the call made by A-2 to\n\n Pankaj Khurpade (PW-15), who had given the mobile number of Dr. Chandak to A-2. The CDR’s also corroborate the call A-2 had made\n\n to Dr. Chandak at 19:39:17 hrs. presumably to verify the number\n\n given by Pankaj Khurpade (PW-15). It is thereafter the ransom call\n\n was made at 20:53:18 hrs. and received by Dr. Chandak. Mohandas Mitharam Balani (PW-16) has also corroborated such call\n\n from his PCO. Thus, the oral testimonies of the prosecution\n\n witnesses stand corroborated by the CDRs of both the accused. Submissions on behalf of A-1\n41. Before this Court, Mr. Yug Chaudhary, learned counsel for A-1\n\n vehemently argued that both the Courts have overlooked material\n\n evidence that A-1 was in Police custody from 18:50 hrs. on\n\n 1st September, 2014, though his formal arrest was reflected in the\n\n records on 2nd September, 2014 at 17:10 hrs. 42. It was argued that the prosecution had not led any evidence to\n\n suggest that the deceased died before 18:00 hrs. i.e. the period\n\n during which the deceased can be said to be in custody of the\n\n accused as A-1 had received a call from N.T. Gosawi (PW-25) at\n\n 17:50 hrs., when he was in the area of Patansaongi lake which is\n\n about 26 kms and 33 minutes away from his house. Sin",
+    "ratio_summary": "Thus, we hold that a party intending to bring\n\n evidence to impeach or contradict the testimony of a witness must\n\n give an opportunity to explain or answer when the witness is in the\n\n witness box. 81. The Judgments referred to by\nMr. Chaudhary, Sawal Das v. State\n\n of Bihar28\n,\nReena Hazarika and Gargi v. State of Haryana29\n,\n\n were to argue that the last seen evidence will not absolve the\n\n28 (1974) 4 SCC 193\n29 (2019) 9 SCC 738\n\nprosecution from the duty of discharging its general or primary\n\n burden of proving the prosecution case beyond reasonable doubt. It is only when the prosecution has led evidence which, if believed,\n\n will sustain a conviction, or which makes out a prima facie case,\n\n that the question arises of consideration of facts of which the\n\n burden of proof may lie upon the accused. However, the principles\nlaid down in\nthe aforesaid judgment are not applicable to the facts\n\n of the present case, when the prosecution has proved the act of\n\n kidnapping and the last seen evidence soon before the\n\n approximate time of death of victim. Therefore, the prosecution\n\n has discharged the onus of proof beyond reasonable doubt. It was\n\n then for the accused to rebut the presumption of any other\n\n intervening fact before the death of the victim. 93. We have heard learned counsel for the parties on the question of\n\n sentence. Mr. Chaudhary argued that this Court has imposed a\n\n higher standard of proof for the purposes of a death sentence over\n\n and above “beyond reason",
+    "final_order": "",
+    "outcome_summary": "Dismissed",
+    "sections_cited": [
+      "IPC 34",
+      "IPC 363",
+      "IPC 302",
+      "IPC 364A",
+      "IPC 299",
+      "IPC 84"
+    ],
+    "cases_cited": []
+  }
+}

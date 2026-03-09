@@ -15,6 +15,15 @@ v3 changes vs v2:
      MANU); court name OCR-garble correction via fuzzy state-name matching.
   5. process_case_laws_directory deduplicates chunks on (case_name, para_num,
      first-200-chars) before returning, eliminating ~1 500 duplicate case chunks.
+
+v4 changes (ingestion improvements, requires vector store rebuild):
+  6. Bare acts: _strip_bare_act_editorial_noise removes "Subs. by Act…", gazette
+     refs, footnote markers, standalone page numbers before chunking.
+  7. Case metadata: _detect_case_metadata prefers title-zone match, rejects
+     narrative-looking false positives, adds BETWEEN X AND Y pattern.
+  8. Case law: paragraph_type (facts|arguments|reasoning|ratio|order|unknown) via
+     heuristics; sections_cited list extracted per chunk; _clean_ocr_noise strips
+     page-only lines and single-letter lines.
 """
 
 import re
@@ -78,6 +87,34 @@ def extract_text_from_file(file_path: str) -> str:
 # ---------------------------------------------------------------------------
 # Bare Act Section-Level Chunking
 # ---------------------------------------------------------------------------
+
+# Editorial noise patterns to strip from bare-act section text (not legal content)
+_BARE_ACT_NOISE_PATTERNS = [
+    re.compile(
+        r"\b(?:Subs\.?|Substituted|Inserted|Ins\.?|Added|Omitted|Omit\.?|Deleted|Rep\.?)\s+"
+        r"by\s+(?:the\s+)?(?:Act\s+)?\d+\s+of\s+\d{4}[^.\n]*(?:\.|$)",
+        re.IGNORECASE,
+    ),
+    re.compile(r"Published\s+in\s+Gazette\s+of\s+India[^.\n]*(?:\.|$)", re.IGNORECASE),
+    re.compile(r"\[?\s*Vide\s+[^\]]+\]\s*", re.IGNORECASE),
+    re.compile(r"\s*\[\d{1,3}\]\s*(?=\s|$|\n)"),
+    re.compile(r"^\s*\d{1,3}\[\s*", re.MULTILINE),
+]
+_BARE_ACT_PAGE_LINE = re.compile(r"^(?:\s*Page\s+)?\d{1,4}\s*$", re.MULTILINE)
+
+
+def _strip_bare_act_editorial_noise(text: str) -> str:
+    """Remove amendment notices, gazette refs, footnote markers, page-only lines."""
+    if not (text or "").strip():
+        return text or ""
+    out = text
+    for pat in _BARE_ACT_NOISE_PATTERNS:
+        out = pat.sub(" ", out)
+    out = _BARE_ACT_PAGE_LINE.sub("", out)
+    out = re.sub(r"[ \t]+", " ", out)
+    out = re.sub(r"\n\s*\n\s*\n+", "\n\n", out)
+    return out.strip()
+
 
 # Patterns to detect section headings in Indian bare acts
 _SECTION_PATTERNS = [
@@ -763,6 +800,7 @@ def chunk_bare_act(text: str, filename: str = "") -> list:
         else:
             end = min(schedule_boundary, len(text))
         section_text = text[start:end].strip()
+        section_text = _strip_bare_act_editorial_noise(section_text)
 
         if len(section_text) < 30:
             continue
@@ -983,6 +1021,149 @@ _INDIAN_STATES = [
 ]
 _STATE_LOOKUP = {s.lower(): s for s in _INDIAN_STATES}
 
+# Narrative words that indicate a false-positive case name (e.g. "he saw the versus undergo")
+_CASE_NAME_NARRATIVE_WORDS = frozenset({
+    "near", "saw", "undergo", "years", "year", "month", "days", "stated",
+    "according", "therefore", "however", "wherein", "whereas", "hence",
+    "thus", "thereafter", "then", "after", "before", "when", "while",
+    "because", "although", "though", "said", "told", "asked", "replied",
+})
+
+# Words/phrases that indicate argument headings or non-title text, not a case name
+_CASE_NAME_BAD_PHRASES = frozenset({
+    "counsel for the", "counsel for", "petitioner", "respondent", "informant",
+    "the accused", "the petitioner", "the respondent", "scobserver",
+    "writ petition", "wp no", "crl.", "crl ", "civil appeal", "criminal appeal",
+})
+
+# Max reasonable length for a single party name in "X v. Y"
+_MAX_PARTY_NAME_CHARS = 60
+
+# Header zone: only first N chars used for case name extraction (avoids body/arguments)
+_CASE_NAME_HEADER_CHARS = 1800
+
+# Administrative prefixes to strip from case names (identifiers, not party names) — roadmap Rule 2
+_ADMIN_PREFIX_PATTERN = re.compile(
+    r"^(?:HC_|SC_|WP_|Crl_|W\.P\.\s*No\.?|Crl\.?\s*)\s*",
+    re.IGNORECASE,
+)
+
+# OCR garbage: reject case names containing these — roadmap Rule 3
+_OCR_GARBAGE_PATTERN = re.compile(r"[#;']|\d[\s,.';\"]+[a-z]|[a-z][\s,.';\"]+\d", re.IGNORECASE)
+
+
+def _strip_admin_prefix(name: str) -> str:
+    """Strip leading HC_, SC_, WP_, Crl_ etc. from case name (roadmap: Rule 2)."""
+    if not name or not isinstance(name, str):
+        return name
+    return _ADMIN_PREFIX_PATTERN.sub("", name.strip()).strip()
+
+
+def _is_likely_bad_case_name(name: str) -> bool:
+    """
+    Return True if the string looks like OCR garbage, argument headings, or non-case text.
+    Used to reject bad case names and cited-case strings for graph quality.
+    Roadmap: Rule 1 (valid A v B), Rule 3 (OCR garbage).
+    """
+    if not name or len(name) < 4:
+        return True
+    lower = name.lower().strip()
+    for phrase in _CASE_NAME_BAD_PHRASES:
+        if phrase in lower:
+            return True
+    # OCR garbage: #, ;, ', digits mixed with punctuation — roadmap Rule 3
+    if _OCR_GARBAGE_PATTERN.search(name):
+        return True
+    # Case numbers / docket numbers (e.g. "6985 and 11988 of 2023")
+    if re.search(r"\d{4,}\s+and\s+\d{4,}", lower):
+        return True
+    if re.search(r"\bwp\s*no\.?\s*\d+|crl\.?\s*\d+", lower):
+        return True
+    # Address-like (e.g. "2023_Hyderabad-500073 and Others")
+    if re.search(r"\d{4}_[A-Za-z]+-\d{5}", lower):
+        return True
+    # Truncated or single-letter party (e.g. "rosy jacob v ja")
+    parts = re.split(r"\s+v\.?\s*|vs\.?\s*|versus\s*", name, flags=re.IGNORECASE, maxsplit=1)
+    if len(parts) >= 2:
+        left, right = parts[0].strip(), parts[1].strip()
+        if len(right) <= 2 or len(left) <= 2:
+            return True
+    return False
+
+
+def _first_party_only_from_side(party_side: str) -> str:
+    """
+    When there are multiple parties on one side (e.g. "A, B and C" or "X & Ors."),
+    return only the first full name: take segment before first "," or "(", then strip & Ors.
+    Dots remain part of the name (e.g. "Dr. A. B. Rao" is kept intact).
+    """
+    if not party_side or not isinstance(party_side, str):
+        return ""
+    cut_idx = len(party_side)
+    for ch in [",", "("]:
+        idx = party_side.find(ch)
+        if idx != -1 and idx < cut_idx:
+            cut_idx = idx
+    first = party_side[:cut_idx].strip()
+    first = re.sub(r"\s*[&,]\s*(Ors\.?|Others?|Anr\.?|Another)\s*$", "", first, flags=re.IGNORECASE).strip()
+    return first[: _MAX_PARTY_NAME_CHARS] if first else ""
+
+
+def _normalize_case_name_for_display(name: str) -> str:
+    """
+    Normalize case name for storage and display: strip reporter prefixes, unify v./vs/versus,
+    collapse spaces, and use only the first full name from each side when multiple parties.
+    e.g. "S.C.R. A ABHILASHA v PARKASH" -> "A Abhilasha v Parkash"
+    e.g. "A, B and C v X, Y and Z" -> "A v X"
+    """
+    if not name or not isinstance(name, str):
+        return ""
+    s = re.sub(r"\s+", " ", name.strip()).strip()
+    # Strip leading reporter/source abbreviations
+    s = re.sub(r"^(?:S\.C\.R\.|AIR|SCC|SCR)\s*\.?\s*", "", s, flags=re.IGNORECASE).strip()
+    # Unify v. / vs / versus to single " v "
+    s = re.sub(r"\s+v\.?\s*|vs\.?\s*|versus\s*", " v ", s, flags=re.IGNORECASE)
+    s = re.sub(r"\s+", " ", s).strip()
+    # When multiple parties on either side, keep only first full name from each
+    if " v " in s:
+        left, _, right = s.partition(" v ")
+        left = _first_party_only_from_side(left.strip()).strip()
+        right = _first_party_only_from_side(right.strip()).strip()
+        if left and right:
+            s = f"{left} v {right}"
+    # Simple title-case for party names (capitalise first letter of each word)
+    words = s.split()
+    out = []
+    for w in words:
+        if w.upper() == "V" or w.lower() == "v":
+            out.append("v")
+        elif len(w) > 1:
+            out.append(w[0].upper() + w[1:].lower())
+        else:
+            out.append(w)
+    return " ".join(out)[:200]
+
+
+def _looks_like_narrative_case_name(name: str) -> bool:
+    """Return True if the extracted 'case name' looks like narrative text, not party names."""
+    if not name or len(name) > 120:
+        return True
+    lower = name.lower()
+    words = set(lower.split())
+    if words & _CASE_NAME_NARRATIVE_WORDS:
+        return True
+    # "X v. Y" — each part should be short and not a full sentence
+    if " v. " in name or " v " in name or " vs " in name or " versus " in lower:
+        parts = re.split(r"\s+v\.?\s*|vs\.?\s*|versus\s*", name, flags=re.IGNORECASE, maxsplit=1)
+        if len(parts) >= 2:
+            left, right = parts[0].strip(), parts[1].strip()
+            if len(left) > _MAX_PARTY_NAME_CHARS or len(right) > _MAX_PARTY_NAME_CHARS:
+                return True
+            # Party names are usually 2–5 words (e.g. "State of Bihar", "Ramchandra")
+            if len(left.split()) > 8 or len(right.split()) > 8:
+                return True
+    return False
+
 
 def _sanitise_court_name(raw: str) -> str:
     """
@@ -1051,7 +1232,12 @@ def _sanitise_court_name(raw: str) -> str:
 
 
 def _detect_case_metadata(text: str, filename: str) -> dict:
-    """Extract case name, court, year, citation from judgment text (v3)."""
+    """
+    Extract case name, court, year, citation from judgment text (v3+).
+
+    v4: Prefer title/cover area (first ~1500 chars); reject narrative-looking
+    matches; add BETWEEN X AND Y pattern; prefer line with citation.
+    """
     metadata = {
         "case_name": "",
         "court": "",
@@ -1060,12 +1246,61 @@ def _detect_case_metadata(text: str, filename: str) -> dict:
         "bench": "",
     }
 
-    scan = text[:5000]  # v3: extended from 3 000 to 5 000
+    scan = text[:5000]  # Court, year, citation can use slightly more text
+    # Header only for case name: avoids "Counsel for the vs Counsel for the" and body text (graph quality)
+    title_zone = text[: _CASE_NAME_HEADER_CHARS]
 
-    # Case name (X v. Y)
-    match = _CASE_NAME_PATTERN.search(scan)
-    if match:
-        metadata["case_name"] = f"{match.group(1).strip()} v. {match.group(2).strip()}"
+    # --- Case name: only from header; strip admin prefixes, normalize, reject bad/OCR ---
+    def _set_case_name(candidate: str) -> bool:
+        if not candidate:
+            return False
+        # Roadmap Rule 2: strip HC_, SC_, WP_, Crl_ before normalizing
+        candidate = _strip_admin_prefix(candidate)
+        if not candidate or len(candidate) < 10:
+            return False
+        normalized = _normalize_case_name_for_display(candidate)
+        if not normalized or _looks_like_narrative_case_name(normalized) or _is_likely_bad_case_name(normalized):
+            return False
+        metadata["case_name"] = normalized
+        return True
+
+    # 1) BETWEEN ... AND ... (common in Indian judgments) — header only
+    between_pat = re.compile(
+        r"BETWEEN\s+([A-Z][A-Za-z\s\.]+?)\s+AND\s+([A-Z][A-Za-z\s\.]+?)(?:\s*\.|\s*\(|\s*\n|$)",
+        re.IGNORECASE,
+    )
+    m = between_pat.search(title_zone)
+    if m:
+        left = _strip_admin_prefix(re.sub(r"\s+", " ", m.group(1)).strip())
+        right = re.sub(r"\s+", " ", m.group(2)).strip()
+        if len(left) <= _MAX_PARTY_NAME_CHARS and len(right) <= _MAX_PARTY_NAME_CHARS and left and right:
+            candidate = f"{left} v. {right}"
+            if _set_case_name(candidate):
+                pass  # use this
+
+    # 2) X v. / vs. / versus Y — header zone only (no fallback to body); strip admin prefix from raw line
+    if not metadata["case_name"]:
+        match = _CASE_NAME_PATTERN.search(title_zone)
+        if match:
+            candidate = f"{match.group(1).strip()} v. {match.group(2).strip()}"
+            candidate = _strip_admin_prefix(candidate)
+            if candidate and " v " in candidate:
+                _set_case_name(candidate)
+
+    # 3) Line containing both " v." and citation — restrict to first 30 lines of header
+    if not metadata["case_name"] and _CITATION_PATTERN.search(title_zone):
+        lines = title_zone.splitlines()
+        for line in lines[:30]:
+            line = line.strip()
+            if len(line) < 20 or len(line) > 200:
+                continue
+            if " v." not in line and " v " not in line and " vs " not in line.lower():
+                continue
+            m = _CASE_NAME_PATTERN.search(line)
+            if m:
+                candidate = _strip_admin_prefix(f"{m.group(1).strip()} v. {m.group(2).strip()}")
+                if candidate and " v " in candidate and _set_case_name(candidate):
+                    break
 
     # Court
     for court_name, pattern in _COURT_PATTERNS.items():
@@ -1085,10 +1320,23 @@ def _detect_case_metadata(text: str, filename: str) -> dict:
                 metadata["court"] = court_name
             break
 
-    # Year
+    # Year (prefer first 4-digit year in title zone); roadmap Rule 4: sanity 1850–current year
     years = _YEAR_PATTERN.findall(scan)
     if years:
-        metadata["year"] = years[0]
+        try:
+            y = int(years[0])
+            from datetime import date
+            current_year = date.today().year
+            if 1850 <= y <= current_year:
+                metadata["year"] = years[0]
+        except (ValueError, TypeError):
+            pass
+
+    # Court: if header has HC_/WP/Crl, do not assign Supreme Court (roadmap: court misclassification)
+    if metadata["court"] == "Supreme Court of India" and re.search(
+        r"\b(HC_|SC_|WP\s*No\.?|W\.P\.|Crl\.?)", title_zone[:1000], re.IGNORECASE
+    ):
+        metadata["court"] = "High Court"
 
     # Citation (v3: expanded patterns)
     cite_match = _CITATION_PATTERN.search(text[:6000])
@@ -1104,14 +1352,267 @@ def _detect_case_metadata(text: str, filename: str) -> dict:
     if bench_match:
         metadata["bench"] = bench_match.group(1).strip()[:200]
 
-    # Fallback: derive from filename
-    if not metadata["case_name"]:
+    # Fallback: derive from filename (normalize and reject bad)
+    if not metadata["case_name"] and filename:
         name = os.path.splitext(os.path.basename(filename))[0]
         name = name.replace("_", " ").replace("-", " ")
-        if " v " in name.lower() or " vs " in name.lower():
-            metadata["case_name"] = name.title()
+        name = _strip_admin_prefix(name)
+        if name and (" v " in name.lower() or " vs " in name.lower()):
+            candidate = _normalize_case_name_for_display(name)
+            if candidate and not _looks_like_narrative_case_name(candidate) and not _is_likely_bad_case_name(candidate):
+                metadata["case_name"] = candidate
 
     return metadata
+
+
+def _clean_ocr_noise(text: str) -> str:
+    """
+    Strip common OCR artifacts from case-law text: standalone page numbers,
+    single-letter lines, repeated header/footer lines, excess blank lines.
+    """
+    if not (text or "").strip():
+        return text or ""
+    lines = text.splitlines()
+    out = []
+    for line in lines:
+        s = line.strip()
+        # Drop lines that are only 1–4 digits (page numbers)
+        if re.fullmatch(r"\d{1,4}", s):
+            continue
+        # Drop single-letter or two-letter lines (OCR noise)
+        if len(s) <= 2 and re.match(r"^[A-Za-z]$", s):
+            continue
+        if len(s) == 2 and s.isalpha():
+            continue
+        out.append(line)
+    # Collapse multiple consecutive blank lines to at most two
+    result = re.sub(r"\n\s*\n\s*\n+", "\n\n", "\n".join(out))
+    return result.strip()
+
+
+# Heuristic keywords for paragraph-type classification (case law)
+_PARA_TYPE_FACTS = re.compile(
+    r"\b(?:the\s+)?(?:petitioner|respondent|appellant|plaintiff|defendant)\b"
+    r"|stated\s+that|according\s+to\s+(?:the\s+)?(?:petitioner|respondent)"
+    r"|facts\s+of\s+the\s+case|brief\s+facts|case\s+of\s+the\s+petitioner"
+    r"|in\s+the\s+present\s+case\s+",
+    re.IGNORECASE,
+)
+_PARA_TYPE_ARGUMENTS = re.compile(
+    r"\b(?:submitted|contended|argued)\s+that\b|learned\s+counsel"
+    r"|it\s+was\s+argued|submission\s+of\s+the\s+(?:petitioner|respondent)",
+    re.IGNORECASE,
+)
+_PARA_TYPE_REASONING = re.compile(
+    r"\bwe\s+are\s+of\s+(?:the\s+)?view\b|in\s+our\s+view\b|considering\s+(?:the\s+)?"
+    r"|in\s+the\s+light\s+of\b|in\s+view\s+of\s+the\s+above"
+    r"|(?:we\s+)?hold\s+that\b|the\s+court\s+held",
+    re.IGNORECASE,
+)
+_PARA_TYPE_RATIO = re.compile(
+    r"\bratio\s+decidendi\b|the\s+law\s+is\s+that\b|it\s+is\s+held\b"
+    r"|accordingly\s+we\s+hold\b|the\s+court\s+holds\b",
+    re.IGNORECASE,
+)
+_PARA_TYPE_ORDER = re.compile(
+    r"\bin\s+the\s+result\b|appeal\s+is\s+(?:accordingly\s+)?(?:allowed|dismissed)"
+    r"|petition\s+is\s+(?:allowed|dismissed)|ordered\s+that\b"
+    r"|writ\s+petition\s+is\s+(?:allowed|dismissed)",
+    re.IGNORECASE,
+)
+
+
+def _classify_paragraph_type(para_text: str, para_label: str, para_index: int, total_paras: int) -> str:
+    """
+    Classify case-law paragraph as facts | arguments | reasoning | ratio | order | unknown.
+    Uses heuristics (keywords + position). Early paragraphs often contain facts.
+    """
+    if not (para_text or "").strip():
+        return "unknown"
+    text = para_text[:2000]  # first 2k chars enough for signals
+    lower = text.lower()
+    is_early = total_paras and para_index < max(3, total_paras // 5)
+
+    if _PARA_TYPE_ORDER.search(text):
+        return "order"
+    if _PARA_TYPE_RATIO.search(text):
+        return "ratio"
+    if _PARA_TYPE_REASONING.search(text):
+        return "reasoning"
+    if _PARA_TYPE_ARGUMENTS.search(text):
+        return "arguments"
+    if _PARA_TYPE_FACTS.search(text) or (is_early and para_label not in ("preamble", "0", "1")):
+        # Early paras without other signals → often facts
+        if not _PARA_TYPE_REASONING.search(text) and not _PARA_TYPE_RATIO.search(text):
+            return "facts"
+    if is_early and ("petitioner" in lower or "respondent" in lower or "stated" in lower):
+        return "facts"
+    return "unknown"
+
+
+# Section reference patterns: "Section 307 IPC", "Section 27 of Arms Act", "IPC Section 302"
+_SECTION_CITED_PATTERNS = [
+    re.compile(r"Section\s+(\d+[A-Za-z]?)\s+(?:of\s+)?([A-Za-z][A-Za-z\s]+?)(?:\s+Act|\s*$)", re.IGNORECASE),
+    re.compile(r"Section\s+(\d+[A-Za-z]?)\s+(IPC|BNS|CrPC|CPC|TPA|BNSS|IEA|Evidence\s+Act|Contract\s+Act|NI\s+Act|SRA|HMA|Arms\s+Act|MV\s+Act)\b", re.IGNORECASE),
+    re.compile(r"\b(IPC|BNS|CrPC|CPC|TPA|BNSS|IEA|Arms\s+Act|MV\s+Act)\s+Section\s+(\d+[A-Za-z]?)", re.IGNORECASE),
+    re.compile(r"Article\s+(\d+[A-Za-z]?)\s+(?:of\s+)?(?:the\s+)?Constitution", re.IGNORECASE),
+]
+
+
+# Reject statute refs that are clearly not act+section (e.g. "the 6", "thesaid 4") — roadmap statute–case linking
+_VALID_SECTION_KEY = re.compile(r"^([A-Za-z][A-Za-z0-9]*)\s+(\d+[A-Za-z]?)$|^Constitution\s+(\d+[A-Za-z]?)$", re.IGNORECASE)
+_SECTION_ACT_BLOCKLIST = frozenset({"the", "thesaid", "said", "that", "this", "under", "as", "per", "see"})
+
+
+def _extract_sections_cited(text: str) -> list:
+    """
+    Extract statute references from case-law text, e.g. "Section 307 IPC" → "IPC 307".
+    Returns list of normalized "ActName SectionNum" for retrieval/filtering.
+    Rejects invalid extractions like "the 6", "thesaid 4" (roadmap: statute–case linking).
+    """
+    if not (text or "").strip():
+        return []
+    seen = set()
+    result = []
+    for pat in _SECTION_CITED_PATTERNS:
+        for m in pat.finditer(text):
+            if pat == _SECTION_CITED_PATTERNS[0]:
+                num, act = m.group(1).strip(), m.group(2).strip()
+                act_short = act.replace(" ", "")[:20] if act else "Act"
+                key = f"{act_short} {num}"
+            elif pat == _SECTION_CITED_PATTERNS[1]:
+                num, act = m.group(1).strip(), m.group(2).strip().replace(" ", "")
+                key = f"{act} {num}"
+            elif pat == _SECTION_CITED_PATTERNS[2]:
+                act, num = m.group(1).strip().replace(" ", ""), m.group(2).strip()
+                key = f"{act} {num}"
+            else:
+                num = m.group(1).strip()
+                key = f"Constitution {num}"
+            # Only keep valid act+section shape; reject "the 6", "thesaid 4" and other non-act words
+            match = _VALID_SECTION_KEY.match(key) if len(key) >= 4 else None
+            if match and key not in seen:
+                act_part = (match.group(1) or "").lower()
+                if act_part and act_part in _SECTION_ACT_BLOCKLIST:
+                    continue
+                seen.add(key)
+                result.append(key)
+    return result[:30]  # cap per chunk
+
+
+# Pattern to find cited case names in body text (X v Y / X vs Y). Used for citation graph.
+_CITED_CASE_PATTERN = re.compile(
+    r"(?:in|as\s+held\s+in|following|relying\s+on|see\s+)\s*"
+    r"(?:\(?\s*)?"
+    r"([A-Z][A-Za-z\s\.]+?)\s+(?:v\.?s?\.?|versus)\s+([A-Z][A-Za-z\s\.]+?)(?:\s*\(?\s*\d{4}\s*\)?)?(?:\s+\d+\s*SCC\s*\d+)?",
+    re.IGNORECASE,
+)
+
+# Leading phrases to strip from cited-case text (roadmap: citation extraction normalization)
+_CITED_STRIP_PREFIXES = (
+    "in ", "of this court in ", "of that court in ", "but in a recent decision in ",
+    "as held in ", "as observed in ", "following ", "relying on ", "see ", "referring to ",
+)
+
+# Reject cited strings that look like sentence fragments (too long or contain these)
+_CITED_FRAGMENT_MARKERS = re.compile(
+    r"\b(but|however|therefore|cpc\.|in a recent|decision in|wherein|whereas)\b",
+    re.IGNORECASE,
+)
+_CITED_MAX_WORDS = 12  # reasonable "Party1 v Party2" is at most ~8 words total
+_CITED_MAX_TOTAL_CHARS = 100  # reject very long extractions
+
+
+def _normalize_case_id(name: str) -> str:
+    """Normalize case name for graph key: strip, collapse spaces, lowercase."""
+    if not name or not isinstance(name, str):
+        return ""
+    s = re.sub(r"\s+", " ", name.strip()).strip()
+    return s.lower()[:200]
+
+
+def _strip_citation_prefix(s: str) -> str:
+    """Strip leading citation context words so we get clean 'Party1 v Party2'."""
+    if not s or not isinstance(s, str):
+        return s
+    t = s.strip()
+    for prefix in _CITED_STRIP_PREFIXES:
+        if t.lower().startswith(prefix):
+            t = t[len(prefix):].strip()
+            break
+    return t.strip()
+
+
+def _is_citation_fragment(name: str) -> bool:
+    """True if the extracted string looks like a sentence fragment, not a case name."""
+    if not name or len(name) > _CITED_MAX_TOTAL_CHARS:
+        return True
+    words = name.split()
+    if len(words) > _CITED_MAX_WORDS:
+        return True
+    if _CITED_FRAGMENT_MARKERS.search(name):
+        return True
+    return False
+
+
+def extract_cited_cases(text: str) -> list:
+    """
+    Extract cited case names from case-law text (e.g. "as held in X v Y (2020)").
+    Returns list of normalized "Party1 v Party2" strings for citation graph.
+    Rejects truncated, OCR, fragment-like, and non-case strings for graph quality.
+    Uses prefix stripping and fragment rejection per roadmap (citation extraction normalization).
+    """
+    if not (text or "").strip():
+        return []
+    seen = set()
+    result = []
+
+    def _add_cited(name: str) -> None:
+        if len(name) < 10:
+            return
+        # Strip leading "in ", "of this court in ", etc.
+        name = _strip_citation_prefix(name)
+        if len(name) < 10:
+            return
+        # Reject sentence fragments and overly long
+        if _is_citation_fragment(name):
+            return
+        # Reject truncated (e.g. "rosy jacob v ja") and bad/OCR
+        if _is_likely_bad_case_name(name):
+            return
+        normalized = _normalize_case_name_for_display(name)
+        if not normalized or len(normalized) < 10:
+            return
+        if _is_citation_fragment(normalized):
+            return
+        key = _normalize_case_id(normalized)
+        if key and key not in seen:
+            seen.add(key)
+            result.append(normalized)
+
+    for m in _CITED_CASE_PATTERN.finditer(text):
+        p1, p2 = m.group(1).strip(), m.group(2).strip()
+        # Strip prefixes that may have been captured into party 1
+        p1 = _strip_citation_prefix(p1)
+        if len(p1) < 2 or len(p2) < 3 or len(p1) > 80 or len(p2) > 80:
+            continue
+        if len(p1.split()) > 6 or len(p2.split()) > 6:
+            continue
+        _add_cited(f"{p1} v {p2}")
+    # Also catch standalone "X v. Y" / "X vs Y" without leading phrase
+    alt = re.compile(
+        r"\b([A-Z][A-Za-z\s\.]{2,40}?)\s+(?:v\.?s?\.?|versus)\s+([A-Z][A-Za-z\s\.]{2,40}?)\b",
+        re.IGNORECASE,
+    )
+    for m in alt.finditer(text):
+        p1, p2 = m.group(1).strip(), m.group(2).strip()
+        p1 = _strip_citation_prefix(p1)
+        if len(p2) < 3 or len(p1) < 2:
+            continue
+        if len(p1.split()) > 6 or len(p2.split()) > 6:
+            continue
+        _add_cited(f"{p1} v {p2}")
+    return result[:25]  # cap per chunk
 
 
 def _determine_binding_authority(court: str) -> str:
@@ -1138,43 +1639,51 @@ def chunk_case_law(text: str, filename: str = "") -> list:
     When a numbered paragraph is split the sub-chunks are labelled:
         para_N, para_N_1, para_N_2, …
     so downstream code can reconstruct the original paragraph if needed.
+
+    v4: OCR cleaning, paragraph_type (facts/arguments/reasoning/ratio/order),
+    and sections_cited extracted per chunk.
     """
+    text = _clean_ocr_noise(text)
     metadata = _detect_case_metadata(text, filename)
     binding = _determine_binding_authority(metadata.get("court", ""))
 
     chunks = []
 
-    def _emit(para_text: str, para_label: str) -> None:
-        """Split para_text to limit and append all sub-chunks to `chunks`."""
+    def _emit(para_text: str, para_label: str, para_index: int = 0, total_paras: int = 0) -> None:
+        """Split para_text to limit and append all sub-chunks with paragraph_type, sections_cited, cited_cases."""
+        ptype = _classify_paragraph_type(para_text, para_label, para_index, total_paras)
         for label, chunk_text in _split_para_to_limit(para_text, para_label):
             if len(chunk_text) >= 50:
+                sections_cited = _extract_sections_cited(chunk_text)
+                cited_cases = extract_cited_cases(chunk_text)
                 chunks.append(_make_case_chunk(
-                    chunk_text, metadata, binding, label, filename
+                    chunk_text, metadata, binding, label, filename,
+                    paragraph_type=ptype, sections_cited=sections_cited, cited_cases=cited_cases,
                 ))
 
     # ── Path A: numbered paragraphs ("1. …", "2. …") ────────────────────────
     para_splits = _PARA_NUM_PATTERN.split(text)
 
     if len(para_splits) > 3:
+        total_paras = 1 + (len(para_splits) - 1) // 2
         preamble = para_splits[0].strip()
         if preamble and len(preamble) > 100:
-            _emit(preamble, "preamble")
+            _emit(preamble, "preamble", 0, total_paras)
 
         for i in range(1, len(para_splits) - 1, 2):
             para_num  = para_splits[i].strip()
             para_text = para_splits[i + 1].strip() if i + 1 < len(para_splits) else ""
             if len(para_text) < 50:
                 continue
-            _emit(para_text, para_num)
+            para_index = (i + 1) // 2  # 1-based index after preamble
+            _emit(para_text, para_num, para_index, total_paras)
 
     # ── Path B: double-newline paragraphs ────────────────────────────────────
     else:
-        paragraphs = re.split(r"\n\s*\n", text)
+        paragraphs = [p.strip() for p in re.split(r"\n\s*\n", text) if len(p.strip()) >= 80]
+        total_paras = len(paragraphs)
         for i, para in enumerate(paragraphs):
-            para = para.strip()
-            if len(para) < 80:
-                continue
-            _emit(para, str(i + 1))
+            _emit(para, str(i + 1), i, total_paras)
 
     # ── Path C: last-resort line accumulator ─────────────────────────────────
     if len(chunks) < 3:
@@ -1185,12 +1694,12 @@ def chunk_case_law(text: str, filename: str = "") -> list:
             current_chunk.append(line)
             joined = "\n".join(current_chunk).strip()
             if len(joined) > _CASE_CHUNK_LIMIT:
-                _emit(joined, str(len(chunks) + 1))
+                _emit(joined, str(len(chunks) + 1), 0, 0)
                 current_chunk = []
         if current_chunk:
             joined = "\n".join(current_chunk).strip()
             if len(joined) > 80:
-                _emit(joined, str(len(chunks) + 1))
+                _emit(joined, str(len(chunks) + 1), 0, 0)
 
     logger.info(
         f"Chunked case law '{metadata.get('case_name', filename)}' "
@@ -1200,9 +1709,14 @@ def chunk_case_law(text: str, filename: str = "") -> list:
 
 
 def _make_case_chunk(
-    text: str, metadata: dict, binding: str, para_num: str, filename: str
+    text: str, metadata: dict, binding: str, para_num: str, filename: str,
+    paragraph_type: str = "unknown", sections_cited: list = None, cited_cases: list = None,
 ) -> dict:
     """Create a single case law chunk with full metadata."""
+    if sections_cited is None:
+        sections_cited = []
+    if cited_cases is None:
+        cited_cases = []
     case_name = (
         (metadata.get("case_name") or "").strip()
         or os.path.basename(filename).replace(".pdf", "")
@@ -1230,6 +1744,9 @@ def _make_case_chunk(
         "bench": metadata.get("bench", ""),
         "year": year,
         "paragraph_num": para_num,
+        "paragraph_type": paragraph_type,
+        "sections_cited": list(sections_cited),
+        "cited_cases": list(cited_cases),
         "full_text": text,
         "search_text": search_text,
         "keywords": _extract_keywords(text),

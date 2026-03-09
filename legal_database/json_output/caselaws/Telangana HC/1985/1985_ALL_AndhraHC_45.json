@@ -1,0 +1,82 @@
+{
+  "case_id": "SC_1985_1985_ALL_ANDHRAHC_45",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1985",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 3,
+  "cited_by_count": 5,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1985\\1985_ALL_AndhraHC_45.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1985_1985_ALL_ANDHRAHC_45_P001_C01",
+      "text": "Ambica Chemical Products vs Income-Tax Officer on 14 June, 1985\nEquivalent citations: [1991]191ITR382(AP)\nJUDGMENT\n\n Amareswari, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Ambica Chemical Products v Income"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1985_1985_ALL_ANDHRAHC_45_P002_C01",
+      "text": "1. Heard counsel for the assessee and the Income-tax Department.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1985_1985_ALL_ANDHRAHC_45_P003_C01",
+      "text": "2. These writ petition are filed against the orders of the Income-tax Officer levying interest under\nsection 139\nand\n258(sic)\nof the Income-tax Act. The grievance of the petitioners is that the interest was levied without giving then any opportunity. Under rules 40 and 117A of the Income-tax Rules, 1962, framed under the\nIncome-tax Act\n, the Income-tax Officer is vested with discretion to waive or reduce interest under certain circumstances. By implication, these rules require that an opportunity must be given to the assessee to show cause why interest should not be levied or to satisfy the Income-tax Officer that there is a case for waiver or reduction. In these cases, no opportunity was given. We, therefore, quash the orders to the extent of interest only. We give fifteen days' time from today to the petitioners to file representations before the concerned Officers. No further notice need be issued by the Income-tax Officer. The Income-tax Officer shall consider the representations after giving a personal hearing to the petitioner and pass fresh orders in accordance with law. In all other respect, the impugned orders stand. With this direction, the writ petitions are disposed of.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1985_1985_ALL_ANDHRAHC_45_P003_C02",
+      "text": "No costs.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1985_1985_ALL_ANDHRAHC_45",
+    "court": "Supreme Court of India",
+    "year": "1985",
+    "facts_summary": "1. Heard counsel for the assessee and the Income-tax Department. 2. These writ petition are filed against the orders of the Income-tax Officer levying interest under\nsection 139\nand\n258(sic)\nof the Income-tax Act. The grievance of the petitioners is that the interest was levied without giving then any opportunity. Under rules 40 and 117A of the Income-tax Rules, 1962, framed under the\nIncome-tax Act\n, the Income-tax Officer is vested with discretion to waive or reduce interest under certain circumstances. By implication, these rules require that an opportunity must be given to the assessee to show cause why interest should not be levied or to satisfy the Income-tax Officer that there is a case for waiver or reduction. In these cases, no opportunity was given. We, therefore, quash the orders to the extent of interest only. We give fifteen days' time from today to the petitioners to file representations before the concerned Officers. No further notice need be issued by the Income-tax Officer. The Income-tax Officer shall consider the representations after giving a personal hearing to the petitioner and pass fresh orders in accordance with law. In all other respect, the impugned orders stand. With this direction, the writ petitions are disposed of.",
+    "legal_issues": "No costs.",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": [
+      "Ambica Chemical Products v Income"
+    ]
+  }
+}

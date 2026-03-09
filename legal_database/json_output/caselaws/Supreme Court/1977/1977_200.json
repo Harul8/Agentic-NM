@@ -1,0 +1,264 @@
+{
+  "case_id": "SC_1977_1977_200",
+  "case_name": "Johrilal Soni vs Smt. Bhanwari Bai",
+  "normalized_case_name": "JOHRILAL_SONI_VS_SMT._BHANWARI_BAI",
+  "court": "Supreme Court of India",
+  "year": "1977",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "1 August 1977",
+  "judges": [
+    "Syed Murtaza Fazalali",
+    "N.L. Untwalia"
+  ],
+  "author": "Syed Murtaza Fazalali",
+  "bench_type": "division",
+  "petitioner": "Johrilal Soni",
+  "respondent": "Smt. Bhanwari Bai",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 8,
+  "cited_by_count": 11,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1977 AIR 2202",
+    "1978 SCR (1) 231",
+    "AIR 1977 SUPREME COURT 2202",
+    "1977 4 SCC 59",
+    "1977 3 ALL LR 625",
+    "1977 2 SCJ 390",
+    "1978 (1) SCR 231",
+    "1977 U J (SC) 542",
+    "1978 (1) SCWR 124",
+    "1978 HINDULR 50",
+    "ILR 1977 2 KANT 1071"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1977\\1977_200.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1977_1977_200_P001_C01",
+      "text": "ACT:\nProvincial Insolvency Act\n1920-Section 453-Whether transfers\neffected more than 2 years prior to commencement of\ninsolvency proceedings can be declared void and inoperative\nby insolvency court-Difference between void and voidable\ntransfers.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1977_1977_200_P002_C01",
+      "text": "HEADNOTE:\nPyare Lal Gupta, an insolvent, executed a deed of gift in\nfavour of his wife about 7 years before an application under\ns. 10\nof the Provincial insolvency Act 1920 was made for\nadjudging him as an insolvent. The appellant was appointed\nas a Receiver by the Court. He made an application under\ns.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1977_1977_200_P003_C01",
+      "text": "of the Act for declaring the deed of gift as void and\ninoperative on the ground that it was a sham transaction. The Insolvency Court upheld the plea of the appellant and\ndeclared the deed of gift as being void and inoperative. The respondent donee filed an appeal to the High Court\nchallenging the judgment of the Insolvency Court on the\nground that s. 53 of the Act does not authorise an\nInsolvency Court to decide questions about title or validity\nin respect of transfers made during a period beyond two\nyears of the commencement of the Insolvency proceedings. The High Court upheld the contention of the respondent. In an appeal by certificate the appellant contended that the\nHigh Court had taken an erroneous view of\ns. 53\nof the Act. Section 53\nmerely deals with voidable transfer and not void\ntransfer. The respondent contended that since the gift was\nmade about 6 1/2 years before the insolvency proceedings\nbegan, the Insolvency Court could not examine the question\nof title. Allowing the appeal,\nHELD :\nSection 4\nof the Act empowers the Insolvency Court to\ndecide all questions whether of title or of priority or of\nany nature whatsoever which may arise in any case of\ninsolvency.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1977_1977_200_P003_C02",
+      "text": "The said provision is, however, subject to the\nother provisions of the Act. Under\ns. 53\nany transfer of\nproperty not being made before and in consideration of\nmarriage or made in favour of a purchaser or encumbrance in\ngood faith and for valuable consideration shall if the\ntransferor is adjudged insolvent on a petition presented\nwithin two years after the date of the transfer, is\nvoidable, against the Receiver and may be annulled by the\ncourt. Section 53\nonly deals with transfers which are\nvoidable. There is a well known distinction between a void\nand a voidable transfer. Void transfer is no, transfer at\nall and is completely destitute of any legal effect. It is\na nullity and does not pass any title at all, where a\ntransfer is nominal, sham or fictitious, the title remains\nwith the transferor and so does the possession and nothing\npasses to the transferee. Such a transfer clearly falls\noutside the purview of\ns. 53\n. The limitation of two years\nimposed by\ns. 53\napplies only to voidable transfers. [23314,\n234A-E]\nHaji Anwar Khan v. Mohammad Khan & Ors. AIR [1929] All.\n105, referred to. Madan Kumar and Anr. v. M/s. Hart Narain Agrawal & Ors.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1977_1977_200_P003_C03",
+      "text": "A.I.R. [1977] All. 141; Padamsi Premchand and Ors. v. Laxman.Vishnu Deshpande and Ors. AIR [1949] Bom. 129; Radha\nKrishna Thakur and Anr. v. Official Receiver AIR [1932] Cal.\n642; Biseswar Chaudhuri v. Kanhai Singh AIR [1932] Pat. 129;\nG. N. Godbole v. Mi. Nani Bai AIR [1938] Nag. 546 and Budha\nMal v. Official Receiver AIR [1930] Lah. 122, approved.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1977_1977_200_P004_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeal No. 149 of 1976. From the Judgment and Order dated 26-9-1973 of the\nRajasthan High Court in D. B. Civil Insolvency Appeal No. 50\nof 1972. Badri Das Sharma and S. R. Srivastava for the Appellant. O. P. Verma for the Respondent. The Judgment of the Court was delivered by\nFAZAL ALI, J.-To what extent is\nS. 4\nof the Provincial\nInsolvency Act, 1920 controlled by\ns. 53\nof the said Act in\nthe matter of determination of the question of title of a\nproperty transferred by the insolvent before he was declared\ninsolvent is the serious question of law which is involved\nin this appeal by certificate. The insolvent Pyarelal Gupta\nappears to have executed a deed of gift in favour of his\nwife on November 7, 1961. About seven years later i.e. on\nApril 1, 1968 an application under\ns. 10\nof the, Provincial\nInsolvency Act hereinafter to be referred for short as the\nAct\"-was made for adjudging Pyarelal as an insolvent. On\nApril 5, 1968 the appellant Zohri Lal Soni an Advocate was\nappointed receiver by the Court. On October 15, 1960\nPyarelal was on his own application adjudged as an insolvent\nby the Additional District Judge, Jodhpur.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1977_1977_200_P004_C02",
+      "text": "On January 4,\n1969 the appellant who was the receiver moved the Court\nunder\nS. 4\nof the Act for declaring the deed of gift dated\nNovember 7, 1961 as void and inoperative inasmuch as it was\na sham transaction. On March 3, 1972 the Insolvency Court\nof the Additional District Judge, Jodhpur, after making an\ninquiry, upheld the plea of the receiver/appellant and\ndeclared the deed of gift dated November 7, 19.61 as being\nvoid and inoperative. Thereafter the respondent Smt. Bhanwari Bai (donee) went up in appeal to the High Court\nassailing the judgment of the Insolvency Court on the ground\nthat it was legally erroneous. The plea of the respondent\nBhanwari Bai seems to have found favour with the High Court\nof Rajasthan which allowed the appeal and act aside the\njudgment of the Insolvency Court declaring the deed of gift\nas void by its judgment dated September 26, 1973. The\nappellant thereafter applied for grant of certificate of\nfitness for leave to appeal to this Court which was granted\nby the High Court on October 27, 1975, and. this is how the\nappeal has been brought to this Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1977_1977_200_P004_C03",
+      "text": "The High Court was of the opinion that in view of the\nexpress provision of\nS. 53\nof the Act, the Insolvency Court\nhad no jurisdiction to determine the question of title, nor\ncould it go into the question of the validity of a transfer\nwhich was made more than two years before the Insolvency\nproceedings had started. According to the High Court, while\nS. 4\nof the Act undoubtedly conferred a power on the\nInsolvency Court to decide questions of title, but this\npower could not be exercised in respect of transfers made\nduring a period beyond two years of the insolvency\nproceedings.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1977_1977_200_P005_C01",
+      "text": "In support of the appeal, learned counsel for the appellant\nsubmitted that the High Court had taken an erroneous view of\nthe law and had misconstrued the scope and ambit of\ns. 53\nthe Act. Learned counsel for the respondent, however,\nsupported the stand taken by the High Court and submitted\nthat as the gift was made about 61 years before the\nproceedings began, the Insolvency Court could not examine\nthe question of title. A number of authorities have been\ncited by counsel for the parties in support of their\nrespective submissions, but we think the question lies\nwithin a very narrow compass. It would appear that\ns. 4\nthe Act was not there in the\nInsolvency Act\nof 1907, but was\nintroduced for the first time by Act 5 of 1920. Before\n1920, the\nProvincial Insolvency Act\ndid not contain any such\nprovision as a result of which there was a serious\ndivergence of judicial opinion on the question as to whether\nor not an Insolvency Court could determine a question of\ntitle regarding a transfer made by the insolvent. Act 5 of\n1920, however, set at rest this controversy and gave wide\npowers to the Insolvency Court to determine questions of\ntitle.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1977_1977_200_P005_C02",
+      "text": "We now proceed to interpret the provisions of\ns. 4\nitself,\nthe relevant part of which may be extracted thus\n \"4. (1) Subject to the provisions of this Act,\n the Court shall have full power to decide all\n questions whether of title or priority, or of\n any nature whatsoever, and whether involving\n matters of law or of fact, which may arise in\n any case of insolvency coming within the\n cognizance of the Court, or which the Court\n may deem it expedient or necessary to decide\n for the purpose of doing complete justice or\n making a complete distribution of property in\n any such case.\"\nIt would be seen that the section has been couched in the\nwidest possible terms and confers complete and full powers\non the Insolvency Court to decide all questions of title or\npriority, or of, any nature whatsoever, which may arise in\nany case of insolvency. The only restriction which is\ncontained in\ns. 4\nis that- these powers are subject to the\nother provisions of the Act. In other words, the position\nis that where any other section of the Act contains a\nprovision which either runs counter to\ns. 4\nor expressly\nexcludes the application of\ns.4\n, to that extent\ns. 4\nwould\nbecome inapplicable.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1977_1977_200_P005_C03",
+      "text": "Counsel for the respondent strongly\nrelied on the provisions of\ns. 53\nwhich runs thus\n \"53. Any transfer of property not being a\n transfer made before and in consideration of\n marriage or made in favour of a purchaser or\n incumbrancer in good faith and for valuable\n consideration shall, if the transferor is\n adjudged insolvent on a petition presented\n within two years after the date of the\n transfer, be voidable as against the receiver\n and may be annulled by the Court.\"\nIt was submitted that the effect of\ns. 53\nof the Act clearly\nis that it bars the jurisdiction of the Insolvency Court to\ndetermine the validity\n4-768SCI/77",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1977_1977_200_P006_C01",
+      "text": "of any transfer made beyond two years of the transferor\nbeing adjudged insolvent. It is no doubt true that the\nwords \"within two years after the date of the transfer\"\nbeing voidable as against the receiver does fix a time-limit\nwithin which the transfer could be annulled by the Court. But a plain construction of\ns. 53\nwould manifestly indicate\nthat the words \"within two years after the date, be voidable\nas against the receiver, and shall be annulled by the Court\"\nclearly connote that only those transfers are excepted from\nthe jurisdiction of the Court which are voidable. The\nsection has, therefore, made a clear distinction between\nvoid and voidable transfers-a distinction which is well-\nknown to law. A void transfer is no transfer at all and is\ncompletely destitute of any legal effect : it is a nullity\nand does not pass any title at all. For instance, where a\ntransfer is nominal, sham or fictitious, the title remains\nwith the transferor and so does the possession and nothing\npasses to the transferee. It is manifest, therefore, that\nsuch a transfer is no transfer in the eye of the law.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1977_1977_200_P006_C02",
+      "text": "Such\ntransfers, therefore, clearly fall beyond the purview of s.\n53 of the Act which refers only to transfers which are\nvoidable. It is well settled that a voidable transfer is\notherwise a valid transaction and continues to be good until\nit is avoided, by the party aggrieved. For instance,\ntransfers executed by the transferor to delay or defraud his\ncreditors may be, avoided under\ns. 53\nof the Transfer of\nProperty Act. Similarly transfers made under coercion, fraud\nor undue influence may be avoided by the party defrauded. It is only such transfers which, if they take place beyond\ntwo years of the date of transfer, cannot be enquired into\nby the Court by virtue of\ns. 53\nof the Act. This appears to\nus to be the plain and simple interpretation of the combined\nreading of\nss. 4\nand",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1977_1977_200_P007_C01",
+      "text": "of the Act. Indeed if a different\ninterpretation is given, it will render the entire object of\nthe section nugatory, because the Court would be powerless\nto set at naught transfers which are patently void, merely\nbecause they had been made at a particular point of time.\nReliance was placed by counsel for the appellant on a Full\nBench decision of the Allahabad High Court in\nHaji Anwar\nKhan v. Mohamad Khan & Ors\n(1) where the following two\nquestions were referred for the decision of the Full Bench :\n\" (1 ) Whether an insolvency Court can try a\n question of title raised on the basis of a\n transfer which took place more than two years\n prior to the adjudication, having regard to\n the provisions of\ns. 53\n, Insolvency Act ?\n (2) Would it make any difference if the\n receiver alleges that no transfer had been\n intended from the very beginning and no title\n had passed, the transaction being a mere\n paper transaction and void\nAfter discussing a large number of authorities, Dalal, J.,\nanswered the first question in the affirmative and held that\nan Insolvency Court could try a question of title raised on\nthe basis of a transfer which\n(1) A.I.R. 1929 All. 115.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1977_1977_200_P008_C01",
+      "text": "took place two years prior to the adjudication, but the\nlearned Judge, however, refrained from giving any opinion on\nthe other question, which in our opinion was the most\npertinent question to be answered having regard to the\nspecific distinction made by\ns. 53\nbetween void and voidable\ntransactions. Sen, J., appears to have sounded a discordant\nnote in observing as follows :\n\"My answer to the reference is (1) An\n insolvency Court cannot try a question of\n title relating to a transfer which has taken\n place more than two years before the order of\n adjudication having regard to the provisions\ns. 53\n, Insolvency Act.\n(2) Where the transfer was intended not to\n be operative from the beginning and the\n insolvent had remained in possession of the\n property the receiver may apply for its\n annulment. But where the transfer was\n executed by a proper instrument and duly\n registered and was intended to put the\n property beyond the reach of the creditors and\n a third party is claiming under the transfer,\n such a transaction cannot be treated as a mere\n paper transaction.\"\nWe feel that the view of Sen. J., appears to be based on a\ncorrect interpretation of\nss. 4\nand",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1977_1977_200_P009_C01",
+      "text": "of the Act. King,\nJ., agreed with Dalal, J., and observed as follows\n \"I see no difficulty, therefore, in giving a\n meaning and effect to the words \"subject to\n the provisions of this Act\" without construing\n them in the restrictive sense suggested by my\n learned brother Sen, J. In my opinion they do\n not bar the jurisdiction of the insolvency\n Court to decide a question of title under the\n ordinary law when the special provisions of\n the Act do not apply.\"\nIn a later decision of the Allahabad High Court in Madan\nKumar and Anr. v. M/s. Hari Narain Agrawal and Ors (1)\nfollowing the Full Bench decision\nreferred to above\n, it was\nobserved as follows\n \"As observed earlier,\nSection 53\nrefers to\n transfers which are only voidable and it does\n not cover a case where the transfer is claimed\n to be void since its inception. The bar of tw\n years provided for in\nSection 53\nshould not\n therefore, apply to a transaction which is\n claimed to be void.\"\nWe are of the opinion that the learned Judge has laid down\nthe Correct law on the subject. A Full Bench of the Bombay\nHigh Court in\nPadamsi Premchand and others v. Laxman Vishnu\nDespande and others\n(2) has taken the same view, which we\nhave taken.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1977_1977_200_P009_C02",
+      "text": "In that\n(1) A.I.R. 1977 All. 141. (2) A.I.R. 1949Bom. 129.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1977_1977_200_P010_C01",
+      "text": "case, and which we feet is based on a correct and true\ninterpretation of\nss. 4\nand",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1977_1977_200_P011_C01",
+      "text": "of the Act, after considering\nthe history of the Act,,. Chagla, C. J., speaking for the\nCourt observed as follows :\n\"It is perfectly true that\nS. 4\nis merely\n declaratory of the junsdiction of the\n insolvency Court.......... Therefore, Mr. Desai is right when he says that if a\n transaction falls within the ambit of\ns. 53\n,\n then it can only be challenged provided the\n conditions\nlaid down in\nthat section are\n satisfied...... In our opinion transactions which are\n challenged on the ground of their being\n fictitious or nominal do not fall within the\n ambit of\ns. 53\n, then\ns. 4\nis wide enough to\n confer upon the insolvency Court jurisdiction\n to decide whether these transactions were in\n fact nominal or fictitious.\"\nWe find ourselves in complete agreement with the view\nexpressed by Chagla, C.J., in the aforesaid decision. The\nBombay High Court further pointed out that the same view was\ntaken by the Calcutta High Court in\nRadha Krishna Thakur and\nAnr v. Official Receiver\n,(1) by the Patna High Court in\nBiseswar Chaudhuri v. Kanhai Singh (2) the Nagpur High Court\nin G. N. Godbole v. Mt. Nani Bai,(3) and the Lahore High\nCourt in Budha Mal v. Official Receiver.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1977_1977_200_P011_C02",
+      "text": "(4) The only\ndecision which appears to have taken a contrary view is of\nthe Oudh Chief Court in Amjad Ali and others v. Nand Lal\nTandon and others(5) which appears to be the shoot-anchor of\nthe argument of the learned counsel for the respondent. The\nOudh Chief Court observed as follows\n \"We do not consider that where in s.\n5 3 which is governed by this heading the Act\n gives the Court power to annul transactions\n entered into, within two years we should go\n out of our way to find that a general section\n in the same Act gives power to the Court to\n annul transactions which may have been\n entered into at any time and which are void able\n under the ordinary law under\ns. 53\n, T. P. Act. In our opinion transactions of this nature\n must be challenged,if at all, in an ordinary\n civil Court and not in the insolvency Court. With dud respect, however, we are unable to agree with the\nview expressed by the learned Judges of the Chief Court\nOudh, because they seem to overlook the distinction made by\ns. 53\nbetween a void and a voidable transaction.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1977_1977_200_P011_C03",
+      "text": "Moreover,\nthe Oudh Chief Court was concerned with a benami transaction\nand it is not necessary for us to say anything about such a\ntransaction, because in the instant case we\n(1) A.I.R. 1932 Cal. 642. (2) A.I.R. 1932 Pat. 129. (3) A.I.R. 1938 Nag. 546. (4) A.I.R. 1930 Lah. 122. (5) A.I.R. 1930 oudh. 314.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1977_1977_200_P012_C01",
+      "text": "are concerned with a transfer which was sought to be\nchallenged on the ground that it was a nominal and sham\ntransaction and thus a void transaction which clearly falls\nwithin the four comers of\ns. 4\nof the Act and is not covered\ns. 53\nof the Act so as to deprive the Insolvency Court of\nits jurisdiction to determine the question of title of the\ntransfer.\nFor these reasons, therefore, we are clearly of the opinion\nthat in the present case the Additional District Judge was\nright in holding that the Insolvency Court had complete\njurisdiction to decide the validity of the transfer when it\nwas challenged on the ground that it was a sham and a\nfictitious transaction which need not have been set aside\nand a declaration that the transfer was void was sufficient.\nThe view taken by-the High Court is legally erroneous and is\nnot in consonance with the correct interpretation of\nss. 4\nand",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1977_1977_200_P013_C01",
+      "text": "of the Act.\nWe, therefore, allow the appeal, set aside the judgment of\nthe High Court and remit the case back to it for a fresh\ndisposal of the appeal on merits. We make no order as to\ncosts.\nP.H.P.\nAppeal allowed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Johrilal Soni vs Smt. Bhanwari Bai",
+    "case_id": "SC_1977_1977_200",
+    "court": "Supreme Court of India",
+    "year": "1977",
+    "facts_summary": "HEADNOTE:\nPyare Lal Gupta, an insolvent, executed a deed of gift in\nfavour of his wife about 7 years before an application under\ns. 10\nof the Provincial insolvency Act 1920 was made for\nadjudging him as an insolvent. The appellant was appointed\nas a Receiver by the Court. He made an application under\ns. The said provision is, however, subject to the\nother provisions of the Act. Under\ns. 53\nany transfer of\nproperty not being made before and in consideration of\nmarriage or made in favour of a purchaser or encumbrance in\ngood faith and for valuable consideration shall if the\ntransferor is adjudged insolvent on a petition presented\nwithin two years after the date of the transfer, is\nvoidable, against the Receiver and may be annulled by the\ncourt. Section 53\nonly deals with transfers which are\nvoidable. There is a well known distinction between a void\nand a voidable transfer. Void transfer is no, transfer at\nall and is completely destitute of any legal effect. It is\na nullity and does not pass any title at all, where a\ntransfer is nominal, sham or fictitious, the title remains\nwith the transferor and so does the possession and nothing\npasses to the transferee. Such a transfer clearly falls\noutside the purview of\ns. 53\n. The limitation of two years\nimposed by\ns. 53\napplies only to voidable transfers. [23314,\n234A-E]\nHaji Anwar Khan v. Mohammad Khan & Ors. AIR [1929] All.\n105, referred to. Madan Kumar and Anr. v. M/s. Hart Narain Agrawal & Ors.",
+    "legal_issues": "Counsel for the respondent strongly\nrelied on the provisions of\ns. 53\nwhich runs thus\n \"53. Any transfer of property not being a\n transfer made before and in consideration of\n marriage or made in favour of a purchaser or\n incumbrancer in good faith and for valuable\n consideration shall, if the transferor is\n adjudged insolvent on a petition presented\n within two years after the date of the\n transfer, be voidable as against the receiver\n and may be annulled by the Court.\"\nIt was submitted that the effect of\ns. 53\nof the Act clearly\nis that it bars the jurisdiction of the Insolvency Court to\ndetermine the validity\n4-768SCI/77",
+    "ratio_summary": "of the Act for declaring the deed of gift as void and\ninoperative on the ground that it was a sham transaction. The Insolvency Court upheld the plea of the appellant and\ndeclared the deed of gift as being void and inoperative. The respondent donee filed an appeal to the High Court\nchallenging the judgment of the Insolvency Court on the\nground that s. 53 of the Act does not authorise an\nInsolvency Court to decide questions about title or validity\nin respect of transfers made during a period beyond two\nyears of the commencement of the Insolvency proceedings. The High Court upheld the contention of the respondent. In an appeal by certificate the appellant contended that the\nHigh Court had taken an erroneous view of\ns. 53\nof the Act. Section 53\nmerely deals with voidable transfer and not void\ntransfer. The respondent contended that since the gift was\nmade about 6 1/2 years before the insolvency proceedings\nbegan, the Insolvency Court could not examine the question\nof title. Allowing the appeal,\nHELD :\nSection 4\nof the Act empowers the Insolvency Court to\ndecide all questions whether of title or of priority or of\nany nature whatsoever which may arise in any case of\ninsolvency. JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeal No. 149 of 1976. From the Judgment and Order dated 26-9-1973 of the\nRajasthan High Court in D. B. Civil Insolvency Appeal No. 50\nof 1972. Badri Das Sharma and S. R. Srivastava for the Appellant. O. P. Verma for the Respondent. The Judgment of the Court wa",
+    "final_order": "of the Act.\nWe, therefore, allow the appeal, set aside the judgment of\nthe High Court and remit the case back to it for a fresh\ndisposal of the appeal on merits. We make no order as to\ncosts.\nP.H.P.\nAppeal allowed.",
+    "outcome_summary": "Allowed. of the Act.\nWe, therefore, allow the appeal, set aside the judgment of\nthe High Court and remit the case back to it for a fresh\ndisposal of the appeal on merits. We make no order as to\ncosts.\nP.H.P.\nAppeal allowed.",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

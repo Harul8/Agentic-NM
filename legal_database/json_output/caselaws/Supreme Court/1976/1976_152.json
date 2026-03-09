@@ -1,0 +1,278 @@
+{
+  "case_id": "SC_1976_1976_152",
+  "case_name": "D. C. Roy vs The Presiding Officer, Madhya Pradesh ...",
+  "normalized_case_name": "D._C._ROY_VS_THE_PRESIDING_OFFICER,_MADHYA_PRADESH_...",
+  "court": "Supreme Court of India",
+  "year": "1976",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "23 March 1976",
+  "judges": [
+    "Y.V. Chandrachud",
+    "V.R. Krishnaiyer"
+  ],
+  "author": "Y.V. Chandrachud",
+  "bench_type": "division",
+  "petitioner": "D. C. Roy",
+  "respondent": "The Presiding Officer, Madhya Pradesh ...",
+  "reporter_citations": [
+    "[1960] 1 S.C.R. 476",
+    "[1960] 1 S.C.R. 32",
+    "[1959] 2 SCR 836"
+  ],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 12,
+  "cited_by_count": 31,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1976 AIR 1760",
+    "1976 SCR (3) 801",
+    "AIR 1976 SUPREME COURT 1760",
+    "1976 4 SCC 288",
+    "1976 LAB. I. C. 1142",
+    "1976 CRI APP R (SC) 352",
+    "1976 SCC(CRI) 596",
+    "1976 3 SCR 801",
+    "1976 2 LABLN 299",
+    "1976 3 SCC 693",
+    "49 FJR 104",
+    "32 FACLR 285"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1976\\1976_152.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1976_1976_152_P001_C01",
+      "text": "CITATION:\n 1976 AIR 1760 1976 SCR (3) 801\n 1976 SCC (3) 693\n CITATOR INFO :\n RF 1980 SC1896 (151)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1976_1976_152_P002_C01",
+      "text": "ACT:\n Labour Law-Dismissal of employee after domestic\nenquiry-Enquiry found by Labour Court to be vitiated but\norder of dismissal held justified on evidence, adduced\nbefore it-Whether order of dismissal relates back to the\ndate of the original order of dismissal.\n The Madhya Pradesh Industrial Employment (Standing\nOrders) Rules, 1963, Standard Standing Order 12(b)-Major\nmisconduct, what is.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1976_1976_152_P003_C01",
+      "text": "HEADNOTE:\n When the fying squad checked a bus of the State Road\nTransport Corporation, it was found that the appellant, who\nwas a ticket-examiner of the Corporation and whose duty was\nto check whether all the passengers had paid the fare and\nwhether the conductor had issued tickets to the passengers,\nwas on the bus; and that, though all the passengers in the\nbus had paid their fares the conductor had not issued 9 1/2\ntickets. If the appellant were so minded, he could easily\nhave detected the conductor's misconduct. The appellant was\ncharged with the breach of Standard Standing Order 12(b)\nunder the Madhya Pradesh Industrial Employment (Standing\nOrders) Rules, 1963, which governed the matter, and he was\ndismissed after a domestic enquiry. On his application under\ns. 31\n, Madhya Pradesh Industrial Relations Act, the Labour\nCourt held that the enquiry was defective as it infringed\nprinciples of natural justice, but came to the conclusion,\nafter considering the evidence adduced before it by the\nparties, that the dismissal was justified. The appellant's\nrevision to the Industrial Court and writ petition in the\nHigh Court were dismissed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1976_1976_152_P003_C02",
+      "text": "In appeal to this Court, it was contended by the\nappellant that: (1) the charge did not amount to a 'major\nmisconduct' under the Standing Orders; and (2) the Labour\nCourt, having found that there was no proper domestic\nenquiry, should have ordered payment of wages till the date\nof the decision by the Labour Court. Dismissing the appeal,\n^\n HELD : (1) Standard Standing Order 12(b) provides that\n\"theft, fraud or dishonesty in connection with the business\nor property of the undertaking\" shall amount to a major\nmisconduct on the part of the employee. The appellant\nobviously colluded with the conductor in depriving the\nCorporation of its legitimate earnings. The appellant,\nhaving thus acted dishonsetly in connection with the\nbusiness of the Corporation, was clearly guilty of a major\nmisconduct. [803G-804C]\n (2) In a case where the domestic enquiry does not\nsuffer from any defect, so serious or fundamental as to make\nit non est, the award of the Labour Court, based on the\nevidence produced before it relates back to the date when\nthe order of dismissal was passed on the termination of the\ndomestic enquiry; and so, the appellant was not entitled to\nany back wages. [807 B-C]\n P. H.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1976_1976_152_P003_C03",
+      "text": "Kalyani v. M/s. Air France Calcutta [1964] S.C.R.\n104, followed. The observation in the Hotel Imperial case [1960] 1\nS.C.R. 476, 487, that in the Phulbari Tea Estate case [1960]\n1 S.C.R. 32, it was held that in a case where the employer\nmakes good the defects in the domestic enquiry by producing\nnecessary evidence before the Industrial Tribunal, the\nemployer \"will have to pay the wages up to the date of the\naward of the Tribunal\" even if the award went in favour of\nthe employer, is not correct. In the Phulbari Tea Estate\ncase, the employers made no attempt to make good the defect\nin the domestic enquiry by producing necessary evidence\nbefore the Tribunal with the result",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1976_1976_152_P004_C01",
+      "text": "that the Tribunal, which found that the enquiry was\nvitiated, had no evidence before it to examine the legality\nor propriety of the order of dismissal. It was in that\ncontext that instead of being re-instated, the employee was\ngiven the alternative relief of compensation by payment of\nwages. [805F-806C]\n M/s. Sasa Musa Sugar Works (P) Ltd. v. Shobrati Khan\n[1959] 2 SCR 836, explained and distinguished.\n An enquiry blatantly and consciously violating\nprinciples of natural justice so as to amount to a pretence\nmay, however, be equated with a total absence of an enquiry\nso as to exclude the application of the 'relation back'\ndoctrine. [807 C-D]",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1976_1976_152_P005_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeal No. 466 of\n1970. Appeal by Special Leave from the Judgment and Order\ndated the 6th March, 1968 of the Madhya Pradesh High Court\nin Misc. Petition No. 75 of 1968. M. K. Ramamurthi and Vineet Kumar for the Appellant. Ram Punjwani and Rameshwar Nath for the Respondents. The Judgment of the Court was delivered by\n CHANDRACHUD, J. The appellant was working as a Ticket\nExaminer in the Madhya Pradesh State Road Transport\nCorporation at its Nagpur Depot. On March 21, 1964 a bus\nbelonging to the Corporation was checked by the Flying Squad\nwhen nine and half passengers out of 26 were found\ntravelling without tickets. The appellant was on the bus in\nthe discharge of his duties as a Ticket Examiner. The Flying\nSquad prepared a Panchnama on the spot obtaining thereon the\nsignatures of the appellant, the driver and the ticked\nconductor. It was found that the conductor had collected the\nfare from all the 26 passengers who were travelling in the\nbus but had not issued tickets to 9 1/2 passengers.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1976_1976_152_P005_C02",
+      "text": "Since it\nwas the duty of the appellant as a Ticket Examiner to check\nwhether the conductor had collected fare from all the\npassengers and in token thereof had issued tickets to them,\na chargesheet was served on the appellant for breach of\nclauses 12(b) and (d) of the Madhya Pradesh Standard\nStanding Orders which govern the matter by reason of Rule 7\nof the Madhya Pradesh Industrial Employment (Standing\nOrders) Rules, 1963. A Domestic inquiry was thereafter held\ninto the charges and the appellant having been found guilty\nthe Corporation, through its Depot Manager, dismissed him by\nan order dated August 14, 1964. On December 9, 1964 the appellant filed an application\nin the Labour Court, Jabalpur, under\nsection 31\nof the\nMadhya Pradesh Industrial Relations Act challenging the\nvalidity of the inquiry on various grounds and praying that\nthe order of dismissal be set aside and that an order of\nreinstatement be passed with back wages.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1976_1976_152_P005_C03",
+      "text": "By a preliminary\norder dated December 7, 1966 the Labour Court held that the\nDomestic tribunal did not hold a proper inquiry into the\ncharges levelled against the appellant but that it was open\nto the parties to lead evidence before it on the merits of\nthe case and to satisfy it whether the appellant was guilty\nof the charges and further whether the conduct of the\nappellant was such as to call for an order of dismissal. Parties thereafter led evidence before the Labour Court, on",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1976_1976_152_P006_C01",
+      "text": "consideration of which it held by an order dated August 18,\n1967 that the appellant was guilty of the charges levelled\nagainst him and that in the circumstances of the case the\npunishment of dismissal was neither harsh nor unjust.\nFeeling aggrieved by the aforesaid order of the Labour\nCourt the appellant preferred a revision application to the\nIndustrial Court, Indore, under\nsection 66\nof the Madhya\nPradesh Industrial Relations Act. The Industrial Court\nconfirmed the findings of fact recorded by the Labour Court\nand upheld the order of dismissal. As regards back wages,\nthe Industrial Court held that the order of the Labour Court\ndated August 18, 1967 would relate back to the date when the\nappellant was dismissed by the Corporation and therefore the\nappellant was not entitled to back wages till the date when\nthe Labour Court passed its final order.\nThe appellant thereafter filed a petition in the High\nCourt of Madhya Pradesh under\narticles 226\nand",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1976_1976_152_P007_C01",
+      "text": "of the\nConstitution challenging the order of the Industrial Court. The High Court by its order dated March 6, 1968 dismissed\nthe petition in limine, though with a speaking order. It\nheld that the omission of the appellant to check ticketless\ntravellers in the bus which he had boarded as a Ticket\nExaminer amounted to major misconduct under Standing Order\n12(b). The High Court further held that no interference was\ncalled for on the question whether the order of dismissal\nwas justified and since the order of the Labour Court\nrelated back to the date when the order of dismissal was\npassed by the Corporation, the appellant was not entitled to\nwages until the date on which the Labour Court passed the\njudgment. The appellant has filed this appeal in forma\npauperis by special leave of this Court. Mr. M. K. Ramamurthi who appeared as an amicus for the\nappellant raised two points for our consideration in this\nappeal.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1976_1976_152_P007_C02",
+      "text": "He contended in the first place that the charge made\nagainst the appellant does not amount to a \"major\nmisconduct\" under the Madhya Pradesh Industrial Employment\n(Standing Orders) Rules, 1963 and secondly that in any\nevent, the Labour Court having found that the Domestic\ntribunal had failed to hold a proper inquiry, the appellant\nwas entitled to back wages until the final decision of the\nLabour Court. The Madhya Pradesh Industrial Employment (Standing\nOrders) Rules, 1963 provide by Rule 7, to the extent\nmaterial, that the Standard Standing Orders for all\nundertakings to which the Madhya Pradesh Industrial\nEmployment (Standing Orders) Act, 26 of 1961, applies shall\nbe those set out in the Annexures to the Rules. We are\nconcerned in this case with Standard Standing Order 12(b)\nwhich provides that \"theft, fraud, or dishonesty in\nconnection with the business or property of the\nundertakings\" shall amount to a major misconduct on the part\nof an employee.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1976_1976_152_P007_C03",
+      "text": "The appellant had evidently entered the\nparticular bus in order to check it in his capacity as a\nTicket Examiner and it is undisputed that it was his duty to\ncheck whether the passengers travelling in the bus had paid\nthe fare and whether tickets were issued to them by the\nconductor on collecting the fare from them. The bus",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1976_1976_152_P008_C01",
+      "text": "was carrying a complement of 26 passengers out of whom 9 1/2\npassengers did not hold tickets. The Panchnama which was\ndrawn on the spot shows that the conductor had collected the\nfare from the passengers but had not issued any tickets to\nthem. There cannot be the least doubt that if the appellant\nwere so minded, he could have easily detected the misconduct\nof the conductor. Obviously, the appellant had colluded with\nthe conductor in depriving the Corporation of its legitimate\nearnings. The only explanation offered by the appellant was\nthat he was not travelling in the bus at the relevant time\nand that explanation has been found to be false consistently\nby all the courts. The appellant having acted dishonestly in\nconnection with the business of the Corporation, he was\nclearly guilty of a major misconduct. On the second question as to whether the appellant is\nentitled to back wages from the date of dismissal until the\ndate on which the Labour Court delivered its judgment,\nlearned counsel for the appellant relies strongly on the\nobservations made by this Court in\nThe Management of Hotel\nImperial, New Delhi & Ors. v.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1976_1976_152_P008_C02",
+      "text": "Hotel Workers' Union\n(1), to\nthe following effect:\n\"In\nPhulbari Tea Estate v. Its Workmen\n(2), the\n rider\nlaid down in\nthe case Messrs. Sasa Musa Sugar\n Works (P) Ltd.(3) was further extended to a case of an\n adjudication under s. 15 of the Act and it was pointed\n out that if there was any defect in the enquiry by the\n employer he could make good that defect by producing\n necessary evidence before the tribunal; but\nin that\n case\nhe will have to pay the wages up to the date of\n the award of the tribunal, even if the award went in\n his favour\". (p. 487)\n We will consider the impact and implication of the\nconcluding portion of this passage but before we do so, we\nmust draw attention to a 5-Judge Bench decision of this\nCourt in P. H. Kalyani v. M/s. Air France Calcutta(4), which\nis directly in point and concludes the question under\nconsideration. In that case an inquiry was held against an\nemployee of M/s. Air France by the Station Manager, on whose\nfindings the employee was dismissed by the Regional\nRepresentative of the Company on payment of one month's\nwages.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1976_1976_152_P008_C03",
+      "text": "The employee challenged the order of dismissal by\nfiling an application under\nsection 33A\nof the Industrial\nDisputes Act, 1947 on the ground that the Station Manager\nwas biased against him and therefore the inquiry was\nvitiated as being contrary to the principles of natural\njustice. The Labour Court took the view that the employee's\ncontention that the Station Manager was biased against him\ncould not be brushed aside lightly but it went on to hold\nthat even if there was some violation the principles of\nnatural justice on account of the bias of the Inquiry\nOfficer, the Company was entitled to adduce, as it did, all\nthe evidence before it in support of its action and\ntherefore it was open to the Labour Court to decide on that\nevidence whether the action was justified and whether the\napproval to the order of dismissal should be granted. On\ngoing into that evidence, the Labour Court held that the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1976_1976_152_P009_C01",
+      "text": "breaches committed by the employee were of a serious nature\nand the order of dismissal passed by the employer was\ntherefore justified. In an appeal by special leave against\nthe decision of the Labour Court, it was contended in this\nCourt on behalf of the employee that since the Domestic\ninquiry was found defective, the Labour Court, even if it\nwas of the opinion that the dismissal was justified, should\nhave ordered the dismissal from the date of its award and\nnot from the date when the Regional Representative passed\nthe order of dismissal. Rejecting this contention, this\nCourt held:\n\"The present is a case where the employer has held\n an inquiry though it was defective and has passed an\n order of dismissal and seeks approval of that order. If\n the inquiry is not defective, the Labour Court has only\n to see whether there was a prima facie case for\n dismissal and whether the employer had come to the bona\n fide conclusion that the employee was guilty of\n misconduct.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1976_1976_152_P009_C02",
+      "text": "Thereafter on coming to the conclusion that\n the employer had bona fide come to the conclusion that\n the employee was guilty i.e. there was no unfair labour\n practice and no victimisation, the Labour Court would\n grant the approval which would relate back to the date\n from which the employer had ordered the dismissal. If\n the inquiry is defective for any reason, the Labour\n Court would also have to consider for itself on the\n evidence adduced before it whether the dismissal was\n justified. However, on coming to the conclusion on its\n own appraisal of evidence adduced before it that the\n dismissal was justified its approval of the order of\n dismissal made by the employer in a defective inquiry\n would still relate back to the date when the order was\n made.\"\nThese observations directly cover the case before us because\nthough the Labour Court, in the instant case, found that the\ninquiry was defective as it infringed the principles of\nnatural justice, it came to the conclusion after considering\nthe evidence adduced before it, that the dismissal was\njustified.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1976_1976_152_P009_C03",
+      "text": "The award of the Labour Court must therefore\nrelate back to the date when the order of dismissal was\npassed on the termination of the Domestic inquiry. The observations extracted earlier from the judgment of\na 3-Judge Bench in\nHotel Imperial\n's case (p. 487 of the\nReport), on which the appellant relied strongly prima facie\nsupport the appellant's contention that if an inquiry is\nfound to be defective, the employer can make good the defect\nby producing the necessary evidence before the Labour Court\nbut that in such a case he will have to pay wages up to date\nof the decision of the Labour Court even if that decision\nwent in his favour. The particular observations purport to\nsummarize what was decided by the same Bench a fortnight\nearlier in\nPhubari Tea Estate v. Its Workmen\n(1). Learned\ncounsel for the respondent took us closely through the\njudgment in Phulbari Tea Estate but we are unable to find\nanything in that judgment showing that whenever there is a\ndefect in a Domestic inquiry, the employer would have to pay\nwages up to the date of the award of the Labour Court or the\nIndustrial",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1976_1976_152_P010_C01",
+      "text": "Tribunal even if the order passed in the Domestic inquiry\nwas ultimately upheld by the Labour Court or the Tribunal. Phulbari Tea Estate\n(supra), the domestic inquiry was in\ngross violation of the fundamental principles of natural\njustice and was therefore vitiated. The employers did not\nlead proper evidence before the Tribunal to justify the\norder of dismissal and were content merely to produce before\nthe Tribunal the statements which were recorded during the\ninquiry. The employee therefore had no opportunity to cross-\nexamine the witnesses before the Tribunal. Since the inquiry\nwas bad and the Tribunal had no evidence before it to\nsustain the order of dismissal it set aside that order but\nheld that in the peculiar circumstances of the case, the\nemployee may be granted the alternative relief of\ncompensation instead of an order of reinstatement. The\nTribunal accordingly granted to the employee pay and\nallowance from the date of his suspension till payment. The\naward of the Tribunal was upheld is appeal by this Court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1976_1976_152_P010_C02",
+      "text": "It shall have been seen that in the case of\nPhulbari\nTea Estate\n(supra) the employers made no attempt to make\ngood the defect in the inquiry by producing necessary\nevidence before the Tribunal and by affording an opportunity\nto the employee to cross-examine their witnesses. \"This left\nthe matters where they were\", as observed by Wanchoo J. who\nspoke on behalf of the Court, with the result that the\nTribunal which found that the inquiry was vitiated had no\nevidence before it to examine the legality and propriety of\nthe order of dismissal. In the instant case, the Domestic\ninquiry was held to be in violation of the principles of\nnatural justice but the employer led evidence before the\nLabour Court in support of the order of dismissal and on a\nfresh appraisal of that evidence, the Labour Court found\nthat the order of dismissal was justified. The ratio of P. H. Kalyani's case would therefore govern the case and the\njudgment of the Labour Court must relate back to the date on\nwhich the order of dismissal was passed. With great respect, the ratio of Phulbari Tea Estate is\nnot stated correctly in the particular passage at page 487\nof the Report in the case of Hotel Imperial.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1976_1976_152_P010_C03",
+      "text": "That passage is\npartly a reproduction in substance of what is said in\nPhulbari Tea Estate at page 38 of the Report but the last\nclause of the passage following the semi-colon is an\naddition not borne out by the judgment in Phulbari Tea\nEstate. Counsel for the appellant also relied on the decision\nof this Court in M/s. Sasa Musa Sugar Works (P) Ltd. v. Shobrati Khan & Ors. (1) but that case is clearly\ndistinguishable. As pointed out by this Court in\nP. H. Kalyani\n's case, Sasa Musa was a case where an application\nhad been made under\nsection 33(1)\nof the Industrial Disputes\nAct for permission to dismiss the employees and such\npermission was asked for, though no inquiry whatsoever was\nheld by the employer and no decision was taken that the\nemployees be dismissed. The case for dismissal of the\nemployees was made out for the first time in the proceedings\nunder\nsection 33(1)\nand it was for that reason that it was\nheld that the employees were entitled to back wages until\nthe decision of the application filed under\nsection 33\n. Commenting on the decision in Sasa Musa, this Court observed\nP. H. Kalyani\n's case that the",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1976_1976_152_P011_C01",
+      "text": "matter would have been different if in Sasa Musa, an inquiry\nhad been held, the employer had come to the conclusion that\nthe dismissal was the proper punishment and had then applied\nunder\nsection 33(1)\nfor permission to dismiss the employees.\n\"In those circumstances the permission would have related\nback to the date when the employer came to the conclusion\nafter an inquiry that dismissal was the proper punishment\nand had applied for removal of the ban by an application\nunder\nsection 33(1)\n.\" (page 113). The second contention must also therefore fail. We\nwould, however, like to add that the decision in\nP. H. Kalyani\n's case is not to be construed as a charter for\nemployers to dismiss employees after the pretence of an\ninquiry. The inquiry in the instant case does not suffer\nfrom defects so serious or fundamental as to make it non-\nest. On on appropriate occasion, it may become necessary to\ncarve an exception to the ratio of Kalyani's case so as to\nexclude from its operation at least that class of cases in\nwhich under the facade of a domestic inquiry, the employer\npasses an order gravely detrimental to the employee's\ninterest like an order of dismissal.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1976_1976_152_P011_C02",
+      "text": "An inquiry blatantly\nand consciously violating principles of natural justice may\nwell be equated with the total absence of an inquiry so as\nto exclude the application of the 'relation-back' doctrine. But we will not pursue the point beyond this as the facts\nbefore us do not warrant a closer consideration thereof. In the result, the appeal is dismissed but there will\nbe no order as to costs. V.P.S. Appeal dismissed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "D. C. Roy vs The Presiding Officer, Madhya Pradesh ...",
+    "case_id": "SC_1976_1976_152",
+    "court": "Supreme Court of India",
+    "year": "1976",
+    "facts_summary": "ACT:\n Labour Law-Dismissal of employee after domestic\nenquiry-Enquiry found by Labour Court to be vitiated but\norder of dismissal held justified on evidence, adduced\nbefore it-Whether order of dismissal relates back to the\ndate of the original order of dismissal.\n The Madhya Pradesh Industrial Employment (Standing\nOrders) Rules, 1963, Standard Standing Order 12(b)-Major\nmisconduct, what is.",
+    "legal_issues": "In appeal to this Court, it was contended by the\nappellant that: (1) the charge did not amount to a 'major\nmisconduct' under the Standing Orders; and (2) the Labour\nCourt, having found that there was no proper domestic\nenquiry, should have ordered payment of wages till the date\nof the decision by the Labour Court. Dismissing the appeal,\n^\n HELD : (1) Standard Standing Order 12(b) provides that\n\"theft, fraud or dishonesty in connection with the business\nor property of the undertaking\" shall amount to a major\nmisconduct on the part of the employee. The appellant\nobviously colluded with the conductor in depriving the\nCorporation of its legitimate earnings. The appellant,\nhaving thus acted dishonsetly in connection with the\nbusiness of the Corporation, was clearly guilty of a major\nmisconduct. [803G-804C]\n (2) In a case where the domestic enquiry does not\nsuffer from any defect, so serious or fundamental as to make\nit non est, the award of the Labour Court, based on the\nevidence produced before it relates back to the date when\nthe order of dismissal was passed on the termination of the\ndomestic enquiry; and so, the appellant was not entitled to\nany back wages. [807 B-C]\n P. H. JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeal No. 466 of\n1970. Appeal by Special Leave from the Judgment and Order\ndated the 6th March, 1968 of the Madhya Pradesh High Court\nin Misc. Petition No. 75 of 1968. M. K. Ramamurthi and Vineet Kumar for the Appellant. Ram Punjwani and Rameshwar Nath for the",
+    "ratio_summary": "that the Tribunal, which found that the enquiry was\nvitiated, had no evidence before it to examine the legality\nor propriety of the order of dismissal. It was in that\ncontext that instead of being re-instated, the employee was\ngiven the alternative relief of compensation by payment of\nwages. [805F-806C]\n M/s. Sasa Musa Sugar Works (P) Ltd. v. Shobrati Khan\n[1959] 2 SCR 836, explained and distinguished.\n An enquiry blatantly and consciously violating\nprinciples of natural justice so as to amount to a pretence\nmay, however, be equated with a total absence of an enquiry\nso as to exclude the application of the 'relation back'\ndoctrine. [807 C-D] of the\nConstitution challenging the order of the Industrial Court. The High Court by its order dated March 6, 1968 dismissed\nthe petition in limine, though with a speaking order. It\nheld that the omission of the appellant to check ticketless\ntravellers in the bus which he had boarded as a Ticket\nExaminer amounted to major misconduct under Standing Order\n12(b). The High Court further held that no interference was\ncalled for on the question whether the order of dismissal\nwas justified and since the order of the Labour Court\nrelated back to the date when the order of dismissal was\npassed by the Corporation, the appellant was not entitled to\nwages until the date on which the Labour Court passed the\njudgment. The appellant has filed this appeal in forma\npauperis by special leave of this Court. Mr. M. K. Ramamurthi who appeared as an amicus for",
+    "final_order": "An inquiry blatantly\nand consciously violating principles of natural justice may\nwell be equated with the total absence of an inquiry so as\nto exclude the application of the 'relation-back' doctrine. But we will not pursue the point beyond this as the facts\nbefore us do not warrant a closer consideration thereof. In the result, the appeal is dismissed but there will\nbe no order as to costs. V.P.S. Appeal dismissed.",
+    "outcome_summary": "Dismissed. An inquiry blatantly\nand consciously violating principles of natural justice may\nwell be equated with the total absence of an inquiry so as\nto exclude the application of the 'relation-back' doctrine. But we will not pursue the point beyond this as the facts\nbefore us do not warrant a closer consider",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

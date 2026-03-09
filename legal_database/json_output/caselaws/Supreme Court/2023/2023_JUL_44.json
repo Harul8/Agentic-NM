@@ -1,0 +1,742 @@
+{
+  "case_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT",
+  "case_name": "Tej Prakash Pathak vs Rajasthan High Court",
+  "normalized_case_name": "TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT",
+  "court": "Supreme Court of India",
+  "year": "2023",
+  "judgment_template": null,
+  "case_number": "Writ Petition 229 of 2017",
+  "case_number_regex": "WRIT_PETITION",
+  "date_of_judgment": "12 July 2023",
+  "judges": [
+    "Pankaj Mithal",
+    "Pamidighantam Sri Narasimha",
+    "Hrishikesh Roy",
+    "Dhananjaya Y Chandrachud"
+  ],
+  "author": "Pankaj Mithal",
+  "bench_type": "constitution",
+  "petitioner": "Tej Prakash Pathak",
+  "respondent": "Rajasthan High Court",
+  "reporter_citations": [
+    "2023 INSC 709"
+  ],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 28,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL ORIGINAL JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2023\\JUL\\2023_JUL_44.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P001_C01",
+      "text": "2023 INSC 709\n\n CIVIL ORIGINAL JURISDICTION\n\n Writ Petition (Civil) No 229 of 2017\n\n Sivanandan C T and Others … Petitioners\n\n Versus\n\n High Court of Kerala and Others … Respondents\nWITH\n\n Writ Petition (Civil) No 379 of 2017\n\n Writ Petition (Civil) No 618 of 2017\n\n Writ Petition (Civil) No 232 of 2017\n\nDr. Dhananjaya Y Chandrachud, CJI\n\n Table of Contents\n\nA. Background ...................................................................................................3\n\nB. Submissions..................................................................................................7\n\nC. Analysis .........................................................................................................9\n\n i. The decision of the High Court was ultra vires the 1961 Rules ................... 9\n\n ii. Legitimate Expectation ..............................................................................12\n\n a. Doctrine of legitimate expectation under common law........................... 13\n\n b. Doctrine of legitimate expectation under Indian law............................... 16\n\n c. Substantive Legitimate Expectation ....................................................... 18\n\n d.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P001_C02",
+      "text": "Consistency and predictability as aspects of non-arbitrariness ............. 26\n\nD. Application of the doctrine of legitimate expectation................................ 30\n\n i. What has the High Court committed itself to? ........................................... 30\n\n ii. Whether the High Court has acted unlawfully in relation to its commitment?\n\niii. What should this Court do? .......................................................................34\n\nE. Conclusions ...................................................................................................35\n\nA. Background",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P002_C01",
+      "text": "1. On 14 November 2017, a Bench of two Judges of this Court referred a batch\n\n of four petitions, which invoked the jurisdiction of this Court under\nArticle 32\nof the Constitution, to the Constitution Bench in\nSivanandan C T v. High\nCourt of Kerala 1. Eleven petitioners are before this Court, all of whom are\n\n candidates aspiring to be selected as District Judges in the Higher Judicial\n\n Service of the State of Kerala.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "Constitution 32"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P003_C01",
+      "text": "2. In the State of Kerala, the Kerala State Higher Judicial Services Special Rules\n\n 1961 2 came into force on 11 July 1961. These Rules have been framed under\nArticles 233\nand\n\nof the Constitution. The 1961 Rules provide for the\n\n constitution of the Higher Judicial Service into three categories:\n(i) Super-time Scale District and Sessions Judge;\n\n (ii) Selection Grade District and Sessions Judge; and\n\n (iii) District and Sessions Judge, including Additional District Judge.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P004_C01",
+      "text": "3. The dispute in the present batch of cases pertains to the third category noted\n\n above. Rule 2(c) provides for the method of appointment of the third category.\n\n Rule 2(c)(iii) stipulates that 25% of the posts in the category shall be filled by\n\n direct recruitment from the Bar “on the basis of aggregate marks/grade\n\n1 (2018) 1 SCC 239\n2 “1961 Rules”\n\nobtained in a competitive examination and viva-voce conducted by the High\n\n Court”.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P005_C01",
+      "text": "4. By a notification dated 13 December 2012, the High Court of Kerala\n\n prescribed the scheme for the Kerala Higher Judicial Service Examination.\n\n The scheme as notified by the High Court contained the following stipulations\n\n pertaining to the examination:\n(i) The examination will comprise of a written examination consisting of\n\n two papers carrying 150 marks each and a viva-voce carrying 50 marks\n\n with a total of 350 marks so assigned;\n(ii) While separate minimum marks were not prescribed for each paper,\n\n general category candidates who secure at least 50% in the aggregate\n\n and SC/ST candidates who secure at least 40% in the aggregate for\n\n both the papers together would be qualified for viva-voce test;\n(iii) The viva-voce test would be conducted “in a thorough and scientific\n\n manner” for a period ranging between 25 to 30 minutes for each\n\n candidate;\n(iv) There shall be no cut off marks for the viva-voce; and\n(v) The merit list would be prepared on the basis of the aggregate marks\n\n obtained both in the written examination and the viva-voce.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P006_C01",
+      "text": "5. On 30 September 2015, a notification was issued by the High Court of Kerala\n\n by which applications were invited from qualified candidates for appointment\n\nas District and Sessions Judges in the Kerala State Higher Judicial Services\n\n by direct recruitment from the Bar. Paragraph 5 of the notification provides for\n\n the mode of selection. Paragraph 5 stipulates that the selection would be on\n\n the basis of a competitive examination consisting of a written examination and\n\n a viva-voce. The total marks assigned for the written examination were 300\n\n comprising of two papers, each carrying maximum of 150 marks. General\n\n candidates and candidates belonging to the OBC category who secure 50%\n\n and the SC/ST candidates who secure 40% aggregate minimum marks for\n\n both the written papers together were to be declared as qualified for the viva-\n\n voce. The maximum marks prescribed for the viva-voce were fifty. Paragraph\n\n 5 stipulates that “the merit list of successful candidates will be prepared on\n\n the basis of the total marks obtained in the written examination and viva-\n\n voce.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P007_C01",
+      "text": "6. Following the notification which was issued by the High Court on 30\n\n September 2015, the written test was conducted on 12 and 13 March 2016.\n\n On 17 December 2016, the notification regarding candidates who had\n\n qualified in the written test came to be published. Following this, between 16\n\n January and 24 January 2017, the viva-voce for all the qualified candidates\n\n was conducted.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P008_C01",
+      "text": "7. On 27 February 2017, after the viva-voce was conducted, the Administrative\n\n Committee of the High Court passed a resolution by which it decided to apply\n\n the same minimum cut-off marks which were prescribed for the written\n\n examination as a qualifying criterion in the viva-voce. In coming to this\n\nconclusion, the Administrative Committee was of the view that since\n\n appointments were being made to the Higher Judicial Service, it was\n\n necessary to select candidates with a requisite personality and knowledge\n\n which could be ensured by prescribing a cut-off for the viva-voce in terms\n\n similar to the cut-off which was prescribed for the written examination. On 6\n\n March 2017, the Full Court of the High Court of Kerala approved the resolution\n\n of the Administrative Committee. The final merit list of the successful\n\n candidates was also published on the same day.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P009_C01",
+      "text": "8. The decision of the Full Court to apply minimum cut-off marks for the viva\n\n voce and the resultant promulgation of the list of successful candidates led to\n\n the institution of petitions before this Court under\nArticle 32\nof the Constitution.\n\n The candidates who are before this Court are aggrieved by the fact that as a\n\n result of the application of cut off marks in the viva-voce, they have been\n\n ousted from selection though they would rank higher than many of the\n\n candidates who have been selected on the consideration of the aggregate of\n\n marks in the written examination and the viva-voce. This specific grievance\n\n was urged before this Court when notice was issued particularly in relation to\n\n the three respondents, respondents 9, 11 and 12.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "Constitution 32"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P010_C01",
+      "text": "9. When the petition was taken up by a two-Judge Bench of this Court on 14\n\n November 2017, a reference was made to the Constitution Bench, following\n\n an earlier reference made to the larger Bench in\nTej Prakash Pathak v.\n\n Rajasthan High Court3\n. While making a reference to the Constitution Bench\n\n3 (2013) 4 SCC 540\n\nin the earlier decision, the principal issue which has been addressed is\n\n whether it is open in law after a selection process is instituted, to change the\n\n rules of the game midstream.\nIn that context, reliance was placed on an earlier\n\n decision in\nK Manjusree v. State of Andhra Pradesh\n.\n4 The view in\n\n Manjusree\n(supra) has been doubted on the ground that the principle which\n\n has been\nlaid down in\nthat case would appear to run contrary to an earlier\n\n decision in the\nState of Haryana v. Subash Chander Marwaha\n.\n5 In the view\n\n that we are inclined to take in the present case, it does not become necessary\n\n to rule on the broader constitutional issue on which a reference has been\n\n made in\nTej Prakash Pathak\n(supra). The reason why we have come to this\n\n conclusion would be elaborated shortly hereinafter.\nB. Submissions",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P011_C01",
+      "text": "10. During the course of the hearing, we have heard arguments on behalf of the\n\n petitioners by Mr V Chitambaresh, senior counsel, Mr P V Dinesh, Ms\n\n Haripriya Padmanabhan, Mr Raghen Basant and Mr Kuriakose Verghese,\n\n counsel.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P011_C02",
+      "text": "Principally, the modalities which have been followed by the High\n\n Court of Kerala for the selection of candidates have been assailed on four\n\n grounds:\n(i) In specifying a cut off for the viva-voce, the High Court has acted in a\n\n manner contrary to Rule 2(c)(iii) of the 1961 Rules;\n4 (2008) 3 SCC 512\n5 (1974) 3 SCC 220\n\n(ii) The scheme which was notified by the High Court on 13 December\n\n 2012 had expressly provided that there shall be no cut off for the\n\n purposes of the viva-voce;\n(iii) According to the notification, the only criteria for the purpose of\n\n shortlisting candidates would be length of practice rendered by\n\n candidates at the Bar which was to operate in a situation where the\n\n number of candidates was found to be unusually large; and\n(iv) The decision of the Full Court to prescribe a cut off for the viva-voce\n\n was notified much after the viva-voce was held, as a consequence of\n\n which, candidates had no notice that such a requirement would be\n\n introduced at the inception of the process.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P012_C01",
+      "text": "11. Mr Dama Seshadri Naidu, senior counsel has appeared on behalf of the High\n\n Court of Kerala, while Mr K P Kylasnatha Pillay, senior counsel for respondent\n\n No 11 argued in support of the dismissal of the writ petitions on the basis of\n\n the following grounds:\n(i)\nArticle 233\nof the Constitution vests a discretionary power with the High\n\n Court in matters of selection of judicial officers which cannot be\n\n curtailed by statutory rules;\n(ii) The Selection Committee constituted by the High Court is an expert\n\n body best placed to understand the suitability of the candidates, the\n\n needs of the judicial institution, and the larger public interest;\n\n(iii) The decision of the High Court in specifying minimum cut-off marks for\n\n the viva voce was applied across the board to select suitable\n\n candidates and does not suffer from arbitrariness; and\n(iv) Since the viva voce is an essential component to determine the\n\n suitability of candidates, it is within the discretion of the High Court to\n\n determine the weightage to be assigned to it.\nC. Analysis\n\n i. The decision of the High Court was contrary to the 1961 Rules",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 233"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P013_C01",
+      "text": "12. The 1961 Rules specify that 25% of the aggregate posts which are to be filled\n\n in by direct recruitment from the Bar would comprise of the list of candidates\n\n selected on the basis of the aggregate marks obtained in the written\n\n examination and the viva-voce. These rules, as already noted earlier, have\n\n been framed in exercise of the power conferred by\nArticles 233\nand\n\n the Constitution. After the statutory rules were notified on 11 July 1961, the\n\n High Court of Kerala published the scheme of the examination for recruitment\n\n of members of the Bar to the Kerala Higher Judicial Service on 13 December",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P014_C01",
+      "text": "2012. The scheme so notified specifically provides that there shall be no cut\n\n off marks for the viva voce. The notification which was issued by the High\n\n Court on 30 September 2015 for the conduct of the ensuing examination\n\n provided that the mode of selection would consist of two written papers, each\n\n carrying 150 marks and that candidates from the general and OBC categories\n\n who secured a minimum of 50% marks (relaxed to 40% for SC/ST candidates)\n\n would qualify for the viva-voce. The notification spells out that the aggregate\n\nof the marks in the written examination and the viva-voce would form the basis\n\n of drawing the merit list.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P015_C01",
+      "text": "13. In the above backdrop, it is evident that when the process of selection\n\n commenced, all the candidates were put on a notice of the fact that: (i) the\n\n merit list would be drawn up on the basis of the aggregate marks obtained in\n\n the written examination and viva-voce; (ii) candidates whose marks were at\n\n least at the prescribed minimum in the written examination would qualify for\n\n the viva-voce; and (iii) there was no cut off applicable in respect of the marks\n\n to be obtained in the viva-voce while drawing up the merit list in the aggregate.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P016_C01",
+      "text": "14. The decision of the High Court to prescribe a cut-off for the viva-voce\n\n examination was taken by the Administrative Committee on 27 February 2017\n\n after the viva-voce was conducted between 16 and 24 January 2017. The\n\n process which has been adopted by the High Court suffers from several\n\n infirmities. Firstly, the decision of the High Court was contrary to Rule 2(c)(iii)\n\n which stipulated that the merit list would be drawn up on the basis of the marks\n\n obtained in the aggregate in the written examination and the viva-voce;\n\n secondly, the scheme which was notified by the High Court on 13 December\n\n 2012 clearly specified that there would be no cut off marks in respect of the\n\n viva-voce; thirdly, the notification of the High Court dated 30 September 2015\n\n clarified that the process of short listing which would be carried out would be\n\n only on the basis of the length of practice of the members of the Bar, should\n\n the number of candidates be unduly large; and fourthly, the decision to\n\nprescribe cut off marks for the viva-voce was taken much after the viva-voce\n\n tests were conducted in the month of January 2017.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P017_C01",
+      "text": "15. For the above reasons, we have come to the conclusion that the broader\n\n constitutional issue which has been referred in\nTej Prakash Pathak\n(supra)\n\n would not merit decision on the facts of the present case. Clearly, the decision\n\n which was taken by the High Court was ultra vires Rule 2(c)(iii) as it stands. As a matter of fact, during the course of the hearing we have been apprised\n\n of the fact that the Rules have been subsequently amended in 2017 so as to\n\n prescribe a cut off of 35% marks in the viva-voce examination which however\n\n was not the prevailing legal position when the present process of selection\n\n was initiated on 30 September 2015. The Administrative Committee of the\n\n High Court decided to impose a cut off for the viva-voce examination actuated\n\n by the bona fide reason of ensuring that candidates with requisite personality\n\n assume judicial office. However laudable that approach of the Administrative\n\n Committee may have been, such a change would be required to be brought\n\n in by a substantive amendment to the Rules which came in much later as\n\n noticed above. This is not a case where the rules or the scheme of the High\n\n Court were silent.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P017_C02",
+      "text": "Where the statutory rules are silent, they can be\n\n supplemented in a manner consistent with the object and spirit of the Rules\n\n by an administrative order.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P018_C01",
+      "text": "16. In the present case, the statutory rules expressly provided that the select list\n\n would be drawn up on the basis of the aggregate of marks obtained in the\n\n written examination and the viva-voce. This was further elaborated in the\n\nscheme of examination which prescribed that there would be no cut off marks\n\n for the viva-voce. This position is also reflected in the notification of the High\n\n Court dated 30 September 2015. In this backdrop, we have come to the\n\n conclusion that the decision of the High Court suffered from its being ultra\n\n vires the 1961 Rules besides being manifestly arbitrary.\nii. Legitimate Expectation",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P019_C01",
+      "text": "17. Another important aspect that arises for our consideration in these batch of\n\n petitions is whether the High Court’s decision frustrates the legitimate\n\n expectation of the petitioners. Article 233\nof the Constitution provides that the\n\n appointment of persons to be posted as district judges in any state shall be\n\n made by the Governor of the State in consultation with the High Court\n\n exercising jurisdiction in relation to such state. Further,\nArticle 235\nvests with\n\n the High Court the control over district courts including the posting and\n\n promotion of district judges. The maintenance of efficiency of judicial\n\n administration is entirely within the control and jurisdiction of the High Court. 6\n\n The Governor, in consultation with the High Court, prescribes rules laying\n\n down the method of appointment and the necessary eligibility criteria for the\n\n selection of suitable candidates for the post of district judges. According to\n\n the 1961 Rules, the High Court of Kerala was designated as the appointing\n\n authority and tasked with the responsibility of conducting the written\n\n examination and the viva voce. The actions of the High Court, in pursuance\n\nState of Bihar v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 233"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P019_C02",
+      "text": "Bal Mukund Sah\n, (2000) 4 SCC 640\n\nof its public duty, would give rise to the legitimate expectation that the process\n\n of selection of candidates will be fair and non-arbitrary.\n\n a. Doctrine of legitimate expectation under common law",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P020_C01",
+      "text": "18. The basis of the doctrine of legitimate expectation in public law is founded on\n\n the principles of fairness and non-arbitrariness in government dealings with\n\n individuals. It recognizes that a public authority’s promise or past conduct will\n\n give rise to a legitimate expectation. The doctrine is premised on the notion\n\n that public authorities, while performing their public duties, ought to honor\n\n their promises or past practices. The legitimacy of an expectation can be\n\n inferred if it is rooted in law, custom, or established procedure.7\n19. The origin of the doctrine in the modern sense could be authoritatively traced\n\n to the opinion of Lord Denning in Schmidt v. Secretary of State for Home\n\n Affairs.8 In that case, the Home Secretary granted a limited permit to the\n\n petitioners to enter the United Kingdom for the purposes of study at the\n\n College of Scientology. After the expiration of the time period, the petitioners\n\n applied to the Home Secretary for an extension of their permits. The Home\n\n Secretary refused to grant the extension.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P020_C02",
+      "text": "Although the Court rejected the\n\n claim brought by the petitioners, Lord Denning observed that the petitioner\n\n would have a legitimate expectation of being allowed to stay for the permitted\n\n time. In such situation, it was observed that the petitioner ought to have been\n\n given an opportunity of making a representation if his permit was revoked\n\n7 Salemi v. Mackellar, [1977] HCA 26\n8 [1969] 2 WLR 337\n\nbefore the expiration of the time period. Lord Denning’s conception of the\n\n doctrine of legitimate expectation was a procedural protection – a legitimate\n\n expectation could not be denied without providing an opportunity of hearing\n\n to the affected person.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P021_C01",
+      "text": "20. In O’Reilly v. Mackman, 9 the House of Lords was called upon to decide the\n\n validity of the order passed by the Board of Visitors to impose a penalty\n\n against the plaintiffs in breach of the prison rules and principles of natural\n\n justice. Lord Diplock observed that the doctrine of legitimate expectation gave\n\n the affected party a right to challenge the legality of the adverse actions on\n\n the ground that the authority had acted beyond the powers conferred upon it\n\n by the legislation including the failure to observe the principles of natural\n\n justice. Lord Diplock reiterated the doctrine of legitimate expectation in terms\n\n of the duty of public authorities to act fairly in their dealings with individuals.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P022_C01",
+      "text": "21. The doctrine of legitimate expectation received further impetus in the decision\n\n of the Privy Council in Attorney General of Hong Kong v. Ng Yuen Shiu. 10\n\n In that case, a senior immigration officer announced that each illegal entrant\n\n from China would be interviewed before passing deportation orders against\n\n them. The respondent, an illegal entrant from China, was detained and\n\n removal orders were passed against him without any opportunity of hearing. Therefore, the issue was whether the respondent had a legitimate expectation\n\n of the grant of a hearing before repatriation by the immigration officer. It was\n\n9 [1983] 2 AC 237\n10 [1983] 2 WLR 735\n\nheld that a public authority is bound by its undertakings.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P022_C02",
+      "text": "Lord Fraser explained\n\n the contours of legitimate expectations in the following terms:\n“The expectations may be based upon some statement or\n undertaking by, or on behalf of, the public authority which has the\n duty of making the decision, if the authority has, through its officers,\n acted in a way that would make it unfair or inconsistent with good\n administration for him to be denied such an inquiry.”\n\n According to Lord Fraser’s opinion, the primary justification for the doctrine of\n\n legitimate expectation is that a public authority should implement its promise\n\n in the interests of fairness and good administration.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P023_C01",
+      "text": "22. The doctrine of legitimate expectation was crystallized in common law\n\n jurisprudence by Lord Diplock in the locus classicus, Council of Civil Service\n\n Unions v. Minister for the Civil Service. 11 Lord Diplock held that courts can\n\n exercise the power of judicial review of administrative decisions in situations\n\n where such decision deprives a person of some benefit or advantage which:\n(i) they had in the past been permitted by the decision-maker to enjoy and\n\n which they can legitimately expect to be permitted to continue until\n\n there has been communicated to them some rational grounds for\n\n withdrawing it on which they have been given an opportunity to\n\n comment; or\n(ii) they have received assurance from the decision-maker that the\n\n advantage or benefit will not be withdrawn without giving them an\n11 [1985] AC 374\n\nopportunity of advancing reasons for contending that the advantage or\n\n benefit should not be withdrawn.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P024_C01",
+      "text": "23. The doctrine of legitimate expectation emerged as a common law doctrine to\n\n guarantee procedural fairness and propriety in administrative actions.\n\n Legitimate expectation was developed by the courts to require a degree of\n\n procedural fairness by public authorities in their dealings with individuals.\n\n Denial of an assured benefit or advantage was accepted as a ground to\n\n challenge the decision of a public authority.\nb. Doctrine of legitimate expectation under Indian law",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P025_C01",
+      "text": "24. By the 1990s, the Indian courts incorporated the doctrine of legitimate\n\n expectation in the context of procedural fairness and non-arbitrariness under\nArticle 14\nof the Constitution. Food Corporation of India v. Kamdhenu\n\n Cattle Feed Industries\n12, this Court held that public authorities have a duty\n\n to use their powers for the purposes of public good. This duty raises a\n\n legitimate expectation on the part of the citizens to be treated in a fair and\n\n non-arbitrary manner in their interactions with the state and its\n\n instrumentalities. This Court held that a decision taken by an executive\n\n authority without considering the legitimate expectation of an affected person\n\n may amount to an abuse of power:\n“7. […] To satisfy this requirement of non-arbitrariness in a State\n action, it is, therefore, necessary to consider and give due weight to\n the reasonable or legitimate expectations of the persons likely to be\n affected by the decision or else that unfairness in the exercise of the\n power may amount to an abuse or excess of power apart from\n\n12 (1993) 1 SCC 71\n\naffecting the bona fides of the decision in a given case.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P025_C02",
+      "text": "The decision\n so made would be exposed to challenge on the ground of\n arbitrariness. Rule of law does not completely eliminate discretion\n in the exercise of power, as it is unrealistic, but provides for control\n of its exercise by judicial review.”\n\n The court held that whether the expectation of a claimant is legitimate or not\n\n is a question of fact which has to be decided after weighing the claimant’s\n\n expectation against the larger public interest. Thus, while dealing with the\n\n claims of legitimate expectations, the Court has to necessarily balance the\n\n legitimate expectation of a claimant against the larger public interest.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P026_C01",
+      "text": "25. Union of India v. Hindustan Development Corporation\n, 13 this Court\n\n clarified the contours of the doctrine of legitimate expectation in the following\n\n terms: (i) legitimate expectation arises based on a representation or past\n\n conduct of a public authority; (ii) legitimacy of an expectation can be inferred\n\n only if it is founded on the sanction of law or custom or an established\n\n procedure followed in regular or natural sequence; (iii) legitimate expectation\n\n provides locus standi to a claimant for judicial review; (iv) the doctrine is\n\n mostly confined to a right of a fair hearing before a decision and does not give\n\n scope to claim relief straightaway; (v) the public authority should justify the\n\n denial of a person’s legitimate expectation by resorting to overriding public\n\n interest; and (vi) the Courts cannot interfere with the decision of an authority\n\n taken by way of policy or public interest unless such decision amounts to an\n\n abuse of power.\n13 (1993) 3 SCC 499\n26. Hindustan Development Corporation\n(supra), this Court cautioned\n\n against the use of the doctrine of legitimate expectation to safeguard a\n\n substantive right.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P026_C02",
+      "text": "Yet, in a series of subsequent decisions, this Court\n\n accepted that the doctrine of legitimate expectations has become a source of\n\n both procedural and substantive rights.\n14 In\nPunjab Communication Ltd v. Union of India\n15, this Court explained the difference between procedural and\n\n substantive legitimate expectation in the following terms:\n“The procedural part of it relates to a representation that a hearing\n or other appropriate procedure will be afforded before the decision\n is made. The substantive part of the principle is that if a\n representation is made that a benefit of a substantive nature will be\n granted or if the person is already in receipt of the benefit that it will\n be continued and not be substantially varied, then the same could\n be enforced.”\n\n A claim based on the doctrine of procedural legitimate expectation arises\n\n where a claimant expects the public authority to follow a particular procedure\n\n before taking a decision. This is in contradistinction to the doctrine of\n\n substantive legitimate expectation where a claimant expects conferral of a\n\n substantive benefit based on the existing promise or practice of the public\n\n authority.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P026_C03",
+      "text": "The doctrine of substantive legitimate expectation has now been\n\n accepted as an integral part of both the common law as well as Indian\n\n jurisprudence.\nc. Substantive Legitimate Expectation\n\n14 M P Oil Extraction v. State of M P, (1997) 7 SCC 592;\nNational Building Construction Corporation v. S Raghunathan\n(1998) 7 SCC 66\n15 (1999) 4 SCC 727\n27. R v. North and East Devon Health Authority\n, ex parte Coughlan 16, the\n\n Court of Appeal laid down the test of abuse of power to determine whether a\n\n public authority can resile from a prima facie legitimate expectation. It was\n\n held that frustration of a substantive legitimate expectation by public\n\n authorities would be unfair and amount to abuse of power. Importantly, it was\n\n held that abuse of power constitutes a ground for the courts to exercise\n\n judicial review of executive actions.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P027_C01",
+      "text": "28. In Nadarajah v. Secretary of State for the Home Department,17 the Court\n\n of Appeal added another facet to the doctrine of substantive legitimate\n\n expectation by grounding it in the principles of good administration. Importantly, the court identified that consistency and probity are tenets of a\n\n good administration. Laws LJ explained the principles underlying the doctrine\n\n of legitimate expectation in the following terms:\n“68. The search for principle surely starts with the theme that is\n current through the legitimate expectation cases. It may be\n expressed thus. Where a public authority has issued a promise or\n adopted a practice which represents how it proposes to act in a\n given area, the law will require the promise or practice to be\n honoured unless there is good reason not to do so. What is the\n principle behind this proposition? It is not far to seek. It is said to be\n grounded in fairness, and no doubt in general terms that is so.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P027_C02",
+      "text": "would prefer to express it rather more broadly as a requirement\n of good administration, by which public bodies ought to deal\n straightforwardly and consistently with the public.”\n\n (emphasis supplied)\n\n Moreover, Laws LJ held that a public authority can resile from its promise or\n\n future conduct if its decision: (i) is in pursuance of a legal duty; or (ii) is a\n\n16 [2001] QB 213\n17 [2005] EWCA Civ 1363\n\nproportionate response having regard to the legitimate aim pursued by the\n\n public body in the public interest.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P028_C01",
+      "text": "29. The decision of the Court of Appeal in Coughlan (supra) marked a gradual\n\n shift in the formulation of the doctrine of legitimate expectation in the common\n\n law. In Schmidt (supra) and Council of Civil Service Unions (supra), the\n\n application of the doctrine was justified on the grounds of fairness in decision-\n\n making by public authorities. However, the gradual shift towards a more\n\n nuanced aspect of the doctrine began when the English courts started\n\n requiring public authorities to honor their promises or practices as a\n\n requirement of good administration. Good administration was characterized\n\n by consistent, regular, and straight-forward conduct on behalf of the public\n\n authorities. Further, the concept of unfairness in decision-making as an abuse\n\n of power was firmly established by the court in Coughlan (supra). Thus, the\n\n requirement of good administration and preventing an abuse of power came\n\n to underpin the administrative actions of public authorities. 18\n30. The above developments in the common law also had an influence on the\n\n Indian law. Ram Pravesh Singh v.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P028_C02",
+      "text": "State of Bihar\n, 19 this Court explained\n\n the concept of legitimate expectation as a reasonable, logical, and valid\n\n expectation of certain benefit, relief, or remedy:\n“15. What is legitimate expectation? Obviously, it is not a legal right. It is an expectation of a benefit, relief or remedy, that may ordinarily\n flow from a promise or established practice. The term “established\n practice” refers to a regular, consistent, predictable and certain\n conduct, process or activity of the decision-making authority. R v. Department of Education and Employment\n, [2000] 1 WLR 1115\n19 (2006) 8 SCC 381\n\nThe expectation should be legitimate, that is, reasonable,\n logical and valid. Any expectation which is based on sporadic or\n casual or random acts, or which is unreasonable, illogical or invalid\n cannot be a legitimate expectation.”\n\n (emphasis supplied)\n\nRam Pravesh Singh\n(supra), this Court noted that the efficacy of the\n\n doctrine of legitimate expectation is weak as the claimant is only entitled to\n\n the following two reliefs: (i) an opportunity to show cause before the\n\n expectation is negatived; and (ii) an explanation as to the cause for denial.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P028_C03",
+      "text": "The Court further clarified that a claim based on legitimate expectation can\n\n be negatived on factors such as public interest, change in policy, conduct of\n\n the claimant, or any other valid or bona fide reason provided by the public\n\n authority.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P029_C01",
+      "text": "31. While dealing with the doctrine of legitimate expectation, another important\n\n aspect that the courts have had to grapple with is determining the “legitimacy”\n\n of the expectation. The court can infer the legitimacy of an expectation only if\n\n it is founded on the sanction of law. 20 In\nSecretary, State of Karnataka v.\n\n Umadevi\n, 21 a Constitution Bench of this Court held that a contractual or\n\n casual employee cannot claim a legitimate expectation to be regularized in\n\n service since such appointments could only be made after following proper\n\n procedures for selection including consultation with the Public Service\n\n Commission in certain situations.\nThe legitimacy of expectation is a question\n\n20 Bannari Amman Sugars Ltd v. CTO, (2005) 1 SCC 625\n21 (2006) 4 SCC 1\n\nof fact and has to be determined after weighing the claimant’s expectation\n\n against the larger public interest.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P030_C01",
+      "text": "32. This Court has consistently held that a legitimate expectation must always\n\n yield to the larger public interest.\nSethi Auto Service Station v. DDA\n, 22\n\n this Court clarified that legitimate expectation will not be applicable where the\n\n decision of the public authority is based on a public policy or is in the public\n\n interest, unless the action amounts to an abuse of power. The doctrine of\n\n legitimate expectation cannot be invoked to fetter valid exercise of\n\n administrative discretion.\n23 In\nP Suseela v. University Grants\n\n Commission,24\nthe claimants challenged the UGC Regulations which made\n\n it mandatory for candidates seeking to be appointed to the post of lecturer or\n\n assistant professor to qualify at the NET examination. The Court held that the\n\n legitimate expectation of the claimants must yield to the larger public interest\n\n – having highly qualified assistant professors and lecturers to teach in\n\n educational institutions governed by the UGC.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P031_C01",
+      "text": "33. Kerala State Beverages (M&M) Corp Ltd. v. P P Suresh\n, 25 the state\n\n government decided to ban arrack, as a result of which thousands of arrack\n\n workers lost their livelihoods. In 2002, the government issued an order\n\n reserving twenty-five percent of all the vacancies to the post of daily wage\n\n workers in the petitioner corporation for the arrack workers who lost livelihood\n\n due to the arrack ban. In 2004, the government changed the criteria by\n\n22 (\n2009) 1 SCC 180\n23 Monnet Ispat & Energy Ltd v. Union of India\n, (2012) 11 SCC 1\n24 (2015) 8 SCC 129\n25 (2019) 9 SCC 710\n\nproviding that the reservation policy would only be earmarked for the\n\n dependent sons of the arrack workers. The state government submitted\n\n before this Court that it was practically difficult to provide employment to the\n\n arrack workers. The Court accepted that the workers had a legitimate\n\n expectation to be considered for the appointment as daily wage workers. However, it gave credence to the overriding public interest cited by the state\n\n government to resile from the promise made to the arrack workers.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P031_C02",
+      "text": "After\n\n weighing the expectation of the workers against the public interest, this Court\n\n held that the expectation of the workers was not legitimate.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P032_C01",
+      "text": "34. State of Jharkhand v. Brahmputra Metallics26\n, the issue before this\n\n Court was whether the respondent was entitled to claim a rebate or deduction\n\n on electricity duty under the Industrial Policy, 2012 for a period of five years\n\n from the commencement of production. Although the policy was announced\n\n in 2012, the exemption notification was issued in 2015 with prospective effect. While dealing with the issue of whether the state government frustrated the\n\n legitimate expectation of the respondent, one of us (D Y Chandrachud, J)\n\n observed that the representations made by the public authorities should be\n\n held to scrupulous standards because of the trust reposed by the citizens in\n\n the state:\n“41. […] Representations by public authorities need to be held to\n scrupulous standards, since citizens continue to live their lives\n based on the trust they repose in the State. In the commercial world\n also, certainty and consistency are essential to planning the affairs\n of business.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P032_C02",
+      "text": "When public authorities fail to adhere to their\n representations without providing an adequate reason to the\n citizens for this failure, it violates the trust reposed by citizens in the\n\n26 2020 SCC OnLine SC 968\n\nState. The generation of a business friendly climate for investment\n and trade is conditioned by the faith which can be reposed in\n government to fulfil the expectations which it generates.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P033_C01",
+      "text": "35. Brahmputra Metallics\n(supra), this Court held that the state government\n\n made a solemn representation under its Industrial Policy, 2012 to provide\n\n exemption from payment of electricity duty to the claimants. However, the\n\n government failed to provide any justification for issuing the exemption notice\n\n after a delay of three years in 2015. This Court observed that the state is\n\n bound to act fairly and transparently while performing its public duties, and\n\n any deprivation of entitlement of private citizens and private business must\n\n be proportional to a requirement grounded in public interest:\n“53. […] The state must discard the colonial notion that it is a\n sovereign handing out doles at its will. Its policies give rise to\n legitimate expectations that the state will act according to what it\n puts forth in the public realm. In all its actions, the State is bound to\n act fairly, in a transparent manner. This is an elementary\n requirement of the guarantee against arbitrary state action which\nArticle 14\nof the Constitution adopts. A deprivation of the entitlement\n of private citizens and private business must be proportional to a\n requirement grounded in public interest.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P034_C01",
+      "text": "36. The doctrine of legitimate expectation does not impede or hinder the power\n\n of the public authorities to lay down a policy or withdraw it. The public authority\n\n has the discretion to exercise the full range of choices available within its\n\n executive power. The public authority often has to take into consideration\n\n diverse factors, concerns, and interests before arriving at a particular policy\n\n decision. The courts are generally cautious in interfering with a bona fide\n\n decision of public authorities which denies a legitimate expectation provided\n\n such a decision is taken in the larger public interest. Thus, public interest\n\nserves as a limitation on the application of the doctrine of legitimate\n\n expectation. Courts have to determine whether the public interest is\n\n compelling and sufficient to outweigh the legitimate expectation of the\n\n claimant. While performing a balancing exercise, courts have to often grapple\n\n with the issues of burden and standard of proof required to dislodge the claim\n\n of legitimate expectation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P035_C01",
+      "text": "37. In Paponette v. Attorney General of Trinidad and Tobago,27 the Privy\n\n Council held that a claimant only has to prove the legitimacy of their\n\n expectation. In this regard, the claimant must establish that the expectation is\n\n based on an existing promise or practice. Once the claimant establishes their\n\n legitimate expectation, the onus shifts to the authority to justify the frustration\n\n of the expectation by identifying any overriding public interest. This Court has\n\n been applying similar burden requirements in cases of legitimate\n\n expectation. 28\n38. The principle of fairness in action requires that public authorities be held\n\n accountable for their representations, since the state has a profound impact\n\n on the lives of citizens. Good administration requires public authorities to act\n\n in a predicable manner and honor the promises made or practices established\n\n unless there is a good reason not to do so. In Nadarajah (supra), Laws LJ\n\n held that the public authority should objectively justify that there is an\n\n overriding public interest in denying a legitimate expectation. We are of the\n\n27 [2012] 1\nAC 1\n28 Union of India v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P035_C02",
+      "text": "Hindustan Development Corp\n, (1993) 3 SCC 499;\nState of Jharkhand v. Brahmputra Metallics\n, 2020 SCC OnLine SC 968;\nState of Bihar v. Shyama Nandan Mishra\n, 2022\nSCC OnLine SC 554\n\nopinion that for a public authority to frustrate a claim of legitimate expectation,\n\n it must objectively demonstrate by placing relevant material before the court\n\n that its decision was in the public interest. This standard is consistent with the\n\n principles of good administration which require that state actions must be held\n\n to scrupulous standards to prevent misuse of public power and ensure\n\n fairness to citizens.\nd. Consistency and predictability as aspects of non-arbitrariness",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P036_C01",
+      "text": "39. Another significant development in the jurisprudence pertaining to the\n\n doctrine of legitimate expectation is the emphasis on predictability and\n\n consistency in decision-making as a facet of non-arbitrariness.\nRam\n\n Pravesh Singh\n(supra), it was held that the doctrine of legitimate expectation\n\n applies to a regular, consistent, predictable, and certain conduct.\nSimilarly,\n\nNOIDA Entrepreneurs Association v. NOIDA\n, 29 this Court observed that\n\n an executive decision without any basis in a principle or a rule is\n\n unpredictable. It was held that such a decision-making process contradicts\n\n the principle of legitimate expectation and is antithetical to the rule of law.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P037_C01",
+      "text": "40. In a recent decision in\nState of Bihar v. Shyama Nandan Mishra30\n, this Court\n\n was called upon to determine the validity of the decision of the state\n\n government to treat lecturers on par with secondary school teachers of\n\n nationalized schools. A two-Judge Bench of this Court held that the decision\n\n of the state government was ultra vires the Bihar Non-Government Secondary\n\n29 (2011) 6 SCC 508\n30 2022 SCC OnLine SC 554\n\nSchools (Taken over of Control and Management) Act, 1981. Moreover, the\n\n Court tested the validity of the government’s decision on the anvil of the\n\n doctrine of substantive legitimate expectation. The Court held that the\n\n government’s decision led to the denial of substantive legitimate expectations\n\n of the lecturers because: (i) the government by artificially grouping the\n\n lecturers with teachers of nationalized schools belied the expectation of the\n\n lecturers to obtain promotion and attain higher positions in the department\n\n depending upon inter-se seniority; and (ii) the government’s decision was\n\n contrary to the previous representation, lacked any compelling public interest,\n\n and was therefore unfair and amounted to an abuse of power.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P038_C01",
+      "text": "41. Shyama Nandan Mishra\n(supra), the Court also highlighted that regularity,\n\n predictability, certainty, and fairness are important facets of governance:\n“36. Taking a cue from above, where the substantive legitimate\n expectation is not ultra vires the power of the authority and the court\n is in a position to protect it, the State cannot be allowed to change\n course and belie the legitimate expectation of the respondents. As\n is well known, Regularity, Predictability, Certainty and Fairness\n are necessary concomitants of Government's action and the\n Bihar government in our opinion, failed to keep to their\n commitment by the impugned decision, which we find was\n rightly interdicted by the High Court.”\n\n (emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P039_C01",
+      "text": "42. In a constitutional system rooted in the rule of law, the discretion available\n\n with public authorities is confined within clearly defined limits. The primary\n\n principle underpinning the concept of rule of law is consistency and\n\n predictability in decision-making. A decision of a public authority taken without\n\n any basis in principle or rule is unpredictable and is, therefore, arbitrary and\n\nantithetical to the rule of law. 31 The rule of law promotes fairness by stabilizing\n\n the expectations of citizens from public authorities. This was also considered\n\n in a recent decision of this Court in\nSEBI v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P039_C02",
+      "text": "Sunil Krishna Khaitan\n, 32 where\n\n it was observed that regularity and predictability are hall-marks of good\n\n regulation and governance. 33 This Court held that certainty and consistency\n\n are important facets of fairness in action and non-arbitrariness:\n“59. […] Any good regulatory system must promote and adhere\n to principle of certainty and consistency, providing assurance\n to the individual as to the consequence of transactions forming\n part of his daily affairs. […] This does not mean that the\n regulator/authorities cannot deviate from the past practice, albeit\n any such deviation or change must be predicated on greater public\n interest or harm. This is the mandate of\nArticle 14\nof the\n Constitution of India which requires fairness in action by the\n State, and non-arbitrariness in essence and substance. Therefore, to examine the question of inconsistency, the analysis is\n to ascertain the need and functional value of the change, as\n consistency is a matter of operational effectiveness.”\n\n (emphasis supplied)",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P040_C01",
+      "text": "43. The underlying basis for the application of the doctrine of legitimate\n\n expectation has expanded and evolved to include the principles of good\n\n administration. Since citizens repose their trust in the state, the actions and\n\n policies of the state give rise to legitimate expectations that the state will\n\n adhere to its assurance or past practice by acting in a consistent, transparent,\n\n and predictable manner. The principles of good administration require that\n\n the decisions of public authorities must withstand the test of consistency,\n\nS G Jaisinghani v. Union of India\n, 1967 SCC OnLine SC 6\n32 (2023) 2 SCC 643\n33 (2023) 2 SCC 643\n\ntransparency, and predictability to avoid being regarded as arbitrary and\n\n therefore violative of\nArticle 14.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P041_C01",
+      "text": "44. From the above discussion, it is evident that the doctrine of substantive\n\n legitimate expectation is entrenched in Indian administrative law subject to\n\n the limitations on its applicability in given factual situations. The development\n\n of Indian jurisprudence is keeping in line with the developments in the\n\n common law. The doctrine of substantive legitimate expectation can be\n\n successfully invoked by individuals to claim substantive benefits or\n\n entitlements based on an existing promise or practice of a public authority. However, it is important to clarify that the doctrine of legitimate expectation\n\n cannot serve as an independent basis for judicial review of decisions taken\n\n by public authorities. Such a limitation is now well recognized in Indian\n\n jurisprudence considering the fact that a legitimate expectation is not a legal\n\n right. 34 It is merely an expectation to avail a benefit or relief based on an\n\n existing promise or practice.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P041_C02",
+      "text": "Although the decision by a public authority to\n\n deny legitimate expectation may be termed as arbitrary, unfair, or abuse of\n\n power, the validity of the decision itself can only be questioned on established\n\n principles of equality and non-arbitrariness under\nArticle 14. In a nutshell, an\n\n individual who claims a benefit or entitlement based on the doctrine of\n\n legitimate expectation has to establish: (i) the legitimacy of the expectation;\n\nUnion of India v. Hindustan Development Corporation\n, (1993) 3 SCC 499; Bannari Amman Sugars\n\nLtd v. CTO, (2005) 1 SCC 625;\nMonnet Ispat and Energy Ltd v. Union of India\n, (2012) 11 SCC 1;\nUnion of India v. Lt. Col\n. P K Choudhary (2016) 4 SCC 236;\nState of Jharkhand v. Brahmputra\nMetallics\n, 2020 SCC OnLine SC 968\n\nand (ii) that the denial of the legitimate expectation led to the violation of\nArticle 14. D. Application of the doctrine of legitimate expectation",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P042_C01",
+      "text": "45. In order to apply the above-mentioned principles in the present case, we\n\n consider it appropriate to formulate the following questions: (i) what has the\n\n High Court, either by promise or practice, committed itself to; (ii) whether the\n\n High Court has acted unlawfully in relation to its commitment; and (iii) what\n\n should this Court allow. 35\n\n i. What has the High Court committed itself to?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P043_C01",
+      "text": "46. Rule 2(c)(iii) of the 1961 Rules provided at the material time that 25% of the\n\n posts of District and Sessions Judges should be filled by direct recruitment\n\n from the Bar on the basis of aggregate marks/grade obtained in the written\n\n examination and the viva-voce conducted by the High Court. The scheme of\n\n examination specifically stipulates that there shall be no cut off marks for the\n\n viva voce. Further, the notification dated 30 September 2015 also stipulates\n\n that the merit list of successful candidates would be prepared on the basis of\n\n the total marks obtained in the written examination and the viva voce.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P044_C01",
+      "text": "47. The statutory rule coupled with the scheme of examination and the 2015\n\n examination notification would have generated an expectation in the\n\n petitioners that the merit list of selected candidates will be drawn on the basis\n\n of the aggregate of total marks received in the written examination and the\n\n35 See Regina (Bibi) v. Newham London Borough Council, [2002] 1 WLR 237\n\nviva voce. Moreover, the petitioners would have expected no minimum cut-\noff for the viva voce in view of the express stipulation in the scheme of\n\n examination. Both the above expectations of the petitioners are legitimate as\n\n they are based on the sanction of statutory rules, scheme of examination, and\n\n the 2015 examination notification issued by the High Court. Thus, the High\n\n Court lawfully committed itself to preparing a merit list of successful\n\n candidates on the basis of the total marks obtained in the written examination\n\n and the viva voce.\nii. Whether the High Court has acted unlawfully in relation to its\n\n commitment?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P045_C01",
+      "text": "48. The Administrative Committee of the High Court apprehended that a\n\n candidate who performed well in the written examination, even though they\n\n fared badly in the viva voce, would get selected to the post of District and\n\n Sessions Judge. The Administrative Committee observed that recruitment of\n\n such candidates would be a disservice to the public at large because they\n\n possessed only “bookish” knowledge and lacked practical wisdom. To avoid\n\n such a situation, the Administrative Committee of the High Court decided to\n\n apply a minimum cut-off to the viva voce examination. The decision of the\n\n Administrative Committee was approved by the Full Bench of the High Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P046_C01",
+      "text": "49. The Constitution vests the High Courts with the authority to select judicial\n\n officers in their jurisdictions. The High Court, being a constitutional and public\n\n authority, has to bear in the mind the principles of good administration while\n\n performing its administrative duties. The principles of good administration\n\nrequire that the public authorities should act in a fair, consistent, and\n\n predictable manner.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P047_C01",
+      "text": "50. The High Court submitted that frustration of the petitioner’s substantive\n\n legitimate expectation was in larger public interest – selecting suitable\n\n candidates with practical wisdom for the post of District Judges. Indeed, it is\n\n in the public interest that we have suitable candidates serving in the Indian\n\n judiciary. However, the criteria for selecting suitable candidates are laid down\n\n in the statutory rules. As noted above, the High Court did amend the 1961\n\n Rules in 2017 to introduce a minimum cut-off mark for the viva voce. The\n\n amended Rule 2(c) is extracted below:\n“2. Method of appointment – (1) Appointment to the service shall be\n made as follows:\n[…]\n(c) Twenty five percent of the posts in the service shall be filled up\n by direct recruitment from the members of the Bar. The recruitment\n shall be on the basis of a competitive examination consisting of a\n written examination and a viva voce. […] Maximum marks for viva\n voce shall be 50. The General and Other Backward Classes\n candidates shall secure a minimum of 40% marks and\n Scheduled Caste/Scheduled Tribe candidate shall secure a\n minimum of 35% marks for passing the viva voce.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P047_C02",
+      "text": "The merit list\n of the selected candidates shall be prepared on the basis of the\n aggregate marks secured by the candidate in the written\n examination and viva voce.”\n\n (emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P048_C01",
+      "text": "51. Under the unamended 1961 Rules, the High Court was expected to draw up\n\n the merit list of selected candidates based on the aggregate marks secured\n\n by the candidates in the written examination and the viva voce, without any\n\n requirement of a minimum cut-off for the viva voce. Thus, the decision of the\n\n Administrative Committee to depart from the expected course of preparing\n\nthe merit list of the selected candidates is contrary to the unamended 1961\n\n Rules. It is also important to highlight that the requirement of a minimum cut-\n\n off for the viva voce was introduced after the viva voce was conducted. It is\n\n manifest that the petitioners had no notice that such a requirement would be\n\n introduced for the viva voce examination. We are of the opinion that the\n\n decision of High Court is unfair to the petitioners and amounts to an arbitrary\n\n exercise of power.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P049_C01",
+      "text": "52. The High Court’s decision also fails to satisfy the test of consistency and\n\n predictability as it contravenes the established practice. The High Court did\n\n not impose the requirement of a minimum cut-off for the viva voce for the\n\n selections to the post of District and Sessions Judges for 2013 and 2014.\n\n Although the High Court’s justification, when analyzed on its own terms, is\n\n compelling, it is not grounded in legality. The High Court’s decision to apply a\n\n minimum cut-off for the viva voce frustrated the substantive legitimate\n\n expectation of the petitioners. Since the decision of the High Court is legally\n\n untenable and fails on the touchstone of fairness, consistency, and\n\n predictability, we hold that such a course of action is arbitrary and violative of\nArticle 14.\n\niii. What should this Court do?",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P050_C01",
+      "text": "53. The question which now arises before the Court is in regard to the relief which\n\n can be granted to the petitioners. The final list of successful candidates was\n\n issued on 6 March 2017. The candidates who have been selected have been\n\n working as District and Sessions Judges for about six years. In the meantime,\n\n all the petitioners who are before the Court have not functioned in judicial\n\n office. At this lapse of time, it may be difficult to direct either the unseating of\n\n the candidates who have performed their duties. Unseating them at this stage\n\n would be contrary to public interest since they have gained experience as\n\n judicial officers in the service of the State of Kerala. While the grievance of\n\n the petitioners is that if the aggregate of marks in the written examination and\n\n viva-voce were taken into account, they would rank higher than three\n\n candidates who are respondents to these proceedings, equally, we cannot\n\n lose sight of the fact that all the selected candidates are otherwise qualified\n\n for judicial office and have been working over a length of time.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P050_C02",
+      "text": "Unseating them\n\n would, besides being harsh, result in a situation where the higher judiciary\n\n would lose the services of duly qualified candidates who have gained\n\n experience over the last six years in the post of District Judge.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P051_C01",
+      "text": "54. For the above reasons, we have come to the conclusion that it would not be\n\n possible to direct the induction of the petitioners into the Higher Judicial\n\n Service at the present stage. Many of the petitioners would have since joined\n\n the Bar and would be in active practice. It needs to be clarified that their\n\n having failed to gain selection to the Higher Judicial Service in the process\n\nwhich was initiated on 30 September 2015, is not a reflection either on their\n\n merits or ability and shall not come in the way of their being considered for\n\n any other office, judicial or otherwise, in the future.\n\nE. Conclusions",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P052_C01",
+      "text": "55. The following are our conclusions in view of the above discussions:\n(i) The principles of good administration require that the decisions of\n\n public authorities must withstand the test of consistency, transparency,\n\n and predictability to avoid being termed as arbitrary and violative of\nArticle 14;\n(ii) An individual who claims a benefit or entitlement based on the doctrine\n\n of substantive legitimate expectation has to establish the following: (i)\n\n the legitimacy of the expectation; and that (ii) the denial of the\n\n legitimate expectation led to a violation of\nArticle 14;\n(iii) A public authority must objectively demonstrate by placing relevant\n\n material before the court that its decision was in the public interest to\n\n frustrate a claim of legitimate expectation;\n(iv) The decision of the High Court of Kerala to apply a minimum cut-off to\n\n the viva voce examination is contrary to Rule 2(c)(iii) of the 1961 Rules. (v) The High Court’s decision to apply the minimum cut-off marks for the\n\n viva voce frustrates the substantive legitimate expectation of the\n\n petitioners. The decision is arbitrary and violative of\nArticle 14.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P052_C02",
+      "text": "(vi) In terms of relief, we hold that it would be contrary to the public interest\n\n to direct the induction of the petitioners into the Higher Judicial Service\n\n after the lapse of more than six years. Candidates who have been\n\n selected nearly six years ago cannot be unseated. They were all\n\n qualified and have been serving the district judiciary of the state. Unseating them at this stage would be contrary to public interest. To\n\n induct the petitioners would be to bring in new candidates in preference\n\n to those who are holding judicial office for a length of time. To deprive\n\n the state and its citizens of the benefit of these experienced judicial\n\n officers at a senior position would not be in public interest.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P053_C01",
+      "text": "56. In the view which we have taken in the above terms, we have not considered\n\n it necessary to answer the broader question which has been referred to the\n\n Constitution Bench. Besides, the question has been squarely raised in certain\n\n other cases which form a part of the present batch of cases in which\n\n arguments are being heard by the Constitution Bench.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P054_C01",
+      "text": "57. The Petitions are accordingly disposed of in the above terms.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT_P055_C01",
+      "text": "58. Pending applications, if any, stand disposed of.\n…...........…...….......………………....…..CJI.\n[Dr Dhananjaya Y Chandrachud]\n\n ..…...........…...….......………………....…..J.\n [Hrishikesh Roy]\n\n ..………....…...….......………………....…..J.\n [Pamidighantam Sri Narasimha]\n\n ..………....…...….......………………....…..J.\n [Pankaj Mithal]\n\n ..………....…...….......………………....…..J.\n [Manoj Misra]\n\nNew Delhi;\nJuly 12, 2023.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Tej Prakash Pathak vs Rajasthan High Court",
+    "case_id": "SC_2023_TEJ_PRAKASH_PATHAK_VS_RAJASTHAN_HIGH_COURT",
+    "court": "Supreme Court of India",
+    "year": "2023",
+    "facts_summary": "1. On 14 November 2017, a Bench of two Judges of this Court referred a batch\n\n of four petitions, which invoked the jurisdiction of this Court under\nArticle 32\nof the Constitution, to the Constitution Bench in\nSivanandan C T v. High\nCourt of Kerala 1. Eleven petitioners are before this Court, all of whom are\n\n candidates aspiring to be selected as District Judges in the Higher Judicial\n\n Service of the State of Kerala. 2. In the State of Kerala, the Kerala State Higher Judicial Services Special Rules\n\n 1961 2 came into force on 11 July 1961. These Rules have been framed under\nArticles 233\nand\n\nof the Constitution. The 1961 Rules provide for the\n\n constitution of the Higher Judicial Service into three categories:\n(i) Super-time Scale District and Sessions Judge;\n\n (ii) Selection Grade District and Sessions Judge; and\n\n (iii) District and Sessions Judge, including Additional District Judge. 3. The dispute in the present batch of cases pertains to the third category noted\n\n above. Rule 2(c) provides for the method of appointment of the third category.\n\n Rule 2(c)(iii) stipulates that 25% of the posts in the category shall be filled by\n\n direct recruitment from the Bar “on the basis of aggregate marks/grade\n\n1 (2018) 1 SCC 239\n2 “1961 Rules”\n\nobtained in a competitive examination and viva-voce conducted by the High\n\n Court”.",
+    "legal_issues": "10. During the course of the hearing, we have heard arguments on behalf of the\n\n petitioners by Mr V Chitambaresh, senior counsel, Mr P V Dinesh, Ms\n\n Haripriya Padmanabhan, Mr Raghen Basant and Mr Kuriakose Verghese,\n\n counsel. 11. Mr Dama Seshadri Naidu, senior counsel has appeared on behalf of the High\n\n Court of Kerala, while Mr K P Kylasnatha Pillay, senior counsel for respondent\n\n No 11 argued in support of the dismissal of the writ petitions on the basis of\n\n the following grounds:\n(i)\nArticle 233\nof the Constitution vests a discretionary power with the High\n\n Court in matters of selection of judicial officers which cannot be\n\n curtailed by statutory rules;\n(ii) The Selection Committee constituted by the High Court is an expert\n\n body best placed to understand the suitability of the candidates, the\n\n needs of the judicial institution, and the larger public interest;\n\n(iii) The decision of the High Court in specifying minimum cut-off marks for\n\n the viva voce was applied across the board to select suitable\n\n candidates and does not suffer from arbitrariness; and\n(iv) Since the viva voce is an essential component to determine the\n\n suitability of candidates, it is within the discretion of the High Court to\n\n determine the weightage to be assigned to it.\nC. Analysis\n\n i. The decision of the High Court was contrary to the 1961 Rules 29. The decision of the Court of Appeal in Coughlan (supra) marked a gradual\n\n shift in the formulation of the doctrine of legitimate expectat",
+    "ratio_summary": "Sunil Krishna Khaitan\n, 32 where\n\n it was observed that regularity and predictability are hall-marks of good\n\n regulation and governance. 33 This Court held that certainty and consistency\n\n are important facets of fairness in action and non-arbitrariness:\n“59. […] Any good regulatory system must promote and adhere\n to principle of certainty and consistency, providing assurance\n to the individual as to the consequence of transactions forming\n part of his daily affairs. […] This does not mean that the\n regulator/authorities cannot deviate from the past practice, albeit\n any such deviation or change must be predicated on greater public\n interest or harm. This is the mandate of\nArticle 14\nof the\n Constitution of India which requires fairness in action by the\n State, and non-arbitrariness in essence and substance. Therefore, to examine the question of inconsistency, the analysis is\n to ascertain the need and functional value of the change, as\n consistency is a matter of operational effectiveness.”\n\n (emphasis supplied) 52. The High Court’s decision also fails to satisfy the test of consistency and\n\n predictability as it contravenes the established practice. The High Court did\n\n not impose the requirement of a minimum cut-off for the viva voce for the\n\n selections to the post of District and Sessions Judges for 2013 and 2014.\n\n Although the High Court’s justification, when analyzed on its own terms, is\n\n compelling, it is not grounded in legality. The High Court’s decision to apply",
+    "final_order": "57. The Petitions are accordingly disposed of in the above terms.",
+    "outcome_summary": "57. The Petitions are accordingly disposed of in the above terms.",
+    "sections_cited": [
+      "Constitution 32",
+      "Constitution 233",
+      "Constitution 14"
+    ],
+    "cases_cited": []
+  }
+}

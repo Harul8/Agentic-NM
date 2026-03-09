@@ -1,0 +1,923 @@
+{
+  "case_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH",
+  "case_name": "Hari vs The State Of Uttar Pradesh",
+  "normalized_case_name": "HARI_VS_THE_STATE_OF_UTTAR_PRADESH",
+  "court": "Supreme Court of India",
+  "year": "2021",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 186 of 2018",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "26 November 2021",
+  "judges": [
+    "B.R. Gavai",
+    "Sanjiv Khanna",
+    "L. Nageswara Rao"
+  ],
+  "author": "L. Nageswara Rao",
+  "bench_type": "constitution",
+  "petitioner": "Hari",
+  "respondent": "The State Of Uttar Pradesh",
+  "reporter_citations": [],
+  "outcome": "upheld",
+  "disposition": "upheld",
+  "cites_count": 36,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2021\\NOV\\2021_NOV_70.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P001_C01",
+      "text": "CRIMINAL APPELLATE JURISDICTION\n\n Criminal Appeal No. 186 of 2018\n\nHari & Anr.\n .... Appellants\n Versus\n\nThe State of Uttar Pradesh\n …. Respondent\n With\n\n Criminal Appeal Nos. 190-192 of 2018\n Criminal Appeal No.188 of 2018\n Criminal Appeal No. 1503 of 2021\n (@SLP (Crl.) No. 1975 of 2018)\n Criminal Appeal No.420 of 2021\n Criminal Appeal Nos. 1553-1556 of 2018\n Criminal Appeal No.189 of 2018\n Criminal Appeal No.187 of 2018\n\n JUDGMENT\nL. NAGESWARA RAO, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P002_C01",
+      "text": "2.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P002_C02",
+      "text": "By a judgment dated 14.11.2011, the Trial Court held the\n\nfollowing persons guilty of the offences under Sections 147,\n\n302 read with 149, 323 read with 149, 324 read with Section\n\n149 and 201 read with\nSection 149\nof Indian Penal Code\n\n(“\nIPC\n”) and\nSection 3(3)(10)\nof the Scheduled Castes and the\n 1 | Page\nScheduled Tribes (Prevention of Atrocities) Act, 1989 (“SC/ST\n\nAct”): -\nDhanni son of Ratan Singh, Tej Singh son of Kerori,\n\nDharamveer son of Kanhayalal, Shivcharan son of Maniram,\n\nSingh Ram son of Mani Ram, Mahender son of Mangtu, Balli\n\nson of Kishanlal, Dharam son of Kallu, Nirto son of Bhavar\n\nSingh, Bacchu son of Nabli, Gopi son of Hariom, Tulsi Ram son\n\nof Bhanwar Singh, Kamal son of Kanhaya, Ram Singh son of\n\nDayaram, Jeevan son of Bhaggo, Girraj son of Kamar, Kashi\n\nson of Bhavar Singh, Chattar Singh son of Lal Singh, Karan son\n\nof Dayaram, Naval Singh son of Narayan, Daya Ram son of\n\nInder, Harchand son of Leela, Mangtu son of Sunder Lal,\n\nDayaram son of Bhavar Singh, Dharam son of Harchandi, Sirro\n\nson of Manni, Baato son of Bhaggo, Pritam son of Naval,\n\nShrichand son of Deepchand, Deepi alias Deepchand son of\n\nNathi, Harchandi son of Maharaj Singh, Hariram son",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 149"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P002_C03",
+      "text": "Yadram, Gangaram son of Hiralal, Hari son of Govinda, and\n\nLalsingh son of Khushiram.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P003_C01",
+      "text": "3. Appellants-Accused namely Dhanni son of Ratan Singh,\n\nDharamveer son of Kanhaya, Shivcharan son of Maniram,\n\nSinghram son of Maniram, Balli son of Kishanlal, Mahendra\n\nson of Mangtu, Dharam son of Kallu, Nirto son of\n\nBhavarsingh, Gopi son of Hariom, Girraj son of Govinda,\n2 | Page\nManni son of Natthi, Girraj son of Kamar, Kashi son of Bhavar\n\nSingh, Chattar Singh son of Leele, Harchand son of Leele,\n\nDharam son of Harchandi, Pritam son of Naval, Gangaram son\n\nof Hiralal, Hari son of Govinda, Lalsingh son of Khushiram,\n\nMangtu son of Sunderlal, Naval son of Narayan, Dayaram son\n\nof Bhavarsingh, Baato son of Bhaggo, Shrichand son of\n\nDeepchand, Deepi alias Deepchand son of Nathi, Jeevan son\n\nof Bhaggo were sentenced to life imprisonment under\nSection\n\n/\n\nof IPC, rigorous imprisonment for one year under\nSection 323\n/\n\nof IPC, 3 years under\nSection 324\n/\n\nof IPC,\n\n7 years under\nSection 201\n/\n\nof IPC and 3 years under\nSection 3 (3)\n\nof the SC/ST Act.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P004_C01",
+      "text": "4. Appellants-accused namely Tej Singh son of Kirori,\n\nBacchu son of Nabali, Tulsi Ram son of Bhavar Singh, Kamal\n\nson of Kanhaya, Ram Singh son of Dayaram, Raman son of\n\nRoopi, Karan son of Dayaram, Sirro son of Bhajni were\n\nsentenced to death under\nSection 302\n/\n\nof IPC.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P005_C01",
+      "text": "5. Criminal appeals were filed by the above-named\n\nconvicted persons in which the conviction was upheld by the\n\nHigh Court. However, the death sentence imposed on Tej\n\nSingh and 7 others was altered to imprisonment for life.\n\nAggrieved by their conviction and sentence, the appellants\n\n 3 | Page\nhave approached this Court by filing the above criminal\n\nappeals.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P006_C01",
+      "text": "6. Criminal Appeal Nos. 1553-1556 of 2018 have been filed\n\nby the State of Uttar Pradesh against the commutation of\n\ndeath sentence of Tej Singh son of Kirori, Bacchu son of\n\nNabali, Tulsi ram son of Bhavar Singh, Kamal son of Kanhaya,\n\nRam Singh son of Dayaram, Raman son of Roopi, Karan son of\n\nDayaram, Sirro son of Bhajni to life imprisonment. During the\n\npendency of the appeals, Tulsi Ram son of Bhavar Singh\n\npassed away.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P007_C01",
+      "text": "7. At 11.40 am on 27.03.1991, FIR was registered on the\n\nstatement made by Amichand (PW-15) at Police Station,\n\nBarsana. It was stated in the complaint that Roshni daughter\n\nof Ganga Ram eloped with Vijendra son of Shyama Jatav on\n\n21.03.1991 and they were accompanied by Ram Kishan son of\n\nMaharam. They returned back to the village on 24.03.1991.\n\nAt 9.00 pm on 26.03.1991, Mangtu S/o Sunder Lal, Pritam S/o\n\nNawal Singh, Chatar S/o Lal Singh, Girraj S/o Kanwar Singh\n\nBagera forcibly took Ram Kishan and Vijendra along with their\n\nfamily members to attend the Panchayat. Roshni was a Jat and\n\nVijendra and Ram Kishan were Jatavs. Roshni stated that she\n\nwanted to marry Vijendra and live with him, which infuriated\n\npersons belonging to the Jat community.\n4 | Page",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P008_C01",
+      "text": "8. Nawal S/o Narain, Purna S/o Chandan Singh, Deep Chand\n\nS/o Sunder Lal, Dayaram S/o Sunderlal, Mangtu S/o Sunder\n\nLal, Raman S/o Roopi, Kamal S/o Kanehiya, Amar Singh S/o\n\nDaya Ram, Ram Singh S/o Daya Ram, Dhanni S/o Rattan\n\nSingh, Hari S/o Yadu, Battari S/o Nand Ram, Bal Kishan S/o\n\nMaan Singh, Deepi S/o Nathi, Bairam S/o Deep Chand, Bacchu\n\nS/o Nabali, Tej Singh S/o Karori, Ganga S/o Heera Lal, Papu S/o\n\nGanga Ram, Baato S/o Bhaggo, Jeevan S/o Bhaggo, Lal Singh\n\nS/o Yadram, Ram Singh S/o Handoo, Dharamveer S/o\n\nKanahiya, Lala S/o Ramji Lal, Parmi S/o Ajinal, Daya Ram S/o\n\nBhanwar Singh, Harchand S/o Lal Singh, Pitam S/o Nawal,\n\nGirraj S/o Kunwar Singh, Harchandi S/o Maharaj Singh, Tulsi\n\nS/o Bhawar Singh, Bhawar Singh S/o Lehri, Nirto S/o Bhanwar\n\nSingh, Chatar S/o Lal Singh, Gultia S/o Nand Ram, etc. of Jat\n\ncaste were present during the Panchayat. Mangtu, Raman,\n\nKamal, Bacchu, Baato, Gutia, and others physically assaulted\n\nVijendra and Ram Kishan during the Panchayat which was\n\nconvened on 26.03.1991 at 9 pm and continued till 5 am next\n\nday. Vijendra and Ram Kishan were hung upside down and\n\ntheir private parts were burnt.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P008_C02",
+      "text": "Mangtu, Nawal, Harchandi,\n\nTulsi and other members of the Panchayat announced the\n\nunanimous view of the Panchayat that Vijendra and Ram\n\nKishan should be hanged to death. Vijendra, Ram Kishan and\n\n 5 | Page\nRoshni were taken to ‘Banyan tree’ near the house of Radhey\n\nShyam Jogi and the parents of the three youngsters were\n\ncompelled to tighten the noose around the neck of their\n\nchildren. Parents of Vijendra and Ram Kishan were physically\n\nassaulted when they refused to hang their children and were\n\nultimately made to hang them forcefully by putting their\n\nhands on the ropes and pulling it. The dead bodies of\n\nVijendra, Ram Kishan and Roshni were then taken to the\n\ncremation ground and were cremated between 8 am to 9 am\n\non 27.03.1991. During the course of Panchayat from 9 pm on\n\n26.03.1991 to the next day morning on 27.03.1991 till the\n\ncremation was concluded, nobody was allowed to leave the\n\nvillage. Somehow, Amichand escaped from the village after\n\nthe cremation and reached the police station at Barsana to\n\nlodge the complaint.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P008_C03",
+      "text": "Upon lodging of the complaint, PW-20, SI\n\nKripal Singh Rathi, Police Station Barsana, rushed to the place\n\nof occurrence and doused the pyre at the cremation ground. He collected the remaining pieces of flesh and bones and\n\nrecovered a Loongi and watch of deceased Vijendra from the\n\nplace of cremation. On the basis of statement of PW 14\n\nHukam Singh, 15 accused including Daya Ram and others\n\nwere arrested and the injured family members of the\n\n 6 | Page\ndeceased Vijendra and Ram Kishan were sent for medical\n\nexamination.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P009_C01",
+      "text": "9. 54 accused persons were charged under\nSections\n\n/\n\nof IPC. During the course of the trial, applications\n\nwere filed for consolidation of the cases in which the High\n\nCourt stayed the trial in 1992 which subsisted till 1998. 20\n\nwitnesses were examined by the prosecution and 4 witnesses\n\nwere produced by the defence. When the trial resumed in\n\n1998, 12 out of the 20 prosecution witnesses turned hostile.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P010_C01",
+      "text": "10. PW-1 Shanti, mother of Ram Kishan, was initially\n\nexamined on 09.04.1992. She stated that at 9 pm on\n\n26.03.1991 Naval Singh, Pritam, Girraj, Bhagantu, Dayaram,\n\nRam Singh, Raman, Bacchu, Hari Ram, Gutiya, Batesh, Lal,\n\nRam Singh son of Handu, Daya Ram S/o Susse, Billi, Chatar,\n\nHarchand, Rajendra, Harchandi, Bagle, Kamal came to her\n\nhouse and forcibly took Ram Kishan. Her husband Maharam\n\nand her son Vijay Singh followed them. She also rushed to the\n\nroom of Mangtu where Daya Ram gave her a lathi blow due to\n\nwhich two of her teeth broke. She deposed that Ram Kishan\n\nwas hung upside down in the room. Vijay Singh was also\n\ngiven two/three lathi blows due to which he tried to run away\n\nbut was caught and confined in the room of Mangtu. Unable to\n\nsee the torture of her children, PW-1 went back to her house.\n7 | Page\nNext day morning, the son of her sister informed that the\n\naccused persons were hanging Ram Kishan. She reached the\n\nBanyan tree where she saw Pritam, Naval Singh, Mangtu,\n\nDaya Ram, Deep Chand, Amar Singh, Ram Singh, Raman,\n\nKamal, Dhani, Hari Ram, Gutiya, Bacchu, Jeevan, Deepi, Ram\n\nSingh, S/o Handu, Daya Ram, Billi Chattar, Harchand, Dharam\n\nChand, Parbhi.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P010_C02",
+      "text": "Mangtu and Naval Singh tightened a rope\n\naround the neck of Ram Kishan which was pulled by Bato,\n\nRaman, Nirto, Bacchu, Kamal and Amar. Vijendra and Roshni\n\nwere also hanged to death. Thereafter, Ram Kishan, Vijendra\n\nand Roshni were cremated. She identified Mangtu, Deep\n\nChand, Daya Ram S/o Amar Singh, Ram Singh, Gudda,\n\nBacchu, Nirto, Raman, Tulsi Ram, Hari Ram, Pappu, Ganga\n\nRam, Naval Singh, Pritam and Harchandi. After the interim\n\norder of stay granted by the High Court was vacated, her\n\nevidence was recorded on 21.02.1998 during which she\n\nturned hostile.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P011_C01",
+      "text": "11. PW-13, Vishram is the brother of Vijendra. He\n\ncorroborated the statement made by PW-1 Shanti relating to\n\nRam Kishan and Vijendra being taken to the Panchayat\n\nforcibly. He deposed that Roshni was also summoned to the\n\nPanchayat. He also mentioned the names of persons and the\n\nactive role played by Naval Singh, Poorna, Deep Chand,\n\n 8 | Page\nMangtu, Daya Ram, Kamal, Raman, Amar Singh, Ram Singh,\n\nNathi, Gothari, Harkishan, Deepu, Bairam, Bacchu, Ganga\n\nRam, Pappu, Batu, Jeevan, Ram Ji Lal, Ram Singh,\n\nDharamveer, Duli, Daya Ram, Harchand, Pritam, Girraj,\n\nHarchandi, Tulsi, Chatar, Bhanwar Singh, Neto, Gutiya,\n\nShayam, Dharam, Kashi, S/o Manni, Hari S/o Kallu, Kanni S/o\n\nNatthi, Bharti, Shreechand, Mahesh, Gopi, Balli, Lal Singh\n\nduring the Panchayat. He stated that Ram Kishan, Vijendra\n\nand Roshni were hung to death and they were cremated later. He further stated that Vijendra did not die due to hanging and\n\nwas burnt alive.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P011_C02",
+      "text": "He deposed in the Court that he was also\n\nbeaten up and categorically mentioned the names of Naval\n\nSingh, Mangtu, Daya Ram, Harchandi, Baato, Gutiya, Ram\n\nSingh, Karan, Deepi, Shreechand etc. who executed the\n\nhanging and Gutiya, Baato, Tej Singh, Bacchu, Karan, Jeevan\n\nand Sirro for their active role in cremating the bodies of Ram\n\nKishan, Vijendra and Roshni. He stated that he was made to\n\nsit through the incident for 12 hours and was not allowed to\n\nmove even a single inch. During the course of recording of his\n\nevidence PW-13 turned hostile. However, on being cross-\n\nexamined again by the defence, he deposed against the\n\naccused persons.\n9 | Page",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P012_C01",
+      "text": "12. PW-14, Hukum is the son of Shyama and brother of\n\ndeceased Vijendra. He described the incident from 9 pm on\n\n26.03.1991 till the next day morning and stated in detail\n\nabout the hanging and cremation of Ram Kishan, Vijendra and\n\nRoshni. He corroborated the evidence of PW-1. He deposed\n\nbefore the Court about him being beaten up at his home and\n\nat the panchayat and about the boundaries of the village\n\nbeing guarded by the people belonging to the Jat caste who\n\ndid not allow anybody to leave the village during the course of\n\nthe incident.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P013_C01",
+      "text": "13. PW-15, Amichand is the uncle of Ram Kishan and was\n\nthe first informant who gave a vivid description of the crime.\n\nHe stated that he came to village Mahrana to attend the\n\nTheravi Bhoj of Mangtu’s mother. He gave the names of 35\n\npersons in his complaint on 27.03.1991 and later, names of 19\n\nother persons were furnished by him on 04.04.1991. In his\n\nevidence, PW 15 corroborated the evidence of PW-1 as well.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P014_C01",
+      "text": "14. 54 persons were charged for offence under\nSections 147\n,\n\n/\n\n,\n\n/\n\n,\n\n/\n\nand\n\n/\n\nof IPC and\nSection\n\n3(3)(10)\nof SC/ST Act. Some of them died and some accused\n\nwere juveniles. 39 accused were tried by the Trial Court. Out\n\nof the 39 accused, three of them namely, Dayaram son of\n\nInder, Harchandi son of Maharaj Singh and Hari son of Yadram\n\n 10 | P a g e\ndied after their statements were recorded under\nSection 313\nCr.P.C. Except Balkishan son of Mansingh, and the 3 accused\n\nwho died, remaining 35 accused were convicted by the Trial\n\nCourt.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P015_C01",
+      "text": "15. Appeals were filed by these 35 convicts before the High\n\nCourt. Out of the 35 convicts, the High Court acquitted two –\n\nnamely Shivcharan son of Maniram and Singhram son of\n\nManiram. The conviction of the remaining convicts was upheld\n\nby the High Court. However, the death sentence awarded to\n\nthe 8 accused was commuted to life imprisonment till the end\n\nof natural life.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P016_C01",
+      "text": "16. Against this judgement of the High Court, the following\n\npersons have filed Criminal Appeals before this Court:\nIn Criminal Appeal No. 186 of 2018\n1. Hari son of Govinda",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P017_C01",
+      "text": "2. Lal Singh son of Khushi Singh\n\nIn Criminal Appeal No. 187 of 2018\n3. Karan Singh son of Daya Ram\n\nIn Criminal Appeal No. 188 of 2018\n4. Chattar Singh son of Lal Singh",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P018_C01",
+      "text": "9. Deepi alias Deep Chand sn of Natthi\n\nIn Criminal Appeal No. 189 of 2018\n\n 11 | P a g e",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P019_C01",
+      "text": "17. Dharm son of Harchand\n\nIn Criminal Appeal Nos. 190-192 of 2018\n18. Dhanni son of Ratan Singh",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P020_C01",
+      "text": "28. Mahender son of Mantu\nIn SLP (Crl.) No. 1975 of 2018\n29. Mangtu son of Sunder Lal\n\nIn Criminal Appeal No. 420 of 2021\n30. Ganga Ram son of Heera Lal\n\n In addition to the above Criminal Appeals, Criminal\n\nAppeal Nos.1553-1556 of 2018 have been filed by the State\n\nagainst the commutation of death sentence awarded to eight\n\naccused to life imprisonment.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P021_C01",
+      "text": "17. We are informed by the learned counsel for the\n\nAppellant that during the pendency of these appeals, 4\n\nAppellants namely, Dayaram son of Bhanwar Singh (Appellant\n\n2 in Crl. A. 188 of 2018), Deepi alias Deep Chand son of Natthi\n\n 12 | P a g e\n(Appellant 6 in Crl. A. 188 of 2018), Gopi son of Hari Om\n\n(Appellant 4 in Crl. A. 189 of 2018) and Girraj son of Kamar\n\n(Appellant 3 in Crl. A. 190-192 of 2018) died. At present, we\n\nare concerned with 26 Appellants.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P022_C01",
+      "text": "18. The principles governing the interference by this Court in\n\na criminal appeal by a special leave have been laid down by\n\nthis Court in\nDalbir Kaur v. State of Punjab1\nwhich are as\n\nfollows: -",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P023_C01",
+      "text": "8.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P023_C02",
+      "text": "Thus the principles governing interference by this Court\n in a criminal appeal by special leave may be summarized as\n follows:\n“(1) that this Court would not interfere with the concurrent\n finding of fact based on pure appreciation of evidence even\n if it were to take a different view on the evidence;\n (2) that the Court will not normally enter into a\n reappraisement or review of the evidence, unless the\n assessment of the High Court is vitiated by an error of law or\n procedure or is based on error of record, misreading of\n evidence or is inconsistent with the evidence, for instance,\n where the ocular evidence is totally inconsistent with the\n medical evidence and so on;\n(3) that the Court would not enter into credibility of the\n evidence with a view to substitute its own opinion for that of\n the High Court;\n(4) that the Court would interfere where the High Court has\n arrived at a finding of fact in disregard of a judicial process,\n principles of natural justice or a fair hearing or has acted in\n\n1 (1976) 4 SCC 158\n\n 13 | P a g e\n violation of a mandatory provision of law or procedure\n resulting in serious prejudice or injustice to the accused;\n(5) this Court might also interfere",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P023_C03",
+      "text": "where on the proved facts\n wrong inferences of law have been drawn or where the\n conclusions of the High Court are manifestly perverse and\n based on no evidence.”\n It is very difficult to lay down a rule of universal application,\n but the principles mentioned above and those adumbrated\n in the authorities of this Court cited supra provide sufficient\n guidelines for this Court to decide criminal appeals by\n special leave.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P023_C04",
+      "text": "Thus, in a criminal appeal by special leave,\n this Court at the hearing examines the evidence and the\n judgment of the High Court with the limited purpose of\n determining whether or not the High Court has followed the\n principles enunciated above. Where the Court finds that the\n High Court has committed no violation of the various\n principles\nlaid down by\nthis Court and has made a correct\n approach and has not ignored or overlooked striking\n features in the evidence which demolish the prosecution\n case, the findings of fact arrived at by the High Court on an\n appreciation of the evidence in the circumstances of the\n case would not be disturbed.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P024_C01",
+      "text": "19. In\nthe said judgment\n, this Court observed that the\n\nevidence and the judgment of the High Court is examined for\n\nthe limited purpose for determining whether or not the High\n\nCourt has followed the aforementioned principles. If the High\n\nCourt has committed no error or violation of the said\n\nprinciples and has not ignored or overlooked striking features\n\nof the evidence which demolish the prosecution case, the\n\n 14 | P a g e\nfindings of fact arrived at by the High Court on an appreciation\n\nof the evidence in the circumstances of the case would not be\n\ndisturbed. Article 136\nof the Constitution of India is an\n\nextraordinary jurisdiction which this Court exercises when it\n\nentertains an appeal by special leave and this jurisdiction, by\n\nits very nature, is exercisable only when this Court is satisfied\n\nthat it is necessary to interfere in order to prevent grave or\n\nserious miscarriage of justice. Mere errors in appreciation of\n\nthe evidence are not enough to attract this invigilatory\n\njurisdiction2.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "Constitution 136"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P024_C02",
+      "text": "It is not the practice of this Court to reappreciate\n\nthe evidence for the purpose of examining whether the finding\n\nof fact concurrently arrived at by the High Court and the\n\nsubordinate courts is correct or not. It is only in rare and\n\nexceptional cases where there is some manifest illegality or\n\ngrave and serious miscarriage of justice that this Court would\n\ninterfere with such finding of fact3.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P025_C01",
+      "text": "20. Regarding the argument on behalf of the accused\n\npersons with respect the contradictions and inconsistencies in\n\nthe evidence of the eye-witnesses, the High Court found that\n\nthe contradictions and inconsistencies indicated in the\n\nstatements of the four eye-witnesses were trivial in nature. Following the law\nlaid down by\nthis Court in State of MP v. Ramaniklal Gokaldas v. State of Gujarat\n, (1976) 1 SCC 6\n3 Duli Chand v. Delhi Admn., (1975) 4 SCC 649\n\n 15 | P a g e\nRamesh4, the High Court ignored the contradictions and\n\ninconsistencies which did not affect the substratum of the\n\nprosecution’s case. The High Court disapproved the approach\n\nof the Trial Court in discarding the formula of at least two\n\nwitnesses deposing the presence/overt act of the accused in\n\ncase where large numbers of accused are involved. The High\n\nCourt followed the rule laid down by this Court in\nMasalti v. State of UP5\n, that in cases of mob violence, it would be safe\n\nto examine that at least two persons depose about the\n\npresence of an accused. The High Court gave benefit of doubt\n\nto Shiv Charan and Singh Ram whose presence/involvement\n\nwas spoken by only one witness.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P025_C02",
+      "text": "Concurrent findings of fact\n\npertaining to the commission of the crime and involvement of\n\nthe appellant cannot be subjected to further scrutiny by this\n\nCourt, according to the well-established law\nlaid down by\nthis\n\nCourt. It is not necessary to undertake fresh appraisal of the\n\nevidence as we are not inclined to take a view different from\n\nthe concurrent findings since the appreciation of evidence by\n\nthe Courts below is not erroneous6.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P026_C01",
+      "text": "21. The evidence of the four eye-witnesses was summarised\n\nby the High Court by a chart which forms part of its judgment\n\nand is reproduced as follows: -\n4 (2011) 4 SCC 786\n5 1964 (8) SCR 133\n6 Kaur Sain v. State of Punjab, (1974) 3 SCC 649\n\n 16 | P a g e\n “…Before giving the chart we would like to clarify that we\n have compartmentalized the events comprising the\n occurrence into five parts, these read as under:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P027_C01",
+      "text": "1. Calling of the deceased Ram Kishan and Vijender from\n their houses, briefly referred as ‘to call’ in the table.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P028_C01",
+      "text": "2. Participation in the Panchayat briefly referred to as\n panchayat",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P029_C01",
+      "text": "3. Hanging by the tree, briefly indicated as place of\n execution and supplement by their specific acts.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P030_C01",
+      "text": "4. Dragging the dead bodies to the marethan and briefly\n indicated by word ‘dragged’.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P031_C01",
+      "text": "5. Burning the dead bodies after putting them on pyre,\n briefly-referred by word ‘fire’. Sr. No. Name PW 1 Shanti PW 13 PW 14 PW 15 Ami\n . Vishram Hukum Chand\n\n 1 Dhanni s/o Ratan Place of Present.\nexecution\n 2 Dharamvir s/o Present. Present. Kanhaiya\n 3 Shiv Charan Present.\ns/o Mani Ram\n 4 Singhram s/o Present. Mani Ram\n 5 Balli s/o Kishan To call. Place Present. Present. Lal of execution.\n 6 Mahendra s/o Present. Present. Mangtu\n 7 Dharam s/o Kallu Present. Present. Present.\n 8 Nirto s/o Place of Present. Present. Present. Bhanwar Singh execution. Pulled Down.\n 9 Gopi s/o Hari Om Present. Present.\n 10 Girraj s/o Place of Present. Govinda execution.\n 11 Manni s/o Natthi Present. Present\n 12 Girraj s/o Kunwar To call. To call Present. Singh Presen .\n 13 Kashi s/o Present. Present. Bhanwar Singh\n\n 17 | P a g e\n14 Chatar Singh To call. Place To call. Present.\n s/o Lal Singh of execution. Presen\n t.\n15 Har Chand s/o To call. Place Present. Present. To call. Lille (Lal Singh) of execution. Noose. Assault. Present. Judgment. Judgment. Noose\n16 Dharam s/o Present. Present. Harchandi\n17 Preetam s/o To call. Place To call. Present. To call. Naval of execution.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P031_C02",
+      "text": "Presen Presen\n t. tNoos\n e.\n18 Ganga Present Present\n Ram s/o\n Hira Lal\n19 Hari s/o Govinda Place of Present.\n executio\n n.\n20 Lal Singh s/o Present. Khushi Ram\n21 Mangtu s/o To call. Place To call. To call. To call. Sunder Lal of execution. Presen Present Present. Noose. t. Assault. Judgment. Noose. Judgment. Noose.\n22 Naval s/o Narain To call. Place Present. Present. To call.\n of execution. Noose. Judgment Present. Noose Judgment. Noose\n23 Daya Ram s/o To call. Place Present. Present. Present. Bhanwar Singh of execution. Noose.\n24 Bato s/o Bhaggu To call. Presen Present. Present. Pulled t. Fire Fire. Noose\n Down. Noose. . Dragged\n To call.\n25 Sri Chand Present. Present. Present.\n s/o Deep Noose. Chand\n26 Dipi @ Deep To call. Place Present. Present. Present. Chand s/o Natthi of execution Noose.\n27 Jeevan s/o To call. Place Present. Present. Present. Bhaggu of execution. Fire. To Fire. Noose. Pulled. Down. call. Dragged.\n28 Tej Singh s/o Present. Present. Kirodi Fire.\n29 Bachchu s/o To call. Place Present. Present. Nabli of execution. Fire. Noose. Down.\n\n 18 | P a g e\n30 Tulsi Ram s/o Place of Present. Present. Bhanwar Singh executio Judgment.\n n. Noose.\n31 Komal s/o To call.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P031_C03",
+      "text": "Place Presen To To call. Present. Kanhaiya of execution. t. call. Present. Noose. Pulled. Assault.\n32 Ram Singh To call. Place\n Presen To call. Present.\n s/o Daya Ram of execution.t. To Present. Rope. Noose.\n call.\n33 Raman s/o Gopi To call. Place Present. Present. Present.\n of execution. Noose. Pulled.\n34 Karan s/o Hit with Lath Presen Present. Daya i t. Fire\n Ram Noose. . To call.\n35 Sirr s/o Munni Present. Present. Fire.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P032_C01",
+      "text": "22. From the evidence of PW-1, PW-13, PW-14 and PW-15\n\nwho are eye-witnesses, the medical and scientific evidence,\n\nand documentary evidence it is proved that Ram Kishan,\n\nVijendra and Roshni were tortured and then were killed by\n\nhanging. Thereafter, their bodies were cremated. We are of\n\nthe opinion that the testimonies of the eye-witnesses are\n\ncredible and have been rightly accepted by the Courts below.\n\nThe recovery of white Tahmad and clothes of deceased Ram\n\nKishan, recovery of clothes of Vijendra, recovery of half burnt\n\npieces of bones, ribs, spinal cord, parts of intestine and burnt\n\npieces of flesh support the prosecution’s version about the\n\nburning of the bodies of the deceased. The murder of Roshni,\n\nVijendra and Ram Kishan is established beyond doubt. The\n\n 19 | P a g e\nquestion that falls for our consideration is the culpability of\n\nthe Appellants. The eye-witnesses’ account of PW-1 Shanti,\n\nPW-13, PW-14 and PW-15 was believed by the Courts below.\n\nThey have stated about the involvement of the appellants and\n\nascribed specific overt acts to some of them. The role\n\nassigned to each of the appellants by the witnesses is found in\n\nthe chart referred to above.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P033_C01",
+      "text": "23. No reliance can be placed on the evidence of the eye-\n\nwitness PW-1 Shanti who has turned hostile, according to the\n\nAppellants. Rejecting this contention, the High Court was of\n\nthe opinion that the evidence of PW1 cannot be eschewed\n\nfrom consideration only on the ground that they turned\n\nhostile. The relevant portion of their testimony was rightly\n\nrelied upon by the High Court after recording the compelling\n\nreasons prompting the 12 prosecution witnesses, including\n\nPW1, to turn hostile.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P034_C01",
+      "text": "24. The evidence of PW-1 was initially recorded on\n\n09.04.1992. She has narrated the sequence of events and the\n\ninvolvement of the accused in the crime. Thereafter, due to\n\nan interim order passed by the High Court, the trial was\n\nstayed for a period of six years. When she was recalled to\n\ndepose in Court on 21.02.1998, she turned hostile. The\n\nreasons for PW-1 turning hostile are understandable as she\n\n 20 | P a g e\ncomes from a lower-strata of the society, living in a village\n\ndominated by the caste to which the accused persons belong.\n\nShe deposed about the incident and the involvement of the\n\nAppellants in detail and was later declared hostile along with\n\n11 other prosecution witnesses.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P035_C01",
+      "text": "25. It is well settled that the evidence of prosecution\n\nwitnesses cannot be rejected in toto merely because the\n\nprosecution chose to treat them as hostile and cross-\n\nexamined them. The evidence of such witnesses cannot be\n\ntreated as effaced or washed off the record altogether but the\n\nsame can be accepted to the extent that their version is found\n\nto be dependable on a careful scrutiny thereof 7. It is for the\n\nJudge of fact to consider in each case whether as a result of\n\nsuch cross-examination and contradiction, the witness stands\n\nthoroughly discredited or can still be believed in regard to a\n\npart of his testimony. If the Judge finds that in the process, the\n\ncredit of the witness has not been completely shaken, he may,\n\nafter reading and considering the evidence of the witness, as\n\na whole, with due caution and care, accept, in the light of the\n\nother evidence on the record, that part of testimony which he\n\nfinds to be creditworthy and act upon it8.\n\nRadha Mohan Singh v. State of UP\n, (\n2006) 2 SCC 450\n8 Syad Akbar v. State of Karnataka\n, AIR 1979 SC 1848\n\n 21 | P a g e",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P036_C01",
+      "text": "26. Even if the witnesses have turned hostile, their evidence\n\ncan be accepted, if they are natural and independent\n\nwitnesses and have no reason to falsely implicate the\n\naccused.\nMrinal Das and Others v. State of Tripura\n\nthis Court observed that credible evidence even of a hostile\n\nwitnesses can form the basis for conviction in a criminal trial.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P037_C01",
+      "text": "27. In the present case, the evidence of PW1 finds complete\n\ncorroboration from the evidence of PW13, PW14, and PW15\n\nwho are also the reliable eye-witnesses of the incident. The\n\ntestimony of PW1 is unshaken and it was only after a long\n\nperiod of stay of trail for 6 years, that she turned hostile. The\n\nCourts below were right in placing reliance on the testimony\n\nof PW 1, who is also a reliable witness, for the conviction of\n\nthe accused persons even after she was declared hostile.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P038_C01",
+      "text": "28. Right to testify in Courts in a free and fair manner\n\nwithout any pressure and threat whatsoever is under serious\n\nattack today. If one is unable to testify in Courts due to threats\n\nor other pressures, then it is a clear violation of\nArticle 19 (1)\n(a) and\nArticle 21\nof the Constitution. Right to life guaranteed\n\nto the people of this country also includes in its fold the right\n\nto live in a society which is free from crime and fear and the\n\nright of witnesses to testify in Courts without fear or pressure. It needs to be emphasised that one of the main reasons for\n9 (2011) 9 SCC 479\n\n 22 | P a g e\nwitnesses to turn hostile is that they are not accorded\n\nappropriate protection by the State. It is a harsh reality,\n\nparticularly, in those cases where the accused\n\npersons/criminals are tried for heinous offences, or where the\n\naccused persons are influential persons or in a dominating\n\nposition that they make attempts to terrorise or intimidate the\n\nwitnesses because of which these witnesses either avoid\n\ncoming to Courts or refrain from deposing truthfully.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 21"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P038_C02",
+      "text": "This\n\nunfortunate situation prevails because of the reason that the\n\nState has not undertaken any protective measures to ensure\n\nthe safety of these witnesses, commonly known as “witness\n\nprotection”10.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P039_C01",
+      "text": "29. The State has a definite role to play in protecting the\n\nwitnesses, to start with, at least in sensitive cases involving\n\nthose in power, who have political patronage and could wield\n\nmuscle and money power, to avert trial getting tainted and\n\nderailed and truth becoming a casualty. As a protector of its\n\ncitizens, it has to ensure that during a trial in the court the\n\nwitness could safely depose the truth without any fear of\n\nbeing haunted by those against whom the witness had\n\ndeposed. Every State has a constitutional obligation and duty\n\nto protect the life and liberty of its citizens. That is the\n\nfundamental requirement for observance of the rule of law. Mahender Chawla & Ors. v. Union of India & Ors. (2019) 14 SCC 615\n\n 23 | P a g e\nThere cannot be any deviation from this requirement because\n\nof any extraneous factors like caste, creed, religion, political\n\nbelief or ideology.11\n30. While taking note of these exigencies with respect to\n\nsafeguarding the rights of the witnesses deposing before a\n\ncourt, the Witness Protection Scheme, 2018 which was drafted\n\nby the Ministry of Home Affairs was approved by this Court in\nMahender Chawla & Ors. v. Union of India & Ors.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P039_C02",
+      "text": "(supra). Thereafter, in\nAshwin Kumar Upadhyay v. Union\n\nof India and Anr.,12\na direction was given by this Court to the\n\nUnion of India and the State Governments to strictly enforce\n\nthe Witness Protection Scheme, 2018.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P040_C01",
+      "text": "31. The present case squarely falls under the situations\n\ncontemplated by this Court while necessitating the\n\nformulation of scheme/guidelines/programmes for protection\n\nof witnesses. Implementation of the Witness Protection\n\nScheme at the time when the witnesses were deposing in the\n\npresent case, would have prevented the prosecution\n\nwitnesses from turning hostile. If the material witnesses were\n\nrelocated from the village and escorted to the courtroom, they\n\nwould have deposed freely in court.\n\nZahira Habibullah Sheikh and Anr. v. State of Gujarat & Ors.\n(2006) 3 SCC 374\n12 (2020) SCC OnLine SC 1228\n\n 24 | P a g e",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P041_C01",
+      "text": "32. The next contention on behalf of the appellants is that\n\nthe informant Amichand initially mentioned the names of only\n\n35 persons on 29.03.1991. 10 days thereafter, he implicated\n\n19 other persons. The Appellants contended that 19 persons\n\nwho were made accused 10 days after the registration of the\n\nFIR are falsely implicated after deliberations. The explanation\n\ngiven by the informant Amichand that he was not in a proper\n\nframe of mind when he gave the complaint on 27.03.1991 and\n\nthat he was in the hospital for the next ten days, attending to\n\nhis family members who were physically assaulted and only\n\nafter that he could give the names of the rest of the accused\n\non 04.04.1992, was rightly accepted by the Courts below. PW-\n\n15 Amichand managed to escape the well-guarded boundaries\n\nof the village after witnessing a prolonged torture of the\n\ndeceased persons for nearly 12 hours throughout the night\n\nand reached the police station to lodge the complaint. He\n\nwould not have been able to mention all the names of those\n\ninvolved due to the trauma of witnessing an egregious crime\n\nwhich resulted in the murder of his nephew and two other\n\npersons.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P042_C01",
+      "text": "33. The Appellants submitted that the testimonies of the\n\neye-witnesses suffer from contradictions and inconsistencies\n\nand deserve to be rejected. We have carefully examined the\n\n 25 | P a g e\nevidence of PW-1, PW-13, PW-14 and PW-15 and we are in\n\nagreement with the Courts below that the all four witnesses\n\nare reliable and the inconsistencies and contradictions in their\n\nevidence are trivial. The ghastly crime was committed at four\n\ndifferent places for a prolonged period of more than 12 hours.\n\nInconsistencies in the version of the witnesses are natural,\n\nespecially when a large number of persons are involved.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P043_C01",
+      "text": "34. Ms. Amita Gupta, learned counsel for the Appellants\n\nargued that some of the Appellants have not been assigned\n\nany active role in the commission of the offence and their\n\nconviction for being members of the unlawful assembly is\n\nunsustainable. She stated that they are mere onlookers or by\n\nstanders and they cannot be stated to be members of an\n\nunlawful assembly.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P044_C01",
+      "text": "35. Section 149\nof the Indian Penal Code is declaratory of\n\nthe vicarious liability of the members of an unlawful assembly\n\nfor acts done in prosecution of the common object of that\n\nassembly or for such offences as the members of the unlawful\n\nassembly knew would be committed in prosecution of that\n\nobject. If an unlawful assembly is formed with the common\n\nobject of committing an offence, and if that offence is\n\ncommitted in prosecution of the object by any member of the\n\nunlawful assembly, all the members of the assembly will be\n\n 26 | P a g e\nvicariously liable for that offence even if one or more, but not\n\nall committed the offence. Again, if an offence is committed\n\nby a member of an unlawful assembly and that offence is one\n\nwhich the members of the unlawful assembly knew to be\n\nlikely to be committed in prosecution of the common object,\n\nevery member who had that knowledge will be guilty of the\n\noffence so committed13. It is not necessary for the prosecution\n\nto prove each of the members’ involvement especially\n\nregarding which or what act (\nMasalti\nsupra).",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 149"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P044_C02",
+      "text": "While overt act\n\nand active participation may indicate common intention of the\n\nperson perpetrating the crime, the mere presence in the\n\nunlawful assembly may fasten vicariously criminal liability\n\nunder Section 14914.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P045_C01",
+      "text": "36. Common object is different from common intention as it\n\ndoes not require a prior concert and a common meeting of\n\nminds before the attack. It is enough if each has the same\n\nobject in view and their number is five or more and that they\n\nact as an assembly to achieve that object. The common object\n\nof an assembly is to be ascertained from the acts and\n\nlanguage of the members composing it, and from a\n\nconsideration of all the surrounding circumstances. It may be\n\nShambhu Nath Singh v. State of Bihar\n, AIR 1960 SC 725\n14 Lalji v. State of U.P. (1989) 1 SCC 437\n\n 27 | P a g e\ngathered from the course of conduct adopted by the members\n\nof the assembly15.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P046_C01",
+      "text": "37. In Kattukulangara Madhavan (dead) through LRs.\n\nv. Majeed and Ors.16, this Court held as follows: -\n“23. In the first place, the presence of an accused as part of\n an unlawful assembly, when not as a curious onlooker or a\n bystander, suggests his participation in the object of the\n assembly. When the prosecution establishes such presence,\n then it is the conduct of the accused that would determine\n whether he continued to participate in the unlawful assembly\n with the intention to fulfil the object of the assembly, or not. It\n could well be that an accused had no intention to participate\n in the object of the assembly. For example, if the object of the\n assembly is to murder someone, it is possible that the\n accused as a particular member of the assembly had no\n knowledge of the intention of the other members whose\n object was to murder, unless of course the evidence to the\n contrary shows such knowledge. But having participated and\n gone along with the others, an inference whether inculpatory\n or exculpatory can be drawn from the conduct of such an\n accused. The following questions arise with regard to the\n conduct of such an accused:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P047_C01",
+      "text": "1. What was the point of time at which he discovered that\n the assembly intended to kill the victim?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P048_C01",
+      "text": "2. Having discovered that, did he make any attempt to stop\n the assembly from pursuing the object?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P049_C01",
+      "text": "3. If he did, and failed, did he dissociate himself from the\n assembly by getting away?\n\nCharan Singh v. State of U.P.\n, (2004) 4 SCC 205\n16 (2017) 5 SCC 568\n\n 28 | P a g e\n The answer to these questions would determine whether an\n accused shared the common object in the assembly. Without\n evidence that the accused had no knowledge of the unlawful\n object of the assembly or without evidence that after having\n gained knowledge, he attempted to prevent the assembly\n from accomplishing the unlawful object, and without evidence\n that after having failed to do so, the accused disassociated\n himself from the assembly, the mere participation of an\n accused in such an assembly would be inculpatory.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P050_C01",
+      "text": "38. The harrowing torture of the three deceased which\n\ncommenced at 9 pm on 26.03.1991 and continued till 9 am on\n\nthe next day i.e., 27.03.1991 with the participation of the\n\nAppellants in the Panchayat, was proved by the testimony of\n\nthe eye-witnesses. Specific overt acts have been ascribed to\n\nsome of the appellants - Balli, Girraj, Chatar Singh, Preetam,\n\nMangtu, Jeevan, Bachchu, Kamal, Ram Singh, Raman for\n\ndragging the deceased from their houses to the panchayat of\n\nMangtu; appellants Karan Singh, Ram Singh for physically\n\nassaulting the deceased and their family members; appellants\n\nBacchu, Kamal, Raman, Mangtu for forcing the parents of the\n\ndeceased to hang them; appellants Nirto, Girraj, Preetam,\n\nMangtu, Naval, Baato, Jeevan, Bachchu, Kamal, Ram Singh,\n\nSrichand for being involved in the hanging of the deceased;\n\nappellants Baato, Jeevan, for dragging the bodies of the\n\ndeceased to the cremation ground and appellants Baato,\n\n 29 | P a g e\nJeevan, Bachchu, Karan Singh, Sirro for lighting the fire to the\n\nbodies of the deceased at the cremation ground.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P050_C02",
+      "text": "Following\n\nthe well settled principles\nlaid down by\nthis Court, we are\n\nsatisfied that the Courts below committed no error in\n\nconvicting the appellants under\nSection 302\nwith the aid of\nSection 149\nIPC. Even in respect of those who are not\n\nassigned any active role or overt act, there is no doubt that\n\nthey shared the common object to punish the deceased and\n\nkill them. Their presence in the Panchayat continuously for\n\nnearly 12 hours without any protest or any attempt made by\n\nthem to stop the violence would lend support to the\n\nprosecution version that all the appellants shared the common\n\nobject of murdering the deceased.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "IPC 149"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P051_C01",
+      "text": "39. Two young men and a woman were physically assaulted\n\nfor nearly 12 hours and killed by the accused for violating\n\ncaste-ridden societal norms. These episodes of caste-\n\nmotivated violence in the country demonstrate the fact that\n\ncasteism has not been annihilated even after 75 years of\n\nindependence. According to Dr. B. R. Ambedkar, inter-caste\n\nmarriage is one remedy to get rid of casteism in order to\n\nachieve equality. His vision for ensuring justice and equality to\n\nall sections of the society, especially to the repressed\n\nsegments, is well enshrined in the preamble of the\n\n 30 | P a g e\nConstitution. The bigotry perpetuated by such caste-based\n\npractices which are prevalent even today, impedes this\n\nobjective of the Constitution of equality for all its citizens. Proposal of marriage by Roshni who belongs to Jat community,\n\nwith Vijendra who is a Jatav, has resulted in their deaths. Though the number is a tad less, honour killings have not\n\nstopped in this country and it is high time that the civil society\n\nreacts and responds with strong disapproval about the ghastly\n\ncrimes committed in the name of caste.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P051_C02",
+      "text": "This Court issued\n\nseveral directions to the administrative authorities and police\n\nofficials to take strong measures to prevent honour killings. Honour killings pursuant to the decree of Khap Panchayats\n\nhave been strongly criticized by this Court in Arumugam\n\nServai v. State of Tamil Nadu17. Harsh punishment was\n\nrecommended to those brutal and feudal minded persons who\n\ncommit atrocities in the name of castes. The Law\n\nCommission of India in its 242 nd Report suggested the legal\n\nframework on Prevention of Interference with the Freedom of\n\nMatrimonial Alliances in the name of Honour and Tradition. The Law Commission was of the opinion that there must be a\n\nthreshold bar against congregation or assembly for the\n\npurpose of objecting to and condemning the conduct of young\n\npersons of marriageable age marrying according to their\n17 (2011) 6 SCC 405\n\n 31 | P a g e\nchoice, the ground of objection being that they belong to the\n\nsame gotra or to different castes or communities.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P051_C03",
+      "text": "The\n\nPanchayatdars or caste elders have no right to interfere with\n\nthe life and liberty of such young couples whose marriages are\n\npermitted by law and they cannot create a situation whereby\n\nsuch couples are placed in a hostile environment in the\n\nvillage/locality concerned and exposed to the risk of safety. The Law Commission further recommended that the very\n\nassembly for an unlawful purpose viz. disapproving the\n\nmarriage which is otherwise within the bounds of law and\n\ntaking consequential action should be treated as an offence as\n\nit has the potential to endanger the lives and liberties of\n\nindividuals concerned.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P052_C01",
+      "text": "40. Shakti Vahini v. Union of India and Ors.\n18, this\n\nCourt directed the Union of India and the State Governments\n\nto take preventive steps to combat honour crimes, to submit a\n\nNational Plan of Action and State Plan of Action to curb crimes\n\nof the said nature. The State Governments were directed to\n\nconstitute special cells in each district which could be\n\napproached by the couples for their safety and well-being. This Court suggested preventive steps, remedial measures\n\nand punitive measures as follows: -\n“55.1. Preventive steps\n18 (2018) 7 SCC 192\n\n 32 | P a g e\n55.1.1. The State Governments should forthwith identify\ndistricts, sub-divisions and/or villages where instances of\nhonour killing or assembly of khap panchayats have been\nreported in the recent past, e.g., in the last five years.\n55.1.2. The Secretary, Home Department of the States\nconcerned shall issue directives/advisories to the\nSuperintendent of Police of the districts concerned for\nensuring that the officer in charge of the police stations of\nthe identified areas are extra cautious if any instance of\ninter-caste or inter-religious marriage within their jurisdiction\ncomes to their notice.\n55.1.3.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P052_C02",
+      "text": "If information about any proposed gathering of a\nkhap panchayat comes to the knowledge of any police\nofficer or any officer of the District Administration, he shall\nforthwith inform his immediate superior officer and also\nsimultaneously intimate the jurisdictional Deputy\nSuperintendent of Police and Superintendent of Police.\n55.2 Remedial measures\n55.2.1. Despite the preventive measures taken by the State\nPolice, if it comes to the notice of the local police that the\nkhap panchayat has taken place and it has passed any\ndiktat to take action against a couple/family of an inter-caste\nor inter-religious marriage (or any other marriage which\ndoes not meet their acceptance), the jurisdictional police\nofficial shall cause to immediately lodge an FIR under the\nappropriate provisions of the Penal Code including\nSections\n\n,\n\n,\n\nread with\nSection 506\nIPC.\n55.2.2. Upon registration of FIR, intimation shall be\nsimultaneously given to the Superintendent of Police/Deputy\nSuperintendent of Police who, in turn, shall ensure that\n\n 33 | P a g e\neffective investigation of the crime is done and taken to its\nlogical end with promptitude.\n55.2.3.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 506"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P052_C03",
+      "text": "Additionally, immediate steps should be taken to\nprovide security to the couple/family and, if necessary, to\nremove them to a safe house within the same district or\nelsewhere keeping in mind their safety and threat\nperception. The State Government may consider of\nestablishing a safe house at each District Headquarter for\nthat purpose. Such safe houses can cater to accommodate:\n(i) young bachelor-bachelorette couples whose relationship\nis being opposed by their families/local community/khaps,\nand\n(ii) young married couples (of an inter-caste or inter-religious\nor any other marriage being opposed by their families/local\ncommunity/khaps). Such safe houses may be placed under the supervision of\nthe jurisdictional District Magistrate and Superintendent of\nPolice.\n55.2.4. The District Magistrate/Superintendent of Police\nmust deal with the complaint regarding threat administered\nto such couple/family with utmost sensitivity. It should be\nfirst ascertained whether the bachelor-bachelorette are\ncapable adults. Thereafter, if necessary, they may be\nprovided logistical support for solemnising their marriage\nand/or for being duly registered under police protection, if\nthey so desire.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P052_C04",
+      "text": "After the marriage, if the couple so desire,\nthey can be provided accommodation on payment of\nnominal charges in the safe house initially for a period of\none month to be extended on monthly basis but not\nexceeding one year in aggregate, depending on their threat\nassessment on case-to-case basis.\n34 | P a g e\n55.2.5. The initial inquiry regarding the complaint received\nfrom the couple (bachelor-bachelorette or a young married\ncouple) or upon receiving information from an independent\nsource that the relationship/marriage of such couple is\nopposed by their family members/local community/khaps\nshall be entrusted by the District Magistrate/Superintendent\nof Police to an officer of the rank of Additional\nSuperintendent of Police. He shall conduct a preliminary\ninquiry and ascertain the authenticity, nature and gravity of\nthreat perception. On being satisfied as to the authenticity\nof such threats, he shall immediately submit a report to the\nSuperintendent of Police in not later than one week.\n\n55.2.6.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P052_C05",
+      "text": "The District Superintendent of Police, upon receipt of\nsuch report, shall direct the Deputy Superintendent of Police\nin charge of the sub-division concerned to cause to register\nan FIR against the persons threatening the couple(s) and, if\nnecessary, invoke\nSection 151\nCrPC Additionally, the Deputy\nSuperintendent of Police shall personally supervise the\nprogress of investigation and ensure that the same is\ncompleted and taken to its logical end with promptitude. In\nthe course of investigation, the persons concerned shall be\nbooked without any exception including the members who\nhave participated in the assembly. If the involvement of the\nmembers of khap panchayat comes to the fore, they shall\nalso be charged for the offence of conspiracy or abetment,\nas the case may be.\n55.3 Punitive measures\n\n55.3.1. Any failure by either the police or district\nofficer/officials to comply with the aforesaid directions shall\nbe considered as an act of deliberate negligence and/or\nmisconduct for which departmental action must be taken\nunder the service rules.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "CrPC 151"
+      ],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P052_C06",
+      "text": "The departmental action shall be\n\n 35 | P a g e\ninitiated and taken to its logical end, preferably not\nexceeding six months, by the authority of the first instance.\n\n55.3.2. In terms of the ruling of this Court in Arumugam\nServai [Arumugam Servai v. State of T.N., (2011) 6 SCC 405 :\n(2011) 2 SCC (Cri) 993] , the States are directed to take\ndisciplinary action against the officials concerned if it is\nfound that:\n(i) such official(s) did not prevent the incident, despite\nhaving prior knowledge of it, or\n(ii) where the incident had already occurred, such official(s)\ndid not promptly apprehend and institute criminal\nproceedings against the culprits.\n55.3.3. The State Governments shall create Special Cells in\nevery district comprising of the Superintendent of Police, the\nDistrict Social Welfare Officer and District Adi-Dravidar\nWelfare Officer to receive petitions/complaints of\nharassment of and threat to couples of inter-caste marriage.\n55.3.4. These Special Cells shall create a 24-hour helpline to\nreceive and register such complaints and to provide\nnecessary assistance/advice and protection to the couple.\n\n55.3.5.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P052_C07",
+      "text": "The criminal cases pertaining to honour killing or\nviolence to the couple(s) shall be tried before the\ndesignated court/fast track court earmarked for that\npurpose. The trial must proceed on day-to-day basis to be\nconcluded preferably within six months from the date of\ntaking cognizance of the offence. We may hasten to add\nthat this direction shall apply even to pending cases. The\nDistrict Judge concerned shall assign those cases, as far as\npossible, to one jurisdictional court so as to ensure\nexpeditious disposal thereof.”\n\n 36 | P a g e",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P053_C01",
+      "text": "41. In order to implement the recommendations of the Law\n\nCommission in its 242nd Report, the State of Rajasthan has\n\nenacted the Rajasthan Prohibition of Interference with the\n\nFreedom of Matrimonial Alliances in the Name of Honour and\n\nTradition Act, 2019 on the same lines.\nIn the interest of liberty\n\nand dignity of young men and women in choosing their life\n\npartners and in the interest of peace, tranquillity and equality\n\nin the society, it is imminently necessary that the directions\n\nissued by this Court in\nShakti Vahini v. Union of India and\n\nOrs.\n(supra) should also be carried out by the State\n\nGovernments without any further delay.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P054_C01",
+      "text": "42. In United Kingdom and Canada, racial and religiously\n\nmotivated crimes are treated as aggravating factors for\n\nenhanced punishment. Section 145 of the Criminal Justice\n\nAct, 2003 (UK) provides that the Court must treat an offence\n\nwhich was racial or religiously incensed as an aggravating\n\nfactor. In Canada, Courts are guided by the following\n\nprinciples while imposing the sentence: -\n“Other sentencing principles\n 718.2 A court that imposes a sentence shall also take into\n consideration the following principles:\n(a) a sentence should be increased or reduced to account for\n any relevant aggravating or mitigating circumstances relating\n to the offence or the offender, and, without limiting the\n generality of the foregoing,\n\n 37 | P a g e\n(i) evidence that the offence was motivated by bias,\n prejudice or hate based on race, national or ethnic origin,\n language, colour, religious, sex, age, mental or physical\n disability, sexual orientation, or gender identity or expression,\n or on any other similar factor,\n(ii)…..(vi)\n Shall be deemed to be aggravating circumstances;”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P055_C01",
+      "text": "43. Though racial/religiously motivated actions are not\n\ncodified to be an aggravating circumstance for enhancement\n\nof penalties for a crime, the principle is well recognized by the\n\nSupreme Court of US as held in Wisconsin v. Mitchell19. In\n\nthat case, Mitchell was convicted for aggravated battery by\n\nthe Circuit Court of Kenosha County, Wisconsin and sentenced\n\nto imprisonment for a period of four years when the maximum\n\nsentence for the offense was two years. The enhanced\n\nsentence was based on the Hate Crimes Statues of Wisconsin\n\nwhich provided for a longer maximum sentence. The\n\nenhanced sentence was upheld by Wisconsin Court of Appeals\n\nwhich was reversed by the Wisconsin Supreme Court. The\n\nSupreme Court of US set aside the findings of the Wisconsin\n\nSupreme Court and held that Mitchell’s First Amendment\n\nfreedom of speech and association rights were not violated by\n\nthe application of the penalty-enhancement sentencing\n\nprovision.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P055_C02",
+      "text": "The Supreme Court referred to Blackstone who\n\n19 [508 US 476 (1993)]\n\n 38 | P a g e\nsaid, “it is but reasonable that among crimes of different\n\nnatures those should be most severely punished, which are\n\nthe most destructive of the public safety and happiness.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P056_C01",
+      "text": "44. In India, imposition of death sentence can be only after\n\nspecial reasons are recorded as per\nSection 354 (3)\nof the\n\nCode of Criminal Procedure, 1973. Bachan Singh v. State of Punjab20\n, this Court held that while ascertaining the\n\nexistence or absence of the special reasons, the Court must\n\npay due regard both to the crime and criminal. Relative\n\nweightage has to be given to the aggravating and mitigating\n\nfactors depending upon the facts and circumstances of each\n\ncase. Accepting the suggestions of Dr. Chitale, this Court held\n\nthe following factors as indicators of aggravating\n\ncircumstances: -\n“202. Drawing upon the penal statutes of the States in\n U.S.A. framed after Furman v. Georgia [33 L Ed 2d 346 : 408\n US 238 (1972)] , in general, and clauses 2 (a), (b), (c) and\n(d) of the Penal Code, 1860 (Amendment) Bill passed in\n 1978 by the Rajya Sabha, in particular, Dr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P056_C02",
+      "text": "Chitale has\n suggested these “aggravating circumstances”:\n“Aggravating circumstances: A court may, however, in the\n following cases impose the penalty of death in its discretion:\n(a) if the murder has been committed after previous\n planning and involves extreme brutality; or\n(b) if the murder involves exceptional depravity; or\n\n20 (1980) 2 SCC 684\n\n 39 | P a g e\n(c) if the murder is of a member of any of the armed forces\n of the Union or of a member of any police force or of any\n public servant and was committed—\n(i) while such member or public servant was on duty; or\n(ii) in consequence of anything done or attempted to be\n done by such member or public servant in the lawful\n discharge of his duty as such member or public servant\n whether at the time of murder he was such member or\n public servant, as the case may be, or had ceased to be\n such member or public servant; or\n(d) if the murder is of a person who had acted in the lawful\n discharge of his duty under\nSection 43\nof the Code of\n Criminal Procedure, 1973, or who had rendered assistance\n to a Magistrate or a police officer demanding his aid or\n requiring his assistance under\nSection 37\nand\nSection 129\n the said Code.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P057_C01",
+      "text": "45. This Court made it clear that judicial discretion was not\n\nbeing fettered by making an attempt to have an exhaustive\n\nenumeration.\nMachhi Singh v. State of Punjab21\nthis\n\nCourt summed up the factors that may be taken into account\n\nby the Court for imposition of death sentence: -\nI. Manner of commission of murder",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P058_C01",
+      "text": "33. When the murder is committed in an extremely brutal,\n grotesque, diabolical, revolting or dastardly manner so as to\n arouse intense and extreme indignation of the community.\nFor instance,\n(i) when the house of the victim is set aflame with the end in\n view to roast him alive in the house.\n21 (1983) 3 SCC 470\n\n 40 | P a g e\n(ii) when the victim is subjected to inhuman acts of torture\nor cruelty in order to bring about his or her death.\n(iii) when the body of the victim is cut into pieces or his\nbody is dismembered in a fiendish manner.\nII. Motive for commission of murder",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P059_C01",
+      "text": "34. When the murder is committed for a motive which\nevinces total depravity and meanness. For instance when\n(a) a hired assassin commits murder for the sake of money\nor reward (b) a cold-blooded murder is committed with a\ndeliberate design in order to inherit property or to gain\ncontrol over property of a ward or a person under the control\nof the murderer or vis-a-vis whom the murderer is in a\ndominating position or in a position of trust, or (c) a murder\nis committed in the course for betrayal of the motherland.\n\nIII. Anti-social or socially abhorrent nature of the crime",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P060_C01",
+      "text": "35. (a) When murder of a member of a Scheduled Caste or\nminority community etc., is committed not for personal\nreasons but in circumstances which arouse social wrath. For\ninstance when such a crime is committed in order to\nterrorize such persons and frighten them into fleeing from a\nplace or in order to deprive them of, or make them\nsurrender, lands or benefits conferred on them with a view\nto reverse past injustices and in order to restore the social\nbalance.\n(b) In cases of “bride burning” and what are known as\n“dowry deaths” or when murder is committed in order to\nremarry for the sake of extracting dowry once again or to\nmarry another woman on account of infatuation.\n\nIV. Magnitude of crime",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P061_C01",
+      "text": "36. When the crime is enormous in proportion. For instance\nwhen multiple murders say of all or almost all the members\n\n 41 | P a g e\n of a family or a large number of persons of a particular\n caste, community, or locality, are committed.\n\n V. Personality of victim of murder",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 62,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P062_C01",
+      "text": "37. When the victim of murder is (a) an innocent child who\n could not have or has not provided even an excuse, much\n less a provocation, for murder (b) a helpless woman or a\n person rendered helpless by old age or infirmity (c) when\n the victim is a person vis-a-vis whom the murderer is in a\n position of domination or trust (d) when the victim is a\n public figure generally loved and respected by the\n community for the services rendered by him and the murder\n is committed for political or similar reasons other than\n personal reasons.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P063_C01",
+      "text": "46. The ghastly murders of three youngsters which are\n\nhonour killings squarely falls under the head of anti-social and\n\nabhorrent nature of the crime as mentioned in\nMachhi Singh\n\nv. State of Punjab\n(supra).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 64,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P064_C01",
+      "text": "47. Appellants Tej Singh s/o Karodi, Kamal s/o Kanyaiya, Sirro\n\ns/o Bhanji, Bachchu s/o Nawali, Ram Singh s/o Dayaram,\n\nRaman s/o Roopi and Karan s/o Dayaram were sentenced to\n\ndeath by the Trial Court for committing the gruesome murders\n\nof three youngsters in a barbaric manner. However, the High\n\nCourt converted the death sentence of the above Appellants\n\nto that of life imprisonment till their last breath. The reasons\n\ngiven by the High Court for converting the death sentence of\n\nthe above Appellants to life imprisonment are the advance\n\n 42 | P a g e\nage of some of the Appellants, the passage of long time after\n\nthe commission of crime and mental sufferings that they have\n\nundergone. Keeping in view the facts and circumstances of\n\nthis case, we uphold the judgment of the High Court insofar as\n\nthe conversion of death sentence to life imprisonment in\n\nrespect of accused Tej Singh s/o Karodi, Kamal s/o Kanyaiya,\n\nSirro s/o Bhanji, Bachchu s/o Nawali, Ram Singh s/o Dayaram,\n\nRaman s/o Roopi and Karan s/o Dayaram. The Criminal Appeal\n\nNos. 1553-1556 of 2018 filed by the State of Uttar Pradesh\n\nare, therefore, dismissed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 65,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P065_C01",
+      "text": "48. Insofar as the Appellant Hari son of Govinda is\n\nconcerned, his name was mentioned by PW-13 who deposed\n\nthat he was present at the Panchayat. PW-1 and PW-15\n\nreferred to the name of Hari Ram, who also happens to be one\n\nof the accused with the name Hariram son of Yadram. The\n\nHigh Court followed the suggestion given by this Court in\n\nMasalti’s case and held that conviction with the aid of\nSection 149\nIPC can be only in case where at least two\n\nwitnesses speak about the involvement of person. Regarding\n\nthe presence of Hari son of Govinda which was mentioned\n\nonly by PW-13, we are of the considered view that he is\n\nentitled for acquittal. PW-13 also deposed that Lal Singh son\n\nof Khushi was also present at the Panchayat. PW-1 testified in\n\n 43 | P a g e\nthe Court that one Lal arrived at her door with a lathi. PW-15\n\nalso mentioned the presence of Lala in the Panchayat. In\n\naddition to Lal Singh, one Lala son of Ramji Lal was also one of\n\nthe accused. As only one witness spoke about the presence of\n\nLal Singh son of Khushi, he is also entitled for acquittal.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "IPC 149"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 66,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P066_C01",
+      "text": "49. There are two persons with the same name. One is the\n\nAppellant before this Court who is Girraj son of Govinda and\n\nthe other is Girraj son of Kamar who passed away during the\n\npendency of the proceedings in this Court. The eye-witnesses\n\nmentioned the name of Girraj without giving the name of his\n\nfather. In such circumstances, it is not clear whether Girraj\n\nson of Kamar or Girraj son of Govinda was involved. In such\n\ncircumstances, Appellant Girraj son of Govinda is entitled for\n\nthe benefit of doubt in view of the confusion in his identity and\n\npresence during the crime. For the aforesaid reasons, Hari son\n\nof Govinda (Appellant No. 1 in Crl. A. No. 186 of 2018), Lal\n\nSingh son of Khushi Singh (Appellant No. 2 in Crl. A. No. 186 of\n\n2018) and Girraj son of Govinda (Appellant No. 5 in Crl. A. No.\n\n189 of 2018) are acquitted.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 67,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P067_C01",
+      "text": "50. For the aforementioned reasons, we uphold the\n\njudgment of the High Court and affirm the conviction and\n\nsentence imposed on the accused namely Dhanni s/o Ratan\n\nSingh, Nitro s/o Bhanwar Singh, Srichand s/o Deep Chand, Tej\n\n 44 | P a g e\nSingh s/o Karodi, Bachchu s/o Nabali, Kamal s/o Kanhaiya,\n\nRam Singh s/o Dayaram, Raman s/o Roopi, Sirro s/o Bhajni,\n\nMahender s/o Mangtu, Chattar Singh s/o Leelay, Pitam s/o\n\nNaval, Bato s/o Bhaggo, Jivan s/o Bhaggo, Karan Singh s/o\n\nDayaram, Mangtu s/o Sunder Lal, Ganga Ram s/o Heeralal,\n\nDharamvir s/o Kanhaiya, Balli s/o Kishan Lal, Dharam s/o Kallu,\n\nManni s/o Natthi, Kashi s/o Bhanwar Singh and Dharam s/o\n\nHarchand. Accused namely Hari s/o Govinda, Lal Singh s/o\n\nKhushi Ram and Giriraj s/o Govinda are acquitted in view of\n\nthe ambiguity in their identity.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 68,
+      "chunk_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH_P068_C01",
+      "text": "51. In view of the above, the Criminal Appeals are disposed\n\nof.\n….............................J.\n [L. NAGESWARA RAO]\n\n ..……....................J.\n [SANJIV KHANNA]\n\n ..…….................J.\n [B.R. GAVAI]\n\nNew Delhi,\nNovember 26, 2021.\n45 | P a g e",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Hari vs The State Of Uttar Pradesh",
+    "case_id": "SC_2021_HARI_VS_THE_STATE_OF_UTTAR_PRADESH",
+    "court": "Supreme Court of India",
+    "year": "2021",
+    "facts_summary": "2. By a judgment dated 14.11.2011, the Trial Court held the\n\nfollowing persons guilty of the offences under Sections 147,\n\n302 read with 149, 323 read with 149, 324 read with Section\n\n149 and 201 read with\nSection 149\nof Indian Penal Code\n\n(“\nIPC\n”) and\nSection 3(3)(10)\nof the Scheduled Castes and the\n 1 | Page\nScheduled Tribes (Prevention of Atrocities) Act, 1989 (“SC/ST\n\nAct”): -\nDhanni son of Ratan Singh, Tej Singh son of Kerori,\n\nDharamveer son of Kanhayalal, Shivcharan son of Maniram,\n\nSingh Ram son of Mani Ram, Mahender son of Mangtu, Balli\n\nson of Kishanlal, Dharam son of Kallu, Nirto son of Bhavar\n\nSingh, Bacchu son of Nabli, Gopi son of Hariom, Tulsi Ram son\n\nof Bhanwar Singh, Kamal son of Kanhaya, Ram Singh son of\n\nDayaram, Jeevan son of Bhaggo, Girraj son of Kamar, Kashi\n\nson of Bhavar Singh, Chattar Singh son of Lal Singh, Karan son\n\nof Dayaram, Naval Singh son of Narayan, Daya Ram son of\n\nInder, Harchand son of Leela, Mangtu son of Sunder Lal,\n\nDayaram son of Bhavar Singh, Dharam son of Harchandi, Sirro\n\nson of Manni, Baato son of Bhaggo, Pritam son of Naval,\n\nShrichand son of Deepchand, Deepi alias Deepchand son of\n\nNathi, Harchandi son of Maharaj Singh, Hariram son Yadram, Gangaram son of Hiralal, Hari son of Govinda, and\n\nLalsingh son of Khushiram.",
+    "legal_issues": "17. We are informed by the learned counsel for the\n\nAppellant that during the pendency of these appeals, 4\n\nAppellants namely, Dayaram son of Bhanwar Singh (Appellant\n\n2 in Crl. A. 188 of 2018), Deepi alias Deep Chand son of Natthi\n\n 12 | P a g e\n(Appellant 6 in Crl. A. 188 of 2018), Gopi son of Hari Om\n\n(Appellant 4 in Crl. A. 189 of 2018) and Girraj son of Kamar\n\n(Appellant 3 in Crl. A. 190-192 of 2018) died. At present, we\n\nare concerned with 26 Appellants. 20. Regarding the argument on behalf of the accused\n\npersons with respect the contradictions and inconsistencies in\n\nthe evidence of the eye-witnesses, the High Court found that\n\nthe contradictions and inconsistencies indicated in the\n\nstatements of the four eye-witnesses were trivial in nature. Following the law\nlaid down by\nthis Court in State of MP v. Ramaniklal Gokaldas v. State of Gujarat\n, (1976) 1 SCC 6\n3 Duli Chand v. Delhi Admn., (1975) 4 SCC 649\n\n 15 | P a g e\nRamesh4, the High Court ignored the contradictions and\n\ninconsistencies which did not affect the substratum of the\n\nprosecution’s case. The High Court disapproved the approach\n\nof the Trial Court in discarding the formula of at least two\n\nwitnesses deposing the presence/overt act of the accused in\n\ncase where large numbers of accused are involved. The High\n\nCourt followed the rule laid down by this Court in\nMasalti v. State of UP5\n, that in cases of mob violence, it would be safe\n\nto examine that at least two persons depose about the\n\npresence of an accu",
+    "ratio_summary": "",
+    "final_order": "Mangtu and Naval Singh tightened a rope\n\naround the neck of Ram Kishan which was pulled by Bato,\n\nRaman, Nirto, Bacchu, Kamal and Amar. Vijendra and Roshni\n\nwere also hanged to death. Thereafter, Ram Kishan, Vijendra\n\nand Roshni were cremated. She identified Mangtu, Deep\n\nChand, Daya Ram S/o Amar Singh, Ram Singh, Gudda,\n\nBacchu, Nirto, Raman, Tulsi Ram, Hari Ram, Pappu, Ganga\n\nRam, Naval Singh, Pritam and Harchandi. After the interim\n\norder of stay granted by the High Court was vacated, her\n\nevidence was recorded on 21.02.1998 during which she\n\nturned hostile. 24. The evidence of PW-1 was initially recorded on\n\n09.04.1992. She has narrated the sequence of events and the\n\ninvolvement of the accused in the crime. Thereafter, due to\n\nan interim order passed by the High Court, the trial was\n\n",
+    "outcome_summary": "Upheld. Mangtu and Naval Singh tightened a rope\n\naround the neck of Ram Kishan which was pulled by Bato,\n\nRaman, Nirto, Bacchu, Kamal and Amar. Vijendra and Roshni\n\nwere also hanged to death. Thereafter, Ram Kishan, Vijendra\n\nand Roshni were cremated. She identified Mangtu, Deep\n\nChand, Daya Ram S/o Amar Si",
+    "sections_cited": [
+      "IPC 149",
+      "Constitution 136",
+      "Constitution 21",
+      "IPC 506",
+      "CrPC 151"
+    ],
+    "cases_cited": []
+  }
+}

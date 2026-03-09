@@ -1,0 +1,387 @@
+{
+  "case_id": "SC_1971_1971_344",
+  "case_name": "H.H. Prince Azam Jha Bahadur (Dead) ... vs Expenditure Tax Officer",
+  "normalized_case_name": "H.H._PRINCE_AZAM_JHA_BAHADUR_(DEAD)_..._VS_EXPENDITURE_TAX_OFFICER",
+  "court": "Supreme Court of India",
+  "year": "1971",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "30 August 1971",
+  "judges": [
+    "A.N. Grover",
+    "K.S. Hegde",
+    "JUDGMENT",
+    "A.N. Grover, J."
+  ],
+  "author": "A.N. Grover",
+  "bench_type": "constitution",
+  "petitioner": "H.H. Prince Azam Jha Bahadur (Dead) ...",
+  "respondent": "Expenditure Tax Officer",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 12,
+  "cited_by_count": 9,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1972SC2319",
+    "[1972]83ITR92(SC)",
+    "(1971)3SCC621",
+    "[1972]1SCR470",
+    "AIR 1972 SUPREME COURT 2319",
+    "1972 TAX. L. R. 360"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1971\\1971_344.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1971_1971_344_P001_C01",
+      "text": "1. The points involved in all these appeals by certificate are common and relate primarily to the true scope and interpretation of certain provisions of the\nExpenditure Tax Act, 1957\n, as amended by the\nFinance Act, 1959\n, hereinafter called the 'Act'.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1971_1971_344_P002_C01",
+      "text": "2. The facts in C.As. 1794-1796/67 may be stated. Prince Azam Jha Bahadur the eldest son of the Nizam of Hyderabad filed returns for the purpose of assessment of Expenditure Tax for the assessment years 1959, 1960-61 and 1961-62. The assessments were completed as follows:\n1959-60......... completed on 27-3-1961. 1960-61......... \" \" 22-12-1961. 1961-62......... \" \" 25-1-1962.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1971_1971_344_P003_C01",
+      "text": "3. On May 5, 1962 the Expenditure Tax Officer issued notices under\nSection 16\nof the Act calling upon the assessee to file supplementary returns for the three years in question on the ground that he had reason to believe that assessee's expenditure had escaped assessment or had been under-assessed. The supplementary returns were filed on March 16, 1962 declaring the same expenditure as shown in the original returns. It appears that the assessee or the assessee's representative was informed by the Expenditure Tax Officer that the assessments had been reopened for including the expenditure incurred by the wife of the assessee. A letter also appears to have been written by the said officer to the assessee on July 20, 1962 but that letter has not been included in the printed record. The assessee filed three writ petitions in the High Court of Andhra Pradesh challenging the reopening of the assessments on various grounds. The writ petitions were dismissed by a learned single judge of the High Court on November 1, 1963. Appeals were filed by the assessee under the Letters Patent which were ultimately decided by a full bench of the High Court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1971_1971_344_P003_C02",
+      "text": "The judgment of the learned single judge was upheld by the full bench although Krishna Rao J. while agreeing with the other two learned judges in dismissing the appeals wrote a separate judgment and expressed a somewhat different view on some of the points.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1971_1971_344_P004_C01",
+      "text": "4. In order to determine the questions that have been raised it is necessary to refer to the relevant provisions of the Act as they stood before the amendment made by the\nFinance Act\n1959 and after the amendment.\n\"BEFORE AMENDMENT AFTER AMENDMENT\n(2) (g) \"dependent\" Means: 2(g) \"Dependent\" means\n(i)where the assessee is an (i) where the assessee\nindividual, his or her spouse or is an individual his or\nchild wholly or mainly dependent spouse or minor child\non the assessee for support and and includes any person\nmaintence; wholly or mainlly\n dependent on the\n assessee for support and\n maintence;\n(ii) where the assessee is a\nHindu undivided family. (ii) where the assessee\n is a Hindu undivided\n family.\n(a) every coparcener other than (a) every coparcener\nthe katra and other than the katra\n and\n(b) any other member of the family (b) any other member\nwho under any law or order or decree of family who under\nof a court is entitled to maintence any law or order or\nfrom the joint family property. decree of a court is\n entitled to maintence\n from the joint family\n property.\n2(h)........................ 2(h)................",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1971_1971_344_P005_C01",
+      "text": "3. CHANGE OF EXPENDITURE TAX. 3. CHARGE ON EXPENDITURE TAX. (i) Subject to the other provisions (i) Subject to the\ncontained in this Act there shall be other provisions\ncharged for every financial year contained in this Act\ncommencing on and from the first day there shall be charg-\nof April 1958 a tax (here in after ed for every financial\nreffered to as expenditure tax) at year commencing on\nthe rate or rates specified in the and from the first\nschedule in respect of the expenditure day of April, 1958\nincurred by an individual or Hindu un- a tax (hereinafter\ndivided family in the previous year. referred to as expe-\n nditure tax) at the\n rate or rates speci-\n fied in the scedule\n in respect of the\n expenditure incurred\n by any individual or\n Hindu undivided family\n in the previous year:\nprovided that no expenditure tax shall\nbe payable by an assessee for any assessment\nyear if his income from all sources during\nthe relevant previous year as reduced by\nthe amount of taxes to which such income may\nbe liable under any other law for the time\nbeing in force does not exceed rupees\nthirty-six thousand. Before amendment, After amendment.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1971_1971_344_P005_C02",
+      "text": "Provided that no expenditure\n tax shall be payable by anassessee\n for any assessment Year if the\n income from all sources\n derived by the assessee and\n his dependents during the\n previous year as reduced by\n the amount of taxes\n which such income may be\n liable under any law for\n the time being in force\n does not exceed thirty\n six-thousand. S.4\n.the following amounts\nshall be included in computing\nthe expenditure the time being\nof an assessee. S. 4\n.(i).. S. 4\n. no change\nS.4\n.. no charge\n(ii)Any expenditure incurred (ii) where the assessee is\nby any dependent of the assessee an individual any\nfor the benefit of the assessee expenditure incurred\nor of his dependent out of gift, by any dependent of the\ndonation or settlement on trust assessee where the\nor out of any other sources made assessee is a Hindu\nor created by the assessee, undivided family, any\nwhether directly or indirectly. expenditure incurred\n by any dependent from\n or out of any income or\n property transferred\n directly to the dependent\n by the assessee. Explanation......................",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1971_1971_344_P005_C03",
+      "text": "S.6 (1)\nThe taxable expenditure 6(1) The taxable expendi-\nof an assessee for any year ture of an assessee for any\nshall be computed after making year shall be computed\nthe following deduction and after making following\nallowances, namely:- deductions and allowances,\n namely:-\n(h) a basic allowance:- (h) a basic allowance:--\n(i) Where the assessee is an (i) Where the assessee is\nRs.30,000/- and an individual of Rs.\n 30,000/- for himself\n(ii)................. and all his dependant.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1971_1971_344_P006_C01",
+      "text": "5. The controversy has centered round the definition in\nSection 2(g)\nof the word \"dependent\" for the purpose of\nSection 4(ii)\n. According of the assessee his wife who admittedly had her own properties and assets and had substantial income therefrom could not be regarded as a dependent within\nSection 2(g)\nand therefore her expenditure could not be included under\nSection 4(ii)\nfor computing the expenditure of the assessee for the purpose of assessing his liability to tax under the Act. In other words even after the amendment made in 1959 \"dependent\" means where the assessee was an individual his or her spouse or child wholly or mainly dependent on the assessee for support and maintenance. Now after the amendment the language underwent a complete change and sufficiently clear language was employed according to which \"dependent\" meant where the assessee was an individual his or her spouse or minor child and included any person wholly or mainly dependent on the assessee for support and maintenance. But the Madras and the Madhya Pradesh High Court have given decisions which support the view advanced on be-half of the assessee.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1971_1971_344_P006_C02",
+      "text": "It will be best to examine the reasoning in these decisions because the arguments which have been addressed to us are based mainly on the same grounds. Commissioner of Expenditure Tax, Madras v. T.S. Krishna\n78 I.T.R. 541 the Madras High Court referred to the decision of the Madhya Pradesh High Court in Rajkumar Singhji v. Commissioner of Expenditure Tax, M.P. 78 I.T.R. 405 which is the subject matter of the other set of appeals i.e. C.As. 2389-2391/68. In the\nMadras\ncase the view of the Madhya Pradesh High Court was not accepted that the expression \"any expenditure incurred by any dependent from or out of any income or property transferred directly or indirectly to the dependent by the assessee\" occurring in\nSection 4(ii)\napplied not only when the assessee was a Hindu undivided family but also when the assessee was an individual. But the reasoning with regard to delimiting the scope and effect of\nSection 2(g)(i)\nin the Madhya Pradesh case was accepted.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1971_1971_344_P006_C03",
+      "text": "This is what was observed by the Madras High Court at page 545:\nThe word \"dependent\" is not a term of art in taxation and should bear its natural meaning, which may not include one who is independent and who does not require and get the assistance of another for support and maintenance. There is nothing in the language of\nSection 2(g)(i)\nwhich compels us to take a different view. As it originally stood, the expression meant in the case of an assessee who is an individual \"his or her spouse or child wholly or mainly dependent on the assessee for support and maintenance\". Even after the amendment, that substantially remains to be the position in the case of a spouse or child except that the child should be a minor and that the expression \"dependent\" has been expanded to include, apart from spouse or minor child, any person who factually is a dependent on the individual for support and maintenance",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1971_1971_344_P007_C01",
+      "text": "6. It was further observed that it was not possible to see why a distinction had been made between the spouse or the minor child of an individual on the one hand and the spouse or the minor child of a coparcener in a Hindu undivided family on the other hand. In the latter case the expenditure of a wife or a minor child who could be a member or coparcener could be included in the taxable expenditure of the Hindu undivided family only if the wife or the minor child was entitled to maintenance from the joint family property under any law order of a court. There was no reason why from the standpoint of checking evasion of tax that qualification was to be ignored in the case of a spouse or minor child of an individual. It was also suggested that if the view commended by the Revenue were to be accepted one will have to impute to the legislature an unjustifiable discrimination in the matter of addition of expenditure between a spouse or minor child of an individual and spouse and minor child of a coparcener in a Hindu undivided family. Such a discrimination could not have been intended.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1971_1971_344_P008_C01",
+      "text": "7. Another argument which was employed in the Madhya Pradesh case and which appealed to the High Court was that as the unit of assessment was the individual and not the individual together with his or her spouse and the minor children the result would be that the expenditure incurred by the husband and the wife separately from their independent sources would be subject to double taxation once with the husband as an assessee and the wife as the dependent and again with the wife as the assessee and the husband as the dependent. This result would follow if\nSection 2(g)(i)\nis to be interpreted to mean that where the assessee is an individual his or her spouse or minor child would be a dependent irrespective of the fact whether such spouse or minor child was wholly independent of the assessee for support and maintenance. As such an absurd result could be contemplated by the Act it must be held that it was only that spouse or minor child who was wholly or mainly dependent on the assessee for support and maintenance who would fall within the definition of the term \"dependent\" given in\nSection 2(g)(i)\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1971_1971_344_P009_C01",
+      "text": "8. We are unable to concur in the view of the Madras and Madhya Pradesh High Courts that the word \"dependent in\nSection 2(g) (i)\nshould be given a meaning which, owing to the clear and plain language employed therein, cannot possibly be given. Section 2(g)(i)\nhas to be read in two parts. The first part which ends with minor child followed by coma contains the word \"means\". The second part is intended to include the kind of person mentioned therein namely, one who is wholly or mainly dependent on the assessee for support and maintenance. Before the inclusive part of the definition starts the meaning of the word \"dependent\" has been clearly and completely specified. If\nSection 2(g)(i)\nas it stood before the amendment is contrasted with the Section as it was substituted by the amendment the intention of the legislature becomes obvious. Before the amendment \"dependent\" meant where the assessee was an individual his or her spouse or child wholly or mainly dependent on the assessee for support and maintenance. After the amendment\nSection 2(g)(i)\nunderwent a complete change.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1971_1971_344_P009_C02",
+      "text": "The legislature stopped short of making the spouse or the minor child dependent on the assessee for support and maintenance and employed those words only for the new category of persons who came to be included, namely, any one who was neither the spouse nor the minor child of the assessee but was otherwise wholly or mainly dependent on him for support and maintenance. Thus in the concluding part even major children of the assessee came to be included so long as they satisfied the conditions that they were wholly or mainly dependent on him. The argument that the amended definition is only intended to enlarge the categories of \"dependent\" by adding another category cannot be sustained.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1971_1971_344_P010_C01",
+      "text": "9. Coming next to Clause (ii) of\nSection 2(g)\nwhich deals with a case where the assessee is a H.U.F. no change was made in the language even after the amendment. There every coparcener other than the karta would fall within the meaning of \"dependent\" and also any other member of the family who under any law, order or decree of a court is entitled to maintenance from the joint family property. Section 4(ii)\nagain deals with different cases. The first is where the assessee is an individual; in his case any expenditure incurred by his dependent is to be included in computation of the expenditure to be subjected to tax. The other is where the assessee is a H.U.F. Any expenditure incurred by any dependent from out of the income or property transferred directly or indirectly to the dependent by the assessee is to be included in computation of the assessee's liability. Thus the two cases are dealt with separately both in\nSection 2(g)\nand\nSection 4(ii)\n. In other words where the assessee is an individual one has to look for his dependent to Clause (g)(i) and where the assessee is a H.U.F. the dependent has to be found in Clause (g) (ii) of\nSection 2\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1971_1971_344_P010_C02",
+      "text": "The argument that has been pressed on behalf of the assessee is that the use of the common word \"assessee\" in the concluding part of\nSection 4 (ii)\nwhich can take in both the individual as well as the H.U.F. shows that the words preceding it apply to both the cases. It is true that the words \"Hindu undivided family\" have not been used instead of the word \"assessee\" towards the concluding part of\nSection 4(ii)\n. But that will hot alter the true import of the aforesaid provision read with\nSection 2(g)\n. The scheme, as noticed before, is that the assessees have been divided into two clauses which are well known. One is that of an individual and the other, of the Hindu undivided family. In the case of an individual assessee the only qualification for the expenditure to be included in his assessment is that it should have been incurred by his dependent as defined in\nSection 2(g)(i)\n. In the case of a H.U.F. it could be included only if it is from out of the income or property transferred directly or indirectly to the dependent by the family.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1971_1971_344_P010_C03",
+      "text": "Even otherwise looking at the context in which the word assessee is found in the concluding part of Section 4(ii) that word has clearly been used only with reference to the second part of Clause (ii) which relates to the case of an assessee which is a H.U.F.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1971_1971_344_P011_C01",
+      "text": "10. It does look somewhat anomalous and illogical that where the expenditure has been incurred by the wife and minor children who are altogether independent of the assessee and which has no connection with their being dependent on him or with any property transferred to them should be included in the expenditure of the assessee. The position would be similar where the wife is the assessee and the expenditure incurred by the husband comes to be included in computation of her liability to tax because the word used is \"spouse\" in\nSection 2(g) (i)\n. But it must be remembered that logic or reason cannot be of much avail in interpreting a taxing statute.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1971_1971_344_P012_C01",
+      "text": "11. We are unable to see that any double taxation would be involved if the meaning of the word \"dependent\" as given in the first part of\nSection 2(g)(i)\nis to be applied without qualifying the same with what follows in the second part of that clause i.e., that that person should be wholly or mainly dependent on the assessee for support and maintenance. Although there is no bar to double taxation but the legislature must distinctly enact it. It is only when there are general words of taxation and they have to be interpreted that they cannot be so interpreted as to tax the subject twice over to the same tax. There is nothing in the Act which does away with the principle that in the absence or an express provision, the same item will not be taxed over again. Moreover the charging\nSection 3\nonly subjects to tax the expenditure incurred by an individual or a Hindu undivided family. Once the expenditure incurred by both the assessee as an individual and the spouse has been included in his or her assessment of expenditure tax, it cannot be again subjected to tax in the assessment of the other spouse. The learned Solicitor General agrees to this being the true position.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1971_1971_344_P013_C01",
+      "text": "12. A good deal of reliance has been placed on the decisions which are in favour of the assessee that there is no reasonable basis for making a distinction between an assessee who is an individual and an assessee, that is, a Hindu undivided family which would justify a different treatment. It was and has been suggested that the relevant provisions of the Act should not be so interpreted as to give rise to discrimination between the two cases, there being no reasonable basis for such discrimination. We find no force or substance in this argument. Firstly, it is not disputed that the case of an individual and that of a Hindu undivided family fall into two different classes. The challenge is based only on there being no nexus between the differentia and the object sought to be achieved by the legislation, the suggestion being that favorable treatment has been accorded to the Hindu undivided family.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1971_1971_344_P013_C02",
+      "text": "The learned Single Judge who disposed of the writ petitions in the present case considered the matter very fully and we find no infirmity in his reasoning in coming to the conclusion that in a tax legislation where the incidence of the tax falls differently upon different classes of assesses as in the present case it cannot be said that there is legislation without any classification or that there is no rational relation to the object. According to the learned Judge, the object of the enactment is to augment the revenue, to encourage thrift and to avoid wasteful expenditure and because some classes are taxed higher than the others or some are given concessions while others are not, it cannot be held that there has beer discrimination within the meaning of\nArticle 14.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1971_1971_344_P014_C01",
+      "text": "13. It was contended before the High Court and that contention has been reiterated in a half-hearted manner before us that the Act was void ab initio for want of legislative competence. It has been pointed out that there is no Entry in List 1 of the Seventh Schedule or in List III relating to tax on expenditure. Reference has been made to Entry 62 in List II which reads \"Taxes on luxuries including taxes on entertainments, amusements, betting and gambling\". We are wholly unable to comprehend how expenditure tax can fall within the aforesaid Entry. We are in entire agreement with the majority decision of the Andhra Pradesh High Court that Entry 97 in List I which is the residuary Entry covers the tax of the kind imposed by the Act.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1971_1971_344_P015_C01",
+      "text": "14. Mr. M.C. Chagla while supporting the judgment under appeal in Civil Appeals Nos. 2389-2391/68 has sought support from what is stated at pages 212-213 in Craies on Statute Law (6th Edn.). Cockburn C.J. said as early as in the year 1865 in Wake field Board of Health v. West Riding, etc., Ry.,(1865) 6 B. & Section 794. \"I hope the time will come when we shall see no more of interpretation clauses, for they frequently lead to confusion\". It has also been pointed out that an interpretation clause which extends the meaning of a word does not take away its ordinary meaning. In other words, an interpretation clause which extends the meaning by using the word \"include\" is not meant to prevent the word receiving its ordinary, popular and natural sense whenever that would be properly applicable. Mr. Chagla has laid a great deal of stress on the meaning of the word \"dependent\" and according to him that word as defined in the first part of\nSection 2(g) (i)\nof the Act cannot lose its natural signification and import even though the language of the statutory provision seems to confine its meaning to the spouse or minor child of the assessee without any further qualification.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1971_1971_344_P015_C02",
+      "text": "The contention of Mr. Chagla cannot be acceded to. In the absence of any ambiguity in the language employed in the first part of\nSection 2(g)(i)\n, we have to go by the plain meaning and that is confined to the spouse or minor child of the assessee when he is an individual irrespective of such spouse or minor child being dependent on or independent of the assessee for support and maintenance. As a matter of fact the whole construction of that clause leaves no room for doubt that in the first part, no question of dependence in fact arises and the spouse or the minor child simpliciter has to be treated as a dependent. The conjunctive word \"and\" appearing between the two parts makes the intention of the legislature still clearer. The second part or any words in that part do not qualify the first part. We may conclude the discussion on this point by referring to a decision of the Bombay High Court in\nM.N. Patwardhan v. Commissioner of Expenditure Tax, Poona\n78 I.T.R. 338 in which the decision of the Andhra Pradesh High Court under appeal has been followed after a full consideration of the various points which arose for determination.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1971_1971_344_P015_C03",
+      "text": "Rajkumar Singhji's case 78 I.T.R. 405 which is the subject matter of appeal in C.As. 2389-2391/68 was dissented from by the Bombay High Court. In our judgment the majority of the full bench of the Andhra Pradesh High Court was right in holding that the expenditure incurred by the wife of the assessee was includible in his assessment for computing the expenditure tax under the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1971_1971_344_P016_C01",
+      "text": "15. The other point which was canvassed before the High Court of Andhra Pradesh and has been urged before us relates to the validity of the notice which was issued by the Expenditure Tax Officer for reopening the assessments in question. In the notices, it was stated that whereas the Expenditure Tax Officer had reason to believe that expenditure chargeable to expenditure tax had (a) escaped assessment, (b) been under-assessed, (c) been assessed at too low a rate it was proposed to reassess the expenditure for the assessment year in question. The assessee was required to file a return in form 'A' of expenditure for the assessment years in question. From the judgment of the learned Single Judge it appears that in a subsequent letter, the Expenditure Tax Officer referred to \"return of expenditure filed in response to the notices issued under\nSection 16(a)\nof the Expenditure Tax Act, 1957\". In the writ petition which was filed on behalf of Prince Azam Jha Bahadur in the High Court, it was stated in para 7 that the action of the Expenditure Tax Officer in reopening the assessments under\nSection 16(a)\nwas wholly arbitrary and illegal.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1971_1971_344_P016_C02",
+      "text": "It was, however, further stated \"there has been no omission or failure on the part of the petitioner to make a return of his expenditure or to disclose fully and truly all material facts. Nor has the respondent come into possession of any information warranting a reasonable brief that any expenditure has escaped taxation. All the material facts were disclosed. All the necessary information was available.\" In the counter affidavit of the Expenditure Tax Officer in para 5, it was asserted that he had reason to believe that on account of omission or failure on the part of the assessee to disclose truly and fully all material facts necessary for his assessment expenditure of his dependents chargeable to tax had escaped assessment. In para 8 also, reliance was placed mainly on the provisions of\nSection 16(a)\nof the Act but in para 9, the Expenditure Tax Officer went on to say that the actual expenditure incurred by the assessee's wife was disclosed by her returns filed before him and in consequence of the aforesaid information available to him on 5th May 1962, he had reason to believe that the expenditure of the assessee chargeable to tax had escaped assessment.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1971_1971_344_P016_C03",
+      "text": "It was pointed out that the notices which had been issued were within four years limit applicable to\nSection 16(b)\nof the Act. It was reiterated that as the notices had been issued within four years reassessment proceedings could be sustained either under\nSection 16(a)\nSection 16(b)\nof the Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1971_1971_344_P017_C01",
+      "text": "16. Section 16\nof the Act is in the following terms:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1971_1971_344_P018_C01",
+      "text": "16.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1971_1971_344_P018_C02",
+      "text": "If the Expenditure Tax Officer-(a) has reason to believe that by reason of the omission or failure on the part of the assessee to make a return of his expenditure under Section 13 for any assessment year, or to disclose fully and truly all material necessary for his assessment for that year, the expenditure chargeable to tax has escaped assessment for that year, whether by reason of under-assessment or assessment at too low a rate or otherwise; or\n(b) has in consequence of any information in his possession reason to believe notwithstanding that there has been no such omission or failure as is referred to in Clause.(a), that the expenditure chargeable to tax has escaped assessment for any assessment year, whether by reason of under-assessment or assessment at too low a rate or otherwise; he may, in cases falling under Clause (a) at any time within eight years and in cases falling under Clause (b) at any time within four years of the end of that assessment year, serve on the assessee a notice under Sub-section (2) of\nSection 13\nand may proceed to assess or reassess such expenditure and the provisions of this Act shall, so far as may be, apply as if the notice had issued under that",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1971_1971_344_P018_C03",
+      "text": "sub-section.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1971_1971_344_P019_C01",
+      "text": "17. On behalf of the assessee, a contention had been raised before the learned Single Judge of the High Court that the notices had been issued by the Expenditure Tax Officer under\nSection 16(a)\nof the Act. The notices were illegal inasmuch as the facts that Princess Durree Shehvar was the wife of the assessee and that she had to be considered as his dependent within the meaning of\nSection 2(g) (i)\nof the Act were within the knowledge of the Expenditure Tax Officer and had been duly mentioned to him and as such there was no omission or failure on the part of the assessee to make a return of his expenditure or to disclose fully and truly all material facts. Since all the material facts had been disclosed and all the necessary information was available, the Expenditure Tax Officer had no jurisdiction to reopen the assessment merely because he had changed his opinion.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1971_1971_344_P020_C01",
+      "text": "18. It is no doubt true that the impression created by the notices which were issued and the correspondence which followed between the assessee and the Expenditure Tax Officer was that the notices had been issued under\nSection 16(a)\nof the Act but in the writ petitions and the returns which were filed, both sides were quite clear that the matter was not confined only to Clause (a) of\nSection 16 (i)\nand Clause (b) figured prominently. We are unable to see that the notices which had been issued were confined only to the terms of\nSection 16(a)\n. It is not disputed on behalf of the assessee that if the matter was covered by\nSection 16(b)\n, they would be perfectly valid. The pleadings in the writ petitions covered both clauses of\nSection 16\nand in any case, the Expenditure Tax Officer had made a positive averment that the information with regard to the expenditure incurred by the assessee's wife became available to him only on 5th May 1962.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1971_1971_344_P020_C02",
+      "text": "Thus the notices which were issued on that date relating to the assessment years 1959-60, 1960-61 and 1961-62 were within the period of four years which was the limit prescribed with regard to action under Clause (b) the limit being more in respect of Clause (a). In our judgment, this concludes the matter because it was nowhere controverted in the High Court that the ' requisite information came into possession of the Expenditure Tax Officer only on 5th May, 1962.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1971_1971_344_P021_C01",
+      "text": "19. In the result Civil Appeals Nos. 1794-1796 of 1967 fail and are hereby dismissed. The other set of appeals i.e., Civil Appeals Nos. 2389-2391 of 1968 of the Commissioner of Expenditure Tax succeed and are hereby allowed. The answer given by the High Court in that case to the question referred by the Tribunal shall stand discharged and instead the answer to the question will be in the affirmative and in favour of the Revenue. Keeping in view the nature of the points involved, the parties are left to bear their own costs in all these appeals.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "H.H. Prince Azam Jha Bahadur (Dead) ... vs Expenditure Tax Officer",
+    "case_id": "SC_1971_1971_344",
+    "court": "Supreme Court of India",
+    "year": "1971",
+    "facts_summary": "2. The facts in C.As. 1794-1796/67 may be stated. Prince Azam Jha Bahadur the eldest son of the Nizam of Hyderabad filed returns for the purpose of assessment of Expenditure Tax for the assessment years 1959, 1960-61 and 1961-62. The assessments were completed as follows:\n1959-60......... completed on 27-3-1961. 1960-61......... \" \" 22-12-1961. 1961-62......... \" \" 25-1-1962. The judgment of the learned single judge was upheld by the full bench although Krishna Rao J. while agreeing with the other two learned judges in dismissing the appeals wrote a separate judgment and expressed a somewhat different view on some of the points. 4. In order to determine the questions that have been raised it is necessary to refer to the relevant provisions of the Act as they stood before the amendment made by the\nFinance Act\n1959 and after the amendment.\n\"BEFORE AMENDMENT AFTER AMENDMENT\n(2) (g) \"dependent\" Means: 2(g) \"Dependent\" means\n(i)where the assessee is an (i) where the assessee\nindividual, his or her spouse or is an individual his or\nchild wholly or mainly dependent spouse or minor child\non the assessee for support and and includes any person\nmaintence; wholly or mainlly\n dependent on the\n assessee for support and\n maintence;\n(ii) where the assessee is a\nHindu undivided family. (ii) where the assessee\n is a Hindu undivided\n family.\n(a) every coparcener other than (a) every coparcener\nthe katra and other than the katra\n and\n(b) any other member of the family (b) any other member\nwho u",
+    "legal_issues": "The argument that has been pressed on behalf of the assessee is that the use of the common word \"assessee\" in the concluding part of\nSection 4 (ii)\nwhich can take in both the individual as well as the H.U.F. shows that the words preceding it apply to both the cases. It is true that the words \"Hindu undivided family\" have not been used instead of the word \"assessee\" towards the concluding part of\nSection 4(ii)\n. But that will hot alter the true import of the aforesaid provision read with\nSection 2(g)\n. The scheme, as noticed before, is that the assessees have been divided into two clauses which are well known. One is that of an individual and the other, of the Hindu undivided family. In the case of an individual assessee the only qualification for the expenditure to be included in his assessment is that it should have been incurred by his dependent as defined in\nSection 2(g)(i)\n. In the case of a H.U.F. it could be included only if it is from out of the income or property transferred directly or indirectly to the dependent by the family. 11. We are unable to see that any double taxation would be involved if the meaning of the word \"dependent\" as given in the first part of\nSection 2(g)(i)\nis to be applied without qualifying the same with what follows in the second part of that clause i.e., that that person should be wholly or mainly dependent on the assessee for support and maintenance. Although there is no bar to double taxation but the legislature must distinctly enact it. It",
+    "ratio_summary": "",
+    "final_order": "19. In the result Civil Appeals Nos. 1794-1796 of 1967 fail and are hereby dismissed. The other set of appeals i.e., Civil Appeals Nos. 2389-2391 of 1968 of the Commissioner of Expenditure Tax succeed and are hereby allowed. The answer given by the High Court in that case to the question referred by the Tribunal shall stand discharged and instead the answer to the question will be in the affirmative and in favour of the Revenue. Keeping in view the nature of the points involved, the parties are left to bear their own costs in all these appeals.",
+    "outcome_summary": "Dismissed. 19. In the result Civil Appeals Nos. 1794-1796 of 1967 fail and are hereby dismissed. The other set of appeals i.e., Civil Appeals Nos. 2389-2391 of 1968 of the Commissioner of Expenditure Tax succeed and are hereby allowed. The answer given by the High Court in that case to the question referred by",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

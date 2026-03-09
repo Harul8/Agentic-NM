@@ -1,0 +1,199 @@
+{
+  "case_id": "SC_1972_1972_167",
+  "case_name": "State Of Gujarat vs Prakash Trading Co. Ahmedabad",
+  "normalized_case_name": "STATE_OF_GUJARAT_VS_PRAKASH_TRADING_CO._AHMEDABAD",
+  "court": "Supreme Court of India",
+  "year": "1972",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "22 August 1972",
+  "judges": [
+    "Hans Raj Khanna",
+    "K.S. Hegde",
+    "P. Jaganmohan Reddy"
+  ],
+  "author": "Hans Raj Khanna",
+  "bench_type": "constitution",
+  "petitioner": "State Of Gujarat",
+  "respondent": "Prakash Trading Co. Ahmedabad",
+  "reporter_citations": [],
+  "outcome": "partly allowed",
+  "disposition": "partly_allowed",
+  "cites_count": 7,
+  "cited_by_count": 37,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1973 AIR 960",
+    "1973 SCR (1) 918",
+    "AIR 1973 SUPREME COURT 960",
+    "1972 2 SCC 689",
+    "1973 TAX. L. R. 1813",
+    "1972 2 SCWR 555",
+    "30 STC 348",
+    "1973 (1) SCR 918"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1972\\1972_167.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1972_1972_167_P001_C01",
+      "text": "BENCH:\nKHANNA, HANS RAJ\nBENCH:\nKHANNA, HANS RAJ\nHEGDE, K.S.\nREDDY, P. JAGANMOHAN",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1972_1972_167_P002_C01",
+      "text": "ACT:\nBombay Sales Tax Act, (51 of 1959) as amended by\nGujarat Act\n25 of 1962, Sch. C. entry 28 and Sch, E, entry 21A-Liquid\nsoap, tooth paste and tooth brush whether toilet articles.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_167_P003_C01",
+      "text": "HEADNOTE:\nEntry 28 of Schedule C of the Bombay Sales Tax Act, 1959, as\namended by the\nGujarat Act\n. 1962, pertains to soaps. Entry\n21A of Schedule E deals with toilet articles excluding soap\nas specified in Entry 28 in Schedule C. and Entry 22 of\nSchedule E is a residuary entry relating to all goods other\nthan those specified from time to time in the Schedules and\nin the preceding entries. On a reference under\ns. 61\nof the Act, the High Court held\nthat Colgate tooth paste and Colgate tooth brush were not\ntoilet articles falling under Entry 21A but were covered by\nthe residuary Entry 22; and that Palmolive Shampoo was soap\nwithin the meaning of Entry 28 of Schedule C. In appeal to this Court,\nHELD : (1) Colgate tooth paste and brush are toilet articles\nunder Entry 21A, Sch.E. (a) in Sarin Chemical Laboratory v., Commissioner of Sales\nTax, U.P. (1970) 26 S.T.C. 339 (SC), this Court came to the\nconclusion that tooth powder was a toilet requisite.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_167_P003_C02",
+      "text": "Moreover, this Court by approving in Sarin Chemical\nLaboratory Case the decision of the Bombay High Court in\nCommissioner of Sales Tax v., Vicco Laboratories (1968) 22\nS.T.C. 169, approved the view that for the purpose of\nBombay, Sales-Tax Act also dental powder is a toilet\narticle. The reasoning given by this Court in respect of\ntooth powder in Sarin Chemical Laboratory's case holds\nequally good for tooth paste. [920F; 921D-F]\n(b) The dictionary meaning of the word 'toilet' as \"an act\nor process of cleansing one's person\" shows that a tooth\nbrush, which is meant for cleansing one's teeth, is also a\ntoilet article. If a tooth brush is in fact used for\ncleansing one's teeth it must be held to be an article of\ntoilet even teeth may also be cleansed without the use of a\ntooth brush. [920G-H;921F-G]\n(2) Shampoo is a kind of liquid soap. It has all the\ningredients of a soap though the proportion of ingredient\ndiffers from those of a soap in the form of a cake. But\nthat fact would not alter the basic character of shampoo and\ntake it out of the category of soaps. The High Court was\ntherefore right in holding that the Shampoo falls under\nEntry 28, Schedule C. [922C-D]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1972_1972_167_P004_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION : C.A. No. 37 of 1969.\nAppeal by special leave from the judgment and order dated\nJuly 3, 1968 of the Gujarat High Court in Sales Tax\nReference No. 3 of 1967.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1972_1972_167_P005_C01",
+      "text": "M. C. Bhandare and S. P. Nayar, for the appellant.\nM. C. Chagla and I. N. Shroff, for the respondent.\nThe Judgment of the Court was delivered by\nKhanna, J. This appeal by special leave is directed\nagainst the judgment of Gujarat High Court in a reference\nmade to it under section 61 of the Bombay Sales Tax Act,",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1972_1972_167_P006_C01",
+      "text": "(Bombay Act\n51 of 1959) as amended by the\nBombay Sales\nTax (Gujarat Amendment) Act, 1962\n(Gujarat Act\n25 of 1962)\n(hereinafter referred to as the Act). The respondent made an application under\nsection 52\nof the\nAct to the Deputy Commissioner of Sales Tax for\ndetermination of the rate of tax payable on sale of five\narticles, including Palmolive shampoo, large size, Colgate\ntooth paste, giant size and Colgate tooth brush for adult\nuse. It was urged by the respondent before the Deputy\nCommissioner that Palmolive shampoo was a kind of liquid\nsoap and was covered by entry 28 of schedule C to the Act. As regards Colgate dental paste and Colgate tooth brush, the\nrespondent submitted that those were articles meant for\ncleansing teeth and were not toilet articles. These\ncontentions were repelled by the Deputy Commissioner, who\nheld that the aforesaid three articles were toilet articles\nwithin the meaning of entry 21A of schedule E to the Act and\nliable to tax accordingly. The Gujarat Sales Tax Tribunal\non appeal took the same view as had been taken by the Deputy\nCommissioner.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1972_1972_167_P006_C02",
+      "text": "On application filed by the respondent, the\nfollowing two questions were referred by the Tribunal to the\nHigh Court:\n\"1. Whether on the facts and in the\n circumstances of the case Palmolive Shampoo\n (Large Size) sold under Bill No. 505 dated\n July 15, 1964 is a toilet article within the\n meaning of Entry 21A of Schedule E or is soap\n within the meaning of Entry 28 of Schedule C\n or is covered by Entry 22 of Schedule E to the\n Bombay Sales Tax Act, 1959 and liable to tax\n accordingly.\n2. Whether on the facts and in the\n circumstances of the case (1) Colgate Tooth\n Paste and (2) Colgate Tooth Brush sold under\n Bill No. 5'05 dated July 15, 1964 are toilet\n articles within the meaning of Entry 21A of\n Schedule E or are covered by Entry 22 of\n Schedule E to the Bombay Sales Tax Act, 1959\n and liable to tax accordingly\".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1972_1972_167_P007_C01",
+      "text": "The answer of the High Court on the first question was that\nPalmolive shampoo was not a toilet article within the\nmeaning of entry 21A of schedule E to the Act but was scrap\nwithin the meaning of entry 28 of schedule C and was liable\nto be taxed accordingly. As regards question No. 2, the\nanswer of the High ,Court was that Colgate tooth brush and\nColgate tooth paste were not toilet articles falling in\nentry 21A of schedule E but were covered by the residuary\nentry 22 of schedule E and were liable to-be taxed\naccordingly. In appeal in this Court Mr. Bhandare on behalf of the ap-\npellant has argued that all the three articles in question,\nnamely, Palmolive shampoo, Colgate tooth paste and Colgate\ntooth brush are toilet articles as mentioned in entry 21A of\nschedule E to the Act. As against that Mr. Chagla on behalf\nof the respondent has canvassed for the correctness of the\nview of the High Court. We may at this stage refer to the three entries with which\nwe are concerned. Entry 28 of schedule C to the Act\npertains to soaps. Entry 21A of schedule E to the Act deals\nwith the following goods:\n21A.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1972_1972_167_P007_C02",
+      "text": "Toilet articles including hair cream and\n hair ionic; and perfumes, depilatories and\n cosmetics (except soap as specified in entry\n 28 in schedule C and hair oil as specified in\n entry 7 of this schedule).\"\nEntry 22 is a residuary entry and relates to \"all goods\nother than those specified from time to time in schedules A,\nB, C and D in the preceding entries.\"\nSo far as Colgate tooth paste is concerned, we find that the\nmatter is concluded by a decision of this Court in the case\nSarin Chemical Laboratory v. Commissioner of Sales Tax,\nU.P. (1). It was held\nin that case\nthat tooth powder is a\ntoilet requisite and was liable to sales tax as such. Reference in this connection was made to the dictionary\nmeaning of the words \" cosmetic\", \"toilet\" and \"toiletry\".\n\"Cosmetic\", according to Webster's International Dictionary,\nis \"a preparation to beautify or alter appearance of the\nbody or for cleansing, coloring, conditioning or protecting\nskin, hair, nails, eyes or teeth\".",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1972_1972_167_P007_C03",
+      "text": "The same dictionary\ngives the meaning of the expression \"toilet\" as \"an act or\nprocess of dressing, especially formerly of dressing hair\nand now usually cleansing and grooming of one's person\".\n\"Toiletry\" according to the dictionary, is \"an article or\npreparation used in making one's toilet such as soap,\nlotion, cosmetic, tooth-paste,\n(1) [1970] 26 S.T.C. 339.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1972_1972_167_P008_C01",
+      "text": "shaving cream, cologne etc.\" It was further observed by this\nCourt that according to the dictionary meaning, tooth powder\nwas regarded both as an item of cosmetic and toilet and that\nin common parlance, tooth powder was considered to be an\narticle of toilet. As such, the Court came to the\nconclusion that tooth powder was a toilet requisite. The\nreasoning given by this Court in respect of tooth powder in\nthe above cited case, in our opinion, holds equally good for\ntooth paste. Likewise, the dictionary meaning of the word\n\"toilet\" relied upon\nthe above case\n\"as an act or process\nof cleansing of one's person\" shows that a tooth brush which\nis meant for cleansing one's teeth is a toilet article. Mr. Chagla has tried to distinguish the case of Sarin Chemi-\ncal\nLaboratory\n(supra) on the ground that was a case under\nthe U.P. Sales Tax Act, while we are dealing with a case\nunder the Bombay Sales Tax Act. This submission is clearly\nuntenable, because we are concerned with the concept of a\ntoilet article as understood in common parlance. Neither\nthe Bombay Sales Tax Act nor the U.P.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1972_1972_167_P008_C02",
+      "text": "Sales Tax Act\ncontained any special definition of the toilet articles and,\nas such, the reasoning in the case of\nSarin Chemical\nLaboratory\n(supra) cannot be held to relate only to cases\nunder the U.P. Sales Tax Act. Apart from that, we find that\nin the case of\nSarin Chemical Laboratory\n(supra) this Court\napproved of the decision of the Bombay High Court in Com-\nmissioner of\nSales Tax v. Vicco Laboratories\n(1). In the\nlast mentioned case it was held by the Bombay High Court\nthat Vicco Vajradanti dentifrice in the form of a powder\nused for cleansing teeth was a toilet article. It would,\ntherefore, follow that this Court has set its seal of\napproval on the view that for the Bombay Sales Tax Act also,\ndental powder used for cleansing of tooth is a toilet\narticle. We are also unable to accede to the submission of Mr. Chagla\nthat as tooth can also be cleansed without the use of tooth\nbrush, the same is not a toilet article. The question with\nwhich we are concerned is not whether the use of tooth brush\ncan be dispensed with, but whether it is actually used for\nthe purpose of cleansing one's teeth.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1972_1972_167_P008_C03",
+      "text": "If the tooth brush\nis, in fact, used for cleansing one's, teeth, the same must\nbe held to be an article of toilet. The view taken by the High Court regarding shampoo that it\nconstitutes soap, in our opinion, is well founded. The High\nCourt in this respect has referred to the following passage\nin the Encyclopedia of Chemical Technology:\n\". The soaps used for shampooing the hair are\n essentially the same as those described under\n \"soap\". (1) [1968]22 S.L.C. 169.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1972_1972_167_P009_C01",
+      "text": "See Cosmetics Vol. 6 P. 550 soap). They are\n available in several forms; bar, cake,.\nliquid, powder (or granulles) and jolly. Although there will 'undoubtedly always be\n numbers of individuals who will wash their\n hair with any cake of soap that may be at\n hand, the prepared liquid shampoos have\n rapidly risen to first place in the retail\n trade. The bars and cakes are shoved down,\n the granules are dissolved and the jollies are\n diluted, to prepare liquid shampoo of the\n desired concentration....\"\nThe High Court concluded from the above that Palmolive\nshampoo was soap covered by entry 28 of schedule C to the\nAct. We agree with the High Court in this respect and are\nof the' opinion that shampoo is a kind of liquid soap. It\nhas all the essential ingredients of a soap. It may be that\nthe proportion of the ingredients of the liquid soap differ\nfrom those of a soap in the form of a cake but that fact\nwould not alter the basic character of shampoo and take it\nout of the category of soaps. As a result of the above, we partly accept the appeal and\nset aside the judgment of the High Court in so far as it\nrelates to tooth paste and tooth brush.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1972_1972_167_P009_C02",
+      "text": "Both of them, in\nour opinion, are toilet articles within the meaning of entry\n21A of schedule E to the, Act. We, however, uphold the\njudgment of the High Court in so far as the High Court has'\nheld that shampoo is soap within the meaning of entry 28 of\nschedule C to the Act. In view of the partial 'success of\neach party, we leave the parties to bear their own costs of\nthis Court as well as in the High Court. V.P.S. Appeal partly\nallowed",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "State Of Gujarat vs Prakash Trading Co. Ahmedabad",
+    "case_id": "SC_1972_1972_167",
+    "court": "Supreme Court of India",
+    "year": "1972",
+    "facts_summary": "ACT:\nBombay Sales Tax Act, (51 of 1959) as amended by\nGujarat Act\n25 of 1962, Sch. C. entry 28 and Sch, E, entry 21A-Liquid\nsoap, tooth paste and tooth brush whether toilet articles. HEADNOTE:\nEntry 28 of Schedule C of the Bombay Sales Tax Act, 1959, as\namended by the\nGujarat Act\n. 1962, pertains to soaps. Entry\n21A of Schedule E deals with toilet articles excluding soap\nas specified in Entry 28 in Schedule C. and Entry 22 of\nSchedule E is a residuary entry relating to all goods other\nthan those specified from time to time in the Schedules and\nin the preceding entries. On a reference under\ns. 61\nof the Act, the High Court held\nthat Colgate tooth paste and Colgate tooth brush were not\ntoilet articles falling under Entry 21A but were covered by\nthe residuary Entry 22; and that Palmolive Shampoo was soap\nwithin the meaning of Entry 28 of Schedule C. In appeal to this Court,\nHELD : (1) Colgate tooth paste and brush are toilet articles\nunder Entry 21A, Sch.E. (a) in Sarin Chemical Laboratory v., Commissioner of Sales\nTax, U.P. (1970) 26 S.T.C. 339 (SC), this Court came to the\nconclusion that tooth powder was a toilet requisite.",
+    "legal_issues": "M. C. Bhandare and S. P. Nayar, for the appellant.\nM. C. Chagla and I. N. Shroff, for the respondent.\nThe Judgment of the Court was delivered by\nKhanna, J. This appeal by special leave is directed\nagainst the judgment of Gujarat High Court in a reference\nmade to it under section 61 of the Bombay Sales Tax Act, (Bombay Act\n51 of 1959) as amended by the\nBombay Sales\nTax (Gujarat Amendment) Act, 1962\n(Gujarat Act\n25 of 1962)\n(hereinafter referred to as the Act). The respondent made an application under\nsection 52\nof the\nAct to the Deputy Commissioner of Sales Tax for\ndetermination of the rate of tax payable on sale of five\narticles, including Palmolive shampoo, large size, Colgate\ntooth paste, giant size and Colgate tooth brush for adult\nuse. It was urged by the respondent before the Deputy\nCommissioner that Palmolive shampoo was a kind of liquid\nsoap and was covered by entry 28 of schedule C to the Act. As regards Colgate dental paste and Colgate tooth brush, the\nrespondent submitted that those were articles meant for\ncleansing teeth and were not toilet articles. These\ncontentions were repelled by the Deputy Commissioner, who\nheld that the aforesaid three articles were toilet articles\nwithin the meaning of entry 21A of schedule E to the Act and\nliable to tax accordingly. The Gujarat Sales Tax Tribunal\non appeal took the same view as had been taken by the Deputy\nCommissioner. The answer of the High Court on the first question was that\nPalmolive shampoo was not a toilet article w",
+    "ratio_summary": "Sales Tax Act\ncontained any special definition of the toilet articles and,\nas such, the reasoning in the case of\nSarin Chemical\nLaboratory\n(supra) cannot be held to relate only to cases\nunder the U.P. Sales Tax Act. Apart from that, we find that\nin the case of\nSarin Chemical Laboratory\n(supra) this Court\napproved of the decision of the Bombay High Court in Com-\nmissioner of\nSales Tax v. Vicco Laboratories\n(1). In the\nlast mentioned case it was held by the Bombay High Court\nthat Vicco Vajradanti dentifrice in the form of a powder\nused for cleansing teeth was a toilet article. It would,\ntherefore, follow that this Court has set its seal of\napproval on the view that for the Bombay Sales Tax Act also,\ndental powder used for cleansing of tooth is a toilet\narticle. We are also unable to accede to the submission of Mr. Chagla\nthat as tooth can also be cleansed without the use of tooth\nbrush, the same is not a toilet article. The question with\nwhich we are concerned is not whether the use of tooth brush\ncan be dispensed with, but whether it is actually used for\nthe purpose of cleansing one's teeth.",
+    "final_order": "",
+    "outcome_summary": "Partly allowed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

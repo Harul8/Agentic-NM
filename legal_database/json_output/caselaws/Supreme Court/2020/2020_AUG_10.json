@@ -1,0 +1,805 @@
+{
+  "case_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES",
+  "case_name": "Deccan Paper Mills Co. Ltd. vs Regency Mahavir Properties .",
+  "normalized_case_name": "DECCAN_PAPER_MILLS_CO._LTD._VS_REGENCY_MAHAVIR_PROPERTIES_.",
+  "court": "Supreme Court of India",
+  "year": "2020",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 5147 of 2016",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "19 August 2020",
+  "judges": [
+    "Indira Banerjee",
+    "Navin Sinha",
+    "R. F. Nariman"
+  ],
+  "author": "R.F. Nariman",
+  "bench_type": "constitution",
+  "petitioner": "Deccan Paper Mills Co. Ltd.",
+  "respondent": "Regency Mahavir Properties .",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 66,
+  "cited_by_count": 49,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR 2020 SUPREME COURT 4047",
+    "AIRONLINE 2020 SC 701"
+  ],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2020\\AUG\\2020_AUG_10.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n CIVIL APPEAL NO. 5147 OF 2016\n\n DECCAN PAPER MILLS CO. LTD. …APPELLANT\n\n VERSUS\n\n REGENCY MAHAVIR PROPERTIES & ORS. …RESPONDENTS\n\n JUDGMENT\nR.F. Nariman, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P002_C01",
+      "text": "1. The hearing in this appeal followed in the wake of the hearing in\n\n Civil Appeal Nos. 5145 of 2016, 5158 of 2016, and 9820 of 2016. The brief facts necessary to appreciate the controversy in this\n\n appeal are as follows:\ni. By an agreement dated 22.07.2004 between the Appellant,\n\n Deccan Paper Mills Co. Ltd. [hereinafter referred to as “Deccan”]\n\n and the Respondent No. 2 company, M/s Ashray Premises Pvt. Ltd. [hereinafter referred to as “Ashray”], Deccan, being the\n\n owner of approximately 80,200 sq. meters of land bearing Survey\n\n agreement. However, it is enough to note that this agreement\n\n contained clause 7(m), in which it is stated :\n“7. The Owner and the Developer hereto covenant that\n upon the execution of these presents:\nxxx xxx xxx\n m. The Owner shall have no objection if at any stage\n during the continuance of this agreement the\n Developer assigns, delegates the rights, under this\n agreement or the Power of Attorney/writings executed\n in furtherance hereof to any other person, firm or party\n without violating or disturbing any of the terms and\n conditions of this agreement.”\n\nii. This agreement did not contain any arbitration clause.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P002_C02",
+      "text": "Pursuant to\n\n clause 7(m), on 20.05.2006, an agreement was entered into\n\n between Respondent No. 2 – Ashray, and Respondent No.1 –\n\n Regency Mahavir Properties, a partnership firm [hereinafter\n\n referred to as “Regency”], by which Ashray assigned the\n\n execution of the agreement dated 22.07.2004 to Regency. The\n\n aforesaid agreement contained an arbitration clause, which is set\n\n out as follows:\n“14.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P002_C03",
+      "text": "If during the continuance of the said\n Agreement/these presents or at any time afterwards\n any difference shall arise between the parties herein\n and the heirs, executors or administrators of the other\n of them or between their respective heirs, executors or\n administrators in regard to the construction of any of\n the articles herein contained or to any division\n (..illegible) thing to be made or done in pursuance\n hereto or to any other matter or thing relating to the\n\nsaid Agreement/these presents the same shall be\n forthwith referred to one arbitrator if the parties agree\n or otherwise to two arbitrators, one to be appointed by\n each party to the reference or to an Umpire to be\n chosen by the Arbiters before entering upon the\n reference and every such reference shall be deemed\n to be an Arbitration in accordance with and subject to\n the provisions of\nThe Arbitration & Conciliation Act,\n\nor any statutory modification or re-enactment\n thereof for the time being in force.”\n\niii.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P002_C04",
+      "text": "A deed of confirmation dated 13.07.2006 followed, by which it was\n\n stated that this deed was to be treated as part of the 20.05.2006\n\n agreement, in which the assignment by Ashray to Regency was\n\n reaffirmed. According to Deccan, a fraud had been played by one\n\n Mr. Atul Chordia, Respondent No.3 herein (Defendant No. 3 in the\n\n suit filed by Deccan), which is pleaded in Special Civil Suit No.\n\n 1400 of 2010, which was filed on 13.07.2010, as follows:\n“6. In the year 2006 or thereabout, the Defendant No.3\n approached directors of the Plaintiff Company and\n represented to them that for diverse reasons, he\n intends to develop the said property through a\n partnership firm by name Regency Mahavir Properties. The Defendant No.3 further assured Plaintiff Company\n that he will be one of the leading partners of the said\n M/s Regency Mahavir Properties i.e. the Defendant\n No.1 and the development of the said property and the\n same shall be carried out as quickly as possible. The\n directors of Plaintiff Company, relying on the strength\n of assurance given by Mr.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P002_C05",
+      "text": "Atul Chordia agreed to be\n joined a Consenting Party to a formal agreement of\n assignment to be executed between Defendant No.1\n and Defendant No.2. It is pertinent to note that\n Defendant No.3 holding out to be an authorized\n partner of Defendant No.1 has signed the said\n\nagreement. The directors of Plaintiff Company under a\nbonafide belief that the said agreement of assignment\nwas formal and Defendant No.3 will be responsible for\ndevelopment of the said property. Now directors of\nPlaintiff Company realize that Defendant No. 3 had\ndifferent intentions.”\nxxx xxx xxx\n“8. Recently, the director of Plaintiff Company\napproached Mr. Dilip R. Jain, one of the partners of\nDefendant No. 1. Directors of Plaintiff Company\ninquired with Mr. Jain about the delay in progress of\nconstruction and informed Mr. Jain that they will hold\nDefendant No.3 responsible for the deal. Mr. Jain, to\nthe shock and surprise of directors of Plaintiff\nCompany informed them that Mr. Chordia was no more\nresponsible for development of the said property, since\nhe has assigned development rights in respect thereof,\nway back in the year 2006 itself.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P002_C06",
+      "text": "Directors of Plaintiff\nCompany took the said shock and approached\nDefendant No.3 and inquired with him about the\naforesaid state of affairs. The Defendant No.3 avoided\ngiving any explanation. The Directors of Plaintiff\nCompany, took a search in the office of Registrar of\nFirms and for the first time came to know that the\nDefendant No.3 had opted to retire from business of\nDefendant No.1 with effect from 30.05.2006. It is\npertinent to note that the Defendant No. 3 representing\nhimself to be authorized partner of Defendant No.1 has\nsigned deed of Confirmation dated 13.07.2006,\nconfirming the terms and conditions of agreement\ndated 20.05.2006, executed between Defendant No.1\nand 2 in respect of development of the suit property.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P003_C01",
+      "text": "9. As stated earlier, Directors of Plaintiff Company\nhave granted development rights in respect of the said\nproperty to Defendant No.2, only because Defendant\nNo.3 was its leading Director. The Plaintiff Company\nhas joined the agreement of assignment dated\n20.05.2006 and Deed of Confirmation dated\n13.07.2006 executed by Defendant No.2 in favour of\nDefendant No.1 with understanding that Defendant\nNo.3 was its partner. Directors of Plaintiff Company\ntherefore say that Defendant No.1 in collusion with\n\nDefendant No.2 and in active concealment of material\n fact, by misrepresenting Plaintiff Company and by\n practicing fraud upon the Plaintiff Company have\n obtained consent of Plaintiff Company on the\n agreement of assignment and Deed of Confirmation. Directors of Plaintiff Company therefore say that said\n agreement of assignment and Deed of Confirmation\n being tainted with fraud are ab initio null and void and\n not binding on Plaintiff Company.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P003_C02",
+      "text": "Since the Plaintiff\n Company has recently come to know the aforesaid\n fraud, they have decided to inform the Defendant that\n the agreement dated 20.05.2006 and the Deed of\n Confirmation dated 13.07.2006 in respect of the said\n property are not binding upon the Plaintiff Company\n and hence Defendant No.1 has no legal right to\n continue with further development of the said property.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P004_C01",
+      "text": "10. Directors of Plaintiff Company, from reliable\n sources, have come to know that Defendant No.1 has\n no intention to develop the said property, further and\n hence Defendant No.1, again in collusion with\n Defendant No.3 is negotiating to transfer/assign\n development rights in respect of the said property to\n third person. Since the agreement of assignment dated\n 20.05.2006 and Deed of Confirmation dated\n 13.07.2006 are illegal and void, Defendant No.1 has\n no right to deal with the suit property. Inspite of such\n position, if Defendant No.1 attempts to transfer such\n rights, the same shall be illegal and in any case shall\n not be binding upon Plaintiff Company.”\n\nAs a result of the fraud played, it was then stated:\n“12. The cause of action for this suit first arose on or\n about 22.07.2004 when the Defendant No.1 obtained\n agreement for development of the suit property, it\n further arose when the Defendant No.1 and 2 obtained\n agreement of assignment dated 20.05.2006 and Deed\n of Confirmation dated 17.07.2006.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P004_C02",
+      "text": "It further arose, in\n the month of April/May 2010, when the Plaintiff for the\n first time came to know that the Defendant No.3 is no\n more partner of the Defendant No.1 and that the\n Defendants have committed fraud upon the Plaintiff. The cause of action also arose, when the Defendants\n\nfailed to comply with the demands made in notice\ndated 10.07.2010.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P005_C01",
+      "text": "13. The present suit, being suit for declaration and\ncancellation, is properly valued as per the provisions of\nSection 6(4)\n(h-a) of Bombay Court Fee Act, 1959 and\nmaximum court fee of Rs.3,00,000/- is paid.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P006_C01",
+      "text": "14. The suit property is situated at Pune. The cause of\naction for the present suit has arisen at Pune and\ntherefore this Honourable Court has got jurisdiction to\nentertain, try and decide this suit.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P007_C01",
+      "text": "15. It is therefore prayed that:\nA. It be declared that the Agreement dated\n 22.07.2004 and Agreement dated 20.05.2006\n and Deed of Confirmation dated 13.07.2006\n are obtained by fraud and hence they are ab\n initio null, void and not binding upon the\n Plaintiff.\nВ. It be declared that the Agreement dated\n 22.07.2004 and Agreement dated 20.05.2006\n and Deed of Confirmation dated 13.07.2006\n are illegal. C. The Defendants, by order of mandatory\n injunction directed to execute and register\n Deed of Cancellation of Agreement dated\n 22.07.2004 and Agreement dated 20.05.2006\n and Deed of Confirmation dated 13.07.2006. D. The Defendants may be restrained by an\n order of perpetual injunction from carrying out\n any further development activity in the said\n property or to enter the same or remain\n therein, either by themselves or through any\n person claiming through it, or to create any\n third party interests therein or to deal with the\n same in any manner whatsoever. E. Interim orders in terms of Clause C above\n may be passed. F. Costs of the suit may be awarded to the\n Plaintiff from the Defendants. G.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P007_C02",
+      "text": "Any other just and other equitable orders in\n the interest of justice may be pleased to be\n passed.”\n\n It is important to note that Defendant No. 3 did not file any written\n\n statement in the said suit.\niv. Almost immediately thereafter, by an application dated 19.07.2010\n\n under\nsection 8\nof the Arbitration and Conciliation Act, 1996\n\n [hereinafter referred to as the “1996 Act”] on behalf of Regency,\n\n the arbitration clause in the agreement dated 20.05.2006 was set\n\n out and the Civil Judge (Senior Division), Pune was asked to refer\n\n the parties to arbitration. The reply to the said application on\n\n behalf of the plaintiff, Deccan, stated:\n“2. The averments in para 1 of the application to the\n extent of reproduction of clause No.14 of agreement\n dated 20.05.2006, being matter of record are not\n disputed for the purpose of this reply. The plaintiff shall\n rely upon and explain the true effect and interpretation\n of the said clause at the proper time. It is pertinent to\n note Defendant Nos.1 and 2 have avoided to make\n any comment with regard to merits of their defense.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P008_C01",
+      "text": "3. It is submitted that while considering the application\n u/s 8 of\nArbitration and Conciliation Act, 1996\n, the court\n has to consider an issue that whether there exists any\n Arbitration Agreement between the parties. Such right\n is certainly vested in Civil Court. The Plaintiff is\n challenging the legality of agreement dated 20.05.2006\n on the ground that the same is obtained by fraud and\n is therefore seeking further declaration that the said\n agreement is null and ab initio void. As such, the very\n Arbitration clause as contained in the said agreement\n is not enforceable. In spite of the fact that\nSection 16\n\nof the said Act empowers the Arbitral Tribunal to\n decide its own jurisdiction in view of particular\n circumstances narrated in the plaint, the present\n application deserves to be rejected.”\n\nv. By a judgment dated 19.07.2011, the Additional Judge, Small\n\n Causes Court, Pune, after hearing both sides, held as follows:\n“11. After perusing the above mentioned cited cases, it\n shows that when there is a clause of arbitration it is\n mandated on the Civil Court to refer the dispute and\n parties for arbitration as per agreement.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P008_C02",
+      "text": "In present\n case the plaintiffs have materially contention about\n playing fraud by Defendant No.3 but there is no any\n contents in agreement as alleged by plaintiff in plaint\n about keeping faith on Defendant No.3. It shows about\n signing by Defendant No.3 for agreement dated\n 20.05.2006 and he was also party to said agreement. The plaintiff alleged about playing fraud after resigning\n by Defendant No.3 from partnership firm of Defendant\n No.1 and signing the confirmation deed dated\n 13.07.2006 but as per\nPartnership Act\nremedy is\n provided. Moreover, from the documents, it shows that\n the confirmation deed dated 13.07.2007 was executed\n by Defendant No.3 as Authorized Partner of M/s\n Regency Mahavir Properties and another partner Dilip\n Jain. The fraud alleged by the plaintiff is in respect of\n the documents for which the remedy is also provided. After considering the arbitration clause I find that the\n application is to be allowed and the disputes have to\n be referred for arbitration.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P008_C03",
+      "text": "Hence, I pass the following\n order:\n1) Application is allowed.\n2) The plaintiff is directed to get the alleged dispute\n resolved through the process of arbitration by\n referring the plaintiff to invoke the process of\n arbitration as per the arbitration clause 14\n mentioned in the agreement dated 20.05.2006.”\n\n Finding thus, the learned Judge referred the parties to arbitration.\n\nvi. A writ petition filed by Deccan in the Bombay High Court was then\n\n disposed of by the impugned judgment dated 18.03.2015, in\n\n which it was held, following the judgment of the Single Judge in\nSwiss Timing Ltd. v. Commonwealth Games\n2010 Organising\n\n Committee, (2014) 6 SCC 677 [hereinafter referred to as “Swiss\n\n Timing”] that the decision in N. Radhakrishnan v. Maestro\n\n Engineers, (2010) 1 SCC 72 [hereinafter referred to as “N. Radhakrishnan”] being per incuriam, it would not be possible to\n\n follow the same, as a result of which the “fraud exception” was\n\n rejected. It was then held that there is no conflict between the\n\n Division Bench judgment in\nAvitel Post Studioz Limited & Ors.\n\n v.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P008_C04",
+      "text": "HSBC PI Holding (Mauritius) Ltd., Appeal No.\n196 of 2014\n\n in Arbitration Petition No. 1062 of 2012 (which is the judgment\n\n under appeal in Civil Appeal Nos.\n5145 and 5158 of 2016) and\n\n another judgment in\nSatish Sood v. Gujarat Tele Links Pvt. Ltd.\n,\n\n 2014 (1) AIR Bom R 27 [hereinafter referred to as “Satish\n\n Sood”]. The Court felt that it would not be possible to follow the\n\n decision of the Division Bench in the case of\nSatish Sood\n(supra)\n\n as it was rendered prior to the judgment of the learned Single\n\n Judge of the Supreme Court in\nSwiss Timing\n(supra). This being\n\nso, the writ petition was then dismissed, with the result that the\n\n parties stood referred to arbitration.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P009_C01",
+      "text": "2. Smt. Meena Doshi, learned advocate appearing on behalf of the\n\n Appellant, has taken us through the record and argued on the basis\n\n of N. Radhakrishnan (supra) that when it comes to serious\n\n allegations of fraud, an arbitrator’s jurisdiction gets ousted and\n\n reading the pleadings in the Special Civil Suit, it is obvious that\n\n serious allegations of fraud being raised in the present case, the\n\n dispute is thus rendered non-arbitrable. She then referred to\nsection 8\nof the 1996 Act, as amended by the\nArbitration and\n\n Conciliation (Amendment) Act, 2015\n[hereinafter referred to as the\n\n “2015 Amendment Act”] to further argue that both the District\n\n Judge as well as the High Court did not look into the requirements\n\n of the amended\nsection 8\n, and that the aforesaid judgments are\n\n infirm on this count alone. She also argued, basing herself on the\n\n seven-Judge Bench judgment in\nS.B.P. & Co. v. Patel Engg.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P009_C02",
+      "text": "Ltd.\n,\n\n (2005) 8 SCC 618 that the correct application of\nsection 8\nis not a\n\n mere mechanical incantation of the section, the Court having to\n\n apply its mind as to whether there exists an arbitration agreement\n\n at all, which would include whether the subject matter of the\n\n proceeding is at all arbitrable. She also argued that the original\n\nagreement between Deccan and Ashray did not contain an\n\n arbitration clause, and since the suit was to set aside that\n\n agreement as well, the dispute could not be decided piecemeal,\n\n and on this ground also, ought not to have been referred to\n\n arbitration. She then relied heavily upon\nsection 31\nof the Specific\n\n Relief Act, 1963 and stated that a reading of the plaint and the\n\n prayers in the suit would show that the suit is one for cancellation\n\n of three “written instruments”. This being so, and the proceeding\n\n under\nsection 31\nbeing a proceeding in rem, would fall within one of\n\n the exceptions made out in\nBooz Allen & Hamilton Inc. v. SBI\n\n Home Finance Ltd.\n, (2011) 5 SCC 532 [hereinafter referred to as\n\n “Booz Allen”].",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P009_C03",
+      "text": "For this purpose, she relied heavily upon a judgment\n\n of the High Court of Judicature at Hyderabad for Telangana and\n\n Andhra Pradesh in\nAliens Developers Pvt. Ltd. v. M. Janardhan\n\n Reddy\n, (2016) 1 ALT 194 (DB) [hereinafter referred to as “Aliens\n\n Developers”]. On all these grounds, therefore, the cryptic\n\n judgment of the Bombay High Court ought to be set aside and the\n\n suit should be set down for hearing, to be disposed of within a short\n\n timeframe.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P010_C01",
+      "text": "3. Shri Vinay Navre, learned Senior Advocate appearing on behalf of\n\n Respondent No.1, referred us to the case law on the “fraud\n\nexception” and stated that after the judgment in\nRashid Raza v. Sadaf Akhtar\n, (2019) 8 SCC 710 (see paragraph 4), this exception\n\nwould only apply if it can be stated that the agreement itself was\n\nnever executed, in which case the arbitration clause itself would\n\nfall, but not otherwise. Also, since there are no public ramifications\n\nin the present proceeding, and in particular, no ramifications of a\n\ncriminal nature, neither of the conditions precedent for the\n\napplication of the “fraud exception” being present in this case, it is\n\nclear that the judgments of the Courts below were correct in law. When it came to\nsection 31\nof the Specific Relief Act, Shri Navre\n\nstated that a correct reading of the section would show that the\n\nCourt’s jurisdiction, being discretionary and for the benefit of the\n\nparty interested in setting aside a written instrument, the\n\nproceeding would have to be considered to be one in personam. According to him, the judgment in\nAliens Developers\n(supra) does\n\nnot lay down the law correctly and should be overruled by us.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P010_C02",
+      "text": "answer to the argument that the agreement dated 22.07.2004,\n\nwhich did not contain an arbitration clause, was also sought to be\n\ncancelled in the suit, he argued that this was inserted only in the\n\nprayer clause in order to camouflage the suit so as to get out of\n\narbitration. If the body of the suit were to be seen, it is clear that\n\nwhat was sought to be impugned was only the latter two\n\nagreements, the first being of historical significance only. This being\n\n the case, it is clear that the dispute is arbitrable. Further, all that is\n\n to be seen under\nsection 8\nof the 1996 Act after its amendment is\n\n that prima facie, a valid arbitration agreement exists. Here, as a\n\n matter of fact, it was admitted, according to Shri Navre, in the\n\n affidavit filed in reply to the\nsection 8\napplication that the agreement\n\n between the parties did exist, but was vitiated on account of fraud,\n\n which only made it voidable.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P011_C01",
+      "text": "4. We have, in our judgment in Avitel Post Studioz Limited & Ors. v. HSBC PI Holding (Mauritius) Ltd., Civil Appeal No. 5145 of\n\n 2016, laid down the law on invocation of the “fraud exception” in\n\n some detail, which reasoning we adopt and follow. The said\n\n judgment indicates that given the case law since N. Radhakrishnan (supra), it is clear that N. Radhakrishnan (supra),\n\n as a precedent, has no legs to stand on. If the subject matter of an\n\n agreement between parties falls within\nsection 17\nof the Indian\n\n Contract Act, 1872, or involves fraud in the performance of the\n\n contract, as has been held in the aforesaid judgment, which would\n\n amount to deceit, being a civil wrong, the subject matter of such\n\n agreement would certainly be arbitrable. Further, we have also held\n\n that merely because a particular transaction may have criminal\n\novertones as well, does not mean that its subject matter becomes\n\n non-arbitrable.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P011_C02",
+      "text": "We have no doubt that Shri Navre is right in his\n\n submission that there is no averment that the agreement dated\n\n 20.05.2006 and the deed of confirmation dated 13.07.2006 were\n\n not entered into at all, as a result of which the arbitration clause\n\n would be non-existent. Further, it is equally clear that the suit is one\n\n that is inter parties with no “public overtones”, as has been\n\n understood in paragraph 14 of\nAvitel\n(supra), as a result of which\n\n this exception would clearly not apply to the facts of this case.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P012_C01",
+      "text": "5. Smt. Doshi then cited\nState of A.P. & Anr. v. T. Suryachandra\n\n Rao\n, (2005) 6 SCC 149 and read paragraphs 8 to 16 of the\n\n judgment to impress upon us that fraud vitiates every solemn act\n\n and that a conspiracy with a view to deprive the rights of others in\n\n relation to a property would render the transaction void ab initio.\n\n This case arose out of an order of the Land Reforms Tribunal which\n\n held against the respondent, stating that they had fraudulently\n\n taken advantage of the ceiling limit under the\nAndhra Pradesh Land\n\n Reforms (Ceiling on Agricultural Holdings) Act, 1973\n\n suppression of facts. In this case, the Tribunal reopened the matter\n\n when it found that the land which was surrendered had already\n\n been acquired in proceedings under the Land Acquisition Act,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P013_C01",
+      "text": "1898. The question was whether the Tribunal was justified in\n\n modifying the earlier order and leaving out such land. It was held,\n\n by a concurrent finding of fact, that the Tribunal was capable of so\n\n varying the order. It was in this backdrop that the general\n\n observations on fraud were made. This case has no relevance to\n\n the exact issue before this Court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P014_C01",
+      "text": "6. We are also inclined to accept Shri Navre’s argument on\nsection 8\nof the 1996 Act, in view of some of the recent judgments on\nsection\n\nafter the 2015 Amendment Act. (See\nAmeet Lalchand Shah v.\n\n Rishabh Enterprises\n, (2018) 15 SCC 678 at pp. 698-700,\nMayavati Trading Pvt. Ltd. v. Pradyut Deb Burman\n, (2019) 8\n\n SCC 714 at pp. 724-725, and\nEmaar MGF Land Ltd. v. Aftab\n\n Singh\n, (2019) 12 SCC 751 at pp. 779-783).\nIt is enough to state\n\n that there is a sea change between\nsection 8\nof the 1996 Act and\nsection 20\nof the Arbitration Act, 1940, as has been held in\n\n paragraph 9 of\nAvitel Post Studioz Limited & Ors. v. HSBC PI\n\n Holding (Mauritius) Ltd., Civil Appeal No.\n5145 of 2016. Post\n\n amendment, it is clear that the judicial authority before which an\n\n action is brought shall, if the other conditions of\nsection 8\nare met,\n\n refer the parties to arbitration unless it finds that prima facie, no\n\n valid arbitration agreement exists. As has been held hereinabove,\n\nin the present case, the finding that is returned is correct – a valid\n\n arbitration agreement certainly exists as the agreements that are\n\n sought to be cancelled are not stated not to have ever been\n\n entered into.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P015_C01",
+      "text": "7. This brings us to the interesting argument on behalf of Smt. Doshi\n\n as to the applicability of\nsection 31\nof the Specific Relief Act and\n\n the High Court’s judgment in\nAliens Developers\n(supra) relied\n\n upon by her.\nsection 31\nof the Specific Relief Act states as follows:\n“31. When cancellation may be ordered. (1) Any person against whom a written instrument is\n void or voidable, and who has reasonable\n apprehension that such instrument, if left outstanding\n may cause him serious injury, may sue to have it\n adjudged void or voidable; and the court may, in its\n discretion, so adjudge it and order it to be delivered up\n and cancelled. (2) If the instrument has been registered under the\nIndian Registration Act, 1908\n(16 of 1908), the court\n shall also send a copy of its decree to the officer in\n whose office the instrument has been so registered;\nand such officer shall note on the copy of the\n instrument contained in his books the fact of its\n cancellation.”\n\n Referring to\nsection 31\n, a Division Bench of the High Court in\nAliens Developers\n(supra) held:\n“14. ...",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P015_C02",
+      "text": "Under\nSection 31(2)\nof the Specific Relief Act,\n Legislature conferred the power on Courts to send a\n copy of the cancellation decree to the officer in whose\n office the instrument has been so registered and such\n officer shall note on the copy of the instrument\n\ncontained in his books, the fact of its cancellation. It is\n evident from the provision under\nSection 31(2)\nthat the\n power of nullifying the effect of registration is conferred\n only on the Court. In the judgment in\nBooz Allens\ncase (supra), the Hon'ble Supreme Court has held that\n a right in rem is a right exercisable against the world at\n large, as contrasted from a right in personam which is\n an interest protected solely against specific individuals\n and actions in personam refer to actions determining\n the rights and interests of the parties themselves in the\n subject matter of the case, whereas, actions in rem\n refer to actions determining the title to property and the\n rights of the parties, not merely among themselves but\n also against all persons at any time claiming an\n interest in that property.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P015_C03",
+      "text": "the said judgment\n, it is\n clearly held that if the adjudicatory effect of the Court is\n a judgment in rem, only public fora i.e. Courts and\n Tribunals have to adjudicate such disputes, but not the\n Arbitral Tribunals as agreed by the parties. As much as\n the Development Agreement-cum-Irrevocable Power\n of Attorney is a registered one and is relating to title of\n the property, any cancellation will affect the removal of\n rights accrued to the parties, such cancellation is to be\n communicated to the officer who has registered the\n document, in view of the provision under\nSection 31(2)\nof the Specific Relief Act. Therefore, we are of the\n considered view that such adjudicatory function in\n cases like this will operate in rem. In any event, having\n regard to the power conferred on Courts by virtue of\n the provision under\nSection 31(2)\nof the Specific Relief\n Act, only a competent Court is empowered to send the\n cancellation decree, to the officer concerned, to effect\n such cancellation and note in his books to that effect.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P015_C04",
+      "text": "When such Statutory power is conferred on Courts,\n such power cannot be exercised by the Arbitrator, in\n spite of the fact that there is an arbitration clause in the\n agreement entered between the parties…”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P016_C01",
+      "text": "8. It is now for us to examine whether a further exception can be\n\n carved out based upon\nBooz Allen\n(supra) on the footing of the\n\nHigh Court’s judgment in\nAliens Developers\n(supra). In order to\n\nexamine the correctness of\nAliens Developers\n(supra), it is\n\nnecessary to set out certain sections of the\nSpecific Relief Act\n. The\n\nrelevant sections are set out hereinbelow:\n“4. Specific relief to be granted only for enforcing\n individual civil rights and not for enforcing penal\n laws.—Specific relief can be granted only for the\n purpose of enforcing individual civil rights and not for\n the mere purpose of enforcing a penal law.”\n xxx xxx xxx\n “26.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P016_C02",
+      "text": "When instrument may be rectified.—(1) When,\n through fraud or a mutual mistake of the parties, a\n contract or other instrument in writing [not being the\n articles of association of a company to which the\nCompanies Act, 1956\n(1 of 1956), applies] does not\n express their real intention, then\n(a) either party or his representative in interest\n may institute a suit to have the instrument\n rectified; or\n(b) the plaintiff may, in any suit in which any\n right arising under the instrument is in issue,\n claim in his pleading that the instrument be\n rectified; or\n(c) a defendant in any such suit as is referred\n to in clause (b), may, in addition to any other\n defence open to him, ask for rectification of\n the instrument. (2) If, in any suit in which a contract or other instrument\n is sought to be rectified under sub-section (1), the\n court finds that the instrument, through fraud or\n mistake, does not express the real intention of the\n parties, the court may, in its discretion, direct\n rectification of the instrument so as to express that\n intention, so far as this can be done without prejudice\n to rights acquired by third persons in good faith and for\n value.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P016_C03",
+      "text": "(3) A contract in writing may first be rectified, and then\nif the party claiming rectification has so prayed in his\npleading and the court thinks fit, may be specifically\nenforced. (4) No relief for the rectification of an instrument shall\nbe granted to any party under this section unless it has\nbeen specifically claimed: Provided that where a party\nhas not claimed any such relief in his pleading, the\ncourt shall, at any stage of the proceeding, allow him\nto amend the pleading on such terms as may be just\nfor including such claim.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P017_C01",
+      "text": "27. When rescission may be adjudged or refused.\n—(1) Any person interested in a contract may sue to\nhave it rescinded, and such rescission may be\nadjudged by the court in any of the following cases,\nnamely:\n(a) where the contract is voidable or\n terminable by the plaintiff;\n(b) where the contract is unlawful for causes\n not apparent on its face and the defendant is\n more to blame than the plaintiff. (2) Notwithstanding anything contained in sub-\nsection (1), the court may refuse to rescind the\ncontract\n(a) where the plaintiff has expressly or\n impliedly ratified the contract; or\n(b) where, owing to the change of\n circumstances which has taken place since\n the making of the contract (not being due to\n any act of the defendant himself), the parties\n cannot be substantially restored to the\n position in which they stood when the contract\n was made; or\n(c) where third parties have, during the\n subsistence of the contract, acquired rights in\n good faith without notice and for value; or\n(d) where only a part of the contract is sought\n to be rescinded and such part is not severable\n from the rest of the contract.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P017_C02",
+      "text": "Explanation.—In this section “contract” in relation to\nthe territories to which the\nTransfer of Property Act,\n\n(4 of 1882), does not extend, means a contract in\nwriting.”\nxxx xxx xxx\n“29. Alternative prayer for rescission in suit for\nspecific performance.—A plaintiff instituting a suit for\nthe specific performance of a contract in writing may\npray in the alternative that, if the contract cannot be\nspecifically enforced, it may be rescinded and\ndelivered up to be cancelled; and the court, if it refuses\nto enforce the contract specifically, may direct it to be\nrescinded and delivered up accordingly.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P018_C01",
+      "text": "30. Court may require parties rescinding to do\nequity.—On adjudging the rescission of a contract, the\ncourt may require the party to whom such relief is\ngranted to restore, so far as may be, any benefit which\nhe may have received from the other party and to\nmake any compensation to him which justice may\nrequire.”\nxxx xxx xxx\n“32. What instruments may be partially cancelled.\n—Where an instrument is evidence of different rights\nor different obligations, the court may, in a proper case,\ncancel it in part and allow it to stand for the residue.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P019_C01",
+      "text": "33. Power to require benefit to be restored or\ncompensation to be made when instrument is\ncancelled or is successfully resisted as being void\nor voidable.—\n(1) On adjudging the cancellation of an instrument, the\ncourt may require the party to whom such relief is\ngranted, to restore, so far as may be any benefit which\nhe may have received from the other party and to\nmake any compensation to him which justice may\nrequire.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P019_C02",
+      "text": "(2) Where a defendant successfully resists any suit on\nthe ground—\n(a) that the instrument sought to be enforced\n against him in the suit is voidable, the court\n\nmay if the defendant has received any benefit\n under the instrument from the other party,\n require him to restore, so far as may be, such\n benefit to that party or to make compensation\n for it;\n(b) that the agreement sought to be enforced\n against him in the suit is void by reason of his\n not having been competent to contract under\nsection 11\nof the Indian Contract Act, 1872 (9\n of 1872), the court may, if the defendant has\n received any benefit under the agreement\n from the other party, require him to restore, so\n far as may be, such benefit to that party, to the\n extent to which he or his estate has benefited\n thereby.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P020_C01",
+      "text": "34. Discretion of court as to declaration of status\nor right.—Any person entitled to any legal character,\nor to any right as to any property, may institute a suit\nagainst any person denying, or interested to deny, his\ntitle to such character or right, and the court may in its\ndiscretion make therein a declaration that he is so\nentitled, and the plaintiff need not in such suit ask for\nany further relief:\nProvided that no court shall make any such\ndeclaration where the plaintiff, being able to seek\nfurther relief than a mere declaration of title, omits to\ndo so.\nExplanation.—A trustee of property is a “person\ninterested to deny” a title adverse to the title of\nsomeone who is not inexistence, and for whom, if in\nexistence, he would be a trustee.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P021_C01",
+      "text": "35. Effect of declaration.—A declaration made under\nthis Chapter is binding only on the parties to the suit,\npersons claiming through them respectively, and,\nwhere any of the parties are trustees, on the persons\nfor whom, if in existence at the date of the declaration,\nsuch parties would be trustees.”\n\nThe very sheet anchor of Smt. Doshi’s case, namely, the judgment\n\nBooz Allen\n(supra), refers to the judgment of this Court in\nOlympus Superstructures v. Meena Vijay Khetan\n, (1999) 5 SCC\n\n 651 [hereinafter referred to as “Olympus”], in which it was held\n\n that an arbitrator has the power and jurisdiction to grant specific\n\n performance of contracts relating to immovable property (see\n\n paragraphs 43 and 44).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P022_C01",
+      "text": "9. A perusal of the judgment in\nOlympus\n(supra) would show that this\n\n Court was faced with differing views taken by the High Courts as to\n\n whether specific performance of a contract relating to immovable\n\n property is at all arbitrable. The Delhi High Court in\nSulochana\n\n Uppal v. Surinder Sheel Bhakri\n, AIR 1991 Del 138 [hereinafter\n\n referred to as “Sulochana Uppal”] had held that specific\n\n performance of an agreement could not be granted by an arbitrator\n\n for the reason that:\n“15. An agreement to refer a dispute to arbitration, the\n effect of which would be to have an award directing\n specific performance of an agreement to sell, would\n have for its object to defeat the provisions of the\nSpecific Relief Act\n, especially\nsections 10\nand\n\nthereof. It is clearly intended by the aforesaid\n provisions that it is only courts, and courts alone who\n would have jurisdiction to grant or refuse specific\n performance.”\n\nThe learned Single Judge thus disagreed with the contrary view of\n\n the Bombay High Court and the Punjab High Court. 1\n10. It is important to note that this Court referred to all the aforesaid\n\n three judgments, including a judgment of the Calcutta High Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P022_C02",
+      "text": "In arriving at the conclusion that the Punjab, Bombay, and Calcutta\n\n High Courts’ view is the correct one and that the Delhi High Court’s\n\n view, being incorrect, is overruled, this Court referred to an\n\n important passage in Halsbury’s Laws of England as follows :\n“35. It is stated in Halsbury’s Laws of England, 4th\n Edn., (Arbitration, Vol. 2, para 503) as follows:\n“503. Nature of the dispute or difference.—\n The dispute or difference which the parties to\n an arbitration agreement agree to refer must\n consist of a justiciable issue triable civilly. A\n fair test of this is whether the difference can\n be compromised lawfully by way of accord\n and satisfaction (Cf. Bac Abr Arbitrament and\n Award A).”",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P023_C01",
+      "text": "36. Further, as pointed out in the Calcutta case [ Apo\n 498 of 1997 & Apo 449 of (401) dated 27-1-1998 (Cal)]\n merely because there is need for exercise of discretion\n in case of specific performance, it cannot be said that\n only the civil court can exercise such a discretion. In\n the above case, Ms Ruma Pal, J. observed:\n“… merely because the sections of the\nSpecific Relief Act\nconfer discretion on courts\n to grant specific performance of a contract\n does not mean that parties cannot agree that\n the discretion will be exercised by a forum of\n their choice. If the converse were true, then\n\n1 This Court in\nOlympus Superstructures v. Meena Vijay Khetan\n, (1999) 5 SCC\n651 wrongly refers to the Delhi High Court’s judgment as being the judgment in\n“P.N.B. Finance Ltd. v. Shital Prasad Jain\n, AIR 1991 Del 13” (see paragraph 33).\n\nwhenever a relief is dependent upon the\n exercise of discretion of a court by statute e.g.\n the grant of interest or costs, parties could be\n precluded from referring the dispute to\n arbitration.”\n We agree with this reasoning.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P023_C02",
+      "text": "We hold on Point 3 that\n disputes relating to specific performance of a contract\n can be referred to arbitration and\nSection 34(2)(b)(i)\n not attracted. We overrule the view of the Delhi High\n Court. Point 3 is decided in favour of the respondents.”",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P024_C01",
+      "text": "11. A perusal of\nsection 26(1)\nof the Specific Relief Act, 1963 would\n\n show that when, through fraud or mutual mistake of parties, a\n\n contract or other instrument in writing does not express the real\n\n intent of the parties, then either party or his representative in\n\n interest may either institute a suit to have the instrument rectified or\n\n as defendant, may, in addition to any defence open to him, ask for\n\n rectification of the instrument. Importantly, under\nsection 26(3)\n, a\n\n party may pray in a rectification suit for specific performance – and\n\n if the Court thinks fit, may after rectifying the contract, grant\n\n specific performance of the contract. Thus, what is made clear by\n\n this section is that the rectification of a contract can be the subject\n\n matter of a suit for specific performance, which, as we have\n\n already seen, can be the subject matter of an arbitral proceeding.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P025_C01",
+      "text": "12. Under\nsection 27(1)\nof the Specific Relief Act, 1963, “any party\n\n interested” in a contract may sue to have it rescinded and such\n\nrescission may be adjudged by the Court in the cases mentioned in\n\nclauses (a) and (b) of sub-section (1). Sub-section (2) of\nsection 27\nrefers to four exceptions to this rule. Shravan Goba Mahajan v. Kashiram Devji, ILR\n(1927) 51 Bom 133, a Division Bench of the\n\nBombay High Court, with regard to section 35 of the Specific Relief\n\nAct, 1877 (which is the pari materia provision to\nsection 27\nof the\n\n1963 Act) held that an heir is a person interested in the contract\n\nwhich is sought to be set aside, thus, making it clear that the\n\nexpression “any person interested” would include not just a party to\n\nthe contract, but persons who may be heirs of one of the parties to\n\nthe contract. A reading of this section would also show that all such\n\nactions in which a contract or instrument may be rectified or\n\nrescinded, no judgment in rem follows, as what is sought to be\n\nrectified or rescinded is by the parties to the contract or persons\n\nwho may be their heirs or legal representatives.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P025_C02",
+      "text": "Third parties to the\n\ncontract are not persons who can be said to be “any person\n\ninterested”, particularly when\nsection 27(2)(c)\n, which refers to third\n\nparties, is seen and contrasted with the expression “any person\n\ninterested” in\nsection 27(1)\n– under\nsection 27(2)(c)\n, third parties\n\ncome in as an exception to the rule only when they have acquired\n\nrights in good faith, without notice and for value, during the\n\nsubsistence of the contract between the parties to that contract.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P026_C01",
+      "text": "13. Sections 29\nand\n\nare also important, in that a plaintiff instituting a\n\n suit for specific performance may pray in the alternative that if the\n\n contract cannot be specifically enforced, it may be rescinded and\n\n be delivered up to be cancelled. In addition, on adjudging the\n\n rescission of the contract, the Court may require the party to whom\n\n such relief is granted to restore, so far as may be, any benefit\n\n which he may have received from the other party and to make any\n\n compensation to him which justice may require. These two\n\n sections would also show that following rescission of a contract, it\n\n has to be delivered up to the plaintiff to be cancelled – and all of\n\n this can be done in a suit for specific performance. Thus far,\n\n therefore, it is clear that an action for rescission of a contract and\n\n delivering up of that contract to be cancelled is an action in\n\n personam which can be the subject matter of a suit for specific\n\n performance, making such rescission and delivering up the\n\n contract to be cancelled, the subject matter of arbitration.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P027_C01",
+      "text": "14. When it comes to\nsection 31(1)\n, the important expression used by\n\n the legislature is “any person against whom a written instrument is\n\n void or voidable…”. An instructive judgment of the Full Bench of\n\n the Madras High Court reported as\nMuppudathi Pillai v. Krishnaswami Pillai\n, AIR 1960 Mad 1 involved the determination\n\nof the scope of section 41 of the Specific Relief Act, 1877 (\nsection\n\n 33(1)\nof the 1963 Act is the pari materia provision). This judgment,\n\n after referring to\nsection 41\n, then referred to section 39 of the\n\n Specific Relief Act, 1877 (which is the pari materia provision to\nsection 31\nof the 1963 Act). The Court then went on to notice the\n\n distinction between\nsection 35\n(which is the pari materia provision\n\nsection 27\nof the 1963 Act) and section 39 of the Specific Relief\n\n Act, 1877 as follows:\n“11. ... It may be noticed that the above section applies\n not merely to the case of an instrument which is\n voidable but also one that is void. S. 35\nprovides for\n the case of rescission of voidable contracts.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P027_C02",
+      "text": "It is\n evident that\nS. 39\ncovers not only a case contemplated\n under\nS. 35\n, but also a wider field, that is, a case of a\n void document, which under the law need not be set\n aside.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P028_C01",
+      "text": "15. In an extremely important paragraph, the Full Bench then set out\n\n the principle behind section 39(1) of the Specific Relief Act, 1877\n\n as follows:\n“12. The principle is that such document though not\n necessary to be set aside may, if left outstanding, be a\n source of potential mischief. The jurisdiction under\nS.\n\nis, therefore, a protective or a preventive one. It is\n not confined to a case of fraud, mistake, undue\n influence etc. and as it has been stated it was to\n prevent a document to remain as a menace and\n danger to the party against whom under different\n circumstances it might have operated. A party against\n whom a claim under a document might be made is not\n bound to wait till the document is used against him. If\n\nthat were so he might be in a disadvantageous\n position if the impugned document is sought to be\n used after the evidence attending its execution has\n disappeared. Section 39\nembodies the principle by\n which he is allowed to anticipate the danger and\n institute a suit to cancel the document and to deliver it\n up to him.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P028_C02",
+      "text": "The principle of the relief is the same as in\n quia timet actions.”\n (emphasis added)\n\nThe Court then continued its discussion as follows:\n“13. ... The provisions of\nSection 39\nmake it clear that\n three conditions are requisite for the exercise of the\n jurisdiction to cancel an instrument : (1) the instrument\n is void or voidable against the plaintiff; (2) plaintiff may\n reasonably apprehend serious injury by the instrument\n being left outstanding; (3) in the circumstances of the\n case the court considers it proper to grant this relief of\n preventive justice. On the third aspect of the question\n the English and American authorities hold that where\n the document is void on its face the court would not\n exercise its jurisdiction while it would if it were not so\n apparent. In India it is a matter entirely for the\n discretion of the court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P029_C01",
+      "text": "14. The question that has to be considered depends\n on the first and second conditions set out above. As\n the principle is one of potential mischief, by the\n document remaining outstanding, it stands to reason\n the executant of the document should be either the\n plaintiff or a person who can in certain circumstances\n bind him. It is only then it could be said that the\n instrument is voidable by or void against him. The\n second aspect of the matter emphasises that principle.\nFor there can be no apprehension if a mere third party\n asserting a hostile title creates a document. Thus relief\n under\nS. 39\nwould be granted only in respect of an\n instrument likely to affect the title of the plaintiff and not\n of an instrument executed by a stranger to that title.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P030_C01",
+      "text": "15. Let us take an example of a trespasser purporting\n to convey the property in his own right and not in the\n right of the owner. In such a case a mere cancellation\n\nof the document would not remove the cloud\noccasioned by the assertion of a hostile title, as such a\ndocument even if cancelled would not remove the\nassertion of the hostile title. In that case it would be the\ntitle that has got to be judicially adjudicated and\ndeclared, and a mere cancellation of an instrument\nwould not achieve the object. S. 42\nof the Specific\nRelief Act would apply to such a case. The remedy\nunder\nS. 39\nis to remove a cloud upon the title, by\nremoving a potential danger but it does not envisage\nan adjudication between competing titles. That can relate only to instruments executed or\npurported to be executed by a party or by any person\nwho can bind him in certain circumstances. It is only in\nsuch cases that it can be said there is a cloud on his\ntitle and an apprehension that if the instrument is left\noutstanding it may be a source of danger.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P030_C02",
+      "text": "Such cases\nmay arise in the following circumstances: A party\nexecuting the document, or a principal in respect of a\ndocument executed by his agent, or a minor in respect\nof a document executed by his guardian de jure or de\nfacto, a reversioner in respect of a document executed\nby the holder of the anterior limited estate, a real\nowner in respect of a document executed by the\nbenamidar, etc. This right has also been recognised in\nrespect of forged instruments which could be cancelled\nby a party on whose behalf it is purported to be\nexecuted. In all these cases there is no question of a\ndocument by a stranger to the title. The title is the\nsame. But in the case of a person asserting hostile\ntitle, the source or claim of title is different. It cannot be\nsaid to be void against the plaintiff as the term void or\nvoidable implies that but for the vitiating factor it would\nbe binding on him, that is, he was a party to the\ncontract.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P031_C01",
+      "text": "16. There is one other reason for this conclusion. Section 39\nempowers the court after adjudicating the\ninstrument to be void to order the instrument to be\ndelivered up and cancelled. If the sale deed is or\npurported to have been executed by a party, the\ninstrument on cancellation could be directed to be\ndelivered over to the plaintiff. If on the other hand such\n\nan instrument is executed by a trespasser or a person\n claiming adversely to the plaintiff it is not possible to\n conceive the instrument being delivered over not to the\n executant but his rival, the plaintiff.”\n\n The Court then concluded:\n“18. In our opinion,\nSec. 39\nwill not apply to a case like\n the present where the sale was executed by a person\n claiming title adverse to that of Vinayagam Pillai, and\n therefore, the court would have no jurisdiction under\nS.\n\nto direct payment of compensation by the plaintiff to\n the appellant before obtaining relief as to possession. To hold otherwise would mean that a mere volunteer\n who paid the debt of the plaintiff would be able to\n recover the same.”2\n16. A reading of the aforesaid judgment of the Full Bench would make\n\n the position in law crystal clear.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P031_C02",
+      "text": "The expression “any person” does\n\n not include a third party, but is restricted to a party to the written\n\n instrument or any person who can bind such party. Importantly,\n\n relief under section 39 of the Specific Relief Act, 1877 would be\n\n granted only in respect of an instrument likely to affect the title of\n\n2 A Full Bench of the Andhra Pradesh High Court in\nYanala Malleshwari v. Ananthula Sayamma\n, AIR 2007 AP 57 followed this judgment and then stated the\nlaw thus:\n“33. The law, therefore, may be taken as well settled that in all cases of\n void or voidable transactions, a suit for cancellation of a deed is not\n maintainable. In a case where immovable property is transferred by a\n person without authority to a third person, it is no answer to say that\n the true owner who has authority and entitlement to transfer can file a\n suit under\nSection 31\nof the Specific Relief Act for the simple reason\n that such a suit is not maintainable.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P031_C03",
+      "text": "Further, in case of an instrument,\n which is void or voidable against executant, a suit would be\n maintainable for cancellation of such instrument and can be decreed\n only when it is adjudicated by the competent Court that such\n instrument is void or voidable and that if such instrument is left to exist,\n it would cause serious injury to the true owner.”\n\nthe plaintiff, and not of an instrument executed by a stranger to that\n\n title. The expression “any person” in this section has been held by\n\n this Court to include a person seeking derivative title from his seller\n\n (see\nMohd. Noorul Hoda v. Bibi Raifunnisa\n(1996) 7 SCC 767,\n\n at p. 771). The principle behind the section is to protect a party or a\n\n person having a derivative title to property from such party from a\n\n prospective misuse of an instrument against him. A reading of\nsection 31(1)\nthen shows that when a written instrument is\n\n adjudged void or voidable, the Court may then order it to be\n\n delivered up to the plaintiff and cancelled – in exactly the same\n\n way as a suit for rescission of a contract under\nsection 29\n.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P031_C04",
+      "text": "Thus\n\n far, it is clear that the action under\nsection 31(1)\nis strictly an action\n\n inter parties or by persons who obtained derivative title from the\n\n parties, and is thus in personam.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P032_C01",
+      "text": "17. Let us see whether\nsection 31(2)\nmakes any difference to this\n\n position in law. According to the judgment in\nAliens Developers\n(supra), the moment a registered instrument is cancelled, the effect\n\n being to remove it from a public register, the adjudicatory effect of\n\n the Court would make it a judgment in rem. Further, only a\n\n competent court is empowered to send the cancellation decree to\n\n the officer concerned, to effect such cancellation and “note on the\n\ncopy of the instrument contained in his books the fact of its\n\ncancellation”. Both reasons are incorrect. An action that is started\n\nunder\nsection 31(1)\ncannot be said to be in personam when an\n\nunregistered instrument is cancelled and in rem when a registered\n\ninstrument is cancelled. The suit that is filed for cancellation cannot\n\nbe in personam only for unregistered instruments by virtue of the\n\nfact that the decree for cancellation does not involve its being sent\n\nto the registration office – a ministerial action which is subsequent\n\nto the decree being passed. In fact, in\nGopal Das v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P032_C02",
+      "text": "Sri Thakurji\n,\n\nAIR 1943 PC 83, a certified copy of a registered instrument, being\n\na receipt dated 29.03.1881 signed by the owner, was held not to be\n\na public record of a private document under\nsection 74(2)\nof the\n\nIndian Evidence Act, 1872 for the reason that the original has to be\n\nreturned to the party under\nsection 61(2)\nof the Registration Act,\n\n1908 (see p. 87). This judgment has been followed in Rekha v. Ratnashree, (2006) 1 MP LJ 103 by a Division Bench of the\n\nMadhya Pradesh High Court, in which it was held:\n“8. A deed of sale is a conveyance. A deed of\n conveyance or other document executed by any person\n is not an act nor record of an act of any sovereign\n authority or of any official body or tribunal, or of any\n public officer, legislative, judicial and executive. Nor is it\n a public record kept in a State of any private\n documents. A sale-deed (or any other deed of\n conveyance) when presented for registration under the\nRegistration Act\n, is not retained or kept in any public\n\noffice of a State after registration, but is returned to the\nperson who presented such document for registration,\non completion of the process of registration.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P032_C03",
+      "text": "An original\nregistered document is not therefore a public record\nkept by a State of a private document. Consequently, a\ndeed of sale or other registered document will not fall\nunder either of the two classes of documents described\nin section 74, as ‘public documents’. Any document\nwhich is not a public document is a private document. We therefore have no hesitation in holding that a\nregistered sale-deed (or any other registered\ndocument) is not a public document but a private\ndocument.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P033_C01",
+      "text": "9. This position is made abundantly clear in\nGopal Das\nv. Shri Thakurji\n, AIR 1943 Privy Council 83, wherein the\nPrivy Council considering the question whether a\nregistered receipt is a public document observed thus:\n“It was contended by Sir Thomas Strangman\n for the respondents that the receipt comes\n within para 2 of\nsection 74\n, Evidence Act, and\n was a “public document”; hence under section\n 65(e) no such foundation is required as in\n cases coming within clauses (a), (b) and (c) of\n that section. Their Lordships cannot accept\n this argument since the original receipt of\n 1881 is not “a public record of a private\n document”. The original has to be returned to\n the party. A similar argument would appear at\n one time to have had some acceptance in\n India but it involves a misconstruction of the\n Evidence Act and Registration Act and later\n decisions have abandoned it.” (emphasis\n supplied)\nWe may also refer to the following passage from\nRatanlal’s Law of Evidence (19th Edition-Page 237):\n“Public document [Clause (e)] — This clause\n is intended to protect the originals of public\n records from the danger to which they would\n be exposed by constant production in\n evidence.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P033_C02",
+      "text": "Secondary evidence is admissible\n in the case of public documents mentioned in\n section 74. What section 74 provides is that\n\npublic records kept in any state of private\n documents are public documents, but private\n documents of which public records are kept\n are not in themselves public documents. A\n registered document, therefore, does not fall\n under either clause (e) or (f). The entry in the\n register book is a public document, but the\n original is a private document.”\n (emphasis in original)\n\n Thus, the factum of registration of what is otherwise a private\n\n document inter parties does not clothe the document with any\n\n higher legal status by virtue of its registration.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P034_C01",
+      "text": "18. Also, it must be remembered that the Delhi High Court’s reasoning\n\nSulochana Uppal\n(supra) that it is the Court alone that can,\n\n under the\nSpecific Relief Act\n, enforce specific performance of an\n\n agreement, is contra to the reasoning in\nOlympus\n(supra) which\n\n overruled it, stating that “the dispute or difference which parties to\n\n an arbitration agreement agree to refer must consist of justiciable\n\n issues triable civilly”. Since specific performance is a justiciable\n\n issue triable civilly, obviously, the expression “court” occurring\n\n throughout the\nSpecific Relief Act\nwill have to be substituted by\n\n “arbitrator” or “arbitral tribunal”.\nThis part of the reasoning in\nAliens\n\n Developers\n(supra), in following the same reasoning as an\n\n overruled Delhi High Court judgment, would fly in the face of\n\nOlympus\n(supra) and would, therefore, not be good law. We,\n\n therefore, overrule the same.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P035_C01",
+      "text": "19. P. Ramanatha Aiyar’s Advanced Law Lexicon (3rd Edn., Wadhwa\n\n Nagpur) describes an in rem proceeding as follows:\n“In rem. adj. [Latin “against a thing”] Involving or\n determining the status of a thing, and therefore the\n rights of persons generally with respect to that thing.-\n Also termed (archaically) impersonal. (Black 7th Edn.,\n 1999)\n “An action in rem is one in which the judgment of\n the Court determines the title to property and the rights\n of the parties, not merely as between themselves, but\n also as against all persons at any time dealing with\n them or with the property upon which the Court had\n adjudicated.” R.H. GRAVESON, Conflict of Laws 98\n (7th ed. 1974). Against the king; against the property, not against\n a person. This term is derived from the Roman law, but is\n not used in English law in precisely the same sense as\n in that law. Indeed, Bracton, limits proceedings in rem\n to actions to obtain possession of res by which he\n understood real actions; (Bigelow on Estoppel 42, 43.)\n A proceeding in rem is a proceeding instituted\n against a thing, and not against a person.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P035_C02",
+      "text": "A proceeding in rem, in a strict sense, is one taken\n directly against property, and has for its object the\n disposition of the property, without reference to the title\n of individual claimants but in a larger and more\n general sense the term 'proceeding in rem' is applied\n to actions between parties where the direct object is to\n\nreach and dispose of property owned by them, or of\nsome interest therein. A judgement in rem is generally said to be a\njudgment declaratory of the status of some subject\nmatter, whether this be a person, or a thing. Thus the\nprobate of a will fixes the status of the document as a\nwill; so a decree establishing or dissolving a marriage\nis a judgment in rem, because it fixes the status of the\nperson. A judgment or forfeiture against specified\narticles of goods for violation of the revenue laws is a\njudgment in rem. In such case the judgment is\nconclusive against all the world, and, if the expression\n‘strictly in rem’ may be applied to any class of cases, it\nshould be confined to such as these.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P035_C03",
+      "text": "Chief Justice\nMarshall says: ‘I have always understood that where a\nprocess is to be served on the thing itself, and where\nthe mere possession of the thing itself, by the service\nof a process and making proclamation, authorizes the\nCourt to decide upon it without notice to any individual\nwhatever, it is a proceeding in rem, to which all the\nworld are parties. The claimant if a party, whether he\nspeaks or is silent, whether he asserts his claim or\nabandons it. But usage has distinguished as\nproceedings in rem a class of cases in which, while\nthe seizure of the thing will be in aid of jurisdiction, yet\nit is essential that some form of notice be given to the\nparticular person or persons. The proceeding thus\nassumes a phase of actions in personam, and a\njudgment will not be binding upon any one who was\nnot before the Court. An act or proceeding is in rem when it is done or\ndirected with reference to no specific person and\nconsequently against or with reference to all whom it\nmight concern, or ‘all the world’. Lawsuits brought against property as compared\nwith those against a person; the Court's jurisdiction\ndoes not depend on notice to the property owner.”",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P036_C01",
+      "text": "20. R. Viswanathan v. Rukn-ul-Mulk Syed Abdul Wajid\n, (1963) 3\n\n SCR 22, this Court set out the Roman law concept of jus in rem as\n\n follows:\n“Roman lawyers recognised a right either as a jus in\n rem or a jus in personam. According to its literal\n meaning “jus in rem” is a right in respect of a thing, a\n “jus in personam” is a right against or in respect of a\n person. In modern legal terminology a right in rem,\n postulates a duty to recognise the right imposed upon\n all persons generally, a right in personam postulates a\n duty imposed upon a determinate person or class of\n persons. A right in rem is therefore protected against\n the world at large; a right in personam against\n determinate individuals or persons. An action to\n enforce a jus in personam was originally regarded as\n an action in personam and an action to enforce a jus\n in rem was regarded as an action in rem. But in course\n of time, actions in rem and actions in personam\n acquired different content. When in an action the rights\n and interest of the parties themselves in the subject-\n matter are sought to be determined, the action is in\n personam.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P036_C02",
+      "text": "The effect of such an action is therefore\n merely to bind the parties thereto. Where the\n intervention of the Court is sought for the adjudication\n of a right or title to property, not merely as between the\n parties but against all persons generally, the action is\n in rem. Such an action is one brought in the Admiralty\n Division of the High Court possessing Admiralty\n jurisdiction by service of process against a ship or\n cargo within jurisdiction. There is another sense in\n which an action in rem is understood. A proceeding in\n relation to personal status is also treated as a\n proceeding in rem, for the judgment of the proper court\n within the jurisdiction of which the parties are\n\ndomiciled is by comity of nations admitted to\n recognition by other courts.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P036_C03",
+      "text": "As observed by Cheshire\n in his “Private International Law”, Sixth Edition at page\n 109, “In Roman law an action in rem was one brought\n in order to vindicate a jus in rem, i.e., a right such as\n ownership available against all persons, but the only\n action in rem known to English law is that which lies in\n an Admiralty court against a particular res, namely, a\n ship or some other res, such as cargo, associated with\n the ship.” Dealing with judgments in rem and\n judgments in personam.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P036_C04",
+      "text": "Cheshire observed at page\n 653, “It (judgment in rem) has been defined as a\n judgment of a court of competent jurisdiction\n determining the status of a person or thing (as distinct\n from the particular interest in it of a party to the\n litigation); and such a judgment is conclusive evidence\n for and against all persons whether parties, privies or\n strangers of the matter actually decided. …… A\n judgment in rem settles the destiny of the res itself\n ‘and binds all persons claiming an interest in the\n property inconsistent with the judgment even though\n pronounced in their absence’; a judgment in\n personam, although it may concern a res, merely\n determines the rights of the litigants inter se to the\n res.”\n (at pp. 43-44)\n\nAlso, a judgment in rem has been described in\nSatrucharla Vijaya\n\nRama Raju v. Nimmaka Jaya Raju\n, (2006) 1 SCC 212 as follows:\n“10. ... A judgment in rem is defined in English law as\n “an adjudication pronounced (as its name indeed\n denotes) by the status, some particular subject-matter\n by a tribunal having competent authority for that\n purpose”.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P036_C05",
+      "text": "Spencer Bower on Res Judicata defines the\n term as one which “declares, defines or otherwise\n determines the status of a person or of a thing, that is\n\nto say, the jural relation of the person or thing to the\n world generally”...”\n\n Judged by these authorities, it is clear that the proceeding under\nsection 31\nis with reference to specific persons and not with\n\n reference to all who may be concerned with the property\n\n underlying the instrument, or “all the world”. Clearly, the\n\n cancellation of the instrument under\nsection 31\nis as between the\n\n parties to the action and their privies and not against all persons\n\n generally, as the instrument that is cancelled is to be delivered to\n\n the plaintiff in the cancellation suit. A judgment delivered under\nsection 31\ndoes not bind all persons claiming an interest in the\n\n property inconsistent with the judgment, even though pronounced\n\n in their absence.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P037_C01",
+      "text": "21. A reading of\nsections 32\nand\n\nof the Specific Relief Act, 1963\n\n would also show that the reasoning of the High Court in\nAliens\n\n Developers\n(supra) is flawed. Where, for example, under\nsection\n\n, an instrument is cancelled in part, the instrument which is\n\n otherwise only an instrument inter parties, cannot be said to be an\n\n instrument which remains inter parties, the cancelled portion being\n\n a cancellation to the world at large, i.e., in rem. Equally, under\nsection 33\n, when compensation is required to be paid or\n\nrestoration of benefit which has been received from the other party\n\n is required to be made, it is exactly the same as that which is\n\n required to be done under a contract which is rescinded and\n\n cancelled (see\nsection 30\n): and it is clear that both\nsections 30\nand\n\nwould apply only to contracts or instruments which are\n\n rescinded/cancelled in personam.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P038_C01",
+      "text": "22. When\nsections 34\nand\n\nare seen, the position becomes even\n\n clearer. Unlike\nsection 31\n, under\nsection 34\n, any person entitled to\n\n any legal character may institute a suit for a declaration that he is\n\n so entitled. Considering that it is possible to argue on a reading of\n\n this provision that the legal character so declared may be against\n\n the entire world,\nsection 35\nfollows, making it clear that such\n\n declaration is binding only on the parties to the suit and persons\n\n claiming through them, respectively. This is for the reason that\n\n under\nsection 4\nof the Specific Relief Act, specific relief is granted\n\n only for the purpose of enforcing individual civil rights. The principle\n\n contained in\nsection 4\npermeates the entire Act, and it would be\n\n most incongruous to say that every other provision of the\nSpecific\n\n Relief Act\nrefers to in personam actions,\nsection 31\nalone being out\n\n of step, i.e., referring to in rem actions.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P039_C01",
+      "text": "23. As a matter of fact, this Court in\nRazia Begum v. Sahebzadi\n\n Anwar Begum\n, 1959 SCR 1111 clarified that the predecessor to\nsection 35\nof the 1963 Act, namely, section 43 of the Specific Relief\n\n Act, 1877, made it clear that both sections 42 and 43 of the\n\n Specific Relief Act, 1877 go together and refer only to an action\n\n that is in personam. This was felicitously stated by this Court as\n\n follows:\n“ ... Sections 42\nand\n\n, as indicated above, go\n together, and are meant to be coextensive in their\n operation. That being so, a declaratory judgment in\n respect of a disputed status, will be binding not only\n upon the parties actually before the court, but also\n upon persons claiming through them respectively. The\n use of the word “only” in\nSection 43\n, as rightly\n contended on behalf of the appellant, was meant to\n emphasize that a declaration in\nChapter VI of the\n Specific Relief Act\n, is not a judgment in rem. But even\n though such a declaration operates only in personam,\n the section proceeds further to provide that it binds not\n only the parties to the suit, but also persons claiming\n through them, respectively.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P039_C02",
+      "text": "The word “respectively”\n has been used with a view to showing that the parties\n arrayed on either side, are really claiming adversely to\n one another, so far as the declaration is concerned. This is another indication of the sound rule that the\n court, in a particular case where it has reasons to\n believe that there is no real conflict, may, in exercise of\n a judicial discretion, refuse to grant the declaration\n asked for oblique reasons.”\n (at p. 1131)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P040_C01",
+      "text": "24. Also, in an instructive judgment of this Court in Suhrid Singh v. Randhir Singh, (2010) 12 SCC 112, in the context of the\nCourt\n\n Fees Act, 1870\nthis Court held:\n“7. Where the executant of a deed wants it to be\n annulled, he has to seek cancellation of the deed. But\n if a non-executant seeks annulment of a deed, he has\n to seek a declaration that the deed is invalid, or non\n est, or illegal or that it is not binding on him. The\n difference between a prayer for cancellation and\n declaration in regard to a deed of transfer/conveyance,\n can be brought out by the following illustration relating\n to A and B, two brothers. A executes a sale deed in\n favour of C. Subsequently A wants to avoid the sale. A\n has to sue for cancellation of the deed. On the other\n hand, if B, who is not the executant of the deed, wants\n to avoid it, he has to sue for a declaration that the\n deed executed by A is invalid/void and non est/illegal\n and he is not bound by it. In essence both may be\n suing to have the deed set aside or declared as non-\n binding. But the form is different and court fee is also\n different.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P040_C02",
+      "text": "If A, the executant of the deed, seeks\n cancellation of the deed, he has to pay ad valorem\n court fee on the consideration stated in the sale deed. If B, who is a non-executant, is in possession and sues\n for a declaration that the deed is null or void and does\n not bind him or his share, he has to merely pay a fixed\n court fee of Rs. 19.50 under\nArticle 17(iii)\nof the\nSecond Schedule of the Act\n. But if B, a non-executant,\n is not in possession, and he seeks not only a\n declaration that the sale deed is invalid, but also the\n consequential relief of possession, he has to pay an ad\n valorem court fee as provided under\nSection 7(iv)(c)\n the Act.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P041_C01",
+      "text": "25. The reasoning in the aforesaid judgment would again expose the\n\n incongruous result of\nsection 31\nof the Specific Relief Act being\n\n held to be an in rem provision. When it comes to cancellation of a\n\ndeed by an executant to the document, such person can approach\n\n the Court under\nsection 31\n, but when it comes to cancellation of a\n\n deed by a non-executant, the non-executant must approach the\n\n Court under\nsection 34\nof the Specific Relief Act, 1963.\n\n Cancellation of the very same deed, therefore, by a non-executant\n\n would be an action in personam since a suit has to be filed under\nsection 34\n. However, cancellation of the same deed by an\n\n executant of the deed, being under\nsection 31\n, would somehow\n\n convert the suit into a suit being in rem. All these anomalies only\n\n highlight the impossibility of holding that an action instituted under\nsection 31\nof the Specific Relief Act, 1963 is an action in rem.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES_P042_C01",
+      "text": "26. Given this finding of law, it is clear that the judgments of the District\n\n Court and the High Court in this case need no interference. This\n\n appeal, therefore, stands dismissed.\n……………..………………J.\n (R. F. Nariman)\n\n ………..……………………J.\n (Navin Sinha)\n\n ………..……………………J.\n (Indira Banerjee)\nNew Delhi\nAugust 19, 2020.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Deccan Paper Mills Co. Ltd. vs Regency Mahavir Properties .",
+    "case_id": "SC_2020_DECCAN_PAPER_MILLS_CO_LTD_VS_REGENCY_MAHAVIR_PROPERTIES",
+    "court": "Supreme Court of India",
+    "year": "2020",
+    "facts_summary": "1. The hearing in this appeal followed in the wake of the hearing in\n\n Civil Appeal Nos. 5145 of 2016, 5158 of 2016, and 9820 of 2016. The brief facts necessary to appreciate the controversy in this\n\n appeal are as follows:\ni. By an agreement dated 22.07.2004 between the Appellant,\n\n Deccan Paper Mills Co. Ltd. [hereinafter referred to as “Deccan”]\n\n and the Respondent No. 2 company, M/s Ashray Premises Pvt. Ltd. [hereinafter referred to as “Ashray”], Deccan, being the\n\n owner of approximately 80,200 sq. meters of land bearing Survey\n\n agreement. However, it is enough to note that this agreement\n\n contained clause 7(m), in which it is stated :\n“7. The Owner and the Developer hereto covenant that\n upon the execution of these presents:\nxxx xxx xxx\n m. The Owner shall have no objection if at any stage\n during the continuance of this agreement the\n Developer assigns, delegates the rights, under this\n agreement or the Power of Attorney/writings executed\n in furtherance hereof to any other person, firm or party\n without violating or disturbing any of the terms and\n conditions of this agreement.”\n\nii. This agreement did not contain any arbitration clause. Pursuant to\n\n clause 7(m), on 20.05.2006, an agreement was entered into\n\n between Respondent No. 2 – Ashray, and Respondent No.1 –\n\n Regency Mahavir Properties, a partnership firm [hereinafter\n\n referred to as “Regency”], by which Ashray assigned the\n\n execution of the agreement dated 22.07.2004 to Regency. The\n\n aforesaid agreemen",
+    "legal_issues": "Any other just and other equitable orders in\n the interest of justice may be pleased to be\n passed.”\n\n It is important to note that Defendant No. 3 did not file any written\n\n statement in the said suit.\niv. Almost immediately thereafter, by an application dated 19.07.2010\n\n under\nsection 8\nof the Arbitration and Conciliation Act, 1996\n\n [hereinafter referred to as the “1996 Act”] on behalf of Regency,\n\n the arbitration clause in the agreement dated 20.05.2006 was set\n\n out and the Civil Judge (Senior Division), Pune was asked to refer\n\n the parties to arbitration. The reply to the said application on\n\n behalf of the plaintiff, Deccan, stated:\n“2. The averments in para 1 of the application to the\n extent of reproduction of clause No.14 of agreement\n dated 20.05.2006, being matter of record are not\n disputed for the purpose of this reply. The plaintiff shall\n rely upon and explain the true effect and interpretation\n of the said clause at the proper time. It is pertinent to\n note Defendant Nos.1 and 2 have avoided to make\n any comment with regard to merits of their defense. 3. It is submitted that while considering the application\n u/s 8 of\nArbitration and Conciliation Act, 1996\n, the court\n has to consider an issue that whether there exists any\n Arbitration Agreement between the parties. Such right\n is certainly vested in Civil Court. The Plaintiff is\n challenging the legality of agreement dated 20.05.2006\n on the ground that the same is obtained by fraud and\n is therefore seek",
+    "ratio_summary": "3. Shri Vinay Navre, learned Senior Advocate appearing on behalf of\n\n Respondent No.1, referred us to the case law on the “fraud\n\nexception” and stated that after the judgment in\nRashid Raza v. Sadaf Akhtar\n, (2019) 8 SCC 710 (see paragraph 4), this exception\n\nwould only apply if it can be stated that the agreement itself was\n\nnever executed, in which case the arbitration clause itself would\n\nfall, but not otherwise. Also, since there are no public ramifications\n\nin the present proceeding, and in particular, no ramifications of a\n\ncriminal nature, neither of the conditions precedent for the\n\napplication of the “fraud exception” being present in this case, it is\n\nclear that the judgments of the Courts below were correct in law. When it came to\nsection 31\nof the Specific Relief Act, Shri Navre\n\nstated that a correct reading of the section would show that the\n\nCourt’s jurisdiction, being discretionary and for the benefit of the\n\nparty interested in setting aside a written instrument, the\n\nproceeding would have to be considered to be one in personam. According to him, the judgment in\nAliens Developers\n(supra) does\n\nnot lay down the law correctly and should be overruled by us. 1898. The question was whether the Tribunal was justified in\n\n modifying the earlier order and leaving out such land. It was held,\n\n by a concurrent finding of fact, that the Tribunal was capable of so\n\n varying the order. It was in this backdrop that the general\n\n observations on fraud were made. This case ",
+    "final_order": "",
+    "outcome_summary": "Allowed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

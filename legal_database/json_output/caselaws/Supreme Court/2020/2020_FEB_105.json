@@ -1,0 +1,81 @@
+{
+  "case_id": "SC_2020_CAB_SECURITIES_LIMITED_VS_NATIONAL_STOCK_EXCHANGE_OF_INDIA",
+  "case_name": "Cab Securities Limited vs National Stock Exchange Of India ...",
+  "normalized_case_name": "CAB_SECURITIES_LIMITED_VS_NATIONAL_STOCK_EXCHANGE_OF_INDIA_...",
+  "court": "Supreme Court of India",
+  "year": "2020",
+  "judgment_template": null,
+  "case_number": "Petition 1651 of 2020",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": "17 February 2020",
+  "judges": [
+    "M.R. Shah",
+    "Arun Mishra"
+  ],
+  "author": "Arun Mishra",
+  "bench_type": "division",
+  "petitioner": "Cab Securities Limited",
+  "respondent": "National Stock Exchange Of India ...",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 0,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2020\\FEB\\2020_FEB_105.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2020_CAB_SECURITIES_LIMITED_VS_NATIONAL_STOCK_EXCHANGE_OF_INDIA_P001_C01",
+      "text": "(Arising out of impugned final judgment and order dated 24-09-2019\nin AN No.37/2019 passed by the Securities Appellate Tribunal,\nMumbai)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2020_CAB_SECURITIES_LIMITED_VS_NATIONAL_STOCK_EXCHANGE_OF_INDIA_P002_C01",
+      "text": "(FOR ADMISSION and IA No.26372/2020-STAY APPLICATION and IA\nNo.26369/2020-CONDONATION OF DELAY IN FILING APPEAL)",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_CAB_SECURITIES_LIMITED_VS_NATIONAL_STOCK_EXCHANGE_OF_INDIA_P003_C01",
+      "text": "For Petitioner(s)\n Mr. Mukesh M. Goel, Adv.\n Ms. Pooja Kashyap, Adv.\n Mr. R. C. Kaushik, AOR",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_CAB_SECURITIES_LIMITED_VS_NATIONAL_STOCK_EXCHANGE_OF_INDIA_P004_C01",
+      "text": "Delay condoned.\nThe appeal is dismissed in terms of the signed order.\nPending application(s), if any, stands disposed of.\n(ARJUN BISHT) (JAGDISH CHANDER)\nCOURT MASTER COURT MASTER\n (signed order is placed on the file)",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Cab Securities Limited vs National Stock Exchange Of India ...",
+    "case_id": "SC_2020_CAB_SECURITIES_LIMITED_VS_NATIONAL_STOCK_EXCHANGE_OF_INDIA",
+    "court": "Supreme Court of India",
+    "year": "2020",
+    "facts_summary": "(FOR ADMISSION and IA No.26372/2020-STAY APPLICATION and IA\nNo.26369/2020-CONDONATION OF DELAY IN FILING APPEAL) For Petitioner(s)\n Mr. Mukesh M. Goel, Adv.\n Ms. Pooja Kashyap, Adv.\n Mr. R. C. Kaushik, AOR",
+    "legal_issues": "",
+    "ratio_summary": "",
+    "final_order": "Delay condoned.\nThe appeal is dismissed in terms of the signed order.\nPending application(s), if any, stands disposed of.\n(ARJUN BISHT) (JAGDISH CHANDER)\nCOURT MASTER COURT MASTER\n (signed order is placed on the file)",
+    "outcome_summary": "Dismissed. Delay condoned.\nThe appeal is dismissed in terms of the signed order.\nPending application(s), if any, stands disposed of.\n(ARJUN BISHT) (JAGDISH CHANDER)\nCOURT MASTER COURT MASTER\n (signed order is placed on the file)",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

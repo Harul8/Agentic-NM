@@ -1,0 +1,191 @@
+{
+  "case_id": "SC_2023_2023_DEC_33",
+  "case_name": "Delhi International Airport Ltd. vs Airports Economic Regulatory ...",
+  "normalized_case_name": "DELHI_INTERNATIONAL_AIRPORT_LTD._VS_AIRPORTS_ECONOMIC_REGULATORY_...",
+  "court": "Supreme Court of India",
+  "year": "2023",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "4 December 2023",
+  "judges": [
+    "M. M. Sundresh",
+    "Sanjay Kishan Kaul"
+  ],
+  "author": "Sanjay Kishan Kaul",
+  "bench_type": "division",
+  "petitioner": "Delhi International Airport Ltd.",
+  "respondent": "Airports Economic Regulatory ...",
+  "reporter_citations": [
+    "2023 INSC 1046"
+  ],
+  "outcome": "disposed of",
+  "disposition": "disposed",
+  "cites_count": 1,
+  "cited_by_count": 0,
+  "neutral_citation": "2023 INSC 1046",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2023\\DEC\\2023_DEC_33.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2023_2023_DEC_33_P001_C01",
+      "text": "REPORTABLE\n\n CIVIL APPELLATE JURISDICTION\n\n Miscellaneous Application No.1721/2023 in C.A. No.8378/2018\n\n DELHI INTERNATIONAL AIRPORT LTD. … Appellant\n\n Versus\n\n AIRPORTS ECONOMIC\n REGULATORY AUTHORITY & ORS. …Respondents\n\n With:\n Miscellaneous Application No.1710/2023 in C.A. No.5401/2019\n\n JUDGMENT\nSANJAY KISHAN KAUL, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2023_2023_DEC_33_P002_C01",
+      "text": "1. We thought that our judgment in\nDelhi International Airport Limited v.\n Airport Economic Regulatory Authority of India1\nwould have resolved all the\n issues. It appears not.\n\n(DIAL) and Mumbai International Airport Limited (MIAL) predicated on the\ndiscovery of what is stated to be a ‘new and important piece of evidence’,\nwhich was not within the knowledge of the applicants even after exercising due\ndiligence. The applicants have referred to a letter dated 24.05.2011, which is an\ninternal correspondence between the Ministry of Civil Aviation (for short\n‘MoCA’) and the Airport Economic Regulatory Authority (for short ‘AERA’)\ninter alia stating that “Accordingly, in this case the proposed approach is to\nback solve the initial aeronautical Asset Base given the aeronautical charges.\nIn the State Support Agreement, in Schedule-I the method for calculating Asset\nBase for the first regulatory period has been defined.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2023_2023_DEC_33_P003_C01",
+      "text": "3. The aforesaid is stated to have given rise to an error apparent on the face\nof the record in paras 50 and 63 of the judgment.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_2023_DEC_33_P004_C01",
+      "text": "4. If we turn to our judgment under the heading “Calculation of\nHypothetical Regulatory Asset Base (HRAB)”, we have proceeded on the basis\nthat the two airports in question were not set up de novo but instead, existing\nairports were taken over. Consequently, assets as reflected in the books of\naccounts would record depreciation. This had created difficulty in arriving at a\nvalue of the Regulatory Base for the first year of the first control period. Apart\nfrom this, there was a common book of assets for several airports across India.\nThus, the State Support Agreement (for short ‘SSA’) provided for HRAB to be\nderived by working backwards, which would have a cascading effect for\n\nMA No.1721/2023 in CA No.8378/2018\nMA No.1710/2023 in CA No.5401/2019 Page 2 of 6\nsuccessive years and was thus crucial. In the formula in question this would\nimply that the term ‘RB’ as defined, thus, base calculation for RB 0 would have\nan impact on the calculation of RB1 and for further years. HRAB was to\ndetermine RB0.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_2023_DEC_33_P005_C01",
+      "text": "5. In para 50 of the judgment, the controversy in relation to HRAB was set\nout. This Court gave its imprimatur in para 63 to the view adopted by AERA\nand TDSAT.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_2023_DEC_33_P006_C01",
+      "text": "6. The submission on behalf of the applicants is that MoCA’s letter dated\n24.5.2011 relates back to the core issue of calculation of HRAB by the method\nof back solving. We have already recognized the cascading effect as stated\naforesaid. The question was whether in terms of the SSA dated 24.06.2006, the\nHRAB has been correctly calculated.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_2023_DEC_33_P007_C01",
+      "text": "7. In effect, it has been submitted that this Court confined its finding to the\nexpression “pertaining to aeronautical services” but the aspect of ‘single till’\nhad not been dealt with and that HRAB should be computed on the basis of\n‘single till’ mechanism. It is conceded that this aspect was not dealt with by the\nTDSAT either. Suffice to say that this Court proceeded on the basis of the\nopinion of the TDSAT and did not expand beyond the ambit of what the\nTDSAT had opined on.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_2023_DEC_33_P008_C01",
+      "text": "8. In substance, the contention on behalf of the applicants is that the ‘single\ntill’ mechanism was prevalent in the year 2008-09 where there was no\n\nMA No.1721/2023 in CA No.8378/2018\nMA No.1710/2023 in CA No.5401/2019 Page 3 of 6\ndistinction between aeronautical and non-aeronautical revenue and the entire\nrevenue, i.e., aeronautical and non-aeronautical were considered as composite\nrevenue and tariff was fixed on a cost-plus basis. Thus, for determining the\nopening of HRAB for FY 2009-10, the entire revenue of the previous year, i.e.,\n2008-09 ought to have been considered.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2023_2023_DEC_33_P009_C01",
+      "text": "9. A reference has also been made to a letter dated 18.06.2018 of the\nAirports Authority of India, which stated that “the airport charges were fixed on\ncost recovery principle….but allowing for all aeronautical revenue plus\ncontribution from non-aeronautical revenues accruing from the operations of\nthe airports to its operations.” This has to be read in the context of the\nprovisions of Schedule 1 of the SSA, and the submission is that the\n“hypothetical regulatory base will be computed on the entire revenue for the\nperiod between 01.04.2008 and 31.03.2009, i.e., aeronautical and non-\naeronautical income to calculate the value of the regulatory base.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2023_2023_DEC_33_P010_C01",
+      "text": "10. There are also some grounds raised qua categorization of fuel throughput\ncharge (FTC) as an aeronautical service.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2023_2023_DEC_33_P011_C01",
+      "text": "11. The prayer made is in the alternatives, i.e., either to modify the judgment\nor to remit the matter before the TDSAT for the limited issue of considering\nafresh the computation of HRAB.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2023_2023_DEC_33_P012_C01",
+      "text": "12. In the reply, it has been stated that the issue relating to FTC is no more\nres integra in view of the judgment of this Court in paras 41 to 45. Insofar as\n\nMA No.1721/2023 in CA No.8378/2018\nMA No.1710/2023 in CA No.5401/2019 Page 4 of 6\nthe issue of HRAB is concerned, the letter purported to be “new evidence” is\nonly a clarificatory communication. The MoCA has subsequently clarified this\nissue to the effect that it has no role in providing any mechanism and has\nmerely quoted that which has been provided in SSA and the ABN AMRO\nreport.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2023_2023_DEC_33_P013_C01",
+      "text": "13. The rest of the reply deals with the details and interpretation of the\nclauses of the agreements.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2023_2023_DEC_33_P014_C01",
+      "text": "14. On having heard learned counsel for the parties, we are of the view that\nthe nature of jurisdiction exercised by this Court is predicated on two specialist\nauthorities/tribunals having applied their mind to it. It would be difficult to\nhave a re-appreciation of evidence and facts, especially when the admitted\nposition is that the TDSAT has not opined on it. It would thus not be\nappropriate to venture into this aspect. However, this letter being in the nature\nof an internal communication privy to the non-applicants, we believe it should\nhave been placed before the concerned authorities. Whether it has any impact\nor not, it would be difficult for us to say at this stage until the opinion of the\nTDSAT is available.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2023_2023_DEC_33_P015_C01",
+      "text": "15. We are, thus, inclined to adopt the alternative prayer of the applicants by\ndirecting that the effect of this document ought to be examined by the TDSAT.\nWe leave it to the TDSAT to take a view on the same, uninfluenced by the fact\nthat the earlier opinion of the TDSAT has received our imprimatur. Thus, the\n\nMA No.1721/2023 in CA No.8378/2018\nMA No.1710/2023 in CA No.5401/2019 Page 5 of 6\nTDSAT may for the limited issue qua computation of HRAB examine the\neffect of the letter now produced before us, i.e., the letter dated 24.05.2011 by\nthe MoCA to the AERA, and take its own independent view on the impact of\nthe same in computing HRAB and whether ‘single till’ mechanism should be\nthe basis of the computation. Needless to say, that in either situation the\neffected parties would have a remedy before this Court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2023_2023_DEC_33_P016_C01",
+      "text": "16. We dispose of the applications in the aforesaid terms.\n...……………………………J.\n [Sanjay Kishan Kaul]\n\n ...……………………………J.\n [M. M. Sundresh]\nNew Delhi.\nDecember 04, 2023.\nMA No.1721/2023 in CA No.8378/2018\nMA No.1710/2023 in CA No.5401/2019 Page 6 of 6",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Delhi International Airport Ltd. vs Airports Economic Regulatory ...",
+    "case_id": "SC_2023_2023_DEC_33",
+    "court": "Supreme Court of India",
+    "year": "2023",
+    "facts_summary": "3. The aforesaid is stated to have given rise to an error apparent on the face\nof the record in paras 50 and 63 of the judgment.",
+    "legal_issues": "7. In effect, it has been submitted that this Court confined its finding to the\nexpression “pertaining to aeronautical services” but the aspect of ‘single till’\nhad not been dealt with and that HRAB should be computed on the basis of\n‘single till’ mechanism. It is conceded that this aspect was not dealt with by the\nTDSAT either. Suffice to say that this Court proceeded on the basis of the\nopinion of the TDSAT and did not expand beyond the ambit of what the\nTDSAT had opined on. 8. In substance, the contention on behalf of the applicants is that the ‘single\ntill’ mechanism was prevalent in the year 2008-09 where there was no\n\nMA No.1721/2023 in CA No.8378/2018\nMA No.1710/2023 in CA No.5401/2019 Page 3 of 6\ndistinction between aeronautical and non-aeronautical revenue and the entire\nrevenue, i.e., aeronautical and non-aeronautical were considered as composite\nrevenue and tariff was fixed on a cost-plus basis. Thus, for determining the\nopening of HRAB for FY 2009-10, the entire revenue of the previous year, i.e.,\n2008-09 ought to have been considered.",
+    "ratio_summary": "6. The submission on behalf of the applicants is that MoCA’s letter dated\n24.5.2011 relates back to the core issue of calculation of HRAB by the method\nof back solving. We have already recognized the cascading effect as stated\naforesaid. The question was whether in terms of the SSA dated 24.06.2006, the\nHRAB has been correctly calculated.",
+    "final_order": "",
+    "outcome_summary": "Disposed of",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

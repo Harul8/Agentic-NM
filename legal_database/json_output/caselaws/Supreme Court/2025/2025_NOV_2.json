@@ -1,0 +1,802 @@
+{
+  "case_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR",
+  "case_name": "Samiullah vs The State Of Bihar",
+  "normalized_case_name": "SAMIULLAH_VS_THE_STATE_OF_BIHAR",
+  "court": "Supreme Court of India",
+  "year": "2025",
+  "judgment_template": null,
+  "case_number": "Civil Appeal  of 2025",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "7 November 2025",
+  "judges": [
+    "Pamidighantam Sri Narasimha"
+  ],
+  "author": "Pamidighantam Sri Narasimha",
+  "bench_type": "single",
+  "petitioner": "Samiullah",
+  "respondent": "The State Of Bihar",
+  "reporter_citations": [
+    "2025 INSC 1292"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 67,
+  "cited_by_count": 0,
+  "neutral_citation": "2025 INSC 1292",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2025\\NOV\\2025_NOV_2.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n CIVIL APPEAL NO (S). OF 2025\n ARISING OUT OF SLP (C) NO (S). OF 2025\n @ DIARY NO. 12674/2024\n\n SAMIULLAH ...APPELLANT(S)\n VERSUS\n THE STATE OF BIHAR & ORS. …RESPONDENT(S)\n WITH\n CIVIL APPEAL NO. OF 2025\n ARISING OUT OF SLP (C) NO. OF 2025\n @ DIARY NO. 18064/2024\n\n JUDGMENT\nContents",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P002_C01",
+      "text": "1. Introduction. ........................................................................................... 2\n2. Facts. ...................................................................................................... 4\n3. Submissions. .......................................................................................... 8\n4. Distinction between the existing sub-rules (i) to (xvi) and the impugned sub-\n rules (xvii) and (xviii) of Rule 19. .............................................................. 9\n5. Scope of rule-making power under Section 69. ...................................... 14\n6. Sourcing the rule-making power under other provisions of the\nRegistration\n Act\n. ....................................................................................................... 17\n7. Concerns arising out of\nBihar Land Mutation Act, 2011\n......................... 24\n8.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P002_C02",
+      "text": "Dichotomy between registration and title. .............................................. 28\n 8.1 Existing legal structure. ....................................................................................................... 28\n 8.2 The problems relating to the legal structure. ...................................................................... 28\n 8.3\n\nTechnological possibilities. ................................................................................................... 30\n 8.4\n1. Introduction.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P003_C01",
+      "text": "2. The constitutionally protected right to own immovable\n\nproperty inherently includes the freedom to freely acquire, possess\n\nand dispose it at will. The efficiency and transparency with which\n\nimmovable property is bought and sold is demonstrative of a\n\nnation’s institutional maturity and a testament of the confidence\n\nand trust its citizens repose in the integrity of its legal and\n\ntransactional framework.\n2.1 Rather curiously, our property laws have long sustained a\n\ndichotomy between registration and ownership. The Registration\n\nAct, 19081 mandates the registration of documents, not titles, and\n\nthis distinction forms the cornerstone of our country’s presumptive\n\ntitling system. Since this presumption is rebuttable in a court of\n\nlaw, a substantial burden rests on the prospective buyer, who\n\nmust undertake a painstaking search of title. There is no doubt\n\nthat this uncertainty has been distressing for those seeking to\n\npurchase property. Property disputes, in fact, constitute nearly\n\nsixty six percent of all civil litigation.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P003_C02",
+      "text": "It is therefore fair to ask\n\n1 Hereinafter referred to as “the Act”.\n\nwhether the time has come to move towards a system in which the\n\nsale and purchase of immovable property becomes simpler, and\n\nregistration serves as a conclusive proof of ownership guaranteed\n\nby the State. We have explored this possibility and found promise\n\nin emerging technologies such as Blockchain, which we have\n\ndirected the government to examine. Until the convergence of\n\nconclusive titling with registration is achieved, constitutional\n\ncourts must balance the freedom to buy and sell property with the\n\nGovernmental duty to ensure integrity in transactions. Guided by\n\nthis principle, we have examined the present case and found that\n\nthe measure adopted by the State has unduly restricted the\n\nfreedom to sell property. These perspectives gain relevance in the\n\nfollowing context.\n2.2 Sub-rules (xvii) and (xviii) were introduced by way of\n\namendments to Rule 19 of the Bihar Registration Rules, 2008 2,\n\nempowering registering authorities to refuse registration of\n\ndocuments, if proof of mutation of the property under sale in\n\nfavour of the vendor is not produced along with the registering\n\ndocument.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P003_C03",
+      "text": "These sub-rules were challenged unsuccessfully before\n\nthe High Court of Patna. In these Civil Appeals, we have accepted\n\n2 Hereinafter referred to as “the Rules”.\n\nthe submissions and allowed the appeals on the ground that the\n\nimpugned sub-rules are ultra vires the rule making power under\nSection 69\nof the Act. We have also come to the conclusion that,\n\nas the said sub-rules tilt the balance and empower the registering\n\nauthorities to produce collateral evidence of title to the property as\n\na pre-condition for registration, such a measure, through\n\nsubordinate legislation, is also against the purpose and object of\n\nthe Act. Further, the requirement under the impugned sub-rules\n\nis arbitrary as the process of mutation and its certification is\n\nuncertain and virtually unavailable in near future, as the\nBihar\n\nMutation Act, 2011\nand the\nBihar Special Survey and Settlement\n\nAct, 2011\nare said to be nowhere near implementation.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P004_C01",
+      "text": "3. These appeals arise out of the judgment of the High Court of\n\nPatna dismissing writ petition 3 filed by the appellants herein,\n\nchallenging the vires of sub-rules (xvii) and (xviii) of Rule 19,\n\nintroduced through the 2019 amendment to the Rules on\n\n10.10.2019.\n3 CWJ No. 21386/2019 dated 09.02.2024.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P005_C01",
+      "text": "4. The Rules, as well as the amendment in 2019, were made in\n\nexercise of the rule making power of the Inspector General of\n\nRegistration under\nSection 69\nof the Act. The newly added sub-\n\nrules empowering the registering authority to refuse registration of\n\na duly presented document in circumstances as indicated therein\n\nare as follows;\n“Rule 19 Refusal of duly presented document – A duly\n represented document may be refused for registration under\n following circumstances –\n …\n (xvii) If a document is related to sale/gift of property, in which\n Jamabandi allotment to seller/donor is not mention in the deed\n and no proof is produced about the Jamabandi allotment to the\n seller/donor.\nProvided that, it will have no effect on the document related to\n the transfer of flat/apartment.\n(xviii) If a document is related to sale/gift of property, in which\n holding allotment to seller/donor of the flat/apartment in urban\n region is not mentioned in the deed and no proof is produced\n about the holding allotment to the seller/donor.\n Provided that, it will have no effect on the document related to\n the first transfer of flat/apartment.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P006_C01",
+      "text": "5. The effect of the amended sub-rules is simply that the\n\nregistering authorities can refuse registration of an otherwise\n\nvalidly presented document on the ground that it did not mention\n\nand carry the proof of jamabandi allotment or holding allotment in\n\nfavour of the seller. In other words, it is now a condition precedent\n\nto get jamabandi or holding allotment certificate under the Bihar\n\nLand Mutation Act, 2011\nor allied laws for sale or transfer of\n\nimmovable property.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P007_C01",
+      "text": "6. Aggrieved by the additional requirement, introduced by way\n\nof the amended sub-rules, several writ petitions came to be filed\n\nbefore the High Court of Patna on two grounds; (i) that the addition\n\nof sub-rules (xvii) and (xviii) to Rule 19 is ultra vires the Act and\n\nbeyond the scope of Section 69(1)(a)(aa), (ii) that it is an admitted\n\nfact that the process of land surveys is yet incomplete in Bihar,\n\nmaking it impossible for owners to obtain jamabandi or holding\n\nallotment in order to be able to freely deal with their properties,\n(iii) that it is a settled position of the law that mutation does not\n\ncreate title and therefore, making it mandatory for purpose of\n\nregistration is arbitrary, and (iv) enquiry into title falls within the\n\njurisdiction of civil courts and the registering authorities have no\n\njurisdiction to refuse registration on the ground of defective title.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P008_C01",
+      "text": "7. The Division Bench of the High Court, by the judgment\n\nimpugned before us, dismissed the writ petitions on the grounds;\n(i) That jamabandi or holding allotment does not necessarily\n confer title on the person whose name is entered in the register,\n however it is indeed a compelling, although rebuttable, evidence\n in favour of title. 4\n\n4 “9.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P008_C02",
+      "text": "We have to immediately observe and affirm the trite principle, as argued by the learned\n\ncounsel for petitioners and not disputed by the State, that the 'Holding' or 'Jamabandi' recorded\nin a register maintained by the State or its authorities, does not necessarily confer title on the\n\n(ii) That arguments of the writ petitioners are mutually\n destructive, wherein on the one hand it is contended that\n revenue entries confer no title and yet on the other hand, their\n grievance is that the amendment empowers the registering\n authorities to adjudicate on question of title. 5\n(iii) That if there is an absence of jamabandi or holding\n allotment by reason of an ongoing survey process in the State,\n then it is for the individual owners to approach the appropriate\n forum for the same. 6\n(iv) That the provisions of the Act taken together mandate a\n clear description of the property for purpose of registration and\n the impugned amendments fall right within the ambit of this\n requirement. 7\n\nperson whose name is entered in the register; on which if a dispute arises will have to be\nadjudicated by a court of law.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P008_C03",
+      "text": "However, it is also a trite principle that the entry in the register\nmaintained by the State would be compelling evidence in favour of title, which could be\ndisplaced by more persuasive evidence, unsettling even a claim based on that entry.\n5 10. Having said that, we have to notice that the arguments raised by the petitioners are\n\nconflicting and mutually destructive. It is argued that title cannot be decided on the mere entries\nmade in the revenue register; which, as we noticed, is the established principle. But it was also\nargued that if the entry in the register is insisted upon, then it will be requiring the Sub-\nRegistrar to adjudicate on the title of the land. The arguments, so addressed, are mutually\ndestructive and going by the established principle, based on which the first argument is\naddressed, even if a registration is carried out of a document where the 'Jamabandi' or 'Holding'\nis specified, there is no bar from the Civil Court considering a dispute on title, in a properly\ninstituted suit.”\n6 “12. Section 21\nof the Registration Act speaks of description of property and maps or plans.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P008_C04",
+      "text": "Sub-section (1) specifically provides that a non-testamentary document relating to immovable\nproperty shall be accepted for registration only if it contains a description of such property,\nsufficient to identify the same. Section 22\nis complementary to\nSection 21\nand explains what, a\ndescription of a house and land can be, with reference to Government maps or surveys. Sub-\nsection (1) empowers the State Government to prescribe by way of rules that a land or house\nshould be described with reference to a Government map or survey, if it is practicable so to do. This puts to rest any objection with respect to the hardship of the owners of land, since if there\nis absence of a 'Jamabandi' or 'Holding' by reason of no survey being conducted by the State,\nthen it is for such individual owners to approach appropriate forum for relief, pointing out the\nabsence of the entry, by reason of the survey not having been carried out. None can be heard\nto raise a claim of hardship only for reason of there being a necessity to approach a court of\nlaw.”\n7 “14.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P008_C05",
+      "text": "Section 52 is not to be read as an obligation of the Registering Officer, on presentation of\n\na document, to enter the same on the mere requirement under Section 52 being satisfied. No\nprovision in the statute can be read in isolation and the provisions read together, would take in\nthe other requirements also, which mandates a clear description of the property; within which\nambit would lie the present amendments too.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P009_C01",
+      "text": "15. We also have to emphasize that Section 52(1)(c) requires such entry to be made of a\ndocument presented, only if that document is 'admitted' to registration; obliging the Registering\nOfficer to look at the other provisions of the statute so as to find the document to be capable of\nbeing admitted to registration. Section 55, in relation to the indexes made by the Registering\nOfficer and their contents, also does not militate against the requirement of\n'Jamabandi/Holding' being mandatory in a document presented for registration.”\n\n(v) That clause (a) and (aa) of Section 69(1) indeed do not\n empower the Inspector General to make the impugned sub-\n rules, however, merely mentioning the wrong provision won’t\n vitiate the general rule-making power vested in him. 8\n(vi) That public policy considerations behind the impugned\n amendment do not impair the prescription in the amended\n Rules, given the identification of the source of power to validly\n do so under section 69. 9\n3. Submissions.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P010_C01",
+      "text": "8. On behalf of the appellants, we heard Mr. Manan Kumar\n\nMishra, Senior Advocate and Mr. A. Velan, AOR. They made\n\ndetailed submissions on the impugned amendments and have also\n\nbrought to our notice certain precedents that have a direct bearing\n\non the issue arising for consideration, including the recent\n\n8 “16. Now, we have to deal with Section 69, which empowers the Inspector-General to\nsupervise registration offices and make rules. The registration rules have been made\nunder Section 69. The present amendment specifically refers to Clause (a) and Clause (aa)\nof Section 69(1). We are clear in our minds that the said sub-clauses would not empower the\nInspector General to make the subject amendments, but we have to pertinently observe that the\nmere mentioning of a wrong provision would not vitiate the subordinate legislation; if power can\nbe found under the provision enabling such prescription.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P011_C01",
+      "text": "17. Section 69 enables Inspector General to make a prescription by rules, consistent with the\nAct and Clause (j) permits general regulation of proceedings under Registrars and Sub-\nRegistrars. Clause (h) also requires the particulars to be contained in Indexes Nos. I, II, III and\nIV respectively, which deal with \"description of property….A reading of Section 69, as a whole,\nalong with\nSections 21\n,\n\n& 55, does not persuade us to find an absence of power to make\nthe subject amendment. The impugned prescription is one, which is enjoined under Section 69.”\n9 “21. The learned Advocate General only pointed out the rising criminal tendencies, by reason\n\nof land disputes and the requirement by amendment having aimed at curbing such multiplicity\nof claims being raised on an identical piece of land. The requirements brought in only describe\nthe property by way of the entries in the Register of Raiyats, which is permissible under\nthe\nRegistration Act\n. The intention of the Legislature or the State Government or the rule making\nauthority, however laudable, cannot be upheld unless the source of power to make such\nprescription is well defined.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P011_C02",
+      "text": "As a corollary, if the source is clear and there is power on the rule\nmaking authority then merely based on intentions, unless it shocks the conscious or is arbitrary\nand perverse, valid prescriptions cannot be unsettled. The source we have found clearly\nunder\nSection 69\nof the Registration Act and the argument advanced of an attempt to curb the\nmenace of rising criminal activities, does not make the amendment invalid. Merely because\npublic policy having weighed with the rule making authority, would not impair the prescription,\nsince the power can be easily found under\nSection 69\n.”\n\ndecision of this Court in\nK. Gopi v. Sub-Registrar and Others10\n. On\n\nbehalf of the State, Mr. Ranjit Kumar, Senior Advocate, assisted by\n\nMr. Manish Kumar, AOR, has brought to our notice the purpose\n\nand object of the amendment, intending to subserve integrity in\n\nsale transactions. They have submitted that the impugned sub-\n\nrules are in consonance with\nSection 69\nof the Act and are not\n\narbitrary.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P012_C01",
+      "text": "4. Distinction between the existing sub-rules (i) to (xvi) and\n the impugned sub-rules (xvii) and (xviii) of Rule 19.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P013_C01",
+      "text": "9. Rule 19 in its entirety is extracted hereinbelow for ready\n\nreference and this includes the newly introduced sub-rules (xvii)\n\nand (xviii).\n“Rule 19. Refusal of duly presented document – A duly\n presented document may be refused for registration under\n following circumstances –\n(i) If the description of identification of the property as defined\n in Rule-5 has not been given as required under the Act and\n Rules. (ii) If the executant denies execution. (\nSection 35\n)\n(iii) If the executant fails to appear and admit execution. (Section\n34)\n(iv) If the person by whom the document purported to have been\n executed were dead and his representative or assign deny\n execution. (\nSection 35\n)\n(v) If the person purporting to have executed the document\n appear to be a minor an idiot or a lunatic. (\nSection 35\n)\n\n10 2025 INSC 462. (vi) If the Registering Officer is not satisfied by the identity of the\nperson appearing before him claiming that he has executed the\ndocument. (\nSection 35\n)\nProvided that a document shall not be refused under this clause\nunless the party fails to prove this identity within the time\nallowed under\nSection 34\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P013_C02",
+      "text": "(vii) If the Registering Officer is not satisfied of the truth of the\nallegation that person who executed the document is dead. (\nSection 35\n)\nProvided that a document shall not be refused for registration\nunder this clause unless the party fails to prove the death of the\nexecutant within the time allowed in\nSection 34\n. (viii) If the admitting agent’s power-of-attorney has not been\nmade in accordance with the Act or if any alleged representative\nor assign has failed to prove his status. (\nSection 35\n)\n(ix) If the partes fail or refuse to mention the additions of\nexecutants and claimants. (x) If the prescribed fee or fine has not been paid under\nSection\n\n,\n\nand\n\nof the Act. (xi) If a document is said to be executed by a deaf and dumb\nperson who does not understand the transaction nor express\nhimself by signs or in writing. (xii) Where a person admits his signature to a document but\nstates that he signed the paper when it was blank and no\ndocument was written thereon.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P013_C03",
+      "text": "(xiii) If a deed of surrender of lease which claimed exemption from\nstamp duty because the original lease was so exempt is\npresented and the party refuses to produce the original lease or\na certified copy of it in order to satisfy the Registering Officer that\nthe document is either properly stamped or not liable for stamp\nduty. (xiv) Where any or some of the representatives of a deceased\nexecutant deny execution while others admit it registration of the\ndocument shall be wholly refused subject to the provisions of\nSection 73\nof the Act. (xv) On refusal or neglect to appear on an appointed date after\nservices of summons under\nSection 36\nof the Act. (xvi) [-]\n[Provided further that it will not affect the registration of\nunits/flats of those multi-storied buildings/apartments of which\nat least one unit/flat has been registered before the Bihar\n\nRegistration (Amendment) Rules, 2018 notified on 30.8.2018\n came into force.]\n [(xvii) If a document is related to sale/gift of property, in\n which Jamabandi allotment to seller/donor is not\n mentioned in the deed and no proof is produced about the\n Jamabandi allotment to the seller/donor.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P013_C04",
+      "text": "Provided that, it will have no effect on the document\n related to the transfer of flat/apartment. (xviii) If a document is related to sale/gift of property, in\n which holding allotment to seller/donor of the\n flat/apartment in urban region is not mentioned in the\n deed and no proof is produced about the holding allotment\n to the seller/donor. Provided that, it will have no effect on the document\n related to the first transfer of flat/apartment].”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P014_C01",
+      "text": "10. Circumstances in which a duly presented document can be\n\nrefused by registering authority under sub-rules (i) to (xv) of Rule\n\n19 can broadly be divided into following categories.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P015_C01",
+      "text": "1. Circumstances where identification of property is uncertain –\n\n sub-rule 19(i).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P016_C01",
+      "text": "2. Circumstances relating to uncertainty about the executant\n\n such as; the executant denying execution – sub-rule 19(ii),\n\n the executant failing to appear and to admit execution – sub-\n\n rule 19(iii), executant dies – sub-rule 19(iv), executant\n\n appears to be a minor, idiot or a lunatic – sub-rule 19(v),\n\n parties fail or refuse to mention the addition of executants\n\n and claimants - sub-rule 19(ix), executant being a deaf and\n\n dumb person who does not understand the transaction –\n\nsub-rule 19(xi), persons admitting signatures but on a blank\n\n paper – sub-rule 19(xii), where some representatives of a\n\n deceased executant deny execution while others admit\n\n registration - sub-rule 19(xiv) and executants refusing or\n\n neglecting to appear – sub-rule 19(xv).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P017_C01",
+      "text": "3. Circumstances where the Registering Officer is not satisfied\n\n about the identity of person claiming to be executant – sub-\n\n rule 19(vi), or about the truth of alleged death of executant –\n\n sub-rule 19(vii). However, the proviso to these sub-rules\n\n interestingly mandates registration of the documents, unless\n\n the concerned party fails to satisfy the authority within the\n\n time allowed under\nSection 34\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P018_C01",
+      "text": "4. Circumstances in which the legal requirements of law are not\n\n satisfied, such as the admitting agent’s power of attorney is\n\n not legal – sub-rule 19(viii), the prescribed fee or fine under\nSections 25\n,\n\nand\n\nare not paid – sub-rule 19(x) or that\n\n the claim of exemption from stamp duty is not proved - sub-\n\n rule 19(xiii).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P019_C01",
+      "text": "11. It is evident from the above, that the four categories\n\nencompassing the existing sub-rules (i) to (xv) of Rule 19 are\n\nrelatable either to the identity of the property, of the condition or\n\nthe conduct of the executant, the registering officer not being\n\nsatisfied with the identity of the property or the death of the\n\nexecutant and the legal requirements of law with respect to POA,\n\nfee, fine or exceptions not being satisfied. It is evident that these\n\ncircumstances have no relation to proof of title of the property.\n\nThey are conditions precedent to enable the registering authority\n\nto be certain about the identity of the property of the executant.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P020_C01",
+      "text": "12. On the other hand, the impugned sub-rules 19 (xvii) and\n\n(xviii) are qualitatively distinct from any of the circumstances\n\nprovided under sub-rules (i) to (xv). Sub-rule 19(xvii) empowers the\n\nregistering authority to refuse registration of the document if the\n\nJamabandi allotment of the seller is not mentioned in the deed and\n\nalso if the proof of such allotment is not produced. For the first\n\ntime, the sub-rule prescribes ‘mentioning’ with ‘proof’ of the\n\ntransaction of the registrable property under another statute,\n\nnamely the\nBihar Land Mutation Act, 2011\n. Similarly, Rule\n\n19(xviii) empowers the registering authority to refuse registration\n\nof a legally presented document relatable to a flat or an apartment\n\nin an urban region if the holding allotment is not ‘mentioned’ and\n\nthe ‘proof’ is not produced.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P021_C01",
+      "text": "13. The requirement under newly added sub-rules is starkly\n\ndifferent from the existing sub-rules.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P022_C01",
+      "text": "14. It was argued before the High Court, and likewise before us,\n\nthat the impugned sub-rules are ultra vires the rule-making power\n\nof the Inspector-General of Registration. For this purpose, our\n\nattention is drawn to\nSection 69\nof the Act, empowering the\n\nInspector-General to make rules.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P022_C02",
+      "text": "We will reproduce\nSection 69\n\nits entirety to examine if sub-rules 19(xvii) and (xviii) could legally\n\nand validly be made in exercise of power under\nSection 69\n, which\n\nis as follows:\n“\nSection 69\n- Power of Inspector-General to superintend\n registration offices and make rules.—\n (1) The Inspector-General shall exercise a general\n superintendence over all the registration offices in the territories\n under the State Government, and shall have power from time to\n time to make rules consistent with this Act—\n(a) providing for the safe custody of books, papers and\n documents;\n(aa) providing the manner in which and the safeguards subject\n to which the books may be kept in computer floppies or\n diskettes or in any other electronic form under sub-section (1)\nsection 16A\n;\n(b) declaring what language shall be deemed to be commonly\n used in each district;\n(c) declaring what territorial divisions shall be recognized\n under\nsection 21\n;\n(d) regulating the amount of fines imposed under\nsections 25\nand\n\n, respectively;\n\n(e) regulating the exercise of the discretion reposed in the\n registering officer by\nsection 63\n;\n(f) regulating the form in which registering officers are to make\n memoranda",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P022_C03",
+      "text": "of documents;\n(g) regulating the authentication by Registrars and Sub-\nRegistrars of the books kept in their respective offices under\nsection 51\n;\n(gg) regulating the manner in which the instruments referred\n to in sub-section (2) of\nsection 88\nmay be presented for\n registration;\n(h) declaring the particulars to be contained in Indexes Nos.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P022_C04",
+      "text": "I,\n II, III and IV, respectively;\n(i) declaring the holidays that shall be observed in the\n registration offices; and\n(j) generally, regulating the proceedings of the Registrars and\n Sub-Registrars. (2) The rules so made shall be submitted to the State Government\n for approval, and, after they have been approved, they shall be\n published in the Official Gazette, and on publication shall have\n effect as if enacted in this Act.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P023_C01",
+      "text": "15. The Parliament has delegated the ‘power to superintend\n\nregistration offices’ and also the power to make rules to the\n\nInspector General of Registration.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P023_C02",
+      "text": "The Inspector General is granted\n\nthe power to make rules, consistent with the provisions of the Act,\n\nto (i) provide safe custody of books and papers –\nSection 69(1)(a)\n,\n(ii) safeguard books and other electronic material as per\nSection\n\n16(A)\n-\nSection 69(1)(aa)\n, (iii) declare the language that is to be used\n\nin the district -\nSection 69(1)(b)\n, declare the territorial division\n\nunder\nSection 21\n-\nSection 69(1)(c)\n, specify amounts of fines under\n\nSections 25\nand\n\n-\nSection 69(1)(d)\n, regulate the discretion of the\n\nregistration officer under\nSection 63\n-\nSection 69(1)(e)\n, regulate the\n\nforms for memoranda of documents -\nSection 69(1)(f)\n, regulate\n\nauthentication by registering officers of books kept under\nSection\n\n-\nSection 69(1)(g)\n, regulate the procedure for registration under\nSection 88(2)\n-\nSection 69(1)(gg)\n, declare particulars to be\n\ncontained in indexes I to IV under\nSections 54\nand\n\n-\nSection\n\n69(1)(h)\n, declare holidays -\nSection 69(1)(i)\nand regulate\n\nproceedings of the registrars and sub-registrars in general -\nSection 69(1)(j)\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P024_C01",
+      "text": "16. The rule making power extends to the Inspector General\n\nprovisioning the safe custody and procedure for maintaining books\n\nand documents, the conduct of the proceedings including\n\nlanguage and holidays, territorial divisions, imposition of fines and\n\nregulating discretion. There is nothing in\nSection 69\nthat would\n\nenable the Inspector General to make rules enabling or requiring\n\ndeclaring or enclosing proof of mutation in favour of the vendor, as\n\na condition precedent for registration of documents for sale of\n\nproperty.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P025_C01",
+      "text": "17. Interestingly, while the notification introducing impugned\n\nsub-rules 19 (xvii) and (xviii) sources the power of making it to\n\nSection 69(1)(a)\nand (aa), the High Court came to the conclusion\n\nthat the power to introduce sub-rules (xvii) and (xviii) of Rule 19 is\n\nnot relatable to 69(1)(a) and (aa). High Court, however, traced the\n\npower to make the impugned sub-rules to\nSection 69(1)(h)\nand\nSection 55 (3)\n, read with\nSections 21\nand\n\nof the Act, or in the\n\nalternative to the Inspector General’s general rule-making power\n\nunder\nSection 69(1)(j)\n. We will now refer to these provisions and at\n\nthe same time consider other provisions of the Act to examine the\n\nlegality and authority of sub-rules 19(xvii) and (xviii).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P026_C01",
+      "text": "6. Sourcing the rule-making power under other provisions\n of the\nRegistration Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P027_C01",
+      "text": "18. The Registration Act, 1908\nwas enacted to consolidate laws\n\nrelating to registration of documents.\nIn Part II of the Act\n,\n\ncomprising\nSections 3\n16A\n, the Parliament’s endeavor to\n\ninstitutionalize ‘Registration Establishment’ is evident11. The\n\nInspector General of Registration appointed under\nSection 3\nof the\n\nAct, has the power of general superintendence over all registering\n\noffices in the territories of the State Government. He is also\n\nempowered to make subordinate legislation, as provided under\nSection 69\n. We are of the opinion that, following good governance\n\nSection 5\n\nthrough modern legislation, it is necessary to fully institutionalize\n\nthe registration offices by establishing a permanent regulatory\n\nbody. This will enable real time assessment and development of\n\nthe establishment through institutional efficiency and expertise. A\n\npermanent body will enable institutional memory for upgradation\n\nand improvement. It will also enable course correction and\n\nmodernization.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P028_C01",
+      "text": "19. Part III of the Act\nprovides for documents that are\n\nmandatorily registrable12 and those that are optionally\n\nregistrable13 and this is followed by provisions laying down\n\nconditions precedent for successful registration of a document. They are as follows; – firstly, the document has to be in a language\n\nthat is understood by the registrar or must be accompanied by a\n\ntrue translation in a language commonly used in the district 14;\n\nsecondly, the document must not have interlineations, blanks,\n\nerasures or alterations 15; thirdly, under\nSection 21\n, a non-\n\ntestamentary document with respect to an immovable property\n\nmust contain a description of subject property sufficient to identify\n\nSection 17\n\nSection 18\n\nSection 19\n\nSection 20\n\nthe same 16. Further, for description of houses and land, under\nSection 22\n, reference may be made to Government maps or\n\nsurveys 17.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P028_C02",
+      "text": "However, sub-section (2) to\nSection 22\nalso clarifies\n\nthat, save as otherwise provided by any rule by the State\n\nGovernment, failure to comply with the provisions of\nSection 21\nshall not disentitle a document to be registered if the description\n\nof the property to which it relates is sufficient to identify that\n\nproperty.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P029_C01",
+      "text": "20. In ensuing Parts, IV (\nSections 23\n\n), V (\nSections 28\n\n)\n\nand VI (\nSections 32\n\n), the Act provides for proper time, place\n\nand presentation of documents for registration. Under\nSection\n\nSection 21\n- Description of property and maps or plans.—(1) No non-testamentary\ndocument relating to immovable property shall be accepted for registration unless it contains\na description of such property sufficient to identify the same. (2) Houses in towns shall be described as situate on the north or other side of the street or\nroad (which should be specified) to which they front, and by their existing and former\noccupancies, and by their numbers if the houses in such street or road are numbered. (3) Other houses and lands shall be described by their name, if any, and as being the\nterritorial division in which they are situate, and by their superficial contents, the roads and\nother properties on to which they abut, and their existing occupancies, and also, whenever it\nis practicable, by reference to a Government map or survey.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P029_C02",
+      "text": "(4) No non-testamentary document containing a map or plan of any property comprised\ntherein shall be accepted for registration unless it is accompanied by a true copy of the map\nor plan, or, in case such property is situate in several districts, by such number of true copies\nof the map or plan as are equal to the number of such districts. Section 22\n- Description of houses and land by reference to Government maps or\n\nsurveys.— (1) Where it is, in the opinion of the State Government, practicable to describe\nhouses, not being houses in towns, and lands by reference to a Government map or survey,\nthe State Government may, by rule made under this Act, require that such houses and lands\nas aforesaid shall, for the purposes of\nsection 21\n, be so described.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P029_C03",
+      "text": "(2) Save as otherwise provided by any rule made under sub-section (1), failure to comply with\nthe provisions of\nsection 21\n, sub-section (2) or sub-section (3), shall not disentitle a document\nto be registered if the description of the property to which it relates is sufficient to identify\nthat property.\n\n3418, the registering authority shall enquire whether the document\n\nis duly executed and shall satisfy himself of the identity of the\n\npersons. Under Section 3519, the registering authority shall\n\nregister the document if he is satisfied or, shall refuse to register if\n\nconditions are not satisfied and if so, follow procedure under Part-\n\nXII.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P030_C01",
+      "text": "21. Part VII provides for procedure for enforcing appearance of\n\nexecutants and witnesses for purpose of registration. This is\n\nSection 34\n- Enquiry before registration by registering officer.—(1) Subject to the\nprovisions contained in this Part and in\nsections 41\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\nand\n\n, no\ndocument shall be registered under this Act, unless the persons executing such document,\nor their representatives, assigns or agents authorised as aforesaid, appear before the\nregistering officer within the time allowed for presentation under\nsections 23\n,\n\n,\n\nand\n\n:\nProvided that …\n(2) Appearances under sub-section (1) may be simultaneous or at different times. (3) The registering officer shall thereupon—\n(a) enquire whether or not such document was executed by the persons by whom it\n purports to have been executed;\n(b) satisfy himself as to the identity of the persons appearing before him and alleging\n that they have executed the document; and\n(c) in the case of any person appearing as a representative, assign or agent, satisfy\n himself of the right of such person so to appear.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P030_C02",
+      "text": "Section 35\n- Procedure on admission and denial of execution respectively.— (1) (a) If\nall the persons executing the document appear personally before the registering officer and\nare personally known to him, or if he be otherwise satisfied that they are the person they\nrepresent themselves to be, and if they all admit the execution of the document, or\n(b) if in the case of any person appearing by a representative, assign or agent, such\nrepresentative, assign or agent admits the execution, or\n(c) if the person executing the document is dead, and his representative or assign\nappears before the registering officer and admits the execution, the registering officer shall\nregister the document as directed in\nsections 58\n\ninclusive. (2) The registering officer may, in order to satisfy himself that the persons appearing before\nhim are the persons they represent themselves to be, or for any other purpose contemplated\nby this Act, examine any one present in his office.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P030_C03",
+      "text": "(3) (a) If any person by whom the document purports to be executed denies its execution, or\n(b) if any such person appears to the registering officer to be a minor, an idiot or a\nlunatic, or\n(c) if any person by whom the document purports to be executed is dead, and his\nrepresentative or assign denies its execution, the registering officer shall refuse to register the\ndocument as to the person so denying, appearing or dead:\nProvided that …\n\nfollowed by Parts VIII and IX, which pertain to specific procedural\n\nrequirements for presenting of wills and authorities to adopt and\n\ndeposit of wills, respectively. Part X of the Act\nexpounds the effects\n\nof registration and non-registration of documents.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P031_C01",
+      "text": "22. Part XI lays down the duties and powers of the registering\n\nofficers and for this purpose, this Part is divided into five sub-\nparts. Sub-part A deals with maintenance of Register-books and\n\nIndexes. Sub-part B deals with the procedure on admitting to\n\nregistration. Sub-parts C and D deal with special duties of Sub-\n\nRegistrar and Registrars respectively. Finally, sub-part E deals\n\nwith the controlling powers of the Registrars and the Inspector-\n\nGeneral of Registration.\n22.1 In sub-part A,\nSection 51\nmandates maintenance of Register-\n\nbooks 1 to 5, to be kept in all registration offices. Sections 52\ndeal\n\nwith the duties of the registering officers when the document is\n\npresented. Section 53\nand 5420 requires entries and current\n\nindexes of the books to be maintained.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P031_C02",
+      "text": "Section 55\nin particular\n\ndetails the indexes and the contents to be maintained by the\n\nSection 54\nCurrent indexes and entries therein.—In every office in which any of the books\n\nhereinbefore mentioned are kept, there shall be prepared current indexes of the contents of\nsuch books; and every entry in such indexes shall be made, so far as practicable, immediately\nafter the registering officer has copied, or filed a memorandum of, the document to which it\nrelates.\n\nregistering officers. 21 There shall be four indexes; Index I contains\n\nthe names of all persons executing and persons claiming under the\n\ndocument, Index II shall contain particulars in\nSection 21\nand as\n\nprescribed by the Inspector-General from time to time, similar\n\nprescriptions are provided for Indexes III and IV. It is imperative to\n\nnote that the question of particulars to be filled in respective\n\nIndexes comes in at a stage succeeding the registration process\n\nand not at a stage prior it.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P032_C01",
+      "text": "23. A detailed examination of the relevant provisions of the Act,\n\ncoupled with\nSections 21\nand\n\nand also\nSection 69(1)(h)\nread\n\nwith\nSections 55(3)\n, do not indicate anything as assumed by the\n\nHigh Court. At the same time a detailed examination of\nSections\n\n,\n\nand\n55(3)\nonly evidences the requirement of sufficient\n\ndescription to property. All these requirements are intended only\n\nto identify the property and for this purpose the provisions enable\n\nSection 55\n- Indexes to be made by registering officers, and their contents.—(1) Four such\n\nindexes shall be made in all registration offices, and shall be named, respectively, Index No. I, Index No. II, Index No. Ill and Index No. IV. (2) Index No. I shall contain the names and additions of all persons executing and of all\npersons claiming under every document entered or memorandum filed in Book No. 1. (3) Index No. II shall contain such particulars mentioned in\nsection 21\nrelating to every such\ndocument and memorandum as the Inspector-General from time to time directs in that\nbehalf. (4) Index No. III …\n(5) Index No.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P032_C02",
+      "text": "IV …\n(6) Each Index shall contain such other particulars, and shall be prepared in such form, as\nthe Inspector-General from time to time directs.\n\nreference to maps, plans or surveys, if practicable. The reality is\n\nthat, none of these provisions require reference to or production of\n\nproof of mutation in the name of the owner. That is to say, the\n\nprovision does not relate to the right of disposition of the executant\n\nin respect of a property which is otherwise physically identifiable. The power to make the impugned sub-rules 19 (xvii) and (xviii)\n\ncannot be traced to these provisions.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P033_C01",
+      "text": "24. We will now examine\nSection 69(1)(a)\nand (aa), as referred to\n\nand relied on by the Government to frame the impugned sub-rules.\n\nThese provisions only relate to the power of Inspector General of\n\nRegistration to frame rules for “safe custody of books, papers and\n\ndocuments” and also for “providing the manner in which and\n\nsafeguards subject to which books may be kept in …. electronic\n\nform.” Equally,\nSection 69(1)(j)\nalso does not legitimize making of\n\nthe impugned sub-rules, as it only enables making of rules for\n\n“generally regulating the proceedings of registrars and sub-\n\nregistrars”.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P034_C01",
+      "text": "25. In view of the above, we have no hesitation in concluding that\n\nthe impugned sub-rules are ultra vires the rule-making power\n\nunder\nSection 69\nor any other provisions of the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P035_C01",
+      "text": "7. Concerns arising out of\nBihar Land Mutation Act, 2011\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P036_C01",
+      "text": "26. In addition to the above, Mr. Ranjit Kumar has submitted\n\nthat the impugned sub-rules must be understood in the context of\n\nthe endeavor of the state to synchronize registration of documents\n\nwith the reality of actual land holding. This submission is well\n\narticulated in the written submission of the State;\n“8.\nThe Bihar Land Mutation Act, 2011\nwas enacted to make the\n mutation concomitant with the needs of the present time.\nThe Act\nprovides for mutation of all the Revenue records/Jamabandi by\n the owners acquiring or have acquired any interest in the\n property before or after the 2011 Act.\nSection 4\nprescribes that\n after registration of any document the Authority shall inform the\n Circle Officer of the Area. This is for the purpose of Mutation of\n the land records. In the absence of Jamabandi/holding details\n the very purpose of 2011 Act would be defeated.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P037_C01",
+      "text": "12. The name of owner in Jamabandi (rural land) or holding\n number (urban land) is essential for land revenue and municipal\n taxes/property taxes etc. Whenever, there is a change of\n ownership of the land or flat, the new owner gets the mutation\n done in the revenue or municipal records in accordance with the\nLand Mutation Act, 2011\n. A person can apply for online mutation\n of his/her name and this is done in a fixed time frame.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P038_C01",
+      "text": "13. Bihar Mutation Act, 2011\nprovides for mutation of records in\n the name of the person holding rights in a property either through\n transfer or inheritance. Entire land records in the State have been\n digitalized and a person can apply online for mutation of his/her\n name in the Jamabandi/land records. The process is ongoing.\n The petitioners are those persons who wanted to sell the property\n despite their names not being recorded in the revenue records.\n They may have their personal reasons for not getting the\n Mutation done, but this cannot be a ground to challenge the\n validity of a Rule made by the State.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P039_C01",
+      "text": "15. The present amendment in Registration Rules aims to\n address the public interest and compliance of\nMutation Act,\n\n. Once the mutation is done, there shall be no problem in\n compliance with the Rules.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P040_C01",
+      "text": "18. ……A person can always apply for mutation of Jamabandi\n and 2011 Act provides a fixed time frame (within 21 days) for\n grant of mutation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P041_C01",
+      "text": "20. Jamabandi (\nSection 2(26)\n) and Jamabandi register (26-A)\n has been defined under the\nBihar Mutation Act, 2011\nand\n Registration Rules refers to such a definition.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P042_C01",
+      "text": "27. Instead of joining issue on the intentions and good\n\ngovernance of the State to take corrective measure through the\n\n2011 legislation, Mr. Manan Kumar Mishra has drawn our\n\nattention to the ground reality of mutations, surveys and\n\nsettlement in Bihar. He would submit that 80% jamabandis are in\n\nthe names of the ancestors of the real and current land\n\nholders/owners. In fact, 95 to 98% of the persons in whose names\n\njamabandi runs, are dead, and even their legal heirs upto two-\n\nthree generations are no more. Moreover, there are several legal\n\nheirs of one jamabandidar.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P043_C01",
+      "text": "28. In addition to the above, Mr. Velan has submitted that the\n\nCadastral Survey of lands in the State of Bihar is traceable to the\n\nyear 1911 and no statewide survey was undertaken post 1950. Though localized surveys in some districts were undertaken, the\n\nRevenue Records/Jamabandi on the strength of the said surveys\n\nwere not mutated. Mr. Velan has submitted that the State of Bihar\n\ntaking cognizance of this reality legislated the\nBihar Special Survey\n\nand Settlement Act, 2011\n(Act 24 of 2011), with the object to effect\n\nsurvey of the entire state. It is to be noted that the said Act\n\nacknowledged that the tenancy register has not been maintained\n\nand mutations effected are not reflected.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P043_C02",
+      "text": "The relevant portions are\n\nextracted below;\n“(vi) WHEREAS, Continuous Khatian (Register-1B), Khesra\n Register and Register-II (Tenants' Ledger) supposed to be\n maintained in the Anchal Offices in an up-to-date manner, have\n not been maintained as such, and consequently, transfers,\n successions, mutations, etc., taking place from time to time, have\n not been reflected therein;\n(vii) WHEREAS, computerization of land records as sponsored by\n the Government of India some years ago has not followed a\n uniform approach;\n(viii) WHEREAS, in the event of non-synchronisation of data put\n into the computer with to-date ground realities, there has been a\n gap between successive claims of title and a reflection of the\n same through land records;\n(ix) WHEREAS, modern technology is available to minimize time\n spent on survey part, while the settlement aspect may be\n judiciously squeezed without sacrificing quality, transparency\n and grievance redressal;\n(xi) WHEREAS, digital maps prepared through modern\n technology need be verified and compared with the maps\n prepared through conventional methods as well as a ground\n truthing of the same is necessary, the technically qualified\n Licensed",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P043_C03",
+      "text": "Surveyors may be assigned with this task.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P043_C04",
+      "text": "(xiii) WHEREAS, an in-built computerized and digital system of\n the maintenance of the Record of Rights including maps in a sine-\n qua-non for all development processes and the aforesaid\n technically qualified persons may be assigned with this task on\n a regular basis.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P044_C01",
+      "text": "29. Having considered the rival submissions, we are of the\n\nopinion that while we appreciate the intention of the state to\n\nsynchronize the registrable document with real time land holding,\n\nthere is a big missing link given that the process of mutation and\n\nthe process of survey and settlement are nowhere near completion. Under these circumstances and considering the nascent stage at\n\nwhich the empirical data is translated as mutation into the\n\nrelevant records and the fact that for this purpose survey and\n\nsettlement are to be conducted, interlinking and restraining\n\nregistration till the jamabandi or holding allotment is effected\n\nwould be illegal, as it has a direct impact on the right and freedom\n\nto purchase and sell property. A requirement of rules, regulations\n\nor even law that impedes or restrains easy and effective transfer of\n\nproperty will be illegal as it has the direct effect of ‘depriving of\n\nproperty’ to that extent, and such delays, caused due to\n\nunreasonable and arbitrary restrictions, impinge the right to hold\n\nand dispose of property.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P044_C02",
+      "text": "We therefore hold that the prescription of\n\nmentioning and production of jamabandi allotment or holding\n\nallotment as a pre-condition for registration of a legally presented\n\ndocument under impugned sub-rules 19 (xvii) and (xviii) is\n\narbitrary and illegal and as such, liable to be set aside.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P045_C01",
+      "text": "8. Dichotomy between registration and title.\n8.1 Existing legal structure.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P046_C01",
+      "text": "30. Right to own immovable property naturally encompasses the\n\nfreedom to purchase and sell property. The ease by which such\n\nproperty is bought and sold is reflective of the confidence and trust\n\nin institutional transactions.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P047_C01",
+      "text": "31. The legal architecture for property transactions in India\n\ncontinues the colonial construct of real property and operates on\n\nthe basis of three primary legislations-all of them century-old, the\nTransfer of Property Act, 1882\n, the\nIndian Stamp Act, 1899\nand\n\nthe\nRegistration Act, 1908\n.\n8.2 The problems relating to the legal structure.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P048_C01",
+      "text": "32. Rather strangely these legislations have long sustained\n\ndichotomy between ownership and registration. While Transfer of\n\nProperty Act\nprovides substantive legal framework for purchase\n\nand sale of immovable property and the\nStamp Act\nimposes a fiscal\n\ncharge on the transferable property as a precondition for\n\nregistration, the\nRegistration Act\ninstitutionalizes the process of\n\nregistering documents to create a public record of immovable\n\nproperty transactions. The Registration Act\nmandates registration\n\nof documents, not the title and this distinction is the fundamental\n\ncharacter of our country’s presumptive titling system through\n\nregistration. Thus, registration of a document recording purchase\n\nof immovable property does not confer guaranteed title of\n\nownership, instead it only serves as a public record of the\n\ntransaction having presumptive evidentiary value, but it is never a\n\nconclusive proof of ownership. The presumption is rebuttable and\n\ncan always be challenged in a court of law.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P048_C02",
+      "text": "This system has\n\ntherefore placed a significant burden of due diligence on a\n\nprospective buyer who must undertake a painstaking title search,\n\nexamining the chain of ownership through a series of past deeds,\n\nsometimes going beyond 30 years or more, to ensure marketable\n\ntitle. The uncertainty also compels obtaining a no encumbrance\n\ncertificate from the sub registrar’s office to confirm that the\n\nproperty is free from legal liabilities or mortgage. Property\n\npurchase has not been easy, it is not difficult to find people\n\ngrudgingly telling us that it is in fact traumatic. The present\n\nsystem of presumptive title through registration is also the primary\n\ncontributor to high volume of land related litigation in India. Property disputes account for an estimated 66% of all civil cases. More than a century has passed by, and we must dare to think\n\nand look for alternatives.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P049_C01",
+      "text": "33. The legal framework for purchase and sale of immovable\n\nproperties suffer from several systemic deficiencies that\n\nundermine reliability, transparency and efficiency. There are\n\nproblems relating to i) fake and fraudulent property documents,\nii) rights and liabilities, iii) land encroachments, iv) delay in\n\nverification processes, and v) role of intermediaries etc. In addition\n\nto these, there are also administrative problems at the office of the\n\nsub-registrar of registration, involving the statutory and regulatory\n\nrequirements of the presence of the buyer and seller along with two\n\nwitnesses for document verification, legal authentication\n\ncollection, and official recording, all of which require coordination,\n\nsynchronization, and our experience has shown us that this\n\nprocess is cumbersome and time consuming. Moreover, land being\n\na state subject under the Constitution, these procedures vary from\n\nstate to state and are highly fragmented.\n8.3 Technological possibilities.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P050_C01",
+      "text": "34. Recognizing the profound inefficiencies and vulnerabilities in\n\nrecording the real-estate transactions, Government in its effort to\n\nmodernize these transactions has adopted certain measures such\n\nas the Digital India Land Records Modernization Programme\n\n(DILRMP) and the National Generic Document Registration System\n\n(NGDRS). These measures involve computerization of land records,\n\ncadastral maps, integration of textual and spatial data and\n\ndigitization of registration. Digitization is the process of creating\n\nan electronic copy of the existing paper record and if the original\n\nrecord is inaccurate, incomplete or subject to dispute, the digital\n\nversion will simply perpetuate the flaw. The process of digitization\n\ndoes not by itself resolve the underlining title disputes or correct\n\ninaccuracies. Reformation based on conclusive titling is a colossal\n\nadministrative and legal challenge. Under the Madras Presidency,\n\na massive survey and settlement was undertaken to rectify and\n\nauthenticate grant and subsistence of Inams, leading to making of\n\nthe Inam Fair Registration, commonly called the IFR.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P050_C02",
+      "text": "Because of\n\nthe comprehensive and accurate recording, the IFR came to be\n\nrelied on as a conclusive proof of title and the IFR was called the\n\ngreat act of the State. We cannot hazard a guess as to the\n\npossibility of such an exercise for conclusive proof of title through\n\nregistered documents. However, due to technological\n\nadvancement, it is now possible to reflect on the possible\n\nconvergence of title perfection in a registered document. “No\n\nsensible decision can be made any longer without taking into\n\naccount not only the world as it is, but the world as it will be.” 22\n\n8.4 Reformation of Land Registration processes and to eschew\n “fraudulent/multiple registrations”.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P051_C01",
+      "text": "35. Fortunately, due to technological advancement this process\n\nis duly and more accurately achievable. We have incorporated\n\nemerging technologies as instruments of institutional reform. Blockchain technology has garnered particular attention for its\n\npotential to transform land registration into a more secure,\n\ntransparent and tamper-proof system. It is suggested that\n\nadoption of Blockchain technology would ensure immutability,\n\ntransparency and traceability, thereby minimizing fraud and\n\nunauthorized alterations. Blockchain technology is said to offer an\n\nalternative paradigm by encoding land titles, ownership histories,\n\nencumbrances, and by recording transfers on a Distributed Ledger\n\nin an immutable and time stamped form. Each entry, once\n\nvalidated into the Distributed Ledger, becomes part of a\n\ncryptographically linked chain of information that cannot be\n\nretroactively altered without detection. This property of\n\n22 Isaac Asimov; Asimov on Science Fiction.\n\nimmutability could enhance the integrity of title records and\n\nstrengthen public trust in the ownership framework.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P051_C02",
+      "text": "This\n\ncryptographic immutability could perhaps address the structural\n\nfragility of Indian record keeping system. The Blockchain design\n\ncould integrate cadastral maps, survey data, and revenue records\n\ninto a single verifiable framework, which, while maintaining a\n\ntransparent audit trail, is accessible to multiple departments and\n\nthe public.\n8.5 Suggestions and Direction to constitute a committee.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P052_C01",
+      "text": "36. We take note of the technological advancement only to\n\nsuggest that there is now a possibility of overcoming the binary\n\nthat our laws have created in maintaining a register for transfers\n\nfor long, but have neither granted credibility or conclusiveness of\n\ntitle. At the same time, the process of registration is cumbersome\n\nand time-consuming. Registration of deeds being a concurrent list\n\nsubject, Government of India must take lead in constituting a\n\nbody, with the participation of the States, to examine this issue in\n\nlight of the technological advancement for integrating the property\n\nregistration regime with conclusive titling. The process may involve\n\nrestructuring and reviewing our existing laws, i.e. the\nTransfer of\n\nProperty Act, 1882\n,\nRegistration Act, 1908\n,\nStamp Act, 1899\n,\n\nEvidence Act, 1872\n,\nInformation Technology Act, 2000\n, Data\n\nProtection Act, 2023 and may require introduction of new laws for\n\nincorporating Blockchain technology with necessary safeguards.\n\nThis will necessarily require establishing regulatory framework\n\nwhich institutionalizes processes with integrity and efficiency.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P053_C01",
+      "text": "37. We, therefore, request the Law Commission to examine this\n\nissue in detail, consult the Union, the States and all other\n\nstakeholders as well as experts in the field of information and\n\ntechnology, and prepare a report on the issue that we have\n\nhighlighted.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P054_C01",
+      "text": "38. Returning to the dispute under consideration, we hereby\n\nallow Civil Appeals arising out of Diary Nos. 12674 of 2024 and\n\n18064 of 2014 and set aside the judgment and order passed by the\n\nHigh Court and quash Notification No.-IV.M-1-12/2019-3644\n\ndated 10.10.2019 introducing Rule 19 (xvii) and (xviii).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR_P055_C01",
+      "text": "39. Parties shall bear their own costs.\n………………………………....J.\n [PAMIDIGHANTAM SRI NARASIMHA]\n\n ………………………………....J.\n [JOYMALYA BAGCHI]\n\nNEW DELHI;\nNOVEMBER 07, 2025",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Samiullah vs The State Of Bihar",
+    "case_id": "SC_2025_SAMIULLAH_VS_THE_STATE_OF_BIHAR",
+    "court": "Supreme Court of India",
+    "year": "2025",
+    "facts_summary": "1. Introduction. ........................................................................................... 2\n2. Facts. ...................................................................................................... 4\n3. Submissions. .......................................................................................... 8\n4. Distinction between the existing sub-rules (i) to (xvi) and the impugned sub-\n rules (xvii) and (xviii) of Rule 19. .............................................................. 9\n5. Scope of rule-making power under Section 69. ...................................... 14\n6. Sourcing the rule-making power under other provisions of the\nRegistration\n Act\n. ....................................................................................................... 17\n7. Concerns arising out of\nBihar Land Mutation Act, 2011\n......................... 24\n8. Dichotomy between registration and title. .............................................. 28\n 8.1 Existing legal structure. ....................................................................................................... 28\n 8.2 The problems relating to the legal structure. ...................................................................... 28\n 8.3\n\nTechnological possibilities. ................................................................................................... 30\n 8.4\n1. Introduction. 2. The constitutionally protected right to own immovable\n\nproperty inherently includes the freed",
+    "legal_issues": "We have to immediately observe and affirm the trite principle, as argued by the learned\n\ncounsel for petitioners and not disputed by the State, that the 'Holding' or 'Jamabandi' recorded\nin a register maintained by the State or its authorities, does not necessarily confer title on the\n\n(ii) That arguments of the writ petitioners are mutually\n destructive, wherein on the one hand it is contended that\n revenue entries confer no title and yet on the other hand, their\n grievance is that the amendment empowers the registering\n authorities to adjudicate on question of title. 5\n(iii) That if there is an absence of jamabandi or holding\n allotment by reason of an ongoing survey process in the State,\n then it is for the individual owners to approach the appropriate\n forum for the same. 6\n(iv) That the provisions of the Act taken together mandate a\n clear description of the property for purpose of registration and\n the impugned amendments fall right within the ambit of this\n requirement. 7\n\nperson whose name is entered in the register; on which if a dispute arises will have to be\nadjudicated by a court of law. 8. On behalf of the appellants, we heard Mr. Manan Kumar\n\nMishra, Senior Advocate and Mr. A. Velan, AOR. They made\n\ndetailed submissions on the impugned amendments and have also\n\nbrought to our notice certain precedents that have a direct bearing\n\non the issue arising for consideration, including the recent\n\n8 “16. Now, we have to deal with Section 69, which empowers the Inspector",
+    "ratio_summary": "Section 55\nin particular\n\ndetails the indexes and the contents to be maintained by the\n\nSection 54\nCurrent indexes and entries therein.—In every office in which any of the books\n\nhereinbefore mentioned are kept, there shall be prepared current indexes of the contents of\nsuch books; and every entry in such indexes shall be made, so far as practicable, immediately\nafter the registering officer has copied, or filed a memorandum of, the document to which it\nrelates.\n\nregistering officers. 21 There shall be four indexes; Index I contains\n\nthe names of all persons executing and persons claiming under the\n\ndocument, Index II shall contain particulars in\nSection 21\nand as\n\nprescribed by the Inspector-General from time to time, similar\n\nprescriptions are provided for Indexes III and IV. It is imperative to\n\nnote that the question of particulars to be filled in respective\n\nIndexes comes in at a stage succeeding the registration process\n\nand not at a stage prior it.",
+    "final_order": "",
+    "outcome_summary": "Allowed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

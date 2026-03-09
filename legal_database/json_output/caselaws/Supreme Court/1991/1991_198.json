@@ -1,0 +1,107 @@
+{
+  "case_id": "SC_1991_1991_198",
+  "case_name": "Bal Kishan Das vs P.C. Nayar",
+  "normalized_case_name": "BAL_KISHAN_DAS_VS_P.C._NAYAR",
+  "court": "Supreme Court of India",
+  "year": "1991",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "26 March 1991",
+  "judges": [
+    "S.R. Pandian",
+    "ORDER",
+    "S. Ratnavel Pandian, J."
+  ],
+  "author": "S. Ratnavel Pandian",
+  "bench_type": "constitution",
+  "petitioner": "Bal Kishan Das",
+  "respondent": "P.C. Nayar",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 3,
+  "cited_by_count": 37,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1991SC1531",
+    "1991CRILJ1837",
+    "1991SUPP(2)SCC412",
+    "AIR 1991 SUPREME COURT 1531",
+    "1991 AIR SCW 1353",
+    "1992 UP CRIR 187",
+    "1991 (2) SCC(SUPP) 412",
+    "1991 APLJ(CRI) 310",
+    "1991 SCC(CRI) 1055",
+    "1991 CRILR(SC MAH GUJ) 891",
+    "1991 SCC (SUPP) 2 412",
+    "(1991) 3 RECCRIR 374",
+    "(1992) 1 CURCRIR 350",
+    "(1991) 2 APLJ 34",
+    "(1992) 2 CHANDCRIC 79",
+    "(1991) 72 CUT LT 654"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1991\\1991_198.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1991_1991_198_P001_C01",
+      "text": "2. This appeal is directed against the order of the High Court dated 13th December, 1985 dismissing the application filed under\nSection 482\nof the CrPC by the petitioner for quashing the proceedings taken against him for offence punishable under\nSection 406\nof the Indian Penal Code.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 406"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1991_1991_198_P002_C01",
+      "text": "3. It appears from the records that there was an arbitration agreement between the petitioner and the respondent in the year 1971 for procurement of paddy'. One of the clauses of the agreement was that a shortage to the extent of 1.25 kgs. per. qtl. of 'paddy' procured should be permitted and beyond that shortage the petitioner would be liable for payment of penalty at the rates prescribed in the agreement. According to the respondent on a joint physical verification by the Magistrate; Civil Supplies Staff and Food Corporation Staff on 1st November, 1972 a heavy shortage of 206.10 qutls. of 'paddy 'and 116-78.600 qtls. of rice out of a total quantity of 23,197.40 qtls. of 'paddy' procured during 1971 -72 was found in the stock of paddy and rice with the petitioner. In respect of this shortage the Food Corporation of India represented through its District Manager, Food Corporation of India filed an arbitration application on 30th October, 1973, which proceedings, it is stated, were pending in Arbitration Case No. 39 of 1973. Neither of the counsel is in a position to say as at what stage the proceedings stand.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1991_1991_198_P002_C02",
+      "text": "Be that as it may, the respondent filed a report in connection of this matter before the police stating that the petitioner has committed an offence under\nSection 409\nof the Indian Penal Code. A case was registered and referred to the Vigilance Department on 3rd March, 1976. On the final report submitted by the Vigilance Department the case was dropped. Thereafter, on an application filed by the respondent the case was taken on the file of Chief Judicial Magistrate under\nSection 406\nof the Indian Penal Code and summons was issued to the petitioner. Challenging the order of the Magistrate, taking cognizance of the offence and issuing summons, the petitioner preferred an application before the High Court under\nSection 482\nof the CrPC. The High Court after hearing the parties passed the impugned order, the relevant portion of which reads as follows:\nAt this stage it is difficult to entertain the contention that the liability, if any, is purely of a civil nature. Reading the complaint petition, it cannot be said that the essential ingredients of\nSection 406\n, l.P. C. have not been alleged. This could ultimately be a matter to be thrashed in the trial.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 409",
+        "IPC 406"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1991_1991_198_P003_C01",
+      "text": "4. After hearing the counsel for both the parties and perusing the documents, we are of the opinion that this matter is purely of a civil nature. As pointed out earlier there was an arbitration proceedings and further the matter is pending for more than 17 years. Having regard to all the circumstances, particularly that the matter is purely of a civil nature, we feel that it is a fit case in which the proceedings taken by the Chief Judicial Magistrate are to be quashed. Accordingly, the entire proceedings now pending on the file of the Chief Judicial Magistrate, Ganjam are quashed. The appeal is accordingly allowed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Bal Kishan Das vs P.C. Nayar",
+    "case_id": "SC_1991_1991_198",
+    "court": "Supreme Court of India",
+    "year": "1991",
+    "facts_summary": "Be that as it may, the respondent filed a report in connection of this matter before the police stating that the petitioner has committed an offence under\nSection 409\nof the Indian Penal Code. A case was registered and referred to the Vigilance Department on 3rd March, 1976. On the final report submitted by the Vigilance Department the case was dropped. Thereafter, on an application filed by the respondent the case was taken on the file of Chief Judicial Magistrate under\nSection 406\nof the Indian Penal Code and summons was issued to the petitioner. Challenging the order of the Magistrate, taking cognizance of the offence and issuing summons, the petitioner preferred an application before the High Court under\nSection 482\nof the CrPC. The High Court after hearing the parties passed the impugned order, the relevant portion of which reads as follows:\nAt this stage it is difficult to entertain the contention that the liability, if any, is purely of a civil nature. Reading the complaint petition, it cannot be said that the essential ingredients of\nSection 406\n, l.P. C. have not been alleged. This could ultimately be a matter to be thrashed in the trial.",
+    "legal_issues": "3. It appears from the records that there was an arbitration agreement between the petitioner and the respondent in the year 1971 for procurement of paddy'. One of the clauses of the agreement was that a shortage to the extent of 1.25 kgs. per. qtl. of 'paddy' procured should be permitted and beyond that shortage the petitioner would be liable for payment of penalty at the rates prescribed in the agreement. According to the respondent on a joint physical verification by the Magistrate; Civil Supplies Staff and Food Corporation Staff on 1st November, 1972 a heavy shortage of 206.10 qutls. of 'paddy 'and 116-78.600 qtls. of rice out of a total quantity of 23,197.40 qtls. of 'paddy' procured during 1971 -72 was found in the stock of paddy and rice with the petitioner. In respect of this shortage the Food Corporation of India represented through its District Manager, Food Corporation of India filed an arbitration application on 30th October, 1973, which proceedings, it is stated, were pend",
+    "ratio_summary": "",
+    "final_order": "4. After hearing the counsel for both the parties and perusing the documents, we are of the opinion that this matter is purely of a civil nature. As pointed out earlier there was an arbitration proceedings and further the matter is pending for more than 17 years. Having regard to all the circumstances, particularly that the matter is purely of a civil nature, we feel that it is a fit case in which the proceedings taken by the Chief Judicial Magistrate are to be quashed. Accordingly, the entire proceedings now pending on the file of the Chief Judicial Magistrate, Ganjam are quashed. The appeal is accordingly allowed.",
+    "outcome_summary": "4. After hearing the counsel for both the parties and perusing the documents, we are of the opinion that this matter is purely of a civil nature. As pointed out earlier there was an arbitration proceedings and further the matter is pending for more than 17 years. Having regard to all the circumstances, particularly that the matter is purely of a civil nature, we feel that it is a fit case in which",
+    "sections_cited": [
+      "IPC 406",
+      "IPC 409"
+    ],
+    "cases_cited": []
+  }
+}

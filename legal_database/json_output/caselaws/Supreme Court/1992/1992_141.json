@@ -1,0 +1,80 @@
+{
+  "case_id": "SC_1992_1992_141",
+  "case_name": "Ramu Alias Ram Kumar And Others vs Jagannath",
+  "normalized_case_name": "RAMU_ALIAS_RAM_KUMAR_AND_OTHERS_VS_JAGANNATH",
+  "court": "Supreme Court of India",
+  "year": "1992",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "4 February 1992",
+  "judges": [
+    "R.C. Patnaik",
+    "JUDGMENT"
+  ],
+  "author": "R.C. Patnaik",
+  "bench_type": "division",
+  "petitioner": "Ramu Alias Ram Kumar And Others",
+  "respondent": "Jagannath",
+  "reporter_citations": [],
+  "outcome": "set aside",
+  "disposition": "set_aside",
+  "cites_count": 3,
+  "cited_by_count": 67,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1994SC26",
+    "1994CRILJ66",
+    "AIR 1994 SUPREME COURT 26",
+    "1993 AIR SCW 3861",
+    "1994 CRI. L. J. 66",
+    "1993 ALL. L. J. 1298",
+    "1995 SCC(CRI) 181"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1992\\1992_141.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1992_1992_141_P001_C01",
+      "text": "1. The appellants were tried by the Assistant Sessions Judge, Aligarh for an offence punishable under Section 326 read with\nSection 34\n, I.P.C and were sentenced to undergo rigorous imprisonment for five years. On appeal the learned Sessions Judge allowed and set aside the conviction and sentences. Against the said order of acquittal complainant filed revision before the High Court. The High Court by the impugned order set aside the order of acquittal passed by the appellate court while exercising the revisional jurisdiction and remanded the hearing of the appeal to the District and Sessions Judge at Mathura. The High Court interfered in the revision against the acquittal on the ground that the Sessions Judge dictated only the operative portion of the order, allowing the appeal, acquitting the accused on 8th April, 1978 and that is contrary to\nSection 353\nCr.P.C. It appears that the High Court called for an explanation and the learned Sessions Judge sent the explanation. The High Court has not gone into the merits of the case while setting aside the order of acquittal passed by the appellate court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1992_1992_141_P001_C02",
+      "text": "It may not be necessary for the purpose of this case to go into the scope of\nSection 353",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1992_1992_141_P002_C01",
+      "text": ", Cr. P.C of 1973. What we are concerned is whether the revisional court was justified in interfering in the revision filed by the private party against an order of acquittal.\n2. It is well settled that the revisional jurisdiction conferred on the High Court should not be lightly exercised particularly when it has invoked by a private complaint. This Court in number of cases has reiterated this view. In the instant case the occurrence is said to have taken place some time prior to 1977. We are not satisfied with the reason on which the High Court has interfered in the said revision. The question is whether the matter is to be sent back to the High Court so that the High Court could go into the merits in the revision. After a long lapse of time i.e. nearly one and a half decade, we do not propose to confirm the order of the High Court with regard to remanding the appeal to the Sessions Court for the purpose of hearing the same once again. Accordingly, we set aside the order of the High Court and allow the appeal. In the result, the order of acquittal passed by the learned Additional Sessions Judge stands.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Ramu Alias Ram Kumar And Others vs Jagannath",
+    "case_id": "SC_1992_1992_141",
+    "court": "Supreme Court of India",
+    "year": "1992",
+    "facts_summary": "",
+    "legal_issues": "1. The appellants were tried by the Assistant Sessions Judge, Aligarh for an offence punishable under Section 326 read with\nSection 34\n, I.P.C and were sentenced to undergo rigorous imprisonment for five years. On appeal the learned Sessions Judge allowed and set aside the conviction and sentences. Against the said order of acquittal complainant filed revision before the High Court. The High Court by the impugned order set aside the order of acquittal passed by the appellate court while exercising the revisional jurisdiction and remanded the hearing of the appeal to the District and Sessions Judge at Mathura. The High Court interfered in the revision against the acquittal on the ground that the Sessions Judge dictated only the operative portion of the order, allowing the appeal, acquitting the accused on 8th April, 1978 and that is contrary to\nSection 353\nCr.P.C. It appears that the High Court called for an explanation and the learned Sessions Judge sent the explanation. The High Court",
+    "ratio_summary": "",
+    "final_order": ", Cr. P.C of 1973. What we are concerned is whether the revisional court was justified in interfering in the revision filed by the private party against an order of acquittal.\n2. It is well settled that the revisional jurisdiction conferred on the High Court should not be lightly exercised particularly when it has invoked by a private complaint. This Court in number of cases has reiterated this view. In the instant case the occurrence is said to have taken place some time prior to 1977. We are not satisfied with the reason on which the High Court has interfered in the said revision. The question is whether the matter is to be sent back to the High Court so that the High Court could go into the merits in the revision. After a long lapse of time i.e. nearly one and a half decade, we do not p",
+    "outcome_summary": "Set aside. , Cr. P.C of 1973. What we are concerned is whether the revisional court was justified in interfering in the revision filed by the private party against an order of acquittal.\n2. It is well settled that the revisional jurisdiction conferred on the High Court should not be lightly exercised particula",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

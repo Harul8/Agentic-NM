@@ -1,0 +1,474 @@
+{
+  "case_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA",
+  "case_name": "Vijay vs Union Of India",
+  "normalized_case_name": "VIJAY_VS_UNION_OF_INDIA",
+  "court": "Supreme Court of India",
+  "year": "2023",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 4910 of 2023",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "29 November 2023",
+  "judges": [
+    "Sanjay Karol",
+    "Abhay S. Oka"
+  ],
+  "author": "Sanjay Karol",
+  "bench_type": "division",
+  "petitioner": "Vijay",
+  "respondent": "Union Of India",
+  "reporter_citations": [
+    "2023 INSC 1030"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 35,
+  "cited_by_count": 0,
+  "neutral_citation": "2023 INSC 1030",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2023\\NOV\\2023_NOV_10.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO. 4910 OF 2023\n\n VIJAY …Appellant(s)\n\n Versus\n\n UNION OF INDIA & ORS. ...Respondent(s)\n\n JUDGMENT\nSANJAY KAROL J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P002_C01",
+      "text": "1. The issues that arise for consideration of this Court in the\n present appeal are:\n1.1 Whether the bar of admissibility created by\nSection 35\nof the Indian Stamp Act 18991 applies to the\n\n 1-Civil Appeal No. 4910 of 2023\n agreement(s) to sell dated 04.02.1988 executed by the\n\n parties?\n1.2 Can a copy of a document be adduced as secondary\n\n evidence when the original instrument is not in\n\n possession of the party?\n1.3 Whether, in the facts of the present case, would the\n\n decision of this Court in Jupadi Kesava Rao v.\nPulavarthi Venkata Subha Rao2 be binding as held by\n\n both the Courts below?\nFACTUAL MATRIX",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P003_C01",
+      "text": "2. Plaintiff and Defendant entered into an agreement to sell on\n\n 04.02.1998, and pursuant to that, Plaintiff was allegedly put\n\n in possession by Defendant. When Defendant denied the\n\n existence of such an agreement, Plaintiff filed a suit for\n\n specific performance of contract. In the said suit, Plaintiff\n\n moved an application to file a copy of the agreement to sell,\n\n among other documents, as secondary evidence.\n\n(1971) 1 SCC 545 (2-Judge Bench)\n\n 2-Civil Appeal No. 4910 of 2023\n3. Initially, the said application was allowed by the 4th\n\n Additional District Judge vide order dated 17.07.2001. But\n\n when Defendant sought review of this order, the Court vide\n\n its order dated 16.12.2003 reviewed it and held that\n\n secondary evidence of an agreement to sell could not be\n\n allowed as it was not executed on a proper stamp, thus\n\n barred under\nsection 35\nof the Stamp Act. While holding so,\n\n it relied on the decision of this Court in Jupadi Kesava Rao\n\n (supra).",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P004_C01",
+      "text": "4. Subsequently, the Plaintiff filed a writ petition before the High\n\n Court of Madhya Pradesh challenging the review order and\n\n the constitutional validity of\nSection 35\nof the Stamp Act. The\n\n High Court, vide the impugned order dated 30.11.2009 in\n\n W.P. No. 741/2004, upheld the validity of the said section\n\n and the order of the Review Court.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P005_C01",
+      "text": "5. The present appeal is preferred against this order of the High\n\n Court.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P006_C01",
+      "text": "6. Learned Senior Counsel Dr. Menaka Guruswamy, for the\n\n Appellant-Plaintiff, submits that the prohibition of\nSection 35\nof the Stamp Act is not applicable as there was no\n\n requirement for either party to have paid stamp duty at the\n\n 3-Civil Appeal No. 4910 of 2023\n time of execution (before the 1989 Amendment) of the\n\n agreement to sell. Thus, the Plaintiff ought to have been\n\n permitted to lead a copy of the agreement to sell as secondary\n\n evidence under\nSection 65\nof the Evidence Act.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P007_C01",
+      "text": "7. Respondent no.2/Defendant, in its counter affidavit, has\n\n stated that a copy of an original document that is unstamped\n\n or deficiently stamped can neither be impounded nor\n\n validated or admitted as secondary evidence. Once the\n\n original document is inadmissible under the\nStamp Act\n, the\n\n photocopy or any other copy cannot be allowed as secondary\n\n evidence. ISSUE 1\n8.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P007_C02",
+      "text": "To adjudicate this issue, it is pertinent to reproduce\nSection\n\nof the Stamp Act:\n\"\nSection 35-\nInstruments not duly stamped inadmissible in\n evidence, etc. - No instrument chargeable with duty shall be\n admitted in evidence for any purpose by any person having by law\n or consent of parties authority to receive evidence, or shall be acted\n upon, registered or authenticated by any such person or by any\n public officer, unless such instruments are duly stamped:\nProvided that-\n(a) any such instrument (shall] be admitted in evidence on\n payment of the duty with which the same is chargeable or, in the\n case of an instrument insufficiently stamped, of the amount\n required to make up such duty, together with a penalty of five\n rupees, or, when ten times the amount of the proper duty or\n deficient portion thereof exceeds five rupees, of a sum equal to ten\n times such duty or portion;\nxxxx”\n\n 4-Civil Appeal No. 4910 of 2023\n9.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P007_C03",
+      "text": "It is evident from a bare perusal of the section that it prohibits\n\n admission in evidence of instruments that are chargeable\n\n with duty unless they are \"duly stamped.\" Duly stamped as\n\n defined under\nSection 2(11)\nof the Stamp Act means that the\n\n instrument bears a stamp and that such stamp has been\n\n affixed or used in accordance with law for the time being in\n\n force in India.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P008_C01",
+      "text": "10. Further, it is required to consider when the document\n\n becomes chargeable with duty—during its execution or when\n\n it is produced before the Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P009_C01",
+      "text": "11. The word 'chargeable,' as defined under\nSection 2(6)\n,\n\n means chargeable under the Act in force at the date of the\n\n execution of the instrument. The crucial date which\n\n determines the law in force is the date of execution of the\n\n instrument, and the stamp duty is to be charged with\n\n reference to the date of execution. For stamp duty, the\n\n relevant date is the date of execution and not the date of\n\n adjudication or the date of presentation and registration of\n\n the document.\n5-Civil Appeal No. 4910 of 2023\n12. Entry 44 of List III of the Constitution of India is Stamp\n\n duties other than duties or fees collected by means of judicial\n\n stamps, but not including rates of stamp duty. Under Entry\n\n 44 of List III, the power to levy stamp duty on all documents\n\n is concurrent. But the power to prescribe “the rate” of such\n\n levy is with the Parliament and subjected to the same with\n\n the State Legislature. The State Legislature is competent to\n\n levy the stamp duty under Entry 44 of List III and prescribe\n\n rates of duty under Entry 63 of List II.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P010_C01",
+      "text": "13. However, if the instrument falls under the categories\n\n mentioned in Entry 91 of List I, the power to prescribe the\n\n rate would be only with the Parliament, and for all other\n\n instruments or documents, such power would be with the\n\n State legislature under Entry 63 of List II.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P011_C01",
+      "text": "14. Instruments chargeable with duty is defined under\nSection 3\nof the Act, which denotes that every instrument\n\n mentioned in the Schedule, subject to exceptions or\n\n exemptions, shall be chargeable with duty of the amount\n\n which is indicated in that Schedule as the proper duty\n\n thereof. From time to time, amendments have been carried\n\n out in the\nStamp Act\n, and Schedule I-A, as applicable to the\n\n 6-Civil Appeal No. 4910 of 2023\n State of Madhya Pradesh, was inserted.3 This Schedule\n\n specifies the stamp duty that must be paid on specific\n\n instruments. Importantly, instruments not mentioned in the\n\n Schedule are not subject to duty.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P012_C01",
+      "text": "15. Article 23\nof Schedule 1\nA of the Stamp Act\ndeals with\n\n conveyances. The definition of “conveyance” is contained in\nSection 2(10)\nof the Stamp Act which reads as under:\n“(10) ‘Conveyance.'—'Conveyance' includes a\n conveyance on sale and every instrument by which\n property, whether movable or immovable, is transferred\n inter vivos and which is not otherwise specifically provided\n for by Schedule I;”\n\n At the time of execution of an agreement to sell (1988),\n\n the conveyance was subjected to stamp duty and\nArticle 23\nstood as:\n“23. Conveyance, not being a transfer charges or exempted\n under Article No.62: Where market of the property which is\n the subject matter of conveyance-\ndoes not exceed Rs. 50 Four percent of such market\n value subject to a minimum of\n One Rupee\n does not exceed Rs. Seven percent of such market\n 10,000 value\n exceed Rs. 10,000 Seven and half percent of such\n market value.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P012_C02",
+      "text": "Provided that if the total\n amount of the duty payable is\n not a multiple of fifty paisa it\n\nThe Central Provinces and Berar Indian Stamp (Amendment) Act, 1939\n\n 7-Civil Appeal No. 4910 of 2023\n shall be rounded off to the\n nearest rupee half of a rupee or\n over being counted as one\n rupee and less than half a\n rupee being disregarded.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P013_C01",
+      "text": "16. Article 23\nwas substituted vide M.P. Amendment Act No.\n\n 19 of 19894 and stood as:\nSeven and half percent of\n “Article 23. Conveyance, such market value:\nnot being a transfer\n charged or exempted Provided that if the total\n under No.62 irrespective of amount of the duty payable is\n the market value of the not a multiple of fifty paise,\n property which is the nearest rupee half of a rupee\n subject matter of or over being counted as one\n conveyance rupee and less than half of a\n rupee being disregarded.\nExemptions\n\n xxx”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P014_C01",
+      "text": "17. Further, an Explanation was inserted into this Article\n\n vide M.P. Amendment Act No. 22 of 19905,\n\n \"Explanation.- For the purpose of this Article, where in the\n case of agreement to sell immovable property, the possession\n of any immovable property is transferred to the purchaser\n before execution or after execution of such agreement\n without executing the conveyance in respect thereof, then\n such agreement to sell shall be deemed to be a conveyance\n and stamp duty thereon shall be levied accordingly:\nxxx”\n\n4 The Indian Stamp (Madhya Pradesh Amendment) Act, 1989\n5 The Indian Stamp (Madhya Pradesh Second Amendme\n\nnt) Act, 1990\n\n 8-Civil Appeal No. 4910 of 2023\n18. The sub-issue that the Court is confronting is whether\n\n an agreement to sell, handing over possession prior to the\n\n amendment brought in the year 1989 or 1990, is a\n\n conveyance so as to be covered under\nArticle 23\nas existing\n\n on the date of execution of the agreement(s). On this aspect\n\n we may only observe that the causal amendment was brought\n\n in only in 1990, i.e., prior to the transaction in question. And\n\n a three-judge Bench of this Court in\nSuraj Lamp and\n\n Industries Pvt. Ltd. v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P014_C02",
+      "text": "State of Haryana6\nin considering the\n\n scope of an agreement to sell observed thus:\n“18. It is thus clear that a transfer of immovable property by\n way of sale can only be by a deed of conveyance (sale deed). In the absence of a deed of conveyance (duly stamped and\n registered as required by law), no right, title, or interest in an\n immovable property can be transferred.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P015_C01",
+      "text": "19. Any contract of sale (agreement to sell) which is not a\n registered deed of conveyance (deed of sale) would fall short\n of the requirements of\nSections 54\nand\n\nof the T.P. Act and\n will not confer any title nor transfer any interest in an\n immovable property (except to the limited right granted\n under\nSection 53-A\nof the T.P. Act). According to the T.P. Act,\n an agreement of sale, whether with possession or without\n possession, is not a conveyance.\nSection 54\nof the T.P. Act\n enacts that sale of immovable property can be made only by\n a registered instrument and an agreement of sale does not\n create any interest or charge on its subject-matter.”\n\n (Emphasis supplied)\n\n(2012) 1 SCC 656\n\n 9-Civil Appeal No. 4910 of 2023\n19. The decision stand considered in\nG.T. Girish v. Y.\n\n Subba Raju7\n, and relied upon in\nGhanshyam Sarda v. J.K.\n\n Jute Mills Co. Ltd.8\n, without any change.\nThis principle was\n\n recently restated in Munishamappa v M.Rama Reddy &\n\n Ors.9\n20. It be observed that now, in many states, amendments\n\n were brought in whereby agreements of sale acknowledging\n\n delivery of possession are charged with the same duty as\n\n leviable on conveyance.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P016_C01",
+      "text": "21. Now the question arises if we can retrospectively read\n\n the Explanation added vide M.P. Act 22 of 1990 so as to apply\n\n to an agreement to sell executed on 04.02.1988.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P017_C01",
+      "text": "22. A Two-Judge bench of this Court10 while culling out the\n\n principles on the role of a clarification/explanation to a\n\n statute and how the same is identified and distinguished\n\n from a substantive amendment, observed that only because\n\n a provision is described as a clarification or explanation, the\n\n Court is not bound by the said statement, but must analyze\n\n the nature of the amendment so as to conclude whether it is,\n\n(2022) 12 SCC 321\n8 (2017) 1 SCC 599\n\nCivil Appeal No. 10327 Of 2011\n\n2023 SCC OnLine SC 640\n\n 10-Civil Appeal No. 4910 of 2023\n indeed, a clarificatory or declaratory provision or whether it\n\n is a substantive amendment which is intended to change the\n\n law and which would apply prospectively.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P018_C01",
+      "text": "23. The mere description of a provision as an \"Explanation\n\n \" or \"clarification\" does not determine its actual effect. On\n\n this aspect, this Court in\nVirtual Soft Systems Ltd. vs.\n\n Commissioner of Income Tax, Delhi11\nobserved as follows:\n“Even if the statute does contain a statement to the effect\n that the amendment is declaratory or clarificatory, that is\n not the end of the matter. The Court will not regard itself\n as being bound by the said statement in the statute itself,\n but will proceed to analyse the nature of the amendment\n and then conclude whether it is in reality a clarificatory or\n declaratory provision or whether it is an amendment which\n is intended to change the law and which applies to future\n periods.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Court in\nVirtual Soft Systems Ltd v Commissioner of Income Tax, Delhi11"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P019_C01",
+      "text": "24. Govind Das v. ITO12\n, this Court has observed that:\n“11. Now it is a well-settled rule of interpretation hallowed\n by time and sanctified by judicial decisions that, unless\n the terms of a statute expressly so provide or necessarily\n require it, retrospective operation should not be given to a\n statute so as to take away or impair an existing right or\n create a new obligation or impose a new liability otherwise\n than as regards matters of procedure. The general rule, as\n stated by Halsbury in Vol. 36 of the Laws of England (3rd\n Edn.) and reiterated in several decisions of this Court as\n well as English courts, is that\n “all statutes other than those which are merely declaratory\n or which relate only to matters of procedure or of evidence\n are prima facie prospective”\n\n(2007) 9 SCC 665\n\n(1976) 1 SCC 906\n\n 11-Civil Appeal No. 4910 of 2023\n and If the enactment is expressed in language which is fairly\n capable of either interpretation, it ought to be construed as\n prospective only.”\n\n (Emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P020_C01",
+      "text": "25. A Constitution Bench of this Court in\nCIT v. Vatika\n\n Township (P) Ltd.13\nreiterated this principle that the\n\n amendments that create rights and obligations are generally\n\n prospective in nature. It is a well-established principle of law\n\n that clarification or Explanation must not have the effect of\n\n imposing an unanticipated duty or depriving a party of an\n\n anticipated benefit.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P021_C01",
+      "text": "26. Hence, in our considered view, the Explanation inserted\n\nArticle 23\nof Schedule I-A contained in the Act creates a\n\n new obligation for the party and, therefore, cannot be given\n\n retrospective application. Thus, it will not affect the\n\n agreement(s) executed prior to such amendments.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P022_C01",
+      "text": "27. The object of the\nStamp Act\nis to collect proper stamp\n\n duty on an instrument or conveyance on which such stamp\n\n duty is payable.\nSection 35\nis a provision to cater for the\n\n instruments not being properly stamped and, as such, not\n\n being admissible in evidence. A document not duly stamped\n\n13 (2015) 1 SCC 1\n\n 12-Civil Appeal No. 4910 of 2023\n cannot be admitted for any purposes. To impose the bar of\n\n admissibility provided under this section, the following twin\n\n conditions are required to be fulfilled:\n(i) Instrument must be chargeable with duty;\n(ii) It is not duly stamped.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P023_C01",
+      "text": "28. If the documents sought to be admitted are not\n\n chargeable with duty,\nSection 35\nhas no application. Thus,\n\n in the present case, since the document was dated\n\n 04.02.1988, the instrument was not chargeable with duty. It\n\n follows therefrom that when such document(s) are not\n\n required to be stamped, then no bar could be imposed due to\n\n it being not duly stamped.\nISSUE II & III",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P024_C01",
+      "text": "29. Plaintiff claims in the application that after executing\n\n the document, Defendant kept the original copy, and a\n\n photocopy of the same was given to Plaintiff. However, as per\n\n the averments made in the application, the Defendant had\n\n stated in an affidavit that the documents were not with her\n\n but with her counsel.\n13-Civil Appeal No. 4910 of 2023\n30. Before proceeding with the discussion, it is imperative to\n\n reproduce the relevant provisions of the\nEvidence Act\nand discuss\n\n the law relating to secondary evidence:\n\"\nSection 61-\nProof of contents of documents- The\n contents of documents may be proved either by primary\n or by secondary evidence. Section 63-Secondary evidence.-Secondary evidence\n means and includes-\n(1) certified copies given under the provisions\n hereinafter contained;\n(2) copies made from the original by mechanical\n processes which in themselves insure the accuracy of\n the copy, and copies compared with such copies;\n (3) copies made from or compared with the original;\n (4) counterparts of documents as against the parties\n who did not execute them; (5) oral accounts of the\n contents of a document given by some person who has\n himself seen it.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P024_C02",
+      "text": "Section 65-\nCases in which secondary evidence relating\n to documents may be given.-Secondary evidence may\n be given of the existence, condition, or contents of\n a document in the following cases-\n(a) When the original is shown or appears to be in\n the possession or power-\nof the person against whom the document is sought\n to be proved, or of any person out of reach of, or not\n subject to, the process of the Court, or\n of any person legally bound to produce it,\n and when, after the notice mentioned in\nSection 66\n,\n such a person does not produce it;\n(b) when the existence, condition or contents of the\n original have been proved to be admitted in writing by\n the person against whom it is proved or by his\n representative in interest;\n(c) when the original has been destroyed or lost, or when\n the party offering evidence of its contents cannot, for\n any other reason not arising from his own default or\n neglect, produce it in reasonable time;\n(d) when the original is of such a nature as not to be\n easily movable;\n(e) when the original is a public document within the\n meaning of\nSection 74\n;\n14-Civil Appeal No. 4910 of 2023\n(f) when the original is a document of which a certified\n copy",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P024_C03",
+      "text": "is permitted by this Act, or by any other law in\n force in 91[India], to be given in evidence;92\n(g) when the originals consist of numerous accounts or\n other documents which cannot conveniently be\n examined in Court, and the fact to be proved is the\n general result of the whole collection.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P024_C04",
+      "text": "In cases (a), (c) and (d), any secondary evidence of the\n contents of the document is admissible. In case (b), the written admission is admissible. In case (e) or (f), a certified copy of the document, but\n no other kind of secondary evidence, is admissible. In case (g), evidence may be given as to the general\n result of the documents by any person who has\n examined them, and who is skilled in the examination\n of such documents.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P025_C01",
+      "text": "31. Primary and Secondary Evidence stands explained by a\n\n Constitutional Bench of this Court in\nCement Corpn. of India\n\n Ltd. v. Purya,14 (5-Judge Bench\n) as the former being evidence\n\n that the law requires to be given first, the latter being evidence\n\n that may be given in the absence of that original evidence when a\n\n proper explanation of its absence has been given. The terms\n\n \"primary and secondary evidence\" apply to the kinds of proof that\n\n may be given to the contents of a document, irrespective of the\n\n purpose for which such contents, when proved, may be received.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P026_C01",
+      "text": "32. Section 63\nof the Evidence Act gives an exhaustive definition\n\n declaring that secondary evidence \"means and includes\" the five\n\n kinds of evidence mentioned therein.\nSection 65\nof the Evidence\n\n(2004) 8 SCC 270\n\n 15-Civil Appeal No. 4910 of 2023\n Act allows secondary evidence to be given of the existence,\n\n condition, or contents of documents under the circumstances\n\n therein mentioned. It provides for the circumstances in which\n\n secondary evidence can be used when the original document is\n\n unavailable or inaccessible. It is imperative to adhere to the\n\n principles outlined in these sections, including the proper\n\n documentation and authentication, to successfully produce\n\n secondary evidence in legal proceedings.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P027_C01",
+      "text": "33. After perusing various judgments of this Court, we can\n\n deduce the following principles relevant for examining the\n\n admissibility of secondary evidence:\n33.1 Law requires the best evidence to be given first, that is,\n\n primary evidence.15\n\n 33.2\nSection 63\nof the Evidence Act provides a list of the\n\n kinds of documents that can be produced as secondary\n\n evidence, which is admissible only in the absence of\n\n primary evidence.16\n\n 33.3 If the original document is available, it has to be\n\n produced and proved in the manner prescribed for\n\nNeeraj Dutta v. State (NCT of Delhi) (5-Judge Bench\n) (2023) 4 SCC 731;\nYashoda v. K. Shobha Rani (2-Judge Bench\n) (2007) 5\nSCC 730\n\nYashoda\n(supra)\n\n 16-Civil Appeal No. 4910 of 2023\n primary evidence. So long as the best evidence is within\n\n the possession or can be produced or can be reached,\n\n no inferior proof could be given.17\n\n 33.4 A party must endeavor to adduce primary evidence of\n\n the contents, and only in exceptional cases will\n\n secondary evidence be admissible.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P027_C02",
+      "text": "The exceptions are\n\n designed to provide relief when a party is genuinely\n\n unable to produce the original through no fault of that\n\n party.18\n\n 33.5 When the non-availability of a document is sufficiently\n\n and properly explained, then the secondary evidence\n\n can be allowed.19\n\n 33.6 Secondary evidence could be given when the party\n\n cannot produce the original document for any reason\n\n not arising from his default or neglect.20\n\n 33.7 When the copies are produced in the absence of the\n\n original document, they become good secondary\n\n evidence. Still, there must be foundational evidence that\n\n the alleged copy is a true copy of the original.21\n\nYashoda\n(supra)\n\nM. Chandra v. M. Thangamuthu (2-Judges Bench) (2010) 9\nSCC 712\n\nNeeraj Dutta\n(supra)\n\nSurendra Krishna Roy v. Muhammad Syed Ali Matwali Mirza\n1935 SCC OnLine PC 56\n\nH. Siddiqui v. A.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P027_C03",
+      "text": "Ramalingam, (2-Judge Bench) (2011) 4 SCC 240\n\n 17-Civil Appeal No. 4910 of 2023\n 33.8 Before producing secondary evidence of the contents of\n\n a document, the non-production of the original must be\n\n accounted for in a manner that can bring it within one\n\n or other of the cases provided for in the section.22\n\n 33.9 Mere production and marking of a document as an\n\n exhibit by the Court cannot be held to be due proof of\n\n its contents.23 It has to be proved in accordance with the\n\n law.24\n34. A reading of\nSection 65(a)\nof the Evidence Act displays\n\n the following:\na. Secondary evidence can be presented as a substitute\n\n when the original document/ primary evidence is in the\n\n possession of the opposing party or held by a third party;\nb. Such a person refuses to produce the document even\n\n after due notice,\n\n c. It must be ensured that the alleged copy is a true copy of\n\n the original.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P028_C01",
+      "text": "35. Applying the constituents of\nSection 65 (a)\nof the\n\n Evidence Act to the present facts, in reference to the\n\nH. Siddiqui v. A. Ramalingam (2-Judges Bench) (2011) 4\nSCC 240\n\nNeeraj Dutta\n(supra)\n\nH. Siddiqui (supra)\n\n 18-Civil Appeal No. 4910 of 2023\n averments made, we find that the exact status of the\n\n documents in question could not be ascertained as one party\n\n claims that the other has the said documents and the other\n\n has allegedly stated that it was with her counsel. However,\n\n the said documents could not be recovered from the said\n\n counsel, as per records. In such a situation, therefore, the\n\n presentation of secondary evidence could be allowed, if other\n\n requirements are complied with.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P029_C01",
+      "text": "36. We may now consider\nSection 35\nof the Stamp Act which\n\n forbids the letting of secondary evidence in proof of its\n\n contents. The section excludes both the original instrument\n\n and secondary evidence of its contents if it needs to be\n\n stamped or sufficiently stamped. This bar as to the\n\n admissibility of documents is absolute. Where a document\n\n cannot be received in evidence on the ground that it is not\n\n duly stamped, the secondary evidence thereof is equally\n\n inadmissible in evidence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P030_C01",
+      "text": "37. In relation to secondary evidence of\n\n unstamped/insufficiently stamped documents, the position\n\n has been succinctly explained by this Court in Jupudi\n\n Kesava Rao (supra) wherein it dealt with an issue, i.e.,\n\n 19-Civil Appeal No. 4910 of 2023\nwhether reception of secondary evidence of a written\n\nagreement to grant a lease is barred by the provisions of\nSections 35\nand\n\nof the Stamp Act and answered it in\n\naffirmative. It observed:\n\"12.\nThe Indian Evidence Act\n, however, does not purport to deal\n with the admissibility of documents in evidence which require to\n be stamped under the provisions of the\nIndian Stamp Act\n.\n ……",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P031_C01",
+      "text": "13. The first limb of\nSection 35\nclearly shuts out from evidence any\n instrument chargeable with duty unless it is duly stamped. The\n second limb of it which relates to acting upon the instrument will\n obviously shut out any secondary evidence of such instrument, for\n allowing such evidence to be let in when the original admittedly\n chargeable with duty was not stamped or insufficiently stamped,\n would be tantamount to the document being acted upon by the\n person having by law or authority to receive evidence. Proviso (a)\n is only applicable when the original instrument is actually before\n the Court of law and the deficiency in stamp with penalty is paid\n by the party seeking to rely upon the document. Clearly secondary\n evidence either by way of oral evidence of the contents of the\n unstamped document or the copy of it covered by\nSection 63\nof the\n Indian Evidence Act would not fulfil the requirements of the\n proviso which enjoins upon the authority to receive nothing in\n evidence except the instrument itself.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P031_C02",
+      "text": "Section 25\nis not concerned\n with any copy of an instrument and a party can only be allowed to\n rely on a document which is an instrument for the purpose of\nSection 35\n. \"Instrument is defined in\nSection 2(14)\nas including\n every document by which any right or liability is, or purports to be\n created, transferred, limited, extended, extinguished or recorded. There is no scope for the inclusion of a copy of a document as an\n instrument for the purpose of the\nStamp Act\n. Section 35\nonly deals with original instruments and not copies,\nSection 36\ncannot be so interpreted as to allow secondary evidence\n of an instrument to have its benefit.”\n\n (Emphasis supplied)\n\n 20-Civil Appeal No. 4910 of 2023\n38. This Court, in\nHariom Agrawal v. Prakash Chand\n\n Malviya25\n, reiterated the principle\nlaid down in\nJudupi\n\n Kesava Rao (supra) and observed that:\n“10. It is clear from the decisions of this Court and a plain\n reading of\nSections 33\n,\n\nand\n2(14)\nof the Act that an\n instrument which is not duly stamped can be impounded\n and when the required fee and penalty has been paid for such\n instrument it can be taken in evidence under\nSection 35\n the Stamp Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P031_C03",
+      "text": "Sections 33\nor 35 are not concerned with any\n copy of the instrument and party can only be allowed to rely\n on the document which is an instrument within the meaning\nSection 2(14)\n. There is no scope for the inclusion of the\n copy of the document for the purposes of the\nStamp Act\n. Law\n is now no doubt well settled that copy of the instrument\n cannot be validated by impounding and this cannot be\n admitted as secondary evidence under the\nStamp Act, 1899\n.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P032_C01",
+      "text": "39. Thus, if a document that is required to be stamped is not\n\n sufficiently stamped, then the position of law is well settled\n\n that a copy of such document as secondary evidence cannot\n\n be adduced. The present facts, however, differ.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P033_C01",
+      "text": "40. The Trial Court and the High Court have relied on Jupadi\n\n Kesava Rao (supra) to hold that the Plaintiffs cannot lead\n\n secondary evidence as the document sought to be produced\n\n needed to be duly stamped. However, we find that Jupadi\n\n Kesava Rao (supra) is distinguishable on facts as the\n\n document which the Court was concerned with therein was\n\n(2007) 8 SCC 514\n\n 21-Civil Appeal No. 4910 of 2023\n one which was chargeable with duty, but in the case at hand,\n\n such is not the case, that is, the document to be produced is\n\n not one which was chargeable with duty at the time of its\n\n execution i.e., 04.02.1988. This being a material difference,\n\n the principle of law held in this case, correct as it may be, shall\n\n not apply to the instant case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P034_C01",
+      "text": "41. It is a settled position of law that where the question is\n\n whether the document is liable to stamp duty and penalty, it\n\n has to be decided at the threshold even before marking a\n\n document. In the present case, in view of the discussions\n\n above, the document in question was not liable to stamp\n\n duty.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P035_C01",
+      "text": "42. Thus, keeping in view the above-stated principle as well\n\n as the above-discussed case law and facts of the case, we are\n\n of the opinion that in the instant case, the Plaintiff's prayer for\n\n leading the secondary evidence ought to be allowed in so far\n\n as the documents sought to be introduced as secondary\n\n evidence be taken by the concerned Court and exhibited, with\n\n its admissibility being decided independently, in accordance\n\n with law under the\nEvidence Act\n.\n22-Civil Appeal No. 4910 of 2023\n43. The issues raised in this instant dispute are adjudicated\n\n in the following terms:\n43.1 The first issue is answered negatively as the documents\n\n in question were not required to be stamped at the\n\n relevant period to attract the bar of\nSection 35\nof the\n\n Stamp Act.\n43.2 The second issue is answered in the affirmative. A copy\n\n of a document can be adduced as secondary evidence if\n\n other legal requirements are met.\n43.3 As discussed above, the third issue is answered\n\n negatively.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA_P036_C01",
+      "text": "44. The appeal is allowed accordingly. Consequently, the\n\n order dated 16.12.2003 passed by the 19th Additional District\n\n Judge in Civil Suit No. 46/A/03 titled as\nShri Vijay v. Dr. Mrs.\n\n Mrinalini Devi Pour\nas affirmed by the High Court vide order\n\n dated 30.11.2009 in W.P. No. 741/2004 titled as\nVijay\n\n Choudhary v. Union of India & Ors.\nare quashed and set aside.\nThe order dated 17.07.2001 passed by 4th Additional District\n\n Judge is restored.\n23-Civil Appeal No. 4910 of 2023\n45. No order as to costs.\n….............……….J.\n (ABHAY S. OKA)\n\n ….....……………….J.\n (SANJAY KAROL)\n\n Place: New Delhi;\nDate: 29th November, 2023.\n24-Civil Appeal No. 4910 of 2023",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Vijay vs Union Of India",
+    "case_id": "SC_2023_VIJAY_VS_UNION_OF_INDIA",
+    "court": "Supreme Court of India",
+    "year": "2023",
+    "facts_summary": "1. The issues that arise for consideration of this Court in the\n present appeal are:\n1.1 Whether the bar of admissibility created by\nSection 35\nof the Indian Stamp Act 18991 applies to the\n\n 1-Civil Appeal No. 4910 of 2023\n agreement(s) to sell dated 04.02.1988 executed by the\n\n parties?\n1.2 Can a copy of a document be adduced as secondary\n\n evidence when the original instrument is not in\n\n possession of the party?\n1.3 Whether, in the facts of the present case, would the\n\n decision of this Court in Jupadi Kesava Rao v.\nPulavarthi Venkata Subha Rao2 be binding as held by\n\n both the Courts below?\nFACTUAL MATRIX 4. Subsequently, the Plaintiff filed a writ petition before the High\n\n Court of Madhya Pradesh challenging the review order and\n\n the constitutional validity of\nSection 35\nof the Stamp Act. The\n\n High Court, vide the impugned order dated 30.11.2009 in\n\n W.P. No. 741/2004, upheld the validity of the said section\n\n and the order of the Review Court. 5. The present appeal is preferred against this order of the High\n\n Court.",
+    "legal_issues": "2. Plaintiff and Defendant entered into an agreement to sell on\n\n 04.02.1998, and pursuant to that, Plaintiff was allegedly put\n\n in possession by Defendant. When Defendant denied the\n\n existence of such an agreement, Plaintiff filed a suit for\n\n specific performance of contract. In the said suit, Plaintiff\n\n moved an application to file a copy of the agreement to sell,\n\n among other documents, as secondary evidence.\n\n(1971) 1 SCC 545 (2-Judge Bench)\n\n 2-Civil Appeal No. 4910 of 2023\n3. Initially, the said application was allowed by the 4th\n\n Additional District Judge vide order dated 17.07.2001. But\n\n when Defendant sought review of this order, the Court vide\n\n its order dated 16.12.2003 reviewed it and held that\n\n secondary evidence of an agreement to sell could not be\n\n allowed as it was not executed on a proper stamp, thus\n\n barred under\nsection 35\nof the Stamp Act. While holding so,\n\n it relied on the decision of this Court in Jupadi Kesava Rao\n\n (supra). 6. Learned Senior Counsel Dr. Menaka Guruswamy, for the\n\n Appellant-Plaintiff, submits that the prohibition of\nSection 35\nof the Stamp Act is not applicable as there was no\n\n requirement for either party to have paid stamp duty at the\n\n 3-Civil Appeal No. 4910 of 2023\n time of execution (before the 1989 Amendment) of the\n\n agreement to sell. Thus, the Plaintiff ought to have been\n\n permitted to lead a copy of the agreement to sell as secondary\n\n evidence under\nSection 65\nof the Evidence Act. 19. Any contract of sale (ag",
+    "ratio_summary": "21. Now the question arises if we can retrospectively read\n\n the Explanation added vide M.P. Act 22 of 1990 so as to apply\n\n to an agreement to sell executed on 04.02.1988. 22. A Two-Judge bench of this Court10 while culling out the\n\n principles on the role of a clarification/explanation to a\n\n statute and how the same is identified and distinguished\n\n from a substantive amendment, observed that only because\n\n a provision is described as a clarification or explanation, the\n\n Court is not bound by the said statement, but must analyze\n\n the nature of the amendment so as to conclude whether it is,\n\n(2022) 12 SCC 321\n8 (2017) 1 SCC 599\n\nCivil Appeal No. 10327 Of 2011\n\n2023 SCC OnLine SC 640\n\n 10-Civil Appeal No. 4910 of 2023\n indeed, a clarificatory or declaratory provision or whether it\n\n is a substantive amendment which is intended to change the\n\n law and which would apply prospectively. 41. It is a settled position of law that where the question is\n\n whether the document is liable to stamp duty and penalty, it\n\n has to be decided at the threshold even before marking a\n\n document. In the present case, in view of the discussions\n\n above, the document in question was not liable to stamp\n\n duty.",
+    "final_order": "44. The appeal is allowed accordingly. Consequently, the\n\n order dated 16.12.2003 passed by the 19th Additional District\n\n Judge in Civil Suit No. 46/A/03 titled as\nShri Vijay v. Dr. Mrs.\n\n Mrinalini Devi Pour\nas affirmed by the High Court vide order\n\n dated 30.11.2009 in W.P. No. 741/2004 titled as\nVijay\n\n Choudhary v. Union of India & Ors.\nare quashed and set aside.\nThe order dated 17.07.2001 passed by 4th Additional District\n\n Judge is restored.\n23-Civil Appeal No. 4910 of 2023\n45. No order as to costs.\n….............……….J.\n (ABHAY S. OKA)\n\n ….....……………….J.\n (SANJAY KAROL)\n\n Place: New Delhi;\nDate: 29th November, 2023.\n24-Civil Appeal No. 4910 of 2023",
+    "outcome_summary": "Allowed. 44. The appeal is allowed accordingly. Consequently, the\n\n order dated 16.12.2003 passed by the 19th Additional District\n\n Judge in Civil Suit No. 46/A/03 titled as\nShri Vijay v. Dr. Mrs.\n\n Mrinalini Devi Pour\nas affirmed by the High Court vide order\n\n dated 30.11.2009 in W.P. No. 741/2004 titled as",
+    "sections_cited": [],
+    "cases_cited": [
+      "Court in\nVirtual Soft Systems Ltd v Commissioner of Income Tax, Delhi11"
+    ]
+  }
+}

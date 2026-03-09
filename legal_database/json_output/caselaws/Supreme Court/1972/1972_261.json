@@ -1,0 +1,269 @@
+{
+  "case_id": "SC_1972_1972_261",
+  "case_name": "M. K. Brothers (P) Ltd vs C.I.T. Kanpur",
+  "normalized_case_name": "M._K._BROTHERS_(P)_LTD_VS_C.I.T._KANPUR",
+  "court": "Supreme Court of India",
+  "year": "1972",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "29 August 1972",
+  "judges": [
+    "Hans Raj Khanna",
+    "K.S. Hegde",
+    "P. Jaganmohan Reddy"
+  ],
+  "author": "Hans Raj Khanna",
+  "bench_type": "constitution",
+  "petitioner": "M. K. Brothers (P) Ltd",
+  "respondent": "C.I.T. Kanpur",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 6,
+  "cited_by_count": 21,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1973 AIR 524",
+    "1973 SCR (1)1077",
+    "AIR 1973 SUPREME COURT 524",
+    "1973 TAX. L. R. 371",
+    "86 ITR 38",
+    "1973 2 SCWR 157",
+    "1973 (1) ITJ 382",
+    "1973 SCC (TAX) 14",
+    "1973 (1) SCR 1077",
+    "1973 (1) SCJ 703",
+    "1973 3 SCC 30"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1972\\1972_261.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1972_1972_261_P001_C01",
+      "text": "BENCH:\nKHANNA, HANS RAJ\nBENCH:\nKHANNA, HANS RAJ\nHEGDE, K.S.\nREDDY, P. JAGANMOHAN",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1972_1972_261_P002_C01",
+      "text": "CITATION:\n 1973 AIR 524 1973 SCR (1)1077\n 1973 SCC (3) 30\n CITATOR INFO :\n RF 1975 SC1945 (19)",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_261_P003_C01",
+      "text": "ACT:\nIncome-tax Act\n(11 of 1922)-Amount due to company from its\nsole selling agent-Liability undertaken by appellant to pay\namount in consideration of its appointment as sole selling\nagent-If Capital or revenue expenditure.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1972_1972_261_P004_C01",
+      "text": "HEADNOTE:\nIn 1955, a large amount was due to a corporation from a firm\nwhich was then its sole selling agent., As a result of an\nagreement between the. appellant, the corporation, and the\nfirm, the appellant undertook to discharge the liability of\nthe firm in consideration of its being appointed the sole\nselling agent in place of the firm. In 1956, an indenture\nwas executed by the corporation and the appellant relating\nto the appointment of the appellant as sole selling agent,\nand in this indenture, it was agreed that the corporation\nshould be authorised to retain an amount equal to 1/7 ,of\nthe trade discount due to the. sole selling agents with a\nminimum of Rs. 50,000 a year, for discharging the liability,\nso that, the amount payable to the sole selling agents would\nbe the amount payable as trade discount minus the aforesaid\namount retained by the corporation. Clause 13 of the\nindenture provided that, the selling agents shall have no\nclaim whatsoever to any such amounts retained out of the\nnormal trade discount and adjusted in the account of the\nfirm as 'if the amount so retained was not payable to \"hem.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1972_1972_261_P004_C02",
+      "text": "For the assessment year 1956-57, out of the commission\npayable to the appellant as selling agents the corporation\nretained a sum under the contract for adjustment against the\noutstanding dues of the firm. The appellant, in its\nstatement of account, credited the full an-.,-)Lint of\ncommission to its profit and loss account, and the sum\nretained by the corporation was shown as a deduction\ntherefrom. The Department, the Appellate Tribunal and the\nHigh Court on reference, disallowed the deduction on the\nground that it was a capital expenditure and not a revenue\nexpenditure and held that the amount was liable to tax. Dismissing the appeal to this Court. HELD : (1) The answer to the question whether the money paid\nwas a revenue expenditure or capital expenditure does not\ndepend upon whether the amount paid is large or small or\nwhether it was paid in a lumpsum or by instalments. It\ndepends upon the purpose for which the payment had been made\nand the expenditure incurred. If the object of making the\npayment is to acquire a capital asset the payment would\npartake of the character of a capital payment even though it\nis not made in a lumpsum but by instalments over a period of\ntime.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1972_1972_261_P004_C03",
+      "text": "If any such asset or advantage for the enduring\nbenefit of the business 'is thus acquired or brought into\nexistence it would be immaterial whether the source of the\npayment was capital or the income of the concern or whether\nthe payment was made once for all or was made periodically. On the contrary, payment made in the course of and for the\npurpose of carrying on business or trading activity would be\nrevenue expenditure even though the payment is of a large\namount and was not to be made periodically. The aim and.\nobject\n20-L172SupCI/73",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1972_1972_261_P005_C01",
+      "text": "of the expenditure would determine the character of the\nexpenditure whether it is a capital expenditure or a revenue\nexpenditure. The source or the manner of the payment would\nthen be of no consequence. [1082 C-H]\nAssam Bengal Cement Co. Ltd. v. Commissioner of Income Tax,\nWest Bengal [1955] 27 I.T.R. (34 on p. 45) and P. B. Divecha\n(Deceased) and After Him His Legal Representatives and\nAnother v. Commissioner of Income Tax, Bombay City 1 [1963]\n48 I.T.R. 222, followed.,\n(2) In the present case, the appellant got the sole selling\nagency in consideration of its agreeing to pay the amount\nwhich was then due from the firm to the corporation. If the\nappellant paid the amount in a lump sum in consideration of\nits being appointed the sole selling agent the payment would\nhave constituted capital expenditure as it was an amount\npaid for acquiring or bringing into existence an asset or\nadvantage for the enduring benefit of the business.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1972_1972_261_P005_C02",
+      "text": "The\nfact that the amount was paid not in a lump sum but was paid\nin instalments through deductions out of the commission due\nto the appellant would not make any difference. [1082A-C]\n(3) Even if under cl. 13 of the indenture the appellant\ncould not make any claim to the amount which had been\nretained by the corporation it would make no material\ndifference so far as the true nature of that amount was\nconcerned. The amount was deducted by the corporation 'in\npursuance of the agreement entered into by the appellant\nwith the corporation and the firm, according to which, the\nappellant had to pay that amount in the form of deductions\nout of its commission in consideration of being appointed\nthe sole selling agent. It was not a case of the appli-\ncation of income to discharge a liability incurred in the\ncourse of running the business but a liability undertaken\nfor the purpose of acquiring the sole selling agency right\nwhich was an asset of a capital nature. [1083 D-F]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1972_1972_261_P006_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION : C.A. No. 342 of 1969.\nAppeal by certificate under\nArticle 133\nof the Constitution\nof India from the judgment and order dated February 16, 1966\nof the Allahabad High Court in Misc. Case No. 434 of 1962.\nB. P. Maheshwari, for the appellant.\nT. A. Ramachandran, R. N. Sachthey and S. P. Nayar, for\nthe respondent.\nThe Judgment of the Court was delivered by\nKhanna, J. This appeal on certificate granted by the Allah&,\nbad High Court is directed against the judgment of that\ncourt",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 133"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1972_1972_261_P007_C01",
+      "text": "whereby it answered the following two questions referred to\nit under\nsection 66(1)\nof the Indian Income Tax Act, 1922\n(hereinafter referred to as the Act) against the appellant\nand in favour of revenue :\n\"(1) Whether on the facts and on a true and\n proper interpretation of the agreement dated\n 31-7-1956, between the British India\n Corporation and the appellant company, the\n letters of Sri Kailash Nath Agarwal, the\n letters of Managing Directors, the sum of Rs.\n43,333/ retained by the British India\n Corporation and adjusted by it to the credit\n of Sharma & Co. was the assessable income of\n the appellant company ? (2) Whether on the facts and circumstances\n of the case, the sum of Rs. 43,333/-\nrepresented an expenditure under\nsection 10\n?\"\nThe matter relates to the assessment year 1956-57. The\nappellant is a private limited company and Kailash Nath\nAgarwal is one of its directors. As per agreement dated\nJuly 31, 1956 the appellant was appointed with effect from\nApril 1, 1955 the sole selling agent of the Kanpur Cotton\nMills for the sale of yarn and cloth manufactured by the\nsaid mills. The Kanpur Cotton Mills is owned by the British\nIndia Corporation hereinafter referred to as BIC.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1972_1972_261_P007_C02",
+      "text": "Prior to\nthe appellant's appointment Sharma & Co., a partnership\nfirm, was functioning as the sole selling agent of the\nKanpur Cotton Mills. The amount due by Sharma & Co. to the\nKanpur Cotton Mills as on March 21, 1955 was Rs.\n8,39,350/15/6 inclusive of interest. On March 23, 1955 a\nletter was addressed on behalf of Sharma & Co. to the\nManaging Director of BIC stating that an agreement had been\nentered into with Kailash Nath Agarwal whereby Sharma & Co.\nhad agreed to give up the sole selling agency of the Kanpur\nCotton Mills. The Managing Director of BIC was requested to\nappoint Kailash Nath Agarwal or any firm or company forced\nby him for this purpose as the sole selling agent in place\nof Sharma & Co. Reference was also made in that letter to an\nagreement between Sharma & Co. and Kailash Nath Agarwal in\nthe following words\n \"As you will notice from the agreement' with\n Sri Kailash Nath Agarwal we are entitled to\n receive one seventh of the commission due to\n the new selling agency or to a sum of Rs.\n 50,000/- per annum whichever is greater, till\n your dues with interest are fully liquidated.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1972_1972_261_P007_C03",
+      "text": "We do hereby authorise you to retain this\n amount thus becoming due to us out of the\n commission payable to the agency and adjust\n the same to our firm's account with the\n Corporation.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1972_1972_261_P008_C01",
+      "text": "On the same day, i.e. March 23, 1955 Kailash Nath Agarwal\naddressed a letter to the Managing Director of BIC informing\nhim ,of the agreement with Sharma & Co. and requesting for\nthe grant of sole selling agency to the appellant. The\nletter concluded as follows :\n\"I hereby authorise you in case you are\n pleased to grant your sole selling agency to\n my said firm to retain one-seventh of our\n commission for adjustment in the account of\n M/s. Sharma & Co. with minimum of Rs.\n 50,000/- per annum till your dues against them\n are cleared with interest.\"\nThe Mananging Director of BIC later on that day, i.e. March\n23, 1955 addressed a letter to Sharma & Co. accepting its\nresignation from the sole selling agency of the Kanpur\nCotton Mills and about the appointment of Kailash Nath\nAgarwal or his nominee as the sole selling agent in\nsuccession to Sharma & Co.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1972_1972_261_P008_C02",
+      "text": "In regard to the liquidation of\ndues from Sharma & Co. the Managing Director of BIC wrote:\n\"As agreed between Shri Kailash Nath Agarwal\n and yourselves we shall deduct one seventh of\n the commission or Rs. 50,0001- whichever is\n greater out of the commission earned by the\n new sole selling agents and credit the same to\n your account with us till our dues against you\n standing today at Rs. 8,39,350/15/6 are\n completely liquidated with interest thereon at\n 6%.\"\nOn July 31, 1956 on indenture was executed by BIC and the\nappellant relating to the apointment of the appellant as the\nsole selling agent of the Kanpur Cotton Mills for the sale\nof yarn, cloth and cotton manufactures with effect from\nApril 1, 1955.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1972_1972_261_P008_C03",
+      "text": "In this indenture the appellant ratified the\nagreement entered into by Kailash Nath Agarwal with Sharma &\nCo. on March 23, 1955 and authorised BIC \"to give effect to\nthe said agreement generally and in particular to retain an\namount equal to one-seventh of the trade discount of 1-3/4%\ndue to the sole selling agents with a minimum of Rs. 50,0001\nper annum so that the amount payable to the sole selling\nagents shall be the amount payable at the rate of II% minus\nthe aforesaid amount retained by the corporation as payable\nto M/s Sharma & Co.\" Clauses 12 and 13 of the indenture were\nas under:\n\"Clause 12\n That in the event of the dissolution of M/s\n Sharma & Co. before the complete repayment of\n their liability the sole selling agents agree\n that the corporation may continue to retain an\n amount equal to one-seventh of",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1972_1972_261_P009_C01",
+      "text": "the trade discount of 1 3/4% or 50,000/-\n whichever is greater and adjust it towards\n such dues of M/s Sharma & Co. as may them be\n standing. Clause 13\n That the authority given above to the\n corporation to retain and adjust a part of the\n-trade discount towards the outstanding\n against M/s Sharma & Co. will not be revocable\n and will be binding on the sole selling\n agents, their successor, or assigns only so\n long as they act as the corporation's sole\n selling agents and will be deemed to be a\n condition on which the sole selling agency has\n been granted to the agents. The agents will\n have no claim whatsoever to any such amounts\n retained out of their normal trade discount\n and adjusted in the account of M/s Sharma &\n Co. as if the amount so retained was not\n payable to them.\"\nDuring the year under reference, the commission as per terms\nof the indenture dated July 31, 1956 payable to the\nappellant amounted to Rs. 2,06,283. Out of this amount, Rs.\n43,333 were retained by BIC under the contract for\nadjustment against the outstanding dues of Sharma & Co. in\naccordance with the terms of the indenture.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1972_1972_261_P009_C02",
+      "text": "In its\nstatement of account the appellant credited the full amount\nof commission of Rs. 2,06,283 to its profit and loss\naccount. The sum of Rs. 43,333 was, however, shown as a\ndeduction therefrom. During, the, assessment proceedings,\nthe Income Tax Officer disallowed the above deduction. The\norder of the Income Tax Officer in this respect was upheld\nby the Appellant Assistant Commissioner in appeal as well as\nby the Income Tax Appellate Tribunal in second appeal. On\napplication filed by the appellant, the, Tribunal referred\nthe questions reproduced earlier to the High Court. The\nHigh Court, as stated.. above, answered the two questions\nagainst the appellants. In appeal Mr. Maheshwari on behalf of the appellant has\nargued that the amount of Rs. 43,333 was a permissible\ndeduction and the High Court was in error in deciding this\nmatter against the appellant-. There is, in our opinion, no\nforce in this contention and we agree with Mr. Ram Chandran,\nlearned counsel for the respondent, that the judgment of the High\n Court should be, ,upheld.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1972_1972_261_P009_C03",
+      "text": "It would appear from the\nresume of facts given above that in March 1955 an amount of\nRs. 8,39,350/15/6 was due to BIC from the firm Sharma & Co.\nwho was the previous sole selling agent of the Kanpur Cotton\nMills. As a result of agreement between the appellant, BIC\nand Sharma & Co. the appellant undertook to discharge the\nliability of Sharma & Co. in lieu of being appointed the\nsole selling agent of the Kanpur Cotton Mills, in place of\nSharma & Co. It can, therefore, be said that",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1972_1972_261_P010_C01",
+      "text": "the appellant got the sole selling agency of the Kanpur\nCotton Mills in consideration of its agreeing to pay Rs.\n8,39,350-15-6 which was the amount due from Sharma & Co. to\nBIC. It is not disputed by Mr. Maheshwari that if the\namount of Rs. 8,39,350/ 1516 had been paid by the appellant\nin lump sum in consideration of its being appointed the sole\nselling agent of the Kanpur Cotton Mills, the payment would\nhave constituted capital expenditure as it was an amount\npaid for acquiring or bringing into existence an asset or\nadvantage for the enduring benefit of the business. The\nfact that the amount was paid not in lump sum but was paid\nin instalments through deductions out of the commission due\nto the appellant would not, in our opinion, make any\ndifference. The answer to the question as to whether the\nmoney paid is a revenue-expenditure or capital expenditure\ndepends not so much upon the fact as to whether the amount\npaid is large or small or whether it has been' paid in lump\nsum or by instalments, as it does upon the purpose for which\nthe payment has been made and expenditure incurred.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1972_1972_261_P010_C02",
+      "text": "It is\nthe real nature and quality of the payment and not *the\nquantum or the manner of the payment which would prove\ndecisive. If the object of making the payment is to acquire\na capital asset, the payment would partake of the character\nof a capital payment even though it is made not in lump sum\nbut by instalments over a period of time. On the contrary,\npayment made in the course of and for the purpose of\ncarrying on business or trading activity would be revenue\nexpenditure even though the payment is of a large amount and\nhas not to be made periodically. As observed by this Court,\nin the case of\nAssam Bengal Cement Co. Ltd. v. Commissioner\nof Income Tax, West Bengal\n(1), if the expenditure is made\nfor acquiring or bringing into existence an asset or\nadvantage for the enduring benefit of the business it is\nproperly attributable to capital and is of the nature of\ncapital expenditure. If on the other hand it is made not\nfor the purpose of bringing into existence any such asset of\nadvantage but for running the business or working it with a\nview to produce the profits it is a revenue expenditure.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1972_1972_261_P010_C03",
+      "text": "any such .asset or advantage for the enduring benefit of\nthe business is thus acquired or brought into existence, it\nwould be immaterial whether the source of the payment was\nthe capital or the income of the concern or whether the\npayment was made once and for all or was made periodically. The aim and object of the expenditure would determine the\ncharacter of the expenditure whether it is a capital\nexpenditure or a revenue expenditure. The source or the\nmanner of the payment would then be of no consequence.\nmay also in this connection refer to the following\nobservations of this Court .in the case of\nP. H. Divecha\n(Deceased) and After Him His Legal Representatives and\nAnother v. Commissioner of Income Tax, Bombay City\n1(2). (1) [1955] 27 I.T.R. 34 (on p. 45). (2) [1963] 48 I.T.R. 222.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1972_1972_261_P011_C01",
+      "text": "\"It may also be stated as a general rule that\n the fact that the amount involved was large or\n that it was periodic in character have no\n decisive bearing upon the matter. A payment\n may even be described as \"pay\" \"remuneration\",\n etc., but that does not determine its quality,\n though the name by which it has been called\n may be relevant in determining its true\n nature, because this gives an indication of\n how the person who paid the money and the\n person who received it viewed it in the first\n instance. The periodicity of the payment does\n not make the payment a recurring income\n because periodicity may be the result of\n convenience and not necessarily the result of\n the establishment of a source expected to be produ\nctive over a certain period. These\n general principles have been settled firmly by\n this court in a large number of cases.\"\nAlthough the above observations were made in, the context of\nperiodic, receipts, they have a direct bearing even on cases\nrelating to periodic payments. Mr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1972_1972_261_P011_C02",
+      "text": "Maheshwari has referred to clause 13 of the indenture\nreproduced above and has contended that the appellant could\nmake no claim to the amount of Rs. 43,3.33 which had been\nretained by BIC, This fact.. in our opinion would make no\nmaterial difference so far as the true nature of that amount\nwas concerned, The amount was deducted by BIC in pursuance\nof the agreement entered into by the appellant with BIC\nand Sharma & Co., according to which the appellant had to\npay that amount in the form of deduction out of its\ncommission in consideration of being appointed the sole\nselling agent of the Kanpur Cotton Mills. The present is a\ncase relating to the application of income to discharge a\nliability incurred not in the course of running the business\nbut a liability undertaken for the purpose of acquiring the\nsole selling agency right which was indisputably an asset of\ncapital nature. The appeal consequently fails and is dismissed with costs. V.P.S. Appeal dismissed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "M. K. Brothers (P) Ltd vs C.I.T. Kanpur",
+    "case_id": "SC_1972_1972_261",
+    "court": "Supreme Court of India",
+    "year": "1972",
+    "facts_summary": "CITATION:\n 1973 AIR 524 1973 SCR (1)1077\n 1973 SCC (3) 30\n CITATOR INFO :\n RF 1975 SC1945 (19) ACT:\nIncome-tax Act\n(11 of 1922)-Amount due to company from its\nsole selling agent-Liability undertaken by appellant to pay\namount in consideration of its appointment as sole selling\nagent-If Capital or revenue expenditure. HEADNOTE:\nIn 1955, a large amount was due to a corporation from a firm\nwhich was then its sole selling agent., As a result of an\nagreement between the. appellant, the corporation, and the\nfirm, the appellant undertook to discharge the liability of\nthe firm in consideration of its being appointed the sole\nselling agent in place of the firm. In 1956, an indenture\nwas executed by the corporation and the appellant relating\nto the appointment of the appellant as sole selling agent,\nand in this indenture, it was agreed that the corporation\nshould be authorised to retain an amount equal to 1/7 ,of\nthe trade discount due to the. sole selling agents with a\nminimum of Rs. 50,000 a year, for discharging the liability,\nso that, the amount payable to the sole selling agents would\nbe the amount payable as trade discount minus the aforesaid\namount retained by the corporation. Clause 13 of the\nindenture provided that, the selling agents shall have no\nclaim whatsoever to any such amounts retained out of the\nnormal trade discount and adjusted in the account of the\nfirm as 'if the amount so retained was not payable to \"hem.",
+    "legal_issues": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION : C.A. No. 342 of 1969.\nAppeal by certificate under\nArticle 133\nof the Constitution\nof India from the judgment and order dated February 16, 1966\nof the Allahabad High Court in Misc. Case No. 434 of 1962.\nB. P. Maheshwari, for the appellant.\nT. A. Ramachandran, R. N. Sachthey and S. P. Nayar, for\nthe respondent.\nThe Judgment of the Court was delivered by\nKhanna, J. This appeal on certificate granted by the Allah&,\nbad High Court is directed against the judgment of that\ncourt",
+    "ratio_summary": "For the assessment year 1956-57, out of the commission\npayable to the appellant as selling agents the corporation\nretained a sum under the contract for adjustment against the\noutstanding dues of the firm. The appellant, in its\nstatement of account, credited the full an-.,-)Lint of\ncommission to its profit and loss account, and the sum\nretained by the corporation was shown as a deduction\ntherefrom. The Department, the Appellate Tribunal and the\nHigh Court on reference, disallowed the deduction on the\nground that it was a capital expenditure and not a revenue\nexpenditure and held that the amount was liable to tax. Dismissing the appeal to this Court. HELD : (1) The answer to the question whether the money paid\nwas a revenue expenditure or capital expenditure does not\ndepend upon whether the amount paid is large or small or\nwhether it was paid in a lumpsum or by instalments. It\ndepends upon the purpose for which the payment had been made\nand the expenditure incurred. If the object of making the\npayment is to acquire a capital asset the payment would\npartake of the character of a capital payment even though it\nis not made in a lumpsum but by instalments over a period of\ntime. the appellant got the sole selling agency of the Kanpur\nCotton Mills in consideration of its agreeing to pay Rs.\n8,39,350-15-6 which was the amount due from Sharma & Co. to\nBIC. It is not disputed by Mr. Maheshwari that if the\namount of Rs. 8,39,350/ 1516 had been paid by the appellant\nin lump sum in conside",
+    "final_order": "",
+    "outcome_summary": "Dismissed",
+    "sections_cited": [
+      "Constitution 133"
+    ],
+    "cases_cited": []
+  }
+}

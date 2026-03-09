@@ -1,0 +1,96 @@
+{
+  "case_id": "SC_1974_1974_295",
+  "case_name": "Commissioner Of Wealth-Tax, U.P. And ... vs Kundan Lal Behari Lal",
+  "normalized_case_name": "COMMISSIONER_OF_WEALTH-TAX,_U.P._AND_..._VS_KUNDAN_LAL_BEHARI_LAL",
+  "court": "Supreme Court of India",
+  "year": "1974",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "5 September 1974",
+  "judges": [
+    "P. Jaganmohan Reddy",
+    "P.K. Goswami",
+    "ORDER",
+    "P. Jaganmohan Reddy, J."
+  ],
+  "author": "P. Jaganmohan Reddy",
+  "bench_type": "constitution",
+  "petitioner": "Commissioner Of Wealth-Tax, U.P. And ...",
+  "respondent": "Kundan Lal Behari Lal",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 3,
+  "cited_by_count": 12,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1976SC1150",
+    "[1975]99ITR581(SC)",
+    "(1975)4SCC844",
+    "AIR 1976 SUPREME COURT 1150",
+    "1975 4 SCC 844",
+    "1976 TAX. L. R. 1680",
+    "1975 SCC (TAX) 469",
+    "1976 2 ITJ 379",
+    "1976 SCC (TAX) 469",
+    "1976 UPTC 501",
+    "1976 2 SCJ 441",
+    "99 ITR 581"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1974\\1974_295.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1974_1974_295_P001_C01",
+      "text": "1. We have heard the learned Additional Solicitor General who assails the judgment of the High Court and prays that special leave be granted. We, however, do not consider the point arising in the judgment requires examination but as it affects a large number of cases, we have been invited to give our reasons for dismissing the petition. Accordingly, we do so.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1974_1974_295_P002_C01",
+      "text": "2. The main question on which the High Court decided and which is the only question urged before us for admitting the petition is that the word 'issued' occurring in\nSection 18(2A)\nof the Wealth-tax Act means 'served'. This decision is well supported not only by the decisions of the High Court but also of this Court. In Banarsi Debi v. Income Tax Officer, Calcutta this Court observed that the expressions 'issued' and 'served' are used as inter-changeable terms and in the legislative practice of our country they are some times used to convey the same idea. Accordingly, it was held that the word 'issued' was not used in the narrow sense of 'sent' but that the said expression had received before the Indian Income-tax (Amendment) Act, 1959, a clear judicial interpretation. Subba Rao, J. as he then was dealing with the purpose which the word 'issue' was intended to serve, after referring to\nSriniwas v. Income-tax Officer\ncited in the judgment under attack and a Bombay decision, observed at page 108, \"the intention would be effectuated if the wider meaning is given to the expression 'issued'.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1974_1974_295_P002_C02",
+      "text": "The dictionary meaning of the expression issued takes in the entire process of sending notices as well as service thereof. The said word used in\nSection 34(1)\nof the Act itself was interpreted by courts to mean 'served.\"",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1974_1974_295_P003_C01",
+      "text": "3. In our view any other conclusion would lead to incongruous and unjust results. The legal position being clear, this petition has to be dismissed and we accordingly do so.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Commissioner Of Wealth-Tax, U.P. And ... vs Kundan Lal Behari Lal",
+    "case_id": "SC_1974_1974_295",
+    "court": "Supreme Court of India",
+    "year": "1974",
+    "facts_summary": "2. The main question on which the High Court decided and which is the only question urged before us for admitting the petition is that the word 'issued' occurring in\nSection 18(2A)\nof the Wealth-tax Act means 'served'. This decision is well supported not only by the decisions of the High Court but also of this Court. In Banarsi Debi v. Income Tax Officer, Calcutta this Court observed that the expressions 'issued' and 'served' are used as inter-changeable terms and in the legislative practice of our country they are some times used to convey the same idea. Accordingly, it was held that the word 'issued' was not used in the narrow sense of 'sent' but that the said expression had received before the Indian Income-tax (Amendment) Act, 1959, a clear judicial interpretation. Subba Rao, J. as he then was dealing with the purpose which the word 'issue' was intended to serve, after referring to\nSriniwas v. Income-tax Officer\ncited in the judgment under attack and a Bombay decision, observed at page 108, \"the intention would be effectuated if the wider meaning is given to the expression 'issued'. The dictionary meaning of the expression issued takes in the entire process of sending notices as well as service thereof. The said word used in\nSection 34(1)\nof the Act itself was interpreted by courts to mean 'served.\"",
+    "legal_issues": "3. In our view any other conclusion would lead to incongruous and unjust results. The legal position being clear, this petition has to be dismissed and we accordingly do so.",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

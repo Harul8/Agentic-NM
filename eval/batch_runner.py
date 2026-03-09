@@ -295,8 +295,9 @@ def _run_full_pipeline(query: str, intent: str, result_count: Optional[int], mod
 
     start_time = time.time()
 
-    # Step 1: Query expansion
-    legal_query = expand_legal_query(query)
+    # Step 1: Query expansion (expand_legal_query returns list of 1–3; use first for search)
+    legal_queries = expand_legal_query(query)
+    legal_query = legal_queries[0] if (isinstance(legal_queries, list) and legal_queries) else (legal_queries if isinstance(legal_queries, str) else query)
 
     # Step 2: Retrieval (ablation-aware)
     search_query = f"{query} {legal_query}"[:500]

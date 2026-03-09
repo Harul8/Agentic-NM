@@ -1,0 +1,223 @@
+{
+  "case_id": "SC_1966_1966_82",
+  "case_name": "Miss Dhun Dadabhoy Kapadia vs Commissioner Of Income-Tax, Bombay",
+  "normalized_case_name": "MISS_DHUN_DADABHOY_KAPADIA_VS_COMMISSIONER_OF_INCOME-TAX,_BOMBAY",
+  "court": "Supreme Court of India",
+  "year": "1966",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "31 October 1966",
+  "judges": [
+    "Vishishtha Bhargava",
+    "J.C. Shah",
+    "V. Ramaswami"
+  ],
+  "author": "Vishishtha Bhargava",
+  "bench_type": "constitution",
+  "petitioner": "Miss Dhun Dadabhoy Kapadia",
+  "respondent": "Commissioner Of Income-Tax, Bombay",
+  "reporter_citations": [
+    "[1964] 7 S.C.R. 210"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 3,
+  "cited_by_count": 102,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1967 AIR 614",
+    "1967 SCR (2) 1",
+    "AIR 1967 SUPREME COURT 614"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1966\\1966_82.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1966_1966_82_P001_C01",
+      "text": "BENCH:\nBHARGAVA, VISHISHTHA\nBENCH:\nBHARGAVA, VISHISHTHA\nSHAH, J.C.\nRAMASWAMI, V.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1966_1966_82_P002_C01",
+      "text": "CITATION:\n 1967 AIR 614 1967 SCR (2) 1\n CITATOR INFO :\n RF 1966 SC 368 (16)\n RF 1986 SC1695 (32)",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1966_1966_82_P003_C01",
+      "text": "ACT:\nIncome-tax Act\n(11 of 1922), s. 12B(2)-Renouncement of right\nshares for money value-Depreciation in value of original\nshares-Capital gain how calculated.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1966_1966_82_P004_C01",
+      "text": "HEADNOTE:\nThe assessee was holding 'as an investment 710 shares in a\ncompany. She became entitled to receive 710 new shares\nissued by the company, with an option to renounce them. She\nrenounced her right to receive the new shares by, sale\nin the open market and realised a sum of Rs.\n45,262.50.Income-Tax officer sought to tax the entire\namount as a capital gain. Immediatelybefore the\nrenouncement, the old share, were valued at Rs. 253.00 per\nshare. After renouncement the price of the old shares fell\nto Rs. 198.75as a result of which, the assessee suffered a\ncapital loss of about Rs. 38,000. 'Me assessee claimed a\nset off of this loss against the capital gain of Rs.\n45,262.50. The plea was rejected by the Income-tax\nAuthorities, the Appellate Tribunal and the High Court. In appeal to this Court,\nHELD : The claim of the assessee that her net capital gain\nwas not represented by Rs. 45,262.50 was correct.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1966_1966_82_P004_C02",
+      "text": "The net\ncapital gain could only be properly computed after deducting\nthe sum which approximately represented the loss incurred\nsimultaneously, by the assessee, in her original asset of\n710 old shares as a result of the depreciation in their\nvalue.\n[4 E, H]\nIn working out capital gain or loss, the principles that\nhave to be applied are those which an ordinary man of\nbusiness will resort to when making computation for his\nbusiness purposes, or which are a part of the commercial\npractice. [5 G]\nImmediately before the assessee, renounced her right to take\nthe new shares, the capital asset she possessed consisted of\nher old 710 shares valued at Rs. 253.00 per share plus the\nright to take the new 710 shares. After renouncement her\ncapital assets were 710 old shares valued at Rs. 198,75 per\nshare together with the sum of Rs. 45,262.50.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1966_1966_82_P004_C03",
+      "text": "Therefore.,\nthe value of the capital asset after renouncement would be\nRs. 710 x 198.75 plus Rs. 45,262.50 while the value of the\nasset, immediately before renouncement, would be Rs. 710 x\n253.00, there being no cash value, at the time of the right\nto receive the new shares, to be taken into account; and,\nthe net capital gain of the assessee would be the difference\nbetween the two. [4 C-G]\nAlternatively, at the time of the issue of new shares the\nassesee possessed 710 shares and the right to obtain the new\nshares allotted. When she sold that right and realised Rs.\n45,262.50, she capitalized that right and converted it into\nmoney. A concomitant of the acquisition of the, right was\nthe depreciation in the value of the old shares, and the\ndepreciation, is, in a commercial sense, the value of the\nright which she subsequently transferred. The net capital\ngain by her would, therefore, be resented, only by the\ndifference between the money realised on transfer the right,\nand the amount which she lost in the form of depreciation of\nher original shares in order to acquire that right. [5 A-E]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1966_1966_82_P005_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeal No. 757 of 1965. Appeal from the judgment and order dated August 24/25, 1962\nof the Bombay High Court in Income-tax Reference No. 12 of\n1961. R. J. Kolah and O. C. Mathur, for the appellant. S. K. Aiyar and R. N. Sachthey, for the respondent. S. T. Desai, O. C. Mathur, for interveners. The Judgment of the Court was delivered by\nBhargava, J. This appeal by certificate granted by the High\nCourt of Bombay under section 66A(2) of the Indian Income-\ntax Act, 1922 (hereinafter referred to as \"the Act\") is\ndirected against the answer returned by the High Court to\nthe following question referred to it by the Income-tax\nAppellate Tribunal under\ns. 66(1)\nof the Act:-\n\"Whether having regard to the provisions of\n section 12B(ii), the assessee is entitled to\n claim a deduction from the full value of the\n consideration of Rs. 45.262.50 nP. received\n for the capital asset, the sum of Rs. 37,630\n or any similar sum?\"\nThe case arose out of proceedings for assessment of the ap-\npellant for the assessment year 1957-58, the corresponding\nprevious year being the financial year 1956-57.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1966_1966_82_P005_C02",
+      "text": "The\nappellant was holding 710 ordinary shares of the Tata Iron\nand Steel Company Ltd. (hereinafter referred to as \"the\nCompany\"), which she had inherited some time prior to Ist\nJanuary, 1954, as an investment.It was admitted that\nshe was not a dealer in shares. Under aspecial resolution\npassed at an Extraordinary General Meetingof the Company\non 12th March, 1956, the appellant, as holderof 710\nordinary shares, became entitled to purchase new ordinary\nshares issued in the ratio of one new ordinary share for one\nexisting ordinary share as held on 26th April, 1956. In\npursuance of this resolution, an; offer was made to the\nappellant by the Company by its circular letter dated 15th\nMay, 1956, that she was, in terms of the resolution,\nentitled to apply for 710 new ordinary shares to be paid for\nat the rate of Rs. 105 per new ordinary share. This payment\nwas to represent Rs. 75 as the face value of the share and\nRs. 30 as premium. She was also given the option of either\ntaking the shares wholly or partly, or renouncing them\neither wholly or partly, in favour of any other person or\npersons.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1966_1966_82_P005_C03",
+      "text": "The appellant chose to- renounce her right to all\nthe 710 ordinary shares instead of taking the shares\nherself, and when renouncing the shares, she sold them in\nthe open market on 12th June, 1956, as a result",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1966_1966_82_P006_C01",
+      "text": "of which she actually realised a sum of Rs. 45,262/50 nP. It was common ground before the Income-tax authorities as\nwell as the Tribunal that this amount received by her was a\ncapital gain and the whole of this amount was sought to be\ntaxed as capital gain received by the appellant. On behalf\nof the appellant, the, plea was that, on the issue of the\nnew ordinary shares, the value of her old ordinary shares\ndepreciated, because the assets of the Company remained\nstationary, while the number of shares increased. It was in\nconsideration of this depreciation in her original holdings\nthat she was given the right to purchase these new ordinary\nshares, or to renounce them in favour of some other person\nand make up the loss which she would suffer on her original\nshares. The Board of Directors of the Native Stock and\nShare Association Ltd. had passed a resolution that the\ntransactions in these shares were to be cum-right up to and\nincluding Ist June, 1956, and were to be ex-rights from 4th\nJune, 1956, onwards. The intervening days, 2nd and 3rd\nJune, being official holidays, there were to be no\ntransactions on those days.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1966_1966_82_P006_C02",
+      "text": "The market quotation of the old\nTata ordinary shares was Rs. 253 per share on I st June,\n1956, and fell to Rs. 198/75 nP on 4th June, 1956. There\nwas thus, a fall in the market quotation of old shares of\nRs. 54/25P per share. It was claimed by the appellant that,\nas a result of this depreciation in the price of her old\nordinary shares, she suffered a capital loss in those shares\nto the extent of Rs. 37,630, and she was entitled to set off\nthis loss against the capital gain of Rs. 45,262/ 50P which\nshe realised on selling her right to take the new ordinary\nshares. In the alternative, the case was put forward on the\nbasis that the right to receive these new ordinary shares\nwas a right which was embedded in her old ordinary shares,\nand consequently, when she realised the sum of Rs.\n45,262/50P by selling her right, the capital gain should be\ncomputed after deducting from this amount realised the value\nof the embedded right which became liquidated. The value of\nthat right, according to the appellant, should be calculated\nin accordance with the principles of Accountancy as laid\ndown by various authors on the subject to be applied in such\nsituations.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1966_1966_82_P006_C03",
+      "text": "Even if this principle be accepted, the amount\ntaxable as capital gain in her hands would have to be\nreduced by at least a sum of Rs. 37,630, if not more. This\nplea put forward on behalf of the appellant was rejected by\nthe Income-tax Authorities as well as by the Income-tax\nAppellate Tribunal. Thereupon, the question, reproduced by\nus above, was referred to the High Court by the Tribunal and\nthe High Court also answered it against the appellant. The\nappellant has, therefore, come up to this Court in this\nappeal. In order to answer the question referred to the High Court,\nit appears to us that the nature of the transaction, which\nresulted",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1966_1966_82_P007_C01",
+      "text": "in this receipt of Rs. 45.262/50P by the appellant, must be\nanalysed and properly understood. The amount, it is the\nagreed case of the parties, was a capital gain. The capital\nasset which the appellant originally possessed consisted of\n710 ordinary shares of the Company. There was already a\nprovision that, if the Company issued any new shares, every\nholder of old shares would be entitled to such number of\nordinary shares as the Board may, by resolution, decide. This right was possessed by the appellant because of her\nownership of the old 710 ordinary shares, and when the Board\nof Directors of the Company passed a resolution for issue of\nnew shares, this right of the appellant matured to the\nextent that she became entitled to receive 710 new shares. This right could be exercised by her by actually purchasing\nthose shares at the prescribed rate, or by renouncing those\nshares in favour of another person and obtaining monetary\ngain in that transaction. At the time, therefore, when the\nappellant renounced her right to take these new shares, the\ncapital asset which she actually possessed consisted of her\nold 710 shares plus this right to take 710 new shares.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1966_1966_82_P007_C02",
+      "text": "the time of her transaction, her old shares were valued at\nRs. 253 per share, so that the capital asset in her\npossession can be treated to be the cash value of 710\nmultiplied by Rs. 253 of the old shares plus this right to\nobtain new shares. After she had transferred this right to\nobtain new shares, the capital assets that came into her\nhands were the 710 old shares, which became valued at Rs.\n198/75P per share, together with the sum of Rs. 45,262/50P. The net capital gain or loss to the appellant obviously\nwould be the difference between the value of the capital\nasset and the cash in her hands after she had renounced her\nright and realised the cash value in respect of it, and the\nvalue of the capital asset including the right which she\npossessed before those new shares were issued and before she\nrealised any cash in respect of the right by renouncing it\nin favour of some other person.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1966_1966_82_P007_C03",
+      "text": "As we have indicated above,\nthe value of the capital asset, after renouncement, would be\n710 multiplied by Rs. 198/75P plus the sum of Rs. 45,262/\n50P, while the value of the asset, immediately before the\nrenouncement, would be 710 multiplied by Rs. 253, there\nbeing no cash value at that time of the right to be taken\ninto account. Thus, the capital gain or loss would be\nworked out at Rs. 45,262/50P after deducting from it the sum\nworked out at 710 multiplied by the difference between Rs.\n253 and Rs. 198/75P. This last amount comes to a little\nmore than the sum of Rs. 37,630 which the appellant claimed\nshould be deducted from Rs. 45,262/50P in computing her\ncapital gain. The claim made by the appellant was thus\nclearly justified, because the net capital gain by her in\nthe transaction, which consisted of issue of new shares\ntogether with her renouncement of the right to receive new\nshares and make some money thereby, could only be properly\ncomputed in the manner indicated by us above.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1966_1966_82_P008_C01",
+      "text": "In the alternative, the case can be examined in another\naspect. At the time of the issue of new shares, the\nappellant possessed 710 old shares and she also got the\nright to obtain 710 new shares. When she sold this right to\nobtain 710 new shares and realised the sum of Rs.\n45,262/50P, she capitalised that right and converted it into\nmoney. The value of the right may be measured by setting\noff against the appreciation in the face value of the new\nshares the depreciation in the old shares, and consequently,\nto the extent of the depreciation in the value of her\noriginal shares, she must be deemed to have invested money\nin acquisition of this new right. A concomitant of the\nacquisition of the newright was the depreciation in the\nvalue of the old shares, and the depreciation may, in a\ncommercial sense, be deemed to be the value of the right\nwhich she subsequently transferred. The capital gain made\nby her would, therefore, be represented only by the\ndifference between the money realised on transfer of the\nright, and the amount which she lost in the form of\ndepreciation of her original shares in order to acquire that\nright.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1966_1966_82_P008_C02",
+      "text": "Looked at in this manner also, it is clear that the\nnet capital gain by her would be represented by the amount\nrealised by her on transferring the right to 'receive new\nshares, after deducting therefrom the amount of depreciation\nin the value of her original 'shares, being the loss\nincurred by her in her capital asset in the transaction in\nwhich she acquired the right for which she realised the\ncash. This method of looking at the transaction also leads\nto the same conclusion which we have indicated in the\npreceding paragraph. The view that we have taken finds support from the principle\nlaid down by this Court for valuation of bonus shares issued\nby a company to holders of original shares in the case of\nCommissioner of income-tax,\nBihar v. Dalmia Investment Co. Ltd. (1)\nThe High Court, in dealing with this question, had expressed\nthe view that principles of Accountancy applicable to\nvaluation of such right to receive new shares issued by a\ncompany are not applicable when computation has to be made\nfor purposes of taxation; but we are unable to accept this\nproposition.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1966_1966_82_P008_C03",
+      "text": "In working out capital gain or loss, the\nprinciples that have to be applied are those which are a\npart of the commercial practice or which an ordinary man of\nbusiness will resort to when making computation for his\nbusiness purposes. The principles of accounting indicated\nby us above are clearly the principles that must be applied\nin order to find out the net capital gain or loss arising\nout of a transaction of the nature with which we are\nconcerned. The application of those principles indicates\nthat the claim of the appellant that the net capital gain by\nher is not represented by the whole amount of Rs. 45,262/50P\nrealised by her on renouncement of her right to\n(1) [1964]7S.C.R.210;521.T.R.567.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1966_1966_82_P009_C01",
+      "text": "receive the new shares was correct and that the net capital\ngain can only be properly computed after deducting the sum\nof Rs. 37,630 which approximately represents the loss\nincurred simultaneously by the appellant in her original\nasset of 710 old shares as a result of the depreciation in\ntheir value. The question referred to the High Court must,\ntherefore, be answered in favour of the appellant. The\nappeal is, consequently, allowed, the answer returned by the\nHigh Court is set aside, and the question is answered in the\naffirmative. The appellant will be entitled to her costs in\nthis Court as well as in the High Court.\nV.P.S.\nAppeal allowed.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Miss Dhun Dadabhoy Kapadia vs Commissioner Of Income-Tax, Bombay",
+    "case_id": "SC_1966_1966_82",
+    "court": "Supreme Court of India",
+    "year": "1966",
+    "facts_summary": "CITATION:\n 1967 AIR 614 1967 SCR (2) 1\n CITATOR INFO :\n RF 1966 SC 368 (16)\n RF 1986 SC1695 (32) ACT:\nIncome-tax Act\n(11 of 1922), s. 12B(2)-Renouncement of right\nshares for money value-Depreciation in value of original\nshares-Capital gain how calculated.",
+    "legal_issues": "of which she actually realised a sum of Rs. 45,262/50 nP. It was common ground before the Income-tax authorities as\nwell as the Tribunal that this amount received by her was a\ncapital gain and the whole of this amount was sought to be\ntaxed as capital gain received by the appellant. On behalf\nof the appellant, the, plea was that, on the issue of the\nnew ordinary shares, the value of her old ordinary shares\ndepreciated, because the assets of the Company remained\nstationary, while the number of shares increased. It was in\nconsideration of this depreciation in her original holdings\nthat she was given the right to purchase these new ordinary\nshares, or to renounce them in favour of some other person\nand make up the loss which she would suffer on her original\nshares. The Board of Directors of the Native Stock and\nShare Association Ltd. had passed a resolution that the\ntransactions in these shares were to be cum-right up to and\nincluding Ist June, 1956, and were to be ex-rights from 4th\nJune, 1956, onwards. The intervening days, 2nd and 3rd\nJune, being official holidays, there were to be no\ntransactions on those days.",
+    "ratio_summary": "The\nappellant was holding 710 ordinary shares of the Tata Iron\nand Steel Company Ltd. (hereinafter referred to as \"the\nCompany\"), which she had inherited some time prior to Ist\nJanuary, 1954, as an investment.It was admitted that\nshe was not a dealer in shares. Under aspecial resolution\npassed at an Extraordinary General Meetingof the Company\non 12th March, 1956, the appellant, as holderof 710\nordinary shares, became entitled to purchase new ordinary\nshares issued in the ratio of one new ordinary share for one\nexisting ordinary share as held on 26th April, 1956. In\npursuance of this resolution, an; offer was made to the\nappellant by the Company by its circular letter dated 15th\nMay, 1956, that she was, in terms of the resolution,\nentitled to apply for 710 new ordinary shares to be paid for\nat the rate of Rs. 105 per new ordinary share. This payment\nwas to represent Rs. 75 as the face value of the share and\nRs. 30 as premium. She was also given the option of either\ntaking the shares wholly or partly, or renouncing them\neither wholly or partly, in favour of any other person or\npersons. Even if this principle be accepted, the amount\ntaxable as capital gain in her hands would have to be\nreduced by at least a sum of Rs. 37,630, if not more. This\nplea put forward on behalf of the appellant was rejected by\nthe Income-tax Authorities as well as by the Income-tax\nAppellate Tribunal. Thereupon, the question, reproduced by\nus above, was referred to the High Court by the Tribunal and\nthe",
+    "final_order": "",
+    "outcome_summary": "Allowed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

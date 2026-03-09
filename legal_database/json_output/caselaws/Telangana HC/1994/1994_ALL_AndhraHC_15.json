@@ -1,0 +1,493 @@
+{
+  "case_id": "SC_1994_1994_ALL_ANDHRAHC_15",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1994",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 15,
+  "cited_by_count": 8,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1994\\1994_ALL_AndhraHC_15.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P001_C01",
+      "text": "State Bank Of Hyderabad, Gunfoundry, ... vs V.K. Gadgil on 28 April, 1994\nEquivalent citations: 1994(2)ALT399\nAuthor:\nSyed Shah Mohammed Quadri\nBench:\nSyed Shah Mohammed Quadri\nORDER\n\nSyed Shah Mohammed Quadri, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P002_C01",
+      "text": "1. The short question that falls for our consideration in this appeal is : Can the High Court examine the question of proportionality of the punishment and if it finds the punishment awarded by appointing authority is excessive, Substitute a lesser punishment, in exercise of its jurisdiction under\nArticle 226\nof the Constitution of India?",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P003_C01",
+      "text": "2. It will be useful to refer to the relevant facts which gave rise to this writ Appeal. The respondent was an employee of the State Bank of Hyderabad (for short SBH). While he was working as Grade-1-Officer in Sangareddy Branch of the SBH, he was alleged to have indulged in certain irregularities amounting to misconduct, which led to initiation of disciplinary proceedings against him. As many as five charges were framed against him and they were found to be proved. After complying with the principles of natural justice and giving notice with regard to the quantum of punishment, the second appellant herein passed the order retiring the respondent compulsorily from service on May 27, 1991. Challenging the validity of that order he filed an appeal before the Managing Director of the SBH, the Appellate Authority, who rejected the same by order dated August 29, 1991. After being unsuccessful in the further appeal before the Executive Committee of the SBH (which is termed as Review petition), he filed the writ petition assailing the correctness of order of punishment dated 27.5.1991 which was confirmed by the Appellate Authority and the Executive Committee.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P003_C02",
+      "text": "He did not question the correctness of the findings recorded by the Enquiry Officer or the punishing authority, that the charges were proved; the only question raised by him before the learned single Judge was that the punishment of compulsory retirement was disproportionate to the charges found against him. The learned Single Judge, after considering the charges framed against him, came to the conclusion that the charges are of trivial nature and in that view of the matter, set aside the punishment awarded by the appointing authority and substituted a lesser punishment by his order dated March 4, 1993.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P004_C01",
+      "text": "3. Assailing the validity of the said order, this writ Appeal is preferred.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P005_C01",
+      "text": "4. The respondent in the writ petition are the appellants and the petitioner is the respondent in this writ appeal.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P006_C01",
+      "text": "5. Mr. K. Srinivasa Murthy, learned counsel for the appellants, contends that once the charges are held proved, the quantum of punishment is left to the appointing authority, and that the High Court, in exercise of its jurisdiction under\nArticle 226\nof the Constitution of India, Cannot substitute its own punishment for the punishment awarded by the appointing authority.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P007_C01",
+      "text": "6. Mr. S. Ravindranath, learned counsel for the respondent, supports the order under appeal and submits that the charges are very trivial in nature but as the punishment imposed by the appellants is disproportionate to the charges held proved, so the learned single judge has rightly reduced the quantum of punishment and that it is not a case where we should interfere with the order under appeal.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P008_C01",
+      "text": "7. Here it will be useful to refer to the case relevant to the question under consideration. But first we shall take up cases where the Courts have interfered with the quantum of punishment awarded by the punishing authority.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P009_C01",
+      "text": "8. Gujarat Steel Tubes Ltd. v. G. S. T. Mazdoor Sabha\n1980 I LLJ 137, speaking for the Supreme Court, Krishna Iyer, J held that\nArticle 226\n, however restrictive in practice, is a power wide enough, in all conscience, to be a friend in need when the summons comes in a crisis from a victim of injustice : and more importantly, this extraordinary reserve power is unsheathed to grant final relief without necessary recourse to a remand. What the Tribunal may, in its discretion do, the High Court too can, under\nArticle 226\n, if facts compel it to do so. It may benoticed here that the order impugned before the Supreme Court, was passed under\nSection 11-A\nof the Industrial Disputes Act. Under\nSection 11-A\nof the Industrial Disputes Act the Tribunal has power to substitute the punishment awarded by the employer, should it come to the conclusion that the punishment awarded was disproportionate to the gravity of the charges held proved. It is in the context of that power, in our view, the above observations of the Supreme Court have to be read.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P010_C01",
+      "text": "9. Bhagat Ram v. State of Himachal Pradesh\nthe enquiry conducted by the disciplinary authority was fond to be bad as being utterly perverse. On the question of punishment, the Supreme Court observed that where the enquiry was found to be bad and the order of penalty was quashed, it was open to the Court to give any direction, which would not permit a fresh enquiry to be held. Pointing out that the purpose of holding a fresh enquiry was to impose some penalty, it was held that the Supreme Court, in such circumstances, without prolonging the matter, might itself impose appropriate penalty. The Supreme Court also laid down the factors which have to be taken into consideration for levying the penalty. It may be noticed here that it is not a case of a penalty being substituted on the ground that the punishment imposed was found to be disproportionate to the charges proved. So, this judgment cannot be an authority for the proposition that under\nArticle 226\nof the Constitution the High Court can go into the question of proportionality of the punishment and substitute any lesser punishment, which in its view, will be commensurate to the gravity of the charge.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P011_C01",
+      "text": "10. Shankar Dass v. Union of India\nand\nUnion of India V. Tulsiram Patel\n, have been relied upon to show that in a case where the penalty imposed by the employer is too severe or excessive, the High Court, in exercise of its writ jurisdiction, can interfere with the penalty imposed by the punishing authority and substitute a suitable punishment.\nThere is no doubt that there are observations in\nTulsiram Patel\n's case in which\nShankar Dass\n's case is relied upon, which suggest that where the penalty imposed is arbitrary or grossly excessive or out of all proportion, judicial review of the penalty would be an appropriate remedy. But it must be remembered that those cases arose under Clauses (a) of the Second proviso to\nArticle 311(2)\nof the Constitution.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P012_C01",
+      "text": "11. Ranjith Thakur v. Union of India\nthe Supreme Court while stating the general principle that the question of choice and quantum of punishment is within the jurisdiction and discretion of the Court martial, pointed out the parameters of doctrine of proportionally which is part of the concept of judicial review. It will be useful to read the observation of High Lordship Vankatachalaiah, J. (as he then was) :\n\"Judicial review, generally speaking is not directed against a decision, but is directed against the \"decision making process. \" The question of the choice and quantum of punishment is within the jurisdiction and discretion of the Court Martial. But the sentence has to suit the offence and the offender. It should not be vindictive or unduly rash. It should not be disproportionate to the offence as to shock the conscience and amount in itself to conclusive evidence of bias.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P012_C02",
+      "text": "The doctrine of proportionality as part of the concept of judicial review, would ensure that even on an aspect, which is otherwise, with the exclusive province of the Court Martial, if the decision of the Court even as to sentence is an outrageous defiance of logic, then the sentence would not be immune from correction. Irrationality and perversity are recognised grounds of judicial review.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P013_C01",
+      "text": "12. Nagaraj Shivarao Karjagi v. Syndicate Bank\n, (1991) 2 SCC 219, an employee of the Syndicate Bank was compulsorily retired from service on certain allegations of misconduct. The disciplinary authority acted on the directives of the Vigilance Commission. The main thrust of the argument\nin that case\nwas that the punishing authority did not exercise its power in considering the merits of the case and that the major penalty of compulsory retirement was blindly imposed on the advice of the Central Vigilance commission, which was made binding in view of the directives issued by the Bank. It was in those circumstances that the impugned punishment was set aside and the matter was remitted to the disciplinary authority to dispose of the case afresh. This case is not an authority for the proposition that the High Court can sub-stitute its view on the proportionality of the punishment if it finds that the impugned punishment is disproportionate to the gravity of the charges.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P014_C01",
+      "text": "13. The question in Director, NRSA v. G. Reddappa 1991 (1) APLJ 243, was whether the alleged misdemeanour amounted to sub-stantial misdemeanour. A Division Bench of this Court held that this question can be gone into by this Court under\nArt. 226\nof the Constitution. The Division Bench found that the misdemeanour alleged was a minor misdemeanour but not substantial misdemeanour and accordingly held that the penalty was unreasonable and perverse. The Division Bench also observed that if a substantial misdemeanour was held proved, in a properly conducted enquiry complying with the principles of natural justice and the provisions in the disciplinary code, any punishment imposed by the competent authority in exercise of its discretion cannot be interfered with by this Court under\nArticle 226\nof the Constitution.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P015_C01",
+      "text": "14. In M. Ram Mohan Rao v. The A. P. S. R. T. C. an employee of the A. P. S. R. T. C., absented himself for four days, out of which for two days he was on leave. It was held that the misconduct does not involve moral turpitude and that the penalty of dismissal from service for the said act was disproportionate to the said charge. The High Court substituted the impugned punishment with the punishment of withholding of two annual increments in future. Here also the misconduct was fond to be not a substantial misconduct involving moral turpitude and having regard to the nature of the misconduct, the punishment was held to be excessive and arbitrary.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P016_C01",
+      "text": "15. There is yet another line of judicial approach which does not approve the judicial review of punishment awarded by the authorities under the relevant rules.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P017_C01",
+      "text": "16. In Suryanarayan Rao v. State of Andhra Pradesh, 1973 (1) An. W. R. 199 a Division Bench of this Court took the view that if a reasonable opportunity was given to the delinquent officer to present his case, the question of punishment is not open to review by the High Court. That case relates to a government servant. Disciplinary proceedings were initiated against him for certain misconduct. The Tribunal found the employee. Petitioner therein, guilty of the charges. The High court found that no principle of natural justice has been violated in the case, that though the findings arrived at by the Tribunal were factual findings, they were neither perverse nor were such that no reasonable man could have come to such conclusions on the basis of the evidence on record. The High Court has observed that, on the basis of the case, it cannot be said that the Government failed to do not duty of applying its mind to the objections raised by the petitioner against the findings of the Tribunal, or that the conclusions arrived at by the Government were not independent of the Tribunal's findings. It took the view that the question of penalty is not a justiciable one or open to review by Court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P017_C02",
+      "text": "Even though the High Court found that the finding of the Tribunal on charge No. 5 was not sustainable, still it held that merely because one of the findings given by the Tribunal in regard to charge No. 5 was not sustainable, the High Court could not direct the matter to go back to the Government of its reconsideration of the question of penalty.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P018_C01",
+      "text": "17. The Supreme Court in\nUnion of India v. Parma Nanda\n, 1989 II CLR S. C. 1, on an appeal filed against the order of the Administrative Tribunal whereby the Tribunal modified the punishment imposed by the competent authority on the delinquent employee on the ground that it was not commensurate with the delinquency of the employee, has held that acting under\nSection 19\nof the Administrative Tribunals Act, the Tribunal can exercise any of the powers of a Civil court or High Court because the Tribunal is just a substitute to the Civil court and the High Court, the Tribunal cannot interfere with the penalty imposed on the delinquent-employee by the competent authority on the ground that the penalty was not commensurate with the delinquency of the employee. It was further observed that the jurisdiction of the Tribunal to interfere with disciplinary matters or punishment could not be equated with an appellate jurisdiction.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P018_C02",
+      "text": "It was pointed out that the power to impose penalty on a delinquent officer was conferred on the competent authority either by an Act of Legislature or rules made under the proviso to\nArticle 309\nof the constitution of India and if there has been an enquiry consistent with the rules and in accordance with principles of natural justice, what punishment would net the ends of justice was a matter exclusive within the jurisdiction of the competent authority, provided the penalty could lawfully be imposed and was imposed on the proved misconduct and that the Tribunal had no power to substitute its own discretion for that of the authority. It was held that the adequacy of the penalty, unless it was mala fide, was certainly not a matter which the Tribunal was concerned with. Their Lordships pointed out an exception to this rule, i.e., where the penalty was imposed under Clause (a) of the Second Proviso to\nArticle 311(2)\nof the Constitution of India.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 309"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P018_C03",
+      "text": "This exception applies to cases where a persons was dismissed, removed or reduced in rank, without enquiry, on the basis of conviction by a criminal court; in such a case the Tribunal might examine the adequacy of the penalty imposed in the light of the conviction and sentence inflicted on the employee and if the penalty was apparently unreasonable or uncalled for, having regard to the nature of the criminal charge, the Tribunal might step in to render substantial justice. If such a course is thought of the Tribunal may either remit the matter to the competent authority for reconsideration or by itself substitute one of the penalties provided under Clause (s) of\nArticle 311 (2).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P018_C04",
+      "text": "However, the leaned single Judge distinguished that case (\nParma Nanda\n's case 1989 ll CLR SC 1) on the ground :\n\"the decision of the Supreme Court is aimed against the tribunals and not against the High Courts exercising power under\nArticle 226\nof the Constitution of India. \" Having regard to the observations of the Supreme Court, \n\n\"The powers of the High Court under\nArticle 226\ninsofar as they are exercisable in relation to service matters stand conferred on the Tribunal established under the Act\"\nin paragraph 15 and \n \n\"the Tribunal thus could exercise only such powers which the Civil Court or the High court could have exercised by way of judicial review\"\nin paragraph 18 of the judgment\nin that case\n, it is difficult to discern any validity in the ground of distinguishment.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P019_C01",
+      "text": "18. The ratio\nlaid down by\nthe Supreme court in Union of India v. parma\nNanda\n(supra) was applied by one of us (Justice Syed Shah Mohammed Quadri) in M. Jagadeesh v. State Bank of Hyderabad, 1991 (1) AN. W. R. 225. In that case, it was found that there had been no violation of principles of natural justice and on the question of punishment, it was held that it was not within the province of this Court to go into the adequacy of the punishment for the proved misconduct awarded by the disciplinary authority.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P020_C01",
+      "text": "19. State of Punjab v. Ram Singh\n1992 ll CLR SC 401 is a case where a constable Gunman was seem roaming in the market with service revolver, after having heavy drink, while he was on duty. That was the only misconduct that was alleged against the delinquent and it was contended that for a single misconduct the punishment of dismissal was not justified. After referring to the said misconduct, the Supreme Court observed that the misconduct alleged against the delinquent officer would constitute gravest misconduct warranting dismissal from service and therefore, the action of the authorities in imposing the punishment of dismissal was justified.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P021_C01",
+      "text": "20. State Bank of India v. Samarendra Kishore Endow\n1994 l CLR 663 is the latest authority of the Supreme Court on the question of proportionality of the punishment. In that case the respondent was a branch manager of the State Bank of India. On the allegation that he committed some irregularities disciplinary proceedings were initiated against him, which ended in finding him guilty of charges framed against him. Having been unsuccessful in departmental appeal, he filed a writ petition which was allowed by the Gauhati High Court. The appellant-Bank then carried the matter to the Supreme Court. On this question, the Supreme Court referred to its earlier decision in\nState of Orissa & Others v. Bidyabushan Mohapatra\nand\nUnion of India v. Parma Nanda\n(supra), wherein it was held that where an order of dismissal of a public servant is impugned, the Court was not concerned to decide whether the sentence imposed, provided it was justified by the rules, was proportionate having regard to the gravity of the misconduct established; the reasons which induce the punishing authority, are not justiciable; nor is the penalty open to review by the Court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P021_C02",
+      "text": "If the High Court is satisfied that if some but not all of the finding of the Tribunal were unassailable, the order of the Governor, on whose powers there are no restrictions in determining the appropriate punishment, was final and the High Court had no jurisdiction to direct the Government to review the penalty, if the conditions of the constitutional protection had been complied with and that the punishment imposed was not justiciable. It distinguished the case of\nShankar Dass\n(supra) and\nTulsiram Patel\n's case (supra) thus :-\n\"It must however be remembered that Tulsiram Patel dealt with cases arising under proviso (a) to\nArticle 311(2)\nof the Constitution. Tulsiram Patel overruled the earlier decision of this Court in Challappan . While holding that no notice need be given before imposing the penalty in a case dealt with under the said proviso, the Court held that if a disproportionate or harsh punishment is imposed by the disciplinary authority, it can be corrected either by the Appellate Court or by the High Court. These observations are not relevant to cases of penalty imposed after regular inquiry.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P021_C03",
+      "text": "Indeed this is him the said observations have been understood in Parma Nanda\nreferred to above\nvide para 29. The same comment holds with respect to the decision in\nShankar Dass v. Union of India\nwhich too was a case arising (under the proviso (a) to\nArticle 311(2).\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P022_C01",
+      "text": "21. After adverting to the facts of the case, the Supreme Court concluded that it might be that the punishment of removal imposed upon the respondent was harsh but that was a matter which the disciplinary authority or the appellate authority should consider and not the High Court or the Administrative Tribunal.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P023_C01",
+      "text": "22. From the above discussion, the following principles can be deduced :\n(1) In exercise of jurisdiction under\nArticle 226\nof the Constitution of India, the power of the High Court while considering the question of proportionality of punishment in service matters, is one of judicial review which is not an appeal from a decision but a review of the manner in which the decision was made. If the punishment awarded by the disciplinary authority is one, which, having regard to the rules, could be imposed for the proved misconduct, the Court will not go into the sufficiency or otherwise of the punishment awarded by the authority. However, there are three exceptions to this rule :\n(i) Where the punishment imposed is mala fide or so disproportionate as to shock the conscience of the Court;\n(ii) Where the punishment imposed falls under Clauses (a) of the Second proviso to Article 311 of the Constitution; and\n(iii) Where the punishment imposed was passed under\nSection 11-A\nof the Industrial Disputes Act.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 226",
+        "Constitution 311"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P023_C02",
+      "text": "(2) Whether the impugned punishment is so disproportionate as to shock the conscience of the Court, is a question of fact, which has to be decided on the facts of each case, having regard to the gravity of the misconduct, mature of the duties discharged by the delinquent officer, the position held by him and the nexus between the official position and the misconduct. It is neither practicable nor desirable to lay down as to when punishment can be said to be shocking the judicial conscience;\n(3) Whether the proved misconduct is a substantial misconduct or a trivial misconduct, is a matter which can be examined by the High Court; and where the disciplinary authority proceeded on the assumption that the misconduct was substantial misconduct whereas in fact it was found to be only a trivial misconduct, the High Court will be well within its bounds to quash the impugned punishment as one not authorised by law.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P023_C03",
+      "text": "In a case to which exception (1) to rule (1) or rule (2), mentioned above is applicable, the appropriate course for the Court will be to remit the matter to the disciplinary or the appellant authority, as the case may be, for passing fresh order of punishment commensurate with the gravity of the charges proved but not to substitute a lesser punishment which in its opinion, is just and proper.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P024_C01",
+      "text": "23. Now reverting to the facts of the case, the following charges were found to be proved against the respondent :-\n\" (i) The petitioner has afforded an unauthorised credit of Rs. 2,500/- to his SB A/c at Sangareddy Branch by making take/fictitious entries in the demand purchase register;\n(ii) The petitioner discounted several cheques amounting to Rs. 2,500/-, Rs. 1,400/- without maintaining sufficient balance in his account;\n(iii) The petitioner has wilfully passed for payments, amounts of Rs. 550/- and Rs. 500/- towards withdrawals from his SB A/c disregarding the balance in his A/c which resulted in overdrawal;\n(iv) The petitioner has issued cheques without maintaining sufficient balance in the A/c and\n(v) The petitioner has maintained two Savings Bank Accounts in his name at Sangareddy and Sultan Bazaar branches in violation of the instructions covered by a Circular of the Bank\".",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P025_C01",
+      "text": "24. The respondent, having entered the service of the Bank in 1968 and having had an experience of about 22 years, while working in Sangareddy branch, was in charge of purchasing cheques for credit or cash and operating demand purchase register. He opened two Savings Bank accounts-one in Sangareddy branch where he was working and another in Sultan Bazaar branch. He was not having sufficient balance either in his savings Bank account in Sangareddy Branch or in his Saving Bank Account in Sultan Bazaar Branch. The modus operandi adopted was that he took a cheque leaf of a surrendered cheque book of a defunct account once held by one Dilwar Ali. During the course of discharging his duties, he purchased his own cheque drawn on Sultan Bazaar Branch of SBH on discount when in fact there was no amount in his account in Sultan Bazaar Branch of SBH and credited the amount to his account in Sangareddy branch. In the demand p; purchase register he entered the name of the drawer, his own name, as G. V. Kumar insteadof V. K. Gadgil.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P025_C02",
+      "text": "In the said register he entered the name of the Bank to which the cheque was to be sent for clearance as State Bank of India instead of correct name State Bank of Hyderabad. It was only after about 3 months that when it was detected that the cheque issued by him and that was purchased by him on behalf of Sangareddy branch, was not cleared, he issued a fresh cheque drawn on the State Bank of Hyderabad, Sultan Bazaar Branch and thus the amount was realised. It is in that background we have to analyse the charges.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P026_C01",
+      "text": "25. The learned Single Judge found charges 2 to 4 as merely trivial charges relating to overdrawal of amounts. We cannot ignore the fact that a persons, who is working in the bank, discounted his own cheques without maintaining sufficient balance. This cannot be simply treated as overdrawal of the amount. Even if a bank officer has the authority to permit overdrawal of the amount by any customer, in our view, the officer himself, in his personal capacity, cannot misuse his position for discounting his personal cheques and drawing the amount without maintaining sufficient balance. Charges 3 and 4 also arise out of the similar transactions of wilfully passing for payment cheques without maintaining sufficient balance. It is only to check the misuse of accounts, if held in different branches by the employees; that the management has imposed a restrictions that such accounts should not be opened.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P026_C02",
+      "text": "The petitioner has violated he instructions and opened two accounts in his name - one at Sangareddy branch and another at Sultan Bazaar Branch - and made use of these accounts for his unholy plan to issue cheques drawn on Sultan Bazaar branch and by purchasing the same cheques in Sangareddy branch. In this background, charge no. 4 cannot be said to be a trivial charge.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P027_C01",
+      "text": "26. Now coming back to the first charge, what the petitioner did appears to be that he has given credit to his bank account (at Sangareddy branch) in a sum of Rs. 2,500/- by making a fictitious entry in Demand Purchase Register. For this purpose he has used the cheques leaf of defunct account of one Dilwar Ali and discounted it for his benefit. That account was closed by Dilwar Ali and the cheques were surrendered by him some time before the respondent made use of them. The learned single judge took the view that unused cheques are issued to other customers for being used by them. Even if that be so, they are issued on the application of a customer made to a competent authority of the bank. In this case, it is not the case of the respondent that he obtained one such cheque leaf after applying for the same and utilised it. That act is further aggravated by the fact that in the voucher of the D. P. Register he has indicated his name as G. V. Kumar instead of V. K. Gadgil whereas in fact he was never addressed or known as G. V. Kumar. It is also not his case that in Sultan bazaar branch he opened the account in the name of G. V. Kumar.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P027_C02",
+      "text": "It is obviously with a view to mislead his identity. In the register he wrongly mentioned the name of the bank as State Bank of India, whereas in fact he was having an account in the State Bank of Hyderabad, Sultan Bazaar branch. The contention that this was purposely done to defraud the bank as he was not having sufficient amount in his account in Sultan Bazaar branch to clear the cheque issued by him and purchased by him on behalf of the Sangareddy branch, cannot be said to be without any substance. All these facts put together lead us to the conclusion that the first charge relates to substantial misconduct.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P028_C01",
+      "text": "27. Now coming to the proportionality of the punishment, we may observe that if a person misuses his official position and derives advantage of it, that cannot be taken lightly, just as a theft of the property of the employer committed by a watchman or an assault of a citizen by a police man in the discharge of his duties cannot be viewed lightly, so also, the financial irregularities or misconduct committed by bank officials making use of the know-how acquired during the course of service cannot be taken as trivial misconduct. This charge establishes not merely want of devotion or diligence in the discharge of duties but is proof positive of lack of honesty and integrity on the part of the employee. If the bank comes to the conclusion that continuance of such an employee is detrimental to the interest of the bank and that he should not be continued in service and that having regard to more than 20 years service, he should be compulsorily retired from service, we cannot hold that the punishment is disproportionate to the gravity of the charges proved. The exceptions indicated above do not apply to the facts of the case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P029_C01",
+      "text": "28. In this case the learned single judge took the view that the charges including charge No. 1. are trivial but not substantial. from a perusal of charge it is evident that charges (i), (ii) have nexus with the discharge of duties of the respondent; charge (iv) is based on a neutral fact and charge (v) relates to violation of official instruction and taken in isolation are trivial. But however, we are of the opinion that where an employee having acquired the knowledge and functioning of his office/organization, in discharging his duties, commits certain acts or omission of which some are neutral and the others are tainted, calculated to achieve a desired result for his benefit or for the benefit of some other person in whom he is interested which amounts to fraud or a misconduct, the neutral acts or omissions cannot be judged in isolation and that they will take the colour scheme of which they are parts. Viewed thus, we cannot agree with the learned single Judge that the charges relate to trivial misconduct.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P029_C02",
+      "text": "For the above reasons in our view, the charges are substantial and grave in nature and as under the rules punishment of compulsory retirement can be imposed for the charges which are proved and this aspect is not questioned, we are unable to sustain the order of the learned single Judge, under appeal : we accordingly set aside the same.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P030_C01",
+      "text": "29. However, there is yet another aspect, which we would like to record. During the curse of the argument, Mr. K. Srinivasa Murthy, learned counsel for the appellants, submitted that the respondent had filed a review application to the Executive Committee and the matter has been referred to the Executive Committee for consideration of his case for modification of the penalty imposed on him. this, he has pointed out in response to a question put by us whether the appellants would be inclined to take a lenient view of the matter in regard to reduction in punishment. The case was adjourned from time to time to enable the learned counsel to place the view of the Executive Committee before us. The learned counsel has submitted that the Executive Committee agreed to reinstate the respondent with certain conditions. We may refer to the letter received by the learned counsel, the contents of which are as follows :-\n\"Please refer to your letter No. Law/2328 dated 11th March, 1994.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P030_C02",
+      "text": "The Executive Committee at its meeting held on 31st March, 1994, resolved to present the second option before the Court, as mentioned in the Memorandum i.e., \n\n\"To agree to reinstate the ex-official in the Bank's service, bringing him to the initial stage in the time scale, treating the period of suspension as such, in which case, he will not be entitled for any increment during the period of his suspension, and that he will not be paid any amount from the date of his retirement to the date of his reinstatement in the Bank's service.\"\nA copy of the Executive Committee Memorandum along with the minutes is enclosed herewith for your information.\"",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P031_C01",
+      "text": "30. From the above letter, it is evident that the Executive Committee indicated that it would be agreeable to reinstate the respondent bringing him to the initial stage in the time scale, treating the period of suspension as such, in which case he would not be entitled for any increment during the period of his suspension and that the would not be paid any amount form the date of his retirement to the date of his reinstatement in the Bank's service. When a copy of the above letter was given to the learned counsel for the respondent, he took time to obtain instruction from his client and submitted that his client was not agreeable to the proposed reduction in the punishment.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P032_C01",
+      "text": "31. In our view, the appellants have shown sufficient indulgence in proposing to reduce the punishment as mentioned in their letter. The learned counsel for the appellants submits that it will be open to the respondent to accept this proposed reduced punishment within four weeks from today. If the respondent reports to the authorities within four weeks from today, the appellants shall give effect to the lesser punishment proposed in the letter mentioned above. If, however, the respondent does not make use of this indulgence, the original punishment awarded by the authorities shall stand.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_1994_1994_ALL_ANDHRAHC_15_P033_C01",
+      "text": "32. Subject to the above observations, the Writ Appeal is allowed and the Writ Petition is dismissed. We make no order as to costs.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1994_1994_ALL_ANDHRAHC_15",
+    "court": "Supreme Court of India",
+    "year": "1994",
+    "facts_summary": "2. It will be useful to refer to the relevant facts which gave rise to this writ Appeal. The respondent was an employee of the State Bank of Hyderabad (for short SBH). While he was working as Grade-1-Officer in Sangareddy Branch of the SBH, he was alleged to have indulged in certain irregularities amounting to misconduct, which led to initiation of disciplinary proceedings against him. As many as five charges were framed against him and they were found to be proved. After complying with the principles of natural justice and giving notice with regard to the quantum of punishment, the second appellant herein passed the order retiring the respondent compulsorily from service on May 27, 1991. Challenging the validity of that order he filed an appeal before the Managing Director of the SBH, the Appellate Authority, who rejected the same by order dated August 29, 1991. After being unsuccessful in the further appeal before the Executive Committee of the SBH (which is termed as Review petition), he filed the writ petition assailing the correctness of order of punishment dated 27.5.1991 which was confirmed by the Appellate Authority and the Executive Committee. He did not question the correctness of the findings recorded by the Enquiry Officer or the punishing authority, that the charges were proved; the only question raised by him before the learned single Judge was that the punishment of compulsory retirement was disproportionate to the charges found against him. The learned Single ",
+    "legal_issues": "5. Mr. K. Srinivasa Murthy, learned counsel for the appellants, contends that once the charges are held proved, the quantum of punishment is left to the appointing authority, and that the High Court, in exercise of its jurisdiction under\nArticle 226\nof the Constitution of India, Cannot substitute its own punishment for the punishment awarded by the appointing authority. 6. Mr. S. Ravindranath, learned counsel for the respondent, supports the order under appeal and submits that the charges are very trivial in nature but as the punishment imposed by the appellants is disproportionate to the charges held proved, so the learned single judge has rightly reduced the quantum of punishment and that it is not a case where we should interfere with the order under appeal. 10. Shankar Dass v. Union of India\nand\nUnion of India V. Tulsiram Patel\n, have been relied upon to show that in a case where the penalty imposed by the employer is too severe or excessive, the High Court, in exercise of its writ jurisdiction, can interfere with the penalty imposed by the punishing authority and substitute a suitable punishment.\nThere is no doubt that there are observations in\nTulsiram Patel\n's case in which\nShankar Dass\n's case is relied upon, which suggest that where the penalty imposed is arbitrary or grossly excessive or out of all proportion, judicial review of the penalty would be an appropriate remedy. But it must be remembered that those cases arose under Clauses (a) of the Second proviso to\nArt",
+    "ratio_summary": "1. The short question that falls for our consideration in this appeal is : Can the High Court examine the question of proportionality of the punishment and if it finds the punishment awarded by appointing authority is excessive, Substitute a lesser punishment, in exercise of its jurisdiction under\nArticle 226\nof the Constitution of India? 7. Here it will be useful to refer to the case relevant to the question under consideration. But first we shall take up cases where the Courts have interfered with the quantum of punishment awarded by the punishing authority. 9. Bhagat Ram v. State of Himachal Pradesh\nthe enquiry conducted by the disciplinary authority was fond to be bad as being utterly perverse. On the question of punishment, the Supreme Court observed that where the enquiry was found to be bad and the order of penalty was quashed, it was open to the Court to give any direction, which would not permit a fresh enquiry to be held. Pointing out that the purpose of holding a fresh enquiry was to impose some penalty, it was held that the Supreme Court, in such circumstances, without prolonging the matter, might itself impose appropriate penalty. The Supreme Court also laid down the factors which have to be taken into consideration for levying the penalty. It may be noticed here that it is not a case of a penalty being substituted on the ground that the punishment imposed was found to be disproportionate to the charges proved. So, this judgment cannot be an authority for the pro",
+    "final_order": "32. Subject to the above observations, the Writ Appeal is allowed and the Writ Petition is dismissed. We make no order as to costs.",
+    "outcome_summary": "Allowed. 32. Subject to the above observations, the Writ Appeal is allowed and the Writ Petition is dismissed. We make no order as to costs.",
+    "sections_cited": [
+      "Constitution 226",
+      "Constitution 309",
+      "Constitution 311"
+    ],
+    "cases_cited": []
+  }
+}

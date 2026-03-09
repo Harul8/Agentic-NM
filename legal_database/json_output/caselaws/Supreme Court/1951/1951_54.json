@@ -1,0 +1,154 @@
+{
+  "case_id": "SC_1951_MAKHAN_SINGH_TARSIKKA_VS_THE_STATE_OF_PUNJAB",
+  "case_name": "Makhan Singh Tarsikka vs The State Of Punjab",
+  "normalized_case_name": "MAKHAN_SINGH_TARSIKKA_VS_THE_STATE_OF_PUNJAB",
+  "court": "Supreme Court of India",
+  "year": "1951",
+  "judgment_template": null,
+  "case_number": "Petition 308 of 1951",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": "10 December 1951",
+  "judges": [
+    "M. Patanjali  Sastri",
+    "Mehr Chand Mahajan",
+    "B.K. Mukherjea",
+    "N. Chandrasekhara Aiyar"
+  ],
+  "author": "M. Patanjali  Sastri",
+  "bench_type": "constitution",
+  "petitioner": "Makhan Singh Tarsikka",
+  "respondent": "The State Of Punjab",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 9,
+  "cited_by_count": 18,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1952 AIR 27",
+    "1952 SCR 368",
+    "AIR 1952 SUPREME COURT 27"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1951\\1951_54.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1951_MAKHAN_SINGH_TARSIKKA_VS_THE_STATE_OF_PUNJAB_P001_C01",
+      "text": "BENCH:\nSASTRI, M. PATANJALI (CJ)\nBENCH:\nSASTRI, M. PATANJALI (CJ)\nMAHAJAN, MEHR CHAND\nMUKHERJEA, B.K.\nDAS, SUDHI RANJAN\nAIYAR, N. CHANDRASEKHARA",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1951_MAKHAN_SINGH_TARSIKKA_VS_THE_STATE_OF_PUNJAB_P002_C01",
+      "text": "CITATION:\n 1952 AIR 27 1952 SCR 368\n CITATOR INFO :\n R 1952 SC 106 (9)\n F 1952 SC 181 (5,13,26)\n R 1958 SC 163 (12,39,42)",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1951_MAKHAN_SINGH_TARSIKKA_VS_THE_STATE_OF_PUNJAB_P003_C01",
+      "text": "ACT:\nPreventive Detention Act\n(IV of 1950 as amended in\n1951) ss. 3 (i), 9, 11, 12--Order of detention fixing period\nof detention in initial order itself before reference to\nAdvisory Board--Legality-Deprivation of personal\nliberty--Duty to follow procedure strictly.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1951_MAKHAN_SINGH_TARSIKKA_VS_THE_STATE_OF_PUNJAB_P004_C01",
+      "text": "HEADNOTE:\n Whatever might be the position under the\nPreventive\nDetention Act\nof 1950 before it was amended in 1951, under\nthe Act as amended in 1951, the Government should determine\nwhat the period of detention should be only after the Advi-\nsory Board to which the case is referred reports that the\ndetention is justified. Fixing of the period of detention in\nthe initial order itself is contrary to the scheme of the\nAct and cannot be supported. It cannot be treated as a mere\nsurplusage as it would tend to prejudice a fair considera-\ntion of the detenu's case by the Advisory Board, though he\nwould have to be released forthwith if the Advisory Board\nreports that there is no sufficient cause for detention.\n Before a person is deprived of his personal liberty the\nprocedure established by law must be strictly followed and\nmust not be departed from to the disadvantage of the person\naffected.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1951_MAKHAN_SINGH_TARSIKKA_VS_THE_STATE_OF_PUNJAB_P005_C01",
+      "text": "JUDGMENT:\nORIGINAL JURISDICTION. Petition No. 308 of 1951.\nApplication under\narticle 32\nof the Constitution for a writ\nin the nature of habeas corpus praying for the release of\nthe petitioner from detention.\nH.J. Umrigar (amicus curiae), for the petitioner.\nS.M. Sikri, Advocate-General of the Punjab, (Jindra Lal,\nwith him) for the respondent.\n1951. December 10. The Judgment of the Court was deliv-\nered by\n PATANJALI SASTRI C.J.--This is a petition under\narticle",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 32"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1951_MAKHAN_SINGH_TARSIKKA_VS_THE_STATE_OF_PUNJAB_P006_C01",
+      "text": "of the Constitution praying for the release of the peti-\ntioner from his alleged unlawful detention. We accepted the\npetition and, at the conclusion of the hearing, ordered the\npetitioner to be released., We now proceed to give the\nreasons for our order.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1951_MAKHAN_SINGH_TARSIKKA_VS_THE_STATE_OF_PUNJAB_P007_C01",
+      "text": "The petitioner was arrested and detained under an order\ndated 1st March, 1950, made by the District Magistrate,\nAmritsar, under\nsection3(1)\nof the Preventive Detention Act,\n1950 (hereinafter referred to as \"the Act \") and the grounds\nof detention were communicated to the petitioner as required\nsection7\nof the Act on 15th March, 1950. The petitioner\nchallenged the validity of the order on various grounds but,\nwhile the petition was pending after this Court issued a\nrule nisi to the respondent, the petitioner was served on\n6th August with another detention order dated 30th July,1951\n1, purporting to be made by the Governor of Punjab under\nsub-section(1) of\nsection 3\nand\nsection 4\nof the Act as\namended by the\nPreventive Detention (Amendment) Act, 1951\n,\nand he was served with fresh grounds of detention on 16th\nAugust, 1951. Thereupon the petitioner filed a supplementary\npetition impugning the validity of the said order on the\nground, inter alia, that it directed the detention of the\npetitioner up to 31st March, 1952, the date on which the Act\nitself was to expire and that this was contrary to the\nprovisions of the Act as amended.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1951_MAKHAN_SINGH_TARSIKKA_VS_THE_STATE_OF_PUNJAB_P007_C02",
+      "text": "On behalf of the\nrespondent, the Advocate-General of Punjab urged that the\nsaid order was not intended to be a fresh order of detention\nbut was passed only with a view to limiting the period of\ndetention till 31st March, 1952, as it had been held in some\ncases that an order of detention for an indefinite period\nwas bad. The order runs as follows :-\nWHEREAS the Governor of Punjab is satisfied with respect\nto the person known as Makhan Singh Tarsikka, son of Gujjar\nSingh, Jat, of Tarsikka, Police Station Jandiala, Amritsar\nDistrict, that with a view to preventing him from acting in\na manner prejudicial to the security of the State, it is\nnecessary to make the following order:\nNow, THEREFORE, in exercise of the powers conferred\nby sub-section (1) of\nsection 3\nand\nsection 4\nof the\nPreventive Detention Act, 1950 (Act IV of 1950), as amended\nby the\nPreventive Detention (Amendment) Act, 1951\n(Act IV of\n1951), the Governor",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1951_MAKHAN_SINGH_TARSIKKA_VS_THE_STATE_OF_PUNJAB_P008_C01",
+      "text": "of Punjab hereby directs that the said Makhan Singh Tarsikka\nbe committed to the custody of the InspectorGeneral of\nPrisons, Punjab, and detained in any jail of the State till\n31st March, 1952, subject to such conditions as to mainte-\nnance, discipline and punishment for breaches of discipline\nas have been specified by a general order or as contained in\nthe Punjab Communist Detenu Rules, 1950. It will be seen that the terms of the order make it clear\nthat it was intended to operate as a fresh order for the\ndetention of the petitioner and this view is strengthened by\nthe fact that the order was followed by the service of a\nfresh set of grounds on the petitioner as required by sec-\ntion 7 of the Act; a proceeding which would be wholly unnec-\nessary if no fresh order of detention was intended. Indeed,\nit was suggested on behalf of the petitioner that the said\norder followed by service of fresh grounds only four days\nbefore the date fixed for the hearing of the petition by\nthis Court was a deliberate move by the respondent to cir-\ncumvent the objections raised by the petitioner to the\nvalidity of the earlier order of 1st March, 1950, and thus\nrender the proceeding infructuous.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1951_MAKHAN_SINGH_TARSIKKA_VS_THE_STATE_OF_PUNJAB_P008_C02",
+      "text": "However that may be, we\nare clearly of opinion that the order dated 30th July, 1951.\nmust be regarded as a fresh order made for the petitioner's\ndetention in superession of the earlier order and the ques-\ntion is whether it was illegal in that it straightaway\ndirected that the petitioner be detained till 31st March,\n1952, which was the date of the expiry of the Act. Whatever might be the position under the Act before\nits amendment in February, 1951, it is clear that the Act as\namended requires that every.case of detention should be\nplaced before an Advisory Board constituted under the Act\n(\nsection 9\n) and provides that if the Board reports that\nthere is sufficient cause for the detention \"the appropriate\nGovernment may confirm the detention order and continue the\ndetention of the person concerned for such period as it\nthinks fit\" (\nsection 11\n). It is, therefore, plain that it\nis only after the Advisory Board, to which the case",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1951_MAKHAN_SINGH_TARSIKKA_VS_THE_STATE_OF_PUNJAB_P009_C01",
+      "text": "has been referred, reports that the detention is justified,\nthe Government should determine what the period of deten-\ntion should be and not before. The fixing of the period of\ndetention in the initial order itself in the present case\nwas, therefore, contrary to the scheme of the Act and cannot\nbe supported. The learned Advocate-General, however, urged\nthat in view of the provision in\nsection 11 (2)\nthat if the\nAdvisory Board reports that there is no sufficient cause for\nthe detention, the person concerned would be released forth-\nwith, the direction in the order dated 30th July, 1951, that\nthe petitioner should be detained till 31st March, 1952,\ncould be ignored as mere surplusage. We cannot accept that\nview. It is obvious that such a direction would tend to\nprejudice a fair consideration of the petitioner's ease when\nit is placed before the Advisory Board. It cannot be too\noften emphasised that before a person is deprived of his\npersonal liberty the procedure established by law must be\nstrictly followed and must not be departed from to the\ndisadvantage of the person affected.\nPetition allowed.\nAgent for the respondent: P.A. Mehta.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Makhan Singh Tarsikka vs The State Of Punjab",
+    "case_id": "SC_1951_MAKHAN_SINGH_TARSIKKA_VS_THE_STATE_OF_PUNJAB",
+    "court": "Supreme Court of India",
+    "year": "1951",
+    "facts_summary": "CITATION:\n 1952 AIR 27 1952 SCR 368\n CITATOR INFO :\n R 1952 SC 106 (9)\n F 1952 SC 181 (5,13,26)\n R 1958 SC 163 (12,39,42) ACT:\nPreventive Detention Act\n(IV of 1950 as amended in\n1951) ss. 3 (i), 9, 11, 12--Order of detention fixing period\nof detention in initial order itself before reference to\nAdvisory Board--Legality-Deprivation of personal\nliberty--Duty to follow procedure strictly. The petitioner was arrested and detained under an order\ndated 1st March, 1950, made by the District Magistrate,\nAmritsar, under\nsection3(1)\nof the Preventive Detention Act,\n1950 (hereinafter referred to as \"the Act \") and the grounds\nof detention were communicated to the petitioner as required\nsection7\nof the Act on 15th March, 1950. The petitioner\nchallenged the validity of the order on various grounds but,\nwhile the petition was pending after this Court issued a\nrule nisi to the respondent, the petitioner was served on\n6th August with another detention order dated 30th July,1951\n1, purporting to be made by the Governor of Punjab under\nsub-section(1) of\nsection 3\nand\nsection 4\nof the Act as\namended by the\nPreventive Detention (Amendment) Act, 1951\n,\nand he was served with fresh grounds of detention on 16th\nAugust, 1951. Thereupon the petitioner filed a supplementary\npetition impugning the validity of the said order on the\nground, inter alia, that it directed the detention of the\npetitioner up to 31st March, 1952, the date on which the Act\nitself was to expire and that this was contrary to the\n",
+    "legal_issues": "JUDGMENT:\nORIGINAL JURISDICTION. Petition No. 308 of 1951.\nApplication under\narticle 32\nof the Constitution for a writ\nin the nature of habeas corpus praying for the release of\nthe petitioner from detention.\nH.J. Umrigar (amicus curiae), for the petitioner.\nS.M. Sikri, Advocate-General of the Punjab, (Jindra Lal,\nwith him) for the respondent.\n1951. December 10. The Judgment of the Court was deliv-\nered by\n PATANJALI SASTRI C.J.--This is a petition under\narticle On behalf of the\nrespondent, the Advocate-General of Punjab urged that the\nsaid order was not intended to be a fresh order of detention\nbut was passed only with a view to limiting the period of\ndetention till 31st March, 1952, as it had been held in some\ncases that an order of detention for an indefinite period\nwas bad. The order runs as follows :-\nWHEREAS the Governor of Punjab is satisfied with respect\nto the person known as Makhan Singh Tarsikka, son of Gujjar\nSingh, Jat, of Tarsikka, Police Station Jandiala, Amritsar\nDistrict, that with a view to preventing him from acting in\na manner prejudicial to the security of the State, it is\nnecessary to make the following order:\nNow, THEREFORE, in exercise of the powers conferred\nby sub-section (1) of\nsection 3\nand\nsection 4\nof the\nPreventive Detention Act, 1950 (Act IV of 1950), as amended\nby the\nPreventive Detention (Amendment) Act, 1951\n(Act IV of\n1951), the Governor of Punjab hereby directs that the said Makhan Singh Tarsikka\nbe committed to the custody of the Inspector",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "Allowed",
+    "sections_cited": [
+      "Constitution 32"
+    ],
+    "cases_cited": []
+  }
+}

@@ -1,0 +1,374 @@
+{
+  "case_id": "SC_1990_1990_77",
+  "case_name": "J.K. Cotton Spg. And Wvg Mills Co. ... vs State Of U.P. And Ors",
+  "normalized_case_name": "J.K._COTTON_SPG._AND_WVG_MILLS_CO._..._VS_STATE_OF_U.P._AND_ORS",
+  "court": "Supreme Court of India",
+  "year": "1990",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "27 July 1990",
+  "judges": [
+    "A.M.  Ahmadi"
+  ],
+  "author": "A.M.  Ahmadi",
+  "bench_type": "single",
+  "petitioner": "J.K. Cotton Spg. And Wvg Mills Co. ...",
+  "respondent": "State Of U.P. And Ors",
+  "reporter_citations": [
+    "[1976] 1 SCC 822",
+    "[1976] 4 SCC 222",
+    "[1977] 4 SCC 415",
+    "[1980] 3 SCC 340"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 12,
+  "cited_by_count": 95,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1990 AIR 1808",
+    "1990 SCR (3) 523",
+    "AIR 1990 SUPREME COURT 1808",
+    "1990 (4) SCC 27",
+    "1990 LAB IC 1511",
+    "(1990) 3 JT 300 (SC)",
+    "(1991) 78 FJR 12",
+    "(1990) 2 UPLBEC 1066",
+    "(1990) 3 SERVLJ 105",
+    "(1990) 2 LAB LN 682",
+    "(1990) 2 KER LT 29",
+    "1990 LABLR 503",
+    "1990 UJ(SC) 2 438",
+    "(1991) 1 LABLJ 39",
+    "(1990) 2 CURLR 542",
+    "(1990) 61 FACLR 329",
+    "(1990) 5 SERVLR 642",
+    "1990 SCC (L&S) 570"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1990\\1990_77.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1990_1990_77_P001_C01",
+      "text": "CITATION:\n 1990 AIR 1808 1990 SCR (3) 523\n 1990 SCC (4) 27 JT 1990 (3) 300\n 1990 SCALE (2)153",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1990_1990_77_P002_C01",
+      "text": "ACT:\nU.P. Industrial Disputes Act, 1947\n--\nSection 2(s)\nand\n6N-Resignation voluntarily tendered by an employee--Employer\naccepting the same--Services of employee terminated-Whether\namounts to 'retrenchment'.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1990_1990_77_P003_C01",
+      "text": "HEADNOTE:\n One Ram Singh was appointed by the appellant-company on\n10.3.1960. On 1.11.1970, he addressed a letter of resigna-\ntion to the Manager of the company saying that owing to his\nfamily circumstances, it was no longer possible for him to\ncontinue in service and that he was compelled to sever his\nconnections with the company. He made a demand of all his\ndues. He wrote another letter two days later that someone\nshould be posted in the section where he was working in\norder that he may learn the work are: printing of shares,\npay-sheets and pay registers etc. The appellant-company\nconveyed the acceptance of the resignation with effect from\nthe 16th November, 1970 and paid all his dues on 22.12.1970. The amount of gratuity was also paid later. Ram Singh there-\nafter raised an industrial dispute and sought a reference\nunder\nSection 4K\nof the U.P. Industrial Dispute Act, 1947. Initially his demand was not accepted by the State Govern-\nment but later the State Government accepted his demand on\n28.11.1974 whereupon the appellant-company filed a writ\npetition in the High Court challenging the said reference\nmade by the State Government but the High Court dismissed\nthe petition.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1990_1990_77_P003_C02",
+      "text": "The Labour Court thereafter made an award on\nthe reference, in favour of the employee. It came to the\nconclusion that the employee's resignation was not voluntary\nand therefore his services had been wrongly terminated and\naccordingly he was directed to be reinstated. The appellant\nchallenged the validity of the said award under\nArticle 226\nof the Constitution before the High Court. The High Court\ncame to the conclusion that the employee had tendered his\nresignation voluntarily but it held that termination of the\nservice of the employee fell within the definition of 'r-\netrenchment' as contained in\nSection 2(s)\nand as the appel-\nlant-company had failed to comply with the requirement of\nSection 6N, the termination of service was invalid. The High\nCourt accordingly set aside the order of reinstatement\npassed by",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1990_1990_77_P004_C01",
+      "text": "the Labour Court and remanded the matter to the Labour Court\nfor a decision on the question whether there was infraction\nof the provisions of Section 6N. Being aggrieved by that\norder of the High Court, the appellant-company has filed\nthis appeal after obtaining special leave. Allowing the appeal, this Court,\n HELD: Where a contract of service is determined on the\nemployee exercising his right to quit, such termination\ncannot be said to be at the instance of the employer to fail\nwithin the first part of the definition of retrenchment in\nSection 2(s)\nof the U.P. Industrial Disputes Act. [531H;\n532A]\n A contract of service can be determined by either party\nto the contract. If it is determined at the behest of the\nemployer it may amount to retrenchment unless it is by way\nof punishment for proved misconduct. But if an employee\ntakes the initiative and exercises his right to put an end\nto the contract of service and the employer merely assents\nto it, it cannot be said that the employer has terminated\nthe employment. In such cases the employer is merely acced-\ning to the employee's request, may be even reluctantly.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1990_1990_77_P004_C02",
+      "text": "Here\nthe employee's role is active while the employer's role is\npassive and formal. The employer cannot force an unwilling\nemployee to work for him. [531E-F]\n When an employee resigns his office, he formally relin-\nquishes or withdraws from his office. it implies that he has\ntaken a mental decision to sever his relationship with his\nemployer and thereby put an end to the contract of service.\n[533E]\n In the present case the employee's request contained in\nthe letter of resignation was accepted by the employer and\nthat brought an end to the contract of service. [534B]\n This was a case of 'voluntary retirement' within the\nmeaning of the first exception to\nsection 2(s)\nand therefore\nthe question of grant of compensation under section 6N did\nnot arise. The employee is not entitled to any compensation\nunder section 6N of the State Act. [534F]\n The State Bank of India v.N. Sundara Money, [1976] 1 SCC\n822; Hindustan Steel Ltd. v. The Presiding Officer, Labour\ncourt, Orissa and Ors., [1976] 4 SCC 222; Delhi Cloth and\nGeneral Mills Ltd. v. Shambhu Nath Mukherji and others,\n[1977] 4 SCC 415; Santosh (Gupta v. State Bank of Patiala,\n[1980] 3 SCC 340; L.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1990_1990_77_P004_C03",
+      "text": "Robert D'souza v., Executive Engineer,\nSouthern Railway and Anr., [1982] 1SCC 645 and",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1990_1990_77_P005_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal No, 307 of\n1987. From the Judgment and Order dated 16.10.1985 of the\nAllahabad High Court in C.M.W. No. 3689 of 1984. G.B. Pai, Ms. Urmila Kapoor and S. Janani for the Appellant. Prithivi Raj, Vishnu Mathut and Ms. S. Dikshit for the\nRespondents. The Judgment of the Court was delivered by\n AHMADI, J. When the service of an employee is terminated\nconsequent upon the employer accepting the resignation\nvoluntarily tendered by the employee, does the termination\nso brought about amount to 'Retrenchment' within the meaning\nSection 2(s)\nread with\nSection 6N\nof the Uttar Pradesh\nIndustrial Disputes Act, 1947, is the question which we are\ncalled upon to decide in this appeal by special leave. The\nfacts relevant to be stated for the disposal of this appeal\nare as under:\nRam Singh was employed by the appellant-company on 10th\nMarch, 1960 and was posted in the Bradma machine section of\nthe company. His duties were to attend to the printing of\nshares, pay sheets, registers, ESI cards etc., relating to\nthe appellant-company.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1990_1990_77_P005_C02",
+      "text": "On 1st November, 1970 he addressed a\nletter of resignation to the Manager of the appellant-compa-\nny in the following words:\n\"R/Sir,\nI regret to bring to your kind notice that my family circum-\nstances do not permit me to continue my service and hence I\nam compelled to sever my connections with these Mills imme-\ndiately. I, therefore, request your goodself kindly to arrange for\nthe payment of all my dues at an early date.\"\nTwo days thereafter he wrote another letter to the Manager\nof the company which reads as under:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1990_1990_77_P006_C01",
+      "text": "\"R/Sir,\nSince I have already tendered my resignation from my serv-\nices, I request you kindly to depute somebody in the Bradma\nOffice taking charge and learning the work, so that the\nentrusted work may be carried on smoothly. Thanking you so much for making early arrangement as re-\nquested.\"\nA copy of this letter was endorsed to the Special Executive\nof the appellant-company for information and necessary\naction. On receipt of the above letters, the Manager of the\nappellant-company replied as under:\n\"The resignation tendered by you vide your letter dated 1st\ninstant, is hereby accepted with effect from 16th instant. Please hand over charge of the Company's properties in your\npossession to Shri R.S. Mathur and collect payment in full\nand final settlement from the Mills Pay Office.\"\nAfter the receipt of this letter the charge of the\nBradma Section was handed-over by the employee to the said\nR.S. Mathur on 15th November, 1970. The amount due to the\nemployee by way of salary, allowances, etc., upto 16th\nNovember, 1970 was worked out but the actual payment was\nreceived by the employee on 22nd December, 1970. He was also\npaid his service gratuity at the end of February, 1971.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1990_1990_77_P006_C02",
+      "text": "appears that the employee raised an industrial dispute and\nsought a reference under Section 4K of the State Act. The\nemployee's demand for a reference was initially rejected by\nthe State Government on 12th November, 1973 but it came to\nbe accepted subsequently on 28th November, 1974. The appel-\nlant-company thereupon filed a writ petition challenging the\nsaid reference made by the State Government but the High\nCourt dismissed the petition on 7th September, 1981. Pursu-\nant to the reference, the Labour Court made an Award in\nfavour of the employee on 25th January, 1984. The Labour\nCourt came to the conclusion that the employee's resignation\nwas not voluntary and, therefore, his services had been\nwrongly terminated with effect from 15th November, 1970. He\nwas ordered to be reinstated. Against this Award of the\nLabour Court the appellant approached the High Court under\nArticle 226\nof the Constitution. The High Court came to the\nconclusion that the employee had tendered his resignation\nvoluntarily",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1990_1990_77_P007_C01",
+      "text": "and without any threat or coercion. It also took the view\nthat the claim for overtime wages was an after-thought. However, considering the definition of 'retrenchment' in\nSection 2(s)\n, the High Court came to the conclusion that the\ntermination of service of the employee fell within the said\ndefinition and as the appellant company had failed to ob-\nserve the requirements of section 6N, the termination of\nservice was clearly invalid. The approach to the High Court\nis reflected in the following passage of its Judgment:\n8\"The contention raised is that there was no act of the\nemployer in this connection and hence this may not be said\nto be a case of retrenchment of the respondent. To this I do\nnot find possible to agree. There is no denial that the\nrespondent had been in continuous service for not less than\none year within the meaning of Section 6N. According to\nSection 2(s)\n, retrenchment covers termination by the employ-\ner of the service of a workman for any reason whatsoever.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1990_1990_77_P007_C02",
+      "text": "this there are exceptions applicable where the termination\nis by way of punishment inflicted as a result of a discipli-\nnary_ action or voluntary retirement of the workman or\nretirement of the workman on attaining the age of superannu-\nation. The provision is in pari materia with section 2(00)\nof the Central Act. The case does not fail within any of\nthese exceptions. Voluntary retirement of a workman may not\nstand in need of acceptance by the employer; this may be\nhedged in with certain conditions such as those relating to\ncertain number of years having been put in service and the\nlike, but resignation may be tendered at any time though it\nrequires acceptance to be effective. There is retrenchment\nunder law where the services of a workman stand terminated\nfor any reason whatsoever. This may not be a consequence\ndirectly flowing from an act of the employer. The material\nfactor would be whether there is determination of the rela-\ntionship of employer and workman between the parties.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1990_1990_77_P007_C03",
+      "text": "If as\na consequence this relationship has ceased or has been\nbrought to an end, there is the resultant termination of the\nservices of the workman.\"\nIn support of this view reliance was placed on the decisions\nof this Court in\nThe State Bank of India v. N. Sundara\nMoney\n, [1976] 1 SCC 822; Hindustan Steel Ltd. v. The Presid-\ning Officer, Labour Court, Orissa & Others, [1976] 4 SCC\n222, Delhi Cloth and General Mills LId.\nv. Shambhu Nath\nMukherji and Others, [1977] 4 SCC 415;\nSantosh",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1990_1990_77_P008_C01",
+      "text": "Gupta v. State Bank of Patiala\n, [1980] 3\nSCC 340 and L. Robert D'Souza v. Executive Engineer, Southern Railway and\nAnother\n, [1982] 1 SCC 645. Reliance was also placed on the\ndecision of the Kerala High Court in Corporation of Cochin\nv. Jalaji & Others, [1984] 1 LLJ 526. Proceeding further the High Court concluded as under:\n\" ..... the present is a case where there was act of the\nemployer also before the termination became effective. As\ndiscussed above, the resignation tendered by the respondent\ncould not take effect without the acceptance on the part of\nthe employer. The acceptance was accorded on November 4,\n1970, expressly in writing. This clearly is an act of the\nemployer which put a seal to the matter and brought about\ncessation of the relationship of the employer and the work-\nman. Therefore, there is no escape from the conclusion that\nit was a case of retrenchment.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1990_1990_77_P008_C02",
+      "text": "It remains to be seen on\nrelevant material whether in fact there was compliance made\nof the requirement of section 6N.\"\nHowever, the order of reinstatement passed by the Labour\nCourt, Kanpur was set aside and the matter was remanded to\nthe Labour Court for a decision on the question whether\nthere was an infraction of section 6N. The High Court,\nhowever, made it clear that \"the issue of resignation shall\nnot be open to read judication\". In other words, the only\nquestion which the Labour Court was required to consider was\nwhether the retrenchment was in conformity with section 6N\nof the State Act. Feeling aggrieved by this order the appel-\nlant-company has approached this Court under\nArticle 136\nthe Constitution. The State Act, i.e.,\nUttar Pradesh Industrial Disputes\nAct, 1947\nwas enacted to provide powers to prevent strikes\nand lock-outs, to settle industrial disputes and for other\nincidental matters.",
+      "paragraph_type": "order",
+      "sections_cited": [
+        "Constitution 136"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1990_1990_77_P008_C03",
+      "text": "Section 2(s)\ndefines the term 'Retrench-\nment' as under:\n\"2(s): 'Retrenchment' means the termination by the employer\nof the service of a workman for any reason whatsoever,\notherwise than as punishment inflicted by way of discipli-\nnary action, but does not include--\n(i) voluntary retirement of the workmen; or",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1990_1990_77_P009_C01",
+      "text": "(ii) retirement of the workmen on reaching the age of super-\nannuation if the contract of employment between the employer\nand workman concerned contains a stipulation in that\nbehalf.\"\nThis definition is in pari materia with the definition of\n'retrenchment' found in section 2(00) of the Central Act\ni.e. Industrial Disputes Act, 1947\nas it stood prior to its\namendment by Act LIX of 1984. Section 6N\nthe State Act reads as under:\n\"6N.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1990_1990_77_P009_C02",
+      "text": "Conditions precedent to retrenchment of workman. ---No\nworkman employed in any industry who has been in continuous\nservice for not less than one year under an employer shall\nbe retrenched by that employer until--\n(a) the workman has been given one month's notice in writing\nindicating the reasons for retrenchment and the period of\nnotice has expired, or the workman has been paid in lieu of\nsuch notice wages for the period of the notice;\nProvided that no such notice shall be necessary if the\nretrenchment is under an -agreement which specifies a date\nfor the termination of service;\n(b) the workman has been paid, at the time of retrenchment,\ncompensation which shall be equivalent to fifteen days'\naverage pay for every completed year of service or any part\nthereof in excess of six months; and\n(c) notice in the prescribed manner is served on the State\nGovernment.\"\nThis section substantially reproduces section 25F of the\nCentral Act. In the Central Act the proviso came to be\nomitted by Act LIX of 1984 and instead clause (bb) came to\nbe added to\nsection 2(00)\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1990_1990_77_P009_C03",
+      "text": "The first question which we must consider is whether in\nthe background of facts stated earlier it can be said that\nthe services of the employee were terminated by way of\n'retrenchment' as understood by",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1990_1990_77_P010_C01",
+      "text": "section 2(s)\nand, if yes, whether the employer was required\nto comply with the provisions of section 6N of the State\nAct. It becomes clear on a plain reading of the definition\nof the term 'retrenchment' that it comprises of two parts;\nthe first part is the inclusive part which defines retrench-\nment whereas the second part is in the nature of an excep-\ntion and excludes two types of cases from the scope and\nambit of the said definition. Under the first part termina-\ntion of an employee's service by the employer for any reason\nwhatsoever, otherwise than by way of punishment inflicted as\na disciplinary measure, amounts to retrenchment. Under the\nsecond part cases of (i) voluntary retirement & (ii) retire-\nment on superannuation are excluded from purview of the\nfirst part of the definition. Termination of service can be\nbrought about in diverse ways by an employer but every\ntermination is not retrenchment, as for example, termination\nof service by way of punishment for proved misconduct.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1990_1990_77_P010_C02",
+      "text": "The\nwords 'for any reason whatsoever' are undoubtedly words of\nwide import and hence termination of service by the employer\nwill attract the definition of retrenchment unless it is\nshown to be penal in nature brought about by way of disci-\nplinary action or as falling within one of the two exclusion\nclauses extracted earlier. In order to counter the employ-\nee's contention that he was retrenched from service on the\nemployer having communicated the acceptance of his resigna-\ntion, the employer has placed reliance on the first clause,\nnamely, that the workman had voluntarily retired from serv-\nice. The letter dated 1st November, 1970 written by the\nemployee to the Manager of the appellant-company expressing\nhis desire to resign his job shows that it was a voluntary\nact on the part of the employee. This was followed by anoth-\ner letter of 3rd November, 1970 whereby the workman request-\ned the company to depute someone to take charge of the\nBradma office so that he gets acquainted with the work to\nensure a smooth take over. It was on this request of the\nemployee that the appellant-company accepted his resignation\nby the letter of 4th November, 1970 with effect from 16th\nNovember, 1970.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1990_1990_77_P010_C03",
+      "text": "From this correspondence it is crystal clear\nthat the employee desired to sever his relations with the\nappellant-company on account of his family circumstances. But for this request made by the employee there was no\nreason for the appellant-company to terminate the contract\nof service on its own. Just as an employer has a right to\nterminate the service of an employee, an employee too has a\nfight to put an end to the contract of employment by inform-\ning his employer of his intention to give up the job. This\nfight is specifically conferred by clause 21 of the Standing\nOrders certified under\nSection 5\nof the Industrial Employ-\nment\n(Standing Orders) Act, 1946\n. This clause reads as\nunder:",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1990_1990_77_P011_C01",
+      "text": "\"Any permanent clerk desirous of leaving the company's\nservice shall give one month's notice in writing to the\nManager unless he has a specific agreement providing for a\nlonger or shorter notice. If any permanent clerk leaves the\nservice of the company without giving notice, he shall be\nliable to be sued for damages.\"\nSimilar clause with reduced notice period is also to be\nfound in the certified Standing Orders for operatives. Therefore, one of the ways of terminating the contract of\nemployment is resignation. If an employee makes his inten-\ntion to resign his job known to the employer and the latter\naccepts the resignation, the contract of employment comes to\nan end and with it stands severed the employer-employee\nrelationship. Under the common law the resignation is not\ncomplete until it is accepted by the proper authority and\nbefore such acceptance an employee can change his mind and\nwithdraw the resignation but once the resignation is accept-\ned the contract comes to an end and the relationship of\nmaster and servant stands snapped.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1990_1990_77_P011_C02",
+      "text": "Merely because the em-\nployer is expected to accept the employee's resignation it\ncannot be said that the employer has brought about an end to\nthe contract of employment so as to bring the case within\nthe first part of the definition of retrenchment. A contract\nof service can be determined by either party to the con-\ntract. If it is determined at the behest of the employer it\nmay amount to retrenchment unless it is by way of punishment\nfor proved misconduct. But if an employee takes the initia-\ntive and exercises his right to put an end to the contract\nof service and the employer merely assents to it, it cannot\nbe said that the employer has terminated the employment. In\nsuch cases the employer is merely acceding to the employee's\nrequest, may be even reluctantly. Here the employee's role\nis active while the employer's role is passive and formal. The employer cannot force an unwilling employee to work for\nhim. Under clause 21 of the certified Standing Orders all\nthat the employee-is required to do is to give the employer\na notice to quit and on the expiry of the notice period his\nservice would come to an end.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1990_1990_77_P011_C03",
+      "text": "A formal acceptance of the\nemployee's desire by the employer cannot mean that it is the\nemployer who is putting an end to the contract of employ-\nment. It would be unfair to saddle the employer with the\nliability to pay compensation even where the service is\nterminated on the specific request of the employee. Such an\nintention cannot be attributed to the legislature. We are,\ntherefore, of the opinion that where a contract of service\nis determined on the employee exercising his right to quite,\nsuch termination cannot be said to be at the instance of the\nemployer",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1990_1990_77_P012_C01",
+      "text": "to fall within the first part of the definition of retrench-\nment in section 2(s) of the State Act. The High Court has placed reliance on ,four decisions of\nthis Court to which we may now advert. In Sundara Money's\ncase the employment was for a fixed duration of 9 days, on\nthe expiry whereof the service was to end. This condition\nwas imposed unilaterally. The employment was to terminate\nnot because the employee did not desire to serve but because\nof the unilateral condition imposed by the employer. The\ninitiative for the termination, therefore, came from the\nemployer attracting the wide terminology of\nsection 2(00)\n. In Hindustan Steel Ltd. the termination of service was by\nefflux of time. Placing reliance on the law laid down in\nSundara Money\n's case and the proviso to\nsection 25F(a)\n, this\nCourt held that the termination of service was by way of\nretrenchment. In the case of Delhi Cloth Mills the employ-\nee's name was taken as automatically removed from the rolls\nof the company under the Standing Orders for continued\nabsence without prior intimation. The striking off the name\nwas clearly an act of the employer resulting in termination\nof service amounting to retrenchment.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1990_1990_77_P012_C02",
+      "text": "Santosh Gupta's was a\ncase of termination of service on account of her failure to\npass the prescribed test. That was the reason for terminat-\ning her service. All the same it was the employer's action\nwhich resulted in the termination of her service attracting\nsection 2(00)\n. In the case of Robert D'souza the termination\nwas rounded on the ground of unauthorised absence from duty\nwhich clearly was an act of the employer. In all the.. above\ncases on which the High Court placed reliance, no question\nof termination of service on the employee voluntarily ten-\ndering his resignation arose for consideration. These cases\nare, therefore, not helpful since they turn on their own\nspecial facts. None of them deals with a case of voluntary\nresignation tendered by an employee. We may now examine the question from another angle,\nnamely, whether an employee whose resignation has been\naccepted by the employer falls within the first exclusion\nclause to the definition of the term 'retrenchment'.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1990_1990_77_P012_C03",
+      "text": "There\ncan be no doubt that a resignation must be voluntarily\ntendered for if it is tendered on account of duress or\ncoercion, it ceases to be a voluntary act of the employee\nexpressing a desire to quite service. In the present case\nthe High Court has come to the conclusion that the employee\nhad tendered his resignation voluntarily. Does termination\nof service brought about by the acceptance of resignation\nfall with the expression 'voluntary retirement'? The meaning\nof the term 'resign' and 'retire' in different dictionaries\nis as under:",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1990_1990_77_P013_C01",
+      "text": "TABLE\n------------------------------------------------------------\nName of the Meaning of 'Resign' Meaning of 'Retire'\nDictionary\n------------------------------------------------------------\nBlack's Law Formal renouncement to terminate employ-\nDictionary or relinquishment ment or service upon\n(5th Edn.) of an office. reaching retirement\n age. Shorter Ox- To relinquish, The act of retiring\nford English surrender, give up or withdrawing to\nDictionary or hand over (some- or from a place or\n(Revised thing); esp., an from a place or\nEdn. of 1973) office, position, position.\n right, claim, etc. To give up an office\n or position; to retire. The Random To give up an office To withdraw from of-\nHouse Dic- , position etc.; to fice business or\ntionary relinquish (right, active life\n claim, agreement etc.)\nFrom the aforesaid dictionary meanings it becomes clear\nthat when an employee resigns his office, he formally relin-\nquishes or withdraws from his office. It implies that he has\ntaken a mental decision to sever his relationship with his\nemployer and thereby put an end to the contract of service.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1990_1990_77_P013_C02",
+      "text": "As pointed out earlier just as an employer can terminate the\nservices of his employee under the contract. So also an\nemployee can inform his employer that he does not desire to\nserve him any more. Albeit, the employee would have to give\nnotice of his intention to snap the existing relationship to\nenable the employer to make alternative arrangements so that\nhis work does not suffer. The period of notice will depend\non the period prescribed by the terms of employment and if\nno such period is prescribed, a reasonable time must be\ngiven before the relationship is determined. If an employee\nis not permitted by the terms of his contract to determine\nthe relationship of master and servant, such an employment\nmay be branded as bonded labour. That is why in Central\nInland Water Transport Corporation v. Brojonath Ganguly,\n[1986] 3SCC 156 at page 228 this Court observed as under:",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1990_1990_77_P014_C01",
+      "text": "\"By entering upon a contract of employment a person does not\nsign a bond of slavery and a permanent employee cannot be\ndeprived of his right to resign. A resignation by an employ-\nee would, however, normally require to be accepted by the\nemployer in order to be effective.\"\nIn the present case the employee's request contained in\nthe letter of resignation was accepted by the employer and\nthat brought an end to the contract of service. The meaning\nof term 'resign' as found in the Shorter Oxford Dictionary\nincludes 'retirement'. Therefore, when an employee volun-\ntarily tenders his resignation it is an act by which he\nvoluntarily gives up his job. We are, therefore, of the\nopinion that such a situation would be covered by the ex-\npression 'voluntary retirement' within the meaning of cluase\n(i) of Section 2(s) of the State Act. In Santosh Gupta's\ncase Chinnappa Reddy, J. observed as under:\n\"Voluntary retrenchment of a workman or the retrenchment of\nthe workman on reaching the age of superannuation can hardly\nbe described as termination, by the employer, of the service\nof a workman\".",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1990_1990_77_P014_C02",
+      "text": "(Here the word 'retrenchment' has reference to\n'retirement'.)\n above observation clearly supports the view which com-\nmends to us. We are, therefore, of the opinion that the High\nCourt was not right in concluding that because the employer\naccepted the resignation offer voluntarily made by the\nemployee, he terminated the service of the employee and\nsuch termination, therefore, fell within the expression\n'retrenchment' rendering him liable to compensate the em-\nployee under section 6N. We are also of the view that this\nwas a case of 'volun voluntary retirement' within the mean-\ning of the first exception to\nsection 2(s)\nand therefore the\nquestion of grant of compensation under section oN does not\narise. We, therefore, cannot allow the view of the High\nCourt to stand. For the above reasons we allow this appeal, set aside\nthe orders of the Courts below and hold that the employee is\nnot entitled to any compensation under section 6N of the\nState Act. The appeal is allowed accordingly. No costs\nthroughout. Lal Appeal allowed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "J.K. Cotton Spg. And Wvg Mills Co. ... vs State Of U.P. And Ors",
+    "case_id": "SC_1990_1990_77",
+    "court": "Supreme Court of India",
+    "year": "1990",
+    "facts_summary": "ACT:\nU.P. Industrial Disputes Act, 1947\n--\nSection 2(s)\nand\n6N-Resignation voluntarily tendered by an employee--Employer\naccepting the same--Services of employee terminated-Whether\namounts to 'retrenchment'. HEADNOTE:\n One Ram Singh was appointed by the appellant-company on\n10.3.1960. On 1.11.1970, he addressed a letter of resigna-\ntion to the Manager of the company saying that owing to his\nfamily circumstances, it was no longer possible for him to\ncontinue in service and that he was compelled to sever his\nconnections with the company. He made a demand of all his\ndues. He wrote another letter two days later that someone\nshould be posted in the section where he was working in\norder that he may learn the work are: printing of shares,\npay-sheets and pay registers etc. The appellant-company\nconveyed the acceptance of the resignation with effect from\nthe 16th November, 1970 and paid all his dues on 22.12.1970. The amount of gratuity was also paid later. Ram Singh there-\nafter raised an industrial dispute and sought a reference\nunder\nSection 4K\nof the U.P. Industrial Dispute Act, 1947. Initially his demand was not accepted by the State Govern-\nment but later the State Government accepted his demand on\n28.11.1974 whereupon the appellant-company filed a writ\npetition in the High Court challenging the said reference\nmade by the State Government but the High Court dismissed\nthe petition. The Labour Court thereafter made an award on\nthe reference, in favour of the employee. It came to t",
+    "legal_issues": "The\nwords 'for any reason whatsoever' are undoubtedly words of\nwide import and hence termination of service by the employer\nwill attract the definition of retrenchment unless it is\nshown to be penal in nature brought about by way of disci-\nplinary action or as falling within one of the two exclusion\nclauses extracted earlier. In order to counter the employ-\nee's contention that he was retrenched from service on the\nemployer having communicated the acceptance of his resigna-\ntion, the employer has placed reliance on the first clause,\nnamely, that the workman had voluntarily retired from serv-\nice. The letter dated 1st November, 1970 written by the\nemployee to the Manager of the appellant-company expressing\nhis desire to resign his job shows that it was a voluntary\nact on the part of the employee. This was followed by anoth-\ner letter of 3rd November, 1970 whereby the workman request-\ned the company to depute someone to take charge of the\nBradma office so that he gets acquainted with the work to\nensure a smooth take over. It was on this request of the\nemployee that the appellant-company accepted his resignation\nby the letter of 4th November, 1970 with effect from 16th\nNovember, 1970. From this correspondence it is crystal clear\nthat the employee desired to sever his relations with the\nappellant-company on account of his family circumstances. But for this request made by the employee there was no\nreason for the appellant-company to terminate the contract\nof service on its own. J",
+    "ratio_summary": "the Labour Court and remanded the matter to the Labour Court\nfor a decision on the question whether there was infraction\nof the provisions of Section 6N. Being aggrieved by that\norder of the High Court, the appellant-company has filed\nthis appeal after obtaining special leave. Allowing the appeal, this Court,\n HELD: Where a contract of service is determined on the\nemployee exercising his right to quit, such termination\ncannot be said to be at the instance of the employer to fail\nwithin the first part of the definition of retrenchment in\nSection 2(s)\nof the U.P. Industrial Disputes Act. [531H;\n532A]\n A contract of service can be determined by either party\nto the contract. If it is determined at the behest of the\nemployer it may amount to retrenchment unless it is by way\nof punishment for proved misconduct. But if an employee\ntakes the initiative and exercises his right to put an end\nto the contract of service and the employer merely assents\nto it, it cannot be said that the employer has terminated\nthe employment. In such cases the employer is merely acced-\ning to the employee's request, may be even reluctantly. Here\nthe employee's role is active while the employer's role is\npassive and formal. The employer cannot force an unwilling\nemployee to work for him. [531E-F]\n When an employee resigns his office, he formally relin-\nquishes or withdraws from his office. it implies that he has\ntaken a mental decision to sever his relationship with his\nemployer and thereby put an end to th",
+    "final_order": "It remains to be seen on\nrelevant material whether in fact there was compliance made\nof the requirement of section 6N.\"\nHowever, the order of reinstatement passed by the Labour\nCourt, Kanpur was set aside and the matter was remanded to\nthe Labour Court for a decision on the question whether\nthere was an infraction of section 6N. The High Court,\nhowever, made it clear that \"the issue of resignation shall\nnot be open to read judication\". In other words, the only\nquestion which the Labour Court was required to consider was\nwhether the retrenchment was in conformity with section 6N\nof the State Act. Feeling aggrieved by this order the appel-\nlant-company has approached this Court under\nArticle 136\nthe Constitution. The State Act, i.e.,\nUttar Pradesh Industrial Disputes\nAct, 1947\nwas enacted to",
+    "outcome_summary": "Allowed. It remains to be seen on\nrelevant material whether in fact there was compliance made\nof the requirement of section 6N.\"\nHowever, the order of reinstatement passed by the Labour\nCourt, Kanpur was set aside and the matter was remanded to\nthe Labour Court for a decision on the question whether\nthere wa",
+    "sections_cited": [
+      "Constitution 226",
+      "Constitution 136"
+    ],
+    "cases_cited": []
+  }
+}

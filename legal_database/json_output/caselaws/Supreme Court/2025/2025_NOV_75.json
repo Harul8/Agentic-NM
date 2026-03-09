@@ -1,0 +1,167 @@
+{
+  "case_id": "SC_2025_AKULA_NARAYANA_VS_THE_ORIENTAL_INSURANCE_COMPANY_LIMITED",
+  "case_name": "Akula Narayana vs The Oriental Insurance Company Limited",
+  "normalized_case_name": "AKULA_NARAYANA_VS_THE_ORIENTAL_INSURANCE_COMPANY_LIMITED",
+  "court": "Supreme Court of India",
+  "year": "2025",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 013509 of 2025",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "10 November 2025",
+  "judges": [
+    "Sanjay Karol"
+  ],
+  "author": "Sanjay Karol",
+  "bench_type": "single",
+  "petitioner": "Akula Narayana",
+  "respondent": "The Oriental Insurance Company Limited",
+  "reporter_citations": [
+    "2025 INSC 1301"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 4,
+  "cited_by_count": 0,
+  "neutral_citation": "2025 INSC 1301",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2025\\NOV\\2025_NOV_75.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2025_AKULA_NARAYANA_VS_THE_ORIENTAL_INSURANCE_COMPANY_LIMITED_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO. 013509 OF 2025\n (Arising out of SLP (C) No. 8434/2023)\n\n AKULA NARAYANA …APPELLANT (S)\n\n VERSUS\n\n THE ORIENTAL INSURANCE COMPANY\n LIMITED & ANR.\n …RESPONDENT (S)\n\n JUDGMENT\nMANOJ MISRA, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2025_AKULA_NARAYANA_VS_THE_ORIENTAL_INSURANCE_COMPANY_LIMITED_P002_C01",
+      "text": "2. This is Claimant’s appeal against the judgment and\n\n order of the High Court for the State of Telangana at\n\n Hyderabad1 dated 08.06.2022 whereby the High Court\n\n allowed the appeal of the first-respondent (i.e., the\n\n Insurer) and set aside the award passed by the Motor\n\n Accidents Tribunal2 to the extent it made the insurer\n\n liable along with the owner of the vehicle to pay\n\n compensation to the appellant.\n\nCivil Appeal @ SLP (C) No. 8434/2023 Page 1 of 6\n3. There is no dispute inter se parties regarding liability of\n\n the second respondent (i.e., owner of the vehicle with\n\n which accident was caused). There is also no dispute\n\n that the vehicle was insured with the first respondent.\n\n The only dispute is whether the insurer should have\n\n been absolved totally from its liability to pay the\n\n compensation or that the insurer should have been\n\n directed to pay and recover the same from the vehicle\n\n owner.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_AKULA_NARAYANA_VS_THE_ORIENTAL_INSURANCE_COMPANY_LIMITED_P003_C01",
+      "text": "4. The Tribunal vide its award dated 29.04.2021 held first\n\n and second respondent (i.e., insurer and owner,\n\n respectively) jointly and severally liable for the\n\n compensation payable to the claimant. Tribunal’s\n\n conclusion in that behalf rests on the statement of\n\n administrative manager of the insurer, made during\n\n cross-examination, that insurer had collected additional\n\n premium for carrying conductor and cleaner. Based on\n\n that, the Tribunal concluded that since the owner had\n\n paid additional premium, the deceased, a passenger in\n\n the vehicle, would be a third party in terms of the policy.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_AKULA_NARAYANA_VS_THE_ORIENTAL_INSURANCE_COMPANY_LIMITED_P004_C01",
+      "text": "5. The High Court on an appeal by the insurer held that\n\n though the insurer might have collected additional\nCivil Appeal @ SLP (C) No. 8434/2023 Page 2 of 6\npremium for driver, conductor and cleaner, the policy\n\n would not cover the risk of any other person or\n\n passenger. Besides that, the vehicle being a five-seater\n\n was carrying nine persons, therefore, there was a clear\n\n breach of the terms and conditions of the policy and as\n\n such the insurer cannot be held liable.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_AKULA_NARAYANA_VS_THE_ORIENTAL_INSURANCE_COMPANY_LIMITED_P005_C01",
+      "text": "6. Aggrieved by the order of the High Court, the claimant\n\n is before us because it finds it difficult to recover the\n\n compensation from the vehicle owner.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_AKULA_NARAYANA_VS_THE_ORIENTAL_INSURANCE_COMPANY_LIMITED_P006_C01",
+      "text": "8. The learned counsel for the appellant submitted that it\n\n is a clear case where additional premium was collected\n\n by the insurer for covering the risk of driver, conductor\n\n and cleaner. The claim was in respect of death of one\n\n person and therefore, even though the policy may not\n\n cover the risk of passengers, it covered the risk of at least\n\n three persons which may or may not be passengers.\n\n support of its submission, the learned counsel for the\n\n appellant has placed reliance on a decision of this Court\n\nMata Ram versus National Insurance Company\nCivil Appeal @ SLP (C) No. 8434/2023 Page 3 of 6\nLimited & Another3\n.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [
+        "Court\n\nMata Ram v National Insurance Company\nCivil Appeal"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_AKULA_NARAYANA_VS_THE_ORIENTAL_INSURANCE_COMPANY_LIMITED_P006_C02",
+      "text": "In the alternative, the learned\n\n counsel for the appellant submitted that since the\n\n insurer had taken additional premium to cover risk of\n\n three persons who travel in the vehicle, even if there has\n\n been a violation of the policy conditions, the insurer\n\n cannot be relieved of its liability to make good the\n\n compensation though it may recover the same from the\n\n owner in light of the pay and recover principle recognized\n\n by this Court in\nNational Insurance Company Limited\n\n versus Swaran Singh4\nand\nShamanna & Anr. versus\n\n Divisional Manager, Oriental Insurance Company\n\n Limited & Others5\n.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_AKULA_NARAYANA_VS_THE_ORIENTAL_INSURANCE_COMPANY_LIMITED_P007_C01",
+      "text": "9. Per contra, learned counsel for the insurer submitted\n\n that the policy in question was a statutory policy; a\n\n gratuitous passenger, other than driver, conductor and\n\n cleaner, is not a third party and, therefore, the insurer\n\n would not be liable. In addition, the vehicle was a five-\n\n seater vehicle, admittedly carrying nine passengers,\n\n there was thus breach of condition of insurance. As\n\n such the insurer cannot be held liable. Hence, no\n\n(2018) 18 SCC 289\n\n(2004) 3 SCC 297\n\n(2018) 9 SCC 650\nCivil Appeal @ SLP (C) No. 8434/2023 Page 4 of 6\ninterference with the judgment of the High Court is\n\n called for.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_AKULA_NARAYANA_VS_THE_ORIENTAL_INSURANCE_COMPANY_LIMITED_P008_C01",
+      "text": "10. We have considered the rival submissions and have\n\n perused the materials on record including the decisions\n\n cited before us.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_AKULA_NARAYANA_VS_THE_ORIENTAL_INSURANCE_COMPANY_LIMITED_P009_C01",
+      "text": "11. At the outset, we may observe that there is no appeal by\n\n the insured against High Court’s order holding him not\n\n entitled to the benefit of insurance. In such\n\n circumstances, we have only to consider whether the\n\n High Court should have completely absolved the insurer\n\n of its liability or ought to have directed the insurer to pay\n\n with liberty to recover the same from the vehicle owner.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_AKULA_NARAYANA_VS_THE_ORIENTAL_INSURANCE_COMPANY_LIMITED_P010_C01",
+      "text": "12. Where the contract of insurance is not disputed, even on\n\n breach of insurance conditions, this Court had allowed\n\n recovery of compensation from the insurer by giving\n\n right to the insurer to recover the same from the vehicle\n\n owner6. The pay and recover principle has been\n\n consistently followed even though it was doubted in a\n\n reference which remained unanswered. Taking a\n\n conspectus of various pronouncements, this Court\n\nSee decisions cited in Footnote 4 and 5.\nCivil Appeal @ SLP (C) No. 8434/2023 Page 5 of 6\nrecently in\nRama Bai v. Amit Minerals7\nagain applied\n\n the said principle and while allowing the appeal of the\n\n claimant directed that the insurance company shall\n\n satisfy the award and may recover from the insured.\n\n Following the aforesaid decisions, we deem it\n\n appropriate to allow the appeal by directing that the first\n\n respondent (i.e., the insurer) shall satisfy the award,\n\n though, however, it can recover the amount so paid from\n\n the insured (i.e., owner of the vehicle).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_AKULA_NARAYANA_VS_THE_ORIENTAL_INSURANCE_COMPANY_LIMITED_P011_C01",
+      "text": "13. The appeal stands allowed to the aforesaid extent.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_AKULA_NARAYANA_VS_THE_ORIENTAL_INSURANCE_COMPANY_LIMITED_P012_C01",
+      "text": "14. Pending application(s) if any, shall stand disposed of.\n….............................................J.\n (Sanjay Karol)\n\n ................................................J.\n (Manoj Misra)\n\n New Delhi;\nNovember 10, 2025\n\n2025 SCC OnLine SC 2067\nCivil Appeal @ SLP (C) No. 8434/2023 Page 6 of 6",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Akula Narayana vs The Oriental Insurance Company Limited",
+    "case_id": "SC_2025_AKULA_NARAYANA_VS_THE_ORIENTAL_INSURANCE_COMPANY_LIMITED",
+    "court": "Supreme Court of India",
+    "year": "2025",
+    "facts_summary": "4. The Tribunal vide its award dated 29.04.2021 held first\n\n and second respondent (i.e., insurer and owner,\n\n respectively) jointly and severally liable for the\n\n compensation payable to the claimant. Tribunal’s\n\n conclusion in that behalf rests on the statement of\n\n administrative manager of the insurer, made during\n\n cross-examination, that insurer had collected additional\n\n premium for carrying conductor and cleaner. Based on\n\n that, the Tribunal concluded that since the owner had\n\n paid additional premium, the deceased, a passenger in\n\n the vehicle, would be a third party in terms of the policy.",
+    "legal_issues": "8. The learned counsel for the appellant submitted that it\n\n is a clear case where additional premium was collected\n\n by the insurer for covering the risk of driver, conductor\n\n and cleaner. The claim was in respect of death of one\n\n person and therefore, even though the policy may not\n\n cover the risk of passengers, it covered the risk of at least\n\n three persons which may or may not be passengers.\n\n support of its submission, the learned counsel for the\n\n appellant has placed reliance on a decision of this Court\n\nMata Ram versus National Insurance Company\nCivil Appeal @ SLP (C) No. 8434/2023 Page 3 of 6\nLimited & Another3\n. In the alternative, the learned\n\n counsel for the appellant submitted that since the\n\n insurer had taken additional premium to cover risk of\n\n three persons who travel in the vehicle, even if there has\n\n been a violation of the policy conditions, the insurer\n\n cannot be relieved of its liability to make good the\n\n compensation though it may recover the same from the\n\n owner in light of the pay and recover principle recognized\n\n by this Court in\nNational Insurance Company Limited\n\n versus Swaran Singh4\nand\nShamanna & Anr. versus\n\n Divisional Manager, Oriental Insurance Company\n\n Limited & Others5\n. 9. Per contra, learned counsel for the insurer submitted\n\n that the policy in question was a statutory policy; a\n\n gratuitous passenger, other than driver, conductor and\n\n cleaner, is not a third party and, therefore, the insurer\n\n would not be liable. In addit",
+    "ratio_summary": "",
+    "final_order": "2. This is Claimant’s appeal against the judgment and\n\n order of the High Court for the State of Telangana at\n\n Hyderabad1 dated 08.06.2022 whereby the High Court\n\n allowed the appeal of the first-respondent (i.e., the\n\n Insurer) and set aside the award passed by the Motor\n\n Accidents Tribunal2 to the extent it made the insurer\n\n liable along with the owner of the vehicle to pay\n\n compensation to the appellant.\n\nCivil Appeal @ SLP (C) No. 8434/2023 Page 1 of 6\n3. There is no dispute inter se parties regarding liability of\n\n the second respondent (i.e., owner of the vehicle with\n\n which accident was caused). There is also no dispute\n\n that the vehicle was insured with the first respondent.\n\n The only dispute is whether the insurer should have\n\n been absolved totally from its liability to pa",
+    "outcome_summary": "Allowed. 2. This is Claimant’s appeal against the judgment and\n\n order of the High Court for the State of Telangana at\n\n Hyderabad1 dated 08.06.2022 whereby the High Court\n\n allowed the appeal of the first-respondent (i.e., the\n\n Insurer) and set aside the award passed by the Motor\n\n Accidents Tribunal2 to t",
+    "sections_cited": [],
+    "cases_cited": [
+      "Court\n\nMata Ram v National Insurance Company\nCivil Appeal"
+    ]
+  }
+}

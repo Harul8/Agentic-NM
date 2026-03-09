@@ -1,0 +1,347 @@
+{
+  "case_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "2000",
+  "judgment_template": null,
+  "case_number": "Petition 42 of 1994",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 18,
+  "cited_by_count": 7,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\2000\\2000_ALL_AndhraHC_21.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P001_C01",
+      "text": "Chintalapudi Annapurnamma And Another vs Andukuri Punnayya Sastry And Others on 12 April, 2000\nEquivalent citations: 2000(3)ALD649, 2000(3)ALT159\nAuthor:\nP. Venkata Rama Reddi\nBench:\nP. Venkata Rama Reddi\nORDER\n\nD.S.R. Varma, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P002_C01",
+      "text": "1. A learned single Judge of this Court having found two decisions rendered by this Court in\nGulam Hussain v. Additional Rent Controller\n, Hyderabad, and N. Jagannadham v. V. Mangamma, 1997 (2) ALD 549, conflicting with each other referred this revision petition under\nArticle 227\nof the Constitution to the Division Bench framing the question as below:\n\"If an application is made before a Court for sending a document to the Revenue Divisional Officer for collection of stamp duty, is the Court bound to do so or is the Court free to impound the document itself and admit the document on collection of stamp duty together with penalty.\"",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 227"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P003_C01",
+      "text": "2. Having regard to the above question of law before us, it is necessary to narrate the facts in brief, which are as follows: The petitioners herein are the alleged lessees and the respondents are the alleged lessors. The respondents herein filed ATC No.42 of 1994 before the Special Officer under A.P. Tenancy Act against the petitioners seeking eviction from the suit land. During the enquiry, the petitioners sought to mark a lease deed dated 31-12-1984 said to have been executed by the respondents. The same was objected to by the respondents since the same was found to be insufficiently stamped and not registered. The trial Court assessed the stamp duty and penalty payable and directed the petitioners to pay a sum of Rs.9,905/-. In the meanwhile, the petitioners filed IA No.131 of 1996 praying the Court to send the alleged document (lease deed dated 31-12-1984) to the Revenue Divisional Officer, Ongole for impounding and levying stamp duty taking a plea that the said document was a piece of crucial documentary evidence.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P003_C02",
+      "text": "The trial Court having held that it has power to impound the disputed document, imposed duty and penalty and dismissed the IA without sending the document to the Revenue Divisional Officer. The said order was confirmed by the District Judge in ATA No.22 of 1996. Hence, the revision.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P004_C01",
+      "text": "3. The learned Counsel for the petitioners while relying on the judgment of this Court in\nN. Jagannadham v. V. Mangamma\n(supra), contends that when an application under\nSection 38\nof the Indian Stamp Act is made seeking to send the document to the Revenue Divisional Officer for impounding, the Court has no option but to forward the same for impounding.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P005_C01",
+      "text": "4. On the other hand, the learned Counsel for the respondents while relying on\nGulam Hussain v. Additional Rent Controller, Hyderabad\n(supra), submits that\n\nwhen the Court found that the document is chargeable to duty, it has the jurisdiction to impound the document and levy the duty and penalty on its own without sending it to the Revenue Divisional Officer and then allow it to be admitted in evidence.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P006_C01",
+      "text": "5. Before going into the relative contentions, it is necessary to refer the relevant provisions under the\nIndian Stamp Act, 1899\n(for brevity 'the Act').",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P007_C01",
+      "text": "33. Examination and impounding of Instruments :--(1) Every person having by law or consent of parties authority to receive evidence, and every person-in-charge of a public office, except an officer of a police, before whom any instrument, chargeable, in his opinion, with duty, is produced or comes in the performance of his functions, shall, if it appears to him that such instrument is not duly stamped, impound the same.\n(2) For that purpose every such person shall examine every instrument so chargeable and so produced or coming before him, in order to ascertain whether it is stamped with a stamp of the value and description required by the law in force in India when such instrument was executed or first executed :\nProvided that:\n(a) nothing..........\n(b).........\n(3)\n(a)................\n(b)..................",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P008_C01",
+      "text": "35. Instruments Not Duly Stamped In Admissible In Evidence, etc :--No instrument chargeable with duty shall be admitted in evidence for any purpose by any person having by law or consent of\n\nparties authority to receive evidence, or shall be acted upon, registered or authenticated by any such person or by any public officer, unless such instrument is duly stamped:\nProvided that--\n(a) any such instrument not being an instrument chargeable with a duty of twenty paise or a mortgage of crop (\nArticle 36(a)\nof Schedule I-A) chargeable under clause (aa) or (bb) of\nSection 3\nwith a duty of forty paise or a bill of exchange or promissory note, shall subject to all just exceptions, be admitted in evidence on payment of the duty with which the same is chargeable or, in the case of an instrument insufficiently stamped, of the amount required to make up such duty, together with a penalty of fifteen rupees or, when ten times the amount of the proper duty or deficient portion thereof exceeds 'fifteen rupees' of a sum equal to ten times such duty or portion;\n(b).....\n(c).....\n(d).....\n(e).....",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P009_C01",
+      "text": "38. Instruments impounded how dealt with:--(1) When the person impounding an instrument under\nSection 33\nhas, by law or consent of parties authority to receive evidence and admits such instrument in evidence upon payment of a penalty as provided by\nSection 35\nor of duty as provided by\nSection 37\n, he shall send to the Collector, an authenticated copy of such instrument, together with a certificate in writing, stating the amount of duty and penalty levied in respect thereof, and shall send such amount to the Collector, or to such person as he may appoint in this behalf.\n(2) In every other case, the person so impounding an instrument shall send it in original to the Collector.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P010_C01",
+      "text": "6. From a conjoint reading of the above three provisions, the following would emerge.\n(1) When an instrument chargeable with duty is produced before the civil Court and is found to be not duly stamped, the Court shall impound the same;\n(2) No instrument is valid if it is not duly stamped. However, the Court has power to admit an instrument which is chargeable with duly on payment of duly or the deficiency being made good together with penalty barring certain instruments;\n(3) If an instrument is admitted in evidence upon payment of duty and/ or penalty, an authenticated copy of such instrument together with a certificate stating the amount of duty and/or penalty shall be sent to the concerned authority under the Act;\n(4) In all other cases, the civil Court shall send any instrument, which is chargeable to duty in original to the Collector.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P011_C01",
+      "text": "7. The above procedure deals with three contingencies. Firstly, where document is impounded and appropriate duty is levied with or without penalty; secondly, where document is impounded and admitted in evidence by the impounding authority only after the duty and penalty levied is paid; and thirdly, where the document is impounded, duty is levied with or without penalty and the same is not opted to be paid by the part but merely seeks the Court or Public Officer to send the document so impounded for assessment and levy of duty by the Collector. To this last contingency has to\n\nbe added a case where the party wants his document to be sent to Collector and makes an application accordingly even before the levy of actual duty and penalty by the authority before whom it is sought to be adduced in evidence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P012_C01",
+      "text": "8. Before dealing with the aspect viz., whether there is any conflict between the two decisions as found by the learned single Judge in\nGulam Hussain v. Additional Rent Controller\n, Hyderabad and in\nN Jagannadham v. V. Mangamma\n(supra), it is desirable to refer to the decision of a learned single Judge of this Court in\nB.V.R. Reddy v. The Adoni Co-operative Central Stores\n, .",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P013_C01",
+      "text": "9. The brief facts of the said case, which are similar to the facts of the present case, are that the plaintiff filed a document which was not duly stamped and registered, and accordingly, the plaintiff was directed to pay the required duty and penalty. Instead of complying with the order, the plaintiff-petitioner therein, filed an application under\nSection 38(2)\nof the Act to send the document to the Collector for purpose of determining the duty and penalty to be paid and the same plea was rejected by the Court holding that the document cannot be sent to the Collector under\nSection 38(2)\nof the Act. Against the said order, the petitioner preferred a revision and this Court held thus:-\n\"It is true as provided under\nSection 35\nof the Stamp Act no instrument chargeable with duty shall be admitted in evidence for any purpose unless such instrument is duly stamped. Section 33\nprovides for impounding of instruments required to be stamped and not duly stamped.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P013_C02",
+      "text": "It is provided under\nSection 38(1)\nthat when a person impounding an instrument has authority to receive evidence and admits such instrument in evidence upon payment of penalty as provided by\nSection 35\n, then\n\nhe shall send to the Collector an authenticated copy..... It is further\nprovided under\nSection 38(2)\nthat in every other case..... shall send..... to the\nCollector. A reading of\nSection 35\nshows that the party who files the document wants it to be admitted in evidence, then only the Court shall collect the stamp duty and penalty and then admit the instrument in evidence. But if the party instead of requiring the document to be admitted in evidence merely wants the Court to send it to the Collector to be dealt with under\nSection 40\n, I do not think that the Court will have any option but to send it to the Collector as provided under\nSection 38(2)\n. The Court cannot compel a party to pay the stamp duty and penalty and have it admitted in evidence. It is for the party to have the document admitted in evidence by paying stamp duty and penalty or leave the Court to take action as provided under\nSection 38(2)\n\".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P014_C01",
+      "text": "10. Balkrishna v. Board of Revenue\n, , a Full Bench of the Madhya Pradesh High Court held thus:\n\"Once an instrument chargeable with duty is tendered in a civil Court, it shall impound it, if after examining it the Court is of the opinion that it is not duly stamped. The Court has however power under\nSection 35\nof the Act to admit it (barring certain instruments)..... There is no third course open to the Court, once it finds that an instrument tendered in evidence is not duly stamped. The next step, which the Court has then to take, is provided in\nSection 38\n. If the Court has admitted in evidence an instrument upon payment of penalty and/or duty, it shall send to the Collector an authenticated copy of such instrument.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P015_C01",
+      "text": "11. Further while dealing with\nSection 3\n8(2)\n, the Full Bench observed thus:\n\"The sub-section, therefore clearly refers to a case where an instrument has been impounded under\nSection 33\nof the Act but has not been admitted in evidence on payment of penalty and/or duty\".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P016_C01",
+      "text": "12. In our view the principle\nlaid down in\nB.V.R. Reddy\n's case (supra), is in tune with the aforesaid principles\nlaid down in\nthe case of\nBalkrishna v. Board of Revenue\n(supra). The principles\nlaid down in\nboth the cases are similar to the effect that the civil Court has jurisdiction to impound a document under\nSection 33\nof the Act.\nSection 35\ndebars a document from being admitted in evidence, subject to certain limitations, and if the intention of the party is to have the document admitted, it is imperative to obey the order of impounding authority by paying the duty and penalty, and in case of failure to pay such duty, the Court or Tribunal has no option but to send the document under\nSection 38(2)\nto the Collector. In other words, the Court cannot compel the party to have the document admitted in evidence after paying the duty and penalty assessed by the Court, but instead, it has to forward such document as prescribed under\nSection 38(2)\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P017_C01",
+      "text": "13. Now we shall deal with the decision rendered by this Court in\nGulam Hussain v. Additional Rent Controller\n, Hyderabad and N. Jagannadham v. V. Mangamma (supra), which are said to be conflicting with each other as pointed out by the learned single Judge in the order under reference.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P018_C01",
+      "text": "14. N. Jagannadham v. V. Mangamma\n(supra), it was pointed out by a learned single Judge of this Court thus:\n\"I am fortified in my view in the light of the language used in\nSection 38(2)\nof the Act which says in every other case the person so impounding an instrument shall send it in original to the Collector. Though under\nSection 35(a)\na power is given to the person in-charge of public office who is given authority to admit the document in evidence by collecting the proper stamp duty and also by levying penalty for purpose of admitting the instrument in evidence. If the parties have not consented for deciding the nature of the instrument and the stamp duty payable thereon and the penalty to be levied by the person in-charge holding public office he shall simply forward the same to the Collector for impounding the document..... A reading of\nSection 38\nsays that if the party who filed the document wants it to be admitted in evidence then only the Court shall collect the stamp duty and penalty and then admit the instrument in evidence.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P018_C02",
+      "text": "But if the party instead of requiring the document to be admitted in evidence merely wants the Court to send it to the Collector to be dealt with under\nSection 40\nthe Court has no option but send it to the Collector as provided in\nSection 38(2)\n. The Court cannot compel the party to pay duty and penalty and have it admitted in evidence.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P019_C01",
+      "text": "15. The learned Judge has come to the above conclusion taking into consideration the decision of this Court rendered in\nB. V.R. Reddy v. The Adoni Co-operative Central Stores\n(supra).\nWe approve the principle\nlaid down by\nthe learned Judge in the Jagannadham's case, following the earlier decision in\nB. V.R. Reddy\n's case (supra).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P020_C01",
+      "text": "16. Now coming to the facts of the\nGulam Hussain\n's case (supra), the civil Court summoned the original rental deed in the possession of landlord at the instance of the petitioner-tenant therein. The tenant wanted to tender the document in evidence though it was insufficiently stamped. The Court held that the tenant was liable to pay the deficit stamp duty\n\ntogether with penalty.\nWhen the matter was carried to the High Court, a learned single Judge of this Court formulated the question for consideration as:\n\"Whether the Court has power under\nSection 38\nof Stamp Act to levy penalty after impounding the document when such a document is sought to be tendered in evidence.\"",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P021_C01",
+      "text": "17. Eventually, the learned Judge, after relying on the decision rendered by the Full Bench of the Madhya Pradesh High Court in\nBalkrishna v. Board of Revenue\n(supra), held thus:\n\"Therefore, admission of a document as contemplated under\nSections 35\nand\n\narises only after payment of the penalty and duty by the party who seeks to tender the document in evidence. The question of collecting the duty and penalty after the admission is not contemplated under the Act.\"",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P022_C01",
+      "text": "18. In our view, the observations and the reasoning in\nthe above decision\ndo not run contrary to the other decisions cited (supra) i.e.\nJagannadham v. V. Mangamma\n,\nB. V.R. Reddy v. The Adoni Co-operative Central Stores\n; and\nBalkrishna v. Board of Revenue\n(supra). The learned Judge had only held that admission of document under\nSections 35\nand\n\narises only after the payment of the penalty and duty upon the document sought to be admitted. This proposition is unexceptionable. As could be seen from the relevant provisions of the Act viz.,\nSections 33\n,\n\nand\n\n, a document can be impounded and the duty to be paid with or without penalty can be determined. Further every exigible document is prohibited from being admitted under\nSection 35\nunless such duty levied is paid. The next step that has to be taken by the civil Court is as provided under subsection (1) of\nSection 38\n. In other words, the admission of the document and the\n\nprocedure contemplated under sub-section (1) of\nSection 38\narises only after the payment of duty with penalty.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P023_C01",
+      "text": "19. In our view the observations of the learned single Judge in\nGulam Hussain v. Additional Rent Controller, Hyderabad\n(supra), are only to the effect and extent, that admission of the document as contemplated under\nSections 35\nand\n\narises only after payment of penalty and duty and the same is inconsonance with the provisions of law and thus the question framed for consideration as already extracted above alone was answered. But, the position as to what should happen if the party, instead of seeking admission of the document in evidence, prays the Court to send the document for the purpose of having certified by the Collector under\nSection 40\n, was not gone into. It does not appear from the facts that the petitioner-tenant filed an application to send it to the Collector under\nSection 38(2)\nfor the purpose of its eventual admission. Hence, the ultimate conclusion is at variance with the other two decisions.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P024_C01",
+      "text": "20. In our view, it should be understood that\nSection 35\nand sub-section (1) of\nSection 38\nonly contemplate the procedure that is to be followed after impounding and admission of the document in evidence, on payment of levied duty and penalty. Sub-section (2) of\nSection 38\ndeals with every other case where after impounding, the levied duty is not paid or offered to be paid and the document is not admitted in evidence. In the latter case, the document has to be sent to the Collector without admitting the same.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P025_C01",
+      "text": "21. Obviously, the other decisions referred to supra would make abundantly clear in the light of the scheme of the Act that the civil Court or Tribunal can impound a document and levy duty and also penalty on the document sought to be admitted in evidence which is found to be\n\nexigible for any reason. There lies the option of the party either to pay the duty together with penalty and get the document admitted or simply make an application to the Court to send the document to the Revenue Divisional Officer and to defer the admission till then.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P026_C01",
+      "text": "22. The second option is obviously under sub-section (2) of\nSection 38\nof the Act. It is needless to observe that inspite of such duty being levied by the Court, if the party makes an application under\nSection 38(2)\n, he would be doing so at the risk of not getting the document admitted by virtue of the explicit embargo created under\nSection 35\nof the Act. The scheme of the Act does not indicate that the Court cannot compel the party to pay the duty and penalty, and get the document admitted. To put it in another way, as the admission of any document is at the discretion of the party, so also it is the discretion of the party to pay the duty and penalty as determined by the civil Court or other public authority and failure to do so, would only result in non-admission of the document So payment of duty after impounding by the civil Court is the date line between\nSection 38(1)\nand\n38(2)\n. In case,\nSection 38(1)\nis applied, procedure under\nSection 39\nshould be followed by the Collector and in case of 38(2), procedure under\nSection 40\nhas to be followed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P027_C01",
+      "text": "23. Therefore, in our view there is no real conflict between the two decisions viz.,\nGulam Hussain v. Additional Rent Controller\n, Hyderabad and N. Jagannadham v. V. Mangamma (supra) as far as the principle goes. But, the conclusion reached in the former case should be confined to the particular facts of the case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P028_C01",
+      "text": "24. Though broadly the contention of the petitioner is upheld, I agree with my learned Brother-P. Venkatarama Reddi, J., that on the facts of the case, no relief could\n\nbe granted and the civil revision petition is liable to be dismissed.\n(Judgment: Per The Hon'ble Sri Justice P. Venkatarama Reddi)",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P029_C01",
+      "text": "25. In the light of the legal position set out by my learned Brother Varma, J., in the present case, the Tenancy Tribunal (designated as Special Officer under A.P. Tenancy Act) should have in the normal course allowed the application and sent the document impounded to the Collector for levying allowing the stamp duty and penalty. Failure to do so would not however, warrant interference under\nArticle 227\nof the Constitution on the facts of the case. Two years after filing of the tenancy case, when it came up for enquiry, the petitioner wanted to adduce the document in evidence. The petitioner ought to have been aware that the document which was unstamped or deficiently stamped, cannot be permitted in evidence. He should have taken steps even at the preliminary stages before the actual enquiry is started to impound the document and forward the same to the authorised Officer under\nSection 38(2)\nof the Stamp Act. But he kept quiet till the last minute. Though it was a matter beyond doubt that the document was not permissible in evidence in the absence of requisite stamp, no explanation whatsoever is given for keeping quiet for two years.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 227"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA_P029_C02",
+      "text": "The enquiry which had begun ought not to be stalled till the document is sent to the Collector and received back from him, which would have taken months if not years if the Tribunal had conceded the petitioner's request. Such situation leading to the delays in the conduct of the trials or enquiries should not be allowed to crop up by this Court in exercise of supervisory jurisdiction under\nArticle 227\nof the Constitution. Moreover, the period of lease deed on which the petitioner seeks to rely on had expired. Hence, no purpose will be served by filing\n\nthe document at this stage. We do not therefore consider it a fit case to exercise the supervisory jurisdiction of this Court under\nArticle 227\nof the Constitution so as to direct the Tenancy Tribunal to forward the document to the Collector for levy of appropriate stamp duty and penalty. We therefore dismiss this civil revision petition. No costs.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 227"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_2000_ANDHRA_HC_PRE-TELANGANA",
+    "court": "Supreme Court of India",
+    "year": "2000",
+    "facts_summary": "The trial Court having held that it has power to impound the disputed document, imposed duty and penalty and dismissed the IA without sending the document to the Revenue Divisional Officer. The said order was confirmed by the District Judge in ATA No.22 of 1996. Hence, the revision. 24. Though broadly the contention of the petitioner is upheld, I agree with my learned Brother-P. Venkatarama Reddi, J., that on the facts of the case, no relief could\n\nbe granted and the civil revision petition is liable to be dismissed.\n(Judgment: Per The Hon'ble Sri Justice P. Venkatarama Reddi)",
+    "legal_issues": "3. The learned Counsel for the petitioners while relying on the judgment of this Court in\nN. Jagannadham v. V. Mangamma\n(supra), contends that when an application under\nSection 38\nof the Indian Stamp Act is made seeking to send the document to the Revenue Divisional Officer for impounding, the Court has no option but to forward the same for impounding. 4. On the other hand, the learned Counsel for the respondents while relying on\nGulam Hussain v. Additional Rent Controller, Hyderabad\n(supra), submits that\n\nwhen the Court found that the document is chargeable to duty, it has the jurisdiction to impound the document and levy the duty and penalty on its own without sending it to the Revenue Divisional Officer and then allow it to be admitted in evidence.",
+    "ratio_summary": "1. A learned single Judge of this Court having found two decisions rendered by this Court in\nGulam Hussain v. Additional Rent Controller\n, Hyderabad, and N. Jagannadham v. V. Mangamma, 1997 (2) ALD 549, conflicting with each other referred this revision petition under\nArticle 227\nof the Constitution to the Division Bench framing the question as below:\n\"If an application is made before a Court for sending a document to the Revenue Divisional Officer for collection of stamp duty, is the Court bound to do so or is the Court free to impound the document itself and admit the document on collection of stamp duty together with penalty.\" 16. Now coming to the facts of the\nGulam Hussain\n's case (supra), the civil Court summoned the original rental deed in the possession of landlord at the instance of the petitioner-tenant therein. The tenant wanted to tender the document in evidence though it was insufficiently stamped. The Court held that the tenant was liable to pay the deficit stamp duty\n\ntogether with penalty.\nWhen the matter was carried to the High Court, a learned single Judge of this Court formulated the question for consideration as:\n\"Whether the Court has power under\nSection 38\nof Stamp Act to levy penalty after impounding the document when such a document is sought to be tendered in evidence.\" 17. Eventually, the learned Judge, after relying on the decision rendered by the Full Bench of the Madhya Pradesh High Court in\nBalkrishna v. Board of Revenue\n(supra), held thus:\n\"Ther",
+    "final_order": "9. The brief facts of the said case, which are similar to the facts of the present case, are that the plaintiff filed a document which was not duly stamped and registered, and accordingly, the plaintiff was directed to pay the required duty and penalty. Instead of complying with the order, the plaintiff-petitioner therein, filed an application under\nSection 38(2)\nof the Act to send the document to the Collector for purpose of determining the duty and penalty to be paid and the same plea was rejected by the Court holding that the document cannot be sent to the Collector under\nSection 38(2)\nof the Act. Against the said order, the petitioner preferred a revision and this Court held thus:-\n\"It is true as provided under\nSection 35\nof the Stamp Act no instrument chargeable with duty shall be adm",
+    "outcome_summary": "9. The brief facts of the said case, which are similar to the facts of the present case, are that the plaintiff filed a document which was not duly stamped and registered, and accordingly, the plaintiff was directed to pay the required duty and penalty. Instead of complying with the order, the plaintiff-petitioner therein, filed an application under\nSection 38(2)\nof the Act to send the document to",
+    "sections_cited": [
+      "Constitution 227"
+    ],
+    "cases_cited": []
+  }
+}

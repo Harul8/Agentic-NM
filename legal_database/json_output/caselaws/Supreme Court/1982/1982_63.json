@@ -1,0 +1,233 @@
+{
+  "case_id": "SC_1982_1982_63",
+  "case_name": "Prem Thakur vs State Of Punjab",
+  "normalized_case_name": "PREM_THAKUR_VS_STATE_OF_PUNJAB",
+  "court": "Supreme Court of India",
+  "year": "1982",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "17 November 1982",
+  "judges": [
+    "Y.V.  Chandrachud",
+    "O. Chinnappa  Reddy"
+  ],
+  "author": "Y.V.  Chandrachud",
+  "bench_type": "division",
+  "petitioner": "Prem Thakur",
+  "respondent": "State Of Punjab",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 3,
+  "cited_by_count": 53,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1983 AIR 61",
+    "1983 SCR (1) 822",
+    "AIR 1983 SUPREME COURT 61",
+    "1983 UJ (SC) 3",
+    "1983 UP CRIR 25",
+    "1983 SCC(CRI) 88",
+    "1982 CRIAPPR(SC) 392",
+    "1983 (1) SCR 822",
+    "1983 CHANDLR(CIV&CRI) 84",
+    "(1983) MAD LJ(CRI) 432",
+    "(1983) 1 SCJ 221",
+    "(1983) 1 CRILC 23",
+    "(1983) ALLCRIC 189",
+    "(1983) 1 CRIMES 141",
+    "1982 (3) SCC 462",
+    "1982 CRILR(SC MAH GUJ) 499"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1982\\1982_63.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1982_1982_63_P001_C01",
+      "text": "BENCH:\nCHANDRACHUD, Y.V. ((CJ)\nBENCH:\nCHANDRACHUD, Y.V. ((CJ)\nREDDY, O. CHINNAPPA (J)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1982_1982_63_P002_C01",
+      "text": "CITATION:\n 1983 AIR 61 1983 SCR (1) 822\n 1982 SCC (3) 462 1982 SCALE (2)1057\n CITATOR INFO :\n R 1989 SC1890 (31)\n R 1990 SC 79 (10)\n R 1991 SC 917 (8)",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1982_1982_63_P003_C01",
+      "text": "ACT:\n Evidence-Circumstantial evidcnce-How evaluated-\nCircumstances relied upon as establishing involvement of\naccused must clinch the issue of guilt.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1982_1982_63_P004_C01",
+      "text": "HEADNOTE:\n The prosecution case against the appellant was that he,\nalong with five workers migrated from Nepal and that at the\ntime of occurrence all of them were working in Punjab as\nagricultural labourers. Out of a large sum of money earned\nby them as wages they spent a part and the balance was left\nwith one of the five deceased. On the evening prior to the\nday of occurrence the appellant was found by the employer\ncooking food for himself and his companions but when he went\nto his field the following morning he noticed the five dead\nbodies of the co-workers were smouldering in the pit of his\ntube well. Post-mortem examination of the dead bodies\nrevealed several ante-mortem injuries, most of which were\nlacerated wounds. Prom that day onwards the apellant was\nfound missing. The trial Court, accepting the circumstantial evidence,\nconvicted and A sentenced the appellant to death. The High\nCourt affirmed the conviction on three grounds: (i) since\nthe money was not found on the person of the deceased with\nwhom it was kept, the motive was theft; (ii) the appellant\nwas last seen in the company of all the deceased and (iii)\nthe appellant absconded thereafter to conceal his presence.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1982_1982_63_P004_C02",
+      "text": "Allowing the appeal,\n^\n HELD: It is impossible to believe that the crime was\ncommitted in the manner alleged by the prosecution or that\nthe appellant could possibly have committed it in the\ncircumstances alleged. [826 C-D]\n In a case which depends wholly upon circumstantial\nevidence, the circumstances must be of such a nature as to\nbe capable of supporting the exclusive hypothesis that the\naccused is guilty of the crime of which he is charged. That\nis to say, the circumstances relied upon as establishing the\ninvolvement of the accused in the crime must clinch the\nissue of Built. Very often, circumstances which establish\nthe commission of an offence in the abstract are identified\nas circumstances which prove that the prisoner before the\nCourt is guilty of a crime imputed to him. An a priori\nsuspicion that the accused has committed",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_63_P005_C01",
+      "text": "the crime transforms itself into a facile belief that it is\nhe who has committed the crime. Human mind plays that trick\non proof of the commission of a crime by resisting the\nfrustrating feeling that no one can be identified as the\nauthor of that crime. [826 G-H]\n In the instant case the circumstances attendant upon\nthe incident militate entirely against the conclusion that\nthe five murders were committed R by the appellant. Tho fact\nthat the assailant robbed the victims of the mopey cannot\nnecessarily lead to the conclusion that it was the appellant\nwho robbed them of their money. That the appellant and his\nco-workers were paid a fairly large sum of money was known\nto others apart from the appellant and his Companions.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_63_P005_C02",
+      "text": "part of the money was traced to the appellant and therefore\nbe could not be connected with the crime. [825 C-E]\n Assuming that the deceased were administered liquor,\nmedical evidence did not know that tho liquor consumed would\nhave induced such stupor verging upon hypnosis It is also\nincredible that the five persons done to death by a single\nindividual were under such a heavy spell of sleep that none\nof them woke up when the other or others were attacked. [826\nD-F]\n The fact that the appellant was last seen in the\ncompany of the deceased and that he was not present at the\nplace from which the dead bodies were recovered the next\nmorning are equivocal circumstances on which it is hazardous\nto base the conviction. [827 D]\n The circumstance that the appellant absconded from the\nplace of occurrence does not lead to the conclusion that he\nhad made himself scarce in order to conceal his presence. If\nhe was found by the team of investigating officers in Nepal\ngoing about openly, it is difficult to hold that he had\nabsconded to Nepal. [825 G-H]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_63_P006_C01",
+      "text": "JUDGMENT:\nCRIMINAL APPELLATE JURISDICTION: Criminal Appeal No.\n187 of 1982.\nAppeal by special leave from the judgment and order\ndated 7.10.81 of the Punjab and Haryana High Court in\nCriminal No.466-DB/81 .\nN.R. Agarwala Amicus Curiae for the Appellant.\n Ashwani Kumar and D.D. Sharma for the Respondent.\n The Judgment of the Court was delivered by\n CHANDRACHUD, C.J. The appellant, Prem Thakur, was\nconvicted by the learned Sessions Judge, Rupnagar, under\nsections",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1982_1982_63_P007_C01",
+      "text": "of the Indian Penal Code and was sentenced to\ndeath for the former offence. The conviction and sentence\nhaving been upheld by the High Court of Punjab and Haryana,\nthe appellant has filed this appeal by special leave. The charge against the appellant is that he committed\nthe murder of five co-labourers on the night between the 8th\nand 9th November, 1980 in the village of Rolu Majra. The\ncase of the prosecution is that the appellant came to India\nfrom Nepal in search of work along with his companion\nworkers and a few others. They worked with one Mohinder\nSingh for about 14 days for which they were paid a sum of\nRs. 2,900. The appellant and his co-workers spent a sum of\nRs. 800 therefrom and the balance of Rs. 2100 was kept with\nRama Nand who was one of the five coworkers of the\nappellant. The appellant and his companions thereafter went\nto the village of Rolu Majra where they worked in the field\nof Ujjagar Singh. On the evening of the day following\nDiwali, Ujjagar Singh saw the accused cooking meals for\nhimself and his five companions. When Ujjagar Singh went to\nthe field next morning at 8 00 a.m, he noticed that smoke\nwas coming out of the pit of his tubewell.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1982_1982_63_P007_C02",
+      "text": "When he peeped\ninto the well he saw five dead bodies smouldering. Ujjagar\nSingh lodged information of the offence with A.S.I. Jarnail\nSingh. The post-mortem examination on the five dead bodies\nrevealed several ante-mortem injuries, most of which were in\nthe nature of lacerated wounds. Since Ujagar Singh had seen the appellant in the\ncompany of five deceased persons and the appellant was not\nto be seen anywhere, the suspicion of the police naturally\nfell upon him. The case of the prosecution is that on\nDecember 1, 1980, the appellant was arrested while he was\nworking near the tubewell of Sohan Singh. There is no direct evidence to connect the appellant\nwith the five murders.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1982_1982_63_P007_C03",
+      "text": "In support of the charges levelled\nagainst him, the prosecution relied upon circumstantial\nevidence which consisted of: (i) motive for the offence;\n(ii) the fact that the appellant was seen last in the\ncompany of the deceased on the evening preceding the\ndiscovery of the dead bodies; (iii) the fact that the\naccused had absconded; (iv) the extra-judicial confession of\nthe appellant; (v) the recovery of a 'Tangli' in pursuance\nof the statement made by the appellant; (vi) the recovery of\nthe dead bodies from the pit near the tubewell of Ujjagar\nSingh; and (vii)",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1982_1982_63_P008_C01",
+      "text": "false statement made by the appellant to Ram Ishar, the son\nof one of the deceased, Rama Nand, that the latter would\nreturn to the village after Puran Mashi. The learned Sessions Judge accepted some of these\ncircumstances as proved and convicted the appellant for the\nfive murders on the basis of those circumstances. The High\nCourt has relied upon three circumstances, namely, (i)\nmotive, (ii) the fact that the appellant was seen last in\nthe company of the deceased and (iii) the conduct of the\nappellant after the occurrence. As regards motive, the High Court observes in its\njudgment that since no money was found on the dead bodies,\ntheft was obviously the motive for the crime. That may be\nso, but we are unable to understand how the fact that theft\nwas the motive for the crime can connect the appellant with\nthe crime. It is quite likely that whosoever committed the\nfive murders robbed the victims of the money which they had\non their person, but that cannot necessarily lead to the\nconclusion that it is the appellant who robbed the deceased\nof their money.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1982_1982_63_P008_C02",
+      "text": "The fact that a fairly large sum was paid to\nthe appellant and his co-workers by way of their wages would\nbe known to others apart from the appellant and his\ncompanions. No part of the money was traced to the appellant\nand therefore, we are unable to accept that the accused can\nbe connected with the crime merely because the motive for\nthe crime was theft. The circumstances that the appellant was last seen in\nthe company of the deceased can be accepted as proved but no\ninference can arise therefrom that the appellant had\ncommitted their murder. The appellant was working with the\ndeceased and others and there was nothing unnatural. in the\nappellant being in the company of his companions on the\nevening before the murders were committed. In so far as the allegation that the accused had\nabsconded is concerned, it is not easy to rely upon that\ncircumstance as leading to the conclusion that he had made\nhimself scarce in order to conceal his presence. The story\nof the prosecution that he was 3 arrested in Punjab itself\nhas been disbelieved by the High Court according to which,\nthe appellant was brought from Nepal by the team of\nInvestigating officers.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1982_1982_63_P008_C03",
+      "text": "The appellant belongs to Nepal and\nif he was found in Nepal going about openly, it is difficult\nto accept the charge that he had absconded to Nepal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1982_1982_63_P009_C01",
+      "text": "The circumstance that the appellant told Ram Ishar that\nthe latter's father Rama Nand would return to the village\nafter Puran Mashi cannot clinch the issue unless one stars\nwith the presumption that the appellant had committed the\ncrime. But then one cannot put the cart before the horse. At\nthe highest, what the appellant said to Ram Ishar may raise\na cloud of suspicion but nothing more. We have considered carefully the entire evidence in the\ncase and the various facts attendant upon the five murders. It seems to us quite impossible to believe that the crime\nwas committed in the manner alleged by the prosecution or\nthat the appellant could possibly have committed it in the\ncircumstances alleged. It is said that the five deceased\npersons were administered liquor, that after drinking liquor\nthey lapsed into a deep spell of sleep, that while they were\nasleep they were killed, that they were carried one by one\nto A the bottom of a 35 ft. tubewell and that thereafter,\nthey were set on fire.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1982_1982_63_P009_C02",
+      "text": "The post-mortem notes and the medical\nevidence show that the liquor consumed by the deceased could\nnot have produced unconsciousness How it could induce such\nstupor verging upon hypnosis is more than one can reasonably\nimagine. The prosecution case requires for its success the\nincredible assumption that the five persons done to death by\na single individual were under such a heavy spell of sleep\nthat none of them woke up when the others were attacked. When the first of the five victims was attacked, he would\nhave shrieked or shouted and thereby the others would be\naroused from their sleep. They were young, able-bodied\nlabourers. It puts quite some strain on our credulity to\naccept that a single person could have finished off his five\ncompanions in the fiction-like manner alleged by the\nprosecution. The High Court could not but be aware of the principle\nthat in a case which depends wholly upon circumstantial\nevidence, the circumstances must be of such a nature as to\nbe capable of supporting the exclusive hypothesis that the\naccused is guilty of the crime of which he is charged.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1982_1982_63_P009_C03",
+      "text": "That\nis to say, the circumstances relied upon as establishing the\nenvolvement of the accused in the crime must clinch the\nissue of guilt. Very often, circumstances which establish\nthe commission of an offence in the abstract are identified\nas circumstances which prove that the prisoner before the\ncourt is guilty of the crime imputed to him. An a priori\nsuspicion that the accused has committed the crime\ntransforms itself into a facile belief",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1982_1982_63_P010_C01",
+      "text": "that it is he who has committed the crime. Human mind plays\nthat A trick on proof of the commission of a crime by\nresisting the frustrating feeling that no one can be\nidentified as the author of that crime. In the case before\nus, there is no doubt that five persons were murdered. Unquestionably, every effort had to be made to find out who\ncommitted those murders. But the duty is not done by holding\nsomeone or the other guilty somehow or other. In the instant\ncase, the circumstances attendant upon the incident militate\nentirely against the conclusion that the five murders were\ncommitted by the appellant. The very pattern of the crime\nbelies that conclusion. We are unable to share the High\nCourt's view that the evidence showing \"that the appellant\nwas present with the deceased persons on the evening of\nNovember 8, 1980 and he was then missing from there on the\nnext morning proves the offences alleged against the\nappellant beyond any shadow of doubt\".",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1982_1982_63_P010_C02",
+      "text": "In support of its\nconclusion that the appellant had committed the murders, the\nHigh Court has even pressed into service the circumstances\nthat the appellant was not present 'at the place from-which\nthe dead bodies were recovered\" the next morning. These are\nequivocal circumstances on which it is hazardous to base the\nconviction. In the result we allow the appeal, set aside the\nconviction of the appellant on all the counts and the\nsentences imposed upon him including the sentence of death\nand acquit him of all the charges. He shall be released\nforthwith. P.B.R. Appeal allowed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "Prem Thakur vs State Of Punjab",
+    "case_id": "SC_1982_1982_63",
+    "court": "Supreme Court of India",
+    "year": "1982",
+    "facts_summary": "CITATION:\n 1983 AIR 61 1983 SCR (1) 822\n 1982 SCC (3) 462 1982 SCALE (2)1057\n CITATOR INFO :\n R 1989 SC1890 (31)\n R 1990 SC 79 (10)\n R 1991 SC 917 (8) HEADNOTE:\n The prosecution case against the appellant was that he,\nalong with five workers migrated from Nepal and that at the\ntime of occurrence all of them were working in Punjab as\nagricultural labourers. Out of a large sum of money earned\nby them as wages they spent a part and the balance was left\nwith one of the five deceased. On the evening prior to the\nday of occurrence the appellant was found by the employer\ncooking food for himself and his companions but when he went\nto his field the following morning he noticed the five dead\nbodies of the co-workers were smouldering in the pit of his\ntube well. Post-mortem examination of the dead bodies\nrevealed several ante-mortem injuries, most of which were\nlacerated wounds. Prom that day onwards the apellant was\nfound missing. The trial Court, accepting the circumstantial evidence,\nconvicted and A sentenced the appellant to death. The High\nCourt affirmed the conviction on three grounds: (i) since\nthe money was not found on the person of the deceased with\nwhom it was kept, the motive was theft; (ii) the appellant\nwas last seen in the company of all the deceased and (iii)\nthe appellant absconded thereafter to conceal his presence. of the Indian Penal Code and was sentenced to\ndeath for the former offence. The conviction and sentence\nhaving been upheld by the High Court of Punjab and",
+    "legal_issues": "ACT:\n Evidence-Circumstantial evidcnce-How evaluated-\nCircumstances relied upon as establishing involvement of\naccused must clinch the issue of guilt. Allowing the appeal,\n^\n HELD: It is impossible to believe that the crime was\ncommitted in the manner alleged by the prosecution or that\nthe appellant could possibly have committed it in the\ncircumstances alleged. [826 C-D]\n In a case which depends wholly upon circumstantial\nevidence, the circumstances must be of such a nature as to\nbe capable of supporting the exclusive hypothesis that the\naccused is guilty of the crime of which he is charged. That\nis to say, the circumstances relied upon as establishing the\ninvolvement of the accused in the crime must clinch the\nissue of Built. Very often, circumstances which establish\nthe commission of an offence in the abstract are identified\nas circumstances which prove that the prisoner before the\nCourt is guilty of a crime imputed to him. An a priori\nsuspicion that the accused has committed JUDGMENT:\nCRIMINAL APPELLATE JURISDICTION: Criminal Appeal No.\n187 of 1982.\nAppeal by special leave from the judgment and order\ndated 7.10.81 of the Punjab and Haryana High Court in\nCriminal No.466-DB/81 .\nN.R. Agarwala Amicus Curiae for the Appellant.\n Ashwani Kumar and D.D. Sharma for the Respondent.\n The Judgment of the Court was delivered by\n CHANDRACHUD, C.J. The appellant, Prem Thakur, was\nconvicted by the learned Sessions Judge, Rupnagar, under\nsections",
+    "ratio_summary": "",
+    "final_order": "In support of its\nconclusion that the appellant had committed the murders, the\nHigh Court has even pressed into service the circumstances\nthat the appellant was not present 'at the place from-which\nthe dead bodies were recovered\" the next morning. These are\nequivocal circumstances on which it is hazardous to base the\nconviction. In the result we allow the appeal, set aside the\nconviction of the appellant on all the counts and the\nsentences imposed upon him including the sentence of death\nand acquit him of all the charges. He shall be released\nforthwith. P.B.R. Appeal allowed.",
+    "outcome_summary": "Allowed. In support of its\nconclusion that the appellant had committed the murders, the\nHigh Court has even pressed into service the circumstances\nthat the appellant was not present 'at the place from-which\nthe dead bodies were recovered\" the next morning. These are\nequivocal circumstances on which it is haz",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

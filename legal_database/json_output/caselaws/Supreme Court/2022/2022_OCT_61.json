@@ -1,0 +1,377 @@
+{
+  "case_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH",
+  "case_name": "Gurmail Singh vs The State Of Uttar Pradesh",
+  "normalized_case_name": "GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH",
+  "court": "Supreme Court of India",
+  "year": "2022",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 965 of 2018",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "17 October 2022",
+  "judges": [
+    "Sudhanshu Dhulia",
+    "C.T. Ravikumar"
+  ],
+  "author": "C.T. Ravikumar",
+  "bench_type": "division",
+  "petitioner": "Gurmail Singh",
+  "respondent": "The State Of Uttar Pradesh",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 28,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2022\\OCT\\2022_OCT_61.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P001_C01",
+      "text": "CRIMINAL APPELLATE JURISDICTION\n\n CRIMINAL APPEAL NO. 965 OF 2018\n\n Gurmail Singh & Anr. ...Appellant(s)\n\n Versus\n\n State of Uttar Pradesh & Anr. ...Respondent(s)\n\n JUDGEMENT\nC.T. RAVIKUMAR, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P002_C01",
+      "text": "1. The appellants along with eight others stood the trial before the Court of\n\n Additional Sessions Judge – III, Rampur in Uttar Pradesh in Sessions Trial\n\n No.167/1981 for offences under\nSections 302\n/\n\n,\n\n/\n\n,\n\nand\n\nof the\n\n Indian Penal Code (for short ‘\nIPC\n’). As per judgment dated 10.06.1982 all of\n\n them were convicted under\nSection 302\n/\n\n, IPC. Further, it was found that\n\n offence\nu/S 307\n/\n\nwas not made out against them, but offences under\nSections 324\n/\n\nand\n\n/\n\nwere made out. Consequently, they were also\n\n convicted under those Sections. In addition, seven of the accused persons\n\nSection 147\n, IPC. For the conviction under\nSection\n\n, IPC they were sentenced to undergo imprisonment for life. For the\n\nconvictions under the other Sections, they were handed down different terms of\n\nimprisonment and all the sentences were directed to be run concurrently. They\n\njointly filed appeal viz., Criminal Appeal No.1510/1982 before the High Court\n\nof Judicature at Allahabad. During its pendency seven of them died and\n\nconsequently, qua them the Appeal was dismissed as abated.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P002_C02",
+      "text": "As per the\n\nimpugned judgment dated 19.08.2014, the said appeal qua the surviving\n\nappellants – Gurmail Singh, Kewal Singh and Karnail Singh was dismissed and\n\nthe conviction and the sentences were confirmed. Though this appeal has been\n\npreferred jointly by Gurmail Singh and Kewal Singh the latter died during the\n\npendency of this appeal. Hence, this appeal qua Kewal Singh got abated. Karnail Singh did not join in this appeal. In short, this appeal survives only in\n\nthe case of the first appellant – Gurmail Singh and hence, in this appeal,\n\nhereafter, he is referred to as ‘the appellant’.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P003_C01",
+      "text": "2. The appellant was accused No.3 before the Trial Court. Realizing the real\n\nscope of the appeal, the learned counsel for the appellant confined his\n\narguments only for alteration of the conviction to one under\nSection 304\nof the\n\nIPC in place of the conviction under\nSection 302\n, IPC.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P004_C01",
+      "text": "3. Heard, the learned counsel for the appellant and also the learned counsel\n\nfor the State.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P005_C01",
+      "text": "4. Briefly stated, the prosecution case is as under:\n\nPW-1 Shri Darshan Singh lodged the First Information Report. Accused\n\nNos. 1 and 2 Messrs. Thakur Singh and Chanan Singh are real brothers of his\n\nfather Dalip Singh (hereinafter referred to as – the deceased). The siblings\n\npurchased sixteen acres of land in village Dhuriayee in district Rampur under\n\ntwo different sale deeds. A sale deed for ten acres of land was executed in\n\nfavour of Messers Thakur Singh and Chanan Singh and the remaining six acres\n\nwere registered in favour of the deceased under a separate sale deed. Based on\n\nmutual consent a partition of the lands covered by the said sale deeds was\n\neffected. Chanan Singh was a chronic bachelor and he was living with Thakur\n\nSingh and they were jointly cultivating on the ten acres of land lying towards\n\nwest of the hedge raised to separate fields, referred to in Hindi by the parties\n\n‘Mend’, lying from north to south direction (vertical), raised to separate the\n\nlands of the parties. The deceased was cultivating on the portion lying towards\n\neast of the said Mend.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P005_C02",
+      "text": "While so, at a belated stage Thakur Singh and Chanan\n\nSingh sought for an exchange of the lands and asked the deceased to cultivate\n\non six acres of land situating towards south of the total extent of sixteen acres so\n\nas to enable them to effect cultivation on the remaining extent. This was not\n\nagreeable to the deceased. The said sibling dispute initially led to civil\n\nlitigations and later on, led to the unfortunate incident in which Dalip Singh lost\n\nhis life. The genesis of the incident is a disputation over the sown field which is\n\na strip of four acres out of the total extent of sixteen acres.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P006_C01",
+      "text": "5. On 26.10.1980, PW-1, his parents and brothers were in their house when\n\ntheir servant Rohtash came to inform them that Thakur Singh and Chanan Singh\n\nwere getting the paddy crop (sown by Dalip Singh), reaped using 20-25\n\nlabourers and whereupon they proceeded thitherwards. PW-1 was holding a\n\nlathi fixed with iron buri and the others were unarmed. On reaching the spot\n\nDalip Singh asked Thakur Singh and Chanan Singh to stop harvesting. Thakur\n\nSingh was armed with Gandassi, Karnail Singh was armed with sword, Chanan\n\nSingh and Harcharan Singh were armed with lathis, Gurmail Singh (first\n\nappellant) was armed with ballam, Singhara Singh was unarmed, Kewal Singh\n\n(the Second appellant) had a country-made pistol and Bachan Singh, Avtar\n\nSingh and Kartar Singh had guns in their hands. Then co-accused Singhara\n\nSingh ordered to drive Dalip Singh and his men off the field and meanwhile, the\n\nmen engaged by them continued to reap the crops. Soon, Bachan Singh, Avtar\n\nSingh and Kewal Singh who were carrying firearms fired at Dalip Singh with a\n\nview to kill him and on sustaining firearm injuries he fell down.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P006_C02",
+      "text": "When PW-1 ran\n\ntowards Dalip Singh the other accused persons inflicted injuries on him, his\n\nbrothers Nirmal Singh and also Dalip Singh with their weapons. PW-1 wielded\n\nhis lathi in self defence. When the accused persons fled from the scene, he\n\nmanaged to get a jeep and enroute to hospital Dalip Singh died.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P007_C01",
+      "text": "6. In view of the concurrent findings against the accused persons founded\n\non convincing reasons on the questions as to whether there was unlawful\n\nassembly and whether the death of Dalip Singh was homicidal in nature, we do\n\nnot find any compelling reasons or grounds to disturb those findings. So also,\n\nthe Courts below concurrently found that Thakur Singh and his men (party\n\naccused) were the aggressors and the prosecution has succeeded in explaining\n\nthe injuries found on two of the accused persons, namely Thakur Singh and\n\nChanan Singh. On our careful consideration, we found that those concurrent\n\nfindings also call for no interference. However, in view of the contentions raised\n\non behalf of the appellants (to be referred infra) certain questions invite careful\n\nconsideration.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P008_C01",
+      "text": "7. The contention of the appellant is that none of the ante-mortem injuries\n\nfound on the body of the deceased is attributable him even if the evidence of\n\nPW-1 and PW-2 Nirmal Singh are taken as credible. This contention and the\n\ncontention that the conviction is liable to be converted to one under\nSection 304\n,\n\nIPC appear to be incongruous, though not fully irreconcilable. It is contended\n\nthat the appellant was carrying only a ballam viz., a spear. Ext. Ka.4\n\npostmortem report did not reveal any injury having been caused by a ballam. That apart, it is contended that no recovery of any weapon, much less a ballam\n\nwas recovered from any of the convicts. Before proceeding further with such\n\ncontentions, it is only apposite to refer to the evidence of PW-4 Dr. HB Bhatt\n\nwho conducted the postmortem on the body of Dalip Singh on 27.10.1980 and\n\nprepare Ex.Ka.4 report. Going by Ext.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P008_C02",
+      "text": "Ka-4 postmortem report the following\n\nwere the ante-mortem injuries sustained by the deceased:\n(1) Gunshot wound of entry 1cm x 0.5cm present on inner aspect of right\n thigh, 12cm above from popliteal fossa which was connected to\n\nwound of exist measuring 5cm x 1.5cm on the outer surface of front\n of right thigh 9cm above from right knee joint. All the blood vessels\n & tissues were torn in the passage of wound. The femur was broken\n in pieces. Four pieces of shots were found in the wound. No\n blackening, tattooing and scorching of skin was present. (2) Gunshot wound of entry 0.5cm x 0.5cm present on left thigh inner\n aspect about 13cm above from left popliteal fossa aspect which was\n connected to wound of exist measuring 0.5cm 0.5cm 4cm above\n from wound of entry. No blackening was seen. (3) Abraded contusion present on middle of back little, ring and middle\n fingers each measuring 2cm x1cm. (4) Lacerated wound 6cm x 0.5cm x bone deep on left side of head\n 12cm above from left ear. (5) Contusion 3cm x 1cm on back of right fore-arm about 3cm above\n from right wrist joint.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P009_C01",
+      "text": "8. PW-4 Dr. HB Bhatt deposed that cause of death was shock and\n\nhemorrhage due to injuries. He had also categorically deposed that the injuries\n\nwere sufficient in the ordinary course of nature to cause death. We have already\n\nheld that the concurrent findings that the death of Dalip Singh was homicidal is\n\nfounded on convincing reasons and it calls for no interference. Injury No.1,\n\nwhich is a gunshot wound as described above, had completely torn the blood\n\nvessels and tissues in the passage of wound and the size of the said wound\n\nwould reveal that it is very grievous. The second gunshot injury is also equally\n\ngrievous in nature. The evidence of PW-1 and PW-2 would thus gain support\n\nfrom the evidence of PW-4 with Ext.Ka-4 report that the deceased had received\n\nfirearm shots and died of gunshot wounds. Besides those gunshot injuries the\n\ndeceased had sustained three more ante-mortem injuries as noted above. In view\n\nof the contention of the appellant, as referred to above, it is relevant to the\n\ninjuries sustained by PW-1 –Darshan Singh and PW-2 –Nirmal Singh\n\nwho are the sons of the deceased.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P009_C02",
+      "text": "Their testimonies as PW-1 and PW-2 to the\n\neffect that they also sustained injuries in the same occurrence gain support from\n\nthe evidence of PW-3 – Dr. N.K. Tandon with Exts. Ka.2 and Ka.3. Going by\n\nthe evidence of PW-3 with Ext. Ka.3 PW-1 Darshan Singh had sustained the\n\nfollowing injuries:-\n(1) Abrasion, 2cm x ¼ cm, on the shoulder of left arm back side. (2) Contusion 2½ cm x 1cm on left shoulder back side. (3) Incised wound, 3cm x ¾ cm x ½ cm on left shoulder back-side. (4) Contusion 5cm x 1½ cm in the upper portion of the left ear. (5) Lacerated wound 3cm x ½ cm x bone deep in the back portion of the\n head. X-ray was advised. (6) Contusion 5cm x 2cm on the back. (7) Contusion 2cm x 1cm on the back side behind the left shoulder.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P010_C01",
+      "text": "9. The evidence of PW-3 with Ext. Ka.2 would reveal that PW-2 – Nirmal\n\nSingh has sustained the following injuries:\n(1) Abraded contusion measuring 3cm x 2cm in the lower arm, on the left\n side 5cm, above the wrist joint in upper side.\n(2) Contusion, 5cm x 1½ cm on left arm on the upper portion.\n\n (3) Lacerated wound, 3½ cm x ½ cm x bone deep on the middle of head.\nX-ray was advised.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P011_C01",
+      "text": "10. Though it was found that no case under\nSections 307\n/\n\n, IPC was made\n\nagainst appellant and the other co-convicts, they were evidently, convicted\n\nunder\nSections 324\n/\n\nand\n\n/\n\n, taking into account the nature of the\n\ninjuries inflicted on PWs 1 and 2. The Courts below held that PWs 1 and 2 had\n\nspecifically deposed regarding the presence and participation of the appellant. Nothing was brought to our attention to point out that the finding of the courts\n\nbelow that no serious contradictions were brought out from PWs 1 and 2 to\n\nmake their testimonies unbelievable. In such circumstances, the evidence of\n\nPWs 1 and 2 , which gain support from PW4 with Ext. Ka.4 and also from PW3\n\nwith Exts. Ka.2 and Ka.3 can only be taken trustworthy, as has been held by the\n\ncourts below. Their evidence, as held by the Courts below, will reveal unlawful\n\nassemblage in which the appellant was also a member. Even otherwise, the\n\ncontentions of the appellant as mentioned hereinbefore, would reveal that\n\nmembership in the unlawful assemblage is not in serious challenge and his core\n\ncontention is that the prosecution did not establish any overt act on his part.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P011_C02",
+      "text": "Its\n\ntenability for the purpose of appreciating the further contention for alteration of\n\nthe conviction has to be tested by looking into the consequence, if any, of the\n\nfurther highlighted fact that eight of the ten convicts have died during the\n\npendency of the appeal, either before the High Court or before this Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P012_C01",
+      "text": "11. In the context of the aforesaid contentions it has become necessary to\n\nconsider certain other allied questions. The first question in that regard is when\n\nonce the prosecution established the membership of an accused / convict in the\n\nunlawful assembly whether the individual overt act also to be established by the\n\nprosecution to bring culpability on him on the principle of constructive /\n\nvicarious liability. According to us, no such burden can be fastened on the\n\nprosecution in view of the phraseology under\nSection 149\n, I.P.C. Though there\n\nare catena of decisions on that question we think it suffice to refer to the\n\ndecisions in\nAmerika Rai & Ors. Vs. State of Bihar\n(AIR 2011 SC 1379),\n\nSurendra & Ors. Vs. State of Uttar Pradesh (AIR 2012 SC 1743) and in\n\nYunis alias\nKariya Vs. State of M.P. (AIR 2003 SC 539). In Amerika Rai’s\n\ncase (supra) this Court held that even the presence in an unlawful assembly,\n\nwith an active mind, to achieve the common object, would make a person\n\nvicariously liable for the acts of the unlawful assembly.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P012_C02",
+      "text": "In Surendra’s case\n\n(supra) this Court held that inference of common object has to be drawn from\n\nthe various factors such as the weapons with which the members were armed,\n\ntheir movements, the acts of violence committed by them and the result. Yunis’ case (supra) it was held that the presence of the accused as a part of the\n\nunlawful assembly is sufficient for his conviction. It was further held that when\n\nthe presence of the accused at the place of occurrence as part of the unlawful\n\nassembly was not disputed it will be sufficient to hold him guilty even if no\n\novert act was attributed to him.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P013_C01",
+      "text": "12. The next question to be looked into to appreciate the contentions of the\n\nappellant is whether the reduction in number of the convicts below five on\n\naccount of death of the co-accused got any impact or effect on the surviving\n\nconvict(s) in the matter of consideration of his/their, vicarious liability in view\n\nSection 149\n, I.P.C. There can be no two views on the position that reduction\n\nof number of accused/convicts in an appeal, below five on account of acquittal\n\nof co-accused/co-convicts and such reduction in numbers below five due to\n\ndeath of co-convicts are different and distinct. The impact and effect of the\n\nformer situation is no longer res integra.\nIn the decision in\nAmar Singh & Ors.\n\nVs. State of Punjab\n((1987) 1 SCC 679) seven persons were charged for\n\noffences punishable under\nSection 148\n,\nSection 302\nread with\nSection 149\n, IPC.\n\nThere was no case for the prosecution that other persons had also involved in\n\nthe commission of the offence. It was held that because of the acquittal of three\n\nout of the seven accused the remaining four could not have been convicted\n\nunder\nSection 148\nread with\nSection 149\n, IPC.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P014_C01",
+      "text": "13. Nethala Pothuraju & Ors. Vs. State of Andhra Pradesh\n((1992) 1\n\nSCC 49) also this position was reiterated. That was a case where the case of the\n\nprosecution was that seven accused persons formed an unlawful assembly and\n\ncommitted murder in pursuance of a common object and they were charged\n\nunder\nSection 302\n/\n\n, IPC. Four of them were acquitted. In the appeal this\n\nCourt held that in the said factual situation the remaining three accused could\n\nnot have been convicted by applying\nSection 149\n, IPC. At the same time, it was\n\nfurther held that the non-applicability of\nSection 149\n, IPC would not be a bar\n\nfor convicting accused/appellants if evidence would disclose commission of\n\noffence in furtherance of a common intention.\nThe said provision and the decisions\nreferred above\nwould reveal that the\n\ntest is that persons having the common object must be five or more. We may\n\nalso hasten to add that persons who are simple onlookers are to be excluded in\n\nthat matter.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P015_C01",
+      "text": "14. As stated above, the effect and impact of reduction of the number of\n\nconvicts pending an appeal owing to the death of co-convicts is bound to be\n\ndifferent from the effect and impact of reduction of the number of\n\naccused/convicts on account of acquittal. Going by\nSection 394(1)\n, Cr.P.C.\n\nevery appeal under\nSection 377\nSection 378\nshall finally abate on the death\n\nof the accused. Sub-section (2) thereof provides that every other appeal under\n\nChapter-XXIX (except an appeal from a sentence of fine) shall finally abate on\n\nthe death of the appellant. The position is that every appeal, except an appeal\n\nagainst the sentence of fine, would abate on the death of the appellant, because\n\nthe sentence under appeal in such circumstances, could no longer be executed. Though the phraseology in\nSection 394\n, Cr.P.C. would suggest that the\n\nprovisions thereunder got no application in respect of appeal by special leave\n\nunder\nArticle 136\nof the Constitution of India that position was settled otherwise\n\nby this Court in the decisions in\nHarnam Singh Vs. State of Himachal\n\nPradesh\n((1975) 3 SCC 343) and in\nHari Prasad Chhapolia Vs. UOI\n((2008)\n\n7 SCC 690).",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 136"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P015_C02",
+      "text": "In Harnam Singh’s case (supra) this Court held that\nSection 394\n,\n\nCr.P.C. got no application in respect of appeal by special leave under\nArticle 136\nof the Constitution of India and, therefore, the question is whether the appeal\n\nthereunder would abate on the death of the appellant when it is not governed\n\nstrictly by that Section. Further it was held that in the interest of uniformity,\n\nthere is no valid reason for applying to appeals under\nArticle 136\nof the\n\nConstitution of India, a set of rules different from those which govern the appeal\n\nunder the Code. In Hari Prasad Chhapolia’s case (supra) this Court held that\n\nprinciples of\nSection 394\n, Cr.P.C. would apply to appeals filed before the\n\nSupreme Court under\nArticle 136\nof the Constitution of India.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 136"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P016_C01",
+      "text": "15. The term ‘abatement’ or ‘abate’ has not been defined in\nCr.P.C\n. In the said\n\ncircumstances, its dictionary meaning has to be looked into. As relates criminal\n\nproceedings going by the meaning given in Black’s Law Dictionary, 10th\n\nEdition, abatement means ‘the discontinuation of criminal proceedings before\n\nthey are concluded in the normal course of litigation, as when the defendant\n\ndies’. Thus, it can be seen that the meaning of abatement can only be taken in\n\ncriminal proceedings as `discontinuation of such proceedings owing to the death\n\nof the accused/convict pending such proceedings’. In short, it would reveal that\n\nan appeal against conviction (except an appeal from a sentence of fine) would\n\nabate on the death of the appellant as in such a situation, the sentence under\n\nappeal could no longer be executed. The abatement is certainly different from\n\nacquittal and a mere glance at the proviso to\nSection 394 (2)\n, Cr.P.C., will make\n\nthis position very clear.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P016_C02",
+      "text": "The said proviso reads thus :\n“Provided that where the appeal is against a conviction and\n sentence of death or of imprisonment, and the appellant dies\n during the pendency of the appeal, any of his near relatives\n may, within thirty days of the death of the appellant, apply\n to the Appellate Court for leave to continue the appeal; and\n if leave is granted, the appeal shall not abate.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P017_C01",
+      "text": "16. The long and short of the aforesaid discussion is that the mere fact that\n\nseven out of the ten convicts died, either during the pendency of Criminal\n\nAppeal No. 1510/1992 before the High Court or during the pendency of this\n\nappeal, could not be a reason, by that itself, to canvass non applicability of the\n\nprovision for constructive/vicarious liability, arising out of the achievement of\n\nthe common object by the unlawful assembly.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P018_C01",
+      "text": "17. Having held the aforesaid points as above, we will now consider the\n\nquestion whether the contention of the appellant that conviction under\nSection\n\n/\n\nis liable to be altered as one under\nSection 304\n, either Part-I or Part-II,\n\nread with\nSection 149\n, IPC. We have already taken note of the fact that the\n\nappellant was not charged with offence punishable under\nSection 302\n, IPC\n\nsimpliciter. He was convicted under\nSection 302\nand\nSection 149\n, IPC hence, in\n\nview of our agreement with the concurrent finding about membership of the\n\nappellant in the unlawful assembly, the appellant cannot escape from the\n\nconstructive/vicarious liability for the act committed by any one of the members\n\nof that assemblage by virtue of\nSection 149\n, IPC if the common object of the\n\nunlawful assembly was to commit murder and not causing grievous injury. We\n\nsay so, because the object of\nSection 149\nis to make specific that person whose\n\ncase comes within its gamut cannot be permitted to put forth a defence that he\n\ndid not, with his own hand, commit the offence committed in prosecution of the\n\ncommon object of the unlawful assembly.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P019_C01",
+      "text": "18. We have already referred to the decision in Surendra’s case where this\n\nCourt held that inference of common object had to be drawn from various\n\nfactors, such as, the weapons with which the members were armed, there\n\nmovements, the acts of violence committed by them and the result. Kuldeep\n\nYadav & Ors. Vs. State of Bihar\n((2011) 5 SCC 324) this Court held that in\n\norder to attract\nSection 149\n, IPC, it must be shown that the incriminating act\n\nwas done to accomplish the common object of the unlawful assembly and it\n\nmust be within the knowledge of the other members as one likely to be\n\ncommitted in prosecution of the common object. In the decision in\nJai Karan\n\n& Ors. Vs. State of U.P. ((2003) 12 SCC 655) the appellants Jai Karan and\n\nBabu were convicted under\nSection 148\n,\n\nread with\nSections 149\nand\n\nread with\nSection 149\n, IPC and the other appellant Veer Bhadra was convicted\n\nunder\nSections 148\n,\n\nread with\nSections 149\nand\n\nread with\nSection 149\n,\n\nIPC. The court below found that the accused persons were armed with the guns,\n\nkanta and banka, and found to have caused death of the deceased and injured\n\nothers.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P019_C02",
+      "text": "This Court held that the evidence of the witnesses stood corroborated by\n\nmedical evidence and consequently the conviction of the accused for charged\n\noffences was upheld. Bearing in mind the decisions and the positions of law\n\nemerged from the decisions we will consider the question stated above.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P020_C01",
+      "text": "19. Now, we will consider the effect, if any, of non-recovery of weapons\n\nallegedly used in the commission of offences charged against the accused.\n\nthat regard, the it is only appropriate to refer to the decision in\nRakesh and Anr. Vs. State of Uttar Pradesh & Anr. ((2021) 7 SCC 188). It, insofar as\n\nrelevant, reads thus:\n“For convicting an accused recovery of the weapon used in\n commission of offence is not a sine qua non. PW1 and\n PW2, as observed hereinabove, are reliable and trustworthy\n eye witnesses to the incident and they have specifically\n stated A-1 Rakesh fired from the gun and the deceased\n sustained injury. The injury by the gun has been established\n and proved from the medical evidence and the deposition of\n Dr Santosh Kumar, PW5. Injury 1 is by gun shot. Therefore, it is not possible to reject the credible ocular\n evidence of PW1 and PW2 - eyewitnesses who witnessed\n the shooting. It has no bearing on credibility of deposition\n of PW1 and PW2 that A-1 shot deceased with a gun,\n particularly as it is corroborated by bullet in the body and\n also stands corroborated by the testimony of PW2 and\n PW5.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P020_C02",
+      "text": "Therefore, merely because the ballistic report shows\n that the bullet recovered does not match with the gun\n recovered, it is not possible to reject the credible and\n reliable deposition of PW1 and PW2.”\n\nIn the said circumstances and in the light of the decision in\nRakesh and Anr. Vs. State of Uttar Pradesh & Anr. (supra), the non- recovery of the weapons\n\ncannot be a ground to discard the evidence of the injured eye witnesses viz.,\n\nPWs. 1 and 2. Now, we will refer to the evidence in the instant case. The\n\nevidence of PW-1 and PW-2 who were the injured witnesses cannot be\n\ndisbelieved or brushed aside solely because they are the sons of the deceased. There is no need to mention about any decision holding the position that being a\n\nrelative of the deceased is no reason to discredit their version as this position is\n\nwell-nigh settled. In this case, the courts below found that nothing was elicited\n\nfrom PWs 1 and 2 by the defence so as to make them untrustworthy. In fact,\n\ntheir evidence regarding carrying of firearms and their use by the members of\n\nthe unlawful assembly gets corroboration from the evidence of PW-4 with Ext. Ka.4.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P020_C03",
+      "text": "Their version that some of the members of the unlawful assembly were\n\ncarrying other lethal weapons also get corroboration from the evidence of PW-3\n\nwith Exts. Ka.2 and Ka.3. We referred to those aspects only to emphasize the\n\nfact that PWs 1 and 2 are rightly held as trustworthy witnesses by the courts\n\nbelow.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P021_C01",
+      "text": "20. The evidence of PWs. 1 and 2 would reveal that the members of the\n\nunlawful assembly were carrying firearms and they used them against the\n\ndeceased Dalip Singh. The other lethal weapons were used against Dalip Singh\n\nand also against them. When the fact is that Dalip Singh sustained two gunshots\n\nand even thereafter, he was attacked by the members of the unlawful assembly,\n\nhow the common object can be said to be one other than committing murder of\n\nDalip Singh. One of the shots was made from a near proximity is evident from\n\nthe fact that it not only caused tear of blood vessels and tissues in the passage of\n\nwound but also caused the femur, which is the strongest bone of a human body,\n\nto break into pieces. It cannot be presumed that there was only one gunshot\n\ninjury as the other gunshot wound was on the left thigh inner aspect. The\n\nevidence of PWs 1 and 2 would reveal that on sustaining such gunshot injuries\n\nDalip Singh fell down and when they attempted to go for his rescue they were\n\nattacked with weapons. That apart Dalip Singh, who by then, fell on the ground\n\nwas again attacked.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P021_C02",
+      "text": "When someone who sustained gunshot injuries and\n\nprofusely bleeding was attacked again and the persons who attempted to come\n\nto his rescue were also attacked the only inference that can be drawn from such\n\ncircumstances is that the common object was to do away with the life of that\n\nperson. In the facts and circumstances, revealed from the evidence appreciated\n\nby the courts below the conclusion arrived by them that the unlawful assembly\n\nwas having the common object to commit murder of Dalip Singh cannot be said\n\nto be perverse warranting interference by this Court in exercise of power under\nArticle 136\nof the Constitution of India. The very fact that the members of the\n\nunlawful assembly, ten in numbers assembled at the place armed not only with\n\nfirearms but with other lethal weapons as well and the manner in which they\n\ncommitted the violence and the ultimate result would definitely lend support to\n\nthe said finding.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 136"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P022_C01",
+      "text": "21. There can be no doubt with respect to the position that in order to make\n\nculpable homicide as murder the act by which death is caused should fall not\n\nonly under any one or more of clauses firstly to fourthly under\nSection 300\n, IPC\n\nbut they should also not fall under any of the five exceptions to\nSection 300\n,\n\nIPC. Though the appellant contended that the conviction under\nSections\n\n/\n\nis liable to be altered to one under 304/149 it is a fact that he had failed\n\nto bring it within any of the five exceptions to\nSection 300\n, IPC. When that be\n\nso, there is absolutely no question of considering the contentions that the\n\noffence of culpable homicide falls either under 304 (Part I) or 304 (Part II).",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH_P023_C01",
+      "text": "22. When the above being the position obtained in this case, we have no\n\nhesitation to hold that the High Court was justified in dismissing the appeal\n\nfiled by the appellant herein, confirming the conviction and sentences passed\n\nagainst him. There are no merits in this appeal and hence it is dismissed.\n………………………………. J.\n(C.T. RAVIKUMAR)\n\n ………………………………. J.\n(SUDHANSHU DHULIA)\n\nNEW DELHI;\nOctober 17, 2022",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Gurmail Singh vs The State Of Uttar Pradesh",
+    "case_id": "SC_2022_GURMAIL_SINGH_VS_THE_STATE_OF_UTTAR_PRADESH",
+    "court": "Supreme Court of India",
+    "year": "2022",
+    "facts_summary": "1. The appellants along with eight others stood the trial before the Court of\n\n Additional Sessions Judge – III, Rampur in Uttar Pradesh in Sessions Trial\n\n No.167/1981 for offences under\nSections 302\n/\n\n,\n\n/\n\n,\n\nand\n\nof the\n\n Indian Penal Code (for short ‘\nIPC\n’). As per judgment dated 10.06.1982 all of\n\n them were convicted under\nSection 302\n/\n\n, IPC. Further, it was found that\n\n offence\nu/S 307\n/\n\nwas not made out against them, but offences under\nSections 324\n/\n\nand\n\n/\n\nwere made out. Consequently, they were also\n\n convicted under those Sections. In addition, seven of the accused persons\n\nSection 147\n, IPC. For the conviction under\nSection\n\n, IPC they were sentenced to undergo imprisonment for life. For the\n\nconvictions under the other Sections, they were handed down different terms of\n\nimprisonment and all the sentences were directed to be run concurrently. They\n\njointly filed appeal viz., Criminal Appeal No.1510/1982 before the High Court\n\nof Judicature at Allahabad. During its pendency seven of them died and\n\nconsequently, qua them the Appeal was dismissed as abated. As per the\n\nimpugned judgment dated 19.08.2014, the said appeal qua the surviving\n\nappellants – Gurmail Singh, Kewal Singh and Karnail Singh was dismissed and\n\nthe conviction and the sentences were confirmed. Though this appeal has been\n\npreferred jointly by Gurmail Singh and Kewal Singh the latter died during the\n\npendency of this appeal. Hence, this appeal qua Kewal Singh got abated. Karnail Singh did not",
+    "legal_issues": "2. The appellant was accused No.3 before the Trial Court. Realizing the real\n\nscope of the appeal, the learned counsel for the appellant confined his\n\narguments only for alteration of the conviction to one under\nSection 304\nof the\n\nIPC in place of the conviction under\nSection 302\n, IPC. 3. Heard, the learned counsel for the appellant and also the learned counsel\n\nfor the State. 6. In view of the concurrent findings against the accused persons founded\n\non convincing reasons on the questions as to whether there was unlawful\n\nassembly and whether the death of Dalip Singh was homicidal in nature, we do\n\nnot find any compelling reasons or grounds to disturb those findings. So also,\n\nthe Courts below concurrently found that Thakur Singh and his men (party\n\naccused) were the aggressors and the prosecution has succeeded in explaining\n\nthe injuries found on two of the accused persons, namely Thakur Singh and\n\nChanan Singh. On our careful consideration, we found that those concurrent\n\nfindings also call for no interference. However, in view of the contentions raised\n\non behalf of the appellants (to be referred infra) certain questions invite careful\n\nconsideration.",
+    "ratio_summary": "In Harnam Singh’s case (supra) this Court held that\nSection 394\n,\n\nCr.P.C. got no application in respect of appeal by special leave under\nArticle 136\nof the Constitution of India and, therefore, the question is whether the appeal\n\nthereunder would abate on the death of the appellant when it is not governed\n\nstrictly by that Section. Further it was held that in the interest of uniformity,\n\nthere is no valid reason for applying to appeals under\nArticle 136\nof the\n\nConstitution of India, a set of rules different from those which govern the appeal\n\nunder the Code. In Hari Prasad Chhapolia’s case (supra) this Court held that\n\nprinciples of\nSection 394\n, Cr.P.C. would apply to appeals filed before the\n\nSupreme Court under\nArticle 136\nof the Constitution of India. 17. Having held the aforesaid points as above, we will now consider the\n\nquestion whether the contention of the appellant that conviction under\nSection\n\n/\n\nis liable to be altered as one under\nSection 304\n, either Part-I or Part-II,\n\nread with\nSection 149\n, IPC. We have already taken note of the fact that the\n\nappellant was not charged with offence punishable under\nSection 302\n, IPC\n\nsimpliciter. He was convicted under\nSection 302\nand\nSection 149\n, IPC hence, in\n\nview of our agreement with the concurrent finding about membership of the\n\nappellant in the unlawful assembly, the appellant cannot escape from the\n\nconstructive/vicarious liability for the act committed by any one of the members\n\nof that assemblage by virtue of\nS",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [
+      "Constitution 136"
+    ],
+    "cases_cited": []
+  }
+}

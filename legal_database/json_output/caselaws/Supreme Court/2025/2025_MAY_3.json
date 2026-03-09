@@ -1,0 +1,1227 @@
+{
+  "case_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA",
+  "case_name": "National Spot Exchange Ltd vs Union Of India",
+  "normalized_case_name": "NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA",
+  "court": "Supreme Court of India",
+  "year": "2025",
+  "judgment_template": null,
+  "case_number": "Writ Petition 995 of 2019",
+  "case_number_regex": "WRIT_PETITION",
+  "date_of_judgment": "15 May 2025",
+  "judges": [
+    "Bela M. Trivedi"
+  ],
+  "author": "Bela M. Trivedi",
+  "bench_type": "single",
+  "petitioner": "National Spot Exchange Ltd",
+  "respondent": "Union Of India",
+  "reporter_citations": [
+    "2025 INSC 694"
+  ],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 76,
+  "cited_by_count": 0,
+  "neutral_citation": "2025 INSC 694",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL ORIGINAL JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2025\\MAY\\2025_MAY_3.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P001_C01",
+      "text": "REPORTABLE\n\n CIVIL ORIGINAL JURISDICTION\n\n WRIT PETITION (CIVIL) NO.995 OF 2019\n\n NATIONAL SPOT EXCHANGE\n LIMITED …PETITIONER(S)\n\n VERSUS\n\n UNION OF INDIA & ORS. …RESPONDENT(S)\n\n JUDGMENT\nBELA M. TRIVEDI, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P002_C01",
+      "text": "1. While considering the validity of the orders dated\n 10.08.2023 and 08.01.2024 passed by the Supreme\n Court Committee appointed by this Court vide the\n order dated 04.05.2022, following two questions\n were framed by this Court to be heard in priority on\n the basis of the categorisation of the Applications\n filed in the captioned Writ Petition vide the Order\n\ndated 02.04.2024.\nProvisions of Prevention of Money\n Laundering Act, 2002\n, (PMLA) and Maharashtra\n Protection of Investors and Depositors Act, 1999\n(MPID Act\n), by virtue of the\nProvisions of\n SARFAESI Act, 2002\nand RDB Act, 1993; (In\n view of order dated 10.08.2023 passed by the\n Committee)\n(ii) whether the properties of the Judgment\n Debtors and Garnishees attached under the\nProvisions of MPID Act, 1999\nwould be available\n for the execution of the decrees against\n Judgment Debtors in view of the Provision of\n Moratorium under\nSection 14\nof the IBC, 2016;\n (In view of the Order dated 08.01.2024 passed\n by the Committee)”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P003_C01",
+      "text": "2. The genesis of the Writ proceedings, is the scam\n which took place at the Commodity Exchange\n Platform of the Petitioner Company – National Spot\n Exchange Limited (NSEL), a company registered\n under the\nCompanies Act, 1956\n, on 18.05.2005. It is\n promoted by 63 Moons Technologies Limited\n (Formerly Financial Technologies India Limited),\n which holds 99.99% of total share capital of the\n company and the National Agricultural Cooperative\n Marketing Federation of India Limited (NAFED) holds\n 0.01% of total share capital of company. The\n Exchange Platform of the NSEL committed payment\n defaults and fraud aggregating to about Rs.5,600\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 2 of 76\nCrores vis-à-vis their trading counterparts numbering\n about 13,000 traders who traded through its\n Members/ brokers.\nPRELUDE",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P004_C01",
+      "text": "3. Brief facts germane for deciding the above stated two\n priority questions of law are as under: -\ni. The Petitioner – National Spot Exchange\n Limited (hereinafter referred to as the “NSEL”)\n provided an electronic platform for trading of\n commodities between willing buyers and willing\n sellers through NSEL’s Members/ brokers\n representing them. On 05.06.2007, the\n Department of Consumer Affairs issued an\n Exemption Notification to the NSEL under\nSection 27\nof the Forward Contracts\n (Regulation) Act, 1952 (hereinafter referred to\n as “FCRA”), exempting forward contracts of\n one day duration for sale and purchase of\n commodities traded on the NSEL from\n operation of the provisions of the FCRA. The\n NSEL commenced its operations in October,",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C01",
+      "text": "2008. WRIT PETITION (CIVIL) NO.995 OF 2019 Page 3 of 76\nii. The trading on the Exchange Platform of the\n Petitioner could be undertaken only by the\n registered Members of the exchange either on\n their own behalf or on behalf of their clients. At\n the request of their clients, the Members of\n NSEL would place orders for buying/ selling\n commodities. When the orders placed by\n willing buyers and willing sellers of a particular\n commodity would get matched automatically on\n NSEL’s Exchange Platform, based on the price\n and time priority, it would result in a trade.\n iii. The NSEL launched contracts for buying and\n selling of commodities with different settlement\n periods ranging from T+0, T+1, T+2 days to\n T+36 days. In the said Contracts, ‘T’ meant the\n Trade date, that is the date on which the trade\n is executed on the exchange and ‘+ 2’ or ‘+ 25’\n referred to the number of business days, after\n which the delivery of the commodity and\n payment of price (that is settlement of\n transaction) was to be affected by the buying\n Member and the selling Member as the case\n may be.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C02",
+      "text": "At the end of the day all trades would\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 4 of 76\nget clubbed and the obligation of respective\n Members of NSEL would be generated.\n iv. Thereafter, the funds “Pay – in” obligation\n would be intimated to the Members of NSEL\n whose clients purchased the commodities, and\n the funds “Pay – out” obligation would be\n intimated to the Members of NSEL whose\n clients sold the commodities. Similarly, the\n commodity “Pay-in” obligation would be\n intimated to the Members of NSEL whose client\n sold the commodities and the commodity “Pay-\n out” obligation would be intimated to the\n Members of NSEL whose clients purchased the\n commodities. Based on the intimation from the\n exchange, the clients would have to fulfil their\n respective obligations through the Members of\n the NSEL, through whom they had traded, on\n the Exchange Platform.\nv.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C03",
+      "text": "On 27.04.2012, the Department of Consumer\n Affairs, Government of India issued a Show\n Cause Notice to the NSEL as to why action\n should not be initiated against it for permitting\n transactions in alleged violation of exemption\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 5 of 76\ngranted to it under the FCRA, vide the\n notification dated 05.06.2007.\nvi. On 12.07.2013, the Department of Consumer\n Affairs, directed the NSEL to give an\n undertaking that no further contracts shall be\n launched until further instructions, and that all\n existing contracts shall be settled on due dates. Accordingly, the NSEL gave an undertaking to\n the Department of Consumer Affairs on\n 22.07.2013.\nvii. On 31.07.2013, the NSEL suspended its\n Exchange operations and called upon its\n Members to inter alia complete their respective\n delivery and payment obligations for the\n outstanding trades as on 31.07.2013. In July\n 2013, 13,000 persons who traded on the\n platform of the NSEL claimed to have been\n duped by about 24 trading Members, who\n defaulted in payment of their obligations\n amounting to approximately Rs.5,600/- Crores.\n viii. An FIR in this regard was registered by the\n M.R.A.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C04",
+      "text": "Marg, Police Station vide C.R. No.216\n of 2013, which was transferred to and lodged in\n the EOW Police on 30.09.2013 as C.R. No.89\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 6 of 76\nof 2013. Several suits also came to be filed by\n the traders who were allegedly duped on the\n trading platform. One Suit being No.173 of\n 2014 came to be filed in the Bombay High\n Court, as a representative suit under\nOrder 1\n Rule 8 of the Code of Civil Procedure\n, 1908. The NSEL filed third party notices in the said\n suit for recovery of Rs.5,600/- Crores against\n its 24 defaulter members.\nix. According to the NSEL, in the process of\n recovery proceedings filed by it, the decrees/\n awards of about Rs.3,365 Crores out of\n Rs.5,600 Crores were passed against the\n defaulters. Additionally, the Enforcement\n Directorate also had attached assets worth\n approximately Rs.1740.59 Crores of the\n defaulters under the PMLA 2002.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C05",
+      "text": "The\n provisions of the Maharashtra Protection of\n Interest of Depositors (in Financial\n Establishments) Act, 1999 (hereinafter referred\n to as the \"\nMPID Act\n\") were also added to the\n said F.I.R. in October 2013, as a result of which\n the State of Maharashtra also attached\n movable and immovable properties worth\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 7 of 76\nabout Rs.8,548 Crores belonging to the 24\n defaulters, the Directors and Sister concerns of\n the NSEL and its Directors and Promoters, in\n order to ensure recovery of the monies\n allegedly lost by the genuine trading clients on\n the NSEL’s platform.\nx. Since the NSEL had also filed various\n Proceedings and the Suits, some of them\n having been decreed also, it was finding it\n difficult to file execution proceedings at various\n Courts. The NSEL, therefore filed the captioned\n Writ Petition seeking directions for the\n Consolidation of the Proceedings before the\n Committee appointed by the Bombay High\n Court vide the order dated 02.09.2014 in Notice\n of Motion No.240 of 2014 in Suit No.173 of\n 2014 and seeking other directions.\nxi.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C06",
+      "text": "This Court on 04.05.2022 for safeguarding of\n the interests of the Investors / Claimants\n passed the following Order: -\n“O R D E R\n\n Writ Petition(s)(Civil) No(s). 995/2019\n\n The limited contours of the controversy\n before us emanating from the present\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 8 of 76\nproceedings is the safeguarding of the\n interests of the investors/claimants. In respect of the aforesaid, learned\n counsel for the petitioner had canvassed\n before us on 22.02.2022 that the way out\n would be that the properties attached by\n the respondent(s) are sold and monies\n brought into Court. This is in the context of\n decrees passed for the benefit of the\n petitioner where the same very properties\n which were attached were sought to be\n utilized to satisfy the claims. He thus,\n suggested that once the monies are\n brought in, even the claims of the\n petitioners/investors can be satisfied and\n one will know exactly what is the balance\n amount which remains as otherwise both\n the processes are going on at cross\n purposes even though the properties from\n which recoveries can be made are\n attached.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C07",
+      "text": "We thus, called upon the respondents\n to look into the aforesaid notwithstanding\n that the petitioner may also be an\n organization which as been charged,\n concerned as we were with the investors’\n money and properties remaining attached\n simplicitor could not be the solution for\n investors’ money for which decrees had\n been passed. It is only on liquidation of\n those properties could the monies be\n distributed to satisfy the claims of the\n investors. We requested the parties to work out a\n scenario to sub-serve the aforesaid\n objective and a synopsis was filed on\n behalf of the petitioner setting out the\n relevant dates and suggesting solution for\n speedy recovery of victims annexing\n thereto the details of decrees, arbitral\n awards obtained by the petitioner and\n execution proceedings thereof. WRIT PETITION (CIVIL) NO.995 OF 2019 Page 9 of 76\nThe ground work has been done by the\n parties and more or less they were in\n agreement on most issues. The other\n remaining issues have also been ironed\n out during the Court proceedings.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C08",
+      "text": "In view of the aforesaid, we are inclined\n to exercise our powers under\nArticle 142\n the Constitution of India with the objective\n of attaining a holistic solution for speedy\n recovery of the outstanding amounts to be\n distributed to be investors. The agreed terms have been placed\n before us which are being incorporated in\n this order as under: -\n“(i) A high powered committee of a\n Hon’ble Mr. Justice (Retd.) [ ], who\n has consented for the same, is\n hereby constituted (hereinafter\n referred to as the “Supreme Court\n Committee”). The Supreme Court\n Committee may in its discretion, hold\n meetings/hearings at Mumbai. (ii) The proceedings for execution of\n all the decrees/orders/arbitral awards\n listed in Annexure-1, particular of\n which are set out in Annexure-2,\n currently pending in various Courts\n across the country, are hereby\n transferred to the Supreme Court\n Committee, for speedy execution\n thereof. (iii) Against 5 additional Defaulters,\n the Committee appointed by Bombay\n High Court has crystallised the liability\n and the report of the said Committee\n is pending acceptance before\n Bombay High Court, details whereof\n are set out in Annexure-3.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "Constitution 142"
+      ],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C09",
+      "text": "In the event\n the petitioner is granted decree/order\n by Bombay High Court in any or all of\n these matters, then the petitioner\n shall be at liberty to file the\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 10 of 76\nproceedings for execution of such\n decrees/orders before the Supreme\n Court Committee, and the Supreme\n Court Committee shall have the\n power to execute such\n decrees/orders. (iv) In proceedings where the\n petitioner has already obtained\n decrees/orders against the\n Defaulters, the petitioner is seeking\n further decrees/orders against other\n persons as well. In the event the\n petitioner is granted decree/order by\n the Bombay High Court in any or all of\n these matters, then the petitioner\n shall be at liberty to file the\n proceedings for execution of such\n decrees/orders before the Supreme\n Court Committee, and the Supreme\n Court Committee shall have the\n power to execute such\n decrees/orders.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C10",
+      "text": "(v) The petitioner shall be at liberty to\n apply to this Hon’ble Court in case\n there are further\n decrees/orders/arbitral awards\n obtained by it against the Defaulters\n or any other person in relation to the\n NSEL payment default for the\n purposes of filing execution thereof\n directly before the Supreme Court\n Committee. (vi) The Supreme Court Committee\n shall have all the powers of a civil\n court executing a decree or an order\n or an arbitral award under\nthe Code of\n Civil Procedure\n, 1908 for speedy\n execution of the above\n decrees/orders/abitral awards. (vii) In execution of the above\n decrees/orders/arbitral awards, the\n Supreme Court Committee shall be\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 11 of 76\nentitled to sell the properties of the\n judgment-debtors notwithstanding\n the attachment thereof by respondent\n No.2(ED) under the PMLA and/or by\n respondent No.3 (State of\n Maharashtra) under the\nMPID Act\n, to\n the extent of recovering the amount of\n the decree/order/arbitral award.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C11",
+      "text": "(viii) For the purposes of executing\n decrees/orders/awards to the extent\n they are not satisfied by recovery\n from the properties attached by the\n respondents or any of them as\n aforesaid, the Supreme Court\n Committee shall be at liberty to apply\n to this Hon’ble Court for suitable\n orders for attaching and/or liquidating\n properties of persons against whom\n decrees have been passed or of\n persons against whom the decrees\n can be executed as provided in\nthe\n Code of Civil Procedure\n, 1908 or\n properties of persons to whom money\n trail from the judgment debtors has\n been traced by the respondents or\n any of them. (ix) The Competent Authority\n appointed by respondent No.3(State\n of Maharashtra) has already opened\n an account with (a) Bank of India (for\n collection) and (b) AXIS Bank (for\n distribution). The sale proceeds so\n realized shall be deposited in either of\n these Bank Accounts at the discretion\n of the Supreme Court Committee. (x) The Competent Authority\n appointed by respondent No.3 (State\n of Maharashtra) under\nMPID Act\nhas\n invited claims from the victims and\n verified them to check genuineness\n and entitlement thereof.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C12",
+      "text": "WRIT PETITION (CIVIL) NO.995 OF 2019 Page 12 of 76\n(xi) The Competent Authority\n appointed by respondent No.3 (State\n of Maharashtra) under\nMPID Act\nshall\n file a report with the Supreme Court\n Committee setting out the names of\n the claimants and the amount that is\n due and payable to each of them, for\n passing necessary\n orders/directions/reverification, if\n required for equitable distribution of\n the sale proceeds to the victims from\n the accounts mentioned in Clause (ix)\n above. (xii) The Supreme Court Committee\n shall be entitled to co-opt the services\n of such experts (such as Advocates,\n Chartered Accountants, Valuers etc.)\n and support staff as it may consider\n necessary for efficient and speedy\n execution of task assigned to it. (xiii) Hon’ble Mr. Justice [ ] shall be\n entitled to fix such remuneration for\n himself and for other persons co-\nopted by him as he deems fit\n commensurate with the\n responsibilities assigned to them.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C13",
+      "text": "(xiv) In the first instance, the\n Competent Authority appointed by\n Respondent No.3(State of\n Maharashtra) under\nMPID Act\nshall\n bear all the expenses required to be\n incurred for the functioning of the\n Supreme Court Committee, including\n but not limited to remuneration, fees,\n physical infrastructure etc. and shall\n keep proper accounts of the same. (xv) As and when any monies are\n realised by the Supreme Court\n Committee in accordance with the\n process set out above, the\n Competent Authority appointed by\n respondent No.3 (State of\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 13 of 76\nMaharashtra) under\nMPID Act\nshall\n be reimbursed by this Hon’ble Court\n for the expenses incurred by it under\n paragraph (xiv) above on submission\n of proper accounts for the same. (xvi) The Supreme Court Committee\n shall have liberty to apply to this\n Hon’ble Court for any further orders\n and/or directions as it may consider\n necessary for efficient and speedy\n execution of the task assigned to it. (xvii) Any person aggrieved by an\n order and/or direction passed by the\n Supreme Court Committee shall be\n entitled to move this Hon’ble Court.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C14",
+      "text": "(xviii) All the parties and the\n authorities shall render all necessary\n assistance and cooperation to the\n Supreme Court Committee. (xix) Needless to say that respondent\n No.2(ED) and/or respondent No.3\n (State of Maharashtra) shall continue\n to attach further properties of the\n defaulters as per the money trail\n found by them during investigation\n and inform the Supreme Court\n Committee of such further\n attachment. Upon receipt of such\n intimation, the Supreme Court\n Committee shall be entitled to\n liquidate such further attached\n properties of the defaulters after\n hearing them, but only to the extent\n necessary for satisfaction of the\n decree/orders/arbitral awards\n obtained by the petitioner against\n such defaulters.”\n\n We may note that insofar as the list of\n decrees, orders, awards and attachment\n against defaulters are concerned, we are\n not setting them out as part of the order\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 14 of 76\nthough submitted as the annexure\n annexing along with the details of the\n execution proceedings as Annexure-2.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C15",
+      "text": "The\n liability of the defaulters crystallized by the\n High Court Committee is pending before\n the Bombay High Court has been set out\n as Annexure-3. This material can always\n be placed before the high-powered\n committee of an Hon’ble Judge appointed\n by this Court. We may note that both the State of\n Maharashtra and Enforcement Directorate\n would naturally like to assist the\n Committee in all manners and the\n Committee will have the power to seek\n information from any one and run its affairs\n as expeditiously as possible. On further discussion in the Court, it is\n agreed that a single Member Committee\n may be appointed who would have the\n assistance of all concerned. With the consent of parties, Hon’ble\n Justice Pradeep Nandrajog, retired Chief\n Justice of the Bombay High Court, whose\n consent has been taken, is appointed as\n the Single Member Committee for the said\n purpose to carry out the task. The learned\n Judge will fix his own fee. Insofar as the\n sitting of the Committee is concerned, it\n has already been mentioned aforesaid that\n it can be at the discretion of the Committee\n to hold proceedings in Delhi or Mumbai or\n for that matter anywhere else.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C16",
+      "text": "The arrangements for the sitting of the\n Committee shall be made by the\n Competent Authority as also the necessary\n arrangements for stay of the learned Judge\n and all other expenses including travel. We would like to keep the matter\n pending and request the learned Judge to\n give a status report in about six months. List after the status report is received.”\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 15 of 76\nxii. In view of the afore stated Order dated\n 04.05.2022 passed by this Court, the Supreme\n Court Committee comprising of Justice (Retd.)\n Mr. Pradeep Nandrajog (hereinafter referred to\n as the S.C. Committee) was constituted. The\n Proceedings for execution of all decrees/\n orders/ arbitral awards listed in Annexure-1 of\n the said Order, the particulars of which were set\n out in Annexure-2 thereof, pending in various\n Courts across the country were transferred to\n the S.C. Committee. The decrees/ orders\n already obtained and in respect of which the\n decree holder had not yet commenced the\n execution proceedings were also directed to be\n executed by the S.C. Committee.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C17",
+      "text": "In the\n proceedings where decree holder had obtained\n decrees/ orders and was seeking further\n decrees/ orders against other persons as well,\n and upon being granted the same by the\n Bombay High Court, were also to be executed\n by the S.C. Committee. The proceedings\n against the parties, i.e., the defaulters, against\n whom the liability had been crystallised by the\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 16 of 76\nCommittee appointed by the Bombay High\n Court, in the event, the decree holder was\n granted decrees/ orders by the Bombay High\n Court, such decrees for execution were also\n permitted to be transferred to the S.C. Committee for their execution. Qua future\n decrees/ awards or orders obtained by the\n decree holder, a liberty was granted to the\n decree holder to apply to the Supreme Court for\n execution of such decrees/ orders by the S.C. Committee.\nxiii. As transpiring from the impugned Order dated\n 10.08.2023 passed by the S.C. Committee, one\n Modern India Limited, Shree Rani Sati\n Investment and Finance Private Limited,\n Modern Derivatives and Commodities Private\n Limited and F.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C18",
+      "text": "Pudumjee Investments\n Company Private Limited had filed a Suit on the\n Original Side of Bombay High Court,\n impleading Financial Technologies India\n Limited (now known as 63 Moons Technologies\n Limited) as the Defendant No.1 and the NSEL\n as Defendant No.2, apart from 36 other\n Individuals and Companies who were\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 17 of 76\nimpleaded as the Defendant Nos. 3 to 38. The\n said Suit was registered as Suit no.173 of 2014. The NSEL - Defendant No.2 took out third party\n notices in the said Suit against its Trading\n Members who had defaulted in their funds “Pay\n – in” obligations, resulting in decrees being\n passed against such Trading Members and\n their lands by the Bombay High Court in favour\n of the NSEL. Additionally, in some cases the\n Arbitral awards were obtained by the NSEL\n against some of the defaulting Trading\n Members. Therefore, such defaulting Trading\n Members of the NSEL were the Judgment\n Debtors, on whom the liability was affixed in\n respect of the Third-party proceedings in the\n Suit No. 173 of 2014.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 18
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P005_C19",
+      "text": "In separate actions, the\n Enforcement Directorate under the provisions\n of the PMLA and the Competent Authority\n under the provisions of\nMPID Act\nhad also\n attached the properties belonging to the\n Judgment Debtors who were the defaulting\n Trading Members of the NSEL.\nxiv. During the course of Execution Proceedings\n before the S.C. Committee, a few Financial\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 18 of 76\nCreditors of some of the Judgment Debtors (the\n Secured Creditors) had filed Applications\n seeking intervention on the ground that in the\n capacity as Secured Creditors they would have\n priority of interest of the charge over the\n attached properties of the Judgment Debtors.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 19
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P006_C01",
+      "text": "4. In view of the afore stated factual matrix, the S.C.\n Committee raised an issue as to “Whether the\n Secured creditors would have priority of interest over\n assets attached under the Provisions of PMLA, 2002,\n and\nMPID Act\n, by virtue of the\nProvisions of the\n Securitisation and Reconstruction of Financial Assets\n and Enforcement of Security Interest Act, 2002\n(hereinafter referred to as the “\nSARFAESI Act, 2002\n”)\n and the Recovery of Debts and Bankruptcy Act, 1993\n (hereinafter referred to as the “RDP Act”)?”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P007_C01",
+      "text": "5. The S.C. Committee addressing the said issue\n concluded vide the Order dated 10.08.2023 that\n given the overriding effect, the secured property\n being in the nature of proceeds of crime, as held by\n the Attachment orders, no priority of interest can be\n claimed by the Secured Creditors against such\n attached property. As regard the properties attached\n under the\nMPID Act\n, on which the Secured Creditors\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 19 of 76\nlaid their claims, the S.C. Committee further\n concluded that the provisions of the\nMPID Act\n, would\n override any claim for priority of interest by the\n Secured creditors in respect of the property which\n has been attached under the\nMPID Act\n.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P008_C01",
+      "text": "6. It further appears that during the course of\n proceedings before the S.C. Committee another\n issue that was raised for determination, was “whether\n properties of the Judgment Debtor and Garnishees\n attached under the\nMPID Act\nwould be available to\n the said Committee for execution of decrees against\n the Judgment Debtor in terms of the Order dated\n 04.05.2022 passed by the Supreme Court, in W.P.\n (C) No. 995 of 2019, in view of the commencement\n of Moratorium under\nSection 14\nof the Insolvency and\n Bankruptcy Code, 2016 (IBC, for short) , on account\n of the initiation of Insolvency Proceedings against the\n Judgment Debtors.” A similar issue also arose with\n regard to the commencement of the interim\n Moratorium under Section 96 of IBC in respect of the\n Garnishees in their capacity as personal Guarantors\n of a Corporate Debtor.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P009_C01",
+      "text": "7. The S.C. Committee vide the Order dated\n 08.01.2024 concluded inter alia that as regards the\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 20 of 76\nproperties which were attached under\nSection 4\n the MPID Act prior to imposition of the respective\n dates of Moratorium of the Judgement Debtor or\n Garnishee under\nSection 14\nor Section 96 of IBC, the\n property having been vested in the Competent\n Authority appointed by the State of Maharashtra,\n such properties were not liable to be made part of\n Insolvency Proceedings, and could be available to\n the said Committee for realisation in terms of the\n Order dated 04.05.2022 passed by the Supreme\n Court. It further concluded that as regards the\n properties which were sought to be attached after the\n date of commencement of Moratorium (if any) or\n assets of Judgment Debtor/ Garnishee/ Corporate\n Debtor which were not yet attached under the\nProvisions of the MPID Act\n, the decree holder would\n be entitled to pursue its claim as a Financial Creditor/\n Secured Financial Creditor, as the case may be in\n such individual cases under the Provisions of the\n IBC.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P010_C01",
+      "text": "8. Being aggrieved by the aforestated two Orders dated\n 10.08.2023 & 08.01.2024 passed by the Supreme\n Court Committee, some SLPs came to be filed before\n this Court. The said SLPs were permitted to be\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 21 of 76\nconverted into Interlocutory Applications (IAs) in the\n present Writ Petition filed by the NSEL. SCOPE OF\nARTICLE 142\n9. At the outset learned Counsels appearing for the\n Applicants/Intervenors have raised the preliminary\n objections against the order passed by this Court on\n 04.05.2022, by submitting that this Court while\n exercising powers under\nArticle 142\nof the\n Constitution of India, had appointed the S.C. Committee and issued directions conferring upon the\n said committee wide powers with regard to the\n execution of the decrees/orders/awards, which had\n virtually superseded the statutory provisions\n contained in the Acts like SARFAESI Act, RDB Act,\n PMLA, IBC, etc. According to them, while exercising\n the powers under\nArticle 142\n, the express statutory\n provisions cannot be circumvented or ignored,\n particularly when the exercise of such powers comes\n directly in conflict with what has been expressly\n provided in the statute.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 142"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P011_C01",
+      "text": "10. Article 142(1)\nis reproduced hereunder for ready\n reference:\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 22 of 76\n“142. Enforcement of decrees and orders of\n Supreme Court and orders as to discovery,\n etc.-\n(1) The Supreme Court in the exercise of its\n jurisdiction may pass such decree or make such\n order as is necessary for doing complete justice\n in any cause or matter pending before it, and\n any decree so passed or order so made shall be\n enforceable throughout the territory of India in\n such manner as may be prescribed by or under\n any law made by Parliament and, until provision\n in that behalf is so made, in such manner as the\n President may by order prescribe.\n (2) …………..”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P012_C01",
+      "text": "11. In our opinion, the law with regard to the scope of the\n exercise of powers of under\nArticle 142\nof the\n Constitution of India is quite well settled. In Supreme\n Court\nBar Association Vs. Union of India &\n Another1\n, a Constitution Bench elaborately\n discussed the plenary powers of this Court under\nArticle 142\nand held as under:\n“47. The plenary powers of this Court under\nArticle 142\nof the Constitution are inherent in the\n Court and are complementary to those powers\n which are specifically conferred on the Court by\n various statutes though are not limited by those\n statutes. These powers also exist independent\n of the statutes with a view to do complete justice\n between the parties. These powers are of very\n wide amplitude and are in the nature\n of supplementary powers. This power exists as\n a separate and independent basis of jurisdiction\n apart from the statutes. It stands upon the\n\n1 (1998) 4 SCC 409\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 23 of 76\nfoundation and the basis for its exercise may be\n put on a different and perhaps even wider\n footing, to prevent injustice in the process of\n litigation and to do complete justice between the\n parties.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 142"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P012_C02",
+      "text": "This plenary jurisdiction is, thus, the\n residual source of power which this Court may\n draw upon as necessary whenever it is just and\n equitable to do so and in particular to ensure the\n observance of the due process of law, to do\n complete justice between the parties, while\n administering justice according to law. There is\n no doubt that it is an indispensable adjunct to all\n other powers and is free from the restraint of\n jurisdiction and operates as a valuable weapon\n in the hands of the Court to prevent “clogging or\n obstruction of the stream of justice”. It, however,\n needs to be remembered that the powers\n conferred on the Court by\nArticle 142\nbeing\n curative in nature cannot be construed as\n powers which authorise the Court to ignore the\n substantive rights of a litigant while dealing with\n a cause pending before it. This power cannot be\n used to “supplant” substantive law applicable to\n the case or cause under consideration of the\n Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P012_C03",
+      "text": "Article 142\n, even with the width of its\n amplitude, cannot be used to build a new edifice\n where none existed earlier, by ignoring express\n statutory provisions dealing with a subject and\n thereby to achieve something indirectly which\n cannot be achieved directly. Punishing a\n contemner advocate, while dealing with a\n contempt of court case by suspending his\n licence to practice, a power otherwise statutorily\n available only to the Bar Council of India, on the\n ground that the contemner is also an advocate,\n is, therefore, not permissible in exercise of the\n jurisdiction under\nArticle 142. The construction\nArticle 142\nmust be functionally informed by\n the salutary purposes of the article, viz., to do\n complete justice between the parties. It cannot\n be otherwise. As already noticed in a case of\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 24 of 76\ncontempt of court, the contemner and the court\n cannot be said to be litigating parties.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P013_C01",
+      "text": "48. The Supreme Court in exercise of its\n jurisdiction under\nArticle 142\nhas the power to\n make such order as is necessary for doing\n complete justice “between the parties in any\n cause or matter pending before it”. The very\n nature of the power must lead the Court to set\n limits for itself within which to exercise those\n powers and ordinarily it cannot disregard a\n statutory provision governing a subject, except\n perhaps to balance the equities between the\n conflicting claims of the litigating parties by\n “ironing out the creases” in a cause or matter\n before it. Indeed this Court is not a court of\n restricted jurisdiction of only dispute-settling. It\n is well recognised and established that this\n Court has always been a law-maker and its role\n travels beyond merely dispute-settling. It is a\n “problem-solver in the nebulous areas” (see\nK. Veeraswami v. Union of India\n[(1991) 3 SCC\n 655 : 1991 SCC (Cri) 734] but the substantive\n statutory provisions dealing with the subject-\nmatter of a given case cannot be altogether\n ignored by this Court, while making an order\n under\nArticle 142.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P013_C02",
+      "text": "Indeed, these constitutional\n powers cannot, in any way, be controlled by any\n statutory provisions but at the same time these\n powers are not meant to be exercised when\n their exercise may come directly in conflict with\n what has been expressly provided for in a\n statute dealing expressly with the subject.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P014_C01",
+      "text": "49. Bonkya v. State of Maharashtra\n[(1995) 6\n SCC 447 : 1995 SCC (Cri) 1113] a Bench of this\n Court observed: (SCC p. 458, para 23)\n “23. The amplitude of powers\n available to this Court under\nArticle\n\nof the Constitution of India is\n normally speaking not conditioned by\n any statutory provision but it cannot\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 25 of 76\nbe lost sight of that this Court\n exercises jurisdiction under\nArticle\n\nof the Constitution with a view to\n do justice between the parties but not\n in disregard of the relevant statutory\n provisions.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P015_C01",
+      "text": "50. Dealing with the powers of this Court under\nArticle 142\n, in\nPrem Chand Garg v. Excise\n Commr., U.P.\n[AIR 1963 SC 996 : 1963 Supp (1)\n SCR 885] it was said by the Constitution Bench:\n“In this connection, it may be pertinent to point\n out that the wide powers which are given to this\n Court for doing complete justice between the\n parties, can be used by this Court, for instance,\n in adding parties to the proceedings pending\n before it, or in admitting additional evidence, or\n in remanding the case, or in allowing a new point\n to be taken for the first time. It is plain that in\n exercising these and similar other powers, this\n Court would not be bound by the relevant\n provisions of procedure if it is satisfied that a\n departure from the said procedure is\n necessary to do complete justice between the\n parties. That takes us to the second argument urged by\n the Solicitor General that\nArticle 142\nand\nArticle\n\nshould be reconciled by the adoption of the\n rule of harmonious construction.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P015_C02",
+      "text": "In this\n connection, we ought to bear in mind that\n though the powers conferred on this Court by\nArticle 142(1)\nare very wide, and the same can\n be exercised for doing complete justice in any\n case, as we have already observed, this Court\n cannot even under\nArticle 142(1)\nmake an order\n plainly inconsistent with the express statutory\n provisions of substantive law, much less,\n inconsistent with any constitutional provisions. There can, therefore be no conflict between\nArticle 142(1)\nand\nArticle 32. In the case of\nK.M. Nanavati v. State of Bombay\n[AIR 1961 SC 112\n : (1961) 1 SCR 497] on which the Solicitor\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 26 of 76\nGeneral relies, it was conceded, and rightly, that\n under\nArticle 142(1)\nthis Court had the power to\n grant bail in cases brought before it, and so,\n there was obviously a conflict between the\n power vested in this Court under the said article\n and that vested in the Governor of the State\n under\nArticle 161. The possibility of a conflict\n between these powers necessitated the\n application of the rule of harmonious\n construction.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P015_C03",
+      "text": "The said rule can have no\n application to the present case, because on a\n fair construction of\nArticle 142(1)\n, this Court has\n no power to circumscribe the fundamental right\n guaranteed under\nArticle 32. The existence of\n the said power is itself in dispute, and so, the\n present is clearly distinguishable from the case\n of K.M. Nanavati [AIR 1961 SC 112 : (1961) 1\n SCR 497] .”\n\n 51-54……………………",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P016_C01",
+      "text": "55. Thus, a careful reading of the judgments\nUnion Carbide Corpn. v. Union of\n India\n[(1991) 4 SCC 584] ; the\nDelhi Judicial\n Service Assn.\ncase [(1991) 4 SCC 406 : (1991)\n 3 SCR 936] and Mohd. Anis case [1994 Supp\n (1) SCC 145 : 1994 SCC (Cri) 251] relied upon\n in V.C. Mishra case [(1995) 2 SCC 584] show\n that the Court did not actually doubt the\n correctness of the observations in\nPrem Chand\n Garg\ncase [AIR 1963 SC 996 : 1963 Supp (1)\n SCR 885] . As a matter of fact, it was observed\n that in the established facts of those cases, the\n observations in\nPrem Chand Garg\ncase [AIR\n 1963 SC 996 : 1963 Supp (1) SCR 885] had “no\n relevance”. This Court did not say in any of\n those cases that substantive statutory\n provisions dealing expressly with the subject\n can be ignored by this Court while exercising\n powers under\nArticle 142. WRIT PETITION (CIVIL) NO.995 OF 2019 Page 27 of 76\n56. As a matter of fact, the observations on\n which emphasis has been placed by us from\n the\nUnion Carbide\ncase [(1991) 4 SCC 584]\n , A.R.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P016_C02",
+      "text": "Antulay case [(1988) 2 SCC 602 : 1988\nSCC (Cri) 372] and Delhi Judicial Service Assn.\ncase [(1991) 4 SCC 406 : (1991) 3 SCR 936] go\n to show that they do not strictly speaking come\n into any conflict with the observations of the\n majority made in\nPrem Chand Garg\ncase [AIR\n 1963 SC 996 : 1963 Supp (1) SCR 885] . It is\n one thing to say that “prohibitions or limitations\n in a statute” cannot come in the way of exercise\n of jurisdiction under Article 142to do complete\n justice between the parties in the pending\n “cause or matter” arising out of that statute, but\n quite a different thing to say that while exercising\n jurisdiction under\nArticle 142\n, this Court can\n altogether ignore the substantive provisions of\n a statute, dealing with the subject and pass\n orders concerning an issue which can be settled\n only through a mechanism prescribed in another\n statute. This Court did not say so in\nUnion\n Carbide\ncase [(1991) 4 SCC 584] either\n expressly or by implication and on the contrary,\n it has been held that the Apex Court will take\n note of the express provisions of\n any substantive statutory law and regulate the\n exercise of its power and discretion accordingly.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P016_C03",
+      "text": "We are, therefore, unable to persuade\n ourselves to agree with the observations of the\n Bench in V.C. Mishra case [(1995) 2 SCC 584]\n that the law laid down by the majority in\nPrem\n Chand Garg\ncase [AIR 1963 SC 996: 1963\n Supp (1) SCR 885] is “no longer a good law”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P017_C01",
+      "text": "12. Shilpa Sailesh Vs. Varun Sreenivasan2, another\nConstitution Bench while considering the scope and\n ambit of power and jurisdiction of this Court under\n\n2 (2023) 14 SCC 231\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 28 of 76\nArticle 142(1)\nof the Constitution of India, after due\n deliberations held as under: -\n“19. Given the aforesaid background and\n judgments of this Court, the plenary and\n conscientious power conferred on this Court\n under\nArticle 142(1)\nof the Constitution of India,\n seemingly unhindered, is tempered or bounded\n by restraint, which must be exercised based on\n fundamental considerations of general and\n specific public policy. Fundamental general\n conditions of public policy refer to the\n fundamental rights, secularism, federalism, and\n other basic features of the Constitution of India. Specific public policy should be understood as\n some express pre-eminent prohibition in any\n substantive law, and not stipulations and\n requirements to a particular statutory scheme. It\n should not contravene a fundamental and non-\n derogable principle at the core of the statute.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P017_C02",
+      "text": "Even in the strictest sense [ Some jurists have\n opined that the judgments on the powers of this\n Court under\nArticle 142(1)\nof the Constitution of\n India can be divided into three phases. The first\n phase till late 1980s is reflected in the\n judgments of\nPrem Chand Garg v. Excise\n Commr.\n, 1962 SCC OnLine SC 10 :\nAIR 1963\n SC 996 and A.R. Antulay v. R.S. Nayak\n, (1988)\n 2 SCC 602 : 1988 SCC (Cri) 372, which inter\n alia held that the directions should not be\n repugnant to and in violation of specific statutory\n provision and is limited to deviation from the\n rules of procedure. Further, the direction must\n not infringe the Fundamental Rights of the\n individual, which proposition has never been\n doubted and holds good in phase two and three. The second phase has its foundation in the ratio\n of the judgment of the eleven-Judge\n Constitution Bench of this Court in\nGolak\n Nath v.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P017_C03",
+      "text": "State of Punjab\n, 1967 SCC OnLine SC\n 14 : AIR 1967 SC 1643, dealing with the doctrine\n of prospective overruling, which held that\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 29 of 76\nArticles 32\n, 141\nand\n\nare couched in such\n wide and elastic terms as to enable this Court to\n formulate legal doctrines to meet the ends of\n justice, the only limitation thereon being reason,\n restraint and injustice. Delhi Judicial Service\n Assn. v. State of Gujarat\n, (1991) 4 SCC 406,\n this Court observes that any prohibition or\n restriction contained in ordinary laws cannot act\n as a limitation on the constitutional power of this\n Court to issue any order or direction to do\n “complete justice” in any “cause” or “matter”. Finally, the moderated approach has its origin\nUnion Carbide Corpn. v. Union of India\n,\n (1991) 4 SCC 584, which holds that this Court,\n in exercising powers under\nArticle 142\nand in\n assessing the needs of “complete justice” of a\n “cause” or “matter”, will take note of the express\n prohibitions in any substantive statutory\n provision based on some fundamental\n principles of public policy and regulate the\n exercise of its power and discretion accordingly.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P017_C04",
+      "text": "The judgment of Supreme Court\nBar\n Assn. v. Union of India\n, (1998) 4 SCC 409,\n applies cautious and balanced approach, to\n hold that\nArticle 142\nbeing curative in nature and\n a constitutional power cannot be controlled by\n any statutory provision, but this power is not\n meant to be exercised ignoring the statutory\n provisions or directly in conflict with what\n isexpressly provided in the statute. At the same\n time, it observes that this Court will not ordinarily\n discard a statutory provision governing the\n subject, except perhaps to balance the equities\n between the conflicting claims of the parties to\n “iron out the creases” in a “cause or matter”\n before it. [See Rajat Pradhan, “Ironing out the\n Creases : Re-examining the Contours of\n Invoking\nArticle 142(1)\nof the Constitution”,\n (2011) 6 NSLR 1; Ninad Laud, “Rationalising\n ‘Complete Justice’ under Article 142”, (2021) 1\n SCC J-30; and Virendra Kumar, “Notes and\n Comments : Judicial Legislation Under\nArticle\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 30 of 76\n\nof the Constitution : A Pragmatic Prompt for\n Proper Legislation by Parliament”, (2012) 54\n JILI 364].",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P017_C05",
+      "text": "As observed by us, the ratio as\n expounded in\nUnion Carbide Corpn. v. Union of\n India\n, (1991) 4 SCC 584 holds good and\n applies.] , it was never doubted or debated that\n this Court is empowered under\nArticle 142(1)\n the Constitution of India to do “complete justice”\n without being bound by the relevant provisions\n of procedure, if it is satisfied that the departure\n from the said procedure is necessary to do\n “complete justice” between the parties.\n[\n See Prem Chand Garg (\nPrem Chand\n Garg v. Excise Commr.\n, 1962 SCC OnLine SC\n 10 : AIR 1963 SC 996, para 13.]",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P018_C01",
+      "text": "20. Difference between procedural and\n substantive law in jurisprudential terms is\n contentious, albeit not necessary to be\n examined in depth in the present decision [\n However, this aspect has been, to some extent,\n examined in paras 24 to 37, 56 and 57 herein.]\n , as in terms of the dictum enunciated by this\n Court in\nUnion Carbide Corpn. [Union Carbide\n Corpn. v. Union of India\n, (1991) 4 SCC 584]\n and Supreme Court Bar Assn. [Supreme Court\nBar Assn. v. Union of India\n, (1998) 4 SCC 409] ,\n exercise of power under\nArticle 142(1)\nof the\n Constitution of India to do “complete justice” in\n a “cause or matter” is prohibited only when the\n exercise is to pass an order which is plainly and\n expressly barred by statutory provisions of\n substantive law based on fundamental\n considerations of general or specific public\n policy.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P019_C01",
+      "text": "21. As explained in Supreme Court Bar\n Assn. [Supreme Court\nBar Assn. v. Union of\n India\n, (1998) 4 SCC 409] , the exercise of power\n under\nArticle 142(1)\nof the Constitution of India\n being curative in nature, this Court would not\n ordinarily pass an order ignoring or disregarding\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 31 of 76\na statutory provision governing the subject,\n except to balance the equities between\n conflicting claims of the litigating parties by\n ironing out creases in a “cause or matter” before\n it. In this sense, this Court is not a forum of\n restricted jurisdiction when it decides and settles\n the dispute in a “cause or matter”. While this\n Court cannot supplant the substantive law by\n building a new edifice where none existed\n earlier, or by ignoring express substantive\n statutory law provisions, it is a problem-solver in\n the nebulous areas. As long as “complete\n justice” required by the “cause or matter” is\n achieved without violating fundamental\n principles of general or specific public policy, the\n exercise of the power and discretion under\nArticle 142(1)\nis valid and as per the Constitution\n of India.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P019_C02",
+      "text": "This is the reason why the power under\nArticle 142(1)\nof the Constitution of India is\n undefined and uncatalogued, so as to ensure\n elasticity to mould relief to suit a given situation. The fact that the power is conferred only on this\n Court is an assurance that it will be used with\n due restraint and circumspection.\n[\n See\nDDA v. Skipper Construction Co. (P) Ltd.\n,\n (1996) 4 SCC 622.]”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P020_C01",
+      "text": "13. In view of the above proposition of law\nlaid down by\nthe Constitution Benches of this Court, there remains\n no shadow of doubt that the exercise of power under\nArticle 142(1)\nof the Constitution of India being\n curative in nature, the Supreme Court would not\n ordinarily pass an order ignoring or disregarding a\n statutory provisions governing the subject, except to\n balance the equities between conflicting claims of the\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 32 of 76\nlitigating parties by ironing out creases in a “cause or\n matter” before it. Therefore, even while exercising the\n powers under\nArticle 142\n, the Supreme Court has to\n take note of the express provisions of any\n substantive statutory law and accordingly regulate\n the exercise of its power and discretion to do\n complete justice between the parties in the pending\n “cause or matter” arising out of such statutes. Though, the powers of this Court cannot be\n controlled by any statutory provisions, when the\n exercise of powers under\nArticle 142\ncomes directly\n in conflict with what has been expressly provided in a\n statute, ordinarily, such power should not be\n exercised.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P020_C02",
+      "text": "Article 142\ncannot be used to achieve\n something indirectly what cannot be achieved\n directly.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P021_C01",
+      "text": "14. In the light of the aforestated legal position with\n regard to the scope and ambit of the powers under\nArticle 142\n, if the facts of the present case are\n appreciated particularly with regard to the\n circumstances under which this Court had thought it\n proper to exercise the said powers, it appears that\n the Court had passed the order on 04.05.2022\n keeping in mind the interest of the\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 33 of 76\ninvestors/claimants and with the objective of attaining\n a holistic solution for speedy recovery of the\n outstanding amount to be distributed to the investors.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P022_C01",
+      "text": "15. Since the money collected by NSEL from the\n investors fell under the definition of “deposit” as per\nSection 2(c)\nof the MPID Act, the State of\n Maharashtra invoking the provisions of\nSection\n 4(1)(ii)\nof MPID Act, had attached the properties and\n monies of the defaulting promoters, directors,\n managers and members of the NSEL by issuing\n various notifications. However, the total value of the\n attached properties was not sufficient for repayment\n to the depositors due to various reasons such as\n some of the properties were taken on rent by the\n members of NSEL from others, while some\n properties were mortgaged with the banks, against\n which proceedings under the\nSARFAESI Act\nwere\n going on, and against some of the members of NSEL,\n insolvency proceedings were initiated.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P023_C01",
+      "text": "16. The Government of Maharashtra therefore having\n been satisfied that the attached properties of the\n Financial Establishment–NSEL were not sufficient for\n repayment, attached the properties of the promoters\n of the NSEL i.e., M/s. 63 Moons Technologies\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 34 of 76\nLimited, by issuing various Notifications under\nSection 4\nof the MPID Act, which were subsequently\n ratified by the Government of Maharashtra in\n exercise of the powers conferred under\nSection 4(1)\nand\nSection 5\nof the MPID Act, vide the Notification\n dated 19.09.2018, produced on record along with the\n captioned writ petition.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P024_C01",
+      "text": "17. From the submissions, it further appears that several\n other civil and criminal proceedings were instituted by\n the claimants who lost their monies, against the\n NSEL, its parent company-63 Moons, 24 defaulters/\n Members/brokers, etc. The traders who lost their\n monies had also filed civil suits in Bombay High Court\n against the NSEL and others. One of such suits was\n filed as a Representative suit, being no. 173 of 2014\n under\nOrder 1, Rule 8 of C.P.C\n. in which the Bombay\n High Court had appointed a three-member\n committee to crystalise the liabilities of the defaulting\n members and to act as the Receiver and\n Commissioner to deal with the assets of defaulting\n members. In the said Representative suit, the NSEL\n took out third party notices against its defaulters for\n recovery of monies lost by the traders. The NSEL had\n also filed separate suits and arbitration proceedings\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 35 of 76\nagainst other defaulters, and had obtained Decrees\n and Arbitral awards of about Rs. 3,365 Crores\n against the defaulters.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P024_C02",
+      "text": "Since, it was becoming very\n difficult for the NSEL to get such decrees executed\n expeditiously because properties of the defaulters\n were situated at multiple jurisdictions, the NSEL filed\n the captioned writ petition before this Court seeking\n consolidation of the Decrees etc. as prayed for\n therein.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P025_C01",
+      "text": "18. In the backdrop of these proceedings, this Court had\n passed the order on 04.05.2022 exercising the\n powers under\nArticle 142(1)\nof the Constitution of\n India with the objective of attaining a holistic solution\n for the speedy recovery of the outstanding amounts\n to be distributed to the investors. As stated earlier,\n this Court vide the said Order had constituted the\n committee conferring upon it all the powers of civil\n court for the speedy execution of the\n decrees/orders/arbitral awards, and had further\n directed that the S.C. Committee shall be entitled to\n sell the properties of the Judgment Debtors\n notwithstanding the attachment thereof by the\n Enforcement Directorate under the PMLA and/or by\n the State of Maharashtra under the\nMPID Act\nto the\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 36 of 76\nextent of recovery the amount of the\n decree/order/arbitral award. This Court vide the said\n order, thus had transferred the proceedings for\n execution of all the decrees/orders/arbitral awards,\n which were pending in various courts across the\n country, for speedy execution thereof.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P025_C02",
+      "text": "It was also\n clarified therein that against five additional defaulters,\n the committee appointed by the Bombay High Court\n had crystalised the liability and the report was\n pending for acceptance before the Bombay High\n Court. Therefore, if the NSEL was granted decree or\n order by the Bombay High Court in any of these\n matters, then the NSEL shall be at liberty to file\n proceedings for execution of such decrees/orders\n before the S.C. Committee. The petitioner NSEL was\n also granted liberty in the said order to apply to this\n Court, in case there were further\n decrees/orders/awards obtained by it against the\n defaulters for the purpose of filing execution thereof\n before the S.C. Committee.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P026_C01",
+      "text": "19. It is true that while passing the said order on\n 04.05.2022 under\nArticle 142(1)\nof the Constitution of\n India, this Court probably would not have\n contemplated the possibility of the legal issues, with\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 37 of 76\nregard to the conflict of the provisions contained in\n the SARFAESI Act, RDB Act, PMLA and MPID Act,\n which were subsequently raised before the S.C. Committee. We do, therefore, find substance in the\n submissions made by the learned counsel appearing\n for the applicants-Secured Creditors that while\n exercising the powers under\nArticle 142\n, the express\n provisions in the other relevant Statutes should not\n be ignored, particularly when the exercise of powers\n under\nArticle 142\n, would directly be in conflict with\n what has been express provisions in such Statutes.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P026_C02",
+      "text": "It is also true that when this Court passed the Order\n dated 04.05.2022, it had the potentiality of being in\n conflict with other Statutes like SARFAESI Act, RDB\n Act, IBC etc. as also the potentiality of adversely\n affecting the rights of the Secured Creditors for\n enforcing the security interest created in the\n properties of the borrowers (in the instant cases the\n defaulters of NSEL) under the SARFAESI Act and\n RDB Act. However, the said contentions raised by the\n Secured Creditors have lost its significance at this\n stage, when the said Order dated 04.05.2022 has\n already been implemented by constituting the S.C. Committee and all the proceedings mentioned in the\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 38 of 76\norder have already stood transferred to the said\n Committee for the execution of the\n decrees/orders/awards as directed therein. Also, we\n cannot be oblivious to the fact that such exercise of\n powers under\nArticle 142\nwas for the speedy\n recovery of monies lost by the defaulters and\n investors, and for doing the complete justice to the\n aggrieved Traders.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P026_C03",
+      "text": "Nonetheless, the issues with\n regard to the interplay and the alleged conflict of the\n provisions of the said four statutes having been\n raised, and aptly decided by the S.C. Committee, and\n now again raised before this Court, we shall deal with\n those issues as elicited from the orders dated\n 10.08.2023 and 08.01.2024 passed by the S.C. Committee. QUESTION: (i)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P027_C01",
+      "text": "20. So far as the question, as to “whether the Secured\n Creditors would have priority of interest over the\n assets attached under the provisions of PMLA and\n MPID Act, by virtue of the provisions of SARFAESI\n Act and RDB Act,” is concerned, it would be beneficial\n to first refer to the Objects and Reasons and the\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 39 of 76\nrelevant provisions of the said Statutes, as also of the\n Constitution of India.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P028_C01",
+      "text": "21. The RDB Act was enacted to provide for\n establishment of Tribunals for expeditious\n adjudication and recovery of debts due to Banks and\n Financial Institutions, and for the matters connected\n therewith and incidental thereto, as at the relevant\n time, the Banks and the Financial Institutions were\n experiencing considerable difficulties in recovering\n loans and enforcement of securities charged with\n them. The said Act came into force on 24.06.1993. Relevant provisions thereof read as under:-\n“31B. Priority to secured creditors.—\n Notwithstanding anything contained in any other\n law for the time being in force, the rights of\n secured creditors to realise secured debts due\n and payable to them by sale of assets over\n which security interest is created, shall have\n priority and shall be paid in priority over all other\n debts and Government dues including\n revenues, taxes, cesses and rates due to the\n Central Government, State Government or local\n authority.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P028_C02",
+      "text": "Explanation. —For the purposes of this section,\n it is hereby clarified that on or after the\n commencement of the Insolvency and\n Bankruptcy Code, 2016 (31 of 2016), in cases\n where insolvency or bankruptcy proceedings\n are pending in respect of secured assets of the\n borrower, priority to secured creditors in\n payment of debt shall be subject to the\n provisions of that Code. WRIT PETITION (CIVIL) NO.995 OF 2019 Page 40 of 76\n32-33……………..",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P029_C01",
+      "text": "34. Act to have over-riding effect. - (1) Save\n as provided under sub-section (2), the\n provisions of this Act shall have effect\n notwithstanding anything inconsistent therewith\n contained in any other law for the time being in\n force or in any instrument having effect by virtue\n of any law other than this Act.\n(2) The provisions of this Act or the rules made\n thereunder shall be in addition to, and not in\n derogation of, the\nIndustrial Finance\n Corporation Act, 1948\n(15 of 1948), the\nState\n Financial Corporations Act, 1951\n(63 of 1951),\n the\nUnit Trust of India Act, 1963\n(52 of 1963), the\nIndustrial Reconstruction Bank of India Act,\n\n(62 of 1984)\nThe Sick Industrial\n Companies (Special Provisions) Act, 1985\n(1 of\n 1986) and the\nSmall Industries Development\n Bank of India Act, 1989\n(39 of 1989).”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P030_C01",
+      "text": "22. As the long title of the\nSARFAESI Act\nsuggests, it was\n enacted to regulate the securitisation and\n reconstruction of financial assets and enforcement of\n security interest and to provide for a central database\n of security interests created on property rights, and\n for matters connected therewith or incidental thereto. SARFAESI Act\ncame into force w.e.f. 21.06.2002. Section 26E having been relied upon by the learned\n counsels for the Secured Creditors, the same is\n reproduced as under:\n26E. Priority to secured creditors. --\n Notwithstanding anything contained in any other\n law for the time being in force, after the\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 41 of 76\nregistration of security interest, the debts due to\n any secured creditor shall be paid in priority over\n all other debts and all revenues, taxes, cesses\n and other rates payable to the Central\n Government or State Government or local\n authority.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P030_C02",
+      "text": "Explanation. --For the purposes of this section,\n it is hereby clarified that on or after the\n commencement of the Insolvency and\n Bankruptcy Code, 2016 (31 of 2016), in cases\n where insolvency or bankruptcy proceedings\n are pending in respect of secured assets of the\n borrower, priority to secured creditors in\n payment of debt shall be subject to the\n provisions of that Code. Section 35 thereof providing an overriding effect,\n reads as under:\n“35. The provisions of this Act to override\n other laws. - The provisions of this Act shall\n have effect, notwithstanding anything\n inconsistent therewith contained in any other\n law for the time being in force or any instrument\n having effect by virtue of any such law.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P031_C01",
+      "text": "23. So far as PMLA is concerned, as transpiring from its\n objects and reasons, since money laundering had\n posed a serious threat not only to the financial\n systems of the countries but also to their integrity and\n sovereignty, some of the international communities\n had taken the initiatives to obviate such threats. The\n Parliament therefore considering the resolutions and\n declarations passed by the General Assembly of\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 42 of 76\nUnited Nations, and to prevent money laundering and\n to provide for confiscation of property derived from,\n or involved in money laundering and for the matters\n connected therewith and incidental thereto, had\n passed the PMLA, which came into force w.e.f.\n 01.07.2005. Section 71 thereof pertaining to the\n overriding effect of the Act, reads as under: -\n“71. Act to have overriding effect. - The\n provisions of this Act shall have effect\n notwithstanding anything inconsistent therewith\n contained in any other law for the time being in\n force.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P032_C01",
+      "text": "24. The MPID Act\nwas enacted by the State of\n Maharashtra to protect the interest of depositors of\n the Financial Establishments and matters relating\n thereto. Some of the provisions of the said Act being\n germane for deciding the issues involved in the\n present proceedings, the same are reproduced\n hereunder: -\nSection 2(c)\ndefines “‘deposit”’. The relevant part\n thereof reads as under: -\n“2.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P032_C02",
+      "text": "(c) “deposit” includes and shall be deemed\n always to have included any receipt of money or\n acceptance of any valuable commodity by any\n Financial Establishment to be returned after a\n specified period or otherwise, either in cash or\n in kind or in the form of a specified service with\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 43 of 76\nor without any benefit in the form of interest,\n bonus, profit or in any other form, but does not\n include-\nSection 2(d)\ndefines “Financial Establishments”,\n which reads as under: -\n“2(d) Financial Establishment means any\n person accepting deposit under any scheme or\n arrangement or in any other manner but does\n not include a corporation or a co-operative\n society owned or controlled by any State\n Government or the Central Government or a\n banking company defined under clause (c) of\nSection 5\nof the Banking Regulation Act, 1949\n (10 of 1949);”\nSection 3\nof MPID Act pertains to the Fraudulent\n Default by a Financial Establishment, which reads as\n under: -\n“3.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P032_C03",
+      "text": "Fraudulent default by Financial\n Establishment.- Any Financial Establishment,\n which fraudulently defaults any repayment of\n deposit on maturity along with any benefit in the\n form of interest, bonus, profit or in any other\n form as promised or fraudulently fails to render\n service as assured against the deposit, every\n person including the promoter, partner, director,\n manager or any other person or an employee\n responsible for the management of or\n conducting of the business or affairs of such\n Financial Establishment shall, on conviction, be\n punished with imprisonment for a term which\n may extend to six years and with fine which may\n extend to one lac of rupees and such Financial\n Establishment also shall be liable for a fine\n which may extend to one lac of rupees.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P032_C04",
+      "text": "WRIT PETITION (CIVIL) NO.995 OF 2019 Page 44 of 76\nExplanation - For the purpose of this section, a\n Financial Establishment, which commits\n defaults in repayment of such deposit with such\n benefits in the form of interest, bonus, profit or\n any other form as promised or fails to render any\n specified service promised against such\n deposit, or fails to render any specific service\n agreed against the deposit with an intention of\n causing wrongful gain to one person or wrongful\n loss to another person or commits such default\n due to its inability arising out of impracticable or\n commercially not viable promises made while\n accepting such deposit or arising out of\n deployment of money or assets acquired out of\n the deposits in such a manner as it involves\n inherent risk in recovering the same when\n needed shall, be deemed to have committed a\n default or failed to render the specific service,\n fraudulently.”\nSection 4\npertains to the attachment of properties on\n default of return of deposits, which reads as under: -\n“4.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P032_C05",
+      "text": "Attachment of properties on default of\n return of deposits. - (1) Notwithstanding\n anything contained in any other law for the time\n being in force-\n(i) where upon complaints received from the\n depositors or otherwise, the Government is\n satisfied that any Financial Establishment has\n failed, -\n(a) to return the deposit after maturity or on\n demand by the depositor; or\n(b) to pay interest or other assured benefit; or\n(c) to provide the service promised against such\n deposit; or\n(ii) where the Government has reason to believe\n that any Financial Establishment is acting in the\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 45 of 76\ncalculated manner detrimental to the interests of\n the depositors with an intention to defraud them;\nand if the Government is satisfied that\n such Financial Establishment is not likely to\n return the deposits or make payment of interest\n or other benefits assured or to provide the\n services against which the deposit is received,\n the Government may, in order to protect the\n interest of the depositors of such Financial\n Establishment, after recording reasons in\n writing, issue an order by publishing it in the\n Official Gazette, attaching the money or the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P032_C06",
+      "text": "property believed to have been acquired by\n such Financial Establishment, either in its own\n name or in the name of any other person from\n out of the deposits, collected by the Financial\n Establishment, or if it transpires that such\n money or other property is not available for\n attachment or not sufficient for repayment of the\n deposits, such other property or the said\n Financial Establishment or the promoter,\n director, partner or manager or member of the\n said Financial Establishment as the\n Government may think fit.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P032_C07",
+      "text": "(2) On the publication of the order under sub-\n section (1), all the properties and assets of the\n Financial Establishment and the persons\n mentioned therein shall forthwith vest in the\n Competent Authority appointed by the\n Government, pending further orders from the\n Designated Court. (3) The Collector of a District shall be competent\n to receive the complaints from his District under\n sub-section (1) and he shall forward the same\n together with his report to the Government at the\n earliest and shall send a copy of the complaint\n also to the concerned District Police\n Superintendent or Commissioner of Police, as\n the case may be, for investigation.”\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 46 of 76\nSection 7\nthereof pertains to the powers of\n Designated Court regarding attachment. The same\n reads as under: -\n“7.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P032_C08",
+      "text": "Powers of Designated Court regarding\n attachment.- (1) Upon receipt of an application\n under\nSection 5\n, the Designated Court shall\n issue to the Financial Establishment or to any\n other person whose property is attached and\n vested in the Competent Authority by the\n Government under\nSection 4\n, a notice\n accompanied by the application and affidavits\n evidence, if any, calling upon the said\n Establishment or the said person to show cause\n on a date to be specified in the notice, why the\n order of attachment should not be made\n absolute. (2) The Designated Court shall also issue such\n notice, to all other persons represented to it as\n having or being likely to claim, any interest or\n title in the property of the Financial\n Establishment or the person to whom the notice\n is issued under sub-section (1), calling upon all\n such persons to appear on the same date as\n that specified in the notice and make objection\n if they so desire to the attachment of the\n property or any portion thereof, on the ground\n that they have interest in such property or\n portion thereof.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P032_C09",
+      "text": "(3) Any person claiming an interest in the\n property attached or any portion thereof may,\n notwithstanding that no notice has been served\n upon him under this section, make an objection\n as aforesaid to the Designated Court at any time\n before an order is passed under sub-section (4)\n or sub-section (6). WRIT PETITION (CIVIL) NO.995 OF 2019 Page 47 of 76\n(4) The Designated Court shall, if no cause is\n shown and no objections are made under sub-\nsection (3), on or before the specified date,\n forthwith pass an order making the order of\n attachment absolute, and issue such direction\n as may be necessary for realisation of the\n assets attached and for the equitable\n distribution among the depositors of the money\n realised from out of the property attached.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P032_C10",
+      "text": "(5) If cause is shown or any objection is made\n as aforesaid, the Designated Court shall\n proceed to investigate the same and in so doing,\n as regards the examination of the parties and in\n all other respects, the Designated Court shall,\n subject to the provisions of this Act, follow the\n summary procedure as contemplated under\n Order 37 of the Civil Procedure Code, 5 of 1908\n and exercise all the powers of a court in hearing\n a suit under the said Code and any person\n making an objection shall be required to adduce\n evidence to show that on the date of the\n attachment he had some interest in the property\n attached.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P032_C11",
+      "text": "(6) After investigation under sub-section (5), the\n Designated Court shall pass an order either\n making the order of attachment passed under\n sub-section (1) of\nsection 4\nabsolute or varying\n it by releasing a portion of the property from\n attachment or cancelling the order of\n attachment:\nProvided that the Designated Court shall not\n release from attachment any interest, which it is\n satisfied that the Financial Establishment or the\n person referred to in sub-section (I) has in the\n property, unless it is also satisfied that there will\n remain under attachment an amount or property\n of value not less then the value that is required\n for repayment to the depositors of such\n Financial Establishment.”\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 48 of 76\nSection 14\nof MPID Act provides for the overriding\n effect of the Act, which reads as under: -\n“14. Act to override other laws. - Save as\n otherwise provided in this Act, the provisions of\n this Act shall have effect notwithstanding\n anything inconsistent therewith contained in any\n other law for the time being in force or any\n custom or usage or any instrument having effect\n by virtue of any such law.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P033_C01",
+      "text": "25. So far as the relevant provisions of Constitution of\n India are concerned,\nArticle 246\nwhich pertains to the\n subject matter of laws made by the Parliament and\n the Legislatures of the States reads as under:\n“246. Subject-matter of laws made by\n Parliament and by the Legislatures of States\n\n (1) Notwithstanding anything in clauses (2) and\n (3), Parliament has exclusive power to make\n laws with respect to any of the matters\n enumerated in List 1 in the Seventh Schedule\n (in this Constitution referred to as the \"Union\n List\"). (2) Notwithstanding anything in clause (3),\n Parliament and subject to clause (1), the\n Legislature of any State also, have power to\n make laws with respect to any of the matters\n enumerated in List III in the Seventh Schedule\n (in this Constitution referred to as the\n \"Concurrent List\"). (3) Subject to clauses (1) and (2), the\n Legislature of any State has exclusive power to\n make laws for such State or any part thereof\n with respect to any of the matters enumerated\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 49 of 76\nin List II in the Seventh Schedule (in this\n Constitution referred to as the 'State List').",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P033_C02",
+      "text": "(4) Parliament has power to make laws with\n respect to any matter for any part of the territory\n of India not included in a State notwithstanding\n that such matter is a matter enumerated in the\n State List.”\nArticle 254\ndeals with the inconsistencies between\n laws made by Parliament and laws made by the\n Legislatures of States, which reads as under:\n“254. Inconsistency between laws made by\n Parliament and laws made by the\n Legislatures of States\n (1) If any provision of a law made by the\n Legislature of a State is repugnant to any\n provision of a law made by Parliament which\n Parliament is competent to enact, or to any\n provision of an existing law with respect to one\n of the matters enumerated in the Concurrent\n List, then, subject to the provisions of clause (2),\n the law made by Parliament, whether passed\n before or after the law made by the Legislature\n of such State, or, as the case may be, the\n existing law, shall prevail and the law made by\n the Legislature of the State shall, to the extent\n of the repugnancy, be void.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P033_C03",
+      "text": "(2) Where a law made by the Legislature of a\n State with respect to one of the matters\n enumerated in the Concurrent List contains any\n provision repugnant to the provisions of an\n earlier law made by Parliament or an existing\n law with respect to that matter, then, the law so\n made by the Legislature of such State shall, if it\n has been reserved for the consideration of the\n President and has received his assent, prevail\n in that State:\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 50 of 76\nProvided that nothing in this clause shall prevent\n Parliament from enacting at any time any law\n with respect to the same matter including a law\n adding to, amending, varying or repealing the\n law so made by the Legislature of the State.”\n\nANALYSIS:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P034_C01",
+      "text": "26. It is trite that the Court, while interpreting the statutes\n which have arguably the conflicting provisions, has to\n keep in mind the Federal structure embedded in our\n Constitution, as a Basic Structure. As per\nArticle\n 246(1)\nof the Constitution, notwithstanding anything\n contained in Clauses (2) and (3), the Parliament has\n exclusive power to make laws with respect to any of\n the matters enumerated in the List-I in the Seventh\n Schedule, referred to as “the Union List”. As per\nArticle 246(2)\n, notwithstanding anything in Clause\n (3), the Parliament and subject to Clause (1), the\n State Legislature have power to make laws on any of\n the matters enumerated in List-III in the Seventh\n Schedule referred to as the “Concurrent List”. As per\nArticle 246(3)\n, subject to Clauses (1) and (2) of\nArticle\n\n, the Legislature of any State has exclusive\n powers to make laws for such State, or any part\n thereof, with respect to any of the matters\n enumerated in List-II in the Seventh Schedule,\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 51 of 76\nreferred to as the “State List”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P034_C02",
+      "text": "Thus, a three-fold\n distribution of legislative power between the Union\n and the States made in the three Lists in the Seventh\n Schedule of the Constitution read with\nArticle 246\n,\n exhibits the Principle of Federal supremacy viz. that\n in case of inevitable conflict between Union and State\n powers, the Union power as enumerated in List-I\n shall prevail over the State power as enumerated in\n Lists-II and III, and in case of overlapping between\n Lists II and III, the latter shall prevail. In view of such\n distribution of Legislative powers, situations have\n arisen where two legislative fields have apparently\n overlapped. In such situations, this Court has held\n that it would be the duty of the courts to ascertain as\n to what degree and to what extent, the authority to\n deal with the matters falling within these classes of\n subjects exists in each of such legislatures, and to\n define the limits of their respective powers.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P035_C01",
+      "text": "27. A Constitution Bench in\nState of West Bengal and\n Ors. vs. Committee\nfor Protection of Democratic\n Rights, West Bengal and Ors.3, has aptly clinched\n the issue of distribution of legislative powers between\n the Union and the State Legislature, thus-\n3 (2010) 3 SCC 571\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 52 of 76\n“25. The non obstante clause in\nArticle 246(1)\ncontemplates the predominance or supremacy\n of the Union Legislature. This power is not\n encumbered by anything contained in clauses\n (2) and (3) for these clauses themselves are\n expressly limited and made subject to the non\n obstante clause in\nArticle 246(1). The State\n Legislature has exclusive power to make laws\n for such State or any part thereof with respect to\n any of the matters enumerated in List II in the\n Seventh Schedule and it also has the power to\n make laws with respect to any matters\n enumerated in List III (Concurrent List). The\n exclusive power of the State Legislature to\n legislate with respect to any of the matters\n enumerated in List II has to be exercised subject\n to clause (1) i.e. the exclusive power of\n Parliament to legislate with respect to matters\n enumerated in List I.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P035_C02",
+      "text": "As a consequence, if there\n is a conflict between an entry in List I and an\n entry in List II, which is not capable of\n reconciliation, the power of Parliament to\n legislate with respect to a matter enumerated in\n List II must supersede pro tanto the exercise of\n power of the State Legislature.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P036_C01",
+      "text": "26. Both Parliament and the State Legislature\n have concurrent powers of legislation with\n respect to any of the matters enumerated in List\n III. The words “notwithstanding anything\n contained in clauses (2) and (3)” in\nArticle\n 246(1)\nand the words “subject to clauses (1) and\n (2)” in\nArticle 246(3)\nlay down the principle of\n federal supremacy viz. that in case of inevitable\n conflict between the Union and State powers,\n the Union power as enumerated in List I shall\n prevail over the State power as enumerated in\n Lists II and III and in case of an overlapping\n between Lists II and III, the latter shall prevail.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P037_C01",
+      "text": "27. Though, undoubtedly, the Constitution\n exhibits supremacy of Parliament over the State\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 53 of 76\nLegislatures, yet the principle of federal\n supremacy\nlaid down in\nArticle 246\nof the\n Constitution cannot be resorted to unless there\n is an irreconcilable direct conflict between the\n entries in the Union and the State Lists. Thus,\n there is no quarrel with the broad proposition\n that under the Constitution there is a clear\n demarcation of legislative powers between the\n Union and the States and they have to confine\n themselves within the field entrusted to them. It\n may also be borne in mind that the function of\n the lists is not to confer powers; they merely\n demarcate the legislative field. ….”",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 246"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P038_C01",
+      "text": "28. A Three-Judge Bench of this Court in the case of M/s\nHoechst Pharmaceuticals Ltd. and Ors. vs. State\n of Bihar and Ors4\n, has succinctly dealt with the issue\n of repugnancy as contemplated in\nArticle 254\nof the\n Constitution of India. Paragraph 67 thereof reads as\n under: -\n“67. Article 254\nof the Constitution makes\n provision first, as to what would happen in the\n case of conflict between a Central and State law\n with regard to the subjects enumerated in the\n Concurrent List, and secondly, for resolving\n such conflict. Article 254(1)\nenunciates the\n normal rule that in the event of a conflict\n between a Union and a State law in the\n concurrent field, the former prevails over the\n latter. Clause (1) lays down that if a State law\n relating to a concurrent subject is ‘repugnant’ to\n a Union law relating to that subject, then,\n whether the Union law is prior or later in time,\n the Union law will prevail and the State law shall,\n to the extent of such repugnancy, be void.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 254"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P038_C02",
+      "text": "4 (1983) 4 SCC 45\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 54 of 76\nthe general rule\nlaid down in\nclause (1), clause\n (2) engrafts an exception viz. that if the\n President assents to a State law which has been\n reserved for his consideration, it will prevail\n notwithstanding its repugnancy to an earlier law\n of the Union, both laws dealing with a\n concurrent subject. In such a case, the Central\n Act, will give way to the State Act only to the\n extent of inconsistency between the two, and no\n more. In short, the result of obtaining the assent\n of the President to a State Act which is\n inconsistent with a previous Union law relating\n to a concurrent subject would be that the State\n Act will prevail in that State and override the\n provisions of the Central Act in their applicability\n to that State only. The predominance of the\n State law may however be taken away if\n Parliament legislates under the proviso to\n clause (2). The proviso to\nArticle 254(2)\nempowers the Union Parliament to repeal or\n amend a repugnant State law, either directly, or\n by itself enacting a law repugnant to the State\n law with respect to the ‘same matter’.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P038_C03",
+      "text": "Even\n though the subsequent law made by Parliament\n does not expressly repeal a State law, even\n then, the State law will become void as soon as\n the subsequent law of Parliament creating\n repugnancy is made. A State law would be\n repugnant to the Union law when there is direct\n conflict between the two laws. Such repugnancy\n may also arise where both laws operate in the\n same field and the two cannot possibly stand\n together: See\nZaverbhai Amaidas v. State of\n Bombay\n[(1954) 2 SCC 345 : AIR 1954 SC 752\n : (1955) 1 SCR 799 : 1954 SCJ 851 : 1954 Cri\n LJ 1822] ;\nM. Karunanidhi v. Union of\n India\n[(1979) 3 SCC 431 : 1979 SCC (Cri) 691 :\nAIR 1979 SC 898 : (1979) 3 SCR 254 : 1979\nCri\n LJ 773] and T. Barai v. Henry Ah Hoe\n[(1983) 1\n SCC 177 : 1983 SCC (Cri) 143].”\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 55 of 76\n29. Again, a Constitution Bench of this Court while\n discussing the doctrine of pith and substance in the\n case of\nKartar Singh vs. State of Punjab5\n, observed\n thus: -\n“60.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Kartar Singh v State of Punjab5\n, observed"
+      ],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P038_C04",
+      "text": "This doctrine of ‘pith and substance’ is\n applied when the legislative competence of a\n legislature with regard to a particular enactment\n is challenged with reference to the entries in the\n various lists i.e. a law dealing with the subject in\n one list is also touching on a subject in another\n list. In such a case, what has to be ascertained\n is the pith and substance of the enactment. On\n a scrutiny of the Act in question, if found, that\n the legislation is in substance one on a matter\n assigned to the legislature enacting that statute,\n then that Act as a whole must be held to be valid\n notwithstanding any incidental trenching upon\n matters beyond its competence i.e. on a matter\n included in the list belonging to the other\n legislature. To say differently, incidental\n encroachment is not altogether forbidden.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P039_C01",
+      "text": "30. Another Constitution Bench in\nRajiv Sarin and\n Another vs. State of Uttarakhand and Ors.6\n, has\n aptly dealt with the issue as to when the repugnancy\n as contemplated in\nArticle 254\nwould be attracted,\n and it held thus: -\n“33. It is trite law that the plea of repugnancy\n would be attracted only if both the legislations\n fall under the Concurrent List of the Seventh\n Schedule to the Constitution. Under\nArticle 254\n\n5 (1994) 3\nSCC 569\n6 (2011) 8 SCC 708\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 56 of 76\nof the Constitution, a State law passed in\n respect of a subject-matter comprised in List III\n i.e. the Concurrent List of the Seventh Schedule\n to the Constitution would be invalid if its\n provisions are repugnant to a law passed on the\n same subject by Parliament and that too only in\n a situation if both the laws i.e. one made by the\n State Legislature and another made by\n Parliament cannot exist together.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P039_C02",
+      "text": "In other\n words, the question of repugnancy under\nArticle\n\nof the Constitution arises when the\n provisions of both laws are completely\n inconsistent with each other or when the\n provisions of both laws are absolutely\n irreconcilable with each other and it is\n impossible without disturbing the other\n provision, or conflicting interpretations resulted\n into, when both the statutes covering the same\n field are applied to a given set of facts. That is\n to say, in simple words, repugnancy between\n the two statutes would arise if there is a direct\n conflict between the two provisions and the law\n made by Parliament and the law made by the\n State Legislature occupies the same field. Hence, whenever the issue of repugnancy\n between the law passed by Parliament and of\n State Legislature are raised, it becomes quite\n necessary to examine as to whether the two\n legislations cover or relate to the same subject-\n matter or different.\n34-44. ……..",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P040_C01",
+      "text": "45. For repugnancy under\nArticle 254\nof the\n Constitution, there is a twin requirement, which\n is to be fulfilled: firstly, there has to be a\n “repugnancy” between a Central and State Act;\n and secondly, the Presidential assent has to be\n held as being non-existent. The test for\n determining such repugnancy is indeed to find\n out the dominant intention of both the\n legislations and whether such dominant\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 57 of 76\nintentions of both the legislations are alike or\n different. To put it simply, a provision in one\n legislation in order to give effect to its dominant\n purpose may incidentally be on the same\n subject as covered by the provision of the other\n legislation, but such partial or incidental\n coverage of the same area in a different context\n and to achieve a different purpose does not\n attract the doctrine of repugnancy. In a nutshell,\n in order to attract the doctrine of repugnancy,\n both the legislations must be substantially on\n the same subject.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 254"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P041_C01",
+      "text": "31. Since in the instant case, the issue with regard to the\n conflict between the provisions of the laws made by\n the Parliament and the law made by the State\n Legislature, has been raised, let us examine as to\n whether the said legislation i.e., MPID covers or\n relates to the same subject matter as covered under\n the Central Legislations i.e., SARFAESI Act and RDB\n Act as also PMLA.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P042_C01",
+      "text": "32. It may be noted that the constitutional validity of the\nMPID Act\nis no longer res integra in view of the\n decisions in case of\nSonal Hemant Joshi and Ors.\n vs. State of Maharashtra and Ors.7\nand in case of\n State of Maharashtra vs. 63 Moons Technologies\n Ltd.8. This Court in 63 Moons Technologies Ltd.\n7 2012 (10) SCC 601\n8 2022 (9) SCC 457\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 58 of 76\n(supra) relying upon the earlier decision in case of\nSonal Hemant Joshi and Ors. (supra), after\n discussing the various provisions of\nMPID Act\nparticularly with regard to the definitions of “Deposit”\n and “Financial Establishment,” held in paragraph 91\n and 92 as under: -\n“91. The validity of the\nMPID Act\nwas\n specifically dealt with in two decisions of this\n Court in\nState of Maharashtra v. Vijay C. Puljal [State of Maharashtra\nv. Vijay C. Puljal,\n (2012) 10 SCC 599 : (2013) 1 SCC (Civ) 541 :\n(2013) 1 SCC (Cri) 1082] and Sonal Hemant\n Joshi v. State of Maharashtra [Sonal Hemant\n Joshi v. State of Maharashtra, (2012) 10 SCC\n 601 : (2013) 1 SCC (Civ) 543 : (2013) 1 SCC\n (Cri) 1084] .",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P042_C02",
+      "text": "In both the decisions, this Court\n upheld the constitutional validity of the\nMPID Act\nin view of the earlier decision in\nBaskaran [K.K. Baskaran v. State\n, (2011) 3 SCC 793 : (2011) 2\n SCC (Civ) 90] . Soma Suresh Kumar v. State\n of A.P. [Soma Suresh Kumar\nv. State of A.P.,\n (2013) 10 SCC 677 : (2014) 1 SCC (Civ) 90 :\n(2014) 1 SCC (Cri) 378] , a two-Judge Bench of\n this Court upheld the provisions of the\nAndhra\n Pradesh Protection of Depositors of Financial\n Establishments Act, 1999\nfollowing the earlier\n decisions in\nBaskaran [K.K. Baskaran v. State\n,\n (2011) 3 SCC 793 : (\n2011) 2 SCC (Civ) 90]\n and New Horizon Sugar Mills [New Horizon\n Sugar Mills Ltd. v. State of Pondicherry\n, (2012)\n 10 SCC 575 : (2013) 1 SCC (Civ) 516 : (2013) 1\n SCC (Cri) 1061] .",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P043_C01",
+      "text": "92. Having discussed the judgments of this\n Court on the constitutional validity of the State\n legislations governing financial establishments\n offering deposit schemes, including the MPID\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 59 of 76\nAct, there is no reason for us to reopen the\n question. This Court has held that the\nMPID Act\nis constitutionally valid on the grounds of\n legislative competence and when tested against\n the provisions of Part III of the Constitution.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P044_C01",
+      "text": "33. This Court in\nSonal Hemant Joshi and Ors. (supra)\n had upheld the constitutional validity of the\nMPID Act\nin view of the decision in case of\nK.K. Baskaran vs. State9\n, in which the Court was dealing with the\n identical legislation enacted by the State of Tamil\n Nadu, namely T.N. Protection of Interest of\n Depositors (in Financial Establishments) Act, 1997,\n enacted with the object to ameliorate the situation of\n the depositors from the clutches of fraudulent\n Financial Establishments, who had duped the\n investor/public by offering high rates of interest on\n deposits, and committed deliberate fraud in\n repayment of the principals and interests after\n maturity of such Deposits. In\nthe said decision\n, the\n Court had opined that the impugned Tamil Nadu Act\n was in pith and substance relatable to the Entries 1,\n 30 and 32 of the State List (List-II) of Seventh\n Schedule. It further held that the Financial\n Institutions/Establishments as contemplated in the\n\n9 (2011) 3 SCC 793\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 60 of 76\nTamil Nadu Act did not come either under the\nReserve Bank of India Act\nBanking Regulation Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P044_C02",
+      "text": "It further held that the Tamil Nadu Act was not\n focussed on the transaction of banking or acceptance\n of deposit, but was focussed on remedying the\n situation of the depositors who were deceived by the\n fraudulent Financial Establishments. The said Act\n was intended to deal with neither the Banks which did\n the business of Banking and were governed by the\n Reserve Bank of India Act and the Banking\n Regulation Act, nor the Non- Banking Financial\n Companies enacted under the\nCompanies Act\n. In the\n case of Tamil Nadu Act, the attachment of properties\n was intended to provide for an effective and speedy\n remedy to the aggrieved depositors for the realisation\n of their dues. Hence, the Reserve Bank of India Act,\n the Banking Regulation Act or the\nCompanies Act\ndid\n not occupy the field which the impugned Tamil Nadu\n Act occupied, though the latter might incidentally\n have trenched upon the former. The Court in\nthe said\n judgment\nspecifically disagreed with the full-Bench\n judgment of the Bombay High Court, whereby the\nMPID Act\nwas held unconstitutional. Subsequently,\n the Court in\nSonal Hemant Joshi and Ors.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P044_C03",
+      "text": "(supra),\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 61 of 76\nspecifically relied upon\nthe said judgment\nin case of\n K.K. Baskaran and upheld the constitutional validity\n of the\nMPID Act\n. The said judgment was also relied\n upon by the three-Judge Bench in State of\n Maharashtra vs. 63 Moons Technologies (supra).",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P045_C01",
+      "text": "34. In view of the above, there remains no shadow of\n doubt that the State of Maharashtra was within its\n legislative competence to enact the\nMPID Act\n, the\n subject matter of which in pith and substance was\n relatable to Entries 1, 30 and 32 of the State List (List-\n II) of the Seventh Schedule of the Constitution of\n India.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P046_C01",
+      "text": "35. The PMLA was enacted to implement the\n international resolutions and declarations made by\n the General Assembly of United Nations, and prevent\n money laundering as also to provide for confiscation\n of properties derived therefrom or involved in money\n laundering. The subject matter of PMLA therefore is\n traceable or relatable to the Entry-13 of Union List\n (List-I) of Seventh Schedule.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P047_C01",
+      "text": "36. So far as the\nSARFAESI Act\nis concerned, the\n constitutional validity of the said Act was upheld by a\n Three-Judge Bench in the case of\nMardia\n Chemicals Ltd and Ors. vs. Union of India and\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 62 of 76\nOrs.10\n. The said Act was enacted by the Parliament\n to regulate securitization and re-construction of\n financial assets and enforcement of security interest\n and to provide for a central database of security\n interest created on property rights. The RDB Act was\n enacted to provide establishment of Tribunals for\n expeditious adjudication and recovery of debts due to\n Banks and Financial Institutions and for the matters\n connected therewith or incidental thereto. Therefore,\n both SARFAESI and RDB Act have been enacted\n with regard to the matter pertaining to “Banking,”\n which subject matter is relatable to the Entry 45\n “Banking” falling in the Union List (List-I) of Seventh\n Schedule.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P048_C01",
+      "text": "37. As held by the Constitution Bench in\nUnion of India\n and Another vs. Delhi High\nCourt Bar Association\n and Others11, under Entry 45 of List-I, it is Parliament\n alone which can enact a law with regard to the\n conduct of business by the Banks. Recovery of dues\n is an essential function of any Banking Institution. In\n exercise of its legislative power relating to Banking,\n the Parliament can provide the mechanism by which\n\n10 (2004) 4 SCC 311\n11 (2002) 4 SCC 275\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 63 of 76\nmonies due to the Banks and Financial Institutions\n can be recovered.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P049_C01",
+      "text": "38. However, merely because the SARFAESI Act and\n RDB Act which are enacted in respect of the subject\n matter falling in List-I and having been enacted by\n Parliament, they could not be permitted to override\n the\nMPID Act\n, which is validly enacted for the subject\n matter falling in List-II – State List. If such an\n interpretation is permitted to be made, it would\n amount to denuding the State of its legislative power\n to enact and enforce legislation, which is within the\n exclusive domain of the State, and it would offend the\n very principle of Federal Structure set out in\nArticle\n\nof the Constitution of India, held to be a part of\n the basic structure of Constitution of India.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P050_C01",
+      "text": "39. In this regard, a very pertinent observation made by\n the majority in the Constitution Bench of five Judges\nITC Limited vs. Agricultural Produce Market\n Committee and Others12\ndeserve to be referred to. In the said case, the contention put forth by the Union\n of India was that ‘tobacco’ was covered solely by a\n later Special Central Legislation that is the\nTobacco\n Boards Act, 1975\n(List I- Entry 52 – Industries)\n\n12 (2002) 9 SCC 232\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 64 of 76\ndenuding the State legislation to levy market fee on\n such Tobacco under the earlier enacted\nBihar\n Agricultural Produce Markets Act, 1960\n(List II – Entry\n 24 – Markets). In the said case, the majority held the\n view that while maintaining Parliamentary\n Supremacy, one cannot give a go-by to the\n Federalism which has been held to be basic feature\n of the Constitution of India, and thereby whittling the\n powers of the State Legislature. The precise\n observations made by Sabharwal J., in this regard\n are reproduced: -\n“58. True, the parliamentary legislation has\n supremacy as provided under\nArticles 246(1)\nand\n(2). This is of relevance when the field of\n legislation is on the Concurrent List.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P050_C02",
+      "text": "While\n maintaining parliamentary supremacy, one\n cannot give a go-by to the federalism which has\n been held to be a basic feature of the\n Constitution (see\nS.R. Bommai v. Union of\n India\n[(1994) 3 SCC 1]).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P051_C01",
+      "text": "59. The Constitution of India deserves to be\n interpreted, language permitting, in a manner\n that it does not whittle down the powers of the\n State Legislature and preserves the federalism\n while also upholding the Central supremacy as\n contemplated by some of its articles.”\n\n In the said Judgment Ruma Pal J., in her concurring\n opinion observed in Para 94 as under: -\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 65 of 76\n“94. Although Parliament cannot legislate on\n any of the entries in the State List, it may do so\n incidentally while essentially legislating within\n the entries under the Union List. Conversely, the\n State Legislatures may encroach on the Union\n List, when such an encroachment is merely\n ancillary to an exercise of power intrinsically\n under the State List. The fact of encroachment\n does not affect the vires of the law even as\n regards the area of encroachment. [\nA.S. Krishna v. State of Madras\n, AIR 1957 SC 297 :\n\nSCR 399, Chaturbhai M. Patel v. Union of\n India\n, (1960) 2 SCR 362, 373, State of\n Rajasthan v. G. Chawla,\nAIR 1959 SC\n 544, Ishwari Khetan Sugar Mills (P) Ltd. v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P051_C02",
+      "text": "State\n of U.P.\n, (1980) 4 SCC 136, 146-47] This\n principle commonly known as the doctrine of\n pith and substance, does not amount to an\n extension of the legislative fields. Therefore,\n such incidental encroachment in either event\n does not deprive the State Legislature in the first\n case or Parliament in the second, of their\n exclusive powers under the entry so\n encroached upon. In the event the incidental\n encroachment conflicts with legislation actually\n enacted by the dominant power, the dominant\n legislation will prevail.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P052_C01",
+      "text": "40. In view of the above position of law settled by the\n Constitution Bench, it is held that considering the pith\n and substance of the State and the Central\n Legislations in question, the Central Legislations i.e.,\nSARFAESI Act\nor RDB Act cannot be permitted to\n prevail over the State Legislation i.e.,\nMPID Act\n,\n merely because the Central Legislations are enacted\n by the Parliament. Since all these Acts have separate\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 66 of 76\nfield of operations, provisions of\nSARFAESI Act\n RDB Act cannot be permitted to override the\n provisions of\nMPID Act\n, which is a validly enacted\n State Legislation, otherwise it would tantamount to\n violation of federal structure doctrine envisaged in the\n Constitution. The respective legislative powers of the\n Union and the States are traceable to\nArticles 245\n 254 of the Constitution. The State qua the\n Constitution is Federal in structure, and independent\n in its exercise of legislative and executive power.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P052_C02",
+      "text": "Therefore, if provisions of\nSARFAESI Act\nor RDB Act\n are permitted to override the provisions of\nMPID Act\n,\n then the legislative powers of the State Legislature\n would be denuded which would tantamount to\n subverting the law enacted by the State Legislature.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P053_C01",
+      "text": "41. It is true that sometimes the overlapping of\n legislations enacted with regard to the matters\n relatable to different Entries in List-I and List-II in\n Seventh Schedule may occur, however\nin that case\nalso as held by the Constitution Bench in\nState of\n West Bengal vs. Kesoram Industries Limited and\n Others13\n, though, the List-I has priority over List-III\n and List-II, and List-III has priority over List-II, the\n\n13 2004 (10) SCC 201\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 67 of 76\npredominance of Union List would not prevent the\n State Legislature from dealing with any matter within\n List-II, even if it may incidentally affect any item in\n List-I. In the case at hand, the SARFAESI Act and\n RDB Act having been enacted by the Parliament for\n the subject matter falling in List-I and the MPID Act\n having been enacted by the State Legislature for the\n subject matter falling in List-II in the Seventh\n Schedule, the latter would prevail in the State of\n Maharashtra in respect of the specific subject matter\n for which the said Act was enacted, in view of Clause\n (3) of\nArticle 246.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P054_C01",
+      "text": "42. It was next sought to be submitted by learned\n counsels appearing for the Secured Creditors that in\n view of\nSection 26E\nof the SARFAESI Act, the debts\n due to the Secured Creditor have to be paid in priority\n over all other debts and all revenues, taxes, cesses\n and other rates payable to the Central Government or\n State Government or local authority, and therefore,\n the security interest of the Secured Creditors in\n respect of the properties attached under\nMPID Act\nshould be given priority. We do not find any merit in\n the said submission. Apart from the fact that Section\n 26E has come into force with effect from 1st\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 68 of 76\nSeptember, 2016, it gives right to the Secured\n Creditor, after the registration of security interest, to\n be paid in priority over all other debts and revenues,\n taxes etc. payable to the Central Government or State\n Government or local authority.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P055_C01",
+      "text": "43. In the instant case, the attachment of the properties\n over which the Secured Creditors is said to have\n security interest, have been attached under\nSection 4\nof the MPID Act. Such properties are believed to have\n been acquired by the Financial Establishment i.e.\n NSEL either in its own name or in the name of other\n persons from out of deposits collected by the\n Financial Establishment. All such properties and\n assets of the Financial Establishment and the\n persons mentioned in the said provision, vest in the\n Competent Authority appointed by the Government,\n pending further orders from the Designated Court.\n Such monies or deposits of depositors/ investors,\n who have been allegedly defrauded by the Financial\n Establishment, and for the recovery of which the\nMPID Act\nhas been enacted, could not be said to be\n a “debt” contemplated in\nSection 26E\nof the\n SARFAESI Act, and hence also the provisions of\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 69 of 76\nSection 26E could not be said to have been attracted\n to the facts of the case.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P056_C01",
+      "text": "44. In that view of the matter, it is held that no priority of\n interest can be claimed by the Secured Creditors\n against the properties attached under the\nMPID Act\nand that the provisions of\nMPID Act\nwould override\n any claim for priority of interest by the Secured\n Creditors in respect of the properties which have\n been attached under the\nMPID Act\n.\nQUESTION (ii): -",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P057_C01",
+      "text": "45. This takes us to the Second question as to “Whether\n the properties of Judgment Debtors and Garnishees\n attached under the\nMPID Act\nwould be available for\n the execution of decrees against the Judgment\n Debtors in view of the provisions of Moratorium under\nSection 14\nof the IBC, 2016?”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P058_C01",
+      "text": "46. The bone of contention raised by the learned counsel\n appearing for the NSEL and the State of Maharashtra\n is that the properties of the Judgement\n debtor/Garnishees having already stood attached\n under the provisions contained in\nSection 4\nof the\n MPID Act, much prior to coming into force of the IBC,\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 70 of 76\n2016 and there being no retrospective operation of\nSection 14\npertaining to Moratorium, such attached\n properties under the\nMPID Act\nwould no longer be\n available as the properties of the Corporate Debtor to\n be considered for the purpose of Resolution Plan\n under the IBC. According to them, on the issuance of\n Notification under\nSection 4\nof the MPID Act, the\n attached the properties would vest in the Competent\n Authority appointed by the State Government, and\n therefore such properties would no longer be the\n properties of the judgment debtor or of the Garnishee,\n and therefore would be outside the scope of operation\n and application of IBC.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P058_C02",
+      "text": "Per contra the learned\n counsel for the Judgment Debtor/Garnishees have\n contended that the IBC being a complete and\n exhaustive Code in itself would override the\n provisions of the\nMPID Act\n.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P059_C01",
+      "text": "47. As stated earlier, the MPID was enacted in the public\n interest to curb the unscrupulous activities of the\n Financial Establishments, who had defaulted to return\n the deposits of the public in the State of Maharashtra. The constitutional validity of the said Act has been\n upheld by this Court in\nSonal Hemant Joshi and\n Ors. (supra) and in State of Maharashtra vs. 63\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 71 of 76\nMoons Technologies Ltd. (supra). As discussed\n while answering the first question, it was held that the\nMPID Act\nhas been validly enacted by the\n Government of Maharashtra for the matters falling in\n List-II- State List, and therefore it would prevail in the\n State of Maharashtra. On the other hand, IBC has\n been enacted to consolidate and amend the laws\n relating to re-organization and insolvency resolution\n of corporate persons, partnership firms and\n individuals in a time bound manner for maximisation\n of value of assets of such persons, to promote\n entrepreneurship, availability of credit and balance\n the interest of all the stakeholders. The subject matter\n of IBC being “Bankruptcy and Insolvency”, is relatable\n to the Entry 9 of List III-Concurrent List.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P059_C02",
+      "text": "The MPID Act\nhaving been enacted for the matters relatable to the\n Entries-1, 30 and 32 in List-II-State List, and the IBC\n having been enacted for the matters relatable to the\n Entry-9 in List-III- Concurrent List, the provisions of\nArticle 254\nwould not be attracted. As per the settled\n legal position discussed earlier, the issue of\n repugnancy or conflict as contemplated in\nArticle 254\nwould arise only when the State Legislation and the\n Central Legislation, both, are relatable to the Entries\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 72 of 76\ncontained in List-III-Concurrent List of Seventh\n Schedule. A beneficial reference of the decision in\n case of\nInnoventive Industries Ltd. vs. ICICI Bank\n and Another14\nbe made in this regard.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P060_C01",
+      "text": "48. In the instant case, there is also no overlap or\n inconsistency between the provisions contained in\n the IBC and MPID Act. As such,\nSection 14\nof IBC has\n the connotation which is very much different from\nSection 4\nof MPID Act. The proceedings under the\n IBC arise out of the Debtor-Creditor relationships of\n the parties. As per\nSection 14\nof IBC, which pertains\n to the Moratorium, a declaration has to be made to an\n order by the Adjudicating Authority prohibiting the acts\n mentioned therein. Therefore,\nSection 14\nof IBC is\n consequent upon the order passed by the\n Adjudicating Authority declaring Moratorium.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P061_C01",
+      "text": "49. However, so far as the attachment of properties under\nSection 4\nof the MPID Act is concerned, it is beyond\n the realm of the Debtor-Creditor relationship as\n contemplated in the IBC. On the publication of the\n Order of Attachment of Properties by the Government\n to protect the interest of the Depositors of the\n Financial Establishment, such properties and assets\n\n14 (2018) 1 SCC 407\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 73 of 76\nof the Financial Establishment and the persons\n mentioned in sub-section (1) of\nSection 4\n, would\n forthwith vest in the Competent Authority appointed\n by the Government, pending further orders from the\n Designated Court. The procedure and powers\n required to be followed by the Designated Court after\n the receipt of the application from the Competent\n Authority under\nSection 5\n, have been prescribed in\nSection 7\nof the MPID Act. As per the said procedure\n contained in\nSection 7\n, the Designated Court is\n required to issue a notice calling upon the Financial\n Establishments or to any other person whose\n property is attached and vested in the Competent\n Authority, to show cause as to why the Order of\n Attachment should not be made absolute.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P061_C02",
+      "text": "If no\n cause is shown or no objections have been raised\n before the Designated Court, the Designated Court\n can pass the order making the Order of Attachment\n absolute and issue such direction as may be\n necessary for realisation of the assets attached and\n for the equitable distribution among the depositors of\n the money realised from out of the properties\n attached. WRIT PETITION (CIVIL) NO.995 OF 2019 Page 74 of 76\n50. Thus, a conjoint reading of\nSection 4\n,\n\nand\n\nof the\n MPID Act, makes it clear that though\nSection 4(2)\nstates about the attached properties being vested in\n the Competent Authority appointed by the\n Government, such vesting would be subject to the\n orders passed by the Designated Court. We therefore\n see no inconsistency between the provisions\n contained in the\nMPID Act\nand the IBC.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 62,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P062_C01",
+      "text": "51. In absence of any inconsistency having been brought\n on record, between the provisions contained in the\nMPID Act\nand in the IBC, Section 238 of IBC, which\n gives overriding effect to the IBC over the other Acts\n for the time being in force, cannot be said to have\n been attracted.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P063_C01",
+      "text": "52. In that view of the matter, it is held that the properties\n of the Judgment Debtors and Garnishees attached\n under the provisions of the\nMPID Act\n, would be\n available for the execution of the decrees against the\n Judgment Debtors by the S.C. Committee, despite\n the provision of Moratorium under\nSection 14\nof the\n IBC.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 64,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P064_C01",
+      "text": "53. For the reasons stated above, the Question No. (i) is\n answered in the negative and the Question No.(ii) is\n answered in the affirmative. As a consequence,\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 75 of 76\nthereof, both the Orders passed by the Supreme\n Court Committee on 10.08.2023 and 08.01.2024\n stand vindicated and upheld.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 65,
+      "chunk_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA_P065_C01",
+      "text": "54. Let the IAs challenging the orders dated 10.08.2023\n and 08.01.2024 passed by the S.C. Committee, be\n dealt with and decided, in the light of the findings\n recorded in this judgment.\n……..…………………………. J.\n[BELA M. TRIVEDI]\n\n ……..…………………………. J.\n[SATISH CHANDRA SHARMA]\n\n NEW DELHI,\n MAY 15th, 2025.\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 76 of 76",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "National Spot Exchange Ltd vs Union Of India",
+    "case_id": "SC_2025_NATIONAL_SPOT_EXCHANGE_LTD_VS_UNION_OF_INDIA",
+    "court": "Supreme Court of India",
+    "year": "2025",
+    "facts_summary": "1. While considering the validity of the orders dated\n 10.08.2023 and 08.01.2024 passed by the Supreme\n Court Committee appointed by this Court vide the\n order dated 04.05.2022, following two questions\n were framed by this Court to be heard in priority on\n the basis of the categorisation of the Applications\n filed in the captioned Writ Petition vide the Order\n\ndated 02.04.2024.\nProvisions of Prevention of Money\n Laundering Act, 2002\n, (PMLA) and Maharashtra\n Protection of Investors and Depositors Act, 1999\n(MPID Act\n), by virtue of the\nProvisions of\n SARFAESI Act, 2002\nand RDB Act, 1993; (In\n view of order dated 10.08.2023 passed by the\n Committee)\n(ii) whether the properties of the Judgment\n Debtors and Garnishees attached under the\nProvisions of MPID Act, 1999\nwould be available\n for the execution of the decrees against\n Judgment Debtors in view of the Provision of\n Moratorium under\nSection 14\nof the IBC, 2016;\n (In view of the Order dated 08.01.2024 passed\n by the Committee)” 2. The genesis of the Writ proceedings, is the scam\n which took place at the Commodity Exchange\n Platform of the Petitioner Company – National Spot\n Exchange Limited (NSEL), a company registered\n under the\nCompanies Act, 1956\n, on 18.05.2005. It is\n promoted by 63 Moons Technologies Limited\n (Formerly Financial Technologies India Limited),\n which holds 99.99% of total share capital of the\n company and the National Agricultural Cooperative\n Marketing Federation of India Limited (NAFED) holds\n 0.01% of ",
+    "legal_issues": "This Court on 04.05.2022 for safeguarding of\n the interests of the Investors / Claimants\n passed the following Order: -\n“O R D E R\n\n Writ Petition(s)(Civil) No(s). 995/2019\n\n The limited contours of the controversy\n before us emanating from the present\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 8 of 76\nproceedings is the safeguarding of the\n interests of the investors/claimants. In respect of the aforesaid, learned\n counsel for the petitioner had canvassed\n before us on 22.02.2022 that the way out\n would be that the properties attached by\n the respondent(s) are sold and monies\n brought into Court. This is in the context of\n decrees passed for the benefit of the\n petitioner where the same very properties\n which were attached were sought to be\n utilized to satisfy the claims. He thus,\n suggested that once the monies are\n brought in, even the claims of the\n petitioners/investors can be satisfied and\n one will know exactly what is the balance\n amount which remains as otherwise both\n the processes are going on at cross\n purposes even though the properties from\n which recoveries can be made are\n attached. We thus, called upon the respondents\n to look into the aforesaid notwithstanding\n that the petitioner may also be an\n organization which as been charged,\n concerned as we were with the investors’\n money and properties remaining attached\n simplicitor could not be the solution for\n investors’ money for which decrees had\n been passed. It is only on liquidation of\n those properties cou",
+    "ratio_summary": "12. Shilpa Sailesh Vs. Varun Sreenivasan2, another\nConstitution Bench while considering the scope and\n ambit of power and jurisdiction of this Court under\n\n2 (2023) 14 SCC 231\nWRIT PETITION (CIVIL) NO.995 OF 2019 Page 28 of 76\nArticle 142(1)\nof the Constitution of India, after due\n deliberations held as under: -\n“19. Given the aforesaid background and\n judgments of this Court, the plenary and\n conscientious power conferred on this Court\n under\nArticle 142(1)\nof the Constitution of India,\n seemingly unhindered, is tempered or bounded\n by restraint, which must be exercised based on\n fundamental considerations of general and\n specific public policy. Fundamental general\n conditions of public policy refer to the\n fundamental rights, secularism, federalism, and\n other basic features of the Constitution of India. Specific public policy should be understood as\n some express pre-eminent prohibition in any\n substantive law, and not stipulations and\n requirements to a particular statutory scheme. It\n should not contravene a fundamental and non-\n derogable principle at the core of the statute. Even in the strictest sense [ Some jurists have\n opined that the judgments on the powers of this\n Court under\nArticle 142(1)\nof the Constitution of\n India can be divided into three phases. The first\n phase till late 1980s is reflected in the\n judgments of\nPrem Chand Garg v. Excise\n Commr.\n, 1962 SCC OnLine SC 10 :\nAIR 1963\n SC 996 and A.R. Antulay v. R.S. Nayak\n, (1988)\n 2 SCC 602 : 1988 SCC (Cri) ",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [
+      "Constitution 142",
+      "Constitution 246",
+      "Constitution 254"
+    ],
+    "cases_cited": [
+      "Kartar Singh v State of Punjab5\n, observed"
+    ]
+  }
+}

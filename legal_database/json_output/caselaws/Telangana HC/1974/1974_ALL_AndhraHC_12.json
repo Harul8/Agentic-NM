@@ -1,0 +1,230 @@
+{
+  "case_id": "SC_1974_1974_ALL_ANDHRAHC_12",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1974",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": "set aside",
+  "disposition": "set_aside",
+  "cites_count": 10,
+  "cited_by_count": 8,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1974\\1974_ALL_AndhraHC_12.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P001_C01",
+      "text": "Guntur Merchants Cotton Press Co. Ltd. vs Income-Tax Officer, A-Ward on 5 July, 1974\nEquivalent citations: [1977]108ITR620(AP)\nJUDGMENT\n\n Obul Reddi, C.J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Guntur Merchants Cotton Press Co. Ltd v Income"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P002_C01",
+      "text": "1. The short question that arises in this writ appeal is whether the assessee is entitled to the benefit of\nSection 30(a)(ii)\nof the Income-tax Act, 1961.\nSection 30(a)(ii)\nis in these terms :\n\"In respect of rent, rates, taxes, repairs and insurance for premises, used for the purposes of the business or profession, the following deductions shall be allowed-\n(a) where the premises are occupied by the assessee--......\n(ii) otherwise than as a tenant, the amount paid by him on account of current repairs to the premises.\"",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P003_C01",
+      "text": "2. The question before us is whether the repairs in respect of which the assessee claimed deduction are \"current repairs\" to the premises. The learned single judge was not prepared to hold that the repairs in question were \"current repairs\" to the premises. In that view, he dismissed the writ petition.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P004_C01",
+      "text": "3. The facts necessary for determination of the question involved are these:\nThe appellant is a public limited company. It submitted return for the assessment year 1967-68 and claimed deductions in a sum of Rs. 16,252 on the ground that that sum represented \"current repairs\" of the factory. The Income-tax Officer disallowed the entire claim of expenditure and repairs. That led to the assessee filing an appeal against disallowance. The Appellate Assistant Commissioner partly allowed the appeal. He rejected the claim in respect of a sum of Rs. 7,768. In so disallowing, the Appellate Assistant Commissioner went into the details of expenditure furnished by the assessee. According to him a sum of Rs. 4,000 clearly represented expenditure of a capital nature. That amount represented replacement of two iron girders and new roofing to the engine hall. The other item which was disallowed represented reconstruction of the walls which had collapsed during the rainy season of the year. Aggrieved by that order of the Appellate Assistant Commissioner, the assessee moved the Commissioner of Income-tax in revision under\nSection 264\n.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P004_C02",
+      "text": "The Additional Commissioner in dismissing the revision observed :\n\"It is seen that Rs. 7,768 was spent on cement sheets which appear to have been used to replace the roof of the expeller hall.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P005_C01",
+      "text": "4. It is on the ground that there was replacement that he disallowed the claim of Rs. 7,768 spent on cement sheets which have been used to replace the roof of the expeller hall. Questioning the order of the Commissioner in revision, the assessee moved this court under\nArticle 226\nof the Constitution. The argument of the learned counsel, Mr. Anjaneyulu, that the Commissioner was in patent error in holding that the sum disallowed represented expenditure towards accumulated repairs was repelled by the learned judge. The learned judge relied upon the report of the Commissioner appointed by the Small Causes Court who inspected the building a few years ago in connection with the question of enhancement of rent of the building, the finding of the Appellate Assistant Commissioner and the finding of the Commissioner of Income-tax that the amount does not represent \"current repairs\" effected by the assessee. What Mr.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P005_C02",
+      "text": "Anjaneyulu contends before us is that the report of the Court Commissioner in a rent control matter which deals with the entire premises cannot be taken into consideration while judging whether the repairs now effected represented \"current repairs\" and, even otherwise, that report does not deal with any defects in the engine hall or with the walls which have since come down on account of heavy rains. It is also his contention that the expression \"repairs\" does not mean petty repairs and takes in such repairs as are essential for the maintenance, preservation and upkeep of the building. Quite a number of decisions have been cited by Mr. Anjaneyulu appearing for the assessee and Mr. Rama Rao, appearing for the revenue, in addition to the decisions noticed by our learned brother in his judgment. All the decisions referred to by the learned single judge were noticed by this court in\nSri Rama Talkies v. Commissioner of Income-tax\n[1966] 59 ITR 63, 69 (AP). Kumaraiah J. (as he then was) sitting with Satyanarayana Raju J. (as he then was), agreed with the conclusion of P.B. Mukharji J. (as he then was) in\nHumayun Properties Ltd. v.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P005_C03",
+      "text": "Commissioner of Income-tax\n[1962] 44 ITR 73 (Cal) as to what would constitute \"current repairs\". The conclusions of P. B. Mukharji J. are the following :\n\"1. That current repairs are necessary repairs which are needed for the maintenance of the building and machinery, etc., referred to in\nSection 10(2)(v)\n. They are not luxury repairs, the element of need being implicit in the expression. As they must be such as are needed periodically, the accumulation of repairs will not ordinarily satisfy the test. Further the need for such repairs must have arisen in order to make the repairs current repairs.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P006_C01",
+      "text": "2. Inasmuch as the idea latent in current repairs is periodicity and recurrence, when the expenditure is incurred to bring into existence a new asset or an advantage of an enduring nature, it cannot be regarded as an expenditure on current repairs.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P007_C01",
+      "text": "3. The degree of improvement brought about and the change effected in the identity of the existing asset as the result of the expenditure incurred should afford a test in order to determine whether the asset has become a new or substantially a new asset.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P008_C01",
+      "text": "5. The learned counsel for the revenue relying upon the second and third tests, contended that the repairs in question were not repairs effected periodically, but were repairs of an enduring nature and the new hall by replacement of the cement shetts has become substantially new asset. In so contending, Mr. Rama Rao relied upon the view expressed by Kumaraiah J. on the facts of the case with which Kumaraiah J. was concerned. That was a case where the assessee replaced the entire compound of the premises of the cinema hall which was hitherto filled with earth and sand with Cuddapah slabs. The compound walls were raised in height with grill work. The electric wiring was remodelled. The roofing was fixed with Celo-tax and the entire building was recoloured with distemper. The aim and object of the expenditure was found to be, as admitted by the assessee himself, to save his theatre from the competition of another theatre which had newly sprung up in the vicinity.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P008_C02",
+      "text": "It was, therefore, held by the learnt d judges that the expenditure incurred was not on necessary repairs essential for the maintenance of the theatre, but were luxury repairs and improvements of a great magnitude carried out with a set purpose of giving an enduring advantage to the assessee to keep pace with or outstrip in the competition with the new theatre which had recently sprung up. It was on those grounds that the learned judges disallowed the deduction claimed under\nSection 10(2)(v)\nof the Indian Income-tax Act, 1922. The facts here are dissimilar. On a reading of the order of the Appellate Assistant Commissioner, it would appear that in respect of certain repairs which were pointed out by the Court Commissioner, he had permitted deductions, but in respect of replacement of cement sheets and repairs carried out to the walls that had come down during the rainy season, he had rejected the claim.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P008_C03",
+      "text": "It cannot be said if the compound walls had collapsed on account of heavy rains during the accounting year that repairs effected to them are accumulated repairs, or, in other words, the assessee slept over the matter for 4 years without attending to the repairs which the walls required. Even if minor repairs has been effected to the walls, they could not have withstood heavy rains. It is not the case of the revenue that there were no heavy rains in the accounting year or the walls did not collapse on account of heavy rains. We are, therefore, unable to agree with the learned counsel. Mr. Rama Rao, that repairs effected to the walls are not \" current repairs\". The other repairs relate to the replacement of the old cement sheets. Admittedly, replacement was in the accounting year. The question is whether it is a case of repairs of a substantial magnitude carried out in the accounting year by including periodical repairs which the roof required.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P008_C04",
+      "text": "There is nothing to indicate from the orders of the Income-tax Officer or the Appellate Assistant Commissioner or the Commissioner that the report of the Court Commissioner also showed that the sheets of the engine hall required replacement or that roof was on the verge of collapse. All that the Court Commissioner's report, as may be seen from the order of the Additional Commissioner ef Income-tax, disclosed was that the factory was very badly in need of repairs, the walls were not in good condition, there were big holes in the roof and that in the eastern section it was covered with tarpaulin to cover the leakage. There was no particular reference to the engine hall. Further, the purpose of the report was for judging whether any enhancement of rent was called for by the court. Chief Justice Chagla in\nNew Shorrock Spinning and Manufacturing Co. Ltd. v. Commissioner of Income-tax\n[1956] 30 ITR 338 (Bom) made it clear that the question as to when a building, machinery, plant or furniture requires repairs and when the need arises must be decided by not any academic or theoretical test but must be decided by the test of commercial expediency.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P008_C05",
+      "text": "It is, after all, for a businessman primarily to decide when his building, machinery, plant or furniture requires repairs and it is by that test alone that the question must be decided as to whether the repairs are current repairs or repairs which have fallen into arrears or have been accumulated over a period of time and then expenditure has been incurred in carrying out those repairs. What is, therefore, to be seen is whether by the repairs carried out to the hall putting new cement sheets, any new asset has been brought into existence br were they repairs which were attended to as and when the need for them arose. Hegde J. (as he then was) in\nHanuman Motor Service v. Commissioner of Income-tax\n[1967] 66 ITR 88, 93 (Mys) was considering the question whether replacement of petrol engines by diesel engines would come within the meaning of \"current repairs\". The assessee there was a firm of bus operators. In the accounting year in question, the assessee replaced petrol engines of some of their buses with the diesel engines and claimed deduction either under\nSection 10(2)(v)\nor under\nSection 10(2)(xv)\nof the Act. The Tribunal rejected the claim made by the assessee.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P008_C06",
+      "text": "On a reference to the High Court, it was held:\n\"The replacement of worn out parts of a machinery does not by itself bring a new asset into existence. The fact that an old part of a machinery was replaced by a new part did not mean that a new asset has been brought into existence. In relation to the bus concerned, the replacement of its engine was only a current repair of that bus ; there was no justification for understanding the expression 'current repairs' as being equivalent to petty repairs, and the expenditure claimed was allowable as current repairs under\nSection 10(2)(v)\n.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P009_C01",
+      "text": "6. Here it is not even a case of replacement of cement sheets with some other sheets. The cement sheets which were found to be not quite serviceable were replaced with new cement sheets and the expenditure incurred for replacing is not such an amount as to say that it is a capital asset. The replacement was really done to preserve and maintain an already existing asset. It was not done with a view to gain any new or fresh advantage. Shah J. in\nCommissioner of Income-tax v. Mahalakshmi Textile Mills Ltd.\nwas dealing with a case where, in a textile mill, an expenditure of Rs. 93,215 for introduction of the \"Casablanca conversion system\" came up for consideration. It substantially involved replacement of certain roller stands and fluted rollers fitted with rubber aprons to the spinning machinery, removal of ring frames from certain existing parts, introduction, inter alia, of ball-bearing jockey-pulleys for converting the original band-drivers to tape-drivers and other additions and alterations in the drafting mechanism. The Income-tax Officer and the Appellate Assistant Commissioner disallowed the claim of the assessee for deduction.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P009_C02",
+      "text": "On appeal to the Tribunal, it inspected the factory and studied the working of the machinery with \"Casablanca conversion system\" in the process of spinning yarn. The Tribunal also looked into the literature of the manufacturers of \"Casablanca conversion system\" and the notification issued by the Ministry of Commerce, Government of India, defining the import policy and then opined that as a result of the stress and strain of production over a long period, there was need for change in the plant and that the assessee had replaced old parts by introducing the \"Casablanca conversion system\". The claim was felt to be admissible as an allowance under\nSection 10(2)(v)\nof the Indian Income-tax Act, 1922. On reference to the High Court of Judicature at Madras, the court held that the sum of Rs. 93,215 was allowable as an expenditure incurred for current repairs under\nSection 10(2)(v)\nof the Act. Shah J. agreed with the view expressed by the High Court and dismissed the appeal preferred by the revenue.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P009_C03",
+      "text": "This is also a case where there has been replacement of worn out sheets, that is, replacement of old cement sheets with new sheets and it is for the assessee primarily to decide when such replacement or repairs are necessary. We are, therefore, of the view that the appellant-assessee is entitled to claim deduction of the amount of Rs. 8,000 which has been disallowed by the income-tax authorities.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1974_1974_ALL_ANDHRAHC_12_P010_C01",
+      "text": "7. In the result, the judgment under appeal is set aside and the writ\nappeal allowed. No costs. Advocate's fee Rs. 250.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1974_1974_ALL_ANDHRAHC_12",
+    "court": "Supreme Court of India",
+    "year": "1974",
+    "facts_summary": "1. The short question that arises in this writ appeal is whether the assessee is entitled to the benefit of\nSection 30(a)(ii)\nof the Income-tax Act, 1961.\nSection 30(a)(ii)\nis in these terms :\n\"In respect of rent, rates, taxes, repairs and insurance for premises, used for the purposes of the business or profession, the following deductions shall be allowed-\n(a) where the premises are occupied by the assessee--......\n(ii) otherwise than as a tenant, the amount paid by him on account of current repairs to the premises.\"",
+    "legal_issues": "Anjaneyulu contends before us is that the report of the Court Commissioner in a rent control matter which deals with the entire premises cannot be taken into consideration while judging whether the repairs now effected represented \"current repairs\" and, even otherwise, that report does not deal with any defects in the engine hall or with the walls which have since come down on account of heavy rains. It is also his contention that the expression \"repairs\" does not mean petty repairs and takes in such repairs as are essential for the maintenance, preservation and upkeep of the building. Quite a number of decisions have been cited by Mr. Anjaneyulu appearing for the assessee and Mr. Rama Rao, appearing for the revenue, in addition to the decisions noticed by our learned brother in his judgment. All the decisions referred to by the learned single judge were noticed by this court in\nSri Rama Talkies v. Commissioner of Income-tax\n[1966] 59 ITR 63, 69 (AP). Kumaraiah J. (as he then was) sitting with Satyanarayana Raju J. (as he then was), agreed with the conclusion of P.B. Mukharji J. (as he then was) in\nHumayun Properties Ltd. v. 5. The learned counsel for the revenue relying upon the second and third tests, contended that the repairs in question were not repairs effected periodically, but were repairs of an enduring nature and the new hall by replacement of the cement shetts has become substantially new asset. In so contending, Mr. Rama Rao relied upon the view expressed by Kumar",
+    "ratio_summary": "2. The question before us is whether the repairs in respect of which the assessee claimed deduction are \"current repairs\" to the premises. The learned single judge was not prepared to hold that the repairs in question were \"current repairs\" to the premises. In that view, he dismissed the writ petition. 3. The facts necessary for determination of the question involved are these:\nThe appellant is a public limited company. It submitted return for the assessment year 1967-68 and claimed deductions in a sum of Rs. 16,252 on the ground that that sum represented \"current repairs\" of the factory. The Income-tax Officer disallowed the entire claim of expenditure and repairs. That led to the assessee filing an appeal against disallowance. The Appellate Assistant Commissioner partly allowed the appeal. He rejected the claim in respect of a sum of Rs. 7,768. In so disallowing, the Appellate Assistant Commissioner went into the details of expenditure furnished by the assessee. According to him a sum of Rs. 4,000 clearly represented expenditure of a capital nature. That amount represented replacement of two iron girders and new roofing to the engine hall. The other item which was disallowed represented reconstruction of the walls which had collapsed during the rainy season of the year. Aggrieved by that order of the Appellate Assistant Commissioner, the assessee moved the Commissioner of Income-tax in revision under\nSection 264\n. 4. It is on the ground that there was replacement that he di",
+    "final_order": "7. In the result, the judgment under appeal is set aside and the writ\nappeal allowed. No costs. Advocate's fee Rs. 250.",
+    "outcome_summary": "Set aside. 7. In the result, the judgment under appeal is set aside and the writ\nappeal allowed. No costs. Advocate's fee Rs. 250.",
+    "sections_cited": [
+      "Constitution 226"
+    ],
+    "cases_cited": [
+      "Guntur Merchants Cotton Press Co. Ltd v Income"
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "case_id": "SC_1979_1979_238",
+  "case_name": "Surendra Kumar vs State Of Rajastha",
+  "normalized_case_name": "SURENDRA_KUMAR_VS_STATE_OF_RAJASTHA",
+  "court": "Supreme Court of India",
+  "year": "1979",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "7 February 1979",
+  "judges": [
+    "A.D. Koshal",
+    "S. Murtaza Fazal Ali",
+    "JUDGMENT",
+    "S. Murtaza Fazal Ali, J."
+  ],
+  "author": "S. Murtaza Fazal Ali",
+  "bench_type": "constitution",
+  "petitioner": "Surendra Kumar",
+  "respondent": "State Of Rajastha",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 4,
+  "cited_by_count": 17,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1979SC1048",
+    "1979CRILJ907",
+    "(1979)4SCC718",
+    "1979(11)UJ502(SC)",
+    "AIR 1979 SUPREME COURT 1048",
+    "1979 UJ (SC) 502",
+    "1979 (1) FAC 137",
+    "(1979) WLN 90 (SC)",
+    "1979 (4) SCC 718"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1979\\1979_238.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1979_1979_238_P001_C01",
+      "text": "1. In this appeal by special leave the appellant has been convicted under\nSection 411\nIPC and sentenced to six months rigorous imprisonment and a fine of Rs. 500/-, In default two months rigorous imprisonment. We have gone through the judgment of the Sessions Judge and also of the trial Magistrate and we agree with the High Court that there was no prime facia case for admitting the appeal before the High Court. The appeal is clearly concluded by findings of fact. Mr Soni tried best to argue that there was no evidence to prove the identity of the articles stolen nor was there any relevant evidence to show that the recovery statement made by the accused under\nSection 27\ncould be relied upon. These are essentially questions of fact and two courts of fact have clearly and the High Court impliedly upheld this finding of fact and have found that the prosecution has proved the identity of the property and that the confession made Under\nSection 27\nwas true and voluntary.\n2.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "IPC 411"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1979_1979_238_P001_C02",
+      "text": "It was then submitted that the appellant was below the age of 21 years at the time when the offence is alleged to have been committed, therefore, be should be given the benefit of\nSection 360\n, Criminal Procedure Code which is mandatory where as offence is punishable with fine or with imprisonment with a term of seven years or less. The case of the appellant undoubtedly falls within the four corners of",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1979_1979_238_P002_C01",
+      "text": "Section 360\n. In these circumstances, therefore, the sentence of imprisonment is directed to be suspended and the appellant is released on probation & will execute a personal bond of Rs. 2, 000/-to maintain good behavior for a period of two years. In case the appellant violates the conditions of the bond he will be called upon to receive the sentence. With this modification, the appeal is dismissed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Surendra Kumar vs State Of Rajastha",
+    "case_id": "SC_1979_1979_238",
+    "court": "Supreme Court of India",
+    "year": "1979",
+    "facts_summary": "",
+    "legal_issues": "It was then submitted that the appellant was below the age of 21 years at the time when the offence is alleged to have been committed, therefore, be should be given the benefit of\nSection 360\n, Criminal Procedure Code which is mandatory where as offence is punishable with fine or with imprisonment with a term of seven years or less. The case of the appellant undoubtedly falls within the four corners of",
+    "ratio_summary": "",
+    "final_order": "Section 360\n. In these circumstances, therefore, the sentence of imprisonment is directed to be suspended and the appellant is released on probation & will execute a personal bond of Rs. 2, 000/-to maintain good behavior for a period of two years. In case the appellant violates the conditions of the bond he will be called upon to receive the sentence. With this modification, the appeal is dismissed.",
+    "outcome_summary": "Dismissed. Section 360\n. In these circumstances, therefore, the sentence of imprisonment is directed to be suspended and the appellant is released on probation & will execute a personal bond of Rs. 2, 000/-to maintain good behavior for a period of two years. In case the appellant violates the conditions of the",
+    "sections_cited": [
+      "IPC 411"
+    ],
+    "cases_cited": []
+  }
+}

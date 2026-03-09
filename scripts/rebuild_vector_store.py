@@ -6,6 +6,8 @@ Recreate the entire vector store from Google Drive: BareActs + CaseLaws.
 2. Removes existing v2 and BM25 index files.
 3. Rebuilds all FAISS + BM25 from PDFs in DATA_ROOT/BareActs and DATA_ROOT/CaseLaws.
 4. Builds the bare act summary index (act_name -> summary) for all acts in the store.
+5. Builds the citation graph (case → interprets → section, case → cites → case) from
+   case-law chunks so retrieval can expand by precedent.
 
 Uses GPU when available. Run from project root:
 
@@ -29,6 +31,7 @@ from config import (
     CASE_INDEX_V2,
     CASE_CHUNKS_V2,
     CASE_BM25_INDEX,
+    CITATION_GRAPH_PATH,
 )
 from Ingestion.build_v2_index import build_index, _get_embedder
 from Ingestion.smart_chunker import process_bare_acts_directory, process_case_laws_directory
@@ -43,7 +46,7 @@ from build_bare_act_summary_index import build_bare_act_summary_index  # noqa: E
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
-# All v2 and BM25 files we will recreate
+# All v2 and BM25 files we will recreate (citation graph depends on case chunks, so remove it too)
 VECTOR_STORE_FILES_TO_REMOVE = [
     BARE_INDEX_V2,
     BARE_CHUNKS_V2,
@@ -51,6 +54,7 @@ VECTOR_STORE_FILES_TO_REMOVE = [
     CASE_INDEX_V2,
     CASE_CHUNKS_V2,
     CASE_BM25_INDEX,
+    CITATION_GRAPH_PATH,
 ]
 
 
@@ -206,6 +210,19 @@ def main():
                 "Case laws indexed: %d chunks from %d cases -> FAISS + chunks JSON + BM25",
                 len(case_chunks), len(cases),
             )
+            # Citation graph: case → interprets → section, case → cites → case
+            logger.info("Step 7b: Building citation graph from case chunks...")
+            try:
+                from retrieval.citation_graph import build_citation_graph_from_chunks
+                from retrieval.hybrid_retriever import load_chunks
+                chunks_dict = load_chunks(CASE_CHUNKS_V2)
+                if chunks_dict:
+                    build_citation_graph_from_chunks(chunks_dict, CITATION_GRAPH_PATH)
+                    logger.info("Citation graph saved to %s", CITATION_GRAPH_PATH)
+                else:
+                    logger.warning("No chunks loaded for citation graph (skipped).")
+            except Exception as e:
+                logger.warning("Citation graph build failed (non-fatal): %s", e)
         else:
             logger.warning("No case law chunks produced. Check PDFs in CaseLaws/")
     else:
@@ -227,8 +244,17 @@ def main():
         logger.error("Step 8: act profile index build failed: %s", e)
         logger.warning("Act-first search will fall back to unfiltered at runtime (non-fatal).")
 
+    # Statute concept index: built from BARE_CHUNKS_V2 on first lookup. Invalidate cache
+    # so the next lookup (this process or server) uses the updated store.
+    try:
+        from retrieval.statute_concept_index import invalidate_store_index
+        invalidate_store_index()
+        logger.info("Step 9: Statute concept index cache invalidated (will rebuild from store on next lookup).")
+    except Exception as e:
+        logger.debug("Statute concept index invalidate (non-fatal): %s", e)
+
     logger.info("\n" + "=" * 60)
-    logger.info("Vector store rebuild complete. FAISS + BM25 + Act Profiles recreated.")
+    logger.info("Vector store rebuild complete. FAISS + BM25 + Act Profiles + Citation graph recreated.")
     logger.info("=" * 60)
 
 

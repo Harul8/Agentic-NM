@@ -1,0 +1,955 @@
+{
+  "case_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA",
+  "case_name": "Vishal Tiwari vs Union Of India",
+  "normalized_case_name": "VISHAL_TIWARI_VS_UNION_OF_INDIA",
+  "court": "Supreme Court of India",
+  "year": "2024",
+  "judgment_template": null,
+  "case_number": "Writ Petition 162 of 2023",
+  "case_number_regex": "WRIT_PETITION",
+  "date_of_judgment": "3 January 2024",
+  "judges": [
+    "Dhananjaya Y Chandrachud"
+  ],
+  "author": "Dhananjaya Y Chandrachud",
+  "bench_type": "single",
+  "petitioner": "Vishal Tiwari",
+  "respondent": "Union Of India",
+  "reporter_citations": [
+    "2024 INSC 3"
+  ],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 18,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": true,
+  "source_file": "Supreme Court\\2024\\JAN\\2024_JAN_10.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P001_C01",
+      "text": "2024 INSC 3\n\n ORIGINAL CIVIL/CRIMINAL JURISDICTION\n\n Writ Petition (C) No. 162 of 2023\n\n Vishal Tiwari …Petitioner\n\n Versus\n\n Union of India & Ors. …Respondents\nWith\n\n Writ Petition (Crl) No. 39 of 2023\n\n With\n\n Writ Petition (C) No. 201 of 2023\n\n And with\n\n Writ Petition (Crl) No. 57 of 2023\n\nDr Dhananjaya Y Chandrachud, CJI\n\nTable of Contents\n\nA. Factual background and submissions ....................................................... 3\n\nB. The scope of judicial review over SEBI’s regulatory domain ................. 11\n\nC. There is no apparent regulatory failure attributable to SEBI .................. 17\n\nD. The plea to transfer the investigation from SEBI to another agency or to\nan SIT .................................................................................................................. 23\n\n i. The power to transfer an investigation is exercised in extraordinary\n situations ........................................................................................................ 23\n\n ii. SEBI has prime facie conducted a comprehensive investigation ...... 25\n\n iii. Reliance on the OCCRP report and the letter by DRI is misconceived\n\nE.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P001_C02",
+      "text": "Allegations of conflict of interest against members of the Expert\nCommittee .......................................................................................................... 30\n\nF. Other recommendations by the Expert Committee ................................. 32\n\n i. Volatility and short selling ...................................................................... 32\n\n ii. Investor Awareness................................................................................. 36\n\n iii. Recommendations of the Expert Committee to strengthen regulatory\n framework and secure compliance to protect investors ............................ 39\n\nG. Conclusion .................................................................................................. 43\n\nPART A",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P002_C01",
+      "text": "1. A batch of writ petitions filed before this Court under\nArticle 32\nof the\n\n Constitution in February 2023, raised concerns over the precipitate decline in\n\n investor wealth and volatility in the share market due to a fall in the share prices\n\n of the Adani Group of Companies. 1 The situation was purportedly caused by a\n\n report which was published on 24 January 2023 by an “activist short seller”,\n\n Hindenburg Research about the financial transactions of the Adani group. The\n\n report inter alia alleged that the Adani group manipulated its share prices and\n\n failed to disclose transactions with related parties and other relevant information\n\n in violation of the regulations framed by SEBI and provisions of securities’\n\n legislation. Significantly, the report expressly states that Hindenburg Research\n\n took a short position in the Adani group through US-traded bonds and non-\n\n Indian traded derivative instruments.\nA. Factual background and submissions",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "Constitution 32"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P003_C01",
+      "text": "2. A brief overview of the petitions follows:\na. The petitioner in WP(C) No. 162 of 2023, raises concerns about the drastic\n\n fall in the securities market, the impact on investors, the purported lack of\n\n redressal available and the disbursement of loans to the Adani group\n\n allegedly without due procedure. The petitioner inter alia seeks the\n\n constitution of a committee monitored by a retired judge of this Court to\n\n investigate the Hindenburg Report;\n1 “Adani group”\n\nPART A\n\n b. The petitioner in WP (C) No. 201 of 2023 submits that the Adani group is in\n\n violation of Rule 19A of the Securities Contracts (Regulation) Rules, 1957\n\n by “surreptitiously controlling more than 75% of the shares of publicly listed\n\n Adani group companies, thereby manipulating the price of its shares in the\n\n market.” The petitioner inter alia seeks a court-monitored investigation by a\n\n Special Investigation Team 2 or by the CBI into the allegations of fraud and\n\n the purported role played by top officials of public sector banks and lender\n\n institutions;\nc.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P003_C02",
+      "text": "The petitioner in WP (Crl.) No. 57 of 2023 seeks directions to the competent\n\n investigative agencies to (i) investigate the transactions of the Adani group\n\n under the supervision of a sitting judge of this Court; and (ii) investigate the\n\n role of the Life Insurance Corporation of India and the State Bank of India\n\n in such transactions;\nd. The petitioner in WP (Crl.) No. 39 of 2023 seeks the registration of an FIR\n\n against a certain Mr Nathan Anderson (the founder of Hindenburg\n\n Research) and his associates for short-selling and directions to recover the\n\n profits yielded by short-selling, to compensate the investors.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P004_C01",
+      "text": "3. When the batch came up for hearing on 10 February 2023, this Court noted that\n\n there was a need to review the existing regulatory mechanisms in the financial\n\n sector to ensure that they are strengthened with a view to protect Indian\n\n investors from market volatility. This Court sought inputs from the Solicitor\n\n2 “SIT”\n\nPART A\n\n General on the proposed constitution of an Expert Committee for the purpose.\n\n This Court observed:\n“4 We have suggested to the Solicitor General that he\n may seek instructions on whether the Government of\n India would facilitate the constitution of an expert\n committee for an overall assessment of the situation,\n and if so, to place its suggestions on the constitution\n and remit of the committee on the next date. Meantime\n the Solicitor General shall place on the record a brief\n note on factual and legal aspects so as to further the\n deliberations during the course of the next hearing.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P005_C01",
+      "text": "4. The batch of cases came up for hearing on 17 February 2023. This Court heard\n\n detailed submissions on behalf of the parties and reserved further orders. In its\n\n order dated 2 March 2023, this Court took note of the loss of investor wealth in\n\n the aftermath of the report by Hindenburg Research and recognized the dire\n\n need to protect Indian investors from unanticipated volatility in the market. This\n\n Court observed that SEBI is already seized of the investigation into the Adani\n\n group and inter alia directed:\na. SEBI to continue with its investigation and examine the following non-\nexhaustive issues raised in the petitions:\n“a. Whether there has been a violation of Rule\n 19A of the Securities Contracts (Regulation)\n Rules 1957;\nb. Whether there has been a failure to disclose\n transactions with related parties and other\n relevant information which concerns related\n parties to SEBI, in accordance with law; and\n c. Whether there was any manipulation of stock\n prices in contravention of existing laws;”\n\n b. SEBI to conclude its investigation within two months and file a status report\n\n before this Court;\n\nPART A\n\n c.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P005_C02",
+      "text": "The constitution of an Expert Committee chaired by Justice Abhay Manohar\n\n Sapre, former judge of this Court. Besides its Chairperson, the Committee\n\n was to compose of the following members:\na. Mr OP Bhatt;\nb. Justice JP Devadhar;\nc. Mr KV Kamath;\nd. Mr Nandan Nilekani;\ne. Mr Somasekhar Sundaresan\n\n d. The remit of the Expert Committee was:\n“a. To provide an overall assessment of the\n situation including the relevant causal factors\n which have led to the volatility in the\n securities market in the recent past;\n b. To suggest measures to strengthen investor\n awareness;\nc. To investigate whether there has been\n regulatory failure in dealing with the alleged\n contravention of laws pertaining to the\n securities market in relation to the Adani\n Group or other companies; and\n d. To suggest measures to (i) strengthen the\n statutory and/or regulatory framework; and\n(ii) secure compliance with the existing\n framework for the protection of investors.”\n\n The Expert Committee was directed to furnish its report to this Court within two\n\n months.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P006_C01",
+      "text": "5. This Court clarified that the Expert Committee and SEBI would work in\n\n collaboration with each other. The appointment of the Committee would, in\n\n other words, not affect the investigation by SEBI which would proceed\n\n simultaneously. The constitution of the Expert Committee was not to divest\n\nPART A\n\n SEBI of its powers or responsibilities in continuing with its investigation. The\n\n Court observed:\n“12. …SEBI shall apprise the expert committee\n (constituted in paragraph 14 of this order) of\n the action that it has taken in furtherance of\n the directions of this Court as well as the\n steps that it has taken in furtherance of its\n ongoing investigation. The constitution of the\n expert committee does not divest SEBI of its\n powers or responsibilities in continuing with\n its investigation into the recent volatility in the\n securities market.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P007_C01",
+      "text": "6. On 6 May 2023, in compliance with the above interim order, the Expert\n\n Committee submitted its report to this Court. In its order dated 17 May 2023,\n\n this Court directed that copies of the report shall be made available to the\n\n parties and their counsel to enable them to assist the Court in the course of\n\n further deliberations. This Court also granted SEBI an extension of time till 14\n\n August 2023 to submit its status report about its investigation.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P008_C01",
+      "text": "7. SEBI filed an interlocutory application on 14 August 2023 intimating this Court\n\n about the status of the twenty-four investigations which were undertaken by\n\n them. Further, SEBI submitted a status report dated 25 August 2023 providing\n\n details about the twenty-four investigations. Both SEBI and the counsel for the\n\n petitioners have also filed their responses to the Expert Committee’s report.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P009_C01",
+      "text": "8. In the above background, this matter came up for hearing before this Court on\n\n 24 November 2023. We heard Mr Prashant Bhushan, learned counsel and\n\n other counsel appearing on behalf of the petitioners and Mr Tushar Mehta,\n\n learned Solicitor General appearing on behalf of SEBI.\n\nPART A",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P010_C01",
+      "text": "9. Mr Prashant Bhushan, appearing on behalf of the petitioner broadly pressed his\n\n case for two directions: firstly, a direction to constitute an SIT to oversee the\n\n SEBI investigation into the Adani group and that all such investigations be court-\n\n monitored; and second, a direction to SEBI to revoke certain amendments\n\n made to the SEBI (Foreign Portfolio Investments) Regulations, 20143 and the\n\n SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015.4\n\n Mr Bhushan made the following submissions:\na. The Hindenburg Report and certain newspaper reports allege that some\n\n Foreign Portfolio Investments 5 in Adani group stocks in the Indian stock\n\n market are owned by shell companies based outside India, which have\n\n close connections with the Adani group. Such investments in Adani stocks\n\n allow the Adani group to maintain financial health and artificially boost the\n\n value of stocks in the market, in violation of Indian law;\n\n b. The investments by FPIs violate Rule 19A of the Securities Contracts\n\n (Regulations) Rules, 1957 which requires a minimum 25% public\n\n shareholding in all public-listed companies;\nc.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P010_C02",
+      "text": "The investigative findings of the Organized Crime and Corruption Reporting\n\n Project 6, published by two newspapers, indicate price manipulation by the\n\n Adani group through two Mauritius-based funds. However, SEBI has not\n\n acted on such reports;\n3 “FPI Regulations”\n4 “LODR Regulations”\n5 “FPIs”\n6 “OCCRP”\n\nPART A\n\n d. The Directorate of Revenue Intelligence 7 had addressed a letter dated 31\n\n January 2014 to the then SEBI Chairperson alerting them about possible\n\n stock market manipulation being committed by the Adani group by over-\nvaluation of the import of power equipment. However, SEBI did not take\n\n adequate action based on this letter;\ne. SEBI must be directed to revoke amendments to the FPI Regulations which\n\n have done away with restrictions on opaque structures. As a result of these\n\n amendments, SEBI, the Enforcement Directorate 8 and the CBDT have not\n\n been able to give any clear findings with regard to price manipulation and\n\n insider trading. SEBI has tied its own hands;\nf. SEBI must be directed to revoke the amendment made to its LODR\n\n Regulations which have altered the definition of \"related party\";\n\n g.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P010_C03",
+      "text": "SEBI's inability to establish a prima facie case of regulatory non-compliance\n\n and legal violations by the Adani group promoters despite starting an\n\n investigation in November 2020, appears to be prima facie self-inflicted. The unprecedented rise in the price of the Adani scrips occurred between\n\n January 2021 and December 2022, over a period when the Adani group\n\n was already under SEBI investigation;\nh. A few members of the Expert Committee may have a conflict of interest and\n\n there is a likelihood of bias, which was not brought to the notice of the Court\n\n by the concerned members; and\n\n7 “DRI”\n8 “ED”\n\nPART A\n\n i. SEBI has willfully delayed the submission of its status report on the\n\n investigation into the Adani group within the time granted by this Court.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P011_C01",
+      "text": "10. On the other hand, the learned Solicitor General, appearing on behalf of SEBI\n\n made the following submissions:\na. Twenty-two out of twenty-four investigations being conducted by SEBI are\n\n complete. In these investigations, enforcement actions/ quasi-judicial\n\n proceedings would be initiated, wherever applicable;\n\n b. The delay by SEBI in filing the report is only ten days which is unintentional\n\n and not willful, given that twenty-four investigations were to be carried out;\n\n c. SEBI has been taking various steps on the areas identified by the Expert\n\n Committee and will also take into consideration the suggestions of the\n\n Expert Committee to improve its practices and procedures;\n\n d. The events pertaining to the present batch of petitions relate to only one set\n\n of entities in the market without any significant impact at the systemic level. While the shares of the Adani group saw a significant decline on account of\n\n the selling pressure, the “wider Indian market has shown full resilience”;\n\n e. The petitioner’s reliance on the letter by the DRI is misconceived. After\n\n having received DRI’s letter, SEBI sought information from DRI on the\n\n subject and received a response.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P011_C02",
+      "text": "Further, while SEBI’s examination was in\n\nPART B\n\n process, the Additional Director, DRI (Adjudication) found the allegations of\n\n over-valuation to be incorrect. The CESTAT and this Court also dismissed\n\n appeals against the order;\nf. The OCCRP report relied on by the petitioner lacks documentary support\n\n and certain important facts with regard to the source of the report have been\n\n concealed; and\n\n g. The FPI Regulations, initially, had allowed “opaque structures” under\n\n certain conditions, inter alia, that they undertake to disclose the details of\n\n beneficial owners on being sought. The subsequent amendment required\n\n upfront mandatory disclosure of beneficial owners by FPIs. This made the\n\n disclosure clause redundant which led to its omission in 2019. The\n\n amendments have tightened the regulatory framework by making\n\n disclosure requirements mandatory and removing the requirement of\n\n disclosure only when sought. B. The scope of judicial review over SEBI’s regulatory domain",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P012_C01",
+      "text": "11. The petitioners in the present case are inter alia seeking directions with regard\n\n to (i) investigations being carried out by SEBI; and (ii) regulations/policies\n\n adopted by SEBI. In other words, directions in relation to both the regulatory\n\n and delegated legislative powers of SEBI are being sought by the petitioners.\n\n At the outset, therefore, this Court’s power to enter the domain of a specialized\n\n regulator, such as SEBI must be delineated.\n\nPART B",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P013_C01",
+      "text": "12. SEBI was established as India’s principal capital markets regulator with the aim\n\n to protect the interest of investors in securities and promote the development\n\n and regulation of the securities market in India. SEBI is empowered to regulate\n\n the securities market in India by the\nSEBI Act\n1992, the SCRA and the\n\n Depositories Act 1996. SEBI’s powers to regulate the securities market are wide\n\n and include delegated legislative, administrative, and adjudicatory powers to\n\n enforce SEBI’s regulations. SEBI exercises its delegated legislative power by\n\n inter alia framing regulations and appropriately amending them to keep up with\n\n the dynamic nature of the securities’ market. SEBI has issued a number of\n\n regulations on various areas of security regulation which form the backbone of\n\n the framework governing the securities market in India.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P014_C01",
+      "text": "13. Section 11\nof the SEBI Act lays down the functions of SEBI and expressly states\n\n that it “shall be the duty of the Board to protect the interests of investors in\n\n securities and to promote the development of, and to regulate the securities\n\n market, by such measures as it thinks fit”. Further,\nSection 30\nof the SEBI Act\n\n empowers SEBI to make regulations consistent with the Act. Significantly, while\n\n framing these regulations, SEBI consults its advisory committees consisting of\n\n domain experts, including market experts, leading market players, legal\n\n experts, technology experts, retired Judges of this Court or the High Courts,\n\n academicians, representatives of industry associations and investor\n\n associations. During the consultative process, SEBI also invites and duly\n\n considers comments from the public on their proposed regulations. SEBI\n\n follows similar consultative processes while reviewing and amending its\n\n regulations.\n\nPART B",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P015_C01",
+      "text": "14. This Court in\nIFB Agro Industries Ltd v. SICGIL India Ltd\n, 9 examined the role\n\n of independent regulatory bodies such as SEBI in public administration and\n\n upheld the primacy of SEBI as the forum to adjudicate violations of its\n\n regulations. Further, the Court detailed the delegated legislative, administrative,\n\n and adjudicatory powers of SEBI arising from the\nSEBI Act\n. The court held:\n“30. Public administration is dynamic and ever-\nevolving. It is now established that governance of\n certain sectors through independent regulatory bodies\n will be far more effective than being under the direct\n control and supervision of Ministries or Departments of\n the Government. Regulatory control by an independent\n body composed of domain experts enables a\n consistent, transparent, independent, proportionate,\n and accountable administration and development of\n the sector. All this is achieved by way of legislative\n enactments which establish independent regulatory\n bodies with specified powers and functions. They\n exercise powers and functions, which have a\n combination of legislative, executive, and judicial\n features.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P016_C01",
+      "text": "31. Another feature of these regulators is that they are\n impressed with a statutory duty to safeguard the\n interest of the consumers and the real stakeholders of\n the sector.\n…",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P017_C01",
+      "text": "33. The statutory provisions contained in Chapters IV,\n VI-A, read with\nSection 30\n, delineate the legislative,\n administrative, and adjudicatory functions of the Board.\n In its normative or legislative functions, SEBI can\n formulate regulations encompassing various aspects\n having a bearing on the securities market. It should be\n noted that the\nSEBI Act\n, Rules, Regulations and\n Circulars made or issued under the legislation, are\n constantly evolving with a concerted aim to enforce\n order in the securities market and promote its healthy\n growth while protecting investor wealth. Insofar as its\n administrative/executive power goes, it has the power\n to regulate the business of stock exchanges and\n securities market. The Board provides for the\n registration and regulation of stock brokers, share\n transfer agents, depositories, venture capital funds,\n collective investment schemes, etc. It also has the\n\n9 (2023) 4 SCC 209\n\nPART B\n\n power to prohibit various transactions which interfere\n with the health of the securities market.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P018_C01",
+      "text": "34. In the exercise of its adjudicatory powers under\nSection 15-I\n, SEBI has the power to appoint officers for\n holding an inquiry, give a reasonable opportunity to the\n person concerned and determine if there is any\n transgression of the Rules prescribed. The Board has\n the power to impose penalties for violations and also\n restitute the parties. The adjudicatory power also\n includes the power to settle administrative and civil\n proceedings under\nSection 15-JB\nof the SEBI Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P019_C01",
+      "text": "35. The regulatory jurisdiction of the Board also\n includes ex-ante powers to predict a possible violation\n and take preventive measures. The exercise of ex-ante\n jurisdiction necessitates the calling of information as\n provided in\nSections 11(2)(i)\n,\n11(2)(ia)\nand\n11(2)(ib)\n the SEBI Act. Where the Board has a reasonable\n ground to believe that a transaction in the securities\n market is going to take place in a manner detrimental\n to the interests of the stakeholders or that any\n intermediary has violated the provisions of the Act, it\n may investigate into the matter under\nSection 11(C)\n the SEBI Act. In other words, being the real-time\n security market regulator, the Board is entitled to keep\n a watch, predict and even act before a violation occurs.\n\n …\n\n (Emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P020_C01",
+      "text": "15. In a consistent line of precedent, this Court has held that when technical\n\n questions arise particularly in the financial or economic realm; experts with\n\n domain knowledge in the field have expressed their views; and such views are\n\n duly considered by the expert regulator in designing policies and implementing\n\n them in the exercise of its power to frame subordinate legislation, the court\n\n ought not to substitute its own view by supplanting the role of the expert. Courts\n\n do not act as appellate authorities over policies framed by the statutory\n\n regulator and may interfere only when it is found that the actions are arbitrary\n\n or violative of constitutional or statutory mandates. The court cannot examine\n\n the correctness, suitability, or appropriateness of the policy, particularly when it\n\nPART B\n\n is framed by a specialized regulatory agency in collaboration with experts. The\n\n court cannot interfere merely because in its opinion a better alternative is\n\n available.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P021_C01",
+      "text": "16. Prakash Gupta v. SEBI\n, 10 this Court speaking through one of us (DY\n\n Chandrachud, J), observed that the Court must be mindful of the public interest\n\n that guides the functioning of SEBI and should refrain from substituting its own\n\n wisdom over the actions of SEBI. The Court held:\n“101. Therefore, the SEBI Act and the rules,\n regulations and circulars made or issued under the\n legislation, are constantly evolving with a concerted\n aim to enforce order in the securities market and\n promote its healthy growth while protecting investor\n wealth\n\n […]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P022_C01",
+      "text": "102. In a consistent line of precedent, this Court has\n been mindful of the public interest that guides the\n functioning of SEBI and has refrained from\n substituting its own wisdom over the actions of\n SEBI. Its wide regulatory and adjudicatory powers,\n coupled with its expertise and information\n gathering mechanisms, imprints its decisions with\n a degree of credibility. The powers of the SAT and\n the Court would necessarily have to align with SEBI's\n larger existential purpose.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P023_C01",
+      "text": "17. From the above exposition of law, the following principles emerge:\na. Courts do not and cannot act as appellate authorities examining the\n\n correctness, suitability, and appropriateness of a policy, nor are courts\n\n advisors to expert regulatory agencies on matters of policy which they are\n\n entitled to formulate;\n10 2021 SCC OnLine SC 485. PART B\n\nb. The scope of judicial review, when examining a policy framed by a\n\n specialized regulator, is to scrutinize whether it (i) violates the fundamental\n\n rights of the citizens; (ii) is contrary to the provisions of the Constitution; (iii)\n\n is opposed to a statutory provision; or (iv) is manifestly arbitrary. The legality\n\n of the policy, and not the wisdom or soundness of the policy, is the subject\n\n of judicial review;\nc. When technical questions arise – particularly in the domain of economic or\n\n financial matters – and experts in the field have expressed their views and\n\n such views are duly considered by the statutory regulator, the resultant\n\n policies or subordinate legislative framework ought not to be interfered with;\n\nd.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P023_C02",
+      "text": "SEBI’s wide powers, coupled with its expertise and robust information-\n\n gathering mechanism, lend a high level of credibility to its decisions as a\n\n regulatory, adjudicatory and prosecuting agency; and\n\ne. This Court must be mindful of the public interest that guides the functioning\n\n of SEBI and refrain from substituting its own wisdom in place of the actions\n\n of SEBI. We have made a conscious effort to keep the above principles in mind while\n\nadjudicating the petitions, which contain several prayers that require the Court\n\nto enter SEBI’s domain. PART C\n\nC. There is no apparent regulatory failure attributable to SEBI",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P024_C01",
+      "text": "18. The petitioners have submitted, based on the Hindenburg Report and other\n\n newspaper reports, that the FPIs investing in Adani group stocks in the Indian\n\n stock market are shell companies outside India owed by the brother of the\n\n Chairperson of the Adani group. These shell companies have, it is urged, an\n\n unclear ownership pattern and seem to only trade in Adani stocks which\n\n allegedly allows the Adani group to maintain an appearance of financial health\n\n and solvency. The petitioners allege that this would artificially boost the value\n\n of Adani stocks in the market and expose the Indian market and investors to\n\n huge losses.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P025_C01",
+      "text": "19. Additionally, the petitioners contend that after accounting for these shell\n\n companies which allegedly belong to a member of the Adani family, the\n\n promotor shareholding would surpass 75%. This, it is alleged, would be in\n\n contravention of Rule 19A of the Securities Contracts (Regulation) Rules 1957\n\n which mandates a minimum of 25% public shareholding. The alleged\n\n contravention would according to the petitioners entail the delisting of the Adani\n\n group as a consequence. According to the petitioners, the disclosure of the\n\n ownership of the FPIs investing in the Adani stocks lies at the heart of the\n\n alleged violation of Rule 19A. In its order dated 10 March 2023, this Court noted\n\n that SEBI was already seized of investigations into the Adani group since 2020.\n\n This Court further directed SEBI to investigate the alleged violation of Rule 19A\n\n of the Securities Contracts (Regulation) Rules 1957.\n\nPART C",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P026_C01",
+      "text": "20. The FPI Regulations, 2014 had mandated the disclosure of the ultimate\n\n beneficial ownership by natural persons of the FPI under the provisions\n\n concerning \"opaque structures\" in ownership of FPIs. The declaration of the\n\n \"ultimate beneficial owner\" under SEBI Regulations was required to conform to\n\n the disclosure of \"beneficial owner\" under the\nPrevention of Money Laundering\n\n Act, 2002\n11 and thereby under Rule 9 of the Prevention of Money Laundering\n\n Maintenance of Records Rules, 2004. These requirements were amended by\n\n SEBI in 2018 and 2019 by removing the requirement of disclosing ownership of\n\n the FPIs by a natural person. The petitioner submits that this amounts to a\n\n regulatory failure on the part of SEBI.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P027_C01",
+      "text": "21. The petitioner further argues that the LODR Regulations, 2015 defined a\n\n \"related party transaction\" in\nRegulation 2(1)(zb)\nas a transaction involving a\n\n transfer of resources between a listed entity and a \"related party\", regardless of\n\n whether a price is charged. The term \"related party\", in\nRegulation 2(1)(zc)\nhad\n\n the same meaning that is ascribed to “related party” under\nSection 2(76)\nof the\n\n Companies Act, 2013. Based on a report of the Committee on Corporate\n\n Governance dated 5 October 2017 the definition was amended on 1 April 2019\n\n to provide that any person or entity belonging to the \"promoter\" or \"promoter\n\n group\" of a listed entity that held 20% or more of the shareholding in the listed\n\n entity shall be deemed to be a related party.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P028_C01",
+      "text": "22. On 21 November 2021, substantial amendments were made to the definition of\n\n “related party” with deferred prospective effect from 1 April 2022 and 1 April\n\n11 PMLA\n\nPART C",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P029_C01",
+      "text": "2023. In these amendments, the definition of \"related party\" was amended to\n\n include persons holding 20% or more in the listed company whether directly or\n\n indirectly or on a beneficial interest basis under\nSection 89\nof the Companies\n\n Act, 2013 with effect from 1 April 2022. However, with effect from 1 April 2023,\n\n the deemed inclusion would bring within the scope of the term \"related party\"\npersons who hold 10% or more of the listed company. The Expert Committee\n\n report has opined that these amendments were necessitated to address the\n\n mischief or contrivance of effecting a transaction involving a transfer of\n\n resources between a listed company and a third party which is not a related\n\n party, only to technically escape the rigours of compliance applicable to a\n\n related party transaction, to thereafter transfer the resources from the unrelated\n\n party to a related party. The Committee further opined that deferred prospective\n\n application of regulations is not bad practice in commercial law, as it allows the\n\n market to adjust to the proposed changes and avoid uncertainty.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P030_C01",
+      "text": "23. However, the petitioner argues that these amendments to the LODR\n\n Regulations have facilitated the mischief or contravention with regard to related\n\n party transactions by the Adani group. This, as the petitioner argues, is because\n\n the series of amendments have made it difficult to establish contravention of\n\n law by first opening a loophole and then plugging the loophole with deferred\n\n effect. The petitioner has also argued that while initially the director, their\n\n relative, or a relative of a key managerial person was considered a related party,\n\n the amendments have changed this position to hold that a person/entity be\n\n deemed ‘related party’ only if the shareholding of that person/entity is at least\n\nPART C\n\n 20%. These amendments have allegedly made it difficult to investigate the\n\n acquisition against the Adani group for flouting minimum public shareholding\n\n regulations by engaging in related party transactions through FPIs. It has also\n\n made it difficult to assign the specific contravention of a regulation to the Adani\n\n group.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P031_C01",
+      "text": "24. In essence, the petitioners have argued that the amendments to the two\n\n regulations amount to regulatory failure on the part of SEBI and have\n\n accordingly prayed that SEBI be directed to revoke the amendments to the FPI\n\n Regulations and LODR Regulations or make suitable changes. It may be\n\n pointed out that these arguments and prayers were not present in the initial\n\n petitions. They have only propped after the report of the Expert Committee\n\n dated 6 May 2023. The Report stated that in view of the amendments to the\n\n regulations, it cannot return a finding of regulatory failure by SEBI. Thereafter,\n\n the petitioners have made arguments to belie the finding of the Expert\n\n Committee Report.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P032_C01",
+      "text": "25. SEBI in its affidavit dated 10 July 2023 has submitted that the entire rouse\n\n around regulatory failure caused by amendments to FPI Regulations and LODR\n\n Regulations was initiated because of SEBI’s submissions before the Expert\n\n Committee in the context of challenges faced in obtaining information regarding\n\n holders of economic interest. SEBI had used the term “opaque” to describe the\n\n FPIs which it submits was mistaken by the Expert Committee to imply the rules\n\n on “opaque structures” under the FPI Regulations, 2014.\n\nPART C",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P033_C01",
+      "text": "26. SEBI claims no disability in its investigation into the Adani group on account of\n\n the amendments to the FPI Regulations. On merits, SEBI has argued that the\n\n FPI Regulations, 2014 in fact did not prohibit opaque structures. They were\n\n permitted upon meeting certain conditions including the condition that they\n\n provide details of their beneficial ownership as and when called upon to do so.\n\n The 2018 amendment required mandatory disclosures by all FPIs with a few\n\n exceptions. It marked a shift towards tightening the regulations with mandatory\n\n disclosure of beneficial owner details. This new mandate rendered the previous\n\n provision on disclosure upon demand otiose. Mandatory upfront disclosure\n\n meant that the undertaking to disclose beneficial ownership by FPIs was a\n\n vestige. This led to provisions on “opaque structures” being omitted in 2019\n\n upon the recommendation of the Working Group headed by a former Deputy\n\n Governor of RBI.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P034_C01",
+      "text": "27. In essence, SEBI argues that the difficulty it faces in obtaining information\n\n regarding holders of economic interest in FPIs does not change regardless of\n\n the amendments in the FPI Regulations. SEBI contends that a challenge arises\n\n due to differing regulations in jurisdictions where entities with economic interest\n\n in an FPI operate. The ambiguity lies in beneficial ownership identification,\n\n which is based on control or ownership in some jurisdictions, potentially\n\n overlooking entities with economic interest but no apparent control.\n\n Consequently, investment managers or trustees, utilizing arrangements like\n\n voting shares, may be recognized as beneficial owners, leading to a potential\n\n failure in identifying the actual investing entities with economic interest,\n\n especially when holdings are distributed across multiple FPIs.\n\nPART C",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P035_C01",
+      "text": "28. We find merit in SEBI’s arguments and do not find any reason to interfere with\n\n the regulations made by SEBI in the exercise of its delegated legislative powers. SEBI has traced the evolution of its regulatory framework, as noticed above,\n\n and explained the reasons for the changes in its regulations. The procedure\n\n followed in arriving at the current shape of the regulations is not tainted with any\n\n illegality. Neither has it been argued that the regulations are unreasonable,\n\n capricious, arbitrary, or violative of the Constitution. The petitioners have not\n\n challenged the vires of the Regulations but have contended that there is\n\n regulatory failure based on SEBI’s alleged inability to investigate which is\n\n attributed to changes in the regulations. Such a ground is unknown to this\n\n Court’s jurisprudence. In effect, this Court is being asked to replace the powers\n\n given to SEBI by Parliament as a delegate of the legislature with the petitioners’\n\n better judgment. The critique of the regulations made as an afterthought and\n\n based on a value judgment of economic policy is impermissible.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P035_C02",
+      "text": "Additionally,\n\n we find no merit in the argument that the FPI Regulations, 2014 have been\n\n diluted to facilitate mischief. The amendments far from diluting, have tightened\n\n the regulatory framework by making the disclosure requirements mandatory\n\n and removing the requirement of it being disclosed only when sought. The\n\n disclosure requirement therefore is now at par with PMLA.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P036_C01",
+      "text": "29. We do not see any valid grounds raised for this Court to interfere by directing\n\n SEBI to revoke its amendments to regulations which were made in the exercise\n\n of its legislative power. A regulation may be subject to judicial review based on\n\n it being ultra vires the parent legislation or the Constitution. None of these\n\nPART D\n\n grounds have been pressed before the Court. Therefore, we find that the prayer\n\n seeking directions to SEBI to revoke its amendments to the FPI Regulations\n\n and LODR Regulations must fail.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P037_C01",
+      "text": "30. SEBI has completed twenty-two out of the twenty-four investigations into the\n\n Adani group. It submits that the remaining two are pending due to inputs being\n\n awaited from foreign regulators. We also record the assurance given by the\n\n Solicitor General on behalf of SEBI that the investigations would be concluded\n\n expeditiously. SEBI cannot keep the investigation open-ended and\n\n indeterminate in time. Hence, SEBI shall complete the pending investigations\n\n preferably within three months.\nD. The plea to transfer the investigation from SEBI to another agency or to\n an SIT\n\n i. The power to transfer an investigation is exercised in extraordinary\n\n situations",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P038_C01",
+      "text": "31. The petitioners seek the transfer of the investigation from SEBI to the CBI or an\n\n SIT. The question that falls for decision is whether a case has been established\n\n by the petitioners for the court to issue such a direction.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P039_C01",
+      "text": "32. This Court does have the power under\nArticle 32\nand\nArticle 142\nof the\n\n Constitution to transfer an investigation from the authorized agency to the CBI\n\n or constitute an SIT. However, such powers must be exercised sparingly and in\n\n extraordinary circumstances. Unless the authority statutorily entrusted with the\n\nPART D\n\n power to investigate portrays a glaring, willful and deliberate inaction in carrying\n\n out the investigation the court will ordinarily not supplant the authority which has\n\n been vested with the power to investigate. Such powers must not be exercised\n\n by the court in the absence of cogent justification indicative of a likely failure of\n\n justice in the absence of the exercise of the power to transfer. The petitioner\n\n must place on record strong evidence indicating that the investigating agency\n\n has portrayed inadequacy in the investigation or prima facie appears to be\n\n biased.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 142"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P040_C01",
+      "text": "33. Recently, in\nHimanshu Kumar v. State of Chhattisgarh\n12, this Court,\n\n speaking through one of us (JB Pardiwala, J) relying on a judgement of a three\n\n judge Bench of this Court in\nK.V. Rajendran v. Superintendent of Police\n\n CBCID South Zone, Chennai13\nreiterated the principle that the power to\n\n transfer an investigation to investigating agencies such as the CBI must be\n\n invoked only in rare and exceptional cases. Further, no person can insist that\n\n the offence be investigated by a specific agency since the plea can only be that\n\n the offence be investigated properly. The Court held as follows:\n“49. Elaborating on this principle, this Court further\n observed:\n“17. … the Court could exercise its constitutional\n powers for transferring an investigation from the State\n investigating agency to any other independent\n investigating agency like CBI only in rare and\n exceptional cases.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P040_C02",
+      "text": "Such as where high officials of State\n authorities are involved, or the accusation itself is\n against the top officials of the investigating agency\n thereby allowing them to influence the investigation,\n and further that it is so necessary to do justice and to\n12 2022 SCC OnLine SC 884\n13 (2013) 12 SCC 480\n\nPART D\n\n instil confidence in the investigation or where the\n investigation is prima facie found to be tainted/biased.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P041_C01",
+      "text": "50. The Court reiterated that an investigation may be\n transferred to the CBI only in “rare and exceptional\n cases”. One factor that courts may consider is that such\n transfer is “imperative” to retain “public confidence in\n the impartial working of the State agencies.” This\n observation must be read with the observations made\n by the Constitution Bench in the case of Committee for\n Protection of Democratic Rights, West Bengal (supra),\n that mere allegations against the police do not\n constitute a sufficient basis to transfer the investigation.\n\n …",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P042_C01",
+      "text": "52. It has been held by this Court in\nCBI v. Rajesh\n Gandhi\n, 1997 Cri LJ 63, that no one can insist that an\n offence be investigated by a particular agency. We fully\n agree with the view in the aforesaid decision. An\n aggrieved person can only claim that the offence he\n alleges be investigated properly, but he has no right to\n claim that it be investigated by any particular agency of\n his choice.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P043_C01",
+      "text": "53. The principle of law that emerges from the\n precedents of this Court is that the power to transfer an\n investigation must be used “sparingly” and only “in\n exceptional circumstances”.\nIn assessing the plea\n urged by the petitioner that the investigation must be\n transferred to the CBI, we are guided by the\n parameters\nlaid down by\nthis Court for the exercise of\n that extraordinary power.”\n\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P044_C01",
+      "text": "34. Given the above position of law, the question that arises before the Court is\n\n whether, in the facts of the present case, the transfer of investigation from SEBI\n\n to another agency is warranted.\nii. SEBI has prime facie conducted a comprehensive investigation",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P045_C01",
+      "text": "35. As noted above, out of the twenty-four investigations carried out by SEBI,\n\n twenty-two are concluded. Twenty-two final investigation reports and one\n\n interim investigation report have been approved by the competent authority\n\nPART D\n\n under SEBI’s procedures. With respect to the interim investigation reports SEBI\n\n has submitted that it has sought information from external agencies/entities and\n\n upon receipt of such information will determine the future course of action.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P046_C01",
+      "text": "36. Further, in its status report, SEBI has provided the current status of each of the\n\n investigations conducted by it and the reasons for interim findings in two of the\n\n investigations. SEBI has also provided details such as the number of emails\n\n issued, summons for personal appearance, pages of documents examined,\n\n statements recorded on oath, etc. for each investigation. An overview of twenty-\n\n four investigations conducted by SEBI is as follows:\nSr. Issues No. of\n No.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P046_C02",
+      "text": "Investigations\n 1 Minimum Public Shareholding- alleged violation of 1\n Rule 19A of Securities Contracts (Regulation)\n Rules, 1957\n2 Alleged manipulation of stock prices in 2\ncontravention of existing laws\n 3 Alleged related Party Transactions (RPT)-Failure 13\nto disclose transactions with Related Parties and\n other relevant information\n 4 Other Issues:\n(A) Possible violation of SEBI (Foreign Portfolio 1\n Investors) Regulations, 2014 and 2019\n (B) Possible violation of SEBI (Substantial\nAcquisition of Shares and Takeovers) 1\nRegulations, 2011\n (C) Trading-Pre-post Hindenburg Report\n (D) Possible violation of SEBI (Prohibition of 1\nInsider Trading) Regulations, 2015 5\nTotal 24\n\nPART D\n\n SEBI’s status report and the details of the twenty-four investigations does not\n\n indicate inaction by SEBI. In fact, to the contrary, the course of conduct by SEBI\n\n inspires confidence that SEBI is conducting a comprehensive investigation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P047_C01",
+      "text": "37. The petitioners have also raised questions about the delay by SEBI in\n\n submitting the status report before this Court. As noted earlier, by an order\n\n dated 2 March 2023, this Court directed SEBI to conclude its investigation within\n\n two months and file a status report before this Court. This Court by its order\n\n dated 17 May 2023, granted SEBI an extension of time till 14 August 2023 to\n\n submit its status report about its investigation. Eventually, SEBI filed an\n\n interlocutory application intimating this Court about the status of the twenty-four\n\n investigations undertaken by SEBI on 14 August 2023. SEBI submitted a status\n\n report dated 25 August 2023 providing comprehensive details about all the\n\n investigations carried out by SEBI. Therefore, there is a delay of only ten days\n\n in filing the report. Such a delay does not prima facie indicate deliberate inaction\n\n by SEBI, particularly, as the issue involved a complex investigation in\n\n coordination with various agencies, both domestic and foreign.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P048_C01",
+      "text": "38. Further, as noted in part C of this judgment, no apparent regulatory failure can\n\n be attributed to SEBI based on the material before this Court. Therefore, there\n\n is prima facie no deliberate inaction or inadequacy in the investigation by SEBI.\n\nPART D\n\niii. Reliance on the OCCRP report and the letter by DRI is misconceived",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P049_C01",
+      "text": "39. To assail the adequacy of SEBI’s investigation thus far, the petitioner has\n\n sought to rely on a report published by OCCRP and various newspapers\n\n referring to the report. The petitioner’s case appears to rest solely on inferences\n\n from the report by the OCCRP, a third-party organization involved in\n\n “investigative reporting”. The petitioners have made no effort to verify the\n\n authenticity of the claims.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P050_C01",
+      "text": "40. The reliance on newspaper articles or reports by third-party organizations to\n\n question a comprehensive investigation by a specialized regulator does not\n\n inspire confidence. Such reports by “independent” groups or investigative\n\n pieces by newspapers may act as inputs before SEBI or the Expert Committee.\n\n However, they cannot be relied on as conclusive proof of the inadequacy of the\n\n investigation by SEBI. Nor, as the petitioners state, can such inputs be regarded\n\n as “credible evidence”. The veracity of the inputs and their sources must be\n\n demonstrated to be unimpeachable. The petitioners cannot assert that an\n\n unsubstantiated report in the newspapers should have credence over an\n\n investigation by a statutory regulator whose investigation has not been cast into\n\n doubt on the basis of cogent material or evidence.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P051_C01",
+      "text": "41. In addition to the OCCRP report, the petitioners have also relied on a letter\n\n dated 31 January 2014 sent by the DRI to the then SEBI Chairperson. The letter\n\n purportedly alerted SEBI about inter alia potential stock market manipulation by\n\n the Adani group through over-valuation of the import of power equipment from\n\nPART D\n\n a UAE-based subsidiary. According to the petitioner, SEBI did not disclose the\n\n receipt of the letter and did not take adequate action based on it.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P052_C01",
+      "text": "42. SEBI has submitted that after receiving the above letter, it sought information\n\n from the DRI on the issue and received the requisite inputs. Further, while SEBI\n\n examined the preliminary alerts by the DRI, the Additional Director General\n\n (Adjudication), DRI concluded their examination and held that the allegations\n\n were not established. The order of the Additional Director General was assailed\n\n by the Commissioner of Customs before the Customs, Excise and Service Tax\n\n Tribunal. 14 The CESTAT passed an order on 8 November 2022 dismissing the\n\n appeal and concluding that the allegation of overvaluation was not proved. The\n\n order of the CESTAT was upheld by this Court on 27 March 2023. Further, SEBI\n\n has also submitted that its investigation based on the DRI alerts was concluded\n\n and the related findings were also placed before the Expert Committee.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P053_C01",
+      "text": "43. None of the above facts have been disputed by the counsel for the petitioners.\n\n The petitioner is re-agitating an issue that has already been settled by\n\n concurrent findings of the DRI’s Additional Director General, the CESTAT and\n\n this Court. Therefore, the petitioner’s assertion that SEBI was lackadaisical in\n\n its investigation is not borne out from the reference to the letter sent by the DRI\n\n in 2014.\n14 “CESTAT”\n\nPART E",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P054_C01",
+      "text": "44. Additionally, it must be noted that in the present case, this Court has already\n\n exercised its extraordinary powers by setting up an Expert Committee to assess\n\n the situation in the market, suggest regulatory measures, and investigate\n\n whether there has been a regulatory failure. To expect the Court to monitor the\n\n investigation indefinitely, even after the committee has submitted its report and\n\n SEBI has completed its investigation in twenty-two out of twenty-four enquiries\n\n is not warranted.\nE. Allegations of conflict of interest against members of the Expert\n Committee",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P055_C01",
+      "text": "45. The petitioners have raised allegations against some of the members of the\n\n Expert Committee alleging that there was a conflict of interest which was not\n\n revealed to the Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P056_C01",
+      "text": "46. On 2 March 2023, this Court constituted the Expert Committee comprising of\n\n domain experts and headed by a former judge of this Court. The allegations\n\n against certain members of the committee were raised by the petitioner for the\n\n first time only on 18 September 2023 almost six months after the constitution of\n\n the committee and several months after the Committee had submitted its report\n\n in May 2023. All the purported facts and documents relied on by the petitioner\n\n in this regard were available in the public domain well before the allegations\n\n were raised by the petitioner for the first time in September 2023. The belated\n\n allegations by the petitioner prima facie indicate that they have not been made\n\n in good faith.\n\nPART E",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P057_C01",
+      "text": "47. In any event, the allegation against Mr Somasekhar Sundaresan is that he had\n\n represented the Adani group before various fora including the SEBI Board, as\n\n a lawyer. To buttress the submission, the petitioner has merely averred to one\n\n order of the SEBI Board dated 25 May 2007 which indicates that Mr\n\n Sundaresan has appeared for Adani Exports Ltd on an unconnected issue. On\n\n a specific query by the Court during the hearing, counsel appearing on behalf\n\n of the petitioner did not present any additional evidence. The acceptance of a\n\n professional brief by a lawyer in 2007 cannot be construed to reflect “bias” or\n\n even a “likelihood of bias” in 2023. There is an absence of proximity both in\n\n terms of time (the alleged appearance was sixteen years ago) and subject\n\n matter. There was also no justifiable reason for the petitioners to wait until the\n\n expert committee submitted its report.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P058_C01",
+      "text": "48. Similarly, the allegations against Mr OP Bhatt and Mr Kamath have not been\n\n adequately substantiated by the petitioner. With regard to Mr OP Bhatt, the\n\n petitioner has alleged that he is presently working as the Chairman of a leading\n\n renewable energy company, which is working in partnership with the Adani\n\n group on certain projects. Additionally, the petitioner has also raised vague\n\n accusations against Mr OP Bhatt and Mr Kamath in relation to unconnected\n\n misconduct by Mr Vijay Mallya and the ICICI Bank, respectively.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P059_C01",
+      "text": "49. The petitioner has not established the link between these unsubstantiated\n\n allegations and the appointment of Mr Bhatt and Mr Kamath to the committee.\n\n Here too, the petitioner has only annexed newspaper reports published after\n\nPART F\n\n the appointment of the committee by this Court, without any attempts to verify\n\n their authenticity or supplement them with independent research.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P060_C01",
+      "text": "50. Therefore, the allegations of conflict of interest against members of the Expert\n\n Committee are unsubstantiated and do not warrant this Court’s serious\n\n consideration.\nF. Other recommendations by the Expert Committee",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P061_C01",
+      "text": "51. The Expert Committee met on 17 March 2023 and noted that it would require\n\n specific factual briefings from SEBI on all four aspects within the remit of the\n\n Committee. It further sought inputs from market participants with regard to (i)\n\n suggestions and measures to strengthen investor awareness; (ii) strengthen\n\n the statutory and regulatory framework; and (iii) secure compliance with the\n\n existing framework. We have discussed the committee’s analysis on the issue\n\n of whether there was a regulatory failure above. The other observations and\n\n recommendations of the Expert Committee report are discussed below.\ni. Volatility and short selling",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 62,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P062_C01",
+      "text": "52. The Court in its order dated 10 March 2023 expressed concern over the impact\n\n of volatility in the securities market on Indian investors. It therefore empowered\n\n the Expert Committee with the remit to enquire into and assess the volatility in\n\n the market. The enquiry was to give a sense of direction to increase investor\n\n awareness, address deficiencies in the regulatory framework and enable the\n\n Committee to make any other suggestions to avoid unanticipated volatility\n\n which would adversely impact the interests of investors.\n\nPART F",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P063_C01",
+      "text": "53. Market forces act on the assessment of available information and its anticipated\n\n impact. This behaviour creates volatility in the market. However, such volatility\n\n is an inherent feature of the market and becomes a matter of concern when it\n\n has wide ramifications. The stocks of the Adani group witnessed volatility in the\n\n aftermath of the publication of the Hindenburg Report. This volatility was\n\n examined by the Expert Committee, which after examining the facts presented\n\n by SEBI and engaging with market participants, opined that the impact of the\n\n Adani group-related events on the overall market was low.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 64,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P064_C01",
+      "text": "54. The report of the Committee indicates that the Indian securities’ market showed\n\n resilience and the impact of the fluctuations in the Adani stocks was not\n\n deleterious to the economic ecosystem as a whole. The volatility in Adani stocks\n\n in the aftermath of the Hindenburg Report was stabilised due to market forces\n\n and mitigatory measures. While shares of the group fluctuated, it did not pose\n\n any systemic market-level risk. According to the Expert Committee the trend\n\n observed in volatility in the Indian market in comparison with the global volatility\n\n index has been consistent since the COVID-19 pandemic and was maintained\n\n even during the period when volatility was observed in the Adani stocks.\n\n Therefore, according to the Committee, while events related to Adani stocks\n\n had an impact at an individual scale, it did not result in volatility in the market.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 65,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P065_C01",
+      "text": "55. After drawing the above conclusion, the Expert Committee has additionally\n\n made the following recommendation upon considering the submissions of SEBI\n\n and other market participants:\n\nPART F\n\n “47.⁠ ⁠SEBI has submitted that only recently, it has\n made a regulatory intervention in terms of\n supervising the construction of stock indices. SEBI must consider directing index writers to\n construct indices to compute volatility of\n stocks that are constituents of indices so that\n volatility in these stocks can be compared\n with volatility in the indices. The availability of\n such data on a real time basis would enable\n the market to be more informed in making its\n investment and divestment decisions.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 65,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P065_C02",
+      "text": "SEBI\n must ensure that there are secular norms and\n periodic reviews for construction and design\n changes in indices.”\n\n In its note filed in compliance with this Court’s order dated 10 February 2023,\n\n SEBI had submitted that it has implemented measures to deal with issues which\n\n may impact sudden and unusual price movements, excessive volatility, etc. by\n\n measures like Market Wide Circuit Breakers, Circuit Filters/Price bands on\n\n individual shares, additional surveillance measures 15, and Market Wide Position\n\n Limits. SEBI has inter alia reiterated these submissions before the Expert\n\n Committee and has further, in its affidavit dated 10 July 2023 placed on record\n\n the existing ASM and graded surveillance measure 16 framework. We are\n\n inclined to direct SEBI to further consider the recommendations and take\n\n appropriate measures.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 66,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P066_C01",
+      "text": "56. The chain of events which triggered the Adani group-related events and\n\n eventually the petitions filed before this Court were attributable to the report by\n\n short-seller Hindenburg Research. The Expert Committee also points to the\n\n publication of the report to explain the volatility observed. The petitioner on the\n\n other hand has argued that the real cause of the loss of investor money was\n\n15 ASM\n16 GSM\n\nPART F\n\n the alleged unchecked violations of law and artificial boosting of share prices\n\n which would always entail the risk of volatility upon being discovered in one way\n\n or the other. These allegations have been investigated by SEBI including some\n\n investigations which were directed by this Court. SEBI as the statutory regulator\n\n has stated that it would complete the process in accordance with law.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 67,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P067_C01",
+      "text": "57. However, this Court had sought inputs as to the role of short sellers, like\n\n Hindenburg, and the rules governing their actions as well as measures which\n\n may be taken to regulate them. Hindenburg Research describes itself as a\n\n research firm that specialises in \"forensic financial research\". The firm purports\n\n to seek out situations where companies may have accounting irregularities, bad\n\n actors in management, undisclosed related party transactions, illegal/unethical\n\n business or financial reporting practices and undisclosed regulatory, product or\n\n financial issues.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 68,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P068_C01",
+      "text": "58. Short selling is a sale of securities which the seller does not own but borrows\n\n from another entity, with the hope of repurchasing them at a later date with a\n\n lower price, thus, attempting to profit from an anticipated decline in the price of\n\n the securities. In its report, Hindenburg Research admits to taking a short\n\n position in the Adani group through US-traded bonds and non-Indian traded\n\n derivative instruments. SEBI has submitted that short selling is a desirable and\n\n essential feature to provide liquidity and to help price correction in over-valued\n\n stocks and hence, short selling is recognised as a legitimate investment activity\n\n by securities market regulators in most countries. Short selling is regulated by\n\nPART F\n\n a circular notified by SEBI on 20 December 2007. SEBI submits that any\n\n restrictions on short selling, may distort efficient price discovery, provide\n\n promoters unfettered freedom to manipulate prices, and favour manipulators\n\n rather than rational investors. Therefore, the International Organisation of\n\n Securities Commission recommends that short selling be regulated but not\n\n prohibited with an aim to increase transparency.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 68,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P068_C02",
+      "text": "We record the statement made\n\n by the Solicitor General before this Court that measures to regulate short selling\n\n will be considered by the Government of India and SEBI. SEBI and the\n\n investigative agencies of the Union Government shall also enquire into whether\n\n there was any infraction of law by the entities, which engaged in short-selling\n\n on this occasion. The loss which has been sustained by Indian investors as a\n\n result of the volatility caused by the short positions taken by Hindenburg\n\n Research and any other entities acting in concert with Hindenburg Research\n\n should be probed.\nii. Investor Awareness",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 69,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P069_C01",
+      "text": "59. Informed decisions made by an aware investor population are a pre-requisite\n\n to an efficient market. The data from 2019 to 2022 provided by SEBI shows that\n\n there is an increase in the number of investors in the Indian economy in the\n\n ‘future and options segment’ of the stock market. 17 This requires specialized\n\n knowledge. The creation of a framework for this knowledge to percolate to\n\n investors lies in the policy domain. However, this Court sought an assessment\n\n17 SEBI, Analysis of Profit and Los of Individual Traders dealing in Equity F&O Segment, 25 January 2023, available\n\nat <https://www.sebi.gov.in/reports-and-statistics/research/jan-2023/study-analysis-of-profit-and-loss-of-\nindividual-traders-dealing-in-equity-fando-segment_67525.html#>\n\nPART F\n\n of the existing framework to aid a determination of whether the regulatory\n\n framework suffers from infirmities which would lead to an adverse impact on the\n\n Indian investors. The Court also sought inputs on measures which may be\n\n taken to increase investor awareness thereby creating a conducive\n\n environment for a more efficient market.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 69,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P069_C02",
+      "text": "The Expert Committee solicited views\n\n and perspectives from SEBI and various market participants.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 70,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P070_C01",
+      "text": "60. Before the Expert Committee, SEBI submitted that there has been no market\n\n default owing to price movements due to the measures taken by SEBI. These\n\n measures include an index-based market-wide \"circuit breaker\" system, limit of\n\n 20% in movement of prices in individual shares, price bands at 10% of the\n\n previous day's closing price for the future and options segment, stock specific\n\n surveillance mechanisms like ASM and GSM, and cautionary messages\n\n displayed to brokers placing orders for stocks under ASM or GSM.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 71,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P071_C01",
+      "text": "61. The Expert Committee has concluded that having systems like ASM and GSM\n\n is not sufficient and that there must be a real prospect of investors being aware\n\n of heightened surveillance by measures, such as clients being alerted when\n\n stocks are under ASM or GSM at the point of entry of orders. The Expert\n\n Committee also highlighted the possibility of there being a surfeit of information\n\n in which investors find themselves drowned. Measures to communicate\n\n relevant information in a comprehensive manner to the investors are therefore\n\n imperative for informed decision making.\n\nPART F",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 72,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P072_C01",
+      "text": "62. The Committee also explored investor awareness with respect to unclaimed\n\n securities, dividends and bank deposits of deceased next of kin which may be\n\n lost due to the legal framework. The Committee invited the Investor Education\n\n and Protection Fund Authority 18 to present its workings and manner of\n\n administration. Based on its findings, the Committee recommended that the\n\n Government of India establish a centralised authority to handle and process\n\n unclaimed private assets. It suggested creating the Central Authority for\n\n Unclaimed Property which must aim to reunite assets of deceased persons with\n\n their next of kin. The Committee also made some suggestions in the context of\n\n IEPFA which state:\n“a. The integrated portal announced in the Finance\n Minister Budget Speech should be expedited\n and process re-engineering delegation to the\n issuer companies based upon type and\n threshold of the claims must be considered;\nb. The same may be reviewed on incremental\n basis from time to time considering the benefits\n on reducing the timeline for disposal of claims\n vis-à-vis the risks of fraud.\nc.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 72,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P072_C02",
+      "text": "Pilot projects such as taking up names from the\n death registry in a given area to map it with the\n database of the IEPFA and proactively\n attempting to reach out to the next of kin should\n be considered;\nd. Registered market intermediaries who are\n answerable to the regulatory regime of financial\n sector regulators could be identified and\n recognized as agents for service delivery to\n enable release of unclaimed dividend and\n securities;\ne. An officer strength of a dozen personnel is\n evidently disproportionate. The IEPFA would\n need a full time Chief Executive Officer who\n would have specific key performance indicia\n that would be fixed by the governance\n oversight of the Authority.”\n\n18 IEPFA\n\nPART F\n\n The Committee made further recommendation to induce financial literacy and\n\n make it a fundamental part of pedagogy right from school curricula.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 73,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P073_C01",
+      "text": "63. SEBI has submitted that while it is open to considering some of the above\n\n suggestions, it is not empowered to implement others as they lie outside its\n\n prescribed sphere of competence and expertise. In particular, SEBI has\n\n submitted that the recommendations on creation of a financial redressal\n\n agency, central unclaimed property authority, and framework to set up a multi-\n\n agency committee would require multiple regulators and the Government may\n\n need to look into these recommendations. We find it appropriate to direct both\n\n the Government of India and SEBI to consider the recommendations of the\n\n Expert Committee with respect to investor awareness and create an appropriate\n\n legal framework to implement the recommendations.\n\niii. Recommendations of the Expert Committee to strengthen regulatory\n\n framework and secure compliance to protect investors",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 74,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P074_C01",
+      "text": "64. The Expert Committee was also directed to suggest measures to (i) strengthen\n\n the statutory and/or regulatory framework; and (ii) secure compliance with the\n\n existing framework for the protection of investors. Pursuant to its remit, the\n\n Committee in its report dated 6 May 2023 has made the following suggestions:\na. Structural Reform: SEBI must perform its complex functions in a\n\n structured form by ensuring greater transparency in law-making, and\n\nPART F\n\n greater societal involvement in contributing to the law. This will lead to\n\n greater compliance with the laws;\nb. Effective Enforcement Policy: SEBI must optimize its resources and lay\n\n down policies for effective enforcement of its law by stipulating the criteria\n\n by which it may use its powers to initiate measures. This must be\n\n consistent with the legislative policy of SEBI and an attempt must be\n\n made to apply the law prospectively;\nc. Judicial Discipline: Adjudicating Officers and Whole Time Members must\n\n show consistency and not take differing views in similar circumstances.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 74,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P074_C02",
+      "text": "Judicial discipline must be followed in applying ratios of previous\n\n decisions as well as following the decisions made at the appellate stage;\n\nd. Settlement Policy: SEBI must have a robust settlement policy and\n\n formulate objective criteria to regulate it. It must not be hesitant to enter\n\n settlements whereby financial injury commensurate with the alleged\n\n violation may be inflicted on the party;\ne. Timelines: SEBI must lay down and adhere to strict timelines for initiation\n\n of investigations, completion of investigations, initiation of proceedings,\n\n disposal of settlement, and disposal of proceedings;\n\nf. Surveillance and Market Administration Measures: The element of\n\n human discretion must be done away with as far as possible. It must be\n\n saved for extraordinary circumstances that would not have been factored\n\n in already. With regard to disclosures, all provision of data should be in\n\n machine-readable format and inter-operable across electronic platforms;\n\nPART F\n\n g. The suggestions made on structural reforms by committees in the past\n\n should be followed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 74,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P074_C03",
+      "text": "These include (i) the creation of a Financial Redress\n\n Agency that handles investor grievances across sectors; (ii) easing and\n\n centralizing the process for recovering unclaimed private property, which\n\n is currently spread across agencies, either through the aegis of the\n\n Financial Stability and Development Council or even by appropriate\n\n legislation; (iii) creation of a framework for a multi-agency committee to\n\n investigate complex enforcement matters. The same must have a\n\n temporary shelf life which ends upon initiation of prosecution. It may only\n\n be used in cases involving serious cross-sectoral repercussions which\n\n would need multi-disciplinary skill sets to act in coordination; and (iv)\n\n following the doctrine of separation within SEBI in its quasi-judicial, and\n\n executive arm.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 75,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P075_C01",
+      "text": "65. SEBI has addressed these recommendations in its affidavit dated 10 July 2023.\n\n SEBI has inter alia submitted that its existing framework already accounts for\n\n the recommendations of the Expert Committee on effective enforcement policy,\n\n judicial discipline, settlement policy, and surveillance & market administration\n\n measures. SEBI has opposed the recommendations with respect to laying\n\n down timelines on the ground that the time taken to form a prima facie opinion\n\n and conduct an investigation is contingent on many variable factors which\n\n render the process and time taken subjective. SEBI submits that they cannot\n\n be uniformly bound to a time limit. Further, as noted above, SEBI has submitted\n\n that creation of financial redressal agency, central unclaimed property authority,\n\nPART F\n\n and framework to set up a multi-agency committee would require multiple\n\n regulators and the Government may need to look into these recommendations.\n\n SEBI argues that it is not competent to enforce the same and requires the\n\n Government of India to consider them.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 76,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P076_C01",
+      "text": "66. The Expert Committee has made the above suggestions after applying its mind\n\n to the wealth of information collected from SEBI, market participants, invitees\n\n and from their own expertise. These suggestions merit favourable consideration\n\n with a positive intent. We direct the Government of India and SEBI to consider\n\n these suggestions and to take the benefit of the efforts put in by the Expert\n\n Committee. We may add that the approach in considering these suggestions\n\n must not be defensive but constructive. The Committee has favourably noted\n\n some of the measures that SEBI has taken in reaction to the events and\n\n learnings from the market. The same attitude of advantaging from the\n\n perspectives should be taken by the Government of India and SEBI. The Union\n\n Government and SEBI would be at liberty to interact with the Committee so as\n\n to take this forward. Since a member of the Bar who was a member of the\n\n Committee has been appointed to the Bench since the submission of the report,\n\n the Chairperson of the Committee will be at liberty to nominate a member with\n\n legal expertise and domain knowledge for the purpose of interacting with the\n\n Union Government and SEBI.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 76,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P076_C02",
+      "text": "PART G\n\nG. Conclusion",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 77,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P077_C01",
+      "text": "67. In a nutshell, the conclusions reached in this judgement are summarized below:\na. The power of this Court to enter the regulatory domain of SEBI in framing\n\n delegated legislation is limited. The court must refrain from substituting its\n\n own wisdom over the regulatory policies of SEBI. The scope of judicial\n\n review when examining a policy framed by a specialized regulator is to\n\n scrutinise whether it violates fundamental rights, any provision of the\n\n Constitution, any statutory provision or is manifestly arbitrary;\n\n b. No valid grounds have been raised for this Court to direct SEBI to revoke\n\n its amendments to the FPI Regulations and the LODR Regulations which\n\n were made in exercise of its delegated legislative power. The procedure\n\n followed in arriving at the current shape of the regulations does not suffer\n\n from irregularity or illegality. The FPI Regulations and LODR Regulations\n\n have been tightened by the amendments in question;\n\n c. SEBI has completed twenty-two out of the twenty-four investigations into\n\n the allegations levelled against the Adani group.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 77,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P077_C02",
+      "text": "Noting the assurance given\n\n by the Solicitor General on behalf of SEBI we direct SEBI to complete the\n\n two pending investigations expeditiously preferably within three months;\n\n d. This Court has not interfered with the outcome of the investigations by SEBI. SEBI should take its investigations to their logical conclusion in accordance\n\n with law;\n\nPART G\n\ne. The facts of this case do not warrant a transfer of investigation from SEBI. In an appropriate case, this Court does have the power to transfer an\n\n investigation being carried out by the authorized agency to an SIT or CBI. Such a power is exercised in extraordinary circumstances when the\n\n competent authority portrays a glaring, willful and deliberate inaction in\n\n carrying out the investigation. The threshold for the transfer of investigation\n\n has not been demonstrated to exist;\nf. The reliance placed by the petitioner on the OCCPR report to suggest that\n\n SEBI was lackadaisical in conducting the investigation is rejected. A report\n\n by a third-party organization without any attempt to verify the authenticity of\n\n its allegations cannot be regarded as conclusive proof.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 77,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P077_C03",
+      "text": "Further, the\n\n petitioner’s reliance on the letter by the DRI is misconceived as the issue\n\n has already been settled by concurrent findings of DRI’s Additional Director\n\n General, the CESTAT and this Court;\ng. The allegations of conflict of interest against members of the Expert\n\n Committee are unsubstantiated and are rejected;\n\nh. The Union Government and SEBI shall constructively consider the\n\n suggestions of the Expert Committee in its report detailed in Part F of the\n\n judgment. These may be treated as a non-exhaustive list of\n\n recommendations and the Government of India and SEBI will peruse the\n\n report of the Expert Committee and take any further actions as are\n\nPART G\n\n necessary to strengthen the regulatory framework, protect investors and\n\n ensure the orderly functioning of the securities market; and\n\n i. SEBI and the investigative agencies of the Union Government shall probe\n\n into whether the loss suffered by Indian investors due to the conduct of\n\n Hindenburg Research and any other entities in taking short positions\n\n involved any infraction of the law and if so, suitable action shall be taken.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 78,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P078_C01",
+      "text": "68. Before concluding, we must observe that public interest jurisprudence under\nArticle 32\nof the Constitution was expanded by this Court to secure access to\n\n justice and provide ordinary citizens with the opportunity to highlight legitimate\n\n causes before this Court. It has served as a tool to secure justice and ensure\n\n accountability on many occasions, where ordinary citizens have approached\n\n the Court with well-researched petitions that highlight a clear cause of action.\n\n However, petitions that lack adequate research and rely on unverified and\n\n unrelated material tend to, in fact, be counterproductive. This word of caution\n\n must be kept in mind by lawyers and members of civil society alike.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 32"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 79,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P079_C01",
+      "text": "69. We are grateful to all the members and the Chairperson of the Expert\n\n Committee for their time, efforts, and dedication in preparing their erudite,\n\n comprehensive, and detailed report in a time-bound manner. Subject to the\n\n consent and availability of the members and Chairperson of the Expert\n\n Committee, SEBI and the Government of India may draw upon their expertise\n\n and knowledge while taking necessary measures pursuant to the\n\n recommendations of the Committee.\n\nPART G",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 80,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P080_C01",
+      "text": "70. The Petitions shall accordingly stand disposed of in the above terms.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 81,
+      "chunk_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA_P081_C01",
+      "text": "71. Pending applications, if any, stand disposed of.\n….…..…....…........……………….…........CJI.\n[Dr Dhananjaya Y Chandrachud]\n\n ..…..…..…....…........……………….…........J.\n [J B Pardiwala]\n\n ..…..…..…....…........……………….…........J.\n [Manoj Misra]\n\nNew Delhi;\nJanuary 03, 2024",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Vishal Tiwari vs Union Of India",
+    "case_id": "SC_2024_VISHAL_TIWARI_VS_UNION_OF_INDIA",
+    "court": "Supreme Court of India",
+    "year": "2024",
+    "facts_summary": "2024 INSC 3\n\n ORIGINAL CIVIL/CRIMINAL JURISDICTION\n\n Writ Petition (C) No. 162 of 2023\n\n Vishal Tiwari …Petitioner\n\n Versus\n\n Union of India & Ors. …Respondents\nWith\n\n Writ Petition (Crl) No. 39 of 2023\n\n With\n\n Writ Petition (C) No. 201 of 2023\n\n And with\n\n Writ Petition (Crl) No. 57 of 2023\n\nDr Dhananjaya Y Chandrachud, CJI\n\nTable of Contents\n\nA. Factual background and submissions ....................................................... 3\n\nB. The scope of judicial review over SEBI’s regulatory domain ................. 11\n\nC. There is no apparent regulatory failure attributable to SEBI .................. 17\n\nD. The plea to transfer the investigation from SEBI to another agency or to\nan SIT .................................................................................................................. 23\n\n i. The power to transfer an investigation is exercised in extraordinary\n situations ........................................................................................................ 23\n\n ii. SEBI has prime facie conducted a comprehensive investigation ...... 25\n\n iii. Reliance on the OCCRP report and the letter by DRI is misconceived\n\nE. 1. A batch of writ petitions filed before this Court under\nArticle 32\nof the\n\n Constitution in February 2023, raised concerns over the precipitate decline in\n\n investor wealth and volatility in the share market due to a fall in the share prices\n\n of the Adani Group of Companies. 1 The situation was purportedly caused by a\n\n report w",
+    "legal_issues": "4. The batch of cases came up for hearing on 17 February 2023. This Court heard\n\n detailed submissions on behalf of the parties and reserved further orders. In its\n\n order dated 2 March 2023, this Court took note of the loss of investor wealth in\n\n the aftermath of the report by Hindenburg Research and recognized the dire\n\n need to protect Indian investors from unanticipated volatility in the market. This\n\n Court observed that SEBI is already seized of the investigation into the Adani\n\n group and inter alia directed:\na. SEBI to continue with its investigation and examine the following non-\nexhaustive issues raised in the petitions:\n“a. Whether there has been a violation of Rule\n 19A of the Securities Contracts (Regulation)\n Rules 1957;\nb. Whether there has been a failure to disclose\n transactions with related parties and other\n relevant information which concerns related\n parties to SEBI, in accordance with law; and\n c. Whether there was any manipulation of stock\n prices in contravention of existing laws;”\n\n b. SEBI to conclude its investigation within two months and file a status report\n\n before this Court;\n\nPART A\n\n c. 8. In the above background, this matter came up for hearing before this Court on\n\n 24 November 2023. We heard Mr Prashant Bhushan, learned counsel and\n\n other counsel appearing on behalf of the petitioners and Mr Tushar Mehta,\n\n learned Solicitor General appearing on behalf of SEBI.\n\nPART A 9. Mr Prashant Bhushan, appearing on behalf of the petitioner broadly",
+    "ratio_summary": "31. The petitioners seek the transfer of the investigation from SEBI to the CBI or an\n\n SIT. The question that falls for decision is whether a case has been established\n\n by the petitioners for the court to issue such a direction. 34. Given the above position of law, the question that arises before the Court is\n\n whether, in the facts of the present case, the transfer of investigation from SEBI\n\n to another agency is warranted.\nii. SEBI has prime facie conducted a comprehensive investigation",
+    "final_order": "6. On 6 May 2023, in compliance with the above interim order, the Expert\n\n Committee submitted its report to this Court. In its order dated 17 May 2023,\n\n this Court directed that copies of the report shall be made available to the\n\n parties and their counsel to enable them to assist the Court in the course of\n\n further deliberations. This Court also granted SEBI an extension of time till 14\n\n August 2023 to submit its status report about its investigation.",
+    "outcome_summary": "6. On 6 May 2023, in compliance with the above interim order, the Expert\n\n Committee submitted its report to this Court. In its order dated 17 May 2023,\n\n this Court directed that copies of the report shall be made available to the\n\n parties and their counsel to enable them to assist the Court in the course of\n\n further deliberations. This Court also granted SEBI an extension of time till 14\n\n Aug",
+    "sections_cited": [
+      "Constitution 32",
+      "Constitution 142"
+    ],
+    "cases_cited": []
+  }
+}

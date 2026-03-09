@@ -1,0 +1,760 @@
+{
+  "case_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA",
+  "case_name": "Devesh Sharma vs Union Of India",
+  "normalized_case_name": "DEVESH_SHARMA_VS_UNION_OF_INDIA",
+  "court": "Supreme Court of India",
+  "year": "2023",
+  "judgment_template": null,
+  "case_number": "Writ Petition 137 of 2022",
+  "case_number_regex": "WRIT_PETITION",
+  "date_of_judgment": "11 August 2023",
+  "judges": [
+    "Sudhanshu Dhulia",
+    "Aniruddha Bose"
+  ],
+  "author": "Sudhanshu Dhulia",
+  "bench_type": "division",
+  "petitioner": "Devesh Sharma",
+  "respondent": "Union Of India",
+  "reporter_citations": [
+    "2023 INSC 704"
+  ],
+  "outcome": "disposed of",
+  "disposition": "disposed",
+  "cites_count": 23,
+  "cited_by_count": 25,
+  "neutral_citation": "2023 INSC 704",
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\2023\\AUG\\2023_AUG_4.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P001_C01",
+      "text": "REPORTABLE\n\n CIVIL APPELLATE/ORIGINAL JURISDICTION\n\n CIVIL APPEAL NO. 5068 OF 2023\n (ARISING OUT OF SPECIAL LEAVE PETITION (C) No.20743 OF 2021)\n\n DEVESH SHARMA … Appellant\n\n Versus\n\n UNION OF INDIA AND ORS. …Respondent(s)\n\n WITH\n\n CIVIL APPEAL NO(S).5122 OF 2023\n(ARISING OUT OF SPECIAL LEAVE PETITION (C) NO(S). 17633 OF 2023)\n @ D.NO.21388 OF 2022\n\n WITH\n\n CIVIL APPEAL NO. 5070 OF 2023\n (ARISING OUT OF SPECIAL LEAVE PETITION (C) NO.2069 OF 2022)\n\n WITH\n\n CIVIL APPEAL NO(S). 5086 OF 2023\n (ARISING OUT OF SPECIAL LEAVE PETITION (C) NO(S).17630 OF 2023)\n Signature Not Verified\n\n CIVIL APPEAL NO(S).5121 OF 2023\n\n(ARISING OUT OF SPECIAL LEAVE PETITION (C) NO(S).17632 OF 2023)\n @ D.NO.12813 OF 2022\n\n WITH\n\n CIVIL APPEAL NO. 5069 OF 2023\n (ARISING OUT OF SPECIAL LEAVE PETITION (C) NO.2061 OF 2022)\n\n WITH\n\n CIVIL APPEAL NO(S).5071-5084 OF 2023\n (ARISING OUT OF SPECIAL LEAVE PETITION (C) NOS.2578-2591 OF 2022)\n\n WITH\n\n CIVIL APPEAL NO. 5085 OF 2023\n (ARISING OUT OF SPECIAL LEAVE PETITION (C) NO.3222 OF 2022)\n\n WITH\n\n CIVIL APPEAL NO(S). 5087 OF 2023\n(ARISING OUT OF SPECIAL LEAVE PETITION (C) NO(S). 17631 OF 2023)\n @ D.NO.7368 OF 2022\n\n WITH\n\n CIVIL APPEAL NO(S). 5088-5120 OF 2023\n(ARISING",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P001_C02",
+      "text": "OUT OF SPECIAL LEAVE PETITION (C) NOS.15118-15150 OF\n 2022)\n\n WITH\n\n CIVIL APPEAL NO. 5125 OF 2023\n (ARISING OUT OF SPECIAL LEAVE PETITION (C) NO.22923 OF 2022)\n\n WITH\n\n CIVIL APPEAL NOS.5123-5124/2023 OF 2023\n(ARISING OUT OF SPECIAL LEAVE PETITION (C) NOS.21308-21309 OF 2022)\n\n WITH\n\n WRIT PETITION (CIVIL) NO.137 OF 2022\n\n WITH\n\n WRIT PETITION (CIVIL) NO.881 OF 2022\n\n WITH\n\n WRIT PETITION (CIVIL) NO.355 OF 2022\n\n JUDGMENT\nSUDHANSHU DHULIA, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P001_C03",
+      "text": "Leave granted.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P002_C01",
+      "text": "2. A Division Bench judgment of Rajasthan High Court, dated\n\n25.11.2021, is under challenge before this Court. Apart from the\n\nappeals, there are three Writ Petitions as well before this Court,\n\non the same issue. All the same, while dealing with these cases,\n\nfor facts, we would be referring to Civil Appeal @ SLP (C)\n\nNo.20743 of 2021 Devesh Sharma versus Union of India, which\n\narises out of the order dated 25.11.2021 passed by the High\n\nCourt in D.B. Civil Writ Petition No. 2109 of 2021.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P003_C01",
+      "text": "3. What lies at the core of the dispute before this Court is the\n\nnotification dated 28.06.2018, issued by the National Council for\n\nTeacher Education (hereafter ‘NCTE’), made in exercise of its\n\npowers under Section 23(1) of the Right to Education Act, 2009\n\n(hereinafter referred to as the ‘Act’). This notification made B.Ed.\n\ndegree holders eligible for appointment to the post of primary\n\nschool teachers (classes I to V). All the same, in spite of the\n\nabove notification, when the Board of Secondary Education, State\n\nof Rajasthan, issued an advertisement on 11.01.2021, for\n\nRajasthan Teacher Eligibility Test (RTET Level-1), it excluded\n\nB.Ed. degree holders from the list of eligible candidates. This\n\naction of the Rajasthan Government was challenged before the\n\nHigh Court. The petitioner Shri Devesh Sharma has a B.Ed.\n\ndegree, and as per the Notification dated 28.06.2018, he was\n\neligible, like many other similar candidates. Consequently, he\n\nfiled his petition before the Rajasthan High Court, inter alia,\n\npraying that the advertisement dated 11.01.2021 be quashed, as\n\nit was in violation of the notification dated 28.06.2018 issued by\n\nthe NCTE.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P004_C01",
+      "text": "4. Apart from the above batch of petitioners, there was another\n\nset of petitioners, with their own grievance. These are the\n\ncandidates who are diploma holders in Elementary Education\n\n(D.El.Ed.)1, which was the only teaching qualification required for\n\nteachers at primary level, and who are aggrieved by the inclusion\n\n1 It is possible that this diploma is called by different names in different States. It is for this reason\nthat at some place it may just be referred as a diploma in elementary education.\n\nof B.Ed. qualified candidates. They too filed Writ Petitions before\n\nthe Rajasthan High Court challenging the legality of the\n\nnotification dated 28.06.2018. The State of Rajasthan\n\nunderstandably supported these second batch of candidates\n\nbefore the High Court, as they would do before this Court.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P005_C01",
+      "text": "5. Out of the three writ petitions before us two (W.P. No. 137 of\n\n2022 and 881 of 2022) are challenging the notification dated\n\n28.06.2018 and the subsequent notifications issued by the\n\nGovernment of Bihar and U.P. respectively calling for application\n\nfrom eligible candidates including B.Ed. W.P. No. 355 of 2022\n\nagain challenges the notification dated 28.06.2018. SLP (C) No.\n\n22923 of 2022 is against an interim order of the Calcutta High\n\nCourt which denied relief to the petitioners who were seeking a\n\nstay of the notification dated 28.06.2018.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P006_C01",
+      "text": "6. Hence the question of law to be answered in these cases is\n\nwhether NCTE was right in including B.Ed. qualification as an\n\nequivalent and essential qualification for appointment to the post\n\nof primary school teacher (Level-1)? The Rajasthan High Court in\n\nthe impugned judgment has quashed the notification dated\n\n28.06.2018, holding B.Ed. candidates to be unqualified for the\n\nposts of primary school teachers (Level-1).",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P007_C01",
+      "text": "7. On behalf of the Petitioners, we have heard learned Senior\n\nCounsel, Mr. Paramjit Singh Patwalia who has assailed the\n\nJudgement of the Rajasthan High Court. Mr. Patwalia appeared\n\nfor the B.Ed. qualified candidates and would support the\n\nnotification dated 28.06.2018, and the petitioners who had\n\nchallenged their exclusion before the Rajasthan High Court. Ms.\n\nMeenakshi Arora, learned senior counsel was also heard for the\n\nappellants. The learned counsel would argue that the High Court\n\nfailed to consider that the notification dated 28.06.2018 was a\n\npolicy decision taken by the NCTE after the Central Government\n\nhad issued directions in this regard, under\nSection 29\nof the\n\nNCTE Act, and the High Court was wrong in interfering with the\n\npolicy decision of the Central Government. The NCTE broadly\n\nagrees with the submissions which have been made by Shri\n\nPatwalia, and Ms. Arora, while assailing the impugned\n\njudgement.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P008_C01",
+      "text": "8. We have also heard the submissions by the learned Senior\n\nCounsel Mr. Kapil Sibal and Dr. Manish Singhvi who appeared for\n\nthe Diploma holders and the State of Rajasthan respectively who\n\nwould argue, inter alia, that the NCTE being an expert body had\n\nto take an independent decision in this case, based on the\n\nobjective realties. Even if the NCTE had to follow the directions of\n\nthe Central Government, the NCTE must demonstrate that these\n\ndirections had been independently considered by them and not\n\nimplemented in a mechanical manner.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P009_C01",
+      "text": "9. On behalf of the Union of India we have heard learned\n\nAdditional Solicitor General(s) Ms. Aishwarya Bhati and Mr.\n\nVikramjeet Banerjee. They would argue that the Impugned\n\nJudgement has been passed ignoring the powers of the Central\n\nGovernment given both under the Act as well as\nNCTE Act\n.\n\nMoreover, an objection has also been raised that the Union of\n\nIndia was not even made a party in the proceedings before the\n\nRajasthan High Court!",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P010_C01",
+      "text": "10. During the course of hearing, this Court had passed an\n\norder dated 24.08.2022, granting liberty to the Board of\n\nSecondary Education for different States, and other stake holders\n\nto be impleaded as intervenors. Pursuant to this order, several\n\nInterlocutory Applications were filed which are being heard along\n\nwith these appeals.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P011_C01",
+      "text": "11. “The Indian Constitution is first and foremost a social\n\ndocument”, writes Granville Austin2. The Rights contained in\n2 Austin, Granville. “The Conscience of the Constitution”. The Indian Constitution, Cornerstone of a\nNation, Oxford University Press, 2000, pp. 50\n\nPart III and the Directive Principles of State Policy contained in\n\nPart IV together establish conditions which further the goal of\n\nthis social revolution3. Austin goes on to call Part III and Part IV\n\nof the Constitution as “The Conscience of the Constitution” 4. Free\n\nand compulsory education for children was a part of the social\n\nvision, of the framers of our Constitution.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P012_C01",
+      "text": "12. Elementary education for children is today a Fundamental\n\nRight enshrined under\nArticle 21A\nof Part III of the Constitution\n\nof India. Every child (upto 14 years of age), has a fundamental\n\nRight to have ‘free’ and ‘compulsory’ elementary education. But\n\nthen ‘free’ and ‘compulsory’ elementary education is of no use\n\nunless it is also a ‘meaningful’ education. In other words,\n\nelementary education has to be of good ‘quality’, and not just a\n\nritual or formality!",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P013_C01",
+      "text": "13. Our progress, in achieving this constitutional goal, has been\n\nslow. In some ways, it is still a work in progress. Prior to the\n\nConstitutional 86th Amendment, the Right to Education was in\n\nPart-IV of the Constitution (\nArticle 45\n), as a Directive Principle of\n\nState Policy. Directive Principles, as we know, are a set of goals\n\nwhich the state must strive to achieve. The goal set out in\nArticle\n\nIbid – pp 50.\n4 Ibid – pp 50.\n\n455 of the Constitution (as it stood at that time), was to make\n\nelementary education free and compulsory for all children up to\n\nage of 14 years, within 10 years of the promulgation of the\n\nConstitution. All the same, it would take much more than ten\n\nyears to achieve this goal.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P014_C01",
+      "text": "14. The 1986 National Policy on Education, modified in the year\n\n1992, declared that free and compulsory elementary education of\n\n‘satisfactory quality’ be given to all children up to the age of\n\nfourteen years, before the nation enters the next century i.e., 21 st\n\nCentury.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P015_C01",
+      "text": "15. Later in the seminal judgment of this court in\nUnni\n\nKrishnan J.P. versus State of Andhra Pradesh and Ors.\n(AIR\n\n1993 SC 2178), it was held that children have a fundamental\n\nright to free education, till they complete the age of fourteen\n\nyears.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Unni\n\nKrishnan J.P v State of Andhra Pradesh and Ors"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P016_C01",
+      "text": "16. In the year 1997, in order to make free and compulsory\n\neducation a fundamental right the 83 rd Constitutional\n\nAmendment Bill was introduced in Parliament, to insert a new\n\nArticle in Part III of the Constitution of India, which was to be\n\nArticle 45\nof the Constitution as it existed prior to the 86th Amendment:\n“Provision for free and compulsory education for children.— The State shall endeavour to\nprovide, within a period of ten years from the commencement of this Constitution, for free and\ncompulsory education for all children until they complete the age of fourteen years.”\n\nArticle 21A. The Bill was sent for the scrutiny of the\n\nParliamentary Standing Committee on Human Resources\n\nDevelopment. The Standing Committee not only welcomed the\n\namendment but in addition emphasizes on the ‘quality of\n\nelementary education’. This is what it said.\n“The eminent educationists felt that the Bill is silent on the\n\n‘Quality’ of Education. They suggested that there should be a\n\nreference to ‘quality’ of education in the Bill. The Secretary,\n\nEducation agreed that the ‘quality’ aspect also has to be seen.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 45"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P016_C02",
+      "text": "Education definitely must mean ‘quality’ education and anything\n\nless than that should not be called education. Therefore, the\n\nemphasis would be through strengthening the teacher education\n\ncontent, the Secretary stated.”6\n\nFinally, by way of the Constitution (86 th Amendment) Act of 2002,\nArticle 21A\n, was inserted as a Fundamental Right in Part III of\n\nthe Constitution, and made effective from 01.04.2010. Article\n\n21A\nof the Constitution reads as under:\n“Article 21A: The State shall provide\n free and compulsory education to all\n children of the age of six to fourteen\n years in such manner as the State may,\n by law, determine.”\n6 Para 13 of the Report of the Parliamentary Standing Committee on Human Resource Development.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 21A"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P017_C01",
+      "text": "17. In order to fulfil the above mandate Right to Education Act,\n\n2009, was passed by the Parliament on August 20, 2009, which\n\nbecame effective from 01.04.2010. The object and reasons of the\n\nAct declared loud and clear that what the Act seeks to achieve is\n\nnot merely ‘free’ and ‘compulsory’ elementary education, but\n\nequally important would be the ‘Quality’ of this education! The\n\nPreamble to the Act states “that every child has a right to be\n\nprovided full time elementary education of satisfactory and\n\nequitable ‘quality’ in a formal school which satisfies certain\n\nessential norms and standards”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P018_C01",
+      "text": "18. When the validity of the Act was challenged before this\n\nCourt7, this Court, while upholding its validity emphasized that\n\nthe Act, was intended not only to impart “free” and “compulsory”\n\neducation to children, but the purpose was also to impart\n\n‘quality’ education!\n\n “The provisions of this Act are intended not only to\n\nguarantee right to free and compulsory education to children, but\n\nit also envisages imparting of ‘quality’ education by providing\n\nrequired infrastructure and compliance of specified norms and\n\nstandards in the schools.” [See Para 8, (2012) 6 SCC 1]\n\n77 In Society for\nUnaided Private Schools of Rajasthan v. Union of India & Anr.\n[(2012) 6 SCC 1]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P019_C01",
+      "text": "19. As we can see, the purpose behind bringing this\n\npathbreaking legislation was not to complete the formality of ‘free\n\nand compulsory’ elementary education for children, but to make\n\na qualitative difference in elementary education and to impart it\n\nin a meaningful manner. Provisions like ‘Right to be admitted in a\n\nneighbourhood school’8, ‘No denial of admission’9 and ‘Prohibition\n\nof physical punishment and mental harassment’ 10, are some of\n\nthe heartwarming provisions of the Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P020_C01",
+      "text": "20. The Act\nsets down certain norms and standards which have\n\nto be followed in elementary schools, and this is with the purpose\n\nof providing a meaningful and ‘quality’ education. To name some\n\nof these requirements such as:-\nA. The necessary infrastructure requirement.\n B. Pupil teacher ratio which is 30:1 and\n C. The absolute necessity of trained as well as qualified\n\n teachers.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P021_C01",
+      "text": "21. Free and compulsory education for children becomes\n\nmeaningless if we make compromise on its ‘quality’. We must\n\nrecruit the best qualified teachers. A good teacher is the first\n\nassurance of ‘quality’ education in a school. Any compromise on\n\n8 Section 3 of the Right to Education Act, 2009.\n9 Section 15 of the Right to Education Act, 2009.\n10 Section 17 of the Right to Education Act, 2009.\n\nthe qualification of teachers would necessarily mean a\n\ncompromise on the ‘quality’ of education. Jacques Barzun, the\n\nAmerican educationalist and historian, in his seminal work\n\n‘Teacher in America’, says “teaching is not a lost art, but the\n\nregard for it is a lost tradition” 11. Though this comment was for\n\nthe state of higher education in America, it is equally relevant\n\nhere on the treatment of Primary education in our country, as it\n\nemerges from the facts before us.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P022_C01",
+      "text": "22. Elementary education in India is at two levels. A is the\n\n‘Primary’ level i.e. class I to V, and B is the Senior primary level\n\ni.e., classes VI to VIII. Presently we are only concerned with the\n\n“primary level” of education.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P023_C01",
+      "text": "23. Section 23\nof the Act is extremely important as it not only\n\nprovides as to who shall determine the qualifications of teachers\n\nin a Primary school, but as to who can relax these qualifications,\n\nand for how long. It reads as under :-\n“\nSection 23\n. Qualifications for\n appointment and terms and\n conditions of service of teachers .—(1)\n Any person possessing such minimum\n\n11 Barzun, Jacques. “Profession: Teacher”. Teacher in America, published by Little Brown 7 Co. in\nassociation with Atlantic Monthly Press, 1945, pp. 3-13\n\nqualifications, as\nlaid down by\nacademic authority, authorised by the\nCentral Government, by notification,\nshall be eligible for appointment as a\nteacher.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P023_C02",
+      "text": "(2) Where a State does not have adequate\ninstitutions offering courses or training\nin teacher education, or teachers\npossessing minimum qualifications as\nlaid down under sub-section (1) are not\navailable in sufficient numbers, the\nCentral Government may, if its deems\nnecessary, by notification, relax the\nminimum qualifications required for\nappointment as a teacher, for such\nperiod, not exceeding five years, as may\nbe specified in that notification:\nProvided that a teacher who, at the\ncommencement of this Act, does not\npossess minimum qualifications as laid\ndown under sub-section (1), shall\nacquire such minimum qualifications\nwithin a period of five years:\n[Provided further that every teacher\nappointed or in position as on the 31st\nMarch, 2015, who does not possess\nminimum qualifications as laid down\nunder sub-section (1), shall acquire such\nminimum qualifications within a period\nof four years from the date of\ncommencement of the\nRight of Children\nto Free and Compulsory Education\n(Amendment) Act, 2017\n.]\n(3) The salary and allowances payable to,\nand the terms and conditions of service\nof, teachers shall be such as may be\nprescribed.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P024_C01",
+      "text": "24. Whereas sub-Section (1) of\nSection 23\nis the provision\n\nwhere the ‘academic authority’ has been empowered to prescribe\n\nqualifications for teachers in elementary schools, sub-section (2)\n\nSection 23\nempowers the Central Government to relax the\n\nminimum ‘qualifications’ prescribed by the ‘academic authority’,\n\nunder certain circumstances and for a limited period.\nThe ‘Academic Authority’ under\nSection 23(1)\nof the Act is\n\nthe National Council for Teachers Education (NCTE), which\n\nbrought a notification on 23.08.2010, laying down the necessary\n\nqualifications for teachers, both at primary, as well as upper\n\nprimary level. Inter alia, this notification prescribes as under:-",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P025_C01",
+      "text": "1. Minimum Qualifications: -\n(i) Classes I-V\n(a) Senior Secondary (or its equivalent) with atleast 50%\n marks and 2- year Diploma in Elementary Education (by\n whatever name known)\n\n Senior Secondary (or its equivalent) with atleast 45%\n marks and 2-year Diploma in Elementary Education (by\n whatever name known), in accordance with NCTE\n (Recognition Norms and Procedure), Regulations 2002\n\n Senior Secondary (or its equivalent) with atleast 50%\n marks and 4-year Bachelor of Elementary Education\n (B.El.Ed.)\n\n Senior Secondary (or its equivalent) with at least 50%\n marks and 2-year Diploma in Education (Special\n Education)\n AND\n(b) Pass in the Teacher Eligibility Test (TET), to be\n conducted by the appropriate Government in accordance\n with the Guidelines framed by the NCTE for its purpose. The above notification dated 23.08.2010, does not provide\n\nB.Ed. as a qualification for appointment to the post of primary\n\nschool teachers.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P025_C02",
+      "text": "Later this notification was amended, but B.Ed.\n\nwas never included (till the impugned notification dated\n\n28.06.2018), as an essential qualification for teachers of primary\n\nschool i.e. for classes\nI to V.\n\ncandidate for the post of a teacher in a primary school was\n\nto have these three qualifications. A. He must have passed higher secondary level. B. He must have a Diploma in elementary education\n\n (D.El.Ed.), by whatever name it was called in that State. C. He should then pass an examination to be conducted by\n\n the State known as Teachers Eligibility Test or TET.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P026_C01",
+      "text": "25. The academic authority, which is NCTE considered the\n\nappointment of trained and qualified teachers as an absolute\n\nnecessity in primary schools. It is for this reason that the\n\nqualification which was prescribed for a teacher in primary school\n\nwas a diploma in elementary education (D.El.Ed.), and not any\n\nother educational qualification, including B.Ed. Apart from this\n\nthe teachers eligibility test or TET would further test the skills of\n\na candidate to handle students at primary level. It must be emphasised that the pedagogical approach\n\nrequired from a teacher at primary level is in some manners\n\nunique. These are the initial formative years where a student has\n\njust stepped inside a classroom, and therefore needs to be\n\nhandled with care and sensitivity. A candidate who has a diploma\n\nin elementary education (D.El.Ed.) is trained to handle students\n\nat this level, as he has undergone a pedagogical course\n\nspecifically designed for this purpose. The ‘Academic Authority’ which is NCTE is mandated by the\n\nAct to set up a curriculum and evaluation procedure for the all\n\nround development of a ‘child’, mindful of all the fears and\n\nanxieties which a child may have.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P026_C02",
+      "text": "Section 29\nof the Act reads as\n\nunder :-",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P027_C01",
+      "text": "29. Curriculum and evaluation procedure.— (1)\n The curriculum and the evaluation procedure for\n elementary education shall be\nlaid down by\n\nacademic authority to be specified by the\n appropriate Government, by notification.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P027_C02",
+      "text": "(2) The academic authority, while laying down the\n curriculum and the evaluation procedure under\n sub-section (1), shall take into consideration the\n following, namely:—\n(a) conformity with the values enshrined in\n the Constitution;\n(b) all round development of the child;\n(c) building up child's knowledge,\n potentiality and talent;\n(d) development of physical and mental\n abilities to the fullest extent;\n(e) learning through activities, discovery and\n exploration in a child friendly and child-\ncentered manner;\n(f) medium of instructions shall, as far as\n practicable, be in child's mother tongue;\n(g) making the child free of fear, trauma and\n anxiety and helping the child to express\n views freely;\n(h) comprehensive and continuous\n evaluation of child's understanding of\n knowledge and his or her ability to apply\n the same.”\n\n As we can see the curriculum and evaluation procedure\n\nwhich the ‘Academic Authority’ is mandated to set up requires a\n\npedagogical approach which can be best given by teachers who\n\nare trained to deal with child students. A person who has a B.Ed. qualification has been trained to\n\nimpart teaching to secondary and higher secondary level of\n\nstudents.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P027_C03",
+      "text": "He is not expected to impart training to primary level\n\nstudents. In order to appreciate the difference between Diploma in\n\nElementary Education (it is called by different names in each\n\nState), and Bachelor of Education (B.Ed.), we look no further\n\nthan the Notifications issued by National Council for Teacher\n\nEducation (NCTE) itself from time to time. The Appendix 2 to the NCTE Regulations, 2009 spells out as\n\nto what is the aim of Elementary Education. It is stated to be as\n\nfollows:\n“1. Preamble\n\n 1.1 The Diploma in Elementary Education (D.El.Ed) is a\n two year professional programme of teacher education. It\n aims to prepare teachers for the elementary stage of\n education, i.e. classes I to VIII. The aim of elementary\n education is to fulfill the basic learning needs of all\n children in an inclusive school environment bridging\n social and gender gaps with the active participation of\n the community.\n1.2 The elementary teacher education programme carries\n different nomenclatures such as BTC, J.B.T, D.Ed. and\n (Diploma in Education).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P027_C04",
+      "text": "Henceforth, the nomenclature of\n the programme shall be the same across all states and it\n\nshall be referred to as the ‘Diploma in Elementary\n Education’(D.El.Ed).”\n\n The same Regulation in its appendix 4 describes B.Ed as\n\nfollows:\n\"1. Preamble\n The Bachelor of Education programme, generally known\n as B.Ed., is a professional course that prepares teachers\n for upper primary or middle level (classes VI-VIII),\n secondary level (classes IX-X) and senior secondary level\n (classes XI-XII). The programme shall be offered in\n composite institutions as defined in clause (b) of\n Regulations 2.”\n\n It is therefore clear that a B.Ed. course is not designed for\n\nteaching at primary level. Moreover, the inclusion of B.Ed. candidates for primary\n\nclasses is in the teeth of several decisions of this Court, as this\n\nCourt has consistently held that Diploma in elementary\n\neducation (D.El.Ed.) and not B.Ed., is the proper qualification in\n\nPrimary Schools.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P028_C01",
+      "text": "26. Dilip Kumar Ghosh and Others versus Chairman and\n\nOthers12\n, this Court had to decide on the question whether B.Ed\n\ndegree candidate can be equated with a candidate who holds\n\ntraining in Primary School teaching or in other words who is\n\ntrained specifically for Primary Schools. The Contention of the\n\n12 (2005) 7 SCC 567\n\nappellants (in the aforesaid case) who were B.Ed. candidates was\n\nthat, their course (B.Ed.), equips them to teach Primary Classes. Their contention was rejected by this Court. In Para 9, it stated\n\nas under:\n“In B.Ed. curriculum such subjects like child psychology\n are not found. On the other hand, the curriculum is of a\n generic nature and deals with subjects like the principle\n of educational-curriculum studies, educational\n psychology, development of education in modern India,\n social organization and instructional methods, etc.”\n\nThen again in Para 10 it was stated as under:\n“…………For teaching in the primary school, therefore,\n one must know the child psychology and development of\n a child at a tender age.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P028_C02",
+      "text": "As already noticed, the\n candidates like the appellants who are trained in B.Ed.\n degree are not necessarily to be equipped to teach the\n students of primary class. They are not trained and\n equipped to understand the psychology of a child of\n tender age.”\n\nP.M. Latha and Another versus State of Kerala and\n\nOthers13\nthe argument that B.Ed. qualification is a higher\n\nqualification than Diploma in Elementary Education (D.El.Ed.)\n\nwas rejected. Again, it was a case before the Apex Court where\n\nB.Ed candidates, were claiming appointment as Primary School\n\nteachers on the basis of the claim that their educational\n\nqualification (i.e. B.Ed.)\nwas even higher than the Diploma in\n13 (2003) 3 SCC 541\n\nElementary Education (D.El.Ed.) which was held by the other\n\ncandidates. In para 10 of the said case, it was stated as under:\n“We find absolutely no force in the argument advanced\n by the respondents that B.Ed. qualification is a higher\n qualification than TTC and therefore, the B.Ed.\n candidates should be held to be eligible to compete for\n the post…………….”\n\n These findings were reiterated by Supreme Court in\nYogesh\n\nKumar v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P028_C03",
+      "text": "Government of NCT, Delhi\n14, holding that though\n\nB.Ed. is a well-recognized qualification in the field of teaching, yet\n\nit is a training which equips a candidate to teach higher classes,\n\nnot classes at primary level.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P029_C01",
+      "text": "27. B.Ed. is not a qualification for teachers at Primary level of\n\nschooling. The pedagogical skills and training required from a\n\nteacher at Primary level is not expected from a B.Ed. trained\n\nteacher. They are trained to teach classes at higher level, post\n\nprimary, secondary and above. For Primary level i.e. class I to\n\nclass V the training is D.El.Ed or what is known as diploma in\n\nelementary education. It is a D.El.Ed. training course which is\n\ndesigned and structured to impart skills in a teacher who is to\n\nteach Primary level of students.\n14 (2003) 3 SC 548\n\nTherefore, by implication the inclusion of B.Ed. as a\n\nqualification amounts to lowering down of the ‘quality’ of\n\neducation at Primary level. ‘Quality’ of education which was such\n\nan important component of the entire elementary education\n\nmovement in this country, which we have discussed in the\n\npreceding paragraphs of this order.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P030_C01",
+      "text": "28. We are also conscious of the fact that, till the notification\n\ndated 28.06.2018, the consistent policy of NCTE had been to\n\nexclude B.Ed. candidates from the eligibility criteria of Primary\n\nSchool Teachers. In the 23.08.2010 notification – the first given\n\nby NCTE in its capacity as the “academic authority” under\nSection 23\nof the RTE Act, which has been referred in the\n\npreceding paragraphs, B.Ed. qualified teachers were not\n\nconsidered for primary classes. All the same, purely in order to\n\nequip the various State governments to establish enough training\n\ncolleges/centres for imparting specialised training centres for\n\nelementary teachers, the B.Ed. candidates were to continue for a\n\nvery limited period.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P031_C01",
+      "text": "29. This was during the initial period starting from the year\n\n2010 onwards, when the Act and the subsequent order of NCTE\n\nlaid down the qualifications for Primary School Teachers\n\nthroughout the country. But essentially B.Ed. qualified teachers\n\nwere kept out from the purview of the eligibility of the teachers in\n\nprimary schools as B.Ed. was not considered a “qualification” for\n\nteachers at primary level. The inherent pedagogical weakness in B.Ed. courses (for\n\nprimary classes), is well recognised, and it is for this reason that\n\nin the impugned notification itself it is provided that B.Ed.\n\ntrained teachers will have to undergo a six months training in\n\nelementary classes, within the first two years of their\n\nappointment. In this background, the inclusion of B.Ed. candidates for\n\nprimary level classes is beyond our comprehension. We have seen so far that the need for ‘quality’ and\n\nmeaningful primary education was emphasized by the legislature\n\nas well as by the academic authority all throughout. In primary\n\neducation, any compromise on ‘quality’ of education would mean\n\ngoing against the very mandate of Article 21\nA and the Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P031_C02",
+      "text": "The\n\nvalue of Primary education can never be overstated. Myron Weiner in his important book on Child Labour in\n\nIndia15, links child labour problems in India to the lack of\n\n15 Weiner Myron (1991) : The Child and the State In India in Comparative Perspective --\n\neffective measures in the past in the field of elementary\n\neducation. Great care must be taken to nurture these institutions\n\nas our future takes shape in these classes. Victor Hugo had\n\nfamously said ‘one who opens a school door, closes a prison.’\n\nChildren still working in hazardous environment and juveniles in\n\nconflict with law, in some measure, do point towards the\n\nweakness in our elementary education system, both on its\n\naccessibility and its ‘quality’. The pedagogical skills of a teacher must be given a very high\n\npriority. But our priority seems to be different. It is not to impart\n\n‘quality’ education, but to provide more job avenues to B.Ed.\n\ntrained candidates, as this seems to be the only reason for their\n\ninclusion, in presence of overwhelming evidence that B.Ed.\n\ncourse is not a suitable course for primary classes.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P031_C03",
+      "text": "The material which has been placed before this Court in the\n\nform of official communications and meetings at the highest level\n\nmakes it clear that in the present case the decision taken by\n\nNCTE is not an independent decision of an expert body which is\n\ncreated by the statute and mandated to take independent\n\ndecisions. The aim of NCTE is to improve the standard of\n\n Princeton University Press\n\neducation and not to provide further avenues for employment to\n\nB.Ed. trained teachers. We may also mention that this is being\n\ndone when teachers trained in elementary education can be\n\nemployed only as teachers in elementary schools and nowhere\n\nelse, when compared to B.Ed. qualified teacher, who can be\n\nemployed in senior elementary classes (VI to VIII), as well as\n\nsecondary and higher secondary classes. It is therefore in any\n\ncase not fair on the Diploma holders, who will now be seeing the\n\nonly space available for them shrinking further. The inclusion of B.Ed. as a ‘qualification’ was done by the\n\nnotification dated 28.06.2018, which was impugned before the\n\nRajasthan High Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P031_C04",
+      "text": "This notification is reproduced below: -\n“National Council for Teacher Education\n Notification\n New Delhi, the 28th of June, 2018\n F. No. NCTE-Regl 012/16/2018-In exercise of the powers\n conferred by sub-section (1) of\nSection 23\nof Right to\n Children to Free and Compulsory Education Act, 2009\n (35 of 2009) and in pursuance of notification number S.P.\n 750(E), dated the 31st March, 2010 issued by the\n Department of School Education and Literacy, Ministry of\n Human Resource Development, Government of India, the\n National Council for Teacher Education (NCTE) hereby\n makes the following further amendments to the\n notification number F.N. 61-03/20/2010/NCTE/(N&S),\n dated the 23rd August, 2010 published in the Gazette of\n India, Extraordinary, Part III,\nSection 4\n, dated the 25th\n August, 2010 hereinafter referred to as the said\n notification namely:-\n\n(1) In the said notification, in para 1 in sub-para (i), in\n clause (a) after the words and brackets “Graduation and\n two year Diploma in Elementary Education (by whatever\n name known), the following shall be inserted, namely:-\n “Graduation with at least 50% marks and Bachelor of\n Education (B.Ed.)”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P032_C01",
+      "text": "2. In the said notification in para 3, for sub-para (a), the\n following sub-para shall be substituted namely:-\n“(a) who has acquired the qualification of Bachelore of\n Education from any NCTE Recognized institution shall be\n considered for appointment as a teacher in classes I to V\n provided the person so appointed as a teacher shall\n mandatorily undergo a six month Bridge course in\n Elementary Education recognized by the NCTE, within\n two years of such appointment as primary teacher”\n (Emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P033_C01",
+      "text": "30. The sequence of events, which are now well established by\n\nthe documents which were placed before the Rajasthan High\n\nCourt and before this Court, make it clear, that the decision to\n\ninclude B.Ed. as a qualification was apparently triggered by a\n\nletter of the Commissioner of KVS 16, who made a request\n\nrequested that since in the Primary classes of Central Schools\n\nsufficient number of trained Diploma holders are not available,\n\nthey may be permitted to appoint B.Ed. qualified teachers, who\n\nare readily available. The Ministry takes cognizance of this letter,\n\nmeetings are held and ultimately it directs NCTE to appoint B.Ed.\n16 Kendriya Vidyalaya Sangathan – An autonomous body under Ministry of Education,\nGovernment of India, which looks after the management of Central Schools throughout the\ncountry.\n\ntrained teachers not just in central schools but in primary\n\nschools throughout the country, which would include State run\n\nschools. The sequence of how it happened is as under. A meeting was held on 28.05.2018 in the Ministry of\n\nHuman Resource Development, headed by the Minister\n\nconcerned.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P033_C02",
+      "text": "In the meeting it was decided to recognize B.Ed. as an\n\nadditional eligibility criterion for the appointment to the post of\n\nprimary teachers in KVS Schools. This was followed by a note on\n\nthe very next day, i.e., 29.05.2018, which says that since B.Ed.\n\nqualified candidates were eligible to be appointed as primary\n\nteachers in KVS Schools, there should be no objection to\n\nimplement this direction in other schools as well. These\n\ncommunications culminate in a letter dated 30.05.2018 issued by\n\nthe Ministry of Human Resource Development, which was in the\n\nform of a direction issued under\nSection 29\nof the NCTE Act\n\nwhich required NCTE to amend the eligibility criteria to include\n\nB.Ed. qualified candidates as Primary Teachers. Complying with\n\nthe above directions, NCTE issued the impugned notification on\n\n28.06.2018. The minutes of the meeting dated 28.05.2018, disclose the\n\nreason as to why B.Ed. should be included as a qualification. These minutes state as under :-\n“…...",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P034_C01",
+      "text": "2. The matter was considered in this Ministry and\n HRM has approved the proposal of KVS to recruit\n primary teacher with higher qualification (i.e. B.A./B.Sc.,\n B.Ed.+ TET). Further, HRM has also directed that NCTE\n may amend the qualification and make B.A./B.Sc.,\n B.Ed. also eligible for teaching at Primary level with\n provision of completing Pedagogical module in 2 years of\n joining the service, these directions were conveyed to\n NCTE on 12.04.2018, however, the action is still pending\n at their part.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P035_C01",
+      "text": "3. The matter was again discussed and deliberated in\n detail in the meeting held today (28th May, 2018)\n chaired by HRM and attended by Special Secretary,\n Chairperson, NCTE, MS, NCTE, Joint Secretary (SE.I)\n and KVS Commissioner. KVS Commissioner raised the\n issues of insufficient number of candidates applying for\n the post of Primary teachers and candidates applying\n from few states rather than across the country. It was\n informed by MS, NCTE that approximately 7.5 lakh seat\n are available for D.El.Ed across the country out of which\n 50% seats are filled. However, the TET pass D.El.Ed.\ncandidate would be much less as the result of TET\n varies from 6% to 16%. This makes the availability of\n eligible D.El.Ed. candidates much less than the desired.\n HRM also pointed out the need for better equipped\n teachers to ensure quality education in schools.\n Recruitment of Teachers with higher qualifications will\n ultimately be beneficial and in the interest of the\n students.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P036_C01",
+      "text": "4. In addition to above, NCTE will roll out four year\n B.Ed. integrated course from next academic year,\n therefore, the prevalent D.El.Ed./B.Ed. etc will phase out\n in time bound manner. Further similar kind of request\n has also been from the state of Uttrakhand.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P037_C01",
+      "text": "5. In view of the above discussions, HRM directed\n NCTE to change its regulations, Directions are required to\n be given under\nsection 29\nof the NCTE Act, 1993. Section\n\nof the NCTE Act is as follows:\n(1) The Council shall in the discharge of its functions and\n duties under this Act be bound by such directions on\n questions of policy as the Central Government may give\n in writing to it from time to time. (2) The decision of the Central Government as to whether\n a question is one of policy or not shall be final. (6) We may request NCTE to submit draft notification to\n amend NCTE regulations at the earliest. The draft letter\n is attached for approval please. Once the draft\n notification is received, the same will be sent to\n Legislative Department for vetting with the approval of\n HRM. Submitted.”\n\nThe minutes of the meeting dated 29.05.2018 state as\n\nunder :-\n“Note dated 29.05.2018\n Please place on file the letter from NCTE which was\n handed over to the HRM by the MS, NCTE during the\n meeting, the details of which have been referred to in the\n draft reply.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P037_C02",
+      "text": "The meeting clearly took the decision that in\n view of the facts presented by the Commissioner, KV and\n since the NCTE did not have any objection to permit KV\n schools to recruit primary teachers with higher\n qualifications, then there should be no objection to\n extending this to other schools, and therefore, this\n Ministry could issue directions to the NCTE under\nSection 29\n.\"\nLetter dated 30.05.2018 from the Government to NCTE.\n“Letter Dated 30.05.2018\n Priority\n\nF.No.11-15/2017-EE.10-Part (1)\n Government of India\n Ministry of Human Resource Development\n Department of School Education & Literacy\n\n Shastri Bhawan, New Delhi,\n Dated the 30th May, 2018\nTo,\n\n The Chairperson NCTE,\n Hans Bhawan,\n Bahadur Shah Zafar Marg,\n New Delhi – 110002. Dear Madam,\n Kindly refer to the letter of even no. dated\n12.04.2018 regarding request of Kendriya Vidaylaya\nSangathan for recruiting primary teachers with higher\nqualifications i.e. B.A./B.Sc., B.Ed. plus TET pass\nand letter no. NCTE-REG1012/16/2018-\nUS(Regulation)-HQ dated 23.05.2018 received from\nNCTE regarding the same.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P038_C01",
+      "text": "2. The above request has been considered in this\nMinistry. In order to safeguard the interest of the\nstudents and ensure the quality of education, the\ncompetent authority has decided to agree to the request\nof KVS to recruit Primary Teachers with Higher\nQualifications. The insufficient number of eligible\nD.EI.Ed. candidates due to low pass percentage of TET\nexamination has also become an issue for recruitment of\nprimary teachers. Further, with the roll out of four year\nB.Ed. integrated course from next academic year, the\nexisting D.EI.Ed./B.Ed. courses will be phased out in\ndue course of time.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P039_C01",
+      "text": "3. NCTE vide their letter No. NCTE-\nREG1012/16/2018-US(Regulation)-HQ dated\n23.05.2018 stated that “the MHRD may consider\nimplementing the direction in the detailed noting of\nHon’ble Minister of Human Resource Development,\nGovernment of India”. Further, in view of the facts\n\npresented by the Commissioner, KV and since the NCTE\n did not have any objection to permit KV schools to recruit\n primary teachers with higher qualifications, then there\n should be no objection to extending this to other schools.\n Therefore, considering the powers vested in MHRD under\nSection 29\nof the NCTE Act, 1993, the NCTE\nRegulation\n\n.08.2010 (Determining qualification of teacher to be\n appointed at primary level Classes 1st to 5th) shall be\n amended to include that any person who has acquired\n the qualification of B.Ed. from any NCTE recognized\n course will also be considered for appointment as a\n teacher in classes 1st to 5th provided the person so\n appointed as a teacher shall mandatorily undergo a 6\n month bridge course, which is recognized by NCTE,\n within two years of such appointment as primary\n teacher.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P040_C01",
+      "text": "4. It is therefore, requested that the draft notification to\n amend the NCTE regulations may please be submitted to\n this Ministry. This may please be treated as most\n urgent.\nWith regards,\n\n Yours Sincerely,\n\n Sd/-\n(Rashi Sharma)\n Director(TE)”\n\n This is followed by the notification dated 28.06.2018, issued\n\nby NCTE, which has already been\nreferred above\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P041_C01",
+      "text": "31. The sequence of events show that what started as an\n\nexercise for consideration of B.Ed. qualified candidates as\n\nteachers for Primary classes in Central schools, was expanded to\n\ninclude all primary schools throughout the country. The\n\napparent reasoning given is that B.Ed. qualified candidates are\n\nbetter suited for appointment as teachers in Primary schools, as\n\nthey have ‘higher qualifications’, and as such they should be\n\nappointed as teachers in all Primary schools. Another reason for\n\ndoing this is the dearth of qualified TET candidates. The figures\n\ngiven in the meeting suggests that only 6% to 16% of the\n\ncandidates who appear in the TET examination qualify the test. The suggestion appears to be that with the inclusion of B.Ed.\n\ncandidates the number of TET qualified candidates would\n\nincrease. But this logic does not hold good when B.Ed. as a\n\nqualification has not passed the basic pedagogical threshold for\n\nteaching primary classes. We have already examined this aspect in great detail. B.Ed.\n\nis not a qualification for teaching at Primary level of classes,\n\nmuch less a better or higher qualification, in context of Primary\n\nclasses.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P041_C02",
+      "text": "This finding is self-evident in the very admission of NCTE\n\nwhich mandates that all B.Ed. qualified teachers who are\n\nappointed to teach Primary level classes must mandatorily\n\nundergo a pedagogical course for elementary classes within two\n\nyears of their appointment.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P042_C01",
+      "text": "32. In Society for\nUnaided Private Schools of Rajasthan v. Union of India & Anr. (supra) this Court while upholding the\n\nvalidity of the\nRTE Act\n, held that primary education, which is\n\nnow a part of fundamental right under Part III of the\n\nConstitution, has to be a meaningful education, and not just a\n\nformality. When Diploma in elementary education (D.El.Ed.), was\n\nplaced as an essential qualification for teachers in Primary\n\nschool, it was with a purpose, and the purpose was to declare\n\nonly such teachers as qualified who are trained to impart\n\neducation to children at ‘primary level’. The pedagogy for a child\n\nwho has just entered the school, is an important consideration. A\n\nchild has come to face a “teacher”, so to speak, for the first time\n\nin a class room. It is the beginning of a journey for the child\n\nstudent and therefore world over great care is taken in laying\n\ndown proper foundations in these formative years. Well qualified\n\nand trained teacher in elementary school is an extremely vital\n\naspect.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P042_C02",
+      "text": "A teacher must be trained to teach students at “primary\n\nlevel”, and this is precisely what the training of Diploma in\n\nelementary education (D.El.Ed.) does; it trains a person to teach\n\nchildren at primary level. B.Ed. is not a ‘higher qualification’, or a\n\nbetter qualification, as is being canvassed in its favour, while\n\ncomparing it with ‘Diploma in elementary education’. B.Ed. is a\n\ndifferent qualification; a different training. Even assuming it is a\n\nhigher qualification, it would still not be a suitable qualification\n\nfor primary level of classes. Unlike Diploma in elementary\n\neducation (D.El.Ed.), B.Ed. does not equip a teacher to teach at\n\nprimary level. This fact is implicitly recognised in the Notification\n\nas well (notification dated 28.06.2018), which still requires a\n\nperson, who is appointed as a teacher with B.Ed. qualification to\n\n‘mandatorily undergo a six-month Bridge Course in Elementary\n\nEducation’. This defeats the very logic of including B.Ed. as a\n\nqualification, as the very notification which pushes for the\n\ninclusion of B.Ed., also recognises its inherent pedagogical\n\nweakness in its relation to primary classes.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P042_C03",
+      "text": "It is to cover this\n\ndefect, that all such candidates, must undergo a mandatory six\n\nmonths Bridge Course in elementary education! The irony here\n\nis that all this is being done when the State of Rajasthan already\n\nhas more than the required number of Diploma qualified\n\ncandidates available. This is besides the fact that there is\n\npresently no such “bridge course” available; at least there was\n\nnone till the disposal of the petition by the Rajasthan High Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P043_C01",
+      "text": "33. Under these circumstances, we are unable to comprehend\n\nas to what was the pressing need to include B.Ed. candidates,\n\nwho are admittedly not fully trained to take up Primary Classes!\n\nConsequently, the decision of the NCTE to include B.Ed. as a\n\nqualification for teachers in a primary school seems arbitrary,\n\nunreasonable and in fact has no nexus with the object sought to\n\nbe achieved by the Act i.e. Right to Education Act, which is to give\n\nto children not only free and compulsory but also ‘quality’\n\neducation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P044_C01",
+      "text": "34. In our considered opinion therefore NCTE was not justified\n\nin including B.Ed. as a qualification for appointment to the post\n\nof primary school teacher (Level-1), a qualification it had so far\n\nconsciously kept out of the eligibility requirement. The Rajasthan\n\nHigh Court by way of the Impugned Judgement had rightly struck\n\ndown the notification dated 28.06.2018, on the following\n\ngrounds:-\n“(i) The impugned notification dated 28.06.2018 is\n unlawful because: -\n(a) it is under the direction of the Central Government,\n which power the Central Government under Subsection\n (1) of Section 23 of the RTE Act did not have; and\n(b) it is not in exercise of power of the Central\n Government under Sub-section (2) of\nSection 23\nof RTE\n\nAct relaxing the eligibility criteria prescribed by the\n NCTE, nor there has been any exercise for ascertaining\n existence of the conditions precedent for exercising such\n power. (ii) The petitioners have locus standi to challenge the\n notification dated 28.06.2018. Merely because an\n additional qualification is recognized as one of the\n eligibility criteria, the petitioners cannot be prevented\n from challenging it.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P044_C02",
+      "text": "(iii) Accepting a candidate with B.Ed. degree as eligible\n for appointment and thereafter subjecting him to\n complete the bridge course within two years of\n appointment is in the nature of relaxing the existing\n eligibility criteria, which the Central Government could\n have done only within Sub-section (2) of\nSection 23\nand\n subject to existence of circumstances necessary for\n exercise of such power. (iv) The State Government could not have ignored the\n notification of NCTE dated 28.06.2018 while issuing\n advertisement for REET. However, when we have\n declared that this notification is illegal and are in the\n process of setting aside, the issue becomes one of\n academic value.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P045_C01",
+      "text": "35. One important aspect of the present case must now be dealt\n\nwith, on which much emphasis was laid by the counsel for the\n\nappellant. The submission is that the Central Government in any\n\ncase is the final authority in deciding as to what qualification has\n\nto be there for teachers and the NCTE is bound to follow the\n\ndirections of the Central Government in this regard. Reliance was\n\nplaced on two provisions of National Council for\nTeacher\n\nEducation Act, (NCTE Act\n), Section 12A and\nSection 29\n. We must\n\nexamine these provisions in the light of the submissions made\n\nbefore us. Section 12A\nof the Act, reads as under:\n“12A.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P045_C02",
+      "text": "Power of Council to determine minimum\n standards of education of school teachers. -- For the\n purpose of maintaining standards of education in\n schools, the Council may, by regulations, determine the\n qualifications of persons for being recruited as teachers\n in any pre-primary, primary, upper primary, secondary,\n senior secondary or intermediate school or college, by\n whatever name called, established, run, aided or\n recognised by the Central Government or a State\n Government or a local or other authority:\nProvided that nothing in this section shall adversely\n affect the continuance of any person recruited in any pre-\n primary, primary, upper primary, secondary, senior\n secondary or intermediate schools or colleges, under any\n rule, regulation or order made by the Central\n Government, a State Government, a local or other\n authority, immediately before the commencement of the\n National Council for Teacher Education (Amendment) Act,\n 2011 (18 of 2011) solely on the ground of non-fulfilment\n of such qualifications as may be specified by the\n Council:\nProvided further that the minimum qualifications of a\n teacher referred to in the first proviso shall be acquired\n within the period",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P045_C03",
+      "text": "specified in this Act or under the\nRight\n of Children to Free and Compulsory Education Act, 2009\n(35 of 2009).]”\n\n Section 12A was inserted in the\nNCTE Act\nthat is after the\n\nenactment of Right to Education Act, 2009.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P045_C04",
+      "text": "Section 12A only\n\ncompliments Section 23 of the Right to Education Act, which we\n\nhave already discussed in the preceding paragraphs. Next, we come to the\nSection 29\nof the NCTE Act which is as\n\nunder:\n“29. Directions by the Central Government : (1) The\n Council shall, in the discharge of its functions and duties\n under this Act be bound by such directions on questions\n of policy as the Central Government may give in writing\n to it from time to time. (2) The decision of the Central Government as to whether\n a question is one of policy or not shall be final.”\n\n It was submitted that by a notification dated 28.06.2018,\n\nNCTE has only followed the directions of the Central Government\n\nwhich are in the nature of a policy. Further it is also evident from\n\nthe minutes of the meeting dated 28.05.2018 where it was\n\nclarified that the direction of the Central Government to include\n\nB.Ed. as a qualification is a direction under\nSection 29\nof the Act.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P045_C05",
+      "text": "The NCTE is bound to follow the directions of the Central\n\nGovernment in this regard and the direction in the present case\n\nwas to include B.Ed. as a qualification for teachers in primary\n\nschool, which has been done by NCTE through notification dated\n\n28.06.2018, are the submission of the learned counsel for the\n\nappellants as well as that of the learned ASG Ms. Aishwarya\n\nBhati on behalf of the Union of India. Moreover, as per sub-\n\nSection (2) of\nSection 29\n, the decision of the Central Government\n\nas to what constitutes a policy decision will ultimately matter, is\n\nalso the argument.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P046_C01",
+      "text": "36. The introduction of B.Ed. as a qualification by NCTE on the\n\ndirections of the Central Government is a policy decision of the\n\nGovernment, as has been submitted before this Court, and is also\n\nevident from the sequence of events, the minutes of the various\n\nmeeting and the order passed in this regard. Section 29\nof NCTE\n\nAct which mandates that NCTE must follow the directions of the\n\nCentral Government in discharging of its functions. It is a policy\n\ndecision which binds NCTE. We have absolutely no doubt in our mind that policy\n\ndecisions of the Government should normally not be interfered\n\nwith, by a constitutional Court in exercise of its powers of judicial\n\nreview. At the same time if the policy decision itself is contrary to\n\nthe law and is arbitrary and irrational, powers of judicial review\n\nmust be exercised. A policy decision which is totally arbitrary; contrary to the\n\nlaw, or a decision which has been taken without proper\n\napplication of mind, or in total disregard of relevant factors is\n\nliable to be interfered with, as that also is the mandate of law and\n\nthe Constitution. This aspect has been reiterated by this Court\n\ntime and again.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P046_C02",
+      "text": "Judicial review becomes necessary where there is an\n\nillegality, irrationality or procedural impropriety. These principles\n\nwere highlighted by Lord Diplock in Council of Civil Service\n\nUnions v. Minister for the Civil Service17 (commonly known as\n\nCCSU case). The above decision has been referred by this Court\n\nState of NCT of Delhi v. Sanjeev18\n. This view was reiterated\n\nagain by this Court in\nState of M.P. & Ors. v. Mala Banerjee19\n:-\n“6. We also find ourselves unable to\n agree with the appellants' submission\n that this is a policy matter and,\n therefore, should not be interfered with\n by the courts. Federation of Railway\n Officers Assn. v. Union of India\n[(2003) 4\n SCC 289] , this Court has already\n considered the scope of judicial review\n and has enumerated that where a policy\n is contrary to law or is in violation of the\n provisions of the Constitution or is\n arbitrary or irrational, the courts must\n perform their constitutional duties by\n striking it down...”\n\n17 (1984) 3 All ER 935 : 1985 AC 374 : (1984) 3 WLR 1174 (HL)\n18 (2005) 5 SCC 181\n19 (2015) 7 SCC 698\n\nBrij Mohan Lal v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P046_C03",
+      "text": "Union of India20\nthis Court reiterated\n\non this aspect and made out a distinction as to where an\n\ninterference to a decision is required, and whereas it is not :-\n“100. Certain tests, whether this Court should\n or not interfere in the policy decisions of the\n State, as stated in other judgments, can be\n summed up as:\n(I) If the policy fails to satisfy the test of\n reasonableness, it would be\n unconstitutional. (II) The change in policy must be made\n fairly and should not give the\n impression that it was so done\n arbitrarily on any ulterior intention. (III) The policy can be faulted on grounds\n of mala fides, unreasonableness,\n arbitrariness or unfairness, etc. (IV) If the policy is found to be against any\n statute or the Constitution or runs\n counter to the philosophy behind these\n provisions. (V) It is dehors the provisions of the Act or\n legislations. (VI) If the delegate has acted beyond its\n power of delegation.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P047_C01",
+      "text": "101. Cases of this nature can be classified\n into two main classes: one class being the\n\n20 (2012) 6 SCC 502\n\nmatters relating to general policy decisions of\n the State and the second relating to fiscal\n policies of the State. In the former class of\n cases, the courts have expanded the scope of\n judicial review when the actions are arbitrary,\n mala fide or contrary to the law of the land;\nwhile in the latter class of cases, the scope of\n such judicial review is far narrower. Nevertheless, unreasonableness,\n arbitrariness, unfair actions or policies\n contrary to the letter, intent and philosophy of\n law and policies expanding beyond the\n permissible limits of delegated power will be\n instances where the courts will step in to\n interfere with government policy.”\n\n The decision whether to include or exclude B.Ed. as a\n\nqualification for teachers in primary school is an academic\n\ndecision, which has to be taken after proper study by the\n\nacademic body i.e. NCTE and should be better left to this expert\n\nbody.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P047_C02",
+      "text": "But as we have seen the decision to include B.Ed. as a\n\nqualification is not an independent decision of NCTE, but it was\n\nthe decision of the Central Government and NCTE was simply\n\ndirected to carry it out for that being a direction under\nSection 29\nof NCTE Act, a direction NCTE followed. In the present case and in the larger context of the matter,\n\nwe cannot even see this as a policy decision. But without getting\n\ninto this argument, even presuming for the sake of argument that\n\nthe decision taken at the Government level to include B.Ed. as a\n\nqualification for teachers at primary level is a policy decision, we\n\nmust say that this decision is not correct as it is contrary to the\n\npurpose of the Act. In fact, it goes against the letter and spirit of\n\nthe Fundamental Right enshrined in the Constitution under\nArticle 21A. It is against the specific mandate of the Act, which\n\ncalls for a free, compulsory and meaningful primary education to\n\nchildren. By including B.Ed. as a qualification for teachers for\n\nprimary school, the Central Government has acted against the\n\nprovisions of the Constitution and the laws.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P047_C03",
+      "text": "The only logic given\n\nby the Central Government to include B.Ed. as a qualification is\n\nthat it is a ‘higher qualification’. This we have already seen is not\n\ncorrect. Under these circumstances, we have no hesitation to say\n\nthat the notification has rightly been quashed and the decision of\n\nthe Division Bench of the Rajasthan High Court has to be upheld. In our considered opinion therefore the direction of the\n\nCentral Government dated 30.05.2018 culminating in the\n\nnotification dated 28.06.2018 of NCTE are violative of the\n\nprinciples as\nlaid down in\nRTE Act\n. Not only this, the notification\n\ngoes against the purpose and the mandate of law, which is to\n\nprovide a meaningful and ‘quality’ primary education to children. The entire exercise is also procedurally flawed. The\n\nnotification dated 28.06.2018 is not an independent decision of\n\nNCTE taken after due deliberation, but it simply follows the\n\ndirection of the Central Government, a direction which fails to\n\ntake into consideration the objective realities of the day.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P047_C04",
+      "text": "Having made the above determination we, all the same, are\n\nalso of the considered opinion that the State of Rajasthan was\n\nclearly in error in not calling for applications from B.Ed. qualified\n\ncandidates, for the reasons that till that time when such an\n\nadvertisement was issued by the Rajasthan Government, B.Ed.\n\ncandidates were included as eligible candidates as per the\n\nstatutory notification of NCTE, which was binding on the\n\nRajasthan Government, till it was declared illegal or\n\nunconstitutional by the Court. The Rajasthan High Court had\n\nrightly observed as under :-\n“..we are of the opinion that the State\n Government could not have ignored the\n notification while inviting applications for\n REET. Even if the State Government was of\n the opinion that such notification was\n unconstitutional or for any reason illegal, the\n\nsame had to be stayed or set aside by a\n competent court before it could be ignored.”\n [Para 45 of the Impugned Judgement]\n\n What the Rajasthan High Court had stated above is the\n\nsettled legal position. In a recent three Judge judgment of this\n\nCourt in\nState of Manipur & Ors. v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P047_C05",
+      "text": "Surjakumar Okram &\n\nOrs.21\nthis position that a statute which is made by a competent\n\nlegislature is valid till it is declared unconstitutional by a court\n\nof law; has been reiterated.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA_P048_C01",
+      "text": "37. Consequently, the Appeals are dismissed and the judgement\n\ndated 25.11.2021 of the Rajasthan High Court is upheld. The\n\nnotification dated 28.06.2018 is hereby quashed and set aside.\nThe Writ Petitions and all pending applications stand disposed of\n\nin light of the above order.\n…………………………..J.\n [ANIRUDDHA BOSE]\n\n …………………………..J.\n [SUDHANSHU DHULIA]\nNEW DELHI\n11th AUGUST, 2023.\n21 2022 SCC Online SC 130",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Devesh Sharma vs Union Of India",
+    "case_id": "SC_2023_DEVESH_SHARMA_VS_UNION_OF_INDIA",
+    "court": "Supreme Court of India",
+    "year": "2023",
+    "facts_summary": "2. A Division Bench judgment of Rajasthan High Court, dated\n\n25.11.2021, is under challenge before this Court. Apart from the\n\nappeals, there are three Writ Petitions as well before this Court,\n\non the same issue. All the same, while dealing with these cases,\n\nfor facts, we would be referring to Civil Appeal @ SLP (C)\n\nNo.20743 of 2021 Devesh Sharma versus Union of India, which\n\narises out of the order dated 25.11.2021 passed by the High\n\nCourt in D.B. Civil Writ Petition No. 2109 of 2021. 4. Apart from the above batch of petitioners, there was another\n\nset of petitioners, with their own grievance. These are the\n\ncandidates who are diploma holders in Elementary Education\n\n(D.El.Ed.)1, which was the only teaching qualification required for\n\nteachers at primary level, and who are aggrieved by the inclusion\n\n1 It is possible that this diploma is called by different names in different States. It is for this reason\nthat at some place it may just be referred as a diploma in elementary education.\n\nof B.Ed. qualified candidates. They too filed Writ Petitions before\n\nthe Rajasthan High Court challenging the legality of the\n\nnotification dated 28.06.2018. The State of Rajasthan\n\nunderstandably supported these second batch of candidates\n\nbefore the High Court, as they would do before this Court. 10. During the course of hearing, this Court had passed an\n\norder dated 24.08.2022, granting liberty to the Board of\n\nSecondary Education for different States, and other stake holders\n\nto be imp",
+    "legal_issues": "7. On behalf of the Petitioners, we have heard learned Senior\n\nCounsel, Mr. Paramjit Singh Patwalia who has assailed the\n\nJudgement of the Rajasthan High Court. Mr. Patwalia appeared\n\nfor the B.Ed. qualified candidates and would support the\n\nnotification dated 28.06.2018, and the petitioners who had\n\nchallenged their exclusion before the Rajasthan High Court. Ms.\n\nMeenakshi Arora, learned senior counsel was also heard for the\n\nappellants. The learned counsel would argue that the High Court\n\nfailed to consider that the notification dated 28.06.2018 was a\n\npolicy decision taken by the NCTE after the Central Government\n\nhad issued directions in this regard, under\nSection 29\nof the\n\nNCTE Act, and the High Court was wrong in interfering with the\n\npolicy decision of the Central Government. The NCTE broadly\n\nagrees with the submissions which have been made by Shri\n\nPatwalia, and Ms. Arora, while assailing the impugned\n\njudgement. 8. We have also heard the submissions by the learned Senior\n\nCounsel Mr. Kapil Sibal and Dr. Manish Singhvi who appeared for\n\nthe Diploma holders and the State of Rajasthan respectively who\n\nwould argue, inter alia, that the NCTE being an expert body had\n\nto take an independent decision in this case, based on the\n\nobjective realties. Even if the NCTE had to follow the directions of\n\nthe Central Government, the NCTE must demonstrate that these\n\ndirections had been independently considered by them and not\n\nimplemented in a mechanical manner. 9. On behalf of t",
+    "ratio_summary": "3. What lies at the core of the dispute before this Court is the\n\nnotification dated 28.06.2018, issued by the National Council for\n\nTeacher Education (hereafter ‘NCTE’), made in exercise of its\n\npowers under Section 23(1) of the Right to Education Act, 2009\n\n(hereinafter referred to as the ‘Act’). This notification made B.Ed.\n\ndegree holders eligible for appointment to the post of primary\n\nschool teachers (classes I to V). All the same, in spite of the\n\nabove notification, when the Board of Secondary Education, State\n\nof Rajasthan, issued an advertisement on 11.01.2021, for\n\nRajasthan Teacher Eligibility Test (RTET Level-1), it excluded\n\nB.Ed. degree holders from the list of eligible candidates. This\n\naction of the Rajasthan Government was challenged before the\n\nHigh Court. The petitioner Shri Devesh Sharma has a B.Ed.\n\ndegree, and as per the Notification dated 28.06.2018, he was\n\neligible, like many other similar candidates. Consequently, he\n\nfiled his petition before the Rajasthan High Court, inter alia,\n\npraying that the advertisement dated 11.01.2021 be quashed, as\n\nit was in violation of the notification dated 28.06.2018 issued by\n\nthe NCTE. 6. Hence the question of law to be answered in these cases is\n\nwhether NCTE was right in including B.Ed. qualification as an\n\nequivalent and essential qualification for appointment to the post\n\nof primary school teacher (Level-1)? The Rajasthan High Court in\n\nthe impugned judgment has quashed the notification dated\n\n28.06.2018, hold",
+    "final_order": "5. Out of the three writ petitions before us two (W.P. No. 137 of\n\n2022 and 881 of 2022) are challenging the notification dated\n\n28.06.2018 and the subsequent notifications issued by the\n\nGovernment of Bihar and U.P. respectively calling for application\n\nfrom eligible candidates including B.Ed. W.P. No. 355 of 2022\n\nagain challenges the notification dated 28.06.2018. SLP (C) No.\n\n22923 of 2022 is against an interim order of the Calcutta High\n\nCourt which denied relief to the petitioners who were seeking a\n\nstay of the notification dated 28.06.2018.",
+    "outcome_summary": "Disposed of. 5. Out of the three writ petitions before us two (W.P. No. 137 of\n\n2022 and 881 of 2022) are challenging the notification dated\n\n28.06.2018 and the subsequent notifications issued by the\n\nGovernment of Bihar and U.P. respectively calling for application\n\nfrom eligible candidates including B.Ed. W.P.",
+    "sections_cited": [
+      "Constitution 45",
+      "Constitution 21A"
+    ],
+    "cases_cited": [
+      "Unni\n\nKrishnan J.P v State of Andhra Pradesh and Ors"
+    ]
+  }
+}

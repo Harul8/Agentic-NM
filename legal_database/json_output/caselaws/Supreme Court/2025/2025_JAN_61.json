@@ -1,0 +1,615 @@
+{
+  "case_id": "SC_2025_LALITA_VS_VISHWANATH",
+  "case_name": "Lalita vs Vishwanath",
+  "normalized_case_name": "LALITA_VS_VISHWANATH",
+  "court": "Supreme Court of India",
+  "year": "2025",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 1086 of 2017",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "30 January 2025",
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Lalita",
+  "respondent": "Vishwanath",
+  "reporter_citations": [
+    "2025 INSC 173"
+  ],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 21,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2025\\JAN\\2025_JAN_61.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P001_C01",
+      "text": "REPORTABLE\n\n2025 INSC 173\n\n CRIMINAL APPELLATE JURISDICTION\n\n Criminal Appeal No.1086 of 2017\n\n LALITA Appellant(s)\n\n VERSUS\n\n VISHWANATH & ORS. Respondent(s)\n\n O R D E R",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P002_C01",
+      "text": "1. This appeal is at the instance of the mother of the\n\n deceased (the de facto complainant) seeking to assail the\n\n Judgment and order passed by the High Court of Judicature at\n\n Bombay, Bench at Aurangabad in Criminal Appeal No.125/2013 by\n\n which the High Court allowed the Criminal Appeal filed by the\n\n respondent - herein (original accused persons) and thereby\n\n acquitting them of the offence punishable under Sections 306,\n\n 498A read with\nSection 34\nof the Indian Penal Code (\nIPC\n).",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 34"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P003_C01",
+      "text": "2. It is the case of the appellant that the deceased Dev Kanya\n\n was married to the Respondent No.1 – herein namely Vishwanath\n\n past 1½ years before the date of incident in question. It is\n\n her\n\ncase that her daughter committed suicide she was\n\nfather of the deceased, the investigation started. The\n\nstatements of various witnesses were recorded by the police.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P004_C01",
+      "text": "4. The inquest panchnama of the dead body of the deceased was\n\ndrawn in the presence of panch witnesses. The dead body was\n\nsent for post-mortem. The post-mortem report revealed that the\n\ncause of death was due to drowning. It is the case of the\n\nappellant that her daughter committed suicide by jumping into a\n\nwell. The clothes and other articles were collected in the\n\ncourse of the investigation and were sent to the Forensic\n\nScience Laboratory for chemical analysis.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P005_C01",
+      "text": "5. Upon completion of the investigation, charge-sheet came to\n\nbe filed against all the four accused persons.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P006_C01",
+      "text": "6. The case came to be committed to the Court of Sessions\n\nunder\nSection 209\nof the Code of Criminal Procedure, 1973 (Cr\n\nPC).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P007_C01",
+      "text": "7. Upon committal, the case crime to be registered as Sessions\n\nCase No.12/2012.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P008_C01",
+      "text": "8. The Trial Court framed charge vide Exhibit ‘11’ to which\n\nall the accused persons pleaded not guilty and claimed to be\n\ntried.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P009_C01",
+      "text": "9. The prosecution examined the following witnesses in the\n\ncourse of the trial:-",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P010_C01",
+      "text": "10. The prosecution also led the following documentary evidence\n\nin support of its case:-",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P011_C01",
+      "text": "1. Copy of sale deed of S. no. 24/2 admeasuring 1 H.2 R.\n\n dated 21/11/2009 at Exh. 28.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P012_C01",
+      "text": "2. Copy of sale deed of S.o. 24/2 admeasuring 1 H. OR.\nDated 21/11/2009 at Exh. 29.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P013_C01",
+      "text": "3. Copy of mutation entry of S. No. 24/2 admeasuring 1 h.\n\n 2 r. at Exh.30.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P014_C01",
+      "text": "4. Copy of mutation entry of S. No. 24/2 admeasuring 1 H.\n\n O. R. at Exh. 31.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P015_C01",
+      "text": "5. Copy of mutation entry dated 29/3/2011 at Exh. 32.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P016_C01",
+      "text": "6. Copy of mutation entry dated 30/4/2011 at Exh. 33.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P017_C01",
+      "text": "7. Copy of 7/12 extract of S. No. 24/2 at Exh. 34\n8. Complaint dated 29/8/2011 at Exh. 35.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P018_C01",
+      "text": "9. Spot Panchanam Dated. 29/8/2011 at Exh. 41\n10. Inquest Panchanama dated 29/8/2011 at Exh. 43\n11. Provisional cause of death certificate at Exh. 52\n12. Post mortem report at Exh. 53\n13. Chemical Analyzers' report at Exh. 33/1.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P019_C01",
+      "text": "14. Copy of affidavit of Devkanya w/o Vishwanath Borade at\n\n Article-'A'.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P020_C01",
+      "text": "11. Upon closure of the recording of the oral evidence, the\n\nfurther statements of all the accused persons were recorded by\n\nthe Trial Court under\nSection 313\nof the Code.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P021_C01",
+      "text": "12. Upon appreciation of the oral as well as documentary\n\nevidence on record, the Trial Court held all the four accused\n\npersons guilty of the offence enumerated above and sentenced\n\nthem to undergo 10 years of rigorous imprisonment with fine of\n\nRs.1000/-.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P022_C01",
+      "text": "13. The accused persons, being dissatisfied with the Judgment\n\nand order of conviction passed by the Trial Court, went in\n\nappeal before the High Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P023_C01",
+      "text": "14. The High Court upon re-appreciation and re-evaluation of\n\nthe oral as well as documentary evidence on record allowed the\n\nappeal and acquitted all the four accused persons of the\n\ncharges enumerated above.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P024_C01",
+      "text": "15. The State did not deem fit to challenge the Judgment and\n\norder of acquittal passed by the High Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P025_C01",
+      "text": "16. The mother, i.e., the appellant herein is here before this\n\nCourt with the present appeal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P026_C01",
+      "text": "17. At this stage, it is relevant to note that although the\n\nfirst information report was lodged by father of the deceased\n\nyet before the trial commenced, he passed away.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P027_C01",
+      "text": "18. In such circumstances, the mother though fit to come before\n\nthis Court seeking to challenge the impugned Judgment and Order\n\nof acquittal passed by the High Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P028_C01",
+      "text": "19. We heard the learned counsel appearing for the appellant,\n\nthe learned counsel appearing for the respondent Nos.1 to 4\n\n(original accused persons) and the learned counsel appearing\n\nfor the State of Maharashtra.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P029_C01",
+      "text": "20. We are of the view that no error not to speak of any error\n\nof law could be said to have been committed by the High Court\n\nin acquitting all the four accused persons.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P030_C01",
+      "text": "21. There is no cogent or any reliable evidence on the basis of\n\nwhich it could be said that the accused persons abated the\n\ncommission of suicide.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P031_C01",
+      "text": "22. Mere harassment or cruelty is not sufficient to infer\n\nabetement. There has to be some credible evidence that the\n\naccused persons aided or instigated the deceased in some manner\n\nto take the drastic step of putting an end to her life.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P032_C01",
+      "text": "23. We do not rule out the possibility of the husband\n\npressurizing the deceased to transfer the land once again on\n\nhis name. However, even such instances, by themselves, may not\n\nbe sufficient to come to the conclusion that the deceased was\n\nleft with no alternative but to commit suicide.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P033_C01",
+      "text": "24. The learned counsel appearing for the appellant would rely\n\nupon\nSection 113A\nof the Indian Evidence Act, 1872 (for short\n\n‘the\nEvidence Act\n’).",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P034_C01",
+      "text": "25. In one of our recent pronouncements in the case of Ram\n\nPyarey v. the State of Uttar Pradesh, Criminal Appeal No. 1408\n\nof 2015, decided on 09.01.2025, we have explained the true\n\npurport of\nSection 113A\nof the Evidence Act, more particularly\n\nin what manner it shall be applied. We quote the relevant\n\nobservations:-\n\n“It is relevant to note that under Section 113B, the\n Court shall presume dowry death unlike Section 113A\n where the provision says that Court may presume abetment\n of suicide. This is the vital difference between the two\n provisions which raises presumption as regards abetment\n of suicide. When the Courts below want to apply\nSection\n 113A\nof the Evidence Act, the condition precedent is\n that there has to be first some cogent evidence as\n regards cruelty & harassment. In the absence of any\n cogent evidence as regards harassment or abetment in any\n form like aiding or instigating, the court cannot\n straightway invoke Section 113A and presume that the\n accused abetted the commission of suicide.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P035_C01",
+      "text": "26. Even with the aid of presumption under\nSection 113A\nof the\n\nEvidence Act, it is difficult to say that the accused persons\n\nabetted the commission of suicide. It is possible that the\n\ndeceased might have felt bad because the first wife came back\n\nto the matrimonial home and being hyper sensitive might have\n\ntaken the extreme step to commit suicide.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P036_C01",
+      "text": "27. Before we close this matter, we deem it necessary to\n\nexplain one very important aspect of the procedural law so far\n\nas it relates to proving the contents of the First Information\n\nReport through the Investigating Officer. In other words, if\n\nthe first informant has passed away before stepping into the\n\nwitness box, then whether the contents of such First\n\nInformation Report can be proved through the evidence of the\n\nInvestigating Officer and read into the evidence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P037_C01",
+      "text": "28. In the case on hand, as noted above, the First Information\n\nReport was lodged by the father of the deceased. However,\n\nbefore the father could step into the witness box, he passed\n\naway. In such circumstances, the Trial Court permitted the\n\nInvestigating Officer to prove the contents of the First\n\nInformation Report Exhibit-35 and read into evidence as per\nSection 67\nof the Evidence Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P038_C01",
+      "text": "29. The basic purpose of filing a First Information Report is\n\nto set the criminal law into motion. A First Information Report\n\nis the initial step in a criminal case recorded by the police\n\nand contains the basic knowledge of the crime committed, place\n\nof commission, time of commission, who was the victim, etc. The\n\nterm ‘First Information Report’ has been explained in the\nCode\n\nof Criminal Procedure\n, 1973 by virtue of\nSection 154\n, which\n\nlays down that:\n“Every information relating to the commission of a cog-\n nizable offence, if given orally to an officer in charge\n of a police station, shall be reduced to writing by him\n or under his direction, and be read over to the infor-\n mant and every such information, whether given in writ-\n ing or reduced to writing as aforesaid, shall be signed\n by the person giving it, and the substance thereof shall\n be entered in a book to be kept by such officer in such\n form as the State Government may prescribe in this be-\n half.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P039_C01",
+      "text": "30. F.I.Rs. can be registered by a victim, a witness or some-\n\none else with the knowledge of the crime. The police can record\n\nthree different kinds of statements. The first kind of state-\n\nment is one which can be recorded as an F.I.R., the second kind\n\nof statement is one which can be recorded by the police during\n\nthe investigation, and the third kind of statement is any kind\n\nof statement which would not fall under any of the two cate-\n\ngories mentioned above. Evidence is the matter of testimony\n\nmanifesting the fact on a particular precision or circum-\n\nstances. The First Information Report is not by itself a sub-\n\nstantial piece of evidence and the statement made therein can-\n\nnot be considered as evidence unless it falls within the\n\npurview of\nSection 32\nof the Evidence Act. It is an admitted\n\nfact that the original first informant because of the injuries\n\ncaused by the applicants. The relative importance of a First\n\nInformation Report is far greater than any other statement\n\nrecorded by the police during the course of the investigation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P039_C02",
+      "text": "It is the foremost information the police gets about the com-\n\nmission of an offence and which can be used to corroborate the\n\nstory put-forward by the first informant under\nSection 157\n\nthe Evidence Act or to contradict his version by facts under\nSection 145\nof the Evidence Act in case he is summoned as a\n\nwitness in the case by the Court. It may happen that the infor-\n\nmant is the accused himself. In such cases, the First Informa-\n\ntion Report lodged by him cannot be used as an evidence against\n\nhim because it is embodied in the basic structure of our Con-\n\nstitution that a person cannot be compelled to be a witness\n\nagainst himself.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P040_C01",
+      "text": "31. In certain cases, the First Information Report can be used\n\nunder\nSection 32(1)\nof the Evidence Act or under\nSection 8\n\nthe Evidence Act as to the cause of informant's death or as a\n\npart of the informant's conduct. Section 32\nof the Evidence Act\n\nreads as under:-\n“32. Cases in which statement of relevant fact by person\n who is dead or cannot be found, etc., is relevant. Statements, written or verbal, of facts in issue or rel-\n evant facts made by a person who is dead, or who cannot\n be found, or who has become incapable of giving evid-\n ence, or whose presence cannot be procured without an\n amount of delay or expense which, under the circum-\n stances of the case, the court considers unreasonable,\n or who is kept out of the way by the adverse party, are\n themselves relevant facts in the following cases:”\n\n(1) When it relates to cause of death:- When the state-\nment is made by a person as to the cause of his death,\nor as to any of the circumstances of the transaction\nwhich resulted in his death, in cases in which the cause\nof that person's death comes into question.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P040_C02",
+      "text": "Such state-\nments are relevant whether the person who made them was\nor was not, at the time when they were made, under ex-\npectation of death, and whatever may be the nature of\nthe proceeding in which the cause of his death comes\ninto question. (2) Or is made in course of business:- When the state-\nment was made by such a person in the ordinary course of\nbusiness and, in particular, and without prejudice to\nthe generality of the foregoing provisions of this\nclause, when it consists of any entry or memorandum made\nby him in books kept in the ordinary course of business. (2A) Or is made in discharge of professional duty etc.:-\nWhen the statement consists of an entry or memorandum\nmade by such person in the discharge of professional\nduty or of an acknowledgement written or signed by such\nperson in respect of the receipt of money, goods, secur-\nities or property of any kind, or of a document used in\ncommerce, written or signed by him or of the date of a\nletter or other document usually dated, written or\nsigned by him.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P040_C03",
+      "text": "(3) Or against interest of maker:- When the statement is\nagainst the pecuniary or proprietary interest of the\nperson making it, or when, if true, it would expose him\nor would have exposed him to a criminal prosecution or\nto a suit for damages. Explanation: A recital as regards boundaries of immov-\nable property in document containing such statements, as\nto the nature or ownership or possession of the land of\nthe maker of the statement or of adjoining lands belong-\ning to third persons, which are against the interests of\nthe maker of the statement, are relevant and it is not\nnecessary that the parties to the document must be the\nsame as the parties to the proceedings or their\nprivies.”\n\n(4) Or gives opinion as to public right or custom, or\nmatters of general interest:- When the statement gives\nthe opinion of any such person as to the existence of\nany public right or custom or matter of public or gen-\neral interest, of the existence of which, if it existed,\nhe would have been likely to be aware, and when such\nstatement was made before any controversy as to such\nright, custom or matter had arisen.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P040_C04",
+      "text": "(5) Or relates to existence of relationship:- When the\nstatement relates to the existence of any relationship\n\nby blood, marriage or adoption between persons as to\nwhose relationship a [by blood, marriage or adoption]\nthe person making the statement had special means of\nknowledge, and when the statement was made before the\nquestion in dispute was raised. (6) Or is made in will or deed relating to family af-\nfairs:- When the statement relates to the existence of\nany relationship by blood, marriage or adoption between\npersons deceased and is made in any will or deed relat-\ning to the affairs of the family to which any such de-\nceased person belonged, or in any family pedigree, or\nupon any tombstone, family portrait or other thing on\nwhich such statements are usually made, and when such\nstatement was made before the question in dispute was\nraised.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P040_C05",
+      "text": "(7) Or in documents relating to transactions mentioned\nsection 13\n, clause (a): When the statement is con-\ntained in any deed, will or other document, being a\ndeed, will or other document which relates to any trans-\naction by which a right or custom was created, claimed,\nmodified, recognized, asserted or denied or which was\ninconsistent with its existence, as mentioned in clause\n(a) of\nsection 13\n. Explanation I:- Such statement is relevant where the\nquestion in the proceeding now before the court is as to\nthe existence of the right or custom or if such state-\nment related to facts collateral to the proceeding and\nit is not necessary that the parties to the document\nmust be the same as the parties to the proceeding or\ntheir privies.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P040_C06",
+      "text": "Explanation II:- A recital as regards boundaries of im-\nmovable property in a document containing such state-\nment, as to the nature or ownership or possession of the\nland of the maker of the statement or of adjoining lands\nbelonging to third persons, shall be relevant and it is\nnot necessary that the parties to the document must be\nthe same as the parties to the proceeding or their\nprivies.”\n\n(8) Or is made by several persons and expresses feelings\nrelevant to matter in question.-\nWhen the statement was made by a number of persons, and\nexpressed feelings or impressions on their part relevant\nto the matter in question. Illustrations\n(a) The question is whether A was murdered by B: or\n(b)\n\nA dies of injuries received in a transaction in the\ncourse of which she was ravished. The question is\nwhether she was ravished by B: or\n\nThe question is, whether A was killed by B under such\ncircumstances that a suit would lie against B by As\nwidow. Statements made by A as to the cause of his or her\ndeath, referring respectively to the murder, the rape\nand the actionable were under consideration, are relev-\nant facts. (b) The question is as to the date of As birth.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P040_C07",
+      "text": "An entry in the diary of a deceased surgeon regularly\nkept in the course of business, stating that, on a given\nday he attended A's mother and delivered her of a son,\nis a relevant fact. (c) The question is, whether A was in Calcutta on a\ngiven day. A statement in the diary of a deceased solicitor, regu-\nlarly kept in the course of business, that, on a given\nday, the solicitor attended A at a place mentioned in\nCalcutta, for the purpose of conferring with him upon\nspecified business, is a relevant fact. (d) The question is, whether a ship sailed from Bombay\nharbour on a given day. A letter written by a deceased member of a merchant's\nfirm by which she was chartered to their correspondents\nin London, to whom the cargo was consigned, stating that\nthe ship sailed on a given day from Bombay harbour, is a\nrelevant fact. (e) The question is, whether rent was paid to A for cer-\ntain land. A letter from A's deceased agent to A, saying that he\nhad received the rent on A's account and held it at As\norders, is a relevant fact. (f) The question is, whether A and B were legally mar-\nried.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P040_C08",
+      "text": "The statement of a deceased clergyman that he married\nthem under such circumstances that the celebration would\nbe a crime, is relevant. (g) The question is, whether A, a person who cannot be\nfound, wrote a letter on a certain day. The fact that a\nletter written by him is dated on that day, is relevant. (h) The question is, what was the cause of the wreck of\n a ship. A protest made by the Captain, whose attendance cannot\n be procured, is a relevant fact.”",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P041_C01",
+      "text": "32. If the informant dies, the First Information Report can be,\n\nunquestionably, used as a substantive evidence. A prerequisite\n\ncondition must be fulfilled before the F.I.R. is taken as a\n\nsubstantive piece of evidence i.e. the death of the informant\n\nmust have nexus with the F.I.R. filed or somehow having some\n\nlink with any evidence regarding the F.I.R. This is what has\n\nbeen explained by this Court in the case of Damodar\n\nPrasad v. State of U.P. [(1975) 3 SCC 851 : AIR 1975 SC 757].",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P042_C01",
+      "text": "33. There are plethora of decisions taking the view that an\n\nF.I.R. can be a dying declaration if the informant dies of his\n\ninjuries after lodging the same. [See\nMunna Raja v. State of\n\nM.P.\n((1976) 3 SCC 104 : AIR 1976 SC 2199)].",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P043_C01",
+      "text": "34. Another important thing is that for an F.I.R. lodged by a\n\ndeceased person to be treated as substantial, its contents must\n\nbe proved. It has to be corroborated and proved for there to be\n\nany value of the same in the case. The F.I.R. can be used by\n\nthe defence to impeach the credit of the person who lodged the\n\nF.I.R. under\nSection 154(3)\nof the Evidence Act. In case the\n\ndeath of the informant has no nexus with the complaint lodged\n\ni.e. he died a natural death and did not succumb to the injur-\n\nies inflicted on him in relation to a matter, the contents of\n\nthe F.I.R. would not be admissible in evidence. In such circum-\n\nstances, the contents cannot be proved through the Investigat-\n\ning Officer. The Investigating Officer, in the course of his\n\ndeposition, should not be permitted to depose the exact con-\n\ntents of the F.I.R. so as to make them admissible in evidence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P043_C02",
+      "text": "All that is permissible in law is that the Investigating Of-\n\nficer can, in his deposition, identify the signature of the\n\nfirst informant and that of his own on the First Information\n\nReport and he can depose about the factum of the F.I.R. being\n\nregistered by him on a particular date on a particular police\n\nstation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P044_C01",
+      "text": "35. It is absolutely incorrect on the part of the Trial Court\n\nand the High Court to say that in the absence of the first in-\n\nformant, the police officer can prove the contents of the\n\nF.I.R. as per\nSection 67\nof the Evidence Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P045_C01",
+      "text": "36. In the case of\nHarkirat Singh v. State of Punjab\n[(1997) 11\n\nSCC 215 : AIR 1997 SC 3231], this Court observed as under:-\n“In our considered view, the High Court was not justi-\n fied in treating the statement allegedly made by\n Kharaiti Ram during inquest proceedings as substantive\n evidence in view of the embargo of\nSection 162\n, Cr. P.C.\n Equally unjustified was the High Courts reliance upon\n the contents of the FIR lodged by Walaiti Ram who, as\n stated earlier, could not be examined during the trial\n as he had died in the meantime. The contents of the FIR\n could have been used for the purpose of corroborating or\n contradicting Walaiti Ram if he had been examined but\n under no circumstances as a substantive piece of evi-\n dence.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P046_C01",
+      "text": "37. In the case of Hazarilal v. State (Delhi Administra-\n\ntion) [(1980) 2 SCC 390 : AIR 1980 SC 873], this Court, in para\n\n7, observed as under:-\n“The learned counsel was right in his submission about\n the free use made by the Courts below of statements of\n witnesses recorded during the course of investigation. Section 162\nof the Code of Criminal Procedure imposes a\n bar on the use of any statement made by any person to a\n Police Officer in the course of investigation at any en-\n\nquiry or trial in respect of any offence under investig-\nation at the time when such statement was made, except\n for the purpose of contradicting the witness in the man-\n ner provided by\nS. 145\nof the Indian Evidence Act. Where\n any part of such statement is so used any part thereof\n may also be used in the re-examination of the witness\n for the limited purpose of explaining any matter re-\n ferred to in his cross-examination. The only other ex-\n ception to this embargo on the use of statements made in\n the course of an investigation relates to the statements\n falling within the provisions of\nS. 32 (1)\nof the Indian\n Evidence Act or permitted to be proved under\nSection 27\nof the Indian Evidence Act.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P046_C02",
+      "text": "Section 145\nof the Evidence\n Act provides that a witness may be cross-examined as to\n previous statements made by him in writing and reduced\n into writing and relevant to matters in question,\n without such writing being shown to him or being proved\n but, that if it is intended to contradict him by the\n writing, his attention must, before the writing can be\n proved, be called to those parts of it which are to be\n used for the purpose of contradicting him. The Courts\n below were clearly wrong in using as substantive evid-\n ence statements made by witnesses in the course of in-\n vestigation. Shri. H.S.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P046_C03",
+      "text": "Marwah, learned counsel for the\n Delhi Administration amazed us by advancing the argument\n that the earlier statements with which witnesses were\n confronted for the purpose of contradiction could be\n taken into consideration by the Court in view of the\n definition of “proved” in\nSection 3\nof the Evidence Act\n which is, “a fact is said to be proved when, after con-\n sidering the matters before it, the Court either be-\n lieves it to exist or considers its existence so prob-\n able that a prudent man, ought, in the circumstances of\n the particular case to act upon the supposition that it\n exists”. We need say no more on the submission of Shri. Marwah except that the definition of proved does not en-\n able a Court to take into consideration matters, includ-\n ing statements, whose use is statutorily barred.”",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P047_C01",
+      "text": "38. We have to our benefit a very lucid and erudite judgment of\n\nthe Madhya Pradesh High Court in the case of\nUmrao\n\nSingh v. State of M.P.\n[1961 Criminal L.J. 270]. In this case,\n\nthe petitioners Umrao Singh and Kunwarlal were convicted of the\n\noffence punishable under Section 323 of the Penal Code and sen-\n\ntenced to two months rigorous imprisonment. The case of the\n\nprosecution was that on 27th August 1959, the petitioners named\n\nabove belaboured Barelal who had gone out to graze his cattle,\n\nand who was blamed by the accused to have caused damage to\n\ntheir crops. Barelal, however, died a natural death after six\n\nmonths of the occurrence, but before he could be examined as a\n\nwitness. It was contended that the F.I.R. lodged by Bare-\n\nlal could not be considered by the Courts below and that the\n\nevidence of the solitary witness, Pannala was unreliable, as he\n\nwas not mentioned in the list of witnesses filed by the prosec-\n\nution. In this set of facts, the Court observed as under:-\n“4.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P047_C02",
+      "text": "It is true that the first information report is not\n by itself a substantive piece of evidence and the state-\n ment made therein cannot be considered as evidence un-\n less it falls within the purview of\nS. 32\nof the Evid-\n ence Act. It is an admitted fact that Barelal did not\n die because of the injuries caused by the petitioners. Section 32\nwas inapplicable.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P048_C01",
+      "text": "5. It is true that in the list of witnesses Pannalal's\n name has been mis-spelt as ‘Dhannalal’, but this doubt\n is removed when the first information report is looked\n into. There, Pannalal's name is mentioned. Shri. Dey\n contends that it is not permissible to look at the F.I. R. at all. In my opinion this argument cannot be accep-\nted. It is proved by Ram Ratan P.W. 6 that he recorded\n the report which was lodged by Barelal There is a dis-\n tinction between factum and truth of a statement. It has\n been aptly pointed out by Lord Parker C.J. in R. v. Wil-\n lis (1960) 1 W.L.R. 55 that evidence of a statement made\n to a witness by a person who is not himself called as\n witness may or may not be hearsay. It is hearsay and inadmissible when the object of the\n evidence is to establish what is contained in the state-\n ment; it is not hearsay and is admissible when it is\n proposed to establish by the evidence not the truth of\n the statement but the fact that it was made. According\n to Ram Ratan, Barelal mentioned Pannalal's name to him.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P048_C02",
+      "text": "Applying the above dictum, Ramratan's evidence is inad-\n missible to prove that Pannalal was in fact present at\n the time of the occurrence; but Ram Ratan's statement is\n admissible to prove that Barelal had mentioned the name\n of Pannalal to the witness.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P049_C01",
+      "text": "39. In the overall view of the matter, we are convinced that no\n\ncase is made out for interference.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2025_LALITA_VS_VISHWANATH_P050_C01",
+      "text": "40. In the result, this Appeal fails and is hereby dismissed.\n…………………………………………J\n (J.B. PARDIWALA)\n\n …………………………………………J\n (R. MAHADEVAN)\nNEW DELHI\n30TH JANUARY, 2025.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Lalita vs Vishwanath",
+    "case_id": "SC_2025_LALITA_VS_VISHWANATH",
+    "court": "Supreme Court of India",
+    "year": "2025",
+    "facts_summary": "1. This appeal is at the instance of the mother of the\n\n deceased (the de facto complainant) seeking to assail the\n\n Judgment and order passed by the High Court of Judicature at\n\n Bombay, Bench at Aurangabad in Criminal Appeal No.125/2013 by\n\n which the High Court allowed the Criminal Appeal filed by the\n\n respondent - herein (original accused persons) and thereby\n\n acquitting them of the offence punishable under Sections 306,\n\n 498A read with\nSection 34\nof the Indian Penal Code (\nIPC\n). 2. It is the case of the appellant that the deceased Dev Kanya\n\n was married to the Respondent No.1 – herein namely Vishwanath\n\n past 1½ years before the date of incident in question. It is\n\n her\n\ncase that her daughter committed suicide she was\n\nfather of the deceased, the investigation started. The\n\nstatements of various witnesses were recorded by the police. 4. The inquest panchnama of the dead body of the deceased was\n\ndrawn in the presence of panch witnesses. The dead body was\n\nsent for post-mortem. The post-mortem report revealed that the\n\ncause of death was due to drowning. It is the case of the\n\nappellant that her daughter committed suicide by jumping into a\n\nwell. The clothes and other articles were collected in the\n\ncourse of the investigation and were sent to the Forensic\n\nScience Laboratory for chemical analysis.",
+    "legal_issues": "19. We heard the learned counsel appearing for the appellant,\n\nthe learned counsel appearing for the respondent Nos.1 to 4\n\n(original accused persons) and the learned counsel appearing\n\nfor the State of Maharashtra. 24. The learned counsel appearing for the appellant would rely\n\nupon\nSection 113A\nof the Indian Evidence Act, 1872 (for short\n\n‘the\nEvidence Act\n’). 37. In the case of Hazarilal v. State (Delhi Administra-\n\ntion) [(1980) 2 SCC 390 : AIR 1980 SC 873], this Court, in para\n\n7, observed as under:-\n“The learned counsel was right in his submission about\n the free use made by the Courts below of statements of\n witnesses recorded during the course of investigation. Section 162\nof the Code of Criminal Procedure imposes a\n bar on the use of any statement made by any person to a\n Police Officer in the course of investigation at any en-\n\nquiry or trial in respect of any offence under investig-\nation at the time when such statement was made, except\n for the purpose of contradicting the witness in the man-\n ner provided by\nS. 145\nof the Indian Evidence Act. Where\n any part of such statement is so used any part thereof\n may also be used in the re-examination of the witness\n for the limited purpose of explaining any matter re-\n ferred to in his cross-examination. The only other ex-\n ception to this embargo on the use of statements made in\n the course of an investigation relates to the statements\n falling within the provisions of\nS. 32 (1)\nof the Indian\n Evidence Act or permitted ",
+    "ratio_summary": "(5) Or relates to existence of relationship:- When the\nstatement relates to the existence of any relationship\n\nby blood, marriage or adoption between persons as to\nwhose relationship a [by blood, marriage or adoption]\nthe person making the statement had special means of\nknowledge, and when the statement was made before the\nquestion in dispute was raised. (6) Or is made in will or deed relating to family af-\nfairs:- When the statement relates to the existence of\nany relationship by blood, marriage or adoption between\npersons deceased and is made in any will or deed relat-\ning to the affairs of the family to which any such de-\nceased person belonged, or in any family pedigree, or\nupon any tombstone, family portrait or other thing on\nwhich such statements are usually made, and when such\nstatement was made before the question in dispute was\nraised. (7) Or in documents relating to transactions mentioned\nsection 13\n, clause (a): When the statement is con-\ntained in any deed, will or other document, being a\ndeed, will or other document which relates to any trans-\naction by which a right or custom was created, claimed,\nmodified, recognized, asserted or denied or which was\ninconsistent with its existence, as mentioned in clause\n(a) of\nsection 13\n. Explanation I:- Such statement is relevant where the\nquestion in the proceeding now before the court is as to\nthe existence of the right or custom or if such state-\nment related to facts collateral to the proceeding and\nit is not necessary t",
+    "final_order": "40. In the result, this Appeal fails and is hereby dismissed.\n…………………………………………J\n (J.B. PARDIWALA)\n\n …………………………………………J\n (R. MAHADEVAN)\nNEW DELHI\n30TH JANUARY, 2025.",
+    "outcome_summary": "40. In the result, this Appeal fails and is hereby dismissed.\n…………………………………………J\n (J.B. PARDIWALA)\n\n …………………………………………J\n (R. MAHADEVAN)\nNEW DELHI\n30TH JANUARY, 2025.",
+    "sections_cited": [
+      "IPC 34"
+    ],
+    "cases_cited": []
+  }
+}

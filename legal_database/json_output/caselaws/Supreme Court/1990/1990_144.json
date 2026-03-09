@@ -1,0 +1,425 @@
+{
+  "case_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC",
+  "case_name": "State Bank Of India & Ors. Etc vs S. Vijaya Kumar & Ors. Etc",
+  "normalized_case_name": "STATE_BANK_OF_INDIA_&_ORS._ETC_VS_S._VIJAYA_KUMAR_&_ORS._ETC",
+  "court": "Supreme Court of India",
+  "year": "1990",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 3393 of 1990",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "18 July 1990",
+  "judges": [
+    "N.M.  Kasliwal",
+    "L.M.  Sharma"
+  ],
+  "author": "N.M.  Kasliwal",
+  "bench_type": "division",
+  "petitioner": "State Bank Of India & Ors. Etc",
+  "respondent": "S. Vijaya Kumar & Ors. Etc",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 15,
+  "cited_by_count": 46,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1991 AIR 79",
+    "1990 SCR (3) 398",
+    "AIR 1991 SUPREME COURT 79",
+    "1991 LAB. I. C. 31",
+    "(1990) 3 JT 308 (SC)",
+    "1990 (3) JT 308",
+    "1990 (2) UJ (SC) 467",
+    "1990 (2) UPLBEC 961",
+    "1990 UJ(SC) 2 467",
+    "1990 (4) SCC 481",
+    "1991 SCC (L&S) 852",
+    "(1991) 78 FJR 47",
+    "(1990) 61 FACLR 605",
+    "(1991) 2 LABLJ 122",
+    "(1991) 1 LAB LN 22",
+    "(1990) 4 SERVLR 753",
+    "(1990) 2 UPLBEC 961",
+    "(1991) 1 BANKLJ 231",
+    "(1990) 14 ATC 787",
+    "(1991) BANKJ 318",
+    "(1990) 2 CURLR 551",
+    "(1990) 2 BANKCLR 437"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1990\\1990_144.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P001_C01",
+      "text": "CITATION:\n 1991 AIR 79 1990 SCR (3) 398\n 1990 SCC (4) 481 JT 1990 (3) 308\n 1990 SCALE (2)110",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P002_C01",
+      "text": "ACT:\nState Bank of India Act, 1955\n/State Bank of India\n(Supervising Staff) Service Rules. 1975/State Bank of India\nGeneral Regulations 1955--\nSections 43\n,",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P003_C01",
+      "text": ",\n50(1)\n/\nRegulation\n55(2)(a)\n--Order of dismissal not to be passed by an authori-\nty lower than the appointing authority.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P004_C01",
+      "text": "HEADNOTE:\n A common question of law viz., whether an order of\ndismissal against an employee, could validly be passed by an\nauthority lower than the appointing authority of the Bank,\narises for determination in these three appeals, two by the\nState Bank of India and the third by an employee. Respondent, Vijaya Kumar in Civil Appeal 3392 of 1990,\nwas appointed as Probationary Officer by an order of the\nExecutive Committee of the Central Board of the State Bank\nof India. He was charge sheeted for gross irregularities and\ncorrupt practices and was dismissed from service by an order\npassed by the Chief General Manager of the Bank, whereupon,\nhe flied a writ petition before the Andhra Pradesh High\nCourt, challenging the order of dismissal passed against\nhim. A Division Bench of the High Court heard the writ\npetition, alongwith writ appeal No. 141 of 1986 (involving a\nsimilar point). The High Court allowed the writ petition. The State Bank being aggrieved by the said order has filed\nthis appeal after obtaining special leave. T.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P004_C02",
+      "text": "Dayakar Rao, respondent in Civil Appeal No. 3393 of\n1990 was appointed as a Clerk in the State Bank in October,\n1962 and while he was working as a Bank Manager he was\nchargesheeted for irregularities committed by him during the\nperiod from 1.9.1979 to 14.6.80. He was dismissed under\norders of the Chief General Manager being the disciplinary\nauthority. Mr. Rao flied a writ petition in the High Court\nand the High Court allowed the writ petition following its\ndecision in writ appeal No. 141 of 1986. Being aggrieved the\nState Bank has filed the instant appeal with special leave\nof the Court. Civil Appeal No. 3394 of 1990 has been filed ,by an employee\nA.K.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P005_C01",
+      "text": "Soundararajan, who was appointed as Technical Officer by the\nExecutive Committee of the Central Board of the Bank. It was\nspecifically mentioned in the Order of appointment that Shri\nSoundararajan would be governed by the State Bank of India\n(Officers & Assistants) Service Rules. Shri Soundararajan\nwas chargesheeted and dismissed under orders passed by the\nChief General Manager- Thereupon he filed a writ petition in\nthe High Court challenging his order of dismissal. Learned\nSingle Judge of the High Court allowed the writ petition. The Bank filed an appeal before the Division Bench. The\nDivision Bench in this case took into consideration an\namendment made in\nRegulation 55\nby a resolution dated\n25.8.1988 made applicable with retrospective effect. Accord-\ningly the Division Bench allowed the appeal filed by the\nBank, Aggrieved against this order. Shri Soundararajan has\nflied Civil Appeal 3394 of 1990 with special leave.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P005_C02",
+      "text": "The contention urged by the employees is that the Chief\nGeneral Manager, being a lower authority than the Executive\nCommittee, he had no competence to pass the order of dis-\nmissal whereas the Bank contends that the Chief General\nManager had, by virtue of the amendment of\nRegulation\n55(2)(a)\nmade retrospectively, become the appointing author-\nity of employees in question and as such the orders of\ndismissal passed by him against the employees long after the\namendment are valid. Allowing the appeals by the State Bank and remanding the\ntwo cases to the High Court and directing that the appeal by\nSoundararajan be listed for final hearing, this Court,\n HELD: The hallmark of status is the attachment to a\nlegal relationship of rights and duties imposed by the\npublic law and not by mere agreement by the parties.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P005_C03",
+      "text": "Emolu-\nment of the Government servant and his terms of service are\ngoverned by statute or statutory rule which may be unilater-\nally altered by the Government without the consent of the\nemployee. [411F-G]\n Under\nArticle 311(1)\nof the Constitution, the words used\nare \"by which he was appointed\"- In regulation 55(2)(a)\nthere are no such words \"by which he was appointed\" and in\nits place the only right guaranteed is that the employee\nshall not be dismissed by an authority lower than the ap-\npointing authority. [410A]\n Thus the right guaranteed in case of the officers or\nemployees of the State Bank is that the order of dismissal\ncannot he passed by an",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P006_C01",
+      "text": "authority lower than the appointing authority. [410B]\n The right whatsoever conferred on the employees of the\nState Bank was on the basis of\nRegulation 55(2)(a)\nand the\nCentral Board of the Bank was authorised to amend such\nregulations from any date under\nSection 50(2)(a)\nof the Act.\nThis provision now concludes the controversy if any and\nclearly provides that the appointing authority shall mean\nand include the authority who has been designated as such at\nthe time when such order is passed. [412B; 410H]\n State of Jammu & Kashmir v. Triloki Nath Khosa & Ors.,\n[1974] 1 S.C.R. 771; Bishun Narain Misra v. The State of\nUttar Pradesh & Ors., A.I.R. 1965 Vol. 52 S.C. 1567; Roshan\nLal Tandon v. Union of India & Anr. and Kunj Behari v. Union\nof India & Ors., A.I.R. 1967 S.C. (Vol. 54) 1889, referred\nto.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P007_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal Nos. 3392-\n3394 of 1990. From the Judgment and Order dated 30.11. 1989 of the\nAndhra Pradesh High Court in W.A. No. 269/89, dated\n30.8.1988 in W.P. No. 12041/84 and dated 26.11.1987 in W.P. No. 194 of 1983. P.K. Goswamy, Additional Solicitor General, M.K. Ramamurthy, C. Sitaramaiya, M.L. Paul, Kailash Vasdev, Ms. M.M. Rasaily, M.A. Krishnamurthy, Mrs. C. Ramamurthy,\nT.V.S.N. Chari, Mrs. B. Sunita Rao and Ms. Majula Gupta for\nthe Appearing Parties. The Judgment of the Court was delivered by\nKASLIWAL, J. Special leave granted. All the above cases are disposed of by one single order\nas identical questions of law are involved in all these\ncases. In order to appreciate the controversy, facts in\nbrief are stated of all these cases. SLP No. 4176 of 1988:\nThe respondent Vijaya Kumar was appointed as a Proba-\ntionary Officer (Gr. I Officer) by an Order of the Executive\nCommittee of the Central Board of the State Bank of India on\n7.12.71.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P007_C02",
+      "text": "The respondent was charge sheeted in respect of\ngross irregularities and corrupt\n?401\npractices and was ultimately dismissed from service by an\norder dated 22.12.88 passed by the Chief General Manager of\nthe Bank. Shri Vijay Kumar filed a writ petition No. 194/83\nbefore the Andhra Pradesh High Court challenging his order\nof dismissal. A Division Bench of the High Court heard the\nwrit petition alongwith writ appeal No. 141/86 and allowed\nthe writ petition but dismissed the writ appeal by order\ndated 26.11.87. The State Bank aggrieved against the afore-\nsaid order of the High Court passed in writ petition No.\n194/83 has filed this special leave petition. The High Court\nhas allowed the writ petition only on one ground that the\nappointing authority of Vijaya Kumar was Executive Committee\nof the Bank and as such Chief General Manager being an\nauthority lower than the appointing authority was not compe-\ntent to pass an order of dismissal. SLP No. 15235 of 1988:\nIn this case the respondent T. Dayakar Rao was appointed\nas a Clerk in the State Bank of India in the month of Octo-\nber, 1962.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P007_C03",
+      "text": "In the month of July, 1971 he was selected as a\nTrainee Officer and was given job training at various\nbranches of the Bank for two years. While he was working as\na Bank Manager he was chargesheeted for irregularities\ncommitted by him during the period 1.9.79 to 15.6.80. Disci-\nplinary proceedings were initiated on 29.7.82. On 6.3.84 the\nChief General Manager in the capacity of disciplinary au-\nthority passed an order of dismissal. T. Dayakar Rao filed a\nwrit petition No. 1204/84 in the High Court. The Division\nBench of the High Court by an order dated 13th August, 1988\nallowed the writ petition following the decision of Division\nBench given in writ appeal No. 141/86 dated 26.11.87. The\nBank aggrieved against the aforesaid order has filed the\nSpecial Leave Petition under\nArticle 136\nof the Constitu-\ntion. SLP No. 2069 of 1990:\nIn this case Shri A.K. Soundararajan appellant was\nappointed as Technical Officer by an order dated 14.6.68 of\nthe Executive Committee of the Central Board of the Bank. It\nwas mentioned in the Order that Shri Soundararajan would be\ngoverned by the State Bank of India (Officers & Assistants)\nService Rules.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P007_C04",
+      "text": "Post of Technical Officer was considered\nequivalent to Staff Officer Grade III under the Rules. He\nwas suspended and given a chargesheet on 23.4.82 and was\ndismissed by an order dated 31.3.83 passed by the Chief\nGeneral Manager. Shri Soundararajan filed a writ petition\nNo. 7108/85 in the High Court challenging his order of\ndismissal. Learned Single Judge of the High",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P008_C01",
+      "text": "Court by order dated 31.10.88 allowed the writ petition by\nfollowing the decision given by the Division Bench in writ\npetition No. 1204/84 in the case of T. Dayakar Rao. The\nState Bank aggrieved against the order of the learned Single\nJudge filed an appeal before the Division Bench. The Divi-\nsion Bench in this case took into consideration an amendment\nmade in\nRegulation 55\nby a resolution dated 25.8.88 made\napplicable with retrospective effect. The Division Bench by\nOrder dated 30th November, 1989 allowed the appeal filed by\nthe Bank. Shri A.K. Soundararajan aggrieved against the\nOrder of the High Court has filed this Special Leave Peti-\ntion. It would be necessary to narrate the facts of SLP (C)\nNo. 5139/88 (\nState Bank of India v. Hanumantha Rao\n) disposed\nof by an order of this Court dated 30th January, 1990. Hanumantha Rao was promoted as Grade I Officer on\n1.4.1973 by the Executive Committee of the Central Board of\nState Bank of India. In 1979 he was posted as the Manager of\na branch of the Bank in Warangal District. In respect of\ncertain alleged acts of misfeasance/malfeasance he was\nsuspended on 17.8.81.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P008_C02",
+      "text": "On 4.5.82 a memo of charges was served\non Hanumantha Rao by the Chief General Manager of the Bank. The Chief General Manager of the State Bank of India, local\nhead office Hyderabad dismissed Hanumantha Rao by an order\ndated 7.1.84. Hanumantha Rao filed a writ petition No.\n5509/84 in the High Court. Learned Single Judge allowed the\nwrit petition declaring the order of dismissal as incompe-\ntent and invalid. The Bank aggrieved against the order of\nthe Learned Single Judge filed a Letters Patent Appeal No.\n141/86 before the Division Bench. The Division Bench heard\nand disposed of the writ appeal No. 141/86 and writ petition\nNo. 194/83 by a common order. The Division Bench agreed with\nthe conclusion of the learned Single Judge that the order of\ndismissal passed by the Chief General Manager is incompetent\nand invalid being violative of the guarantee contained in\nthe proviso to\nRegulation 55(2)(a)\nof the State Bank of\nIndia General Regulations, 1955.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P008_C03",
+      "text": "While dealing with the cross objections filed by Shri\nHanumantha Rao the Bench took notice of the fact that the\nwrit petitioner had died on 24.11.87 and as such gave the\nfollowing direction:\n\"On account of the death of the writ-petitioner it is unnec-\nessary for us to go into the merits of the contentions urged\nby way of cross-objections. There is no question of",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P009_C01",
+      "text": "any enquiry or further enquiry hereafter. We may mention in\nthis connection that the learned counsel for the petitioner\n(respondent in this Writ Appeal) offered to file a petition\nto bring on record the legal representatives of the deceased\nwrit-petitioner as respondents in this Writ Appeal since,\naccording to him, they would be entitled in any event to\nclaim the monetary benefits flowing from the orders of this\nCourt. Now that we have agreed with the learned single Judge\nthat the order of dismissal was incompetent and invalid, we\ndirect that the writ petitioner shall be treated to be under\nsuspension pending enquiry till 24.11. 1987 and all the\nmonetary benefits that he is entitled to on that basis,\nincluding the arrears of suspension allowance, shall be paid\nover to his legal representatives. Mr. Prasad will file the\nlegal representatives petition within two weeks from today. Post this Writ Appeal for orders after two weeks. The Writ Appeal, accordingly, fails and is dis-\nmissed, but, in the circumstances, without costs.\"\nThe Bank aggrieved against the aforesaid order filed the\nSLP No. 5139/88 before this Court.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P009_C02",
+      "text": "Taking note of the facts\nand circumstances of the case of Hanumantha Rao having died\non 24.11.87 leaving behind 14 children, this Court on 30th\nJanuary, 1990 did not consider if fit to interfere with\nimpugned order of the Division Bench. It was further made\nclear that even though this Court was not interfering with\nthe impugned order, the questions raised on behalf of the\nBank were left open. The Bank was directed to treat Hanuman-\ntha Rao in service and pay the dues, arrears of salary and\nother terminal benefits in accordance with law to his legal\nrepresentatives. With these observations, the SLP was dis-\nmissed. The question which calls for consideration in all these\ncases is whether the order of dismissal could be passed by\nthe Chief General Manager who was lower in rank to the\nExecutive Committee who was the appointing authority in\nthese cases. In order to appreciate this controversy, it would be\nproper to give reference of the relevant provisions of the\nState Bank of India Act, 1955\n(hereinafter referred to as\nthe Act), State Bank of India General Regulations, 1955\n(hereinafter referred to as the Regulations) and the State\nBank of India (Supervising Staff) Service Rules, 1975",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P010_C01",
+      "text": "(hereinafter referred to as the Rules). Section 43\nof the Act empowers the State Bank to appoint\nsuch number of officers, Advisors and Employees as it con-\nsiders necessary or desirable for the efficient performance\nof its functions and to determine the terms and conditions\nof their appointments and service. Section 49\nof the Act confers power on the Central\nGovernment,in consultation with the Reserve Bank to make\nrules to provide for all matters in which provision is\nnecessary or expedient for the purpose of giving effect to\nthe provisions of the Act. Section 50(1)\nof the Act confers powers on the Central\nBoard of Directors of the Bank to make regulations. Sub-section (3) of the\nSection 50\nof the Act empowered\nthe Reserve Bank to make the first regulations with the\nprevious sanction of the Central Government. In exercise of the powers conferred by sub-section (3)\nSection 50\nof the Act, the Reserve Bank of India with the\nprevious sanction of the Central Government made the State\nBank of India General Regulations, 1955. These regulations\nhave been amended from time to time by the Central Board of\nDirectors by making regulations under subsection (1) of\nSection 50\nof the Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P010_C02",
+      "text": "Regulation 55(2)(a)\ndeals with the initial appointments\nand promotions to various categories of employees in the\nbank. Initially the appointments of Officers used to be made\nonly by the Executive Committee as provided in\nRegulation\n55(2)(a)\n. As the bank grew larger in branches, the bank\nthought fit to vest the power of appointment and promotion\nto various functionaries of the bank and also gave power to\ndelegate their power of appointment also. Regulation\n55(2)(a)\nwas thus substituted by a resolution dated 18th\nAugust, 1971 of the Central Board. After this resolution for\nOfficers Grade I & II,the appointing authorities were speci-\nfied as the Secretary and Treasurer or the Managing Director\nrespectively depending upon whether the appointment/promo-\ntion is for service in the Circle or the Central office. The\nState Bank of India Officers & Assistants Rules which govern\nthe service conditions of Grade I Officer whether they were\nProbationary Officers or Trainee Officers and Staff Officers\nfollowed the scheme of \"appointing authority\n\"\nlaid down in\nthe Regulations. Regulation 55(2)(a)\nwas again amended by a\nresolution of the Central",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P011_C01",
+      "text": "Board on 11th July, 1972. By this amendment there was only a\nterminological regrouping of the earlier regulation rather\nthan any qualitative change. The State Bank Laws (Amendment)\nAct, 1973 introduced various amendments and one of the\namendments was relating to change of designation of Secre-\ntary and Treasurer as Chief General Manager. Hence the\nCentral Board vide its resolution dated 29.3.74 for the\nwords \"Secretary & Treasurer\" substituted \"Chief General\nManager.\" The service conditions of all Officers came to be\nbrought under a single set of service rules viz. the State\nBank of India (Supervising Staff) Service Rules which came\ninto force on 1.7.75.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P011_C02",
+      "text": "It would be important to mention that\nRegulation 55(2)(a)\nat all relevant period for our purpose\nrecognized the right of the officers or employees of the\nBank under the following clause \"such officers or employees\nshall not be dismissed from service of the State Bank by an\nauthority lower than the appointing authority.\" Clause (f)\nof Rule 3 of the State Bank of India (Supervising Staff)\nService Rules which is relevant for our purposes reads as\nunder:\n(f) \"Appointing Authority\" means--\n(i) in the case of Officers Grade II and Grade I and of\nother employees to whom the salary scales applicable to\nOfficers Grade II and Grade I generally apply with or with-\nout modification, the Chief General Manager concerned or the\nManaging Director according as the employee is serving in\nthe Circle or in or under Central Office;\n(ii) in the case of Staff Officers of various grades and of\nother employees to whom the salary scales applicable to\nStaff Officers generally apply with or without modification,\nthe Managing Director;\n(iii) in the case of Senior Staff Appointments and of em-\nployees to whom the salary, scales applicable to Senior\nStaff Appointments generally apply with or without",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P011_C03",
+      "text": "modifica-\ntion, the Executive Committee;\nSub-Rule (1) of Rule 50 relevant for our purposes is\nalso reproduced below:\n50(1)(i) The Disciplinary Authority may itself, or shall\nwhen so directed by its superior authority, institute disci-\nplinary proceedings against an employee.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P012_C01",
+      "text": "(ii) The Disciplinary Authority or any Authority higher than\nit may impose any of the penalties in rule 49 on an employ-\nee.\nIt may be further noted that an amendment in\nRegulation",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P013_C01",
+      "text": "was approved by Central Board at its meeting dated August\n25, 1988 which reads as under:\n55(1) Save as provided in sub-regulation (2) and as may be\ndirected the Central Board, a Local Board may exercise all\nthe powers of the State Bank in respect of the Staff serving\nin the areas in its jurisdiction.\n2(a) The appointing and/or promoting authority for various\ncategories/grades of officers and employees shall be such as\nthe Executive Committee may by general or special order\ndesignate from time to time. (b) No officer or employee of the Bank shall be dismissed,\ndischarged, removed or retired from the service of the Bank\nor reduced to a lower grade or post or to a lower stage in a\ntime scale by an authority lower than the appointing author-\nity.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P013_C02",
+      "text": "Explanation (For the purpose of clause (b) the term\n'appointing authority' shall mean and include the authority\nwho has been designated as such in respect of such class or\ngrade of officers or employees to which the officer or\nemployee concerned, as the case may be belongs at the time\nwhen such Order is passed or any proceeding leading to such\nOrder or termination is initiated. )\n(c) Nothing in this sub-regulation shall affect the powers\nof a disciplinary authority appointed or notified under any\naward, settlement under the\nIndustrial Disputes Act, 1947\n,\ngoverning, affecting or regulating the service conditions of\nworkmen of the Bank, and for the purpose of clause (b)\nabove, the appointing authority shall be deemed to have been\nsubstituted by such disciplinary authority. (d) The salary and other emoluments to be granted to offi-\ncers and other employees shall be as\nlaid down in\nthe Rules\nof Service approved by the Central Board and, where no such\nrules have been laid down, as fixed by the Executive Commit-\ntee.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P014_C01",
+      "text": "(e) The power to grant pensions to officers and other em-\nployees leaving the service of the State Bank, other than\npensions provided for under the Rules of pension funds\nrespectively applicable to them, shall be reserved to the\nCentral Board. (f) The grant of gratuities or other financial assistance,\neither temporary or permanent, to widows, children or other\ndependents of deceased officers or other employees shall be\nmade by the Executive Committee of the Central Board except\nwhere grant of any such gratuity or financial assistance is\nauthorised by any general direction given by the Central\nBoard.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P014_C02",
+      "text": "Explanation (The term 'Officers' in this regulation\nshall include any employee to whom the rules of service\ngenerally applicable to officers, apply with or without\nmodification.) (Sub-regulation (2) substituted with effect\nfrom 1.10.79).\"\nThe Executive Committee of the Bank passed the following\nresolution on August 30, 1988:\nIn exercise of the powers conferred by sub-section (1)\nSection 43\nof the State Bank of India Act, 1955 (23 of\n1955) and amended sub-regulation (2)(a) of\nRegulation 55\nthe State Bank of India General Regulations, 1955, the\nExecutive Committee of the Central Board of the State Bank\nof India hereby makes the following order:\nThe initial appointments and/or promotions to various\ncategories of officers and other employees in the Bank set\nout in Column I here under shall be made by the authority\nspecified in Column II. Column I Column II\n Employees working at branches\ni) Employees other a) Subordinate the concerned\n than officers Staff Branch Manager\n and deputy\n General Manager\n ii) Clerical the concerned\n Staff Regional Manager\n and Dy. General\n Manager.\n b) Employees working at LHOs/",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P015_C01",
+      "text": "Regional Offices and\n their establishments\n ---------------------------\n The concerned Office\n Manager/ Admn. Officer at\n Staff Colleges or Insti-\n tutes Manager Dy. Chief\n Manager or, where there is\n no post of above descrip-\n tions the head of con-\n cerned dept/office.\nii) Officers in The Chief General Manager\njunior management for appointments/promotions in the\n Grade Scale I Circle and the Chief General\n and Middle Manager (Personnel & HRD) in\n Management Central Office for Central\n Grade Scale II Office establishment.\niii) Officers in The Deputy Managing Director\n Middle Management\n Grade Scale III\niv) Officers in The Managing Director\n Senior Management\n Grade Scale IV, V\nv) Officers in Top Recommending Authority:\nExecutive Grade\n Scale VI, VII The Directors Promotion Committee\n and special consisting of the Chairman, the\n scales Managing Director and the Director\n nominated by the Central Government\n in terms of clause (e),\n sub-section (1) of\nSection 19\nand\n the Director nominated by the\n Reserve Bank of India in terms\n of clause (f) of sub-section (1)\nSection 19\nof the Act.\nPromoting/Appointing Authority:\nThe Executive Committee of the Cen-\ntral Board.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P016_C01",
+      "text": "All authorisations in respect of appointing authority\nand/or promoting authority made by the Executive Committee\nfrom time to time after 1.10.79 shall be deemed to have been\ndone under the amended regulation 55. Appointments autho-\nrised by the Chief General Manager (Personnel & HRD) in\nrespect of JMGS I after 1.10.79 are also confirmed hereby. All the employees of the bank in the cases before us\nwhere appointed by the Executive Committee. Order of dis-\nmissal in their cases has been passed by the Chief General\nManager. It is an admitted position that on the date of\npassing the order of dismissal the Chief General Manager was\nthe appointing authority. According to the Bank though the\nemployees were appointed by the Executive Committee, but at\nthe time when inquiry was held and the order of dismissal\npassed, the Chief General Manager had become the appointing\nauthority. On the other hand the contention on behalf of the\nemployees is that the Executive Committee being the appoint-\ning authority, no authority lower than the Executive Commit-\ntee can pass the order of dismissal in their cases.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P016_C02",
+      "text": "Accord-\ning to their contention the Chief General Manager, being a\nlower authority than the Executive Committee, he had no\ncompetence to pass the order of dismissal. Learned counsel\nfor the employees in this regard referred to\nArticle 311\nthe Constitution of India and placed reliance on a plethora\nof cases decided on the basis of guarantee enshrined under\nArticle 311\nof the Constitution. The guarantee clause under\nArticle 311(1)\nof the Consti-\ntution of India which is relevant for our purpose reads as\nunder:\n\"No person who is a member of a Civil Service of the Union\nor an All India Service or a Civil Service of a State or\nholds a Civil post under the Union or a State shall be\ndismissed or removed by an authority subordinate to that by\nwhich he was appointed.\"\nNow so far as the right which has been conferred on the\nemployees of the State Bank contained in\nRegulation 55(2)(a)\nis that such officers or employees shall not be dismissed\nfrom service of the State Bank by an authority lower than\nthe appointing authority.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 311"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P016_C03",
+      "text": "Thus a comparison of the provi-\nsions contained in\nArticle 311(1)\nof the Constitution and\nthe right guaranteed to the employees of the State Bank\nunder\nRegulation 55(2)(a)\nshows that there is a material\ndifference between the language used in the two provisions. Under Arti-",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P017_C01",
+      "text": "cle 311(1) the words used are \"by which he was appointed.\"\nRegulation 55(2)(a)\nthere are no such words \"by which he\nwas appointed\" and in its place the only right guaranteed is\nthat the employee shall not be dismissed by an authority\nlower than the appointing authority. Thus the right guaran-\nteed in case of the officers or employees of the State Bank\nis that the order of dismissal cannot be passed by an au-\nthority lower than the appointing authority. A perusal of\nthe relevant Regulations and Rules mentioned above clearly\ngo to show that the Chief General Manager had become the\nappointing authority of the employees in question under\nRegulation 55(2)(a)\nwith effect from 1.7.74. Admittedly the\norders of dismissal have been passed long after these amend-\nments when the Chief General Manager had already become\ntheir appointing authority under the Regulations and the\nRules. The right that an officer or employee of the State\nBank of India cannot be dismissed from service by an author-\nity lower than the appointing authority is a creation of\nstatutory rules and regulations.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P017_C02",
+      "text": "So far as the right or\nprotection guaranteed under\nArticle 311\nof the Constitution\nis concerned, it applies to members of the Civil Service of\nthe Union or an All India service or a Civil Service of a\nState or who holds a Civil Post under the Union or a State. Admittedly the employees of the State Bank do not fall under\nany one of these categories and they cannot seek any protec-\ntion under\nArticle 311(1)\nof the Constitution. The employees\nof the State Bank can only claim such rights which have been\nconferred under\nRegulation 55(2)(a)\nof the General Regula-\ntions. The only right conferred under the said provision is\nthat the officers or employees of the State Bank cannot be\ndismissed by an authority lower than the appointing authori-\nty. With the risk of repetition it may be stated that on the\ndate when the order of dismissal has been passed, Chief\nGeneral Manager had already become the appointing authority\nand as such the order of dismissal has not been passed by an\nauthority lower than the appointing authority.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 311"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P017_C03",
+      "text": "Apart from the view taken by us as mentioned above the\nRegulation 55\nhas been amended by a resolution of the Cen-\ntral Board dated August 25, 1988 with retrospective effect. It has now been made clear in the explanation that for the\npurpose of clause (b) the term appointing authority shall\nmean and include the authority who has been designated as\nsuch in respect of such class or grade of officers or em-\nployees to which the officer or employee concerned, as the\ncase may be belongs at the time when such order is passed or\nany proceedings leading to such order or termination is\ninitiated. This provision now concludes the controversy if\nany and clearly provides that the appointing authority shall\nmean and include the authority who has",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P018_C01",
+      "text": "been designated as such at the time when such order is\npassed. It was contended on behalf of the Learned counsel\nfor the employees that the Bank had no power to amend the\nRegulations with retrospective effect. We see no force in\nthis contention. Section 50(2)(a)\nof the Act clearly pro-\nvides that all regulations made under this section shall\nhave effect from such earlier or later date as may be speci-\nfied in the regulation. Thus the regulations can be made to\ngive effect from earlier dates also as may be specified in\nthe regulations. We find no force in the contention of\nlearned counsel for the employees that they had vested right\nin this regard and the same could not have been taken away\nby making regulations with retrospective effect. There\ncannot be any vested right in such a matter. As already\nmentioned above it was a right conferred under\nRegulation\n55(2)(a)\nand the same can be amended with retrospective\neffect also in case the authority competent to make regula-\ntions has been given a right to make regulations with retro-\nspective effect. It has been held in State of Jammu & Kash-\nmir v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P018_C02",
+      "text": "Triloki Nath Khosa & Ors., S.C.R. 1974 Vol. 1771 that\nit is well settled that a Government servant acquires a\n'status' on appointment to his office and as a result his\nrights and obligations are liable to be determined under\nstatutory or constitutional authority which for its exercise\nrequires no reciprocal consent. Bishun Narain Misra v. The State of Uttar Pradesh and Others\n, AIR 1965 Vol. 52 SC\n1567 it was held that new rule reducing the age of retire-\nment from 55 years to 53 years could not be said to be\nretrospective. The proviso to the new rule and the second\nnotification were only methods to tide over the difficult\nsituation which would arise in the public service if the new\nrule was applied at once and also to meet any financial\nobjection arising out of the enforcement of the new rule. The new rule therefore, could not be struck down on the\nground that it was retrospective in operation. Roshan Lal\nTandon v. Union of India & Anr.\n, and Kunj Behari v. Union of\nIndia & Ors., AIR 1967 SC Vol. 541889 it was held that the\nlegal position of Government servant is more one of status\nthan of contract.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P018_C03",
+      "text": "The hallmark of status is the attachment\nto a legal relationship of rights and duties imposed by the\npublic law and not by mere agreement by the parties. Emolu-\nment of the Government servant and his terms of service are\ngoverned by statute or statutory rules which may be unilat-\nerally altered by he Government without the consent of the\nemployee. It was further held in the above case that the\npetitioner had no vested contractual right in regard to the\nterms of his service and that the same can be altered uni-\nlaterally. We may further add that the prohibition if any to\nalter the terms and conditions can be found only under the\nConstitution of India and in case power of the rule or law\nmaking authority is not circumscribed or limited by any\nconstitutional",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC_P019_C01",
+      "text": "mandate then it has power to amend such terms and conditions\nof service unilaterally without the consent of the employee.\nIn the cases in hand before us the right whatsoever con-\nferred on the employees of the State Bank was on the basis\nRegulation 55(2)(a)\nand the Central Board of the Bank was\nauthorised to amend such regulations from any date under\nSection 50(2)(a)\nof the Act.\nIn the result the appeals filed by the State Bank of\nIndia in the case of Vijaya Kumar and T. Dayakar Rao are\nallowed, the impugned orders passed by the High Court are\nset aside and the cases are remanded to the High Court for\ndeciding the writ petitions on other points in accordance\nwith law. Now so far as the appeal filed by Sh. A.K. Sunda-\nrarajan is concerned, the point decided by us shall remain\nconcluded but the appellant would be free to raise other\npoints before this Court which are left undetermined. This\ncase may now be listed for further hearing and final dispos-\nal at an early date.\nIn the facts and circumstances of the case, the parties\nshall bear their own costs.\nY. Lal C.A. No. 3392 & 3393 of 1990\nallowed. C.A. No. 3394 of 1990\nordered to be listed for final\nheating.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "State Bank Of India & Ors. Etc vs S. Vijaya Kumar & Ors. Etc",
+    "case_id": "SC_1990_STATE_BANK_OF_INDIA_ORS_ETC_VS_S_VIJAYA_KUMAR_ORS_ETC",
+    "court": "Supreme Court of India",
+    "year": "1990",
+    "facts_summary": "ACT:\nState Bank of India Act, 1955\n/State Bank of India\n(Supervising Staff) Service Rules. 1975/State Bank of India\nGeneral Regulations 1955--\nSections 43\n, ,\n50(1)\n/\nRegulation\n55(2)(a)\n--Order of dismissal not to be passed by an authori-\nty lower than the appointing authority. HEADNOTE:\n A common question of law viz., whether an order of\ndismissal against an employee, could validly be passed by an\nauthority lower than the appointing authority of the Bank,\narises for determination in these three appeals, two by the\nState Bank of India and the third by an employee. Respondent, Vijaya Kumar in Civil Appeal 3392 of 1990,\nwas appointed as Probationary Officer by an order of the\nExecutive Committee of the Central Board of the State Bank\nof India. He was charge sheeted for gross irregularities and\ncorrupt practices and was dismissed from service by an order\npassed by the Chief General Manager of the Bank, whereupon,\nhe flied a writ petition before the Andhra Pradesh High\nCourt, challenging the order of dismissal passed against\nhim. A Division Bench of the High Court heard the writ\npetition, alongwith writ appeal No. 141 of 1986 (involving a\nsimilar point). The High Court allowed the writ petition. The State Bank being aggrieved by the said order has filed\nthis appeal after obtaining special leave. T.",
+    "legal_issues": "any enquiry or further enquiry hereafter. We may mention in\nthis connection that the learned counsel for the petitioner\n(respondent in this Writ Appeal) offered to file a petition\nto bring on record the legal representatives of the deceased\nwrit-petitioner as respondents in this Writ Appeal since,\naccording to him, they would be entitled in any event to\nclaim the monetary benefits flowing from the orders of this\nCourt. Now that we have agreed with the learned single Judge\nthat the order of dismissal was incompetent and invalid, we\ndirect that the writ petitioner shall be treated to be under\nsuspension pending enquiry till 24.11. 1987 and all the\nmonetary benefits that he is entitled to on that basis,\nincluding the arrears of suspension allowance, shall be paid\nover to his legal representatives. Mr. Prasad will file the\nlegal representatives petition within two weeks from today. Post this Writ Appeal for orders after two weeks. The Writ Appeal, accordingly, fails and is dis-\nmissed, but, in the circumstances, without costs.\"\nThe Bank aggrieved against the aforesaid order filed the\nSLP No. 5139/88 before this Court. All authorisations in respect of appointing authority\nand/or promoting authority made by the Executive Committee\nfrom time to time after 1.10.79 shall be deemed to have been\ndone under the amended regulation 55. Appointments autho-\nrised by the Chief General Manager (Personnel & HRD) in\nrespect of JMGS I after 1.10.79 are also confirmed hereby. All the employees of ",
+    "ratio_summary": "Taking note of the facts\nand circumstances of the case of Hanumantha Rao having died\non 24.11.87 leaving behind 14 children, this Court on 30th\nJanuary, 1990 did not consider if fit to interfere with\nimpugned order of the Division Bench. It was further made\nclear that even though this Court was not interfering with\nthe impugned order, the questions raised on behalf of the\nBank were left open. The Bank was directed to treat Hanuman-\ntha Rao in service and pay the dues, arrears of salary and\nother terminal benefits in accordance with law to his legal\nrepresentatives. With these observations, the SLP was dis-\nmissed. The question which calls for consideration in all these\ncases is whether the order of dismissal could be passed by\nthe Chief General Manager who was lower in rank to the\nExecutive Committee who was the appointing authority in\nthese cases. In order to appreciate this controversy, it would be\nproper to give reference of the relevant provisions of the\nState Bank of India Act, 1955\n(hereinafter referred to as\nthe Act), State Bank of India General Regulations, 1955\n(hereinafter referred to as the Regulations) and the State\nBank of India (Supervising Staff) Service Rules, 1975",
+    "final_order": "mandate then it has power to amend such terms and conditions\nof service unilaterally without the consent of the employee.\nIn the cases in hand before us the right whatsoever con-\nferred on the employees of the State Bank was on the basis\nRegulation 55(2)(a)\nand the Central Board of the Bank was\nauthorised to amend such regulations from any date under\nSection 50(2)(a)\nof the Act.\nIn the result the appeals filed by the State Bank of\nIndia in the case of Vijaya Kumar and T. Dayakar Rao are\nallowed, the impugned orders passed by the High Court are\nset aside and the cases are remanded to the High Court for\ndeciding the writ petitions on other points in accordance\nwith law. Now so far as the appeal filed by Sh. A.K. Sunda-\nrarajan is concerned, the point decided by us shall remain\nconcluded but ",
+    "outcome_summary": "mandate then it has power to amend such terms and conditions\nof service unilaterally without the consent of the employee.\nIn the cases in hand before us the right whatsoever con-\nferred on the employees of the State Bank was on the basis\nRegulation 55(2)(a)\nand the Central Board of the Bank was\nauthorised to amend such regulations from any date under\nSection 50(2)(a)\nof the Act.\nIn the result the ",
+    "sections_cited": [
+      "Constitution 311"
+    ],
+    "cases_cited": []
+  }
+}

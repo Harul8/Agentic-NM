@@ -1,0 +1,139 @@
+{
+  "case_id": "SC_1978_RAM_SHANKAR_MISRA_VS_STATE_OF_UP",
+  "case_name": "Ram Shankar Misra vs State Of U.P.",
+  "normalized_case_name": "RAM_SHANKAR_MISRA_VS_STATE_OF_U.P.",
+  "court": "Supreme Court of India",
+  "year": "1978",
+  "judgment_template": null,
+  "case_number": "Petition 257 of 1971",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": "29 November 1978",
+  "judges": [
+    "O. Chinnappa Reddy",
+    "P.S. Kailasam",
+    "JUDGMENT",
+    "P.S. Kailasam, J."
+  ],
+  "author": "P.S. Kailasam",
+  "bench_type": "constitution",
+  "petitioner": "Ram Shankar Misra",
+  "respondent": "State Of U.P.",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 10,
+  "cited_by_count": 18,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1979SC727",
+    "1980CRILJ820",
+    "(1980)1SCC255",
+    "AIR 1979 SUPREME COURT 727",
+    "(1979) 2 SCJ 21",
+    "1979 CRI APP R (SC)169",
+    "1980 (1) FAC 338",
+    "1980 SCC(CRI) 217",
+    "1980 (1) SCC 255",
+    "(1979) MAD LJ(CRI) 478"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1978\\1978_210.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1978_RAM_SHANKAR_MISRA_VS_STATE_OF_UP_P001_C01",
+      "text": "1. This appeal is by certificate granted by the High Court of Judicature at Allahabad against its judgment in Criminal Misc. Application No. 257 of 1971 in Criminal Revision No. 1833 of 1969.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1978_RAM_SHANKAR_MISRA_VS_STATE_OF_UP_P002_C01",
+      "text": "2. The facts of the case briefly are that P.W. 1 the Inspector of Drugs, Kanpur on 22nd February, 1966 went to the shop of M/s. Misra Brothers in which the appellant was a partner, and purchased four packets of Prednisolone tablets which were stocked there and sent the same to Director, Central Drugs Laboratory, Calcutta for analysis. The report of the Director indicated that the tablets were of sub-standard quality as defined in\nDrugs Act, 1940\n. A complaint was lodged by the Drugs Inspector and the appellant was tried for the offence punishable under\nSection 27\nof the Drugs and Cosmetic Act, found guilty and sentenced to undergo R.I. for one month and to pay a fine of Rs. 500. An appeal to the Court of Session was rejected and the revision petition to the High Court also met the same fate. Against the order in revision passed by the single Judge of the High Court, the appellant took the matter up to a Bench of the High Court for review of the judgment. The Bench dismissed the Revision Petition but in doing so, granted a certificate on the ground that it raised substantial questions of law.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1978_RAM_SHANKAR_MISRA_VS_STATE_OF_UP_P003_C01",
+      "text": "3. All the courts below have found that the appellant had sold the sample which on examination by the Central Laboratory was found to be of sub standard. The findings of fact was con firmed by the High Court and there are no grounds for us to interfere with the findings. The question which was raised before the High Court was that the sample taken by the Inspector was not sent to the Director through the Court and, therefore, his report is in admissible in evidence. According to the learned Counsel for the appellant, the sample ought to have been given to the Analyst at Lucknow under\nSection 25(1)\nof the Act and should not have been sent direct to the Director of Central Drugs Laboratory, Calcutta. The submission is that by sending the sample straight to the Director, Central Drugs Laboratory, Calcutta, the appellant was deprived of his right under\nSection 25(4)\nof requesting the Court to send the sample for analysis by the Central Drugs Laboratory. We do not see any substance in this contention. Section 25(1)\ndeals with the re ports of Government Analyst.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1978_RAM_SHANKAR_MISRA_VS_STATE_OF_UP_P003_C02",
+      "text": "Section 25(1)\nprovides that the Government Analyst to whom a sample of any drug or cosmetic has been submitted for test or analysis, shall deliver to the Inspector submitting it a signed report in triplicate in the prescribed form. The sub-section contemplates two modes of sending samples one by sending the drug for test or under Sub-section (4) of\nSection 23\n. There is no restriction as to how a sample of the drug or cosmetic has to be submitted by the Drugs Inspector. Section 25(4)\ncon templates sending of the sample through the Court. It provides that unless the sample has already been tested or analysed in the Central Drugs Laboratory, where a person has under Sub-section (3) notified his intention of adducing evidence in controversion of Government Analyst's report at the request either of the complainant or the accused cause the sample of the drug or cosmetic produced before the Magistrate under Sub-section (4) of\nSection 23\nto be sent for test or analysis to the laboratory.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1978_RAM_SHANKAR_MISRA_VS_STATE_OF_UP_P004_C01",
+      "text": "4. The mode prescribed under\nSection 25(4)\nis one method of sending it to the Director of the Central Drugs Laboratory. The other method is by the Drugs Inspector sending it direct as contemplated under the first part of\nSection 25(1)\n. It is significant that Sub-section (4) of\nSection 25\nstarts with the words \"unless the sample has already been tested or analysed in the Central Drugs Laboratory.\" These words clearly indicate that apart from the mode prescribed in\nSection 25(4)\n, the sample can be sent for analysis to the Central Drugs Laboratory.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1978_RAM_SHANKAR_MISRA_VS_STATE_OF_UP_P005_C01",
+      "text": "5. The word Government Analyst is defined under\nSection 3(c)\n.\nSection 3(c)(2)\nis defined as meaning analyst of drugs or cosmetics appointed by the Central Government or State Government under\nSection 20\n.\nSection 20\nempowers the State Government and the Central Government by notification in appropriate cases to appoint persons having the prescribed qualifications to be Government Analysts. The definition as well as\nSection 20\nmakes it clear that the Government Analyst would include all Analysts appointed by the State Government as well as by the Central Government. It is not disputed that the Director of Central Laboratory is also a Government Analyst.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1978_RAM_SHANKAR_MISRA_VS_STATE_OF_UP_P006_C01",
+      "text": "6. The procedure adopted in this case is seen from the documents Exs. Ka-3, Ka-8 and Ka-9. Ka-3 is the memo sent by the Drugs Inspector to Government Analyst C.D.I., Calcutta. It is stated that the sample is sent for analysis under the provisions of Clause (i) of Sub-section (4) of\nSection 23\nof the Drugs and Cosmetics Act, 1940. Section 23(4)\nprovides that the Inspector shall send one portion to the Government Analyst for test or analysis. Rule 57 that is referred to, prescribes the procedure for despatching to the Government Analyst. In Ka-8 the Government Analyst and Director, Central Laboratory has certified that the sample does not conform to the Prednisolone tablets B.P. B.N. - 118.5 mg. in respect of any test and the sample is wholly adulterated. The Director of Central Drugs Laboratory has also described himself as Government Analyst and the certificate is purported to have been issued under\nSection 25(1)\nof the Drugs Act which we have already referred to. We are satisfied that there is no prohibition under the Act or the Rules barring the Inspector from sending the sample direct to the Director, Central Drugs Laboratory.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1978_RAM_SHANKAR_MISRA_VS_STATE_OF_UP_P006_C02",
+      "text": "Section 25(1)\nand (4) clearly contemplate sending of the sample direct to the Central Drugs Laboratory.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1978_RAM_SHANKAR_MISRA_VS_STATE_OF_UP_P007_C01",
+      "text": "7. The second point that was raised before us was that the evidence let in before the Courts indicate that the tablets had been received from M/s. A.B. and Sons and they were not for sale. The Courts below have found that the sample was for sale and that finding was confirmed by the High Court. It is not necessary for us to consider whether the tablets had been received from A.B. & Sons or not as the appellant is prosecuted under\nSection 27\nof the Act for selling or exhibiting for sale. It is no defence for the appellant to contend that it was manufactured by A.B. & Sons. We are satisfied that the conviction of the appellant for offence with which he is charged, is correct.\nSection 27\nprescribes that the minimum sentence for the offence shall not be less than one year unless such reasons are recorded in writing by the Court. Neither the trial Court nor the Appellate Court have given any reasons for imposing the sentence of one month. There is no revision against the enhancement of the sentence. Learned Counsel pleaded that the term of imprisonment may be reduced to one of fine. As the provisions of law stand, we are unable to do it, In the result, the appeal is dismissed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Ram Shankar Misra vs State Of U.P.",
+    "case_id": "SC_1978_RAM_SHANKAR_MISRA_VS_STATE_OF_UP",
+    "court": "Supreme Court of India",
+    "year": "1978",
+    "facts_summary": "2. The facts of the case briefly are that P.W. 1 the Inspector of Drugs, Kanpur on 22nd February, 1966 went to the shop of M/s. Misra Brothers in which the appellant was a partner, and purchased four packets of Prednisolone tablets which were stocked there and sent the same to Director, Central Drugs Laboratory, Calcutta for analysis. The report of the Director indicated that the tablets were of sub-standard quality as defined in\nDrugs Act, 1940\n. A complaint was lodged by the Drugs Inspector and the appellant was tried for the offence punishable under\nSection 27\nof the Drugs and Cosmetic Act, found guilty and sentenced to undergo R.I. for one month and to pay a fine of Rs. 500. An appeal to the Court of Session was rejected and the revision petition to the High Court also met the same fate. Against the order in revision passed by the single Judge of the High Court, the appellant took the matter up to a Bench of the High Court for review of the judgment. The Bench dismissed the Revision Petition but in doing so, granted a certificate on the ground that it raised substantial questions of law.",
+    "legal_issues": "6. The procedure adopted in this case is seen from the documents Exs. Ka-3, Ka-8 and Ka-9. Ka-3 is the memo sent by the Drugs Inspector to Government Analyst C.D.I., Calcutta. It is stated that the sample is sent for analysis under the provisions of Clause (i) of Sub-section (4) of\nSection 23\nof the Drugs and Cosmetics Act, 1940. Section 23(4)\nprovides that the Inspector shall send one portion to the Government Analyst for test or analysis. Rule 57 that is referred to, prescribes the procedure for despatching to the Government Analyst. In Ka-8 the Government Analyst and Director, Central Laboratory has certified that the sample does not conform to the Prednisolone tablets B.P. B.N. - 118.5 mg. in respect of any test and the sample is wholly adulterated. The Director of Central Drugs Laboratory has also described himself as Government Analyst and the certificate is purported to have been issued under\nSection 25(1)\nof the Drugs Act which we have already referred to. We are satisfied that",
+    "ratio_summary": "3. All the courts below have found that the appellant had sold the sample which on examination by the Central Laboratory was found to be of sub standard. The findings of fact was con firmed by the High Court and there are no grounds for us to interfere with the findings. The question which was raised before the High Court was that the sample taken by the Inspector was not sent to the Director through the Court and, therefore, his report is in admissible in evidence. According to the learned Counsel for the appellant, the sample ought to have been given to the Analyst at Lucknow under\nSection 25(1)\nof the Act and should not have been sent direct to the Director of Central Drugs Laboratory, Calcutta. The submission is that by sending the sample straight to the Director, Central Drugs Laboratory, Calcutta, the appellant was deprived of his right under\nSection 25(4)\nof requesting the Court to send the sample for analysis by the Central Drugs Laboratory. We do not see any substance in this contention. Section 25(1)\ndeals with the re ports of Government Analyst.",
+    "final_order": "7. The second point that was raised before us was that the evidence let in before the Courts indicate that the tablets had been received from M/s. A.B. and Sons and they were not for sale. The Courts below have found that the sample was for sale and that finding was confirmed by the High Court. It is not necessary for us to consider whether the tablets had been received from A.B. & Sons or not as the appellant is prosecuted under\nSection 27\nof the Act for selling or exhibiting for sale. It is no defence for the appellant to contend that it was manufactured by A.B. & Sons. We are satisfied that the conviction of the appellant for offence with which he is charged, is correct.\nSection 27\nprescribes that the minimum sentence for the offence shall not be less than one year unless such reasons a",
+    "outcome_summary": "Dismissed. 7. The second point that was raised before us was that the evidence let in before the Courts indicate that the tablets had been received from M/s. A.B. and Sons and they were not for sale. The Courts below have found that the sample was for sale and that finding was confirmed by the High Court. It i",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

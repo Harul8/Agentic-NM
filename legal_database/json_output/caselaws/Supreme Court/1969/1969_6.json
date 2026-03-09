@@ -1,0 +1,281 @@
+{
+  "case_id": "SC_1969_1969_6",
+  "case_name": "Maula Bux vs Union Of India",
+  "normalized_case_name": "MAULA_BUX_VS_UNION_OF_INDIA",
+  "court": "Supreme Court of India",
+  "year": "1969",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "19 August 1969",
+  "judges": [
+    "J.C.  Shah",
+    "V. Ramaswami",
+    "A.N. Grover"
+  ],
+  "author": "J.C.  Shah",
+  "bench_type": "constitution",
+  "petitioner": "Maula Bux",
+  "respondent": "Union Of India",
+  "reporter_citations": [
+    "[1964] 1 S.C.R. 515"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 7,
+  "cited_by_count": 430,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1970 AIR 1955",
+    "1970 SCR (1) 928",
+    "AIR 1970 SUPREME COURT 1955",
+    "1970 ALL. L. J. 783",
+    "1970 (1) SCR 928",
+    "1970 2 SCJ 249",
+    "1970 BLJR 885"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1969\\1969_6.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1969_1969_6_P001_C01",
+      "text": "CITATION:\n 1970 AIR 1955 1970 SCR (1) 928\n 1969 SCC (2) 586\n CITATOR INFO :\n RF 1970 SC1986 (33)\n F 1973 SC1098 (3,4)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1969_1969_6_P002_C01",
+      "text": "ACT:\nIndian Contract Act\n(9 of 1872), s. 74 Deposit of\nmoney as guarantee for due performance of contract for\nsupply of goods-Breach of contract--Forfeiture of\ndeposit--Proof of loss suffered when necessary--Scope of\nsection--\"Whether or not actual damage or loss is proved to\nhave been caused thereby\", meaning of--Earnest money, what\nis.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1969_1969_6_P003_C01",
+      "text": "HEADNOTE:\n The appellant entered into a contract with the\nrespondent to supply some goods and deposited a certain\namount as security for due performance of the contract. It\nwas stipulated that the amounts we're to stand forfeited in\ncase the appellant neglected to perform his part of the con-\ntract. When the appellant made defaults in the supply, the\nrespondent rescinded the contract and forfeited the amount\ndeposited. The appellant filed a suit for recovery of the\namount with interest. The trial court decreed the suit,\nholding that the respondent was justified in rescinding the\ncontracts, but could not 'forfeit the deposit, for, it had\nnot suffered any loss in consequence of the default\ncommitted by the appellant. The High Court modified the\ndecree and awarded the 'respondent a major portion of the\namount deposited as damages. The High Court took the view\nthat the forfeiture of a sum deposited by way of security\nfor due performance of a contract, where the amount\nforfeited was not unreasonable\ns. 74\nof the Contract Act had\nno. application and that the deposits so made could be\nregarded as earnest money. HELD: The High Court was., in error in disallowing the\nappellant's claim.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1969_1969_6_P003_C02",
+      "text": "(i) Earnest money is a deposit made by a purchaser to\nbe applied towards part payment of the price when the\ncontract is completed and till then as evidencing an\nintention on the part of the purchaser to buy property or\ngoods. Forfeiture of earnest money under a contract for\nsale of property, if the amount is reasonable, does not\nfall within\ns. 74\nof the Contract Act. [933-D]. Kunwar Chiranjit Singh v. Har Swarup, A.I.R. 1926 P.C. 1,\nrelied on. (ii) Where under the terms of the contract the party in\nbreach has undertaken to pay a sum of money or to forfeit a\nsum of money which he has already paid to the party\ncomplaining of a breach of contract, the undertaking is in\nthe nature of a penalty and, s. 74 applied thereto. [933 E-\nF]\nFateh Chand v. Balkishan Dass, [1964] 1 S.C.R. 515, relied\non. Contrary view in Natesa Aiyar v. Appavu Padayachi,\n(1913) LL.R. 38 Mad. 178, Singer Manufacturing Co. v. Raja\nProsad, (1909) I.L.R. 36 Cal. 960 and Manian Patter v. Madras Railway Company, (1906) I.L.R. 19 Mad. 188,\ndisapproved.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1969_1969_6_P003_C03",
+      "text": "The expression \"whether or not actual damage or loss is\nproved to have been caused thereby\" in\ns. 74\nis intended to\ncover different classes of contracts which come before the\ncourts. In ease of breach of some contracts. it may be\nimpossible for the court to assess compensation arising from\nbreach, while in other cases, compensation can be\ncalculated in",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1969_1969_6_P004_C01",
+      "text": "accordance with established rules. Where the court is\nunable to assess the compensation, the sum named by the\nparties, if it be regarded as a genuine preestimate, may be\ntaken into consideration as the measure of reasonable\ncompensation, but not if the sum named is in the nature of a\npenalty. [934 A-C]\n In the present case it was possible for the respondent-\nGovernment to lead evidence to prove the loss suffered but\nit did not attempt to do so.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1969_1969_6_P005_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal No. 851 of\n1966. Appeal by special leave from the judgment and order\ndated December 20, 1963 of the Allahabad High Court, Lucknow\nBench in First Civil Appeal No. 28 of 1954. Jagdish Swarup, Solicitor-General, Yogeshwar Prasad,\nC.M. Kohli and G.R. Chopra, for the appellant. L.M. Singhvi and S.P. Nayar, for the respondent. The Judgment of the Court was delivered by\n Shah, Ag. C.J. Maula Bux hereinafter called the\nplaintiff entered into a contract No. C/74 with the\nGovernment of India on February 20, 1947, to supply potatoes\nat the Military Headquarters, U.P. Area, and deposited an\namount of Rs. 10,000 as security for due performance of the\ncontract. He entered into another contract with Government\nof India on March 4, 1947 No. C/120 to supply at the same\nplace poultry, eggs and fish for one year and deposited an\namount of Rs. 8,500/- for due performance of the\ncontract.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1969_1969_6_P005_C02",
+      "text": "Clause 8 of the contract ran as follows:\n\"The officer sanctioning the contract\n may rescind his contract by notice to me/us\n in writing :--\n(i)\n(ii)\n(iii)\n(iv) If I/we decline, neglect or delay to\n comply with any demand or requisition or in\n any other way fail to. perform or observe any\n condition of the contract. (v)\n(vi)\n In ease of such rescission, my/our security\n deposit (or such portion thereof as the\n officer sanctioning the contract shall\n consider fit or adequate) shall stand\n forfeited and be absolutely at the disposal of\n Government, without prejudice to any other\n remedy or action that the Government may have\n to take.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1969_1969_6_P006_C01",
+      "text": "In the case of such rescission, the\n Government shall be entitled to recover from\n me/us on demand any extra expense the\n Government may be put to in obtaining\n supplies/services hereby agreed to be\n supplied, from elsewhere in any manner\n mentioned in clause 7(ii) hereof, for the\n remainder of the period for which this\n contract was entered into, without prejudice\n to any other remedy the Government may have.\"\nThe plaintiff having made persistent default in making\n\"regular and full supplies\" of the commodities agreed to be\nsupplied, the Government of India rescinded the contracts\nthe first on November 23, 1947, and the second on December\n2,1947, and forfeited the amounts deposited by the\nplaintiff. The plaintiff commenced an action against the\nUnion of India in the Court of the Civil Judge, Lucknow, for\na decree for Rs. 20,000/- being the amounts deposited with\nthe Government of India for due performance of the contracts\nand interest thereon at the rate of 6 per cent. per annum. The Trial Court decreed the suit.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1969_1969_6_P006_C02",
+      "text": "The Court held that the\nGovernment of India was justified in rescinding the\ncontracts, but they could not for left the amounts of\ndeposit, for they had not suffered any loss in consequence\nof the default committed by the plaintiff. The High Court\nof Allahabad in appeal modified the decree, and awarded Rs.\n416.25 only with interest at the rate of 3 per cent from the\ndate of the suit. The plaintiff has appealed to this Court\nwith 'special leave. The trial Court found in decreeing the plaintiff's suit\nthat there was no evidence at all to prove that loss, if\nany, was suffered by the Government of India in consequence\nof the plaintiff's default, and on that account amounts\ndeposited as security were not liable to be forfeited.\nthe view of the High Court, to for feature of a sum\ndeposited by way of security for due performance of a\ncontract, where the amount forfeited is not unreasonable, s.\n74 of the\nContract Act\nhas no application.The Court observed\nthat the decision of this Court in\nFateh Chand v.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1969_1969_6_P006_C03",
+      "text": "Balkishan Dass\n(1) did not purport to overrule the\nprevious \"trend of authorities\" to the effect that earnest\nmoney deposited by way of security for the due performance\nof a contract does not constitute penalty contemplated under\ns. 74\nof the Indian Contract Act, that even if it be held\nthat the security deposited in the case was a stipulation by\nway of penalty, the Government was entitled to receive from\nthe plaintiff reasonable compensation not exceeding that\namount, whether or not actual damage or loss was proved to\nhave been caused, and that even in the absence of evidence\nto prove the actual damage or loss caused to the Govern\n[1964] 1 S.C.R. 515.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1969_1969_6_P007_C01",
+      "text": "ment \"there were circumstances in the case with indicated\nthat the amount of Rs. 10,000 in the case of potato\ncontract and Rs. 8,500/- in the case of poultry contract may\nbe taken as not exceeding the reasonable compensation for\nthe breach of contract by the plaintiff.\" The High Court\nfurther observed that the contract was for supply of large\nquantities of potatoes, poultry and fish, which would not\nordinarily be available in the market, and \"had to be\nprocured in case of breach of contract everyday with great\ninconvenience,\" and in the circumstances the Court \"could\ntake judicial notice of the fact that 1947-48 was the period\nwhen the prices were rising and it would not have been easy\nto procure the supplies at the rates contracted for\".",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1969_1969_6_P007_C02",
+      "text": "The\nHigh Court concluded:\n\" ...... taking into consideration the\n amount of inconvenience and the difficulties\n and the rising rate of prices, it would not be\n unfair if in case of such breach for the\n supply of such huge amounts of potatoes and\n poultry, we consider an amount of Rs.\n 18,500/.-by way of damages as being not\n unreasonable.\"\nUnder the terms of the agreements the amounts deposited\nby the plaintiff as security for due performance of the\ncontracts were to stand forfeited in case the plaintiff\nneglected to perform his part of the contract. The High\nCourt observed that the deposits so made may be regarded as\nearnest money. But that view cannot be accepted. According\nto Earl Jowitt in \"The Dictionary of English Law\" at p.\n689: \"Giving an earnest or earnest-money is a mode of\nsignifying assent to a contract of sale or the like, by\ngiving to the vendor a nominal sum (e.g. a shilling) as\na token that the parties are in earnest or have made up\ntheir minds.\" As observed by the Judicial Committee\nin Kunwar Chiranjit Singh v.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1969_1969_6_P007_C03",
+      "text": "Har Swarup(1):\n\"Earnest money is part of the purchase price when the\ntransaction goes forward: it is forfeited when the\ntransaction falls through, by reason of the fault or failure\nof the vandee.\"\nIn the present case the deposit was made not of a sum of\nmoney by the purchaser to be applied towards part payment of\nthe price when the contract was completed and till then as\nevidencing an intention on the part of the purchaser to buy\nproperty or goods. Here the plaintiff had deposited the\namounts claimed as security for guaranteeing due performance\nof the contracts.Such deposits cannot be regarded as earnest\nmoney. Section 74\nof the Contract Act provides:\n\"When a contract has been broken, if a\n sum is named in the contract as the amount to\n be paid in case\n (1) A.I.R. 1926 P.C. 1",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1969_1969_6_P008_C01",
+      "text": "of such breach, or if the contract contains\n any other stipulation by way of penalty, the\n party complaining of the breach is entitled,\n whether or not actual damage or loss is proved\n to have been caused thereby, to receive from\n the party who has broken the contract\n reasonable compensation not exceeding the\n amount so named or, as the case may be, the\n penalty stipulated for.\n...............................\"\nThere is authority, no doubt coloured by the\n view which was taken in English cases, that\n s. 74 of the\nContract Act\nhas no application\n to cases of deposit for due performance of a\n contract which is stipulated to be forfeited\n for breach:\nNatesa Aiyar v. Appavu\n Padayachi\n(1);\nSinger Manufacturing Company v. Raja Prosad\n(2);\nManian Patter v. The Madras\n Railway Company\n(a). But this view is no longer\n good law in view of the judgment of this Court\nFateh Chand\n's case(4). This Court observed\n at p. 526:\n\"Section 74 of the Indian Contract Act\n deals with the measure of damages in two\n classes of cases (i) where the contract\n names a sum to be paid in case of breach, and\n(ii) where the contract contains any other\n stipulation by way of penalty.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1969_1969_6_P008_C02",
+      "text": "The measure\n of damages in the case of breach of 'a\n stipulation by Way of penalty is by s. 74\n reasonable compensation not exceeding the\n penalty stipulated for.\"\nThe Court also observed:\n\"It was urged that the section deals in\n terms with the right to receive from the party\n who has broken the contract reasonable\n compensation and not the right to forfeit what\n has already been received by the party\n aggrieved. There is however no warrant for\n the assumption made by some of the High Courts\n in India, that\ns. 74\napplies only to cases\n where the aggrieved party is seeking to\n receive some amount on breach of contract and\n not to cases whereupon breach of contract\n an amount received under the contract is\n sought to be forfeited. In our judgment the\n expression \"the contract contains any other\n stipulation by way of penalty\" comprehensively\n applies to every covenant involving a\n penalty whether it is for payment on breach of\n contract of money or delivery of property in\n future, or for forfeiture of right to money or\n other property already delivered. Duty not\n to enforce the penalty clause but\n (1) [1913] LL.R. 38 Mad. 178. (2) [1909] I.L.R. 36 Cal. 960.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1969_1969_6_P008_C03",
+      "text": "(3) [1906] I.L.R. 19 Mad. 188. (4) [1964] 1 S.C.R. 515.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1969_1969_6_P009_C01",
+      "text": "only to award reasonable compensation\n is statutorily imposed upon courts by\ns. 74\n. In all cases,. there fore, where there\n is a stipulation in the nature of penalty for\n forfeiture of an amount deposited pursuant to\n the terms of contract which expressly\n provides for forfeiture, the court has\n jurisdiction to award such sum only as it\n considers reasonable but not exceeding the\n amount specified in the contract as liable to.\n forfeiture.\", and that,\n \"There is no. ground for holding that\n the expression \"contract contains any other\n stipulation by way of penalty\" is limited to\n cases of stipulation in the nature of an\n agreement to. pay money or deliver property on\n breach and does not comprehend covenants under\n which amounts paid or property delivered under\n the contract, which by the terms of the\n contract expressly or by clear implication\n are liable to be forfeited.\"\nForfeiture of earnest money under a contract for sale\nof property-movable or immovable--if the amount is\nreasonable, does not fall within\ns. 74\n. That has been\ndecided in several cases: Kunwar Chiranjit Singh v. Hat\nSwarup (t);\nRoshan Lal v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1969_1969_6_P009_C02",
+      "text": "The Delhi Cloth and General Mills\nCompany Ltd., Delhi\n(2); Muhammad Habibullah v. Muhammad\nShafi(3); Bishan Chand v. Radha Kishan Das(4); These cases\nare easily explained, for forfeiture of a reasonable amount\npaid as earnest money does not amount to. imposing a\npenalty. But if forfeiture is of the nature of penalty, s.\n74 applies. Where under the terms of the contract the party\nin breach has undertaken to pay a sum of money or to forfeit\na sum of money which he has already paid to the party\ncomplaining of a breach of contract, the undertaking is of\nthe nature of a penalty. Counsel for the Union, however, urged that in the\npresent case Rs. 10,000/- in respect of the potato contract\nand Rs. 8,500 in respect of the poultry contract were\ngenuine preestimates of damages which the Union was likely\nto suffer as a result of breach of contract, and the\nplaintiff was not entitled to any relief against forfeiture.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1969_1969_6_P009_C03",
+      "text": "Reliance in support of this contention was placed upon the\nexpression (used in\ns. 74\nof the Contract Act), \"the party\ncomplaining of the breach is entitled, whether or not actual\ndamage or loss is proved to have been caused there by, to\nreceive from the party who has broken the contract\nreasonable compensation\". It is true that in every case of\nbreach of contract the person aggrieved by the breach is not\nrequired to prove actual loss or damage suffered by him\nbefore he can claim a decree, and the Court is competent\nto award reasonable compensation in\n (1) A.I.R. 1926 P.C. 1. (2) I.L.R. 33 All. 166. (3) I.L.R. 41 All. 324. (4) I.D. 19 All. 490.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1969_1969_6_P010_C01",
+      "text": "case of breach even if no actual damage is proved to have\nbeen suffered in consequence of the breach of contract. But\nthe expression \"whether or not actual damage or loss is\nproved to have been caused thereby\" is intended to cover\ndifferent classes of contracts which come before the\nCourts. In case of breach of some contracts it may be\nimpossible for the Court to assess compensation arising from\nbreach, while in other cases compensation can be calculated\nin accordance with established rules. Where the Court is\nunable to assess the compensation, the sum named by the\nparties if it be regarded as a genuine preestimate may be\ntaken into consideration as the measure of reasonable\ncompensation, but not if the sum named is in the nature of a\npenalty. Where loss in terms of money can be determined, the\nparty claiming compensation must prove the loss suffered by\nhim. In the present case, it was possible for the Government\nof India to lead evidence to prove the rates at which\npotatoes, poultry, eggs and fish were purchased by them when\nthe plaintiff failed to deliver \"regularly and fully\" the\nquantities stipulated under the terms of the contracts and\nafter the contracts were terminated.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1969_1969_6_P010_C02",
+      "text": "They could have\nproved the rates at which they had to be purchased and\nalso the other incidental charges incurred by them in\nprocuring the goods contracted for. But no such attempt was\nmade. Counsel for the Union, however, contended that in the\nTrial Court the true position in law was not appreciated and\nthe parties proceeded to trial on the question whether the\nGovernment was entitled in the circumstances of the case to\nforfeit under cl. 8 the terms of the contracts the deposits\nmade for securing due performance of the contracts. Since\nthere was no pleading and no issue on the question of\nreasonable compensation, an opportunity should be given to\nthe parties to lead evidence on this point. But with the\nsuit out of which this appeal arises was tried another suit\nfiled by the plaintiff Maula Bux against the Union for a\ndecree for Rs. 53,000 odd being the price of goods supplied\nunder the terms of another contract with the Government of\nIndia.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1969_1969_6_P010_C03",
+      "text": "In that suit the Union claimed that it had set off\nthe amount due to the plaintiff, amounts which the plaintiff\nwas liable to pay as compensation to the Union for loss\nsuffered because of the plaintiff's failure to carry out the\nterms of the contracts C/74 and C/120. The Trial Court held\nin that case that the Union failed to prove that any loss\nwas suffered by it in consequence of the default by Maula\nBux to supply potatoes, poultry, eggs and fish as stipulated\nby him. Against the judgment of that Court Appeal No. 2001\nof 1966 is filed in this Court and is decided today. The\nHigh Court of Allahabad having confirmed the decree\npassed by the Trial Court, no useful purpose will be served\nby directing a fresh enquiry into the question whether the\nUnion",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1969_1969_6_P011_C01",
+      "text": "of India is entitled to recover from the plaintiff any\nreasonable compensation for breach of contracts and whether\nthat compensation is equal to or exceeds the amounts\ndeposited. Evidence on that question has already been led\nand findings have been recorded. In dealing with the Appeal\nNo. 2001 of 1966 we have held that the Union has failed to\nestablish by evidence that any damage or loss was suffered\nby them which arose out of the default committed by the\nplaintiff. We decline therefore to afford another\nopportunity for leading the evidence as to the loss suffered\nby the Union on account of the failure on the part of the\nplaintiff to carry out the contracts. On the view taken by us it must be held that the High\nCourt was in error in disallowing the plaintiff's case. The High Court has held that the plaintiff is not\nentitled to any interest prior to the date of the suit. No\nargument has been advanced before us challenging that view.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1969_1969_6_P011_C02",
+      "text": "Since interest was not recoverable under any contract or\nusage or under the provisions of the Interest Act, 1838 the\nHigh Court allowed interest at the rate of 3% per annum on\nRs. 416.25 from the date of the suit, the rate of interest\nallowed on the claim decreed also should not exceed 3 per\ncent per annum. We set aside the decree passed by the High Court and\nsubstitute the following decree:\n\"The Union of India do pay to the plaintiff Rs.\n18,500/- with interest at the rate of 3% per annum from the\ndate of the suit till payment.\"\nThe plaintiff was guilty of breach of the contracts. Considerable inconvenience was caused to the Military\nauthorities because of the failure on the part of the\nplaintiff to supply the food-stuff contracted to be\nsupplied. Even though there is no evidence of the rates at\nwhich the goods were purchased, we are of the view, having\nregard to the circumstances of the case, that the fairest\norder is that each party do bear its own costs throughout.\ny.p. Appeal allowed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "Maula Bux vs Union Of India",
+    "case_id": "SC_1969_1969_6",
+    "court": "Supreme Court of India",
+    "year": "1969",
+    "facts_summary": "ACT:\nIndian Contract Act\n(9 of 1872), s. 74 Deposit of\nmoney as guarantee for due performance of contract for\nsupply of goods-Breach of contract--Forfeiture of\ndeposit--Proof of loss suffered when necessary--Scope of\nsection--\"Whether or not actual damage or loss is proved to\nhave been caused thereby\", meaning of--Earnest money, what\nis. HEADNOTE:\n The appellant entered into a contract with the\nrespondent to supply some goods and deposited a certain\namount as security for due performance of the contract. It\nwas stipulated that the amounts we're to stand forfeited in\ncase the appellant neglected to perform his part of the con-\ntract. When the appellant made defaults in the supply, the\nrespondent rescinded the contract and forfeited the amount\ndeposited. The appellant filed a suit for recovery of the\namount with interest. The trial court decreed the suit,\nholding that the respondent was justified in rescinding the\ncontracts, but could not 'forfeit the deposit, for, it had\nnot suffered any loss in consequence of the default\ncommitted by the appellant. The High Court modified the\ndecree and awarded the 'respondent a major portion of the\namount deposited as damages. The High Court took the view\nthat the forfeiture of a sum deposited by way of security\nfor due performance of a contract, where the amount\nforfeited was not unreasonable\ns. 74\nof the Contract Act had\nno. application and that the deposits so made could be\nregarded as earnest money. HELD: The High Court was., in error in",
+    "legal_issues": "(i) Earnest money is a deposit made by a purchaser to\nbe applied towards part payment of the price when the\ncontract is completed and till then as evidencing an\nintention on the part of the purchaser to buy property or\ngoods. Forfeiture of earnest money under a contract for\nsale of property, if the amount is reasonable, does not\nfall within\ns. 74\nof the Contract Act. [933-D]. Kunwar Chiranjit Singh v. Har Swarup, A.I.R. 1926 P.C. 1,\nrelied on. (ii) Where under the terms of the contract the party in\nbreach has undertaken to pay a sum of money or to forfeit a\nsum of money which he has already paid to the party\ncomplaining of a breach of contract, the undertaking is in\nthe nature of a penalty and, s. 74 applied thereto. [933 E-\nF]\nFateh Chand v. Balkishan Dass, [1964] 1 S.C.R. 515, relied\non. Contrary view in Natesa Aiyar v. Appavu Padayachi,\n(1913) LL.R. 38 Mad. 178, Singer Manufacturing Co. v. Raja\nProsad, (1909) I.L.R. 36 Cal. 960 and Manian Patter v. Madras Railway Company, (1906) I.L.R. 19 Mad. 188,\ndisapproved. accordance with established rules. Where the court is\nunable to assess the compensation, the sum named by the\nparties, if it be regarded as a genuine preestimate, may be\ntaken into consideration as the measure of reasonable\ncompensation, but not if the sum named is in the nature of a\npenalty. [934 A-C]\n In the present case it was possible for the respondent-\nGovernment to lead evidence to prove the loss suffered but\nit did not attempt to do so. JUDGMENT:\nCIVIL APPEL",
+    "ratio_summary": "They could have\nproved the rates at which they had to be purchased and\nalso the other incidental charges incurred by them in\nprocuring the goods contracted for. But no such attempt was\nmade. Counsel for the Union, however, contended that in the\nTrial Court the true position in law was not appreciated and\nthe parties proceeded to trial on the question whether the\nGovernment was entitled in the circumstances of the case to\nforfeit under cl. 8 the terms of the contracts the deposits\nmade for securing due performance of the contracts. Since\nthere was no pleading and no issue on the question of\nreasonable compensation, an opportunity should be given to\nthe parties to lead evidence on this point. But with the\nsuit out of which this appeal arises was tried another suit\nfiled by the plaintiff Maula Bux against the Union for a\ndecree for Rs. 53,000 odd being the price of goods supplied\nunder the terms of another contract with the Government of\nIndia. In that suit the Union claimed that it had set off\nthe amount due to the plaintiff, amounts which the plaintiff\nwas liable to pay as compensation to the Union for loss\nsuffered because of the plaintiff's failure to carry out the\nterms of the contracts C/74 and C/120. The Trial Court held\nin that case that the Union failed to prove that any loss\nwas suffered by it in consequence of the default by Maula\nBux to supply potatoes, poultry, eggs and fish as stipulated\nby him. Against the judgment of that Court Appeal No. 2001\nof 1966 is filed in",
+    "final_order": "",
+    "outcome_summary": "Allowed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

@@ -1,0 +1,379 @@
+{
+  "case_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB",
+  "case_name": "Major Singh vs The State Of Punjab",
+  "normalized_case_name": "MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB",
+  "court": "Supreme Court of India",
+  "year": "2022",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 421 of 2002",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "16 June 2022",
+  "judges": [
+    "Vikram Nath",
+    "A.S. Bopanna"
+  ],
+  "author": "Vikram Nath",
+  "bench_type": "division",
+  "petitioner": "Major Singh",
+  "respondent": "The State Of Punjab",
+  "reporter_citations": [
+    "2022 INSC 1306"
+  ],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 11,
+  "cited_by_count": 0,
+  "neutral_citation": "2022 INSC 1306",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2022\\JUN\\2022_JUN_18.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P001_C01",
+      "text": "REPORTABLE\n\n CRIMINAL APPELLATE JURISDICTION\n CRIMINAL APPEAL NOS.2405­06 OF 2014\n\n MAJOR SINGH …APPELLANT(S)\n\n VERSUS\n\n STATE OF PUNJAB & ANR. …RESPONDENT(S)\n\n O R D E R",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P002_C01",
+      "text": "1. The present set of appeals filed by accused­\n\n appellant, Major Singh (hereinafter referred to as\n\n ‘the appellant’) arises from the order dated\n\n 03.04.2014 passed by Punjab and Haryana High Court\n\n in Criminal Appeal No. 421 of 2002 and Criminal\n\n Revision No. 391 of 2002, whereby the appeal and\n\n revision petition were allowed, the acquittal by\n\n the Trial Court was set aside and the appellant\n\n was convicted under\nsection 302\nIPC1 and sentenced\n\n to undergo imprisonment for life and pay fine of\n\nIPC\n–\nIndian Penal Code\n, 1860\n\nRs.5,000/­.\nFACTS:",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P003_C01",
+      "text": "2. Prosecution’s case arises from a two­day\n\nincident and it unfolds as follows:\ni. On 20.07.1998, a day preceding the unfortunate\n\nincident, appellant had quarreled with his uncle\n\nMakhan Singh (deceased) and had abused the uncle. Due to this argument between them, Makhan Singh\n\nhad severely reprimanded the appellant.\nii. On the day of the incident, i.e. on 21.07.1998\n\nat about 10:30/11:00 A.M., Makhan Singh, father of\n\nSukhraj Singh (complainant) was going towards bus\n\nstand of their village. On his way over, Major\n\nSingh came from the other side of the bus stand\n\nholding a wooden ‘Bahi’ (wooden side of a cot\n\nframe). He abused Makhan Singh for shouting and\n\ninsulting him on the previous day and threatened\n\nto teach Makhan Singh a lesson. Thereafter, the\n\naccused dealt a ‘Bahi’ blow to Makhan Singh on his\n\nhead as a result of which Makhan Singh fell down. Immediately after which Major Singh ran away from\n\nthe spot with the ‘Bahi’. After this both Sukhraj\n\nSingh and Charanjit Singh, who were standing in\n\nfront of the shop of Dilbag Singh, took their\n\nfather, who was bleeding from the head to Civil\n\nHospital, Giddarbaha.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P003_C02",
+      "text": "As his condition was\n\nserious, the doctor referred him to Dayanand\n\nMedical College, Ludhiana. Makhan Singh succumbed\n\nto the injuries on 22.07.1998, that is a day after\n\nthe incident.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P004_C01",
+      "text": "3. Sukhraj Singh went to the Police Station,\n\nwhere he met ASI Arnail Singh at Husnar Chowk,\n\nGidderbaha and his statement was recorded in\n\nwriting. The police, after making endorsement,\n\nsent the same to police station­Kotbhai for\n\nregistration of FIR. The police visited the spot\n\nand prepared rough site plan and blood­stained\n\nearth was lifted from the spot.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P005_C01",
+      "text": "4. On the day of the death of the incident,\n\npolice visited DMC, Ludhiana and prepared the\n\ninquest report. The offence was enhanced to\nsection 302\nIPC and the body of the deceased was\n\nsent for post mortem. Post­mortem report found\n\neight injuries and, according to the doctor, the\n\ncause of death was due to shock and hemorrhage as\n\na result of head injury.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 302"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P006_C01",
+      "text": "5. Appellant was arrested on 09.08.1998. As per\n\nthe prosecution, he confessed about the\n\nconcealment of ‘Bahi’ by him in the wheat chaff\n\nroom at his residence. In the presence of Head\n\nConstable Gurdass Singh and Charanjit Singh, the\n\n‘Bahi’ stained in blood was recovered from the\n\nplace disclosed by the appellant. The police sent\n\nthe blood­stained earth, plain earth along with\n\n‘Bahi’ for chemical examination. In the report of\n\nchemical examiner, it was found that the stain on\n\nthe ‘Bahi’ and the blood recovered from the spot\n\nwere of the same person, i.e. the deceased.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P007_C01",
+      "text": "6. After compliance of\nsection 207\nCrPC 2, the case\n\nwas committed to the Sessions Court, vide order\n\ndated 13.10.1998 and charge was framed against the\n\naccused under\nsection 302\nIPC on 17.11.1998. The\n\naccused pleaded not guilty and claimed to be\n\ntried.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "CrPC 207",
+        "IPC 302"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P008_C01",
+      "text": "7. The prosecution examined eight witnesses as\n\nPW1 to PW­8 and also filed documentary evidence.\n\nAfter the evidence by the prosecution was\n\nrecorded, the accused was examined under\nsection\n\nCrPC and the entire incriminating material was\n\nput to him. He denied all the allegations against\n\nhim and reiterated his innocence. He claimed to be\n\nfalsely implicated in this case due to the\n\noccurrence of the squabble between him and the\n\ndeceased, a day before the incident. He stated\n\nthat the deceased had received injuries due to a\n\nCrPC\n–\nCriminal Procedure Code\n, 1973\n\nscooter accident. However, the accused did not\n\nproduce any evidence in defence.\n\nTRIAL COURT JUDGMENT:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P009_C01",
+      "text": "8. The learned Additional Sessions Judge, Muktsar\n\nvide order 13.07.2001, acquitted the appellant on\n\nthe following findings:\n(i) There was a delay of 4 ½ hours in recording\n\n the FIR. Even the late arrest of the accused on\n03.08.1998 shows that the prosecution was not\n\n sure about the real story behind the incident.\n(ii) The motive behind the occurrence of the\n\n incident was neither serious nor proved beyond\n\n reasonable doubt by the prosecution.\n(iii) Sukhraj Singh (complainant) and ASI\n\n Jarnail Singh, the Investigating Officer were\n\n acquainted with each other.\n(iv) The time of occurrence as claimed is not\n\n established.\n(v) Statements of eye witnesses, Sukhraj Singh\n\nand Charanjit Singh were not found to be\n\n credible.\n(vi) Further, the prosecution had not examined\n\n Teja Singh, Manohar Singh and Darbara Singh who\n\n had witnessed the incident.\n(vii) Medical evidence is contradictory to the\n\n ocular testimony. Even the case history\n\n mentioned in the bed head ticket of DMC,\n\n Ludhiana is contrary to the ocular version.\n(viii) The scaled site plan does not tally with\n\n the rough site plan.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P010_C01",
+      "text": "9. Aggrieved by the acquittal, the State of\n\nPunjab and the complainant filed an appeal and\n\nrevision respectively before the High Court.\n\nHIGH COURT JUDGMENT:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P011_C01",
+      "text": "10. The High Court, set aside the acquittal of\n\nthe accused and was of the opinion that the Trial\n\nCourt has misread the evidence. Following reasons\n\nwere recorded by the High Court while convicting\n\nthe accused under\nsection 302\nIPC –\n\n i. Prosecution’s case could not be thrown out\n\n only on the ground of delay in registering FIR. Makhan Singh was in a serious condition and the\n\n first priority of the complainant was to save\n\n his father, who was profusely bleeding from the\n\n injury in his head.\nii. The fact as to whether ASI Jarnail Singh\n\n was known to the complainant is immaterial. Complainant had a right to inform the police. There is nothing to show that ASI did any\n\n favour to the complainant.\niii. The occurrence took place during day time\n\n as recorded by the eye witnesses and the doctor\n\n had sent the intimation to police at 11.15\n\n a.m., which corroborates the time of the\n\n incident. There is nothing to disbelieve the\n\n time of occurrence.\niv. As per the post mortem report, the deceased\n\nhad suffered eight injuries. Dr. Aman Kapoor\n\n(PW 2) has stated that the main injury was on\n\nthe head and rest of the injuries were\n\napparently as a result of the fall.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 302"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P011_C02",
+      "text": "These\n\ninjuries were swelling and abrasions.\n\nv. The Trial Court gave undue importance to the\n\nhistory mentioned at the time of admission in\n\nDMC, Ludhiana wherein it is stated that the\n\ndeceased sustained injuries while travelling on\n\nscooter when he was hit by someone over the\n\nhead. There might be some error in recording\n\nthe history, as the son who brought his father\n\nto DMC, Ludhiana was under a state of shock on\n\naccount of the serious condition of his father. This does not affect the merit of the case.\n\nvi. If some structure existing little away from\n\nthe place of occurrence, has not been shown in\n\nthe site plan, it does not mean that the site\n\nplan prepared by the Investigating Officer is\n\nincorrect. Minor omissions in the site plan\n\ndoes not mean that rough site plan prepared by\n\nInvestigation Officer is contradictory to the\n\nscaled site plan.\nvii. There is no reason to disbelief\n\nprosecution’s story on the ground that the\n\narrest was made on 03.08.1998. It is quite\n\npossible that the accused might have run away\n\napprehending his arrest.\nviii. Parties are relatives.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P011_C03",
+      "text": "Because of mere\n\naltercation, there was no reason for the\n\ncomplainant to falsely implicate the appellant,\n\nwho is real nephew of the deceased. There is\n\nonly one accused and one injury was given by\n\nthe accused. Therefore, possibility of false\n\nimplication is ruled out. Even the ‘Bahi’ was\n\nrecovered on the pointing out of the appellant.\n\nix. None of the family members of the appellant\n\nor any other independent resident of the\n\nvillage came forward to support the defence\n\nversion of the appellant apparently for the\n\nreason that they might be convinced that\n\nappellant was responsible for the death of the\n\ndeceased.\nx. Ocular version is truthful and trust worthy\n\nand is fully supported by the medical evidence.\n\nxi. The appellant does not fall under exception\n\n4 of\nsection 300\nIPC as the occurrence had not\n\ntaken place all of a sudden and without any\n\npredetermination.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 300"
+      ],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P011_C04",
+      "text": "The appellant came to the\n\nspot having a grudge against the deceased due\n\nto the quarrel that took place on the previous\n\nday of the incident and also, the manner in\n\nwhich the appellant gave a blow of wooden arm\n\nof cot (‘Bahi’) with great force on the head of\n\nan old and feeble man, which resulted into\n\nfracture of his skull and death on the next\n\nday.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P012_C01",
+      "text": "11. Aggrieved by the conviction of the High\n\nCourt, the appellant has preferred this appeal\n\nbefore this Court.\nANALYSIS:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P013_C01",
+      "text": "12. The prosecution has established that the\n\ndeath of the deceased was homicidal. As per the\n\npost mortem report, the deceased had suffered\n\neight injuries. Dr. Aman Kapoor (PW 2) states in\n\nthe report that the main injury was on the head\n\nand both the eye witnesses Sukhraj Singh (PW 3)\n\nand Charanjit Singh (PW4) have claimed the\n\nappellant had hit their father on his head with a\n\n‘Bahi’. The recovery of ‘Bahi’, i.e. the weapon\n\nused to cause the fatal injury to the deceased was\n\nrecovered by police only after the appellant had\n\nconfessed about the place of hiding.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P014_C01",
+      "text": "13. We are, thus, satisfied that the\n\nprosecution has, beyond reasonable doubt,\n\nestablished the occurrence in the manner as set\n\nup. The deceased died due to the injury caused by\n\naccused. The only question which requires our\n\nconsideration is with regard to whether the case\n\nfalls within the ambit of culpable homicide\n\namounting to murder punishable under\nsection 302\nIPC as has been held by High Court or it was\n\nculpable homicide not amounting to murder\n\npunishable under\nsection 304\nIPC, as has been\n\npleaded by the counsel for the appellant in the\n\nalternative.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "IPC 302",
+        "IPC 304"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P015_C01",
+      "text": "14. Distinction between whether an offence is\n\nculpable homicide amounting to murder or culpable\n\nhomicide not amounting to murder has been dealt by\n\nthis Court recently in the case of\nMohd. Rafiq vs. State of Madhya Pradesh3\nafter taking into\n\nconsideration earlier judgments on the point. The\n\nCourt held that even though it is difficult to\n\ndistinguish whether the punishment for offence\n\n3 (2021) 10 SCC 706\n\nwould fall under\nsection 302\nsection 304\n\nIPC, there is a subtle distinction of degree of\n\nintention and knowledge involved in both the\n\ncrimes. Relevant paragraphs of the judgment are\n\nreproduced below:\n“Para 11 ­ The question of whether in a given\n case, a homicide is murder, punishable under\nSection 302\nIPC, or culpable homicide, of\n either description, punishable under\nSection\n\nIPC has engaged the attention of courts in\n this country for over one and a half century,\n since the enactment of the\nIPC\n; a welter of\n case law, on this aspect exists, including\n perhaps several hundred rulings by this court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "IPC 304",
+        "IPC 302"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P015_C02",
+      "text": "The use of the term “likely” in several places\n in respect of culpable homicide, highlights the\n element of uncertainty that the act of the\n accused may or may not have killed the person. Section 300\nIPC which defines murder, however\n refrains from the use of the term likely, which\n reveals absence of ambiguity left on behalf of\n the accused. The accused is for sure that his\n act will definitely cause death. It is often\n difficult to distinguish between culpable\n homicide and murder as both, involve death. Yet, there is a subtle distinction of intention\n and knowledge involved in both the crimes. This\n difference lies in the degree of the act. There\n is a very wide variance of degree of intention\n and knowledge among both the crimes. Para 12 ­ The decision in\nState of Andhra\n Pradesh v. Rayavarapu Punnayya & Anr.\nnotes the\n important distinction between the two\n provisions, and their differing, but subtle\n distinction. The court pertinently pointed out\n that:",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "IPC 300"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P016_C01",
+      "text": "12. In the scheme of the Penal Code,\n “culpable homicide” is genus and murder\n\nits specie. All murder is “culpable\n homicide” but not vice­ versa. Speaking\n generally, “culpable homicide” sans\n “special characteristics of murder”, is\n “culpable homicide not amounting to\n murder”. For the purpose of fixing\n punishment, proportionate to the gravity\n of this generic offence, the Code\n practically recognises three degrees of\n culpable homicide. The first is, what may\n be called, “culpable homicide of the first\n degree”. This is the greatest form of\n culpable homicide, which is defined in\nSection 300\nas “murder”. The second may be\n termed as “culpable homicide of the second\n degree”. This is punishable under the\n first part of\nSection 304\n. Then, there is\n “culpable homicide of the third degree”.\nThis is the lowest type of culpable\n homicide and the punishment provided for\n it is, also, the lowest among the\n punishments provided for the three grades.\n Culpable homicide of this degree is\n punishable under the second part of\nSection 304\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P017_C01",
+      "text": "13. The academic distinction between “murder”\nand “culpable homicide not amounting to murder”\nhas vexed the courts for more than a century. The confusion is caused, if courts losing sight\nof the true scope and meaning of the terms used\nby the legislature in these sections, allow\nthemselves to be drawn into minute\nabstractions. The safest way of approach to the\ninterpretation and application of these\nprovisions seems to be to keep in focus the\nkeywords used in the various clauses of\nSections 299\nand\n\n;\nPara 13 ­ The considerations that should weigh\nwith courts, in discerning whether an act is\npunishable as murder, or culpable homicide, not\namounting to murder, were outlined in\nPulicherla Nagaraju @ Nagaraja Reddy v State of\nAndhra Pradesh\n. This court observed that:\n“29. Therefore, the Court should proceed\n to decide the pivotal question of\n intention, with care and caution, as that\n\nwill decide whether the case falls under\nSection 302\nor 304 Part I or 304 Part II.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P017_C02",
+      "text": "Many petty or insignificant matters\n­plucking of a fruit, straying of cattle,\nquarrel of children, utterance of a rude\nword or even an objectionable glance, may\nlead to altercations and group clashes\nculminating in deaths. Usual motives like\nrevenge, greed, jealousy or suspicion may\nbe totally absent in such cases. There may\nbe no intention. There may be no\npremeditation. In fact, there may not even\nbe criminality. At the other end of the\nspectrum, there may be cases of murder\nwhere the accused attempts to avoid the\npenalty for murder by attempting to put\nforth a case that there was no intention\nto cause death. It is for the courts to\nensure that the cases of murder punishable\nunder\nSection 302\n, are not converted into\noffences punishable under\nSection 304\nPart\nI/II, or cases of culpable homicide not\namounting to murder are treated as murder\npunishable under\nSection 302\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P017_C03",
+      "text": "The\nintention to cause death can be gathered\ngenerally from a combination of a few or\nseveral of the following, among other,\ncircumstances; (i) nature of the weapon\nused; (ii) whether the weapon was carried\nby the accused or was picked up from the\nspot; (iii) whether the blow is aimed at a\nvital part of the body; (iv) the amount of\nforce employed in causing injury; (v)\nwhether the act was in the course of\nsudden quarrel or sudden fight or free for\nall fight; (vi) whether the incident\noccurs by chance or whether there was any\npremeditation; (vii) whether there was any\nprior enmity or whether the deceased was a\nstranger; (viii) whether there was any\ngrave and sudden provocation, and if so,\nthe cause for such provocation; (ix)\nwhether it was in the heat of passion; (x)\nwhether the person inflicting the injury\nhas taken undue advantage or has acted in\na cruel and unusual manner; (xi) whether\n\nthe accused dealt a single blow or several\n blows. The above list of circumstances is,\n of course, not exhaustive and there may be\n several other special circumstances with\n reference to individual cases which may\n throw light on the question of intention.”",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P018_C01",
+      "text": "15. Intention plays a vital role in criminal\n\njurisprudence. An offence may not be said to be\n\ncommitted if the prosecution fails to prove the\n\nintention to commit that crime. Intention is\n\npivotal to decide whether the accused has\n\ncommitted culpable homicide amounting to murder or\n\nculpable homicide not amounting to murder. Along\n\nwith intention, knowledge and the degree of crime,\n\ni.e. how the deceased was killed, plays an\n\nimportant role in deciding.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P019_C01",
+      "text": "16. In the present case, the appellant had no\n\nintention to kill his uncle. Lack of intention can\n\neasily be seen through the acts committed by the\n\nappellant. He was furious about getting yelled by\n\nhis uncle a day before, which acted as a\n\nprovocation for the accused. The appellant was\n\narmed with a wooden leg of the cot in his hand\n\nwhich cannot be termed as a dangerous weapon. He\n\nhad given a single blow to the deceased and\n\ntherefore it cannot be said that the appellant had\n\nintention of killing the deceased who was his own\n\nuncle. Maybe he wanted to punish his uncle for the\n\nreprimand, he received the previous day. Further\n\nit cannot be said that the appellant had the\n\nknowledge that the deceased would die through a\n\nsingle blow.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P020_C01",
+      "text": "17. We are thus of the opinion that the\n\ndeceased is not liable to be convicted under\nsection 302\nIPC but would be liable to be\n\nconvicted under\nsection 304\nPart­II\nIPC\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 302"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P021_C01",
+      "text": "18. The appellant was arrested on 09.08.1998\n\nand was released on 13.07.2001 after the acquittal\n\nby the Trial Court. He again surrendered after the\n\nconviction by the High Court on 04.10.2014. He has\n\nalready undergone more than eight years of\n\nincarceration. His sentence shall be reduced from\n\nlife imprisonment to period already undergone. The\n\nfine imposed by the High Court would remain as it\n\nis.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P022_C01",
+      "text": "19. Accordingly, the Appeals are partly allowed. The judgment of the High Court is modified to the\n\nfollowing extent:\n(i) The conviction and sentence of life\n\n imprisonment under\nSection 302\nIPC is set­\n\n aside. (ii) The appellant is convicted under\nSection\n\nPart­II\nIPC\n. (iii) The appellant is awarded sentence of\n\n the period already undergone along with fine as\n\n imposed by the High Court. (iv) The appellant may be released forthwith, if\n\n he is not wanted in any other criminal case.\n………………………..J. (A.S. BOPANNA)\n\n ……………………….J. (VIKRAM NATH)\n\nNEW DELHI\nJUNE 16, 2022\n\nITEM NO.104 COURT NO.2 SECTION II­B\n\n S U P R E M E C O U R T O F I N D I A\n RECORD OF PROCEEDINGS\n\n Criminal Appeal Nos.2405­2406/2014\n\nMAJOR SINGH Appellant(s)\n\n VERSUS\n\nTHE STATE OF PUNJAB & ANR. Respondent(s)\n\n(FOR SUSPENSION OF SENTENCE ON IA No. 15298/2018, FOR [STAY OF\nDIRECTION FOR PAYMENT OF FINE OF RS.5,000/­] ON IA 15299/2018 AND\nFOR EXEMPTION FROM FILING O.T. ON IA 15300/2018)\n\nDate : 16­06­2022 These matters were called on for hearing today. CORAM :\nHON'BLE MR. JUSTICE A.S. BOPANNA\n HON'BLE MR. JUSTICE VIKRAM NATH\n (VACATION BENCH)\n\nFor Appellant(s)\n Mr. Gagan Gupta, AOR\nFor Respondent(s)\n Mr. R.K.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "IPC 302"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P022_C02",
+      "text": "Rathore, Adv. Ms. Jaspreet Gogia, AOR\n\n UPON hearing the counsel the Court made the following\n O R D E R",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P023_C01",
+      "text": "1. Application seeking exemption from filing official translation\nof Annexures is allowed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P024_C01",
+      "text": "2. Application seeking stay of direction for payment of fine of\nRs.5,000/­ is rejected.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P025_C01",
+      "text": "3. The Appeals are partly allowed, in terms of the signed\nReportable Order.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB_P026_C01",
+      "text": "4. The appellant may be released forthwith, if he is not wanted\nin any other criminal case.\n(VISHAL ANAND) (DIPTI KHURANA)\nASTT. REGISTRAR­cum­PS ASSISTANT REGISTRAR\n(Signed Reportable Order is placed on the file)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Major Singh vs The State Of Punjab",
+    "case_id": "SC_2022_MAJOR_SINGH_VS_THE_STATE_OF_PUNJAB",
+    "court": "Supreme Court of India",
+    "year": "2022",
+    "facts_summary": "1. The present set of appeals filed by accused­\n\n appellant, Major Singh (hereinafter referred to as\n\n ‘the appellant’) arises from the order dated\n\n 03.04.2014 passed by Punjab and Haryana High Court\n\n in Criminal Appeal No. 421 of 2002 and Criminal\n\n Revision No. 391 of 2002, whereby the appeal and\n\n revision petition were allowed, the acquittal by\n\n the Trial Court was set aside and the appellant\n\n was convicted under\nsection 302\nIPC1 and sentenced\n\n to undergo imprisonment for life and pay fine of\n\nIPC\n–\nIndian Penal Code\n, 1860\n\nRs.5,000/­.\nFACTS: 2. Prosecution’s case arises from a two­day\n\nincident and it unfolds as follows:\ni. On 20.07.1998, a day preceding the unfortunate\n\nincident, appellant had quarreled with his uncle\n\nMakhan Singh (deceased) and had abused the uncle. Due to this argument between them, Makhan Singh\n\nhad severely reprimanded the appellant.\nii. On the day of the incident, i.e. on 21.07.1998\n\nat about 10:30/11:00 A.M., Makhan Singh, father of\n\nSukhraj Singh (complainant) was going towards bus\n\nstand of their village. On his way over, Major\n\nSingh came from the other side of the bus stand\n\nholding a wooden ‘Bahi’ (wooden side of a cot\n\nframe). He abused Makhan Singh for shouting and\n\ninsulting him on the previous day and threatened\n\nto teach Makhan Singh a lesson. Thereafter, the\n\naccused dealt a ‘Bahi’ blow to Makhan Singh on his\n\nhead as a result of which Makhan Singh fell down. Immediately after which Major Singh ran away from\n\nthe spot with the ‘B",
+    "legal_issues": "The use of the term “likely” in several places\n in respect of culpable homicide, highlights the\n element of uncertainty that the act of the\n accused may or may not have killed the person. Section 300\nIPC which defines murder, however\n refrains from the use of the term likely, which\n reveals absence of ambiguity left on behalf of\n the accused. The accused is for sure that his\n act will definitely cause death. It is often\n difficult to distinguish between culpable\n homicide and murder as both, involve death. Yet, there is a subtle distinction of intention\n and knowledge involved in both the crimes. This\n difference lies in the degree of the act. There\n is a very wide variance of degree of intention\n and knowledge among both the crimes. Para 12 ­ The decision in\nState of Andhra\n Pradesh v. Rayavarapu Punnayya & Anr.\nnotes the\n important distinction between the two\n provisions, and their differing, but subtle\n distinction. The court pertinently pointed out\n that:",
+    "ratio_summary": "14. Distinction between whether an offence is\n\nculpable homicide amounting to murder or culpable\n\nhomicide not amounting to murder has been dealt by\n\nthis Court recently in the case of\nMohd. Rafiq vs. State of Madhya Pradesh3\nafter taking into\n\nconsideration earlier judgments on the point. The\n\nCourt held that even though it is difficult to\n\ndistinguish whether the punishment for offence\n\n3 (2021) 10 SCC 706\n\nwould fall under\nsection 302\nsection 304\n\nIPC, there is a subtle distinction of degree of\n\nintention and knowledge involved in both the\n\ncrimes. Relevant paragraphs of the judgment are\n\nreproduced below:\n“Para 11 ­ The question of whether in a given\n case, a homicide is murder, punishable under\nSection 302\nIPC, or culpable homicide, of\n either description, punishable under\nSection\n\nIPC has engaged the attention of courts in\n this country for over one and a half century,\n since the enactment of the\nIPC\n; a welter of\n case law, on this aspect exists, including\n perhaps several hundred rulings by this court. The\nintention to cause death can be gathered\ngenerally from a combination of a few or\nseveral of the following, among other,\ncircumstances; (i) nature of the weapon\nused; (ii) whether the weapon was carried\nby the accused or was picked up from the\nspot; (iii) whether the blow is aimed at a\nvital part of the body; (iv) the amount of\nforce employed in causing injury; (v)\nwhether the act was in the course of\nsudden quarrel or sudden fight or free for\nall fight; (vi) whethe",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [
+      "IPC 302",
+      "CrPC 207",
+      "IPC 300",
+      "IPC 304"
+    ],
+    "cases_cited": []
+  }
+}

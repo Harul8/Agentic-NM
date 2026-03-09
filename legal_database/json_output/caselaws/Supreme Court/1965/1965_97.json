@@ -1,0 +1,554 @@
+{
+  "case_id": "SC_1965_1965_97",
+  "case_name": "Patnaik & Company vs State Of Orissa",
+  "normalized_case_name": "PATNAIK_&_COMPANY_VS_STATE_OF_ORISSA",
+  "court": "Supreme Court of India",
+  "year": "1965",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "19 January 1965",
+  "judges": [
+    "J.C. Shah",
+    "P.B.  Gajendragadkar",
+    "M. Hidayatullah",
+    "S.M. Sikri",
+    "R.S. Bachawat"
+  ],
+  "author": "J.C. Shah",
+  "bench_type": "constitution",
+  "petitioner": "Patnaik & Company",
+  "respondent": "State Of Orissa",
+  "reporter_citations": [
+    "[1962] 2 S.C.R. 81"
+  ],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 13,
+  "cited_by_count": 51,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1965 AIR 1655",
+    "1965 SCR (2) 782",
+    "AIR 1965 SUPREME COURT 1655",
+    "1966 31 CUTLT 1049",
+    "1966 (1) SCJ 90",
+    "1965 (16) STC 364",
+    "1965 SCD 986",
+    "1965 2 SCR 782"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1965\\1965_97.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1965_1965_97_P001_C01",
+      "text": "BENCH:\nSHAH, J.C.\nBENCH:\nSHAH, J.C.\nGAJENDRAGADKAR, P.B. (CJ)\nHIDAYATULLAH, M.\nSIKRI, S.M.\nBACHAWAT, R.S.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1965_1965_97_P002_C01",
+      "text": "CITATION:\n 1965 AIR 1655 1965 SCR (2) 782\n CITATOR INFO :\n D 1967 SC 547 (6)\n RF 1969 SC1245 (11)\n RF 1972 SC 744 (11)\n RF 1972 SC1131 (10)\n F 1974 SC2309 (9,10,11,12,13,17)\n RF 1976 SC2108 (45)\n R 1977 SC1537 (37)\n RF 1989 SC 962 (24)",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1965_1965_97_P003_C01",
+      "text": "ACT:\nOrissa Sales Tax Act\n, (14 of 1947)--Contract to build bus\nbodies on chassis supplied by purchaser-If a contract for\nsale or for work.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1965_1965_97_P004_C01",
+      "text": "HEADNOTE:\nThe appellant claimed to deduct from its gross turnover,\namounts received from the State Government for building bus\nbodies, on the chassis supplied by the Government under a\ncontract. Under the contract, the bus bodies were to be put on the\nchassis and the body consisted not only of things actually\nfixed on the chassis but movable things like seat cushions\nand other things which though fixed could be easily\ndetached, like roof-lamps etc. The chassis with the bus\nbody was to be delivered at the destination named within the\nstipulated time. If some work was not satisfactorily done\nthe Government was entitled to seize the unfinished vehicle,\nget the work done by another agency and recover the\ndifference in cost from the appellant. While the appellant\nwas required to protect the chassis by insurance, there was\nno provision regarding insurance of bus bodies. The\ncontract also provided that the process of manufacture was\nto be supervised on behalf of the Government, and that the\nwork should be done with due deligence. There was also a\nprovision for payment of damages until the defects detected\non inspection were rectified. The Sales Tax Officer refused to allow the deduction.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1965_1965_97_P004_C02",
+      "text": "appeal, the claim was allowed by the Collector, whose order\nwas affirmed by the Sales Tax Tribunal, on appeal by the\nDepartment. On a reference to the High Court, the question,\nas to whether the amounts were not chargeable to sales tax,\nwas answered against the appellant. In the appeal to the Supreme Court, on the question as to\nwhether the contract was one for execution of work or for\nperformance of service, or whether it was a contract for\nsale of goods. HELD : (Per Gajendragadkar C.J., Hidayatullah, Sikri and\nBachawat, JJ) : The contract as a whole was a contract for\nthe sale of goods and the amounts were therefore chargeable\nto sales tax. [792 G]\nThe answer to the question depended on the construction of\nthe agreement regarding the building of bus bodies. On the\nterms of the contract the property in the bus body did not\npass on its being placed or constructed on the chassis but\nwhen the whole vehicle including the bus body was delivered.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1965_1965_97_P004_C03",
+      "text": "The provision regarding insurance showed that till delivery\nwas made, the bus bodies remained the property of the appel-\nlant and unlike the case of a contract a construct a\nbuilding, where the property does not pass in the materials\nas movable the bus body never lost its character as movable\nproperty and the property in it passed to Government as\nmovable Property. It is not the law, that whenever a\ncontract provides for the fixing of a chattel to another\nchattel there is no sale of goods; and, a contract for the\nsale of goods to be manufactured does not cease to be a\ncontract for sale of goods, merely because the process of\nmanufacture is supervised by the purchaser. [785 C-D; 788 F;\n790 A-B; 791 A, D; 792 A]",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1965_1965_97_P005_C01",
+      "text": "Gannon Dunkerley's Case, [1959] S. C.R. 379 and Carl Still\nv. State of Bihar, [1962] 2 S.C.R. 81, distinguished. Anglo-Egyptian Navigation Co. v. Rennie, (1875) L.R. 10 C.P.\n271, explained. Per Shah, J. (dissenting) : The contract was one for work\nand not a contract for sale, because, the contract was not\nthat the parties agreed that the \"bus body\" constructed by\nthe appellants should be sold to the State. The contract\nwas one in which the appellants agreed to construct \"bus\nbodies\" on the chassis supplied to them as bailers, and such\na contract being one for work, the consideration paid was\nnot taxable under the\nSales Tax Act\n. The primary difference between a contract for work or\nservice and a contract for sale of goods is that in the\nformer there is in the person. performing work or rendering\nservice no property in the thing produced as a whole\nnotwithstanding that a part or even the whole of the\nmaterials used by him may have been his property.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1965_1965_97_P005_C02",
+      "text": "In the\ncase of a contract for sale the thing produced as a whole\nhas individual existence as the sole property of the party\nwho produced it, at some time before delivery, and the\nproperty therein passes only under the contract relating\nthereto to the other party for price. Mere transfer of\nproperty in goods used in the performance of a contract is\nnot sufficient : to constitute a sale there must be an\nagreement express or implied relating to sale of goods and\ncompletion of the agreement by passing of title in the very\ngoods contracted to be sold.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1965_1965_97_P005_C03",
+      "text": "Ultimately the true effect of\nan accretion made pursuant to a contract has to be judged,\nnot by any artificial rule that the accretion may be\npresumed to have become by virtue of affixing to a chattel,\npart of that chattel, but from the intention of the parties\nto the contract. [793 D; 794 A-C; 797 H; 798 A, C]\nIn the instant case, imposition of the obligation to carry\nout the work with due diligence, the liability to pay\ndamages and the right of the Government representative to\nsupervise the production and to take away the unfinished\nvehicles and get them completed by some other agency are all\nindicative of the contract being one for work. [795 D-E, G;\n796 D-E]",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1965_1965_97_P006_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeals Nos. 179 to,\n181 of 1964.\nAppeals by special leave from the judgment and order dated\nAugust 21, 1962, of the Orissa High Court in O.J.C. No. 28\nof 1961.\nA. V. Viswanatha Sastri and R. Gopalakrishhnan, for the\nappellants (in all the appeals).\nM.C. Setalvad, R. Ganapathy Iyer and R. N. Sachthey for\nthe respondent (in all the appeals).\nThe Judgment of P. B. GAJENDRAGADKAR C.J., M. HIDAYATULLAH,\nS. M. SIKRI and R. S. BACHAWAT JJ. was delivered by SIKRI J.\nSHAH J. delivered a dissenting Opinion.\nSikri J. These three appeals by special leave are directed\nagainst the judgment of the Orissa High Court in three\nreferences made by the Orissa Sales Tax Tribunal under\nS.\n24(1)\nof the",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1965_1965_97_P007_C01",
+      "text": "Orissa Sales Tax Act, 1947\n, in respect of assessments for\nthree quarters ending June 30, 1957, September 30, 1957 and\nDecember 31, 1957. All these appeals raise a common\nquestion of law and it would be sufficient if facts relating\nto the assessment for the quarter ending June 30, 1957 alone\nare given. For the quarter ending June 30, 1957, the appellant, M/s\nPatnaik & Co., claimed to deduct from their gross turnover\nreceipts totalling Rs. 11,268.45 received from the State\nGovernment of Orissa for building bodies on the chassis\nsupplied by the Government, during the quarter. The Sales\nTax Officer refused to deduct this amount. On appeal, this\nclaim was allowed by the Collector of Sales Tax, purporting\nto follow an earlier decision of the Orissa Sales Tax\nTribunal. The Department appealed against this order to the\nSales Tax Tribunal which, by its order dated June 2, 1961,\naffirmed the order of the Collector. The Tribunal, in\nbrief, held that it was impossible to spell out a distinct\nand separate contract to sell any materials or chattels to\nthe customers in the work of construction of the bodies on\nthe chassis.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1965_1965_97_P007_C02",
+      "text": "On the application of the Department, the\nSales Tax Tribunal referred to the High Court the following\nquestion :\n\"Whether in the facts and circumstances of the\n case, the Tribunal is right in holding that\n the amounts received by the opposite party on\n the construction of bodies on chassis supplied\n by its customers under written contracts are\n not chargeable to the Orissa Sales Tax.\"\nThe High Court, in a short order, flowing its decision in\nThe Commissioner of Sales Tax Orissa v. Patnaik & Co.(1)\nanswered the question in the affirmative, i.e., against the\nappellant. In that case, the High Court had construed a\nsimilar contract and had come to the conclusion that \"the\ncontract, therefore, as contemplated between the parties, is\nthat the assessee was to deliver a specific goods, namely, a\nfinished bus body built under the specifications prescribed\nby the Government for a fixed price.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1965_1965_97_P007_C03",
+      "text": "It cannot, therefore,\nescape from the position that the transaction was one for\nsale of some goods within the meaning of the Act.\"\nfurther observed that \"what exactly is the distinguishing\nfeature of a sale from a works contract has been elaborately\ndiscussed in a case decided by this very Bench in S.J.C. No.\n7 of 1959 M/s. Thakur Das Mulchand v. The Commissioner of\nSales Tax\n) on 6th July 1961 where it was held that a normal\ncontract to make a chattel and deliver it when made includes\na contract of sale, but\n(1) S.J.C. No. 77 of 1959-Judgment delivered in the Orissa\nHigh Court on July 26,1961.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1965_1965_97_P008_C01",
+      "text": "it may not be always so. The test would be whether the\nthing to be delivered has any individual existence before\ndelivery as the sole property of the party who is to deliver\nit\". The High Court distinguished Gannon Dunkerley's(1)\ncase on the ground that as far as the terms of the contract\nbetween the parties were concerned, they clearly\ncontemplated a case of sale of goods liable to sales tax\nunder the Act, and it was not a works contract, as contended\nby the party. As stated above, the appellant having\nobtained special leave, the appeal is now before us. Mr. Viswanatha Sastri, the learned counsel for the\nappellant, has addressed an elaborate argument to us and\ncontended that the present case is not distinguishable from\nthe decision of this Court in Gannon Dunkerley's(1) case. He has cited a number of authorities in support of his\ncontention, but it will not be necessary to review all these\nauthorities as we feel that the answer to the question\nrefer-red must depend on the construction of the agreement\nregarding the building of bus bodies. As\nlaid down by\nthis\nCourt in\nChandra Bhan Gossain v.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1965_1965_97_P008_C02",
+      "text": "The State of Orissa\n(2),\n\"was it the intention of the parties in making the contract\nthat a chattel should be produced and transferred as a\nchattel for a consideration.\"\nThe agreement was entered into on April 20, 1957, between\nthe appellant, called in the agreement \"the Body Builders\"\nand the State of Orissa. The State had accepted the\nquotations and decided to place orders for construction of 4\n(four) numbers of Bus Bodies on the Chassis namely 4 (four)\nnumbers of 190\" Wheel Base F.F.C. Dodge/Fargo Chassis\nsupplied by the Governor. The relevant clauses are as below\n:\n\"1. (a) That the Body Builders shall be\n responsible for the safe custody of the\n chassis as described in Schedule 'A' from the\n date of the receipt of the Chassis from the\n Governor (Supplier) till their delivery to the\n Governor and shall insure their premises\n against fire, theft, damage and riot at their\n cost, so that these chassis are covered by\n insurance against such risks.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1965_1965_97_P008_C03",
+      "text": "(b)That while the works are in course of\n construction and until the Bus with Bodies\n built are taken over by the Governor, the Body\n Builder shall be responsible for the chassis\n and materials supplied to them and shall inde-\nmnify the Governor for any loss or damage to\n the said material. (1) [1959] S.C.R. 379. (2) 14 S.T.C. 766.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1965_1965_97_P009_C01",
+      "text": "(c)The completed Bus Bodies covered by this\n contract shall be delivered to the Governor on\n or before the 28th May 1957 for two and 20th\n June 1957 for the remaining two buses.\n2.That the passenger Bus Bodies shall be\n constructed on the chassis in the most\n substantial and workmanlike manner, both as\n regards materials and otherwise in every\n respect in strict accordance with the\n specifications mentioned in Schedule 'B'.\n3.That if any additional work is\n considered necessary by the Transport\n Controller, Orissa (hereinafter called the\n 'Controller\") for which no rate is specified\n in the contract, the Body Builder will\n immediately inform the Controller, in writing\n the rate which they intend to charge for such\n additional work. If the Controller does not\n agree to the rates the Body Builder will not\n be under any obligation to carry out such\n additional work.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1965_1965_97_P009_C02",
+      "text": "Provided that the Body Builder will not be\n entitled to any payment for any additional\n work unless they have received an order in\n writing from the Controller to that effect.\n4.That the Body Builder will give a\n guarantee regarding the durability of the Body\n for a period of two years from the date of\n delivery to the Governor and if any\n imperfection or defective material became\n apparent within the guaranteed period the Body\n Builder shall rectify the defects at their own\n expenses.\n5.That the time allowed for carrying out\n the work as entered in the contract shall be\n strictly observed by the Body Builder and\n shall be reckoned from the date of supply of\n Chassis to them.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1965_1965_97_P009_C03",
+      "text": "The work shall throughout\n the stipulated period of the contract be\n carried on with all due diligence time being\n deemed to be of the essence of the contract\n and the Body Builder shall be liable to pay to\n the Governor as liquidated damages an amount\n equal to 50 % on the amount of the estimated\n cost of the whole work as shown in the\n contract for every day that the work remains\n unfinished after the date fixed and the\n Governor may deduct such sum or sums from any\n money due to the Body Builders under these\n presents or may recover it otherwise.\n7 8 7\n Provided that the work will not be considered\n as finished until the defects detected on\n inspection as provided by clause 6, are\n rectified, to the satisfaction of the\n Controller.\n6.That all works under or in course of\n execution or executed in pursuance of this\n contract shall at all times be open to\n inspection by the Controller or officers\n authorised by him in this behalf and they\n shall have the right to stop by a written\n order any work which in the opinion of the\n Controller, is deemed to have been executed\n with unsound, imperfect, unskilful or bad\n workmanship or with materials of inferior\n quality.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1965_1965_97_P009_C04",
+      "text": "The Body Builder on receipt of such\n written order, shall dismantle or replace such\n defective work or material at their own cost. In the event of failure to comply with the\n order within 7 days from the date of receipt\n of the order, the Controller shall be free to\n get the balance of the work done by any other\n agency and recover the difference in cost from\n the Body Builder. Provided that for this purpose the Controller\n shall be at liberty to enter upon the premises\n of the Body Builder and take delivery of the\n unfinished bodies.\n7.That the Body Builder shall be paid 50%\n of the cost of body building at the time of\n delivery and the rest one month thereafter.\n8.That the Body Builder will deliver the\n vehicles complete with bodies at the\n destination or the destinations to be named by\n the Controller at their own cost and risk and\n shall be entitled to recover from the Governor\n the actual cost of transport by road or rail,\n transit insurance charges if any and other\n necessary incidental charges.\"\nSchedule 'B' gives the various specifications for\nconstruction of composite bus bodies.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1965_1965_97_P009_C05",
+      "text": "Clause 9 of the\nSchedule provides the specifications of seat cushions for\nthe upper class and lower class seats. Clause 1 1 provides\nfor the fixing of two roof lamps and its necessary switches. Clause 14 provides for the fixing of luggage carrier on the\ntop of the roof and an iron ladder up to luggage carrier at\nthe rear. Various miscellaneous fittings are required to be\nfitted by clause 16, e.g., hand operated driver's traffic\nsignal, nickel plated conductor's bell, wind screen wipers\nfor the wind screen, tool box for First Aid equipment, etc.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1965_1965_97_P010_C01",
+      "text": "Then, looking at the contract as a whole, what was the real\nintention of the parties ? It will be noticed that the bus\nbodies are throughout the contract spoken of as a unit or as\na composite thing to be put on the chassis, and this\ncomposite body consists not only of things actually fixed on\nthe chassis but movable things like seat cushions, and other\nthings though fixed but which can be very easily detached,\ne.g., roof lamps, wind screen wipers, luggage carrier, tool\nbox for First Aid equipment, etc. The next point to be noticed is that under the contract the\nproperty in the bus body does not pass to the Government\ntill the chassis with the bus body is delivered at the\ndestination or destinations to be named by the Controller\nexcept in the case contemplated in clause 6 of the\nagreement. That clause provides that if some work is not\nsatisfactorily done and the Body Builder on receipt of a\nwritten order does not dismantle or replace such defective\nwork or material at his own cost within seven days, the\nController would be entitled to get the balance of the work\ndone by another agency and recover the difference in cost\nfrom the Body Builder.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1965_1965_97_P010_C02",
+      "text": "The Controller is entitled for this\npurpose to take delivery of the unfinished body. But even\nin this case the, property in the unfinished body would not\npass to the Government till the unfinished body is seized. Suppose a fire were to take place on the premises of the\nappellant and before delivery the bus bodies were destroyed\nor spoilt. On whom would the loss fall ? There can only be\none answer to this question and that is that the loss would\nfall on the appellant. Clause 1 of the agreement provides\nfor insurance of the chassis but there is no provision\nregarding insurance of bus bodies. Therefore, it follows\nthat till delivery is made, the bus bodies remain the\nproperty of the appellant. It could, if it chose to do so,\nreplace parts or whole of the body at any time before\ndelivery. It seems to us that this is an important\nindication of the intention of the parties. If the property\npasses at delivery, what does the property pass in ? Is it\nmovable property or immovable property ? It will not be\ndenied that the property passes in movable property. Then\nwas this the very goods contracted for ? Here again the\nanswer is plainly in the affirmative. Mr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1965_1965_97_P010_C03",
+      "text": "Sastri draws our attention to the following passage in\nBenjamin On Sales (8th Edition), p. 167\n \"Where a contract is made to furnish a machine\n or movable thing of any kind and before the\n property in it passes, to fix it to land or to\n another chattel, it is not a",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1965_1965_97_P011_C01",
+      "text": "contract for the sale of goods. In such\n contracts the intention is plainly not to make\n a sale of movables as such, but to improve the\n land or other chattel, as the case may be. The consideration to be paid to the workman is\n not for a transfer of chattel, but for work\n and labour done and materials furnished.\"\nHe says that here the bus body is being fitted to a chassis,\ni.e., another chattel, and if this passage lays down the law\ncorrectly and according to him it does-the present contract\nis not a contract for the sale of goods. The only case cited in the footnote relating to fixing of a\nchattel to another chattle is Anglo-Egyptian Navigation Co. V. Rennie(1). That case would be relevant if the question\nin this case was whether property in the materials used in\nthe construction of the body passed to the Government plank\nby plank, or nail by nail. The answer would be in the\nnegative, according to the above decision. But we are not\nconcerned with this question here. The facts in that case\nmay be conveniently taken from the head note.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1965_1965_97_P011_C02",
+      "text": "The\ndefendants contracted with the plaintiff to make and supply\nnew boilers and certain new machinery for a steamship of the\nplaintiffs and to alter the engines of such steamship with\ncompound surface condensing engines according to a\nspecification. The specification contained elaborate\nprovisions as to the fitting and fixing of new boilers and\nmachinery on board the ship and the adaptation of the old\nmachinery to the new. The boilers and other new machinery\ncontracted for were completed, and ready to be fixed on\nboard, and one instalment of pound 2000 had been paid under\nthe contract, when the ship was lost by perils of the sea. A second instalment of pound 2000 was subsequently paid. The plaintiffs claimed delivery of the boilers and other\nmachinery completed under the contract, and this being\nrefused, brought an action for the detention of the same, or\nto recover back the pound 4000 paid by them to the\ndefendants.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1965_1965_97_P011_C03",
+      "text": "It was held that the contract was an entire and\nindivisible contract for work to be done upon the\nplaintiffs' ship for a certain price, from further\nperformance of which both parties were released by the loss\nof the ship; that the property in the articles manufactured\nwas not intended to pass until they were fixed on board the\nship; and that consequently the plaintiffs were not entitled\nto the boilers and machinery, nor could they recover the\npound 4000 already paid as upon a failure of consideration. Here the question was whether according to the contract, the\nproperty in each portion certified by the inspector as\nproperly\n(1) [1875] L.R. 10 C.P. 271.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1965_1965_97_P012_C01",
+      "text": "done passed to the plaintiffs as and when his certificate\nwas given. This question was answered in the negative. This case is no authority for the proposition that whenever\na contract provides for the fixing of a chattel to another\nchattel, there is no sale of goods. A few simple\nillustrations will show that this cannot be the law. A\nwants new motor tyres. He goes to a dealer and asks that\nthese may be supplied fitted on the car. Is there a sale of\nmotor tyres or not ? It is not an easy operation to fix new\ntyres; it needs an expert hand. But it will not be denied\nthat it was in essence a contract for sale of goods. Take\nanother illustration. A wants a luggage carrier to be fixed\nto his car. The carrier which B has needs to be altered a\nlittle. The contract is that lie will alter it and fix it\nto the car. Has there been a sale of the luggage carrier or\nnot ? The answer obviously is 'yes'. Mr. Sastri further relies on a passage in Gannon Dunker-\nley's(1) case, at pp. 413-414 :-\n\"It is of the essence of this concept that\n both the agreement and the sale should relate\n to the same subject-matter.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1965_1965_97_P012_C02",
+      "text": "Where the goods\n delivered under the contract are not the goods\n contracted for, the purchaser has got a right\n to reject them, or to accept them and claim\n damages for breach of warranty. Under the\n law, therefore, there cannot be an agreement\n relating to one kind of property and a sale as\n regards another. We are accordingly of\n opinion that on the true interpretation of the\n expression \"sale of goods\" there must be an\n agreement between the parties for the sale of\n the very goods in which eventually property\n passess. In a building contract, the\n agreement between the parties is that the con-\n tractor should construct a building according\n to the specifications contained in the\n agreement, and in consideration therefore\n receive payment as provided therein, and as\n will presently be shown there is in such an\n agreement neither a contract to sell the\n materials used in the construction, nor does\n property pass therein as movables. It is\n therefore impossible to maintain that there is\n implicit in a building contract a sale of\n materials as understood in law.\"\nWe are, however, unable to appreciate how this passage\nassists the appellant.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1965_1965_97_P012_C03",
+      "text": "In this case both the agreement and\nsale relate to one kind of property, namely, the bus body. The case of a con-\n(1) [1959] S.C.R. 379.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1965_1965_97_P013_C01",
+      "text": "tract to construct a building is quite different and, as\nheld by this Court, the property there does not pass in the\nmaterials as movables; but under this contract the bus body\nnever loses its character as movable property, and the\nproperty in the bus body passes to the Government as movable\nproperty. The following extract from the judgment in\nDunkerley's case brings out the fact that the title in a\ncase of building contract passes to the owner as an\naccretion thereto :\n\"That exception does not apply to buildings\n which are constructed in execution of a works\n contract, and the law with reference to them\n is that the title to the same passes to the\n owner of the land as an accretion thereto. Accordingly, there can be no question of title\n to the materials passing as movables in favour\n of the other party to the contract.\"\nAs we have already said, it is clear on the terms of the\ncontract in this case that the property in the bus body does\nnot pass on its being placed or constructed on the chassis\nbut when the whole vehicle including the bus body is\ndelivered. Mr. Sastri then relied on the decision of this Court in\nCarl\nStill v. The State of Bihar\n(1).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1965_1965_97_P013_C02",
+      "text": "That case does not apply to\nthe facts of this case because this Court came to the\nconclusion on a construction of the agreement\nin that case\nthat the contract there was entire and indivisible for the\nconstruction of specified works including buildings for a\nlump sum and not a contract of sale of materials as such. Mr. Sastri then says that clause 3 is inconsistent with an\nagreement for sale of goods. This clause provides for\nadditional work to be done for which no rate is specified in\nthe contract. The clause, according to us, merely provides\nfor extra payment if the Controller decided to order some\nadditional things to be placed in the body. This is a\nneutral clause equally applicable to a contract for sale of\ngoods or a contract for work and labour. Mr. Sastri then points to clauses 5 and 6 and submits that\nthese are totally inconsistent with an agreement for the\nsale of goods. But we are unable to assent to this. Clause\n5 provides for a time schedule and ensures that the delivery\nof the bus body shall take place within the stipulated time. Clause 6 is designed to avoid disputes in the future as to\nthe quality of the material used and ensures that proper\nmaterial is used.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1965_1965_97_P013_C03",
+      "text": "A contract for the sale of\n(1) [1962] 2 S.C.R. 81. ASup/65-4",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1965_1965_97_P014_C01",
+      "text": "goods to be manufactured does not cease to be a contract for\nsale of goods merely because the process of manufacture is\nsupervised by the purchaser. For example, if in a contract\nfor the manufacture and sale of military aircraft, a great\ndeal of supervision is insisted upon by the purchaser, the\ncontract would not become a contract for works and labour. We may now notice some of the Indian cases in which a simi-\nlar point arose. Commissioner of Sales Tax, U.P. v. Haji Abdul Majid\n(1),\nthe Allahabad High Court arrived at the conclusion that in\nthe circumstances of the case the transaction was a contract\nfor the sale of bus bodies and not a contract for work and\nlabour. Desai, C.J., rightly pointed out at p. 443 that\n\"since it makes no difference whether an article is a ready-\nmade article or is prepared according to the customer's\nspecification, it should also make no difference whether the\nassessee prepares it separately from the thing and then\nfixes it on it or does the preparation and the fixation\nsimultaneously in one operation.\"\nJiwan Singh v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1965_1965_97_P014_C02",
+      "text": "State of Punjab\n(2) the High Court of\nPunjab also held that a contract by a firm for fitting and\nbuilding motor bodies with its own materials on the chassis\nsupplied by customers is a contract for the sale of goods. Kailash Engineering Co. v. The State of Gujarat\n(3), it\nwas held that the contract\nin that case\nfor building,\nerecting and furnishing of third class timber coach bodies\non broad gauge underframes to be supplied by the Railway\nadministration was not a contract for the sale of goods. The same conclusion was reached in\nKays Construction Company\nv. The Judge (Appeals) Sales Tax, Allahabad\n(4). We do not\npropose to say whether these cases were correctly decided on\nthe facts for, as we have said in the beginning, in each\ncase it is a question of intention of the parties. To conclude, we have come to the finding that the contract\nas a whole is a contract for the sale of goods. Agreeing\nwith the High Court, we hold that the answer to the question\nreferred is against the appellant. The appeal accordingly\nfails and is dismissed with costs.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1965_1965_97_P014_C03",
+      "text": "In the other two appeals relating to assessments for the\nquarters ending September 30, 1957 and December 31, 1957,\nthe agreements are similar and these also fail and are\ndismissed with costs. There will be one set of hearing fee\nin all the three appeals. (1) 14 S.T.C. 435. (2) 14 S.T.C. 957. (4) 13 S.T.C. 302. (3) 15 S.T.C. 574.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1965_1965_97_P015_C01",
+      "text": "Shah J. Whether a contract is one for execution of work or\nfor performance of service, or is a contract for sale of\ngoods must depend upon the intention of the parties gathered\nfrom the terms of the contract viewed in the light of\nsurrounding circumstances. If the contract is one for work\nor for performance of service, the mere circumstance that\nthe party doing the work or performing the service uses\ngoods or materials belonging to him in the execution of the\ncontract will not be of any importance in determining\nwhether the contract is one for sale of goods. It is common\nground that under the scheme of the Sales Tax Acts enacted\nby State Legislatures, if in its true nature the contract is\none for performance of service or for work, consideration\npaid is not taxable, for the States have authority under the\nConstitution by Sch. VII to legislate on the topics of tax\non sale or purchase of goods (other than newspapers) and\nhave no power to tax remuneration received under contracts\nfor work or service.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1965_1965_97_P015_C02",
+      "text": "The primary difference between a\ncontract for work or service and a contract for sale of\ngoods is that in the former there is in the person\nperforming work or rendering service no property in the\nthing produced as a whole notwithstanding that a part or\neven the whole of the materials used by him may have been\nhis property. In the case of a contract for sale, there is\nin the first instance a chattel which belongs exclusively to\na party and under the contract property therein passes for\nmoney consideration. As observed in Halsbury's Laws of\nEngland (Third Edition) Vol. 34, pp. 6-7, Para 3 :\n\" A contract of sale of goods must be\n distinguished from a contract for work and\n labour. The distinction is often a fine one. A contract of sale is a contract whose main\n object is the transfer \"of the property in,\n and the delivery of the possession of, a\n chattel as a chattel to the buyer. Where the\n main object of work undertaken by the payee of\n the price is not the transfer of a chattel qua\n chattel, the contract is one for work and\n labour.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1965_1965_97_P015_C03",
+      "text": "The test is whether or not the work\n and labour bestowed end in anything that can\n properly become the subject of sale; neither\n the ownership of the materials, nor the value\n of the skill and labour as compared with the\n value of the materials, is conclusive,,\n although such matters may be taken into\n consideration in determining, in the\n circumstances of a particular case, whether\n the contract is in substance one for work and\n labour or one for the sale of a chattel.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1965_1965_97_P016_C01",
+      "text": "To constitute a sale there must therefore be an agreement\nand in performance of the agreement property belonging to\none party must stand transferred to the other party for\nmoney consideration. Mere transfer of property in goods\nused in the performance of a contract is, however, not\nsufficient : to constitute a sale there must be an\nagreement-express or implied-relating to sale of goods and\ncompletion of the agreement by passing of title in the very\ngoods contracted to be sold. It is of the essence of the\ntransaction that. the agreement and sale should relate to\nthe same subject-matter, i.e., the goods agreed to be sold\nand in which the property is transferred. To determine the liability of the appellants to pay tax\nunder the\nOrissa Sales Tax Act\non the consideration received\nby them under the terms of the contract, the true intention\nof the parties must be determined. The agreement which is\nthe subject-matter of the dispute between the parties is\nexecuted on behalf of the Governor of Orissa and the\nappellants, for constructing \"bus bodies\" on the chassis\nsupplied by the Governor of Orissa.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1965_1965_97_P016_C02",
+      "text": "In the second paragraph\nof the preamble it is recited that the Governor had accepted\nthe quotation and had decided to place orders for\nconstruction of \"bus bodies\" on the chassis supplied by the\nGovernor at the rates specified therein. The third\nparagraph recites that the appellants had agreed to\nconstruct \"bus bodies\" at the rate quoted and on the terms\nand conditions recited therein. The agreement then proceeds\nto set out the conditions of the contract. By the first\ncondition the appellants are made responsible for safe\ncustody of the chassis from the date of receipt thereof from\nthe Governor till delivery and are bound to insure their\npremises including the chassis against fire, theft, damage\nand riot at their own cost. By that condition the\nappellants are made \" responsible for the chassis and\nmaterials supplied\" to them and have undertaken to indemnify\nthe Governor for any loss or damage to the said material. The clause also provides that the completed \"bus bodies\"\nshall be delivered to the Governor on or before the dates\nspecified in the agreement.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1965_1965_97_P016_C03",
+      "text": "By cl. 2 it is stipulated that\nthe \"bus bodies\" shall be constructed in the most\nsubstantial and workmanlike manner, both as regards\nmaterials and otherwise in every respect in strict\naccordance with the specifications in Sch. 'B' of the\nagreement. Clause 3 provides for payment for additional\nwork as may be directed by the Transport Controller under an\norder in writing to that effect. By cl. 4 it is provided\nthat the appellants shall guarantee the durability of the\nbody for two years from the date of delivery and if any\nimperfection or",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1965_1965_97_P017_C01",
+      "text": "defective material becomes apparent within the period of\nguarantee the appellants shall rectify the defects at their\nown cost. These four clauses do not indicate any clear intention as to\nthe nature of the contract : they are consistent with the\ncontract being one for sale of \"bus bodies\" belonging to the\nappellants as well as to a contract for building bus bodies\non chassis supplied. Liability imposed by the contract\nrequiring the appellants to indemnify the Governor for loss\nor damage to the chassis supplied and liability to carry out\nthe work in the most substantial and workmanlike manner and\nto guarantee durability of the bodies are consistent with\nthe contract being one of sale or of work and service. Clause 3 also does not indicate any definite intention. If\nthe contract is one for sale of a \"bus body\", the agreement\nto pay extra payment for additional work to be done thereon\nis not also indicative of any definite intention. But by\ncls. 5 & 6 of the contract a definite intention that the\ncontract is one for work and not sale is, in my judgment,\nindicated.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1965_1965_97_P017_C02",
+      "text": "By the fifth clause it is, inter alia, provided\nthat the work shall throughout the stipulated period of the\ncontract be carried out with all due diligence, time being\ndeemed to be of the essence of the contract, and that the\nappellants shall be liable to pay to the Governor as\nliquidated damages an amount equal to 50% of the estimated\ncost of the whole work as shown in the contract for every\nday that the work remains unfinished after the date fixed. In a contract for sale of goods such a covenant is unusual. If a party to a contract fails to carry out his part within\nthe period specified, unless the other party waives the\nbreach the contract may be deemed to be broken. The other\nparty is ordinarily not concerned with the method or manner\nof producing the chattel agreed to be sold, if the\nspecifications relating thereto are otherwise complied with. Imposition of an obligation to carry out the work with due\ndiligence is indicative of the contract being one for work. This inference is strengthened by the proviso to cl. 5 which\nimposes liability upon the appellants to pay damages until\nthe defects detected on inspection are rectified.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1965_1965_97_P017_C03",
+      "text": "By the\nfirst part of cl. 6, all work under or in the course of\nexecution or executed in pursuance of the contract shall at\nall times be open to inspection by the Controller or\nofficers authorised by him in that behalf and that they\nshall have the right to stop by a written order any work\nwhich in the opinion of the Controller has been executed\nwith unsound, imperfect, unskillful or bad workmanship or\nwith materials of inferior quality. The appellants on\nreceipt of a written order are obliged to dismantle or\nreplace such, defective work or material at their own cost. If the appellants",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1965_1965_97_P018_C01",
+      "text": "fail to comply with the order within seven days from the\ndate of receipt of the order, the Controller is free to get\nthe work remaining to be done by any other agency and is\nentitled to recover the difference in cost from the\nappellants, and for this purpose the Controller is at\nliberty to enter upon the premises of the appellants and\ntake delivery of the unfinished vehicles. It is clear from\nthe terms of cl. 6 that throughout the process of\nconstruction the appellants are under the supervision of the\nController, and it is open to the Controller to stop any\nwork which is in progress and to call upon the appellants to\nrectify the work by dismantling or replacing the defective\nwork. If the appellants fail to carry out the order of the\nController it is open to the Controller to take possession\nof the unfinished work and get the same done through any\nother agency and to recover the difference in cost from the\nappellants. The Controller is also given liberty to enter\nupon the premises of the appellants and to take over the\nunfinished vehicles.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1965_1965_97_P018_C02",
+      "text": "A party agreeing to purchase goods of\ncertain specifications or description is entitled to insist\nthat the specifications or the description shall be strictly\ncarried out, but he has ordinarily no right to supervise the\nproduction of the goods. Again the right which is conferred\nupon the Controller to take away the unfinished vehicles and\nto get them completed by some other agency is wholly\ninconsistent with the contract being one for purchasing an\narticle belonging to the appellants. What one may ask would\nbe the authority of the Controller under a contract of sale\nto take away unfinished vehicles from the person who owns\nthem, have the work completed by another person and then to\nclaim the right to recover the difference in cost ? Paragraph 7 deals with the right to recover the\nconsideration agreed to be paid to the appellants and the\ntime at which it is to be paid. Paragraph 8 deals with the\nplace at which the completed vehicles with bodies built\nthereon are to be delivered and till the date of the\ndelivery the risk is with the appellants.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1965_1965_97_P018_C03",
+      "text": "Paragraph 9 deals\nwith the settlement of any dispute which may arise between\nthe parties on any question relating to the meaning of the\nspecifications and drawings or as to the quality of the\nworkmanship or materials used in the work. Paragraph 10\ndeals with the jurisdiction of courts in the event of a\ndispute between the parties. Paragraphs 7 to 10 are in\ntheir content neutral and may be consistent with the\nagreement being either one for sale or for work or service. Schedule 'B' consists of the specifications for construction\nof the composite bodies. They set out the designs and the\nspecifications of the underframe and floor, frame-work,\nroof, penelling, side",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1965_1965_97_P019_C01",
+      "text": "windows, doors, seats, driver's can, roof lamps, grab rails,\nwindow guard rails, wind screens, luggage carriers, finish\nand miscellaneous fittings. It is true that the\nspecifications contemplated that the appellants had to\nsupply certain goods which are not fixed to the \"bus\nbodies\". There are also provisions for supply of additional\nequipment such as wind screen wipers, locking arrangements,\never,the case of the parties that the contract is a\ncomposite contract. It is part of a single contract\nthat the \"bus body\" to be constructed has to conform to the\nspecifications and in the manufacture of the completed bus\nbody the equipment set out under the head 'miscellaneous\nfittings' and elsewhere has to be provided. An elaborate argument was advanced before us by counsel for\nthe State of Orissa suggesting that the \"bus bodies\" are\nseparately built and are thereafter fixed to the chassis\nsupplied by the State. The argument, however, does not\nappear to be correct in view of cls. 3, 4, 5, 6, 7, 8 & 9 of\nthe specifications.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1965_1965_97_P019_C02",
+      "text": "Again the right which is conferred by\ncl. 6 of the main agreement which enables the Controller to\ntake possession of the unfinished vehicles indicates that\nthe bodies were to be built on the chassis supplied. and\nthey were not to be independently constructed. But this\nhas, in my view, no decisive bearing. The parties may\ncontract that on the chassis supplied by the State a body\nshall be built. If the true intention of the parties is\nthat a body is a chattel belonging to the builder and the\nproperty therein is to pass under a contract against price,\nit would be a contract for sale of the body notwithstanding\nthe fact that it is built on the chassis. Another question to which counsel devoted considerable argu-\nment was whether the maxim 'quicquid fixatur solo, solo\ncredit' which is a rule of the common law of England is\napplicable under the Indian system to accretions to\nmovables. Under the English common law a house which is\nconstructed being embedded in the land becomes an accretion\nto the land and (subject to a mass of exceptions in favour\nof tenants and in favour of trade fixtures) belongs to the\nperson to whom the land belongs.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1965_1965_97_P019_C03",
+      "text": "But that rule has not been\naccepted in India : Thakoor Chunder Poramanick v. Ram Dhonde\nBhattacharji(\n1) and Narayan Das Khitty v. Jatindra Nath Roy\nChowdhury\n(2). It is unnecessary to advert to the contention\nwhether the rule applies to accretions to movables, for\nultimately the true effect of an accretion made pursuant to\na contract has to be judged, not by any artificial rule that\nthe accretion may be presumed to have become by virtue of\naffixing to a chattel\n(1) 6 Suth Weekly Reports 228\n(2) L. R. 54 I. A. 218",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1965_1965_97_P020_C01",
+      "text": "part of that chattel, but from the intention of the parties\nto the contract. In each case the Court must ascertain what\nthe intention of the parties was when property in goods\nbelonging to one person and affixed to the property of\nanother person, passed to that other person. Whether\npursuant to a contract, any moveables fixed to another\nmoveable the property passes immediately to the person to\nwhom the primary property belongs must depend upon the\nintention of the parties. One strong test to ascertain whether a given contract is for\nwork or for sale of goods is to ascertain whether the thing\nproduced as a whole had individual existence as the sole\nproperty of the party who produced it at some time before\ndelivery, and the property therein passes only under the\ncontract relating \"hereto to the other party for price. If\nthe thing has no individual existence as the sole property\nof the party producing it, the contract will be one for work\nor for service. Under condition 6 of the contract unfinished goods may be\ntaken possession of by the Controller and appropriated to\nhimself notwithstanding the objections which the appellants\nmay have to that course.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1965_1965_97_P020_C02",
+      "text": "If the chassis and the body were\ndestroyed before delivery, as stipulated loss of the body\nwould undoubtedly fall upon the appellants, for by cl. 1 of\nthe agreement the appellants, are bound to indemnify the\nState of Orissa for any loss that may be suffered by the\nState. But this covenant is not decisive of the true nature\nof the contract. A bailee of goods under a works contract\nmay undertake a more onerous liability than what is\nprescribed by\nS. 151\nof the Contract Act : see\nS. 152\nContract Act. Undoubtedly before delivery of a complete\nchassis with \"bus body\" under the terms of the contract the\nappellants have no right to claim the consideration agreed\nto be paid to them. If, because. of the loss of the chassis\nand the \"bus body\" constructed by the appellants, the\nappellants are unable to deliver the vehicle, the liability\nto indemnify the State for loss of the chassis arises by\nexpress terms of the contract and their claim for recovery\nof the value of the materials used or the consideration\nagreed to be paid would fail, because they have failed to\ncarry out their part of the contract.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1965_1965_97_P020_C03",
+      "text": "It is unnecessary to refer to \"he large number of\nauthorities to which our attention was invited by counsel\nThe question must be decided on a true interpretation of the\nterms of the contract in the light of surrounding\ncircumstances. If, on a review of all",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1965_1965_97_P021_C01",
+      "text": "the terms of the contract, it appears that the intention of\nthe parties was that the appellants were to sell \"bus\nbodies\" to the State of Orissa the contract would clearly be\none for sale and consideration paid would be taxable under\nthe\nOrissa Sales Tax Act\n. If, however, the contract is one\nfor securing a certain result namely the building of a body\non the chassis supplied by the State with the materials\nbelonging to the appellants, the contract would. be one for\nwork done and not liable to sales tax.\nIn my view the present contract is one for work and not a\ncontract for sale, because the contract is not that the\nparties agreed that the \"bus body\" constructed by the\nappellants shall be sold to the State of Orissa. The\ncontract is one in which the appellants agreed to construct\n\"bus bodies\" on the chasis supplied to them as bailees and\nsuch a contract being one for work, the consideration paid\nis not taxable under the\nOrissa Sales Tax Act\n.\nIn my view, therefore, the appeal should be allowed.\nORDER BY COURT\nIn accordance with the opinion of the majority, these\nappeals are dismissed with costs. One hearing fee.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Patnaik & Company vs State Of Orissa",
+    "case_id": "SC_1965_1965_97",
+    "court": "Supreme Court of India",
+    "year": "1965",
+    "facts_summary": "CITATION:\n 1965 AIR 1655 1965 SCR (2) 782\n CITATOR INFO :\n D 1967 SC 547 (6)\n RF 1969 SC1245 (11)\n RF 1972 SC 744 (11)\n RF 1972 SC1131 (10)\n F 1974 SC2309 (9,10,11,12,13,17)\n RF 1976 SC2108 (45)\n R 1977 SC1537 (37)\n RF 1989 SC 962 (24) ACT:\nOrissa Sales Tax Act\n, (14 of 1947)--Contract to build bus\nbodies on chassis supplied by purchaser-If a contract for\nsale or for work. The provision regarding insurance showed that till delivery\nwas made, the bus bodies remained the property of the appel-\nlant and unlike the case of a contract a construct a\nbuilding, where the property does not pass in the materials\nas movable the bus body never lost its character as movable\nproperty and the property in it passed to Government as\nmovable Property. It is not the law, that whenever a\ncontract provides for the fixing of a chattel to another\nchattel there is no sale of goods; and, a contract for the\nsale of goods to be manufactured does not cease to be a\ncontract for sale of goods, merely because the process of\nmanufacture is supervised by the purchaser. [785 C-D; 788 F;\n790 A-B; 791 A, D; 792 A]",
+    "legal_issues": "HEADNOTE:\nThe appellant claimed to deduct from its gross turnover,\namounts received from the State Government for building bus\nbodies, on the chassis supplied by the Government under a\ncontract. Under the contract, the bus bodies were to be put on the\nchassis and the body consisted not only of things actually\nfixed on the chassis but movable things like seat cushions\nand other things which though fixed could be easily\ndetached, like roof-lamps etc. The chassis with the bus\nbody was to be delivered at the destination named within the\nstipulated time. If some work was not satisfactorily done\nthe Government was entitled to seize the unfinished vehicle,\nget the work done by another agency and recover the\ndifference in cost from the appellant. While the appellant\nwas required to protect the chassis by insurance, there was\nno provision regarding insurance of bus bodies. The\ncontract also provided that the process of manufacture was\nto be supervised on behalf of the Government, and that the\nwork should be done with due deligence. There was also a\nprovision for payment of damages until the defects detected\non inspection were rectified. The Sales Tax Officer refused to allow the deduction. JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeals Nos. 179 to,\n181 of 1964.\nAppeals by special leave from the judgment and order dated\nAugust 21, 1962, of the Orissa High Court in O.J.C. No. 28\nof 1961.\nA. V. Viswanatha Sastri and R. Gopalakrishhnan, for the\nappellants (in all the appeals).\nM.C",
+    "ratio_summary": "appeal, the claim was allowed by the Collector, whose order\nwas affirmed by the Sales Tax Tribunal, on appeal by the\nDepartment. On a reference to the High Court, the question,\nas to whether the amounts were not chargeable to sales tax,\nwas answered against the appellant. In the appeal to the Supreme Court, on the question as to\nwhether the contract was one for execution of work or for\nperformance of service, or whether it was a contract for\nsale of goods. HELD : (Per Gajendragadkar C.J., Hidayatullah, Sikri and\nBachawat, JJ) : The contract as a whole was a contract for\nthe sale of goods and the amounts were therefore chargeable\nto sales tax. [792 G]\nThe answer to the question depended on the construction of\nthe agreement regarding the building of bus bodies. On the\nterms of the contract the property in the bus body did not\npass on its being placed or constructed on the chassis but\nwhen the whole vehicle including the bus body was delivered. Gannon Dunkerley's Case, [1959] S. C.R. 379 and Carl Still\nv. State of Bihar, [1962] 2 S.C.R. 81, distinguished. Anglo-Egyptian Navigation Co. v. Rennie, (1875) L.R. 10 C.P.\n271, explained. Per Shah, J. (dissenting) : The contract was one for work\nand not a contract for sale, because, the contract was not\nthat the parties agreed that the \"bus body\" constructed by\nthe appellants should be sold to the State. The contract\nwas one in which the appellants agreed to construct \"bus\nbodies\" on the chassis supplied to them as bailers, and such\na c",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

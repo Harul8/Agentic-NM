@@ -1,0 +1,312 @@
+{
+  "case_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY",
+  "case_name": "Bank Of Baroda vs M/S Karwa Trading Company",
+  "normalized_case_name": "BANK_OF_BARODA_VS_M_S_KARWA_TRADING_COMPANY",
+  "court": "Supreme Court of India",
+  "year": "2022",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 363 of 2022",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "10 February 2022",
+  "judges": [
+    "Sanjiv Khanna",
+    "M. R. Shah"
+  ],
+  "author": "M. R. Shah",
+  "bench_type": "division",
+  "petitioner": "Bank Of Baroda",
+  "respondent": "M/S Karwa Trading Company",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 8,
+  "cited_by_count": 3,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2022\\FEB\\2022_FEB_64.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO.363 OF 2022\n\n Bank of Baroda ..Appellant (S)\n\n VERSUS\n\n M/s Karwa Trading Company & Anr. ..Respondent (S)\n\n JUDGMENT\nM. R. Shah, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P002_C01",
+      "text": "1. Feeling aggrieved and dissatisfied with the impugned\n\n judgment and order dated 20.09.2017 passed by the\n\n Division Bench of the High Court of Judicature for\n\n Rajasthan Bench at Jaipur in D.B. Special Appeal Writ\n\n No.349 of 2017, by which the Division Bench of the High\n\nCourt has allowed the said intra­court appeal and has\ndirected that if the respondent ­ borrower deposits a\n\n further sum of Rs.17 lakhs to the bank, the bank shall\n\n release the property and handover possession along with\n\n the title deeds of the residential/housing property in\n\n question to the borrower and by which the Division Bench\n\n of the High Court has further directed that the SA\n\n No.9/2014 filed by the borrower before the learned Debt\n\n Recovery Tribunal (DRT) is restored to its original number\n\n to be heard on merits, the appellant herein ­ Bank of\n\n Baroda – financial institution – secured creditor has\n\n preferred the present appeal.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P003_C01",
+      "text": "2. The facts leading to the present appeal in nutshell are as\n\n under: ­\n\n2.1 That the appellant herein – bank granted term loan of\n\n Rs.100 lakhs and cash credit limit of Rs.95 lakhs to the\n\n respondent – borrower (hereinafter referred to as the\n\n borrower) against the security of two mortgaged properties\n\n namely (i) industrial plot situated at Chittor Road, Bundi\n\n measuring 500 Sq.Mtrs. and (ii) a residential/housing\n\nproperty situated at 1­Ja­27, Vikas Nagar, Bundi\n\n measuring 198 Sq.Mtrs. That the borrower failed to repay\n\n the term loan as per the terms and conditions of the\n\n agreement. The account of the borrower became NPA on\n\n 31.10.2012. A notice under\nSection 13(2)\nof the\n\n Securitisation and Reconstruction of Financial Assets and\n\n Enforcement of Security Interest Act, 2002 (hereinafter\n\n referred to as the\nSARFAESI Act, 2002\n) dated 07.01.2013\n\n was served upon the borrower demanding a sum of\n\n Rs.1,85,37,218.80/­ The bank took symbolic possession of\n\n the immovable property/residential house and also issued\n\n a notice under\nSection 13(4)\nof the SARFAESI Act, 2002 on\n\n 22.08.2013.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P003_C02",
+      "text": "An application was moved under\nSection 14\n\n the SARFAESI Act, 2002 which came to be allowed on\n\n 08.11.2013 and with the police assistance the bank took\n\n possession of the residential house, which was one of the\n\n mortgaged properties of the borrower, on 25.11.2013.\n\n2.2 That thereafter the bank issued a sale notice by public\n\n auction of the residential property dated 16.12.2013. The\n\n reserve price fixed was Rs.48.65 lakhs for sale of the said\n\nsecured asset in terms of the procedure prescribed under\n\n Rule 8 read with Rule 9 of the Security Interest\n\n (Enforcement) Rules, 2002. The date of auction notified\n\n was 20.01.2014. The borrower challenged the auction of\n\n the bank by filing Securitisation Application (SA)\n\n No.09/2014 under\nSection 17\nof the SARFAESI Act, 2002\n\n before the DRT, Jaipur. An interim order was passed by\n\n the DRT that if the borrower deposits Rs.20 lakhs on\n\n 20.01.2014 by 12.00 noon, the bank shall accept the bids\n\n but not finalize the bids/confirm the sale of the secured\n\n asset and if the borrower commits default in payment of\n\n balance amount of Rs.28.65 lakhs, the restraint order\n\n shall stand vacated automatically.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P003_C03",
+      "text": "The DRT also observed\n\n that if the borrower deposits Rs.48.65 lakhs with the bank\n\n on or before 27.01.2014, the bank shall deliver the\n\n possession of the secured asset along with the original title\n\n deeds of the property in question. It is not in dispute that\n\n the borrower deposited Rs.48.65 lakhs with the bank.\n\n2.3 That the aforesaid interim order passed by the DRT came\n\n to be challenged by the bank in appeal before the DRAT\n\n(Debt Recovery Appellate Tribunal). It was the case on\n\nbehalf of the appellant ­ bank that in public auction the\n\nbank had received bids up to Rs.71 lakhs and the amount\n\nof debt due against the borrower at that point of time was\n\nabove Rs.2 crores and if at all the borrower is interested or\n\nkeen to redeem the mortgaged property, he could do so by\n\ndischarging the entire liability and not by making payment\n\nof Rs.48.65 lakhs, as ordered by the DRT. It was also the\n\ncase on behalf of the appellant – bank that order passed by\n\nthe DRT dated 17.01.2014 was in violation of\nSection 13(8)\nof the SARFAESI Act, 2002.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P003_C04",
+      "text": "However, it was submitted on\n\nbehalf of the bank that the bank may not find any\n\ndifficulty in releasing the subject property provided the\n\nborrower is ready to pay a sum of Rs.71 lakhs which is the\n\nhighest bid available with the bank. It was submitted that\n\neven this amount would not ultimately go to discharge the\n\nentire liability outstanding against the borrower but still if\n\nthe borrower deposits Rs.71 lakhs, the bank may not find\n\ndifficulty to release the subject property in question.\n\n2.4 The DRAT dismissed the appeal by observing that as the\n\n reserve price was Rs.48.65 lakhs which the borrower\n\n deposited and the bank had received the bids ranging from\n\n Rs. 61.50 lakhs to Rs.71 lakhs and the alleged bidders\n\n failed to deposit the earnest money and when the borrower\n\n is ready to purchase the said property for Rs.71 lakhs no\n\n fault can be found with the order passed by DRT. The\n\n order passed by the DRAT dismissing the appeal preferred\n\n by the bank was the subject matter of challenge before the\n\n learned Single Judge.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P003_C05",
+      "text": "The learned Single Judge set aside\n\n both the orders of DRT and DRAT vide its judgment and\n\n order dated 12.01.2017 primarily for the reason that the\n\n said orders were in contravention of\nSection 13(8)\nof the\n\n SARFAESI Act, 2002. The judgment and order passed by\n\n the learned Single Judge was challenged before the\n\n Division Bench of the High Court by the borrower by way\n\n of present intra­court appeal. By the impugned judgment\n\n and order, the Division Bench of the High Court has\n\n allowed the said appeal and has quashed and set aside the\n\n judgment and order passed by the learned Single Judge\n\n and has directed the bank to release the secured property\n\n(residential house) on the borrower depositing a further\n\n sum of Rs.17 lakhs to the bank and handover the\n\n possession along with the title deeds to the borrower.\n\n2.5 Feeling aggrieved and dissatisfied with the impugned\n\n judgment and order passed by the Division Bench of the\n\n High Court, the bank – financial institution – secured\n\n creditor preferred the present appeal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P004_C01",
+      "text": "3. Ms. Praveena Gautam learned counsel appearing on behalf\n\n of the appellant – bank has vehemently submitted that in\n\n the facts and circumstances of the case the Division Bench\n\n of the High Court has committed a grave error in directing\n\n the bank to release the property and handover the\n\n possession along with the title deeds of the\n\n residential/housing property in question to the borrower\n\n on making a further payment of Rs.17 lakhs only.\n\n3.1 It is vehemently submitted by learned counsel appearing\n\n on behalf of the appellant – bank that even as observed by\n\n the Division Bench of the High Court the borrower did not\n\n come forward to redeem the property but to release the\n\nproperty in favour of the purchaser on payment of the\n\n reserve price of the mortgaged property in terms of the\n\n auction notice.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P004_C02",
+      "text": "It is submitted that therefore when the\n\n dues were of Rs. 1,85,37,218.80/­ at the time when the\n\n notice dated 07.01.2013 under\nSection 13(2)\nof the\n\n SARFAESI Act, 2002 was issued and served upon the\n\n borrower, on payment of a sum of Rs.71 lakhs only the\n\n borrower cannot be discharged from his liability to pay the\n\n entire dues.\n3.2 It is further submitted by learned counsel appearing on\n\n behalf of the appellant – bank that what was understood\n\n and agreed by the bank was that on payment of Rs.71\n\n lakhs which was the highest bid received, the borrower\n\n may be handed over the possession. It is submitted that\n\n however, it was specifically made clear that on payment of\n\n Rs.71 lakhs the said amount would not ultimately\n\n discharge the entire liability outstanding against the\n\n borrower.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P004_C03",
+      "text": "It is submitted that aforesaid has been\n\n misinterpreted and/or misconstrued by the Division Bench\n\n of the High Court and it is understood that on deposit of\n\nRs.71 lakhs the bank agreed that the borrower be\n\n discharged from his entire liability outstanding against\n\n him.\n3.3 It is further submitted that the Division Bench of the High\n\n Court has also not property appreciated that the offer of\n\n Rs.71 lakhs in the auction was received in the year\n\n 2013/2014 and thereafter the valuation has increased. It\n\n is submitted that even the outstanding dues have also\n\n gone up which was Rs. 1,85,37,218.80/­ as on\n\n 07.01.2013. It is submitted that therefore the Division\n\n Bench of the High Court has materially erred in treating\n\n and/or considering Rs.71 lakhs as sale/purchase price\n\n and/or the value of the residential property. It is\n\n submitted that therefore when the Division Bench of the\n\n High Court passed the judgment and order if the property\n\n could have been auctioned it would have fetched much\n\n more price than Rs.71 lakhs. It is submitted that on\n\n deposit of Rs.71 lakhs only the borrower cannot be\n\n discharged from his entire liability.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P004_C04",
+      "text": "It is submitted that the\n\n impugned judgment and order passed by the Division\n\nBench of the High Court is just contrary to Sub­section (8)\n\nSection 13\nof the SARFAESI Act, 2002. It is submitted\n\n that as per Sub­section (8) of\nSection 13\nof the SARFAESI\n\n Act, 2002 only on deposit/payment of entire payment of\n\n dues of the secured creditor together with all costs,\n\n charges and expenses incurred by secured creditor to the\n\n secured creditor, at any time before the date of publication\n\n of notice for public auction or inviting quotations or tender\n\n from public, the secured asset shall not be sold by the\n\n secured creditor. It is submitted that in the present case\n\n the amount due was much more than Rs.71 lakhs.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P004_C05",
+      "text": "It is\n\n submitted that therefore the impugned judgment and\n\n order passed by the Division Bench of the High Court\n\n directing to release the secured property just on payment\n\n of a total sum of Rs.65.65 lakhs is just contrary to Sub­\n\n section (8) of\nSection 13\nof the SARFAESI Act, 2002.\n\n3.4 It is further submitted by learned counsel appearing on\n\n behalf of the appellant – bank that when the subject\n\n property was mortgaged to the bank in the housing loan\n\n account borrowed by the borrower and without satisfying\n\nthe entire outstanding dues the mortgaged property cannot\n\n be discharged.\n3.5 It is further submitted by learned counsel appearing on\n\n behalf of the appellant – bank that the Division Bench of\n\n the High Court has failed to appreciate the reserve price of\n\n Rs.48.65 lakhs was based on the valuation carried out by\n\n the valuer of the bank and the process of the auction of\n\n the subject property was through public auction in which\n\n an actual market price could have been fetched.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P004_C06",
+      "text": "There\n\n could not have been any directions for redemption of the\n\n secured subject property on making payment of the\n\n reserve price or having paid the average of the two highest\n\n bid to the borrowers unless the entire dues including the\n\n costs and expenses are paid.\n3.6 It is further submitted by learned counsel appearing on\n\n behalf of the appellant – bank that the Division Bench of\n\n the High Court has not properly appreciated the fact that\n\n the initial order passed by the DRT which was the subject\n\n matter before the DRAT challenged by the bank by which\n\nthe DRT directed to release/handover the possession of the\n\n mortgaged property to the borrower on deposit of Rs.48.65\n\n lakhs which was the reserve price, was an interim order. Therefore, the Division Bench of the High Court ought not\n\n to have passed the final order discharging the borrower\n\n from his entire liability just on payment of Rs.65.65 lakhs.\n\n3.7 Making the above submissions it is prayed to allow the\n\n present appeal.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P005_C01",
+      "text": "4. The present appeal is vehemently opposed by Mrs. Christi\n\n Jain learned counsel appearing on behalf of the\n\n respondents – borrowers.\n4.1 It is vehemently submitted by learned counsel appearing\n\n on behalf of the borrower that as the highest bid received\n\n by the bank in the public auction was Rs.71 lakhs which\n\n the borrower agreed to deposit/pay and even earlier the\n\n borrower deposited a sum of Rs.48.65 lakhs as per the\n\n order passed by the DRT dated 17.01.2014, thereafter\n\n when the Division Bench of the High Court has directed\n\n the bank to release the residential property on deposit of a\n\nfurther sum of Rs.17 lakhs (total making it Rs.65.65 lakhs)\n\n and thereafter has directed to handover the original title\n\n deeds to the borrower, the impugned judgment and order\n\n passed by the High Court is equitable order which does\n\n not warrant any interference by this Court in exercise of\n\n powers conferred under\nArticle 136\nof the Constitution of\n\n India.\n4.2 It is submitted that even the learned counsel appearing on\n\n behalf of the appellant – bank agreed that on payment of a\n\n total sum of Rs.65.65 lakhs the property in question may\n\n be released.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 136"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P005_C02",
+      "text": "It is submitted that therefore the Division\n\n Bench of the High Court has not committed any error\n\n which warrants interference of this Court in exercise of\n\n powers conferred under\nArticle 136\nof the Constitution of\n\n India.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 136"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P006_C01",
+      "text": "5. We have heard the learned counsel appearing on behalf of\n\n the respective parties at length.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P007_C01",
+      "text": "6. At the outset, it is required to be noted that by the\n\n impugned judgment and order the Division Bench of the\n\nHigh Court has directed the bank – secured creditor to\n\n release the secured property and handover the possession\n\n along with original title deeds of the residential/housing\n\n property in question to the borrower on payment of a total\n\n sum of Rs.65.65 lakhs. Thus, by the impugned judgment\n\n and order the Division Bench of the High Court has\n\n released the secured property/mortgaged property on\n\n payment of a total sum of Rs.65.65 lakhs against the total\n\n dues which as such as on 07.01.2013 was\n\n Rs.1,85,37,218.80/­.\n6.1 From the impugned judgment and order passed by the\n\n High Court it appears that the Division Bench of the High\n\n Court has treated and/or considered the market value of\n\n the mortgaged property at Rs.71 lakhs.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P007_C02",
+      "text": "The DRT when\n\n initially granted the interim relief in favour of the borrower\n\n which was the subject matter before the DRAT and the\n\n learned Single Judge and thereafter before the Division\n\n Bench of the High Court, directed to handover the\n\n possession of the mortgaged property to the borrower on\n\n payment of Rs.48.65 lakhs which was the reserve\n\n price/base price. The possession was taken over by the\n\nbank under the provisions of the\nSARFAESI Act\nand after\n\nfollowing the proceedings as required under\nSection 13\n\nthe SARFAESI Act, the mortgaged property was put to\n\nauction and at that stage the borrower preferred an\n\nappeal/application before the DRT under\nSection 17\nof the\n\nSARFAESI Act and as such the said appeal can be said to\n\nbe technically pending as the order dated 17.01.2014\n\npassed by the DRT was an interim order.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P007_C03",
+      "text": "When the\n\nauction proceedings were initiated under\nSection 13\nof the\n\nSARFAESI Act and after the bank took over the possession\n\nunder\nSection 14\nof the SARFAESI Act as per Sub­section\n\n(8) of\nSection 13\nof the SARFAESI Act the secured asset\n\nshall not be sold and/or transferred by the secured\n\ncreditor, where the amount dues of the secured creditor\n\ntogether with all costs, charges and expenses incurred by\n\nhim is tendered by the borrower or debtor to the secured\n\ncreditor at any time before the date of publication of notice\n\nfor public auction or inviting quotations or tender from\n\npublic or private treaty for transfer by way of lease\n\nassignment or sale of the secured assets. In the present\n\ncase though as on 07.01.2013 the dues were Rs. Rs.1,85,37,218.80/­ and without the secured property was\n\nsold in a public auction the Division Bench of the High\n\nCourt has directed to release the mortgaged property and\n\nhandover the possession along with original title deeds to\n\nthe borrower on the borrower depositing/paying a total\n\nsum of Rs.65.65 lakhs only.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P007_C04",
+      "text": "At this stage, it is required to\n\nbe noted that Rs.65.65 lakhs was not the amount realized\n\nby selling the mortgaged property in a public auction. It\n\nwas only a highest bid received and before any further\n\nauction proceedings were conducted, the DRT passed an\n\ninterim order directing to handover the possession and\n\nhandover the original title deeds on payment of Rs.48.65\n\nlakhs which was the base price, which was the subject\n\nmatter before the DRAT and before the learned Single\n\nJudge. Therefore, the borrower did not deposit and was not\n\nready to deposit the entire amount of dues with secured\n\ncreditor with all costs, charges and expenses incurred by\n\nthe secured creditor. Therefore, it was open for the secured\n\ncreditor to sell the mortgaged property which was put as a\n\nsecurity and realize the amount by selling it in a public\n\nauction. At this stage, it is required to be noted that even\n\nas per the Division Bench of the High Court the borrower\n\n made an offer to deposit/pay Rs.71 lakhs as a purchaser\n\n and not by way of redeeming the mortgaged property.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P007_C05",
+      "text": "Therefore, the impugned judgment and order passed by\n\n the Division Bench of the High Court directing to release\n\n the mortgaged property/secured property and to handover\n\n the possession as well as the original title deeds to the\n\n borrower on payment of a total sum of Rs.65.65 lakhs only\n\n is contrary to Sub­section (8) of\nSection 13\nof the\n\n SARFAESI Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P008_C01",
+      "text": "7. Even otherwise on making the payment i.e. Rs.65.65 lakhs\n\n against the total dues Rs.1,85,37,218.80/­ as on\n\n 07.01.2013 the entire liability outstanding against the\n\n borrower cannot be said to have been discharged. Even if\n\n the mortgaged property would have been sold in a public\n\n auction say for an amount of Rs.71 lakhs and the bank\n\n has realized Rs.71 lakhs by selling the mortgaged property,\n\n in that case also the liability of the borrower to pay the\n\n balance amount would still continue. By selling the\n\n mortgaged property/secured property it cannot be said\n\nthat the borrower is discharged from the entire liability\n\n outstanding against him. The liability of the borrower with\n\n respect to the balance outstanding dues would still be\n\n continued. Therefore, the Division Bench of the High Court\n\n has erred in directing to release the mortgaged\n\n property/secured property and to handover the possession\n\n along with the original title deeds to the borrower on\n\n payment of a total sum of Rs.65.65 lakhs only.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P009_C01",
+      "text": "7. 1 At the cost of repetition it is observed that as such the\n\n bank had already initiated the proceedings under\nSection\n\nof the SARFAESI Act and even the possession of the\n\n mortgaged property was taken over by the bank under\nSection 14\nof the SARFAESI Act and thereafter the\n\n mortgaged property was put to sale by a public auction\n\n and at that stage the borrower wanted to stall the auction\n\n proceedings and restrain the secured creditor/bank from\n\n selling the property. In such a situation the bank/secured\n\n creditor can be restrained from selling the mortgaged\n\n property/secured property where the borrower deposits\n\n entire dues that was Rs.1,85,37,218.80/­ as on\n\n07.01.2013 with the secured creditor.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P009_C02",
+      "text": "Therefore, the DRT\n\nin its order dated 17.01.2014 which as such was an\n\ninterim relief order pending the appeal under\nSection 17\n\nthe SARFAESI Act was not justified in directing to release\n\nthe mortgaged property and handover the possession along\n\nwith the original title deeds to the borrower on payment of\n\nRs.48.65 lakhs only which was the base price/ reserve\n\nprice, which the Division Bench of the High Court has\n\nincreased to Rs.65.65 lakhs on the ground that the highest\n\nbid received was Rs.71 lakhs (which was not materialized\n\nas the highest bidder did not come forward). Unless and\n\nuntil the borrower was ready to deposit/pay the entire\n\namount payable together with all costs and expenses with\n\nthe secured creditor, the borrower cannot be discharged\n\nfrom the entire liability outstanding. Therefore, as such no\n\norder could have been passed either by the DRT and/or by\n\nthe Division Bench of the High Court to discharge the\n\nborrower from the entire liability outstanding and to\n\ndischarge the mortgaged property and handover the\n\npossession along with original title deeds to the borrower.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P009_C03",
+      "text": "As such the learned Single Judge rightly set aside the\n\norders passed by the DRT as well as by the DRAT\n\n considering\nSection 13(8)\nof the SARFAESI Act. The\n\n learned Single Judge was right in setting aside the order\n\n passed by the DRT confirmed by the DRAT. The Division\n\n Bench of the High Court has erred in interfering with the\n\n order passed by the learned Single Judge and has erred in\n\n directing to release the mortgaged property/secured\n\n property and handover the possession along with the\n\n original title deeds to the borrower on payment of a total\n\n sum of Rs.65.65 lakhs only.\n7.2 However, at the same time the order dated 17.01.2014\n\n passed by the DRT was an interim relief order in SA\n\n No.9/2014 and therefore even if the interim relief order is\n\n set aside by this Court the appeal/application will have to\n\n be decided and disposed of on merits and on whatever\n\n grounds which may be available to the borrower.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P009_C04",
+      "text": "However,\n\n at the same time the bank cannot be restrained from\n\n selling the mortgaged property by holding the public\n\n auction and realise the amount and recover the\n\n outstanding dues, unless the borrower deposits/pays the\n\nentire amount due and payable along with the costs\n\n incurred by the secured creditor as per\nSection 13(f)\nof the\n\n SARFAESI Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P010_C01",
+      "text": "8. In view of the above and for the reasons stated above the\n\n present appeal succeeds. The impugned judgment and\n\n order dated 20.09.2017 passed by the Division Bench of\n\n the High Court in DBSAW No.349/2017 is hereby quashed\n\n and set aside and the order passed by the learned Single\n\n Judge quashing and setting aside the order passed by the\n\n DRT dated 17.01.2014 confirmed by the DRAT is hereby\n\n restored. It will be open for the appellant – bank to proceed\n\n further with the auction proceedings of the mortgaged\n\n property in auction i.e. residential house by inviting the\n\n bids afresh and whatever the amount is already paid by\n\n the borrower, may be in pursuance to the interim relief\n\n order passed by the DRT and/or the impugned judgment\n\n and order passed by the Division Bench of the High Court,\n\n the same may be adjusted against the dues/total liability\n\n of the borrower. At the same time DRT to decide and\n\ndispose of SA No.09/2014 filed by the borrower under\nSection 17\nof the SARFAESI Act in accordance with law\n\nand on its own merits and on the whatever grounds which\n\nmay be available to the borrower.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P010_C02",
+      "text": "It is also observed and\n\ndirected that in case pursuance to the orders passed by\n\nthe DRT and the Division Bench of the High Court if the\n\nborrower is put into possession, considering the fact that\n\nthe mortgaged property is a residential property, till the\n\nauction is finalized and the mortgaged property is sold in a\n\npublic auction, the possession of the borrower may not be\n\ndisturbed. However, it is directed that on public auction\n\nbeing finalized and the mortgaged property is sold by the\n\nbank the borrower has to handover the peaceful and\n\nvacant possession of the property to the bank and/or the\n\nauction purchaser. However, in the meantime the original\n\ntitle deeds of the mortgaged property be retained by the\n\nbank. In the meantime, and till the borrower remains in\n\npossession of the mortgaged property as per the present\n\norder and till the mortgaged property is sold in a public\n\nauction, the borrower shall not transfer and/or alienate\n\nthe mortgaged property in any manner whatsoever\n\nincluding the possession. The present appeal is allowed\n\n with the above further observations and directions\n\n accordingly.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY_P010_C03",
+      "text": "In the facts and circumstances of the case\n\n there shall be no order as to costs.\n…………………………………J. (M. R. SHAH)\n\n …………………………………J. (SANJIV KHANNA)\nNew Delhi,\nFebruary, 10th 2022.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    }
+  ],
+  "case_summary": {
+    "case_name": "Bank Of Baroda vs M/S Karwa Trading Company",
+    "case_id": "SC_2022_BANK_OF_BARODA_VS_MS_KARWA_TRADING_COMPANY",
+    "court": "Supreme Court of India",
+    "year": "2022",
+    "facts_summary": "1. Feeling aggrieved and dissatisfied with the impugned\n\n judgment and order dated 20.09.2017 passed by the\n\n Division Bench of the High Court of Judicature for\n\n Rajasthan Bench at Jaipur in D.B. Special Appeal Writ\n\n No.349 of 2017, by which the Division Bench of the High\n\nCourt has allowed the said intra­court appeal and has\ndirected that if the respondent ­ borrower deposits a\n\n further sum of Rs.17 lakhs to the bank, the bank shall\n\n release the property and handover possession along with\n\n the title deeds of the residential/housing property in\n\n question to the borrower and by which the Division Bench\n\n of the High Court has further directed that the SA\n\n No.9/2014 filed by the borrower before the learned Debt\n\n Recovery Tribunal (DRT) is restored to its original number\n\n to be heard on merits, the appellant herein ­ Bank of\n\n Baroda – financial institution – secured creditor has\n\n preferred the present appeal. 2. The facts leading to the present appeal in nutshell are as\n\n under: ­\n\n2.1 That the appellant herein – bank granted term loan of\n\n Rs.100 lakhs and cash credit limit of Rs.95 lakhs to the\n\n respondent – borrower (hereinafter referred to as the\n\n borrower) against the security of two mortgaged properties\n\n namely (i) industrial plot situated at Chittor Road, Bundi\n\n measuring 500 Sq.Mtrs. and (ii) a residential/housing\n\nproperty situated at 1­Ja­27, Vikas Nagar, Bundi\n\n measuring 198 Sq.Mtrs. That the borrower failed to repay\n\n the term loan as per the terms an",
+    "legal_issues": "However, it was submitted on\n\nbehalf of the bank that the bank may not find any\n\ndifficulty in releasing the subject property provided the\n\nborrower is ready to pay a sum of Rs.71 lakhs which is the\n\nhighest bid available with the bank. It was submitted that\n\neven this amount would not ultimately go to discharge the\n\nentire liability outstanding against the borrower but still if\n\nthe borrower deposits Rs.71 lakhs, the bank may not find\n\ndifficulty to release the subject property in question.\n\n2.4 The DRAT dismissed the appeal by observing that as the\n\n reserve price was Rs.48.65 lakhs which the borrower\n\n deposited and the bank had received the bids ranging from\n\n Rs. 61.50 lakhs to Rs.71 lakhs and the alleged bidders\n\n failed to deposit the earnest money and when the borrower\n\n is ready to purchase the said property for Rs.71 lakhs no\n\n fault can be found with the order passed by DRT. The\n\n order passed by the DRAT dismissing the appeal preferred\n\n by the bank was the subject matter of challenge before the\n\n learned Single Judge. 3. Ms. Praveena Gautam learned counsel appearing on behalf\n\n of the appellant – bank has vehemently submitted that in\n\n the facts and circumstances of the case the Division Bench\n\n of the High Court has committed a grave error in directing\n\n the bank to release the property and handover the\n\n possession along with the title deeds of the\n\n residential/housing property in question to the borrower\n\n on making a further payment of Rs.17 lakhs only.\n\n3.1",
+    "ratio_summary": "",
+    "final_order": "An application was moved under\nSection 14\n\n the SARFAESI Act, 2002 which came to be allowed on\n\n 08.11.2013 and with the police assistance the bank took\n\n possession of the residential house, which was one of the\n\n mortgaged properties of the borrower, on 25.11.2013.\n\n2.2 That thereafter the bank issued a sale notice by public\n\n auction of the residential property dated 16.12.2013. The\n\n reserve price fixed was Rs.48.65 lakhs for sale of the said\n\nsecured asset in terms of the procedure prescribed under\n\n Rule 8 read with Rule 9 of the Security Interest\n\n (Enforcement) Rules, 2002. The date of auction notified\n\n was 20.01.2014. The borrower challenged the auction of\n\n the bank by filing Securitisation Application (SA)\n\n No.09/2014 under\nSection 17\nof the SARFAESI Act, 2002\n\n before the DRT",
+    "outcome_summary": "Allowed. An application was moved under\nSection 14\n\n the SARFAESI Act, 2002 which came to be allowed on\n\n 08.11.2013 and with the police assistance the bank took\n\n possession of the residential house, which was one of the\n\n mortgaged properties of the borrower, on 25.11.2013.\n\n2.2 That thereafter the bank is",
+    "sections_cited": [
+      "Constitution 136"
+    ],
+    "cases_cited": []
+  }
+}

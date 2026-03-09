@@ -1,0 +1,235 @@
+{
+  "case_id": "SC_1951_1951_30",
+  "case_name": "Commissioner Of Income-Tax, West ... vs Isthmian Steamship Lines",
+  "normalized_case_name": "COMMISSIONER_OF_INCOME-TAX,_WEST_..._VS_ISTHMIAN_STEAMSHIP_LINES",
+  "court": "Supreme Court of India",
+  "year": "1951",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "12 November 1951",
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Commissioner Of Income-Tax, West ...",
+  "respondent": "Isthmian Steamship Lines",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 4,
+  "cited_by_count": 74,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1953SC439",
+    "[1951]20ITR572(SC)",
+    "AIR 1953 SUPREME COURT 439"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1951\\1951_30.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1951_1951_30_P001_C01",
+      "text": "1. This is an appeal from a judgment of the High Court at Calcutta in a reference under\nSection 66(1)\nof the Indian Income-tax Act, 1922.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1951_1951_30_P002_C01",
+      "text": "2. The facts which are material for the purpose of deciding this appeal, may be briefly stated as follows :-\nThe respondent, Messrs. Isthmian Steamship Lines (hereinafter referred to as \"the company\") is a company incorporated in the United States of America and owns steamships which visit India. The company's Indian profits which are computed on the basis of \"day on round voyage\" are assessed to tax under the\nIndian Income-tax Act\nas a \"company\" through its agents, Messrs. Angus Co., Ltd. In the course of the assessment for the years 1941-42, 1942-43 and 1943-44, the company claimed that its unabsorbed depreciation at the end of 1938-39 should be deemed to be a part of the depreciation allowance for 1939-40 and therefore such unabsorbed depreciation should be allowed to be further carried forward under\nSection 10(2) (vi)\nof the Income-tax Act. This claim was negatived by the Income-tax Officer, the Appellate Assistant Commissioner of Income-tax and the Income-tax Appellate Tribunal.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1951_1951_30_P002_C02",
+      "text": "The Tribunal however, at the instance of the company, referred the following question to the High Court for its opinion :-\n\"Whether on the facts and in the circumstances of this case the Tribunal was right in holding that the unabsorbed depreciation at the end of the year 1938-39, which was not given effect to in the subsequent years, could not be treated as part of the allowable depreciation for the relevant assessment years which are assessment years 1941-42, 1942-43 and 1943-44.\"",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1951_1951_30_P003_C01",
+      "text": "3. The High Court answered the question in favour of the company, and gave a certificate to the Commissioner of Income-tax under\nSection 66A(2)\nof the Act to appeal to this Court and hence this appeal.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1951_1951_30_P004_C01",
+      "text": "4. Before stating the precise point which arises for determination in this appeal, it will be convenient to set out\nSection 10(2) (vi)\nof the Income-tax Act, both as it originally stood and as it now stands after being amended in 1939, in parallel columns.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1951_1951_30_P004_C02",
+      "text": "SECTION 10(2)(vi)\n\n A--BEFORE AMENDMENT\n B--AFTER AMENDMENT IN 1939\n\n \"Such profits or gains shall be computed after making the following allowances namely:\nin respect of depreciation of such buildings, machinery, plant or furniture being the property of the assessee, a sum equivalent to such percentage on the original cost thereof to the assessee as may in any case or class of cases be prescribed :\nProvided that--\n(a) the prescribed particulars have been duly furnished;\n(b) where full effect cannot be given to any such allowance in any year owing to there being no profits or gains chargeable for the year, or owing to the profits or gains chargeable being less than the allowance, the allowance or part of the allowance to which effect has not been given, as the case may be, shall be added to the amount of the allowance for depreciation for the following year and deemed to be the allowance for that year, and so on for succeeding years; and\n(c) the aggregate of all such allowances made under this Act or any Act repealed hereby or under the Indian Income-tax Act, 1886, shall, in no case, exceed the original cost to the assessee of the buildings, machinnery, plant or furniture as the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1951_1951_30_P004_C03",
+      "text": "case may be.\"\n\"Such profits or gains \n......................................\nequivalent, (where the assets are ships other than ships ordinarily plying on inland waters) to such percentage...prescribed (and in any other case, to percentage on the written down value thereof as may in any case or class of cases be prescribed): --\nProvided that--\n(a) No change.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1951_1951_30_P004_C04",
+      "text": "(b) where full.........any year, not being a year which ended prior to the 1st day of April, 1939, owing.................................\nfor succeeding years;\nand\n(c) No change.\n[The underlined (here italicized) words have been added by the\nAmending Act\nof 1939]\n\n [The underlined words have been added by the\nAmending Act\nof 1939.]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1951_1951_30_P005_C01",
+      "text": "5. The Tribunal as well as the High Court have rightly pointed out that the material changes introduced in the amended section are :\n(1) that before the amendment of 1939, depreciation was based on the original coast, whereas it is now based on the written down value for all assets except ocean-going steamers for which the old basis of original cost has been retained; and \n\n (2) that it is now provided that the unabsorbed depreciation at the end of a year, which ended prior to the 1st day of April, 1939, shall not be carried forward.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1951_1951_30_P006_C01",
+      "text": "6. It is to be noticed that the amendment was to take effect from the 1st April, 1940.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1951_1951_30_P007_C01",
+      "text": "7. The decision of this appeal largely turns upon the effect of the following words :-\n\"Where full effect cannot be given to any such allowance in any year, not being a year which ended prior to the 1st day of April, 1939, owing to there being no profits or gins chargeable for that year............. the allowance or part of the allowance to which effect has not been given..... shall be added to the amount of the allowance for depreciation for the following year and deemed to be part of that allowance..... and so on for succeeding years.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1951_1951_30_P008_C01",
+      "text": "8. It may be observed that as a result of this provision, the unabsorbed depreciation for a particular year becomes, by legal fiction, part of the allowance for depreciation for the succeeding year. The material question to be decided in this case is whether the company an be allowed to carry forward the unabsorbed depreciation remaining at the end of 1938-39 and treat it as part of the depreciation for 1939-40. If so, it would necessarily be a part of the depreciation for 1940-41. The Appellate Assistant Commissioner of Income-tax answered the question in the negative and gave two reasons for not giving effect to the contention of the assessee. Firstly, he pointed out that in the course of the assessment for the year 1940-41, the question whether the unabsorbed depreciation remaining at the end of the year 1938-39 could or could not be carried forward and allowed in subsequent years had come up for consideration before the Income-tax Officer but he had decided that it could not be so carried forward. Nevertheless, the company did not appeal against the order and hence the matter could not be reopened in subsequent assessments.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1951_1951_30_P008_C02",
+      "text": "Secondly, by reason of the amendment of the section, the respondent-company was not entitled to carry forward the unabsorbed depreciation at the end of 1938-39.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1951_1951_30_P009_C01",
+      "text": "9. The Income-tax Appellate Tribunal did not accept the first ground but based its decision only on the second ground. In this appeal, we are not concerned with the first ground, because, as has been pointed out by the learned Chief Justice in the order granting leave to appeal, the Income-tax authorities appear to have accepted the view of the Tribunal on the first point since they did not ask the Tribunal to state a case giving rise to the contention which had found favour with the Appellate Assistant Commissioner but had been rejected by the Tribunal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1951_1951_30_P010_C01",
+      "text": "10. The only question with which we are thus concerned in whether or not the company was entitled to carry forward the unabsorbed depreciation at the end of 1938-39. In our opinion, this question has been rightly answered by the High Court in favour of the assessee.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1951_1951_30_P011_C01",
+      "text": "11. It will be observed that we are concerned with two datum lines : (1) the 1st April, 1940, when the Act came into force, and (2) the 1st of April, 1939, which is the date mentioned in the amended proviso. The first question to be answered is whether these dates are to apply to the accounting year or the year of assessment. They must be held to apply to the assessment year, because in income-tax matters the law to be applied is the law in force in the assessment year unless otherwise stated or implied. The first datum line therefore affected only the assessment year of 1940-41, because the amendment did not come into force till the 1st of April, 1940. That means that the old law applied to every assessment year up to and including the assessment year 1939- 40.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1951_1951_30_P012_C01",
+      "text": "12. In the assessment year 1938-39, the assessee showed a certain unabsorbed depreciation in its accounts year for the calendar year 1937, that being the assessee's accounting year for the assessment year 1938-39. Under the unamended section, he was permitted to carry that amount forward into the accounting year 1938, add it to the depreciation for 1938 and treat the total amount as the \"allowance\" for the assessment year 1939-40.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1951_1951_30_P013_C01",
+      "text": "13. The Income-tax Officer refused to allow that amount, but, for the reasons already stated, we have to disregard that fact and therefore, for the purpose of the present reference, must treat the unabsorbed depreciation which was carried forward from the assessment year 1938-39 into the accounts of the assessment year 1939-40 as the unabsorbed depreciation in the assessment year 1939-40 and treat it as unabsorbed for the reason that the profits in that year were not sufficient to absorb this sum, that being the position which would have resulted had the Income-tax Officer not disallowed the sum. In other words, in answering the reference, we have to accept the position which the accounts would have revealed had the Income-tax Officer not wrongly refused to allow the unabsorbed depreciation of 1938-39 to be carried forward to 1939-40. It follows from this, as the learned Chief Justice has pointed in the judgment under appeal, that according to the mandatory provision of the old section, the allowance for 1939-40 is not only the percentage allowed for that year but also the unabsorbed depreciation of 1938-39.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1951_1951_30_P014_C01",
+      "text": "14. Now we come to the assessment year 1940-41. The amended section applied here and the question is whether under the new law this figure could be carried forward into 1940-41. The first question which arises is whether the assessment year 1939-40 is an assessment year which ended prior to the 1st of April, 1939. It is evident that it is not, because it ended on the 31st of March, 1940. Therefore, it is not one of the excluded years. As it is not, and as, on the facts set out above, what must be regarded as the unabsorbed depreciation for the year 1939-40 could not absorbed for the reason given in the amended section, it follows that it can be carried forward into the accounts of the assessment year 1940-41 and from there on to the accounts of the succeeding assessment year, if it is not absorbed meanwhile for the reason given in the proviso.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1951_1951_30_P015_C01",
+      "text": "15. As has been pointed out already, the section provides what in order to enable the unabsorbed depreciation to be carried forward to the succeeding year, it must be shown that full effect was not given in the previous year, owing to there being no profits or gains chargeable for the year, or, owing to the profits or gains chargeable beings less than the allowance. It was argued on behalf of the appellant that in the present case full effect could not be given to the unabsorbed depreciation not for the reasons stated in the section but on account of the failure of the assessee to take the matter in appeal against the assessment for 1940-41. In our opinion, this view is based on a misreading of the section. The words used in the section are :- \"where full effect cannot be given\", and not \"where full effect has not been given.\" It is not denied that the profits or against were less than the depreciation allowance, and that being to the requirements of the section were satisfied.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1951_1951_30_P016_C01",
+      "text": "16. In our opinion, the view taken by the High Court on the limited question referred to it is correct, and a we accordingly dismiss this appeal with coasts.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Commissioner Of Income-Tax, West ... vs Isthmian Steamship Lines",
+    "case_id": "SC_1951_1951_30",
+    "court": "Supreme Court of India",
+    "year": "1951",
+    "facts_summary": "2. The facts which are material for the purpose of deciding this appeal, may be briefly stated as follows :-\nThe respondent, Messrs. Isthmian Steamship Lines (hereinafter referred to as \"the company\") is a company incorporated in the United States of America and owns steamships which visit India. The company's Indian profits which are computed on the basis of \"day on round voyage\" are assessed to tax under the\nIndian Income-tax Act\nas a \"company\" through its agents, Messrs. Angus Co., Ltd. In the course of the assessment for the years 1941-42, 1942-43 and 1943-44, the company claimed that its unabsorbed depreciation at the end of 1938-39 should be deemed to be a part of the depreciation allowance for 1939-40 and therefore such unabsorbed depreciation should be allowed to be further carried forward under\nSection 10(2) (vi)\nof the Income-tax Act. This claim was negatived by the Income-tax Officer, the Appellate Assistant Commissioner of Income-tax and the Income-tax Appellate Tribunal. The Tribunal however, at the instance of the company, referred the following question to the High Court for its opinion :-\n\"Whether on the facts and in the circumstances of this case the Tribunal was right in holding that the unabsorbed depreciation at the end of the year 1938-39, which was not given effect to in the subsequent years, could not be treated as part of the allowable depreciation for the relevant assessment years which are assessment years 1941-42, 1942-43 and 1943-44.\"",
+    "legal_issues": "10. The only question with which we are thus concerned in whether or not the company was entitled to carry forward the unabsorbed depreciation at the end of 1938-39. In our opinion, this question has been rightly answered by the High Court in favour of the assessee. 12. In the assessment year 1938-39, the assessee showed a certain unabsorbed depreciation in its accounts year for the calendar year 1937, that being the assessee's accounting year for the assessment year 1938-39. Under the unamended section, he was permitted to carry that amount forward into the accounting year 1938, add it to the depreciation for 1938 and treat the total amount as the \"allowance\" for the assessment year 1939-40.",
+    "ratio_summary": "3. The High Court answered the question in favour of the company, and gave a certificate to the Commissioner of Income-tax under\nSection 66A(2)\nof the Act to appeal to this Court and hence this appeal. 8. It may be observed that as a result of this provision, the unabsorbed depreciation for a particular year becomes, by legal fiction, part of the allowance for depreciation for the succeeding year. The material question to be decided in this case is whether the company an be allowed to carry forward the unabsorbed depreciation remaining at the end of 1938-39 and treat it as part of the depreciation for 1939-40. If so, it would necessarily be a part of the depreciation for 1940-41. The Appellate Assistant Commissioner of Income-tax answered the question in the negative and gave two reasons for not giving effect to the contention of the assessee. Firstly, he pointed out that in the course of the assessment for the year 1940-41, the question whether the unabsorbed depreciation remaining at the end of the year 1938-39 could or could not be carried forward and allowed in subsequent years had come up for consideration before the Income-tax Officer but he had decided that it could not be so carried forward. Nevertheless, the company did not appeal against the order and hence the matter could not be reopened in subsequent assessments. 14. Now we come to the assessment year 1940-41. The amended section applied here and the question is whether under the new law this figure could be carr",
+    "final_order": "",
+    "outcome_summary": "Dismissed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

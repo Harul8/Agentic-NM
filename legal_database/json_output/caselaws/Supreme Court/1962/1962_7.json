@@ -1,0 +1,354 @@
+{
+  "case_id": "SC_1962_1962_7",
+  "case_name": "Gurcharan Singh vs State Of Punjab",
+  "normalized_case_name": "GURCHARAN_SINGH_VS_STATE_OF_PUNJAB",
+  "court": "Supreme Court of India",
+  "year": "1962",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "10 August 1962",
+  "judges": [
+    "P.B. Gajendragadkar",
+    "K.C. Das Gupta",
+    "J.R. Mudholkar"
+  ],
+  "author": "P.B. Gajendragadkar",
+  "bench_type": "constitution",
+  "petitioner": "Gurcharan Singh",
+  "respondent": "State Of Punjab",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 7,
+  "cited_by_count": 350,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1963 AIR 340",
+    "1963 SCR (1) 236",
+    "AIR 1963 SUPREME COURT 340",
+    "1963 (1) CRI. L. J. 323",
+    "1963 (1) SCR 236 1963 3 SCR 585",
+    "1963 3 SCR 585"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1962\\1962_7.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1962_1962_7_P001_C01",
+      "text": "PETITIONER:\nGURCHARAN SINGH\n\n Vs. RESPONDENT:\nSTATE OF PUNJAB\n\nDATE OF JUDGMENT:\n10/08/1962\n\nBENCH:\nGAJENDRAGADKAR, P.B. BENCH:\nGAJENDRAGADKAR, P.B. GUPTA, K.C. DAS\nMUDHOLKAR, J.R. CITATION:\n 1963 AIR 340 1963 SCR (1) 236\n CITATOR INFO :\n RF 1965 SC 83 (7)\n E&D 1965 SC 87 (2,9,10)\n MV 1982 SC1325 (69)\n\nACT:\nCriminal Trial-Murder-Shooting with gun--Acquittal of\npossession of unlicensed firearm--Effect on trial for\nmurder--Ballistic expert-Failure to produce-If vitiates\ntrial--Duty of High Court to consider Points raised in\nappeal. HEADNOTE:\nThe two appellants G and S together with three others B, D\nand A were tried for the muder of four persons by shooting\nthem with guns. Two spent cartridges were recovered at the\nspot; G produced a gun on the very day of occurrence and D\nproduced a gun one week after the occurrence. The\ncartridges and guns were sent for examination to the\nballistic expert but neither he nor his report was produced\nbefore the Sessions judge. The Sessions judge convicted the\nappellants and B and D but acquitted A. The same judge\ntried G under\ns.19(f)\nArms Act for being in possession of\nthe unlicensed gun which G had surrendered but acquitted him\nof the charge.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1962_1962_7_P001_C02",
+      "text": "On appeal against the conviction for murder\nthe High Court confirmed the conviction and sentence of,\ndeath passed against the appellants but acquitted B and D. The appellants contended (i) that in view of his acquittal\nin the\ns.19(f)\nArms Act case, the allegation of the recovery\nof the gun from G in the murder case could not be accepted,\n(ii) that the failure to produce the ballistic expert and\nhis report had introduced a serious infirmity in the\nprosecution case, and (iii) that the High Court had failed\nto deal with these and other points raised before it. Held, that the conviction of the appellants was not vitiated\nby any infirmities. The acquittal of G in\ns. 19(f)\nArms Act case did not affect\nhis conviction in the murder case. If the order of\nacquittal under s.19(f) had been pronounced before the\njudgment in the murder case, then in the latter case the\nprosecution could not contend that G was in illegal\npossession of the firearm. Though the two judgment were\npronounced on the same day there was nothing to show that\nthe judgment in the\ns.19(f)\nArms Act case was pronounced\nearlier.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1962_1962_7_P001_C03",
+      "text": "On the other hand there were indications that it\nwas pronounced\n\nafter the judgment in the murder case. The evidence clearly\nestablished that G bad produced the gun. Pritam Singh v. State of Punjab, A.I.R. 1956 S. C. 415,\nreferred to. There is no inflexible rule that in every case when a person\nis charged with murder caused by a firearm, the prosecution\ncan succeed only by examining an expert to prove that the in\njuries could be caused by the weapon alleged to have been\nused. Where the direct evidence is not satisfactory or\ndisinterested or where the injuries are alleged to have been\ncaused with a gun and they prima facie appear to have been\ninflicted by a rifle, the apparent inconsistency can be\ncured or the oral evidence can be corroborated by the\nevidence of a ballistic expert. In the present case there\nwas no necessity to examine an expert. Admittedly, G had\nfired twice and there was nothing to show that the injuries\ncould not have been caused by the pun which was in his\nhands. D had kept the gun with him for a week before\nsurrendering it and it was unlike that D had not removed\ntracks of its use.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1962_1962_7_P001_C04",
+      "text": "The report of the ballistic examiner,\nwhich was sent for by the Supreme Court did not help the\ndefence and no inference could be drawn against the\nprosecution from its failure to produce it at the trial. Mohinder Singh v. The State, [1950] S.C.R. 82 1, referred\nto. In dealing with confirmation cases the High Court should\nconsider the evidence carefully and record its conclusions\nclearly after dealing with all the points urged before it by\nthe defence. In all criminal appeals before it the Supreme\nCourt is reluctant to interfere with-the findings of fact\nrecorded by the High Court. In the present case some of the\nreasons given by the High Court were erroneous and some of\nthe arguments urged before it were not duly considered and\nthe Supreme Court had therefore to go into the evidence. JUDGMENT:\nCRIMINAL APPELLATE JURISDICTION: Criminal Appeal No. 87 of",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1962_1962_7_P002_C01",
+      "text": "1962. Appeal by special leave from the judgment and order dated\nFebruary 21, 1962, of the Punjab High Court in Cr. A. No.\n1231 of 1961 and Murder Reference No. 98 of 1961.'\n\nPurushottam Trikamdas, C. L. Sareen and R. L. Kohli, for\nthe appellants.\nN.S. Bindra and P. D. Menon, for the respondent.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C01",
+      "text": "1962. August 10. The Judgment of the court was delivered\nGAJENDRAGADRAR, J .-The two appellants Gurcharan Singh and\nSurjit Singh along with three others, Baland Singh, Daljit\nSingh and Ajit singh, were tried before the 2nd Addl. Sessions Judge Ferozepore for offences under Section 148 and\ns. 302\n/\n\nI.P.C. The prosecution case against these five\npersons was that on or about the 18th May, 1961, they formed\nan unlawful assembly at the village Jhote with the common\nobject of killing Arjan Singh, Sukhjit Singh Gurdial Singh\nand Piara Singh alias Balo, and that in prosecution of the\nsaid common object, they committed the offence of rioting\nwhen they were armed with deadly weapons. That is the\nessence of the charge under s. 148. It was further alleged\nthat on the same day and at the same time and place the said\nmembers of the unlawful assembly carried out its unlawful\nobject and in so doing, the appellant Gurcharan Singh\nmurdered Gurdial Singh and Sukhjit Singh, while the\nappellant Surjit Singh murdered Arjan singh and Piara Singh. That is how all the five accused persons were charged under\nsection 302\n/\n\nof the Indian Penal Code.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C02",
+      "text": "The trial Judge held that the charges against Daljit Singh\nhad not been proved beyond a reasonable doubt and so,\naccording to him, the prosecution case under s. 148 had not\nbeen proved and that charge under s. 149 bad not been\nsustained. In regard to the four other accused persons, he\nheld that they were guilty under\ns. 302\n/\n\nI.P.C. Having\nthus convicted them of the said offence, the learned Judge\nsentenced Gurcharan Singh, Baland Singh\n\nand Surjit Singh to death and directed that Ajit Sigh should\nsuffer imprisonment for life. The sentence of death imposed\nby the learned trial Judge was submitted to the Punjab High\nCourt for confirmation, while all the four convicted persons\npreferred an appeal challenging their convictions and\nsentences imposed on them. The High Court considered both\nthe matters together and has come to the conclusion that the\ncharge under s. 302/\n\nhad not been proved against Baland\nSingh and Ajit Singh. That is why the said two accused\npersons have been acquitted, whereas the conviction of the\nappellants Gurcharan Singh and Surjit Singh as well as the\nsentence of death imposed on them have been confirmed.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C03",
+      "text": "is against this order that the two appellants have come to\nthis Court by special leave. The incident which has given rise to the present criminal\nproceedings against the appellants took place on May 18,\n1961, and as a result, four persons have been murdered-they\nare Arjan Singh, Sukhjit Singh. Gurdial Singh and Piara\nSingh. The prosecution case is that on May 18, 1961, at\nabout 6.30 A.M., the appellant Gurcharan Singh was pro-\nceeding to the house of his friend, Ajit Singh. GurCharan\nSingh, Surjit Singh and Daljit Singh are the sons of Baland\nSingh. Whilst Gurcharan Singh was thus proceeding to the\nhouse of Ajit Singh, he had to pass by the house of Saudagar\nSingh. Saudagar Singh objected to Gurcharan Singh paying by\nhis house and that led to an altercation. In this\naltercation, Saudagar Singh and his two sow Kulwant Singh\nand Darshan Singh inflicted some injuries on Gurcharan Singh\nas well as on Ajit Singh who came on the scene. Gurcharan\nSingh and Ajit Singh thereupon ran away. This is the first\nincident which took place on that day. About half an hour after this incident, another incident\ntook place.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C04",
+      "text": "It appears that the five\n\naccused persons got together and wanted to avenge the\nbeating given by Saudagar Singh and his sons to Gurcharan\nSingh and Ajit Singh. Gurcharan Singh and Daljit Singh\narmed themselves with gandasas, Surjit Singh carried a gun\nfor which his Gaj brother Daljit Singh had a licence, Ajit\nSingh carried a 'dang', while Baland Singh, the appellants'\nfather, headed the party, but was not armed. This partly\ncame across Arjan Singh near the house of Jarnail Singh. It\nappears that Arjan Singh was afraid of these men and so, he\nused to carry with him a licensed gun. As soon as Arjan\nSingh was sighted, Baland Singh told his sons and Ajit Singh\nto assault him, and the party began to assault Arjan Singh. A gandasa blow was given on his forearm as a result of which\nArjan Singh lost his grip on the gun and it fell down. Immediately thereafter, Gurcharan Singh picked it up. Arjan\nSingh then implored his assailants not to beat him and\noffered to go to the Gurdwara to take an oath that the\nallegation against him was untrue. It is suggested that\nBaland Singh was satisfied with this offer and so persuaded\nhis sons and their friend not to harass him any more.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C05",
+      "text": "This\nis the second incident which took place as a result of the\nfirst incident. It is the epilogue of the second incident which followed\nsoon after that led to the murder of the four victims. It\nappears in evidence that while Arjan Singh was imploring his\nassailants not to attack him and soon after the attack\nstopped, Gurdev Singh, the son of Arjan Singh, happened to\ncome, out of the Gurdwara and saw his father facing a\ndangerous crowd. So, he ran to his house and asked his\nbrothers to come and help him to rescue their father. While\nArjan Singh was returning to his house, on the way.. he met\nhis sons Gurdev Singh, Gurdial Singh and Gurcharan Singh who\nhad armed themselves, and were. proceeding towards\n\nthe spot where he had been encircled by his opponents. At\nthat time, Rekha Ram also come on the spot and he was being\nfollowed by his brother Piara. Sukhjit Singh and Jagjit\nSingh also came on the scene. Arjan Singh told them all to\ngo back and assured them that his offer to take the oath in\nthe Gurdwara had pacified his opponents and he was no longer\nin any difficult situation.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C06",
+      "text": "As a result of this statement\nof Arjan Singh, the persons who were going to the spot to\nhelp him desisted from going any further. At that time, all\nthe five accused persons spotted Arjan Singh's sons coming\nto the spot and that infuriated Baland Singh. He then rene-\nwed his exhortation to his companions and asked them to\nfinish their enemies Soon thereafter, Gurcharan Singh fired\na shot from the gun which hit Gurdial Singh on his forehead\nand in consequence, he fell down dead on the spot. Surjit\nSingh fired two shots in quick succession which hit Arjan\nSingh and killed him. Gurcharan Singh fired another shot\nwhich hit Sukhjit Singh who fell down with serious injuries. Surjit Singh again fired another shot which hit Piara and.\nhe fell down dead on the spot. All the five accused persons\nthen indulged in lalkaras and abused their enemies. This\noccurrence was witnessed by Gurdev Singh (P.W. 2), Sukhdev\nSingh (P.W. 3, Gurcharan Singh (P.W. 4), Rakha Ram (p.w.5)\nand Jagjit Singh (P.W. 6). sukhjit Singh who lay seriously\ninjured was taken to the hospital at Ferozepure for medical\ntreatment, but not withstanding the treatment, he succumbed\nto his injuries.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C07",
+      "text": "I at, in brief, is the prosecution case\nagainst the appellants. The prosecution attempted to prove its case by examining the\neye-witnesses, Gurdev Singh, Sukhdev Singh, Gurcharan Singh\nand Rekha Ram, Jagjit Singh was tendered for cross-\nexamination. The defence admitted that Guroharan Singh and\nAjit Singh were present on the scene and,that\n\nGurcharan Singh fired twice from a gun, but that was in\nself-defence. The remaining three accused persons denied\ntheir presence on the scene of the offence and alleged that\nthey had been falsely implicated. It does appear that there\nwas bitter enmity between the two parties for several years\npast. Criminal proceedings had taken place between them and\nthere is no doubt' about the existence of hostility between\nthem. Sometime before this occurrence, Kulwant Singh (P.W.\n7) was arrested in an excise case for running a still, and\nin that case, the appellant Gurcharan Singh was a\nprosecution witness. Besides, the appellant Gurcharan Singh\nhad opposed Arjan Singh for the office of Sarpaneh but had\nfailed.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C08",
+      "text": "The defence, therefore, was that it is out of\nenmity and hostility that the three accused persons who were\nnot present had been falsely involved in this case and that\nin respect of Gurcharan Singh and Ajit Singh who were\npresent, the truth was that they had been attacked by the\npersons belonging to the party of Arjan Singh, and\nGurcharan, Singh had fired in exercise of his right of\nprivate defeence. The trial Judge examined the evidence adduced before him,\nconsidered the arguments raised by the defence and came to\nthe conclusion that the charge of murder under s. 302/\n\nhad\nbeen proved against Baland Singh, Gurcharan Singh, Surjit\nSingh and Ajit Singh. The High Court, in substance. has\nagreed with the conclusions of the trial Court in respect of\nthe prosecution case against the two appellants Gurcharan\nSingh and Surjit Singh. It has, however held that the\nevidence about the exhortation alleged to have been given by\nBaland Singh was not proved by satisfactory evidence and the\nmain charge against Baland Singh and Ajit Singh had not been\nproved beyond a reasonable doubt.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C09",
+      "text": "It is on this\n\nfinding that the said two accused persons were acquitted,\nwhereas the appellants' conviction 'and sentence have been\nconfirmed. Mr. Purushotam for the appellants contends that the judgment\nof the High Court suffers from some serious infirmities and\nso, he argues that in the interest of justice, we ought to\nexamine the evidence ourselves. It is, therefore, necessary\nto examine the broad arguments on which the judgment under\nappeal has been attacked by Mr. Purushotam. The first point\nwhich has been urged before us is that the High court has\nnot properly considered the pies of self-defence raised by\nGurcharan Singh, and it is pointed out that in rejecting the\nsaid theory, the High Court had relied on a prior statement\nof Gurcharan Singh which had been excluded from evidence by\nthe trial Judge. It appears that Gurcharan Singh had filed\na complaint against the prosecution witnesses and that\ncomplaint was admitted at the trial as Exbt. The said\ndocument first describes the injuries inflicted on Gurcharan\nSingh and then proceeds to give a detailed account of the\nincident which led to the said injuries.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C10",
+      "text": "This document was\nproved by Sub-Inspector Udham Singh by the defence in cross-\nexamination. When this document was tendered, the part of\nthe document which referred to the injuries on Gurcharan\nSingh was marked and admitted in evidence. The remaining\nportion of the document was excluded. When the High Court\nconsidered the theory of self-defence urged on behalf of\nGurcharan Singh, it took the view that the said theory could\nnot be accepted because it was inconsistent with Gurcharan\nSingh's version about the incident contained in Exbt. DE. Mr. Purushotam objects to this part of the judgment and we\nthink, rightly. It is unfortunate that the attention of the\nHigh Court was not drawn to the fact that the portion of\ndocument DE on which it was basing its criticism against the\ndefence theory\n\nof self-defence had not been admitted in evidence. That no\ndoubt is a serious infirmity in the reasoning and so, Mr. Purushotam is entitled to say that the conclusion of the\nHigh Court on this part of the defence case cannot be\naccepted without examination of its merits by us. The other contention which Mr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C11",
+      "text": "Purushotam has raised before\nus is that in dealing with the case of Self-defence, the\nHigh Court has not referred to the injuries on the person of\nGurcharan Singh. The evidence adduced in the case shows\nthat Gurcharan Singh had 13 injuries on his person, 12 of\nwhich were. contusions and one was a grievous hurt as\ndisclosed by X-ray. It was an injury on the foot and it may\nbe that there was a fracture or a crack. Whether these\ninjuries decisively helped the defence version or not is a\ndifferent matter. The argument is that these injuries\nshould have been considered by the High Court when it was\ncalled upon to decide the validity of the defence claim of\nthe exercise of the right of private defence. There is some\nforce even in this contention. Since we are satisfied that these two contentions are well-\nfounded, we have examined the plea of self-defence ourselves\nand in that connection, we have considered the oral evidence\nadduced by the prosecution. It is true that Gurdev Singh\nand Gurcharan Singh can be said to be interested witnesses\nand in that sense, their evidence is the evidence of parti-\nsan witnesses and has to be carefully examined.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C12",
+      "text": "On the\nother band, Sukhdev Singh and Rekha Ram are not shown to be\nhostile to the appellants and their evidence cannot,\ntherefore, be characterised as partisan. It is true that\nRekha Ram's brother Piara has been murdered, but Piara has\napparently died as a result of reckless shooting and it is\nnot shown that either Piara was the enemy of the appellants\nor Rekha Ram is hostile to them. The attempt made\n\nin the cross examination of Sukhdev Singh to show that he\nwas related to the complainants' party has failed, and so,\nSukhdev Singh must be held to be disinterestedwitness.Mr. Purushotam fairly conceded that the account given by all\nthese witnesses about the occurrence is consistent and\ncogent and the only criticism he had to make against that\nevidence was that it is partisan evidence. We have consi-\ndered the whole of this evidence, and we are satisfied that\nthe courts below were right in substantially accepting it\nagainst the appellants. If this evidence is believed, then\nthe sequence of events that took place is clearly disclosed\nand that shows that the plea of self,defence urged by the\nappellant Gurcharan Singh cannot be accepted.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C13",
+      "text": "Injuries on\nhis person are of a minor character and they may have been\ninflicted while some of the victims may have beaten him with\na stick. However that may be, having regard to the sequence\nof events, it is impossible to accede to the argument that\nGurcharan Singh fired twice from the fire-arm in order to\nsave himself. In this connection, it is relevant to recall that the party\nof the appellants was armed with deadly weapons. Gurcharan\nSingh had picked up the gun which fell down from the hands\nof Arjan Singh and Surjit Singh had a gun for which his\nbrother Daljit Singh had a licence. The others were armed\nwith gandasas and similar deadly weapons. Therefore, when\nthe incident took place, the two appellants were armed with\nfire-arms and on the evidence which is believed) aggression\nproceeded from them and not from Arjan Singh or his friends. That also shows that the theory of self-defence cannot be\naccepted.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C14",
+      "text": "Therefore, though the High Court has not\nconsidered this point as well as it should have, and though\na part of the reasoning\n\nadopted by the High Court in dealing with this point suffers\nfrom the infirmity to which we have referred. in the result,\nits conclusion on this point seems to be right. Incidentally, it may be pointed out, that this plea of self-\ndefence was not seriously pressed before the High Court. That takes us to the next broad criticism made by Mr. Purushotam against the judgment of the High Court. It is\nurged that the High Court did not take into account the fact\nthat Gurcharan Singh who had been charged under\ns. 19 (f)\nthe Indian Arms Act has been acquitted by the same learned\nSessions Judge who convicted him for the offence of murder\nunder s. 302/149. It appears that the prosecution case is\nthat Gurcharan Singh produced the fire-arm when he surrender\nand since he had no licence to keep a fire-arm and indeed,\nthe fire-arm in question belonged to Arjan Singh, a charge\nunder s. 19(f) had been framed against him.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C15",
+      "text": "The learned\ntrial Judge believed the evidence of the two witnesses Puran\nSingh and Sohan Singh as well as the evidence of the Sub-\nInspector Udham Singh, and held that about 6.30 P.M. on May\n18, 1961, Gurcharan Singh produced the fire-arm. The\nevidence shows that Arjan Singh Sarpanch of Valtoha took\nGurcharan Singh and Ajit Singh to Udham Singh and the two of\nthem then surrendered. The document containing the memo,\nabout this surrender has been duly proved (Ext.P.21). The\ntrial Judge delivered his judgment in the principal case on\nNovember 18, 1961. It appears that on the same day, he\ndelivered his judgment in the companion case in which\nGurcharn Singh was charged under\ns. 19(f)\nof the Indian Arms\nAct and held that the said charge had not been proved and\nso, he acquitted him of that charge. It may be conceded that\nin this judgment, the same evidence about the production\n\nof the weapon by Gurucharan Singh has been dis-believed. On these facts. Mr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C16",
+      "text": "Purushotam contends that this matter\nwas argued before the High Court and it was urged that the\nfinding of the trial Court in the principal case about the\nrecovery of the weapon from Gurcharan Singh should not be\naccepted, and this argument has not been considered by the\nHigh Court. It would be noticed that this argument is based\non the decision of. this Court in\nPritam Singh vs. State of\nPunjab\n(1). There is no doubt that if the order of acquittal\nunder\ns.19(f)\nhad been pronounced before the judgment in the\nprincipal case was delivered, then in the latter case the\nprosecution will not be entitled to contend that Gurcharan\nSingh was in illegal possession of the fire-arm. This\nposition cannot be and is not disputed. The question, however, still remains as to whether the\njudgment in the fire-arm case was pronounced first or the\njudgment in the murder case was pronounced first. Mr. Purushotam frankly stated before us that he was not in a\nposition to contend that the judgment on which he reliefs\nwas pronounced in point of fact before the judgment in the\nmurder case. The manner in which this judgment has been\nproduced before this Court is very irregular.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [
+        "Court in\nPritam Singh v State of\nPunjab"
+      ],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C17",
+      "text": "The judgment\ndoes not appear to have been filed in the High Court as it\nshould have been if it was intended to rely upon it- But the\npetition for special leave states that it was utilised for\nthe purpose of raising the point in appeal before the High\nCourt. This judgment was not filed before this Court along\nwith the; petition for special leave. It has been tendered\nat a later stage when the index of papers was settled for\ninclusion in the paper-book in this Court. In our opinion,\nthis\n(1) A.I.R. (1956) S.C. 415.\n\nmethod of producing this document is irregular. But apart\nfrom this, unless it is shown that the judgment on which the\ndefence relies was pronounced first, no argument can be\nraised about the invalidity of the conclusion in the murder\ncase that Gurcharan Singh surrendered the gun. Prima facie,\nthe judgment in the murder case must have been delivered\nfir-at. It is numbered as 88 and 93 of 1961, whereas the\narms case is numbered as 89 and 94 of 1961.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C18",
+      "text": "Therefore, we\ndo not think it is open to the appellants to contend that\nthe acquittal of Gurcharan Singh under a. 19(f) was prior to\nhis conviction under s-302/149 and so, the finding that he\nsurrendered the weapon should not be accepted. It is to be\nregretted that the same learned Judge should have rendered\ntwo inconsistent findings in two companion cases in\njudgments pronounced on the same day. This is a matter to\nwhich his attention ought to be drawn by the High Court. Though the point sought to be raised on the strength of this\njudgment cannot technically arise, we thought it necessary\nto examine the evidence about the production of the weapon\nourselves. We have accordingly gone through the evidence of\nPuran Singh, Sohan Singh and Udham Singh and we have taken\ninto account the fact that Gurcharan Singh was produced by\nArjan Singh who is a Sarpanch of Valtoha. We feel no\nhesitation in holding that this evidence clearly establishes\nthe fact that Gurcharan Singh produced the weapon, as\ndisclosed by the production memo. (Ext. P21). In this\nconnection, we may recall the fact that Gurcharan Singh in\nfact admitted that he had used a fire-arm and had fired\ntwice in self-defence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 18
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C19",
+      "text": "He, did not admit that was the gun\nwhich was snatched from the hand of Arjan Singh ; but that\nis another matter. Therefore, the argument that the\nacquittal of Gurcharan Singh in arms case affects\n\nthe finding as to the surrender of the gun by him cannot be\nsustained. The last argument on which the judgment on the High Court\nwas attacked by Mr. Purushotam arises from the fact that a\nballistic expert has not been examined in this case., It is\nurged that this ground was taken before this High Court and\nhas not been considered by it. Petition for special leave\nmakes a definite averment to that effect. As the argument\nwas presented before us by Mr. Purushotam, it assumed that a\nreport had been received from the ballistic expert, but that\nreport had not been proved, because it was apprehended by\nthe prosecution that it would destroy its case. There is no\ndoubt that the two fire-arms along with two empty cartridges\nwere sent to the Scientific Laboratory., Chandigarh (Ext. P. Z.) on June 28, 1961.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 19
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C20",
+      "text": "Of the two guns which were sent\nfor examination, one was used by Gurcharan Singh which he\npicked up as soon as it fell down from the hand of Arjan\nSingh and the other was used by Surjit Singh which was taken\nby him from Daljit Singh. It appears that Daljit Singh\nproduced that gun and surrendered it on. May 27, 1961, i.e.,\nnearly a week after the incident took place. Mr. Purushotam\ncontended that since these weapons had been sent for\nexamination by a ballistic expert and a report had been\nreceived, it was the duty of the prosecution to examine the\nballistic expert. We were impressed by this argument, and\nso, we adjourned the hearing of the case and called upon Mr. Bindra to produce that report before us. Accordingly, the\nreport has been produced and it shows that according to the\nexpert opinion, out of the two fired cartridges sent for\nexpert examination one had been fired from the right barrel\nof the gun contained in parcel No. 1 and the other had been\nfired from the left barrel of the same gun. in other words,\nthis reports shows 'that two empties found near the scene of\nthe offence had been fired\n\nfrom the same gun. After this report was received and a\ncopy of it was served on Mr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 20
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C21",
+      "text": "Purushotam, he fairly conceded\nthat the said report was not inconsistent with the\nprosecution case, though he argued that it did not\ncorroborate it either. This report has not been proved and\nno ballistic expert has been examined in this case. But\nhaving regard to the fact that the report prima facie is not\ninconsistent with the prosecution case, we do not see bow it\nwould be urged that the failure of the prosecution to\nexamine a ballistic expert is due to the 'fact that it was\napprehended that the expert opinion would be against the\nprosecution case. That is the. only argument which it was\nalleged had been urged before the High Court but had not\nbeen considered by it. We are inclined to think that this\nargument may not have been pressed before the High Court and\nin any event, now it is conceded that there is no substance\nin that argument. That is why we do not think any useful\npurpose would be served by examining the ballistic expert at\nthis stage. Whilst we are on this point, we may briefly indicate the\nnature of the prosecution case so far as the use of the guns\nis concerned.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 21
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C22",
+      "text": "The appellant Gurcharan Singh has fired two\nshots, one of which killed Sukhjit Singh and the other\nGurdial Singh. The appellant Surjit Singh had fired three\nshots, two at Arjan Singh and one at Piara. The evidence\nseems, to show that Surjit Singh loaded the gun once in the\npresence of the witnesses and whilst so doing, he put two\ncartridges in the gun and the spent cartridges in his\npocket. The two empties which had been sent for expert\nexamination were found and picked up on a thoroughfare in\nfront of the house of Jarnail Singh. Apparently, the\nprosecution case is that these two cartridges had been fired\nby the appellant Gurcharan Singh from Arjan Singh gun picked\nup by him. In any event, the report shows that the two\ncartridges had been\n\nfired from the same gun. That is why the failure to prove\nthe report cannot be said to have prejudiced the appellants'\ncase at all. Mr. Purushotam, however, argued that a ballistic expert\nshould have been examined in order to ascertain whether the\ngun surrendered by Daljit Singh had been used at all.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 22
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C23",
+      "text": "But\nthis argument is obviously untenable for the simple reason\nthat this gun was surrendered more than a week after the\nincident and it takes imagination to realise that when\nDaljit Singh surrendered the gun, he must have cleaned it so\nas to remove any evidence about its user on the date of the\nincident. It has, however, been argued that in every case where an\naccused person is charged with having committed the offence\nof murder by a lethal weapon, it is the duty of the\nprosecution to prove by expert evidence that it was likely\nor at least possible for the injuries to have been caused\nwith the weapon with which, and in the manner in which, they\nhave been alleged to have been caused; and in support of\nthis proposition, reliance has been placed on the decision\nof this court in\nMohinder Sinqh v. The State\n(1).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 23
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C24",
+      "text": "In that\ncase, this court has held that where the prosecution case\nwas that the accused shot the deceased with a gun, but it\nappeared likely that the injuries on the deceased were\ninflicted by a rifle and there was no evidence of a duly\nqualified expert to prove that the injuries were caused by a\ngun, and the nature of the injuries was also such that the\nphoto must have been fired by more than one person and not\nby one person only, and there was no evidence to show that\nanother person also shot, and the oral evidence was such\nwhich was not disinterested, the failure to examine an\nexpert would be a serious infirmity in the prosecution case. It would be noticed that these observation were made in a\ncase where the prosecution\n(1) (1950) S.C.R. 821.\n\nevidence suffered from serious infirmities and in\ndetermining the effect of 'these observations, it would not\nbe fair or reasonable to forget the facts in respect of\nwhich they came to be made. These observations do not\npurport to lay down an inflexible rule that in every case\nwhere an accused person is charged with murder caused by a\nlethal weapon, the prosecution case can succeed in proving\nthe charge only if an expert is examind.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 24
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C25",
+      "text": "It is possible to\nimagine cases where the direct evidence is of such an\nunimpeachable character and the nature of the injuries\ndisclosed by post mortem notes is so clearly consistent with\nthe direct evidence that the examination of a ballistic\nexpert may not be regarded as essential. Where the direct\nevidence is not satisfactory or disinterested or where the\ninjuries are alleged to have been caused with a gun and they\nprima facie appear to have been inflicted by a rifle,\nundoubtedly the apparent inconsistency can be cured or the\noral evidence can be corroborated by leading the evidence of\na ballistic expert. In what cases the examination of a\nballistic expert is essential for the proof of the\nprosecution case, must naturally depend upon the\ncircumstances of each case. Therefore, we do not think that\nMr. Purushotam is right in contending as a general\nproposition that in every case where a fire-arm is alleged\nto have been used by an accused person, in addition to the\ndirect evidence, prosecution must lead the evidence of a\nballistic expert, however good the direct evidence may be\nand though on the record there may be no reason to doubt the\nsaid direct evidence.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 25
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C26",
+      "text": "In the present case, no useful purpose could have been\nserved by examining an expert for the purpose of showing\nthat the gun had been used by Surjit Singh, because, as we\nhave already pointed out, Daljit Singh took care to keep the\ngun with himself for over a week and. then surrendered it. It would be idle in ouch a case to suggest that it was\n\nnecessary for the prosecution to examine an expert even\nthough it is extremely unlikely that traces of its use had\nnot been removed by Daljit Singh before he surrendered it. Then, as to Gurcharan Singh, it is admitted that he fired\ntwice and there is nothing on the record to show that the\ninjuries disclosed by the post mortem notes and deposed to\nby the doctor could not have been caused by a gun which, it\nwas alleged, belonged to Arjun Singh and which was picked up\nby Gurcharan Singh after it fell down from his hands. Therefore., in the circumstances of this case, we do not\nthink it would be possible to accept the plea that the\nfailure of the prosecution to examine a ballistic expert has\nintroduced a serious infirmity in the prosecution case.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 26
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C27",
+      "text": "Even so, since we were satisfied that the judgment of the\nHigh Court suffered from some infirmities and was not as\nsatisfactory as it should have been, we have read the\nevidence with Mr. Purushotam and heard his comments on it. Having carefully considered the said evidence, we see no\nreason to differ from the conclusion reached by the Courts\nbelow that broadly stated, the incident took place as it has\nbeen deposed to by the prosecution witnesses and that\neliminates the exercise of the right of private defence by\nthe appellants and establishes that they used their fire-\narms aggressively and thus committed the offence of murder\nunder section 302/\n\n. Before we part with this case, however, we would like to\nobserve that in dealing with confirmation cases, the High\nCourt should consider the evidence carefully and record its\nconclusions clearly after dealing with all the points urged\nbefore it by the counsel for the defence. In all criminal\nappeals, the findings recorded by the High Court bind the\n\nparties and this Court is generally reluctant to interfere\nwith them.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 27
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_1962_7_P003_C28",
+      "text": "This principle is usually followed even in\nconfirmation cases, but it is hardly necessary to emphasise\nthat in dealing with confirmation cases, judicial approach\nboth at the trial and in appeal has to be careful and\nthorough and so,it is of utmost importance that no room\nshould be left for any legitimate complaint by the defence\nthat important points were argued before the High Court and\nwere not considered by it. In the present appeal, we have\ncome to the conclusion that some of the reasons given by the\nHigh Court are erroneous and apparently, some of the\narguments urged before it have not been duly considered. That is why we had to go through the evidence for ourselves. In the result, the appeal fails and the order of confiction\nand sentences passed against the appellants is confirmed. Appeal dismissed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 28
+    }
+  ],
+  "case_summary": {
+    "case_name": "Gurcharan Singh vs State Of Punjab",
+    "case_id": "SC_1962_1962_7",
+    "court": "Supreme Court of India",
+    "year": "1962",
+    "facts_summary": "On appeal against the conviction for murder\nthe High Court confirmed the conviction and sentence of,\ndeath passed against the appellants but acquitted B and D. The appellants contended (i) that in view of his acquittal\nin the\ns.19(f)\nArms Act case, the allegation of the recovery\nof the gun from G in the murder case could not be accepted,\n(ii) that the failure to produce the ballistic expert and\nhis report had introduced a serious infirmity in the\nprosecution case, and (iii) that the High Court had failed\nto deal with these and other points raised before it. Held, that the conviction of the appellants was not vitiated\nby any infirmities. The acquittal of G in\ns. 19(f)\nArms Act case did not affect\nhis conviction in the murder case. If the order of\nacquittal under s.19(f) had been pronounced before the\njudgment in the murder case, then in the latter case the\nprosecution could not contend that G was in illegal\npossession of the firearm. Though the two judgment were\npronounced on the same day there was nothing to show that\nthe judgment in the\ns.19(f)\nArms Act case was pronounced\nearlier. 1962. August 10. The Judgment of the court was delivered\nGAJENDRAGADRAR, J .-The two appellants Gurcharan Singh and\nSurjit Singh along with three others, Baland Singh, Daljit\nSingh and Ajit singh, were tried before the 2nd Addl. Sessions Judge Ferozepore for offences under Section 148 and\ns. 302\n/\n\nI.P.C. The prosecution case against these five\npersons was that on or about the 18th May, 1961, they",
+    "legal_issues": "1962. Appeal by special leave from the judgment and order dated\nFebruary 21, 1962, of the Punjab High Court in Cr. A. No.\n1231 of 1961 and Murder Reference No. 98 of 1961.'\n\nPurushottam Trikamdas, C. L. Sareen and R. L. Kohli, for\nthe appellants.\nN.S. Bindra and P. D. Menon, for the respondent. Purushotam contends that this matter\nwas argued before the High Court and it was urged that the\nfinding of the trial Court in the principal case about the\nrecovery of the weapon from Gurcharan Singh should not be\naccepted, and this argument has not been considered by the\nHigh Court. It would be noticed that this argument is based\non the decision of. this Court in\nPritam Singh vs. State of\nPunjab\n(1). There is no doubt that if the order of acquittal\nunder\ns.19(f)\nhad been pronounced before the judgment in the\nprincipal case was delivered, then in the latter case the\nprosecution will not be entitled to contend that Gurcharan\nSingh was in illegal possession of the fire-arm. This\nposition cannot be and is not disputed. The question, however, still remains as to whether the\njudgment in the fire-arm case was pronounced first or the\njudgment in the murder case was pronounced first. Mr. Purushotam frankly stated before us that he was not in a\nposition to contend that the judgment on which he reliefs\nwas pronounced in point of fact before the judgment in the\nmurder case. The manner in which this judgment has been\nproduced before this Court is very irregular.",
+    "ratio_summary": "",
+    "final_order": "Therefore, though the High Court has not\nconsidered this point as well as it should have, and though\na part of the reasoning\n\nadopted by the High Court in dealing with this point suffers\nfrom the infirmity to which we have referred. in the result,\nits conclusion on this point seems to be right. Incidentally, it may be pointed out, that this plea of self-\ndefence was not seriously pressed before the High Court. That takes us to the next broad criticism made by Mr. Purushotam against the judgment of the High Court. It is\nurged that the High Court did not take into account the fact\nthat Gurcharan Singh who had been charged under\ns. 19 (f)\nthe Indian Arms Act has been acquitted by the same learned\nSessions Judge who convicted him for the offence of murder\nunder s. 302/149. It appears that the ",
+    "outcome_summary": "Dismissed. Therefore, though the High Court has not\nconsidered this point as well as it should have, and though\na part of the reasoning\n\nadopted by the High Court in dealing with this point suffers\nfrom the infirmity to which we have referred. in the result,\nits conclusion on this point seems to be right. Inci",
+    "sections_cited": [],
+    "cases_cited": [
+      "Court in\nPritam Singh v State of\nPunjab"
+    ]
+  }
+}

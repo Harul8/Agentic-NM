@@ -1,0 +1,284 @@
+{
+  "case_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ",
+  "case_name": "The State Of Karnataka vs N.Gangaraj",
+  "normalized_case_name": "THE_STATE_OF_KARNATAKA_VS_N.GANGARAJ",
+  "court": "Supreme Court of India",
+  "year": "2020",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 8071 of 2014",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "14 February 2020",
+  "judges": [
+    "Hemant Gupta",
+    "S. Abdul Nazeer"
+  ],
+  "author": "Hemant Gupta",
+  "bench_type": "division",
+  "petitioner": "The State Of Karnataka",
+  "respondent": "N.Gangaraj",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 13,
+  "cited_by_count": 87,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR 2020 SUPREME COURT 1878",
+    "AIRONLINE 2020 SC 201",
+    "(2020) 4 SCALE 17"
+  ],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2020\\FEB\\2020_FEB_12.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO. 8071 OF 2014\n\nTHE STATE OF KARNATAKA & ANR. .....APPELLANT(S)\n\n VERSUS\n\nN. GANGARAJ .....RESPONDENT(S)\n\n JUDGMENT\nHEMANT GUPTA, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P002_C01",
+      "text": "1. The State is in appeal aggrieved against an order passed by the\n\n High Court of Karnataka on 25th August, 2011 whereby the\n\n challenge to an order passed by the Karnataka Administrative\n\n Tribunal1 on 12th March, 2009 setting aside the punishment of\n\n dismissal from the service imposed upon the respondent remained\n\n unsuccessful.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P003_C01",
+      "text": "2. The respondent was working as a Police Inspector at Mysore from\n\n 31st July, 1997 to 31st October, 1998. On the complaint of one\n\n Nirmala, the Lokayukta Police had laid a trap. On the basis of a\n\n criminal complaint lodged, Crime No. 15/1998 was registered\n\n against respondent in Mysore Lokayukta Police Station under\n\n1 for short, ‘Tribunal’\n\nSection 7, 13(1)(d) read with Section 13(2) under the\nPrevention of\n\n Corruption Act, 1998\n. A charge sheet against the respondent was\n\n filed in the Court of Special Judge, Mysore for the offences\n\n punishable under the\nPrevention of Corruption Act, 1988\n. The said\n\n criminal trial resulted in the acquittal of the respondent.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P004_C01",
+      "text": "3. In addition to the criminal trial, the respondent was also\n\n proceeded against for the misconduct in departmental\n\n proceedings. The respondent was served with a charge sheet. The\n\n respondent faced departmental proceedings on the following two\n\n charges:\n“1. You, the Accused Police Officer, Sri. N. Gangaraj,\n while working as Police Inspector in City Crime Record\n Bureau of the office of the Commissioner of Police,\n Mysore City from 31/07/97 to 31/10/98, one Miss. Chandrika resident of Nandanavana, Ulsoor, Bangalore\n City, has lodged a complaint dated 08/08/98 with Sri. Kempaiah, Commissioner of Police, Mysore City, against\n one Mr. Mahendra of Indiranagar, Bangalore, stating\n that he promised to marry her and taken her in car No. KA-05-9795 along with his friends and raped her. She\n has requested therein to take action against Mr. Mahendra and his friends. The Commissioner of Police,\n Mysore City has sent the said petition to Police\n Inspector, City Crime Branch, Mysore for enquiry and to\n send the report.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P004_C02",
+      "text": "You being a responsible Police Officer,\n shown utter misconduct in managing to obtain a Xerox\n copy of the said petition through illegal means and\n contacting the wife of the Driver of above said vehicle\n demanded illegal gratification of Rs.40,000/- and\n negotiating the deal for Rs.20,000/- with instructions to\n the party to pay the amount on 27/08/98 at your\n residence.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P005_C01",
+      "text": "2. Even though the petition of Miss. Chandrika, lodged\n with the Commissioner of Police, Mysore City was not at\n all concerned to you, you managed to get it’s copy with\n ulterior motto through illegal means and contacted Mrs.\n B.J. Nirmala wife of Mr. Sampathkumar, Driver of car No.\n KA-05-9795 by sending Mr. Puttaraju CHC 141 and Mr.\n\nShivakumar\nCPC\n22 to Bangalore and also contacted\n the above parties over telephone and demanded\n Rs.40,000/- as illegal gratification for not including the\n car in the case. When the parties were not agreed to\n pay, you negotiated the amount to Rs.20,000/-. Being a\n responsible Police Officer and knowing fully well that\n accepting illegal gratification is against to Rule 7, 13(1)\n(d) and 13(2) of\nP.C. Act\n, you behaved in a way to bring\n down the prestige of the department, showing\n dereliction of duty, utter misconduct and an at of\n unbecoming of a Police Officer as well as a Government\n Servant.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P006_C01",
+      "text": "4. The respondent denied the charges. The Deputy Superintendent of\n\n Police, West Circle, Mangalore was appointed as the Inquiry Officer\n\n (IO). The IO returned a finding that the charges levelled against\n\n the respondent have been proved. Thereafter, a second show-\n\n cause notice was issued to the respondent. Considering the\n\n contentions of the respondent, the Director General and the\n\n Inspector General of Police passed an order of dismissal of the\n\n respondent from service on 30 th September, 2005. The period of\n\n suspension was ordered to be treated as the period of suspension\n\n only. The respondent filed an appeal before the Government which\n\n came to be dismissed on 8th September, 2006.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P007_C01",
+      "text": "5. Aggrieved against the order of punishment, the respondent\n\n invoked the jurisdiction of the Tribunal. The Tribunal set aside the\n\n order of punishment by holding that the criminal court on the same\n\n set of facts has not placed reliance on the deposition of the\n\n witnesses, therefore, it was not proper on the part of the\n\n Disciplinary Authority to rely upon such evidence to come to the\n\n conclusion that the respondent has demanded an amount of\n\nRs.40,000/- and he settled for Rs.20,000/-. The Tribunal further did\n\nnot agree with the findings of the IO or the Disciplinary Authority\n\nthat the charges have been proved as there is no charge on record\n\nof receipt of Rs.20,000/-. The Tribunal further held that the water\n\nin which the hands of the respondent were washed, turned pink\n\ndue to the ink of the pen, as deposed by PW-3 Balaraju in his\n\nstatement. The High Court found that similar evidence has not\n\nbeen accepted in criminal trial and that there are discrepancies in\n\nthe evidence of the witnesses which make it unreliable. The High\n\nCourt recorded the following four discrepancies in the\n\ndepartmental proceedings:\n“(i) In the complaint Smt.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P007_C02",
+      "text": "Nirmala says that on\n 26.08.1998 for the first time she met the applicant in\n his house at Mysore but in the deposition, she states\n that she went to the house of the applicant on\n 27.08.1998 for the first time along with panch witness\n Saroja and the money was offered;\n(ii) If the evidence of PW.4 Puttaraju CHC 141 is to be\n believed, he and PW.5 Shivakumar\nCPC\n22 went to the\n house of complainant Nirmala on 13.08.1998, whereas\n the evidence of PW.5 shows that both of them went to\n the house of the complainant on 14.08.1998. According\n to the complaint both of them had gone to the\n complainant’s house on 24.08.1998 and not earlier;\n(iii) According to the complainant she had given\n complaint in the first instance in English Written by her\n and later the present complaint, marked in the inquiry\n was got typed; the original complaint given in English\n has been suppressed. (iv) The complaint was registered on 27.08.1998\n whereas the evidence shows that panch witness had\n been informed to come on 26.08.1998. The complaint\n does not say anywhere that she had gone to the office\n of the Lokayukta Police on 26.08.1998.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P008_C01",
+      "text": "6. The Disciplinary Authority has taken into consideration the\n\n evidence led before the IO to return a finding that the charges\n\n levelled against the respondent stand proved.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P009_C01",
+      "text": "7. We find that the interference in the order of punishment by the\n\n Tribunal as affirmed by the High Court suffers from patent error.\n\n The power of judicial review is confined to the decision-making\n\n process. The power of judicial review conferred on the\n\n constitutional court or on the Tribunal is not that of an appellate\n\n authority.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P010_C01",
+      "text": "8. State of Andhra Pradesh & Ors. v. S. Sree Rama Rao2\n, a\n\n three Judge Bench of this Court has held that the High Court is not\n\n a court of appeal over the decision of the authorities holding a\n\n departmental enquiry against a public servant. It is concerned to\n\n determine whether the enquiry is held by an authority competent\n\n in that behalf, and according to the procedure prescribed in that\n\n behalf, and whether the rules of natural justice are not violated. The Court held as under:\n“7. …The High Court is not constituted in a proceeding\n under\nArticle 226\nof the Constitution a court of appeal\n over the decision of the authorities holding a\n departmental enquiry against a public servant: it is\n concerned to determine whether the enquiry is held by\n an authority competent in that behalf, and according to\n the procedure prescribed in that behalf, and whether\n the rules of natural justice are not violated.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P010_C02",
+      "text": "Where there\n is some evidence, which the authority entrusted with\n\n2 AIR 1963 SC 1723\n\nthe duty to hold the enquiry has accepted and which\n evidence may reasonably support the conclusion that\n the delinquent officer is guilty of the charge, it is not\n the function of the High Court in a petition for a writ\n under\nArticle 226\nto review the evidence and to arrive\n at an independent finding on the evidence….”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P011_C01",
+      "text": "9. B.C. Chaturvedi v. Union of India & Ors.3\n, again, a three\n\n Judge Bench of this Court has held that power of judicial review is\n\n not an appeal from a decision but a review of the manner in which\n\n the decision is made. Power of judicial review is meant to ensure\n\n that the individual receives fair treatment and not to ensure that\n\n the conclusion which the authority reaches is necessarily correct in\n\n the eyes of the court. The Court/Tribunal in its power of judicial\n\n review does not act as an appellate authority to reappreciate the\n\n evidence and to arrive at its own independent findings on the\n\n evidence. It was held as under:\n“12. Judicial review is not an appeal from a decision but\n a review of the manner in which the decision is made. Power of judicial review is meant to ensure that the\n individual receives fair treatment and not to ensure that\n the conclusion which the authority reaches is\n necessarily correct in the eye of the court. When an\n inquiry is conducted on charges of misconduct by a\n public servant, the Court/Tribunal is concerned to\n determine whether the inquiry was held by a competent\n officer or whether rules of natural justice are complied\n with.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P011_C02",
+      "text": "Whether the findings or conclusions are based on\n some evidence, the authority entrusted with the power\n to hold inquiry has jurisdiction, power and authority to\n reach a finding of fact or conclusion. But that finding\n must be based on some evidence. Neither the technical\n rules of\nEvidence Act\nnor of proof of fact or evidence as\n defined therein, apply to disciplinary proceeding. When\n the authority accepts that evidence and conclusion\n receives support therefrom, the disciplinary authority is\n3 (1995) 6 SCC 749\n\nentitled to hold that the delinquent officer is guilty of\n the charge. The Court/Tribunal in its power of judicial\n review does not act as appellate authority to\n reappreciate the evidence and to arrive at its own\n independent findings on the evidence. The\n Court/Tribunal may interfere where the authority held\n the proceedings against the delinquent officer in a\n manner inconsistent with the rules of natural justice or\n in violation of statutory rules prescribing the mode of\n inquiry or where the conclusion or finding reached by\n the disciplinary authority is based on no evidence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P011_C03",
+      "text": "If the\n conclusion or finding be such as no reasonable person\n would have ever reached, the Court/Tribunal may\n interfere with the conclusion or the finding, and mould\n the relief so as to make it appropriate to the facts of\n each case.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P012_C01",
+      "text": "13. The disciplinary authority is the sole judge of\n facts. Where appeal is presented. The appellate\n authority has co- extensive power to reappreciate the\n evidence or the nature of punishment. In a disciplinary\n inquiry the strict proof of legal evidence and findings on\n that evidence are not relevant. Adequacy of evidence or\n reliability of evidence cannot be permitted to be\n canvassed before the Court/Tribunal.\nUnion of India v.\n H.C. Goel\n[(1964) 4 SCR 781], this Court held at page\n 728 that if the conclusion, upon consideration of the\n evidence, reached by the disciplinary authority, is\n perverse or suffers from patent error on the face of the\n record or based on no evidence at all, a writ of certiorari\n could be issued.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P013_C01",
+      "text": "10. In High Court of Judicature at Bombay through its\nRegistrar\n\n v. Shashikant S. Patil & Anr.4\n, this Court held that interference\n\n with the decision of departmental authorities is permitted if such\n\n authority had held proceedings in violation of the principles of\n\n natural justice or in violation of statutory regulations prescribing\n\n the mode of such enquiry while exercising jurisdiction under\nArticle\n\nof the Constitution. It was held as under:\n4 (2000) 1 SCC 416\n\n“16. The Division Bench of the High Court seems to\n have approached the case as though it was an appeal\n against the order of the administrative/disciplinary\n authority of the High Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P013_C02",
+      "text": "Interference with the\n decision of departmental authorities can be permitted,\n while exercising jurisdiction under\nArticle 226\nof the\n Constitution if such authority had held proceedings in\n violation of the principles of natural justice or in\n violation of statutory regulations prescribing the mode\n of such enquiry or if the decision of the authority is\n vitiated by considerations extraneous to the evidence\n and merits of the case, or if the conclusion made by the\n authority, on the very face of it, is wholly arbitrary or\n capricious that no reasonable person could have arrived\n at such a conclusion, or grounds very similar to the\n above. But we cannot overlook that the departmental\n authority (in this case the Disciplinary Committee of the\n High Court) is the sole judge of the facts, if the enquiry\n has been properly conducted. The settled legal position\n is that if there is some legal evidence on which the\n findings can be based, then adequacy or even reliability\n of that evidence is not a matter for canvassing before\n the High Court in a writ petition filed under\nArticle 226\nof the Constitution.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P014_C01",
+      "text": "11. State Bank of Bikaner and Jaipur v. Nemi Chand Nalwaya\n5,\n\n this Court held that the courts will not act as an appellate court\n\n and reassess the evidence led in the domestic enquiry, nor\n\n interfere on the ground that another view is possible on the\n\n material on record. If the enquiry has been fairly and properly held\n\n and the findings are based on evidence, the question of adequacy\n\n of the evidence or the reliable nature of the evidence will not be\n\n ground for interfering with the findings in departmental enquiries. The Court held as under:\n“7. It is now well settled that the courts will not act\n as an appellate court and reassess the evidence led in\n\n5 (2011) 4 SCC 584\n\nthe domestic enquiry, nor interfere on the ground that\nanother view is possible on the material on record. If\nthe enquiry has been fairly and properly held and the\nfindings are based on evidence, the question of\nadequacy of the evidence or the reliable nature of the\nevidence will not be grounds for interfering with the\nfindings in departmental enquiries.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P014_C02",
+      "text": "Therefore, courts\nwill not interfere with findings of fact recorded in\ndepartmental enquiries, except where such findings are\nbased on no evidence or where they are clearly\nperverse. The test to find out perversity is to see\nwhether a tribunal acting reasonably could have arrived\nat such conclusion or finding, on the material on record. Courts will however interfere with the findings in\ndisciplinary matters, if principles of natural justice or\nstatutory regulations have been violated or if the order\nis found to be arbitrary, capricious, mala fide or based\non extraneous considerations. (vide\nB. C. Chaturvedi vs. Union of India\n-\n1995 (6) SCC 749, Union of India vs. G. Gunayuthan\n-\n1997 (7) SCC 463, and Bank of India vs. Degala Suryanarayana\n- 1999 (5) SCC 762, High Court\nof Judicature at Bombay vs. Shahsi Kant S Patil - 2001\n(1) SCC416).\nxx xx xx",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [
+        "B. C. Chaturvedi v Union of India"
+      ],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P015_C01",
+      "text": "12. The fact that the criminal court subsequently\nacquitted the respondent by giving him the benefit of\ndoubt, will not in any way render a completed\ndisciplinary proceedings invalid nor affect the validity of\nthe finding of guilt or consequential punishment. The\nstandard of proof required in criminal proceedings being\ndifferent from the standard of proof required in\ndepartmental enquiries, the same charges and\nevidence may lead to different results in the two\nproceedings, that is, finding of guilt in departmental\nproceedings and an acquittal by giving benefit of doubt\nin the criminal proceedings. This is more so when the\ndepartmental proceedings are more proximate to\nthe incident, in point of time, when compared to the\ncriminal proceedings. The findings by the criminal court\nwill have no effect on previously concluded domestic\nenquiry. An employee who allows the findings in the\nenquiry and the punishment by the disciplinary\nauthority to attain finality by non-challenge, cannot\nafter several years, challenge the decision on the\nground that subsequently, the criminal court has\nacquitted him.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P016_C01",
+      "text": "13. In another judgement reported as\nUnion of India v. P.\n\n Gunasekaran6\n, this Court held that while reappreciating evidence\n\n the High Court cannot act as an appellate authority in the\n\n disciplinary proceedings. The Court held the parameters as to\n\n when the High Court shall not interfere in the disciplinary\n\n proceedings:\n“13. Under Article 226/227 of the Constitution of\n India, the High Court shall not:\n(i) re-appreciate the evidence;\n(ii) interfere with the conclusions in the enquiry, in case\n the same has been conducted in accordance with law;\n(iii) go into the adequacy of the evidence;\n(iv) go into the reliability of the evidence;\n(v) interfere, if there be some legal evidence on which\n findings can be based.\n(vi) correct the error of fact however grave it may appear\n to be;\n(vii) go into the proportionality of punishment unless it\n shocks its conscience.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P017_C01",
+      "text": "14. On the other hand learned counsel for the respondent relies upon\n\n the judgment reported as\nAllahabad Bank v. Krishna Narayan\n\n Tewari7\n, wherein this Court held that if the disciplinary authority\n\n records a finding that is not supported by any evidence whatsoever\n\n or a finding which is unreasonably arrived at, the Writ Court could\n\n interfere with the finding of the disciplinary proceedings. We do not\n\n find that even on touchstone of that test, the Tribunal or the High\n\n Court could interfere with the findings recorded by the disciplinary\n\n6 (2015) 2 SCC 610\n7 2017 2 SCC 308\n\nauthority. It is not the case of no evidence or that the findings are\n\n perverse. The finding that the respondent is guilty of misconduct\n\n has been interfered with only on the ground that there are\n\n discrepancies in the evidence of the Department. The\n\n discrepancies in the evidence will not make it a case of no\n\n evidence. The Inquiry Officer has appreciated the evidence and\n\n returned a finding that the respondent is guilty of misconduct.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ_P018_C01",
+      "text": "15. The disciplinary authority agreed with the findings of the enquiry\n\n officer and had passed an order of punishment. An appeal before\n\n the State Government was also dismissed. Once the evidence has\n\n been accepted by the departmental authority, in exercise of power\n\n of judicial review, the Tribunal or the High Court could not interfere\n\n with the findings of facts recorded by reappreciating evidence as if\n\n the Courts are the Appellate Authority. We may notice that\nthe\n\n said judgment\nhas not noticed larger bench judgments in S. Sree\n\n Rama Rao and B.C. Chaturvedi as mentioned above. Therefore,\n\n the orders passed by the Tribunal and the High Court suffer from\n\n patent illegality and thus cannot be sustained in law. Accordingly,\n\n appeal is allowed and orders passed by the Tribunal and the High\n\n Court are set aside and the order of punishment imposed is\n\n restored.\n.............................................J.\n (S. ABDUL NAZEER)\n\n.............................................J.\n (HEMANT GUPTA)\n\nNEW DELHI;\nFEBRUARY 14, 2020.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "The State Of Karnataka vs N.Gangaraj",
+    "case_id": "SC_2020_THE_STATE_OF_KARNATAKA_VS_NGANGARAJ",
+    "court": "Supreme Court of India",
+    "year": "2020",
+    "facts_summary": "1. The State is in appeal aggrieved against an order passed by the\n\n High Court of Karnataka on 25th August, 2011 whereby the\n\n challenge to an order passed by the Karnataka Administrative\n\n Tribunal1 on 12th March, 2009 setting aside the punishment of\n\n dismissal from the service imposed upon the respondent remained\n\n unsuccessful. 2. The respondent was working as a Police Inspector at Mysore from\n\n 31st July, 1997 to 31st October, 1998. On the complaint of one\n\n Nirmala, the Lokayukta Police had laid a trap. On the basis of a\n\n criminal complaint lodged, Crime No. 15/1998 was registered\n\n against respondent in Mysore Lokayukta Police Station under\n\n1 for short, ‘Tribunal’\n\nSection 7, 13(1)(d) read with Section 13(2) under the\nPrevention of\n\n Corruption Act, 1998\n. A charge sheet against the respondent was\n\n filed in the Court of Special Judge, Mysore for the offences\n\n punishable under the\nPrevention of Corruption Act, 1988\n. The said\n\n criminal trial resulted in the acquittal of the respondent. 3. In addition to the criminal trial, the respondent was also\n\n proceeded against for the misconduct in departmental\n\n proceedings. The respondent was served with a charge sheet. The\n\n respondent faced departmental proceedings on the following two\n\n charges:\n“1. You, the Accused Police Officer, Sri. N. Gangaraj,\n while working as Police Inspector in City Crime Record\n Bureau of the office of the Commissioner of Police,\n Mysore City from 31/07/97 to 31/10/98, one Miss. Chandrika resi",
+    "legal_issues": "5. Aggrieved against the order of punishment, the respondent\n\n invoked the jurisdiction of the Tribunal. The Tribunal set aside the\n\n order of punishment by holding that the criminal court on the same\n\n set of facts has not placed reliance on the deposition of the\n\n witnesses, therefore, it was not proper on the part of the\n\n Disciplinary Authority to rely upon such evidence to come to the\n\n conclusion that the respondent has demanded an amount of\n\nRs.40,000/- and he settled for Rs.20,000/-. The Tribunal further did\n\nnot agree with the findings of the IO or the Disciplinary Authority\n\nthat the charges have been proved as there is no charge on record\n\nof receipt of Rs.20,000/-. The Tribunal further held that the water\n\nin which the hands of the respondent were washed, turned pink\n\ndue to the ink of the pen, as deposed by PW-3 Balaraju in his\n\nstatement. The High Court found that similar evidence has not\n\nbeen accepted in criminal trial and that there are discrepancies in\n\nthe evidence of the witnesses which make it unreliable. The High\n\nCourt recorded the following four discrepancies in the\n\ndepartmental proceedings:\n“(i) In the complaint Smt. 14. On the other hand learned counsel for the respondent relies upon\n\n the judgment reported as\nAllahabad Bank v. Krishna Narayan\n\n Tewari7\n, wherein this Court held that if the disciplinary authority\n\n records a finding that is not supported by any evidence whatsoever\n\n or a finding which is unreasonably arrived at, the Writ Court could",
+    "ratio_summary": "11. State Bank of Bikaner and Jaipur v. Nemi Chand Nalwaya\n5,\n\n this Court held that the courts will not act as an appellate court\n\n and reassess the evidence led in the domestic enquiry, nor\n\n interfere on the ground that another view is possible on the\n\n material on record. If the enquiry has been fairly and properly held\n\n and the findings are based on evidence, the question of adequacy\n\n of the evidence or the reliable nature of the evidence will not be\n\n ground for interfering with the findings in departmental enquiries. The Court held as under:\n“7. It is now well settled that the courts will not act\n as an appellate court and reassess the evidence led in\n\n5 (2011) 4 SCC 584\n\nthe domestic enquiry, nor interfere on the ground that\nanother view is possible on the material on record. If\nthe enquiry has been fairly and properly held and the\nfindings are based on evidence, the question of\nadequacy of the evidence or the reliable nature of the\nevidence will not be grounds for interfering with the\nfindings in departmental enquiries.",
+    "final_order": "15. The disciplinary authority agreed with the findings of the enquiry\n\n officer and had passed an order of punishment. An appeal before\n\n the State Government was also dismissed. Once the evidence has\n\n been accepted by the departmental authority, in exercise of power\n\n of judicial review, the Tribunal or the High Court could not interfere\n\n with the findings of facts recorded by reappreciating evidence as if\n\n the Courts are the Appellate Authority. We may notice that\nthe\n\n said judgment\nhas not noticed larger bench judgments in S. Sree\n\n Rama Rao and B.C. Chaturvedi as mentioned above. Therefore,\n\n the orders passed by the Tribunal and the High Court suffer from\n\n patent illegality and thus cannot be sustained in law. Accordingly,\n\n appeal is allowed and orders passed by the Tribunal an",
+    "outcome_summary": "Allowed. 15. The disciplinary authority agreed with the findings of the enquiry\n\n officer and had passed an order of punishment. An appeal before\n\n the State Government was also dismissed. Once the evidence has\n\n been accepted by the departmental authority, in exercise of power\n\n of judicial review, the Trib",
+    "sections_cited": [
+      "Constitution 226"
+    ],
+    "cases_cited": [
+      "B. C. Chaturvedi v Union of India"
+    ]
+  }
+}

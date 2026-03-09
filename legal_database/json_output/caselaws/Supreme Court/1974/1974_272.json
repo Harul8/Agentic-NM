@@ -1,0 +1,187 @@
+{
+  "case_id": "SC_1974_1974_272",
+  "case_name": "Rajal Das Guru Namal Pamanani vs The State Of Maharashtra",
+  "normalized_case_name": "RAJAL_DAS_GURU_NAMAL_PAMANANI_VS_THE_STATE_OF_MAHARASHTRA",
+  "court": "Supreme Court of India",
+  "year": "1974",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "3 December 1974",
+  "judges": [
+    "A.N.  Ray",
+    "P. Jaganmohan Reddy",
+    "Hans Raj Khanna",
+    "P.K. Goswami"
+  ],
+  "author": "A.N.  Ray",
+  "bench_type": "constitution",
+  "petitioner": "Rajal Das Guru Namal Pamanani",
+  "respondent": "The State Of Maharashtra",
+  "reporter_citations": [
+    "[1971] 1 S.C.R. 166"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 7,
+  "cited_by_count": 10,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1975 AIR 189",
+    "1975 SCR (2) 886"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1974\\1974_272.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1974_1974_272_P001_C01",
+      "text": "BENCH:\nRAY, A.N. (CJ)\nBENCH:\nRAY, A.N. (CJ)\nREDDY, P. JAGANMOHAN\nKHANNA, HANS RAJ\nGOSWAMI, P.K.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1974_1974_272_P002_C01",
+      "text": "CITATION:\n 1975 AIR 189 1975 SCR (2) 886\n 1975 SCC (3) 375\n CITATOR INFO :\n RF 1977 SC2182 (2)\n O 1978 SC 933 (1,6,11,13,16,17)\n R 1980 SC 126 (1,2,3,5)\n RF 1980 SC 360 (20A)\n RF 1981 SC1169 (1,4)",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1974_1974_272_P003_C01",
+      "text": "ACT:\nPrevention of Food Adulteration Act, 1954\n,\nSection 19(2)\n-\nWarranty-Prevention of Food Adulteration Rules, Rule 22-\nQuantity of samples prescribed whether mandatory-Non-\ncompliance with the quantity entitles the accused to be\nacquitted.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1974_1974_272_P004_C01",
+      "text": "HEADNOTE:\nThe appellant, a grocer, sold compounded asafoetida in\nsealed tins received from a licenced manufacturer. The\nappellant stored it properly and sold it in the same slate\nas he purchased it. The Food Inspector took sample of 100\ngms., instead of 200 gms. as provided by rule 22. On\nanalysis it was found that alcoholic content was less than\nthe minimum prescribed and therefore, the compounded\nasafoetida was adulterated. The Trial Court acquitted the appellant. On appeal by the\nState. the High ,Court convicted the appellant and sentenced\nhim to suffer rigorous imprisonment for one year and to pay\na fine of Rs. 1,000/-. On appeal to this Court the appellant contended that he was\nprotected by\nsection 19(2) (a) (i)\nbecause he purchased the\ncompounded asafoetida from a duly licensed manufacturer and\nsold it in the same state as he purchased it. The appellant\ncontended that the words \"written warranty in the prescribed\nform\" attached only to\nsection 19 (2) (a) (ii)\nand not\ns. 19\n(2) (a) (i)\n. The appellant also ,contended that since\ninstead of 200 gms. as required by rule 22 the Food Ins-\npector took only 100 gms. as the sample he was entitled to\nbe acquitted.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1974_1974_272_P004_C02",
+      "text": "HELD : (i) It follows from rule 12A that the manufacturer\nhas to print a label containing a warranty. Warranty is\nrequired by cases covered under\nsection 19(2)(a)(i)\nand\n19(2)(a)(ii)\n. Otherwise adulterated goods could be sold with\nimpunity. These salutary provisions are designed for the\nhealth of the nation. No laxity should be permitted. [889A-\nD]\nAndhra Pradesh Grain & Seed Merchants' Association etc. etc.\nv. Union of India & Anr. [1971] 1 S.C.R. 166. explained. (ii) The Public Analyst did not have the quantities\nmentioned in the rules for analysis. The non-compliance\nwith the quantity to be supplied caused not only infraction\nof the provisions but also injustice. The shortage in\nquantity for analysis is not permitted by the statute. The\nHigh Court was in error in convicting the appellant on\nanalysis which was not in compliance with the provisions of\nthe Statute. [889F-H]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1974_1974_272_P005_C01",
+      "text": "JUDGMENT:\nCRIMINAL APPELLATE JURISDICTION : Criminal Appeals Nos. 6 to\n9 of 1971.\nAppeal by Special Leave from the Judgment & Order dated 17th\nDecember, 1970 of the Bombay High Court in Crl. as Nos. 709,\n71 1713 of 1969.\nP. H. Parekh, S. Bhandare and Manju Jetley, for the\nappellant.\nH. R. Khanna and M. N. Shroff, for the respondent,",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1974_1974_272_P006_C01",
+      "text": "The Judgment of the Court was delivered by\nRAY, C.J. These appeals by special leave turn on the\ninterpretation of\nsection 19(2)\nof the Prevention of Food\nAdulteration Act, 1954 hereinafter referred to, as the Act. The appellant was acquitted by the Judicial Magistrate. The\nHigh Court at Bombay reversed the acquittal and convicted\nthe appellant under\nsection 16\n)1) (a) (ii) of the Act. Section 16(1) (a) (ii)\nstates that if any person inter alia\nsells or distributes any article of food in contravention of\nany of the provisions of the Act or of any rule made\nthereunder he shall, in addition to the penalty to which he\nmay be liable under the provisions of\nsection 6\n, be\npunishable with imprisonment for a term which shall not be\nless than six months but which may extend to six years, and\nwith fin-. which shall not be less than one thousand rupees. The appellant was sentenced to suffer rigorous imprisonment\nfor one year and to pay a fine of Rs. 1000/-. The appellant is a grocer. He sells compounded asafoetida. He purchased compounded asafoetida in scaled tins from the\nNew India Hing Supplying Company, Bombay.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1974_1974_272_P006_C02",
+      "text": "In August, 1967,\nthe Food Inspector purchased 300 grams of asafoetida for the\npurpose of analysis. The Food Inspector made three packets\nof 100 grams each and sent one of the packets to the Public\nAnalyst at Poona. The report of the Public Analyst was that\nthe alcoholic extract content in the asafoetida was 3.77 per\ncent whereas 5 per cent was the required quantity under the\nAct. It may be stated that A-04 in Appendix B to the Rules\nunder the Act defines the standard of quality of asafoetida. It is stated that compounded asafoetida shall not contain\nless than 5 per cent alcoholic extract. The appellant sold the goods in three different sizes of\ntins of 50 grams, 500 grams and 1500 grams. The Food\nInspector purchased six tins of 50 grams each in the month\nof September, 1967. Out of these six tins the Food\nInspector prepared three packages each package containing 2\ntins. The Food Inspector also purchased 300 grams of\ncompounded asafoetida breaking open the seal of a tin\ncontaining 500 grams. The Food Inspector made three\npackages out of the said 300 grams of asafoetida.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1974_1974_272_P006_C03",
+      "text": "The Food\nInspector also purchased 300 grams of compounded asafoetida\nfrom a tin containing 1500 grams by breaking open the seal\nof one of the tins. The Food Inspector also made three\npackages out of the said 300 grams. The Food Inspector sent\nthree packages one from each group to the Public Analyst at\nPoona. The report of the Public Analyst was that the\nalcoholic extract contents were 3.42, 3.3 and 3.33 per cent\nrespectively. The defence of the appellant was under\nsection 19(2)\nof the\nAct. Section 19(2)\nis as follows :-\n\"A vendor shall not be deemed to have\n committed an offence pertaining to the sale of\n any adulterated or misbranded article of food\n if he proves",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1974_1974_272_P007_C01",
+      "text": "(a) that he purchased the article of food-\n(i) in a case where a licence is prescribed\n for the sale thereof, from a duly licensed\n manufacturer, distributor or dealer;\n(ii) in any other case, from any\n manufacturer, distributor or dealer\n with a written warranty in the prescribed\n form; and\n(b) that the article of food while in his\n possession was\n properly stored and that he sold it in the\n same state as he purchased it.\"\nThe appellant contended that be was protected by\nsection\n19(2) (a) (i)\nbecause he purchased the compounded asafoetida\nfrom a duly licensed manufacturer and he sold in the same\nstate as he purchased it. The contention of the appellant is\nthat a vendor shall not be deemed to have committed an\noffence pertaining to the sale of any adulterated or\nmisbranded article of food if he proves that he purchased\nthe article of food in a case where a licence is prescribed\nfor the sale thereof from a duly licensed manufacturer,\ndistributor or dealer. The appellant contended that the\nwords \"with a written Warranty in the prescribed form\"\nattach only to\nsection 19(2)(a)(ii)\nand not to\nsection\n19(2)(a)(i)\n. He purchased the article from the company who\nwere licensed manufacturer.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1974_1974_272_P007_C02",
+      "text": "Therefore, his contention is\nthat he is not deemed to have committed any offence. The Prevention of Food Adulteration Rules which are referred\nto as the Central Rules deal in Part IX with conditions for\nsale and licence. Rule 50 states that no person shall\nmanufacture, sell, stock, distribute or exhibit for sale the\narticles of food mentioned thereunder except under a\nlicence. Compounded asafoetida is one of the articles\nmentioned therein. Rule 12A speaks of warranty. Every trader selling an\narticle of food to a vendor shall, if the vendor so\nrequires, deliver to the vendor a warranty in form VI-A. The prescribed 'form VI-A mentions invoice Number, place,\ndate, names of seller and purchaser. There are also columns\nof date of sale, nature and quality of article, quantity and\nprice. At the foot of the form those words occur :\n\"I/We hereby certify that food/foods mentioned\n in this invoice is/are warranted to be the\n same in nature, substance and quality as that\n demanded by the vendor.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1974_1974_272_P007_C03",
+      "text": "Signature of trader/traders.\"\nRule 12A contains a proviso that no warranty in such form\n(meaning form VI-A) shall be necessary if the label on the\narticle of food or the cash memo delivered by the trader to\nthe vendor in respect of that article contains a warranty\ncertifying that the food contained in the package or\ncontainer or mentioned in the cash memo is the same in\nnature, substance and quality as demanded by the vendor. The Explanation to Rule 12A is that the term \"trader\" shall\nmean an importer, manufacturer, wholesale dealer or an\nauthorised agent of such importer, manufacturer or wholesale\ndealer.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1974_1974_272_P008_C01",
+      "text": "It follows from these provisions that a manufacturer has to\nprint a label on the article of food containing a warranty\nas contemplated in the Act or the manufacturer has to give a\ncash memo to the vendor in respect of that article\ncontaining a warranty as mentioned in the Act and Rules\nthereunder. The reason why a warranty is required in both the cases\ncontemplated in\nsection 19 (2) (a) (i)\nand (ii) is that if\nwarranty were not to be insisted upon by the statute and if\na vendor would be permitted to have a defence merely by\nstating that the vendor purchased the goods from a licensed\nmanufacturer, distributor or dealer adulterated or\nmisbranded articles would be marketed by manufacturers,\ndistributors, dealers as well as purchasers from them with\nimpunity. That is why a written warranty is enjoined in\nboth the cases in\nsection 19(2) (a) (i)\nand (ii). Section\n19 (2) (a)\nof the Act will provide a defence where a vendor\npurchases article of food from a licensed manufacturer,\ndistributor or dealer with a written warranty in the\nprescribed form.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1974_1974_272_P008_C02",
+      "text": "Again, a vendor shall not be deemed to\nhave committed an offence pertaining to the sale of any\naduterated or misbranded article of food if he proves that\nhe purchased the article from any manufacturer, distributor\nor dealer with a written warranty in the prescribed form. These salutary provisions are designed for the health of the\nnation. Therefore, a warranty is enjoined. No laxity\nshould be permitted. Counsel for the appellant relied on the decision of this\nCourt in Andhra Pradesh Grain & Seed Merchants' Association\netc. etc. V. Union of India & Anr. [1971] 1 S.C.R. 166 and\nthe observations at page 173 of the Report in support of the\nproposition that a written warranty in the prescribed form\nis required only in the case of purchase of articles from\nmanufacturer, distributor or dealer as contemplated in\nsection 19 (2) (a) (ii)\nof the Act. That is misreading the\ndecision. At page 173 of the Report it is said that a\nvendor is protected if he has obtained the article from a\nlicensed manufacturer, distributor or dealer with a\nwarranty. The appellant also contended that samples were not taken in\naccordance with the provisions of the Act and the rules\nthereunder.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1974_1974_272_P008_C03",
+      "text": "Rule 22 states that in the case of asafoetida\nthe approximate quantity to be supplied for analysis is 100\ngrams and in the case of compounded asafoetida 200 grams. The Public Analyst did not have the quantities mentioned in\nthe Rules for analysis. The appellant rightly contends that\nnon-compliance with the quantity to be supplied caused not\nonly infraction of the provisions but also injustice. The\nquantities mentioned are required for correct analysis. Shortage in quantity for analysis is not permitted by the\nstatute. It is rather surprising that the High Court acquitted the\nmanufacturer and convicted the grocer. The grocer's defence\nwas that in spite of requests the manufacturer did not give\na warranty. The appeals are accepted in view of the fact that the High\nCourt was not correct in convicting the appellant on\nanalysis which was not in compliance with the provisions of\nthe statute. Appeal allowed. P.H.P. L346 Sup.CI/75",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    }
+  ],
+  "case_summary": {
+    "case_name": "Rajal Das Guru Namal Pamanani vs The State Of Maharashtra",
+    "case_id": "SC_1974_1974_272",
+    "court": "Supreme Court of India",
+    "year": "1974",
+    "facts_summary": "CITATION:\n 1975 AIR 189 1975 SCR (2) 886\n 1975 SCC (3) 375\n CITATOR INFO :\n RF 1977 SC2182 (2)\n O 1978 SC 933 (1,6,11,13,16,17)\n R 1980 SC 126 (1,2,3,5)\n RF 1980 SC 360 (20A)\n RF 1981 SC1169 (1,4) ACT:\nPrevention of Food Adulteration Act, 1954\n,\nSection 19(2)\n-\nWarranty-Prevention of Food Adulteration Rules, Rule 22-\nQuantity of samples prescribed whether mandatory-Non-\ncompliance with the quantity entitles the accused to be\nacquitted. The Judgment of the Court was delivered by\nRAY, C.J. These appeals by special leave turn on the\ninterpretation of\nsection 19(2)\nof the Prevention of Food\nAdulteration Act, 1954 hereinafter referred to, as the Act. The appellant was acquitted by the Judicial Magistrate. The\nHigh Court at Bombay reversed the acquittal and convicted\nthe appellant under\nsection 16\n)1) (a) (ii) of the Act. Section 16(1) (a) (ii)\nstates that if any person inter alia\nsells or distributes any article of food in contravention of\nany of the provisions of the Act or of any rule made\nthereunder he shall, in addition to the penalty to which he\nmay be liable under the provisions of\nsection 6\n, be\npunishable with imprisonment for a term which shall not be\nless than six months but which may extend to six years, and\nwith fin-. which shall not be less than one thousand rupees. The appellant was sentenced to suffer rigorous imprisonment\nfor one year and to pay a fine of Rs. 1000/-. The appellant is a grocer. He sells compounded asafoetida. He purchased compounded asafoetida in sc",
+    "legal_issues": "HEADNOTE:\nThe appellant, a grocer, sold compounded asafoetida in\nsealed tins received from a licenced manufacturer. The\nappellant stored it properly and sold it in the same slate\nas he purchased it. The Food Inspector took sample of 100\ngms., instead of 200 gms. as provided by rule 22. On\nanalysis it was found that alcoholic content was less than\nthe minimum prescribed and therefore, the compounded\nasafoetida was adulterated. The Trial Court acquitted the appellant. On appeal by the\nState. the High ,Court convicted the appellant and sentenced\nhim to suffer rigorous imprisonment for one year and to pay\na fine of Rs. 1,000/-. On appeal to this Court the appellant contended that he was\nprotected by\nsection 19(2) (a) (i)\nbecause he purchased the\ncompounded asafoetida from a duly licensed manufacturer and\nsold it in the same state as he purchased it. The appellant\ncontended that the words \"written warranty in the prescribed\nform\" attached only to\nsection 19 (2) (a) (ii)\nand not\ns. 19\n(2) (a) (i)\n. The appellant also ,contended that since\ninstead of 200 gms. as required by rule 22 the Food Ins-\npector took only 100 gms. as the sample he was entitled to\nbe acquitted. JUDGMENT:\nCRIMINAL APPELLATE JURISDICTION : Criminal Appeals Nos. 6 to\n9 of 1971.\nAppeal by Special Leave from the Judgment & Order dated 17th\nDecember, 1970 of the Bombay High Court in Crl. as Nos. 709,\n71 1713 of 1969.\nP. H. Parekh, S. Bhandare and Manju Jetley, for the\nappellant.\nH. R. Khanna and M. N. Shroff, for th",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "Allowed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

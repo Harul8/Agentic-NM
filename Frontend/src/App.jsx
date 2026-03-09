@@ -3222,7 +3222,7 @@ function App() {
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={handleKeyDown}
-                        placeholder="Describe your case or ask a question..."
+                        placeholder="Describe your case or ask a question"
                         className="chat-input"
                         rows={1}
                         disabled={loading}
@@ -3302,7 +3302,7 @@ function App() {
                               <div className="message-bubble-text message-bubble-text--preserve" title="User message">
                                 {(() => {
                                   const raw = typeof msg.content === "string" ? msg.content : String(msg.content ?? "");
-                                  return raw.replace(/\n+\.\.\.\s*$/, " …").replace(/\n+$/, "");
+                                  return raw.replace(/\n+\.\.\.\s*$/, "").replace(/\n+$/, "");
                                 })()}
                               </div>
                               <div className="message-bubble-actions">
@@ -3451,12 +3451,12 @@ function App() {
                       onKeyDown={handleKeyDown}
                       placeholder={
                         stage === "bare_acts_review"
-                          ? "Provide the additional details, or type 'proceed' to continue..."
+                          ? "Provide the additional details, or type 'proceed' to continue"
                           : stage === "interview" && currentQuestion
-                          ? "Type your details here..."
+                          ? "Type your details here"
                           : stage === "await_facts"
-                          ? "Describe your case facts here..."
-                          : "Type here to start a new case..."
+                          ? "Describe your case facts here"
+                          : "Type here to start a new case"
                       }
                       className="chat-input"
                       rows={1}

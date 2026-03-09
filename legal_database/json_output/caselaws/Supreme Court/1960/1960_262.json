@@ -1,0 +1,432 @@
+{
+  "case_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS",
+  "case_name": "Commissioner Of Excess Profits Tax, ... vs N.M. Rayaloo Iyer & Sons",
+  "normalized_case_name": "COMMISSIONER_OF_EXCESS_PROFITS_TAX,_..._VS_N.M._RAYALOO_IYER_&_SONS",
+  "court": "Supreme Court of India",
+  "year": "1960",
+  "judgment_template": null,
+  "case_number": "Petition 494 of 1958",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": "8 December 1960",
+  "judges": [
+    "J.C. Shah",
+    "J.L. Kapur",
+    "M. Hidayatullah",
+    "JUDGMENT",
+    "Shah, J."
+  ],
+  "author": "J.C. Shah",
+  "bench_type": "constitution",
+  "petitioner": "Commissioner Of Excess Profits Tax, ...",
+  "respondent": "N.M. Rayaloo Iyer & Sons",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 11,
+  "cited_by_count": 5,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1961SC692",
+    "[1961]41ITR671(SC)",
+    "[1961]3SCR60",
+    "AIR 1961 SUPREME COURT 692",
+    "1961 2 SCJ 159"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1960\\1960_262.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P001_C01",
+      "text": "1. These are two appeals filed with certificate of fitness granted by the High Court of Judicature at Madras. Appeal No. 494 of 1958 arises out of orders passed in certain excess profits tax appeals and Appeal No. 495 of 1958 arises out of orders passed in certain income-tax references, excess profits tax appeals and business profits tax appeals.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P002_C01",
+      "text": "2. M/s. N. M. Rayaloo Iyer & Sons - hereinafter referred to as the assessees - are a firm carrying on business principally in dyes and chemicals. They are the chief representatives in \"South India\" of the products of the Imperial Chemical Industries Company (India) Ltd. - hereinafter referred to as the \"I. C. I.\" The business in dyes and chemicals was in the years material to these appeals, conducted in the name and style of \"Colours Trading Company\", with its head officer at Madura and in thirteen branch officer in different towns in \"South India.\" The business was carried on originally in partnership by three brothers, N. M. R. Venkatakrishna Iyer, N. M. R. Subbaraman and N. M. R. Krishnamurti. On April 13, 1946, N. M. R. Subbaraman retired from the firm and the share of N. M. R. Venkatakrishna Iyer was taken over by a private limited company, N. M. R. Venkatakrishna Iyer & Sons Ltd., but the business was, not withstanding the changes in the personnel, continued in the original name and style. One N. M. R. Mahadevan (son of N. M. R. Venkatakrishna Iyer)--hereinafter referred to as Mahadevan__was employed by the assessees as the General Manager of the Colours Trading Co.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P002_C02",
+      "text": "By letter dated April 17, 1940, the assessees wrote to Mahadevan agreeing to pay him remuneration at the rate of Rs. 1,800/- per annum and 5% o£ the net profits of the concern (Colours Trading Company) calculated by deducting from the gross profits of the business, salaries, wages and other outgoings but without making any deduction for capital. By letter dated March 30, 1943, the salary of Mahadevan was fixed at Rs. 3,000/. per annum and the commission was enhanced to 12½% of the net profits of the Colours Trading Company. The branch offices were managed by local managers and assistant managers who were paid in addition to monthly salary, annual and special bonus and dearness allowance. The assessees received from the I. C. I. commission at rates varying between 7½% and 12% on different products sold to them. With effect from April 1, 1944, the I. C. I. allowed a special emergency commission of 5% on all dyes and dye-stuffs sold to the assessees. This special emergency commission was increased to 15% on all sales on or after March 1, 1945, but was subsequently reduced to 10% on sales on and after September 1, 1946.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P003_C01",
+      "text": "3. These appeals relate to the liability of the assessees to excess profits tax for the chargeable accounting periods ending April 13, 1943, April 12, 1944, April 12, 1945, and March 31, 1946, and for business profits tax for the chargeable accounting periods ending April 12, 1946, March 31, 1947, April 13, 1947, March 31, 1948, and April 12, 1948.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P004_C01",
+      "text": "4. The assessees claimed that they had paid to their employees in the years of account 1942-43 to 1947-48 under agreements executed from time to time a share in the special emergency commission received from the I. C. I., in addition to monthly salary, dearness allowance and general and special bonus. The I. C. I. in allowing the emergency commission by its letter dated January 24, 1944, recommended that 1% out of the 5% commission allowed may be \"passed on\" by the assessees to their \"sub-distributors\". The assessees claimed that, pursuant to this recommendation, they paid to their employees commission at rates varying between 1 1/2% to 4%, and when the emergency commission was increased to 15% and the I. C. I. by letter dated February 23, 1945, recommended that 6% out of this commission may be passed on to the sub-distributors, the assessees claimed to have distributed commission at rates varying from 2% to 7 1/2% and in some cases at a rate as high as 12%.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P004_C02",
+      "text": "Under the service agreements, commission was payable to the employees only it the turnover in dyes exceeded Rs. 1,00,000/- net in any year, but to employees in several branches the assessees claimed to have paid commission at generous rates even when the turnover fell far short of that amount. In the year of account ending April 12, 1945, there was a revision of the scales of salaries of the employees, and the assessees commenced giving to their employees clearness allowance and special bonus which in the aggregate exceeded 50% of the basic annual salary find also annual bonus equal to the annual salary. The result of this revision of emoluments was that each employee received an amount equal to at least 2½ times his enhanced basic salary. In addition to this remuneration, the assessees claimed that they had paid a share in the commission which in some cases exceeded 12 times the basic salary.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P005_C01",
+      "text": "5. In computing the total income of the assessees for the years 1943-44 and 1944-45 for purposes of income-tax, the Income-tax Officer disallowed the payment of 12 1/2% of the net profits of the Colours Trading Co. to Mahadevan and in computing the income for the assessment years 1945-46, 1946-47, 1947-48 and 1948-49 the Income-tax Officer disallowed the commission paid to the branch mangers and other employees. In appeal the Appellate Assistant Commissioner set aside the order which disallowed the amount of commission paid to Mahadevan and, following the order of the Income-tax Appellate Tribunal in certain excess profits tax appeals, allowed 5% of the net profits without deduction of excess profits tax or business profits tax, or 12 1/2% after deduction of excess profits tax or business profits tax whichever was higher. That order was confirmed in appeal by the Income-tax Appellate Tribunal. The Tribunal also confirmed the order disallowing the emergency commission paid to the branch managers and other employees and in the computation or taxable income for purposes of Income Tax, Excess Profits Tax and Business Profits Tax, added back all those payments.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P005_C02",
+      "text": "At the instance of the assessees, the Tribunal referred two sots of questions to the High Court under\nS. 66 (I)\nof the Income Tax Act read with\nS. 21\nor the Excess Profits Tax Act.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P006_C01",
+      "text": "6. Questions 1 to 3 in Referred Case No. 44 of 1953 were :\n\"(1) Whether in allowing a deduction under\nsection 10 (2) (xv)\nof the Income-tax Act, the Income-tax Officer is precluded from going into the question whether the amount was paid wholly and exclusively for the purpose of the assessees' business ?\n(2) Whether there was any material before the Tribunal to hold that the commission payment to N. M. R. Mahadevan at 12 1/2% before deduction of excess profits tax or business profits tax was not wholly and exclusively laid out for the purpose of the assessees' business ?\n(3) Whether the commission payment to the branch mangers, assistant managers and other employees is an expenditure laid out wholly and exclusively for the purpose of the business ?\"",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P007_C01",
+      "text": "7. Questions referred in Referred Case No. 53 of 1952 were :\n\"(1) Whether the Appellate Tribunal erred in law in holding that, in accordance with the terms of letters dated 17th April, 1940, and 30th March, 1943, and the conduct of the parties, the excess profits tax payable by the assessee should be deducted from the profits before the commission of 12 1/2% payable to N. M. R. Mahadevan is calculated ?\n(2) Whether there is any material on evidence sufficient in law for the Appellate Tribunal to hold that the commission of 12 1/2% on profits paid to Mahadevan was unreasonable within the meaning of rule 12 of Schedule 1 of the Excess Profits Tax Act ?\n(3) Whether on the facts and circumstances of the case the disallowance by the excess profits tax authorities of the commission paid to branch managers is justified under rule 12 of Schedule 1 of the Excess Profits Tax Act ?\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P008_C01",
+      "text": "8. The material provisions relating to allowances under the Excess Profits Tax Act and the Business Profits Tax Act (which Act superseded the Excess Profits Tax Act as from March 30, 1946) were on the questions arising in this case substantially the same and hereafter reference to the Excess Profits Tax Act will in respect of the period after March 30, 1946, be deemed to be a reference to the\nBusiness Profits Tax Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P009_C01",
+      "text": "9. In the opinion of the High Court, in computing the taxable income, the deductions claimed by the assessees fell to be considered not under\nsection 10 (2) (xv)\nof the Income-tax Act but properly under\nsection 10 (2) (x)\nof the Income-tax Act, the latter being a specific provision in the Act relating to deduction of commission or bonus paid to an employee. The High Court observed that in assessing liability to excess profits tax the bonus or commission paid to the employees of the taxpayer may be permitted as deduction in the light of\nsection 10 (2) (x)\nof the Income-tax Act and rule 12 of Schedule 1 to the Excess Profits Tax Act. The case of Mahadevan, according to the High Court, did not present much difficulty, the only question which fell to be determined in his case being whether in allowing deduction of commission at the rate of 12 1/2% on the net profits, the excess profits tax paid by the assessees was to be taken into account. Following a judgment of the Punjab High Court in\nCommissioner of Income-tax, Delhi v. Delhi Flour Mills Ltd.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P009_C02",
+      "text": "(1), the High Court observed that in computing net profits Excess Profits Tax could not be deducted, but on the materials on the record, the question whether the commission paid to the branch managers and other employees was properly deductible could not be decided, and accordingly the High Court called for and obtained from the Tribunal a supplementary statement of facts. The High Court after considering the supplementary statement observed that the assessees had undoubtedly distributed substantial sums out of the emergency commission to its managers and assistant managers in the branches at rates well above the minima recommended by the I. C. I., but the distribution was at rates within the percentages allowed by the I. C. I., as additional commission and the balance retained by the appellants out of the emergency Commission was also substantial. In the view of the High Court, the Tribunal had to consider three factors, (1) the reasonableness of the commission in the light of the conditions\nlaid down in\ns. 10(2)(x)\n, (2) the reasonableness of the percentages above the minima suggested by the I. C. I., and (3) the need for maintaining the reputation of the I. C.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P009_C03",
+      "text": "I., and the distributor in conditions that prevailed during that period when \"black-marketing was rampant\", but observed the High Court \"the Tribunal had made no real attempt to analyse the evidence before it to justify its conclusion that only the minima recommended by the I.C.I. and nothing in excess satisfied the test of reasonableness under r. 12, Sch. 1, of the Excess Profits Tax Act\". They then observed that, whether the test of reasonableness is that prescribed by\ns. 10(2)(x)\nof the Income-tax Act or whether reasonableness has to be judged in the light of commercial expediency under r. 12, Sch. 1, of the Excess Profits Tax Act, the expenditure was to be judged from the point of view of a businessman and not by the application of any subjective standard of a taxing (1) [1953] 23 I.T.R. 167. officer and that on an analysis of the materials furnished, they were unable to see anything per se unreasonable in the amounts of commission actually paid by the assessees to the branch managers and assistant managers in the branches. The High Court also observed that the minima recommended by the I. C.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P009_C04",
+      "text": "I. did not provide the only or an absolute standard for judging the reasonableness of the payments made, and stated:\n\"No doubt, the employees of the assessee were in receipt of regular salaries and bonuses. But then, a sub-distributor, if he had not been paid a salary, would have had to be paid a share of the basic commission itself. What the assessee got in the years in questions was in the nature of a windfall. It shares it with its employees. It had been instructed to share it. The emergency commission was allowed by the I. C. I. so that the distributors could maintain the reputation of the I. C. I. in the market even under the disturbed conditions that prevailed in those years.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P009_C05",
+      "text": "If, to maintain that reputation and to maintain its own, the assessee paid to its employees, even on a liberal basis, a share of that emergency commission, it is a little difficult to hold that, while receipt of the emergency commission was reasonable, sharing it beyond a particular point would be per se unreasonable, in the sense that no prudent businessman in that line of business, in those years, and in the market conditions that prevailed then,with ample scope for black-marketting, would have paid out commission on such a basis\". They then concluded :\n\"Though, of course, it was for the assessee to show that it was entitled to the deductions claimed under\nsection 10 (2) (x)\nof the Income-tax Act and rule 12 of Schedule 1 of the Excess Profits Tax Act, there was really no basis on record to show that judged from the point of was really no basis on record to show that judged from the point of view of a businessman, payments in excess of the minima recommended by the I. C. I. were not reasonable.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P009_C06",
+      "text": "We are of opinion that the entire claim should have been allowed both under\nsection 10 (2) (x)\nof the Income-tax Act and under rule 13 of Schedule 1 of the Excess Profits Tax Act on the ground that the statuary requirements were satisfied by the assessee.\"",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P010_C01",
+      "text": "10. The High Court accordingly answered the question about the disallowance of commission paid to the employees of the assessees being justified under rule 12, Schedule 1 of the Excess Profits Tax Act in the negative. Against those orders, these two appeals have been preferred with certificates of fitness from the High Court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P011_C01",
+      "text": "11. The first question which falls to be considered is whether in the computation of taxable income for purposes of income-tax and excess profits tax, commissioner allowed to Mahadevan at 12 1/2% should be allowed after deducting the excess profits tax paid. By the agreement dated April 17, 1940, as modified by the agreement dated March 30, 1943, Mahadevan was to be paid remuneration at the rate of Rs. 3,000 per annum and 12 1/2% of the net profits to the Colours Trading Company. In the view of the High Court in determining the \"net profits\" under the agreement \"in accordance with the principles of commercial accountancy and the principles laid down under the Excess Profits Tax Act\" the excess profits tax which is a tax on profits could not be deducted. In our judgment the question is one of the true interpretation of the agreement. Mahadevan was under the agreement to receive 12 1/2% commission on the net profits of the Colours Trading Co. calculated by deducting from the gross profits of the business the salaries, wages and other outgoings. The expression \"outgoings\" is not restricted to business or commercial outgoings.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P011_C02",
+      "text": "The agreement specifically disentitles the employers to make deductions of capital expenditure but there is no indication that the outgoings are to be business outgoings only. There is nothing in the agreement or in the context justifying the view that in the expression 'outgoings is not included the Excess Profits Tax paid by the assessees.'",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P012_C01",
+      "text": "12. Commissioner of Income-tax v. Delhi Flour Mills Co. Ltd.\nit was observed by this court in construing a similar agreement that the excess profits tax was a part of the profits itself, but it was no part of the net profits contemplated by the parties; if it was a part which had to be deducted in arriving at the net profits, that is to say, the divisible profits, which alone the parties has in mind, as a matter of construction the net profits meant divisible profits and were to be ascertained after deduction of excess profits tax.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P013_C01",
+      "text": "13. Counsel for the Revenue has not challenged the decision of the High Court that in computing taxable income for the purpose of income-tax, commission paid to the various employees is a permissible deduction under\nsection 10 (2) (x)\nof the Income-tax Act. The only question which survives on this branch for consideration is, therefore, whether those deductions are permissible in the assessment of excess profits tax.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P014_C01",
+      "text": "14. By section 21 of the Excess Profits Tax Act, amongst other provisions,\nsection 10\nof the Income-tax Act is made applicable with modifications if any as may be prescribed as if it were a provision of the Excess Profits Tax Act and refers to the excess profits tax instead of income-tax. By\nsection 2 (19)\n, the expression \"profits\" means profits determined in accordance with Schedule 1 of the Act which lays down the rules for computation of profits for the purpose of Excess Profits Tax Act. Rule 12 of Schedule 1 (which was added by\nsection 4\nof the Excess Profits Tax Ordinance, 1943) provided as follows :\n\"(1) In computing the profits of any chargeable accounting period no deduction shall be allowed in respect of expenses in excess of the amount which the Excess Profits Tax Officer considers reasonable and necessary having regard to the requirements of the business and, in the case of directors' fees or other payments for services, to the actual services rendered by the person concerned :\nProvided that no disallowance under this rule shall be made bu the Excess Profits Tax Officer unless he has obtained the prior authority of the Commissioner of Excess Profits Tax.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P014_C02",
+      "text": "(2) Any person who is dissatisfied with the decision of the Excess Profits Tax Officer under this rule may appeal in the prescribed time and manner to the Appellate Tribunal. (3) In relation to chargeable accounting periods ending after the 31st day of December, 1942, the Central Government may make rules for determining the extent to which deductions shall be allowed in respect of bonuses or commission paid.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P015_C01",
+      "text": "15. We were informed at the bar that though authorised, the Central Government did not make rules for determining the extent to which deductions shall be allowed in respect of bonuses or commissions paid. The Excess Profits Tax Act was substituted as from the year 1946 by the\nBusiness Profits Tax Act, 1947\n.\nThat Act\nalso defined by\nsection 2\n, clause (16), the expression \"profits\" as meaning profits determined in accordance with Schedule 1 and by\nsection 19\n, the provisions of the sections of the\nIndian Income-tax Act\nas applied to the Excess Profits Tax Act by virtue of\nsections 21\nand 21 A so far as they were not repugnant to the provisions of the\nBusiness Profits Tax Act\napplied to that Act as they applied to the Excess Profits Tax Act and by clause (3) of Schedule 1, a provision substantially similar to clauses (1) and (2) of rule 12, Schedule 1 of the Excess Profits Tax Act was incorporated.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P016_C01",
+      "text": "16. Profits of a business for purposes of Excess Profits Tax Act have to be ascertained by reference to\nsection 10\nof the Income-tax Act modified to the extent directed by Schedule 1 of the Excess Profits Tax Act. By clause 12 of Schedule 1 of the Excess Profits Tax Act, a deduction in respect of expenses in excess of the amounts which the Excess Profits Tax Officer considers reasonable and necessary having regard to the requirements of the business and in the case of payments for services to the actual services rendered by the persons concerned, is not to be allowed. The deduction to be allowed, it is true, does not depend upon any subjective satisfaction of the Excess Profits Tax Officer, but on objective standards as to what is reasonable and necessary having regard to the requirements of the business and in the case of payments for services to the actual services rendered by the persons concerned. The order passed by the Excess Profits Tax Officer is open to review by the Tribunal to which appeal against the order of the Excess Profits Tax Officer lies.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P016_C02",
+      "text": "But in considering whether the deduction is properly claimed, the primary duty is vested by the Legislature in the Excess Profits Tax Officer It is for him subject to review by the Tribunal to decide whether the deduction is reasonable and necessary, having regard to the requirements of the business and in case of payments for services to the actual services rendered. The jurisdiction which the High Court exercises on questions referred to it under the E. P. T. Act is merely advisory; the High Court is not sitting in appeal over the judgment of the taxing authorities. If the taxing authorities having regard to the circumstances come to a conclusion that expenditure claimed as a deduction is not reasonable and necessary, it is not open to the High Court to substitute its own view as to what may be regarded as reasonable and necessary.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P016_C03",
+      "text": "Even if the High Court holds that the taxing authorities have committed an error in law by misconceiving the evidence, or by applying erroneous tests, or otherwise by acting perversely, the High Court may in answering the questions submitted, lay down the true principles applicable to the ascertainment of the permissible deductions and leave it to the taxing authorities to adjudicate upon the reasonableness and necessity of the expenses in the light of the requirements of the business.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P017_C01",
+      "text": "17. In the case in hand, the Excess Profits Tax Officer held (a) that the employees of the assessees were being amply remunerated for services rendered by adequate salary, generous dearness allowance and annual bonus equal to the basic salary, (b) that the emoluments of the employees had been increased year after year and there was no material to show that the employees had made a persistent demand for increased emoluments, (c) that the commission was credited to the employees' account at the end of the year and was carried forward but no payments were made to them, (d) that the agreements which had been produced by the assessees were fabricated with a view to reduce tax liability, and (e) that the expenditure claimed was not proved to have been laid out wholly and exclusively for the purpose of the business. Taking into account these circumstances, the Excess Profits Tax Officer held that the remuneration paid to the employees was adequate and any additional commission paid was in excess of what was reasonable and necessary. The only criticism urged by counsel for the assessees against the grounds given is that the E. P. T.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P017_C02",
+      "text": "Officer observed that while the net profit according to the Profit & Loss Account of the firm was Rs. 20,487/- leaving a share of Rs. 6,800/- only to each of the partners, some of the managers got more than this amount. It appears that the E. P. T. Officer committed an error in so observing. The profits of the Colours Trading Co. as disclosed by the order of assessment for the year 1945-46 were Rs. 99,435/ and not Rs. 20,487/-; but that error did not affect the ultimate conclusion recorded by the E. P. T Officer. According to the books of account of the assessees for the year 1943-44 of the business in dyes, the profits were Rs. 99,435/- and they claimed to have distributed a commission of Rs. 1,00,715/- to their employees out of the emergency commission, which was prima facie wholly disproportionate to the amount received by them.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P018_C01",
+      "text": "18. The order passed by the Excess Profits Tax Officer was confirmed in appeal by the Appellate Tribunal. In the view of the Appellate Tribunal, no additional incentive was required to sell dyes and chemicals in the years in question because dyes and chemicals were in short supply and there was a rise in demand. The Tribunal also referred to the table setting out the distribution among the employees of dearness allowance, bonus and salary in the relevant years, and observed :\n\"In addition to the generous allowances, the payment of this sum appears to us a payment made in order to dissipate the profits. It would be sufficient to say that including the commission alleged to have been paid, the total emoluments would be something like 1200% and in some cases even more than the basic annual salary. There is no doubt in our mind, that this was wholly unnecessary for business purposes.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P019_C01",
+      "text": "19. Observing that the assessees having no sub-distributors, the direction given by the I. C. I. did not require the assessees to \"pass on\" the commission to their employees, they concluded that the expenditure alleged to have been incurred was not reasonable and necessary within the meaning of rule 12, Schedule 1 of the Excess Profits Tax Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P020_C01",
+      "text": "20. The following table which is incorporated in the statement of case of the Tribunal sets out for the four years in question the emergency commission received by the assessees and the aggregate amount paid by them to their employees. Assessment Extra commission Amount of commission\n year received by the paid by the assessee\n Rs. Rs.\n1945-46 1,28,533 1,00,715\n1946-47 3,20,391 2,44,698\n1947-48 3,15,934 1,28,506\n1948-49 3,70,964 1,75,079\n21. This distribution out of the emergency commission to the employees has to be viewed in the context of the following circumstances set out by the Tribunal :\n\"(1) that even though the I. C. I. recommended payment to sub- distributors and the assessees had no sub-distributors, they claimed to have paid commission to their employees at rates in excess of the minimum rates recommended by I. C.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P020_C02",
+      "text": "I.;\n(2) that this commission was paid to the employees in branches in which the annual turnover did not exceed Rs. 1,00,000 even though the agreements which the assessees had executed expressly provided that the commission was to be paid only if the annual turnover in a branch exceeded Rs. 1 lakh; and \n\n (3) that the basic salaries of the employees had been substantially increased from time to time and generous dearness allowance and Deepavali bonus were given besides the annual bonus to the employees.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P021_C01",
+      "text": "22. An analysis of annexure \"L\" to the supplemental statement of case made by the Tribunal discloses some striking instances of payments to employees. On Themaswamy was paid annually commission varying from Rs. 15,000 to Rs. 23,000 when his basic salary was Rs. 2,100 per annum; one K. N. Rajagopalachari was paid commission varying from Rs. 16,000 to Rs. 12,000 when his basic salary was Rs. 1,260 per annum; one S. L. Radhakrishnan was paid commission varying from Rs. 5,700 to Rs. 13,000 when his salary varied between Rs. 516 and Rs. 636 per annum and one K. R. Rama Rao was paid commission varying from Rs. 4,600 to Rs. 10,520 his salary being Rs. 492 and later increased to Rs. 612 per annum.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P022_C01",
+      "text": "23. There was thus ample evidence in support of the conclusion of the Excess profits Tax Officer which was confirmed by the Tribunal. As we have already observed, it is the province of the Excess Profits Tax Officer and the Tribunal to assess the permissible deductions in the context of reasonableness and necessity having regard to the requirements of the business and interference with the conclusion is permissible if the view of the taxing authorities is vitiated by an error of law or is not based on any materials, or the conclusion is such that no man instructed in law could have arrived at. It is true that in considering whether the deduction claimed by the assessees for payments made as bonus or commission paid to an employee is to be allowed, the taxing officer must have regard to the provisions of\nsection 10 (2) (x)\nof the Income-tax Act and clause (12) of Schedule 1 of the Excess Profits Tax Act; and in assessing the reasonableness, consideration of commercial expediency must undoubtedly be taken into account But commercial expediency must be viewed in the light of the requirements of the business and the actual services rendered by the persons concerned.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P022_C02",
+      "text": "Any abstract consideration of commercial expediency is out of place.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P023_C01",
+      "text": "24. In our view, the High Court was not justified in seeking to reappreciate the evidence on which the conclusion of the Excess Profits Tax Officer, which was confirmed by the Tribunal was based. Their jurisdiction being advisory, the High Court had to answer the questions submitted for opinion on the facts found; if the High Court held the view that the taxing authorities had misdirected themselves in law or had made a wrong inference in law or had failed to apply the correct test or had misconceived the evidence, it was open to them to invite the attention of the taxing authorities to the error committee by them; but the High Court could not set aside the decision of the taxing authorities on a reappreciation of the evidence. We may also point out that even if the High Court concluded that the total disallowance of the deduction claimed was not justified, the High Court could not substitute its own view as to what was reasonable and necessary. The High Court had, if it disagreed with the taxing authorities, still to answer the questions submitted and leave to the consideration of the E. P. T. Officer what in the circumstances was reasonable and necessary.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P024_C01",
+      "text": "25. Counsel for the assessees submitted that, in any event, the Tribunal having in its supplementary statement of case stated that payment in excess of what was recommended by the I. C. I. was unjustified, this court may so modify the order of the High Court that deductions of the amounts which were recommended by the I. C. I. may be regarded as permissible deductions. The I. C. I. recommended distribution of a certain percentage out of the emergency commission to the sub- distributors; but in the administrative set up of the assessees, the sub-distributors did not find a place. The assessees carried on their business through paid employees. In terms, therefore, the recommendation by the I. C. I. had no application to the assessees.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P024_C02",
+      "text": "It is true that even if the assessees did not carry on the business through sub-distributors, payment made to its employees if reasonable and necessary having regard to the requirements of the business, may still be deductible but that in our judgment is a matter to be decided by the Taxing Authorities and not by us The Tribunal had come to the conclusion that no payment in addition to the salary, annual bonus and special bonus was justified and any expression of opinion to the contrary in the supplementary statement pursuant to the order for statement of case could not in our judgment affect the conclusion originally recorded.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P025_C01",
+      "text": "26. In our view the answer to the question whether the disallowance by the excess profits tax authorities of the commission paid to branch managers was justified under rule 12, Schedule 1 of the Excess Profits Tax Act should have been answered in the affirmative. On the view taken by us, Appeal No. 494 of 1958 will be allowed, but there will be no order as to costs.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS_P026_C01",
+      "text": "27. Appeal no. 495 of 1958 will be allowed with costs.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Commissioner Of Excess Profits Tax, ... vs N.M. Rayaloo Iyer & Sons",
+    "case_id": "SC_1960_COMMISSIONER_OF_EXCESS_PROFITS_TAX_VS_NM_RAYALOO_IYER_SONS",
+    "court": "Supreme Court of India",
+    "year": "1960",
+    "facts_summary": "2. M/s. N. M. Rayaloo Iyer & Sons - hereinafter referred to as the assessees - are a firm carrying on business principally in dyes and chemicals. They are the chief representatives in \"South India\" of the products of the Imperial Chemical Industries Company (India) Ltd. - hereinafter referred to as the \"I. C. I.\" The business in dyes and chemicals was in the years material to these appeals, conducted in the name and style of \"Colours Trading Company\", with its head officer at Madura and in thirteen branch officer in different towns in \"South India.\" The business was carried on originally in partnership by three brothers, N. M. R. Venkatakrishna Iyer, N. M. R. Subbaraman and N. M. R. Krishnamurti. On April 13, 1946, N. M. R. Subbaraman retired from the firm and the share of N. M. R. Venkatakrishna Iyer was taken over by a private limited company, N. M. R. Venkatakrishna Iyer & Sons Ltd., but the business was, not withstanding the changes in the personnel, continued in the original name and style. One N. M. R. Mahadevan (son of N. M. R. Venkatakrishna Iyer)--hereinafter referred to as Mahadevan__was employed by the assessees as the General Manager of the Colours Trading Co. By letter dated April 17, 1940, the assessees wrote to Mahadevan agreeing to pay him remuneration at the rate of Rs. 1,800/- per annum and 5% o£ the net profits of the concern (Colours Trading Company) calculated by deducting from the gross profits of the business, salaries, wages and other outgoings but wit",
+    "legal_issues": "25. Counsel for the assessees submitted that, in any event, the Tribunal having in its supplementary statement of case stated that payment in excess of what was recommended by the I. C. I. was unjustified, this court may so modify the order of the High Court that deductions of the amounts which were recommended by the I. C. I. may be regarded as permissible deductions. The I. C. I. recommended distribution of a certain percentage out of the emergency commission to the sub- distributors; but in the administrative set up of the assessees, the sub-distributors did not find a place. The assessees carried on their business through paid employees. In terms, therefore, the recommendation by the I. C. I. had no application to the assessees.",
+    "ratio_summary": "6. Questions 1 to 3 in Referred Case No. 44 of 1953 were :\n\"(1) Whether in allowing a deduction under\nsection 10 (2) (xv)\nof the Income-tax Act, the Income-tax Officer is precluded from going into the question whether the amount was paid wholly and exclusively for the purpose of the assessees' business ?\n(2) Whether there was any material before the Tribunal to hold that the commission payment to N. M. R. Mahadevan at 12 1/2% before deduction of excess profits tax or business profits tax was not wholly and exclusively laid out for the purpose of the assessees' business ?\n(3) Whether the commission payment to the branch mangers, assistant managers and other employees is an expenditure laid out wholly and exclusively for the purpose of the business ?\" (1), the High Court observed that in computing net profits Excess Profits Tax could not be deducted, but on the materials on the record, the question whether the commission paid to the branch managers and other employees was properly deductible could not be decided, and accordingly the High Court called for and obtained from the Tribunal a supplementary statement of facts. The High Court after considering the supplementary statement observed that the assessees had undoubtedly distributed substantial sums out of the emergency commission to its managers and assistant managers in the branches at rates well above the minima recommended by the I. C. I., but the distribution was at rates within the percentages allowed by the I. C. I., a",
+    "final_order": "26. In our view the answer to the question whether the disallowance by the excess profits tax authorities of the commission paid to branch managers was justified under rule 12, Schedule 1 of the Excess Profits Tax Act should have been answered in the affirmative. On the view taken by us, Appeal No. 494 of 1958 will be allowed, but there will be no order as to costs.",
+    "outcome_summary": "26. In our view the answer to the question whether the disallowance by the excess profits tax authorities of the commission paid to branch managers was justified under rule 12, Schedule 1 of the Excess Profits Tax Act should have been answered in the affirmative. On the view taken by us, Appeal No. 494 of 1958 will be allowed, but there will be no order as to costs.",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

@@ -1,0 +1,591 @@
+{
+  "case_id": "SC_1995_1995_ALL_ANDHRAHC_16",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1995",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": "partly allowed",
+  "disposition": "partly_allowed",
+  "cites_count": 13,
+  "cited_by_count": 8,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1995\\1995_ALL_AndhraHC_16.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P001_C01",
+      "text": "Government Of Andhra Pradesh And Anr. vs V. Satyam Rao on 8 December, 1995\nEquivalent citations: 1996(2)ARBLR453(AP)\nAuthor:\nP. Venkatarama Reddi\nBench:\nP. Venkatarama Reddi\nJUDGMENT\n\n P. Venkatarama, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P002_C01",
+      "text": "1. C.R.P. No. 2460/1993, filed by the Government of Andhra Pradesh, arises out of the Judgment and Decree in O.S. No. 82/1991 on the file of the Subordinate Judge, Karimnagar. That suit was filed under\nSection 14(2)\nof the Arbitration Act praying the court to make the award dated 8.8.1991 passed by the sole arbitrator a Rule of the court. The suit was decreed. C.M.A. No. 891/1993 arises out of the application filed by the Government of A.P. in the same court under\nSections 30\nand\n\nof the Arbitration Act to set aside the award. The said application, i.e., O.P. No. 65/1991 was dismissed by the learned Sub-ordinate Judge, Karimnagar. The respondent-contractor was awarded a contract to execute the work - 'Lining to Kakatiya Canal from KM 215 to 218, K.S.R.J. Project'. The value of the work as per the contract was Rs. 35.55 lakhs which is less than the estimated value by 18%. The respondent entered into an agreement with the Superintending Engineer, I&PD, Construction Circle, Huzurabad, on 23.11.1981. A supplemental agreement was also entered into in March, 1982. The time for completion of the work was 12 months from the date of handing over the site.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P002_C02",
+      "text": "The site was handed over on 1.1.1982. The performance of contract got prolonged much beyond the stipulated period, mainly because the flow of water was not stopped by the Department. The respondent-contractor sent a letter on 26.12.1986 intimating the fact that he was closing the contract. This was followed by another letter dated 14.10.1987 (Ex. C-30) treating the contract as null and void and demanding settlement of his accounts, including compensation payable for the breach of contract. The Department itself sent a communication to the petitioner on 29.1.1990 that the contract was being closed without levy of penalties. In the meanwhile, the disputes were referred to a panel of arbitrators. Later on, the respondent filed O.P. No. 58/1988 wherein he prayed for the appointment of sole arbitrator. The court by its order dated 20.8.1990, appointed Sri R. L. Raju, retired Chief Engineer, P.W.D., as sole arbitrator in the place of the panel of arbitrators. The learned Arbitrator entered on the reference on 1.12.1990 and passed the award on 8.8.1991.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P002_C03",
+      "text": "An amount of Rs. 13,89,343/- was awarded towards various claims with interest thereon at 24% p.a. from the date of award to the date of realisation. A sum of Rs. 50,000/- was awarded towards costs. The particulate of claims and the amounts awarded are as follows :\n-----------------------------------------------------------------------------\nClaim. Description Amount Amount No. Claimed Awarded\n --------------------------\n Principal Interest/\n Damages/\n Compensation\n------------------------------------------------------------------------------\nA B\n (Rs.) (Rs.) (Rs.)\n------------------------------------------------------------------------------",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P003_C01",
+      "text": "1. Work done but not paid 3,00,000 48,732 36,500\n2. Towards the payment of final bill 16,562 12,500\n3. Refund of deposits and 2,00,000 1,62,311 1,00,000\n withheld amounts",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P004_C01",
+      "text": "4. Cost of dewatering 1,20,000 1,20,000 90,000\n5. Cost of metal and sand collected 2,00,000 87,530 65,500\n at site",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P005_C01",
+      "text": "6. Increased cost in executing work 2,97,912 1,11,908 84,000\n after May, 1995\n7. Extra overheads 4,44,000\n8. Refund of wrongful recovery",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P006_C01",
+      "text": "9. Loss of advances to labour 1,29,700 1,19,700 90,000\n10. Loss of idle establishment and 1,17,500 1,17,500 90,000\n idle machinery",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P007_C01",
+      "text": "11. Damage for delayed payment 99,600\n of part bills 4, 5, 6 and 11\n12. Loss of profit on the balance 1,01,250 36,600\n work",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P008_C01",
+      "text": "13. Compensation for the delay in\n payment of the awarded amount\n------------------------------------------------------------------------------\nTota 8,20,843 5,68,500\n------------------------------------------------------------------------------\nThe claim underhead 'B' was laid towards compensation/damages/interest in respect of the amounts claimed under head 'A'. The compensation amount claimed under head 'B' was arrived at by calculating 24% interest from the date on which the payments were alleged to be due. The arbitrator wherever he awarded the amount under head 'B' restricted the same from 14.10.1987 i.e., when reference for arbitration was sought. The counter-claim of the appellant viz., for recoveries on various accounts was negatived.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P009_C01",
+      "text": "2. The learned Government Pleader Mr. Ramalingeswara Rao appearing for the learned Advocate-General has broadly attacked the award on the ground that the arbitrator acted without jurisdiction by going beyond the terms of the contract in making his award under various items and committed legal errors apparent on the face of the award. It is his contention that the award should have been set aside by the learned Subordinate Judge.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P010_C01",
+      "text": "3. In reply to the submissions made by the learned Government Pleader, the learned counsel for the petitioner Mr. P. V. Narayana Rao defended the award reminding us of the principle that the Court's approach should be to upheld the award as far as possible and also pointing out the limited grounds of scrutiny available to the court under\nSection 30\nof the Arbitration Act.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P011_C01",
+      "text": "4. Both sides have tried to draw support from the decisions of the Supreme Court and of this court which we shall refer to at the appropriate juncture. We shall now proceed to deal with the claims one by one excepting those which remained uncontested.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P012_C01",
+      "text": "5. For the sake of convenience, we would like to take up Claim No. 6. The case of the contract is that the execution of the work had to be prolonged much beyond the stipulated period of contract solely on account of the delay, defaults and breaches of contract on the part of the Department, with the result that he had to incur extra cost towards materials, labour, transport etc. Hence, he claimed Rs. 2.98 lakhs towards escalation in cost at 25% extra for the work done beyond the agreement period, deducting the extra rates already paid for apart of the extended period.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P013_C01",
+      "text": "6. The learned arbitrator referred to clause 2(b) of the 'Additional Conditions of Contract' in Schedule 'D' appended to the tender documents which reads as follows :\n\"2(b). Water may be released into the canal from March to June and the work may have to be stopped partly or wholly during this period. In such a case, the Contractor shall resume and complete the work after the water supply is closed. No extra rates for any item other than the agreement rates will be paid due to such interruption in work. Necessary extension of time will, however, be given.\"\nThe arbitrator found that the Department did not stop the water flow by 1.7.1982 nor did it intimate the contractor the possible day by which the release will be stopped. It was found that the water was being released into the canal leaving short gaps for the contractors to execute the work.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P013_C02",
+      "text": "The flow particular which are not in dispute and which were in fact adverted to by the arbitrator himself are as follows :\n\"Flow period \n\n 14.3.1982/26.3.1982 to 30.11.1983 \n\n 15.2.1984 to 28.2.1984 \n\n 29.8.1984 to 10.1.1985 \n\n 5.3.1985 to 25.3.1985 \n\n 12.7.1985 to 1.6.1985 \n\n26.6.1985 till the date of closure notice.\"\nIt was observed that the release of water into the canal was being done by the Department for its own reasons and it amounted to breach of obligation on the part of the government. The arbitrator found that the contractor was prevented from completing the contract by reason of the water flow in the canal being allowed for an indefinite period every year. The arbitrator further referred to the understanding reached between the contractor and the Department at the meeting held on 9.8.1983 where under the escalated rates as per the Standard Schedule of Rates plus or minus the original tender premium was offered in addition to dewatering and desilting charges to be paid extra, if the balance work was done by June, 1984. The contractor expressed his willingness to resume the work and to complete the same by June, 1984.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P013_C03",
+      "text": "This understanding was reached on the basis that the canal could be closed by the end of October and it would be possible to resume the lining works form November, 1983 to June, 1984, but the canal was made free from water only by the end of November, 1983 and after the work was resumed in January, 1984, it was soon intercepted by the release of water on 17.2.1984 for about 10 days and thereafter in July, 1984. For the work done by the contractor in 1984, extra rates over and above the agreement rates based on S.S.R. of 1984-85, was allowed to the respondent and payments were made accordingly. The learned arbitrator observed that by parity of reasoning, the Government ought to pay further increased rates based on S.S.Rs. of 1985-86, for the work done by him after May, 1985. Thus observing, he arrived at the value of work done after May, 1985 based on the quantum of work taken from the measurement books and the increased rates as per the S.S.R. of 1985-86 (over and above the 1984-85 rates) and worked out the difference as per Clause 6 of the Additional Conditions of the Tender Notice. 25% increase uniformly sought for by the contractor was not allowed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P013_C04",
+      "text": "Thus, the arbitrator awarded 1.12 towards claim No. 6-A.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P014_C01",
+      "text": "7. The Department relied upon Clause 59 of the A.P. Standard Specifications which formed part of the contract to resist the claim of the contractor and before us also, reliance is placed on this clause, and the recent decision of the Supreme Court in\nCh. Ramalinga Reddy v. Supdt. Engineer\n(1994 (5) Scale 67). Clause 59 provides that no claim for compensation on account of the delays or hindrances to the work from any cause whatever shall lie except as mentioned therein. Clause 59 further provides that reasonable extension of time will be allowed by the Executive Engineer for unavoidable delays that might result from causes which in the opinion of the Executive Engineer are undoubtedly beyond the control of the contractor. It has been held by a Division Bench of this court consisting of Gangadhara Rao and Jeevan Reddy, JJ., in A.A.O. No. 677 of 1981 dated 19.4.1982 that by virtue of Clause 59, the contractor was precluded from claiming any compensation on account of the delays or hindrances arising from any clause whatever including those arising on account of acts or omissions of the departmental authorities. State of A.P. v.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P014_C02",
+      "text": "Associated Engineering Enterprises Hyderabad , Jeevan Reddy, J., Speaking\nfor the Division Bench again referred to Clause 59 and observed at paragraph 26 as follows :\n\"Applying the principle of\nthe above decision\nto the facts of the case before us, it must be held that clause 59 bars a claim for compensation on account of any delays or hindrances caused by the department. In such a case, the contractor is entitled only to extension of the period of contract. Indeed, such an extension was asked for, and granted on more than one occasion. The contract was not avoided by the contractor, but he chose to complete the work within the extended time. In such a case, the claim for compensation is clearly barred by clause 59 of the APDSS which is admittedly, a term of the agreement between the parties.\"\nEarlier the learned Judges referred to another division Bench decision of this Court in State of A.P. v. Shivraj Reddy (1988) 2 APLJ 465), wherein it was held that for the work done beyond the contract period, the contractor must be paid as per the standard specification rates when the delay occurred on account of default in handing over the site at the agreed time.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P014_C03",
+      "text": "Jeevan Reddy, J., distinguished that Judgment stating that the claim in that case was for payment of rates as per the S.S.Rs., whereas in the case before them, the claim was a pure and simple claim for compensation. Therefore, it was held that the principle of the decision in A.A.O. No. 677 of 1981 governed the case. Moreover, a major portion of the claim in that case pertained to the period of contract itself and such a claim was held to be impermissible by virtue of Clause 59 of APDSS. In Govt. of A.P. v. P. V. Subha Naidu (1989 (2) APLJ 362). Jeevan Reddy, J., speaking for the Division Bench referred to\nP. M. Paul v. Union of India\n, and distinguished\nthe said decision\non the ground that the cases involving breach of contract by the government stood on a different footing. Paul\n's case (supra), it was pointed out that once it was held that the arbitrator had jurisdiction to find that there was delay in execution of the contract due to the conduct of the respondent, the respondent shall be liable for the consequences of the delay, namely, increase in prices.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P014_C04",
+      "text": "The award of escalation charges was held to be incidental to the finding of breach of contractual obligation by the government. Therefore, it was held that the arbitrator had jurisdiction to go into the question.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P015_C01",
+      "text": "8. In the recent case of\nCh. Ramalinga Reddy v. Superintending Engineer\n(supra), the Supreme Court approached the view taken by the Division Bench consisting of Jeevan Reddy and Neeladri Rao, JJ. in A.A. No. 1148 of 1986 and negatived the claim for escalation. The Supreme Court white dealing with the claim for \"payment of extra rates for work done beyond agreement time at the schedule of rates prevailing at the time of execution\" referred to clause 59 of the A.P. Standard Specifications and held that the claim was impermissible in view of the said clause. It was observed that the claim made\nin that case\nfell outside the defined exceptions in clause 59. Paul\n's case (supra) was distinguished on the following two grounds :\n\"There was in\nP. M.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P015_C02",
+      "text": "Paul\n's case no clause in the contract which provided that the respondent would not be liable to pay compensation on account of delay in the work from any cause nor was it stipulated when extension of time was granted to the appellant to complete the work, that no claim for compensation would lie.\"\nThen, it was observed that the jurisdiction of the arbitrator was limited by the terms of the contract. \"Where the contract plainly barred the appellant from making any claim, it was impermissible to make an award in respect thereof and the court was entitled to intervene.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P016_C01",
+      "text": "9. The question is whether in the light of the aforementioned decisions, especially the latest decision of the Supreme Court, Clause 59 precludes claim No. 6 being raised and allowed by the arbitrator and whether the arbitrator can be said to have committed an error of jurisdiction or a patent error of law in granting extra rate based on Standard Schedule of Rates in force during the relevant year i.e., 1985-86. Before dealing with the question of applicability of\nRamalinga Reddy\n's case (supra) to the facts of the present case, we could like to advert to what the arbitrator has said vis-a-vis 59. The arbitrator drawing support from the decision of this court in V. Raghunadha Rao v. State of A.P. (1988 (1) ALT 461), opined that clause 59 was totally inequitable and unreasonable. The learned arbitrator observed : \"There ought to be some sense of proportion; the contract period of one year cannot be extended for two more years without paying any compensation for the extra cost involved\".",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P016_C02",
+      "text": "As the execution of the contract within the time-limit stipulated was clearly frustrated by a fundamental breach or failure on the part of the Department, clause 59 cannot be put against the contractor. The arbitrator further commented, \"payments were made at the increased rates for the work done in 1984 season after accepting a supplemental agreement. By the same argument, the respondent ought to pay at further increased rates based on S.S.R. of 1985-86 for the work done after May, 1985 since water was again released in July, 1984 irregularly without giving adequate time for the completion of the work. The argument of the respondent invoking clause 59 is invalid in the light of his own acceptance of the breach in contract necessitating payment at increased rate and the claim as such cannot be resisted\". As already noticed, the increased rates for the work done after May, 1985 were worked out based on the S.S.R. of 1985-86 and in conformity with clause 6 of the Additional Conditions appended to the tender notice. Thus, the arbitrator awarded a sum of Rs. 1,09,908/- in addition to compensation of Rs. 84,000/-.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P016_C03",
+      "text": "We may mention that the reasoning of the arbitrator based on invalidity of clause 59 cannot be sustained for the reason that the judgment of the learned Single Judge in Raghunadha Rao's case (supra) has not become final and in the writ appeal filed against that judgment, the operation of the same has been suspended. Though the Division Bench confirmed the said. Judgment in\nState of A.P. v. Raghunadha Rao\n(1983 (1) ALT 242), the decision of the Division Bench was reversed by the Supreme Court in C.A. No. 530/1994 and the matter has been sent back to this court for fresh consideration of the writ appeal. As already noted the Supreme Court applied Clause 59 to negative the contractor's claim for escalation vide\nRamalinga Reddy\n's case (supra). In O.P. No. 4/1994 (vide Judgment dated 14.7.1995), a Division Bench of this court (Lingaraja Rath & Sudershan Reddy, JJ.)\nafter referring to Raghunadha Rao's case, held that the claim of the contractor for escalation of rates was beyond the arbitration clause in view of the decision of the Supreme Court in\nRamalinga Reddy\n's case.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P016_C04",
+      "text": "We must, therefore, proceed on the footing that clause 59 still holds the field and has to be given effect to if the facts and circumstances of the case warrent. Even then, the second reason given by the learned arbitrator commends itself for acceptance. At any rate, that reasoning which is to be found in the passage extracted supra at page 14 is not inconceivable nor impossible to adopt. It is an undisputed fact that the appellants themselves made extra payment based on the standard Schedule of Rates of 1984-85 for the work done in 1984 season pursuant to a supplemental agreement entered into between the parties. Thus, the appellants did not insist on the performance of the work at the very same rates during the prolonged period of contract, obviously realising the fact that the work could not be executed by the contractor within the stipulated period or within a reasonable time thereafter for reasons beyond his control and the fault lay at their doors. The appellants did not call in aid Clause 59 of the agreement in order to exculpate themselves from the liability to make extra payment when the Department was faced with the prospect of stoppage of work by the contractor.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P016_C05",
+      "text": "In the interests of progress of work, it entered into a supplemental agreement. The appellants must therefore, be deemed to have waived their right to insist on the adherence to Clause 59 which purports exclude the liability to pay compensation in the circumstances specified therein. In the context of this changed situation, the arbitrator felt that on a similar analogy or party of reasoning, the contractor shall be entitled for the payment at the Standard Schedule of Rates prevailing in the year 1985-86 in respect of the work done during 1985-86 season. When once it was found by the arbitrator that there was a fundamental breach of obligation under the contract by one of the contracting parties, namely, the government, it was within the incidental power to the arbitrator to quantify the loss that was caused to the contractor as a direct result of such breach. The arbitrator acted within his jurisdiction to determine this aspect and felt it proper to award extra amount for the work done during 1985 season based on the same principle that was adopted by the Department itself for the immediately preceding period. The ratio of decision in\nP. M.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P016_C06",
+      "text": "Paul\n's case (supra) which was explained in by Jeevan Reddy, J. in P. V. Subba Naidu's case (supra) gets squarely attracted. Ramalinga Reddy\n's case (supra), the Supreme Court distinguished\nP. M. Paul\n's case on the two grounds : firstly, on the ground that there was no clause similar to Clause 59 excluding the claim for compensation and secondly the Department made it clear when extension of time was granted, that no claim for compensation would lie. As far as the applicability of Clause 59 is concerned, we have already held that the appellants themselves waived their right to enforce that clause and entered into a revised agreement, agreeing to pay extra rate for, the work done in 1984 season. No doubt, there was no similar agreement for the work done during 1985 season but the learned arbitrator considered it just and proper to adopt the same principle for the succeeding season also as the breach, which was undoubtedly fundamental in its nature, persisted in the next season also. In doing so, the arbitrator did not go contrary to the contractual terms but has only given effect to something that flowed as a necessary concommitant (to quote the words of Hansaria, J.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P016_C07",
+      "text": "In State of Rajasthan vs. Puri Construction Co. Ltd. and Anr. , of what was agreed to between the parties in regard to the execution of work beyond the contractual period. What the arbitrator had done was only to go into an aspect incidental to the breach of contract as was done in\nP. M. Paul\n's case. But, he had not done anything de hors the contract. The second point of distinction noted in\nRamalinga Reddy\n's case (supra) has also no application here as the appellant did not at anytime notify the respondent that the work had to be done during the extended period of contract without claiming any compensation. In fact, the appellants themselves allowed the extra rate for 1984 season. The appellant never informed the respondent contractor that the payment over and above 1984-85 S.S.R. rates or any other compensation was not payable to him. On the other hand, it is apparent from the award and the documents mentioned therein that the respondent was throughout claiming compensation extra payment for the loss suffered by him for the work that had to be undertaken beyond the contractual period.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P016_C08",
+      "text": "The principle underlying Section 55 of the Contracts Act cannot, therefore, be put against the petitioner as was done in\nAssociated Engineering Enterprises\n' case (supra). We therefore see no error of jurisdiction or on error of law apparent on the face of the award in allowing claim No. 6-A partly.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P017_C01",
+      "text": "10. Claim No. 12-A (Loss of Profit) : The respondent claimed Rs. 1,01,250/- estimating the loss of profit which he could have derived if he had executed the balance work and the profit was Calculated at 15%. The learned arbitrator arrived at the value of the balance work not executed at Rs. 244 lakhs and calculated profit thereon at 15%. The arbitrator held that the respondent having committed breach of contract by not stopping the flow in the canal after July, 1985 for at least two months to complete the balance work, the Government was liable to pay him damages towards loss of profit on the balance work which the contractor was prevented from executing. The plea that the alleged damage was remote was negatived. The learned Government Pleader appearing for the appellant has contended that this claim is not admissible on the principle of remoteness of damage and he placed reliance on the Division Bench decision of this court in Govt. of A.P. v. E.C. Techno Industries Ltd. (1989 (2) ALT 320). It is contended that such a claim is based on hypothetical considerations which the arbitrator should have ignored. We are unable to accept this contention.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P017_C02",
+      "text": "We do not think that any error of law has been committed by the arbitrator in awarding the aforementioned sum towards loss of profit which he could have made in the normal course of things if he was not disabled from performing the contract by reason of the breach on the part of the appellant. In M/s. A. T. Brij Paul Singh and others v. State of Gujarat\n, the Supreme Court upheld the award of damages under the head 'loss of profit'. The Supreme Court held :\n\"And the second reason to reject the contention is that ordinarily a contractor while submitted his tender in response to an invitation to tender for a works contract reasonably expects to make profits. What would be the measure of profit would depend upon facts and circumstances of each case. But that there shall be a reasonable expectation of profit is implicit in a works contract and its loss has to be compensated by way of damages if the other party to the contract is guilty of breach of contract cannot be gain said.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P017_C03",
+      "text": "In this case we have the additional reason for rejecting the contention that for the same type of work, the work site being in the vicinity of each other and for identical type of work between the same parties, a Division Bench of the same High Court has accepted 15% of the value of the balance of the works contract would not be an unreasonable measure of damages for loss of profit. We, are therefore, of the opinion that the High Court was in error in wholly rejecting the claim under this head.\"\n\"Now if it is well-established that the respondent was guilty of breach of contract inasmuch as the rescission of the contract by the respondent is held to be unjustified, and the plaintiff contractor had executed a part of the works contract, the contractor would be entitled to damages by way of loss of profit. Adopting the measure accepted by the High Court in the facts and circumstances of the case between the same parties and for the same type of work at 15% of the value of the remaining parts of the works contract, the damages for loss of profit can be measured.\"\nThe above decision of the Supreme Court is a complete answer to the appellants' contention.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P017_C04",
+      "text": "That apart, it may be noticed that in E.C. Techno Industries' case (supra), the claim made and allowed towards loss of profit arising from breach of contract was not rejected by this court. What was disallowed on account of remoteness of damages was the claim for compensation for non-payment of amounts towards certain items. We, therefore, see no legal infirmity in the awards as far as this claim is concerned.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P018_C01",
+      "text": "11. Now, we will take up the other claims which, in our view, need to be disallowed. Claim No. 5-A (Cost of metal and sand collected at site) :- In the claim statement this is how the respondent put forward his claim :\n1000 cum. of hard broken metal @ Rs. 150 cum. ... Rs. 1,50,000 \n1000 cum. of sand @ Rs. 50 cum. ... Rs. 50,000 \n -----------------\n Rs. 2,00,000\n -----------------\nThe arbitrator awarded Rs. 87,530/- after reducing the rate at which the cost had to be calculated. The arbitrator observed as follows :\n\"In the circumstances of the case, when the respondent breaches the terms of the contract by preventing the petitioner from completing the work without giving any advance notice to stop collection, of materials, the respondent is bound to compensate for the materials collected in anticipation and left at site on abandoning the work without notice. If the respondent so desired, he could have replied to the letter of the petitioner dated 17.10.1987 Ex. C. 30, asking him to take away his materials.\"\nWe are of the view that there is neither factual nor legal basis for awarding any amount towards this claim.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P018_C02",
+      "text": "The learned arbitrator proceed on a wrong assumption that the Department appropriated the material stacked at the work site, after the contractor abandoned the work. The respondent did not put forward any such case in the claim statement. Why and how he was entitled for the cost of metal and sand has not been explained in the claim statement nor in the award. Merely because the sand and metal could not be utilised in the work, the respondent cannot put forward any claim under law to make good the cost of the unutilised material. It is not the case of the respondent that the Department prevented him from taking away his own material that remained on the work site by the date of abandonment of work. The arbitrator set up a new case for the contractor in observing that the Department could have replied to the contractor's letter dated 17.10.1987 (Ex. C. 30) advising him to take away his material. We have looked into Ex. C. 30. It does not refer to the fact that so much quantity of metal and sand remained at the work site nor any request was made therein for permission (if any permission was necessary) to take a way to unutilised material. In Ex.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P018_C03",
+      "text": "C. 30, the respondent apart from calling upon the Superintending Engineer to treat the contract as null and void and requesting for finalisation of accounts, refuted the Department's claim for recovery of certain amounts on account of sales of metal obtained from Government quarries, but he did not speak anything about the stacked quantities of his own metal. Having regard to the undisputed facts, we find no legal basis at all to sustain the claim under item 5-A and the finding of the arbitrator should be characterized as nothing but perverse, thereby introducing a legal infirmity demonstrable from the reading of the award together with the accompanying pleadings and the documents referred to in the award itself. It is apparent from the award that there is no pleading, much less any evidence, to support the conclusion of the arbitrator. In State of Rajasthan v. Puri Construction Co. Ltd. , G. N.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P018_C04",
+      "text": "Raj, J. speaking for the Division Bench while pointing out that \"by and large the courts have disfavoured interference with arbitration award on account of error of have and fact on the score of misappreciation and misreading of the materials on record and have shown definite inclination to preserve the award as far as possible\", made the following pertinent observations at page 502 which apply with equal force to the claim in question \n\n\"Precisely for the aforesaid reasons, the erroneous application of law constituting the very basis of the award and improper and incorrect findings of fact, which without closer and intrinsic scrutiny, are demonstrable on the face of the materials on record, have been held, very rightly, as legal misconduct rendering the award as invalid.\"",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P019_C01",
+      "text": "12. Claim No. 9-A (Loss of Advances to Labour) and Claim No. 10-A (Loss on Idle Establishment and Idle Machinery) : The arbitrator awarded the entire amount claimed by the contractor, i.e., a sum of Rs. 1,19,700/- and Rs. 1,17,500/- respectively towards these two claims a part from the compensation of Rs. 90,000/- for each claim. With regard to claim No. 9-A, the case of the contractor is that he paid advance to 220 Oriya labour at Rs. 500/- per head to get ready to take up the work by 1.7.1982, that he could recovers the advance only from 22 labourers and the remaining Rs. 1,09,000/- was lost as the work could not be resumed for a long time on account of flow in the canal. As regards claim No. 10-A, the case of the contractor was that he had to keep the machinery and equipment as well as lorry and tractor idle and that he had to pay hire charges at specified rates for two months, i.e., from 1.7.1982 to 31.8.1982. The hire charges were calculated at Rs. 1,01,900/-. According to the contractor, he had to incur a sum of Rs. 15,600/- for salaries to staff though no work was turned out during that period.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P019_C02",
+      "text": "The award does not make any reference to the accounts or other proof in support of these claims. It does not appear from the award that the arbitrator had at least examined the accounts of the contractor. The claims were allowed only on the ground that the letter dated 30.8.1982 (Ex. C. 1) addressed by the contractor claiming compensation for the losses incurred under these two heads was not replied to by the Department and that the Department did not even inform the petitioner about the continuance of flow in the canal and the likely date on which the work could be resumed. It was observed the arbitrator that \"in the resulting suspense, the petitioner was forced to keep his machinery and establishment idle for two months hoping that the respondent (Department) would close the flow at any time\". Though some loss cannot be ruled out, none of the reasons given by the arbitrator are relevant for accepting the all claim of the contractor that he lost heavy amount on advance to labour and through out the period of two months, he paid hire charges for the equipment, lorry and tractor as claimed in Ex. C. 1.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P019_C03",
+      "text": "The minimum which the arbitrator was expected to do was to look into the accounts, but, this fundamental duty cast on the arbitrator was not discharged. It must, therefore, be held that the arbitrator misconducted himself within the meaning of\nSection 30\nof the Arbitration Act. We do not want to rest our conclusion on his ground alone. There is yet another insuperable hurdle which the respondent has to face. That hurdle is to be found in Clause 59 of the A.P. Standard Specifications, forming part of the agreement. Clause 59, as already noticed, enjoins that \"no claim for compensation on account of delays or hindrances to the work from any cause whatever shall lie except as hereinafter defined. Reasonable extension of time will be allowed by the Executive Engineer or by the Officer competent to sanction the extension for unavoidable delays .....\" We have already referred to the decision in A.A.O. No. 677 of 1981 wherein it was held by the Division such that the words 'from any cause whatever' occurring in Clause 59 are wide enough to take in any delays and hindrances caused by the Department or arising from other reasons. In a recent case i.e.,\nPrasad & Company v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P019_C04",
+      "text": "Superintending Engineer (I.C\n.) (1995 (3) ACT 537), after reviewing the case law on the subject, we held that Clause 59 creates a bar against the claim for compensation atleast during the stipulated period of the contract. We observed thus :\n\"Relying on this provision in the Agreement, the claim for compensation or escalation or payment of extra amount over and above the contracted rates was negatived by this court atleast in three decisions. (\nVide State of A.P. v. Associated Engineering Enterprises\n(supra), CMA No. 786/86 dated 1.12.1988 and CMA No. 998/84 dated 19.8.1989). The last decision was a case in which the claim was made for extra payment on account of escalation of costs for the work done beyond the agreement period. One of the grounds alleged by the contractor was delay in handing over the site free of crops. The other grounds pleaded were found to be totally irrelevant. The learned Judges, relying, inter alia, on P.S. 59 of APDSS, rejected the claim. The claims of the contractor in the present case is still worse.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P019_C05",
+      "text": "He wants escalation over and above the agreed rates even during the currency of the agreement period.\"\nThe arbitrator, as already noticed, ignored Clause 59 based on the decision of this court in Raghunadha Rao's case (supra) but that Judgment has not become final and it has been suspended pending writ appeal. Ramalinga Reddy\n's case referred to supra, the Supreme Court applied Clause 59 to negative a claim for extra rate even for the work done during the extended period of contract. However, it is not clear from\nthe said decision\nfor, what reasons the execution of the work got delayed. Be that as it may, leaving part the considerations that should weigh with the court in a case where the period of contract gets unduly extended by reason of default on the part of the employer, there is no difficulty in applying Clause 59 to negative the claims for compensation arising out of the delays or hindrance operating during the contractual period. It must, therefore, the held that the arbitrator insofar as he discarded Clause 59 despite the binding decision of this court, travelled outside the confines of the contract and thereby committed a legal misconduct.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P019_C06",
+      "text": "Clause 59 is reinforced by the stipulation in Clause 2(b) of Additional Conditions of Contract (Schedule 'D' appended to the agreement) wherein it is stipulated that no extra rates will be paid due to interruption in work on account of release of water into the canal. The learned arbitrator proceeded on a fundamentally, wrong assumption in thinking that on the date of 1st July, 1982, the water flow in the canal shall be stopped. There is no such categorical undertaking in Clause 2(b). Clause 2(b) only gives rough indication of the duration of interruption of work. When the water flow was continuing and there was no knowing as to when it would be stopped, no reasonable or prudent contractor could have brought the machinery and vehicles to the site on hire and kept there from 1.7.1982 onwards, incurring hire charges from that day upto the end of August, 1982. It may be noted that the claim for compensation, as revealed from Ex. C-1, was for two months i.e., 1.7.1982 to 30.8.1982 and the hire charges were calculated on that basis.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P019_C07",
+      "text": "Thus, viewed from any angle, we are of the view that claims 9-A and 10-A are unsustainable in law and the arbitrator committed a jurisdiction error as well as legal misconduct in awarding the amounts claimed by the contractor.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P020_C01",
+      "text": "13. As we have negatived the main claims, the question of awarding compensation which the arbitrator awarded under items 9-B and 10-B does not arise.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P021_C01",
+      "text": "14. The award as regards these two claims should not have been upheld by the learned Subordinate Judge. The learned Subordinate Judge failed to consider various relevant aspects adverted to above while scrutinising the speaking award in the instant case.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P022_C01",
+      "text": "15. Ramalinga Reddy\n's case (supra), the Supreme Court after referring to the case of Sudarshan Trading Co., Observed :\n\"An award may be set aside on the ground that the arbitrator had exceeded his jurisdiction in making it. In the case before us, the arbitrator was required to decide the claims referred to him having regard to the contract between the parties. His jurisdiction, therefore, is limited by the terms of the contract. Where the contract plainly barred the appellant from making any claim, it was impermissible to make an award in respect thereof and the court was entitled to intervene.\"\nAgain, after referring to the principle that the court should be very circumspect about setting aside an award reached by an arbitrator, observed thus :\n\"We agree, but circumspection does not mean that the court will not intervene when the arbitrator has made an award in respect of a claim which is, by the terms of contract between parties, plainly barred.\"\nThe term of the contract that was referred to in the above passage of Clause 59 of A.P. Standard Specifications. It is not the case of the contractor that his claims fall within the defined exceptions contemplated by Clause 59.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P022_C02",
+      "text": "Hence, the above observations of the Supreme Court are quite apposite in the context of the claims which we have just now considered.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P023_C01",
+      "text": "16. Claim No. 1 : The learned Government Pleader submitted that no reasons were assigned by the learned arbitrator and it is further submitted that this claim was not put forward in the original claim statement filed before the panel of arbitrators. None of these objections could be substantiated by the learned Government Pleader. The award does contain the reasons for allowing this claim. No material has been placed before us to show that the claim was not put forward earlier or it was not the subject-matter of reference to arbitration. Hence, we reject the contention of the learned Government Pleader.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P024_C01",
+      "text": "17. Award of Compensation under Head 'B' relating to Claims 1 to 4 and 6 :- The contractor claimed under Head 'B' in respect of each claim certain amounts under the caption 'compensation/damages/interest'. This amount was calculated by adding 24% to the claim amount from the due date till the date of entering on the reference. The learned arbitrator awarded lesser sum by limiting the compensation so claimed from 14.10.1987 i.e., the date on which Ex. C-30, notice was issued by the contractor treating the contract as null and void and demanding payments for the loss sustained by him. The amount awarded under Head 'B' was described by the arbitrator as \"opportunity cost of the capital blocked\".",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P025_C01",
+      "text": "18. The learned Government Pleader contended that the amount awarded under Head 'B' represents interest calculated from the date of notice (Ex. C-30) and it amounts to awarding interest by way of damages which is not permissible in law as per the decisions of the Supreme Court in\nU.O.I. v. Ralla Ram\n, and\nUOI v. Watkins Mayor & Co.\n. It is also contended relying on the recent decision of the Supreme Court in\nDurga Ram Prasad v. Govt. of A.P.\n, that interest for the period prior to making the award is not admissible in view of the prohibition contained in Clause 69 of A.P.D.S.S. In that case, the Supreme Court laid down the principle that until the dispute is settled by the arbitrator, it cannot be said that any amount is due and therefore no interest is payable. We find no merit in these contentions. What is awarded under Head 'B' is a lump sum amount called by the arbitrator as \"opportunity cost of the capital blocked\". If interest was added to the specific amounts due to the contractor, that was only as a measure of ascertaining the compensation or loss sustained by the contractor and it does not necessarily amount to awarding interest either by way of damages or otherwise.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P025_C02",
+      "text": "The distinction between the award of interest by way of damages and the calculation of interest as a measure of ascertaining the damages was highlighted by the Supreme Court in\nUnion of India v. S.S.H. Syndicate\n. Just as\nin that case\n, here also the specific amount due to the contractor for the work done by him or in the form of deposits and refundable amounts got blocked up with the Government and in order to assess the losses suffered by the contractor on this account, there is no objection in applying the yardstick of interest, even assuming such yard stick was applied by the arbitrator. The learned Government Pleader submits that the contractor himself had sought for payment of interest at 24% under Head 'B', but that is only partly correct. The contractor used various alternative words as compensation/damages/Interest and the arbitrator did not say in specific terms that what was awarded under Head 'B' represented interest payable for the main claims. We, therefore, see no room for the application of the principle\nlaid down by\nthe Supreme Court in the decisions cited by the learned Government Pleader.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P026_C01",
+      "text": "19. The learned Government Pleader then submitted that the compensation or damages of the nature claimed under Head 'B' is not admissible on the principle of remoteness of damages. In this connection, he relied on the Division Bench decision of this court in Govt. of A.P. v. E.C. Techno Industries Ltd., (supra). But that decision was distinguished by us in a recent case vide C.M.A. No. 1301/1989 dated 27.7.1995. We observed that the claims put forward in the E.C. Techno Industries' case were not comparable to the claims for refund of specific amounts withheld by the Department. We observed thus :\n\"The damages awarded to make good the loss to the claimant on account of non-return of the deposits and other sums due to him cannot be said to be remote. On the same principle, we must uphold the award of certain amounts under Head 'B' to compensate the contractor for the loss suffered by him on account of non-release of deposits, withheld amounts, final bill amounts and the amounts due for the actual work done by him as per the Agreement. The loss which was suffered by the respondent by reason of withholding of the amounts due to him cannot be said to be remote or indirect.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P026_C02",
+      "text": "When once it was found that the counter-claim was untenable and there was no justification for withholding the said amounts, the arbitrator could incidentally award reasonable compensation.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P027_C01",
+      "text": "20. However, as far as claim No. 6 is concerned, we find no justification for awarding Rs. 84,000/- under Head 'B'. The amount awarded under Claim No. 6-A is itself in the nature of compensation. For the probable loss that was incurred by the contractor for executing the work beyond 1984-85 season, award of further compensation on the compensation amount arrived at by the arbitrator is in our view unwarranted. The said amount arrived at on calculation of interest from a particular date tantamounts to award of interest by way of damages. It is not a case where the rate of interest has been applied as a measure of ascertaining damages for a specific sum locked up with the other contracting party. The award under item 6-B is, therefore hit by the principle laid down in the decisions adverted to supra. Hence, we are of the view that the arbitrator committed an error of law apparent on the face of the award by duplicating the compensation under item 6.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P028_C01",
+      "text": "21. Future interest :- The learned Government Pleader finally submitted that the interest awarded at 24% from the date of award to the date of realisation is excessive. Assuming that it is on the high side, we cannot act as an appellate court and reduce the rate of interest. Suffice it to observe that the rate of interest awarded from the award till the date of realisation is not such as could justify an inference of misconduct on the part of the arbitrator. We see no palpable error of law in this regard.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P029_C01",
+      "text": "22. In the result, the C.M.A. and the C.R.P. are partly allowed and the award and the Judgment of the learned Subordinate Judge, Karimnagar confirming the awarded are hereby set aside to the extent indicated above. It follows that there shall be a decree for a sum of Rs. 7,35,113/- (Rupees seven lakhs thirty five thousand one hundred and thirteen only) with interest from the date of decree as stipulated by the court below. We make no order as to costs.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_1995_1995_ALL_ANDHRAHC_16_P030_C01",
+      "text": "23. Ordered accordingly, Appeal and Revision partly allowed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1995_1995_ALL_ANDHRAHC_16",
+    "court": "Supreme Court of India",
+    "year": "1995",
+    "facts_summary": "1. C.R.P. No. 2460/1993, filed by the Government of Andhra Pradesh, arises out of the Judgment and Decree in O.S. No. 82/1991 on the file of the Subordinate Judge, Karimnagar. That suit was filed under\nSection 14(2)\nof the Arbitration Act praying the court to make the award dated 8.8.1991 passed by the sole arbitrator a Rule of the court. The suit was decreed. C.M.A. No. 891/1993 arises out of the application filed by the Government of A.P. in the same court under\nSections 30\nand\n\nof the Arbitration Act to set aside the award. The said application, i.e., O.P. No. 65/1991 was dismissed by the learned Sub-ordinate Judge, Karimnagar. The respondent-contractor was awarded a contract to execute the work - 'Lining to Kakatiya Canal from KM 215 to 218, K.S.R.J. Project'. The value of the work as per the contract was Rs. 35.55 lakhs which is less than the estimated value by 18%. The respondent entered into an agreement with the Superintending Engineer, I&PD, Construction Circle, Huzurabad, on 23.11.1981. A supplemental agreement was also entered into in March, 1982. The time for completion of the work was 12 months from the date of handing over the site. The site was handed over on 1.1.1982. The performance of contract got prolonged much beyond the stipulated period, mainly because the flow of water was not stopped by the Department. The respondent-contractor sent a letter on 26.12.1986 intimating the fact that he was closing the contract. This was followed by another letter dated 14",
+    "legal_issues": "2. The learned Government Pleader Mr. Ramalingeswara Rao appearing for the learned Advocate-General has broadly attacked the award on the ground that the arbitrator acted without jurisdiction by going beyond the terms of the contract in making his award under various items and committed legal errors apparent on the face of the award. It is his contention that the award should have been set aside by the learned Subordinate Judge. 3. In reply to the submissions made by the learned Government Pleader, the learned counsel for the petitioner Mr. P. V. Narayana Rao defended the award reminding us of the principle that the Court's approach should be to upheld the award as far as possible and also pointing out the limited grounds of scrutiny available to the court under\nSection 30\nof the Arbitration Act. 7. The Department relied upon Clause 59 of the A.P. Standard Specifications which formed part of the contract to resist the claim of the contractor and before us also, reliance is placed on this clause, and the recent decision of the Supreme Court in\nCh. Ramalinga Reddy v. Supdt. Engineer\n(1994 (5) Scale 67). Clause 59 provides that no claim for compensation on account of the delays or hindrances to the work from any cause whatever shall lie except as mentioned therein. Clause 59 further provides that reasonable extension of time will be allowed by the Executive Engineer for unavoidable delays that might result from causes which in the opinion of the Executive Engineer are undoubtedl",
+    "ratio_summary": "Jeevan Reddy, J., distinguished that Judgment stating that the claim in that case was for payment of rates as per the S.S.Rs., whereas in the case before them, the claim was a pure and simple claim for compensation. Therefore, it was held that the principle of the decision in A.A.O. No. 677 of 1981 governed the case. Moreover, a major portion of the claim in that case pertained to the period of contract itself and such a claim was held to be impermissible by virtue of Clause 59 of APDSS. In Govt. of A.P. v. P. V. Subha Naidu (1989 (2) APLJ 362). Jeevan Reddy, J., speaking for the Division Bench referred to\nP. M. Paul v. Union of India\n, and distinguished\nthe said decision\non the ground that the cases involving breach of contract by the government stood on a different footing. Paul\n's case (supra), it was pointed out that once it was held that the arbitrator had jurisdiction to find that there was delay in execution of the contract due to the conduct of the respondent, the respondent shall be liable for the consequences of the delay, namely, increase in prices. 8. In the recent case of\nCh. Ramalinga Reddy v. Superintending Engineer\n(supra), the Supreme Court approached the view taken by the Division Bench consisting of Jeevan Reddy and Neeladri Rao, JJ. in A.A. No. 1148 of 1986 and negatived the claim for escalation. The Supreme Court white dealing with the claim for \"payment of extra rates for work done beyond agreement time at the schedule of rates prevailing at the time of ",
+    "final_order": "22. In the result, the C.M.A. and the C.R.P. are partly allowed and the award and the Judgment of the learned Subordinate Judge, Karimnagar confirming the awarded are hereby set aside to the extent indicated above. It follows that there shall be a decree for a sum of Rs. 7,35,113/- (Rupees seven lakhs thirty five thousand one hundred and thirteen only) with interest from the date of decree as stipulated by the court below. We make no order as to costs.",
+    "outcome_summary": "Partly allowed. 22. In the result, the C.M.A. and the C.R.P. are partly allowed and the award and the Judgment of the learned Subordinate Judge, Karimnagar confirming the awarded are hereby set aside to the extent indicated above. It follows that there shall be a decree for a sum of Rs. 7,35,113/- (Rupees seven lak",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

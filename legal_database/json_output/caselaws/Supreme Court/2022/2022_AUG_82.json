@@ -1,0 +1,346 @@
+{
+  "case_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK",
+  "case_name": "Punjab National Bank vs Vijay Sitaram Dandnaik",
+  "normalized_case_name": "PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK",
+  "court": "Supreme Court of India",
+  "year": "2022",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 2277 of 2021",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "30 August 2022",
+  "judges": [
+    "V. Ramasubramanian",
+    "S. Abdul Nazeer"
+  ],
+  "author": "S. Abdul Nazeer",
+  "bench_type": "division",
+  "petitioner": "Punjab National Bank",
+  "respondent": "Vijay Sitaram Dandnaik",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 35,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2022\\AUG\\2022_AUG_82.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO.2277 OF 2021\n\n PUNJAB NATIONAL BANK …APPELLANT(S)\n\n VERSUS\n\n MR. VIJAY SITARAM DANDNAIK & ANR. ...RESPONDENT(S)\n\n ORDER",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P002_C01",
+      "text": "1. The order of admission of their petition under Section 7 of the\n\n Insolvency and Bankruptcy Code, 2016 (for short “IBC”) passed by\n\n the National Company Law Tribunal (for short “NCLT”), having been\n\n reversed by the National Company Law Appellate Tribunal (for short\n\nup with the above appeal.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P003_C01",
+      "text": "2. We have heard Shri Dhruv Mehta, learned senior counsel\n\nappearing for the appellant and Shri Rahul Totala, learned counsel\n\nappearing for the respondents.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P004_C01",
+      "text": "3. The appellant herein filed a petition under Section 7 IBC\n\nagainst M/s Jailaxmi Sugar Products Pvt. Limited, the Corporate\n\nDebtor, who is the second respondent herein claiming, inter alia, (i)\n\nthat vide sanction letters dated 07.05.2010 and 28.09.2010, a term\n\nloan was sanctioned to the second respondent herein; (ii) that by\n\na letter dated 17.09.2011, restructuring of the existing term loans\n\nand fresh sanction of term loan was granted to the Corporate\n\nDebtor; (iii) that the Corporate Debtor defaulted in repayment and\n\nbecame a NPA on 31.03.2013; (iv) that the appellant issued a\n\ndemand notice dated 30.04.2013 under\nSection 13(2)\nof the\n\nSecuritisation and Reconstruction of Financial Assets and\n\nEnforcement of Security Interest Act, 2002; (v) that the Corporate\n\nDebtor also executed Balance and Security Confirmation letters\n\ndated 03.07.2014 and 17.06.2017; (vi) that the appellant, along with\n\nthe Union Bank of India also filed an application in O.A.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P004_C02",
+      "text": "No.185 of\n\n2014 on the file of the DRT, Pune for the issue of a certificate of\n\nrecovery; (vii) that the original application was allowed by DRT, Pune\n\nby an order dated 01.11.2016, directing the Corporate Debtor and\n\nothers including respondent No.1 herein to jointly and severally pay\n\nto the appellant herein, a sum of around Rs.45 cores together with\n\ninterest @16.25% per annum (apart from the amount payable to\n\nUnion Bank of India); (viii) that the total amount outstanding from\n\nthe Corporate Debtor as on 13.08.2019 was Rs.108,34,33,364.19;\n\nand (ix) that in a parallel proceeding, the High Court of Judicature\n\nat Bombay had passed an order dated 04.01.2018 directing the\n\nwinding up of the Corporate Debtor.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P005_C01",
+      "text": "4. By an order dated 06.11.2019, NCLT admitted the petition of\n\nthe appellant herein, filed under\nSection 7\nIBC. Challenging the\n\norder of admission, the first respondent herein, who claims to be a\n\n50% shareholder, promoter, director and creditor of the Corporate­\n\nDebtor filed an appeal before NCLAT. By the order dated 02.03.2021\n\nimpugned in this appeal, the NCLAT set aside the order of the NCLT\n\non the ground that the claim of the appellant­Financial Creditor was\n\nbarred by limitation. Aggrieved by the said order, the Financial\n\nCreditor is on appeal before us.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P006_C01",
+      "text": "5. Before the NCLAT, the first respondent raised a preliminary\n\nobjection that in the light of the order of winding up passed by the\n\nHigh Court of Judicature at Bombay, an application under\nSection 7\n\nIBC was not maintainable. But the said contention raised by the\n\nfirst respondent was rejected by NCLAT on the basis of the decision\n\nof this Court in\nJaipur Metals and Electricals Employees\n\nOrganization vs. Jaipur Metals and Electricals Ltd. & Ors.1\n6. After overruling the objection relating to maintainability raised\n\non the basis of the order of winding up, NCLAT took up for\n\nconsideration the question of limitation. NCLAT opined that the\n\ndecision of this Court in\nBabulal Vardharji Gurjar vs. Veer Gurjar\n\nAluminium Industries Pvt. Ltd. & Anr.2\n, clinched the issue on the\n\nquestion of limitation and that the application under\nSection 7\n, filed\n\non 10.10.2019 was beyond a period of three years from the date of\n\ndefault (NPA) namely 31.03.2013.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P006_C02",
+      "text": "The Balance and Security\n\nConfirmation Letter dated 17.06.2017 was held by NCLAT to have\n\nbeen given after the expiry of three years from the date of default\n\nand as a consequence,\nSection 18\nof the Limitation Act was also\n\nheld to be inapplicable to the case of the appellant. Hence the\n\npresent appeal.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P007_C01",
+      "text": "6. But a perusal of the records and a careful consideration of the\n\ncontentions raised on both sides show that NCLAT failed to take\n\nnote of certain important aspects, both on fact and on law.\nSection\n\n1 (2019)\n\nSCC 227\n2 (2020) 15 SCC 1\n\n7(1) of the IBC enables a financial creditor to initiate corporate\n\ninsolvency resolution process “when a default has accrued”. The\n\nExplanation under sub­Section (1) of\nSection 7\nmakes it clear\n\nthat a default includes a default in respect of a financial debt\n\nowed not only to the applicant­Financial Creditor but to any\n\nother financial creditor of the Corporate Debtor. The fact that\n\nthe corporate debtor has been ordered by the High court of\n\nJudicature at Bombay to be wound up, is proof enough to show that\n\nthe case falls under the category mentioned in the Explanation to\nsection 7(1)\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P008_C01",
+      "text": "7. The word “default” is defined in\nSection 3(12)\nof the IBC to\n\nmean “non­payment of debt when whole or any part or instalment of\n\nthe amount of debt has become due and payable and is not paid by\n\nthe debtor or the corporate debtor, as the case may be.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P009_C01",
+      "text": "8. By Act\n26 of 2018, Section 238A was inserted in the IBC to\n\nprovide that the provisions of the\nLimitation Act, 1963\nshall, as far\n\nas may be, apply to the proceedings or appeals before the\n\nAdjudicating Authority and the NCLAT. By virtue of the above\n\namendment, the doubt if any, on the question of applicability of the\n\nlaw of limitation to the proceedings under the IBC, got cleared.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P010_C01",
+      "text": "9. It may be noted that different provisions of IBC, 2016 came into\n\nforce on different dates.\nSections 4\n\n, Sections 60 to 77, Sections\n\n198, 231 and 236 to 238 came into force on 01.12.2016, vide SO\n\nNo.3594 (E ) dated 30.11.2016.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P011_C01",
+      "text": "10. Act No.26 of 2018, by which Section 238A was inserted, came\n\ninto force on 06.06.2018. Therefore, a question arose in\nB.K. Educational Services Private Limited vs. Parag Gupta and\n\nAssociates3\nas to whether the provisions of the\nLimitation Act, 1963\nwould apply to applications filed under\nSections 7\n/\n\nof the IBC on\n\nand from its commencement on 01.12.2016 till 06.06.2018. This\n\nCourt took note of\nSection 3(37)\nof the IBC which makes a reference\n\nto the\nCompanies Act, 2013\n, insofar as words and expressions not\n\ndefined in the IBC are concerned and made a reference to\nSections\n\nand\n\nof the Companies Act, 2013 and came to the\n\nconclusion that by virtue of\nSection 433\nof the Companies Act, 2013,\n\nthe provisions of the\nLimitation Act\nwill apply even to proceedings\n\ninitiated before the insertion of Section 238A. As a consequence, this\n\nCourt held that\nArticle 137\nof the\nSchedule to the Limitation Act\n,\n\nwhich prescribes a period of three years from the date “when the\n\nright to apply accrues”, to any application for which no period of\n\nlimitation is provided elsewhere in the Schedule, will be applicable.\n\n3 (2019) 11 SCC 633\n10. The ratio in\nB.K.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P011_C02",
+      "text": "Educational Services\n(supra), found\n\nelaboration in\nJignesh Shah and Anr. vs. Union of India and\n\nAnr.4\n, where this Court held a petition for winding up to be barred\n\nby limitation, as it was filed beyond a period of three years from the\n\ndate on which the cause of action, as mentioned in an already\n\ninstituted suit for specific performance/damages arose. Two\n\nimportant principles could be deduced from the decision in\nJignesh\n\nShah\n(supra). They are: (i) a suit for recovery based upon a cause of\n\naction that is within limitation, cannot in any manner impact the\n\nseparate and independent remedy of winding up proceedings and\n\nhence the proceeding for winding up should also have been initiated\n\nbefore the expiry of the period of limitation; and (ii) in law, when\n\ntime begins to run, it can only be extended in the manner provided\n\nin the\nLimitation Act\n, say for instance, an acknowledgment of\n\nliability under\nSection 18\nof the Limitation Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Jignesh Shah and Anr v Union of India and\n\nAnr.4\n"
+      ],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P012_C01",
+      "text": "11. After Jignesh Shah\n(supra), this Court was concerned in\nBabulal Vardharji Gurjar\n(supra), with a case where one of the\n\nquestions that came up for consideration was whether the period of\n\nlimitation for filing an application under\nSection 7\nof the IBC, would\n\nbe different in the case of a debt secured by a mortgage. For\n\n4 (2019) 10 SCC 750\n\nanswering the said question, this Court considered all previous\n\ndecisions of this Court and enunciated the principles of law as\n\nculled out from those decisions in paragraph 32 as follows:\n“32. When Section 238­A of the Code is read with the above­\n noted consistent decisions of this Court in Innoventive Industries,\n B.K. Educational Services, Swiss Ribbons, K. Sashidhar, Jignesh\n Shah, Vashdeo R.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P012_C02",
+      "text": "Bhojwani, Gaurav Hargovindbhai Dave and\n Sagar Sharma respectively, the following basics undoubtedly\n come to the fore:\n(a) that the Code is a beneficial legislation intended to put the\n corporate debtor back on its feet and is not a mere money\n recovery legislation;\n(b) that CIRP is not intended to be adversarial to the corporate\n debtor but is aimed at protecting the interests of the corporate\n debtor;\n(c) that intention of the Code is not to give a new lease of life to\n debts which are time­barred;\n(d) that the period of limitation for an application seeking\n initiation of CIRP under\nSection 7\nof the Code is governed\nArticle 137\nof the\nLimitation Act\nand is, therefore, three years\n from the date when right to apply accrues;\n(e) that the trigger for initiation of CIRP by a financial creditor is\n default on the part of the corporate debtor, that is to say, that the\n right to apply under the Code accrues on the date when default\n occurs;\n(f) that default referred to in the Code is that of actual non­\n payment by the corporate debtor when a debt has become due\n and payable; and\n(g) that if default had occurred over three years prior to the date\n of filing of the application, the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P012_C03",
+      "text": "application would be time­barred\n save and except in those cases where, on facts, the delay in filing\n may be condoned; and\n(h) an application under\nSection 7\nof the Code is not for\n enforcement of mortgage liability and\nArticle 62\nof the\nLimitation\n Act\ndoes not apply to this application.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P013_C01",
+      "text": "12. After answering the question relating to a debt secured by a\n\nmortgage as aforesaid, this Court took up for consideration in\n\nBabulal, the question regarding applicability of\nSection 18\nof the\n\nLimitation Act. Though the decision in Jignesh Singh was by a\n\nthree member Bench which held in paragraph 21 of its decision that\n\n“in law when time begins to run it can only be extended in the manner\n\nprovided in the\nLimitation Act\n”, it was held in Babulal (by a 2\n\nmember Bench) that Limitation would begin to run from the date of\n\nNPA itself. To come to the said conclusion, this Court referred to the\n\ndecision in\nVashdeo R. Bhojwani vs. Abhyudaya\nCo­operative\n\nBank Ltd. & Anr.5\n13. But Vashdeo R. Bhojwani\n(supra) was a case where the debt\n\nwas declared as NPA in 1999 and a Recovery Certificate was issued\n\nin 2001, but the petition under\nSection 7\nIBC was filed in 2017. It is\n\nonly because of this, that this Court held in Vashdeo R. Bhojwani\n\nthat when the Recovery Certificate dated 24.12.2001 was issued,\n\nthat Certificate injured effectively and completely the appellant’s\n\nrights, as a result of which limitation would have begun ticking.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [
+        "Vashdeo R. Bhojwani v Abhyudaya\nCo"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P014_C01",
+      "text": "14. In other words, this Court found in Vashdeo R. Bhojwani,\n\nthat the application under\nSection 7\nwas filed beyond a period of\n\nthree years from the date of the certificate of recovery and not from\n\nthe date of declaration of NPA. Therefore, the somewhat discordant\n\nnote struck in Babulal, did not and could not have altered the\nratio\nlaid down in\nparagraph 21 of Jignesh Shah. The cloud of doubt\n5 (2019) 9 SCC 158\n\ncreated by Babulal with regard to the applicability of\nSection 18\n\nthe Limitation Act stood cleared subsequently in\nAsset\n\nReconstruction Company (India) Limited vs. Bishal Jaiswal and\n\nAnr.6\n, wherein this Court went to the extent of holding that an\n\nentry in the balance sheet of the company could also be treated as\n\nan acknowledgment in writing, subject however to any caveat found\n\nin the accompanying reports.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [
+        "Limited v Bishal Jaiswal and\n\nAnr.6\n"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P015_C01",
+      "text": "15. In any case, this Court clarified in\nDena Bank vs. C.\n\nShivakumar Reddy and Another7\nthat Babulal was rendered in\n\nthe particular facts of the case.\nIt will be relevant to take note of the\n\ndiscussion in paragraph 105 to 107 of the decision in\nDena Bank\n(supra) which reads as follows:\n“105. The judgment of this Court in Babulal\n Vardharji Gurjar was rendered in the facts of the aforesaid\n case, where the date of default had been mentioned a 8­7­\n 2011 being the date of NPA and it remained undisputed\n that there had neither been any other date of default\n stated in the application nor had any suggestion about\n any acknowledgment been made.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P016_C01",
+      "text": "106. In the backdrop of the aforesaid facts, this Court\n observed that even if\nSection 18\nof the Limitation Act and\n principle thereof were applicable, the same would not\n apply to the application under consideration, in view of the\n averments regarding default therein and for want of any\n other averment with regard to acknowledgment.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P017_C01",
+      "text": "107. It is well settled, that a judgment is a precedent for\n the issue of law that is raised and decided and not any\n observations made in the facts of the case. As very aptly\n penned by V. Sudhish Pai in Constitutional Supremacy­A\n Revisit,\n\n6 (2021) 6 SCC 366\n7 (2021) 10 SCC 330\n\n“Judicial utterances/pronouncements are in\n the setting of the facts of a particular case. To\n interpret words and provisions of a statute it may\n become necessary for Judges to embark upon\n lengthy discussions, but such discussion is meant\n to explain not define. Judges interpret statutes,\n their words are not to be interpreted as statutes.”\n The aforesaid passage was extracted and incorporated as\n part of the judgment of this Court in Sesh Nath Singh.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P018_C01",
+      "text": "16. The correctness of the decision in\nDena Bank\n(supra) was\n\nquestioned by a corporate debtor in\nKotak Mahindra Bank Ltd.\n\nVs. A. Balakrishnan8\nwherein it was contended that the decision in\nDena Bank\n(supra) was per incuriam, on the ground it did not take\n\ninto account sub­Sections (22) and (22A) of\nSection 19\nof the\n\nRecovery of Debts Due to Banks and Financial Institutions Act,\n\n1993 (hereinafter referred to as\nDRT Act\n) as well as Clauses (6), (10),\n\n(11) and (12) of\nSection 3\n, Clauses (7) and (8) of\nSection 5\n,\nSection 6\nand\nSection 14(1A)\nof IBC.\nWhile rejecting the said contention, this\n\nCourt reiterated in no uncertain terms in\nKotak Mahindra Bank\n(supra) that a person would be entitled to initiate CIRP within a\n\nperiod of three years from the date on which the recovery certificate\n\nis issued by DRT.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P019_C01",
+      "text": "17. Therefore, Dena Bank holds the field as on date. In the case on\n\nhand, the order of the Debt Recovery Tribunal in the Original\n\nApplication filed by the appellant under\nSection 19\nof the Act, 1993,\n\n8 (2020) SCC OnLine SC 706\n\nis dated 01.11.2016. It is only thereafter that the Corporate Debtor\n\nissued Balance and Security Confirmation letter dated 17.06.2017,\n\napart from making a request for restructuring the loan. Therefore,\n\nthe application filed by the appellant under\nSection 7\nwas clearly\n\nwithin three years from the date on which the “right to apply” in\n\nterms of\nArticle 137\naccrued. Hence the impugned order of the\n\nNCLAT, which places heavy reliance only upon Babulal, is not\n\ncorrect.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P020_C01",
+      "text": "18. Before parting, we cannot resist the temptation to point out an\n\nincongruity in the way the law has developed.\nThe Limitation Act,\n\n, as is well understood, extinguishes the remedy and not the\n\nright. This is why the Act itself contains several provisions for the\n\nexclusion of time, while computing the period of limitation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P021_C01",
+      "text": "19. Consistently this Court has held that the initiation of CIRP under\n\nthe IBC is to put the corporate debtor back on its feet, by retaining the\n\nsubstratum, even while replacing the management with a new team\n\n(Resolution Applicant). In other words, the object of IBC has been\n\nunderstood to be something that is beneficial for the corporate debtor\n\nso that it continues to survive as a going concern. As pointed out by\n\nthis Court in\nInnoventive Industries Ltd. vs. ICICI Bank & Anr.9\n,\n\n“…the scheme of the Code, therefore, is to make an attempt, by\n9 (2018) 1 SCC 407\n\ndivesting the erstwhile management of its powers and vesting it in a\n\nprofessional agency, to continue the business of the corporate body as a\n\ngoing concern until a resolution plan is drawn up, in which event the\n\nmanagement is handed over under the plan so that the corporate body\n\nis able to pay back its debts and get back on its feet…” (paragraph 33\n\nof the decision).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Court in\nInnoventive Industries Ltd v ICICI Bank & Anr.9\n"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P022_C01",
+      "text": "20. In other words, IBC is projected as a law which enables the\n\nfinancial/operational creditor to initiate CIRP, not for helping himself\n\nout with the recovery of the debt due to him, but for helping the\n\ncorporate debtor to survive and continue in business. A\n\nfinancial/operational creditor does not go to court or other forum with\n\nthe altruistic mission of helping the corporate debtor to continue as a\n\ngoing concern. But after repeatedly holding that the proceedings under\n\nthe IBC are not in substance, proceedings for recovery of money, this\n\nCourt and the statute have effectively applied the law of limitation,\n\nwhich was intended to apply to proceedings for enforcement of rights.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P023_C01",
+      "text": "21. It may be pointed out that the\nSchedule to the Limitation Act,\n\nis divided into three divisions. The First division relates to suits,\n\nthe Second division relates to appeals and the Third division relates to\n\napplications. The First division which relates to Suits is divided into\n\n10 parts which deal respectively with:­\n\n(i) Suits relating to accounts;\n(ii) Suits relating to contracts;\n(iii) Suits relating to declarations;\n(iv) Suits relating to decrees and instruments;\n(v) Suits relating to immovable property;\n(vi) Suits relating to movable property;\n(vii) Suits relating to Tort;\n(viii) Suits relating to Trust and Trust property;\n(ix) Suits relating to miscellaneous matters; and\n(x) Suits for which no period is prescribed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P024_C01",
+      "text": "22. The Second division of the\nSchedule to the Limitation Act\ndeals\n\nwith appeals. The Third division of the\nSchedule to the Limitation Act\nis again divided into two parts, with Part­I dealing with applications in\n\nspecified cases and Part­II dealing with other applications.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P025_C01",
+      "text": "23. For the law of limitation, the remedy is the goal post and\n\nthe right is the sign post from where the journey commences. A\n\nperson initiating any proceeding in a court of law must show the\n\nexistence of both a right in himself and a remedy for himself, but the\n\nIBC is a law where the sign post namely the right is for the financial/\n\noperational creditor and the goal post namely the remedy, is for the\n\ncorporate debtor, though the creditor may also recover a portion of his\n\ndebt after having a hair­cut, if not a tonsure. This incongruity has\n\nperhaps led this Court undertaking an arduous journey through the\n\npath of limitation and trying to negotiate its way through several bad\n\npatches.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P026_C01",
+      "text": "24. Now coming back to the case on hand, the application filed by\n\nthe appellant­Bank under\nSection 7\nIBC was within the period of\n\nlimitation. Therefore this appeal is allowed and the impugned order of\n\nthe NCLAT dated 02.03.2021 is set aside. No order as to costs.\n…………………………….J. (S. Abdul Nazeer)\n\n …………………………….J. (V. Ramasubramanian)\n\nNew Delhi\nAugust 30, 2022\n\nITEM NO.20 COURT NO.4 SECTION XVII\n\n S U P R E M E C O U R T O F I N D I A\n RECORD OF PROCEEDINGS\n\n Civil Appeal No(s). 2277/2021\n\nPUNJAB NATIONAL BANK Appellant(s)\n\n VERSUS\n\nVIJAY SITARAM DANDNAIK & ANR. Respondent(s)\n\n IA No. 72609/2021 - EX-PARTE STAY\n IA No. 103032/2022 - INTERVENTION/IMPLEADMENT)\n\nDate : 30-08-2022 This matter was called on for hearing today. CORAM :\nHON'BLE MR. JUSTICE S. ABDUL NAZEER\n HON'BLE MR. JUSTICE V. RAMASUBRAMANIAN\n\nFor Appellant(s) Mr. Dhruv Mehta, Sr. Adv. Ms. Kusum Lata, AOR\n Mr. Mahesh K. Chaudhary, Adv. Mr. Sushmita Chaudhary, Adv. Ms. Sushma Das, Adv. For Respondent(s) Mr. Rahul Totala, Adv. Mr. Rohit Anil Rathi, AOR\n\n UPON hearing the counsel the Court made the following\n O R D E R\n The appeal is allowed in terms of the signed Reportable\norder.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK_P026_C02",
+      "text": "Pending applications, if any, also stand disposed of. (NEELAM GULATI) (KAMLESH RAWAT)\nASTT. REGISTRAR-cum-PS COURT MASTER (NSH)\n(Signed Reportable order is placed on the file)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "Punjab National Bank vs Vijay Sitaram Dandnaik",
+    "case_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_VIJAY_SITARAM_DANDNAIK",
+    "court": "Supreme Court of India",
+    "year": "2022",
+    "facts_summary": "1. The order of admission of their petition under Section 7 of the\n\n Insolvency and Bankruptcy Code, 2016 (for short “IBC”) passed by\n\n the National Company Law Tribunal (for short “NCLT”), having been\n\n reversed by the National Company Law Appellate Tribunal (for short\n\nup with the above appeal. 3. The appellant herein filed a petition under Section 7 IBC\n\nagainst M/s Jailaxmi Sugar Products Pvt. Limited, the Corporate\n\nDebtor, who is the second respondent herein claiming, inter alia, (i)\n\nthat vide sanction letters dated 07.05.2010 and 28.09.2010, a term\n\nloan was sanctioned to the second respondent herein; (ii) that by\n\na letter dated 17.09.2011, restructuring of the existing term loans\n\nand fresh sanction of term loan was granted to the Corporate\n\nDebtor; (iii) that the Corporate Debtor defaulted in repayment and\n\nbecame a NPA on 31.03.2013; (iv) that the appellant issued a\n\ndemand notice dated 30.04.2013 under\nSection 13(2)\nof the\n\nSecuritisation and Reconstruction of Financial Assets and\n\nEnforcement of Security Interest Act, 2002; (v) that the Corporate\n\nDebtor also executed Balance and Security Confirmation letters\n\ndated 03.07.2014 and 17.06.2017; (vi) that the appellant, along with\n\nthe Union Bank of India also filed an application in O.A. No.185 of\n\n2014 on the file of the DRT, Pune for the issue of a certificate of\n\nrecovery; (vii) that the original application was allowed by DRT, Pune\n\nby an order dated 01.11.2016, directing the Corporate Debtor and\n\nothers inclu",
+    "legal_issues": "2. We have heard Shri Dhruv Mehta, learned senior counsel\n\nappearing for the appellant and Shri Rahul Totala, learned counsel\n\nappearing for the respondents. 16. The correctness of the decision in\nDena Bank\n(supra) was\n\nquestioned by a corporate debtor in\nKotak Mahindra Bank Ltd.\n\nVs. A. Balakrishnan8\nwherein it was contended that the decision in\nDena Bank\n(supra) was per incuriam, on the ground it did not take\n\ninto account sub­Sections (22) and (22A) of\nSection 19\nof the\n\nRecovery of Debts Due to Banks and Financial Institutions Act,\n\n1993 (hereinafter referred to as\nDRT Act\n) as well as Clauses (6), (10),\n\n(11) and (12) of\nSection 3\n, Clauses (7) and (8) of\nSection 5\n,\nSection 6\nand\nSection 14(1A)\nof IBC.\nWhile rejecting the said contention, this\n\nCourt reiterated in no uncertain terms in\nKotak Mahindra Bank\n(supra) that a person would be entitled to initiate CIRP within a\n\nperiod of three years from the date on which the recovery certificate\n\nis issued by DRT.",
+    "ratio_summary": "5. Before the NCLAT, the first respondent raised a preliminary\n\nobjection that in the light of the order of winding up passed by the\n\nHigh Court of Judicature at Bombay, an application under\nSection 7\n\nIBC was not maintainable. But the said contention raised by the\n\nfirst respondent was rejected by NCLAT on the basis of the decision\n\nof this Court in\nJaipur Metals and Electricals Employees\n\nOrganization vs. Jaipur Metals and Electricals Ltd. & Ors.1\n6. After overruling the objection relating to maintainability raised\n\non the basis of the order of winding up, NCLAT took up for\n\nconsideration the question of limitation. NCLAT opined that the\n\ndecision of this Court in\nBabulal Vardharji Gurjar vs. Veer Gurjar\n\nAluminium Industries Pvt. Ltd. & Anr.2\n, clinched the issue on the\n\nquestion of limitation and that the application under\nSection 7\n, filed\n\non 10.10.2019 was beyond a period of three years from the date of\n\ndefault (NPA) namely 31.03.2013. 8. By Act\n26 of 2018, Section 238A was inserted in the IBC to\n\nprovide that the provisions of the\nLimitation Act, 1963\nshall, as far\n\nas may be, apply to the proceedings or appeals before the\n\nAdjudicating Authority and the NCLAT. By virtue of the above\n\namendment, the doubt if any, on the question of applicability of the\n\nlaw of limitation to the proceedings under the IBC, got cleared. 10. Act No.26 of 2018, by which Section 238A was inserted, came\n\ninto force on 06.06.2018. Therefore, a question arose in\nB.K. Educational Services Priv",
+    "final_order": "24. Now coming back to the case on hand, the application filed by\n\nthe appellant­Bank under\nSection 7\nIBC was within the period of\n\nlimitation. Therefore this appeal is allowed and the impugned order of\n\nthe NCLAT dated 02.03.2021 is set aside. No order as to costs.\n…………………………….J. (S. Abdul Nazeer)\n\n …………………………….J. (V. Ramasubramanian)\n\nNew Delhi\nAugust 30, 2022\n\nITEM NO.20 COURT NO.4 SECTION XVII\n\n S U P R E M E C O U R T O F I N D I A\n RECORD OF PROCEEDINGS\n\n Civil Appeal No(s). 2277/2021\n\nPUNJAB NATIONAL BANK Appellant(s)\n\n VERSUS\n\nVIJAY SITARAM DANDNAIK & ANR. Respondent(s)\n\n IA No. 72609/2021 - EX-PARTE STAY\n IA No. 103032/2022 - INTERVENTION/IMPLEADMENT)\n\nDate : 30-08-2022 This matter was called on for hearing today. CORAM :\nHON'BLE MR. JUSTICE S. ABDUL NAZEER\n HON'BLE MR. JUSTICE V.",
+    "outcome_summary": "Allowed. 24. Now coming back to the case on hand, the application filed by\n\nthe appellant­Bank under\nSection 7\nIBC was within the period of\n\nlimitation. Therefore this appeal is allowed and the impugned order of\n\nthe NCLAT dated 02.03.2021 is set aside. No order as to costs.\n…………………………….J. (S. Abdul Nazeer)\n",
+    "sections_cited": [],
+    "cases_cited": [
+      "Jignesh Shah and Anr v Union of India and\n\nAnr.4\n",
+      "Vashdeo R. Bhojwani v Abhyudaya\nCo",
+      "Limited v Bishal Jaiswal and\n\nAnr.6\n",
+      "Court in\nInnoventive Industries Ltd v ICICI Bank & Anr.9\n"
+    ]
+  }
+}

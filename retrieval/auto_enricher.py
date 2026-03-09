@@ -44,6 +44,29 @@ _batch_mode: bool = False
 _bm25_dirty: dict = {}  # bm25_json_path -> chunks_json_path
 
 
+def _is_likely_pdf_url(url: str) -> bool:
+    """
+    True if URL is likely a PDF or official document we can index.
+    Used so only relevant PDFs (bare acts, case laws) are presented for indexing on the UI,
+    not generic HTML pages or non-document links.
+    """
+    if not url or not isinstance(url, str):
+        return False
+    u = url.strip().lower()
+    if ".pdf" in u or u.endswith(".pdf"):
+        return True
+    if "/pdf/" in u or "/bitstream/" in u:
+        return True
+    # Official doc paths that often serve or redirect to PDFs
+    if "indiacode.nic.in" in u and ("/show-data" in u or "actpdf" in u or "bareact" in u):
+        return True
+    if "main.sci.gov.in" in u and ("judgment" in u or "jonew" in u):
+        return True
+    if "judgments.ecourts.gov.in" in u or "ecourts.gov.in" in u:
+        return True
+    return False
+
+
 def begin_batch_indexing() -> None:
     """Enter batch mode: BM25 rebuilds are deferred until end_batch_indexing()."""
     global _batch_mode
@@ -529,6 +552,7 @@ def enrich_from_gap_results(
     local_high_quality_count: int = 0,
     target_high_quality: int = 5,
     skip_index: bool = False,
+    pending_only: bool = False,
     max_bare_acts_to_enrich: int = None,
     max_case_laws_to_enrich: int = None,
     progress_callback=None,
@@ -543,9 +567,9 @@ def enrich_from_gap_results(
     enriched_bare_acts/enriched_case_laws to build indexing_candidates for the UI.
     Indexing is done manually via the Pending indexing UI (official PDFs only).
 
-    When user asked for "pull all" / "get all" / scope broad, caller should pass
-    max_bare_acts_to_enrich (e.g. 300 for pull-all) and optionally max_case_laws_to_enrich (e.g. 100 for pull-all)
-    so we enrich more official documents instead of capping at 15.
+    When pending_only=True (response path): do NOT fetch or download. Only build
+    enriched_bare_acts/enriched_case_laws from raw result metadata (title, url, snippet).
+    No PDF download, no chunking — removes 40+ s per request. User can index later via UI.
     """
     HIGH_QUALITY_SCORE = 5.0
     WEB_MIN_SCORE = 1.0
@@ -621,7 +645,49 @@ def enrich_from_gap_results(
     total_download = len(bare_act_results) + len(case_law_results_pre)
     download_n = 0
 
-    # P0: Batch mode — defer all per-document BM25 rebuilds to a single rebuild at the end.
+    # Pending-only path: no fetch, no download, no chunking. Only PDF/official-doc URLs for indexing UI.
+    if pending_only:
+        for r in bare_act_results:
+            url = r.get("url", "")
+            if not _is_likely_pdf_url(url):
+                continue
+            summary["enriched_bare_acts"].append({
+                "url": url,
+                "title": r.get("title", "Unknown"),
+                "snippet": r.get("snippet", ""),
+                "content": "",
+                "source_tag": r.get("source_tag", "UNKNOWN"),
+                "suggested_category": "bare_act",
+                "_rerank_score": 0.0,
+            })
+        for r in case_law_results_pre:
+            url = r.get("url", "")
+            if not _is_likely_pdf_url(url):
+                continue
+            summary["enriched_case_laws"].append({
+                "url": url,
+                "title": r.get("title", "Unknown"),
+                "snippet": r.get("snippet", ""),
+                "content": "",
+                "source_tag": r.get("source_tag", "UNKNOWN"),
+                "suggested_category": "case_law",
+                "_rerank_score": 0.0,
+            })
+        # News is never shown for indexing (only bare_act/case_law go to pending_indexing_list)
+        for result in gap_results.get("news_results", []):
+            summary["enriched_news"].append({
+                "url": result.get("url"),
+                "title": result.get("title"),
+                "snippet": result.get("snippet", ""),
+                "source_tag": "NEWS_REFERENCE",
+            })
+        logger.info(
+            "Enrichment (pending_only): %d bare-act + %d case-law PDF candidates for Pending indexing UI (no fetch).",
+            len(summary["enriched_bare_acts"]), len(summary["enriched_case_laws"]),
+        )
+        return summary
+
+    # P0: Batch mode
     # Guard against nesting: if the caller (e.g. api_server.py /indexing/run) already entered
     # batch mode we must NOT enter or exit it here — that would clobber the caller's dirty-set.
     _already_in_batch = _batch_mode

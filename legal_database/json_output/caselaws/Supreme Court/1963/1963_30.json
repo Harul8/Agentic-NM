@@ -1,0 +1,1212 @@
+{
+  "case_id": "SC_1963_1963_30",
+  "case_name": "Khyerbari Tea Co. Ltd. & Anr vs The State Of Assam",
+  "normalized_case_name": "KHYERBARI_TEA_CO._LTD._&_ANR_VS_THE_STATE_OF_ASSAM",
+  "court": "Supreme Court of India",
+  "year": "1963",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "13 December 1963",
+  "judges": [
+    "P.B. Gajendragadkar",
+    "A.K. Sarkar",
+    "K.N. Wanchoo",
+    "K.C. Das Gupta",
+    "N. Rajagopala Ayyangar"
+  ],
+  "author": "P.B. Gajendragadkar",
+  "bench_type": "constitution",
+  "petitioner": "Khyerbari Tea Co. Ltd. & Anr",
+  "respondent": "The State Of Assam",
+  "reporter_citations": [
+    "[1961] 1 S.C.R. 809",
+    "[1963] 1 S.C.R. 491",
+    "[1962] 1 S.C.R. 549"
+  ],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 76,
+  "cited_by_count": 184,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1964 AIR 925",
+    "1964 SCR (5) 975",
+    "AIR 1964 SUPREME COURT 925"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1963\\1963_30.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1963_1963_30_P001_C01",
+      "text": "BENCH:\nGAJENDRAGADKAR, P.B.\nBENCH:\nGAJENDRAGADKAR, P.B.\nSARKAR, A.K.\nWANCHOO, K.N.\nGUPTA, K.C. DAS\nAYYANGAR, N. RAJAGOPALA",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1963_1963_30_P002_C01",
+      "text": "CITATION:\n 1964 AIR 925 1964 SCR (5) 975\n CITATOR INFO :\n R 1970 SC 129 (10)\n E 1970 SC1864 (5)\n R 1971 SC1737 (47)\n RF 1972 SC1804 (11)\n F 1975 SC 583 (13)\n RF 1975 SC1443 (21)\n MV 1975 SC2065 (35,60)\n RF 1975 SC2299 (606)\n F 1976 SC 182 (18)\n R 1977 SC1686 (5)\n RF 1980 SC 898 (64)\n RF 1981 SC 463 (16,26,34)\n RF 1981 SC 991 (13)\n E&R 1982 SC 902 (19)\n MV 1982 SC1325 (31,32)\n R 1983 SC1155 (13,20,23,25)\n RF 1990 SC 313 (24)\n E 1990 SC 772 (1,3)\n RF 1990 SC 781 (13)",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1963_1963_30_P003_C01",
+      "text": "ACT:\nConstitution of India, 1950, Arts. 301, 304(b) and Seventh\nSchedule,List II, Entry 56-Assam Taxation (on Goods carried\nby Road or on Inland Water-ways) Act (Assam Act X of 1961)-\nConstitutional validity.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1963_1963_30_P004_C01",
+      "text": "HEADNOTE:\nThis petition challenges the constitutional validity of the\nAssam Taxation (on Goods carried by Road or on Inland Water-\nways) Act, 1961. The previous Act of 1954 having been\ndeclared constitutionally invalid by this Court in Atiabari\nTea Co. Ltd. v. State of Assam [1961] 1 S.C.R. 809, the\nAssam Legislature with the previous sanction of the\nPresident of India under\nArt. 304(b)\nof the Constitution,\npassed the impugned Act with retrospective effect from the\ndate on which the Act of 1954 had been promulgated and its\nprovisions were except for certain additional provisions\nsubstantially the same. The Assam High Court which was\nmoved under\nArt. 226\nof the Constitution held that the Act\nwas constitutionally invalid. The State of Assam applied\nfor and obtained certificates to appeal to this Court. The\npresent petitioners moved this Court under\nArt. 32\nof the\nConstitution. Since petitioner No. 1 was a company and as\nsuch its petition was incompetent, petitioner No. 2, the\nManager of the company, was heard and some of the\nrespondents in the appeals to be preferred by the State of\nAssam were allowed to intervene in the present proceedings.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1963_1963_30_P004_C02",
+      "text": "The case of petitioner No. 2 was that the company exported\ntea grown and manufactured in its own garden from Goalpara\nin Jalpaiguri District to Calcutta. The booking station and\nthe destination were both in West Bengal, the total distance\nbetween them being 689 miles of which only 1-1/2 to 2 miles\nof inland waterways lay in the State of Assam. The tea was\ncarried by railway from Goalpara to Dhubrighat and\nthereafter by ferries on inland waterways and transhipped to\nsteamers at the said Ghat. It was contended that ss. 3 and\n34, which were the material provisions of the Act, were\ninvalid and that the Assam Legislature was incompetent to\nenact the said provisions which constituted unreasonable\nrestrictions on the freedom of trade guaranteed by\nArt. 301\nand infringed\nArt. 19(1)(g)\nof the Constitution. Held. (per Gajendragadkar, Wanchoo, Das Gupta and Ayyangar\nJJ.), As the impugned Act was not found to be compensatory\nby the High Court nor was it claimed to be so by the State\nthe only question that fell to be decided in this petition\nwas whether the restrictions imposed by the impugned Act\nwere",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1963_1963_30_P005_C01",
+      "text": "reasonable and in the public interest within the meaning of\nArt. 304(b)\nof the Constitution. Atiabari Tea Co. Ltd. v. State of Assam, [1961] 1 S.C.R.\n809, and Automobile Transport (Rajasthan) Ltd. v. State of\nRajasthan, [1963] 1 S.C.R. 491, explained. The entries in the three lists in the Seventh Schedule must\nbe given the widest possible interpretation. Power\nconferred on the Legislature to levy tax must be widely\nconstrued so as to include the power to select the taxable\narticles, to fix the rates, to prescribe the machinery for\nrecovery, to prevent evasion and to prescribe the procedure\nfor determining the amount payable by any individual. It\ncould not be assumed that Entry 56 of List II, in giving the\nLegislature the power to enact the impugned Act, required\nthat the tax must be levied only against the owner of the\ngoods that were carried or against persons who carried\nthem,, If the tax was really levied on goods carried, the\nLegislature was free to prescribe the machinery for its\nrecovery. R.C. Jall v. Union of India. [1962] Supp. 3 S.C.R. 436,\nSardar Baldev Singh v. Commissioner of Income-tax, Delhi &\nAjmer. [1961) 1 S.C.R. 482 and Orient Paper. Mills Ltd. v.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1963_1963_30_P005_C02",
+      "text": "State of Orissa. [1962] 1 S.C.R. 549, referred to. Section 3(1) of the impugned Act which imposed the tax and\ns. 3(2) which made the producer liable to pay it could not\ntherefore be impugned on the ground of legislative\nincompetence. M' Cullock v. Maryland, (1819)4 L. Ed. 579, considered. But the machinery set up for recovery of the tax should have\na rational connection with the tax. The absence of such a\nnexus between them would make the tax liable to attack as\nbeing unjustified under Entry 56. Article 304(b)\n, properly construed, does not require that\nlaws passed under it must always be prospective. It was not\ncorrect to say that once the State Legislature passed an Act\nwithout recourse to that Article and it was struck down, it\ncould not reenact that Act under the Article and give it\nretrospective effect. That Article contemplates\nrestrictions and-not prohibitions and the rule that\nprohibitory legislation cannot have retrospective operation\ncan have no application. Punjab Province v. Daulat Singh., L.R. 73 I.A. 59, held\ninapplicable. M.P. V. Sundararamier & Co. v. State of Andhra Pradesh\n[1958] S.C.R. 1422, applied. M/s. West Ramanand Electric Distribution Co. Ltd. v.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1963_1963_30_P005_C03",
+      "text": "State\nof Madras. [1963] 2 S.C.R. 747, referred to. Nor could it be said that a restrictive statute passed under\nArt. 304(b)\nwith retrospective operation must necessarily\ndefeat the scheme of Part XIII of the Constitution.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1963_1963_30_P006_C01",
+      "text": "The mere fact that a validating taxing statute has\nretrospective operation does not necessarily change the\ncharacter of the tax sought to be recovered by such\nretrospective operation. The proviso to s. 3(2) of the\nimpugned Act was not retrospective in character and did not\nchange the character of the tax. Rai Ramkrishna v. State of Bihar [1964] 1 S.C.R. 897\nreferred to. A law enacted under\nArt. 304(b)\nwith the previous sanction\nof the President, does not necessarily take away the\njurisdiction of the Court to consider whether the\nrestrictions imposed by it are reasonable and in the public\ninterest. The observation in Atiabari Tea Co.'s case in\nthis regard should not be taken as conclusive on the point. Although there is a presumption in favour of the\nconstitutionality of a statute, if it is proved that it\ninvades fundamental rights under\nArt. 19(1)\n, the onus shifts\non to the State and it must justify its validity under\nArt.\n19(6). Onus under\nArt. 304(b)\nis still more in favour of\nthe citizen as it clearly purports to restrict the freedom\nof trade. Saghir Ahmad v. State of U.P. [1955] 1 S.C.R. 707, applied. Hamdard Dawakhana. (Wakf) Lal Kuan, Delhi v. Union of India.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1963_1963_30_P006_C02",
+      "text": "(1960] 2 S.C.R. 671, referred to. The impugned Act by making the producer liable for the tax\nunder s. 3(2) proviso or by assessing the tax on a flat rate\non weight instead of by the ton and mileage method, could\nnot be said to have imposed unreasonable restrictions. The\nlaw of taxation is a balance of complex considerations and\nif the Legislature thought that a flat rate was just and\nfair to the tea trade as a whole no exception could be taken\nto it. It was not correct to say that s. 34 of the impunged Act was\ndiscriminatory or infringed\nArt. 19(1) (g). It was not\ndiscriminatory in that it selected- only tea and jute for\ntaxation. The Legislature had full freedom to determine\nwhich articles it should tax, in what manner and at what\nrate. Raja Jagannath Baksh Singh v. State of U.P. [1963] 1 S.C.R.\n220 and East India Tobacco Co. v. State of Andhra Pradesh,\n[1963] 1 S.C.R. 404, referred to. The power of this Court to strike down a taxing statute for\ncontravention of Arts. 14, 19 or 301 must be exercised with\ncircumspection. It is only in cases of such statutes as are\nclearly confiscatory in character that the power of this\nCourt can be invoked or exercised. K.T.Moopil Nair v.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1963_1963_30_P006_C03",
+      "text": "State of Kerala, [1963] 3 S.C.R. 77,\nreferred to. The impugned Act was not colourable legislation in any\nsense.The power of legislation carried with it the power to\nmake the, law\n1 SCI/64-62",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1963_1963_30_P007_C01",
+      "text": "retrospective And the passing of a validating Act is\nessentially subsidiary to that power conferred by the\nrelevant legislative List. Nor was the Act extra-territorial in its application. Whether the goods are carried for a long or a short distance\nhad no bearing on legislative competence under Entry 56 List\n11 under which the impugned Act was enacted. Since the\ngoods were carried, although over a very small part of\ninland waterways in Assam, the doctrine of nexus, applicable\nto such cases, was satisfied. Tata Iron & Steel Co. Ltd. v. State of Bihar, [1958] S.C.R.\n1355, referred to. The word 'carried' in Entry 56, List 11 is of wider\ndenotation than 'import' and the Act could not be impugned\non the ground that the goods carried and taxed did not join\nthe mass of goods in the State of Assam itself. Central India Spinning and Weaving and Manufacturing Co. Ltd. v. Munkipal Committee, Wardha, [1958] S.C.R. 1102, held\ninapplicable. The power to levy the tax conferred by Entry 56, List 11,\nwas not controlled by the\nTea Act, 1953\n, passed by the\nParliament under List I.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1963_1963_30_P007_C02",
+      "text": "Nor was it correct to say that the\nRiver Boards Act, 1956\n, imposed a bar on the Assam\nLegislature to pass the impugned Act. Per Sarkar, J.-Entries in the Legislative Lists have to be\nread in their widest amplitude. So read there could be no\ndoubt that the Assam Legislature was competent under Entry\n56 of List II to provide for the realisation of the tax in\nthe manner most suitable to it. The words of the Entry were\nwide enough to enable the Legislature to realise the tax\neither from the producer, even though he did not carry it,\nor from the person who actually carried it. Under the proviso to\ns. 3(2)\nof the Act, a notification\ncould not be issued with retrospective effect. That proviso\nmade the producer liable for realisation of the tax from the\npurchaser from the date appointed by the notification. If\nthe notification appointed a past date, it would be\nincompetent. It was not correct to say that a statute contemplated by\nArt. 304(b)\ncannot be retrospective. A legislature\ncompetent to pass a law can pass it with retrospective\neffect. If the flow of the trade could be restricted\nprospectively, it could be restricted retrospectively as\nwell.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1963_1963_30_P007_C03",
+      "text": "The restrictions imposed by\nArt. 304(b)\nstand on the\nsame footing as those under\nArt. 19(6). There is no prohibition in\nArt. 304\nand, therefore, it could\nnot be said that it did not contemplate retrospective\noperation. It provides for reasonable restrictions on the\nfreedom of trade and therefore permits and does not\nprohibit. Punjab Province v. Daulat Singh L.R. 73 I.A. 59, held\ninapplicable.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1963_1963_30_P008_C01",
+      "text": "Entry 56 of List II does not require that the tax imposed\nmust be measured according to the distance they are carried. A flat rate is not wanting in reasonableness. It would not\nbe wrong to say that since a tax is collected in public\ninterest and for public good the burden imposed by it on\ntrade would prima facie be reasonable in the public\ninterest. The legislature has the power to pick, and choose the\narticles on which to impose the tax and such choosing cannot\nby itself amount to discrimination. The Act\napplies to all\nwho are concerned with the carriage of tea and jute. Raja Jagannath Baksh Singh v. State of Bihar, [1963] 1\nS.C.R. 220, referred to. Section 34\nof the impugned Act did not violate\nArt. 14\nthe Constitution, nor could it be said that it was a\ncolourable legislation. A validating Act, passed under the same legislative power\nunder which the invalid Act was passed, would not amount to\ncolourable legislation. Gajapati Narayan Deo v. State of Orissa, [1954] S.C.R. 1,\nreferred to.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1963_1963_30_P008_C02",
+      "text": "Since the Assam Legislature had the power to impose the tax\non carriage of goods, however short the distance over which\nthey were carried, the impugned Act could not be said to be\nbad for extra-territoriality. Quaere as to on whom the onus of proving the reasonableness\nof a restriction imposed by a statute on which its constitu-\ntionality depends lies.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1963_1963_30_P009_C01",
+      "text": "JUDGMENT:\nORIGINAL, JURISDICTION : Writ Petiton No. 134 of 1962.\nPetition under\nArt. 32\nof the Constitution of India for the\nenforcement of Fundamental Rights.\nS.K. Niyogi and S.C. Mazumdar, for the petitioners.\nB.C. Barua, Advocate-General, Assam, M.C. Setalvad, R.B.\nDatar and Naunit Lal, for the respondents.\nG.S. Pathak, A.N. Sinha and B.N. Ghosh, for the interveners.\nDecember 13, 1963. The Judgment of P.B. Gajendragadkar,\nK.N. Wanchoo, K.C. Das Gupta and N. Rajagopala Ayyangar JJ.\nwas delivered by Gajendragadkar J. A. K. Sarkar J.\ndelivered a separate Opinion.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1963_1963_30_P010_C01",
+      "text": "GAJENDRAGADKAR J.-The present writ petition by which the two\npetitioners Khyerbari Tea Co. Ltd., and M. Sudhir Chandra\nGuha, Manager of the said Company, seek to challenge the\nvalidity of the Assam ; Taxation (On Goods, Carried by Road\nor on Inland Waterways) Act, 1961 (No. 10 of 1961)\n(hereinafter called 'the Act'), is a sequel to the decision\nof this Court in the case of\nAtiabari Tea Co., Ltd. v. The\nState of Assam\n(1). To this petition have been impleaded\nthree respondents, the State of Assam, the Commissioner of\nTaxes, the taxing authority appointed under\ns. 6\nof the Act,\nand the Superintendent of Taxes, Dhubri Division. We will\nrefer to the State of Assam as the respondent hereafter. The respondent had, passed a similar Act No. 13 of 1954\nwhich had received the assent of the Governor on the 9th\nApril,, 1954. The validity of the said Act was challenged\nby the petitioners and certain other producers of tea by\nfiling writ petitions before the Assam High Court. The\nAssam High Court dismissed the writ petitions and held that\nthe impugned Act of 1954 was valid. The said judgment was\npronounced by the High Court on the 6th of June, 1955.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1963_1963_30_P010_C02",
+      "text": "The\npetitioners whose writ petitions had been dismissed, then\npreferred appeals to this Court by special leave, and they\nalso, moved this Court by writ petitions under\nArt. 32\nthe Constitution. These matters were heard by this Court in\nthe case of Atiabari Tea Co. Ltd.(1) and by its judgment\ndelivered on the 26th September, 1960, the said impugned Act\nwas struck down as being unconstitutional. Thereafter, the\nAct with which we are concerned in, 'the , present\nproceedings was passed by the Assam Assembly. It received\nthe assent of the President on the 6th April, 1961. The\nrelevant terms of the Act are, on the whole, substantially\nsimilar to the terms of the earlier Act which was struck\ndown,\nThe Act\nhas made certain additional provisions to\nwhich we will refer later. The petitioners contend that the\noperative provisions of the Act are invalid, and so, they\npray for issue of an appropriate writ\n(1) (1061] 1 S.C.R. 809.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1963_1963_30_P011_C01",
+      "text": "or order directing the respondent not to enforce the\noperative provisions, against them. Petitioner No. 1 is a\ncompany and as such,\" it has no right to move this Court\nunder\nArt. 32. This position is conceded by Mr. Mazumdar\nfor the petitioners. Petitioner No. 2 who is the Manager of\nPetitioner No. 1 is, however, a citizen of India and as\nsuch, he is entitled to challenge the validity of the Act\ninasmuch as the respondent threatens to take action in\npursuance of the material provisions of the Act' against the\ncompany of which he is the Manager. Mr. Setalvad does not\ndispute the right of petitioner No. 2 to move this Court by\na petition under\nArt. 32. After the Act\nwas passed and it came into force, the\nquestion about the scope and effect of the provisions\ncontained in Part XIII of the Constitution which had been\ndealt with by this Court in the case of Atiabari Tea Co.(1)\ncame to be considered. by a larger Bench in the case of the\nAutomobile Transport (Rajasthan) Ltd. v. The State of\nRajasthan(2), and the decision of this larger Bench was\n-pronounced on the 9th April, 1962.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1963_1963_30_P011_C02",
+      "text": "Since the Act has been\npassed by the Assam Legislature with the previous sanction\nof the President directly as a result of the decision. of\nthis Court in the case of Atiabari Tea Co, the present\nproceedings can be appropriately described as an after-math\nthe said decision\n. It appears that 487 persons moved the Assam High Court by\nwrit petitions under\nArt. 226\nof the Constitution impeaching\nthe validity of the Act. These writ petitions were\nconsidered.by a Division Bench of the said High Court and\nthey were allowed on the 1st August, 1963. The two learned\nJudges who constituted the Division Bench have delivered\nconcurring judgments and held that,, the Act is invalid. On\nsome of the points urged by the petitioners before them, the\ntwo learned Judges have differed, in the result, they agreed\nin taking the view operative provisions of the Act were\nunconstitu-\n(1) [1961] 1 S.C.R. 809. (2) [1963] 1 S.C.R.491.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1963_1963_30_P012_C01",
+      "text": "tional. The respondent State of Assam then moved the High\nCourt for certificates to enable it to come to this Court in\nappeal against the decision of the High Court in the said\n487 writ petitions. The High Court has granted\ncertificates, but the said appeals will take long to become\nready; and so, 12 of the petitioners who are respondents in\nsome of the said appeals were allowed to intervene in the\npresent proceedings. In fact by arrangement between\nMr.Mazumdar who appeared for the petitioners before us and\nMr.pathak who represents the interveners, the principal\nargument has been urged before us by Mr. Pathak and we\nexpressly told Mr. Pathak that since our decision on the\npresent writ petition would govern the decision of the\nappeals which the respondent is going to bring to this Court\nagainst the decision of the Assam High Court, we would\npermit him to raise all points in support of the view taken\nby the Assam High Court and would not confine him to the\npoints which have been taken by the petitioners in their\npetition before us. In fact, the Assam Judgments in\nquestion have been filed by the Interveners, and Mr.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1963_1963_30_P012_C02",
+      "text": "Pathak\nhas invited our attention to the main findings recorded in\nthose judgments. Normally, counsel for interveners is not\nallowed a right of reply, but having regard to the fact that\nMr.Mazumdar requested us to allow Mr. Pathak to lead him in\nthe present proceedings, we have allowed both Mr. Pathak and\nMr. Mazumdar to open the case,, and have heard both of them\nin reply. Petitioner No. 25 case is that petitioner No. 1, the\ncompany, carries on the business of manufacturers wholesale\ndealers and exporters of tea at Jalpaiguri in the State, of\nWest Bengal. The business of the said garden is managed by\npetitioner No. 2 and is subject to the control and direction\nof the company. Naturally, the remuneration 'and prospects\nof petitioner-No. 2 depend upon the good and economical\nmanagement and the prosperity of the business of the\nCompany. The petition avers that at all material",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1963_1963_30_P013_C01",
+      "text": "times the company exported the tea grown and manufactured by\nit in its tea garden by Railway from Garopara Railway\nStation in the district of Jalpaiguri to the Calcutta port. It is common ground that Calcutta Port is the principal tea\nmarket in the country for sale for consumption at home as\nwell as for export overseas. According to the. petition,\nthe tea was delivered packed in chests to the North Eastern\nRailway Administration at Garopara Rly. Station and the\nrate charged by the said Administration was paid to it for\ncarrying the goods to Calcutta. It is clear that both the\nbooking station and the station of destination are in the\nState of West Bengal. When the tea thus travels from\nGaropara to Calcutta, it hag to traverse a short distance of\nabout 67 miles through Assam to Dhubri Ghat, on the bank of\nthe River Brahmaputra. It appears that by an arrangement\nbetween the Railway and the I.G.N. and R.S.N. Co. Ltd. these\ngoods. are taken over by ferries on inland waterways and'\nare transshipped to steamers at the said Ghat. The steamers\n,hen carry the goods through the Brahmaputra in Assam up to\nMankind; the distance between Dhubri Ghat and Mankachar is\nabout 1 1/2 to 2 miles.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1963_1963_30_P013_C02",
+      "text": "In their journey, the steamers\ncover a distance of about 572 miles in Pakistan territory,\nand then they reach the Calcutta Port. The total distance\ncovered by the journey of the goods is about 689 miles. Petitioner No. 2 contends that the material provisions of\nthe Act are invalid, because the Assam Legislature was not\ncompetent to enact the said provisions. It is also urged\nthat the said provisions are unconstitutional because they\nconstitute an unreasonable restriction on the freedom of\ntrade guaran teed by\nArt. 301\n, as-well-as petitioner No. 2's\nrun mental right guaranteed by\nArt. 19(1)(g)\nof the Con-\nstitution. The validity of the Act is also challenged on\nsome other grounds which Would be dealt with later. These pleas are denied by the respondent and it is urged on\nits behalf that the Act is constitutional, that it has been\npassed under\nArt. 304(b)\nafter obtain-",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1963_1963_30_P014_C01",
+      "text": "ing the previous sanction of the President; that its\nmaterial provisions are in no sense unreasonable and that\nthe restrictions imposed by them on the freedom of trade are\nreasonable restrictions and are required in the 'public\ninterest. It is also alleged that the said restrictions are\nreasonable and in the interests of the general public and as\nsuch, they are saved by clause (6) of\nArt. 19. Before dealing with these contentions, it is necessary to\nindicate at the outset the effect of the two judgments to\nwhich we have already referred. In the case of the Atiabari\nTea Co. Ltd.(1), three views were expressed. Sinha C.J.,\nheld that the freedom conferred by\nArt. 301\ndid not mean\nfreedom from taxation simpliciter but only from the erection\nof trade barriers, tariff walls and imposts which had a\ndeleterious effect on the free flow of trade, commerce and\nintercourse. According to his view, the earlier\nAssam Act\ndid not contravene\nArt. 301\nand was valid. This view put a\nsomewhat narrow construction on the scope and effect of the\nprovisions contained in\nArt. 301.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1963_1963_30_P014_C02",
+      "text": "Shah J., on the other hand, placed a very wide construction\non the said provision and held that the freedom of trade\nguaranteed by the said Article included not only freedom\nfrom discriminative tariffs and trade barriers but also from\nall taxation on commercial intercourse. As such, he held\nthat the said Act was unconstitutional. The majority view was that the freedom of trade guaranteed\nArt. 301\nwas wider than that contained in s.. 297 of the\nGovernment of India Act, 1935\n, which meant that taxes which\ndirectly and immediately impeded: the freedom of trade would\ncome within the mischief of\nArt. 301. According to this\nview,\nArt. 301\nprovides that the flow of trade shall run\nsmooth and unhampered by any restriction either at the\nboundaries of the States or at any other points inside the\nStates themselves; and if any Act imposes any direct\nrestrictions on the movement of goods,\n(1) [1961] 1 S.C.R. 809.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1963_1963_30_P015_C01",
+      "text": "it attracts the provisions of\nArt. 301. On the majority\nview, if the impugned tax imposes a restriction on the\nmovement of trade, the Act could be sustained if it complied\nwith the provisions of\nArt. 304(b). In regard to the Act\nwith which the Court was then concerned, the majority\njudgment observed that it may be that one of the objects in\npassing the Act was to enable the State Government to raise\nmoney to keep its roads and waterways in repairs; but that\nobject may and can be effectively achieved by adopting\nanother course of legislation; if the said object is\nintended to be achieved by levying a tax on the carriage of\ngoods, it can be so done only by satisfying the requirements\nArt. 304(b). In the\nAutomobile Transport (Rajasthan) Ltd.\ncase(1), the\nmajority view expressed by Das J. on behalf of himself and\nKapur & Sarkar JJ was that if a tax is compensatory in\ncharacter, it cannot be said to fall within the mischief of\nArt. 301. According to this view, a clarificatory rider was\nadded to the majority view expressed in the case of the\nAtiabari Tea Co. Ltd.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1963_1963_30_P015_C02",
+      "text": "(2) by providing that regulatory\nmeasures or measures imposing compensatory taxes for the use\nof trading facilities do not come within the purview of the\nrestrictions contemplated by\nArt. 301\n, and such measures\nneed not comply with the requirements of the provisions of\nArt. 304(b). Subba Rao J., who delivered a separate judgment concurring\nwith the conclusion reached by Das J., preferred to\nemphasise that taxing statutes which would escape the\nmischief of\nArt. 301\ncould be appropriately described as\nregulatory. He, therefore, held that the\nRajasthan Motor\nVehicles Taxation Act\n(No.11 of 1951) with which the Bench\nwas dealing, was regulatory in character and as such, not\nunconstitutional. In other words, whereas Das, Kapur and\nSarkar JJ., upheld the validity of the Act on the ground\nthat it was either compensatory or regulatory, Subba Rao J.,\npreferred to base his decision mainly on the ground that it\nwas regulatory. (1) [1963] 1 S.C.R. 491. (2) [1961] 1 S.C.R. 809.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1963_1963_30_P016_C01",
+      "text": "The minority view which has been expressed by Hidayatullah\nJ., on behalf of himself and Ayyangar and Madholkar JJ.,\nassumed that though regulatory taxing statutes may be said\nto fall outside\nArt.30\n,compensatory taxing statutes cannot\nmake the same claim. According to this view, if a taxing\nstatute was sought to be justified on the ground that the\ntax imposed by it was compensatory in character, that could\nbe done only by adopting the procedure prescribed by\nArt.\n304(b). It may be noticed that the scope of the regulatory\nstatutes as discussed by Hidayatullah J., is much narrower\nthan the scope of the regulatory statutes as considered by\nSubba Rao J. In the result, the majority view expressed in the case of\nthe Atiabari Tea Co.(1), was substantially accepted by the\nmajority of the learned Judges constituting the larger Bench\nwhich heard the Automobile Transport (Rajasthan) Ltd. (2)\ncase, but a corollary was added to the said view as we have\njust indicated.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1963_1963_30_P016_C02",
+      "text": "The majority view in the\nAtiabari\ncase(\"' proceeded on the\nbasis that the Australian decisions which dealt with the\nscope and effect of s. 92 of the Australian Constitution\nwould be of no assistance in constraing the effect of the\nprovisions in part XIII of our Constitution, because the\nlegislative, historical and political background, the\nstructure and the effect of the relevant provisions\ncontained in Part XIII were in material particulars\ndifferent from those of s. 92 of the Australian\nConstitution; s. 92 is absolute in terms and on its literal\nconstruction, admits of no exceptions. The Australian\ndecisions, therefore, had to introduce distinctions, such as\ncompensatory or regulatory tax laws in order to take laws\nanswering the said description out of the purview of s. 92. In our Constitution, however, though\nArt. 301\nis worded\nsubstantially in the same way as s. 92,\nArt. 302\nand",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1963_1963_30_P017_C01",
+      "text": "provide for reasonable restrictions being imposed on the\nfreedom of trade subject to the requirements of the said two\nArticles, and so, the problem facing judicial decisions in\nAustralia and in this country\n(1)[1611] 1 S.C.R. 809.\n(2) [1963] 1 S.C.R. 491.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1963_1963_30_P018_C01",
+      "text": "in ragard to the freedom of trade and the restrictions which\nit may be permissible to impose on it, is not exactly the\nsame. The minority view expressed by Hidayatullah J., has\npointedly referred to this aspect of the matter. That, in\nbrief, is the position of the two decisions of this Court in\nAtiabari Tea Co. Ltd.(1) and Automobile Transport\n(Rajasthan) Ltd. (2) cases respectively. It would immediately be noticed that though the majority\nview in the Automobile Transport (Rajasthan) case(2)\nSubstantially agreed with the majority decision in the case\nof Atiabari Tea Co.(1), there would be a clear difference\nbetween the said two views in relation to the scope and\neffect of the provisions of\nArt. 304 (b). According to the\nmajority view in the case of Atiabari Tea Co., if an Act is\npassed under\nArt. 304(b)\nand its validity is impeached, then\nthe State may seek, to justify the, Act on the ground that\nthe restrictions imposed by it are reasonable and in the\npublic interest, and in doing so, it may, for instance, rely\non the fact that the taxes levied by the impugned Act are\ncompensatory in character.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1963_1963_30_P018_C02",
+      "text": "On the other hand, according to\nthe majority decision in the Automobile Transport\n(Rajasthan) (2) case, compensatory taxation would be outside\nArt. 301\nand cannot therefore, fall under\nArt. 304(b).\nin the present case it had been urged before us that the tax\nlevied by the Act is compensatory in character, it would\nhave been necessary to consider the question once again by\nconstituting a larger Bench. It will be recalled that the\nAct with which we are concerned has been passed by the Assam\nLegislature directly as a result of the decision of this\nCourt in\nAtiabari Tea Co.\n's case(1); that decision was that\nif the tax imposed by the Act was compensatory in character\nthen the Act could be sustained only if it was passed after\ncomplying with the provisions of\nArt. 30-4(b). The Assam\nLegislature has accordingly adopted the said procedure and\npassed the Act. If the Act\nhad been compensatory in\ncharacter, it would have become necessary for us to consider\nthe\n(1) [1961] 1 S.C.R 809. (2) [1963] 1 S.C.R. 491.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1963_1963_30_P019_C01",
+      "text": "whole position once again, because it would obviously be\nunfair and unjust that the earlier Act should have been\nstruck down though it was compensatory in character and in\ntesting the validity of the present Act, it should be open\nto the petitioners to contend that its compensatory\ncharacter is irrelevant to the enquiry under\nArt. 304(b). In the present case, the Assam High Court which dealt with\nthe 487 writ petitions has found that the Act is not\ncompensatory, and Mr. Setalvad has not urged before us that\nthe Act is in fact compensatory. That is why we are\nproceeding to deal with the merits of the dispute between\nthe parties in the present case on that basis. The main\nquestion, therefore, would be that the tax imposed by the\nAct not being compensatory in character, are there any\nreasons to justify the respondent's contention that the\nrestrictions imposed by it are reasonable and in the public\ninterest? Let us then consider the broad features of the Act and its\nmaterial provisions before dealing with the several points\nurged before us. The Act\nconsists of 34 sections.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1963_1963_30_P019_C02",
+      "text": "As we\nhave already noticed, the Bill was introduced after\nobtaining the previous sanction of the President, and the\nAct has been passed in accordance with the provisions of\nArt. 304(b). The preamble to the Act provides that the Act\nhas been passed to provide for the levy of a tax on certain\ngoods carried by road or on inland water-ways in the State\nof Assam and to validate certain taxes imposed on goods\ncarried by road or on inland waterways and for certain other\nconnected matters. Section 1(3)\nprovides that the Act shall\nbe deemed to have had effect as from the 24th April, 1954,\nand shall remain in force till the 31st March, 1962. In\nother words, the Act takes effect from the date when the\nearlier Act was to have taken effect, and its life continues\nfor one year after it received the assent of the President\nand became effective. Section 2\n, inter alia, defines a\nproducer as meaning \"a producer of tea and includes the\nperson in charge of the garden where tea is produced.\"\nThe\nAct\nis concerned with",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1963_1963_30_P020_C01",
+      "text": "tea and jute, but in the present proceedings, we are dealing\nwith the petitioners whose interest lies in tea. Section 3\nof the Act deals with the liability to tax, and since its\nvalidity is seriously impugned by the petitioners, it is\nnecessary to read it:\n\"(1) Subject to the provisions of this Act,\n there shall be levied a tax on (a)\n manufactured tea and (b) jute in bales carried\n by motor vehicle, , cart, trolley, boat,\n animal and human agency or any other means\n except railways and airways in such manner and\n in respect of such period and at such rate as\n specified in the Schedule.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1963_1963_30_P020_C02",
+      "text": "(2) Such tax levied on manufactured tea\n shall be realised from the producer and that\n levied on jute shall be realised from the\n dealer;\nProvided that where tea is sold at the factory\n premises, the producer shall be liable for\n realisation of tax from the purchaser with\n effect from such date as the Government may,\n by notification, appoint, for the carriage of\n such tea as provided in this section and the\n producer shall be liable for the payment of\n such tax notwithstanding the fact that the tea\n is not carried by the producer;\nProvided further that no tax shall be levied\n under this Act on any jute or tea in respect\n of which such tax has already been paid.\"\nSection 4\nprovides that the tax shall be charged on the\ntotal net weight carried during a return period. Section 5\ndeals with the problem of determining the weight. Section 6\nprescribes the taxing authorities. Section 7\nrequires the\nreturn to be submitted by the producer and makes appropriate\nprovisions in that behalf.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1963_1963_30_P020_C03",
+      "text": "Section 8\ndeals with licensing;\ns. 9 covers the problem of assessment and it provides that\nthe Commissioner may, by an order in writing, assess the\nproducer and determine the tax payable by him on the basis\nof his return. Section 10\ndeals with cancellation of\nassessment; s. 11 makes a provision",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1963_1963_30_P021_C01",
+      "text": "for assessment in cases of evasion and escape and authorises\nthe Commissioner within two years of the expiry of the\nperiod in question to serve on the producer a notice\nrequiring him to furnish a return, and empowers him to\nproceed to assess or reassess the producer as provided by\nit.\nSection 12\ndeals with rectification.\nSection 13\nprovides for penalty for non-submission of returns and\nevasion of taxes. Under s. 14 it is provided that\nassessment is no bar to prosecutions and penalties.\nSection",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1963_1963_30_P022_C01",
+      "text": "makes the tax payable by the representative of a deceased\nproducer.\nSections 16\nand",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1963_1963_30_P023_C01",
+      "text": "deal with appeals and\nrevision, while\ns. 18\nprescribes for the computation of the\nperiod of limitation for the said two remedies. The notice\nof demand is provided for by\ns. 19\n, and the period when the\ntax is to be paid is\nlaid down by\ns. 20. Section 22\nprescribes the mode of recovery; s. 23 provides for refunds;\nand\ns. 24\nfor employers' prosecution for failure to furnish\nreturns. Section 25\nprovides that no court shall take\ncognizance of any offence under the Act or under the rules\nmade under it, except with the previous sanction of the\nCommissioner. Section 26\npermits composition of offenses. Section 27\nimposes an obligation on the producer to maintain\nand preserve account books; s. 28 confers power on\nappropriate authorities to require the production of\naccounts. Section 29\nbars civil suits. Section 30\nempowers\nthe appropriate authority to take evidence; s. 31 deals with\nthe delegation of powers; s. 32 confers power on the Govern-\nment to make rules; s. 3 3 repeals the earlier Act of 1954\nand\ns. 34\nmakes provisions by way of validation. Since this\nlast section has also been challenged, it is necessary to\nread it:\n\"34.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1963_1963_30_P023_C02",
+      "text": "(1) Any rule made, any liability\n incurred, any tax levied or realised, any\n returns furnished, any proceedings commenced,\n any notification published, any action taken\n or anything whatsoever done under the\n provisions of the Act repealed, shall be\n deemed to have been made, incurred, levied,\n realised, furnished, commenced,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1963_1963_30_P024_C01",
+      "text": "published, taken or done under the\n corresponding provisions of this Act. (2) Notwithstanding anything contained in\n any judgment, decree or order of any court,\n all taxes imposed or realised or purporting to\n have been imposed or realised under the Act\n repealed shall for all purposes be deemed to\n be, and to have been, validly imposed or\n realised and accordingly-\n(a) no suit or other proceeding shall be\n maintained or continued in any court against\n the Government or any person or authority\n whatsoever for the refund of any taxes so\n paid; and\n(b) no court shall enforce any decree or\n order directing the refund of any taxes so\n paid.\"\nThe Schedule to the Act\ngives the rates for respective\nperiods and these rates correspond to the rates prescribed\nby the earlier Act for the period covered by it and\nprescribes new rates for the period thereafter. Rules have\nbeen made under\ns. 32(1)\nand Forms prescribed for the making\nof returns. That, in brief, is the scheme of the Act. It has been urged before us by Mr. Pathak that\ns. 3\nwhich is\nthe charging section, is outside the legislative competence\nof the Assam Legislature.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1963_1963_30_P024_C02",
+      "text": "The Act\npurports to have been\npassed by virtue of the legislative power conferred on the\nState Legislature under Entry 56 in List 11 of the Seventh\nSchedule. This Entry reads thus: \"Taxes on goods and\npassengers carried by road or on inland waterways.\" It will\nbe recalled that Entry 30 in List 1 deals with carriage of\npassengers and goods by railway, sea or air, or by national\nwaterways in mechanically propelled vessels, and so, Entry\n56 in List II does not cover cases falling under Entry 30 in\nList 1. It is only in regard to goods and passengers carried\nby road or inland waterways that the State Legislature can\npass a law imposing taxes. Mr. Pathak's contention is that\ns. 3\nread with the proviso to sub-section (2)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1963_1963_30_P025_C01",
+      "text": "clearly contemplates that the primary and the sole liability\nto pay the tax on tea has been placed on the producer even\nin cases where the tea in question may have been sold at the\ntea garden before it is carried. In other words, the\ncontention is that in cases where tea is carried by the\npurchaser, it is only the purchaser of the tea which is\ncarried who can be taxed, and since the producer is taxed\neven in such cases, the taxation itself is beyond the\nlegislative competence of the State Legislature. This\nargument proceeds on the assumption that the proviso lends\ncolour to the construction of\ns. 3(2)\n. Section 3(1) is\nenacted in terms of Entry 56 and it purports to indicate\nwhat the taxable event is. Section 3(2) makes the producer\nliable to pay the tax and the proviso to s. 3(2) enables the\n-producer to recover the tax from the purchaser with effect\nfrom such date as the Government may, by notification,\nappoint; this date was notified as 1St May, 1961. It is\nclear that the proviso is prospective, but Mr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1963_1963_30_P025_C02",
+      "text": "Pathak\nsuggests that the proviso can be explained only on the basis\nthat\ns. 3(2)\nincludes cases where tea, has been sold by the\nproducer before it is carried, and in that sense the\nproducer has been made liable to pay the tax even in regard\nto tea which has been sold by him before it is carried. On the other hand, Mr. Setalvad argues that\ns. 3(2)\nconfined to cases where the producer himself carries tea and\nhis suggestion is that the proviso which has been added by\nthe present Act and which was not included in the earlier\nAct seeks to make the purchaser liable to pay the tax in\ncase tea which is carried has been purchased by him before\nit leaves the garden. He wants us to read the proviso as\ncreating an obligation on the purchaser to pay the tax and\nas making the producer liable to recover the tax from the\npurchaser as the Agent of the State. In support of his\nargument that\ns. 3(2)\ncannot be read to include cases where\ntea has been sold before it is carried, Mr. Setalvad has\nreferred us to the fact that when the corresponding\nprovision in the earlier Act was construed by the Assam High\nCourt, it was",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1963_1963_30_P026_C01",
+      "text": "held that where tea is sold before it is carried, the pro-\nducer is not liable and no tax can be recovered from him,\nvide H. P. Barua v. State of Assam(1). He also emphasises\nthe fact that the proviso is prospective in operation, and\nso, it indicates that it cannot lend colour to the\nconstruction of\nsection 3(2)\n. It is, however, not easy to accept Mr. Setalvad's\nconstruction. The words used in the proviso show( that the\nproducer has been made liable for realisation of the tax\nfrom the purchaser, but there are no words imposing a\nliability on the purchaser to pay the tax and no penalty is\nprescribed in case he fails to pay the tax to the producer. The relevant forms prescribed for making returns, also\ncontinue to be the same as under the old Act and do not\ncontemplate cases where the purchaser may have to make\nreturns. In the present proceedings, we are not concerned\nwith the case of any purchaser, and so, it is unnecessary\nfor us to pronounce a definite opinion on the construction\nof s. 3. We would, therefore, proceed to deal with Mr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1963_1963_30_P026_C02",
+      "text": "Pathak's argument on the basis that\ns. 3(2)\nmakes the\nproducer liable even in. cases where tea has been sold by\nhim to a purchaser before it is carried away from the\ngarden. This argument of legislative incompetence seems to assume\nthat Entry 56 requires that the tax must be levied by the\nState legislature on goods which are carried only against\nthe owner of the goods that are carried, or against the\npersons who carry them. We do not see any Justification for\nintroducing such limitations in the said Entry. It is\nhardly necessary to emphasise that Entries in the three\nLists in the Seventh Schedule which confer legislative\ncompetence on the respective Legislatures to deal with the\ntopics covered by them must receive the widest possible\ninterpretation; and so, it would be unreasonable to read in\nthe Entry any limitation of the kind which Mr. Pathak's\nargument seems to postulate. Besides, it is well-settled\nthat when a power is conferred on the Legislature to levy a\ntax, that power itself must\n(1)SCI.R. 1955 Assam 249.\n1 SCI/64 --- 63",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_1963_1963_30_P027_C01",
+      "text": "be widely construed; it must include the power to impose a\ntax and select the articles or commodities for the exercise\nof such power; it must likewise include the power to fix the\nrate and prescribe the machinery for the recovery of the\ntax. This power also gives jurisdiction to the Legislature\nto make such provisions as, in its opinion, would be\nnecessary to prevent the evasion of the tax. In imposing\ntaxes, the legislature can also appoint authorities for\ncollecting taxes and may prescribe the procedure for\ndetermining the amount of taxes payable by any individual;\nall these provisions are subsidiary to the main power to\nlevy a tax and, therefore, once it is shown that the tax in\nquestion has been levied on goods carried, it would be open\nto the legislature to prescribe the machinery for recovering\nthe said tax. As was observed by Chief Justice Marshall in\nM'Culloch v. Maryland(\" \"the power of taxing the people and\ntheir property is essential to the very existence of Govern-\nment, and may be legitimately exercised on the objects to\nwhich it is applicable to the utmost extent to which the\nGovernment may choose to carry it\".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_1963_1963_30_P027_C02",
+      "text": "This statement of the\nlaw must, however, be read subject to the condition that\neven tax statutes have to satisfy the test of reasonableness\nprescribed by clause (6) of\nArt. 19\n, and the fundamental\nright of equality before law guaranteed by\nArt. 14\nas well\nas the test prescribed by\nArt. 301. Reverting then to\ns. 3(1)\n, we ought to add that the said\nsection in terms expressly makes the carriage of goods the\ntaxable event, and\ns. 3(2)\nmakes the producer liable to pay\nthe tax only on goods carried. If the goods produced in the\ntea garden are not carried, there is no occasion to pay the\ntax. That being so, the fact that the Legislature has\nadopted the machinery of making the producer responsible for\nthe payment of the tax and liable for it in that sense\ncannot introduce any element of legislative incompetence\nwhich would vitiate the statute. It may be conceded that when the legislature constructs a\nmachinery for the recovery of the taxes\n(1) [1819] 4 L. ed. 579, 607",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_1963_1963_30_P028_C01",
+      "text": "which it is within its competence to impose, the said\nmachinery should have some rational or intelligent\nconnection with the tax. In the absence of a rational nexus\nbetween the producer and the tax on goods carried, it may be\nopen to a citizen to contend that the tax is not one\njustified by Entry 56. But can we say that between the\nproducer of tea and the tax which is levied on the tea\ncarried from his garden, there is no rational nexus? Considerations of administrative convenience as well as\nconsiderations of facility in recovering the tax cannot be\ntreated as irrelevant in this context. The tea which is\ntaxed has been produced by the producer and even when he\nsells it to a purchaser, it is obvious that it would be\ncarried away and not left with the producer, and so, the\nlegislature may have thought that it would be appropriate to\nmake the producer liable to pay the tax. It may also be relevant to bear in mind that the cases of\nsale of tea before it is carried cannot be too many.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_1963_1963_30_P028_C02",
+      "text": "As we\nhave already seen, the earlier Act did not include the\nproviso and that seems to suggest that usually, it is the\nproducers who produce the tea in their gardens and carry it\nto Calcutta either for sale, or for home consumption, or for\nexport. In fact, the petitioners before us are producers\nwho have carried their own product from their tea gardens to\nCalcutta, and we were told that amongst the 487 persons who\nmoved the Assam High Court by their writ petitions, not one\nwas a purchaser; everyone was a producer who carried his own\ngoods. Apart from these facts, however, it is impossible to\nsustain the argument that it is not competent to the\nlegislature to devise a proper and appropriate machinery to\nrecover a tax which it is competent to the legislature to\nlevy. This question has been frequently considered by this Court\nand the power of the Legislature to create appropriate\nmachinery to recover a tax, or to prevent the evasion of the\npayment of the tax has been consi-",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_1963_1963_30_P029_C01",
+      "text": "stently recongised. R. C. Jall v. Union of India\n(1)\nwhile dealing with the question about the power of the\nlegislature to decide at what 'stage and from whom excise\nduty should be recovered, this Court held that subject\nalways to the legislative competence of the taxing\nauthority, the tax can be levied at a convenient stage so\nlong as the character of the impost is not lost. The method\nof collection does not effect the essence of the duty but\nonly relates to the machinery of collection for\nadministrative convenience. While enunciating this\nprinciple, this Court, however, took the precaution of\nadding that \"whether in a particular case the tax ceases to\nbe in essence an excise duty and the rational connection\nbetween the duty and the person on whom it is imposed ceased\nto exist, is to be decided on a fair construction of the\nprovisions of a particular Act\". Sardar Baldel, Singh v. Commissioner of Income-tax, Delhi\n& Ajmer\n(2) , this Court was called upon to consider the\nvalidity of\ns. 23A\nof the Indian Income-tax Act, 1922.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_1963_1963_30_P029_C02",
+      "text": "the relevant time, the said section gave power to the\nappropriate authority to make an order that the\nundistributed portion of the assessable income of the\ncompany shall be deemed to have been distributed as\ndividends and provided that thereupon the proportionate\nshare thereof of each shareholder shall be included in his\nincome for assessment. The argument which was urged before\nthis Court was that the Company and its shareholders are\ndifferent persons and, therefore, s. 23A was invalid\ninasmuch as under entry 54 of List 1 a law could be passed\nimposing a tax on a person on his own income. This argument\nwas, however, rejected because this Court took the view that\nthe Entries in the Lists should be read in a very wide\nmanner so as to include all subsidiary and ancillary\nmatters. That is why Entry 54 was held to authorise not\nonly the imposition of a tax, but also an enactment which\nprevents the tax being evaded. (1) [1962] Supp. 3 S.R. 436. (2) [1961] 1 S.C.R. 482.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_1963_1963_30_P030_C01",
+      "text": "Similarly, in the\nOrient Paper Mills Ltd. v. The State of\nOrissa\n(1), this Court has observed that the power to\nlegislate with respect to a tax comprehends the power to\nimpose the tax, to prescribe machinery for collecting the\ntax, to designate the officers by whom the liability may be\nenforced and to prescribe the authority, obligations and\nindemnity of those officers. Therefore, we do not think Mr. Pathak is right in contending that merely because in a few\ncases where tea may be sold at the garden before it is\ncarried, the producer is made liable to pay the tax, s. 3\nitself is outside the legislative competence of the Assam\nLegislature. Then, Mr. Pathak argues that the Act which has been passed\nunder\nArt. 304(b)\ncannot act retrospectively. The argument\nis that when an Act is passed under\nArt. 304(b)\nafter\nintroducing the Bill with the previous sanction' of the\nPresident, it must always and in every case operate\nprospectively. The scheme of Part XIII according to Mr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_1963_1963_30_P030_C02",
+      "text": "Pathak, clearly shows that if the State Legislature wants to\navail itself of the provisions of\nArt. 304(b)\n, it cannot\npurport to pass an Act in the first instance without taking\nrecourse to\nArt. 304(b)\nand if the said Act is struck down,\nthen take recourse to the said Article and make the law\nretrospective. If the State Legislature makes a law without\ntaking recourse to\nArt. 304(b)\nand the law is struck down,\nthe matter must end there and the provisions of the said law\ncannot be revived by a subsequent law passed under\nArt.\n304(b)\nby making its operation retrospective. If such a\nprocess is allowed, it would materially affect the\nsignificance and the validity of the provisions. contained\nArt. 301;\nthat is one aspect of the matter. The other aspect of the argument is that a law passed under\nArt. 304(b)\nreally imposes restrictions and so, the\nprinciple that a law creating prohibitions can operate only\nprospectively, must govern the present case. In support of\nthis argument, Mr. Pathak has relied on the decision of the\nPrivy Council\n(1) [1962] 1 S.C.R. 549.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1963_1963_30_P031_C01",
+      "text": "in the case of\nPunjab Province v. Daulat Singh\n\"'. In that\ncase, the Privy Council had occasion to deal with s. 5 of\nthe Pujab Alienation of Land Act (Indian Act XIII of 1900)\nconsidered in the light of the provisions of\ns. 298\nof the\nGovernment of India Act, 1935. Section 298(2)\nprovides that\nnothing in this section shall affect the operation of any\nlaw which (a) prohibits, either absolutely or subject' to\nexceptions, the sale or mortgage of agricultural land there-\nin described. The Privy Council held that\ns. 5\nof the\nimpugned Act which created such a prohibition could not\noperate retrospectively because the word \" prohibits\" can\nonly mean the forbidding of a transaction, and such a\ndirection is appropriate only in respect of transactions to\ntake place subsequently to the date of the direction, and\ncannot include an attempt to reopen or set aside\ntransactions already completed, or to vacate titles already\nacquired.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1963_1963_30_P031_C02",
+      "text": "It would thus be seen that this decision turned\nessentially upon the use of the word \"prohibits\" in s.\n298(2) , and so, it would be unreasonable to extend\nthe said\ndecision\nto the cases falling under\nArt. 304(b)\nparticularly\nwhen the restriction imposed is not of such a character as\nto amount to prohibition. A similar argument was in fact rejected by this Court in\nthe case of\nM.P.V. Sundararamier & Co. v. The State of\nAndhra Pradesh\n(2). What was urged before this Court\nin that\ncase\nwas that the principle\nlaid down by\nthe Privy Council\nin the case of Punjab Province(1) should be extended to a\nlaw to which\nArt. 286(2)\nof the Constitution applied. In\nrejecting this contention this Court observed that the Privy\nCouncil's decision proceeded solely on the connotation of\nthe word \"prohibits\" in s. 2982' of the\nGovernment of India\nAct, 1935\n, and can be of no assistance in the construction\nArt. 286(2)\nwherein the word does not occur. What this\nCourt has observed about\nArt. 286(2)\nas it formerly stood in\nthe Constitution applies with greater force to\nArt. 304(b). It is true that there are some provisions\n(1) 73 I. A. 59. (2) [1958] S.C.R. 1422.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_1963_1963_30_P032_C01",
+      "text": "in the Constitution which prohibit retrospective legislation\nas, for instance,\nArt. 20(1)\n& (2)\nvide M/s\nWest Ramnand\nElectric Distribution Co. Ltd. v. State of Madras\n(1). But\nArt. 304(b)\ncannot be construed to mean that a law passed\nunder it must in every case be prospective. If a Statute is\npassed under\nArt. 304(b)\nretrospectively, its reasonableness\nmay, of course, fall to be considered on the merits in a\ngiven case but that is not to say that in no case can a\nstatute be passed under the sain Articles to operate\nretrospectively. Then as to the argument about the scheme of Part XIII, we do\nnot see how a statute passed under\nArt. 304(b)\nwould always\nand necessarily defeat the said scheme if its provisions are\nmade retrospective. It is not disputed by Mr. Pathak that a\ntaxing statute can be passed retrospectively, and it is\nconceded that if such a statute is passed, it would not be\npossible for any person to challenge its validity on the\nground that it affects the citizens' fundamental right under\nArt. 19(1)(g).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_1963_1963_30_P032_C02",
+      "text": "If such a challenge is made, it would be\neasily met by the plea that a taxing statute, though\nretrospective in its operation. can be reasonable and in the\npublic interest within the meaning of clause (6) of\nArt. 19. Therefore, if a taxing statute can, in a given case, operate\nretrospectively and its validity cannot be successfully\nchallenged under Art, 19, we do not see how a similar\nchallenge could be sustained against a taxing statute which\nhas been passed under\nArt. 304(b). The freedom of trade\nguaranteed by\nArt. 301\nis no doubt of very great importance\nto the political and economic unity of the country; but the\nfreedom guaranteed to the individual is no less important;\njust as in the case of a challenge to the validity of a\nstatute under\nArt. 19\nthe court has to consider whether the\nrestrictions imposed by the statute are reasonable and in\nthe interests of the general public, so in dealing with a\nchallenge to the validity of a statute passed under\nArt.\n304(b)\nthe court has to consider whether the restrictions\n(1) [1963] 2 S.C.R.747p.761.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_1963_1963_30_P033_C01",
+      "text": "imposed by it are reasonable and are required in the public\ninterest. The impact of the restrictions on the\nindividual's right has to be judged in one case, whereas the\nimpact of the restrictions on the freedom of trade has to be\njudged in the other; but basically, it is the invasion of a\nguaranteed right whose validity is being examined in either\ncase; and so, if the law can be retrospective in one case,\nthere is no reason why it cannot be retrospective in the\nother. We are, therefore, satisfied that there is no\nsubstance in the plea raised by Mr. Pathak that the Act is\ninvalid solely because it operates retrospectively. It is then faintly suggested that the retrospective\noperation of\ns. 3\n, in substance, changes the character of\nthe tax. The argument is that the proviso to s. 3(2)\nenables the producer to recover the tax from the purchaser\nin case the goods are sold to a purchaser before they are\ncarried, whereas such a provision did not exist in the past\nand in that sense, the retrospective operation changes the\ncharacter of the tax.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_1963_1963_30_P033_C02",
+      "text": "We have already noticed that the\nproviso in question is not retrospective in operation, and\nso, this argument has to be tested by reference to the\nremaining portion of\ns. 3(2)\n. Thus tested, it is difficult\nto accept it as sound. In this connection, we may refer to\nthe recent decision of this Court in\nRai Ramkrishna v. State\nof Bihar\n(1) where a similar plea was rejected and it was\npointed out that this Court has consistently held that the\nmere fact that a validating statute operates retrospectively\ndoes not justify the contention that the character of the\ntax sought to be recovered by such retrospective operation\nis necessarily changed. The next question to consider in dealing with the validity\nof the Act which has been passed under\nArt. 304(b)\nis the\nextent of the dispute that is justifiable in law. Art.\n304(b)\nprovides that notwithstanding anything in\nArt. 301\nArt. 303\nthe Legislature of a State may by law impose such\nreasonable restrictions on the freedom of trade, commerce or\n(1) [1964] 1 S.C.R. 897.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_1963_1963_30_P034_C01",
+      "text": "intercourse with or within that State as may be required in\nthe public interest, provided that no Bill or amendment for\nthe purposes of clause (b) shall be introduced or moved in\nthe Legislature of a State without the previous sanction of\nthe President. It would thus be clear that an Act passed\nunder\nArt. 304(b)\ncan be held to be valid if it is shown\nthat the restrictions imposed by it are reasonable and in\nthe public interest. It is true that before\nBill is introduced in that behalf, the previous sanction of\nthe President has been obtained; but that does not take away\nthe jurisdiction of the Court to consider the question as to\nwhether the Act passed with the previous sanction of the\nPresident satisfies the requirements of\nArt. 304(b). Since\nArt. 304(b)\npermits restrictions to be imposed on the\nfreedom of trade, the Constitution has made it clear that\nthe said restrictions can be sustained only if they are\nreasonable and are required in the public interest. This\nposition is not disputed by Mr. Setalvad before us.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_1963_1963_30_P034_C02",
+      "text": "It is\ntrue that in the case of Atiabari Tea Co.(1), whilst\ncontrasting the provisions of\nArt. 302\nwith those of\nArt.\n304(b)\nthe majority judgment has observed that prima facie\nthe requirement of public interest may be said to have been\nsatisfied by the previous sanction of the President and it\nis only the reasonableness of the restrictions which may\nfall to be considered in proceedings before the Court. However,, this point did not directly arise for the decision\nof the Court, and so, those observations should not be read\nas definitely expressing the opinion that the requirement of\npublic interest does not become the subject-matter of ad-\njudication in proceedings before the Court when the validity\nof an Act passed under\nArt. 304(b)\nis questioned. That takes us to the question about the onus of proof in\nthese proceedings. It may be that in most cases, the\nquestion about the onus of proof would turn out to be merely\nof academic. importance, because when one considers the\nreasonableness of a given\n(1) [1961] 1 S.C.R. 809",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_1963_1963_30_P035_C01",
+      "text": "restriction, one inevitably enquires also whether the said\nrestriction is not unreasonable; but since the point about\nthe onus has been argued before us, it is necessary that we\nshould deal with it. Mr.Setalvad contends that in dealing\nwith the question about the constitutionality of any\nstatute, we must draw an initial presumption in favour of\nthe constitutionality of the statute, and he suggests that\nthis initial presumption will cover even the requirement\nthat the restriction must be reasonable and in the public\ninterest as required by\nArt. 304(b). The same argument has\nbeen urged by him in regard to the presumption in so far as\nthe petitioners' fundamental right under\nArt. 19 (1)(g)\nconcerned. He urges that in determining the content of the\nindividual's fundamental right under\nArt. 19(1)(g)\n, we must\ntake into account\nArt. 19(1)(g)\nas well as the limitations\nplaced on it by clause (6) of\nArt. 19.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_1963_1963_30_P035_C02",
+      "text": "The fundamental\nright to carry on the trade is not an absolute right; it can\nbe regulated and controlled by law which imposes\nrestrictions on the said right, provided the said\nrestrictions are reasonable and in the interests of the\ngeneral public, and so, the contention is that when we speak\nabout the initial presumption of constitutionality, it means\nthat the court should assume that the restrictions imposed\nby the statute are reasonable and in the interests of the\ngeneral public, unless the contrary is shown. On the other hand, Mr. Pathak strenuously argues that the\ninitial presumption would be rebutted as soon as it is shown\nthat the fundamental right under\nArt. 19(1)(g )\nis invaded\nby a statute, or the freedom of trade guaranteed by\nArt. 301\nis assaulted by the impugned statute. Once a citizen shows\nthat the impugned statute invades either his individual\nfundamental right, or the right of freedom of trade, the\npresumption has worked itself out and the onus shifts to the\nState to show that the invasion amounts to a restriction\nwhich is reasonable, or it is in the interests of the\ngeneral public.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_1963_1963_30_P035_C03",
+      "text": "It may be conceded that, prima facie, there is some force in\nthe argument raised before us by Mr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_1963_1963_30_P036_C01",
+      "text": "Setalvad. If the freedom guaranteed to an individual\ncitizen is not absolute and its content must be determined\nby reading\nArt. 19(1)(g)\nand clause (6) of\nArt. 19\ntogether,\nit can perhaps be said that the initial presumption cannot\nbe rebutted merely by showing that the freedom under\nArt.\n19(1)(g)\nhas, prima facie, been invaded. But we do not\nthink it necessary to pursue this matter any further,\nbecause we are satisfied that the question raised by Mr. Setalvad is concluded against him by a decision of this\nCourt. Saghir Ahmad v. The State of U.P. (1) where this Court was\ndealing with the invasion of the citizens' fundamental right\nunder\nArt. 19(1)(g)\n, it has been observed that when the\nenactment on the face of it is found to violate a\nfundamental right guaranteed under\nArt. 19(1)(g)\n, it must be\nheld to be invalid, unless those who support the legislation\ncan bring it within the purview of the exception\nlaid down\nclause (6) of\nArt. 19.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_1963_1963_30_P036_C02",
+      "text": "If the respondents do not place\nany materials before the Court to establish that the\nlegislation comes within the permissible limits of clause\n(6), it is surely not for the appellants to prove negatively\nthat the legislation was not reasonable and was not\nconducive to the welfare of the community. It is true that\non several occasions, this Court has generally observed that\na presumption of constitutionality arises where a statute is\nimpeached as being unconstitutional, but as has been held in\nthe case of Saghir Ahmad(1) in regard to the fundamental\nright under\nArt. 19(1)(g)\nas soon as the invasion of the\nright is proved, it is for the State to prove its case that\nthe impugned legislation falls within clause (6) of\nArt. 19. The position may be different when we are dealing with\nArt.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_1963_1963_30_P037_C01",
+      "text": ", because under that Article the initial presumption of\nconstitutionality may have a larger sway inasmuch as it may\nplace the burden on the petitioner to show that the impugned\nlaw denied equality before the law, or equal protection of\nthe laws. We may in this connection refer to the\nobservations made by this Court in the case of Hamdard\n(1) [1955] 1. S.C.R. 707, 726.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_1963_1963_30_P038_C01",
+      "text": "Dawakhana (Wakf) Lal Kuan, Delhi v. Union of India\n(1). Another principle which has to be borne in mind in examining\nthe constitutionality of a statute, it was observed, is that\nit must be assumed that the legislature understands and\nappreciates the needs of the people and the laws it enacts\nare directed to problems which are made manifest by\nexperience and that the elected representatives assembled in\na legislature enact laws which they consider to be\nreasonable for the purpose for which they are enacted. Presumption is, therefore, in favour of the constitu-\ntionality of an enactment. It is significant that all the\ndecisions to which reference is made in support of this\nstatement of the law are decisions under\nArt. 14\nof the\nConstitution. Mr. Setalvad has fairly conceded that in view\nof the decision of this Court in the case of Saghir\nAhmad(2), it would not be open to him to contend that even\nafter the invasion of the fundamental right of a citizen is\nproved under\nArt. 19(1)(g)\n, the onus would not shift to the\nState.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_1963_1963_30_P038_C02",
+      "text": "In our opinion\n,\nthe said decision\nis a clear\nauthority for the proposition that once the invasion of the\nfundamental right under\nArt. 19(1)\nis proved, the State must\njustify its case under cl. (6) which is in the nature of an\nexception to the main provisions contained in\nArt. 19(1). The position with regard to the onus would be the same in\ndealing with \"lie law passed under\nArt. 304(b). In fact, in\nthe case of such a law, the position is somewhat stronger in\nfavour of the citizen, because the very fact that a law is\npassed under\nArt. 304(b)\nmeans clearly that it purports to\nrestrict the freedom of trade. That being so, we think that\nas soon as it is shown that the Act invades the right of\nfreedom of trade, it is necessary to enquire whether the\nState has proved that the restrictions imposed by it by way\nof taxation are reasonable and in the public interest within\nthe meaning of\nArt. 304(b). This enquiry would be of a\nsimilar character in regard to cl. (6) of\nArt. 19. That naturally takes us to the question as to whether the\nrespondent has shown that the restric-\n(1) [1960] 2 S.C.R. 671, 679.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_1963_1963_30_P038_C03",
+      "text": "(2) [1955] 1 S.C.R. 707, 726.\ntions imposed by the Act by levying a tax on the movement of\ntea can be said to be reasonable and in the public interest. The decision of this question will inevitably involve the\nbalancing of the importance of freedon of trade as against\nthe requirements of public interest. Art. 304(b)\nnecessarily postulates that considerations of public\ninterest may require and justify the imposition of\nrestrictions on the freedom of trade, provided they are\nreasonable. In determining the reasonableness of the\nrestrictions we will have to bear in mind again the\nimportance of freedom of trade and the requirements of\npublic interest. It is a question of weighing one relevant\nconsideration against another and harmonising both the\ncompeting interests so as to serve the public interest in\nthe end. This process of assessment may not always be easy,\nbut, nevertheless, we must try to weigh the pros and cons\nurged before us by both the parties and decide whether the\ntax levied by the Act satisfies the requirement prescribed\nArt. 304(b). In support of his case, Mr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_1963_1963_30_P038_C04",
+      "text": "Pathak has\nemphasised the fact that the producer has been made liable\nfor goods even when they are sold before they are carried. In other words, the argument which he urged in support of\nhis case that the Act was beyond the legislative competence\nof the State Legislature, has been again pressed by him into\nservice in support of the plea that the restriction is\nunreasonable. We are not impressed by this plea. It is then urged that the serious infirmity in the Act is\nthat it levies a flat rate in respect of goods carried. Normally, the method which should have been adopted by the\nAct is what is sometimes described as the ton-mileage\nmethod, i.e., levy the tax according to the weight of the\ngoods carried and the distance over which they are carried. Since the Act imposes a flat rate merely on the weight, the\nburden, imposed by it is unreasonable. On the other hand, Mr. Setalvad strongly urges that the tax\nconstitutes a reasonable restriction in the public interest,\nbecause it purports to raise revenue",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_1963_1963_30_P039_C01",
+      "text": "for public purposes. As we have already seen, tax laws have\nto stand. the scrutiny of\nArt. 19. That being so, as soon\nas the validity of a tax law is challenged under\nArt. 19\n,\nthe State would be entitled to rely on the fact that the\nrevenue raised by the tax law serves public purpose and that\nis its basic justification for being treated as a reasonable\nrestriction on the individual's fundamental right under\nArt.\n19(1)(g). It would, therefore. follow that the\nconsideration on which Mr. Setalvad relies is not\nirrelevant, though its significance and importance cannot be\nover-rated. In this context, it may, however, be legitimate\nto bear in mind that the revenue is required by the State to\nraise money in order to carry on the function of government\nand to sustain the manifold welfare activities undertaken by\nit.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_1963_1963_30_P039_C02",
+      "text": "Similarly, the fact that the President has given\nprevious sanction to the introduction of the Bill may\nconceivably be relevant, because the Constitution seems to\ncontemplate that the sanction of the President would\nindicate that the Central Government had applied its mind to\nthe problem and had come to the conclusion that the proposed\ntax is reasonable and in the public interest. But we must\nhasten to add that the significance of his consideration\ncannot also be exaggerated. Mr. Setalvad urges that evidence in the case shows that the\nState has levied the tax on the goods carried because it\nwants to utilise the income for the purpose of keeping the\nroads in order and to meet the huge expenses incurred in\nmaintaining the waterways in the State. In the affidavit\nfiled on behalf of the respondent, details have been given\nabout the expenditure incurred by the State on roads and\nwaterways from year to year, and the revenue received by it\nform the carriage tax during the same period. The affidavit\npoints out that tea and the jute are the main products of\nthe State of Assam and in order to have a regular and easy\nflow of trade, the State has to maintain the roads.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_1963_1963_30_P039_C03",
+      "text": "The\ntrade in these commodities through waterways is cheaper and,\ntherefore, the State has also to incur large sums on\nmaintaining the waterways The statement filed in",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_1963_1963_30_P040_C01",
+      "text": "the affidavit clearly shows that every year the expenditure\nincurred is very much more than the revenue received from\ncarriage tax. It may perhaps be that since the ton-mileage\nmethod has not been adopted in imposing the tax, the State\nmay not be able to claim that the tax is compensatory in\ncharacter. Usually, compensatory character may be claimed\nfor a tax of this kind, provided the extent of the service\nrendered by the State by raising the tax is shown and it is\nalso proved that the recovery of the tax has some relation\nto the rendering of the said service. That is why Mr. Setalvad has not argued that the tax in question is\ncompensatory in character. He, however, suggests that under\nArt. 304(b)\nit would be open to him to sustain the\nrestriction imposed by the tax on the ground that the tax is\nlevied not merely to raise general revenue for the State\nwhich itself is a public purpose, but that the tax is raised\nand utilised for keeping the waterways and the roads in good\ncondition in the State. In our opinion, there is\nconsiderable force in these contentions. Then we turn to the main point urged by Mr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_1963_1963_30_P040_C02",
+      "text": "Pathak that the\nflat rate introduces an element of unreasonableness in the\nlevy of the tax. It is necessary to bear in mind that\nhaving regard to the interests of the trade as a whole, a\nflat rate may in some cases be reasonable. If different\nrates are levied by reference to the distance over which the\ntea is carried before it reaches the Calcutta Port, it would\nobviously mean that some producers of tea would have to pay\nmore taxes than others and that would introduce an element\nof unfair competition between the producers of tea\nconsidered as a class. We are referring to this aspect of\nthe matter to emphasis the fact that the legislature has to\nconsider several relevant factors before deciding how a\nparticular tax should be levied. The law of taxation is in\nthe ultimate analysis the result of the balancing of several\ncomplex considerations, and so, it would be unreasonable to\ninsist upon the application of a general rule that if a tax\nis levied at a flat rate, it must be treated as\nunreasonable.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_1963_1963_30_P041_C01",
+      "text": "In the present case, the legislature may have considered the\nrequirements of the trade carried on by the producers of tea\nand may have thought that a flat rate would be just and fair\nto the trade as a whole. These are questions which must\nnormally be left to the legislature to decide. Therefore,\nwe do not think that the main ground on which the\nreasonableness of the tax levied by\ns. 3\nwas impeached by\nMr. Pathak, can be sustained. Mr. Pathak further contended that\ns. 34\nof the Act is\nunconstitutional inasmuch as it is discriminatory and\nimposes an unreasonable restriction on the citizens'\nfundamental right to trade under\nArt. 19(1)(g). We have\nalready cited\ns. 34\n. The argument that the restriction\nimposed by\ns. 34\nis unreasonable, proceeds on the assumption\nthat sub-section (2) prohibits a producer from ventilating\nhis grievance against irregular, excessive, or illegal levy\nof the tax before any forum, and such a prohibition, it is\nurged, is patently unreasonable. We are satisfied that the\nassumption on which the argument is founded is completely\nmisplaced. What\ns. 34(2)(a)\nprohibits is merely a suit or\nthe other proceeding in any court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_1963_1963_30_P041_C02",
+      "text": "It does not prohibit the\nremedy of an appeal or revision specifically provided by\nsections 16\n&",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_1963_1963_30_P042_C01",
+      "text": "of the Act.\nThen it is urged that s. 34(1) makes an invidious\ndistinction between producers who had been ordered to pay\nthe tax under the earlier Act and who took no steps to\nchallenge the said levy either by an appeal or revision, and\nthose who had adopted the remedy of an appeal or revision\nunder the said Act. In the case of the latter category of\nproducers the appeals and revisions would be continued and\ndealt with as though the said proceedings had been adopted\nunder the relevant provisions of the Act. whereas assess-\nments which had been closed under the earlier Act cannot be\nreopened by the producers by filing an appeal or revision\nafter the Act was passed. We do not think there is any\nsubstance in this argument. Persons who had taken\nproceedings by way of appeal or revision under the earlier\nAct are, on this argu-",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_1963_1963_30_P043_C01",
+      "text": "ment, treated as of the same class as persons who had taken\nno such proceedings, and that, in our opinion, is not\njustified because the two categories are not same or similar\nin character. Besides, an argument of this kind is purely\nhypothetical and not based on any material facts. It is\nvery difficult to assume that producers who were taxed under\nthe earlier Act paid the tax without preferring an appeal or\nrevision though they had a grievance against the validity or\nregularity of the assessment order. Therefore, we do not\nthink the challenge to the validity of s. 34 can be\nsustained.\nA similar challenge has been made against the validity of\ns.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_1963_1963_30_P044_C01",
+      "text": "which prescribes punishment for the three categories of\noffences specified by it under clauses (1), (2) & (3). The\nargument is that since the earlier Act was struck down as\nunconstitutional, if any producer had knowingly submitted\nfalse returns or had knowingly produced incorrect account,\nor had contravened the relevant provision of\ns. 8(1)\n, it\ncould not be said that he was guilty of any offence, and so,\nhe could not have been prosecuted under the corresponding\nprovision of the earlier Act which also was s. 24, that\nbeing so, s. 24, of the present Act which purports to\noperate retrospectively would be invalid. There may be some\nforce in this contention; but we do not see how the\npetitioners can be permitted to challenge the validity of\ns.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_1963_1963_30_P045_C01",
+      "text": "when it is not alleged by them that any action is\nproposed to be taken against them under the said section.\nIn dealing with petitions under\nArt. 32\n, this Court would\nnaturally confine the petitioners to the provisions of the\nimpugned Act by which their fundamental rights are either\naffected or threatened. That is why we are not satisfied\nthat it is necessary to decide the question about the\nvalidity of\ns. 24\nin the present proceedings.\nThat takes us to the question whether the tax levied by the\nAct can be said to be discriminatory and as such,\nunconstitutional because it has selected only tea and jute\nas objects of taxation.\nThe argument\nI/SCI/64-64",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_1963_1963_30_P046_C01",
+      "text": "appears to be that the legislature should have taxed other\ncommodities along with tea and jute and in so far as only\ntea and jute have been selected for the purpose of taxation,\nArt. 14\nhas been contravened. This argument is entirely\nfallacious. It is not disputed that tea and jute are the\nmain products of the State of Assam and it is not surprising\nthat the Assam Legislature, therefore, levied tax on the\nsaid two articles. Besides, the legislature which is\ncompetent to levy a tax must inevitably be given full\nfreedom to determine which articles should be taxed, in what\nmanner and at what rate, vide\nRaja Jagannath Baksh Singh v. The State of U.P. (1). It would be idle to contend that a\nState must tax everything in order to tax something. In tax\nmatters, \"the State is allowed to pick and choose districts,\nobjects, persons, methods and even rates for taxation if it\ndoes so reasonably. The Supreme Court of the United States\nof America has been practical and has permitted a very wide\nlatitude in classification for taxation\"(2). This approach\nhas been approved by this Court in the case of\nEast India\nTobacco Co. v. State of Andhra Pradesh\n.(3).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_1963_1963_30_P046_C02",
+      "text": "It is, of course, true that the validity of tax laws can be\nquestioned in the light of the provisions of Arts. 14, 19;\nand\nArt. 301\nif the said tax directly and immediately\nimposes a restriction on the freedom of trade; but the power\nconferred on this Court to strike down a taxing statute if\nit contravenes the provisions of Arts. 14, 19 or 301 has to\nbe exercised with circumspection, bearing in mind that the\npower of the State to levy taxes for the purpose of govern-\nance and for carrying out its welfare activities is a\nnecessary attribute of sovereignty and in that sense it is a\npower of paramount character. In what cases a taxing\nstatute can be struck down as being unconstitutional is\nillustrated by the decision of this Court in\nK.T. Moopil\nNair v. The State of Kerala\n(4). In that case, a careful\nexamination of the scheme of the relevant provisions of the\nTravancore-Cochin\n(1)[1963] 1 S.C.R, 220. (2) Willis on Constitutional Law'p. 587. (3) [1963] 1 S.C.R. 404, 409. (4) [1961] 3 S.C.R. 77.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_1963_1963_30_P047_C01",
+      "text": "Land Tax Act (No. 15 of 1955) satisfied this Court that the\nsaid Act imposed unreasonable restrictions on the\nfundamental rights of the citizens, conferred unbridled\npower on the appropriate authorities, introduced\nunconstitutional discrimination and in consequence, amounted\nto a colourable exercise of legislative power. It is in\nregard to such a taxing statute which can properly be\nregarded as purely confiscatory that the power of the Court\ncan be legitimately invoked and exercised. In our opinion,\nit would be idle to suggest that a tax imposed by the Act in\nthe present case should be struck down because it has taxed\nonly tea and jute. The next contention to which reference must be made is that\nthe Act is a colourable exercise of legislative power and\nshould also be regarded as confiscatory for the reason that\nit has been passed substantially for the purpose of\nvalidating the recoveries made under the earlier Act and\nenforcing the assessment orders passed under the Act. We\nhave already seen that the Act is retrospective in character\nand came into force from the date on which the earlier Act\nwas applied.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_1963_1963_30_P047_C02",
+      "text": "We have also noticed that the prospective\noperation of the Act was limited to one year from the date\non which it was published. In fact, a subsequent Act had\nbeen passed by the Assam Legislature (Act No. 16 of 1962)\nand this Act has adopted a somewhat different procedure and\nprescribed a different machinery for the recovery of the tax\nimposed by it. Section 3\nof this Act makes the owner liable\nto pay the tax and\ns. 2(7)\ndefines the owner as meaning the\nowner of a taxable vehicle and includes in that category the\nfour types of persons specified by clauses (a) to (d) of s.\n2(7). The argument, therefore, is that the Act was\ndeliberately passed by the legislature merely for the\npurpose of recovering dues to which it had originally made a\nclaim under the earlier Act which was unconstitutional and\nthat, it is suggested, makes the Act open to the charge that\nit represents a colourable exercise of legislative power. We are satisfied that there is",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_1963_1963_30_P048_C01",
+      "text": "no substance in this argument. It is not disputed that the\npower to make a law necessarily includes the power to make\nthe provisions of the law retrospective. It is also not\ndisputed that it is within the competence of a legislature\nto pass validating Acts, because the power to pass such\nvalidating Acts is essentially subsidiary to the main power\nof legislation on the topics included in the relevant List. Therefore, if the legislature felt that the infirmity in the\nearlier Act could be cured and it proceeded to comply with\nthe requirements of\nArt. 304(b)\n, it cannot be said that a\nlaw passed -under\nArt. 304(b)\nis void, because the\nlegislature has thereby attempted to recover taxes which\ncould not be recovered under the earlier Act owing to the\nconstitutional infirmity in the said Act. The exercise of\nlegislative power which has resulted in the passing of the\npresent Act cannot, in our opinion, be said to be colourable\nin any sense. Is the Act\nextra-territorial in its application ?",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_1963_1963_30_P048_C02",
+      "text": "That is\nthe next question which calls for an answer, In support of\nthe plea of extra-territoriality, it is urged that the\npetitioners are all residents of Bengal, that they carry on\ntheir tea business in Calcutta, and it is only on the very\nnarrow ground that in its passage from tea garden to\nCalcutta the tea in question has to cross a distance of a\nmile and a half in Assam that the tax purports to make the\nproducers from Bengal liable under\ns. 3(2)\n. This argument\nalso is entirely misconceived. Entry 56 in List II empowers\nthe Assam Legislature to levy a tax on goods carried. Whether the goods are carried for a long distance or a short\ndistance cannot effect the question of the legislative\ncompetence of the legislature. It is the carriage goods\nthrough Assam that is the taxing event and since the\nphysical carriage of goods through a part of Assam is not\ndenied, it is difficult to see how a challenge to the\nvalidity of the Act on the ground that it is extra-\nterritorial in character could be sustained. The doctrine\nof nexus has been applied in considering the validity of tax\nstatutes in this country in the Tata Iron & Steel Co. Ltd.\nv. The State of Biliar(1).",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_1963_1963_30_P048_C03",
+      "text": "Das\n(1) [1958] S.C.R. 1355.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_1963_1963_30_P049_C01",
+      "text": "C.J., who spoke for the Court has examined the genesis of\nthe doctrine of nexus, has considered the relevant judicial\ndecisions bearing on the point and has expressed the\nconclusion of the Court that the said doctrine can be\ninvoked to sustain the validity of tax statutes. The nexus\nin question must be rational, but it would be impossible to\naccede to the argument that the sufficiency of nexus can be\na matter for adjudication before the Court. In the present\ncase, undoubtedly, tea has been carried over a part of the\ninland waterways in Assam and that satisfies the test of\nnexus. The argument of extra-territoriality must,\ntherefore, fail. Mr. Mazumdar has urged before us three subsidiary points in\naddition to the points argued by Mr. Pathak. He\ncontends that the tax levied by the Act is invalid because\na tax can be levied on goods carried only if the said\ngoods join the mass of goods in the taxing State, In the\npresent case the goods had not entered the mass of goods in\nthe State of Assam at any stage; they just traveled for a\nvery short distance on their way from the tea garden, to the\nCalcutta Port and that cannot attract a tax under Entry 56\nof List 11.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_1963_1963_30_P049_C02",
+      "text": "In support of this argument, Mr. Mazumdar has\ninvited our attention to the decision of this Court in\nThe\nCentral India Spinning and Weaving and Manufacturing Co. Ltd., the Empress Mills, Nagpur v. The Municipal Committee,\nWardha\n(1). In that case, this Court was considering the\nscope and effect of s. 66(1)(c) of the C.P. and Berar\nMunicipalities Act, 1922, and the decision turned upon the\ntrue interpretation of the' words \"imported into\". In that\nconnection, the legislative history of the octroi duty was\nexamined and it was held that the concept of import requires\nthat. the goods which are brought into must mix,-up with the\nmass of the property, in the local area where the goods are\nalleged to have been imported.. If the goods are just\ncarried and not mixed with the mass of the property in the\narea through which they are carried, they cannot be said to\nhave been imported into that\n(1) [1958] S.C.R. 1102.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_1963_1963_30_P050_C01",
+      "text": "area. We do not see how this decision which turned\nessentially upon the true significance of the concept of\nimport can have any relevance where the tax with which we\nare concerned is a tax on goods carried. The word \"carried\"\nis of much wider denotation, and it would be unreasonable to\nlimit its scope by introducing considerations which are\nrelevant in dealing with the question of import. Therefore,\nwe do not think that' the attempt to change the validity of\nthe Act on the ground that the carried goods which are taxed\ndo not join the mass of goods in the State of Assam, can\nsucceed. Mr. Mazumdar has also urged that so far as the petitioners'\ngoods are concerned, they are substantially carried by the\nrailway and should, therefore, be field to be outside the\npurview of\ns. 3\nof the Act. We have already seen that the\noperation of the Act is confined to the goods carried by\nroad or by an inland waterways and the goods carried\nentirely by the railway are outside its scope. The question\nwhich Mr.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_1963_1963_30_P050_C02",
+      "text": "Mazumdar has raised before us is that having\nregard to the long distance which the tea chests have\ntravelled between the tea gardens and the Calcutta Port, it\nshould be held that a short distance of 1-1/2 to 2 miles\nwhich they travelled by inland waterways does not alter the\ncharacter of their journey; it is, on the whole, a journey\nmade by the railway, and so, the goods must be deemed to\nhave been carried by railway throughout. This argument also\nis misconceived. As we have just indicated, the length of\nthe distance over which the goods are carried has no\nrelevance to the point. It is the physical fact of carriage\nof goods through a part of Assam that attracts the levy of\nthe tax imposed by\ns. 3\n. Besides, the definition of railway\nto which Mr. Mazumdar invited our attention contained in s.\n3 of the\nIndian Railways Act\n(No. 9 of 1890) itself shows\nthat the carriage of the goods over the inland waterways\ncannot be brought within the scope of the definition. Section 3(4)\ndefines the railway as meaning a railway for\nany portion of a railway, for the public carriage\npassengers,",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_1963_1963_30_P051_C01",
+      "text": "animals or goods, and includes, inter alia, all ferries,\nships, boats and rafts which are used on inland waters for\nthe purposes of the traffic of a railway and belong to or\nare hired or worked by the authority administering the\nrailway. It is common ground that the ferries by which tea\nchests of the petitioners are carried over the inland\nwaterways in Assam do not belong to the railway, nor are\nthey hired or worked by the authority of the railway to\nwhich the goods were consigned for carriage. In fact, s.\n74E of the Railway Act which, after amendment, has become\ns.76D in 1961, clearly brings out the fact that when any\ngoods are tendered to a railway administration for carriage\nby railway and have been booked through over a railway or\nany other transport system not belonging to the railway\nadministration, the person who tenders the goods shall be\ndeemed to have contracted with the railway and the said\nother transport system separately. Therefore, the argument\nbased on the fact that the goods have been entrusted to the\nrailway for through carriage, and so, the carriage of the\ngoods should be held to be outside the purview of\ns. 3\nthe Act, cannot be sustained.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_1963_1963_30_P051_C02",
+      "text": "That leaves only one more point urged by Mr. Mazumdar to be\nconsidered. Mr. Mazumdar contends that the tax is invalid\nfor the reason that tea which is one of the objects taxed\nhas been covered by the\nCentral Tea Act\n(Act No. 29 of 1953)\nand he argues that since the Central Act has been passed by\nreference to the relevant Entry in List 1 in the Seventh\nSchedule, it is not open to the State Legislature to pass a\ntaxing statute in respect of tea. It is true that the\nTea\nAct\nhas made several provisions in regard to tea and has\nconstituted a Board to deal with the problems enumerated in\nthe other provisions of the said Act; but one has merely to\nglance through the relevant provisions of the\nTea Act\nrealise that the scope and purpose of the said Act is\nentirely different from the scope and purpose of the taxing\nAct with which we are concerned. The pith and substance of\nthe taxing statute is the levy of a tax",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_1963_1963_30_P052_C01",
+      "text": "on tea, which is carried in the State of Assam and the right\nto levy such a tax cannot be said to have been taken away\nmerely by the fact that a\nTea Act\nhad been passed by the\nCentral Legislature which is referable to the relevant Entry\nin List 1 of the 7th Schedule. The power to levy a tax\nwhich has been conferred on the State Legislature by Entry\n56 cannot, therefore, be said to be controlled by the\nTea\nAct\nin question. 'It would be noticed that List I does not\ncontain any Entry by which the Central Legislature can pass\nan Act levying a tax on goods carried which can be said to\ncontrol Entry 56 in List 11. That being so, we, must hold\nthat there is no substance in the argument that the State\nLegislature has no power to levy a tax on tea which is\ncarried over- a part of the area of the State of Assam. A similar argument was urged by Mr. Mazumdar on the strength\nof the provisions contained in the\nRiver Boards Act, 1956\n(No. 49 of 1956). Mr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_1963_1963_30_P052_C02",
+      "text": "Mazumdar suggested that the\nBrahmaputra River over a part of whose stream the tea chests\nare carried is governed by the provisions of the\nRiver\nBoards Act\nand that imposes a ban on the power of the Assam\nLegislature to pass an Act in respect of goods carried over\nthe Brahmaputra River. What we have said about the\nobjection 'raised by Mr. Mazumdar on the strength of the\nTea\nAct\napplies with equal force to the present argument. The result is, the petition fails and is dismissed with\ncosts. SARKAR J.-I agree that the petition fails but I wish to say\na few words of my own. The petition challenges the validity of the Assam Taxation\n(on Goods Carried by Road or on Inland Water-ways) Act,\n1961. (Act 10 of 1961), passed by the Legislature of the\nState of Assam. There are two petitioners, one of whom is a\nlimited company and cannot, therefore, admittedly maintain\nthe petition which is under\nArt. 32. It is conceded that\nthe petition is maintainable by the other petitioner, an",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_1963_1963_30_P053_C01",
+      "text": "officer of the Company, as he is interested in the rights of\nthe Company. No question of the competency of the petition\nwas, therefore, raised on behalf of the respondents who are\nthe State of Assam and two of its officers concerned with\nthe collection of the tax under the Act. The petitioner Company is the owner of a tea estate in\nJalpaiguri in the State of West Bengal. One of the grounds\non which the validity of the Act is challenged is that the\nAct imposes an unreasonable restriction on the trade of the\nCompany. The respondents contend that the Act is valid in\nview of the provisions of\nArt. 304(b)\nand also cl. (6) of\nArt. 19\nof the Constitution. They say that the-restriction\nimposed by the Act is reasonable. Article 301\nof the\nConstitution provides that subject to the other provisions\nof Part XIII, trade, commerce and intercourse throughout the\nterritory of India shall be free, and the relevant part of\nArt. 304\nis in these terms:\n\"Notwithstanding anything in article\n301......... the Legislature of a State may by\n law-\n(a)..........................................",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 301"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_1963_1963_30_P053_C02",
+      "text": "(b) impose such reasonable restrictions on\n the freedom of trade, commerce or intercourse\n with or within that State as may be required\n in the public interest:\nProvided that no Bill or amendment for the\n purposes of clause (b) shall be introduced or\n moved in the Legislature of a State without\n the previous sanction of the President.\"\nIt is not in dispute that the sanction of the President\ncontemplated in the proviso to\nArt. 304(b)\nhad been obtained\nin connection with the impugned Act. That Act\nhad, however,\na predecessor which bore the same title and was\nAssam Act",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_1963_1963_30_P054_C01",
+      "text": "of 1954 but for which no sanction of the President under\nArt. 304(b)\nhad been obtained.\nAtiabari Tea Co. Ltd. v.\nThe State of Assam\n(1), this-Court by a majority held that as\nAct 13 of 1954 imposed a tax on the carriage of\n(1)[1961]1 S.C.R. 809.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_1963_1963_30_P055_C01",
+      "text": "goods it constituted a direct restriction on the free\nmovement of trade and as no sanction of the President had\nbeen obtained in respect of it was void. No question arose\nthere as to the reasonableness of the restriction imposed by\nthe Act. The other members of the Court who constituted the\nminority expressed dissenting opinions but no useful purpose\nwill be served by referring to them. As a result of the\nopinion of the majority Act 13 of 1954 became void. Article 301\nand the succeeding articles in Part XIII,\nincluding\nArt. 304\n, were again considered by another and a\nlarger bench of this Court in\nThe Automobile Transport\n(Rajasthan) Ltd. v. The State of Rajasthan\n. (1) Das J., with\nwhose judgment Kapur J., and myself were associated,\naccepted the interpretation of\nArt. 301\nby the majority in\nthe\nAtiabari Tea Co.\ncase (2) as correct, but stated that\nregulatory measures such as rules laying down speed limit or\nlights to be carried by, vehicles and other rules of the\nroad as also measures imposing compensatory taxes such as,\ntaxes collected for maintaining the roads or bridges, were\nnot restrictions within\nArt. 301\nas such measures really\nfacilitated trade rather than restrict it.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_1963_1963_30_P055_C02",
+      "text": "It was,\ntherefore, said by Das J.,that such measures need not\ncomply with the requirements of the proviso to\nArt. 304(b)\nof the Constitution. As I apprehend the judgment of Subba\nRao J.\n,\nin that case\n, he seems to have taken the same view\nthough he used the description 'regulatory measure' to\ninclude measures laying down the rule of the road as also\nmeasures intended to raise funds for construction and\nmaintenance of roads. This was the opinion of the majority\nof the Court\nin that case\n. It is unnecessary to refer to\nthe other opinion expressed in it. Neither of these cases, however, has any bearing on the case\nin hand for it is not contended by the respondents that the\nimpugned Act was a compensatory measure. It was of course\nnot a regulatory measure as laying down a rule of the road. Indeed\n(1)[1963] 1 S.C.R. 491. (2) [1961] 1 S.C.R, 809.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_1963_1963_30_P056_C01",
+      "text": "it Was not contended that the impugned Act did not impose\nrestrictions on the movement of trade. In view of the\nsanction of the President which had been ,obtained in the\npresent case, the only question concerning the freedom\nguaranteed by\nArt. 301\nwas whether the restriction imposed\nby the Act was reasonably required in the public interest. It was said that the impugned Act (Act 10 of 1961) is\npractically in the same terms as the predecessor Act of 1954\nbut that by itself would not bring the impugned Act within\nthe mischief of the decision in the Atiabari Tea Co.(1) case\nfor that case held the earlier Act invalid only on the\nground that the sanction of the President had not been\nobtained. No question was canvassed there as to the\nreasonableness of any restriction imposed by the Act. The\nsanction of the President, as already stated, was obtained\nfor the impugned Act. I should however state here that\napart from the point about the reasonableness of the\nrestrictions imposed on trade by the Act, there were other\nattacks on it. These will be mentioned later.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_1963_1963_30_P056_C02",
+      "text": "The impugned Act came into force on April 15, 1961, and\nimposed a tax on manufactured tea and jute carried by any\nmeans other than railway and airways. This case is not,\nhowever, concerned with any carriage of jute. The Act\nwas\ngiven a retrospective operation as it was to be deemed to\nhave effect from April 24, 1954, being the date on which the\npredecessor Act, (Act 13 of 1954), came into force. Further, the Act\nwas to remain in force till March 31, 1962,\nthat is, for about a year only; see\ns. 1(3)\n. It has since\nbeen replaced by another Act, namely, Act 16 of 1962. It\nmay be that as this last mentioned Act was in contemplation,\nthe impugned Act was given a short term of life. This Act\nfurther stated that the tax collected under Act 13 of 1954\nwould be deemed to have been collected under the\ncorresponding provisions contained in it. There is one other matter to which I would like to refer\nbefore I proceed to consider the points argued\n(1) [1961] 1 S.C.R. 809.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_1963_1963_30_P057_C01",
+      "text": "at the bar. I have said that the tea estate of the peti-\ntioner Company was in West Bengal and not in Assam. Its\npractice was to book its tea from a railway station in West\nBengal for carriage to Calcutta for sale there. Now what\nthe railway did was to carry the tea to another of its\nstations called Dhubri Ghat on the river Brahmputra situate\nin Assam. The railway had arranged for the transshipment of\nthe tea there from its wagons to) steamers belonging to a\ncarrier company at Dhubri Ghat and these steamers carried\nthe tea by inland waterways to Calcutta. The steamers in\nthe course of their journey passed through one and a half\nmile or two miles of Assam waterways, about 572 miles of\nPakistan waterways and 165 miles of West Bengal waterways,\nbefore reaching Calcutta. The tax was levied in respect of\nthe carriage of the tea for about two miles on Assam\nwaterways. At the hearing in this Court learned counsel appearing in\nsupport of the petition really attacked only two sections of\nthe impugned Act, namely, ss. 3 and 34. Section 3\n, which is\nthe charging sections is in these terms:\nS. 3\n.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_1963_1963_30_P057_C02",
+      "text": "(1) Subject to the provisions of this\n Act, there shall be levied a tax on (a)\n manufactured tea and (b) Jute in bales carried\n by motor vehicle, cart, trolley, boat, animal\n and human agency or any other means except\n railways and airways in such manner a,-Id in\n respect of such period and at such rate as\n specified in the Schedule. (2) Such tax levied on manufactured tea\n shall be realised from the producer and that\n levied on jute shall be realised from the\n dealer:\nProvided that where tea is sold at the factory premises, the\nproducer shall be liable for realisation of tax from the\npurchaser with effect from such date as the Government, by\nnotification, appoint, for the carriage of such tea as\nprovided in this section and the producer shall be liable\nfor the payment of such tax notwithstanding",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_1963_1963_30_P058_C01",
+      "text": "the fact that the tea is not carried by the producer:\nx x x x x\nThe first contention was that the section was beyond the\nlegislative competence of the State Legislature. It is not\nin dispute that the Act had been passed under the powers\ncontained in Item 56 of List II in the Seventh Schedule to\nthe Constitution which authorised a State Legislature to\npass laws imposing \"taxes on goods and passengers carried on\nroads or on inland waterways\". It was said that under this\nentry a tax could be levied only on the person who carried\nthe goods but the proviso to\ns. 3(2)\nshowed that even where\na producer was not himself carrying the tea, he was liable\nfor the tax and, therefore, the Act levied the tax not\nreally on goods carried by road or waterways and was for\nthat reason, ultra vires the State Legislature and void. It\nmay be that there is nothing in\ns. 3\nimposing directly a tax\non the purchaser of the tea even when he is the person\ncarrying it. It seems to me however that under Item 56 of\nList II it was competent for the legislature to provide for\nthe tax being realised from the producer in the way it has\nbeen done in the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_1963_1963_30_P058_C02",
+      "text": "It is wellknown that the entries in\nthe legislative lists have to be read with all possible\nwidth and amplitude. An entry authorising the levy of a tax\nof a particular kind would justify that levy in the manner\nbest suited for collecting it The purchasers of tea would be\nmostly parties in Calcutta. The State of Assam may find it\ndifficult to realise the tax from them. It may, therefore,\nlegitimately provide that the tax may be realised from the\nproducer even where he does notches the tea for otherwise\nthe tax may be evaded. Then again, under s. 3 tax is\nleviable only when tea has been carried by road or inland\nwater-ways. It is clear, however, that it was the action of\nthe producer, namely, the sale by him, which alone caused\nthe carriage of the tea; without the sale there would have\nbeen no occasion for the purchaser to carry the tea. If he\ndid not actually",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_1963_1963_30_P059_C01",
+      "text": "carry the tea himself, he certainly brought about its\ncarriage. Therefore, he might under Item 56 of List 11 be\nmade liable for the carriage of the tea just as much as the\nperson actually carrying it. I am unable to see why the\nwords of Item 56 of List 11 would not cover both. I do not think it necessary to decide the question raised at\nthe bar whether the producer mentioned in sub-s. (2) of\ns. 3\nrefers only to a producer who himself carries the tea\nproduced by him. Even if the word 'producer' in that sub-\nsection includes one who does not himself carry the tea, a\ntax can be legitimately levied on him when the tea is\ncarried as a result of its sale by him and for facility of\ncollection of the tax. It was next said that the proviso in\ns. 3\nmay, if effect is\ngiven to it from a past date, impose a tax on a producer\nwhich he could not collect from the purchaser. It was\npointed out that if he was made liable by the notification\nmentioned in the proviso in respect of sales which had\nalready taken place, he would have to pay the tax personally\nas the sales having taken place, he could no more collect\nthe tax from the purchaser.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_1963_1963_30_P059_C02",
+      "text": "It was contended that this\nwould make the restriction put by the Act unreasonable and\nalso make the provision incompetent as outside Item 56 of\nList 11 for the reasons earlier mentioned. It was also said\nthat this would create a discrimination between producers\nhit by such retrospective notification and those whose sales\ncame after the date when the notification was published. All these reasons, it was contended, would make the proviso\nillegal and void. I think the whole contention is imaginary\nand unfounded. It is based on the notification being given\na retrospective effect but I am clear in my mind that under\nthe proviso a notification cannot be issued with\nretrospective effect. Under the proviso the producer is\nmade liable for realisation of the tax from the purchaser\nfrom a date appointed by the notification. The noti-\nfication, therefore, necessarily contemplates a situation",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_1963_1963_30_P060_C01",
+      "text": "in which the producer can collect the tax from a\npurchaser.He cannot of course do so in respect of past\nsales. Therefore, the notification if it appointed a past\ndate would be incompetent. The next contention is that the Act must be held to be void\nas it had been given retrospective operation. This\ncontention was founded on the argument that a statute\ncontemplated by\nArt. 304(b)\ncannot be retrospective. I am\nunable to see why not. Without more, when a legislature has\nthe power to pass a law it can pass a law having a retros-\npective operation. This, I do not think, was disputed. What was said was that the terms of\nArt. 304\nindicated that\nit was not intended that a retrospective law would be passed\nunder it. It was argued that the law contemplated there was\none which put restrictions on the freedom of the flow of\ntrade and, therefore, if the trade had once 'flown' it could\nnot be restricted and so a retrospective effect could not be\ngiven to a law passed under the Article. I am unable to\nappreciate this argument.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_1963_1963_30_P060_C02",
+      "text": "If the flow of trade in future\ncan be restricted, then I do not see why a trade which has\nflown in the past cannot be restricted retrospectively.\nis not disputed that a restriction which can be imposed\nunder cl. (6) of\nArt. 19\ncan be imposed retrospectively. There is no reason why the same position should not obtain\nin regard to the restrictions contemplated by\nArt. 304(b). It was then said that the effect of\nArt. 304\nwas to prohibit\nthe doing of a thing and a prohibition by its very nature\ncould only be in respect of the future and, therefore, a\nretrospective restriction would be outside the Article. This argument was sought to be supported by reference to\nPunjab Province v. Daulat Singh\n(1) where the Judicial\nCommittee said that where a legislature had power to make a\nlaw prohibiting something, it would not in exercise of that\npower prohibit that thing from a past date because the word\n'prohibit' in the nature of it, referred only to a\nprospective prohibition. But I do not\n(1) L.R. 73 I.A. 59.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_1963_1963_30_P061_C01",
+      "text": "find any prohibition in\nArt. 304. The effect of Arts. 301\nand 304 is that the freedom of trade is not to be restricted\nby law passed by a State except by a law imposing a\nreasonable restriction on it in the interest of the-public\nand passed with the sanction of the President. It then\ncomes to this that the freedom can be restricted by a law\nwhich has to satisfy the two conditions. Article 304\n,\ntherefore, permits and does not prohibit. There is no scope\nfor applying here the\nPunjab Province\ncase(1). The next point to which I wish to refer is that the\nrestriction imposed by the tax levied under the Act is not\nreasonable. A question was raised as to on whom the onus to\nprove the reasonableness of the restriction lies. It was\nsaid that it has been held by this Court in\nSaghir Ahmad v. The State of U.P. (2) that the onus lies on the State. It\nmust be conceded that it does seem to have been so held\nthere.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_1963_1963_30_P061_C02",
+      "text": "On the other hand, however, there is a very large\nnumber of cases where it is said that there is a presumption\nas to the constitutionality of a statute and that,\ntherefore, the onus of showing that it is unconstitutional\nis on the party so alleging: see the cases collected in\nHamdard Dawakhana (Wakf) Lal Kuan v. Union of India\n('-'). No doubt these cases dealt with the question of\nconstitutionality arising from discrimination, that is,\nunder\nArt. 14\nof the Constitution, but I am unable to see\nthat makes a difference on the question of onus. These\ncases say that the presumption of constitutionality arises\nbecause \"it must be assumed that the legislature understands\nand appreciates the need of the people and the laws it\nenacts are directed to problems which are made manifest by\nexperience and that the elected representatives assembled in\na legislature enact laws which they consider to be\nreasonable for the pupose for which they are enacted. Presumption is, therefore, in favour of the\nconstitutionality of an enactment\":\nHamdard Dawakhana (Wakf)(3) case at p. 679. (1) L.R. 73 I.A. 19 (2) [1955] 1 S.C.R. 707, 727. (3)[1960] 2 S.C.R. 671, 679.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 62,
+      "chunk_id": "SC_1963_1963_30_P062_C01",
+      "text": "If the Legislature is to be presumed to know that an Act\nwhich makes a distinction is justified because the people\nwith whom it is concerned are distinguished from the others\nby an intelligible differentia having a rational relation to\nthe objects of the Act, that being the test to save a\nstatute from being held to be discriminatory, then I do not\nsee why it cannot be presumed that knowing the people and\ntheir needs, the legislature has passed a law which imposes\nreasonable restrictions on their activities. It was said\nthat the restriction is permitted by cl. (6) of\nArt. 19\nwhich contains an exception and that an exception has to be\nproved by the party who wants to take advantage of it. That\ndoes not seem to me to be a proper way of reading a\nconstitution and this rule of construction must, in my view,\ngive way to the rule of presumption of constitutionality. It may also legitimately be said that there is no exception;\nthe real fundamental right is what is left after the\nrestriction has been imposed and, therefore, the citizen\nalleging violation of his fundamental right must also show\nthat the restriction is unreasonable.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 62,
+      "chunk_id": "SC_1963_1963_30_P062_C02",
+      "text": "It is not necessary\nto pursue the matter further- or to pronounce finally on it\nnow because for one thing, the observation in Saghir Ahmad's\n(1) case is there' and for another, nothing turns on onus in\nthis case. I have only mentioned it as it is a matter\nwhich, to my mind, requires consideration when the question\nproperly arises. The first ground on which it was said that the Act imposed\nan unreasonable restriction was that the rates imposed by it\nwere flat rates. The rates were prescribed in the Schedule\nmentioned in s. 3 and different rates were fixed for\ndifferent periods of time but in respect of each period\nthere was one rate, for example, between June 1, 1954, and\nJune 30, 1955, the rate was one pice per pound. The point\nmade was that the tax being a tax on carriage it becomes an\nunreasonable restriction if the tax did not vary with the\ndistance over which the thing was carried. Put that way, it\nwould really seem not a question of\n(1) [1955] 1 S.C.R 707, 727.\n1 SCI/64--65",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_1963_1963_30_P063_C01",
+      "text": "reasonableness but a question of legislative competence. I\nam wholly unable to see that Item 56 in List 11 requires\nthat the tax imposed must be measured according to the\ndistance over which the goods are carried. Tested by the\nscale of reasonableness also, a flat rate does not seem to\nme to be wanting in that quality. One may well ask why is a\nflat rate not reasonable? I find no answer. Why is a rate\ndepending on the distance carried more reasonable? Again I\nfind no answer. If the rate varied with distance, then it\nis conceivable that in many cases the burden would be much\nheavier. How could that have been more reasonable? The\nonly effect of a flat rate may be that people who carry for\na short distance pay as much as those who carry a longer\ndistance. I do not see that this can make the levy\nunreasonable. Now let me look at the question from another point of view. To start with it would not be wrong to say that since a tax\nis collected in public interest and for public good the\nburden imposed by it on trade would prima facie be\nreasonable in the public interest.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_1963_1963_30_P063_C02",
+      "text": "There is no reason to\nthink that the burden imposed by this Act is onerous, that\nit is such as would crush the trade by putting a weight on\nit which it could not carry. Furthermore it has been\nestablished on the affidavit that the Government spends on\nroads and facilities on waterways much more than what is\ncollected in the shape of tax on the goods carried. That\nalso is a consideration which goes to establish the\nreasonableness of the levy. The petitioner has not been\nable to put before us anything which would destroy the\neffect of these considerations. The fact that the Act\nimposes the tax with retrospective effect cannot by itself\nalso make the restriction unreasonable. For the reasons\nearlier mentioned, it may still be reasonable. I now proceed to consider the charge of discrimination. It\nwas said that the Act offended\nArt. 14\nbecause it taxed only\ntea and jute and no other article. But I am unable to see\nthat. this is discrimination.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 64,
+      "chunk_id": "SC_1963_1963_30_P064_C01",
+      "text": "The Act\napplies to all who are concerned with the carriage\nof tea and jute. No doubt it does not apply to the carriage\nof other goods but as has been said, \"it is for the\nlegislature to decide on what objects to levy\": see\nRaja\nJagannath Baksh Singh v. The State of Uttar Pradesh\n(1). The\nlegislature must pick and choose and such picking and\nchoosing cannot by itself amount to discrimination. Besides, it is common knowledge that tea is a very\nprosperous industry in Assam and is certainly more fit to\nbear the, burden of taxation than most other industries\nthere.. The flat rate of tax imposed also creates no\ndiscrimination for it applies the same rate to all. It has\nnot been shown that in fact a discrimination has arisen. Then it was said that\ns. 34\nof the Act amounted to a\nviolation of\nArt. 14. That section is in these terms:-\nS.34\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 64,
+      "chunk_id": "SC_1963_1963_30_P064_C02",
+      "text": "(1) Any rules made, any liability in-\n curred, any tax levied or realised, any\n returns furnished, any proceedings commenced,\n any notification published any action taken or\n anything whatsoever done under the provisions\n of the Act repealed, shall be deemed to have\n been made, incurred, levied, realised,\n furnished, commenced, published, taken or done\n under the corresponding provisions of this\n Act. (2) Notwithstanding anything contained in\n any judgment, decree or order of any court,\n all taxes imposed or realised or purporting to\n have been imposed or realised under the Act\n repealed shall for all purposes, be deemed to\n be, and to have been, validly imposed or\n realised and accordingly-\n(a) no suit or other proceeding shall be\n maintained or continued in any court against\n the Government or any person or authority\n whatsoever for the refund of my taxes so paid;\n and\n (1) [1963] 1 S.C. R. 220, 234",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 65,
+      "chunk_id": "SC_1963_1963_30_P065_C01",
+      "text": "(b) no court shall enforce any decree or\n order directing the refund of any taxes so\n paid. It was first said that the sub-section prevented people from\nwhom tax had been collected under Act 13 of 1954, from\ntaking proceedings in court, while those subjected to the\ntax only under the impugned Act were not so prevented. If by 'Proceedings in court' are meant proceedings outside\nthose for which the Acts provide, then such proceedings\ncannot be taken by persons from whom tax is collected under\nthe present Act either: see\ns. 29\n. Therefore the Act makes\nno discrimination as alleged. If proceedings by way of\nappeal and otherwise for which provision is made in the Acts\nthemselves are to be considered, then also there is no\ndiscrimination. Under the earlier Act there were provisions\nfor appeal etc. and if one had filed an appeal I under that\nAct, that appeal had to be deemed to have been filed under\nthe impugned Act. Likewise, in respect of every other kind\nof proceeding contemplated in the earlier Act. If one has\nnot chosen to take these proceedings under that Act, he\ncannot complain.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 65,
+      "chunk_id": "SC_1963_1963_30_P065_C02",
+      "text": "That would not be a case of discrimination\nby the Act but would be giving up by a party of his rights\nunder it. Therefore the position of a tax payer is the same\nunder both the Acts. We were also referred to\ns. 24\nof the Act. That section\nprovides for 'prosecution for failure to do certain things\nrequired by the Act to be done. It was contended that as\nthe section had been given retrospective operation, it had\nthe effect of making something which was not an offence when\ndone, an offence by an ex post facto law: It is not\nnecessary to go into that question for it is purely\nacademic. It has not been suggested that the petitioner has\nbeen affected by it. Another point argued was that the Act was only a colourable\nexercise of legislative power under Item 56 of List 11. The\ncontention was that the Act had nothing to do with tax on\ncarriage of goods but was really passed to retain what had\nbeen collected",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 66,
+      "chunk_id": "SC_1963_1963_30_P066_C01",
+      "text": "under an Act which this Court had declared invalid. That of\ncourse is not on the face of it wholly correct, for the Act\noperated prospectively also. But apart from that this\ncontention which was based on\ns. 34(1)\nof the Act is wholly\nunacceptable to me. Such a contention would make it\nimpossible to pass an Act validating a taxing statute. Such\nActs have very often been passed. A validating Act is\npassed under the legislative power under which the invalid\nlaw had been purported to be passed and it had been held\nthat where legislative power exists, it could not be said\nthat the exercise of that power was colourable:\nGajapatti\nNarayan Deo v. State of Orissa\n(1). See also M.P. V. Sundararamier & Co. v. The State of Andhra Pradesh.(2)\nThe last thing to which I wish to refer is the contention\nthat the Act was bad as it had extraterrestrial operation. It was said that to the petitioner it applied only because\nthe tea was carried over inland waterways in Assam for about\na mile and a half only. Apparently, the argument is that\nthis distance is too trivial.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 66,
+      "chunk_id": "SC_1963_1963_30_P066_C02",
+      "text": "But it seems to me beyond\nquestion that if the goods were carried for any distance\nover the territory of Assam, however short that distance\nmight be, the Assam Legislature would have full jurisdiction\nto impose a tax on such carriage. This point is, therefore,\nalso without any merit. Mr. Mazumdar raised certain other points and these have been\ndealt with by my brother Gajendragadkar. I do not wish to\nadd anything to what he has said concerning them. I would, therefore, dismiss the petition. Petition dismissed. (1) [1954] S.C.R. 1. (2) [1958] S.C.R, 1422.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "Khyerbari Tea Co. Ltd. & Anr vs The State Of Assam",
+    "case_id": "SC_1963_1963_30",
+    "court": "Supreme Court of India",
+    "year": "1963",
+    "facts_summary": "CITATION:\n 1964 AIR 925 1964 SCR (5) 975\n CITATOR INFO :\n R 1970 SC 129 (10)\n E 1970 SC1864 (5)\n R 1971 SC1737 (47)\n RF 1972 SC1804 (11)\n F 1975 SC 583 (13)\n RF 1975 SC1443 (21)\n MV 1975 SC2065 (35,60)\n RF 1975 SC2299 (606)\n F 1976 SC 182 (18)\n R 1977 SC1686 (5)\n RF 1980 SC 898 (64)\n RF 1981 SC 463 (16,26,34)\n RF 1981 SC 991 (13)\n E&R 1982 SC 902 (19)\n MV 1982 SC1325 (31,32)\n R 1983 SC1155 (13,20,23,25)\n RF 1990 SC 313 (24)\n E 1990 SC 772 (1,3)\n RF 1990 SC 781 (13) ACT:\nConstitution of India, 1950, Arts. 301, 304(b) and Seventh\nSchedule,List II, Entry 56-Assam Taxation (on Goods carried\nby Road or on Inland Water-ways) Act (Assam Act X of 1961)-\nConstitutional validity. HEADNOTE:\nThis petition challenges the constitutional validity of the\nAssam Taxation (on Goods carried by Road or on Inland Water-\nways) Act, 1961. The previous Act of 1954 having been\ndeclared constitutionally invalid by this Court in Atiabari\nTea Co. Ltd. v. State of Assam [1961] 1 S.C.R. 809, the\nAssam Legislature with the previous sanction of the\nPresident of India under\nArt. 304(b)\nof the Constitution,\npassed the impugned Act with retrospective effect from the\ndate on which the Act of 1954 had been promulgated and its\nprovisions were except for certain additional provisions\nsubstantially the same. The Assam High Court which was\nmoved under\nArt. 226\nof the Constitution held that the Act\nwas constitutionally invalid. The State of Assam applied\nfor and obtained certificates to appeal to this Court. The\nprese",
+    "legal_issues": "The case of petitioner No. 2 was that the company exported\ntea grown and manufactured in its own garden from Goalpara\nin Jalpaiguri District to Calcutta. The booking station and\nthe destination were both in West Bengal, the total distance\nbetween them being 689 miles of which only 1-1/2 to 2 miles\nof inland waterways lay in the State of Assam. The tea was\ncarried by railway from Goalpara to Dhubrighat and\nthereafter by ferries on inland waterways and transhipped to\nsteamers at the said Ghat. It was contended that ss. 3 and\n34, which were the material provisions of the Act, were\ninvalid and that the Assam Legislature was incompetent to\nenact the said provisions which constituted unreasonable\nrestrictions on the freedom of trade guaranteed by\nArt. 301\nand infringed\nArt. 19(1)(g)\nof the Constitution. Held. (per Gajendragadkar, Wanchoo, Das Gupta and Ayyangar\nJJ.), As the impugned Act was not found to be compensatory\nby the High Court nor was it claimed to be so by the State\nthe only question that fell to be decided in this petition\nwas whether the restrictions imposed by the impugned Act\nwere Pathak, clearly shows that if the State Legislature wants to\navail itself of the provisions of\nArt. 304(b)\n, it cannot\npurport to pass an Act in the first instance without taking\nrecourse to\nArt. 304(b)\nand if the said Act is struck down,\nthen take recourse to the said Article and make the law\nretrospective. If the State Legislature makes a law without\ntaking recourse to\nArt. 304(b)\nand the",
+    "ratio_summary": "or order directing the respondent not to enforce the\noperative provisions, against them. Petitioner No. 1 is a\ncompany and as such,\" it has no right to move this Court\nunder\nArt. 32. This position is conceded by Mr. Mazumdar\nfor the petitioners. Petitioner No. 2 who is the Manager of\nPetitioner No. 1 is, however, a citizen of India and as\nsuch, he is entitled to challenge the validity of the Act\ninasmuch as the respondent threatens to take action in\npursuance of the material provisions of the Act' against the\ncompany of which he is the Manager. Mr. Setalvad does not\ndispute the right of petitioner No. 2 to move this Court by\na petition under\nArt. 32. After the Act\nwas passed and it came into force, the\nquestion about the scope and effect of the provisions\ncontained in Part XIII of the Constitution which had been\ndealt with by this Court in the case of Atiabari Tea Co.(1)\ncame to be considered. by a larger Bench in the case of the\nAutomobile Transport (Rajasthan) Ltd. v. The State of\nRajasthan(2), and the decision of this larger Bench was\n-pronounced on the 9th April, 1962. On the other hand, according to\nthe majority decision in the Automobile Transport\n(Rajasthan) (2) case, compensatory taxation would be outside\nArt. 301\nand cannot therefore, fall under\nArt. 304(b).\nin the present case it had been urged before us that the tax\nlevied by the Act is compensatory in character, it would\nhave been necessary to consider the question once again by\nconstituting a larger Bench. It wil",
+    "final_order": "Since the Act has been\npassed by the Assam Legislature with the previous sanction\nof the President directly as a result of the decision. of\nthis Court in the case of Atiabari Tea Co, the present\nproceedings can be appropriately described as an after-math\nthe said decision\n. It appears that 487 persons moved the Assam High Court by\nwrit petitions under\nArt. 226\nof the Constitution impeaching\nthe validity of the Act. These writ petitions were\nconsidered.by a Division Bench of the said High Court and\nthey were allowed on the 1st August, 1963. The two learned\nJudges who constituted the Division Bench have delivered\nconcurring judgments and held that,, the Act is invalid. On\nsome of the points urged by the petitioners before them, the\ntwo learned Judges have differed, in the result, they agreed",
+    "outcome_summary": "Dismissed. Since the Act has been\npassed by the Assam Legislature with the previous sanction\nof the President directly as a result of the decision. of\nthis Court in the case of Atiabari Tea Co, the present\nproceedings can be appropriately described as an after-math\nthe said decision\n. It appears that 487 perso",
+    "sections_cited": [
+      "Constitution 301"
+    ],
+    "cases_cited": []
+  }
+}

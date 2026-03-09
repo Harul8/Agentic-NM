@@ -80,9 +80,37 @@ def _get_embedder():
         )
 
 
-def build_index(chunks: list, faiss_path: str, chunks_path: str, bm25_path: str, embedder, batch_size: int = None):
-    """Build FAISS + BM25 indexes from a list of chunks.
-    batch_size: embedding batch size (default 32 on CPU; 128 on GPU for faster progress).
+def build_index(
+    chunks: list,
+    faiss_path: str,
+    chunks_path: str,
+    bm25_path: str,
+    embedder,
+    batch_size: int = None,
+    append: bool = False,
+):
+    """Build (or extend) FAISS + BM25 indexes from a list of chunks.
+
+    Parameters
+    ----------
+    chunks      : new chunks to embed and index
+    faiss_path  : path to FAISS .index file
+    chunks_path : path to chunks JSON store
+    bm25_path   : path to BM25 index JSON
+    embedder    : SentenceTransformer instance
+    batch_size  : embedding batch size (default 32 CPU / 128 GPU)
+    append      : if True AND existing index/chunks found, EXTEND them instead
+                  of overwriting.  Use this for batched year-by-year indexing.
+                  BM25 is always rebuilt from the full accumulated corpus so
+                  IDF values remain correct across batches.
+
+    Notes
+    -----
+    * ``search_text`` is stripped from stored chunks — it is only needed at
+      embed time and its presence in the JSON would waste ~35 % of disk/RAM
+      on the chunks store.  The retriever uses ``full_text`` for display.
+    * FAISS index type is IndexFlatIP (exact cosine similarity after L2-norm).
+      Supports incremental .add() without rebuilding the index structure.
     """
     if not chunks:
         logger.warning("No chunks to index!")
@@ -90,55 +118,91 @@ def build_index(chunks: list, faiss_path: str, chunks_path: str, bm25_path: str,
 
     os.makedirs(VECTOR_STORE, exist_ok=True)
 
-    # Prepare texts for embedding
-    texts = []
-    for chunk in chunks:
-        text = (
-            chunk.get("search_text")
-            or chunk.get("full_text")
-            or chunk.get("text")
-            or ""
-        ).strip()
-        texts.append(text)
+    # ── 1. Prepare embed texts (search_text preferred; fall back to full_text) ─
+    embed_texts = [
+        (c.get("search_text") or c.get("full_text") or c.get("text") or "").strip()
+        for c in chunks
+    ]
 
+    # Strip search_text from stored chunks — not needed at query time
+    stored_chunks = [{k: v for k, v in c.items() if k != "search_text"} for c in chunks]
+
+    # ── 2. Batch-size selection ────────────────────────────────────────────────
     if batch_size is None:
         try:
             import torch
-            batch_size = 128 if (getattr(embedder, "device", None) and "cuda" in str(embedder.device)) or torch.cuda.is_available() else 32
+            on_gpu = (
+                (getattr(embedder, "device", None) and "cuda" in str(embedder.device))
+                or torch.cuda.is_available()
+            )
+            batch_size = 128 if on_gpu else 32
         except Exception:
             batch_size = 32
 
-    # Embed all chunks (larger batch on GPU speeds up significantly)
-    logger.info(f"Embedding {len(texts)} chunks (batch_size={batch_size})...")
+    # ── 3. Embed new chunks ────────────────────────────────────────────────────
+    logger.info("Embedding %d chunks (batch_size=%d)...", len(embed_texts), batch_size)
     embeddings = embedder.encode(
-        texts,
+        embed_texts,
         batch_size=batch_size,
         convert_to_numpy=True,
         normalize_embeddings=True,
         show_progress_bar=True,
     )
 
-    # Build FAISS index
-    dim = embeddings.shape[1]
-    index = faiss.IndexFlatIP(dim)
-    index.add(np.array(embeddings, dtype="float32"))
-    faiss.write_index(index, faiss_path)
-    logger.info(f"FAISS index saved: {faiss_path} ({index.ntotal} vectors)")
+    # ── 4. FAISS: append or fresh build ───────────────────────────────────────
+    if append and os.path.exists(faiss_path) and os.path.exists(chunks_path):
+        logger.info("Append mode — loading existing FAISS index: %s", faiss_path)
+        index = faiss.read_index(faiss_path)
+        offset = index.ntotal          # new chunks start at this position
+        index.add(np.array(embeddings, dtype="float32"))
+        faiss.write_index(index, faiss_path)
+        logger.info(
+            "FAISS index extended: %s  (%d → %d vectors, +%d new)",
+            faiss_path, offset, index.ntotal, len(embeddings),
+        )
 
-    # Save chunks JSON
-    chunk_store = {}
-    for i, chunk in enumerate(chunks):
-        chunk_store[str(i)] = chunk
+        # Load existing chunk store and extend it
+        logger.info("Loading existing chunks store for merge (%s)...", chunks_path)
+        with open(chunks_path, encoding="utf-8") as f:
+            chunk_store = json.load(f)
+        for i, chunk in enumerate(stored_chunks):
+            chunk_store[str(offset + i)] = chunk
+        logger.info(
+            "Chunks store extended: %d → %d total chunks",
+            offset, len(chunk_store),
+        )
 
+        # BM25: rebuild from the FULL accumulated corpus (correct IDF)
+        # Use full_text (search_text was stripped from stored chunks)
+        bm25_texts = [c.get("full_text") or c.get("text") or "" for c in chunk_store.values()]
+
+    else:
+        if append:
+            logger.info(
+                "Append mode requested but no existing index found at %s — "
+                "building fresh index.", faiss_path,
+            )
+        dim = embeddings.shape[1]
+        index = faiss.IndexFlatIP(dim)
+        index.add(np.array(embeddings, dtype="float32"))
+        faiss.write_index(index, faiss_path)
+        logger.info("FAISS index saved: %s (%d vectors)", faiss_path, index.ntotal)
+
+        chunk_store = {str(i): chunk for i, chunk in enumerate(stored_chunks)}
+        # BM25 texts for fresh build: use embed_texts (search_text) for consistency
+        bm25_texts = embed_texts
+
+    # ── 5. Save / overwrite chunks JSON ───────────────────────────────────────
     with open(chunks_path, "w", encoding="utf-8") as f:
-        json.dump(chunk_store, f, indent=2, ensure_ascii=False)
-    logger.info(f"Chunks JSON saved: {chunks_path}")
+        json.dump(chunk_store, f, ensure_ascii=False)
+    logger.info("Chunks JSON saved: %s (%d chunks)", chunks_path, len(chunk_store))
 
-    # Build BM25 index
+    # ── 6. Build BM25 from the full accumulated corpus ─────────────────────────
+    logger.info("Fitting BM25 on %d documents...", len(bm25_texts))
     bm25 = BM25()
-    bm25.fit(texts)
+    bm25.fit(bm25_texts)
     save_bm25_index(bm25, bm25_path)
-    logger.info(f"BM25 index saved: {bm25_path}")
+    logger.info("BM25 index saved: %s", bm25_path)
 
 
 def main():

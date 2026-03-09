@@ -1,0 +1,107 @@
+{
+  "case_id": "SC_2022_RITU_RAI_VS_THE_STATE_OF_UTTAR_PRADESH",
+  "case_name": "Ritu Rai vs The State Of Uttar Pradesh",
+  "normalized_case_name": "RITU_RAI_VS_THE_STATE_OF_UTTAR_PRADESH",
+  "court": "Supreme Court of India",
+  "year": "2022",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 1706 of 2022",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "29 September 2022",
+  "judges": [
+    "Uday Umesh Lalit"
+  ],
+  "author": "Uday Umesh Lalit",
+  "bench_type": "single",
+  "petitioner": "Ritu Rai",
+  "respondent": "The State Of Uttar Pradesh",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 5,
+  "cited_by_count": 1,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2022\\SEP\\2022_SEP_90.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2022_RITU_RAI_VS_THE_STATE_OF_UTTAR_PRADESH_P001_C01",
+      "text": "O R D E R\nLeave granted.\nThis appeal challenges the judgment and order dated 18.04.2022",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2022_RITU_RAI_VS_THE_STATE_OF_UTTAR_PRADESH_P002_C01",
+      "text": "being No.19717 of 2021.\nThe appellant is the informant at whose instance Crime No.1592",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_RITU_RAI_VS_THE_STATE_OF_UTTAR_PRADESH_P003_C01",
+      "text": "of the Indian Penal Code, 1860.\nAfter cognizance having been taken by the Trial Court,",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_RITU_RAI_VS_THE_STATE_OF_UTTAR_PRADESH_P004_C01",
+      "text": "Criminal Case No.192 of 2019 is presently pending.\nDuring the pendency of the trial, application Exh. 61Kha was",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2022_RITU_RAI_VS_THE_STATE_OF_UTTAR_PRADESH_P005_C01",
+      "text": "produced on record.\nIn the meantime, the order passed by the Trial Court accepting",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2022_RITU_RAI_VS_THE_STATE_OF_UTTAR_PRADESH_P006_C01",
+      "text": "aside the order passed by the Trial Court.\nWe, therefore, allow this appeal; set-aside the view taken by",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_RITU_RAI_VS_THE_STATE_OF_UTTAR_PRADESH_P007_C01",
+      "text": "With these observations, the appeal is allowed.\n.....................…....CJI.\n(UDAY UMESH LALIT)",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Ritu Rai vs The State Of Uttar Pradesh",
+    "case_id": "SC_2022_RITU_RAI_VS_THE_STATE_OF_UTTAR_PRADESH",
+    "court": "Supreme Court of India",
+    "year": "2022",
+    "facts_summary": "being No.19717 of 2021.\nThe appellant is the informant at whose instance Crime No.1592 of the Indian Penal Code, 1860.\nAfter cognizance having been taken by the Trial Court,",
+    "legal_issues": "produced on record.\nIn the meantime, the order passed by the Trial Court accepting aside the order passed by the Trial Court.\nWe, therefore, allow this appeal; set-aside the view taken by",
+    "ratio_summary": "",
+    "final_order": "With these observations, the appeal is allowed.\n.....................…....CJI.\n(UDAY UMESH LALIT)",
+    "outcome_summary": "Allowed. With these observations, the appeal is allowed.\n.....................…....CJI.\n(UDAY UMESH LALIT)",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

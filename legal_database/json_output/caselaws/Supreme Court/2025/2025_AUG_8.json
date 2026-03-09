@@ -1,0 +1,839 @@
+{
+  "case_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB",
+  "case_name": "Gurdeep Singh vs The State Of Punjab",
+  "normalized_case_name": "GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB",
+  "court": "Supreme Court of India",
+  "year": "2025",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 705 of 2024",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "11 August 2025",
+  "judges": [
+    "Pamidighantam Sri Narasimha"
+  ],
+  "author": "Pamidighantam Sri Narasimha",
+  "bench_type": "single",
+  "petitioner": "Gurdeep Singh",
+  "respondent": "The State Of Punjab",
+  "reporter_citations": [
+    "2025 INSC 957"
+  ],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 67,
+  "cited_by_count": 0,
+  "neutral_citation": "2025 INSC 957",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2025\\AUG\\2025_AUG_8.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P001_C01",
+      "text": "CRIMINAL APPELLATE JURISDICTION\n\n CRIMINAL APPEAL NO. 705 OF 2024\n\n GURDEEP SINGH ... APPELLANT\n\n VERSUS\n\n THE STATE OF PUNJAB ... RESPONDENT\n\n JUDGMENT\nR. MAHADEVAN, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P002_C01",
+      "text": "1. This criminal appeal is directed against the judgment and order dated\n\n 04.05.2023 passed by the High Court of Punjab and Haryana at Chandigarh 1 in\n\n CRA-S-4900-SB-2014, whereby the High Court upheld the judgment of\n\n conviction and sentence dated 31.10.2014 rendered by the Additional Sessions\n\n Judge, Fast Track Court, Bathinda2, in S.C. No. 55 of 10.09.2011, against the\n\n appellant / accused.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P002_C02",
+      "text": "The particulars of the conviction and sentence are as under:\n\nOffence for which convicted Sentence awarded\n\n Section 307 r/w\nSection 120B\nIPC Rigorous Imprisonment for three years\n and a fine of Rs.2,000/-, in default to\n undergo further RI for two months\nSection 225\nr/w\nSection 120B\nIPC Rigorous Imprisonment for one year\n and a fine of Rs.500/-, in default to\n undergo further RI for two weeks\nSection 186\nr/w\nSection 120B\nIPC Rigorous Imprisonment for two\n months and a fine of Rs.200/-, in\n default to undergo further RI for one\n week\nSection 332\nr/w\nSection 120B\nIPC Rigorous Imprisonment for two years\n and a fine of Rs.1,500/-, in default to\n undergo further RI for one and half\n months\nSection 353\nr/w\nSection 120B\nIPC Rigorous Imprisonment for one and\n half years and a fine of Rs.1,000/-, in\n default to undergo further RI for one\n month\nSection 120B\nIPC Rigorous Imprisonment for three years\n and a fine of Rs.2,000/-, in default to\n undergo further RI for two months\n\nAll the sentences were ordered to run concurrently.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 120B"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P003_C01",
+      "text": "2. The case of the prosecution is that on 30.11.2010, the Station House\n\nOfficer, Police Station City Rampura, received information that Head Constables\n\nHarjit Singh (PW.2) and Hardial Singh (PW.1) had been admitted to Civil\n\nHospital, Rampura, in an injured condition. Upon reaching the hospital and\n\nobtaining medical opinion, regarding their fitness to give a statement, the Station\n\nHouse Officer recorded the statement of Head Constable Harjit Singh.\n2.1. According to Head Constable Harjit Singh, on that day, he, along with\n\nHead Constable Hardial Singh, was escorting undertrial prisoner Kuldeep Singh\n\n@ Deepi from Ludhiana to Talwandi Sabo for court proceedings in connection\n\nwith FIR No. 59 dated 31.05.2008 by bus. The appellant, Gurdeep Singh,\n\nAssistant Superintendent of Central Jail, Ludhiana, also accompanied them. After\n\nattending court, while they were waiting at the main gate of the court complex,\n\nthe appellant suggested that they travel back in a Tata Qualis bearing Registration\n\nNo. PB-19L-8750 which was parked outside and allegedly belonged to persons\n\nknown to him from Barnala. Despite initial hesitation, the Head Constables\n\nagreed based on his assurance.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P003_C02",
+      "text": "The appellant sat in the front seat with the driver;\nthe two Head Constables and accused Kuldeep Singh sat in the middle row, while\n\ntwo young men (aged around 20 - 25 years) occupied the rear seat. On reaching\n\nnear village Kutiwal, the appellant asked the driver to stop for a while to answer\n\nthe call of nature. When the driver slowed down the vehicle, the two men in the\n\nback, threw red chilli powder into the eyes of the Head Constables. One of them\n\nthen stabbed Head Constable Hardial Singh in the shoulder with a knife, while\n\nthe other picked up a kirpan and struck Harjit Singh on the head. Harjit Singh\n\nattempted to defend himself with his carbine, but was still injured. The assailants\n\nattempted to help the accused Kuldeep Singh escape; however, he failed, as he\n\nwas handcuffed and chained to the complainant’s belt. On raising an alarm,\n\nmembers of the public gathered, causing the two assailants and the appellant to\n\nflee. The injured were then taken to Civil Hospital, Rampura, by the driver of the\n\nvehicle, Balwinder Singh (PW.10).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P003_C03",
+      "text": "Accordingly, the crime was alleged to have\n\nbeen committed by Kuldeep Singh, in connivance with the appellant and the two\n\nunknown assailants, with the intention to facilitate escape from custody and to\n\neliminate the escorting officers.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P004_C01",
+      "text": "3. Based on the statement given by Head Constable Harjit Singh, FIR No. 65\n\nof 2010 was registered for the offences under\nsections 307\n,\n\n,\n\n,\n\n,\n\n,\n\nand\n120B\nof the Indian Penal Code, 18603 and\nSection 25\nof the Arms Act, 1959.\n\nAccused Maan Singh @ Mana was declared a proclaimed offender on\n\n22.04.2011. At the stage of preliminary investigation, the Deputy Superintendent\n\nof Police, Circle Maur, in his enquiry report dated 03.01.2011, declared the\n\nappellant innocent. Subsequently, the case against the accused Kuldeep Singh and\n\nBaldev Singh, was committed to the Sessions Court, vide order dated 27.08.2011.\n\nAfter committal, charges were framed against the accused for the offences under\nSections 307\n,\n\n,\n\n,\n\n,\n\nand\n120B\nIPC, to which they pleaded not guilty\n\nFor short, “\nIPC\n”\n\nand claimed to be tried.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "Arms Act 25"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P005_C01",
+      "text": "4. During trial, on an application moved by the prosecution under\nSection 319\nof the Criminal Procedure Code, 19734 the appellant was summoned as an\n\nadditional accused, as per order dated 06.07.2012, and his case was committed to\n\nthe Sessions Court on 26.03.2014. He also pleaded innocence and alleged false\n\nimplication.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P006_C01",
+      "text": "5. The prosecution examined as many as 15 witnesses and marked exhibits\n\nand material objects collected during the course of investigation. On the side of\n\nthe defence, DW1 to DW3 witnesses were examined and Exs.D1 to D4\n\ndocuments were marked. After trial, the Sessions Court by judgment dated\n\n31.10.2014, convicted all the accused and sentenced them for the offences as\n\nreferred to above.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P007_C01",
+      "text": "6. Challenging the aforesaid judgment, the appellant filed Criminal Appeal\n\nNo. S-4900-SB-2014 which was dismissed by the High Court, along with the\n\nappeal preferred by the accused Baldev Singh @ Dev, by the judgment dated\n\n04.05.2023. Feeling aggrieved, the appellant is before this Court by way of the\n\npresent appeal.\n\nFor short, “\nCr.P.C\n”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P008_C01",
+      "text": "7. The learned counsel for the appellant assailed the concurrent findings of\n\nconviction recorded by both the Sessions Court and the High Court as being\n\nlegally unsustainable and factually erroneous. It was contended that the appellant\n\nhas been falsely implicated without any cogent or reliable evidence connecting\n\nhim either to the alleged occurrence or to the alleged conspiracy with the\n\nco-accused.\n7.1. It was submitted that the entire prosecution case rested solely on the\n\ntestimony of PW.2, the complainant, who was admittedly an interested witness. In his cross-examination, PW.2 admitted that as per police rules, he was not\n\npermitted to escort an undertrial prisoner in a private vehicle, and that disciplinary\n\naction was liable to be taken against him for this lapse. Therefore, in an attempt\n\nto shield himself, he allegedly twisted the version and shifted the blame onto the\n\nappellant by claiming that it was on the appellant’s suggestion that they boarded\n\nthe said vehicle.\n7.1.1.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P008_C02",
+      "text": "Furthermore, the other two material witnesses – PW.1 (Hardial Singh), the\n\nescorting officer, and PW.10 (Balwinder Singh), the vehicle driver – were\n\ndeclared hostile and did not support the prosecution’s case. In particular, PW.10\n\nwho was present throughout the alleged occurrence, completely resiled from his\n\nearlier statement, thereby casting serious doubt on the prosecution version.\n\n7.2. The learned counsel emphasized that no overt act was attributed to the\n\nappellant. The sole allegation was that he had suggested to use a particular vehicle\n\nfor convenience. There was no evidence to show that the appellant had either\n\nfacilitated the presence of the assailants in the vehicle or had participated in any\n\nact of violence. No injury was attributed to him. His mere presence at the scene,\n\nwithout any criminal conduct or prior meeting of minds with the assailants,\n\ncannot sustain a charge of conspiracy under\nSection 120B\nIPC.\n\n7.3. It was further submitted that there was no reliable, sufficient, or legal\n\nevidence to support the charge of criminal conspiracy against the appellant. The\n\ncase was based purely on conjecture and surmise, rather than proof beyond\n\nreasonable doubt.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "IPC 120B"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P008_C03",
+      "text": "Consequently, the conviction under\nsection 120 B\nIPC is liable\n\nto be set aside and the conviction for other offences based solely on the\n\napplication of\nSection 120B\nIPC is also unsustainable.\n7.4. The learned counsel also submitted that the charge under\nSection 307\nIPC\n\nwas wholly untenable, particularly in the absence of any injury being declared\n\ngrievous or dangerous to life. The theory of red chilli powder being thrown into\n\nthe eyes of the complainant was neither supported by forensic or medial evidence,\n\nnor corroborated by PW.3 (Doctor), the medical witness. No traces of chilli\n\npowder were found in the vehicle or on the clothes of the complainant or other\n\nwitnesses. Moreover, the prosecution case, at its core, is one of an attempted\n\nescape from custody by the undertrial prisoner, not an attempt to murder. These\n\naspects were ignored by the Courts below, resulting in a miscarriage of justice.\n\n7.5. It was further submitted that DW.3 (Gurmeet Singh), Deputy\n\nSuperintendent of Police, Maur, who conducted a detailed preliminary enquiry,\n\nhad categorically ruled out the involvement of the appellant in any criminal\n\nconspiracy and found him to be innocent.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "IPC 120B",
+        "IPC 307"
+      ],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P008_C04",
+      "text": "The appellant was not named in the\n\noriginal charge sheet, and was subsequently summoned under\nSection 319\nCr.P.C\n\non the basis of vague allegations and without any fresh or additional incriminating\n\nmaterial, having emerged during trial. The summoning order dated 05.07.2012,\n\nwas passed mechanically and without due application of mind. The High Court\n\nalso erred in failing to examine the legality and correctness of this summoning\n\norder, while disposing of the appeal.\n7.6. It was further pointed out that both courts below erroneously referred to\n\nthe appellant as a police officer and as a supervisory official of the complainant,\n\nwhereas he was an official of the Jail Department, deputed for a distinct purpose. This factual mischaracterization has led to manifest injustice and vitiated the\n\napproach adopted by the courts below.\n7.7. Lastly, it was submitted that the appellant is a government servant with 35\n\nyears of unblemished service, and the conviction has resulted in harsh\n\nconsequences including the forfeiture of his pensionary benefits.\n\n7.8.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P008_C05",
+      "text": "In view of the foregoing, the learned counsel submitted that the concurrent\n\njudgement of conviction passed against the appellant, are perverse and deserve to\n\nbe set aside.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P009_C01",
+      "text": "8. The learned counsel for the State / respondent opposed the appeal and\n\nsubmitted that the conviction of the appellant is well-founded and supported by\n\nsufficient oral and circumstantial evidence. It was contended that the appellant,\n\nthough an official of the Jail Department, played an active role in facilitating the\n\ncommission of the offence by deliberately selecting a vehicle that enabled the\n\nassailants to launch an assault on the complainant and attempt to free the\n\nundertrial prisoner.\n8.1. It was further contended that the appellant persuaded the victims to board\n\na vehicle in which two persons were already present along with the driver – all of\n\nwhom were known to the appellant. Acting upon the appellant’s instructions, the\n\nvehicle was stopped at a pre-designated location, whereupon the assailants carried\n\nout the attack. Notably, no injury was inflicted upon the appellant, suggesting his\n\ncollusion. Despite hearing the cries for help, the appellant neither intervened nor\n\nmade any effort to assist the victims.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P009_C02",
+      "text": "Rather, he absconded from the scene along\n\nwith the accused persons and subsequently failed to report back or accompany\n\nthe injured to the civil hospital, Rampura. Furthermore, he did not make any\n\nstatement before the police, nor he examine or cite any independent witness from\n\nthe vicinity who could support his version of events.\n8.2. The learned counsel submitted that the overall conduct of the appellant\n\nincluding his failure to act during the violent assault, which involved the use of\n\ndeadly weapons and red chilli powder, reveals his conscious participation in the\n\ncriminal conspiracy. His behaviour was inconsistent with that expected of a\n\ngovernment officer, and instead indicated deliberate alignment with the\n\nassailants’ objective.\n\n8.3. It was also emphasized that there existed no motive or reason for the\n\ncomplainant or the injured eyewitnesses – who were police officials themselves\n\n– to falsely implicate the appellant. The testimony of PW.1 Hardial Singh, an\n\ninjured eyewitness, stood corroborated by the version set out in the FIR and by\n\nthe deposition of PW.2 Harjit Singh, the complainant and another injured\n\neyewitness.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P009_C03",
+      "text": "Their consistent narratives, coupled with the testimony of PW.7\n\nSukhchain Singh, the investigating officer, established the integrity of the\n\nprosecution case.\n8.4. With respect to the charge under\nSection 307\nIPC, it was submitted that the\n\nnature of the assault, the weapons used, and the intent to incapacitate the\n\ncomplainant, even if injuries were not ultimately grievous, attracted the\n\ningredients of an attempt to commit murder. The use of red chilli powder in the\n\neyes of the victims, especially in the context of a custodial escort operation,\n\nclearly demonstrated intent to commit a serious and premeditated offence.\n\n8.5. The learned counsel further argued that the appellant’s summoning under\nSection 319\nCr.P.C., was lawful and based on the clear and incriminating\n\ntestimony of the complainant during the course of trial, which revealed the\n\nappellant’s active participation in the offence.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "IPC 307"
+      ],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P009_C04",
+      "text": "The mere exoneration of the\n\nappellant during the police investigation did not preclude the trial Court from\n\ninvoking its power under\nSection 319\nCr.P.C., as the court is not bound by the\n\nopinion of the Investigating Officer and is competent to summon any person\n\nagainst whom evidence emerges during the course of trial.\n\n8.6. In view of the above, it was urged that the findings of guilt recorded by the\n\ntrial Court, as affirmed by the High Court, were based on a proper appreciation\n\nof the evidence on record and do not warrant any interference by this Court.\n\n8.7. Therefore, the learned counsel submitted that the appeal is devoid of merit\n\nand deserves to be dismissed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P010_C01",
+      "text": "9. We have considered the rival submissions and perused the materials\n\navailable on record.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P011_C01",
+      "text": "10. It is not in dispute that originally, the appellant was not named in the FIR\n\nand that the preliminary investigation conducted by the Deputy Superintendent\n\nof Police, Maur, had opined that he was not involved in the offence. However,\n\nduring the course of trial, based on the evidence that emerged, the prosecution\n\nfiled an application under\nSection 319\nCr.P.C., pursuant to which the appellant\n\nwas summoned as an accused.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P012_C01",
+      "text": "11. To establish the guilt of the accused persons, the prosecution examined\n\nfifteen witnesses and also exhibited various documents, including the First\n\nInformation Report, statements recorded under\nSection 161\nCr.P.C., medical\n\nreports, and seizure memos, as well as material objects collected during the\n\ncourse of investigation through the witnesses. In defence, the appellant examined\n\nthree witnesses as DW.1 to DW.3, and relied upon four documents, marked as\n\nExhibits D1 to D4.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P013_C01",
+      "text": "12. At the outset, it would be appropriate to briefly survey the material\n\nevidence led by both sides.\n12.1. PW.1 Hardial Singh deposed that on 30.11.2010, he, along with Head\n\nConstable Harjit Singh was assigned the duty of escorting undertrial accused\n\nKuldeep Singh for production before the Court of Sh. L.K.Singla, SDJM,\n\nTalwandi Sabo. The accused was taken to Court by bus and the appellant also\n\naccompanied them in the same bus. At about 2.30 pm, after conclusion of the\n\ncourt proceedings, PW.1 and Head Constable Harjit Singh were standing at the\n\nmain gate of the court complex. At that time, the appellant informed them that a\n\nQualis vehicle was parked nearby, and he personally knew the persons sitting\n\ninside it, who were travelling to Barnala. The appellant suggested PW.1 and\n\nHarjit Singh to travel in that vehicle up to Barnala. On the appellant’s assurance,\n\nthey agreed and boarded the vehicle. According to PW.1, the appellant was\n\nsitting in the front passenger seat; PW.1, Head Constable Harjit Singh, and\n\naccused Kuldeep Singh sat on the middle seat, while two other persons were\n\nseated at the rear.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P013_C02",
+      "text": "When the vehicle reached near village Dhadda on the main\n\nhighway, the appellant asked the driver to stop the vehicle, stating that he wanted\n\nto attend a nature call. As soon as the vehicle stopped, accused Kuldeep Singh\n\nand the two persons seated in the rear seat attacked PW.1 and Harjit Singh. Red\n\nChilli powder was thrown into their eyes; one of the rear occupants assaulted\n\nPW.1 with a knife on his back, and the other struck Harjit Singh below the head\n\nwith a kirpan. Upon raising alarm, some people gathered at the scene, at which\n\npoint the appellant, and the other two assailants fled from the spot. But, accused\n\nKuldeep Singh was unable to escape, as he was handcuffed and tied with a belt\n\nof Head Constable Harjit Singh. Thereafter, PW.1 and Harjit Singh were taken to\n\nCivil Hospital, Rampura by the vehicle driver. PW.1 further stated that PW.7\n\nSukhchain Singh the Investigating officer, recorded his and Harjit Singh’s\n\nstatements. He stated that the incident was the result of a conspiracy hatched by\n\nKuldeep Singh and others. However, in his deposition, PW.1 identified only\n\naccused Kuldeep Singh and did not identify the other assailants.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P013_C03",
+      "text": "To this extent,\n\nhe was treated as a hostile witness and he was subjected to cross-examination by\n\nthe prosecution. During cross-examination, PW.1 admitted that Kuldeep Singh\n\nhad referred to one of the two other assailants as Mana Singh during their\n\nconversation.\n12.2. PW.2 Harjit Singh, Head Constable, deposed that on 30.11.2010, he along\n\nwith Head Constable Hardial Singh (PW.1) had brought undertrial accused\n\nKuldeep Singh @ Deepi to be produced before the Court of Sh. L.K.Singla,\n\nSDJM, Talwandi Sabo in connection with FIR No. 59 dated 31.05.2008 under\nsections 341\n,\n\n,\n\nand\n\nIPC. The journey to Talwandi Sabo was\n\nundertaken by bus. After production in Court, around 2.30 pm., as they reached\n\nthe main gate of the court complex, the appellant met them and suggested that\n\nthey return to Barnala in a Qualis vehicle bearing Regn. No. PB 19C 8750. The\n\nappellant informed them that the persons seated in the said vehicle were known\n\nto him and that, it was headed towards Barnala. Although PW.2 initially\n\nexpressed a preference to return by the same bus, the appellant insisted, claiming\n\nthat he had accompanied them earlier in the same bus.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P013_C04",
+      "text": "Thereafter, the appellant\n\ntook the front passenger seat beside the driver, while PW.2, PW.1, and accused\n\nKuldeep Singh occupied the middle seat. Two unknown persons were seated on\n\nthe rear side of the vehicle. PW.2 further deposed that during the journey, accused\n\nKuldeep Singh and the appellant conversed and referred to one of the rear\n\noccupants as ‘Manna’. After they passed village Kutianwali, the appellant asked\n\nthe driver to stop the vehicle that he wanted to attend a call of nature. As soon as\n\nthe vehicle stopped, the two rear seat occupants threw red chilli powder into the\n\neyes of PW.1 and PW.2. One of them inflicted a knife blow to the shoulder of\n\nPW.1, and the other attacked PW.2 with a small sword (Kirpan). PW.2 managed\n\nto partially shield himself with his carbine, which deflected the blow, but caused\n\ninjury to his forehead. Upon raising an alarm, the appellant and the two assailants\n\nfled the scene. The attackers also attempted to help accused Kuldeep Singh\n\nescape. Whileso, Kuldeep Singh scuffled with the escorting officers in an attempt\n\nto flee custody, but ended in vain.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P013_C05",
+      "text": "Ultimately, PW.1 and PW.2 were taken to the\n\nCivil Hospital, Rampura, in the same Qualis vehicle, and accused Kuldeep Singh\n\nremained with them at that time.\n12.2.1. PW.2 categorically stated that the incident was a result of a conspiracy\n\nbetween accused Kuldeep Singh and the appellant to facilitate the former’s escape\n\nfrom lawful custody. His statement was recorded by the Police as Ex. PW2/A. In\n\nhis supplementary statement, PW. 2 named the two other accused as Maan Singh\n\nand Baldev Singh, and during trial, he identified both accused Kuldeep Singh and\n\nBaldev Singh. PW.2 also stated that on the day of the occurrence, when they saw\n\nKuldeep Singh in the Central Jail, Ludhiana, he was in the company of the\n\nappellant, and all of them including appellant came to Talwandi Sabo by bus,\n\nalthough the appellant had no official connection with their duty. He admitted\n\nthat as per police regulations, the custody of the undertrial was their sole\n\nresponsibility, and it was improper to travel with the inmate in a private vehicle\n\naccompanies by strangers.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P013_C06",
+      "text": "He further admitted that they did not inform any senior\n\nofficer about their decision to travel with the appellant, nor did they question the\n\nappellant about his presence in Talwandi Sabo. PW.2 further admitted that he\n\ncould not identify the specific person who threw the red chilli powder into their\n\neyes. However, he denied the defence suggestion that the incident occurred due\n\nto a quarrel following excessive consumption of liquor or that there was any\n\ncollusion between him, PW.1 and the appellant to orchestrate the escape of\n\nKuldeep Singh. He stoutly denied having made any false statement before the\n\npolice.\n12.3. PW.3 Dr. R.P. Singh, Medical Officer at Civil Hospital, Rampura, deposed\n\nthat on 30.11.2010, he medically examined Head Constable Hardial Singh\n\n(PW.1) and found the following injuries:\n(1) Incised wound measuring 1 ½ cm x ½ cm on the back, just below the neck;\nmargins were clean cut with fresh bleeding present\n\n(2) Redness of both eyes. According to the doctor, both injuries were simple in nature and of probable\n\nduration within 12 hours.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P013_C07",
+      "text": "He opined that injury no.1 was caused by a sharp-edged\n\nweapon, whereas injury no.2 could have been caused by a blunt object.\n\n12.3.1. On the same day, PW.3 also examined Head Constable Harjit Singh\n\n(PW.2) and recorded the following injuries:\n(1) Incised wound measuring 1 cm x ½ cm on the forehead, located just below\n\nthe hairline, with clean-cut margins and fresh bleeding. (2) Abrasion on the back of the left elbow joint, reddish in colour\n\n(3) Redness of both eyes. He opined that all three injuries 1,2 and 3 were simple and of probable duration\n\nwithin 12 hours. Injury no.1 was caused by a sharp weapon, while injuries 2 and\n\n3 were caused by blunt force. PW.3 further deposed that upon an application moved by Sub Inspector\n\nSukhchain Singh regarding the fitness of the victims for making statements, he\n\ncertified that both were fit to make statements. During cross examination, PW.3 stated that redness of eyes could be due to\n\nmultiple causes, including excessive alcohol consumption, and he did not detect\n\nany specific contents of chilli powder in the victims’ eyes. He acknowledged that\n\nall injuries were simple and none was dangerous to life.\n12.4.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P013_C08",
+      "text": "PW.5 Ravinder Sharm, Junior Assistant in the office of the District\n\nTransport Office, deposed that he produced the official record pertaining to the\n\nQualis vehicle bearing Regn. No. PB 19C 8750. As per the said record, on\n\n29.01.2009, the Registration Certificate of the said vehicle was transferred in the\n\nname of Karamjit Kaur W/o. Kuldeep Singh, residence of Ward No.16, Barnala.\n\n12.5. PW.7 Sukhchain Singh, who was serving as the Station House Officer,\n\nPolice Station Balianwali during the relevant time, deposed that upon receipt of\n\ninformation regarding the incident on 30.11.2010, he, along with police party,\n\nproceeded to the Civil Hospital, Rampura. After obtaining medical opinion\n\nregarding the fitness of the injured persons, he recorded the statements of PW.1\n\nHardial Singh and PW.2 Harjit Singh. Based on their statements, the FIR\n\n(Ex.PW7/ C) was registered. He further deposed that he took into possession a\n\nblood-stained woolen shirt and a vest from Head Constable Hardial Singh.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P013_C09",
+      "text": "also described the subsequent steps of investigation, including the arrest of\n\naccused Kuldeep Singh @ Deepi, the recovery of the Qualis vehicle, and the\n\npreparation of a rough sketch of the scene of occurrence. He also deposed\n\nregarding the arrest of accused Baldev Singh on 23.02.2011, and other follow-up\n\nprocedures undertaken in the course of investigation. Additionally, he stated that\n\non the same day i.e., 30.11.2020, Head Constable Harjit Singh produced one\n\ncarbine along with 35 cartridges, one handcuff, and the custody warrant\n\npertaining to accused Kuldeep Singh @ Deepi.\n12.6. PW.10 Balwinder Singh deposed that he was the driver of the Qualis\n\nvehicle bearing Regn. No. PB19 C 8750 which was owned by Dial Singh @ Daya\n\nSingh. He stated that he used to regularly park the said vehicle at the taxi stand\n\nnear Court Chowk, Barnala. According to his testimony, on 30.11.2010 at about\n\n11.30 am, two Sikh men, hired his vehicle for travel to Talwandi Sabo. He\n\nspecifically stated that those individuals were not police officials, and further\n\ndeposed that he had no personal knowledge regarding the incident.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P013_C10",
+      "text": "In view of the\n\napparent contradiction between his version and the prosecution case, the\n\nprosecution sought to declare him a hostile witness, alleging that he was\n\nsuppressing the truth, and obtained permission to cross-examine him. However,\n\neven during cross-examination, PW.10 denied all material suggestions and did\n\nnot support the prosecution case.\n12.7. DW.1 Balbir Singh, employed as a Fitter in the Record Room of the Central\n\nJail, Ludhiana, deposed that he was conversant with the official records\n\nmaintained in the jail. He produced in evidence the notice issued to\n\nSuperintendent, Central Jail, Ludhiana, by the Court of Sub Divisional Judicial\n\nMagistrate, Talwandi Sabo, requiring the production of the accused Kuldeep\n\nSingh on 30.11.2010. The said notice was marked as Ex. D1.\n12.8. DW.2 Hardev Singh, who was working as Naib Reader, produced the\n\nenquiry report dated 03.01.2011 prepared by the Deputy Superintendent of\n\nPolice, Maur, which was exhibited as Ex.DW2 /A. He admitted during cross\n\nexamination that he was not posted in the office of the DSP at the relevant point\n\nand had no personal knowledge of the facts of the case.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P013_C11",
+      "text": "His deposition was based\n\nsolely on the contents of the record available with him.\n12.9. DW.3 Gurmeet Singh, the Deputy Superintendent of Police, deposed that\n\nhe had conducted an enquiry into the incident and had recorded the statements of\n\nthe appellant as well as the driver of the vehicle. Based on the facts verified during\n\nthe enquiry, he concluded that the appellant was innocent. According to his\n\nfindings, the appellant neither attacked the policy party nor had any connection\n\nwith the accused persons. He further stated that the appellant’s presence at\n\nTalwandi Sabo on the date of the incident was pursuant to a notice issued by the\n\nCourt to the Superintendent, Central Jail, Ludhiana, and that, the Superintendent\n\ndeputed the appellant to attend court proceedings on 30.11.2010. During cross-\n\nexamination, DW.3 admitted that he could not recall the date and time when he\n\nvisited the spot of the occurrence.\n12.10. Ex. D2 (dated 27.11.2010) - reply to notice and Ex.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P013_C12",
+      "text": "D3 (dated\n\n29.11.2010) - letter are issued by the Superintendent, Central Jail, Ludhiana,\n\naddressed to the Divisional Judicial Magistrate, Talwandi Sabo, regarding the\n\nnon-production of accused Kuldeep Singh @ Deepi before the Court on earlier\n\ndates.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P014_C01",
+      "text": "13. In light of the oral testimonies and the documentary evidence brought on\n\nrecord, we shall now proceed to examine whether the judgment of conviction and\n\nsentence rendered by the Sessions Court, as affirmed by the High Court, is legally\n\nsustainable and warrants interference insofar as the appellant is concerned.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P015_C01",
+      "text": "14. As already indicated, the prosecution examined as many as 15 witnesses,\n\nof whom, the principal witnesses are PW.1 (Hardial Singh), P.W.2 (Harjit Singh)\n\nand PW.10 (Balwinder Singh). PW.1, a member of the escort party, narrated the\n\nsequence of events relating to the assault and attempted escape of undertrial\n\nprisoner Kuldeep Singh. However, he turned hostile to the extent of not\n\nidentifying any of the accused, including the appellant, except Kuldeep Singh.\n\nPW.10, the driver of the vehicle and an alleged eyewitness, also turned hostile\n\nand denied any knowledge of the incident. As a result, the prosecution case\n\nprimarily hinges on the testimony of PW.2, the complainant and injured escort\n\nofficer, on whose statement the FIR was registered by PW. 7, the Investigating\n\nOfficer.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P016_C01",
+      "text": "15. The contentions of the learned counsel for the appellant are threefold:\nFirstly, the appellant had been declared innocent by the Deputy Superintendent\n\nof Police, Maur, during the preliminary inquiry, and therefore, his subsequent\n\nsummoning under\nSection 319\nCr.P.C was unjustified; Secondly, there was no\n\novert act attributed to the appellant nor was there any reliable, sufficient, or\n\nlegally admissible evidence to establish his involvement in a criminal conspiracy\n\nunder\nSection 120B\nIPC. It was contended that in the absence of concrete proof\n\nof conspiracy or any direct role in the assault or escape attempt, the conviction\n\nunder Section 120B as well as for the substantive offences alleged to have been\n\ncommitted pursuant to the conspiracy is liable to be set aside. Thirdly, the\n\nprosecution’s case rests solely on the testimony of PW.2, an allegedly interested\n\nwitness, whereas other key witnesses either turned hostile, or failed to identify\n\nthe appellant, thereby rendering the evidence insufficient to sustain conviction.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "IPC 120B"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P017_C01",
+      "text": "16. The first contention – that the appellant was declared innocent during the\n\npreliminary investigation – cannot be sustained in law. Hardeep Singh v. State\n\nof Punjab5\n, the Constitution Bench of this Court authoritatively interpreted the\n\nscope and ambit of\nSection 319\nCr.P.C., holding that even a person not named in\n\nthe FIR or chargesheet can be summoned to face trial if evidence recorded during\n\nthe course of trial indicates his involvement in the offence. The Court emphasized\n\nthat the opinion of the investigating agency is merely tentative and cannot\n\noverride the Court’s independent judicial assessment based on trial evidence. It\n\nfurther underscored that the power under\nSection 319\nCr.P.C is judicial in nature,\n\nindependent of the police’s conclusions. For better appreciation, the relevant\n\nportion of the judgment is extracted below:\n“117. We accordingly sum up our conclusions as follows:\nQuestions (i) and (iii)\n – what is the stage at which power under\nSection 319\nCr.P.C. can be exercised?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P017_C02",
+      "text": "AND\n – Whether the word \"evidence\" used in\nSection 319(1)\nCr.P.C. has been used in a\n comprehensive sense and includes the evidence collected during investigation or\n the word \"evidence\" is limited to the evidence recorded during trial? Answer\n 117.1. In Dharam Pal case, the Constitution Bench has already held that after\n committal, cognizance of an offence can be taken against a person not named as\n an accused but against whom materials are available from the papers filed by the\n police after completion of investigation. Such cognizance can be taken\n under\nSection 193\nCr.P.C. and the Sessions Judge need not wait till 'evidence'\n under\nSection 319\nCr.P.C. becomes available for summoning an additional\n accused.\n117.2. Section 319\nCr.P.C., significantly, uses two expressions that have to be\n taken note of i.e., (1) Inquiry (2) Trial. As a trial commences after framing of\n charge, an inquiry can only be understood to be a pre-trial inquiry. Inquiries\n\n(2014) 3 SCC 92\n\nunder\nSections 200\n,\n\n,\n\nCr.P.C, and under\nSection 398\nCr.P.C. are species\nof the inquiry contemplated by\nSection 319\nCr.P.C.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P017_C03",
+      "text": "Materials coming before the\nCourt in course of such enquiries can be used for corroboration of the evidence\nrecorded in the court after the trial commences, for the exercise of power\nunder\nSection 319\nCr.P.C., and also to add an accused whose name has been\nshown in Column 2 of the chargesheet.\n117.3. In view of the above position the word 'evidence' in\nSection 319\nCr.P.C.\nhas to be broadly understood and not literally i.e. as evidence brought during a\ntrial. Question (ii) – Whether the word \"evidence\" used in\nSection 319(1)\nCr.P.C. could\nonly mean evidence tested by cross-examination or the court can exercise the\npower under the said provision even on the basis of the statement made in the\nexamination-in-chief of the witness concerned? Answer\n117.4. Considering the fact that under\nSection 319\nCr.P.C. a person against\nwhom material is disclosed is only summoned to face the trial and in such an event\nunder\nSection 319(4)\nCr.P.C. the proceeding against such person is to commence\nfrom the stage of taking of cognizance, the Court need not wait for the evidence\nagainst the accused proposed to be summoned to be tested by cross-examination.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P017_C04",
+      "text": "Question (iv) – What is the nature of the satisfaction required to invoke the power\nunder\nSection 319\nCr.P.C. to arraign an accused? Whether the power under\nSection 319(1)\nCr.P.C. can be exercised only if the court is satisfied that the\naccused summoned will in all likelihood be convicted? Answer\n117.5. Though under\nSection 319(4)(b)\nCr.P.C. the accused subsequently\nimpleaded is to be treated as if he had been an accused when the Court initially\ntook cognizance of the offence, the degree of satisfaction that will be required for\nsummoning a person under\nSection 319\nCr.P.C. would be the same as for framing\na charge. The difference in the degree of satisfaction for summoning the original\naccused and a subsequent accused is on account of the fact that the trial may have\nalready commenced against the original accused and it is in the course of such\ntrial that materials are disclosed against the newly summoned accused. Fresh\nsummoning of an accused will result in delay of the trial - therefore the degree of\nsatisfaction for summoning the accused (original and subsequent) has to be\ndifferent.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P017_C05",
+      "text": "Question (v) – Does the power under\nsection 319\nCr.P.C. extend to persons not\nnamed in the FIR or named in the FIR but not charge sheeted or who have been\ndischarged? Answer\n117.6. A person not named in the FIR or a person though named in the FIR but\n\nhas not been charge sheeted or a person who has been discharged can be\n summoned under\nSection 319\nCr.P.C. provided from the evidence it appears that\n such person can be tried along with the accused already facing trial. However, in\n so far as an accused who has been discharged is concerned the requirement of\nSections 300\nand\n\nCr.P.C. has to be complied with before he can be summoned\n afresh.”\n\n16.1. In the present case, the detailed, consistent, and credible testimony of\n\nPW.2, Harjit Singh, the injured escort officer, clearly implicates the appellant. His deposition categorically establishes that the appellant facilitated the use of a\n\nprivate vehicle – in which the assailants were already present – and deliberately\n\norchestrated a stop at a vulnerable location under a false pretext, thereby enabling\n\nthe assault and escape attempt.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P017_C06",
+      "text": "In light of this direct and incriminating evidence,\n\nthe trial Court rightly exercised its jurisdiction under\nSection 319\nCr.P.C to\n\nsummon the appellant to face trial.\n16.2. The appellant’s prior exoneration during the preliminary investigation,\n\ncannot invalidate the judicial findings recorded on the basis of substantive trial\n\nevidence. Even the deposition of DW.3, the Deputy Superintendent of Police,\n\nwho conducted the preliminary inquiry, fails to inspire confidence. His testimony\n\ndoes not disclose the date, time, or precise details of the spot inspection, thereby\n\ncasting doubt on the thoroughness and credibility of the investigation. Accordingly, the appellant’s reliance on such vague and unsubstantiated findings\n\nis wholly misplaced.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P018_C01",
+      "text": "17. As regards the second limb of the appellant’s contention, it is well\n\nestablished that the offence of criminal conspiracy under\nsection 120B\nIPC, by\n\nits very nature, is seldom capable of being proved by direct evidence. Being a\n\nclandestine agreement between two or more persons to commit an unlawful act,\n\nor a lawful act by unlawful means, conspiracy is typically established through\n\ncircumstantial evidence, patterns of conduct, and the cumulative interferences\n\ndrawn from the interactions of the accused persons.\n17.1. State (NCT of Delhi) v. Navjot Sandhu6\n, this Court underscored that\n\nconspiracy is inherently covert and rarely leaves behind direct traces. Its existence\n\ncan be inferred from the surrounding facts and circumstances, the conduct of the\n\naccused before, during, and after the occurrence, and the manner in which the\n\ncrime unfolds. It was further held that every conspirator need not commit an overt\n\nact to be held liable, the agreement itself constitutes the offence. What is required\n\nis a concert of purpose and unity of design.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 120B"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P018_C02",
+      "text": "It was also emphasized that conspiracy\n\nis an independent offence and may be punishable even if the substantive offence\n\ncontemplated by the conspirators does not ultimately materialize. The following\n\nparagraphs are pertinent in this regard:\n“97. Mostly, conspiracies are proved by circumstantial evidence, as the\n conspiracy is seldom an open affair. Usually, both the existence of the\n conspiracy and its objects have to be inferred from the circumstances and the\n conduct of the accused (per Wadhwa, J. in Nalini case [(1999) 5 SCC 253 : 1999\n SCC (Cri) 691] at p. 516). The well-known rule governing circumstantial\n evidence is that each and every incriminating circumstance must be clearly\n established by reliable evidence and “the circumstances so proved must form a\n\n(2005) 11 SC 600\n\nchain of events from which the only irresistible conclusion about the guilt of the\n accused can be safely drawn and no other hypothesis against the guilt is possible”\n (Tanviben Pankajkumar case [\nTanviben Pankajkumar Divetia v. State of Gujarat\n,\n (1997) 7 SCC 156 : 1997 SCC (Cri) 1004] , SCC p. 185, para 45). G.N. Ray, J. Tanviben Pankajkumar [Tanviben Pankajkumar Divetia v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P018_C03",
+      "text": "State of Gujarat\n,\n (1997) 7 SCC 156 : 1997 SCC (Cri) 1004] observed that this Court should not\n allow suspicion to take the place of legal proof.”\n\n17.2. Similarly, in\nAjay Aggarwal v. Union of India7\n, it was reiterated that\n\nconspiracy is a continuing offence, which begins with the formation of the\n\nunlawful agreement and continues until the common objective is either achieved\n\nor abandoned. The court clarified that the crime is complete with the agreement\n\nitself and that no overt act is necessary to sustain a conviction under\nSection 120B\nIPC. The relevant paragraphs of\nthe said decision\nare usefully extracted below:\n“10. Mohammad Usman Mohammad Hussain Maniyar v. State of\n Maharashtra\n[(1981) 2 SCC 443 : 1981 SCC (Cri) 477 : (1981) 3 SCR 68] it was\n held that for an offence under Section 120-BIPC, the prosecution need not\n necessarily prove that the conspirators expressly agreed to do or cause to be done\n the illegal act, the agreement may be proved by necessary implication. Noor\n Mohammad Mohd. Yusuf Momin v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 120B"
+      ],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P018_C04",
+      "text": "State of Maharashtra\n[(1970) 1 SCC 696 :\n 1970 SCC (Cri) 274 : (1971) 1 SCR 119] it was held that Section 120-BIPC makes\n the criminal conspiracy as a substantive offence which offence postulates an\n agreement between two or more persons to do or cause to be done an act by illegal\n means. If the offence itself is to commit an offence, no further steps are needed to\n be proved to carry the agreement into effect. R.K. Dalmia v. Delhi\n Administration\n[(1963) 1 SCR 253 : AIR 1962 SC 1821 : (1962) 2 Cri LJ 805] it\n was further held that it is not necessary that each member of a conspiracy must\n know all the details of the conspiracy. Shivanarayan Laxminarayan\n Joshi v. State of Maharashtra\n[(1980) 2 SCC 465 : 1980 SCC (Cri) 493] this\n Court emphasized that a conspiracy is always hatched in secrecy and it is\n impossible to adduce direct evidence of the same. The offence can be only\n proved largely from the inferences drawn from acts or illegal omission\n committed by the conspirators in pursuance of a common design.”\n\n(1993) 3 SCC 609\n\n17.3. Sudhir Shantilal Mehta v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P018_C05",
+      "text": "CBI8\n, the Court again affirmed that due to\n\nthe covert nature of conspiracies, courts must necessarily look to the overall\n\ncircumstances, the acts of the accused, and the coherence of their conduct to infer\n\na conspiracy. The presence of a common intention and the coordinated acts of\n\nmultiple persons can give rise to a legitimate inference of an unlawful agreement. The relevant paragraphs read as under:\n“Criminal conspiracy",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P019_C01",
+      "text": "113. Criminal conspiracy is an independent offence. It is punishable independent\n of other offences; its ingredients being:\n(i) an agreement between two or more persons.\n(ii) the agreement must relate to doing or causing to be done either\n(a) an illegal act;\n(b) an act which is not illegal in itself but is done by illegal means.\nIt is now, however, well settled that a conspiracy ordinarily is hatched in secrecy.\n The court for the purpose of arriving at a finding as to whether the said offence\n has been committed or not may take into consideration the circumstantial\n evidence. While however doing so, it must bear in mind that meeting of the minds\n is essential; mere knowledge or discussion would not be. As the question has been\n dealt with in some detail in Criminal Appeal No. 76 of 2004 (\nR.\n Venkatakrishnan v. CBI\n[(2009) 11 SCC 737] ), it is not necessary for us to dilate\n thereupon any further.”\n ….",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P020_C01",
+      "text": "116. K.R. Purushothaman v. State of Kerala\n[(2005) 12 SCC 631 : (2006) 1\n SCC (Cri) 686] this Court held: (SCC pp. 636-38, paras 11 & 13)\n “11.\nSection 120-A\nIPC defines ‘criminal conspiracy’. According to this\n section when two or more persons agree to do, or cause to be done (i) an\n illegal act, or (ii) an act which is not illegal by illegal means, such an\n agreement is designated a criminal conspiracy.\nMajor E.G.\n Barsay v. State of Bombay\n[AIR 1961 SC 1762 : (1962) 2 SCR 195] Subba\n Rao, J., speaking for the Court has said: (AIR p. 1778, para 31)\n ‘31. … The gist of the offence is an agreement to break the law. The\n parties to such an agreement will be guilty of criminal conspiracy,\n though the illegal act agreed to be done has not been done. So too, it\n is not an ingredient of the offence that all the parties should agree to\n do a single illegal act. It may comprise the commission of a number\n\n(2009) 8 SCC 1\n\nof acts.’\n\n ***",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P021_C01",
+      "text": "13. To constitute a conspiracy, meeting of minds of two or more persons for\n doing an illegal act or an act by illegal means is the first and primary\n condition and it is not necessary that all the conspirators must know each\n and every detail of the conspiracy. Neither it is necessary that every one of\n the conspirators takes active part in the commission of each and every\n conspiratorial acts. The agreement amongst the conspirators can be\n inferred by necessary implication. In most of the cases, the conspiracies are\n proved by the circumstantial evidence, as the conspiracy is seldom an open\n affair. The existence of conspiracy and its objects are usually deduced from\n the circumstances of the case and the conduct of the accused involved in the\n conspiracy.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P021_C02",
+      "text": "While appreciating the evidence of the conspiracy, it is\n incumbent on the court to keep in mind the well-known rule governing\n circumstantial evidence viz. each and every incriminating circumstance\n must be clearly established by reliable evidence and the circumstances\n proved must form a chain of events from which the only irresistible\n conclusion about the guilt of the accused can be safely drawn, and no other\n hypothesis against the guilt is possible. The criminal conspiracy is an\n independent offence in the Penal Code. The unlawful agreement is sine qua\n non for constituting offence under the Penal Code and not an\n accomplishment. Conspiracy consists of the scheme or adjustment between\n two or more persons which may be express or implied or partly express and\n partly implied. Mere knowledge, even discussion, of the plan would not per\n se constitute conspiracy. The offence of conspiracy shall continue till the\n termination of agreement.”\n (See also\nP.K. Narayanan v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P021_C03",
+      "text": "State of Kerala\n[(1995) 1 SCC 142 : 1995 SCC\n (Cri) 215] .)”\n\nThus, it is crystal clear that the offence of criminal conspiracy need not be proved\n\nby direct evidence, nor is it necessary that all conspirators participate in every\n\nstage of the commission of the offence. What is material is the existence of a prior\n\nagreement – express or implied – to commit an unlawful act, or a lawful act by\n\nunlawful means. Once such agreement is established, even by way of inference\n\nfrom circumstantial evidence, the legal consequences under\nSection 120B\nIPC\n\nfollow.\n17.4. In the present case, the prosecution has convincingly established the\n\nexistence of a prior concert of action between the appellant and the assailants. The use of a private vehicle associated with the appellant, the involvement of\n\nunidentified persons, the stop at a scheduled location under a false pretext, and\n\nthe appellant’s conspicuous inaction during the violent assault – despite being in\n\na position of official authority – all form a continuous chain of incriminating\n\ncircumstances that point toward his complicity in the conspiracy.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 120B"
+      ],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P021_C04",
+      "text": "His deliberate\n\ninaction, lack of any injuries, and subsequent disappearance from the scene\n\nfurther reinforce the inference of his active role. The appellant’s conduct was not\n\nperipheral but integral to the execution of the plan to facilitate the escape of the\n\nundertrial Kuldeep Singh. His behaviour before, during, and after the incident\n\nestablishes his culpability under\nsection 120B\nIPC. Accordingly, his conviction\n\nfor the substantive offences with the aid of\nSection 120B\nIPC is legally\n\nsustainable.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 120B"
+      ],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P022_C01",
+      "text": "18. The third submission, which seeks to undermine the prosecution’s case on\n\nthe basis of hostile witnesses or minor inconsistencies, does not merit acceptance. As already noted, the prosecution case rests substantially on the testimony of\n\nPW.2 – the complainant and police escort – whose version remained consistent\n\nand unshaken. Although PW.1, another member of the police escort team,\n\ncorroborated portions of PW.2’s narrative, he turned hostile insofar as\n\nidentification of the accused persons other than Kuldeep Singh is concerned. It is\n\na settled proposition of law that the evidence of a prosecution witness is not to be\n\ndiscarded in toto merely because the witness has turned hostile. Courts are\n\nentitled to rely upon any portion of such testimony which is found to be credible\n\nand corroborated by other evidence on record.\n18.1. Paulmeli v. State of Tamil Nadu9\n, the case involved the conviction of\n\nmultiple accused under\nSection 302\nIPC despite several prosecution witnesses\n\nturning hostile. The trial Court, and subsequently the High Court, relied upon\n\nconsistent parts of their testimony, which this Court affirmed.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "IPC 302"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P022_C02",
+      "text": "The relevant\n\nparagraphs are extracted below for better appreciation:\n“20. Paulmeli (PW 2) has supported the case of the prosecution so far as the\n present appellants are concerned. He was declared hostile when he did not name\n the other accused, who stood acquitted by the courts below and there could be no\n difficulty to accept his deposition to that extent.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P023_C01",
+      "text": "21. This Court in\nRamesh Harijan v. State of U.P.\n[(2012) 5 SCC 777] while\n dealing with the issue held : (S CC pp. 786-87, para 23)\n “23. It is a settled legal proposition that the evidence of a prosecution witness\n cannot be rejected in toto merely because the prosecution chose to treat him as\n hostile and cross-examine him.\nThe evidence of such witnesses cannot be treated\n as effaced or washed off the record altogether but the same can be accepted to\n the extent that their version is found to be dependable on a careful scrutiny\n thereof.’\n\n [Vide Bhagwan Singh v. State of Haryana [(1976) 1 SCC 389 : 1976 SCC (Cri)\n 7], Rabindra Kumar Dey v. State of Orissa [(1976) 4 SCC 233 : 1976 SCC (Cri)\n 566], Syad Akbar v. State of Karnataka [(1980) 1 SCC 30 : 1980 SCC (Cri) 59]\n and Khujji v. State of M.P. [(1991) 3 SCC 627 : 1991 SCC (Cri) 916] (SCC p.\n635, para 6)]”",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P024_C01",
+      "text": "22. State of U.P. v. Ramesh Prasad Misra\n[(1996) 10 SCC 360, this Court held\n that evidence of a hostile witness would not be totally rejected if spoken in favour\n\n(2014) 13 SCC 90\n\nof the prosecution or the accused but required to be subjected to close scrutiny\n and that portion of the evidence which is consistent with the case of the\n prosecution or defence can be relied upon. A similar view has been reiterated by\n this Court in\nSarvesh Narain Shukla v. Daroga Singh\n[(2007) 13 SCC 360 :\n(2009) 1 SCC (Cri) 188] , Subbu Singh v. State [(2009) 6 SCC 462 : (2009) 2 SCC\n (Cri) 1106] , C. Muniappan v. State of T.N. [(2010) 9 SCC 567 : (\n2010) 3 SCC\n (Cri) 1402] and Himanshu v. State (NCT of Delhi\n) [(2011) 2 SCC 36 : (2011) 1\n SCC (Cri) 593] . Thus, the law can be summarised to the effect that the evidence\n of a hostile witness cannot be discarded as a whole, and the relevant parts thereof\n which are admissible in law, can be used by the prosecution or the defence.”\n\n18.2. Similarly, in\nRajesh Yadav v. State of UP10\n, this Court observed that the\n\nhostility of a witness does not completely efface their testimony from the\n\nevidentiary record.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P024_C02",
+      "text": "The Court emphasized that even partially reliable hostile\n\ntestimony may serve as the basis for conviction, provided it is corroborated or\n\notherwise trustworthy. The relevant paragraphs are reproduced below:\n“84. In the instant case, some of the material witnesses i.e. B. Kamal (PW 86) and\n R. Maruthu (PW 51) turned hostile. Their evidence has been taken into\n consideration by the courts below strictly in accordance with law. Some\n omissions, improvements in the evidence of the PWs have been pointed out by the\n learned counsel for the appellants, but we find them to be very trivial in nature.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P025_C01",
+      "text": "85. It is settled proposition of law that even if there are some omissions,\n contradictions and discrepancies, the entire evidence cannot be disregarded. After exercising care and caution and sifting through the evidence to separate\n truth from untruth, exaggeration and improvements, the court comes to a\n conclusion as to whether the residuary evidence is sufficient to convict the\n accused. Thus, an undue importance should not be attached to omissions,\n contradictions and discrepancies which do not go to the heart of the matter and\n shake the basic version of the prosecution's witness. As the mental abilities of a\n human being cannot be expected to be attuned to absorb all the details of the\n incident, minor discrepancies are bound to occur in the statements of witnesses. Vide Sohrab v. State of M.P. [(1972) 3 SCC 751 : 1972\nSCC (Cri) 819] , State of\n U.P. v. M.K. Anthony\n[(1985) 1 SCC 505 : 1985\nSCC (Cri) 105] , Bharwada\n Bhoginbhai Hirjibhai v. State of Gujarat\n[(1983) 3 SCC 217 : 1983 SCC (Cri)\n 728] , State of Rajasthan v. Om Prakash [(2007) 12 SCC 381 : (2008) 1 SCC (Cri)\n 411] , Prithu v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P025_C02",
+      "text": "State of H.P. [(2009) 11 SCC 588 : (2009) 3 SCC (Cri)\n\n(2022) 12 SCC 200\n\n1502], State of U.P. v. Santosh Kumar [(2009) 9 SCC 626 : (2010) 1 SCC (Cri)\n 88] and State v. Saravanan [(2008) 17 SCC 587 : (2010) 4 SCC (Cri) 580] .”\n\n18.3. Goverdhan v. State of Chhattisgarh11\n, where several witnesses had\n\nturned hostile and the delay in recording the statement of the key eyewitnesses\n\nwas highlighted, this Court reiterated that hostile testimony must be carefully\n\nsifted – usable portions may be retained, while tainted segments are to be\n\ndiscarded. Applying that principle, the Court ultimately modified the conviction\n\nfrom\nSection 302\nIPC to Part I of\nSection 304\nIPC, relying on consistent portions\n\nof the testimony of the deceased’s mother. The relevant paragraphs are extracted\n\nbelow:\n“93. However, it is also to be noted that merely because the witnesses turn hostile\n does not necessarily mean that their evidence has to be thrown out entirely and\n what is supportive of the prosecution certainly be used. In Gangadhar Behera v. State of Orissa [Gangadhar Behera v. State of Orissa, (2002) 8 SCC 381 : 2003\n SCC (Cri) 32] , it was observed as following : (SCC pp. 392-93, para 15)\n “15.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 302",
+        "IPC 304"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P025_C03",
+      "text": "To the same effect is the decision in\nState of Punjab v. Jagir Singh\n[(1974) 3 SCC 277 : 1973 SCC (Cri) 886] and Lehna v. State of Haryana\n [(2002) 3 SCC 76 : 2002 SCC (Cri) 526]. Stress was laid by the appellant-\n accused on the non-acceptance of evidence tendered by some witnesses to\n contend about desirability to throw out the entire prosecution case. In\n essence prayer is to apply the principle of falsus in uno, falsus in omnibus\n (false in one thing, false in everything). This plea is clearly untenable. Even\n if a major portion of the evidence is found to be deficient, in case residue is\n sufficient to prove guilt of an accused, notwithstanding acquittal of a\n number of other co-accused persons, his conviction can be maintained. It is\n the duty of the court to separate the grain from the chaff. Where chaff can\n be separated from the grain, it would be open to the court to convict an\n accused notwithstanding the fact that evidence has been found to be\n deficient to prove guilt of other accused persons. Falsity of a particular\n material witness or material particular would not ruin it from the beginning\n to end.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P025_C04",
+      "text": "The maxim falsus in uno, falsus in omnibus has no application in\n India and the witnesses cannot be branded as liars. The maxim falsus in\n\n(2025) 3 SCC 378\n\nuno, falsus in omnibus has not received general acceptance nor has this\nmaxim come to occupy the status of the rule of law. It is merely a rule of\ncaution. All that it amounts to, is that in such cases testimony may be\ndisregarded, and not that it must be disregarded. The doctrine merely\ninvolves the question of weight of evidence which a court may apply in a\ngiven set of circumstances, but it is not what may be called “a mandatory\nrule of evidence”. (See\nNisar Ali v. State of U.P.\n[1957 SCC OnLine SC 42\n: AIR 1957 SC 366] ) Merely because some of the accused persons have\nbeen acquitted, though evidence against all of them, so far as direct\ntestimony went, was the same does not lead as a necessary corollary that\nthose who have been convicted must also be acquitted. It is always open to\na court to differentiate the accused who had been acquitted from those who\nwere convicted. (See\nGurcharan Singh v.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P025_C05",
+      "text": "State of Punjab\n[1955 SCC OnLine\nSC 16 : AIR 1956 SC 460].) The doctrine is a dangerous one specially in\nIndia for if a whole body of the testimony were to be rejected, because a\nwitness was evidently speaking an untruth in some aspect, it is to be feared\nthat administration of criminal justice would come to a dead stop. Witnesses\njust cannot help in giving embroidery to a story, however, true in the main. Therefore, it has to be appraised in each case as to what extent the evidence\nis worthy of acceptance, and merely because in some respects the court\nconsiders the same to be insufficient for placing reliance on the testimony\nof a witness, it does not necessarily follow as a matter of law that it must be\ndisregarded in all respects as well. The evidence has to be sifted with care. The aforesaid dictum is not a sound rule for the reason that one hardly\ncomes across a witness whose evidence does not contain a grain of untruth\nor at any rate exaggeration, embroideries or embellishment. (See\nSohrab v. State of M.P.\n[(1972) 3 SCC 751 : 1972 SCC (Cri) 819] and Ugar Ahir v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P025_C06",
+      "text": "State of Bihar [1964 SCC OnLine SC 90 : AIR 1965 SC 277] .) An attempt\nhas to be made to, as noted above, in terms of felicitous metaphor, separate\nthe grain from the chaff, truth from falsehood. Where it is not feasible to\nseparate the truth from falsehood, because grain and chaff are inextricably\nmixed up, and in the process of separation an absolutely new case has to be\nreconstructed by divorcing essential details presented by the prosecution\ncompletely from the context and the background against which they are\nmade, the only available course to be made is to discard the evidence in\ntoto. (See\nZwinglee Ariel v. State of M.P.\n[(1952) 2 SCC 560] and Balaka\nSingh v. State of Punjab [(1975) 4 SCC 511 : 1975 SCC (Cri) 601] .)\nobserved by this Court in\nState of Rajasthan v. Kalki\n[(1981) 2 SCC 752 :\n1981 SCC (Cri) 593] normal discrepancies in evidence are those which are\ndue to normal errors of observation, normal errors of memory due to lapse\nof time, due to mental disposition such as shock and horror at the time of\noccurrence and those are always there however honest and truthful a\nwitness may be.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P025_C07",
+      "text": "Material discrepancies are those which are not normal, and\nnot expected of a normal person. Courts have to label the category to which\n\na discrepancy may be categorised. While normal discrepancies do not\n corrode the credibility of a party's case, material discrepancies do so. These\n aspects were highlighted recently in\nKrishna Mochi v. State of Bihar\n[(2002)\n 6 SCC 81 : 2002 SCC (Cri) 1220]. Accusations have been clearly\n established against the appellant-accused in the case at hand. The courts\n below have categorically indicated the distinguishing features in evidence\n so far as the acquitted and the convicted accused are concerned.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P026_C01",
+      "text": "94. To the same effect it was held in\nRaja v. State of Karnataka\n[(2016) 10 SCC\n 506 : (2017) 1 SCC (Cri) 158] as follows : (SCC p. 516, para 32)\n\n “32.\nThat the evidence of a hostile witness in all eventualities ought not\n stand effaced altogether and that the same can be accepted to the extent\n found dependable on a careful scrutiny was reiterated by this Court in\nHimanshu [Himanshu v. State (NCT of Delhi\n), (2011) 2 SCC 36 : (2011)\n 1 SCC (Cri) 593] by drawing sustenance of the proposition amongst others\n from\nKhujji v. State of M.P.\n[(1991) 3 SCC 627 : 1991 SCC (Cri) 916] and\n Koli Lakhmanbhai Chanabhai v. State of Gujarat [(1999) 8 SCC 624 :\n2000 SCC (Cri) 13]. It was enounced that the evidence of a hostile witness\n remains admissible and is open for a court to rely on the dependable part\n thereof as found acceptable and duly corroborated by other reliable\n evidence available on record.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P027_C01",
+      "text": "95. We are also mindful of the position of law that the prosecution must stand or\n fall on its own legs and it cannot derive any strength from the weakness of the\n defence. However, in the present case, in spite of the untruthful and evasive\n testimony of the neighbours, the prosecution has been able to prove its case\n beyond reasonable doubt and the false plea of the appellants only strengthens the\n case of the prosecution.”\n\nThese decisions reaffirm the legal principle that a hostile witness’s testimony\n\nneed not be discarded in its entirety and that the Court must carefully evaluate\n\nwhether portions of such evidence are credible and corroborated.\n18.4. It is equally well settled that the testimony of a single eyewitness, if found\n\ntrustworthy and credible, is sufficient to sustain a conviction. Vadivelu Thevar\n\nv. State of Madras12\n, this Court held that if the sole witness is of a sterling quality\n\n(1957) SCR 981 : AIR 1957 SC 614 : 1957 Cri LJ 1000\n\nand inspires confidence, a conviction can be safely based upon such testimony.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P027_C02",
+      "text": "The following paragraphs are pertinent in this regard:\n“…\nSection 134\nof the Indian Evidence Act has categorically laid it down that \"\nno particular number of witnesses shall in any case be required for the proof of\n any fact.\" The legislature determined, as long ago as 1872, presumably after due\n consideration of the pros and cons, that it shall not be necessary for proof or\n disproof of a fact, to call any particular number of witnesses. In England, both\n before and after the passing of the\nIndian Evidence Act, 1872\n, there have been a\n number of statutes as set out in Sarkar's I Law of Evidence -9th Edition, at pp. 1\n 100 and 1 101, forbidding convictions on the testimony of a single witness. The\n Indian Legislature has not insisted on laying down any such exceptions to the\n general rule recognized in\nSection 134\nquoted above. The section enshrines the\n well recognized maxim that \" Evidence has to be weighed and not counted\". Our\n Legislature has given statutory recognition to the fact that administration of\n justice may be hampered if a particular number of witnesses were to be insisted\n upon.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P027_C03",
+      "text": "It is not seldom that a crime has been committed in the presence of only one\n witness, leaving aside those cases which are not of uncommon occurrence, where\n determination of guilt depends entirely on circumstantial evidence. If the\n Legislature were to insist upon plurality of witnesses, cases where the testimony\n of a single witness only could be available in proof of the crime, would go\n unpunished. It is here that the discretion of the presiding judge comes into play. The matter thus must depend upon the circumstances of each case and the quality\n of the evidence of the single witness whose testimony has to be either accepted or\n rejected. If such a testimony is found by the court to be entirely reliable, there is\n no legal impediment to the conviction of the accused person on such proof. Even\n as the guilt of an accused person may be proved by the testimony of a single\n witness, the innocence of an accused person may be established on the testimony\n of a single witness, even though a considerable number of witnesses may be\n forthcoming to testify to the truth of the case for the prosecution.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P027_C04",
+      "text": "Hence, in our\n opinion, it is a sound and well- established rule of law that the court is concerned\n with the quality and not with the quantity of the evidence necessary for, proving\n or disproving a fact. Generally speaking, oral testimony in this context may be\n classified into three categories, namely:\n(1) Wholly reliable. (2) Wholly unreliable. (3) Neither wholly reliable nor wholly unreliable. In the first category of proof, the court should have no difficulty in coming to its\n conclusion either way-it may convict or may acquit on the testimony of a single\n witness, if it is found to be above reproach or suspicion of interestedness,\n incompetence or subornation. In the second category, the court, equally has no\n difficulty in coming to its conclusion. It is in the third category of cases, that the\n court has to be circumspect and has to look for corroboration in material\n\nparticulars by reliable testimony, direct or circumstantial. There is another\n danger in insisting on plurality of witnesses.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P027_C05",
+      "text": "Irrespective of the quality of the oral\n evidence of a single witness, if courts were to insist on plurality of witnesses in\n proof of any fact, they will be indirectly encouraging subornation of witnesses. Situations may arise and do arise where only a single person is available to give\n evidence in support of a disputed fact. The court naturally has to weigh carefully\n such a testimony and if it is satisfied that the evidence is reliable and free from all\n taints which tend to render oral testimony open to suspicion, it becomes its duty\n to act upon such testimony. The law reports contain many precedents where the\n court had to depend and act upon the testimony of a single witness in support of\n the prosecution. There are exceptions to this rule, for example, in cases of sexual\n offences or of the testimony of an approver; both these are cases in which the oral\n testimony is, by its very nature, suspect, being that of a participator in crime. But,\n where there are no such exceptional reasons operating, it becomes the duty of the\n court to convict, if it is satisfied that the testimony of a single witness is entirely\n reliable.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P027_C06",
+      "text": "We have, therefore, no reasons to refuse to act upon the testimony of the first\n witness, which is the only reliable evidence in support of the prosecution.”\n\n18.5. The above principle has been reiterated in\nChittar Lal v. State of\n\nRajasthan13\n, where the Court upheld a conviction under\nSection 302\nIPC based\n\non the credible and convincing evidence of a single eyewitness, notwithstanding\n\ncertain inconsistencies and lack of corroboration. The Court held that if the\n\nwitness is otherwise reliable and his testimony inspires confidence, a conviction\n\nis legally sustainable. The relevant paragraph reads as under:\n“7. … Evidence of the person whose name did not figure in the FIR as witness\n does not perforce become suspect. There can be no hard-and-fast rule that the\n names of all witnesses, more particularly eyewitnesses should be indicated in the\n FIR. As was observed by this Court in\nShri Bhagwan v. State of Rajasthan\n[(2001)\n 6 SCC 296 : 2001 SCC (Cri) 1095] mere non-mention of the name of an\n eyewitness does not render the prosecution version fragile. The information was\n not lodged by an eyewitness.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "IPC 302"
+      ],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P027_C07",
+      "text": "Mental condition of a person whose father has lost\n his life inevitably gets disturbed. Explanation offered by witnesses for non-\nmention of PW 3's name is plausible. Additionally, it is to be noted that in the\n present case the statement of PW 3 was recorded on the same day of incident,\n immediately after the investigation process was set into motion. Therefore, the\n\n(2003) 6 SCC 397\n\nplea that PW 3's testimony is doubtful lacks substance. The other plea was that\n conviction should not have been made on the basis of a single witness, PW 3's\n testimony. This plea is equally without essence. The legislative recognition of the\n fact that no particular number of witnesses can be insisted upon is amply reflected\nSection 134\nof the Indian Evidence Act, 1872 (in short “the\nEvidence Act\n”). Administration of justice can be affected and hampered if number of witnesses\n were to be insisted upon. It is not seldom that a crime has been committed in the\n presence of one witness, leaving aside those cases which are not of unknown\n occurrence where determination of guilt depends entirely on circumstantial\n evidence.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P027_C08",
+      "text": "If plurality of witnesses would have been the legislative intent, cases\n where the testimony of a single witness only could be available, in number of\n crimes the offender would have gone unpunished. It is the quality of evidence of\n the single witness whose testimony has to be tested on the touchstone of credibility\n and reliability. If the testimony is found to be reliable, there is no legal impediment\n to convict the accused on such proof. It is the quality and not the quantity of\n evidence which is necessary for proving or disproving a fact. This position has\n been settled by a series of decisions. The first decision which has become locus\n classicus is Mohd. Sugal Esa Mamasan Rer Alalah v. R. [AIR 1946 PC 3 : 1946\n All LJ 100] The Privy Council focused on the difference between English law\n where a number of statutes make conviction impermissible for certain categories\n of offences on the testimony of a single witness and\nSection 134\nof the Evidence\n Act. The view has been echoed in\nVadivelu Thevar v. State of Madras\n[AIR 1957\n SC 614 : 1957 Cri LJ 1000] , Guli Chand v. State of Rajasthan [(1974) 3 SCC\n 698 : 1974 SCC (Cri) 222 : AIR 1974 SC 276] , Vahula Bhushan v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P027_C09",
+      "text": "State of T.N.\n [1989 Supp (1) SCC 232 : 1989 SCC (Cri) 353 : AIR 1989 SC 236] , Jagdish\n Prasad v. State of M.P. [1995 SCC (Cri) 160 : AIR 1994 SC 1251] and Kartik\n Malhar v. State of Bihar [(1996) 1 SCC 614 : 1996 SCC (Cri) 188].\n\n18.6. A similar view was taken in\nKuna v. State of Odisha14\n, where the Court\n\nupheld a conviction solely on the basis of a trustworthy eyewitness, emphasizing\n\nthat credible testimony alone is sufficient in law. The following paragraph is\n\npertinent in this regard:\n“19. That conviction can be based on a testimony of a single eyewitness if he or\n she passes the test of reliability and that it is not the number of witnesses but the\n quality of evidence that is important, have been propounded consistently in\nAnil\n Phukan [Anil Phukan v. State of Assam\n, (1993) 3 SCC 282 : 1993 SCC (Cri) 810],\n Ramji Surjya [Ramji Surjya Padvi v. State of Maharashtra, (1983) 3 SCC 629 :\n1983 SCC (Cri) 748] , Patnam Anandam [State of A.P. v. Patnam Anandam,\n\n(2018) 1 SCC 296\n\n(2005) 9 SCC 237 : 2005 SCC (Cri) 1225] and Gulam Sarbar [Gulam Sarbar v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P027_C10",
+      "text": "State of Bihar, (2014) 3 SCC 401 : (2014) 2 SCC (Cri) 195] with the apparent\n emphasis that evidence must be weighed and not counted, decisive test being\n whether it has a ring of truth and it is cogent, credible, trustworthy or otherwise.”\n\n18.7. In the present case, although the appellant was not officially assigned to\n\nthe escort duty undertaken by PW.1 and PW.2 on 30.11.2010, he was admittedly\n\npresent at the court complex on the relevant day. The partial hostility of PW. 1\n\nregarding the identification of the accused, does not undermine the testimony of\n\nPW.2 who remained firm, consistent, and unshaken on all material particulars. His account of the events is further corroborated by medical evidence and the\n\nsurrounding circumstances. His description of the presence of unknown\n\nindividuals, the seating arrangement in the vehicle, the appellant’s inexplicable\n\ndeviation from the designated route, and the subsequent attack by those\n\nindividuals, is both detailed and coherent. As already discussed, conviction can\n\nrest on the testimony of a sole eyewitness, provided the Court finds it trustworthy\n\nand corroborated by other evidence.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P027_C11",
+      "text": "PW.2’s evidence in the present case satisfies\n\nthis threshold. His status as an injured witness further enhances the reliability of\n\nhis version.\n18.8. The defence suggestion that PW.2 had a motive to falsely implicate the\n\nappellant is wholly unsubstantiated. In the absence of any evidence of prior\n\nenmity or other animus, and considering that the appellant was PW.2’s superior\n\nofficer, the theory of false implication appears inherently implausible.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P028_C01",
+      "text": "19. Thus, the prosecution evidence clearly demonstrates that the attack on the\n\npolice escort team was not a spontaneous occurrence, but a carefully orchestrated\n\nplan. The appellant, holding the post of Assistant Superintendent of Jail, was fully\n\naware of the security protocols applicable to undertrial escorts. Instead of\n\nupholding these procedures, he misused his position and familiarity with the\n\nescort personnel to subvert the established norms. He facilitated the use of a\n\nprivate vehicle, allegedly owned by an acquaintance, and persuaded the police\n\nofficers to board it – himself occupying the front passenger seat. This was not an\n\ninnocuous act but indicated prior arrangement and active complicity.\n\n19.1. Furthermore, the presence of two unidentified persons already seated in the\n\nrear of the vehicle – where the undertrial and escort officers were also to be\n\naccommodated – not only constituted a grave breach of protocol but was\n\ninexplicable except by the appellant’s active connivance. At an isolated location,\n\nthe attack was launched: red chilli powder was thrown, followed by an assault\n\nusing a knife and a kirpan.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P028_C02",
+      "text": "Kuldeep Singh attempted to escape and was prevented\n\nfrom doing so only by the handcuffs and the belt secured by the complainant. Throughout the incident, the appellant neither assisted the police escort nor\n\nresisted the assailants. He remained uninjured and vanished from the scene of\n\nincident thereafter.\n19.2. The appellant’s conduct during and after the incident is wholly inconsistent\n\nwith that of a law-abiding officer. Rather, it reveals the mindset of a conspirator\n\nattempting to evade accountability. His role in arranging the vehicle, his\n\nsuspicious seating position, the unauthorized presence of outsiders, his passive\n\nstance during the attack, his disappearance thereafter, and his failure to report the\n\nincident together form an unbroken chain of incriminating circumstances. The\n\nprosecution has rightly characterized the entire episode as a premeditated\n\nconspiracy, in which the appellant played a key role.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P029_C01",
+      "text": "20. This Court is compelled to express its strongest condemnation of the\n\nappellant’s conduct. As a public servant entrusted with safeguarding the rule of\n\nlaw and the custody of prisoners, he did not merely default in his duties – he\n\nactively undermined the justice system. When public functionaries betray the\n\ninstitutional trust, the consequences are profound and far-reaching. In a\n\nconstitutional democracy governed by the rule of law, custodial officers must be\n\nheld to the highest standards of integrity. Any deviation amounts not only to legal\n\ndelinquency, but to a grave institutional and moral breach. The findings recorded\n\nby the Sessions Court and affirmed by the High Court are based on cogent\n\nreasoning and unimpeachable evidence. The appellant has failed to make out any\n\nground for interference under\nArticle 136\nof the Constitution.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 136"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P030_C01",
+      "text": "21. Considering the nature and gravity of the offence committed by the\n\nappellant, and more so, keeping in view his position as an Assistant\n\nSuperintendent of Jail – a role that demands the highest standards of integrity,\n\nresponsibility and adherence to the rule of law – this Court finds no mitigating\n\nfactor to warrant any leniency in sentence. The conviction and sentence imposed\n\nare commensurate with the appellant’s culpability and call for neither reduction\n\nnor interference.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P031_C01",
+      "text": "22. Accordingly, the appeal stands dismissed. The appellant shall be taken into\n\ncustody forthwith, to undergo the remaining period of imprisonment as awarded\n\nby the trial Court and affirmed by the High Court. The concerned authorities are\n\ndirected to ensure the immediate execution of the sentence. If the fine amount has\n\nnot yet been deposited, the same shall be recovered from the appellant in\n\naccordance with law, failing which, he shall undergo the default sentence as\n\nstipulated.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB_P032_C01",
+      "text": "23. Pending application(s), if any, shall stand closed.\n....……..…………………………J.\n [Pamidighantam Sri Narasimha]\n\n ….…….…………………………J.\n [R. Mahadevan]\n\nNEW DELHI;\nAUGUST 11, 2025",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Gurdeep Singh vs The State Of Punjab",
+    "case_id": "SC_2025_GURDEEP_SINGH_VS_THE_STATE_OF_PUNJAB",
+    "court": "Supreme Court of India",
+    "year": "2025",
+    "facts_summary": "1. This criminal appeal is directed against the judgment and order dated\n\n 04.05.2023 passed by the High Court of Punjab and Haryana at Chandigarh 1 in\n\n CRA-S-4900-SB-2014, whereby the High Court upheld the judgment of\n\n conviction and sentence dated 31.10.2014 rendered by the Additional Sessions\n\n Judge, Fast Track Court, Bathinda2, in S.C. No. 55 of 10.09.2011, against the\n\n appellant / accused. The particulars of the conviction and sentence are as under:\n\nOffence for which convicted Sentence awarded\n\n Section 307 r/w\nSection 120B\nIPC Rigorous Imprisonment for three years\n and a fine of Rs.2,000/-, in default to\n undergo further RI for two months\nSection 225\nr/w\nSection 120B\nIPC Rigorous Imprisonment for one year\n and a fine of Rs.500/-, in default to\n undergo further RI for two weeks\nSection 186\nr/w\nSection 120B\nIPC Rigorous Imprisonment for two\n months and a fine of Rs.200/-, in\n default to undergo further RI for one\n week\nSection 332\nr/w\nSection 120B\nIPC Rigorous Imprisonment for two years\n and a fine of Rs.1,500/-, in default to\n undergo further RI for one and half\n months\nSection 353\nr/w\nSection 120B\nIPC Rigorous Imprisonment for one and\n half years and a fine of Rs.1,000/-, in\n default to undergo further RI for one\n month\nSection 120B\nIPC Rigorous Imprisonment for three years\n and a fine of Rs.2,000/-, in default to\n undergo further RI for two months\n\nAll the sentences were ordered to run concurrently. 2. The case of the prosecution is that on 30.11.2010, the Station",
+    "legal_issues": "7. The learned counsel for the appellant assailed the concurrent findings of\n\nconviction recorded by both the Sessions Court and the High Court as being\n\nlegally unsustainable and factually erroneous. It was contended that the appellant\n\nhas been falsely implicated without any cogent or reliable evidence connecting\n\nhim either to the alleged occurrence or to the alleged conspiracy with the\n\nco-accused.\n7.1. It was submitted that the entire prosecution case rested solely on the\n\ntestimony of PW.2, the complainant, who was admittedly an interested witness. In his cross-examination, PW.2 admitted that as per police rules, he was not\n\npermitted to escort an undertrial prisoner in a private vehicle, and that disciplinary\n\naction was liable to be taken against him for this lapse. Therefore, in an attempt\n\nto shield himself, he allegedly twisted the version and shifted the blame onto the\n\nappellant by claiming that it was on the appellant’s suggestion that they boarded\n\nthe said vehicle.\n7.1.1. Furthermore, the other two material witnesses – PW.1 (Hardial Singh), the\n\nescorting officer, and PW.10 (Balwinder Singh), the vehicle driver – were\n\ndeclared hostile and did not support the prosecution’s case. In particular, PW.10\n\nwho was present throughout the alleged occurrence, completely resiled from his\n\nearlier statement, thereby casting serious doubt on the prosecution version.\n\n7.2. The learned counsel emphasized that no overt act was attributed to the\n\nappellant. The sole allegatio",
+    "ratio_summary": "113. Criminal conspiracy is an independent offence. It is punishable independent\n of other offences; its ingredients being:\n(i) an agreement between two or more persons.\n(ii) the agreement must relate to doing or causing to be done either\n(a) an illegal act;\n(b) an act which is not illegal in itself but is done by illegal means.\nIt is now, however, well settled that a conspiracy ordinarily is hatched in secrecy.\n The court for the purpose of arriving at a finding as to whether the said offence\n has been committed or not may take into consideration the circumstantial\n evidence. While however doing so, it must bear in mind that meeting of the minds\n is essential; mere knowledge or discussion would not be. As the question has been\n dealt with in some detail in Criminal Appeal No. 76 of 2004 (\nR.\n Venkatakrishnan v. CBI\n[(2009) 11 SCC 737] ), it is not necessary for us to dilate\n thereupon any further.”\n …. 21. This Court in\nRamesh Harijan v. State of U.P.\n[(2012) 5 SCC 777] while\n dealing with the issue held : (S CC pp. 786-87, para 23)\n “23. It is a settled legal proposition that the evidence of a prosecution witness\n cannot be rejected in toto merely because the prosecution chose to treat him as\n hostile and cross-examine him.\nThe evidence of such witnesses cannot be treated\n as effaced or washed off the record altogether but the same can be accepted to\n the extent that their version is found to be dependable on a careful scrutiny\n thereof.’\n\n [Vide Bhagwan Singh v. State of H",
+    "final_order": "",
+    "outcome_summary": "Dismissed",
+    "sections_cited": [
+      "IPC 120B",
+      "Arms Act 25",
+      "IPC 307",
+      "IPC 302",
+      "IPC 304",
+      "Constitution 136"
+    ],
+    "cases_cited": []
+  }
+}

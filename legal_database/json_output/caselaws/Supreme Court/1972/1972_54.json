@@ -1,0 +1,459 @@
+{
+  "case_id": "SC_1972_1972_54",
+  "case_name": "Union Of India vs Sri Sarada Mills Ltd",
+  "normalized_case_name": "UNION_OF_INDIA_VS_SRI_SARADA_MILLS_LTD",
+  "court": "Supreme Court of India",
+  "year": "1972",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "28 September 1972",
+  "judges": [
+    "A.N. Ray",
+    "I.D. Dua",
+    "Kuttyil Kurien Mathew"
+  ],
+  "author": "A.N. Ray",
+  "bench_type": "constitution",
+  "petitioner": "Union Of India",
+  "respondent": "Sri Sarada Mills Ltd",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 18,
+  "cited_by_count": 64,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1973 AIR 281",
+    "1973 SCR (2) 484",
+    "AIR 1973 SUPREME COURT 281",
+    "1972 2 SCC 877",
+    "1973 2 SCR 464",
+    "43 COM CAS 431",
+    "1973 (1) SCWR 46"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1972\\1972_54.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1972_1972_54_P001_C01",
+      "text": "PETITIONER:\nUNION OF INDIA\n\n Vs. RESPONDENT:\nSRI SARADA MILLS LTD. DATE OF JUDGMENT28/09/1972\n\nBENCH:\nRAY, A.N. BENCH:\nRAY, A.N. DUA, I.D. MATHEW, KUTTYIL KURIEN\n\nCITATION:\n 1973 AIR 281 1973 SCR (2) 484\n 1972 SCC (2) 877\n\nACT:\nTransfer of Property Act\n(4 of 1882), ss. 6 (e) and 135\nA and\nMarine Insurance Act\n(11 of 1963), ss. 52 and 79--Consignor\nof goods to Railway suing Railway Administration for loss of\ngoods--Suit filed after recovering from insurance company\nand assigning to insurance company, assignor's rights\nagainst Railway Administration--Maintainability. HEADNOTE:\nThe respondent consigned certain goods to the Railway for\ndispatch. The goods were insured. They were damaged during\ntransit, and the Insurance company paid the total loss. The\nrespondent assigned all its rights, including the right to\nsue, to the Insurance Company. Thereafter the respondent\nsued the appellant for damages. The appellant contended\ninter alia that the respondent, having received the total\nloss from the Insurance Company, was not entitled to\ninstitute the suit.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1972_1972_54_P001_C02",
+      "text": "The High Court in appeal, held the suit was maintainable\nbecause the assignment was of a mere right to sue which is\nnot valid under\ns. 6(e)\nof the Transfer of Property Act,\n1882, and that even if the assignment was valid, the right\nto action of the respondent had not ceased and decreed the\nsuit. In appeal to this Court,\nHELD : (per A. N. Ray and 1. D. Dua, JJ.) The appeal should\nbe dismissed. [471B]\nSection 6(e)\nof the Transfer of Property is not applicable\nto the facts of the case. Under\ns. 52\nof the Marine\nInsurance Act, 1963, an insurance company can sue in its own\nname where the policy has been transferred by assignment,\nbut that is not the case here. In the present case, the\ninsurance company is entitled to subrogation in accordance\nwith the provisions of\ns. 79\nof the Marine Insurance Act. The insurance company and the respondent proceeded on the\nbasis that the insurance company was only subrogated to the\nrights of the assured, and the letter of subrogation\ncontains intrinsic evidence that the respondent would give\nthe insurance company facilities for enforcing rights.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1972_1972_54_P001_C03",
+      "text": "But\nthe letter of subrogation did not divest the respondent of\nits cause of action against the appellant for loss and\ndamages. The insurance company has chosen to allow the\nrespondent to sue and the appellant did not take the plea\nthat there was an assignment. If such a plea had been\ntaken, the insurance company could have been impleaded and\nrights of all the parties could have been decided. [468H;\n469A-B; 47OC-D, E-H; 471A]\nThe respondent will however give a valid discharge to the\nappellant and be answerable and accountable to the insurance\ncompany for the money recovered, and the decree would be a\nbar to the institution of any suit by the insurance company.\n[470D]\n\nKing v. Victoria Insurance Company Limited [1896] A.C. 250\nCompania Colombiana De Seguros v. Pacific Steam Navigation\nCo. [1965] 1 Q.B. 101, Torkington v. Magee [1902] 2 K.B. 427\nand Ertet Bieber & Co. v. Rio Tinto Co. [1918] A.C. 260,\nreferred to. Per K. K. Mathew, J. (dissenting). The real reason why a\nmere right to sue cannot be assigned is that such an\nassignment would offend the rule of champerty and\nmaintenance.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1972_1972_54_P001_C04",
+      "text": "But where an insurance company has been\nsubrogated to all the rights, and the remedies of the\nassured by virtue of\ns. 135-A\nof the Transfer of Property\nAct, 1882, (now incorporated in the\nMarine Insurance Act,\n\n), the reason for the rule against assignment of a mere\nright to sue does not obtain, because, the insurance company\nis clothed with all the rights and remedies of the assured\nand the only thing lacking is the capacity to sue in its own\nname. Subrogation is concerned solely with the mutual\nrights and liabilities of the parties to the contract of\ninsurance; it confers no rights and imposes no liabilities\nupon third parties who are strangers to that contract and,\nthe insurer, who has paid a loss gets no direct rights or\nremedies against anyone other than the assured, nor can sue\nsuch parties in his own name.\n[472F-H; 475H; 476A; 480G-H]\nKing v. Victoria insurance Co. Ltd, [1896] A.C. 250, 255-6\nand Simpson v., Thomson, [1877] 3 App. Cas. 279 H.L.\napplied. Indian Trade and General Insurance Co. Ltd. v. Union of\nIndia, A.I.R. 1957 Calcutta 190 and Vasudevan Mudaliar v. Caledonian Insurance Co. and another, A.I.R. 1965 Madras\n159, approved. Yorkshire insurance Co. Ltd. v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1972_1972_54_P001_C05",
+      "text": "Nisbet Shipping Co. Ltd.,\n[1962] 2 Q.B. 330,Castellain v. Preston, 11 Q.B.D. 380, 395,\nBurnard v. Rodocanachi, Sons & Co. 7 App Cas. 333, 939, Glen\nLine v. Attorney General, [1930] 46 T.L.R. 451, Textiles and\nYarn (P) Ltd. v. Indian National Steamship Co. Ltd. A.I.R.\n1964 Calcutta 362 and Asiatic Governments Security Fire and\nGeneral Assurance Co. Ltd. v. The Scindia Steam Navigation\nCo. Ltd., A.I.R. 1965 Kerala 214, referred to. Alliance Insurance Company Ltd. v. Union of India. I.T.R.\n[1950] 1 Calcutta 544, disapproved. Clause (4) of s. 135-3 had not made any departure and\nconferred a right of suit upon the subrogee against third\npersons. An assignment of insurance after loss would sound\nin the realm of an assignment of a mere right to sue and the\nlegislature wanted, by Cl. (4), to put it beyond doubt that\ns. 6(e)\nis no bar to such an assignment. Moreover, cl. (4)\nmay not have any operation upon cls. (2) and (3) of the\nsection, because, subrogation is effected by cls. (2) and\n(3), that is, by operation of law, while\ns. 6(e)\nconcerned with a transfer of a mere right to sue by act of\nparties. [476B-D]\nBut, in the present case, it is not mere subrogation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1972_1972_54_P001_C06",
+      "text": "The\nassignment conveyed to the insurance company the entire\nrights in respect of the subject-matter of the insurance,\nincluding the right of the assured to sue in its own name,\nand therefore, after such assignment, the assured had no\ncause of action to institute the suit against the appellant\nfor recovery of damages. [481F-G]\nCompania Colombiana de Seguros v. Pacific Steam Navigation\nCo. [1965] 1 Q.B. 101, 121 applied. Anson's Law of Contract, Twenty-third edition edited by A.G. Guest referred to\n\nJUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeal No. 1045 of",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1972_1972_54_P002_C01",
+      "text": "1967. Appeal by certificate from the _judgment and decree dated\nJanuary 4, 1966 of the Madras High Court in Appeal No. 129\nof 1961. G. L. Sanghi and S. P. Nayar, for the appellant. R. K. Garg, S. C. Agarwala, V. J. Francis and Narayana\nNettar, for the respondent. The Judgment of A. N. RAY and I. D. DUA, JJ. was delivered\nby RAY, J. K. K. MATHEW, J. gave a dissenting Opinion. RAY, J.-We have had the ad-vantage of reading the judgment\nwritten by our learned brother Mathew. The question which falls for determination in this appeal is\nwhether the respondent mill on recovering Rs. 32,254-6-9\nfrom the Indian Globe Insurance Co. Ltd. and assigning all\nrights against the Railway Administration in favour of the\ninsurance company as a subrogee was competent to institute\n-and maintain the suit against the Railway Administration. We agree with the reasoning and conclusion of our learned\nbrother Mathew that subrogation does not confer any indepen-\ndent right on underwriters to maintain in their own name and\nwithout reference to the persons assured an action for\ndamage to the thing insured. The right of the assured is\nnot one of those rights which are incident to the property\ninsured.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1972_1972_54_P002_C02",
+      "text": "Counsel for the appellant contended that by reason of the\nassignment to the insurance company of all rights against\nthe Railway Administration the respondent mill did not have\nany cause of action against the Railway Administration. In\naid of that contention the decisions in King v. Victoria\ninsurance Company Limited [1896] A.C. 250 and Compania\nColombiana De Seguros v. Pacific Steam Navigation Co.,\n[1965] 1 Q.B. 101 were relied on. In the Victoria Insurance Company case (supra) the Bank of\nAustralian effected an insurance with the insurance company\nof certain goods to be shipped to London. Before the cargo\nleft Australia it was damaged or destroyed through the\nnegligence of the defendant King, an employee of the Queens-\nland Government. The bank claimed a sum from the company\n\nwhich was duly paid. The company took an assignment by deed\nof all the rights of the bank against King subject to a\nstipulation that the bank's name should not be used in legal\nproceedings. The questions raised on appeal in that case\nwere (1) the plaintiffs have no right of action at all; (2)\nthey have no right of action in their own name.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1972_1972_54_P002_C03",
+      "text": "The Supreme\nCourt of Queens-land held that mere payment by the insurance\ncompany did not subrogate them to the rights of the bank to\nthe, extent that they could sue in their own names. The\nSupreme Court of Queens-land held that the assignment was\ncovered by the Queens-land Act which corresponded to the\nEnglish Judicature Act\nof 1873. The Queens-land Supreme\nCourt construed the term 'legal chose in action' to include\nall rights the assignment of which a Court of Law or Equity\nwould before the Act have considered lawful. On that ratio,\nthe right covered by the assignment in Victoria Insurance\nCompany case (supra) was held to be a right of that kind. The Judicial Committee upheld the decision and said \"They\nrested their judgment on the broader and simpler ground that\na payment honestly made by the insurers in consequence of a\npolicy granted by them and in satisfaction of a claim by the\ninsured is a claim made under the policy which entitles the\ninsurers to the remedies available to the insured\".",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1972_1972_54_P002_C04",
+      "text": "The\nJudicial Committee on this view said that \"the highly\nartificial defence of the Queens-land Government fails.\"\nIt should be noted here that the phrase 'legal chose in\naction' was said in the Victoria Insurance Co. case (supra)\nto mean 'lawfully assignable' chose in action. A legal\nchose, in action is something which is not possession, but\nwhich must be sued for in order to recover possession of it. A legal chose in action does not include a right of action,\nsuch as, for instance, a right to recover damages for breach\nof contract, or for a tort, for it that were so, such a\nright would be assignable. They would materially affect the\nlaw of champerty and maintenance. In the Pacific Steam Navigation Co. case (supra) the Pacific\nSteam Navigation Company by a bill of lading acknowledged\nthe shipment of 183 drums of electric cable at Liverpool for\ncarriage to and delivery at a port in Colombia to the\nColombiana Telephone Company. The insurance company paid\nthe telephone company in respect of the particular average\nloss. The telephone company on receipt of the payment\nhanded to the insurance company two documents.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1972_1972_54_P002_C05",
+      "text": "the first document, the telephone company ceded and endorsed\nto the, insurance company \"all rights which we have or which\nwe may acquire in the future to claim reimbursement thereof\nfrom the third parties who may be responsible for loss or\ndamage.\" By the second document the telephone company waived\nin favour of the insurance company\n\n\"any rights he may have or has against others possibly\nresponsible for the damages or losses indemnified by this\npayment, and we agree not to carry out any act that might in\nany way hinder the carrying out of such rights by the\ninsurance company\". The insurance company alleged that the\ndocuments went further than a form of letter of subrogation\nand constituted a valid assignment by the telephone company\nto the insurance company of the telephone company's claim\nagainst the defendants. The Court found that the language\nof the documents was that of assignment. The question was\nwhether the Court would permit the enforcement of the claim\nin the name of the assignee or whether the assignment would\nbe of a bare cause of action to defeat assignment and its\nenforcement. The decision in May v.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1972_1972_54_P002_C06",
+      "text": "Lane 64 L.J.Q.B. 236 was referred to\nin the Pacific Steam Navigation Co. case (supra) for the\nproposition that a legal chose in action is something which\nis not in possession, but which must be sued for in order to\nrecover possession of it. A legal chose in action does not\ninclude a right of action,such as, for instance, a right to\nrecover damages for breach of a contract, or a legal right\nto recover damages arising out of an assault. Again, in Torkington v. Magee [1902] 2 K. B. 427 it was\nsaid that the words \"other legal chose in action\" mean right\nwhich the common law looks on as not assignable by reason of\nits being a chose in action, but which a court of equity\ndeals with as being assignable. In the Pacific Steam Navigation Co. case (supra) the\ninsurance company was found entitled to sue upon the bill of\nlading. A bill of lading confers title to sue because it is\na form of property.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1972_1972_54_P002_C07",
+      "text": "The reason for allowing the insurance\ncompany to sue in that case was that equity before the\nJudicature Act allowed the enforcement of subrogation\nbecause equity never regarded subrogation as the enforcement\nof a bare cause of action, but as the enforcement of a cause\nof action legitimately supported by the underwriter's\ninterest in recouping himself in respect of the amount of\nthe loss which he had paid under the policy as a result of\nthe acts, neglects or defaults of the actual contract\nbreaker or tortfeasor. The assignment in that case was held\nto amount to assignment of the benefit of the contract with\nthe ship-owners. It is indisputable that an insurance company can sue in its\nown name where the marine policy has been transferred by\nassignment under\nsection 52\nof the Marine Insurance Act",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C01",
+      "text": "1963. That is not the present case. It is equally indisputable that an insurance company is\nentitled to subrogation in accordance with the provisions of\nsection 79\nof the Marine Insurance Act, 1963. Subrogation\ndoes not allow the subrogee or the underwriter to sue in its\nown name, In the present case, the insurance company has not\nenforced its claim by virtue of subrogation. Section 130\nof the Transfer of Property Act however speaks\nof transfer of actionable claim. Actionable claims under\nthe Indian law include claims recognised by the Court either\nas to, unsecured debts or as to beneficial interests in\nmoveable property not in possession. A debt is an\nobligation to pay a liquidated or certain sum of money. A\nbeneficial interest in moveable property will include a\nright to recover insurance money or a partner's right to sue\nfor an account of a dissolved partnership or a decretal debt\nor a right to recover the insurance money or the right to\nclaim the benefit of a contract not coupled with any\nliability. Section 6(e)\nof the Transfer of Property Act states that a\nmere right to sue cannot be transferred.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C02",
+      "text": "A bare right of\naction might be claims to damages for breach of contract or\nclaims to damages for tort. An assignment of a mere right\nof litigation is bad. An assignment of property is valid\neven although that property may be incapable of being\nrecovered without litigation. The reason behind the rule is\nthat a bare right of action for damages is not assignable\nbecause the law will not recognise any transaction which may\nsavour of maintenance of champerty. It is only when there\nis some interest in the subject matter that a,. transaction\ncan be saved from the imputation of maintenance.. That\ninterest must exist apart from the assignment and to) that\nextent must be independent of it. A chose in action for breach of contract was not assignable\nat law but was assignable at equity. A chose in action in\ntort was assignable neither in law nor in equity. A bare\nright of' action is not assignable. When however the right\nof action is one of the incidents attached to the property\nor contract assigned it will not be treated as a bare fight\nof action. In Ertel Bieber & Co. v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C03",
+      "text": "Rio Tino Co., [1918] A.C. 260 Lord\nSummer treated a cause of action for damages for breach of\ncontract as chose in action, a form of property. The reason\nfor holding a cause of action for damages for breach of\ncontract to be a form of property is that the assignee is\nseeking to enforce a right which is incidental to property\nor a right to a sum of money which theoretically is part of\nthe property. The common law was not inclined in favour of assignments of\ncontractual rights and liabilities, A person to whom rights\n\nIn equity both legal and equitable choses in action have\nbeen subject to assignment. Contractual rights being legal\nchoses in action could generally be assigned. It is on\nthese seasonings that the term 'thing in action' in the Law\nof Property Act has been interpreted in the Victoria\nInsurance Co. and the pacific Steam Navigation Co. cases\n(supra) to include any right which the common law looked on\nas not assignable by reason of its being chose in action but\nwhich a court of equity dealt with as assignable. In the present case, the insurance company has not sued to\nenforce any assignment.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C04",
+      "text": "The document which is described as\n-letter of subrogation also uses: the words of assigning\nrights against the Railway Administration. It is not\nnecessary to express ,-any opinion whether the letter of\nsubrogation amounted to an assignment in the present case,\nbecause the insurance company not sought to enforce any\nassignment. The respondent mill will give a valid discharge to the Rail-\nway Administration in respect of loss and damages. This\ndecree will be a bar to the institution of any suit by the\ninsurance company in respect of the subject matter of the\nsuit. The respondent mill is answerable and accountable to\nthe insurance company for the moneys recovered in the suit\nto the extent the insurance company paid the respondent\nmill. The High Court expressed the view that even if the\nassignment 'is valid the right of action residing in the\nassignor has not ceased. The respondent mill sued the\nRailway Administration for breach of contract of carriage\nand damages for negligence. The letter of subrogation did\nnot divest the mill of its cause of ;action against the\nRailway Administration for loss and damages.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C05",
+      "text": "The defence of the Railway Administration was that the mill\nrealised from the insurance company the damages and \"as such\nthe plaintiff (meaning thereby the respondent mill) has no\nright to claim any sum in this action\". If the specific\nplea of assignment had been taken in the written statement\nthe respondent mill would have impleaded the insurance\ncompany. The Court could 'have in those circumstances been\nin a position to afford full and complete relief to the\nparties. In the present case the insurance company and the mill pro-\nceeded on the basis that the, insurance company was only\nsubrogated to the rights of the assured. The letter of\nsubrogation contains intrinsic evidence that the respondent\nwould give the insurance company facilities for enforcing\nrights. The insurance\n\ncompany has chosen to allow the mill to sue. The cause of\naction of the mill against the Railway Administration did\nnot perish on giving the letter of subrogation. For these reasons, we regret our inability to agree with our\nlearned brother Mathew that the respondent mill has no cause\nof action. We agree with the decision of the High Court\nthat the suit should be decreed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C06",
+      "text": "The appeal is therefore\ndismissed,. with costs. MATHEW, J. This is an appeal by certificate, against the\njudgment of the High Court of Madras allowing an appeal\npreferred by the plaintiff against the decree of the trial\ncourt dismissing the suit instituted by it for recovery of\ndamages. The plaintiff, Sri Sarada Mills Ltd., instituted the suit\nagainst the Union of India as representing the Central and\nSouthern Railways for damages to 100 bales of F. P. cotton\nconsigned through their agents from Nagpur to Podhanur under\na railway receipt issued by the Central Railway. The goods\nhad to pass through, several stations along the two\nrailways, namely, the Central and the Southern, before it\narrived at Podhanur. When the goods arrived at Podhanur, it\nwas found that 87 bales out of the 100 were burnt and\ncharred and that 13 bales were loose and short in weight. When the plaintiff applied for open delivery, the railway\nauthorities at Podhanur got the damage surveyed, and issued\na certificate of damage and shortage. The plaintiff claimed\ndamages against the Railway Administration.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C07",
+      "text": "But the Chief\nCommercial Superintendent, Southern Railway, informed the\nplaintiff that the consignment was involved in a fire\naccident at Sirpur Kagaznagar on the Central Railway, that\nthe cause of the fire was unknown and that the Railways were\nnot liable for the damage caused to the goods as there was\nno negligence or misconduct. The plaintiff, therefore,\ninstituted the suit for damages alleging that the Railway\nAdministration was negligent. The defendants contended that the plaintiff was not entitled\nto institute the suit as it had insured the goods with the\nIndian Globe Insurance Co. and had received the total loss\nfrom the Company, that the damage to the goods was caused by\nfire, which was beyond the control of the Railways and,\ntherefore, the defendants were not liable. for damages. The trial court found that the fire which caused the damage,\nto the goods was not due to any cause beyond the control of\nthe Railways that the damage was due to their negligence.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C08",
+      "text": "It, however, held that the suit was not maintainable as the\nIndian Globe Insurance Co., with whom the goods were insured\nunder a marine.\n\ninsurance policy, had paid the plaintiff an amount of Rs.\n32,254-6 for total loss of the goods and was subrogated to\nall the rights ,and remedies of the assured in respect of\nthe subject matter and so the plaintiff was not competent to\ninstitute the suit and hence dismissed the suit. The plaintiff appealed to the High Court of Madras. The\nCourt reversed the decree holding that the plaintiff was\nentitled to maintain the suit and that, damage to the goods\nwas on account of the negligence of the Railways. In this appeal, two submissions were made on behalf of the\n-appellants : (1) that there was no evidence to show that\nthe Railway Administration was negligent in dealing with the\ngoods and (2) that the suit was not maintainable. As regards the first contention, the finding of the trial\ncourt as well as of the High Court is that the Railway\nAdministration was negligent.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C09",
+      "text": "The liability of a Railway is\nthat of a bailee and it is not for the plaintiff, in the\nfirst instance, to prove, when the goods consigned were\ndestroyed or damaged, as to how the loss ,or damage\noccurred. It has, no doubt, to satisfy the court that the\nRailway Administration was negligent but, the duty of\nshowing how the consignment was dealt with during the\ntransit lay on the Railway Administration as it was a matter\nwithin their conclusive knowledge. The trial court found\nthat the fire which caused damage to the goods was due to\nthe negligence of the Railway Administration and the High\nCourt was not persuaded to come to a contrary conclusion. The burden was on the Railway Administration to show how the\ngoods consigned were dealt with during transit and, when\nthat has not been done to the satisfaction of the Court,\nthe Court was entitled to presume negligence on the part of\nthe Railway Administration. I see no grounds to interfere\n-with the concurrent findings on this point. The second question which was argued at considerable length\nrelates to the maintainability of the suit.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C10",
+      "text": "It may be noted\nat this stage that the Globe Insurance Co. paid the total\nloss to the plain,tiff on August 3, 1956; the assured\nassigned all its rights, including the right to sue to the\nInsurance company on July 31, 1956; and the present suit was\nfiled on June 14, 1957. It was submitted on behalf of the\nappellant that the view of the High Court that the suit was\nmaintainable overlooked the clear provisions of\nsection 135-\nof the Transfer of Property Act, as that section was a bar\nto the suit by the assured. Section 135-A\nwas as follows\n(this section has since been deleted from the\nT.P.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C11",
+      "text": "Act\nand\nincorporated in the\nMarine Insurance Act, 1963\n)\n \"135-A(1) Where a policy of marine insurance\n has been assigned so as to pass the beneficial\n interest therein,\n\nthe assignee of the policy is entitled to sue\n thereon in his own name; and the defendant is\n entitled to make any defence arising out of\n the contract which he would have been entitled\n to make if the, action had been brought in the\n name of the person by or on behalf of whom\n the policy was effected.\n\"(2) Where the insurer pays for a total loss,\n either of the whole, or, in the case of goods,\n of any apportion able part, of the subject\n matter insured, he thereupon becomes entitled\n to take over the interest of the insured\n person in whatever may remain of the subject-\nmatter so paid for, and he is thereby\n subrogated to all the rights and remedies of\n the insured person in and in respect of that\n subject-matter as from the time of the\n casualty causing the loss.\n\"(3) Where the insurer pays for a partial\n loss, he acquires no title to the subject-\nmatter insured, or such part of it as may\n remain but he is thereupon subrogated to all\n rights and remedies of the insured person as\n from the time indemnified by",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C12",
+      "text": "such payment for\n the loss.\n\"(4) Nothing in clause (6) of\nsection 6\nshall\n affect the provisions of this section.\"\nThe section was inserted in the Transfer of property Act,\n1882 by the Transfer of Property (Amendment) Act, 1944.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C13",
+      "text": "Before the amendment, the assignment of rights under both\nmarine and fire insurance policies was governed by\ns. 135\n. What the amendment did was to take marine insurance policies\nout of\ns. 135\nand provide for them in the new\nsection 135-A\n. The Bill that become the Transfer of Property (Amendment)\nAct, 1944, stated the objects and reasons as follows :\n\"The rules and principles governing a marine\n insurance policy being materially different\n from those governing a fire insurance policy,_\n it is very unsatisfactory to accord the same\n treatment in the matter of assignment of both\n categories of policies. To take but one\n instance a fire insurance policy is not\n assignable after loss, but the nature of a\n marine insurance contract is such as to\n require that marine insurance policies should\n be assignable even after loss. In the United\n Kingdom, assignability of marine insurance\n policies after loss is placed beyond doubt by\n s. 50 of the\nMarine Insurance Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C14",
+      "text": "But in the\n absence of a similar provision here, it is\n doubtful if Courts in British India would hold\n that they are so assignable.\"\nIt was the contention of the appellant that when the Globe\nInsurance Co. paid the assured the total loss, it became\nsubrogated to\n474 .\nall the rights and remedies of the assured in respect of the\nsubject matter and that thereafter the Insurance Company\nalone could file a suit for recovery of damages against the\nRailway Administration. The application of the doctrine of subrogation to policies\nof marine insurance is based upon the fundamental principle\nthat the contract of insurance contained in a marine policy\nis a contract of indemnity, and of indemnity only. The expression \"subrogation\", in relation to a contract of\nmarine insurance is no more than a convenient way of\nreferring to those terms which are to be implied in the\ncontract between the assured and the insurer to give\nbusiness efficacy to an agreement whereby the assured, in\nthe case of loss against which the policy has been issued,\nshall be fully indemnified, and never more than fully\nindemnified.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C15",
+      "text": "The right of the insurer against the person responsible for\nthe Doss, does not rest upon any relation of contract or of\nprivity between them. It arises out of the nature of the\ncontract of marine insurance as a contract of indemnity, and\nis derived from' the assured alone, and can be enforced in\nhis right only. Sub-section (1) of s. 135-A corresponds to s. 50(2) of the\n(English) Marine, Insurance Act, 1906 and sub-sections (2)\nand\ns. 79\nof that Act. In Yorkshire Insurance Co. Ltd v. Misbet Shipping Co. Ltd.(\"), Diplock, J. as he then was had\nto deal with the question of subrogation. He said that the\ndoctrine of subrogation in insurance law requires one to\nimply in contracts of marine insurance only such terms as\nare necessary to ensure that, notwithstanding that the\ninsurer has made a payment under the policy, the assured\nshall not be entitled to retain, as against the insurer, a\ngreater sum than what is ultimately shown to be his actual\nloss. As Cotton, L. J. said in Castellain v.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C16",
+      "text": "Preston (2)\n\" ... if there is a money or any other benefit received\nwhich Ought to be taken into account in diminishing the loss\nor in ascertaining what the real loss is against which the\ncontract of indemnity is given, the indemnifier ought to be\nallowed to take advantage of it in order to circulate what\nthe real loss is. So the only term to be, implied to give business efficacy to\nthe contract between the parties is that necessary to secure\nthat the assured shall not recover from the insurer an\namount greater than the loss which he has actually\nsustained. The insurer has contracted to pay to the assured\nthe amount of his actual loss and\n(1) [1962] 2. Q.B. 380. (2) It Q.B.D. 380, 395.\n\nif, before the insurer has paid under the policy, the\nassured recovers from some third party a sum in excess of\nthe actual amount of the loss, he can recover nothing from\nthe insurer because he has sustained no loss, but it has\nnever been suggested that the insurer can recover from the\nassured the amount of the excess. Lord Blackburn in his\nspeech in Burnard v. Bodocanachi, Sons & Co.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C17",
+      "text": "(1) said:\n\"The general rule of law (and it is obvious\n justice) is that where there is a contract of\n indemnity (it matters not whether it is a\n marine policy, or a policy against fire on\n land, or any other contract of indemnity) and\n a loss happens, anything which reduces or\n diminishes that loss reduces or diminishes the\n amount which the indemnifier is bound to pay;\n and if the indemnifier has already paid it,\n than, if anything which diminishes the loss\n comes into the hands of the person to whom he\n has paid it, it becomes an equity that the\n person who has already paid the full indemnity\n is entitled to be recouped by having that\n amount back.\"\nThat the insurer is entitled to recoupment\n only for the loss for which he has paid and to\n the extent of his payment is clear from what\n Lord Atkin said in Gien Line v. Attorney\n General (2)\n \"Subrogation will only give the insurer rights\n upto 20 s. in the pound on what he has paid\". In King v. Victoria Insurance Co.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C18",
+      "text": "Ltd.(3),\n Lord Hobhouse, made it quite clear that, under\n the doctrine of subrogation an insurer was\n entitled to recover from the assured only \"to\n the extent of the payment' made to the assured\n by the insurer under the policy. As between the insurer and the assured, the\n insurer is entitled to the advantage of every\n right of the assured whether such right\n consists in contract, fulfilled or\n unfulfilled, or in remedy for tort capable of\n being insisted on or already insisted. But as\n stated 'by the Privy Council in King v. Victoria Insurance Co. Ltd.(3)\n \"Subrogation by act of law would not give the\n insurer a right to sue in a Court of Law in,\n his own name. \"\nSubrogation is concerned solely with the mutual rights and\nliabilities of the parties to the contract of insurance; it\nconfers no rights and imposes no liabilities upon third\nparties who are strangers to that contract and, the insurer\nwho has paid a loss\n(1) 7 App. Cas. 333, 339. (2) [1930] 46 I.L.R. 451. (3) [1896] A.C. 250, 255-6. LA98SuPCI/73\n\ngets no direct rights or remedies against anyone other than\nthe assured nor can sue such parties in his own name (see\nSimpson v. Thomson(1)].",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 18
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C19",
+      "text": "It was argued on behalf of the appellant that clause (4) of\nsection 135-A would indicate that the legislature intended\nto make a departure from the common law of England and to\nconfer a right of suit upon the subrogee against third\npersons. I do not think that clause (4) has any such\neffect. It only says that nothing in\ns. 6 (c)\nof the\nTransfer of Property Act will affect the provisions of that\nsection. An assignment of marine insurance after loss would\nsound in the realm of an assignment of a mere right to sue\nand the legislature wanted to put it beyond doubt that\ns. 6\n(c) is no bar to such an assignment. It is doubtful whether\nclause (4) has any operation upon clauses (2) and (3) of\nsection 135-A\n. Though the payment by the insurer of the\ntotal or partial loss is an act of party, subrogation is\neffected by the operation of clauses (2) and (3) of the\nsection viz., by operation of law. Section 6 (c)\nconcerned with a transfer of a mere right to sue by act of\nparties. If this is so, it would be incongruous to say that\nclause (4) will have any effect on the operation of clauses\n(2) and (3) of the section. Indian Trade and General Insurance Co. Ltd. v. Union of\nIndia\n( 2 ).",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 19
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C20",
+      "text": "Mitter, J. had occasion to consider the\nquestion in detail and, after referring to the English law,\nhe come to the conclusion that, although by sub-section (2)\nand (3) of\ns. 135-A\n, an insurer is subrogated to all the\nrights and remedies of the assured in respect of the subject\nmatter, it has no independent right of action in its own\nname, but can only sue in the name of the insured. The\nlearned judge referred to the decision in M. V. F. Marakkya-\nyar &\nSons v. Banians & Co. (1) and said that the rule of\nEnglish law which never permitted a subrogee to institute a\nsuit in its own name has been followed in India and is a\nsound rule. Alliance Insurance Company Ltd. v. Union of India\n(4) it\nwas held that an insurance company which has paid to the\nconsignee the total loss, was entitled to maintain a suit in\nits own name against the carrier for reimbursement of the\namount paid to the insured for the loss.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 20
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C21",
+      "text": "The Court pointed\nout that although clause (e) of\nS. 6\nof the Transfer of\nProperty Act provides that a mere right to sue cannot be\ntransferred, subsection (4) of\ns. 135-A\nhas removed the bar\nand made a deliberate departure from the English rule of\nprocedure which lays down that an insurer who pays for a\ntotal loss cannot sue independently in his own name. The\nCourt did not, however, refer to the judgment of\n(1) [1877] 3 App. Cas. 279 H.L. (3) I.L.R. 49 Madras 156. (2) A. I. R. 1957 Calcutta 190. (4) I. L. R. [1950] 1 Calcutta, 544. Mitter, J. In\nIndian Trade and General Insurance Co. Ltd.\nv. Union of India\n(1). For the reasons already given, I do\nnot think I can agree with the reasoning of this case. Textiles and Yarn (P) Ltd. v. Indian National Steamship\nCo. Ltd. (2) which was a suit filed by the insurer on\npayment of total loss for recovery of damages for loss of\ngoods in the course of transit from Madras to Calcutta by a\nsteamship, Mitra, J. held that the insurer cannot maintain\nan action in its own name unless there was an assignment of\nthe claim by the assured in favour of the insurer. In the\nAsiatic Government Security Fire and General Assurance Co. Ltd. v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 21
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C22",
+      "text": "The Scindia Steam Navigation Co. Ltd. (2), M. S. Mennon, C. J. in a well reasoned judgment sad that the\ninsurer, on subrogation, is not entitled to sue in its own\nname. Vasudeva Mudaliar v. Caladonion Insurance Co. and\nAnother\n(4), the Madras High Court said:\n\"But subrogation does not ipso jure enable him\n to sue third parties in his own name. It will\n only entitle the insurer to sue in the name of\n the assured, it being an obligation of the\n assured to lend his name and assistance to\n such an action.\"\nI think the High Court was right in its\n conclusion on this point. The second contention as regards the\n maintainability of the suit was that there was\n an assignment by the assured of all the\n rights, including the right to sue the Railway\n Administration, by virtue of which the Globe\n Insurance Co. could file a suit and that\n precluded the assured from suing.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 22
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C23",
+      "text": "The\n assignment, as already stated, was before the\n institution of the suit, and is in the\n following terms :\n\"In consideration of your paying to us the sum\n of Rs. 32,254-6-9 only in full settlement of\n our claim for damage by fire under Policy No.\n 49757 issued by you on the undermentioned\n goods, we hereby assign transfer and abandon\n to you all our rights against the Railway\n Company or other persons whatsoever caused or\n arising by reason of the said damage or loss\n and grant you full power to take and use all\n lawful ways and means in your own name and\n otherwise at your risk and expense to recover\n the said damage or loss and we hereby subro-\n gate to you the same rights-as we have in\n consequence of or arising from the said loss\n or damage. (1) A. 1. R. 1957 Cal. 190. (2) A. 1. R. 1964 Calcutta 362. (3) A. 1. R 1965 Kerala 214. (4) A. T.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 23
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C24",
+      "text": "R. 1965 Madras 159.\n\n\"And we hereby undertake and agree to make and\n execute at your expense all such further\n deeds, assignments and documents and to render\n you such assistance as you may reasonably\n require for the purpose of carrying out this\n agreement.\"\nThe High Court held that the assignment was of\n a mere right to sue and it was not, therefore,\n valid under\nS. 6(e)\nof the Transfer of\n Property Act. The question is, whether what\n was assigned was a mere right to sue or\n something which the law of insurance\n recognises as assignable. In King v. Victoria Insurance Company Ltd.(1),\n a consignment of wool was insured by the Bank\n of Australasia during its transportation by a\n ship from Townsville to London. The wool was\n damaged in transit. The bank claimed against\n the insurance company tinder the policy for a\n loss of 920pound. The insurance company paid\n that amount and took a formal assignment from\n the bank of all its rights and causes of\n action against the Government, the bank\n stipulating that the assignment would not\n authorize the use of its name in legal\n proceedings.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 24
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C25",
+      "text": "The insurance company sued the\n Government for the negligence of their\n officers and servants in not properly mooring\n and watching their punts which had caused the\n collision of the ship carrying wool resulting\n in damage to the consignment. The Government\n contended that the assignment of a mere right\n to recover damages was illegal. Lord\n Hobhouse, after stating that subrogation would\n not give the insurer a right to sue in its own\n name, said:\n\"But that difficulty is got over by force of\n the \"press assignment of the bank's claim, and\n of the Judicature Act, as the parties must\n have intended that it should be when they\n stipulated that nothing in the assignment\n should authorize the use of the bank's name.\n \"Their Lordships do not express any dissent\n from the views taken in the Court below of the\n construction of the Judicature Act with\n reference to the term 'legal chose in action'. They prefer to avoid discussing a question not\n free from difficulty, and to express no\n opinion what limitation, if any, should be\n placed on the literal meaning of that term.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 25
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C26",
+      "text": "They rest their judgment on the breaded and\n simpler ground that a payment honestly made by\n insurers in consequence of a policy granted by\n them and in satisfaction of a claim by the\n insured, is a claim made under the policy\n which entitles the insurers to the remedies\n available to the insured. (1) [1896] A.C. 250. On this view the highly artificial defence of\n the Queens-land Government fails, and the\n appeal must be dismissed with costs.\" (p.\n256). The question whether there could be an\n assignment of such a right was considered in\n Campania Colombiana de Seguros v. Pacific\n Steam Navigation Co.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 26
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C27",
+      "text": "(1). in that case, the\n assignment by the assured in favour of the\n Insurance Company was in the following terms :\n\"For loss and/or damage to the goods having\n received payment from the Compania Colombiana\n de Seguros for the foregoing, we cede and\n endorse to the said insurance company all\n rights which we have or which we may acquire\n in the future to claim reimbursement thereof\n from the third parties who may be responsible\n for such loss or damage.\"\nThe insurance company alleged that the\n document went further than a form of letter of\n subrogation and constituted a valid assignment\n by the assured to the insurance company of the\n assured's claim against the defendants. For\n the defendants it was argued\n \". . . . An assignment by the insured to the\n insurance company of the right of action is\n ineffective. The reason is that a bare right\n of litigation cannot be assigned... The only\n decision to the contrary is that of the Privy\n Council in King v. Victoria Insurance Co. Ltd.\n which should not be followed. (see the\n argument at p. 108). The Court overruled the argument and held that\n the decision in King v. Victoria Insurance Co. Ltd. (2 ) correctly lays down the law.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 27
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C28",
+      "text": "After\n reviewing the case law on the subject,\n Roskill, J. speaking for the Court observed :\n\"So much, then for the authorities. What is\n the principle to be adduced from them ? I\n think it can be stated in this way. Where,\n before 1873, equity would have compelled the\n assignor to exercise his rights against the\n contract breaker or tortfeasor for the benefit\n of the assignee, those rights can, since 1873,\n be made the subject of a valid legal\n assignment and, subject to due compliance with\n the requirements of the statute as to notice,\n can be enforced at law. Equity always, before\n 1873, compelled an assured to lend his name to\n enforce his underwriter's rights of\n subrogation against a contract breaker or\n tortfeasor. It follows, therefore, that the\n only possible objection to such rights being\n now enforceable at law is that such\n enforcement would involve the\n (1) [1965] 1 Q. B. 101, 121. (2) [1896] A. C. 250.\n\nenforcement of a bare cause of action in\n contract or in tort. But as Mr. Littman urged\n upon me, if that is so, why did equity act as\n equity did act before 1873 in relation lo the\n enforcement of subrogation right ?",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 28
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C29",
+      "text": "I think the\n answer is because the enforcement of such\n rights was never regarded as the enforcement\n of a bare cause of action, but as the\n enforcement of a cause of action legitimately\n supported by the underwriter's interest in\n recouping himself in respect of the amount of\n the loss which he had paid under the policy as\n a result of the acts, neglects or defaults of\n the actual contract breaker or tortfeasor.\"\n In Anson's Law of Contract(1), it is stated\n that although an assignment of a bare right to\n litigate has been held invalid, the principle\n is necessarily subject to qualification. One\n such qualification is :\n\"Suppose an insurer, who has indemnified his\n insured under a policy of insurance and in\n consequence been assigned the insured's right\n of action in respect of a breach of contract,\n sues to enforce this right of action against\n the contract-breaker. Could he be met by the\n plea that he is the assignee of a bare right\n of action ? In Compania Columbiana de seguros\n v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 29
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C30",
+      "text": "Pacific Steam Navigation Co., Reskill, J.\n held that the enforcement of such a right is\n not the, enforcement of a 'bare right of\n action', but of a right of action legitimately\n supported by the insurer's interest in\n recouping the loss sustained by paying out on\n the policy.\"\nIn the Law of Contract by Cheshire and Fifoot(2) the case\nof Compania Columbiana de Seguros v. Pacific Steam\nNavigation Co. (supra) is quoted an authority for the\nproposition that if goods shipped on a vessel are delivered\nin a damaged condition, the consignee, after being\nindemnified for his loss by the insurers can assien to the\nlatter his right to recover damages from the owner of the\nvessel. The real reason why a mere right to sue cannot be assigned\nis that such an assignment would offend the rule of\nchamperty and maintenance. Now, as in this case where an\ninsurance has been subrogated to all the rights and the\nremedies of the assured by virtue of\ns. 135-A\n, the reason\nfor the rule against assignment of a mere right to sue does\nnot obtain, because the insurance company is clothed with\nall the rights and remedies of the assured and the only\nthing lacking is the capacity to sue in its, own name.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 30
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C31",
+      "text": "the right is capable of being assigned, and is assigned, it\nwould\n(1) Twenty-third edition, edited by A.B. Guest, p. 417. (2) Seventh edition, p. 472.\n\nno longer be logical to say that the assignor can still sue\nfor, whatever right the assignor had in the subject matter\nhad passed to the assignee. It is impossible to understand,\nhow, after the assignment, the assignor can still maintain a\nsuit. This question was considered by the Madras High Court in\nVasudeva Mudaliar v. Caledonian Insurance Co. and\nAnother\n(1) and the Court said\n \"However, an assignment or a transfer implies\n something more than subrogation, and vests in\n the insurer the assured's interest, rights and\n remedies in respect of the subject matter and\n substance of the insurance. In such a case,\n therefore, the insurer, by virtue of the\n transfer of a mere right to sue are\n permissible and are to maintain a suit in his\n own name against third parties. (22 Halsbury's\n Laws of England, Simond Edn. paras 512-513 and\n Shawcross on 'Motor Insurance').\n\"Normally, an assignment of a right of action\n for a tort is not valid under\ns. 6(e)\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 31
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1972_1972_54_P003_C32",
+      "text": "But\n cases of subrogation as applied to insurance\n for indemnity are an exception to the rule and\n assignments by the assured to the insurer of\n his rights and remedies being more than a\n transfer of a mere right to sue are\n permissible and are valid. But express\n assignment by the assured of all his rights is\n necessary and subrogation by itself will not\n enable the insurer to sue in his own name\n (1896 A. C. 250; (1883)-11 Q.B.D. 380)\". It is regrettable that the attention of the High Court was\nnot drawn to\nthe above decision\n.\ncorrect, that the assignment conveyed to the insurance\ncompany, the entire right in respect of the subject matter\nof the insurance, including the right of the assured to sue\nin its own name and that, after the assignment, the assured\nhad no cause of action to institute the suit against the\nRailway Administration for recovery of damages. I would allow the appeal and set aside the judgment and\ndecree of the High Court and restore the decree passed by\nthe Subordinate Judge, Coimbatore, dismissing the suit,\nwithout any order as to costs. ORDER\nIn accordance with the opinion of majority the appeal is\ndismissed with costs. V.P.S. (1) A. I. R. 1965 Madras 159.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 32
+    }
+  ],
+  "case_summary": {
+    "case_name": "Union Of India vs Sri Sarada Mills Ltd",
+    "case_id": "SC_1972_1972_54",
+    "court": "Supreme Court of India",
+    "year": "1972",
+    "facts_summary": "The High Court in appeal, held the suit was maintainable\nbecause the assignment was of a mere right to sue which is\nnot valid under\ns. 6(e)\nof the Transfer of Property Act,\n1882, and that even if the assignment was valid, the right\nto action of the respondent had not ceased and decreed the\nsuit. In appeal to this Court,\nHELD : (per A. N. Ray and 1. D. Dua, JJ.) The appeal should\nbe dismissed. [471B]\nSection 6(e)\nof the Transfer of Property is not applicable\nto the facts of the case. Under\ns. 52\nof the Marine\nInsurance Act, 1963, an insurance company can sue in its own\nname where the policy has been transferred by assignment,\nbut that is not the case here. In the present case, the\ninsurance company is entitled to subrogation in accordance\nwith the provisions of\ns. 79\nof the Marine Insurance Act. The insurance company and the respondent proceeded on the\nbasis that the insurance company was only subrogated to the\nrights of the assured, and the letter of subrogation\ncontains intrinsic evidence that the respondent would give\nthe insurance company facilities for enforcing rights. The Supreme\nCourt of Queens-land held that mere payment by the insurance\ncompany did not subrogate them to the rights of the bank to\nthe, extent that they could sue in their own names. The\nSupreme Court of Queens-land held that the assignment was\ncovered by the Queens-land Act which corresponded to the\nEnglish Judicature Act\nof 1873. The Queens-land Supreme\nCourt construed the term 'legal chose in action' ",
+    "legal_issues": "Counsel for the appellant contended that by reason of the\nassignment to the insurance company of all rights against\nthe Railway Administration the respondent mill did not have\nany cause of action against the Railway Administration. In\naid of that contention the decisions in King v. Victoria\ninsurance Company Limited [1896] A.C. 250 and Compania\nColombiana De Seguros v. Pacific Steam Navigation Co.,\n[1965] 1 Q.B. 101 were relied on. In the Victoria Insurance Company case (supra) the Bank of\nAustralian effected an insurance with the insurance company\nof certain goods to be shipped to London. Before the cargo\nleft Australia it was damaged or destroyed through the\nnegligence of the defendant King, an employee of the Queens-\nland Government. The bank claimed a sum from the company\n\nwhich was duly paid. The company took an assignment by deed\nof all the rights of the bank against King subject to a\nstipulation that the bank's name should not be used in legal\nproceedings. The questions raised on appeal in that case\nwere (1) the plaintiffs have no right of action at all; (2)\nthey have no right of action in their own name. But the Chief\nCommercial Superintendent, Southern Railway, informed the\nplaintiff that the consignment was involved in a fire\naccident at Sirpur Kagaznagar on the Central Railway, that\nthe cause of the fire was unknown and that the Railways were\nnot liable for the damage caused to the goods as there was\nno negligence or misconduct. The plaintiff, therefore,\ninstituted",
+    "ratio_summary": "1967. Appeal by certificate from the _judgment and decree dated\nJanuary 4, 1966 of the Madras High Court in Appeal No. 129\nof 1961. G. L. Sanghi and S. P. Nayar, for the appellant. R. K. Garg, S. C. Agarwala, V. J. Francis and Narayana\nNettar, for the respondent. The Judgment of A. N. RAY and I. D. DUA, JJ. was delivered\nby RAY, J. K. K. MATHEW, J. gave a dissenting Opinion. RAY, J.-We have had the ad-vantage of reading the judgment\nwritten by our learned brother Mathew. The question which falls for determination in this appeal is\nwhether the respondent mill on recovering Rs. 32,254-6-9\nfrom the Indian Globe Insurance Co. Ltd. and assigning all\nrights against the Railway Administration in favour of the\ninsurance company as a subrogee was competent to institute\n-and maintain the suit against the Railway Administration. We agree with the reasoning and conclusion of our learned\nbrother Mathew that subrogation does not confer any indepen-\ndent right on underwriters to maintain in their own name and\nwithout reference to the persons assured an action for\ndamage to the thing insured. The right of the assured is\nnot one of those rights which are incident to the property\ninsured. the first document, the telephone company ceded and endorsed\nto the, insurance company \"all rights which we have or which\nwe may acquire in the future to claim reimbursement thereof\nfrom the third parties who may be responsible for loss or\ndamage.\" By the second document the telephone company waived\nin favour",
+    "final_order": "But\n cases of subrogation as applied to insurance\n for indemnity are an exception to the rule and\n assignments by the assured to the insurer of\n his rights and remedies being more than a\n transfer of a mere right to sue are\n permissible and are valid. But express\n assignment by the assured of all his rights is\n necessary and subrogation by itself will not\n enable the insurer to sue in his own name\n (1896 A. C. 250; (1883)-11 Q.B.D. 380)\". It is regrettable that the attention of the High Court was\nnot drawn to\nthe above decision\n.\ncorrect, that the assignment conveyed to the insurance\ncompany, the entire right in respect of the subject matter\nof the insurance, including the right of the assured to sue\nin its own name and that, after the assignment, the assured\nhad no cause of action to inst",
+    "outcome_summary": "Dismissed. But\n cases of subrogation as applied to insurance\n for indemnity are an exception to the rule and\n assignments by the assured to the insurer of\n his rights and remedies being more than a\n transfer of a mere right to sue are\n permissible and are valid. But express\n assignment by the assured of all hi",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

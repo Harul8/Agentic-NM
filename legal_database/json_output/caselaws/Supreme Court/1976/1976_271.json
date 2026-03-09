@@ -1,0 +1,660 @@
+{
+  "case_id": "SC_1976_1976_271",
+  "case_name": "Workmen Of National & Grindlays Bank Ltd vs The National & Grindlays Bank Ltd",
+  "normalized_case_name": "WORKMEN_OF_NATIONAL_&_GRINDLAYS_BANK_LTD_VS_THE_NATIONAL_&_GRINDLAYS_BANK_LTD",
+  "court": "Supreme Court of India",
+  "year": "1976",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "16 January 1976",
+  "judges": [
+    "P.N. Bhagwati",
+    "Hans Raj Khanna",
+    "Syed Murtaza Fazalali"
+  ],
+  "author": "P.N. Bhagwati",
+  "bench_type": "constitution",
+  "petitioner": "Workmen Of National & Grindlays Bank Ltd",
+  "respondent": "The National & Grindlays Bank Ltd",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 24,
+  "cited_by_count": 10,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1976 AIR 611",
+    "1976 SCR (3) 130",
+    "AIR 1976 SUPREME COURT 611",
+    "1976 (1) SCC 925",
+    "1976 LAB. I. C. 462",
+    "1976 3 SCR 130",
+    "32 FACLR 178",
+    "1976 (1) LABLJ 463",
+    "1976 (1) LABLN 296",
+    "1976 (1) SERVLR 270"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1976\\1976_271.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1976_1976_271_P001_C01",
+      "text": "PETITIONER:\nWORKMEN OF NATIONAL & GRINDLAYS BANK LTD. Vs. RESPONDENT:\nTHE NATIONAL & GRINDLAYS BANK LTD. DATE OF JUDGMENT16/01/1976\n\nBENCH:\nBHAGWATI, P.N. BENCH:\nBHAGWATI, P.N. KHANNA, HANS RAJ\nFAZALALI, SYED MURTAZA\n\nCITATION:\n 1976 AIR 611 1976 SCR (3) 130\n 1976 SCC (1) 925\n\nACT:\nPayment of Bonus Act, 1965\n-Foreign banking company-\nBonus-Computation of allocable surplus items to be taken\ninto account-Depreciation-Certificate issued by Income Tax\nOfficer-If possesses evidentiary value-Working funds-Meaning\nof. HEADNOTE:\n As a result of negotiations between the respondent-Bank\nand its employees (appellants) an industrial dispute with\nregard to bonus for the years 1956 to 1964 was settled on an\nad hoc basis. By the time of the settlement however the\nPayment of Bonus Act, 1965\ncame into force. In respect of\nthe accounting year 1964, though the bonus formula was\napplicable, no separate computation was made in accordance\nwith that formula since it was settled on an ad hoc basis as\na part of an omnibus settlement. The Bonus Act\nprovides a statutory formula for the\ncomputation of bonus.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1976_1976_271_P001_C02",
+      "text": "Section 2(13)\ndefines an 'employee' to\nmean any person employed on a salary or wage not exceeding\none thousand and six hundred rupees per mensem. Section 4(a)\nprovides that the gross profits shall be calculated in the\nmanner specified in the First Schedule. Item 2 of the First\nSchedule deals with \"add back\" in respect of (a) bonus to\nemployees, (b) depreciation (c) development rebate reserve\nand (d) any other reserves. Item 3(a) deals with \"add back\"\nof bonus paid to employees in respect of previous accounting\nyears. Item 6(e) deals with deduction in the case of foreign\nbanking companies of proportionate administrative (overhead)\nexpenses of head office allocable to Indian business.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1976_1976_271_P001_C03",
+      "text": "The\nconcept of \"available surplus\" is defined in\ns. 2(6)\nto mean\navailable surplus computed under\ns. 5\nand that section lays\ndown that the available surplus in respect of any accounting\nyear shall be the gross profit for that year after deducting\ntherefrom the sums referred to in\ns. 6\nwhich, under clause\n(a) include \"any amount by way of depreciation admissible in\naccordance with the provisions of\ns. 32(1)\nof the Income Tax\nAct\" and under clause (d) \"such further sums as are\nspecified in respect of the employer in the Third Schedule.\"\nClause (iv) of the proviso to item 2 of the Third Schedule\nprovides that in the case of a banking company any sum\nwhich, in respect of the accounting year, is deposited by it\nwith the Reserve Bank of India under\ns. 11 (2)(b)(ii)\nof the\nBanking Regulation Act, 1949 not exceeding the amount\nrequired under this provision to be so deposited shall be\ndeducted from the gross profits as prior charge. Section 15\nprovides for what is liable to be carried forward for being\nset on and set off out of allocable surplus in the\nsucceeding year or years.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1976_1976_271_P001_C04",
+      "text": "An industrial dispute having arisen between the parties\nin regard to the computation of bonus for the accounting\nyear 1966, it was referred to an Industrial Tribunal for\nadjudication.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1976_1976_271_P001_C05",
+      "text": "The Tribunal's award was assailed by the\nworkmen on the following grounds: (a) that there was an\nexcess of allocable surplus over the amount of maximum.\nbonus for the accounting years 1964 and 1965, which, by\nreason of s. 15(1), was liable to be carried forward for\nbeing set on in the succeeding accounting year 1966;\n (b) that while the object of \"add back\" was that the\nentire amount set apart as provision for bonus should be\nadded back in determining the available surplus. in spite of\nmaking a provision of a much larger amount as bonus, the\nBank had added back only a small amount representing the\nbonus of those workmen who were employees falling within the\nmeaning of\ns. 2(13)\nand there by failed to take into account\nbonus in respect of those workmen who are not such\nemployees; the word 'employee' in items 2(a) of the First\nSchedule was not limited to employees as defined in\ns. 2(13)\nbut was used, in a wider sense to include all employees,\nthat is, employees drawing more than 1600 rupees or less;\n\n (c) that the Tribunal was wrong in allowing the Bank to\ndeduct a much A higher sum by way of depreciation than was\nshown in the profit and loss account, that the burden of\nshowing what",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1976_1976_271_P001_C06",
+      "text": "the amount of depreciation admissible under\ns.\n32(1)\nof the Income Tax Act was, was on the Bank which it\nhad failed to discharge and that, at any rate the\ncertificate issued by the Income Tax officer was no evidence\nand could not be taken into account;\n (d) that the balance sheet of the Bank for the year\n1966 showed a much lesser amount than what the Bank claimed\nto have deposited with the Reserve Bank under\ns. 11 (2)(b)\n(ii)\nof the Banking Regulation Act, 1949 and it was this sum\nwhich was liable to be deducted under this head and not the\nlarger sum which it actually deducted.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1976_1976_271_P001_C07",
+      "text": "The Industrial Tribunal's calculation of proportionate\nadministrative (over-head) expenses of head office allocable\nto the Indian business which are deductible in computing the\ngross profits, both the Bank and the employees assailed it\nas being incorrect,\n For the bank, it was contended, (a) that borrowings\nfrom other banking companies, the amount of bills issued by\nthe bank and the balance of profit and r loss account\nconstituted part of its \"working funds\" and that the\nIndustrial Tribunal was wrong in rejecting this\ninterpretation of \"working funds\" and in limiting it to\n'paid up capital, reserves and deposits only\". (b) that the Tribunal was wrong in refusing to permit\nthe Bank to add back the sum falling under item 3(a) of the\nFirst Schedule.\n^\n HELD. 1. The workmen are rot entitled to contend that\nthough the claim for bonus for the year 1964 was settled on\nan ad hoc basis without making computation under the\nprovisions of the Act, such computation must now be made,\nnot for the purpose of determining the bonus payable to\nthem, but for the purpose of determining whether there is\nany amount liable to be carried forward and set on.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1976_1976_271_P001_C08",
+      "text": "Section\n15(1)\ncan have no application where no computation is made\nunder the Act and bonus is paid, not in accordance with the\nstatutory formula, but on an ad hoc basis. Then it is not\npossible to say what was really the bonus payable under the\nAct. It may be less or more than the bonus in fact paid. That enquiry being rendered irrelevant by the ad hoc\nsettlement, there can be no question of carry forward and\nset on of any amount, unless specifically agreed upon as\npart of the settlement. [137 F -138 G]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1976_1976_271_P002_C01",
+      "text": "2. The workmen cannot be permitted to raise a new\ncontention for the first time in this Court that the\nprovision for bonus liable to be added back was not merely\nthe provision for bonus payable to employees as defined in\ns. 2(13)\nof the Act but also the provision for bonus payable\nto workmen who are not such employees. What is liable to be\nadded back under item 2(a) of the First Schedule is not the\namount of bonus payable to the workmen nor the amount of\nbonus in fact paid, but the provision for bonus made in the\nprofit and, loss account, 3(a) Though the amount of\ndepreciation calculated in accordance with account. [139 B-\nC]",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1976_1976_271_P003_C01",
+      "text": "3. (a) Though the amount of depreciation calculated in\naccordance with methods known to accountancy practice may be\nunexceptionable from the point of view of commercial\naccountancy, it would not necessarily be admissible as a\ndeduction from gross profits under s. 6(a). What is\nallowable as a deduction from the gross profits under that\nclause is not depreciation calculated according to any\nrecognised method but only such depreciation as is\nadmissible in accordance with the provisions of\ns. 32(1)\nthe Income Tax Act, 1961. [139 E-F]\n (b) The burden of providing that the depreciation\nclaimed by the Bank was the correct amount admissible under\ns. 32(1)\nof the Income Tax Act, 1961 was on the Bank and\nthat burden had to be discharged by the Bank by producing\nproper and satisfactory evidence. [141 C]\n (c) A certificate issued by the Income Tax officer was\nnot admissible in evidence to prove the depreciation\nadmissible under s. 32(1). It is the Industrial Tribunal\nwhich must, in the exercise of its quasi-judicial duty,\ncalculate the amount of depreciation by adopting the method\nset out in\ns. 32(1)\n.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1976_1976_271_P003_C02",
+      "text": "The Tribunal cannot say that it would\naccept the figure of depreciation arrived at br another\nauthority charged with the function of determining\ndepreciation under\n\na different statute. There is nothing in the\nIncome Tax Act\nor in the\nPayment of Bonus Act\nor in any other provision of\nlaw which attaches a presumption of accuracy to the\ndetermination of the Income Tax officer in' this matter or\ninvests it with probative or evidentiary value in the\nproceedings before the Industrial Tribunal. [142 F-143 C]\n In the instant case, however, there is no reason to\ninterfere with the decision of the Tribunal in regard to the\namount of depreciation deductible under s. 6(a). The\ncertificate of the Income Tax officer was admitted in\nevidence without any objection by the workmen. Had the\nworkmen objected to its admissibility before the Tribunal\nthe Bank could have led other evidence to substantiate its\nclaim for depreciation. Since no such objection was taken\nbefore the Tribunal the Bank contented itself by tendering\nin evidence only the certificate of the Income Tax officer.\n[143 C-D]",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1976_1976_271_P004_C01",
+      "text": "4. No reliance can be placed by the workmen on the\nbalance sheet for 1966 for repelling the Bank's claim to\ndeduct from the gross profit the amount deposited with the\nReserve Bank of India under\ns. 11(2) (b)(ii)\nof the Banking\nRegulation Act, 1949. The balance sheet for the accounting\nyear 1966 would not show the amount deposited by the Bank\nwith the Reserve Bank in respect of that accounting year,\nbecause that amount would ordinarily be deposited only after\nthe expiration, and not during the currency of that\naccounting year\n [144C-F]",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1976_1976_271_P005_C01",
+      "text": "5. (a) The Industrial Tribunal had committed a manifest\nerror. in regards to the calculation of Proportionate\nAdministrative (overhead) Expenses of head office allocable\nto Indian business. Although item 1 of the First Schedule\nrequires the Industrial Tribunal to take as the starting\npoint of computation \"net profit as shown in the profit and\nloss account after making usual and necessary provisions\",\nThe fact that item 6(e) provides for deduction of\nproportionate administrative expenses of head office\nallocable to Indian business in arriving at the gross profit\nfor the purpose of bonus under item 7 shows that the net\nprofit contemplated in the item 1 is the net profit arrived\nat without deducting proportionate administrative expenses\nof head office allocable to India business. The amount in\nrespect of the actual head office administrative expenses\nallocable to Indian business should be added back in\narriving at the figure of net profit for the purpose of item",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1976_1976_271_P006_C01",
+      "text": "1. [145 D-146 B] . (b) In computing the Indian gross profit the Industrial\nTribunal added back only the amounts representing bonus to\nemployees and depreciation as set out in item 2 of the First\nSchedule. Foot note 3 requires that the Indian gross r\nprofit should be determined as shown in item 7 and,\ntherefore, it was necessary to add back not only amount\nunder item 2 but also item 3 and 4 and to deduct amounts\nunder item 6 for the purpose of arriving at the Indian gross\nprofits under item 7. [146 A-B]\n (c) In calculating the total gross profits the\nIndustrial Tribunal committed an error by adding back merely\nthe provision made under the profit and lass account of the\nIndian business for bonus to employees and depreciation. Foot note 3 requires that the total world gross profit\nshould be as per consolidated profit and loss account after\nadjusting as in item 2 which means that the provision made\nin the consolidate profits and loss account for bonus to\nemployees; depreciation, development rebate reserve and any\nother reserves should be added back to the net profit as\nshown in the consolidated profit and loss account for the\npurpose of arriving at the total world gross profit.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1976_1976_271_P006_C02",
+      "text": "The\nIndustrial Tribunal did not explained what was the provision\nmade in the consolidated profit and lost; account of the\nBank under this head. If any provision were made in the\nconsolidated profit and loss account for bonus to employees,\nwhich would mean employees of the Bank throughout the world,\ndepreciation on world assets and development rebate and\nother reserves such provision would have to be added back to\nthe net profit as shown in the consolidated profit and loss\naccount\n 6 (a) The Industrial Tribunal was right in its\ninterpretation of the term \"working funds\" occurring in cl. (ii) and (iii) of the proviso to item 2 of the Third\nSchedule. The term must be construed to Mean paid up\ncapital, reserves\n\nand average deposits for 52 weeks of each year for which\nweekly returns of deposits are submitted to the Reserve\nBank of India.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1976_1976_271_P006_C03",
+      "text": "It could hardly be disputed that borrowings\nfrom other banking Companies, the amounts of bills issued by\nthe Bank and the balance of profit and loss account are\nneither reserves nor deposits and they are not liable to be\nshown in the weekly returns of deposit submitted to the\nReserve Bank of India. [147 F-H]\n (b) The term \"working funds\" was first defined in the\naward of Mr. K. C. Sen in 1919 in regard to Banks, and it\nwas also used ill the Shastri award made in 1953 in regard\nto industrial disputes between certain banking companies and\ntheir workmen. These words have always been understood in\nthe above sense and that is the sense in which they must be\ndeemed to have been used by the legislature when it enacted\nclauses (ii) and (iii) of the proviso to item 2 of the Third\nSchedule. [147 D-F]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1976_1976_271_P007_C01",
+      "text": "7. The Industrial Tribunal was wrong in refusing to\npermit the Bank to add back the sum of Rs. 13.27 lacs on the\nground that \"a sum out of 1965 account must not be allowed\nto adulterate the amount of 1966.\" This sum paid to the\nemployees in respect of bonus for the accounting year 1965\nwas, on the plain terms of item 3(a) of the First Schedule,\nliable to be added back. [143 F-H]\n\nJUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal No. 2533 of",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1976_1976_271_P008_C01",
+      "text": "1969. Appeal by special leave from the Award dated the 25th\nJune, 1969 of the Central Government Industrial Tribunal,\nCalcutta, in Reference No. 35 of 1968. M. K. Ramamurthi, Ramesh Pathak, Vineet Kumar for the\nAppellants. G. P. Pai, o. c. Mathur, D. N. Mishra and J. B. Dadachanji & Co. for Respondent. The Judgment of the Court was delivered by BHAGWATI,\nJ.-This appeal by special leave is directed against an\naward made by the Industrial Tribunal, Calcutta in a\nreference between the National and Grindlays Bank Ltd. (hereinafter referred to as the Bank) and its workmen\nrepresented by the All India National & Grindlays Bank\nEmployees Federation. The Bank is a banking company within\nthe meaning of\ns. 5\nof the Banking Companies Act, 1949 and\nhas its Head office in London and branch offices in\ndifferent parts of the world, including India. The principal\noffice of the Bank in India is situate in Calcutta. The Bank\nmaintains its accounts according to the calender year and it\nbrings out not only a consolidated balance sheet and profit\nand loss account for its world business, but also a separate\nbalance sheet and profit and loss account for its Indian\nbusiness.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1976_1976_271_P008_C02",
+      "text": "There was an industrial dispute between the Bank\nand its workmen in regard to bonus for the years 1956 to\n1964 and as a result of negotiations, this industrial\ndispute was settled between the parties on an ad hoc basis\nunder a Memorandum of Settlement dated 28th r. December,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1976_1976_271_P009_C01",
+      "text": "1965. The material terms of the settlement were:\n\"1. The Bank will pay and the workmen and non-work\n men staff will receive a sum of Rs. 27 lakhs (Rupees\n twenty seven lakhs only) in full and final settlement\n of all bonus claims covering the periods from 1st\n January 1956 to 31st December 1964, including any\n claims relating to Centenary Bonus.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1976_1976_271_P010_C01",
+      "text": "2. The above sum of Rs. 27 lakhs will be allocated\n as to one-third thereof to Award-staff only and as to\n the remaining two-thirds to both the Award and non-\n Award staff, in both cases based on the basic salary\n paid over the period, namely, 1st January, 1956 to 31st\n December, 1964, and unrelated to any particular year.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1976_1976_271_P011_C01",
+      "text": "8. The parties agree that this Settlement shall\n not be taken as the basis or govern the principle for\n this determination of bonus in future, but nevertheless\n this Settlement shall be final and binding on the\n parties as regards bonus claims for the years 1956 to\n 1964 (both inclusive) and any claim relating to\n Centenary Bonus, as also regards qualifications for\n eligibility and procedures as set out above. It may be noted that this Settlement was arrived at between\nthe parties after the\nPayment of Bonus Act, 1965\ncame into\nforce on 25th September, 1965. This Act\nprovided a statutory\nformula for computation and payment of bonus and it was\nadmittedly applicable in respect of the accounting year\n1964, but no separate computation of bonus for that year was\nmade in accordance with this statutory formula and it was\nsettled on an ad hoc basis as a part of an omnibus\nsettlement for the accounting years 1956 to 1964.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1976_1976_271_P011_C02",
+      "text": "So far as\nthe claim for bonus for the accounting year 1965 was\nconcerned, computation was made in accordance with the\nstatutory formula provided in the\nPayment of Bonus Act\nand\nthe maximum 20% of the salary or wage earned during that\naccounting year was paid by way of bonus to\n the workmen. The claim for bonus for the accounting year\n1966, however, could not be settled between the parties and,\nthough the Bank paid , 18% of the wage or salary earned by\nthe workmen during that accounting year as bonus, the\nworkmen were not satisfied and the industrial dispute\narising from their claim had to be referred for\nadjudication. There were different aspects of this\nindustrial dispute which required consideration and the\nCentral Government, therefore, formulated each\n aspect as a separate question and referred those questions\nfor adjudication to the Industrial Tribunal, Calcutta.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1976_1976_271_P011_C03",
+      "text": "The\nIndustrial Tribunal made an award holding that, on an\napplication of the statutory formula, the amount available\nfor payment of bonus was Rs. 22.17 lakhs and The workmen\nwere, therefore, entitled to a little over 9% of their\nsalary or wage as bonus, but since they had already been\npaid by the Bank bonus at the rate of 18% of their salary or\nwage, which was much more than what they were entitled to\nreceive, nothing further remained to .. be paid and they\nwere not entitled to any relief. This award is impugned in\nthe present appeal brought by the workmen with special\nleave. There are only certain items in the computation of\nbonus which are now in dispute in the appeal before us and\nwe shall confine our attention to them. But before we deal\nspecifically with these items, it could be convenient to\nrefer to some of the relevant provisions of the\nPayment of\nBonus Act\n. We will refer only to those provisions which have\na bearing on the items in dispute between the parties. Section 2\nis the definition section and cl.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1976_1976_271_P011_C04",
+      "text": "(13) of that\nsection defines 'employees\n\nto mean any person employed on a salary or wage not\nexceeding one thousand and six hundred rupees per mensem in\nany industry to do any skilled or unskilled manual,\nsupervisory, managerial, administrative, technical or\nclerical work for hire or reward. The mode of computation of\ngross profits in the case of a banking company is laid down\nsection 4\n, cl. (a) which provides that the gross profit\nshall be calculated in the manner specified in the First\nSchedule. The First Schedule sets out in items 2, 3 and 4\nvarious amounts which are to be added and in item 6, various\namounts which are to be deducted from the net profit as\nshown in the profit and loss account. We are concerned in\nthis is appeal only with items 2, 3(a) and 6(e) which read\nas follows:-\nItem No. Particulars Amount of Amount of Remarks sub-items\nmain items",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1976_1976_271_P012_C01",
+      "text": "2. Add back provision for\n(a) Bonus to employees\n(b) Depreciation\n(c) Development Rebate Reserve.\n(d) Any other reserves\n Total of Item No. 2 Rs.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C01",
+      "text": "3. Add back also\n(a) Bonus paid to employees in respect of previous\n accounting years.\n6 Deduct:\n(e)In the case of foreign ; banking companies\n proportionate administrative (overhead) expenses of\n Head, office allocable to Indian business\nThe concept of 'available surplus' is defined in\ns. 2\n, cl. (6) to mean available surplus computed under\ns. 5\nand that\nsection lays down that the available surplus in respect of\nany accounting year shall be the gross profit of that year\nafter deducting therefrom the sums referred to in s 6\nClauses (a) and (d) of\ns. 6\nprovide that the following sums\nshall be deducted from the gross profits as prior charge,\nnamely:-\n\"(a) any amount by way of the depreciation\n admissible in accordance with the provisions of sub-\nsection (1) of\nsection 32\npf the\nIncome-Tax Act\n, or in\n accordance with the provisions of the agricultural\n income-tax law, as the case may be:\"\n\"(d) such further sums as are specified in respect\n of the employer in the Third schedule\nThe Third Schedule is rather material as it bears on one\nitem in dispute between the parties.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C02",
+      "text": "Clauses (ii) and (iii)\nof the proviso to item 2 . in the Third Schedule enact that\nin case of a banking company which is a foreign company\nwithin the meaning of s. 591 of the Companies\n10-390SCI/76\n\nAct, 1956-the Bank in the present case being such banking\ncompany-the amount to be deducted shall be the aggregate of-\n \"(ii) 7.5 per cent. Of such amount as bears the\n same pro- r portion to its total paid up equity share\n capital as its total working funds in India bear to its\n total world working funds;\n(iii) 5 per cent of such amount as bears the same\n proportion to its total disclosed reserves as its total\n working funds r in India bear to its total world\n working funds;\"\nThen we come to the concept of allocable surplus which is\ndefined in s. 2, cl. (4) and under that clause, 60% of the\navailable surplus is to be taken to be the allocable surplus\nand it is this allocable surplus which is to be distributed\nby way, of bonus to the workmen, subject to a limit of 20\nper cent. Of the total salary or wage of the employees\nemployed in the establishment. Sec. 10\n, sub-sec. (1)\nprovides for payment of a minimum bonus of 4 per cent.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C03",
+      "text": "the salary or wage earned by the employees, irrespective\nwhether or not there are profits in the accounting year, and\nsub-sec. (1) of\ns. 11\nlays down that where the allocable\nsurplus exceeds the amount of minimum bonus payable under\ns.\n\n, sub-s. (1) \"the employer shall, in lieu of such minimum\nbonus, be bound to pay to every employee in the accounting\nyear bonus which shall be an amount in proportion to the\nsalary or wage earned by the employee during the accounting\nyear subject to a maximum of twenty per cent of such salary\nor wage\". Sec. 15\nis the next material section and it\nprovides, inter alia:\n\" (1) Where for any accounting year the allocable\n surplus exceeds the amount of maximum bonus payable to\n the employees in the establishment under\nsec. 11\n, then,\n the excess shall, subject to a limit of twenty per\n cent, of the total salary or wage of the employees\n employed in the establishment in that accounting year,\n be carried forward for being set on in the l succeeding\n accounting year and so on up to and inclusive or the\n fourth accounting year to be utilised for the purpose\n of payment of bonus in the manner illustrated in the\n Fourth t Schedule.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C04",
+      "text": "(2) Where for any accounting year, there is no\n available surplus or the allocable surplus in respect\n of that year falls short of the amount of minimum bonus\n payable to the employees in the establishment under\nsec. 10\n, and there is no amount or sufficient amount\n carried forward and set on under sub-sec. (1) which\n could be utilised for the purpose of payment of the\n minimum bonus, then, such minimum amount or the\n deficiency, as the case may be, shall be carried\n forward for being set off in the succeeding accounting\n year and so on up to and inclusive of the fourth\n accounting year in the manner illustrated in the Fourth\n Schedule. (4) Where in any accounting year any amount has\n been carried forward and set on or set off under this\n section, then, in calculating bonus for the succeeding\n accounting year, the - ` u,\n\namount of set on or set off carried forward from the\n earliest A accounting year shall first be taken into\n account. '\nSec. 34\n, sub-s.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C05",
+      "text": "(3) enables employees employed in any\nestablishment or class of establishments to enter into\nagreement with their employer for grant of bonus under a\nformula which is different from that under the\nPayment of\nBonus Act\n, so long as it does not deprive them of the\nminimum bonus payable under s. 10, sub-sec. (1). It is in\nthe light of these provisions that we have to consider the\nvarious points arising For determination in the appeal. We will first take us for consideration question No. 2\nreferred to the Industrial Tribunal. That question` raises\nthe issue whether any amount is liable to be carried forward\nfor being set on in the accounting year 1956 and if so, what\namount. The claim of the workmen was that there was excess\nof allocable surplus over the amount of maxi mum bonus in\nboth accounting years 1964 and 1965 and the excess in\nrespect of both these years was, by reason of\ns. 15\n, sub-s. (1), liable to be carried forward for being set on in the\nsucceeding accounting year 1966.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C06",
+      "text": "Now, so far as the claim in\nrespect of the accounting year 1965 was concerned, the\namount to be carried forward and set on was settled at the\nfigure of Rs. 10.23 lacs under an agreement arrived at\nbetween the parties and no dispute, therefore, survived in\nrespect of that claim. But the claim in respect of the\naccounting year 1964 was strongly resisted on behalf of the\nBank and a preliminary objection was raised that the\nquestion whether any amount was liable to be carried forward\nand set on out of the profits of the accounting year 1964\ndid not form the subject-matter of the reference and hence\nthis Court, in appeal from the Industrial Tribunal, had no\njurisdiction to adjudicate upon this question. We do not\nthink there is any substance in this preliminary objection. Question No. 2, referred to the Industrial Tribunal, in\nterms raises the issue \"whether any amount is to be carried\nforward for being set on in the accounting year 1966\", and\nthis issue is wide enough to cover the question in regard to\ncarry forward and set on of an amount out of the profits of\nthe accounting year 1964.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C07",
+      "text": "The Bank then contended that since\nthe bonus payable for the accounting year 1964 was settled\non an ad hoc basis, it was not possible to say that the\nallocable surplus exceeded the maximum bonus payable for\nthat year and hence there could be no question of any excess\nto be carried forward and set on in the succeeding year. There is great force in this contention. Sec. 15\n, sub-s. (1)\nprovides for carry forward and set on and, on its plain\nterms, it comes into operation only when, in a given\naccounting year, the allocable surplus exceeds the maximum\nbonus pay able under the Act, so that after payment of the\nmaximum bonus there is surplus left which can be carried\nforward and set on, subject, of course, to the limit of -20\nper cent. Of the total salary or wage.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C08",
+      "text": "It is clear from the\nscheme of the Act and the context in which this sub section\noccurs, following closely upon\nsections 4\n\n, that the\nbasic condition for the applicability of this sub-section is\nthat bonus is computed in accordance with the statutory\nformula provided in the preceding sections of the Act and as\na result of such computation, it is found that the allocable\nsurplus is more than sufficient .... to cover the maximum\nbonus payable under the Act and where such is the case, the\nsub section provides that the excess over the amount of the\nmaximum bonus\n\nshall, to the extent of 20 per cent. Of the total wage or\nsalary, be carried forward and set on in the succeeding\nyear. This sub-section can have no application-where no\ncomputation is made under the Act and bonus is paid, not in\naccordance with the statutory formula, but on an ad hoc\nbasis. Then it is not possible to say what was really the\nbonus payable under the Act. It may be less or more than the\nbonus in fact paid. That inquiry being rendered irrelevant\nby the ad hoc settlement, there can be no question of carry\nforward and set on of any amount, unless specifically agreed\nupon as part of the settlement.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C09",
+      "text": "The workmen in the present\ncase were, therefore, not entitled to contend that, though\nthe claim for bonus for the accounting year 1964 was settled\non an ad hoc without making computation under the provisions\nof the Act, such computation must now be made, not for the\npurpose of determining the bonus payable to them, which is\nthe only purpose for which such computation is contemplated\nto be made, but for the purpose of determining whether there\nis any amount liable to be carried forward and set on. The\nclaim of the workmen for carry forward and set on in respect\nof the accounting year 1964 must accordingly stand rejected. We now, proceed to consider the items in dispute in the\ncomputation of 'available surplus' for the accounting year\n1966, which fall within\n question No. 1 referred to the Industrial Tribunal. The\nfirst item to which we must refer is the item of provision\nfor bonus to employees made in the profit and loss account. This item figures as item 2(a) in the\nFirst Schedule to the\nAct\nand it is required to be added back in the computation\nof the gross profits under\ns. 4(a)\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C10",
+      "text": "Now, so far as the\nprofit and loss account of the Bank in respect of its Indian\nbusiness was concerned, the provision for bonus to employees\ndid not figure in it as a separate item, but, according to\nthe Bank, it was included under the heading \"Salaries and\nAllowances\" or \"other Expenditure\" and it came to Rs. 19.52\nlakhs. The Bank thus agreed to an add back of Rs. 19.52\nlakhs in respect of provision for bonus to employees. The\nworkmen, however, contended that the provision for bonus\nmade by the Bank was for a much larger amount and the amount\nof Rs. 19.52 lakhs represented provision for bonus only in\nrespect of those workmen who were 'employees' within the\nmeaning of s. 2, cl; (13) and the Bank had failed to take\ninto account the provision for bonus in respect of those\nworkmen who were not such 'employees'. The argument of the\nworkmen was that the word 'employees' in item 2(a) of the\nFirst Schedule was not limited to 'employees' as defined in\ns. 2\n, cl.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C11",
+      "text": "(13), but covered all employees, because the\nobject of adding back provision for bonus to employees was\nto arrive at the figure of profit available for distribution\nof bonus and that required that the entire amount set apart\nas provision for bonus `should be added back, for in\ndetermining what is the available fund with reference to\nwhich bonus should be paid, one cannot ' exclude the amount\nalready paid or provided as bonus, whether to employees\ndrawing more than Rs. 1600/- or to employees drawing less. It is true, said the workmen, that the word 'employees' is\ndefined in s. 2, d. (13), but they contended that every\ndefinition is subject to the requirement of the context and\nhere the context clearly showed that the word 'employees'\nwas not used in the restricted sense, but in a wider sense,\nincluding all employees. Now, this argument of the workmen\nwould have required serious consideration by us, but we do\nnot\n\nthink we can permit the workmen to raise it, as it does not\nappear to have been advanced by them before the Industrial\nTribunal. The award of the Industrial Tribunal does not show\nthat this argument was at any time urged by the workmen.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C12",
+      "text": "The\nonly argument raised by the workmen before the Industrial\nTribunal was that the amount of bonus payable to them for\nthe accounting year 1966 was Rs. 38.66 lacs representing 18\nper cent. Of their wage or salary and this amount of Rs.\n38.66 lacs was liable to be added back and not the amount of\nRs. 19.52 lacs this argument was rightly rejected by the\nIndustrial Tribunal because what is liable to be added back\nunder Item 2(a) of the First Schedule is not the amount of\nbonus payable to the workmen, nor the amount of bonus in\nfact paid, but the provision for bonus made in the profit\nand loss account. We cannot, therefore, permit the workmen\nto raise a new contention for the first time in this Court\nthat the provision for bonus liable to be added back was not\nmerely the provision for bonus to 'employees' as defined in\ns. 2\ncl. (13), but also the provision for bonus to workmen\nwho were not such 'employees'. The next item in dispute relates to the amount liable\nto be deducted from the gross profits under\ns. 6\n, cl. (a). What is required to be deducted under this clause is the\namount of depreciation admissible in accordance with the\nprovisions of sub-s.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C13",
+      "text": "(1) of\ns. 32\nof the Income-Tax Act. Now, depreciation represents the diminution in value of a\ncapital asset when applied to the purpose of making profit\nor gain. There are various methods known to accountancy\npractice for measuring such diminution in value and a\nbanking company, like any other firm or company, may follow\nany one of these methods in maintaining its accounts and the\namount of depreciation calculated according to such method\nwould be reflected in its profit and loss account. But,\nthough such amount of depreciation shown in the profit and\nloss account may be unexceptionable from the point of view\nof commercial accountancy principles, it would not\nnecessarily be admissible as a deduction from gross profits\nunder\ns. 6\n,. d. (a). What is allowable as a deduction from\nthe gross profits under that clause is not depreciation\ncalculated according to any recognised method of accountancy\nfollowed by a banking company, but only such depreciation as\nis admissible in accordance with the provisions of sub-s. (1) of\ns. 32\nof the Income-tax Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C14",
+      "text": "The profit and loss\naccount of the Bank for the accounting year 1966 showed an\namount of Rs. 22.40 lacs debited against the composite item\n\"Depreciation and Repairs to the Banking Company's Property\"\nand according to the Bank, this file included an amount of\nRs. 1.89 lacs by way of depreciation. Now, there would be no\ndifficulty if the Bank claimed to deduct only the amount of\nRs. 1.89 lacs by way of depreciation under\ns. 6\n, cl. (a), as\nthat was the amount of depreciation debited in the profit\nand loss account. But the Bank claimed that, though it had\ndebited by way of depreciation in the profit and loss\naccount only an amount of Rs. 1.89 lacs, the amount of\ndepreciation actually admissible in accordance with the\nprovisions of sums. (1) of\ns. 32\nof the Income-tax Act was\nRs. 12.79 lacs and in support of this claim, the Bank\nproduced a certificate issued by the Income Tax officer\nwhich was marked Ex. 12 in evidence. The Industrial Tribunal\nrelying solely on the certificate Ex. 12 held that\n\"depreciation admissible in accordance with the provisions\nof sub-s.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C15",
+      "text": "(1) of s; 32 of the\nIncome-tax Act\n\"\n\nwas Rs. 12.79 lacs as evidenced by the certificate Ex. 12\nand the Bank was, therefore, entitled to deduct that amount\nfrom the gross profits under\ns. 6\n, cl. (a). This decision of the Industrial Tribunal was assailed\nbefore us and it was contended on behalf of the workmen that\nthe burden of showing what was the amount of depreciation\nadmissible in accordance with the provisions of sub-s. (1)\ns. 32\nof the Income-tax Act was on the Bank and this\nburden, the Bank had failed to discharge by producing proper\nevidence. The only evidence produced on behalf of the Bank,\nsaid the workmen, was the certificate Ex. 12 issued by the\nIncome-tax officer, but that certificate was no evidence and\ncould not be taken into account for the purpose of holding\nthat the depreciation admissible under sub-s. (1) of\ns. 32\nof the Income-tax Act was Rs. 12.79 lacs. The Bank, however,\ncontended that the workmen did not at any time dispute that\nthe depreciation admissible under sub-s.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C16",
+      "text": "(1) of\ns. 32\nof the\nIncome-tax Act was Rs. 12.79 lacs nor did they at any time\nchallenge the correctness of the certificate Ex. 12 issued\nby the Income-tax officer and in the circumstances, this\ncertificate was sufficient to establish the claim of the\nBank. Now, in the first place, it is not correct to. say that\nthe workmen did not at any time dispute the correctness of\nthe figure of depreciation claimed by the Bank. Both-the\nworkmen and the Bank filed their respective computations of\nbonus before the Industrial Tribunal and while the Bank, in\nits computation, claimed to deduct the amount of Rs. 12.79\nlacs as depreciation, the workmen agreed to deduction only\nof the amount of Rs. 1.89 lacs as appearing in the profit\nand loss account. The workmen did not at any time accept the\nposition that the correct amount of depreciation admissible\nunder\ns. 32\n, sub-s. (1) of the\nIncome-tax Act\ncame to Rs.\n12.79 lacs as claimed by the Bank. They seriously disputed\nit before the Industrial Tribunal and hence the Industrial\nTribunal had to go into that question and come to a finding\nupon it.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C17",
+      "text": "Even prior to the making of the reference, when the\ncalculation sheet regarding bonus payable for the accounting\nyear 1966 was sent by the Bank to the` workmen with its\nletter dated 26th July, 1967, the workmen by their letter\ndated 3rd August, 1967 called upon the Bank to furnish\nparticulars in regard to the amount of Rs. 12.79 lacs\nclaimed by the Bank as depreciation and the only reply given\nby the Bank to this demand was that the information required\nby the workmen went \"far beyond any legal requirements\" and\nthe Bank was not in a position to accede- to the same. Vide\nBank letter dated 8th August, 1967. This circumstance would\nalso show that the workmen did not accept the figure of\ndepreciation claimed by the Bank.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C18",
+      "text": "It is true that in the\napplication made by the workmen to the Industrial Tribunal\nfor certain clarifications on 8th January, 1969, the workmen\ndid not ask for any clarification in regard to the amount of\nRs. 12.79 lacs claimed by the Bank by way of depreciation,\nbut if we look at this application, it will be clear that\nthe clarifications sought by the workmen were 'on various\naspects of the published balance-sheet of the company for\nthe accounting years-1-1-1966 to 31-12-1966 and other\nfigures' and there was no attempt at seeking clarifications\nin respect of the various items in the computation sheet\nfiled by the Bank. Moreover. when these clarifications were\nsought by the application dated 8th January, 1969 the\n\ncontroversy between the parties was already crystalised in\ntheir pleadings and it was clear from the computation sheets\nfiled by them that there was real dispute in regard to the\namount of depreciation and, therefore, mere failure on the\npart of the workmen to ask for clarification in respect of\nthe amount of Rs. 12.79 lacs claimed by the Bank, could not\njustify an inference that the workmen had conceded the claim\nof the Bank and abandoned the dispute.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 18
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C19",
+      "text": "There can be no doubt\nthat the dispute in regard to the amount of depreciation was\nvery much there between the parties and it had to be\nresolved by the Industrial Tribunal. It was not seriously disputed on behalf of the Bank,\nand indeed having regard to the well settled position in law\nit could not be so disputed, that since the Bank claimed the\ndeduction of depreciation at a figure higher than that\nappearing in the profit and loss account, the burden of\nproving that the depreciation claimed by it was the correct\namount of depreciation admissible under\ns. 32\n, sub-s. (1) of\nthe\nIncome-tax Act\nwas on the Bank and that burden had to be\ndischarged by the Bank by producing proper and satisfactory\nevidence. Though the Industrial Tribunal relied solely on\nthe certificate Ex. 12 issued by the income-tax Officer for\nthe purpose of holding that that, the correct amount of\ndepreciation admissible under\ns. 32\n, sub-s. (1) was Rs.\n12.79 lacs, the Bank in the course` of its arguments before\nus, placed reliance not only on this certificate but also on\nthe oral evidence of A. K. Basu who was the Officer examined\non behalf of the Bank. We will first consider the oral\nevidence of A. K.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 19
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C20",
+      "text": "Basu and then examine how far the\ncertificate Ex. 12 helps to establish the claim of the Bank. The statement in the 'oral evidence of A. K. Basu which was\nstrongly relied upon on behalf of the Bank, was: \"Under the\nHeading 'Prior Charge', the figure against 'depreciation'\nwas collected from the income-tax assessment order\" and it\nwas contended that since there was no cross examination of\nA. K. Basu in regard to this statement, it must be accepted\nas correct and that was sufficient to prove that the\ndepreciation admissible under\ns. 32\nsub-section (1) was Rs.\n12.79 lacs. This contention is wholly fallacious and it\nproceeds upon a misreading of the statement made by A. K. Basu. It is no doubt true that A. K. Basu stated that the\nfigure against depreciation was collected from income-tax\nassessment order, but this statement was made in reference\nto the figure against depreciation appearing in the First\nEnclosure to Annexure (C) to the written statement of the\nworkmen, which was the computation sheet containing\ncalculation of bonus for the accounting year 1965. That is\nevident from the context in which this statement occurs.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 20
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C21",
+      "text": "This statement finds place in the paragraph which contains\nanswers given by the witness to the Industrial Tribunal and\nthe six sentences preceding this paragraph as also the first\nsentence of this paragraph clearly show that the answers\nwere in reference to the accounting year 1965. We have\ncarefully scanned through the entire evidence of A. K. Basu,\nbut we do not find in it any statement in regard to the\namount of depreciation shown in the Second Enclosure to\nAnnexure (C) to the written statement of the workmen, which\ncontained the computation in regard to bonus for the\naccounting year 1966. There was no evidence given by A. K. Basu in regard to the amount of Rs. 12.79 lacs claimed by\nthe Bark by way of depreciation in the computation sheet\nsubmitted by it. Not a word\n\nwas said about it by A. K. Basu in his evidence and apart\nfrom A. K. Basu, no other witness was examined on behalf of\nthe Bank. There was therefore, clearly no oral evidence to\nsupport the claim of the Bank. Even if the statement of A. K.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 21
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C22",
+      "text": "Basu that the figures against depreciation were collected\nfrom the income-tax assessment order be construed as\nreferring to the computation sheet in respect of the\naccounting year 1966, it does not advance the case of the\nBank. The income-tax assessment order for the accounting\nyear 1966 admittedly did not show depreciation at the figure\nof Rs. 12.79 lacs and that figure could not, therefore, have\nbeen collected by M. A. K. Basu, from the income-tax\nassessment order. Even if the words Income-tax assessment\norder' as appearing in his statement be read so as to\ninclude the income-tax return, it was admitted that the\nrelevant income-tax return was not produced on behalf of the\nBank, and moreover, A. K. Basu admitted in his cross\nexamination that he did not prepare the income-tax return\nand consequently it must follow that he had no personal\nknowledge of the correctness or veracity of the income-tax\nreturn and what he stated had no probative or evidentiary\nvalue. That leaves for consideration the certificate Ex. 12\nissued by the Income-tax officer which was strongly relied\nupon on behalf of the Bank and on which the Industrial\nTribunal rested its decision on this part of the case.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 22
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C23",
+      "text": "It is\nclear on a plain natural reading of the language of\ns. 6\n,\ncl. (a) that what is deductible under that clause is\n\"depreciation admissible in accordance with the provisions\nof sub-s. (1) of s. 32 of the\nIncome-tax Act\n\" and not\n\"depreciation allowed by the Income tax Officer in making\nassessment on the employer\". It is the Industrial Tribunal\nwhich has to find for itself what is the amount of\ndepreciation admissible under sub-s.(1) of\ns. 32\nand it\ncannot abdicate its duty and surrender its judgment to what\nhas been done by the Income-tax officer while making\nassessment under the\nIncome-tax Act\n. Since depreciation .\nmay be computed according to various methods recognized by\naccountancy principles,\nsection 6\n, clause (a) while\nproviding for deduction of depreciation, had to specify the\nmethod according to which depreciation to be deducted shall\nbe calculated and it adopted the method specified in sub-s. (1) of\ns. 32\n. But the calculation of depreciation in\naccordance with this method would necessarily have to be\ndone by the Industrial Tribunal which is entrusted with the\ntask of determining the amount of bonus by applying the\nstatutory formula.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 23
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C24",
+      "text": "Therefore, it is the industrial Tribunal\nwhich must in the exercise of its quasi judicial duty\ncalculate the amount of depreciation by adopting the method\nset out in sub-s. (1) of s. 32. The Industrial Tribunal\ncannot say that it will Blindly accept the figure of\ndepreciation arrived at by another authority charged with\nthe function of determining depreciation under a different\nstatute. The determination of the Income-tax officer in\nregard to depreciation admissible under\nsection 32\n, sub-\nsection (1) can be taken into account as evidence only if\nthere is some provision of law which provides to that\neffect. We do not find anything in the\nIncome-tax Act\nor in\nthe\nPayment of Bonus Act\nor in any other pro vision of law\nwhich attaches presumption of accuracy to the determination\nof the Income-tax officer in this matter or invests it with\nprobative or evidentiary value in the proceedings before the\nIndustrial Tribunal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 24
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C25",
+      "text": "And the reason for this is obvious\nbecause the workmen, who are sought\n\nto be bound by the determination of the Income-tax officer,\nwould not be parties to the income-tax proceedings and they\nwould have no opportunity of putting forward their point of\nview before the determination is arrived at by the Income-\ntax officer. Moreover, the possibility cannot be ruled out\nthat the determination made by the Income-tax officer may be\nwrong and he might have made a bona fide mistake in arriving\nat the figure of depreciation. If the workmen were to be\nheld bound by the figure of depreciation determined by the\nIncome-tax officer, they would have no opportunity of\nchallenging its correctness or showing that it is wrong, nor\nwould they be able to verify the figure of depreciation by\ncross-examination of the employer or his witnesses who may\nhave calculated the same. That would be contrary to the\nestablished principles of judicial procedure.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 25
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C26",
+      "text": "There can,\ntherefore, be no doubt that the certificate issued by the\nIncome-tax officer was not admissible in evidence to prove\nthe depreciation admissible under sub-section (1) of\nsection\n\nand ordinarily we would have refused to rely upon it and\ndirected the Industrial Tribunal to arrive at a fresh\ndecision after giving opportunity to the Bank to prove its\nclaim for depreciation by leading evidence, but we find that\nthe certificate of the Income-tax officer was admitted in\nevidence without any objection on the part of the workmen\nand at no stage of the hearing before the Industrial\nTribunal, it was contended on behalf of the workmen that it\nwas an inadmissible piece of evidence. If the workman had\ncontended before the Industrial Tribunal that the\ncertificate of the Income-tax officer was not admissible in\nevidence, the Bank could have led other evidence to\nsubstantiate its claim for depreciation, but since no\nobjection was raised on behalf of the workmen, the Bank\ncontented itself by producing and tendering in evidence only\nthe certificate of the Income-tax officer.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 26
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C27",
+      "text": "We do not, in the\ncircumstances see why reason to interfere with the decision\nof the Industrial Tribunal in regard to the amount of\ndepreciation deductible under\nsection 6\n, clause (a). . We then come to item 3(a) of the First Schedule which\nrequires bonus paid to the employees in respect of the\nprevious accounting years to be added back in computing\ngross profits. The amount paid to the employees in the\naccounting year 1965 was Rs. 13.27 lacs and the work- men\nclaimed that this amount of Rs. 13.27 lacs should be added\nback under item 3(a) of the First Schedule. The Bank, in the\ncomputation sheet filed by it, also showed this amount of\nRs. 13.27 as an add back and, therefore there should really\nhave been no dispute about it. But the Industrial Tribunal\nrefused to permit the Bank to add back this amount of Rs.\n13.27 lacs on the ground that \"a sum out of 1965 account\nmust not be allowed to adulterate the account of 1966\". This\nwas an obvious error committed by the Industrial Tribunal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 27
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C28",
+      "text": "The amount of Rs. 13.27 lacs paid to the employees in\nrespect of bonus for the accounting year 1965 was clearly,\non the plain terms of Item 3(a) of the First Schedule,\nliable to be added back and we direct the Industrial\nTribunal to do so when the case goes back to it. The item which then requires to be considered is that\nunder cl. (iv) of the proviso to Item 2. Of the Third\nSchedule. That clause provides that in the case of a banking\ncompany, any sum which, in\n\nrespect of the accounting year, is deposited by it with the\nReserve Bank of India under\ns. 11(2)(b)(ii)\nof the Banking\nRegulation Act, 1949 not exceeding the amount required under\nthe said provision to be so deposited, shall be deducted\nfrom the gross profits.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 28
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C29",
+      "text": "The Bank claimed to deduct under\nthis item a sum of Rs. 13.48 lacs on the ground that it\nrepresented the amount deposited by the Bank with the\nReserve Bank of India under\ns. 11(2)(b)(ii)\nof the Banking\nRegulation Act, 1949 and produced in support of this claim,\na certificate of the Reserve Bank of India dated 3rd\nFebruary, 1969 confirming that the Bank had deposited\nsecurity adequate to fulfil the requirements\ns. 11(2)(b)(ii)\nof the Banking Regulation Act, 1949 in respect of the\naccounting year 1966. This certificate was produced by A. K. Basu on behalf of the Bank without ally objection by the\nworkmen and it was marked Ex. 11. The Industrial Tribunal\naccepted the claim of the Bank on the strength of this\ncertificate and permitted deduction of the amount of Rs.\n13.38 lacs.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 29
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C30",
+      "text": "The workmen impugned this decision of the\nIndustrial Tribunal on the ground that the balance sheet of\nthe Bank for the accounting year 1966 showed that the amount\ndeposited by the Bank with the Reserve Bank of India during\nthat accounting year was only Rs. 70,000/- being the\ndifference between Rs. 99.10 lacs and Rs. 98.40 lacs and it\nwas therefore, only this amount which was liable to be\ndeducted in respect of this claim. But this contention of\nthe workmen is clearly fallacious. The balance sheet of the\nBank for the accounting year 1966 would not show the amount\ndeposited by the Bank with the Reserve Bank of India in\nrespect of that accounting year, for, on a plain reading of\ns. 11(2)(b)(ii)\nof the Banking Regulation Act,\n1949, that amount would ordinarily be deposited only after\nthe expiration and not during the currency of that\naccounting year. No reliance can, therefore, be placed on\nbehalf of the workmen on the balance sheet of the Bank for\nthe accounting year 1966 for the purpose of repelling the\nclaim of the Bank. On the other hand, the evidence given by\nA. K.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 30
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C31",
+      "text": "Basu on behalf of the Bank clearly showed that the\nBank had deposited with the Reserve Bank of India securities\nadequate to fulfil the requirements of s. 11(2)(b)(ii) of\nthe\nBanking Regulation Act, 1949\nand this statement made by\nthe witness was sought to be supported by the certificate\nissued by the Reserve Bank of India. The workmen did\nquestion A. K. Basu on this point, but he clearly stated\nthat the deposit was made in securities. Having regard to\nthis evidence of A. K. Basu supported by the certificate of\nthe Reserve Bank of India, we must hold that the claim of\nthe Bank to deduction of the amount of Rs. 13.48 lacs was\nwell founded and it was rightly allowed by the Industrial\nTribunal. That takes us to the last item in dispute which is Item\n6(e) of the First Schedule. That item requires that in the\ncase of foreign banking companies, Proportionate\nAdministrative (over Head) Expenses of Head office allocable\nto Indian business shall be deductible in computing gross\nprofits. The Bank claimed that a sum of Rs. 43.40 lacs was\nLiable to be deducted under this item, while according to\nthe workmen, the claim for deduction was admissible\n\nOnly to the extent of Rs. 43.10 lacs.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 31
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C32",
+      "text": "The Industrial\nTribunal, however, did not accept the figure of either party\nbut made its own calculations and came to the conclusion\nthat the proportionate administrative expenses allocable to\nIndian business amounted to Rs. 23.88 lacs and hence that\nwas the amount deductible under this item. This decision of\nthe Industrial Tribunal was challenged on both sides. In\norder to appreciate the grounds of challenge, it is\nnecessary to understand how the Industrial Tribunal actually\ncalculated the proportionate administrative expenses of Head\noffice allocable to Indian business. Foot Note 3 of the\nFirst Schedule provides that proportionate administrative\nexpenses of Head office allocable to Indian business should\nbe calculated \"in the proportion of Indian Gross profit\n(Item No. 7) to total world gross profit (as per\nconsolidated profit and loss account, adjusted as in Item\nNo. 2 above only)\". Now, the administrative expenses of Head\noffice were admittedly Rs. 120.52 lacs and if X was the\namount of proportionate administrative expenses allocable to\nIndian business, X/120 would be equal to Indian gross profit\nunder Item No. 7/total world gross profit adjusted as in\nItem No. 2.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 32
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C33",
+      "text": "The Indian gross profit for the purpose of\nworking out this proportion was calculated by the Industrial\nTribunal by taking the figure of Rs. 67.39 lacs which was\nthe net profit shown in the profit and loss account and\nadding to it Rs. 19.52 lacs representing bonus to employees\nand Rs. 1.89 lacs representing depreciation and it was,\nthus, determined at Rs. 88.80 lacs. Here there was a\nmanifest error committed by the Industrial Tribunal. The net\nprofit of Rs. 67.39 lacs shown in the profit and loss\naccount was admittedly arrived at after deducting from the\nprofit of the Bank a sum of Rs. 43.10 lacs in respect of\nactual head office administrative expenses allocable to\nIndia. This amount of Rs. 43.10 lacs was obviously required\nto be added back, since Item 6(e) provided for deduction of\nproportionate Head office administrative expenses allocable\nto Indian business and the same item could not be deducted\ntwice over in arriving at the Indian gross profit. It is\ntrue that Item 1 of the First Schedule requires the\nIndustrial Tribunal to take as the starting point of\ncomputation \"net profit as shown in the profit and loss\naccount after making usual and necessary provisions\".",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 33
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C34",
+      "text": "But\nthe fact that Item 6(e) provides for deduction of\nproportionate administrative expenses of Head office\nallocable to Indian business in arriving at the gross profit\nfor the purpose of bonus under Item 7 shows that the net\nprofit contemplated in Item 1 is net Profit arrived at\nwithout deducting proportionate administrative expenses of\nhead office allocable to Indian business. That is not\nregarded by the Legislature as usual and necessary\nprovision should be deducted for the purpose of ascertaining\nnet profit under Item 1. This position was indeed not\ndisputed by the learned counsel appearing on behalf of the\nBank and it is therefore, obvious that the amount of Rs.\n43.10 lacs should be added back in arriving at the figure of\nnet profit for the purpose of Item 1. Then again, it is\nclear from the calculation made by the Industrial Tribunal\nthat in computing the Indian gross Profit at the figure of\nRs. 88.80 lacs, the Industrial Tribunal added black only the\namounts representing bonus to employees and depreciation as\nset out in Item 2 of the First Schedule.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 34
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_271_P013_C35",
+      "text": "But Foot Note 3\n\nrequires that the Indian gross profit should be determined\nas shown in Item 7 and, therefore, it was necessary to add\nback not only amounts under item 2 but also amounts under\nitems 3 and 4 and to deduct amounts under item 6 for the\npurpose of arriving at the Indian gross profit under item 7. This, the Industrial Tribunal clearly failed to do. We\nwould, therefore, direct the Industrial Tribunal. When the\ncase goes back to it, to determine the figure of Indian\ngross profit as set out in item 7 after adding back the\namount of Rs. 43.10 lacs the figure of net profit under Item",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 35
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1976_1976_271_P014_C01",
+      "text": "1. The workmen also pointed out another error in the\ncalculation made by the Industrial Tribunal and that was in\nregard to computation of total world gross profit. Foot Note\n3 requires that the total gross profit should be as per\nconsolidate profit and loss account after adjustment as in\nItem 2. That means that the provision made in the\nconsolidated profit and loss account for bonus to employees,\ndepreciation, development rebate reserve and any other\nreserves should be added back to the net profit as shown in\nthe consolidated profit and loss account for the purpose of\narriving at the total world gross profit. What the\nIndustrial Tribunal, however, did in the present case was to\nadd back merely the provision made in the profit and loss\naccount of the Indian business for bonus to employees and\ndepreciation. The Industrial Tribunal did not examine what\nwas the provision made in the consolidated profit and loss\naccount of the Bank for bonus to employees, depreciation,\ndevelopment rebate reserve and other reserves.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1976_1976_271_P014_C02",
+      "text": "If any\nprovision were made in the consolidated profit and loss\naccount for bonus to employees, which would mean employees\nof the Bank throughout the world, depreciation on world\nassets and development rebate and other reserves, such\nprovision would have to be added back to the net profit as\nshown in the consolidated profit and loss' account. This\nwould have to he done by the Industrial Tribunal when the\nmatter goes back to it on remand. The Industrial Tribunal will, thus, after calculating\nthe Indian gross profit above, apply the proportion of\nIndian gross profit/total world gross profit to the amount\nof Rs. 120.52 lacs representing the administrative expenses\nof Head Office and determine the proportionate\nadministrative expenses of head office allocable to Indian\nbusiness for the purpose of deduction under Item 6(e) of the\nfirst Schedule. We must also refer to one other ground of challenge put\nforward on behalf of the Bank against the decision of the\nIndustrial Tribunal in regard to the amounts deductible\nunder cls. (ii) and (iii) of the proviso to Item 2 of the\nThird Schedule.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1976_1976_271_P014_C03",
+      "text": "This ground of challenge was urged on behalf\nof the Bank in support of the ultimate award of the\nIndustrial Tribunal determining the bonus payable to the\nworkmen at a little over 9 per cent. Of their salary or\nwage. It was clearly open to the Bank to urge this ground of\nchallenge since the Bank was entitled to support the award\nof the Industrial Tribunal\n\neven on a ground decided against it. Vide J. K. Synthetics\nLtd. v. A J. K. Synthetics Mazdoor Union\n(\n1) and Management\nof I.C.C. v. Workmen\n(2). The controversy arising out of this\nground of challenge turned on the true interpretation of the\nworks 'working funds' in clauses (ii) and (iii) of the\nproviso to Item 2 of the Third Schedule. The Industrial\nTribunal interpreted the words 'working funds' to mean \"paid\nup capital, reserves and deposits\" and rejected the\ncontention of the Bank that they also included borrowings\nfrom other banking companies, bills payable and balance of\nprofit and loss account. This view taken by the Industrial\nTribunal was assailed on behalf of the Bank at the hearing\nof the appeal before us.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1976_1976_271_P014_C04",
+      "text": "The Bank contended that borrowings\nfrom other banking companies, the amounts of bills issued by\nthe Bank and balance of profit and loss account constituted\npart of the working funds of the Bank and were, therefore,\nwithin the expression \"working funds\". This contention,\nplausible though it may seem at first sight, is, in our\nopinion, not well-founded. The words \"working funds\", when\nused in relation to a banking company, are not to be\nconstrued in their ordinary popular sense by reference to a\ndictionary. They have a history of their own and they have\nacquired a definite meaning. These words were first defined\nin the award made by Mr. K. C. Sen in 1949 in regard to\nbanks and the definition he gave was that 'working funds'\nconsisted 1 of \"paid-up\" capital, reserves and deposits\". So\nalso in the Sastri Award made in 1953 in regard to\nIndustrial desputes between certain banking companies and\ntheir workmen, the words 'working funds' were defined to\nmean \"paid-up capital, reserves and the average of the\ndeposits for 52 weeks of each year for which weekly. returns\nof deposits are submitted to the Reserve Bank of India under\nthe provisions of the\nReserve Bank of India Act\n\".",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1976_1976_271_P014_C05",
+      "text": "So far as\nbanking companies are concerned, the words 'working funds'\nhave always been understood in this sense and that is the\nsense in which they must be deemed to have been used by the\nLegislature when it enacted cls. (ii) and (iii) of the\nproviso to Item 2 of the Third Schedule. It is a well\nsettled rule of interpretation that when the Legislature\nuses certain words which have acquired a definite meaning\nover a period of time, it must be assumed that those words\nhave been used by the Legislature in the same sense. The\nwords 'working funds' in cls. (ii) and (iii) of the proviso\nto Item 2 of the Third Schedule must, therefore, be\nconstrued to mean Paid up capital, reserves and average of\nthe deposits for 52 weeks of each year for which weekly\nreturns of deposits are submitted to the Reserve Bank of\nIndia. It could hardly be disputed that borrowings from\nother banking companies the amounts of bills issued by the\nBank and the balance of profit and loss account are neither\nreserves nor deposits and they are not liable to be shown in\nthe weekly returns of deposits submitted to the Reserve Bank\nof India.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1976_1976_271_P014_C06",
+      "text": "The Industrial Tribunal was, therefore right in\nexcluding them from the category of 'working funds' and this\nround of challenge urged on behalf of the Bank must be\nrejected. (1) [1972]1 S.C.R. 651 (2) [1973] 1 S.C.R. 105. We accordingly set aside the award made by the\nIndustrial A Tribunal and remand the case to the Industrial\nTribunal with a direction to dispose it according to law in\nthe light of the decisions given and observations made in\nthis judgment. Since the workmen have partly succeeded and\npartly failed, we think that the fair order of costs would\nbe that each party should bear and pay its own costs of\nthese proceedings. P.B.R Appeal allowed in part.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    }
+  ],
+  "case_summary": {
+    "case_name": "Workmen Of National & Grindlays Bank Ltd vs The National & Grindlays Bank Ltd",
+    "case_id": "SC_1976_1976_271",
+    "court": "Supreme Court of India",
+    "year": "1976",
+    "facts_summary": "2. The workmen cannot be permitted to raise a new\ncontention for the first time in this Court that the\nprovision for bonus liable to be added back was not merely\nthe provision for bonus payable to employees as defined in\ns. 2(13)\nof the Act but also the provision for bonus payable\nto workmen who are not such employees. What is liable to be\nadded back under item 2(a) of the First Schedule is not the\namount of bonus payable to the workmen nor the amount of\nbonus in fact paid, but the provision for bonus made in the\nprofit and, loss account, 3(a) Though the amount of\ndepreciation calculated in accordance with account. [139 B-\nC] 3. (a) Though the amount of depreciation calculated in\naccordance with methods known to accountancy practice may be\nunexceptionable from the point of view of commercial\naccountancy, it would not necessarily be admissible as a\ndeduction from gross profits under s. 6(a). What is\nallowable as a deduction from the gross profits under that\nclause is not depreciation calculated according to any\nrecognised method but only such depreciation as is\nadmissible in accordance with the provisions of\ns. 32(1)\nthe Income Tax Act, 1961. [139 E-F]\n (b) The burden of providing that the depreciation\nclaimed by the Bank was the correct amount admissible under\ns. 32(1)\nof the Income Tax Act, 1961 was on the Bank and\nthat burden had to be discharged by the Bank by producing\nproper and satisfactory evidence. [141 C]\n (c) A certificate issued by the Income Tax officer was\nnot ad",
+    "legal_issues": "The Industrial Tribunal's calculation of proportionate\nadministrative (over-head) expenses of head office allocable\nto the Indian business which are deductible in computing the\ngross profits, both the Bank and the employees assailed it\nas being incorrect,\n For the bank, it was contended, (a) that borrowings\nfrom other banking companies, the amount of bills issued by\nthe bank and the balance of profit and r loss account\nconstituted part of its \"working funds\" and that the\nIndustrial Tribunal was wrong in rejecting this\ninterpretation of \"working funds\" and in limiting it to\n'paid up capital, reserves and deposits only\". (b) that the Tribunal was wrong in refusing to permit\nthe Bank to add back the sum falling under item 3(a) of the\nFirst Schedule.\n^\n HELD. 1. The workmen are rot entitled to contend that\nthough the claim for bonus for the year 1964 was settled on\nan ad hoc basis without making computation under the\nprovisions of the Act, such computation must now be made,\nnot for the purpose of determining the bonus payable to\nthem, but for the purpose of determining whether there is\nany amount liable to be carried forward and set on. The Bank then contended that since\nthe bonus payable for the accounting year 1964 was settled\non an ad hoc basis, it was not possible to say that the\nallocable surplus exceeded the maximum bonus payable for\nthat year and hence there could be no question of any excess\nto be carried forward and set on in the succeeding year. There is great force in ",
+    "ratio_summary": "Now, so far as the claim in\nrespect of the accounting year 1965 was concerned, the\namount to be carried forward and set on was settled at the\nfigure of Rs. 10.23 lacs under an agreement arrived at\nbetween the parties and no dispute, therefore, survived in\nrespect of that claim. But the claim in respect of the\naccounting year 1964 was strongly resisted on behalf of the\nBank and a preliminary objection was raised that the\nquestion whether any amount was liable to be carried forward\nand set on out of the profits of the accounting year 1964\ndid not form the subject-matter of the reference and hence\nthis Court, in appeal from the Industrial Tribunal, had no\njurisdiction to adjudicate upon this question. We do not\nthink there is any substance in this preliminary objection. Question No. 2, referred to the Industrial Tribunal, in\nterms raises the issue \"whether any amount is to be carried\nforward for being set on in the accounting year 1966\", and\nthis issue is wide enough to cover the question in regard to\ncarry forward and set on of an amount out of the profits of\nthe accounting year 1964.",
+    "final_order": "",
+    "outcome_summary": "Allowed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

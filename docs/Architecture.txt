@@ -1,100 +1,267 @@
-### ARCHITECTURE ###
+### ARCHITECTURE (Current Codebase + Target) ###
 
-┌──────────────────────────────────────────────────────────────┐
-│                          USER INTERFACE                      │
-│                   (Streamlit / Web UI)                       │
-│                                                              │
-│  • Case Facts Input (Plain Language)                          │
-│  • Follow-up Q&A                                              │
-│  • PDF Upload (Bare Acts / Judgments)                         │
-│  • Review & Approval Screen                                   │
-└───────────────┬───────────────────────────────┬──────────────┘
-                │                               │
-                │                               │
-        ┌───────▼───────┐               ┌───────▼────────┐
-        │ DOCUMENT      │               │ USER FACTS     │
-        │ INGESTION     │               │ PIPELINE       │
-        │ PIPELINE      │               │                │
-        └───────┬───────┘               └───────┬────────┘
-                │                               │
-                │                               │
-┌───────────────▼───────────────┐   ┌───────────▼─────────────┐
-│ PDF Loader / OCR               │   │ Facts Collector Agent   │
-│ (pdfplumber / Tesseract)       │   │ (Plain language Q&A)    │
-└───────────────┬───────────────┘   └───────────┬─────────────┘
-                │                               │
-┌───────────────▼───────────────┐   ┌───────────▼─────────────┐
-│ Chunking + Metadata Extractor  │   │ Fact Normalizer Agent   │
-│ • Sections                     │   │ • Structured JSON      │
-│ • Case Names                   │   │ • Dates / Places       │
-└───────────────┬───────────────┘   └───────────┬─────────────┘
-                │                               │
-┌───────────────▼───────────────┐   ┌───────────▼─────────────┐
-│ Embeddings Generator           │   │ Contradiction Checker   │
-│ (sentence-transformers)        │   │ Agent                  │
-└───────────────┬───────────────┘   └───────────┬─────────────┘
-                │                               │
-┌───────────────▼───────────────┐               │
-│ VECTOR STORE (FAISS)           │               │
-│ • Bare Acts                    │               │
-│ • Case Law                     │               │
-│ • Metadata + Citations         │               │
-└───────────────┬───────────────┘               │
-                │                               │
-────────────────┼────────────── CREW AI ORCHESTRATION ─────────┼──────────────
-                │                               │
-┌───────────────▼───────────────┐   ┌───────────▼─────────────┐
-│ Issue Framing Agent            │   │ Jurisdiction &           │
-│ • Legal Issues                 │   │ Maintainability Agent   │
-└───────────────┬───────────────┘   └───────────┬─────────────┘
-                │                               │
-┌───────────────▼───────────────┐   ┌───────────▼─────────────┐
-│ Bare Act Research Agent        │   │ Case Law Research Agent │
-│ • Relevant Sections            │   │ • Relevant Judgments    │
-└───────────────┬───────────────┘   └───────────┬─────────────┘
-                │                               │
-┌───────────────▼───────────────┐   ┌───────────▼─────────────┐
-│ Section Applicability Agent    │   │ Precedent Ranking Agent │
-│ • Ingredients Match            │   │ • Binding / Persuasive  │
-└───────────────┬───────────────┘   └───────────┬─────────────┘
-                │                               │
-┌───────────────▼───────────────┐
-│ Legal Opinion Agent            │
-│ • Plain English Opinion        │
-│ • Citations Attached           │
-└───────────────┬───────────────┘
-                │
-┌───────────────▼───────────────┐
-│ Counter-Argument Agent         │
-│ • Opposing Counsel View        │
-│ • Weakness Identification     │
-└───────────────┬───────────────┘
-                │
-┌───────────────▼───────────────┐
-│ Drafting Agent                 │
-│ • Petition / Pleading Draft   │
-│ • Affidavit / Memo            │
-└───────────────┬───────────────┘
-                │
-┌───────────────▼───────────────┐
-│ Formatting & Court Style Agent │
-│ • Cause Title                  │
-│ • Annexures                   │
-└───────────────┬───────────────┘
-                │
-┌───────────────▼───────────────┐
-│ QA & SAFETY CREW               │
-│                                │
-│ • Citation Verification Agent │
-│ • Hallucination Detection     │
-│ • Confidence Scoring Agent    │
-│ • Human Gatekeeper Agent      │
-└───────────────┬───────────────┘
-                │
-┌───────────────▼───────────────┐
-│ FINAL OUTPUT                   │
-│ • Legal Opinion (Explained)   │
-│ • Draft Document (DOC/PDF)    │
-│ • Source Citations            │
-│ • "REQUIRES HUMAN APPROVAL"   │
-└───────────────────────────────┘
+Nyaymalaw 3.0 — Legal RAG: fact collection, hybrid retrieval (FAISS + BM25 + cross-encoder),
+two-phase response (bare acts → case laws), web fallback, and optional CrewAI agents.
+
+Ref: api_server.py, services/interactive_chat.py, services/response_generator_v2.py,
+     services/fact_collector.py, retrieval/hybrid_retriever.py, Ingestion/smart_chunker.py.
+
+Target behaviour (see docs/IMPROVEMENT_ROADMAP.md): three-tier retrieval, 3–6 s responses,
+legal query expansion, statute-anchored case retrieval, no synchronous web/indexing in request.
+
+--------------------------------------------------------------------------------
+1. ENTRY POINTS (API)
+--------------------------------------------------------------------------------
+
+  FastAPI (api_server.py)
+       │
+       ├── POST /chat
+       │      → process_chat(phase=request.phase, conversation, current_message)
+       │      → Used by React UI for free-form chat (fact_collection or response_generation).
+       │
+       ├── POST /submit_case
+       │      → process_chat(phase="fact_collection") then, if complete,
+       │        process_chat(phase="response_generation") with facts_summary/intent.
+       │      → Returns next_question | bare_acts_presented | done (opinion).
+       │
+       ├── POST /interview_step
+       │      → Same as submit_case but with qa_history; supports bare_acts_review phase.
+       │
+       ├── POST /conversation/continue  [, /stream variants]
+       │      → process_chat(phase=fact_collection | response_generation) with full conversation.
+       │
+       ├── POST /search
+       │      → fuse_bare_act_and_case_law(issue) — agents/Legal_Research/act_case_fusion_agent.
+       │      → Uses hybrid_retriever.search_bare_acts_auto / search_case_laws_auto; web fallback.
+       │
+       ├── Case law discovery (case_law_discovery.routes)
+       │      → is_case_law_discovery_request(message) → run_case_law_discovery(message).
+       │      → Presents documents for user to Index or Clear; separate from main chat pipeline.
+       │
+       ├── POST /indexing/run
+       │      → index_new_bare_acts / index_new_case_laws (services) for selected pending items.
+       │
+       └── GET /health, /chats, /bareacts/list, /caselaws/list, /eval/*, /docs/architecture, etc.
+
+--------------------------------------------------------------------------------
+2. CHAT PIPELINE (services/interactive_chat.process_chat)
+--------------------------------------------------------------------------------
+
+  phase = "fact_collection"
+       │
+       ├── content_guard.check_query_safety(current_message) → block if unsafe.
+       │
+       ├── chat_mode = "general" → _run_generic_chat (no retrieval; LLM-only answer).
+       │
+       ├── chat_mode = "legal_research" → _run_search_or_lookup (single research query).
+       │
+       └── else → services/fact_collector.get_next_question_or_complete(conversation, current_message)
+                  │
+                  ├── is_greeting(msg) → return { action: "ask", question: ... }
+                  │                     TARGET: for messages in greeting set, return static template
+                  │                     (no LLM); only call generate_greeting_response when not in set.
+                  │                     Goal: greeting <0.2 s.
+                  ├── is_stop_signal(msg) → LLM summarise → complete.
+                  ├── Gate 1 (ROUTING_GATE1_SYSTEM): GREETING | LEGAL | GENERALIST
+                  │   → GREETING: ask with greeting reply.
+                  │   → GENERALIST (and not force_legal): complete with intent=generic_chat → _run_generic_chat.
+                  ├── Gate 2 (ROUTING_GATE2_SYSTEM), if LEGAL: search | lookup | legal_opinion | bulk_ingest
+                  │   → Parsed: facts_summary, intent, result_count, search_strategy, states.
+                  │   → Fallback: agents/orchestrator_agent.run_orchestrator.
+                  └── action = "complete" + intent = legal_opinion
+                        → _run_bare_acts_phase(facts, states)  [Phase A]
+                        → Returns phase="bare_acts_presented" (bare acts + optional followup question).
+
+  phase = "response_generation"
+       │
+       └── services/response_generator_v2.generate_response_v2(...)
+             OR (if coming from bare_acts_presented) generate_final_opinion_with_case_laws(...)
+             → Hybrid retrieval, sufficiency, web fallback, final opinion with citations.
+
+  phase = "bare_acts_review"
+       │
+       └── generate_final_opinion_with_case_laws(facts_summary, bare_acts, additional_info, states).
+
+--------------------------------------------------------------------------------
+3. THREE-TIER RETRIEVAL (TARGET)
+--------------------------------------------------------------------------------
+
+  TIER 1 — Fast local (during user request only, target <3 s)
+       │
+       ├── Intent extraction, dispute decomposition.
+       ├── Query expansion: up to 3 variants (base, legal synonym, statute-style; optional section-number).
+       ├── Hybrid retrieval (FAISS + BM25) per query → merge → dedupe → cross-encoder rerank.
+       ├── Section extraction from top bare-act results (act_name + section_number).
+       ├── Statute-anchored case retrieval: build case queries from sections, hybrid search, merge, rerank.
+       ├── Authority ranking (court-tier boost: e.g. Supreme Court +5, High Court +3).
+       └── Top passages → LLM answer → return response.
+
+  TIER 2 — Optional web discovery (asynchronous, does not block response)
+       │
+       └── If coverage weak (e.g. local result count < 3): run tiered_search in background;
+           surface "additional sources" when ready. User gets local answer first.
+
+  TIER 3 — Index enrichment (offline / on demand)
+       │
+       └── Web or discovery finds document → add to pending_indexing only.
+           Chunking and indexing run only when user clicks Index (POST /indexing/run) or a
+           background job. auto_enricher must NOT run during the chat response (no download/
+           parse/chunk inside the request).
+
+  Synchronous vs asynchronous:
+       • IN REQUEST: Tier 1 only (intent, dispute, 3-query expansion, hybrid, rerank, section
+         extraction, statute-anchored case retrieval, authority ranking, LLM).
+       • OUT OF REQUEST: tiered_search (when used), auto_enricher (download→chunk→index only
+         on Index or background job). Web search must not block the response.
+
+--------------------------------------------------------------------------------
+4. RESPONSE GENERATOR V2 (services/response_generator_v2)
+--------------------------------------------------------------------------------
+
+  - retrieve_bare_acts_phase(facts_summary, states)
+        → expand_legal_query(facts) [TARGET: return up to 3 queries, not one string]
+        → dispute_decomposer.decompose(facts_summary) [disputes]
+        → Per dispute: hybrid retrieval (bare acts + case laws) via retrieval.hybrid_retriever
+        → Act-profile pre-filter (act_profile_index) when many acts
+        → Quality filters, MIN_RERANK_SCORE, diversity (max sections per dispute)
+        → Sufficiency check (_check_bare_act_sufficiency) → optional web tiered_search + auto_enricher
+        → TARGET: web only when local result count < N (not score threshold); auto_enricher only
+          adds to pending_indexing during request (no chunk/embed in request).
+        → Returns bare_acts, disputes, followup_question, intro_text
+
+  - generate_response_v2(facts, intent, document_types, search_strategy, result_count)
+        → Same retrieval pipeline; single-shot full opinion (bare acts + case laws + explanation).
+
+  - generate_final_opinion_with_case_laws(facts_summary, bare_acts, additional_info, states)
+        → TARGET: section extraction from bare_acts; statute-anchored case queries; case hybrid
+          retrieval on those queries; authority ranking (court boost).
+        → Case-law retrieval aligned to disputes + bare sections; web fallback; LLM opinion.
+
+  Target retrieval path (see IMPROVEMENT_ROADMAP):
+        → facts → query expansion (3 variants) → hybrid per query → merge → dedupe → rerank
+        → section extraction → statute-anchored case retrieval → authority ranking → LLM.
+        → retrieval/hybrid_retriever.search_bare_acts_auto / search_case_laws_auto
+        → retrieval/tiered_search only when needed, and not blocking (or background).
+        → retrieval/auto_enricher only for indexing step (not during response).
+        → retrieval/indian_kanoon_client for Indian Kanoon API (citation boost).
+        → retrieval/sufficiency_analyzer (LLM) for gap analysis.
+
+--------------------------------------------------------------------------------
+5. RETRIEVAL (retrieval/)
+--------------------------------------------------------------------------------
+
+  hybrid_retriever.py
+       │
+       ├── normalize_legal_query(query) — expand abbreviations (IPC→Indian Penal Code, BNS, TPA, …).
+       ├── FAISS (sentence-transformers / config.EMBEDDING_MODEL) — semantic search.
+       ├── BM25 (config.BARE_BM25_INDEX, CASE_BM25_INDEX) — keyword search.
+       ├── Merge candidates → cross-encoder (config.CROSS_ENCODER_MODEL) re-rank.
+       ├── search_bare_acts_auto(query, top_k), search_case_laws_auto(query, top_k).
+       └── safe_read_faiss, load_chunks, load_bm25_index; act_profile_index for act-level filter.
+
+  tiered_search.py      — Tiered web search (official courts → legal portals → news).
+                          TARGET: not run synchronously in request; run in background if coverage weak.
+  auto_enricher.py      — Fetch PDFs, save to Drive, index. TARGET: only run on Index action or
+                          background job; during response only add to pending_indexing (no chunk/embed).
+  indian_kanoon_client.py — Indian Kanoon API; citation-count boost (CITATION_BOOST_WEIGHT).
+  act_profile_index.py  — Act-level profiles for pre-filtering when index has many acts.
+  sufficiency_analyzer.py — LLM-driven sufficiency/gap analysis.
+
+  Target limits (Tier 1): max_queries = 3, vector_candidates = 40, bm25_candidates = 40,
+  rerank_top = 8. Web only when local result count < 3 (not by score threshold).
+
+--------------------------------------------------------------------------------
+6. DOCUMENT INGESTION (Ingestion/)
+--------------------------------------------------------------------------------
+
+  smart_chunker.py (v3)
+       │
+       ├── Bare acts: section-level chunking (_SECTION_PATTERNS, em-dash "NNN. Title.—");
+       │   sub-sections at (1)/(2), (a)/(b); Proviso/Explanation/Illustration as sub-chunks.
+       │   TARGET: strip editorial noise (Subs. by Act…, footnotes, page numbers) before chunking.
+       ├── Case laws: paragraph-level; _detect_case_metadata (case_name, court, year, citation).
+       │   TARGET: improve metadata parsing; add paragraph_type (facts/reasoning/ratio);
+       │   add sections_cited; strip OCR noise.
+       ├── process_bare_acts_directory, process_case_laws_directory → chunks with metadata.
+       └── Dedup case chunks (case_name, para_num, first-200-chars).
+
+  build_v2_index.py
+       │
+       ├── Reads BARE_ACTS_DIR, CASELAW_DIR; runs smart_chunker.
+       ├── Embeds chunks (same EMBEDDING_MODEL as hybrid_retriever); builds FAISS index.
+       ├── Builds BM25 index (retrieval.hybrid_retriever.BM25).
+       └── Writes BARE_INDEX_V2, BARE_CHUNKS_V2, CASE_INDEX_V2, CASE_CHUNKS_V2,
+           BARE_BM25_INDEX, CASE_BM25_INDEX (config).
+
+  Incremental indexing: services/bare_act_indexer_incremental, case_law_indexer_incremental
+       → Add new documents to v2 indexes without full rebuild.
+
+  Rebuild: required after ingestion logic changes (editorial noise strip, case metadata,
+  paragraph_type, sections_cited, OCR cleaning). See IMPROVEMENT_ROADMAP "Vector store: what
+  changes, and when to rebuild".
+
+--------------------------------------------------------------------------------
+7. DATA & CONFIG (config.py)
+--------------------------------------------------------------------------------
+
+  DATA_ROOT (env: NYAYMALAW_DATA_ROOT) → chat_history, vector_store, BareActs, CaseLaws.
+  Vector store v2: bareacts_v2.index, bareacts_v2_chunks.json; caselaws_v2.index, caselaws_v2_chunks.json.
+  BM25: bareacts_bm25.json, caselaws_bm25.json.
+  Act profiles: act_profiles_meta.json, act_profiles_bm25.json (optional).
+  EMBEDDING_MODEL, CROSS_ENCODER_MODEL; FEEDBACK_LOG_PATH; INDIAN_KANOON_API_TOKEN; etc.
+
+--------------------------------------------------------------------------------
+8. SUPPORTING SERVICES
+--------------------------------------------------------------------------------
+
+  fact_collector.py    — Greeting detection, Gate 1/2 routing, get_next_question_or_complete.
+  content_guard.py    — check_query_safety, check_response_safety, sanitize_input.
+  feedback_logger.py  — log_interaction → Nyaymalaw_Feedback_Log_v3.xlsx/html.
+  ai_reviewer.py      — run_ai_review (citation/review rules).
+  progress_tracker.py  — Progress callbacks for UI.
+  dispute_decomposer.py — Decompose facts into disputes for per-dispute retrieval.
+  tier_manager.py     — User tier / rate limits (if enabled).
+
+--------------------------------------------------------------------------------
+9. AGENTS (CrewAI, optional)
+--------------------------------------------------------------------------------
+
+  agents/orchestrator_agent.py — Fallback when Gate 2 parsing fails; run_orchestrator(conversation, message).
+  agents/Legal_Research/act_case_fusion_agent.py — fuse_bare_act_and_case_law; used by POST /search.
+        → _search_bare_acts, _search_case_laws (hybrid_retriever); _web_fallback_bare_acts / case_laws.
+
+--------------------------------------------------------------------------------
+10. LLM
+--------------------------------------------------------------------------------
+
+  llm/ollama_client.py — ask_llm, streaming; get_model_display_for_prompt, get_gpu_info.
+  llm/config.py        — CREWAI_LLM for agents; model selection.
+
+--------------------------------------------------------------------------------
+11. HIGH-LEVEL FLOW (Legal Opinion) — TARGET
+--------------------------------------------------------------------------------
+
+  User message
+       → process_chat(phase=fact_collection)
+       → fact_collector: greeting? → static template (<0.2 s). Else Gate 1 → Gate 2 → complete.
+       → _run_bare_acts_phase: 3-query expansion, decompose disputes, hybrid retrieval (bare + case),
+         rerank, section extraction, statute-anchored case retrieval, authority ranking;
+         no web/indexing in request; return bare_acts + followup.
+       → [User may add info and confirm]
+       → process_chat(phase=response_generation) or bare_acts_review with user's bare_acts
+       → generate_response_v2 / generate_final_opinion_with_case_laws: statute-anchored case
+         retrieval, LLM opinion with citations, indexing_candidates (pending only; no chunk in request).
+       → Response to UI; optional materials_to_confirm; feedback_logger, ai_reviewer.
+
+  Web search and auto_enricher (PDF download, chunking, indexing) do not run inside the request;
+  they run asynchronously or when the user clicks Index. Target response time: 3–6 s for full opinion.
+
+  Search-only (POST /search): act_case_fusion_agent → hybrid_retriever → web fallback → fused results.
+
+--------------------------------------------------------------------------------
+12. REFERENCES
+--------------------------------------------------------------------------------
+
+  For multi-agent routing and intent behaviour, see docs/CREWAI_MULTI_AGENT_ARCHITECTURE.md.
+  For latency diagnosis, three-tier design, legal query augmentation, statute-anchored retrieval,
+  vector store rebuild, and code checklist, see docs/IMPROVEMENT_ROADMAP.md.

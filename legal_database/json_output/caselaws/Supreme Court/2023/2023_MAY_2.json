@@ -1,0 +1,691 @@
+{
+  "case_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND",
+  "case_name": "Tata Motors Limited vs The Brihan Mumbai Electric Supply And ...",
+  "normalized_case_name": "TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_...",
+  "court": "Supreme Court of India",
+  "year": "2023",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 3897 of 2023",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "19 May 2023",
+  "judges": [
+    "Pamidighantam Sri Narasimha",
+    "Dhananjaya Y. Chandrachud"
+  ],
+  "author": "Pamidighantam Sri Narasimha",
+  "bench_type": "division",
+  "petitioner": "Tata Motors Limited",
+  "respondent": "The Brihan Mumbai Electric Supply And ...",
+  "reporter_citations": [],
+  "outcome": "set aside",
+  "disposition": "set_aside",
+  "cites_count": 16,
+  "cited_by_count": 32,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2023\\MAY\\2023_MAY_2.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO.3897 OF 2023\n (arising out of SLP(C) NO. 15708 OF 2022)\n\n TATA MOTORS LIMITED ….APPELLANT(S)\n\n VERSUS\n\n THE BRIHAN MUMBAI ELECTRIC .…RESPONDENT(S)\n SUPPLY & TRANSPORT\n UNDERTAKING (BEST) AND OTHERS\n\n WITH\n\n CIVIL APPEAL NO. 3899 OF 2023\n (arising out of SLP(C) No. 11871 OF 2022)\n\n CIVIL APPEAL NO.3898 OF 2023\n (arising out of SLP(C) No. 11933 OF 2022)\n\n JUDGMENT\nJ. B. PARDIWALA, J.:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P002_C01",
+      "text": "1. Leave granted.\n\nwere taken up for hearing analogously and are being disposed of by this\ncommon judgment and order.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P003_C01",
+      "text": "3. The Appeal arising out of SLP(C) No. 15708 of 2022 is at the instance\nof TATA Motors Limited (for short, “TATA Motors”) (Original Writ Petitioner\nbefore the High Court).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P004_C01",
+      "text": "4. The Appeal arising out of SLP(C) No. 11871 of 2022 is at the instance\nof EVEY Trans Pvt. Ltd. (for short, “EVEY”) (Original respondent No. 2\nbefore the High Court).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P005_C01",
+      "text": "5. The Appeal arising out of SLP(C) No. 11933 of 2022 is at the instance\nof the Brihan Mumbai Electric Supply & Transport Undertaking (for short,\n“BEST”) (Original respondent No. 1 before the High Court), a statutory\ncorporation operating under the provisions of the\nMumbai Municipal\nCorporation Act, 1888\n.\nFACTUAL MATRIX",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P006_C01",
+      "text": "6. BEST floated a tender bearing No. DMM(T-II)/08/TCU/73169/2021-\n2022/Advt. dated 26.02.2022 for the supply, operation and maintenance of\n1400 (+50% variation) Single Decker AC Electric Buses with driver, for the\npurpose of public transport service within the city of Mumbai along with other\ncivil infrastructure development at the BEST depots for a period of 12 years\n(hereinafter referred to as, ‘the Tender’).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P007_C01",
+      "text": "7. The Tender document provided for Technical specifications as\nstipulated under Clause 3.5(e) and Clause 12 of\nSection 2\nof Schedule IX,\nunder which the bidders were required to provide Single Decker Buses which\n\ncan run 200 Kms in single charge without interruption in actual conditions for\nthe relevant Gross Vehicle Weight (GVW) with air conditioning with not more\nthan 80% battery being consumed. Clause 3.5(e) and Clause 12 respectively\nare reproduced hereunder:\n“SCHEDULE IX\n TECHNICAL SPECIFICATIONS\n…. Section 2\n: Technical specifications of SD AC Electric Buses under Wet Lease\nScheme\n…. Sr. Description Specifications\nNo.\n3.5 Electric Electric propulsion system motor rating/power\n Propulsion sufficient to provide:\n System\n(e) Minimum The minimum operating Km of the buses offered in\n Operation single charge will be 200 Km, for SD buses\n Range per bus respectively with (80% SoC). These offered buses\n per day should run above mentioned minimum Km without\n any interruption.\n xxx xxx xxx\n12 Operating Presently the BEST buses operate for around an\n range average of 200 km. per day (mostly uninterrupted).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P007_C02",
+      "text": "Keeping the above in mind, the EV manufacturers\n have to provide vehicles which can run 200 km. in\nsingle charge for SD AC Buses in actual conditions\n for the relevant GVW with Air Conditioning. The\n Operating schedule shall be provided by BEST and\n the successful bidder has to ensure the\n uninterrupted operation of the schedules through\n adequate spare buses. In case the successful bidder is unable to maintain\n\nuninterrupted operation of schedules for want of\n charging, then BEST shall take suitable action by\n levying additional penalty by non-payment towards\n assured kms for that entire day per instance and if\n the instance keeps on recurring for a long period of\n time then the BEST may resort to even termination\n of Contract.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P008_C01",
+      "text": "8. In all, eight market players participated in the Tender process, including\nEVEY and TATA Motors. In the pre-bid meeting held on 11.03.2022, TATA\nMotors submitted its pre-bid points, wherein under Point 1, it requested BEST\nto consider its bid for 200 Kms per day with 75-minutes of opportunity\ncharging time during the day operations and range testing conditions as per\nAIS 040/FAME II.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P009_C01",
+      "text": "9. On 15.03.2022, BEST published the minutes of the pre-bid meeting.\nBEST revised certain specifications, however, the modifications as requested\nby TATA Motors were rejected. BEST opted for a specific reference to “in\nactual conditions” and excluded any reference to “AIS 040” or “Standard\nConditions” in the Tender specifications. It is pertinent to note that the AIS\n040 certification would be upon standard testing conditions and not on the\nactual road conditions, which would account for passenger load, temperature,\ntraffic conditions, etc.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P010_C01",
+      "text": "10. On 27.04.2022, BEST issued Corrigendum No. 8 specifying the end of\nsubmission of bids for the Tender as 02.05.2022 and the date of opening the\ntechnical bid as 04.05.2022.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P011_C01",
+      "text": "11. TATA Motors submitted its bid on 25.04.2022, wherein it guaranteed\noperating range of 200 Kms with 80% State of Charge, “SoC” (i.e. 20%\nreserve left upon running 200 Kms in single charge), however, the same was\n\nachieved “in standard test conditions as per AIS 040”. This was a deviation\nfrom the Tender specifications.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P012_C01",
+      "text": "12. EVEY submitted its bid on 02.05.2022, claiming that the same was\nsubmitted without any deviation from the Tender conditions including the\ncondition of minimum operating range of 200 Kms in a single charge. EVEY\nclaimed that the TATA Motors was the only bidder which, referenced\n“standard test conditions” instead of “actual road conditions”, while stating\nthat it complied with the Tender requirement of minimum operating range.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P013_C01",
+      "text": "13. Under Clause 5.1.1 of the Schedule II (Definitions and Instructions to\nBidders) of the Tender, the mode and manner of submission of the bid\nproposal has been provided. The said clause also provided for certain\nannexures to be submitted along with the bid. Pertinently, Annexure Y, which\nis an undertaking to be given by the Operational Equipment Manufacturer\n(OEM) for the operating range of the buses, was not required to be submitted\nalong with the bid but was only required to be submitted by the successful\nbidder. The purpose of the undertakings under Clause 3.5 (e) and Clause 12 of\nSection 2\nof Schedule IX (Technical Specifications) and Annexure Y is to\nconfirm that the requirement of meeting the 200 Kms range in single charge is\nsatisfied.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P014_C01",
+      "text": "14. EVEY along with its bid dated 02.05.2022 submitted Annexure Y,\nwherein the OEM gave an undertaking for the operating range which included\na table that mentioned that the operating range for a single decker bus would\nbe 200 Kms with the opportunity charging time of 1 hour. The same was done\nin accordance with the specifications of the earlier tender dated 20.08.2021,\nwhich allowed for an opportunity time of 60 minutes.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P015_C01",
+      "text": "15. EVEY vide email dated 06.05.2022, provided a revised Annexure Y as\nper the Single Charge Requirements mentioned in the Tender along with an\nexplanation for the same holding it to be a mere “clerical error”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P016_C01",
+      "text": "16. The Tender bids were opened on 04.05.2022 and the technical\nsuitability evaluation was announced on 06.05.2022. BEST in its technical\nsuitability evaluation dated 06.05.2022, held TATA Motors along with four\nother bidders, to be “technically non-responsive”. TATA Motor’s bid was\nrejected on account of technical deviation with respect to the operating range\nin its Annexure F and Annexure Y, respectively. The bid offered by EVEY in\nthe said report was deemed to be “technically responsive”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P017_C01",
+      "text": "17. Thereafter, on 06.05.2022, the price bids of the eligible bidders were\nopened, and EVEY was declared to be the L1 bidder. The price bid of TATA\nMotors was not opened in accordance with Sr. No. 7 of the Schedule I\n(Invitation for Proposal) and Sr. No. 15 of the Schedule II (Definitions and\nInstructions to Tenderers) of the Tender document. Sr. No. 7 of Schedule I\nreads as under:\n“7. The Bidders/Tenderers who meet the mandatory technical\n and commercial eligibility criteria as mentioned in Schedule III\n of Tender Document shall only be held eligible for opening of\n price bids.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P018_C01",
+      "text": "18. Sr. No. 15 of Schedule II (Definitions and Instructions to Tenderers) of\nthe Tender document, reads as under:\n“15. The Bidders shall accept unconditionally BEST's\n 'Conditions of Tender & Conditions of Supply' in TOTO, failing\n which their financial bids shall not be considered for ·opening.\n Bidders are requested to go through the same carefully.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P019_C01",
+      "text": "19. Aggrieved by the technical suitability evaluation issued by BEST by\nwhich it rejected the bid of TATA Motors, the latter approached the High\nCourt of Judicature at Bombay by way of a writ petition bearing WP(L) No.\n15548 of 2022 dated 10.05.2022. TATA Motors prayed for the following\nreliefs:\n“18.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P019_C02",
+      "text": "The Petitioners therefore pray that this Hon'ble Court may be\n pleased to:\n(a) Issue a writ of Certiorari or any other writ, order or direction\n in the nature of Certiorari to call for the records of the case and\n quash and set aside the decision dated 06.05.2022 taken by the\n Respondent No. 1 declaring the bid submitted by the Petitioner No.\n 1 as \"technically non-responsive\";\n(b) Issue a writ of mandamus or writ in the nature of mandamus or\n any appropriate writ, order or direction under\nArticle 226\nof the\n Constitution of India directing Respondent No. 1 to reconsider the\n bid submitted by the Petitioner No. 1 for the purposes of the\n Tender;\n(c) In the alternative to prayer (b) issue a writ of mandamus or\n writ in the nature of mandamus or any appropriate writ, order or\n direction under\nArticle 226\nof the Constitution of India directing\n Respondent Nos. 1 to cancel the Tender and float a fresh tender;\n(d) During the pendency of the Petition, restrain Respondent No. 1\n from taking any steps towards award of contract under the Tender;\n(e) ad-interim reliefs in terms of prayers in clause (d) above;\n(f) Cost of the present Petition; and\n(g) such further and other reliefs as the",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P019_C03",
+      "text": "nature and the\n circumstances of the case may require be granted to the\n Petitioner.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P020_C01",
+      "text": "20. During the pendency of the aforesaid writ petition BEST awarded the\nTender in favour of EVEY with the Letter of Acceptance dated 20.05.2022.\nEVEY accordingly submitted the required Performance Bank Guarantee on\n23.05.2022. An agreement for operation of Stage Carriage Services for public\ntransport of Single Decker AC Electric Buses with Driver in the city of\n\nMumbai and its extended suburbs on Gross Contract Cost (GCC) model for 12\nyears was entered into between the EVEY and BEST on 26.05.2022.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P021_C01",
+      "text": "21. A subsidy bank guarantee dated 02.06.2022 was submitted by EVEY\nand BEST released the requisite amount to the EVEY’s account towards\nsubsidy on 10.06.2022. The EVEY even provided the BEST with 8 buses\nbetween 04.07.2022 and 05.07.2022.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P022_C01",
+      "text": "22. The High Court vide its impugned order and judgment dated\n05.07.2022, took the view that the requirement for the operating range to be\nmore than 200 Kms in a single charge in “actual conditions” was\nunambiguous. Accordingly, the High Court upheld the disqualification of\nTATA Motors and rejected their claim from being considered as an eligible\nbidder as they failed to comply with the technical requirements of the Tender.\nThe High Court in paragraphs 9 and 13 respectively of the impugned order\nobserved thus:\n“9. Reading the aforesaid, it is unambiguous that operating range\n provided in the tender document is that the electric vehicles\n manufacturers have to provide the vehicles which can run 200 kms\n in single charge for SD air conditioning buses in actual conditions\n for relevant GVW air conditioning. The prima donna requirement\n of the tender document it appears is that the electric vehicle\n offered should run 200 Kms in a single charge for Single Decker\n air conditioning bus in actual conditions with 80% SoC without\n any interruption.\nXxx xxx xxx",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P023_C01",
+      "text": "13. Petitioner No.1 did not submit its bid for 200 Kms@ 80% SoC\n in single charge on actual condition but at standard test conditions\n as per AIS 040. As per the tender condition if a person to whom\n the contract is awarded i.e. lessee does not comply with the\n condition of achieving range of 200 Kms at 80% SoC in single\n charge then he is penalized for the same. Meaning thereby,\n\nRespondent No.1 was conscious that the standard test conditions\n as per AIS 040 is different than the actual condition. The tender of\n the Petitioner certainly was not compliant with the said clause.\nThe Petitioner has deviated from the material and the substantial\n term of the tender. The Petitioner, as such, is rightly disqualified\n for deviating from the material requirements stipulated in the\n tender.”\n (Emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P024_C01",
+      "text": "23. The High Court, after holding as above proceeded further to discuss as\nto why the bid of EVEY also should have been rejected. The High Court noted\nEVEY’s contention that Annexure Y submitted along with the technical bid\nwas an incidental document, however, rejected such contention. The High\nCourt while referring to Clause 16 of Schedule I held that once the final date\nfor the submission of the bid expires, there can be no additions/corrections/\nsubmissions of documents by the bidders. Clause 16 of Schedule I of the\nTender is produced hereinbelow:\n“SCHEDULE I\n Invitation for Proposal\n …",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P025_C01",
+      "text": "16. Interested Bidders are advised to study this Tender\n document carefully before submitting their proposal in\n response to this Tender document. Submission of a\n proposal in response to this tender shall be deemed to\n have been after careful study and examination of this\n document with full understanding of its terms,\n conditions and implications. No addition / correction,\n submission of documents will be allowed after opening\n of technical bid”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P026_C01",
+      "text": "24. The High Court as a result, held that the email dated 06.05.2022 ought\nnot to have been entertained, and the technical bid evaluation, which was\nreleased on the same day did not depict fairness in the actions of BEST. The\nHigh Court in paragraphs 20 – 22 respectively held as under:\n“20. It has been contended by Respondent No.1 that letter issued\n by Respondent No.2 on 6th morning did not influence the\n decision to hold the bid of Respondent No.2 responsive in the\n afternoon of 6th May 2022. The same is not borne-out from the\n facts and circumstances of the case. Clause-16, as stated above\n specifically and categorically prohibits additions / corrections /\n submission of documents after opening of technical bid. Technical bids have been opened on 4th May 2022. Thereafter no\n such letter could have been entertained.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P026_C02",
+      "text": "The proximity of the\n time i.e. 6th May at 11.35 am. the letter issued by Respondent\n No. 2 along with the modified Annexure-Y and after two hours,\n the bid of Respondent No.2 held responsive, does not support the\n contention of Respondent No.1 that the said revised Annexure-Y\n and the letter written on 6th May morning did not weigh in\n holding Respondent No.2's bid responsive. First of all, accepting\n the letter from Respondent No.2 by Respondent No.1 on 6 May\n morning itself was against the specific terms of the tender\n (clause 16). It is further the case of Respondent No.1 that on 6 th\n morning revised Annexure-Y forwarded by Respondent No.2 was\n sou motu and not at the instance of Respondent No.1, may not be\n relevant here. The fact remains that Respondent No.2 was\n allowed to submit the letter and revised Annexure-Y after two\n days of the opening of technical bids. It is also the fact that on\n 28th April Respondent No.2 had submitted the bid and on 2nd\n May it had submitted the revised bid, however, with the same\n Annexure-Y clearly stating that it would require opportunity\n charging tune of one hour. The same would not be in tune with\n the tender conditions.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P027_C01",
+      "text": "21. From the aforesaid facts, it is clear that; (i) the tender\n documents submitted by the Petitioner contained deviation in\n Annexure-Y i.e. the undertaking from OEM stating that one\n hour charging time would be required for achieving operating\n range of 200 Kms.; and (ii) Respondent No.2 submitted the\n\nrevised Annexure-Y on 6th morning i.e. two days after the\n opening of technical bids and after acceptance of revised\n Annexure-Y on 6tb May morning, the technical bid of\n Respondent No.2 was accepted in the afternoon of the same\n day.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P028_C01",
+      "text": "22. The aforesaid does not depict fair play in action. The facts\n create doubt about, whether the decision was a fair one or was\n the decision reached fairly? The same does not appear to be so\n in view of the facts discussed above while accepting the bid of\n Respondent No.2 as responsive.”\n (Emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P029_C01",
+      "text": "25. In view of the aforesaid, the High Court thought fit to declare EVEY\nalso as an unsuccessful bidder. The High Court in paragraphs 23 and 24\nrespectively held as under:\n“23. We are aware that the principle of equity and natural justice\n stay at a distance and no judicial interference is warranted in\n case of an error in assessment. However, the same holds good, if\n the decision is bona fide. We are also aware that interference of\n the Court would lead to some delay. It would be seen that earlier\n also the tenders were issued. However, because of non-sanction\n of subsidy, the earlier tender process was scrapped and fresh\n tender process was issued. For accepting the bid of Respondent\n No.2, 90 days’ time is provided to it for getting the prototype\n vehicle. The said period is not over. It is not even one month. The\n Respondent No.2's tender is accepted. The Courts upon coming\n to the conclusion that the decision making process was not fair.\n The same lacked fair play in action and arbitrary, will have to\n step in.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P030_C01",
+      "text": "24. In the light of the above, we set aside the decision of the\n Respondents of acceptance of tender of Respondent No.2.\nRespondent No.1, if it so desires, may proceed with a fresh tender\n process.”\n (Emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P031_C01",
+      "text": "26. In such circumstances referred to above, all the three parties are here\nbefore this Court with their respective petitions.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P032_C01",
+      "text": "27. It is pertinent to note that during the pendency of the proceedings\nbefore the High Court and after submitting the subsidy guarantee, EVEY had\nalready supplied total 8 buses between 04.07.2022 to 05.07.2022. However,\nthis Court by an interim order dated 14.07.2022 granted an interim stay of the\nimpugned judgment insofar as EVEY is concerned. This Court observed that,\nthe supply of the buses, if any, by EVEY would be subject to the result of\nthese petitions and EVEY shall not claim any equity at a later stage.\nSUBMISSIONS ON BEHALF OF THE “EVEY”",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P033_C01",
+      "text": "28. Mr. Rohatgi, the learned Senior counsel appearing for EVEY placed\nstrong reliance on the decision of this Court in\nW.B. State Electricity Board v.\nPatel Engineering Co. Ltd. & Ors.\n, reported in (2001) 2 SCC 451 to submit\nthat the equitable relief can be granted to the bidder where it has made a\nmaterial mistake of fact in the bid and upon discovery of that mistake he has\nacted promptly and rectified his mistake. He submitted that, Clause 16 of\nSchedule I of the Tender would not apply to a document, like Annexure Y,\nwhich was originally required to be submitted by the \"Successful Bidder'' after\nthe evaluation of the bid. Furthermore, the learned Senior counsel proceeded\nto submit that, even in the original Annexure Y as submitted on 02.05.2022,\nhis client had mentioned that, “These offered buses will run above mentioned\nminimum Kms without any interruption”.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P034_C01",
+      "text": "29. He submitted that, Annexure F specifies that “If the variations specified\nherein, are found to be in nature of contradiction to BEST’s\nrequirements/specifications then such Bids will be treated as Non-responsive”\n\nand therefore, the bidder would have to essentially comply with the\nspecifications mentioned in Annexure F otherwise the bid would be treated as\n“technically non-responsive”. He submitted that Annexure F can be rightly\ntermed as an essential condition of Tender. He placed strong reliance on the\ndecision of this Court in the case of\nKanhaiya Lal Agrawal v. Union of India\nand Others\n, reported in (2002) 6 SCC 315, to submit that whether a condition\nis essential, or collateral could be ascertained by reference to the consequence\nof non-compliance thereto. It was submitted that if non-fulfilment of the\nrequirement results in rejection of the tender, then it would be an essential part\nof the tender otherwise it is only a collateral term.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P034_C02",
+      "text": "He further submitted that,\nnon-compliance of the conditions mentioned in Annexure Y would lead to\nlevy of penalty and if the instance keeps on recurring, it may lead to\ntermination of contract and therefore, Annexure Y should be treated as a\ncollateral term of the Tender. Under Clause 5.1.1 of Schedule II (Definitions\nand Instructions to Bidders) of the Tender document Annexure Y was not\nrequired to be submitted along with the bid documents but the same was to be\nsubmitted by the \"Successful Bidder''.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P035_C01",
+      "text": "30. He submitted that, in view of the decision of this Court in,\nN.G.\nProjects Limited v. Vinod Kumar Jain and Others\n, reported in (2022) 6 SCC\n127, the writ court should refrain itself from imposing its decision over the\ndecision of the employer as to whether to accept the bid of a tenderer and that\ncontract of public service should not be interfered with lightly. The injunction\nor interference in the Tender leads to additional costs on the State and is also\nagainst public interest.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P036_C01",
+      "text": "31. He submitted that the allegations of favouritism levelled by TATA\nMotors by pointing towards the fact that apart from EVEY, there were two\nmore parties who were technically qualified and were L2 and L3 viz., Switch\n\nMobility Automotive Limited and PMI Electro Mobility Solutions Private\nLimited respectively, EVEY was declared L1 and awarded the Tender only\nafter opening of the price bids at a later stage are reckless and baseless.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P037_C01",
+      "text": "32. Relying on the decisions of this Court in\nRaunaq International Ltd. v.\nI.V.R. Construction Ltd. and Others\nreported in (1999) 1 SCC 492 and S.S.\n& Company v. Orrisa Mining Corporation Limited reported in (2008) 5 SCC\n772, he submitted that once the High Court found TATA Motors to be\ntechnically non-compliant, it ought not to have entertained a challenge to the\ntendering process at the instance of an unsuccessful party. The writ petition\nwas filed against the technical evaluation, whereas, the contract is now well\nunderway at the stage of performance. He submitted that interfering with the\ntechnical evaluation at this stage would make the contract redundant and\ncause loss of exchequer’s money.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P038_C01",
+      "text": "33. In the last, the learned Senior counsel submitted that till date EVEY has\nsupplied 20 tailor-made buses and the civil infrastructure for these buses has\nalso been put in place.\nSUBMISSIONS ON BEHALF OF THE “TATA MOTORS”",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P039_C01",
+      "text": "34. Dr. Abhishek Manu Singhvi, the learned Senior counsel, appearing for\nTATA Motors vehemently submitted that the contract awarded by BEST to\nEVEY is per se illegal. The learned Senior counsel argued that the acceptance\nof the EVEY’s revised Annexure Y after the expiry of the bid submission end\ndate and technical bid opening date is contrary to the Tender conditions.\nClause 16 of Schedule I (Invitation for Proposal) of the Tender prohibits any\naddition, correction or submission of document after the technical bid\nopening. However, the same was not followed and by allowing a bidder to\n\ncorrect errors at a later stage may lead to unequal treatment of bidders. The\ndecisions of this Court in\nPoddar Steel Corporation v. Ganesh Engineering\nWorks and Others\n, reported in (1991) 3 SCC 273 (Para 6);\nW.B. State\nElectricity Board\n(supra) (Paras 27 and 28), were relied upon to substantiate\nthe aforesaid contention.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P040_C01",
+      "text": "35. He submitted that the actions of BEST could be termed as arbitrary,\ndiscriminatory, unfair, and that his client has locus to challenge the same as no\nlegitimacy should be granted to tender processes tainted with malice. The\nlearned Senior counsel relied upon the decision of this Court in\nMonarch\nInfrastructure (P) Ltd v. Commissioner, Ulhasnagar Municipal Corporation\nand Others\n, reported in (2000) 5 SCC 287 (Paras 10 and 14);\nMeerut\nDevelopment Authority v. Association of Management Studies and Another\n,\nreported in (2009) 6 SCC 171 (Paras 27, 28, 45 and 76);\nMaa Binda Express\nCarrier and Another v. North-East Frontier Railway and Others\n, reported in\n(2014) 3 SCC 760 (Paras 8, 9 and 12) to fortify the submission.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P041_C01",
+      "text": "36. He argued that the High Court in paragraph 19 of the impugned\njudgment has rightly observed that the battery range guarantee can be given\nonly by the OEM from whom the bidder is purchasing the battery, and in such\ncircumstances, the same cannot be said to be incidental. The same was\nconsidered as an important part of the technical evaluation by BEST.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P042_C01",
+      "text": "37. He vociferously submitted that Annexure Y was a part of the bid\ndocument and once submitted, could not have been permitted to be altered\nafter the bid submission end date i.e., 02.05.2022. The argument that\nAnnexure Y was optional and not required at the time of submission of the bid\nis an afterthought, and the same being a question of fact or at the most a\nmixed question of fact and law cannot be raised for the first time in a Special\nLeave Petition. He relied on the decision of this Court in Jagannath Behera\n\n& Ors. v. Raja Harihar Singh Mardaraj Bhramarbara Roy, reported in 1958\nSCR 1067 (Paras 17 and 19); Karanpura Development Co. Ltd v. Raja\nKamakshya Narain Singh Etc., reported in 1956 SCR 325 (Para 24);\nVasantkumar Radhakisan Vora v. Board of Trustees of Port of Bombay,\nreported in (1991) 1 SCC 761 (Para 24); Steel Authority of India Ltd v.\nGupta Brother Steel Tubes Ltd, reported in (2009) 10 SCC 63 (Paras 32 and\n34).",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P043_C01",
+      "text": "38. He submitted that the High Court was justified in saying that a fresh\ntender in the present matter is warranted more particularly in view of the\narbitrary tender process and delay in supply of the buses as per the timeline\nprescribed under the Tender. He submitted that a fresh tender would be in\npublic interest as there has been a breach of delivery timeline by EVEY as\nprescribed under the Tender. It is alleged that there is a deficit in the supply of\n1,030 buses till date. BEST has failed to take necessary steps against EVEY\nfor the delay, and the same showcases that the two contracting parties have\ncolluded with each other. The fresh tender would allow for more competitive\nprice bids and there would not be any financial burden on BEST in the event\nof termination, as the Tender provides for forfeiture of Earnest Money Deposit\n(EMD) and encashment of performance guarantee.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P044_C01",
+      "text": "39. In the last, the learned Senior counsel submitted that the High Court\nwhile upholding the disqualification of his client on the sole basis that it\nguaranteed the operating range in ‘standard test conditions as per AIS 040’\ncommitted an error. It was submitted that TATA Motors had complied with the\nessential conditions and certain departures under the Tender were permissible.\nSUBMISSIONS ON BEHALF OF THE “BEST”",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P045_C01",
+      "text": "40. Mr. Tushar Mehta, the learned Solicitor General, appearing for BEST\nsubmitted that the Tender document provided for mandatory eligibility\nconditions for being declared as a qualified bidder at the stage of technical\nbid, and the said eligibility conditions were stipulated in sub – clauses (iv) and\n(v) of Clause 5.1.1 respectively of the Tender Document.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P046_C01",
+      "text": "41. He further submitted that Clause 5.1.1 (v), providing for Annexure F\nwas a mandatory condition for being qualified as a bidder at the Technical\nBidding stage. The mandatory requirement reads as under:\n“5.1.1 The Proposal should be submitted in the following\n manner:\nBid 1: Technical Submissions, which would include:\ni) Schedule of Guaranteed Performance & Other\n Technical Particulars as shown in the prescribed\n format in Annexure-A incorporated in the Tender\n document (in case of a consortium that of a lead\n member),\nii) Schedule of Performance of the Bidder (in case of\n consortium experience of any member) as in Annexure\n C,\niii) Proforma for certification for Minimum Average\n Annual Turnover (“MAAT”) from Chartered\n Accountant as in Annexure D. (in case of consortium\n for lead member and in case of Aggregator, Networth\n certificate or Investible fund certificate),\niv) Aggregator have to submit back-to-back agreement\n\nwith OEM for complete contract period for the\nmaintenance of buses.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P046_C02",
+      "text": "Aggregator have also to submit\nManufacturer Authorization Form (if aggregator is a\nsole bidder or lead bidder then such bidder shall\nsubmit Manufacturer Authorization Form) from OEM,\nv) Schedule of Departures from technical\nspecification as in Annexure F,\nvi) General details of Bidder with registration proof\nand credentials (in case of Consortium, this would\nneed to be provided by the lead members) as in\nAnnexure G & H,\nvii) Bid Security/EMD as in Annexure I,\nviii) The Annexure-L. (undertaking of the Bidder not\nbeing involved/engaged in any corrupt or fraudulent\nmalpractices or not being black-listed with any\nGovernment or Public Sector Units in India or outside\nIndia)\nix) In case of Consortium, proforma of Consortium\nAgreement to be entered into between members as in\nAnnexure N,\nx) Covering Letter cum Project Undertaking as per\nAnnexure Q stating the Proposal Validity Period,\nxi) Power of Attorney for Signing of the Proposal (in\ncase of Consortium, this would need to be provided by\nall the members) as in Annexure R.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P047_C01",
+      "text": "42. He submitted that TATA Motors deviated from the mandatory\nrequirement while filing the said Annexure F. He highlighted the portion of\nthe Annexure which states that if variations are found contradicting BEST’s\nrequirements then such bids would be treated as non-responsive. The non-\ncompliant deviation was as under:\n“Shall meet the operating range requirement of 200 KMS @\n 80% SOC in single charge as certified per AIS 040.”",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P048_C01",
+      "text": "43. He submitted that none of the bidders including EVEY (successful\nbidder) deviated from this mandatory condition. Hence, TATA Motors was\ndeclared a non-responsive bidder at the technical stage itself. On 06.05.2022,\nBEST undertook the technical evaluation and took a decision that of all the\nbidders found eligible and responsive, EVEY had quoted the lowest rates and\naccordingly the contract was awarded in its favour.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P049_C01",
+      "text": "44. The learned SG further submitted that the successful bidder was\nrequired to fill up Annexure Y. However, Annexure Y was neither a condition\nprecedent for being a responsive bidder nor a mandatory condition for\nawarding the contract.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P050_C01",
+      "text": "45. EVEY rectified its mistake, explaining that the Annexure Y submitted\nby it was inadvertently placed after doing a cut-and-paste job from the\nprevious tender. EVEY filed a revised/fresh Annexure Y strictly in accordance\nwith the Tender.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P051_C01",
+      "text": "46. The learned SG vehemently submitted that to ask BEST to issue a fresh\ntender notice would be against public interest. In the contract given to EVEY\nin May 2022, BEST was to pay Rs. 46.81/KM to EVEY. BEST examined the\npossibility of re-tendering and found that in the recent past, one similar tender\n\nwas issued by the Convergency Energy Services Limited (CESL), a\nGovernment of India undertaking. As per the recent contract awarded by\nCESL, it ended up paying Rs. 1,200 Crore more than the present rate at which\n“BEST” awarded the instant contract. Therefore, it would be commercially\nimprudent to opt for re-tendering.\nANALYSIS",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P052_C01",
+      "text": "47. Having heard the learned counsel appearing for the parties and having\ngone through the materials on record, the only question that falls for our\nconsideration is : Whether the High Court after upholding the disqualification\nof TATA Motors from the Tender was justified in undertaking further exercise\nto ascertain whether EVEY also stood disqualified and that BEST in its\ndiscretion may undertake a fresh tender process?",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P053_C01",
+      "text": "48. This Court being the guardian of fundamental rights is duty-bound to\ninterfere when there is arbitrariness, irrationality, mala fides and bias. However, this Court has cautioned time and again that courts should exercise\na lot of restraint while exercising their powers of judicial review in contractual\nor commercial matters. This Court is normally loathe to interfere in\ncontractual matters unless a clear-cut case of arbitrariness or mala fides or bias\nor irrationality is made out. One must remember that today many public sector\nundertakings compete with the private industry. The contracts entered into\nbetween private parties are not subject to scrutiny under writ jurisdiction. No\ndoubt, the bodies which are State within the meaning of\nArticle 12\nof the\nConstitution are bound to act fairly and are amenable to the writ jurisdiction\nof superior courts but this discretionary power must be exercised with a great\ndeal of restraint and caution. The courts must realise their limitations and the\n\nhavoc which needless interference in commercial matters can cause.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 12"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P053_C02",
+      "text": "contracts involving technical issues the courts should be even more reluctant\nbecause most of us in Judges' robes do not have the necessary expertise to\nadjudicate upon technical issues beyond our domain. The courts should not\nuse a magnifying glass while scanning the tenders and make every small\nmistake appear like a big blunder. In fact, the courts must give “fair play in the\njoints” to the government and public sector undertakings in matters of\ncontract. Courts must also not interfere where such interference will cause\nunnecessary loss to the public exchequer. (See:\nSilppi Constructions\nContractors v. Union of India\n, (2020) 16 SCC 489)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P054_C01",
+      "text": "49. It is not in dispute that the first and the foremost requirement of the\nTender was the prescribed operating range of the single decker buses which\nwould operate for around and average of 200 Kms in a single charge in\n“actual conditions” with 80% SoC without any interruption. Then materials\non record would indicate that the TATA Motors in its bid deviated from this\nrequirement and had informed BEST that it could carry the operating range in\nthe “standard test conditions” which was not in accordance with the Tender\nconditions. The High Court has rightly observed in its impugned judgment\nthat the bid of the TATA Motors failed to comply with the said clause. TATA\nMotors deviated from the material and the essential term of the Tender. It may\nnot be out of place to state at this stage that it is only TATA Motors who\ndeviated from the condition\nreferred to above\n. However, we are of the view\nthat the High Court having once declared TATA Motors as “non-responsive”\nand having stood disqualified from the Tender process should not have entered\ninto the fray of investigating into the decision of BEST to declare EVEY as\nthe eligible bidder.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P054_C02",
+      "text": "We are saying so because the High Court was not\nexercising its writ jurisdiction in public interest. The High Court looked into a\npetition filed by a party trying to assert its own rights. As held by this Court in\n\nRaunaq International Ltd. (supra), that grant of judicial relief at the instance\nof a party which does not fulfil the requisite criteria is something which could\nbe termed as misplaced. Raunaq International Ltd. (supra), this Court\nobserved as under:\n“27. In the present case, however, the relaxation was\n permissible under the terms of the tender. The relaxation which\n the Board has granted to M/s Raunaq International Ltd. is on\n valid principles looking to the expertise of the tenderer and his\n past experience although it does not exactly tally with the\n prescribed criteria. What is more relevant, M/s I.V.R. Construction Ltd. who have challenged this award of tender\n themselves do not fulfil the requisite criteria. They do not\n possess the prescribed experience qualification. Therefore,\n any judicial relief at the instance of a party which does not\n fulfil the requisite criteria seems to be misplaced .",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P054_C03",
+      "text": "Even if the\n criteria can be relaxed both for M/s Raunaq International Ltd.\n and M/s I.V.R. Construction Ltd., it is clear that the offer of\n M/s Raunaq International Ltd. is lower and it is on this ground\n that the Board has accepted the offer of M/s Raunaq\n International Ltd. We fail to see how the award of tender can\n be stayed at the instance of a party which does not fulfil the\n requisite criteria itself and whose offer is higher than the offer\n which has been accepted. It is also obvious that by stopping\n the performance of the contract so awarded, there is a major\n detriment to the public because the construction of two\n thermal power units, each of 210 MW, is held up on account of\n this dispute. Shortages of power have become notorious. They\n also seriously affect industrial development and the resulting\n job opportunities for a large number of people. In the present\n case, there is no overwhelming public interest in stopping the\n project. There is no allegation whatsoever of any mala fides or\n collateral reasons for granting the contract to M/s. Raunaq\n International Ltd.”\n (Emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P055_C01",
+      "text": "50. We take notice of the fact that Annexure Y was originally required to be\nsubmitted by the “Successful Bidder” after the evaluation of the bid and the\nsame did not figure in the list of documents and annexures to be included in\nthe technical submissions, as provided under Clause 5.1.1 of Schedule II of\nthe Tender. Further the format provided for Annexure Y in the Tender\ndocuments in its heading states that the “Successful Bidders shall upload a\nLetter of Undertaking on their letter head as below”. Therefore, we are of the\nview that the restriction on revision of documents under Clause 16 of\nSchedule I, which states, “No addition/correction, submission of documents\nwill be allowed after opening of technical bid,” is only limited to the\ndocuments necessary to be included in the technical bid and would not be\napplicable to any such document which does not form a part of the technical\nbid.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P056_C01",
+      "text": "51. We are of the view that the High Court should have been a bit slow and\ncircumspect in reversing the action of BEST permitting EVEY to submit a\nrevised Annexure Y. We are of the view that the BEST committed no error or\ncannot be held guilty of favoritism, etc. in allowing EVEY to submit a revised\nAnnexure Y as the earlier one was incorrect on account of a clerical error. This\nexercise itself was not sufficient to declare the entire bid offered by EVEY as\nunlawful or illegal.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P057_C01",
+      "text": "52. Ordinarily, a writ court should refrain itself from imposing its decision\nover the decision of the employer as to whether or not to accept the bid of a\ntenderer unless something very gross or palpable is pointed out. The court\nordinarily should not interfere in matters relating to tender or contract. To set\nat naught the entire tender process at the stage when the contract is well\nunderway, would not be in public interest. Initiating a fresh tender process at\nthis stage may consume lot of time and also loss to the public exchequer to the\n\ntune of crores of rupees. The financial burden/implications on the public\nexchequer that the State may have to meet with if the Court directs issue of a\nfresh tender notice, should be one of the guiding factors that the Court should\nkeep in mind. This is evident from a three-Judge Bench decision of this Court\nAssociation of Registration Plates v. Union of India and Others\n, reported\nin (2005) 1 SCC 679.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P058_C01",
+      "text": "53. The law relating to award of contract by the State and public sector\ncorporations was reviewed in\nAir India Ltd. v. Cochin International Airport\nLtd.\n, reported in (2000) 2 SCC 617 and it was held that the award of a\ncontract, whether by a private party or by a State, is essentially a commercial\ntransaction. It can choose its own method to arrive at a decision and it is free\nto grant any relaxation for bona fide reasons, if the tender conditions permit\nsuch a relaxation. It was further held that the State, its corporations,\ninstrumentalities and agencies have the public duty to be fair to all concerned.\nEven when some defect is found in the decision-making process, the court\nmust exercise its discretionary powers under\nArticle 226\nwith great caution\nand should exercise it only in furtherance of public interest and not merely on\nthe making out of a legal point. The court should always keep the larger public\ninterest in mind in order to decide whether its intervention is called for or not.\nOnly when it comes to a conclusion that overwhelming public interest\nrequires interference, the court should interfere.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P059_C01",
+      "text": "54. As observed by this Court in\nJagdish Mandal v. State of Orissa and\nOthers\n, reported in (2007) 14 SCC 517, that while invoking power of judicial\nreview in matters as to tenders or award of contracts, certain special features\nshould be borne in mind that evaluations of tenders and awarding of contracts\nare essentially commercial functions and principles of equity and natural\njustice stay at a distance in such matters. If the decision relating to award of\n\ncontract is bona fide and is in public interest, courts will not interfere by\nexercising powers of judicial review even if a procedural aberration or error in\nassessment or prejudice to a tenderer, is made out. Power of judicial review\nwill not be invoked to protect private interest at the cost of public interest, or\nto decide contractual disputes.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P060_C01",
+      "text": "55. In such circumstances\nreferred to above\n, we set aside that part of the\njudgment and order passed by the High Court by which the decision of BEST\nto accept the tender of EVEY was set aside and it was left to the discretion of\nBEST to undertake a fresh tender process.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P061_C01",
+      "text": "56. The Appeal filed by TATA Motors accordingly fails and is hereby\ndismissed. Whereas the Appeals filed by EVEY and BEST are allowed to the\naforesaid extent.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 62,
+      "chunk_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND_P062_C01",
+      "text": "58. Pending application, if any, stands disposed of accordingly.\n..…………….……………….CJI.\n[Dr. Dhananjaya Y. Chandrachud]\n\n ……………..………………….J.\n [Pamidighantam Sri Narasimha]\n\n ……….…………..…………….J.\n [J. B. Pardiwala]\n\nNew Delhi;\nMay 19, 2023",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Tata Motors Limited vs The Brihan Mumbai Electric Supply And ...",
+    "case_id": "SC_2023_TATA_MOTORS_LIMITED_VS_THE_BRIHAN_MUMBAI_ELECTRIC_SUPPLY_AND",
+    "court": "Supreme Court of India",
+    "year": "2023",
+    "facts_summary": "1. Leave granted.\n\nwere taken up for hearing analogously and are being disposed of by this\ncommon judgment and order. 3. The Appeal arising out of SLP(C) No. 15708 of 2022 is at the instance\nof TATA Motors Limited (for short, “TATA Motors”) (Original Writ Petitioner\nbefore the High Court). 4. The Appeal arising out of SLP(C) No. 11871 of 2022 is at the instance\nof EVEY Trans Pvt. Ltd. (for short, “EVEY”) (Original respondent No. 2\nbefore the High Court).",
+    "legal_issues": "28. Mr. Rohatgi, the learned Senior counsel appearing for EVEY placed\nstrong reliance on the decision of this Court in\nW.B. State Electricity Board v.\nPatel Engineering Co. Ltd. & Ors.\n, reported in (2001) 2 SCC 451 to submit\nthat the equitable relief can be granted to the bidder where it has made a\nmaterial mistake of fact in the bid and upon discovery of that mistake he has\nacted promptly and rectified his mistake. He submitted that, Clause 16 of\nSchedule I of the Tender would not apply to a document, like Annexure Y,\nwhich was originally required to be submitted by the \"Successful Bidder'' after\nthe evaluation of the bid. Furthermore, the learned Senior counsel proceeded\nto submit that, even in the original Annexure Y as submitted on 02.05.2022,\nhis client had mentioned that, “These offered buses will run above mentioned\nminimum Kms without any interruption”. 29. He submitted that, Annexure F specifies that “If the variations specified\nherein, are found to be in nature of contradiction to BEST’s\nrequirements/specifications then such Bids will be treated as Non-responsive”\n\nand therefore, the bidder would have to essentially comply with the\nspecifications mentioned in Annexure F otherwise the bid would be treated as\n“technically non-responsive”. He submitted that Annexure F can be rightly\ntermed as an essential condition of Tender. He placed strong reliance on the\ndecision of this Court in the case of\nKanhaiya Lal Agrawal v. Union of India\nand Others\n, reported in (2002) 6 ",
+    "ratio_summary": "",
+    "final_order": "27. It is pertinent to note that during the pendency of the proceedings\nbefore the High Court and after submitting the subsidy guarantee, EVEY had\nalready supplied total 8 buses between 04.07.2022 to 05.07.2022. However,\nthis Court by an interim order dated 14.07.2022 granted an interim stay of the\nimpugned judgment insofar as EVEY is concerned. This Court observed that,\nthe supply of the buses, if any, by EVEY would be subject to the result of\nthese petitions and EVEY shall not claim any equity at a later stage.\nSUBMISSIONS ON BEHALF OF THE “EVEY” 58. Pending application, if any, stands disposed of accordingly.\n..…………….……………….CJI.\n[Dr. Dhananjaya Y. Chandrachud]\n\n ……………..………………….J.\n [Pamidighantam Sri Narasimha]\n\n ……….…………..…………….J.\n [J. B. Pardiwala]\n\nNew Delhi;\nMay 19, 2023",
+    "outcome_summary": "Set aside. 27. It is pertinent to note that during the pendency of the proceedings\nbefore the High Court and after submitting the subsidy guarantee, EVEY had\nalready supplied total 8 buses between 04.07.2022 to 05.07.2022. However,\nthis Court by an interim order dated 14.07.2022 granted an interim stay of the\n",
+    "sections_cited": [
+      "Constitution 226",
+      "Constitution 12"
+    ],
+    "cases_cited": []
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "case_id": "SC_1988_1988_118",
+  "case_name": "Fazal Ghafoor vs Union Of India (Uoi) And Ors.",
+  "normalized_case_name": "FAZAL_GHAFOOR_VS_UNION_OF_INDIA_(UOI)_AND_ORS.",
+  "court": "Supreme Court of India",
+  "year": "1988",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "20 September 1988",
+  "judges": [
+    "Ranganath Misra",
+    "M.N. Venkatachaliah",
+    "JUDGMENT",
+    "Ranganath Misra, J."
+  ],
+  "author": "Ranganath Misra",
+  "bench_type": "constitution",
+  "petitioner": "Fazal Ghafoor",
+  "respondent": "Union Of India (Uoi) And Ors.",
+  "reporter_citations": [],
+  "outcome": "disposed of",
+  "disposition": "disposed",
+  "cites_count": 4,
+  "cited_by_count": 87,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1989SC48",
+    "JT1988(3)SC698",
+    "1988(2)SCALE746",
+    "1988(2)UJ613(SC)",
+    "AIR 1989 SUPREME COURT 48",
+    "1988 SCC (SUPP) 794",
+    "(1988) 3 JT 698 (SC)",
+    "1988 3 JT 698",
+    "1988 2 UJ (SC) 613"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1988\\1988_118.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1988_1988_118_P001_C01",
+      "text": "1. Petitioner in this application under\nArticle 32\nof the Constitution has asked for five reliefs :\n(1) A declaration that all the Post Doctoral seats (Super Specialilies) in all the universities and States of India including the All India Medical Institutes should not have any regional or domicile reservations and should be open for All India Competition on merit;\n(2) A declaration that Rule 2(a), 2(c), Rule 3, Rule 9 and Rule 10 of the prospectus for admission to Post Graduate courses under Super Speciality Course 1987-88 in the medical colleges of Kerala are ultra vires of\nArticles 14\nand\n\nof the Constitution ;\n(3) A declaration that the A.P. Educational Institutions (Regulation of Admission) Order, 1974, issued by the President of India is in violation of the basic structure of the Constitution ;\n(4) A declaration that the total reservation in Super Speciality Courses in the State of Andhra Pradesh is beyond the scope and object of\nArticle 371D ;\n(5) Declaring Note 2 of Rule 7 of the prospectus for Post Graduate Higher Super Speciality Courses 1987-88 issued by the Government of Tamil Nadu is bad and is not enforceable.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 32"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1988_1988_118_P002_C01",
+      "text": "2. By our judgment delivered today in Dr. C. Surekha vs Union of India & Ors., we have already held that there is no merit in the allegation of the Presidential Order or the constitutional provision authorising the issuance of such order is hit by violation of the basic structure of the Constitution. So far as the State of Andhra Pradesh is concerned the position is as envisaged in the Presidential Order. In Dr. Pradeep Jain's case this Court has observed that in Super Specialities there should really be no reservation. This is so in the general interest of the country and for improving the standard of higher education and thereby improving the quality of available medical services to the people of India. We hope and trust that the Government of India and the State Governments shall seriously consider this aspect of the matter without delay and appropriate guidelines shall be evolved by the Indian Medical Council so as to keep the Super Specialities in medical education unreserved, open and free.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1988_1988_118_P003_C01",
+      "text": "3. With these observations, the writ petition is disposed of. There would be no order for costs.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Fazal Ghafoor vs Union Of India (Uoi) And Ors.",
+    "case_id": "SC_1988_1988_118",
+    "court": "Supreme Court of India",
+    "year": "1988",
+    "facts_summary": "3. With these observations, the writ petition is disposed of. There would be no order for costs.",
+    "legal_issues": "2. By our judgment delivered today in Dr. C. Surekha vs Union of India & Ors., we have already held that there is no merit in the allegation of the Presidential Order or the constitutional provision authorising the issuance of such order is hit by violation of the basic structure of the Constitution. So far as the State of Andhra Pradesh is concerned the position is as envisaged in the Presidential Order. In Dr. Pradeep Jain's case this Court has observed that in Super Specialities there should really be no reservation. This is so in the general interest of the country and for improving the standard of higher education and thereby improving the quality of available medical services to the people of India. We hope and trust that the Government of India and the State Governments shall seriously consider this aspect of the matter without delay and appropriate guidelines shall be evolved by the Indian Medical Council so as to keep the Super Specialities in medical education unreserved, ope",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "Disposed of",
+    "sections_cited": [
+      "Constitution 32"
+    ],
+    "cases_cited": []
+  }
+}

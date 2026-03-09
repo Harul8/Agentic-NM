@@ -1,0 +1,103 @@
+{
+  "case_id": "SC_1953_THE_LLOYDS_BANK_LTD_VS_THE_LLOYDS_ANK_INDIAN_STAFF_ASSOCIATION",
+  "case_name": "The Lloyds Bank Ltd. vs The Lloyds Ank Indian Staff Association ...",
+  "normalized_case_name": "THE_LLOYDS_BANK_LTD._VS_THE_LLOYDS_ANK_INDIAN_STAFF_ASSOCIATION_...",
+  "court": "Supreme Court of India",
+  "year": "1953",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 79 of 1953",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "20 April 1953",
+  "judges": [
+    "Chief Justice",
+    "B.K. Mukherjea",
+    "Ghulam Hasan",
+    "JUDGMENT",
+    "Patanjali Sastri, C.J."
+  ],
+  "author": "Chief Justice",
+  "bench_type": "constitution",
+  "petitioner": "The Lloyds Bank Ltd.",
+  "respondent": "The Lloyds Ank Indian Staff Association ...",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 7,
+  "cited_by_count": 8,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1956SC746",
+    "AIR 1956 SUPREME COURT 746"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1953\\1953_95.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1953_THE_LLOYDS_BANK_LTD_VS_THE_LLOYDS_ANK_INDIAN_STAFF_ASSOCIATION_P001_C01",
+      "text": "1. There is no substance in this appeal but, paradoxical as it may seem, the substance of the relief which the appellant seeks is already available to him. The appeal arises out of an application made under\nArticle 226\nof the Constitution for the issue of a writ of certiorari to bring up and quash an award made by the All India Industrial Tribunal (Bank Disputes) on 5-1-1950, or, in the alternative, a writ of prohibition restraining the opposite party from enforcing the said award.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_THE_LLOYDS_BANK_LTD_VS_THE_LLOYDS_ANK_INDIAN_STAFF_ASSOCIATION_P002_C01",
+      "text": "2. Various preliminary objections were raised to the maintainability of that application and they were upheld by the learned Judges who accordingly dismissed the application. One of the objections was that\nArticle 226\ndid not apply to the case as the award in question, having been published and declared binding by the Government on 17-1-1950, became final before the Constitution came into force on 26-1-1950.\nThe answer to this objection by Mr. Chaudhri was the same as his answer to a similar objection raised in the connected appeal--\nLloyds Bank Ltd. v. The Lloyds Bank Indian Staff Asscn., Civil Appeal No.\n79 of 1953 with reference to the applicability of\nArticle 136\nof the Constitution and the point was dealt with in our judgment delivered on April 17th. But as the High Court had jurisdiction to issue prerogative writs even before the commencement of the Constitution, another preliminary objection was raised to the effect that the Tribunal having ceased to exist and its members being now severally engaged in the performance of other official duties, the writs prayed for could not be issued by the Court.",
+      "paragraph_type": "order",
+      "sections_cited": [
+        "Constitution 136"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1953_THE_LLOYDS_BANK_LTD_VS_THE_LLOYDS_ANK_INDIAN_STAFF_ASSOCIATION_P003_C01",
+      "text": "3. In support of the appeal Mr. Chaudhri faintly argued that notwithstanding the Tribunal was not functioning, it continued in a sort of suspended animation inasmuch as the Government, on a proper construction of\nSection 7\n, Industrial Disputes Act, must be deemed to have brought into being not an ad hoc Tribunal to adjudicate upon the particular disputes referred to it but a permanent Tribunal though functioning Intermittently. This view was rejected by the learned Judges below and we are in agreement with them.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1953_THE_LLOYDS_BANK_LTD_VS_THE_LLOYDS_ANK_INDIAN_STAFF_ASSOCIATION_P004_C01",
+      "text": "4. But the award which the appellant seeks to have formally set aside in this proceeding can no longer be regarded as valid and operative having regard to the decision of this Court in the\nUnited Commercial Bank Ltd. v. Their Workmen, (B\n) where it was broadly held that awards purporting to have been made by the same Tribunal and signed like the one now before us by only two of the members in the absence of the third on other duty were void and inoperative in view of the mandatory terms of\nSection 16\n, Industrial.\nDisputes Act\nthat awards made by the Tribunal should be signed by all the members thereof.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1953_THE_LLOYDS_BANK_LTD_VS_THE_LLOYDS_ANK_INDIAN_STAFF_ASSOCIATION_P005_C01",
+      "text": "5. The appeal, however, must fail for the reasons we have indicated and it is accordingly dismissed with costs.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "The Lloyds Bank Ltd. vs The Lloyds Ank Indian Staff Association ...",
+    "case_id": "SC_1953_THE_LLOYDS_BANK_LTD_VS_THE_LLOYDS_ANK_INDIAN_STAFF_ASSOCIATION",
+    "court": "Supreme Court of India",
+    "year": "1953",
+    "facts_summary": "3. In support of the appeal Mr. Chaudhri faintly argued that notwithstanding the Tribunal was not functioning, it continued in a sort of suspended animation inasmuch as the Government, on a proper construction of\nSection 7\n, Industrial Disputes Act, must be deemed to have brought into being not an ad hoc Tribunal to adjudicate upon the particular disputes referred to it but a permanent Tribunal though functioning Intermittently. This view was rejected by the learned Judges below and we are in agreement with them.",
+    "legal_issues": "4. But the award which the appellant seeks to have formally set aside in this proceeding can no longer be regarded as valid and operative having regard to the decision of this Court in the\nUnited Commercial Bank Ltd. v. Their Workmen, (B\n) where it was broadly held that awards purporting to have been made by the same Tribunal and signed like the one now before us by only two of the members in the absence of the third on other duty were void and inoperative in view of the mandatory terms of\nSection 16\n, Industrial.\nDisputes Act\nthat awards made by the Tribunal should be signed by all the members thereof.",
+    "ratio_summary": "",
+    "final_order": "2. Various preliminary objections were raised to the maintainability of that application and they were upheld by the learned Judges who accordingly dismissed the application. One of the objections was that\nArticle 226\ndid not apply to the case as the award in question, having been published and declared binding by the Government on 17-1-1950, became final before the Constitution came into force on 26-1-1950.\nThe answer to this objection by Mr. Chaudhri was the same as his answer to a similar objection raised in the connected appeal--\nLloyds Bank Ltd. v. The Lloyds Bank Indian Staff Asscn., Civil Appeal No.\n79 of 1953 with reference to the applicability of\nArticle 136\nof the Constitution and the point was dealt with in our judgment delivered on April 17th. But as the High Court had jurisdic",
+    "outcome_summary": "2. Various preliminary objections were raised to the maintainability of that application and they were upheld by the learned Judges who accordingly dismissed the application. One of the objections was that\nArticle 226\ndid not apply to the case as the award in question, having been published and declared binding by the Government on 17-1-1950, became final before the Constitution came into force on",
+    "sections_cited": [
+      "Constitution 226",
+      "Constitution 136"
+    ],
+    "cases_cited": []
+  }
+}

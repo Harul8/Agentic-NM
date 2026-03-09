@@ -1,0 +1,610 @@
+{
+  "case_id": "SC_2023_2023_SEP_41",
+  "case_name": "Religare Finvest Limited vs State Of Nct Of Delhi",
+  "normalized_case_name": "RELIGARE_FINVEST_LIMITED_VS_STATE_OF_NCT_OF_DELHI",
+  "court": "Supreme Court of India",
+  "year": "2023",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "11 September 2023",
+  "judges": [
+    "Aravind Kumar",
+    "S. Ravindra Bhat",
+    "2023INSC819                                                                          REPORTABLE"
+  ],
+  "author": "S. Ravindra Bhat",
+  "bench_type": "constitution",
+  "petitioner": "Religare Finvest Limited",
+  "respondent": "State Of Nct Of Delhi",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 28,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2023\\SEP\\2023_SEP_41.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2023_2023_SEP_41_P001_C01",
+      "text": "CRIMINAL APPELLATE JURISDICTION\n\n CRIMINAL APPEAL NO(S). 2242 OF 2023\n\n RELIGARE FINVEST LIMITED …APPELLANT(S)\n\n VERSUS\n\n STATE OF NCT OF DELHI & ANR. …RESPONDENT(S)\n\n WITH\n\n CRIMINAL APPEAL NO(S). 2243 OF 2023\n\n JUDGMENT\nS. RAVINDRA BHAT, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2023_2023_SEP_41_P002_C01",
+      "text": "1. These appeals1 arise from a final order2 of the Delhi High Court rejecting\n a petition for quashing criminal proceedings, filed by the DBS Bank India\n Limited (second respondent in the first appeal /appellant in second the appeal)\n (hereafter “DBS”). In the two appeals, Religare Finvest Limited (hereafter\n “complainant” or “RFL”) and DBS have challenged the impugned order. To be\n more specific, they are also impleaded as second respondents in each other’s\n appeal.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2023_2023_SEP_41_P003_C01",
+      "text": "2. RFL filed a commercial suit3 seeking to recover ₹791 Crores from (the\n erstwhile) Laxmi Vilas Bank (hereafter “LVB”). The claim was based on the\n\n(Comm.) No. 940/2018.\n\nallegations that LVB misappropriated Fixed Deposits (“FDs”) furnished as\nsecurity by RFL and its group companies, namely RHC Holding Pvt. Ltd.\n(hereafter “RHC Holding”) and Ranchem Pvt. Ltd. (hereafter “Ranchem”), to\nsecure short-term loans.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_2023_SEP_41_P004_C01",
+      "text": "3. Subsequently, on 23.9.2019, RFL lodged a criminal complaint asserting\nthat officials of LVB had conspired with RHC Holding and Ranchem. This led to\nthe registration of FIR4 by the Economic Offences Wing under\nSections 409\nand\n120B\nof the Indian Penal Code, 1860 (\nIPC\n) (registered as Crime No. 1534/2020).\nThe contents of the FIR alleged that RFL had placed four FDs with a combined\nvalue of ₹750 Crores as security for short-term loans. LVB extended loans to\nRHC Holding and Ranchem, utilizing these FDs as security. When RHC Holding\nand Ranchem defaulted on their loan payments, LVB debited an amount of\n₹723.71 crores from RFL's current account without obtaining proper\nauthorization or prior notice.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_2023_SEP_41_P005_C01",
+      "text": "4. Meanwhile, due to high net levels of Non-Performing Assets, inadequate\nCapital to Risk (Weighted) Average Ratio and Common Equity Tier-I Capital,\ntwo years of negative Return on Assets, and high leverage, the Reserve Bank of\nIndia (hereafter “RBI”) placed LVB under “Prompt Corrective Action”5.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_2023_SEP_41_P006_C01",
+      "text": "5. A chargesheet was filed against ten bank officials of LVB; however, LVB\nitself was not implicated as an accused. The Chief Metropolitan Magistrate took\ncognizance of these offenses on September 17, 2020.6\n6. On November 17, 2020, RBI imposed a moratorium7 on LVB in terms of\nSection 45(2)\nof the Banking Regulation Act, 1949 [hereafter “the\nBanking Act\n”].\n\nFIR No. 189/2019.\n\nPrompt Corrective Action (PCA) Framework is to enable Supervisory intervention at appropriate time and\nrequire the Supervised Entity to initiate and implement remedial measures in a timely manner, so as to restore its\nfinancial health. The PCA Framework is also intended to act as a tool for effective market discipline. The PCA\nFramework does not preclude the Reserve Bank of India from taking any other action as it deems fit at any time\nin addition to the corrective actions prescribed in the Framework.\n\nCrime Case No. 1534/2020, titled\nState vs. Malvinder Mohan Singh\n.\n\nMoratorium order dated 17.11.2020.\n\nOn November 25, 2020, due to LVB's unstable financial condition, the Central\nGovernment directed its non-voluntary amalgamation to DBS8.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_2023_SEP_41_P007_C01",
+      "text": "7. On February 12, 2021, a supplementary chargesheet or final report was\nfiled, to implead LVB, represented through its director, (now DBS Bank India\nLimited after amalgamation), as an accused9 along with bank officials and the\ncompanies RHC Holding and Ranchem. It was alleged that LVB and other\naccused parties conspired to siphon off funds that were lent, and belonged to RFL. LVB stood to make substantial profits from this lending, as it obtained the FDs at\na 4.5% interest rate and then ostensibly lent the money at a rate of 10% p.a. Investigation revealed that LVB's actions were based on the premise that RFL,\nRHC Holding, and Ranchem were group companies under the same promoters. LVB created security against FDs of RFL. However, proper authorization from\nRFL was not secured for this arrangement. The loans advanced by LVB to RHC\nHolding and Ranchem against FDs of RFL were ultimately utilized by RHC\nHolding. Consequently, when RHC Holding failed to repay the loans to LVB, the\nFDs of RFL were adjusted by LVB against the outstanding loan amounts. As a\nresult, it was observed that the actual beneficiaries of RFL's funds, amounting to\n₹729.13 Crores, was the RHC Holding.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_2023_SEP_41_P007_C02",
+      "text": "In absence of sufficient documentation\nsupporting explicit authorization from RFL led to the allegation that LVB\nfacilitated the diversion of funds for the promoter’s personal gain.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_2023_SEP_41_P008_C01",
+      "text": "8. In this way, LVB revoked the FDs worth ₹729 Crores and also benefited\nby earning ₹115 crores, in interest. It was alleged that the parties involved acted\nin connivance with each other and committed acts of commission and omission\nin furtherance of the conspiracy to cheat the complainant company.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2023_2023_SEP_41_P009_C01",
+      "text": "9. Summons were issued to DBS (identified as accused No. 12) on 16.2.2021.\nAggrieved, DBS filed a Criminal Miscellaneous Case10 before the Delhi High\n\nunder\nsection 45(7)\nof the Banking Regulation Act, 1949.\n\nin Crime No. 1534/2020.\n\nCrl. M. C. No. 3173/2021.\n\nCourt, seeking to quash the supplementary chargesheet dated 12.2.2021 and\nsummoning order dated 16.2.202111, contending inter alia that LVB had ceased\nto exist due to the non-voluntary amalgamation scheme and that DBS should not\nface prosecution for the acts and omissions of the entity which it merged with, as\ndirected by the Government of India and the RBI. Additionally, Clause 3(3) of\nthe Amalgamation scheme provides for the institution of criminal proceedings\nagainst officials of LVB and therefore, liability should not be attributed to the\nrescuer bank.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2023_2023_SEP_41_P010_C01",
+      "text": "10. The High Court, by its impugned order, observed that quashing the\nsummoning order against the DBS at this stage may hamper the purpose of the\nscheme since there was no explicit provision for abatement of criminal\nproceedings against the DBS bank in the scheme sanctioned by the RBI. The court\ndirected the involved parties to seek clarification regarding the interpretation of\nClause 3(3) of the scheme in respect of criminal proceedings constituted against\ntransferor bank if be carried forward to transferee bank or not after the\namalgamation from RBI. Additionally, the court stayed the summoning order\nissued on February 16, 2021, against DBS Bank till clarification was issued by\nRBI. DBS appeals to this court, aggrieved by the refusal to quash criminal\nproceedings by the impugned order; RFL’s appeal is limited to the point that the\ncourt ought not to have deferred the issue, for consideration by RBI and should\nhave dismissed the request for quashing, simpliciter and ought not to have\nindefinitely stayed the summoning order.\nContentions of RFL",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2023_2023_SEP_41_P011_C01",
+      "text": "11. Mr. Rana Mukherjee, learned senior counsel for RFL, contends that the\nHigh Court ought not to have indefinitely stayed the summoning order, especially\nwhen it observed that quashing the summoning order against DBS would not be\n\nArising out FIR No. 189/2019.\n\nin public interest. This is more significant because the High Court denied such\ninterim measure in its previous order dated 17.12.2021.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2023_2023_SEP_41_P012_C01",
+      "text": "12. It was argued that the direction to approach RBI for clarification is beyond\nthe scope of the original petition as DBS did not assert or seek relief in its\nquashing petition for the parties to approach the RBI for clarification. This\ndirection essentially imposes a new obligation on the parties involved. If the High\nCourt deemed it necessary to seek RBI's view, it should have ideally impleaded\nRBI as a necessary party. Nevertheless, the RBI cannot sit in appeal over the\nfindings of the High Court. Additionally, the High Court failed to take into\naccount its own findings regarding interpretation of Clause 3(3) of the\namalgamation scheme, that is –\n “15. Now, if one peruse sub clause 3 of Clause 3 of Scheme of Merger,\n it may appear there is no impediment to prosecute the petitioner\n company as the proviso of the said Scheme specifically says any cause\n of action or any other proceedings of whatsoever nature, against the\n transferee bank, the same shall not abate but shall be prosecuted by or\n against the transferee bank.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2023_2023_SEP_41_P012_C02",
+      "text": "The proviso to sub clause 3 appears to be\n only qua Director, Secretary, Manager, officer or other employee of the\n transferee bank who has actually committed criminal offence.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2023_2023_SEP_41_P013_C01",
+      "text": "13. RFL argued that criminal proceedings do not automatically abate upon the\namalgamation of a company. LVB gained from the illegal transaction, and DBS\nis benefited from the assets of LVB, which included misappropriated funds\nobtained from RFL's fixed deposits. Moreover, Clause 3(3) of the scheme\nincorporates the notion of criminal accountability, and there is no such bar on\ntransferring criminal liability onto the transferee bank. The High Court's decision\nessentially denies the petitioner the chance to pursue the case on merits, and\ninstead, it necessitates involving an external body to interpret the amalgamation\nscheme. Lastly, as the trial is in its early stages, an indefinite stay will further\ndelay the trial process.\n\nContentions of DBS",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2023_2023_SEP_41_P014_C01",
+      "text": "14. Mr. Mukul Rohatgi and Mr. Jayant Bhushan, learned senior counsel,\nargued that the acts outlined in the chargesheet occurred well before the appointed\ndate of the amalgamation, i.e., 27.11.2020. LVB was not implicated as an accused\nprior to the appointed date and was only added in the supplementary chargesheet.\nBefore the amalgamation, LVB had no ties to DBS. LVB existed as a distinct and\nseparate entity without being part of the same group or affiliate of or in any\nmanner associated with DBS in any capacity. It ceased to exist in terms of Clause\n7(2) of the scheme of amalgamation.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2023_2023_SEP_41_P015_C01",
+      "text": "15. It was submitted that it is well settled principle that only the actual\nwrongdoer can only be punished for its wrongdoing, and no vicarious criminal\nliability can be inherited by a transferee company. Reliance was placed on\nSham\nSunder & Others v. State of Haryana12\nand\nMcLeod Russel India Limited v. Regional Provident Fund Commissioner, Jalpaiguri & Ors.13 It\nwas further\nsubmitted that the High Court has wrongly ignored/rejected a binding judgment\npassed by a coordinate bench of the same High Court in\nNicholas Piramal India\nLimited v. S.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2023_2023_SEP_41_P015_C02",
+      "text": "Sundaranayagam14\npassed in similar circumstances, wherein it was\nheld that no vicarious criminal liability was being passed on to the transferee\ncompany in an amalgamation where the relevant Clause of the scheme was more\nor less identical by observing:\n“The legal position which emerges from afore-noted judicial decisions\n is that upon an amalgamation between two companies, the transferor\n company dies a civil death and the entity which has evolved upon\n amalgamation cannot be prosecuted for an offence committed by the\n transferor company. […] So far as clause 8 relied upon by the counsel\n for the State is concerned, same relates to transfer of legal proceedings. The clause does not contemplate that criminal liability for offence\n committed by the earlier company would be transferable to the\n petitioner company.”\n\n(1989) 4 SCC 630.\n\n2014 (9) SCR 162. Rendered on August 23, 2007, in Cri. M.C. No. 5392 of 2005.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2023_2023_SEP_41_P016_C01",
+      "text": "16. It was submitted that after the amalgamation, particularly, a non-voluntary\nscheme of amalgamation necessitated to safeguard the public interests, LVB\nceased to exist and criminal proceedings against LVB shall abate. The transfer\npertained to civil liability, with no provision concerning the continuation of\ncriminal proceedings for the transferee company. Moreover, it was submitted that\ncriminal proceedings cannot be transferred through a contract or statute, let alone\nby a scheme. Similarly, it placed reliance on\nM. Abbas Haji v. T. N.\nChannakeshava15to\nsubmit that even in the case of a natural person where upon\nthe demise of an accused person, criminal proceedings do not pass on to legal\nheirs or successors.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2023_2023_SEP_41_P017_C01",
+      "text": "17. It was further submitted that the High Court was wrong to rely on foreign\ncases to observe that a transferee company can entail criminal liability as those\njudgments were rendered by considering legal interpretations distinct from those\nin India.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2023_2023_SEP_41_P018_C01",
+      "text": "18. It was submitted that while one arm of the Government, namely the RBI\nand the Central Government, took proactive measures by formulating the Scheme\nunder\nSection 45(7)\nof the Banking Act to safeguard the interests of LVB's\ndepositors, employees, and others, another arm of the Government, represented\nby Respondent No. 1, cannot vitiate the process by imposing criminal liability\nagainst DBS for the past actions of LVB.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2023_2023_SEP_41_P019_C01",
+      "text": "19. Furthermore, DBS highlighted that RFL itself argued before the High\nCourt that an interpretation from the RBI was necessary and that the Court should\nnot make a determination on this matter. RFL presented in its Reply dated\n09.01.2022 before the High Court, the following:\n\"21. Without prejudice to the submissions made herein, as per the\n Clause 13 of the Scheme of amalgamation, if any doubt arises in the\n interpretation of the provisions of the scheme\n,\nin that case\nthe matter is\n to be raised and referred to the RBI.”\n\n(2019) 9 SCC 606.\n\nTherefore, through the current appeal, RFL is blowing hot and cold by contesting\nthe impugned order, asserting that such clarification wasn't needed and the stay\nof the summoning order is wrong.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2023_2023_SEP_41_P020_C01",
+      "text": "20. Lastly, it was submitted that subsequent to the Impugned Order, RBI\nthrough its letter dated 14.06.2023, provided clarification that criminal\nproceedings against the officials of the transferor bank do not get carried forward\nto the transferee.\nAnalysis",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2023_2023_SEP_41_P021_C01",
+      "text": "21. Before discussing and dealing with the rival submissions, it would be\nuseful to extract provisions of the scheme of amalgamation published by the RBI. Clause 3(3) of the amalgamation notification reads as follows:\n“3.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2023_2023_SEP_41_P021_C02",
+      "text": "Transfer of assets and liabilities and general effect thereof. -\n(1)-(2) xxxxxxx\n (3) If on the appointed date, any cause of action, suit, decrees, recovery\n certificates, appeals or other proceedings of whatever nature is pending\n by or against the transferor bank before any court or tribunal or any\n other authority (including for the avoidance of doubt, an arbitral\n tribunal), the same shall not abate, be discontinued or be ill any way\n prejudicially affected, but shall, subject to the other provisions of this\n Scheme, be prosecuted and enforced by or against the transferee bank:\nProvided that where a contravention of any of the provision of any\n statute or of any rule, regulation, direction or order made thereunder\n has been committed by or any proceeding for a criminal offence has\n been instituted against, a director or secretary, manager, officer or other\n employee of the transferor bank before the appointed date, such director,\n secretary, manager, officer or other employee shall, without prejudice\n to the application of\nsection 6\nof the General Clauses Act, 1897 (10 of\n 1897), be liable to be proceeded against under such law and punished\n accordingly, as if the transferor",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2023_2023_SEP_41_P021_C03",
+      "text": "bank, being a banking company had not\n been dissolved.”\nSection 45(5)(e)\nof the Banking Act reads as follows:\n“45.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2023_2023_SEP_41_P021_C04",
+      "text": "Power of Reserve Bank to apply to Central Government for\n suspension of business by a banking company and to prepare scheme\n of reconstruction or amalgamation. —\n\n(1) Notwithstanding anything contained in the foregoing provisions of\n this Part or in any other law or [any agreement or other instrument],\n for the time being in force, where it appears to the Reserve Bank that\n there is good reason so to do, the Reserve Bank may apply to the Central\n Government for an order of moratorium in respect of [a banking\n company]. (2) to (4) xxx\n (5) The scheme aforesaid may contain provisions for all or any of the\n following matters, namely:—\n(e) subject to the provisions of the scheme, the continuation by or\n against the banking company on its reconstruction or, as the case may\n be, the transferee bank, of any actions or proceedings pending against\n the banking company immediately before the [reconstruction or\n amalgamation]”\n\nClause 13 of the Amalgamation scheme in the present case, i.e., relating to\ninterpretation by RBI in the case of disputes, is as follows:\n“13.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2023_2023_SEP_41_P021_C05",
+      "text": "Interpretation of provisions of this Scheme. – If any doubt arises\n in the interpretation of the provisions of this Scheme, the matter shall be\n referred to the Reserve Bank and its views on the issue shall be final and\n binding on all concerned.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2023_2023_SEP_41_P022_C01",
+      "text": "22. As is apparent from the factual narrative and the above discussion, the issue\nwhich this court is concerned with, is whether a transferee entity (here, a\nsuccessor bank) can be fastened with corporate criminal liability for the offences\nwhich the amalgamating entity- the erstwhile LVB is accused of.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_2023_SEP_41_P023_C01",
+      "text": "23. There was some divergence of opinion amongst certain High Court about\nthe liability of corporate entities. The Calcutta High Court’s view was that that\nonly natural persons, could be ascribed with intention or “mens rea”. Resultantly, a juristic person such as a company could not be ascribed with\ncriminal intent [Ref Champa Agency v. R. Chowdhury,16 Sunil\nBanerjee v. Krishna Nath,17 and AK Khosla v. Venkatesan18 ]. The Bombay High\nCourt, differed, and had taken note of developments in the United Kingdom.\n\n1974 CHN 400. AIR 1949 Cal 689.\n\n1992 (98) CrLJ 1448 (Cal). Esso Standard Inc. v. Udharam Bhagwandas Japanwalla19\narguments were\nadvanced before the court on whether a company can have mens rea, and on how\nthe process of attribution would, in fact, operate, with the precise question being\nwhose mens rea would be attributed to the company. The High Court accepted\nthat a strict test of mens rea was required to locate or ascribe criminal\nresponsibility of a company, on the concerned decision maker. The Court adopted\nthis line of reasoning, approving Lord Diplock's opinion in Tesco Supermarkets\nLtd. v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_2023_SEP_41_P023_C02",
+      "text": "Nattrass20, including the following relevant observations:\n“In my view, therefore, the question: what natural persons are to be\n treated in law as being the company for the purpose of acts done in the\n course of its business, including the taking of precautions and the\n exercise of due diligence to avoid the commission of a criminal offence,\n is to be found by identifying those natural persons who by the\n memorandum and articles of association or as a result of action taken\n by the directors, or by the company in general meeting pursuant to the\n articles, are entrusted with the exercise of the powers of the company.”\n\nIn Meridian Global Funds Management Asia Ltd v Securities Commission21, a\nmore nuanced approach was adopted:\n“These primary rules of attribution are obviously not enough to enable\n a company to go out into the world and do business. Not every act on\n behalf of the company could be expected to be the subject of a resolution\n of the board or a unanimous decision of the shareholders. The company\n therefore builds upon the primary rules of attribution by using general\n rules of attribution which are equally available to natural persons,\n namely, the principles of agency.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_2023_SEP_41_P023_C03",
+      "text": "It will appoint servants and agents\n whose acts, by a combination of the general principles of agency and\n the company’s primary rules of attribution, count as the acts of the\n company. And having done so, it will also make itself subject to the\n general rules by which liability for the acts of others can be attributed\n to natural persons, such as estoppel or ostensible authority in contract\n and vicarious liability or tort. It is worth pausing at this stage to make what may seem an obvious\n point. Any statement about what a company has or has not done, or can\n or cannot do, is necessarily a reference to the rules of attribution\n (primary and general) as they apply to that company. Judges sometimes\n say that a company ‘as such’ cannot do anything; it must act by servants\n\n[1975] 45 Comp Cas 16 (Bom).\n\n1971 (2) All ER 127.\n\n[1995] 3 All ER 918.\n\nor agents. This may seem an unexceptionable, even banal remark. And\n of course the meaning is usually perfectly clear. But a reference to a\n company ‘as such’ might suggest that there is something out there called\n the company of which one can meaningfully say that it can or cannot do\n something.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_2023_SEP_41_P023_C04",
+      "text": "There is in fact no such thing as the company as such, no\n ding an such, only the applicable rules. To say that a company cannot\n do something means only that there is no one whose doing of that act\n would, under the applicable rules of attribution, count as an act of the\n company. The company’s primary rules of attribution together with the general\n principles of agency, vicarious liability and so forth are usually\n sufficient to enable one to determine its rights and obligations. In\n exceptional cases, however, they will not provide an answer. This will\n be the case when a rule of law, either expressly or by implication,\n excludes attribution on the basis of the general principles of agency or\n vicarious liability. For example, a rule may be stated in language\n primarily applicable to a natural person and require some act or state\n of mind on the part of that person ‘himself’ as opposed to his servants\n or agents. This is generally true of rules of the criminal law, which\n ordinarily impose liability only for the actus reus and mens rea of the\n defendant himself. How is such a rule to be applied to a company?",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_2023_SEP_41_P023_C05",
+      "text": "One possibility is that the court may come to the conclusion that the rule\n was not intended to apply to companies at all; for example, a law which\n created an offence for which the only penalty was community service. Another possibility is that the court might interpret the law as meaning\n that it could apply to a company only on the basis of its primary rules\n of attribution, i.e. if the act giving rise to liability was specifically\n authorised by a resolution of the board or an unanimous agreement of\n the shareholders. But there will be many cases in which neither of these\n solutions is satisfactory; in which the court considers that the law was\n intended to apply to companies and that, although it excludes ordinary\n vicarious liability, insistence on the primary rules of attribution would\n in practice defeat that intention. In such a case, the court must fashion\n a special rule of attribution for the particular substantive rule. This is\n always a matter of interpretation: given that it was intended to apply to\n a company, how was it intended to apply? Whose act (or knowledge, or\n state of mind) was for this purpose intended to count as the act etc. of\n the company?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_2023_SEP_41_P023_C06",
+      "text": "One finds the answer to this question by applying the\n usual canons of interpretation, taking into account the language of the\n rule (if it is a statute) and its content and policy.’\nLord Hoffmann, in his opinion stated that:\n“. . their Lordships would wish to guard themselves against being\n understood to mean that whenever a servant of a company has authority\n to do an act on its behalf, knowledge of that act will for all purposes be\n attributed to the company. It is a question of construction in each case\n as to whether the particular rule requires that the knowledge that an act\n has been done, or the state of mind with which it was done, should be\n attributed to the company. Sometimes, as in In re Supply of Ready Mixed\n Concrete (No. 2) [1995] 1 A.C. 456 and this case, it will be appropriate\n\n. . .. On the other hand, the fact that a company’s employee is authorised\n to drive a lorry does not in itself lead to the conclusion that if he kills\n someone by reckless driving, the company will be guilty of\n manslaughter. There is no inconsistency.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_2023_SEP_41_P023_C07",
+      "text": "Each is an example of an\n attribution rule for a particular purpose, tailored as it always must be\n to the terms and policies of the substantive rule.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_2023_SEP_41_P024_C01",
+      "text": "24. This court, considered the issue in\nIridium India Telecom v Motorola Inc22\nand held, inter alia, that:\n“38. From the above it becomes evident that a corporation is virtually\n in the same position as any individual and may be convicted of common\n law as well as statutory offences including those requiring mens rea. The criminal liability of a corporation would arise when an offence is\n committed in relation to the business of the corporation by a person or\n body of persons in control of its affairs. In such circumstances, it would\n be necessary to ascertain that the degree and control of the person or\n body of persons is so intense that a corporation may be said to think and\n act through the person or the body of persons.”\n\nEarlier, in the Constitution Bench ruling in\nStandard Chartered Bank v\nDirectorate\nof Enforcement,23the court referred to\nSection 11\nof the IPC, which\ndefined “person”. “The word “person” includes any Company or Association or\nbody of persons, whether incorporated or not”; the court also referred to the\n41st and 47th Law Commission reports.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Iridium India Telecom v Motorola Inc22\nand",
+        "Bench ruling in\nStandard Chartered Bank v Directorate\nof Enforcement,23the court referred to"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_2023_SEP_41_P024_C02",
+      "text": "The Law Commission had stated that\n\n “In every case in which the offence is only punishable with\n imprisonment or with imprisonment and fine and the offender is a\n company or other body corporate or an association of individuals, it\n shall be competent to the court to sentence such offender to fine only.”\n\nThe judges- in the majority held that all penal statutes are to be strictly construed,\nin the sense that the court must see that the thing charged as an offence is within\nthe plain meaning of the words used and must not strain the words. Any act falling\nwithin the mischief that is addressed should be intended to be included and has\nto included if thought of. Further, all penal provisions, like all other statutes, need\nto be fairly construed in terms of expressed legislative intent. The intent to\nprosecute corporate bodies for the offences committed by them was clear and\n\n[2010) 14 (ADDL.) SCR 591.\n\n2005 [Supp] (1) SCR 49.\n\nexplicit, and the statute did not intend to exonerate them from prosecution.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_2023_SEP_41_P024_C03",
+      "text": "The\ncourt, therefore, held that it would be violence to commonsense that the\nlegislature intended to punish the corporate bodies for minor and silly offences\nwhile at the same time, extended immunity of prosecution to major and grave\neconomic crimes.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2023_2023_SEP_41_P025_C01",
+      "text": "25. According to Stroud24, “amalgamation” is “welding or blending of two or\nmore concerns into one.” It also states that “where there the companies\nconcerned retain separate entities, [] there is no amalgamation”. Black25 defines\namalgamation as the “act of combining or uniting; consolidation <\namalgamation of two small companies to form a new corporation >…”\nThe\nCompanies Act, 2013\ndoes not contain any express definition of amalgamation;\nit rather outlines and regulates the procedure for amalgamation and spells out its\nlegal effect, which results in extinguishment of the corporate identity of the\ntransferor company26 [read, in this case, LVB]. In Walker’s Settlement27, the term\n‘amalgamation’ is defined as:\n“The word ‘amalgamation’ has no definite legal meaning.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2023_2023_SEP_41_P025_C02",
+      "text": "contemplates a state of things under which 2 companies are so joined\n as to form a third entity or one company is absorbed into and blended\n with another company.”\n\nIn Re: Skinner28too referred to amalgamation schemes and their effect as follows:\n“…schemes and orders made by virtue of Section 206 and\nSection 208\nof the Companies Act 1948 can only transfer such rights, powers, duties\n and property as are capable of being lawfully transferred by a party to\n the scheme if no such sections of the\nCompanies Act\nexisted. It is not\n necessary in a scheme to exclude specifically from its operation things\n incapable of such transfer as general words in the scheme and any order\n\nStroud’s Judicial Dictionary of Words and Phrases (9thedition). Black’s Law Dictionary, Eleventh Edition. Section 233\nof the Companies Act, 2013 outlines the result of acceptance of a scheme of amalgamation:\n“(8) The registration of the scheme under sub-section (3) or sub-section (7) shall be deemed to have the effect of\ndissolution of the transferor company without process of winding-up.”\n\n1935 (1) Ch.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2023_2023_SEP_41_P025_C03",
+      "text": "D. 567.\n\n1958 (3) All E.R 273.\n\nin furtherance must be taken to operate in a manner not to repugnant to\n the general law of England.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2023_2023_SEP_41_P026_C01",
+      "text": "26. In M/s.\nGeneral Radio & Appliances Co. Ltd. vs. M.A. Khader\n(dead) by\nLR's29, the effect of amalgamation of two companies was considered by the\nSupreme Court. It was held that after the amalgamation of two companies, the\ntransferor company ceases to have any entity, and the amalgamated company\nacquires a new status, and it is not possible to treat the two companies as partners\nor jointly liable in respect of their liabilities and assets.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "General Radio & Appliances Co. Ltd v M.A. Khader"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2023_2023_SEP_41_P027_C01",
+      "text": "27. In the context of income tax liability, this court, in\nSaraswati Industrial\nSyndicate Ltd. vs. CIT, Haryana, H.P. & Delhi30\n, observed that:\n\"The true effect and character of the amalgamation largely depends on\n the terms and scheme of merger but there cannot be any doubt that when\n two companies amalgamate and merge into one the transferor company\n loses its entity as it ceases to have its business. However, their respective\n rights or liabilities are determined under the scheme of amalgamation\n but the corporate entity of the transferor company ceases to exist with\n effect from the date the amalgamation is made effective.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Saraswati Industrial\nSyndicate Ltd v CIT, Haryana, H.P. & Delhi30\n"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2023_2023_SEP_41_P028_C01",
+      "text": "28. McLeod Russel India Limited v. Regional Provident Fund Commissioner,\nJalpaiguri & Ors.31\nwas a case involving default in paying provident fund dues\nunder the\nEmployees Provident Fund Act, 1952\n(“the\nEPF Act\n”). In this case, one\nMathura Tea Estate owned Saroda Tea Company Ltd., which was covered by the\nEPF Act\n. During the pendency of recovery and penalty proceedings, the entire\nmanagement of Mathura Tea Estate (including ownership of Saroda Tea Co. Ltd\nand the estate) was taken over by Eveready Industries (India) Ltd., which\ndischarged the principal EPF liability but sought to disclaim penalty (for non-\ncompliance in the requirement to remit or deposit EPF contributions). This court\nnegatived its position by noticing that the takeover document clearly noted the\nliability and how it was to be treated as McLeod Russel’s liability:\n\n1986 (2) SCR 607.\n\n1990 Supp (1) SCR 332.\n\n2014 (9) SCR 162.\n\n“13. There is no gainsaying that criminal liability remains steadfastly\n fastened to the actual perpetrator and cannot be transferred by any\n compact between persons or even by statute. But this incontrovertible\n legal principle does not support or validate the contention of Mr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2023_2023_SEP_41_P028_C02",
+      "text": "Jayant\n Bhushan, Learned Senior Advocate for the Appellants, that damages\n levied in terms of\nSection 14B\nof the EPF Act cannot be foisted onto his\n clients. Sections 14\n,\n14A\n,\n14AA\n,\n14AB\nand\n14AC\nof the EPF Act are the\n provisions postulating prosecution; in contradistinction Section\n 14B contemplates the power to “recover from the employer by way of\n penalty such damages, not exceeding the amount of arrears, as may be\n specified in the Scheme”. It is true that it is not a river but a mere rivulet\n that segregates and distinguishes the legal concepts of damages or\n compensatory damages or exemplary damages or deterrent damages or\n punitive damages or retributory damages. We shall abjure from writing\n a dissertation on this compelling legal nodus; save to clarify that\n modern jurisprudence recognizes that the imposition of punitive\n damages, quintessentially quasi-criminal in character, can be resorted\n to even in civil proceedings to deter wilful wrongdoing by making an\n admonished example of the wrongdoer.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2023_2023_SEP_41_P028_C03",
+      "text": "This is the essential purpose, it\n seems to us, of\nSection 14B\nof the EPF Act, and an imposition within its\n confines does not assume criminal prosecution so as to stand proscribed\n insofar as transfer of establishment from one management/employer to\n its successor is concerned.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2023_2023_SEP_41_P029_C01",
+      "text": "29. Shyam Sundar v State of Haryana\n(supra), the liability of a partnership\nfirm, based on the agency of every partner for the individual criminal acts of its\npartners, was negatived:\n“9. But we are concerned with a criminal liability under penal provision\n and not a civil liability. The penal provision must be strictly construed\n in the first place. Secondly, there is no vicarious liability in criminal law\n unless the statute takes that also within its fold.\nSection 10\ndoes not\n provide for such liability. It does not make all the partners liable for the\n offence whether they do business or not.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Shyam Sundar v State of Haryana"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_2023_SEP_41_P030_C01",
+      "text": "30. It is, therefore, noticeable that the criminal liability of a company\n(a) is recognized where it can be attributable to individual acts of\n employees, directors or officials of a company or juristic persons (Tesco,\n Meridian Global Funds, Standard Chartered Bank, and Iridium)\n(b) recognized even if its conviction results in a term of imprisonment\n (Meridian, Iridium);\n(c) cannot be transferred ipso facto, except when it is in the nature of\n penalty proceeding (McLeod Russel)\n\n(d) the legal effect of amalgamation of two companies is the destruction of\n the corporate existence of the transferor company (in this case, LVB); it\n ceases to exist.\n(e) that apart, only defined legal proceedings, are succeeded to by the\n transferee company, which, in this case, is the DBS Bank32.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_2023_SEP_41_P031_C01",
+      "text": "31. As noted earlier, Clause 3 (3) of the scheme in this case, no doubt mentions\nthat legal proceedings would be continued by or against the transferee bank (read\nDBS Bank). However, it is also important to notice the proviso:\n“3.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_2023_SEP_41_P031_C02",
+      "text": "Transfer of assets and liabilities and general effect thereof. -\n(1)-(2) xxxxxxx\n (3) If on the appointed date, any cause of action, suit, decrees, recovery\n certificates, appeals or other proceedings of whatever nature is pending\n by or against the transferor bank before any court or tribunal or any\n other authority (including for the avoidance of doubt, an arbitral\n tribunal), the same shall not abate, be discontinued or be ill any way\n prejudicially affected, but shall, subject to the other provisions of this\n Scheme, be prosecuted and enforced by or against the transferee bank:\nProvided that where a contravention of any of the provision of any\n statute or of any rule, regulation, direction or order made thereunder\n has been committed by or any proceeding for a criminal offence has\n been instituted against, a director or secretary, manager, officer or other\n employee of the transferor bank before the appointed date, such director,\n secretary, manager, officer or other employee shall, without prejudice\n to the application of\nsection 6\nof the General Clauses Act, 1897 (10 of\n 1897), be liable to be proceeded against under such law and punished\n accordingly, as if the transferor",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_2023_SEP_41_P031_C03",
+      "text": "bank, being a banking company had not\n been dissolved.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2023_2023_SEP_41_P032_C01",
+      "text": "32. Every scheme of amalgamation is statutory and sanctioned under the\nBanking Act\n. Such amalgamation is to ensure that the interests of the depositors,\nthe creditors and others who had invested, or given credit to in the erstwhile bank,\nbefore its sickness, and that the general public are protected. It aims at securing\nlarger public interest and health of the banking industry. Late intervention into\nthe affairs of a bank can result in a “run” on it, resulting in serious loss of\nconfidence in the intricately woven banking and financial system. If one sees this\nand the overall objective of the scheme, it is to ensure recovery of what are the\n\nSection 233 (9)\nof the Companies Act, 2013.\n\nbank’s dues and ensuring protection of the creditors. Clause 3 (3) of the scheme,\ntherefore, has to be considered from this backdrop. In this context, the express\nmention of directors and such other individuals in the proviso means that it is to\nthat extent only that prosecutions or other criminal proceedings can continue; in\nthe ordinary sense, criminal liability can neither be attributed to DBS nor its\ndirectors, brought in after the amalgamation, whose appointments were approved\nby the RBI.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2023_2023_SEP_41_P033_C01",
+      "text": "33. The charge sheet, to the extent it is relevant in the present case, reads as\nfollows:\n“PS – EOW, FIR – 189/2019\n **********************\n Further, during the course of investigation, the certified copy of the\n emails were obtained from the bank along with certificate U/s 65-B\n Evidence Act which are as under: -",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2023_2023_SEP_41_P034_C01",
+      "text": "4. Certified copy of email dated 13.07.17. Further, the complainant informed that “we draw you kind attention to\n the recent amalgamation of LVB With DBS by the Reserve Bank of India. Pursuant to the Press Release bearing No. 2020- 2021/647, the RBI\n announced a scheme of amalgamation of LVB with DBS Which came\n into force on 27.11.2020, post which LVB has amalgamated with DBS.”\n From the investigation conducted, it was emerged that the bank officials\n in collusion with promoters of the REL deliberately/knowingly did not\n complete the formalities which are mandatory for the loan transaction\n to benefit the promoters/accused of RHC Holding Limited and Ranchem\n Pvt. Limited by extending loan to the entities which the\n promoters/accused persons used to square of their liabilities. The\n deposit loan was extended from time to time and the mandatory\n requirements were not completed and there is no satisfactory response\n of not following the manual in respect of deposit loan of their own bank\n and later on, when invoke the deposit they tried to shift the responsibility\n to each other.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2023_2023_SEP_41_P034_C02",
+      "text": "There is no document as per requirement of the bank itself\n is on record which established that these are the loans against the\n security/FDRS of RFL. It has emerged that the loan was required by the\n promoters of REL as well as RHC Holding Pvt. Limited to square off\n the liabilities/borrowing of RHC Holdings Limited and Ranchem\n\nPrivate Limited. The accused Malvinder Mohan Singh and Shivinder\n Mohan Singh cannot avail the loan in their 100% holding company\n against the FDs of REL as it requires approval of related party\n transaction committee from the board of REL. Therefore, this\n arrangement was done with the connivance of the bank officials who\n facilitated this transaction by passing the SOP of their own. Moreover,\n loans were extended from time to time and eventually the security has\n been invoked by the Lakshmi Vilas Bank thus causing wrongful loss to\n the complainant Company to the tune of Rs. 791 crores approximately. From the investigation conducted so far, the supplementary charge sheet\n has been prepared against LVB Bank (Now DBS Bank India Limited)\n and bank officials namely (1) Anjani Kumar Vermam, (2) S.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2023_2023_SEP_41_P034_C03",
+      "text": "Venkatesh,\n (3) Pradeep Kumar and (4) Parthsarathi Mukherjee (without arrest)\n and accused persons Malvinder Mohan Singh, Shivinder Mohan Singh,\n Sunil Godhwani, Hemant Dhingra, Kavi Arora and company RHC\n Holding Pvt. Limited, M/s Ranchem Pvt. Limited as they acted in\n connivance with each other being members of a well-planned\n conspiracy and interacted with each other and committed acts of\n commission and of omission in furtherance of the conspiracy to cheat\n the complainant company. Hence, this charge sheet against the accused\n persons, company and Bank\nu/s 409\n/\n120B\nIPC has been prepared by\n putting their names in column no. 11. It is therefore, respectfully prayed that this supplementary charge sheet\n may kindly be treated as part of main chargesheet against the said\n accused and the entire oral and documentary evidence as reflected in\n the lists of PWs, and documents enclosed herewith may also be treated\n as supplement to the main chargesheet.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2023_2023_SEP_41_P035_C01",
+      "text": "17. Refer Notice Served Yes No: Date\n Acknowledgement to be placed",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2023_2023_SEP_41_P036_C01",
+      "text": "34. It is, therefore, clear that the criminal liability of the individuals now\nattributed to DBS are actions of (1) Anjani Kumar Verma, (2) S. Venkatesh, (3)\nPradeep Kumar and (4) Parthsarathi Mukherjee. They were all officials of LVB.\nTheir individual responsibility and accountability in criminal law, is and remains\nunaffected by the amalgamation. Therefore, there is in fact, no involvement of\nDBS Bank, revealed in the charge sheet filed by the Delhi Police. In completely\nignoring these aspects and proceeding on a rather superficial basis, the High\nCourt, in our considered opinion fell into error.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2023_2023_SEP_41_P037_C01",
+      "text": "35. There is no gainsaying that the power to quash a criminal investigation or\nproceedings should not be lightly exercised. Yet, to refuse recourse to that power,\nin cases that require or may demand it, is being blind to justice, which the courts\ncan scant afford to be. In the present context, the public’s confidence in the\nbanking industry was at stake, when RBI stepped in, imposed the moratorium and\nasked DBS to take over the entire functioning, management assets and liabilities\nof the erstwhile LVB. To permit prosecution of DBS for the acts of LVB officials\n(who are in fact, facing criminal charges) would result in travesty of justice.\nTherefore, the pending criminal proceedings (arising out of FIR – 189/2019\nregistered at P.S. Economic Affairs Wing, New Delhi), to the extent it involves\nDBS, which was the subject matter of the impugned judgment and all consequent\nproceedings arising therefrom (to the extent of involvement of DBS), are hereby\nquashed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2023_2023_SEP_41_P038_C01",
+      "text": "36. The impugned judgment is accordingly set aside; the appeal by DBS is\nallowed; the appeal by RFL/complainant is, for the same reasons, dismissed. No\ncosts.\n.............................................J.\n [S. RAVINDRA BHAT]\n\n .............................................J.\n [ARAVIND KUMAR]\n\nNEW DELHI;\nSEPTEMBER 11, 2023",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Religare Finvest Limited vs State Of Nct Of Delhi",
+    "case_id": "SC_2023_2023_SEP_41",
+    "court": "Supreme Court of India",
+    "year": "2023",
+    "facts_summary": "1. These appeals1 arise from a final order2 of the Delhi High Court rejecting\n a petition for quashing criminal proceedings, filed by the DBS Bank India\n Limited (second respondent in the first appeal /appellant in second the appeal)\n (hereafter “DBS”). In the two appeals, Religare Finvest Limited (hereafter\n “complainant” or “RFL”) and DBS have challenged the impugned order. To be\n more specific, they are also impleaded as second respondents in each other’s\n appeal. 2. RFL filed a commercial suit3 seeking to recover ₹791 Crores from (the\n erstwhile) Laxmi Vilas Bank (hereafter “LVB”). The claim was based on the\n\n(Comm.) No. 940/2018.\n\nallegations that LVB misappropriated Fixed Deposits (“FDs”) furnished as\nsecurity by RFL and its group companies, namely RHC Holding Pvt. Ltd.\n(hereafter “RHC Holding”) and Ranchem Pvt. Ltd. (hereafter “Ranchem”), to\nsecure short-term loans. 3. Subsequently, on 23.9.2019, RFL lodged a criminal complaint asserting\nthat officials of LVB had conspired with RHC Holding and Ranchem. This led to\nthe registration of FIR4 by the Economic Offences Wing under\nSections 409\nand\n120B\nof the Indian Penal Code, 1860 (\nIPC\n) (registered as Crime No. 1534/2020).\nThe contents of the FIR alleged that RFL had placed four FDs with a combined\nvalue of ₹750 Crores as security for short-term loans. LVB extended loans to\nRHC Holding and Ranchem, utilizing these FDs as security. When RHC Holding\nand Ranchem defaulted on their loan payments, LVB debited an amount of\n₹723",
+    "legal_issues": "11. Mr. Rana Mukherjee, learned senior counsel for RFL, contends that the\nHigh Court ought not to have indefinitely stayed the summoning order, especially\nwhen it observed that quashing the summoning order against DBS would not be\n\nArising out FIR No. 189/2019.\n\nin public interest. This is more significant because the High Court denied such\ninterim measure in its previous order dated 17.12.2021. 12. It was argued that the direction to approach RBI for clarification is beyond\nthe scope of the original petition as DBS did not assert or seek relief in its\nquashing petition for the parties to approach the RBI for clarification. This\ndirection essentially imposes a new obligation on the parties involved. If the High\nCourt deemed it necessary to seek RBI's view, it should have ideally impleaded\nRBI as a necessary party. Nevertheless, the RBI cannot sit in appeal over the\nfindings of the High Court. Additionally, the High Court failed to take into\naccount its own findings regarding interpretation of Clause 3(3) of the\namalgamation scheme, that is –\n “15. Now, if one peruse sub clause 3 of Clause 3 of Scheme of Merger,\n it may appear there is no impediment to prosecute the petitioner\n company as the proviso of the said Scheme specifically says any cause\n of action or any other proceedings of whatsoever nature, against the\n transferee bank, the same shall not abate but shall be prosecuted by or\n against the transferee bank. 14. Mr. Mukul Rohatgi and Mr. Jayant Bhushan, learned senior ",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": [
+      "Iridium India Telecom v Motorola Inc22\nand",
+      "Bench ruling in\nStandard Chartered Bank v Directorate\nof Enforcement,23the court referred to",
+      "General Radio & Appliances Co. Ltd v M.A. Khader",
+      "Saraswati Industrial\nSyndicate Ltd v CIT, Haryana, H.P. & Delhi30\n",
+      "Shyam Sundar v State of Haryana"
+    ]
+  }
+}

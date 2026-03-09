@@ -305,6 +305,7 @@ OUTPUT: Valid JSON only, no preamble or explanation:
     "dispute": "Grammatically correct one-sentence restatement of the grievance in plain English, using the client's own facts",
     "legal_nature": "criminal|civil|both",
     "keywords": ["assault", "grievous hurt", "physical injury"],
+    "legal_concepts": ["grievous hurt", "assault"],
     "bare_act_hints": [],
     "search_angles": [
       "criminal liability for physical assault causing serious injury",
@@ -334,6 +335,8 @@ FIELD-LEVEL RULES:
   - 3-7 short, plain-language tokens describing what happened and who is involved.
   - Examples: ["assault", "tenant", "eviction", "cheque bounce", "loan default"].
   - No act names and no section numbers here.
+- "legal_concepts":
+  - 1-4 short legal categories that describe this dispute (e.g. "criminal intimidation", "rent default", "eviction", "grievous hurt", "assault", "cheating", "trespass", "land acquisition"). Use standard legal terms so a statute lookup can map them to acts/sections. Do NOT use section numbers or act names here.
 - "bare_act_hints":
   - 0-3 likely applicable Indian Acts for THIS dispute.
   - Use the official short name + year where known (e.g. "Bharatiya Nyaya Sanhita 2023", "Transfer of Property Act 1882", "Negotiable Instruments Act 1881").

@@ -1,0 +1,687 @@
+{
+  "case_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP",
+  "case_name": "M/S Asp Traders vs State Of U.P",
+  "normalized_case_name": "M_S_ASP_TRADERS_VS_STATE_OF_U.P",
+  "court": "Supreme Court of India",
+  "year": "2025",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 9764 of 2025",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "24 July 2025",
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "M/S Asp Traders",
+  "respondent": "State Of U.P",
+  "reporter_citations": [
+    "2025 INSC 890"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 36,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2025\\JUL\\2025_JUL_15.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P001_C01",
+      "text": "2025 INSC 890 REPORTABLE\n\n CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO. 9764 OF 2025\n [Arising out of S.L.P. (C) No. 17995 of 2022]\n\n M/S ASP TRADERS ... APPELLANT\n\n VERSUS\n\n STATE OF UTTAR PRADESH & ORS. ... RESPONDENTS\n\n JUDGMENT\nR. MAHADEVAN, J.\nLeave granted.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P002_C01",
+      "text": "2. This appeal has been preferred by the appellant against the final judgment\n\n and order dated 18.07.2022 passed by the High Court of Judicature at Allahabad1\n\n in Writ Tax No. 955 of 2022.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P003_C01",
+      "text": "3. The relevant facts giving rise to the present appeal are as follows:\n3.1. The appellant is a registered dealer in Red Arecanut operating from\n\n Channagiri, Davangere, Karnataka. On 14.01.2022, they consigned 17,850 kg of\n\nM/s. Diamond Trading Company, Delhi, through Vehicle No. UP-78-GN-7563\n\naccompanied by E-Way bill No.141424463403.\n3.2. During transit, the goods were transhipped and loaded onto another vehicle\n\nbearing Registration No. HR-38-U-0152 for onward journey to Delhi. However,\n\nonly 248 bags were loaded onto the new vehicle, with 7 bags missing from the\n\noriginal consignment.\n3.3. On 17.01.2022, the said vehicle was detained by the Mobile Squad at\n\nLalitpur Bypass Road, Jhansi. The driver’s statement was recorded in Form GST\n\nMOV-01. Following physical inspection, a report was generated in Form GST\n\nMOV-04 on 20.01.2022 alleging certain deficiencies. A detention order in Form\n\nGST MOV-06 dated 20.01.2022 was also issued.\n3.4.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P003_C02",
+      "text": "Subsequently, a notice dated 21.01.2022 under section 129(3) of the\n\nCentral Goods and Services Tax Act, 20172, was issued in Form GST MOV-07\n\nhighlighting the discrepancy of 7 missing bags and the resulting shortfall in\n\nquantity from 18220 kg to 17670 kg. It was further alleged that the consignee,\n\nM/s. Diamond Trading Company, was prima facie non-existent and that the\n\naddress of the consignor was incorrect as per departmental records.\n3.5. The appellant submitted a detailed reply dated 24.01.2022 to Respondent\n\nNo.3, denying all allegations. However, in view of pressing business exigencies,\n\nFor short, “the\nCGST Act, 2017\n”\n\nthe appellant deposited Rs.7,20,440/- towards IGST, as indicated in the show\n\ncause notice, through Form GST DRC-03 dated 27.01.2022. Accordingly, the\n\ndetained goods were released under Form GST MOV-05 dated 27.01.2022.\n3.6. Despite the release, no final order under\nSection 129(3)\nwas passed by the\n\nMobile Squad. Accordingly, on 26.02.2022, the appellant submitted a\n\nrepresentation seeking an order in Form GST MOV-09, to enable it to pursue\n\nstatutory remedies. In response, by communication dated 03.03.2022, the Mobile\n\nSquad Official stated that one Mohd.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P003_C03",
+      "text": "Javed, the appellant’s representative,\n\nappeared on 27.01.2022, orally requested withdrawal of the earlier reply dated\n\n24.01.2022, and sought release of goods, and hence, no further proceedings were\n\ndeemed necessary.\n3.7. The appellant denied having made any oral request to withdraw the reply\n\nor abandon further proceedings. Asserting that the authorities are statutorily\n\nbound to pass a reasoned order under\nsection 129(3)\n, the appellant sent further\n\ncommunications dated 13.04.2022, 29.04.2022 and 13.05.2022, seeking a copy\n\nof the order, if any, passed under said provision.\n3.8. Receiving no response, the appellant approached the High Court by filing\n\nWrit Tax No.955 of 2022 praying for the following reliefs:\n(i) A direction to Respondent No. 3 to furnish a copy of the order passed under\nSection 129(3)\nin compliance with Section 129(4) of the U.P. GST Act, pursuant\n to notice dated 21.01.2022 in Form GST MOV-07;\n(ii) A direction to Respondent No.3 to pass a speaking order under\nSection 129(3)\nafter affording an opportunity of hearing.\n\n3.9. By the impugned order, the High Court dismissed the writ petition with the\n\nfollowing observations:\n“6.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P003_C04",
+      "text": "Admittedly a notice under\nSection 129(3)\nof the CGST Act was issued by the\n respondent no. 3 to the petitioner. Pursuant thereto the petitioner deposited the\n amount on his own in Form GST DRC-03 and intimated it to the respondent no.3. Therefore, the respondent no. 3 has issued an order in form GST DRC-05. Thus,\n proceedings in respect of the aforesaid notice under\nSection 129(3)\nof the CGST\n Act stood concluded in terms of mandate of sub-section (5) of\nSection 129\n. Hence,\n relief sought by the petitioner cannot be granted since the matter is concluded as\n per legislative mandate.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P004_C01",
+      "text": "7. Once the proceedings in respect of notice under\nSection 129(3)\nof the Act stood\n concluded in terms of\nSection 129(5)\nof the Act read with Rule 142(3) of the Rules,\n no mandamus can be issued to the respondent no. 3 to pass an order under\nSection\n 129(3)\nof the CGST/UPGST/\nIGST Act\n.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P005_C01",
+      "text": "8. The contention of the petitioner that a copy of the order under\nSection 129(3)\nof the CGST/UPGST/\nIGST Act\nbe provided to him, is wholly misconceived\n inasmuch as the proceedings stood concluded in terms of sub-section (5) of\nSection 129\nread with Rule 142 (3) of the Rules and therefore, no mandamus\n contrary to law can be issued in exercise of powers conferred under\nArticle 226\nof the Constitution of India.”\n\n3.10. Aggrieved by the aforesaid order, the appellant has preferred the present\n\nappeal before this Court.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P006_C01",
+      "text": "4. Mr. Pawanshree Agrawal, learned counsel appearing on behalf of the\n\nappellant, at the outset, submitted that it is a settled position in law that every\n\nshow cause notice must culminate in a reasoned final order. Such an order is\n\nessential to enable the person affected to avail all statutory remedies.\n4.1. It was further submitted that the payment of penalty cannot be treated as\n\nvoluntarily under Form GST DRC-03, as no show cause notice or statement in\n\nForm GST DRC-01 was ever issued by the respondent authorities requiring the\n\nappellant to make such a deposit. The respondent authorities failed to follow the\n\nmandatory procedure prescribed under Rule 142 of the CGST Rules, 2017. The\n\nHigh Court, in the impugned order, erroneously recorded that the penalty was\n\ndeposited voluntarily, whereas the appellant had consistently sought final\n\nadjudication and had, in fact, filed a reply to the notice issued under\nsection\n\n129(3)\nof the Act.\n4.2.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P006_C02",
+      "text": "Without prejudice to the above, the learned counsel submitted that even if\n\nit is assumed that the penalty was paid voluntarily to secure release of the goods,\n\nRespondent No.3 was still under a statutory obligation to pass an order in Form\n\nGST MOV-09, in accordance with\nSection 129(3)\nof the CGST Act, 2017, and as\n\nclarified in Circular No.41/15/2018-GST dated 13.04.2018 issued by the CBIC,\n\nGST Policy Wing.\n4.3. It was further submitted that\nSection 129\nof the CGST / SGST Act governs\n\nthe detention, seizure, and release of goods in transit. Under\nsection 129(3)\n, the\n\nproper officer is required to issue notice specifying tax and penalty payable and\n\nthereafter pass an order. This obligation to pass an order is independent of\n\nwhether any payment has been made by the taxpayer. Section 129(5)\nmerely\n\nstates that the proceedings shall be deemed concluded upon payment of penalty,\n\nand does not dispense with the requirement of adjudication, once a notice under\nsection 129(3)\nhas been issued.\n\n4.4. The learned counsel submitted that neither\nSection 129(5)\nnor Rule 142(5)\n\npermits dispensing with the adjudication process.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P006_C03",
+      "text": "While Rule 142(5) provides\n\nthat detention/ seizure proceedings conclude on payment of penalty, it does not\n\noverride the requirement to pass a formal order determining such penalty. For\n\nproper legal closure, a final order in Form GST DRC-07 and GST MOV-09 must\n\nbe issued. The CBIC’s circular dated 13.04.2018 being a binding departmental\n\nclarification, ought to have been considered by the High Court.\n\n4.5. According to the learned counsel, an order must be passed under\nSection\n\n129(3)\neven if the penalty amount is paid during the pendency of proceedings, so\n\nas to preserve the taxpayer’s right of appeal under\nsection 107\nof the CGST Act,\n\n2017, and the failure to pass such an order violates\nArticle 265\nof the Constitution,\n\nwhich mandates that no tax or penalty shall be levied or collected except by\n\nauthority of law.\n4.6. It was further submitted that the imposition of penalty has wider\n\nimplications, including possible consequences in future adjudication or\n\nenforcement proceedings under the\nCGST Act, 2017\n. In the absence of a formal\n\norder, the appellant stands prejudiced, and the statutory right of appeal under\nSection 107\nbecomes illusory.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 265"
+      ],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P006_C04",
+      "text": "However, the High Court erred in holding that no\n\nfurther order was necessary merely because the amount was paid during the\n\npendency of the notice.\n\n4.7. In light of the above submissions, the learned counsel prayed that the\n\nimpugned order of the High Court be set aside, and appropriate directions be\n\nissued to the respondent authorities to pass final orders in Form GST MOV-09\n\nand GST DRC-07, thereby preserving the appellant’s right to appeal against the\n\nsame under the\nCGST Act, 2017\n.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P007_C01",
+      "text": "5. Per contra, Mr. Bhakti Vardhan Singh, learned counsel appearing on\n\nbehalf of the respondents submitted that the vehicle bearing Registration No. UP78 GN 7563 transporting betel nuts from Nagpur to Delhi, was intercepted by\n\nthe Assistant Commissioner, Mobile Squad Unit, Jhansi, on 17.01.2022. Upon\n\nexamination of the documents, several discrepancies were found. Consequently,\n\nthe goods and the vehicle were detained, and proceedings under the GST Act\n\nwere initiated.\n5.1. It was submitted that the statement of the driver was recorded in Form GST\n\nMOV-01, followed by physical inspection of the goods and issuance of Form\n\nGST MOV-04 dated 20.01.2022. A detention order in Form GST MOV-06 was\n\nissued on the same date. Thereafter, a show cause notice under\nSection 129(3)\n\nthe CGST Act, 2017 was issued on 21.01.2022 directing the owner of the goods\n\nand vehicle to submit a reply by 27.01.2022. In compliance, one Mohd. Taha\n\nQureshi, proprietor of M/s. Diamond Trading Company appeared on 25.01.2022\n\nand submitted a joint objection on behalf of the appellant herein, M/s.ASP\n\nTraders Co., the purchaser firm M/s. Diamond Trading Company, and the\n\ntransporter, M/s Verma Roadways.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P007_C02",
+      "text": "On 27.01.2022, the authorised representative\n\nof the appellant Mohd. Javed, appeared and orally sought withdrawal of the\n\nearlier objections, and voluntarily deposited Rs.7,20,440/- via Form GST DRC-\n\n03 as demanded in the notice. Upon this payment, the goods and vehicle were\n\nreleased under Form GST MOV-05 dated 27.01.2022. Hence, in terms of\nSection\n\n129(5)\n, the proceedings stood concluded.\n5.2. The learned counsel further submitted that although\nSection 129(3)\nrequires a notice followed by an order,\nSection 129(5)\nclearly stipulates that upon\n\npayment of the amount under\nSection 129(1)\n, “all proceedings in respect of the\n\nnotice specified in sub-section (3) shall be deemed to be concluded” and thus, no\n\nfurther order is necessary.\n5.3. It was further argued that Rule 142(3) of the CGST Rules reinforces this\n\nposition stating that if payment is made after issuance of the notice under\nSection\n\n129(3)\nbut before passing of the order, the proceedings shall stand concluded. Hence, no further adjudication is mandated.\n5.4.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P007_C03",
+      "text": "The learned counsel contended that had the appellant intended to contest\n\nthe notice, it could have avoided withdrawing objections and instead opted to\n\nsecure release of goods by furnishing security under the Act. Thus, the High Court\n\nrightly declined to grant a mandamus directing the authorities to pass an order.\n\n5.5. Finally, relying on the decision of this Court in\nCommissioner of Customs\n\n(Import) Mumbai v. Dilip Kumar & Co.\nand others3, it was argued that when a\n\nstatute is clear and unambiguous, it must be applied in its literal sense. In the\n\npresent case,\nSection 129(5)\nis explicit, and the appellant cannot now be permitted\n\nto reopen concluded proceedings. Accordingly, the High Court’s decision is\n\ncorrect, and the present appeal deserves to be dismissed.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P008_C01",
+      "text": "6. We have heard the learned counsel appearing for both sides and carefully\n\nperused the materials available on record.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P009_C01",
+      "text": "7. Admittedly, the consignment transported by the appellant was detained by\n\nthe Mobile Squad for alleged contraventions under the IGST/CGST/\nSGST Act,\n\n. Following inspection, a notice dated 21.01.2022 under\nSection 129(3)\nwas\n\nissued to the appellant, directing the appellant to file objections. The appellant\n\nsubmitted a reply, but due to business exigencies, paid the tax and penalty\n\namounting to Rs.7,20,440/- and uploaded the receipt in Form GST DRC-03 on\n\n27.01.2022. Thereafter, the respondent authorities released the goods by passing\n\ndischarge order in Form GST MOV-05 dated 27.01.2022. However, no formal\n\norder under\nSection 129(3)\nwas passed. The appellant requested such an order,\n\nbut the respondent authorities responded that in view of\nSection 129(5)\n, no further\n\norder needs to be passed. Aggrieved, the appellant filed Writ Tax No.955 of 2022,\n\n(2018) 9 SCC 1\n\nwhich was dismissed by the High Court, accepting the stand of the respondents.\n\nHence, the present appeal came to be filed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P010_C01",
+      "text": "8. The issue that arises for consideration in this appeal is whether, upon\n\npayment of tax and penalty by the appellant within the time stipulated in the\n\nnotice under\nsection 129(3)\n, the proper officer is still mandatorily required to pass\n\na final order under\nsection 129(3)\n, or whether the deeming fiction under\nsection\n\n129(5)\ndispenses with such requirement.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P011_C01",
+      "text": "9. Before proceeding further, it is necessary to examine the relevant legal\n\nprovisions applicable to the present case. The IGST Act, 2017\n,\nCGST Act, 2017\nand SGST / UTGST Act, 2017 are interrelated parts of the Goods and Services\n\nTax (GST) regime in India. All three enactments originate from the same\n\nconstitutional amendment – 101st\nAmendment Act, 2016\n– aimed at establishing\n\na harmonized indirect tax structure under the philosophy of ‘One Nation, One\n\nTax’. While the tax base and compliance framework are integrated, the Acts are\n\nseparate to reflect the federal distribution of taxing powers.\n\n9.1. Notably,\nSection 20\nof the IGST Act adopts the provisions of\nSection 129\nof the CGST Act mutatis mutandis.\n9.2. Section 129\nof the CGST Act, 2017 outlines the mechanism for detention,\n\nseizure, and release of goods and conveyance in transit. Sub-section (1)\n\nauthorizes detention and prescribes the conditions for release. Sub-section (3)\n\nrequires the proper officer to issue a notice specifying the tax and penalty\n\npayable and thereafter pass an order. Sub-section (4) mandates that no tax or\n\npenalty shall be determined without providing an opportunity of hearing.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P011_C02",
+      "text": "Sub-\n\nsection (5) provides that upon payment of the amounts under sub-section (1), all\n\nproceedings in respect of the notice shall be deemed to be concluded. For ease\n\nof reference, the said provisions are reproduced below:\n“129.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P011_C03",
+      "text": "Detention, seizure and release of goods and conveyances in transit:\n(1) Notwithstanding anything contained in this Act, where any person transports\n any goods or stores any goods while they are in transit in contravention of the\n provisions of this Act or the rules made thereunder, all such goods and\n conveyance used as a means of transport for carrying the said goods and\n documents relating to such goods and conveyance shall be liable to detention or\n seizure and after detention or seizure, shall be released,—\n(a) on payment of the applicable tax and penalty equal to one hundred per cent of\n the tax payable on such goods and, in case of exempted goods, on payment of an\n amount equal to two per cent of the value of goods or twenty-five thousand rupees,\n whichever is less, where the owner of the goods comes forward for payment of\n such tax and penalty;\n(b) on payment of the applicable tax and penalty equal to the fifty per cent of the\n value of the goods reduced by the tax amount paid thereon and, in case of\n exempted goods, on payment of an amount equal to five per cent of the value of\n goods or twenty five thousand rupees, whichever is less, where the owner of the\n goods does not",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P011_C04",
+      "text": "come forward for payment of such tax and penalty;\n(c) upon furnishing a security equivalent to the amount payable under clause (a)\n or clause (b) in such form and manner as may be prescribed:\nProvided that no such goods or conveyance shall be detained or seized without\n serving an order of detention or seizure on the person transporting the goods.\n ………….",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P011_C05",
+      "text": "(3) The proper officer detaining or seizing goods or conveyances shall issue a\n notice specifying the tax and penalty payable and thereafter, pass an order for\n payment of tax and penalty under clause (a) or clause (b) or clause (c). (4) No tax, interest or penalty shall be determined under sub-section (3) without\n giving the person concerned an opportunity of being heard. (5) On payment of amount referred in sub-section (1), all proceedings in respect\n of the notice specified in sub-section (3) shall be deemed to be concluded. (6) ….”\n\n9.3. Rule 142 of the CGST Rules, 2017 indeed reinforces and operationalizes\n\nthe provisions of\nSection 129\nof the CGST Act, 2017, particularly, with regard to\n\nthe procedural aspects of issuance of notices, orders, and payment of tax and\n\npenalty in cases involving detention, seizure, and release of goods and\n\nconveyances in transit. Sub-rule (3) states that on payment of tax and penalty\n\nunder\nsection 129(1)\n, intimation shall be given in Form DRC-03 and the proper\n\nofficer shall issue an order in Form DRC-05 concluding the proceedings. Sub-\nrule (5) mandates uploading a summary of the final order in Form GST DRC-07.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P011_C06",
+      "text": "For the sake of reference, the said provisions are extracted below:\n“142. Notice and order for demand of amounts payable under the Act.\n …\n\n (3) Where the person chargeable with tax makes payment of tax and interest under\n sub-section (8) of\nsection 73\nor, as the case may be, tax, interest and penalty under\n sub-section (8) of\nsection 74\nwithin thirty days of the service of a notice under\n sub-rule (1), or where the person concerned makes payment of the amount\n referred to in sub-section (1) of\nsection 129\nwithin fourteen days of detention or\n seizure of the goods and conveyance, he shall intimate the proper officer of such\n payment in FORM GST DRC-03 and the proper officer shall issue an order in\n FORM GST DRC-05 concluding the proceedings in respect of the said notice.\n …\n (5) A summary of the order issued under\nsection 52\nsection 62\nsection 63\nsection 64\nsection 73\nsection 74\nsection 75\nsection 76\nsection 122\nsection 123\nsection 124\nsection 125\nsection 127\nsection 129\nsection 130\nshall be uploaded electronically in FORM GST DRC-07, specifying\n therein the amount of tax, interest and penalty payable by the person chargeable\n with tax.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P012_C01",
+      "text": "10. During the course of hearing, the learned counsel for the appellant drew\n\nour attention to Circular No.41/15/2018-GST dated 13.04.2018 issued by the\n\nCentral Board of Indirect Taxes and Customs, GST Policy Wing, and the same\n\nreads as under:\n“Circular No. 41/15/2018-GST\n\n CBEC-20/16/03/2017-GST\n Government of India\n Ministry of Finance\n Department of Revenue\n Central Board of Indirect Taxes and Customs\n GST Policy Wing\n ****\n\n New Delhi, Dated the 13th April, 2018\n\n The Principal Chief Commissioners/Chief Commissioners/Principal\n Commissioners/ Commissioners of Central Tax (All)/The Principal Directors\n General/ Directors General (All)\n\n Madam/Sir,\n\n Subject: Procedure for interception of conveyances for inspection of goods in\n movement, and detention, release and confiscation of such goods and\n conveyances –Reg. Sub-section (1) of\nsection 68\nof the Central Goods and Services Tax Act, 2017\n (hereinafter referred to as the “\nCGST Act\n”) stipulates that the person in charge\n of a conveyance carrying any consignment of goods of value exceeding a specified\n amount shall carry with him the documents and devices prescribed in this behalf.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P012_C02",
+      "text": "Sub-section (2) of the said section states that the details of documents required to\n be carried by the person in charge of the conveyance shall be validated in such\n manner as may be prescribed. Sub-section (3) of the said section provides that\n where any conveyance referred to in sub-section (1) of the said section is\n intercepted by the proper officer at any place, he may require the person in charge\n of the conveyance to produce the documents for verification, and the said person\n shall be liable to produce the documents and also allow the inspection of goods.\n1.1 Rules 138 to 138D of the Central Goods and Services Tax Rules, 2017\n (hereinafter referred to as the “CGST Rules”) lay down, in detail, the provisions\n relating to e-way bills…..\n\n1.2\nSection 129\nof the CGST Act provides for detention, seizure and release of\ngoods and conveyances in transit while\nsection 130\nof the CGST Act provides for\nthe confiscation of goods or conveyances and imposition of penalty.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P013_C01",
+      "text": "2. In this regard, various references have been received regarding the procedure\nto be followed in case of interception of conveyances for inspection of goods in\nmovement and detention, seizure and release and confiscation of such goods and\nconveyances. In order to ensure uniformity in the implementation of the provisions\nof the\nCGST Act\nacross all the field formations, the Board, in exercise of the\npowers conferred under\nsection 168 (1)\nof the CGST Act, hereby issues the\nfollowing instructions:\n(a) The jurisdictional Commissioner or an officer authorised by him for this\npurpose shall, by an order, designate an officer/officers as the proper\nofficer/officers to conduct interception and inspection of conveyances and goods\nin the jurisdictional area specified in such order. (b) The proper officer, empowered to intercept and inspect a conveyance, may\nintercept any conveyance for verification of documents and/or inspection of\ngoods. On being intercepted, the person in charge of the conveyance shall\nproduce the documents related to the goods and the conveyance.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P013_C02",
+      "text": "The proper\nofficer shall verify such documents and where, prima facie, no discrepancies are\nfound, the conveyance shall be allowed to move further. An e-way bill number\nmay be available with the person in charge of the conveyance or in the form of a\nprintout, sms or it may be written on an invoice. All these forms of having an e-\nway bill are valid. Wherever a facility exists to verify the e-way bill electronically,\nthe same shall be so verified, either by logging on to http://mis.ewaybillgst.gov.in\nor the Mobile App or through SMS by sending EWBVER <EWB_NO> to the\nmobile number 77382 99899 (For e.g. EWBVER 120100231897). (c) …. (d) Where the person in charge of the conveyance fails to produce any prescribed\ndocument or where the proper officer intends to undertake an inspection, he shall\nrecord a statement of the person in charge of the conveyance in FORM GST MOV",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P014_C01",
+      "text": "01. In addition, the proper officer shall issue an order for physical\nverification/inspection of the conveyance, goods and documents in FORM GST\nMOV-02, requiring the person in charge of the conveyance to station the\nconveyance at the place mentioned in such order and allow the inspection of the\ngoods. The proper officer shall, within twenty four hours of the aforementioned\nissuance of FORM GST MOV-02, prepare a report in Part A of FORM GST EWB-\n03 and upload the same on the common portal. (e) Within a period of three working days from the date of issue of the order in\nFORM GST MOV-02, the proper officer shall conclude the inspection\n\nproceedings, either by himself or through any other proper officer authorised in\nthis behalf. Where circumstances warrant such time to be extended, he shall\nobtain a written permission in FORM GST MOV-03 from the Commissioner or an\nofficer authorized by him, for extension of time beyond three working days and a\ncopy of the order of extension shall be served on the person in charge of the\nconveyance.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P014_C02",
+      "text": "(f) On completion of the physical verification/inspection of the conveyance and\nthe goods in movement, the proper officer shall prepare a report of such physical\nverification in FORM GST MOV-04 and serve a copy of the said report to the\nperson in charge of the goods and conveyance. The proper officer shall also\nrecord, on the common portal, the final report of the inspection in Part B of FORM\nGST EWB-03 within three days of such physical verification/inspection. (g) Where no discrepancies are found after the inspection of the goods and\nconveyance, the proper officer shall issue forthwith a release order in FORM\nGST MOV-05 and allow the conveyance to move further. Where the proper\nofficer is of the opinion that the goods and conveyance need to be detained\nunder\nsection 129\nof the CGST Act, he shall issue an order of detention in\nFORM GST MOV-06 and a notice in FORM GST MOV-07 in accordance with\nthe provisions of sub-section (3) of\nsection 129\nof the CGST Act, specifying the\ntax and penalty payable. The said notice shall be served on the person in charge\nof the conveyance.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P014_C03",
+      "text": "(h) Where the owner of the goods or any person authorized by him comes\nforward to make the payment of tax and penalty as applicable under clause (a)\nof sub-section (1) of\nsection 129\nof the CGST Act, or where the owner of the\ngoods does not come forward to make the payment of tax and penalty as\napplicable under clause (b) of sub-section (1) of the said section, the proper\nofficer shall, after the amount of tax and penalty has been paid in accordance\nwith the provisions of the\nCGST Act\nand the CGST Rules, release the goods and\nconveyance by an order in FORM GST MOV-05. Further, the order in FORM\nGST MOV-09 shall be uploaded on the common portal and the demand\naccruing from the proceedings shall be added in the electronic liability register\nand the payment made shall be credited to such electronic liability register by\ndebiting the electronic cash ledger or the electronic credit ledger of the\nconcerned person in accordance with the provisions of\nsection 49\nof the CGST\nAct. (i) ….",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P014_C04",
+      "text": "(j) Where any objections are filed against the proposed amount of tax and\npenalty payable, the proper officer shall consider such objections and\nthereafter, pass a speaking order in FORM GST MOV-09, quantifying the tax\nand penalty payable. On payment of such tax and penalty, the goods and\nconveyance shall be released forthwith by an order in FORM GST MOV-05. The order in FORM GST MOV 09 shall be uploaded on the common portal and\nthe demand accruing from the order shall be added in the electronic liability\nregister and, upon payment of the demand, such register shall be credited by\neither debiting the electronic cash ledger or the electronic credit ledger of the\nconcerned person in accordance with the provisions of\nsection 49\nof the CGST\nAct. (k) In case the proposed tax and penalty are not paid within seven days from the\ndate of the issue of the order of detention in FORM GST MOV-06, action under\nsection 130\nof the CGST Act shall be initiated by serving a notice in FORM GST\nMOV 10, proposing confiscation of the goods and conveyance and imposition of\npenalty.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P014_C05",
+      "text": "(l)…\n(m) No order for confiscation of goods or conveyance, or for imposition of\npenalty, shall be issued without giving the person an opportunity of being heard. (n) An order of confiscation of goods shall be passed in FORM GST MOV-11,\nafter taking into consideration the objections filed by the person in charge of the\ngoods (owner or his representative), and the same shall be served on the person\nconcerned. Once the order of confiscation is passed, the title of such goods shall\nstand transferred to the Central Government. In the said order, a suitable time\nnot exceeding three months shall be offered to make the payment of tax, penalty\nand fine imposed in lieu of confiscation and get the goods released. The order in\nFORM GST MOV-11 shall be uploaded on the common portal and the demand\naccruing from the order shall be added in the electronic liability register and,\nupon payment of the demand, such register shall be credited by either debiting the\nelectronic cash ledger or the electronic credit ledger of the concerned person in\naccordance with the provisions of\nsection 49\nof the CGST Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P014_C06",
+      "text": "Once an order of\nconfiscation of goods is passed in FORM GST MOV-11, the order in FORM GST\nMOV-09 passed earlier with respect to the said goods shall be withdrawn. (o).. (p)…\n(q)…\n(r)…\n(s)…\n(t)…\n(u)…\n(v) A summary of every order in FORM GST MOV-09 and FORM GST MOV-11\nshall be uploaded electronically in FORM GST-DRC-07 on the common portal.\n…. (Upender Gupta)\n Commissioner (GST)”\n\nThis circular, which is binding on the department under\nSection 168\nof the\n\nCGST Act, 2017 provides detailed instructions to ensure uniformity in\n\nimplementation of procedures for interception, detention, seizure, and\n\nconfiscation of goods in transit. It mandates that upon payment of tax and penalty\n\nunder\nSection 129 (1)\n, the proper officer must issue the release order in Form\n\nGST MOV-05. Additionally, the officer is required to pass a formal order of\n\ndemand in Form GST MOV-09 and upload it on the common portal. A summary\n\nof this order must be uploaded in Form GST DRC-07, so that the demand is\n\nrecorded in the taxpayer’s electronic liability register.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P015_C01",
+      "text": "11. In the present case, upon payment of the tax and penalty demanded in the\n\nnotice dated 21.01.2022 issued under Form GST MOV-07, Respondent No.3\n\nreleased the goods and vehicle by passing a discharge order dated 27.01.2022 in\n\nForm GST MOV-05. However, no final order was passed, pursuant to the said\n\nnotice dated 21.01.2022 issued under\nSection 129(3)\nof the CGST Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P016_C01",
+      "text": "12. The appellant has categorically pleaded that due to business exigencies,\n\nthey paid the tax and penalty and secured the release of the goods and vehicle\n\ndetained. This payment, however, cannot be construed as an admission of liability\n\nfor the alleged contraventions of the Act. It was further stated that the payment\n\nwas made under protest, and the appellant had intended to contest the matter.\n\nTherefore, the proper officer was bound to pass a speaking order under\nsection\n\n129(3)\n, to enable the appellant to exercise of their statutory right of appeal.\n\n12.1. In contrast, the respondent authorities asserted that the payment was made\n\nvoluntarily by the appellant prior to the passing of an order under\nSection 129(3)\n,\n\nand that the appellant’s authorised representative had withdrawn the objections\n\nearlier filed. Accordingly, they stated that in terms of\nsection 129(5)\n, all\n\nproceedings stood concluded, and no further order was required to be passed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P017_C01",
+      "text": "13. To appreciate the rival submissions, it is relevant to refer to the discharge\n\norder dated 27.01.2022 issued under Form GST MOV- 05 by Respondent No.3\n\nwhich reads as under:\n“Commercial Tax Department, Uttar Pradesh\n Office AC (Mobile Squad) - 2, Jhansi\n FORM GST MOV-05\n No. : 21-22/HA000326\n MOV-05 No.: 212210583051054\n MOV-05 dated 27.01.2022\n DISCHARGE ORDER\n\n Ref. FORM GST MOV-02S./Dated 212210283051049 / 18.01.2022\n\n The goods being transported from vehicle No. HR38U0152 were checked by the\n undersigned on 18.01.2022 and after investigation, in the detention order FORM\n GST MOV-06 on 20.01.2022 and in the notice FORM GST MOV-07, the vehicle\n in-charge was served on the 21.01.2022.\n• Appeared the goods owner, the proposed due tax and penalty have been paid in\n the proceedings. In the light of the above, the goods and the vehicle are hereby being released on\n 27.01.2022 at 01:20 PM. Sd/-\nSantosh Kumar Tiwari-II\n AC (Mobile Squad)-2, Jhansi\n\n Acknowledgment\n I hereby duly declare that I have obtained a copy of the said discharge order. Sd/- (Shakil)\n Signature Owner/Vehicle Incharge”\n\n13.1.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P017_C02",
+      "text": "Evidently, the discharge order merely records that the detained goods and\n\nvehicle were released upon payment of the proposed tax and penalty. It makes no\n\nmention of any withdrawal of objections or of the conclusion of proceedings\n\ninitiated under\nSection 129(3)\nof the CGST Act, 2017.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P018_C01",
+      "text": "14. It is a well settled principle that every show cause notice must culminate in\n\na final, reasoned order. While\nSection 129(5)\nof the CGST Act, 2017 provides\n\nthat proceedings shall be deemed to be concluded upon payment of tax and\n\npenalty, this deeming fiction cannot be interpreted to imply that the assessee has\n\nagreed to waive or abandon the right to challenge the levy – a right that is\n\nprotected by the very enactment itself. The term “conclusion” as used in\nSection\n\n129(5)\nmerely signifies that no further proceedings for prosecution will be\n\ninitiated. It does not absolve the responsibility of the proper officer to pass an\n\norder concluding the proceedings. Therefore, the proper officer is duty-bound to\n\npass a formal order in Form GST MOV-09 and upload a summary thereof in Form\n\nGST DRT 07 as mandated under Rule 142(5) and the Circular dated 13.04.2018,\n\nso as to enable the taxpayer to avail the appeal remedy as per law.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P019_C01",
+      "text": "15. In the present case, payment was made under protest, and objections had\n\nalready been filed by the appellant. Once objections are filed, adjudication is not\n\noptional, it becomes imperative to pass a speaking order to justify the demand of\n\ntax and penalty, to safeguard the right of appeal under\nSection 107\nof the CGST\n\nAct, 2017. The language of\nsection 129(3)\nis categorical in stating that the officer\n\n“shall issue a notice… and thereafter, pass an order”. The use of the words “and\n\nthereafter” reinforces the mandatory nature of passing a reasoned order,\n\nregardless of payment, particularly where protest or dispute is raised.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P020_C01",
+      "text": "16. Although the respondents claim that the objections were orally withdrawn\n\nand that the payment was made voluntarily by the appellant, no written material\n\nhas been placed on record to substantiate the same. As between a written reply\n\nand an oral submission contrary to such written submission/reply, the written\n\nreply would prevail, and the authorities are duty-bound to consider that reply and\n\npass speaking orders addressing each and every contention. Significantly, the\n\nGST payment portal permits payments only through Form GST DRC-03, which\n\nis automatically classified as a voluntary payment, and does not provide any\n\nmechanism for an assessee to indicate that the payment is being made under\n\nprotest. In the absence of such an option, payments made under commercial\n\ncompulsion or business necessity – such as for securing release of detained goods\n\n– may be erroneously construed as voluntary, resulting in undue prejudice. Under\n\nsuch circumstances, the written objections become significant to understand the\n\nintention of the assessee/owner or transporter.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P020_C02",
+      "text": "Upon such payment, the system\n\nauto-generates Form GST DRC-05, thereby concluding the proceedings without\n\nany formal adjudication. Such procedural limitations cannot be allowed to defeat\n\nthe rights of the taxpayer, particularly where the detention of goods is ultimately\n\nfound to be unlawful. We are, therefore, of the considered opinion that the\n\npayment made by the appellant in the present case cannot be treated as voluntary,\n\nand the absence of a mechanism to record protest should not operate to the\n\ndetriment of the assessee, especially when objections were already on record and\n\nthe payment was clearly necessitated by business exigences.\n\n16.1. Further, the payment by an assessee will not absolve the responsibility of\n\nthe proper officer to pass an order justifying the demand of tax and penalty. The\n\nassessee, even by election, cannot be treated to have waived his right against the\n\nillegality committed by the proper officer or acquiesced to the demand, as by the\n\nconstitutional mandate under\nArticle 265\nof the Constitution, no tax can be levied\n\nor collected except with the authority of law. There is not only a bar against levy\n\nbut also against collection.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 265"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P020_C03",
+      "text": "Therefore, the action of the proper officer must always\n\nbe justifiable and fall within the four corners of law, as it is well settled that there\n\ncan be no acquiescence in tax.\n16.2. A waiver, as settled, is an abandonment of a right by express terms or by\n\nimplication. It is an act by which a party elects to abandon his right to pursue a\n\nparticular remedy with full knowledge of its existence, making the other party to\n\nalter his position or legal status. Acquiescence, on the other hand, will imply the\n\nconduct of a party, who refrains from taking any action for a long period of time,\n\ndespite the knowledge of the violation of his right, thereby precluding his future\n\nright to agitate the issue, as it would be hit by laches. It will be useful to refer to\n\nthe following judgments on waiver and acquiescence:\n\n(\ni) Sha Mulchand & Co. Ltd. v. Jawahar Mills Ltd.4\n“12.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P020_C04",
+      "text": "The appeal Court, it will be observed, reversed the decision of the trial Judge\n and decided the appeal against the Company on two grounds only, namely, (1) that\n the Company had by the conduct of its two members abandoned its right to\n challenge the forfeiture, and (2) that the form of the order could not be supported\n as one validly made under\nsection 38\nof the Indian Companies Act. The\n learned Attorney-General, appearing in support of this appeal, has assailed the\n soundness of both these grounds. The learned Attorney-General contends, not\n without considerable force, that having, in agreement with the trial Court, held that\n no plea of acquiescence, waiver or estoppel had been established in this case, the\n appeal Court should not have allowed the Mills to raise the question of\n abandonment of right by the Company, inasmuch as no such plea of abandonment\n had been raised either in the Mills' affidavit in opposition to the Company's\n application or in the Mills' grounds of appeal before the High Court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P020_C05",
+      "text": "Apart from\n this, the appeal Court permitted the Mills to make out a plea of abandonment of\n right by the Company as distinct from the pleas of waiver, acquiescence and\n estoppel and sought to derive support for this new plea from the well known cases\n of Prendergast v. Turton 62 E.R. 807, Clark & Chapman v. Hart 6 H.L.C. 632; 10\n E.R. 1443] and Jones v. North Vancouver Land and Improvement Co. [1910] A.C.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P021_C01",
+      "text": "317. A perusal of the relevant facts set out in the several reports and the respective\n judgments in the above cases will clearly indicate that apart from the fact that some\n of them related to collieries which were treated on a special footing, those cases\n were really cases relating to waiver or acquiescence or estoppel. Indeed in Clarke's\n case [6 H.L.C. 632; 10 E.R. 1443], while Lord Chelmsford referred to the decision\n in Prendergast's case 62 E.R. 807, as a case of abandonment of right, Lord\n Wensleydale read it as an instance of acquiescence and estoppel. Unilateral act or\n conduct of a person, that is to say act or conduct of one person which is not relied\n upon by another person to his detriment, is nothing more than mere waiver,\n acquiescence or laches, while act or conduct of a person amounting to an\n abandonment of his right and inducing another person to change his position to his\n detriment certainly raises the bar of estoppel.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P021_C02",
+      "text": "Therefore, it is not intelligible how,\n having held that no plea of waiver, acquiescence or estoppel had been established\n in this case, the appeal Court could, nevertheless, proceed to give relief to the Mills\n on the plea of abandonment by the Company of its rights. If the facts on record\n were not sufficient to sustain the plea of waiver, acquiescence or estoppel, as held\n by both the Courts, we are unable to see how a plea of abandonment of right which\n is an aggravated form of waiver, acquiescence or laches and akin to estoppel could\n be sustained on the self-same facts. Further, whatever be the effect of mere waiver,\n acquiescence or laches on the part of a person on his claim to equitable remedy to\n enforce his rights under an executory contract, it is quite clear, on the authorities,\n that mere waiver, acquiescence or laches which does not amount to an\n abandonment of his right or to an estoppel against him cannot disentitle that person\n from claiming relief in equity in respect of his executed and not merely executory\n interest. (See per Lord Chelmsford in Clarke's case 6 H.L.C. 632 : 10 E.R. 1443).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P021_C03",
+      "text": "Indeed, it has been held in The Garden Gully United Quartz Mining Company v. Hugh McLister L.R. 1 App. Cas. 39, that mere laches does not disentitle the holder\n of shares to equitable relief against an invalid declaration of forfeiture. Sir Barnest\n\nMANU: SC/011/1952: AIR 1953 SC 98\n\nPeacock in delivering the judgment of the Privy Council observed at pages 56-57\nas follows:\n\"There is no evidence sufficient to induce their Lordships to hold that the conduct\n of the plaintiff did amount to an abandonment of his shares, or of his interest\n therein, or estop him from averring that he continued to be the proprietor of\n them. There certainly is no evidence to justify such a conclusion with regard to\n his conduct subsequent to the advertisement of the 30th of May, 1869. In this\n case, as in that of Prendergast v. Turton 62 E.R. 807, the plaintiff's interest was\n executed. In other words, he had a legal interest in his shares and did not require\n a declaration of trust or the assistance of a Court of Equity to create in him an\n interest in them. Mere laches would not, therefore, disentitle him to equitable\n relief : Clarke and Chapman v. Hart 6 H.L.C. 632 : 10 E.R. 1443.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P021_C04",
+      "text": "It was upon\n the ground of abandonment, and not upon that of mere laches, that Prendergast\n v. Turton 62 E.R. 807, was decided.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P022_C01",
+      "text": "13. Two things are thus clear, namely, (1) that abandonment of right is much more than\nmere waiver, acquiescence or laches and is something akin to estoppel if not estoppel\nitself, and (2) that mere waiver, acquiescence or laches which is short of abandonment\nof right or estoppel does not disentitle the holder of shares who has a vested interest in\nthe shares from challenging the validity of the purported forfeiture of those shares. In\nview of the decision of the Courts below that no case of waiver, acquiescence, laches or\nestoppel has been established in this case it is impossible to hold that the principles\ndeducible from the judicial decisions relied upon by the appeal Court have disentitled\nthe Company to relief in this case. The matter does not rest even here. Assuming, but not\nconceding, that the principle of piercing the veil of corporate personality referred to in\nSmith, Stone & Knight v.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P022_C02",
+      "text": "The Birmingham Corporation (1939) 4 All E.R. 116, can at all\nbe applied to the facts of the present case so as to enable the Court to impute the acts or\nconduct of Govindaraju Chettiar and Sundara Ayyar to the Company, we have yet to\ninquire whether those acts or conduct do establish such abandonment of rights as would,\naccording to the decisions, disentitle the plaintiff from questioning the validity of the\npurported declaration of forfeiture. There can be no question that the abandonment, if\nany, must be inferred from acts or conduct of the Company as such or, on the above\nprinciples, of its two members subsequent to the date of the forfeiture, for it is the right\nto challenge the forfeiture that is said to have been abandoned. In order to give rise to\nan estoppel against the Company, such acts or conduct amounting to abandonment must\nbe anterior to the Mills' changing its position to its detriment. The resolution for\nforfeiture was passed on the 5th September, 1941. The five thousand forfeited shares\nwere allotted to 14 persons on the 16th November, 1941, and it is such allotment that\nmade it impossible for the Mills to give them back to the Company.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P022_C03",
+      "text": "In order, therefore,\nto sustain a plea of abandonment of right or estoppel, it must be shown that the Company\nor either of its two members had done some act and/or had been guilty of some conduct\nbetween the 5th September, 1941, and the 16th November, 1941. No such act or conduct\nduring such period has been or can be pointed out. On being pressed advocate for the\nMills refers us to the conduct of Sundara Ayyar in opposing O.P. No. 10 of 1942 filed by\nthe Mills and O.P. No. 11 of 1942 by the Income-tax authorities for restoring the\nCompany to the register of companies and it is submitted that such conduct indicates\nthat Sundara Ayyar had accepted the validity of the forfeiture. This was long after the\nMills had reallotted the forfeited shares. Further, a perusal of paragraph 9 of the\naffidavit in opposition filed by Sundara Ayyar in O.P. No. 10 of 1942 will clearly show\nthat he not only did not accept the forfeiture as valid but actually repudiated such\n\nforfeiture as wholly beyond the competence of the Board of Directors of the Mills.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P022_C04",
+      "text": "The\nreason for opposing the restoration of the Company may well have been that Sundara\nAyyar desired, at all cost, to avoid his eventual personal liability as a shareholder and\ndirector of the Company. In any case, Sundara Ayyar did make it clear that he challenged\nthe validity of the purported forfeiture of shares by the Mills and in this respect this case\nfalls clearly within the decision in Clarke's case [6 H.L.C. 632 : 10 E.R. 1443], relied\nupon by the appeal Court. The only other conduct of Sundara Ayyar relied on by learned\nadvocate for the Mills in support of the appeal Court's decision on this point is that\nSundara Ayyar proceeded with his suit against Palaniappa Chettiar even after his suit\nas well as his appeal had been dismissed as against the Mills. In that suit Sundara Ayyar\nsued the Mills as well as Govindaraju Chettiar and the Official Receiver of Salem\nrepresenting the latter's estate and Palaniappa Chettiar. In the plaint itself the validity\nof the forfeiture was challenged. The claim against Palaniappa Chettiar was in the\nalternative and it was founded on the agreement of the 30th June, 1939.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P022_C05",
+      "text": "The suit was\ndismissed as against the Mills only on the technical ground that Sundara Ayyar had no\nlocus standi to maintain the suit. The contention of the Company that the forfeiture was\ninvalid and the claim for rectification of the share register of the Mills by restoring the\nname of the Company cannot possibly have been affected by this decision. Sundara\nAyyar's claim against Palaniappa Chettiar was based on the agreement of 1939 and it\nwas formulated as an alternative personal claim. In view of the clear allegation in the\nplaint that the forfeiture was invalid and not binding on the Company, the continuation\nof the suit by Sundara Ayyar to enforce his personal claim against Palaniappa Chettiar\ncannot be regarded as an abandonment by Sundara Ayyar of the right of the Company. It must not be overlooked that the Company stood dissolved on that date and Sundara\nAyyar had no authority to do anything on behalf of the Company. In our opinion there is\nno evidence of abandonment of the Company's right to challenge the validity of the\npurported forfeiture.\n……",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P023_C01",
+      "text": "22. In the first place, waiver and abandonment are in their primary context unilateral\nacts. Waiver is the intentional relinquishment of a right or privilege. Abandonment is the\nvoluntary giving up of one's rights and privileges or interest in property with the\nintention of never claiming them again. But except where statutory or other limitations\nintervene, unilateral acts never in themselves effect a change in legal status because it\nis fundamental that a man cannot by his unilateral action affect the rights and interests\nof another except on the basis of statutory or other authority. Rights and obligations are\nnormally intertwined and a man cannot by abandonment per se of his rights and interests\nthereby rid himself of his own obligations or impose them on another. Thus, there can\nbe no abandonment of a tenancy except on statutory grounds (as, for example, in the\nCentral Provinces Tenancy Act, 1920) unless there is acceptance, express or implied, by\nthe other side. It may, for example in a case of tenancy, be to the landlord's interest to\nkeep the tenancy alive; and so also in the case of shares of a company.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P023_C02",
+      "text": "It may be to the\ninterests of the company and the general body of shareholders to refrain from forfeiture\nif, for example, the value of unpaid calls exceeds the market value of the shares. Such a\nposition was envisaged in Garden Gully United Quartz Mining Co. v. Hugh Mc\nLister (1875) 1 App. Cas. 39. So also with waiver. A long catena of illustrative cases will\nbe found collected in B. B. Mitra's Indian Limitation Act. Thirteenth Edition, pages 447\nand 448.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P024_C01",
+      "text": "23. This fundamental concept brings about another repercussion. Unless other\n circumstances intervene, there is a locus poenitentiae in which a unilateral abandonment\n or waiver can be recalled. It would be otherwise if the unilateral act of abandonment in\n itself, and without the supervention of other matters, effected a change in legal status. In\n point of fact, it is otherwise when, as in the statutory example I have quoted, the law\n intervenes and determines the tenancy. It is, therefore, in my opinion, fundamental that\n abandonment and waiver do not in themselves unilaterally bring about a change in legal\n status. Something else must intervene, either a statutory mandate or an act of\n acceptance, express or implied, by another person, or, as Lord Chelmsford put it in\n Clarke & Chapman v. Hart (1858) 10 E.R. 1443, acts which are equivalent to an\n agreement or a licence, or an estoppel in cases where an estoppel can be raised.”\n(ii) Bhau Ram v. Baij Nath Singh and Ors.5\n\n “7. It seems to us, however, that in the absence of some statutory provision or of a\n well-recognised principle of equity, no one can be deprived of his legal rights\n including a statutory right of appeal.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P024_C02",
+      "text": "The phrase \"approbate and reprobate\" is\n borrowed from Scotch Law where it is used to express the principle embodied in\n the English doctrine of election, namely, that no party can accept and reject the\n same instrument (per Scrutton, L.J., in Verschures Creameries v. Hull and\n Netherlands Steamship Co. [[1921] 2 K.B. 608.]. The House of Lords further\n pointed out in Lissenden v. C.A.V. Bosch Ltd. [[1940] A.C. 412.] that the equitable\n doctrine of election applies only when an interest is conferred as an act of bounty\n by some instrument. In that case they held that the withdrawal by a workman of the\n compensation money deposited by the employer could not take away the statutory\n right of appeal conferred upon him by the\nWorkmen's Compensation Act\n. Lord\n Maugham, after pointing out the limitations of the doctrine of approbate and\n reprobate observed towards the conclusion of his speech:\n\"It certainly cannot be suggested that the receipt of the sum tendered in any way\n injured the respondents. Neither estoppel nor release in the ordinary sense was\n suggested. Nothing was less served than the principles either of equity or of\n justice.\" (pp. 421-422).\n……",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P025_C01",
+      "text": "12. It seems to us that a statutory right of appeal cannot be presumed to have come\n to an end because the appellant has in the meantime abided by or taken advantage\n of something done by the opponent under the decree and there is no justification\n for extending the rule in Tinkler's case (1849) 4 Ex. 187 : 154 E.R. 1176 to cases\n like the present. In our judgment it must be limited only to those cases where a\n person has elected to take benefit otherwise than on the merits of the claim in the\n lis under an order to which benefit he could not have been entitled except for the\n order. Here the appellant, by withdrawing the pre-emption price has not taken a\n benefit de hors the merits. Besides, this is not a case where restitution is impossible\n or inequitable. Further, it seems to us that the existence of a choice between two\n rights is also one of the conditions necessary for the applicability of the doctrine of\n\nMANU/0031/SC/1961: AIR 1961 SC 1327\n\napprobate and reprobate. In the case before us there was no such choice before the\n appellant and, therefore, his act in withdrawing the pre-emption price cannot\n preclude him for continuing his appeal.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P025_C02",
+      "text": "We, therefore, overrule the preliminary\n objection. The appeal will now be set down for hearing on merits. The costs of this\n hearing will be costs in the appeal.”\n\n Therefore, it is clear that there must be much more than an abandonment\n\nof a right to plead waiver or acquiescence. The payment, by itself, cannot be\n\ntreated as a waiver or abandonment, especially when the appellant has clearly\n\nobjected to the demand and when there is a statutory mandate to pass an order\n\nand a corresponding right to appeal.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P026_C01",
+      "text": "17. Furthermore, the respondents’ reliance on\nsection 129(5)\nto avoid issuing\n\na final order under\nsection 129(3)\n, in our view, is a non-starter and overlooks the\n\nstatutory scheme. Where objections are filed or payment is made under protest or\n\ncompulsion, adjudication is indispensable. The invocation of the decision in Dilip\n\nKumar & Co. (regarding strict interpretation of exemption) by the respondents is\n\nentirely misplaced, as the issue involved herein pertains not to tax exemption, but\n\nto compliance with due process and procedural safeguards.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P027_C01",
+      "text": "18. The principles of natural justice mandate that when a taxpayer submits a\n\nresponse to a show cause notice, the adjudicating authority is required to consider\n\nsuch response and render a reasoned, speaking order. This is not a mere\n\nprocedural formality, but a substantive safeguard ensuring fairness in quasi-\njudicial proceedings. The right to appeal under\nSection 107\nof the CGST Act,\n\n2017, is predicated upon the existence of a formal adjudication. An appeal can lie\n\nonly against an ‘order’, and in the absence of a reasoned order passed under\nSection 129(3)\nof the Act, the taxpayer is effectively deprived of the statutory\n\nremedy of appeal. Such a deprivation undermines the foundational principles of\n\nfairness, due process, and access to justice, rendering the right of appeal illusory\n\nor nugatory. It is now settled law that failure to issue a speaking order in response\n\nto a show cause notice creates a legal vacuum.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P027_C02",
+      "text": "Any consequential action\n\nincluding imposition of tax or penalty, would then be unsupported by authority\n\nof law, thereby potentially violating\nArticle 265\nof the Constitution of India,\n\nwhich prohibits the levy or collection of tax except by authority of law.\n18.1. In this context, useful guidance may be drawn from the decision in M/s. Kranti Associates (P) Ltd & Anr. v. Masood Ahmed Khan & Ors.6\n, wherein, this\n\nCourt emphasized that fairness, transparency, and accountability are inseparable\n\nfrom the duty to provide reasons. The Court held that failure to furnish reasons\n\nviolates the principles of natural justice and renders the right of appeal or judicial\n\nreview illusory. In paragraph 51 of the judgment, the Court distilled the following\n\nkey principles:\n“a. In India the judicial trend has always been to record reasons, even in\n administrative decisions, if such decisions affect anyone prejudicially.\nb. A quasi-judicial authority must record reasons in support of its conclusions.\nc. Insistence on recording of reasons is meant to serve the wider principle of\n justice that justice must not only be done it must also appear to be done as well.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 265"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P027_C03",
+      "text": "(2010) 9 SCC 496 : (2010) 3 SCC (Civ) 852 : 2010 SCC OnLine SC 987 at page 504\n\nd. Recording of reasons also operates as a valid restraint on any possible\narbitrary exercise of judicial and quasi-judicial or even administrative power.\ne. Reasons reassure that discretion has been exercised by the decision maker on\nrelevant grounds and by disregarding extraneous considerations.\n\nf. Reasons have virtually become as indispensable a component of a decision\nmaking process as observing principles of natural justice by judicial, quasi-\njudicial and even by administrative bodies.\ng. Reasons facilitate the process of judicial review by superior Courts.\n\nh. The ongoing judicial trend in all countries committed to rule of law and\nconstitutional governance is in favour of reasoned decisions based on relevant\nfacts. This is virtually the life blood of judicial decision making justifying the\nprinciple that reason is the soul of justice.\ni. Judicial or even quasi-judicial opinions these days can be as different as the\njudges and authorities who deliver them. All these decisions serve one common\npurpose which is to demonstrate by reason that the relevant factors have been\nobjectively considered.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P027_C04",
+      "text": "This is important for sustaining the litigants' faith in the\njustice delivery system.\nj. Insistence on reason is a requirement for both judicial accountability and\ntransparency.\nk. If a Judge or a quasi-judicial authority is not candid enough about his/her\ndecision making process then it is impossible to know whether the person deciding\nis faithful to the doctrine of precedent or to principles of incrementalism. l. Reasons in support of decisions must be cogent, clear and succinct. A pretence of\nreasons or `rubber-stamp reasons' is not to be equated with a valid decision\nmaking process.\nm. It cannot be doubted that transparency is the sine qua non of restraint on abuse\nof judicial powers. Transparency in decision making not only makes the judges\nand decision makers less prone to errors but also makes them subject to broader\nscrutiny. (See David Shapiro in Defence of Judicial Candor (1987) 100 Harward\nLaw Review 731-737).\nn. Since the requirement to record reasons emanates from the broad doctrine of\nfairness in decision making, the said requirement is now virtually a component of\nhuman rights and was considered part of Strasbourg Jurisprudence.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P027_C05",
+      "text": "See (1994)\n19 EHRR 553, at 562 para 29 and Anya vs. University of Oxford, 2001 EWCA Civ\n\n405, wherein the Court referred to\nArticle 6\nof European Convention of Human\n Rights which requires, \"adequate and intelligent reasons must be given for\n judicial decisions\".\no. In all common law jurisdictions judgments play a vital role in setting up\n precedents for the future. Therefore, for development of law, requirement of\n giving reasons for the decision is of the essence and is virtually a part of \"Due\n Process\".",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P028_C01",
+      "text": "19. Therefore, even assuming that the payment was made by the appellant,\n\nvoluntarily or otherwise, the proper officer could not be absolved of the statutory\n\nobligation to pass a reasoned order in Form GST MOV-09 and upload the\n\ncorresponding summary in Form GST DRC-07. Compliance with these\n\nprocedural requirements is essential not only for ensuring transparency and\n\naccountability in tax administration, but also for safeguarding the taxpayer’s\n\nappellate rights under the\nCGST Act, 2017\n. Such adherence is in consonance with\n\nthe constitutional mandate under\nArticle 265\nof the Constitution of India.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 265"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P029_C01",
+      "text": "20. In view of the foregoing discussion, and taking into account that objections\n\nwere filed, payment was stated to have been made under protest due to business\n\nexigencies, and the appellant seeks to challenge the levy, the proper officer was\n\nunder a clear statutory obligation to pass a final order under\nsection 129(3)\n\nForm GST MOV-09 and DRC-07. The refusal by the High Court to direct the\n\npassing of such an order, has the effect of frustrating the appellant’s statutory\n\nright to appeal and is contrary to well established legal principles governing tax\n\nadjudication and procedural fairness.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P030_C01",
+      "text": "21. Accordingly, the impugned order passed by the High Court is set aside.\n\nRespondent No.3 is directed to pass a reasoned final order under\nsection 129(3)\nof the CGST Act, 2017, in Form GST MOV-09, after granting an opportunity of\n\nbeing heard as mandated under\nSection 129(4)\n, and upload the summary thereof\n\nin Form GST DRC-07 within a period of one month from the date of receipt of a\n\ncopy of this judgment. Thereafter, it shall be open to the appellant to pursue\n\nappropriate legal remedies against such order, in accordance with law.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP_P031_C01",
+      "text": "22. This appeal stands allowed on the above terms. No order as to costs.\n\nConnected miscellaneous application(s) shall stand closed.\n…………………………. J.\n[J.B. PARDIWALA]\n\n …………………………. J.\n[R. MAHADEVAN]\n\nNEW DELHI;\nJULY 24, 2025.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "M/S Asp Traders vs State Of U.P",
+    "case_id": "SC_2025_MS_ASP_TRADERS_VS_STATE_OF_UP",
+    "court": "Supreme Court of India",
+    "year": "2025",
+    "facts_summary": "2. This appeal has been preferred by the appellant against the final judgment\n\n and order dated 18.07.2022 passed by the High Court of Judicature at Allahabad1\n\n in Writ Tax No. 955 of 2022. 3. The relevant facts giving rise to the present appeal are as follows:\n3.1. The appellant is a registered dealer in Red Arecanut operating from\n\n Channagiri, Davangere, Karnataka. On 14.01.2022, they consigned 17,850 kg of\n\nM/s. Diamond Trading Company, Delhi, through Vehicle No. UP-78-GN-7563\n\naccompanied by E-Way bill No.141424463403.\n3.2. During transit, the goods were transhipped and loaded onto another vehicle\n\nbearing Registration No. HR-38-U-0152 for onward journey to Delhi. However,\n\nonly 248 bags were loaded onto the new vehicle, with 7 bags missing from the\n\noriginal consignment.\n3.3. On 17.01.2022, the said vehicle was detained by the Mobile Squad at\n\nLalitpur Bypass Road, Jhansi. The driver’s statement was recorded in Form GST\n\nMOV-01. Following physical inspection, a report was generated in Form GST\n\nMOV-04 on 20.01.2022 alleging certain deficiencies. A detention order in Form\n\nGST MOV-06 dated 20.01.2022 was also issued.\n3.4. Subsequently, a notice dated 21.01.2022 under section 129(3) of the\n\nCentral Goods and Services Tax Act, 20172, was issued in Form GST MOV-07\n\nhighlighting the discrepancy of 7 missing bags and the resulting shortfall in\n\nquantity from 18220 kg to 17670 kg. It was further alleged that the consignee,\n\nM/s. Diamond Trading Company, was prima facie non-ex",
+    "legal_issues": "4. Mr. Pawanshree Agrawal, learned counsel appearing on behalf of the\n\nappellant, at the outset, submitted that it is a settled position in law that every\n\nshow cause notice must culminate in a reasoned final order. Such an order is\n\nessential to enable the person affected to avail all statutory remedies.\n4.1. It was further submitted that the payment of penalty cannot be treated as\n\nvoluntarily under Form GST DRC-03, as no show cause notice or statement in\n\nForm GST DRC-01 was ever issued by the respondent authorities requiring the\n\nappellant to make such a deposit. The respondent authorities failed to follow the\n\nmandatory procedure prescribed under Rule 142 of the CGST Rules, 2017. The\n\nHigh Court, in the impugned order, erroneously recorded that the penalty was\n\ndeposited voluntarily, whereas the appellant had consistently sought final\n\nadjudication and had, in fact, filed a reply to the notice issued under\nsection\n\n129(3)\nof the Act.\n4.2. Without prejudice to the above, the learned counsel submitted that even if\n\nit is assumed that the penalty was paid voluntarily to secure release of the goods,\n\nRespondent No.3 was still under a statutory obligation to pass an order in Form\n\nGST MOV-09, in accordance with\nSection 129(3)\nof the CGST Act, 2017, and as\n\nclarified in Circular No.41/15/2018-GST dated 13.04.2018 issued by the CBIC,\n\nGST Policy Wing.\n4.3. It was further submitted that\nSection 129\nof the CGST / SGST Act governs\n\nthe detention, seizure, and release of goods in t",
+    "ratio_summary": "The appeal Court, it will be observed, reversed the decision of the trial Judge\n and decided the appeal against the Company on two grounds only, namely, (1) that\n the Company had by the conduct of its two members abandoned its right to\n challenge the forfeiture, and (2) that the form of the order could not be supported\n as one validly made under\nsection 38\nof the Indian Companies Act. The\n learned Attorney-General, appearing in support of this appeal, has assailed the\n soundness of both these grounds. The learned Attorney-General contends, not\n without considerable force, that having, in agreement with the trial Court, held that\n no plea of acquiescence, waiver or estoppel had been established in this case, the\n appeal Court should not have allowed the Mills to raise the question of\n abandonment of right by the Company, inasmuch as no such plea of abandonment\n had been raised either in the Mills' affidavit in opposition to the Company's\n application or in the Mills' grounds of appeal before the High Court.",
+    "final_order": "22. This appeal stands allowed on the above terms. No order as to costs.\n\nConnected miscellaneous application(s) shall stand closed.\n…………………………. J.\n[J.B. PARDIWALA]\n\n …………………………. J.\n[R. MAHADEVAN]\n\nNEW DELHI;\nJULY 24, 2025.",
+    "outcome_summary": "Allowed. 22. This appeal stands allowed on the above terms. No order as to costs.\n\nConnected miscellaneous application(s) shall stand closed.\n…………………………. J.\n[J.B. PARDIWALA]\n\n …………………………. J.\n[R. MAHADEVAN]\n\nNEW DELHI;\nJULY 24, 2025.",
+    "sections_cited": [
+      "Constitution 226",
+      "Constitution 265"
+    ],
+    "cases_cited": []
+  }
+}

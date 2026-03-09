@@ -1,0 +1,2091 @@
+{
+  "case_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC",
+  "case_name": "Lifestyle Equities C.V vs Amazon Technologies Inc",
+  "normalized_case_name": "LIFESTYLE_EQUITIES_C.V_VS_AMAZON_TECHNOLOGIES_INC",
+  "court": "Supreme Court of India",
+  "year": "2025",
+  "judgment_template": null,
+  "case_number": "Petition 19767 of 2025",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": "7 October 2025",
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Lifestyle Equities C.V",
+  "respondent": "Amazon Technologies Inc",
+  "reporter_citations": [
+    "2025 INSC 1190"
+  ],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 40,
+  "cited_by_count": 0,
+  "neutral_citation": "2025 INSC 1190",
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": true,
+  "source_file": "Supreme Court\\2025\\OCT\\2025_OCT_3.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P001_C01",
+      "text": "EXTRAORDINARY APPELLATE JURISDICTION\n\n Petition for Special Leave to Appeal (C) No.19767 of 2025\n\n LIFESTYLE EQUITIES C.V. & ANR. …PETITIONER(S)\n\n VERSUS\n\n AMAZON TECHNOLOGIES INC. …RESPONDENT\n\n JUDGMENT\n\nINDEX\n\nA. FACTUAL MATRIX ................................................................. 3\n\nB. SUBMISSIONS ON BEHALF OF THE PLAINTIFFS .................. 11\n\nC. SUBMISSIONS ON BEHALF OF THE DEFENDANT ................. 13\n\nD. REJOINDER TO THE SUBMISSIONS CANVASSED ON BEHALF\nOF THE DEFENDANTS ............................................................. 15\n\nE. ANALYSIS............................................................................ 16\n\n i. History of the Legislation in Question ................................................ 18\n\n ii. Principles required to be followed while Interpreting a Provision of a\n Statute ................................................................................................. 22\n\n iii. Decisions of various High Courts on the Subject .............................. 33\n\n iv.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P001_C02",
+      "text": "Meaning and Import of “sufficient cause” under\nOrder XLI Rule 5 of the\n CPC\n...................................................................................................... 38\n\n v. Service of Summons and Irregularity in the Service of Summons ...... 39\n\n vi. Reading of\nSection 36\nof the Arbitration Act and Order XLI Rule 3 and\n Rule 5 respectively\nof the CPC\n.............................................................. 41\n\n vi. Relevant aspects which the High Court looked into for the purpose of\n granting unconditional stay .................................................................. 53\n\nF. CONCLUSION ...................................................................... 69\n1. Our Order dated 24.09.2025 passed in the instant petition reads thus:\n“1. Exemption Application is allowed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P002_C01",
+      "text": "2. Heard Mr. Mukul Rohatgi and Mr. Gaurav\n Pachnanda, the learned Senior counsel appearing\n for the petitioners and Dr. Abhishek Manu\n Singhvi, Mr. Neeraj Kishan Kaul and Mr. Arvind\n Nigam, the learned Senior counsel appearing for\n the respondent.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P003_C01",
+      "text": "3. We are of the view that there is no good reason\n for us to interfere with the impugned Judgment\n and Order passed by the High Court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P004_C01",
+      "text": "4. The Special Leave Petition is, accordingly,\n dismissed.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P005_C01",
+      "text": "5. In view of the dismissal of the Special Leave\n Petition, no orders are required to be passed on\n the application for intervention/impleadment and\n the same stands disposed of.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P006_C01",
+      "text": "6. However, reasons to follow by a separate\n Order.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P007_C01",
+      "text": "2. This petition arises from the judgment and order passed by the High\n Court of Delhi, dated 01.07.2052 in the CM Application No. 26455 of\n 2025 filed in the RFA(O.S.)(COMM) No.11 of 2025 by which the\n application filed by the respondent herein (judgment debtor-original\n defendant) under Order XLI Rule 5(1) and Rule 5(3) of the Civil\n Procedure Code, 1908, (for short, “\nthe CPC\n”) respectively came to be\n allowed, and thereby the Court stayed the operation of the judgment\n and money decree dated 25.02.2025 passed by a learned Single Judge\n in the suit instituted by the petitioner herein. In short, the Division\n Bench of the High Court granted stay of the execution of the money\n decree suffered by the respondent herein without insisting for the\n deposit of the decretal amount.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P008_C01",
+      "text": "3. For the sake of convenience, the petitioners herein shall be referred to\n as the original plaintiffs and the respondent herein shall be referred to\n as the original defendant.\n\nA. FACTUAL MATRIX",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P009_C01",
+      "text": "4. The plaintiffs along with its subsidiaries and licensees claim to be\n engaged in the business of manufacturing, distribution and sale of a\n wide range of products including garments, apparels, footwear for men,\n women and children, furniture, textiles, watches and other\n lifestyle/personal care products under the trademark Beverly Hills Polo\n Club (hereinafter referred to as, “BHPC”).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P010_C01",
+      "text": "5. The plaintiff No. 1 is an Amsterdam based company and is the\n proprietor of the BHPC trademark and claims to hold exclusive rights\n for its use and commercialisation. The BHPC trademark consists of a\n distinctive look featuring a charging Polo pony with a mounted rider\n wielding a raised polo stick (mallet) symbolising the sport of Polo.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P011_C01",
+      "text": "6. The plaintiff no. 2 is the licensee of the said trademark pursuant to the\n Master License and Licensing Service Agreement dated 20.05.2008.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P012_C01",
+      "text": "7. The plaintiffs instituted Civil Suit (COMM) No. 443 of 2020 in the Delhi\n High Court, inter alia, seeking permanent injunction and damages\n against the defendant for the alleged infringement of their registered\n trademark BHPC.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P013_C01",
+      "text": "8. It is the case of the plaintiffs that they are the rightful proprietors of\n the BHPC Mark which enjoys extensive goodwill and recognition in the\n domestic and international markets. The plaintiffs instituted the suit\n contending that the defendant has been unlawfully using a mark\n identically or deceptively similar to the plaintiffs’ trademark, thereby\n violating their statutory and common law rights.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P014_C01",
+      "text": "9. In such circumstances referred to above, the plaintiffs prayed for the\n following reliefs:\n“a. Decree for permanent injunction restraining\n die Defendants, its partners, directors,\n shareholders or proprietor as the case may be, its\n assigns in business, franchisees affiliates,\n subsidiaries, licensees, and agents from selling,\n offering for sale, advertising, directly or indirectly\n dealing in any products or reproducing or using in\n any manner whatsoever, the Infringing Logo\n Mark or any other trade mark or logo/device,\n which is identical to and/or deceptively similar to,\n or is a deceptive variant of, and/or includes the\n Plaintiffs' well known Logo Mark amounting to\n infringement of the Plaintiffs' registered trade\n marks as disclosed in the Plaint.\nb.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P014_C02",
+      "text": "Decree for permanent injunction restraining the\n Defendants, its partners, directors, shareholders\n or proprietor as the case may be, its assigns in\n business, franchisees, affiliates, subsidiaries,\n licensees and agents from selling, offering for\n sale, advertising, directly or indirectly dealing in\n any products or reproducing or using in any\n manner whatsoever, the infringing Logo Mark or\n any other trade mark or logo/device, which is\n identical to and/or deceptively similar to or\n imitation of, or is a deceptive variant of, and/or\n includes the Plaintiffs' artistic Logo Mark\n amounting to infringement of the Plaintiffs'\n copyright in the said logo.\nc.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P014_C03",
+      "text": "Decree for permanent injunction restraining the\n Defendants, its partners, directors, shareholders\n or proprietor as the case may be, its assigns in\n business, franchisees, affiliates, subsidiaries,\n licensees and agents from selling, offering for\n sale, advertising, directly or indirectly dealing in\n any products or using in any manner whatever,\n the infringing Logo Mark or any other mark or\n logo/device, which is identical to, or is a deceptive\n variant of and/or deceptively similar to and/or\n includes the Plaintiff’s well known Logo Mark\n amounting to passing off of the goods/services\n\nand/or business of the Defendants for those of\n the Plaintiffs, dilution of goodwill and unfair\n competition.\nd. A decree for delivery up of all products and\n material including stationery, visiting cards, hill\n boards, brochures, promotional material, letter-\n heads, cash memos, sign boards, sign posts,\n leaflets, cartons, or any other items of\n whatsoever, bearing the infringing Logo Mark\n and/or any other mark, logo or device which may\n be identical and/or deceptively similar, or is a\n deceptive variant of and/or includes the Plaintiff's\n well-known Logo Mark.\ne.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P014_C04",
+      "text": "A decree for damages amounting to Rs.\n 2,00,05,000/- (Rupees Two Crores and Five\n Thousand only) or any such amount as found due\n in favour of the Plaintiffs. The Plaintiffs submit\n that the valuation of damages is an approximate\n figure only, and the Plaintiffs undertake to pay\n further Court fees as may be determined by this\n Hon'ble Court upon the damages that the\n Plaintiffs are able to prove in the course of trial.\nf. An order for rendition of accounts of profits in\n favour of the Plaintiffs and against the\n Defendants to ascertain the profits made by\n Defendants through sale of its apparel products\n or any other products which bear the infringing\n Logo Mark. The Court fees as and when the\n accounts of profit are determined precisely and\n accurately in the course of trial, and upon\n disclosure of profits made by the Defendants.\ng. An order awarding costs of this suit to the\n Plaintiffs;\nh. Any other and further relief(s) as this Hon'ble\n Court may deem fit and proper to meet the ends\n of justice.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P015_C01",
+      "text": "10. It appears from the materials on record that in the suit filed by the\n plaintiffs there were three defendants including the respondent herein\n\nas the original defendant No. 1. The plaint computed the damages\n claimed from all the defendants to the tune of Rs. 2,00,05,000/-\n (Rupees Two Crore and Five Thousand Only), or such other amount as\n the court would find it to be payable.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P016_C01",
+      "text": "11. It further appears that the defendant No. 1 was proceeded ex parte vide\n Order dated 20.04.2022. Of the remaining two defendants, the suit was\n decreed against the defendant No. 2 for Rs. 4,78,484/- vide the Order\n dated 02.03.2023. The very same order deleted the defendant No. 3\n from the array of parties.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P017_C01",
+      "text": "12. In such circumstances, the respondent before us is the only defendant\n now contesting the litigation.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P018_C01",
+      "text": "13. It appears that upon institution of the suit by the plaintiffs the following\n Order dated 12.10.2020 came to be passed:\n“1. Allowed, subject to all just exceptions.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P019_C01",
+      "text": "2. Original documents, if any, be filed within two\n weeks of the resumption of the normal functioning\n of the Court.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P020_C01",
+      "text": "3. Application is disposed of.\nI.A. 9256/2020 (under Order XI Rule 1\n (4)\nCommercial Courts Act\n)",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P021_C01",
+      "text": "1. Additional documents, if any, be filed within 30\n days.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P022_C01",
+      "text": "2. Application is disposed of.\nSigning Date:13.10.2020 07:06:56 This file is",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P023_C01",
+      "text": "3. Learned counsel for the defendant No.2 and\ndefendant No.3 accept summons in the suit and\nnotice in the application.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P024_C01",
+      "text": "4. Summons in the suit and notice in the\napplication be now issued to defendant No.1 on\nthe plaintiff taking steps through email and\nwhatsapp, returnable before this Court on 2nd\nFebruary, 2021.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P025_C01",
+      "text": "5. Written statement and reply affidavit along\nwith affidavit of admission/denial be filed within\n30 days of the receipt of summons in the suit and\nnotice in the application.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P026_C01",
+      "text": "6. Replication and rejoinder affidavit, along with\naffidavit of admission/denial, be filed within\nthree weeks thereafter.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P027_C01",
+      "text": "7. Case of the plaintiff is that the plaintiff is a\nbrand-owner of \"BEVERLY HILLS POLO CLUB\"\nwhich was established by its predecessors in the\nyear 1981. The first registration for the trademark\n\"BEVERLY HILLS POLO CLUB\" was applied on\n3rd December, 1992 and thereafter the plaintiff\nhas number of registrations for the said mark.\nThe mark of the plaintiff is a device mark, that is,\nand the plaintiff is the owner of the registered\ntrademark and the copyright thereof.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P028_C01",
+      "text": "8. Grievance in the present suit of the plaintiff is\nlimited to defendant No.1 which is a group\ncompany of defendant No.3 but not working as an\nintermediary but is selling its own brand, copying\nthe logo of the plaintiff as….. It is thus claimed\nthat by infringing the plaintiff's device mark as\nalso the copyright in the logo, the defendant No.1\nis selling its goods representing them to be as the\nplaintiff's brand. Learned counsel further states\nthat defendant No.2 is selling the products of the\ndefendant No.1 under the impugned logo mark by\nlisting the same on the platform of defendant\nNo.3.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P029_C01",
+      "text": "9. None appears on behalf of defendant No.1\ndespite advance notice however, learned counsel\nfor defendant No.3, that is, Amazon Seller Service\nPvt. Ltd. enters appearance and states that in an\nearlier suit filed by the plaintiff being CS(COMM)\n1015/2018\nLifestyle Equities C.V. and Ors. vs.\nAmazon Seller Services Pvt. Ltd.\n, vide order dated\n\n16th July, 2018, this Court had already directed\nthe defendant No.3 to take down the URLs\nwherein the brand/logo/device mark of the\nplaintiff is copied including those mentioned in\nthe plaint and as and when the plaintiff gives any\nfurther information in this regard. Learned\ncounsel for the defendant No.3 states that since\nthe defendant No.3 is covered by the said order\nof this Court dated 16th July, 2018, no fresh suit\nis maintainable and the plaintiff was only\nrequired to intimate the same to the defendant\nNo.3 and hence the present suit is mala fide.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P030_C01",
+      "text": "10. Learned counsel for the defendant No.2 states\nthat the defendant No.2 has already taken down\nthe listing and will further investigate into the\nmatter and take down any further listing which is\neither on the defendant No.3's platform or any\nother platform.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P031_C01",
+      "text": "11. Case of the plaintiff is that in the earlier suit,\nthat is, CS (COMM) No.1015/2018, the plaintiff\nhad impleaded parties who were selling their\nproducts on the defendant No.3's listing by\ninfringing the plaintiff's device mark and the\ncopyright and in the earlier suit the defendant\nNo.1 was not a party and in the present suit, not\nonly does the plaintiff seek delisting of the brand\nof the defendant No.1 from the defendant No.3's\nplatform but also seeks the relief of injunction\nagainst the defendant No.1 which is infringing\nand diluting the plaintiff's mark by selling its\nproducts on a much cheaper rates representing to\nbe that of the plaintiff.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P032_C01",
+      "text": "12. Considering that the defendant No.1 is a\nseparate entity, this Court is prima facie of the\nview that the present suit would be maintainable.\nFrom the averments in the plaint as also the\ndocuments filed therewith, this Court finds that\nthe plaintiff has made out a prima facie case in\nits favour and in case no ex-parte ad-interim\ninjunction is granted, the plaintiff would suffer an\nirreparable loss. Balance of convenience also lies\nin favour of the plaintiff. Consequently, till the\nnext date of hearing, defendant No.1 and\ndefendant No.2, their Partners, Directors,\nProprietors, Shareholders, Affiliates, Licensees,\n\nAgents etc. are restrained from selling, offering for\n sell, advertising, directly or indirectly dealing in\n any products or reproducing or using in any\n manner whatsoever the infringing logo mark\n which is identically/deceptively similar to the\n plaintiff's logo mark \"BEVERLY HILLS POLO\n CLUB\". In the meantime, defendant No.3 is\n directed to take down the products of the\n defendant No.1 with the infringing logo within 72\n hours of the URLs being provided by the plaintiff.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P033_C01",
+      "text": "13. Compliance under\nOrder XXXIX Rule 3\n CPC\nbe made within one week.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P034_C01",
+      "text": "14. Thus, the Court while registering the plaint as a suit noted that the\n defendant No. 1, i.e., the respondent before us despite an advance\n notice failed to enter appearance, and accordingly granted an ex parte\n ad interim injunction restraining the defendants, their partners,\n directors, proprietors, shareholders, etc., from selling, offering for sale,\n advertising, directly or indirectly dealing in any products which is\n identically/deceptively similar to the plaintiffs’ logo mark “BHPC”.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P035_C01",
+      "text": "15. The suit ultimately came to be adjudicated ex parte, and came to be\n decreed in favour of the plaintiffs and against the defendant No. 1, i.e.,\n the respondent before us in the following terms:\n“121. The suit is accordingly decreed as under in\n favour of Plaintiffs and against Defendant No. 1\n in the following terms:\n(i) A decree of permanent injunction is granted in\n terms of paragraphs 64(a), (b) and (c) of the plaint,\n(ii) A decree of damages to the tune of $38.78\n million as on date Rs. 336,02,87,000.00/- is\n granted in favour of the Plaintiffs against\n Defendant No. 1. If the said amount is paid within\n three months, no interest would be liable to be\n paid. However, if the same is not paid by the\n Defendant No.1, interest @ 5% per annum would\n he payable from the date of this judgment until\n the full realization of the said amount.\n\n(iii) A decree of costs to the tune of Rs.\n3,23,10,966.60/- along with the Court Fee.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P036_C01",
+      "text": "122. The details of the relief granted are\n summarized below:\nS.NO. DECREE AMOUNT/TERMS\n DETAILS\n 1 Compensatory\n Damages\n 1A Lost Royalties USD 33.78 million\n (Rs.292,70,37,000,00/)\n 1B Increased USD 5 million\n Advertising & (Rs.43,32,50,000.00/-)\n Promotional\n Expenses\n 1C Total USD 38.78 million\n Compensatory (Rs.336,02,87,000.00/)\n Damages\n 2 Costs Rs.3,23,10,966.60/-\n along with the Court\n Fee.\n 3 Grand Total Rs.339,25,97,966.60/-\n (Damages + + Court Fee\n Costs)",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P037_C01",
+      "text": "123. Decree sheet be drawn up in the above\n terms.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P038_C01",
+      "text": "124. The suit along with all pending applications,\n if any are disposed of.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P039_C01",
+      "text": "16. The defendant being dissatisfied with the judgment and money decree\n passed by the learned Single Judge of the High Court challenged the\n same by filing RFA (O.S.) (COMM) No. 11 of 2025.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P040_C01",
+      "text": "17. In the appeal filed by the defendant, an application was filed under\n Order XLI Rule 5(1) and Rule 5(3)\nof the CPC\nrespectively, seeking stay\n of the operation of judgment and money decree passed by the learned\n Single Judge\nreferred to above\n.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P041_C01",
+      "text": "18. The Division Bench of the High Court after hearing the decree-holders\n and the judgment-debtor allowed the stay application in the following\n terms:\n“181. We, therefore, dispose of the present\n application by staying the operation of the\n impugned judgment dated 25 February 2025,\n passed by the learned Single Judge, insofar as it\n awards damages of Rs. 336,02,87,000/-, and\n costs of Rs. 3,23,10,966.60/-.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P042_C01",
+      "text": "182. This shall, however, be subject to an\n undertaking being furnished by the appellant\n Amazon Tech to comply with the impugned\n judgment, in the event of its failing in the present\n appeal, to be furnished with the Registry of this\n Court within a period of two weeks from\n pronouncement of the present judgment.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P043_C01",
+      "text": "183. CM Appl 26455/2025 stands flowed to the\n aforesaid extent.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P044_C01",
+      "text": "184. Observations and findings contained in the\n present judgment, we clarify, are only intended to\n be prima facie and for the purposes of disposing\n of the present application. They shall not be\n binding on Court while deciding the present\n appeal.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P045_C01",
+      "text": "19. In such circumstance\nreferred to above\n, the original plaintiffs/decree-\n holders are here before us with the present petition.\nB. SUBMISSIONS ON BEHALF OF THE PLAINTIFFS",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P046_C01",
+      "text": "20. Mr. Mukul Rohatgi and Mr. Gaurav Pachnanda, the learned Senior\n Counsel appearing for the plaintiffs submitted that the Division Bench\n of the High Court committed an egregious error in granting the benefit\n of unconditional stay of the execution of money decree. It was\n vehemently submitted that the impugned judgment and order passed\n by the Division Bench of the High Court is in gross violation and\n flagrant disregard of the mandatory provisions of Order XLI Rule 5(1)\n and Rule 5(3)\nof the CPC\nrespectively.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P047_C01",
+      "text": "21. Mr. Rohatgi vehemently submitted that impugned judgment and order\n is erroneous on all counts. According to the learned Senior Counsel,\n the High Court is not correct in saying that there was no valid service\n of summons to the defendant.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P048_C01",
+      "text": "22. The learned Senior Counsel vehemently submitted that Order XLI Rule\n 1(3)\nof the CPC\nmakes it abundantly clear that in an appeal against a\n decree for payment of amount, the appellant is obliged in law, within\n the time permitted by the Appellate Court, to deposit the amount\n awarded or furnish such security in respect thereof as the Court may\n think fit. He laid much stress on the fact that under Order XLI Rule\n 5(5)\nof the CPC\na deposit or security, is a condition precedent for an\n order by the Appellate Court staying the execution of the decree.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P049_C01",
+      "text": "23. In other words, according to the learned Senior Counsel the provision\n is mandatory in character. With a view to fortify the submissions noted\n aforesaid, the learned Senior Counsel placed strong reliance on the\n decision of this Court in the case of\nSihor Nagar Palika Bureau v.\n Bhabhlubhai Virabhai & Co.\n, reported in (2005) 4 SCC 1.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P050_C01",
+      "text": "24. It was vehemently argued that, if according to the defendant it is a case\n of an ex parte decree, i.e., decree passed without service of valid\n summons, then why the defendant did not prefer any application under\nOrder IX Rule 13 of the CPC\n? Why defendant thought fit to prefer an\n appeal against such so called ex parte decree?",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P051_C01",
+      "text": "25. The learned Senior Counsel invited our attention to the second Proviso\nOrder IX Rule 13 of the CPC\n. Relying on the same, it was argued that\n the defendant had the requisite knowledge of the date of hearing and\n had sufficient time to appear, file its written statement, and to contest\n\nthe suit. It was argued that the delivery of the suit papers and the order\n passed by the High Court dated 12.10.2020 granting ex parte\n injunction subject to compliance of\nOrder XXXIX Rule 3 of the CPC\nwould amount to adequate service of summons in accordance with law.\n To fortify this submission reliance was placed on the decision of this\n Court in the case of\nSunil Poddar and Others v. Union Bank of\n India\n, reported in (2008) 2 SCC 326, and the decision of the Delhi\n High Court in the case of\nLT Foods Ltd. v. Saraswati Trading\n Company\n, reported in 2022 SCC OnLine Del 3694.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P052_C01",
+      "text": "26. It was also submitted by the learned Counsel that the Division Bench\n of the High Court committed an egregious error in staying the money\n decree on mere asking the defendant to furnish an undertaking on\n oath, that in the event, if the appeal is dismissed the defendant shall\n deposit the decretal amount. This according to the learned Senior\n Counsel cannot be termed as adequate security.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P053_C01",
+      "text": "27. In such circumstances\nreferred to above\n, the learned Senior Counsel\n prayed that there being merit in his petition the same may be allowed\n and the impugned judgment and order be set aside, and further the\n defendant may be directed to deposit the decretal amount with interest\n in the court below.\nC. SUBMISSIONS ON BEHALF OF THE DEFENDANT",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P054_C01",
+      "text": "28. On the other hand, Dr. Abhishek Manu Singhvi, Mr. Neeraj Kishan\n Kaul and Mr. Arvind Nigam, the learned Senior Counsel appearing for\n the defendant, while vehemently opposing this petition submitted that\n no error not to speak of any error of law could be said to have been\n committed by the High Court in passing the impugned judgment and\n order.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P055_C01",
+      "text": "29. The learned Senior Counsel submitted that all the relevant aspects of\n the matter could be said to have been looked into by the Division Bench\n painstakingly, and upon being fully convinced on all aspects, the\n Division Bench in its discretion thought fit to grant the benefit of stay\n of the execution of the money decree without insisting for the deposit\n of the decretal amount with interest or any other tangible security.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P056_C01",
+      "text": "30. It was argued that the decision of this Court in\nSihor Nagar Palika\n(supra) upon which strong reliance has been placed on behalf of the\n petitioner is of no avail in view of the decision of this Court in\nMalwa\n Strips Pvt. Limited v. Jyoti Limited\n, reported in (2009) 2 SCC 426.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P057_C01",
+      "text": "31. It was pointed that in\nMalwa Strips\n(supra), this Court considered\nSihor Nagar Palika\n(supra) and took the view that the word “shall” in\nOrder XLI Rule 5 of the CPC\nis not mandatory, and if an exceptional\n case is made out then it is always open for the Appellate Court to grant\n the benefit of stay of the execution of a money decree without insisting\n for deposit of the entire decretal amount with interest.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P058_C01",
+      "text": "32. It was argued that the Division Bench of the High Court was fully\n convinced that not only any valid summons was not served upon the\n defendants and the suit proceeded ex parte, but even on other counts,\n the judgment and decree passed by the Court, prima facie, suffers from\n various legal infirmities.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P059_C01",
+      "text": "33. The learned Senior Counsel submitted that the Division Bench of the\n High Court in its impugned judgment and order has recorded few\n shocking facts like the plaintiffs enhancing the claim of damages\n consequently from Rs. 2 crore in the plaint to Rs. 3,780 crore at the\n stage of written submissions post-trial, and that too without any\n\namendment and without putting the defendant to notice of such\n enhanced claim without any basis in the pleadings. It was argued that\n having regard to the gross perversities and illegalities writ large in the\n decree and conduct of the suit proceedings, asking the defendant to\n furnish security or deposit of any particular amount as a pre-condition\n for stay would be wholly disproportionate and excessive.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P060_C01",
+      "text": "34. In such circumstances\nreferred to above\n, the learned Senior Counsel\n prayed that there being no merit in the present petition the same may\n be dismissed.\nD. REJOINDER TO THE SUBMISSIONS CANVASSED ON\n BEHALF OF THE DEFENDANTS",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P061_C01",
+      "text": "35. Mr. Gaurav Pachnanda, the learned Senior Counsel appearing for the\n plaintiffs in rejoinder put forward an important submission, which we\n must take record and deal with the same.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 62,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P062_C01",
+      "text": "36. The learned Senior Counsel invited our attention to\nSection 36(3)\nof the\n Arbitration and Conciliation Act, 1996 (for short, “the\nArbitration\n Act\n”). He would submit that the second Proviso attached to\nSection\n 36(3)\nof the Arbitration Act is an indication that ordinarily by applying\n the principles of\nOrder XLI Rule 5 of the CPC\n, as mentioned in\nSection\n 36(3)\nof the Arbitration Act, the Court would not be empowered to\n unconditionally stay an arbitration award or a judgment.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P063_C01",
+      "text": "37. In the alternative, the learned Senior Counsel sought to argue that,\n even if it was to be understood that the second Proviso attached to\nSection 36(3)\nof the Arbitration Act provides that instead of exercising\n discretion, the Court must grant unconditional stay in cases of fraud\n and corruption, the same would lead to a logical inference that the\n\ndiscretion to grant an unconditional stay under\nOrder XLI Rule 5 of the\n CPC\nwould be restricted to only cases of fraud or corruption, or grounds\n that take colour from those two grounds and not cases of an extreme\n or egregious view on the merits of the adjudication.\nE. ANALYSIS",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 64,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P064_C01",
+      "text": "38. Having heard the learned Senior Counsel appearing for the parties and\n having gone through materials on record, the only question that falls\n for our consideration is whether the Division Bench of the High Court\n committed any error in passing the impugned judgment and order?",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 65,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P065_C01",
+      "text": "39. Before adverting to the rival submissions canvassed on either side, we\n must look into few relevant provisions of law and also look into few\n decisions of this Court and various High Courts.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 66,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P066_C01",
+      "text": "40. Order XLI Rule 1(3)\nof the CPC\nreads thus:-\n“1. Form of appeal – What to accompany\n memorandum.-\nxxx\n (3) Where the appeal is against a decree for\n payment of money, the appellant shall, within\n such time as the Appellate Court may allow,\n deposit the amount disputed in the appeal or\n furnish such security in respect thereof as the\n Court may think fit.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 67,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P067_C01",
+      "text": "41. Order XLI Rule 5 of the CPC\nreads as under:-\n“Order XLI Rule 5. Stay by Appellate Court. (1) An appeal shall not operate as a stay of\n proceedings under a decree or order appealed\n from except so far as the Appellate Court may\n order, nor shall execution of a decree be stayed\n by reason only of an appeal having been\n preferred from the decree; but the Appellate Court\n may for sufficient cause order stay of execution of\n such decree. Explanation-\nAn order by the Appellate Court for the stay of\n execution of the decree shall be effective from\n the date of the communication of such order to\n the Court of first instance but an affidavit\n sworn by the appellant, based on his personal\n knowledge, stating that an order for the stay\n of execution of the decree has been made by\n the Appellate Court shall, pending the receipt\n from the Appellate Court of the order for the\n stay of execution or any order to the contrary,\n be acted upon by the Court of first instance.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 67,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P067_C02",
+      "text": "(2) Stay by Court which passed the decree.-\nWhere an application is made for stay of\nexecution of an appealable decree before the\nexpiration of the time allowed for appealing\ntherefrom, the Court which passed the decree\nmay on sufficient cause being shown order the\nexecution to be stayed. (3) No order for stay of execution shall be made\nunder sub-rule (1) or sub-rule (2) unless the Court\nmaking it is satisfied-\n(a) that substantial loss may result to the party\n applying for stay of execution unless the order\n is made;\n(b) that the application has been made without\n unreasonable delay; and\n(c) that security has been given by the\n applicant for the due performance of such\n decree or order as may ultimately be binding\n upon him. (4) [Subject to the provisions of sub-rule (3)], the\nCourt may make an ex parte order for stay of\nexecution pending the hearing of the application. (5) Notwithstanding anything contained in the\nforegoing sub-rules, where the appellant fails to\nmake the deposit or furnish the security specified\nin sub-rule (3) of rule 1, the Court shall not make\nan order staying the execution of the decree.”\n\ni. History of the Legislation in Question",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 68,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P068_C01",
+      "text": "42. The Bill No. 27 of 1974, being a Bill to amend\nthe CPC\nand the\nLimitation Act, 1963\n, was introduced in the Lok Sabha on April 8,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 69,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P069_C01",
+      "text": "1974. The text of the Bill is found published in the Gazette of\n India, Extraordinary dated April 8, 1974, in Part-II,\nSection 2\nat pages\n 203 to 293.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 70,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P070_C01",
+      "text": "43. The Statement of Objects and Reasons accompanying the Bill recites in\n paragraph 5 at page 295 that after carefully considering the\n recommendations made by the Law Commission in its Twenty-seventh,\n Fortieth, Fifty-fourth and Fifty-fifth Reports, the Government had\n decided to bring forward the said Bill for the amendment\nof the Code of\n Civil Procedure\n, 1908, keeping in view, among others, the following\n basic considerations, namely:\n(i) that a litigant should get a fair trial in accordance with the\n accepted principles of natural justice;\n(ii) that every effort should be made to expedite the disposal of civil\n suits and proceedings, so that justice may not be delayed;\n(iii) that the procedure should not be complicated and should, to\n the utmost extent possible, ensure fair deal to the poorer sections\n of the community who do not have the means to engage a pleader\n to defend their cases.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 71,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P071_C01",
+      "text": "44. Clause 90 of the Bill provided for the amendment of Order XLI. In Rule\n 1 of Order XLI, after sub-rule (2), sub-rule (3) in the following terms\n was sought to be introduced:\n“(3) Where the appeal is against an order made in\n execution of a decree for payment of money, the\n appellant shall, within such time as the Appellate\n Court may allow, deposit the amount disputed in\n the appeal or furnish such security in respect\n thereof as the Court may think fit.”\n\n(Emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 72,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P072_C01",
+      "text": "45. In addition, the following provision was sought to be introduced by way\n of amendment as sub-rule (1A), after sub-rule (1), in Rule 3 of Order\n XLI:\n“(1A) Where the appellant fails to make the\n deposit or furnish security specified in sub-rule (3)\n of Rule 1, the Court shall reject the memorandum\n of appeal.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 73,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P073_C01",
+      "text": "46. Sub-rule (5) of Rule 5 of Order XLI, as now enacted, did not find place\n in the Bill, in the same or any other form.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 74,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P074_C01",
+      "text": "47. The Notes on Clauses annexed to the Bill point out at page 336 that\n Rule 1 of Order XLI was being amended by introduction of sub-rule (3)\n to provide for the deposit, or the furnishing of security for decretal\n amount by judgment-debtor when the appeal is against an order made\n in execution of a money decree. As regards amendment of Rule 3 of\n Order XLI by insertion of sub-rule (1A), it was mentioned that the\n provision was meant to provide that where the appellant fails to make\n the deposit of the decretal amount or to furnish security specified in\n sub-rule (3) of Rule 1, the memorandum of appeal shall be rejected.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 75,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P075_C01",
+      "text": "48. After the Bill was introduced in Lok Sabha on April 8, 1974, the motion\n for reference of the Bill to a Joint Committee of the Houses was moved\n in Lok Sabha on May 2, 1974, and it was adopted. The Rajya Sabha\n concurred in the said motion on May 14, 1974. The Joint Committee\n constituted accordingly submitted its Report to Lok Sabha on April 1,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 76,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P076_C01",
+      "text": "1976. The Report is found published at pages 804/3 to 804/34 in\n the Gazette of India, Extraordinary, Part-II,\nSection 2\ndated April 1,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 77,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P077_C01",
+      "text": "1976. At page 804/21, the Joint Committee offered its observations in\n paragraph 65 of the Report with regard to Clause 87 (Original clause\n\n90) of the Bill. The relevant portion from paragraph 65 of the Report of\n the Joint Committee is extracted hereinbelow:\n“65. Clause 87 (Original clause 90),—\n(i) The Committee note that under the proposed\n new sub-rule (1A) of Rule 3 in Order 41, if the\n appellant fails either to deposit the amount\n disputed in the appeal or to furnish security for\n such amount, the memorandum of appeal shall be\n rejected. The Committee feel that such a provision\n will deprive a judgment-debtor having a good\n case, to pursue the appeal on account of his\n inability to deposit the disputed amount or to\n furnish security for such amount.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 78,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P078_C01",
+      "text": "49. The Committee is, therefore, of the opinion that in order to see that\n justice is done to both the parties, the proposed sub-rule might be\n amended in such a way that neither the judgment-debtor is deprived\n of his right to pursue the appeal nor the decree-holder is deprived of\n the remedy. Proposed sub-rule (1A) has been amended to provide that\n stay of execution of the decree will not be granted unless the deposit is\n made or security is furnished and has been transposed as sub-rule (5)\n of Rule 5.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 79,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P079_C01",
+      "text": "50. Be it stated that the Committee made no specific recommendation in\n regard to sub-rule (3) of Rule 1 of Order XLI proposed to be inserted by\n original Clause 90 of the Bill. In other words, the Committee\n recommended no change in the form or content of sub-rule (3) which\n was proposed to be inserted by way of amendment in Rule 1 of Order\n XLI. However, the Bill reported by the Committee incorporated a\n material change in the said sub-rule which will be presently noticed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 80,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P080_C01",
+      "text": "51. The\nCode of Civil Procedure\n(Amendment) Bill, 1974 (Bill No. 27B of\n 1974) as reported by the Joint Committee is found published in\n the Gazette of India, Extraordinary, Part-II,\nSection 2\n, dated April 1,\n\n1976 at pages 804/35 to 804. At page 804/111, Clause 87 finds place\n and the relevant portions of the said clause are reproduced\n hereinbelow:\n“87. In the First Schedule, in Order 41,—\n(i) Rule 1,—\n xxx\n(b) after sub-rule (2), the following sub-rules shall\n be inserted, namely:\n“(3) Where the appeal is against a decree for\n payment of money, the appellant shall, within\n such time as the Appellate Court may allow,\n deposit the amount disputed in the appeal or\n furnish such security in respect thereof as the\n Court may think fit.”\n(ii)\n xxx\n(iii) in rule 5,—\n(a)\n xxx\n(b)\n xxx\n\n “(5) Notwithstanding anything contained in the\n foregoing sub-rules, where the appellant fails to\n make the deposit or furnish the security specified\n in sub-rule (3) of rule 1, the Court shall not make\n an order staying the execution of the decree.”\n (Emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 81,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P081_C01",
+      "text": "52. The Bill having been considered and passed by both the Houses of\n Parliament was enacted into\nthe Code of Civil Procedure\n(Amendment)\n Act, 1976 (No. 104 of 1976).\nThe Act\nreceived the assent of the President\n of India on September 9, 1976, and it was published in the Gazette of\n India, Extraordinary, Part-II,\nSection-1\n, dated September 10, 1976. The\n material amendments, namely, the insertion of sub-rule (3) in Rule 1\n and sub-rule (5) in Rule 5 of Order XLI were duly enacted and stood\n inserted in\nthe CPC\nby Section 87 of the Amendment Act, which is to\n\nbe found at page 1337 of the Gazette, and they came into force on and\n with effect from February 1, 1977.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 82,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P082_C01",
+      "text": "53. The substance of the legislative history set out hereinabove is that\n Clause 90 of Bill No. 27 of 1974 stood materially altered as per clause\n 87 of Bill No. 27B of 1974, as reported by the Joint Committee, in the\n following respects:\n“(1) In sub-rule (3) of Rule 1 of Order 41, the\n provision relating to the requirement of the\n appellant depositing the amount disputed in the\n appeal or furnishing such security in respect\n thereof as the Court may think fit in cases where\n the appeal is against an order made in execution\n of a decree for payment of money was substituted\n by the provision requiring such deposit being\n made or security being furnished where the\n appeal is against a decree for payment of money.\n(2) Sub-rule (1A) of rule 3 of Order XLI requiring\n the Court to reject the memorandum of appeal\n where the appellant fails to make the deposit or\n furnish security specified in sub-rule (3) of Rule 1\n of Order 41, was deleted.\n(3) Sub-rule (5) was added in Rule 5 of Order 41\n providing that where the appellant fails to make\n the deposit or to furnish the security, the Court\n shall not make an order staying the execution of\n the decree.”\n (Emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 83,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P083_C01",
+      "text": "54. These changes are also found reflected in\nthe Code of Civil Procedure\n(Amendment) Act, 1978\n, and they now find place in the parent Act,\n namely,\nthe CPC\n.\nii. Principles required to be followed while Interpreting a\n Provision of a Statute",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 84,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P084_C01",
+      "text": "55. As the entire debate revolves around the interpretation of the provisions\n of Order XLI Rule 5(1) and Rule 5(3)\nof the CPC\nrespectively, we must\n\ndiscuss the well settled principles required to be followed while\n interpreting a provision of a statute.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 85,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P085_C01",
+      "text": "56. The well-settled principles required to be followed by a court while\n interpreting a provision of a statute is that the intention of the\n legislature is primarily to be gathered from the language used, and\n consequently, a construction which results in rejection of words as\n meaningless, has to be avoided. It is not a sound principle of\n construction to brush aside words or phrase in a statute as being\n inapposite surplusage if they can have appropriate application in\n circumstances conceivably within the contemplation of the statute. In\n interpretation of statutes, the courts always presume that the\n legislature inserted every part thereof for a purpose and the legislative\n intention is that every part of the statute should have effect. The\n legislature is deemed not to waste its words, or to say anything in vain.\n [See:\nMithilesh Singh v. Union of India\n, reported in (2003) 3 SCC\n 309].",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 86,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P086_C01",
+      "text": "57. Similarly, in the case of Padma Sundara Rao v. State of Tamil\n Nadu, reported in (2002) 3 SCC 533, it was held that two principles of\n construction – one relating to casus omissus, and the other in regard\n to reading the statute as a whole appear to be well-settled. Under the\n first principle, the rule of casus omissus cannot be supplied by the\n court except in the case of clear necessity. The rule of casus\n omissus should not be readily inferred and for that purpose, all the\n parts of a statute or section must be construed together and every\n clause of a section should be construed with reference to the context of\n the statute and other clauses thereof, so that the construction to be\n put on a particular provision makes a consistent enactment of the\n whole statute. This would be more so, if literal construction of a\n\nparticular clause leads to manifestly absurd or anomalous results,\n which could not have been intended by the legislature. Therefore, if the\n language is plain, there is no necessity of taking aid of external aid for\n gathering the real intention of the legislature.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 87,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P087_C01",
+      "text": "58. Over and above, we should bear in mind the following well-known rule\n of interpretation of the statute reiterated by this Court in the case\nUnion of India v. Deoki Nandan Agarwal\n, reported in 1992 Supp\n (1) SCC 323:\n“It is not the duty of the Court either to enlarge the\n scope of the legislation or the intention of the\n Legislature when the language of the provision is\n plain and unambiguous. The Court cannot\n rewrite, recast or reframe the legislation for the\n very good reason that it has no power to legislate.\n The power to legislate has not been conferred on\n the Courts. The Court cannot add words to a\n statute or read words into it which are not there.\n Assuming there is a defect or an omission in the\n words used by the Legislature the Court could not\n go to its aid to correct or make up the deficiency.\n Courts shall decide what the law is and not what\n it should be. The Court of course adopts a\n construction which will carry out the obvious\n intention of the Legislature but could not legislate\n itself. But to invoke judicial activism to set at\n naught legislative judgment is subversive of the\n Constitutional harmony and comity of\n instrumentalities.”\n (Emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 88,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P088_C01",
+      "text": "59. Applying the aforesaid principles, if we read the plain language of Order\n XLI Rule 1 sub-rule (3)\nof the CPC\n, we get the clear intention of the\n legislature that deposit of the decretal amount, or giving security\n thereof is not a condition precedent for maintaining a money appeal,\n and the court is vested with the discretion to grant time for depositing\n such amount and giving security before disposal of the appeal, and at\n the same time, the Appellate Court has also the power to extend the\n\ntime by taking aid of\nSection 148\nof the CPC. On the other hand, a less\n grave consequence for non-compliance of such condition, was\n envisaged, namely, to disentitle the appellant to the benefit of stay of\n execution of the decree as provided in Rule 5(5) of Order XLI.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 89,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P089_C01",
+      "text": "60. The aforesaid view has been expressed by this Court in the case of\nKayamuddin Shamsuddin Khan v. State Bank of India\n, reported\n in (1998) 8 SCC 676, wherein it has been held as follows:-\n“6. The learned counsel for the respondent has\n invited our attention to Sub‐rule (3) of Rule 1 of\n Order XLI in\nthe CPC\n, as amended in the State of\n Maharashtra, which reads as under:\n“(3) Where the appeal is against a decree for\n payment of money, the appellant shall, within\n such time as the Appellate Court may allow,\n deposit the amount disputed in the appeal or\n furnish such security in respect thereof as the\n Court may think fit:\nProvided that the Court may dispense with the\n deposit or security where it deems fit to do so\n for sufficient cause.”",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 90,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P090_C01",
+      "text": "7. The submission of the learned counsel for the\n respondent is that the High Court was right in\n giving the direction regarding the deposit of Rs\n 75,000 as per the aforesaid provision and since\n the appellant has failed to comply with the same\n the appeal has been rightly directed to be\n dismissed. We, however, find that the only\n consequence for non‐compliance with the\n direction given under Sub‐rule (3) of Rule 1 of\n Order XLI is as provided in Sub‐ rule (5) of Rule 5\n of Order XLI which reads as under:\n“(5) Notwithstanding anything contained in the\n foregoing sub‐rules, where the appellant fails\n to make the deposit or furnish the security\n specified in Sub‐rule (3) of Rule 1, the Court\n shall not make an order staying the execution\n of the decree.”",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 91,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P091_C01",
+      "text": "61. It may be apposite to observe that this Court in the aforesaid decision\n was dealing with the interpretation of Order XLI Rule 1(3)\nof the CPC\n,\n\nas amended in the State of Maharashtra, where the appellate Court\n has power to dispense with making deposit or security in fit and proper\n cases.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 92,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P092_C01",
+      "text": "62. Malwa Strips\n(supra) this Court interpreted Order XLI Rule 1(3) of\n the Code as provided in the Central legislation, i.e.,\nthe CPC\n, and held\n that the said provision although couched with the expression “shall”\n yet must be read as directory and not mandatory.\nIt quoted with\n approval the\nratio\nlaid down in\nKayamuddin\n(supra).",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 93,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P093_C01",
+      "text": "63. In view of the law declared by this Court in\nKayamuddin\n(supra) and\nMalwa Strips\n(supra), there is no escape from the conclusion that the\n obligation under Order XLI Rule 1(3) is not mandatory but directory in\n nature, and failure to comply with the same shall not result in rejection\n of the appeal, but would disentitle the appellant the benefit of stay of\n execution of the money decree.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 94,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P094_C01",
+      "text": "64. The provisions of\nOrder XLI Rule 5 of the CPC\ngovern the question of\n grant or refusal of stay of execution of the decree by the appellate\n court. A mere reading of the provision makes it clear that it does not\n make any distinction between a money decree and other decrees. The\n powers of the Appellate Court to order stay of execution of the decree\n are not fettered in any way if there is “sufficient cause” for passing\n such an order. Even with regard to money decrees, the discretion of\n the court is circumscribed by the same limitations imposed under\n the provisions of Order XLI Rule 5. There is no reason why decrees\n for payment of money should receive a consideration different from\n the other decrees in the matter of stay pending appeals. In suitable\n cases, where the court is satisfied that substantial loss may result to\n the applicant, if no stay is granted or there are any exceptional\n\ncircumstances, the court may grant stay as prayed for either with or\n without any condition whatsoever.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 94,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P094_C02",
+      "text": "Otherwise, in the absence of any\n exceptional circumstance, money decree ordinarily would not be\n stayed unconditionally from its execution by the appellate court\n pending the final disposal of appeal on its own merits.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 95,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P095_C01",
+      "text": "65. Mere filing of an appeal would not operate as stay of execution of\n decree, but the Appellate Court may, for “sufficient cause”, order stay\n of execution of decree. The other relevant part of the rule is contained\n in sub-rule (3) of Rule 5 of Order XLI. As per the provisions of sub-\n rule (3) of Rule 5 of Order XLI, the Court has to see;\n (1) whether there will be substantial loss to the party applying for\n stay;\n(2) whether the application has been made without unreasonable\n delay; and\n (3) whether security has been given by the applicant for due\n performance of the decree.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 96,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P096_C01",
+      "text": "66. Thus, the provisions of the Rule are very clear and they do not make\n any distinction between money decrees and other types of decrees.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 97,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P097_C01",
+      "text": "67. This Court in\nSihor Nagar Palika\n(supra), observed the following as\n regards the power of the Appellate Court to stay the decree in first\n appeal:-\n“Order 41 Rule 1(3)\nCPC\nprovides that in an\n appeal against a decree for payment of amount\n the appellant shall, within the time permitted by\n the appellate court, deposit the amount disputed\n in the appeal or furnish such security in respect\n thereof as the court may think fit. Under Order 41\n Rule 5(5), a deposit or security, as abovesaid, is\n a condition precedent for an order by the\n appellate court staying the execution of the\n\ndecree. A bare reading of the two provisions\n referred to hereinabove, shows a discretion\n having been conferred on the appellate court to\n direct either deposit of the amount disputed in the\n appeal or to permit such security in respect\n thereof being furnished as the appellate court\n may think fit. Needless to say that the discretion\n is to be exercised judicially and not arbitrarily\n depending on the facts and circumstances of a\n given case.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 97,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P097_C02",
+      "text": "Ordinarily, execution of a money\n decree is not stayed inasmuch as satisfaction of\n money decree does not amount to irreparable\n injury and in the event of the appeal being\n allowed, the remedy of restitution is always\n available to the successful party. Still the power\n is there, of course a discretionary power, and is\n meant to be exercised in appropriate cases.”\n (Emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 98,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P098_C01",
+      "text": "68. Atma Ram Properties (P) Ltd. v. Federal Motors (P) Ltd.\n,\n reported in (2005) 1 SCC 705, this Court while deciding a litigation\n arising from the\nDelhi Rent Control Act, 1958\nobserved as under:-\n“6. The order of eviction passed by the Rent\n Controller is appealable to the Rent Control\n Tribunal under\nSection 38\nof the Act. There is no\n specific provision in the Act conferring power on\n the Tribunal to grant stay on the execution of the\n order of eviction passed by the Controller, but\n sub-section (3) of\nSection 38\nconfers the Tribunal\n with all the powers vested in a court under\nthe\n Code of Civil Procedure\n, 1908 while hearing an\n appeal. The provision empowers the Tribunal to\n pass an order of stay by reference to Rule 5 of\nOrder 41 of the Code of Civil Procedure\n, 1908\n (hereinafter “the Code” for short). This position\n was not disputed by the learned Senior Counsel\n appearing for either of the parties.\nxxx",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 99,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P099_C01",
+      "text": "8. It is well settled that mere preferring of an\n appeal does not operate as stay on the decree or\n order appealed against nor on the proceedings in\n the court below. A prayer for the grant of stay of\n proceedings or on the execution of decree or order\n appealed against has to be specifically made to\n\nthe appellate court and the appellate court has\ndiscretion to grant an order of stay or to refuse the\nsame. The only guiding factor, indicated in Rule 5\naforesaid, is the existence of sufficient cause in\nfavour of the appellant on the availability of which\nthe appellate court would be inclined to pass an\norder of stay. Experience shows that the principal\nconsideration which prevails with the appellate\ncourt is that in spite of the appeal having been\nentertained for hearing by the appellate court, the\nappellant may not be deprived of the fruits of his\nsuccess in the event of the appeal being allowed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 99,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P099_C02",
+      "text": "This consideration is pitted and weighed against\nthe other paramount consideration: why should a\nparty having succeeded from the court below be\ndeprived of the fruits of the decree or order in his\nhands merely because the defeated party has\nchosen to invoke the jurisdiction of a superior\nforum. Still the question which the court dealing\nwith a prayer for the grant of stay asks itself is:\nwhy the status quo prevailing on the date of the\ndecree and/or the date of making of the\napplication for stay be not allowed to continue by\ngranting stay, and not the question why the stay\nshould be granted.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 100,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P100_C01",
+      "text": "9. […]In our opinion, while granting an order of\nstay under\nOrder 41 Rule 5 CPC\n, the appellate\ncourt does have jurisdiction to put the party\nseeking stay order on such terms as would\nreasonably compensate the party successful at\nthe end of the appeal insofar as those\nproceedings are concerned. Thus, for example,\nthough a decree for payment of money is not\nordinarily stayed by the appellate court, yet, if it\nexercises its jurisdiction to grant stay in an\nexceptional case it may direct the appellant to\nmake payment of the decretal amount with\ninterest as a condition precedent to the grant of\nstay, though the decree under appeal does not\nmake provision for payment of interest by the\njudgment-debtor to the decree-holder. Robust\ncommon sense, common knowledge of human\naffairs and events gained by judicial experience\nand judicially noticeable facts, over and above\nthe material available on record — all these\n\nprovide useful inputs as relevant facts for\n exercise of discretion while passing an order and\n formulating the terms to put the parties on. […]”\n (Emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 101,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P101_C01",
+      "text": "69. Malwa Strips\n(supra), this Court after looking into the decision\nSihor Nagar Palika\n(supra) observed as under :-\n“9. In terms of sub-rule (5) of Rule 5 of Order 41,\n the court shall not make an order staying the\n execution of the decree notwithstanding anything\n contained in the foregoing sub-rules, where the\n appellant fails to make the deposit or furnish the\n security specified in sub-rule (3) of Rule 1. We will\n proceed on the assumption that although the\n word “shall” has been used in Order 41 Rule 1(3)\n of the Code, the same is not mandatory in\n character, and, thus, may be read as directory.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 102,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P102_C01",
+      "text": "10. In Rajasthan SEB v. Ram Deo [AIR 1999 Raj\n 264] after noticing some of the aforementioned\n decisions as also the legislative history of the said\n provision, a learned Single Judge of the\n Rajasthan High Court held as under: (AIR pp.\n267-68, para 19)\n “19. After close scrutiny of the aforesaid\n observations, I am of the opinion that in view\n of the provisions of sub-rule (5) of Rule 5 of\nOrder 41 CPC\nit cannot be held that appeal\n against the decree for payment of money is not\n maintainable, if filed without making\n compliance with the provisions contained in\n sub-rule (3) of Rule 1 of\nOrder 41 CPC\nand it is\n the duty of the Registry to see that on\n application under\nOrder 41 Rule 5 CPC\nseeking\n stay of money decree the appellant has to\n incorporate a note in regard to his readiness\n and willingness to comply with the directions\n under sub-rule (3) of Rule 1 of\nOrder 41 CPC\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 102,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P102_C02",
+      "text": "the appeal is preferred against the decree for\n payment of money without any stay\n application under\nOrder 41 Rule 5 CPC\nthen in\n that event, it is the duty of the appellant to\n incorporate a note in the memo of appeal in\n respect of his readiness and willingness to\n\ncomply with the directions issued by the court\n under sub-rule (3) of Rule 1 of\nOrder 41 CPC\n.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 103,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P103_C01",
+      "text": "11. We may, however, notice that although the\nprovisions of sub-rule (3) of Rule 1 of Order 41\nhave been held not to be mandatory, this Court in\nKayamuddin Shamsuddin Khan v. SBI [(1998) 8\nSCC 676] opined that non-compliance with a\ndirection to deposit the decretal amount or part of\nit or furnish security therefor would result in the\ndismissal of the stay application but not the entire\nappeal, stating: (SCC p. 677, para 8)\n “8. This would mean that non-compliance with\n the direction given regarding deposit under\n sub-rule (3) of Rule 1 of Order 41 would result\n in the Court refusing to stay the execution of\n the decree. In other words, the application for\n stay of the execution of the decree could be\n dismissed for such non-compliance but the\n Court could not give a direction for the\n dismissal of the appeal itself for such non-\n compliance.”\n To the same effect is the decision of this Court\nSihor Nagar Palika Bureau v. Bhabhlubhai\n Virabhai & Co.\n[(2005) 4 SCC 1], wherein it\n was held: (SCC pp. 2-3, para 6)\n “6.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 103,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P103_C02",
+      "text": "Order 41 Rule 1(3)\nCPC\nprovides that in an\n appeal against a decree for payment of\n amount the appellant shall, within the time\n permitted by the appellate court, deposit the\n amount disputed in the appeal or furnish such\n security in respect thereof as the court may\n think fit. Under Order 41 Rule 5(5), a deposit or\n security, as abovesaid, is a condition\n precedent for an order by the appellate court\n staying the execution of the decree. A bare\n reading of the two provisions referred to\n hereinabove, shows a discretion having been\n conferred on the appellate court to direct either\n deposit of the amount disputed in the appeal\n or to permit such security in respect thereof\n being furnished as the appellate court may\n think fit. Needless to say that the discretion is\n to be exercised judicially and not arbitrarily\n depending on the facts and circumstances of a\n given case. Ordinarily, execution of a money\n\ndecree is not stayed inasmuch as satisfaction\n of money decree does not amount to\n irreparable injury and in the event of the\n appeal being allowed, the remedy of restitution\n is always available to the successful party.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 103,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P103_C03",
+      "text": "Still the power is there, of course a\n discretionary power, and is meant to be\n exercised in appropriate cases.”\n\n To the same effect is the decision of this Court\nB.P. Agarwal v. Dhanalakshmi Bank Ltd\n.\n[(2008) 3 SCC 397]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 104,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P104_C01",
+      "text": "12. The High Court in this case failed to notice the\nprovisions of sub-rule (3) of Rule 1 of Order 41.\nThe appellate court, indisputably, has the\ndiscretion to direct deposit of such amount, as it\nmay think fit, although the decretal amount has\nnot been deposited in its entirety by the judgment-\ndebtor at the time of filing of the appeal. But while\ngranting stay of the execution of the decree, it\nmust take into consideration the facts and\ncircumstances of the case before it. It is not to act\narbitrarily either way. If a stay is granted,\nsufficient cause must be shown, which means\nthat the materials on record were required to be\nperused and reasons are to be assigned. Such\nreasons should be cogent and adequate.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 105,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P105_C01",
+      "text": "13. The High Court, with respect, failed to notice\nthat suit was one under Order 37 of the Code.\nWhether it was maintainable or not may fall for\nconsideration in the appeal. Even assuming that\nthe same was not maintainable, the question\nwhich should have been posed by the High Court\nwas as to whether sufficient cause had been\nmade out to reverse the decree passed in favour\nof the appellant. Even a decree could have been\npassed having regard to the defence raised by the\nrespondent under Order 12 Rule 6 of the Code.\nWe, therefore, see no justification at all as to why\nan order of stay of the nature was passed by the\nHigh Court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 106,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P106_C01",
+      "text": "14. Even if the said provision is not mandatory,\nthe purpose for which such a provision has been\ninserted should be taken into consideration. An\nexceptional case has to be made out for stay of\n\nexecution of a money decree. The parliamentary\n intent should have been given effect to. The High\n Court has not said that any exceptional case has\n been made out. It did not arrive at the conclusion\n that it would cause undue hardship to the\n respondent if the ordinary rule to direct payment\n of the decretal amount or a part of it and/or\n directly through the judgment-debtor to secure the\n payment of the decretal amount is granted. A\n strong case should be made out for passing an\n order of stay of execution of the decree in its\n entirety.”\n (Emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 107,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P107_C01",
+      "text": "70. Thus, in\nMalwa Strips\n(supra), this Court unequivocally observed\n that although the word “shall” has been used in\nOrder XLI Rule 5\n CPC\n, yet the same is not mandatory in character. The Court further\n observed that the purpose for which such a provision has been\n inserted, should be taken into consideration. An exceptional case\n has to be made out for unconditional stay of execution of a money\n decree. Thus, it is necessary to imply that if an exceptional case is\n made out, the Appellate court has the discretion to stay the\n execution of the money decree without imposing any condition.\niii. Decisions of various High Courts on the Subject",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 108,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P108_C01",
+      "text": "71. We may now look into few old decisions of various High Courts on\n the subject.\nIn the case of\nA.A. Khan v. Ameer Khan\n, reported in\n 1949 SCC OnLine Kar 11, the High Court of Mysore has observed\n as follows (headnote):-\n“The court can stay execution of money decrees\n pending appeal on such security as it deems fit in\n proper cases in which sufficient cause for a stay\n has been made out, without requiring in all cases\n that the decree amount should be deposited in\n court.”\n (Emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 109,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P109_C01",
+      "text": "72. Similarly, the Division Bench of the Saurashtra High Court in the\n case of Borough Municipality v. Firm Ramji Vashram, reported\n in AIR 1955 Guj 113, has in terms held that the judgment of the\n Bombay High Court in the case of\nDhunjibhoy Cowasji Umrigar v. Lisboa\n, reported in ILR 1889 13 Bom 252, cannot serve as a useful\n guide for cases under\nOrder XLI Rule 5 of the CPC\n. It is further\n observed therein that when the Bombay High Court decided the case\nDhunjibhoy\n(supra), the provisions of the Civil Procedure Code,\n 1882, were applicable and therein, there was no provision similar to\n that of\nOrder XLI Rule 5 of the CPC\n. The relevant observations read\n thus:-\n“6. We are not concerned with sub-rule (4) which\n deals with ex parte orders for stay of execution\n pending the hearing of the application. The power\n of the Court to stay execution of a decree has to\n be exercised within the four corners of the above\n Rule.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 109,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P109_C02",
+      "text": "The intention of the Legislature which\n appears from the language of this rule seems to\n be that an appeal should not automatically\n operate as a stay of execution of the decree and\n no order for stay of execution should be made\n merely by reason only that an appeal has been\n preferred from the decree.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 110,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P110_C01",
+      "text": "7. The reason of the rule appears to be that the\n rights of the decree-holder having been\n determined by a competent Court, it is not fair\n that he should be deprived of the fruits of his\n decree merely because the judgment-debtor\n prefers an appeal against the decree. At the same\n time if execution of the decree is likely to result in\n substantial loss to the decree-holder, discretion is\n given to the Court to stay execution provided the\n other two conditions of sub-r. (3) are satisfied. It\n is, therefore, impossible to formulate any uniform\n rule of practice and each case must be decided on\n its own facts.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 111,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P111_C01",
+      "text": "8. In the case of money decrees, a Bench of the\n Bombay High Court decided in\nDhunjibhoy\n Cowasji Umrigar v. Lisboa\n, 13 Bom 241 (A) that\n where a decree orders payment of money and an\n\nappeal is lodged against that decree by the party\n directed to pay, then on his application execution\n of the decree should be stayed, so far as it directs\n payment, on the judgment-debtor lodging the\n amount in Court, unless the other party gives\n security for the repayment of money in the event\n of the decree being reversed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 112,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P112_C01",
+      "text": "9. If such security is given by the successful\n party, then stay of execution should not be\n granted. This order was made in 1888 under\nthe\n Code of Civil Procedure\nof 1882. That Code did\n not have any provision similar to O. 41 R. 5\nof the\n CPC\nand the order must be taken to have been\n passed in the exercise of the inherent power of the\n Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 113,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P113_C01",
+      "text": "10. But after the enactment of O. 41 R. 5 in the\n Code of 1908 the discretion of the Court is very\n much limited and has to be exercised within the\n limits prescribed by the rule, and in a proper case\n where substantial loss is likely to result to the\n judgment-debtor if a decree for payment of money\n is executed, the Court can stay execution of the\n decree even before the judgment-debtor deposits\n the amount in Court. The above decision therefore\n cannot serve as an useful guide for the cases\n under O. 41 R. 5.”\n (Emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 114,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P114_C01",
+      "text": "73. In the case,\nMovie Enterprises v. M.S. Periasamy Mudaliar\n,\n reported in 1952 SCC OnLine Kar 14, the High Court of Mysore has\n observed as under (headnote):\n“Order 41, rule 5, cannot be read as imposing any\n limitation that the decrees for payment of money\n should receive a consideration different from the\n other decrees in the matter of stay pending\n appeal. Therefore, there could be no restriction on\n the discretion of the court for staying a decree for\n payment of money in suitable cases where the\n court is satisfied that substantial loss will result\n to the applicant if no stay is made. In this view, it\n cannot be contended that a decree directing\n payment of money should not be stayed unless\n the decree amount is lodged into court.”\n (Emphasis supplied)",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 115,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P115_C01",
+      "text": "74. In Borough Municipality (supra), the Saurashtra High Court\n referred to the Bombay High Court decision in the case of\nDhunjibhoy\n(supra).\nWe must look into this decision of\nDhunjibhoy\n(supra).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 116,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P116_C01",
+      "text": "75. In the case of\nDhunjibhoy\n(supra), the Bombay High Court had\n observed that no stay of execution of money decree should be granted\n without asking the judgment debtor to deposit the decretal amount.\nDhunjibhoy\n(supra) the Bombay High Court held that:\n“A party appealing against a decree, which\n directs him to pay money, may obtain stay of\n execution of-decree, so far as it directs payment,\n on his lodging the amount in court, unless the\n other party gives security for the repayment of the\n money in the event of the decree being reversed.\n If such security be given by the successful party,\n then stay of execution should not be granted.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 117,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P117_C01",
+      "text": "76. The case of\nDhunjibhoy\n(supra) was decided by the Bombay High\n Court on August 31, 1888, under the provisions of the Civil\n Procedure Code, 1882. In that Code, there was no provision similar\nOrder 41 Rule 5 of the CPC\n. Therefore, the order must be taken\n to have been passed by the court in exercise of its inherent powers.\n On the other hand, the facts and circumstances of the present case\n are governed by the provisions\nof the CPC\n, wherein there is an\n express provision regarding grant or refusal of stay of execution of\n decree. Hence, it is not permissible to the court to have recourse to\n the inherent powers of the court. This distinction makes a world of\n difference between the two situations.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 118,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P118_C01",
+      "text": "77. It may also be noted that in\nDhunjibhoy\n(supra), the suit was for\n injunction restraining the defendant from erecting a building which\n\nwill interfere with the free access of light and air through certain\n windows in the plaintiff's house. The plaintiff had obtained a decree\n in respect of the windows and had also obtained a decree for\n compensation by way of damages for the injury done to the\n windows. The decree also directed the defendant to pay the\n plaintiff's costs of the suit. The defendant had filed an appeal and\n a question arose regarding the execution of the decree so far as it\n related to costs. It is in this context, i.e., where the prayer was for\n recovery of the amount of costs awarded by the trial court, the\n aforesaid observations were made by the Bombay High Court.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 119,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P119_C01",
+      "text": "78. Thus, it cannot be said as a principle of universal rule that in all\n cases of money decree, the defendant should be directed to deposit\n the amount in court and then only the question of stay be\n considered.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 120,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P120_C01",
+      "text": "79. The decisions of the High Court of Mysore in\nA.A. Khan\n(supra) and\nMovie Enterprises\n(supra) have been followed by the Rajasthan\n High Court in the case of\nBansidhar v. Pribhu Dayal\n, reported in\n 1952 SCC OnLine Raj.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 121,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P121_C01",
+      "text": "80. Then the question is: Is there an established practice that the\n execution of money decree should not be stayed unless the\n judgment debtor deposits the decretal amount in court, and on\n such deposit, the successful party be permitted to withdraw the\n money on furnishing security to the satisfaction of the court. We do\n observe that in a large number of cases where a money decree is\n passed, this Court generally does not grant stay unless the\n defendant deposits the amount in court. But this appears to be a\n rule of prudence and not a principle of law of universal application.\n\nWe also believe and hold that this practice based on the rule of\n prudence should ordinarily be followed by appellate courts. The\n practice of not granting stay in money decrees except on condition\n that the decretal amount be deposited in the court, and the\n successful party be permitted to withdraw the same on furnishing\n security to the satisfaction of the trial court appears to have been\n well entrenched, and for good reasons. [See:\nCentral Bank of India\n v. State of Gujarat\n, reported in (1987) 4 SCC 407]",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 122,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P122_C01",
+      "text": "81. Hence, the term “sufficient cause” occurring in\nOrder XLI Rule 5 of\n the CPC\nhas got to be interpreted and understood in the light of the\n aforesaid discussion. After all, what is “sufficient”? One may again\n turn to Black’s Law Dictionary. “Sufficient” means “adequate-\n enough” as much as may be necessary-equal or fit for end\n proposed-and that which may be necessary to accomplish an\n object.\niv. Meaning and Import of “sufficient cause” under\nOrder XLI\n Rule 5 of the CPC",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 123,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P123_C01",
+      "text": "82. Having regard to the case law discussed above and for reasons to be\n recorded, we are inclined or rather persuaded to take the view that the\n benefit of stay of execution of a money decree may be granted by the\n Appellate Court unconditionally, if it:\ni. is egregiously perverse;\n ii. is riddled with patent illegalities;\n iii. is facially untenable; and/or\n iv. such other exceptional causes similar in nature.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 124,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P124_C01",
+      "text": "83. The aforesaid factors would bring the case within the purview of\n “exceptional case” for the purpose of granting benefit of unconditional\n stay of the execution of money decree.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 125,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P125_C01",
+      "text": "84. We are at one with the submission canvassed on behalf of the\n defendant that in contradistinction to Order XLI, the word “deposit”\n does not figure in Rule 1(3), Rule 5(5) and Rule 5(3) respectively.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 126,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P126_C01",
+      "text": "85. Under Rule 5(3) sub-clause (c) – security has to be furnished for “due\n performance” of the decree. We find it difficult to read any mandate for\n direction to deposit the decretal amount.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 127,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P127_C01",
+      "text": "86. As noted above, the provision under Order XLI Rule 5(3)\nof the CPC\nprovides for satisfaction regarding sufficient cause as a pre-condition\n for granting benefit of stay of execution of decree. It casts an obligation\n upon the court to record its satisfaction for stay of execution such\n decree. Therefore, security can be in the shape of property, bond, or by\n undertaking from the appellant to abide by the decree, seeking stay of\n execution.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 128,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P128_C01",
+      "text": "87. However, there is no provision under\nOrder XLI Rule 5 of the CPC\nimposing a mandate to deposit cash security as the only mode of\n security for execution of the decree.\nv. Service of Summons and Irregularity in the Service of\n Summons",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 129,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P129_C01",
+      "text": "88. At this stage, we must deal with one submission canvassed on behalf\n of the petitioners that in view of the second Proviso to\nOrder IX Rule 13\n of the CPC\n, the defendant could be said to have had the requisite\n “knowledge” of the date of hearing and sufficient time to appear. It was\n sought to be argued vehemently that the delivery of suit papers and the\n order granting ex parte injunction dated 12.10.2020 could be said to\n be valid service of summons.\nIn this regard, strong reliance was sought\n to be placed on the decision of this Court in the case of\nSunil Poddar\n\n(supra) and the Delhi High Court judgment in the case of\nLT Foods\n(supra) respectively\nreferred to above\n.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 130,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P130_C01",
+      "text": "89. We do not find any merit in the aforesaid submission, for the simple\n reason that the second Proviso to\nOrder IX Rule 13 of the CPC\nwould\n come into play only when there is “irregularity” in the service of\n summons (for instance, the publication in wrong newspaper, no\n acknowledgment on duplicate summons being received etc).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 131,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P131_C01",
+      "text": "90. This has been well explained by this Court in its decision in\nBasant\n Singh v. Roman Catholic Mission\n, reported in (2002) 7 SCC 531. In\n the case in hand, the High Court has noted that prima facie there was\n nothing on record to establish valid service of “summons”. If that be so,\n the second Proviso would not come into play.\nThis proposition is again\n well explained by this Court in its decision\nSushil Kumar Sabharwal\n v. Gurpreet Singh & Ors.\n, reported in (2002) 5 SCC 377.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 132,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P132_C01",
+      "text": "91. In the aforesaid context, the reliance placed on behalf the petitioners,\n on the decision in\nSunil Poddar\n(supra) is of no avail. The undisputed\n facts in the said case were that the parties had already filed their\n pleadings before the civil court much prior to the case being transferred\n to the DRT. The parties were also aware of the transfer of the suit to\n the DRT. Despite such knowledge the party concerned consciously\n avoided service of summons in those proceedings.\nThe decision in\nSunil Poddar\n(supra) is distinguishable on the facts.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 133,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P133_C01",
+      "text": "92. In the case on hand, the Division Bench in its impugned judgment has\n prima facie noted that there was nothing to indicate whether:\n(a) the plaintiffs had actually served all the documents with their\n notices under Order XXXIX Rule 3 and;\n\n(b) the defendant was actually made aware with sufficient time of\n the claim as regards the next date of hearing in the proceedings.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 134,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P134_C01",
+      "text": "93. In the same manner the decision of the Delhi High Court in\nLT Food\n(supra) is also of no avail as the same is distinguishable on the facts.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 135,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P135_C01",
+      "text": "94. We now proceed to deal with the submission canvassed by Mr. Gaurav\n Pachnanda, the learned Senior Counsel in rejoinder as noted by us in\n paras 35 and 36 respectively of our judgment.\nvi. Reading of\nSection 36\nof the Arbitration Act and Order\n XLI Rule 3 and Rule 5 respectively\nof the CPC",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 136,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P136_C01",
+      "text": "95. At this stage, we need to clarify something important. At the outset, we\n must state that this litigation has nothing to do with\nSection 36\nof the\n Arbitration Act. In the present litigation, we are only concerned with\n Order XLI Rule 3 and 5 respectively,\nof the CPC\n. We are referring to\nSection 36\nof the Arbitration Act only for the limited purpose of\n answering the specific contention raised by Mr. Gaurav Pachnanda. In\n other words, whether the learned counsel is right in extending the\n analogy of\nSection 36\nof the Arbitration Act to the present case or rather\n to the provisions of Order XLI Rule 3 and 5\nof the CPC\n, is inappropriate.\n For this limited purpose only, we have thought fit to look into the two\n decisions of this Court one in the case of\nSepco Electric Power\n Construction v. Power Mech Projects Limited\n, reported in 2022 SCC\n OnLine SC 1243, and the other, in the case of\nPam Developments\n Private Limited v. State of West Bengal\n, reported in (2019) 8 SCC",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 137,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P137_C01",
+      "text": "96. Section 36\nreads thus:\n“36. Enforcement.—(1) Where the time for making\n an application to set aside the arbitral award\n\nunder\nsection 34\nhas expired, then, subject to the\nprovisions of sub-section (2), such award shall be\nenforced in accordance with the provisions\nof the\nCode of Civil Procedure\n, 1908 (5 of 1908), in the\nsame manner as if it were a decree of the court. (2) Where an application to set aside the arbitral\naward has been filed in the Court under\nsection\n\n, the filing of such an application shall not by\nitself render that award unenforceable, unless\nthe Court grants an order of stay of the operation\nof the said arbitral award in accordance with the\nprovisions of sub-section (3), on a separate\napplication made for that purpose.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 137,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P137_C02",
+      "text": "(3) Upon filing of an application under sub-section\n(2) for stay of the operation of the arbitral award,\nthe Court may, subject to such conditions as it\nmay deem fit, grant stay of the operation of such\naward for reasons to be recorded in writing:\nProvided that the Court shall, while\n considering the application for grant of stay in\n the case of an arbitral award for payment of\n money, have due regard to the provisions for\n grant of stay of a money decree under the\n provisions\nof the Code of Civil Procedure\n, 1908\n (5 of 1908).]\n Provided further that where the Court is\n satisfied that a Prima facie case is made out\n that,—\n(a) the arbitration agreement or contract\n which is the basis of the award; or\n(b) the making of the award,\n was induced or effected by fraud or corruption,\n it shall stay the award unconditionally\n pending disposal of the challenge under\nsection 34\nto the award.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 137,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P137_C03",
+      "text": "Explanation.—For the removal of doubts, it is\nhereby clarified that the above proviso shall apply\nto all court cases arising out of or in relation to\narbitral proceedings, irrespective of whether the\narbitral or court proceedings were commenced\nprior to or after the commencement of the\nArbitration and Conciliation (Amendment) Act,\n\n(3 of 2016)”\n (Emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 138,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P138_C01",
+      "text": "97. Section 36\nof the Arbitration Act was substituted vide the\nArbitration\n and Conciliation (Amendment) Act\n2015 (for short, “the Amendment\n Act, 2015”). Prior to the 2015 Amendment, the mere filing of an\n application challenging arbitral award under\nSection 34\nof the\n Arbitration Act was understood in many quarters as a stay of the award\n in terms of the unamended\nSection 36\nof the Arbitration Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 139,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P139_C01",
+      "text": "98. This “automatic stay” became a subject matter of legal debate as being\n a great obstacle to the ease of enforcement of arbitral awards. In such\n circumstances, and with a view to address this lacuna, the Amendment\n Act, 2015, was introduced in the\nArbitration Act\n. Under the\n Amendment Act, 2015, the existing provision in\nSection 36\nwas wholly\n substituted. Sub-section (2) of the amended provision provided that the\n filing of an application to set aside the arbitral award did not by itself\n render the award unenforceable unless an order was passed by\n “granting a stay on the operation of the award pursuant to a separate\n application filed to that effect”. Therefore,\nSection 36(2)\nof the\n Arbitration Act contemplated a separate application seeking stay.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 140,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P140_C01",
+      "text": "99. Hindustan Construction Company & Anr. v. Union of India &\n Ors.\n, reported in (2020) 17 SCC 324, this Court held that there would\n be no automatic stay on the enforcement of an arbitral award under\nSection 36\nof the Arbitration Act due to the mere fact that an\n application to set aside the award under\nSection 34\nhad been field\n before a court. In the said case, the constitutional validity of\nSection\n\nof the Arbitration Act as inserted by\nSection 13\nof the Arbitration\n and Conciliation (Amendment) Act, 2019 (for short, “the\nAmendment\n Act, 2019\n”) was challenged along with repeal of Section 26 of the\n Amendment Act, 2015 by\nSection 15\nof the Amendment Act, 2019. This\n Court in the final analysis held as under:\n\ni. The language of\nSection 36\nof the Arbitration Act does not warrant\n an automatic stay on the enforcement of an arbitral award due to\n the mere filing of a\nSection 34\npetition.\n ii.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 140,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P140_C02",
+      "text": "The legislature, by inserting Section 87 and deleting\nSection 26\nthrough the\nAmendment Act, 2019\n, had subverted the purpose of\n the\nArbitration Act, 1996\nand the Amendment Act, 2015, and was\n contrary to public interest because it sought to revive the pre-2015\n Amendment automatic stay regime that was a major cause of\n delay to the disposal of arbitral proceedings, and thus, the Court\n declared\nSection 13\nand\n\nof the Amendment Act, 2019 as\n manifestly arbitrary and unconstitutional as being violative of\nArticle 14\nof the Constitution.\niii. The ratio in the BCCI v. Kochi Cricket Pvt. Ltd., reported in\n (2018) 6 SCC 287, was the position of law, prevailing at that time\n and would be used to interpret the applicability of the Amendment\n Act, 2015, to the arbitral proceedings and proceedings in relation\n to them.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 141,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P141_C01",
+      "text": "100. Section 36(3)\nof the Arbitration Act provides that upon such an\n application being filed, the court may grant a stay “subject to such\n conditions as it may deem fit” for reasons to be recorded in writing. In\n terms of\nSection 36(3)\nof the Arbitration Act, the Court is conferred with\n the discretionary power to grant a stay of an arbitral award. Such\n discretionary power flows from the usage of the words “may” for grant\n of stay and the employment of the phrase “such conditions as it may\n deem fit” for the conditions that may be imposed if a stay was granted.\n Therefore, in terms of\nSection 36(3)\n, the court retains its discretionary\n power to grant a stay of an arbitral award.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 142,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P142_C01",
+      "text": "101. Further, the first Proviso to\nSection 36(3)\nprovides that if the arbitral\n award was for payment of money, the court shall have “due regard” to\n the provisions for grant of stay of money decree under\nthe CPC\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 143,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P143_C01",
+      "text": "102. The aforesaid was, the legal position for a period of six years from 2016\n to 2021. In 2021,\nSection 36\nof the Arbitration Act was once again\n amended with retrospective effect from 23.10.2015, vide the\n Arbitration and Conciliation Amendment Act, 2021 (for short, “the\n 2021 Amendment”). The 2021 Amendment, inter alia, introduced a\n second Proviso to\nSection 36(3)\nwhich provided that if a prima facie\n case is made out that either the arbitration agreement/contract which\n is the basis of the award, or the making of the award was induced or\n effect by fraud or corruption, the Court “shall” stay the award\n “unconditionally” pending the disposal of the challenge.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 144,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P144_C01",
+      "text": "103. As is clear from a plain reading of the second Proviso referred to above,\n it was provided that if, inter alia, the making of the award was induced\n or effected by fraud or corruption then the court was mandated to stay\n the award and such a stay was to be unconditional.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 145,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P145_C01",
+      "text": "104. Mr. Gaurav Pachnanda, the learned Senior Counsel would argue that\n the courts cannot grant the benefit of unconditional stay of an award\n in cases other than those covered by the second Proviso to\nSection 36(3)\nof the Arbitration Act. In the same manner, according to the learned\n Senior Counsel, when it comes to staying a money decree\n unconditionally, the judgment-debtor needs to make out more than a\n prima facie case of fraud or corruption, or something analogous to the\n same, and it is just not sufficient to point out our serious infirmities in\n the judgment granting money decree.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 146,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P146_C01",
+      "text": "105. In the aforesaid context, we must look into the decision of this Court\n in the\nSepco Electric\n(supra). In\nthe said decision\n, this Court was\n dealing with an appeal against a judgment of the Delhi High Court\n where the learned Single Judge had granted a stay of the arbitral award\n subject to deposit of 100% of the award amount. This order was passed\n in an application filed under\nSection 9\nof the Arbitration Act which was\n heard together with an application under\nSection 36(3)\nof the Act in a\n connected petition. This decision was affirmed in appeal by this Court\n which held that there were no grounds made out for interfering with\n the judgment below.\n106.This Court, while considering the contention of the appellant therein\n observed that a court may grant an unconditional stay if it is\n appropriate to do so. While so observing, this Court stated that\n unconditional stays were covered by the second Proviso to\nSection\n 36(3)\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 146,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P146_C02",
+      "text": "The relevant portions of the judgement are extracted below:\n“The power under subsection (3) of\nSection 36\n grant stay of an award is coupled with the duty\n to impose conditions which could include the\n condition of securing the award by deposit in\n Court, of the amount of the Award. It may be true\n as argued by Mr. Vishwanathan that the Court\n may not impose condition for stay, if it deems\n appropriate not to do so. The power of Court to\n grant unconditional stay of an Award is not\n unfettered. The power of unconditional stay is\n subject to the condition in the second proviso that\n is:\nThe Court is satisfied that a prima facie case (sic)\n is made out that\n(i) the arbitration agreement or contract which is\n the basis of the award; or\n(ii) the making of the award, was induced or\n effected by fraud or corruption”\n (Emphasis supplied)\n\n107.While this Court acknowledged that an unconditional stay could be\n granted in appropriate cases, it quickly followed up saying that the\n power to grant an unconditional stay is governed by the second Proviso\nSection 36(3)\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 146,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P146_C03",
+      "text": "This may indicate that the Court acknowledged the\n grant of an unconditional stay to the existence of the grounds\n mentioned in the second Proviso. This would indicate that the benefit\n of unconditional stay could be granted only in cases of fraud or\n corruption.\n108.Notwithstanding the above, this Court in order to fortify its conclusion\n in the case, subsequently also noted that the appellant therein was not\n able to show any cogent and glaring error that went to the root of the\n award. This observation was repeated later where the Court stated that\n no cogent ground had been made out even, prima facie, for interference\n with the impugned award. The relevant observations are extracted\n below:\n“26. It is settled law that grounds for interference\n with an award is restricted. Even before this\n court, the Appellant has not been able to advert to\n any cogent and glaring error which goes to the\n root of the award. The contention of the award\n being opposed to the public policy of India, is\n devoid of any particulars whatsoever…\n xxx xxx xxx",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 147,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P147_C01",
+      "text": "35. It is not in dispute that there is an award of\n Rs. 142 Crores in favour of the Respondent. No\n cogent ground has been made out even prima\n facie, for interference with the impugned award.\nxxx xxx xxx",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 148,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P148_C01",
+      "text": "37. We find no ground at all to interfere. The\n Appeals are dismissed. ……”\n\n109.After arriving at such a finding, this Court proceeded to dismiss the\n appeal. Therefore, the observations\nreferred to above\nformed part of this\n Court’s reasoning in arriving at its decision.\n110.The aforesaid observations of this Court would suggest that the Court\n thought it fit to consider the merits of the award at a prima facie level\n in order to decide whether the conditional stay of the award was\n justified or not. In the facts of the present case, the Court felt that it\n was justified.\n111.In light of the abovementioned observations, it is possible to\n legitimately argue that if the second Proviso to\nSection 36(3)\nwas the\n sole source for granting an unconditional stay, there would have been\n no occasion for the Court to examine whether any prima facie cogent\n ground that went to the root of the award is forthcoming or not. Therefore, by relying upon this Court’s observations, it could be\n plausibly argued that in exceptional cases an unconditional stay can\n be granted even in cases not arising under the second proviso to\nSection 36(3)\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 148,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P148_C02",
+      "text": "Such unconditional stay would instead be relatable to\n the main part of\nSection 36(3)\n.\n112.The above reading of\nSepco Electric\n(supra) would also be in tune with\n the discretionary power of the court under the main part of\nSection\n 36(3)\nboth with respect to the power to grant stay and the power to\n impose conditions if a stay is granted. After all, it is not inconceivable\n to contend that a power to impose conditions would also include the\n power not to impose conditions.\n113.Be that as it may,\nSepco Electric\n(supra) does not clearly answer the\n question whether an unconditional stay can be granted in cases not\n\ncovered by the second Proviso to\nSection 36(3)\n. This confusion remains\n because while the Court states an unconditional stay can be granted\n in cases covered by the second Proviso, it does not categorically exclude\n the possibility of an unconditional stay in cases not covered by the\n second proviso.\n114.This Court in\nPam Developments\n(supra) had occasion to consider the\n nature of applicability of provisions\nof the CPC\nvis-à-vis the proceedings\n under the\nArbitration Act\n, and specifically, the interpretation of the\n phrase “due regard” appearing in the first Proviso.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 148,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P148_C03",
+      "text": "The respondent\n therein had preferred an application seeking an unconditional stay of\n the arbitral award on the strength of Order XXVII Rule 8A,\nCPC\nwhich\n inter alia exempted Government from furnishing a security while\n seeking stay of a decree. Aggrieved by the application being allowed by\n the Calcutta High Court, the appellant-award holder approached this\n Court.\n115.This Court allowed the appeal and directed deposit of the award\n amount as a condition for continuing the stay. The Court reasoned that\n the exemption from furnishing security under Order XXVII Rule 8A that\n would otherwise be applicable to the ordinary civil proceedings could\n not be strictly applied to the arbitration proceedings. Therefore, the\n respondent-government could not have relied upon that provision to\n avoid furnishing security for staying the award. The\nCourt further held\nthat even if the exemption from furnishing security was made\n applicable to the arbitration proceedings, such exemption would not\n extend to making deposit of the award amounts.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 148,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P148_C04",
+      "text": "This was based on the\n Court’s interpretation of the difference between Order XXVII Rule 8A\n which was introduced in 1937 and exempted furnishing of ‘security’\n and sub-rule (5) of Rule 5 of Order XLI that was introduced in 1976\n\nand which differentiated between ‘security’ and ‘deposit’. The Court\n also referred to the implications of a provision introduced during the\n colonial period and its continuance in the present constitutional set-\n up.\n116.This Court in\nPam Developments\n(supra) held that the phrase “due\n regard” would only mean that the provisions\nof CPC\nare to be taken\n into consideration and not that they are mandatory. The relevant\n observations are extracted below:\n“20. In our view, in the present context, the\n phrase used is “having regard to” the provisions\nof CPC\nand not “in accordance with” the\n provisions\nof CPC\n. In the latter case, it would have\n been mandatory, but in the form as mentioned in\n Rule 36(3) of the\nArbitration Act\n, it would only be\n directory or as a guiding factor. Mere reference to\nCPC\nin the said\nSection 36\ncannot be construed in\n such manner that it takes away the power\n conferred in the main statute (i.e. the\nArbitration\n Act\n) itself.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 148,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P148_C05",
+      "text": "It is to be taken as a general guideline,\n which will not make the main provision of the\nArbitration Act\ninapplicable. The provisions\n CPC\nare to be followed as guidance, whereas the\n provisions of the\nArbitration Act\nare essentially to\n be first applied. Since, the Arbitration Act is a self-\ncontained Act, the provisions\nof CPC\nwill apply\n only insofar as the same are not inconsistent with\n the spirit and provisions of the\nArbitration Act\n.”\n (Emphasis supplied)\n117.On the strength of the above reasoning, this Court held that the\n exemption from furnishing security could not be applied to the\n arbitration proceedings. The Court clarified that while courts must\n have due regard to\nthe CPC\n, they are not rigidly bound by its\n provisions. The\nCPC\nserves as a guiding framework rather than a strict\n mandate because the\nArbitration Act\nbeing a self-contained Act is to be\n first applied by the court.\n\n118.Although not explicitly stated by the Court as a reason for its decision,\n yet this Court did note the consequence of accepting the contention\n that Order XXVII Rule 8A was applicable.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 148,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P148_C06",
+      "text": "The result would be that\n wherever the government was the judgment-debtor in the arbitration\n proceedings, it would be entitled to an unconditional stay on the mere\n filing of an application under\nSection 36(2)\n.\n119.While Pam Developments\n(supra) relied on the phrase “due regard”\n appearing in the first Proviso to decline the rigid application of an\n exemption from furnishing security provided under\nthe CPC\nit could\n also be argued that insisting on a conditional stay in all cases of a\n money award would be a rigid application of Order XLI Rule 5. This is\n because Rule 5 mandates the furnishing of security or deposit as a\n condition for granting stay. Relying on\nPam Developments\n(supra), it\n could possibly be argued that “due regard” to the provisions\nof CPC\n,\n especially Order XLI Rule 5, would not mean a mandatory grant of\n conditional stay in all cases. This is because the provisions of the Act,\n especially\nSection 36\n, would have to be first applied wherein a\n discretionary power is vested in the court.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 149,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P149_C01",
+      "text": "120. If the first Proviso has to be interpreted as done in\nPam Developments\n(supra) and merits of the award have to be considered on a prima facie\n level as done in\nSepco Electric\n(supra), it is difficult to rule out the\n existence of an unconditional stay in cases outside the second Proviso. A closer analysis of the decision in\nSepco Electric\n(supra) and this\n Court’s interpretation of the first proviso in\nPam Developments\n(supra)\n suggests that unconditional stays can be granted even in cases outside\n the second Proviso.\n\n121.At this stage, we must look into one decision of the Bombay High Court\n in the case of\nITD Cementation India Ltd. v. Urmi Trenchless\n Technology Pvt. Ltd.\n, reported in 2020 SCC OnLine Bom 10611,\n wherein the High Court after referring to and relying upon\nPam\n Developers\n(supra) observed as under:\n“11. The provision of\nSection 36(3)\nare clear, that\n one must have regard to the provisions\nof the\n Code of Civil Procedure\n1908 (“\nCPC\n”) and\n specifically the provisions of Order 41 Rule 5\n while addressing the question of stay. The words\n ‘have due regard’ have received judicial\n interpretation.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 149,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P149_C02",
+      "text": "Certainly there is no blanket\n prohibition barring a Court from unconditionally\n staying either a money award or a money decree. The three-fold requirement of Order 41 Rule 5(3)\n will have to be kept in mind. But, as the Supreme\n Court held in\nPam Developers Private\n Limited v. State of West Bengal\n(2019) 8 SCC 112\n the provisions of Order 41 Rule 5 are for\n guidance. They do not indicate that a\nSection 36\nCourt lacks all discretion to grant an\n unconditional stay. That said, it is equally well\n settled that a strong and exceptional case must\n be made for unconditional stay of a money decree\n or a money award. The three matters to consider\n under Order 41 Rule 5(3) are (a) whether the\n Applicant will be put to a substantial loss if stay\n is refused; (b) whether there is a delay in making\n the application and (c) whether the Applicant has\n furnish sufficient security to satisfy any ultimate\n decree. There is a delay, though slight. I do not\n see how the question of substantial loss arises. The fact that it has suffered an Award is neither\n here or there. The third requirement is that the\n party applying for stay must show sufficient\n security.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 149,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P149_C03",
+      "text": "There is no such attempt made.”\n (Emphasis supplied)\n122.In such circumstances\nreferred to above\n, we find it difficult to subscribe\n to the submission of Mr. Gaurav Pachnanda, that even for the purpose\n of grant of benefit of unconditional stay of money decree under Order\n\nXLI\nRule 5 of the CPC\n, the judgment-debtor has to make out more than\n a prima facie case of fraud or corruption and not solely on the basis of\n an extreme or egregious view on the merits of the adjudication.\n123.We once again clarify that the analogy of\nSection 36\nof the Arbitration\n Act sought to be applied is inappropriate. The decision of this Court in\nPam Developments\n(supra) should also be understood and confined\n only to matters relating to arbitration, more particularly,\nSection 36\n the Arbitration Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 150,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P150_C01",
+      "text": "124. We are of the view that if fraud or corruption or something analogous\n to the same is only to be seen for the purpose of granting benefit of\n unconditional stay of execution of money decree then in such\n circumstances, the decree holder may argue that although there may\n not be a valid service of summons to the defendant/judgment-debtor\n yet, the same by itself would not be sufficient to grant the benefit of\n unconditional stay of execution of money decree. This would lead to\n nothing but serious miscarriage of justice.\nvi. Relevant aspects which the High Court looked into for the\n purpose of granting unconditional stay\n125.The first thing that the Division Bench of the High Court looked into\n was that the suit had proceeded in the absence of the respondent\n herein. In the aforesaid context, the findings recorded by the Division\n Bench may be looked into:\n“168. We also find prima facie substance in the\n contentions of Mr. Nigam and Mr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 150,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P150_C02",
+      "text": "Kaul that the\n manner in which, after excluding all defendants\n from the proceedings, the entire trial of the suit,\n arguments and rendition of judgment took place\n solely in the presence of the plaintiff Lifestyle,\n may not sustain legal scrutiny.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 151,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P151_C01",
+      "text": "169. The learned Single Judge has repeatedly\nobserved, in the impugned judgment, that\nAmazon Tech was deliberately staying away\nfrom the proceedings despite being aware of their\npendency, and has relied, for the said purpose,\non the order dated 5 September 2022 passed in\nthe suit. A reading of the order discloses that the\nappearance of Counsels are noted only for\nDefendant 2 Cloudtail and Defendant 3 ASSPL.\nThe mere fact that learned Senior Counsel\nappearing for Cloudtail advanced a submission,\non behalf of his client as well as on behalf of\nAmazon Tech, that they were willing to suffer\nreasonable damages, cannot be seen as proof of\nAmazon Tech being aware of the proceedings or\ndeliberately refraining from participating therein.\nEven prior to this date, Amazon Tech had been\nproceeded ex parte on 20 April 2022. As a matter\nof fact, therefore, Amazon Tech was never present\nbefore the learned Single Judge on any date of\nhearing.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 152,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P152_C01",
+      "text": "170. When one peruses the orders passed in the\nsuit, vis-à-vis the notings of the Registry, it\nbecomes apparent that, in fact, no summons in\nthe suit were ever served on Amazon Tech. This,\nto our mind, is a serious infirmity, which may\nplague all other proceedings. Amazon Tech was\nproceeded ex parte, by the learned Single Judge,\non 20 April 2022. In the order passed by the\nlearned Joint Registrar on 7 July 2021, which\nwas the immediately preceding effective date, it\nwas specifically noted that there was no report\nregarding service of the suit on Amazon Tech. In\nthe circumstances, Lifestyle was directed to file\nan affidavit of service. No affidavit of service was\nfiled by Lifestyle, between 7 July 2021 and 20\nApril 2022. The only affidavit of service which\nwas filed by Lifestyle was of 25 March 2021. That\naffidavit enclosed, by it, an email dated 8 March",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 153,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P153_C01",
+      "text": "2021. No email, after 8 March 2021, was sent by\nLifestyle to Amazon Tech. There is no question of\nthe summons having been served by the email\ndated 8 March 2021, as the delay in filing process\nfee was condoned only on 16 April 2021. After 16\n\nApril 2021, the summons have never been sent to\nAmazon Tech, by any means of communication\nincluding email. It was for this reason that the\norder dated 7 July 2021 of the learned Joint\nRegistrar required Lifestyle to file an affidavit of\nservice. This was never done. As such, it is\napparent that the learned Single Judge was in\nerror in proceeding ex parte against Amazon Tech\nby order dated 20 April 2022.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 154,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P154_C01",
+      "text": "171. In fact, even before us, Mr. Pachnanda, with\ncharacteristic candour and forthrightness, did not\nseek to contend that formal service of summons\non Amazon Tech, as directed by the Court while\nissuing summons on 12 October 2020, ever took\nplace. His submission is, however, that, prior to\nissuance of summons by the Court on 12 October\n2020, as well as by way of attachment to the\nemail dated 8 March 2021, all the documents\nrelating to the suit, as well as applications filed\ntherewith, were forwarded to Amazon Tech.\nBesides, due compliance with the requirements of\nthe proviso to\nOrder XXXIX Rule 13 of the CPC\nwas also ensured. In these circumstances, Mr.\nPachnanda’s submission is that the learned\nSingle Judge was correct in holding that Amazon\nTech deliberately absented itself from the\nproceedings and cannot, now, therefore, seek to\nraise a grievance that it was proceeded ex parte.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 155,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P155_C01",
+      "text": "173. The law does not require a defendant to\nenter appearance in a suit, unless summons in\nthe suit are served on it.\nThe Commercial Courts\nAct, 2015\ncontains strict provisions in that regard.\nNo amount of service, on the defendant, of the\npapers relating to the suit, by the plaintiff, absent\nactual summons issued by the suit, can compel a\ndefendant, in law, to enter appearance. The law\ndoes not permit a defendant to be proceeded ex\nparte, even before summons in the suit are served\non it. This is plain, and elementary. The learned\nSingle Judge could not, therefore, have proceeded\nagainst Amazon Tech ex parte on 20 April 2022,\n\neven before formal summons in the suit had been\nserved on it. In doing so, it appears that the\nlearned Single Judge was not made aware of the\norder passed by the learned Joint Registrar on\nthe immediately preceding date, i.e. 7 July 2021,\nin which it was specifically noted that there was\nno report regarding service of the suit on Amazon\nTech. In holding that Amazon Tech had not\nappeared despite service and, therefore,\nproceeding against Amazon Tech ex parte,\ntherefore, we are of the opinion that the learned\nSingle Judge materially erred in law and on facts.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 156,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P156_C01",
+      "text": "174. This, by itself, is a lapse serious enough to\nvitiate all proceedings in the suit after 20 April\n2022, at least insofar as the appellant Amazon\nTech is concerned. It also, therefore, suffices,\neven by itself and independent of all other\nconsiderations, as enough to justify\nentertainment of the present appeal without\nrequiring any deposit of the decretal amount to be\nmade by Amazon Tech.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 157,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P157_C01",
+      "text": "175. We also find considerable substance in the\nsubmission of learned Senior Counsel for the\nappellant Amazon Tech that, in any event, all\nthese developments took place at a time when the\ndamage claimed by Lifestyle were only to the\ntune of ₹ 2,00,05,000/-. Enhancement of these\ndamages are necessarily to be proceeded by an\namendment of the plaint, of which Amazon Tech\nhad to be put on due notice. This was never done.\nIn fact, the written submissions filed by Lifestyle,\nwhich enhanced the damages, earlier computed\nat ₹ 20,005,000/– to ₹ 3780 crores, were also not\nserved on the Appellant Amazon Tech. In\naccepting the enhancement of the claim for\ndamages, therefore, we agree with learned Senior\nCounsel for the appellant Amazon Tech that the\nlearned Single Judge has not acted strictly in\naccordance with the law.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 158,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P158_C01",
+      "text": "176. In some circumstances, we are also of the\nopinion that lifestyle cannot seek sanctuary\nbehind Order VII Rule 2 or Order VII rule 7 of the\n\nCPC\n, or even Rule 120 of the IPD Rules. Order VII\nRule 2, in fact requires a plaint, seeking recovery\nof money, to state the precise claimed amount. The proviso to Order VII Rule 2 applies only in\ncases of suits for mesne profits, or for an amount\nwhich would be found on rendition of accounts\nbetween the Plaintiff and the Defendant, or for\nmovables in the possession of the defendant or\ndebts of which the value cannot be reasonably\nestimated at that stage. The present suit does not\nfall within any of these categories. The suit does\nnot claim mesne profits, or value of movables in\nthe possession of the defendants, or any debt of\nwhich the value was not ascertainable. Moreover,\npara 86 of the impugned judgment records the\nsubmission of Lifestyle that it was not pressing\nfor its prayer for rendition of accounts. In that\nview of the matter, the proviso to\nOrder VII Rule 2\nof the CPC\nwould not apply, and the main\nprovision, which requires the precise claim to be\nquantified in the suit, would apply with all force.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 158,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P158_C02",
+      "text": "The precise amount quantified in the suit was\nonly ₹ 2,00,05,000/–. There is, therefore,\nsubstance in the contention of learned Senior\nCounsel for Amazon Tech that, without an\namendment of the plaint, the damages could not\nhave been enhanced, much less to ₹ 3780 crores.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 159,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P159_C01",
+      "text": "177. Order VII Rule 7, plainly, does not apply, as\nit exempts a plaintiff from requiring to claim\n“general or other relief”, apart from the specific\nrelief sought in the plaint.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 160,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P160_C01",
+      "text": "178. In any event, what lies at stake, here, is\nsomething far more empirical. The question that\nis required to be addressed is whether (i) a claim\nfor damages, assessed in the plaint at ₹\n2,00,05,000/–, could be inflated to ₹ 3780 crores\nmerely in written submissions filed by the\nplaintiff after conclusion of arguments, without\namending the plaint and without even serving a\ncopy of the written submissions on a defendant\nagainst whom the enhanced damages were\nclaimed and (ii) the Court would, in such\ncircumstances, have awarded damages in excess\n\nof ₹ 336 crores, without any prior opportunity to\n the concerned defendant to contest the proposed\n judgment.”\n126.The second relevant aspect that the Division Bench looked into was\n the fact that there were no pleadings of infringement against the\n respondent herein worth the name. In this regard, the following\n observations are relevant:\n“156. Mr. Sai Deepak, appearing on behalf of\n Lifestyle and supplementing the submissions\n advanced by Mr.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 160,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P160_C02",
+      "text": "Pachnanda, sought earnestly to\n convince us that the requisite factual basis or\n alleging involvement of Amazon Tech in the\n infringement of Lifestyle’s registered trademark,\n is forthcoming in the plaint. We are unable to\n agree.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 161,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P161_C01",
+      "text": "157. We have already set out, from para 29 of the\n present judgment on words, the relevant\n averments contained in the plaint. We do not find,\n therein, any prima facie sustainable allegation of\n involvement, by Amazon Tech, in any\n infringement of Lifestyle’s registered trademark.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 162,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P162_C01",
+      "text": "158. Para 41 of the plaint alleges that Amazon\n Tech is, under its brand ‘SYMBOL’,\n “manufacturing, offering for sale and/or selling\n products which bear the infringing logo mark.\nThese allegations are completely defeated by the\n assertions in the replication filed by Lifestyle, to\n the written statement of Cloudtail – also\n reproduced supra – that it was Cloudtail\n manufacturing and selling the apparel bearing\n the mark, and, thereby, infringing Lifestyle’s\n registered trademark.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 163,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P163_C01",
+      "text": "159. Para 41 goes on to state that ASSPL was\n selling products of Amazon Tech on its platform\n under the trademark ‘SYMBOL’, bearing the\n infringing mark. This allegation, again, is\n incorrect. The products sold by ASSPL were not of\n Amazon Tech, but of Cloudtail. The only\n connection of Amazon Tech, with the said\n\nproducts, was the ‘SYMBOL’ mark, which\nCloudtail affixed on the said apparel under\nlicense from Amazon Tech. This does not, in any\nway, connect Amazon Tech with the infringing\nmark.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 164,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P164_C01",
+      "text": "160. In fact, after making such bald and\nunsubstantiated allegations, Lifestyle, in the\nsame para 41 of the plaint, acknowledges that it\nwas not certain about the actual relation between\nAmazon Tech, Cloudtail and ASSPL. Obviously,\nthe allegations against Amazon Tech, regarding\nits complicity in the affixation of the mark on the\napparel sold by Cloudtail on the ASSPL platform,\nwere merely shots in the dark, without any\nknowledge of the actual state of affairs. In fact,\npara 46 of the plaint acknowledges the fact that\nthe invoice, raised by ASSPL, with respect to the\napparel purchased by Lifestyle, only contained\nthe name and details of Cloudtail. Despite this,\npara 48 of the plaint alleges that it was an\n“admitted case of Defendant No 3 (ASSPL) that\norders for the infringing product of the Defendant\nNo 1 (Amazon Tech) are being fulfilled by\nDefendant No 2 (Cloudtail)”, without any such\n“admitted case” being available on record. The\nplaint does not disclose where this “admission” is\nto be found.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 165,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P165_C01",
+      "text": "161. At this juncture, we may also refer to the\naffidavits dated 21 July 2022 and 1 September\n2022 of ASSPL, on which Mr. Pachnanda sought\nto place reliance as supporting the finding of the\nlearned Single Judge, in the impugned judgment,\nthat Amazon Tech, Cloudtail and ASSPL\nconstitute a “cohesive commercial entity”. We find\nno such inference being forthcoming from the\naffidavits. In any case, we are not concerned,\nhere, with the interlink, as commercial entities,\nbetween Amazon Tech, Cloudtail and ASSPL.\nThey are, admittedly, independent commercial\nentities, as was, in fact, noted by the learned\nSingle Judge in the order dated 12 October 2020,\nreproduced in para 19 of the impugned\njudgement. What is to be seen is whether there\n\nwas any material to indicate involvement of\n Amazon Tech in the allegedly infringing activities\n of Cloudtail. There is, in fact, none.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 166,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P166_C01",
+      "text": "162. Apart from this, the plaint only refers,\n repeatedly, to the infringing mark as belonging to\n Amazon Tech and has having been adopted by it.\n No factual basis for these allegations is\n forthcoming.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 167,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P167_C01",
+      "text": "163. We have already explained, in para 18 to 26\n supra, why it cannot be said that any substantial\n allegation of involvement, by Amazon Tech, in the\n allegedly infringing activities of Cloudtail, by\n affixation of the mark on the apparel sold by it,\n can be said to exist.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 168,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P168_C01",
+      "text": "164. This, therefore, is not merely a case in which\n damages have been awarded against Amazon\n Tech without any finding, by the learned Single\n Judge, of involvement, in the alleged infringing\n activities, but is, in fact, a case where no such\n pleadings exist.”\n127.The third aspect which the Division Bench looked into was one\n relating to no pleadings for the purpose of claiming Rs.\n 3,36,02,87,000/- towards damages. In this regard, the findings\n recorded are:\n“136. Leave alone the fact that there were no\n pleadings, claiming ₹ 336,02,87,000/-, there\n were also no pleadings on the basis of which is\n claim could be supported or sustained. The\n learned Single Judge has herself ventured into an\n exercise of computing the awardable damages as\n ₹ 336,02,87,000/-, without the said exercise\n being supported by any pleadings of Lifestyle.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 168,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P168_C02",
+      "text": "The position that has resulted is, therefore, that\n(i) the pleadings of Lifestyle only justified\n damages of ₹ 2,00,05,000/–,\n(ii) without amending its pleadings, Lifestyle, in\n its written submissions before the learned Single\n Judge, worked out the damages to which it was\n\nallegedly entitled as approximately ₹ 3780 crores,\n and\n(iii) the impugned judgment decrees in favour of\n Lifestyle and against Amazon Tech, ₹\n 336,02,87,000/-, again on the basis of a\n computation solely devised by the learned Single\n Judge, not pleaded by the parties and\n unsupported by any pleading on record.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 169,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P169_C01",
+      "text": "137. Mr. Pachnanda sought to submit that the\n damages to which the Plaintiff is entitled need not\n be specifically computed and claimed in the\n pleadings. The submission, in our view, begs the\n issue. This is not merely a case where there are\n no pleadings, supporting the damages of ₹ 3780\n crores, claimed by Lifestyle in its written\n submissions, or the damages of ₹\n 336,02,87,000/-which ultimately came to be\n awarded by the learned Single Judge. Even the\n basis for the claim of ₹ 3780 crores, all for the\n amount of ₹ 336,02,87,000/-which was\n ultimately awarded, is not to be found anywhere\n in the pleadings of Lifestyle.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 170,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P170_C01",
+      "text": "138. The basis for the claim for damages are, at\n all costs, to be contained in the pleadings of the\n Plaintiff. It cannot be reserved for evidence. It is a\n legal truism that evidence cannot traverse the\n pleadings.”\n128.The fourth aspect that the Division Bench looked into was the fact\n that the learned Single Judge had recorded no findings as regards the\n role of the respondent herein in the alleged infringement. The relevant\n observations are as under:\n“142. With greatest respect, it appears to us that\n the impugned judgement is more concerned with\n the fact that e-infringement is a new\n phenomenon, and that it is very difficult to\n identify the actual players in the act. Paras 42 to\n 44 of the impugned judgment deal with the\n menace of e-infringement, and the difficulty in\n localising liability in such cases. Para 44, in fact,\n refers to intermediary liability, which is of no\n particular relevance, as Amazon Tech does not\n claim itself to be an intermediary. We may note,\n\neven at this juncture, that the learned Single\nJudge has, in para 99 of the impugned judgment,\nobserved that Amazon Tech was identifying itself\nas an intermediary. This is a prima facie\nerroneous finding.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 170,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P170_C02",
+      "text": "At no point of time has Amazon\nTech claimed to be an intermediary. In fact, in\nearlier orders passed in the suit, particularly in\nthe orders dated 2 March 2023 and 7 August\n2023 – which the latter was passed by the\nlearned Single Judge herself – it has been\ncorrectly noted that Defendant 3 ASSPL was\nclaiming to be an intermediary and was, in fact,\none. In the impugned judgment, therefore, the\nlearned Single Judge has proceeded on an\napparently mistaken assumption that Amazon\nTech was also claiming to be an intermediary.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 171,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P171_C01",
+      "text": "143. Returning to the findings in the impugned\njudgment, following the adverse observations\nregarding the menace of e-infringement is a new\nspecies of trademark infringement, which poses\nsignificant challenges in localising of liability, the\nlearned Single Judge proceeds, in para 45, to\ncharacterise the present case as a case of e-\ninfringement – with which there can be no serious\ncavil. Following this, however, the learned Single\nJudge was on to note that the brand ‘Symbol’,\nbeing used by Cloudtail, was owned by Amazon\nTech. This is also; however, is difficult to\nunderstand how the ownership, by Amazon Tech,\nof the brand ‘Symbol’ is of any relevance. The\nmark ‘Symbol’ is, quite clearly, not infringing in\nnature.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 172,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P172_C01",
+      "text": "144. In fact, even the plaint in the suit does not so\nassert. The case that Lifestyle has sought to build\nup, in the plaint, is that, as the infringing mark\nfigured on the same apparel, which bore the\n‘SYMBOL’ mark of Amazon Tech, Amazon Tech\ncould not escape liability from the tort of\ninfringement by use of the mark. In our\nconsidered view, the said plea, which has\napparently found favour with the learned Single\nJudge in the impugned judgment, has no basis in\nlaw.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 173,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P173_C01",
+      "text": "145. The learned Single Judge proceeds to lay\nconsiderable stress on order dated 5 September\n\n2022, passed in the suit, particularly on the\nopening sentence of the order, which reads:\n“The learned senior counsel for the defendant\n no. 2/applicant herein submits that the said\n defendant, including for and on behalf of the\n defendant no. 1 is willing to suffer a decree of\n injunction and also for paying reasonable\n damages to the plaintiff.”\nThe learned Single Judge has treated this\nsentence, from the order dated 5 September\n2022, as recording some kind of a concession, on\nbehalf of Amazon Tech, admitting its liability for\ninfringement and agreeing to pay damages. Significantly, prior to the passing of this order,\nAmazon Tech had already been proceeded ex\nparte on 20 April 2022. Even if it were to be\nassumed that Amazon Tech had agreed, through\nlearned Counsel who appeared on behalf of\nCloudtail, to suffer reasonable damages, that\nstatement, if at all, was made at the stage when\nthe damages claimed by Lifestyle were of ₹\n2,00,05,000/–.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 173,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P173_C02",
+      "text": "In the face of this claim, it would\nbe preposterous to hold that the order dated 5\nSeptember 2022 amounts to an admission, by\nAmazon Tech, to suffer damages of ₹\n336,02,87,000/-. Before awarding such\ndamages, therefore, it was incumbent on the\nlearned Single Judge to render specific findings of\ninfringement, or at least of complicity in the\ninfringing activities, by Amazon Tech. With\ngreatest respect, we do not find this to have been\ndone.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 174,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P174_C01",
+      "text": "146. Para 47 of the impugned judgment observed\nthat Amazon Tech, Cloudtail and ASSPL were\n“closely related to or interlinked with each other”.\nPara 48 records that “it is a matter of public\nknowledge that the www.amazon.in platform is\nclosely linked with Defendant No. 1”, i.e. the\npresent appellant Amazon Tech. To a large extent,\nit is clear that the impugned judgement proceeds\non the premise that Amazon Tech, Cloudtail and\nASSPL, i.e., all the defendants, were acting in\nconcert and were one commercial entity.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 175,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P175_C01",
+      "text": "147. We also find, prima facie, that the learned\nSingle Judge has, in para 52 of the impugned\n\njudgment, completely misread the Licensing\nAgreement dated 23 December 2015 as fastening\nliability on Amazon Tech for infringement\nwhereas, in fact, it does nothing of the kind. The\nlearned Single Judge observes that the License\nAgreement dated 23 December 2015, between\nAmazon Tech and Cloudtail indicated “that\nAmazon retains significant control over\nCloudtail’s branding and distribution activities”.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 175,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P175_C02",
+      "text": "Following this, the learned Single Judge returns\nan opinion that “the clauses in the Agreement\nclearly diminish Amazon’s liability to distance\nitself from the alleged infringement committed by\nCloudtail”, that “the contractual restrictions on\nunauthorised trademark use, coupled with\nindemnification obligations, provide strong legal\ngrounds for (Lifestyle) to argue Amazon’s direct\ninvolvement in trademark infringement”, “the\nagreement being a license agreement, Defendant\nNo. 1 being a licensor an Defendant No. 2 being a\nlicensee, any infringement or unlawful use by the\nlicensee would also affix liability about the\nlicensor”, “while licensing the word mark\nSYMBOL” Amazon would be unable to distance\nitself from the use of the accompanying horse logo\ndevice mark” and that “thus, the consequences of\ninfringement squarely fall upon Defendant No. 1”.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 176,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P176_C01",
+      "text": "148. We are, prima facie, unaware of any law\nwhich supports these observations and findings.\nThe Licensing Agreement dated 23 December\n2015 was restricted to the ‘SYMBOL’ mark,\nowned by Amazon Tech. Amazon Tech had, by\nthe agreement, licensed, to Cloudtail, the right to\nuse the mark ‘SYMBOL’. The agreement does\nnothing beyond this. By no stretch of imagination\ncould be Licensing Agreement be read as\nauthorising Cloudtail to affix, on the apparel sold\nby it, the allegedly infringing mark. In fact, the\nLicensing Agreement makes no reference to the\nsaid mark at all, obviously because Amazon Tech\nhad no concern with the said mark. If, therefore,\nCloudtail did affix the mark on the apparel sold\nby it, it certainly did not do so by virtue of any\nauthorisation or permission granted by the\nLicensing Agreement dated 23 December 2015. In\n\nfact, the Licensing Agreement contained a specific\nclause proscribing any infringement, by Cloudtail,\nof the trademark of any third party, and\nindemnified Amazon Tech in that regard.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 177,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P177_C01",
+      "text": "149. The observations contained in para 52 of the\nimpugned judgment, extracted by us earlier in\nparagraph 139, are unsupported by law. In a\nLicensing Agreement, whereby and whereunder\nAmazon Tech had only licensed, to Cloudtail, the\nright to use the ‘SYMBOL’ mark, we are unable to\nunderstand how Amazon Tech could be fastened\nwith liability for use, by Cloudtail, of the mark,\nwith which the Licensing Agreement – and,\nindeed, Amazon Tech itself – had no concern.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 178,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P178_C01",
+      "text": "150. Needless to say, a licence by one party to\nanother, to do a particular act, cannot render the\nfirst party liable for every infringing or illegal act\ncommitted by the second, in the absence of any\nmaterial to indicate that the commission of the\nillegal infringing act was also authorised by the\nlicense. The findings in para 52 of the impugned\njudgment, in our prima facie view, are contrary to\nthis principle which, according to us, is practically\nfossilized in the law. They, therefore, suffer from\npatent illegality.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 179,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P179_C01",
+      "text": "151. In para 98, the learned Single Judge\nobserves that the judgment would proceed to\nexamine, inter alia, “the degree of culpability of\nthe Defendants”. Paras 98 to 99 proceed,\napparently, to record certain observations\nregarding Amazon Tech which, in our view, are\nnot incriminating in any manner. Before,\nhowever, adverting thereto, the learned Single\nJudge observes, in para 98 and in the opening\npart of para 99 of the impugned judgment, that\nthe mark ‘SYMBOL’, of which the right to use had\nbeen licensed by Amazon Tech to Cloudtail, was\nused “along with” the infringing mark, on the\napparel sold by Cloudtail. Even if it was, we are\nunable to understand how any liability or\nresponsibility for infringement, on the ground, be\nfastened on Amazon Tech. Amazon Tech was not\nthe manufacturer of the apparel on which the\ninfringing mark was used. It had never licensed,\n\nto Cloudtail, the right to use the infringing mark,\nwith which, in fact, it had no concern. In fact,\nCloudtail itself conceded, before this Court on 2\nMarch 2023, that the decision to use the\ninfringing mark on the apparel sold by was not of\nAmazon, but of Cloudtail itself.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 179,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P179_C02",
+      "text": "Unfortunately, the\nlearned Single Judge has entirely overlooked this\nconcession, regarding which no objection or\nreservation was ever expressed by Lifestyle,\neither before this Court on 2 March 2023 or at any\npoint thereafter. In view thereof, it is plainly\nobvious that the affixation, on the apparel sold by\nCloudtail, of the infringing logo, could not\nincriminate Amazon Tech in any manner, merely\nbecause the same apparel also happened to carry\nthe ‘SYMBOL’ mark, the use of which had been\nlicensed by Amazon Tech to Cloudtail.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 180,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P180_C01",
+      "text": "152. Para 99 of the impugned judgment proceeds\nto observe that Amazon Tech was “one of the most\ndominant players in the ecommerce space”, that\nit “possesses ways and means to utilise its\ndominant presence in the e-commerce space to\npromote its own products as also products which\nit might otherwise wish to promote”, and that it\nhad “the leverage through its own platforms to\ndilute Plaintiff’s brand/logo by indulging in deep-\ndiscounting of its own products which compete\nwith the Plaintiff by using a similar mark/logo”.\nThese findings are, prima facie, entirely in the\nrealm of presumption and conjecture. They reflect\nan impression, by the learned Single Judge, that\nAmazon Tech was in a position to indulge in\ninfringing activities by means such as deep\ndiscounting – with respect to which there is not\neven a whisper of an allegation against Amazon\nTech in the entire plaint of Lifestyle – and that,\ntherefore, it must have done so. On the face of it,\nwe are of the view that these findings suffer from\nperversity in law, and cannot, therefore, sustain.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 181,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P181_C01",
+      "text": "153. Para 99 goes on further to observe that “it is\nwell known reality that all 3 Defendants belong\nto the Amazon Group of Companies and operate\nas a cohesive commercial entity”. This finding has\nnothing forthcoming, available on the record, to\nsupport it. There is certainly no pleading to that\n\neffect. The plaint, filed by Lifestyle, does not\n allege, even indirectly, that Amazon Tech,\n Cloudtail and ASSPL constituted a “cohesive\n commercial entity”. A finding that 3 companies,\n which are independent corporate ventures,\n constitute a cohesive commercial entity, cannot be\n returned without any pleading to that effect. We\n are constrained to observe that the learned Single\n Judge has, in so holding, made out a case in\n favour of Lifestyle which it itself did not plead.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 182,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P182_C01",
+      "text": "154. There are no other findings, in the impugned\n judgment, against Amazon Tech. Of course, the\n learned Single Judge has adversely commented\n on what she perceives as Amazon Tech’s\n deliberate absence from the proceedings in the\n suit. Even if it were to be presumed, merely for\n the sake of argument, that Amazon Tech took a\n conscious decision not to participate in the suit\n proceedings, that cannot justify mulcting it with\n damages of ₹ 336,02,87,000/-.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 183,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P183_C01",
+      "text": "155. The case, therefore, is one of awarding,\n against Amazon Tech and in favour of Lifestyle,\n of damages of ₹ 336,02,87,000/-, without any\n sustainable finding of infringement, or of\n complicity in infringement, against Amazon\n Tech.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 184,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P184_C01",
+      "text": "129. If the Division Bench after looking into all the relevant aspects\nreferred\n to above\nthought fit to grant benefit of unconditional stay of execution\n of money decree then, applying the principles of law discussed by us,\n it cannot be said that the Division Bench committed any error much\n less an error of law in passing the impugned judgment and order.\n130.It goes without saying that whatever has been observed by the Division\n Bench in its impugned judgment and order is not an expression of any\n final opinion but are prima face observations for the purpose of\n granting the relief as prayed for by the respondents.\n\n131.It is necessary for us to observe that the Court’s jurisdiction over a\n respondent is founded on a valid service of summons. Without a valid\n service, the Court cannot acquire jurisdiction over the respondent,\n unless the defendant voluntarily submits to it. The original defendant-\n respondent must be properly be apprised of a pending action against\n him and assured of the opportunity to present his defenses to the suit.\n Proper service of summons is used to protect one’s right to due process.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 185,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P185_C01",
+      "text": "132. In an action strictly in personam, personal service on the defendant is\n the preferred mode of service, i.e., by handing a copy of the summons\n to the defendant in person. If defendant, for excusable reasons, cannot\n be served with the summons within a reasonable period, then\n substituted service can be resorted to. While substituted service of\n summons is permitted, \"it is extraordinary in character and in\n derogation of the usual method of service.\"\n133.In the case in hand, what is important for us to note is the Order passed\n by the Joint Registrar (Judicial) of the High Court of Delhi dated\n 01.03.2021 which reads thus:\n“CS(COMM)443/2020\n “1. Written statement filed by the defendant No.\n2 & 3 with affidavit of admission/denial.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 186,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P186_C01",
+      "text": "2. Replication to the written statement of the\n defendant no.3 with affidavit of\n admission/denial of the documents has been\n filed by the plaintiff.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 187,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P187_C01",
+      "text": "3. It is submitted by counsel for the plaintiff that\n replication and affidavit of admission/denial of\n the documents qua the defendant no.2 has also\n been filed but the same is lying under scrutiny.\n Let necessary steps be taken to ensure that\n replication and affidavit of admission/denial of\n the documents are placed on record.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 188,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P188_C01",
+      "text": "4. Affidavit of service filed by the plaintiff reflects\n that entire paper book was delivered to the\n defendant no.1 through speed post and courier.\n\nHowever, from the report of the Registry it\n appears that PF was not filed for service of the\n defendant no.1 and summons of the suit through\n e-mail and Whatsapp were not issued to the\n defendant no.1 as per orders of the Hon’ble Court\n which is dated 12/10/2020. Let the order be\n complied with, and process be Issued, returnable\n for the next date.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 189,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P189_C01",
+      "text": "5. Re-notify the matter for completion of service,\n completion of pleadings and admission/denial of\n the documents on 22\"'' April, 2021.”\n (Emphasis supplied)\n\n F. CONCLUSION",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 190,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P190_C01",
+      "text": "134. We summarize our final conclusion on the grant of benefit of stay of\n execution of a decree by an appellate court in term of Order XLI as\n under: -\n(I) Order XLI Rule 5 contains the provision for the grant or refusal\n of stay of execution of the decree by the appellate court under\nthe CPC\n. It categorically stipulates that mere filing of an\n appeal against an order of execution, shall not ipso facto\n operate as stay of proceedings. Any execution proceeding or\n an order therein, shall be stayed only if a specific, reasoned\n order granting such stay is passed by the appellate court, after\n proper application of mind. (II) For the grant of stay of execution of a decree in terms of Order\n XLI, a prayer to such effect has to be specifically made to the\n appellate court and the appellate court has the discretion to\n grant an order of stay or to refuse the same. (III) Order XLI Rule 5(3)\nof the CPC\nprovides for satisfaction\n regarding sufficient cause as a pre-condition for granting\n benefit of stay of execution of decree, and it casts an obligation\n\nupon the appellate court to record its satisfaction for stay of\n execution such decree.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 190,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P190_C02",
+      "text": "(IV) The power of the Appellate Court to order stay of execution of\n the decree is circumscribed and made subject to the existence\n of a “sufficient cause” in favour of the appellant being shown. In order to ascertain whether a “sufficient cause” exists for the\n grant of stay of execution of a decree under\nOrder XLI of the\n CPC\n, the appellate court as per sub-rule (3) of Rule 5 is\n required to examine:-\n(i) Whether there will be substantial loss to the party\n applying for stay;\n(ii) Whether the application has been made without\n unreasonable delay; and\n(iii) Whether security has been given by the applicant for\n due performance of the decree. (V) For the grant of stay of execution of the decree, the appellate\n court is required, after perusing the materials on record, to\n assign reasons for its satisfaction regarding the existence of a\n “sufficient cause”. Such reasons should be cogent and\n adequate. The reasons assigned must indicate the necessity\n for the status quo prevailing on the date of the decree and/or\n the date of making of the application for stay, to continue by\n granting stay, and not merely the reasons why stay should be\n granted.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 190,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P190_C03",
+      "text": "(VI) Although,\nOrder XLI Rule 5 of the CPC\n, uses the word “shall”,\n yet a combined reading of the sum and substance of Rule(s)\n 1(3) and 5(5) would reveal, that for the grant of stay of\n execution, it is not mandatory for the appellate court to impose\n\na condition for deposit of the amount in dispute. The aforesaid\n provisions make it abundantly clear that the appellate court,\n for the grant of stay of execution, has a discretion to impose a\n condition of deposit of the amount depending on the facts and\n circumstances of each case. (VII) A deposit is not a condition precedent for an order of stay of\n execution of the decree by the appellate court. The only\n guiding factor and statutory mandate, for the grant of such\n stay of execution as indicated in Rule 5, is the existence of\n “sufficient cause” in favour of the appellant, on the availability\n of which the appellate court would be inclined to pass an order\n of stay. (VIII) For the grant of benefit of an unconditional stay of execution\n of a decree, an exceptional case has to be made out before the\n appellate court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 190,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P190_C04",
+      "text": "This discretion of the appellate court to grant\n an unconditional stay of execution of decree must not be\n exercised arbitrarily. It must be exercised sparingly and only\n if an exceptional case is made out for such stay in view of the\n peculiar facts and attending circumstances of the case before\n it. (IX) A lodestar for bringing a case within the purview of\n “exceptional case” for the purpose of granting benefit of\n unconditional stay of the execution of money decree by the\n appellate court would be, if the money decree in question: -\n(i) is egregiously perverse;\n (ii) is riddled with patent illegalities;\n (iii) is facially untenable; and/or\n\n(iv) such other exceptional causes similar in nature. (X) For the purpose of the grant or refusal of stay of execution of\n the decree under Rule 5 of Order XLI, it is immaterial whether\n the decree is a money decree or any other decree. The language\n couched in the said provision is very clear. Order XLI, Rule 5\n of the makes no distinction between a money decree and other\n decrees, and the said provision applies with full rigour in both\n instances.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 190,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P190_C05",
+      "text": "Yet as a rule of prudence and established practice\n evolved over a period of time, no stay of execution of a money\n decree should be granted, except on the condition that the\n decretal amount be deposited in the court. However, such\n condition for deposit cannot be said to be mandatory and non-\nprescription thereof does not operate as a bar to staying the\n execution of a money decree. (XI) There is no provision under\nOrder XLI Rule 5 of the CPC\nimposing a mandate to deposit cash security as the only mode\n of security for execution of the decree.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 190,
+      "chunk_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC_P190_C06",
+      "text": "Security, for the\n purpose of the said provision, can be in the shape of property,\n bond and or in the form of an appropriate undertaking from\n the appellant to abide by the decree, seeking stay of execution.\n135.In view of the aforesaid, we have reached the conclusion that we\n should not disturb the impugned judgment and order passed by the\n Division Bench of the High Court.\n136.It is needless to clarify that the main appeal shall be decided on its\n own merits and without being influenced in any manner by any of the\n observations made in the impugned judgment and order passed by\n the High Court including our judgment.\n\n137.It shall be open for the parties to put forward all contentions available\n to them in law at the time of the final hearing of the Regular First\n Appeal.\n138.Registry shall forward one copy each of this judgment to all the High\n Courts.\n……………...................J.\n [J.B. PARDIWALA]\n\n ...................................J.\n [K.V. VISWANATHAN]\n\nNew Delhi;\n7th October, 2025.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    }
+  ],
+  "case_summary": {
+    "case_name": "Lifestyle Equities C.V vs Amazon Technologies Inc",
+    "case_id": "SC_2025_LIFESTYLE_EQUITIES_CV_VS_AMAZON_TECHNOLOGIES_INC",
+    "court": "Supreme Court of India",
+    "year": "2025",
+    "facts_summary": "4. The Special Leave Petition is, accordingly,\n dismissed. 5. In view of the dismissal of the Special Leave\n Petition, no orders are required to be passed on\n the application for intervention/impleadment and\n the same stands disposed of. 6. However, reasons to follow by a separate\n Order.”",
+    "legal_issues": "EXTRAORDINARY APPELLATE JURISDICTION\n\n Petition for Special Leave to Appeal (C) No.19767 of 2025\n\n LIFESTYLE EQUITIES C.V. & ANR. …PETITIONER(S)\n\n VERSUS\n\n AMAZON TECHNOLOGIES INC. …RESPONDENT\n\n JUDGMENT\n\nINDEX\n\nA. FACTUAL MATRIX ................................................................. 3\n\nB. SUBMISSIONS ON BEHALF OF THE PLAINTIFFS .................. 11\n\nC. SUBMISSIONS ON BEHALF OF THE DEFENDANT ................. 13\n\nD. REJOINDER TO THE SUBMISSIONS CANVASSED ON BEHALF\nOF THE DEFENDANTS ............................................................. 15\n\nE. ANALYSIS............................................................................ 16\n\n i. History of the Legislation in Question ................................................ 18\n\n ii. Principles required to be followed while Interpreting a Provision of a\n Statute ................................................................................................. 22\n\n iii. Decisions of various High Courts on the Subject .............................. 33\n\n iv. 2. Heard Mr. Mukul Rohatgi and Mr. Gaurav\n Pachnanda, the learned Senior counsel appearing\n for the petitioners and Dr. Abhishek Manu\n Singhvi, Mr. Neeraj Kishan Kaul and Mr. Arvind\n Nigam, the learned Senior counsel appearing for\n the respondent. 3. Learned counsel for the defendant No.2 and\ndefendant No.3 accept summons in the suit and\nnotice in the application.",
+    "ratio_summary": "62. Malwa Strips\n(supra) this Court interpreted Order XLI Rule 1(3) of\n the Code as provided in the Central legislation, i.e.,\nthe CPC\n, and held\n that the said provision although couched with the expression “shall”\n yet must be read as directory and not mandatory.\nIt quoted with\n approval the\nratio\nlaid down in\nKayamuddin\n(supra). 64. The provisions of\nOrder XLI Rule 5 of the CPC\ngovern the question of\n grant or refusal of stay of execution of the decree by the appellate\n court. A mere reading of the provision makes it clear that it does not\n make any distinction between a money decree and other decrees. The\n powers of the Appellate Court to order stay of execution of the decree\n are not fettered in any way if there is “sufficient cause” for passing\n such an order. Even with regard to money decrees, the discretion of\n the court is circumscribed by the same limitations imposed under\n the provisions of Order XLI Rule 5. There is no reason why decrees\n for payment of money should receive a consideration different from\n the other decrees in the matter of stay pending appeals. In suitable\n cases, where the court is satisfied that substantial loss may result to\n the applicant, if no stay is granted or there are any exceptional\n\ncircumstances, the court may grant stay as prayed for either with or\n without any condition whatsoever. This consideration is pitted and weighed against\nthe other paramount consideration: why should a\nparty having succeeded from the court below be\ndeprived ",
+    "final_order": "26. It was also submitted by the learned Counsel that the Division Bench\n of the High Court committed an egregious error in staying the money\n decree on mere asking the defendant to furnish an undertaking on\n oath, that in the event, if the appeal is dismissed the defendant shall\n deposit the decretal amount. This according to the learned Senior\n Counsel cannot be termed as adequate security. 8. In the case of money decrees, a Bench of the\n Bombay High Court decided in\nDhunjibhoy\n Cowasji Umrigar v. Lisboa\n, 13 Bom 241 (A) that\n where a decree orders payment of money and an\n\nappeal is lodged against that decree by the party\n directed to pay, then on his application execution\n of the decree should be stayed, so far as it directs\n payment, on the judgment-debtor lodging the\n amount in Court,",
+    "outcome_summary": "Dismissed. 26. It was also submitted by the learned Counsel that the Division Bench\n of the High Court committed an egregious error in staying the money\n decree on mere asking the defendant to furnish an undertaking on\n oath, that in the event, if the appeal is dismissed the defendant shall\n deposit the decret",
+    "sections_cited": [
+      "Constitution 14"
+    ],
+    "cases_cited": []
+  }
+}

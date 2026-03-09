@@ -1,0 +1,82 @@
+{
+  "case_id": "SC_2021_JAGPAL_SINGH_VS_CHAIRMAN_ADMINISTRATIVE_COMMITTEE_UP",
+  "case_name": "Jagpal Singh vs Chairman Administrative Committee Up ...",
+  "normalized_case_name": "JAGPAL_SINGH_VS_CHAIRMAN_ADMINISTRATIVE_COMMITTEE_UP_...",
+  "court": "Supreme Court of India",
+  "year": "2021",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 49 of 2021",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "14 December 2021",
+  "judges": [
+    "S. Ravindra Bhat",
+    "Hemant Gupta",
+    "Uday Umesh Lalit"
+  ],
+  "author": "Uday Umesh Lalit",
+  "bench_type": "constitution",
+  "petitioner": "Jagpal Singh",
+  "respondent": "Chairman Administrative Committee Up ...",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 1,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\2021\\DEC\\2021_DEC_93.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_JAGPAL_SINGH_VS_CHAIRMAN_ADMINISTRATIVE_COMMITTEE_UP_P001_C01",
+      "text": "CHAIRMAN ADMINISTRATIVE COMMITTEE\n U.P. MILK UNION & DAIRY FEDERATION\n CENTRALIZED SERVICES …Respondent",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_JAGPAL_SINGH_VS_CHAIRMAN_ADMINISTRATIVE_COMMITTEE_UP_P002_C01",
+      "text": "Court found that the order of punishment passed by the Administrative\nincorrect, the Appeal was allowed by this Court.\nThe grounds raised in the Review Petition do not make out any error",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_JAGPAL_SINGH_VS_CHAIRMAN_ADMINISTRATIVE_COMMITTEE_UP_P003_C01",
+      "text": "apparent on record to justify interference in Review Jurisdiction.\nThis Review Petition is, therefore, dismissed.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_JAGPAL_SINGH_VS_CHAIRMAN_ADMINISTRATIVE_COMMITTEE_UP_P004_C01",
+      "text": "application is devoid of merit and is, therefore, dismissed.\n…………………………..J.\n [Uday Umesh Lalit]",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Jagpal Singh vs Chairman Administrative Committee Up ...",
+    "case_id": "SC_2021_JAGPAL_SINGH_VS_CHAIRMAN_ADMINISTRATIVE_COMMITTEE_UP",
+    "court": "Supreme Court of India",
+    "year": "2021",
+    "facts_summary": "Court found that the order of punishment passed by the Administrative\nincorrect, the Appeal was allowed by this Court.\nThe grounds raised in the Review Petition do not make out any error apparent on record to justify interference in Review Jurisdiction.\nThis Review Petition is, therefore, dismissed.",
+    "legal_issues": "application is devoid of merit and is, therefore, dismissed.\n…………………………..J.\n [Uday Umesh Lalit]",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

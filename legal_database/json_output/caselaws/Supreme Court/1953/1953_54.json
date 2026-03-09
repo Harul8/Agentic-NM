@@ -1,0 +1,302 @@
+{
+  "case_id": "SC_1953_1953_54",
+  "case_name": "Turner Morrison & Co., Ltd vs Commissioner Of Income-Tax,.West ...",
+  "normalized_case_name": "TURNER_MORRISON_&_CO.,_LTD_VS_COMMISSIONER_OF_INCOME-TAX,.WEST_...",
+  "court": "Supreme Court of India",
+  "year": "1953",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "16 January 1953",
+  "judges": [
+    "Mehr Chand Mahajan",
+    "Vivian Bose",
+    "Natwarlal H. Bhagwati"
+  ],
+  "author": "Mehr Chand Mahajan",
+  "bench_type": "constitution",
+  "petitioner": "Turner Morrison & Co., Ltd",
+  "respondent": "Commissioner Of Income-Tax,.West ...",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 20,
+  "cited_by_count": 60,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1953 AIR 140",
+    "1953 SCC 520",
+    "AIR 1953 SUPREME COURT 140"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1953\\1953_54.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1953_1953_54_P001_C01",
+      "text": "PETITIONER:\nTURNER MORRISON & CO., LTD. Vs. RESPONDENT:\nCOMMISSIONER OF INCOME-TAX,.WEST BENGAL. DATE OF JUDGMENT:\n16/01/1953\n\nBENCH:\nDAS, SUDHI RANJAN\nBENCH:\nDAS, SUDHI RANJAN\nMAHAJAN, MEHR CHAND\nBOSE, VIVIAN\nBHAGWATI, NATWARLAL H. CITATION:\n 1953 AIR 140 1953 SCC 520\n CITATOR INFO :\n C 1954 SC 198 (10A)\n R 1954 SC 470 (39)\n D 1956 SC 634 (12)\n D 1960 SC1279 (8)\n R 1962 SC 977 (5,7)\n E 1965 SC1343 (7)\n RF 1968 SC 75 (6)\n\nACT:\nIndian Income-tax Act\n(XI of 1922), ss. 4 (1) (a), 4 (1)\n(c), 42, 43-Non-resident company-Sale in India of goods\nmanufactured outside India-Person effecting sales in India-\nWhether agent of non-resident-Profits received in India from\nsales-Whether assessable under s. 4 (1) (a) or s. 42-\nLiability of agent-Scope of\ns. 43\n. HEADNOTE:\nThe Port Said Salt Association Ltd., a company incorporated\nin the United Kingdom carried on business in Egypt and had\nits headquarters in Egypt. It manufactured salt in Egypt\nand part of the salt so manufactured was consigned to Turner\nMorrison and Co. Ltd., (the assessee) for sale in India.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1953_1953_54_P001_C02",
+      "text": "The assessee effected sales in India through brokers at\nprices approved by the Association, collected the sale\nproceeds and received a commission of 21//2% generally on\nall sales. After deducting the expenses and commission the\nbalance was remitted to the Association in Egypt. On these\nfacts the assessee was treated as agents of the Association\nunder s. 43 of the\nIndian Income-tax Act\nand assessed to\nincometax under s. I (1) (a) or alternatively under\ns. 4-(r)\n(c)\nof the Act on the income derived by the Association from\nthe sale of salt in India. The High Court of Calcutta held\nthat the income in question was chargeable to income-tax\nunder\ns. 4 (1) (a)\nas income received in India and not under\ns. 42\nof the Act:\nHeld, (i), that, as the assessee was entrusted with the\nselling of goods consigned to them for sale, handling the\ncargoes, issuing delivery orders, collecting the proceeds\netc., they were agents of the Association, and did not act\nmerely as a post office;\nPondicherry Railway Co. v. Commissioner of Income-tax, Mad-\nras (1931) I.L.R. 54 Mad. 691 referred to.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1953_1953_54_P001_C03",
+      "text": "(ii) as the goods were neither imported nor sold by the\nassessees on their own account but on account of the\nAssociation the income received by the assessees were\nreceived by them on behalf of the Association and not on\ntheir own account. Ex parte White (L.R. 6 Ch. A. 397) distinguished. (iii) As the assessees were authorised not only to sell\nbut to collect the price from the purchasers, the income was\nreceived by the assessee as agents of the Association. Butwick v. Grant (L.R. [19241 2 K.B. 483) distinguished,\n\n(iv) The fact that the assessors as agents had a right to\nretain the expenses incurred by them and their commission\nout of the proceeds could not make the sale proceeds\nreceived by them- as agents any the less the property of\ntheir principals. Colquhoun v. Brooks (2 Tax Cas. 490) and Saiyid Ali Imam v. King Emperor ([1925] I.L.R. 4 Pat. 210) referred to. (v) When the gross sale proceeds were received by the\nagents in India they necessarily received whatever profits\nand gains were lying dormant in them.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1953_1953_54_P001_C04",
+      "text": "If on taking accounts\nthere were income, profits or gains, then the proportionate\npart thereof attributable to the sale proceeds received by\nthe agents in India was income, profits and gains received\nby them at the moment the gross sale proceeds were received\nby them in India, and\ns. 4 (1) (a)\nof the Income-tax Act was\nimmediately attracted and the income, profits and gains so\nreceived became chargeable to tax under\ns. 4 (1) (a)\nread\nwith\ns. 3\n. Grainger & Son v. 'William Lane Gough (L.R. [1896] A.C. 325)\nrelied on. (vi) Where income, profits and gains are actually received\nin India\ns. 4 (1) (a)\napplies and it is no longer necessary\nfor the revenue to resort to the fiction introduced by s.\n42, and the assessees were properly assessed under\ns. 4 (1)\n(a)\nand not under\ns. 4\n(1) (c)\n,\nSection 4 (1) (a)\napplies to all categories of\nassessees including non-residents. Hira Mills v. Income-tax Officer, Cawnpore ([1946] 14 I.T.R.\n417), Burugu Nagayya v. Commissioner of Income-tax, Madras\n([1949] 17 I.T.R. 194) and Pondicherry Railway Co. v. Commissioner 'of Income-tax, Madras ([1931] I.L.R. 54 Mad.\n691) relied on.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1953_1953_54_P001_C05",
+      "text": "(vii) The mere fact that the assessors were treated as\nagents under\ns. 43\nof the Act did not make it compulsory on\nthe part of the revenue authorities to assess under\ns. 42\n,\nfor an appointment as agent under\ns. 43\nis for all the\npurposes of the Act and not only for the purposes of\ns. 42\n.\nimperial Tobacco Co. of India Ltd. v. Secretary of State for\nIndia ([1922] I.L.R. 49 Cal. 721), Commissioner of Income-\ntax, Bombay v. Metro Goldwyn Mayer (India) Ltd. ([19391 7\nI.T.R. 176), Caltex Ltd. v. Commissioner of Income-tax,\nBombay City ([1952] 21 I.T.R. 278) explained. Judgment of the Calcutta High Court affirmed. JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal No. 41 of 1952. Appeal from a Judgment and Decree dated 25th July, 1950, of\nthe High Court of Judicature at Calcutta (Sen and Chunder\nJJ.) exercising Special Jurisdiction (Income-tax) in Income-\ntax Reference No. 31 of 1949,\n\nS. Mitra (S. N. Mukherjee, with him) for the appellant. C. K. Daphtary, Solicitor-General for India (P. A. Mehta,\nwith him) for the respondent.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C01",
+      "text": "1953. January 16. 'The Judgment of the Court was delivered\nDAS J.-This appeal arises out of six references made by the\nCalcutta Bench of the Income-tax Appellate Tribunal under\nsection 66(1)\nof the Indian Income-tax Act, two of them\nrelating to the incometax assessment years 1943-44 and 1944-\n45 and the remaining four relating to excess profits tax for\nthe chargeable accounting periods ending on the 31st\nDecember of each of the years 1940, 1941 1942 and 1943\nrespectively. The relevant facts appearing in the statements of the case\nare as follows: Messrs. Port Said Salt Association Ltd ,\n(hereinafter referred to as \"the Association\") is a company\nincorporated in the United Kingdom and has its registered\noffice there. The Association, however, carries on business\nin Egypt and its head office is situate in Alexandria where\nthe annual general meetings of its shareholders are held.'\nNot being resident in the United Kingdom the Association\npays no British income-tax on its profits. For the purposes\nof assessment under the\nIndian Income-tax Act\nthe\nAssociation has been considered to be a non-resident.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C02",
+      "text": "The\nassociation manufactures salt in Egypt where it has certain\nconcessions and the salt as manufactured is sent for sale in\nany country where there is a suitable market. Part of the\nsalt so manufactured by the Association is consigned to\nMessrs. Turner Morrison & Company Ltd. for sale in India. All shipping operations, ie., chartering of steamer,\nloading, insurance etc., are effected in Egypt by the\nAssociation who sends the documents to Messrs. Turner\nMorrison & Company Ltd. Messrs. Turner Morrison and\nCompany Ltd. effect sales in India through brokers at the\nbest price\n\nobtainable at or above the prices approved by the\nAssociation. Turner Morrison& Company Ltd.are -.paid\ncommission at the rate of 2 1/2 per cent. generally on -all\nthe sales except in some cases where 1 1/4 per cent. is\npaid. All handling of the cargoes when they' arrive at\nCalcutta and the necessary disbursements in connection\ntherewith are carried out and made by Turner Morrison, &\nCompany Ltd. The sale proceeds are collected by Turner\nMorrison & Company Ltd. and credited to the account kept in\ntheir own name with the Hongkong and Shanghai Banking\nCorporation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C03",
+      "text": "After deducting the expenses including their\ncommission the balance is remitted by Turner Morrison &\nCompany Ltd. to the Association in ;Egypt. On these facts\nthe Income-tax Officer treated Turner Morrison & Company\nLtd. as the agents of the Association under\nsection 43\nthe Indian Income-tax Act and assessed them to income-tax\nfor the two assessment years mentioned above under\nsection 4\n(1) (a)\nor, alternatively, under the first part of\nsection 4\n(1) (c)\n. They were also assessed to excess profits tax for\nthe four chargeable accounting periods herein before\nmentioned. Turner Morrison & Company Ltd. (hereinafter referred to as\nthe Agents) preferred appeals against the aforesaid\nassessment orders to the Appellate Assistant Commissioner\nwho, however, dismissed the appeals. The Agents -took a\nfurther appeal to the Income-tax Appellate Tribunal. The\nsubmission of the Agents before the Tribunal was that the\nassessment under\nsection 4(1) (a)\nwas bad and that the\nassessment should have been made under\nsection 42\nof the\nAct.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C04",
+      "text": "The Tribunal, on a consideration of the facts, came to\nthe conclusion that. the assessment was properly made under\nsection 4(1) (a)\nand incidentally the Tribunal also came to\nthe conclusion that the alternative contention of the\nIncome-tax authorities that the assessment should be made\nunder the first- part of\nsection 4(1) (c)\nwas also well-\nfounded and that\nsection 42\nhad no application to the case\n\nThe result was that the Tribunal confirmed the findings of\nthe Income-tax Officer and the Appellate Assistant\nCommissioner and dismissed the appeals. On the application of the Agents made under\nsection 66 (1)\nof the Act the Appellate Tribunal referred the following\nquestions to the High Court:\" (1) Whether, in the facts and\ncircumstances of this case, the Tribunal was right in\nholding that the income, profits and gains derived from the\nsale of salt in British India are assessable to tax as\nincome, profits and gains received or deemed to be received\nunder\nsection 4(1)(a)\n?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C05",
+      "text": "And if the answer to the first question is in the negative,\n(2) Whether, in the facts and circumstances of this case,\nthe Tribunal was right in accepting the contention of the\nDepartment that the income accrued or arose or is deemed to\naccrue or arise in India and is assessable to tax as\ncontemplated by\nsection 4 (1) (c)\n? (3) Whether the Tribunal was right in the circumstances of\nthis case in rejecting the contention of the assessee\n(applicant) that the income, profits and gains are\nchargeable to tax from the sale of salt in British India\nunder\nsection 42\nonly?\"\nThe reference came up for disposal before a Bench of the\nCalcutta High Court Consisting of Sen and Chunder JJ. The\nlearned Judges gave the following answers to the questions\n:-\n\" Question (1). The answer is in the affirmative so far as\nincome-tax is assessed. Excess profits tax, however, cannot\nbe levied on this basis. Question (2). The Tribunal was wrong in accepting the\ncontention of the department that the income accrued or\narose in India. The Tribunal did not hold that the income\nis income which should be deemed to accrue or arise in\nIndia.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C06",
+      "text": "The part of the question which states that the\nTribunal did so is not in accordance with fact. We find\nthat the income,\n\nprofits and gains must be deemed to have arisen or accrued\nin India so far as excess profits tax is concerned and that\nsection 42(3)\nof the Income-tax., Act applies to the levy of\nexcess profits tax by virtue of section 21 of the Excess\nProfits Tax Act. Question (3). - The Tribunal was right in rejecting the\ncontention that the income, profits and gains are chargeable\nto tax under\nsection 42\nonly. They are also chargeable to\nincome-tax as falling within the purview of\nsection 4 (1)\n(a) of the\nIncome-tax Act\nas income received in India on\nbehalf of the assessee company. In such a case\nsection 42\nof the Income-tax Act would have no application.\"\nIt will be noticed that the Agents succeeded in their\ncontentions so far as they related to the assessment of\nexcess profits tax. The answers given by the High Court,\nhowever, went against them in so far as they related to the\nassessment of income-tax for both the assessment years.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C07",
+      "text": "The Agents thereafter made two applications to the High\nCourt under section 66A for leave to appeal to this Court in\nrespect of the income-tax assessments for each of the two\nassessment years. The High Court certified that the cases\nwere fit for appeal to this Court and granted leave to\nappeal and directed that the two appeals be consolidated. The Commissioner of Income-tax, West Bengal, however, has\nnot preferred any appeal from that part of the judgment of\nthe High Court which sets forth its opinion on the questions\nin so far as they relate to the assessment of excess profits\ntax. This appeal is, therefore, concerned only with the\nanswers given by the High Court to the questions in so far\nas they relate to the assessments of income-tax only. The first main contention urged by Mr. S. Mitra appearing in\nsupport of this appeal is that no income, profits and gains\nwere received in India by or on behalf of the Association. He seeks to make good this contention on a variety of\nreasons all of which are not quite consistent with each\nother and some of\n\nwhich way even be mutually destructive. Relying on the\ndecisions in\nNarasammal v.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C08",
+      "text": "The Secretary of State\nfor\nIndia(1) and Pondicherry Railway Company Ltd. v. Commissioner of Income-tax, Madras\n(2). Mr. Mitra urges that\nno income, profits and gains were \"received\" in India at\nall, for the Agents were nothing but \"an animated Post\nOffice\". We are bound to reject this reasoning as unsound\non the same grounds on which the Privy Council rejected a\nsimilar contention in the case of Pondicherry Railway\nCompany Ltd.(2). In the language of ford Macmillan the\nfunctions of the Agents far transcended the mere mechanical\nact of transmitting the sums collected by them to the\nAssociation in Egypt. They were entrusted with important\nduties on behalf of the Association, namely, selling of the\ngoods consigned to them for sale, handling the cargoes,\nissuing delivery orders, collecting the sale proceeds and\nthen to remit the same after deducting the expenses incurred\nby them and their own commission. The description of \"an\nanimated Post Office\" can hardly. apply to an agent of this\ndescription. Mr. Mitra thereupon shifts his ground and urges that even if\nincome, profits and gains were received in India, the\nreceipt was not by or on behalf of the Association.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C09",
+      "text": "The\ncontention is that though the Agents are described as\nagents, they were not so in fact or in law and reliance is\nplaced on the well known case of Ex parte White(3). A\nperusal of that case will clearly show that there the person\nto whom goods were consigned, together with a price list,\nwas, by their course of dealings, entitled to sell the goods\nat any price he liked and that he remitted to the consignor\nof the goods only the listed price, In other words, although\nthe parties looked upon their dealings as constituting an\nagency. the consignee did not in fact sell the goods as\nagent of the consignor but did so on his own account and any\nprice realised in excess of the listed price was his own\n(1) [1916] I.L.R. 39 Mad. 885. (2) [1931] I.L.R. 54 Mad. 691; L.R. 58 I.A. 239. (3) L R. 6 Ch. A. 397.\n\nprofit. On the facts found by the Tribunal, which the\nlearned counsel is not entitled to challenge for the\npurposes of' these proceedings, it is quite: clear that the\ngoods were not imported by the Agents on their own account\nand they never became a purchaser at any stage.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C10",
+      "text": "They could\nnot sell the goods at any price they liked, for they had to\nsell them at or above the price approved by the Association. If the sale was at a rate above the approved price the\nexcess was never retained and appropriated by the Agents as\ntheir -own profits. Mr. Mitra thereupon contends that\nassuming that the, Agents had sold the goods as agents of.\nthe Association they did not necessarily have the authority\nto receive payment of the price. Reliance is placed on\nButwick v. Grant(1) in support of the proposition that an\nauthority to sell does not of necessity imply an authority\nto receive payment of the price. The argument is then\nformulated that as the Agents had no authority /to receive\nthe price, it cannot be said that the receipt was by or on\nbehalf of the Association. This argument again overlooks\nthe course-of business as found by the Tribunal which\nclearly implies that the Agents were not only agents for\nselling the salt but also for collecting the sale proceeds.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C11",
+      "text": "The third ground urged in support of the first main\ncontention is that the entire amounts collected by the\nAgents were not receivable by the Association, for the\nagents were entitled to a portion of it, namely, the amount\nspent by them in meeting the handling charges and their own\ncommission. On the authority of Colquhoun v. Brooks(2) and\nSaiyid Ali Imam v, King Emperor(3) Mr. Mitra contends that\nthe sale proceeds collected by the Agents were not so\ncompletely under the control of the Association that it\ncould by an act of its own have the entire sale proceeds\nactually transferred to it in Egypt. This argument is\nobviously fallacious. The concession that the Agents were\n(1) [I924] 2 K.B. 483. (2) 2 Tax Cas. 400. (3) (1925) I.L.R. 4 Pat. 210; A.I.R. 1925 Pat, 381.\n\nentitled to deduct their disbursements and their commission\nout of the-sale proceeds clearly implies that the sale\nproceeds belonged to the Association, for the 'Agents could\nnot deduct the dues by the Association from something which\ndid not belong to the Association.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C12",
+      "text": "Section 217\nof the\nIndian Contract Act gives to an agent the right to retain,\nout of any sum received on account of the principal in the\nbusiness of the agency,all moneys due to himself in respect\nof advances made or expenses properly incurred by him in\nconducting such business and such remuneration as maybe\npayable to him for acting as agent. Section 221\nalso\nconfers a right on the agent to retain the goods, papers and\nother property of the principal received by him until the\namount due to him for commission, disbursements and services\nin respect of the same has been paid or accounted for to\nhim. The right of retainer and lien conferred on the agent\ndoes not make the amount received by the agent on behalf of\nthe principal any the less the property of the principal. The principal is the full -owner and has complete control\nover his properties in the hands of the agent subject only\nto the latter's statutory right of retainer and lien. It\nfollows, therefore, that the entire sale proceeds received\nby the Agents in the case before us were received on behalf\nof the Association and belonged to it subject to the rights\nof the Agents. Finally, Mr.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C13",
+      "text": "Mitra urges that the gross sale proceeds were\nnot really income, for they were only credit items in the\naccount and that several amounts were to be debited in the\nsame account and if there remained any credit balance, such\nbalance alone could be regarded as stamped with the formal\nimpress of the character of income, profits and gains and\ncapable of being dealt with as such and income, profits and\ngains could be said to have been received only at that\nstage. We have been referred, in support of this\ncontention, to certain observations in the cases, of\nCommissioner of Taxes v. The Melbourne Trust Ltd.(1),\nRussell v. Aberdeen Town and County Bank(2), Be Rogers Pyatt\nShellac\n(1) [1914] A.C. 1001 at p. 1011. (2) 2 Tax Cas. 321 at p. 327.\n\n&\nCo. v. Secretary of State\nfor\nIndia(1), Commissioner of\nIncome-tax, Bombay City v. Agarwal & Company Bombay\n(2), In\nre Govind Ram Tansukh Rai() and other cases. The\nobservations in those several cases have to be read in the\nlight of the facts of those cases and the subject which was\nthen under discussion. So read those observations can have\nno application to the facts of this case. The case Morley\nv. Tattersall(4) also relied on by Mr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C14",
+      "text": "Mitra is clearly\ndistinguishable because the liability for the sale proceeds\nreceived by the auctioneers continued to exist even after\nthe unclaimed balances were transferred to the account of\nthe partners and, therefore, they could not be regarded as\ntrade receipts. On the other hand, the case of Grainger &\nSon v. William Lane Gough(5) will clearly show that the\nmoneys received by an agent on behalf his foreign principal\ncould be regarded as including trade profits within the\nmeaning of section 41 of the English Income Tax Act of 1842\n(See per Lord Herschell at p. 337 and Lord Morris at p.\n345). The several passages quoted in the judgment under\nappeal from the cases of Neilson Anderson & Company v. Collins and Taru v. Scanlan(6) clearly indicate that the\n\"net sale proceeds are included in the gross sale proceeds. The same principle, as pointed out in\nBangalore Woollen,\nCotton & Silk Mills Co. Ltd. v. Commissioner of Income-tax,\nMadras\n(7) is implicit in the decisions of the Privy Council\nin Commissioner of Income-tax, Bombay Presidency and Aden v. Chunilal B. Mehta(\n8) and Commissioner of Income-tax, Madras\nv. S. L. Mathias\n(9).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C15",
+      "text": "There can, therefore, - be no question\nthat when the gross sale proceeds were received by the\nAgents in India they necessarily received whatever income,\nprofits and gains were lying dormant or hidden, or otherwise\nembedded in theni. Of course, if on the taking of accounts\nit be found that there was no\n(1) [1925] I.L R. 52 Cal. 1 at P. 31. (2) [1952] 21 I.T.R. 293. (6) 13 Tax Cas 91. (3) [1944] 12 I.T.R. 450. (7) [1950] IS I.T.R. 423 at\nP. 438. (4) [1938] 3 All E.R. 296. (8) (1938) 65 I.A. 332. (5) [1896] A.C. 325. (9) I.L.R. [19391 Mad. 178; 7\nI.T.R. 48.\n\nprofit during the year then the question of receipt of\nincome, profits and gains would not arise but if there were\nincome profits and gains, then the proportionate part\nthereof attributable to the sale proceeds received by the\nAgents in India were income, profits and gains received by\nthem at the moment the gross sale proceeds were received by\nthem in India and that ,being the position the provisions of\nsection 4 (1) (a)\nwere immediately attracted and the income,\nprofits and gains so received became chargeable to tax under\nsection 3\nof the Act. In our -opinion there is no substance\nin the first main contention a umbrated by Mr. S.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C16",
+      "text": "Mitra. Mr. Mitra's second main point is that, assuming that there\nwas receipt of income, profits and gains within India, such\nincome, profits and gains clearly arose through or from a\nbusiness connection in India and, therefore, the provisions\nsection 42\n( 1) would apply and such income, profits and\ngains should be dealt with income, profits and gains deemed\nto accrue or arise in India and consequently the inclusion\nof such income, profits and gains in the total income should\nbe under\nsection 4 (1) (c)\nfor the Association is non-\nresident. Mr. Mitra urges that the charging under\nsection 3\nis to be \" in accordance with and subject to the provisions\nof this Act\". Likewise,\nsection 4 (1)\nis also \" subject to\nthe provisions of this Act.\" This, according to Mr. Mitra,\nat once attracts\nsection 42\nand such income, profits and\ngains being within\nsection 42\nmust be included in\nsection 4\n(1) (c)\nand the other alternative, i.e.,\nsection 4 (1) (a)\n,\nis no longer applicable. In other words, according to Mr. Mitra's contention,\nsection 4 (1) (a)\nbecomes a dead letter\nso far as income, profits and gains arising or accruing to\na. non-resident are concerned.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C17",
+      "text": "We are unable to accede to\nthis contention. Section 42\nonly speaks of deemed income. The whole object of that section is to make certain income,\nprofits and gains to-be deemed to arise in India so as to\nbring them to charge. The receipt of the income, profits,\nand gains being one of the tests of liability\n\nwhere the income, profits and gains are actually received in\nIndia it is no longer necessary for the revenue authorities\nto have recourse to the fiction and this has been held quite\nclearly in Hira Mills Ltd. v.Income-tax Officer, Cawnpore(1)\nand in\nBurugu, Nagayya and Rajanna v. Commissioner of\nIncome-tax, Madras\n(2). This is also implicit in the\ndecision of the Privy Council in\nPondicherry Railway Company\nLtd., v. Commissioner of Income-tax, Madras\n(5), to which\nreference has already been made. Section 4(1) (a)\nin terms\nis, unlike\nsection 4 (1) (b)\nor 4 (1) (c), not confined in\nits application to any particular category of assessees.\n'\nSection 4 (1)\n(a is general and applies to a resident or a\nnon-resident person.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C18",
+      "text": "The second proviso to\nsection 4 (1)\n,\nalthough it relates to the case of a person not ordinarily\nresident, also indicates that income, profits and gains\nwhich accrue or arise to such a person without the taxable\nterritories can be included in his total income if they are\nbrought into or received in the taxable territories and\nbecome chargeable to fax under\nsection 3\nread with\nsection 4\n(1) (a)\n. For reasons hereinbefore stated this contention of\n-Mr. Mitra must be rejected. It may be that the\nconstruction we are, adopting in agreement with the High\nCourt may operate harshly against nonresidents in that\nincome, profits and gains attributable to business\noperations outside India may also be brought to charge as\nhaving been received in India and such consequence may deter\nnon-resident merchants from doing business in India. These\nindeed are serious considerations but the Courts have to\nconstrue the statute according to the plain' language and\ntenor thereof and if any untoward consequences result\ntherefrom it is for authority other than this Court to\nrectify or prevent the same. The last main point urged by Mr. Mitra is that as soon as\nTurner Morrison & Co.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 18
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1953_1953_54_P002_C19",
+      "text": "Ltd., were treated as agent's under\nsection 43\n, the provisions of\nsection 42\nwere immediately\nattracted. In support of this contention Mr. Mitra relies\non the decisions in Imperial\n(1) [1946] 14 I.T.R. 417 at P. 423. (2) [I949] 17 I.T.R.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 19
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1953_1953_54_P003_C01",
+      "text": "194. (3) (193I) I.L.R. 54 Mad. 69i ; L.R. 58 I.A. 239. Tobacco Company of India Ltd. v. The Secretary of State\nfor\nIndia (1), Commissioner of Income-tax, ,Bombay v. Metro\nGoldwyn Mayer (India) Ltd. (\n2) and Caltex (India) Ltd. v. Commissioner\nof. Income-tax, Bombay City(3), where it has\nbeen held that\nsection 43\nis only a machinery for giving\neffect to\nsection 42\n. To say that\nsection 43\nis really only\nmachinery for giving effect to\nsection 42\nis not to say that\nsection 43\nhas no other purpose. Section 42\nrefers to\nincome, profits or gains accruing or arising directly or\nindirectly through or from (i) any business connection in\nIndia, (ii) any property in India or (iii) any assets or\nsources of income in India, or (iv) any money lent at\ninterest and brought into India in cash or in kind or (v)\nthe sale, exchange or transfer of a capital asset in India.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1953_1953_54_P003_C02",
+      "text": "All these incomes by virtue of this section have to be\ndeemed to be income accruing or arising within India and\nwhere the person entitled to such income, profits :or gains\nis a non-resident such income, profits and gains are made\nchargeable to income-tax either in his name or in the name\nof his agent who is to be deemed to be for all the purposes\nof this Act the assessee in respect of such income-tax. Section 43\n, however, refers to a person (a) employed by or\non behalf of, a non-resident, (b) having any business\nconnection with such non-resident or (c) through whom such\nnon-resident is in receipt of any income, profits or gains. A person who comes within one or other of these three\ncategories, may, under this section, be treated by the\nIncome-tax Officer as agent of the non-resident and such\nperson is for all the purposes of this Act to be deemed to\nbe such agent. The third category refers to a person\nthrough whom the non-resident is in receipt of any income,\nprofits or gains.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1953_1953_54_P003_C03",
+      "text": "The portion of\nsection 43\nwhich refers to\nthe person through whom the non-resident is in receipt of\nany income, profits or gains does not necessarily attract\nthe provisions of\nsection 42\n, for the income, profits and\ngains received by the person\n(1) (1922) I.L.R. 49 Cal. 721. (2)[1939] 7 I.T.R. 176. (3) [1952]21 I.T.R. 278,\n\nwho is treated as agent under\nsection, 43\nmay not fall\nwithin any of the several categories of income, profits or,\ngains referred to in\nsection 42\n. The languages of\nsection\n\nwill also attract the provisions of\nsection 40\n, for that\nsection also contemplates a person who is entitled to\nreceive on behalf of the# non-resident any income, profits\nand gains chargeable under this Act and may even attract the\nprovisions of\nsection 4(1)(a)\n. In our opinion there is no\nwarrant for the contention that an appointment of a person\nas a statutory agent under\nsection43\nonly attracts\nsection\n\nfor, such appointment is for all purposes of the Act and\nnot only for the purposes of\nsection 42\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1953_1953_54_P003_C04",
+      "text": "In our judgment, for reasons stated above, the answers given\nto the questions by the High Court, in so far as they relate\nto the assessment of incometax with which alone we are now\nconcerned, are correct and this appeal must be dismissed\nwith costs. Appeal dismissed. Agent for the appellant: P. K. Mukherji. Agent for the respondent: G. H. Rajadhyaksha.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    }
+  ],
+  "case_summary": {
+    "case_name": "Turner Morrison & Co., Ltd vs Commissioner Of Income-Tax,.West ...",
+    "case_id": "SC_1953_1953_54",
+    "court": "Supreme Court of India",
+    "year": "1953",
+    "facts_summary": "",
+    "legal_issues": "If on taking accounts\nthere were income, profits or gains, then the proportionate\npart thereof attributable to the sale proceeds received by\nthe agents in India was income, profits and gains received\nby them at the moment the gross sale proceeds were received\nby them in India, and\ns. 4 (1) (a)\nof the Income-tax Act was\nimmediately attracted and the income, profits and gains so\nreceived became chargeable to tax under\ns. 4 (1) (a)\nread\nwith\ns. 3\n. Grainger & Son v. 'William Lane Gough (L.R. [1896] A.C. 325)\nrelied on. (vi) Where income, profits and gains are actually received\nin India\ns. 4 (1) (a)\napplies and it is no longer necessary\nfor the revenue to resort to the fiction introduced by s.\n42, and the assessees were properly assessed under\ns. 4 (1)\n(a)\nand not under\ns. 4\n(1) (c)\n,\nSection 4 (1) (a)\napplies to all categories of\nassessees including non-residents. Hira Mills v. Income-tax Officer, Cawnpore ([1946] 14 I.T.R.\n417), Burugu Nagayya v. Commissioner of Income-tax, Madras\n([1949] 17 I.T.R. 194) and Pondicherry Railway Co. v. Commissioner 'of Income-tax, Madras ([1931] I.L.R. 54 Mad.\n691) relied on. (vii) The mere fact that the assessors were treated as\nagents under\ns. 43\nof the Act did not make it compulsory on\nthe part of the revenue authorities to assess under\ns. 42\n,\nfor an appointment as agent under\ns. 43\nis for all the\npurposes of the Act and not only for the purposes of\ns. 42\n.\nimperial Tobacco Co. of India Ltd. v. Secretary of State for\nIndia ([1922] I.L.R. 49 C",
+    "ratio_summary": "(ii) as the goods were neither imported nor sold by the\nassessees on their own account but on account of the\nAssociation the income received by the assessees were\nreceived by them on behalf of the Association and not on\ntheir own account. Ex parte White (L.R. 6 Ch. A. 397) distinguished. (iii) As the assessees were authorised not only to sell\nbut to collect the price from the purchasers, the income was\nreceived by the assessee as agents of the Association. Butwick v. Grant (L.R. [19241 2 K.B. 483) distinguished,\n\n(iv) The fact that the assessors as agents had a right to\nretain the expenses incurred by them and their commission\nout of the proceeds could not make the sale proceeds\nreceived by them- as agents any the less the property of\ntheir principals. Colquhoun v. Brooks (2 Tax Cas. 490) and Saiyid Ali Imam v. King Emperor ([1925] I.L.R. 4 Pat. 210) referred to. (v) When the gross sale proceeds were received by the\nagents in India they necessarily received whatever profits\nand gains were lying dormant in them. The part of the question which states that the\nTribunal did so is not in accordance with fact. We find\nthat the income,\n\nprofits and gains must be deemed to have arisen or accrued\nin India so far as excess profits tax is concerned and that\nsection 42(3)\nof the Income-tax., Act applies to the levy of\nexcess profits tax by virtue of section 21 of the Excess\nProfits Tax Act. Question (3). - The Tribunal was right in rejecting the\ncontention that the income, profits and ga",
+    "final_order": "",
+    "outcome_summary": "Dismissed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

@@ -116,7 +116,7 @@ body {
   padding: 24px 24px 16px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 0;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -189,7 +189,7 @@ body {
   gap: 4px;
   align-items: center;
   width: 100%;
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
 
 .message--user {
@@ -210,8 +210,8 @@ body {
 .message--user .message-bubble {
   max-width: 100%;
   box-sizing: border-box;
-  background: #e3f2fd; /* Light blue box */
-  border: 1px solid #90caf9;
+  background: #f1f8fe; /* 50% lighter than #e3f2fd */
+  border: none;
   border-radius: 14px;
 }
 
@@ -332,13 +332,20 @@ body {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  opacity: 0.75;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
   outline: none;
   box-shadow: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+/* Show action icons (⋯) only when hovering on the message bubble */
+.message-bubble:hover .message-action-dots-btn,
+.message-bubble .message-action-dots-btn:focus {
+  opacity: 1;
 }
 
 .message-action-dots-btn:hover {
@@ -904,7 +911,15 @@ body {
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.2s, opacity 0.2s;
-  align-self: center;
+  align-self: flex-end;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+/* Show send icon only when hovering on the input container or when focused (typing) */
+.chat-input-container:hover .chat-send,
+.chat-input-container:focus-within .chat-send {
+  opacity: 1;
 }
 
 .chat-send:hover:not(:disabled) {
@@ -2116,7 +2131,7 @@ body {
   flex: auto;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 4px;
 }
 
 .conversation-card {

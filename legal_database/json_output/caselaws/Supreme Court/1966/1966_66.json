@@ -1,0 +1,356 @@
+{
+  "case_id": "SC_1966_1966_66",
+  "case_name": "Samarendra Nath Sinha & Anr vs Krishna Kumar Nag",
+  "normalized_case_name": "SAMARENDRA_NATH_SINHA_&_ANR_VS_KRISHNA_KUMAR_NAG",
+  "court": "Supreme Court of India",
+  "year": "1966",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "1 November 1966",
+  "judges": [
+    "J.M. Shelat",
+    "K.N. Wanchoo",
+    "G.K. Mitter"
+  ],
+  "author": "J.M. Shelat",
+  "bench_type": "constitution",
+  "petitioner": "Samarendra Nath Sinha & Anr",
+  "respondent": "Krishna Kumar Nag",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 12,
+  "cited_by_count": 97,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1967 AIR 1440",
+    "1967 SCR (2) 18",
+    "AIR 1967 SUPREME COURT 1440"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1966\\1966_66.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1966_1966_66_P001_C01",
+      "text": "CITATION:\n 1967 AIR 1440 1967 SCR (2) 18\n CITATOR INFO :\n R 1970 SC1717 (17)\n R 1973 SC 569 (15)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1966_1966_66_P002_C01",
+      "text": "ACT:\nCode of Civil Procedure\n(Act 5 of 1908), ss. 151, 152-Court\nmistakenly passing preliminary decree for sale in suit for\nforeclosure-Subsequently correcting mistake and passing\nfinal decree for foreclosure-Power to correct such error.\nTransfer of Property Act\n(4 of 1882), s. 52- Purchase of\nmortgaged property pendente life-Applicability of doctrine\nof lis pendens.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1966_1966_66_P003_C01",
+      "text": "HEADNOTE:\nA piece of land with some constructions on it situated in\ndistrict Howrah was mortgaged by conditional sale. The\nmortgage deed provided that in case of default in payment of\nthe mortgage amount by the due date the sale would become\nabsolute. Subsequently the mortgagor sold his interest to\nH. As the mortgage amount was not paid by the due date the\nmortgagee filed a suit for foreclosure which was decreed. The trial court passed a preliminary decree ordering that in\ncase the mortgage amount was not paid within six months the\nplaintiff would be at liberty to apply for a final decree\nfor sale. H filed an appeal before the High Court which was\ndismissed. The final decree framed by the trial Court in\npursuance of the High Court's orders was for foreclosure. While the above appeal was pending the respondent in\nexecution of a money decree against H purchased the\naforesaid mortgaged properties and was given possession\nthereof. However after the final decree passed by the Court\nin the mortgage suit the mortgagee was given possession of\nthe properties. The respondent thereupon filed an\napplication under O. 21 r. 100 for restoration of possession\nto him.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1966_1966_66_P003_C02",
+      "text": "This application was rejected by the trial court. The respondent then filed an appeal against the final decree\nin the High Court. His appeal was entertained and the High\nCourt set aside the trial court's decree on the ground that\nthere was lack of conformity between the preliminary decree\nwhich was for sale and the final decree which was for\nforeclosure. The matter was remanded to the trial court and\nleave was given to the respondent to participate in the\nmatter. The appellants who in the meanwhile had purchased\nthe mortgagee's interest, appealed.. with certificate under\nArt. 133(a)\nand (b) to this Court. HELD : (i) The High Court had held that the respondent had a\nlocus standi in the matter and had directed that he was to\nbe allowed in the remand proceedings to plead that the final\ndecree should be one for sale thus reopening the question of\nredemption of the mortgage which' had been extinguished by\nthe final decree.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1966_1966_66_P003_C03",
+      "text": "The High Court's order as regards these'\nmatters was certainly a final order and therefore the pro-\npriety of the certificate under\nArt. 133\ngranted to the\nappellants could not be questioned. [24 A-C]\n(ii)There is 'an inherent power in the -court which passes\nthe judgment to correct a clerical mistake or an error\narising from an accidental slip or omission and to vary its\njudgment so as to give effect to its meaning and intention. On the facts of the present case there could be little doubt\nthat the court had no occasion to pass a preliminary decree\nfor sale and that it was through an accidental slip or\ninadvertence that in",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1966_1966_66_P004_C01",
+      "text": "the penultimate part of its judgment the court used the\nphraseology proper in a mortgage decree for sale. Once this\nerror had crept in the judgment it was repeated in the\npreliminary decree. This being the position the trial court\nhad the power under s. 151 and s. 152 of the Code of Civil\nprocedure to correct its own error which had crept in the\njudgment and the preliminary decree and to pass a proper\nfinal decree for foreclosure as intended by it. [24 E, 25 E,\nH]\n(iii)On the facts of the case it could not be said that\nthe decree represented a wrong decision of the Court. [26 D-\nE]\n(iv)The principle of lis pendens applies even to\ninvoluntary alienations like court sales. The respondent\nhaving purchased the mortgaged property while the appeal\nagainst the preliminary decree in respect of the property\nwas pending in the High Court, the doctrine of lis pendens\nmust apply to his purchase and he was therefore bound by the\nresult of the suit. [28 B-D]\nCase law considered.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1966_1966_66_P005_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION. Civil Appeal No. 707 of 1964. Appeal from the judgment and decree dated November 12, 1961,\nof the Calcutta High Court in Appeal from Original decree\nNo. 285 of 1956. Niren De, Addl. Solicitor-General, N. R. Basu and E. Udayaratnam, for the appellants. P.K. Chatterjee, B. d. Mitra and P. K. Bose, for the res-\npondent. The Judgment of the Court was delivered by\nShelat, J. One Sambhu Charan Das and Sannyashi Charan Das\nowned 2 bighas and 18 cottahs of land with a construction\nstanding thereon, situated in Salkiah, District Howrah. By\na deed of mortgage by conditional sale dated June 2, 1933\nthe said owners mortgaged the said property to secure\nrepayment of Rs. 2,750 advanced to them by Panchu Gopal\nSrimani, then a minor through his mother, Prabhavati Dassi\nas his certificated guardian. The said mortgage, inter\nalia, provided that if the mortgage amount was not repaid by\nthe due date i.e., April 14, 1935 the mortgage would be\nconsidered as a deed of absolute sale and the mortgagee\nwould be entitled to take possession of the property.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1966_1966_66_P005_C02",
+      "text": "June 18, 1934 the mortgagors assigned their right, title and\ninterest in the said property to one Satchindananda Hazra. As the said mortgagors or the said Hazra failed to pay the\nsaid mortgage amount on the due date, the mortgagee filed a\nsuit on July 17, 1945 for enforcement of his rights\nimpleading the two mortgagors and the said Hazra as\ndefendants. In that plaint the mortgagee prayed for a\ndecree for Rs. 5,426/10/6, being the amount then due under\nthe said mortgage and for fixing the time for. payment of\nthe",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1966_1966_66_P006_C01",
+      "text": "said amount. The plaint also contained a prayer that on\nfailure to pay the decreetal amount within the time fixed by\nthe court the right of the defendants to redeem the mortgage\nmay be annulled and a decree may be passed giving possession\nof the mortgaged property.\" The mortgagors filed a written\nstatement claiming that they should be permitted to pay the\nmortgage amount by instalments as provided by the\nBengal\nMoney Lenders Act\n. The said Hazra also filed a written\nstatement alleging that he was a bona fide purchaser without\nnotice of the said mortgage. The two mortgagors did not\ncontest the suit and it was only Hazra who contested it\ncontending also that as the loan under the said mortgage was\nadvanced by the guardian of the said Panchu, then a minor,\nwithout obtaining sanction of the District Judge, the said\nmortgage was null and void. The Trial Court rejected these contentions and passed a pre-\nliminary decree on December 23, 1946.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1966_1966_66_P006_C02",
+      "text": "The said decree,\ninter alia, provided that the mortgage amount due was Rs.\n5,426/10/6 and that if the said amount together with costs\nof the suit was not paid by the defendants within six months\nfrom the date of the decree the plaintiff would be at\nliberty to apply for a final decree. Though the suit was a\nforeclosure suit the preliminary decree passed by the Trial\nCourt was one under O. 34 r. 4(1)\nof the Code of Civil\nProcedure\ninasmuch as it provided that in default of payment\nas aforesaid the plaintiff would be at liberty to apply to\nthe court for a final decree for sale and that if the sale\nproceeds on such sale were not sufficient for payment of the\ndecreetal amount the plaintiff would be at liberty to apply\nfor a personal decree against the defendants for the\nbalance. Against the said preliminary decree the said Hazra\nfiled an appeal in the High Court at Calcutta raising two\ncontentions, (1) that the said mortgage was void on account\nof sanction not having been obtained by the guardian of the\nmortgagee before advancing the said loan and (2) that he\nshould be permitted to pay the decreetal amount by\ninstalments.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1966_1966_66_P006_C03",
+      "text": "The High Court negatived these contentions and\nby its judgment and decree dated March 22, 1951 dismissed\nthe said appeal and the suit was sent back to the Trial\nCourt for passing a final decree. While the said appeal was pending the respondent obtained a\nmoney decree against the said Hazra and commenced execution\nproceedings against him. An attachment was levied on the\nsaid mortgaged property and thereafter on June 23, 1950 the\nright, title and interest of the said Hazra was put up for\nsale. The respondent was the auction purchaser and the\ncourt confirmed the said sale by an order dated February\nl5,1951. The said auction sale was in respectof 1 bigha\nand 2 cottahs out of the said mortgagee property.According\nto the respondent he was given possession of the said\nproperty on May 3, 1951.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1966_1966_66_P007_C01",
+      "text": "On March 1, 1954, the said mortgagee, Panchu Gopal Srimani,\napplied for a final decree in the said suit. Pending this\napplication, he assigned his right in the said decree in\nfavour of the appellants on May 31, 1954. On July 1, 1954\nthe appellants applied to the Trial Court for being\nsubstituted in place of the said Panchu Shrimani. The Trial\nCourt directed notices to be issued on the defendants, that\nis, the said two mortgagors and the said Hazra and they\nhaving raised no objection the court by an order dated\nJanuary 5, 1955 ordered substitution and then passed a final\ndecree.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1966_1966_66_P007_C02",
+      "text": "The said decree, after reciting that the said\ndecretal amount was not paid within the time appointed by\nthe defendants or any other person entitled to redeem the\nsaid mortgage, provided as follows:-\n\"And it is hereby ordered and declared that\n the defendant and all persons claiming through\n or under him are absolutely debarred and\n foreclosed of and from all rights of\n-redemption of and in the property in the\n aforesaid preliminary decree mentioned ....\n and that the defendant shall deliver to the\n plaintiff quiet and peaceful possession of the\n said mortgaged property.\"\nOn April 19, 1955 the appellants applied for and obtained\npossession of the said mortgaged property. According to the\nrespondent, however he learnt about the possession of the\nsaid mortgaged property having been delivered to the\nappellants for the first time on May 25, 1955 and thereupon\nfiled an application under O. 21 r. 100 of the Code for\nrestoration of possession to him. On September 27, 1955 the\nTrial Court rejected that application. The respondent then\nfiled on January 3, 1956 a Revision Application against the\nsaid dismissal.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1966_1966_66_P007_C03",
+      "text": "On August 23, 1955 the respondent filed a\nsecond application under section 151 of the Code for setting\naside the said final decree. On the same day he also filed\nan appeal in the High Court being Appeal No. 285 of 1956\nagainst the said final decree but without impleading the\nsaid mortgagors or the said Hazra, who still was partially\ninterested in the equity of redemption in the said property. In the meantime, the Trial Court dismissed the respondent's\napplication under section 151 by its order dated February\n14, 1956. The High Court also by its order dated May 12,\n1961 discharged Civil Rule No. 2 of 1956 issued in the\nrevision application filed by the respondent against the\ndismissal of his application under O. 21 r. 100. Appeal No. 285 of 1956 came on for hearing on May 12, 1961\nbefore a Division Bench of the High Court. The High Court\nset aside the final decree observing :\n\"It is common case that the preliminary decree\n was for sale. The prayer by the respondents\n was for a final decree in terms of the\n preliminary decree. This was allowed, but the\n final decree as drawn up turned out to be one\n for",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1966_1966_66_P008_C01",
+      "text": "foreclosure. It is this disconformity between\n the preliminary decree and the final decree\n which is being challenged by the appellant.\"\nThe High Court ordered\n \"We should in the result set aside the final\n mortgage decree and allow the appeal by\n remitting the matter back to the Court below\n to be dealt with in accordance with law. The\n appellant is given liberty to participate in\n the matter.\"\nAgainst the said judgment and decree the appellants applied\nfor and obtained a certificate under\nArt. 133(1)(a)\nand (b). It is manifest that the High Court's judgment meant that the\nrespondent had sufficient interest to maintain the said\nappeal and participate in the proceedings before the Trial\nCourt on the said remand for considering the question\nwhether the said preliminary decree should be altered or not\nand if not whether the respondent had still the right to\nredeem the said mortgage, though the time for payment fixed\nunder the said preliminary decree had expired, that is, six\nmonths from December 23, 1946, long before the respondent\nbecame a purchaser of part of the said equity of redemption\non February 15, 1951.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1966_1966_66_P008_C02",
+      "text": "There is no dispute that the\nvaluation test for a certificate is satisfied in the present\ncase. The judgment and decree passed by the High Court is\nalso not one of affirmance as the High Court set aside the\nsaid final decree. There can be no dispute also that the\nquestion whether the appellant who was the auction-purchaser\npendente lite had the locus standi to maintain the appeal\nwas finally decided and he was given liberty to participate\nin the proceedings for correcting the preliminary decree and\nwas enabled thereby to contend that he was still entitled to\nredeem the said mortgage and retain possession of the\nmortgaged property. The Trial Court was bound to allow him\nto participate in those proceedings as the High Court's\njudgment specifically directed it to deal with the case in\naccordance with the directions contained in the said\njudgment.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1966_1966_66_P008_C03",
+      "text": "The judgment and decree of the High Court thus,\nbesides setting aside the said final decree meant that the\nrespondent had still sufficient interest entitling him to\nchallenge the appellants' claim to have a final foreclosure\ndecree and to. maintain that the question of redemption was\nstill open and he had the right to redeem the mortgaged\nproperty. Counsel for the respondent however contended that the certi-\nficate granted by the High Court was not competent and was\nliable to be vacated as the judgment passed by the High\nCourt was not a judgment, decree or final order inasmuch as\nwhat the High Court had done was only to remand the case to\nthe Trial Court and the Trial Court had yet to decide the\nquestion whether a final decree for foreclosure should be\npassed or whether the final decree should",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1966_1966_66_P009_C01",
+      "text": "be one for sale enabling the respondent to redeem the said\nmortgage. In support of his contention he relied on\nSardar\nSyedna Tahar Saifuddin Saheb v. State of Bombay\n(1) where\nthis Court held that the certificate granted therein was\nincompetent as it could not be granted in respect of an\ninterlocutory finding. The order appealed against\nin that\ncase\nwas a decision as to the validity of the\nBombay\nPrevention of Excommunication Act, 1949\n(Bombay XLII of\n1949). That being one of the several issues the decision\ndid not dispose of the suit as the rest of the issues still\nremained to be tried and it was for this reason that it was\nheld that the said order was not a judgment, decree or final\norder. M/s. Jethanand & Sons v. The State of Uttar\nPradesh\n(2) was again a case of remand directing the Trial\nCourt to frame fresh issues and give opportunity to the\nparties to produce evidence. In fact it was an order for a\nTrial de nova on fresh pleadings and on all issues that\nmight arise on such pleadings. Evidently any decision given\nby the High Court in the course of its order would not be\nbinding on the Trial Court as the case had to be tried\nafresh by it.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1966_1966_66_P009_C02",
+      "text": "In these circumstances it was held that the\norder of remand was not 'a judgment, decree or final order\nas it did not amount to a final decision relating to the\nrights of the parties in dispute. In our opinion, these decisions cannot help Mr. Chatterjee\nas the position here is not the same as in those two\ndecisions. The, High Court has given its judgment and in\npursuance thereof passed a decree setting aside the said\nfinal decree. If the High Court had held that the\nrespondent in the circumstances of the case had no right to\nmaintain his appeal, the final decree would have become a\nconcluded decree and his right of redemption, if any, would\nhave been totally extinguished. It is true that the High\nCourt remitted the case to the Trial Court but it was\nobviously not an order of remand simpliciter. The decision\nof the High Court was not on a preliminary issue leaving\nundecided other issues to be tried by the Trial Court. It\nwill be observed that the respondent was not a party to the\nsuit-he could not be because when the preliminary decree was\npassed he was not on the scene.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1966_1966_66_P009_C03",
+      "text": "Though he became an\nauction-purchaser while the appeal against the preliminary\ndecree was pending, he did not apply for being brought on\nrecord. The appellants or their predecessor-in-title would\nnot be aware of his purchase and therefore could not implead\nhim in the suit or in the appeal'. The respondent filed his\nappeal against the said final decree and two questions arise\nin that appeal : (1) whether being a purchaser pendente lite\nhe had locus standi to file an appeal and challenge the\nfinal decree and (2) whether the Trial Court had\njurisdiction to pass the final decree which was not in\nconformity with the preliminary decree. The judgment of the\nHigh Court is unfortunately laconic and one wishes that the\nlearned Judges,\n(1) [1958] S.C.R. 1007. (2) [1961] 3\nS.C.R. 754.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1966_1966_66_P010_C01",
+      "text": "had taken us a little more into confidence by giving some\nreasons at least. Nonetheless, it is clear that they\ndecided both the questions by holding that the respondent\nhad still sufficient interest in the matter and therefore\nhad locus standi and by setting aside the final decree and\ndirecting the Trial Court to decide the question as to\nwhether it could correct the said preliminary decree in\naccordance with the directions given by them they held that\nthe respondent was entitled to participate in those\nproceedings and plead that the final decree should be one\nfor sale and consequently he was entitled to redeem the said\nmortgage. There can be no question that the two questions\nraised in the appeal before the High Court were disposed of\nfinally inasmuch as the said final decree was set aside as\nnot being valid and binding on the respondent and the\nquestion of redemption by him which was extinguished by that\nfinal decree was reopened entitling the respondent to\ncontend that he had the right to redeem and to hold the said\nproperty. In these circumstances the preliminary objection\nraised by Mr. Chatterjee cannot be sustained and the\ncertificate must be held to be competent.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1966_1966_66_P010_C02",
+      "text": "On merits, two questions were raised : (1) whether the Trial\nCourt was competent to pass a final decree for foreclosure\nthough .the preliminary decree was for sale and (2) whether\nthe respondent had the right to contend that he was entitled\nto redeem the said mortgage in view of the fact that he was\nthe execution purchaser of part of the equity of redemption\npendente lite. Now, it is well-settled that there is an inherent power in\nthe court which passed the judgment to correct a clerical\nmistake or ,an error arising from an accidental slip or\nomission and to vary its judgment so as to give effect to\nits meaning and intention. \"Every court,\" said Bowen L. J.\nin Mellor v. Swira(1) \"has inherent power over its own\nrecords so long as those records are within its power and\nthat it can set right any mistake in them. An order even\nwhen passed and entered may be amended by the court so as to\ncarry out its intention and express the meaning of the court\nwhen the order was made.\"\nJanakirama Iyer v. Nilakanta\nIyer\n(2) the decree as drawn up in the High Court had used\nthe words \" mesne profits\" instead of \"net profits\".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1966_1966_66_P010_C03",
+      "text": "Infact\nthe use of the words \" mesne profits\" came to be made\nprobably because while narrating the facts, those words were\ninadvertently used in the judgment. This court held that\nthe use of the words \"mesne profits\" in the context was\nobviously the result of inadvertence in view of the fact\nthat the decree of the Trial Court had specifically used the\nwords \" net profits\" and therefore the decretal order drawn\nup in the High Court through mistake could be corrected\nunder sections 151 and 152 of the Code even after the High\nCourt had granted certificate and appeals were admitted in\nthis court before the date of the\n(1) 30 Ch. 239. (2) A.I.R.\n1962 S.C. 633.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1966_1966_66_P011_C01",
+      "text": "correction. It is true that under O. 20 r. 3 of the Code\nonce a judgment is signed by the Judge it cannot be altered\nor added to but the rule expressly provides that a\ncorrection can be made under section 152. The Rule does not\nalso affect the court's inherent power under section 151. Under section 152, clerical or arithmetical mistakes in\njudgments, decrees or orders or errors arising therein from\nany accidental slip or omission may at any time be corrected\nby the court either on its own motion or on an application\nby any of the parties. It is thus manifest that errors\narising from an accidental slip can be corrected\nsubsequently not only in a decree drawn up by a ministerial\nofficer of the court but even in a judgment pronounced and\nsigned by the court. As already pointed out, the mortgage in question was one by\nconditional sale empowering the mortgagee to take possession\nof the mortgage security if the monies due thereunder were\nnot paid by the due date. The suit filed by the mortgagee\nwas also for a foreclosure decree.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1966_1966_66_P011_C02",
+      "text": "The tenor of the\njudgment of the Trial Court shows that the court meant to\npass such a foreclosure decree especially as the plaint\ncontained no prayer for a decree for sale or for a personal\ndecree against the mortgagors or the said Hazra if the sale\nproceeds were found insufficient. The written statements of\nthe defendants did not raise any contention against the\nmortgagees' right for a foreclosure decree, their defence\nbeing only that they were entitled to pay the mortgage\namount by instalments. There can therefore be little doubt\nthat the court had no occasion to pass a preliminary decree\nfor sale and that it was through an accidental slip or\ninadvertence that in the penultimate part of its judgment\nthe court used the phraseology proper in a mortgage decree\nfor sale. Once this error had crept in the judgment it was\nrepeated in the preliminary decree and this error was not\neven noticed by the High Court when it dismissed Hazra's\nappeal and confirmed that decree. The error was later on\nnoticed by the appellants as is seen from the order passed\nby the Trial Court dismissing the respondent's application\nunder section 151 for setting aside the final decree.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1966_1966_66_P011_C03",
+      "text": "That\norder states that the Subordinate Judge who tried the suit\nthrough oversight passed a preliminary decree for sale\noverlooking the fact that it was a suit for foreclosure and\npossession, that it was also apparent that this mistake of\nthe Trial Court went unnoticed in the High Court which\nconfirmed the decree of the Trial Court and\n \"therefore, this court, when it passed the\n final decree being apprised of the apparent\n mistake in the form of the preliminary decree,\n corrected the initial mistake and did justice\n by passing a final decree for foreclosure and\n for possession which was -the only scope of\n this suit.\"\nThis being the position the Trial Court had the power under\nsection 151 and section 152 to correct its own error which\nhad crept in the\nSup. CI/66-3",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1966_1966_66_P012_C01",
+      "text": "judgment and the preliminary decree and pass a proper final\ndecree for foreclosure as intended by it. Mr., Chatterjee, however,, raised two contentions; (1) that\na judgment or decree cannot be varied when it correctly\nrepresents what the court decided though it may be wrongly\nnor can the operative or substantive part of the judgment be\nvaried and a different one substituted and (2) that a\njudgment or decree cannot be varied where there has been\nintervention of rights of third parties based on the\nexistence of the decree and ignorance of the mistake\ntherein. In such a case the exercise of power to correct\nthe mistake would be inequitable or inexpedient. No one can quarrel with these propositions. But considering\nthe nature of the mortgage, the cause of action and the\nprayers in the suit, the absence of any contest as regards\nthat cause of action and the prayers, and the tenor of the\njudgment until it came to its penultimate part, there can be\nno doubt that the intention of the Trial Court was to pass a\npreliminary decree for foreclosure as prayed for and that\nwas what the court had decided.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1966_1966_66_P012_C02",
+      "text": "It was therefore through an\naccidental slip that in that final part of the judgment the\nSubordinate Judge used the phraseology used in a preliminary\ndecree for sale. Therefore, there is no question of a wrong\njudgment having been passed by the Judge or the preliminary\ndecree correctly representing that which was wrongly decided\nby the Judge. If that had been so, neither the judgment nor\nthe decree could be corrected and the obvious remedy would\nbe by way of an appeal. In Barhamdeo Singh v. Harnam\nSingh(1) though only one of the defendants appeared and\ncontested the suit the order made was that \"the suit be\ndecreed with costs.\" This was allowed to be altered on the\nground that it was contrary to the intention of the court,\nthat such an intention had to be gathered from the judgment\nas a whole and that the decree following the concluding\nportion of the judgment awarding costs against all the\ndefendants was not in accord with the true intention of the\ncourt. The second contention is based on the observations of Lord\nHerschell in Hatton v. Harris(2) where he stated--\n\"that there may possibly be cases in which an\n application to correct an error of this\n description would be too late.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1966_1966_66_P012_C03",
+      "text": "The rights of\n third parties may have intervened, based upon\n the existence of the decree and ignorance of\n any circumstances which would tend to shew\n that it was erroneous, so as to disentitle the\n parties to the suit or those interested in it\n to come at so late a period and ask for the\n correction\n to be made.\"\n(1) 18 C. W. N. 772. (2) [1892] A.C. 547 at 558.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1966_1966_66_P013_C01",
+      "text": "It is true that the respondent purchased part of the equity\nof redemption from his judgment-debtor, Hazra, after the\npreliminary decree Was passed. It is also true that that\ndecree was not in the form of a foreclosure decree but of a\nmortgage decree for sale. But according to Lord Herschell's\nobservations, the intervening interest of third parties must\nbe based on the existence of the decree and ignorance of any\ncircumstances which would tend to show that it was\nerroneous. No such thing has happened and indeed it was\nnever the case of the respondent that he purchased the\ninterest of the said Hazra because he was aware that a\npreliminary decree for sale has been passed and that under\nthat decree he would be entitled to redeem the mortgaged\nproperty or that he was ignorant of the mistake in that\ndecree. That being the position it is difficult to see how\nthe case of Hatton v. Harris() can apply to the present\ncase. In this view, the Trial Court had the power to\ncorrect the accidental slip which had crept in its judgment\nand correct that error by passing the final decree in\naccordance with its true intention.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1966_1966_66_P013_C02",
+      "text": "The final decree was\npassed after notice to the mortgagors and the said Hazra and\nafter hearing them. The respondent was not made a party to\nthat application as the appellants were never made aware of\nhis purchase. The respondent also had not cared to be\nbrought on record in substitution of or in addition to the\nsaid Hazra from whom he derived his interest in the equity\nof redemption. In our view, both the contentions raised by\nthe respondent in this behalf must be rejected. What then is the position of the respondent once it is held\nthat the final decree for foreclosure was validly passed by\nthe Trial Court ? Could he challenge that decree in an\nappeal against it in the High Court on the basis that he was\nentitled to redeem the said mortgage? Section 91\nof the\nTransfer of Property Act provides that besides the mortgagor\nany person other than the mortgagee who has any interest in\nor charge upon the property mortgaged or in or upon the\nright to redeem the same may redeem or institute a suit for\nredemption of such mortgaged property. An execution\npurchaser therefore of the whole or part of the equity of\nredemption has the right to redeem the mortgaged property.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1966_1966_66_P013_C03",
+      "text": "Such a right is based on the principle that he steps in the\nshoes of his predecessor-in-title and has therefore the same\nrights which his predecessor-in-title had before the\npurchase. Under\nsection 59A\nof the Act also all persons who\nderive title from the mortgagor are included in the term\n\"mortgagor\" and therefore entitled to redeem. But under\nsection 52\nwhich incorporates the doctrine of lis pendens,\nduring the pendency of a suit in which any right to an\nimmovable property is directly and specifically in question\nsuch a property cannot be transferred or otherwise dealt\nwith by any party to the suit or proceeding so as to affect\nthe rights of any\n(1) [1892] A.C. 547 at 558.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1966_1966_66_P014_C01",
+      "text": "other party -thereto under any decree or order which may be\nmade therein except under the authority of the court and on\nsuch terms as it may impose. Under the Explanation to that\nsection the pendency of such a suit commences from the date\nof its institution and continues -until it is disposed of by\na final decree or order and complete satisfaction or\ndischarge of such a decree or order has been obtained. The\npurchaser pendente lite under this doctrine is bound by the\nresult of the litigation on the principle that since the\nresult must bind the party to it so must it bind the person\nderiving his right, title and interest from or through him. This principle is well illustrated in Radhamadhub Holdar v. Monohar(1) where the facts were almost similar to those in\nthe instant case. it is true that\nsection 52\nstrictly\nspeaking does not apply to involuntary alienations such as\ncourt sales but it is well-established that the principle of\nlis pendens applies to such alienations. (See Nilkant v. Suresh Chandra(2) and Motilal v. Karrabuldin (3).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1966_1966_66_P014_C02",
+      "text": "follows that the respondent having purchased from the said\nHazra while the appeal by the said Hazra against the said\npreliminary decree was pending in, the High Court, the\ndoctrine of lis pendens must apply to his purchase and as\naforesaid he was bound by the result of that suit. In the\nview we have taken that the final foreclosure decree was\ncompetently passed by the Trial Court, his right to equity\nof redemption was extinguished by that decree and he had\ntherefore no longer any right to redeem the said mortgage. His appeal against the said final decree was misconceived\nand the High Court was in error in allowing it and in\npassing the said order of remand directing the Trial Court\nto reopen the question of redemption and to allow the\nrespondent to participate in proceedings to amend the said\npreliminary decree. In the result, we allow the appeal, set aside the judgment\nand decree passed by the High Court and restore the judgment\nand decree passed by the Trial Court. The respondent will\npay the appellants' costs all throughout. G. C. Appeal allowed. (1)15 I.A. 97. (3) 24 I.A. 170. (2) 12 I.A. 171.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "Samarendra Nath Sinha & Anr vs Krishna Kumar Nag",
+    "case_id": "SC_1966_1966_66",
+    "court": "Supreme Court of India",
+    "year": "1966",
+    "facts_summary": "ACT:\nCode of Civil Procedure\n(Act 5 of 1908), ss. 151, 152-Court\nmistakenly passing preliminary decree for sale in suit for\nforeclosure-Subsequently correcting mistake and passing\nfinal decree for foreclosure-Power to correct such error.\nTransfer of Property Act\n(4 of 1882), s. 52- Purchase of\nmortgaged property pendente life-Applicability of doctrine\nof lis pendens. HEADNOTE:\nA piece of land with some constructions on it situated in\ndistrict Howrah was mortgaged by conditional sale. The\nmortgage deed provided that in case of default in payment of\nthe mortgage amount by the due date the sale would become\nabsolute. Subsequently the mortgagor sold his interest to\nH. As the mortgage amount was not paid by the due date the\nmortgagee filed a suit for foreclosure which was decreed. The trial court passed a preliminary decree ordering that in\ncase the mortgage amount was not paid within six months the\nplaintiff would be at liberty to apply for a final decree\nfor sale. H filed an appeal before the High Court which was\ndismissed. The final decree framed by the trial Court in\npursuance of the High Court's orders was for foreclosure. While the above appeal was pending the respondent in\nexecution of a money decree against H purchased the\naforesaid mortgaged properties and was given possession\nthereof. However after the final decree passed by the Court\nin the mortgage suit the mortgagee was given possession of\nthe properties. The respondent thereupon filed an\napplication under O. 21 r. 10",
+    "legal_issues": "be one for sale enabling the respondent to redeem the said\nmortgage. In support of his contention he relied on\nSardar\nSyedna Tahar Saifuddin Saheb v. State of Bombay\n(1) where\nthis Court held that the certificate granted therein was\nincompetent as it could not be granted in respect of an\ninterlocutory finding. The order appealed against\nin that\ncase\nwas a decision as to the validity of the\nBombay\nPrevention of Excommunication Act, 1949\n(Bombay XLII of\n1949). That being one of the several issues the decision\ndid not dispose of the suit as the rest of the issues still\nremained to be tried and it was for this reason that it was\nheld that the said order was not a judgment, decree or final\norder. M/s. Jethanand & Sons v. The State of Uttar\nPradesh\n(2) was again a case of remand directing the Trial\nCourt to frame fresh issues and give opportunity to the\nparties to produce evidence. In fact it was an order for a\nTrial de nova on fresh pleadings and on all issues that\nmight arise on such pleadings. Evidently any decision given\nby the High Court in the course of its order would not be\nbinding on the Trial Court as the case had to be tried\nafresh by it.",
+    "ratio_summary": "There is no dispute that the\nvaluation test for a certificate is satisfied in the present\ncase. The judgment and decree passed by the High Court is\nalso not one of affirmance as the High Court set aside the\nsaid final decree. There can be no dispute also that the\nquestion whether the appellant who was the auction-purchaser\npendente lite had the locus standi to maintain the appeal\nwas finally decided and he was given liberty to participate\nin the proceedings for correcting the preliminary decree and\nwas enabled thereby to contend that he was still entitled to\nredeem the said mortgage and retain possession of the\nmortgaged property. The Trial Court was bound to allow him\nto participate in those proceedings as the High Court's\njudgment specifically directed it to deal with the case in\naccordance with the directions contained in the said\njudgment. The judgment and decree of the High Court thus,\nbesides setting aside the said final decree meant that the\nrespondent had still sufficient interest entitling him to\nchallenge the appellants' claim to have a final foreclosure\ndecree and to. maintain that the question of redemption was\nstill open and he had the right to redeem the mortgaged\nproperty. Counsel for the respondent however contended that the certi-\nficate granted by the High Court was not competent and was\nliable to be vacated as the judgment passed by the High\nCourt was not a judgment, decree or final order inasmuch as\nwhat the High Court had done was only to remand the case ",
+    "final_order": "This application was rejected by the trial court. The respondent then filed an appeal against the final decree\nin the High Court. His appeal was entertained and the High\nCourt set aside the trial court's decree on the ground that\nthere was lack of conformity between the preliminary decree\nwhich was for sale and the final decree which was for\nforeclosure. The matter was remanded to the trial court and\nleave was given to the respondent to participate in the\nmatter. The appellants who in the meanwhile had purchased\nthe mortgagee's interest, appealed.. with certificate under\nArt. 133(a)\nand (b) to this Court. HELD : (i) The High Court had held that the respondent had a\nlocus standi in the matter and had directed that he was to\nbe allowed in the remand proceedings to plead that the final\ndecree",
+    "outcome_summary": "Allowed. This application was rejected by the trial court. The respondent then filed an appeal against the final decree\nin the High Court. His appeal was entertained and the High\nCourt set aside the trial court's decree on the ground that\nthere was lack of conformity between the preliminary decree\nwhich was ",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

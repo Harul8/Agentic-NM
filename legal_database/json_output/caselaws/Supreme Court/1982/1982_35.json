@@ -1,0 +1,654 @@
+{
+  "case_id": "SC_1982_1982_35",
+  "case_name": "Food Corporation Of India & Anr vs Yadav Engineer & Contractor",
+  "normalized_case_name": "FOOD_CORPORATION_OF_INDIA_&_ANR_VS_YADAV_ENGINEER_&_CONTRACTOR",
+  "court": "Supreme Court of India",
+  "year": "1982",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "6 August 1982",
+  "judges": [
+    "D.A. Desai",
+    "A.P.  Sen",
+    "Baharul  Islam"
+  ],
+  "author": "D.A. Desai",
+  "bench_type": "constitution",
+  "petitioner": "Food Corporation Of India & Anr",
+  "respondent": "Yadav Engineer & Contractor",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 29,
+  "cited_by_count": 114,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1982 AIR 1302",
+    "1983 SCR (1) 95",
+    "AIR 1982 SUPREME COURT 1302",
+    "(1982) 2 CIVLJ 571",
+    "1982 BBCJ 205",
+    "(1982) 22 DLT 396",
+    "1982 44 DLT 396",
+    "(1982) 2 SCJ 268",
+    "(1983) 1 SCWR 1",
+    "(1983) 1 APLJ 1",
+    "1983 LAWYER 15 49",
+    "(1983) MAHLR 1",
+    "1982 UJ (SC) 605",
+    "(1983) 1 SCR 95 (SC)",
+    "1982 (2) SCC 499",
+    "(1982) JAB LJ 834",
+    "(1982) MAH LJ 803",
+    "(1982) MPLJ 676"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1982\\1982_35.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1982_1982_35_P001_C01",
+      "text": "PETITIONER:\nFOOD CORPORATION OF INDIA & ANR. Vs. RESPONDENT:\nYADAV ENGINEER & CONTRACTOR\n\nDATE OF JUDGMENT06/08/1982\n\nBENCH:\nDESAI, D.A. BENCH:\nDESAI, D.A. SEN, A.P. (J)\nISLAM, BAHARUL (J)\n\nCITATION:\n 1982 AIR 1302 1983 SCR (1) 95\n 1982 SCC (2) 499 1982 SCALE (1)591\n CITATOR INFO :\n F 1989 SC 635 (9)\n F 1990 SC 893 (6)\n\nACT:\nArbitration Act\n1940-Section 34-scope of-\"Taking any\nother steps in the proceedings\" meaning of-notice of motion\ntaken out by plaintiff for interim injunction-Defendant\nappeared and prayed for time to reply-Defendant's action\nwhether \"step taken in the proceedings\". Practice : attention of single Judge drawn to a binding\ndecision of Division Bench of the same High Court-Decision\nnot adverted to-Decision contrary to that of Division Bench-\nPropriety of.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1982_1982_35_P001_C02",
+      "text": "HEADNOTE:\nSection 34\nof the Arbitration Act 1940 provides that\nwhere one of the parties to an arbitration agreement\ncommences any legal proceedings against the other party in\nrespect of any matter agreed to be referred to arbitration,\nany party to such legal proceedings may at any time before\nthe filing of a written statement or taking any other steps\nin the proceedings apply to the judicial authority before\nwhich the proceedings are pending to stay the proceedings\nand the authority on being satisfied that the opposite party\nis ready and willing to do all things necessary to the\nproper conduct of the arbitration make an order staying the\nproceedings. The contract entered into by the respondent with the\nappellant Corporation for handling and transportation of the\nCorporation's goods contained an arbitration clause\nauthorising the Managing Director of the Corporation to\nappoint an arbitrator in respect of any dispute arising out\nof the contract between the parties. Apprehending breach of contract, the respondent filed a\nsuit for a declaration that the contract was subsisting on\nthe date of the suit.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1982_1982_35_P001_C03",
+      "text": "The respondent prayed for an ad\ninterim injunction against the Corporation restraining it\nfrom committing breach of the contract. On the notice being\nissued the District Manager of the Corporation appeared\nbefore the Court and sought time to file reply to the\napplication for interim injunction. On the next day an\napplication was filed on behalf of the corporation that it\nwas fully ready and willing to have the dispute resolved by\narbitration under the subsisting arbitration agreement and\nprayed that the suit be stayed as provided in\nsection 34\nthe Arbitration Act 1940. The respondent alleged that\nsection 34\nwas inapplicable\nin that when the District Manager sought time to file a\nreply to the notice for interim injunction, it was a \"step\ntaken in the proceedings\" within the meaning of\nsection 34\n. Negativing the respondent's plea the Trial Court held\nthat the dispute was covered by the arbitration clause. It\ngranted stay of further proceedings in the suit and this\nview was upheld by the District Judge in the respondent's\nappeal.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1982_1982_35_P001_C04",
+      "text": "In the revision petition filed in the High Court a\nsingle Judge although his attention was drawn to a binding\nprecedent of a Division Bench of the same High Court\nsupporting the view that an application for filing a reply\nto the notice of motion taken out by the plaintiff for\ninterim injunction was not a \"step taken in the\nproceedings\", without adverting to that decision, held that\nan application of this nature was a \"step taken in the\nproceedings\" and that this disentitled the Corporation from\ninvoking the arbitration agreement. On the question whether, where there is a subsisting\nvalid arbitration agreement between the parties, entering an\nappearance and contesting a petition or notice of motion for\ninterlocutory order constitutes a \"step in the proceedings\"\nas would disentitle the party to an order under\nsection 34\nof the Arbitration Act. Allowing the appeal,\n^\n HELD: Contesting the application for interim injunction\nor for appointment of a receiver or for interim relief by\nitself, without anything more, would not constitute a \"step\nin the proceedings\" as would disentitle the party to an\norder under\nsection 34\nof the Arbitration Act. [119 F]",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1982_1982_35_P002_C01",
+      "text": "1. (a)\nSection 34\nenvisages that before a party to the\narbitration agreement seeks stay of the suit filed by the\nopposite party it must disclose its unequivocal intention to\nabide by the arbitration agreement; but once the party takes\nsteps which may indicate its intention to waive the benefit\nof the arbitration agreement or abandons the right to claim\nthe benefit by conduct, such party would not be entitled to\nenforce the agreement because there is a breach of the\nagreement by both parties disentitling them to claim any\nbenefit of the arbitration agreement. [105 D]\n Ramji Dayawala & Sons (P) Ltd. v. Invest Import [1981]\n1 S C.R. 899, followed. (b) The general words \"taking any other steps in the\nproceedings\" follow the specific expression \"filing a\nwritten statement\" and both are used for achieving the same\npurpose. Therefore the latter general expression must be\nconstrued ejusdem generis with the specific expression just\npreceding to bring out the ambit of the latter.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1982_1982_35_P002_C02",
+      "text": "The\nexpression \"written statement\" is a term of specific\nconnotation ordinarily signifying a reply to the plaint\nfiled by the plaintiff. [106 E]\n\n (c) The expression \"taking any other steps in the\nproceedings\" does not mean that every step taken in the\nproceedings would come in the way of enforcement of the\narbitration agreement; the step must be such as would\nclearly and unambiguously manifest the intention to waive\nthe benefit of arbitration agreement and to acquiesce in the\nproceedings commenced against the party and to get the\ndispute resolved by the court. Interlocutory proceedings are\nincidental to the main proceedings and stand independent and\naloof of the main dispute. When these interiocutory\nproceedings are contested it cannot be said that the party\ncontesting them had displayed an unequivocal intention to\nwaive the benefit of the arbitration agreement or that it\nhad submitted to the jurisdiction of the court. [109 E-H]\n Uttar Pradesh v. Janki Saran Kailash Chandra [1974] 1\nS.C.R. 31, referred to. Sansar Chand Deshraj v. State of Madhya Pradesh AIR\n1961 MP 322; Nuruddin Abdulhussein v. Abu Ahmed Abdul Jalli,\nAIR 1950 Bom. 127; Anandkumar Parmanand Kejriwala & Anr. v.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1982_1982_35_P002_C03",
+      "text": "Kamaladevi Hiralal Kejriwal, AIR 1970 Bom. 231; Queens\nCollege Kanetra & Anr. v. The Collector, Varanasi & Ors.,\nAIR 1974 All. 134; Biswanath Rungta v. Oriental Industrial\nEngineering Co. Pvt. Ltd. & Ors., AIR 1975 Cal. 222; State\nof Gujarat & Ors.v. The Ghanshyam Salt Works AIR 1979 Guj.\n215; Arjun Agarwalla v. Baidya Nath Roy & Ors. AIR 1980 Cal.\n354; and M/s. Bhonrilal Hiralal & Ors. v. Prabhu Dayal &\nAnr., AIR 1980 Raj. 9, approved. Subal Chandra Bhur v. Md. Ibrahim & Anr., AIR 1943 Cal.\n484; Amritraj Kothari v. Golcha Financiers, AIR 1966 Cal.\n315; P. Gannu Rao v. P. Thiagaraja Rao & Anr., AIR 1949\nMadras 582 and Kunta Malla Reddy v. Soma Srinivas Reddy &\nOrs., AIR 1978 A.P. 289, not approved. In the instant case the District Manager of the\nCorporation only appeared before the court in obedience to\nthe notice on the notice of motion taken out for ex parte ad\ninterim injunction and prayed for time to reply. The\nproceedings of the court did not disclose any step having\nbeen taken by the Corporation in the proceedings as would\ndisentitle the Corporation to an order under\nsection 34\n.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1982_1982_35_P002_C04",
+      "text": "Moreover, the application for stay filed on behalf of the\nCorporation clearly stated that the \"defendant is ready and\nwilling 'ichuck' for this purpose\" which means that it was\nready and willing to proceed with the arbitration when\ncommenced. [119 H]",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1982_1982_35_P003_C01",
+      "text": "2. If a single Judge hearing a matter is inclined to\ntake a view contrary to the earlier decision of a Division\nBench of the same High Court it would be judicial improriety\nto ignore that decision but after referring to the binding\ndecision he may direct that the papers be placed before the\nChief Justice of the High Court to enable him to constitute\na larger division bench to examine the question. Judicial\ncomity demands that a binding decision to which attention\nhad been drawn should neither be ignored nor over-looked.\n[112 G-H]\n\n In the instant case although attention of the single\nJudge was drawn to the binding decision of a Division Bench\nof the same High Court he did not refer to it but relied\nupon the decision of another High Court which took the\ncontrary view.\n\nJUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeal No. 3317 of",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1982_1982_35_P004_C01",
+      "text": "1981. Appeal by Special leave from the judgment and order\ndated the 20th November. 1981 of the Madhya Pradesh High\nCourt in Civil Revision No. 696 of 1981. K.K. Venugopal and S.K. Gambhir for the Appellant. Soli J. Sorabjee, D.K. Katare and S.S. Khanduja for the\nRespondent. The Judgment of the Court was delivered by\n DESAI, J. A fond hope that a decision of this Court\nwith the sanction of\nArticle 141\nof the Constitution that\nthe law laid down therein will be the law of the land would\nput an end to a raging controversy amongst various High\nCourts stands to some extent rudely shaken when the\ncontroversy with a slight variation has again been placed in\nthe lap of this Court. For highlighting and then resolving the controversy\nfacts in dispute have a little or no relevance save and\nexcept mentioning certain events.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 141"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1982_1982_35_P004_C02",
+      "text": "Respondent Yadav Engineer\n & Contractor, a partnership firm filed a suit against Food\nCorporation of India, 1st defendant and Shyam Narain Nigam,\nDistrict Manager of 1st defendant as 2nd defendant, for a\ndeclaration that the contract between the plaintiff and the\n1st defendant for handling and transportation of the goods\nof the 1st defendant Corporation was subsisting on the date\nof the suit and restraining the defendant from committing\nbreach of the same by handing over that work to some one\nother than the plaintiff. The suit was instituted on June 1,\n1981, in the Court of the III Civil Judge, Class I, Gwalior. In the suit a notice of motion was taken out purporting to\nbe under Order XXXIX, rules 1 and 2 read with\ns. 151\nof the\nCode of Civil Procedure, for an interim injunction\nrestraining the defendants from committing a breach of\ncontract and from interfering with the work of handling and\ntransport of goods of the 1st defendant Corpora-\n\ntion by the plaintiff during the pendency of the suit. On\nthe notice of motion being taken out the Court directed\nnotice of the same to be served and the same was made\nreturnable on the next day, June 2, 1981.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1982_1982_35_P004_C03",
+      "text": "On the returnable\ndate the 2nd defendant, District Manager of the 1st\ndefendant Corporation who had office in the City of Gwalior\nwas served and he appeared through one Shri N.K. Modi,\nAdvocate, filed the letter of authority (Vakalat) in favour\nof the learned advocate on behalf of 2nd defendant and the\nlearned advocate prayed for time for 'reply and arguments to\nthe plaintiff's application for temporary injunction'. The\ncourt acceded to the request and posted the matter on June\n3, 1981. An endorsement appears in the record that the 1st\ndefendant Food Corporation of India was not served though\nthe endorsement reads 'absent'. However, the last line in\nthe proceeding makes it clear that the case was posted on\nJune 3, 1981' 'for reply arguments and awaiting service on\nJune 3, 1981'. When the matter came up on the next day, i.e.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1982_1982_35_P004_C04",
+      "text": "June 3, 1981, an application was moved on behalf of 1st\ndefendant inviting the attention of the Court to the\nsubsisting arbitration agreement between the plaintiff and\nthe 1st defendant and which agreement authorised the\nManaging Director of the 1st defendant to appoint an\narbritrator in respect of any dispute arising out of the\ncontract between the plaintiff and the 1st defendant. It was\nalso stated that the 1st defendant desires to have the\ndispute, if any, resolved by arbitration under the\nsubsisting arbitration agreement and that the defendant is\nfully ready and willing (ichhuk) to go to arbitration. The\napplication concluded with a prayer that under the\ncircumstances the suit may be stayed as provided in\ns. 34\nthe Arbitration Act, 1940 ('Act' for short). The learned trial Judge was of the view that the\ndispute between the parties is covered by the arbitration\nagreement set out in\nArticle 19\nof the contract between the\nplaintiff and the 1st defendant.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1982_1982_35_P004_C05",
+      "text": "The learned Judge negatived\nthe contention that an application made by the 2nd defendant\nfor filing reply to the notice of motion taken out by the\nplaintiff for interim injunction is a step taken in the\nproceedings in view of the binding decision of a Division\nBench of the Madhya Pradesh High Court in Sansar Chand\nDeshraj v. State of Madhya Pradesh.(1) The learned judge\naccordingly granted stay\n\nof further proceedings in the suit as prayed for on behalf\nof the 1st defendant. Plaintiff preferred an appeal in the\nCourt of the District Judge, Gwalior. The learned III\nAdditional District Judge, before whom the appeal came up\nfor hearing, agreed with the view taken by the learned trial\njudge and confirmed the order granting stay of further\nproceedings in the suit and dismissed the appeal. Undaunted\neven by this second rejection plaintiff approached the High\nCourt in revision under s. 115\nof the Code of Civil\nProcedure\n. The learned judge, though his attention was drawn\nto the binding decision of the Division Bench of the same\nHigh Court, did not refer to it in the judgment and relied\nupon a decision of the Adhara Pradesh High Court in\nBajaj\nInternational v.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1982_1982_35_P004_C06",
+      "text": "Indian Tobacco Suppliers\n(1) and held that\nan application for filing reply to a notice of motion for\ninterim injunction is a step taken in the proceeding which\nwould disentitle the party from invoking the arbitration\nagreement. In support of this conclusion the learned judge\nalso relied upon Abdul Qudoos v. Abdul Gani,(2) which\ndecision clearly does not support any such proposition. The\nlearned judge further observed that even if the view that\nthe application filed by the 2nd defendant praying for time\nto reply to the notice of motion for interim injunction may\nnot be treated as a step in the proceeding, yet the 1st\ndefendant would not be entitled to a discretionary order\nunder\ns. 34\nof the Act on the ground that one of the\nconditions necessary for invoking the jurisdiction of the\ncourt under s. 34 is not satisfied inasmuch as nowhere in\nthe application the 1st defendant has stated that the 1st\ndefendant at the time when the proceedings were commenced\nand still remains ready and willing to do all things\nnecessary for the proper conduct of the arbitration.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1982_1982_35_P004_C07",
+      "text": "For\nthis additional reason which was never urged on behalf of\nthe plaintiff either in the trial court or in the 1st\nappellate court and as would be presently pointed out which\nis contrary to the record the High Court interfered in\nrevision, set aside the order of the trial court granting\nstay and confirmed by the appellate court and rejected the\napplication for stay of proceedings in the suit. Hence this\nappeal by special leave. Section 34\nof the Act reads as under :\n\"34.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1982_1982_35_P004_C08",
+      "text": "Where any party to an arbitration agreement\n or any person claiming under him commences\n\nany legal proceedings against any other party to\n the agreement or any person claiming under him in\n respect of any matter agreed to be referred, any\n party to such legal proceedings may, at any time\n before filing a written statement or taking any\n other steps in the proceedings, apply to the\n judicial authority before which the proceedings\n are pending to stay the proceedings; and if\n satisfied that there is no sufficient reason why\n the matter should not be referred in accordance\n with the arbitration agreement and that the\n applicant was, at the time when the proceedings\n were commenced, and still remains, ready and\n willing to do all things necessary to the proper\n conduct of the arbitration, such authority may\n make an order staying the proceedings.\"\nThe contours of the controversy are confined to one of the\nnegative requirements of\ns. 34\nto be fulfilled by a party\nseeking the discretionary relief of stay of proceedings to\nqualify for the same. It is not necessary to reproduce all\nthe relevant conditions for attracting the application of s.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C01",
+      "text": "34. One of the conditions to be satisfied before an order\nunder\ns. 34\ncan be obtained is that the party to the legal\nproceeding has at any time before filing a written statement\nor taking any other steps in the proceedings applied to the\njudicial authority for stay of proceedings. In other words,\na party seeking stay of proceedings must move the court with\nan application under\ns. 34\nbefore filing the written\nstatement to the suit or before taking any other steps in\nthe proceedings. Admittedly, application in the present\nproceedings was filed before filing the written statement. The question is whether the second pre-condition is\nsatisfied in that the application under s. 34 was filed\nbefore taking any other steps in the proceedings. What does\nthe expression 'before taking any other steps in the\nproceedings' signify? Before ascertaining the scope and\nambit of the expression it would be worthwhile to briefly\nnarrate the raison d'etre for prescribing this condition. Ordinarily as provided in s. 9\nof the Code of Civil\nProcedure\nall suits of a civil nature except suits of which\ncognizance is either expressly or impliedly barred would be\ntriable by the courts set up for the purpose.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C02",
+      "text": "If the dispute\nis of a civil nature the forum is one or the other court set\nup for the purpose. The State courts have been\n\nset up for an easy access by persons who seek resolution of\ntheir disputes. They must be disputes of civil nature and\nthe cognizance of which is not either expressly or impliedly\nbarred. Civil courts set up by the State having defined\njurisdiction will be the forum for resolution of such\ndisputes. Ordinarily, therefore, whenever a dispute of a\ncivil nature arises the party claiming relief would approach\nthe court having jurisdiction to resolve the dispute. The\nparty against whom relief is sought will be informed of the\ncognizance of the dispute being taken by the court and it\nmust come forth and either concede that the dispute is\ngenuine in whole or in part or defend the action. Sometimes\na dispute as to jurisdiction, territorial or pecuniary, is\nraised but apart from such specific exclusions claimed by a\nparty civil courts are set up with the object of resolving\ncivil disputes. A forum thus may readily be available and\npresumed to be easily accessible. This is the prescribed\nmode of access to justice.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C03",
+      "text": "Arbitration Act\ncarves out an\nexception to the general rule that the forum for resolution\nof civil disputes is the civil court having jurisdiction to\ndeal with the same by providing that the parties to a\ndispute by agreement unto themselves may choose a forum of\ntheir choice for settlement of disputes between them in\npreference to the State Courts. Undoubtedly, for making\nthese agreements enforceable sanction of law is necessary. That is the object underlying the Act. Industrial revolution\nbringing into existence international commercial\ntransactions led to a search for finding a forum outside the\nmunicipal law courts involving protracted and dilatory legal\nprocess for simple, uninhibited by intricate rules of\nevidence and legal grammar. This explains resort to forums\nfor arbitration at international level. No two contracting\nparties are under any legal obligation to provide for an\narbitration agreement. If the parties enter into an\narbitration agreement implying that they would like that the\ndisputes covered by the agreement will be resolved by a\nforum of their choice, the approach of the court must be\nthat parties to the contract are held to their bargain.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C04",
+      "text": "in breach or derogation of a solemn contract a party to an\narbitration agreement approaches the court and if the other\nside expeditiously approaches the court invoking the court's\njurisdiction to stay the proceedings so that by this\nnegative process the court forces the parties to abide by\nthe bargain, ordinarily the court's approach should be and\nhas been to enforce agreements rather than to find loopholes\ntherein. More often it is found that solemn contracts are\nentered into on the clearest understanding that any dispute\narising out of the contract\n\nand covered by the contract shall be referred to\narbitration. It may be that one or the other party may not\nhave entered into the contract in the absence of an\narbitration agreement. Therefore when in breach of an\narbitration agreement a party to the agreement rushes to the\ncourt, unless a clear case to the contrary is made out the\napproach of the court should be to hold parties to their\nbargain provided necessary conditions for invoking\ns. 34\nare\nsatisfied. Arbitration Act\nprescribes various methods by which an\narbitration agreement can be enforced.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C05",
+      "text": "Section 20\nenables\nparties to an arbitration agreement to approach the Court in\nthe circumstances therein mentioned for a direction that the\nagreement be filed in the court and on such agreement being\nfiled the Court is empowered to make an order of reference\nto the arbitrator. Provisions of Chapter IV provide for\narbitration in suits. Section 34\nprescribes one other method\nof enforcing arbitration agreement if a party to an\narbitration agreement in breach of it approaches the court\nand files a suit in respect of a dispute covered by the\narbitration agreement. Section 34\nprescribes a method by which the other party\nto the arbitration agreement by satisfying the conditions\nprescribed in\ns. 34\ncan enforce the arbitration agreement by\nobtaining an order of stay of the suit. It is crystal clear\nthat once the suit is stayed the party who in breach of the\narbitration agreement approaches the court for relief will\nbe forced to go to arbitration and thus the court by this\nnegative attitude of declining to proceed further with the\nproceedings brought before it would enforce the arbitration\nagreement.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C06",
+      "text": "In order, therefore, to satisfy the court that\nthe other party to the arbitration agreement who would be\ndefendant in the suit is ready and willing to abide by the\narbitration agreement and ready to take all steps necessary\nfor the proper conduct of the arbitration, it must show that\nit is not waiving or abandoning its right under the\narbitration agreement or submitting to the jurisdiction of\nthe court thereby accepting the forum selected by the\nplaintiff for resolution of dispute and acquiescing in it. In order to steer clear of this charge the provision is made\ns. 34\nfor an application by the party who is brought to\nthe court by the opposite party in breach of the arbitration\nagreement to apply for stay before filing the written\nstatement or before taking any other steps in the\nproceeding. This\n\nexplains the purpose and object underlying the provision\ncontained in\ns. 34\n. The contention and the resultant issue in dispute must\nnow be neatly framed.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C07",
+      "text": "The primary issue is: what action on\nthe part of the defendant who is sued in a court of law and\nwho has a subsisting valid arbitration agreement with the\nplaintiff, would constitute step in the proceeding so as to\ndisentitle him to stay of the suit which, if granted, would\nenable him to enforce the arbitration agreement ? Would\nentering an appearance and contesting petition or notice of\nmotion for interlocutory order constitute such step in the\nsuit or proceedings as would disentitle the party to an\norder under s. 34 ?",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C08",
+      "text": "The subsidiary point is, whether where\nin a suit filed in a court, a prayer for an ex parte ad\ninterim injunction is made either by an application or by a\nnotice of motion or an application is made for appointment\nof a receiver and either ex parte ad interim injunction is\ngranted or ex parte receiver is appointed and the copies of\nthe pleadings and the order are served upon the defendant,\nif the defendant appears and requests the court either to\nvacate the injunction or discharge the receiver or modify\nthe orders without filing a written statement or making an\napplication for filing a written statement to the plaint,\ncould he be said to have taken a step in the proceedings so\nas to disentitle him from obtaining stay of the suit ?",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C09",
+      "text": "Let the precedents rest for the time being and let an\nattempt be made to ascertain the underlying intendment in\nenacting the condition in s. 34 which prescribes a mode of\nenforcing the arbitration agreement to the effect that if a\nparty to an arbitration agreement commences an action the\nother party to the agreement, if it desires to enforce the\nagreement, may seek stay of the suit before either filing\nwritten statement or taking other steps in the proceeding. Ordinarily the court would respect the sanctity of\ncontracts. A valid arbitration agreement between the parties\nobliges both the parties to the agreement to act according\nto the terms of the agreement. A valid arbitration agreement\nenvisages resolution of dispute by a forum of the choice of\nthe parties and displaces the state courts. Ordinarily, a\nparty to a valid arbitration agreement is not entitled\nunilaterally to commit a breach of the agreement or ignore\nthe agreement.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C10",
+      "text": "Now, if a party to an arbitration agreement\nhas a dispute to be resolved arising out of the contract in\nwhich the arbitration agreement is Incorporated and instead\nof invoking the\n\narbitration agreement by inviting the parties to appoint the\narbitrator it rushes to the court in breach of the agreement\nand files a suit, the other party is undoubtedly entitled to\nenforce the agreement. True, the other party is equally\nentitled to waive the benefit of the arbitration agreement. If the other party desires to waive the benefit of the\nagreement it can appear in the suit and contact the suit. Such conduct would demonstrably show that both the parties\nhave waived the benefit flowing from the arbitration\nagreement of getting the dispute between them resolved by a\nforum of their choice. But if the first party in breach of\nthe agreement files a suit the other party to the agreement\nmust have an option and opportunity to enforce the\narbitration agreement. Section 34\nprescribes a mode and\nmethod of enforcing the arbitration agreement.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C11",
+      "text": "When a party\nto the agreement has filed a suit in breach of the agreement\nand the other party to the agreement is dragged to the\ncourt, by staying the suit at the instance of the other\nparty so dragged to the court the first party consequently\nwould be forced to honour the arbitration agreement. But\nbefore the other party to the arbitration agreement is\nentitled to enforce the arbitration agreement by stay of the\nsuit it must disclose its unequivocal intention to abide by\nthe agreement and, therefore, s. 34 obliges such a party to\nask for stay of the proceedings before such a party takes\nany steps which may unequivocally indicate the intention to\nwaive the benefit of the arbitration agreement. Abandonment\nof a right to seek resolution of dispute as provided in the\narbitration agreement must be clearly manifested by the step\ntaken by such party.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C12",
+      "text": "Once such unequivocal intention is\ndeclared or abandonment of the right to claim the benefit of\nthe agreement becomes manifest from the conduct, such party\nwould then not be entitled to enforce the arbitration\nagreement because there is thus a breach of the agreement by\nboth the parties disentitling both to claim any benefit of\nthe arbitration agreement. Section 34\nprovides that a party\ndragged to the court as defendant by another party who is a\nparty to the arbitration agreement must ask for stay of the\nproceedings before filling the written statement or before\ntaking any other step in the proceedings. That party must\nsimultaneously show its readiness and willingness to do all\nthings necessary to the proper conduct of the arbitration.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C13",
+      "text": "The legislature by making it mandatory on the party seeking\nbenefit of the arbitration agreement to apply for stay of\nthe proceedings before filing the written statement or\nbefore taking any other steps in the proceedings\nunmistakably pointed out that filing of the written\nstatement discloses such conduct on\n\nthe part of the party as would unquestionably show that the\nparty has abandoned its rights under the arbitration\nagreement and has disclosed an unequivocal intention to\naccept the forum of the court for resolution of the dispute\nby waiving its right to get the dispute resolved by a forum\ncontemplated by the arbitration agreement. When the party\nfiles written statement to the suit it discloses its\ndefence, enters into a contest and invites the court to\nadjudicate upon the dispute. Once the court is invited to\nadjudicate upon the dispute there is no question of then\nenforcing an arbitration agreement by forcing the parties to\nresort to the forum of their choice as set out in the\narbitration agreement. This flows from the well settled\nprinciple that the court would normally hold the parties to\nthe bargain (see\nRamaji Dayawala & Sons (P) Ltd. v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C14",
+      "text": "Invest\nImport\n).(1)\n Apart from filing written statement, what other step\ndid the legislature contemplate as being taken in the\nproceedings which would disentitle the party to the suit\nfrom obtaining stay of the proceedings which would have the\neffect of enforcing the arbitration agreement ? General\nwords 'taking any other steps in the proceedings' just\nfollow the specific expression 'filing a written statement'\nand both are used for achieving the same purpose. Therefore,\nthe latter general expression must be construed ejusdem\ngeneris with the specific expression just preceding to bring\nout the ambit of the latter Expression 'written statement'\nis a term of specific connotation ordinarily signifying a\nreply to the plaint filed by the plaintiff. Therefore, the\nexpression 'written statement' in\ns. 34\nsignifies a specific\nthing, namely, filing an answer on merits to the plaint\nfiled by the plaintiff. This specific word is followed by\ngeneral words 'taking any other steps in the proceedings'.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C15",
+      "text": "The principle of ejusdem generls must help in finding out\nthe import of the general words because it is a well\nestablished rule in the construction of statutes that\ngeneral terms following particular ones apply to such\npersons or things as are ejusdem generis with these\ncomprehended in the language of the legislature. In Ashbury\nRailway Carriage & Iran Co. v. Riche,(2) the question of\nconstruction of the object of a Company: 'to carry on\nbusiness of mechanical engineers and general contractors',\ncame in for consideration and\n\nit was said that the generality of the expression 'general\ncontractors' was limited to the previous words 'mechanical\nengineers' on the principle of ejusdem generis.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C16",
+      "text": "Filing of\nthe written statement would disentitle the party from\nseeking enforcement of arbitration agreement by obtaining\nstay of proceedings because it is such an act on behalf of\nthe party entitled to enforce the arbitration agreement\nwhich would disclose unequivocal intention of the party to\ngive up the benefit of the arbitration agreement and accept\nthe method in preference to the one set out in the\narbitration agreement to the one adopted by the other party\nby filing the suit and get the dispute adjudicated upon by\nthe machinery of the court. If this is the underlying\nintendment in providing that application for stay of the\nproceedings must be filed before the filing of the written\nstatement, the same conclusion must follow when instead of\nfiling the written statement the party has taken some other\nstep in the proceedings. That some other step must\nindisputably be such step as would manifestly display an\nunequivocal intention to proceed with the suit and to give\nup the right to have the matter disposed of by arbitration.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C17",
+      "text": "Each and every step taken in the proceedings cannot come in\nthe way of the party seeking to enforce the arbitration\nagreement by obtaining stay of proceedings but the step\ntaken by the party must be such step as would clearly and\nunmistakebly indicate an intention on the part of such party\nto give up the benefit of arbitration agreement and to\nacquiesce in the proceedings commenced against the party and\nto get the dispute resolved by the court. A step taken in\nthe suit which would disentitle the party from obtaining\nstay of proceeding must be such step as would display an\nunequivocal intention to proceed with the suit and to\nabandon the benefit of the arbitration agreement or the\nright to get the dispute resolved by arbitration.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C18",
+      "text": "If the step in the proceedings contemplated by\ns. 34\nmust be such step as would clearly, unambiguously and\nunequivocally disclose the intention of the party taking the\nstep to give up the benefit of the arbitration agreement or\nits right of getting the dispute resolved by arbitration and\nto acquiesce in the methodology of resoluution of dispute by\ncourt, would an appearence in the suit for contesting\ninterlocutory applications such as application for\nappointment of receiver or ex parte ad interim injunction,\nmandatory or prohibitory, and contesting the same be a step\nwhich would disclose an unequivocal intention to proceed\nwith the suit and to give up the benefit\n\nof the arbitration agreement ? That is the controversy in\nthe appeal before us. Arbitration agreement generally provides for resolution\nof disputes either present or future by a forum of the\nchoice of the parties. Ordinarily, arbitration agreement\nfinds its place in contracts. Apprehending that while\npreforming contract some disputes may arise, care is taken\nto incorporate an arbitration agreement in the contract\nitself prescribing the forum for resolution of such\ndisputes.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 18
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C19",
+      "text": "To illustrate, partnership contracts incorporate\narbitration agreement for resolution of disputes arising out\nof the contract of partnership. Building contracts these\ndays incorporate arbitration agreements. International\ncommercial transactions also incorporate arbitration\nagreements. The purpose underlying entering into arbitration\nagreement is to provide for resolution of disputes arising\nfrom the contract between the parties. Now, if a party to an\narbitration agreement files a suit seeking relief in respect\nof disputes arising from the contract the other party to the\nagreement can either waive the benefit of the arbitration\nagreement and acquiesce in the suit or enforce the\narbitration agreement. Such conduct has specifically to be\nin relation to disputes covered by arbitration agreement.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 19
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C20",
+      "text": "But if a party to an arbitration agreement files a suit and\nsimultaneously moves an interlocutory application such as an\napplication for appointment of receiver, usually to be found\nin suits for dissolution of partnership and rendering\naccounts, or for an interim injunction to ward off a\nthreatened or continuing breach of contract, irreparable\nharm would be suffered by the other party to the arbitration\nagreement if it cannot contest the interlocutory application\non the pain of abandoning the benefit of arbitration\nagreement. A concrete illustration would be both\nilluminating and convincing. In a suit for dissolution of\npartnership and accounts an application for appointment of\nreceiver as also an application for interim injunction\nrestraining the defendant from using the partnership goods\nor assets for continuing the business are filed. The court\npasses ex parte interim order and issues notice calling upon\nthe defendant to show cause why the same should not be made\nabsolute. In a running business appointment of a receiver\nwould thoroughly dislocate the business and an injunction\nwould bring to standstill the flourishing business.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 20
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C21",
+      "text": "If the\ndefendant appears and contests the application for\nappointment of receiver as also the application for\ninjunction, could he be said to display an unequivocal\n\nintention to give up the benefit of the arbitration\nagreement and to acquiesce in the suit ? The dispute between\nthe parties is whether the partnership should be dissolved\nas per the contract of partnership. Interim injunction\napplication or application for appointment of receiver have\nnothing to do directly or substantially with the terms of\nthe partnership. The main or substantial dispute will be\ncovered by the plaint filed in the suit. Incidental\nproceedings for appointment of receiver or for interim\ninjunction are for the protection either of the property or\nthe interests of the parties. Now, when ex parte orders are\nobtained on ex parte averments the other party cannot be\nprecluded from coming and pointing out that no case is made\nout for granting interim reiief. It would be too cumbersome\nto expect the party first to apply for stay and then invite\nthe court under s. 41 (2) of the Act to vacate the\ninjunction or to discharge the receiver.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 21
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C22",
+      "text": "Giving the\nexpression 'taking any other steps in the proceedings' such\nwide connotation as making an application for any purpose in\nthe suit such as vacating stay, discharge of the receiver or\neven modifying the interim orders would work hardship and\nwould be inequitous to the party who is willing to abide by\nthe arbitration agreement and yet be forced to suffer the\ninequity of ex parte orders. Therefore, the expression\n'taking any other steps in the proceedings' must be given a\nnarrow meaning in that the step must be taken in the main\nproceeding of the suit and it must be such step as would\nclearly and unambiguously manifest the intention to waive\nthe benefit of the arbitration agreement and to acquiesce in\nthe proceedings. Interlocutory proceedings are incidental to\nthe main proceedings. They have a life till the disposal of\nthe main proceeding. As the suit or the proceeding is likely\nto take some time before the dispute in the suit is finally\nadjudicated, more often interim orders have to be made for\nthe protection of the rights of the parties. Such\ninterlocutory proceedings stand independent and aloof of the\nmain dispute between the parties involved in the suit.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 22
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C23",
+      "text": "They\nare steps taken for facilitating the just and fair disposal\nof the main dispute. When these interlocutory proceedings\nare contested it cannot be said that the party contesting\nsuch proceedings has displayed an unequivocal intention to\nwaive the benefit of the arbitration agreement or that it\nhas submitted to the jurisdiction of the court. When ex\nparte orders are made at the back of the party the other\nparty is forced to come to the court to vindicate its right. Such compulsion cannot disclose an unambiguous intention to\ngive up the benefit of the arbitration\n\nagreement. Therefore, taking any other steps in the\nproceedings must be confined to taking steps in the\nproceedings for resolution of the substantial dispute in the\nsuit. Appearing and contesting the interlocutory\napplications by seeking either vacation thereof or\nmodification thereof cannot be said to be displaying an\nunambiguous intention to acquiesce in the suit and to waive\nthe benefit of the arbitration agreement. Any other view\nwould both be harsh and inequitous and contrary to the\nunderlying intendment of the Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 23
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C24",
+      "text": "The first party which\napproaches the court and seeks an ex parte interim order has\nobviously come to the court in breach of the arbitration\nagreement. By obtaining an ex parte order if it forces the\nother party to the agreement to suffer the order, or by\nmerely contesting be imputed the intention of waiving the\nbenefit of arbitration agreement, it would enjoy an\nundeserved advantages. Such could not be the underlying\npurpose of s. 34. Therefore, in our opinion, to effectuate\nthe purpose underlying\ns. 34\nthe narrow construction of the\nexpression 'taking any other steps in the proceedings' as\nherein-above set out appears to advance the object and\npurpose underlying s. 34 and the purpose for which the Act\nwas enacted. Having examined the contention on the language of the\nstatute, the setting in which it is placed, the underlying\nintendment and the purpose it seeks to serve, let us turn to\nprecedents. There is a clear cut cleavage and divergence of\nopinion amongst various High Courts.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 24
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C25",
+      "text": "Allahabad, Bombay and\nlater decisions of Calcutta High Court, Gujarat, Madhya\nPradesh and Rajasthan High Courts have taken the view that\nappearing and contesting interlocutory application is not a\nstep taken in the proceedings so as to disentitle the party\nfrom taking benefit of the arbitration agreement by seeking\nstay of the suit. On the other hand, earlier decisions of\nCalcutta High Court, Delhi and Madras High Courts have taken\na contrary view. In Bombay there has been a reference to a practice\ncommended to us by Mr. Sorabji, learned counsel for the\nrespondent that to avoid the pitfall of\ns. 34\neven while\ncontesting an interlocutory application the party seeking to\nenforce the arbitration agreement must enter appearance\nunder protest. This practice not only does not commend to\nus, but way back in\nNuruddin\n\nAbdulhussein v. Abu Ahmed Abdul Jalli\n,(1), Tendolkar, J. has\nrejected it as one of the doubtful legal import and utility. One must construe the section on its own language keeping in\nview the purpose and object of the enactment.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 25
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C26",
+      "text": "One cannot add\nto the requirement by introducing a practice brought into\nvogue by Solicitors in Bombay, when no such practice exists\nelsewhere in the country. Section 34\nis even invoked in\nrural backward areas. The highly skilful solicitor's\ndraftmanship cannot provide as escape route to an unwary\nlitigent. We are, therefore, not disposed to accept the\nsuggestion that in order to avoid any pitfall of being\ndenied the benefit of arbitration agreement the party\nseeking to enforce the agreement must enter an appearance\nunder protest because we affirm what Tendolkar, J. has said. It reads as under:\n\"It appears to me therefore that the addition of\n the words 'under protest' to an appearance filed\n in court in cases not covered by O. 30, R.S. Civil\n P.C., is meaningless when neither the jurisdiction\n of the Court nor the validity of the writ or\n service is challenged. It is not challenged where\n a defendant files an appearance under protest\n under the prevailing practice because he desires\n to apply for stay under the\nArbitration Act\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 26
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C27",
+      "text": "Therefore, whatever may be the reason for the\n practice which has grown up, it seems to me clear\n that there is no obligation on the defendant to\n follow this practice of doubtful import and\n utility and he is at liberty to file an\n unconditional appearance.\"\nBefore we turn to the only decision of this Court in\nState of Uttar Pradesh v. Janki Saran Kailash Chandra\n,(2)\nwhich at one stage was expected to resolve the controversy,\nwe may briefly refer to the decisions of the various High\nCourts to which our attention was drawn. We would first refer to the decisions which take the\nview that appearing to contest interlocutory application\neither for vacating the interim orders or modification of\nthe same does not constitute a\n (1) AIR 1950 Bom. 127. (2) [1974] 1 S.C.R. 31.\n\nstep in the proceedings which would disentitle the party to\nan order of stay under\ns. 34\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 27
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C28",
+      "text": "Nuruddin Abdulhussein\n,\n(supra) learned single judge of the Bombay High Court held\nthat the true test for determining whether an act is a step\nin the proceedings is not so much the question as to whether\nit is an application-although, of course, that would be a\nsatisfactory test in many cases-but whether the act displays\nan unequivocal intention to proceed with the suit and to\ngive up the right to have the matter disposed of by\narbitration. In reaching this conclusion the Court relied\nupon Ford's Hotel Co. v. Bartlett,(1) where Lord Shand\nobserved as under;\n\"...this appears to me to have been in effect an\n abandonment of the proposal to have the subject of the\n cause disposed of by arbitration\". The contention that when the defendant filed an\nunconditional appearance, presumably having reference to the\npractice that had grown up in Bombay High Court of\nappearance under protest. it was a step in the proceeding as\ncontemplated by\ns. 34\nwas negatived and stay was granted.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 28
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C29",
+      "text": "Sansar Chand Deshraj, (supra) a Division Bench of the Madhya\nPradesh High Court approved the decision in Nuruddin\nAbdulhussein, and held that mere filing of a reply to an\napplication for interim relief by way of appointment of a\nreceiver or for issue of an injunction does not constitute a\nstep in the proceeding which would indicate that there is in\neffect abandonment of the proposal to have the subject of\ncause disposed of by arbitration. It may be pointed out here\nthat the Division Bench decision of the Madhya Pradesh High\nCourt which was in terms binding on the learned Judge of the\nHigh Court, and it was specifically submitted to us that\neven though the attention of the learned judge was invited\nhe neither referred to it nor distinguished it.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 29
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C30",
+      "text": "Times\nwithout number this Court has observed that considerations\nof judicial propriety and decorum require that if a learned\nsingle Judge hearing a matter is inclined to take the view\ncontrary to the earlier decision of a Division Bench of the\nsame High Court, it would be judicial impropriety to ignore\nthat decision but after referring to the binding decision he\nmay direct that the papers be placed before the Chief\nJustice of the High Court to enable him to constitute a\nlarger Bench to examine the question. Judicial Comity\n (1) [1896] A.C. 1.\n\ndemands that a binding decision to which attention has been\ndrawn should neither be ignored nor overlooked (see\nMahadeolal Kanodia v. The Administrator General of West\nBengal\n,(\n1) Shri Bhagwan & Anr v. Ram Chand & Anr.\n, (\n2) and\nState of Gujarat v. Ramprakash P. Puri & Ors\n). (3). Anandkumar Parmanand Kejriwala & Anr. v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 30
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C31",
+      "text": "Kamaladevi\nHiralal Kejriwal\n,(4) a Division Bench of the Bombay High\nCourt approved the decision of the learned single judge in\nNuruddin Abdulhussein and observed that the test of making\nan application being styled as the step in the proceedings\nis neither a sole test nor a conclusive test and what is\nsuch a step in the proceedings has been settled by the\ndecision of Tendolkar, J. The defendant having filed\nappearance under protest and reserved the right to move the\nCourt for referring the dispute to arbitration, contested\nthe notice of motion taken out for appointment of receiver\nand injunction in both of which ex parte order was made\nwould not constitute a step in the proceedings as would\ndisentitle the defendant to an order under\ns.34\n. Queens College Kanetra & Anr. v. The Collector,\nVaranasi & Ors.\n,(5) the defendant first applied for stay of\nproceedings under s. 34 and after the court granted stay of\nproceedings requested the court that the ex parte ad interim\ninjunction be vacated. Two objections were taken on behalf\nof the plaintiffs to this request of the defendant.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 31
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C32",
+      "text": "One\nbeing that when the suit is stayed the court has no\njurisdiction to deal with any part of the suit and secondly\nthat if the application for ad interim injunction had been\ncontested before obtaining stay of the suit it would have\nbeen a step in the suit and the defendant would not have\nbeen entitled to an order for stay of the suit and,\ntherefore, his action constituted a step in the proceeding. The Court negatived both the contentions and observed that\nthere could be no doubt that the act of the defedant to get\nan ex parte order of injunction vacated does not indicate an\nunequivocal intention to proceed with the suit and to give\nup the right to\n (1) [1960] 3 SCR 578. (2) [1965] 3 S.C.R. 218 at p. 228. (3) [1970] 2 S.C.R. 875. (4) AIR 1970 Bom. 231. (5) AIR 1974 All. 134.\n\nhave the matter disposed of by arbitration. In reaching this\nconclusion the Court approved the decision of the Madhya\nPradesh High Court in Sansarchand and the decision of the\nPunjab High Court in M/s. Charandas & Sons v. M/s. Harbhajan\nSingh Hardit Singh.(1)\nSri Ram Shah v. Mastan Singh & Ors.\n,(2) a Division\nBench of Allahabad High Court approved the decision in\nQueens College Kanetra. Biswanath Rungta v.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 32
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_35_P005_C33",
+      "text": "Oriential Industrial Engineering\nCo. Pvt. Ltd. & Ors.\n,(3) a learned single Judge of the\nCalcutta High Court after referring to the decision of this\ncourt in Janki Saran Kailashchandra held that when the\ndefendant sought to circumvent the ex parte injunction\nobtained by the plaintiff he could not be said to have taken\nsuch a step in the proceeding as would disentitle him to a\nrelief under\ns. 34\n. Stata of Gujarat & Ors. v. The Ghanshyam Salt\nWorks\n.(4) a learned single Judge of the Gujarat High Court\naccepted the Allahabad, Punjab and Madhya Pradesh decisions\nas laying down the correct law and dissented from the view\nraken in the earlier Calcutta and Madras cases. The learned\njudge was of the view that appearing and contesting an\ninterim injunction application would not constitute such a\nstep as would disentitle the defendant to an order under s.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 33
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_35_P006_C01",
+      "text": "34. While reaching this conclusion he observed that the\nquestion as to interim relief is decided only on the basis\nof the prima facie case and nothing is decided finally. In\nsuch a case, therefore, to prevent a defendant from\ncontesting the interim application on the pain of losing his\nright to get the dispute decided by arbitration may, in a\ngiven case, work injustice, and a functional approach in the\nmatter of interpretation of the relevant words is called\nfor. Arjun Agarwalla v. Baidya Nath Roy & Ors.\n,(5) a\nlearned single Judge of Calcutta High Court did not follow\nthe earlier Calcutta decisions in view of the decision of\nthis Court in Janki\n (1) AIR 1952 Punj. 109. (2) AIR 1970 All. 288. (3) AIR 1975 Cal. 222. (4) AIR 1979 Guj. 215. (5) A.I.R. 1980 Cal. 354. Saran\n's case and agreed with the decision in\nBiswanaih\nRungta\n's case. In M/s. Bhonrilal Hiralal & Ors. v.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_35_P006_C02",
+      "text": "Prabhu Dayal &\nAnr.\n,(1) a learned single Judge of the Rajasthan High Court\nafter a review of large number of decisions agreed with the\nAllahabad, Bombay and Madhya Pradesh and later Calcutta\ndecisions and held that appearing to contest an\ninterlocutory application is not a step in the proceedings\nas would disentitle the defendant to an order under\ns. 34\n. We would now refer to the set of decisions which take\nthe contrary view. Subal Chandra Bhur v. Md. Ibrahim &\nAnr. (2) S.R. Das, J., after referring to Ives & Barker v. Willans,(3) and two earlier decisions of the Calcutta High\nCourt concluded that in order to constitute a step in the\nproceedings the act in question must be: (a) an application\nmade to the Court either on summons; or (b) such an act as\nwould indicate that the party is acquiescing in the method\nadopted by the other side of having the disputes decided by\nthe Court.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_35_P006_C03",
+      "text": "The second test is beyond question invariably\nfollowed because if the party entitled to the benefit of\narbitration agreement by taking such step in the suit\nindicates that it is acquiescing into the method adopted by\nthe other side for resolution of dispute, such party cannot\nat a later stage seek to enforce the arbitration agreement\nby praying for stay of the suit. But with respect, merely\nmaking some applications in the suit without examining the\npurpose, object and implication of making the application\nwould not always constitute such step as would disentitle\nthe party making such application from seeking relief under\ns. 34\non the short ground that by merely making the\napplication it has either abandoned its right to enforce the\narbitration agreement by praying for stay of suit or has\nacquiesced into the mode adopted by the opposite party for\nresolution of dispute. Every application by a party in the\nsuit has to be examined keeping in view the purpose and the\nobject in making the application and what does the conduct\nof the party making the application disclose. After\nformulating the aforementioned test the\n (1) AIR 1980 Raj. 9. (2) AIR 1943 Cal. 484.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_35_P006_C04",
+      "text": "(3) [1894] 2 Ch. 478.\n\nlearned judge proceeded to apply the test to the facts\nbefore him with which we are not concerned. This decision\nwas followed by the same High Court in\nAmritraj Kothari v. Golcha Financiers\n,(1) and it was observed that it is\ndifficult to make a distinction between filing a written\nstatement in suit and filing an opposition to an\ninterlocutory application in that suit-both of them are\n'taking step in the suit'. The decision in Sansarchand\nDeshraj was dissented from. It may, however be pointed out\nthat in the later decisions in Biswanath Rungta and Arjun\nAgarwalla, the same High Court after referring to the\naforementioned two decisions took the contrary view for\nwhich reliance was placed on the decision of this Court in\nJanki Saran\n's case. The test formulated by the Calcutta High\nCourt in the recent decisions is that the step which would\ndisentitle the defendant from taking the benefit of\ns. 34\nmust be such step unequivocally showing that the party had\nacquiesced in the mode of resolution of the dispute adopted\nby the other side or had abandoned its right to enforce the\narbitration agreement.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_35_P006_C05",
+      "text": "It was further observed that if an\ninjunction is obtained or a receiver is appointed or a\nprayer to that effect is made, any step taken to get the\norder vacated or circumscribe the injunction without in any\nway touching upon the main dispute in the plaint would not\nbe such a step as would disentitle the party from obtaining\nstay of the proceedings. To that extent the earlier Calcutta\nview is whittled down and the later decisions have adopted\nthe trend of decisions in other High Courts. The earliest decision of the Madras High Court is\nP. Gannu Rao v. P. Thiagaraja Rao & Anr. (2) Examining the ambit\nof the expression 'taking step in the proceedings', it was\nheld that if something is done by the party concerned which\nis in the nature of an application to the court it will\nnecessarily come under the category of a step in the\nproceedings. After formulating this test the Court held that\nwhen ex parte interim injunction was served upon the\ndefendant and the defendant appears and prays for\nmodification of the injunction it constitutes a step in the\nproceedings which would disentitle him from obtaining stay\nof the suit.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_35_P006_C06",
+      "text": "In reaching this conclusion the Court amongst\nothers placed reliance on the decision of Das, J. in\nSubal\nChandra Bhur\n's case. The Madras High Court\n (1) A.I.R. 1966 Cal. 315. (2) A.I.R. 1949 Mad. 582.\n\nhas consistently followed this view in M/s. Bortes S.A. v. Astouic Compania Naviors S.V.\n,(\n1) & S. Ramalingam Chettiar\nv. S. Sarveswaran & Ors. (2)\n The Delhi High Court in M/s. Dadri Cement Co. & Anr. v. M/s. Bird & Co. Pvt. Ltd.,(3) after referring to a large\nnumber of decisions but particularly the Madras cases and\nearly Calcutta cases ultimately based the decision on the\nfacts of the case. The Court distinguished the decision of\nthe Madhya Pradesh High Court in Sansarchand Deshraj's case\nobserving that that is the decision based on the facts of\nthat case. The Delhi High Court has not addressed itself to\nthe controversy under discussion. Kunta Malla Reddy v. Soma SrInivas Reddy & Ors.\n,(4)\nIt was held that the expression 'steps in the proceedings'\ns. 34\nalso comprehends step in interlocutory proceedings\nalso. In reaching this conclusion reliance was placed on the\ndecisions of the Madras High Court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_35_P006_C07",
+      "text": "A review of these precedents would unmistakably\nindicate that the trend of the authorities points in the\ndirection of not treating every application made in the suit\nas a step in the proceeding nor entering appearance with a\nview to contesting the petition for interim relief such as\ninjunction or appointment of receiver as being steps in the\nproceedings. Therefore, with respect, the decisions taking\nthe contrary view do not commend to us. It is at this stage that we must refer to the decision\nJanki Sarcn\n's case in some detail. In that case Janki\nSaran Kailashchandra filed a suit against State of U.P. and\nDivisional Forest Officer, Bijnor for recovery of damages\nalleging breach of contract. The summons in the suit issued\nto the State of U.P. was served on the District Government\nCounsel. On September 2, 1966, the District Government\nCounsel filed an appearance slip in the Court and also put\nin a formal application praying for one month's time for the\npurpose of filing written statement.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_35_P006_C08",
+      "text": "On October 1, 1966 the\nDistrict Government Counsel filed an application under\ns. 34\nof the Act pleading that there was an arbitration clause in\nthe contract\n\nbetween parties to the suit and the State of U.P. being\nwilling to refer the matter to arbitration the suit should\nbe stayed. The trial court granted the motion for stay of\nsuit. On appeal the High Court held that the action of the\nDistrict Government Counsel in applying for time to file the\nwritten statement amounted to taking a step in the\nproceedings within the meaning of s 34 of the Act, and set\naside the order of the trial court and rejected the request\nfor stay of proceedings. State of U.P. approached this Court\nagainst the order of the High Court. Rejecting the appeal\nthis Court observed as under:\n\"To enable a defendant to obtain an order staying\n the suit, apart from other conditions mentioned in\ns.\n\nof the Arbitration Act, he is required to present\n his application praying for stay before filing his\n written statement or taking any other step in the suit\n proceedings. In the present case the written statement\n was indisputably not filed before the application for\n stay was presented.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_35_P006_C09",
+      "text": "The question is whether any other\n step was taken in the proceeding as contemplated by\ns.\n\n, and it is this point with which we are directly\n concerned in the present case. Taking other steps in\n the suit proceedings connotes the idea of doing\n something in aid of the progress of the suit or\n submitting to the jurisdiction of the Court for the\n purpose of adjudication of the merits of the\n controversy in the suit\"'\nThe view herein taken not only does not run counter to the\nview we have taken but in fact clearly supports the view\nbecause the pertinent observation is that taking step in the\nproceeding which would disentitle a party to obtain a stay\nof the suit must be doing something in aid of the progress\nof the suit or submitting to the jurisdiction of the court\nfor the purpose of adjudication of the merits of the\ncontroversy in the suit. In other words, the step must\naecessarily manifest the intention of the party to abandon\nor waive its right to go to arbitration or acquiesce in the\ndispute being decided by court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_35_P006_C10",
+      "text": "In fact, the view taken in\nthis case should have quelled the controversy but it\ncontinued to figure in one form or the other and that is why\nwe have dealt with the matter in detail. In this context it is advantageous to refer to the\nprovision contained in\ns. 4\nof Arbitration Act, 1950, of the\nUnited Kingdom. It provides that in order to be eligible to\nobtain stay of proceedings the defendant must have taken no\nsteps in the proceedings after appearance. Analysing what\nconstitutes step in the proceedings, inter alia, it has been\nheld that the filing of affidavits in answer to an\napplication by the plaintiff for appointment of receiver\ndoes not amount to taking a step in the proceeding (see\nZalinoff v. Hammond(1) referred to in Halsbury's Laws of\nEngland, 4th End, Vol. 2, para 563 note 12). Russell on\nArbitration, 19th Edn., page 183, under the heading \"steps\nheld not to be in the proceedings\", notes that filing\naffidavits in reply to plaintiff's affidavits in support of\na motion for a receiver in a partnership action is not a\nstep in the proceedings.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_35_P006_C11",
+      "text": "There are 5-6 other situations\nnoticed by the author which, when individually analysed,\nwould show that the steps taken with reference to\ninterlocutory proceedings are ordinarily not held as steps\nin the proceedings. Having thus critically examined both on principle and\nprecedent the meaning to be given to the expression 'taking\nsteps in the proceedings,' we are clearly of the view that\nunless the step alleged to have been taken by the party\nseeking to enforce arbitration agreement is such as would\ndisplay an unequivocal intention to proceed with the suit\nand acquiesce in the method of resolution of dispute adopted\nby the other party, namely, filing of the suit and thereby\nindicate that it has abandoned its right under the\narbitration agreement to get the dispute resolved by\narbitration, any other step would not disentitle the party\nfrom seeking relief under s. 34. It may be clearly\nemphasised that contesting the application for interim\ninjunction or for appointment of a receiver or for interim\nrelief by itself without anything more would not constitute\nsuch step as would disentitle the party to an order under\ns.\n\nof the Act.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_35_P006_C12",
+      "text": "Reverting to the facts of this case it is crystal clear\nthat the defendants had taken no steps in the proceedings\nwhich would disentitle them to a relief under\ns. 34\n. Suit\nwas filed on June 1, 1981, impleading two defendants, Food\nCorporation of India 1st defendant and Shyam Narain Nigam,\n2nd defendant, being the District Manager of the 1st\ndefendant Corporation. Alongwith the plaint a notice of\nmotion was taken out for ex parte ad interim\n\ninjunction. The Court issued notice on the notice of motion\nand made it returnable on the next day, i.e. June 2, 1981. When the matter was placed on Board of the Court on June 2,\n1981, the proceedings show that the District Manager, 2nd\nDefendant was served and appeared through Advocate Shri N.K. Modi. Defendant 1 was shown absent with an endorsement 'the\nsummons showing service not received back'. Then comes what\ntranspired on that day as disclosed in the proceedings of\nthe day. The same may be extracted:\n\"Shri Modi filed Vakalatnama on behalf of\n defendant No. 2 and prayed for time for reply and\n arguments to the plaintiff's application for\n temporary injunction. Plaintiff's counsel has no\n objection. Therefore, request is accepted.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_35_P006_C13",
+      "text": "For reply arguments and awaiting service on 3rd\n June 1981.\"\nOn June 3, 1981, an application for stay of suit was made on\nbehalf of the 1st defendant under s. 34. Ex facie, the\nproceedings did not disclose any step having been taken by\nthe 1st defendant in the proceedings as would disentitle it\nto an order under\ns. 34\n. 2nd defendant was impleaded in his\nofficial capacity. Assuming the application of the 2nd\ndefendant for filing reply to the interim injunction\napplication also binds the 1st defendant though it was not\nserved with the summons yet an application seeking time to\nfile reply to an interim injunction application cannot be\nsaid to be a step in the proceedings as would display an\nunequivocal intention to proceed with the suit or would\ndisclose that the defendants had acquiesced into the\nresolution of dispute by the court or had abandoned the\nrights under the arbitration agreement. The learned judge also negatived the prayed for stay\nfor the additional reason that the 1st defendant had not\ncomplied with another condition for relief under\ns. 34\n.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_35_P006_C14",
+      "text": "The\nlearned judge found that in the application for stay the\napplicant had not stated that at the time when the\nproceedings were commenced it was ready and willing to do\nall things necessary to the proper conduct of the\narbitration and still remains ready and willing to do the\nsame. The learned judge held after referring to the\naverments in the application for stay that there is no\naverment to\n\nthat effect. Plaintiff contesting the application had not\nraised this contention before the trial court and the first\nappellate court and that becomes evident from what the\nlearned judge has stated in the judgment that both the\ncourts have not taken into account this aspect of the case\nat all. Obviously the learned judge ought not to have\npermitted the contention while hearing a revision petition\nunder\ns. 115\nof the Code of Civil Procedure. But apart from\nthis, the finding of the learned judge is contrary to\nrecord. The application for stay was read over to us and a\ncopy was submitted for our perusal. In para 2 of the\napplication it is clearly stated that 'the defendant is\nready and willing (ichhuk) for this purpose. It appears that\nthe original application was in Hindi.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_35_P006_C15",
+      "text": "The important word\nused in the application is ichhuk which, it was agreed,\nwould mean ready and willing. It is followed by the\nexpression 'for this purpose' which would imply that the Ist\ndefendant was always ready and willing to proceed with the\narbitration when commenced and is shown to be ready and\nwilling at the time of applying for stay. Therefore, the Ist\ndefendant had complied with the requirement of his readiness\nand willingness to go to arbitration. Therefore, the learned\njudge was clearly in error in interfering with the order of\nthe trial court confirmed by the Ist appellate court on this\nground also. Accordingly we hold that the learned judge of the High\nCourt was clearly in error in interfering with the order\nmade by the trial court and confirmed in appeal granting\nstay of the suit. The judgment of the High Court is\naccordingly set aside and the one made by the trial court\nand confirmed in appeal is restored with no order as to\ncosts. P.B.R. Appeal allowed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    }
+  ],
+  "case_summary": {
+    "case_name": "Food Corporation Of India & Anr vs Yadav Engineer & Contractor",
+    "case_id": "SC_1982_1982_35",
+    "court": "Supreme Court of India",
+    "year": "1982",
+    "facts_summary": "1. (a)\nSection 34\nenvisages that before a party to the\narbitration agreement seeks stay of the suit filed by the\nopposite party it must disclose its unequivocal intention to\nabide by the arbitration agreement; but once the party takes\nsteps which may indicate its intention to waive the benefit\nof the arbitration agreement or abandons the right to claim\nthe benefit by conduct, such party would not be entitled to\nenforce the agreement because there is a breach of the\nagreement by both parties disentitling them to claim any\nbenefit of the arbitration agreement. [105 D]\n Ramji Dayawala & Sons (P) Ltd. v. Invest Import [1981]\n1 S C.R. 899, followed. (b) The general words \"taking any other steps in the\nproceedings\" follow the specific expression \"filing a\nwritten statement\" and both are used for achieving the same\npurpose. Therefore the latter general expression must be\nconstrued ejusdem generis with the specific expression just\npreceding to bring out the ambit of the latter. The\nexpression \"written statement\" is a term of specific\nconnotation ordinarily signifying a reply to the plaint\nfiled by the plaintiff. [106 E]\n\n (c) The expression \"taking any other steps in the\nproceedings\" does not mean that every step taken in the\nproceedings would come in the way of enforcement of the\narbitration agreement; the step must be such as would\nclearly and unambiguously manifest the intention to waive\nthe benefit of arbitration agreement and to acquiesce in the\nproceedings commenced against the",
+    "legal_issues": "The respondent prayed for an ad\ninterim injunction against the Corporation restraining it\nfrom committing breach of the contract. On the notice being\nissued the District Manager of the Corporation appeared\nbefore the Court and sought time to file reply to the\napplication for interim injunction. On the next day an\napplication was filed on behalf of the corporation that it\nwas fully ready and willing to have the dispute resolved by\narbitration under the subsisting arbitration agreement and\nprayed that the suit be stayed as provided in\nsection 34\nthe Arbitration Act 1940. The respondent alleged that\nsection 34\nwas inapplicable\nin that when the District Manager sought time to file a\nreply to the notice for interim injunction, it was a \"step\ntaken in the proceedings\" within the meaning of\nsection 34\n. Negativing the respondent's plea the Trial Court held\nthat the dispute was covered by the arbitration clause. It\ngranted stay of further proceedings in the suit and this\nview was upheld by the District Judge in the respondent's\nappeal. Moreover, the application for stay filed on behalf of the\nCorporation clearly stated that the \"defendant is ready and\nwilling 'ichuck' for this purpose\" which means that it was\nready and willing to proceed with the arbitration when\ncommenced. [119 H] 2. If a single Judge hearing a matter is inclined to\ntake a view contrary to the earlier decision of a Division\nBench of the same High Court it would be judicial improriety\nto ignore that decision but afte",
+    "ratio_summary": "34. One of the conditions to be satisfied before an order\nunder\ns. 34\ncan be obtained is that the party to the legal\nproceeding has at any time before filing a written statement\nor taking any other steps in the proceedings applied to the\njudicial authority for stay of proceedings. In other words,\na party seeking stay of proceedings must move the court with\nan application under\ns. 34\nbefore filing the written\nstatement to the suit or before taking any other steps in\nthe proceedings. Admittedly, application in the present\nproceedings was filed before filing the written statement. The question is whether the second pre-condition is\nsatisfied in that the application under s. 34 was filed\nbefore taking any other steps in the proceedings. What does\nthe expression 'before taking any other steps in the\nproceedings' signify? Before ascertaining the scope and\nambit of the expression it would be worthwhile to briefly\nnarrate the raison d'etre for prescribing this condition. Ordinarily as provided in s. 9\nof the Code of Civil\nProcedure\nall suits of a civil nature except suits of which\ncognizance is either expressly or impliedly barred would be\ntriable by the courts set up for the purpose. The principle of ejusdem generls must help in finding out\nthe import of the general words because it is a well\nestablished rule in the construction of statutes that\ngeneral terms following particular ones apply to such\npersons or things as are ejusdem generis with these\ncomprehended in the language of t",
+    "final_order": "In the revision petition filed in the High Court a\nsingle Judge although his attention was drawn to a binding\nprecedent of a Division Bench of the same High Court\nsupporting the view that an application for filing a reply\nto the notice of motion taken out by the plaintiff for\ninterim injunction was not a \"step taken in the\nproceedings\", without adverting to that decision, held that\nan application of this nature was a \"step taken in the\nproceedings\" and that this disentitled the Corporation from\ninvoking the arbitration agreement. On the question whether, where there is a subsisting\nvalid arbitration agreement between the parties, entering an\nappearance and contesting a petition or notice of motion for\ninterlocutory order constitutes a \"step in the proceedings\"\nas would disentitle the party",
+    "outcome_summary": "Allowed. In the revision petition filed in the High Court a\nsingle Judge although his attention was drawn to a binding\nprecedent of a Division Bench of the same High Court\nsupporting the view that an application for filing a reply\nto the notice of motion taken out by the plaintiff for\ninterim injunction was ",
+    "sections_cited": [
+      "Constitution 141"
+    ],
+    "cases_cited": []
+  }
+}

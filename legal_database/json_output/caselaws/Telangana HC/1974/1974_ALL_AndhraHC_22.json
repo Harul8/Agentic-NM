@@ -1,0 +1,1164 @@
+{
+  "case_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1974",
+  "judgment_template": null,
+  "case_number": "Petition 1435 of 1972",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": "disposed of",
+  "disposition": "disposed",
+  "cites_count": 21,
+  "cited_by_count": 5,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1974\\1974_ALL_AndhraHC_22.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P001_C01",
+      "text": "Verma Narasimha Rao vs The Superintendent Of Excise, Krishna ... on 29 January, 1974\nEquivalent citations: AIR1974AP157, AIR 1974 ANDHRA PRADESH 157, (1974) 2 ANDH WR 123, (1974) 1 AP LJ 358, ILR (1974) ANDH PRA 544\nJUDGMENT\n\n GOPAL RAO EKBOTE, C. J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P002_C01",
+      "text": "1. These writ petitions raise certain common questions. It is not necessary to mention the facts of all the cases in order to resolve the issues raised. We will however refer to particular facts of the writ petition whenever a special point is made in such a writ petition. For the purposes of common points we propose to mention the facts relating to W. P. No. 1435 of 1972.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P003_C01",
+      "text": "2. For the excise year 1970-71, the petitioner was granted the lease to sell liquor in retail at Konathalapalli in Nandigama Taluk of Krishna District. The monthly rent agreed was Rs. 1,751/-. The lease commenced from 1-10-1970.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P004_C01",
+      "text": "3. For the months of October, Novermber and December, 1970 the petitioner lifter the monthly quota of the liquor as determined. From January, 1971 till the end of July, 1971 he however, did not lift the determine monthly quota of liquor. He also for the said months did not pay the monthly rentals.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P005_C01",
+      "text": "4. For the abovesaid lapses on the part of the petitioner, his licence and the lease were suspended and cancelled on 4-7-1971. And on 29-7-1971 the group of shops which the petitioner had obtained on lease were re-auctioned. The reaction fetched a rental of Rs. 265/- for the rest of the excise year.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P006_C01",
+      "text": "5. As a result for the losses sustained by the Government a notice under the Madras Revenue Recovery Act was issued on 19-1-1972. The demand was for Rs. 7,804-76 Ps.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P007_C01",
+      "text": "6. In the counter, however, the demand is put at Rs. 14,133-75 ps. the break up of this demand is shown as follows :--\n\n(1) Rs, 9,361/- as the issue price of the total quantity of short lifted quota of liquor amounting to 2,300 litres. The petitioner' deposit of Rs. 3,100/- was adjusted towards the said amount due leaving a balance of Rs, 6,261/-.\n\n (2) The total amount due towards rental is shown to be Rs. 7,872-75 ps.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P008_C01",
+      "text": "7. It is to challenge the said demand that the writ petition has been filed. A writ of certiorari is sought to quash the said demand notice.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P009_C01",
+      "text": "8. The first contention of the learned Advocates for the petitioner was that there is no provision to collect issue price for the unlifted quota of liquor after the period of the contract is over, The contention was that the only remedy available to the department for the recovery of such amount is under Rule 15 of the Andhra Pradesh Excise (Arrack Retail Vend Special Conditions of Licenses) Rules, 1969 hereinafter called the Retail Vend Rules. It was submitted that such a recovery is confined to the amount of deposit made and no more.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P010_C01",
+      "text": "9. In order to appreciate the implications of this contention, it is necessary to read to few provisions, it is necessary to read a few provisions of the\nAndhra Pradesh Excise Act, 1968\n, referred to hereafter as 'Act' and the Retail Vend Rules and Retail Rules.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P011_C01",
+      "text": "10. Section 17\nof the Act enacts that the Government may, subject such conditions as they may deem ft to impose, grant for a fixed period to any person, at any place lease jointly or severally for the supply, manufacture or sale of any intoxicant.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P012_C01",
+      "text": "11. The explanation states that a lease shall not take effect until the licence is issued under the Act.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P013_C01",
+      "text": "12. Section 21\n, which is a charging Section then enjoins that the government may levy an excise duty on any excisable article manufactured or produced in the State at such rate not exceeding the rates mentioned in the schedule, as may be specified in the notification.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P014_C01",
+      "text": "13. Section 22\nthen lays down the modes of levying duties. Clause (a) of that section enacts that the excise duty under\nSection 21\nshall be levied rateably on the quantity of any excisable article produced or manufactured in or issued from a distillery, brewery or manufactory or warehouse or imported into the State.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P015_C01",
+      "text": "14. Section 65\nrelates to recovery of Government dues. In so far as it is revenant it reads:\n\n\"(1) The following moneys, namely:----\n\n (a) all excise revenue,\n\n (b) any loss that may accrue when, in consequence of default, a lease under\nSection 17\nhas been taken under management by the Collector, or has been resold by him.\n\n (c) amounts due to the Government by any person on account of any contract relating to the excise revenue, and \n\n * * * \n\n (d) may be recovered from the person primarily liable to pay the same of from his surety as if they were arrears of land revenue.\"",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P016_C01",
+      "text": "15. The schedule referred to in\nSection 21 (1)\nof the Act is attached to the Act at the end, Serial No. 1 relates to arrack. In column 3, the mode of levying duty reads:\n \"On the quantity issued from the distillery or warehouse.\"",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P017_C01",
+      "text": "16. We then proceed to read some of the Rues of the Andhra Pradesh, Excise (Lease of Right to Sell Liquor in Retail) Rules, 1969, refereed hereafter as Retail Rules.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P018_C01",
+      "text": "17. Rule 3 provides that every lease of right to sell liquor in retail shall be granted by auction. The lease shall ordinarily be for a period of one excise year.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P019_C01",
+      "text": "18. Sub-rule (2) further provides that the Commissioner shall be competent to fix the minimum guaranteed quantity that should be sold in the case of the arrack shops in every excise year apart from other things mentioned therein.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P020_C01",
+      "text": "19. Rule 10 prescribes the mode and the officers authorised to conduct auction. According to it the auction shall be conducted by bids or submission of tenders.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P021_C01",
+      "text": "20. Rule 13 then relates to submission of tender and bidding.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P022_C01",
+      "text": "21. Rule 15 pertains to signature in the register. it directs the auctioning authority to obtain in the register the signatures of the bidders referred to therein.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P023_C01",
+      "text": "22. We then come to Rule 16. It states that the auction purchases shall pay 20% of the annual rental as earnest money together with one month's rental on the day of auction immediately after the acceptance of tender or bid as the case may be. The earnest money and one month's rental deposit required in Rule 18. In case of failure to remit the earnest money and one month's rental on that day, the shop or group of shops shall be re-auctioned.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P024_C01",
+      "text": "23. Rule 17 relates to cancellation of auction or re-auction.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P025_C01",
+      "text": "24. Rule 20 pertains to re-auction in the case of failure to deposit moneys. In case of failure to pay the deposit or advance money within the specified period, the auction shall be cancelled. The earnest money and any amount deposited under Rules 16 and 18 shall be forfeited and the right of sale shall be re-auctioned at the risk of the original auction purchaser who shall be liable in respect of the lease till the auction purchaser in the re-auction takes it over.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P026_C01",
+      "text": "25. Sub-rule (2) enacts that if that if the re-auction results in monetary loss or if the right remains unsold for want of bidders, the original auction purchaser shall be liable to indemnify the Government for the resultant loss.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P027_C01",
+      "text": "26. We then proceed to read some of the Rules of Retail Vend Rules.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P028_C01",
+      "text": "27. Rule 7 enacts that the licensee shall purchase arrack from the distillery etc. and shall pay at the distillery etc, issue price, as notified by the Commissioner from time to time.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P029_C01",
+      "text": "28. Rule 11 then enjoins that the licensee permitted to draw arrack shall remit the duty leviable cost of arrack and sales tax into the Government treasury.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P030_C01",
+      "text": "29.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P030_C02",
+      "text": "We then come to more relevant Rule for our purses, i.e., Rule 15, We would like to read it in so far as it is relevant :--\n\n\"(1) No licensee shall purchase arrack less than the specified minimum guaranteed quantity less than the minimum guaranteed quantity fixed for that month is drawn at the end of that month issue price to the extent of deficit purchase shall be deducted from the advance money paid by the licensee under the minimum quantity of arrack guaranteed by him, and the licensee shall be called upon to indemnify the amount so adjusted by the end of the succeeding month in which short drawn quantity had occurred :\n\n Provided that the Excise Superintendents may permit the licensee to lift the short drawn minimum guaranteed quantity of the previous month in the succeeding month for special reasons except for the month of September, unless the licensee has committed default in lifting the minimum guaranteed quantity for two successive months :\n\n Provided further where the Commissioner deems it necessary to permit a shop keeper to draw the deficit quantity short drawn in any month in the subsequent months, he shall obtain the prior approval of the Government for granting such",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P030_C03",
+      "text": "permission.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P030_C04",
+      "text": "(2) Where a licensee fails to lift the arrack as permitted by the Excise Superintendent or to indemnify the advance amounts so adjusted by the end of the succeeding month in which the short drawal of quantity had occurred, the right acquired by the defaulting licensee shall be re-auctioned forthwith. (3) * * *\n\n (4) The successful purchaser of an arrack shop shall, before obtaining a licence, intimate the concerned Excise Superintendent in writing his distribution for each month of the minimum quantity of arrack guaranteed as per the requirements. The Excise Superintendent shall be competent to revise the distribution so made by the auction-purchaser before the issue of licence and not during the course of the year and his decision shall be binding on the auction-purchaser.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P031_C01",
+      "text": "30. Form AS-III referred to in Rule 7 (2) is prescribed for the indent for issue for arrack. Apart from other things, column 9 mentions issue price.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P032_C01",
+      "text": "31. These then are the provisions of law with which we are concerned. They make out a scheme as to how the arrack shops are to be auctioned and leased out. It is in the background of this scheme that we have to understand the import of Rule 15 of the Retail Vend Rules. It is seen that under Rule 3 (2) of the Retail Rules, the Commissioner before the publication of the auction notice would fix the minimum guaranteed quantity of liquor that should be sold in the excise year for which the auction is held. The auction purchaser thus enters into a contract agreeing to sell the said minimum guaranteed quantity for the excise year. And under Rule 15 (4) the auction-purchaser is required to intimate the Excise Superintendent how he would lift the minimum guaranteed quantity during the course of the year. The distribution, for each month the said quota had to be intimated. The Excise Superintendent, however, is competent to revise the intimated distribution for each month of auction-purchaser. His decision is final. The licensee thereafter has to necessarily purchase the monthly quota so intimated or determined.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P032_C02",
+      "text": "In case he fails to lift such minimum guaranteed quantity in any month, at the end of that month issue price of deficit purchase shall be deducted from the advance money paid by the licensee and the licensee shall be called upon to replenish the amount so adjusted by the end of the succeeding month. The Excise Superintendent and the Commissioner in certain cases can permit the licensee to lift subsequently the short-drawn quantity of liquor in any month. Where the licensee fails to lift the arrack as permitted by the Excise Superintendent or to indemnify the advance amount adjusted as above, the shops shall be re-auctioned forthwith. Thus the re-auction is permissible only in two cases : (1) When the licensee fails to take advantage of permission granted by the Excise Superintendent, and (2) where he fails to indemnify the advance amount adjusted as indicated above.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P033_C01",
+      "text": "32. The adjustment of the issue price of the deficit purchase, it is seen, is possible during the subsistence of the contract under Rule 15 (1) of the Retail Vend Rules.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P034_C01",
+      "text": "33. In case where in spite of the fact that the licensee has during the course of excise year had short-lifted the quota in one or more months but the authorities fail to adjust the issue price of the short-lifted quota towards the advance money or they fail to re-auction forthwith in cases where although permission was granted by the Superintendent to lift the quota in the succeeding month or the licensee had failed to indemnify the advance amount so adjusted, have the authorities no remedy after the conclusion of the contract to recover the issue price of the short-lifted quota? The answer obviously depends upon the question whether Rule 15 provides an exclusive remedy for recovery of issue price of the short-lifted quota. If it is borne in mind that the moment the licensee fails to (sic) (lift?) the minimum guaranteed quantity he commits a breach of contract. The minimum guaranteed quantity is determined at two levels. Firstly it is determined for the whole Excise year. And secondly the minimum guaranteed quantity for the excise year is spread over the 12 months of he excise year and for each month a specific minimum guaranteed quantity is fixed.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P034_C02",
+      "text": "If the licensee does not lift the quota in a month and the Government adjust the issue price of such short-lifted quota out of the advance amount the Government will ask the licensee to replenish the advance amount to that extent. Suppose the amount is so replenished but again the quota is not fully lifted thus the process of replenishing the advance may go on throughout the year, then how can it be said that the liquidated damages are not fixed for the entire quantity originally fixed for the excise year. If they are so fixed for the entire quota for the entire excise year then the damages so fixed by the parties can be recovered even after the conclusion of the excise year.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P035_C01",
+      "text": "34. It is true that Rule 15 (1) uses the word 'shall' which prima facie is an imperative word when it directs that the issue price of the short-lifted monthly quota is to be deducted from the advance money paid by the licensee. But if one looks to the tow provisos of Rule 15 (1). then it becomes plain that the word 'shall' is in reality not an imperative word but is only permissive. The two provisos, it may be recalled, empower the Excise Superintendent and the Commissioner to extend the time in certain cases to lift the short-drawn quota in susequent month or months. When the short-drawn quota can be so lifted subsequently under the proviso, then it would only mean that the word 'shall' employed in sub-rule (1) is only an enabling one and not obligatory.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P036_C01",
+      "text": "35. We are not concerned in these cases to construe sub-rule (2) in order to find out as to whether the word 'shall' used in reference to re-auction is a compelling word or that is permissive. We therefore refrain from expressing any opinion in regard to the nature of the use of the word 'shall' in sub-rule (2).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P037_C01",
+      "text": "36. Now, if the licensee commits a breach of contract during the subsistence of the contract by violating by term of the contract, then the order party has two courses available to him. If the breach of the contract is in reference to essential term of the contract, he can either determine the contract or claim damages for such breach of the contract. What follows therefore is that in all cases where after the licensee has failed to lift the minimum guaranteed quantity in a given month, if no adjustment is made of the issue price of such short-lifted quota from the advance money, it only means that although a breach has been committed and consequently a licensee has made himself liable for damages, the other party, i.e., the Government has not availed of the remedy of recovering the damages by adjusting it towards the advance money paid by the licensee.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P037_C02",
+      "text": "We fail to see as to how the liability to pay the damages which arose out of breach of contract or the right to recover damages on account of such breach accrued to the Government came to an end merely because the Government failed to adjust the amount of damages towards the advance money immediately and failed to call upon the licensee to replenish the advance money to that extent. The sub-rule (1) if read as permissive, then it is possible for the Government to adjust the issue price of the short-lifted quota for the whole year towards the advance money even after the contractual exercise year is over. We cannot find any limitation in Rule 15 (1) on the right of the Government to recover damages arising out of a breach of contract committed by the licensee. Such recovery of damages can be either by adjustment towards advance money as per sub-rule (1) and calling upon the defaulter licensee to replenish the advance money or under the general law by adjusting the loss sustained by the Government towards the advance money in the hands of the Government and then set a claim for the balance, if any.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P037_C03",
+      "text": "When once it is conceded that under Rule 15 liquidated damages as prescribed in the contract can be recovered by adjustment, we fail to see on what ground it can be urged that the damages for breach of contract cannot be recovered after the contract is concluded. One cannot apply one test under Rule 15 and another after the conclusion of the contract. There are no words to suggest in Rule 15 that since the only mode of recovery is by adjustment , no other remedy for recovery of damages available . We are therefore satisfied that there is no substance in the first contention.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P038_C01",
+      "text": "37. In C.C.C.A. No. 10 of 1968, dated 30-11-1970 M. Krishna Rao , J. was concerned with somewhat similar question. The licensee failed to draw the minimum guaranteed quantity. The value of the deficit was adjusted from out of the deposit with the Government . For recovery of the balance proceedings under the Madras Revenue Recovery Act were started. It was held that the authorities are no doubt entitled to fix a certain amount as liquidated damages in case of breach on the part of the licensee to lift the minimum guaranteed quantity. It was further held that the issue price of the liquor may be taken as a reasonable compensation payable by the licensee. It was, however, held that unless the Government is able to establish that they suffered a total loss by not being able to dispose of the said liquor , they are entitled to collect the issue price from licensees.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P039_C01",
+      "text": "38. It will immediately be seen that the learned Judge agreed with the view that under Rule 15 the liquidated damages i.e., issue price of the shortilifted quota which is a reasonable compensation fixed by the parties can be adjusted. It was further held that the balance of the issue price of the short-lifted quota can also be recovered after the conclusion of the contract. But in such a case, the Government must take steps to mitigate the damages by selling the short-lifted quota. In regard to this part of the judgment, we will deal with it at the appropriate stage. What is, however, plain is that the Government's right to recover liquidated damages by adjustment under Rule 15, without being required to establish the efforts made to mitigate the damages is recognised. The right to recover the balance of liquidated damages after the balance of liquidating damages after the conclusion of contract is also recognised. To that extent then the judgment. To that extent then the judgment supports the view which we have taken.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P040_C01",
+      "text": "39. In Writ Appeal No. 136 of 1972, D/- 26-4-1973 (Andh, Pra), a Division Bench consisting of M. Krishna Rao and G. Venkatrama Sastry, JJ. firstly held that\n \"So long as Rule 15 is valid in the sense that it is not unconstitutional or ultra vires, it should be implemented without reference to any consideration of the ordinary law of damages.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P041_C01",
+      "text": "40. It was further observed that \"in the context of Rules 15 and 16 it has to be inferred that Rule 15, recognises the right of the Government as a contracting party to recover damages against the licensee in case of breach on the part of licensee in lifting the minimum guaranteed quantity. The mode of recovery alone is provided by method of adjustment. Hence while holding that Rule 15 is valid, we hold that as a matter of interpretation of the said Rule it merely provides for a right in favour of the Government to recover damages liquidated as equivalent to cost price of liquor.\"",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P042_C01",
+      "text": "41. The learned Judges then said :\n \"It is always open to the parties to fix the quantum of damages which is known as liquidated damages in the event of a breach of the contract and if the amount so fixed is reasonable, it may be claimed in the event of breach. This principle is laid down in\nSection 74\nof the Contract Act.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P043_C01",
+      "text": "42. The learned Judges however, felt that \n \"Since the Government has realised the full value of the minimum guaranteed quantity in the present case from the quantity in the present case from the petitioner himself, the Government had no right to recover the sum over again.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P044_C01",
+      "text": "43. It will be plain that the right to recover the liquidated damages both under Rule 15 is as well as subsequent to the conclusion of the contract for short lifted quota in the form of its issue price is conceded by the said judgment.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P045_C01",
+      "text": "44. We are however, bound to point out as a fact in that case in short-lifted quota was in fact not lifted in the succeeding months according to Rule 15. The licensee had drawn in succeeding months in view of his requirement or indented liquor in larger quantity than what was fixed as the minimum guaranteed quantity for those months. This is entirely different from saying quota the short-drawn quota, i.e., the quota drawn shorter than the minimum guaranteed quantity is drawn with the permission of the Excise Superintendent of the Commissioner as the case may be in subsequent months. In view of this particular fact it became necesasry both for the single Judge as well as for the Bench to consider the law relating to the recovery of liquidated damages.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P046_C01",
+      "text": "45. In W. P. No. 428 of 1972 (Andh, Pra.), Alladi Kuppuswami, J. referred to the abovesaid two judgments and observed that he was not inclined to share the view and said :\n \"The issue price can be said to be in the nature of liquidated damages fixed in the event of breach and do not wish to base my judgment on the ground that the Government has not taken any steps to mitigate the damages. I rest my decision solely on the ground that the remedy of the Government is either to proceed under rule 15 or to claim damages for breach of law. Rule 15 or to claim damages for breach of contract under the ordinary law . Rule 15 only provides for certain remedies, in the case of default on the part of the petitioners to lift the particular quantity. The rule has to be construed strictly and the authority of the Government must be limited to the exercise of those remedies which are provided under the Rule. If it seeks remedies other than those provided by the rule it has to rely on the ordinary law of contract.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P047_C01",
+      "text": "46. A reading of the said judgment makes it clear that while adjustments under Rule 15 can be made and the licensee called upon to replenish the advance amount, the said rule, however, does not authorise the Government to collect the full value of the liquor which the licensee failed to lift. After adjustment, if any balance of liquidated damages is left to be recovered , the Government can seek the ordinary remedy and it has to rely on the law of the contract. Since it was not shown that the Government has suffered any damage because of short lifting of the quota , it would not be justified in demanding the amount which it did. The learned Judge , however, did not agree with the view that the issue price is in the nature of liquidated damages fixed in the event of a breach. He also did not desire to base his judgment on the ground that the Government has not taken any steps to mitigate damages.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P048_C01",
+      "text": "47. We are unable to agree with the view that the issue price cannot be said to be fixed in the nature of liquidated damages in the event of a breach. Rule 15, which is a part of the contract, so fixes the liquidated damages. The fixation in our view , is not only meant for the purpose of the remedy available under Rule 15 but is also meant for the purpose of recovery of compensation even under another remedy under the ordinary law for recovery of damages. In that respect, we find ourselves in agreement with the earlier referred to two decisions of this Court. In regard to mitigation of damages even in a case of liquidated damages , we would express our views at the appropriate stage.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P049_C01",
+      "text": "48. We finally come to W. P. No. 5603 of 1972, D/- 2-11-1973 (Andh Pra). These judgments are given by Kondaiah, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P050_C01",
+      "text": "49. The learned Judge held that Rule 15 provides for deducting from the advance amount the issue price to the extent of the deficit purchase for any particular month and for indemnifying the amount so adjusted by the end of the succeeding month. He therefore, held that :\n\"it is not permissible for the State Government to contend that it is authorised to collect the issue price of the entire quantity of the unlifted arrack for the year.\"",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P051_C01",
+      "text": "50. With due respect to the learned Judge, we find it difficult to share his view for the reasons which we have already given.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P052_C01",
+      "text": "51. The learned Judge then considered the question whether the impugned demand can be validly raised under\nSection 65\nof the Act. He was of the opinion that\nSection 65\ndoes not apply to a demand of this character and consequently found it difficult to sustain the notice of demand.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P053_C01",
+      "text": "52. With regard to the question relating to Section 65 of the Act, we would consider it a little later on.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P054_C01",
+      "text": "53. What is manifest from what is said above is that except Kondaiah, J., in all other cases of this Court, it was held that even after the expiry of the excise year the Government can recover damages for short-lifted quota at the rate of the issue price and we feel that the said decisions take the correct view.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P055_C01",
+      "text": "54. The question then arises as to whether to a claim of damages after the expiry of the excise year ,\nSection 74\nof the Contract Act applies and if so what then are the other remedies available to the Government to recover such damages . Before we deal with the question of remedies it is necessary to emphasise the difference, obvious though it is , between the right to recover the damages for breach of contract and the remedies available to the Government for the recovery of the same.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P056_C01",
+      "text": "55. We then come to\nSection 74\nof the Contract Act. A careful reading of that section would indicate, as the marginal note seems to make out, that the section applies to a contract where a penalty is stipulated by way of compensation for breach of contract. The section provides for two types of cases. Firstly a case in which a sum is named as the amount to be paid by way of compensation in case of breach. Secondly a case where the contract contains any other stipulation by way of penalty for a breach of contract. The disjunctive word 'or' makes it plain that both the situations which though have been alternatively mentioned are given the same treatment by the Section. The words \"any other stipulation by way of penalty\" following the words \"if a sum is named in the contract etc.\" make it manifest that the sum so named may also amount penalty in certain cases. In other words where the amount named is the result of the genuine pre-estimate of damages, to use the illuminating phrase of Lord Dunedin, then\nSection 74\nhas no application to such a case and consequently the Court has no jurisdiction to determine a reasonable compensation by reducing the amount so fixed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P056_C02",
+      "text": "The innocent party will be entitled to 'no more and no less' than the sum so named. If the Court on the other hand reaches the conclusion that the sum so named is not a genuine pre-estimate of damages, then it would be a case of penalty coming under\nSection 74\nof the Contract Act and the Court can award reasonable compensation 'whether or not actual damages or loss is proved to have been caused' by the breach of contract. Thus a sum named may be in the nature of a threat held over the other party in terrorem , a security to the promisee that the contract will be performed. A sum of this nature is called penalty and is subjected to\nSection 74\n. In such cases, the penalty covers but does not assess the damages.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P057_C01",
+      "text": "56. It is now fairly settled that the onus of showing that the specific sum named in the contract is a penalty lies upon the party against whom an action is taken for its recovery. See Robophone Facilities Ltd., v. Blank , (1966) 1 WLR 1428 at p. 1447.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P058_C01",
+      "text": "57. In so enacting\nSection 74\nand giving a uniform treatment to the abovesaid two types of contracts wherein a particular sum is mentioned, the legislature has removed much of the cob-web of case law and situations decided by English Courts in this regard. It avoids all the technicalities involved in England in the application of the equitable principle enjoining the Courts to strike down the penal clauses. Thus the Courts have now the full powers to do justice between the parties in all such cases. But the question still remains in such cases as to whether a stipulation in a contract amounts to penalty or liquidated damages in the sense that the parties have arrived at the amount as a genuine pre-estimate of damages.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P059_C01",
+      "text": "58. However, when a question arises whether a sum stipulated to be payable under a contract is liquidated damages for a breach of that contract or some part of it or is a penalty attached to the breach, we think that, by now there is ample guidance in both the English as well as Indian authorities to decide between the two alternatives. The appropriate tests have been worked out in a number of leading cases and, if we may say so, they are effectively and conveniently brought together in the speech of Lord Dunedin in Dunlop Pneumatic Tyre Co. Ltd. v. New Garage & Motor Co. Ltd., (1915 AC 79).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P060_C01",
+      "text": "59. Lord Dunedin stated succinctly the various propositions deducible from the authoritative decisions as follows :\n\"1. Though the parties to a contract who use the words 'penalty' or 'liquidated damages' may prima facie be supposed to mean what they say , yet the expression used is not conclusive. The Court must find out whether the payment stipulated is in truth a penalty or liquidated damages. This doctrine may be said to be found passim in nearly every case.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P061_C01",
+      "text": "2. The essence of a penalty is a payment of money stipulated as in terrorem of the offending party: the essence of liquidated damages is a genuine covenanted pre-estimate of damage (Clydebank Engineering and Ship-Building Co. v. Don Jose Ramos Yzquierdoy Castaneda, (1905 AC 6).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 62,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P062_C01",
+      "text": "3. The question whether a sum stipulated is penalty or liquidated damages is a question of construction to be decided upon the terms and inherent circumstances of each particular contract, judged of as at the time of the making of the contract, not as at the time of breach (Public Works Commr. v. Hills, (1906 AC 368)) and Webster v. Bosanquet, (1912 AC 394).",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P063_C01",
+      "text": "4. To assit this task of construction various tests have been suggested , which if applicable to the case under consideration may prove helpful, or even conclusive. Such are :\n(a) It will be held to be penalty if the sum stipulated for is extravagant and unconscionable in amount in comparison with the greatest loss that could conceivably be proved to have followed from breach (Illustration given by Lord Halsbury in Clydebank case, (1905 AC 6)). (b) It will be held to be a penalty if the breach consists only in not paying a sum of money , and the sum stipulated is a sum greater than the sum which ought to have been paid (Kemble) v. Farren, (1829, 6 Bing 141) , This though one of the most ancient instances is truly a corollary to the last test.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P063_C02",
+      "text": "Whether it had its historical origin in the doctrine of the common law that when A promised to pay B a sum of money on a certain day and did not do so, B could only recover the sum with , in certain cases interest, but could never recover further damages for non-timeous payment, or whether it was a survival of the time when equity reformed unconscionable bargains merely because they were unconscionable , a subject which must exercised Jessel, M. R. in Wallis v. Smith, (1882) 21 Ch D 243 is probably more interesting than material. (c) There is a presumption (but no more) that it is penalty when 'a single lump sum is made payable by way of compensation on the occurrence of one or more or all of several events , some of which may occasion , serious and others but trifling damage' (Lord Watson in Lord Elphinstone v. Monkland Iron and Coal Co., (1886) 11 AC 332). On the other hand :\n(d) It is no obstacle to the sum stipulated being a genuine pre-estimate of damage, that the consequences of the breach are such as to make precise pre-estimation almost an impossibility.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P063_C03",
+      "text": "On the contrary that is just the situation when it is probable that pre-estimated damage was the true bargain between the parties (Clydebank' Case, Lord Halsbury (1905 AC 6) , Webster v. Bosanquet, Lord Mersey (1912 AC 394 at p. 398)).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 64,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P064_C01",
+      "text": "60. The said decision has been approved and followed in Bridge v. Campbell Discount Co. Ltd., (1962) 1 All ER 385. Lord Redcliffs said :\n\"My Lords, when a question arises whether a sum stipulated to be payable under a contract is liquidated damages for a breach of that contract or some part of it or is a penalty attached to the breach I think that, by this date, there is ample guidance in the authorities how to decide between the two alternatives. The appropriate tests have been worked out in a number of leading cases and, as we know, they are conveniently brought together in a speech of Lord Dunedin in (1915 AC 79). if believe that the line of demarcation if drawn in its simplest form (as Lord Dunedin himself said in 1906 AC 368 at p. 375) if one says that a sum cannot be legally exacted as liquidated damages unless it is found to amount to 'a genuine pre-estimate of' damages (to use the phrase originated by Lord Robertson in 1905 AC 6 at p. 19).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 64,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P064_C02",
+      "text": "If it does not amount to such a pre-estimate, then it is to be regarded as a penalty, and I do not myself think that it helps to identify a penalty to describe it as in the nature of a threat 'enforced in terrorem' (to use Lord Halsbury Phrase in (1886) 11 AC 332 at p. 348). I do not find that the description adds anything of substance to the idea conveyed by the word 'penalty' itself and it obscures the fact that penalties may quite readily be undertaken by parties who are not in the least terrorised by the prospect of having to pay them and yet are as I understand it, entitled to claim the protection of the court when they are called on to make good their promises,\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 65,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P065_C01",
+      "text": "61. V. G. Ramachandran in his Book on \"The Law of Contract of India,\" Volume II page 1656 referring to Mahadeo Prasad v. Siemans (India) Ltd., AIR 1934 Cal 285 and Balaji v. Sukamiya, AIR 1923 Nag 98 stated the requirements of\nSection 74\nas follows :\n(I) that the plaintiff must prove his damages in general sense;\n(ii) any estimated stipulation in the contract as to damages will itself be of evidentiary proof;\n(iii) in the absence of any other evidence in (ii) above will be deemed sufficient;\n(iv) nevertheless this will not be conclusive evidence for the court can yet consider if the amount is excessive, penal and unjust. It is then open to the court to fix a reasonable amount as damages;\n(v) but if other evidence shows that the stipulated damage is fair and that the actual damages may even be above that figures the court will abide by the stipulation in the contract.\n(vi) where the stipulation is unreasonable the plaintiff will have to independently prove the damages he is entitled to. One way to consider is that the penalty clause is the maximum damages parties contemplated but this does not prevent the aggrieved party to prove the quantum of damages he is entitled to.\"",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 66,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P066_C01",
+      "text": "62. To this we must add that the words\n \"Whether or not actual damage or loss is proved to have been caused thereby.\"\nought not to be ignored. It is useful to note the difference in the language of\nSection 73\nand\nSection 74\nin this regard, Whereas in\nSection 73\nit is said \"Compensation for any loss or damages caused to him thereby\",\nSection 74\nuses the words extracted above. The differences in the language of the two Sections is too patent to require any elaboration. What should follow from these words of\nSection 74\nis that if legal injury by breach of contract is once proved, then the Court in cases of penalty within the limits of the sum named can award reasonable compensation, although no actual loss of damage has been proved because of breach of contract. Section 74\npostulates 'reasonable compensation' not exceeding the sum named. The only restriction is that the court cannot decrees damages exceeding the amount previously agreed upon by the parties.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 66,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P066_C02",
+      "text": "The discretion of the court in the matter of reducing the amount of damages agreed upon is left unqualified by any limitation though of course the expression 'reasonable compensation' used in the section necessarily implies that the discretion so vested must be exercised with due care, caution and no sound principles. What follows is that 'reasonable' compensation is a question of fact and has to be decided in the light of facts and circumstances of each case. It is, however, manifest that if there is a penal provision against default some compensation under\nSection 74\nhas to be given irrespective of the fact whether damage has been actually suffered or not. We are fortified in this view by a decision of the Madras High Court in Muthukrishna v. Sankralingam, (1913) ILR 36 Mad 229 (FB).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 67,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P067_C01",
+      "text": "63. To put it in other words, in practice it may frequently happen that a person suffers no damage at all as a result of a breach of contract; and in that event he cannot recover substantial damages from the person guilty of breach of contract; nevertheless the innocent party is entitled to what is known as 'nominal' damages as a recognition of the fact that the guilty party has technically broken the contract. This is will be seen, is covered by the expression 'reasonable compensation' used in\nSection 74\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 68,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P068_C01",
+      "text": "64. The question regarding the mitigation of damages in case of contract of the nature with which we are concerned does not arise foe decision in this case. In the view which we are taking in these cases, were do not feel called upon to deal with such question. It is plain, however, that as and when it arises and assuming further that it arises also in cases falling under\nSection 74\n, its purpose will be one to determine what the reasonable compensation would be in a given case. Whether the innocent party has failed to take a reasonable opportunity of mitigation is a question of fact dependent upon the circumstances of each case. But the burden of proving such failure on the part of the Government rest upon the guilty party. (See Payzu Ltd. v. Saunders, (1919) 2 KB 581).",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 69,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P069_C01",
+      "text": "65. Such a burden to discharge is by no means a light one, for that would be a case where a party already in breach of contract demands a positive action from one who is innocent of blame for the breach of contract. The innocent party at the most is expected to act as a reasonable person but it is not certainly expected of him to risk the correct supply of liquor to all those to whom it has agreed to supply or on that account to embark upon or get involved in litigation with a view to mitigate it loss. In an appropriate suit where such a question may arise, the Court can always decide the same in accordance with law. That question, however. cannot be considered in a proceeding under\nArticle 226\nof the Constitution obviously because ordinarily the High Court would not embark upon an enquiry into such a disputed and somewhat complicated question of fact.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 70,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P070_C01",
+      "text": "66. The following therefore is the result of the foregoing discussion :\n(1) Issue price of the liquor which is fixed as the compensation for short lifted quota is liquidated damages. (2) During the subsistence of the contract under Rule 15 of the Retail Vend Rules, the Government can adjust the issue price of the short lifted quota towards the advance money in deposit with the Government and such an adjustment would amount to the payment of liquidated damages for breach of contract in not lifting the minimum guaranteed quantity as per the agreement. (3) If or any reason at the end of the excise year or of the contract the full agreed quota of liquor is not lifted and the Government has failed to take any action under Rule 15 of the Retail Vend Rules, even then the Government is entitled to set off the amount of compensation calculated at the rate of issue price for the quantum of liquor short lifted. Such a course even if falls outside the provisions of Rules 15 of Retail Vend Rules, the Government is entitled to such a course under the common law.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 70,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P070_C02",
+      "text": "(4) After set off as above, if any, the amount of compensation calculated at the rate of the issue price for the short-lifted quota, the Government has, according to the contract, a right to recover the compensation from the licensee who committed the breach. Even then if such a claim does not strictly come under Rule 15 of the Retail Vend Rules, even then under the common law and subject to\nSection 74\nof the Contract Act, the Government is entitled to recover such liquidated damages. (5) It has to be decided in each case in the light of facts and circumstances of the case whether the stipulation to pay a certain sum by way of compensation is genuine pre-estimated damages for breach of contract or it is so excessive and unreasonable as to amount to penalty. In the first case the Government will be entitled to no more and no less than the amount so stipulated. In the second case, the Government will, in any case, be entitled to a reasonable compensation to be determined according to the facts and circumstances of each case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 70,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P070_C03",
+      "text": "It is thus a question of construction to be decided upon the terms of each particular contract judged as the time of the marking of the contract, not as at the time of the breach. (6) The burden of proving that a stipulated sum of money by way of compensation for a breach of contract is in truth and reality a penalty lies upon the defaulting party . Such a burden is not lightly to be treated as discharged.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 71,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P071_C01",
+      "text": "67. It is held in the following case that an agreement for supply of electricity with a provision imposing minimum annual charge irrespective of whether electricity is consumed or not is legal and not a penalty clause within the meaning of\nSection 74\nread with\nSection 73\nof the Contract Act .\nVide Natesa Chettair v. Madras State Electricity Board\n, (1969-1 Mad LJ 69).",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 72,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P072_C01",
+      "text": "68. Fate Chand v. Balkishan Dass\n, , the Supreme Court had to consider two questions : (1) Whether the plaintiff was entitled to forfeit the earnest money on the default committed by the buyer and (2) Whether the plaintiff was entitled to forfeit the sum of Rs. 24,000/- paid by the buyer and whether such forfeiture was recognised by the contract. The Supreme Court held that the plaintiff was entitled to forfeit Rs. 1,000/- . But regarding Rs. 24,000/- it was held since it was not earnest money the question will have to be considered under\nSection 74\nof the Contract Act. It was held :\n\"In all cases therefore where there is a stipulation in the nature of penalty for forfeiture of an amount deposited pursuant to the terms of contract which expressly provides for forfeiture the Court has jurisdiction to award such sum only as it considers reasonable, but not exceeding the amount specified in contract as liable to forfeiture.\"",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 73,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P073_C01",
+      "text": "69. It is clear from a careful reading of this judgment that the stipulation was held to be a penalty. A reasonable compensation therefore within the limit of the amount so stipulated was awarded by the Supreme Court. The case clearly established that even in a case where no actual damage or loss is proved, even then the innocent party would be entitled to a reasonable compensation.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 74,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P074_C01",
+      "text": "70. In H. C. Mills v. Tata Aircraft, two questions were argued : (1) that the amount of Rs. 2,50,000/- was not by way of deposit or earnest money but was part of the purchase price and therefore it was not liable to be forfeited: (2) whether the said amount was liquidated damages or was it a panalty.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 75,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P075_C01",
+      "text": "71. In regard to the first argument, the Supreme Court found that the amount was earnest money. In regard to the second question, the Supreme Court observed that it was unnecessary to go into the question as to whether the amount forfeited can be considered reasonable or not. This decision therefore does not decide anything contrary to what we have said. .",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 76,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P076_C01",
+      "text": "72. In Maula Bax v. Union of India, the contention was that since the Government had not suffered any loss because of the default, it could not forfeit the amount of deposit. The Supreme Court observed :\n\"It is true that in every case of breach of contract the person aggrieved by the breach is not required to prove actual loss or damage suffered by him before he can claim a decree and the Court is competent to award reasonable compensation in case of breach even if no actual damage is proved to have been suffered in consequence of the breach of the contract.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 77,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P077_C01",
+      "text": "73. This statement of law is in complete accord with\nSection 74\nof the Contract Act. We cannot find anything in the said decision which can be said to lay down anything contrary to\nSection 74\nor to what we have discussed above. That was also a case of penalty in assessing the reasonable compensation since the Supreme Court declined to afford another opportunity for leading the evidence as to the loss suffered by the Government and consequently refused to grant compensation. Their Lordships approved the dicta of .",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 78,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P078_C01",
+      "text": "74. We then come to the question whether the term 'issue price' includes excise duty. It is seen from Rule 7 of the Retail Vend Rules that the said term is used in it. It is not defined anywhere. Rule 11 of the said Rules, however, mentions that the licensee shall remit (a) duty leviable (b) cost of arrack and (c) sales tax into the Government treasury. It can therefore be safely taken that these three items constitute the issue price. The transport charges when the liquor is transported from the depot to the retail shop, it is common ground, go with the issue price.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 79,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P079_C01",
+      "text": "75. In so far as the sales tax is concerned , it was a common ground that since in realising the compensation for short-lifted quota no sales can be said to have been involved , there is no question of realising any sales tax on such quantity of liquor . In determining the compensation, therefore, the sales tax cannot be taken into account.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 80,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P080_C01",
+      "text": "76. It was also a common ground that the transport charges though not mentioned in Rule 11 of the Retail Vend Rules, are payable by the licensee. Since the short-lifted liquor quota was not actually transported to the liquor shops , such charges cannot form part of the compensation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 81,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P081_C01",
+      "text": "77. We consider, that the decision in W.P. No. 1381 etc. 1970 dated 4-3-1971 was rightly decided.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 82,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P082_C01",
+      "text": "78. We find ourselves unable to agree in this regard with the decision in W.A. 136 of 1972, dated 26-4-1973.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 83,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P083_C01",
+      "text": "79. What remains then to be considered is that apart from the cost of arrack short-lifted whether the Government is entitled to recover by way of compensation from licensee the excise duty levied on such short-lifted quota.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 84,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P084_C01",
+      "text": "80. Now excise duty under\nSection 21\nof the Act can be levied on any excisable article 'manufactured or produced'. In the State it can be levied at such rate as may be specified in the notification but in no case such rate shall exceed the rates mentioned in the schedule,\nSection 21\nis thus the charging section.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 85,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P085_C01",
+      "text": "81. Section 22\nadmittedly is not the charging section. It relates to the mode of levying duties. No doubt in clause (a) it says that the duty mentioned in\nSection 21\nshall be levied in one or more of the modes mentioned therein. It then says 'rateably' on the quantity of any excisable article produced , manufactured in or issued from the distillery etc.\" If\nSection 22\nalso is treated as a charging section , then\nSection 21\nshall have no function to perform. If\nSection 21\nis the only charging section , then since the duty is leviable on excisable articles manufactured or produced, no duty is possible to be levied on issue of liquor which is manufactured or produced. Any such interpretation of\nSection 22\nshall be inconsistent not only with\nSection 21\nof the Act but also with Entry 51. List II of the Seventh Schedule to the Constitution. Entry 51 permits levy of duty only on production and manufacture of excisable article. Section 22\ntherefore must relate to some thing else than the charging\nSection 21\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 85,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P085_C02",
+      "text": "Even a casual reading of these two sections would make it plain that while\nSection 21\nimposes the duty on manufacture and production,\nSection 22\nlays down the modes of assessment and recovery of such duties.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 86,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P086_C01",
+      "text": "82. It is now well settled that the word 'levy' may mean imposition , assessment and collection of duty. It may also mean any one or two or all of the three stages. Its use is not always uniform. The meaning of such word therefore has to be understood in the context in which it is used. Seen in this light the word 'levy' used in\nSection 21\nmust mean imposition of duty only at the stipulated rate on manufacture and production of excisable articles. Whereas\nSection 22\nspeaks of modes or manners or levy, the word 'levy' must mean the assessment and collection of the duty imposed by\nSec. 21\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 87,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P087_C01",
+      "text": "83. Thus\nSection 22\nmerely states as to what stage the duty can be assessed and collected. It does not impose any duty on the issue of liquor. The section merely lays down that such a duty can be assessed and collected at any one stage of the manufacture , the production or at the stage when the liquor so manufactured or produced is issued from a distillery etc. Thus issue of liquor by itself is not a subject of the imposition of duty, but it only provides the stage at which duty on the quantity of liquor manufactured or produced can be assessed and collected.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 88,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P088_C01",
+      "text": "84. That this correct can be seen from the schedule referred to in\nSection 21 (1)\nof the Act, Column 3, which related to the mode of levying i.e., assessment and collection says it can be assessed and collected on the quantity issued from the distillery or warehouse.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 89,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P089_C01",
+      "text": "85. What follows therefore is that the excise duty is attached to the excisable articles , the moment they are manufactured or produced the excise duty can be collected at any one of the three stages. That is why the liquor manufactured or produced which is already subjected to tax, can be collected even from the licensee according to the terms of the contract. It is not imposed on the liquor issued but collected according to the rules from the licensee. It is therefore a part of the issue price as mentioned in the rules and the licensee is required to pay along with the cost of arrack.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 90,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P090_C01",
+      "text": "86. W. A. No. 224 of 1971 and batch dated 17-12-1971 takes the same view. We agree with the said judgment in this behalf although for the reasons given by us.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 91,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P091_C01",
+      "text": "87. B. C. Banerjee v. State of M.P., can easily be distinguished on the facts. In that case it was held that the excise duty is a duty on manufacture or production.\nSection 25\nof the M.P. Excise Act deals with duty on excisable articles.\nSection 26\nprescribes the ways of levying such duty. These provisions are similar to our\nSections 21\nand\n\nof the Act. Thus\nSection 25\nimposes duty while\nSection 26\ndealt with the manner of levying duty. In that case, however, the duty was sought to be levied by a rule on liquor which the contractor has failed to lift. It is because of this imposition of the duty that it was held that the rule-making authority could not have made such a rule . In the instant case no duty is imposed on the short-lifted quota by any rule. The duty is imposed only on the liquor manufactured or produced. Such a duty already imposed is sought to be collected at the stage of issue of the liquor from the distillery etc. Since the contract to pay issue price included the excise duty so imposed on manufacture of production, it is being collected from the licensee as a part of the liquidated damages agreed to by the parties.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 92,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P092_C01",
+      "text": "88. What survives for our consideration is about the remedies which are available to the Government for the recovery of damages to which as discussed above the Government is entitled to. In so far as Rule 15 is concerned, it provides a statutory remedy and quite a satisfactory one for that matter. If the Government is careful and prompt in taking advantage of the statutory remedy provided in Rule 15 very few questions would remain to be solved at the end of the excise year. But unfortunately the experience throughout has been that the Government is neither careful nor prompt in availing of their said statutory right. What then are the other remedies the Government has after the close of the excise year for the recovery of the damages for short-lifted quota which could not be or were not adjusted as per Rule 15?",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 93,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P093_C01",
+      "text": "89. We have already said that if there is still left with the Government any deposit or advance money of the licensee relating to the same contract, the Government has the right to set off its claim of damages against the deposit in their hands.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 94,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P094_C01",
+      "text": "90. In any case for the recovery of damages for breach of contract it is not necessary for the Government to institute a civil suit. In our judgment , the Government can have recourse to the proceedings under the\nRevenue Recovery Act\n.\nSection 65\nof the Act produces that effect.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 95,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P095_C01",
+      "text": "91. In so far as it is relevant, it reads :\n\"(1) The following moneys, namely :\n(a) * * *\n(b) any loss that may accrue when, in consequence of default, a lease under\nSection 17\nhas been taken under management by the Collector , or has been resold by him,\n(c) amounts due to the Government by any person on account of any contract relating to the excise revenue , and\n(d) * * *\n\n may be recovered from the person primarily liable to pay the same or from his surety as if they were arrears of land revenue.\"",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 96,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P096_C01",
+      "text": "92. The question in such cases of recovery of damages is whether\nSection 65\napplies to them. We think that such claims to money do come under clause (b) of\nSection 65 (1)\n. The loss which has accrued to the Government in consequence of default committed by the licensee in short-lifting the quota is sought to be recovered. In consequence of such default. if the Government has taken either of the two actions i.e. either the lease is taken over under the Collector's management or the lease right has been resold. In all the instant cases it was not in dispute that for some reason or the other for default the lease rights were resold. The present cases therefore satisfy the requirements of clause (b) and they fall within its ambit.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 97,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P097_C01",
+      "text": "93. The instant cases would also fall within the ambit of\nSection 65 (c)\nto the extent at least of excise duty agreed to be paid. The amounts are undoubtedly due to the Government. The word 'amount' is wide enough to include the sum due on account of liquidated damages atleast in regard to excise duty. There can be little doubt that such amounts due on account of excise contracts . It is incorrect to say that in some cases since no lease was executed , there was no contract. The contract in such cases is concluded the moment the final bid is accepted. See G. Srinivasa Reddy v. Government of Andhra Pradesh: (FB) and there cannot be any difficulty in holding that these contracts relate to excise revenue. The said term is defined in\nSection 2 (12)\nof the Act. It means revenue derived or derivable from any duty, rent etc. relating to intoxicant liquors or drugs. In my case, excise duty payable as a part of issue price clearly falls in this clause.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 98,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P098_C01",
+      "text": "94. We are thus clear that\nSection 65\napplies to such cases and therefore the Government can recover these amounts of liquidating damages from the licenses of their sureties, if any, as if these amounts are arrers of amounts can be recovered under the\nRevenue Recovery Act\n, the proceedings initiated against the petitioners under the said Act are quite valid and unobjectionable.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 99,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P099_C01",
+      "text": "95. With great respect, we find it very difficult to agree with Kondiah, J. with his view relating to this question expressed in W. P. No. 5603 of 1973, D/- 2-11-1973 (Andh, Pra.).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 100,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P100_C01",
+      "text": "96. There is yet another remedy available to the Government even in cases which may be said not to come within the ambit of\nSection 65\nof the Act,\nSection 52\nof the Revenue Recovery Act empowers the Government to recover such loss or damages. It states that all sums due to the State Government including compensation for any loss or damage sustained by them in consequence of breach of contract can be recovered in the same manner as arrears of land revenue under the provisions of the\nRevenue Recovery Act\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 101,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P101_C01",
+      "text": "97. What follows therefore is that the Government need not file a civil suit for recovery of such damages but can always have recourse to the provisions of the\nRevenue Recovery Act\n. It is for the defaulting party i.e. for the petitioners to have recourse to the suits in civil courts if they so choose under\nSection 59\nof the Revenue Recovery Act or under the common law. If the licensee defaulters dispute that the stipulated sum is not a genuine pre-estimate of damages as the Government is treating them to be , they are at liberty to file suits. It is already seen that the burden is on them to prove that such a stipulation is a penalty. It is in such suits filed by the defaulters that any such dispute can be decided and not in a proceeding under\nArticle 226\nof the Constitution. It is in such cases that the Courts even if they reach the conclusion that the stipulated amount is a penalty, can award to the Government reasonable compensation in view of the facts and circumstances of each case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 102,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P102_C01",
+      "text": "98. With great respect to the learned Judges who decided W. A. No. 136 of 1972, D/- 26-4-1973 (Andh Pra.), we are unable to share their view that it is for the Government to file such suits.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 103,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P103_C01",
+      "text": "99. The attention of the learned Judges was obviously not drawn to\nSection 65\nof the Act and\nSection 22\nof the Revenue Recovery Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 104,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P104_C01",
+      "text": "100. It was then contended that in a certain case the re-auction took place after nearly ten months from the date of the petitioner's default. It is said therefore the Government is not entitled to damages. Unfortunately this contention has not been specifically raised. No counter therefore was filed. No prejudice seems to have been caused to the petitioner. It is not therefore possible to accept this contention.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 105,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P105_C01",
+      "text": "101. In W.P. No. 1440 of 1973, Mr. Ramachandra Reddy argued that since the petition filed under Rule 29 for remission by the petitioner is pending before the Government, the demand notice should not be allowed to be enforced untill the said petition is disposed of. It is, however, seen from the counter that the ground on which the remission is asked is stoutly denied by the Government. No evidence is produced by the petitioner to prove the said ground. Moreover, no provision of law or any authority was brought to our notice which compels the Government to postpone the recovery until the petition under Rule 29 is disposed of.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 106,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P106_C01",
+      "text": "102. It was also contended that the\nRevenue Recovery Act\ndoes not apply because no sum is due from the petitioner. We find no force in this contention.\nSection 65\nof the Act and\nSection 52\nof the Revenue Recovery Act , as seen above, provide a complete answer to this question.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 107,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P107_C01",
+      "text": "103. Mr. Rajasekhara Reddy , then contended that because illicit distillation was going on, the petitioner could not lift the minimum guaranteed quota. There is no evidence in support of this contention. Even otherwise, because of any such illicit distillation , we fail to understand as to how the petitioner can get absolved of his contractual and legal obligations. No provision of any law or authority was cited to us in support of this contention.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 108,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P108_C01",
+      "text": "104. Mr. Ramakoti's contention was that there was delay in issuing the licence. Therefore, the quota fixed for the month of January could not be lifted. The counter disputes this allegation. It says that the petitioner deliberately delayed in taking out the licence. We have no reason to doubt the correctness of the counter.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 109,
+      "chunk_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA_P109_C01",
+      "text": "105. Since no other contention was raised by any of the petitioners, the result is that all the Writ Petitions are dismissed with costs. Advocate's fee Rs. 100/- in each case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1974_ANDHRA_HC_PRE-TELANGANA",
+    "court": "Supreme Court of India",
+    "year": "1974",
+    "facts_summary": "1. These writ petitions raise certain common questions. It is not necessary to mention the facts of all the cases in order to resolve the issues raised. We will however refer to particular facts of the writ petition whenever a special point is made in such a writ petition. For the purposes of common points we propose to mention the facts relating to W. P. No. 1435 of 1972. 2. For the excise year 1970-71, the petitioner was granted the lease to sell liquor in retail at Konathalapalli in Nandigama Taluk of Krishna District. The monthly rent agreed was Rs. 1,751/-. The lease commenced from 1-10-1970. 3. For the months of October, Novermber and December, 1970 the petitioner lifter the monthly quota of the liquor as determined. From January, 1971 till the end of July, 1971 he however, did not lift the determine monthly quota of liquor. He also for the said months did not pay the monthly rentals.",
+    "legal_issues": "8. The first contention of the learned Advocates for the petitioner was that there is no provision to collect issue price for the unlifted quota of liquor after the period of the contract is over, The contention was that the only remedy available to the department for the recovery of such amount is under Rule 15 of the Andhra Pradesh Excise (Arrack Retail Vend Special Conditions of Licenses) Rules, 1969 hereinafter called the Retail Vend Rules. It was submitted that such a recovery is confined to the amount of deposit made and no more. 49. The learned Judge held that Rule 15 provides for deducting from the advance amount the issue price to the extent of the deficit purchase for any particular month and for indemnifying the amount so adjusted by the end of the succeeding month. He therefore, held that :\n\"it is not permissible for the State Government to contend that it is authorised to collect the issue price of the entire quantity of the unlifted arrack for the year.\" 100. It was then contended that in a certain case the re-auction took place after nearly ten months from the date of the petitioner's default. It is said therefore the Government is not entitled to damages. Unfortunately this contention has not been specifically raised. No counter therefore was filed. No prejudice seems to have been caused to the petitioner. It is not therefore possible to accept this contention.",
+    "ratio_summary": "33. In case where in spite of the fact that the licensee has during the course of excise year had short-lifted the quota in one or more months but the authorities fail to adjust the issue price of the short-lifted quota towards the advance money or they fail to re-auction forthwith in cases where although permission was granted by the Superintendent to lift the quota in the succeeding month or the licensee had failed to indemnify the advance amount so adjusted, have the authorities no remedy after the conclusion of the contract to recover the issue price of the short-lifted quota? The answer obviously depends upon the question whether Rule 15 provides an exclusive remedy for recovery of issue price of the short-lifted quota. If it is borne in mind that the moment the licensee fails to (sic) (lift?) the minimum guaranteed quantity he commits a breach of contract. The minimum guaranteed quantity is determined at two levels. Firstly it is determined for the whole Excise year. And secondly the minimum guaranteed quantity for the excise year is spread over the 12 months of he excise year and for each month a specific minimum guaranteed quantity is fixed. 40. It was further observed that \"in the context of Rules 15 and 16 it has to be inferred that Rule 15, recognises the right of the Government as a contracting party to recover damages against the licensee in case of breach on the part of licensee in lifting the minimum guaranteed quantity. The mode of recovery alone is provided b",
+    "final_order": "",
+    "outcome_summary": "Disposed of",
+    "sections_cited": [
+      "Constitution 226"
+    ],
+    "cases_cited": []
+  }
+}

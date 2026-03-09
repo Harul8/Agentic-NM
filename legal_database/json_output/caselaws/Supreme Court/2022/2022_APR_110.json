@@ -1,0 +1,58 @@
+{
+  "case_id": "SC_2022_NAGENDRA_VS_ASHOK",
+  "case_name": "Nagendra vs Ashok",
+  "normalized_case_name": "NAGENDRA_VS_ASHOK",
+  "court": "Supreme Court of India",
+  "year": "2022",
+  "judgment_template": null,
+  "case_number": "Petition 463 of 2022",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": "20 April 2022",
+  "judges": [
+    "K. M. Joseph",
+    "Uday Umesh Lalit"
+  ],
+  "author": "Uday Umesh Lalit",
+  "bench_type": "division",
+  "petitioner": "Nagendra",
+  "respondent": "Ashok",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 0,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\2022\\APR\\2022_APR_110.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2022_NAGENDRA_VS_ASHOK_P001_C01",
+      "text": "INHERENT JURISDICTION\n\n REVIEW PETITION (CIVIL) NO.463 OF 2022\n\n SPECIAL LEAVE PETITION (CIVIL) NO.1341 OF 2021\n\n NAGENDRA …Petitioner\n\n versus\n\n ASHOK AND ANR. …Respondents\n\n O R D E R\nThe order passed by the Trial Court decreeing the suit for specific\n\n performance was affirmed by the lower appellate court. The second appeal\n\n arising therefrom was dismissed by the High Court finding no merit in the\n\n matter.\nSpecial leave petition challenging the decisions of the courts below was\n\n dismissed by this Court after hearing the counsel.\n\nThis review petition is, therefore, dismissed.\n………………………………….J.\n [Uday Umesh Lalit]\n\n ………………………………….J.\n [K. M. Joseph]\nNew Delhi;\nApril 20, 2022.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [
+        "Petitioner v ASHOK AND ANR"
+      ],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Nagendra vs Ashok",
+    "case_id": "SC_2022_NAGENDRA_VS_ASHOK",
+    "court": "Supreme Court of India",
+    "year": "2022",
+    "facts_summary": "",
+    "legal_issues": "INHERENT JURISDICTION\n\n REVIEW PETITION (CIVIL) NO.463 OF 2022\n\n SPECIAL LEAVE PETITION (CIVIL) NO.1341 OF 2021\n\n NAGENDRA …Petitioner\n\n versus\n\n ASHOK AND ANR. …Respondents\n\n O R D E R\nThe order passed by the Trial Court decreeing the suit for specific\n\n performance was affirmed by the lower appellate court. The second appeal\n\n arising therefrom was dismissed by the High Court finding no merit in the\n\n matter.\nSpecial leave petition challenging the decisions of the courts below was\n\n dismissed by this Court after hearing the counsel.\n\nThis review petition is, therefore, dismissed.\n………………………………….J.\n [Uday Umesh Lalit]\n\n ………………………………….J.\n [K. M. Joseph]\nNew Delhi;\nApril 20, 2022.",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": [
+      "Petitioner v ASHOK AND ANR"
+    ]
+  }
+}

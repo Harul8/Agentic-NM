@@ -1,0 +1,450 @@
+{
+  "case_id": "SC_2022_2022_APR_68",
+  "case_name": "Haris Marine Products vs Export Credit Guarantee Corporation ...",
+  "normalized_case_name": "HARIS_MARINE_PRODUCTS_VS_EXPORT_CREDIT_GUARANTEE_CORPORATION_...",
+  "court": "Supreme Court of India",
+  "year": "2022",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "25 April 2022",
+  "judges": [
+    "Pamidighantam Sri Narasimha",
+    "S. Ravindra Bhat",
+    "Uday Umesh Lalit"
+  ],
+  "author": "S. Ravindra Bhat",
+  "bench_type": "constitution",
+  "petitioner": "Haris Marine Products",
+  "respondent": "Export Credit Guarantee Corporation ...",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 21,
+  "cited_by_count": 1,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2022\\APR\\2022_APR_68.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2022_2022_APR_68_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO. 4139/2020\n\n HARIS MARINE PRODUCTS …APPELLANT\n\n VERSUS\n\n EXPORT CREDIT GUARANTEE\n CORPORATION (ECGC) LIMITED …RESPONDENT\n\n JUDGMENT\nS. RAVINDRA BHAT, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2022_2022_APR_68_P002_C01",
+      "text": "1. With consent of counsel for the parties, the appeal was heard finally. The\n appellant is aggrieved by an order1 of the National Consumer Disputes Redressal\n Commission (hereinafter, “NCDRC”) dismissing its complaint. The issue urged by\n the appellant is whether the NCDRC was correct in placing reliance on guidelines\n issued by the Directorate General of Foreign Trade (hereinafter, “DGFT\n Guidelines”)2 to interpret the date of ‘despatch / shipment’ in the Single Buyer\n Exposure Policy of the respondent (hereinafter, “Policy”), and thereby deny the\n appellant’s claim.\nThe facts\n\n Procedures (Volume I) w.e.f. 27.08.2009 – 31.03.2014.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_2022_APR_68_P003_C01",
+      "text": "2. The appellant is an exporter of fish meat and fish oil, whereas the respondent\n(hereafter, “ECGC”) is a government company (under the control of the Ministry\nof Commerce and Industry, Union Government). ECGC provides a range of credit\nrisk insurance cover to exporters. On 13.12.2012, the appellant paid premium to\nECGC for the Policy (bearing no. 0540000143), which covered foreign buyer’s\nfailure to pay for goods exported. The coverage of this Policy, (with effect from\n14.12.2012-13.12.2013), was for ₹ 2.45 crores. The vessel (Tiger Mango Voyage\n62) set sail on 15.12.2012. The Bill of Lading (hereinafter, “BOL”) was prepared\non 19.12.2012, with a line specifying the date of ‘onboard’ (i.e., date on which\nvessel commenced loading the goods in question on board) as 13.12.2012. The\nvessel delivered the goods on 22.01.2013. The overseas buyer defaulted on\npayment. The appellant then lodged a claim with ECGC on 14.02.2013.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_2022_APR_68_P004_C01",
+      "text": "3. ECGC rejected the appellant’s claim on several levels; with the final\nrejection by the Independent Review Committee (hereinafter, “IRC”) on\n28.03.2015. IRC’s view was that the date of ‘despatch / shipment’ (provided in the\nPolicy) was not clearly defined, and it placed reliance on the definition contained\nin the DGFT Guidelines. For containerized cargo, the same was to be interpreted\nas the date of ‘Onboard Bill of Lading’3, which in the present case was 13.12.2012.\nThis was just a day prior to the effective date of the Policy, i.e., 14.12.2012. It was\ntherefore reasoned that the appellant was not entitled to the claim amount. The\nappellant, feeling aggrieved, complained of deficiency of service, and approached\nthe NCDRC for compensation. ECGC resisted the claim.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2022_2022_APR_68_P005_C01",
+      "text": "4. By the impugned order, NCDRC upheld the rationale of the IRC and\nrejected the appellant’s contention that in absence of a clearly specified provision\nin the Policy, it was entitled to the benefit of the rule of verba chartarum fortius\naccipiuntur contra proferentem (hereinafter, “contra proferentem”). Hence the\npresent appeal.\n\nId., Chapter 9 Definitions – Clause 9.12(i) (Date of shipment / Dispatch in respect of Exports by Sea).\n\nContentions of parties",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2022_2022_APR_68_P006_C01",
+      "text": "5. Ms Anjana Prakash, the appellant’s Senior Advocate, brought the Court’s\nattention to the relevant clause in the Policy, which is reproduced as follows:\n“Part IV – Definitions\n\n (1) DESPATCH OR DESPATCHED\n ‘Despatch’ means passing or handing over of the goods to the first\n carrier for through carriage to the place where the Insured Buyer or\n his nominee is to accept them ‘despatched’ will be construed\n accordingly”. Ms Prakash submitted that a plain reading of the above stipulation did not\nclarify the exact date of initiation of the coverage. However, the condition must be\ninterpreted to mean the date on which the vessel set sail, and not the initial date of\nloading of the goods, given that four thousand containers were to be loaded, which\ntook time, and was completed by 10 PM on 14.12.2012. Thus, possession by the\nfirst carrier (the vessel herein) could only be completed when all the goods were\nloaded, and the vessel sailed. To support her submissions, Ms Prakash alluded to\nthe Mate’s Receipt, i.e., the receipt issued by the Master of the vessel when the\ncargo was loaded on board4, issued on 15.12.2012.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2022_2022_APR_68_P006_C02",
+      "text": "Therefore, the date of ‘despatch\n/ shipment’ had to be construed as 15.12.2012, and not 13.12.2012.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_2022_APR_68_P007_C01",
+      "text": "6. Ms Prakash submitted that as opposed to this, the DGFT Guidelines defined\nthe date of ‘shipment’ as follows:\n“Date of shipment/despatch for exports will be reckoned under:-\n(i) By Sea: For bulk cargo, date of Bill of Lading or date of mate\n receipt, whichever is later.\na) For containerised cargo, date of “Onboard Bill of Lading”, or\n “Received for Shipment Bill of Lading”, where the L/C provides for\n such Bill of Lading. For exports by containers from Inland Container\n Depot (ICD), date of Bill of Lading issued by shipping agents at the\n time of loading of export goods in ICD after customs clearance.\nb) For Lash barges, date of Bill of Lading evidencing loading of export\n goods on board”. See\nShaw Wallace & Co. Ltd. v. Nepal Food Corpn.\n, (2011) 15 SCC 56, paras 26-28 for relationship between\nMate’s Receipt and Bill of Lading. (emphasis supplied)\n\n The date of ‘Onboard Bill of Lading’ had no application to the present facts,\nas no Letter of Credit (hereafter, “L/C”) was issued. In any event, such an\ninterpretation of an unspecified term was contrary to consensus ad idem arrived at\nby the parties.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_2022_APR_68_P007_C02",
+      "text": "The unjustness of such an interpretation was compounded by the\nfact that the appellant was not in a position to negotiate the standard terms of the\nPolicy issued by the respondent, and thus ECGC could not have unilaterally relied\non such a definition.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2022_2022_APR_68_P008_C01",
+      "text": "7. Ms Prakash further submitted that as the policy was silent on the date of\n‘despatch’ or ‘shipment’, an insurance policy being a commercial contract, had to\nbe strictly interpreted in terms of the clauses it contained, which reflected the\nintentions of the parties, and not secondary sources. In the event that a contract\ncontained an ambiguous term, which could be interpreted in more than one way,\nthe well-recognized rule of contra proferentem must be made available to the\nappellant, i.e., it must be interpreted against the drafter of the contract (the\nrespondent herein) who is deemed to be aware of the consequences of imprecise\ndrafting. The NCDRC therefore, could not have placed reliance on the guidelines\nissued by a third party (DGFT) which was an external entity not privy to the\ncontract between the present parties, to disallow the claim5.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_2022_APR_68_P009_C01",
+      "text": "8. Ms Prakash placed reliance on certain judgments of this Court. United India\nInsurance Co. Ltd. v. Harchand Rai Chandan Lal6\n, on the interpretation of the word\n‘burglary’ in the insurance policy, this Court held:\n“It is settled law that terms of the policy shall govern the contract\n between the parties, they have to abide by the definition given therein\n and all those expressions appearing in the policy should be interpreted\n with reference to the terms of policy and not with reference to the\n definition given in other laws. It is a matter of contract and in terms of\n the contract the relation of the parties shall abide and it is presumed\n\nSee also,\nModern Insulators Ltd. v Oriental Insurance Co. Ltd.\n, (\n2000) 2 SCC 734 and Polymat India (P) Ltd. &\nOrs. v National Insurance Co. Ltd. & Ors.\n, (2005) 9 SCC 174. (2004) 8 SCC 644, para 9.\n\nthat when the parties have entered into a contract of insurance with\n their eyes wide open, they cannot rely on the definition given in other\n enactment”. (emphasis supplied)\n Thus, the Court refused to import the definition of the term ‘burglary’ from\ncriminal statutes into the insurance policy.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [
+        "See also,\nModern Insulators Ltd v Oriental Insurance Co. Ltd.\n",
+        "Ltd. &\nOrs v National Insurance Co. Ltd. & Ors.\n"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_2022_APR_68_P009_C02",
+      "text": "However, it is pertinent to note that this\nCourt also went on to hold the following7:\n“Therefore, it is settled law that the terms of the contract have to be\n strictly read and natural meaning be given to it. No outside aid should\n be sought unless the meaning is ambiguous”. Ms Prakash then placed reliance on\nLIC v. Insure Policy Plus Services (P)\nLtd.,8\nin which the assignment of insurance policies prior to the 2015 amendment\nto the\nInsurance Act, 1938\nwas in question. While dealing with an argument on\ndisallowing such assignment on grounds of public policy, this Court held:\n“We also think that it is not appropriate to import the principles of\n public policy, which are always imprecise, difficult to define, and akin\n to an unruly horse, into contractual matters. The contra proferentem\n rule is extremely relevant inasmuch as it is the appellant who has\n drafted the insurance policy and was, therefore, well positioned to\n include clauses making it specifically impermissible to assign policies”. Lastly, in\nIndustrial Promotion & Investment Corpn. of Orissa Ltd. v. New\nIndia Assurance Co.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_2022_APR_68_P009_C03",
+      "text": "Ltd.,9\nwhile again interpreting the term ‘burglary’ in the\ninsurance policy, the rule of contra proferentem as explained in Colinvaux’s Law\nof Insurance10 was reiterate by this Court:\n“Quite apart from contradictory clauses in policies, ambiguities are\n common in them and it is often very uncertain what the parties to them\n mean. In such cases the rule is that the policy, being drafted in language\n chosen by the insurers, must be taken most strongly against them. It is\n construed contra proferentes, against those who offer it. In a doubtful\n case the turn of the scale ought to be given against the speaker, because\n he has not clearly and fully expressed himself. Nothing is easier than\n\n(2004) 8 SCC 644, para 14. (2016) 2 SCC 507, para 18. (2016) 15 SCC 315, para 11. Robert and Merkin (Eds.), Colinvaux's Law of Insurance (6th Edn., 1990) at p. 42.\n\nfor the insurers to express themselves in plain terms. The assured\n cannot put his own meaning upon a policy, but, where it is ambiguous,\n it is to be construed in the sense in which he might reasonably have\n understood it.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_2022_APR_68_P009_C04",
+      "text": "If the insurers wish to escape liability under given\n circumstances, they must use words admitting of no possible doubt”. However, it must be noted that the Court found no necessity to invoke the\nrule of contra proferentem in the aforementioned matter, holding that the terms of\nthe policy were clear enough to be correctly interpreted with no ambiguity.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2022_2022_APR_68_P010_C01",
+      "text": "9. Appearing for ECGC, Mr Rajnish Kumar Jha, Advocate submitted that the\nDGFT as the statutory body for regulation and promotion of foreign trade, had\nformulated the DGFT Guidelines to provide a legal framework to the Foreign Trade\nPolicy 2009-2014 as envisioned by the Ministry of Commerce and Industry,\nGovernment of India. It was empowered to do so under\nSection 5\nof the Foreign\nTrade (Development and Regulation) Act, 1992:\n“5. Foreign Trade Policy.—The Central Government may, from time\n to time, formulate and announce, by notification in the Official Gazette,\n the foreign trade policy and may also, in like manner, amend that\n policy:\nProvided that the Central Government may direct that, in respect of the\n Special Economic Zones, the foreign trade policy shall apply to the\n goods, services and technology with such exceptions, modifications and\n adaptations, as may be specified by it by notification in the Official\n Gazette.”. ECGC, being a government insurance company specifically providing\ncoverage for exports, had to thus abide by the DGFT Guidelines, including the\ndefinitions contained in them.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2022_2022_APR_68_P010_C02",
+      "text": "On an application of the definition of date of\n‘despatch / shipment’ under the DGFT Guidelines, it was clear that the date to be\nconstrued was 13.12.2012, which was a day prior to the effective date of the Policy.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_2022_APR_68_P011_C01",
+      "text": "10. ECGC relied on\nPolymat India (P) Ltd. v. National Insurance Co. Ltd11\nwhere this Court, while interpreting the term ‘factory-cum-godown’ and the\n\n(2005) 9 SCC 174, para 21.\n\napplication of a fire insurance policy on goods kept within the boundary wall, held\nas follows:\n“Therefore, the terms of the contract have to be construed strictly\n without altering the nature of the contract as it may affect the interest\n of parties adversely”.\nCoverage was thus denied on a contextual interpretation of the term,\nincluding placing reliance on the definition of ‘factory’ under\nSection 2(m)\nof the\nFactories Act, 1948 and under the Law Lexicon, to exclude goods destroyed by fire\nplaced outside the plant premises but within the factory-cum-godown wall. Mr Jha\nsubmitted, therefore, that in absence of an express definition of a term, other\nrelevant laws cannot be ignored.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2022_2022_APR_68_P012_C01",
+      "text": "11. Further, Mr Jha submitted that the court could not alter the interpretation of\nterms of the policy by reading in something which did not exist. Export Credit\nGuarantee Corpn. of India Ltd. v. Garg Sons International12\n, denying the\napplication of contra proferentem where the insurance contract clearly specified\nthat any default on part of a foreign buyer had to be brought to the respondent’s\nattention within a specified time period13, it was held:\n“Thus, it is not permissible for the court to substitute the terms of the\n contract itself, under the garb of construing terms incorporated in the\n agreement of insurance. No exceptions can be made on the ground of\n equity. The liberal attitude adopted by the court, by way of which it\n interferes in the terms of an insurance agreement, is not permitted. The\n same must certainly not be extended to the extent of substituting words\n that were never intended to form a part of the agreement”.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2022_2022_APR_68_P012_C02",
+      "text": "And further:\n“The insured cannot claim anything more than what is covered by the\n insurance policy. “The terms of the contract have to be construed\n strictly, without altering the nature of the contract as the same may\n affect the interests of the parties adversely.” The clauses of an\n insurance policy have to be read as they are. Consequently, the terms\n\n(2014) 1 SCC 686, para 13. But see\nOriental Insurance Company Limited v Sanjesh & Anr., SLP(C) No.\n3978 of 2022, dated 11.03.2022,\nwhich qualified such a restriction as being void under\nSection 28\nof the Contract Act, 1872.\n\nof the insurance policy, that fix the responsibility of the insurance\n company must also be read strictly. The contract must be read as a\n whole and every attempt should be made to harmonise the terms\n thereof, keeping in mind that the rule of contra proferentem does not\n apply in case of commercial contract, for the reason that a clause in a\n commercial contract is bilateral and has mutually been agreed upon. (\nVide Oriental Insurance Co. Ltd. v. Sony Cheriyan\n[(\n1999) 6 SCC\n 451], Polymat India (P) Ltd. v. National Insurance Co. Ltd.\n[(2005) 9\n SCC 174], Sumitomo Heavy Industries Ltd. v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "But see\nOriental Insurance Company Limited v Sanjesh & Anr., SLP"
+      ],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2022_2022_APR_68_P012_C03",
+      "text": "ONGC Ltd. [(\n2010) 11\n SCC 296] and Rashtriya Ispat Nigam Ltd. v. Dewan Chand Ram\n Saran\n[(2012) 5 SCC 306].)”14\n (emphasis supplied)\n\n Thus, according to the counsel for ECGC, the date of shipment being a day\nprior to the effective date of implementation of the Policy, ECGC was not bound\nto honour to claim. Analysis and Conclusions\nA. Business common sense",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2022_2022_APR_68_P013_C01",
+      "text": "12. Reconciliation of ambiguous terms in commercial contracts has been a\ncontentious issue across jurisdictions. A 2011 decision by the Supreme Court of\nthe United Kingdom (hereafter, “UK Supreme Court”) in Rainy Sky SA v Kookmin\nBank15 was concerned with the interpretation of refund guarantees given by a ship\nbuilder to the buyers, and whether the same was triggered when the ship builder\nstarted facing financial difficulties and was subjected to a debt workout procedure. Allowing the appeal, the UK Supreme Court provided the guiding principle for\nresolution of such ambiguity, keeping the ‘business common sense’ as central:\n“The language used by the parties will often have more than one\n potential meaning.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2022_2022_APR_68_P013_C02",
+      "text": "I would accept the submission made on behalf of the\n appellants that the exercise of construction is essentially one unitary\n exercise in which the court must consider the language used and\n ascertain what a reasonable person, that is a person who has all the\n background knowledge which would reasonably have been available to\n the parties in the situation in which they were at the time of the contract,\n\n(2014) 1 SCC 686, para 11.\n\n[2011] UKSC 50, para 21.\n\nwould have understood the parties to have meant. In doing so, the court\n must have regard to all the relevant surrounding circumstances. If there\n are two possible constructions, the court is entitled to prefer the\n construction which is consistent with business common sense and to\n reject the other.”\n (emphasis supplied)",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2022_2022_APR_68_P014_C01",
+      "text": "13. This principle was further developed by the UK Supreme Court in Arnold v\nBritton.16 The facts were that a 99-year lease specified that service charge of £90\nlevied every year was subject to 10% increase annually. The lessees submitted that\nby the end of the lease agreement, the service charge payable would be very high,\nexceeding the cost of providing the services. The UK Supreme Court refused to\ndepart from the natural meaning of the clause, holding that:\n“When interpreting a written contract, the court is concerned to identify\n the intention of the parties by reference to \"what a reasonable person\n having all the background knowledge which would have been available\n to the parties would have understood them to be using the language in\n the contract to mean”, to quote Lord Hoffmann in\nChartbrook Ltd v\n Persimmon Homes Ltd\n[2009] UKHL 38, [2009] 1 AC 1101 , para 14. And it does so by focussing on the meaning of the relevant words, in\n this case clause 3(2) of each of the 25 leases, in their documentary,\n factual and commercial context.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [
+        "UK Supreme Court in Arnold v Britton.16 The facts were",
+        "Lord Hoffmann in\nChartbrook Ltd v Persimmon Homes Ltd"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2022_2022_APR_68_P014_C02",
+      "text": "That meaning has to be assessed in\n the light of (i) the natural and ordinary meaning of the clause, (ii) any\n other relevant provisions of the lease, (iii) the overall purpose of the\n clause and the lease, (iv) the facts and circumstances known or\n assumed by the parties at the time that the document was executed,\n and (v) commercial common sense, but (vi) disregarding subjective\n evidence of any party's intentions. In this connection, see Prenn at pp\n 1384-1386 and Reardon Smith Line Ltd v Yngvar Hansen-Tangen\n (trading as HE Hansen-Tangen) [1976] 1 WLR 989 , 995-997 per Lord\n Wilberforce, Bank of Credit and Commerce International SA (in\n liquidation) v Ali [2002] 1 AC 251 , para 8, per Lord Bingham, and the\n survey of more recent authorities in Rainy Sky , per Lord Clarke at\n paras 21-30”. (emphasis supplied)\n\n[2015] UKSC 36, para 15.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [
+        "Reardon Smith Line Ltd v Yngvar Hansen"
+      ],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2022_2022_APR_68_P015_C01",
+      "text": "14. Thus, a decisive method was suggested to construe the ambiguity of a term\nused in a commercial contract. This was applied by the UK Supreme Court in\nWoods v Capita Insurance.17 The facts in brief are that the buyer of an insurance\ncompany relied on an indemnity clause to recover losses paid in the form of\ncompensation to the customers of the insurance company to which the company\nhas mis-sold products. According to the indemnity clause, any complaint to the\nFinancial Services Authority (hereinafter “FSA”) would be indemnified by the\nbuyer. However, the contract did not clearly specify what would happen if the\ncompany itself raised a complaint before the FSA. The UK Supreme Court held\nthat a literalist approach to resolving ambiguity in a commercial contract term\nwould yield incorrect results, and a holistic reading was imperative to ascertain\nmeaning of terms agreed to by parties. Dismissing the appeal, the UK Supreme\nCourt finally held that the indemnity clause was in addition to the wide-ranging\nwarranties specified elsewhere in the contract, which was not contrary to business\ncommon sense.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2022_2022_APR_68_P015_C02",
+      "text": "The agreement might have become a poor bargain for the buyer,\nbut it was not the Court's function to improve that bargain:\n“The court's task is to ascertain the objective meaning of the language\n which the parties have chosen to express their agreement. It has long\n been accepted that this is not a literalist exercise focused solely on a\n parsing of the wording of the particular clause but that the court must\n consider the contract as a whole and, depending on the nature,\n formality and quality of drafting of the contract, give more or less\n weight to elements of the wider context in reaching its view as to that\n objective meaning.\n***\n Textualism and contextualism are not conflicting paradigms in a battle\n for exclusive occupation of the field of contractual interpretation. Rather, the lawyer and the judge, when interpreting any contract, can\n use them as tools to ascertain the objective meaning of the language\n which the parties have chosen to express their agreement. The extent to\n which each tool will assist the court in its task will vary according to\n the circumstances of the particular agreement or agreements.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2022_2022_APR_68_P015_C03",
+      "text": "Some\n agreements may be successfully interpreted principally by textual\n\n[2017] UKSC 24, paras 10, 13-14.\n\nanalysis, for example because of their sophistication and complexity\n and because they have been negotiated and prepared with the\n assistance of skilled professionals. The correct interpretation of other\n contracts may be achieved by a greater emphasis on the factual matrix,\n for example because of their informality, brevity or the absence of\n skilled professional assistance. But negotiators of complex formal\n contracts may often not achieve a logical and coherent text because of,\n for example, the conflicting aims of the parties, failures of\n communication, differing drafting practices, or deadlines which\n require the parties to compromise in order to reach agreement. There\n may often therefore be provisions in a detailed professionally drawn\n contract which lack clarity and the lawyer or judge in interpreting such\n provisions may be particularly helped by considering the factual matrix\n and the purpose of similar provisions in contracts of the same type.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2022_2022_APR_68_P015_C04",
+      "text": "The\n iterative process, of which Lord Mance spoke in Sigma Finance\n Corpn (above), assists the lawyer or judge to ascertain the objective\n meaning of disputed provisions. On the approach to contractual interpretation, Rainy Sky and Arnold\n were saying the same thing.”\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2022_2022_APR_68_P016_C01",
+      "text": "15. On application of the above principle to this Policy, and taking into\nconsideration all relevant documents, this Court is of the opinion that the date of\nloading goods onto the vessel, which commenced one day prior to the effective\ndate of the policy, is not as significant as the date on which the foreign buyer failed\nto pay for the goods exported, which was well within the coverage period of the\nPolicy. Thus, the claim could not be dismissed simply on such basis, especially\ngiven that the date of loading the goods onto the vessel was immaterial to the\npurpose for which the policy was taken by the appellant.\nB. Rule of contra proferentem",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2022_2022_APR_68_P017_C01",
+      "text": "16. It is entrenched in our jurisprudence that an ambiguous term in an insurance\ncontract is to be construed harmoniously by reading the contract in its entirety. If\nafter that, no clarity emerges, then the term must be interpreted in favour of the\ninsured, i.e., against the drafter of the policy. In deciding the applicability of a cover\n\nnote on houses swept away by floods, a Constitution Bench of this Court in\nGeneral\nAssurance Society Ltd. v. Chandumull Jain18\nheld as follows:\n“In other respects there is no difference between a contract of insurance\n and any other contract except that in a contract of insurance there is a\n requirement of uberrima fides i.e., good faith on the part of the assured\n and the contract is likely to be construed contra proferentem that is\n against the company in case of ambiguity or doubt… (I)n interpreting\n documents relating to a contract of insurance, the duty of the court is\n to interpret the words in which the contract is expressed by the parties,\n because it is not for the court to make a new contract, however\n reasonable, if the parties have not made it themselves”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2022_2022_APR_68_P017_C02",
+      "text": "(emphasis supplied)\n While the court ultimately denied insurer’s liability, it laid down the manner\nin which ambiguities were to be interpreted. Since then, a catena of judgments has\nupheld this approach. United India Insurance Co. Ltd. v. Pushpalaya Printers19\n,\na Division Bench of this Court was confronted with interpreting the term ‘impact’\nin an insurance policy for protection against damage caused to the insured building.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2022_2022_APR_68_P017_C03",
+      "text": "Interpreting the term to include damage caused by strong vibrations by heavy\nvehicles without ‘direct’ impact, this Court held:\n“The only point that arises for consideration is whether the word\n “impact” contained in clause 5 of the insurance policy covers the\n damage caused to the building and machinery due to driving of the\n bulldozer on the road close to the building… (I)t is also settled position\n in law that if there is any ambiguity or a term is capable of two possible\n interpretations, one beneficial to the insured should be accepted\n consistent with the purpose for which the policy is taken, namely, to\n cover the risk on the happening of certain event… Where the words of\n a document are ambiguous, they shall be construed against the party\n who prepared the document. This rule applies to contracts of insurance\n and clause 5 of the insurance policy even after reading the entire policy\n in the present case should be construed against the insurer”. (emphasis supplied). (1966) 3 SCR 500, para 11. (2004) 3 SCC 694, para 6.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2022_2022_APR_68_P017_C04",
+      "text": "Similarly, in\nSushilaben Indravadan Gandhi v New India Assurance\nCompany Ltd.,20\nthis Court charted the evolution of the rule of contra proferentem,\nand relied inter alia on its explanation as provided under Halsbury's Laws of\nEngland:21\n “Contra proferentem rule.—Where there is ambiguity in the policy the\n court will apply the contra proferentem rule. Where a policy is\n produced by the insurers, it is their business to see that precision and\n clarity are attained and, if they fail to do so, the ambiguity will be\n resolved by adopting the construction favourable to the insured. Similarly, as regards language which emanates from the insured, such\n as the language used in answer to questions in the proposal or in a slip,\n a construction favourable to the insurers will prevail if the insured has\n created any ambiguity. This rule, however, only becomes operative\n where the words are truly ambiguous; it is a rule for resolving\n ambiguity and it cannot be invoked with a view to creating a doubt.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2022_2022_APR_68_P017_C05",
+      "text": "Therefore, where the words used are free from ambiguity in the sense\n that, fairly and reasonably construed, they admit of only one meaning,\n the rule has no application.”\n The rule of contra proferentem thus protects the insured from the vagaries\nof an unfavourable interpretation of an ambiguous term to which it did not agree. The rule assumes special significance in standard form insurance policies, called\ncontract d’ adhesion or boilerplate contracts, in which the insured has little to no\ncountervailing bargaining power.22 This consideration is highlighted in the facts of\nthis case, since the risks that ECGC is mandated to cover is its business, and other\ninsurers rarely foray into the field.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2022_2022_APR_68_P018_C01",
+      "text": "17. A plain reading of the policy in question demonstrates that it was taken to\nprotect against failure of the foreign buyer in paying the Indian exporter for goods\nexported. It was not a policy taken to cover in-transit insurance, and the cause of\naction triggering the claim arose much later, i.e., on 14.02.2013, well within the\ncoverage of the policy. While interpreting insurance contracts, the risks sought to\nbe covered must also be kept in mind. Peacock Plywood (P) Ltd. v. Oriental\n\n(2021) 7 SCC 151, paras 37-42.\n\n5th Edn., vol. 60, para 105. Jacob Punnen & Anr. v United India Insurance Co. Ltd.\n, (2021) SCCOnline SC 1207, paras 30-33. Insurance Co. Ltd.23 while determining the validity of an insurance policy for a\nstranded ship, a Division Bench of this Court, noting that none of conditions in the\ntermination clause were triggered, held:\n“When the termination of the contract of insurance has actually taken\n place, is essentially a question of fact. An insurance policy is to be\n construed in its entirety. A marine insurance policy does not come to\n an end only because the ship became stranded at a port”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2022_2022_APR_68_P018_C02",
+      "text": "And further:\n“(W)hile construing a contract of insurance, the reason for entering\n thereinto and the risks sought to be covered must be considered on its\n own terms”. (emphasis supplied)\n As argued on behalf of the appellant, the Mate’s Receipt indicating the\ncompletion of loading of the goods onto the ship was issued on 15.12.2012,\npursuant to which the vessel sailed on 15.12.2012, and the Bill of Lading was\nissued on 19.12.2012. The term ‘despatch’ -contained in the policy implied\n‘completion’ of handing over of possession of the goods to the first carrier (the ship\nherein), and not the date on which the loading ‘commenced’ – such an interpretation\nwould give rise to an absurdity. On harmoniously construing the documents of this\npolicy, it is the in fact the date on the Bill of Lading, and not the Mate’s Receipt /\ndate of shipment which ought to be considered as the date of ‘despatch / shipment’,\nfor the Bill of Lading is the legal document conferring title and possession of the\ngoods to the carrier.24\n18. Therefore, reliance on the DGFT Guidelines to disallow the claim of the\nappellant was not good in law.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2022_2022_APR_68_P018_C03",
+      "text": "The Counsel for the respondent has argued that the\nDGFT Guidelines are enforceable against the present facts. Therefore, an analysis\nof the same is merited. (2006) 12 SCC 673, paras 45 and 69. Carriage of Goods by Sea Act, 1925.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2022_2022_APR_68_P019_C01",
+      "text": "19. The DGFT Guidelines are part of a ‘Handbook of Procedures (Volume I)’ to\nenforce the Foreign Trade Policy of 2009-2014, which in turn emerge from\nSection\n\nof the Foreign Trade (Development and Regulation) Act, 1992 (supra). The\nrelevant provisions are as follows:\nI. Foreign Trade (Development and Regulation) Act, 1992\n:\nSection 5\n. Foreign Trade Policy25.—The Central Government may,\n from time to time, formulate and announce, by notification in the\n Official Gazette, the foreign trade policy and may also, in like manner,\n amend that policy:\nProvided that the Central Government may direct that, in respect of\n the Special Economic Zones, the foreign trade policy shall apply to\n the goods, services and technology with such exceptions,\n modifications and adaptations, as may be specified by it by\n notification in the Official Gazette.]\n ***\n II.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2022_2022_APR_68_P019_C02",
+      "text": "Foreign Trade Policy, 2009-2014:\nParagraph 1.03: Hand Book of Procedures (HBP) and Appendices &\n Aayat Niryat Forms (AANF): Director General of Foreign Trade\n (DGFT) may, by means of a Public Notice, notify Hand Book of\n Procedures, including Appendices and Aayat Niryat Forms or\n amendment thereto, if any, laying down the procedure to be followed\n by an exporter or importer or by any Licensing/Regional Authority or\n by any other authority for purposes of implementing provisions of FT\n (D&R) Act, the Rules and the Orders made there under and provisions\n of FTP. Paragraph 1.04: Specific provision to prevail over the general: Where\n a specific provision is spelt out in the FTP/Hand Book of Procedures\n (HBP), the same shall prevail over the general provision. Paragraph 2.04: Authority to specify Procedures: DGFT may, specify\n Procedures to be followed by an exporter or importer or by any\n licensing/Regional Authority (RA) or by any other authority for\n purposes of implementing provisions of FT (D&R) Act, the Rules and\n the Orders made there under and FTP. Such procedures, or\n amendments if any, shall be published by means of a Public Notice. W.e.f. 27.08.2010.\n\n***\n i.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2022_2022_APR_68_P019_C03",
+      "text": "Handbook of Procedures (Vol I):26\n Chapter 9: Miscellaneous Matters\nProvision 9.12: ‘Date of shipment / despatch in respect of Exports’ -\n(i) By Sea: For bulk cargo, date of Bill of Lading or date of mate\n receipt, whichever is later.\na) For containerised cargo, date of “Onboard Bill of Lading”, or\n “Received for Shipment Bill of Lading”, where the L/C provides for\n such Bill of Lading. For exports by containers from Inland Container\n Depot (ICD), date of Bill of Lading issued by shipping agents at the\n time of loading of export goods in ICD after customs clearance.\nb) For Lash barges, date of Bill of Lading evidencing loading of export\n goods on board”. (emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2022_2022_APR_68_P020_C01",
+      "text": "20. Deviating from the rule of contra proferentem, even if in the present instance\nthe third-party DGFT Guidelines were to be applied, it would not favour the ECGC,\nas a plain reading of provision 9.12 shows that the date on the Bill of Lading has\nto be considered as the date of despatch / shipment. The date of ‘onboard’ Bill of\nLading is not applicable to the present facts as no letter of credit was executed,\nmuch less providing for application of such date. Therefore, ECGC could not have\ndenied the appellant’s claim, even on a consideration the DGFT Guidelines.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2022_2022_APR_68_P021_C01",
+      "text": "21. ECGC enjoys a significant position in the market for export credit insurance\nin India – in F.Y. 2012-2013, the total income received by way of premiums\nexceeded Rupees one thousand crores,27 with the figures only growing ever since.\nIt is the only government company offering such niche services, and is exempt from\nfollowing the Trade Credit Insurance Guidelines periodically revised by the\nInsurance Regulatory and Development Authority of India. To deny the appellant’s\nclaim over an incorrect interpretation of an ambiguous term, that too with delay\namounting to only one day, goes against such duties, especially given the fact that\nthe appellant had transacted with the respondent on several previous occasions.\n\nThe Handbook of Procedures (Volume I) was published by way of a public notice on 27.08.2009.\n\nExport Credit Guarantee Corporation, 55th Annual Report, 2012-2013, pg. 6.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2022_2022_APR_68_P022_C01",
+      "text": "22. Accordingly, the impugned order of the NCDRC is hereby set aside; the\nappellant’s complaint is consequently allowed. ECGC is hereby directed to pay the\nclaim amount of ₹ 2.45 crores to the appellant, with interest at the rate of 9% p.a.\nThe appeal is allowed; all pending application(s), are disposed off. There shall be\nno order on costs.\n..………………………………………….……\n [UDAY UMESH LALIT, J.]\n\n .………………………………………………\n [S. RAVINDRA BHAT, J.]\n\n …….…………………………………………\n [PAMIDIGHANTAM SRI NARASIMHA, J.]\n\nNew Delhi\nApril 25, 2022.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Haris Marine Products vs Export Credit Guarantee Corporation ...",
+    "case_id": "SC_2022_2022_APR_68",
+    "court": "Supreme Court of India",
+    "year": "2022",
+    "facts_summary": "1. With consent of counsel for the parties, the appeal was heard finally. The\n appellant is aggrieved by an order1 of the National Consumer Disputes Redressal\n Commission (hereinafter, “NCDRC”) dismissing its complaint. The issue urged by\n the appellant is whether the NCDRC was correct in placing reliance on guidelines\n issued by the Directorate General of Foreign Trade (hereinafter, “DGFT\n Guidelines”)2 to interpret the date of ‘despatch / shipment’ in the Single Buyer\n Exposure Policy of the respondent (hereinafter, “Policy”), and thereby deny the\n appellant’s claim.\nThe facts\n\n Procedures (Volume I) w.e.f. 27.08.2009 – 31.03.2014. 2. The appellant is an exporter of fish meat and fish oil, whereas the respondent\n(hereafter, “ECGC”) is a government company (under the control of the Ministry\nof Commerce and Industry, Union Government). ECGC provides a range of credit\nrisk insurance cover to exporters. On 13.12.2012, the appellant paid premium to\nECGC for the Policy (bearing no. 0540000143), which covered foreign buyer’s\nfailure to pay for goods exported. The coverage of this Policy, (with effect from\n14.12.2012-13.12.2013), was for ₹ 2.45 crores. The vessel (Tiger Mango Voyage\n62) set sail on 15.12.2012. The Bill of Lading (hereinafter, “BOL”) was prepared\non 19.12.2012, with a line specifying the date of ‘onboard’ (i.e., date on which\nvessel commenced loading the goods in question on board) as 13.12.2012. The\nvessel delivered the goods on 22.01.2013. The overseas buyer defau",
+    "legal_issues": "3. ECGC rejected the appellant’s claim on several levels; with the final\nrejection by the Independent Review Committee (hereinafter, “IRC”) on\n28.03.2015. IRC’s view was that the date of ‘despatch / shipment’ (provided in the\nPolicy) was not clearly defined, and it placed reliance on the definition contained\nin the DGFT Guidelines. For containerized cargo, the same was to be interpreted\nas the date of ‘Onboard Bill of Lading’3, which in the present case was 13.12.2012.\nThis was just a day prior to the effective date of the Policy, i.e., 14.12.2012. It was\ntherefore reasoned that the appellant was not entitled to the claim amount. The\nappellant, feeling aggrieved, complained of deficiency of service, and approached\nthe NCDRC for compensation. ECGC resisted the claim. 5. Ms Anjana Prakash, the appellant’s Senior Advocate, brought the Court’s\nattention to the relevant clause in the Policy, which is reproduced as follows:\n“Part IV – Definitions\n\n (1) DESPATCH OR DESPATCHED\n ‘Despatch’ means passing or handing over of the goods to the first\n carrier for through carriage to the place where the Insured Buyer or\n his nominee is to accept them ‘despatched’ will be construed\n accordingly”. Ms Prakash submitted that a plain reading of the above stipulation did not\nclarify the exact date of initiation of the coverage. However, the condition must be\ninterpreted to mean the date on which the vessel set sail, and not the initial date of\nloading of the goods, given that four thousand contain",
+    "ratio_summary": "",
+    "final_order": "22. Accordingly, the impugned order of the NCDRC is hereby set aside; the\nappellant’s complaint is consequently allowed. ECGC is hereby directed to pay the\nclaim amount of ₹ 2.45 crores to the appellant, with interest at the rate of 9% p.a.\nThe appeal is allowed; all pending application(s), are disposed off. There shall be\nno order on costs.\n..………………………………………….……\n [UDAY UMESH LALIT, J.]\n\n .………………………………………………\n [S. RAVINDRA BHAT, J.]\n\n …….…………………………………………\n [PAMIDIGHANTAM SRI NARASIMHA, J.]\n\nNew Delhi\nApril 25, 2022.",
+    "outcome_summary": "Allowed. 22. Accordingly, the impugned order of the NCDRC is hereby set aside; the\nappellant’s complaint is consequently allowed. ECGC is hereby directed to pay the\nclaim amount of ₹ 2.45 crores to the appellant, with interest at the rate of 9% p.a.\nThe appeal is allowed; all pending application(s), are disp",
+    "sections_cited": [],
+    "cases_cited": [
+      "See also,\nModern Insulators Ltd v Oriental Insurance Co. Ltd.\n",
+      "Ltd. &\nOrs v National Insurance Co. Ltd. & Ors.\n",
+      "But see\nOriental Insurance Company Limited v Sanjesh & Anr., SLP",
+      "UK Supreme Court in Arnold v Britton.16 The facts were",
+      "Lord Hoffmann in\nChartbrook Ltd v Persimmon Homes Ltd",
+      "Reardon Smith Line Ltd v Yngvar Hansen"
+    ]
+  }
+}

@@ -1,0 +1,872 @@
+{
+  "case_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY",
+  "case_name": "Punjab National Bank vs Union Of India Thr. Its Secretary",
+  "normalized_case_name": "PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR._ITS_SECRETARY",
+  "court": "Supreme Court of India",
+  "year": "2022",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 2196 of 2012",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "24 February 2022",
+  "judges": [
+    "Vineet Saran",
+    "L. Nageswara Rao"
+  ],
+  "author": "Vineet Saran",
+  "bench_type": "division",
+  "petitioner": "Punjab National Bank",
+  "respondent": "Union Of India Thr. Its Secretary",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 42,
+  "cited_by_count": 52,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2022\\FEB\\2022_FEB_9.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO.2196 OF 2012\n\n PUNJAB NATIONAL BANK …..APPELLANT\n\n VERSUS\n UNION OF INDIA & ORS. …RESPONDENTS\n\n JUDGMENT\nVineet Saran, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P002_C01",
+      "text": "1. The present Civil Appeal arises out of the judgment\n\n and order dated 05.08.2008 passed by the Allahabad\n\n High Court, wherein the writ petition filed by the\n\n Appellant was dismissed in limine.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P003_C01",
+      "text": "2. The brief facts of the case, relevant for the purpose of\n\n the present appeal, are that the Commissioner,\n\n Customs and Central Excise, Ghaziabad (Respondent\n\nCentral\n\n Excise Act, 1944\n. By an order dated 25.11.1997,\n\n Respondent No. 2 confirmed an excise duty demand of\n\n Rs.6,97,62,102/­ against RIL and imposed a penalty of\n\n Rs.7,98,03,000/­ under Rule 173Q(1) and confiscated\n\n the land, building, plant and machinery of RIL under\n\n Rule 173Q(2) of the Central Excise Rules, 1944 (for\n\n short “1944 Rules”). Sub­rule 2 of Rule 173Q of the\n\n Central Excise Rules, 1944, came to be omitted by a\n\n notification dated 12.05.2000 issued by the\n\n Government of India. Subsequently, the order dated\n\n 25.11.1997 was set aside by the Customs, Excise &\n\n Gold (Control) Appellate Tribunal (CEGAT), now known\n\n as the Customs Excise and Service Tax Appellate\n\n Tribunal (CESTAT), on the ground of violation of\n\n principles of natural justice, and the matter was\n\n remanded back for de novo proceedings.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P004_C01",
+      "text": "3. In 2005, RIL availed credit facilities under various\n\n schemes from the consortium of banks, with the\n\n Appellant/Punjab National Bank as the lead bank, and\n\n mortgaged/hypothecated all its movable and\n\nimmovable properties for securing the loan. RIL\n\n created a charge on both the assets (raw material,\n\n stock in progress, finished goods, receivables etc.) and\n\n block (land, building, plant, machinery and other fixed\n\n assets) of the company in favour of the Appellant bank.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P005_C01",
+      "text": "4. Subsequently, the Commissioner Customs and Central\n\n Excise, Ghaziabad vide order dt. 26.03.2007,\n\n confirmed the demand of excise duty of\n\n Rs.7,98,02,226/­ and a penalty of Rs.7,98,03,000/­ on\n\n RIL. The Commissioner also ordered, under rule\n\n 173Q(2) of the 1944 Rules, for the confiscation of all\n\n the land, building, plant, machinery and materials\n\n used in connection with manufacture and storage.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P006_C01",
+      "text": "5. The Central Excise Commissioner, vide another order\n\n dated 29.03.2007, confirmed a demand of central\n\n excise duty amounting to Rs.2,67,00,348 and\n\n Rs.74,24,332 from RIL. The Commissioner also\n\n imposed a penalty of Rs.3,41,24,680/­ and further,\n\n under rule 173Q(2) of the 1944 Rules, ordered\n\n confiscation of land, building, plant, machinery,\n\n material, conveyance etc. of RIL that were used in\n\nconnection with manufacture, production, storage or\n\n disposal of goods.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P007_C01",
+      "text": "6. However, in light of the fact that RIL had defaulted in\n\n clearing the loan amount and had failed to liquidate\n\n outstanding dues, the Appellant bank, on 02.08.2007,\n\n issued notice to RIL under\nsection 13(2)\nof the\n\n SARFAESI Act, 2002, further, notice was issued to RIL\n\n under\nsection 13(4)\nof SARFAESI Act, 2002.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P008_C01",
+      "text": "7. In light of the\nsection 13(4)\nnotice, the Office of the\n\n Assistant Commissioner, Customs and Central Excise\n\n Division informed the bank, vide a letter dated\n\n 27.11.2007, that the property was already confiscated\n\n by virtue of Rule 173Q(2) of 1944 Rules and that an\n\n appeal is pending against the orders and the matter is\n\n sub­judice. Appellant bank replied to the above letter\n\n on 22.12.2007, whereby it informed the department\n\n that the properties in question had been mortgaged\n\n with the bank and RIL was required to satisfy the\n\n debts. In furtherance of this, the Appellant bank took\n\n symbolic possession of the properties on 28.12.2007.\n\n Subsequently, the Appellant bank was informed by the\n\nAssistant Commissioner, Customs and Central Excise,\n\n vide a letter dated 15.01.2008, that the properties of\n\n RIL should not be dealt with without their written\n\n consent.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P009_C01",
+      "text": "8. In essence, it has been the contention of the Customs\n\n & Excise Department that in view of the fact that that\n\n all the movable and immovable properties of RIL stand\n\n confiscated by the orders passed by the Commissioner,\n\n Customs & Central Excise, Ghaziabad, the possession\n\n of the property in question cannot be taken by the\n\n Appellant bank.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P010_C01",
+      "text": "9. Aggrieved by the orders of confiscation (dated\n\n 26.03.2007 and 29.03.2007) and the further\n\n communications/letters by the department (dated\n\n 27.11.2007 and 15.01.2008), the Appellant bank filed\n\n a Writ Petition before the Allahabad High Court, which\n\n was dismissed with the observations that:\n“We find that in the present case, taxes are\n not sought to be recovered from M/s Rathi\n Ispat Ltd., respondent No. 4, by way of\n attachment or otherwise from the movable\n or immovable assets of the respondent no.4,\n but the stand of the Central Excise\n Authorities is that the properties stand\n\nconfiscated and vests in the Central\n Government as a result of the order of\n confiscation”\n\n The High Court further held that:\n“From the meaning of the word\n confiscate/confiscation”, we find that if any\n property has been confiscated it vests in the\n state and no person can claim any right,\n title, or interest over it.”\n\n While dismissing the Writ Petition of the Appellant\n bank, the Allahabad High Court, eventually held that:\n“In view of the matter, the question of first\n charge or second charge over the properties\n would not arise.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P010_C02",
+      "text": "The debt does not get\n extinguished but it cannot be recovered\n from the confiscated property that being the\n position, we do not find any merit in the\n Writ Petition. So far as the challenge to the\n order of confiscation is concerned, we may\n mention that the petitioner has no locus\n standi to challenge the order of confiscation\n as the Respondent no. 4 has already\n preferred an appeal against it. However, if\n in appeal preferred by Respondent no. 4,\n the order of confiscation is set aside then\n the bank can proceed against the properties\n in question in accordance with law”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P011_C01",
+      "text": "10. Aggrieved by the abovementioned High Court Order,\n\n this appeal has been filed by way of Special Leave\n\n Petition.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P012_C01",
+      "text": "11. Mr. Dhruv Mehta, learned Senior Counsel for the\n\n Appellant Bank has raised before us the following two\n\n issues which arise for our consideration:\nIssue No.1: Whether the Ld. Commissioner Custom\n and Central Excise could have invoked the powers\n under Rule 173(Q)(2) of Central Excise Rules, 1944\n on 26.03.2007 and 29.03.2007 for confiscation of\n land, buildings etc., when on such date, the rule\n 173Q(2) was not on the Statue Book having been\n omitted w.e.f. 17.05.2000?\nIssue No.2: Whether in the absence of any\n provisions providing for First Charge in relation to\n Central Excise dues in the\nCentral Excise Act, 1944\n,\n the dues of the Excise department would have\n priority over the dues of the Secured Creditors or\n not?",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P013_C01",
+      "text": "12. With respect to the first issue, it has been argued by\n\n the learned Counsel for the Appellant bank that the\n\n Commissioner could not have passed the orders dated\n\n 26.03.2007 and 29.03.2007 by invoking the powers\n\n under Rule 173Q(2), which was not in existence in the\n\n Statute Books as on the said date, having been omitted\n\n by a notification dated 12.05.2000.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P014_C01",
+      "text": "13. It has been contended that reliance upon the\n\n provisions contained in Section 38A of the Central\n\nExcise Act, 1944\nand\nSection 6\nof the General Clauses\n\nAct, 1897 to support the orders of the Commissioner is\n\nliable to be rejected for the reason that a Constitution\n\nBench of this Court, in the matter of\nKolhapur\n\nCanesugar Works Ltd. Vs Union of India & Ors\n.\n[(2000) 2 SCC 536] has held that the provisions\n\ncontained in\nsection 6\nof the General Clauses Act,\n\n1897 are not applicable to the Central Excise Rules. It\n\nhas further been contended that no reliance can be\n\nplaced on section 38A for the reason that the provision\n\ncontained in the said section 38A are attracted “unless\n\na different intention appears”. In the present case, the\n\ncontra­intention of the legislature that the legislature\n\ndid not intent to revive/restore the power of\n\nconfiscation of any land, building, plant machinery\n\netc., after omission of the provisions contained in Rule\n\n173Q(2) w.e.f 12.05.2000 is evident from the following:\nI.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P014_C02",
+      "text": "The provisions contained in Rule 173Q(2) i.e.\n power to confiscate any land, building, plant,\n machinery etc. after omission w.e.f.\n 12.05.2000 has not been introduced in the\n subsequent Central Excise Rules, 2001,\n\nCentral Excise Rules, 2002 and Central\n Excise Rules, 2017. II. Further, Rule 211 of the Central Excise\n Rules, 1944, inter alia, provided that\n “anything” confiscated under the Rules shall\n thereupon vest in Central Government,\n whereas Rule 28 of the Central Excise Rules\n of 2001, 2002 and 2017, which are pari\n materia to the earlier Rule 211 of the 1944\n Rules, instead of the word “anything”,\n provided for vesting of confiscated “Goods” in\n the Central Government. III.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P014_C03",
+      "text": "Thus, after omission of Rule 173Q(2) of 1944\n Rules w.e.f. 12.05.2000 and after\n supersession of Rule 211 of 1944 Rules in the\n year 2001, the newly enacted Rule 28 of the\n Rules of 2001, Rule 28 of the Rules of 2002\n and Rule 28 of the Rules of 2017, did not\n provide for confiscation of any land, building,\n plant, machinery etc. and their consequent\n vesting in the Central Government, as Rule\n 28 only provided for vesting in the Central\n Government the “Goods” confiscated by the\n Central Excise Authorities under the\nExcise\n Act, 1944\n. In support of the abovementioned submissions, Mr. Dhruv Mehta relies upon a judgment of the Gujarat\n\nHigh Court, in the matter of\nKotak Mahindra Bank\n\nLtd. Vs. District Magistrate\n[2010 SCC online\n\nGujarat 10656].",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P015_C01",
+      "text": "14. With respect to the first issue, the Senior Counsel for\n\n the Appellant concluded his submission by stating that\n\n the Commissioner had no power, authority or\n\n jurisdiction to invoke the provisions contained in Rule\n\n 173Q(2) of the Central Excise Rules, which stood\n\n omitted from the Statue book w.e.f. 12.05.2000, much\n\n prior to the passing of the orders dated 26.03.2007\n\n and 29.03.2007.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P016_C01",
+      "text": "15. The second issue raised by the learned Senior Counsel\n\n for the Appellant is “Whether in the absence of any\n\n provisions providing for First Charge in relation to\n\n Central Excise dues in the\nCentral Excise Act, 1944\n, the\n\n dues of the Excise department would have priority over\n\n the dues of the Secured Creditors or not?” It has been\n\n contended that prior to insertion of Section 11E in the\nCentral Excise Act, 1944\nw.e.f. 08.04.2011, there was\n\n no provision in the Act of 1944 inter alia, providing for\n\n First Charge on the property of the Assessee or any\n\n person under the Act of 1944. Therefore, in the event\n\n like the present case, where the land, building, plant\n\nmachinery, etc. had been mortgaged/hypothecated in\n\n favour of the secured creditor, having regard to the\n\n provisions contained in\nsection 2(zc)\nto (zf) of\nSARFAESI Act, 2002\n, read with provisions contained in\nSection 13\nof the SARFAESI Act, 2002, the secured\n\n creditor will have a First Charge on the Secured Assets.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P017_C01",
+      "text": "16. The learned Senior Counsel has further submitted that\nsection 35\nof the SARFAESI Act, 2002 inter alia,\n\n provides that the provisions of the said Act,\n\n notwithstanding anything inconsistent therewith\n\n contained in any other law for the time being in force\n\n or any instrument having effect by virtue of any such\n\n law, the provisions of the\nSARFAESI Act, 2002\nshall\n\n have overriding effect on all other laws. It was further\n\n contended that even the provisions contained in\nsection 11E\nof the Central Excise Act, 1944, which has\n\n been inserted w.e.f. 08.04.2011, provides for First\n\n Charge on the property of the Assessee and is a non­\n\n obstante Clause. However, the provisions contained in\n\n Section 11E are subject to the provisions contained in\n\n the\nSARFAESI Act, 2002\n. Thus, the provisions of\n\nSARFAESI Act, 2002\n, even after insertion of Section\n\n 11E in the\nCentral Excise Act, 1944\nw.e.f. 08.04.2011,\n\n has overriding effect on the provisions of the Act of",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P018_C01",
+      "text": "17. In addition to the abovementioned submissions, the\n\n learned Senior Counsel for the Appellant has argued\n\n that it is well settled law\nlaid down by\nthis Court that\n\n the Crown debts (Unsecured) have no priority over the\n\n Secured dues of the Secured Creditors/ Pawnee/\n\n Bailee. In support of the above submission, reliance\n\n has been placed upon the following judgements:\ni.\nBank of Bihar vs State of Bihar\n[(1972) 3 SCC\n\n 196]\n ii.\nDena Bank vs Bhikhabhai Prabhu Dass Parikh &\n\n Anr.\n[(2000) 5 SCC 694]\n iii.\nCentral Bank of India Vs. Siriguppa Sugurs &\n\n Chemicals Ltd. & Ors.\n[(2007) 8 SCC 353]\n iv.\nUnion of India vs SICOM Ltd. & Anr.\n[(2009) 2\n\n SCC 121]\n v. Rana Girders Ltd. Vs Union of India & Ors.\n[(2012) 10 SCC 746]\n\nvi.\nSitani Textiles and Fabrics (Pvt.) Ltd. Vs.\n\n Assistant Collector of Customs & Central Excise\n[1998 SCC Online Andhra Pradesh 416]\n vii.\nUTI Bank Ltd. Vs. Dy. Commissioner Central\n\n Excise\n[2006 SCC Online Madras 1182 (Full\n\n Bench)]\n viii.\nKrishna Lifestyle Technologies Ltd. Vs. Union of\n\n India & Ors.\n[2008 SCC Online Bombay 137]",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [
+        "Bank of Bihar v State of Bihar",
+        "Dena Bank v Bhikhabhai Prabhu Dass Parikh &\n\n Anr",
+        "Union of India v SICOM Ltd. & Anr"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P019_C01",
+      "text": "18. Mr. Mehta has, thus, submitted that in view of the\n\n above submissions and decided cases, the Appellant\n\n bank, being a secured creditor under the provisions of\nSARFAESI Act, 2002\n, had First Charge on the secured\n\n Assets and is entitled to recover its secured dues, prior\n\n to the dues of the Excise Department. It has also been\n\n submitted that the intention of the Legislature, apart\n\n from the provisions contained in Section 11E in the\nCentral Excise Act, 1944\n[inserted w.e.f. 08.04.2011],\n\n is also evident from the subsequent provisions inserted\n\n in RDBA Act, 1993, by way of Section 31B [notified\n\n w.e.f. 01.09.2016] and insertion of Section 26E in the\nSARFAESI Act\n[w.e.f. 24.01.2020], that the Legislature\n\nhas always intended that the Banks and Financial\n\n Institutions will have priority to recover its secured\n\n dues from the Secured Assets prior to\n\n payment/recovery of the dues of Revenue/Taxes,\n\n Government dues.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P020_C01",
+      "text": "19. Per contra, Mr. K.M. Nataraj, learned Additional\n\n Solicitor General appearing for the respondent has\n\n contended that the appeal raises the following two\n\n questions of law:\n(A) Issue No. 1: Whether a confiscation order\n passed by Respondent No. 2 in respect of the\n land, building, plant and machinery of the\n Respondent No. 4 (RIL) can be defeated by a\n security interest created by the said\n Respondent No. 4 (RIL) in favour of the\n Appellants and other banks, almost 8 years\n after the confiscation proceedings (under Rule\n 173Q(2) of the Central Excise Rules, 1944) had\n been initiated by the respondent No. 2 against\n RIL?",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P020_C02",
+      "text": "(B) Issue No. 2: Whether the Proceedings initiated\n by the Respondent no.2, Commissioner Custom\n & Central Excise under rule 173Q(2) of the\n Central Excise Rules, 1944, prior to the\n omission of the said Rule from the Statute Book\n are not saved on account of\nSection 38A(c)\nand\n38A(e)\nof the Central Excise Act, 1944 and\n consequently, Whether the Commissioner was\n\nnot justified in passing orders of confiscation\n dated 26.03.2007 and 29.03.2007, although on\n such date, the said Rule 173Q(2) was omitted\n and the 1944 rules were replaced with the\n Central Excise Rules 2001 subsequently.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P021_C01",
+      "text": "20. The learned Additional Solicitor General submitted that\n\n the first issue raised by the Appellant was never raised\n\n by the Appellant either before the Tribunal or in the\n\n Appeal before this Court and has been raised for the\n\n first time in this Appeal.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P022_C01",
+      "text": "21. With respect to the second issue raised by the\n\n Appellant, it has been argued by the Learned ASG that\n\n this question, as framed and answered by the\n\n Appellant, is entirely alien to the dispute at hand. The\n\n present dispute is not at all one of priority of charges\n\n or debts. On the other hand, what was challenged\n\n before the High Court was the order of confiscation,\n\n and the relevant question for consideration of this\n\n Court is whether a confiscation order passed by the\n\n Central Excise Authorities in respect of the land,\n\n building, plant and machinery of RIL can be defeated\n\n by a security interest created by RIL in favour of the\n\nAppellant and other banks, almost 8 years after the\n\n confiscation proceedings (under Rule 173Q(2) of the\n\n Central Excise Rules, 1944) had been initiated by the\n\n respondent No. 2 against RIL?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P023_C01",
+      "text": "22. Mr. K.M. Nataraj, ASG, has contended that the\n\n proceedings under Rule 173Q(2) of the 1944 Rules\n\n commenced by show cause notice dated 31.12.1996. Notwithstanding the omission of Section 173Q(2) from\n\n the 1944 Rules vide notification dated 12.05.2000, the\n\n respondent No. 3 was entitled to continue proceedings\n\n on account of Section 38A(c) and\nSection 38A(e)\nof the\n\n Central Excise Act, 1944. The respondent No. 2 was\n\n therefore entitled to pass orders dated 26.03.2007 and\n\n 29.03.2007 in exercise of his powers under the\n\n repealed Rule 173Q(2) of the 1944 Rules, even though\n\n as on the date of the said orders, the 1944 Rules had\n\n been replaced. In support of the same he submitted\n\n that it is not in dispute that the confiscation\n\n proceedings against RIL were initiated in 1996 i.e.\n\n much before the repeal of the 1944 Rules and although\n\n the order initially passed in those proceedings was set\n\naside by the CEGAT on account of the violation of the\n\n principles of natural justice, it is evident from the\n\n remand order itself that the proceedings (post remand)\n\n were a continuation of what had been initiated vide\n\n show cause notice dated 31.12.1996.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P023_C02",
+      "text": "To buttress this\n\n submission, reliance has been placed upon the\n\n decision rendered in the case of\nNagarjuna\n\n Construction Company Ltd. Vs. Government of\n\n Andhra Pradesh\n(2008) 16 SCC 276, wherein it is\n\n held that when an order is stuck down as invalid,\n\n being in violation of principles of natural justice, all\n\n that is done is vacation of the order assailed by virtue\n\n of its inherent defect, but the proceedings are not\n\n terminated. While doing so, this court relied upon\nCanara Bank vs Debasis Das\n(2003) 4 SCC 557).",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P024_C01",
+      "text": "23. It was thus urged, that once it is established that the\n\n confiscation proceedings under Rule 173Q started\n\n much prior to the omission of the said Rule from the\n\n Statute, the question for consideration would be\n\n whether the proceedings against RIL could be\n\ncontinued under a provision which no longer existed\n\n on the Statute. Mr. K.M. Nataraj, ASG has submitted\n\n in this context that\nsection 38A\nof the Central Excise\n\n Act, 1944, provides, inter alia, that even when a Rule is\n\n repealed, amended or superseded, unless a different\n\n intention appears, such repeal would not affect any\n\n right or liability acquired or accrued or affect any\n\n investigation, legal proceeding or remedy in respect of\n\n any such right or liability.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P025_C01",
+      "text": "24. In context of the application of\nsection 6\nof the General\n\n Clauses Act, 1897, learned ASG relied upon decisions\n\n of this Court in the cases of\nGammon India vs\n\n Special Chief Secretary\n[(2006) 3 SCC 354];\n\n Ambalal Sarabhai Enterprises Ltd. Vs Amritlal\n\n [(2001) 8 SCC 397];\nBrihan Maharashtra Sugar\n\n Syndicate Ltd. Vs Janarand Ramachandra\n\n Kulkarni\n(1960 3 SCR 85) and contended that\n\n although Rule 173Q(2) was initially omitted from the\n\n 1944 Rules and subsequently the 1944 Rules were\n\n repealed and were substituted by the 2001 Rules,\n\nthere was nothing expressly stated in the new Rules\n\n which manifested any intention to destroy the\n\n liabilities which came into existence on account of the\n\n 1944 Rules or which manifested any intention to\n\n nullify any investigation that was pending in respect of\n\n such accrued liability.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P025_C02",
+      "text": "Learned ASG thus submitted,\n\n that\nSection 38A(c)\nand\n38A(e)\nof the Central Excise\n\n Act would apply with full force to save the proceedings\n\n which had already been initiated under Rule 173Q(2)\n\n of the 1944 Rules, as\nSection 38A(c)\nof the Act saves\n\n the rights and liabilities which were not only acquired\n\n but also accrued as on the date of the amendment or\n\n repeal of a provision, and\nSection 38A(e)\nof the Act\n\n saves investigations that had commenced into such\n\n rights and liabilities.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P026_C01",
+      "text": "25. Mr. Natraj, learned ASG has further submitted that the\n\n second issue raised by the Appellant (regarding the\n\n priority of the dues of the secured creditor over that of\n\n crown debts or government debts) does not arise at all\n\n in the facts of the present case, since the confiscation\n\n order by the Respondent No. 2 is not merely an order\n\nfor recovery of dues but instead is in the nature of a\n\n penal order to punish the wrongdoer i.e. RIL. This, is\n\n evident from the fact that even under the 1944 Rules,\n\n confiscation is provided for under Rule 173Q whereas\n\n mere recovery of dues is provided for under\nsection 11\nof the Central Excise Act, 1944.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P027_C01",
+      "text": "26. It is contended by Mr. K.M. Nataraj, ASG, that in the\n\n present case, the confiscation proceedings were\n\n initiated almost 9 years prior to the charge being\n\n created in respect of the very same properties. At the\n\n time of creation of security interest, it was for the\n\n Appellant bank to be aware of the existence of the\n\n confiscation proceedings. It is further submitted that a\n\n charge or security interest created on a property\n\n cannot defeat or affect confiscation proceedings\n\n initiated by a statutory body in any manner.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P028_C01",
+      "text": "27. Mr. Natraj, learned ASG also contended that the\n\n decisions relied upon by the Appellant are\n\n distinguishable on facts, since those cases deal with\n\n the question of priority of a secured creditor over the\n\n Crown’s debts and does not even touch on the issue of\n\nconfiscation proceedings with respect to the interest of\n\n a secured creditor.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P029_C01",
+      "text": "28. It has been submitted that a similar question did arise\n\n in the case of\nBank of Bihar vs State of Bihar\n[(1972) 3 SCC 196], where a question was as to\n\n whether a valid seizure can defeat the right of a\n\n secured creditor. In that case, this Court did not\n\n interfere with the seizure but only held that after the\n\n goods had been seized by the government, the secured\n\n creditors may still retain his right to satisfy his debt.\n\n This principle finds reflection in\nSection 13(4)(d)\nof the\n\n SARFAESI Act. It has, thus, been submitted that, at\n\n best, the Appellant may resort to the mechanism\n\n prescribed under\nsection 13(4)(d)\nof the SARFAESI Act\n\n to recover the amounts due to it, if and when the\n\n properties are sold by the respondent authorities.\n\n Therefore, assuming the existence of any right of\n\n recovery from Respondents, the Appellant may, at best,\n\n be entitled to issue a notice as envisaged in\nSection\n\n 13(4)(d)\nof the SARFAESI Act and then take the further\n\n steps mentioned therein.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [
+        "Bank of Bihar v State of Bihar"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P030_C01",
+      "text": "29. Lastly, Mr. K.M. Nataraj, ASG has submitted that the\n\n validity of the confiscation order cannot be called into\n\n question merely on account of the Appellant being a\n\n secured creditor. The question as to whether the\n\n amounts due to the Customs Department would have\n\n priority over the debts due to the secured creditor does\n\n not arise in this case, since what is challenged is the\n\n confiscation order and nothing else. A confiscation\n\n order, cannot be quashed merely because a security\n\n interest is created in respect of the very same property.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C01",
+      "text": "30. For ready reference, the relevant provisions of the\n\n concerned Act and Rules are extracted below:­\n(Central Excise Act, 1944\n)\n “\nSection 11\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C02",
+      "text": "Recovery of sums due to\n Government. ­ In respect of duty and any\n other sums of any kind payable to the\n Central Government under any of the\n provisions of this Act or of the rules made\n thereunder including the amount required to\n be paid to the credit of the Central\n Government under Section 11D, the officer\n empowered by the Central Board of Excise\n and Customs constituted under the\nCentral\n Boards of Revenue Act, 1963\n(54 of 1963) to\n levy such duty or require the payment of\n such sums [may deduct or require any other\n Central Excise officer or a proper officer\n\nreferred to in\nsection 142\nof the customs\nact, 1962 (52 of 1962) to deduct the amount\nso payable from any money owing to the\nperson from whom such sums may be\nrecoverable or due which may be in his\nhands or under his disposal or control or\nmay be in the hands or under disposal or\ncontrol of such other officer, or may recover\nthe amount] by attachment and sale of\nexcisable goods belonging to such person;\nand if the amount payable is not so\nrecovered, he may prepare a certificate\nsigned by him specifying the amount due\nfrom the person liable to pay the same and\nsend it to the Collector of the district in\nwhich such",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C03",
+      "text": "person resides or conducts his\nbusiness and the said Collector, on receipt\nof such certificate, shall proceed to recover\nfrom the said person the amount specified\ntherein as if it were an arrear of land\nrevenue.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C04",
+      "text": "Provided that where the person (hereinafter\nreferred to as predecessor) from whom the\nduty or any other sums of any kind, as\nspecified in this section, is recoverable or\ndue, transfers or otherwise disposes of his\nbusiness or trade in whole or in part, or\neffects any change in the ownership\nthereof, in consequence of which he is\nsucceeded in such business or trade by any\nother person, all excisable goods, materials,\npreparations, plants, machineries, vessels,\nutensils, implements and articles in the\ncustody or possession of the person so\nsucceeding may also be attached and sold\nby such officer empowered by the Central\nBoard of Excise and Customs, after\nobtaining written approval from the\nPrincipal Commissioner of Central Excise or\n\nCommissioner of Central Excise, for the\npurposes of recovering such duty or other\nsums recoverable or due from such\npredecessor at the time of such transfer or\notherwise disposal or change.”\n\n“Section 38A.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C05",
+      "text": "Effect of amendments,\netc., of rules, notifications or orders. ­\nWhere any rule, notification or order made\nor issued under this Act or any notification\nor order issued under such rule, is\namended, repealed, superseded or\nrescinded, then, unless a different intention\nappears, such amendment, repeal,\nsupersession or rescinding shall not ­\na) revive anything not in force or existing at\nthe time at which the amendment, repeal,\nsupersession or rescinding takes effect; or\nb) affect the previous operation of any rule,\nnotification or order so amended, repealed,\nsuperseded or rescinded or anything duly\ndone or suffered thereunder; or\nc) affect any right, privilege, obligation or\nliability acquired, accrued or incurred under\nany rule, notification or order so amended,\nrepealed, superseded or rescinded; or\nd) affect any penalty, forfeiture or\npunishment incurred in respect of any\noffence committed under or in violation of\nany rule, notification or order so amended,\nrepealed, superseded or rescinded; or\ne) affect any investigation, legal proceeding\nor remedy in respect of any such right,\nprivilege, obligation, liability, penalty,\nforfeiture or punishment as aforesaid, and\nany such",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C06",
+      "text": "investigation, legal proceeding or\nremedy may be instituted, continued or\nenforced and any such penalty, forfeiture or\npunishment may be imposed as if the rule,\n\nnotification or order, as the case may be,\nhad not been amended, repealed,\nsuperseded or rescinded.”\n\n(Central Excise Act, 1944) w.e.f.\n08.04.2011\n“Section 11E.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C07",
+      "text": "Liability under Act to be\nfirst charge. ­\nNotwithstanding anything to the contrary\ncontained in any Central Act or State Act,\nany amount of duty, penalty, interest, or\nany other sum payable by an assessee or\nany other person under this Act or the rules\nmade thereunder shall, save as otherwise\nprovided in\nsection 529A\nof the Companies\nAct, 1956, (1 of 1956) the\nRecovery of Debts\nDue to Banks and the Financial Institutions\nAct, 1993\n(51 of 1993) and the\nSecuritisation and Reconstruction of\nFinancial Assets and the Enforcement of\nSecurity Interest Act, 2002\n, (54 of 2002) be\nthe first charge on the property of the\nassessee or the person, as the case may\nbe.”\n\nRule 173 Q of Central Excise Rules.\n1944 Prior to 12.5.2000\n“Rule 173 Q.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C08",
+      "text": "Confiscation and Penalty­\n(1) If any manufacturer, producer or\nlicensee of a warehouse­\n(a) Removes any excisable goods in\ncontravention of any of the provisions of\nthese rules; or\n(b) Does not account for any excisable\ngoods manufactured, produced or stored by\nhim; or\n(c) Engages in the manufacture,\nproduction or storage of any excisable\n\ngoods without having applied for the license\nrequired under section 6 of the Act; or\n(d) Contravenes any of the provisions of\nthese rules with intent to evade payment of\nduty,\nThen all such goods shall be liable to\nconfiscation and the manufacturer producer\nor licensee of the warehouse, as the case\nmay be shall be liable to a penalty not\nexceeding three times the value of the\nexcisable goods in respect of which any\ncontravention of the nature referred to in\nclause (a) or clause (b) or clause (c) or\nclause (d) has been committed or five\nthousand rupees, whichever is greater.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C09",
+      "text": "(2) Where­\n(a) In case of a contravention of the nature\nreferred to in clause (a) or clause (b) or\nclause (c) or clause (d) of sub rule (1), the\nduty leviable on the excisable goods\nreferred to in that sub rule exceeds one lakh\nrupees, or\n(b) Any manufacturer, producer or licensee\nof a warehouse, whose excisable goods\nwere confiscated under sub rule (1) and\nupon whom penalty was imposed under\nthat sub rule, contravenes against any of\nthe provisions of clause (a) or clause (b) or\nclause (c) or clause (d) of sub rule (1) and\nthe duty leviable on the excisable goods in\nrespect of the contravention for the second\nor any subsequent occasion exceeds ten\nthousand rupees.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C10",
+      "text": "Then, in a case falling under clause (a) of\nthis sub rule or in a case falling under\nclause (b) thereof (whether the\ncontravention under that clause has been\n\ncommitted for the second or any subsequent\noccasion), the officer adjudging the case\nunder\nsection 33\nof the Act may, in addition\nto the award of the confiscation and penalty\nunder the sub rule (1), direct, for reasons to\nbe recorded in writing, the confiscation of\nany or all of the following belonging to such\nmanufacturer, producer or licensee of a\nwarehouse, namely:­\n(i) any land, building, plant, machinery,\nmaterials, conveyance, animal or any other\nthing used in connection with the\nmanufacture, production, storage, removal\nor disposal of such goods, or\n(ii) any other excisable goods on such\nland, or in such building or produced or\nmanufactured with such plant, machinery,\nmaterials or thing]”\n\n(Central Excise Rules, 1944)\n“Rule 211. On confiscation, property to\nvest in Central Government: ­\n(1) When anything is confiscated under\nthese rules, such things shall thereupon\nvest in\" Central Government.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C11",
+      "text": "(2) The officer adjudging confiscation shall\ntake and hold possession of the things\nconfiscated, and every Officer of Police, on\nthe requisition of such officer, shall assist\nhim in taking and holding such\npossession.”\n\nRule 28 of Central Excise Rules, 2001\n[Issued in supersession of Central\nExcise Rules, 1944]\n“Rule 28. Confiscated property to vest\nin Central Government: ­\n\nWhen any goods are confiscated under\nthese rules, such things shall thereupon\nvest in the Central Government. The Central Excise Officer adjudging\nconfiscation shall take and hold possession\nof the things confiscated, and every officer\nof police, on the requisition of such Central\nExcise Officer, shall assist him in taking\nand holding such possession.”\n\nRule 28 of Central Excise Rules, 2002\n[Issued in supersession of Central\nExcise Rules, 2001]\n“Rule 28. Confiscated property to vest\nin Central Government: ­\nWhen any goods are confiscated under\nthese rules, such things shall thereupon\nvest in the Central Government.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C12",
+      "text": "The Central Excise Officer adjudging\nconfiscation shall take and hold possession\nof the things confiscated, and every officer\nof police, on the requisition of such Central\nExcise Officer, shall assist him in taking\nand holding such possession.”\n\nRule 28 of Central Excise Rules, 2017\n[Issued in supersession of Central\nExcise Rules,2002]\n“RULE 28.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C13",
+      "text": "Confiscation and penalty. —\n(1) Subject to the provisions of\nsection 11\nAC of the Act, if any producer,\nmanufacturer, registered person of a\nwarehouse, or an importer who issues an\ninvoice on which CENVAT credit can be\ntaken, or a registered dealer,\n(a) removes any excisable goods in\ncontravention of any of the provisions of\nthese rules or the notifications issued under\nthese rules; or\n\n(b) does not account for any excisable goods\nproduced or manufactured or stored by him;\n(c) engages in the manufacture, production\nor storage of any excisable goods without\nhaving applied for the registration certificate\nrequired under section 6 of the Act; or\n(d) contravenes any of the provisions of\nthese rules or the notifications issued under\nthese rules with intent to evade payment of\nduty,\nthen, all such goods shall be liable to\nconfiscation and the producer or\nmanufacturer or registered person of the\nwarehouse, or an importer who issues an\ninvoice on which CENVAT credit can be\ntaken, or a registered dealer, as the case\nmay be, shall be liable to a penalty not\nexceeding the duty on the excisable goods\nin respect of which any contravention of the\nnature referred to in clause (a) or clause",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C14",
+      "text": "(b)\nor clause (c) or clause (d) has been\ncommitted, or five thousand rupees,\nwhichever is greater.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C15",
+      "text": "(2) An order under sub­rule (1) shall be\nissued by the Central Excise Officer,\nfollowing the principles of natural justice.”\nSARFAESI Act, 2002\nSection 2(zc)\n2(zf)\n“(zc) “secured asset” means the property\non which security interest is created;\n(zd) “secured creditor” means—\n(i) any bank or financial institution or any\nconsortium or group of banks or financial\ninstitutions holding any right, title or\n\ninterest upon any tangible asset or\nintangible asset as specified in clause (l);\n(ii) debenture trustee appointed by any\nbank or financial institution; or\n(iii) an asset reconstruction company\nwhether acting as such or managing a trust\nset up by\nsuch asset reconstruction company for the\nsecuritisation or reconstruction, as the case\nmay be; or\n(iv) debenture trustee registered with the\nBoard appointed by any company for\nsecured debt securities; or\n(v) any other trustee holding securities on\nbehalf of a bank or financial institution,\nin whose favour security interest is created\nby any borrower for due repayment of any\nfinancial\nassistance.]\n(ze) “secured debt” means a debt which is\nsecured by any security interest;\n(zf) “security interest” means right, title\nor interest of any kind,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C16",
+      "text": "other than those\nspecified in\nsection 31\n, upon property\ncreated in favour of any secured creditor\nand includes—\n(i) any mortgage, charge, hypothecation,\nassignment or any right, title or interest of\nany kind, on tangible asset, retained by the\nsecured creditor as an owner of the\nproperty, given on hire or financial lease or\nconditional sale or under any other contract\nwhich secures the obligation to pay any\nunpaid portion of the purchase price of the\nasset or an obligation incurred or credit\nprovided to enable the borrower to acquire\nthe tangible asset; or\n\n(ii) such right, title or interest in any\nintangible asset or assignment or licence of\nsuch intangible asset which secures the\nobligation to pay any unpaid portion of the\npurchase price of the intangible asset or the\nobligation incurred or any credit provided to\nenable the borrower to acquire the\nintangible asset or licence of intangible\nasset.”\nSection 13\n“13.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C17",
+      "text": "Enforcement of security interest.—\n(1) Notwithstanding anything contained in\nsection 69\nsection 69A\nof the Transfer of\nProperty Act, 1882 (4 of 1882), any security\ninterest created in favour of any secured\ncreditor may be enforced, without the\nintervention of the court or tribunal, by such\ncreditor in accordance with the provisions of\nthis Act. (2) Where any borrower, who is under a\nliability to a secured creditor under a\nsecurity agreement, makes any default in\nrepayment of secured debt or any\ninstalment thereof, and his account in\nrespect of such debt is classified by the\nsecured creditor as non­performing asset,\nthen, the secured creditor may require the\nborrower by notice in writing to discharge in\nfull his liabilities to the secured creditor\nwithin sixty days from the date of notice\nfailing which the secured creditor shall be\nentitled to exercise all or any of the rights\nunder sub­section (4). (3) The notice referred to in sub­section (2)\nshall give details of the amount payable by\nthe borrower and the secured assets\nintended to be enforced by the secured\n\ncreditor in the event of non­payment of\nsecured debts by the borrower.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C18",
+      "text": "(4) In case the borrower fails to discharge\nhis liability in full within the period\nspecified in sub­section (2), the secured\ncreditor may take recourse to one or more of\nthe following measures to recover his\nsecured debt, namely:—\n(a) take possession of the secured\n assets of the borrower including the\n right to transfer by way of lease,\n assignment or sale for realising the\n secured asset;\n[(b) take over the management of\n the business of the borrower including\n the right to transfer by way of lease,\n assignment or sale for realising the\n secured asset:\nProvided that the right to transfer\n by way of lease, assignment or sale\n shall be exercised only where the\n substantial part of the business of the\n borrower is held as security for the\n debt:\nProvided further that where the\n management of whole of the business\n or part of the business is severable, the\n secured creditor shall take over the\n management of such business of the\n borrower which is relatable to the\n security for the debt;\n(c) appoint any person (hereafter\n referred to as the manager), to manage\n the secured assets the possession of\n which has been taken over by the\n secured creditor;\n(d) require at any time by",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 18
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C19",
+      "text": "notice in\n writing, any person who has acquired\n any of the secured assets from the\n borrower and from whom any money is\n\ndue or may become due to the\n borrower, to pay the secured creditor,\n so much of the money as is sufficient to\n pay the secured debt.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 19
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C20",
+      "text": "(5) Any payment made by any person\nreferred to in clause (d) of sub­section (4) to\nthe secured creditor shall give such person\na valid discharge as if he has made\npayment to the borrower. (6) Any transfer of secured asset after\ntaking possession thereof or take over of\nmanagement under sub­section (4), by the\nsecured creditor or by the manager on\nbehalf of the secured creditor shall vest in\nthe transferee all rights in, or in relation to,\nthe secured asset transferred as if the\ntransfer had been made by the owner of\nsuch secured asset.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 20
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P031_C21",
+      "text": "(7) Where any action has been taken\nagainst a borrower under the provisions of\nsub­section (4), all costs, charges and\nexpenses which, in the opinion of the\nsecured creditor, have been properly\nincurred by him or any expenses incidental\nthereto, shall be recoverable from the\nborrower and the money which is received\nby the secured creditor shall, in the absence\nof any contract to the contrary, be held by\nhim in trust, to be applied, firstly, in\npayment of such costs, charges and\nexpenses and secondly, in discharge of the\ndues of the secured creditor and the residue\nof the money so received shall be paid to\nthe person entitled thereto in accordance\nwith his rights and interests.\n8 ……………………..\n9 ……………………..\n10 ……………………\n11 ……………………\n12 ……………………\n\n13 ……………………\nSARFAESI Act, 2002\nSection 35\n“35. The provisions of this Act to\n override other laws.—The provisions of\n this Act shall have effect, notwithstanding\n anything inconsistent therewith contained\n in any other law for the time being in force\n or any instrument having effect by virtue of\n any such law.” (emphasis\n supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 21
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P032_C01",
+      "text": "31. We have heard learned counsel for both the parties at\n\n length and have carefully perused the record.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P033_C01",
+      "text": "32. The Commissioner Customs and Central Excise,\n\n Ghaziabad vide order dt. 26.03.2007, ordered the\n\n confiscation of all the land, building, plant, machinery\n\n etc. of RIL. This confiscation order was passed under\n\n rule 173Q(2) of the Central Excise Rules, 1944.\n\n However, in the impugned order, the High Court has\n\n not considered that on the date of the confiscation\n\n orders i.e. 26.03.2007 and 29.03.2007, Rule 173Q(2)\n\n stood omitted from the statute books vide government\n\n notification dated 12.05.2000.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P034_C01",
+      "text": "33. We do not find merit in the submission of the learned\n\n Counsel for the Respondent that notwithstanding the\n\n omission of Section 173Q(2) from the 1944 Rules vide\n\n notification dated 12.05.2000, the Respondent No. 3\n\n was entitled to continue the proceedings on account of\n\n Section 38A(c) and\nSection 38A(e)\nof the Central Excise\n\n Act, 1944, read along with\nSection 6\nof the General\n\n Clauses Act, 1897.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P035_C01",
+      "text": "34. Constitution bench of this Court in\nKolhapur\n\n Canesugar Works Ltd. Vs Union of India & Ors.\n[(2000) 2 SCC 536] has held that:\n“11. In the factual backdrop of the case\n discussed earlier the question that arises\n for determination is whether after omission\n of the old Rule 10 and 10­A and its\n substitution by the new Rule 10 by the\n Notification No 267/77 dated 6.8.77 the\n proceedings initiated by the notice dated\n 27.4.77 could be continued in law. If the\n question is answered in the affirmative then\n the order dated 15/27th October, 1977 of\n the Asstt. Collector of Central Excise\n confirming the demand for re­credit of the\n amount of Rs. 61,41,930 cannot be\n interfered with. On the other hand, if the\n question is answered in the negative then\n the said order is to be taken as non­est.\n .\n.\n\n.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P036_C01",
+      "text": "34. (...) It is not correct to say that in\nconsidering the question of maintainability\nof pending proceedings initiated under a\nparticular provision of the rule after the said\nprovision was omitted the Court is not to\nlook for a provision in the newly added rule\nfor continuing the pending proceedings. It is\nalso not correct to say that the test is\nwhether there is any provision in the rules\nto the effect that pending proceedings will\nlapse on omission of the rule under which\nthe notice was issued. It is our considered\nview that in such a case the Court is to look\nto the provisions in the rule which has been\nintroduced after omission of the previous\nrule to determine whether a pending\nproceeding will continue or lapse. If there is\na provision therein that pending\nproceedings shall continue and be disposed\nof under the old rule as if the rule has not\nbeen deleted or omitted then such a\nproceeding will continue. If the case is\ncovered by\nSection 6\nof the General Clauses\nAct or there is a pari­materia provision in\nthe statute under which the rule has been\nframed\nin that case\nalso the pending\nproceeding will not be affected by omission\nof the rule.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P036_C02",
+      "text": "In the absence of any such\nprovision in the statute or in the rule the\npending proceedings would lapse on the\nrule under which the notice was issued or\nproceeding was initiated being\ndeleted/omitted. It is relevant to note here\nthat in the present case the question of\ndivesting the Revenue of a vested right does\nnot arise since no order directing refund of\nthe amount had been passed on the date\nwhen Rule 10 was omitted.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P037_C01",
+      "text": "35. We, therefore, hold that the decisions of\nthe Full Bench of the Gujarat High court\nand the Division Bench of the Karnataka\nHigh Court noted above were not correctly\ndecided. The said decisions are overruled.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P038_C01",
+      "text": "36. In the case in hand, Rule 10 or Rule 10­\nA is neither a \"Central Act\" nor a\n\"Regulation\" as defined in the Act. It may be\na Rule under\nSection 3(51)\nof the Act.\nSection 6\nis applicable where any Central\nAct or Regulation made after\ncommencement of the\nGeneral Clauses Act\nrepeals any enactment. It is not applicable\nin the case of omission of a \"Rule\".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P039_C01",
+      "text": "37. The position is well known that at\ncommon law, the normal effect of repealing\na statute or deleting a provision is to\nobliterate it from the statute book as\ncompletely as if it had never been passed,\nand the statute must be considered as a\nlaw that never existed. To this rule, an\nexception is engrafted by the provisions\nSection 6(1)\n. If a provision of a statute is\nunconditionally omitted without a saving\nclause in favour of pending proceedings, all\nactions must stop where the omission finds\nthem, and if final relief has not been\ngranted before the omission goes into effect,\nit cannot be granted afterwards. Savings of\nthe nature contained in\nSection 6\nor in\nspecial Acts may modify the position. Thus,\nthe operation of repeal or deletion as to the\nfuture and the past largely depends on the\nsavings applicable.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P039_C02",
+      "text": "In a case where a\nparticular provision in a statute is omitted\nand in its place another provision dealing\nwith the same contingency is introduced\nwithout a saving clause in favour of\n\npending proceedings then it can be\n reasonably inferred that the intention of the\n legislature is that the pending proceeding\n shall not continue but a fresh proceeding for\n the same purpose may be initiated under\n the new provision.”\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P040_C01",
+      "text": "35. The Gujarat High Court in\nKotak Mahindra Bank\n\n Ltd. Vs. District Magistrate\n[2010 SCC online\n\n Gujarat 10656] has held that from a perusal of Rule\n\n 28, it is clear that the Legislature intended to\n\n confiscate only “goods” which is distinct from\n\n immovable property like land, building, plant,\n\n machinery etc. We quote, with approval, the reason for\n\n which, the High Court held that “The competent\n\n authority of Excise and Customs Department, including\n\n the Commissioner of Central Excise and Customs,\n\n Vadodara­II had no jurisdiction to confiscate the land\n\n under Rule 173Q (2), the said rule having been omitted\n\n and substituted by Rule 28, by the time the Order dated\n\n 25.02.2006 was passed. The order being without\n\n jurisdiction is nullity in the eye of law and thereby the\n\nauthorities cannot derive advantage of the order dated\n\n 25.02.2006.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P041_C01",
+      "text": "36. In the case at hand, the proceedings initiated under\n\n the erstwhile Rule 173Q(2) would come to an end on\n\n the repeal of the said Rule 173Q(2) of the Central\n\n Excise Rules, 1944. Respondent Counsel’s submission\n\n that the proceedings would be saved on account of\nSection 38A(c)\nand\n38A(e)\nof the Central Excise Act,\n\n 1944 and\nSection 6\nof the General Clauses Act, 1897,\n\n is misplaced and lacks statutory backing. Firstly, as\n\n has been held by a Constitution Bench of this Court in\nKolhapur Canesugar Works Ltd. Vs Union of India\n\n & Ors.\n[(2000) 2 SCC 536],\nSection 6\nof the General\n\n Clauses Act, 1897 is applicable where any Central Act\n\n or Regulation made after commencement of the\nGeneral Clauses Act\nrepeals any enactment. It is not\n\n applicable in the case of omission of a \"Rule\". Hence,\n\n the question of applicability of\nSection 6\nis decided in\n\n the negative. Secondly, on the issue of applicability of\n\n Section 38A(c) and 38A(e) of the Central Excise Act,\n\n1944, it is held that the Respondent would not be able\n\nto enjoy its protection because Section 38A(c) and\n\n38A(e) are attracted only when “unless a different\n\nintention appears”.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P041_C02",
+      "text": "In the present case, the legislature\n\nhas clarified its intent to not restore/revive the power\n\nof confiscation of any land, building, plant machinery\n\netc., after omission of the provisions contained in Rule\n\n173Q(2) w.e.f 12.05.2000. This intention of the\n\nlegislature can be drawn out from the fact that power\n\nto confiscate any land, building, plant, machinery etc.\n\nafter omission w.e.f. 12.05.2000 has not been\n\nintroduced in the subsequent Central Excise Rules,\n\n2001, Central Excise Rules, 2002 and Central Excise\n\nRules, 2017. Additionally, this intent is also fortified by\n\nthe fact that Rule 211 of the Central Excise Rules,\n\n1944, inter alia, provided that “anything” confiscated\n\nunder the Rules shall thereupon vest in Central\n\nGovernment, whereas Rule 28 of the Central Excise\n\nRules of 2001, 2002 and 2017, which are pari materia\n\nto the earlier Rule 211 of the 1944 Rules, instead of\n\nthe word “anything”, provided for vesting of confiscated\n\n“Goods” in the Central Government.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P041_C03",
+      "text": "Lastly, after\n\nomission of Rule 173Q(2) of 1944 Rules w.e.f.\n\n12.05.2000 and after supersession of Rule 211 of 1944\n\nRules in the year 2001, the newly enacted Rule 28 of\n\nthe Rules of 2001, Rule 28 of the Rules of 2002 and\n\nRule 28 of the Rules of 2017, did not provide for\n\nconfiscation of any land, building, plant, machinery\n\netc. and their consequent vesting in the Central\n\nGovernment, as Rule 28 only provided for vesting in\n\nthe Central Government of the “Goods” confiscated by\n\nthe Central Excise Authorities under the\nExcise Act,\n\n. This derivation of the legislature’s intent, in\n\nconjunction with the ratio laid in the case of\nKotak\n\nMahindra Bank\n(supra) makes it apparent that the\n\nconfiscation proceedings were not saved by these\n\nmentioned provisions and that the final confiscation\n\norder dated 26.03.2007 and 29.03.2007 were passed\n\nwithout jurisdiction by the Commissioner of Central\n\nExcise and Customs.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P042_C01",
+      "text": "37. Secondly, coming to the issue of priority of secured\n\n creditor’s debt over that of the Excise Department, the\n\n High Court in the impugned judgment has held that\n\n “In view of the matter, the question of first charge or\n\n second charge over the properties would not arise.” In\n\n this context, we are of the opinion that the High Court\n\n has misinterpreted the issue to state that the question\n\n of first charge or second charge over the properties,\n\n would not arise.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P043_C01",
+      "text": "38. A Full Bench of the Madras High Court in the case of\nUTI Bank Ltd. Vs. Dy. Commissioner Central Excise\n[2006 SCC Online Madras 1182], while dealing with\n\n a similar issue, has held that:\n“25. In the case on hand, the petitioner\n Bank which took possession of the property\n under\nSection 13\nof the SARFAESI Act,\n being a special enactment, undoubtedly is a\n secured creditor. We have already referred\n to the provisions of the Central Excise Act\n and the Customs Act. They envisage\n procedures to be followed and how the\n amounts due to the Departments are to be\n recovered. There is no specific provision\n either in the\nCentral Excise Act\nor the\nCustoms Act\n, claiming \"first charge\" as\n provided in other enactments, which we\n have pointed out in earlier paragraphs.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P044_C01",
+      "text": "26. In the light of the above discussion, we\n conclude,\n “(i) Generally, the dues to Government, i.e.,\n tax, duties, etc. (Crown's debts) get priority\n over ordinary debts. (ii) Only when there is a specific provision in\n the statute claiming \"first charge\" over the\n property, the Crown's debt is entitled to\n have priority over the claim of others. (iii) Since there is no specific provision\n claiming \"first charge\" in the Central Excise\n Act and the Customs Act, the claim of the\n Central Excise Department cannot have\n precedence over the claim of secured\n creditor, viz., the petitioner Bank.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P044_C02",
+      "text": "(iv) In the absence of such specific provision\n in the\nCentral Excise Act\nas well as in\nCustoms Act\n, we hold that the claim of\n secured creditor will prevail over Crown's\n debts.\"\nIn view of our above conclusion, the\n petitioner UTI Bank, being a secured\n creditor is entitled to have preference over\n the claim of the Deputy Commissioner of\n Central Excise, first respondent herein.”\n (emphasis supplied)\n\nThis Court, while dismissing the Civil Appeal No.3627\n\nof 2007 filed against the judgment of the Full Bench,\n\nvide order dated 12.09.2009 held as under:\n“Having gone through the provisions of the\n Securitization Act, 2002, in light of the\n\njudgment of the Division Bench of this court\n in the case of\nUnion of India vs Sicom Ltd. &\n Anr.\n, reported in 2009 (1) SCALE 10, we\n find that under the provisions of the said\n 2002 Act, the appellants did not have any\n statutory first charge over the property\n secured by the respondent bank. In the\n circumstances, the Civil Appeal is\n dismissed with no order as to costs”\n (emphasis supplied)\n\n Hence the reasoning given by the High Court stands\n\n strong and has been affirmed by this Court.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P045_C01",
+      "text": "39. This Court, in\nDena Bank vs Bhikhabhai Prabhu\n\n Dass Parikh & Anr.\n[(2000) 5 SCC 694], wherein the\n\n question raised was whether the recovery of sales tax\n\n dues (amounting to Crown debt) shall have precedence\n\n over the right of the bank to proceed against the\n\n property of the borrowers mortgaged in favour of the\n\n bank, observed as under:\n“10. However, the Crowns preferential right\n of recovery of debts over other creditors is\n confined to ordinary or unsecured creditors.\n The common law of England or the\n principles of equity and good conscience (as\n applicable to India) do not accord the Crown\n a preferential right of recovery of its debts\n over a mortgagee or pledgee of goods or a\n Secured Creditor.” (emphasis\n supplied)",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [
+        "This Court, in\nDena Bank v Bhikhabhai Prabhu\n\n Dass Parikh & Anr"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P046_C01",
+      "text": "40. Further, in\nCentral Bank of India Vs. Siriguppa\n\n Sugars & Chemicals Ltd. & Ors.\n[(2007) 8 SCC\n\n 353], while adjudicating a similar matter, this Court\n\n has held as under:\n“18. Thus, going by the principles governing\n the matter, propounded by this Court there\n cannot be any doubt that the rights of the\n appellant­bank over the pawned sugar had\n precedence over the claims of the Cane\n Commissioner and that of the workmen. The High Court was, therefore, in error in\n passing an interim order to pay parts of the\n proceeds to the Cane Commissioner and to\n the Labour Commissioner for disbursal to\n the cane growers and to the employees. There is no dispute that the sugar was\n pledged with the appellant bank for\n securing a loan of the first respondent and\n the loan had not been repaid. The goods\n were forcibly taken possession of at the\n instance of the revenue recovery authority\n from the custody of the pawnee, the\n appellant­bank.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P046_C02",
+      "text": "In view of the fact that the\n goods were validly pawned to the appellant\n bank, the rights of the appellant­bank as\n pawnee cannot be affected by the orders of\n the Cane Commissioner or the demands\n made by him or the demands made on\n behalf of the workmen. Both the Cane\n Commissioner and the workmen in the\n absence of a liquidation, stand only as\n unsecured creditors and their rights cannot\n prevail over the rights of the pawnee of the\n goods.” (emphasis supplied)",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P047_C01",
+      "text": "41. The Bombay High Court in\nKrishna Lifestyle\n\n Technologies Ltd. Vs. Union of India & Ors.\n[2008\n\n SCC Online Bombay 137], wherein the issue for\n\n consideration was “whether tax dues recoverable under\n\n the provisions of\nThe Central Excise Act, 1944\nhave\n\n priority of claim over the claim of secured creditors\n\n under the provisions of the\nSecuritisation and\n\n Reconstruction of Financial Assets and Enforcement of\n\n Security Interest Act, 2002\n” held that:\n“Considering the language of\nSection 35\nand the decided case law, in our opinion it\n would be of no effect, as the provisions of\nSARFAESI Act\noverride the provisions of the\nCentral Sales Tax Act\nand as such the\n priority given to a secured creditor would\n override Crown dues or the State dues. In so far as the\nSARFAESI Act\nis concerned\n a Full Bench of the Madras High Court in\nUTI Bank Ltd. v. Deputy Commissioner of C. Excise\n, Chennai­II has examined the issue\n in depth.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P047_C02",
+      "text": "The Court was pleased to hold\n that tax dues under the Customs Act and\n Central Excise Act, do not have priority of\n claim over the dues of a secured creditor as\n there is no specific provision either in the\nCentral Excise Act\nor the\nCustoms Act\ngiving\n those dues first charge, and that the claims\n of the secured creditors will prevail over the\n\nclaims of the State. Considering the law\n declared by the Apex Court in the matter of\n priority of state debts as already discussed\n and the provision of\nSection 35\n SARFAESI Act we are in respectful\n agreement with the view taken by the\n Madras High Court.”\n (emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P048_C01",
+      "text": "42. An SLP (No. 12462/2008) against the above judgement\n\n of the Bombay High Court stands dismissed by this\n\n Court on 17.07.2009 by relying upon the judgement in\n\n the matter of\nUnion of India vs SICOM Ltd. & Anr. Reported\nin [(2009) 2 SCC 121], wherein the question\n\n involved was “Whether realization of the duty under\n\n the\nCentral Excise Act\nwill have priority over the\n\n secured debts in terms of the\nState Financial\n\n Corporation Act, 1951\n” and this Court held as under:\n“9. Generally, the rights of the crown to\n recover the debt would prevail over the right\n of a subject. Crown debt means the debts\n due to the State or the king; debts which a\n prerogative entitles the Crown to claim\n priority for before all other creditors. [See\n Advanced Law Lexicon by P. Ramanatha\n Aiyear (3rd Edn.) p. 1147]. Such creditors,\n however, must be held to mean unsecured\n creditors. Principle of Crown debt as such\n pertains to the common law principle. A\n common law which is a law within the\n\nmeaning of\nArticle 13\nof the Constitution is\n saved in terms of\nArticle 372\nthereof.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 13"
+      ],
+      "cited_cases": [
+        "Union of India v SICOM Ltd. & Anr. Reported\nin"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P048_C02",
+      "text": "Those\n principles of common law, thus, which were\n existing at the time of coming into force of\n the Constitution of India are saved by\n reason of the aforementioned provision. A\n debt which is secured or which by reason of\n the provisions of a statute becomes the first\n charge over the property having regard to\n the plain meaning of\nArticle 372\nof the\n Constitution of India must be held to prevail\n over the Crown debt which is an unsecured\n one. (emphasis\n supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 372"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P049_C01",
+      "text": "43. In view of the above, we are of the firm opinion that the\n\n arguments of the learned counsel for the Appellant, on\n\n the second issue, hold merit. Evidently, prior to\n\n insertion of Section 11E in the\nCentral Excise Act,\n\nw.e.f. 08.04.2011, there was no provision in the\n\n Act of 1944 inter alia, providing for First Charge on the\n\n property of the Assessee or any person under the Act of",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P050_C01",
+      "text": "1944. Therefore, in the event like in the present case,\n\n where the land, building, plant machinery, etc. have\n\n been mortgaged/hypothecated to a secured creditor,\n\n having regard to the provisions contained in\nsection\n\n 2(zc)\nto (zf) of\nSARFAESI Act, 2002\n, read with\n\n provisions contained in\nSection 13\nof the SARFAESI\n\nAct, 2002, the Secured Creditor will have a First\n\n Charge on the Secured Assets. Moreover,\nsection 35\n\n the SARFAESI Act, 2002 inter alia, provides that the\n\n provisions of the\nSARFAESI Act\n, shall have overriding\n\n effect on all other laws. It is further pertinent to note\n\n that even the provisions contained in\nSection 11E\n\n the Central Excise Act, 1944 are subject to the\n\n provisions contained in the\nSARFAESI Act, 2002\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P051_C01",
+      "text": "44. Thus, as has been authoritatively established by the\n\n aforementioned cases in general, and\nUnion of India\n\n vs SICOM Ltd.\n(supra) in particular, the provisions\n\n contained in the\nSARFAESI Act, 2002\n, even after\n\n insertion of Section 11E in the\nCentral Excise Act,\n\nw.e.f. 08.04.2011, will have an overriding effect\n\n on the provisions of the Act of 1944.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [
+        "Union of India v SICOM Ltd"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P052_C01",
+      "text": "45. Moreover, the submission that the validity of the\n\n confiscation order cannot be called into question\n\n merely on account of the Appellant being a secured\n\n creditor is misplaced and irrelevant to the issue at\n\n hand. The contention that a confiscation order cannot\n\nbe quashed merely because a security interest is\n\n created in respect of the very same property is not\n\n worthy of acceptance. However, what is required to be\n\n appreciated is that, in the present case, the\n\n confiscation order is not being quashed merely because\n\n a security interest is created in respect of the very\n\n same property. On the contrary, the confiscation\n\n orders, in the present case, deserve to be quashed\n\n because the confiscation orders themselves lack any\n\n statutory backing, as they were rooted in a provision\n\n that stood omitted on the day of the passing of the\n\n orders. Hence, it is this inherent defect in the\n\n confiscation orders that paves way for its quashing and\n\n not merely the fact that a security interest is created in\n\n respect of the very same property that the confiscation\n\n orders dealt with.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P053_C01",
+      "text": "46. Further, the contention that in the present case, the\n\n confiscation proceedings were initiated almost 8­9\n\n years prior to the charge being created in respect of the\n\n very same properties in favour of the bank is also\n\n inconsequential. The fact that the charge has been\n\ncreated after some time period has lapsed post the\n\n initiation of the confiscation proceedings, will not\n\n provide legitimacy to a confiscation order that is not\n\n rooted in any valid and existing statutory provision.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P054_C01",
+      "text": "47. To conclude, the Commissioner of Customs and\n\n Central Excise could not have invoked the powers\n\n under Rule 173Q(2) of the Central Excise Rules, 1944\n\n on 26.03.2007 and 29.03.2007 for confiscation of land,\n\n buildings etc., when on such date, the said Rule\n\n 173Q(2) was not in the Statute books, having been\n\n omitted by a notification dated 12.05.2000. Secondly,\n\n the dues of the secured creditor, i.e. the Appellant­\n\n bank, will have priority over the dues of the Central\n\n Excise Department, as even after insertion of Section\n\n 11E in the\nCentral Excise Act, 1944\nw.e.f. 08.04.2011,\n\n and the provisions contained in the\nSARFAESI Act,\n\nwill have an overriding effect on the provisions of\n\n the\nCentral Excise Act\nof 1944.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY_P055_C01",
+      "text": "48. Accordingly, the Appeal is Allowed and the confiscation\n\n orders dated 26.03.2007 and 29.03.2007, passed by\n\nthe Commissioner Customs and Central Excise,\n\n Ghaziabad, are quashed.\n………………………………..J.\n [L. NAGESWARA RAO]\n\n ………………………………..J.\n [VINEET SARAN]\n\nNew Delhi\nDated: February 24, 2022",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Punjab National Bank vs Union Of India Thr. Its Secretary",
+    "case_id": "SC_2022_PUNJAB_NATIONAL_BANK_VS_UNION_OF_INDIA_THR_ITS_SECRETARY",
+    "court": "Supreme Court of India",
+    "year": "2022",
+    "facts_summary": "1. The present Civil Appeal arises out of the judgment\n\n and order dated 05.08.2008 passed by the Allahabad\n\n High Court, wherein the writ petition filed by the\n\n Appellant was dismissed in limine. 2. The brief facts of the case, relevant for the purpose of\n\n the present appeal, are that the Commissioner,\n\n Customs and Central Excise, Ghaziabad (Respondent\n\nCentral\n\n Excise Act, 1944\n. By an order dated 25.11.1997,\n\n Respondent No. 2 confirmed an excise duty demand of\n\n Rs.6,97,62,102/­ against RIL and imposed a penalty of\n\n Rs.7,98,03,000/­ under Rule 173Q(1) and confiscated\n\n the land, building, plant and machinery of RIL under\n\n Rule 173Q(2) of the Central Excise Rules, 1944 (for\n\n short “1944 Rules”). Sub­rule 2 of Rule 173Q of the\n\n Central Excise Rules, 1944, came to be omitted by a\n\n notification dated 12.05.2000 issued by the\n\n Government of India. Subsequently, the order dated\n\n 25.11.1997 was set aside by the Customs, Excise &\n\n Gold (Control) Appellate Tribunal (CEGAT), now known\n\n as the Customs Excise and Service Tax Appellate\n\n Tribunal (CESTAT), on the ground of violation of\n\n principles of natural justice, and the matter was\n\n remanded back for de novo proceedings. 3. In 2005, RIL availed credit facilities under various\n\n schemes from the consortium of banks, with the\n\n Appellant/Punjab National Bank as the lead bank, and\n\n mortgaged/hypothecated all its movable and\n\nimmovable properties for securing the loan. RIL\n\n created a charge on both the assets (raw mat",
+    "legal_issues": "12. With respect to the first issue, it has been argued by\n\n the learned Counsel for the Appellant bank that the\n\n Commissioner could not have passed the orders dated\n\n 26.03.2007 and 29.03.2007 by invoking the powers\n\n under Rule 173Q(2), which was not in existence in the\n\n Statute Books as on the said date, having been omitted\n\n by a notification dated 12.05.2000. 13. It has been contended that reliance upon the\n\n provisions contained in Section 38A of the Central\n\nExcise Act, 1944\nand\nSection 6\nof the General Clauses\n\nAct, 1897 to support the orders of the Commissioner is\n\nliable to be rejected for the reason that a Constitution\n\nBench of this Court, in the matter of\nKolhapur\n\nCanesugar Works Ltd. Vs Union of India & Ors\n.\n[(2000) 2 SCC 536] has held that the provisions\n\ncontained in\nsection 6\nof the General Clauses Act,\n\n1897 are not applicable to the Central Excise Rules. It\n\nhas further been contended that no reliance can be\n\nplaced on section 38A for the reason that the provision\n\ncontained in the said section 38A are attracted “unless\n\na different intention appears”. In the present case, the\n\ncontra­intention of the legislature that the legislature\n\ndid not intent to revive/restore the power of\n\nconfiscation of any land, building, plant machinery\n\netc., after omission of the provisions contained in Rule\n\n173Q(2) w.e.f 12.05.2000 is evident from the following:\nI. 14. With respect to the first issue, the Senior Counsel for\n\n the Appellant concluded his submission by sta",
+    "ratio_summary": "9. Aggrieved by the orders of confiscation (dated\n\n 26.03.2007 and 29.03.2007) and the further\n\n communications/letters by the department (dated\n\n 27.11.2007 and 15.01.2008), the Appellant bank filed\n\n a Writ Petition before the Allahabad High Court, which\n\n was dismissed with the observations that:\n“We find that in the present case, taxes are\n not sought to be recovered from M/s Rathi\n Ispat Ltd., respondent No. 4, by way of\n attachment or otherwise from the movable\n or immovable assets of the respondent no.4,\n but the stand of the Central Excise\n Authorities is that the properties stand\n\nconfiscated and vests in the Central\n Government as a result of the order of\n confiscation”\n\n The High Court further held that:\n“From the meaning of the word\n confiscate/confiscation”, we find that if any\n property has been confiscated it vests in the\n state and no person can claim any right,\n title, or interest over it.”\n\n While dismissing the Writ Petition of the Appellant\n bank, the Allahabad High Court, eventually held that:\n“In view of the matter, the question of first\n charge or second charge over the properties\n would not arise. To buttress this\n\n submission, reliance has been placed upon the\n\n decision rendered in the case of\nNagarjuna\n\n Construction Company Ltd. Vs. Government of\n\n Andhra Pradesh\n(2008) 16 SCC 276, wherein it is\n\n held that when an order is stuck down as invalid,\n\n being in violation of principles of natural justice, all\n\n that is done is vacation of the order assa",
+    "final_order": "(iv) In the absence of such specific provision\n in the\nCentral Excise Act\nas well as in\nCustoms Act\n, we hold that the claim of\n secured creditor will prevail over Crown's\n debts.\"\nIn view of our above conclusion, the\n petitioner UTI Bank, being a secured\n creditor is entitled to have preference over\n the claim of the Deputy Commissioner of\n Central Excise, first respondent herein.”\n (emphasis supplied)\n\nThis Court, while dismissing the Civil Appeal No.3627\n\nof 2007 filed against the judgment of the Full Bench,\n\nvide order dated 12.09.2009 held as under:\n“Having gone through the provisions of the\n Securitization Act, 2002, in light of the\n\njudgment of the Division Bench of this court\n in the case of\nUnion of India vs Sicom Ltd. &\n Anr.\n, reported in 2009 (1) SCALE 10, we\n find that under t",
+    "outcome_summary": "Allowed. (iv) In the absence of such specific provision\n in the\nCentral Excise Act\nas well as in\nCustoms Act\n, we hold that the claim of\n secured creditor will prevail over Crown's\n debts.\"\nIn view of our above conclusion, the\n petitioner UTI Bank, being a secured\n creditor is entitled to have preference ove",
+    "sections_cited": [
+      "Constitution 13",
+      "Constitution 372"
+    ],
+    "cases_cited": [
+      "Bank of Bihar v State of Bihar",
+      "Dena Bank v Bhikhabhai Prabhu Dass Parikh &\n\n Anr",
+      "Union of India v SICOM Ltd. & Anr",
+      "This Court, in\nDena Bank v Bhikhabhai Prabhu\n\n Dass Parikh & Anr",
+      "Union of India v SICOM Ltd. & Anr. Reported\nin",
+      "Union of India v SICOM Ltd"
+    ]
+  }
+}

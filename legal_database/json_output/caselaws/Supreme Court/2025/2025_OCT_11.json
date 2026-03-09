@@ -1,0 +1,751 @@
+{
+  "case_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL",
+  "case_name": "Sankar Padam Thapa vs Vijaykumar Dineshchandra Agarwal",
+  "normalized_case_name": "SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL",
+  "court": "Supreme Court of India",
+  "year": "2025",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal  of 2025",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "9 October 2025",
+  "judges": [
+    "Prashant Kumar Mishra"
+  ],
+  "author": "Prashant Kumar Mishra",
+  "bench_type": "single",
+  "petitioner": "Sankar Padam Thapa",
+  "respondent": "Vijaykumar Dineshchandra Agarwal",
+  "reporter_citations": [
+    "2025 INSC 1210",
+    "2022 SCC OnLine Megh 624"
+  ],
+  "outcome": "disposed of",
+  "disposition": "disposed",
+  "cites_count": 47,
+  "cited_by_count": 0,
+  "neutral_citation": "2025 INSC 1210",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2025\\OCT\\2025_OCT_11.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P001_C01",
+      "text": "CRIMINAL APPELLATE JURISDICTION\n\n CRIMINAL APPEAL NO. OF 2025\n [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\n SANKAR PADAM THAPA …APPELLANT\n\n VERSUS\n\n VIJAYKUMAR DINESHCHANDRA AGARWAL …RESPONDENT\n\n J U D G M E N T\nAHSANUDDIN AMANULLAH, J.\nLeave granted.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P002_C01",
+      "text": "2. The question for consideration in the instant appeal is as to\n\n whether in the absence of a Trust being made an accused in a complaint\n\n under the\nNegotiable Instruments Act, 1881\n(hereinafter referred to as\n\n the ‘\nNI Act\n’), when a Cheque has been issued on behalf of a Trust, the\n\n said complaint would be maintainable against the Chairman/a Trustee of",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P003_C01",
+      "text": "3. The instant appeal arises from the Final Judgment and Order\n\ndated 21.11.2022 (hereinafter referred to as the ‘Impugned Judgment’)\n\n[2022 SCC OnLine Megh 624 | (2023) 1 GLT 344], passed by a learned\n\nSingle Judge of the High Court of Meghalaya, Shillong (hereinafter\n\nreferred to as the ‘High Court’) in Criminal Petition No.31/2019, wherein\n\nthe High Court quashed and set aside the proceedings in Criminal Case\n\nNo.44(S)/2019 pending before the Court of the learned Judicial\n\nMagistrate, Shillong (hereinafter referred to as the ‘Trial Court’) and the\n\nSummoning Order dated 11.02.2019 passed against the Respondent.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P004_C01",
+      "text": "4. The William Carey University (hereinafter referred to as the\n\n‘University’), a recognized Private University, owned and sponsored by\n\nthe Agriculture Crafts Trades and Studies Group of Institutions\n\n(hereinafter referred to as the ‘ACTS Group’), was facing a severe\n\nfinancial crisis. The ACTS Group entered into a Memorandum of\n\nUnderstanding with Orion Education Trust (hereinafter referred to as\n\n‘Orion’) on 12.10.2017 to hand over the management and administration\n\nof the University to Orion. The Respondent is the Chairman of Orion. As\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nChairman of Orion, the Respondent issued authorization letters to all\n\nconcerned, duly entrusting the Appellant with the task of liaisoning with\n\ngovernmental authorities and to undertake such activities to facilitate the\n\neffective transition of all administrative control of the University from the\n\nhands of the ACTS Group to Orion.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P005_C01",
+      "text": "5. The Appellant alleged that pursuant to the above, upon such\n\ntransition being effected, the Respondent issued a Cheque dated\n\n13.10.2018, bearing number 000013 for Rs.5,00,00,000/- (Rupees Five\n\nCrores Only), drawn on Kotak Mahindra Bank, Vadodara Branch in his\n\nfavour for the services rendered by him under the signature of the\n\nRespondent as authorized signatory of Orion. When presented by the\n\nAppellant at his ICICI Bank Branch at Laitumkhrah, Shillong, East Khasi\n\nHills on 07.12.2018, the Cheque was dishonoured with the endorsement\n\n‘insufficient funds’.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P006_C01",
+      "text": "6. Notice under\nSection 138\nof the NI Act was addressed by the\n\nAppellant to the Respondent on 19.12.2018, which was received by the\n\nRespondent on 27.12.2018. Response thereto was sent by the\n\nRespondent vide Letter dated 28.12.2018. Subsequently, the Appellant\n\nfiled a complaint case No.44(S)/2019 before the Trial Court against the\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nRespondent for offences under\nSections 138\nand\n\nof the NI Act as\n\nwell as under\nSection 420\nof the Indian Penal Code, 1860. On receipt of\n\nsummons, as per the Trial Court’s Order dated 11.02.2019, the\n\nRespondent entered appearance and challenged the complaint case on\n\nthe issue of maintainability for non-joinder of necessary parties.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 420"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P007_C01",
+      "text": "7. The Respondent, thereafter, preferred Criminal Petition\n\nNo.31/2019 under\nSection 482\nof the Code of Criminal Procedure, 1973\n\n(hereinafter referred to as the ‘Code’) before the High Court seeking to\n\nquash the complaint case and the proceedings before the Trial Court, on\n\nthe ground, inter alia, that Orion - a juristic entity and a necessary party\n\nbeing a Trust - not having been added as a party, the complaint case\n\nwas non-maintainable, and consequently, no vicarious liability could be\n\nplaced on the Respondent.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P008_C01",
+      "text": "8. Allowing the Criminal Petition in the Respondent’s favour, the High\n\nCourt has, by way of the Impugned Judgment, quashed the complaint\n\ncase and the Summoning Order dated 11.02.2019 passed by the Trial\n\nCourt. Assailing the same, the present appeal has been preferred by the\n\nAppellant.\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nAPPELLANT’S SUBMISSIONS:",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P009_C01",
+      "text": "9. The arguments put forth by the learned counsel for the Appellant\n\nwere basically two-fold – (i) the ineligibility of a Trust to be sued, and; (ii)\n\nno mandate to make specific averments with regard to the accused’s\n\nresponsibility in conducting the day-to-day business of the Trust. For the\n\nfirst proposition, learned counsel placed reliance on the decision of this\n\nCourt in\nPratibha Pratisthan v Manager, Canara Bank\n, (2017) 3 SCC\n\n712, where, in the context of the\nConsumer Protection Act, 1986\n(hereinafter referred to as the ‘\nConsumer Protection Act\n’), it was held\n\nthat a Trust is not a person and therefore, could not be a consumer.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [
+        "Court in\nPratibha Pratisthan v Manager, Canara Bank\n"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P010_C01",
+      "text": "10. Next, in support of his argument that a Trust is not capable of\n\nbeing sued or suing in a court of law, learned counsel drew the attention\n\nof this Court to the decision of the Kerala High Court in\nK P Shibu v\n\nState of Kerala\n, 2019 SCC OnLine Ker 7585, holding that in the context\n\nof the\nNI Act\n, it is the Trustees who can maintain and defend a suit to\n\nprotect the Trust property, and the Trust itself cannot sue or be sued in a\n\ncourt of law, therefore, a Trust is not a juristic person or a legal entity, as\n\na juristic person has a legal existence of its own and hence is capable of\n\nsuing and being sued in a court of law. It was further held that a Trust\n\nwould not fall within the term ‘association of individuals’ as used in the NI\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nAct. The High Court held that since Trustees do not join together for a\n\ncommon action to achieve some common benefit for themselves as\n\nTrustees, a Trust cannot be said to be an ‘association of persons/body of\n\nindividuals’.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P011_C01",
+      "text": "11. Learned counsel for the Appellant submitted that a Trust, as\n\ndefined under the\nIndian Trusts Act, 1882\n(hereinafter referred to as the\n\n‘\nTrusts Act\n’), is an obligation and not a legal entity. Learned counsel for\n\nthe Appellant placed reliance on the decision of the Kerala High Court in\nK R Rajan v Cherian K Cherian\n, 2019 SCC OnLine Ker 4699; the\n\ndecision of the Delhi High Court in Duli Chand v M/s M P T C\n\nCharitable Trust, 1983 SCC OnLine Del 270; decisions by the Madras\n\nHigh Court in V Chandrasekaran v Venkatanaicker Trust, 2016 SCC\n\nOnLine Mad 33745 and Narayana Iyer v Anandammal Adheena Trust,\n\n(2021) 3 CTC 776; decision of the Gujarat High Court in\nKansara\n\nAbdulrehman Sadruddin v Trustees of the Maniar Jamat\n\nAhmedabad\n, AIR 1968 Guj 184 and; the decision by the Calcutta High\n\nCourt in\nVijay Sports Club v State of Bengal\n, 2019 SCC OnLine Cal",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [
+        "Narayana Iyer v Anandammal Adheena Trust"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P012_C01",
+      "text": "12. With regard to the second limb of his argument, learned counsel\n\nsubmitted that in the case at hand, the Respondent, being the\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nChairman/Authorized Representative of Orion, had signed the cheque in\n\nquestion and thus, it was prima facie evident that he was responsible for\n\nthe day-to-day business of the Trust. To support his contention, learned\n\ncounsel relied upon the decision of this Court in\nSMS Pharmaceuticals\n\nLtd. v Neeta Bhalla\n, (2005) 8 SCC 89 [3-Judge Bench], wherein it was\n\nheld that a position of a Managing Director would suggest responsibility\n\nof the person holding the said position, in the day-to-day affairs of the\n\nCompany, which in the present case, urged learned counsel, is akin to\n\nthe position of the Chairman/Authorized Representative of the Trust viz. Orion. The relevant portion from\nSMS Pharmaceuticals Ltd. (supra) is\n\nquoted below:\n‘19.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [
+        "Court in\nSMS Pharmaceuticals\n\nLtd v Neeta Bhalla\n"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P012_C02",
+      "text": "In view of the above discussion, our answers to the\n questions posed in the reference are as under:\n(a)It is necessary to specifically aver in a complaint under\nSection 141\nthat at the time the offence was\n committed, the person accused was in charge of, and\n responsible for the conduct of business of the\n company. This averment is an essential requirement of\nSection 141\nand has to be made in a complaint. Without this averment being made in a complaint, the\n requirements of\nSection 141\ncannot be said to be\n satisfied. (b)The answer to the question posed in sub-para (b) has\n to be in the negative. Merely being a director of a\n company is not sufficient to make the person liable\n under\nSection 141\nof the Act. A director in a company\n cannot be deemed to be in charge of and responsible\n to the company for the conduct of its business. The\n requirement of\nSection 141\nis that the person sought to\n be made liable should be in charge of and responsible\n for the conduct of the business of the company at the\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nrelevant time.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P012_C03",
+      "text": "This has to be averred as a fact as there\n is no deemed liability of a director in such cases. (c) The answer to Question (c) has to be in the affirmative. The question notes that the managing director or joint\n managing director would be admittedly in charge of the\n company and responsible to the company for the\n conduct of its business. When that is so, holders of\n such positions in a company become liable under\nSection 141\nof the Act. By virtue of the office they hold\n as managing director or joint managing director, these\n persons are in charge of and responsible for the\n conduct of business of the company. Therefore, they\n get covered under\nSection 141\n. So far as the signatory\n of a cheque which is dishonoured is concerned, he is\n clearly responsible for the incriminating act and will be\n covered under sub-section (2) of\nSection 141\n.’\n (emphasis supplied)",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P013_C01",
+      "text": "13. To further support his contentions, learned counsel for the\n\nAppellant placed reliance on the decision of this Court in\nK K Ahuja v V\n\nK Vora\n, (2009) 10 SCC 48;\nSunita Palita v Panchami Stone Quarry\n,\n\n(2022) 10 SCC 152;\nD Purushotama Reddy v K Sateesh\n, (2008) 8\n\nSCC 505 and the decision of the Gauhati High Court in\nPranab Jyoti\n\nDutta v Chief Branch Manager, SBI\n, 2023 SCC OnLine Gau 243. It\n\nwas urged that the appeal deserved to be allowed.\n\nRESPONDENT’S SUBMISSIONS:",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [
+        "Court in\nK K Ahuja v V\n\nK Vora\n",
+        "Sunita Palita v Panchami Stone Quarry\n",
+        "D Purushotama Reddy v K Sateesh\n"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P014_C01",
+      "text": "14. Au contraire, learned senior counsel for the Respondent submitted\n\nthat a Trust is a juristic person, capable of suing and being sued in a\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\ncourt of law. He placed reliance on the decision of the High Court of\n\nKerala in\nPrana Educational and Charitable Trust v State of Kerala\n,\n\n2023 SCC OnLine Ker 8449, where it was held that the expression\n\n‘company’ used in sub-clause (a) of the Explanation to\nSection 141\nof the\n\nNI Act includes ‘any body corporate’ or ‘other association of individuals’,\n\nand the said term, by applying the principle of ejusdem generis would\n\ninclude a club, a Trust (emphasised by learned senior counsel), and a\n\nHindu Undivided Family within the expression ‘company’ or ‘firm’. The\n\nHigh\nCourt further held\nthat a Trust, either private or public/charitable is a\n\njuristic person liable to prosecute or be prosecuted for the offence\n\npunishable under\nSection 138\nof the NI Act. In this regard, reliance was\n\nalso placed on the decisions of the Bombay High Court in\nDadasaheb\n\nRawal Co-op.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P014_C02",
+      "text": "Bank of Dondaicha Ltd. v Ramesh\ns/o Jawrilal Jain,\n\n2008 SCC OnLine Bom 794 and Mukund s/o Manohar Wazalwar v\n\nEknath s/o Bajirao Hatwar (Dead) through his L.R. Durwas Eknath\n\nHatwar, 2023 SCC OnLine Bom 3015 and the decision by the Orissa\n\nHigh Court in\nBijaya Manjari Satpathy v State of Orissa\n, 2022 SCC\n\nOnLine Ori 4092. Attention was also drawn to a decision of the High\n\nCourt of Madras in\nAbraham Memorial Educational Trust v Suresh\n\nBabu\n, 2012 SCC OnLine Mad 2986, where that High Court held that a\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nTrust is a juristic person which can sue or be sued for offence punishable\n\nunder the\nNI Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Bank of Dondaicha Ltd v Ramesh\ns",
+        "Manohar Wazalwar v Eknath s"
+      ],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P015_C01",
+      "text": "15. Learned senior counsel supported the Impugned Judgment,\n\nsubmitted that the appeal merited dismissal and advanced that the High\n\nCourt had not erred.\nANALYSIS, REASONING AND CONCLUSION:",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P016_C01",
+      "text": "16. We have heard respective learned counsel for the parties and\n\nperused the materials on record. The question for consideration, as\n\nindicated in Paragraph 2 supra, is as to whether in the absence of a Trust\n\nbeing made an accused in a complaint under the\nNI Act\n, when a cheque\n\nhas been issued on behalf of the Trust, the said complaint would be\n\nmaintainable against the Chairman/a Trustee of the said Trust?",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P017_C01",
+      "text": "17. On the issue that it is not mandatory to make substantive\n\naverments pertaining to the responsibility of the Respondent in the\n\nconduct of the day-to-day business of the Trust, reliance was rightly\n\nplaced on the decision of a 3-Judge Bench of this Court in\nSMS\n\nPharmaceuticals Ltd.\n(supra) by learned counsel for the Appellant.\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P018_C01",
+      "text": "18. We need only reiterate the view espoused by this Court in\nSMS\n\nPharmaceuticals Ltd. (supra) and\nK K Ahuja\n(supra). As such, a person\n\ndesignated as ‘Managing Director’ or ‘Joint Managing Director’, by virtue\n\nof the office held, would be in charge of and responsible for the daily\n\nconduct or business of the company, and thus, be covered under\nSection\n\nof the NI Act. Further, as far as the signatory of a cheque which is\n\ndishonoured be concerned, he is responsible for the incriminating act and\n\nwill be covered under\nSection 141\nof the NI Act. Support for the above\n\nfrom\nK K Ahuja\n(supra) can be traced as under:\n‘22. Section 141\nuses the words “was in charge\n of, and was responsible to the company for the conduct of\n the business of the company”. (emphasis supplied) It is\n evident that a person who can be made vicariously liable\n under sub-section (1) of\nSection 141\nis a person who is\n responsible to the company for the conduct of the\n business of the company and in addition is also in charge\n of the business of the company. There may be many\n Directors and secretaries who are not in charge of the\n business of the company at all.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P018_C02",
+      "text": "The meaning of the words\n “person in charge of the business of the company” was\n considered by this Court in\nGirdhari Lal Gupta v. D.H. Mehta\n[(1971) 3 SCC 189: 1971 SCC (Cri) 279] followed\nState of Karnataka v. Pratap Chand\n[(1981) 2 SCC 335:\n1981 SCC (Cri) 453] and Katta Sujatha v. Fertilizers &\n Chemicals Travancore Ltd. [(2002) 7 SCC 655: 2003 SCC\n (Cri) 151] This Court held that the words refer to a person\n who is in overall control of the day-to-day business of the\n company. This Court pointed out that a person may be a\n Director and thus belongs to the group of persons making\n the policy followed by the company, but yet may not be in\n charge of the business of the company; that a person may\n be a manager who is in charge of the business but may\n not be in overall charge of the business; and that a person\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nmay be an officer who may be in charge of only some part\n of the business.\nxxx",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P019_C01",
+      "text": "27. The position under\nSection 141\nof the Act can be\n summarised thus:\n(i) If the accused is the Managing Director or a Joint\n Managing Director, it is not necessary to make an\n averment in the complaint that he is in charge of, and is\n responsible to the company, for the conduct of the\n business of the company. It is sufficient if an averment is\n made that the accused was the Managing Director or\n Joint Managing Director at the relevant time. This is\n because the prefix “Managing” to the word “Director”\n makes it clear that they were in charge of and are\n responsible to the company, for the conduct of the\n business of the company. (ii) In the case of a Director or an officer of the company\n who signed the cheque on behalf of the company, there is\n no need to make a specific averment that he was in\n charge of and was responsible to the company, for the\n conduct of the business of the company or make any\n specific allegation about consent, connivance or\n negligence. The very fact that the dishonoured cheque\n was signed by him on behalf of the company, would give\n rise to responsibility under sub-section (2) of\nSection 141\n.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P019_C02",
+      "text": "(iii) In the case of a Director, secretary or manager [as\n defined in\nSection 2(24)\nof the Companies Act] or a\n person referred to in clauses (e) and (f) of\nSection 5\nof the\n Companies Act, an averment in the complaint that he was\n in charge of, and was responsible to the company, for the\n conduct of the business of the company is necessary to\n bring the case under\nSection 141(1)\nof the Act. No further\n averment would be necessary in the complaint, though\n some particulars will be desirable. They can also be made\n liable under\nSection 141(2)\nby making necessary\n averments relating to consent and connivance or\n negligence, in the complaint, to bring the matter under\n that sub-section. (iv) Other officers of a company cannot be made liable\n under sub-section (1) of\nSection 141\n. Other officers of a\n company can be made liable only under sub-section (2) of\nSection 141\n, by averring in the complaint their position\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nand duties in the company and their role in regard to the\n issue and dishonour of the cheque, disclosing consent,\n connivance or negligence.’\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P020_C01",
+      "text": "19. The position in law was further elucidated in\nSunita Palita\n(supra),\n\nwhere the following was observed:\n‘36. The High Court also rightly held that the Managing\n Director or Joint Managing Director would admittedly be in\n charge of the company and responsible to the company\n for the conduct of its business by virtue of the office they\n hold as Managing Director or Joint Managing Director.\n These persons are in charge of and responsible for the\n conduct of the business of the company and they get\n covered under\nSection 141\nof the NI Act. A signatory of a\n cheque is clearly liable under\nSections 138\n/\n\nof the NI\n Act.’\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P021_C01",
+      "text": "20. Further, in\nS P Mani and Mohan Dairy v Dr Snehalatha\n\nElangovan\n, (2023) 10 SCC 685, it was laid down that for an accused to\n\nescape criminal liability, the accused would have to demonstrate that\n\nhe/she was not in charge or in control, as under:\n‘58. Our final conclusions may be summarised as under:\n 58.1. The primary responsibility of the complainant is to\n make specific averments in the complaint so as to make\n the accused vicariously liable. For fastening the criminal\n liability, there is no legal requirement for the complainant\n to show that the accused partner of the firm was aware\n about each and every transaction. On the other hand, the\n first proviso to sub-section (1) of\nSection 141\nof the Act\n clearly lays down that if the accused is able to prove to\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nthe satisfaction of the Court that the offence was\n committed without his/her knowledge or he/she had\n exercised due diligence to prevent the commission of\n such offence, he/she will not be liable of punishment.\n 58.2.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P021_C02",
+      "text": "The complainant is supposed to know only generally\n as to who were in charge of the affairs of the company or\n firm, as the case may be. The other administrative\n matters would be within the special knowledge of the\n company or the firm and those who are in charge of it. In\n such circumstances, the complainant is expected to\n allege that the persons named in the complaint are in\n charge of the affairs of the company/firm. It is only the\n Directors of the company or the partners of the firm, as\n the case may be, who have the special knowledge about\n the role they had played in the company or the partners in\n a firm to show before the Court that at the relevant point\n of time they were not in charge of the affairs of the\n company. Advertence to\nSections 138\nand\nSection 141\n,\n respectively, of the\nNI Act\nshows that on the other\n elements of an offence under\nSection 138\nbeing satisfied,\n the burden is on the Board of Directors or the officers in\n charge of the affairs of the company/partners of a firm to\n show that they were not liable to be convicted.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P021_C03",
+      "text": "The\n existence of any special circumstance that makes them\n not liable is something that is peculiarly within their\n knowledge and it is for them to establish at the trial to\n show that at the relevant time they were not in charge of\n the affairs of the company or the firm.\n58.3. Needless to say, the final judgment and order would\n depend on the evidence adduced. Criminal liability is\n attracted only on those, who at the time of commission of\n the offence, were in charge of and were responsible for\n the conduct of the business of the firm. But vicarious\n criminal liability can be inferred against the partners of a\n firm when it is specifically averred in the complaint about\n the status of the partners “qua” the firm. This would make\n them liable to face the prosecution but it does not lead to\n automatic conviction. Hence, they are not adversely\n prejudiced if they are eventually found to be not guilty, as\n a necessary consequence thereof would be acquittal.\n 58.4.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P021_C04",
+      "text": "If any Director wants the process to be quashed by\n filing a petition under Section 482 of the Code on the\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nground that only a bald averment is made in the complaint\n and that he/she is really not concerned with the issuance\n of the cheque, he/she must in order to persuade the High\n Court to quash the process either furnish some sterling\n incontrovertible material or acceptable circumstances to\n substantiate his/her contention. He/she must make out a\n case that making him/her stand the trial would be an\n abuse of process of Court.’\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P022_C01",
+      "text": "21. On the issue of whether a Trust is capable of suing or being sued,\n\nthough in the context of the\nConsumer Protection Act\n, in\nPratibha\n\nPratisthan\n(supra), it was observed that a Trust is not a ‘person’ and\n\n‘therefore not a consumer’. The Court went on to hold that a Trust ‘cannot\n\nbe a complainant and cannot file a consumer dispute under the\n\nprovisions’ of the\nConsumer Protection Act\n, as it would not fall under the\n\ndefinition of ‘person’ as per\nSection 2(m)\nof the Consumer Protection Act. Referring to the said provision from the\nConsumer Protection Act\n, in\nPratibha Pratisthan\n(supra), the Court opined:\n‘4. A reading of the definition of the words “complaint”,\n “complainant” and “consumer” makes it clear that a trust\n cannot invoke the provisions of the Act in respect of any\n allegation on the basis of which a complaint could be\n made. To put this beyond any doubt, the word “person”\n has also been defined in the Act and\nSection 2(1)(m)\nthereof defines a “person” as follows:\n“2.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P022_C02",
+      "text": "(1)(m) “person” includes—\n(i) a firm whether registered or not;\n(ii) a Hindu undivided family;\n(iii) a cooperative society;\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\n(iv) every other association of persons whether\n registered under the\nSocieties Registration Act,\n\n(21 of 1860) or not;”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P023_C01",
+      "text": "5. On a plain and simple reading of all the above\n provisions of the Act it is clear that a trust is not a\n person and therefore not a consumer. Consequently, it\n cannot be a complainant and cannot file a consumer\n dispute under the provisions of the Act.’\n (emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P024_C01",
+      "text": "22. Sections 3\nand\n\nof the Trusts Act read thus:\n‘3.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P024_C02",
+      "text": "Interpretation-clause—“Trust”.—A “trust” is an\n obligation annexed to the ownership of property, and\n arising out of a confidence reposed in and accepted by\n the owner, or declared and accepted by him, for the\n benefit of another, or of another and the owner;\n the person who reposes or declares the confidence is\n called the “author of the trust”; the person who accepts\n the confidence is called the “trustee”; the person for\n whose benefit the confidence is accepted is called the\n “beneficiary”; the subject-matter of the trust is called\n “trust-property” or “trust money”; the “beneficial interest”\n or “interest” of the beneficiary is his right against the\n trustee as owner of the trust-property; and the\n instrument, if any, by which the trust is declared is called\n the “instrument of trust”;\na breach of any duty imposed on a trustee, as such, by\n any law for the time being in force, is called a “breach of\n trust”;\nand in this Act, unless there be something repugnant in\n the subject or context, “registered” means registered\n under the law for the registration of documents for the\n time being in force; a person is said to have “notice” of a\n fact either when he actually knows that",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P024_C03",
+      "text": "fact, or when,\n but for wilful abstention from inquiry or gross\n negligence, he would have known it, or when\n information of the fact is given to or obtained by his\n agent, under the circumstances mentioned in the\nIndian\n Contract Act, 1872\n, Section 229; and all expressions\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nused herein and defined in the\nIndian Contract Act,\n\n, shall be deemed to have the meanings\n respectively attributed to them by that Act.\n xxx",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P025_C01",
+      "text": "13. Trustee to protect title to trust-property.—A trustee is\n bound to maintain and defend all such suits, and\n (subject to the provisions of the instrument of trust) to\n take such other steps as, regard being had to the nature\n and amount or value of the trust-property, may be\n reasonably requisite for the preservation of the trust-\nproperty and the assertion or protection of the title\n thereto.’\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P026_C01",
+      "text": "23. To our mind, the above-extracted Sections of the Trusts Act would\n\nalso favour the view we are taking, as the obligation to ‘maintain and\n\ndefend’ suits is placed on the shoulders of a Trustee and not the Trust\n\nitself. It is clear that only a Trustee has the obligation to file, maintain and\n\ndefend any suit on behalf of the Trust. Meaning thereby, that a Trust does\n\nnot have a separate legal existence of its own, making it incapable of\n\nsuing or being sued. A learned Single Judge of the Kerala High Court,\n\nrelying on\nPratibha Pratisthan\n(supra), in\nK P Shibu\n(supra), noted:\n‘16. Thus, it is clear from the above provisions that all the\n trustees are the owners of the property, but they are obliged\n to use the same in a particular manner. If a number of\n trustees exist, they are the joint owners of the property. The\n trustees are bound to maintain and defend all suits, for the\n preservation of the trust-property and the assertion or\n protection of the title thereto.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P026_C02",
+      "text": "Thus, it appears that the “Trust”\n is not capable of suing and being sued in a court of law,\n even though the trustees can maintain and defend suits for\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nthe preservation and protection of the trust-property. Therefore, a “Trust” is not a juristic person or a legal entity,\n as the juristic person has a legal existence of its own and\n hence it is capable of suing and being sued in a court of law. Thus, it appears that a “Trust” is not like a body corporate,\n which has a legal existence of its own and therefore can\n appoint an agent. The above discussion would make it clear\n that a “Trust” is not a body corporate.’\n (emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P027_C01",
+      "text": "24. The same proposition has been reiterated by the Delhi High Court\n\nDuli Chand\n(supra), the Madras High Court in V Chandrasekaran\n\n(supra) and Narayana Iyer (supra), the Gujarat High Court in\nKansara\n\nAbdulrehman Sadruddin\n(supra), the Calcutta High Court in\nVijay\n\nSports Club\n(supra) and the Karnataka High Court in\n\nChikkamuniyappa Memorial Trust v State, ILR 1997 Kar 2460.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P028_C01",
+      "text": "25. We find substance in the reasoning assigned by the High Courts of\n\nKerala, Delhi, Madras, Gujarat, Calcutta and Karnataka that a Trust is not\n\na ‘legal entity’ or ‘juristic person’. A Trust is also not like a corporation\n\nwhich has a legal existence of its own and therefore can appoint an\n\nagent. A Trust operates through its Trustees, who are legal entities. We\n\nmay gainfully refer to the decision of the Kerala High Court in\nK R Rajan\n(supra), where the said Court has rightly held:\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\n‘7. The legal status of a trust, is thus well discernible. Trust\n not being a legal person, and\nthe Code of Civil Procedure\nnot providing any enabling provision for the Trust to sue or\n for being sued in its name, there is no merit in the contention\n that the Trust is to be arrayed as a co-nominee party. The\n arraying of the trust in its own name is otiose or redundant. It\n is the trustees who are to be impleaded to represent the\n trust. Therefore, the contention of the petitioner on the\n ground of non-joinder, also fails.’\n (emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P029_C01",
+      "text": "26. Ergo, it is clear that though a Trust may act or even be treated as\n\nan entity for certain legal purposes and not all legal purposes, a Trust is\n\nan obligation imposed on the ostensible owner of the property to use the\n\nsame for a particular object - for the benefit of a named beneficiary or\n\ncharity, and it is the Trustee(s) who are bound to maintain and defend all\n\nsuits and to take such other steps with regard to the nature, land or the\n\nvalue of the Trust property, that may be reasonably required for the\n\npreservation of the Trust property, and the assertion of protection of title\n\nthereto, subject to the provisions of the instructions of Trust to take such\n\nother steps.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P030_C01",
+      "text": "27. There exists no ambiguity about there being no legal requirement\n\nfor a Trust to be made a party in a proceeding before a Court of Law\n\nsince it is only a/the Trustee(s) who are liable and answerable for acts\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\ndone or alleged to have been done for and on behalf of the said Trust.\n\nFrom a perusal of Orion’s Deed of Trust, of which the Respondent is the\n\nChairman/Authorized Signatory, it emerges clearly that the relevant\n\nclauses deal with the Trustee insofar as administering and holding the\n\nfunds and properties of the Trust are concerned. Which is to say that the\n\nTrust (i.e., Orion) operates only through the Trustee(s) and that the\n\nobjects thereof were for charitable purposes. The Deed of Trust also\n\nprovides for permitting one or more Trustees to operate a bank account.\n\nIt becomes all the more apparent that it is the Trustees alone, through\n\nwhom the Trust funds/property(ies) are managed and dealt with. The\n\nTrust itself is without any independent legal status.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P031_C01",
+      "text": "28. Though we have delved into the issue of whether a Trust can sue\n\nor be sued on its own, we would make it amply clear (and as would also\n\nbecome evident from what follows infra) on this point, that our view is\n\nconfined to examination of the subject in the context of the\nNI Act\nalone,\n\nin praesenti. We were called upon to consider only as to whether without\n\nmaking a Trust an accused, a complaint would be maintainable against a\n\nTrustee in the eye of law under the\nNI Act\n.\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P032_C01",
+      "text": "29. Hence, the question posed is answered in the affirmative. When a\n\ncause of action arises due to an alleged dishonour of cheque and a\n\ncomplaint is initiated under the\nNI Act\n, the same is maintainable against\n\nthe Trustee who has signed the cheque, without the requirement to array\n\nthe Trust also as an accused.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P033_C01",
+      "text": "30. As far as the judgments pressed into service by the Respondent\n\nbe concerned, we have bestowed thoughtful consideration thereto. We\n\nare unable to concur with the propositions they purport to propound.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P034_C01",
+      "text": "31. Prana Educational and Charitable Trust\n(supra), a learned\n\nSingle Judge of the Kerala High Court held:\n‘20. Analyzing the decision rendered by the Madras\n High Court, it could be gathered that after elaborately\n considering the relevant statutory provisions, the\n learned Single Judge held as above. The High Courts of\n Bombay and Gujarat interpreted the explanation\n appended to\nSection 141\nof the N.I. Act with reference\n to “inclusive of any body corporate” or “other association\n of individuals” and construed the above terms by\n applying the principle of ejusdem generis and held that\n the term “association of individuals” will include club,\n trust, Hindu Undivided Family Business.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P035_C01",
+      "text": "21. Coming to K.P. Shibu\n's case (supra), it is discernible\n that\nthe said decision\nis not so elaborative and the\n interpretation of the term “association of individuals” not\n done by applying the ratio of ejusdem generis. The\n principle of ejusdem generis intented for the\n construction of constitutional and statutory provisions\n means “of the same kind” and this doctrine provides that\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nthe general words which follow the specified words will\n be restricts to the same class of the specified words. While applying this principle, (1) the general words must\n follow the specific words and the specific words must\n necessarily constitute, a genus/class (2) the legislative\n intention of the statute to be born in mind for restricting\n the general word to the genus/class of the specified\n words if follows and (3) this principle has to be used by\n the Courts properly and apply where it is necessary and\n not use this principle where it is not necessary so as to\n defeat the purpose of the statute and to cause\n miscarriage of justice are the conditions to be satisfied.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P035_C02",
+      "text": "Thus, it appears that the High Courts of Madras,\n Bombay and Gujarat correctly interpreted the various\n provisions and the law emerges from the said\n judgments are as under: (i) The expression “company”\n used in sub-clause (a) of explanation appended to\nSection 141\nof the N.I. Act includes any body corporate\n or other “association of individuals” and the term\n “association of individuals” to be interpreted by applying\n the principle of ejusdem generis. To be construed so,\n the term “association of individuals” will include club,\n trust and Hindu undivided family business along with the\n expression “company” or “firm”. (ii) A Trust, either\n private or public/charitable or otherwise, is a juristic\n person who is liable for punishment for the offence\n punishable under\nSection 138\nof the Negotiable\n Instruments Act. (iii) A Trust, either private or\n public/charitable or otherwise, having either a single\n trustee or two or more trustees, is a company in terms\nSection 141\nof the Negotiable Instruments Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P035_C03",
+      "text": "(iv)\n For the offence under\nSection 138\nof The Negotiable\n Instruments Act, committed by the Trust, every trustee,\n who was in-charge of the day-to-day affairs of the Trust\n shall also be liable for punishment besides the Trust.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P036_C01",
+      "text": "22. Therefore, following the legal principles set forth\n above, it has to be held that the challenge raised by the\n accused on the ground that no prosecution under\nSection 138\nread with\nSection 141\nof the N.I. Act\n against the Trust would lie, cannot be sustained and the\n same stands repelled.’\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\n(emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P037_C01",
+      "text": "32. We do not approve of the manner in which the learned Single\n\nJudge in\nPrana Educational and Charitable Trust\n(supra) decided to\n\nignore binding precedent in\nK P Shibu\n(supra), which was a judgment\n\nrendered by another learned Single Judge of the same Court, earlier in\n\npoint of time, merely by noting ‘it is discernible that\nthe said decision\n\nnot so elaborative and the interpretation of the term “association of\n\nindividuals” not done by applying the ratio of ejusdem generis.’ It was not\n\nopen to the learned Judge in\nPrana Educational and Charitable Trust\n(supra) to prefer the view expressed by other High Courts in preference\n\nto the view of a Bench of the own High Court of equal strength expressed\n\npreviously. At the most, recording his disagreement with the view in\nK P\n\nShibu\n(supra), the learned Judge in\nPrana Educational and Charitable\n\nTrust\n(supra) ought to have referred the matter to the learned Chief\n\nJustice of the High Court seeking constitution of a larger Bench.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P037_C02",
+      "text": "The only\n\nother way\nPrana Educational and Charitable Trust\n(supra) could have\n\ngotten over\nK P Shibu\n(supra) despite being a co-equal Bench would\n\nhave been by undertaking an analysis via the principles of per incuriam\n\nand/or sub-silentio, as undertaken by a 3-Judge Bench recently in\nA Raja\n\nv D Kumar\n, 2025 SCC OnLine SC 1033. We say this illustratively. Not\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nas a matter of routine can a later Bench of equal strength refuse to follow\n\nan earlier decision of a Bench of equal strength. The law hereon was\n\nstated in\nNational Insurance Company Limited v Pranay Sethi\n, (\n2017)\n\n16 SCC 680 and Union Territory of Ladakh v Jammu and Kashmir\n\nNational Conference\n, 2023 SCC OnLine SC 1140. Therefore, while not\n\ndisturbing\nPrana Educational and Charitable Trust\n(supra) inter-\n\nparties, we declare the statement of law therein incorrect to the extent it\n\nrules on the issue before us, on account of failure to adhere to binding\n\nprecedent.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "National Insurance Company Limited v Pranay Sethi\n"
+      ],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P038_C01",
+      "text": "33. Dadasaheb Rawal Co-op. Bank of Dondaicha Ltd. (supra) and\nAbraham Memorial Educational Trust\n(supra) were decided by the\n\nBombay and Madras High Courts respectively, prior to\nPratibha\n\nPratisthan\n(supra) and need not detain us further. Mukund (supra) was\n\ndecided by a learned Single Judge of the Bombay High Court, Bench at\n\nNagpur, where the learned Judge held:\n‘10. The controversy in this case is required to be\n addressed in the backdrop of the above stated facts. At\n this stage, it would be necessary to consider the legal\n position. There are number of reported decisions,\n wherein it has been held that the phrase, “association of\n individuals” has to be read along with the word\n “company and firm” occurring in the explanation\n appended to\nsection 141\nof the N.I. Act. It is also settled\n legal position that the expression, “association of\n individuals” is intended to cover the cases of societies,\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\ntrusts etc, who have a legal and juristic personality. Reference can be made to the decision in the cases\n of Shri Banwarilal L. Saini. (\nsupra), Bijaya Manjari\n Satpathy v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P038_C02",
+      "text": "State of Orissa\n, 2022\nLiveLaw (Ori) 158,\n and Abraham Memorial Educational Trust v. C. Suresh\n Babu, Cri\n. OP Nos. 12630 and 12661 of 2012 decided\n on 7-8-2012.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P039_C01",
+      "text": "11. The primary question arisen in these cases was\n whether the Trust either public or private is a company\n covered in terms of\nsection 141\nof the N.I. Act and as\n such a juristic person, liable for punishment for the\n offence punishable under\nsection 138\nof the N.I. Act. It\n is to be noted that the specific question as above fell for\n consideration of the Madras High Court in the case\n of Abraham Memorial Educational Trust. (supra). The\n learned Single Judge of the Madras High Court, after\n considering the length and breadth of the subject in this\n erudite decision, has held that the Trust either public or\n private/charitable or otherwise is a juristic person and is\n liable for punishment for offence punishable under\nsection 138\nof the N: I. Act. It is further held that a Trust\n either private or public/charitable or otherwise having\n either a single trustee or two or more trustees, is a\n company in terms of\nsection 141\nof the N.I. Act. It is\n further held that for the offence under\nsection 138\nof the\n N.I. Act, committed by the Trust, every trustee, who\n were the in-charge of the day-to-day affairs of the Trust\n shall also be liable for punishment besides the Trust.\n xxx",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P040_C01",
+      "text": "12. On going through the record and proceedings and\n also the dicta\nlaid down in\nthe above decisions, I am of\n the opinion that the Trustee is a juristic person. The\n Trust, being an association of persons, would be a\n company in terms of\nsection 141\nof the N.I. Act. In this\n case, the cheque was issued by or on behalf of the\n Trust. The Trust is, therefore, the principal offender in\n this case. It is further pertinent to mention that by a legal\n fiction created under\nsection 141\nof the N.I. Act, all the\n persons who are the Office bearers of the Trust being\n in-charge of the day-to-day affairs of the Trust, shall\n also be liable for punishment besides the Trust.\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P041_C01",
+      "text": "13. In this background, it would be necessary to\n consider the settled position on the important point as to\n the effects and consequences of not arraigning the\n Trust as a principal accused or the effects and\n consequences of deletion of the name of Trust from the\n complaint during the pendency of the complaint. In my\n view, this situation would be required to be addressed in\n the backdrop of the law\nlaid down in\nthe cases\nAneeta Hada v. Godfather Travels and Tours Pvt. Ltd.\n, (2012) 5 SCC 661: (2012) 4 Mah LJ (SC) 527:\n(2012) 3 Mah LJ (Cri) (SC) 249, Himanshu v. B. Shivamurthy, (2019) 3 SCC 797: 2019 Mah LJ OnLine\n (Cri) (SC) 126 and Pawan Kumar Goel v. State of\n U.P., 2022 SCC OnLine SC 1598: (2023) 2 Mah LJ (SC)\n 456: (2023) 2 Mah LJ (Cri) (SC) 1. The exposition of the\n law in these decisions clearly states that if a cheque is\n issued by the company or on behalf of the company,\n then the Company is the principal offender.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P041_C02",
+      "text": "It is further\n held that apart from the company being a principal\n offender, every person who at the time when the offence\n was committed was in-charge or was responsible to the\n company for the conduct of the business of the\n company, shall also be deemed to be guilty of offence\n and shall be liable to be proceeded against and\n punished. It is held that in the absence of company\n being the principal accused in the complaint, the\n prosecution against the remaining persons, being\n vicariously liable by deeming fiction, gets vitiated.’\n (emphasis supplied)",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P042_C01",
+      "text": "34. Clearly, Mukund (supra) principally proceeded on equating a Trust\n\nwith a ‘company’, which is a fallacy. If we trace our steps back to over a\n\ncentury ago, in the locus classicus Salomon v A Salomon and Co. Ltd.,\n\n[1897] AC 22, Lord Macnaghten of the House of Lords opined:\n‘…\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nThe company is at law a different person altogether\n from the subscribers to the memorandum; and, though it\n may be that after incorporation the business is precisely\n the same as it was before, and the same persons are\n managers, and the same hands receive the profits, the\n company is not in law the agent of the subscribers or\n trustee for them. Nor are the subscribers as members\n liable, in any shape or form, except to the extent and in\n the manner provided by the Act. That is, I think, the\n declared intention of the enactment. If the view of the\n learned judge were sound, it would follow that no\n common law partnership could register as a company\n limited by shares without remaining subject to unlimited\n liability.\n…’\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Salomon v A Salomon and Co. Ltd"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P043_C01",
+      "text": "35. Tata Engineering and Locomotive Co. Ltd. v State of Bihar\n,\n\n(1964) 34 COMP CAS 458, this Court, in a composition of 5 learned\n\nJudges, commented:\n‘…\n The true legal position in regard to the character of a\n corporation or a company which owes its incorporation\n to a statutory authority, is not in doubt or dispute. The\n Corporation in law is equal to a natural person and has\n a legal entity of its own. The entity of the Corporation is\n entirely separate from that of its shareholders; it bears\n its own name and has a seal of its own; its assets are\n separate and distinct from those of its members; it can\n sue and be sued exclusively for its own purpose; its\n creditors cannot obtain satisfaction from the assets of its\n members; the liability of the members or shareholders is\n limited to the capital invested by them; similarly, the\n creditors of the members have no right to the assets of\n the Corporation. This position has been well established\n ever since the decision in the case of Salomon v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Tata Engineering and Locomotive Co. Ltd v State of Bihar\n"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P043_C02",
+      "text": "Salomon and Co. was pronounced in 1897; and indeed,\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nit has always been the well-recognised principle of\n common law. However, in the course of time, the\n doctrine that the Corporation or a Company has a legal\n and separate entity of its own has been subjected to\n certain exceptions by the application of the fiction that\n the veil of the Corporation can be lifted and its face\n examined in substance. The doctrine of the lifting of the\n veil thus marks a change in the attitude that law had\n originally adopted towards the concept of the separate\n entity or personality of the Corporation. As a result of\n the impact of the complexity of economic factors,\n judicial decisions have sometimes recognised\n exceptions to the rule about the juristic personality of\n the corporation. It may be that in course of time these\n exceptions may grow in number and to meet the\n requirements of different economic problems, the theory\n about the personality of the corporation may be\n confined more and more.\n…’\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P044_C01",
+      "text": "36. Therefore, Mukund (supra) does not lay down the correct position\n\nof law having wrongly assigned equivalence between a ‘company’ and a\n\nTrust, besides running counter to our exposition qua\nSections 3\nand\n\nthe Trusts Act. The legal status accorded to a ‘company’ cannot be\n\nimported to a Trust, in the eyes of law, in the case at hand.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P045_C01",
+      "text": "37. Turning to the Orissa High Court’s verdict in\nBijaya Manjari\n\nSatpathy\n(supra), we find as under:\n(a)The Orissa High Court relied on\nAparna A Shah v Sheth\n\n Developers Private Limited\n, (2013) 8 SCC 71, which related to a\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\ncompany and\nDilip Hariramani v Bank of Baroda\n, 2022 SCC\n\n OnLine SC 579, which concerned a partnership firm – both of\n\n which cannot be equated with a Trust;\n(b)The High Court also relied on\nPawan Kumar Goel v State of\n\n Uttar Pradesh\n, 2022 SCC OnLine SC 1598. However, this case\n\n also concerned a company but the purpose for which the High\n\n Court considered the same has no nexus with the question we\n\n have answered.\nLikewise, National Small Industries\n\n Corporation Limited v Harmeet Singh Paintal\n, (2010) 3 SCC\n\n 330 concerned a company and the pleadings/averments which\n\n would be required to assign vicarious liability to the concerned\n\n accused.\n(c) The Orissa High Court altogether omitted to consider the relevant\n\n provisions of the\nTrusts Act\n.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [
+        "National Small Industries\n\n Corporation Limited v Harmeet Singh Paintal\n"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P046_C01",
+      "text": "38. The views expressed by the respective High Courts in\nPrana\n\nEducational and Charitable Trust\n(supra);\nDadasaheb Rawal Co-op.\n\nBank of Dondaicha Ltd.\n(supra);\nAbraham Memorial Educational\n\nTrust\n(supra); Mukund (supra), and;\nBijaya Manjari Satpathy\n(supra)\n\nrun counter to what we have held above. The same do not commend\n\nthemselves to us and are overruled in law, without disturbing their\n\neffect(s) inter-parties.\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P047_C01",
+      "text": "39. The Impugned Judgment accorded reliance to\nSMS\n\nPharmaceuticals Ltd.\n(supra) and Pawan Kumar Goel (supra) while\n\nacceding to the Respondent’s prayer(s) before it. Again, Pawan Kumar\n\nGoel (supra) was in the context of a company and the principles laid\n\ndown could not be made applicable straightaway to a Trust, moreso in\n\nlight of the reasoning by us hereinabove.\nThe extracts from\nSMS\n\nPharmaceuticals Ltd.\n(supra) cited in the Impugned Judgment are\n\ndistinguishable as they related to the averments necessary in a complaint\n\nto invoke vicarious liability and not the factum of impleadment or lack\n\nthereof, specifically, a Trust in a complaint. Concededly, neither party\n\nurged submissions based on the\nTrusts Act\nbefore the High Court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P048_C01",
+      "text": "40. Accordingly, for reasons aforesaid, taking a holistic view in the\n\nentirety of the extant facts and circumstances as also the submissions\n\ncanvassed by the learned counsel for the parties, we find the Impugned\n\nJudgment to be unsustainable. We have no hesitation in quashing and\n\nsetting aside the Impugned Judgment. Resultantly, the subject-\n\nproceeding in Criminal Case No.44(S)/2019 stands restored to its original\n\nfile and number, to be proceeded with by the Court concerned in\n\naccordance with law. As the matter traces its origin to the year 2019, we\n\nexpect the Court concerned to take steps with due expedition.\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P049_C01",
+      "text": "41. The appeal stands allowed. This Judgment shall not affect any\n\nother contentions of law and fact, which may be raised before the Trial\n\nCourt, at the appropriate stage.\nTHE PENDING REFERENCE AND ITS EFFECT IN LAW:",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P050_C01",
+      "text": "42. We are conscious that\nPratibha Pratisthan\n(supra) has been\n\ndoubted and referred to a Larger Bench vide Order dated 04.10.2019 in\n\nTara Bai Desai Charitable Opthalmic Trust Hospital v Supreme\n\nElevators India (P) Ltd., Special Leave Petition (Civil) No.18636/2019\n\n[since reported as (2025) 3 SCC 80]. In fact, one of us (Ahsanuddin\n\nAmanullah, J.) was nominated by Hon’ble the then Chief Justice of India\n\nto be part of the 3-Judge Bench constituted to hear the afore-noted\n\nreference. As the learned Judge presiding over that 3-Judge Bench has\n\nsince demitted office, it would entail nomination of a new coram. However, till the reference is decided one way or the other, the law as\n\ndeclared in\nPratibha Pratisthan\n(supra) continues to hold the field as no\n\norder has been passed in Special Leave Petition (Civil) No.18636/2019\n\nrequesting other Benches to await the outcome thereof. There is no\n\ndoubt on this, given the clear dicta in\nUnion Territory of Ladakh\n(supra)\n\n[2-Judge Bench], which after surveying the law, held:\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\n‘35.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P050_C02",
+      "text": "We are seeing before us judgments and orders by\n High Courts not deciding cases on the ground that the\n leading judgment of this Court on this subject is either\n referred to a larger Bench or a review petition relating\n thereto is pending. We have also come across\n examples of High Courts refusing deference to\n judgments of this Court on the score that a later\n Coordinate Bench has doubted its correctness. In this\n regard, we lay down the position in law. We make it\n absolutely clear that the High Courts will proceed to\n decide matters on the basis of the law as it stands. It is\n not open, unless specifically directed by this Court, to\n await an outcome of a reference or a review petition, as\n the case may be. It is also not open to a High Court to\n refuse to follow a judgment by stating that it has been\n doubted by a later Coordinate Bench. In any case, when\n faced with conflicting judgments by Benches of equal\n strength of this Court, it is the earlier one which is to be\n followed by the High Courts, as held by a 5-Judge\n Bench in\nNational Insurance Company\n Limited v. Pranay Sethi\n, (2017) 16 SCC 680 [See\n Paragraphs 27 and 28 in the report on this point.].",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P050_C03",
+      "text": "The\n High Courts, of course, will do so with careful regard to\n the facts and circumstances of the case before it.’\n (emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P051_C01",
+      "text": "43. We have noticed a judgment by a Coordinate Bench in\nA P\n\nElectrical Equipment Corporation v Tahsildar\n, 2025 SCC OnLine SC\n\n447 stating:\n‘35. If two decisions of this Court appear inconsistent\n with each other, the High Courts are not to follow one\n and overlook the other, but should try to reconcile and\n respect them both and the only way to do so is to adopt\n the wise suggestion of Lord Halsbury given\n in Quinn v. Leathern, [1901] A.C. 495 and reiterated by\n the Privy Council in Punjab Cooperative Bank\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nLtd. v. Commr. of Income Tax, Lahore AIR 1940 PC\n 230:\n“…… every judgment must be read as applicable\n to the particular facts proved or assumed to be\n proved, since the generality of the expressions,\n which may be found there, are not intended to\n be expositions of the whole law, but governed or\n qualified by the particular facts of the case in\n which such expressions are to be found.”\n and follow that decision whose facts appear more in\n accord with those of the case at hand.’\n (emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P052_C01",
+      "text": "44. The decision rendered in\nA P Electrical Equipment Corporation\n(supra) does not whittle down the enunciation in\nUnion Territory of\n\nLadakh\n(supra). A 5-Judge Bench of this Court in\nPranay Sethi\n(supra)\n\nhas laid down that an earlier decision of a co-equal Bench must be\n\nfollowed by a later Bench of co-equal strength, which has been restated\n\nUnion Territory of Ladakh\n(supra). In any event,\nUnion Territory of\n\nLadakh\n(supra) lays down that when following an earlier decision in the\n\nface of a later conflicting decision by a co-equal Bench, the said exercise\n\nis to be done ‘… with careful regard to the facts and circumstances of the\n\ncase…’\nA P Electrical Equipment Corporation\n(supra) expresses the\n\nprinciple slightly differently by urging to ‘… follow that decision whose\n\nfacts appear more in accord with those of the case at hand.’\n\nUndoubtedly, on the facts of a case, it is always open to a Court to follow\n\nthe most applicable precedent, as per its understanding.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P052_C02",
+      "text": "Yet, the principle\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nhas long been settled that for questions of law, in the case of a conflict\n\nbetween equal Bench-strength judgments, the earlier view alone should\n\nbe followed, as conclusively stated in\nPranay Sethi\n(supra) and taken\n\nnote of in\nUnion Territory of Ladakh\n(supra). MISCELLANEOUS:",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL_P053_C01",
+      "text": "45. The Registry may seek suitable orders from Hon’ble the Chief\n\nJustice of India apropos constitution of an appropriate Bench to decide\n\nthe pending reference in Special Leave Petition (Civil) No.18636/2019.\nWe clarify that the instant appeal is disposed of and not tagged with the\n\nreference.\n..…………………..................…..J.\n [AHSANUDDIN AMANULLAH]\n\n ..…………………..................…..J.\n [PRASHANT KUMAR MISHRA]\nNEW DELHI\nOCTOBER 09, 2025\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Sankar Padam Thapa vs Vijaykumar Dineshchandra Agarwal",
+    "case_id": "SC_2025_SANKAR_PADAM_THAPA_VS_VIJAYKUMAR_DINESHCHANDRA_AGARWAL",
+    "court": "Supreme Court of India",
+    "year": "2025",
+    "facts_summary": "3. The instant appeal arises from the Final Judgment and Order\n\ndated 21.11.2022 (hereinafter referred to as the ‘Impugned Judgment’)\n\n[2022 SCC OnLine Megh 624 | (2023) 1 GLT 344], passed by a learned\n\nSingle Judge of the High Court of Meghalaya, Shillong (hereinafter\n\nreferred to as the ‘High Court’) in Criminal Petition No.31/2019, wherein\n\nthe High Court quashed and set aside the proceedings in Criminal Case\n\nNo.44(S)/2019 pending before the Court of the learned Judicial\n\nMagistrate, Shillong (hereinafter referred to as the ‘Trial Court’) and the\n\nSummoning Order dated 11.02.2019 passed against the Respondent. 4. The William Carey University (hereinafter referred to as the\n\n‘University’), a recognized Private University, owned and sponsored by\n\nthe Agriculture Crafts Trades and Studies Group of Institutions\n\n(hereinafter referred to as the ‘ACTS Group’), was facing a severe\n\nfinancial crisis. The ACTS Group entered into a Memorandum of\n\nUnderstanding with Orion Education Trust (hereinafter referred to as\n\n‘Orion’) on 12.10.2017 to hand over the management and administration\n\nof the University to Orion. The Respondent is the Chairman of Orion. As\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nChairman of Orion, the Respondent issued authorization letters to all\n\nconcerned, duly entrusting the Appellant with the task of liaisoning with\n\ngovernmental authorities and to undertake such activities to facilitate the\n\neffective transition o",
+    "legal_issues": "9. The arguments put forth by the learned counsel for the Appellant\n\nwere basically two-fold – (i) the ineligibility of a Trust to be sued, and; (ii)\n\nno mandate to make specific averments with regard to the accused’s\n\nresponsibility in conducting the day-to-day business of the Trust. For the\n\nfirst proposition, learned counsel placed reliance on the decision of this\n\nCourt in\nPratibha Pratisthan v Manager, Canara Bank\n, (2017) 3 SCC\n\n712, where, in the context of the\nConsumer Protection Act, 1986\n(hereinafter referred to as the ‘\nConsumer Protection Act\n’), it was held\n\nthat a Trust is not a person and therefore, could not be a consumer. 10. Next, in support of his argument that a Trust is not capable of\n\nbeing sued or suing in a court of law, learned counsel drew the attention\n\nof this Court to the decision of the Kerala High Court in\nK P Shibu v\n\nState of Kerala\n, 2019 SCC OnLine Ker 7585, holding that in the context\n\nof the\nNI Act\n, it is the Trustees who can maintain and defend a suit to\n\nprotect the Trust property, and the Trust itself cannot sue or be sued in a\n\ncourt of law, therefore, a Trust is not a juristic person or a legal entity, as\n\na juristic person has a legal existence of its own and hence is capable of\n\nsuing and being sued in a court of law. It was further held that a Trust\n\nwould not fall within the term ‘association of individuals’ as used in the NI\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nAct. The High Cour",
+    "ratio_summary": "2. The question for consideration in the instant appeal is as to\n\n whether in the absence of a Trust being made an accused in a complaint\n\n under the\nNegotiable Instruments Act, 1881\n(hereinafter referred to as\n\n the ‘\nNI Act\n’), when a Cheque has been issued on behalf of a Trust, the\n\n said complaint would be maintainable against the Chairman/a Trustee of In view of the above discussion, our answers to the\n questions posed in the reference are as under:\n(a)It is necessary to specifically aver in a complaint under\nSection 141\nthat at the time the offence was\n committed, the person accused was in charge of, and\n responsible for the conduct of business of the\n company. This averment is an essential requirement of\nSection 141\nand has to be made in a complaint. Without this averment being made in a complaint, the\n requirements of\nSection 141\ncannot be said to be\n satisfied. (b)The answer to the question posed in sub-para (b) has\n to be in the negative. Merely being a director of a\n company is not sufficient to make the person liable\n under\nSection 141\nof the Act. A director in a company\n cannot be deemed to be in charge of and responsible\n to the company for the conduct of its business. The\n requirement of\nSection 141\nis that the person sought to\n be made liable should be in charge of and responsible\n for the conduct of the business of the company at the\n\nCRIMINAL APPEAL NO._____ OF 2025 [@ SPECIAL LEAVE TO APPEAL (CRIMINAL) NO.4459/2023]\n\nrelevant time. This has to be averred as",
+    "final_order": "",
+    "outcome_summary": "Disposed of",
+    "sections_cited": [
+      "IPC 420"
+    ],
+    "cases_cited": [
+      "Court in\nPratibha Pratisthan v Manager, Canara Bank\n",
+      "Narayana Iyer v Anandammal Adheena Trust",
+      "Court in\nSMS Pharmaceuticals\n\nLtd v Neeta Bhalla\n",
+      "Court in\nK K Ahuja v V\n\nK Vora\n",
+      "Sunita Palita v Panchami Stone Quarry\n",
+      "D Purushotama Reddy v K Sateesh\n",
+      "Bank of Dondaicha Ltd v Ramesh\ns",
+      "Manohar Wazalwar v Eknath s",
+      "National Insurance Company Limited v Pranay Sethi\n",
+      "Salomon v A Salomon and Co. Ltd",
+      "Tata Engineering and Locomotive Co. Ltd v State of Bihar\n",
+      "National Small Industries\n\n Corporation Limited v Harmeet Singh Paintal\n"
+    ]
+  }
+}

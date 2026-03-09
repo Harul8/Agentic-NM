@@ -1,0 +1,544 @@
+{
+  "case_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "2002",
+  "judgment_template": null,
+  "case_number": "Petition 20 of 2002",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 39,
+  "cited_by_count": 5,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\2002\\2002_ALL_AndhraHC_57.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P001_C01",
+      "text": "Association Of Drugs And ... vs A.P. Health, Medical, Housing And ... on 21 February, 2002\nEquivalent citations: 2002(2)ALD609, 2002(3)ALT593\nORDER\n\nV.V.S. Rao, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P002_C01",
+      "text": "1. The petitioner, an association of manufacturers of medicines, drugs and pharmaceuticals, has filed this writ petition praying for a writ of mandamus declaring the action of the first respondent in prescribing the holding of WHO GMP (World Health Organization Good Manufacturing Practices) Certificate for the manufacturers to participate in the tenders as per Tender Notification, dated 10-10-2001 for supply of I.V. fluids and general drugs under Rate Contract 2001-03, as being arbitrary and irrational, and for a consequential direction to the first respondent to consider the case of the members of the petitioner-Association and other licensees who manufacture medicines/drugs/ pharmaceuticals.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P003_C01",
+      "text": "2. While admitting the writ petition on 19-10-2001, this Court passed an interim order in WPMP No.27836 of 2001 directing the first respondent to consider the tenders of the members of the petitioner-Association without insisting that they should possess WHO GMP Certificate, pending disposal of the writ petition. After receiving the notice, the first respondent has filed an application being WVMP No.20 of 2002 on\n\n28-12-2001 praying this Court to vacate the interim order dated 19-10-2001. At the request of the learned Counsel appearing on behalf of the petitioner and the learned Additional Advocate-General appearing on behalf of the respondent, the main writ petition was heard, and is being disposed of finally by this order.\nFACTUAL BACKGROUND",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P004_C01",
+      "text": "3. All the members of the petitioner-Association hold licences under the\nDrugs and Cosmetics Act, 1940\n( for short 'the\nDrugs Act\n') and the Rules made thereunder Known as \"Drugs and Cosmetics Rules, 1945\" (for short 'the Drugs Rules'). All of them allegedly adhere to good manufacturing practices (GMP), as enumerated in Schedule M to the Drugs Rules. They were given GMP Certificates by the Director, Drug Control Administration of Andlira Pradesh. All the members of the petitioner-Association were supplying drugs, medicines and pharmaceuticals to the State Government and State Government Corporations without the status of WHO GMP, and during the last 25 years there was no such qualification prescribed. The World Health Organization, Geneva in Switzerland, recommended certain good manufacturing practices known as 'WHO GMP', which are altogether different. Any requirement of WHO GMP, as pre-qualification as eligibility for participation in the tenders would totally eliminate the small-scale industries with GMP. As a consequence, the cost of procuring drugs would go up resulting in loss of public money. The tender condition subverts public interest.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P004_C02",
+      "text": "The petitioner also contends that when the\nDrugs Act\nand the Rules do not define and do not contemplate any grading as WHO GMP and only requires the licences to comply with good manufacturing practices under Schedule M to the Rules, the prescription incorporated in the impugned tender notification is arbitrary and irrational. The classification of the drug manufacturers\n\ninto those with WHO GMP as one category and those with GMP as another category is irrational and does not have any reasonable nexus with the object sought to be achieved, which is to place orders with the enlisted licensed manufacturers for supplying I.V. Fluids and general drugs to Government at a reasonable rate contract It is further stated that when the\nDrugs Act\nand the Rules do not prescribe or contemplate any certificate to conform to WHO GMP, the State cannot insist on such certification. The items which are no subject-matter of the tender are not of that high degree of scientific precision and the I.V. Fluids and general medicines which are sought to be procured are routine drugs and medicines regularly purchased every year by the first respondent.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P005_C01",
+      "text": "4. The first respondent has filed detailed counter-affidavit bringing out the various circumstances under which the respondents prescribed WHO GMP as the requirement and eligibility to participate in the tenders for supplying of drugs and I.V. fluids under the Rate Contract. This will be referred to a little later. Be that as it may, in effect, the writ petition is based on the ground that in the absence of any statutory right and fundamental right inhering in the manufacturers, they cannot compel the State to enter into rate contract with them. The first respondent was appointed as a nodal agency for centralised procurement of drugs for all the Government hospitals, including district hospitals and primary health centres. The Corporation in public interest is, therefore, entitled to prescribe the terms and conditions while inviting tenders. It is the policy of the Government and the Corporation to procure and distribute drugs supplied by the manufacturers with WHO GMP, and a writ petition is not maintainable to question the policy decision. The decision is not arbitrary and irrational, and the classification is valid.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P005_C02",
+      "text": "The larger public interest requires that the State should procure\n\nand supply goods manufactured by standard companies who have WHO GMP, which are stringent standards to be complied with by the manufacturers. The members of the petitioner-Association were certified to be maintaining GMP \"by and large\" to the \"extent possible\". The GMP certificates were more often than not being misused, and therefore, the issuance of fresh GMP certificates has been discontinued ever since February/March, 2001, which indicates that the members of the petitioner-Association are not fully complying with the provisions enumerated in Schedule M to the Rules. During 2000-01, there were larger scale complaints about the supply of spurious drugs by various manufacturing units. Therefore, the Government appointed a Committee comprising of five members. The said Committee evolved the policy of procuring I.V. fluids and general drugs from WHO GMP manufacturers.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P005_C03",
+      "text": "The said policy was evolved for ensuring desirable level of quality control of drugs, and the same is based on 1977 resolution of the WHO, which recommended that member-States should comply with the requirements for \"good practices in manufacture and quality control of drugs.\"\nSUBMISSIONS",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P006_C01",
+      "text": "5. Sri V. Vankataramana, the learned Counsel for the petitioner submits that the A.P. Rate Contract Committee simultaneously invited pre-qualification bidding for supply of antibiotics under the rate contract for the year 2001-03, where no such requirement/eligibility was prescribed. The first respondent, which is appointed as nodal agency for procuring I.V. Fluids and general drugs for Government hospitals has prescribed the requirement of WHO GMP, which is arbitrary and irrational. The first respondent has resorted to invidious discrimination by excluding the members of the petitioner-Association who have GMP Certificates. The classification does not\n\nsatisfy the nexus test and rationality test, and therefore, is invalid being violative of\nArticle 14\nof the Constitution of India. Secondly, he submits that the stipulation in the impugned condition is not authorised by the\nDrugs Act\nand the Rules. In die absence of any State law prescribing WHO GMP, the respondent cannot exclude the licensed manufacturers with GMP as it is contrary to the provisions of the\nDrugs Act\nand the Drugs Rules.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P007_C01",
+      "text": "6. The learned Additional Advocate-General appearing for the first respondent submits that the\nDrugs Act\nis not in derogation of other laws. The subject of \"Drugs\" is covered by Entry 19 of List III of VII Schedule to the Constitution, and therefore, the State Government in the absence of any law, is entitled to formulate and enforce an executive policy. In furtherance thereof, a policy has now been evolved to procure drugs and I.V. fluids only from the licensed manufactures who maintain WHO GMP standards. The licensed manufacturers, who admittedly do not have such standards cannot insist that their tenders should also be considered, especially in the absence of any enforceable statutory right or fundamental right to compel the State to place orders with them. The object of imposing such condition is to ensure that the Government hospitals, dispensaries and other health care institutions are provided with high quality drugs, and therefore, the WHO GMP is being insisted upon from the manufacturers who wished to participate in the tender process. When the value of human life and provision of standard health care are two prime considerations, the cost is not of vital consequence.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P007_C02",
+      "text": "Additional financial burden, therefore, necessarily has to be borne having regard to the health and welt-being of the people. In furtherance of such objective, WHO GMP Certificate, which is also prescribed in the State of Karnataka is being insisted upon. The small-scale industries are not subject to any\n\ndiscrimination, and such industries who have WHO GMP Certificates are not excluded. In the larger interest of general public only primary manufacturers with WHO GMP are invited to tender for supply of I.V. Fluids and general drugs. The State is entitled to arrive at its own conclusions either by inference or from different sources as to the capacity of manufacturers to supply standard drugs. In this case, a Committee has been constituted by the Government, and having regard to the WHO resolution, evolved the policy of procuring drugs and I.V. Fluids from those manufacturers who have WHO GMP, and the same cannot be termed irrational.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P008_C01",
+      "text": "7. The decision in this writ petition depends on finding answers to the question of judicial review of arbitrary tender conditions, the question of judicial review of policy decisions and the question of invidious classification and arbitrariness, if any, in relation to the impugned tender conditions. Before these are considered in seriatim, it is necessary to understand the concept of WHO GMP in the background of\nDrugs Act\nand the Drugs Rules.\nGENESIS OF WHO GMP",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P009_C01",
+      "text": "8. The World Health Organization, Switzerland of UNO, in its 28th World Health Assembly 1977 passed a resolution WHO 28.65, recommending to member States to apply the requirements for \"Good Practices in the Manufacture and Quality Control of Drugs\" (GMP) and participate in the certification scheme on quality of pharmaceutical products moving in International Commerce. The Director General, by letters dated October, 1995, May, 1997 and December, 1997, invited the member-States to participate in the certification scheme. The Drug Controller of India, Ministry of Health and Family Welfare informed the WHO that India has decided to participate in the certification\n\nscheme on the quality of pharmaceutical products moving in International Commerce. It was also informed that drug certificates would be issued by manufacturers, and do not require any Government authority to issue such certificates. The relevant WHO chronicle 33:7/8, which contains the letter addressed by the Drug Controller of India to the WHO, has been placed before this Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P009_C02",
+      "text": "This clearly shows that the Government of India accepted to participate in the quality control scheme on the quality of pharmaceutical products moving in International Commerce. Schedule M of the Drugs Rules was amended by GSR 735 (E), dated 24-6-1998, which lays down that each licensee shall evolve a methodology and procedures to achieve the objectives listed in Schedule M. These good manufacturing practices deal with physical infrastructure, including sanitation and efficient equipment, purity of raw materials and personal hygiene of the workers and employees as well as surroundings and setting of the manufacturing facility.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P010_C01",
+      "text": "9. It is not denied that good manufacturing practices, mentioned in Schedule M are less stringent than WHO GMP. WHO GMP is in two parts. Part A deals with good practices in the manufacture and quality control of drugs, whereas Part B deals with classification scheme on the quality of pharmaceutical products moving in International Commerce. Yet another distinct feature of WHO GMP is that it is product based, whereas the GMP in Schedule M is not so. Be it also noted that by GSR 894 (E), dated 11-12-2001, the Government of India in Ministry of Health and Family Welfare, in exercise of powers conferred by\nSections 12\nand\n\nof the Drugs Act promulgated Drugs and Cosmetics (Eighth Amendment) Rules, 2001, which apply prospectively. Schedule M in Drugs and Cosmetics Rules, 1945 was substituted by GSR 849 (E). It was, however, clarified that the amended Schedule M shall not\n\napply to the present licensed manufacturers for the period upto 31-12-2003. Therefore, Schedule M which purports to introduce WHO GMP in toto, does not bar the members of the petitioner-Association to continue to manufacture drugs upto 31-12-2003 with GMP subject to having licence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P010_C02",
+      "text": "But one thing is clear that in India, WHO GMP has become part of Indian Law by reason of amended Schedule M by GSR 894 (E), dated 11-12-2001. RELEVANT PROVISIONS IN THE ACT AND THE RULES",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P011_C01",
+      "text": "10. The Drugs Act\nis a legislation enacted to regulate the import, manufacture, sale and distribution of drugs and cosmetics. The main object of the\nDrugs Act\nis to ensure availability of standard quality drugs and cosmetics to citizens.\nThe Drugs Act\nprovides for exhaustive statutory' regimen and guidelines to researchers, manufacturers, distributors, retailers and pharmacists dealing in drugs and pharmaceuticals. As observed by the Supreme Court in Chimanlal Jagjivan Das v. State of Maharashtra, 1963 SCC 655 and Indian C.P. Works v. State of A.P., , the main object of the\nDrugs Act\nis to prevent substandard practices and for maintaining high standards of medical treatment.\nThe Drugs Act\nnot only controls and regulates the manufacture and sale of drugs, but also lays down the standard manufacture processes to be maintained. The law presumptively considers that standard and hygienic drugs can only be manufactured in healthy and hygienic environment. Conversely, if the manufacturing facility and its surroundings are squalid, there cannot be standard and healthy drugs.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P012_C01",
+      "text": "11. Chapter IV of the Drugs Act\ndeals with manufacture, sale and distribution of drugs and cosmetics. Under\nSection 18(c)\nread with\nSection 27\nof the Act, no person shall manufacture for sale or sell or stock or exhibit drugs or cosmetics, except under\n\nand in accordance with the conditions of a licence, issued for such purpose. The Government of India made rules in exercise of the powers conferred under\nSections 6(2)\n,\n\n,\n\nand\n33(n)\nof the Drugs Act. Part VII of the rules contains various provisions for licensing the manufacture for sale or distribution of drugs (other than homeopathic medicines). The licence for the manufacture of drugs is granted in Form-25 appended to the rules. Before a licence in Form-25 is granted or renewed, the applicant has to comply with the requirements of GMP as laid down in Schedule M. This is the requirement under Rules 71(7) and 74(O). It is alleged that all the members of the petitioner-Association, as already noticed, have licences and GMP Certificates, issued by the Director of Drug Control Administration of the State.\nJUDICIAL REVIEW OF POLICY DECISION",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P013_C01",
+      "text": "12. The Government of Andhra Pradesh constituted a Committee (Drugs Procurement Committee ) vide G.O.Rt. No.871, Health, Medical and Family Welfare (Ml) Department, dated 12-6-1997. The Drugs Procurement Committee was entrusted with the duty of floating tenders for purchasing drugs/medicines and for finalising rate contract pending finalisation of the new drug policy. Two of the members consisting of more titan eight members were entrusted to examine the technical aspects of the tenders. By G.O.Rt.No.672, Health, Medical and Family Welfare (Ml) Department, dated 20-5-1998, the Government of Andhra Pradesh notified A.P. Health, Medical, Housing and Infrastructure Development Corporation ('the Corporation' - first respondent), an enterprise of the Government of Andhra Pradesh as nodal agency for undertaking centralised drugs procurement for purchase and distribution of drugs and pharmaceuticals required for the health sector in Andhra Pradesh.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P013_C02",
+      "text": "The Corporation\n\nis to be advised by the Drugs Procurement Committee in finalising rate contract to enable the Director of Health, Director of Medical Education and the Commissioner of Andhra'Pradesh Vaidya Vidhana Parishad to procure the required drugs as per rate contract. Broadly, this was the modus operandi for fixation of rate contract as well as procuring the drugs. An exercise was taken up for the year 2000-2001 duly issuing tender notice dated 12-6-2000. The Rate Contract Committee divided it into various bids and prepared a comparative statement of the rates quoted by different firms and also a list of lowest rates with the names of the approved firms. A writ petition being WPNo.1900 of 2001 was filed before this Court alleging drugs purchase scandal involving about Rs.20 crores per annum. The writ petition was dismissed at the admission stage on 5-12-2001. Thereafter, the Andhra Pradesh Vigilance Commission enquired into the matter and made certain recommendations to prevent supply of substandard medicines by spurious firms.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P014_C01",
+      "text": "13. The Government again appointed a committee in G.O.Rt.No.725, Health, Medical and Family Welfare (VC-I) Department, dated 3-7-2001 to probe into the matter and take action for blacklisting of the manufacturers/suppliers who violate drug control laws. Based on the report of the committee, action was also initiated. In view of the lapses, the Government reconstituted a five-member Drugs and Consumables Procurement Committee (called Empowered Committee) in G.O. Rt No. 1010, Health, Medical and Family Welfare (M1) Department, dated 13-9-2001. The committee was required to work out foolproof procurement procedures for drugs etc., verification and distribution procedures and inventory controls besides evolving policy and selection, quantification of procurement, distribution and use of drugs in keeping with the principles of rational use of drugs as recommended by the WHO. The empowered committee was also required to formulate on-line procedure to arrive at competitive rates compared to the prevailing rates in the neighbouring States.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P014_C02",
+      "text": "The Government Order also required the constitution of technical sub-committee for technical verification of the firms, drugs and medicines and financial sub-committee to evaluate financial bids only from such of those firms which qualify after scrutiny by the technical sub-committee.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P015_C01",
+      "text": "14. The empowered committee met on 29-9-2001. The members present included Engineer-in-Chief of the Corporation as a special invitee. The subject of item No.1 of the agenda was 'tenders under rate contract for the period of 2002-2003. The resolution of the empowered committee on the said subject reads as under.\nThe committee has resolved that, the procurement of I.V. Fluids and General Drugs to be made by calling the tenders from the Firms with WHO GMP Certificate for 2002-03. Till then, 69 items of General Drugs mentioned in Annexure-I to be procured at 2000-01 RC rates and remaining 27 items of General Drugs mentioned in Annexure-1 to be procured with 1998-99 RC rates. Further, it is decided to send the samples of drugs, selected at random, by the Superintendents of Hospitals to IICT, Hyderabad for analysis through APHMHIDC, Hyderabad and the expenditure to be met from the bills of Finns. Injections of Insulin Soluble and Lente to be procured of latest variety after inviting tenders with short notice.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P016_C01",
+      "text": "15. The above policy evolved by the empowered committee was the basis for the Corporation to issue tender notification dated 10-10-2001 (published in newspapers on 11-10-2001). It is strongly urged before this Court by the State that the policy to procure drugs from primary manufacturers with WHO GMP was evolved having regard to the past experience and also based on the opinion of experts and, therefore, the issue\n\nis not justiciable in this case. For short, the petitioner's Counsel contends that the policy violates the law converting the field and, therefore, it is amenable to judicial review. The extent and scope of power of the Court to judiciously review a policy decision is well settled.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P017_C01",
+      "text": "16. Every policy decision requires inputs from various sources including scientific, technical, economic and administrative experience. A policy decision simplicitor is beyond the scope of judicial review for all policy decisions require delicate balancing and consideration of complex socio economic aspects, which is entrusted to the executive and the legislative wings of the State. The Courts are not equipped to adjudicate disputed policies, for, there are always two divergent competing views. The lack of adjudicative disposition in every policy decision has traditionally kept a policy out of judicial review and Courts ordinarily do not interfere with such policy decisions unless such policy takes the shape of a legislation and attracts\nArticle 13\nof the Constitution (See\nA.L. Kalra v. The Project and Equipment Corporation of India Limited\n, ).",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 13"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P018_C01",
+      "text": "17. Balco Employees Union (Regd.) v. Union of India\n, 2001 AIR SCW 5135, the question whether the economic policies of the Government are amenable to judicial review, was the core issue. The earlier decisions of the Supreme Court in\nSC. Cooper v. Union of India\n, ,\nFertilizer Corporation Kamgar Union v. Union of India\n, ,\nR.K. Garg v. Union of India\n, AIR 1981 SC 2138, State ofM.P. v. Nandlal Jaiswal, , G.B. Mahajan v. Jalgaon Municipal Council\n, ,\nPeerless General Finance and Investment Company Limited v. Reserve Bank of India\n, ,\nPremium Granites v. State of Tamil Nadu\n, ,\nM.P. Oil Extraction v. State of M.P.\n, ,\nState of Punjab v. Ram Lubhaya Bagga\n, ,\nBhavesh D. Parish v. Union of India\n, , and\nNarmada Bachao Andolan v. Union of India\n, , were referred to and it was held :\nIt is evident from the above that it is neither within the domain of the Courts nor the scope of the judicial review to embark upon an enquiry as to whether a particular pubic policy is wise or whether better public policy can be evolved.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P018_C02",
+      "text": "Nor are our Courts inclined to strike down a policy at the behest of a petitioner merely because it has been urged that a different policy would have been fairer or wiser or more scientific or more logical ......................................The\nCourts have consistently refrained from interfering with economic decisions as it has been recognised that economic expediencies lack adjudicative disposition and unless the economic decision, based on economic expediencies, is demonstrated to be so violative of constitutional or legal limits on power or so abhorrent to reason, that the Courts would decline to interfere. In matters relating to economic issues, the Government has, while taking a decision, right to \"trial and error\" as along as both trial and error are bona fide and within limits of authority. Therefore, the law may be taken to be well settled that ordinarily all policy decisions do not have adjudicative disposition and, hence, beyond the purview of judicial review.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P018_C03",
+      "text": "It is also well settled that the Government while taking a decision has a right to 'trial and error' as long as the policy decision does not violate the constitutional or legal limits and the decision is bona fide within the limits of an authority. Ordinarily, any policy decision is not justiciable and beyond the scope of judicial review. The policy decision to procure drugs and other consumables only\n\nfrom primary manufacturers with WHO GMP, unless it is shown to violate any constitutional or legal provisions, cannot be interfered with. HE QUESTIONS OF ARBITRARINESS AND DISCRIMINATION",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P019_C01",
+      "text": "18. On these points, we may first consider about arbitrary tender conditions. No citizen has a fundamental right to be given a contract to supply goods or services to the Government. But when the Government decides to procure goods and services for its activities or for activities of its organisations, all citizens who have fundamental right to trade, business, profession or occupation, have a right for their claims to be considered by the Government. The right to be considered fairly applies at the stage of invitation of offers and/or at the stage of acceptance of offers. If the State ignores the lowest tender for supply of goods or services, the same would be arbitrary and violative of\nArticle 14\nof the constitution (See\nHarvinder Singh v. Union of India\n, ). Similarly all offers are invited by a notice inviting tenders, be it statutory tender or otherwise, prescribing reasonable qualifications or eligibility criteria in the interest of general public. If any of the qualifications or eligibility criteria are unreasonable or vague or purposefully designed to exclude a specified class of persons, the same would be arbitrary.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P020_C01",
+      "text": "19. New Horizons Limited v. Union of India\n, , after referring to the relevant case law viz.,\nRamana Dayaram Shetty v. International Airport Authority of India Limited\n, , Kasturi Lal Lakshmi Reddy v. State ofJ&K, ,\nFasih Chaudhary v. Director General\n,\nDoordarshan, , Sterling Computers Limited v. M&N Publications Limited\n, , and\nUnion of India v. Hindustan\n\nDevelopment Corporation\n, , the Supreme Court observed:\n.................The State, in exercise of its various\nfunctions, is governed by the mandate of\nArticle 14\nof the Constitution which excludes arbitrariness in State action and requires the State to act fairly and reasonably. The action of the State in the matter of award of a contract has to satisfy this criterion. Moreover a contract would either involve expenditure from the State Exchequer or augmentation of public revenue and consequently the discretion in the matter of selection of the person for award of the contract has to be exercised keeping in view the public interest involved in such selection.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P020_C02",
+      "text": "The decisions of this Court, therefore, insist that while dealing with the public, whether by way of giving jobs or entering into contracts or issuing quotas or licences or granting other forms of largesse, the Government cannot act arbitrarily at its sweet will and like a private individual, deal with any person it pleases, but its action must be in conformity with the standards or norms which are not arbitrary, irrational or irrelevant. It is, however, recognised that certain measure of \"free play in the joints\" is necessary for an administrative body functioning in an administrative sphere.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P021_C01",
+      "text": "20. Tata Cellular v. Union of India\n, , the law of judicial review generally and with special reference to State's power to enter into contract was considered and the following principles were laid down. (1) The modem trend points to judicial restraint in administrative action. (2) The Court does not sit as a Court of appeal but merely reviews the manner in which the decision was made. (3) The Court does not have the expertise to correct the administrative decision. If a review of the administrative decision is permitted it will be substituting its own decision, without the necessary expertise which itself may be fallible. (4) The terms of the invitation to tender cannot be open to judicial scrutiny because the invitation to tender is in the realm of contract. Normally speaking, the decision to accept the tender or award the contract is reached by process of negotiations through several tiers. More often than not, such decisions are made qualitatively by experts. (5) The Government must have freedom of contract. In other words, a fair play in the joints is a necessary concomitant for an administrative body functioning in an administrative sphere or quasi-administrative sphere.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P021_C02",
+      "text": "However, the decision must not only be tested by the application of Wednesbury principle of reasonableness but must be free from arbitrariness not affected by bias or actuated by mala fides. (6) Quashing decisions may impose heavy administrative burden on the administration and lead to increased and unbudgeted expenditure.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P022_C01",
+      "text": "21. As\nlaid down in\nTata Cellular and New Horizons cases (supra), the tender conditions cannot ordinarily be subjected to judicial scrutiny, but if the tender conditions are so arbitrary and no procedure was prescribed for evaluating the standards or the tender conditions do not satisfy Wednesbury principle of unreasonableness (See Associated Provincial Picture Houses Limited v. Wednesbury Corporation, (1948) 1 KB 223 = (1947) 2 All ER 680, followed and explained in\nOm Kumar v. Union of India\n, (2001) 2 SCC 386, besides many other cases), they shall be deemed to be irrational and as a necessary corollary arbitrary to be cursed with invalidation under\nArticle 14\nof the Constitution. A decision or an action which ignores constitutional or legal provisions is by its very nature arbitrary.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P022_C02",
+      "text": "It is the submission that as all the members of the petitioner Association have already obtained GMP Certificates from the State Drug Authority and all of them satisfied the conditions\nlaid down in\nSchedule M which\n\nis the requirement as per Rules 68-A, 71(7), 74(O), 76(2B) and 78(P) of the Rules, the State Government cannot ignore the same and prescribe WHO GMP standards which are not contemplated under the\nDrugs Act\nand the Drugs Rules. This is the only facet of arbitrariness pressed into service in support of the writ petition.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P023_C01",
+      "text": "22. The contention that in the face of the Central legislation by way of the\nDrugs Act\nand the Rules, it is permissible for the State to evolve a policy different from the Central legislation cannot be countenanced. As rightly contended by the learned Additional Advocate-General, in the constitutional scheme with federal distribution of legislative power, having regard to the legislative entry 19 in the Concurrent List, the State has power either to control or to take executive action in relation to those aspects subject to the doctrine of repugnance. The executive power of the State under\nArticle 162\nof the Constitution shall extend to the matters with respect to which the Legislature of the State has such power to make laws and rules. As per\nArticle 245 (1) (Extent of laws made by the Legislatures of the State)\nread with\nArticle 246(2)\nand\n(3)\n, the State has exclusive power to make laws with respect to any other matters enumerated in List II and List III of VII Schedule to the Constitution. Therefore, there cannot be any doubt that the State is very much competent to chisel out a policy of its own within the constitutional framework. The principle is well settled.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 162"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P023_C02",
+      "text": "A reference may be made to Ram Jawaya Kapur v. State of Punjab, AIR 1965 SC 549, wherein it was held that it is not necessary that there must be a law already in existence before the executive is enabled to function and that the powers of the executive are limited merely to the carrying out of these law. A Constitution Bench of the Apex Court in\nB. N. Nagarajan v. State of Mysore\n, also followed the ratio in Ram Jawaya Kapur (supra).",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P024_C01",
+      "text": "23. It is axiomatic that although citizens have fundamental right to practice any profession or to carry out any occupation, trade or business, there is no fundamental right to insist that any person or the Government should do business with them. Assuming that all the members of the petitioner Association have drug licences in force given under the\nDrugs Act\nand the Rules, they cannot, however, urge that stringent standards imposed in the tender conditions would violative their fundamental right. The fundamental right in this case is only to the extent of setting up a drug manufacturing company subject to fulfilling the provisions of law and also conditions of licence and no more. The said right cannot be extended to insist upon the Government to buy the drugs from them even though they do not have WHO GMP standards as on today. The prescription of GMP standards in Schedule M as a due and sufficient compliance with the conditions of licence and relevant rules, has nothing to do with the policy of the respondents to procure drugs and consumables only from primary manufacturers with WHO GMP Certificates. Almost similar question arose in Gopila v. State, .",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P024_C02",
+      "text": "A Division Bench of Orissa High Court considered the question whether in the absence of any fixed standards for any drug, it is permissible to insist upon licence under the\nDrugs Act\n. It was submitted before the Orissa High Court that the Government has not fixed standards of quality for Dantaghasa Gudakhu and, therefore, a manufacturer cannot be called upon to take a licence for the manufacture of Gudakhu. The submission was negatived and it was held that \"non fixation of standard quality of Gudhaku has however nothing to do with the taking of licence and mat the provisions of the\nDrugs Act\nand the Rules prescribing for standard Gudhaku cannot be enforced until such standards are prescribed.\"",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P025_C01",
+      "text": "24. It is, therefore, not possible to accept the submission of the learned Counsel\n\nfor the petitioner. Be it noted that the\nDrugs Act\nin pith and substance only regulates the imports, manufacture, distribution and sale of drugs and cosmetics and it does not regulate or control the power of the State to buy drugs and consumables of higher standards. In a competitive market, manufacturers tend to strive to produce more standard goods to increase their consumer base. Likewise, consumers tend to buy more standard drugs at the same price or at a little higher price. The Government purchases drugs for being supplied to patients in Government hospitals and, therefore, it is always permissible for them to take a policy to purchase the drugs from the manufacturers with world-class standards. Such condition, therefore, cannot be treated as arbitrary or irrational. A submission was made by the learned Counsel for the petitioner that all the members of the association are small scale industries and if WHO GMP standards are prescribed for suppJy of drugs and consumables, the same in turn would seriously result in loss of public money affecting financial budget of the Government.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P025_C02",
+      "text": "The submission at first blush though looks appealing, the same, on the principle of constitutionalism, is liable to be rejected. In a matter like this, there could always be counter argument that those people who can afford can buy standard drugs, whereas economically poor people who utilise hospital services provided by the Government are supplied cheaper drugs. Further, be it noted, right to a healthy life and health facilities is a fundamental right under\nArticle 21\nread with\nArticle 47\nof the Constitution and the State does not want to compromise on this aspect. The so-called perceived public loss of money cannot be a ground.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 47"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P025_C03",
+      "text": "In this context, it is apposite to refer to\nRam Lubhaya Bagga\n's case (supra) wherein it was held:\n..........................So far as questioning the\nvalidity of Governmental policy is concerned in our view it is not normally within the domain of any Court, to weigh the pros and\n\ncons of the policy or to scrutinize it and test the degree of its beneficial or equitable disposition for the purpose of varying, modifying or annulling it, based on howsoever sound and good reasoning, except where it is arbitrary or violative of any constitutional, statutory or any other provision of law. When Government forms its policy, it is based on a number of circumstances on facts, law including constraints based on its resources. It is also based on expert opinion. It would be dangerous if Court is asked to test the utility, beneficial effect of the policy or its appraisal based on facts set out on affidavits. The Court would dissuade itself from entering into this realm which belongs to the executive.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P026_C01",
+      "text": "25. Yet another argument was that till recently the Government placed orders for purchase of drugs from primary manufacturers with GMP standards only and suddenly the policy was changed which is arbitrary and impermissible in the absence of any sustainable grounds. This submission also is devoid of any merit. The petitioner does not alleged any mala fides either in fact or in law. It is not their case that it was intended to totally exclude alt the small scale manufacturers and to give a phillip to the manufacturers with larger market share. The Government of the day is entitled and has a right to take a decision by 'trial and error'. Having regard to the past experience and other new inputs in the decision making it is always open to the Government to change its policy which is very common for instance is fiscal legislation. Delhi Science Forum v. Union of India\n, , the Supreme Court considered this aspect and held:\n.................The Courts cannot express their\nopinion as to whether at a particular juncture or under a particular situation prevailing in the country any .such national policy should have been adopted or not.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P026_C02",
+      "text": "There may be views and views, opinions and opinions which may be shared and believed by citizens\n\nof the country including the representatives of the people in Parliament. But that has to be sorted out in Parliament which has to approve such policies. Privatisation is a fundamental concept underlying the questions about the power to make economic decisions. What should be the role of the State in the economic development of the nation? How the resources of the country shall be used? How the goals fixed shall be attained? What are to be the safeguards to prevent the abuse of the economic power? What is the mechanism of accountability to ensure that the decision regarding privitisation is in public interest? All these questions have to be answered by a vigilant Parliament. Courts have their limitations - because these issues rest with the policy-makers for the nation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P027_C01",
+      "text": "26. Krishnan Kakkanth v. Government of Kerala\n, , the Government of Kerala issued a circular that under Comprehensive Coconut Development Programme, pumpsets and other agro machines under the financial scheme have to be purchased from Kerala Agro Industries Corporation (KAICO) and Regional Agro Industries Development Corporation (RAIDCO). The said circular was challenged and upheld by the Kerala High Court. It was contended before the Supreme Court, on behalf of the private dealers, that the Government circular amounts to unreasonable restriction on the fundamental right under\nArticle 19(1)(g)\nof the Constitution to trade in the agro machinery as the farmers were compelled to buy pumpsets from KAICO and RAIDCO only. The apex Court found that in the past, under the same programme, notices had been issued by the dealers, who without effecting actual sales had drawn loans, subsidies and other financial benefits from the Government and that there were widespread manipulation and irregularities in the activities of various dealers in the pumpsets. This prompted to issue the circular compelling the farmers to buy agro machines with the financial assistance from KAICO and RAIDCO only.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P027_C02",
+      "text": "The Supreme Court held that the impugned circular did not impose any restriction on the trading activity of the dealers of pumpsets in the State of Kerala and no trader can claim that the Government should also accept him as an approved dealer of the Government. The following observations are relevant:\n..................No restriction has been imposed\non the trading activity of dealers in pumpsets in the State of Kerala including northern region comprising eight districts. Even in such an area, a dealer is free to carry on his business. Such dealer, even in the absence of the said circular, cannot claim as a matter of fundamental right guaranteed under\nArticle 19(l)(g)\nthat a fanner or agriculturist must enter into a business deal with such trader in the matter of purchase of pumpsets. Similarly, such trader also cannot claim that the Government should also accept him as an approved dealer of the Government. The trading activity in dealership of pumpsets has not been stopped or even controlled or regulated generally. The dealer can deal with purchasers of pumpsets without any control imposed on him to carry on such business.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P027_C03",
+      "text": "The obligation to purchase from approved dealer has been fastened only to such farmer or agriculturist who has volunteered to accept financial assistance under the scheme on various terms and conditions. It was further held that the impugned circular does not offend\nArticle 14\nof the Constitution and that the directions contained in the circular cannot be held to be vitiated being arbitrary, capricious and unreasonable. The Supreme Court opined that if the State Government on consideration of the facts and circumstances and to ensure genuine sale of pumpsets at proper price with effective after-sales service has felt that farmers covered by financial assistance scheme should purchase pumpsets only from approved dealers, it cannot be said that such action of the State Government lies in its ipse dixit without being informed by any reason. The Supreme Court further observed. To ascertain unreasonableness and arbitrariness in the context of\nArticle 14\nof the Constitution, it is not necessary to enter upon any exercise for finding out the wisdom in the policy decision of the State Government. It is immaterial whether a better or more comprehensive policy decision could have been taken.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P027_C04",
+      "text": "It is equally immaterial if it can be demonstrated that the policy decision is unwise and is likely to defeat the purpose for which such decision has been taken. Unless the policy decision is demonstrably capricious or arbitrary and not informed by any reason whatsoever or it suffers from the vice of discrimination or infringes any statute or provisions of the Constitution, the policy decision cannot be struck down. It should be borne in mind that except for the limited purpose of testing a public policy in the context of illegality and unconstitutionality, Courts should avoid \"embarking on uncharted ocean of public policy.\"",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P028_C01",
+      "text": "27. The decision in\nKrishnan Kakkanth\n's case (supra) applies on all its fours to the facts of this case and, therefore, the condition prescribed in the tender notification cannot be held to be arbitrary and capricious.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P029_C01",
+      "text": "28. The submission that the impugned tender condition discriminates the members of the petitioner- Association and the classification has no nexus with the object sought to be achieved, is also without any basis. Though all the drug manufacturers obtained licence under\nSection 18(c)\nof the Drugs Act and the Rules, insofar as the good manufacturing practice is concerned, Schedule M prescribes only the basic minimum standards and it does not prevent drug manufacturers to maintain better standards than those mentioned in Schedule M. Therefore, primary manufacturers with GMP standards and primary manufacturers with WHO GMP standards are two distinct and different classes. The Government having regard to the writ petition filed before this Court as well as the recommendations\n\nof the Vigilence Commission and having regard to the drug scandal during the last year and with an intention to adhere to quality control standards prescribed by WHO decided as a policy to buy drugs from WHO GMP manufacturers. The classification in my considered opinion satisfies the 'nexus test' as well as 'rationality test' and the same does not offend\nArticle 14\nof the Constitution.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P030_C01",
+      "text": "29. Further, it should be noted that by reason of the impugned condition in the tender, the members of the petitioner-Association have not been included in the category of eligible members. It is well settled that in testing the validity of classification, if it were a case of excessive inclusion, the Courts would strike down such condition and ordinarily would not interfere in cases of under inclusion. The reasons for this have been explained by the Supreme Court in Sukhawant Ali v. State of Orissa, , as follows :\nThe simple answer to this contention is that legislation enacted for the achievement of a particular object or purpose need not be all embracing, tt is for the Legislature to determine what categories it would embrace within the scope of legislation and merely because certain categories which would stand on the same footing as those which are covered by the legislation are left out would not render legislation which has been enacted in any manner discriminatory and violative of the fundamental right guaranteed by\nArticle 14\nof the Constitution.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P031_C01",
+      "text": "30. The Government as a matter of policy has decided not to categorise GMP certified manufacturers of drugs as eligible standard manufacturers of drugs for supplying drugs on rate contract to Government hospitals, which has a rationale behind it. Therefore, the petitioner cannot be heard to say that the members of the association have been discriminated. The Government is free to recognise the needs of the citizens and standards to be maintained\n\nin hospitals and health centres. The impugned condition, therefore, is neither arbitrary nor discriminatory.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA_P032_C01",
+      "text": "31. In the result, for the aforesaid reasons, the writ petition fails and the same is accordingly dismissed. All the interim orders stand vacated. No order as to costs.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_2002_ANDHRA_HC_PRE-TELANGANA",
+    "court": "Supreme Court of India",
+    "year": "2002",
+    "facts_summary": "1. The petitioner, an association of manufacturers of medicines, drugs and pharmaceuticals, has filed this writ petition praying for a writ of mandamus declaring the action of the first respondent in prescribing the holding of WHO GMP (World Health Organization Good Manufacturing Practices) Certificate for the manufacturers to participate in the tenders as per Tender Notification, dated 10-10-2001 for supply of I.V. fluids and general drugs under Rate Contract 2001-03, as being arbitrary and irrational, and for a consequential direction to the first respondent to consider the case of the members of the petitioner-Association and other licensees who manufacture medicines/drugs/ pharmaceuticals. 3. All the members of the petitioner-Association hold licences under the\nDrugs and Cosmetics Act, 1940\n( for short 'the\nDrugs Act\n') and the Rules made thereunder Known as \"Drugs and Cosmetics Rules, 1945\" (for short 'the Drugs Rules'). All of them allegedly adhere to good manufacturing practices (GMP), as enumerated in Schedule M to the Drugs Rules. They were given GMP Certificates by the Director, Drug Control Administration of Andlira Pradesh. All the members of the petitioner-Association were supplying drugs, medicines and pharmaceuticals to the State Government and State Government Corporations without the status of WHO GMP, and during the last 25 years there was no such qualification prescribed. The World Health Organization, Geneva in Switzerland, recommended certain good manufac",
+    "legal_issues": "5. Sri V. Vankataramana, the learned Counsel for the petitioner submits that the A.P. Rate Contract Committee simultaneously invited pre-qualification bidding for supply of antibiotics under the rate contract for the year 2001-03, where no such requirement/eligibility was prescribed. The first respondent, which is appointed as nodal agency for procuring I.V. Fluids and general drugs for Government hospitals has prescribed the requirement of WHO GMP, which is arbitrary and irrational. The first respondent has resorted to invidious discrimination by excluding the members of the petitioner-Association who have GMP Certificates. The classification does not\n\nsatisfy the nexus test and rationality test, and therefore, is invalid being violative of\nArticle 14\nof the Constitution of India. Secondly, he submits that the stipulation in the impugned condition is not authorised by the\nDrugs Act\nand the Rules. In die absence of any State law prescribing WHO GMP, the respondent cannot exclude the licensed manufacturers with GMP as it is contrary to the provisions of the\nDrugs Act\nand the Drugs Rules. 6. The learned Additional Advocate-General appearing for the first respondent submits that the\nDrugs Act\nis not in derogation of other laws. The subject of \"Drugs\" is covered by Entry 19 of List III of VII Schedule to the Constitution, and therefore, the State Government in the absence of any law, is entitled to formulate and enforce an executive policy. In furtherance thereof, a policy has no",
+    "ratio_summary": "7. The decision in this writ petition depends on finding answers to the question of judicial review of arbitrary tender conditions, the question of judicial review of policy decisions and the question of invidious classification and arbitrariness, if any, in relation to the impugned tender conditions. Before these are considered in seriatim, it is necessary to understand the concept of WHO GMP in the background of\nDrugs Act\nand the Drugs Rules.\nGENESIS OF WHO GMP 17. Balco Employees Union (Regd.) v. Union of India\n, 2001 AIR SCW 5135, the question whether the economic policies of the Government are amenable to judicial review, was the core issue. The earlier decisions of the Supreme Court in\nSC. Cooper v. Union of India\n, ,\nFertilizer Corporation Kamgar Union v. Union of India\n, ,\nR.K. Garg v. Union of India\n, AIR 1981 SC 2138, State ofM.P. v. Nandlal Jaiswal, , G.B. Mahajan v. Jalgaon Municipal Council\n, ,\nPeerless General Finance and Investment Company Limited v. Reserve Bank of India\n, ,\nPremium Granites v. State of Tamil Nadu\n, ,\nM.P. Oil Extraction v. State of M.P.\n, ,\nState of Punjab v. Ram Lubhaya Bagga\n, ,\nBhavesh D. Parish v. Union of India\n, , and\nNarmada Bachao Andolan v. Union of India\n, , were referred to and it was held :\nIt is evident from the above that it is neither within the domain of the Courts nor the scope of the judicial review to embark upon an enquiry as to whether a particular pubic policy is wise or whether better public policy can be evolved. A ref",
+    "final_order": "2. While admitting the writ petition on 19-10-2001, this Court passed an interim order in WPMP No.27836 of 2001 directing the first respondent to consider the tenders of the members of the petitioner-Association without insisting that they should possess WHO GMP Certificate, pending disposal of the writ petition. After receiving the notice, the first respondent has filed an application being WVMP No.20 of 2002 on\n\n28-12-2001 praying this Court to vacate the interim order dated 19-10-2001. At the request of the learned Counsel appearing on behalf of the petitioner and the learned Additional Advocate-General appearing on behalf of the respondent, the main writ petition was heard, and is being disposed of finally by this order.\nFACTUAL BACKGROUND 31. In the result, for the aforesaid reasons, ",
+    "outcome_summary": "2. While admitting the writ petition on 19-10-2001, this Court passed an interim order in WPMP No.27836 of 2001 directing the first respondent to consider the tenders of the members of the petitioner-Association without insisting that they should possess WHO GMP Certificate, pending disposal of the writ petition. After receiving the notice, the first respondent has filed an application being WVMP ",
+    "sections_cited": [
+      "Constitution 14",
+      "Constitution 13",
+      "Constitution 162",
+      "Constitution 47"
+    ],
+    "cases_cited": []
+  }
+}

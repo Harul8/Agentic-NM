@@ -1,0 +1,255 @@
+{
+  "case_id": "SC_1973_1973_70",
+  "case_name": "Krishnawati vs Hans Raj",
+  "normalized_case_name": "KRISHNAWATI_VS_HANS_RAJ",
+  "court": "Supreme Court of India",
+  "year": "1973",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "29 November 1973",
+  "judges": [
+    "D.G. Palekar",
+    "V.R. Krishnaiyer",
+    "Ranjit Singh Sarkaria"
+  ],
+  "author": "D.G. Palekar",
+  "bench_type": "constitution",
+  "petitioner": "Krishnawati",
+  "respondent": "Hans Raj",
+  "reporter_citations": [
+    "[1968] 2 S.C.R. 548"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 9,
+  "cited_by_count": 76,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1974 AIR 280",
+    "1974 SCR (2) 524",
+    "AIR 1974 SUPREME COURT 280",
+    "1974 (1) SCC 289",
+    "1974 RENCR 163",
+    "1974 2 SCR 524",
+    "1974 CURLJ 48",
+    "1975 (1) SCJ 87"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1973\\1973_70.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1973_1973_70_P001_C01",
+      "text": "BENCH:\nPALEKAR, D.G.\nBENCH:\nPALEKAR, D.G.\nKRISHNAIYER, V.R.\nSARKARIA, RANJIT SINGH",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1973_1973_70_P002_C01",
+      "text": "CITATION:\n 1974 AIR 280 1974 SCR (2) 524\n CITATOR INFO :\n RF 1987 SC1782 (15)\n R 1987 SC2055 (6)\n F 1988 SC1362 (6)\n R 1989 SC1141 (20)",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1973_1973_70_P003_C01",
+      "text": "ACT:\nDelhi Rent Control Act\n(59 of 1958) Ss. 14 and 39 (2)-Onus\nof proving sub-letting--Mixed question of law and fact, what\nis.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1973_1973_70_P004_C01",
+      "text": "HEADNOTE:\nThe appellant took a lease of shop premises from the\nrespondent. From the time of letting, a chemist's business\nwas carried on in the shop by S with the occasional help of\nthe appellant. S and the appellant were living as husband\nand wife to the knowledge of the respondent. The respondent\napplied under\ns. 14\nof the Delhi Rent Control Act, 1958, for\neviction of the appellant on the ground that she had sublet\nthe premises toS. The Rent Controller and the Tribunal\non appeal held that the appellant and S. were living\ntogether as husband and wife, and that therefore there\nwasno question of any subletting by the appellant. In\nsecond appeal, holding that two substantial questions of\nlaw were involved namely, one relatingto the status of the\nappellant as the wife of S, and the other, whether sub-\nlettingwas established, the High Court concluded that\nthere was subletting in favour oOf S. Allowing the appeal to this Court,\nHELD : (1) Under\ns. 39 (2)\nof the Act the High.-Court could\ninterfere in second appeal only if there was a substantial\nquestion of law. On the question whether the appellant was\nlegally married no finding was necessary in the eviction\nsuit.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1973_1973_70_P004_C02",
+      "text": "It was sufficient for the rent court to proceed on\nthe finding that the appellant and S were living together as\nhusband and wife, whether they were legally married or not.\n[528C-D, E-F]\n(2)The question whether there was subletting is not a\nmixed question of law and fact. In a mixed question of law\nand fact the ultimate conclusion has to be drawn by applying\nprinciples of law to basic findings, but in the\ndetermination of a question of fact no application of any\nprinciple of law is required in finding either the basic\nfacts or in arriving at the ultimate conclusion. The\nquestion to be determined in the circumstances of this case\nwas whether it was likely that the appellant had sublet the\npremises to S. The negative answer given by the rent court\nis merely the factual common sense inference which did not\ncall for the application of any principle of law. [528F-G;\n529A-B]\nMeenakshi Mills, Madurai v. The Commissioner of Income-tax,\nMadras, [1956] S.C.R. 691, followed. (3)When eviction is sought on the ground of subletting the\nonus of proving subletting is on the landlord.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1973_1973_70_P004_C03",
+      "text": "If the\nlandlord prima-facie shows that the occupant was in the\nexclusive possession of the premises let out for valuable\nconsideration, it would then be for the tenant to rebut the\nevidence. But in the present case the respondent produced\nno evidence to show subletting in spite of the appellant's\ndenial in the written statement. [527C-D]\nAssociated Hotels of India Ltd. Delhi v. S. B. Sardar\nRanjit Singh, [1968] 2 S.C.R. 548, followed. (4)Under s. 14 (4) premises could be deemed to have been\nsub-let by the tenant only when the Controller is satisfied\nthat some person is let into possession ostensibly as a\npartner in business but really for the purposes of\nsubletting. This provision has no application to the facts\nand circumstances of the present case. [526G-H]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1973_1973_70_P005_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal No. 1475 of 1970.\nAppeal by Special Leave from the Judgment and Order. dated\nthe 29th May, 1970 of the High Court of Delhi in Second\nAppeal No. 25-D of 1966.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1973_1973_70_P006_C01",
+      "text": "V.M. Tarkunde, M. N. Bombhra and Saroja Gopala Krishnan for\nthe appellant. Hardyal Hardy, S. K. Mehta, K. R. Nagaraja, A. C. Sehgal and\nO. P. Gupta for the respondent. The Judgment of the Court was, delivered by\nPALEKAR, J.-This is an appeal by special leave from an order\npassed by the single Judge of the High Court of Delhi in\nsecond appeal under\nsection 39\nof the Delhi Rent Control\nAct, No. 59 of 1958. On or about September 10, 1959 the respondent landlord let\nout the premises in suit to the appellant on a rent of Rs.\n125/- per month. The premises consisted of a shop. On 1-9-\n1962 the respondent applied under\nsection 14\nof the above\nAct to the Rent Controller, Delhi for evicting the appellant\non the ground that she had sub-let the entire premises to\none Sohan Singh who, according to the respondent, was\nrunning a business under the name of Royal Dispensing\nChemists and Druggists in the shop. It was further alleged\nthat the appellant was charging a fabulous amount as rent\nfrom her sub-tenant Sohan Singh. The appellant in her\nwritten statement admitted the tenancy but denied sub-\nletting.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1973_1973_70_P006_C02",
+      "text": "She alleged that Sohan Singh was her husband and\nfrom the time of the lease the business of a Chemist was\nbeing run there in the premises by her husband and she also\noccasionally helped him in the running of the business. The Rent Controller was of the view that the appellant was\nthe legally Wedded wife of Sohan Singh. In any event he\nheld, Sohan Singh and the appellant were living together as\nhusband and wife and, therefore, there was no question of\nany sub--letting by the appellant of the premises. That\nfinding was confirmed in appeal by the Rent Control\nTribunal, Delhi. Aggrieved by the decision, the respondent\nwent in second appeal to the High Court under\nsection 39(1)\nof the Act. It was contended before the court by the\nrespondent that two substantial questions of law and fact\nwere involved in the appeal-one relating to the status of\nthe appellant as wife and the other whether on the facts\nfound the ground of sub-letting had been established. The\nlearned single Judge agreed that the appeal involved\nsubstantial questions of law as submitted, and came to the\nconclusion that there was sub-setting in favour of Sohan\nSingh. Accordingly, he gave an order for evicting the\nappellant.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1973_1973_70_P006_C03",
+      "text": "So this appeal by special leave. It is contended on behalf of the appellant that the learned\nsingle Judge has interfered with a pure finding of fact. Under\nsection 39(2)\nof the Act the High Court could\ninterfere in second appeal only if there was a substantial\nquestion of law. In the present case, he submitted, there\nwas no question of law, much less substantial question of\nlaw and, therefore, the High Court was in error in\ninterfering with the concurrent finding of the Rent Control\nauthorities, There is great force in this contention. The High Court has dealt with the case as if this is a\nmatrimonial proceeding-in which the status of the appellant\nas the wife of Sohan\nM8--602 SUP CI/74",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1973_1973_70_P007_C01",
+      "text": "Singh was under direct challenge. The simple question which\nhad to be determined in the case was whether having regard\nto the fact that the appellant and Sohan Singh were living\nas husband and wife, it was open to draw, in the absence of\nevidence to the contrary, the factual inference that the\nwife had sub-let the premises to her husband. Sub-letting\nlike letting, is a particular type of demise of immovable\nproperty and is distinct from permissive user like that of a\nlicensee. If two persons live together in a house as\nhusband and wife and one of them who owns the house allows\nthe other to carry on business in a part of it,it will be in\nthe absence of any other evidence, a rash inference to draw\nthat the owner has let out that part of the premises. And\nthat is what the learned single Judge has done in the\npresent case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1973_1973_70_P007_C02",
+      "text": "He was of the view that even if it is assumed\nthat the appellant was the wife of Sohan Singh, she, who was\nentitled to possession of the shop premises as a tenant,\nmust be presumed to have sub-let the same to Sohan Singh to\ncarry on his business, In support of this conclusion he\nrelied on clause (b) of the proviso to sub-section (1) of\nsection 14\nof the Act read with sub-\nsection 4\nof that\nsection. The provisions are as follows :\n14(1) Provided that the Controller may, on an\n application made to him in the prescribed\n manner, make an order for the rec\novery of\n possession of the premises on one or more of\n the following grounds only, namely\n(a)..........................",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1973_1973_70_P007_C03",
+      "text": "(b) that the tenant has, on or after the 9th\n day of June, 1952 sub-let, assigned or\n otherwise parted with the possession of the\n whole or any part of the premises without\n obtaining the consent in writing of the\n landlord;\"\nSub-section (4) of\nsection 14\nis as follows :\n \"(4) For the purposes of clause (b) of the\n proviso to sub-section (1),any premises which\n have been let for being used for the purposes\n of business or profession shall be deemed to\n have been sub-let by the tenant, if the\n Controller is satisfied that the tenant\n without obtaining the consent in writing of\n the landlord has, after the 16th day of\n August, 1958, allowed any person or occupy the\n whole or any part of the premises ostensibly\n on the ground that such person is a partner of\n the tenant in the business or profession but\n really for the purpose of sub-letting such\n premises to that person. Under sub-section (4) referred to above the premises could\nbe deemed to have been sub-let by the tenant only when the\nController is satisfied that some person is let into\npossession ostensibly as a partner in business but really\nfor the purposes of sub-letting.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1973_1973_70_P007_C04",
+      "text": "These provisions evidently\nhave no application to the facts of the present case. It is\nnot the case of anybody that the appellant was the owner of\nthe business carried on in the premises and she had let in\nSohan Singh into possession ostensibly as a partner in their\nbusiness. The learned Judge was,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1973_1973_70_P008_C01",
+      "text": "therefore, in error in relying on the provisions of the Act\nfor presuming that the appellant must have sub-let the\npremises.\nThe case of the respondent in his application under\nsection",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1973_1973_70_P009_C01",
+      "text": "of of the Act was that the appellant had sub-let the\nwhole premises to Sohan Singh who was running the business\nunder the name of Royal Dispensing Chemists and Druggists\nand that the entire premises have been sub-let by the\nappellant and the appellant had completely parted with\npossession without the written consent of the respondent. It was also alleged that the appellant was charging fabulous\namount of rent from the sub-tenant Sohan Singh. Sub-letting\nwas,' therefore, the principal ground on which eviction was\nsought. When eviction is sought on that ground it is now\nsettled law that the onus to prove sub-letting is on the\nlandlord. If the landlord prima-facie shows that the\noccupant who was in exclusive possession of the premises let\nout for valuable consideration, it would then be for the\ntenant to rebut the evidence. See:\nAssociated Hotels of\nIndia Ltd., Delhi V. S.B. Sardar Ranjit Singh\n(1).In the\npresent case the respondent produced no evidence to show\nsuch sub-letting in spite of the appellant's denial in the\nwritten statement of any sub-letting.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1973_1973_70_P009_C02",
+      "text": "It was averred by her\ntherein that Sohan Singh was her husband and that right from\nthe taking of the shop premises on rent Sohan Singh was\ncarrying on business of a Chemist therein and appellant also\nhelped him occasionally as his wife. The averment that she\nwas the wife of Sohan Singh provided the necessary\nammunition for a formidable battle in which the respondent\ntook upon himself to show that she was not the legally\nmarried wife of Sohan Singh. He called Sohan Singh's first\nwife as his first witness in this case but all that the lady\nwas able to say was that she had no knowledge if the\nappellant was married to Sohan Singh but she knew that he\nlived with the appellant since about six years before her\ndeposition, recorded in 1963. The respondent himself in his\ntestimony admitted that he had never himself made any\nenquiry as to whether Sohan Singh and the appellant are\nhusband and wife or not. Nor could he deny that they were\nliving together. His reasons for saying that Sohan Singh\nwas a sub-tenant were in his own words ; \"As Sohan Singh is\nthe tenant, I can, therefore, say that the capital invested\nin the shop might be that of Sohan Singh.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1973_1973_70_P009_C03",
+      "text": "Neither any talks\nregarding sub-letting took place in my presence, nor the\nrent was paid in my presence,\" In undertaking to prove that\nthe appellant was not Sohan Singh's wife the respondent\ncompletely lost sight of his own weak position. The appel-\nlant had passed a rent note in the respondent's favour and\nit was the case of the appellant that in that rent note the\nrespondent had in his own handwriting written' that the\nappellant was the wife of Sohan Singh. The appellant\nsummoned him to produce his rent note but the respondent did\nnot produce it. So in his cross examination he was shown a\ntyped copy of it and this he accepted as a true copy. The\ntrue copy disclosed that the appellant was accepted as the\nwife of Sohan Singh. Besides, when the appellant and Sohan\nSingh gave evidence of the ,fact that they were living as\nhusband and wife and looking after the\n(1) [1968] 2 S.C.R. 548.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1973_1973_70_P010_C01",
+      "text": "business in the shop there was hardly any cross examination\non the point. The respondent relied principally on some\nprevious self-serving statements made by Sohan Singh in\nother proceedings which could not be used as substantive\nevidence in the present case. The evidence was clear\nnamely, that to the knowledge of the respondent, the appel-\nlant and Sohan Singh were living as husband and wife and\nfrom the day the rent note was passed by the appellant in\n1959 a Chemist's shop was opened in the premises which was\nrun principally by Sohan Singh but occasionally by the\nappellant also. The question is whether that evidence gives\nrise to the factual inference that the appellant had sublet\nthe premises to Sohan Singh. The first two courts held that\nit did not. This was a concurrent finding of fact and it\nseems to us that the learned counsel for the appellant is\nright in contending that the High Court in second appeal\nshould not have interfered with that finding especially when\nsection 39(2)\nof the Act provides that no appeal shall it to\nthe High Court unless 'the appeal involved some substantial\nquestion of law.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1973_1973_70_P010_C02",
+      "text": "The learned single Judge thought that two substantial\nquestions of law were involved-one relating to the status of\nthe appellant as the alleged wife of Sohan Singh and the\nsecond whether on the facts found, sub-letting was\nestablished. Both these questions involved, according to\nthe learned Judge, substantial questions of mixed fact and\nlaw. As to the first question whether the appellant was legally\nmarried, that was a question on which no finding was\nnecessary in an eviction suit. It was sufficient for the\nRent Court to proceed on the finding that the appellant and\nSohan Singh were living as husband and wife, whether they\nwere legally married or not. This was specifically pointed\nout by the Additional Rent Controller in his judgment. As\nregards the second question, one does not see how it is a\nmixed question of law and fact. In the 'determination of a\nquestion of fact no application of any principle of law is\nrequired in finding either the basic facts or arriving at\nthe ultimate conclusion; in a mixed question of law and fact\nthe ultimate conclusion has to be drawn by applying\nprinciples of law to basic findings. See :\nMeenakshi Mills,\nMadurai v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1973_1973_70_P010_C03",
+      "text": "The Commissioner of Income-Tax, Madras\n(1).The\nbasic facts in the present case were (1) the appellant and\nSohan Singh were living as husband and wife to the knowledge\nof the respondent; (2) the appellant took the lease of the\nshop premises from the respondent in 1959; (3) from the time\nof the letting a Chemist's business was carried in the shop\nby Sohan Singh with the occasional help of the appellant. The question to be determined was whether in the above\ncircumstances it was likely that the appellant had\n(1) [1956] S.C.R. 691.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1973_1973_70_P011_C01",
+      "text": "sub-let the premises to Sohan Singh. The negative answer\ngiven to it by the Rent Courts is merely the factual common\nsense inference which did not call for the application of\nany principle of law. In out view, no question of law-much\nless, a substantial question of law-was involved in the\nsecond appeal and the learned Judge was in error in\ndisturbing the concurrent findings of fact of the rent\ncontrol authorities.\nThe appeal is, therefore, allowed, the order passed by the\nHigh Court is set aside and that of the Rent Control\nAuthorities is restored with costs throughout.\nV.P.S.\nAppeal allowed.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Krishnawati vs Hans Raj",
+    "case_id": "SC_1973_1973_70",
+    "court": "Supreme Court of India",
+    "year": "1973",
+    "facts_summary": "CITATION:\n 1974 AIR 280 1974 SCR (2) 524\n CITATOR INFO :\n RF 1987 SC1782 (15)\n R 1987 SC2055 (6)\n F 1988 SC1362 (6)\n R 1989 SC1141 (20) ACT:\nDelhi Rent Control Act\n(59 of 1958) Ss. 14 and 39 (2)-Onus\nof proving sub-letting--Mixed question of law and fact, what\nis. Neither any talks\nregarding sub-letting took place in my presence, nor the\nrent was paid in my presence,\" In undertaking to prove that\nthe appellant was not Sohan Singh's wife the respondent\ncompletely lost sight of his own weak position. The appel-\nlant had passed a rent note in the respondent's favour and\nit was the case of the appellant that in that rent note the\nrespondent had in his own handwriting written' that the\nappellant was the wife of Sohan Singh. The appellant\nsummoned him to produce his rent note but the respondent did\nnot produce it. So in his cross examination he was shown a\ntyped copy of it and this he accepted as a true copy. The\ntrue copy disclosed that the appellant was accepted as the\nwife of Sohan Singh. Besides, when the appellant and Sohan\nSingh gave evidence of the ,fact that they were living as\nhusband and wife and looking after the\n(1) [1968] 2 S.C.R. 548.",
+    "legal_issues": "V.M. Tarkunde, M. N. Bombhra and Saroja Gopala Krishnan for\nthe appellant. Hardyal Hardy, S. K. Mehta, K. R. Nagaraja, A. C. Sehgal and\nO. P. Gupta for the respondent. The Judgment of the Court was, delivered by\nPALEKAR, J.-This is an appeal by special leave from an order\npassed by the single Judge of the High Court of Delhi in\nsecond appeal under\nsection 39\nof the Delhi Rent Control\nAct, No. 59 of 1958. On or about September 10, 1959 the respondent landlord let\nout the premises in suit to the appellant on a rent of Rs.\n125/- per month. The premises consisted of a shop. On 1-9-\n1962 the respondent applied under\nsection 14\nof the above\nAct to the Rent Controller, Delhi for evicting the appellant\non the ground that she had sub-let the entire premises to\none Sohan Singh who, according to the respondent, was\nrunning a business under the name of Royal Dispensing\nChemists and Druggists in the shop. It was further alleged\nthat the appellant was charging a fabulous amount as rent\nfrom her sub-tenant Sohan Singh. The appellant in her\nwritten statement admitted the tenancy but denied sub-\nletting. She alleged that Sohan Singh was her husband and\nfrom the time of the lease the business of a Chemist was\nbeing run there in the premises by her husband and she also\noccasionally helped him in the running of the business. The Rent Controller was of the view that the appellant was\nthe legally Wedded wife of Sohan Singh. In any event he\nheld, Sohan Singh and the appellant were living together a",
+    "ratio_summary": "HEADNOTE:\nThe appellant took a lease of shop premises from the\nrespondent. From the time of letting, a chemist's business\nwas carried on in the shop by S with the occasional help of\nthe appellant. S and the appellant were living as husband\nand wife to the knowledge of the respondent. The respondent\napplied under\ns. 14\nof the Delhi Rent Control Act, 1958, for\neviction of the appellant on the ground that she had sublet\nthe premises toS. The Rent Controller and the Tribunal\non appeal held that the appellant and S. were living\ntogether as husband and wife, and that therefore there\nwasno question of any subletting by the appellant. In\nsecond appeal, holding that two substantial questions of\nlaw were involved namely, one relatingto the status of the\nappellant as the wife of S, and the other, whether sub-\nlettingwas established, the High Court concluded that\nthere was subletting in favour oOf S. Allowing the appeal to this Court,\nHELD : (1) Under\ns. 39 (2)\nof the Act the High.-Court could\ninterfere in second appeal only if there was a substantial\nquestion of law. On the question whether the appellant was\nlegally married no finding was necessary in the eviction\nsuit. It was sufficient for the rent court to proceed on\nthe finding that the appellant and S were living together as\nhusband and wife, whether they were legally married or not.\n[528C-D, E-F]\n(2)The question whether there was subletting is not a\nmixed question of law and fact. In a mixed question of law\nand fact the ultimate c",
+    "final_order": "",
+    "outcome_summary": "Allowed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

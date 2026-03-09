@@ -1,0 +1,136 @@
+{
+  "case_id": "SC_1971_1971_303",
+  "case_name": "The State Of Bihar vs Mohammad Khursheed",
+  "normalized_case_name": "THE_STATE_OF_BIHAR_VS_MOHAMMAD_KHURSHEED",
+  "court": "Supreme Court of India",
+  "year": "1971",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "27 January 1971",
+  "judges": [
+    "S.M. Sikri",
+    "I.D.Dua",
+    "P. Jaganmohan Reddy",
+    "JUDGMENT",
+    "S.M. Sikri, C.J."
+  ],
+  "author": "S.M. Sikri",
+  "bench_type": "constitution",
+  "petitioner": "The State Of Bihar",
+  "respondent": "Mohammad Khursheed",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 6,
+  "cited_by_count": 20,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1971CRILJ1555",
+    "(1971)3SCC423",
+    "1971(III)UJ250(SC)",
+    "AIR 1971 SUPREME COURT 2268",
+    "1971 U J (SC) 250 1971 CRI APP R (SC) 172",
+    "1971 CRI APP R (SC) 172"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1971\\1971_303.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1971_1971_303_P001_C01",
+      "text": "1. The respondent, Mohammed Khursheed, was convicted by the learned Sessions Judge, Shahabad, Under\nSection 302\n, I.P.C., and sentenced to death. The learned Sessions Judge made a reference for confirmation of the sentence of death and the respondent filed an appeal before the Patna High Court. The High Court altered the conviction of the respondent Under\nSection 302\nto one Under\nSection 304\nPart I,\nI.P.C\n., and altered the sentence of death to one of rigorous imprisonment for eight years. The State of Bihar having obtained special leave the appeal is now before us for disposal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1971_1971_303_P002_C01",
+      "text": "2. In order to appreciate the contention of the State it is necessary to state the relevant facts. There were proceedings Under\nSection 144\nand then Under\nSection 145\n, Cr.P.C., between the respondent and Mohd. Hafiz who died as a result of the blow inflicted by the respondent About three months before the present occurence, which occurred on August 3, 1965, at about 1.30 pm. the proceeding Under\nSection 145\n, Cr.P.C., was decided in favour of the deceased, Mohd. Hafiz. The respondent then filed a title suit in the Court of Munsif at Buxar and this suit was still pending at the time of the occurrence. Both the High Court and the Sessions Judge have found that on August 3, 1965, at about 1.30 p.m. the respondent inflicted a blow with a bhalla in the chest of the deceased when he after saying his prayers in a nearby mosque was in the sehan accompanied by three persons, namely, Jan Mohammad, P.W. 2, Mohammad Hadis, P.W. 5, nephew of the deceased, and Rahim Mian, P.W. 7 It was the prosecution case that the appellant came suddenly with the bhalla and gave a blow on the left side of the chest of Mohd.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1971_1971_303_P002_C02",
+      "text": "Hafiz; the blade portion of the bhalla pierced the chest Hafiz Hadis caught hold of one end of the bhalla while the handle portion remained in the hand of the respondent; in course of snatching of the bhalla the handle portion came out of the blade portion and the respondent ran away with the handle.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1971_1971_303_P003_C01",
+      "text": "3. The defence version was that on that day at about 11 or 11 30 a m. the deceased, alongwith Mohd. Hadis and Jan Mohammad were digging the western compound wall of the Khandhar, which was the subject-matter of the dispute between the parties, when the respondent came and protested and he was then assaulted with lathies by the deceased and Mohd. Hadis The respondent filed a complaint before the S.D.O. regarding the above occurrence the next day i.e. August 4, 1965. The defence examined the doctor, D.W. 1, who had examined the injuries on the person of the respondent on August 3, 1965 at 8 p.m. He had found the following injuries on the person of the respondent\n\n(1) Laceration at the lower part of left shin, 1\" x 1/4\" x 1/6\".\n(2) Swelling at the front part of the outer side of the dorsum of right foot, 1\" x 1\".\n(3) Swelling at the back below the left shoulder blade, 1\" x 1\". These injuries were, according to the doctor, all simple in nature and the age of the injuries, according to him, was about six hours at the time of the examination.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1971_1971_303_P004_C01",
+      "text": "4. The prosecution has not explained these injuries of the respondent and the defence version does not explain the fatal injury on the deceased.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1971_1971_303_P005_C01",
+      "text": "5. The learned Sessions Judge held that \"there is no evidence to corroborate the defence version that the accused received the injuries on account of assault on him by Hafiz and Hadis or by anybody else\" He also held that \"there is also no evidence or circumstance to corroborate that the occurrence as alleged by the accused took place at 11 or 11.30 A.M.\" He found corroboration of the prosecution story. He felt that D.W. 1's evidence shows that the injuries were caused at about 2 p.m. and not at 11 or 11.30 A.M., as asserted by the respondent",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1971_1971_303_P006_C01",
+      "text": "6. The High Court, however, found that there was a clash between the respondent on the one side and the deceased on the other near about the time and place of occurrence, as stated by the respondent in his statement Under\nSection 342\n, Cr.P.C. The High Court further found that \"regard being had to the injuries on the person of the appellant, it is reasonable to suppose that the occurrence took place while the deceased and his men were trying to dig the wall of the Khandahar.\" The High Court, however, came to the conclusion that the fatal and the only blow to the deceased was given by the respondent. The High Court also remarked :\nBut this injury was caused without premiditation in a sudden fight, in the heat of passion, upon a sudden quarrel and without the appellant having taken undue advantage\n\nOn these facts the High Court held that the case fell within the scope of Section 304 Part I, I.P.C.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1971_1971_303_P007_C01",
+      "text": "7. The learned Counsel for the State contends that there is no evidence that there was a sudden fight and the injury was inflicted in the heat of passion upon a sudden quarrel. It seems to us, however, that the finding of the High Court that there was a clash between the respondent on the one side and the deceased on the other about the time and the place of occurrence is not vitiated as there is some material to support this finding. Once this finding is accepted then it must follow that the prosecution has not put forth the genesis and the manner of the occurrence fully. The prosecution has not been able to explain why the respondent should suddenly take in his head to attack the deceased while he was in the company of three persons, mentioned above, and there must have been some immediate reason why this incident took place. If there is a doubt as to the origin of the fight the benefit must go to the respondent.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1971_1971_303_P008_C01",
+      "text": "8. In the circumstances we are unable to interfere with the conclusion of the High Court in a special leave. In the result the appeal fails and is dismissed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "The State Of Bihar vs Mohammad Khursheed",
+    "case_id": "SC_1971_1971_303",
+    "court": "Supreme Court of India",
+    "year": "1971",
+    "facts_summary": "2. In order to appreciate the contention of the State it is necessary to state the relevant facts. There were proceedings Under\nSection 144\nand then Under\nSection 145\n, Cr.P.C., between the respondent and Mohd. Hafiz who died as a result of the blow inflicted by the respondent About three months before the present occurence, which occurred on August 3, 1965, at about 1.30 pm. the proceeding Under\nSection 145\n, Cr.P.C., was decided in favour of the deceased, Mohd. Hafiz. The respondent then filed a title suit in the Court of Munsif at Buxar and this suit was still pending at the time of the occurrence. Both the High Court and the Sessions Judge have found that on August 3, 1965, at about 1.30 p.m. the respondent inflicted a blow with a bhalla in the chest of the deceased when he after saying his prayers in a nearby mosque was in the sehan accompanied by three persons, namely, Jan Mohammad, P.W. 2, Mohammad Hadis, P.W. 5, nephew of the deceased, and Rahim Mian, P.W. 7 It was the prosecution case that the appellant came suddenly with the bhalla and gave a blow on the left side of the chest of Mohd. Hafiz; the blade portion of the bhalla pierced the chest Hafiz Hadis caught hold of one end of the bhalla while the handle portion remained in the hand of the respondent; in course of snatching of the bhalla the handle portion came out of the blade portion and the respondent ran away with the handle.",
+    "legal_issues": "6. The High Court, however, found that there was a clash between the respondent on the one side and the deceased on the other near about the time and place of occurrence, as stated by the respondent in his statement Under\nSection 342\n, Cr.P.C. The High Court further found that \"regard being had to the injuries on the person of the appellant, it is reasonable to suppose that the occurrence took place while the deceased and his men were trying to dig the wall of the Khandahar.\" The High Court, however, came to the conclusion that the fatal and the only blow to the deceased was given by the respondent. The High Court also remarked :\nBut this injury was caused without premiditation in a sudden fight, in the heat of passion, upon a sudden quarrel and without the appellant having taken undue advantage\n\nOn these facts the High Court held that the case fell within the scope of Section 304 Part I, I.P.C. 7. The learned Counsel for the State contends that there is no evidence that there was a su",
+    "ratio_summary": "",
+    "final_order": "8. In the circumstances we are unable to interfere with the conclusion of the High Court in a special leave. In the result the appeal fails and is dismissed.",
+    "outcome_summary": "8. In the circumstances we are unable to interfere with the conclusion of the High Court in a special leave. In the result the appeal fails and is dismissed.",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

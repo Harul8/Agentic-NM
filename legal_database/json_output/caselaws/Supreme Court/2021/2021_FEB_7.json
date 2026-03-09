@@ -1,0 +1,1116 @@
+{
+  "case_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED",
+  "case_name": "Phoenix Arc Private Limited vs Spade Financial Services Limited",
+  "normalized_case_name": "PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED",
+  "court": "Supreme Court of India",
+  "year": "2021",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 2842 of 2020",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "1 February 2021",
+  "judges": [
+    "Indira Banerjee",
+    "Indu Malhotra",
+    "Dhananjaya Y Chandrachud"
+  ],
+  "author": "D.Y. Chandrachud",
+  "bench_type": "constitution",
+  "petitioner": "Phoenix Arc Private Limited",
+  "respondent": "Spade Financial Services Limited",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 32,
+  "cited_by_count": 49,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR 2021 SUPREME COURT 776",
+    "AIRONLINE 2021 SC 36"
+  ],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2021\\FEB\\2021_FEB_7.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n Civil Appeal No. 2842 of 2020\n\n Phoenix Arc Private Limited .... Appellant\n\n Versus\n\n Spade Financial Services Limited & Ors. .... Respondents\nWith\n\n Civil Appeal No. 3063 of 2020\n\nDr Dhananjaya Y Chandrachud, J\n\nThis judgment has been divided into sections to facilitate analysis.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P001_C02",
+      "text": "They are:\nA The appeals\n\nB CIRP for the Corporate Debtor\n\nC Proceedings before NCLT\n\nD Proceedings before NCLAT\n\nE Transactions of the Corporate Debtor\n\nF Relationship between Anil Nanda and Arun Anand\n\nG Whether Spade and AAA are financial creditors of the Corporate Debtor\n\n G.1 Submission of Counsel\n\n G.2 Assessment of preliminary submissions\n\n G.2.1 Res Judicata\n G.2.2 Issues before NCLAT\n G.2.3 Remand to NCLAT\n\n G.3 Analysis\n\n G.3.1 Statutory Provisions\n G.3.2 Financial Creditor and Financial Debt\n G.3.3 Collusive Transactions\n G.3.4 Spade and AAA\n\nH Whether Spade and AAA are related parties\n\n H.1 Submission of Counsel\n H.2 Statutory provisions\n H.3 Analysis\nI Whether Spade and AAA can be excluded from the CoC\n\n I.1 Submissions of Counsel\n I.2 Related Parties and CoC\n I.3 Amendment to First Proviso of Section 21(2)\n I.4 Related Parties - Interpretation In Praesenti\n\nJ Conclusion\n\nPART A\n\nA The appeals\n\n1 This judgment would govern two sets of appeals arising from the judgment\n\nof the National Company Law Appellate Tribunal (“NCLAT” or “Appellate\n\nTribunal”).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P001_C03",
+      "text": "By a judgment dated 27 January 2020, NCLAT dismissed the appeal\n\nunder Section 61 of the Insolvency and Bankruptcy Code, 2016 (“IBC”) preferred\n\nby AAA Landmark Private Limited (“AAA”) and Spade Financial Services Private\n\nLimited (“Spade”) to assail the order dated 19 July 2019 of the National Company\n\nLaw Tribunal, New Delhi Bench -III (“NCLT” or “Adjudicating Authority”). The\n\nNCLT had held that AAA and Spade have to be excluded from the Committee of\n\nCreditors (“CoC”) formed in relation to the Corporate Insolvency Resolution\n\nProcess (“CIRP”) initiated against AKME Projects Limited (“Corporate Debtor”). NCLT passed its order dated 19 July 2019 on applications1 filed by Phoenix Arc\n\nPrivate Limited (“Phoenix”) and YES Bank under Section 60(5)(c) of the IBC.\n\n2 Phoenix, in Civil Appeal No. 2842 of 2020, submits that though the NCLAT\n\ncorrectly dismissed the appeal filed by Spade and AAA, holding that they are\n\nrelated parties of the Corporate Debtor and are hence to be excluded from the\n\nCoC, there is an erroneous finding that they are financial creditors.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P001_C04",
+      "text": "In paragraph\n\n11 of its judgment, the NCLAT has observed that:\n“…admittedly appellants are the financial creditors of the\n corporate debtor AKME Projects Limited...”\n\nCA No. 337/2018 and CA No. 338/2019 (Phoenix); CA No. 268/2018 and CA No. 269/2018 (Yes Bank). PART A\n\nIt has been submitted that there was never any admission on the part of Phoenix\n\nthat AAA and Spade are financial creditors. The appeal by Phoenix seeks to\n\nchallenge the above finding on the ground that:\n(i) It is contrary to the record; and\n\n(ii) The specific stand of Phoenix is that both AAA and Spade are not even\ncreditors of the corporate debtor, much less financial creditors.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P001_C05",
+      "text": "Phoenix is thus in appeal under Section 62 of IBC, confined to the finding that\n\nAAA and Spade are financial creditors.\n3 Spade and AAA have independently filed an appeal under Section 62, Civil\n\nAppeal No. 3063 of 2020, in order to assail the decision of the NCLAT dated 27\n\nJanuary 2020 affirming their exclusion from participating in the CoC on the\n\nground that they are related parties of the Corporate Debtor in terms of Section\n\n5(24) and the first proviso to Section 21(2) of IBC.\n4 Based on the above appeals, three issues have arisen for consideration\n\nbefore this Court:\n(i) Whether Spade and AAA are financial creditors of the Corporate Debtor;\n(ii) Whether Spade and AAA are related parties of the Corporate Debtor; and\n(iii) Whether Spade and AAA have to be excluded from the CoC. PART B\n\nB CIRP for the Corporate Debtor\n\n5 The brief facts of the case are that CIRP has been initiated against the\n\nCorporate Debtor on 18 April 2018 on an application filed by an operational\n\ncreditor, Mr. Hari Krishan Sharma, under Section 9 of IBC.\n\n6 During the CIRP, claims were invited by the Interim Resolution\n\nProfessional (“IRP”).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P001_C06",
+      "text": "Spade filed its claim in Form C as a financial creditor for a\n\nsum of Rs. 52,96,00,000 on 10 May 2018. Thereafter, Spade filed a revised Form\n\nC for a sum of Rs. 109,11,00,000 on 20 May 2018. Spade had filed the form on\n\nthe basis of an alleged Memorandum of Understanding dated 12 August 2011\n\nexecuted with the Corporate Debtor, which stated that Inter Corporate Deposits\n\n(“ICDs”) of Rs. 26,55,00,000 have been granted to the Corporate Debtor by\n\nSpade bearing interest of 24% repayable in terms of the mutual agreement\n\nbetween the parties. However, Spade has submitted before this Court that it has\n\ngranted ICDs of Rs. 66,00,00,000 (approx.) to the Corporate Debtor between\n\nJune 2009 and January 2013. Out of this amount, Spade is claiming a principal\n\namount of Rs. 23,00,00,000. The balance amount of Rs 43,06,00,000 was\n\ncredited in the account of AAA, which is a wholly owned subsidiary of Spade. The\n\ntotal claim of Spade has increased to Rs. 109,11,00,000 in 7 years on account of\n\ninterest at the rate of 24%.\n7 AAA filed its claim before the IRP in Form F as a creditor other than a\n\nfinancial creditor or operational creditor for a sum of Rs. 93,90,00,000 on 10 May",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P002_C01",
+      "text": "2018. Thereafter, AAA filed a revised claim in Form C as a financial creditor for a\n\nsum of Rs. 109,72,00,000 on 23 May 2018. It had entered into a Development\n\nPART C\n\nAgreement dated 1 March 2012 with the Corporate Debtor for a sale\n\nconsideration of Rs. 32,80,00,000 to purchase development rights in a project. On 25 October 2012, the Development Agreement was terminated and an\n\nAgreement to Sell, along with a Side Letter, was executed between AAA and the\n\nCorporate Debtor for purchase of flats. The sale consideration for the Agreement\n\nto Sell was enhanced to Rs. 86,01,00,000 from Rs. 32,80,00,000 under the\n\nDevelopment Agreement. AAA paid a sum of Rs. 43,06,00,000 as advance\n\npayment under the Agreement to Sell. This amount was adjusted out of the ICDs\n\npayable to Spade as noted above. The claim of AAA is with respect to the\n\nprincipal amount of Rs. 43,06,00,000, which along with interest at the rate of 18%\n\nincreased to Rs. 109,72,00,000 in 5 years.\n8 The CoC was constituted on 22 May 2018.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P002_C02",
+      "text": "On 25 May 2018, the IRP\n\nrejected the claim of Spade, inter alia, on the ground that the claim was not in the\n\nnature of a financial debt in terms of Section 5(8) of IBC since there was an\n\nabsence of consideration for the time value of money, i.e., the period of\n\nrepayment of the claimed ICDs was not stipulated. The IRP also rejected the\n\nclaim of AAA on the ground that its claim as a financial creditor in Form C was\n\nfiled after the expiry of the period for filing such a claim. C Proceedings before NCLT\n\n9 Aggrieved by the rejection of their claim as financial creditors, AAA and\nSpade filed applications before the NCLT to be included in the CoC. The NCLT\n\nby its order dated 30 May 2018 allowed the applications. However, none of the\n\nother financial creditors, such as Phoenix and YES Bank, were parties to these\n\nPART C\n\nproceedings. The NCLT observed that AAA’s original claim in Form F was filed\n\non time and it has only amended its claim as one under Form C. The NCLT\n\nfurther observed that the amount given by Spade in the form of ICDs has been\n\nreceived as a deposit and is attracting interest as reflected in Form ‘26 AS’,\n\ndeducting TDS on interest.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P002_C03",
+      "text": "Thus, NCLT allowed Spade and AAA to submit their\n\nclaims as financial creditors with a direction to the IRP to consider the claims.\n\n10 Phoenix is also a financial creditor of the Corporate Debtor and is a part of\n\nCoC. Its claim is based on a registered Deed of Assignment in its favour dated 28\n\nDecember 2015, pursuant to which, Karnataka Bank Limited had assigned the\n\nnon-performing assets relating to the credit facilities granted to the Corporate\n\nDebtor. The voting share of Phoenix was reduced to 4.28% on account of AAA\n\nand Spade being included in the CoC.\n11 On 1 June 2018, a meeting of the CoC took place which was attended by\n\nYES Bank and Phoenix, and also by the newly approved financial creditors, AAA\n\nand Spade. Following the meeting, YES Bank and Phoenix filed applications in\n\nthe NCLT for the exclusion of AAA and Spade from the CoC on the ground that\n\nthey are related parties.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P002_C04",
+      "text": "Notice was issued by the NCLT in the two applications2.\n\n12 The application moved on behalf of YES Bank under Section 60(5), on 28\n\nJune 2018, sought the following reliefs:\n(i) A direction to the IRP to reconstitute the CoC in terms of the Insolvency\n\n and Bankruptcy (Amendment) Ordinance 2018 (“IBC Ordinance 2018”);\nand\n\nCivil Appeal No. 267/2018 and Civil Appeal 368/2018\n\nPART C\n(ii) A direction prohibiting the IRP from allowing AAA and Spade to participate\n\n and vote in the meeting of the COC.\n13 The applications filed under Section 60(5) by Phoenix also sought similar\n\nreliefs for:\n(i) The removal of Spade and AAA from the CoC; and\n(ii) Directing the constitution of the CoC in terms of the IBC Ordinance 2018.\n\n14 NCLT in its judgment dated 19 July 2019 formulated two issues for\n\ndetermination. These two issues were:\n“i. What is the nature of the transaction between the\n parties and does it qualify to be treated as financial debt as\n defined under Section 5(8) of IBC, 2016.\nii.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P002_C05",
+      "text": "What is the date on which there should be relation\n between the two parties for the alleged Financial Creditor to\n be included in the definition \"related party'.”\n15 In relation to the first issue, the NCLT held that:\n“...the transactions between CD and both SPADE and AAA\n Landmark are collusive in nature and do not qualify as\n financial debt for the purpose of IBC.”\n\nAccordingly, NCLT held that Spade and AAA did not qualify to be considered as\n\nfinancial creditors.\n16 In relation to the second issue, NCLT held that it “does not require a reply”\n\nin view of its above-mentioned finding. However, it took note of the first proviso to\n\nSection 21(2) of the IBC, which was introduced with effect from 6 June 2018. Under the first proviso, inter alia, a financial creditor who is a related party of the\n\nPART D\n\ncorporate debtor shall not have the right of representation, participation or voting\n\nin the CoC. The Adjudicating Authority held that “there is no doubt in our mind\n\nthat Arun Anand and his company namely Spade and AAA Landmark were\n\nrelated parties to the CD”.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P002_C06",
+      "text": "However, the NCLT noted that after 2013, soon after\n\nthe execution to the Agreement to Sell of 25 October 2012, Arun Anand resigned\n\nfrom all the companies of the Anil Nanda Group and was no longer related to the\n\nCorporate Debtor at the time of the filing of the application for initiation of the\n\nCIRP. Ultimately, the Adjudicating Authority held that there was a deep\n\nentanglement between the affairs of the corporate debtor and the group\n\nrepresenting the Arun Anand companies which could not be unravelled in the\n\nsummary jurisdiction before the Tribunal. The ultimate decision of the NCLT was\n\nto allow the applications filed by YES Bank and Phoenix for the exclusion of AAA\n\nand Spade from the CoC based on its findings on the first issue. D Proceedings before NCLAT\n\n17 In appeal, the NCLAT proceeded in paragraph 11 of its decision to observe\nthat “admittedly” Spade and AAA “are the financial creditors of the corporate\n\ndebtor”.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P002_C07",
+      "text": "Having stated so, the Appellate Tribunal proceeded to enquire into\n\nwhether AAA and Spade are related parties within the meaning of Section 5(24)\n\nof the IBC.\n18 Answering the above issue in the affirmative, the NCLAT held that Spade\n\nand AAA are related parties of the Corporate Debtor since:\n\nPART D\n(i) AAA was a partner of the Corporate Debtor in accordance with Section\n\n 5(24)(a)3. The Appellate Tribunal held that since even after the cancellation of\n\n Development Agreement dated 1 March 2012 between the parties, they had\n\n entered into an Agreement to Sale and Side Letter dated 25 October 2012,\n\n which was merely a camouflage under which they were partners in\n\n developing a residential project to be sold to a third party;\n(ii) In accordance with Section 5(24)(f)4, during the transaction period of 2010 to\n\n 2013, Spade led by Mr Arun Anand was making substantial financial\n\n arrangements on the basis of advice provided by the Corporate Debtor led by\n\n its Management and Directors, i.e., Mr. Anil Nanda (a promoter of the\n\n Corporate Debtor) and Mr Sonal Anand (Mr Arun Anand’s brother in-law).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P002_C08",
+      "text": "particular, the Appellate Tribunal noted the following two arrangements\n\n between Spade and the Corporate Debtor:\n(a) Memorandum of Understanding dated 2 December 2010, through which\n\n Spade, on behalf of the Corporate Debtor, paid a third party Rs. 22 crores\n\n as ICD and donated Rs. 3 crores to another third-party trust; and\n(b) Between 16 and 17 January 2013, the Anil Nanda Group of Companies\n\n (led by Mr. Sonal Anand) sought to settle its debts with a third party (worth\n\n Rs. 2 crores) through funds parked with Spade;\n\n“(a) a director or partner of the corporate debtor or a relative of a director or partner of the corporate debtor;”\n\n“(f) anybody corporate whose board of directors, managing director or manager, in the ordinary course of\nbusiness, acts on the advice, directions or instructions of a director, partner or manager of the corporate debtor;”\n\nPART D\n(iii) In accordance with Section 5(24)(h)5, the Corporate Debtor was acting on the\n\n directions/instruction of Mr. Arun Anand who, along with his family, is the\n\n majority shareholder in Spade, of which AAA is a wholly-owned subsidiary.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P002_C09",
+      "text": "The Appellate Tribunal came to this conclusion on the basis that:\n(a) on 1 June 2009, Spade was appointed as ‘Consultant’ to the Corporate\n\n Debtor till 21 February 2011;\n(b) from 1 November 2011, Mr. Arun Anand was appointed as a ‘Strategic\n\n Advisor’ to the Corporate Debtor;\n(c) from 26 November 2012, Mr. Arun Anand was appointed as Group CEO of\n\n the Anil Nanda Group of Companies, which included the Corporate Debtor;\nand\n(d) during this period, the first ICD was given by Spade to the Corporate\n\n Debtor;\n(iv) On the basis of the same reasons as (iii), Mr. Arun Anand was also held to be\n\n a person participating in the policy-making process of the Corporate Debtor in\n\n accordance with Section 5(24)(m)(i)6;\n(v) Mr. Arun Anand and Mr. Sonal Anand were directors of the Corporate Debtor\n\n till 2013. Hence, Mr.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P002_C10",
+      "text": "Arun Anand would be a related party under Section\n\n 5(24)(a) read with 5(24A)(a)7, being a relative of another director; and\n\n“(h) any person on whose advice, directions or instructions, a director, partner or manager of the corporate\ndebtor is accustomed to act;”\n\n“(m) any person who is associated with the corporate debtor on account of— (i) participation in policy-making\nprocesses of the corporate debtor;”\n\n“(24-A) “related party”, in relation to an individual, means— (a) a person who is a relative of the individual or a\nrelative of the spouse of the individual;”\n\nPART E\n(vi) A holding company of the Corporate Debtor, Joint Investment Private Limited\n\n (“JIPL”), holds shareholding in Spade.\n19 Hence, NCLAT came to the conclusion that the Adjudicating Authority had\n\nrightly excluded both Spade and AAA from participation in the CoC since Mr. Anil\n\nNanda, in concert with Mr. Arun Anand and his family, had created a web of\n\ncompanies which were related parties to the Corporate Debtor, and was now\n\ntrying to gain a backdoor entry into the CoC through them.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P002_C11",
+      "text": "E Transactions of the Corporate Debtor\n\n20 Before we proceed with our analysis of the issues, it is important to note\nthe relevant transactions between the Corporate Debtor on one hand and Spade\n\nand AAA on the other hand, which gives rise to their claims as financial creditors.\n\n21 The following transactions between the Corporate Debtor and Spade are\n\nrelevant for our consideration:\n(i) Memorandum of Understanding dated 12 August 2011, through which\n\n Spade provided the Corporate Debtor with ICDs worth a net amount of Rs.\n66 crores from 1 June 2009 till January 2013, which provided for 24%\n\n interest. However, Spade has stated that in actuality only 12% interest was\n\n charged and hence its claim is on that basis;\n(ii) Through this Memorandum of Understanding, the Corporate Debtor\n\n provided security for these ICDs through 37 flats worth Rs. 39.825 crores\n\n in their real estate project, AKME RAAGA. Further, through emails dated\n\n 16 and 17 January 2012, additional security was provided through 11 plots\n\nPART F\n\n worth Rs. 3 crores in the Corporate Debtor’s real estate project, AKME\n\n POLIS.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P002_C12",
+      "text": "The charge was not registered; and\n(iii) Out of the ICDs provided to the Corporate Debtor by Spade, Rs. 43.06\n\n crores’ worth were credited to the account of Mr. Arun Anand by consent. However, this has been disputed by Spade.\n22 The following transactions between the Corporate Debtor and AAA are\n\nrelevant for our consideration:\n(i) Development Agreement dated 1 March 2012, through which the\n\n Corporate Debtor sold to 38.3% of its development rights in its real estate\n\n project, AKME RAAGA, to AAA for a consideration of Rs. 32.80 crores;\n(ii) Agreement to Sell dated 25 October 2012, which superseded the\n\n Development Agreement dated 1 March 2012, through which AAA bought\n\n a saleable area of 313,928 sq. ft. in AKME RAAGA at a price of Rs. 43.06\n\n crores; and\n(iii) Side Letter dated 25 October 2012, which was to be read as a part of the\n\n Agreement to Sell, which noted that the area bought by AAA was 38.3% of\n\n AKME RAAGA, and AAA would provide for the cost of its development\n\n accordingly. F Relationship between Anil Nanda and Arun Anand\n\n23 It is also important to note the close relationship between the key\n\nmanagerial personnel of the Corporate Debtor, Mr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P002_C13",
+      "text": "Anil Nanda and the director of\n\nSpade and AAA, Mr. Arun Anand:\n\nPART F\n(i) Mr. Anil Nanda is the major shareholder of JIPL, which holds 80% of the\n\n shareholding in the Corporate Debtor;\n(ii) The Corporate Debtor is a part of the Nanda Group of Companies;\n(iii) Mr. Arun Anand was also a director of the Corporate Debtor up to 31\n\n March 2002;\n(iv) Mr. Arun Anand and his son, Mr. Aditya Anand, sold their shareholding in\n\n the Corporate Debtor in the year 2004/2005;\n(v) Mr. Arun Anand was also closely related to one of the directors of the\n\n Corporate Debtor, Mr. Sonal Anand, who is his brother-in-law. Sonal\n\n Anand was the director of the Corporate Debtor from November 2007 to\n\n 2013; and\n(vi) Mr. Arun Anand has worked in different capacities for Mr. Anil Nanda for\n\n about 25 years.\n24 The purported transactions took place when he was an employee of\n\nEscorts Limited/Nanda Group of Companies, including the Corporate Debtor and\n\nalso held key managerial posts in the said companies.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P002_C14",
+      "text": "Spade and AAA, in their\n\nwritten submissions, have given details of Mr Arun Anand’s association with the\n\nCorporate Debtor during the relevant period (June 2009 to January 2013) and\n\nthereafter:\n1 June 2009 – 31 October 2011 Consultant\n\n 1 November 2011 – 25 November Strategic Advisor\n\nPART G\n\n26 November 2012 – 14 February Group CEO\n 2013 (81 days)\n\n 15 March 2013 till 18 April 2018 Since February 2013, Mr. Arun\n (CIRP date) Anand has no association with\n Corporate Debtor in any manner\n whatsoever\n\nG Whether Spade and AAA are financial creditors of the Corporate\n\n Debtor\n\nG.1 Submission of Counsel\n25 The learned Senior Counsel who appeared in these proceedings on behalf\n\nof the contesting parties are:\n(i) Mr K.V. Viswanathan for AAA and Spade;\n\n(ii) Mr Neeraj Kishan Kaul for Phoenix; and\n\n(iii) Mr Sanjiv Sen for the Resolution Professional (“RP”).\n\n26 The submission of Mr K V Viswanathan is that NCLT held against AAA and\nSpade on the ground that they were not financial creditors. In view of this finding,\n\nthe NCLT held that it was not necessary to enter upon the second issue which it\n\nhad formulated.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P002_C15",
+      "text": "On the other hand, NLCAT in appeal proceeded on the basis that\n\nadmittedly AAA and Spade are financial creditors but then went on to hold that\n\nthey are related parties and are therefore liable to be excluded from the CoC. His\n\nsubmission is three-fold:\n\nPART G\n(i) The issue as to whether Spade and AAA are financial creditors was\n\n concluded by the earlier order of the NCLT dated 31 May 2018 which\n\n operates as res judicata. NCLT having allowed the applications of AAA\n\n and Spade for submitting their claims to the IRP as financial creditors, this\n\n finding could not have been altered in the subsequent order dated 19 July",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C01",
+      "text": "2019. The NCLT in its order dated 31 May 2018 gave a categorical finding\n\n that the amount received by the Corporate Debtor in the form of deposits\n\n by Spade and AAA are financial debts and the IRP’s rejection of their claim\n\n was unsustainable;\n(ii) The subsequent applications filed by YES Bank and Phoenix before the\n\n NCLT only sought a re-constitution of the CoC and to restrict Spade and\n\n AAA from representing, participating or voting in the CoC. The issue in\n\n respect of the eligibility of Spade and AAA as financial creditors was never\n\n raised in their applications. The only issue raised before the NCLT was\n\n with respect to Spade and AAA being related parties of the Corporate\n\n Debtor. However, NCLT framed two issues including the one relating to\n\n Spade and AAA’s eligibility as financial creditors which stood decided on\n\n 31 May 2018; and\n(iii) In the appeal filed by AAA and Spade against the decision of the NCLT to\n\n exclude them from the CoC, the only issue which fell for consideration was\n\n whether they were financial creditors.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C02",
+      "text": "In other words, it was only the\n\n correctness of the determination of the Adjudicating Authority that they\n\n were not financial creditors which was moot, for being considered. The\n\n NCLAT proceeded to dismiss the appeal, despite its finding that\n\nPART G\n\n “admittedly” AAA and Spade are financial creditors by coming to the\n\n conclusion that they are related parties.\n27 On the basis of the above submissions, Mr Viswanathan has submitted\n\nthat the proceedings should be remanded back for reconsideration since the\n\nNCLAT has made an error of jurisdiction in rejecting the appeal filed by AAA and\n\nSpade despite having agreed with their submission that they are financial\n\ncreditors.\n28 The submission of Mr Neeraj Kishan Kaul is that AAA and Spade are not\n\ncreditors of the Corporate Debtor, much less financial creditors, in terms of\n\nSection 5(7) of the IBC. The submissions made in relation to the transaction\n\nbetween AAA and the Corporate Debtor are:\n(i) The Development Agreement dated 1 March 2012 entered between AAA\n\n and the Corporate Debtor was collusive. AAA had sought to purchase\n\n 38.3% of the development rights in a project called AKME RAAGA as a co-\ndeveloper/partner.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C03",
+      "text": "However, the development license granted by the\n\n Government could not be sub-divided. As a result, the Corporate Debtor\n\n and AAA converted the Development Agreement into an unregistered\n\n Agreement to Sell dated 25 October 2012;\n(ii) AAA and the Corporate Debtor executed an unlawful Side Letter dated 25\n\n October 2012 with the intention to co-develop the land and sell it in the\n\n market. The Side Letter contained terms akin to the terms which were a\n\n part of the Development Agreement. It contained terms for sharing of costs\n\n of development of the project relating to cost of land, construction, license\n\nPART G\n\n and approvals, manpower, liaison cost etc. and the assigning of\n\n responsibilities for compliance. The intent of the parties was to circumvent\n\n the laws, government policies and regulations to continue developing the\n\n project; and\n(iii) Initially, Mr Arun Anand as a director of AAA had filed its claim before the\n\n IRP accepting that it is neither a financial creditor nor an operational\n\n creditor. However, as an afterthought, Mr. Arun Anand filed a baseless,\n\n unlawful, and augmented revised claim as a financial creditor.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C04",
+      "text": "AAA’s claim\n\n of being a financial creditor is mala fide and dishonest, and was filed only\n\n with the intention of manipulating the voting percentage of CoC.\n\n29 Mr Kaul’s submissions in relation to the eligibility of Spade to be a financial\n\ncreditor are:\n(i) Spade has concealed the real nature of the collusive transactions and had\n\n filed an unlawful claim as a financial creditor for an amount of Rs.\n52,96,00,000. Spade filed a revised claim as a financial creditor\n\n exaggerating the amount it was claiming to Rs. 109,11,00,000 without any\n\n basis. The claim was filed by Spade on the basis of an alleged\n\n Memorandum of Understanding dated 12 August 2011. Clause 2 of the\n\n Memorandum of Understanding provides:\n“whereas Spade has granted inter-corporate loan to AKME\n and other companies on behalf of AKME to the extent of Rs.\n 26.55 Crores (ICD) bearing an interest of 24% repayable as\n per mutual agreement between parties.”\n\nPART G\n\nThe Memorandum of Understanding is unenforceable, collusive and is merely an\n\neye-wash. An amount of only Rs. 26.55 Crores was allegedly advanced to Spade\n\nand “other companies”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C05",
+      "text": "No Board resolution was passed by Spade approving the\n\ngrant of ICDs of Rs. 26.55 Crores. In any case, the alleged claim is grossly time\n\nbarred; and\n(ii) The claim of Spade was rejected by the IRP in a letter dated 25 May 2018\n\n on the following basis:\n(a) The essential element of a financial debt in terms of Section 5(8) of\n\n the IBC is absent, which is the consideration for the time value of\n\n money. The exact period of repayment of the ICDs has not been\n\n stipulated in the Memorandum of Understanding;\n(b) The calculation sheet provided by Spade to ascertain the interest\n\n rate and payment of interest does not reflect adjustment of any part\n\n of payment against the payment of interest;\n(c) The ledger provided by Spade does not stipulate the interest\n\n claimed on the alleged debt;\n(d) ICDs were allegedly granted to the Corporate Debtor by Spade in\n\n 2013; however, no valid financial contract was entered between the\n\n Corporate Debtor and Spade to stipulate the consideration in terms\n\n of the time value of money against each transaction.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C06",
+      "text": "A financial\n\n contract is essential for considering a debt as financial debt;\n(e) The calculation sheet reflects that the inflow and outflow of funds\n\n are in the nature of a running account, indicating that the debit and\n\nPART G\n\n credit balances lack any commercial effect of borrowing, which is an\n\n essential element in terms of Section 5(8)(f) of IBC; and\n(f) The emails relied on by Spade dated 16/17 January 2013 mention\n\n that documents in relation to an extension of a loan of Rs. 2 Crores\n\n were to be executed. No such documents have been produced on\n\n record. G.2 Assessment of preliminary submissions\n\nG.2.1 Res Judicata\n\n30 In order to appreciate the line of submissions carefully propounded by Mr\nK V Viswanathan, it becomes necessary to sift through the facts. Initially, on 31\n\nMay 2018, an order was passed by the NCLT allowing AAA and Spade to submit\n\ntheir claims as financial creditors with a direction to the IRP to consider the\n\nclaims. However, when the NCLT allowed AAA and Spade to re-submit its\n\nclaims as financial creditors, none of the creditors on the CoC were represented\n\nin the proceedings.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C07",
+      "text": "After the meeting on 1 June 2018, Phoenix and YES Bank\n\nmoved applications under Section 60(5)8 of the IBC for seeking the exclusion of\n\nAAA and Spade from the CoC on the ground that they were related parties.\n31 In this backdrop, we are unable to subscribe to the submission that the\n\norder of the NCLT dated 31 May 2018 operated as res judicata. The order was\n\n“(5) Notwithstanding anything to the contrary contained in any other law for the time being in force, the National\nCompany Law Tribunal shall have jurisdiction to entertain or dispose of—\n(a) any application or proceeding by or against the corporate debtor or corporate person;\n(b) any claim made by or against the corporate debtor or corporate person, including claims by or against\n any of its subsidiaries situated in India; and\n(c) any question of priorities or any question of law or facts, arising out of or in relation to the insolvency\n resolution or liquidation proceedings of the corporate debtor or corporate person under this Code.”\n\nPART G\n\npassed without hearing financial creditors such as Phoenix and YES Bank.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C08",
+      "text": "Hence, they were legitimately within their rights in seeking a direction for the\n\nexclusion of AAA and Spade from the CoC, if they were aggrieved by the terms\n\nof that order. The earlier order was passed without furnishing them with an\n\nopportunity of being heard. G.2.2 Issues before NCLAT\n\n32 Mr Viswanathan’s submission that the issue of the eligibility of Spade and\n\nAAA as financial creditors was never raised before the NCLT is contrary to the\n\nmaterial produced on record. The application filed by Phoenix adverted to its\n\nsubmission that NCLT’s order dated 31 May 2018 was obtained by Spade and\n\nAAA on a concealment of material facts, circumstances and the real nature of the\n\ntransactions. In addition, Mr Anil Nanda, the suspended director of the Corporate\n\nDebtor, had filed an application9 before the NCLT alleging that Spade and AAA\n\nhave not financed any amount to the Corporate Debtor. He submitted that there\n\nwas no loan facility against the time value of money. In addition, he argued that\n\nthe Agreement to Sell between the Corporate Debtor and AAA was a part of\n\nseries of acts of fraud, and is null and void.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C09",
+      "text": "The NCLT’s order dated 19 July 2019\n\nwas passed after arguments were led on the real nature of transactions between\n\nthe parties. CA -224/ND/2018\n\nPART G\n\nG.2.3 Remand to NCLAT\n\n33 The submission that the NCLAT has acted beyond jurisdiction in the\n\nappeal filed by AAA and Spade in enquiring into whether they are related parties\n\nis the next aspect which needs to be considered. NCLT in its decision on 19 July\n\n2019 had formulated two questions for consideration. The first was whether the\n\ntransactions between AAA and Spade qualify to be treated as a financial debt\n\nunder Section 5(8). The second pertained to the date with reference to which the\n\nrelationship between the parties needs to be considered for assessing whether\n\nthey are related parties. On the first aspect, the adjudicating authority came to the\n\nconclusion that the transaction between the corporate debtor and Spade is not a\n\nfinancial debt under Section 5(8) and Spade is not a financial creditor under\n\nSection 5(7).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C10",
+      "text": "The basis of this finding is contained in paragraph 11.2 of the\n\ndecision, which is extracted below:\n“11.2 Perusal of the documents pertaining to the inter\n corporate deposit stated to have been given by Spade\n Financial Services Private Limited to the Corporate Debtor\n from 01.06.2009 to January 2013 shows the following points\n of interest:\n Though the loan was given from June 2009 to\n January 2013, the MOU regarding the same is dated\n 12.08.2011 The said MOU provided for interest at the\n rate of 24°/o but it is stated that only 12°/o interest\n was paid on mutual agreement.\n In the claim filed before the RP only 12% interest has\n been claimed\n  Though securities were provided by way of flats and\n plots in the real estate projects of the Corporate\n Debtor, the charge of the “Secured loan\" was not\n registered with the Registrar of Companies.\n No Board Resolutions approving deposit of such inter\n corporate deposits and their acceptance by the\n Corporate Debtor have been filed before us.\n Out of the ICD of Rs. 66 crores given by Spade to the\n CD, Rs. 43.06 crores are stated to have been credited\n\nPART G\n\n to the account of Arun Anand, Director of CD, by\n consent.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C11",
+      "text": "The above facts show that the transaction pertaining to giving\n of inter corporate deposits by Spade to CD appears to be\n collusive, as the MOU for the same has been signed more\n than two years after the beginning of the transaction, and the\n rate of interest actually stated to be charged is half of the\n interest mentioned in the MOU, as also a major portion of the\n ICD was credited to the account of Arun Anand, Director of\n Spade. Thus, it is seen that the entire amount was not\n disbursed to the CD as well as there is variation in the\n consideration for the time value of money as per the MOU\n and claim filed before the IRP. Accordingly, this transaction\n does not qualify as a financial debt as defined under Section\n 5(8) of the Code, and Spade Financial Services Limited does\n not qualify as a Financial Creditor under Section 5(7) of the\n Code.”\n\nSimilarly, the transactions between corporate debtor and AAA were discussed in\n\nparagraph 11.3 and a finding was arrived at to the effect that they were collusive\n\nin nature, and did not qualify as a financial debt.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C12",
+      "text": "Paragraph 11.3 is extracted\n\nbelow:\n“11.3 The details of transaction and entered by CD with AAA\n Landmark have been discussed in detail in Para 4.3 above. It\n is seen that as regards to the same property the parties\n entered into several agreements over a period of 3 years,\n including plot buyers Agreement, MOU, Development\n Agreement and finally, Agreement to Sell dated 25.10.2012. By the Development Agreement dated 01.03.2012, 38.3% of\n the Development rights of the Project named \"AKME Raaga\"\nwere sold to AAA for 32.80 crores and subsequently on\n 25.10.2012 the Agreement to Sell was executed to\n superseding the development agreement with an enhanced\n value of Rs. 43.06 crores. The multiplicity of Agreements\n regarding the same property, with no explanation or rational\n reasoning regarding variation in values of transaction, shows\n that these transactions are also collusive in nature and an\n attempt to divert the properties of the CD to AAA for reasons\n best known to the parties.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C13",
+      "text": "It is also noted that the transactions\n between the CD and AAA as well as Spade were done during\n the period when Arun Anand, who along with his family\n members is the promoter and director of both Spade and AAA\n Landmark was associated in various capacities from 1982 to\n 2013 with the CD and its directors and the group of\n\nPART G\n\n companies to which the CD belongs. It is during this period\n only that Mr. Arun Anand promoted and subscribed to the\n memorandum of association of the CD, Spade and AAA\n Landmark. Mr. Arun Anand and his family members at\n various points of time also had shareholding in the group\n companies of the Mr. Anil Nanda group. It is also seen that\n the alleged financial transactions of Spade and AAA\n Landmark with the CD occurred during the period 2009 to\n 2013, the time when he was consultant (through Spade) to\n the CD, and was consultant and strategic advisor in his\n individual capacity to the CD and finally group CEO of the Mr. Anil Nanda group of companies.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C14",
+      "text": "Considering the above\n facts, we are of the opinion that the transactions between the\n CD and both Spade and AAA Landmark are collusive in\n nature and do not qualify as Financial Debt for the purposes\n of IBC. Accordingly, we hold that Spade and AAA Landmarks\n do not qualify to be considered as Financial Creditors.”\n34 Having held that the transactions between the corporate debtor on one\n\nhand and AAA and Spade on the other did not qualify as a financial debt, the\n\nAdjudicating Authority commenced its discussion on the second issue by stating\n\nthat it “does not require a reply” in view of the finding on the first issue. However,\n\nit then noted that the first proviso to Section 21(2) has been substituted with\n\neffect from 6 June 2018, the effect of which is to exclude a financial creditor who\n\nis a related party of the corporate debtor from being represented in and from\n\nparticipating or voting in a meeting of the CoC. After adverting to the definition of\n\nthe expression ‘related party’ in Section 5(24), the Adjudicating Authority held:\n“There is no doubt in our mind that Arun Anand and his\n companies, namely, Spade and AAA Landmark were related\n parties to the CD.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C15",
+      "text": "However, after 2013 (soon after signing the\n Agreement to Sell signed on 25.10.2012) Arun Anand\n resigned from all the companies of The Anil Nanda Group\n and so they are no longer related to the CD at the time of\n filing of application of CIRP.”\n35 Eventually, the NCLT concluded that the applications filed by YES Bank\n\nand Phoenix would have to be allowed. Its conclusion is extracted below:\n\nPART G\n\n “13. Before parting with this application, we would like to\n observe that the affairs of the CD as well as the Group of\n Arun Anand companies are deeply entangled and it is difficult\n for the Tribunal in a summary jurisdiction to unravel-the same. Considering that the CD and Spade and AAA were Registrar\n of Companies since 2016, we have no hesitation in allowing\n the instant applications filed by Yes Bank Limited and\n Phoenix ARC Private Limited.”\n36 The above analysis of the decision of the NCLT indicates that its primary\n\nfinding was that neither AAA nor Spade are financial creditors within the meaning\n\nof Section 5(8).\n37 Sub-sections (1) and (2) of Section 21, insofar as is material provide as\n\nfollows:\n“21.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C16",
+      "text": "Committee of Creditors.- (1) The interim resolution\n professional shall after collation of all claims received against\n the corporate debtor and determination of the financial\n position of the corporate debtor, constitute a committee of\n creditors. (2) The committee of creditors shall comprise all financial\n creditors of the corporate debtor: Provided that a related\n partyto whom a corporate debtor owes a financial debt shall\n not have any right of representation, participation or voting in\n a meeting of the committee of creditors.”\n38 Sub-section (2) of Section 21 stipulates that the CoC is to comprise of all\n\nfinancial creditors of the corporate debtor. The first proviso to Sub-section (2) has\n\nbeen amended by Act 26 of 2018 with effect from 6 June 2018. Having held that\n\nAAA and Spade are not financial creditors, NCLT came to the conclusion that\n\nthey were not entitled to inclusion in the CoC.\n39 On the second issue, the Adjudicating Authority was of the view that it was\n\nnot really necessary for it to consider what should be the date with reference to\n\nPART G\n\nwhich a related party should be determined. But it is evident that the NCLT did\n\ncome to the conclusion that Mr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C17",
+      "text": "Arun Anand and his various companies namely\n\nAAA and Spade were related parties to the corporate debtor though after 2013,\n\nMr Arun Anand resigned from all the companies of the Anil Nanda Group. The\n\nAdjudicating Authority observed that they are no longer related to the corporate\n\ndebtor at the time of the filing of the application for initiation of the CIRP. It noted\n\nthe deep entanglement of the affairs of the corporate debtor and the Arun Anand\n\ngroup of companies, the close business relationship of the past and the fact that\n\nthe accounts of the corporate debtor had not been finalised, audited or filed with\n\nthe Registrar of Companies since 2016. Reading the order of the NCLT as it\n\nstands, it is not possible to accept the submission that the applications filed by\n\nYES Bank and Phoenix were rejected only on the basis that they were not\n\nfinancial creditors and that there was no determination in regard to their status as\n\nrelated parties. In light of the above discussion, we do not agree with the\n\nsubmission that NCLAT exceeded its jurisdiction by considering the second issue\n\nrelating to the determination of the status of AAA and Spade as related parties.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C18",
+      "text": "Thus, we hold that there is no reason to remand the matter to NCLAT for\n\nreconsideration. An order of remand cannot be passed in a routine manner, and it\n\nshould be passed only if a re-consideration is necessary. An unwarranted order\n\nof remand does not serve the cause of justice and merely extends the life of\n\nlitigation. Remands in commercial matters should not become a ruse to subserve\n\nlitigation luxuries.\n40 The dispute fell into a quagmire when the NCLAT proceeded on the basis\n\nthat it was an admitted position that AAA and Spade are financial creditors. The\n\nPART G\n\nfinding of fact in paragraph 11 of the decision of the NCLAT that this is the\n\n“admitted position” is plainly erroneous since there was an express finding of the\n\nNCLT to the contrary. The fact that it necessitated an appeal by AAA and Spade\n\nwould indicate that this was not an admitted position. It is also evident from the\n\ncontents of the appeal filed by Spade and AAA, and the reply filed by Phoenix\n\nbefore the NCLAT, that the status of Spade and AAA as financial creditors was in\n\ndispute.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 18
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C19",
+      "text": "Having said that, the issue that now falls for our consideration is whether\n\nAAA and Spade can be considered as financial creditors.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 19
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C20",
+      "text": "G.3 Analysis\n\nG.3.1 Relevant Provisions\n\n41 Section 5 (7) of the IBC defines a financial creditor :\n“(7) \"financial creditor\" means any person to whom a financial\n debt is owed and includes a person to whom such debt has\n been legally assigned or transferred to;”\n42 Section 5(8) of the IBC provides a definition of financial debt in the\n\nfollowing terms:\n“(8) \"financial debt\" means a debt along with interest, if any,\n which is disbursed against the consideration for the time\n value of money and includes--\n(a) money borrowed against the payment of interest;\n(b) any amount raised by acceptance under any acceptance\n credit facility or its de-materialised equivalent;\n(c) any amount raised pursuant to any note purchase facility\n or the issue of bonds, notes, debentures, loan stock or any\n similar instrument;\n(d) the amount of any liability in respect of any lease or hire\n purchase contract which is deemed as a finance or capital\n\nPART G\n\n lease under the Indian Accounting Standards or such other\n accounting standards as may be prescribed;\n(e) receivables sold or discounted other than any receivables\n sold on non-recourse basis;\n(f) any amount raised under any other transaction,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 20
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C21",
+      "text": "including\n any forward sale or purchase agreement, having the\n commercial effect of a borrowing;\nExplanation.-- For the purposes of this sub-clause,--\n(i) any amount raised from an allottee under a real estate\n project shall be deemed to be an amount having the\n commercial effect of a borrowing; and\n(ii) the expressions, \"allottee\" and \"real estate project\" shall\n have the meanings respectively assigned to them in clauses\n(d) and (zn) of\nsection 2\nof the Real Estate (Regulation and\n Development) Act, 2016 (16 of 2016);]\n(g) any derivative transaction entered into in connection with\n protection against or benefit from fluctuation in any rate or\n price and for calculating the value of any derivative\n transaction, only the market value of such transaction shall be\n taken into account;\n(h) any counter-indemnity obligation in respect of a\n guarantee, indemnity, bond, documentary letter of credit or\n any other instrument issued by a bank or financial institution;\n(i) the amount of any liability in respect of any of the\n guarantee or indemnity for any of the items referred to in sub-\n clauses (a) to (h) of this clause;”\n\nG.3.2 Financial Creditor and Financial Debt\n\n43 Under\nSection",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 21
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C22",
+      "text": "5(7)\nof the IBC, a person can be categorised as a financial\n\ncreditor if a financial debt is owed to it.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 22
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C23",
+      "text": "Section 5(8)\nof the IBC stipulates that the\n\nessential ingredient of a financial debt is disbursal against consideration for the\n\ntime value of money. This Court, speaking through Justice Rohinton F Nariman,\n\nSwiss Ribbons Pvt. Ltd. v. Union of India10\nhas held:\n\n(2019) 4 SCC 17\n\nPART G\n\n “42. A perusal of the definition of \"financial creditor\" and\n \"financial debt\" makes it clear that a financial debt is a\n debt together with interest, if any, which is disbursed\n against the consideration for time value of money. It may\n further be money that is borrowed or raised in any of the\n manners prescribed in\nSection 5(8)\nor otherwise, as\nSection 5(8)\nis an inclusive definition. On the other hand,\n an \"operational debt\" would include a claim in respect of the\n provision of goods or services, including employment, or a\n debt in respect of payment of dues arising under any law and\n payable to the Government or any local authority.”\n\n (emphasis supplied)\n44 In this context, it would be relevant to discuss the meaning of the terms\n\n“disburse” and “time value of money” used in the principal clause of\nSection 5(8)\nof the IBC.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 23
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P003_C24",
+      "text": "This Court has interpreted the term “disbursal” in\nPioneer Urban\n\nLand and Infrastructure Ltd vs. Union of India11\nin the following terms:\n“70. The definition of \"financial debt\" in\nSection 5(8)\nthen goes\n on to state that a \"debt\" must be \"disbursed\" against the\n consideration for time value of money. \"Disbursement\" is\n defined in Black's Law Dictionary (10th Edn.) to mean:\n“1. The act of paying out money, commonly from a fund or in\n settlement of a debt or account payable. 2. The money so\n paid; an amount of money given for a particular purpose.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 24
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C01",
+      "text": "71. In the present context, it is clear that the expression\n \"disburse\" would refer to the payment of instalments by the\n allottee to the real estate developer for the particular purpose\n of funding the real estate project in which the allottee is to be\n allotted a flat/apartment. The expression \"disbursed\" refers\n to money which has been paid against consideration for\n the \"time value of money\". In short, the \"disbursal\" must\n be money and must be against consideration for the\n \"time value of money\", meaning thereby, the fact that\n such money is now no longer with the lender, but is with\n the borrower, who then utilises the money….”\n\n (emphasis supplied)\n\n(2019) 8 SCC 416\n\nPART G\n45 The report of the Insolvency Law Committee dated 26 March 2018 has\n\ndiscussed the interpretation of the term “time value of money” and stated:\n“The current definition of 'financial debt' Under\nSection 5(8)\n the Code uses the words \"includes\", thus the kinds of\n financial debts illustrated are not exhaustive. The phrase\n \"disbursed against the consideration for the time value of\n money\" has been the subject of interpretation only in a\n handful of cases under the Code.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C02",
+      "text": "The words \"time value\"\nhave been interpreted to mean compensation or the price\n paid for the length of time for which the money has been\n disbursed. This may be in the form of interest paid on the\n money, or factoring of a discount in the payment.”\n (emphasis supplied)\n\nG.3.3 Collusive Transactions\n46 The above discussion shows that money advanced as debt should be in\n\nthe receipt of the borrower. The borrower is obligated to return the money or its\n\nequivalent along with the consideration for a time value of money, which is the\n\ncompensation or price payable for the period of time for which the money is lent. A transaction which is sham or collusive would only create an illusion that money\n\nhas been disbursed to a borrower with the object of receiving consideration in the\n\nform of time value of money, when in fact the parties have entered into the\n\ntransaction with a different or an ulterior motive. In other words, the real\n\nagreement between the parties is something other than advancing a financial\n\ndebt. A useful elaboration of “sham transactions” can be found in the opinion of\n\nDiplock LJ in Snook vs.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C03",
+      "text": "London and West Riding Investments Ltd.12:\n“As regards the contention of the plaintiff that the transactions\n between himself, Auto Finance and the defendants were a\n \"sham,\" it is, I think, necessary to consider what, if any, legal\n concept is involved in the use of this popular and pejorative\n\n[1967] 2 QB 786\n\nPART G\n\n word. I apprehend that, if it has any meaning in law, it means\n acts done or documents executed by the parties to the\n “sham” which are intended by them to give to third\n parties or to the court the appearance of creating\n between the parties legal rights and obligations different\n from the actual legal rights and obligations (if any) which\n the parties intend to create.”\n\n (emphasis supplied)\n\nDiplock LJ also stated:\n“But one thing, I think, is clear in legal principle, morality and\n the authorities (see Yorkshire Railway Wagon Co v Maclure\n and Stoneleigh Finance Ltd. v Phillips), that for acts or\n documents to be a “sham,” with whatever legal consequences\n follow from this, all the parties thereto must have a\n common intention that the acts or documents are not to\n create the legal rights and obligations which they give\n the appearance of creating.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C04",
+      "text": "No unexpressed intentions of\n a “shammer” affect the rights of a party whom he\n deceived…”\n\n (emphasis supplied)\n47 This Court, in\nPrem Chand Tandon vs. Krishna Chand Kapoor,13\nhad to\n\ndetermine whether a usufructuary mortgage was a sham transaction entered into\n\nby the respondent there (the borrower) to avoid payment to creditors. This Court\n\nexamined the real nature of the transaction to hold that the parties entered the\n\ntransaction with an ulterior motive. Justice A.N. Grover, speaking for this Court,\n\nheld:\n“As regards the consideration for the usufructuary mortgage\n the promissory notes were never produced. It is true that\n there was some evidence that Smt. Dhanta Devi [lender] had\n received certain insurance monies on the death of her\n husband but the 'aggregate of those amounts did not exceed,\n Rs. 13,000/-. Even if she was possessed of some jewellery\n and other funds it is difficult to believe that she would have\n\n(1973) 2 SCC 366\n\nPART G\n\n advanced such a substantial amount of Rs. 25,000/- to the\n respondent [borrower] by means of two promissory notes on\n December 10, 1919 and on March 17, 1920.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C05",
+      "text": "It would further\n appear and some stress has been laid on this aspect by\n Jagat Narain J., in his judgment that the financial , position of\n the respondent at the time the usufructuary mortgage deed\n was executed was fairly good considering the various articles\n like diamonds and the car which he had purchased apart from\n the shares. The house at Ajmer and the Vile Parle land had\n been mortgaged with possession for Rupees 25,000/- for a\n period of 60 years. It was difficult to believe that the\n respondent would have entered into such a transaction in\n view of his financial position in the year 1921. It was equally\n not likely that a person dealing in shares who would require\n ready money would lock up his assets like the property in\n dispute in a transaction which was such that the mortgage\n could not be redeemed before the expiry of the period of sixty\n years.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C06",
+      "text": "The mortgage, therefore, was executed only with\n an ulterior purpose, it being wholly fictitious.”\n\n (emphasis supplied)\n48 The IBC has made provisions for identifying, annulling or disregarding\n\n“avoidable transactions” which distressed companies may have undertaken to\n\nhamper recovery of creditors in the event of the initiation of CIRP. Such avoidable\n\ntransactions include: (i) preferential transactions under\nSection 43\nof the IBC; (ii)\n\nundervalued transactions under\nSection 45(2)\nof the IBC; (iii) transactions\n\ndefrauding creditors under\nSection 49\nof the IBC; and (iv) extortionate\n\ntransactions under\nSection 50\nof the IBC. The IBC recognizes that for the\n\nsuccess of an insolvency regime, the real nature of the transactions has to be\n\nunearthed in order to prevent any person from taking undue benefit of its\n\nprovisions to the detriment of the rights of legitimate creditors. PART G\n\nG.3.4 Spade and AAA\n\n49 Mr Kaul argued that the transactions entered into between the Corporate\n\nDebtor and Spade and AAA are collusive in nature and do not constitute a\n\nfinancial debt.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C07",
+      "text": "Mr Viswanathan has urged that the eligibility of Spade and AAA as\n\nfinancial creditors has conclusively been determined by the NCLT in its order\n\ndated 31 May 2018. We have already concluded that the above order would not\n\noperate as res judicata and it was within the jurisdiction of the NCLT to consider\n\nthis issue afresh. NCLT in its order dated 19 July 2019 has undertaken a detailed\n\nanalysis of the transactions to arrive at a finding that the transactions were\n\ncollusive. We are inclined to agree with the findings of the NCLT in its order dated\n\n19 July 2019. NCLAT has also made an observation that “we are of the\n\nconsidered opinion that Mr Anil Nanda, Mr Arun Anand had created a web of\n\ncompanies in which both along with near and dear ones including Ms Renu\n\nAnand (Wife of Mr. Arun Anand) and Mr Sonal Anand (Brother-in-law of Mr. Arun\n\nAnand) acted in concert with each other”14. It is to be noted that M/s Ernst &\n\nYoung were appointed as forensic/transactional auditors by the RP on 19\n\nNovember 2019.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C08",
+      "text": "Their report contains significant findings:\n“Considering the above transactions, we were unable to\n understand the business rational of:\nPurchase and sale transaction with Spade Financial resulting\n in a loss of approx. INR 2.12 Cores to CD\n\n Rent paid to Arun Anand and Aditya Anand\n\n ICD balance of Spade Financial being transferred to AAA\n Landmark against which sale agreement was executed\n\n Basis of valuation of the land transaction and sale of property\n to AAA Landmark\n\nParagraph 18\n\nPART G\n\n EY Comments:\nReference to\nSection 66\nof the Insolvency and\n Bankruptcy Code, 2016\nSection 66\nof the Insolvency and Bankruptcy Code, 2016\nSection 66 (1)\nif during the corporate insolvency resolution\n process or liquidation process, it is found that any business of\n the corporate debtor has been carried on with intent to\n defraud the creditors of the corporate debtor or for any\n fraudulent purposes, the Adjudicating Authority may on the\n application of the resolution professional pass an order that\n any person who were knowingly parties to carrying on of the\n business in such manner shall be liable to make such\n contributions to the assets of the corporate debtor as it may\n deem fit.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C09",
+      "text": "Considering the above facts and when read in reference\n with\nSection 66\nof the Insolvency and Bankruptcy Code,\n 2016, indicates an intent to defraud the creditors and may\n be categorized as potentially fraudulent. However, the RP\n shall make an independent assessment whether it intends to\n file an application for the same with the Adjudicating Authority\n as mentioned in the Insolvency and Bankruptcy Code.”\n\n (emphasis supplied)\n\n50 As noted by NCLT, the Memorandum of Understanding dated 12 August\n\n2011, on the basis of which Spade had filed its claim in Form C before the IRP,\n\nwas signed two years after the commencement of the purported transaction. The\n\nexecution of the Memorandum of Understanding was sought to be explained on\n\nthe basis that a formal document was created for specifying the rate of interest on\n\nthe ICDs given by Spade to the Corporate Debtor. However, despite the creation\n\nof a formal document, the rate of interest being charged on the ICDs was 12% as\n\nmentioned in the claim before the IRP, which is half of the interest rate of 24%\n\nstipulated in the Memorandum of Understanding.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C10",
+      "text": "During the arguments, Mr Kaul\n\nand Mr Sen have also brought to the notice of this Court that the Memorandum of\n\nUnderstanding is unregistered and unstamped. The IRP in his letter dated 25\n\nPART G\n\nMay 2018 has noted that as per the ledger provided by Spade, no interest was\n\nclaimed on the alleged debt and no adjustment was made regarding the payment\n\nof principal or interest by the Corporate Debtor to Spade. It has been submitted in\n\nthe written submissions filed on behalf of Spade and AAA that the auditors of the\n\nCorporate Debtor had been putting a note in its balance sheets stating that the\n\ninterest of 12% was not being paid to Spade due to a dispute. This submission in\n\nfact further fortifies the finding of the IRP that no interest has been paid on the\n\nalleged loan. The IRP has also noted in his letter that the Memorandum of\n\nUnderstanding does not stipulate the period of repayment. Hence, the\n\nconsideration for time value of money is absent, which is an essential ingredient\n\nof a financial debt. The NCLT has also noted that a major portion of the ICDs was\n\ncredited in the account of Mr Arun Anand holding that the entire amount was not\n\n“disbursed” to the Corporate Debtor.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C11",
+      "text": "NCLAT has also made a similar finding in\n\nparagraph 11(i) of its judgement. This finding has been disputed by Mr\n\nVishwanathan who argued that no amount of the ICDs has been credited to the\n\naccount of Mr Arun Anand and such an allegation has not been made by any of\n\nthe parties including the RP. However, it is to be noted under Clause 2 of the\n\nMemorandum of Understanding, the amount of Rs. 26.55 Crores has been\n\ndisbursed not only to the Corporate Debtor but also to “other companies on\n\nbehalf of AKME”. In any event, the entirety of the ICDs were not disbursed to\n\nSpade. Additionally, no Board resolution was passed by Spade approving the\n\ngrant of ICDs and the charge created on the loan was not registered with the\n\nRegistrar of Companies. In view of the above, we are inclined to agree with Mr\n\nKaul that the Memorandum of Understanding was an eye-wash and collusive. PART G\n\n51 NCLT in its order dated 19 July 2019 has noted that AAA and the\n\nCorporate Debtor had entered into multiple agreements regarding the same\n\nproperty without giving any explanation or rationale regarding variation in the\n\nconsideration.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C12",
+      "text": "This showed that the transactions were collusive in nature entered\n\nwith the purpose of diverting properties of the Corporate Debtor to AAA. Mr\n\nViswanathan sought to explain the multiple agreements, and argued that AAA\n\nentered into a Development Agreement dated 1 January 2012 with the Corporate\n\nDebtor to obtain 38.3% of development rights. Since the Development\n\nAgreement could not be implemented because the license for the project could\n\nnot be split into two parts, an Agreement to Sell and a Side Letter were executed\n\non 25 October 2012. The Agreement to Sell was entered to purchase FSI/flats\n\nequivalent to 38.3% of the total FSI in relation to specific units identified and\n\nallotted in the agreement. Apparently, the sale consideration was re-negotiated\n\nand enhanced from Rs 32.80 crores under the Development Agreement to Rs\n\n86.01 crores under the Agreement to Sell. Mr Viswanathan has submitted that\n\nthere was no partnership clause in the Agreement to Sell. However, Clause 3 of\n\nthe Side Letter dated 25 October 2012 shows that the intent of the parties was to\n\ncontinue to co-develop the land. Clause 3 of the Side Letter provides:\n“3.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C13",
+      "text": "It is agreed that ALPL shall share the cost of the Project in\n the same ratio as the share of respective development in the\n Property (i.e. Villas- 50% and other developments (group\n housing etc.) – 36.33%). The cost of the Project shall include:\na. Land cost\n b. License and approval costs\n c. Construction cost\n d. Direct project management costs (people at the site)\n e. Marketing & sales promotion cost\n f. Liaison cost\n g. Maintenance cost for unsold inventory\n\nPART H\n\n h. Government levies and charges including EDS & IDC and\n any enhancement thereof.”\n\nIt appears that the parties converted the Development Agreement into an\n\nAgreement to Sell executed along with a Side Letter to circumvent the legal\n\nprohibition on splitting a development license in two parts. The transaction\n\nbetween AAA and the Corporate Debtor was collusive in nature.\n52 Since the commercial arrangements between Spade and AAA, and the\n\nCorporate Debtor were collusive in nature, they would not constitute a ‘financial\n\ndebt’. Hence, Spade and AAA are not financial creditors of the Corporate Debtor.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C14",
+      "text": "H Whether Spade and AAA are related parties\n\n53 The Appellate Tribunal has affirmed the decision of the NCLT to exclude\nSpade and AAA from the CoC on the ground that they are related parties. As we\n\nhave seen earlier, there was a specific finding in the decision of the NCLT on the\n\nclose business relationship between AAA and Spade on one hand and the\n\nCorporate Debtor on the other, in terms of the provisions contained in\nSection\n\n5(24)\n. The decision of the NCLT spoke of a deep entanglement in the business\n\naffairs. The NCLT came to the specific finding that Spade and AAA “were related\n\nparties” of the corporate debtor but, that the relationship had ended by the time\n\nthe initiation of the CIRP took place. It is this aspect which now merits\n\nconsideration. We shall first analyse whether Spade and AAA are related parties\n\nof the Corporate Debtor.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C15",
+      "text": "PART H\n\nH.1 Submissions of Counsel\n\n54 Assailing the judgment of the NCLAT, Mr Viswanathan submits:\n(i) There were no common key managerial personnel or directors between\n\n the Corporate Debtor and Spade and AAA during the relevant period of the\n\n transactions between 2010 to 2013;\n(ii) The Appellate Tribunal has incorrectly held that Mr Arun Anand was in a\n\n position to influence the decision making of the Corporate Debtor, without\n\n satisfying the test of “control” established in Arcelor Mittal India (P) Ltd.\nvs Satish Kumar Gupta15;\n(iii) Mr Arun Anand was a mere salaried employee without any ability to\n\n influence the decision-making process. He did not attend any Board\n\n Meetings, and did not give any directions to the directors or individuals in\n\n the Corporate Debtor;\n(iv) Mr Arun Anand was Group CEO of Anil Anand Group of Companies for\n\n only 81 days, which was also a titular position and not a statutory position\n\n since there was no approval from the Board of Directors.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Ltd v Satish Kumar Gupta15"
+      ],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C16",
+      "text": "Hence, he could\n\n not have influenced any policy making process of the Corporate Debtor in\n\n accordance with\nSection 5(24)(m)(i)\n;\n(v) JIPL, and through it the Corporate Debtor, holds only 1.45% shareholding\n\n in Spade, which is below the 2% threshold in\nSection 5(24)(d)\n;\n\n(2019) 2 SCC 1\n\nPART H\n(vi) The Corporate Debtor and AAA are incorrectly assumed to be ‘partners’ in\n\n accordance with\nSection 5(24)(a)\n;\n(vii) The two transactions mentioned in order to prove a relationship under\n\n Section 5(24)(f) were commercial transactions where the Corporate Debtor\n\n borrowed money from Spade to pay third parties, which would have been\n\n paid back with interest; and\n(viii)\nSection 5(24A)\nhas no application, since it applies to the insolvency\n\n resolution and liquidation process for individuals and partnerships.\n\n55 Supporting the judgment of the NCLAT, Mr Kaul submits:\n(i) Mr Arun Anand incorporated the Corporate Debtor on 15 December 2003,\n\n following which it was acquired by Mr Anil Nanda in 2007.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C17",
+      "text": "Mr Arun Anand\n\n has also held numerous positions in the Anil Nanda Group of Companies,\n\n and has a long-standing relationship with Mr Anil Nanda;\n(ii) During the relevant transactions with Spade and AAA, Mr Arun Anand held\n\n the position of Consultant or Strategic Advisor to the Corporate Debtor,\n\n and later became the Group CEO of the Anil Nanda Group of Companies\n\n (of which the Corporate Debtor is also a part);\n(iii) During this period, Mr Arun Anand’s brother in-law, Mr Sonal Anand, was a\n\n director and COO of the Corporate Debtor. Further, he was also the Whole\n\n Time Director of JIPL, which is a wholly-owned subsidiary of the Corporate\n\n Debtor, and holds shareholding in Spade;\n\nPART H\n(iv) During this period, Mr Anil Nanda was the promoter/director of the\n\n Corporate Debtor; and\n(v) The ongoing litigation between Spade and the Corporate Debtor was only\n\n started after the IBC came into force, to create a notion of dispute.\n\n56 The submissions of Mr Kaul are supported by Mr Sen.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C18",
+      "text": "He submits:\n(i) Two of the original shareholders of the Corporate Debtor, along with Mr\n\n Arun Anand, now have shareholding and positions in Spade; and\n(ii) There have been fraudulent transactions between Spade and JIPL, in\n\n which JIPL paid a sum to Spade for transfer of shares, which never\n\n occurred. This is a subject of proceedings under Section 66 of the IBC\n\n initiated by the RP. H.2 Statutory provisions\n\n57 The definition of the expression ‘related party’ in Section 5(24) is\nexhaustive, since the expression is defined to “mean” what is set out in clauses\n(a) to (m).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 18
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C19",
+      "text": "The expression ‘related party’ is defined in\nSection 5 (24)\nas follows:\n“(24) \"related party\", in relation to a corporate debtor,\n means—\n(a) a director or partner of the corporate debtor or a\n relative of a director or partner of the corporate debtor;\n(b) a key managerial personnel of the corporate debtor or\n a relative of a key managerial personnel of the corporate\n debtor;\n(c) a limited liability partnership or a partnership firm in\n which a director, partner, or manager of the corporate debtor\n or his relative is a partner;\n\nPART H\n(d) a private company in which a director, partner or\nmanager of the corporate debtor is a director and holds along\nwith his relatives, more than two per cent. of its share capital;\n(e) a public company in which a director, partner or\nmanager of the corporate debtor is a director and holds along\nwith relatives, more than two per cent. of its paid-up share\ncapital;\n(f) anybody corporate whose board of directors,\nmanaging director or manager, in the ordinary course of\nbusiness, acts on the advice, directions or instructions of a\ndirector, partner or manager of the corporate debtor;\n(g) any limited liability partnership or a partnership firm\nwhose",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 19
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C20",
+      "text": "partners or employees in the ordinary course of\nbusiness, acts on the advice, directions or instructions of a\ndirector, partner or manager of the corporate debtor;\n(h) any person on whose advice, directions or\ninstructions, a director, partner or manager of the corporate\ndebtor is accustomed to act;\n(i) a body corporate which is a holding, subsidiary or an\nassociate company of the corporate debtor, or a subsidiary of\na holding company to which the corporate debtor is a\nsubsidiary;\n(j) any person who controls more than twenty per cent.\nof voting rights in the corporate debtor on account of\nownership or a voting agreement;\n(k) any person in whom the corporate debtor controls\nmore than twenty per cent. of voting rights on account of\nownership or a voting agreement;\n(l) any person who can control the composition of the\nboard of directors or corresponding governing body of the\ncorporate debtor;\n(m) any person who is associated with the corporate\ndebtor on account of—\n(i) participation in policy making processes of the\n corporate debtor; or\n(ii) having more than two directors in common between\n the corporate debtor and such person; or (iii)\n interchange of managerial personnel between",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 20
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C21",
+      "text": "the\n corporate debtor and such person; or\n(iv) provision of essential technical information to, or from,\n the corporate debtor;”\n\nPART H\n\nThe expression ‘related party’ is defined in\nSection 5(24)\nin relation to a corporate\n\ndebtor.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 21
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C22",
+      "text": "Section 5(24A)\nprovides a corresponding definition in relation to an\n\nindividual.\n58 The definition describes a commutative relationship, meaning that X can\n\nbe a related party of Y, if either X is related to Y, or Y is related to X. The\n\ndefinition of ‘related party’ under the IBC is significantly broad. The intention of\n\nthe legislature in adopting such a broad definition was to capture all kinds of inter-\n\nrelationships between the financial creditor and the corporate debtor16.\n\n59 The term ‘related party’ has also been defined by\nParliament in the\n\nCompanies Act, 2013\nfor all corporations. The definition of the expression has\n\nalso been expanded for listed entities by the Securities Exchange Board of India\n\nby amendment to the Equity Listing Agreement to include elements mentioned\n\nunder applicable accounting standards. However, in the present case, we are\n\nassessing its definition only under the IBC, which is exhaustive. The purpose of\n\ndefining the term separately under different statutes is not to avoid inconsistency\n\nbut because the purpose of each of them is different.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 22
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C23",
+      "text": "Hence, while understanding\n\nthe meaning of ‘related party’ in the context of the IBC, it is important to keep in\n\nmind that it was defined to ensure that those entities which are related to the\n\nCorporate Debtor can be identified clearly, since their presence can often\n\nnegatively affect the insolvency process. Richa Saraf, ‘Concept of Related Party: Interpretation by Letter or Spirit of the IBC?’, (IndiaCorpLaw, 11\nAugust 2018) available at <https://indiacorplaw.in/2018/08/concept-related-party-interpretation-letter-spirit-\nibc.html>. PART H\n\nH.3 Analysis\n\n60 Crucial to the understanding of whether Spade and AAA were related\n\nparties of the Corporate Debtor during the relevant period is the relationship\n\nbetween Mr Arun Anand and Mr Anil Nanda. It is Mr Viswanathan’s argument\n\nthat these individuals shared no prior relationship, which has been opposed by\n\nMr Kaul and Mr Sen. We noted that Mr Arun Anand has held multiple positions in\n\ncompanies which form part of Anil Nanda Group of Companies. Further, Mr Anil\n\nNanda has himself invested in companies owned by Mr Arun Anand, and had\n\ncommercial transactions with them.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 23
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C24",
+      "text": "Through Spade and AAA’s own admission,\n\nMr Arun Anand was appointed as the Group CEO of the Anil Nanda Group of\n\nCompanies (for however short a period) on circular approval by Mr Anil Nanda\n\nhimself. Finally, Mr Arun Anand’s brother in-law, Mr Sonal Anand, has also been\n\nconsistently associated with companies in the Anil Nanda Group of Companies,\n\nincluding the Corporate Debtor and JIPL. This deep entanglement between these\n\nindividuals was noted by the NCLT and the NCLAT.\n61 Admittedly, Mr Arun Anand was in control of Spade and AAA during the\n\nrelevant period. Further, he held positions in the Corporate Debtor or the Anil\n\nNanda Group of Companies, which included the Corporate Debtor. Mr Anil\n\nNanda and Mr Sonal Anand also held positions in the Corporate Debtor and JIPL\n\nduring this period.\n62 Based on the above, it is not difficult for us to accept the conclusion of the\n\nNCLAT that Mr Arun Anand would be a related party of the Corporate Debtor in\n\naccordance with\nSection 5(24)(h)\nand\nSections 5(24)(m)(i)\n. Mr Viswanathan has\n\nPART H\n\ntried to refute this argument by relying on the definition of ‘control’ in Arcelor\n\nMittal India (P) Ltd. vs Satish Kumar Gupta (supra).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Ltd v Satish Kumar Gupta"
+      ],
+      "chunk_number": 24
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C25",
+      "text": "However, it is important to\n\nnote that the discussion there was in the context of ineligible resolution applicants\n\nunder Sub-section (c) of Section 29-A of the IBC, which specifically prescribes\n\nthis test. Presently, we have to determine whether the Corporate Debtor’s board,\n\ndirectors, etc, are accustomed to act on Mr Arun Anand’s\n\nadvice/direction/instruction and if he participates in the policy-making process of\n\nthe Corporate Debtor. While a strict determination of intent or mens rea may not\n\nalways be possible by the NCLT and NCLAT in summary proceedings, it is\n\npossible to draw the inference from the facts at hand. These facts are that there\n\nwas a deep entanglement between the entities of Mr Arun Anand and Mr Anil\n\nNanda, and Mr Arun Anand did hold positions during this period which could have\n\nbeen used by him to guide the affairs of the Corporate Debtor.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 25
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C26",
+      "text": "This finding is\n\nfurther supported by our conclusion that the transactions between the Corporate\n\nDebtor and the entities led by Mr Arun Anand were collusive in nature.\n\n63 Similarly, we have no hesitation in accepting the NCLAT’s conclusion that\n\nSpade entered into two transactions on the basis of the\n\nadvice/instructions/directions of the board/directors of the Corporate Debtor\n\nunder\nSection 5(24)(f)\n. Mr Viswanathan’s submission that these were purely\n\ncommercial transactions between the parties cannot be accepted, given the\n\nextensive history demonstrating the interrelationship between the individuals\n\nassociated with these corporations. While the transactions may have indeed\n\nbeen commercial, it cannot be doubted that Spade undertook them due to the\n\npervasive influence of Mr Anil Nanda. In our analysis above, we have similarly\n\nPART H\n\ncome to the conclusion that other past transactions between these entities have\n\nbeen collusive.\n64 Finally, we have already held that the transactions between AAA and the\n\nCorporate Debtor were collusive in nature.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 26
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C27",
+      "text": "This supports the findings of the\n\nNCLAT that the Agreement to Sell and Side Letter dated 25 October 2012 were a\n\nmere eye-wash, through which they sought to develop the AKME RAAGA project\n\ntogether while circumventing government guidelines. Hence, AAA would be a\n\npartner of the Corporate Debtor within the meaning of\nSection 5(24)(a)\n.\n\n65 Therefore, we come to the conclusion that Mr Arun Anand, Spade and\n\nAAA were related parties of the Corporate Debtor during the relevant period\n\nwhen the transactions on the basis of which Spade and AAA claim their status as\n\nfinancial creditors took place. PART I\n\nI Whether Spade and AAA can be excluded from the CoC\n\nSection 21(1)\nof the IBC requires the IRP to form the CoC for the CIRP of\n\nthe Corporate Debtor.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 27
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C28",
+      "text": "The membership of the CoC is determined in accordance\n\nwith\nSection 21(2)\n, which reads thus:\n“(2) The committee of creditors shall comprise all financial\n creditors of the corporate debtor:\nProvided that a financial creditor or the authorised\n representative of the financial creditor referred to in sub-\n section (6) or sub-section (6-A) or sub-section (5) of\nSection\n\n, if it is a related party of the corporate debtor, shall not\n have any right of representation, participation or voting in a\n meeting of the committee of creditors:\nProvided further that the first proviso shall not apply to a\n financial creditor, regulated by a financial sector regulator, if it\n is a related party of the corporate debtor solely on account of\n conversion or substitution of debt into equity shares or\n instruments convertible into equity shares or completion of\n such transactions as may be prescribed, prior to the\n insolvency commencement date.”\n\nHence, the first proviso states that any financial creditor, barring the exceptions\n\nprovided in the second proviso, shall not have any right of representation,\n\nparticipation and voting in the meeting of the CoC, if it is a related party of the\n\nCorporate",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 28
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C29",
+      "text": "Debtor.\n67 The controversy in the present case is on the interpretation of the phrase\n\n“is” a related party in the first proviso, since the submission is that Spade and\n\nAAA are no longer related parties of the Corporate Debtor (even though in terms\n\nof the earlier finding they were so during the relevant period when the\n\ntransactions constituting their alleged financial debt took place).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 29
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C30",
+      "text": "PART I\n\nI.1 Submissions of Counsel\n\n68 Mr Viswanathan sought to urge that the first proviso to Sub-section (2) of\nSection 21\ndenies the right of representation, participation or voting in a meeting\n\nof the CoC to a financial creditor or an authorised representative of the financial\n\ncreditor referred to inter alia in Sub-section (5) of\nSection 24\n, if it “is a related\n\nparty of the corporate debtor”. Laying stress on the expression ‘is’ a related party\n\nof the corporate debtor, the submission is that the statute applies in praesenti on\n\nthe date of the admission of an application seeking the initiation of the CIRP. This\n\nsubmission is sought to be supported by urging that if the expression is a related\n\nparty is not construed in its literal sense in praesenti, it will result in an ambiguity\n\nwithout a yardstick on how far back in point of time the relationship should be\n\nassessed. The use of that expression in the first proviso to Sub-section (2) of\nSection 24\nhas been contrasted with other provisions of the IBC.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 30
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C31",
+      "text": "For instance, it\n\nhas been submitted that in Section 29A, which elucidates when a person is not\n\neligible to be a resolution applicant, there is a reference to both “is” and “has\n\nbeen”. Clause (a) refers to a situation where a person “is an undischarged\n\ninsolvent”; Clause (b) refers a person who “is a wilful defaulter”; Clause (d)\n\nadverts to a situation where a person “has been convicted”; and Clause (g) refers\n\nto a person who “has been a promoter”. Hence, it is been submitted that clause\n\n29A uses the expression “is” as distinct from “has been” in the application of\n\nvarious sub-clauses. Reference has been made to\nSection 43(4)\nwhich deals with\n\npreferential transactions and incorporates a look back period of two years. Reference has also been made in the course of the submission to\nSection\n\n5(24)(m)\nwhich uses the expression “is associated” with the corporate debtor. PART I\n\nBased on the above submissions, it has been urged that where the statute\n\nintends to consider situations as they existed in the past, it has utilised\n\nexpression “has been”.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 31
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C32",
+      "text": "Consequently, it has been urged that when in the first\n\nproviso to\nSection 21(2)\n, the expression “is a related party” is used, this must\n\nclearly be a reference to the present and not to an uncertain past. In essence, it\n\nhas been urged that the existence of a live link of being a related party in the\n\npresent is a requirement of the statutory provision.\n\n69 While opposing the submissions which have been urged by Mr\n\nViswanathan, Mr Kaul, submitted that the provisions of\nSection 21(2)\nmust\n\nreceive a purposive interpretation. Mr Kaul has urged that if this were not done\n\nthe provisions of the IBC will be defeated by adopting commercial artifices and\n\ncontrivances. He urged that the interpretation which the court adopts must\n\nfacilitate and not defeat the fulfilment of the objects of the legislation. We are\n\ninclined to agree with this submission for the reasons which we proceed to\n\nelaborate. I.2 Related Parties and CoC\nSection 21(1)\nrequires the IRP to constitute a CoC, after collating of the claims\n\nwhich are received against and determining the financial position of the corporate\n\ndebtor. The CoC has to comprise of all financial creditors of the corporate\n\ndebtor.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 32
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C33",
+      "text": "The expression ‘financial creditor’ is defined in\nSection 5(7)\nto mean any\n\nperson to whom a financial debt is owed and to include a person to whom such a\n\ndebt has been legally assigned or transferred. The expression ‘financial debt’ is\n\ndefined in\nSection 5(8)\n. Under\nSection 28\n, the Resolution Professional is required\n\nPART I\n\nto take the prior approval of the CoC specifically on certain aspects. Section\n\n28(1)\nprovides as follows:\n“28.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 33
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C34",
+      "text": "(1) Notwithstanding anything contained in any other law\n for the time being in force, the resolution professional, during\n the corporate insolvency resolution process, shall not take\n any of the following actions without the prior approval of the\n committee of creditors namely:—\n(a) raise any interim finance in excess of the amount as may\n be decided by the committee of creditors in their meeting;\n(b) create any security interest over the assets of the\n corporate debtor;\n(c) change the capital structure of the corporate debtor,\n including by way of issuance of additional securities, creating\n a new class of securities or buying back or redemption of\n issued securities in case the corporate debtor is a company;\n(d) record any change in the ownership interest of the\n corporate debtor;\n(e) give instructions to financial institutions maintaining\n accounts of the corporate debtor for a debit transaction from\n any such accounts in excess of the amount as may be\n decided by the committee of creditors in their meeting;\n(f) undertake any related party transaction;\n(g) amend any constitutional documents of the corporate\n debtor;\n(h) delegate its authority to any other person;\n(i) dispose of",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 34
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C35",
+      "text": "or permit the disposal of shares of any\n shareholder of the corporate debtor or their nominees to third\n parties;\n(j) make any change in the management of the corporate\n debtor or its subsidiary;\n(k) transfer rights or financial debts or operational debts under\n material contracts otherwise than in the ordinary course of\n business;\n(l) make changes in the appointment or terms of contract of\n such personnel as specified by the committee of creditors; or\n(m) make changes in the appointment or terms of contract of\n statutory auditors or internal auditors of the corporate debtor.”\n\nPART I\n70 In an instructive article published in the Yale Law Journal, titled\n\n‘Bankruptcy, Non-Bankruptcy Entitlements, and the Creditors’ Bargain’, Thomas\n\nH.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 35
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C36",
+      "text": "Jackson, argues that creditors prefer a collective process as opposed to a\n\nrace to grab as many assets, which often leads ultimately to the demise of the\n\ncorporate debtor17. The reason why a collective process is considered superior is\n\nbecause individual creditors, left to their own whims, are motivated to act solely in\n\ntheir own interests, even when their interests may directly conflict with the\n\ncreditors’ collective interests as a group. This self-interest creates a collective\n\naction problem, such that creditors eventually enter a grab race, operating under\n\nthe belief that they would have recourse to fewer or no assets, if they delay their\n\nactions in the hope that creditors will be able to coordinate and agree to act\n\ncollectively18. Bankruptcy law seeks to resolve this by preventing individual\n\ncreditor action. The creditor’s bargain theory therefore, operates to maximise\n\ngroup welfare through collectivisation19.\n71 In India, the IBC adopts a CIRP operationalised through the CoC once the\n\nCIRP commences20.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 36
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P004_C37",
+      "text": "In addition to the creditor’s bargain theory, the design of the\n\nIBC is also influenced by the value-based theory postulated by Korobkin21, in an\n\ninfluential piece of academic writing in the Columbia Law review, whereunder\n\ninsolvency law considers the distributional impact of winding up on those who\n\nmay not have formal legal rights to the assets of the business. The aim of\n\nbankruptcy law under this theory is to take into account the multidimensional but\n\nThomas H. Jackson, ‘Bankruptcy, Non-Bankruptcy Entitlements, and the Creditors’ Bargain’, 91 Yale Law\nJournal 857, (1982) at 859-71. Supra at note 18, pgs 1855-1856. Medha Shekar and Anuradha Guru, Theoretical Framework of Insolvency Law, available at\n<https://www.ibbi.gov.in/uploads/resources/9ce9ccf9f114750879b68c8a33235ca6.pdf>, at page 52. Douglas G. Baird, ‘A World Without Bankruptcy’, 50 Law & Contemporary Problems, Spring 1987, at 184. D.R. Korobkin, Rehabilitating values: A jurisprudence of bankruptcy, 91 Columbia Law Review (1991), at p.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 37
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P005_C01",
+      "text": "717. PART I\n\nconflicting interests of various claimants, and provide for a solution whereunder\n\neach claimant derives optimal value22.\n72 The CoC is comprised of financial creditors, under loan and debt contracts,\n\nwho have the right to vote on decisions and operational creditors such as\n\nemployees, rental obligations, utilities payments and trade credit, who can\n\nparticipate in the CoC, but do not have the right to vote. The aim of the CoC is to\n\nenable coordination between various creditors so as to ensure that the interests\n\nof all stakeholders are balanced, and the value of the assets of the entity in\n\nfinancial distress is maximised.\n73 The report of the Bankruptcy Law Reforms Committee (Volume I:\nRationale and Design) of November 2015, has underscored the need to meet the\n\nliabilities of all creditors, who are not part of the CIRP, and that of treating the\n\nrights of all creditors fairly, through the collective insolvency resolution process,\n\noperationalised by the CoC23.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P005_C02",
+      "text": "The report recognised this in the following terms:\n“[The] three core features that most well developed\n bankruptcy and insolvency resolution regimes share: a linear\n process that both creditors and debtors follow when\n insolvency is triggered; a collective mechanism for resolving\n insolvency within a framework of equity and fairness to all\n stakeholders to preserve economic value in the process; a\n time bound process either ends in keeping the firm as a going\n enterprise, or liquidates and distributes the assets to the\n various stakeholders. These features are common across\n widespread differences in structure and content, present\n either through statutory provisions or their implementation in\n practice\n\n …. These features ensure certainty in the process, starting from\n what constitutes insolvency, and the processes to be followed\n\nSupra at note 20. Bankruptcy Law Reforms Committee, Volume I: Rationale and Design, of November 2015, page 29. PART I\n\n to resolve the insolvency, or the process to resolve\n bankruptcy once it has been determined.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P005_C03",
+      "text": "Done correctly,\n such a framework can incentivise all stakeholders to behave\n rationally in negotiations towards determination of viability, or\n in bankruptcy resolution. In turn, this will lead to shorter times\n to recovery and better recovery under insolvency, and a\n greater certainty about creditors rights in developing a\n corporate debt market.”\n74 The long title of the IBC outlines the importance of a collective process\n\naimed at value maximisation. The IBC has been enacted as:\n“\nAn Act\nto consolidate and amend the laws relating to\n reorganisation and insolvency resolution of corporate\n persons, partnership firms and individuals in a time bound\n manner for maximization of value of assets of such persons,\n to promote entrepreneurship, availability of credit and balance\n the interests of all the stakeholders including alteration in the\n order of priority of payment of Government dues and to\n establish an Insolvency and Bankruptcy Board of India, and\n for matters connected therewith or incidental thereto.”\n75 These objects underscore the composition of the CoC, guided by\nSection\n\nof the IBC.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P005_C04",
+      "text": "The objects and purposes of the Code are best served when the\n\nCIRP is driven by external creditors, so as ensure that the CoC is not sabotaged\n\nby related parties of the corporate debtor24. This is the intent behind the first\n\nproviso to\nSection 21(2)\nwhich disqualifies a financial creditor or the authorised\n\nrepresentative of the financial creditor under sub-section (6) or sub-section (6A)\n\nor sub-section (5) of\nsection 24\n, if it is a related party of the corporate debtor,\n\nfrom having any right of representation, participation or voting in a meeting of the\n\ncommittee of creditors. Report of the Insolvency Law Committee, March 2018, p 23, para 1.25.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P005_C05",
+      "text": "PART I\n\n76 Since the IBC attempts to balance the interests of all stakeholders, such\n\nthat some stakeholders are not able to benefit at the expense of others, related\n\nparty financial creditors are disqualified from being represented, participating or\n\nvoting in the CoC, so as to prevent them from controlling the CoC to unfairly\n\nbenefit the corporate debtor25.\n77 It is pertinent to note that disqualification of related parties from being\n\nmembers of the CoC, has also been recommended in the UNCITRAL Legislative\n\nGuide on Insolvency law26:\n“The insolvency law should specify the creditors that are\n eligible to be appointed to a committee. Creditors who may\n not be appointed to a creditor committee would include\n related persons and others who for any reason might not be\n impartial. The insolvency law should specify whether or not a\n creditor’s claim must be admitted before the creditor is\n entitled to be appointed to a committee.”\n\nIn interpreting the legislation, which represents a Parliamentary effort to bring\n\nabout structural changes in the resolution of corporate insolvencies, the effort of\n\nthe court must be to aid the fulfilment of the objects of the IBC.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P005_C06",
+      "text": "I.3 Amendment to First Proviso of\nSection 21(2)\n\nOriginally, the first proviso to\nSection 21(2)\nread as follows:\n“Provided that a related party to whom a corporate debtor\n owes a financial debt shall not have any right of\n representation, participation or voting in a meeting of the\n committee of creditors.”\n\nVidhi Centre for Legal Policy, Understanding the Insolvency and Bankruptcy Code, 2016: Analysing\nDevelopments in Jurisprudence, available at <https://vidhilegalpolicy.in/research/understanding-the-insolvency-\nand-bankruptcy-code-2016-analysing-developments-in-jurisprudence/>, at page 34. UNCITRAL, Legislative Guide on Insolvency Law, 2005, available at\n<https://uncitral.un.org/sites/uncitral.un.org/files/media-documents/uncitral/en/05-80722_ebook.pdf>, at page",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C01",
+      "text": "204. PART I\n\n79 The language was subsequently amended by the Amendment Act, 2018\n\nand at present the first proviso reads as follows:\n“Provided that a financial creditor or the authorised\n representative of the financial creditor referred to in sub-\n section (6) or sub-section (6A) or sub-section (5) of\nsection\n\n, if it is a related party of the corporate debtor, shall not\n have any right of representation, participation or voting in a\n meeting of the committee of creditors.”\n80 The reason for the amendment appears to be the need to extend the\n\ndisqualification in the first proviso of\nSection 21(2)\nto authorised representatives\n\nof financial creditors mentioned in\nSections 21(6)\n,\n21(6A)\nand\nSection 24(5)\n\nwell. This was recommended by the Insolvency Law Committee, in its Report of\n\nMarch 2018, where it was observed:\n“10. 6 For certain securities, a trustee or an agent may\n already be appointed as per the terms of the security\n instrument. For example, a debenture trustee would be\n appointed if debentures exceeding 500 have been issued or if\n secured debentures are issued. Such creditors may be\n represented through such pre-appointed trustees or agents.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C02",
+      "text": "For other classes of creditors which exceed a certain\n threshold in number, like home buyers or security holders for\n whom no trustee or agent has already been appointed under\n a debt instrument or otherwise, an insolvency professional\n (other than the IRP) shall be appointed by the NCLT on the\n request of the IRP. It is to be noted that as the agent or\n trustee or insolvency professional, i.e., the authorised\n representative for the creditors discussed above and\n executors, guarantors, etc. as discussed in paragraph 9\n of this Report, shall be a part of the CoC, they cannot be\n related parties to the corporate debtor in line with the\n spirit of proviso to\nsection 21(2)\n.\n10.7\nSection 71(6)\nof the CA 2013 obliges the debenture\n trustee to take steps to protect the interests of the debenture\n holders and redress their grievances. The provisions\n regarding meetings of the debenture trustee and debenture\n holders is as per the trust deed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C03",
+      "text": "The Companies (Acceptance\n of Deposit) Rules, 2014 (“Deposit Rules”) provide that the\n deposit trustee may call a meeting of the deposit holders as\n\nPART I\n\n and when required and provides specific power to call a\n meeting on the happening of any event of default. Though\n broad powers are already given to trustees, the respective\n rules for debentures and deposits under CA 2013 may need\n to be modified corresponding to the amendments in the Code\n and CIRP Rules / CIRP Regulations to provide clarity on\n empowering debenture trustees to file for initiation of CIRP on\n behalf of the creditors and vote on their behalf.\n10.8 In light of the deliberation above, the Committee felt that\n a mechanism requires to be provided in the Code to mandate\n representation in meetings of security holders, deposit\n holders, and all other classes of financial creditors which\n exceed a certain number, through an authorised\n representative. This can be done by adding a new provision\nsection 21\nof the Code.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C04",
+      "text": "Such a representative may either\n be a trustee or an agent appointed under the terms of the\n debt agreement of such creditors, otherwise an insolvency\n professional may be appointed by the NCLT for each such\n class of financial creditors. Additionally, the representative\n shall act and attend the meetings on behalf of the respective\n class of financial creditors and shall vote on behalf of each of\n the financial creditor to the extent of the voting share of each\n such creditor, and as per their instructions. To ensure\n adequate representation by the authorised representative of\n the financial creditors, a specific provision laying down the\n rights and duties of such authorised representatives may be\n inserted. Further, the requisite threshold for the number of\n creditors and manner of voting may be specified by IBBI\n through regulations to enable efficient voting by the\n representative.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C05",
+      "text": "Also, regulation 25 may also be amended to\n enable voting through electronic means such as e-mail, to\n address any technical issues which may arise due to a large\n number of creditors voting at the same time.”\n\n (emphasis supplied)\n81 Consequently, the first proviso to\nSection 21(2)\nwas amended, to extend\n\nthe disqualification to the specified authorised representatives, in case that these\n\nrepresentatives happened to be related parties of the corporate debtor. The\n\nintroduction of the phrase “is” along with related party was not a guiding factor\n\nbehind the Parliamentary amendment. PART I\n\nI.4 Related Parties - Interpretation In Praesenti\n\n82 An issue of interpretation in relation to the first proviso of\nSection 21(2)\n\nwhether the disqualification under the proviso would attach to a financial creditor\n\nonly in praesenti, or if the disqualification also extends to those financial creditors\n\nwho were related to the corporate debtor at the time of acquiring the debt.\n\n83 In Arcelor Mittal India Private Limited vs.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C06",
+      "text": "Satish Kumar Gupta (supra),\n\nthe issue was whether ineligibility of the resolution applicant under\nSection 29-\nA(c) of the Code attached to an applicant at the date of commencement of the\n\nCIRP or at the time when the resolution plan is submitted by the resolution\n\napplicant. Speaking for this Court, Justice Rohinton F Nariman interpreted the\n\npre-2018 amendment, framing of Section 29-A(c), in the following terms:\n“46. According to us, it is clear that the opening words of\n Section 29-A furnish a clue as to the time at which clause (c)\n is to operate. The opening words of Section 29-A state: “a\n person shall not be eligible to submit a resolution plan…”. It is\n clear therefore that the stage of ineligibility attaches when the\n resolution plan is submitted by a resolution applicant. The\n contrary view expressed by Shri Rohatgi is obviously\n incorrect, as the date of commencement of the corporate\n insolvency resolution process is only relevant for the purpose\n of calculating whether one year has lapsed from the date of\n classification of a person as a non-performing asset. Further,\n the expression used is “has”, which as Dr Singhvi has\n correctly argued, is in praesenti.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C07",
+      "text": "This is to be contrasted with\n the expression “has been”, which is used in clauses (d) and\n(g), which refers to an anterior point of time. Consequently,\n the amendment of 2018 introducing the words “at the time of\n submission of the resolution plan” is clarificatory, as this was\n always the correct interpretation as to the point of time at\n which the disqualification in clause (c) of Section 29-A will\n attach.”\n\nPART I\n84 Thus, facially, it would appear that the use of the simple present tense in\n\nthe first proviso to\nSection 21(2)\nindicates that the disqualification applies in\n\npraesenti. Furthermore, this interpretation would also be supported by a reading\n\nof the first proviso to\nSection 21(2)\n, in light of the definition of ‘related party’ under\nSection 5(24)\n, which uses phrases such as ‘is accustomed to act’ or ‘is\n\nassociated’ to define a related party in the present tense.\n\n85 However, it is relevant to examine whether the object and purpose for\n\nwhich the proviso was enacted, are fulfilled by the literal interpretation of the first\n\nproviso. Justice G.P.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C08",
+      "text": "Singh in his authoritative commentary on the interpretation\n\nof statutes, Principles of Statutory Interpretation27, has stated that:\n“The intention of the Legislature thus assimilates two\n aspects: In one aspect it carries the concept of ‘meaning’,\n i.e., what the words mean and in another aspect, it conveys\n the concept of ‘purpose and object’ or the ‘reason and spirit’\n pervading through the statute. The process of construction,\n therefore, combines both literal and purposive approaches. In other words the legislative intention, i.e., the true or legal\n meaning of an enactment is derived by considering the\n meaning of the words used in the enactment in the light of\n any discernible purpose or object which comprehends the\n mischief and its remedy to which the enactment is directed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C09",
+      "text": "This formulation later received the approval of the Supreme\n Court and was called the “cardinal principle of construction”.”\n\nHe notes that certain enactments require a liberal construction to give effect to its\n\nobjects and purpose:\n“A bare mechanical interpretation of the words and\n application of a legislative intent devoid of concept of purpose\n will reduce most of the remedial and beneficent legislation to\n futility. As stated by Iyer, J. “to be literal in meaning is to see\n the skin and miss the soul. The judicial key to construction is\n the composite perception of the deha and the dehi of the\n\n27 st\n G.P.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C10",
+      "text": "Singh, Principles of Statutory Interpretation (1 edn., Lexis Nexis 2015)\n\nPART I\n\n provision.” Even in construing enactments such as those\n prescribing a period of limitation for initiation of proceedings\n where the purpose is only to intimate the people that after\n lapse of a certain time from a certain event a proceeding will\n not be entertained and where a strict grammatical\n construction is normally the only safe guide, a literal and\n mechanical construction may have to be disregarded if it\n conflicts with some essential requirement of fair play and\n natural justice which the Legislature never intended to throw\n overboard. Similarly, in a taxing statute provisions enacted to\n prevent tax evasion are given a liberal construction to\n effectuate the purpose of suppressing tax evasion although\n provisions imposing a charge are construed strictly there\n being no a priori liability to pay a tax and the purpose of a\n charging section being only to levy a charge on persons and\n activities brought within its clear terms.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C11",
+      "text": "For the same reason,\n in a legislation relating to defence services “the\n considerations of the security of the state and enforcement of\n high degree of discipline additionally intervene and have to be\n assigned weightage while dealing with any expression\n needing to be defined or any provision needing to be\n interpreted.”\n\nSimilar words used in different parts of the enactment can have different\n\nmeanings. As Justice G P Singh notes:\n“The rule is of general application as even plainest terms may\n be controlled by the context, and “it is conceivable,” as Lord\n Watson said, “that the Legislature whilst enacting one clause\n in plain terms, might introduce into the same statute other\n enactments which to some extent qualify or neutralise its\n effect”. The same word may mean one thing in one\n context and another in a different context. For this\n reason the same word used in different sections of a\n statute or even when used at different places in the same\n clause or section of a statute may bear different\n meanings. The conclusion that the language used by the\n Legislature is plain or ambiguous can only be truly arrived at\n by studying the statute as a whole.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C12",
+      "text": "How far and to what\n extent each component part of the statute influences the\n meaning of the other part would be different in each given\n case. But the effect of the application of the rule to a\n particular case, should not be confounded with the legitimacy\n of applying it. ”\n\n (emphasis added)\n\nPART I\n86 In this context, it would be useful to refer to an earlier decision of this Court\n\nAbhay Singh Chautala vs C.B.I.28\n, where the court did not interpret the word\n\n“is” in praesenti because that would lead to an absurd result, defeating the\n\npurpose of the concerned provision. In that case this Court had to interpret\nSection 19(1)\nof the Prevention of Corruption Act, 1947, which provided:\n“19. Previous sanction necessary for prosecution.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [
+        "Court\n\nAbhay Singh Chautala v C.B.I.28\n"
+      ],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C13",
+      "text": "(1) No court shall take cognizance of an offence punishable\n under\nSections 7\n,\n\n,\n\n,\n\nand\n\nalleged to have been\n committed by a public servant, except with the previous\n sanction, -\n(a) In the case of a person who is employed in connection\n with the affairs of the Union and is not removable from his\n office save by or with the sanction of the Central Government,\n of that Government;\n(b) In the case of a person who is employed in connection\n with the affairs of a State and is not removable from his office\n save by or with the sanction of the State Government, of that\n Government;\n(c) In the case of any other person, of the authority competent\n to remove him from his office.”\n\n (emphasis supplied)\n87 It was argued before this Court that a literal interpretation should be given\n\nSection 19(1)\n. Since the word “is” has been used in sub-sections (a), (b) and\n(c), it was urged that this would exclude a public servant who had abused office\n\nat an earlier point in time and has now ceased to occupy that office. This Court\n\nspeaking through Justice Sirpurkar rejected the argument and held:\n“44…we reject the argument based on the word \"is\" in Sub-\n sections (a), (b) and (c).",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C14",
+      "text": "It is true that the Section operates in\n praesenti; however, the Section contemplates a person who\n continues to be a public servant on the date of taking\n\n(2011) 7 SCC 141\n\nPART I\n\n cognizance. However, as per the interpretation, it excludes a\n person who has abused some other office than the one which\n he is holding on the date of taking cognizance, by necessary\n implication. Once that is clear, the necessity of the literal\n interpretation would not be there in the present case. Therefore, while we agree with the principles\nlaid down in\nRobert Wigram Crawford v. Richard Spooner 4 MIA 179, Re\n Bedia v. Genreal Accident, Fir and Life Assurance\n Corporation Ltd. 1948 (2) All ER 995 and Bourne (Inspector\n of Taxes) v. Norwich Crematorium Ltd.1967 (2) All ER 576,\n we specifically hold that giving the literal interpretation to the\n Section would lead to absurdity and some unwanted results,\n as had already been pointed out in Antulay's case (cited\n supra) (see the emphasis supplied to para 24 of Antulay's\n judgment).”\n\n88 This Court relied on the judgement in\nR S Nayak v. A R Antulay\nto fortify\n\nits interpretation of\nSection 19(1)\nof the Prevention of Corruption Act, 1947:\n“24 ....",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C15",
+      "text": "An illustration was posed to the learned Counsel that a\n Minister who is indisputably a public servant greased his\n palms by abusing his office as Minister, and then ceased to\n hold the office before the court was called upon to take\n cognizance of the offence against him and therefore, sanction\n as contemplated by\nSection 6\nwould not be necessary; but if\n after committing the offence and before the date of taking of\n cognizance of the offence, he was elected as a Municipal\n President in which capacity he was a public servant under the\n relevant Municipal law, and was holding that office on the\n date on which court proceeded to take cognizance of the\n offence committed by him as a Minister, would a sanction be\n necessary and that too of that authority competent to remove\n him from the office of the Municipal President. The answer\n was- in affirmative. But the very illustration would show that\n such cannot be the law. Such an interpretation of\nSection 6\nwould render it as a shield to an unscrupulous public\n servant. Someone interested in protecting may shift him\n from one office of public servant to another and thereby\n defeat the process of law.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C16",
+      "text": "One can legitimately envisage a\n situation wherein a person may hold a dozen different offices,\n each one clothing him with the status of a public servant\n under\nSection 21\nIPC and even if he has abused only one\n office for which either there is a valid sanction to prosecute\n him or he has ceased to hold that office by the time court was\n called upon to take cognizance, yet on this assumption,\n sanction of 11 different competent authorities each of which\n was entitled to remove him from 11 different public offices\n\nPART I\n\n would be necessary before the court can take cognizance of\n the offence committed by such public servant/while abusing\n one office which he may have ceased to hold. Such an\n interpretation in contrary to all canons of construction\n and leads to an absurd and product which of necessity\n must be avoided. Legislation must at all costs be interpreted\n in such a way that it would not operate as a rougue's charter.”\n\n (emphasis supplied)\n89 This court has approved of a purposive interpretation of Section 29-A of\n\nthe IBC in Arcelor Mittal India Private Limited v. Satish Kumar Gupta (supra),\n\nwhere it was observed that:\n“29…In Ms. Eera Through Dr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "IPC 21"
+      ],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P006_C17",
+      "text": "Manjula Krippendorf v. State\n (Govt. of NCT of Delhi) and Anr., (2017) 15 SCC 133, this\n Court, after referring to the golden Rule of literal construction,\n and its older counterpart the \"object rule\" in Heydon's case,\n referred to the theory of creative interpretation as follows:",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P007_C01",
+      "text": "122. Instances of creative interpretation are when the Court\n looks at both the literal language as well as the purpose or\n object of the statute in order to better determine what the\n words used by the draftsman of legislation mean. In D.R. Venkatachalam v. Transport Commr. [D.R. Venkatachalam v. Transport Commr., (1977) 2 SCC 273, an early instance of\n this is found in the concurring judgment of Beg, J. The\n learned Judge put it rather well when he said: (SCC p. 287,\n para 28):\n“28. It is, however, becoming increasingly fashionable to start\n with some theory of what is basic to a provision or a chapter\n or in a statute or even to our Constitution in order to interpret\n and determine the meaning of a particular provision or Rule\n made to subserve an assumed \"basic\" requirement. I think\n that this novel method of construction puts, if I may say so,\n the cart before the horse. It is apt to seriously mislead us\n unless the tendency to use such a mode of construction is\n checked or corrected by this Court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P007_C02",
+      "text": "What is basic for a\n Section or a chapter in a statute is provided: firstly, by the\n words used in the statute itself; secondly, by the context in\n which a provision occurs, or, in other words, by reading the\n statute as a whole; thirdly, by the Preamble which could\n supply the \"key\" to the meaning of the statute in cases of\n uncertainty or doubt; and, fourthly, where some further aid to\n\nPART I\n\n construction may still be needed to resolve an uncertainty, by\n the legislative history which discloses the wider context or\n perspective in which a provision was made to meet a\n particular need or to satisfy a particular purpose. The last\n mentioned method consists of an application of the mischief\n Rule laid down in Heydon case [Heydon case, (1584) 3 Co\n Rep 7a: 76 ER 637] long ago.”\n\n ….",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P008_C01",
+      "text": "127. It is thus clear on a reading of English, US,\n Australian and our own Supreme Court judgments that\n the \"Lakshman Rekha\" has in fact been extended to\n move away from the strictly literal Rule of interpretation\n back to the Rule of the old English case of Heydon\n [Heydon case, (1584) 3 Co Rep 7a: 76 ER 637], where the\n Court must have recourse to the purpose, object, text\n and context of a particular provision before arriving at a\n judicial result. In fact, the wheel has turned full circle. It\n started out by the Rule as stated in 1584 in Heydon case\n [Heydon case, (1584) 3 Co Rep 7a : 76 ER 637], which was\n then waylaid by the literal interpretation Rule laid down by the\n Privy Council and the House of Lords in the mid-1800s, and\n has come back to restate the Rule somewhat in terms of what\n was most felicitously put over 400 years ago in Heydon case\n [Heydon case, (1584) 3 Co Rep 7a : 76 ER 637].",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P009_C01",
+      "text": "30. A purposive interpretation of Section 29A, depending both\n on the text and the context in which the provision was\n enacted, must, therefore, inform our interpretation of the\n same.”\n\n (emphasis supplied)\n90 Hence, we would need to consider the meaning of the first proviso in the\n\nlight of the context, object and purpose for which it was enacted. The purpose of\n\nexcluding a related party of a corporate debtor from the CoC is to obviate\n\nconflicts of interest which are likely to arise in the event that a related party is\n\nallowed to become a part of the CoC. The logic underlying the exclusion has\n\nbeen summarised as follows29:\n\nInsolvency Law Committee Report, 2020, pp 47-48, para 11.9.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P009_C02",
+      "text": "PART I\n\n “The Committee was of the view that the disability under the\n first proviso to Section 21(2) is aimed at removing any conflict\n of interest within the CoC, to prevent erstwhile promoters and\n other related parties of the corporate debtor from gaining\n control of the corporate debtor during the CIRP by virtue of\n any loan that may have been provided by them.”\n\nAccepting the submission of Mr Viswanathan would allow the statutory provision\n\nto be defeated by a related party of a corporate debtor creating commercial\n\ncontrivances which have the effect of denuding its status as a related party, by\n\nthe time that the CIRP is initiated. The true test for determining whether the\n\nexclusion in the first proviso to Section 21(2) applies must be formulated in a\n\nmanner which would advance the object and purpose of the statute and not lead\n\nto its provisions being defeated by disingenuous strategies.\n91 Therefore, it could be stated that where a financial creditor seeks a\n\nposition on the CoC on the basis of a debt which was created when it was a\n\nrelated party of the corporate debtor, the exclusion which is created by the first\n\nproviso to Section 21(2) must apply.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P009_C03",
+      "text": "For, it is on the strength of the financial debt\n\nas defined in\nSection 5(8)\nthat an entity claiming as a financial creditor under\nSection 5(7)\nseeks a position on the CoC under Section 21(2). If the definition of\n\nthe expression ‘related party’ under\nsection 5(24)\napplies at the time when the\n\ndebt was created, the exclusion in the first proviso to Section 21(2) would stand\n\nattracted.\n92 However, if such an interpretation is given to the first proviso of Section\n\n21(2), all financial creditors would stand excluded if they were a ‘related party’ of\n\nthe corporate debtor at the time when the financial debt was created. This may\n\narguably lead to absurd conclusions for entities which have legitimately taken\n\nPART I\n\nover the debt of related parties, or where the related party entity had stopped\n\nbeing a ‘related party’ long ago.\n93 In this regard, it is relevant to note the observations in the Insolvency Law\n\nCommittee Report of 2020 clarifying the eligibility of third-party assignees of the\n\ndebt of a related party creditor, to be members of the CoC.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P009_C04",
+      "text": "It was observed:\n“11.09 … As a third-party assignee, who by itself is not a\n related party, would not have any such conflict of interest, it\n should not be disabled from participating in the CoC. Further,\n the aforesaid disability is not related to the debt itself but\n is based on the relationship existing between a related\n party creditor and the corporate debtor. Therefore, as the\n disability imposed under the first proviso to Section 21(2)\n pertains to the related party financial creditor and not to the\n debt it is owed, the Committee agreed that it is clear that\n when a related party financial creditor assigns her debt to a\n third party in good faith, such third party should not be\n disqualified from participating, voting or being represented in\n a meeting of the CoC.\n11.10. However, the Committee discussed that in certain\n cases, a related party creditor may assign its debts with\n the intention of circumventing the disability imposed\n under the first proviso to Section 21(2) by indirectly\n participating in the CoC through the assignee.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P009_C05",
+      "text": "As a\n related party is expressly prohibited from participating in\n the CoC, it cannot do so indirectly by assigning its debt\n to a third-party assignee for the purposes of\n circumventing this restriction. Therefore, in order to\n prevent any misuse, the Committee recommended that\n prior to including an assignee of a related party financial\n creditor within the CoC, the resolution professional\n should verify that the assignee is not a related party of\n the corporate debtor. In cases where it may be proved\n that a related party financial creditor had assigned or\n transferred its debts to a third party in bad faith or with a\n fraudulent intent to vitiate the proceedings under the\n Code, the assignee should be treated akin to a related\n party financial creditor under the first proviso to Section\n 21(2).”\n\n (emphasis supplied)\n\nPART I\n94 Thus, it has been clarified that the exclusion under the first proviso to\n\nSection 21(2) is related not to the debt itself but to the relationship existing\n\nbetween a related party financial creditor and the corporate debtor. As such, the\n\nfinancial creditor who in praesenti is not a related party, would not be debarred\n\nfrom being a member of the CoC.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P009_C06",
+      "text": "However, in case where the related party\n\nfinancial creditor divests itself of its shareholding or ceases to become a related\n\nparty in a business capacity with the sole intention of participating the CoC and\n\nsabotage the CIRP, by diluting the vote share of other creditors or otherwise, it\n\nwould be in keeping with the object and purpose of the first proviso to Section\n\n21(2), to consider the former related party creditor, as one debarred under the\n\nfirst proviso.\n95 Hence, while the default rule under the first proviso to Section 21(2) is that\n\nonly those financial creditors that are related parties in praesenti would be\n\ndebarred from the CoC, those related party financial creditors that cease to be\n\nrelated parties in order to circumvent the exclusion under the first proviso to\n\nSection 21(2), should also be considered as being covered by the exclusion\n\nthereunder.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P009_C07",
+      "text": "Mr Kaul has argued, correctly in our opinion, that if this interpretation\n\nis not given to the first proviso of Section 21(2), then a related party financial\n\ncreditor can devise a mechanism to remove its label of a ‘related party’ before the\n\nCorporate Debtor undergoes CIRP, so as to be able to enter the CoC and\n\ninfluence its decision making at the cost of other financial creditors.\n\n96 In the present case, there is a finding that AAA and Spade were related\n\nparties within the meaning of\nSection 5(24)\nat the time when the alleged financial\n\ndebt on the basis of which they assert a claim to be a part of the CoC was\n\nPART J\n\ncreated. This was due to the long-standing relationship between Mr Arun Anand\n\nand Mr Anil Nanda, and their respective corporations. Admittedly, such a\n\nrelationship still existed even in 2017, since Mr Anil Nanda’s JIPL held\n\nshareholding in Mr Arun Anand’s Spade. Further, we have also concluded that\n\nthe transactions between Spade and AAA on one hand, and the Corporate\n\nDebtor on the other hand, which gave rise to their alleged financial debts were\n\ncollusive in nature.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P009_C08",
+      "text": "Therefore, it is evident that there existed a deeply entangled\n\nrelationship between Spade, AAA and Corporate Debtor, when the alleged\n\nfinancial debt arose. While their status as related parties may no longer stand, we\n\nare inclined to agree with Mr Kaul that this was due to commercial contrivances\n\nthrough which these entities seek to now enter the CoC. The pervasive influence\n\nof Mr Anil Nanda (the promoter/director of the Corporate Debtor) over these\n\nentities is clear, and allowing them in the CoC would definitely affect the other\n\nindependent financial creditors. J Conclusion\n\n97 In conclusion, we hold that:\n\n(i) The decision of the NCLAT, in as much as it referred to Spade and AAA as\nfinancial creditors, is set aside.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED_P009_C09",
+      "text": "Due to the collusive nature of their\n\n transactions alleged to be a financial debt under\nSection 5(8)\n, Spade and\n\n AAA cannot be labelled as financial creditors under\nSection 5(7)\n;\n(ii) The decision of the NCLAT, in as much as it referred to Spade and AAA as\n\n related parties of the Corporate Debtor under\nSection 5(24)\n, is affirmed;\n\n and\n\nPART J\n(iii) The decision of the NCLAT, in as much as it excluded Spade and AAA\n\n from the CoC in accordance with the first proviso of Section 21(2), is\n\n affirmed but for the reasons mentioned above.\n98 The appeals are accordingly disposed of.\n99 Pending application(s), if any, stand disposed of.\n…….………….…………………...........................J.\n [Dr Dhananjaya Y Chandrachud]\n\n …….…………………………...............................J.\n [Indu Malhotra]\n\n …….…………………………...............................J.\n [Indira Banerjee]\n\nNew Delhi;\nFebruary 01, 2021.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    }
+  ],
+  "case_summary": {
+    "case_name": "Phoenix Arc Private Limited vs Spade Financial Services Limited",
+    "case_id": "SC_2021_PHOENIX_ARC_PRIVATE_LIMITED_VS_SPADE_FINANCIAL_SERVICES_LIMITED",
+    "court": "Supreme Court of India",
+    "year": "2021",
+    "facts_summary": "2018. Thereafter, AAA filed a revised claim in Form C as a financial creditor for a\n\nsum of Rs. 109,72,00,000 on 23 May 2018. It had entered into a Development\n\nPART C\n\nAgreement dated 1 March 2012 with the Corporate Debtor for a sale\n\nconsideration of Rs. 32,80,00,000 to purchase development rights in a project. On 25 October 2012, the Development Agreement was terminated and an\n\nAgreement to Sell, along with a Side Letter, was executed between AAA and the\n\nCorporate Debtor for purchase of flats. The sale consideration for the Agreement\n\nto Sell was enhanced to Rs. 86,01,00,000 from Rs. 32,80,00,000 under the\n\nDevelopment Agreement. AAA paid a sum of Rs. 43,06,00,000 as advance\n\npayment under the Agreement to Sell. This amount was adjusted out of the ICDs\n\npayable to Spade as noted above. The claim of AAA is with respect to the\n\nprincipal amount of Rs. 43,06,00,000, which along with interest at the rate of 18%\n\nincreased to Rs. 109,72,00,000 in 5 years.\n8 The CoC was constituted on 22 May 2018. On 25 May 2018, the IRP\n\nrejected the claim of Spade, inter alia, on the ground that the claim was not in the\n\nnature of a financial debt in terms of Section 5(8) of IBC since there was an\n\nabsence of consideration for the time value of money, i.e., the period of\n\nrepayment of the claimed ICDs was not stipulated. The IRP also rejected the\n\nclaim of AAA on the ground that its claim as a financial creditor in Form C was\n\nfiled after the expiry of the period for filing such a claim. C Pr",
+    "legal_issues": "In paragraph\n\n11 of its judgment, the NCLAT has observed that:\n“…admittedly appellants are the financial creditors of the\n corporate debtor AKME Projects Limited...”\n\nCA No. 337/2018 and CA No. 338/2019 (Phoenix); CA No. 268/2018 and CA No. 269/2018 (Yes Bank). PART A\n\nIt has been submitted that there was never any admission on the part of Phoenix\n\nthat AAA and Spade are financial creditors. The appeal by Phoenix seeks to\n\nchallenge the above finding on the ground that:\n(i) It is contrary to the record; and\n\n(ii) The specific stand of Phoenix is that both AAA and Spade are not even\ncreditors of the corporate debtor, much less financial creditors. particular, the Appellate Tribunal noted the following two arrangements\n\n between Spade and the Corporate Debtor:\n(a) Memorandum of Understanding dated 2 December 2010, through which\n\n Spade, on behalf of the Corporate Debtor, paid a third party Rs. 22 crores\n\n as ICD and donated Rs. 3 crores to another third-party trust; and\n(b) Between 16 and 17 January 2013, the Anil Nanda Group of Companies\n\n (led by Mr. Sonal Anand) sought to settle its debts with a third party (worth\n\n Rs. 2 crores) through funds parked with Spade;\n\n“(a) a director or partner of the corporate debtor or a relative of a director or partner of the corporate debtor;”\n\n“(f) anybody corporate whose board of directors, managing director or manager, in the ordinary course of\nbusiness, acts on the advice, directions or instructions of a director, partner or manager of t",
+    "ratio_summary": "Considering the above\n facts, we are of the opinion that the transactions between the\n CD and both Spade and AAA Landmark are collusive in\n nature and do not qualify as Financial Debt for the purposes\n of IBC. Accordingly, we hold that Spade and AAA Landmarks\n do not qualify to be considered as Financial Creditors.”\n34 Having held that the transactions between the corporate debtor on one\n\nhand and AAA and Spade on the other did not qualify as a financial debt, the\n\nAdjudicating Authority commenced its discussion on the second issue by stating\n\nthat it “does not require a reply” in view of the finding on the first issue. However,\n\nit then noted that the first proviso to Section 21(2) has been substituted with\n\neffect from 6 June 2018, the effect of which is to exclude a financial creditor who\n\nis a related party of the corporate debtor from being represented in and from\n\nparticipating or voting in a meeting of the CoC. After adverting to the definition of\n\nthe expression ‘related party’ in Section 5(24), the Adjudicating Authority held:\n“There is no doubt in our mind that Arun Anand and his\n companies, namely, Spade and AAA Landmark were related\n parties to the CD. Thus, we hold that there is no reason to remand the matter to NCLAT for\n\nreconsideration. An order of remand cannot be passed in a routine manner, and it\n\nshould be passed only if a re-consideration is necessary. An unwarranted order\n\nof remand does not serve the cause of justice and merely extends the life of\n\nliti",
+    "final_order": "Due to the collusive nature of their\n\n transactions alleged to be a financial debt under\nSection 5(8)\n, Spade and\n\n AAA cannot be labelled as financial creditors under\nSection 5(7)\n;\n(ii) The decision of the NCLAT, in as much as it referred to Spade and AAA as\n\n related parties of the Corporate Debtor under\nSection 5(24)\n, is affirmed;\n\n and\n\nPART J\n(iii) The decision of the NCLAT, in as much as it excluded Spade and AAA\n\n from the CoC in accordance with the first proviso of Section 21(2), is\n\n affirmed but for the reasons mentioned above.\n98 The appeals are accordingly disposed of.\n99 Pending application(s), if any, stand disposed of.\n…….………….…………………...........................J.\n [Dr Dhananjaya Y Chandrachud]\n\n …….…………………………...............................J.\n [Indu Malhotra]\n\n …….………………………",
+    "outcome_summary": "Due to the collusive nature of their\n\n transactions alleged to be a financial debt under\nSection 5(8)\n, Spade and\n\n AAA cannot be labelled as financial creditors under\nSection 5(7)\n;\n(ii) The decision of the NCLAT, in as much as it referred to Spade and AAA as\n\n related parties of the Corporate Debtor under\nSection 5(24)\n, is affirmed;\n\n and\n\nPART J\n(iii) The decision of the NCLAT, in as much as i",
+    "sections_cited": [
+      "IPC 21"
+    ],
+    "cases_cited": [
+      "Ltd v Satish Kumar Gupta15",
+      "Ltd v Satish Kumar Gupta",
+      "Court\n\nAbhay Singh Chautala v C.B.I.28\n"
+    ]
+  }
+}

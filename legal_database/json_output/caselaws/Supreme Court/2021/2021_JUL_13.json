@@ -1,0 +1,723 @@
+{
+  "case_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD",
+  "case_name": "M/S Orator Marketing Pvt. Ltd. vs M/S Samtex Desinz Pvt. Ltd.",
+  "normalized_case_name": "M_S_ORATOR_MARKETING_PVT._LTD._VS_M_S_SAMTEX_DESINZ_PVT._LTD.",
+  "court": "Supreme Court of India",
+  "year": "2021",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 2231 of 2021",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "26 July 2021",
+  "judges": [
+    "V. Ramasubramanian",
+    "Indira Banerjee"
+  ],
+  "author": "Indira Banerjee",
+  "bench_type": "division",
+  "petitioner": "M/S Orator Marketing Pvt. Ltd.",
+  "respondent": "M/S Samtex Desinz Pvt. Ltd.",
+  "reporter_citations": [],
+  "outcome": "disposed of",
+  "disposition": "disposed",
+  "cites_count": 30,
+  "cited_by_count": 29,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR 2021 SUPREME COURT 4040",
+    "AIRONLINE 2021 SC 396"
+  ],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2021\\JUL\\2021_JUL_13.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO. 2231 OF 2021\n\n M/S ORATOR MARKETING PVT. LTD. … Appellant(s)\n\n VERSUS\n\n M/S SAMTEX DESINZ PVT. LTD. … Respondent(s)\n\n J U D G M E N T\nIndira Banerjee, J.\nThis appeal under Section 62 of the Insolvency and\n\n Bankruptcy Code, 2016 (hereinafter referred to as the IBC) is\n\n against the final judgment and order of the National Company\n\n Law Appellate Tribunal (NCLAT), New Delhi in Company\n\n Application (AT)(Insolvency) No. 1064 of 2020 dated 08-03-\n\n 2021, whereby the NCLAT has been pleased to dismiss the appeal\n\n of the Appellant and confirmed the order dated 23.10.2020 of\n\n the Adjudicating Authority, i.e., the National Company Law\n\n Tribunal (NCLT), New Delhi, dismissing the petition being\n\n CP(IB) No. 908/ND/2020, filed by the Appellant under Section 7\n\n of the IBC with the finding that the Appellant is not a\n\nperson who gives a term loan to a Corporate Person, free of\n\ninterest, on account of its working capital requirements is\n\nnot a Financial Creditor, and therefore, incompetent to\n\ninitiate the Corporate Resolution Process under Section 7 of\n\nthe IBC.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P002_C01",
+      "text": "3. M/s Sameer Sales Private Limited, hereinafter referred to\n\nas to “Original Lender”, advanced a term loan of Rs.1.60\n\ncrores to the Corporate Debtor for a period of two years, to\n\nenable the Corporate Debtor to meet its working capital\n\nrequirement. The Original Lender has assigned the outstanding\n\nloan to the Appellant.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P003_C01",
+      "text": "4. According to the Appellant the loan was due to be repaid\n\nby the Corporate Debtor in full within 01.02.2020. The\n\nAppellant claims that the Corporate Debtor made some payments,\n\nbut Rs.1.56 crores still remain outstanding.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P004_C01",
+      "text": "5. The Appellant filed a Petition under Section 7 of the IBC\n\nin the NCLT for initiation of the Corporate Resolution\n\nProcess. The petition was, however, rejected by a judgment and\n\norder dated 23.10.2020. The Adjudicating Authority (NCLT)\n\nheld :\n“11. Heard the parties and perused the case records.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P005_C01",
+      "text": "12. There is no dispute that the applicant initially had\n disbursed the amount interest free to the respondent company.\nA perusal of the application it is clear that the loan was\n given interest free.\n\n****",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P006_C01",
+      "text": "15. Mere grant of loan and admission of taking loan will\nipso fact not treat the applicant as ‘Financial Creditor’\nwithin the meaning of Section 5(8) of the Code.\n*******",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P007_C01",
+      "text": "17. In the application the applicant himself has submitted\nthat the loan was interest free. ….\n****",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P008_C01",
+      "text": "20. It is well settled that the onus lies on the applicant\nto establish that the loan was given against the consideration\nfor time value of money. Onus to prove also lies on the\napplicant to establish that the debt claimed in the\napplication comes within the purview of ‘financial debt’ and\nthat the applicant is a financial creditor’ in respect of the\npresent claim in question. Applicant has miserably failed to\nsubstantiate with supporting documentary evidence that\ninterest, as claimed at Part-V of the application, is payable\nas per the agreed loan covenants.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P009_C01",
+      "text": "21. Hon’ble NCLT in the matter of\nDr. B.V.S. Lakshmi vs.\nGeometrix Laser Solutions Private Limited\nhas observed that\n“fc/- coming within the definition of ‘Financial Debt’ as\ndefined under sub-section (8) of Section 5 the Claimant is\nrequired to show that (I) there is a debt along with interest,\nif any, which has been disbursed and (ii) such disbursement\nhas been made against the ‘consideration for the time value of\nmoney”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P010_C01",
+      "text": "22. It is reiterated that in the present case neither the\nloan agreement has any provision regarding the payment of\ninterest not there is any supporting evidence/document to\nestablish applicable rate of interest to be paid on the said\nloan. The applicant has failed to prove that the loan was\ndisbursed against consideration for time value of money,\nparticularly when respondent company has affirmed that no\ninterest has been paid not payable at any point of time.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P011_C01",
+      "text": "23. Similarly, in the matter of\nShreyans Realtors Private\nLimited & Anr. vs. Saroj Realtors & Developers Private Limited\nCompany Appeal (AT) (Insolvency) No.311\nof 2018, vide its\norder dated 04.07.2018 Hon’ble NCLAT has observed that when\ncorporate debtor never accepted the component of interest and\nhas given no undertaking to repay the loan with interest; the\nAppellants cannot claim to ow ‘financial debt’ from the\n‘Corporate Debtor’ and thereby cannot be claimed to be a\n‘Financial Creditor’ as defined under Section 5(7) & (8) of\nthe Insolvency and Bankruptcy Code, 2016.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P012_C01",
+      "text": "24. Therefore, neither the present claim can be termed to\nbe a ‘financial debt’ nor does the applicant come within the\nmeaning of ‘financial creditor’. Once the applicant does not\ncome within the meaning of ‘financial creditor’ he becomes\nineligible to file the application under Section 7 of the\nInsolvency Code 2016.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P013_C01",
+      "text": "25. for the reasons stated above this petition fails and\nthe same stands dismissed as not maintainable.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P014_C01",
+      "text": "6. Being aggrieved, the Appellant filed an appeal under\n\nSection 61 of the IBC. The appeal has been dismissed by the\n\nNCLAT, by the judgment and order impugned before this Court.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P015_C01",
+      "text": "7. The relevant part of the impugned judgment and order is\n\nextracted hereinbelow for convenience:\n“5. We have heard Counsel for both sides and perused the\n Appeal and the Reply filed by the Respondent. The fact that\n loan was advanced to the Respondent, is not in dispute. The\n narrow question involved is whether the transaction concerned\n can be treated as a transaction of Financial Debt as defined\n in Section 5(8) of IBC.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P015_C02",
+      "text": "The definition of “Financial Debt”\n under IBC Section 5(8) reads as under:-\n“(8) \"financial debt\" means a debt alongwith interest,\n if any, which is disbursed against the consideration\n for the time value of money and includes—\n(a) money borrowed against the payment of interest;\n(b) any amount raised by acceptance under any\n acceptance credit facility or its de-materialised\n equivalent;\n(c) any amount raised pursuant to any note purchase\n facility or the issue of bonds, notes, debentures,\n loan stock or any similar instrument; Company Appeal\n (AT) (Ins) No.1064 of 2020;\n(d) the amount of any liability in respect of any\n lease or hire purchase contract which is deemed as a\n finance or capital lease under the Indian Accounting\n Standards or such other accounting standards as may be\n prescribed;\n(e) receivables sold or discounted other than any\n receivables sold on non-recourse basis;\n(f) any amount raised under any other transaction,\n including any forward sale or purchase agreement,\n having the commercial effect of a borrowing;\nExplanation.—For the purposes of this sub-clause,—\n(i) any amount raised from an allottee under a real\n estate project shall be deemed to be an amount",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P015_C03",
+      "text": "having\n the commercial effect of a borrowing; and\n(ii) the expressions, “allottee” and “real estate\n project” shall have the meanings respectively assigned\n to them in clauses (d) and (zn) of\nsection 2\nof the\n Real Estate (Regulation and Development) Act, 2016 (16\n of 2016);]\n\n(g) any derivative transaction entered into in\n connection with protection against or benefit from\n fluctuation in any rate or price and for calculating\n the value of any derivative transaction, only the\n market value of such transaction shall be taken into\n account;\n(h) any counter-indemnity obligation in respect of a\n guarantee, indemnity, bond, documentary letter of credit\n or any other instrument issued by a bank or financial\n institution;\n(i) the amount of any liability in respect of any of\n the guarantee or indemnity for any of the items\n referred to in sub-clauses (a) to (h) of this clause;”\n Company Appeal (AT) (Ins) No.1064 of 20206 IBC\n separately defines debt under\nSection 3(11)\nas under:-\n“(11) \"debt\" means a liability or obligation in respect of\na claim which is due from any person and includes a\nfinancial debt and operational debt;”\n\nIt is apparent that there can be debts which do",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P015_C04",
+      "text": "not\nnecessarily fall in the definition of financial debt or\noperational.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P015_C05",
+      "text": "Money borrowed against payment of interest\ncomes within the definition financial debt. However, if the\nmoney borrowed is not against payment of interest, under\nthe definition of financial debt, the core requirement is\nto find whether there is “consideration for the time value\nof money”. The facts of the matter disclose and the Appeal\nalso records that when the Corporate Debtor was unable to\nget any further loan from the market after having taken\nloan from M/s. Tata Capital Financial Services Ltd., M/s. Sameer Sales which was related party to the Corporate\nDebtor, extended interest free unsecured loan to the\nCorporate Debtor payable on or after 1 st February, 2020 and\nthat too upon demand by the lenders. It would be\nappropriate to reproduce the Loan Agreement itself to\nunderstand the same. The Loan Agreement (Annexure A-2)\nreads as under:-\nLOAN AGREEMENT\n\n THE PRESENT LOAN AGREEMENT IS BEING EXECUTED BETWEEN\n M/S SAMEER SALES PVT. LTD. AND M/S SAMTEX DESINZ PVT. LTD. AT NEW DELHI ON THIS\n\n 20th DAY JANUARY Two thousand Eighteen. BETWEEN\n\n (1) M/S SAMEER SALES PRIVATE LIMITED, a company\n registered under the\nCompanies Act, 1956\nbearing CIN\n No.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P015_C06",
+      "text": "U51900DL1992PTC047363, having registered office at\n 122, Tribunal Complex, Ishwar Nagar, Mathura Road, New\n Delhi-110065, represented by its director, Kamlesh\n Rani Bhardwaj hereinafter referred to the “Lender”\n which expression shall mean and include is nominees,\n assigns or successors, from time to time. AND\n\n (2) M/S Samtex Desinz Private Limited, a company\n\nregistered under the\nCompanies Act, 1956\nbearing CIN\nNo. U18209DL2017PTC320315, having registered office at\nA-36, Hoisery Complex Phase 2 NOIDA U.P. represented\nby its director Mr. Sumeer Duggal, hereinafter\nreferred to the “Borrower” which expression shall mean\nand include its nominees assigns or successors from\ntime to time. BACKGROUND",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P016_C01",
+      "text": "1. That whereas consequent to the purchase of the\nbusiness ( except liabilities) of M/s. Samtex Desinz\n(Proprietorship Firm) the Borrower had availed of a\nterm loan of Rs. 14,00,00,000.00 (Fourteen Crore Only)\nform M/S Tata Capital Financial Services Ltd., vide\nwhich all the assets of the Borrower have been\nmortgaged/assigned in favour of the aforesaid\ninstitutional lender. That the aforesaid terms\nfacility is insufficient to cover certain working\ncapital requirement of the Borrower and is\ninsufficient to meet other requirement relating to\npayments stamps duty etc. of\n\nSAMTEX DESINZ PRIVATE LIMITED\n\nDirector\n\nDirector/Autho. Sign\n\nthe Borrower and that therefore there is a shortfall\nof 2,00,00,000.00 (Two Crore Only)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P017_C01",
+      "text": "2. That because of the aforesaid loan from the M/s Tata\nCapital no other institutions. Willing to extend\nunsecured loan to the Borrower, and therefore it is\nagreed that the lender is agreeable to extend a loan\nof Rs. 1,60,00,000.00 (One Crore Sixty Lakh Only) in\nfavour of the Borrower.\nTERMS AND CONDITIONS",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P018_C01",
+      "text": "1. The Lender agrees to extend to the Borrower a term\nloan Rs. 1,60,00,000.00 (One Crore Sixty Lakh Only)\nfor a period of two years commencing form the date of\nsigning of this agreement.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P019_C01",
+      "text": "2. The aforesaid amount shall become due and payable\n01-02-2020 or upon demand by the lender.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P020_C01",
+      "text": "3. That having regard to the status of the parties, the\npresent loan is being extended without any charge on\nany of the assets at present or in the future.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P021_C01",
+      "text": "4. Commencing of the date of this Agreement, the Loan\nshall bear NIL interest.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P022_C01",
+      "text": "5. Notwithstanding anything contained in this\nagreement, the loan amount shall become immediately\ndue and payable at any time on or after the expiry of\na period of two years i.e. on or after 01/02/2020 upon\ndemand by the Lender.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P023_C01",
+      "text": "6. The Borrower agrees that so long as the loan as in\n\noutstanding the Borrower will inform the Lender in any\nchange in the constitution of the Borrower.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P024_C01",
+      "text": "7. The Borrower shall repay the entire loan on or\nbefore 04/02/2020 and that till such a time the entire\namount is not repaid the terms of the present\nagreement shall remain in force. The Borrower is\nentitled to pre-pay the loan amount at any time,\nwithout any penalty, after giving the lender notice in\nwriting of its intention of the same.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P025_C01",
+      "text": "8. The agreement shall remain in force of the term\nindicated in Clause 7 above unless terminated earlier\nin accordance with Clause 7.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P026_C01",
+      "text": "9. All notices under this agreement shall be in writing\nand shall be either delivered via special messenger\nand hand and upon the addresses as may be advised from\ntime to time by either party.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P027_C01",
+      "text": "10. The agreement shall be governed by Indian Law\nand the Courts of Delhi shall have jurisdiction to\nsettle any dispute arising out of or in connection\nwith this agreement. For the Borrower\n\n SamtexDesinzPvt Ltd For the Lender\n\n Director Director\n\n Witness :\nWhen we read the background as recorded in\nparagraphs – 1 and 2 of the above Loan Agreement, it\nis clear that the sister concern which extending the\nloan did not record anything other than the problem of\nthe Corporate Debtor, for granting the loan. It is\nmerely recorded that because of taking loan from M/s. Tata Capital Financial Services Ltd., no other\ninstitution is willing to extend unsecured loan to the\nCorporate Debtor “and therefore”, the lender had\nagreed to extend the loan of Rs. 1,60,00,000/- to the\nborrower (i.e. Corporate Debtor). Then the above\nAgreement refers terms and conditions. Appeal para-7(d) as under :-\n“d. In these circumstances to ensure continued\ndevelopment of the business of the Corporate Debtor,\nMr. Sameer Bharadwaj, the then Director and the\nCurrent Authorized Signatory of the Respondent,\nthrough the sister concern advanced a sun of Rs. 1.60\nCrore.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P027_C02",
+      "text": "It is submitted that in compliance with the\nlaw, the aforesaid sum was extended under a loan\nagreement, however the sum was advanced interest free,\nsince the development of the business was enough\nconsideration for time value of money.”",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P028_C01",
+      "text": "8. The judgment and order of the NCLAT, affirming the\n\njudgment and order of the Adjudicating Authority (NCLT) and\n\ndismissing the appeal is patently flawed. Both the NCLAT and\n\nNCLT have misconstrued the definition of ‘financial debt’ in\nSection 5(8)\nof the IBC, by reading the same in isolation and\n\nout of context.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P029_C01",
+      "text": "9. In construing and/or interpreting any statutory\n\nprovision, one must look into the legislative intent of the\n\nstatute. The intention of the statute has to be found in the\n\nwords used by the legislature itself.\nIn case of doubt, it is\n\nalways safe to look into the object and purpose of the statute\n\nor the reason and spirit behind it. Each word, phrase or\n\nsentence has to be construed in the light of the general\n\npurpose of the Act itself, as observed by Mukherjea, J. in\nPoppatlal Shah Vs. State of Madras1\n, and a plethora of other\n\njudgments of this Court. To quote Krishna Iyer, J, the\n\ninterpretative effort “must be illumined by the goal, though\n\nguided by the words”.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P030_C01",
+      "text": "10. When a question arises as to the meaning of a certain\n\nprovision in a statute, the provision has to be read in its\n\ncontext. The statute has to be read as a whole. The previous\n\nstate of the law, the general scope and ambit of the statute\n\nand the mischief that it was intended to remedy are relevant\n\nfactors.\n1 AIR 1953 SC 274\n11. Innoventive Industries Ltd. Vs. ICICI Bank Ltd.\n2,\n\nauthored by Nariman, J., this Court analysed the scheme of the\n\nIBC and held:\n“27. The scheme of the Code is to ensure that when a\n default takes place, in the sense that a debt becomes\n due and is not paid, the insolvency resolution process\n begins. Default is defined in\nSection 3(12)\nin very\n wide terms as meaning non-payment of a debt once it\n becomes due and payable, which includes non-payment of\n even part thereof or an instalment amount. For the\n meaning of “debt”, we have to go to\nSection 3(11)\n,\n which in turn tells us that a debt means a liability of\n obligation in respect of a “claim” and for the meaning\n of “claim”, we have to go back to\nSection 3(6)\nwhich\n defines “claim” to mean a right to payment even if it\n is disputed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P030_C02",
+      "text": "The Code gets triggered the moment default\n is of rupees one lakh or more (\nSection 4\n). The\n corporate insolvency resolution process may be\n triggered by the corporate debtor itself or a financial\n creditor or operational creditor. A distinction is made\n by the Code between debts owed to financial creditors\n and operational creditors. A financial creditor has\n been defined under\nSection 5(7)\nas a person to whom a\n financial debt is owed and a financial debt is defined\nSection 5(8)\nto mean a debt which is disbursed\n against consideration for the time value of money. As\n opposed to this, an operational creditor means a person\n to whom an operational debt is owed and an operational\n debt under\nSection 5(21)\nmeans a claim in respect of\n provision of goods or services.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P031_C01",
+      "text": "28. When it comes to a financial creditor triggering\n the process,\nSection 7\nbecomes relevant. Under the\n Explanation to\nSection 7(1)\n, a default is in respect of\n a financial debt owed to any financial creditor of the\n corporate debtor — it need not be a debt owed to the\n applicant financial creditor. Under\nSection 7(2)\n, an\n application is to be made under sub-section (1) in such\n form and manner as is prescribed, which takes us to the\n Insolvency and Bankruptcy (Application to Adjudicating\n Authority) Rules, 2016. Under Rule 4, the application\n is made by a financial creditor in Form 1 accompanied\n by documents and records required therein. Form 1 is a\n detailed form in 5 parts, which requires particulars of\n the applicant in Part I, particulars of the corporate\n debtor in Part II, particulars of the proposed interim\n resolution professional in Part III, particulars of the\n financial debt in Part IV and documents, records and\n2 (2018) 1 SCC 407\n\nevidence of default in Part V. Under Rule 4(3), the\napplicant is to dispatch a copy of the application\nfiled with the adjudicating authority by registered\npost or speed post to the registered office of the\ncorporate debtor.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P031_C02",
+      "text": "The speed, within which the\nadjudicating authority is to ascertain the existence of\na default from the records of the information utility\nor on the basis of evidence furnished by the financial\ncreditor, is important. This it must do within 14 days\nof the receipt of the application. It is at the stage\nSection 7(5)\n, where the adjudicating authority is to\nbe satisfied that a default has occurred, that the\ncorporate debtor is entitled to point out that a\ndefault has not occurred in the sense that the “debt”,\nwhich may also include a disputed claim, is not due. A\ndebt may not be due if it is not payable in law or in\nfact. The moment the adjudicating authority is\nsatisfied that a default has occurred, the application\nmust be admitted unless it is incomplete, in which case\nit may give notice to the applicant to rectify the\ndefect within 7 days of receipt of a notice from the\nadjudicating authority. Under sub-section (7), the\nadjudicating authority shall then communicate the order\npassed to the financial creditor and corporate debtor\nwithin 7 days of admission or rejection of such\napplication, as the case may be.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P032_C01",
+      "text": "29. The scheme of\nSection 7\nstands in contrast with the\nscheme under\nSection 8\nwhere an operational creditor\nis, on the occurrence of a default, to first deliver a\ndemand notice of the unpaid debt to the operational\ndebtor in the manner provided in\nSection 8(1)\nof the\nCode.……………………..........................................\nThe moment there is existence of such a dispute, the\noperational creditor gets out of the clutches of the\nCode.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P033_C01",
+      "text": "30. On the other hand, as we have seen, in the case of\na corporate debtor who commits a default of a financial\ndebt, the adjudicating authority has merely to see the\nrecords of the information utility or other evidence\nproduced by the financial creditor to satisfy itself\nthat a default has occurred. It is of no matter that\nthe debt is disputed so long as the debt is “due” i.e.\npayable unless interdicted by some law or has not yet\nbecome due in the sense that it is payable at some fu-\nture date. It is only when this is proved to the satis-\nfaction of the adjudicating authority that the adjudi-\ncating authority may reject an application and not oth-\nerwise.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P034_C01",
+      "text": "12. Swiss Ribbons Pvt. Ltd. And Anr. Vs. Union of India\n\nand Others3\n, this Court speaking through Nariman, J. held :\n“27. As is discernible, the Preamble gives an insight\n into what is sought to be achieved by the Code. The\n Code is first and foremost, a Code for\n reorganisation and\n\n insolvency resolution of corporate debtors. Unless such\n reorganisation is effected in a time-bound manner, the\n value of the assets of such persons will deplete. Therefore, maximisation of value of the assets of such\n persons so that they are efficiently run as going\n concerns is another very important objective of the\n Code. This, in turn, will promote entrepreneurship as\n the persons in management of the corporate debtor are\n removed and replaced by entrepreneurs. When, therefore,\n a resolution plan takes off and the corporate debtor is\n brought back into the economic mainstream, it is able\n to repay its debts, which, in turn, enhances the\n viability of credit in the hands of banks and financial\n institutions.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P034_C02",
+      "text": "Above all, ultimately, the interests of\n all stakeholders are looked after as the corporate\n debtor itself becomes a beneficiary of the resolution\n scheme—workers are paid, the creditors in the long run\n will be repaid in full, and shareholders/investors are\n able to maximise their investment. Timely resolution of\n a corporate debtor who is in the red, by an effective\n legal framework, would go a long way to support the\n development of credit markets. Since more investment\n can be made with funds that have come back into the\n economy, business then eases up, which leads, overall,\n to higher economic growth and development of the Indian\n economy. What is interesting to note is that the\n Preamble does not, in any manner, refer to liquidation,\n which is only availed of as a last resort if there is\n either no resolution plan or the resolution plans\n submitted are not up to the mark. Even in liquidation,\n the liquidator can sell the business of the corporate\n debtor as a going concern. (See\nArcelorMittal [ArcelorMittal (India) (P)\n Ltd. v. Satish Kumar Gupta\n, (2019) 2 SCC 1] at para 83,\n fn 3).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P035_C01",
+      "text": "28. It can thus be seen that the primary focus of the\n legislation is to ensure revival and continuation of\n the corporate debtor by protecting the corporate debtor\n from its own management and from a corporate death by\n liquidation. The Code is thus a beneficial legislation\n which puts the corporate debtor back on its feet, not\n being a mere recovery legislation for creditors. The\n\n3 (2019) 4 SCC 17\n\ninterests of the corporate debtor have, therefore, been\n bifurcated and separated from that of its\n promoters/those who are in management. Thus, the\n resolution process is not adversarial to the corporate\n debtor but, in fact, protective of its interests. The\n moratorium imposed by\nSection 14\nis in the interest of\n the corporate debtor itself, thereby preserving the\n assets of the corporate debtor during the resolution\n process.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P035_C02",
+      "text": "The timelines within which the resolution\n process is to take place again protects the corporate\n debtor's assets from further dilution, and also\n protects all its creditors and workers by seeing that\n the resolution process goes through as fast as possible\n so that another management can, through its\n entrepreneurial skills, resuscitate the corporate\n debtor to achieve all these ends.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P036_C01",
+      "text": "13. This\nCourt further held\n:\n“42. A perusal of the definition of “financial\n creditor” and “financial debt” makes it clear that a\n financial debt is a debt together with interest, if\n any, which is disbursed against the consideration for\n time value of money. It may further be money that is\n borrowed or raised in any of the manners prescribed in\nSection 5(8)\nor otherwise, as\nSection 5(8)\nis an\n inclusive definition. On the other hand, an\n “operational debt” would include a claim in respect of\n the provision of goods or services, including\n employment, or a debt in respect of payment of dues\n arising under any law and payable to the Government or\n any local authority.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P037_C01",
+      "text": "43. A financial creditor may trigger the Code either by\n itself or jointly with other financial creditors or\n such persons as may be notified by the Central\n Government when a “default” occurs. The Explanation to\nSection 7(1)\nalso makes it clear that the Code may be\n triggered by such persons in respect of a default made\n to any other financial creditor of the corporate\n debtor, making it clear that once triggered, the\n resolution process under the Code is a collective\n proceeding in rem which seeks, in the first instance,\n to rehabilitate the corporate debtor. Under\nSection\n 7(4)\n, the adjudicating authority shall, within the\n prescribed period, ascertain the existence of a default\n on the basis of evidence furnished by the financial\n creditor; and under\nSection 7(5)\n, the adjudicating\n authority has to be satisfied that a default has\n occurred, when it may, by order, admit the application,\n or dismiss the application if such default has not\n occurred. On the other hand, under\nSections 8\nand\n\n, an\n operational creditor may, on the occurrence of a\n default, deliver a demand notice which must then be\n replied to within the specified period.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P037_C02",
+      "text": "What is\n important is that at this stage, if an application is\n\nfiled before the adjudicating authority for initiating\n the corporate insolvency resolution process, the\n corporate debtor can prove that the debt is disputed. When the debt is so disputed, such application would be\n rejected.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P038_C01",
+      "text": "14. Pioneer Urban Land and Infrastructure Ltd. Vs. Union\n\nof India4\n, this Court speaking through Nariman, J. referred to\n\nseveral earlier judgments including\nInnoventive Industries\n\nLtd.\n(supra) and\nSwiss Ribbons Pvt. Ltd.\n(supra) and held that\n\neven individuals who were debenture holders and fixed deposit\n\nholders could also be financial creditors who could initiate\n\nthe Corporate Resolution Process.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P039_C01",
+      "text": "15. The definition of ‘financial debt’ in\nSection 5(8)\nof the\n\nIBC cannot be read in isolation, without considering some\n\nother relevant definitions, particularly, the definition of\n\n‘claim’ in\nSection 3(6)\n, ‘corporate debtor’ in\nSection 3(8)\n,\n\n‘creditor’ in\nSection 3(10)\n, ‘debt’ in\nsection 3(11)\n,\n\n‘default’ in\nSection 3(12)\n, ‘financial creditor’ in\nSection\n\n5(7)\nas also the provisions, inter alia, of\nSections 6\nand\n\nof the IBC.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P040_C01",
+      "text": "16. Under\nSection 6\nof the IBC, a right accrues to a\n\nFinancial Creditor, an Operational Creditor and the Corporate\n\nDebtor itself to initiate the Corporate Insolvency Resolution\n\nProcess in respect of such Corporate Debtor, in the manner\n\nprovided in Chapter II of the IBC.\n4 (2019) 8 SCC 416\n17. Section 7\nof the IBC enables a Financial Creditor to file\n\nan application for initiating Corporate Insolvency Resolution\n\nProcess against a Corporate Debtor either by itself, or\n\njointly with other Financial Creditors or any other person on\n\nbehalf of the Financial Creditor, as may be notified by the\n\nCentral Government, when a default has occurred.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P041_C01",
+      "text": "18. The eligibility of a person, to initiate the Corporate\n\nInsolvency Resolution Process, if questioned, has to be\n\nadjudicated upon consideration of the key words and\n\nexpressions in the aforesaid Section and other related\n\nprovisions.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P042_C01",
+      "text": "19. Corporate Resolution Process gets triggered when a\n\nCorporate Debtor commits a default. A Financial Creditor may\n\nfile an application for initiating a Corporate Insolvency\n\nResolution Process against the Corporate Debtor, when a\n\ndefault has occurred.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P043_C01",
+      "text": "20. A ‘corporate debtor’ means a corporate person who owes a\n\ndebt to any person, as per the definition of this expression\n\nSection 3(8)\nof the IBC.\nSection 3(11)\ndefines ‘debt’ to\n\nmean “a liability or obligation in respect of a claim which\n\nis due from any person and includes a financial debt and\n\noperational debt.” The word ‘claim’ has been defined in\n\nSection 3(6)\nto mean inter alia “a right to payment, whether\n\nor not such right is reduced to judgment, fixed, disputed,\n\nundisputed, legal, equitable, secured or unsecured.”\n\n‘Default’ is defined in\nsection 3(12)\nto mean “non-payment of\n\na debt when the whole or any part or instalment of the amount\n\nof debt has become due and payable and is not paid by the\n\ndebtor or the Corporate Debtor, as the case may be.” Under\nSection 5(7)\nof the IBC ‘financial creditor’ means any person\n\nto whom a financial debt is owed and includes a person to whom\n\nsuch debt has legally been assigned.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P044_C01",
+      "text": "21. The definition of ‘financial debt’ in\nSection 5(8)\nof the\n\nIBC has been quoted above.\nSection 5(8)\ndefines ‘financial\n\ndebt’ to mean “a debt along with interest if any which is\n\ndisbursed against the consideration of the time value of money\n\nand includes money borrowed against the payment of interest, as\n\nper\nSection 5(8) (a)\nof the IBC. The definition of ‘financial\n\ndebt’ in\nSection 5(8)\nincludes the components of sub-clauses (a)\n\nto (i) of the said Section.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P045_C01",
+      "text": "22. The NCLT and NCLAT have overlooked the words “if any”\n\nwhich could not have been intended to be otiose. ‘Financial\n\ndebt’ means outstanding principal due in respect of a loan and\n\nwould also include interest thereon, if any interest were\n\npayable thereon. If there is no interest payable on the\n\nloan, only the outstanding principal would qualify as a\n\nfinancial debt. Both NCLAT and NCLT have failed to notice\n\nclause(f) of\nSection 5(8)\n, in terms whereof ‘financial debt’\n\nincludes any amount raised under any other transaction, having\n\nthe commercial effect of borrowing.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P046_C01",
+      "text": "23. Furthermore, sub-clauses (a) to (i) of Sub-\nsection 8\nSection 5\nof the IBC are apparently illustrative and not\n\nexhaustive. Legislature has the power to define a word in a\n\nstatute. Such definition may either be restrictive or be\n\nextensive. Where the word is defined to include something,\n\nthe definition is prima facie extensive.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P047_C01",
+      "text": "24. In Dilworth v. Commissioner of Stamps5 the Privy Council,\n\ndealing with a definition which incorporated the word\n\n“include”, said, “The word ‘include’ is very generally used in\n\ninterpretation clauses in order to enlarge the meaning; and\n\nwhen it is so used these words or phrases must be construed as\n\ncomprehending, not only such things as they signify according\n\nto their natural import, but also those as things which the\n\ninterpretation clause declares that they shall include. But\n\nthe word ‘include’ is susceptible of another construction,\n\nwhich may become imperative, if the context of the Act is\n\nsufficient to show that it was not merely employed for the\n\npurpose of adding to the natural significance of the words or\n\nexpressions defined. It may be equivalent to ‘mean and\n\ninclude’, and in that case it may afford an exhaustive\n\n5 (1899) AC 99\n\nexplanation of the meaning which, for the purposes of the Act,\n\nmust invariably be attached to these words or expressions.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P048_C01",
+      "text": "25. In dealing with the definition of ‘industry’ in the\nIndustrial Disputes Act\n1947 in the\nState of Bombay v.\n\nHospital Mazdoor Sabha and Ors6\n, a three-judge Bench of this\n\nCourt speaking through Gajendragadkar, J. said “It is obvious\n\nthat the words used in an inclusive definition denote\n\nextension and cannot be treated as restricted. Where we are\n\ndealing with an inclusive interpretation, it would be\n\ninappropriate to put a restrictive interpretation upon words\n\nof wider denotation.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P049_C01",
+      "text": "26. CIT Andhra Pradesh v. Taj Mahal Hotel Secunderabad\n7,\n\nthis Court, speaking through A.N. Grover, J. construed the\n\ndefinition of plant in\nSection 10(5)\nof the Income Tax Act,\n\n1922, which read “plant” includes vehicles, books, scientific\n\napparatus and surgical equipment, purchased for the purpose of\n\nthe business, profession or vocation and observed:-\n“The very fact that even books have been included shows\n that the meaning intended to be given to ‘plant’ is\n wide. The word ‘includes’ is often used in\n interpretation clauses in order to enlarge the meaning\n of the words or phrases occurring in the body of the\n statute. When it is so used these words and phrases\n must be construed as comprehending not only such things\n as they signify according to their nature and import\n but also those things which the interpretation clause\n declares that they shall include.”\n\n6 AIR 1960 SC 610\n7 (1971) 3 SCC 550\n27. Of course, depending on the context in which the word\n\n‘includes’ may have been used, and the objects and the scheme\n\nof the enactment as a whole, the expression ‘includes’ may\n\nhave to be construed as restrictive and exhaustive.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P050_C01",
+      "text": "28. In a recent judgment of this Court in Anuj Jain, Interim\n\nResolution Professional for\nJaypee Infratech Ltd. V. Axis\n\nBank Ltd.8\n, this court, speaking through Maheswari, J.\n\nreferred to various precedents on restrictive and expansive\n\ninterpretation of words and phrases used in a statute,\n\nparticularly, the words ‘means’ and ‘includes’ and held:-\n“46. Applying the aforementioned fundamental principles\n to the definition occurring in\nSection 5(8)\nof the\n Code, we have not an iota of doubt that for a debt to\n become “financial debt” for the purpose of Part II of\n the Code, the basic elements are that it ought to be a\n disbursal against the consideration for time value of\n money. It may include any of the methods for raising\n money or incurring liability by the modes prescribed in\n clauses (a) to (f) of\nSection 5(8)\n; it may also include\n any derivative transaction or counter-indemnity\n obligation as per clauses (g) and (h) of\nSection 5(8)\n;\n and it may also be the amount of any liability in\n respect of any of the guarantee or indemnity for any of\n the items referred to in clauses (a) to (h).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P050_C02",
+      "text": "The\n requirement of existence of a debt, which is disbursed\n against the consideration for the time value of money,\n in our view, remains an essential part even in respect\n of any of the transactions/dealings stated in clauses\n(a) to (i) of\nSection 5(8)\n, even if it is not\n necessarily stated therein. In any case, the\n definition, by its very frame, cannot be read so\n expansive, rather infinitely wide, that the root\n requirements of “disbursement” against “the\n consideration for the time value of money” could be\n forsaken in the manner that any transaction could stand\n alone to become a financial debt. In other words, any\n\n8 (2020) 8 SCC 401\n\nof the transactions stated in the said clauses (a) to\n(i) of\nSection 5(8)\nwould be falling within the ambit\nof “financial debt” only if it carries the essential\nelements stated in the principal clause or at least has\nthe features which could be traced to such essential\nelements in the principal clause.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P050_C03",
+      "text": "In yet other words,\nthe essential element of disbursal, and that too\nagainst the consideration for time value of money,\nneeds to be found in the genesis of any debt before it\nmay be treated as “financial debt” within the meaning\nSection 5(8)\nof the Code. This debt may be of any\nnature but a part of it is always required to be\ncarrying, or corresponding to, or at least having some\ntraces of disbursal against consideration for the time\nvalue of money.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P051_C01",
+      "text": "47. As noticed, the root requirement for a creditor to\nbecome financial creditor for the purpose of Part II of\nthe Code, there must be a financial debt which is owed\nto that person. He may be the principal creditor to\nwhom the financial debt is owed or he may be an\nassignee in terms of extended meaning of this\ndefinition but, and nevertheless, the requirement of\nexistence of a debt being owed is not forsaken.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P052_C01",
+      "text": "48. It is also evident that what is being dealt with\nand described in\nSection 5(7)\nand in\nSection 5(8)\nthe transaction vis-à-vis the corporate debtor.\nTherefore, for a person to be designated as a financial\ncreditor of the corporate debtor, it has to be shown\nthat the corporate debtor owes a financial debt to such\nperson. Understood this way, it becomes clear that a\nthird party to whom the corporate debtor does not owe a\nfinancial debt cannot become its financial creditor for\nthe purpose of Part II of the Code.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P053_C01",
+      "text": "49. Expounding yet further, in our view, the peculiar\nelements of these expressions “financial creditor” and\n“financial debt”, as occurring in\nSections 5(7)\nand\n5(8)\n, when visualised and compared with the generic\nexpressions “creditor” and “debt” respectively, as\noccurring in\nSections 3(10)\nand\n3(11)\nof the Code, the\nscheme of things envisaged by the Code becomes clearer. The generic term “creditor” is defined to mean any\nperson to whom the debt is owed and then, it has also\nbeen made clear that it includes a “financial\ncreditor”, a “secured creditor”, an “unsecured\ncreditor”, an “operational creditor”, and a “decree-\nholder”. Similarly, a “debt” means a liability or\nobligation in respect of a claim which is due from any\nperson and this expression has also been given an\nextended meaning to include a “financial debt” and an\n“operational debt”.\n49.1. The use of the expression “means and includes” in\nthese clauses, on the very same principles of\n\ninterpretation as indicated above, makes it clear that\nfor a person to become a creditor, there has to be a\ndebt, i.e., a liability or obligation in respect of a\nclaim which may be due from any person.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P053_C02",
+      "text": "A “secured\ncreditor” in terms of\nSection 3(30)\nmeans a creditor in\nwhose favour a security interest is created; and\n“security interest”, in terms of\nSection 3(31)\n, means a\nright, title or interest or claim of property created\nin favour of or provided for a secured creditor by a\ntransaction which secures payment for the purpose of an\nobligation and it includes, amongst others, a mortgage. Thus, any mortgage created in favour of a creditor\nleads to a security interest being created and thereby,\nthe creditor becomes a secured creditor. However, when\nall the defining clauses are read together and\nharmoniously, it is clear that the legislature has\nmaintained a distinction amongst the expressions\n“financial creditor”, “operational creditor”, “secured\ncreditor” and “unsecured creditor”. Every secured\ncreditor would be a creditor; and every financial\ncreditor would also be a creditor but every secured\ncreditor may not be a financial creditor.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P053_C03",
+      "text": "As noticed,\nthe expressions “financial debt” and “financial\ncreditor”, having their specific and distinct\nconnotations and roles in insolvency and liquidation\nprocess of corporate persons, have only been defined in\nPart II whereas the expressions “secured creditor” and\n“security interest” are defined in Part I.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P054_C01",
+      "text": "50. A conjoint reading of the statutory provisions with\nthe enunciation of this Court in\nSwiss Ribbons [Swiss\nRibbons (P) Ltd. v. Union of India\n, (2019) 4 SCC 17] ,\nleaves nothing to doubt that in the scheme of the IBC,\nwhat is intended by the expression “financial creditor”\nis a person who has direct engagement in the\nfunctioning of the corporate debtor; who is involved\nright from the beginning while assessing the viability\nof the corporate debtor; who would engage in\nrestructuring of the loan as well as in reorganisation\nof the corporate debtor's business when there is\nfinancial stress. In other words, the financial\ncreditor, by its own direct involvement in a functional\nexistence of corporate debtor, acquires unique\nposition, who could be entrusted with the task of\nensuring the sustenance and growth of the corporate\ndebtor, akin to that of a guardian.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P054_C02",
+      "text": "In the context of\ninsolvency resolution process, this class of\nstakeholders, namely, financial creditors, is entrusted\nby the legislature with such a role that it would look\nforward to ensure that the corporate debtor is\nrejuvenated and gets back to its wheels with reasonable\ncapacity of repaying its debts and to attend on its\nother obligations. Protection of the rights of all\nother stakeholders, including other creditors, would\nobviously be concomitant of such resurgence of the\ncorporate debtor.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P055_C01",
+      "text": "29. Jaypee Infratech Ltd.\n(supra), the debts in question\n\nwere in the form of third-party security, given by the\n\nCorporate Debtor to secure loans and advances obtained a third\n\nparty from the Respondent Lender and, therefore, held not to\n\nbe a financial debt within the meaning of\nSection 5(8)\nof the\n\nIBC. There was no occasion for this Court to consider the\n\nstatus of a term loan advanced to meet the working capital\n\nrequirements of the Corporate Debtor, which did not carry\n\ninterest. Having regard to the Aims, Objects and Scheme of\n\nthe IBC, there is no discernible reason, why a term loan to\n\nmeet the financial requirements of a Corporate Debtor for its\n\noperation, which obviously has the commercial effect of\n\nborrowing, should be excluded from the purview of a financial\n\ndebt.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P056_C01",
+      "text": "30. Prabhudas Damodar Kotecha Vs. Manhabala Jeram\n\nDamodar9\n, this Court interpreting\nSection 41(1)\nof the\n\nPresidency Small Cause Courts Act, 1882, as amended by the\nMaharashtra Act\nXIX of 1976, observed that ‘the golden rule is\n\nthat the words of a statute must prima facie be given their\n\nordinary meaning when the language or phraseology employed by\n\nthe legislature is precise and plain'. Since\nSection 41(1)\ndoes not specifically exclude a gratuitous licensee or make a\n\ndistinction between a licensee with material consideration or\n\n9 (2013) 15 SCC 358\n\nwithout material consideration, the expression ‘licensee’ in\nSection 41(1)\nwas held to also include a ‘gratuitous\n\nlicensee’.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P057_C01",
+      "text": "31. At the cost of repetition, it is reiterated that the\n\ntrigger for initiation of the Corporate Insolvency Resolution\n\nProcess by a Financial Creditor under\nSection 7\nof the IBC is\n\nthe occurrence of a default by the Corporate Debtor.\n\n‘Default’ means non-payment of debt in whole or part when the\n\ndebt has become due and payable and debt means a liability or\n\nobligation in respect of a claim which is due from any person\n\nand includes financial debt and operational debt. The\n\ndefinition of ‘debt’ is also expansive and the same includes\n\ninter alia financial debt. The definition of ‘Financial Debt’\n\nSection 5(8)\nof IBC does not expressly exclude an interest\n\nfree loan. ‘Financial Debt’ would have to be construed to\n\ninclude interest free loans advanced to finance the business\n\noperations of a corporate body.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P058_C01",
+      "text": "32. The appeal is, therefore, allowed. The judgment and\n\norder impugned is, accordingly, set aside. The order of the\n\nAdjudicating Authority, dismissing the petition of the\n\nAppellant under\nSection 7\nof the IBC is also set aside.\n\nThe petition under\nSection 7\nstands revived and may be decided\n\nafresh, in accordance with law and in the light of the\n\nfindings above.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD_P059_C01",
+      "text": "33. Pending applications, if any, stand disposed of\n\naccordingly.\n………………………………………………………,J.\n[INDIRA BANERJEE]\n\n ………………………………………………………,J.\n[V. RAMASUBRAMANIAN]\nNew Delhi;\nJuly 26, 2021.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "M/S Orator Marketing Pvt. Ltd. vs M/S Samtex Desinz Pvt. Ltd.",
+    "case_id": "SC_2021_MS_ORATOR_MARKETING_PVT_LTD_VS_MS_SAMTEX_DESINZ_PVT_LTD",
+    "court": "Supreme Court of India",
+    "year": "2021",
+    "facts_summary": "3. M/s Sameer Sales Private Limited, hereinafter referred to\n\nas to “Original Lender”, advanced a term loan of Rs.1.60\n\ncrores to the Corporate Debtor for a period of two years, to\n\nenable the Corporate Debtor to meet its working capital\n\nrequirement. The Original Lender has assigned the outstanding\n\nloan to the Appellant. 4. According to the Appellant the loan was due to be repaid\n\nby the Corporate Debtor in full within 01.02.2020. The\n\nAppellant claims that the Corporate Debtor made some payments,\n\nbut Rs.1.56 crores still remain outstanding. 5. The Appellant filed a Petition under Section 7 of the IBC\n\nin the NCLT for initiation of the Corporate Resolution\n\nProcess. The petition was, however, rejected by a judgment and\n\norder dated 23.10.2020. The Adjudicating Authority (NCLT)\n\nheld :\n“11. Heard the parties and perused the case records.",
+    "legal_issues": "17. In the application the applicant himself has submitted\nthat the loan was interest free. ….\n**** It is submitted that in compliance with the\nlaw, the aforesaid sum was extended under a loan\nagreement, however the sum was advanced interest free,\nsince the development of the business was enough\nconsideration for time value of money.” 16. Under\nSection 6\nof the IBC, a right accrues to a\n\nFinancial Creditor, an Operational Creditor and the Corporate\n\nDebtor itself to initiate the Corporate Insolvency Resolution\n\nProcess in respect of such Corporate Debtor, in the manner\n\nprovided in Chapter II of the IBC.\n4 (2019) 8 SCC 416\n17. Section 7\nof the IBC enables a Financial Creditor to file\n\nan application for initiating Corporate Insolvency Resolution\n\nProcess against a Corporate Debtor either by itself, or\n\njointly with other Financial Creditors or any other person on\n\nbehalf of the Financial Creditor, as may be notified by the\n\nCentral Government, when a default has occurred.",
+    "ratio_summary": "Money borrowed against payment of interest\ncomes within the definition financial debt. However, if the\nmoney borrowed is not against payment of interest, under\nthe definition of financial debt, the core requirement is\nto find whether there is “consideration for the time value\nof money”. The facts of the matter disclose and the Appeal\nalso records that when the Corporate Debtor was unable to\nget any further loan from the market after having taken\nloan from M/s. Tata Capital Financial Services Ltd., M/s. Sameer Sales which was related party to the Corporate\nDebtor, extended interest free unsecured loan to the\nCorporate Debtor payable on or after 1 st February, 2020 and\nthat too upon demand by the lenders. It would be\nappropriate to reproduce the Loan Agreement itself to\nunderstand the same. The Loan Agreement (Annexure A-2)\nreads as under:-\nLOAN AGREEMENT\n\n THE PRESENT LOAN AGREEMENT IS BEING EXECUTED BETWEEN\n M/S SAMEER SALES PVT. LTD. AND M/S SAMTEX DESINZ PVT. LTD. AT NEW DELHI ON THIS\n\n 20th DAY JANUARY Two thousand Eighteen. BETWEEN\n\n (1) M/S SAMEER SALES PRIVATE LIMITED, a company\n registered under the\nCompanies Act, 1956\nbearing CIN\n No.",
+    "final_order": "33. Pending applications, if any, stand disposed of\n\naccordingly.\n………………………………………………………,J.\n[INDIRA BANERJEE]\n\n ………………………………………………………,J.\n[V. RAMASUBRAMANIAN]\nNew Delhi;\nJuly 26, 2021.",
+    "outcome_summary": "Disposed of. 33. Pending applications, if any, stand disposed of\n\naccordingly.\n………………………………………………………,J.\n[INDIRA BANERJEE]\n\n ………………………………………………………,J.\n[V. RAMASUBRAMANIAN]\nNew Delhi;\nJuly 26, 2021.",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

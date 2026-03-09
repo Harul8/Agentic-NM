@@ -1,0 +1,923 @@
+{
+  "case_id": "SC_1968_1968_12",
+  "case_name": "Mental Box Co. Of India Ltd vs Their Workme",
+  "normalized_case_name": "MENTAL_BOX_CO._OF_INDIA_LTD_VS_THEIR_WORKME",
+  "court": "Supreme Court of India",
+  "year": "1968",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "20 August 1968",
+  "judges": [
+    "J.M. Shelat",
+    "C.A. Vaidyialingam"
+  ],
+  "author": "J.M. Shelat",
+  "bench_type": "division",
+  "petitioner": "Mental Box Co. Of India Ltd",
+  "respondent": "Their Workme",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 47,
+  "cited_by_count": 433,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1969 AIR 612",
+    "1969 SCR (1) 750",
+    "AIR 1969 SUPREME COURT 612",
+    "1969 LAB. I. C. 995"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1968\\1968_12.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1968_1968_12_P001_C01",
+      "text": "CITATION:\n 1969 AIR 612 1969 SCR (1) 750\n CITATOR INFO :\n R 1974 SC 136 (9)\n R 1971 SC1821 (8,9)\n R 1972 SC 299 (12)\n F 1972 SC 471 (24,27,28,29,30)\n R 1972 SC2195 (16)\n E 1975 SC 756 (2,3)\n E&R 1981 SC2105 (9,20,21,42)\n RF 1986 SC 484 (17,26)\n F 1986 SC1746 (6)\n RF 1986 SC1938 (11,15,16)\n RF 1987 SC1143 (4)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1968_1968_12_P002_C01",
+      "text": "ACT:\nBonus Acr, 1965 ss. 4, 6, 7-Scope of-Computation of\nbonus-Principles for deduction from gross profits on\naccount of depreciation, development rebate, and estimated\nliability for gratuity-Treatment of interest on capital\nreserve attributable to revaluation of assets-Principles for\ndetermining allowance for direct taxes that employer \"is\nliable to pay\".",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1968_1968_12_P003_C01",
+      "text": "HEADNOTE:\nIn a dispute between the appellant and its workmen relating\nto the computation of bonus under the\nPayment of Bonus Act,",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1968_1968_12_P004_C01",
+      "text": ", the Company contended that the available surplus came\nto Rs. 49.96 lakhs sixty pet cent of which, namely, Rs.\n29.98 lakhs was the allocable surplus. The employees\ndisputed the computation claiming that the Company had\nwrongly reduced the gross profits and the available surplus\nand contended, inter alia, that certain amounts deducted on\naccount of provisions for gratuity and for doubtful debts\nshould be added back; they challenged a deduction of\ninterest on reserves on the ground that the capital reserve\nwas artificially arrived at by a mere revaluation of the\ncompany's fixed assets as on April 1, 1956; and also\ndisputed the figures of depreciation, development rebate and\ndirect taxes deducted by the company while working out the\navailable surplus. The Unions disputed the amount of Rs. 28.82 lakhs worked\nout by the Company's auditors as depreciation in accordance\nwith the\nIncome-tax Act, 1961\non the ground (1) that there\nwas no evidence that the amount of depreciation came to\nRs. 28.82 lakhs; and (2) that since the profit and loss\naccount mentioned Rs. 23.48 lakhs as depreciation, the\nCompany could only claim that amount.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1968_1968_12_P004_C02",
+      "text": "In its award the Tribunal allowed Rs. 23.48 lakhs instead of\nIts. 28.82 lakhs claimed by the company as depreciation. Similarly it allowed only Rs. 7 lakhs instead of Rs. 8.8\nlakhs claimed by the company as development rebate. The\nTribunal held that the amount of Rs. 18.38 lakhs claimed\nunder the head of gratuity was not a reserve but a provision\nand therefore, was not liable to be added back, but it held\nthat the company could deduct only about Rs. 10 lakhs as\nalso Rs. 1.31 lakhs and Rs. 87,000/- actually paid\nduring the year to employees who retired during that year\nand added back the balance of Rs. 6 lakhs to the gross\nprofits. Except for these amounts, the Tribunal accepted\nthe rest of the company's computation. Both the Unions and\nthe Company obtained special leave and fled appeals\nchallenging the correctness of the Tribunal's award.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1968_1968_12_P004_C03",
+      "text": "their appeal it was also contended by the Unions that the\nTribunal had wrongly allowed a deduction of Rs. 145 lakhs as\ndirect taxes under\nsec. 6(c)\n; all that the employer could\ndeduct was direct taxes which he \"is liable to pay\" for the\naccounting year in respect of \"his income, profits and gains\nduring that year\", i.e., the employer is entitled to\ndeduct only his actual tax liability. Such liability.\ntherefore, has to be worked out in accordance with the\nprovisions of the\nIncome-tax Act\nand other relevant Acts by\nfirst arriving at the actual taxable income, gains and\nprofits under those Acts and then compute the taxes at rates\nprovided by them for that particular accounting year.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1968_1968_12_P005_C01",
+      "text": "HELD:The appellant.company contentions on the questions\nof development rebate and the provisions for gratuity must\nbe upheld; the amount of depreciation must be ascertained\nafresh by the Tribunal after giving the parties opportunity\nto lead such evidence as they desired. The' workmen's\nappeal must be dismissed.\n(1) The depreciation deducted in the expenditure column\nin the Profit and Loss Account was the depreciation worked\nout under\ns. 205(2)\nof the Companies Act, but under\nsection",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1968_1968_12_P006_C01",
+      "text": "of the Bonus Act, the Company is entitled to deduct from\nits gross profits depreciation admissible under\nSection\n32(1)\nof the. Income-tax Act\n, i.e., such percentage on the'\nwritten down value as may, in the case of each of the\nclasses of assets, be prescribed. It was for this reason\nthat Rs. 23.48 lakhs were shown as depreciation in the\nProfit and Loss Account by the Company while in the\ncomputation for bonus the company claimed Rs. 28.82 lakhs\nas. depreciation. [755 H--756 B]\nSince the Company claimed the deduction of depreciation, the\nburden of proof that the amount claimed was in accordance\nwith the\nIncome-tax Act\nwas on the Company and that burden\nthe company must discharge once its figures were challenged. It was not sufficient for it to produce its auditors'\ncertificates. The question as to the correct amount of\ndepreciation must therefore go back to the Tribunal for a\nfurther decision. The Tribunal must give an opportunity to\nthe Company to prove its claim for depreciation by\nreasonable proof and to the Unions to test such, evidence by\ncross-examination or otherwise. [757 D]\nKhandesh Spg. & Wvg. Mills Co. Ltd. v.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1968_1968_12_P006_C02",
+      "text": "The Rashtnya Girni\nKamgar Sangh, [1960] 2 S.C.R. 841, 847, Petlad Turkey Red\nDye Works Ltd. v. Dyes & Chemical Workers' Union [1960] 2\nS.C.R. 906, 909, referred to. (2) Under\ns. 6(b)\nof the Bonus Act the Company is entitled\nto deduct out of the gross profits arrived at under\ns. 4\nthe\nwhole of the development rebate admissible under the Income-\ntax Act, i.e., the amount, 75 per cent of which comes to Rs.\n7 lakhs in the present case. The Tribunal was in error in\nmixing up the development rebate reserve to which the\nCompany had to appropriate Rs. 7 lakhs in the Profit and\nLoss Account and the development rebate of Rs. 8.87 lakhs\nallowable to it under\ns. 6\n. of the Act. There was therefore\nno justification for the Tribunal to allow' Rs. 7 lakhs only\ninstead of Rs. 8.87 lakhs as development rebate. [759D-F]\n(3) An estimated liability under gratuity schemes as in the\npresent case, even if it amounts to a contingent liability\nand is not a debt under the\nWealth Tax Act\n, if properly\nascertainable and its present value is fairly discounted, is\ndeductible from the gross receipts while preparing the\nProfit and Loss Account.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1968_1968_12_P006_C03",
+      "text": "This is in accordance with\naccepted principles of commercial practice and is also the\nposition under the\nIncome-tax Act\n. There is no rule or\ndirection in the\nBonus Act\nwhich prohibits such a practice.\n[766 C; 767 D]\nThe Tribunal in allowing Rs. 10 lakhs out of the estimated\nliability of Rs. 16 lakhs impliedly accepted the same\nprinciple but allowed only Rs. 10 lakhs because it thought\nthe estimate to be excessive. This was not done on the\nground that the estimate of Rs. 16 lakhs was not warranted\non any valuation. In the absence of any challenge as to the\ncorrectness of the valuation and in the absence of any\nchallenge that such iiability cannot be estimated on any\nfair standard. the Tribunal ought to have allowed the whole\nof Rs. 16 lakhs to be deducted while arriving at the net\nprofits in the Profit and Loss Account. [767 E]",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1968_1968_12_P007_C01",
+      "text": "Calcutta Company Ltd. v.C.I.T., [1960] 1 S.C.R. 185;\nCommissioner Wealth Tax v. Standard Vacuum Oil Co. Ltd.,\n[1966] 2 S.C.R. 327; Kesoram Industries and Cotton Mills\nLtd. v.C.W.T., [1966] 2 S.C.R. 688; Standard Mills Co. Ltd.\nv. Commissioner of Income Tax, [1967] 1 S.C.R. 768; Southern\nRailway of Peru Ltd. v. Owen, [1957] A.C. 334 and San\nInsurance Office v. Clark, [1912] A.C. 443; referred to. (4) There was no justification for the contention that\nrevaluation of company's assets in 1956 was fictitious and\nthat the difference of Rs. 57 lakhs was a mere hook\nadjustment and did not add to the wealth of the company so\nthat no deduction by way of interest was permissible on such\nan artificial amount. [767 H]\nIn the present case the revaluation was made as early as\n1956 and did not appear to have been objected to at any time\neither by the Company's auditors or by any one else\nconcerned with the Company's management. It cannot,\ntherefore, be legitimately said that it was done for any\noblique purpose, much less with a view to defeat the\nlabour's claim to bonus.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1968_1968_12_P007_C02",
+      "text": "It is true that such revaluation\ndoes not bring in any tangible additional amount into the\ncompany's coffers which it can use for its business. But\nunder\nsec. 211\nof the Companies Act, every balance-sheet of\na company must give a true and fair view of the state of\naffairs of the company as at the end of the financial year. Sch. VI to the Companies Act also provides that where sums\nhave been written off on a reduction of capital or a re-\nvaluation of -assets, the balance sheet, subsequent to such\nreduction or revaluation must show the reduced or the\nincreased figures as the case may be. Apart from the\nprovisions of the\nCompanies Act\n, it is a recognised\nprinciple of accountancy to transfer the increased value of\nassets on revaluation to a capital reserve account. Such an\nincreased figure is an unrealised accretion in the value of\na fixed asset. The fact that such an increased figure does\nnot actually bring in any additional amount to the company\ndoes not make the capital reserve any the less a reserve.\n[768 C-G]\nThe Tribunal was therefore right in accepting the figure of\nRs. 57 lakhs and deducting interest thereon from the gross\nprofits.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1968_1968_12_P007_C03",
+      "text": "(5) Bonus being payable within eight months after the close\nof the accounting year in cases where there is no dispute\npending before an authority under\ns. 22\nof the Act as\nprovided by s. 19, it is hardly possible, except in rare\ncases, that assessment under the\nIncome-tax Act\nand other\nsuch Acts would be completed by the time bonus has to be\npaid. Therefore, the Tribunal would not have before it the\ntaxable income assessed by the Income-tax and other such\nofficers. If the Union's contention were to he right, there\nwould be two or more parallel authorities working under the\nBonus Act and the Income-tax Act and other such Acts who\nwould have to assess taxable income and the tax payable\nthem, before all of whom the employer would have to prove\nhis taxable income. In each bonus dispute, the Tribunal, not\nequipped with the detailed knowledge of all such Acts,\nwould have to undertake an enquiry into various deductions,\nrebates, reliefs, etc. claimable by the employer under those\nActs.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1968_1968_12_P007_C04",
+      "text": "The fact that payment of bonus cannot broke delay\nwithout causing hardship to labour would seem to militate\nagainst the possibility of such prolonged enquiries. [774 E-\n775 A]\nAn examination of the provisions of the\nBonus Act\nshows that\nthe 'Tribunal must estimate the amount of direct taxes on\nthe balance of gross profits as worked out under\nss. 4\nand",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1968_1968_12_P008_C01",
+      "text": ", but without deducting the bonus, then work out the\nquantum of taxes thereon at rates applicable ,during that\nyear to the income, gains and profits of the employer and",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1968_1968_12_P009_C01",
+      "text": "after deducting the amount of taxes so worked out arrive at\nthe available surplus.\nSection 6(c)\nbeing subject to s. 7\nthe computation has to be done without taking into account\nthe items specified in\ns. 7(a)\nand in the manner prescribed\nby the remaining clauses of that section. This\ninterpretation is commendable because; (1) it is consistent\nwith the words \"is liable to pay\" in\ns. 6(c)\n, (2) it is in\nharmony with the provisions of\nss. 4\nand",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1968_1968_12_P010_C01",
+      "text": "and Sch. H, and\n(3) it is consistent with the intention of Parliament\napparent from the scheme of computation of available surplus\nin the Act. Furthermore, if Parliament intended to make a\ndeparture from the rule laid down by courts and tribunals\nthat the bonus amount should be calculated after provision\nfor tax was made and not before, it would have made an\nexpress provision to that effect either in the Act or in the\nSchedules. [776 B-D; F-G]\nAssociated Cement Companies Ltd. v. The Workmen, [1959]\nS.C.R. 925 at 974; Crompton Parkinson (Works) Private Ltd.\nv. Its Workmen [1959] Supp. 2 S.C.R. 936; and Workmen\no! India Explosives Ltd. India Explosives Ltd., [1966] 2\nL.L.I. 313, referred to.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1968_1968_12_P011_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeals Nos. 2138 and\n2196 of 1966. Appeals by special leave from the Award dated June 27, 1966\nof the Sixth Industrial Tribunal, West Bengal in Case No. VIII-251 of 1965. N. A. Palkhivala, Jatinder Mahajan, O.C. Mathur and Ravinder\nNarain, for the appellant (in C.A. No. 2138 of 1966) and the\nrespondent (in C.A. No. 2196 of 1966). A. S.R. Chari, R.K. Maheshwari and B.P. Maheshwari, for\nthe respondents (in C.A. No. 2138 of 1966) and the\nappellants (in C.A. No. 2196 of 1966). H.K. Sowani, K. RaJendra Chaudhuri and K.R. Chaudhuri, for\nintervener No. 1. N. A. Palkhivala and D.N. Mukherjee, for intervener No. 2. M.K. Ramamurthi, Shyamala Pappu and Vineet Kumar, for\nintervener No. 3. R. J. Kolah and O.C. Mathur, for intervener No. 4. N. A. Palkhivala and O.C. Mathur, for Intervener No. 5. A. N. Parekh and Subhag Mal Jain, for intervener No. 6. The Judgment of the Court was delivered by\nShelat, J.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1968_1968_12_P011_C02",
+      "text": "By a reference dated September 17, 1965, the\nGovernment of West Bengal referred to the Sixth Industrial\nTribunal the following question for adjudication:\n\"Whether computation of bonus in respect of\n the accounting year ending 31st March 1965\n payable to the employees is in accordance with\n the payment of Bonus Ordinance ? If not, what\n should be the quantum of bonus for the\n employees ?\"",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1968_1968_12_P012_C01",
+      "text": "The dispute between the appellant company and its employees\narose in the following manner. The company's accounting\nyearis from 1st April to 31st March of the following year\nand its books of account are maintained on the mercantile\nsystem of accounting. The company computed the amount of\nbonus payable to its employees under the Payment of Bonus\nOrdinance which was promulgated on May 29, 1965 and\nfurnished on July 5, 1965 copies of its this computation to\nthe three respondent Unions representing its employees. The\navailable surplus and allocable surplus, according to this\ncomputation, were Rs. 49.96 lacs and Rs. 29.98 lacs\nrespectively. On this basis the company declared the\nbonus at 13.28 per cent of the total wages paid to the\nemployees.According to this computation, the gross\nprofits came to Rs. 2,70,61,234/-. Out of this the\ncompany deducted the following amounts allowed under the\nOrdinance, namely:\nRs. 28,64,000/- as depreciation admissible\n under the\nIncome Tax Act, 1961\n;\nRs. 9,00,000/- as development rebate. Rs. 1,36,33,000/- as direct taxes.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1968_1968_12_P012_C02",
+      "text": "Rs. 1,50,000/- as dividend on preference\n shares;\nRs. 23,37,000/- as interest at 8.5 p.c.\non paid up capital;\nRs. 17,80,358/- as interest at 6 p.c. on\n reserves. Thus the available surplus came to Rs. 49,96,876/-, sixty\nper cent of which, namely, Rs. 29,98,125/- was the allocable\nsurplus. The employees disputed the computation contending\nthat the company had wrongly reduced the gross profits and\nthe available surplus and that the following amounts should\nbe added back, viz.,provision for gratuity Rs. 18,38,605/-\nand provision for doubtful debts Rs. 50,000/-. They also\nchallenged deduction of interest on the reserves on the\nground that the capital reserve of Rs. 57,00,151/- was\nartificially arrived at by a mere revaluation of the\ncompany's fixed assets as on April 1, 1956. They also\ndisputed the figures of depreciation, development rebate and\ndirect taxes deducted by the company while working out the\navailable surplus. Parliament in the meantime passed the\nPayment of Bonus Act,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1968_1968_12_P013_C01",
+      "text": "which by\nsec. 40\nrepealed the Ordinance but which saved\nall things done and action taken under the 'Ordinance as\nhaving been done or taken under the Act. On September 27,\n1965 company paid, subject to the result of the reference,\nbonus at the rate of 13.28 percent of the wages including\ndearness allowance to its employees.\nIn its award the Tribunal allowed Rs. 23,48,226/- instead of\nRs. 28,82,261/- claimed by the company as depreciation.\nSimiearly it allowed only Rs. 7 lacs instead of Rs.\n8,87,371/- claimed",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1968_1968_12_P014_C01",
+      "text": "by the company as development rebate. As regards Rs. 18.38\nlacs claimed under the head of gratuity, the Tribunal held\nthat amount was not a reserve but a provision and,\ntherefore, was not liable to be added 'back. But it held\nthat the company could deduct only Rs. 10 lacs and odd as\nalso Rs. 1.31 lacs and Rs. 87,000/- and odd actually paid\nduring the year to employees who retired during that year\nand added back the balance of Rs. 6 lacs to the gross\nprofits. Except for these amounts, the TribUnal accepted\nthe rest of the company's computation. In the result the\nTribunal found the available surplus and the allocable\nsurplus to be 54 lakhs and odd and Rs. 32.42 lacs\nrespectively and directed payment of bonus at 14.55 per cent\nof the total wages. Both the Unions and the company obtained\nspecial leave and filed appeals challenging the correctness\nof the Award. In the profit and loss account for the year 1964-65, the\nCompany had shown Rs. 17 chores and odd as gross receipts\nand out of that amount had deducted diverse amounts as\nexpenditure including the sum of Rs. 23,48,226/- by way of\ndepreciation.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1968_1968_12_P014_C02",
+      "text": "In its computation filed before the Tribunal,\nthe Company, however, claimed depreciation at Rs. 28.82 lacs\nworked out by its auditors in accordance with the provisions\nof the\nIncome Tax Act, 1961\n. The Unions disputed this amount\non the ground (1 ) that there was no evidence that the\namount of depreciation came to Rs. 28.82 lacs and (2) that\nsince the profit and loss account mentioned Rs. 23.48 lacs\nas depreciation, the company could claim that amount\nonly. The Tribunal accepted the Unions' contention stating\nthat there was nothing to show that the company through\nmistake had shown Rs. 23.48 lacs as depreciation in the\nprofit and loss account and that subsequently on finding out\nthe mistake it had revised in its computation depreciation\nat Rs. 28.82 lacs. The Tribunal, as we shall presently show,\nwas in error in confusing depreciation claimed by it as a\ndeduction under\nsec. 6\nof the Act and in thinking that the\ncompany had made or claimed to have made a mistake and was\ntrying to correct such mistake.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1968_1968_12_P014_C03",
+      "text": "Under\nsec. 205\n( 1 ) of the\nCompanies Act, 1956\n, no dividend\ncan be declared or paid by a company for any financial year\nexcept out of profits arrived at after providing for\ndepreciation in accordance with sub-sec. (2). Sub-sec. (2)\nprovides different methods of calculating depreciation, one\nof which is to calculate it by dividing 95 per cent of the\noriginal cost of each of the depreciable asset by a\nspecified period in respect of each such asset. The\ndepreciation deducted in the expenditure column in the P&L\naccount therefore was the depreciation worked out\nunder\nsec. 205\n( 2 ) of the Companies 'Act. Under\nsec. 2\n(\n18 ) of the\nBonus Act\n, gross profits mean gross profits\ncalculated under\nsec. 4\n. In the case of companies other\nthan a banking company, gross profits under\nSec. 4\nare to be\ncomputed in the manner laid",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1968_1968_12_P015_C01",
+      "text": "down in the 2nd Schedule. That Schedule requires adding\nback to the net profit shown in the P & L account of\ndepreciation deducted in that account while computing gross\nprofits. Obviously, the depreciation so to be added back is\nthe one worked out by the company under\nsec. 205\n(2 ) of the\nCompanies Act\n. Section 6\nof the Bonus Act provides that\nhaving arrived at the gross profits under\nsec. 4\nread with\nthe 2nd Schedule, the Company is entitled to deduct\ntherefrom depreciation admissible under\nsec. 32\n( 1 ) of the\nIncome Tax Act\n, that is, such percentage on the written down\nvalue as may, in the case of each of the classes of assets,\nbe prescribed. The fact that the company while preparing its P & L Account\nand its computation (Ex. 6) produced before the Tribunal,\nhad kept the distinction between depreciation worked out\nunder the\nCompanies Act\nand the one to be worked out under\nthe\nIncome-tax Act\nfor the purposes of the\nBonus Act\nclear from the evidence of its witness, Verma. It was for\nthis reason that Rs. 23 lacs and odd were shown as\ndepreciation in the P & L Account while in the computation\n(Ex. 6) the company claimed Rs. 28.64 lacs as depreciation.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1968_1968_12_P015_C02",
+      "text": "There was, therefore, no question of the company having made\nany mistake in calculating depreciation in the P & L Account\nor its trying to amend that mistake as erroneously thought\nby the Tribunal. The only mistake, the company claimed it\nhad made, was that the true figure of depreciation\ndeductible under\nsec. 6(a)\nof the Bonus Act was Rs. 28.82\nlacs and not Rs. 28.64 lacs. The Company produced a\ncertificate of its auditors (Ex. U 2) dated December 20,\n1965 wherein the auditors certified that on the records\nproduced before them the true figure of depreciation would\nbe the revised figure of Rs. 28.82 lacs and not Rs. 28.64\nlacs. But the controversy between the parties was not\nconfined to the difference between these two figures. There were three figures for depreciation before the\nTribunal, Rs. 23 lacs and odd shown in the P & L Account,\nRs. 28.64 lacs shown in the computation and Rs. 28.82 lacs\nsubsequently claimed by the company as the revised figure of\ndepreciation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1968_1968_12_P015_C03",
+      "text": "The last two figures were taken by the\ncompany from its auditors' certificate certifying first Rs.\n28.64 lacs and, latex on, revising that figure to Rs. 28.82\nlacs on certain further records and information produced\nbefore them. The evidence of Verma shows clearly that the\nUnions disputed the Company's calculations of depreciation. When questioned by them, Verma could only say that the\ncalculations were done not by him but by the Secretarial\nDepartment and, therefore, was not in a position to answer\nquestions in that regard. No witness from the Secretarial\nDepartment was produced. As regards their books and records\nproduced before the auditors, his only answer was:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1968_1968_12_P016_C01",
+      "text": "\"So far as books and records mentioned in the\n first part of Ext. U 2 are concerned, the\n books and record relating to the branches were\n produced before the representatives of\n the, auditors' firm there, and the other books\n and records were produced there before the\n auditors' firm. So far as the record\n mentioned in the second part of the\n certificate are concerned, they are different\n records. The informations and explanations\n given to the auditors were given verbally\n after consulting our books of accounts\". These books and records not having been produced or\ndisclosed, there was obviously no opportunity to the Unions\nto verify either of the two figures, viz., Rs. 28.64 lacs or\nRs. 28.82 lacs. It is true that Verma said that the\ncalculations shown to the auditors could be produced but he\nqualified the offer by saying that would be done if the\nTribunal required. Since the company claimed the deduction of depreciation, it\nstands to reason that the burden of proof that the\ndepreciation claimed by it was the correct amount in\naccordance with the\nIncome Tax Act\nwas on the Company and\nthat burden the company must discharge once its figures were\nchallenged.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1968_1968_12_P016_C02",
+      "text": "But it was; contended that once the company\nproduced its auditors' certificate. that should be\nsufficient and must be accepted and that the Tribunal should\nnot insist either on the auditors proving their certificate\nor on the company proving depreciation on each and every\nitem of depreciable asset. Such an enquiry before the\nTribunal, it was argued, would be a harassing and prolonged\nenquiry, not contemplated in industrial adjudication and,\ntherefore, the Tribunal ought to have accepted as correct\nRs. 28.82 lacs certified by the auditors. Under\nsec. 23\nthe Act the presumption of accuracy is allowed only to the\nbalance sheet and the P & L Account of companies. No such\npresumption is provided for by the Act to auditors'\ncertificates. Speaking of rehabilitation amount deductible\nas a prior charge under the Full Bench formula while working\nout the available surplus this Court in Khandesh Spg. ana\nWvg. Mills Co. Ltd. v. Rashtriya Girni Kamgar Sangh\n(1)\nobserved at page 847 as follows:\n\"The importance of this question (the\n procedure to be followed for ascertaining\n facts) in the context of fixing the amount\n required for rehabilitation cannot be over-\nestimated.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1968_1968_12_P016_C03",
+      "text": "The item of rehabilitation is\n generally a major item that enters. into the\n calculations for the purpose of ascertaining\n the surplus and, therefore, the amount of\n bonus. So, there would be a tendency on the\n part of the employer to inflate this figure\n and the\n(1) [1960] 2 S.C.R. 841,847. ap. C. 1./69-2",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1968_1968_12_P017_C01",
+      "text": "employees to deflate it. The accounts of a\n company are prepared by the management. The\n balance-sheet and the profit and loss account\n are also prepared by the company's officers. The labour have no concern in it. When so\n much depends on this item, the principles of\n equity and justice demand that an Industrial\n Court should insist upon a clear proof of the\n same and also give a real and adequate\n opportunity to the labour to canvass the\n correctness of the particulars furnished by\n the employer.\"\nThe necessity of proper proof of the correctness of\nstatements in the balance-sheet was repeated in\nPetlad\nTurkey Red Dye Works Ltd. v. Dyes & Chemical Workers'\nUnion\n(1). These observations made with regard to balance-\nsheets and P & L accounts would equally apply to statements\nmade in ,the auditors' certificates 'prepared on the\ninstructions and information supplied to them by employers. Mere production of auditors' certificate, especially when\nit is not admitted by labour, not by the auditors but by the\nemployees of the company who admitted not to have been\nconcerned with its preparation or the calculations on which\nit was based. would not be conclusive.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1968_1968_12_P017_C02",
+      "text": "We do not say that\nin such a case the Tribunal should insist upon proof of\ndepreciation on each and every item of the assets. It\nshould, however, insist on some reasonable proof of the\ncorrectness of the figure of depreciation claimed by the\nemployer either by examining the auditors who calculated and\ncertified it or by some other proper proof. Depreciation in\nsome cases would be of a large amount affecting materially\nthe available surplus. Fairness, therefore, requires that\nan opportunity must be given 'to the employees to verify\nsuch figures by cross-examination of the employer or his\nwitnesses who have calculated depreciation amount. Notwithstanding the Unions' challenge to the figure of\ndepreciation claimed by the company, the only thing that the\ncompany did was to examine Verma, who admittedly had nothing\nto do with its calculation, and to produce through him the\nsaid certificate. In our view, that was neither proper nor\nsufficient.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1968_1968_12_P017_C03",
+      "text": "The proper course for the Tribunal in such a\ncase was to insist upon the company adducing legal evidence\nin support of its claim instead of taking the figure of\ndepreciation from the P & L account which was not worked out\nin accordance with the\nIncome Tax Act\nbut under\nsec. 205\nthe Companies Act, and saying that the Company had failed to\nprove that it was a mistaken figure. In our view, the\nquestion as to the correct amount of depreciation must go\nback to the Tribunal for a fresh decision. The Tribunal\nshould give opportunity to the Company to prove its claim\nfor depreciation by reasonable proof and to the Unions to\ntest such evidence by cross-examination or otherwise. (1) [1960] 2 S.C.R. 906, 909.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1968_1968_12_P018_C01",
+      "text": "An error of the same type seems to have been committed by\nthe Tribunal in the matter of development rebate. It\nallowed Rs. 7 lacs as development rebate. instead of Rs.\n8.87 lacs. claimed by the Company. Under\nsec. 33\nof the\nIncome Tax Act, an assessee is allowed by way of\ndevelopment rebate a certain percentage of the cost of\nmachinery or plant depending on the date of its\ninstallation.\nSection 34(3)\nof that Act provides,\nhowever, that the said allowance shall not be given unless\nan amount equal to 75 per cent of the development rebate to\nbe allowed is debited to the P & L account of the relevant\nprevious year and credited to a reserve account to be\nutilised by the assessee in the 8 years next following for\nthe purposes of the undertaking. Accordingly, the Company\nappropriated Rs. 7 lacs to the development rebate reserve as\nit was bound to do if it wanted to claim development rebate.\nThe Company took the round figure Rs. 9 lacs instead of Rs.\n8.87 lacs for development rebate and credited Rs. 7 lacs,\nbeing 75 per cent thereof to the development rebate reserve.\nUnder the Second Schedule to the Bonus Act\n, read with\nsec.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1968_1968_12_P019_C01",
+      "text": "thereof the Company is required while computing its gross\nprofit to add the development rebate and as footnote 1 in\nthat Schedule shows \"to the extent charged to profit and\nloss account\", that is, Rs. 7 lacs. Under\nsec. 6(b)\nof the\nBonus Act, the Company is entitled, however, to deduct out\nof the gross profits arrived at under\nsec. 4\n, the whole of\nthe development rebate admissible under the\nIncome Tax Act\n,\ni.e., the amount, 75 per cent of which comes to Rs. 7 lacs. The error which the Tribunal fell into was in mixing up the\ndevelopment rebate reserve to which the Company had to\nappropriate Rs. 7 lacs in P & L account and the development\nrebate of Rs. 8.87 lacs allowable to it under\nsec. 6\nof the\nAct. Mr. Chari for the Unions fairly conceded that he could\nnot challenge this position. There was, therfore, no\njustification for the Tribunal to allow Rs. 7 lacs only\ninstead of Rs. 8.87 lacs as development rebate. The next question relates to a sum of Rs. 18.38 lacs, being\nthe estimated liability under two gratuity schemes framed by\nthe Company, which was deducted from the gross receipts in\nthe P & L account.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1968_1968_12_P019_C02",
+      "text": "In 1960 the Company introduced a\ngratuity scheme for its employees other than its officers. Under that scheme gratuity was payable on the termination of\nan employees's service either due to retirement, death or\ntermination of service, the amount of gratuity payable being\ndependent on his wages at that time and the number of years\nof service put in by him. The Company had worked out on an\nactuarial valuation its estimated liability and made\nprovision for such liability not all at once but spread over\na number of years. Thus in 1959-60, 1960-61 and 1961-62 the\nCompany allocated towards this liability Rs. 5 lacs. Rs. 10\nlacs and Rs. 5 lacs respectively from out of the profits,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1968_1968_12_P020_C01",
+      "text": "debiting these amounts in the profits and loss account. In\nall Rs. 40 lacs have so far been provided in the aforesaid\nmanner against the said liability. The practice followed by\nthe Company is that every year the Company works out the\nadditional liability incurred by it on the employees putting\nin every additional year of service. Whenever an employee\nretires, the amount of gratuity payable to him is debited\nagainst the amount provided for as aforesaid. The amount\nso paid is not debited in the P & L account as an outgoing\nor expenditure but against the estimated liability provided\nas aforesaid. In 1964-65 the, Company introduced a similar\ngratuity scheme for its officers. According to the Company,\nthe estimated liability under this scheme was worked out at\nRs. 20 lacs. But instead of providing the whole for it\nprovided only Rs. 11.31 lacs. It also provided Rs. 7 lacs\nunder the scheme for its non-officers against the liability\nfor service put in by them in that year.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1968_1968_12_P020_C02",
+      "text": "Out of Rs. 18.38\nlacs so provided, the Company paid as gratuity Rs.\n1,31,585/- and Rs. 87,295/to officers and other employees\nwho retired during 1964-65, debiting as aforesaid, these\namounts not as an outgoing or expenditure but against the\nsaid amounts of Rs. 11 lacs and Rs. 7 lacs. The Company\nclaimed that it was entitled to. deduct the balance of Rs.\n16 lacs from the gross receipts in the P & L account while\nworking out its net profit. The Unions contended that the\nCompany could deduct from the gross receipts only Rs. 1.31\nlacs and Rs. 87,000/- and odd actually paid during the year. The Company, on the other hand, maintained that what it had\n'done was legitimate and was warranted by the principles of\naccountancy and, therefore, the whole amount of Rs. 18.38\nlacs was deductible in arriving at its net profits. What\nthe Tribunal did, however, was that instead of squarely\nfacing this controversy, it held that as the Company had in\nthe former years debited Rs. 5 lacs e.g., in 1959-60 and\n1961-62, it would allow only Rs. 5 lacs for each of the two\nschemes.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1968_1968_12_P020_C03",
+      "text": "Thus it allowed Rs. 10 lacs as dubitable in the P\n& L account in addition to the said Rs. 1.31 lacs and Rs.\n87,000/- and disallowing the balance of Rs. 6 lacs added\nback that amount in the net profits shown in the P & L\naccount. The contention of Mr. Chari was two fold: (1 ) that the\namount which could be debited was that which was actually\npaid and the Company was not entitled to debit in the P & L\naccount any amount worked out by it as estimated liability. The Tribunal. therefore, was not justified in allowing the\nCompany to debit any such amount and that the Tribunal\narbitrarily fixed Rs. 10 lacs and allowed wrongly that\namount to be deducted; and (2) even if such estimated\nliability was debitable, the appropriation amounted to a\nreserve and under the\nBonus Act\nsuch a reserve had to be",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1968_1968_12_P021_C01",
+      "text": "added back while working out the gross profits under the 2nd\nSchedule to the Act\n. Two questions, therefore, arise: (1) whether it is\nlegitimate in such a scheme of gratuity to estimate the\nliability on an actuarial valuation and deduct such\nestimated liability in the P & L account while working out\nits net profits; and (2).i.f it is, whether such\nappropriation amounts to a reserve or a provision. If it is\na reserve, obviously the amount has to be added back while\ncomputing the gross profits. But in that event the Company\nwould be entitled to interest thereon at 6 per cent per\nannum under Item 1 (iii) of the\nThird Schedule to the Act\n. In the case of an assessee maintaining his accounts on\nmercantile system, a liability already accrued, though to\n'be discharged at a future date, would be a proper deduction\nwhile working out the profits and gains of his business,\nregard being had to the accepted principles of commercial\npractice and accountancy. It is not as if such deduction is\npermissible only in case of amounts actually expended or\npaid.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1968_1968_12_P021_C02",
+      "text": "Just as receipts, though not actual receipts but\naccrued due or brought in for income tax assessment, so\nalso liabilities accrued due would be taken into account\nwhile working out the profits and gains of the business. A\nCompany carrying on business of buying land and selling it\nafter development sold certain plots, received a part of the\nprice but entered the whole of the price receivable as it\nmaintained its books of accounts on mercantile method. It\nalso debited a certain sum, being the estimated expenditure\nfor the developments it undertook to carry out within six\nmonths from the execution of the sale deeds although no part\nof such expenditure was actually incurred during that year. It was held that having regard to the accepted commercial\npractice and trading principles and there 'being no\nprohibition against it in the\nIncome Tax Act\n, deduction of\nsuch estimated liability even though it did not come under\nany specific provisions of\nsec. 10(2)\nof the Income Tax\nAct, 1922 was permissible; (see Calcutta Company Ltd. v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1968_1968_12_P021_C03",
+      "text": "CJ.T.(1) Such a deduction of an accrued liability\nthough not actually paid is not confined to the\nIncome Tax\nAct\nonly but is also perrnissible under the\nWealth Tax Act,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1968_1968_12_P022_C01",
+      "text": ".\nCommissioner of Wealth Tax v. Standard Vacuum Oil\nCo. Ltd.\n(-2) demands in respect of payment of tax under\nsec.\n18A\nof the Income Tax Act, 1922 were made against the\n'assessee company for 1956-57. The final installment of Rs.\n47 lacs and odd for each of the two years was outstanding on\nthe respective valuation dates. The question was whether\nthe demand ,for such tax could be deducted while determining\nthe net wealth of the Company. This Court held that a debt\nis \"owed' when an order is passed under sec. 18A and a\nnotice of demand is sent. The amount mentioned in the\nnotice begins to be 'owed' till a new figure is\n(1) [1960]1 S.C.R. 185. (2) [1966] 2 S.C.R. 317.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1968_1968_12_P023_C01",
+      "text": "substituted by the assessee under\nsec. 18A(2)\nof the Income\nTax Act. But till that is done, the amount is ascertained\nand there is a statutory liability to pay the amounts\nmentioned in the order under sec. 18A(1) and were debts on\nthe valuation dates and, therefore, deductible for the\npurpose of arriving 'at the Company's net wealth. The\nCourt also held that a condition subsequent, the fulfilment\nof which may result in the reduction or even extinction of\nthe liability, would not have the effect of converting\nthat liability into a contingent liability. The decision,\nno doubt, turned on the meaning of 'debt' as defined by\nsec. 2(m)\nof the Wealth Tax Act, the.Court there holding\nthat the statutory liability to pay the amount mentioned in\nthe order commenced when the demand notice was served and,\ntherefore, the liability did exist in present. In Kesoram\nIndustries and Cotton Mills Ltd. v. C.W.T.(1) also a case\nunder the\nWealth Tax Act\n, the appellant company showed in\nits P & L account two amounts: (1 ) the amount of\ndividend proposed to be distributed for that year and (2)\nanother sum as a provision for tax liability under the\nincome Tax Act, 1922.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1968_1968_12_P023_C02",
+      "text": "The question was whether these two\nsums were debts and could be deducted while computing the\nCompany's net wealth. It was held that the dividend amount\nwas not a debt as on the valuation date nothing more than\na recommendation by the Directors had taken place. But as\nregards the estimated tax liability, it was held that it was\na debt inasmuch as the liability to pay the tax was in\npresent though payable in future and was in respect of an\nascertainable sum of money. Standard Mills Co. Ltd. v. Commissioner of Income Tax\n(2) the decision turned on the\nquestion whether an estimated liability under gratuity\nschemes framed under Industrial awards amounted t0 debts and\ncould be deducted while computing the net wealth.\nreliance having been placed on Southern Railway of Peru\nLtd. v.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1968_1968_12_P023_C03",
+      "text": "Owen(a) a decision to which we shall presently come\nthe Court observed' at page 773 that decision had no\nrelevance to the question before it as the House of Lords\nin that decision was concerned in determining the\ndeductibility of the present value of a liability which\nmay arise in future in the computation of taxable income\nfor the relevant year under the Income Tax laws-The Court\nheld, in view of the terms of\nsec. 2(m)\nof the Wealth Tax\nAct, that as the liability to pay gratuity was not in\npresents but would arise in future on the termination of\nservice i.e. on retirement, death or termination; the\nestimated liability under the schemes would not be a\ndebt and, therefore, could not be deducted while computing\nthe net wealth. These observations show that the Court\nwas of the view that though such a liability is a contingent\n liability and therefore not a 'debt' under\nsec. 2(m)\nof the\nWealth Tax Act, it would be deductible under the\nIncome\nTax Act\nwhile\n(1) [1966] 2 S.C.R. 688. (2) [1967] 1 S.C.R. 768. (3) [1957] A.C. 334.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1968_1968_12_P024_C01",
+      "text": "computing the taxable profits. In the instant case, the\nquestion is not whether such estimated liability arising\nunder the gratuity schemes amounts to a debt or not. The\nquestion that concerns us is whether while working out the\nnet profits a trader can provide from his gross receipts his\nliability to pay a certain sum for every additional year of\nservice which he receives from his employees. This, in our\nview, he can do, if such liability is properly ascertainable\nand it is possible to arrive at a proper discounted present\nvalue. Even if the liability is a contingent liability,\nprovided its discounted-present value is ascertainable, it\ncan be taken into account. Contingent liabilities\ndiscounted and valued as necessary can be taken into\naccount as trading expenses if they are sufficiently certain\nto be capable of valuation and if profits cannot be properly\nestimated without taking them into account. Contingent\nrights, if capable of valuation, can similarly be taken into\naccount as trading receipts where it is necessary to do so\nin order to ascertain the true profits: (see C.N. Beatti's\nElements the Law of Income and Capital Gains Taxation 8th\ned. 54).",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1968_1968_12_P024_C02",
+      "text": "In Southern Railway of Peru Ltd. v. Owen(1), the House of\nLords was concerned with the problem similar to. the one\nbefore us and, therefore, the observations made there would\nbe of assistance. An English Company operating a railway\nin Peru was under the laws of that country liable to pay\nits. employees compensation on the termination' of their\nservices either by dismissal or on termination of service by\nnotice or on such termination by death or affluence of\ncontractual time. The compensation so paid was an amount\nequivalent to one month's salary at the rate in force at the\ndate of determination of every year of service. The Company\nclaimed to be entitled to charge against each years receipts\nthe cost of making provision for the retirement payments\nwhich would ultimately be thrown on it, calculating the\nsum required to be paid to each employee if he retired\nwithout feature at the close of the year and setting' aside\nthe aggregate of what was required insofar as the year had\ncontributed to the aggregate. The House of Lords rejected\nthe deductions on the ground that in calculating the\ndeduction the company had ignored the factor of discount.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1968_1968_12_P024_C03",
+      "text": "But their Lordships recognised the principle that the\ncompany was entitled to charge against each year's receipts\nthe cost of making provision for the retirement payments\nwhich would ultimately be payable as the company had the\nbenefit of the employees' services during the year provided\nthe present value of the future payments could be fairly\nestimated. The contention on behalf of the Crown was very\nnearly the same as the one before us. Counsel conceded,\nthat a trader computing his taxable profits for a particular\nyear may properly deduct not only the payments actually made\nto his employees but\n(1) [1957] A.C. 334.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1968_1968_12_P025_C01",
+      "text": "also the present value of any payments in respect of their\nservices in that year to be made in a subsequent year if it\ncan be satisfactorily estimated. But it was argued that\nproposition would not apply to that case as the company was\nnot in any year under a definite obligation to pay its\nemployees lump sums on the termination of their employment\nas in each case the right to a lump sum was contingent on\ncertain conditions being fulfilled and' so the prospective\nliability remained contingent until the service was actually\nended. The lump sum could not be regarded as earned or\npayable in respect of a particular year of service and,\ntherefore, the whole sum should be debited in the account of\nthe last year of service. This contention was not upheld. In the course of his opinion, Lord Radcliffe cited with\napproval the dictum of Lord Haldane in Sun Insurance Office\nv. Clark(1) at p. 455, namely:\n\"It is plain that the question of what ,is or\n is not profit or gain must primarily be one of\n fact, and of fact to be ascertained by the\n tests applied in ordinary business.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1968_1968_12_P025_C02",
+      "text": "Questions\n of law can only arise when (as was not the\n case here) some express statutory direction\n applies and excludes ordinary commercial\n practice, or where, by reason of its being\n impracticable to ascertain the facts\n sufficiently, some presumption has to be\n invoked to fill the gap.\"-\nHolding that there was no such statutory rule prohibiting\nthe commercial practice of providing for such an estimated\nliability for each year, he compared the: two systems and\nobserved at pp. 351-352 as follows:\n\"Now the question is how ought the effects of\n this statutory scheme to be reflected in the\n appellant's accounts of the annual profits\n arising from its trade ? One way, which is\n certainly the simplest one, is to let the\n payments made fall entirely as expenses of the\n year of payment and ignore any question of\n making provision for the maturing obligation\n during the years of service that precede\n it ............ It has one considerable\n advantage; no element of estimate or valuation\n appears in the profit assessment and nothing\n is charged to profits except the actual cash\n outgoing.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1968_1968_12_P025_C03",
+      "text": "But, when this has been conceded, I\n think that there is the very serious\n disadvantage to be set against the inefficient\n method of arriving at the true profits of any\n one year. The retirement benefit is not\n obviously paid to obtain the services given in\n the year of retirement. The incident of\n retirement payments must be variable from year\n to year, and\n(1) [1912] A.C. 443.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1968_1968_12_P026_C01",
+      "text": "they may inordinately depress the profits of\n one year just as they may inordinately inflate\n the profits of another. It is true that the\n company carries on business from one year to\n another, but it is not charged on the average\n of its annual profits. Tax rates and\n allowances themselves vary and, apart from\n that, to charge tax on a profit unduly\n accelerated or unduly deferred is, in my\n opinion, no more respectable an achievement\n than to admit that the annual accounts of\n business do in some cases require the\n introduction of estimates or valuations if a\n true statement of profit i,s to be secured. Another method is that which the appellant is\n seeking to establish with regard to its\n assessments for the four years 1947-\n 1950 ..... What the appellant claims the\n right to do is to charge against each year's\n receipts the cost of making provision for the\n retirement payments that will ultimately be\n thrown upon it by virtue of the fact that it\n has had the benefit of its employees' services\n during that year. As a corollary it will not\n make any charge to cover the actual payments\n made in the year in respect of retirement\n benefits.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1968_1968_12_P026_C02",
+      "text": "Only by such a method, it is said,\n can it bring against the receipts of the\n year the true cost of the services that it has\n used to earn those receipts. Generally\n speaking, this must, I think, be true. For,\n whereas it is possible that any one of its\n many employees may forfeit his benefits and\n so never require a payment, the substantial\n facts of the situation are that when the\n company has paid every salary and wage 'that\n is due for current remuneration of the year\n it has not by any means wholly discharged\n itself of the pecuniary burden which fails\n upon it in respect of the year's employment.\"\nAgreeing with the company's claim he observed that provision\nfor retirement payments would give an accurate reflection of\nthe true costs of earning the year's receipts than merely\ncharging against them the year's payment to employees who\nretired in the year.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1968_1968_12_P026_C03",
+      "text": "That there is no rule against providing for any such\ncontingent liability but on the contrary such a provision is\npermissible can be seen from the form of balance-sheet in\nSchedule VI to the Companies Act, 1956\nwhere provisions for\ntaxation, dividends. provident fund schemes, staff benefit\nschemes and other items for which a company is contingently\nliable are to be treated as current liabilities and,\ntherefore, dubitable against the gross receipts. Schedule\nVI, Part 2, lays down the requirements of profit and loss\naccount and el. 3 (ix) of it provides that a profit and\nloss account shall set out amongst other things the\naggregate of amounts set aside or provisions made for\nmeeting. specific liabili-",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_1968_1968_12_P027_C01",
+      "text": "ties, contingencies or commitments. But the contention was\nthat though\nSchedule VI to the Companies Act\nmay permit a\nprovision for contingent liabilities, the\nIncome-tax Act,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_1968_1968_12_P028_C01",
+      "text": "does not, for under\nsec. 36(v)\nthe only deduction from\nprofits and gains permissible is of a sum paid by an\nassessee as an employer by way of his contribution towards\nan' approved gratuity fund created by him for the exclusive\nbenefits of his employees under an irrevocable trust This\nargument is plainly incorrect because\nsec. 36\ndeals with\nexpenditure deductible from out of the taxable income\nalready assessed and not with deductions which are to be\nmade while making the P & L account. In our view, an\nestimated liability under gratuity schemes such as the ones\nbefore us, even if it amounts to a contingent liability and\nis not a debt under the\nWealth Tax Act\nif properly\nascertainable and its present value is fairly discounted is\ndeductible from the gross receipts while preparing the P & L\naccount. It is recognised in trading circles and we find no\nrule or direction in the\nBonus Act\nwhich prohibits such a\npractice. The next question is whether the amount so provided is a\nprovision or a reserve. The distinction between a provision\nand a reserve is in commercial accountancy fairly well-\nknown.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_1968_1968_12_P028_C02",
+      "text": "Provisions made against anticipated losses and\ncontingencies are charges against profits and, therefore,\nto be taken into account against gross receipts in the P &\nL account and the balance-sheet. On the other hand, reserves\nare appropriations of profits, the assets by which they\nare represented being retained to form part of the capital\nemployed in the business. Provisions are usually shown in\nthe balance-sheet by way of deductions from the assets in\nrespect of which they are made whereas general reserves and\nreserve funds are shown as part of the proprietor's\ninterest: (See Spicer and Peglar's Book-keeping and\nAccounts, 15th ed. p. 42). An amount set aside out of\nprofit and other surpluses, not designed to meet a\nliability contingency commitment or diminution in value of\nassets known to exist at the date of the balance-sheet is a\nreserve but an amount set aside out of profits and other\nsurpluses to provide for any known liability of which the\namount cannot be determined with substantial accuracy is a\nprovision, (see William Pickles Accountancy, Second Edn.,\n192, Part III, cl. 7, Sch. VI to the Companies Act, 1956\nwhich defines provision and reserve).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_1968_1968_12_P028_C03",
+      "text": "Under\nsec. 23\nof the Bonus Act, there is 'a presumption of\nthe genuineness of the P & L account produced by the\ncompany unless it is challenged in the manner provided\ntherein. The Company\n's case was that the estimated liability\nunder the gratuity schemes in respect of the accounting\nyear was ascertainable with fair accuracy under the\nactuarial valuation and Rs. 16 lacs which it took into\naccount while making it P & L account was the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_1968_1968_12_P029_C01",
+      "text": "present discounted liability. This position does not seem\nto have been disputed before the Tribunal. The principal\ncontention urged against that figure was not that the\nestimated liability was not ascertainable or as in the case\nof Southern Railway of Peru(1) that it did not represent the\npresent discounted value, but that the\nBonus Act\npermits\nonly the deduction of the amount actually paid during the\naccounting year. This was also the principal contention of\nMr. Chari before us. Mr. Ramamurthi, appearing for one of\nthe interveners, argued that though it may be possible to\ntake into account such a contingent liability in arriving at\nthe true profits and gains under the\nIncome-tax Act\n, it\nwould not be so under the\nBonus Act\nas the scheme of the Act\ntreats the accounting year as a unit and, therefore,\nreserves or provisions on the footing of estimated\nliabilities to be paid in future cannot be taken into\naccount. But under the\nIncome-tax Act\nalso the previous\nyear is a unit and it is only the profits and gains during\nthat year which are taxable.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_1968_1968_12_P029_C02",
+      "text": "If under the\nIncome-tax Act\nestimated liability ascertainable with substantial accuracy\ncan be taken into account for arriving at the true profits\nand gains, there is no reason why the same cannot be done\nunder the\nBonus Act\nunless 'there is any provision therein\nforbidding such a practice recognised by commercial\naccountancy. No such provision was shown to exist in the\nBonus Act\n. The Tribunal in allowing Rs. 10 lacs out of the estimated\n'Rs. 16 lacs impliedly accepted the principle canvassed by\nthe company. It, however, allowed only Rs. 10 lacs because\nit thought it to be excessive as in some prior years the\nCompany had deducted Rs. 5 lacs. But this was not done on\nthe ground that the estimate of Rs. 16 Iacs was not\nwarranted on any valuation. In our view, in the absence of\nany challenge as to the correctness of the valuation and in\nthe absence of any challenge that such liability cannot be\nestimated on any fair standard, the Tribunal ought to have\nallowed the whole of Rs. 16 lacs to be deducted while\narriving at the net profits in the P & L account.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_1968_1968_12_P029_C03",
+      "text": "Turning now to the appeal filed by the employees two\nquestion besides those already disposed of were raised: one\ndealing with interest on capital reserve and the other\nrelating to the amount of direct taxes to be deducted from\nthe gross profits. As regards the first question, Verma's evidence was that the\nCompany had revalued its fixed assets in 1956.and credited\nthe difference of Rs. 57 lacs between its cost and the value\nfixed on such revaluation, to the capital reserve. The\nTribunal accepted the valuation as bona fide and allowed\ninterest on the said reserve at 6 per cent in accordance\nwith\nsec. 6(d)\nand el. 1 (iii) of the 3rd Schedule. Mr. Chari's contention was that the revaluation\n(1) [1957] A.C. 334.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_1968_1968_12_P030_C01",
+      "text": "by the director in 1956 was fictitious; that the\ndifference of Rs. 57 lacs was a mere book adjustment and\ndid not add to the wealth of the Company and though that\namount was transferred to the capital reserve it was not as\nif any additional amount became available for the\nCompany's business and therefore, no interest was\npermissible on such an artificial amount. At first blush\nit would seem as if there is some force in this contention,\nfor it would be possible for a company to deflate its gross\nprofits by fictitiously revaluing its fixed assets at\nregular intervals red claiming interest on the excess by\ncarrying such excess to capital reserve and to reduce thus\nlabor's claim to bonus. In the present case the revaluation\nwas made as early as in 1956 and it does not appear that it\nwas ever objected to either by 'the Company's auditors or by\nany one else concerned with the Company's management. It cannot, therefore, be legitimately said that it was done\nfor any oblique purpose, much less with a view to defeat the\nlabor's claim to bonus. It is true that such revaluation\ndoes not bring in any tangible additional amount into the\ncompany's coffers which it can use for its business.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_1968_1968_12_P030_C02",
+      "text": "But\nunder\nsec. 211\nof the Companies Act every balance-sheet of a\ncompany must give a true and fair view of the state of\naffairs of the company as at the end of the financial year. Sch. VI to the Companies Act also provides that where sums\nhave been written off on a reduction of capital or a\nrevaluation of assets the balance-sheet subsequent to such\nreduction or revaluation must show the reduced or the\nincreased figures as the case may be. Apart from the\nprovisions of the\nCompanies Act\n, it is a recognised\nprinciple of accountancy to transfer the increased value of\nassets on revaluation to a capital reserve account. Such an\nincreased figure is an unrrealised accretion in the value of\na fixed asset. (see Pickles Accountancy 2nd Edn. pp. 103\nand 935). So that the fact such an increased figure does\nnot actually bring in any additional amount to the Company\ndoes not make the capital reserve any the less a reserve. Nor is it possible to postulate that if such a claim is\nallowed to be deducted, the management would go on\nartificially inflating the value of the fixed assets with a\nview 'to claim interest.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_1968_1968_12_P030_C03",
+      "text": "In the first place, if such an\ninflation is made mala fide, the Tribunal can always reject\nit. In the second place, it is hardly profitable for a\ncompany to resort to such a practice for under the\nWealth\nTax Act\nthe company would be liable to an increased\nassessment. Section 7(2)\nof that Act provides that where an\nassessee is carrying on a business for which accounts are\nmaintained regularly, the Wealth Tax Officer may instead of\ndetermining separate the value of each asset held by the\nassessee determine the net value of the asset of the\nbusiness as a whole having regard to the balance sheet of\nsuch business as on the valuation date. Kesoram\nIndustries v. Commissioner of Wealth Tax\n(1) the assessee\nsought\n(1) [1966] 2 S.C.R. 688.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1968_1968_12_P031_C01",
+      "text": "to argue exactly what Mr. Chari contended, namely, that the\nrevaluation of the assets made by him did not represent the\ntrue value of the assets. That contention was rejected and\nthis Court held that the Wealth Tax Officer was entitled to\nrely on such revaluation and proceed to assess on the basis\nof the net wealth shown as a result of such revaluation. We\ndo not, therefore, see any justification for the\napprehension felt by Mr. Chaff, for, by trying to reduce the\ngross profits, the Company would land itself into being\nassessed on a higher net wealth. The Tribunal was, in\nour view, right in accepting the figure of Rs. 57 lacs and\ndeducting interest thereon from the gross profits. There remains now the question regarding computation\nof direct taxes.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1968_1968_12_P031_C02",
+      "text": "Section 6(c)\nof the Act provides:\n\"subject to the provisions of\nsection 7\n, any\n direct tax which the employer is liable to\n pay for the accounting year in respect of his\n income, profits and gains during that year;\"\nSection 7\ninter alia provides:\n\"For the purpose of clause (c) of\nsection 6\n,\n any direct tax payable by the employer for any\n accounting year shall, subject to the\n following provisions. be calculated at the\n rates applicable to the income of the\n employer for that year, .......... The Company claim a deduction from the gross profits of\nRs, 145 lacs as direct taxes. It had made provision,\nhowever; for Rs. 130 lacs for direct taxes in the P & L\naccount. In its computation it had made a provision for Rs.\n136 Iacs. At the stage of the evidence and arguments it\ncontended however that the proper amount would be Rs. 145\nlacs. It claimed that direct taxes are to be worked out\nunder\nsec. 6(c)\non the gross profits worked out under\nsec. 4\nless the prior charges allowable under sec, 6, namely,\ndepreciation and development rebate, but without deducting\nfrom such balance the bonus payable by the Company in the\nparticular accounting year.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1968_1968_12_P031_C03",
+      "text": "The Tribunal accepted the\ncontention and allowed Rs. 145 lacs. as direct taxes to be\ndeducted under\ns. 6 (c)\n. This conclusion has been seriously disputed by the Unions. Mr. Chari's argument was that the Act lays down its own\nstatutory formula for working out available surplus and\nallocable surplus, that the deduction from gross profits\nallowable are those permissible under the Act, namely,\ndepreciation admissible in accordance with the provisions'\nsec. 32(1)\nof the Income-tax Act, the development rebate\nand subject to the provisions of\nsec. 7\nof the Act, the\namount of direct taxes which the employer \"is liable to pay\"\nfor the accounting year in respect of \"his income, profits\nand gains during that year\". Mr. Chari laid stress on the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_1968_1968_12_P032_C01",
+      "text": "words \"is liable to pay\"' and \"in respect of his income,\ngains and profits during that year\" and argued that inasmuch\nas cl. (c) incorporates 'the language of the\nIncome-tax Act\n,\nit contemplates that the employer is entitled to deduct his\nactual tax liability. Such liability, therefore, is to be\nworked out in accordance with the provisions of the Income-\ntax Act and other relevant Acts by first arriving at the\nactual taxable income, gains and profits under those Acts\nand then computing the taxes at rates provided by them for\nthat particular accounting year. He argued that since cl. (c) is subject to the provisions of\ns. 7\n, the only departure\npermissible under the Act is that which is provided in\ns. 7\n. His contention thus was that the Tribunal must start its\ncalculations from the net profit shown in the P & L account\nwhich would have made provision for direct taxes and then\ndeduct from the gross profits calculated under s. 4 the\nprior charges permissible under\ns. 6\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_1968_1968_12_P032_C02",
+      "text": "The provision for\ndirect taxes made in the P & L account would be computed\nafter deducting from the gross receipts such deductions,\nallowances, reliefs, rebates, credits etc. as are\npermissible under the\nIncome-tax Act\nwhich would include the\nbonus amount payable during the year, for, without such\ndeduction the P & L account cannot reflect the true net\nprofit of the employer. The Company's contention, on the\nother hand, was that the employer is entitled to compute his\ntax liability without deducting first the amount of bonus he\nwould be liable to pay from out of the amount computed under\ns. 4\nand\ns. 6\n. Mr. Palkhiwala submitted from the different\nprovisions of the Act that the concept of actual tax\nliability under the\nIncome-tax Act\nis foreign to the\nBonus\nAct\ninasmuch as the\nBonus Act\nis concerned with gross\nprofits calculated in accordance with\ns. 4\nand Sch. II, and\nthat s. 7 to which\ns. 6(c)\nis made subject, militates\nagainst the concept of actual tax liability as worked out\nunder the\nIncome-tax Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_1968_1968_12_P032_C03",
+      "text": "The contention was that prior to\nthe enactment of the Act when available surplus was worked\nout under the Full Bench Formula bonus was not deducted\nwhile arriving at. the amount of income-tax deductible from\ngross profits, that Parliament could not possibly have\ncontemplated a departure from the course followed in a\nnumber of decisions both of courts and tribunals and\nsuddenly decided to incorporate into this Act the\ncomplicated and elaborate provisions of the\nIncome-tax Act\nand throw the burden on Industrial Tribunals to work out\ndeductions, allowances, reliefs, rebates etc. under the\nIncome-tax Act\nand then finally to assess the actual tax\nliability. It was submitted that what has to be done by the\nTribunal is first to work out gross profits under\ns. 4\nand\nSch. II and then to deduct therefrom the prior charges under\ns. 6\n(a ) and (b) and estimate direct taxes on the balance\nand thus arrive at the available surplus. The controversy\nthus is one of principle rather than on the amount deducted\nby the Tribunal by way of direct taxes.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_1968_1968_12_P033_C01",
+      "text": "Before we attempt to resolve this controversy, it will be\nworth our while to recount the principle consistently follow\nbefore the passing of this Act, not with a view to interpret\ns. 6(c)\n, but to ascertain whether Parliament has made a\ndeparture from that principle and laid down a new\nprocedure on which direct taxes are to be computed. Mr. Chari's contention was that the\nBonus Act\nis drafted on a\nclean slate giving a go-bye to the earlier principle of\nworking out bonus, and, therefore, we must proceed on the\nfooting of the language used in\ns. 6(c)\n. At first sight it\nwould appear that the language of el. (c) lends support to\nhis contention. But acceptance of that contention would\nmean incorporating into the\nBonus Act\nthe elaborate and\ncomplicated provisions of not only the\nIncome-tax Act\nbut\nother Acts levying direct taxes and throwing a considerable\nburden on Tribunals, least equipped with working out the\nprovisions of those Acts entailing inevitably prolonged\nenquiries. Therefore, we must proceed cautiously in\nexamining the scheme of. the Act before we conclude\non the interpretation to be given to\ns. 6(c)\nand s. 7.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_1968_1968_12_P033_C02",
+      "text": "Calculating the avail. able surplus under the Full Bench\nFormula used to work out nationally the amount of bonus\nwhich they thought would be awarded and deducted that\namount from the gross profits, on the remaining balance of\nwhich, income tax payable by the employer would be\ndetermined. The result of this procedure was that the\namount of tax so worked out was proportionately less. Deprecating this procedure, Gajendragadkar, J., (as he then\nwas) observed in\nAssociated Cement Companies Ltd. v. The\nWorkmen\n(1) as follows:\n\"Logically it is only after all the prior\n charges have been determined and deducted from\n the gross profits that available surplus can\n be ascertained; and it is only after the\n available surplus is ascertained that the\n question of awarding bonus can be considered. Some tribunals seem 'to work out nationally\n the amount of bonus which they think can be\n awarded and placed that amount higher up in\n the process of making, calculations before the\n income-tax payable is determined .... We\n wish the make it clear that this procedure\n should not be followed.\"\nCrompton Parkinson (Works) Private Ltd. v.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_1968_1968_12_P033_C03",
+      "text": "Its Workmen\n(2)\ndisapproval of the said procedure was once again voiced,\nDas, C.J. observing that such a procedure is certainly not\ngiving effect to the bonus formula \"but amounts to ad hoc\ndetermination which may vary according to the length of the\nproverbial foot of the Lord Chancellor and is bound to lead\nto chaos and industrial unrest.\"\nIn Workmen of India\nExplosives Ltd. v. Indian Explosives\n(1) [1959] S.C.R 925at974. (2) [1959] Supp. 2S.C.R.\n936.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_1968_1968_12_P034_C01",
+      "text": "Ltd.(1) the labour relied on the report of the Directors\nwhich was to the effect that no income tax was payable on\nthe year's result and a total of Rs. 62.39 lacs made up of\nincome tax and development rebate was being carried forward. On this report it was argued that no. deduction should be\nmade for income tax. Negativing 'the contention it was held\nthat in the application of the Full Bench Formula the\ndeduction of income tax is notional, the gross profits are\narrived at by adding back certain items to the net profits\nand then the gross profits are reduced by making certain\nnotional deductions, one such deduction is under the head\nof income tax. It was held that this deduction is not made\non the actual amount payable, but what would be nationally\npayable on the profits determined under the Full Bench\nFormula and that if the argument on behalf of the labour\nwere to be accepted the Tribunal would in effect not be\napplying the formula. Similar observations are to be found\nin several other decisions but we need not add them here.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_1968_1968_12_P034_C02",
+      "text": "The question is whether the concept of notional tax\nliability which was adopted so long was laid aside by\nParliament when it enacted\ns. 6(c)\nand\ns. 7\nand replaced the\nconcept of actual tax liability. To answer this question we\nmust examine the scheme of the Act and Sch. II. Broadly\nspeaking, it can be safely said that Parliament has retained\nthe main outlines of the Full Bench Formula in the Act. It\nmaintained, for instance, the accounting year as the unit,\nthe principle that the employer, and where it happens to be\na company, the company and its shareholders and labour as\nare each entitled as contributories to the profits to a\nshare therein, the deductions of certain prior charges, the\nconcept of gross profits etc. which were the features of the\nFormula. The principal change it introduced was the\nstatutory formula of minimum and maximum bonus and the\ncorollary flowing therefrom of \"set on\" and \"set off\" and\nthe doing away of rehabilitation as a prior charge against\nwhich labour had clamored long.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_1968_1968_12_P034_C03",
+      "text": "But do these changes\nenvisage the doing away of the concept of notional tax\nliability which the Tribunals used to work out and\nsubstituting actual tax liability by first working out the\ntaxable income of, the employer under the\nIncome Tax Act\nand\nother Acts ? The answer of course, must be found from the\nprovisions of the Act and not from what used to be done\nbefore its enactment. Sections 4\n,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_1968_1968_12_P035_C01",
+      "text": "together with the Schedules deal with\ncomputation of gross profits and available surplus out of\nwhich 67% in cases falling under el. (a) of\nsec. 2(4)\nand",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_1968_1968_12_P036_C01",
+      "text": "% in cases falling under cl. (b) of that sub-section would\nbe the allocable surplus. Under Sch. II, which applies to\nestablishments which are not banking companies, the starting\npoint is the net profit\n(1) [1966] 2 L.L.J; 313.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_1968_1968_12_P037_C01",
+      "text": "shown by the employer in his P & L account. The reason for\ndoing so seems to be that the Tribunal is not expected\nordinarily to reopen the P & L account, verify the accounts\nfrom which it is worked out or find. out for itself 'the\ntrue net. profit. Parliament was award that Tribunals which\nwould adjudicate disputes under the Act would be the least\nefficacious for such a purpose, apart from the fact that\nsuch enquiries would be prolonged and bitter enquiries. That is why\ns. 23\nwas enacted to raise a presumption about\nthe correctness of 'the P & L account and balance-sheets of\ncompanies duly certified by auditors qualified under\ns. 226\nof the Companies Act, 1956. Since the P & L account would\nhave taken into account, besides expenditure allowable\nunder the\nIncome Tax Act\n, bonus payable to labour,\nprovisions for tax, development rebate or development\nallowance and reserves, Item 2 of Sch. II requires these\namounts to be added back. Similarly, the amounts set out in\nItems 3 & 4 in Sch. II are also to be added back.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_1968_1968_12_P037_C02",
+      "text": "Item 5\nprovides for certain deductions' such as capital receipts,\ncapital profits, profit and receipts relating to business\noutside India, income of foreign concerns from investments\noutside India etc. It is clear from the nature of these\ndeductible items that they are items in which generally\nlabour would not have made any contribution. Having thus\narrived at the gross profits, s. 6 provides for deduction of\nprior charges Set out in cls. (a), (b), (c) and (d). Clause\n(a) allows the deduction of depreciation admissible under\ns.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_1968_1968_12_P038_C01",
+      "text": "( 1 ) of the\nIncome Tax Act\nor a similar provision under\nother Acts charging direct taxes, but not depreciation\nunabsorbed in any earlier previous year by reason of there\nbeing no profits or gains chargeable for that year or of\nsuch profits or gains being less than the allowance\nallowable under\ns. 32(2)\nof the Income Tax Act. The result\nis that while making his P & L account the employer would\ndeduct both 'the depreciation allowable under\ns. 32(1)\nas.\nalso the depreciation unabsorbed during the earlier years. The whole of Such depreciation, however, has to be added\nback under item 2(b)of Sch. II while computing the gross\nprofits. Notwithstanding such adding back of depreciation\nallowable under both sub-secs. 1 & 2 of\ns. 32\nof the Income\nTax Act, the depreciation deductible under\ns.6(a)\nof the Act\nis the one allowed under\ns. 32(1)\n, that is, the depreciation\nrelating to the accounting year only and not the\ndepreciation unabsorbed in any earlier accounting year. Similar is the position regarding bonus paid during the\naccounting year but which relates to the earlier accounting\nyears.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_1968_1968_12_P038_C02",
+      "text": "Even in the case of an employer keeping his accounts\non mercantile basis, he would not get a deduction of bonus\nthough payable but not actually paid during the accounting\nyear. He would, however, be entitled to deduct such bonus\nfrom his taxable profits and gains as expenditure incurred\nwholly for the business. Under Sch. II Item 3(a) bonus,\neven though paid during the accounting year, has to be",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_1968_1968_12_P039_C01",
+      "text": "added back if it is deducted in-the P & L account. The net\nprofit in the P & L account: would thus not be the same as\nthe available surplus worked out under 'the Act, The same\nis the position of losses and expenditure relating to a\nforeign business which though allowable under' the\nIncome\nTax Act\nhave to be added back to the net profit shown in the\nP & L account. As already stated deductions permissible\nunder Sch. 11 are those items in which it can be said that\nlabour -could have made no contribution in earning them So\nfar as development rebate is concerned, s. 6(b) allows the\nwhole of such rebate allowable under the Income 'Fax Act\nand, therefore, there would be no difficulty in working out\nthe development rebate under this head and the\nIncome Tax\nAct\n. Coming now to cl. (c) of\ns. 6\n, is it the actual taxable\nincome, the direct tax on which is a prior charge, which is\nto be worked out, or the tax' on the estimated balance of\ngross profits after deducting depreciation and development\ncharges but without deducting the bonus payable during the\nyear ? In other words, when the Tribunal. reaches the\nstage' of cl.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_1968_1968_12_P039_C02",
+      "text": "(c), does it have to assess the taxable income\nin accordance with the various provisions of the\nIncome Tax\nAct\njust as an Income Tax Officer would do and assess the\nliability of income tax on such taxable income according to\nthe rates applicable during the particular accounting year,\nor should it compute the balance of gross profits and as\nstated above and apply the said rates and estimate the\namount of direct tax and deduct them from the remain gross\nprofits? Bonus being payable within eight months after the\nclose of the accounting year in cases.where there is no\ndispute pending before an authority under\ns. ,22\nof the Act\nas provided by\ns. 19\n, it is hardly possible, except in rare\ncases, that assessment under the\nIncome Tax Act\nand other\nsuch Acts would be completed by the time bonus has to be\npaid; Therefore, the Tribunal would not have before it the\ntaxable income assessed by the Income Tax and other such\nofficers.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_1968_1968_12_P039_C03",
+      "text": "If the Unions' contention were to be right, there\nwould be two or more parallel authorities working under this\nAct and the Income Tax Act\nand other such Acts who would\nhave to assess taxable income and the tax payable thereon,\nbefore all of whom the employer would have to prove his\ntaxable income. Prima facie, it would seem that the\nBonus\nAct\ncould not intend an enquiry into the actual taxable\nincome worked out under all the elaborate provisions\nrelating to deductions, allowances, reliefs, rebates etc.\nprovided by the\nIncome Tax Act\nand other such Acts. This is\nparticularly so as in each bonus dispute the Tribunal not\nequipped with the detailed knowledge of all such Acts would\nhave to undertake an. enquiry into the various deductions,\nrebates. reliefs etc. claimable by the employer under those\nActs. The fact that payment of bonus cannot brooke delay\nwithout causing",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_1968_1968_12_P040_C01",
+      "text": "hardship to labour would seem to militate against the\npossibility of such prolonged enquiries.\nThe key to the words in\ns. 6(c)\n, namely, \"is liable to pay\"\nemphasised on behalf of the unions and some of the\ninterveners lies in the opening words \"subject to the\nprovisions of\nsection 7\n\" in cl. (c). These words are used,\nwhether the tax liability is to be calculated on actual\ntaxable income or on the notional amount worked out under\nss. 4\nand",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_1968_1968_12_P041_C01",
+      "text": "and Sch. II, because the direct taxes payable by\nthe employer are to be calculated at the rates applicable\nduring that year as provided by\ns. 7\n. That both such\namounts cannot be the same is clear because\ns. 7\nin express\nterms prohibits taking into account unabsorbed losses and\narrears of depreciation allowable under s. 32(2), the\nexemption allowed under\ns. 84\nand the deduction allowed\nunder\ns. 101(1)\nof the Income Tax Act. Similarly, where an\nassessee is a religious or charitable institution and its\nincome either wholly or partially, as the case may be, is\nexempt under the\nIncome Tax Act\n, such an employer to whom\ns.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_1968_1968_12_P042_C01",
+      "text": "of the Act does not apply is treated as a company in\nwhich the public are substantially interested and its income\nis to be assessed accordingly by the Tribunal and compute\nits liability for direct taxes. Clause (c) of\ns. 7\ndoes\naway for the purposes of\nss. 6\nand",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_1968_1968_12_P043_C01",
+      "text": ", the distinction\nbetween the liability of an individual and a Hindu Undivided\nFamily under the\nIncome Tax Act\nand provides that the income\nderived by such a Hindu Undivided Family is to be treated as\nthe income of that employer as an individual. Likewise,\nwhere profits and gains of an employer include profits from\nexport, a rebate allowed under the\nIncome Tax Act\non such\nprofits is not to be taken into account while working out\nthe tax. liability under\ns. 6(c)\n. Also, the rebate allowed\nunder any of the Acts levying direct taxes on sums spent on\ndevelopment of an industry is also not to be taken into\naccount while computing the tax liability. It was, however,\nargued that the provisions of\ns. 7\nlay down the only\ndeparture from the\nIncome Tax Act\nand that except for that\ndeparture the Tribunal must assess the actual taxable income\nand arrive at the tax liability thereon at rates prevailing\nduring the accounting year in question. In our view this\nsubmission is not correct.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_1968_1968_12_P043_C02",
+      "text": "What\ns. 7\nreally means is that\nthe Tribunal has to compute the direct taxes at the rates at\nwhich the income, gains and profits of the employer are\ntaxed under the\nIncome Tax Act\nand other such Acts during\nthe accounting year in question. That is the reason why s.\n6(c) has the words \"is liable for\" and the words \"income,\ngains and profits\". These words do. not, however, mean\nthat the Tribunal while computing direct taxes as a\nprior charge has to assess the actual taxable income and the\ntaxes thereon. How can the Tribunal arrive at the amount of\nbonus to be paid to labour without first estimating the\namount of taxes and deducting it from the gross profits and\nthus ascertaining the",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_1968_1968_12_P044_C01",
+      "text": "available surplus ? If it were to reverse the process and\nfirst deduct bonus and ascertain the tax amount, it would\nhave to do so on a somewhat ad hoc figure thus bringing\nabout the same result deprecated by this Court in decisions\nreferred to above. This and the other difficulties already\npointed out must deal to the result that the Tribunal must\nestimate the amount of direct taxes on the balance of gross\nprofits as worked out under\nss. 4\n&",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_1968_1968_12_P045_C01",
+      "text": ", but without deducting\nthe bonus, then work out the quantum of taxes thereon at\nrates applicable during that year to the income, gains and\nprofits of the employer and after deducting the amount of\ntaxes so worked out arrive at the available surplus.\nSection\n6(c)\nbeing subject to\ns. 7\nthe computation has to be done\nwithout taking into account the items specified in\ns. 7(a)\nand in the manner prescribed by the remaining clauses of\nthat section. This interpretation is commendable because: (1\n) it is consistent with the words \"is liable to pay\" in s.\n6(c), (2) it is in harmony with the provisions of\nss. 4\nand",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_1968_1968_12_P046_C01",
+      "text": "and Sch. 11, and (3) it is consistent with the intention\nof Parliament apparent from the scheme of computation of\navailable surplus in the Act. The Act\nrecognises the\nprinciple laid down in the Full Bench Formula that both\nlabour and capital are entitled to a share in the profits. That is why 40 p.o. of the available surplus is left to the\ncapital and interest is allowed to the employer on paid up\nand working capitals while working out the gross profits. Parliament besides was or at any rate is presumed to have\nbeen aware that depreciation allowed under the\nIncome Tax\nAct\nwould not be sufficient for rehabilitation purposes. It\ndid away with rehabilitation as a prior charge partly\nbecame there were complaints that it was being ill-used,\nbut partly also because it knew that the rebate in\nIncome\nTax Act\non bonus paid would go to the employer with which he\ncould recoup the depreciation which would be larger than the\none allowed under\ns. 32\nof the Income Tax Act. In our view\nit was for that reason that it did not lay down that bonus\nis to be deducted before computing the amount on which\ndirect taxes are to be calculated under s. 6(c).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_1968_1968_12_P046_C02",
+      "text": "Parliament intended to make a departure from the rule laid\ndown by courts and tribunals that the bonus amount should be\ncalculated after provision for tax was made and not before,\nwe would have. expected an express provision to that effect\neither in the Act or in the Schedules. 'In our view the\ncontention urged by the Company that the tax liability is to\nbe worked out by first working out the gross profits and\ndeducting therefrom the prior charges under\ns. 6\nbut not the\nbonus payable to the employees is right. In the result, the appellant Company succeeds on the\nquestions of development rebate and the provision for\ngratuity amount. Its appeal on those questions is therefore\nallowed and to that extent the award is set aside. As\nregards the question of depreciation",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_1968_1968_12_P047_C01",
+      "text": "amount the Tribunal will ascertain the amount afresh after\ngiving the parties opportunity to lead such evidence as they\ndesire and taking that amount and the amounts of development\nrebate and' of the provision for gratuity in the light of\nthis judgment, the Tribunal will adjust it award and arrive\nat the quantum of bonus payable to the workmen.\nAppeal by workmen is dismissed. There will be no order as\nto costs.\nR.K.P.S. Appeal by Company allowed in part.\nAppeal by Workmen dismissed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Mental Box Co. Of India Ltd vs Their Workme",
+    "case_id": "SC_1968_1968_12",
+    "court": "Supreme Court of India",
+    "year": "1968",
+    "facts_summary": "ACT:\nBonus Acr, 1965 ss. 4, 6, 7-Scope of-Computation of\nbonus-Principles for deduction from gross profits on\naccount of depreciation, development rebate, and estimated\nliability for gratuity-Treatment of interest on capital\nreserve attributable to revaluation of assets-Principles for\ndetermining allowance for direct taxes that employer \"is\nliable to pay\". HEADNOTE:\nIn a dispute between the appellant and its workmen relating\nto the computation of bonus under the\nPayment of Bonus Act, In its award the Tribunal allowed Rs. 23.48 lakhs instead of\nIts. 28.82 lakhs claimed by the company as depreciation. Similarly it allowed only Rs. 7 lakhs instead of Rs. 8.8\nlakhs claimed by the company as development rebate. The\nTribunal held that the amount of Rs. 18.38 lakhs claimed\nunder the head of gratuity was not a reserve but a provision\nand therefore, was not liable to be added back, but it held\nthat the company could deduct only about Rs. 10 lakhs as\nalso Rs. 1.31 lakhs and Rs. 87,000/- actually paid\nduring the year to employees who retired during that year\nand added back the balance of Rs. 6 lakhs to the gross\nprofits. Except for these amounts, the Tribunal accepted\nthe rest of the company's computation. Both the Unions and\nthe Company obtained special leave and fled appeals\nchallenging the correctness of the Tribunal's award.",
+    "legal_issues": ", the Company contended that the available surplus came\nto Rs. 49.96 lakhs sixty pet cent of which, namely, Rs.\n29.98 lakhs was the allocable surplus. The employees\ndisputed the computation claiming that the Company had\nwrongly reduced the gross profits and the available surplus\nand contended, inter alia, that certain amounts deducted on\naccount of provisions for gratuity and for doubtful debts\nshould be added back; they challenged a deduction of\ninterest on reserves on the ground that the capital reserve\nwas artificially arrived at by a mere revaluation of the\ncompany's fixed assets as on April 1, 1956; and also\ndisputed the figures of depreciation, development rebate and\ndirect taxes deducted by the company while working out the\navailable surplus. The Unions disputed the amount of Rs. 28.82 lakhs worked\nout by the Company's auditors as depreciation in accordance\nwith the\nIncome-tax Act, 1961\non the ground (1) that there\nwas no evidence that the amount of depreciation came to\nRs. 28.82 lakhs; and (2) that since the profit and loss\naccount mentioned Rs. 23.48 lakhs as depreciation, the\nCompany could only claim that amount. JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeals Nos. 2138 and\n2196 of 1966. Appeals by special leave from the Award dated June 27, 1966\nof the Sixth Industrial Tribunal, West Bengal in Case No. VIII-251 of 1965. N. A. Palkhivala, Jatinder Mahajan, O.C. Mathur and Ravinder\nNarain, for the appellant (in C.A. No. 2138 of 1966) and the\nrespondent (in C.A.",
+    "ratio_summary": "of the Bonus Act, the Company is entitled to deduct from\nits gross profits depreciation admissible under\nSection\n32(1)\nof the. Income-tax Act\n, i.e., such percentage on the'\nwritten down value as may, in the case of each of the\nclasses of assets, be prescribed. It was for this reason\nthat Rs. 23.48 lakhs were shown as depreciation in the\nProfit and Loss Account by the Company while in the\ncomputation for bonus the company claimed Rs. 28.82 lakhs\nas. depreciation. [755 H--756 B]\nSince the Company claimed the deduction of depreciation, the\nburden of proof that the amount claimed was in accordance\nwith the\nIncome-tax Act\nwas on the Company and that burden\nthe company must discharge once its figures were challenged. It was not sufficient for it to produce its auditors'\ncertificates. The question as to the correct amount of\ndepreciation must therefore go back to the Tribunal for a\nfurther decision. The Tribunal must give an opportunity to\nthe Company to prove its claim for depreciation by\nreasonable proof and to the Unions to test such, evidence by\ncross-examination or otherwise. [757 D]\nKhandesh Spg. & Wvg. Mills Co. Ltd. v. The proper course for the Tribunal in such a\ncase was to insist upon the company adducing legal evidence\nin support of its claim instead of taking the figure of\ndepreciation from the P & L account which was not worked out\nin accordance with the\nIncome Tax Act\nbut under\nsec. 205\nthe Companies Act, and saying that the Company had failed to\nprove that it was a m",
+    "final_order": "by the company as development rebate. As regards Rs. 18.38\nlacs claimed under the head of gratuity, the Tribunal held\nthat amount was not a reserve but a provision and,\ntherefore, was not liable to be added 'back. But it held\nthat the company could deduct only Rs. 10 lacs and odd as\nalso Rs. 1.31 lacs and Rs. 87,000/- and odd actually paid\nduring the year to employees who retired during that year\nand added back the balance of Rs. 6 lacs to the gross\nprofits. Except for these amounts, the TribUnal accepted\nthe rest of the company's computation. In the result the\nTribunal found the available surplus and the allocable\nsurplus to be 54 lakhs and odd and Rs. 32.42 lacs\nrespectively and directed payment of bonus at 14.55 per cent\nof the total wages. Both the Unions and the company obtained\nspeci",
+    "outcome_summary": "by the company as development rebate. As regards Rs. 18.38\nlacs claimed under the head of gratuity, the Tribunal held\nthat amount was not a reserve but a provision and,\ntherefore, was not liable to be added 'back. But it held\nthat the company could deduct only Rs. 10 lacs and odd as\nalso Rs. 1.31 lacs and Rs. 87,000/- and odd actually paid\nduring the year to employees who retired during that year\n",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

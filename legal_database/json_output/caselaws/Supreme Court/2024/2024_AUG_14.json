@@ -1,0 +1,461 @@
+{
+  "case_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA",
+  "case_name": "Sri Dattatraya vs Sharanappa",
+  "normalized_case_name": "SRI_DATTATRAYA_VS_SHARANAPPA",
+  "court": "Supreme Court of India",
+  "year": "2024",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 3257 of 2024",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "7 August 2024",
+  "judges": [
+    "B.V. Nagarathna"
+  ],
+  "author": "B.V. Nagarathna",
+  "bench_type": "single",
+  "petitioner": "Sri Dattatraya",
+  "respondent": "Sharanappa",
+  "reporter_citations": [
+    "2024 INSC 586"
+  ],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 30,
+  "cited_by_count": 0,
+  "neutral_citation": "2024 INSC 586",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2024\\AUG\\2024_AUG_14.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P001_C01",
+      "text": "REPORTABLE\n\n CRIMINAL APPELLATE JURISDICTION\n\n CRIMINAL APPEAL NO. 3257 OF 2024\n (@ SLP (CRIMINAL) NO. 13179 OF 2023)\n\n SRI DATTATRAYA … APPELLANT\n VERSUS\n SHARANAPPA … RESPONDENT\n\n J U D G M E N T\nAUGUSTINE GEORGE MASIH, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P002_C01",
+      "text": "2. The instant appeal was originally preferred as a petition\n\n before this Court, which is moved against the impugned\n\n Judgment dated 03.03.2023 in Criminal Appeal No.\n\n 200139 of 2019 by the High Court of Karnataka at\n\n Kalaburagi whereby the learned Single Judge affirmed\n\n the acquittal of the Respondent in Complaint Case No.\n\n 468 of 2014 moved for the offence punishable under\n\nSection 138\nof the Negotiable Instruments Act, 1881\n3. The factual backdrop giving rise to the present challenge\n\n is that the Appellant is the original complainant who\n\n claims to know the sole Respondent for the last six years\n\n and that he had borrowed INR 2,00,000/- (Rupees Two\n\n Lakhs only) from the Appellant on account of family\n\n necessities and accommodation. Against the said loan\n\n the Respondent issued a cheque bearing No. 015639\n\n which was drawn on the Bank of India, as a guarantee\n\n against repayment. He was to repay the said loan\n\n amount within a period of six months thereof. An\n\n agreement to this effect was also signed between the\n\n parties.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P003_C01",
+      "text": "4. However, since the Respondent failed to repay the loan\n\n despite repeated requests, the Appellant presented the\n\n concerned cheque for encashment on 22.10.2013, but\n\n nevertheless, as per the Bank Memo dated 24.10.2013,\n\n the cheque was dishonoured on account of “insufficient\n\n funds”.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P004_C01",
+      "text": "5. Aggrieved from the said dishonour of cheque, a Demand\n\n Notice dated 31.10.2013 was sent by the Appellant to\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 2 of 28\nthe Respondent, whereby, the Counsel on behalf of the\n\n Appellant alleged that the Respondent had intentionally\n\n cheated him and had not made any efforts to discharge\n\n his liability. Accordingly, the Respondent was said to\n\n have committed offences punishable under\nSection 138\nof the NI Act 1881 and\nSection 420\nof the Indian Penal\n\n Code, 1860 (hereinafter referred to as “\nIPC\n1860”).",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "IPC 420"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P005_C01",
+      "text": "6. Thereupon, the Respondent moved a Reply Notice dated\n\n 11.11.2013 whereby he claimed that the accusations\n\n made by the Appellant are false and bereft of pertinent\n\n details of the loan transaction, inter alia, the date and\n\n time of advancement of the said debt, which as claimed,\n\n was never advanced.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P006_C01",
+      "text": "7. Unsatisfied with the response of the Respondent\n\n through the said Reply Notice, Appellant moved a Private\n\n Complaint No. 991 of 2013 under\nSection 200\nof the\n\n Code of Criminal Procedure, 1973 (hereinafter referred\n\n to as “\nCrPC\n1973”). The said complaint came to be\n\n registered as CC/468/2014 before Judicial Magistrate\n\n First Class at Gulbarga. As part of the proceedings\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 3 of 28\nbefore the Trial Court, the Appellant examined himself\n\n as PW-01, while the Respondent examined himself as\n\n DW-01. However, the latter did not mark any documents\n\n from his side. It was the Respondent’s plea that the\n\n concerned cheque was issued in favour of one Mr\n\n Mallikarjun in the year 2012 for security purposes,\n\n however, he did not return the same to the Respondent,\n\n and instead had left the village. While dealing with the\n\n said contention, the Trial Court observed that the\n\n Respondent had failed to explain as to how the cheque\n\n landed in the hands of the Appellant, and for what\n\n purpose was the cheque issued to Mr Mallikarjun.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P007_C01",
+      "text": "8. It was also revealed as part of the statement during\n\n cross-examination of the Appellant that the cheque was\n\n originally, not given to the Appellant as security cheque.\nInstead, the same was allegedly given to the Appellant\n\n after the Respondent had thereby failed to repay his\n\n liability as existing against the Appellant after a period\n\n of six months. The Court further observed that the\n\n Agreement marked by the Appellant to assist his case\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 4 of 28\ndoes not include signature of the Respondent as against\n\n the terms of the agreement, but a signature is made by\n\n the Respondent on the stamp paper itself, and the same\n\n is not sustainable in the eyes of law. The Court also went\n\n on to scrutinize the Income Tax Returns of the Appellant,\n\n from where it was revealed that the Appellant failed to\n\n declare the alleged loan transaction as part of his\n\n returns to the Income Tax Department. Accordingly, vide\n\n its Judgment dated 18.10.2019, the Trial Court\n\n adjudicated in favour of the Respondent, resultantly\n\n dismissing the complaint moved by the Appellant and\n\n acquitting the Respondent.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P008_C01",
+      "text": "9. Aggrieved by the decision of Trial Court, the Appellant\n\n moved the High Court of Karnataka in Criminal Appeal\n\n No. 200139 of 2019, which went on to observe that,\n\n admittedly, there was a contradiction in the statement\n\n of the Appellant as to when the cheque was issued in his\n\n favour. Furthermore, as was laid down in the decision\n\n of this Court in\nRangappa v. Sri Mohan1\n, the\n\n1 (2010) 11 SCC 441.\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 5 of 28\npresumption under\nSection 139\nof the NI Act 1881 is a\n\n rebuttable one. The contention of the Respondent as to\n\n the financial capacity of the Appellant to grant a loan in\n\n his favour was to be discharged by him, and being\n\n unable to do so, it shall be presumed that a loan\n\n transaction had not taken place. Accordingly, the\n\n findings of the Trial Court were affirmed in the impugned\n\n Judgment dated 03.03.2023.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P009_C01",
+      "text": "10. The Appellant has thereupon moved this Court in\n\n challenge to the said impugned judgment on the\n\n grounds that as the signature on the concerned cheque\n\n was admitted by the Respondent, the Appellant was able\n\n to successfully raise a presumption under\nSection 139\nof the NI Act 1881 and as per the submissions of the\n\n Respondent, he had failed to rebut the said\n\n presumption. He also put forth that the reliance on the\n\n decision in\nRangappa\n(supra) by the High Court was\n\n misplaced, and even going by the standard of\n\n preponderance of probabilities, the Respondent failed to\n\n discharge his onus.\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 6 of 28\n11. Having heard the learned Senior Advocate for the\n\n Appellant as well as the learned Counsel on behalf of the\n\n Respondent, it is imperative to deliberate over the\n\n position of law apropos the applicable provisions of the\nNI Act\n1881, and others, if any.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P010_C01",
+      "text": "12. Earlier, a case of dishonour of a cheque was dealt\n\n through provisions of Section 420 read with\nSection 415\nof the IPC 1860. To enhance the acceptability of cheques\n\n as well as to provide for adequate safeguards to prevent\n\n harassment of honest drawers through painting the\n\n liability arising out of dishonour of a cheque with a\n\n punitive brush, an amendment to the\nNI Act\n1881 was\n\n brought about by introducing Chapter VIII. Thence,\n\n seeking to promote credibility in transactions through\n\n the medium of banking channels and operations as well\n\n as their efficacy. Section 138\nof the NI Act 1881 is\n\n reproduced below as:\n“138. Dishonour of cheque for insufficiency, etc.,\n of funds in the account.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P010_C02",
+      "text": "Where any cheque drawn by a person on an account\n maintained by him with a banker for payment of any\n amount of money to another person from out of that\n account for the discharge, in whole or in part, of any\n debt or other liability, is returned by the bank unpaid,\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 7 of 28\neither because of the amount of money standing to the\n credit of that account is insufficient to honour the\n cheque or that it exceeds the amount arranged to be\n paid from that account by an agreement made with that\n bank, such person shall be deemed to have committed\n an offence and shall, without prejudice to any other\n provision of this Act, be punished with imprisonment for\n a term which may be extended to two years’, or with\n fine which may extend to twice the amount of the\n cheque, or with both:\nProvided that nothing contained in this section shall\n apply unless—\n(a) the cheque has been presented to the bank\n within a period of six months from the date on\n which it is drawn or within the period of its\n validity, whichever is earlier;\n(b) the payee or the holder in due course of the\n cheque, as the case may be, makes a demand for\n the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P010_C03",
+      "text": "payment of the said amount of money by\n giving a notice; in writing, to the drawer of the\n cheque, within thirty days of the receipt of\n information by him from the bank regarding the\n return of the cheque as unpaid; and\n(c) the drawer of such cheque fails to make the\n payment of the said amount of money to the\n payee or, as the case may be, to the holder in due\n course of the cheque, within fifteen days of the\n receipt of the said notice.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P010_C04",
+      "text": "Explanation.—For the purposes of this section, “debt of\n other liability” means a legally enforceable debt or\n other liability.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P011_C01",
+      "text": "13. This Court in ICDS Ltd. v. Beena Shabeer and\n\n Another2, has held that proceedings under\nSection 138\nof the NI Act 1881 can be initiated even if the cheque\n\n2 (2002) 6 SCC 426.\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 8 of 28\nwas originally issued as security and was subsequently\n\n dishonoured owing to insufficient funds. The failure to\n\n honour the concerned cheque is per se deemed as a\n\n commission of an offence under\nSection 138\nof the NI\n\n Act 1881.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P012_C01",
+      "text": "14. The NI Act\n1881 enlists three essential conditions that\n\n ought to be fulfilled before the said provision of law can\n\n be invoked. Firstly, the cheque ought to have been\n\n presented within the period of its validity. Secondly, a\n\n demand of payment ought to have been made by the\n\n presenter of the cheque to the issuer, and lastly, the\n\n drawer ought to have had failed to pay the amount\n\n within a period of 15 days of the receipt of the demand.\n\n These principles and pre-requisites stand well\n\n established through Judgment of this Court in\nSadanandan Bhadran v. Madhavan Sunil Kumar3\n.\n\n There is an explicit limitation of 30 days, beginning from\n\n period when the cause of action arose, prescribed by the\n\n3 (1998) 6 SCC 514.\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 9 of 28\nstatute vide\nSection 142(b)\nof the NI Act 1881 to initiate\n\n proceedings under\nSection 138\nof the NI Act 1881.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P013_C01",
+      "text": "15. Furthermore, this Court expounded that the issuance of\n\n cheque towards a liability, the presentation of the\n\n cheque within the prescribed period, its return on\n\n account of dishonour, notice to the accused, and failure\n\n to pay within 15 days thereof, stand as sine qua non for\n\n an offence under\nSection 138\nof the NI Act 1881 as per\n\n the decision in\nK. Bhaskaran v. Sankaran Vaidhyan\n\n Balan and Another4\n. The same was subsequently\n\n reiterated in numerous judgments of this Court as well\n\n as that of the High Courts.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P014_C01",
+      "text": "16. While referring to the period of limitation of one month\n\n of filing a complaint for the purpose of\nSection 138\nof the\n\n NI Act 1881, the same is to begin after the drawer of the\n\n cheque has failed to discharge his liability to the\n\n presenter within the prescribed period of 15 days as per\n\n the Proviso (c) to\nSection 138\nof the NI Act 1881. A co-\n\n joint reading of\nSections 138\nand\n\nof the NI Act 1881\n\n4 (1999) 7 SCC 510.\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 10 of 28\nmakes it clear that the cause of action only arises after\n\n the failure of the drawer to pay, subsequent to the\n\n receipt of the notice, and the complainant is restricted\n\n from initiating multiple complaints against the\n\n concerned drawer at different stages contemplated prior.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P015_C01",
+      "text": "17. Furthermore, in light of such object encapsulated in the\n\n Amendment to Chapter VIII, the Parliament by virtue of\nSection 143\nof the NI Act 1881 prescribed procedure of\n\n summary trial enlisted in provisions of\nSections 260\n\nof the CrPC 1973 to be adopted during proceedings\n\n under\nSection 138\nof the NI Act 1881. Therefore, it can\n\n be observed that the court shall adopt a liberal approach\n\n with regard to attendance of an accused person and\n\n until an accused’s presence is indispensable, a court can\n\n allow for an exemption, in case of existence of any\n\n exceptional circumstances. Moreover, issuance of a non-\n\n bailable warrant in case of absence of the accused, at\n\n the first instance, shall, due to any circumstance, be\n\n avoided. Criminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 11 of 28\n18. As the presumption contemplated by virtue of\nSection\n\nof the NI Act 1881 entails,\nSection 139\nwas similarly\n\n introduced to provide for a presumption that the holder\n\n of cheque had received the concerned issued cheque\n\n towards discharging of the liability of the drawer, either\n\n in whole or in part.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P015_C02",
+      "text": "Therefore, at this juncture, it is ideal\n\n to make a reference to\nSection 118\nof the NI Act 1881,\n\n which is reproduced as:\n“118.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P015_C03",
+      "text": "Presumptions as to negotiable instruments\n Until the contrary is proved, the following presumptions\n shall be made:—\n(a) of consideration:—that every negotiable\n instrument was made or drawn for\n consideration, and that every such instrument,\n when it has been accepted, indorsed, negotiated\n or transferred, was accepted, indorsed,\n negotiated or transferred for consideration;\n(b) as to date:—that every negotiable instrument\n bearing a date was made or drawn on such date;\n(c) as to time of acceptance:—that every accepted\n bill of exchange was accepted within a\n reasonable time after its date and before its\n maturity;\n(d) as to time of transfer: —that every transfer of a\n negotiable instrument was made before its\n maturity;\n(e) as to order of indorsements:—that the\n indorsements appearing upon a negotiable\n instrument were made in the order in which they\n appear then on;\n(f) as to stamp:— that a lost promissory note, bill of\n exchange or cheque was duly stamped;\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 12 of 28\n(g) that holder is a holder in due course:—that the\n holder of a negotiable instrument is a holder in\n due course: provided that, where the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P015_C04",
+      "text": "instrument\n has been obtained from its lawful owner, or from\n any person in lawful custody thereof, by means\n of an offence or fraud, or has been obtained from\n the maker or acceptor thereof by means of an\n offence or fraud, or for unlawful consideration,\n the burden of proving that the holder is a holder\n in due course lies upon him.”\nChapter XIII of the NI Act\n1881, of which\nSection 118\n\n a part, lays down special rules for evidence to be\n\n adduced within the scheme of the Act herein.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P015_C05",
+      "text": "As the text\n\n of the said provision showcases, it raises a rebuttable\n\n presumption as against the drawer to the extent that the\n\n concerned negotiable instrument was drawn and\n\n subsequently accepted, indorsed, negotiated, or\n\n transferred for an existing consideration, and the date\n\n so designated on such an instrument is the date when\n\n the concerned negotiable instrument was drawn. It is\n\n also further presumed that the same was transferred\n\n before its maturity and that the order in which multiple\n\n indorsements appear on such an instrument, that is the\n\n deemed order thereon. Lastly, the holder of a negotiable\n\n instrument is one in its due course, subject to a\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 13 of 28\nsituation where the concerned instrument while being\n\n obtained from a lawful owner and from his or her lawful\n\n custody thereof through undertaking of an offence as\n\n contemplated under any statute or through the means\n\n of fraud, the burden to prove him or her being a holder\n\n in due course, instead, lies upon such a holder.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P016_C01",
+      "text": "19. Accordingly, to begin with, the bare provision of\nSection\n\nof the NI Act 1881 is reproduced herein below:\n“139. Presumption in favour of holder—It shall be\n presumed, unless the contrary is proved, that the\n holder of a cheque received the cheque of the nature\n referred to in\nsection138\nfor the discharge, in whole or\n in part, of any debt or other liability.”\n\n The aforesaid presumption entails an obligation on the\n\n court conducting the trial for an offence under\nSection\n\nof the NI Act 1881 to presume that the cheque in\n\n question was issued by the drawer or accused for the\n\n discharge of a particular liability. The use of expression\n\n “shall presume” ameliorates the conundrum pertaining\n\n to the right of the accused to present evidence for the\n\n purpose of rebutting the said presumption.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P016_C02",
+      "text": "Furthermore, the effect of such presumption is that,\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 14 of 28\nupon filing of the complaint along with relevant\n\n documents, thereby prima facie establishing the case\n\n against the drawer, the onus of proof shifts on the\n\n drawer or accused to adduce cogent material and\n\n evidence for rebutting the said presumption, and as\n\n established in\nLaxmi Dyechem v. State of Gujarat and\n\n Others5\n, based on preponderance of probabilities.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P017_C01",
+      "text": "20. While describing the offence envisaged under\nSection\n\nof the NI Act 1881 as a regulatory offence for largely\n\n being in the nature of a civil wrong with its impact\n\n confined to private parties within commercial\n\n transactions, the 3-Judge Bench in the decision of\nRangappa\n(supra) highlighted\nSection 139\nof the NI Act\n\n 1881 to be an example of a reverse onus clause. This is\n\n done so, as the Court expounds, in the light of\n\n Parliament’s intent, which can be culled out from the\n\n peculiar placing of act of dishonour of cheque in a\n\n statute having criminal overtones. The underlying object\n\n of such deliberate placement is to inject and enhance\n\n5 (2012) 13 SCC 375. Criminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 15 of 28\ncredibility of negotiable instruments. Additionally, the\n\n reverse onus clause serves as an indispensable “device\n\n to prevent undue delay in the course of litigation”. While\n\n acknowledging the test of proportionality and having laid\n\n the interpretation of\nSection 139\nof the NI Act 1881\n\n hereof, it was further held that an accused cannot be\n\n obligated to rebut the said presumption through an\n\n unduly high standard of proof.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P017_C02",
+      "text": "This is in light of the\n\n observations\nlaid down by\na co-ordinate Bench in\nHiten\n\n P. Dalal v. Bratindranath Banerjee6\n, whereby it was\n\n clarified that the rebuttal ought not to be undertaken\n\n conclusively by an accused, which is reiterated as\n\n follows:\n“23. In other words, provided the facts required to form\n the basis of a presumption of law exist, no discretion is\n left with the court but to draw the statutory conclusion,\n but this does not preclude the person against whom the\n presumption is drawn from rebutting it and proving the\n contrary. A fact is said to be proved when,\n ‘after considering the matters before it, the court\n either believes it to exist, or considers its existence\n so probable that a prudent man ought, under the\n circumstances of the particular case, to act upon\n the supposition that it exists’ [\nSection 3\n, Evidence\n Act].\n6 (2001) 6 SCC 16.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P017_C03",
+      "text": "Criminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 16 of 28\nTherefore, the rebuttal does not have to be conclusively\n established but such evidence must be adduced before\n the court in support of the defence that the court must\n either believe the defence to exist or consider its\n existence to be reasonably probable, the standard of\n reasonability being that of the ‘prudent man’.”\n\n Therefore, it may be said that the liability of the defence\n\n in cases under\nSection 138\nof the NI Act 1881 is not that\n\n of proving its case beyond reasonable doubt.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P018_C01",
+      "text": "21. In light of the aforesaid discussion, and as underscored\n\n by this Court recently in the decision of\nRajesh Jain v.\n\n Ajay Singh7\n, an accused may establish non-existence of\n\n a debt or liability either through conclusive evidence that\n\n the concerned cheque was not issued towards the\n\n presumed debt or liability, or through adduction of\n\n circumstantial evidence vide standard of preponderance\n\n of probabilities.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P019_C01",
+      "text": "22. Since a presumption only enables the holder to show a\n\n prima facie case, it can only survive before a court of law\n\n subject to contrary not having been proved to the effect\n\n that a cheque or negotiable instrument was not issued\n\n for a consideration or for discharge of any existing or\n\n7 (2023) 10 SCC 148.\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 17 of 28\nfuture debt or liability.\nIn this backdrop, it is pertinent\n\n to make a reference to a decision of 3-Judge Bench in\nBir Singh v. Mukesh Kumar8\n, which went on to hold\n\n that if a signature on a blank cheque stands admitted to\n\n having been inscribed voluntarily, it is sufficient to\n\n trigger a presumption under\nSection 139\nof the NI Act\n\n 1881, even if there is no admission to the effect of\n\n execution of entire contents in the cheque.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P020_C01",
+      "text": "23. It is therefore apposite to make a reference to the\n\n provision of\nSection 140\nof the NI Act 1881, which\n\n ruminates mens rea to be immaterial while dealing with\n\n proceedings under\nSection 138\nof the NI Act 1881. The\n\n said legislative wisdom of the Parliament which is\n\n imbibed in the bare text of the provision is reproduced\n\n as below:\n“140. Defence which may not be allowed in any\n prosecution under\nsection 138\n—It shall not be a\n defence in a prosecution for an offence under\nsection\n\nthat the drawer had no reason to believe when he\n issued the cheque that the cheque may be dishonoured\n on presentment for the reasons stated in that section.”\n\n8 (2019) 4 SCC 197. Criminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 18 of 28\n24.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P020_C02",
+      "text": "Through this legal fiction adopted by the legislature vide\n\n Amendment Act of 1988 to the\nNI Act\n1881 it has barred\n\n the drawer of a cheque, which was dishonoured, to take\n\n a defence that at the time of issuance of the cheque in\n\n question he or she had no reason to believe that the\n\n same will be dishonoured upon being presented by the\n\n holder of such a cheque, especially and specifically for\n\n the reasons underlined in\nSection 138\nof the NI Act",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P021_C01",
+      "text": "25. A comprehensive reference to the\nSections 118\n,\n\nand\n\nof the NI Act 1881 gives birth to a deemed fiction\n\n which was also articulated by this Court in\nK.N. Beena\n\n v. Muniyappan and Another9\nas follows:\n“Under\nsection 118\n, unless the contrary was proved, it\n is to be presumed that the negotiable instrument\n (including a cheque) had been made or drawn for\n consideration. Under\nsection 139\nthe court has to\n presume, unless the contrary was proved, that the\n holder of the cheque received the cheque for discharge,\n in whole or in part, of a debt or liability. Thus, in\n complaints under\nsection 138\n, the court has to presume\n that the cheque had been issued for a debtor’s liability.\n This presumption is rebuttable. However, the burden of\n proving that a cheque had not been issued for a debt or\n liability is on the accused. The Supreme Court in the\n\n9 (2001) 8 SCC 458.\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 19 of 28\ncase of\nHiten P. Dalal v. Bratindranath Banerjee\nhas\n also taken an identical view.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P022_C01",
+      "text": "26. Furthermore, on the aspect of adducing evidence for\n\n rebuttal of the aforesaid statutory presumption, it is\n\n pertinent to cumulatively read the decisions of this\n\n Court in\nRangappa\n(supra) and\nRajesh Jain\n(supra)\n\n which would go on to clarify that accused can\n\n undoubtedly place reliance on the materials adduced by\n\n the complainant, which would include not only the\n\n complainant’s version in the original complaint, but also\n\n the case in the legal or demand notice, complainant’s\n\n case at the trial, as also the plea of the accused in the\n\n reply notice, his\nSection 313\nCrPC 1973 statement or at\n\n the trial as to the circumstances under which the\n\n promissory note or cheque was executed. The accused\n\n ought not to adduce any further or new evidence from\n\n his end in said circumstances to rebut the concerned\n\n statutory presumption.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "CrPC 313"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P023_C01",
+      "text": "27. Applying the aforementioned legal position to the\n\n present factual matrix, it is apparent that there existed\n\n a contradiction in the complaint moved by the Appellant\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 20 of 28\nas against his cross-examination relatable to the time of\n\n presentation of the cheque by the Respondent as per the\n\n statements of the Appellant. This is to the effect that\n\n while the Appellant claimed the cheque to have been\n\n issued at the time of advancing of the loan as a security,\n\n however, as per his statement during the cross-\n\n examination it was revealed that the same was\n\n presented when an alleged demand for repayment of\n\n alleged loan amount was raised before the Respondent,\n\n after a period of six months of advancement. Furthermore, there was no financial capacity or\n\n acknowledgement in his Income Tax Returns by the\n\n Appellant to the effect of having advanced a loan to the\n\n Respondent.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P023_C02",
+      "text": "Even further the Appellant has not been\n\n able to showcase as to when the said loan was advanced\n\n in favour of the Respondent nor has he been able to\n\n explain as to how a cheque issued by the Respondent\n\n allegedly in favour of Mr Mallikarjun landed in the hands\n\n of the instant holder, that is, the Appellant. Criminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 21 of 28\n28. Admittedly, the Appellant was able to establish that the\n\n signature on the cheque in question was of the\n\n Respondent and in regard to the decision of this Court\n\nBir Singh\n(supra), a presumption is to ideally arise. However, in the above referred context of the factual\n\n matrix, the inability of the Appellant to put forth the\n\n details of the loan advanced, and his contradictory\n\n statements, the ratio therein would not impact the\n\n present case to the effect of giving rise to the statutory\n\n presumption under\nSection 139\nof the NI Act 1881. The\n\n Respondent has been able to shift the weight of the\n\n scales of justice in his favour through the preponderance\n\n of probabilities.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P024_C01",
+      "text": "29. The Trial Court had rightly observed that the Appellant\n\n was not able to plead even a valid existence of a legally\n\n recoverable debt as the very issuance of cheque is\n\n dubious based on the fallacies and contradictions in the\n\n evidence adduced by the parties. Furthermore, the fact\n\n that the Respondent had inscribed his signature on the\n\n agreement drawn on a white paper and not on a stamp\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 22 of 28\npaper as presented by the Appellant, creates another set\n\n of doubt in the case. Since the accused has been able to\n\n cast a shadow of doubt on the case presented by the\n\n Appellant, he has therefore successfully rebutted the\n\n presumption stipulated by\nSection 139\nof the NI Act",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P025_C01",
+      "text": "30. Moreover, affirming the findings of the Trial Court, the\n\n High Court observed that while the signature of the\n\n Respondent on the cheque drawn by him as well as on\n\n the agreement between the parties herein stands\n\n admitted, in case where the concern of financial capacity\n\n of the creditor is raised on behalf of an accused, the\n\n same is to be discharged by the complainant through\n\n leading of cogent evidence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P026_C01",
+      "text": "31. The instant case pertains to challenge against\n\n concurrent findings of fact favouring the acquittal of the\n\n respondent, it would be cogent to delve into an analysis\n\n of the principles underlining the exercise of power to\n\n adjudicate a challenge against acquittal bolstered by\n\n concurrent findings. The following broad principles can\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 23 of 28\nbe culled out after a comprehensive analysis of judicial\n\n pronouncements:\ni) Criminal jurisprudence emphasises on the\n\n fundamental essence of liberty and presumption of\n\n innocence unless proven guilty. This presumption\n\n gets emboldened by virtue of concurrent findings of\n\n acquittal. Therefore, this court must be extra-\ncautious while dealing with a challenge against\n\n acquittal as the said presumption gets reinforced by\n\n virtue of a well-reasoned favourable outcome.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P026_C02",
+      "text": "Consequently, the onus on the prosecution side\n\n becomes more burdensome pursuant to the said\n\n double presumption.\nii) In case of concurrent findings of acquittal, this\n\n Court would ordinarily not interfere with such view\n\n considering the principle of liberty enshrined in\nArticle 21\nof the Constitution of India 1950, unless\n\n perversity is blatantly forthcoming and there are\n\n compelling reasons. Criminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 24 of 28\niii) Where two views are possible, then this Court would\n\n not ordinarily interfere and reverse the concurrent\n\n findings of acquittal. However, where the situation\n\n is such that the only conclusion which could be\n\n arrived at from a comprehensive appraisal of\n\n evidence, shows that there has been a grave\n\n miscarriage of justice, then, notwithstanding such\n\n concurrent view, this Court would not restrict itself\n\n to adopt an oppugnant view. [\nVide State of Uttar\n\n Pradesh v. Dan Singh10\n]\niv) To adjudge whether the concurrent findings of\n\n acquittal are ‘perverse’ it is to be seen whether there\n\n has been failure of justice. This Court in\nBabu v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 21"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P026_C03",
+      "text": "State of Kerala11\nclarified the ambit of the term\n\n ‘perversity’ as\n\n “if the findings have been arrived at by ignoring\n or excluding relevant material or by taking into\n consideration irrelevant/admissible material. The\n finding may also be said to be perverse if it is\n ‘against the weight of evidence’, or if the finding\n so outrageously defies logic as to suffer from the\n vice of irrationality.”\n\n10 (1997) 3 SCC 747.\n11 (2010) 9 SCC 189. Criminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 25 of 28\nv) In situations of concurrent findings favoring\n\n accused, interference is required where the trial\n\n court adopted an incorrect approach in framing of\n\n an issue of fact and the appellate court whilst\n\n affirming the view of the trial court, lacked in\n\n appreciating the evidence produced by the accused\n\n in rebutting a legal presumption. [\nVide Rajesh Jain\n\n v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P026_C04",
+      "text": "Ajay Singh12\n]\nvi) Furthermore, such interference is necessitated to\n\n safeguard interests of justice when the acquittal is\n\n based on some irrelevant grounds or fallacies in re-\n\n appreciation of any fundamental evidentiary\n\n material or a manifest error of law or in cases of non-\n\n adherence to the principles of natural justice or the\n\n decision is manifestly unjust or where an acquittal\n\n which is fundamentally based on an exaggerated\n\n adherence to the principle of granting benefit of\n\n doubt to the accused, is liable to be set aside. Say in\n\n cases where the court severed the connection\n\n12 (2023) 10 SCC 148. Criminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 26 of 28\nbetween accused and criminality committed by him\n\n upon a cursory examination of evidences. [\nVide\n\n State of Punjab v. Gurpreet Singh and Others13\nand\nRajesh Prasad v. State of Bihar14\n]",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P027_C01",
+      "text": "32. Upon perusal of the aforementioned principles and\n\n applying them to the facts and circumstances of the\n\n present matter, it is evident that there is no perversity\n\n and lack of evidence in the case of the respondent-\n\n accused. The concurrent findings have backing of\n\n detailed appraisal of evidences and facts, therefore, do\n\n not warrant interference in light of above enlisted\n\n principles.\nIn a similar set of facts as in the present case,\n\n involving criminal liability arising out of dishonour of\n\n cheque, this Court in M/s\nRajco Steel Enterprises v.\n\n Kavita Saraff and Another15\ndejected from reversing\n\n the concurrent findings of acquittal of accused therein\n\n and underscored the principle of non-interference,\n\n13 (2024) 4 SCC 469.\n14 (2022) 3 SCC 471.\n15 2024 SCC OnLine SC 518.\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 27 of 28\nunless such findings are perverse or bereft of evidentiary\n\n corroboration or lacks question of law.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P028_C01",
+      "text": "33. In furtherance of the aforesaid principles and the\n\n reasons ascribed thereof, the present challenge to the\n\n aforesaid impugned judgment dated 03.03.2023 by the\n\n High Court of Karnataka at Kalaburagi is bereft of any\n\n merits and does not call for any interference of this\n\n court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P029_C01",
+      "text": "34. The instant appeal is dismissed and the findings of the\n\n High Court in the impugned judgment dated 03.03.2023\n\n are affirmed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA_P030_C01",
+      "text": "35. Pending applications, if any, also stand disposed of.\n……………………………………………J.\n (B.V. NAGARATHNA)\n\n ……………………………………………J.\n (AUGUSTINE GEORGE MASIH)\n\n NEW DELHI;\nAUGUST 07, 2024.\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 28 of 28",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Sri Dattatraya vs Sharanappa",
+    "case_id": "SC_2024_SRI_DATTATRAYA_VS_SHARANAPPA",
+    "court": "Supreme Court of India",
+    "year": "2024",
+    "facts_summary": "2. The instant appeal was originally preferred as a petition\n\n before this Court, which is moved against the impugned\n\n Judgment dated 03.03.2023 in Criminal Appeal No.\n\n 200139 of 2019 by the High Court of Karnataka at\n\n Kalaburagi whereby the learned Single Judge affirmed\n\n the acquittal of the Respondent in Complaint Case No.\n\n 468 of 2014 moved for the offence punishable under\n\nSection 138\nof the Negotiable Instruments Act, 1881\n3. The factual backdrop giving rise to the present challenge\n\n is that the Appellant is the original complainant who\n\n claims to know the sole Respondent for the last six years\n\n and that he had borrowed INR 2,00,000/- (Rupees Two\n\n Lakhs only) from the Appellant on account of family\n\n necessities and accommodation. Against the said loan\n\n the Respondent issued a cheque bearing No. 015639\n\n which was drawn on the Bank of India, as a guarantee\n\n against repayment. He was to repay the said loan\n\n amount within a period of six months thereof. An\n\n agreement to this effect was also signed between the\n\n parties. 4. However, since the Respondent failed to repay the loan\n\n despite repeated requests, the Appellant presented the\n\n concerned cheque for encashment on 22.10.2013, but\n\n nevertheless, as per the Bank Memo dated 24.10.2013,\n\n the cheque was dishonoured on account of “insufficient\n\n funds”. 6. Thereupon, the Respondent moved a Reply Notice dated\n\n 11.11.2013 whereby he claimed that the accusations\n\n made by the Appellant are false and bereft of p",
+    "legal_issues": "5. Aggrieved from the said dishonour of cheque, a Demand\n\n Notice dated 31.10.2013 was sent by the Appellant to\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 2 of 28\nthe Respondent, whereby, the Counsel on behalf of the\n\n Appellant alleged that the Respondent had intentionally\n\n cheated him and had not made any efforts to discharge\n\n his liability. Accordingly, the Respondent was said to\n\n have committed offences punishable under\nSection 138\nof the NI Act 1881 and\nSection 420\nof the Indian Penal\n\n Code, 1860 (hereinafter referred to as “\nIPC\n1860”). 10. The Appellant has thereupon moved this Court in\n\n challenge to the said impugned judgment on the\n\n grounds that as the signature on the concerned cheque\n\n was admitted by the Respondent, the Appellant was able\n\n to successfully raise a presumption under\nSection 139\nof the NI Act 1881 and as per the submissions of the\n\n Respondent, he had failed to rebut the said\n\n presumption. He also put forth that the reliance on the\n\n decision in\nRangappa\n(supra) by the High Court was\n\n misplaced, and even going by the standard of\n\n preponderance of probabilities, the Respondent failed to\n\n discharge his onus.\nCriminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 6 of 28\n11. Having heard the learned Senior Advocate for the\n\n Appellant as well as the learned Counsel on behalf of the\n\n Respondent, it is imperative to deliberate over the\n\n position of law apropos the applicable provisions of the\nNI Act\n1881, a",
+    "ratio_summary": "Even further the Appellant has not been\n\n able to showcase as to when the said loan was advanced\n\n in favour of the Respondent nor has he been able to\n\n explain as to how a cheque issued by the Respondent\n\n allegedly in favour of Mr Mallikarjun landed in the hands\n\n of the instant holder, that is, the Appellant. Criminal Appeal No.3257 of 2024 @ SLP (Crl.) No.13179 of 2023 Page 21 of 28\n28. Admittedly, the Appellant was able to establish that the\n\n signature on the cheque in question was of the\n\n Respondent and in regard to the decision of this Court\n\nBir Singh\n(supra), a presumption is to ideally arise. However, in the above referred context of the factual\n\n matrix, the inability of the Appellant to put forth the\n\n details of the loan advanced, and his contradictory\n\n statements, the ratio therein would not impact the\n\n present case to the effect of giving rise to the statutory\n\n presumption under\nSection 139\nof the NI Act 1881. The\n\n Respondent has been able to shift the weight of the\n\n scales of justice in his favour through the preponderance\n\n of probabilities.",
+    "final_order": "34. The instant appeal is dismissed and the findings of the\n\n High Court in the impugned judgment dated 03.03.2023\n\n are affirmed.",
+    "outcome_summary": "Dismissed. 34. The instant appeal is dismissed and the findings of the\n\n High Court in the impugned judgment dated 03.03.2023\n\n are affirmed.",
+    "sections_cited": [
+      "IPC 420",
+      "CrPC 313",
+      "Constitution 21"
+    ],
+    "cases_cited": []
+  }
+}

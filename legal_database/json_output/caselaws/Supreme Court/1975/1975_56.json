@@ -1,0 +1,437 @@
+{
+  "case_id": "SC_1975_1975_56",
+  "case_name": "C.I.T. Madras vs T. V. Sundram Iyengar (P) Ltd",
+  "normalized_case_name": "C.I.T._MADRAS_VS_T._V._SUNDRAM_IYENGAR_(P)_LTD",
+  "court": "Supreme Court of India",
+  "year": "1975",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "9 April 1975",
+  "judges": [
+    "Y.V. Chandrachud",
+    "Ranjit Singh Sarkaria",
+    "A.C. Gupta"
+  ],
+  "author": "Y.V. Chandrachud",
+  "bench_type": "constitution",
+  "petitioner": "C.I.T. Madras",
+  "respondent": "T. V. Sundram Iyengar (P) Ltd",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 12,
+  "cited_by_count": 145,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1976 AIR 255",
+    "1975 SCR 93",
+    "AIR 1976 SUPREME COURT 255",
+    "(1976) 1 SCC 77",
+    "1976 TAX. L. R. 183",
+    "(1975) 2 S C W R 256",
+    "1975 SCC (TAX) 470",
+    "1972 2 SCWR 256",
+    "1976 (1) SCJ 500",
+    "101 ITR 764",
+    "1976 (1) ITJ 429",
+    "1976 (1) SCC 17"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1975\\1975_56.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1975_1975_56_P001_C01",
+      "text": "PETITIONER:\nC.I.T. MADRAS\n\n Vs. RESPONDENT:\nT. V. SUNDRAM IYENGAR (P) LTD. DATE OF JUDGMENT09/04/1975\n\nBENCH:\nCHANDRACHUD, Y.V. BENCH:\nCHANDRACHUD, Y.V. SARKARIA, RANJIT SINGH\nGUPTA, A.C. CITATION:\n 1976 AIR 255 1975 SCR 93\n 1976 SCC (1) 17\n CITATOR INFO :\n F 1983 SC 420 (12)\n\nACT:\nIndian Income Tax Act\n. 1922, s. 23 A-Scope of. HEADNOTE:\nUnder Section 23A of the Indian income Tax Act, 1922, if in\nrespect of any previous year the profits and gains\ndistributed as dividends within the 12 months immediately\nfollowing the expiry of that previous year are less than the\nstatutory percentage of the total income of that previous\nyear as reduced by the amounts mentioned in cls. (a), (b)\nand (c) and sub-s. (1), the Income Tax Officer shall make an\norder that the company shall be liable to pay super-tax at\nthe prescribed rate on the undistributed balance of the\ntotal income of the previous year.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1975_1975_56_P001_C02",
+      "text": "According to Explanation\n2, statutory percentage means 45 per cent of the industrial\nprofits and 60 per cent of nonindustrial profits.The\nexplanation further says that the said percentages should be\napplied separately with reference to the amounts of\nprofits and gains attributable to the two parts of the\ncompany's business as if the said amounts were respectively\nthe total income of the company in relation to each of its\nparts, the amount of dividends and taxes also being\nsimilarly apportioned for purpose of sub-s. (1). In the present case 45 per cent of the industrial profits\ncomes to Rs. 1.51 lakhs, while 60 per cent of non-industrial\nprofits comes to Rs. 8.43 lakhs. The company, instead of\ndistributing a sum of Rs. 9.94 lakhs by way of dividends\ndistributed Rs. 4.20 lakhs, equally as profits of the\nindustrial and non-industrial activities leaving aside the\nprofit of Rs. 13.21 lakhs.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1975_1975_56_P001_C03",
+      "text": "The income Tax Officer allocated\nthe dividends declared by the company to the industrial and\nnon-industrial segments in the same proportion as the\nprofits of the two segments bore to the total profits of the\ncompany and levied additional super-tax under s. 23A on the\nentire undistributed balance of the total profits available\nfor distribution, namely Rs. 13.21 lakhs. The Order was\nconfirmed by the Appellate Assistant Commissioner. On appeal, the Appellate Tribunal held that in so far as the\nprofits of the industrial activity were concerned, the\ncompany must be deemed to have distributed by way of\ndividends out of those profits just so much,as would be\nequal to 45 per cent of such profits and accordingly it\nallocated the dividend out of industrial and non-industrial\nprofits. On this allocation it came to the conclusion that\nthe company having declared the statutory dividend on its\nindustrial profits, was not liable to pay additional super-\ntax in so far as these profits were concerned. It, however,\nupheld the levy of additional super-tax on non-industrial\nprofits. The High Court confirmed the Tribunal's view.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1975_1975_56_P001_C04",
+      "text": "Allowing the appeal,\nHELD : (1) The High Court was in error in holding that the\nprofits of the two parts of the company's business should be\ntreated as if they were the total income of the company for\nall purposes. In taking this view the High Court overlooked\nthe concluding words of Explanation 2 by reason of which the\nlegal fiction has to be limited to its duly appointed\npurpose. [106 D-E]. (2) The High Court and the Tribunal were wrong in holding\nin favour of the assessee. Where a company has a composite\nbusiness, the first step is to ascertain the distributable\nprofits of the two parts separately. For the purpose of\nfinding out the minimum dividend that the company ought to\nhave distributed, the proper statutory percentage as\nprescribed by Explanation 2 has to be applied separately to\nthe distributable profits of the two parts, as if the\nrespective profits are the total income of the company in\nrelation to each part of its business. The composite\ndividend distributed by the company has then to be\n\napportioned between the two parts in the same ratio as the\nrespective profits of the two parts bear to the toal profits\nof the company. [103H-104B].",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1975_1975_56_P001_C05",
+      "text": "(3)(a) Explanation 2 by its express terms requires that for\nthe purpose of sub-s. (1) the amount of dividends must be\n\"similarly apportioned\". [101 E]\n(b) The word \"similar\" may generally be said to be a word\nof ambiguous import in the sense that the mere stipulation\nin a statute that something should be done similarly is\ninsufficient by itself to signify the degree of similarity\nwith which that thing must be done. The words \"similarly\napportioned\" mean apportioned with reference to the amounts\nof profits and gain attributable to the two parts of the\ncompany's business. The Explanation first refers to an\napportionment or splitting up and then provides that the\ndividends and taxes shalt be similarly apportioned, that is\nto say, similarly split up. Accordingly, the words\n\"similarly apportioned\" have a definite meaning and are not\nambiguous. [101G-102 C]. (c) The word \"apportion\" is used in Explanation 2 in the\nsense of \"split up\" so that \"similarly apportioned\" means\n\"similarly split up \".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1975_1975_56_P001_C06",
+      "text": "The dividends have, therefore, to be\nsplit up similarly, i.e. in the same ratio as the industrial\nand non-industrial profits bear to each other after the\ntotal profit is split up in two parts, industrial and non-\nindustrial. [102D-E]\n((1) An assignment as a proper portion of the dividends\nwould mean an assignment in the same or similar ratio as the\nrespective profits of the- two segments bear to the total\nprofits of the company. It is not open to the company to\nsplit up and apportion the dividends to the Profits of the\ntwo segments in such a manner as it finds convenient or\nthinks fit. The company's freedom to apportion the\ndividends is conditioned by the ratio which the profits of\nthe two segments bear to the total profits. [102 F-G]\nThe sum of Rs. 4.20 lakhs has to be split up in the same\nproportion which the respective profits of the two segments\nbore to the total profits of the company. There is a short-\nfall in respect of both the segments and accordingly the\ncompany would be liable to pay additional super-tax at the\nrate of 37 per cent on the entire undistributed balance of\nthe distributable profits. [102 H-103 B].",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1975_1975_56_P001_C07",
+      "text": "(4)(a) The language of s. 23A(1) as also of Explanation 2 is\nclear and distinct and does not yield to more than one\nreasonable interpretation. The fiction created by the\nExplanation is expressly limited to the purposes of sub-s. (1) and there is no justification for pursuing the fiction\nto its logical conclusion so as to permit it to operate\nbeyond the limited purpose of sub-s. (1). Under the scheme\ncontained in s. 23A where a company has a composite business\nit is necessary at the outset to find out the profits\nattributable to the two parts of its business. The\nstatutory percentages as prescribed by Explanation 2 have\nthen to be applied separately to the profits of the two\nparts. By reason of the fiction created by Explanation 2,\nthe profits of each part have, for this purpose, and for\nthis purpose alone, to be treated as if they were the total\nincome of that part of the Company's business. By sub-%. (1) the company becomes liable to pay additional super-tax\nif the dividends distributed by it are \"less than the\nstatutory percentage of the total income\". Explanation 2\ncreates the fiction that for the purpose of sub-s.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1975_1975_56_P001_C08",
+      "text": "(1) the\nincome of the respective parts is to be regarded as the\ntotal income of each part so that the statutory percentages\ncan be applied separately to the income of each part. The\nfiction operates in this limited field and is in terms\ncreated for this limited purpose. [105D-106 B]. (b) The levy of additional super-tax under s.23A(1) is a\nsingle levy. The super-tax has to be levied \"on the\nundistributed balance of the total income of the\nprevious year\". Sub-section (1) itself clarifies that by\nthese words is meant \"total income as reduced by the\namounts, if any, referred to in cls. (a), (b) or (c) and\nthe dividends actually distributed, if any.\" Even if the\nIncome Tax Officer finds that the apportioned dividend in\nany part of the company's business is less than the dividend\nthat ought to have been\n\ndeclared by application of the statutory percentage, that\nadditional super-tax has to be levied on the whole of the\nundistributed profits of the company. [106 B-D].",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1975_1975_56_P001_C09",
+      "text": "ARGUMENTS\nFor the appellant :\n1.On a true interpretation of Section 23A(1) and Explanation\n2 thereto where the company's profits liable to be\ndistributed as dividend are composite consisting of\nindustrial and non-industrial profits, the Income-tax\nOfficer has first to find out profits attributable to\nindustrial activity and profits attributable to non-\nindustrial activity and ascertain the ratios between the\nindustrial and non industrial profits to the total\ndistributable profit. By the fiction created by explanation\n2 he has to treat the profits in each section as if they\nwere the total income of that section and apply the\nstatutory percentage to find out the minimum dividend that\nmust be declared by the company. He has then to dissect the\ncomposite dividend declared by the company and apportion the\nsame between the dividend relating to industrial profits and\ndividend relating to non-industrial profits in the same\nratios as the industrial profits bear to the total\ndistributable profits and non-industrial profits bear to the\ntotal distributable profits.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1975_1975_56_P001_C10",
+      "text": "Thereafter, he has to find out\nwhether the dividends so apportioned between the two parts\nis below the minimum distributable on the application of the\nstatutory percentage.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1975_1975_56_P001_C11",
+      "text": "If he finds that the declared\ndividend apportioned to any part of the business is below\nthe taxable minimum arrived at by applying the statutory\npercentage then the Income-tax Officer has to levy\nadditional super tax on the entire undistributed profits,\nthat is to say, on the distributable profits minus the total\ncomposite dividend declared by the company.\n2.The levy of additional super-tax u/s. 23A(1) is a single\nlevy and is on the undistributed profits on their entirety\nand, therefore, where on apportionment of the composite\ndividend declared by the company the industrial and non-\nindustrial profits, the Income-tax Officer finds that the\napportioned dividend in any part of the company's business\nis less than the dividend that ought to have been declared\nby application of the statutory percentage the Income-tax\nOfficer has to levy additional super-tax on the entire\nundistributed profits even though in the other section of\nthe business the declared dividend as apportioned may not be\nbelow the minimum that ought to have been distributed by the\napplication of the statutory percentage.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1975_1975_56_P002_C01",
+      "text": "3. The fiction created in clause of explanation 2 of\nSection 23A(1) prescribing that the amounts of profits or\ngains attributable to two parts of company's business should\nbe- treated as if they were the total income of the company\nin relation to each of the parts is only for the purpose of\napplying the statutory percentage which hag to be applied to\nthe total income to find out the dividend liable to be\ndistributed. This fiction cannot be extended for the\npurpose of deeming the profits of each part as total income\nfor the purpose and levy of additional super-tax as if there\nwere as man total income as there were parts of business\nprofits.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1975_1975_56_P003_C01",
+      "text": "4. Even on the interpretation put 'by the High Court and\nthe opinion given by it on the question referred to\nu/s.\n66(2)\nof the Income-tax Act, 1922, the Income-tax Officer\nwould be justified in levying additional super-tax on the\nentire distributed profit of Rs. 13,21,174 or atleast on Rs.\n12,36,196 which is the amount of non-industrial profits\nminus the balance of the declared dividend attributable to\nnon industrial profits i.e. Rs. 14,05,310 minus Rs.\n2,69,114. For the respondent\nSection 23A\nof the Income-tax Act was recast by the\nFinance Act\nII of 1957 with effect from 1-4-1957. It is\nthis amended section that is applicable to the case under\nconsideration as it relates to the assessment year 1957-58. The scope of Explanation 2 would appear to require the\nfollowing step& to be taken in order to find out whether s.\n23A(1) is applicable in the case of a company whose profits\nconsist partly of industrial activity and partly of non-\nindustrial activity. (i) Ascertain the profits relating to each part separately\nwhen the company's business consists of partly in\nmanufacture and partly of other activities.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1975_1975_56_P003_C02",
+      "text": "(ii) Treat the profit of each part as the total income of\nthe company (in order to find out whether the dividend\ndistributed is less than the statutory percentage). (iii) Apportion the taxes relating to each part and deduct\nsuch tax from the profits of that of the company's business. Arrive at the balance of income by deducting the amount\ncovered by item (3) from the amount covered by item (2). (iv) Apply the statutory percentage of either 45 per cent or\n60 per cent on the balance of income arrived at. (v) Find out whether the dividend distributed and\napportioned to each part is less than the statutory\npercentage. (vi) If the dividend distributed is less than the statutory\npercentage, then on the undistributed balance of income of\neach part less the taxes specified in sub-section (1) and\ndividend apportioned to this part, additional super-tax to\nbe levied at 37 per cent. The expression 'similar' is an ambiguous word. The word\napportionment split up. So long as the apportionment is\nmade with the desire to, act as fairly and justly as\npossible by all parties no uniform mode of apportionment is\nnecessary.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1975_1975_56_P003_C03",
+      "text": "In the light of this the assessee company has\napportioned the dividend in accordance with the law. There\nis no other method. of apportionment indicated in the\nexplanation. Section 23A(1) is not applicable to that party of the\ncompany's profits relating to manufacture. If he follows\nthe provisions of explanation 2 the Income-tax Officer\ncannot be said to be satisfied that the dividend distributed\nrelating to this part of the company's business is less than\nthe statutory percentage. The contention of the Revenue on the other hand is that the\ndividend should be apportioned in the same proportion in\nwhich the industrial profits and non-industrial profits bear\nto the total income of the company less the taxes specified\nin cls. (a), (b) and (c) of s. 23A(1). It is undeniable that the words used in the latter part of\nthe explanation are ambiguous. They are capable of more\nmeaning than one. The interpretation contended for by the\nrevenue leads to anamolous results. In the circumstances,\nthe construction which favors the assessee and saves it from\nthe penal consequences deserved to be adopted. JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeals Nos. 1392-93 of",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C01",
+      "text": "1970. From the judgment and order dated the 23rd January, 1969 of\nthe Madras High Court in Tax Cases No. 116 of 1965 and 190\nof 1967, Reference No. 48 of 1965 and 72 of 1967. D. N. Kharkhanis and S. P. Navar, for the appellant. S. Swaminathan and S. Gopalakrishnan, for respondent. The Judgment of the Court was delivered by\nCHANDRACHUD, J.-These appeals by certificate granted by the\nHigh Court of Madras under\nsection 66A(2)\nof the Income-tax\nAct, 1922 arise out of a common judgment dated January 23,\n1969 delivered by the High Court in Tax Cases Nos. 116 of\n1965 and 190 of 1967. Tax Case No. 116 of 1965 arose out of\nthe reference made by the Income-tax Appellate Tribunal\nunder\nsection 66(1)\nof the Act while Tax Case No. 190 of\n1967 arose out a reference made by the Tribunal in pursuance\nof an order made by the High Court under\nsection 66(2)\nthe, Act. The question which arises for consideration in\nthese appeals is whether under\nsection 23A\nof the Act, the\nassessee-company is liable to pay additional super-tax in\nrespect of any portion of its profits. Section 23A\nof the Act of 1922, in so far as material read\nthus at the relevant time :\n\"23A.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C02",
+      "text": "(1) Where the Income-tax Officer is\n satisfied that in respect of any previous year\n the profits and gains distributed as dividends\n by any company within the twelve months\n immediately following the expiry of that\n previous year are less than the statutory\n percentage of the total income of the company\n of that previous year as reduced by-\n(a) the amount of income-tax and super-tax\n payable by the company in respect of its total\n income, but excluding the amount of any.\n super-tax payable under this section ;\n(b) the amount of any other tax levied under\n any law for the time being in force on the\n company by the Government or by a local\n authority in excess of the amount, if any,\n which has been allowed in computing the total\n income ; and\n(c) in the case of a banking company, the\n amount actually transferred to a reserve fund\n under\nsection 17\nof the Banking Companies Act,\n 1949 ;\nthe Income-tax Officer shall, unless be is\n satisfied that, having regard to the losses\n incurred by the company in earlier years or to\n the smallness of the profits made in the\n previous year, the payment of a dividend or a\n larger dividend than that declared would be\n unreasonable, make an order in",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C03",
+      "text": "writing that\n the company shall, apart from the sum\n determined as payable by it on the basis of\n the assessment under\nsection 23\n, be liable to\n pay super-tax at the rate of fifty per cent in\n the case of a company whose business consists\n wbolly or mainly in the dealing in or holding\n of investments, and at the rate of thirty\n seven per cent in the case of any other\n company on the undistributed balance of the\n total income, of the previous\n\nyear, that is to say, on the total income as\n reduced by the amounts, if any, referred to in\n clause (a), clause (b) or clause (c) and the\n dividends actually distributed, if any.\nx x x x x x x\n x x x x x x x\n x x x x x x x\n Explanation 2.-For the purposes of this\n section'. statutory\n percentage means,-\n(i) In the case of a company whose business\n consists wholly or mainly in the deali\nng in or\n holding of investments .. .. ..\n100%\n(ii) In the case of an Indian company whose\n business consists wholly in the manufacture or\n processing of goods or in mining or in the\n generation or distribution of electricity or\n any other from of power\n 45%\n(iii) In the case of an Indian\n company a part only of whose business\n consists in any of the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C04",
+      "text": "activities specified in\n clause (ii)-\n(a)in relation to the said part\n of the company's business\n 45%\n(b) in relation to the remaining part of the\n company 's business--\n(1) if it is a company which satisfies the\n conditions specified in sub-\n clause (a) of clause (iv) 90%\n (2) in any other case 60%\n the said percentages being applied\nseparately with reference to the amounts of\n profits and gains attributable to the two\n parts of the company's business aforesaid as\n if the said amounts were respectively the\n total income of the company in relation to\n each of its parts, the amount of dividends and\n taxes also being similarly apportioned for the\n purposes of subsection\n x x x x\nFor the assessment year 1957-59 relevant to the previous\nyear ended December 31, 1956 the company was assessed to\nadditional super-tax under the aforesaid provision.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C05",
+      "text": "The\nbusiness of the company consists partly in, the manufacture\nor processing of goods and partly\n\nof an activity of a non-industrial nature. Out of a total\nincome A of Rs. 37,98,774 the profits of the company\navailable for distribution came to Rs. 17,41,814 out of\nwhich Rs. 3,36,504'represented industrial profits and Rs.\n14,05,310 represented non-industrial profits. The company\ndistributed by way of dividends a sum of Rs. 4,20,640 only,\nclaiming that the dividend was declared equally out of the\nprofits of the industrial and non-industrial activities. Thus, the profits which were available for distribution but\nwhich were not distributed came to Rs. 13,21,174. The Income-tax Officer, while making the assessment,\nallocated the dividends declared by the company to the\nindustrial and nonindustrial segments in the same proportion\nas the profits of the two segments bore to the total profits\nof the company. By this method, out of the total dividend\nof Rs. 4,20 640 declared by the company, a sum of Rs. 81,264\nwas treated as dividends declared out of industrial profits\nwhile a sum of Rs., 3,39,376 was treated as dividends\ndeclared out of non-industrial profits.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C06",
+      "text": "Holding that under\nsection 23A, the company was liable to distribute by way of\ndividends a sum of Rs. 1,51,426 out of industrial profits\nand a sum of Rs. 8,43,186 out of non-industrial profits, the\nIncome-tax Officer levied additional super-tax on the\nentirety of the undistributed balance of the total income,\nthat is to say, on Rs. 13,21,174. The Appellate Assistant Commissioner having rejected the\nappeal, the company carried the matter in a further appeal\nto the Income-tax Appellate Tribunal, Madras Bench,\ncontending that it had declared dividends utilising the\nindustrial and non-industrial profits equally and since the\ndividends thus declared out of industrial profits exceeded\nthe statutory percentage of the minimum distributable\ndividend as provided in section 23A, the levy of additional\nsuper-tax on the industrial profits was unjustified. On the\nother hand, it was submitted on behalf of tie Department of\nsection 23A, to be apportioned in the same for the purposes\nof section 23A, to be apportioned in the same ratio in which\nthe profits themselves were apportioned between industrial\nand non-industrial activities.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C07",
+      "text": "The Tribunal rejected the\nmethod canvassed by the Department as \"a Rule of thumb\" but\nthen it also rejected the method adopted by the company of\nallocating the declared dividend half and half to the\nprofits of the two segments. Having rejected both the\nmethods, the. Tribunal held that in so far as profits of\nthe industrial activity were concerned, the company must be\ndeemed to have distributed by way of dividends out of those\nprofits just so much, neither more nor less-, as would be\nequal to 45 per cent of such profits. Accordingly, the\nTribunal allocated a sum of Rs. 1,51,426 as dividends out of\nindustrial profits and the balance, namely, Rs. 2,69,214 as\ndividends out of non-industrial profits. On this allocation\nthe Tribunal came to the conclusion that the company, having\ndeclared the statutory dividend on its industrial profits,\nwas not liable to pay additional super-tax in so far as\nthose profits were concerned. It, however , upheld the levy\nof additional super-tax on nonindustrial profits.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C08",
+      "text": "Under\nsection 66(1)\nof the Act, the Tribunal referred\nthe following question for the opinion of the High Court\n (1) \"Whether on the facts and in the\n circumstances of the case, Tribunal was right\n in holding that the assessee company was\n not liable to. the additional super-tax under\n sec. 23A in respect of the assessee's\n industrial profits for the assessment year\n 1957,58\". Under\nsection 66(2)\nof the Act the Tribunal\n referred to the High, Court the following\n question\n (2) \"Whether on the facts and in the\n circumstances of the case, the Tribunal is\n right in holding that additional supertax is\n not leviable under sec- 23\nA of the Act\n, in\n respect of any portion of the profits of the\n assessee company for the assessment year 1957-\n58.\"\nThe second question on which the High Court called for a\nreference may seem to suggest that under the judgment of the\nTribunal the Company as heldi not liable to pay additional\nsuper-tax in respect of an portion of its profits. That\nis not so. The Tribunal held that the Company was not\nliable to pay additional super-tax on its in-dustrial\nprofits but was liable to pay it on non-industrial profits. The High Court confirmed the Tribunal's view.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C09",
+      "text": "It held that\nthere was no justification in Explanation 2 for the\napportionment of dividends in the ratio which the industrial\nprofits bear to nonindustrial profits, that it was open to\nthe asssee to apportion the dividends in such a way as to\nconform to the requirements of section 23A in respect of one\nof the two segments of its business and that the profits of\nthe other segment only would attract the incidence of\nadditional super-tax. The High Court demonstrated the\nabsurdity of the contrary view with the help of a\nhypothetical illustration. We are concerned in this appeal with the true construction\nof section 23A as recast by\nFinance Act\n2 of 1957. The\nsection, in so far, as relevant, is extracted above. It\nhas no application to companies in which the public are\nsubstantially interested. The section provides for levy of\nadditional super-tax at 50 per cent in the case of a company\nwhose business consists wholly or mainly in the dealing in\nor holding of investments and at 37 per cent in the case of\nany other company.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C10",
+      "text": "The additional super-tax is leviable if\nin respect of any previous year the profits and gains\ndistributed as dividends within the 12 months immediately\nfollowing the expiry of that previous year are less than the\nstatutory percentage of the total income of the previous\nyear as reduced by the amounts mentioned in clauses (a), (b)\nand (c) of sub-section (1). The additional super-tax, which\nin the instant case would be 37 per cent, is payable on the\nundistributed balance of the total income of the previous\nyear.By 'undistributed balance of the total income'\nis meant the total income as reduced by the amounts, if any,\nreferred to in clauses (a), (b) and (c) of sub-section (1)\nand the dividends actually distributed if any. By Explanation 2, 'statutory percentage' means for the\npresent purpose, 45 per cent of industrial profits and 60\nper cent of nonindustrial profits. These percentages have\nto be applied separately to the profits of the two segments\nas if those profits were respectively the total income of\nthe company in relation to each segment of its business. The dividends and taxes have also to be 'similarly\napportioned', for the purposes of sub-section (1).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C11",
+      "text": "Two questions arise for decision : (1) Whether the dividends\ndistributed by the Company have to be apportioned as between\nthe profits of the industrial and non-industrial segments of\nits business in the same proportion as the respective\nprofits bear to the total profits of the Company ; and (2)\nWhether, if on apportionment, the dividend apportionment to\none of the two segments is found to be less than the\nstatutory percentage in respect of that segment, the\nadditional super-tax is leviable on the entire balance of\nthe Company's undistributed profits or whether it is\nleviable on the balance of undistributed profits of that\nsegment only in respect of which the short-fall has\noccurred. The second question may not strictly arise if on\nthe first question it is found that the dividend\napportionable to the two segments is less than the statutory\npercentage in respect of both the segments. All the same,\nit would be necessary to examine that question also as the\nHigh Court has held that the liability to pay the additional\n-super-tax must be restricted to the undistributed profits\nof that segment only, in respect of which the default has\noccurred.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C12",
+      "text": "On the first question, the language of Explanation 2 is\nclear and admits of no doubt or difficulty. It requires by\nits express terms that for the purposes of sub-section (1),\nthe amount of dividends must be \"similarly apportioned\". But, counsel for the respondent urged that since the\nExplanation does not refer to any apportionment at all, the\nwords \"similarly apportioned\" cannot be ascribed any\nrational meaning and it would therefore be open to the\ncompany to apportion the dividends 50 : 50 to the profits of\nthe two segments. Relying on \"Words and Phrases Legally\nDefined\" by Saunders, Vol, V, p. 79 where it is stated that\nthe word 'similar' is an ambiguous word, it was submitted\nthat the benefit of an ambiguity in a taxing statute must go\nto the assessee and accordingly, the company would be free\nto make a convenient apportionment of dividends so as to\nattract the least incidence of the additional super-tax. Counsel also relied on Burrow's \"Words and Phrases\", Vol.\n1, p. 217, where it is said that so long as the\napportionment is made with the desire to act as fairly and\njustly as possible by all parties, no uniform mode of\napportionment is necessary.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C13",
+      "text": "The word 'similar' may be said to be a word of ambiguous\nimport in the sense that the mere stipulation in a statute\nthat something should be done similarly is insufficient by\nitself to signify the degree of similarity with which that\nthing must be done. A thing can be done similarly without\nits being a slavish copy of the model. But Explanation 2\nindicates with meticulous particularity, how similarly\ndividends and taxes must be apportioned, When it says that\nthey must be \"similarly apportioned\", the reference\nobviously is to the apportionment which is\n\nspoken of earlier in the Explanation. After specifying what\nparticular percentages shall constitute the statutory\npercentage for the purposes of section 23A, Explanation 2\nprovides that the said percentages, shall be applied\nseparately \"with reference to the amounts of profits and\ngains attributable to the two parts of the company's\nbusiness.\" The words \"similarly apportioned\" which\nthereafter occur in the Explanation mean apportioned \"with\nreference to the amounts of profits and gains attributable\nto the two parts of the company's business\".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C14",
+      "text": "Thus, the\nExplanation first refers to an apportionment or splitting up\nand then provides that the dividends and taxes shall be\nsimilarly apportioned, that is to say, similarly split up. Accordingly, the words \"similarly apportioned\" convey a\ndefinite meaning and are not ambiguous. It is urged that the division of total profits of a company\ninto industrial and non-industrial profits cannot be the\nresult of any apportionment properly so-called but must\nconform to the company's books of account and therefore,\nExplanation 2 cannot be said to refer to any apportionment\nbefore speaking of the dividends and taxes being \"similarly\napportioned\". This argument reads too much in the word\n'apportioned'. That word is used in Explanation 2 in the\nsense of 'split up', so that 'similarly apportioned' means\nsimply \" similarly split-up. The dividends have therefore\nto be split up similarly, that is, in the same ratio as to\nindustrial and non-industrial profits bear to each other\nafter the total profit is split up in two parts, industrial\nand nonindustrial. According to Burrow's Words and Phrases,\nVol. 1. p. 217, to 'apportion' means 'to split up'.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C15",
+      "text": "It is therefore impossible to accept the respondent's\ncontention that though Explanation 2 requires that dividends\nshould be similarly apportioned, it would be open to the\ncompany to make any convenient division of the dividends\ndistributed by it. According to the Shorter Oxford English\nDictionary, 3rd Ed., Vol. 1, p. 87, to 'apportion' is 'to\nassign as a proper portion'. An assignment as a proper portion of the dividends would\nmean an assignment in the same or similar ratio as the\nrespective profits of the two segments bear to the total\nprofits of the company. It is thus not open to the company\nto split up and apportion the dividends to the profits of\nthe two segments in such manner as it finds convenient or\nthinks fit. The company's freedom to apportion the\ndividends is conditioned by the ratio which the profits of\nthe two segments bear to the total profits. The total distributable profits of the company came to Rs.\n17,41,814 out of which the industrial profits are Rs.\n3,36,504 and the non-industrial profits are Rs. 14,05,310. Forty-five per cent of the industrial profits comes to Rs.\n1,51,426 while 60 per cent of the non-industrial profits\ncomes to Rs. 8,43,186.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C16",
+      "text": "The company therefore ought to have\ndistributed a sum of Rs. 9,94,612 by way of dividends\nwhereas it distributed a sum of Rs. 4,20,640 only. This sum\nof Rs. 4,20,640 has to be split up in the same proportion\nwhich\n\nthe respective profits of the two segments bear to the total\nprofits of the company. That is to say, a sum of Rs. 81,264\nfrom out of the total dividends distributed is apportionable\nto the industrial profits while a sum of Rs. 3,39,376 is\napportionable to the non-industrial profits. There is thus\na short-fall in respect of both the segments and accordingly\nthe company would be liable to pay the additional supertax\nat the rate of 37 per cent on the entire undistributed\nbalance of distributable profits.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C17",
+      "text": "The hypothetical illustration which was cited before the\nIncome-tax Officer and which is relied upon by the High\nCourt may at the highest, if its fundamental premise is\ntrue, show that the interpretation canvassed by the Revenue\nmay conceivably work out injustice.But if the language of\nthe statute is clear and unambiguous, and if two\ninterpretations are not reasonably possible, it would be\nwrong to discard the plain meaning of the words used in\norder to meet a possible injustice. Besides, the\nillustration only assumes an injustice and therefore its\nfundamental premise is wrong. The distributable profits of\nthe hypothetical company are said to be Rs. 1,00,000 out of\nwhich Rs. 30,000 are industrial and Rs. 70,000 non-\nindustrial profits. Applying the statutory percentage of 45\nand 60 per cent respectively, the company must distribute by\nway of dividends Rs. 13,500 plus Rs. 42,000, that is, Rs.\n55,500.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C18",
+      "text": "The High Court says that even if the company\ndistributes Rs. 55,500 by way of dividends, apportioning Rs.\n13,500 to industrial profits and Rs. 42,000 to nonindustrial\nprofits, it would violate section 23A because, if the sum of\nRs. 55,500 is to be apportioned in the same ratio which the\nprofits of the two segments bear, a sum of Rs. 16,650 will\nbe apportionable to industrial profits and Rs. 38,850 to\nnon-industrial profits. The fallacy of this illustration\nconsists in its overlooking that if the company is liable to\ndistribute Rs. 55,500 by way of dividends and it does\ndistribute that, sum, there is no violation of section 23A. That section applies only if \"profits and gains distributed\nas dividends .... are less than the statutory percentage of\nthe total income .... as reduced. . . . \"\nIf the dividends have to be apportioned in the ratio of\nprofits of the two segments, the taxes have also to be\nsimilarly apportioned for Explanation 2 speaks of \"the\namount of dividends and taxes also being similarly\napportioned\".",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 18
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C19",
+      "text": "A \"similar\" apportionment of taxes, it is\nurged by the respondent, may in practice lead to impossible\nand unreal situations since the taxes on the profits of the\ntwo segments may be unequal as in the case of a newly\nestablished industrial undertaking which, in respect of its\nindustrial income, may enjoy a tax concession. There is no\nmerit in this contention. The method specified in section\n23A has to be worked out according to its scheme and it is\nno answer to the obligation to apportion the dividends and\ntaxes, that taxes levied on the profits of the two segments\nare unequal or are leviable on a different basis. Thus, the High Court and the Tribunal were wrong in holding\nin favour of the assessee on the first of the two questions\nwhich we have framed for consideration. Where a company has\na composite\n\nbusiness, as for example industrial and non-industrial\nbusiness, the first step is to ascertain the distributable\nprofits of the two parts separately.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 19
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C20",
+      "text": "For the purpose of\nfinding out the minimum divided that the company ought to-\nhave distributed, the proper statutory percentage as\nprescribed by Explanation 2 has to be applied separately to\nthe distributable profits of the two parts, as if the\nrespective profits are the total income of the company in\nrelation to each part of its business. The composite\ndividend distributed by the company has then to be\napportioned between the two parts in the same ratio as the\nrespective profits of the two parts bear to the total\nprofits of the company. We have shown that in the instant case the dividend\napportionable between the two parts of the company's\nbusiness is less than the statutory percentage in respect of\nboth the parts. The High Court, like the Tribunal, gave to\nthe company the choice to allocate the dividend suitably to\nthe two parts and held on such allocation that since the\ndefault had occurred in respect of the profits of the non-\nindustrial part only, the company would be liable to pay the\nadditional super-tax on the undistributed balance of the\nnon-industrial profits only.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 20
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C21",
+      "text": "The second question which we\npropose to consider, though it does not arise on our\nfindings, is whether the company is liable to pay additional\nsuper-tax on the undistributed balance of non-industrial\nprofits only or whether it is liable to pay the additional\nsuper-tax on the entire undistributed balance of its\ndistributable profits. We have heard a full argument on\nthis question and if we did not decide it the view of the\nHigh Court is likely to cause misunderstanding. As observed by Chagla C. J. in\nSir Kasturchand Ltd. v. Commissioner of Incoem-tax, Bombay City\n,(1) section 23A was\nenacted in terrorem against private companies. The object\nof the section is to prevent evasion of super-tax by the\nshareholders of a company in which the public are not\nsubstantially interested. The shareholders of a private\ncompany could avoid the high incidence of super-tax by\nallowing the profits of the company to accumulate in its\nhands so that the accumulated profits could be distributed\neventually in the form of bonus shares which are not\nassessable as income in their hands.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 21
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C22",
+      "text": "In considering whether the company is liable to pay\nadditional super-tax on the entire balance of distributable\nprofits, it has to be borne in mind that section 23A is\nclearly penal in nature ; for, in circumstances mentioned\ntherein, if a private company fails to distribute by way of\ndividends the statutory percentage of its distributable\nprofits, it becomes liable to pay, apart from the sum deter-\nmined as payable by it on the basis of the assessment under\nsection 23\n, super-tax at 50 per cent or 37 per cent as the\ncase may be, on the undistributed balance of its\ndistributable profits. In the first place, this provision\nbeing penal, the burden would lie on the revenue to prove\nthat the conditions\nlaid down by\nthe section are\nsatisfied.(2)\n(1) 17 I. T. R. 493, of 495 and 496. (\n2) Commissioner of Income-tax, West-Bengal v. Gangadhar\nBanerjee & Co. (p) Ltd., 57 I.T.R. 176, 184.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 22
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C23",
+      "text": "Secondly, penal statutes have to be construed strictly in\nthe sense that if there is a reasonable interpretation which\nwill avoid the penalty, that interpretation ought to be\nadopted : \"When the legislature imposes a penalty, the words\nimposing it must be clear and distinct\".(1)\nIt is contended on behalf of the respondent that the\nlanguage of section 23A (1) read with Explanation 2 is\nambiguous and therefore the court ought to adopt the\ninterpretation which favorites the assessee, more\nparticularly because the relevant provisions provide for the\nimposition of a penalty. In this behalf, learned counsel\nfor the respondent relied strongly on the provision\ncontained in Explanation 2 by which the statutory\npercentages are required to be applied separately with\nreference to the amounts of profits and gains attributable\nto the two parts of the company's business, \"as if the said\namounts were respectively the total income of the company in\nrelation to each of its parts\". It is urged that the\nfiction created by Explanation 2 must be given its full\neffect and that it must be carried to its logical con-\nclusion.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 23
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C24",
+      "text": "As the distributable profits of the two parts are\nto be deemed to be the total income of the company in\nrelation to each ,of those parts, the penalty, according to\nthe respondent, can be imposed on that part of the income\nonly in respect of which the default has occurred. It is impossible to accept this contention. If two\ninterpretations of the relevant provisions were reasonably\npossible, we would have readily accepted that interpretation\nwhich favours the assessee. But the language of sub-section\n(1) of section 23A as also of Explanation 2 is clear and\ndistinct and does not yield to more than one reasonable\ninterpretation. Sub-section (1) provides that if the\ndividends distributed by a company are less than the\nstatutory percentage of the \"total income\" of the company as\nreduced by the amounts mentioned in clauses (a), (b) and\n(c), the Income-tax Officer shall make an order that the\ncompany shall be liable to pay additional super-tax at the\nprescribed rates \"on the undistributed balance of the total\nincome of the previous year\", that is to say on the total\nincome as reduced by the amounts referred to in clauses (a),\n(b) and (e) and the dividends actually distributed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 24
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C25",
+      "text": "Explanation 2 clarifies what is meant by \"statutory\npercentage\" and provides that the prescribed percentages\nshould be applied separately with reference to the amounts\nof profits and gains attributable to the two parts of the\ncompany's business, \"as if the said amounts were\nrespectively the total income of the company in relation to\neach of its parts....... for the purposes of sub-section\n(1)\". The fiction created by the Explanation is thus\nexpressly limited to the purposes of sub-section (1) and\nthere is no justification for pursuing the fiction to its\nlogical conclusion so As to permit it to operate beyond the\nlimited purpose of sub-section (1). Under the scheme\ncontained in section 23A, where a company has a composite\nbusiness it is necessary at the outset to find out the\nprofits attributable to the two parts of its busi-\n(1) Willis v. Thorp (1875) L.R. 10 Q.B. 383, 386, gee also\nCraies in Statute Law, Sixth Ed., p, 529-530.\n\nness. The statutory percentages a prescribed by Explanation\n2 have then to be applied separately to the profits of the\ntwo parts.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 25
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C26",
+      "text": "By reason of the fiction created by Explanation\n2 the profits of each part have for this purpose, and this\npurpose alone, to be treated as if they were the total\nincome of that part of the company's business. By sub-\nsection 1\n, the company becomes liable to pay additional\nsuper-tax if the dividends distributed by it are \"less than\nthe statutory percentage of the total income\". Explanation\n2 creates the fiction that for the purposes of sub-\nsection\n\n, the income of the respective parts is to be regarded as\nthe total income of each part so that the statutory\npercentages can be applied separately to the income of each\npart. The fiction operates in this limited field and is in\nterms created for this limited purpose. The levy of additional super-tax under section 23A (1) is a\nsingle levy. The super-tax has to be levied \"on the\nundistributed balance of the total income of the previous\nyear\". Sub-section (1) itself clarifies that by these words\nis meant \"total income as reduced by the amounts, if any,\nreferred to in clause (a), clause (b) or clause (c) and the\ndividends actually distributed, if any\".",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 26
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1975_1975_56_P004_C27",
+      "text": "The additional\nsuper-tax has therefore to be levied on the entire\nundistributed balance of the net income of the company. In\nother words, even if the Income-tax Officer finds that the\napportioned dividend in any part of the company's business\nis less than the dividend that ought to have been declared\nby application of the statutory percentage, the additional\nsupertax has to be levied on the whole of the undistributed\nprofits of the company. The High Court was therefore in\nerror in holding that the profits of the two parts of the\ncompany's business should be treated as if they were the\ntotal income of the company for all purposes. In taking\nthis view, the High Court overlooked the concluding words of\nExplanation 2 by reason of which the legal fiction has to be\nlimited to its duly appointed purpose. In the result we set aside the order of the High Court and\nallow the appeal with costs. Appeal allowed. P.B.R.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 27
+    }
+  ],
+  "case_summary": {
+    "case_name": "C.I.T. Madras vs T. V. Sundram Iyengar (P) Ltd",
+    "case_id": "SC_1975_1975_56",
+    "court": "Supreme Court of India",
+    "year": "1975",
+    "facts_summary": "",
+    "legal_issues": "ARGUMENTS\nFor the appellant :\n1.On a true interpretation of Section 23A(1) and Explanation\n2 thereto where the company's profits liable to be\ndistributed as dividend are composite consisting of\nindustrial and non-industrial profits, the Income-tax\nOfficer has first to find out profits attributable to\nindustrial activity and profits attributable to non-\nindustrial activity and ascertain the ratios between the\nindustrial and non industrial profits to the total\ndistributable profit. By the fiction created by explanation\n2 he has to treat the profits in each section as if they\nwere the total income of that section and apply the\nstatutory percentage to find out the minimum dividend that\nmust be declared by the company. He has then to dissect the\ncomposite dividend declared by the company and apportion the\nsame between the dividend relating to industrial profits and\ndividend relating to non-industrial profits in the same\nratios as the industrial profits bear to the total\ndistributable profits and non-industrial profits bear to the\ntotal distributable profits. Holding that under\nsection 23A, the company was liable to distribute by way of\ndividends a sum of Rs. 1,51,426 out of industrial profits\nand a sum of Rs. 8,43,186 out of non-industrial profits, the\nIncome-tax Officer levied additional super-tax on the\nentirety of the undistributed balance of the total income,\nthat is to say, on Rs. 13,21,174. The Appellate Assistant Commissioner having rejected the\nappeal, the company carried ",
+    "ratio_summary": "The dividends have, therefore, to be\nsplit up similarly, i.e. in the same ratio as the industrial\nand non-industrial profits bear to each other after the\ntotal profit is split up in two parts, industrial and non-\nindustrial. [102D-E]\n((1) An assignment as a proper portion of the dividends\nwould mean an assignment in the same or similar ratio as the\nrespective profits of the- two segments bear to the total\nprofits of the company. It is not open to the company to\nsplit up and apportion the dividends to the Profits of the\ntwo segments in such a manner as it finds convenient or\nthinks fit. The company's freedom to apportion the\ndividends is conditioned by the ratio which the profits of\nthe two segments bear to the total profits. [102 F-G]\nThe sum of Rs. 4.20 lakhs has to be split up in the same\nproportion which the respective profits of the two segments\nbore to the total profits of the company. There is a short-\nfall in respect of both the segments and accordingly the\ncompany would be liable to pay additional super-tax at the\nrate of 37 per cent on the entire undistributed balance of\nthe distributable profits. [102 H-103 B]. 4. Even on the interpretation put 'by the High Court and\nthe opinion given by it on the question referred to\nu/s.\n66(2)\nof the Income-tax Act, 1922, the Income-tax Officer\nwould be justified in levying additional super-tax on the\nentire distributed profit of Rs. 13,21,174 or atleast on Rs.\n12,36,196 which is the amount of non-industrial profits\nminus the bala",
+    "final_order": "The additional\nsuper-tax has therefore to be levied on the entire\nundistributed balance of the net income of the company. In\nother words, even if the Income-tax Officer finds that the\napportioned dividend in any part of the company's business\nis less than the dividend that ought to have been declared\nby application of the statutory percentage, the additional\nsupertax has to be levied on the whole of the undistributed\nprofits of the company. The High Court was therefore in\nerror in holding that the profits of the two parts of the\ncompany's business should be treated as if they were the\ntotal income of the company for all purposes. In taking\nthis view, the High Court overlooked the concluding words of\nExplanation 2 by reason of which the legal fiction has to be\nlimited to its duly appointed ",
+    "outcome_summary": "Allowed. The additional\nsuper-tax has therefore to be levied on the entire\nundistributed balance of the net income of the company. In\nother words, even if the Income-tax Officer finds that the\napportioned dividend in any part of the company's business\nis less than the dividend that ought to have been declare",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

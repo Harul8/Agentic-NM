@@ -1,0 +1,81 @@
+{
+  "case_id": "SC_1980_1980_296",
+  "case_name": "Satyanarayan Prasad Sah And Ors. vs State Of Bihar And Anr.",
+  "normalized_case_name": "SATYANARAYAN_PRASAD_SAH_AND_ORS._VS_STATE_OF_BIHAR_AND_ANR.",
+  "court": "Supreme Court of India",
+  "year": "1980",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "31 July 1980",
+  "judges": [
+    "O. Chinnappa Reddy",
+    "R.S. Pathak",
+    "V.R. Krishna Iyer",
+    "JUDGMENT",
+    "V.R. Krishna Iyer, J."
+  ],
+  "author": "V.R. Krishna Iyer",
+  "bench_type": "constitution",
+  "petitioner": "Satyanarayan Prasad Sah And Ors.",
+  "respondent": "State Of Bihar And Anr.",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 3,
+  "cited_by_count": 14,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1980SC2051",
+    "1980SUPP(1)SCC474",
+    "1980(12)UJ799(SC)",
+    "AIR 1980 SUPREME COURT 2051",
+    "(1981) PAT LJR 220"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1980\\1980_296.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1980_1980_296_P001_C01",
+      "text": "1. Mr. Sinha, appearing for the petitioners in the above Writ Petitions, contended that that\nSection 4(c)\nof the Consolidation of Holdings & Prevention of Fragmentation Act 1956 was violative of\nArticles 14\nand\n\nof the Constitution of India. In his submission, the provisions that any proceeding in a civil Court of the nature covered by\nSection 4(c)\nwould be within the exclusive jurisdiction of the Consolidation authorities and any order passed by a civil Court regarding land (title or possession or other incident) pending before the Civil Court would stand abated, was a reasonable restriction on the right of a party to go to an ordinary civil Court It also discriminated that class of litigants from other classes of litigants who enjoyed the right to approach the civil Court. In his case the decree had been passed in his favour by a civil Court but the subject matter was pending In an appeal in the High Court and the High Court passed an order nullifying the decree of the trial Court having regard to\nSection 4(c)\nof the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1980_1980_296_P002_C01",
+      "text": "2. We do not think there is substance in the submission. True, the petitioner is right in saying that the High Court should not have \"nullified\" the decree of the trial Court but should have merely declared that the proceeding stood abated, which of course, means that the civil proceeding comes to nought. Regarding the constitutional submissions we are not called upon to investigate the merits for the short reason that both the points have been covered by two decisions of this Court Ham Adhar Singh v. Ramroee Singh and Ors. and Chattar Singh and Ors. v. Thakur Prasad Singh Indeed, High Court has merely followed these two decisions in reporting the contentions of the appellants. We, therefore, see no merit in the Writ Petitions and dismiss them.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1980_1980_296_P003_C01",
+      "text": "3. In the circumstances of the case there will be no order as to costs.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Satyanarayan Prasad Sah And Ors. vs State Of Bihar And Anr.",
+    "case_id": "SC_1980_1980_296",
+    "court": "Supreme Court of India",
+    "year": "1980",
+    "facts_summary": "",
+    "legal_issues": "1. Mr. Sinha, appearing for the petitioners in the above Writ Petitions, contended that that\nSection 4(c)\nof the Consolidation of Holdings & Prevention of Fragmentation Act 1956 was violative of\nArticles 14\nand\n\nof the Constitution of India. In his submission, the provisions that any proceeding in a civil Court of the nature covered by\nSection 4(c)\nwould be within the exclusive jurisdiction of the Consolidation authorities and any order passed by a civil Court regarding land (title or possession or other incident) pending before the Civil Court would stand abated, was a reasonable restriction on the right of a party to go to an ordinary civil Court It also discriminated that class of litigants from other classes of litigants who enjoyed the right to approach the civil Court. In his case the decree had been passed in his favour by a civil Court but the subject matter was pending In an appeal in the High Court and the High Court passed an order nullifying the decree of the trial Court ha",
+    "ratio_summary": "",
+    "final_order": "3. In the circumstances of the case there will be no order as to costs.",
+    "outcome_summary": "3. In the circumstances of the case there will be no order as to costs.",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

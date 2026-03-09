@@ -11,6 +11,9 @@ Phase 2 rewrite:
 
 import json
 import logging
+import os
+import time
+
 from llm.ollama_client import ask_llm
 from prompts.advocate_prompts import (
     GREETING_PHRASES,
@@ -23,6 +26,23 @@ from prompts.advocate_prompts import (
 )
 
 logger = logging.getLogger(__name__)
+
+# Set PIPELINE_TIMING=1 to log elapsed ms for each step (debug slow follow-ups)
+_PIPELINE_TIMING = os.environ.get("PIPELINE_TIMING", "").lower() in ("1", "true", "yes")
+
+# Static greeting for exact match (target <100 ms; no LLM call)
+GREETING_STATIC_TEMPLATE = (
+    "Hi! Tell me about your legal issue and I'll help you find relevant laws and cases."
+)
+
+
+def _log_fc_step(step_name: str, elapsed_ms: float, extra: str = "") -> None:
+    if _PIPELINE_TIMING:
+        msg = f"PIPELINE_TIMING fact_collector.{step_name}: {elapsed_ms:.0f} ms"
+        if extra:
+            msg += f" | {extra}"
+        logger.info(msg)
+
 
 # Legal keywords used to distinguish greetings from legal queries
 _LEGAL_KEYWORDS = (
@@ -54,7 +74,7 @@ def is_greeting(msg: str, conversation_history: list = None) -> bool:
     if len(m) > 100:
         return False  # Long messages are substantive
 
-    # Exact match (with punctuation stripped)
+    # Exact match → static template (no LLM); target <100 ms
     cleaned = m.rstrip("!?.,;:")
     if cleaned in GREETING_PHRASES:
         return True
@@ -296,7 +316,13 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
         if intent in ("chat", "greeting"):
             if reply:
                 return {"action": "ask", "question": reply}
-            return {"action": "ask", "question": generate_greeting_response(user_message)}
+            cleaned = user_message.strip().lower().rstrip("!?.,;:")
+            question = (
+                GREETING_STATIC_TEMPLATE
+                if cleaned in GREETING_PHRASES
+                else generate_greeting_response(user_message)
+            )
+            return {"action": "ask", "question": question}
 
         # Safety net: if user message is clearly greeting (and no prior legal context), don't run research
         # Don't check conversation_history here since we're inside _parse_llm_response which doesn't have it
@@ -307,7 +333,7 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
             if cleaned in GREETING_PHRASES:
                 if reply:
                     return {"action": "ask", "question": reply}
-                return {"action": "ask", "question": generate_greeting_response(user_message)}
+                return {"action": "ask", "question": GREETING_STATIC_TEMPLATE}
 
         # Safety net: override intent based on keywords when routing LLM said legal_opinion
         if keyword_intent and intent == "legal_opinion":
@@ -411,11 +437,21 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
     If LLM fails entirely, defaults to action="complete" with user's message as facts_summary,
     ensuring their request is never lost.
     """
+    t_start = time.perf_counter()
 
     # --- Fast path: greetings don't need the full LLM pipeline ---
     # Pass conversation_history so short follow-ups (e.g. "telangana") aren't misclassified as greetings
     if is_greeting(user_message, conversation_history):
-        return {"action": "ask", "question": generate_greeting_response(user_message)}
+        t_before = time.perf_counter()
+        cleaned = user_message.strip().lower().rstrip("!?.,;:")
+        question = (
+            GREETING_STATIC_TEMPLATE
+            if cleaned in GREETING_PHRASES
+            else generate_greeting_response(user_message)
+        )
+        out = {"action": "ask", "question": question}
+        _log_fc_step("greeting_response", (time.perf_counter() - t_before) * 1000)
+        return out
 
     # --- Fast path: stop signals ---
     if is_stop_signal(user_message):
@@ -444,12 +480,20 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
         }
 
     # --- Two-gate routing: Gate 1 (legal vs generalist vs greeting) ---
+    t_g1 = time.perf_counter()
     gate1_result = _run_gate1(conversation_history, user_message)
+    _log_fc_step("gate1", (time.perf_counter() - t_g1) * 1000, gate1_result.get("gate1", "?") if gate1_result else "None")
     if gate1_result:
         g1 = gate1_result.get("gate1", "")
         reply = (gate1_result.get("reply_to_client") or "").strip()
         if g1 == "GREETING":
-            return {"action": "ask", "question": reply or generate_greeting_response(user_message)}
+            cleaned = user_message.strip().lower().rstrip("!?.,;:")
+            question = (
+                GREETING_STATIC_TEMPLATE
+                if cleaned in GREETING_PHRASES
+                else (reply or generate_greeting_response(user_message))
+            )
+            return {"action": "ask", "question": question}
         if g1 == "GENERALIST" and not force_legal:
             return {
                 "action": "complete",
@@ -463,13 +507,17 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
         if g1 in ("LEGAL", "GENERALIST") or force_legal:
             # Treat as LEGAL when gate1 says LEGAL, or when caller forces legal mode
             # even if gate1 returned GENERALIST.
+            t_g2 = time.perf_counter()
             parsed = _run_gate2_legal(conversation_history, user_message)
+            _log_fc_step("gate2", (time.perf_counter() - t_g2) * 1000, f"action={parsed.get('action') if parsed else 'None'}")
             if parsed:
                 return parsed
             # Gate 2 failed: fall back to full orchestrator
             try:
+                t_orch = time.perf_counter()
                 from agents.orchestrator_agent import run_orchestrator
                 orchestrator_output = run_orchestrator(conversation_history, user_message)
+                _log_fc_step("orchestrator_fallback", (time.perf_counter() - t_orch) * 1000)
                 if orchestrator_output:
                     parsed = _parse_llm_response(orchestrator_output, user_message)
                     if parsed:
@@ -479,8 +527,10 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
 
     # --- Fallback: try full orchestrator if two-gate was skipped or Gate 2 failed ---
     try:
+        t_orch = time.perf_counter()
         from agents.orchestrator_agent import run_orchestrator
         orchestrator_output = run_orchestrator(conversation_history, user_message)
+        _log_fc_step("orchestrator_full", (time.perf_counter() - t_orch) * 1000)
         if orchestrator_output:
             parsed = _parse_llm_response(orchestrator_output, user_message)
             if parsed:
@@ -504,7 +554,9 @@ Now output REASONING: then on the next line your JSON with reply_to_client."""
 
     # Attempt 1
     try:
+        t_llm = time.perf_counter()
         response = ask_llm(prompt)
+        _log_fc_step("fallback_llm_attempt1", (time.perf_counter() - t_llm) * 1000)
         parsed = _parse_llm_response(response, user_message)
         if parsed:
             return parsed
@@ -513,8 +565,10 @@ Now output REASONING: then on the next line your JSON with reply_to_client."""
 
     # Attempt 2: simpler retry prompt
     try:
+        t_llm = time.perf_counter()
         retry_prompt = FACT_COLLECTION_RETRY_PROMPT.format(user_message=user_message[:500])
         response = ask_llm(retry_prompt)
+        _log_fc_step("fallback_llm_attempt2", (time.perf_counter() - t_llm) * 1000)
         parsed = _parse_llm_response(response, user_message)
         if parsed:
             return parsed
@@ -522,6 +576,7 @@ Now output REASONING: then on the next line your JSON with reply_to_client."""
         pass
 
     # --- Both attempts failed: default to research with what we have (flexible limit when no count) ---
+    _log_fc_step("get_next_question_or_complete TOTAL", (time.perf_counter() - t_start) * 1000, "defaulting to complete")
     logger.warning("Fact collection LLM failed twice, proceeding to research with user's message")
     all_user_text = "\n".join(m["content"] for m in conversation_history if m.get("role") == "user")
     combined = f"{all_user_text}\n{user_message}".strip() or user_message

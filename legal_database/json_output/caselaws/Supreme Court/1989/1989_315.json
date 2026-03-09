@@ -1,0 +1,183 @@
+{
+  "case_id": "SC_1989_1989_315",
+  "case_name": "Mrs. Arundhati Balkrishna vs Commissioner Of Income Tax",
+  "normalized_case_name": "MRS._ARUNDHATI_BALKRISHNA_VS_COMMISSIONER_OF_INCOME_TAX",
+  "court": "Supreme Court of India",
+  "year": "1989",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "15 March 1989",
+  "judges": [
+    "R.S.  Pathak",
+    "Misra Rangnath"
+  ],
+  "author": "R.S.  Pathak",
+  "bench_type": "division",
+  "petitioner": "Mrs. Arundhati Balkrishna",
+  "respondent": "Commissioner Of Income Tax",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 4,
+  "cited_by_count": 28,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1989 AIR 1092",
+    "1989 SCR (1) 865"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1989\\1989_315.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1989_1989_315_P001_C01",
+      "text": "CITATION:\n 1989 AIR 1092 1989 SCR (1) 865\n 1989 SCC Supl. (1) 278 JT 1989 (1) 429\n 1989 SCALE (1)529",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1989_1989_315_P002_C01",
+      "text": "ACT:\nIncome Tax Act, 1961\n--\nS. 161(1)\nread with\ns. 166-\n-Compu-\ntation of assessee's income derived from a Trust--Real\nincome of Trust to be included in the total income of asses-\nsee after taking into consideration different items of\npermissible deductions in relation to that income.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1989_1989_315_P003_C01",
+      "text": "HEADNOTE:\n The appellant was an assessee who derived income from a\nTrust. For assessment years 1964-65 and 1966-67 the Income\nTax Officer disallowed deduction of two mounts claimed as\ninterest paid by the Trust for amounts withdrawn from an\nEstate Account for investment on the ground that a portion\nof the amounts withdrawn from the Estate Account had been\nutilized for personal expenditure by the assessee. The\nappellants appeals to the Assistant Commissioner having been\nrejected, she preferred second appeals to the Appellate\nTribunal raising an additional question in respect of the\nassessment year 1964-65 that she was liable to tax on the\nnet income only received by her from the Trust and not on\nincome determined in accordance with the provisions of the\nIncome Tax Act\nin the case of the Trust. The Tribunal dis-\nmissed the appeals but at the instance of the appellant\nreferred the two questions of law arising therein to the\nHigh Court which answered both of them against the assessee.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1989_1989_315_P003_C02",
+      "text": "Dismissing the appeals,\n HELD: It is not the income shown in the books of account\nof the Trust actually paid to the assessee after deduction\nof the outgoings from the income received in the hands of\nthe Trust, but the real income of the Trust has to be in-\ncluded in the total income of the assessee after taking into\nconsideration the different items of permissible deductions\nin relation to that income. [869E-F]\n It is apparent from\ns. 161(1)\nof the Income Tax Act,\n1961 that a representative assessee, that is to say a trus-\ntee, as regards the income In respect of which he is a\nrepresentative assessee, is subject to the same duties,\nresponsibilities and liabilities as if the income were\nincome received by or accruing to or in favour of him bene-\nficially, and he is",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1989_1989_315_P004_C01",
+      "text": "liable to assessment in his own name in respect of that\nincome; but any such assessment is deemed to be made upon\nhim in his representative capacity only, and the tax is\nlevied upon and recovered from him in like manner and to the\nsame extent as it would be leviable upon and recoverable\nfrom the person represented by him. And\ns. 166\nof the Act\nclarifies that the provisions relating to the liability of a\nrepresentative assessee will not prevent either the direct\nassessment of the person on whose behalf or for whose bene-\nfit income is receivable, or the recovery from such person\nof the tax payable in respect of such income. The Income Tax\nOfficer has the option to proceed either against the trustee\nor against the beneficiary, but in either case the income to\nbe assessed must be in the same figure. What the trustee\nreceives as the income pertaining to the beneficiary is\nreceived by him under an obligation to pass on that income\nto the beneficiary. However, in most cases administration\ncharges and expenses have to be met out of the Trust's\nincome and it is only the net income which reaches the\nbeneficiary.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1989_1989_315_P004_C02",
+      "text": "If the income had, to pass directly to the\nbeneficiary and not under trust through a trustee, the\nbeneficiary would have equally to meet those outgoings,\nleaving a net income in his hands which for the purposes of\nthe\nIncome Tax Act\nwould have been computed after reducing\nthe gross income by the deductions admissible under the Act.\n[868H; 869A-E]\n (ii) The High Court was right in deciding the question\nrelating to the disallowance of part of the interest claimed\nas a deduction against the assessee. [868F]\n Padmavati Jaikrishna v. Addl. Commissioner of Income-\nTax, Gujarat, [1987] 166 I.T.R. 176, referred to.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1989_1989_315_P005_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal Nos. 80 & 81\nof 1975.\nFrom the Judgment and Order dated 26/27.8.1974 of the\nGujarat High Court in I.T. Reference Nos. 7 and 29 of 1973.\nS.C. Patel for the Appellant.\nDr. V. Gauri Shanker and Ms. A. Subhashini for the\nRespondent.\nThe Judgment of the Court was delivered by\nPATHAK, CJ. The appellant is an assessee who derives income",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1989_1989_315_P006_C01",
+      "text": "from various sources, including income from the Shrimati\nArundhati Balkrishna Trust, Ahmedabad. In assessment pro-\nceedings for the assessment year 1964-65 the Income Tax\nOfficer found that a sum of Rs. 10,880 had been debited to\nthe interest account maintained in the books of the Ahmeda-\nbad Trust as interest paid to the Harivallabhadas Kalidas\nEstate Account. Upon further scrutiny, he discovered that\nsubstantial debits totalling Rs.2,19,804 included withdraw-\nals from the Estate Account by the Ahmedabad Trust on ac-\ncount of the personal expenses of the assessee. After taking\ninto consideration earlier withdrawals from the Estate\nAccount by the Ahmedabad Trust for the purpose of investment\nand making adjustments for deposits during the year, the\nIncome Tax Officer concluded that the net withdrawals from\nthe Estate Account for personal expenditure were\nRs.3,10,806- He held that the proportionate interest of\nRs.6,199 out of the total interest of Rs. 10,880 paid by the\nAhmedabad Trust to the Estate Account was referable to such\nwithdrawals, and. therefore constituted an inadmissible\ndeduction.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1989_1989_315_P006_C02",
+      "text": "Similarly, for the assessment year 1966-67 the\nIncome Tax Officer found that a sum of Rs.25,496 had been\nshown in the books of account of the Ahmedabad Trust for the\nrelevant previous year as interest paid to the Estate Ac-\ncount. He held that of this sum, an amount of Rs.12,833 was\nreferable to withdrawals for purposes other than investment,\nand accordingly he disallowed the claim of interest to that\nextent. The assessee appealed to the Appellate Assistant Com-\nmissioner of Income-Tax, and failing there he proceeded in\nsecond appeal to the Income Tax Appellate Tribunal, claiming\nthat the entire amount of interest should have been allowed\nas a deduction for each year. An additional question raised\nin respect of the assessment year 1964-65 related to the\npoint whether the assessee was liable to tax on the net\nincome only received by her from the Trust or the income\ndetermined in accordance with the provisions of the\nIncome\nTax Act\nin the case of the Trust. The Appellate Tribunal\ndismissed the appeals of the assessee.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1989_1989_315_P006_C03",
+      "text": "At the instance of the assessee the Appellate Tribunal\nreferred the following questions of law to the High Court of\nGujarat in respect of the assessment year 1964-65:\n\"(1) Whether, on the facts and in the circumstances\nof the case, the Tribunal was fight in not holding that out\nof the interest payment of Rs.10,880, Rs.6,199 was not an\nadmissible deduction against the income from other sources?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1989_1989_315_P007_C01",
+      "text": "(2) Whether, on the facts and in the circumstances of\nthe case, the income includible in the total income of the\nassessee is income determinable as per provisions of the\nIncome Tax, 1961 in the case of the Trust or the income\nreceivable by the assessee from the said trust?\"\nThe question referred to the High Court for assessment\nyear 1966-67 was:\n\"Whether on the facts and in the circumstances of the case,\nthe Tribunal was right in holding that out of the interest\npayment of Rs.25,496, Rs. 12,833 was not an admissible\ndeduction against the income from other sources?\"\nThe High Court held that the question relating to the\ndisallowance of part of the interest for the two assessment\nyears was rightly decided against the assessee and in favour\nof the Revenue. On the second question in the reference for\nthe assessment year 1964-65, the High Court held that the\nincome includible in the total income of the assessee was\nincome determinable in accordance with the provisions of the\nIncome Tax Act\nin the case of the Trust and not the income\nactually received or receivable by the assessee from the\nTrust or according to the entries in the books of accounts\nof the Trust.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1989_1989_315_P007_C02",
+      "text": "In the result that question was also answered\nagainst the assessee and in favour of the Revenue. In regard to the question arising in each of the assess-\nment years 1964-65 and 1966-67 relating to the disallowance\nof part of the interest claimed as a deduction by the asses-\nsee, the High Court relied on the view taken by it earlier\nShrimati Padmavati Jaykrishna v. Commissioner of Income\nTax.\n, [1975] 101 I.T.R. 153. The judgment of the High Court\nwas considered in appeal by this Court in Padmavati Jaikr-\nishna v. Addl. Commissioner of Income-Tax, Gujarat, [1987]\n166 I.T.R. 176 and this Court affirmed the view taken by the\nHigh Court. For the reasons which found favour with this\nCourt\nin that case\n, we must answer the question in the two\nappeals before us against the assessee and in favour of the\nRevenue. Turning to the additional question referred to the High\nCourt fo-\nr the assessment year 1964-65, it seems to us clear that\nwhat is assessable in the hands of the assessee must be the\nincome of the Trust received by it on behalf of the asses-\nsee. It is apparent from\ns. 161(1)\nof the",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1989_1989_315_P008_C01",
+      "text": "Income Tax Act, 1961\nthat a representative assessee, that is\nto say a trustee, as regards the income in respect of which\nhe is representative assessee, is subject to the same du-\nties, responsibilities and liabilities as if the income were\nincome received by or accruing to or in favour of him bene-\nficially, and he is liable to assessment in his own name in\nrespect of that income; but any such assessment is deemed to\nbe made upon him in his representative capacity only, and\nthe tax is levied upon and recovered from him in like manner\nand to the same extent as it would be leviable upon and\nrecoverable from the person represented by him. And\ns. 166\nof the. Act clarifies that the provisions relating to the\nliability of a representative assessee will not prevent\neither the direct assessment of the person on whose behalf\nor for whose benefit income is receivable, or the recovery\nfrom such person of the tax payable in respect of such\nincome. The Income Tax Officer has the option to proceed\neither against the trustee or against the beneficiary, but\nin either case the income to be assessed must be in the same\nfigure.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1989_1989_315_P008_C02",
+      "text": "What the trustee receives as the income pertaining\nto the beneficiary is received by him under an obligation to\npass on that income to the beneficiary. However, in most\ncases administration charges and expenses have to be met out\nof the Trust's income and it is only the net income which\nreaches' the beneficiary. If the income had to pass directly\nto the beneficiary and not under trust through a trustee the\nbeneficiary would have equally to meet those outgoings,\nleaving a net income in his hands which for the purposes of\nthe\nIncome Tax Act\nwould have been computed after reducing\nthe gross income by the deductions admissible under the Act. It seems to us clear that it is not the income shown in the\nbooks of account of the Ahmedabad Trust actually paid to the\nassessee after deduction of the outgoings from the income\nreceived in the hands of the Ahmedabad Trust, but the real\nincome of the Ahmedabad Trust has to be included in the\ntotal income of the assessee after taking into consideration\nthe different items of permissible deductions in relation to\nthat income. We are of opinion that the High Court is right\nin the view which it has taken.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1989_1989_315_P008_C03",
+      "text": "In the result, the appeals fail and are dismissed with\ncosts. H.L.C. Appeals dismissed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    }
+  ],
+  "case_summary": {
+    "case_name": "Mrs. Arundhati Balkrishna vs Commissioner Of Income Tax",
+    "case_id": "SC_1989_1989_315",
+    "court": "Supreme Court of India",
+    "year": "1989",
+    "facts_summary": "ACT:\nIncome Tax Act, 1961\n--\nS. 161(1)\nread with\ns. 166-\n-Compu-\ntation of assessee's income derived from a Trust--Real\nincome of Trust to be included in the total income of asses-\nsee after taking into consideration different items of\npermissible deductions in relation to that income. HEADNOTE:\n The appellant was an assessee who derived income from a\nTrust. For assessment years 1964-65 and 1966-67 the Income\nTax Officer disallowed deduction of two mounts claimed as\ninterest paid by the Trust for amounts withdrawn from an\nEstate Account for investment on the ground that a portion\nof the amounts withdrawn from the Estate Account had been\nutilized for personal expenditure by the assessee. The\nappellants appeals to the Assistant Commissioner having been\nrejected, she preferred second appeals to the Appellate\nTribunal raising an additional question in respect of the\nassessment year 1964-65 that she was liable to tax on the\nnet income only received by her from the Trust and not on\nincome determined in accordance with the provisions of the\nIncome Tax Act\nin the case of the Trust. The Tribunal dis-\nmissed the appeals but at the instance of the appellant\nreferred the two questions of law arising therein to the\nHigh Court which answered both of them against the assessee.",
+    "legal_issues": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal Nos. 80 & 81\nof 1975.\nFrom the Judgment and Order dated 26/27.8.1974 of the\nGujarat High Court in I.T. Reference Nos. 7 and 29 of 1973.\nS.C. Patel for the Appellant.\nDr. V. Gauri Shanker and Ms. A. Subhashini for the\nRespondent.\nThe Judgment of the Court was delivered by\nPATHAK, CJ. The appellant is an assessee who derives income",
+    "ratio_summary": "If the income had, to pass directly to the\nbeneficiary and not under trust through a trustee, the\nbeneficiary would have equally to meet those outgoings,\nleaving a net income in his hands which for the purposes of\nthe\nIncome Tax Act\nwould have been computed after reducing\nthe gross income by the deductions admissible under the Act.\n[868H; 869A-E]\n (ii) The High Court was right in deciding the question\nrelating to the disallowance of part of the interest claimed\nas a deduction against the assessee. [868F]\n Padmavati Jaikrishna v. Addl. Commissioner of Income-\nTax, Gujarat, [1987] 166 I.T.R. 176, referred to. (2) Whether, on the facts and in the circumstances of\nthe case, the income includible in the total income of the\nassessee is income determinable as per provisions of the\nIncome Tax, 1961 in the case of the Trust or the income\nreceivable by the assessee from the said trust?\"\nThe question referred to the High Court for assessment\nyear 1966-67 was:\n\"Whether on the facts and in the circumstances of the case,\nthe Tribunal was right in holding that out of the interest\npayment of Rs.25,496, Rs. 12,833 was not an admissible\ndeduction against the income from other sources?\"\nThe High Court held that the question relating to the\ndisallowance of part of the interest for the two assessment\nyears was rightly decided against the assessee and in favour\nof the Revenue. On the second question in the reference for\nthe assessment year 1964-65, the High Court held that the\nincome includible in",
+    "final_order": "In the result that question was also answered\nagainst the assessee and in favour of the Revenue. In regard to the question arising in each of the assess-\nment years 1964-65 and 1966-67 relating to the disallowance\nof part of the interest claimed as a deduction by the asses-\nsee, the High Court relied on the view taken by it earlier\nShrimati Padmavati Jaykrishna v. Commissioner of Income\nTax.\n, [1975] 101 I.T.R. 153. The judgment of the High Court\nwas considered in appeal by this Court in Padmavati Jaikr-\nishna v. Addl. Commissioner of Income-Tax, Gujarat, [1987]\n166 I.T.R. 176 and this Court affirmed the view taken by the\nHigh Court. For the reasons which found favour with this\nCourt\nin that case\n, we must answer the question in the two\nappeals before us against the assessee and in favour ",
+    "outcome_summary": "In the result that question was also answered\nagainst the assessee and in favour of the Revenue. In regard to the question arising in each of the assess-\nment years 1964-65 and 1966-67 relating to the disallowance\nof part of the interest claimed as a deduction by the asses-\nsee, the High Court relied on the view taken by it earlier\nShrimati Padmavati Jaykrishna v. Commissioner of Income\nTax.\n, [19",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

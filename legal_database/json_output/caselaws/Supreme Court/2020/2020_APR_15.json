@@ -1,0 +1,866 @@
+{
+  "case_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC",
+  "case_name": "Union Of India & Anr.Etc. vs M/S V.V.F.Ltd.Etc.Etc.",
+  "normalized_case_name": "UNION_OF_INDIA_&_ANR.ETC._VS_M_S_V.V.F.LTD.ETC.ETC.",
+  "court": "Supreme Court of India",
+  "year": "2020",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 2256-2263 of 2020",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "22 April 2020",
+  "judges": [
+    "B.R. Gavai",
+    "M. R. Shah",
+    "Arun Mishra"
+  ],
+  "author": "M.R. Shah",
+  "bench_type": "constitution",
+  "petitioner": "Union Of India & Anr.Etc.",
+  "respondent": "M/S V.V.F.Ltd.Etc.Etc.",
+  "reporter_citations": [],
+  "outcome": "disposed of",
+  "disposition": "disposed",
+  "cites_count": 24,
+  "cited_by_count": 19,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR 2020 SUPREME COURT 2954",
+    "AIRONLINE 2020 SC 533"
+  ],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2020\\APR\\2020_APR_15.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NOS. 2256-2263 OF 2020\n (Arising out of S.L.P.(C) Nos. 28194-28201/2010)\n\n Union of India & Another Etc. Etc. …Appellants\n Versus\n M/s V.V.F Limited & Another Etc. Etc. …Respondents\n WITH\n C.A. No. 2264 of 2020 @ SLP (C) No. 14751/2013,\n C.A. No. 2265 of 2020 @ SLP (C) No. 14752/2013,\n C.A. No. 2266 of 2020 @ SLP (C) No. 14753/2013,\n C.A. Nos. 2267-2275 of 2020 @ SLP (C) Nos. 15481-15489/2011,\n SLP (C) No.19998/2013,\n SLP …. CC No. 1787/2014,\n C.A. No. 2276 of 2020 @ SLP (C) No.11878/2015,\n C.A. No. 2277 of 2020 @ SLP (C) No.19370/2015,\n C.A. No. 2278 of 2020 @ SLP (C) No.19868/2015,\n C.A. No. 2279 of 2020 @ SLP (C) No.19386/2015,\n C.A. No. 2280 of 2020 @ SLP (C) No.19379/2015,\n C.A. No. 2281 of 2020 @ SLP (C) No.19376/2015,\n C.A. No. 2282 of 2020 @ SLP (C) No.19384/2015,\n C.A. No. 2283 of 2020 @ SLP (C) No.19380/2015,\n C.A. No. 2284 of 2020 @ SLP (C) No.20626/2015,\n C.A. No. 2285 of 2020 @ SLP (C) No.21583/2015,\n C.A. No. 2286 of 2020 @ SLP (C) No.19320/2015,\n C.A. No. 2287 of 2020 @ SLP (C) No.19371/2015,\n C.A. No. 2288 of 2020 @ SLP (C) No.20109/2015,\n\n C.A. No. 2291 of 2020 @ SLP (C) No.21406/2015,\n\nC.A.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P001_C02",
+      "text": "No. 2292 of 2020 @ SLP (C) No.23331/2015,\nC.A. No. 2293 of 2020 @ SLP (C) No.20630/2015,\nC.A. No. 2294 of 2020 @ SLP (C) No.20631/2015,\nC.A. No. 2295 of 2020 @ SLP (C) No.20628/2015,\nC.A. No. 2296 of 2020 @ SLP (C) No.20627/2015,\nC.A. No. 2297 of 2020 @ SLP (C) No.19228/2015,\nC.A. No. 2298 of 2020 @ SLP (C) No.23394/2015,\nC.A. No. 2299 of 2020 @ SLP (C) No.23399/2015,\nC.A. No. 2300 of 2020 @ SLP (C) No.23328/2015,\nC.A. No. 2301 of 2020 @ SLP (C) No.19373/2015,\nC.A. No. 2302 of 2020 @ SLP (C) No.23329/2015,\nC.A. No. 2303 of 2020 @ SLP (C) No.23326/2015,\nC.A. No. 2304 of 2020 @ SLP (C) No.20442/2015,\nC.A. No. 2305 of 2020 @ SLP (C) No.23398/2015,\nC.A. No. 2306 of 2020 @ SLP (C) No.23393/2015,\nC.A. No. 2307 of 2020 @ SLP (C) No.20370/2015,\nC.A. No. 2308 of 2020 @ SLP (C) No.19842/2015,\nC.A. No. 2309 of 2020 @ SLP (C) No.22568/2015,\nC.A. No. 2310 of 2020 @ SLP (C) No.21605/2015,\nC.A. No. 2363 of 2020 @ SLP (C) No.23303/2015,\nC.A. No. 2311 of 2020 @ SLP (C) No.23301/2015,\nC.A. No. 2312 of 2020 @ SLP (C) No.23334/2015,\nC.A. No. 2313 of 2020 @ SLP (C) No.21584/2015,\nC.A. No. 2314 of 2020 @ SLP (C) No.23391/2015,\nC.A. No. 2315 of 2020 @ SLP (C) No.23297/2015,\nC.A.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P001_C03",
+      "text": "No. 2316 of 2020 @ SLP (C) No.23898/2015,\nC.A. No. 2317 of 2020 @ SLP (C) No.23251/2015,\nC.A. No. 2318 of 2020 @ SLP (C) No.23896/2015,\nC.A. No. 2319 of 2020 @ SLP (C) No.23903/2015,\nC.A. No. 2320 of 2020 @ SLP (C) No.23396/2015,\nC.A. No. 2321 of 2020 @ SLP (C) No.23294/2015,\nC.A. No. 2322 of 2020 @ SLP (C) No.23897/2015,\nC.A. No. 2323 of 2020 @ SLP (C) No.23900/2015,\nC.A. No. 2324 of 2020 @ SLP (C) No.23295/2015,\nC.A. No. 2325 of 2020 @ SLP (C) No.23299/2015,\nC.A. No. 2326 of 2020 @ SLP (C) No.23902/2015,\nC.A. No. 2327 of 2020 @ SLP (C) No.27036/2015,\nC.A. No. 2328 of 2020 @ SLP (C) No.23296/2015,\n\nC.A. No. 2329 of 2020 @ SLP (C) No.26286/2015,\nC.A. No. 2330 of 2020 @ SLP (C) No.23693/2015,\nC.A. No. 2331 of 2020 @ SLP (C) No.26764/2015,\nC.A. No. 2332 of 2020 @ SLP (C) No.23247/2015,\nC.A. No. 2333 of 2020 @ SLP (C) No.23899/2015,\nC.A. No. 2334 of 2020 @ SLP (C) No.23901/2015,\nC.A. No. 2335 of 2020 @ SLP (C) No.27041/2015,\nC.A. No. 2364 of 2020 @ SLP (C) No.27024/2015,\nC.A. No. 2336 of 2020 @ SLP (C) No.27034/2015,\nC.A. No. 2337 of 2020 @ SLP (C) No.26284/2015,\nC.A. No. 2338 of 2020 @ SLP (C) No.27053/2015,\nC.A. No. 2339 of 2020 @ SLP (C) No.27058/2015,\nC.A.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P001_C04",
+      "text": "No. 2340 of 2020 @ SLP (C) No.25804/2015,\nC.A. No. 2341 of 2020 @ SLP (C) No.27046/2015,\nC.A. No. 2342 of 2020 @ SLP (C) No.26767/2015,\nC.A. No. 2343 of 2020 @ SLP (C) No.27043/2015,\nC.A. No. 2344 of 2020 @ SLP (C) No.26821/2015,\nC.A. No. 2345 of 2020 @ SLP (C) No.27050/2015,\nC.A. No. 2346 of 2020 @ SLP (C) No.26294/2015,\nC.A. No. 2347 of 2020 @ SLP (C) No.27048/2015,\nC.A. No. 2348 of 2020 @ SLP (C) No.26283/2015,\nC.A. No. 2349 of 2020 @ SLP (C) No.27049/2015,\nC.A. No. 2350 of 2020 @ SLP (C) No.25799/2015,\nC.A. No. 2351 of 2020 @ SLP (C) No.26295/2015,\nC.A. No. 2352 of 2020 @ SLP (C) No.26287/2015,\nC.A. No. 2353 of 2020 @ SLP (C) No.25797/2015,\nC.A. No. 2354 of 2020 @ SLP (C) No.26290/2015,\nC.A. No. 2355 of 2020 @ SLP (C) No.27744/2015,\nC.A. No. 2356 of 2020 @ SLP (C) No.26972/2015,\nC.A. No. 2357 of 2020 @ SLP (C) No.1907/2016,\nC.A. No. 2358 of 2020 @ SLP (C) No.7208/2016,\nC.A. No. 2359 of 2020 @ SLP (C) No. 10257/2018,\nC.A. No. 2360 of 2020 @ SLP (C) No.10253/2018,\nC.A. No. 2361 of 2020 @ SLP (C) No.12148/2018 and\nC.A. No. 2362 of 2020 @ SLP (C) No.12496/2018. JUDGMENT\n\nM.R. SHAH, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P002_C01",
+      "text": "1. Leave granted in all the special leave petitions. Civil Appeals @ SLP © Nos. 28194-28201 of 2010\n2.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P002_C02",
+      "text": "As common question of law and facts arise in this group of appeals and as\n\nsuch arise out of the impugned common judgment and order dated 10.03.2010\n\npassed by the High Court of Gujarat at Ahmedabad in respective Special Civil\n\nApplication Nos. 5909/2008, 6300/2008, 6298/2008, 6299/2008, 5907/2008,\n\n8468/2008, 6334/2008 and 6562/2008, all these appeals are being decided and\n\ndisposed of by this common judgment and order.\n2.1 Feeling aggrieved and dissatisfied with the impugned common judgment\n\nand order dated 10.03.2010 passed by the High Court of Gujarat at Ahmedabad in\n\nrespective Special Civil Application Nos. 5909/2008, 6300/2008, 6298/2008,\n\n6299/2008, 5907/2008, 8468/2008, 6334/2008 and 6562/2008, by which the\n\nDivision Bench of the High Court has allowed the aforesaid writ petitions\n\npreferred by the respondents herein – original writ petitioners and by which the\n\nHigh Court has held that the impugned policy of withdrawal of the\n\nbenefit/incentive to the original writ petitioners is retrospective and not retroactive\n\nand quashed and set aside the Notification 16/2008 dated 27.03.2008, on the\n\nground that bar of promissory estoppel would operate, the Union of India",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P002_C03",
+      "text": "has\n\npreferred the present appeals.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P003_C01",
+      "text": "3. The facts leading to the present appeals and the List of Dates & Events in\n\nnutshell are as under:\nKutch District in the State of Gujarat was struck by a devastating earthquake\n\non 26.01.2001 which destroyed the existing infrastructure in that District, besides\n\ncausing huge casualties. With a view to attract large scale investment and to\n\ngenerate new employment opportunities in the District of Kutch, the Government\n\nof India announced an Incentive Scheme for setting up New Industries in the\n\nearthquake affected District of Kutch, by issuing Central Excise Exemption\n\nNotification No. 39/2001-CE dated 31.07.2001. The said notification granted\n\nexemption to goods cleared from a New Industrial Unit set up in the Kutch District\n\nof Gujarat prior to 31.07.2003 (which was subsequently extended to 31.12.2005)\n\nfrom so much of duty of excise as was equivalent to the amount of duty paid in\n\ncash/Personal Ledger Account (PLA) on the finished goods. That the said\n\nincentive of refund of the duty paid in cash/PLA was available for the period of 5\n\nyears from the date of commencement of commercial production.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P003_C02",
+      "text": "The object of\n\nthe Incentive Scheme was to revive the economy in Kutch District by attracting\n\nfresh large scale investments from entrepreneurs by setting up new industries in the\n\nsaid District so as to generate new employment which in turn would help Kutch\n\nDistrict and its people to be brought back in the main stream with the Nation.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P003_C03",
+      "text": "The\n\nsaid notification operationalised the incentive scheme in the following manner:\na) The eligible unit was required to produce a certificate from a High\n\n Powered Committee comprising of a Chief Commissioner of Central\n\n Excise and the Chief Secretary to the Government of Gujarat\n\n certifying that the unit was indeed a new industrial unit which had\n\n been set up on or after the date of the Exemption Notification but not\n\n later than 31.07.2003 (this cut-off date was subsequently extended to\n\n 31.12.2005);\nb) The unit was to furnish a declaration regarding the value of\n\n investment in plant and machinery installed in the factory as on the\n\n date of commercial production and also obtain a certificate to this\n\n effect from the Committee confirming the original value of the\n\n investment;\nc) The procedure for claiming refund, envisaged submission of a\n\n statement of the total duty payments including duty paid by utilization\n\n of Cenvat Credit) to the jurisdictional Central Excise Authority and\n\n verification of the above in a time bound manner by such authority;\nd) The notification also provided for recovery of any excess refund\n\n claimed/granted together with interest in case the",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P003_C04",
+      "text": "value of plant and\n\nmachinery was wrongly declared, as also in some other eventualities\n\n which were added by various amending notifications;\ne) Where fresh investment in the plant and machinery was below Rs. 20\n\n crores – the incentive available was for the first clearances up to an\n\n aggregate value not exceeding twice the value of such investment\n\n from the date of commencement of commercial production, in each\n\n year; and\nf) Where the investments were more than Rs.20 crores – the Incentive\n\n would be unlimited as there was no upper cap.\n3.1 The original writ petitioners set up new industrial units in the Kutch\n\nDistrict.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P003_C05",
+      "text": "They made an investment in the plant and machinery of more than Rs.20\n\ncrores. According to them, almost the entire duty was required to be paid in cash,\n\nthe whole of which was refundable without any upper cap in terms of the\n\nnotification No. 39/2001-CE dated 31.07.2001.\n3.2 It appears that the then Government of Gujarat announced an Incentive\n\nScheme, 2001 dated 09.11.2001 for the economic development of Kutch District. Under the said notification, Sales Tax exemption was provided. The Sales Tax\n\nexemption was available only to those industries which were eligible for excise\n\nexemption under Notification No. 39/2001-CE dated 31.07.2001.\n\n3.3 Various amendments were made to the original Incentive Scheme\n\nNotification No. 39/2001-CE dated 31.07.2001 between September, 2001 to\n\nSeptember, 2004, inter alia, to clarify certain matters and also to extend the cut-off\n\ndate for setting up new industrial units from 31.07.2003 to 31.12.2005.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P003_C06",
+      "text": "One\n\nanother amendment was made with effect from 06.08.2003 vide notification No.\n\n65/2003-CE to provide that PLA payments could be made to discharge duty\n\nliabilities on the finished products only after exhausting the CENVAT Credit\n\nbalances.\n3.4 According to the original writ petitioners, in view of the inventive offered\n\nunder Notification No. 39/2001-CE, the respondents herein -original writ\n\npetitioners which had initially planned to expand their manufacturing activities at\n\nMaharashtra, decided to instead set up the new units in the Kutch District. That\n\nwas in the month of December, 2005. According to the original writ petitioners,\n\nthe said decision was taken only because of the “incentive” promised by the\n\nGovernment to refund excise duty paid in the Kutch area. According to the\n\noriginal writ petitioners, as a result of the decision to set up a new unit in Kutch\n\nDistrict, the company had to additionally incur substantial costs towards\n\nadditional freight, handling charges, storage charges etc., which worked out to\n\napproximately Rs.2,200/- PMT.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P003_C07",
+      "text": "In addition, the company suffered severe\n\nlocational disadvantages.\n\n3.5 Original writ petitioners commenced commercial production of split/crude\n\nfatty acid, etc. somewhere between the months of November, 2004 to December,",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P004_C01",
+      "text": "2005. The primary raw materials for manufacture of these final products was\n\npalm kernel oil, crude palm kernel oil, other vegetable oils.\n\n3.6 The said Incentive Notification No. 39/2001-CE was amended by another\n\nnotification No. 16/2008-CE dated 27.03.2008 (impugned before the High Court),\n\nwhich according to the writ petitioners was relating to a virtual withdrawal of the\n\nincentive scheme. The amended notification provided that the benefit of refund\n\nwould be granted with reference to the value addition, which was notionally fixed\n\n@ 34% for the commodity manufactured. Notification No. 16/2008-CE also\n\nprovided for determination of a special rate by the Commissioner, in a situation\n\nwhere the actual value addition was more than the deemed value addition as\n\nspecified. According to the original writ petitioners, as a consequence of the said\n\namendment, the inventive available to them stood reduced from the refund of the\n\nentire of the duty paid in cash/PLA to 34% of the total duty paid. The original\n\nwrit petitioners challenged the subsequent notification No. 16/2008-CE before the\n\nHigh Court of Gujarat by way of the aforesaid writ petitions.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P004_C02",
+      "text": "It was the case of\n\nthe original writ petitioners that the subsequent notification No. 16/2008-CE\n\nchanged the entire basis of the incentive exemption and had the effect of\n\nsubstantially reducing their entitlement of refund. It was also the case on behalf\n\nof the original writ petitioners that as a result of the said amendment which\n\nresulted in their entitlement for refund being reduced from nearly 100% of the\n\nduty paid to only 34% of such duty amount.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P004_C03",
+      "text": "According to the original writ\n\npetitioners, since the promised incentive was curtailed midway before the expiry\n\nof the five years period, the subsequent notification was in breach of the principle\n\nof promissory estoppel.\n3.7 The aforesaid writ petitions were opposed by the revenue by submitting as\n\nunder:\ni) the Exemption Notification prompted certain unscrupulous\n\n manufacturers to indulge in different type of tax evasion tactics;\nii) the intention behind the Exemption Notification was to\n\n incentivise genuine manufacturers only to the extent of actual value\n\n addition made by them;\niii) duty paid in cash by units set up in District of Kutch pursuant to\n\n the Exemption Notification was found to be inordinately high as\n\n compared to other similarly placed units in other parts of India;\niv) the Central Government by the very same power by which it\n\n grants exemption is empowered to withdraw the same;\n\nv) the impugned notifications are only a modification to give effect\n\n to the real intention of the Government and are not withdrawal of the\n\n benefit; and\nvi) in light of the misuse of the exemption pleaded by UOI, public\n\n interest warrants such withdrawal.\n3.8 Simultaneously,",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P004_C04",
+      "text": "the manufacturing units also filed representations to the\n\nGovernment for re-consideration.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P004_C05",
+      "text": "Pursuant to the representations, one another\n\nnotification was issued by the Central Government vide Notification No. 33/2008-\n\nCEdated 10.6.2008. Therefore, the original writ petitioners amended the writ\n\npetitions challenging the subsequent notification dated 10.6.2008 also. It appears\n\nthat thereafter the Central Government vide notification No. 51/2008 dated\n\n3.10.2008 revised the deemed value addition at 75% in respect of the products\n\nmanufactured by the original writ petitioners without giving them any option of\n\napplying for a special rate.\n3.9 The aforesaid writ petitions were heard by the Division Bench. The\n\nmembers of the Division Bench differed. One learned Judge allowed the writ\n\npetitions and another learned Judge held that the writ petitions deserve to be\n\ndismissed. In view of the difference of opinion between the two learned Judges of\n\nthe Division Bench, the matter was referred to a third learned Judge. By the\n\nimpugned judgment and order, the third learned Judge has agreed with the view\n\ntaken by the learned Judge who allowed the writ petitions.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P004_C06",
+      "text": "Consequently, by the\n\nimpugned judgment and order, the writ petitions are allowed mainly on the ground\n\nof doctrine of promissory estoppel. Consequently, it is held by the High Court\n\nthat the incentive as originally envisaged by notification No. 39/2001-CE was\n\nrequired to be implemented and the differential amount was directed to be\n\nrefunded to the writ petitioners. Hence, the present appeals. Civil Appeals @ SLP © Nos. 14751 of 2013,\nCivil Appeals @ SLP © Nos. 14752 of 2013 and\nCivil Appeals @ SLP © Nos. 14753 of 2013\n4. All these appeals arise out of the common judgment and order passed by the\n\nHigh Court of Gujarat at Ahmedabad dated 17.10.2012 in Special Civil Application\n\nNos. 3582/2012, 3569/2012 and 3587/2012 respectively, by which the High Court\n\nhas dismissed the said petitions. Before the High Court, respective original writ petitioners claimed for\n\nrefund of the excise duty in terms of the original notification No. 29 of 2001. The\n\nExcise authorities, however, granted the exemption only in terms of the amended\n\nnotification Nos. 16/20098-CE and 36/2008-CE (which are subject matter of Civil\n\nAppeals @ SLP © Nos. 28194-28201 of 2010).",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P004_C07",
+      "text": "Before the High Court, initially,\n\nonly the orders passed by the Excise authorities granting refund as per the\n\nsubsequent notifications were under challenge. However, subsequently, the\n\noriginal writ petitioners also challenged the subsequent notification Nos. 16/2008-\n\nCE and 33/2008-CE. By the impugned Judgment and Order, the High Court has\n\nrefused to entertain the petitions under\nArticle 226\nof the Constitution and\n\ndismissed the same filed for refund of the excise duty in view of the provisional\nSection 11B\nof the Central Excise Act. So far as the challenge to the subsequent\n\nnotification Nos. 16/2008-CE and 33/2008-CE is concerned, the High Court has\n\nnot entered into the merits in view of its earlier decision which is the subject matter\n\nbefore this Court in the case of Civil Appeals @ SLP © Nos. 28194-28201 of",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P005_C01",
+      "text": "2010. As, in the present appeals, the question is with respect to the challenge to the\n\nsubsequent notifications which are also the subject-matter of this Court in the case\n\nof Civil Appeals @ SLP © Nos. 28194-28201 of 2010, all these appeals are also\n\ndecided and disposed of together with this common judgment and order. Civil Appeal Nos. ………………. of 2020 @ SLP (C) Nos. 15481-15489 of 2011\n5. These Civil Appeals arise out of the impugned Judgment and Order passed\n\nby the High Court of Sikkim at Gangtok dated 15.11.2010 passed in Writ Petition\n\nNos. 11/2008 and other allied writ petitions, by which the High Court has quashed\n\nand set aside the similar notifications dated 27.03.2008 and 10.06.2008 allowing\n\nthe refund of excise duty on value addition basis, on the ground that the same are\n\nagainst the principle of promissory estoppel. As the original notifications dated\n\n09.09.2003 as well as OM dated 01.04.2007 and the subsequent notifications dated\n\n27.03.2008 and 10.06.2008 are as such similar to the notification No. 16 of 2008\n\napplicable to Kutch area of Gujarat, the present group of Civil Appeals shall also\n\nbe governed by this common Judgment and Order.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P005_C02",
+      "text": "Civil Appeal No. ………of 2020 @ SLP © No. 11878/2015 and other allied\nmatters",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P006_C01",
+      "text": "6. All these appeals arise out of the impugned common Judgment and Order\n\npassed by the High Court of Guwahati dated 20.11.2014 in Writ Appeal No. 243 of\n\n2009 and other allied writ petitions, by which the High Court has quashed and set\n\naside the subsequent notification dated 27.03.2008 and the subsequent industrial\n\npolicies of 2007 on the ground that the same are hit by the doctrine of promissory\n\nestoppel. In some of the writ petitions, the High Court has disposed of the\n\nrespective writ petitions following the common Judgment and Order dated\n\n20.11.2014. The particulars of respective Civil Appeals are as under:\nSl. No. Item Particulars High Court IN Judgment\n No. date\n 1 3.7 SLP (C) Guwahati WA No.243/2009 20.11.2014\nNo.11878/2015\n2 3.8 SLP (C) No.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P006_C02",
+      "text": "Guwahati WP C No.1242/2013 20.11.2014\n19370/2015\n3 3.9 SLP (C) Guwahati WP C No.3940/2009 20.11.2014\nNo.19868/2015\n4 3.10 SLP (C) Guwahati WP C No.1151/2013 20.11.2014\nNo.19386/2015\n5 3.11 SLP (C) Guwahati WP C No.84/2013 20.11.2014\nNo.19379/2015\n6 3.12 SLP (C) Guwahati WP C No.4119/2010 20.11.2014\nNo.19376/2015\n7 3.13 SLP (C) Guwahati WP C No.235/2013 20.11.2014\n\nNo.19384/2015\n8 3.14 SLP (C) Guwahati WP C No.3377/2009 20.11.2014\nNo.19380/2015\n9 3.15 SLP (C) Guwahati WP C No.6161/2012 20.11.2014\nNo.20626/2015\n10 3.16 SLP (C) Guwahati WP C No.5444/2014 20.11.2014\nNo.21583/2015\n11 3.17 SLP (C) Guwahati WP C No.809/2013 20.11.2014\nNo.19320/2015\n12 3.18 SLP (C) Guwahati WP C No.1975/2013 20.11.2014\nNo.19371/2015\n13 3.19 SLP (C) Guwahati WP C No.937/2015 20.02.2015\nNo.20109/2015\n14 3.20 SLP (C) Guwahati WP C No.6786/2013 20.11.2014\nNo.19378/2015\n15 3.21 SLP (C) Guwahati WP C No.3457/2014 20.11.2014\nNo.19375/2015\n16 3.22 SLP (C) Guwahati WP C No.4112/2010 20.11.2014\nNo.21406/2015\n17 3.23 SLP (C) Guwahati WP C No.6685/2013 20.11.2014\nNo.23331/2015\n18 3.24 SLP (C) Guwahati WP C No.483/2015 31.01.2015\nNo.20630/2015\n19 3.25 SLP (C) Guwahati WP C No.6883/2014 19.12.2014\nNo.20631/2015\n20 3.26",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P006_C03",
+      "text": "SLP (C) Guwahati WP C No.410/2013 20.11.2014\nNo.20628/2015\n21 3.27 SLP (C) Guwahati WP C No.228/2015 22.01.2015\nNo.20627/2015\n22 3.28 SLP (C) Guwahati WP C No.932/2015 20.02.2015\nNo.19228/2015\n23 3.29 SLP (C) Guwahati WP C No.1472/2013 20.11.2014\nNo.23394/2015\n24 3.30 SLP (C) Guwahati WP C No.227/2015 22.01.2015\nNo.23399/2015\n25 3.31 SLP (C) Guwahati WP C No.487/2015 31.01.2015\nNo.23328/2015\n26 3.32 SLP (C) Guwahati WP C No.1694/2014 20.11.2014\nNo.19373/2015\n27 3.33 SLP (C) Guwahati WP C No.279/2013 20.11.2014\nNo.23329/2015\n28 3.34 SLP (C) Guwahati WP C No.239/2013 20.11.2014\nNo.23326/2015\n29 3.35 SLP (C) Guwahati WP C No.972/2015 24.02.2015\nNo.20442/2015\n30 3.36 SLP (C) Guwahati WP C No.723/2014 20.11.2014\n\nNo.23398/2015\n31 3.37 SLP (C) Guwahati WP C No.1696/2014 20.11.2014\nNo.23393/2015\n32 3.38 SLP (C) Guwahati WP C No.864/2015 19.02.2015\nNo.20370/2015\n33 3.39 SLP (C) Guwahati WP C No.1433/2015 30.03.2015\nNo.19842/2015\n34 3.40 SLP (C) Guwahati WP C No.1427/2015 30.03.2015\nNo.22568/2015\n35 3.41 SLP (C) Guwahati WP C No.931/2015 20.02.2015\nNo.21605/2015\n36 3.42 SLP (C) Guwahati WP C No.2660/2013 28.11.2014\nNo.23303/2015\n37 3.43 SLP (C) Guwahati WP C No.933/2015",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P006_C04",
+      "text": "20.02.2015\nNo.23301/2015\n38 3.44 SLP (C) Guwahati WP C No.1789/2010 28.11.2014\nNo.23334/2015\n39 3.45 SLP (C) Guwahati WP C No.4869/2009 20.11.2014\nNo.21584/2015\n40 3.46 SLP (C) Guwahati WP C No.104/2013 20.11.2014\nNo.23391/2015\n41 3.47 SLP (C) Guwahati WP C No.5969/2012 20.11.2014\nNo.23297/2015\n42 3.48 SLP (C) Guwahati WP C No.724/2014 20.11.2014\nNo.23898/2015\n43 3.49 SLP (C) Guwahati WP C No.3387/2009 20.11.2014\nNo.23251/2015\n44 3.50 SLP (C) Guwahati WP C No.230/2009 20.11.2014\nNo.23896/2015\n45 3.51 SLP (C) Guwahati WP C No.186/2015 20.01.2015\nNo.23903/2015\n46 3.52 SLP (C) Guwahati WP C No.811/2013 20.11.2014\nNo.23396/2015\n47 3.53 SLP (C) Guwahati WP C No.2918/2010 20.11.2014\nNo.23294/2015\n48 3.54 SLP (C) Guwahati WP C No.2138/2009 20.11.2014\nNo.23897/2015\n49 3.55 SLP (C) Guwahati WP C No.41/2013 20.11.2014\nNo.23900/2015\n50 3.56 SLP (C) Guwahati WP C No.2887/2014 20.11.2014\nNo.23295/2015\n51 3.57 SLP (C) Guwahati WP C No.3458/2014 20.11.2014\nNo.23299/2015\n52 3.58 SLP (C) Guwahati WP C No.4433/2014 23.01.2015\nNo.23902/2015\n53 3.59 SLP (C) Guwahati WP C No.5968/2012 20.11.2014\n\nNo.27036/2015\n54 3.60 SLP (C) Guwahati WP C No.526/2015 04.02.2015\nNo.23296/2015\n55 3.61 SLP (C) Guwahati",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P006_C05",
+      "text": "WP C No.317/2014 20.11.2014\nNo.26286/2015\n56 3.62 SLP (C) Guwahati WP C No.416/2012 12.05.2015\nNo.23693/2015\n57 3.63 SLP (C) Guwahati WP C No.5538/2014 20.11.2014\nNo.26764/2015\n58 3.64 SLP (C) Guwahati WP C No.319/2013 20.11.2014\nNo.23247/2015\n59 3.65 SLP (C) Guwahati WP C No.3376/2009 20.11.2014\nNo.23899/2015\n60 3.66 SLP (C) Guwahati WP C No.211/2015 23.01.2015\nNo.23901/2015\n61 3.67 SLP (C) Guwahati WP C No.632/2013 20.11.2014\nNo.27041/2015\n62 3.68 SLP (C) Guwahati WP C No.242/2013 20.11.2014\nNo.27024/2015\n63 3.69 SLP (C) Guwahati WP C No.312/2013 20.11.2014\nNo.27034/2015\n64 3.70 SLP (C) Guwahati WP C No.486/2015 31.01.2015\nNo.26284/2015\n65 3.71 SLP (C) Guwahati WP C No.417/2013 20.11.2014\nNo.27053/2015\n66 3.72 SLP (C) Guwahati WP C No.399/2013 20.11.2014\nNo.27058/2015\n67 3.73 SLP (C) Guwahati WP C No.528/2015 04.02.2015\nNo.25804/2015\n68 3.74 SLP (C) Guwahati WP C No.1153/2013 20.11.2014\nNo.27046/2015\n69 3.75 SLP (C) Guwahati WP C No.240/2013 20.11.2014\nNo.26767/2015\n70 3.76 SLP (C) Guwahati WP C No.457/2013 20.11.2014\nNo.27043/2015\n71 3.77 SLP (C) Guwahati WP C No.6698/2013 20.11.2014\nNo.26821/2015\n72 3.78 SLP (C) Guwahati WP C No.290/2015 28.01.2015\nNo.27050/2015\n73 3.79 SLP",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P006_C06",
+      "text": "(C) Guwahati WP C No.109/2013 20.11.2014\nNo.26294/2015\n74 3.80 SLP (C) Guwahati WP C No.2468/2014 20.11.2014\nNo.27048/2015\n75 3.81 SLP (C) Guwahati WP C No.6864/2014 19.12.2014\nNo.26283/2015\n76 3.82 SLP (C) Guwahati WP C No.259/2015 23.01.2015\n\nNo.27049/2015\n77 3.83 SLP (C) Guwahati WP C No.187/2013 20.11.2014\nNo.25799/2015\n78 3.84 SLP (C) Guwahati WP C No.527/2015 04.02.2015\nNo.26295/2015\n79 3.85 SLP (C) Guwahati WP C No.810/2013 20.11.2014\nNo.26287/2015\n80 3.86 SLP (C) Guwahati WP C No.729/2014 20.11.2014\nNo.25797/2015\n81 3.87 SLP (C) Guwahati WP C No.1723/2014 20.11.2014\nNo.26290/2015\n82 3.88 SLP (C) Guwahati WP C No.6865/2014 19.12.2014\nNo.27744/2015\n83 3.89 SLP (C) Guwahati WP C No. 226/2015 22.01.2015\nNo.26972/2015\n84 3.90 SLP (C) Tripura WA No. 38/2009 24.08.2015\nNo.1907/2016\n85 3.91 SLP (C) Guwahati WP C No.6972/2015 02.12.2015\nNo.7208/2016\n6.1 The relevant facts are as under:\nThe Government of India issued an industrial policy on 01.04.2007 reiterating the\n\nterms and conditions of the earlier industrial policy dated 24.12.1997 which\n\nprovided the fiscal based incentive to new industrial units and their substantial\n\nexpansion.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P006_C07",
+      "text": "As per this policy, 100% excise duty exemption was provided on the\n\nproducts manufactured in the North-Eastern region. By the subsequent\n\nnotifications/industrial policies which were impugned before the High Court, the\n\nrefund of excise duty was limited to the extent of the value addition. The High\n\nCourt by the impugned common Judgment and Order has set aside the subsequent\n\nnotifications/industrial policies which were similar to notification No. 16 of 2008\n\napplicable to Kutch area of Gujarat and subject matter of Civil Appeals @ SLP ©\n\nNos. 28194-28201 of 2010. Civil Appeal No. ………of 2020 @ SLP © No. 10257/2018,\nCivil Appeal No. ………of 2020 @ SLP © No. 10253/2018,\nCivil Appeal No. ………of 2020 @ SLP © No. 12148/2018 and\nCivil Appeal No. ………of 2020 @ SLP © No. 12496/2018\n7.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P006_C08",
+      "text": "Feeling aggrieved and dissatisfied with the impugned common judgment\n\nand order passed by the High Court of Sikkim dated 21.11.2017 passed in Writ\n\nPetition Nos. 8/2017, 27/2017, 40/2015 and 41/2015 respectively, by which the\n\nHigh Court has quashed and set aside the subsequent notification No. 20 of 2008\n\ndated 27.03.2008, notification No. 36 of 2008 dated 10.06.2008 and notification\n\nNo. 38 of 2008 dated 10.06.2008 on the ground that the same are hit by the\n\ndoctrine of promissory estoppel, the Union of India has preferred the present\n\nAppeals.\n7.1 In line with the Industrial Policy, 2007, notification No. 20/2008 was issued\n\nwhereby with respect to the new undertakings established, the goods were\n\nexempted from so much of the duty of excise leviable thereon as was to the\n\nequivalent to the amount of duty paid by the manufacturer of goods other than the\n\namount of duty paid by utilization of CENVAT credit.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P006_C09",
+      "text": "In the year 2008,\n\nsubsequent notifications impugned before the High Court were issued, by which\n\nthe refund was allowable on the duty payable on the goods manufactured on value\n\naddition basis, the same are set aside by the High Court by the impugned common\n\njudgment and order on the ground that the same are hit by the doctrine of\n\npromissory estoppel. As otherwise, the submissions are common and the reasons\n\non which the High Court has set aside the impugned subsequent notifications are\n\nsimilar to the facts in the case of Civil Appeals @ SLP © Nos. 28194-28201 of\n\n2010, all these Appeals are also decided and disposed of by this common judgment\n\nand order.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P007_C01",
+      "text": "8. Learned counsel appearing on behalf of the Union of India has vehemently\n\nsubmitted that the High Court has materially erred in quashing and setting aside the\n\nnotification No. 16 of 2008 dated 27.03.2008 on the ground that the same is\n\nretrospective and not retro-active and the same is barred by the doctrine of\n\npromissory estoppel.\n8.1 It is submitted as under:\nThat the High Court has not properly appreciated and/or considered the\n\nnotification impugned before it and as such the High Court has misinterpreted\n\nand/or misread the notification No. 16 of 2008. It is submitted that the High\n\nCourt has erred in treating and/or considering the notification No. 16 of 2008 as\n\nwithdrawal of exemption benefit and/or withdrawal of the incentive provided by\n\nnotification dated 31.07.2001.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P007_C02",
+      "text": "It is vehemently submitted that as such the\n\nimpugned notification No. 16 of 2008 was clarificatory in nature and cannot be\n\nsaid to be withdrawal of exemption benefit and/or withdrawal of the incentive\n\nprovided earlier by notification dated 31.07.2001;\n8.2 The High Court ought to have appreciated that the power of such a kind to\n\ngrant exemption from levy and collection of duty includes in itself the power to\n\nrescind, modify or withdraw such exemption. It is submitted that the liability to\n\npay excise duty under the\nCentral Excise Act\narises when a taxable event occurs. An exemption notification issued under Section 5A will not affect the suspending\n\nthe collection of duty under normal circumstance. It is submitted that in the\n\npresent case the exemption was by conditions laid down in the notification and in\n\npublic interest. Such an exemption of this very nature is susceptible of being\n\nrevoked, annulled, modified or varied or subjected to exercise of statutory power\n\nof State under the law itself as is obvious from the language of Section 5A;\n\n8.3 The High Court has erred in not appreciating that the Government has\n\nvalidly issued the notifications.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P007_C03",
+      "text": "The provision of granting of refund of cash paid\n\nportion of duty and eligibility of credit of entire amount of duty to the buyers of\n\nsuch excisable goods had prompted certain unscrupulous manufacturers to indulge\n\nin different type of tax evasion tactics. An analysis of cases booked by the Excise\n\nDepartment and the representations received from Industry Association had\n\nrevealed misuse of exemptions given by the Government which was meant to be\n\navailable only for genuine manufacturers.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P007_C04",
+      "text": "It is submitted that the modus operandi\n\nwhich was being followed by such unscrupulous manufacturers revealed that such\n\nunscrupulous manufacturers were reporting of bogus production by mere issuance\n\nof sale invoice without actual production of goods and supply/clearance of\n\nexcisable goods, which would result in availment of CENVAT credit by buyers of\n\nsuch excisable goods in other parts of the country without actual production being\n\ncarried out and in absence of actual receipt of goods; reporting of bogus production\n\nby such units in these areas where actual production takes place elsewhere in the\n\ncountry; over valuation of goods resulting in availment of excess credit by buyers;\n\ngoods were supplied by manufacturers, importers to these units without issuance of\n\nsales invoice and these were backed by bogus sale invoices issued by traders who\n\ndid not undertake actual supply of goods. The actual supplier of these goods\n\nissued bogus duty paid invoices to other manufacturers who took credit based on\n\nsuch invoices without receipt of goods.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P007_C05",
+      "text": "Having found such activities by such\n\nunscrupulous manufacturers against the object and purpose of grant of\n\nexemption/incentive, therefore, the Government came out with the notification no.\n\n16 of 2008 which as such can be said to be clarificatory in nature. By no stretch of\n\nimagination it can be said to be a withdrawal of exemption granted earlier and\n\nconsequently it cannot be said to be in contravention of doctrine of promissory\n\nestoppel;\n\n8.4 That the High Court has not properly appreciated and/or considered the\n\nreasons for issuance of the subsequent notification. The reason for issuance of the\n\nnotification No. 16 of 2008 which as such can be said to be clarificatory was that\n\nby adopting such modus operandi, the units in these areas were wanting to pay\n\nmaximum amount of duty in cash so that they became entitled to a claim of refund\n\nof entire amount of duty paid in cash. In order to verify this aspect, it is submitted\n\nthat a study was made by the Excise Department to find out the percentage of duty\n\npaid in cash and from the CENVAT credit account by the units availing this area\n\nbased exemption.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P007_C06",
+      "text": "On receipt of these details, they were compared with the duty\n\npayment details of the same industry groups for all the units across the country to\n\nfind out whether the percentage of duty paid by the units in cash in the specified\n\nareas is comparable with the units in the rest of the country. An analysis of these\n\ndetails clearly showed that the industry sectors in the specified areas were paying a\n\nvery high percentage of duty in cash i.e. through personal ledger account (PLA) in\n\ncomparison to the all India payment of duty through PLA on similar goods. Thus\n\nthere was misuse of excise duty exemption which was considered expedient in\n\npublic interest and given by the Central Government with a laudable object of\n\nhaving genuine industrialization in either backward areas or areas such like Kutch,\n\nwhich suffered on account of Natural calamity. Misuse of excise duty exemption\n\nbeing rampant and the effect of such manipulated acts were brought to the notice of\n\nthe Government. The policy and intention of the Government to provide excise\n\nduty exemption was in respect of genuine manufacturing activities carried out in\n\nthese areas.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P007_C07",
+      "text": "The entire genesis of the policy manifesting the intention of the\n\nGovernment to grant excise duty exemption was to provide such exemption only to\n\nactual value addition made in these areas. It is in the background of these facts and\n\nwith a view to give effect to such a policy, the Government in exercise of powers\n\nconferred under\nSection 5A\nof the Central Excise Act modified the refund\n\nmechanism so as to provide that excise duty refund would be allowed only to the\n\nextent of duty payable on actual value addition made by the manufacturers\n\nundertaking manufacturing activities in these areas.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P007_C08",
+      "text": "As a result of the notification\n\nimpugned before the High Court, the manufacturers are required to pay duty on\n\nfull value of the goods manufactured and cleared by them in the same manner as\n\nper existing scheme but refund would be granted only to the extent of duty paid on\n\nthe value addition made by them in these specified areas based on all India average\n\nof percentage of duty paid in cash and CENVAT credit;\n8.5 The High Court has erred in not appreciating that the notification No. 16 of\n\n2008 was issued by the Government in public interest and in the interest of\n\nrevenue.\n\n8.6 Learned counsel appearing on behalf of the Union of India has made further\n\nsubmissions while assailing the impugned judgment and order passed by the High\n\nCourt as follows:\n8.6.1 That the Central Government has the power to provide for exemption from\n\nduty on goods either wholly or partly with or without condition as may be called\n\nfor in public interest. The guiding factor for exercise of power is public interest.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P007_C09",
+      "text": "When the exemption notification was issued under\nSection 5A\nof the Central\n\nExcise Act, it was implicit in it that it could be rescinded or modified at any time if\n\nthe public interest so demands;\n8.6.2 The amendment notification is non-discriminatory and treat all industries at\n\npar. It only rationalizes the quantum of exemption by proposing rate of refund on\n\nthe total duty payable. In the field of taxation, the Court shall be the slow to\n\ninterfere with fiscal policy, more particularly when the same is issued with respect\n\nto exemption/incentive on fulfillment of certain conditions and when the same is in\n\nthe public interest and in the interest of revenue. Reliance is placed upon the\n\ndecision of this Court in the case of\nR.K. Garg v. Union of India\n(1981) 4 SCC\n\n675; that the basic principle of original notification is not altered.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P007_C10",
+      "text": "The Central\n\nGovernment has only streamlined the provisions of the notification relating to\n\nrefund of duty paid through other than CENVAT utilization;\n\n8.6.3 Prior to issuance of notification dated 31.07.2001, representations were\n\nreceived from State Government as well as representations of the people and Trade\n\nand Industry that tax holidays be provided to areas affected by earthquake. The\n\nGovernment considering the representations issued exemption notification dated\n\n31.07.2001 subject to conditions, the intention behind the exemption scheme was\n\nto attract immediate fresh investment by incentivizing setting up of new industrial\n\nunits so as to generate employment. The exemptions are subject to periodic review\n\nto weed out those which have outlived their utility, to meet the objectives of the\n\nGovernment, to curb misuse and revenue consideration.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P007_C11",
+      "text": "It is submitted that it was\n\na part of review exercise and in background of reports of misuse that the\n\namendment notification dated 27.3.2008 was issued;\n8.6.4 The doctrine of promissory estoppel cannot be invoked against exercise of\n\npowers under the statute;\n8.6.5 The bar of promissory estoppel is not applicable in fiscal matters;\n\n8.6.6 The Court has to look into the notification with a presumption of validity,\n\nand not examining the matter with microscopic view to weigh the sufficiency of\n\nthe material available;\n8.6.7 The doctrine of promissory estoppel sought to be invoked in the present case\n\nis not available. The doctrine of promissory estoppel will not be applicable if the\n\nchange in stand of the Government is made on account of public policy and in the\n\npublic interest;\n8.6.8 There are limitations while invoking the doctrine of promissory estoppel.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P007_C12",
+      "text": "the statute has permitted the power on withdrawal to the same authority, it may\n\nresult into allowing the doctrine to operate in contravention to the statute;\n\n8.6.9 The Word ‘Promissory Estoppel” means that a party is prevented by his own\n\nacts from claiming a right to detriment of the other party who was entitled to rely\n\non such conduct and has acted accordingly;\n8.6.10 In respect of the exemptions that have been made by the Government,\n\nthe doctrine of promissory estoppel will not be applicable if the change in the stand\n\nof the Government is made on account of public policy.\n8.7 Heavy reliance is placed upon the decisions of this Court on “Promissory\n\nEstoppel” in the cases of\nKasinka Trading v. Union of India\n(\n1995) 1 SCC 274,\n\nDarshan Oils (P) Ltd. v. Union of India\n(\n1995) 1 SCC 345, Shrijee Sales\n\nCorporation v. Union of India\n(1997) 3 SCC 398, STO v. Shree Durga Oil Mills\n\n(\n1998) 1 SCC 572, Papu Sweets and Biscuits v. Commissioner of Trade Tax, U.P. (\n1998) 7 SCC 228, State of Rajasthan v. Mahaveer Oil Industries\n(1999) 4 SCC\n\n357, Shree Sidhbali Steels Ltd. v. State of U.P. (\n2011) 3 SCC 193, DG of Foreign\n\nTrade v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P007_C13",
+      "text": "Kanak Exports\n(\n2016) 2 SCC 226 and Commissioner of Customs v. Dilip\n\nKumar & Co. (2018) 9 SCC 1.\n\n8.8 It is further submitted by the learned counsel appearing on behalf of the\n\nUnion of India that the High Court has not properly appreciated the fact that by\n\nnotification No. 16 of 2008, as such, there is no material change in the earlier\n\npolicy and, therefore, as such the amendment in the notification No. 39/2001 dated\n\n31.07.2001 vide Notification No. 16/2008 cannot be said to be withdrawal of\n\nbenefit already promised earlier. Therefore it cannot be said that the subsequent\n\nnotification is hit by the principle of promissory estoppel, as held by the High\n\nCourt.\n8.9 Making the above submissions, it is vehemently submitted that the High\n\nCourt has erred in concluding that the bar of promissory estoppel would operate\n\nagainst the Union of India by withdrawal of the exemption benefits and that the\n\npolicy of withdrawal of benefit/incentive is retrospective and not retro-active.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P008_C01",
+      "text": "9. Learned Senior Advocates/Counsel appearing on behalf of the respective\n\nrespondents-original writ petitioners before the High Court, while supporting the\n\nimpugned common judgment and order passed by the High Court have vehemently\n\nsubmitted that in the facts and circumstances of the case, the High Court has\n\nrightly set aside the impugned notification no. 16 of 2008 dated 27.03.2008 on the\n\nground that the withdrawal of exemption is retrospective and not retro-active and\n\nalso on the ground that the same is hit by the doctrine of promissory estoppel.\n\n9.1 Learned Senior Advocates/Counsel appearing on behalf of the respective\n\nrespondents-original writ petitioners have made the following submissions:\n9.1.1 A massive earthquake struck the Kutch district, in the State of Gujarat on\n\n26.01.2001 destroying virtually the entire industrial infrastructure in the said\n\ndistrict. With a view to revive the industry and to offer employment opportunities,\n\nthe Ministry of Finance, Government of India announced incentives for setting up\n\nnew industries in the earthquake affected district of Kutch by issuing Central\n\nExcise Exemption Notification No. 39/2001-CE dated 31.07.200.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P008_C02",
+      "text": "The Notification\n\ngranted exemption for a period of five years from the date of commencement of\n\ncommercial production, to goods cleared from a new industrial units set up in the\n\nKutch District of Gujarat from so much of duty of excise as was equivalent to the\n\namount of duty paid in cash/PLA i.e. the duty paid on the goods other than the\n\namount of duty paid by utilization of CENVAT Credit under the Cenvat Credit\n\nRules, 2001. The incentive offered by the notification was the refund of the total\n\namount of Central Excise Duty paid in cash/PLA;\n9.1.2 Respective original writ petitioners based on the promise held out by the\n\nGovernment of India to refund the Central Excise Duty paid in cash/PLA for a\n\nperiod of five years from the commencement of commercial production by new\n\nindustrial units set up in Kutch.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P008_C03",
+      "text": "They invested a very huge amount only in view of\n\nthe promise held out by the Government of India;\n\n9.1.3 Explanatory Memorandum to the notification as also the Press Release\n\nissued by the Press Information Bureau record, that Ministry of Finance had\n\nnotified a scheme of exemption for the District of Kutch, in the State of Gujarat for\n\na period of five years from the date of commencement of commercial production. The then State Government on 09.11.2001 also announced a Sales Tax incentive\n\nscheme, wherein it noted that the economic activity in the Kutch district has come\n\nto a standstill on account of the devastating earthquake and that new employment\n\nopportunities could be created if new investments take place.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P008_C04",
+      "text": "Taking note of the\n\nExcise Duty exemption for the new industries announced by the Government of\n\nIndia, the State Government also introduced a Sales Tax incentive scheme which\n\nwould be available to only those industries which were eligible for the Excise\n\nincentive;\n9.1.4 Respondents-original writ petitioners were extended the benefit of\n\nexemption promised by the Government of India from 26.12.2005 till 31.03.2008\n\nby way of the refund of the entire duty paid in cash/PLA. It is submitted that therefore the impugned amendment by notification No.\n\n16 of 2008 violated the doctrine of promissory estoppel.\n9.2 The following submissions have been made on the violation of Doctrine\n\nof Promissory Estoppel:\n\n9.2.1 Notification No. 16/2008 dated 27.03.2008, amended Notification No.\n\n39/2001-CE by providing that the benefit of refund would be granted with\n\nreference to the value addition undertaken by manufacturing units in Kutch district. Value addition of 34% was notionally fixed by Notification 16/2008-CE for the\n\ncommodities manufactured by the respondents.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P008_C05",
+      "text": "The said notification also provided\n\nfor determination of special rate by the Commissioner of Central Excise in a\n\nsituation where the actual value addition was more than the deemed value addition\n\nof 34%. As a consequence of the said amendment the incentive was reduced from\n\nrefund of the entire of the duty paid in cash/PLA to 34% of the total duty paid, in\n\nso far as the respondents are concerned. Thus the respondents suffered a loss\n\nto the extent of 66% of the duty paid, which it was hitherto entitled to as refund;\n\n9.2.2 From 03.09.2008 the notional value addition of the products manufactured\n\nby the respondent was capped at 75%. The respondents hence suffered detriment\n\nto the extent of 25% of the duty paid, which it could not seek as refund;\n\n9.2.3 The amendment made to Notification 39/2001 by the Notification No.\n\n16/2008 and amendments thereto had the effect of reneging upon the promise made\n\nby the Central Government to grant incentive by way of refund of the duty paid in\n\ncash/PLA for a period of five years starting from the date of commencement of\n\ncommercial production.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P008_C06",
+      "text": "It is settled law\nlaid down by\nthis Court that the\n\nGovernment is bound to implement its promise, if a person has irrevocably altered\n\nhis position acting on an unequivocal promise held out by the Government, save\n\nand except in a situation where the withdrawal of the incentive is justified on\n\ngrounds of supervening public interest.\n9.2.4 On the applicability of Principle of Promissory Estoppel, the respondents\n\nrely upon the decisions of this Court in the cases of\nUnion of India v. Godfrey\n\nPhilips India Ltd. (\n1985) 4 SCC 369, Pournami Oil Mills v. State of Kerala\n\n(Supp) SCC 728, Shri Bakul Oil Industries v. State of Gujarat (\n1987) 1 SCC 31,\n\nPawan Alloys & Casting Pvt. Ltd. v. U.P. Electricity Board\n(1997) 7 SCC 251,\n\nDai Ichi Karkaria Ltd. v. Union of India (\n2000) 4 SCC 57, Mahabir Vegetable\n\nOils (P) Ltd. v. State of Haryana\n(\n2006) 3 SCC 620, State of Punjab v. Nestle\n\nIndia\n(\n2004) 6 SCC 465, MRF Ltd. Kottayam v. Assistant Commissioner of Sales\n\nTax\n(2006) 6 SCC 702, Southern Petrochemical Industries Co. Ltd. v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P008_C07",
+      "text": "ETIO\n\n(2007) 5 SCC 447;\n9.2.5 It is submitted therefore that the High Court has correctly applied the settled\n\nDoctrine of Promissory Estoppel by examining whether the facts and the\n\ncircumstances leading to the curtailment of incentive were indeed in public interest\n\nor not so as to justify a midway withdrawal of the incentive;\n\n9.3 That in fact the incentive promised under the original notification No.\n\n39/2001 was not dependent upon the extent of value addition. It is submitted that\n\nthis concept was introduced only by the impugned notification No. 16 of 2008;\n\n9.4 Exemption was granted by way of refund to the duty paid in cash/PLA. The\n\npayment from PLA is not necessarily duty on value addition.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P008_C08",
+      "text": "The proposition that\n\nthe payment from PLA represents such value addition may hold good only if the\n\ninputs used in the manufacture of final products are duty paid and the rates of duty\n\non inputs and final products are the same;\n9.5 The amendments to notification No. 16/2008 dated 27.03.2008, notification\n\nNos. 33/2008 dated 10.06.2008 and 51/2008 dated 03.10.2008 clearly show that\n\nthe Government itself has jettisoned the concept of value addition, introduced with\n\neffect from 27.03.2008, in as much as for finished goods whose starting raw\n\nmaterial was a natural product/mineral, and therefore subject to NIL input stage\n\nduty, the refund in respect of final products using such inputs was fixed at an\n\narbitrary rate of 75% of the duty paid, without option of a special rate, irrespective\n\nof the supposed value addition;\n9.6 Mere misuse of the exemption notification by some of the manufacturers\n\ncannot justify the withdrawal of incentive since there is an adequate machinery\n\navailable with the Revenue under the\nCentral Excise Act\nand under the notification\n\nitself, to curb, deduct, as well as punish the offenders for any such misuse,\n\notherwise the Revenue would suffer adverse",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P008_C09",
+      "text": "consequences for no fault of theirs.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P008_C10",
+      "text": "is submitted that the notification itself specifically provides for recovery of refunds\n\nalong with interest if such refunds were wrongly claimed/granted. It is submitted\n\nthat therefore the so-called object and purpose for issuing the impugned\n\nnotification is irrational and arbitrary and as such cannot be a ground to withdraw\n\nthe earlier exemption notification. FINDINGS:",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P009_C01",
+      "text": "10. By the impugned Judgment and Order, the High Court has set aside the\n\nsubsequent notification No. 16 of 2008 dated 27.03.2008 mainly on the ground that\n\nthe same is retrospective and not retro-active in nature and the same is hit by the\n\nDoctrine of Promissory Estoppel. It is the case on behalf of the Union of India that\n\nthe subsequent notification is as such in continuation of the earlier notification and\n\nthe same is clarificatory and therefore can be made applicable retrospectively. It is\n\nalso the case on behalf of the Union of India that the subsequent\n\nnotification/amendment in the original notification did not in any way alter the\n\nbasis of the original first notification of 2001. It is also the case on behalf of the\n\nUnion of India that the subsequent notification of 2008 has been issued in the\n\npublic interest and has been issued in exercise of the powers conferred under\nSection 5A\nof the Central Excise Act.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P009_C02",
+      "text": "Therefore, the questions which are posed for\n\nconsideration of this Court are whether in the facts and circumstances of the case\n\nthe subsequent notification which has been quashed and set aside by the High\n\nCourt being notification No. 16 of 2008 dated 27.03.2008 can be said to be\n\nclarificatory in nature and can it be said that it takes away the vested right\n\nconferred pursuant to the earlier notification of 2001 and whether the same can be\n\nmade applicable retrospectively and whether the same has been issued in the public\n\ninterest and whether the same is hit by the Doctrine of Promissory Estoppel?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P010_C01",
+      "text": "11. While considering the aforesaid questions and before considering the nature\n\nof the subsequent notification of 2008, few decisions of this Court on\n\nretrospectivity/clarificatory/applicability of promissory estoppel in the fiscal statute\n\nare required to be referred to, which are as under:\n11.1 In the case of\nKasinka Trading\n(supra), in paragraphs 12, 20 and 23, it is\n\nobserved and held as follows:\n“12. It has been settled by this Court that the doctrine of\n promissory estoppel is applicable against the Government also\n particularly where it is necessary to prevent fraud or manifest\n injustice. The doctrine, however, cannot be pressed into aid to compel\n the Government or the public authority “to carry out a representation\n or promise which is contrary to law or which was outside the authority\n or power of the officer of the Government or of the public authority to\n make”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P010_C02",
+      "text": "There is preponderance of judicial opinion that to invoke the\n doctrine of promissory estoppel clear, sound and positive foundation\n must be laid in the petition itself by the party invoking the doctrine\n and that bald expressions, without any supporting material, to the\n effect that the doctrine is attracted because the party invoking the\n doctrine has altered its position relying on the assurance of the\n Government would not be sufficient to press into aid the doctrine. In\n our opinion, the doctrine of promissory estoppel cannot be invoked in\n the abstract and the courts are bound to consider all aspects including\n\nthe results sought to be achieved and the public good at large, because\nwhile considering the applicability of the doctrine, the courts have to\ndo equity and the fundamental principles of equity must for ever be\npresent to the mind of the court, while considering the applicability of\nthe doctrine. The doctrine must yield when the equity so demands if it\ncan be shown having regard to the facts and circumstances of the case\nthat it would be inequitable to hold the Government or the public\nauthority to its promise, assurance or representation.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P011_C01",
+      "text": "20. The facts of the appeals before us are not analogous to the\nfacts in Indo-Afghan Agencies [(1968) 2 SCR 366 : AIR 1968 SC 718]\nor M.P. Sugar Mills [(1979) 2 SCC 409 : 1979 SCC (Tax) 144 : (1979)\n2 SCR 641] . In the first case the petitioner therein had acted upon the\nunequivocal promises held out to it and exported goods on the specific\nassurance given to it and it was in that fact situation that it was held\nthat Textile Commissioner who had enunciated the scheme was bound\nby the assurance thereof and obliged to carry out the promise made\nthereunder. As already noticed, in the present batch of cases neither\nthe notification is of an executive character nor does it represent a\nscheme designed to achieve a particular purpose. It was a notification\nissued in public interest and again withdrawn in public interest. So far\nas the second case (M.P. Sugar Mills case [(1979) 2 SCC 409 : 1979\nSCC (Tax) 144 : (1979) 2 SCR 641] ) is concerned the facts were\ntotally different.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P011_C02",
+      "text": "In the correspondence exchanged between the State\nand the petitioners therein it was held out to the petitioners that the\nindustry would be exempted from sales tax for a particular number of\ninitial years but when the State sought to levy the sales tax it was held\nby this Court that it was precluded from doing so because of the\ncategorical representation made by it to the petitioners through letters\nin writing, who had relied upon the same and set up the industry.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P012_C01",
+      "text": "23. The appellants appear to be under the impression that even\nif, in the altered market conditions the continuance of the exemption\nmay not have been justified, yet, Government was bound to continue\nit to give extra profit to them. That certainly was not the object with\nwhich the notification had been issued. The withdrawal of exemption\n“in public interest” is a matter of policy and the courts would not bind\nthe Government to its policy decisions for all times to come,\nirrespective of the satisfaction of the Government that a change in the\n\npolicy was necessary in the “public interest”. The courts, do not\n interfere with the fiscal policy where the Government acts in “public\n interest” and neither any fraud or lack of bona fides is alleged much\n less established.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P012_C02",
+      "text": "The Government has to be left free to determine the\n priorities in the matter of utilisation of finances and to act in the\n public interest while issuing or modifying or withdrawing an\n exemption notification under\nSection 25(1)\nof the Act.”\n\nThus, it can be seen that this Court has specifically and clearly held that the\n\ndoctrine of promissory estoppel cannot be invoked in the abstract and the courts\n\nare bound to consider all aspects including the objective to be achieved and the\n\npublic good at large. It has been held that while considering the applicability of\n\nthe doctrine, the courts have to do equity and the fundamental principles of equity\n\nmust forever be present to the mind of the court, while considering the\n\napplicability of the doctrine. It is further held that the doctrine must yield when the\n\nequity so demands if it can be shown having regard to the facts and circumstances\n\nof the case that it would be inequitable to hold the Government or the public\n\nauthority to its promise, assurance or representation. It is further held that an\n\nexemption notification does not make items which are subject to levy of customs\n\nduty etc. as items not leviable to such duty.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P012_C03",
+      "text": "It only suspends the levy and collection\n\nof customs duty, etc., wholly or partially and subject to such conditions as may be\n\nlaid down in the notification by the Government in “public interest”. Such an\n\nexemption by its very nature is susceptible of being revoked or modified or\n\nsubjected to other conditions. The supersession or revocation of an exemption\n\nnotification in the “public interest” is an exercise of the statutory power of the\n\nState under the law itself. It has been further held that under the\nGeneral Clauses\n\nAct\nan authority which has the power to issue a notification has the undoubted\n\npower to rescind or modify the notification in a like manner. It has been observed\n\nthat the withdrawal of exemption “in public interest” is a matter of policy and the\n\ncourts would not bind the Government to its policy decisions for all times to come,\n\nirrespective of the satisfaction of the Government that a change in the policy was\n\nnecessary in the “public interest”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P012_C04",
+      "text": "It has been held that where the Government\n\nacts in “public interest” and neither any fraud or lack of bonafides is alleged, much\n\nless established, it would not be appropriate for the court to interfere with the\n\nsame.\n11.2 In the case of\nShrijee Sales Corporation\n(supra), it is observed and held that\n\nthe principle of promissory estoppel may be applicable against the Government. But the determination of applicability of promissory estoppel against public\n\nauthority/Government hinges upon balance of equity or “public interest”. In case\n\nthere is a supervening public interest, the Government would be allowed to change\n\nits stand; it would then be able to withdraw from representation made by it which\n\ninduced persons to take certain steps which may have gone adverse to the interest\n\nof such persons on account of such withdrawal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P012_C05",
+      "text": "Once public interest is accepted\n\nas the superior equity which can override individual equity, the aforesaid principle\n\nshould be applicable even in cases where a period has been indicated for operation\n\nof the promise.\n11.3 In the case of Shree Durga Oil Mills (supra), it has been held that when the\n\nwithdrawal of exemption is in public interest, the public interest must override any\n\nconsideration of private loss or gain. In the said case, the change in policy and\n\nwithdrawal of the exemption on the ground of severe resource crunch have been\n\nfound to be a valid ground and to be in public interest.\n11.4 In the case of\nMahaveer Oil Industries\n(supra), after considering the\n\ndecision of this Court in the case of\nKasinka Trading\n(supra), a similar view has\n\nbeen taken and it has been observed that public interest requires that the State be\n\nheld bound by the promise held out by it in such a situation. But this does not\n\npreclude the State from withdrawing the benefit prospectively even during the\n\nperiod of the Scheme, if public interest so requires.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P012_C06",
+      "text": "Even in a case where a party\n\nhas acted on the promise, if there is any supervening public interest which requires\n\nthat the benefit be withdrawn or the scheme be modified, that supervening public\n\ninterest would prevail over any promissory estoppel.\n11.5 In the case of Shree Sidhbali Steels Ltd. (supra), in paragraphs 32 and 33, it\n\nhas been observed and held as follows:\n\n“32. The doctrine of promissory estoppel is by now well\nrecognised and well defined by a catena of decisions of this Court. Where the Government makes a promise knowing or intending that it\nwould be acted on by the promisee and, in fact, the promisee, acting in\nreliance on it, alters his position, the Government would be held\nbound by the promise and the promise would be enforceable against\nthe Government at the instance of the promisee notwithstanding that\nthere is no consideration for the promise and the promise is not\nrecorded in the form of a formal contract as required by\nArticle 229\nthe Constitution. The rule of promissory estoppel being an equitable\ndoctrine has to be moulded to suit the particular situation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 229"
+      ],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P012_C07",
+      "text": "It is not a\nhard-and-fast rule but an elastic one, the objective of which is to do\njustice between the parties and to extend an equitable treatment to\nthem. This doctrine is a principle evolved by equity, to avoid injustice\nand though commonly named promissory estoppel, it is neither in the\nrealm of contract nor in the realm of estoppel. For application of the\ndoctrine of promissory estoppel the promisee must establish that he\nsuffered in detriment or altered his position by reliance on the\npromise.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P013_C01",
+      "text": "33. Normally, the doctrine of promissory estoppel is being\napplied against the Government and defence based on executive\nnecessity would not be accepted by the court. However, if it can be\nshown by the Government that having regard to the facts as they have\nsubsequently transpired, it would be inequitable to hold the\nGovernment to the promise made by it, the court would not raise an\nequity in favour of the promisee and enforce the promise against the\nGovernment. Where public interest warrants, the principles of\npromissory estoppel cannot be invoked. The Government can change\nthe policy in public interest. However, it is well settled that taking cue\nfrom this doctrine, the authority cannot be compelled to do something\nwhich is not allowed by law or prohibited by law. There is no\npromissory estoppel against the settled proposition of law. Doctrine of\npromissory estoppel cannot be invoked for enforcement of a promise\nmade contrary to law, because none can be compelled to act against\nthe statute.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P013_C02",
+      "text": "Thus, the Government or public authority cannot be\ncompelled to make a provision which is contrary to law.”\n\nThus, as held by this Court, when the public interest warrants, the principles of\n\npromissory estoppel cannot be invoked. It is further held that the rule of promissory estoppel being an equitable\n\ndoctrine has to be moulded to suit the particular situation. It is not a hard-and-fast\n\nrule but an elastic one, the objective of which is to do Justice between the parties\n\nand to extend an equitable treatment to them.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P014_C01",
+      "text": "12. Now, so far as the decisions relied upon by the learned counsel appearing on\n\nbehalf of the respective original writ petitioners-respondents herein are concerned,\n\nonce it is held that the subsequent notifications/industrial policies impugned before\n\nthe respective High Court are clarificatory in nature and it does not take away any\n\nvested rights conferred under the earlier notifications/industrial policies, none of\n\nthe decisions relied upon shall be applicable to the facts of the case on hand.\nCASE LAW ON RETROSPECTIVITY/CLARIFICATORY",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P015_C01",
+      "text": "13. In the case of\nState Bank of India v. V. Ramakrishnan\n(2018) 17 SCC 394,\n\nit is observed and held that the presumption against retrospective operation is not\n\napplicable to declaratory statutes. For modern purposes a declaratory Act may be\n\ndefined as an Act to remove doubts existing as to the common law, or the meaning\n\nor effect of any statute. Such Acts are usually held to be retrospective.\n\n13.1 In the case of\nState of Bihar v. Ramesh Prasad Verma\n(2017) 5 SCC 665, it\n\nis observed and held that any legislation or instrument having force of law, if\n\nclarificatory, declaratory or explanatory in nature and purport, will have\n\nretrospective operation especially in the absence of any indication to the contrary\n\nas to retrospectivity either in parent Act or Rules or notifications involved.\n13.2 In the case of\nUnion of India v. Martin Lottery Agencies Ltd. (2009) 12\n\nSCC 209, it is observed and held that whether a subordinate legislation or a\n\nparliamentary statute would be held to be clarificatory or declaratory would depend\n\nupon the nature thereof as also the object it seeks to achieve.\n13.3 In the case of\nT.N. Electricity Board v. Status Spg. Mills Ltd.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P015_C02",
+      "text": "(2008) 7 SCC\n\n353 it is observed and held that a clarificatory order can be given retrospective\n\neffect as it can throw light on substantive provision by principle of contemporanea\n\nexpositio.\n13.4 In the case of\nZile Singh v. State of Haryana\n(2004) 8 SCC 1, it is observed\n\nthat the presumption against retrospective operation is not applicable to declaratory\n\nstatutes. In determining, therefore, the nature of the Act, regard must be had to the\n\nsubstance rather than to the form. If a new Act is “to explain” an earlier Act, it\n\nwould be without object unless construed retrospectively. An explanatory Act is\n\ngenerally passed to supply an obvious omission or to clear up doubts as to the\n\nmeaning of the previous Act. It is well settled that if a statute is curative or merely\n\ndeclaratory of the previous law retrospective operation is generally intended. An\n\namending Act may be purely declaratory to clear a meaning of a provision of the\n\nprincipal Act which was already implicit. A clarificatory amendment of this nature\n\nwill have retrospective effect. CASE LAW ON “INTERPRETATION OF FISCAL STATUTES”\n\n13.5. In the case of\nR. K. Garg v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P015_C03",
+      "text": "Union of India\n(1981) 4 SCC 675, this Court\n\nobserved and held as follows:\n“8. xxx xxx xxx\n The Court must always remember that “legislation is directed to\n practical problems, that the economic mechanism is highly sensitive\n and complex, that many problems are singular and contingent, that\n laws are not abstract propositions and do not relate to abstract units\n and are not to be measured by abstract symmetry”; “that exact\n wisdom and nice adaption of remedy are not always possible” and that\n “judgment is largely a prophecy based on meagre and uninterpreted\n experience”. Every legislation particularly in economic matters is\n essentially empiric and it is based on experimentation or what one\n may call trial and error method and therefore it cannot provide for all\n possible situations or anticipate all possible abuses. There may be\n crudities and inequities in complicated experimental economic\n legislation but on that account alone it cannot be struck down as\n invalid. The courts cannot, as pointed out by the United States\n Supreme Court in Secretary of Agriculture v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P015_C04",
+      "text": "Central Roig Refining\n Company [94 L Ed 381 : 338 US 604 (1950)] be converted into\n tribunals for relief from such crudities and inequities. There may even\n be possibilities of abuse, but that too cannot of itself be a ground for\n invalidating the legislation, because it is not possible for any\n\nlegislature to anticipate as if by some divine prescience, distortions\n and abuses of its legislation which may be made by those subject to its\n provisions and to provide against such distortions and abuses. Indeed,\n howsoever great may be the care bestowed on its framing, it is\n difficult to conceive of a legislation which is not capable of being\n abused by perverted human ingenuity. The Court must therefore\n adjudge the constitutionality of such legislation by the generality of its\n provisions and not by its crudities or inequities or by the possibilities\n of abuse of any of its provisions. If any crudities, inequities or\n possibilities of abuse come to light, the legislature can always step in\n and enact suitable amendatory legislation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P015_C05",
+      "text": "That is the essence of\n pragmatic approach which must guide and inspire the legislature in\n dealing with complex economic issues.”\n\n13.6 In the of\nCommissioner of Customs (Import) v. Dilip Kumar and Company\n(2018) 9 SCC 1, after considering various decisions on the Interpretation of Fiscal\n\nStatutes, it is ultimately concluded that every taxing statute including, charging,\n\ncomputation and exemption clauses, at the threshold stage should be interpreted\n\nstrictly. Further, though in case of ambiguity in charging provisions, the benefit\n\nnecessarily goes in favour of the assessee, but for an exemption notification or\n\nexemption clause the benefit of ambiguity must be strictly interpreted in favour of\n\nthe Revenue/State. It is further observed and held that a person claiming exemption, therefore,\n\nhas to establish that his case squarely falls within the exemption notification, and\n\nwhile doing so, a notification should be construed against the assessee in case of\n\nambiguity. A person who claims exemption has to establish his case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P016_C01",
+      "text": "14. Applying the law\nlaid down by\nthis Court in the aforesaid decisions to the\n\nsubsequent notifications/industrial policies which were the subject-matter before\n\nthe High Court and for the reasons stated hereinbelow, we are of the opinion that\n\nthe respective notifications/industrial policies impugned before the High Courts\n\ncan be said to be clarificatory in nature and it can be defined as an Act to remove\n\ndoubts. It cannot be said that by the subsequent notifications/industrial policies the\n\nbenefits which were accrued/granted under the earlier notifications were sought to\n\nbe taken away.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P016_C02",
+      "text": "It also cannot be said that by the subsequent notifications/industrial\n\npolicies, the rights which have been accrued under the earlier notifications had\n\nbeen taken away.\n14.1 The main objective of the earlier respective notifications/industrial policies\n\nwas to encourage the entrepreneurs to put new industries in the area so as to\n\ngenerate employment and for that an incentive was offered to get back by way of\n\nrefund the excise duty paid either in cash or PLA, namely, the amount of duty paid\n\nby the manufacturer of goods other than the amount of duty paid by utilization paid\n\nby CENVAT credit. The same was subject to conditions that it will be applied to\n\nthe new industrial units, i.e. the units which are set up on and after the publication\n\nof the said notification in the Official Gazette, i.e. not later than 31.07.2003. The\n\nnotification was modified from time to time.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P016_C03",
+      "text": "However, during the operation of the\n\nearlier notifications, it was noticed that the provision of granting refund of cash\n\npaid portion of duty and eligibility of credit the entire amount of duty to the buyers\n\nof such excisable goods had prompted certain unscrupulous manufacturers to\n\nindulge in different types of tax evasion tactics. It was revealed on analysis of\n\ncases booked by the Excise Department and even the representations received from\n\nthe Industry Association about misuse of exemptions granted by the Government,\n\nwhich was meant to be available only for genuine manufacturers. It was noticed as\n\nunder:\ni) Reporting of bogus production by mere issuance of sale invoices\n\n without actual production of goods and supply/clearance of excisable\n\n goods.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P016_C04",
+      "text": "This would result in availment of CENVAT credit by buyers of\n\n such excisable goods in other parts of the country without actual\n\n production being carried out and in absence of actual receipt of goods.\nii) Reporting of bogus production by such units in these areas where\n\n actual production takes place elsewhere in the country.\niii) Over valuation of goods resulting in availment of excess credit by\n\n buyers.\niv) Goods are supplied by manufacturers, importers to these units without\n\n issuance of sales invoice and these are backed by bogus sale invoices\n\n issued by traders who do not undertake actual supply of goods. The\n\nactual supplier of these goods issue bogus duty paid invoices to other\n\n manufacturers who take credit based on such invoices without receipt\n\n of goods. Therefore, the Government came out with the impugned notifications/industrial\n\npolicies that the refund of excise duty shall be provided on actual and calculated on\n\nthe basis of actual value addition. On a fair reading of the earlier\n\nnotifications/industrial policies, it is clear that the object of granting the refund was\n\nto refund the excise duty paid on genuine manufacturing activities.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P016_C05",
+      "text": "The intention\n\nwould not have been that irrespective of actual manufacturing/manufacturing\n\nactivities and even if the goods are not actually manufactured, but are\n\nmanufactured on paper, there shall be refund of excise duty which are\n\nmanufactured on paper. Therefore, it can be said that the object of the subsequent\n\nnotifications/industrial policies was the prevention of tax evasion. It can be said\n\nthat by the subsequent notifications/industrial policies, they only rationalizes the\n\nquantum of exemption and proposing rate of refund on the total duty payable on\n\nthe genuine manufactured goods. At the time when the earlier notifications were\n\nissued, the Government did not visualize that such a modus operandi would be\n\nfollowed by the unscrupulous manufacturers who indulge in different types of tax\n\nevasion tactics.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P016_C06",
+      "text": "It is only by experience and on analysis of cases detected the\n\nExcise Department the Government came to know about such tax evasion tactics\n\nbeing followed by the unscrupulous manufacturers which prompted the\n\nGovernment to come out with the subsequent notifications which, as observed\n\nhereinabove, was to clarify the refund mechanism so as to provide that excise duty\n\nrefund would be allowed only to the extent of duty payable on actual value\n\naddition made by the manufacturer undertaking manufacturing activities in the\n\nconcerned areas. The entire genesis of the policy manifesting the intention of the\n\nGovernment to grant excise duty exemption/refund of excise duty paid was to\n\nprovide such exemption only to actual value addition made in the respective areas. As it was found that there was misuse of excise duty exemption it was considered\n\nexpedient in the public interest and with a laudable object of having genuine\n\nindustrialization in backward areas or the concerned areas, the subsequent\n\nnotifications/industrial policies have been issued by the Government.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P016_C07",
+      "text": "Therefore,\n\nthe subsequent notifications/industrial policies impugned before the respective\n\nHigh Courts were in the public interest and even issued after thorough analysis of\n\nthe cases of tax evasion and even after receipt of the reports. The earlier\n\nnotifications were issued under\nSection 5A\nof the Central Excise Act and even the\n\nsubsequent notifications which were issued in public interest and in the interest of\n\nRevenue were also issued under\nSection 5A\nof the Central Excise Act, which can\n\nnot be said to be bad in law, arbitrary and/or hit by the doctrine of promissory\n\nestoppel.\n\n14.2 The purpose of the original scheme was not to give benefit of refund of the\n\nexcise duty paid on the goods manufactured only on paper or in fact not\n\nmanufactured at all.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P016_C08",
+      "text": "As the purpose of the original notifications/incentive schemes\n\nwas being frustrated by such unscrupulous manufacturers who had indulged in\n\ndifferent types of tax evasion tactics, the subsequent notifications/industrial\n\npolicies have been issued allowing refund of excise duty only to the extent of duty\n\npayable on the actual value addition made by the manufacturers undertaking\n\nmanufacturing activities in these areas which is absolutely in consonance with the\n\nincentive scheme and the intention of the Government to provide the excise duty\n\nexemption only in respect of genuine manufacturing activities carried out in these\n\nareas.\n14.3 As observed hereinabove, the subsequent notifications/industrial policies do\n\nnot take away any vested right conferred under the earlier notifications/industrial\n\npolicies. Under the subsequent notifications/industrial policies, the persons who\n\nestablish the new undertakings shall be continue to get the refund of the excise\n\nduty. However, it is clarified by the subsequent notifications that the refund of the\n\nexcise duty shall be on the actual excise duty paid on actual value addition made\n\nby the manufacturers undertaking manufacturing activities.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P016_C09",
+      "text": "Therefore, it cannot be\n\nsaid that subsequent notifications/industrial policies are hit by the doctrine of\n\npromissory estoppel. The respective High Courts have committed grave error in\n\nholding that the subsequent notifications/industrial policies impugned before the\n\nrespective High Courts were hit by the doctrine of promissory estoppel. As\n\nobserved and held hereinabove, the subsequent notifications/industrial policies\n\nwhich were impugned before the respective High Court can be said to be\n\nclarificatory in nature and the same have been issued in the larger public interest\n\nand in the interest of the Revenue, the same can be made applicable\n\nretrospectively, otherwise the object and purpose and the intention of the\n\nGovernment to provide excise duty exemption only in respect of genuine\n\nmanufacturing activities carried out in the concerned areas shall be frustrated. As\n\nthe subsequent notifications/industrial policies are “to explain” the earlier\n\nnotifications/industrial policies, it would be without object unless construed\n\nretrospectively.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P016_C10",
+      "text": "The subsequent notifications impugned before the respective High\n\nCourts as such provide the manner and method of calculating the amount of refund\n\nof excise duty paid on actual manufacturing of goods. The notifications impugned\n\nbefore the respective High Courts can be said to be providing mode on\n\ndetermination of the refund of excise duty to achieve the object and purpose of\n\nproviding incentive/exemption. As observed hereinabove, they do not take away\n\nany vested right conferred under the earlier notifications. The subsequent\n\nnotifications therefore are clarificatory in nature, since it declares the refund of\n\nexcise duty paid genuinely and paid on actual manufacturing of goods and not on\n\nthe duty paid on the goods manufactured only on paper and without undertaking\n\nany manufacturing activities of such goods.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P017_C01",
+      "text": "15. In view of the above and for the reasons stated above and once it is held that\n\nthe subsequent notifications/industrial policies which were impugned before the\n\nrespective High Courts are clarificatory in nature and are issued in public interest\n\nand in the interest of the Revenue and they seek to achieve the original object and\n\npurpose of giving incentive/exemption while inviting the persons to make\n\ninvestment on establishing the new undertakings and they do not take away any\n\nvested rights conferred under the earlier notifications/industrial policies and\n\ntherefore cannot be said to be hit by the doctrine of promissory estoppel, the same\n\nis to be applied retrospectively and they cannot be said to be irrational and/or\n\narbitrary.\n16 Under the circumstances, the respective High Courts have committed a\n\ngrave error in quashing and setting aside the subsequent notifications/industrial\n\npolicies impugned before the respective High Courts on the ground that they are hit\n\nby the doctrine of promissory estoppel and that they are retrospective and not retro-\n\nactive. Consequently, all these appeals are ALLOWED.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P017_C02",
+      "text": "The impugned\n\nJudgments and Orders passed by the respective High Courts, which are impugned\n\nin the present appeals, quashing and setting aside the subsequent\n\nnotifications/industrial policies impugned in the respective writ petitions before the\n\nrespective High Courts, are hereby quashed and set aside. Consequently, the\n\noriginal writ petitions filed by the respective original writ petitioners before the\n\nrespective High Courts challenging the respective subsequent\n\nnotifications/industrial policies stand dismissed and for the reasons stated\n\nhereinabove, the challenge to the respective subsequent notifications/industrial\n\npolicies impugned before the respective High Courts FAIL. However, it is\n\nCLARIFIED that the present judgment shall not affect the amount of excise duty\n\nalready refunded, meaning thereby, the cases in which the excise duty is already\n\nrefunded prior to the subsequent notifications/industrial policies impugned before\n\nthe respective High Court, they are not to be reopened.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P017_C03",
+      "text": "However, it is further\n\nCLARIFIED that the pending refund applications shall be decided as per the\n\nsubsequent notifications/industrial policies which were impugned before the\n\nrespective High Courts and they shall be decided in accordance with the law and\n\non merits and as per the subsequent notifications/industrial policies impugned\n\nbefore the respective High Courts. All these appeals stand disposed of accordingly. NO COSTS.\n16.1 Now, so far as the Civil Appeals @ SLP © Nos. 14751/2013, 14752/2013\n\nand 14753/2013 are concerned, the challenge to notification Nos. 16/2008-CE and\n\n33/2008-CE FAIL and the Excise authorities have in fact allowed the refund of\n\nexcise in line with the subsequent notification Nos. 16/2008-CE and 33/2008-CE\n\nwhich are now upheld by this Court, the present appeals deserve to be dismissed\n\nand are accordingly dismissed. NO COSTS\n\n …………………………..J. (Arun Mishra)\n\n …………………………..J. (M. R. Shah)\n\n …………………………..J. (B.R. Gavai)\n\nNew Delhi,\nApril 22, 2020\n\nREPORTABLE\n\n CIVIL APPELLATE JURISDICTION\n\n SPECIAL LEAVE PETITION (CIVIL) NO. 19998/2013\n\n M/s.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC_P017_C04",
+      "text": "Barak Valley Cement Ltd. …Petitioner(s)\n\n Versus\n\n The Union of India & Ors. …Respondents\n\n WITH\nSLP ….CC No. 1787/2014\nORDER\n\n M. R. Shah, J. Both these petitions arise out of the Interlocutory Order passed by the High\n\n Court of Guwahati in Writ Petition No. 1153/2013 and Writ Petition No.\n\n 1151/2013, by which the High Court has refused to grant the relief as prayed for. It\n\nis reported that subsequently by the common judgment and order dated 20.11.2014,\ngroup of matters being Civil Appeal @ SLP © No. 19386/2015 and Civil Appeal\n\n@ SLP © No. 27046/2015, both these petitions stand dismissed as having become\n\ninfructuous.\n…………………………..J. (Arun Mishra)\n\n …………………………..J. (M. R. Shah)\n\n …………………………..J. (B.R. Gavai)\n\nNew Delhi,\nApril 22, 2020",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    }
+  ],
+  "case_summary": {
+    "case_name": "Union Of India & Anr.Etc. vs M/S V.V.F.Ltd.Etc.Etc.",
+    "case_id": "SC_2020_UNION_OF_INDIA_ANRETC_VS_MS_VVFLTDETCETC",
+    "court": "Supreme Court of India",
+    "year": "2020",
+    "facts_summary": "1. Leave granted in all the special leave petitions. Civil Appeals @ SLP © Nos. 28194-28201 of 2010\n2. As common question of law and facts arise in this group of appeals and as\n\nsuch arise out of the impugned common judgment and order dated 10.03.2010\n\npassed by the High Court of Gujarat at Ahmedabad in respective Special Civil\n\nApplication Nos. 5909/2008, 6300/2008, 6298/2008, 6299/2008, 5907/2008,\n\n8468/2008, 6334/2008 and 6562/2008, all these appeals are being decided and\n\ndisposed of by this common judgment and order.\n2.1 Feeling aggrieved and dissatisfied with the impugned common judgment\n\nand order dated 10.03.2010 passed by the High Court of Gujarat at Ahmedabad in\n\nrespective Special Civil Application Nos. 5909/2008, 6300/2008, 6298/2008,\n\n6299/2008, 5907/2008, 8468/2008, 6334/2008 and 6562/2008, by which the\n\nDivision Bench of the High Court has allowed the aforesaid writ petitions\n\npreferred by the respondents herein – original writ petitioners and by which the\n\nHigh Court has held that the impugned policy of withdrawal of the\n\nbenefit/incentive to the original writ petitioners is retrospective and not retroactive\n\nand quashed and set aside the Notification 16/2008 dated 27.03.2008, on the\n\nground that bar of promissory estoppel would operate, the Union of India has\n\npreferred the present appeals.",
+    "legal_issues": "It was the case of\n\nthe original writ petitioners that the subsequent notification No. 16/2008-CE\n\nchanged the entire basis of the incentive exemption and had the effect of\n\nsubstantially reducing their entitlement of refund. It was also the case on behalf\n\nof the original writ petitioners that as a result of the said amendment which\n\nresulted in their entitlement for refund being reduced from nearly 100% of the\n\nduty paid to only 34% of such duty amount. 8. Learned counsel appearing on behalf of the Union of India has vehemently\n\nsubmitted that the High Court has materially erred in quashing and setting aside the\n\nnotification No. 16 of 2008 dated 27.03.2008 on the ground that the same is\n\nretrospective and not retro-active and the same is barred by the doctrine of\n\npromissory estoppel.\n8.1 It is submitted as under:\nThat the High Court has not properly appreciated and/or considered the\n\nnotification impugned before it and as such the High Court has misinterpreted\n\nand/or misread the notification No. 16 of 2008. It is submitted that the High\n\nCourt has erred in treating and/or considering the notification No. 16 of 2008 as\n\nwithdrawal of exemption benefit and/or withdrawal of the incentive provided by\n\nnotification dated 31.07.2001. It is vehemently submitted that as such the\n\nimpugned notification No. 16 of 2008 was clarificatory in nature and cannot be\n\nsaid to be withdrawal of exemption benefit and/or withdrawal of the incentive\n\nprovided earlier by notification dated 31.0",
+    "ratio_summary": "Consequently, by the\n\nimpugned judgment and order, the writ petitions are allowed mainly on the ground\n\nof doctrine of promissory estoppel. Consequently, it is held by the High Court\n\nthat the incentive as originally envisaged by notification No. 39/2001-CE was\n\nrequired to be implemented and the differential amount was directed to be\n\nrefunded to the writ petitioners. Hence, the present appeals. Civil Appeals @ SLP © Nos. 14751 of 2013,\nCivil Appeals @ SLP © Nos. 14752 of 2013 and\nCivil Appeals @ SLP © Nos. 14753 of 2013\n4. All these appeals arise out of the common judgment and order passed by the\n\nHigh Court of Gujarat at Ahmedabad dated 17.10.2012 in Special Civil Application\n\nNos. 3582/2012, 3569/2012 and 3587/2012 respectively, by which the High Court\n\nhas dismissed the said petitions. Before the High Court, respective original writ petitioners claimed for\n\nrefund of the excise duty in terms of the original notification No. 29 of 2001. The\n\nExcise authorities, however, granted the exemption only in terms of the amended\n\nnotification Nos. 16/20098-CE and 36/2008-CE (which are subject matter of Civil\n\nAppeals @ SLP © Nos. 28194-28201 of 2010). 2010. As, in the present appeals, the question is with respect to the challenge to the\n\nsubsequent notifications which are also the subject-matter of this Court in the case\n\nof Civil Appeals @ SLP © Nos. 28194-28201 of 2010, all these appeals are also\n\ndecided and disposed of together with this common judgment and order. Civil Appeal",
+    "final_order": "However, it is further\n\nCLARIFIED that the pending refund applications shall be decided as per the\n\nsubsequent notifications/industrial policies which were impugned before the\n\nrespective High Courts and they shall be decided in accordance with the law and\n\non merits and as per the subsequent notifications/industrial policies impugned\n\nbefore the respective High Courts. All these appeals stand disposed of accordingly. NO COSTS.\n16.1 Now, so far as the Civil Appeals @ SLP © Nos. 14751/2013, 14752/2013\n\nand 14753/2013 are concerned, the challenge to notification Nos. 16/2008-CE and\n\n33/2008-CE FAIL and the Excise authorities have in fact allowed the refund of\n\nexcise in line with the subsequent notification Nos. 16/2008-CE and 33/2008-CE\n\nwhich are now upheld by this Court, the present appea",
+    "outcome_summary": "Disposed of. However, it is further\n\nCLARIFIED that the pending refund applications shall be decided as per the\n\nsubsequent notifications/industrial policies which were impugned before the\n\nrespective High Courts and they shall be decided in accordance with the law and\n\non merits and as per the subsequent notifi",
+    "sections_cited": [
+      "Constitution 226",
+      "Constitution 229"
+    ],
+    "cases_cited": []
+  }
+}

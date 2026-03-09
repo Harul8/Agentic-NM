@@ -1,0 +1,91 @@
+{
+  "case_id": "SC_2021_POTTAYIL_RADHA_VS_STATE_OF_KERALA",
+  "case_name": "Pottayil Radha vs State Of Kerala",
+  "normalized_case_name": "POTTAYIL_RADHA_VS_STATE_OF_KERALA",
+  "court": "Supreme Court of India",
+  "year": "2021",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 853 of 2020",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "8 December 2021",
+  "judges": [
+    "S. Ravindra Bhat",
+    "Vineet Saran",
+    "Uday Umesh Lalit"
+  ],
+  "author": "Uday Umesh Lalit",
+  "bench_type": "constitution",
+  "petitioner": "Pottayil Radha",
+  "respondent": "State Of Kerala",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 0,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\2021\\DEC\\2021_DEC_96.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_POTTAYIL_RADHA_VS_STATE_OF_KERALA_P001_C01",
+      "text": "O R D E R\nApplication for listing Review Petition in open Court is rejected.\nThe High Court had reduced the substantive sentence to six months which",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_POTTAYIL_RADHA_VS_STATE_OF_KERALA_P002_C01",
+      "text": "complainant.\nConsidering the entirety of circumstances, the accused was directed to deposit",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_POTTAYIL_RADHA_VS_STATE_OF_KERALA_P003_C01",
+      "text": "Rs.2,50,000/- so that the complainant could be sufficiently compensated. Despite",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_POTTAYIL_RADHA_VS_STATE_OF_KERALA_P004_C01",
+      "text": "having been served, the complainant (Review Petitioner) chose not to enter\ntime, the amount of Rs.2,50,000/- was directed to be made over to the complainant.\nThe complainant is now seeking review of the order passed by this Court.\nWe have gone through the grounds raised in the Review Petition and do not",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_POTTAYIL_RADHA_VS_STATE_OF_KERALA_P005_C01",
+      "text": "find any error apparent to justify interference. This Review Petition is dismissed.\n…………………………J.\n [Uday Umesh Lalit]",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Pottayil Radha vs State Of Kerala",
+    "case_id": "SC_2021_POTTAYIL_RADHA_VS_STATE_OF_KERALA",
+    "court": "Supreme Court of India",
+    "year": "2021",
+    "facts_summary": "complainant.\nConsidering the entirety of circumstances, the accused was directed to deposit Rs.2,50,000/- so that the complainant could be sufficiently compensated. Despite",
+    "legal_issues": "having been served, the complainant (Review Petitioner) chose not to enter\ntime, the amount of Rs.2,50,000/- was directed to be made over to the complainant.\nThe complainant is now seeking review of the order passed by this Court.\nWe have gone through the grounds raised in the Review Petition and do not",
+    "ratio_summary": "",
+    "final_order": "find any error apparent to justify interference. This Review Petition is dismissed.\n…………………………J.\n [Uday Umesh Lalit]",
+    "outcome_summary": "Dismissed. find any error apparent to justify interference. This Review Petition is dismissed.\n…………………………J.\n [Uday Umesh Lalit]",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

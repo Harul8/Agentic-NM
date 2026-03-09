@@ -225,9 +225,25 @@ def legal_term_boost(query: str, text: str) -> float:
     return matches / total
 
 
-# ---------------------------------------------------------------------------
-# P2: Judgment-type filter for local case law index
-# ---------------------------------------------------------------------------
+# Paragraph-type boost for case-law chunks (ratio/reasoning rank above facts)
+PARAGRAPH_TYPE_BOOST = {
+    "ratio": 0.50,
+    "reasoning": 0.35,
+    "order": 0.25,
+    "arguments": 0.20,
+    "facts": 0.10,
+    "unknown": 0.0,
+}
+SECTIONS_CITED_BOOST = 0.25  # per matching section (statute–case link); max 0.5
+
+# Court-tier (authority) boost for case-law chunks
+AUTHORITY_BOOST = {
+    "supreme_court": 0.50,
+    "high_court": 0.30,
+    "district_court": 0.10,
+    "tribunal": 0.05,
+    "unknown": 0.0,
+}
 # Rejects interlocutory orders, summons, and notices from local case law search results.
 # Mirrors the same filter in case_law_discovery/workflow.py.
 
@@ -461,20 +477,16 @@ def hybrid_search(
     rerank_top_k: int = 20,
     min_rerank_score: float = 0.0,
     allowed_acts: Optional[frozenset] = None,
+    allowed_cases: Optional[frozenset] = None,
 ) -> list:
     """
     Three-stage hybrid search:
     1. FAISS semantic search (top faiss_top_k)
     2. BM25 keyword search (top bm25_top_k)
-    3. Merge, deduplicate, optional act-filter, cross-encoder re-rank (top rerank_top_k)
+    3. Merge, deduplicate, optional act/case filter, cross-encoder re-rank (top rerank_top_k)
 
-    allowed_acts: if provided (non-empty frozenset of act_name strings), candidates
-        from acts NOT in this set are dropped BEFORE the cross-encoder step.
-        This is the act-first optimisation: identify relevant acts cheaply with
-        ActProfileIndex, then cross-encode only sections from those acts.
-        Falls back to unfiltered when allowed_acts is None or empty.
-
-    Returns list of chunk dicts, each with '_rerank_score' field, sorted by relevance.
+    allowed_acts: if provided, keep only chunks with act_name in this set (bare-act optimisation).
+    allowed_cases: if provided, keep only chunks with case_name in this set (two-tier case-law).
     """
     # Normalise query: expand Indian legal abbreviations before FAISS + BM25
     # e.g. "IPC section 302" → "Indian Penal Code section 302"
@@ -559,6 +571,20 @@ def hybrid_search(
                 len(filtered_keys), len(all_candidate_keys),
             )
 
+    # --- Case-level pre-filter (two-tier retrieval: case index → paragraph search) ---
+    if allowed_cases:
+        filtered_keys = {
+            k for k in all_candidate_keys
+            if (chunks[k].get("case_name") or "").strip() in allowed_cases
+        }
+        if len(filtered_keys) >= 3:
+            all_candidate_keys = filtered_keys
+        else:
+            logger.debug(
+                "Case pre-filter: BYPASSED — only %d candidates in allowed cases; using all %d",
+                len(filtered_keys), len(all_candidate_keys),
+            )
+
     # --- Stage 3: Cross-encoder re-ranking ---
     candidate_chunks = []
     candidate_texts = []
@@ -579,6 +605,13 @@ def hybrid_search(
 
     if not candidate_chunks:
         return []
+
+    # Query sections for citation boost (case-law chunks that cite same act/section as query)
+    try:
+        from Ingestion.smart_chunker import _extract_sections_cited
+        query_sections = set(_extract_sections_cited(query))
+    except Exception:
+        query_sections = set()
 
     try:
         from config import LEGAL_TERM_BOOST_WEIGHT
@@ -612,7 +645,39 @@ def hybrid_search(
             in_faiss = key in faiss_candidates
             in_bm25  = key in bm25_candidates
             intersection_bonus = FAISS_BM25_INTERSECTION_BONUS if (in_faiss and in_bm25) else 0.0
-            rerank_score = ce_score + boost + intersection_bonus
+
+            # Paragraph-type boost (case-law only): ratio/reasoning rank above facts
+            para_boost = 0.0
+            if chunk.get("doc_type") == "case_law":
+                pt = (chunk.get("paragraph_type") or "unknown").lower().strip()
+                para_boost = PARAGRAPH_TYPE_BOOST.get(pt, PARAGRAPH_TYPE_BOOST.get("unknown", 0.0))
+
+            # Citation boost (case-law only): chunk cites same act/section as query
+            citation_boost = 0.0
+            if chunk.get("doc_type") == "case_law" and query_sections:
+                cited = chunk.get("sections_cited") or []
+                matches = sum(1 for c in cited if c in query_sections)
+                if matches > 0:
+                    citation_boost = min(SECTIONS_CITED_BOOST * matches, 0.5)
+
+            # Authority (court-tier) boost for case-law chunks
+            authority_boost = 0.0
+            # Optional: PageRank/citation-graph authority (landmark cases rank higher)
+            pagerank_boost = 0.0
+            if chunk.get("doc_type") == "case_law":
+                binding = (chunk.get("binding_authority") or "unknown").lower().strip()
+                authority_boost = AUTHORITY_BOOST.get(binding, AUTHORITY_BOOST.get("unknown", 0.0))
+                try:
+                    from retrieval.citation_graph import get_case_authority_score
+                    case_name = (chunk.get("case_name") or "").strip()
+                    year = str(chunk.get("year") or "").strip()
+                    if case_name:
+                        pr = get_case_authority_score(case_name, year)
+                        pagerank_boost = min(pr * 2.0, 0.3)  # cap 0.3 so court tier still dominates
+                except Exception:
+                    pass
+
+            rerank_score = ce_score + boost + intersection_bonus + para_boost + citation_boost + authority_boost + pagerank_boost
             if rerank_score >= min_rerank_score:
                 result = dict(chunk)
                 # Normalize display text: chunks may have search_text/full_text but not "text"
@@ -628,6 +693,10 @@ def hybrid_search(
                 result["_ce_score"] = ce_score              # raw cross-encoder score
                 result["_legal_boost"] = boost              # P4 boost component
                 result["_intersection_bonus"] = intersection_bonus  # FAISS∩BM25 reward
+                result["_paragraph_type_boost"] = para_boost
+                result["_sections_cited_boost"] = citation_boost
+                result["_authority_boost"] = authority_boost
+                result["_pagerank_boost"] = pagerank_boost
                 result["_in_faiss"] = in_faiss
                 result["_in_bm25"] = in_bm25
                 scored.append(result)
@@ -666,19 +735,80 @@ def hybrid_search(
 
 
 def search_bare_acts(query: str, top_k: int = 30) -> list:
-    """Search bare acts using hybrid retrieval. Returns all relevant sections."""
-    from config import BARE_INDEX_V2, BARE_CHUNKS_V2, BARE_BM25_INDEX
-    results = hybrid_search(
-        query=query,
-        faiss_index_path=BARE_INDEX_V2,
-        chunks_path=BARE_CHUNKS_V2,
-        bm25_index_path=BARE_BM25_INDEX,
-        faiss_top_k=50,
-        bm25_top_k=50,
-        rerank_top_k=top_k,
-        min_rerank_score=-5.0,  # keep generous; sufficiency analyzer decides
+    """Search bare acts using hybrid retrieval. Returns all relevant sections.
+    When act summary index exists, uses two-tier retrieval: act index → section search within those acts."""
+    from config import (
+        BARE_INDEX_V2,
+        BARE_CHUNKS_V2,
+        BARE_BM25_INDEX,
+        ACT_SUMMARY_INDEX_V2,
+        ACT_SUMMARY_CHUNKS_V2,
+        ACT_SUMMARY_BM25_INDEX,
     )
-    # Tag each result
+    # Two-tier: act summary index → then section search within those acts
+    if os.path.isfile(ACT_SUMMARY_INDEX_V2) and os.path.isfile(ACT_SUMMARY_CHUNKS_V2):
+        try:
+            act_results = hybrid_search(
+                query=query,
+                faiss_index_path=ACT_SUMMARY_INDEX_V2,
+                chunks_path=ACT_SUMMARY_CHUNKS_V2,
+                bm25_index_path=ACT_SUMMARY_BM25_INDEX,
+                faiss_top_k=20,
+                bm25_top_k=20,
+                rerank_top_k=15,
+                min_rerank_score=-5.0,
+            )
+            allowed_acts = frozenset(
+                (r.get("act_name") or "").strip()
+                for r in act_results
+                if (r.get("act_name") or "").strip()
+            )
+            if allowed_acts:
+                results = hybrid_search(
+                    query=query,
+                    faiss_index_path=BARE_INDEX_V2,
+                    chunks_path=BARE_CHUNKS_V2,
+                    bm25_index_path=BARE_BM25_INDEX,
+                    faiss_top_k=50,
+                    bm25_top_k=50,
+                    rerank_top_k=top_k,
+                    min_rerank_score=-5.0,
+                    allowed_acts=allowed_acts,
+                )
+            else:
+                results = hybrid_search(
+                    query=query,
+                    faiss_index_path=BARE_INDEX_V2,
+                    chunks_path=BARE_CHUNKS_V2,
+                    bm25_index_path=BARE_BM25_INDEX,
+                    faiss_top_k=40,
+                    bm25_top_k=40,
+                    rerank_top_k=top_k,
+                    min_rerank_score=-5.0,
+                )
+        except Exception as e:
+            logger.warning("Two-tier bare-act search failed, falling back to single-tier: %s", e)
+            results = hybrid_search(
+                query=query,
+                faiss_index_path=BARE_INDEX_V2,
+                chunks_path=BARE_CHUNKS_V2,
+                bm25_index_path=BARE_BM25_INDEX,
+                faiss_top_k=40,
+                bm25_top_k=40,
+                rerank_top_k=top_k,
+                min_rerank_score=-5.0,
+            )
+    else:
+        results = hybrid_search(
+            query=query,
+            faiss_index_path=BARE_INDEX_V2,
+            chunks_path=BARE_CHUNKS_V2,
+            bm25_index_path=BARE_BM25_INDEX,
+            faiss_top_k=40,
+            bm25_top_k=40,
+            rerank_top_k=top_k,
+            min_rerank_score=-5.0,  # keep generous; sufficiency analyzer decides
+        )
     for r in results:
         r["source_tag"] = "LOCAL_DB"
     return results
@@ -715,8 +845,8 @@ def search_bare_acts_filtered(
         faiss_index_path=BARE_INDEX_V2,
         chunks_path=BARE_CHUNKS_V2,
         bm25_index_path=BARE_BM25_INDEX,
-        faiss_top_k=50,
-        bm25_top_k=50,
+        faiss_top_k=40,
+        bm25_top_k=40,
         rerank_top_k=top_k,
         min_rerank_score=-5.0,
         allowed_acts=allowed_acts,
@@ -727,20 +857,113 @@ def search_bare_acts_filtered(
 
 
 def search_case_laws(query: str, top_k: int = 30) -> list:
-    """Search case laws using hybrid retrieval (P2: filters interlocutory/procedural docs)."""
-    from config import CASE_INDEX_V2, CASE_CHUNKS_V2, CASE_BM25_INDEX
-    results = hybrid_search(
-        query=query,
-        faiss_index_path=CASE_INDEX_V2,
-        chunks_path=CASE_CHUNKS_V2,
-        bm25_index_path=CASE_BM25_INDEX,
-        faiss_top_k=50,
-        bm25_top_k=50,
-        rerank_top_k=top_k,
-        min_rerank_score=-5.0,
+    """Search case laws using hybrid retrieval (P2: filters interlocutory/procedural docs).
+    When case summary index exists, uses two-tier retrieval: case index → paragraph search (ratio prioritised).
+    """
+    from config import (
+        CASE_INDEX_V2,
+        CASE_CHUNKS_V2,
+        CASE_BM25_INDEX,
+        CASE_SUMMARY_INDEX_V2,
+        CASE_SUMMARY_CHUNKS_V2,
+        CASE_SUMMARY_BM25_INDEX,
     )
+    # Two-tier: case summary index → then paragraph search within those cases
+    if (
+        os.path.isfile(CASE_SUMMARY_INDEX_V2)
+        and os.path.isfile(CASE_SUMMARY_CHUNKS_V2)
+    ):
+        try:
+            case_results = hybrid_search(
+                query=query,
+                faiss_index_path=CASE_SUMMARY_INDEX_V2,
+                chunks_path=CASE_SUMMARY_CHUNKS_V2,
+                bm25_index_path=CASE_SUMMARY_BM25_INDEX,
+                faiss_top_k=20,
+                bm25_top_k=20,
+                rerank_top_k=15,
+                min_rerank_score=-5.0,
+            )
+            allowed_cases = frozenset(
+                (r.get("case_name") or "").strip()
+                for r in case_results
+                if (r.get("case_name") or "").strip()
+            )
+            if allowed_cases:
+                results = hybrid_search(
+                    query=query,
+                    faiss_index_path=CASE_INDEX_V2,
+                    chunks_path=CASE_CHUNKS_V2,
+                    bm25_index_path=CASE_BM25_INDEX,
+                    faiss_top_k=50,
+                    bm25_top_k=50,
+                    rerank_top_k=top_k,
+                    min_rerank_score=-5.0,
+                    allowed_cases=allowed_cases,
+                )
+            else:
+                results = hybrid_search(
+                    query=query,
+                    faiss_index_path=CASE_INDEX_V2,
+                    chunks_path=CASE_CHUNKS_V2,
+                    bm25_index_path=CASE_BM25_INDEX,
+                    faiss_top_k=40,
+                    bm25_top_k=40,
+                    rerank_top_k=top_k,
+                    min_rerank_score=-5.0,
+                )
+        except Exception as e:
+            logger.warning("Two-tier case search failed, falling back to single-tier: %s", e)
+            results = hybrid_search(
+                query=query,
+                faiss_index_path=CASE_INDEX_V2,
+                chunks_path=CASE_CHUNKS_V2,
+                bm25_index_path=CASE_BM25_INDEX,
+                faiss_top_k=40,
+                bm25_top_k=40,
+                rerank_top_k=top_k,
+                min_rerank_score=-5.0,
+            )
+    else:
+        results = hybrid_search(
+            query=query,
+            faiss_index_path=CASE_INDEX_V2,
+            chunks_path=CASE_CHUNKS_V2,
+            bm25_index_path=CASE_BM25_INDEX,
+            faiss_top_k=40,
+            bm25_top_k=40,
+            rerank_top_k=top_k,
+            min_rerank_score=-5.0,
+        )
     for r in results:
         r["source_tag"] = "LOCAL_DB"
+    # Citation graph: expand by precedent (cases cited by / citing the top results)
+    try:
+        from retrieval.citation_graph import (
+            get_graph,
+            expand_case_names_by_precedent,
+            get_chunks_by_case_names,
+        )
+        graph = get_graph()
+        if graph and results:
+            case_names = list({(r.get("case_name") or "").strip() for r in results if (r.get("case_name") or "").strip()})
+            extra_names, _sections = expand_case_names_by_precedent(case_names, max_extra=10)
+            if extra_names:
+                chunks_dict = load_chunks(CASE_CHUNKS_V2)
+                extra_chunks = get_chunks_by_case_names(chunks_dict, extra_names, max_total=8)
+                existing_keys = {r.get("chunk_id") or r.get("_chunk_key") for r in results}
+                for c in extra_chunks:
+                    if (c.get("chunk_id") or c.get("_chunk_key")) not in existing_keys:
+                        c["source_tag"] = "LOCAL_DB"
+                        results.append(c)
+                        existing_keys.add(c.get("chunk_id") or c.get("_chunk_key"))
+            if extra_names and results:
+                logger.debug(
+                    "Citation expansion: %d extra case(s), %d total case law results",
+                    len(extra_names), len(results),
+                )
+    except Exception as e:
+        logger.debug("Citation graph expansion skipped: %s", e)
     # P2: filter out interlocutory/procedural documents from local case law index
     before = len(results)
     results = [r for r in results if _is_final_judgment_chunk(r)]

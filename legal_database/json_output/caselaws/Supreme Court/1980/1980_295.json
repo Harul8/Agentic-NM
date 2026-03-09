@@ -1,0 +1,122 @@
+{
+  "case_id": "SC_1980_1980_295",
+  "case_name": "Uttar Pradesh State Electricity Board vs Abdul Sakoor Hashmi And Ors.",
+  "normalized_case_name": "UTTAR_PRADESH_STATE_ELECTRICITY_BOARD_VS_ABDUL_SAKOOR_HASHMI_AND_ORS.",
+  "court": "Supreme Court of India",
+  "year": "1980",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "2 April 1980",
+  "judges": [
+    "A.P. Sen",
+    "V.R. Krishna Iyer",
+    "JUDGMENT",
+    "V.R. Krishna Iyer, J."
+  ],
+  "author": "V.R. Krishna Iyer",
+  "bench_type": "constitution",
+  "petitioner": "Uttar Pradesh State Electricity Board",
+  "respondent": "Abdul Sakoor Hashmi And Ors.",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 3,
+  "cited_by_count": 11,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1981SC1708",
+    "(1980)3SCC278",
+    "1980(12)UJ514(SC)",
+    "AIR 1981 SUPREME COURT 1708",
+    "1981 ALL. L. J. 977",
+    "1980 UJ (SC) 514",
+    "(1980) ALL WC 310",
+    "1980 ALL WC 340",
+    "1980 (3) SCC 278",
+    "(1980) 1 SERVLR 862",
+    "1980 SCC (L&S) 407"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1980\\1980_295.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1980_1980_295_P001_C01",
+      "text": "1. Although there are two questions, one of fact and one of law, which arise in these two appeals, the learned Attorney-General fairly left the final outcome on the question of fact untouched because he was more concerned with a correct construction of Section 79(k) read with\nSection 15\nof the Electricity (Supply) Act, 1948 and the validity of regulations framed by the U.P. State Electricity Board on December 18, 1970 in exercise of the powers conferred by\nSection 79(c)\nof the Act. That regulation lays down the mode of appointment to various post under the Board, the appointing authorities thereof,, the authorities who are competent to impose punishment on the employees and the authorities competent to hear appeals against disciplinary action. The said regulation was published in the U.P. Gazette dated 2-1-1971 pages 65-71 (part I).",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1980_1980_295_P002_C01",
+      "text": "2. This regulation was struck down by the High Court on the score that there was no power of delegation by the Board which made the appointments and which ordinarily would be clothed with the power of terminating appointments. It is common ground that there is no specific provision under the Act which authorised the Board to delegate its power and, therefore, the question turns upon the correct meaning and amplitude of\nSection 79(c)\n& (k) of the Act. We think that while\nSection 79(c)\nhas been relied upon by the authority making the regulation, the appropriate provision is\nSection 79(k)\nwhich we read at this stage;\n(79) The Board may make regulations not in consistent with this Act and the rules made thereunder to provide for all or any of the following matters, namely:\n(k). any other matter arising out of the Board's functions under this Act for which it is necessary or expedient to make regulations.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1980_1980_295_P003_C01",
+      "text": "3. Section 79(c)\nwhich has actually been relied on may also be extracted here:\n79(c) the duties of officers and other employees of the Board, and their salaries, allowances and other conditions of service.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1980_1980_295_P004_C01",
+      "text": "4. It is obvious that\nSection 79(k)\nis a residuary provision which embraces the power to make regulations in regard to functions of the Board,\nSection 79(c)\nis more restricted and confines itself to defining the duties of officers and other employees of the Board and their allowances and other conditions of service. In our view, the appropriate provision which will empower the Board to make regulations regarding termination of service and disciplinary action vis-a-vis employees of the Board is\nSection 79(k)\nConcerned language used is sufficient to cover making up of provisions to terminate employment. It is undoubtedly a clear function of the board under\nSection 15\nto make appointments of its officers and employees. That provision reads:\nSection 15\n. The Board may appoint a Secretary and such other officers and employees may be required to enable the Board to carry out its functions under this Act.\nProvided that the appointment of the Secretary shall be subject to the approval of the State Government.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1980_1980_295_P005_C01",
+      "text": "5. The power, so vested by necessary implication carries with it the power also to take disciplinary action or to terminate employment. It, therefore, follows that\nSection 79(k)\ntakes within its seep the power to maintain or to take disciplinary action. We cannot, therefore agree with the High Court that regulation is in valid.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1980_1980_295_P006_C01",
+      "text": "6. We are re-enforced in this view by the pragmatics of the situation. The Electricity Board is an enormous undertaking which employs several thousand of employees. We are told that over a lakh of employees serve under the Board currently. It would be virtually impossible for the Board currently. It would be virtually impossible for the Board to carry on its functions if every time every mincon under it were to be subjected to disciplinary action only by the Board which is the top body acting as a corporate entity. We do not think that the provisions of the Act can be interpreted into an impossible position for the Board. On the other hand a more viable construction is what we have indicated above.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1980_1980_295_P007_C01",
+      "text": "7. In this view, we reverse the finding of the High Court in regard to the interpretation It has put on the validity of the regulation and hold that the Board was competent to make the regulation in question. Even so, having regard to the special facts of this case, the learned Attorney-General has rightly agreed that the order reinstating the employees may be allowed to stand. We, therefore, allow the appeal in part to the extent of the vires of the regulation but otherwise dismiss it insofar as the factual conclusion is concernad. There will be no order as to costs.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Uttar Pradesh State Electricity Board vs Abdul Sakoor Hashmi And Ors.",
+    "case_id": "SC_1980_1980_295",
+    "court": "Supreme Court of India",
+    "year": "1980",
+    "facts_summary": "",
+    "legal_issues": "3. Section 79(c)\nwhich has actually been relied on may also be extracted here:\n79(c) the duties of officers and other employees of the Board, and their salaries, allowances and other conditions of service.",
+    "ratio_summary": "1. Although there are two questions, one of fact and one of law, which arise in these two appeals, the learned Attorney-General fairly left the final outcome on the question of fact untouched because he was more concerned with a correct construction of Section 79(k) read with\nSection 15\nof the Electricity (Supply) Act, 1948 and the validity of regulations framed by the U.P. State Electricity Board on December 18, 1970 in exercise of the powers conferred by\nSection 79(c)\nof the Act. That regulation lays down the mode of appointment to various post under the Board, the appointing authorities thereof,, the authorities who are competent to impose punishment on the employees and the authorities competent to hear appeals against disciplinary action. The said regulation was published in the U.P. Gazette dated 2-1-1971 pages 65-71 (part I). 2. This regulation was struck down by the High Court on the score that there was no power of delegation by the Board which made the appointments and which ordinarily would be clothed with the power of terminating appointments. It is common ground that there is no specific provision under the Act which authorised the Board to delegate its power and, therefore, the question turns upon the correct meaning and amplitude of\nSection 79(c)\n& (k) of the Act. We think that while\nSection 79(c)\nhas been relied upon by the authority making the regulation, the appropriate provision is\nSection 79(k)\nwhich we read at this stage;\n(79) The Board may make regulatio",
+    "final_order": "7. In this view, we reverse the finding of the High Court in regard to the interpretation It has put on the validity of the regulation and hold that the Board was competent to make the regulation in question. Even so, having regard to the special facts of this case, the learned Attorney-General has rightly agreed that the order reinstating the employees may be allowed to stand. We, therefore, allow the appeal in part to the extent of the vires of the regulation but otherwise dismiss it insofar as the factual conclusion is concernad. There will be no order as to costs.",
+    "outcome_summary": "7. In this view, we reverse the finding of the High Court in regard to the interpretation It has put on the validity of the regulation and hold that the Board was competent to make the regulation in question. Even so, having regard to the special facts of this case, the learned Attorney-General has rightly agreed that the order reinstating the employees may be allowed to stand. We, therefore, allo",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

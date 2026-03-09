@@ -1,0 +1,87 @@
+{
+  "case_id": "SC_1988_1988_343",
+  "case_name": "Prabhakar B. Poojari vs State Of Karnataka",
+  "normalized_case_name": "PRABHAKAR_B._POOJARI_VS_STATE_OF_KARNATAKA",
+  "court": "Supreme Court of India",
+  "year": "1988",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "18 July 1988",
+  "judges": [
+    "A.P. Sen",
+    "B.C. Ray",
+    "ORDER",
+    "A.P. Sen, J."
+  ],
+  "author": "A.P. Sen",
+  "bench_type": "constitution",
+  "petitioner": "Prabhakar B. Poojari",
+  "respondent": "State Of Karnataka",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 5,
+  "cited_by_count": 7,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "JT1988(3)SC117",
+    "1990SUPP(1)SCC146",
+    "AIRONLINE 1988 SC 62",
+    "1990 SCC (SUPP) 146",
+    "(1988) 3 JT 117",
+    "1990 SCC (CRI) 639",
+    "(1988) 3 JT 117 (SC)",
+    "AIRONLINE 1988 SC 131"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1988\\1988_343.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1988_1988_343_P001_C01",
+      "text": "1. In this petition under\nArticle 32\nof the Constitution, Shri L.K. Gupta, appearing as amicus curiae for the petitioner confines his sub mission to the question whether the undue, unexplained delay in making the impugned order of detention must give rise to an inference that there was no sufficient material for the subjective satisfaction of the detaining authority or that the satisfaction so reached was not genuine. The matter is no longer res integra and is covered by a direct decision of this Court. Quite recently, this Court in\nRajendrakumar Natvarlal Shah v. State of Gujarat and Ors.\nheld that mere delay in passing an order of detention does not necessarily give rise to such an inference, nor would it be a vitiating factor. Although the Court was concerned with the detention of a person under\nSection 3(2)\nof the Gujarat Prevention of Anti-Social Activities Act, 1985, the question involved was one of principle. The Court dealt with the question in depth and specifically referred to orders of detention passed under\nSection 3(l)\nof the Conservation of Foreign Exchange & Prevention of Smuggling Activities Act, 1974 where such delay in making an order of detention is inevitable.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 32"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1988_1988_343_P001_C02",
+      "text": "It was observed : See at p.414, para.10-Ed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1988_1988_343_P002_C01",
+      "text": "It has been\nlaid down by\nthis Court in a series of decisions that the rule as to unexplained delay in taking action is not inflexible. Quite obviously, in cases of mere delay in making of an order of detention under a law like the\nConservation of Foreign Exchange & Prevention of Smuggling Activities Act, 1974\nenacted for the purpose of dealing effectively with persons engaged in smuggling and foreign exchange racketeering who, owing to their large resources and influence have been posing a serious threat to the economy and thereby to the security of the nation, the Courts should not merely on account of delay in making of an order of detention assume that such delay, if not satisfactorily explained, must necessarily give rise to an inference that there was no sufficient material for the subjective satisfaction of the detaining authority or that such subjective satisfaction was not genuinely reached.\nThe writ petition must accordingly fail and is dismissed.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Prabhakar B. Poojari vs State Of Karnataka",
+    "case_id": "SC_1988_1988_343",
+    "court": "Supreme Court of India",
+    "year": "1988",
+    "facts_summary": "It has been\nlaid down by\nthis Court in a series of decisions that the rule as to unexplained delay in taking action is not inflexible. Quite obviously, in cases of mere delay in making of an order of detention under a law like the\nConservation of Foreign Exchange & Prevention of Smuggling Activities Act, 1974\nenacted for the purpose of dealing effectively with persons engaged in smuggling and foreign exchange racketeering who, owing to their large resources and influence have been posing a serious threat to the economy and thereby to the security of the nation, the Courts should not merely on account of delay in making of an order of detention assume that such delay, if not satisfactorily explained, must necessarily give rise to an inference that there was no sufficient material for the subjective satisfaction of the detaining authority or that such subjective satisfaction was not genuinely reached.\nThe writ petition must accordingly fail and is dismissed.",
+    "legal_issues": "It was observed : See at p.414, para.10-Ed.",
+    "ratio_summary": "1. In this petition under\nArticle 32\nof the Constitution, Shri L.K. Gupta, appearing as amicus curiae for the petitioner confines his sub mission to the question whether the undue, unexplained delay in making the impugned order of detention must give rise to an inference that there was no sufficient material for the subjective satisfaction of the detaining authority or that the satisfaction so reached was not genuine. The matter is no longer res integra and is covered by a direct decision of this Court. Quite recently, this Court in\nRajendrakumar Natvarlal Shah v. State of Gujarat and Ors.\nheld that mere delay in passing an order of detention does not necessarily give rise to such an inference, nor would it be a vitiating factor. Although the Court was concerned with the detention of a person under\nSection 3(2)\nof the Gujarat Prevention of Anti-Social Activities Act, 1985, the question involved was one of principle. The Court dealt with the question in depth and specifically referred to orders of detention passed under\nSection 3(l)\nof the Conservation of Foreign Exchange & Prevention of Smuggling Activities Act, 1974 where such delay in making an order of detention is inevitable.",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [
+      "Constitution 32"
+    ],
+    "cases_cited": []
+  }
+}

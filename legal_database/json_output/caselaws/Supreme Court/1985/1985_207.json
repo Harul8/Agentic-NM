@@ -1,0 +1,115 @@
+{
+  "case_id": "SC_1985_1985_207",
+  "case_name": "Rajbir vs State Of Haryana",
+  "normalized_case_name": "RAJBIR_VS_STATE_OF_HARYANA",
+  "court": "Supreme Court of India",
+  "year": "1985",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "1 May 1985",
+  "judges": [
+    "D.A. Desai",
+    "Ranganath Misra",
+    "ORDER"
+  ],
+  "author": "D.A. Desai",
+  "bench_type": "constitution",
+  "petitioner": "Rajbir",
+  "respondent": "State Of Haryana",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 6,
+  "cited_by_count": 24,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1985SC1278",
+    "1985CRILJ1495",
+    "1985(2)SCALE1288",
+    "1985SUPP(1)SCC272",
+    "1985(17)UJ808(SC)",
+    "AIR 1985 SUPREME COURT 1278",
+    "1985 CRIAPPR(SC) 238",
+    "1985 SCC(CRI) 445",
+    "1985 UJ (SC) 808",
+    "(1985) 2 CRIMES 462"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1985\\1985_207.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1985_1985_207_P001_C01",
+      "text": "1. Four persons were convicted Under Section 304, Part II and Section 323, both read with\nSection 34\nof the Indian Penal Code ('Code' for short), by the Sessions Judge, Bhiwani. They appealed to the High Court and the conviction of all except Surajbhan Under\nSection 304\n, Part II was set aside but the conviction Under\nSection 323\nof the Code along with the sentence was maintained.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "IPC 34"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1985_1985_207_P002_C01",
+      "text": "2. The separate application for special leave by Surajbhan was rejected by this Court. Similarly, the prayer for special leave so far as Ram-chander and jai Bhagwan are concerned, was also refused and notice was issued in respect of Rajbir's application confined to the question of extending the benefit of the\nProbation of Offenders Act\nto him.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1985_1985_207_P003_C01",
+      "text": "3. Heard Mr. Malhotra for the accused Rajbir and Mr. Gujral for the State of Haryana. Special Leave is granted.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1985_1985_207_P004_C01",
+      "text": "4. From the judgment of the High Court it appears that though the sentence imposed for the offence Under Section 323 of the Code was six months, the appellant and the co-accused had already suffered over one year's imprisonment. Ordinarily, in a situation as here, there would be no need to interfere. Learned counsel for the appellant has, however, pressed the appeal as the appellant is in Government service and if the conviction and sentence are maintained, he would lose his service. Both the parties to the assault were close relations. There is no material on the record to indicate that the appellant had any previous conviction. In the absence of such evidence, we treat the appellant as a first offender. He is entitled to be admitted to the benefits of probation Under\nSection 3\nof the Probation of Offenders Act, 1958, taking into consideration the circumstances of the case, the nature of the offence and the character of the appellant. While maintaining his conviction we direct that he shall be released on probation of good conduct Under\nSection 4\nof the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1985_1985_207_P004_C02",
+      "text": "The Chief Judicial Magistrate, Bhiwani, before whom the appellant is directed to appear within four weeks from today shall release him after due admonition. We do not consider it necessary to direct him to enter into a bond in the facts of the case.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1985_1985_207_P005_C01",
+      "text": "5. We are of the view that in the peculiar facts of the case, the conviction should not affect his service.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Rajbir vs State Of Haryana",
+    "case_id": "SC_1985_1985_207",
+    "court": "Supreme Court of India",
+    "year": "1985",
+    "facts_summary": "The Chief Judicial Magistrate, Bhiwani, before whom the appellant is directed to appear within four weeks from today shall release him after due admonition. We do not consider it necessary to direct him to enter into a bond in the facts of the case.",
+    "legal_issues": "3. Heard Mr. Malhotra for the accused Rajbir and Mr. Gujral for the State of Haryana. Special Leave is granted.",
+    "ratio_summary": "2. The separate application for special leave by Surajbhan was rejected by this Court. Similarly, the prayer for special leave so far as Ram-chander and jai Bhagwan are concerned, was also refused and notice was issued in respect of Rajbir's application confined to the question of extending the benefit of the\nProbation of Offenders Act\nto him.",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [
+      "IPC 34"
+    ],
+    "cases_cited": []
+  }
+}

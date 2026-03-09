@@ -1,0 +1,312 @@
+{
+  "case_id": "SC_1982_1982_79",
+  "case_name": "Biru Mahato vs District Magistrate, Dhanbad",
+  "normalized_case_name": "BIRU_MAHATO_VS_DISTRICT_MAGISTRATE,_DHANBAD",
+  "court": "Supreme Court of India",
+  "year": "1982",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "15 October 1982",
+  "judges": [
+    "D.A. Desai",
+    "R.B.  Misra"
+  ],
+  "author": "D.A. Desai",
+  "bench_type": "division",
+  "petitioner": "Biru Mahato",
+  "respondent": "District Magistrate, Dhanbad",
+  "reporter_citations": [
+    "[1964] 4 SCR 921"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 13,
+  "cited_by_count": 39,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1982 AIR 1539",
+    "1983 SCR (1) 584",
+    "AIR 1982 SUPREME COURT 1539",
+    "1982 (3) SCC 322",
+    "1982 CRIAPPR(SC) 350",
+    "1983 (1) SCR 584",
+    "1983 UP CRIC 209",
+    "1983 SCC(CRI) 31",
+    "1983 BLT (REP) 35",
+    "1982 BLJR 569",
+    "1982 CRILR(SC MAH GUJ) 495",
+    "1983 CHANDLR(CIV&CRI) 446",
+    "(1983) MAD LJ(CRI) 453",
+    "(1983) PAT LJR 16",
+    "(1983) 1 SCJ 274",
+    "(1983) BLJ 79",
+    "(1983) 1 CRIMES 57"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1982\\1982_79.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1982_1982_79_P001_C01",
+      "text": "CITATION:\n 1982 AIR 1539 1983 SCR (1) 584\n 1982 SCC (3) 322 1982 SCALE (2)899\n CITATOR INFO :\n R 1982 SC1548 (5)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1982_1982_79_P002_C01",
+      "text": "ACT:\nNational Security Act, 1980\n,\nSection 3(2)\nScope of-\nPreventive detention of the detenu whose liberty has\notherwise already been prevented by keeping in jail is\nimpermissible under the N.S. Act-Non-awareness of the\ndetaining authority about the detenu's detention in jail\nwould vitiate the order of detention on the ground of non-\napplication of mind-Affidavit should be that of the\ndetaining authority who had the subjective satisfaction of\nthe detention.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1982_1982_79_P003_C01",
+      "text": "HEADNOTE:\n Detenu Biru Mahato was arrested on January 13, 1982 on\nthe allegation that he was involved in two incidents which\noccurred, first at 5 p.m. and the second at 5.30 p.m. on\nJanuary 12, 1982. In the first occurrence detenu and his\nassociates were alleged to have committed offences under\nsections 341\n,",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1982_1982_79_P004_C01",
+      "text": "of Indian Penal Code, as per the\nF.I.R. 25(1)/82 at Bagmara Police Station. In the second\ncase, F.I.R. 24(1)/82 registered at the same police station,\nthey were said to have committed offences under\nsections 307\nand",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_79_P005_C01",
+      "text": "I.P.C. After his arrest the detenu was confined in\nprison. In respect of the first occurrence bail application\nwas accepted, but in respect of the second occurrence the\nbail application was rejected by the District & Session\nJudge, Dhanbad on February 5, 1982, on the ground that in\nexercise of powers conferred by sub section (2) read with\nsub section (3) of\nSection 3\nof the National Security Act,\n1980, the detenu is detained by the order of the District\nMagistrate so as to prevent him from acting in any manner\nprejudicial to the maintenance of public order and the bail\napplication has become infructuous. On February 10, 1982,\ngrounds of detention were served on the detenu in jail where\nhe was already detained. The grounds of detention referred\nto the two incidents occurred on January 12, 1982. The\ndetenu made a representation on February 15, 1982 which was\nrejected by the State Government on February 16, 1982. The\ncase of the detenu was referred to the Advisory Board and\nafter receipt of its report the State Government confirmed\nthe order of detention.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1982_1982_79_P005_C02",
+      "text": "Detenu preferred a petition for a writ of habeas corpus\nin the High Court at Patna which was dismissed in limine by\na Division Bench of the High Court. Hence the appeal by\nspecial leave and the writ petition. Allowing the appeal and the petition, the Court\n^\n HELD: 1.1 A preventive action postulates that if\npreventive step is not taken the person sought to be\nprevented may indulge into an activity prejudicial to the\nmaintenance of public order. In other words, unless the\nactivity is interdicted by a preventive detention order the\nactivity which is being indulged",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_79_P006_C01",
+      "text": "into is likely to be repeated, This is the postulate of\nsection 3\nof the National Security Act. And this indubitably\ntranspires from the language employed in sub section (2)\nwhich says that the detention order can be made with a view\nto preventing the person [sought to be detained from acting\nin any manner prejudicial to the maintenance of public\norder. If, it is shown that the man sought to be prevented\nby a preventive order is already effectively prevented, the\npower under sub section (2) of\nSection 3\n, if exercised,\nwould imply that one who is already prevented is sought to\nbe further prevented, which is not the mandate of the\nsection, and would appear tautologous. [588 C-E]\n 1.2. The detaining authority before exercising the\npower of preventive detention would take into consideration\nthe past conduct or antecedent history of the person and as\na matter of fact it is largely from the prior events showing\nthe tendencies or inclinations of a man that an inference\ncould be drawn whether he is likely even in the future to\nact in a manner prejudicial to the maintenance of public\norder.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_79_P006_C02",
+      "text": "If the subjective satisfaction of the detaining\nauthority leads to this conclusion it can put an end to the\nactivity by making a preventive detention order. If the man\nis already detained a detaining authority cannot be said to\nhave subjectively satisfied himself that a preventive\ndetention order need be made. [588 E-H]\n Ujagar Singh v. State of Punjab; Jagir Singh v. State\nof Punjab, [1952] SCR 756; Rameshwar Shaw v. District\nMagistrate, Burdwan and another, [1964] 4 SCR 921; referred\nto.\n 1.3. The subjective satisfaction of the detaining\nauthority must comprehend the very fact that the person\nsought to be detained is in jail or under detention and yet\na preventive detention order is a compelling necessity. If\nthe subjective satisfaction is reached without awareness of\nthis very relevant fact, the detention order is likely to be\nvitiated. But, it will depend on the facts and circumstances\nof each case. [590 B-C]\n Vijay Kumar v. State of J & K and others, AIR 1982 SC\n1023 applied.\n 2.1.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1982_1982_79_P006_C03",
+      "text": "Conceding that in a given case a preventive\ndetention order is required to be made even against a person\nwho is already in jail or under detention and that the\ndetaining authority shows its awareness of the fact\nsituation and yet passes the detention order, the detention\norder must show on the face of it that the detaining\nauthority was aware of the situation. Otherwise the\ndetention order would suffer from vice of non-application of\nmind.\n [590 H, 591 A-B]\n 2.2. The awareness must be of the fact that the person\nagainst whom the detention order is being made is already\nunder detention or in jail in respect of some offence. This\nwould show that such a person is not a free person to\nindulge into a prejudicial activity which is required to be\nprevented by a deten-",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1982_1982_79_P007_C01",
+      "text": "tion order. And this awareness must find its place either in\nthe detention order or in the affidavit justifying the\ndetention order when challenged. In the absence of it, it\nwould appear that the detaining authority was not even aware\nof this vital fact and mechanically proceeded to pass the\norder which would unmistakably indicate that there was no\napplication of mind to the relevant facts and any order of\nsuch serious consequence when mechanically passed without\napplication of mind is liable to be set aside as invalid.\n[591 B-D]\n 2.3. A person may be holder of office of District\nMagistrate. But when the subjective satisfaction of holder\nof office who actually passed the detention order is put in\nissue, the mere occupant of office cannot arrogate to\nsubstitute the subjective satisfaction of the holder of the\npost who actually passed the detention order. The subsequent\noccupant can speak from the record. But the subsequent\nholder of office has made an affidavit as if he was\nsubsequently satisfied a fact in connection with record. Here, the affidavit of Mr. Brara the subsequent holder of\noffice of Distt.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1982_1982_79_P007_C02",
+      "text": "Magistrate has to be ignored and one must\nreach the conclusion that the averments made by the detenu\nhave remained un-controverted. [592 B-D]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1982_1982_79_P008_C01",
+      "text": "JUDGMENT:\nORIGINAL JURISDICTION : Writ -Petition (Criminal) No.\n1125 of 1982.\n(Under\narticle 32\nof the Constitution of India)\n WITH\n Criminal Appeal No. 488 of 1982.\n(Appeal by special leave from the judgment and order\ndated 7-4-1982 of the Patna High Court (Ranchi Bench) in\nWrit Jurisdiction Case No. 40 of 1982 (R).\nU.P. Singh for the Petitioner/Appellant.\n D. Goburdhan for the Respondent.\nThe Judgment of the Court was delivered by\n DESAI, J. By our order dated October 8, 1982, the order\nof detention dated February 5, 1982, made by the District\nMagistrate, Dhanbad, against detenu Biru Mahato was quashed\nand set aside by us further stating that the reasons would\nfollow. Here are the reasons.\nDetenu Biru Mahato was arrested on January 13, 1982, on\nthe allegation that he was involved in two incidents which\noccurred, first",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 32"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1982_1982_79_P009_C01",
+      "text": "at 5 p.m. and the second at 5.30 p.m. on January 12, 1982.\nIn the first occurrence detenu and his associates appear to\nhave committed offences under ss. 341, 323 and 506 read with\ns. 34\nof the Indian Penal Code. F.I.R. led to registration\nof the offences at Bagmara Police Station numbered as\n25(1)/82. F.I.R. No. 24(1)/82 has been registered at Bagmara\nPolice Station for offences under\nss. 307\nand",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1982_1982_79_P010_C01",
+      "text": ", I.P.C. After his arrest the detenu was confined in prison. In\nrespect of the first occurrence bail application of the\ndetenu was accepted but in respect of the second occurrence\nthe bail application was rejected by the learned District &\nSessions Judge, Dhanbad on February 12, 1982. In the mean\ntime the District Magistrate, Dhanbad, made an order on\nFebruary 5, 1982, in exercise of powers conferred by sub-\nsection (2) read with sub-section (3) of\nsection 3\nof the\nNational Security Act, 1980 (`Act' for short), directing\nthat the detenu be detained so as to prevent him from acting\nin any manner prejudicial to the maintenance of public\norder. On February 10, 1982, grounds of detention were\nserved on the detenu in jail where he was already detained. The grounds of detention referred to the two incidents which\noccurred on January, 12, 1982. The detenu made a\nrepresentation on February 15, 1982, which was rejected by\nthe State Government on February 16, 1982. Case of the\ndetenu was referred to the Advisory Board and after receipt\nof its report the State Government confirmed the order of\ndetention.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1982_1982_79_P010_C02",
+      "text": "Detenu perferred a petition for a writ of habeas corpus\nin the High Court at Patna which was dismissed in limine by\na Division Bench of the High Court. Detenu has filed this\nwrit petition under\nArticle 32\nas also appeal by special\nleave under\nArt. 136. Both the appeal and writ petition are\nbeing disposed of by this common judgment. Two contentions were canvassed on behalf of the detenu\n: (1) the date on which the detention order came to be made\nthe detenu was already deprived of his liberty as he was\narrested and was confined in jail and, therefore, he was\nalready prevented from pursuing any activity which may prove\nprejudicial to the maintenance of public order, hence no\norder of detention could be made against him; (ii) the\ndetaining authority was not even aware that the detenu was\nalready in jail and the order suffers from the vice of non-\napplication of mind. In our opinion both the grounds are\nweighty",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1982_1982_79_P011_C01",
+      "text": "and go to the root of the matter and would vitiate the\ndetention order. Sub-section (2) of\ns. 3\nof the Act confers power on the\nCentral Government or the State Government to make an order\nof detention with a view to preventing any person from\nacting in any manner prejudicial to the security of the\nState from acting in any manner prejudicial to the\nmaintenance of public order, etc. In this case the detaining\nauthority has made the order on being satisfied that it is\nnecessary to detain the detenu with a view to preventing him\nfrom acting in any manner prejudicial to the maintenance of\nPublic order. A preventive action postulates that if\npreventive step is not taken the person sought to be\nprevented may indulge into an activity prejudicial to the\nmaintenance of public order. In other words, unless the\nactivity is interdicted by a preventive detention order the\nactivity which is being indulged into is likely to be\nrepeated. This is the postulate of the section. And this\nindubitably transpires from the language employed in sub-s.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1982_1982_79_P011_C02",
+      "text": "(2) which says that the detention order can be made with a\nview to preventing the person sought to be detained from\nacting in any manner prejudicial to the maintenance of\npublic order. Now, if it is shown that the man sought to be\nprevented by a preventive order is already effectively\nprevented, the power under sub-s. (2) of\ns. 3\n, if exercised,\nwould imply that one who is already prevented is sought to\nbe further prevented which is not the mandate of the\nsection, and would appear tautologous. An order for\npreventive detention is made on the subjective satisfaction\nof the detaining authority. The detaining authority before\nexercising the power of preventive detention would take into\nconsideration the past conduct or antecedent history of the\nperson and as a matter of fact it is largely from the prior\nevents showing the tendencies or inclinations of a man that\nan inference could be drawn whether he is likely even in the\nfuture to act in a manner prejudicial to the maintenance of\npublic order. If the subjective satisfaction of the\ndetaining authority leads to this conclusion it can put an\nend to the activity by making, a preventive detention order. (see\nUjagar Singh v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1982_1982_79_P011_C03",
+      "text": "State of Punjab\n, and\nJagir Singh v. State of Punjab\n).(1) Now, if the man is already detained can\na detaining authority be said to have been subjectively\nsatisfied that a preventive detention order be made ? Rameshwar Shaw v. District Magistrate, Burdwan &",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1982_1982_79_P012_C01",
+      "text": "Anr. (1) this Court held that as an abstract proposition of\nlaw the detention order can be made in respect of a person\nwho is already detained. But having said this, the Court\nproceeded to observe as under:\n\"As an abstract proposition of law, there may not\n be any doubt that s. 3 (1) (a) does not preclude the\n authority from passing an order of detention against a\n person whilst he is in detention or in jail, but the\n relevant facts in connection with the making of the\n order may differ and that may make a difference in the\n application of the principle that a detention order can\n be passed against a person in jail. Take for instance,\n a case where a person has been sentenced to rigorous\n imprisonment for ten years. It cannot be seriously\n suggested that soon after the sentence of imprisonment\n is pronounced on the person, the detaining authority\n can make an order directing the detention of the said\n person after he is released from jail at the end of the\n period of the sentence imposed on him. In dealing with\n this question, again the consideration of proximity of\n time will not be irrelevant.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1982_1982_79_P012_C02",
+      "text": "On the other hand, if a\n person who is undergoing imprisonment, for a very short\n period, say for a month or two or so, and it is known\n that he would soon be released from jail, it may be\n possible for the authority to consider the antecedent\n history of the said person and decide whether the\n detention of the said person would be necessary after\n he is released from jail and if the authority is bona\n fide satisfied that such detention is necessary, he can\n make a valid order of detention a few days before the\n person is likely to be released. The antecedent history\n and the past conduct on which the order of detention\n would be based would, in such a case, be proximate in\n point of time and would have a rational connection with\n the conclusion drawn by the authority that the\n detention of the person after his release is necessary. It may not be easy to discover such rational connection\n between the antecedent history of the person who has\n been sentenced to ten years rigorous imprisonment and\n the view that his detention should be ordered after he\n is released after running the whole of his sentence. Therefore, we are satisfied that the question as",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1982_1982_79_P013_C01",
+      "text": "to whether an order of detention can be passed against\n a person who is in detention or in jail, will always\n have to be determined in the circumstances of each\n case\". One can envisage a hypothetical case where a preventive\norder may have to be made against a person already confined\nto jail or detained. But in such a situation as held by this\nCourt it must be present to the mind of the detaining\nauthority that keeping in view the fact that the person is\nalready detained a preventive detention order is still\nnecessary. The subjective satisfaction of the detaining\nauthority must comprehend the very fact that the person\nsought to be detained is already in jail or under detention\nand yet a preventive detention order is a, compelling\nnecessity. If the subjective satisfaction is reached without\nthe awareness of this very relevant fact the detention order\nis likely to be vitiated. But as stated by this Court it\nwill depend on the facts and circumstances of each case. The view herein finds further support from the decision\nof this Court in Vijay Kumar v. State of J & K and Ors.,(1)\nwherein this Court recently held as under :\n\"Preventive detention is resorted to, to thwart\n future action.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1982_1982_79_P013_C02",
+      "text": "If the detenu is already in jail charged\n with a serious offence, he is thereby prevented from\n acting in a manner prejudicial to the security of the\n State. Maybe, in a given case there yet may be the need\n to order preventive detention of a person already in\n jail. But in such a situation the detaining authority\n must disclose awareness of the fact that the person\n against whom an order of preventive detention is being\n made is to the knowledge of the authority already in\n jail and yet for compelling reasons a preventive\n detention order needs to be made. There is nothing to\n indicate the awareness of the detaining authority that\n detenu was already in jail and yet the impugned order\n is required to be made. This, in our opinion, clearly\n exhibits non-application of mind and would result in\n invalidation of the order.\"\nThis leads us to the second limb of the submission. Conceding that in a given case a preventive detention order\nis required",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1982_1982_79_P014_C01",
+      "text": "to be made even against a person who is already in jail or\nunder detention and that the detaining authority shows its\nawareness of the fact situation and yet passes the detention\norder, the detention order must show on the face of it that\nthe detaining authority was aware of the situation. Otherwise the detention order would suffer from vice of non-\napplication of the mind. The awareness must be of the fact\nthat the person against whom the detention order is being\nmade is already under detention or in jail in respect of\nsome offence. This would show that such a person is not a\nfree person to indulge into a prejudicial activity which is\nrequired to be prevented by a detention order. And this\nawareness must find its place either in the detention order\nor in the affidavit justifying the detention order when\nchallenged.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1982_1982_79_P014_C02",
+      "text": "In the absence of it, it would appear that the\ndetaining authority was not even aware of this vital fact\nand mechanically proceeded to pass the order which would\nunmistakably indicate that there was non-application of mind\nto the relevant facts and any order of such serious\nconsequence when mechanically passed without application of\nmind is liable to be set aside as invalid. Turning to the facts of this case the detention order\nrefers to Biru Mahato son of Mohan Mahato of Village\nJamdiha, P.S. Bagmara, Distt. Dhanbad. There is not even a\nwhimper of the detenu being in jail for nearly three weeks\nprior to the date on which the detention order was made. The detenu is referred to as one who is staying at a\ncertain place and is a free person. Assuming that this\ninference from the mere description of the detenu in the\ndetention order is impermissible the affidavit is\nconspicuously silent on this point. Not a word is said that\nthe detaining authority was aware of the fact that the\ndetenu was already in jail and yet it became a compelling\nnecessity to pass the detention order.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1982_1982_79_P014_C03",
+      "text": "Therefore, the\nsubjective satisfaction arrived at clearly discloses a non-\napplication of mind to the relevant facts and the order is\nvitiated. Mr. U.P. Singh, learned counsel for the detenu urged\nthat this Court should not take into consideration the\naffidavit filed by Dr. J.S. Brara on behalf of the\nrespondent. Dr. J. S. Barara, describing himself as District\nMagistrate, Dhanbad, has made the affidavit as if he was the\ndetaining authority. When this statement was challenged on\nbehalf of the detenu, Mr. Goburdhan, learned",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1982_1982_79_P015_C01",
+      "text": "counsel for the respondent went to the extreme length of\nasserting that Mr. Brara was the detaining authority. At\nthat stage Mr. U. P. Singh, learned counsel for the detenu\nproduced the original order of detention signed by one Shri\nD. Nand Kumar as District Magistrate. This was shown to Mr. Goburdhan and he was unable to sustain his submission that\nMr. Brara who has filed the affidavit was the detaining\nauthority. In fact, at one stage we were inclined to take a\nvery serious view of the conduct of Mr. Brara in making the\naffidavit as if he is the detaining authority. In para 1 he\nhas described himself as District Magistrate being the\ndetaining authority of the petitioner which statement is not\nborne out by the record. He may be the holder of office of\nDistrict Magistrate. But when the subjective satisfaction of\nholder of office is put in issue the mere occupant of office\ncannot arrogate to substitute his subjective satisfaction. He may speak from the record but that is not the case here. Therefore, the affidavit of Mr. Brara has to be ignored and\none must reach the conclusion that the averment made by the\ndetenu have remained uncontroverted.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1982_1982_79_P015_C02",
+      "text": "For these reasons we have quashed and set aside the\norder of detention. S.R. Appeal and Petition allowed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "Biru Mahato vs District Magistrate, Dhanbad",
+    "case_id": "SC_1982_1982_79",
+    "court": "Supreme Court of India",
+    "year": "1982",
+    "facts_summary": "ACT:\nNational Security Act, 1980\n,\nSection 3(2)\nScope of-\nPreventive detention of the detenu whose liberty has\notherwise already been prevented by keeping in jail is\nimpermissible under the N.S. Act-Non-awareness of the\ndetaining authority about the detenu's detention in jail\nwould vitiate the order of detention on the ground of non-\napplication of mind-Affidavit should be that of the\ndetaining authority who had the subjective satisfaction of\nthe detention. HEADNOTE:\n Detenu Biru Mahato was arrested on January 13, 1982 on\nthe allegation that he was involved in two incidents which\noccurred, first at 5 p.m. and the second at 5.30 p.m. on\nJanuary 12, 1982. In the first occurrence detenu and his\nassociates were alleged to have committed offences under\nsections 341\n, of Indian Penal Code, as per the\nF.I.R. 25(1)/82 at Bagmara Police Station. In the second\ncase, F.I.R. 24(1)/82 registered at the same police station,\nthey were said to have committed offences under\nsections 307\nand",
+    "legal_issues": "JUDGMENT:\nORIGINAL JURISDICTION : Writ -Petition (Criminal) No.\n1125 of 1982.\n(Under\narticle 32\nof the Constitution of India)\n WITH\n Criminal Appeal No. 488 of 1982.\n(Appeal by special leave from the judgment and order\ndated 7-4-1982 of the Patna High Court (Ranchi Bench) in\nWrit Jurisdiction Case No. 40 of 1982 (R).\nU.P. Singh for the Petitioner/Appellant.\n D. Goburdhan for the Respondent.\nThe Judgment of the Court was delivered by\n DESAI, J. By our order dated October 8, 1982, the order\nof detention dated February 5, 1982, made by the District\nMagistrate, Dhanbad, against detenu Biru Mahato was quashed\nand set aside by us further stating that the reasons would\nfollow. Here are the reasons.\nDetenu Biru Mahato was arrested on January 13, 1982, on\nthe allegation that he was involved in two incidents which\noccurred, first Therefore, the\nsubjective satisfaction arrived at clearly discloses a non-\napplication of mind to the relevant facts and the order is\nvitiated. Mr. U.P. Singh, learned counsel for the detenu urged\nthat this Court should not take into consideration the\naffidavit filed by Dr. J.S. Brara on behalf of the\nrespondent. Dr. J. S. Barara, describing himself as District\nMagistrate, Dhanbad, has made the affidavit as if he was the\ndetaining authority. When this statement was challenged on\nbehalf of the detenu, Mr. Goburdhan, learned",
+    "ratio_summary": "On the other hand, if a\n person who is undergoing imprisonment, for a very short\n period, say for a month or two or so, and it is known\n that he would soon be released from jail, it may be\n possible for the authority to consider the antecedent\n history of the said person and decide whether the\n detention of the said person would be necessary after\n he is released from jail and if the authority is bona\n fide satisfied that such detention is necessary, he can\n make a valid order of detention a few days before the\n person is likely to be released. The antecedent history\n and the past conduct on which the order of detention\n would be based would, in such a case, be proximate in\n point of time and would have a rational connection with\n the conclusion drawn by the authority that the\n detention of the person after his release is necessary. It may not be easy to discover such rational connection\n between the antecedent history of the person who has\n been sentenced to ten years rigorous imprisonment and\n the view that his detention should be ordered after he\n is released after running the whole of his sentence. Therefore, we are satisfied that the question as",
+    "final_order": "",
+    "outcome_summary": "Allowed",
+    "sections_cited": [
+      "Constitution 32"
+    ],
+    "cases_cited": []
+  }
+}

@@ -145,6 +145,8 @@ def _extract_disputes_from_data(data: dict) -> list:
             "dispute": dispute_text,
             "legal_nature": str(d.get("legal_nature", "both")).lower(),
             "keywords": [str(k).strip() for k in d.get("keywords", []) if str(k).strip()],
+            # Legal concepts for structured statute lookup (e.g. criminal intimidation, rent default)
+            "legal_concepts": [str(c).strip() for c in d.get("legal_concepts", []) if str(c).strip()],
             # New fields from improved decomposition prompt (may be absent in old LLM output)
             "bare_act_hints": [str(h).strip() for h in d.get("bare_act_hints", []) if str(h).strip()],
             "search_angles": [str(s).strip() for s in d.get("search_angles", []) if str(s).strip()],
@@ -172,6 +174,7 @@ def _single_dispute_fallback(facts_summary: str) -> list:
         "dispute": facts_summary[:300],
         "legal_nature": "both",
         "keywords": [],       # _build_bare_act_queries will use Q5 LLM fallback to generate
+        "legal_concepts": [], # no concepts when decomposition failed
         "bare_act_hints": [], # never inject LLM-knowledge act names
         "search_angles": [],  # empty → _web_search_bare_acts uses round1_queries
     }]

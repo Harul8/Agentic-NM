@@ -166,6 +166,8 @@ from config import (
     BARE_ACTS_DIR as _BARE_ACTS_DIR,
     CASELAW_DIR as _CASELAW_DIR,
     VECTOR_STORE as _VECTOR_STORE,
+    USE_LEGAL_DATABASE as _USE_LEGAL_DATABASE,
+    LEGAL_DB_JSON_OUTPUT as _LEGAL_DB_JSON_OUTPUT,
 )
 _BASE_DIR = os.path.dirname(os.path.abspath(os.path.normpath(__file__)))
 
@@ -585,8 +587,54 @@ def _build_conv(messages: list[ChatMessage] | None) -> list[dict]:
 # Path to vector store and BareActs directory – resolve from this file’s location
 
 
+def _list_bare_acts_from_json_output() -> list[str]:
+    """List act names (JSON base names) from legal_database/json_output (statute schema)."""
+    if not _USE_LEGAL_DATABASE or not os.path.isdir(_LEGAL_DB_JSON_OUTPUT):
+        return []
+    out = []
+    for f in os.listdir(_LEGAL_DB_JSON_OUTPUT):
+        if not f.lower().endswith(".json"):
+            continue
+        path = os.path.join(_LEGAL_DB_JSON_OUTPUT, f)
+        try:
+            with open(path, encoding="utf-8") as fp:
+                data = json.load(fp)
+            if data.get("act_id") or (data.get("sections") and data.get("act_name")):
+                base = os.path.splitext(f)[0]
+                if base and base not in out:
+                    out.append(base)
+        except Exception:
+            continue
+    return sorted(out)
+
+
+def _list_case_laws_from_json_output() -> list[str]:
+    """List case names (JSON base names) from legal_database/json_output (case schema)."""
+    if not _USE_LEGAL_DATABASE or not os.path.isdir(_LEGAL_DB_JSON_OUTPUT):
+        return []
+    out = []
+    for f in os.listdir(_LEGAL_DB_JSON_OUTPUT):
+        if not f.lower().endswith(".json"):
+            continue
+        path = os.path.join(_LEGAL_DB_JSON_OUTPUT, f)
+        try:
+            with open(path, encoding="utf-8") as fp:
+                data = json.load(fp)
+            if data.get("act_id"):
+                continue
+            if data.get("case_name") or data.get("paragraphs"):
+                base = os.path.splitext(f)[0]
+                if base and base not in out:
+                    out.append(base)
+        except Exception:
+            continue
+    return sorted(out)
+
+
 def _list_bare_acts_from_vector_store() -> list[str]:
-    """Return bare act filenames from disk only, so list and download always use the same source."""
+    """Return bare act names; from json_output when USE_LEGAL_DATABASE, else from disk."""
+    if _USE_LEGAL_DATABASE:
+        return _list_bare_acts_from_json_output()
     return _list_bare_acts_from_disk()
 
 
@@ -932,14 +980,69 @@ def bareacts_debug():
 
 def _resolve_bare_act_path(base: str):
     """Return absolute path to file in BareActs if it exists, else None (tries case-insensitive)."""
-    path = os.path.join(_BARE_ACTS_DIR, base)
+    base = (base or "").strip()
+    if not base:
+        return None
+    lookup = base if base.lower().endswith((".pdf", ".txt")) else base + ".pdf"
+    path = os.path.join(_BARE_ACTS_DIR, lookup)
     if os.path.isfile(path):
         return os.path.abspath(path)
     if os.path.isdir(_BARE_ACTS_DIR):
         for f in os.listdir(_BARE_ACTS_DIR):
-            if f.lower() == base.lower():
+            if f.lower() == lookup.lower():
                 return os.path.abspath(os.path.join(_BARE_ACTS_DIR, f))
     return None
+
+
+def _get_json_from_legal_db(base: str, is_statute: bool) -> dict | None:
+    """Return parsed JSON for a statute or case from legal_database/json_output."""
+    if not _USE_LEGAL_DATABASE or not os.path.isdir(_LEGAL_DB_JSON_OUTPUT):
+        return None
+    base = (base or "").strip()
+    if not base:
+        return None
+    if base.lower().endswith(".json"):
+        base = base[:-5]
+    path = os.path.join(_LEGAL_DB_JSON_OUTPUT, base + ".json")
+    if not os.path.isfile(path):
+        for f in os.listdir(_LEGAL_DB_JSON_OUTPUT):
+            if os.path.splitext(f)[0].lower() == base.lower():
+                path = os.path.join(_LEGAL_DB_JSON_OUTPUT, f)
+                break
+        else:
+            return None
+    try:
+        with open(path, encoding="utf-8") as fp:
+            data = json.load(fp)
+        if is_statute and not (data.get("act_id") or data.get("sections")):
+            return None
+        if not is_statute and data.get("act_id"):
+            return None
+        return data
+    except Exception:
+        return None
+
+
+@app.get("/bareacts/json")
+def bareacts_json(name: str = Query(..., description="Base name of the act JSON (e.g. ADVOCATES_Act)")):
+    """Return full statute JSON from legal_database/json_output. Requires NYAYMALAW_DATA_SOURCE=legal_database."""
+    if not _USE_LEGAL_DATABASE:
+        raise HTTPException(status_code=400, detail="JSON endpoint requires NYAYMALAW_DATA_SOURCE=legal_database")
+    data = _get_json_from_legal_db(name, is_statute=True)
+    if not data:
+        raise HTTPException(status_code=404, detail="Act not found")
+    return data
+
+
+@app.get("/caselaws/json")
+def caselaws_json(name: str = Query(..., description="Base name of the case JSON (e.g. ABHILASHA_V_PARKASH)")):
+    """Return full case law JSON from legal_database/json_output. Requires NYAYMALAW_DATA_SOURCE=legal_database."""
+    if not _USE_LEGAL_DATABASE:
+        raise HTTPException(status_code=400, detail="JSON endpoint requires NYAYMALAW_DATA_SOURCE=legal_database")
+    data = _get_json_from_legal_db(name, is_statute=False)
+    if not data:
+        raise HTTPException(status_code=404, detail="Case not found")
+    return data
 
 
 @app.get("/bareacts/download")
@@ -955,12 +1058,13 @@ def bareacts_download(
     path = _resolve_bare_act_path(base)
     if not path:
         raise HTTPException(status_code=404, detail="File not found")
-    media_type = "application/pdf" if base.lower().endswith(".pdf") else "text/plain"
+    filename = os.path.basename(path)
+    media_type = "application/pdf" if filename.lower().endswith(".pdf") else "text/plain"
     try:
-        response = FileResponse(path, filename=base, media_type=media_type)
+        response = FileResponse(path, filename=filename, media_type=media_type)
         # inline: open in new tab (browser displays PDF); attachment: download
         disposition = "inline" if inline else "attachment"
-        response.headers["Content-Disposition"] = f'{disposition}; filename="{base}"'
+        response.headers["Content-Disposition"] = f'{disposition}; filename="{filename}"'
         return response
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Could not serve file: {e!s}")
@@ -983,21 +1087,32 @@ def _list_case_laws_from_disk() -> list[str]:
 
 
 def _resolve_case_law_path(base: str):
-    """Return absolute path to file in CaseLaws if it exists, else None (case-insensitive on Windows)."""
-    path = os.path.join(_CASELAW_DIR, base)
+    """Return absolute path to file in CaseLaws if it exists, else None (case-insensitive)."""
+    base = (base or "").strip()
+    if not base:
+        return None
+    lookup = base if base.lower().endswith((".pdf", ".txt")) else base + ".pdf"
+    path = os.path.join(_CASELAW_DIR, lookup)
     if os.path.isfile(path):
         return os.path.abspath(path)
     if os.path.isdir(_CASELAW_DIR):
         for f in os.listdir(_CASELAW_DIR):
-            if f.lower() == base.lower():
+            if f.lower() == lookup.lower():
                 return os.path.abspath(os.path.join(_CASELAW_DIR, f))
     return None
 
 
+def _list_case_laws_from_disk_or_json() -> list[str]:
+    """Return case names; from json_output when USE_LEGAL_DATABASE, else from disk."""
+    if _USE_LEGAL_DATABASE:
+        return _list_case_laws_from_json_output()
+    return _list_case_laws_from_disk()
+
+
 @app.get("/caselaws/list")
 def caselaws_list():
-    """Return list of case law filenames from data/CaseLaws."""
-    files = _list_case_laws_from_disk()
+    """Return list of case law names (from legal_database/json_output or data/CaseLaws)."""
+    files = _list_case_laws_from_disk_or_json()
     return {"cases": files}
 
 
@@ -1013,11 +1128,12 @@ def caselaws_download(
     path = _resolve_case_law_path(base)
     if not path:
         raise HTTPException(status_code=404, detail="File not found")
-    media_type = "application/pdf" if base.lower().endswith(".pdf") else "text/plain"
+    filename = os.path.basename(path)
+    media_type = "application/pdf" if filename.lower().endswith(".pdf") else "text/plain"
     try:
-        response = FileResponse(path, filename=base, media_type=media_type)
+        response = FileResponse(path, filename=filename, media_type=media_type)
         disposition = "inline" if inline else "attachment"
-        response.headers["Content-Disposition"] = f'{disposition}; filename="{base}"'
+        response.headers["Content-Disposition"] = f'{disposition}; filename="{filename}"'
         return response
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -1906,6 +2022,7 @@ def indexing_run(request: IndexingRunRequest, user: dict = Depends(_user_from_to
 
     # P0: enter batch mode so BM25 is only rebuilt once at the end
     begin_batch_indexing()
+    had_case_law = any((getattr(it, "category", "") or "case_law").strip().lower() == "case_law" for it in items)
     try:
         if len(items) == 1:
             _index_one(0, items[0])
@@ -1921,6 +2038,20 @@ def indexing_run(request: IndexingRunRequest, user: dict = Depends(_user_from_to
     finally:
         # P0: flush deferred BM25 rebuilds regardless of errors
         end_batch_indexing()
+
+    # When case law was indexed, update citation graph so retrieval can expand by precedent
+    if indexed > 0 and had_case_law:
+        try:
+            from config import CASE_CHUNKS_V2, CITATION_GRAPH_PATH
+            from retrieval.hybrid_retriever import load_chunks
+            from retrieval.citation_graph import build_citation_graph_from_chunks, invalidate_graph
+            chunks_dict = load_chunks(CASE_CHUNKS_V2)
+            if chunks_dict:
+                build_citation_graph_from_chunks(chunks_dict, CITATION_GRAPH_PATH)
+                invalidate_graph()
+                logger.info("Citation graph updated after case law indexing.")
+        except Exception as e:
+            logger.warning("Citation graph update after indexing failed (non-fatal): %s", e)
 
     return {
         "indexed": indexed,

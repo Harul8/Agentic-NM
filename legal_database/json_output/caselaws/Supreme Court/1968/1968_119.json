@@ -1,0 +1,268 @@
+{
+  "case_id": "SC_1968_1968_119",
+  "case_name": "C.R. Nagappa vs Commissioner Of Income-Tax",
+  "normalized_case_name": "C.R._NAGAPPA_VS_COMMISSIONER_OF_INCOME-TAX",
+  "court": "Supreme Court of India",
+  "year": "1968",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "4 September 1968",
+  "judges": [
+    "A.N. Grover",
+    "J.C. Shah",
+    "JUDGMENT",
+    "Shaha, J."
+  ],
+  "author": "A.N. Grover",
+  "bench_type": "constitution",
+  "petitioner": "C.R. Nagappa",
+  "respondent": "Commissioner Of Income-Tax",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 20,
+  "cited_by_count": 41,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1969SC888",
+    "[1969]73ITR626(SC)",
+    "[1969]1SCR979",
+    "AIR 1969 SUPREME COURT 888"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1968\\1968_119.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1968_1968_119_P001_C01",
+      "text": "1. C.R. Nagappa executed on April 14, 1955, seven separate deeds of trust settling specific properties for the benefit of his minor children. Under each deed Nagappa settled certain properties for the benefit of his named minor child and vested the properties in four trustees-Nagappa, his two wives and a married daughter. Under each deed of trust a portion of the income arising out of the trust property was to be utilised immediately for the benefit of the beneficiary and the balance was to be accumulate for his or her benefit and to be handed over to the beneficiary at a future date specified in the deed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1968_1968_119_P002_C01",
+      "text": "2. In the proceeding for assessment for the year 1962-63, the 5th Income- tax Officer, City Circle II, Bangalore,included in the total income of Nagappa the income arising from the trust properties and used for the immediate benefit of the beneficiaries, but not the income directed to be accumulated. The Commissioner, in exercise of the power under\nsection 263\nof the Income-tax Act, 1961, directed that the income for the deferred benefit of the minor beneficiaries be also included in the total income of Nagappa. In appeal against that order to the Income-tax Appellate Tribunal, Nagappa contended that the income from trust properties was liable to be assessed under\nsection 161(1)\nonly in the hands of the trustees, and not in the hands of the settler. The Tribunal rejected that contention.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1968_1968_119_P002_C02",
+      "text": "At the instance of Nagappa, the Tribunal referred two questions for the opinion of the High Court of Mysore :\n\"(1) Whether having regard to the provisions of sub-section (2) of\nsection 161\n,\nsection 64(v)\nof the Income-tax Act was applicable to the assessee's case for computing the assessee's income for the assessment year 1962-63 ?\"\n(2) Whether the assessments on the minor beneficiaries for the assessment year 1962-63 are a bar for assessing the income (assessed in the hands of the manor beneficiaries) in the hands of the assessee for the same assessment year 1962-63 ?\"",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1968_1968_119_P003_C01",
+      "text": "3. The High Court of Mysore recorded answers to the questions as follows :\n\"(1)\nSection 64(v)\nof the Income-tax Act, 1961, was rightly applied to the assessee's case for computing his income for the assessment year 1962-63. Sub-section (2) of\nsection 161\nof the Act does not make\nsection 64(v)\ninapplicable to the case of the assessee.\n(2) The assessments on the minor beneficiaries for the assessment year 1962-63, thought in themselves illegal in view of the above answer, do not in law operate as a bar for the application of\nsection 64(v)\nto the case of the assessee, the illegality of the assessments on the minors being open to correction otherwise.\" Nagappa has appealed against the order passed by the High Court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1968_1968_119_P004_C01",
+      "text": "4. Counsel for Nagappa contended that the Income-tax Officer was bound to assess the income under each deed of trust separately in the hands of the trustees as \"representative assessees\" and was incompetent in view of the express enactment of sub-section (2) of\nsection 161\nto assess the income in the hands of Nagappa or of the beneficiaries. Counsel argued that notwithstanding the express direction in\nsection 64(v)\nof the Act to include the income under the trust in the conditions specified therein in the total income of the settler, the Income-tax Officer is powerless to resort to that provision and is obliged to assess the income used or accumulated for the benefit of minors in the hands of the trustees.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1968_1968_119_P005_C01",
+      "text": "5. Section 160\nof the Income-tax Act defines \"representative assessee\" Sub-section (1) of\nsection 160\n, in so far as the definition is relevant, provides :\n\"For the purposes of this Act, `representative assessee' means -..... (iv) in respect of income which a trustee appointed under a trust declared by a duly executed instrument in writing whether testamentary or otherwise [including any wakf deed which is valid under the\nMussalman Wakf Validating Act, 1913\n(6 of 1913)] received or is entitled to receive on behalf or for the benefit of any person, such trustee or trustees.\" By sub-section (2) of\nsection 160\nit is provided that every representative assessee shall be deemed to be an assessee for the purpose of the Act. Section 161\ndeals with the liability of a representative assessee.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1968_1968_119_P005_C02",
+      "text": "It provides :\n\"(1) Every representative assessee, as regards the income in respect of which he is a representative assessee, shall be subject to the same duties, responsibilities and liabilities as if the income were income received by or accruing to or in favour of him beneficial, and shall be liable to assessment in his own name in respect of that income; but any such assessment shall be deemed to be made upon him in his representative capacity only, and the tax shall, subject to the other provisions contained in this Chapter, be levied upon and recovered from him in like manner and to the same extent as it would be leviable upon and recoverable from the person represented by him. (2) Where any person is, in respect of any income, assessable under this Chapter in the capacity of a representative assessee, he shall not, in respect of that income, be assessed under any other provision of this Act.\"\nIt is implicit in the terms of sub-section (1) that the Income-tax Officer may assess a representative assessee as regards income in respect of which he is a representative assessee, but he is not bound to do so.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1968_1968_119_P005_C03",
+      "text": "He may assess either the representative assessee or the person represented by him. That is expressly so enacted in\nsection 166\nwhich states :\n\"Nothing in the foregoing sections in this Chapter shall prevent either the direct assessment of the person on whose behalf or for whose benefit income therein referred to is receivable, or the recovery from such person of the tax payable in respect of such income.\"\nThe Income-tax Officer may,, therefore, assess the person represented in respect of the income of the trust property and the appropriate provisions of the\nIncome-tax Act\nrelating to the computation of the total income and the manner in which the income is to be computed will apply to that assessment. The Income-tax Officer may in appropriate cases assess the representative assessee in respect of that income and limited to that extent, and tax may be levied and recovered from him to the same extent as may be leviable and recoverable from the person represented by him.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1968_1968_119_P006_C01",
+      "text": "6. The contention raised by counsel for Nagappa that, since the trustees were assessable in respect of the income of the beneficiaries under\nsection 161(1)\n, that income could not by virtue of sub-section (2) of\nsection 161\nbe assessed in the hands of the beneficiary is contrary to the plain terms of\nsection 166\n. Sub-section (2) of\nsection 161\ndoes not purport to deny the Income-tax Officer the option to assess the income in the hands of the person represented by the representative assessee : it merely exacts that when a representative assessee is assessed to tax in exercise of the option of the revenue, he shall be assessed under Chapter XV and shall not in respect of that income be assessed under any other provision of the Act. We will presently state the reasons why the rule was so enacted by Parliament. But on the p; lain words used by Parliament the plea raised by counsel that the representative assessee alone may be assessed as regards income in respect of which he is a representative assessee cannot be accepted.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1968_1968_119_P007_C01",
+      "text": "7. We may now examine whether the income under the deeds of trust could not be included in the total income of Nagappa. By\nsection 4\nof the Act the charge of income-tax is imposed in respect of the total income of the previous year of every person, and by\nsection 5\nthe scope of total income is determined. Chapter IV deals with computation of total income of an assessee under different heads and by chapter V income of other persons in certain conditions is liable to be included in the assessee's total income.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1968_1968_119_P007_C02",
+      "text": "Section 64\n, which falls in Chapter V, provides :\n\"In computing the total income of any individual, there shall be included all such income as arises directly or indirectly -\n(i) to the spouse of such individual from the membership of the spouse in a firm carrying on a business in which such individual is a partner;\n(ii) to a minor child of such individual from the admission of the minor to the benefits of partnership in a firm in which such individual is a partner;\n(iii) subject to the provisions of clause (i) of\nsection 27\n, to the spouse of such individual from assets transferred directly or indirectly to the spouse by such individual otherwise than for adequate consideration or in connection with an agreement to live apart;\n(iv) subject to the provisions of clause (i) of section 27, to a minor child, not being a married daughter of such individual, from assets transferred directly or indirectly to the minor child by such individual otherwise than for adequate consideration; and\n(v) to any person or association of persons from assets transferred otherwise than for adequate consideration to the person or association of persons by such individual, to the extent to which the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1968_1968_119_P007_C03",
+      "text": "income from such assets is for the immediate or deferred benefit of his or her spouse or minor child (not being a married daughter) or both...\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1968_1968_119_P008_C01",
+      "text": "8. It is clear that in each of the five cases income which in truth is not the income of the assessee is directed in the special conditions prescribed to be included in the total income of the assessee. Where an individual has transferred assets without adequate consideration to another person or association of persons, the income from the assets intended for the benefit immediate or deferred of the spouse or minor child of such individual is, by clause (v), liable to be included in the income of the individual. There is no doubt the word \"transferred\" includes settled under a trust.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1968_1968_119_P009_C01",
+      "text": "9. By the express injunction in\nsection 64(v)\nincome which accrues from the assets settled by Nagappa upon the trustees for the benefit of his minor children was liable to be included in his total income, The income to the extent to which it is liable to be included in the total income of Nagappa could not again be brought for the purpose of assessment to tax in the total income of the minor children or of the trustees to whom it is transferred.\nSection 161(1)\npredicates the existence of income liable to tax : where income from a trust is made exigible to tax in the hands of the settlor, it cannot be brought to tax in the hands of the beneficiary or the trustee, for the income is already charged to tax i9n the hands of the settlor. If the income cannot be brought to tax under sub-section (1) of\nsection 161\n, there is no scope for the application of sub-section (2).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1968_1968_119_P010_C01",
+      "text": "10. Sub-section (2) of\nsection 161\nwas presumable intended to remove the conflict of judicial opinion which arose in the interpretation of the analogous provisions of\nsections 40\nand\n\nof the Indian Income-tax Act of 1922. Saifudin Alimohamed v. Commissioner of Income-tax\n. The Bombay High Court expressed the opinion (which was not necessary for the ultimate decision of the reference) that\nsection 41\nconferred an option upon the Income-tax Officer either to assess the income as the income of the beneficiary or as the income of the trustee.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1968_1968_119_P010_C02",
+      "text": "The court observed at page 247 in dealing with the case in which the trustees appointed by the civil court in a suit were carrying on the business on behalf of two minors :\n\"...... it was open to the department to have assessed the income of the guardians under\nsection 10\non the basis that the particular business was carried on by the guardians in their own right, and the taxing department could have taken up the stand that they had no concern with what the guardians did with the profits after they had paid the tax on the income from the business; or it was open to the department to proceed against the guardians under\nsection 41\nand to tax in their hands only that income which they had received on behalf of the minors.\"",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1968_1968_119_P011_C01",
+      "text": "11. It was apparently assumed that it was open to the Income-tax Officer either to assess and tax the guardians as if they were owners of the business and of the income accruing therefrom, or to tax them as trustees under\nsection 41\n. In so assuming the court exalted\nsections 40\nand\n\ninto quasi-charging section. The conservation was plainly obiter, for the income-tax department had assessed the income in the hands of the guardians as trustees under\nsection 41\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1968_1968_119_P012_C01",
+      "text": "12. In a later judgment of the same High Court, the court reversed the earlier opinion :\nCommissioner of Income-tax v. Balwantrai Jethalal Vaidya\n. The court held\nin that case\nthat the liability of trustees to income-tax is co-extensive with that of the beneficiaries and cannot in any case be a larger or wider liability. If the assessment is made upon a trustee, his liability to pay tax must be determined in accordance with\nsection 41\nof the Income-tax Act. It was observed\nin that case\nthat\nsection 41\ngives no option to the taxing department to treat the income received by the trustee on behalf of the beneficiary as his own income or to treat it as the income of the trustee on behalf of the beneficiary. It was further observed :\n\"If the assessment is upon a trustee, the tax has to be levied and recovered in the, manner provided in\nsection 41\n. The only option that the Legislature gives is the option embodied in sub-section (2) of\nsection 41\n, and that option is that the department may assess the beneficiaries instead of the trustees, or having assessed the trustees it may proceed to recover the tax from the beneficiaries.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1968_1968_119_P012_C02",
+      "text": "But on principle the contention of the department cannot be accepted that, when a trustee is being assessed to tax, his burden which will ultimately fall upon the beneficiaries should be increased and whether that burden should be increased or not should be left to the option of the department. The basis idea underlying\nsection 41\n, and which is in conformity with principle, is that the liability of the trustees should be co-extensive with that of the beneficiaries and in no sense a wider or a larger liability. Therefore, it is clear that every case of an assessment against a trustee must fall under\nsection 41\n, and it is equally clear that, even though a trustee is being assessed, the assessment must proceed in the manner\nlaid down in\nchapter III.\"\nThe earlier judgment of the Bombay High Court was followed by the Madras High Court in\nV. Ramaswamy Iyengar v. Commissioner of Income-\ntax . The principle underlying the judgment in\nBalwantrai Jethalal Vaidya\n's case was approved in\nBirendra Kumar Datta v. Commissioner of Income-tax\n, and\nA Razzak v. Commissioner of Income-Tax, West Bengal\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1968_1968_119_P013_C01",
+      "text": "13. In our opinion the observations made in\nSaifudin Alimohamed\n's case (set out earlier herein) were incorrect.\nThe Legislature, while enacting the new Act, to avoid doubts has give effect to the conservations made by Changla C.J. in\nBalwantrai Jethalal Vaidya\n's case and has enacted that where the income is assessable under Chapter XV in the hands of a person in the capacity of a representative assessee it is not liable to be assessed under any other provision of the Act, that is, the tax is not liable to be levied under any other provision of the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1968_1968_119_P014_C01",
+      "text": "14. In our view Chagla C.J. was right in observing in\nBalwantrai Jethalal Vaidya\n's case in dealing with the scheme of\nsection 41\nof the Income- tax Act, 1922, that \n \"....... it is clear that every case of an assessment against a trustee must fall under\nsection 41\n, and it is equally clear that, even though a trustee is being assessed, the assessment must proceed in the manner\nlaid down in\nChapter III....\nSection 41\nonly comes into play after the income has been computed in accordance with Chapter III. Then the question of payment of tax arises and it is at that stage that\nsection 41\nissues a mandate to the taxing department that, when they are dealing with the income of a trustee, they must levy the tax and recover it in the manner\nlaid down in\nsection 41\n.\"\nThe same considerations must apply in the interpretation of\nsection 161(2)\nof the Income-tax Act, 1961.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1968_1968_119_P015_C01",
+      "text": "15. Sub-section (2) of\nsection 161\nmerely enacts that when income is assessed in the hands of a representative assessee in his own name, the assessment shall be deemed to be made upon him in the representative capacity only and tax shall be levied and recovered in the manner provided in sub-section (1).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1968_1968_119_P016_C01",
+      "text": "16. It is true that in this case for the assessment year 1962-63 the minors were assessed to tax, but the assessment will not affect the validity of the inclusion of the trust income in the assessment made on Nagappa under\nsection 64(v)\n. It was conceded before the High Court on behalf of the revenue that the assessment of the minor beneficiaries in respect of the income could not stand, in view of the assessment of Nagappa under\nsection 64(v)\n. In our view that concession was rightly made, and we have no doubt that all the assessments made against the minor beneficiaries will be annulled and the tax, if any, recovered will be refunded.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1968_1968_119_P017_C01",
+      "text": "17. In the view we have taken, this appeal must fail and is dismissed with costs.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "C.R. Nagappa vs Commissioner Of Income-Tax",
+    "case_id": "SC_1968_1968_119",
+    "court": "Supreme Court of India",
+    "year": "1968",
+    "facts_summary": "",
+    "legal_issues": "2. In the proceeding for assessment for the year 1962-63, the 5th Income- tax Officer, City Circle II, Bangalore,included in the total income of Nagappa the income arising from the trust properties and used for the immediate benefit of the beneficiaries, but not the income directed to be accumulated. The Commissioner, in exercise of the power under\nsection 263\nof the Income-tax Act, 1961, directed that the income for the deferred benefit of the minor beneficiaries be also included in the total income of Nagappa. In appeal against that order to the Income-tax Appellate Tribunal, Nagappa contended that the income from trust properties was liable to be assessed under\nsection 161(1)\nonly in the hands of the trustees, and not in the hands of the settler. The Tribunal rejected that contention. 4. Counsel for Nagappa contended that the Income-tax Officer was bound to assess the income under each deed of trust separately in the hands of the trustees as \"representative assessees\" and was incompetent in view of the express enactment of sub-section (2) of\nsection 161\nto assess the income in the hands of Nagappa or of the beneficiaries. Counsel argued that notwithstanding the express direction in\nsection 64(v)\nof the Act to include the income under the trust in the conditions specified therein in the total income of the settler, the Income-tax Officer is powerless to resort to that provision and is obliged to assess the income used or accumulated for the benefit of minors in the hands of",
+    "ratio_summary": "14. In our view Chagla C.J. was right in observing in\nBalwantrai Jethalal Vaidya\n's case in dealing with the scheme of\nsection 41\nof the Income- tax Act, 1922, that \n \"....... it is clear that every case of an assessment against a trustee must fall under\nsection 41\n, and it is equally clear that, even though a trustee is being assessed, the assessment must proceed in the manner\nlaid down in\nChapter III....\nSection 41\nonly comes into play after the income has been computed in accordance with Chapter III. Then the question of payment of tax arises and it is at that stage that\nsection 41\nissues a mandate to the taxing department that, when they are dealing with the income of a trustee, they must levy the tax and recover it in the manner\nlaid down in\nsection 41\n.\"\nThe same considerations must apply in the interpretation of\nsection 161(2)\nof the Income-tax Act, 1961.",
+    "final_order": "",
+    "outcome_summary": "Dismissed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

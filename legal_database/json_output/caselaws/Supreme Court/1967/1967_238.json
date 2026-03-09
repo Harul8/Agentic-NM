@@ -1,0 +1,449 @@
+{
+  "case_id": "SC_1967_1967_238",
+  "case_name": "State Of Madras vs A.Habibur Rehman Sons (With Connected ...",
+  "normalized_case_name": "STATE_OF_MADRAS_VS_A.HABIBUR_REHMAN_SONS_(WITH_CONNECTED_...",
+  "court": "Supreme Court of India",
+  "year": "1967",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "30 August 1967",
+  "judges": [
+    "V. Ramaswami",
+    "K.N.  Wanchoo",
+    "R.S. Bachawat",
+    "G.K. Mitter",
+    "K.S. Hegde"
+  ],
+  "author": "V. Ramaswami",
+  "bench_type": "constitution",
+  "petitioner": "State Of Madras",
+  "respondent": "A.Habibur Rehman Sons (With Connected ...",
+  "reporter_citations": [
+    "[1955] 2 S.C.R. 603"
+  ],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 16,
+  "cited_by_count": 8,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1968 AIR 339",
+    "1968 SCR (1) 381"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1967\\1967_238.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1967_1967_238_P001_C01",
+      "text": "BENCH:\nRAMASWAMI, V.\nBENCH:\nRAMASWAMI, V.\nWANCHOO, K.N. (CJ)\nBACHAWAT, R.S.\nMITTER, G.K.\nHEGDE, K.S.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1967_1967_238_P002_C01",
+      "text": "ACT:\nConstitution of India, 1950,\nArt. 286(1)(a)\n, Explanation,\nbefore amendment by the\nConstitution (Sixth Amendment) Act,",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1967_1967_238_P003_C01",
+      "text": "; ,Madras General Sales Tax Act (9 of 1939) s.\n2(h),Explanation (2); and\nSales Tax Laws Validation Act\n(7\nof 1956), s. 2-Ban on taxation of inter-State Sales\nlifted--Outside sales, if could be taxed.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1967_1967_238_P004_C01",
+      "text": "HEADNOTE:\nUnder Explanation (2) to s. 2(h) of the Madras General Sales\nTax Act, 1939, a sale is deemed to have taken place in that\nState, wherever the contract of sale might have been made,\nif the goods were actually in the State at the time when the\ncontract in respect thereof was made. The Constitution, by\nArt. 286\nas it was originally enacted, imposed four bans\nupon the legislative power of the States to impose sales\ntax. Clause (1)(a) prohibited every State from imposing or\nauthorising the imposition of, a tax on outside sales. Am\noutside sale was defined by defining an inside sale in the\nExplanation to the clause, as a sale which shall be deemed\nto have taken place in the State in which the goods have\nactually been delivered as a direct result of such sale for\nthe purpose of consumption in that State notwithstanding the\nfact that under the general law relating to sale of goods\nthe property in the goods has by reason of such sale passed\nin another State. Clause (1)(b) prohibited the imposition\nof tax on sales in the course of import into or export out\nof, the territory of India.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1967_1967_238_P004_C02",
+      "text": "Clause (2) prohibited the\nimposition of tax on the sale of goods where such sale took\nplace in the course of inter-State trade or commerce unless\nParliament otherwise provided. Clause (3) prohibited the\nState from imposing or authorising the imposition of a tax\non the sale of any goods declared by Parliament by law to be\nessential for the life of the community, unless the\nlegislation was reserved for the consideration of the\nPresident and had received his assent. This Court, in its\njudgment in the Bengal Immunity Co. Ltd. Case, [1955] 2\nS.C.R. 603 delivered on September 6, 1955, held that because\nArt. 286(2)\n, the State legislature could not impose\nsales-tax on inter-State sales until Parliament provided\notherwise. By the Sales Tax Laws Validation Act, 1956\n,\nParliament removed the ban contained in\nArt. 286(2)\nretro-\nspectively, during the period between April 1, 1951, and\nSeptember 6, 1955, with the result that, transactions of\nsale, even though they were inter-State sales, could, for\nthat period be lawfully charged to tax. [386C-E; 387D, F-H;\n388A-D]\nThe respondent was a beedi manufacturer in the appellant-\nState.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1967_1967_238_P004_C03",
+      "text": "Beedies, which were within the territory of the\nappellantState at the time the contract of sale in respect\nof them was made were sold to non-resident buyers. On the\nquestion whether the sales during the period from April 1,\n1955 to September 5, 1955 were taxable by virtue of\nExplanation 2 to s. 2(h) of the Madras General Sales Tax\nAct, 1939, in view of the lifting of the ban on the levy of\ntax on inter-State sales by the\nSales Tax Laws Validation\nAct\n, the High Court relying on additional affidavits filed\nbefore it, held 381",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1967_1967_238_P005_C01",
+      "text": "that the sales were outside sales and that the State had no\njurisdiction to impose sales tax. In appeal by the State;\nHeld: (1) The restrictions imposed by the several clauses of\nArt. 286\nas it stood were cumulative, and the legislative\npower of the State to tax sale or purchase transactions\ncould be exercised only if it was not hit by any of those\nlimitations. The Validation Act merely lifted the ban under\nArt. 286(2)\nbut the ban imposed by\nArt. 286(1)(a)\nwas still\neffective, and could not be removed by any legislation of\nParliament. Thus. even if the ban under\nArt. 286 (2)\nwas\nremoved by the Validation Act, no State could tax an inter-\nState sale or purchase which took place outside its\nterritorial limits. The sales falling within the\nExplanation to\nArt. 286(1)(a)\nwere fictionally to be\nregarded as inside the State in which the goods were\nactually delivered for consumption and so within the taxing\npower of that State and as being outside all other States\nand so, exempt from sales-tax by those other States.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1967_1967_238_P005_C02",
+      "text": "Therefore, in the present case, even though the sales fell\nwithin Explanation (2) to s. 2(h) of the Madras General\nSales Tax Act, it was beyond the competence of the Madras\nState to tax them as the assessee had delivered the goods\nfor consumption outside the State and were thus outside\nsales covered by the ban imposed by\nArt. 286(1)(a).\n[390E-H]\nObservations at p. 1082 in State of Bombay v. United Motors,\n(India) Ltd., [1953] S.C.R. 1069, The Bengal Immunity Co. Ltd. V. State of Bihar and Ors., [1955] 2 S.C.R. 603, Shree\nBajrang Jute Mills v. State of Andhra Pradesh [1964] 6\nS.C.R. 691 and Singareni Collieries Co. Ltd. v. State of\nAndhra Pradesh, [1966] 2 S.C.R. 190, followed. Messrs. Ashok Leyland Co. Ltd. v. The State of Madras\n[1962] 1 S.C.R. 607, explained. (2) The appellant-State, not having raised any objection\nbefore the High Court that the High Court, in exercising the\nrevisional powers under s. 38 of the Madras General Sales\nTax Act could not take the affidavits in evidence could not\nurge in this Court that the High Court acted illegaly in\ntaking them in evidence. [392E]",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1967_1967_238_P006_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeals Nos. 495, 539\nand 540, 684, 694, 717 and 857 of 1966.\nAppeals by special leave from the judgment and orders dated\nSeptember 23, 1963, April 29, 1963, July 29, 1964, March 13,\n1964, June 22, 1964 and June 24, 1964 of the Madras High\nCourt in Tax Cases Nos. 246 of 1962 (Revision No. 96) 202\nand 203 of 1961, 67 of 1963 (Appeal No. 6), 43 of 1964\n(Revision No. 17), 12 of 1963 (Appeal No. 2) and 112 of 1964\n(Revision No. 64) respectively.\nG. Ramanujam and A. V. Rangam, for the appellants (in all\nthe appeals).\nT. A. Ramachandran, for respondent (in C.A. No. 495 of\n1966).\nM. S. K. Sastri and M. S. Narasimhan, for respondent (in\nC. As. Nos. 539 and 540 of 1966).\nA. N. Sinha and D. N. Gupta, for respondent (in C. A. No.\n684 of 1966).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1967_1967_238_P007_C01",
+      "text": "Kartar Singh Suri and E. C. Agrawala, for the respondent (in\nC.A. No. 694 of 1966). Avad Behari, for respondent (in C.A. No. 717 of 1966). G. N. Dikshit for respondent (in C.A. No. 857 of 1966). Civil Appeal No. 495 of 1966\nThe Judgment of the Court was delivered by\nRamaswami, J. This appeal is brought, by special leave,from\nthe judgment of the Madras High Court dated September 23,\n1963, in Tax Case No. 246 of 1962. The respondent who was a Beedi manufacturer in Gudiyattam,\nMadras State was assessed to sales tax on a taxable turnover\nof Rs. 1,73,502/11/10 for the assessment year 1955-56 by the\nDeputy Commercial Tax Officer. Against this order of\nassessment dated February 15, 1957 the respondent appealed\nto the Appellate Assistant Commissioner of Commercial Taxes,\nSalem disputing the inclusion of a sum of Rs. 1, 1 1,299 / -\nand odd on the ground that the said amount represented\neither second purchases or purchases made outside the State\nof Madras.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1967_1967_238_P007_C02",
+      "text": "Pending the appeal the Madras General Sales Tax\nAct, 1959 was passed and the earlier Act of 1939 was\nrepealed and by force of the provisions in the 1959 Act, the\nappeal was finally disposed of by the Appellate Assistant\nCommissioner of Commercial Taxes, Salem. By his order dated\nJuly 2, 1960, the Appellate Assistant Commissioner held that\nthe excise duty paid by the respondent could not form part\nof his purchase turnover but in purported exercise of his\npowers under the new Act enhanced the assessment of the\nturnover by including a gum of Rs. 1,15,406/14/9 as inter-\nState purchases from April 1, 1955 to September 5, 1955. The respondent took the matter in further appeal to the\nSales Tax Appellate Tribunal. The appellant also filed\npetitions before the Tribunal for enhancement of the\nassessment by Rs. 3,66,213/12/- on the ground that the\namount represented sales of manufactured beedies to non-\nresident buyers during the period May 12, 1955 to September\n5, 1955 and that the goods, in question were within the\nterritory of the State at the time the contract of sale in\nrespect thereof was made.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1967_1967_238_P007_C03",
+      "text": "It was contended on behalf of the\nappellant that the sales were taxable by virtue of\nExplanation (2) to s. 2(h) of the Madras General Sales Tax\nAct, 1939 in view of the lifting of the ban on the levy of\ntax on inter-State sales by the\nSales Tax Laws Validation\nAct, 1956\n(Central Act VII of 1956), hereinafter called the\n'Validation Act', and that it was wrongly excluded from the\ntaxable turnover by the taxing authorities. By its order\ndated July 13, 1962 the Appellate Tribunal allowed the\npetition for enhancement and rejected the contention of the\nrespondent that the sales were agency sales through\nCommission Agents. As regards the alleged second purchases\nor outside purchases of raw tobacco, the Appellate Tribunal\nremanded the case to the Appellate Assistant Commissioner. Against the order of the Appellate Tribunal the respondent\nfiled a petition in the High Court, of",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1967_1967_238_P008_C01",
+      "text": "Madras under s. 38 of the Madras General Sales Tax Act,\n1959. By its order dated September 23, 1963 the High Court\nheld: (1) that the inclusion of the inter-State purchases\nfrom April 1, 1955 to September 5, 1955 of Rs.\n1,15,406/14/9. was bad as the Appellate Assistant\nCommissioner had no jurisdiction to include that turnover;\n(2) that the turnover of Rs. 3,66,213/12/- included by the\nAppellate Tribunal could not be brought to tax as the\nbeedies, which were the subject of the relevant sales, were\ndelivered outside the State for purposes of consumption and\nas the sales therefore constituted Explanation sales under\nArt. 286(1)\nof the Constitution as it stood prior to the\nSixth Amendment and consequently the Madras State had no\njurisdiction to tax the said sales. Being aggrieved by that\npart of the decision of the Madras High Court on the\nquestion of taxability of the said transactions of inter-\nState sales effected prior to September 6, 1955, the State\nof Madras has brought the present appeal.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1967_1967_238_P008_C02",
+      "text": "The question presented for consideration in this appeal is\nwhether the Madras State had jurisdiction to levy sales tax\non the alleged \"Explanation sales\" by the respondent during\nthe period between April 1, 1955 to September 5, 1955 by\nvirtue of Explanation (2) to s. 2(h) of the Madras General\nSales Tax Act, 1939. Section 2(h) of the Madras General Sales Tax Act, 1939\nstates:\n\"2.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1967_1967_238_P008_C03",
+      "text": "In this Act, unless there is anything\n repugnant in the subject or context-\n(h)'sale' with all its grammatical variations\n and cognate expressions means every transfer\n of the property in goods by one person to\n another in the course of trade or business for\n cash or for deferred payment or other valuable\n consideration, and includes also a transfer of\n property in goods involved in the execution of\n a works contract, and in the supply or\n distribution of goods by a co-operative\n society, club, firm or any association to its\n members for cash or for deferred payment or\n other valuable consideration but does not\n include a mortgage, hypothecation, charge or\n pledge;\nExplanation (2)-The sale or purchase of any\n goods shall be deemed, for the purposes of\n this Act, to have taken place in this State,\n wherever the contract of sale or purchase\n might have been made-\n(a) if the goods were actually in this State\n at the time when the contract of sale or\n purchase, in respect thereof was made, or\n(b) in case the contract was for the sale or\n purchase of future goods by description, then,\n if the goods are actually produced in this\n State at any time after the contract of sale\n or purchase",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1967_1967_238_P008_C04",
+      "text": "in respect thereof was made.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1967_1967_238_P009_C01",
+      "text": "Section 3\nwhich is the charging section provides as follows:\n\"Subject to the provisions of this Act,-\n(a) every dealer shall pay for each year a\n tax on his total turnover for such year; and\n(b) the tax shall be calculated at the rate\n of three pies for every rupee in such\n turnover:\nProvided that if and to the extent to which such turnover\nrelates to articles of food or drink or both sold in a\nhotel, boarding house, restaurant, stall or any other place,\nthe tax shall be calculated at the rate of four and a half\npies for every rupee, if the turnover relating to those\narticles is not less than twenty-five thousand rupees. Under the Government of India Act, 1935\n, it was open to\nevery Provincial Legislature to enact legislation\nauthorising the levy of tax on sale of goods in respect of\ntransactions whether within or outside the Province,\nprovided the Province had a territorial nexus with one or\nmore elements constituting the sale. This resulted in levy\nof sales tax by many Provinces in respect of the same\ntransaction--each Province fixing upon one or more elements\nconstituting the sale wish which it had a territorial nexus.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1967_1967_238_P009_C02",
+      "text": "The Constitution with a view to prevent imposition of\nmanifold taxes on the same transaction of sale, imposed by\nArt. 286\nrestrictions on the levy of sale and purchase taxes\non certain classes of transactions. Article 286\n, as it was\noriginally enacted, read as follows:\n(1) No law of a State shall impose, or\n authorise the imposition of, a tax on the sale\n or purchase of goods where such sale or\n purchase takes place-(.a) outside the State;\n(b) in the course of the import of the goods\n into, or export of the goods out of, the\n territory of India. Explanation.-For the purposes of sub-clause (a), a sale or\npurchase shall be deemed to have taken place in the State in\nwhich the goods have actually been delivered as a direct\nresult of such sale or purchase for the purpose of\nconsumption in that State, notwithstanding the fact that\nunder the general law relating to sale of goods the property\nin the goods has by reason of such sale or purchase passed\nin another State.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1967_1967_238_P009_C03",
+      "text": "(2) Except in so far as Parliament may by law otherwise\nprovide, no law of a State shall impose, or authorise the\nimposition of, a tax on the sale or purchase of any goods\nwhere such sale or purchase takes place in the course of\ninter-State trade or commerce:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1967_1967_238_P010_C01",
+      "text": "Provided that the President may by order\n direct that any tax on the sale or purchase of\n goods which was being lawfully levied by\n the'Government of any State immediately before\n the commencement of this Constitution shall,\n notwithstanding that the imposition of such\n tax is contrary to the provisions of this\n clause, continue to be levied until the\n thirty-first day of March, 1951. (3) No law made by the Legislature of a State\n imposing, or authorising the imposition of, a\n tax on the sale or purchase of any such goods\n as have been declared by Parliament by law to\n be essential for the life of the community\n shall have effect unless it has been reserved\n for the consideration of the President and has\n received his assent.\". Article 286\nthus imposed four bans upon legislative power of\nthe States. Clause (1) prohibited every State from imposing\nor authorising the imposition of, a tax on outside sales and\non sales in the course of import into or export outside the\nterritory of India. By el. (2) the State was prohibited\nfrom imposing tax on the sale of goods where such sale took\nplace in the course of inter-State trade or commerce.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1967_1967_238_P010_C02",
+      "text": "But\nthe ban could be removed by the legislation made by the\nParliament. By el. (3) the Legislature of a State was\nincompetent to impose or authorise imposition of a tax on\nthe sale or purchase of any goods declared by the Parliament\nby law to be essential for the life of the community, unless\nthe legislation was reserved for the consideration of the\nPresident and had received his assent. The Bengal Immunity Co. Ltd., v. The State of Bihar and\nOthers\n(1), it was held by this Court that the operative\nprovisions of the several parts of\nArt. 286\n, namely el. (1)(a), el. (1)(b), el. (2) and el. (3), are intended to\ndeal with different topics and one cannot be projected or\nread into another, and therefore the Explanation in el. (1)(a) cannot legitimately be extended to el. (2) either as\nan exception or as a proviso thereto or read as curtailing\nor limiting the ambit of el. (2). It was further held that\nuntil the Parliament by law made in exercise of the powers\nvested in it by el.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1967_1967_238_P010_C03",
+      "text": "(2) of\nArt. 286\nprovides otherwise, no\nState may impose or authorise the imposition of any tax on\nsales or purchases of goods when such sales or purchases\ntake place in the course of inter-State trade or commerce,\nand therefore the State Legislature could not charge inter-\nState sales or purchases until the Parliament had otherwise\nprovided. The judgment of this Court in The Bengal Immunity\nCompany's(1) case was delivered on September 6, 1955. The\nPresident then issued the Sales Tax Laws Validation Ordi-\nnance, 1956, on January 30, 1956, the provisions of which\nwere later embodied in the\nSales Tax Laws Validation Act,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1967_1967_238_P011_C01",
+      "text": "\"Validation of State laws imposing, or\n authorising the imposition of, taxes on sale\n or purchase of goods in the course of inter-\nState trade or commerce.Nothwithstanding any\n judgment, decree or order of any Court, no law\n of a State imposing, or authorising the\n imposition of, a tax on the sale or purchase\n of any goods where such sale or purchase took\n place in the course of inter-State trade or\n commerce during the period between the 1st day\n of April 1951, and the 6th day of September,\n 1955, shall be deemed to be invalid or ever to\n have been invalid merely by reason of the fact\n that such sale or purchase took place in the\n course of inter-State trade or commerce; and\n all such taxes levied or collected or purport-\n ing to have been levied or collected during\n the aforesaid period shall be deemed always to\n have been Validly levied or collected in\n accordance with law...............\"\nBy this Act therefore the Parliament removed the ban\ncontained in\nArt. 286(2)\nof the Constitution retrospectively\nbut limited only to the period between April 1, 1951 and\nSeptember 6, 1955.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1967_1967_238_P011_C02",
+      "text": "All transactions of sale, even though\nthe were inter-State sales could for that period be lawfully\ncharged to tax. On behalf of the appellant the argument was put forward that\nthe Validation Act having lifted the ban on taxation of\ninterState sales, the transactions of the respondent for the\nperiod from April 1, 1955 to September 5, 1955 were\nassessable to tax under the provisions of the Madras General\nSales Tax Act, 1939 operating on its own terms. Counsel for\nthe appellant particularly based his argument on the second\nExplanation to\ns.2(h)\nof that Act and the decision of this\nCourt in\nMessrs Ashok Leyland Ltd. v. The State of\nMadras\n(1). In our opinion, the argument put forward on\nbehalf of the appellant is not warranted. The decision of\nthis Court in Ashok Leyland's(1) case has no bearing on the\nquestion presented for determination in this case. The\nreason is that\nin that case\nthe deliveries of motor vehicles\nwere inside the Madras State and the inter-State sales in\nquestion were not \"Explanation Sales\" falling within\nArt.\n286(1)(a). It is a well-settled proposition that the\noperative provisions of the several parts of Art. 286.\nnamely el. 1(a), el. 1(b), el. (2) and el.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1967_1967_238_P011_C03",
+      "text": "(3), are intended\nto deal with different topics and one cannot be projected or\nread into another, and therefore the Explanation in el. (1)(a) cannot legitimately be extended to el. (2) either as\nan exception or as a proviso thereto or read as curtailing\nor limiting the ambit of el. (2). In other words, the\nlegislative authority of the States to impose taxes on sales\nand purchases was restricted by four limitations-in respect\nof sales or purchases outside the State, in respect of sales\nor purchases in the course of imports into or exports out of\nIndia, in respect of sales or purchases which take place in\nthe course of\n(1) [1962] 1 S.C.R. 607.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1967_1967_238_P012_C01",
+      "text": "inter-State trade or commerce and in respect of sales and\npurchases of goods declared by Parliament to be essential\nfor the life of the community. These limitations overlap to\nsome extent, but the legislative power of the State to tax\nsale or purchase transactions may be exercised, only if it\nis not hit by any of the limitations. The restrictions\nimposed by\nArt. 286\nare cumulative. It follows therefore\nthat even if the ban under\nArt. 286(2)\nis lifted by Parlia-\nment by the enactment of the Validation Act, the Madras\nState cannot still tax inter-State sales or purchases which\ntake place outside its territorial limits because of, the\nban under\nArt. 286(1)(a)\nof the Constitution. What is an\n\"outside sale\" is defined by the Constitution by the\nexplanation to\nArt. 286(1)\nwhich states what should be\ndeemed to be an 'inside sale'.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1967_1967_238_P012_C02",
+      "text": "As provided by the Ex-\nplanation to\nArt. 286(1)\n, a sale or purchase shall be deemed\nto have taken place in the State in which the goods have\nactually been delivered as a direct result of the sale\nnotwithstanding the fact that under the general law relating\nto sale of goods the property in the goods has, by reason of\nsuch sale or purchase, passed in another State. The legal\nposition was stated by this Court in\nThe State of Bombay v. The United Motors (India) Ltd. (1) as follows:\n\"It provides by means of a legal fiction that\n the State in which the goods sold or purchased\n are actually delivered for consumption therein\n is the State in which the sale or purchase is\n to be considered to have taken place,\n notwithstanding the property in such goods\n passed in another State.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1967_1967_238_P012_C03",
+      "text": "Why an 'outside'\n sale or purchase is explained by defining what\n is an inside sale, and why actual delivery and\n consumption in the State are made the\n determining factors in locating a sale or\n purchase will presently appear.The test of\n sufficient territorial nexus was thus replaced\n by a simpler and more easily workable test:Are\n the goods actually delivered in the taxing\n State, as a direct result of a sale or\n purchase, for the purpose of consumption\n therein? Then, such sale or purchase shall be\n deemed to have taken place in that State and\n outside all other States. The latter States\n are prohibited from taxing the sale or\n purchase; the former alone is left free to do\n so. Multiple taxation of the same transaction\n by different States is also thus avoided.\"\nThis observation was not in any way dissented from by the\njudgment of this Court in the later case-The Bengal Immunity\nCompany's(2) case. The result therefore is that if the\nterms of the Explanation are satisfied such sales are by a\nfiction deemed to be 'inside' the State of delivery-cum-\nconsumption and therefore ' outside' all other States.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1967_1967_238_P012_C04",
+      "text": "such cases therefore only the State 'inside' which the sale\nis deemed to take place by virtue of the\n(1) [1953] S.C.R, 1069, 1082. (2) [1955] 2 S.C.R. 603.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1967_1967_238_P013_C01",
+      "text": "Explanation is exempt from the ban imposed by\nArt.\n286(1)(a);\nall other States would be subject to that ban in\nrespect of such sales. This principle underlies the\ndecision of this Court in\nShree Bajrang Jute Mills Ltd. v. State of Andhra Pradesh\n(1). In that case, the appellant,\ncarrying on business as a manufacturer of jute goods with\nits factory at Guntur, used to send jute bags by railway to\nthe cement factories of the A.C.C. Outside the State of\nAndhra. For securing a regular supply of jute bags, the\nA.C.C. entered into a contract with the appellant and under\nthe despatch instructions from that company, the appellant\nloaded the goods in the railway wagons, obtained railway\nreceipts in the name of the A.C.C. as consignee and against\npayment of the price, delivered the receipts to the Krishna\nCement Works, Tadepalli, which was for the purpose of\nreceiving the railway receipt and making payment, the agent\nof the A.C.C. From the amounts shown as gross turnover in\nthe return for the assessment year 1954-55, the appellant\nclaimed reduction of certain amounts in respect of the goods\nsupplied by rail to the A.C.C. outside the State of Andhra\nPradesh under its despatch instructions.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1967_1967_238_P013_C02",
+      "text": "The Commercial Tax\nOfficer and the Deputy Commissioner of Commercial Taxes\ndisallowed the claim and held that as the railway receipts\nwere delivered to the agent of the buyer within the State of\nAndhra, and price was also realized from the agent of the\nbuyer within the State, goods must be deemed to have been\ndelivered to the buyer in the Stale of Andhra Pradesh, and\nthe appellant was liable to pay tax on the sales. The\nquestion for determination in this Court was whether the\nsales by the appellant to the A.C.C. may be regarded as\n'nonExplanation sales', i.e., failing outside the\nExplanation to\nArt. 286(1). It was held by this Court that\nif the goods were delivered pursuant to the contracts of\nsale outside the State of Andhra for the purpose of\nconsumption in the State into which the goods were\ndelivered, the State of Andhra could have no right to tax\nthose sales by virtue of the restriction imposed by\nArt.\n286(1)(a)\nread with the Explanation. To attract the\nExplanation, the goods had to be actually delivered as a\ndirect result of the sale, for the purpose of consumption in\nthe State in which they were delivered.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1967_1967_238_P013_C03",
+      "text": "The expression\n'actually delivered' in the context in which it occurs, can\n'Only mean physical delivery of the goods, or such action as\nputs the goods in the possession of the purchaser and it\ndoes not contemplate mere symbolical or notional delivery. It was accordingly held that the State of Andhra had no\nauthority to levy tax in respect of these sale transactions\nin which the goods were sent under railway receipts to\nplaces outside the State of Andhra and actually delivered\nfor the purpose of consumption in those States. The same\nview was reiterated by this Court in\nSingareni Collieries\nCo. Ltd. v. State of Andhra Pradesh\n(2). In that case, the\nappellant company carried on the business of mining coal\nfrom its collieries and supplying it to consumers both\nwithin and outside the State. (1) [1964] 6 S.C.R. 691. (2) [1966] 2 S.C.R. 190.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1967_1967_238_P014_C01",
+      "text": "In proceedings for assessment to Sales tax, the company\nclaimed that it was not liable to pay sales tax under the\nHyderabad General Sales Tax Act, 1950, on the price of coal\nsupplied to allottees outside the taxing State pursuant to\nthe directions of the Coal Commissioner issued under the\nColliery Control Order, 1945. This claim was rejected by\nthe Sales Tax Officer on the ground that the coal in\nquestion was sold F.O.R. colliery siding and was actually\ndelivered to the consumers within the State when it was\nloaded on their account in railway wagons at the colliery\nsiding. The appeals against that decision to the appellate\nauthorities as well as to the High Court were dismissed. It\nwas decided by this Court that so far as the period between\nApril 1, 1954 and September 6, 1955 was concerned, sales of\ncoal for delivery to consumers outside the State could not\nbe taxed under the\nHyderabad Act\nbecause they were covered\nby the explanation to\nArt. 286(1)(a)\nas it stood before\namendment.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1967_1967_238_P014_C02",
+      "text": "It was held that the Explanation defines the\nState in which the goods have actually been delivered for\nconsumption, as the State in which for the purpose of\ncl.(1)(a) of\nArt. 286\nthe sale shall be deemed to have taken\nplace, and that State alone in which the sale is deemed to\ntake place has the power to tax the sale, and for this\npurpose it is immaterial that property in the goods has\nunder the general law relating to sale of goods passed in\nanother State in which the allottee resided or carried on\nbusiness. The legal position therefore is that the Validation Act\nmerely lifted the ban under\nArt. 286(2)\nof the Constitution\non the State's power to legislate but the ban imposed by\nArt. 286(1)(a)\nof the Constitution was still effective and\ncould not be removed by legislation of Parliament. In other\nwords, even if the ban under\nArt. 286(2)\nis removed by the\nValidation Act, no State can tax an interState sale or\npurchase which takes place outside its territorial limits. What is an \"outside sale\" is defined by the Constitution as\nExplanation to\nArt. 286(1)\nwhich states what should be\ndeemed to be an \"inside sale\".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1967_1967_238_P014_C03",
+      "text": "It is well-settled that by\nArt. 286(1) (as it stood before the Sixth Amendment)\nsales\nas a direct result of which goods were delivered in a State\nfor consumption in such State, i.e., the sales failing\nwithin the Explanation to\nArt. 286(1)\nwere fictionally to be\nregarded as inside that State for the purpose of cl. (1)(a)\nand so within the taxing power of the State in which such\ndelivery took place and being outside all other States\nexempt from sales-tax by those other States. As we have\nalready said, the Validation Act has lifted the ban under\nArt. 286(2)\nalone but did not remove the ban under\nArt.\n286(1)\nwhich continued to apply without being affected by\nthe Validation Act. Therefore, even if a sale fell within\nthe Explanation under s. 2(h) of the Madras General Sales\nTax Act, 1939 it was beyond the competence of the Madras\nState to tax if the assessee had delivered the goods outside\nthe State for consumption therein. It follows therefore in\nthe present case that the goods sold and delivered outside",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1967_1967_238_P015_C01",
+      "text": "the State during the period from April, 1955 to September,\n1955 were not liable to tax under the Madras General Sales\nTax Act, 1939 and the taxing authorities had no jurisdiction\nto include Rs. 3,66,213/12/- in the turnover of the\nrespondent. We proceed to consider the next question raised in this\ncase, viz., that the High Court acted illegally in\nentertaining and relying upon the affidavits filed by the\nrespondent while exercising its revisional powers under s.\n38 of the Madras General Sales Tax Act, 1959 (Madras Act I\nof 1959). It was contended for the appellant that the High\nCourt could not itself record a finding of fact after taking\nadditional evidence and there was no express power conferred\nby s. 38 upon the High Court for taking additional evidence. Section 38 of the Madras General Sales Tax Act, 1959 states:\n\"38.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1967_1967_238_P015_C02",
+      "text": "(1) Within ninety days from the date on\n which a copy of the order under sub-section\n (3) of section 36 is served in the manner\n prescribed, any person who objects to such\n order or the Deputy Commissioner may prefer a\n petition to the High Court on the ground that\n the Appellate Tribunal has either decided\n erroneously or failed to decide any question\n of law:\nProvided that the High Court may admit a\n petition preferred after the period of ninety\n days aforesaid if it is satisfied that the\n petitioner had sufficient cause for not\n preferring the petition within the said\n period.\n.................................. (4)(a) If the High Court does not dismiss the\n petition summarily, it shall, after giving\n both the parties to the petition a reasonable\n opportunity of being heard, determine the\n question of law raised and either reverse,\n affirm or amend the order against which the\n petition was preferred or remit the matter to\n the Appellate Tribunal, with the opinion of\n the High Court on the question of law raised\n or pass such order in relation to the matter\n as the High Court thinks fit.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1967_1967_238_P015_C03",
+      "text": "(b) Where the High Court remits the matter\n under clause (a) with its opinion on the\n question of law raised, the Appellate Tribunal\n shall amend the order passed by it in\n conformity with such opinion. (5) Before passing an order under sub-section\n (4), the High Court may, if it considers it\n necessary so to do, remit the petition to the\n Appellate Tribunal, and direct it to return\n the petition with its finding on any specific\n question or issue.\n.......................................",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1967_1967_238_P016_C01",
+      "text": "(8) (a) The petitioner or the respondent may\n apply for review of any order passed by the\n High Court under clause (a) of sub-section (4)\n on the basis of the discovery of new and\n important facts which after the exercise of\n due diligence were not within his knowledge or\n could not be produced by him when the order\n was made. (b) The application for review shall be\n preferred within such time, and in such manner\n as may be prescribed and shall where it is\n preferred by any party other than the Deputy\n Commissioner be accompanied by a fee of one\n hundred rupees.\n.................................... It was argued for the appellant that under S. 38 the High\nCourt was empowered to interfere with the order of the\nAppellate Tribunal only if it bad either decided a question\nof law erroneously or bad failed to decide any question of\nlaw. It was said that in any case the High Court should\nhave remitted the matter to the Appellate Tribunal if it\nconsidered it necessary for the proper disposal of the case\nto take in evidence any additional facts under\nS. 38(5)\nthe Act before passing an order under sub-s. (4) remitting\nthe matter to the Appellate Tribunal on any specific\nquestion or issue.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1967_1967_238_P016_C02",
+      "text": "In our opinion there is considerable\nforce in the argument put forward on behalf of the\nappellant. But we do not wish to, express any concluded\nopinion on this point in the present case. It appears that\nthe appellant did not raise any objection before the High\nCourt when the affidavits were taken into evidence. Having\npreferred no objection before the High Court it is not now\nopen to the appellant to gay that the High Court acted\nillegally in taking those affidavits in evidence. It was\nsubmitted for the respondent that the transactions\nthemselves took place in 1955, nearly 12 years back and\nordinarily accounts of dealings would not be retained beyond\nfive years. Counsel for the respondent referred in this\nconnection to a rule framed under the Madras General Sales\nTax Act. In these circumstances it was hardly worthwhile\nfor the High Court to remand the case for a fresh\ninvestigation. We therefore reject the argument of the\nappellant on this aspect of the case. For the reasons assigned we hold that this appeal has no\nmerit and must be dismissed. In the circumstances of the\ncase we do not propose to make any order as to costs.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1967_1967_238_P016_C03",
+      "text": "Civil Appeals Nov. 539 & 540 of 1966, 717 of 1966, 684 of\n1966, 694 of 1966 and 857 of 1966. The main question to be considered in these appeals is whe-\nther, after the enactment of the Validation Act, Madras\nState had the constitutional power to tax \"Explanation\nsales\" falling under\nArt. 286(1)(a)\nof the Constitution\ni.e., where goods were delivered for consumption outside the\nState and whether the ban under\nArt. 296(1)(a)\nwas an\nindependent ban and whether it could be removed by\nParliamentary legislation under\nArt. 286(2). This question",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1967_1967_238_P017_C01",
+      "text": "has been the subject-matter of consideration in Civil Appeal\nNo. 495 of 1966, and for the reasons given\nin that case\n, we\nhold that the Madras State had no authority to levy sales\ntax on such transactions of sale and the High Court was\nright in holding that the constitutional bar under\nArt.\n286(1)(a)\nwas not lifted by the Validation Act. In Civil appeals Nos. 539 and 540 of 1966 Counsel for the\nappellant took an additional point that the High Court ought\nnot to have called for an affidavit from the respondent\n\"regarding the mode of sale of wool to, the Bangalore\nmerchants\". It was also said that the High Court had no\npower to take that affidavit into evidence and come to a\nfinding that the sales were \"'Explanation sales\" within the\nmeaning of\nArt. 286(1)(a)\nof the Constitution. It, however,\nappears that the appellant did not object to the production\nof the affidavit in the High Court. It must be taken that\nthe objection was waived and it is not now open to the\nappellant to argue that the High Court had no power to take\nthe affidavit into evidence. We accordingly reject the\nargument of the appellant on this point.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1967_1967_238_P017_C02",
+      "text": "In Civil Appeal No. 717 of 1966 it was argued for the appel-\nlant that the High Court erred in assuming that in the\ntransactions in question the goods were delivered for\nconsumption outside the Madras State. It was said that the\ncase should have been remanded by the High Court to the\nAppellate Tribunal for a fresh finding on the point. The\nHigh Court has, however, taken the view that the\ntransactions took place in 1955-56 and ordinarily accounts\nof dealings would not be retained by the assessee beyond\nfive years. The High Court has observed that apart from\nthis the transactions were very large in number, about 4000\nand odd and most of them were for a comparatively small\nvalue. Some of the invoices referred in the assessment\norder show that they were for small amounts in regard to\narticles like paint, aluminium, tar and other articles. In\nthese circumstances the High Court came to the conclusion\nthat the goods were delivered to places outside the Madras\nState for the purpose of consumption in the deliver States. The High Court added that it was hardly worthwhile in these\ncircumstances to direct a remand of the case to the\nAppellate Tribunal for a fresh enquiry.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1967_1967_238_P017_C03",
+      "text": "It is manifest that\nthe finding of the High Court on this point is a finding on\na question of fact and as there is proper material to\nsupport the finding of the High Court it is not possible to\naccept the contention of. the appellant that the finding is\nin any way defective in law. We accordingly reject the\nargument of the appellant on this point. For the reasons expressed we hold that these appeals have no\nmerit and they are accordingly dismissed. In the\ncircumstances of the case we do not propose to make any\norder as to costs except in C ' 'A. 71.7 of 1966, In that\nappeal, the respondent will be entitled to costs as already\nordered on 29th July 1965. V.P.S. Appeals dismissed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    }
+  ],
+  "case_summary": {
+    "case_name": "State Of Madras vs A.Habibur Rehman Sons (With Connected ...",
+    "case_id": "SC_1967_1967_238",
+    "court": "Supreme Court of India",
+    "year": "1967",
+    "facts_summary": "ACT:\nConstitution of India, 1950,\nArt. 286(1)(a)\n, Explanation,\nbefore amendment by the\nConstitution (Sixth Amendment) Act, ; ,Madras General Sales Tax Act (9 of 1939) s.\n2(h),Explanation (2); and\nSales Tax Laws Validation Act\n(7\nof 1956), s. 2-Ban on taxation of inter-State Sales\nlifted--Outside sales, if could be taxed. HEADNOTE:\nUnder Explanation (2) to s. 2(h) of the Madras General Sales\nTax Act, 1939, a sale is deemed to have taken place in that\nState, wherever the contract of sale might have been made,\nif the goods were actually in the State at the time when the\ncontract in respect thereof was made. The Constitution, by\nArt. 286\nas it was originally enacted, imposed four bans\nupon the legislative power of the States to impose sales\ntax. Clause (1)(a) prohibited every State from imposing or\nauthorising the imposition of, a tax on outside sales. Am\noutside sale was defined by defining an inside sale in the\nExplanation to the clause, as a sale which shall be deemed\nto have taken place in the State in which the goods have\nactually been delivered as a direct result of such sale for\nthe purpose of consumption in that State notwithstanding the\nfact that under the general law relating to sale of goods\nthe property in the goods has by reason of such sale passed\nin another State. Clause (1)(b) prohibited the imposition\nof tax on sales in the course of import into or export out\nof, the territory of India.",
+    "legal_issues": "Kartar Singh Suri and E. C. Agrawala, for the respondent (in\nC.A. No. 694 of 1966). Avad Behari, for respondent (in C.A. No. 717 of 1966). G. N. Dikshit for respondent (in C.A. No. 857 of 1966). Civil Appeal No. 495 of 1966\nThe Judgment of the Court was delivered by\nRamaswami, J. This appeal is brought, by special leave,from\nthe judgment of the Madras High Court dated September 23,\n1963, in Tax Case No. 246 of 1962. The respondent who was a Beedi manufacturer in Gudiyattam,\nMadras State was assessed to sales tax on a taxable turnover\nof Rs. 1,73,502/11/10 for the assessment year 1955-56 by the\nDeputy Commercial Tax Officer. Against this order of\nassessment dated February 15, 1957 the respondent appealed\nto the Appellate Assistant Commissioner of Commercial Taxes,\nSalem disputing the inclusion of a sum of Rs. 1, 1 1,299 / -\nand odd on the ground that the said amount represented\neither second purchases or purchases made outside the State\nof Madras. It was contended on behalf of the\nappellant that the sales were taxable by virtue of\nExplanation (2) to s. 2(h) of the Madras General Sales Tax\nAct, 1939 in view of the lifting of the ban on the levy of\ntax on inter-State sales by the\nSales Tax Laws Validation\nAct, 1956\n(Central Act VII of 1956), hereinafter called the\n'Validation Act', and that it was wrongly excluded from the\ntaxable turnover by the taxing authorities. By its order\ndated July 13, 1962 the Appellate Tribunal allowed the\npetition for enhancement and rejected the cont",
+    "ratio_summary": "Beedies, which were within the territory of the\nappellantState at the time the contract of sale in respect\nof them was made were sold to non-resident buyers. On the\nquestion whether the sales during the period from April 1,\n1955 to September 5, 1955 were taxable by virtue of\nExplanation 2 to s. 2(h) of the Madras General Sales Tax\nAct, 1939, in view of the lifting of the ban on the levy of\ntax on inter-State sales by the\nSales Tax Laws Validation\nAct\n, the High Court relying on additional affidavits filed\nbefore it, held 381 Madras under s. 38 of the Madras General Sales Tax Act,\n1959. By its order dated September 23, 1963 the High Court\nheld: (1) that the inclusion of the inter-State purchases\nfrom April 1, 1955 to September 5, 1955 of Rs.\n1,15,406/14/9. was bad as the Appellate Assistant\nCommissioner had no jurisdiction to include that turnover;\n(2) that the turnover of Rs. 3,66,213/12/- included by the\nAppellate Tribunal could not be brought to tax as the\nbeedies, which were the subject of the relevant sales, were\ndelivered outside the State for purposes of consumption and\nas the sales therefore constituted Explanation sales under\nArt. 286(1)\nof the Constitution as it stood prior to the\nSixth Amendment and consequently the Madras State had no\njurisdiction to tax the said sales. Being aggrieved by that\npart of the decision of the Madras High Court on the\nquestion of taxability of the said transactions of inter-\nState sales effected prior to September 6, 1955, the State\nof M",
+    "final_order": "It is manifest that\nthe finding of the High Court on this point is a finding on\na question of fact and as there is proper material to\nsupport the finding of the High Court it is not possible to\naccept the contention of. the appellant that the finding is\nin any way defective in law. We accordingly reject the\nargument of the appellant on this point. For the reasons expressed we hold that these appeals have no\nmerit and they are accordingly dismissed. In the\ncircumstances of the case we do not propose to make any\norder as to costs except in C ' 'A. 71.7 of 1966, In that\nappeal, the respondent will be entitled to costs as already\nordered on 29th July 1965. V.P.S. Appeals dismissed.",
+    "outcome_summary": "It is manifest that\nthe finding of the High Court on this point is a finding on\na question of fact and as there is proper material to\nsupport the finding of the High Court it is not possible to\naccept the contention of. the appellant that the finding is\nin any way defective in law. We accordingly reject the\nargument of the appellant on this point. For the reasons expressed we hold that these appea",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

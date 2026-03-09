@@ -82,9 +82,10 @@ ACT_SELECTION_MAX_ACTS  = 4   # Never take more than 4 even if many qualify
 # If the BEST local section score is below this, the local index doesn't have a
 # confident match — trigger web search regardless of section count.
 # ms-marco logits: 8+ = "exact match" (BNS 115 for assault, TP Act 54 for sale).
-# Scores of 5-7 mean we found the right act but coverage may be incomplete.
-# Since our local index is still growing, 8.0 ensures we supplement with web
-# whenever the local store only has partial or procedure-level coverage.
+# Only trigger web when local result count is low (roadmap: not by score threshold).
+# Score-based trigger caused almost every request to hit the internet.
+WEB_SEARCH_MIN_LOCAL_COUNT = 3  # if len(local_results) < this, allow web search
+# Legacy: kept for logging; no longer used to force web
 WEB_SEARCH_FALLBACK_MIN_SCORE = 8.0
 
 # ---------------------------------------------------------------------------
@@ -226,6 +227,32 @@ def _build_indexing_candidates_from_web_case_laws(case_laws: list) -> list:
             "source_url": url,
             "suggested_category": "case_law",
             "content": content,
+        })
+    return check_indexing_candidates(candidates)
+
+
+def _build_indexing_candidates_from_pending_list(pending_list: list) -> list:
+    """
+    Build indexing_candidates from the pending_indexing_list (web search pending_only path).
+    Each item is {title, source_url, suggested_category}. Dedupes by URL, runs
+    check_indexing_candidates to mark already_in_store.
+    """
+    if not pending_list:
+        return []
+    from services.indexing_duplicate_check import check_indexing_candidates
+
+    seen_urls = set()
+    candidates = []
+    for item in pending_list:
+        url = (item.get("source_url") or "").strip()
+        if not url or not url.startswith(("http://", "https://")) or url in seen_urls:
+            continue
+        seen_urls.add(url)
+        candidates.append({
+            "title": (item.get("title") or "Unknown").strip(),
+            "source_url": url,
+            "suggested_category": (item.get("suggested_category") or "case_law").strip(),
+            "content": item.get("content", ""),
         })
     return check_indexing_candidates(candidates)
 
@@ -484,12 +511,42 @@ Generate ONE short search phrase (5-12 words) suitable for a search engine to fi
 # Query Expansion (reused from v1, improved)
 # ---------------------------------------------------------------------------
 
-def expand_legal_query(facts: str, intent: dict = None) -> str:
-    """Convert plain-language facts to a precise legal research query. If intent is provided (from extract_research_intent), use it to enrich the query dynamically."""
+def expand_legal_query(facts: str, intent: dict = None) -> list[str]:
+    """
+    Convert plain-language facts to 1–3 legal research queries (roadmap: multi-query retrieval).
+
+    Returns a list of up to 3 query strings: base (LLM or facts) + optional synonym variant
+    + optional statute-style variant. Callers run hybrid retrieval per query, merge, dedupe, rerank.
+    """
     from prompts.advocate_prompts import EXPAND_LEGAL_QUERY_SYSTEM, EXPAND_LEGAL_QUERY_INTENT_BLOCK
+
+    # Legal synonym expansion (user phrase → statute-style terms)
+    _SYNONYMS = {
+        "rent": ["rent", "lease payment", "tenancy payment"],
+        "eviction": ["eviction", "recovery of possession"],
+        "threat": ["criminal intimidation", "threat of injury"],
+        "land acquisition": ["compulsory acquisition", "state acquisition"],
+        "tenant": ["tenant", "lessee"],
+        "landlord": ["landlord", "lessor"],
+        "defaulted": ["default in payment"],
+        "not paid": ["default in payment"],
+        "stolen": ["theft"],
+        "cheat": ["cheating", "fraud"],
+    }
+
+    def _add_synonym_variant(text: str) -> str:
+        t = text.lower()
+        for phrase, replacements in _SYNONYMS.items():
+            if phrase in t:
+                for r in replacements:
+                    if r not in t:
+                        return text + " " + r  # append first missing synonym
+        return ""
+
     intent_block = ""
     if intent and isinstance(intent, dict) and (intent.get("states") or intent.get("domains") or intent.get("topics")):
         intent_block = EXPAND_LEGAL_QUERY_INTENT_BLOCK.format(intent_json=json.dumps(intent, indent=0))
+
     prompt = f"""{EXPAND_LEGAL_QUERY_SYSTEM}
 {intent_block}
 
@@ -497,11 +554,28 @@ FACTS:
 {facts[:2000]}
 
 Query:"""
+    queries = []
     try:
-        result = ask_llm(prompt).strip()[:500]
-        return result or facts[:300]
+        base = ask_llm(prompt).strip()[:500]
+        if base:
+            queries.append(base)
     except Exception:
-        return facts[:300]
+        pass
+    if not queries:
+        queries.append(facts[:300])
+
+    # Variant 2: synonym-expanded
+    syn = _add_synonym_variant(queries[0])
+    if syn and syn not in [q.lower() for q in queries]:
+        queries.append(syn[:500])
+
+    # Variant 3: statute-style (e.g. "default in payment of rent" if "rent not paid")
+    if len(queries) < 3 and "default" not in queries[0].lower() and ("rent" in queries[0].lower() or "payment" in queries[0].lower()):
+        statute_style = queries[0].replace("not paid", "default in payment").replace("did not pay", "default in payment")
+        if statute_style != queries[0] and statute_style not in [q.lower() for q in queries]:
+            queries.append(statute_style[:500])
+
+    return queries[:3]
 
 
 # ---------------------------------------------------------------------------
@@ -677,6 +751,7 @@ def _build_bare_act_queries(dispute: dict) -> list[str]:
     keywords = dispute.get("keywords", [])
     search_angles = dispute.get("search_angles", [])   # from decomposition prompt
     bare_act_hints = dispute.get("bare_act_hints", []) # act names from decomposition
+    legal_concepts = dispute.get("legal_concepts", []) # for structured statute/concept queries
 
     queries: list[str] = []
     seen: set[str] = set()
@@ -687,6 +762,11 @@ def _build_bare_act_queries(dispute: dict) -> list[str]:
         if q and norm not in seen:
             seen.add(norm)
             queries.append(q)
+
+    # Q0: legal concepts (structured lookup — concept terms as queries, e.g. "criminal intimidation")
+    for c in legal_concepts[:2]:
+        if c and isinstance(c, str):
+            _add(c.strip())
 
     # Q1: full dispute + keywords (broadest, catches anything related)
     # Use only the user's own language — no LLM-knowledge BNS/IPC enrichment
@@ -728,7 +808,8 @@ def _build_bare_act_queries(dispute: dict) -> list[str]:
         except Exception as e:
             logger.debug("Bare act LLM query gen failed: %s", e)
 
-    return queries
+    # Cap at 3 queries for Tier 1 fast path (roadmap: max_queries = 3)
+    return queries[:3]
 
 
 # Matches cross-references that are WITHIN the same act
@@ -828,7 +909,7 @@ def _fetch_cross_referenced_sections(
     return results
 
 
-def _web_search_bare_acts(dispute: dict, full_query: str, round1_queries: list = None, states: list = None) -> list:
+def _web_search_bare_acts(dispute: dict, full_query: str, round1_queries: list = None, states: list = None, pending_indexing_list: list = None) -> list:
     """
     Web search for bare acts targeting one dispute component.
     Runs up to 3 targeted queries instead of one generic one.
@@ -991,67 +1072,24 @@ def _web_search_bare_acts(dispute: dict, full_query: str, round1_queries: list =
             local_high_quality_count=0,
             target_high_quality=0,
             skip_index=True,
+            pending_only=True,
         )
     except Exception as e:
         logger.error("Web search bare acts failed for dispute '%s': %s", dispute_text[:60], e)
         return []
 
-    # Run each fetched document through chunk_bare_act() to extract section-level chunks
-    # with proper act_name / section_number / section_title metadata.
-    # Previously we returned flat document dicts with section_number="" which caused
-    # _is_quality_bare_act() to silently drop all web results.
-    from Ingestion.smart_chunker import chunk_bare_act
-
-    results = []
-    for enriched in enrichment.get("enriched_bare_acts", []):
-        content = enriched.get("content", "").strip()
-        if not content or len(content) < 100:
-            continue
-
-        doc_title = enriched.get("title", "")
-        doc_url   = enriched.get("url", "")
-        doc_tag   = enriched.get("source_tag", "WEB")
-        doc_score = float(enriched.get("_rerank_score", MIN_RERANK_SCORE))
-
-        # Attempt section-level chunking
-        try:
-            chunks = chunk_bare_act(content, doc_title)
-        except Exception as _ce:
-            logger.debug("chunk_bare_act failed for '%s': %s", doc_title[:40], _ce)
-            chunks = []
-
-        if not chunks:
-            # Chunker found no section patterns — treat whole doc as one synthetic chunk
-            # so at least the act-level content is surfaced.
-            act_guess = doc_title or "Unknown Act"
-            chunks = [{
-                "act_name": act_guess,
-                "section_number": "1",       # synthetic — lets quality filter pass
-                "section_title": "",
-                "full_text": content[:2000],
-                "search_text": content[:500],
-                "source": doc_title,
-            }]
-
-        for chunk in chunks:
-            if not _is_quality_bare_act(chunk):
-                continue
-            # Assign URL, source tag, and propagate doc-level score so section caps keep the best-matching Acts.
-            # If chunk already has a more specific score, keep it; otherwise inherit from parent document.
-            if "_rerank_score" not in chunk:
-                chunk["_rerank_score"] = doc_score
-            chunk["source_tag"]   = doc_tag
-            chunk["url"]          = doc_url
-            chunk["_web_sourced"] = True   # signals UI to show "Add to local index" option
-            results.append(chunk)
-
-    # Keep only top N sections by score so we don't flood the UI with every section from every act.
-    results = _cap_bare_acts_by_score(results, MAX_WEB_SECTIONS_PER_DISPUTE)
-    logger.info(
-        "Web bare acts for dispute '%s': %d section chunks from %d docs (%d queries)",
-        dispute_text[:60], len(results), len(enrichment.get("enriched_bare_acts", [])), len(web_gaps),
-    )
-    return results
+    # pending_only: no fetch — enriched items have content="". Append to pending for UI; return no web sections.
+    if pending_indexing_list is not None:
+        for enriched in enrichment.get("enriched_bare_acts", []):
+            url = (enriched.get("url") or "").strip()
+            if url and url.startswith(("http://", "https://")):
+                pending_indexing_list.append({
+                    "title": (enriched.get("title") or "Unknown").strip(),
+                    "source_url": url,
+                    "suggested_category": "bare_act",
+                })
+    # No content to chunk — do not run fetch/chunk path; return [] so answer uses local-only.
+    return []
 
 
 def _filter_bare_acts_with_llm(dispute: dict, bare_acts: list, debug: dict | None = None) -> list:
@@ -1261,7 +1299,7 @@ def _filter_case_laws_with_llm(dispute: dict, bare_act_sections: list, case_laws
         return case_laws
 
 
-def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list = None, debug: dict | None = None) -> list:
+def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list = None, debug: dict | None = None, pending_indexing_list: list = None) -> list:
     """
     Retrieve ALL relevant bare act sections for a single dispute component.
 
@@ -1308,6 +1346,20 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
     # The profile BM25 is fast (no GPU, < 50ms), defaults: top_k=3, min_score=0.15.
     act_query = dispute_text.strip()
     allowed_acts = identify_relevant_acts(act_query)
+    # Structured statute lookup: legal_concepts → act names (concept index)
+    legal_concepts = dispute.get("legal_concepts") or []
+    if legal_concepts:
+        try:
+            from retrieval.statute_concept_index import get_act_names_for_concepts
+            concept_acts = get_act_names_for_concepts(legal_concepts)
+            if concept_acts:
+                allowed_acts = (allowed_acts or frozenset()) | concept_acts
+                logger.info(
+                    "[%s] Statute concept lookup: %s → acts %s",
+                    dispute_id, legal_concepts[:5], sorted(concept_acts),
+                )
+        except Exception as e:
+            logger.debug("Statute concept index lookup failed: %s", e)
     if allowed_acts:
         logger.info(
             "[%s] Act-first profile match: %d acts identified → %s",
@@ -1456,18 +1508,14 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
     _AUTO_STOP_COUNT = 3   # ≥ 3 HQ sections (score > 2.0) → skip LLM and web search entirely
     _AUTO_STOP_VOLUME = 5  # ≥ 5 any-score sections → stop (matches MAX_SECTIONS_PER_DISPUTE_TOTAL)
 
-    # Score-based web search gate:
-    # If no local section clears WEB_SEARCH_FALLBACK_MIN_SCORE (8.0), the index doesn't
-    # have a confident match — skip all auto-stop tiers and go straight to web search.
-    # Scores 5-7 mean we found the right act category but likely only procedure/definition
-    # sections, not the exact substantive provision (e.g. BNSS procedure sections scoring 6
-    # for an assault query, while BNS substantive section is missing entirely).
+    # Web search gate: only when local result count is low (roadmap: not by score).
+    # If we have at least WEB_SEARCH_MIN_LOCAL_COUNT sections, do not force web.
     max_local_score = max((ba.get("_rerank_score", 0) for ba in local_results), default=0.0)
-    force_web = (max_local_score < WEB_SEARCH_FALLBACK_MIN_SCORE)
+    force_web = (len(local_results) < WEB_SEARCH_MIN_LOCAL_COUNT)
     if force_web:
         logger.info(
-            "[%s] Best local score %.2f < %.1f threshold — forcing web search regardless of section count.",
-            dispute_id, max_local_score, WEB_SEARCH_FALLBACK_MIN_SCORE,
+            "[%s] Local sections %d < %d — allowing web search (best score %.2f).",
+            dispute_id, len(local_results), WEB_SEARCH_MIN_LOCAL_COUNT, max_local_score,
         )
     else:
         if len(high_quality_local) >= _AUTO_STOP_COUNT:
@@ -1510,7 +1558,7 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
     # Pass `queries` so the web search can reuse the focused Round 1 queries
     # (including LLM-generated ones) instead of falling back to raw dispute text.
     # Pass `states` so web search covers both central/Union acts AND state-specific acts.
-    web_results = _web_search_bare_acts(dispute, full_query, round1_queries=queries, states=states or [])
+    web_results = _web_search_bare_acts(dispute, full_query, round1_queries=queries, states=states or [], pending_indexing_list=pending_indexing_list)
 
     merged = _merge_deduplicate_bare_acts(local_results, web_results)
     merged = _filter_bare_acts_with_llm(dispute, merged, debug)
@@ -1559,10 +1607,11 @@ def _apply_dispute_case_law_limit(case_laws: list) -> list:
     return sorted_cls[:2]
 
 
-def _web_search_case_laws(dispute: dict, bare_act_sections: list, full_query: str, states: list = None) -> list:
+def _web_search_case_laws(dispute: dict, bare_act_sections: list, full_query: str, states: list = None, pending_indexing_list: list = None) -> list:
     """
     Web search for case laws for one dispute, using the richer dispute+sections query.
-    Returns list of case-law-like dicts.
+    Uses pending_only enrichment: no fetch in-request; results go to pending_indexing_list for UI.
+    Returns [] so answer is local-only; indexing happens when user runs Pending indexing.
     """
     from retrieval.tiered_search import search_for_gaps
     from retrieval.auto_enricher import enrich_from_gap_results
@@ -1581,49 +1630,44 @@ def _web_search_case_laws(dispute: dict, bare_act_sections: list, full_query: st
             local_high_quality_count=0,
             target_high_quality=TARGET_HIGH_QUALITY_CASE_LAWS,
             skip_index=True,
+            pending_only=True,
         )
     except Exception as e:
         logger.error("Web search case laws failed for dispute '%s': %s", dispute_text[:60], e)
         return []
 
-    results = []
-    for enriched in enrichment.get("enriched_case_laws", []):
-        content = enriched.get("content", "").strip()
-        score = float(enriched.get("_rerank_score", 0))
-        if not content or score < WEB_MIN_SCORE:
-            continue
-        results.append({
-            "case_name": enriched.get("title", "Unknown"),
-            "court": "",
-            "year": "",
-            "text": content[:2000],
-            "full_text": content[:2000],
-            "source_tag": enriched.get("source_tag", "LEGAL_PORTAL"),
-            "url": enriched.get("url", ""),
-            "_rerank_score": score,
-        })
+    # pending_only: no fetch — append to pending for UI; return [] so answer uses local-only.
+    if pending_indexing_list is not None:
+        for enriched in enrichment.get("enriched_case_laws", []):
+            url = (enriched.get("url") or "").strip()
+            if url and url.startswith(("http://", "https://")):
+                pending_indexing_list.append({
+                    "title": (enriched.get("title") or "Unknown").strip(),
+                    "source_url": url,
+                    "suggested_category": "case_law",
+                })
     logger.info(
-        "[%s] Web case laws for dispute '%s': %d results", dispute_id, dispute_text[:60], len(results)
+        "[%s] Web case laws (pending_only): %d candidates for Pending indexing UI (no fetch).",
+        dispute_id, len(enrichment.get("enriched_case_laws", [])),
     )
-    return results
+    return []
 
 
-def retrieve_case_laws_for_dispute(dispute: dict, bare_act_sections: list, full_query: str, states: list = None, debug: dict | None = None) -> list:
+def retrieve_case_laws_for_dispute(dispute: dict, bare_act_sections: list, full_query: str, states: list = None, debug: dict | None = None, pending_indexing_list: list = None) -> list:
     """
     Retrieve case laws for a single dispute component.
 
-    Query is built from dispute + act names + section numbers (graceful degradation
-    to dispute-only if bare act metadata is missing).
+    Statute-anchored retrieval: in addition to a dispute-based query, run case-law
+    search on statute-anchored queries (e.g. "Section 10 ActName case law interpretation")
+    so cases that interpret the retrieved provisions rank higher.
 
     Round 1 — local hybrid search:
-        → quality filter
-        → apply threshold limit (top 5 if high-quality, else top 2)
+        Queries: (1) dispute + sections, (2–3) per top section "Section X ActName case law".
+        Merge by chunk key, keep best score, quality filter, limit.
         → if already at 5 → STOP
 
     Round 2 — tiered web search (case laws only):
-        → merge with local, deduplicate
-        → re-apply threshold limit
-        → STOP (hard ceiling)
+        → merge with local, deduplicate, re-apply limit.
     """
     from retrieval.hybrid_retriever import search_case_laws_auto
 
@@ -1632,11 +1676,30 @@ def retrieve_case_laws_for_dispute(dispute: dict, bare_act_sections: list, full_
     debug_entry = None
     if debug is not None:
         debug_entry = debug.setdefault(dispute_id, {})
-    search_query = _build_case_law_query(dispute_text, bare_act_sections)
 
-    # --- Round 1: local ---
-    logger.info("[%s] Case laws Round 1 — local hybrid search: '%s'", dispute_id, search_query[:80])
-    local_raw = search_case_laws_auto(search_query, top_k=50)
+    # Build queries: dispute+sections + statute-anchored (roadmap: cases interpreting those sections)
+    queries = [_build_case_law_query(dispute_text, bare_act_sections)]
+    for ba in bare_act_sections[:2]:  # top 2 sections
+        act = (ba.get("act_name") or "").strip()
+        sec = (ba.get("section_number") or "").strip()
+        if act and sec:
+            queries.append(f"Section {sec} {act} case law interpretation")
+    queries = list(dict.fromkeys(queries))[:3]  # dedupe, cap 3
+
+    # --- Round 1: local (multi-query merge) ---
+    seen_chunk_keys = {}
+    for search_query in queries:
+        logger.debug("[%s] Case law query: '%s'", dispute_id, search_query[:80])
+        local_raw = search_case_laws_auto(search_query, top_k=20)
+        for cl in local_raw:
+            key = cl.get("_chunk_key") or (
+                (cl.get("case_name") or "").lower() + "|" + (cl.get("paragraph_num") or cl.get("full_text", "")[:100])
+            )
+            prev_score = (seen_chunk_keys.get(key) or {}).get("_rerank_score", -999)
+            if (cl.get("_rerank_score", 0) > prev_score):
+                seen_chunk_keys[key] = cl
+
+    local_raw = list(seen_chunk_keys.values())
     local_results = [
         cl for cl in local_raw
         if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)
@@ -1652,7 +1715,7 @@ def retrieve_case_laws_for_dispute(dispute: dict, bare_act_sections: list, full_
 
     # --- Round 2: web search ---
     logger.info("[%s] Case laws Round 2 — web search (local had %d)", dispute_id, len(limited))
-    web_results = _web_search_case_laws(dispute, bare_act_sections, full_query, states=states)
+    web_results = _web_search_case_laws(dispute, bare_act_sections, full_query, states=states, pending_indexing_list=pending_indexing_list)
 
     # Merge, deduplicate, re-apply numeric filter, then LLM relevance filter + per-dispute limit
     merged = _merge_deduplicate_case_laws(local_results, web_results)
@@ -1832,7 +1895,7 @@ def _link_case_laws_to_sections(bare_acts: list, case_laws: list) -> list:
     return result
 
 
-def retrieve_bare_acts_phase(facts_summary: str, progress_callback=None, states: list = None) -> dict:
+def retrieve_bare_acts_phase(facts_summary: str, progress_callback=None, states: list = None, pending_indexing_list: list = None) -> dict:
     """
     Phase A of the new two-phase flow.
     1. Decompose disputes.
@@ -1866,7 +1929,7 @@ def retrieve_bare_acts_phase(facts_summary: str, progress_callback=None, states:
     _states = states or []
 
     def _fetch_for_dispute(d):
-        sections = retrieve_bare_acts_for_dispute(d, facts_summary, states=_states)
+        sections = retrieve_bare_acts_for_dispute(d, facts_summary, states=_states, pending_indexing_list=pending_indexing_list)
         for s in sections:
             # setdefault: first dispute tag wins if a section appears in multiple disputes
             s.setdefault("_dispute_id", d["id"])
@@ -1936,6 +1999,7 @@ def generate_final_opinion_with_case_laws(
     additional_info: str = "",
     progress_callback=None,
     states: list = None,
+    pending_indexing_list: list = None,
 ) -> dict:
     """
     Phase B of the new two-phase flow.
@@ -1988,9 +2052,10 @@ def generate_final_opinion_with_case_laws(
 
     # --- Retrieve case laws per dispute group in parallel ---
     _states = states or []
+    _pending = pending_indexing_list if pending_indexing_list is not None else []
 
     def _fetch_case_laws_for_group(grp):
-        cls = retrieve_case_laws_for_dispute(grp, grp["sections"], full_facts, states=_states)
+        cls = retrieve_case_laws_for_dispute(grp, grp["sections"], full_facts, states=_states, pending_indexing_list=_pending)
         return grp["id"], cls
 
     all_case_laws: list = []
@@ -2079,13 +2144,8 @@ def generate_final_opinion_with_case_laws(
         logger.error("generate_final_opinion_with_case_laws: opinion LLM failed: %s", e)
         opinion_text = "I was unable to generate a structured opinion at this time. Please try again."
 
-    # Collect web case laws for indexing proposals
-    web_case_laws = []
-    for ba in all_bare_acts_with_cases:
-        for cl in ba.get("related_case_laws", []):
-            if cl.get("url") or cl.get("source_url"):
-                web_case_laws.append(cl)
-    indexing_candidates = _build_indexing_candidates_from_web_case_laws(web_case_laws)
+    # Indexing candidates from pending_only web search (bare acts + case laws) for Pending indexing UI.
+    indexing_candidates = _build_indexing_candidates_from_pending_list(pending_indexing_list or [])
 
     return {
         "bare_act_sections": all_bare_acts_with_cases,
@@ -2159,9 +2219,10 @@ def generate_response_v2(
     except Exception as e:
         logger.debug("Intent extraction skipped: %s", e)
 
-    # Step 1: Query expansion
-    legal_query = expand_legal_query(facts_summary, intent=research_intent)
-    logger.info("Expanded query: %s", legal_query[:200])
+    # Step 1: Query expansion (returns 1–3 queries for multi-query retrieval)
+    legal_queries = expand_legal_query(facts_summary, intent=research_intent)
+    legal_query = legal_queries[0] if legal_queries else facts_summary[:300]
+    logger.info("Expanded query(s): %s", legal_query[:200] if legal_query else "none")
 
     # What to retrieve (acts vs case laws vs both)
     retrieve_acts = (
@@ -2203,6 +2264,8 @@ def generate_response_v2(
     _states = [jurisdiction_state] if (jurisdiction_state or "").strip() else []
 
     # Step 3: Per-dispute retrieval
+    # Web search uses pending_only: no fetch in-request; URLs go here for Pending indexing UI.
+    pending_indexing_list = []
     dispute_results = []
     debug_pipeline = {
         "disputes": disputes,
@@ -2226,7 +2289,7 @@ def generate_response_v2(
             _emit_progress()
 
             if search_strategy == "web_only":
-                bare_d = _web_search_bare_acts(dispute, facts_summary, states=_states)
+                bare_d = _web_search_bare_acts(dispute, facts_summary, states=_states, pending_indexing_list=pending_indexing_list)
                 bare_d = [
                     ba for ba in bare_d
                     if ba.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_bare_act(ba)
@@ -2246,6 +2309,7 @@ def generate_response_v2(
                     facts_summary,
                     states=_states,
                     debug=debug_pipeline["per_dispute"],
+                    pending_indexing_list=pending_indexing_list,
                 )
 
             progress.add_step(
@@ -2261,7 +2325,7 @@ def generate_response_v2(
             _emit_progress()
 
             if search_strategy == "web_only":
-                raw_cl = _web_search_case_laws(dispute, bare_d, facts_summary, states=_states)
+                raw_cl = _web_search_case_laws(dispute, bare_d, facts_summary, states=_states, pending_indexing_list=pending_indexing_list)
                 case_d = _apply_dispute_case_law_limit([
                     cl for cl in raw_cl
                     if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)
@@ -2281,6 +2345,7 @@ def generate_response_v2(
                     facts_summary,
                     states=_states,
                     debug=debug_pipeline["per_dispute"],
+                    pending_indexing_list=pending_indexing_list,
                 )
 
             progress.add_step(
@@ -2405,8 +2470,8 @@ def generate_response_v2(
         for cl in ba.get("related_case_laws", []):
             sources_used.add(cl.get("source_tag", "LOCAL_DB"))
 
-    # Collect web case laws for indexing proposals (from raw case laws before formatting)
-    indexing_candidates = _build_indexing_candidates_from_web_case_laws(all_case_raw)
+    # Indexing candidates: from pending_only web search (no fetch in-request; user indexes via UI).
+    indexing_candidates = _build_indexing_candidates_from_pending_list(pending_indexing_list)
 
     # Finish the main research/opinion group
     progress.finish_group()

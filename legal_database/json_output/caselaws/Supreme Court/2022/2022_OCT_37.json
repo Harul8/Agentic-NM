@@ -1,0 +1,1026 @@
+{
+  "case_id": "SC_2022_2022_OCT_37",
+  "case_name": "Bses Rajdhani Power Ltd. vs Delhi Electricity Regulatory ...",
+  "normalized_case_name": "BSES_RAJDHANI_POWER_LTD._VS_DELHI_ELECTRICITY_REGULATORY_...",
+  "court": "Supreme Court of India",
+  "year": "2022",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "18 October 2022",
+  "judges": [
+    "Krishna Murari",
+    "S. Abdul Nazeer"
+  ],
+  "author": "S. Abdul Nazeer",
+  "bench_type": "division",
+  "petitioner": "Bses Rajdhani Power Ltd.",
+  "respondent": "Delhi Electricity Regulatory ...",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 23,
+  "cited_by_count": 4,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2022\\OCT\\2022_OCT_37.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2022_2022_OCT_37_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n CIVIL APPEAL NO(S). 4324 OF 2015\n\n BSES RAJDHANI POWER LTD. …APPELLANT(S)\n\n VERSUS\n DELHI ELECTRICITY\n REGULATORY COMMISSION …RESPONDENT(S)\n\n WITH\n\n CIVIL APPEAL NO(S). 4323 OF 2015\n\n BSES YAMUNA POWER LTD. …APPELLANT(S)\n\n VERSUS\n DELHI ELECTRICITY\n REGULATORY COMMISSION …RESPONDENT(S)\n\n JUDGMENT\nS. ABDUL NAZEER, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2022_2022_OCT_37_P002_C01",
+      "text": "1. certain findings of the Appellate Tribunal for Electricity, New Delhi\n\n(‘APTEL’) in the common judgment and order dated 28.11.2014\n\n(‘Impugned Order’) passed in Appeal Nos.61 and 62 of 2012 (‘Tariff\n\nAppeals’). The Tariff Appeals were filed by the appellants before the\n\nAPTEL challenging certain findings of the Delhi Electricity\n\nRegulatory Commission (‘DERC’) in the Tariff Order dated\n\n26.08.2012 for Truing Up of financials for FY 2008­09 and FY\n\n2009­10 and Aggregate Revenue Requirement (‘ARR’) for FY 2011­",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_2022_OCT_37_P003_C01",
+      "text": "12. DERC has also filed appeals (C.A. Nos.8660­61 of 2015)\n\nchallenging certain findings in the common impugned order and the\n\nsaid appeals will be heard and decided separately.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_2022_OCT_37_P004_C01",
+      "text": "2. The Appellants are Distribution Licensees (“Discoms”) in terms\n\nSection 2(17)\nof the Electricity Act, 2003 (‘2003 Act’). The primary\n\nfunction of a Discom is to give supply to any premises upon an\n\napplication being made by a consumer in compliance with the\n\napplicable laws, including paying requisite charges, except where\n\nprevented by force majeure conditions like cyclones or floods.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2022_2022_OCT_37_P005_C01",
+      "text": "3. The Appellants purchase 90% to 95% of the power from\n\nCentral and State Generating Companies. Tariff of Central\n\nGenerating Stations is determined by the Central Electricity\n\nRegulatory Commission (‘CERC’) and, therefore, the Appellants have\n\nno control over the tariff to be paid to the Central Generating\n\nStations. Simultaneously, the tariff for the State Generating\n\nCompanies is determined by the State Regulator i.e. DERC.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2022_2022_OCT_37_P006_C01",
+      "text": "4. It is the case of the Appellants that since privatization, the\n\nARR determined by the DERC was not even sufficient to meet the\n\nactual power purchase cost which has led to creation of a huge\n\nrevenue gap. It is also contended that the DERC in repeated\n\ndisregard to its statutory regulations and its own statutory advice\n\nhas refused to make periodic increase in the tariff rate. The actions\n\nof the DERC have resulted in a situation where the Appellants are\n\ndeeply indebted and have been forced to borrow/take loans to fund\n\ntheir day­to­day operations which, in turn, have also dried up\n\nleaving the Appellants without adequate monies to pay their\n\nsuppliers.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_2022_OCT_37_P007_C01",
+      "text": "5. The Appellants have challenged the finding of the APTEL in the\n\nImpugned Order on the following issues:\nA. Change in methodology in computation of Aggregate\n Technical and Commercial (AT&C) losses [Issue 14\n in Impugned Order]\n B. Change in methodology for computation of\n Depreciation [Issue 15 in Impugned Order]\n C. Disallowance of salary for Fundamental Rules and\n Supplementary Rules (FR/SR) structure [Issue 23 in\n Impugned order]\n D. Disallowance of interest accrued on Consumer\n Security Deposit retained by Delhi Power\n Corporation Limited (DPCL) [Issue 29 in Impugned\n Order]\n E. Disallowance of Fringe Benefit Tax [Issue 34 in\n Impugned Order]\n F. Reduction in Million Units (MUs) in relation to\n Enforcement sale for the purpose of calculation of\n AT&C Loss [Issue 14 in Impugned Order]",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2022_2022_OCT_37_P008_C01",
+      "text": "6. It is to be noticed that the above­mentioned Issue ‘C’ has been\n\nchallenged only by BSES Rajdhani Power Ltd. in C.A. No.4324 of\n\n2015 while the remaining issues have been challenged by both\n\nBSES Rajdhani Power Ltd. and BSES Yamuna Power Ltd. and are\n\nsubject­matter of C.A. No.4324 of 2015 and C.A.No.4323 of 2015.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_2022_OCT_37_P009_C01",
+      "text": "7. The Tariff Appeals were filed by the Appellants challenging the\n\ndisallowances in their respective Tariff Orders dated 26.08.2012\n\npassed by the DERC for:\n(a) Determination of ARR and Tariff for FY 2011­12;\nand\n(b) Truing up of financials for FY 2008­09 and FY 2009­",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2022_2022_OCT_37_P010_C01",
+      "text": "8. According to the appellants, the present Civil Appeals give rise\n\nto substantial questions of law under\nSection 125\nof the 2003 Act\n\non six issues. It is contended that the said substantial questions of\n\nlaw have arisen primarily because the DERC has, inter alia,\n\ndeliberately refused to follow statutory regulations while truing up.\n\nFurther, it is contended that APTEL’s Impugned Order has failed to\n\nnote the illegal manner of truing up followed by DERC and, more\n\nimportantly, APTEL has failed to follow its own rulings in previous\n\ncases.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_2022_OCT_37_P011_C01",
+      "text": "9. However, the respondents have contended that the appellants\n\nhave entirely failed to establish the existence of any substantial\n\nquestion of law as required under\nSection 125\nof the 2003 Act, read\n\nwith\nSection 100\nof the Code of Civil Procedure, 1908 (‘\nCPC\n’) on any\n\nof the above issues.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2022_2022_OCT_37_P012_C01",
+      "text": "10. Before considering the detailed submissions on each of the\n\nabove issues, it is necessary to provide an overview of the current\n\nand historical legal framework of electricity laws in India, including\n\nthe tariff determination process, and the role and powers of the\n\nDERC in the tariff determination process.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2022_2022_OCT_37_P013_C01",
+      "text": "11. Prior to independence, the\nIndian Electricity Act, 1910\n(‘1910\n\nAct’) governed the supply and use of electrical energy in India. Part­\n\nII of the 1910 Act was related to supply of electricity and contained\n\nprovisions concerning:\n(a) Grant of license for supply of electricity by the State\n Government in consultation with the State Electricity\n Boards (“SEB”) and\n(b) Obligation and rights of licensees, consumers, etc.\n along with other modalities.\n\nPart­III of the 1910 Act dealt with Supply, Transmission and Use of\n\nEnergy by Non­licensees. Part­IV of the 1910 Act provided for\n\nconstitution, duties of advisory boards at the State and Central\n\nlevels along with other authorities such as electrical inspectors and\n\nCentral Electricity Board (“CEB”). CEB, under\nSection 37\nof the\n\n1910 Act, was empowered to make rules to regulate the generation,\n\ntransmission, supply, and use of energy.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2022_2022_OCT_37_P014_C01",
+      "text": "12. On 10.09.1948, the\nElectricity (Supply) Act, 1948\n(“\nSupply Act,\n\n”) was notified to provide for: (a) the rationalization of the\n\nproduction and supply of electricity, (b) taking of measures\n\nconducive to electrical development; and (c) all matters incidental to\n\nthe above.\nThe Supply Act, 1948\nwas a more detailed and\n\ncomprehensive code and provided for establishment of SEBs to\n\ncontrol generation, distribution, and utilization of electricity within\n\ntheir respective states and the Central Electricity Authority (‘CEA’)\n\nfor planning and development of the national power system.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2022_2022_OCT_37_P015_C01",
+      "text": "13. On 02.07.1998, the\nElectricity Regulatory Commissions Act,\n\n(‘\nCommissions Act, 1998\n’) was notified with effect from\n\n25.04.1998 as an Act to provide for the establishment of a Central\n\nElectricity Regulatory Commission (“CERC”) and State Electricity\n\nRegulatory Commission (“SERC”), for rationalization of electricity\n\ntariff, transparent policies regarding subsidies, promotion of\n\nefficient and environmentally benign policies and other matters\n\nconnected therewith or incidental thereto. Chapter­VI of the\n\nCommissions Act, 1998 was related to energy tariff and provided for\n\nthe determination of tariff by Central and State Commissions.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2022_2022_OCT_37_P016_C01",
+      "text": "14. Insofar as the National Capital Territory (“NCT”) of Delhi is\n\nconcerned, on 08.03.2001, the Delhi Electricity Reforms Act, 2000\n\n(“Reforms Act, 2000”) was notified to:\n(a) provide re­structuring of the electricity industry\n (unbundling of generation, transmission, and\n distribution),\n(b) increasing avenues for participation of private sector\n in the electricity industry; and\n(c) generally, for taking measures conducive to the\n development and management of the electricity\n industry in an efficient, commercial, economic, and\n competitive manner in the NCT of Delhi and for\n matters connected therewith or incidental thereto.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2022_2022_OCT_37_P017_C01",
+      "text": "15. With effect from 01.07.2002, pursuant to the unbundling,\n\nrestructuring and reform of the erstwhile Delhi Vidyut Board\n\n(“DVB”) and privatization of distribution of electricity, the appellants\n\nsucceeded to the respective Distribution Undertakings and\n\nBusiness in their area of supply. The appellants have been granted\n\nDistribution and Retail Supply License by DERC to undertake\n\ndistribution (wheeling) and retail supply of electricity in their\n\nrespective areas of supply in the NCT of Delhi. From 01.07.2002 till\n\n31.03.2007, the Delhi Transco Ltd. (“DTL”) was entrusted with the\n\nresponsibility of bulk procurement and bulk supply of power in the\n\nNCT of Delhi.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2022_2022_OCT_37_P018_C01",
+      "text": "16. In the year 2003, the Parliament repealed the previous three\n\nlaws viz., the 1910\nAct, the Supply Act, 1948\nand the\nCommissions\n\nAct, 1998\n, and enacted a comprehensive consolidated law called the\nElectricity Act, 2003\n. The objectives of the Act are:­\n(a) to consolidate the laws relating to generation, transmission,\n distribution, trading and use of electricity,\n(b) taking measures conducive to development of\n electricity industry, promoting competition therein,\n\nprotecting interest of consumers and supply of electricity\n to all areas,\n(c) rationalization of electricity tariff, ensuring\n transparent policies regarding subsidies, promotion of\n efficient and environmentally benign policies,\n(d) constitution of the CEA, Electricity Regulatory\n Commissions, and establishment of an Appellate\n Tribunal and for matters connected therewith or\n incidental thereto.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2022_2022_OCT_37_P019_C01",
+      "text": "17. The scheme of the 2003 Act is predicated on consolidating all\n\nlaws governing electricity and repealing the existing laws. The\n\nlegislative policy of distancing the Government from the tariff\n\ndetermination was carried forward in the 2003 Act. The intent and\n\npurpose of the 2003 Act is to liberalize the electricity sector and to\n\nensure that the distribution and supply of electricity is conducted\n\non commercial principles. The legislature intended to promote\n\nfactors that encourage and reward efficiency, competition,\n\neconomical use of resources and optimum investments and\n\nsafeguard the interest of the consumers vis­à­vis recovery of cost of\n\nelectricity in a reasonable manner as envisaged under\nSection 61\n\nthe 2003 Act.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2022_2022_OCT_37_P020_C01",
+      "text": "18. Being regulated licensees responsible for distribution and\n\nretail supply of electricity in their designated areas within the NCT\n\nof Delhi in terms of\nSection 12\nof 2003 Act, the annual revenue\n\nrequirement of the Appellants to conduct the licensed business and\n\nconsequently the tariff to be recovered from the consumers, is\n\nregulated by the DERC, being the State Electricity Regulatory\n\nCommission. DERC is vested with a substantial set of divergent\n\npowers – legislative, executive, adjudicatory and advisory – each\n\nbeing distinctly defined and governed by law. One of the critical\n\nissues arising in these Civil Appeals relates to sanctity of each such\n\nfunction and their interplay. In this regard, it is noteworthy that\nSection 3\nof the 2003 Act provides as under:\n“\nSection 3\n. National Electricity Policy and Plan. ­\n (1) The Central Government shall, from time to time,\n prepare the National Electricity Policy and tariff policy,\n in consultation with the State Governments and the\n Authority for development of the power system based\n on optimal utilisation of resources such as coal,\n natural gas, nuclear substances or materials, hydro\n and renewable sources of energy.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2022_2022_OCT_37_P020_C02",
+      "text": "(2) The Central Government shall publish National\n electricity Policy and tariff policy from time to time. (3) The Central Government may, from time to time in\n consultation with the State Governments, and the\n\nAuthority review or revise the National Electricity\n Policy and tariff policy referred to in sub­section (1). (4)The Authority shall prepare a National Electricity Plan\n in accordance with the National Electricity Policy and\n notify such plan once in five years. Provided xxx xxx xxx\n\n (5)The Authority may review or revise the National\n Electricity Plan in accordance with the National\n Electricity Policy.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2022_2022_OCT_37_P021_C01",
+      "text": "19. Section 14\nof the 2003 Act provides for grant of licences on\n\napplication made under\nSection 15\nof the Act ­ (a) to transmit\n\nelectricity as a transmission licensee; or (b) to distribute electricity\n\nas a distribution licensee; or (c) to undertake trading in electricity\n\nas an electricity trader, in any area which may be specified in the\n\nlicence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2022_2022_OCT_37_P022_C01",
+      "text": "20. Section 43\nof the 2003 Act provides for the universal supply\n\nobligation of the Discoms, which is as under:\n“43. Duty to supply on request –\n (1) Save as otherwise provided in this Act, every\n distribution licensee, shall, on an application by the\n owner or occupier of any premises, give supply of\n electricity to such premises, within one month after\n receipt of the application requiring such supply.\nProvided xxx xxx xxx\n\n(2) & (3) xxx xxx xxx”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2022_2022_OCT_37_P023_C01",
+      "text": "21. Section 61\nof the 2003 Act lays down the guiding principles for\n\ntariff which are as under:\n“61.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2022_2022_OCT_37_P023_C02",
+      "text": "Tariff regulations.­ The Appropriate Commission\n shall, subject to the provisions of this Act, specify the\n terms and conditions for the determination of tariff, and\n in doing so, shall be guided by the following, namely:­\n(a) the principles and methodologies specified by the\n Central Commission for determination of the tariff\n applicable to generating companies and transmission\n licensees;\n(b) the generation, transmission, distribution and supply\n of electricity are conducted on commercial principles;\n(c) the factors which would encourage competition,\n efficiency, economical use of the resources, good\n performance and optimum investments;\n(d) safeguarding of consumers' interest and at the same\n time, recovery of the cost of electricity in a reasonable\n manner;\n(e) the principles rewarding efficiency in performance;\n(f) multi­year tariff principles;\n(g) that the tariff progressively reflects the cost of supply\n of electricity and also, reduces cross­subsidies in the\n manner specified by the Appropriate Commission;\n(h) the promotion of co­generation and generation of\n electricity from renewable sources of energy;\n(i) the National Electricity Policy and tariff policy:\nProvided that",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2022_2022_OCT_37_P023_C03",
+      "text": "the terms and conditions for determination\n of tariff under the\nElectricity (Supply) Act, 1948\n, the\nElectricity Regulatory Commission Act, 1998\nand the\n enactments specified in the Schedule as they stood\n\nimmediately before the appointed date, shall continue to\n apply for a period of one year or until the terms and\n conditions for tariff are specified under this section,\n whichever is earlier.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2022_2022_OCT_37_P024_C01",
+      "text": "22. Sections 62\nand\n\nof the 2003 Act lay down the procedure for\n\ndetermination of tariff for, inter alia, wheeling and retail sale of\n\nelectricity as under:\n“62. Determination of tariff.­\n\n (1) The Appropriate Commission shall determine the tariff in\n accordance with the provisions of this Act for –\n(a) supply of electricity by a generating company to a\n distribution licensee:\nProvided that the Appropriate Commission may, in case of\n shortage of supply of electricity, fix the minimum and\n maximum ceiling of tariff for sale or purchase of\n electricity in pursuance of an agreement, entered into\n between a generating company and a licensee or between\n licensees, for a period not exceeding one year to ensure\n reasonable prices of electricity;\n(b) transmission of electricity;\n(c) wheeling of electricity;\n(d) retail sale of electricity:\nProvided that in case of distribution of electricity in the same\n area by two or more distribution licensees, the Appropriate\n Commission may, for promoting competition among\n distribution licensees, fix only maximum ceiling of tariff for\n retail sale of electricity.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2022_2022_OCT_37_P024_C02",
+      "text": "(2) The Appropriate Commission may require a licensee or a\n generating company to furnish separate details, as may be\n\nspecified in respect of generation, transmission and\ndistribution for determination of tariff. (3) The Appropriate Commission shall not, while determining\nthe tariff under this Act, show undue preference to any\nconsumer of electricity but may differentiate according to the\nconsumer's load factor, power factor, voltage, total\nconsumption of electricity during any specified period or the\ntime at which the supply is required or the geographical\nposition of any area, the nature of supply and the purpose for\nwhich the supply is required. (4) No tariff or part of any tariff may ordinarily be amended,\nmore frequently than once in any financial year, except in\nrespect of any changes expressly permitted under the terms of\nany fuel surcharge formula as may be specified. The\nElectricity Act, 2003\n. (5) The Commission may require a licensee or a generating\ncompany to comply with such procedures as may be specified\nfor calculating the expected revenues from the tariff and\ncharges which he or it is permitted to recover.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2022_2022_OCT_37_P024_C03",
+      "text": "(6) If any licensee or a generating company recovers a price or\ncharge exceeding the tariff determined under this section, the\nexcess amount shall be recoverable by the person who has\npaid such price or charge along with interest equivalent to the\nbank rate without prejudice to any other liability incurred by\nthe licensee.”\n\n“64. Procedure for tariff order.­\n (1) An application for determination of tariff under\nsection 62\nshall be made by a generating company or licensee in such\nmanner and accompanied by such fee, as may be determined\nby regulations. (2) Every applicant shall publish the application, in such\nabridged form and manner, as may be specified by the\nAppropriate Commission.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2022_2022_OCT_37_P024_C04",
+      "text": "(3) The Appropriate Commission shall, within one hundred\nand twenty days from receipt of an application under sub­\nsection (1) and after considering all suggestions and\nobjections received from the public,­\n(a) issue a tariff order accepting the application with such\n modifications or such conditions as may be specified in\n that order;\n(b) reject the application for reasons to be recorded in\n writing if such application is not in accordance with the\n provisions of this Act and the rules and regulations made\n thereunder or the provisions of any other law for the time\n being in force:\nProvided that an applicant shall be given a reasonable\n opportunity of being heard before rejecting his\n application. (4) The Appropriate Commission shall, within seven days of\nmaking the order, send a copy of the order to the Appropriate\nGovernment, the Authority, and the concerned licensees and\nto the person concerned.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2022_2022_OCT_37_P024_C05",
+      "text": "(5) Notwithstanding anything contained in Part X, the tariff for\nany inter­State supply, transmission or wheeling of electricity,\nas the case may be, involving the territories of two States\nmay, upon application made to it by the parties intending to\nundertake such supply, transmission or wheeling, be\ndetermined under this section by the State Commission\nhaving jurisdiction in respect of the licensee who intends to\ndistribute electricity and make payment therefor. (6) A tariff order shall, unless amended or revoked, continue\n to be in force for such period as may be specified in the tariff\n order.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2022_2022_OCT_37_P025_C01",
+      "text": "23. ARR of the Appellants, and consequently the tariff to be\n\nrecovered from the consumers, is regulated by the DERC, and\n\ndetermined under\nSection 62\nread with\nSection 61\nof the 2003 Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2022_2022_OCT_37_P026_C01",
+      "text": "24. Section 86 of the 2003 Act lays down the functions of the\n\nState Commissions i.e. DERC in this case, and the rule­making\n\npower of the Central Government is set out in Section 176 thereof.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2022_2022_OCT_37_P027_C01",
+      "text": "25. Before considering the other questions, let us consider the\n\npreliminary objection raised by learned counsel for the respondent­\n\nDERC as to whether the appeals involve any substantial question of\n\nlaw as required under Section 125 of the 2003 Act read with Sec­\n\ntion 100\nof the CPC\n?",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2022_2022_OCT_37_P028_C01",
+      "text": "26. Section 125 of the 2003 Act provides for an appeal to this\n\nCourt against the decision or order of the APTEL which reads as\n\nunder:\n“125. Appeal to Supreme Court.­\n Any person aggrieved by any decision or order of the\n Appellate Tribunal, may, file an appeal to the Supreme\n Court within sixty days from the date of communication\n\nof the decision or order of the Appellate Tribunal, to him,\n on any one or more of the grounds specified in\nsection\n\nof the Code of Civil Procedure,1908 (5 of 1908):\nProvided that the Supreme Court may, if it is satisfied\n that the appellant was prevented by sufficient cause from\n filing the appeal within the said period, allow it to be filed\n within a further period not exceeding sixty days.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2022_2022_OCT_37_P029_C01",
+      "text": "27. Thus, an appeal to this Court under Section 125 could be filed\n\non the grounds specified in\nSection 100\nof the CPC. Under\nSection\n\nof the CPC, an appeal could be filed only when the case\n\ninvolves ‘a substantial question of law’, as may be framed by the\n\nappellate court. Thus, the existence of a ‘substantial question of\n\nlaw’ arising from the judgment of the APTEL is sine qua non for\n\nexercise of jurisdiction by this Court under Section 125 of the 2003\n\nAct.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2022_2022_OCT_37_P030_C01",
+      "text": "28. The expression ‘appeal’ has not been defined in\nthe CPC\n.\nBlack’s Law Dictionary (10th Edn.) defines an ‘appeal’ as “a\n\nproceeding undertaken to have a decision reconsidered by bringing\n\nit to a higher authority.” An appeal is judicial examination of a\n\ndecision of a subordinate court by a higher court to rectify any\n\npossible error(s) in the order under appeal. The law provides the\n\nremedy of an appeal in recognition of the fact that those manning\n\nthe judicial tiers too may commit errors.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_2022_OCT_37_P031_C01",
+      "text": "29. The test to determine whether a question is a substantial\n\nquestion of law or not was laid down by a Constitution Bench of\n\nthis Court in Sir Chunilal V. Mehta & Sons Ltd. v. The Century\n\nSpg. & Mfg. Co. Ltd.1 as under : (AIR p. 1318, para 6)\n\n “6. … The proper test for determining whether a question\n of law raised in the case is substantial would, in our\n opinion, be whether it is of general public importance or\n whether it directly and substantially affects the rights of\n the parties and if so whether it is either an open question\n in the sense that it is not finally settled by this Court or\n by the Privy Council or by the Federal Court or is not free\n from difficulty or calls for discussion of alternative views.\n If the question is settled by the highest court or the\n general principles to be applied in determining the\n question are well settled and there is a mere question of\n applying those principles or that the plea raised is\n palpably absurd the question would not be a substantial\n question of law.”",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2022_2022_OCT_37_P032_C01",
+      "text": "30. Thus, the word ‘substantial’ as qualifying ‘question of law’\n\nmeans, of having substance, essential, real, of sound worth,\n\nimportant or considerable. It is to be understood as something in\n\ncontradistinction with technical, of no substance or consequence,\n\n1 1962 Supp (3) SCR 549 : AIR 1962 SC 1314\n\nor academic. For determining whether a case involves substantial\n\nquestion of law, the test is not merely the importance of the\n\nquestion, but its importance to the case itself necessitating the\n\ndecision of the question. The appropriate test for determining\n\nwhether the question of law raised in the case is substantial would\n\nbe to see whether it directly and substantially affects the rights of\n\nthe parties. If it is established that the decision is contrary to law or\n\nthe decision has failed to determine some material issue of law or if\n\nthere is substantial error or defect in the decision of the case on\n\nmerits, the court can interfere with the conclusion of the lower\n\ncourt or tribunal. The stakes involved in the case are immaterial as\n\nlong as the impact or effect of the question of law has a bearing on\n\nthe lis between the parties.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2022_2022_OCT_37_P033_C01",
+      "text": "31. Thus, in a second appeal, the appellant is entitled to point out\n\nthat the order impugned is bad in law because it is de hors the\n\npleadings, or it was based on no evidence or it was based on\n\nmisreading of material documentary evidence or it was recorded\n\nagainst the provision of law or the decision is one which no Judge\n\nacting judicially could reasonably have reached. Once the appellate\n\ncourt is satisfied, after hearing the appeal, that the appeal involves\n\na substantial question of law, it has to formulate the question and\n\ndirect issuance of notice to the respondent/s.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2022_2022_OCT_37_P034_C01",
+      "text": "32. Now, let us consider as to whether the present appeals involve\n\nany substantial question(s) of law.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2022_2022_OCT_37_P035_C01",
+      "text": "33. The APTEL has recorded findings on 35 issues raised by the\n\nappellants. According to the appellants, six issues decided by the\n\nAPTEL give rise to substantial question of law which are as follows:",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2022_2022_OCT_37_P036_C01",
+      "text": "1. Change in methodology in computation of AT&C\n Losses.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2022_2022_OCT_37_P037_C01",
+      "text": "2. Change in methodology for computation of\n Depreciation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2022_2022_OCT_37_P038_C01",
+      "text": "4. Disallowance of interest incurred on Consumer\n Security Deposit retained by DPCL.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2022_2022_OCT_37_P039_C01",
+      "text": "6. Reduction in MUs in relation to Enforcement sale\n for the purpose of calculation of AT&C Losses (this\n issue deals with theft/unauthorized use of\n electricity).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2022_2022_OCT_37_P040_C01",
+      "text": "34. Mr. Arvind P. Dattar and Mr. Dhruv Mehta, learned senior\n\ncounsel appearing for the appellants, would submit that the\n\nfindings of the APTEL on Issue Nos.1, 2, 3 and 5 are contrary to the\n\nbinding DERC Tariff Regulations. It is argued that the Regulator\n\ncannot ‘change the rules of the game after it has begun’ in the\n\n‘truing up exercise’. In this regard, they have taken us through the\n\nfindings of the DERC in the Tariff Order and also the findings of the\n\nDERC after the truing up stage. It is further argued that the tariff\n\norder is in the nature of a quasi­judicial determination and that in\n\nthe guise of truing up, the DERC cannot amend a tariff order.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2022_2022_OCT_37_P041_C01",
+      "text": "35. On the other hand, Mr. Nikhil Nayyar, learned senior counsel\n\nappearing for the respondent­DERC, submits that one of the facets\n\nof the tariff determination exercise is the process of ‘truing up’.\n\nSince the initial tariff order is prepared by the DERC, based on the\n\nprojections submitted by the Discoms as its ARR petition, the\n\nsubsequent tariff order is issued after the financial year pursuant to\n\nthe ‘truing up’ exercise. It is also pointed out that the findings on\n\nthe aforesaid six issues are neither contrary to law nor opposed to\n\nany regulations.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2022_2022_OCT_37_P042_C01",
+      "text": "36. Having considered the submissions of the learned counsels for\n\nthe parties and after perusing the Impugned Order, we are of the\n\nview that these appeals involve the following substantial questions\n\nof law:\n“On Issue No.1\n(a) Whether the impugned findings on Issue No.1 are\n contrary to the mandate of Sections 3, 61(b), (c), (d) and\n(e), 62, 64 (read with the Tariff Policy) and 86(3) of the\n 2003 Act in terms of which:\n(i) Tariff must ensure recovery of all costs of\n undertaking distribution of electricity with\n reasonable return, rewarding efficiency in\n performance? (ii) Regulator cannot “change the rules of the game\n after it has begun” in the ‘truing up exercise’? (b) Whether the impugned findings violate the principles and\n methodology for tariff determination specified in the\n binding DERC’s Tariff Regulations? On Issue No.2\n(a) Whether the impugned Findings on Issue No.2 are\n contrary to the mandate of\nSections 3\n,\n61(b)\n, (c), (d) and (e),\n 62, 64 (read with the Tariff Policy) and 86(3) of the 2003 Act in\n terms of which:\n(i) Tariff must ensure recovery of all costs of\n undertaking distribution of electricity with\n reasonable return, rewarding efficiency in\n performance?",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2022_2022_OCT_37_P042_C02",
+      "text": "(ii) Regulator cannot “change the rules of the game\n after it has begun” in the ‘truing up exercise’? (b) Whether the impugned findings violate the principles and\n methodology for tariff determination specified in the\n binding DERC’s Tariff Regulations? On Issue No.3\n(a) Whether the impugned Findings on Issue No.3 are\ncontrary to the mandate of\nSections 3\n,\n61(b)\n, (c), (d) and (e),\n62, 64 (read with the Tariff Policy) and 86(3) of the 2003 Act in\nterms of which:\n(i) Tariff must ensure recovery of all costs of\n undertaking distribution of electricity with\n reasonable return, rewarding efficiency in\n performance? (ii) Regulator cannot “change the rules of the game\n after it has begun” in the ‘truing up exercise’? (b) Whether the impugned findings violate the binding\nstatutory Transfer Scheme and the Tri­Partite Agreements\nbetween the GONCTD, the DVB and the Employees’ Unions,\nwhich form the basis of the privatization of Discoms?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2022_2022_OCT_37_P042_C03",
+      "text": "On Issue No.4\n(a) Whether the impugned findings on Issue No.4 are\ncontrary to the mandate of\nSections 3\n,\n61(b)\n, (c), (d) and (e),\n62, 64 (read with the Tariff Policy) and 86(3) of the 2003 Act in\nterms of which tariff must ensure recovery of all costs of\nundertaking distribution of electricity with reasonable return,\nrewarding efficiency in performance? On Issue No.5\n(a) Whether the impugned Findings on Issue No.5 are\ncontrary to the mandate of\nSections 3\n,\n61(b)\n, (c), (d) and (e),\n\n62, 64 (read with the Tariff Policy) and 86(3) of the 2003 Act in\n terms of which:\n(i) Tariff must ensure recovery of all costs of\n undertaking distribution of electricity with\n reasonable return, rewarding efficiency in\n performance? (ii) Regulator cannot “change the rules of the game\n after it has begun” in the ‘truing up exercise’? (b) Whether the impugned findings violate the principles and\n methodology for tariff determination specified in the\n binding DERC’s Tariff Regulations?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2022_2022_OCT_37_P042_C04",
+      "text": "On Issue No.6\n(a) Whether the impugned Findings on Issue No.6 are\n contrary to the mandate of Sections 3, 61(b), (c), (d) and\n(e), 62, 64 (read with the Tariff Policy) and 86(3) of the\n 2003 Act in terms of which Tariff must ensure recovery of\n all costs of undertaking distribution of electricity with\n reasonable return, rewarding efficiency in performance? (b) Whether the impugned findings are against settled law\n that when a statute creates a legal fiction i.e. energy\n assessed is “deemed” to be consumed, the same has to be\n given effect to with all its consequences i.e. same\n quantum of energy is to be accounted for as supplied?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2022_2022_OCT_37_P043_C01",
+      "text": "37. One of the substantial questions of law raised on four issues\n\n(Issue Nos.1, 2, 3 and 5) is whether it is permissible to amend the\n\ntariff order made under\nSection 64\nof the 2003 Act during the\n\n‘truing up’ exercise which needs to be answered before answering\n\neach of the aforesaid issues.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2022_2022_OCT_37_P044_C01",
+      "text": "38. Section 82\nof the 2003 Act envisages the constitution of a\n\nState Electricity Regulatory Commission. By virtue of\nSection 84\n\nthe Act, such State Commission comprises of a Chairperson and\n\nMembers, being persons possessing “ability, integrity and standing\n\nwho have adequate knowledge of, and have shown capacity in,\n\ndealing with problems relating to engineering, finance, commerce,\n\neconomics, law or management”, with the Chairperson being a\n\nperson who is, or has been, a Judge of a High Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2022_2022_OCT_37_P045_C01",
+      "text": "39. DERC, constituted under\nSection 82\nof the 2003 Act, is an\n\nexpert body vested with wide powers and functions under the Act.\n\nThis includes the power to frame regulations and the power to\n\ndetermine tariff.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2022_2022_OCT_37_P046_C01",
+      "text": "40. Under Section 86 of the 2003 Act, the State Commission\n\ncarries out various functions including determination of “the tariff\n\nfor generation, supply, transmission and wheeling of electricity,\n\nwholesale, bulk or retail, as the case may be, within the State”. The\n\nprocess of determination of tariff in the present case, as part of the\n\nbroader regulatory power of the Commission, is to be done in\n\naccordance with\nSection 62\nand\n\nof the 2003 Act. As per\nSection\n\n, the Appropriate Commission (the State Commission in the\n\npresent case) shall determine the tariff in accordance with the\n\nprovisions of the Act for inter alia retail supply of electricity.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2022_2022_OCT_37_P047_C01",
+      "text": "41. In addition to the above functions, the State Commission is\n\nalso vested with the power to make regulations, under Section 181\n\nof the 2003 Act, ­ dealing with inter alia “the terms and conditions\n\nfor determination of tariff under\nSection 61\n” and “issue of tariff order\n\nwith modifications or conditions under sub­section (3) of\nSection 64\n”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2022_2022_OCT_37_P048_C01",
+      "text": "42. It is pertinent to note that while framing the Regulations, the\n\nState Commission is required to be guided by the principles\n\nspecified in\nSection 61\nof the 2003 Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2022_2022_OCT_37_P049_C01",
+      "text": "43. In framing such regulations, the Commission, as an expert\n\npolicy making body, is entrusted with the duty of striking a balance\n\nbetween the various competing concerns and interests. This\n\nbalance is expressed in the DERC (Terms and Conditions for\n\nDetermination of Wheeling Tariff and Retail Supply Tariff)\n\nRegulations, 2007 (“2007 MYT Regulations”) which are the relevant\n\nregulations governing the issues in the present case.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2022_2022_OCT_37_P050_C01",
+      "text": "44. DERC, for a given Multi­Year period (also called the Control\n\nPeriod), frames regulations for determination of tariff. DERC then\n\ndetermines the ARR for the said Control Period in a Tariff Order\n\nknown as the Multi­Year Tariff Order based on the data available.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2022_2022_OCT_37_P051_C01",
+      "text": "45. It is also necessary to note that sub­section (6) of\nSection 62\n\nthe 2003 Act mandates that the Tariff Order shall continue to be in\n\nforce for such period as may be specified in the Tariff Order unless\n\namended or revoked. Therefore, if any of the parties are aggrieved\n\nby any of the clauses in the Tariff Order, they are at liberty to seek\n\nits amendment or revocation under this provision. Secondly, the\n\nsaid order is also appealable under Section 111 of the 2003 Act\n\nbefore the Appellate Tribunal and thereafter before this Court under\n\nSection 125. The Tariff Order made under\nSection 64\nis quasi­\n\njudicial in nature and it is binding as­it­is on the parties unless it is\n\namended or modified in a process known to law.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2022_2022_OCT_37_P052_C01",
+      "text": "46. Mr. Arvind Datar and Mr. Dhruv Mehta, learned senior coun­\n\nsel appearing for the appellants have submitted that ‘truing up’\n\ncannot be used to upset the methodology used for determination of\n\nARR. According to them, such a conduct essentially amounts to\n\n‘changing the rules of the game after the game has started’ or\n\n‘changing the goal post’ with the sole intention to deny legitimate al­\n\nlowances to the appellants. It is also argued that ‘truing up’ stage\n\nis not an opportunity for the DERC to re­think de novo on the basic\n\nprinciples, premises and issues involved in the initial projections of\n\nrevenue requirement of the licensee. It was also argued that DERC\n\nhas no unfettered power to control the tariff determination process\n\nas well as ‘truing up’ exercise.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2022_2022_OCT_37_P053_C01",
+      "text": "47. On the other hand, Mr. Nikhil Nayyar, learned senior counsel\n\nappearing for the respondent­DERC, has submitted that one of the\n\nfacets of tariff determination exercise is the process of ‘truing up’. Since the initial tariff order is prepared by the DERC based on pro­\n\njections submitted by the Discoms with its ARR petition, the subse­\n\nquent tariff order is issued after the financial year pursuant to the\n\n‘truing up’ exercise. The process of ‘truing up’ requires the DERC\n\nto carry out a prudence check. A prudence check is not a mere ac­\n\ncounting or mathematical exercise. A prudence check requires a\n\nscrutiny of reasonableness of the expenditure incurred or proposed\n\nto be incurred by the Discoms and also such other factors that the\n\nDERC considers appropriate for determination of tariff. DERC being\n\nan expert body, due deference ought to be given to their under­\n\nstanding as recorded in various regulations. It is argued that the\n\ncontrolling factor throughout the entire ‘truing up’ exercise is the\n\nMYT Regulations itself. It is further argued that the tariff determina­\n\ntion exercise carried out by the DERC is a continuous process.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2022_2022_OCT_37_P053_C02",
+      "text": "The\n\ntariff determination exercise includes the initial tariff order ­ in the\n\ninstant case it is 23.02.2008 ­ a ‘truing up’ inter alia the ARR and\n\nMulti­Year Tariff Order for the years, F.Y. 2007­08 to F.Y.2010­11,\n\nas well as the subsequent Tariff Order dated 26.08.2011, inter alia,\n\n‘true up’ for F.Y. 2008­09 and F.Y. 2009­10. Mr. Nayyar has placed\n\nreliance on the judgment of this Court in\nGujarat Urja Vikas Nigam\n\nLimited v. Tarini Infrastructure Limited & Others\n2 in support of\n\nhis submissions.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2022_2022_OCT_37_P054_C01",
+      "text": "48. We have carefully considered the submissions of the learned\n\nsenior counsel for the parties. We have already noticed that the\n\nState Electricity Regulatory Commissions constituted under\nSection\n\nof the 2003 Act are a multi­member body comprising a Chairper­\n\n2 (2016) 8 SCC 743\n\nson and members being persons having adequate knowledge, of\n\nability, integrity and standing who have adequate knowledge, and\n\nhave shown capacity, in dealing with problems relating to engineer­\n\ning, finance, commerce, economics, law or management, with the\n\nChairperson being a person who is or has been Judge of a High\n\nCourt. Under Section 86 of the 2003 Act, the State Commission\n\ncarries out various functions including determination of tariff for\n\ngeneration, supply, transmission and wheeling of electricity in\n\nwholesale, bulk or retail as the case may be within the State. The\n\nprocess of determination of tariff has to be done in accordance with\nSections 62\nand\n\nof the 2003 Act. It is well settled that the Com­\n\nmission (in this case, the DERC) performs a quasi­judicial function\n\nwhile determining tariff.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2022_2022_OCT_37_P054_C02",
+      "text": "This has been expressly recognized by the\n\nConstitution Bench of this Court in\nPTC India Limited v. Central\n\nElectricity Regulatory Commission, Through Secretary3\nas un­\n\nder:\n“50. Applying the above test, price fixation exercise is re­\n ally legislative in character, unless by the terms of a par­\n ticular statute it is made quasi­judicial as in the case of\n3 (2010) 4 SCC 603\n\ntariff fixation under\nSection 62\nmade appealable under\n Section 111 of the 2003 Act, though\nSection 61\nis an en­\n abling provision for the framing of regulations by CERC. If one takes “tariff” as a subject­matter, one finds that\n under Part VII of the 2003 Act actual determination/fixa­\n tion of tariff is done by the appropriate Commission un­\n der\nSection 62\nwhereas\nSection 61\nis the enabling provi­\n sion for framing of regulations containing generic propo­\n sitions in accordance with which the appropriate Com­\n mission has to fix the tariff. This basic scheme equally\n applies to the subject­matter “trading margin” in a differ­\n ent statutory context as will be demonstrated by discus­\n sion hereinbelow.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2022_2022_OCT_37_P055_C01",
+      "text": "49. The DERC determines the tariff of the licensee under\nSection\n\nin such a manner as determined by the 2007 MYT Regulations.\n\nThis function is governed, inter alia, by safeguarding all consumers’\n\ninterest and at the same time recovering the cost of electricity in a\n\nreasonable manner, such that ‘distribution and supply of electricity\n\nare conducted on commercial principles’ which encourage and re­\n\nward competition, efficiency, economic use of resources, good per­\n\nformance and optimum investments.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2022_2022_OCT_37_P056_C01",
+      "text": "50. DERC determines ARR of the licensee i.e. costs of undertaking\n\nthe licensed business which are permitted in accordance with the\n\nrequirement specified by DERC which is to be recovered from the\n\ntariff in the year end. ARR determined by DERC is based on projec­\n\ntions. Since the tariff and the ARR are regulated, the Discoms can­\n\nnot recover anything more than from its consumers than what is al­\n\nlowed by the DERC.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2022_2022_OCT_37_P057_C01",
+      "text": "51. As noticed above, a tariff order is quasi­judicial in nature\n\nwhich becomes final and binding on the parties unless it is\n\namended or revoked under\nSection 64(6)\nor set aside by the Appel­\n\nlate Authority. Apart from this, we are also of the view that at the\n\nstage of ‘truing up’, the DERC cannot change the rules/methodol­\n\nogy used in the initial tariff determination by changing the basic\n\nprinciples, premises and issues involved in the initial projection of\n\nARR.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2022_2022_OCT_37_P058_C01",
+      "text": "52. ‘Truing up’ has been held by APTEL in SLDC v. GERC4 to\n\nmean the adjustment of actual amounts incurred by the Licensee\n\nagainst the estimated/projected amounts determined under the\n\nARR. Concept of ‘truing up’ has been dealt with in much detail by\n\nthe APTEL in its judgment in NDPL v. DERC5 wherein it was held\n\nas under:­\n\n4 2015 SCC Online APTEL 50 [Para. 17]\n\n5 2007 ELR (APTEL) 193\n\n“60. Before parting with the judgment we are constrained\n to remark that the Commission has not properly\n understood the concept of truing up. While considering\n the Tariff Petition of the utility the Commission has to\n reasonably anticipate the Revenue required by a\n particular utility and such assessment should be based\n on practical considerations. … The truing up exercise is\n meant (sic) to fill the gap between the actual expenses at\n the end of the year and anticipated expenses in the\n beginning of the year.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2022_2022_OCT_37_P058_C02",
+      "text": "When the utility gives its own\n statement of anticipated expenditure, the Commission\n has to accept the same except where the Commission has\n reasons to differ with the statement of the utility and\n records reasons thereof or where the Commission is able\n to suggest some method of reducing the anticipated\n expenditure. This process of restricting the claim of the\n utility by not allowing the reasonably anticipated\n expenditure and offering to do the needful in the truing\n up exercise is not prudence.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_2022_2022_OCT_37_P059_C01",
+      "text": "53. This view has been consistently followed by the APTEL in its\n\nsubsequent judgments and we are in complete agreement with the\n\nabove view of the APTEL. In our opinion, ‘truing up’ stage is not an\n\nopportunity for the DERC to rethink de novo on the basic princi­\n\nples, premises and issues involved in the initial projections of the\n\nrevenue requirement of the licensee. ‘Truing up’ exercise cannot be\n\ndone to retrospectively change the methodology/principles of tariff\n\ndetermination and re­opening the original tariff determination order\n\nthereby setting the tariff determination process to a naught at ‘true­\n\nup’ stage.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2022_2022_OCT_37_P060_C01",
+      "text": "54. Gujarat Urja Vikas Nigam Ltd.\n(supra), this Court was\n\nconsidering a case where tariff was incorporated in the power\n\npurchase agreement between a generating company and a\n\ndistribution licensee. This Court held that it is not possible to hold\n\nthat the tariff agreed by and between the parties, though finding a\n\nmention in a contractual context, is the result of an act of volition of\n\nthe parties which can, in no case, be altered except by mutual\n\nconsent. We are of the view that this judgment is not applicable to\n\nthe facts of the present case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_2022_2022_OCT_37_P061_C01",
+      "text": "55. Revision or re­determination of the tariff already determined\n\nby DERC on the pretext of prudence check and truing up would\n\namount to amendment of the tariff order, which can be done only as\n\nper the provisions of sub­Section (6) of\nSection 64\nof the 2003 Act\n\nwithin the period for which the Tariff Order was applicable. In our\n\nview, DERC cannot amend the tariff order for the period 01.04.2008\n\nto 31.03.2010 in the guise of ‘true­up’ after the relevant financial\n\nyear is over and the same is replaced by a subsequent tariff Order.\n\nThis would amount to a retrospective revision of tariff when the\n\nrelevant period for such tariff order is already over. Therefore, we\n\nhold that it is not permissible to amend the tariff order made under\nSection 64\nof the 2003 Act during the ‘truing up’ exercise.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 62,
+      "chunk_id": "SC_2022_2022_OCT_37_P062_C01",
+      "text": "56. Issue Nos. 1, 2, 3, and 5: We have already noticed that one\n\nof the substantial questions of law involved in Issue Nos.1, 2, 3 and\n\n5 is whether the Regulator can ‘change the rules of the game after\n\nit has begun’ in the ‘truing up exercise’.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2022_2022_OCT_37_P063_C01",
+      "text": "57. Issue No. 1: In the original MYT determination (Tariff Order\n\ndated 28.05.2009), the DERC took into account the full late pay­\n\nment surcharge (‘LPSC’) revenue as also the DVB arrears while\n\ncomputing the targets of Collection Efficiency as under:­\n\n “3.10. An analysis of the components of AT&C loss level\n indicates that the revenue collection on account of sale of\n energy was Rs.2810.3 Crs. However, this amount could\n not be verified from the audited accounts of the peti­\n tioner. The petitioner has, instead, submitted a daily col­\n lection sheet to substantiate its collection of Rs.2810.3\n Crs.\n\n3.11 The Commission is not receptive to the methodology\nof verifying the collection from the Daily Collection Sheet\nas proposed by the petitioner. Accordingly, the petitioner\nwas directed during the validation session to reconcile\nthe amount of cash collected bases on the opening levels\nof debtors, sales made during the year, DVB arrears col­\nlected and the closing level of debtors, with the total col­\nlections shown for FY 07­08.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2022_2022_OCT_37_P063_C02",
+      "text": "However, the petitioner ex­\npressed inability to reconcile the figures using this\nmethodology.\n3.12.The petitioner was, thereafter, directed to provide a\ncopy of the daily collection sheet duly audited by its\nStatutory Auditors. The petitioner was also directed that\nthe Statutory Auditors should establish that the amount\nmentioned in the Daily Collection Sheet does not in­\ncluded any collections on account of other sources of rev­\nenue like sale of power through bilateral, intra­state, UI,\netc. and revenue from operations (non­energy).\n\n3.13. In response to the above, the petitioner submitted\na copy of its Statutory Auditor’s certificate certifying the\nDay­wise Collection Statement for FY 07­08 vide its letter\nno.RCM/08­09/245 dated 16th February, 2009. The Cer­\ntificate clarified the exclusion of collections made on ac­\ncount of trading of energy, non­energy charges, subsidy\n\nreceived from GoNCTD, etc. and inclusion of LPSC, elec­\ntricity duty, amount collected by BYPL on behalf of BRPL,\netc.\n\n3.14.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2022_2022_OCT_37_P063_C03",
+      "text": "Accordingly, based on the clarifications provided in\nthe statutory auditor’s certificate and the audited finan­\ncial statements, the amount mentioned in the Daily Col­\nlection Sheet submitted by the petitioner has been taken\ninto account.\n…\n\n3.24. In the light of the above background, the revised\nAT&C loss levels of the petitioner for the first year of the\nControl Period i.e. FY 07­08 is as summarized in the\nTable 6 below:\nTable 6: Trued­up AT&C loss for FY 07­08 (Rs.crs.)\n\n Particulars Amount\n Add:\nTheft Collection 60.4\n Subsidy 48.4\n Rebate 47.8\n DVB Arrears collected from 64.5\n Government Bodies by\n DPCL\n Total Other Collections 221.0\n during FY 07­08\n (A) Total Collections in FY 3031.27\n 07­08\n (B) Billed Revenue consid­ 2889.99\n ered for AT&C\n\n(C) Collection Efficiency (A/B) 104.89%\n Distribution Loss Level FY 07­08 30.89%\n AT&C Loss for FY 07­08 27.51%”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 64,
+      "chunk_id": "SC_2022_2022_OCT_37_P064_C01",
+      "text": "58. However, while truing up for the year in question, the DERC\n\nhas retrospectively sought to take away part of the LPSC revenue by\n\ndeducting the Financing Cost on LPSC in comparing the actual Col­\n\nlection Efficiency with the projected Collection Efficiency. Hence,\n\nallowing the Financing Costs on LPSC revenue and then deducting\n\nit from the LPSC revenue would tantamount to giving by one hand\n\nand taking it away by the other. This order of the DERC is contrary\n\nto the original MYT determination.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 65,
+      "chunk_id": "SC_2022_2022_OCT_37_P065_C01",
+      "text": "59. Issue No.2: In the Original Determination Order dated\n\n28.05.2009 (F.Y. 2008­09), DERC has allowed depreciation on the\n\nassets funded by consumer contributions. However, DERC changed\n\nthe methodology of computation of ARR at the stage of true up. Ac­\n\ncording to the learned counsel for the respondent, DERC had inad­\n\nvertently made an error and adopted an approach contrary to the\n\nmandate of 2007 MYT Regulations while computing the deprecia­\n\ntion when originally issuing the tariff order, which was rectified in\n\nthe true up exercise. However, learned counsel for the appellants\n\nsubmit that no error has been committed by the DERC in the tariff\n\norder dated 28.05.2009 and it is only after considering the relevant\n\nMYT Regulations that depreciation to the appellants on the assets\n\nthat were funded by consumer contributions was allowed.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 66,
+      "chunk_id": "SC_2022_2022_OCT_37_P066_C01",
+      "text": "60. Perusal of the Tariff Order dated 28.05.2009 would clearly in­\n\ndicate that after considering the contentions of the parties the\n\naforesaid depreciation has been allowed. We have already held that\n\nit is not permissible to amend the tariff order during true up exer­\n\ncise. On the pretext of prudence check and truing up, DERC could\n\nnot have amended the tariff order.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 67,
+      "chunk_id": "SC_2022_2022_OCT_37_P067_C01",
+      "text": "61. Issue No.3 : During projection of expenses for the entire con­\n\ntrol period, the Tariff Order dated 23.02.2008 had projected em­\n\nployee expenses considering inter alia the impact of the anticipated\n\nSixth Central Pay Commission Report. The relevant portion of the\n\nsaid Tariff Order is as under:\n“4.99 The Petitioner has submitted the employee expenses\n for FY07 as Rs 137.60 Cr and has considered the same as\n the base for the Control Period. The Petitioner has\n considered the following factors while projecting the\n\nescalation factor for the employee expenses for the Control\nPeriod:\n(a) Anticipated 6th Pay Commission report\n(c) Research of lead HR consultants on salary trends in\n the country\n(c) Initiatives undertaken to retain quality manpower\nand demand for employees in the power industry. (d) Inflation during last 12 months € increase in\nemployees to cater to growth of consumers.\n4.100 The Petitioner has projected its total employee\nexpenses for the Control Period considering different\nescalation rates for different components of the employee\nexpenses.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 67,
+      "chunk_id": "SC_2022_2022_OCT_37_P067_C02",
+      "text": "The annual growth rates for various\ncomponents of employee expenses as proposed by the\nPetitioner are given below:\n(a) Basic Salary: The year on year increase in basic\nsalary for all the employees during the Control Period has\nbeen estimated at 23.2%, 11.1%, 11.3%, and 11.5% for\nFY08, FY09, FY10 and FY11 respectively. (b) Dearness Allowance (DA): Annual estimated increase\nin DA is considered as 9%, 6%, 6%, and 6% for FY08,\nFY09, FY10 and FY11 respectively. (c) Terminal Benefits: Contribution to terminal\nbenefits/liability fund is considered at 26% of basic salary\nand dearness allowance for each year of the Control\nPeriod. (d) Other Allowances and expenses including HRA:\nConsidered in proportion to the basic salary.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 68,
+      "chunk_id": "SC_2022_2022_OCT_37_P068_C01",
+      "text": "62. The DERC, while projecting employee expenses for the entire\n\ncontrol period in its MYT Tariff Order dated 23.02.2008, had\n\ncategorically acknowledged the uncontrollable nature of the Sixth\n\nCentral Pay Commission Report as well as the impact of the same\n\non the salaries of FR&SR employees and held that since the salary\n\nof FR&SR employees was an uncontrollable item and that it would\n\nbe trued up on actuals as under:\n“4.108 During the privatization process, part of the\n employees of the erstwhile DVB were transferred to BRPL. As per the Transfer Scheme, the terms and conditions of\n service applicable to the erstwhile Board employees in the\n Transferee Company shall in no way be less favourable\n than or inferior to that applicable to them immediately\n before the Transfer. Further, their services shall continue\n to be governed by various rules and laws applicable to\n them prior to privatization.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 68,
+      "chunk_id": "SC_2022_2022_OCT_37_P068_C02",
+      "text": "Thus the salary/compensation\n and promotion of the erstwhile DVB employees in BRPL\n are still governed by the rules and pay scales as specified\n by the GoNCTD.\n4.109 In consideration of the above, the Commission has\n recognized the uncontrollable nature of the 6 th Pay\n Commission recommendations in determination of\n employee expenses during the Control Period. The\n Commission has assumed that the revision in pay, if any,\n shall be applicable from January 1, 2006. The\n\nCommission has considered an increase of 10% in total\nemployee expenses for the values in FY06 (3 months) and\nFY07 due to the same.\n…\n4.112 Similarly, the increase in salaries has been\nconsidered for each year, but the impact of such increase\nhas only been taken from FY09 onwards.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 68,
+      "chunk_id": "SC_2022_2022_OCT_37_P068_C03",
+      "text": "The\nCommission shall true­up the impact on account of 6 Pay\nCommission recommendations based on the actual impact\nof the same.\n4.113 The summary of the revised employees expenses\nconsidering the effect of 6th Pay Commission\nrecommendations is given below:\nTable 72: Revised Employee Expenses for FY06 and FY07\n(Rs Cr)\n Particulars FY06 FY07\nEmployee Cost Approved in 167.5 184.0\nTrue up 4 5\nLess: SVRS Amortization (46.41 (46.45\napproved ) )\nNet Employee Expenses 121.1 137.6\n3 0\nEmployee expenses pertaining 75.64 85.92\nto DVB employees\nEmployee expenses pertaining 45.50 51.68\nto Non­DVB employees\n10% escalation due to Pay 1.89 8.60\nCommission recommendations\nRevised Employee Expenses 123.0 146.1\n2 9\n\n4.114 For the calculation of the employee expenses for the\n Control Period, the Commission has considered the\n following:\n(a) Revised employee expenses for the base year have\n been escalated as per the escalation factors mentioned in\n Table 67 to arrive at the employee expenses for the\n Control Period. (b) All arrears due to the impact of the 6th Pay\n Commission recommendations would be payable in FY09.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 68,
+      "chunk_id": "SC_2022_2022_OCT_37_P068_C04",
+      "text": "For the purpose of projecting the arrears arising due to\n recommendation of the 6th Pay Commission for FY08, the\n Commission has considered the difference between the\n employee expenses for FY08 arrived by escalating the\n revised employees expenses for FY07 (i.e. Rs 146.19 Cr)\n and the employees expenses for FY08 arrived by\n escalating the trued up employee expenses (net of SVRS\n amortization) for FY07 (i.e. Rs 137.60 Cr).”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 69,
+      "chunk_id": "SC_2022_2022_OCT_37_P069_C01",
+      "text": "63. However, contrary to its own undertaking, the DERC in Tariff\n\nOrder dated 26.08.2011 has erroneously changed its own\n\nmethodology at the stage of truing up, by not allowing employee\n\nexpenses of FR/SR employees as per actuals. The DERC, at the\n\nstage of truing up, has changed the methodology and disallowed the\n\nactual salary of FR&SR employees, which is impermissible. The\n\nDERC in the Tariff Order dated 26.08.2011 has acted contrary to its\n\nown undertaking of truing up the impact of employee expenses on\n\naccount of the Sixth Central Pay Commission Report.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 70,
+      "chunk_id": "SC_2022_2022_OCT_37_P070_C01",
+      "text": "64. Issue No.5 : This issue is in relation to disallowance of fringe\n\nbenefit tax. The DERC has allowed fringe benefit tax in the MYT\n\nOrder dated 23.02.2008. Relevant extract of the MYT Order dated\n\n23.02.2008 is as under:\n“Commission’s Analysis\n\n 4.242 The Commission is of the opinion that projecting the\n actual tax liability for the Control Period is difficult and\n complex. Thus for simplicity, the Commission provisionally\n approves Rs 5.00 Cr each year towards income tax and\n fringe benefit expenses. The Commission would, however,\n true­up the tax expenses based on the actual tax liability\n at the end of each year of the Control Period. The\n Commission has allocated the tax expenses into Wheeling\n and Retail Supply in the ratio of 20:80, respectively.”",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 71,
+      "chunk_id": "SC_2022_2022_OCT_37_P071_C01",
+      "text": "65. The DERC, at the stage of truing up for the F.Y. 2008­09, has\n\nchanged the methodology and disallowed the fringe benefit tax\n\nincurred by the appellants.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 72,
+      "chunk_id": "SC_2022_2022_OCT_37_P072_C01",
+      "text": "66. We have already taken a view that DERC cannot re­open the\n\nbasis of determination of tariff at the stage of ‘truing up’. Revision\n\nor redetermination of the tariff already determined by the DERC on\n\nthe pretext of prudence check and truing up would amount to\n\namendment of tariff order, which is not permissible in law. Truing\n\nup stage is not an opportunity for DERC to re­think de novo the\n\nbasic principles, premises and issues involved in the initial\n\nprojection of the revenue requirements of the licensee.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 73,
+      "chunk_id": "SC_2022_2022_OCT_37_P073_C01",
+      "text": "67. Therefore, the findings of the DERC, as confirmed by the\n\nAPTEL in the impugned order, on issue nos. 1, 2, 3 and 5 are\n\ncontrary to the order of the original MYT determination (Tariff\n\nOrder(s) dated 23.02.2008 and 28.05.2009) which are accordingly\n\nset aside. In view of the above, it is unnecessary for us to consider\n\nthe other substantial questions of law on the aforesaid four issues.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 74,
+      "chunk_id": "SC_2022_2022_OCT_37_P074_C01",
+      "text": "68. Issue No.4: This issue relates to disallowance of interest\n\nincurred on Consumers Security Deposit retained by Delhi Power\n\nCompany Limited (‘DPCL’). The DERC in the tariff order dated\n\n26.08.2011 has disallowed the interest on Consumers Security\n\nDeposit paid for pre­privatization period received by DVB, which is\n\nyet to be transferred to the appellants. The APTEL has confirmed\n\nthis order of the DERC. It is to be stated here that, at the time of\n\nunbundling of the erstwhile DVB (w.e.f. 01.07.2022), the quantum\n\nof Consumers Security Deposit reflected in the opening balance­\n\nsheet notified in terms of statutory transfer scheme, was not\n\ntransferred by the DPCL (the Holding Company wholly owned by the\n\nGovernment of NCT of Delhi) to the appellants and other successor\n\nprivate Discoms. The appellants being distribution licensees under\n\nthe 2003 Act are required to and are continuing to pay interest on\n\nthe said Consumers Security Deposit in terms of\nSection 47(4)\n\nthe 2003 Act even though the principal sum was never transferred\n\nto them in its entirety by DPCL.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 75,
+      "chunk_id": "SC_2022_2022_OCT_37_P075_C01",
+      "text": "69. The DERC by its order dated 23.04.2007 has held that it does\n\nnot have power to issue any directions to DPCL.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 76,
+      "chunk_id": "SC_2022_2022_OCT_37_P076_C01",
+      "text": "70. Learned counsel for the respondent­DERC submits that the\n\nappellants have sought transfer of deposits along with interest from\n\nDPCL and the issue of DPCL to make this payment is pending\n\nbefore the Delhi High Court in W.P. (Civil) No.2396/2008. It is\n\nfurther submitted that, should the appellants succeed in their claim\n\nagainst DPCL and receive the deposit amount along with interest,\n\nthe amount would be made over to the appellants along with\n\ninterest. As such, if the expenses were to be presently allowed in the\n\nARR, and interest burden was passed on to the consumers\n\npresently, the Discoms would, in effect, receive double benefit at the\n\ntime of disposal of the writ petition since the consumers would have\n\nalready borne the costs of interest which would also be then made\n\nover by DPCL to the appellants. It is argued that, as a Regulator, it\n\nis incumbent upon the DERC to protect the consumers’ interest.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 77,
+      "chunk_id": "SC_2022_2022_OCT_37_P077_C01",
+      "text": "71. We are of the view that disallowing interest paid by the\n\nappellants towards Consumers Security Deposit held by DPCL in\n\nthe ARR of the appellants is wholly misconstrued. Interest on\n\nconsumers’ deposit which is being paid by the appellants is a\n\nlegitimate expense. It is not in dispute that the security deposit\n\nwas not transferred by the DPCL to the appellants. However, the\n\nappellants were required to bear the costs of the same. In case, the\n\nprincipal sum on Consumers Security Deposit held by DPCL is\n\ntransferred to the appellants with interest, the appellants would,\n\nsubject to their legitimate expenditures, retain such interest and\n\nbenefit of any balance of excess interest received by the appellants\n\nwould be passed on to the consumers in tariff. Therefore, there is\n\nno merit in the contention of the learned counsel for the respondent\n\nthat if the interest burden is passed on to the consumers presently,\n\nthe appellants would, in effect, receive a double benefit in case they\n\nsucceed in the writ petition pending before the High Court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 78,
+      "chunk_id": "SC_2022_2022_OCT_37_P078_C01",
+      "text": "72. Therefore, we hold that the appellants are entitled to recover\n\ninterest on Consumers Security Deposit as held by the DPCL. We\n\ndirect the DERC to allow the interest on Consumers Security\n\nDeposit held by the DPCL and impact thereof to the appellants. The\n\nfindings of the DERC and the APTEL in this regard are set aside.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 79,
+      "chunk_id": "SC_2022_2022_OCT_37_P079_C01",
+      "text": "73. Issue No.6: This issue pertains to enforcement sales i.e.\n\nsales which are deemed to have been occurred in cases of electricity\n\ntheft. The question for consideration is whether the impugned\n\nfindings in the order of the APTEL are against the legal principle\n\nthat when the statute creates a legal fiction i.e. energy assessed is\n\n‘deemed’ to be consumed, the same has to be given effect to with all\n\nits consequences i.e. same quantum of energy is to be accounted for\n\nas supplied?",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 80,
+      "chunk_id": "SC_2022_2022_OCT_37_P080_C01",
+      "text": "74. Electricity transmitted may be stolen or used unauthorizedly. While theft/unauthorized use was approximately 60% before\n\nprivatization, it has now been brought down to 7 to 8%.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 80,
+      "chunk_id": "SC_2022_2022_OCT_37_P080_C02",
+      "text": "Unauthorized use and theft are dealt with in Section 126 of the\n\n2003 Act, relevant clauses whereof are as under:\n“Section 126: (Assessment): ­­­ (1) If on an\n inspection of any place or premises or after\n inspection of the equipments, gadgets, machines,\n devices found connected or used, or after\n inspection of records maintained by any person,\n the assessing officer comes to the conclusion that\n such person is indulging in unauthorized use of\n electricity, he shall provisionally assess to the\n best of his judgement the electricity charges\n payable by such person or by any other person\n benefited by such use.\n[…]\n\n [(5) If the assessing officer reaches to the\n conclusion that unauthorised use of electricity has\n taken place, the assessment shall be made for the\n entire period during which such unauthorized use\n of electricity has taken place and if, however, the\n period during which such unauthorised use of\n electricity has taken place cannot be ascertained,\n such period shall be limited to a period of twelve\n\nmonths immediately preceding the date of\n inspection.]\n\n (6) The assessment under this section shall be\n made at a rate equal to twice the tariff rates\n applicable for the",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 80,
+      "chunk_id": "SC_2022_2022_OCT_37_P080_C03",
+      "text": "relevant category of services\n specified in sub­section (5).”\n (Emphasis supplied)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 81,
+      "chunk_id": "SC_2022_2022_OCT_37_P081_C01",
+      "text": "75. The Vigilance/Enforcement Department detects\n\ntheft/unauthorized use of electricity. After giving due opportunity,\n\nthe bills are generated for electricity stolen/unauthorized use.\nThese are called enforcement sales/assessed sales. The statutory\n\ncharge for such theft/unauthorized use is twice the normal rate.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 82,
+      "chunk_id": "SC_2022_2022_OCT_37_P082_C01",
+      "text": "76. While settling enforcement cases of small consumers, Lok\n\nAdalats often provide discounts to errant consumers on the\n\nassessed equivalent of the rupee amount and not on the assessed\n\nunits of energy. The assessment of units of energy as deemed to be\n\nsales to the consumers is in accordance with Section 126 of the\n\n2003 Act read with provisions for such assessment specified by the\n\nDERC itself.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 83,
+      "chunk_id": "SC_2022_2022_OCT_37_P083_C01",
+      "text": "77. In a particular case of unauthorized use of electricity under\n\nSection 126, suppose using the ‘LDHF formula’ (specified by DERC\n\nitself), the appellants assess the consumer as having consumed 100\n\nunits of electricity. (a) By virtue of the Supply Code Regulations framed\n by the DERC itself, these 100 units are to be\n treated as “sales”. (b)Upon the assessment of 100 Units, the Appellant\n raises a bill on the said consumer. Under\nSection\n\nof the Electricity Act, the bill has to be raised\n at twice the normal billing rate. If the normal\n ABR were Rs. 5 per Unit, the Section 126 Bill will\n be raised for Rs 1,000 (i.e. 100×[Rs 5×2]);\n(c) By virtue of a Settlement which is entered into\n between the Appellant and the consumer before\n the Lok Adalat etc., suppose the Appellant agrees\n to give up Rs 200, the Appellant then recovers Rs\n 800/­ rather than Rs 1,000/­. (d)Now, though the settlement is only for the Rupee\n equivalent of the Assessed Bill and not the ‘Units\n sold’, the DERC now takes Rs 800, divides it by\n Rs 10 (i.e. twice the ABR) and arrives at an\n imaginary ‘sales’ figure of electrical energy of 80\n Units.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 83,
+      "chunk_id": "SC_2022_2022_OCT_37_P083_C02",
+      "text": "(e) This is in complete contrast to the Assessment of\n Energy sold of 100 Units in terms of the LDHF\n Formula specified by the DERC itself according to\n which the sales are “deemed to be” 100 units. (f) Therefore, by entering into a settlement before\n the Lok Adalat (which is in harmony with the\n entire Lok Adalat philosophy), the Appellant first\n loses Rs 200 in monetary terms and then loses\n 20 Units of electricity which the Appellant is\n\ndeemed to have sold such consumer in the first\n place.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 84,
+      "chunk_id": "SC_2022_2022_OCT_37_P084_C01",
+      "text": "78. Learned counsel for the appellants submit that when the\n\nstatute creates a legal fiction, i.e. energy assessed is deem to be\n\nconsumed, the same has to be given effect to with all its\n\nconsequences i.e. same quantum of energy is to be accounted for as\n\nsupplied. However, learned counsel appearing for the respondent\n\nDERC submitted that that concurrent findings of the DERC and the\n\nAPTEL cannot be reversed and the methodology adopted by the\n\nCommission has to be maintained.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 85,
+      "chunk_id": "SC_2022_2022_OCT_37_P085_C01",
+      "text": "79. Having considered this question in detail, we are not in\n\nagreement with the stand taken by the respondent. We are of the\n\nview that the methodology adopted by the DERC is contrary to the\n\nsettled principle of law that when the law deems a certain imaginary\n\nstate of affairs as real, DERC would not let its imagination boggle at\n\ntreating the 100 units as sales. We are of the view that such\n\nimaginary state of affairs must be taken to its logical end and\n\ncommend the treatment of 100 units as ‘sales’.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 86,
+      "chunk_id": "SC_2022_2022_OCT_37_P086_C01",
+      "text": "80. We are of the view that the assessed energy has to be\n\nconsidered as supply by the appellants in enforcement cases.\n\nTherefore, we direct the DERC to consider assessed energy for\n\ncalculation of enforcement sales and allow the impact of the same\n\nalong with carrying costs. In view of our conclusion as above, we do\n\nnot deem it necessary to answer the other contentions on this\n\nissue.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 87,
+      "chunk_id": "SC_2022_2022_OCT_37_P087_C01",
+      "text": "81. The substantial questions of law are answered accordingly.\n\nResultantly, the appeals are allowed and the order(s) of the DERC\n\nand the judgment of the APTEL impugned herein, to the extent\n\nmentioned above. are hereby set aside. Parties to bear their\n\nrespective costs.\n………………………………J.\n (S. ABDUL NAZEER)\n\n ………………………………J.\n (KRISHNA MURARI)\nNew Delhi;\nOctober 18, 2022.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Bses Rajdhani Power Ltd. vs Delhi Electricity Regulatory ...",
+    "case_id": "SC_2022_2022_OCT_37",
+    "court": "Supreme Court of India",
+    "year": "2022",
+    "facts_summary": "1. certain findings of the Appellate Tribunal for Electricity, New Delhi\n\n(‘APTEL’) in the common judgment and order dated 28.11.2014\n\n(‘Impugned Order’) passed in Appeal Nos.61 and 62 of 2012 (‘Tariff\n\nAppeals’). The Tariff Appeals were filed by the appellants before the\n\nAPTEL challenging certain findings of the Delhi Electricity\n\nRegulatory Commission (‘DERC’) in the Tariff Order dated\n\n26.08.2012 for Truing Up of financials for FY 2008­09 and FY\n\n2009­10 and Aggregate Revenue Requirement (‘ARR’) for FY 2011­ 12. DERC has also filed appeals (C.A. Nos.8660­61 of 2015)\n\nchallenging certain findings in the common impugned order and the\n\nsaid appeals will be heard and decided separately. 2. The Appellants are Distribution Licensees (“Discoms”) in terms\n\nSection 2(17)\nof the Electricity Act, 2003 (‘2003 Act’). The primary\n\nfunction of a Discom is to give supply to any premises upon an\n\napplication being made by a consumer in compliance with the\n\napplicable laws, including paying requisite charges, except where\n\nprevented by force majeure conditions like cyclones or floods.",
+    "legal_issues": "3. The Appellants purchase 90% to 95% of the power from\n\nCentral and State Generating Companies. Tariff of Central\n\nGenerating Stations is determined by the Central Electricity\n\nRegulatory Commission (‘CERC’) and, therefore, the Appellants have\n\nno control over the tariff to be paid to the Central Generating\n\nStations. Simultaneously, the tariff for the State Generating\n\nCompanies is determined by the State Regulator i.e. DERC. 4. It is the case of the Appellants that since privatization, the\n\nARR determined by the DERC was not even sufficient to meet the\n\nactual power purchase cost which has led to creation of a huge\n\nrevenue gap. It is also contended that the DERC in repeated\n\ndisregard to its statutory regulations and its own statutory advice\n\nhas refused to make periodic increase in the tariff rate. The actions\n\nof the DERC have resulted in a situation where the Appellants are\n\ndeeply indebted and have been forced to borrow/take loans to fund\n\ntheir day­to­day operations which, in turn, have also dried up\n\nleaving the Appellants without adequate monies to pay their\n\nsuppliers. 8. According to the appellants, the present Civil Appeals give rise\n\nto substantial questions of law under\nSection 125\nof the 2003 Act\n\non six issues. It is contended that the said substantial questions of\n\nlaw have arisen primarily because the DERC has, inter alia,\n\ndeliberately refused to follow statutory regulations while truing up.\n\nFurther, it is contended that APTEL’s Impugned Order has failed",
+    "ratio_summary": "9. However, the respondents have contended that the appellants\n\nhave entirely failed to establish the existence of any substantial\n\nquestion of law as required under\nSection 125\nof the 2003 Act, read\n\nwith\nSection 100\nof the Code of Civil Procedure, 1908 (‘\nCPC\n’) on any\n\nof the above issues. 25. Before considering the other questions, let us consider the\n\npreliminary objection raised by learned counsel for the respondent­\n\nDERC as to whether the appeals involve any substantial question of\n\nlaw as required under Section 125 of the 2003 Act read with Sec­\n\ntion 100\nof the CPC\n? 27. Thus, an appeal to this Court under Section 125 could be filed\n\non the grounds specified in\nSection 100\nof the CPC. Under\nSection\n\nof the CPC, an appeal could be filed only when the case\n\ninvolves ‘a substantial question of law’, as may be framed by the\n\nappellate court. Thus, the existence of a ‘substantial question of\n\nlaw’ arising from the judgment of the APTEL is sine qua non for\n\nexercise of jurisdiction by this Court under Section 125 of the 2003\n\nAct.",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

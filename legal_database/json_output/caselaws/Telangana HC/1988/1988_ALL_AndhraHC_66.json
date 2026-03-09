@@ -1,0 +1,159 @@
+{
+  "case_id": "SC_1988_1988_ALL_ANDHRAHC_66",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1988",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 5,
+  "cited_by_count": 3,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1988\\1988_ALL_AndhraHC_66.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1988_1988_ALL_ANDHRAHC_66_P001_C01",
+      "text": "Commissioner Of Income-Tax vs C. Subramanyam on 25 February, 1988\nEquivalent citations: [1989]175ITR48(AP)\nJUDGMENT\n\n Anjaneyulu, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1988_1988_ALL_ANDHRAHC_66_P002_C01",
+      "text": "1. This reference by the Income-tax Appellate Tribunal, under\nsection 256(1)\nof the Income-tax Act, 1961 (hereinafter referred to as \"the Act\"), relates to the income-tax assessment years 1973-74 and 1974-75.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1988_1988_ALL_ANDHRAHC_66_P003_C01",
+      "text": "2. The question referred for the consideration of this court is :\n\"Whether, on the facts and in the circumstances of the case, the Income-tax Appellate Tribunal is justified in holding that\nsection 154\ncannot be invoked to include the income of the spouse in the hands of the assessee under\nsection 64\nof the Income-tax Act for the assessment years 1973-74 and 1974-75 ?\"",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1988_1988_ALL_ANDHRAHC_66_P004_C01",
+      "text": "3. The assessee and his wife constituted themselves into a partnership firm under a deed of partnership dated October 26, 1965. There is no other person as a partner in the partnership firm. The firm's assessments were completed and the assessments of the individual persons were also completed on the basis of the assessments made in the hands of the partnership firm. After the assessments were made, the Income-tax Officer seems to have realised that an error was committed, in that, the income of the wife arising from the partnership firm should have been taxed in the hands of the husband under\nsection 64(1)(i)\nof the Act. He accordingly initiated proceedings for rectification of the mistake under\nsection 154\nof the Act and eventually passed orders of rectification under which he included the income of the wife in the hands of the husband and made the assessments.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1988_1988_ALL_ANDHRAHC_66_P005_C01",
+      "text": "4. The assessee questioned the rectification orders on two grounds. Firstly, it was urged that the income is not includible on merits and the provisions of\nsection 64\nof the Act do not authorise the assessments of the wife to be made including her share income in the hands of her husband. It was nest urged that in any event there was no patent mistake apparent from the assessee's record and, consequently, the provisions of\nsection 154\nof the Act are inapplicable. The Income-tax Officer rejected both the contentions. The matter was carried in appeal by the assessee. The Appellate Assistant Commissioner rejected the assessee's appeals and confirmed the orders of rectification under\nsection 154\n. The assessee carried the matter to the Tribunal in further appeal.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1988_1988_ALL_ANDHRAHC_66_P005_C02",
+      "text": "The Tribunal held that the provisions of\nsection 64(1)(i)\nare clearly attracted in the present case and recorded its opinion that the income of the wife is liable to be included in the hands of the husband under\nsection 64(1)(i)\nof the Act in the present case. the Tribunal, however, accepted the second contention o0f the assessee, namely, that, in the facts and circumstances, it was not possible to say that there was any error apparent on the record of the assessee. The Tribunal also referred to Explanation 1 to\nsection 64(1)(i)\nstating that the individual whose total income is referred to in clause (i) shall be the husband or wife whose total income, excluding the income from the firm, is greater. The Tribunal observed that in order to determine whether there was a mistake or not, it was necessary to go into the effect of the Explanation and unless, in terms of the Explanation, the husband's income is found to be greater, the income of the wife is not liable to be included. In the opinion of the Tribunal, this renders the entire exercise debatable and, consequently, the provisions of\nsection 154\nwill have no application.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1988_1988_ALL_ANDHRAHC_66_P005_C03",
+      "text": "In that view of the matter, the rectification orders for the assessment years 1973-74 to 1975-76 were cancelled and the appeals by the assessee were allowed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1988_1988_ALL_ANDHRAHC_66_P006_C01",
+      "text": "5. Being aggrieved by the Tribunal's decision, the Revenue sought for and obtained a reference to this court on the question already specified by us in para one (at p. 50).",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1988_1988_ALL_ANDHRAHC_66_P007_C01",
+      "text": "6. We have heard learned standing counsel for the Revenue. None is present on behalf of the respondent-assessee. Even so, learned standing counsel has taken us through the relevant provisions in the Act and also invited out attention to the decisions bearing on the point. We are in entire agreement with the view expressed by the Tribunal that the provisions of\nsection 64(1)(i)\nof the Act are clearly applicable in the present case, as a result of which, the income received by the wife from the partnership firm was liable to be assessed in the hands of the assessee. We are, however, unable to agree with the view expressed by the Tribunal on the second part of the issue, namely, that in terms of\nsection 154\nof the Act, there is no mistake apparent from the record of the assessee. The above view of the Tribunal is largely based on the decision of the Supreme Court in the case of Khorshed Shapoor v. Asst. CED , wherein the decision of the Karnataka High Court in\nEthel Rodrigues v. Asst\n. CED , was referred to and approved.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1988_1988_ALL_ANDHRAHC_66_P007_C02",
+      "text": "The Tribunal thought that the principle enunciated by the Karnataka High Court and affirmed by the Supreme Court\nthe above case\napplied to the matter under consideration in the present case. In the Karnataka case in Ethel Rodrigues [1963] 49 ITR (ED) 128, on a perusal of the probate proceedings in the civil court, a certain error was discovered in the estate duty assessment made and\nsection 61\nof the Estate Duty Act, 1953 (which corresponds to\nsection 154\nof the Income-tax Act), was invoked and the error rectified. The Revenue contended that on a perusal of the it was clear that there was an apparent error in the estate duty assessment made and, consequently, the rectification proceedings were correctly taken. The Karnataka High Court rejected the Revenue's contention stating that the record of probate proceedings in a civil court is quite distinct and separate from the records maintained by the assessing authorities in the Income-tax Department and, consequently, it should be said that the discovery of an error with reference to probate proceedings in a civil court cannot be considered to be an error apparent on the record of the assessee for the purpose of estate duty.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1988_1988_ALL_ANDHRAHC_66_P007_C03",
+      "text": "It was found that the record in the estate duty proceedings, by itself, did not reveal any error and it was only on a perusal of the record of probate proceedings in the civil court that an error was discovered. It was, in these circumstances, the contention of the Revenue was rejected by the Karnataka High court and the Supreme Court affirmed the said principle. We are afraid this principle could have no application in a case like the present one. The tax affairs of wife in a partnership firm are entirely connected with the record of the partnership firm and also the record of the individual husband. The matters are so intermingled that in order to make appropriate assessments in the hands of the individual husband and the wife, a perusal of the entire record relating to the firm, the husband and the wife is necessary. In that sense, it should be held that it is open to the Income-tax Officer to look into the records of the firm, the husband and the wife and come to a conclusion regarding the existence of any error patent on the record falling within the terms of\nsection 154\nof the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1988_1988_ALL_ANDHRAHC_66_P007_C04",
+      "text": "If only the Income-tax Officer indicated, by a perusal of the partnership deed, that the firm consisted of only two persons, namely, the wife and the husband, and that would automatically bring in\nsection 64\nfor consideration. It is obvious that the Income-tax Officer failed to look into the records of the firm while making assessments of the income in the hands of the husband and his wife. That was clearly an omission on the part of the Income-tax Officer. It was only subsequently that a perusal of the record indicated that indisputably the partnership firm consisted of only the husband and the wife indisputably the partnership firm consisted of only the husband and the wife and, therefore, the provisions of\nsection 64\nof the Act were liable to be invoked to include the income of the wife in the hands of the husband. Thus, there was a mistake within the terms of\nsection 154\nof the Act and jurisdiction is conferred on the Income-tax Officer initiated proceedings for rectification of the assessments already made in the hands of the individual husband.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1988_1988_ALL_ANDHRAHC_66_P007_C05",
+      "text": "Once the provisions of\nsection 64(1)(i)\nare rendered applicable, the extent of application of the Explanation to that section is a matter that could be automatically determined. There is no debate involved, inasmuch as the income of the wife is includible in the hands of the husband. We are unable to uphold the order of the Tribunal that, in the facts and circumstances of the case, the rectification of the assessments for 1973-74 and 1974-75 is not called for. We accordingly, answer the question referred in the negative that is to say, in favour of the Revenue and against the assessee. There shall be no order as to costs.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1988_1988_ALL_ANDHRAHC_66",
+    "court": "Supreme Court of India",
+    "year": "1988",
+    "facts_summary": "1. This reference by the Income-tax Appellate Tribunal, under\nsection 256(1)\nof the Income-tax Act, 1961 (hereinafter referred to as \"the Act\"), relates to the income-tax assessment years 1973-74 and 1974-75.",
+    "legal_issues": "4. The assessee questioned the rectification orders on two grounds. Firstly, it was urged that the income is not includible on merits and the provisions of\nsection 64\nof the Act do not authorise the assessments of the wife to be made including her share income in the hands of her husband. It was nest urged that in any event there was no patent mistake apparent from the assessee's record and, consequently, the provisions of\nsection 154\nof the Act are inapplicable. The Income-tax Officer rejected both the contentions. The matter was carried in appeal by the assessee. The Appellate Assistant Commissioner rejected the assessee's appeals and confirmed the orders of rectification under\nsection 154\n. The assessee carried the matter to the Tribunal in further appeal.",
+    "ratio_summary": "2. The question referred for the consideration of this court is :\n\"Whether, on the facts and in the circumstances of the case, the Income-tax Appellate Tribunal is justified in holding that\nsection 154\ncannot be invoked to include the income of the spouse in the hands of the assessee under\nsection 64\nof the Income-tax Act for the assessment years 1973-74 and 1974-75 ?\" 5. Being aggrieved by the Tribunal's decision, the Revenue sought for and obtained a reference to this court on the question already specified by us in para one (at p. 50).",
+    "final_order": "Once the provisions of\nsection 64(1)(i)\nare rendered applicable, the extent of application of the Explanation to that section is a matter that could be automatically determined. There is no debate involved, inasmuch as the income of the wife is includible in the hands of the husband. We are unable to uphold the order of the Tribunal that, in the facts and circumstances of the case, the rectification of the assessments for 1973-74 and 1974-75 is not called for. We accordingly, answer the question referred in the negative that is to say, in favour of the Revenue and against the assessee. There shall be no order as to costs.",
+    "outcome_summary": "Once the provisions of\nsection 64(1)(i)\nare rendered applicable, the extent of application of the Explanation to that section is a matter that could be automatically determined. There is no debate involved, inasmuch as the income of the wife is includible in the hands of the husband. We are unable to uphold the order of the Tribunal that, in the facts and circumstances of the case, the rectificati",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

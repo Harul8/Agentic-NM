@@ -1,0 +1,171 @@
+{
+  "case_id": "SC_1985_STATE_OF_UTTAR_PRADESH_VS_MAHANT_SINGH",
+  "case_name": "State Of Uttar Pradesh vs Mahant Singh",
+  "normalized_case_name": "STATE_OF_UTTAR_PRADESH_VS_MAHANT_SINGH",
+  "court": "Supreme Court of India",
+  "year": "1985",
+  "judgment_template": null,
+  "case_number": "Petition 1987 of 1982",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": "18 October 1985",
+  "judges": [
+    "P.N. Bhagwati",
+    "Ranganath Misra",
+    "JUDGMENT",
+    "Ranganath Misra, J."
+  ],
+  "author": "Ranganath Misra",
+  "bench_type": "constitution",
+  "petitioner": "State Of Uttar Pradesh",
+  "respondent": "Mahant Singh",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 12,
+  "cited_by_count": 5,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1986SC207",
+    "1986CRILJ22",
+    "1985(2)CRIMES969(SC)",
+    "1985(2)SCALE842",
+    "(1985)4SCC624",
+    "1986(1)UJ451(SC)",
+    "AIR 1986 SUPREME COURT 207",
+    "1985 (4) SCC 624",
+    "1985 ALL. L. J. 1314",
+    "1986 UJ (SC) 451",
+    "1986 ALLAPPCAS (CRI) 5",
+    "1986 CURCRIJ 106",
+    "1986 SCC 56",
+    "1985 CRIAPPR(SC) 346",
+    "1985 CURCRIJ 508",
+    "1986 SCC(CRI) 56",
+    "(1986) SC CR R 1",
+    "(1985) 2 CRIMES 969",
+    "(1986) 1 RECCRIR 151",
+    "(1986) 2 SUPREME 86",
+    "(1985) ALLCRIR 529",
+    "(1985) ALL WC 916"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1985\\1985_292.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1985_STATE_OF_UTTAR_PRADESH_VS_MAHANT_SINGH_P001_C01",
+      "text": "1. This appeal is by special leave. The State of Uttar Pradesh has challenged the judgment of the Allahabad High Court quashing the order of detention made by the District Magistrate of Gorakhpur on August 7, 1981, in exercise of powers Under\nSection 3(2)\nof the National Security Act, 1980 ('Act'for short).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1985_STATE_OF_UTTAR_PRADESH_VS_MAHANT_SINGH_P002_C01",
+      "text": "2. The respondent moved an application under\nArticle 226\nof the Constitution for a writ of habeas corpus and challenged his continued detention on the ground that the provisions of\nSection 10\nof the Act had not been complied with and his representation had not been placed before the Advisory Board within three weeks from the date of detention. The High Court found that the petitioner had made a representation on August 16, 1981, which the authorities of the Jail had forwarded to the District Magistrate and he in his turn sent the same to the State Government on August 24, 1981. The State Government received the representation, on August 25, 1981, and caused it to be placed before the Advisory Board on August 29, 1981. According to the High Court, \"the representation of the petitioner was placed before the Advisory Board twenty two days after the date of detention of the petitioner. There was thus a breach of\nSection 10\nof the Act. The detention of the petitioner is thus illegal\". On this conclusion, by order dated May 11, 1982, the High Court quashed the detention.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1985_STATE_OF_UTTAR_PRADESH_VS_MAHANT_SINGH_P002_C02",
+      "text": "It added at the end of its order :\nAs the question whether\nSection 10\nof the Act so far as it relates to the placing of the representation before the Advisory Board within three weeks of the date of detention of the petitioner is directory or mandatory is one of general importance we grant the oral prayer of the learned Additional Government Advocate and certify this case as a fit one for appeal to the Supreme Court. Notwithstanding this order of the High Court, the State of Uttar Pradesh instead of lodging an appeal in this Court, applied for grant of special leave under\nArticle 136\nof the Constitution. That application was registered as Special Leave Petition (Criminal) No. 1987 of 1982 and special leave was granted on October 7, 1983. In spite of service of notice, the respondent has not appeared to be heard in this Court. Section 10\nof the Act provides :",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 136"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1985_STATE_OF_UTTAR_PRADESH_VS_MAHANT_SINGH_P003_C01",
+      "text": "10. Reference to Advisory Boards-Save as otherwise expressly provided in this Act, in every case where a detention order has been made under this Act, the appropriate Government shall, within three weeks from the date of detention of a person under the order, place before the Advisory Board constituted by it Under\nSection 9\n, the grounds on which the order has been made and the representation if any, made by the person affected by the order, and in case where the order has been made by an officer mentioned in Sub-section (3) of\nSection 3\n, also the report by such officer Under Section (4) of that section.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1985_STATE_OF_UTTAR_PRADESH_VS_MAHANT_SINGH_P004_C01",
+      "text": "2. There can be no doubt that the provisions in\nSection 10\nof the Act are mandatory. This Court has on more than one occasion indicated in unmistakable terms that the safeguard available to a detenu without trial is what is guaranteed to him under\nArticle 22(5)\nof the Constitution. The time schedule indicated in the Act and the screening by the Advisory Board are in answer to this requirement. This Court in\nKhudi Ram Das v State of West Bengal\n(1975) 2 SCR 832, said :\nThe constitutional imperatives enacted in this\nArticle 22\nare twofold : (1) the detaining authority must, as soon as may be, that is as soon as practicable after the detention, communicate to the detenu the grounds on which the order of detention has been made, and (2) the detaining authority must afford the detenu the earliest opportunity of making a representation against the order of detention. These ate the barest minimum safeguards which must be observed before an executive authority can be permitted to preventively detain a pet son and thereby drown his right of personal liberty in the name of public good and social security.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "This Court in\nKhudi Ram Das v State of West Bengal"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1985_STATE_OF_UTTAR_PRADESH_VS_MAHANT_SINGH_P005_C01",
+      "text": "3. A Constitution Bench of this Court in\nA.K. Roy v. Union of India\n(1982) 2 SCR 272, while upholding the vires of the Act, emphasised on compliance with the procedural requirements. We are, therefore, of the definite view that the requirements of\nSection 10\nare mandatory and non-compliance with or infraction thereof would certainly be fatal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1985_STATE_OF_UTTAR_PRADESH_VS_MAHANT_SINGH_P006_C01",
+      "text": "4. Section 10\nprovides that the State Government has the obligation to cause the papers relating to detention to be placed, along with the representation, if made, within three weeks from the date of detention before the Advisory Board. Where a representation is not made in regard to the detention, the papers without the representation have to be placed before the Board within the time prescribed. Where a representation is made within reasonable time, the same has also to be promptly attended to and has to be placed before the Board. Mr. Dalveer Bhandari for the appellant placed reliance on a decision of this Court in\nState of Rajaslhan and Anr. v. Shamsher Singh\nAIR 1985 SC 1082, where, as here, the representation had been placed before the Advisory Board on the 22nd day and thus there was a day's delay in complying with the requirements of the statute. In that case the High Court had accepted that the requirement of\nSection 10\nof the Act was mandatory and, therefore, the failure to place the representation before the Advisory Board within the time had vitiated the detention. This Court took the view :\nWe agree with the submission of Mr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1985_STATE_OF_UTTAR_PRADESH_VS_MAHANT_SINGH_P006_C02",
+      "text": "Jethmalani that the obligation cast Under\nSection 10\nof the Act is paramount and the strictness with which such a mandate has to be complied with is absolute. While making of the reference Under\nSection 10\nwith the grounds of detention is a must, furnishing of the representation is conditional upon it having been made and receipt thereof by the appropriate Government. Though under the general scheme of the Act definite and different periods have been prescribed for compliance with the step to step treatment of the matter, there is no obligation cast on the detenu to make a representation within any definite time. We are, therefore, prepared to accept the submission of the learned Advocate-General that while considering the compliance with\nSection 10\nof the Act emphasis has to be laid on making of the reference and forwarding of the grounds of detention, and the placing of the representation has to be judged on different basis. We may not be understood to be of the view that it is open to the appropriate Government to withhold the placement of the representation unduly or indifinitely.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1985_STATE_OF_UTTAR_PRADESH_VS_MAHANT_SINGH_P006_C03",
+      "text": "When the reference is received and the grounds of detention are available, the Board proceeds to fix a date of hearing for consideration of the justification of detention. The procedure of the Advisory Board contained in\nSection 11\nof the Act indicates that the Board is to consider the materials placed before it and is entitled to call for such information as it may deem necessary from the appropriate Government or from any other person concerned and after hearing the detenu, if he wants to be heard in person, has to report to the appropriate Government within seven weeks from the date of detention in the manner indicated in the remaining sub-sections of that section. While dealing with this aspect of the matter it is to be borne in mind that\nSection 10\nrequires the reference to be placed before the Board within three weeks and\nSection 11\nrequires the report to be submitted to the appropriate Government within seven weeks. The legislative scheme in fixing the limit of three weeks in\nSection 10\nand the further limit of seven weeks in\nSection 11\nallows at least four weeks' time to the Board to deal with the matter.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1985_STATE_OF_UTTAR_PRADESH_VS_MAHANT_SINGH_P007_C01",
+      "text": "5. In the matter before us, August 28, 1981, was the last date of three weeks from the dale of detention but the representation had been placed before the Board on August 29, 1981. There has been an assertion on behalf of the State Government that the representation was forwarded to the Board on August 28, 1981, and seems to have been received there on the following day.\nIn the face of these facts, the ratio in\nShamsher Singh\n's case is applicable and the High Court should not have quashed the order of detention. Even though we are of the view that the High Court should not have vacated the detention, in view of the lapse of almost 3 1/2 years after the detention was quashed, we do not think we should interfere with the decision of the High Court. The appeal is accordingly dismissed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "State Of Uttar Pradesh vs Mahant Singh",
+    "case_id": "SC_1985_STATE_OF_UTTAR_PRADESH_VS_MAHANT_SINGH",
+    "court": "Supreme Court of India",
+    "year": "1985",
+    "facts_summary": "2. The respondent moved an application under\nArticle 226\nof the Constitution for a writ of habeas corpus and challenged his continued detention on the ground that the provisions of\nSection 10\nof the Act had not been complied with and his representation had not been placed before the Advisory Board within three weeks from the date of detention. The High Court found that the petitioner had made a representation on August 16, 1981, which the authorities of the Jail had forwarded to the District Magistrate and he in his turn sent the same to the State Government on August 24, 1981. The State Government received the representation, on August 25, 1981, and caused it to be placed before the Advisory Board on August 29, 1981. According to the High Court, \"the representation of the petitioner was placed before the Advisory Board twenty two days after the date of detention of the petitioner. There was thus a breach of\nSection 10\nof the Act. The detention of the petitioner is thus illegal\". On this conclusion, by order dated May 11, 1982, the High Court quashed the detention.",
+    "legal_issues": "Jethmalani that the obligation cast Under\nSection 10\nof the Act is paramount and the strictness with which such a mandate has to be complied with is absolute. While making of the reference Under\nSection 10\nwith the grounds of detention is a must, furnishing of the representation is conditional upon it having been made and receipt thereof by the appropriate Government. Though under the general scheme of the Act definite and different periods have been prescribed for compliance with the step to step treatment of the matter, there is no obligation cast on the detenu to make a representation within any definite time. We are, therefore, prepared to accept the submission of the learned Advocate-General that while considering the compliance with\nSection 10\nof the Act emphasis has to be laid on making of the reference and forwarding of the grounds of detention, and the placing of the representation has to be judged on different basis. We may not be understood to be of the view that it is open to the appropriate Government to withhold the placement of the representation unduly or indifinitely.",
+    "ratio_summary": "It added at the end of its order :\nAs the question whether\nSection 10\nof the Act so far as it relates to the placing of the representation before the Advisory Board within three weeks of the date of detention of the petitioner is directory or mandatory is one of general importance we grant the oral prayer of the learned Additional Government Advocate and certify this case as a fit one for appeal to the Supreme Court. Notwithstanding this order of the High Court, the State of Uttar Pradesh instead of lodging an appeal in this Court, applied for grant of special leave under\nArticle 136\nof the Constitution. That application was registered as Special Leave Petition (Criminal) No. 1987 of 1982 and special leave was granted on October 7, 1983. In spite of service of notice, the respondent has not appeared to be heard in this Court. Section 10\nof the Act provides :",
+    "final_order": "5. In the matter before us, August 28, 1981, was the last date of three weeks from the dale of detention but the representation had been placed before the Board on August 29, 1981. There has been an assertion on behalf of the State Government that the representation was forwarded to the Board on August 28, 1981, and seems to have been received there on the following day.\nIn the face of these facts, the ratio in\nShamsher Singh\n's case is applicable and the High Court should not have quashed the order of detention. Even though we are of the view that the High Court should not have vacated the detention, in view of the lapse of almost 3 1/2 years after the detention was quashed, we do not think we should interfere with the decision of the High Court. The appeal is accordingly dismissed.",
+    "outcome_summary": "5. In the matter before us, August 28, 1981, was the last date of three weeks from the dale of detention but the representation had been placed before the Board on August 29, 1981. There has been an assertion on behalf of the State Government that the representation was forwarded to the Board on August 28, 1981, and seems to have been received there on the following day.\nIn the face of these facts",
+    "sections_cited": [
+      "Constitution 226",
+      "Constitution 136"
+    ],
+    "cases_cited": [
+      "This Court in\nKhudi Ram Das v State of West Bengal"
+    ]
+  }
+}

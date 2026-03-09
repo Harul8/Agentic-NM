@@ -1,0 +1,275 @@
+{
+  "case_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY",
+  "case_name": "State Of Kerala vs General Manager, Southern Railway, ...",
+  "normalized_case_name": "STATE_OF_KERALA_VS_GENERAL_MANAGER,_SOUTHERN_RAILWAY,_...",
+  "court": "Supreme Court of India",
+  "year": "1976",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 1367 of 1968",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "30 August 1976",
+  "judges": [
+    "Hans Raj Khanna",
+    "N.L. Untwalia",
+    "Jaswant Singh"
+  ],
+  "author": "Hans Raj Khanna",
+  "bench_type": "constitution",
+  "petitioner": "State Of Kerala",
+  "respondent": "General Manager, Southern Railway, ...",
+  "reporter_citations": [
+    "AIR 1941 Patna 326",
+    "AIR 1953 Assam 193",
+    "AIR 1960 Madras 58",
+    "AIR 1950 Nagpur 85"
+  ],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 13,
+  "cited_by_count": 28,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1976 AIR 2538",
+    "1977 SCR (1) 419",
+    "AIR 1976 SUPREME COURT 2538",
+    "1976 4 SCC 265",
+    "1977 (1) SCJ 290",
+    "1977 2 SCWR 101",
+    "1977 9 LAWYER 175",
+    "1977 TAC 66",
+    "1977 (1) SCR 419",
+    "1976 UJ (SC) 750"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1976\\1976_194.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P001_C01",
+      "text": "ACT:\nCode of Civil Procedure\n, Ss. 79 and 80, suit for compen-\n sation against railway administration. whether impleading\n Union of India as a party necessary.\nThe Indian Railways Act, 1890\n,\nS. 3(6)\n, Railway Adminis-\n tration, whether a separate legal entity.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P002_C01",
+      "text": "HEADNOTE:\n The appellant booked rice for being transported by\n train, from Bareilly railway station to Trivandrum railway\n station. On delivery, the rice was found to be damaged and\n short in quantity. The appellant claimed damages from the\n respondent, who resisted the claim on the grounds that the\n suit was not maintainable as the Union of India had not been\n impleaded as a defendant, and that a suit by a State against\n the Union of India could only be instituted in the Supreme\n Court under\nArt. 131\nof the Constitution. The suit was\n dismissed by the Trial Court, and an appeal from it was\n dismissed by the High Court. Dismissing the appeal, the Court,\n HELD: The Southern Railway is owned by the Union of\n India. As such, a suit dealing with the alleged liability\n of that railway should have been brought against the Union\n of India. Section 80\nof the C.P.C. contemplates institution\n of a suit against the Central Government even though it\n relates to a railway. [422 E-FI]\n Sukhanand Shamlal v. Oudh Rohilkhand Railway AIR 1924,\n Born. 306; Hirachand Succaram Gandhy & Ors. v.G.I.P. Rail-\n way Co., AIR 1928 Born. 421; Shaikh Elahi Bakhsh v.E.I.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P002_C02",
+      "text": "Railway Administration, AIR 1941 Patna 326: Chandra Mohan\n Saha & Ant. v. Union of India & Anr. AIR 1953 Assam 193 and\n P.R. Narayanaswami lyer & Ors. v. Union of India AIR 1960\n Madras 58, Approved. (2) Neither the definition of the \"railway administra-\n tion\" in\nSection 3(6)\nof the Indian Railways Act, nor the\n language of\nsections 72",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P003_C01",
+      "text": "of the Act, lends support for\n the view that the railway administrations are to be treated\n as separate personalities, entries or separate juridical\n persons. [423 B-C]\n Dominion of India v. Firm Musaram Kishunprasad AIR 1950\n Nagpur 85. overruled.\n (3) The demarcation of the different State-owned rail-\n ways as distinct units for administrative and fiscal pur-\n poses cannot have the effect of conferring the status of\n juridical person upon the respective railway administrations\n or their General Managers for the purpose of civil suits.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P004_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal No. 1367 of 1968.\n (Appeal by Special Leave from the Judgment and Order\n dated 25-3-1965 of the Kerala High Court in A.S. No. 487 of\n 1961).\nS.V. Gupte and K.M.K. Nair, for the appellant.\n Mrs. Shyamla Pappu, B.B. Sawhney, Raju Ramachandran and\n Girish Chandra, for the respondent.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P005_C01",
+      "text": "The Judgment of the Court was delivered by\n KHANNA, J.--This appeal by special leave by the State of\n Kerala is against the Full Bench decision of the Kerala High\n Court affirming on appeal the judgment and decree of the\n trial court whereby the suit for recovery of Rs. 28,208.70\n filed by the appellant against the General Manager, Southern\n Railway respondent was dismissed. The appellant booked 2,000 tons of rice in 21,310 bags\n from Bareilli railway station for being transported to\n Trivandrum central railway station as per 10 railway re-\n ceipts during the period from June 25 to July 5, 1950. According to the case of the appellant, the rice delivered\n at Trivandrum central railway station was short by 79,378\n lbs. It was also averred that the rice in 327 bags was\n found to be damaged. The appellants accordingly claimed Rs.\n 28,208.70 as damages from the respondent.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P005_C02",
+      "text": "The respondent resisted the claim of the appellant,\n inter alia, on the ground that the suit was not maintainable\n as the Union of India had not been impleaded as a defendant\n to the suit and that a suit by a State against the Union of\n India could be instituted only in the Supreme Court of India\n under\narticle 131\nof the Constitution. It is not necessary\n to set out the other pleas of the respondent. As many as\n nine issues were framed by the trial court. Two of the\n issues, namely, issue Nos. 1 and 3, were treated as prelimi-\n nary issues and arguments were heard on those issues. Issue\n Nos. 1 and 3 read as under:\n\"1. Is the suit maintainable ? Can a decree be passed\n against the defendant as now impleaded ?\n2. Will the suit lie in this Court ? Is the suit barred\n by the provisions of the Constitution of India ?\"\nOn issue No. 3 it was held by the trial court that since the\n Union of India had not been made a party to the suit, clause\n(a) of\narticle 31\nof the Constitution had no application. The suit was accordingly held to be not liable to be dis-\n missed on that ground.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "Constitution 131",
+        "Constitution 31"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P005_C03",
+      "text": "On issue No. 1 the trial court held\n that the Union of India was a necessary party to the suit\n and as the Union of India had not been impleaded as a\n party, the suit was incompetent. As a result of its find-\n ings on issue No. 1 the trial court dismissed the suit. The\n decision of the trial court on issue No. 1 was affirmed in\n appeal by the High Court. An application was also filed at\n the hearing of the appeal before the High Court for implead-\n ing the Union of India as a party to the suit. The High\n Court rejected that application on the ground that no\n useful purpose would be served by allowing that application. It was observed that if the application was allowed and the\n Union of India was made a party, the suit would have to be\n dismissed as under\narticle 131(a)\nof the-Constitution a suit\n by one State against the Union of India could only lie in\n the Supreme Court. In the result, the High Court dismissed\n the appeal filed by the appellant. In appeal before us Mr. Gupte on behalf of the appel-\n lant has invited our attention to the definition of \"railway\n administration\" in",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P006_C01",
+      "text": "section 3(6)\nof the Indian Railways Act, 1890 (Act 9 of\n 1890) (hereinafter referred to as the Act) which reads as\n under:\n\"railway administration or 'administration' in the\n case of a railway administered by the Government\n means the Manager of the railway and includes the\n Government and, in the case of a railway adminis-\n tered by a railway company, means the railway\n company,\"\nHe has further referred to\nsections 72\n,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P007_C01",
+      "text": "the Act. According to section 72, the responsibility of a\n railway administration for the loss, destruction or dete-\n rioration of animals or goods delivered to the administra-\n tion to be carried by railway shall, subject to other provi-\n sions of the Act, be that of a bailee under\nsections 151\n,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P008_C01",
+      "text": "of the Indian Contract Act, 1872. Section 74\n absolves the railway administration of any responsibility\n for the loss, destruction or deterioration of any luggage\n belonging to or in charge of a passenger unless a railway\n servant has hooked and given a receipt therefor. Section 76\n deals with burden of proof in suits for compensation against\n a railway administration for any delay, loss, destruction,\n deterioration or damage. Section 80 at the relevant time\n read as under:\n\"80.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P008_C02",
+      "text": "Suits for compensation for injury to\n throughbooked traffic.---Notwithstanding anything\n in any agreement purporting to limit the liability\n of a railway administration with respect to traffic\n while on the railway of another administration, a\n suit for compensation for loss of the life of, or\n personal injury to, a passenger, or for loss, de-\n struction or deterioration of animals or goods\n where the passenger was or the animals or goods\n were booked through over the railway of two or more\n railway administrations, may be brought either\n against the railway administration from which the\n passenger obtained his pass or purchased his tick-\n et, or to which the animals or goods were deliv-\n ered by the consignor thereof, as the case may be,\n or against the railway administration on whose\n railway the loss, injury, destruction or deteriora-\n tion occurred.\"\nIt is urged by Mr. Gupte that as, according to\nsection 3\n (6)\nof the Act, railway administration means a Manager of\n the railway and as some of the sections 72 to 80 make ex-\n press reference to suits against railway administration, a\n suit against the General Manager of the railway concerned is\n competent.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P008_C03",
+      "text": "The trial court and the High Court, according to\n the learned counsel, were in error in holding that the suit\n was not maintainable because of the Union of India having\n not been impleaded as a party to the suit. The above argument has the quality of being ingenious,\n attractive and not lacking in apparent plausibility. A\n closer examination, however, reveals its infirmity and after\n giving the matter our earnest",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P009_C01",
+      "text": "consideration, we find it difficult to accept it. The Act\ndeals with and specifies, inter alia, the rights and liabil-\n ities which arise in case the goods consigned to the rail-\n ways are not delivered to the consignee. It likewise deals\n with short delivery of those goods as well as the cases in\n which the goods get damaged during transit. Most of the\n railways in India are owned by the Union of India, but there\n were some minor railways which till recently were owned by\n railway companies. The definition of \"railway administra-\n tion\" as given in\nsection 3(6)\nis comprehensive and deals\n with both types of railways. i.e., railways administered by\n the Government as well as those administered by railway\n companies. The words \"railway administration\" have been\n used in sections 72 to 80 because those sections pertain to\n rights and liabilities of the parties in both types of\n cases, i.e., cases where liability is incurred by Government\n administered railways as well as cases in which liability is\n incurred by railway administered by railway company.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P009_C02",
+      "text": "The\n Act\n, however, does not deal with, the question as to who\n should be impleaded as a defendant when a suit is brought\n against the railway. administration. This is essentially a\n matter relating to the frame of suits, and is dealt with by\nthe Code of Civil Procedure\n. According to section 79 of the\n Code, in a suit by or against the Government, the authority\n to be named as plaintiff or defendant, as the case may be,\n shall be (a) in the case of a suit by or against the Central\n Government, the Union of India, and (b) in the case of a\n suit by or against a State Government, the State. This\n section is in accordance with\narticle 300\nof the Constitu-\n tion, according to which the Government of India may sue or\n be sued by the name of the Union of India and the Government\n of a State may sue or be sued by the name of the State. It\n is not disputed that Southern Railway is owned by the Union\n of India. As such, a suit dealing with the alleged liabili-\n ty of that railway should have been brought against the\n Union of India.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P009_C03",
+      "text": "Section 80\nof the Code of Civil Procedure provides inter\n alia that no suit shall be instituted against the Government\n until the expiration of two months next after the notice in\n writing has been delivered to or left at the office of, in\n the case of a suit against the Central Government where it\n relates to a railway, the General Manager of that railway. The above provision clearly contemplates institution of a\n suit against the Central Government even though it relates\n to a railway. A suit against the Central Government in terms\n of section 79 of the Code would necessarily have to be\n brought against the Union of India. The Act\nno doubt makes provision for the liability of\n the railway administration, but from that it does not follow\n that the railway administration is a separate legal entity\n having a juristic personality capable of being sued as such. The definition of \"railway administration\" in\nsection 3(6)\nof the Act that it would mean the Manager of the railway\n does not warrant the inference that a suit against the\n railway administration can be brought against the Manager of\n that railway.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P009_C04",
+      "text": "We have to bear in mind the distinction\n between the owner of the railway, namely, the Union of\n India, and the authority which actually runs the railway and\n to whom duties have been assigned for",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P010_C01",
+      "text": "this purpose by the Act. The manager of the railway under\n the Act is such authority. When, however, liability is\n sought to be fastened on the railway administration and a\n suit is brought against it on that account, the suit, in\n our opinion, would have to be brought against the Union of\n India because it is the Union who owns the railway and who\n would have the funds to satisfy the claim in case decree is\n awarded in such suit.\nThe scheme of the Act, even though there are now hardly\n any company-owned railways in India, is to treat different\n railway administrations as different units, although all of\n them may be owned by the Union of India. Neither the defi-\n nition of the \"railway administration\" in\nsection 3(6)\n the Act nor the language of\nsections 72",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P011_C01",
+      "text": "of the Act\n lends support for the view that the railway administrations\n are to be treated as separate personalities, entities or\n separate juridical persons as seems to have been observed in\n the case of Dominion India v. Firm Museram Kishunprasad(1). Yet the treatment of the different railway administrations\n as different units for the purpose of fastening liability on\n the Union of India has got significance and relevance. Viewed in that light, it would follow that the definition of\n the \"railway administration\" given in\nsection 3(6)\nof the\n Act does not make the railway administration or its General\n Manager a legal entity or a corporate body or a juridical\n person to represent the railway administration as such in\n suits. The claim in a suit for recovery of money under the\n Act against the different railway administrations owned by\n the Central Government in accordance with the general prin-\n ciple of law contained in\nOrder 1 Rule 3 of the Code of\n Civil Procedure\nhas got to be made against the person\n against whom the right to relief is alleged to exist.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P011_C02",
+      "text": "The significance of creating the various railway administra-\n tions as separate units, even though they may be State-\n owned, is to be found in\nsection 80\nof the Act, and\nsection 80\nof the Code of Civil Procedure. For claiming a\n decree against the Union of India under the Act the plain-\n tiff has got to specify the railway administration or admin-\n istrations on account of which liability is sought to be\n fastened upon the Union of India, as contemplated by\nsection",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P012_C01",
+      "text": "of the Act. The institution of the suit has to be preced-\n ed by service of notice under\nsection 77\nof the Act and\n section 80 of the Code to the appropriate authority which is\n the General Manager of the railway concerned. The require-\n ment of clause (b) of section 80 of the Code that a notice\n in the case of a suit against the Central Government where\n it relates to a railway must go to the General Manager of\n the concerned railway or railways is also based upon the\n assumption that it is primarily the liability of the railway\n administration of the said railway or railways to satisfy\n the claim of the suitor in accordance with\nsection 80\nof the\n Act. The demarcation of the different State-owned railways\n as distinct units for administrative and fiscal purposes\n cannot have the effect of conferring the status of juridical\n person upon the respective railway administrations or their\n General Managers for the purpose of civil suits.\n (1) A.I.R. (1950) Nagpur 85. 11 --1104SCI/76",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P013_C01",
+      "text": "The Bombay High Court in two cases, Sukhanand Shamlal v. Oud, h & Rohilkhand Railway(1) and Hirachand Succaram Gandhy\n & Ors. v.G.I.P. Railway Co.(2) has held that a suit against\n a State railway should be brought against the Government. Similar view was pressed by Patna High Court in Shaikh Elahi\n Bakhsh v.E.I. Railway, Administration(3) and a Full Bench of\n Assam High Court in the case\nChandra Mohan Saha & ,Anr.\n v. Union of India & Anr. (4) The observations of a Division\n Bench of the Madras High Court in the case of P.R. Nara-\n yanaswami lyer &\nOrs. v. Union of India\n(5) also lend support\n to the above view. It may be stated that the reasoning\n employed in the eases mentioned above was different and not\n identical, but whatever might be the nature of that reason-\n ing the fact remains that the learned Judges deciding those\n cases were all at one on the point that such a suit should\n be brought against the Government, which means in the\n present case the Union of India. Any contrary view would be\n against the well-established practice and procedure of law,\n as evidenced by various decisions of the High Courts, and as\n such, must be rejected.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY_P013_C02",
+      "text": "Submission has also been made on behalf of the appellant\n that the High Court should have allowed the appellant to\n amend the plaint. We agree with the High Court that the\n present is not an appropriate case in which permission to\n amend the plaint should have been granted. The appeal consequently fails and is dismissed but in\n the circumstances without costs. M-R. Appeal dismissed. (1) A.I.R. 1924 Bombay 306. (2) A.I.R. 1928 Bombay 421. (3) A-I.R. 1931 Patna 326. (4) A.I.R. 1953 Assam 193. (5) A.I.R. 1960 Madras 58.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "State Of Kerala vs General Manager, Southern Railway, ...",
+    "case_id": "SC_1976_STATE_OF_KERALA_VS_GENERAL_MANAGER_SOUTHERN_RAILWAY",
+    "court": "Supreme Court of India",
+    "year": "1976",
+    "facts_summary": "HEADNOTE:\n The appellant booked rice for being transported by\n train, from Bareilly railway station to Trivandrum railway\n station. On delivery, the rice was found to be damaged and\n short in quantity. The appellant claimed damages from the\n respondent, who resisted the claim on the grounds that the\n suit was not maintainable as the Union of India had not been\n impleaded as a defendant, and that a suit by a State against\n the Union of India could only be instituted in the Supreme\n Court under\nArt. 131\nof the Constitution. The suit was\n dismissed by the Trial Court, and an appeal from it was\n dismissed by the High Court. Dismissing the appeal, the Court,\n HELD: The Southern Railway is owned by the Union of\n India. As such, a suit dealing with the alleged liability\n of that railway should have been brought against the Union\n of India. Section 80\nof the C.P.C. contemplates institution\n of a suit against the Central Government even though it\n relates to a railway. [422 E-FI]\n Sukhanand Shamlal v. Oudh Rohilkhand Railway AIR 1924,\n Born. 306; Hirachand Succaram Gandhy & Ors. v.G.I.P. Rail-\n way Co., AIR 1928 Born. 421; Shaikh Elahi Bakhsh v.E.I. Railway Administration, AIR 1941 Patna 326: Chandra Mohan\n Saha & Ant. v. Union of India & Anr. AIR 1953 Assam 193 and\n P.R. Narayanaswami lyer & Ors. v. Union of India AIR 1960\n Madras 58, Approved. (2) Neither the definition of the \"railway administra-\n tion\" in\nSection 3(6)\nof the Indian Railways Act, nor the\n language of\nsections 72 Th",
+    "legal_issues": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal No. 1367 of 1968.\n (Appeal by Special Leave from the Judgment and Order\n dated 25-3-1965 of the Kerala High Court in A.S. No. 487 of\n 1961).\nS.V. Gupte and K.M.K. Nair, for the appellant.\n Mrs. Shyamla Pappu, B.B. Sawhney, Raju Ramachandran and\n Girish Chandra, for the respondent. The trial court and the High Court, according to\n the learned counsel, were in error in holding that the suit\n was not maintainable because of the Union of India having\n not been impleaded as a party to the suit. The above argument has the quality of being ingenious,\n attractive and not lacking in apparent plausibility. A\n closer examination, however, reveals its infirmity and after\n giving the matter our earnest",
+    "ratio_summary": "of the Act, lends support for\n the view that the railway administrations are to be treated\n as separate personalities, entries or separate juridical\n persons. [423 B-C]\n Dominion of India v. Firm Musaram Kishunprasad AIR 1950\n Nagpur 85. overruled.\n (3) The demarcation of the different State-owned rail-\n ways as distinct units for administrative and fiscal pur-\n poses cannot have the effect of conferring the status of\n juridical person upon the respective railway administrations\n or their General Managers for the purpose of civil suits. The\n Act\n, however, does not deal with, the question as to who\n should be impleaded as a defendant when a suit is brought\n against the railway. administration. This is essentially a\n matter relating to the frame of suits, and is dealt with by\nthe Code of Civil Procedure\n. According to section 79 of the\n Code, in a suit by or against the Government, the authority\n to be named as plaintiff or defendant, as the case may be,\n shall be (a) in the case of a suit by or against the Central\n Government, the Union of India, and (b) in the case of a\n suit by or against a State Government, the State. This\n section is in accordance with\narticle 300\nof the Constitu-\n tion, according to which the Government of India may sue or\n be sued by the name of the Union of India and the Government\n of a State may sue or be sued by the name of the State. It\n is not disputed that Southern Railway is owned by the Union\n of India. As such, a suit dealing with the alleged ",
+    "final_order": "On issue No. 1 the trial court held\n that the Union of India was a necessary party to the suit\n and as the Union of India had not been impleaded as a\n party, the suit was incompetent. As a result of its find-\n ings on issue No. 1 the trial court dismissed the suit. The\n decision of the trial court on issue No. 1 was affirmed in\n appeal by the High Court. An application was also filed at\n the hearing of the appeal before the High Court for implead-\n ing the Union of India as a party to the suit. The High\n Court rejected that application on the ground that no\n useful purpose would be served by allowing that application. It was observed that if the application was allowed and the\n Union of India was made a party, the suit would have to be\n dismissed as under\narticle 131(a)\nof the-Constitution",
+    "outcome_summary": "Dismissed. On issue No. 1 the trial court held\n that the Union of India was a necessary party to the suit\n and as the Union of India had not been impleaded as a\n party, the suit was incompetent. As a result of its find-\n ings on issue No. 1 the trial court dismissed the suit. The\n decision of the trial court o",
+    "sections_cited": [
+      "Constitution 131",
+      "Constitution 31"
+    ],
+    "cases_cited": []
+  }
+}

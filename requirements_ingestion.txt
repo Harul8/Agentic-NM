@@ -1,0 +1,14 @@
+# Heavy ingestion-only dependencies (PDF/OCR pipeline)
+
+pymupdf==1.24.3          # fitz
+unstructured==0.15.7
+paddleocr==2.7.3
+# CPU-only PaddlePaddle; compatible with Python 3.11 on Windows
+paddlepaddle==3.3.0
+
+pdfplumber==0.11.0
+pypdf==4.2.0
+
+pytesseract==0.3.10
+pillow==10.3.0
+

@@ -1,0 +1,231 @@
+{
+  "case_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH",
+  "case_name": "Jagat Bahadur Singh vs State Of Madhya Pradesh",
+  "normalized_case_name": "JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH",
+  "court": "Supreme Court of India",
+  "year": "1965",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 156 of 1963",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "30 November 1965",
+  "judges": [
+    "J.R. Mudholkar",
+    "A.K. Sarkar",
+    "R.S. Bachawat"
+  ],
+  "author": "J.R. Mudholkar",
+  "bench_type": "constitution",
+  "petitioner": "Jagat Bahadur Singh",
+  "respondent": "State Of Madhya Pradesh",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 22,
+  "cited_by_count": 49,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1966 AIR 945",
+    "1966 SCR (2) 822",
+    "AIR 1966 SUPREME COURT 945",
+    "1966 JABLJ 483",
+    "(1966) 2 SCR 822",
+    "1967 MADLJ(CRI) 434",
+    "(1966) 1 SCWR 917",
+    "(1966) 2 ANDHLT 49",
+    "1966 MAH LJ 569",
+    "1966 M PLJ 522",
+    "1966 SCD 646",
+    "1966 ALLCRIR 256",
+    "1967 (1) SCJ 721"
+  ],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\1965\\1965_120.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P001_C01",
+      "text": "ACT:\nCode of Criminal Procedure\n(Act 5 of 1898), ss. 31(1), 32\nand 423(1)(a)-Maximum sentence appellate court can impose.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P002_C01",
+      "text": "HEADNOTE:\nThe appellant was tried by the Magistrate of the First Class\nfor offences under\nss. 170\n,",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P003_C01",
+      "text": "of the Indian Penal\nCode and was acquitted. On appeal, the High Court set aside\nthe acquittal, and in respect of the offence under\ns. 392\n,\nsentenced him to 4 years R.I. In his appeal to this Court,, the appellant contended that\nif the Magistrate had convicted him be could not have passed\na sentence exceeding 2 years for the offence under\ns. 392\nvirtue of s. 32 of the\nCriminal Procedure Code\n, and\ntherefore, the High Court was incompetent to pass the\nsentence of 4 years. HELD: As an appellate court is not competent to impose a\npunishment higher than the maximum that could have been\nimposed by the trial court, the High Court was in error in\nsentencing the appellant to undergo imprisonment in respect\nof the offence under\ns. 392\nfor a period exceeding 2 years.\n[826 G; 827 C]\nAn appellate Court is a \"court of error\", that is, a court\nestablished for correcting an error. If, while purporting\nto correct an error, the appellate court were to do\nsomething which was beyond the competence of the trial\ncourt, it could not be said to be correcting an error of the\ntrial court.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P003_C02",
+      "text": "Therefore, the power of the appellate court to\npass a sentence must be measured by the power of the court\nfrom whose judgment an appeal has been brought before it.\n[826 H; 827 A, B]\nCase law referred to.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P004_C01",
+      "text": "JUDGMENT:\nCRIMINAL APPELLATE JURISDICTION : Criminal Appeal No. 156 of\n1963.\nAppeal by special leave from the judgment and order dated\nFebruary 8, 1963 of the Madhya Pradesh High Court in\nCriminal Appeal No. 121 of 1962.\nE. C. Agarwala for P. C. Agarwala, for the appellant.\nM. N. Shroff for 1. N. Shroff, for the respondent.\nThe Judgment of the Court was delivered by\nMudholkar, J. The appellant, a police constable,\" was tried\nfor offences under\nss. 170\n,",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P005_C01",
+      "text": ", Indian Penal Code\nbut was acquitted by the trying Magistrate of all these\noffences. The High Court to which an appeal was preferred\nby the State Government set aside the acquittal and\nconvicted the appellant of each of these offences. It\nsentenced him to rigorous imprison-",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P006_C01",
+      "text": "ment for a period of one year in respect of the offence\nunder s. 170 and to a period of six months for an offence\nunder s. 342. In respect of the offence under\nS. 392\nthe\nHigh Court sentenced him to undergo rigorous imprisonment\nfor a period of four years and further ordered that all the\nsentences should run concurrently. Briefly stated the prosecution case was that the appellant\nwho was posted at Rewa took leave for 15 days from August 7,\n1958 with a view to go to his village Hati in District Satna\nbut instead went to Jabalpur wearing the uniform of a police\nhead constable. There he met the complainant Ram Kumar,\nP.W. 1 at the Omti Bridge near the Pan shop of one Saligram,\nP.W. 2. He engaged him in conversation and learnt from him\nthat the latter was from village Beldara, police station\nMaihar. He told Ram Kumar that a theft had been reported\nfrom that area and that he had come to Jabalpur to\ninvestigate into it and that Ram Kumar answered the\nparticulars of the man wanted in connection with the theft. It may be mentioned that Ram Kumar was wearing a gold\n'mohar', threaded in a piece of string, round his neck.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P006_C02",
+      "text": "Questioned about it by the appellant he told him that he had\nreceived it as a present from his father-in-law. The\nappellant took Ram Kumar along with him from place to place\nand at one place he tried to relieve Ram Kumar of the gold\nmohar saying that it was a stolen article. Ram Kumar\nresisted and protested and so also did one Phoolchand who\nwas there. The appellant then got into a rickshaw along\nwith Ram Kumar on the pretext of taking him to the police\nstation. Instead of stopping at the police station he asked\nthe rickshaw to proceed to Katni road and dismissed the\nrickshaw puller after paying his fare. He then gave a\nbeating to Ram Kumar and snatched the gold mohar from his\nneck. While they were standing on the road to Katni a motor\ntruck happened to pass that way. The appellant stopped it\nand got into it along with Ram Kumar and proceeded towards\nKatni. After reaching the place the appellant sent off Ram\nKumar to fetch a cup of tea for him. While Ram Kumar was\naway the appellant got into a goods train which happened to\nbe leaving Katni railway station in the direction of Satna\nat that time and travelled in the brake van.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P006_C03",
+      "text": "Ram Kumar,\nfinding that the appellant had escaped, lodged a report with\nthe police. Eventually the appellant was apprehended and\nchallenged. He denied the offence and said that he was\nfalsely implicated and also said that it was a case of\nmistaken identity. The main question was regarding the appellant's identity. There is voluminous evidence on the point which has been\ndisp. CI/66-6",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P007_C01",
+      "text": "cussed fully by the High Court. On the basis of that\nevidence the High Court came to the conclusion that the\nperson who had snatched away the gold mohar from Ram Kumar\nwas no other than the appellant. Mr. E. C. Agarwala who appears for the appellant tried to\nurge before us that the High Court was in error in holding\nthat the person who committed the various offences was the\nappellant. This Court does not ordinarily interfere with a\nfinding of the High Court based on appreciation of evidence,\nunless there are strong reasons for doing so. Mr. Agarwala\ncould point out no other reason except this that the High\nCourt had taken a view of evidence different from that of\nthe trying Magistrate and set aside the appellant's\nacquittal and that therefore this Court should appraise the\nevidence. That of course is no ground for discarding the\nfinding of the High Court. The High Court has given good\nreasons in its judgment for accepting the prosecution\nevidence for coming to the conclusion that the identity of\nthe appellant was established. It has also given good\nreasons for not accepting the defence evidence.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P007_C02",
+      "text": "In these\ncircumstances we did not permit learned counsel to take us\nthrough the evidence adduced in the case. The only other question urged by learned counsel is\nregarding sentence. He points out that the appellant was\ntried by a Magistrate of the First Class and that under s.\n32 of the\nCode of Criminal Procedure\nthe maximum sentence\nwhich such a Magistrate is entitled to pass is imprisonment\nfor a term not exceeding two years and a fine not exceeding\nRs. 2,000/-. There is nothing to show that the learned\nMagistrate was invested with powers under\ns. 30\nof the Code\nby virtue of which he could, under\ns. 34\n, pass a sentence of\nimprisonment up to the limit of seven years. If the learned\nMagistrate, instead of acquitting the appellant, had con-\nvicted him, he could, therefore, not have passed a sentence\nof imprisonment in respect of the offence under\ns. 392\nfor a\nterm exceeding two years and that, therefore, the High Court\nwas incompetent to pass the sentence of imprisonment of four\nyears. Mr.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P007_C03",
+      "text": "Shroff, however, contended that even though that was so\nthe High Court having held the appellant guilty of the\noffence under\ns. 392\nis as competent to pass any sentence in\nrespect of that offence as is permissible under the\nIndian\nPenal Code\n. In support of the contention he relied on cl. (a) of\nS. 423 (1)\nof the Code of Criminal Procedure. Under\nthis clause, after setting aside the acquittal of a person,\nthe appellate court can \"pass sentence on him according to\nlaw.\" It is true that\nS. 31 (1)\nalso",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P008_C01",
+      "text": "empowers the High Court to pass any sentence, authorised by\nlaw. But the question is whether these provisions enable\nthe High Court to pass a sentence which the Court from whose\ndecision an appeal has been preferred before it was not\nauthorised to pass.\nThere are several cases of the High Courts in which this\nquestion has been considered. One of them is\nSitaram v.\nEmperor\n(1) where the question has been elaborately\ndiscussed. Stanyon A.J.C. who decided the case has said\nthus :\n\"The Magistrate who tried the case had power under\nsection",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P009_C01",
+      "text": "of the Code of Criminal Procedure, to pass a sentence of\nimprisonment for a term not exceeding six months, and fine\nnot exceeding two hundred rupees. By\nsection 423\nof the\nsame Code, the District Magistrate, sitting as an Appellate\nCourt on an appeal from the conviction of the applicants,\nwas empowered, on maintaining the conviction of each\napplicant, to alter the nature of the sentence, subject only\nto the proviso that he did not enhance the same. The\nalteration of a sentence of imprisonment for four months,\ninto a sentence of fine in the sum of Rs. 300, or in default\nimprisonment for four months, was clearly no enhancement,\nbut A reduction in severity of the sentence. Section 402\nthe Code follows human sentiment and common sense in\nregarding the Substitution of fine for imprisonment as a\nmerciful commutation of punishment. Therefore, the\nsentences ordered by the District Magistrate were all within\nthe letter of the rule set out in\nsection 423\naforesaid.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P009_C02",
+      "text": "Section 32\ncontains no word which makes it applicable to any\nCourt of Appeal or Revision : nor is there any restricting\nproviso to be found in\nsection 423\nor any other section\ndealing with appellate jurisdiction, such as we read in\nsection 439\n, subsection (3). Nevertheless, it is a rule\nunderlying the whole abric of appellate jurisdiction that\nthe power of an Appellate Court is measured by the power of\nthe Court from whose judgment or order the appeal before it\nhas been made.......... it is a fundamental principle that\nevery Court of Appeal exists for the purpose, where\nnecessary, of doing, or causing to be done, that which each\ncourt subordinate to its appellate jurisdiction should have,\nbut has not, done, or caused to be done, and nothing\nfurther. Therefore, the jurisdiction in appeal is\nnecessarily limited in each case to the same extent as the\njurisdiction from which that particular case comes. It is a\nproposition which cannot be disputed that all powers\nconferred upon an Appellate Court, as such, must be\ninterpreted as subject to the general rule above stated. In\na case reported at 2 Weir 487, the Madras,\n(1) 7 Nag. L.R. 109: 11 I.C. 788.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P010_C01",
+      "text": "High Court held that an Appellate Court cannot pass, on\nappeal, a sentence which the original Magistrate was not\ncompetent by law to pass. Section 106\n, sub-\nsection 3\nof the\nCriminal Procedure Code, 1898, appears to give an Appellate\nCourt power to make an order under that section in any\nappeal in which an accused may have been convicted of\nrioting, assault, or other offence referred to therein. If\nsuch a person were acquitted by a District Magistrate, but\nconvicted on appeal by the High Court, there can be no doubt\nthat the Appellate Court, as such, could make an order under\nthis sub-section. Its power to make the order would not be\nconfined to cases where conviction had taken place before\nthe Magistrate. But it has been held-and, in my opinion,\nrightly held-that the Appellate Court, as such, is not\n'competent to make an order under\nsection 106\nif the\nMagistrate, from whose decision the appeal has come before\nit, could not have made it. This dictum was\nlaid down in\nMahmudi Sheikh v. Aji Sheikh\n(\n1) Muthiah v. Emperor\n(2); and\nParamasiva Pillai v. Emperor\n(3).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P010_C02",
+      "text": "In the second of the\nabove cases the learned Judges remarked,-\n'We think that the power given to an Appellate\n Court to make an order under this section is\n not an unlimited power to make such an order\n in any circumstances, but is to be taken as\n giving the Appellate Court power to do only\n that which the lower Court could and should\n have done.'\nI do not see why any other rule of construction should be\napplied to the power given by\nsection 423\nto alter the\nnature of a sentence.\"\nWe have seen the three decisions to which the learned Judge\nhas made reference and they undoubtedly support his\nconclusion. This decision was followed in Emperor v. Abasali Yusufalli(4) and also in\nMehi Singh v. Mangal\nKhandu\n(5);\nEmperor v. Muhammad Yakub Ali\n(1); and Maung E\nMaung v. The King(1). In in re Tirumal Raju(8) it has been\nheld that an appellate court is not competent to impose a\npunishment higher than the maximum that could have been\nimposed by the trial court. It seems to us that these cases\nlay down the correct law. An appeal court is after all \"a\ncourt of error\", that is, a court established for correcting\nan error.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P010_C03",
+      "text": "If, while purporting to correct an error, the\ncourt\n(1) I.L.R. 21 Cal. 622. (3) I.L.R. 3) Mad. 48. (5) I.L.R. 39 Cal 157. (7) A.I.R. 1940 Rangoon 118. (2) I.L.R. 29 Mad. 190. (4) A.I.R. 1935 Nag. 139. (6) I.L.R. 45 All. 594. (8) A.I.R. 1947 Mad. 868.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH_P011_C01",
+      "text": "were to do something which was beyond the competence of the\ntrying court, how could it be said to be correcting an error\nof the trying court ? No case has been cited before us in\nwhich it has been held that the High Court, after setting\naside an acquittal, can pass a sentence beyond the\ncompetence of the trying court. Therefore, both on\nprinciple and authority it is clear that the power of the\nappellate court to pass a sentence must be measured by the\npower of the court from whose judgment an appeal has been\nbrought before it. The High Court was thus in error in\nsentencing the appellant to undergo imprisonment in respect\nof the offence under\ns. 392\nfor a period exceeding two\nyears. Accordingly we allow the appeal partially and reduce\nthe sentence of imprisonment in respect of the offence under\nS. 392\nfrom rigorous imprisonment of four years to a period\nof two years. Subject to this modification we dismiss the\nappeal.\nAppeal allowed in part..",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Jagat Bahadur Singh vs State Of Madhya Pradesh",
+    "case_id": "SC_1965_JAGAT_BAHADUR_SINGH_VS_STATE_OF_MADHYA_PRADESH",
+    "court": "Supreme Court of India",
+    "year": "1965",
+    "facts_summary": "HEADNOTE:\nThe appellant was tried by the Magistrate of the First Class\nfor offences under\nss. 170\n,",
+    "legal_issues": "of the Indian Penal\nCode and was acquitted. On appeal, the High Court set aside\nthe acquittal, and in respect of the offence under\ns. 392\n,\nsentenced him to 4 years R.I. In his appeal to this Court,, the appellant contended that\nif the Magistrate had convicted him be could not have passed\na sentence exceeding 2 years for the offence under\ns. 392\nvirtue of s. 32 of the\nCriminal Procedure Code\n, and\ntherefore, the High Court was incompetent to pass the\nsentence of 4 years. HELD: As an appellate court is not competent to impose a\npunishment higher than the maximum that could have been\nimposed by the trial court, the High Court was in error in\nsentencing the appellant to undergo imprisonment in respect\nof the offence under\ns. 392\nfor a period exceeding 2 years.\n[826 G; 827 C]\nAn appellate Court is a \"court of error\", that is, a court\nestablished for correcting an error. If, while purporting\nto correct an error, the appellate court were to do\nsomething which was beyond the competence of the trial\ncourt, it could not be said to be correcting an error of the\ntrial court. JUDGMENT:\nCRIMINAL APPELLATE JURISDICTION : Criminal Appeal No. 156 of\n1963.\nAppeal by special leave from the judgment and order dated\nFebruary 8, 1963 of the Madhya Pradesh High Court in\nCriminal Appeal No. 121 of 1962.\nE. C. Agarwala for P. C. Agarwala, for the appellant.\nM. N. Shroff for 1. N. Shroff, for the respondent.\nThe Judgment of the Court was delivered by\nMudholkar, J. The appellant, a police constable,\" ",
+    "ratio_summary": "empowers the High Court to pass any sentence, authorised by\nlaw. But the question is whether these provisions enable\nthe High Court to pass a sentence which the Court from whose\ndecision an appeal has been preferred before it was not\nauthorised to pass.\nThere are several cases of the High Courts in which this\nquestion has been considered. One of them is\nSitaram v.\nEmperor\n(1) where the question has been elaborately\ndiscussed. Stanyon A.J.C. who decided the case has said\nthus :\n\"The Magistrate who tried the case had power under\nsection",
+    "final_order": "ment for a period of one year in respect of the offence\nunder s. 170 and to a period of six months for an offence\nunder s. 342. In respect of the offence under\nS. 392\nthe\nHigh Court sentenced him to undergo rigorous imprisonment\nfor a period of four years and further ordered that all the\nsentences should run concurrently. Briefly stated the prosecution case was that the appellant\nwho was posted at Rewa took leave for 15 days from August 7,\n1958 with a view to go to his village Hati in District Satna\nbut instead went to Jabalpur wearing the uniform of a police\nhead constable. There he met the complainant Ram Kumar,\nP.W. 1 at the Omti Bridge near the Pan shop of one Saligram,\nP.W. 2. He engaged him in conversation and learnt from him\nthat the latter was from village Beldara, police station\nM",
+    "outcome_summary": "Allowed. ment for a period of one year in respect of the offence\nunder s. 170 and to a period of six months for an offence\nunder s. 342. In respect of the offence under\nS. 392\nthe\nHigh Court sentenced him to undergo rigorous imprisonment\nfor a period of four years and further ordered that all the\nsentences s",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

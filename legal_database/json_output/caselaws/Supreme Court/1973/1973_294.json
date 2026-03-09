@@ -1,0 +1,83 @@
+{
+  "case_id": "SC_1973_BAIDYA_NATH_MANDI_VS_STATE_OF_WEST_BENGAL_AND_ORS",
+  "case_name": "Baidya Nath Mandi vs State Of West Bengal And Ors.",
+  "normalized_case_name": "BAIDYA_NATH_MANDI_VS_STATE_OF_WEST_BENGAL_AND_ORS.",
+  "court": "Supreme Court of India",
+  "year": "1973",
+  "judgment_template": null,
+  "case_number": "WP 266 of 1972",
+  "case_number_regex": "WP_SHORT",
+  "date_of_judgment": "7 September 1973",
+  "judges": [
+    "A. Alagiriswami",
+    "H.R. Khanna",
+    "JUDGMENT",
+    "H.R. Khanna, J."
+  ],
+  "author": "H.R. Khanna",
+  "bench_type": "constitution",
+  "petitioner": "Baidya Nath Mandi",
+  "respondent": "State Of West Bengal And Ors.",
+  "reporter_citations": [],
+  "outcome": "quashed",
+  "disposition": "quashed",
+  "cites_count": 3,
+  "cited_by_count": 9,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1974SC1155",
+    "1974CRILJ811",
+    "(1974)3SCC489",
+    "AIR 1974 SUPREME COURT 1155",
+    "1974 3 SCC 489 1973 SCC(CRI) 1092",
+    "1973 SCC(CRI) 1092",
+    "1973 SCC(CRI) 1092 1974 3 SCC 489",
+    "1974 3 SCC 489"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1973\\1973_294.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1973_BAIDYA_NATH_MANDI_VS_STATE_OF_WEST_BENGAL_AND_ORS_P001_C01",
+      "text": "1. This is a petition for the issuance of a writ of habeas corpus by Baidya Nath Mandi, who has been ordered to be detained under\nSection 3\nof the Maintenance of Internal Security Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1973_BAIDYA_NATH_MANDI_VS_STATE_OF_WEST_BENGAL_AND_ORS_P002_C01",
+      "text": "2. No return in opposition to the petition has been filed, but Mr. Chatterjee on behalf of the respondents has at the hearing admitted the following facts. The original order for the detention of the petitioner under\nSection 3\nof the Maintenance of Internal Security Act was made by the District Magistrate Burdwan on December 22, 1971. The petitioner was thereafter arrested and was kept in detention. While the petitioner was in detention, this Court gave its judgment in the case of\nShambhu Nath Sarkar v. State of West Bengal W.P. No.\n266 of 1972, dated 19-4-1973 : . After the aforesaid decision, the State of West Bengal directed that the petitioner be released. The petitioner was, accordingly, released on April 25, 1973. The same day, according to Mr. Chatterjee, a fresh order for the detention of the petitioner was made by the District Magistrate Burdwan under\nSection 3\nof the Maintenance of Internal Security Act. The grounds on which the fresh order of detention was made on April 25, 1973, were the same upon the basis of which the earlier order for the detention of the petitioner had been made on December 22, 1971.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1973_BAIDYA_NATH_MANDI_VS_STATE_OF_WEST_BENGAL_AND_ORS_P003_C01",
+      "text": "3. We find that the facts of the present case have a close similarity to those of\nChotka Hembram v. State of West Bengal W.P. No.\n841 of 1973, D/-29-8-1973 : , wherein upon similar facts we quashed the order for the detention of the detenu. Following the aforesaid decision, we quash the order for the detention of the petitioner and direct that he be set at liberty.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Baidya Nath Mandi vs State Of West Bengal And Ors.",
+    "case_id": "SC_1973_BAIDYA_NATH_MANDI_VS_STATE_OF_WEST_BENGAL_AND_ORS",
+    "court": "Supreme Court of India",
+    "year": "1973",
+    "facts_summary": "",
+    "legal_issues": "2. No return in opposition to the petition has been filed, but Mr. Chatterjee on behalf of the respondents has at the hearing admitted the following facts. The original order for the detention of the petitioner under\nSection 3\nof the Maintenance of Internal Security Act was made by the District Magistrate Burdwan on December 22, 1971. The petitioner was thereafter arrested and was kept in detention. While the petitioner was in detention, this Court gave its judgment in the case of\nShambhu Nath Sarkar v. State of West Bengal W.P. No.\n266 of 1972, dated 19-4-1973 : . After the aforesaid decision, the State of West Bengal directed that the petitioner be released. The petitioner was, accordingly, released on April 25, 1973. The same day, according to Mr. Chatterjee, a fresh order for the detention of the petitioner was made by the District Magistrate Burdwan under\nSection 3\nof the Maintenance of Internal Security Act. The grounds on which the fresh order of detention was made on April 25, 1973, were the same upon the basis of which the earlier order for the detention of the petitioner had been made on December 22, 1971.",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "Quashed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

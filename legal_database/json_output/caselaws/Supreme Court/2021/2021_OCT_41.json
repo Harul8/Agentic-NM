@@ -1,0 +1,720 @@
+{
+  "case_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA",
+  "case_name": "The State Of Jammu And Kashmir vs Dr. Saleem Ur Rehma",
+  "normalized_case_name": "THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR._SALEEM_UR_REHMA",
+  "court": "Supreme Court of India",
+  "year": "2021",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 1170 of 2021",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "29 October 2021",
+  "judges": [
+    "A.S. Bopanna",
+    "M.R. Shah"
+  ],
+  "author": "M.R. Shah",
+  "bench_type": "division",
+  "petitioner": "The State Of Jammu And Kashmir",
+  "respondent": "Dr. Saleem Ur Rehma",
+  "reporter_citations": [
+    "AIR 2014 SC 187"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 46,
+  "cited_by_count": 18,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2021\\OCT\\2021_OCT_41.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P001_C01",
+      "text": "CRIMINAL APPELLATE JURISDICTION\n CRIMINAL APPEAL NO. 1170 OF 2021\n\n The State of Jammu & Kashmir and others …Appellants\n\n Versus\n\n Dr. Saleem Ur Rehman …Respondent\n\n JUDGMENT\nM.R. SHAH, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P002_C01",
+      "text": "1. Feeling aggrieved and dissatisfied with the impugned judgment\n\n and order dated 07.05.2018 passed by the High Court of Jammu &\n\n Kashmir at Srinagar in O.W.P. No. 1961/2015, by which the High Court\n\n in exercise of its extra-ordinary jurisdiction has quashed the criminal\n\n proceedings being FIR No. 32/2012 and has declared Rule 3.16 of the\n\n Vigilance Manual, 2008 dealing with the Preliminary Enquiry (PE) being\n\nin direct conflict with the Constitution Bench Judgment of this Court in\nAIR 2014 SC 187 = 2014 (2) SCC 1, and consequently has declared the\n\nsame ultra vires, the State has preferred the present appeal.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P003_C01",
+      "text": "2. That an FIR being FIR No. 32/2012, Police Station, VOK was\n\nregistered against the respondent herein under Section 5(1)(d) r/w 5(2)\n\nof the J&K Prevention of Corruption Act, 2006 (hereinafter referred to as\n\nthe ‘J&K PC Act, 2006’) and Section 120B of the Ranbir Penal Code\n\n(hereinafter referred to as the ‘RPC’) alleging inter alia that during 2010-\n\n11, the Director Health Services, Kashmir along with the other accused\n\npersons misappropriated the huge amount of government money by way\n\nof effecting purchases of sub-standard medical kits under National Rural\n\nHealth Mission (NRHM) at highly exorbitant rates and in violation of the\n\nconditions of supply orders placed by the department. It was alleged\n\nagainst the respondent as under:\ni)The respondent herein purchased various drug kits under NRHM\n Scheme from 4 CPSEs through limited tender and all the 4 CPSEs\n surprisingly quoted same rates. It was decided to place supply orders to\n the tune of 25% from each of the CPSEs.\nii) The quoted rates by the 4 CPSEs were far in excess when\n compared to rates on which purchases had been affected during previous\n year.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P003_C02",
+      "text": "The Respondent herein wilfully ignored the rates at which the same\n kind of drug kits were purchased by the department from private\n companies as per rate contract dated 28-03-2009 valid for one year\n approved by Rate Contract Committee No.1 of Health & Medical\n Education whereby the rates of drug kits were far less than as quoted by\n the 4 CPSEs, the comparison is as under: -\n\nS.No. Name Approved Rates Differences\n of rates valid quoted by of Rates\n drug for year the four\n kit 2009-10 CPSEs in\n as per rate year 2011\n contract of\n Purchase\n Committee\n No.1\n1. Drug Rs.3400/- Rs. 6,559- Rs. 3,159\n Kit-A per kit per kit per kit\n for\n sub\n centre",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P004_C01",
+      "text": "2. Drug Rs.1855/- Rs.4,368/- Rs.2,513/-\n Kit-B per kit per kit per kit\n for\n sub\n centre",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P005_C01",
+      "text": "3. Drug Rs.931/- Rs.1878/- Rs.947/-\n Kit for per kit per kit per kit\n ASHA\nIt is pertinent to point out that the Respondent herein had full knowledge of\napproved rates of drug kits valid for year 2009-10, as he was then posted\nas Assistant Director, Family Welfare & Reproductive Child Health Care\nand was designated as member of Sub-Committee of Purchase\nCommittee No.1 which approved the rates for the year 2009-10.\niii) No market survey was conducted to ascertain the genuineness of\nrates quoted by the firms nor any negotiations were done to ensure that\nGovernment exchequer was not put to any loss etc during the year 2010-",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P006_C01",
+      "text": "11. iv) No samples of drug kits were obtained to verify the quality control\ncheck over packing & Packaging of medicines and kits.\nv) The Respondent herein purchased NRHM kits not from the\noriginal manufacture but from suppliers at exorbitant rates.\nvi) The purchased kits and the medicines were not of required\nstandard. Further maximum drugs/items constituting the three types of kits\nwere actually been manufactured by private agencies and not by the\nCPSEs themselves or by their subsidiaries as a result of which undue\nbenefit has accrued to the private agencies under the garb of PPP, which\nwas never the intent of it.\nvii) As per the guidelines\nlaid down by\nMinistry of Health & Family\nWelfare Govt. of India and Ministry of Chemicals & Fertilizers Govt. of\nIndia, Purchase Preference Policy (PPP) for CPSEs was valid only in\n\nrespect of 102 drugs/medicines, whereas various components of the three\n mentioned drug kits were not figuring in 102 listed drugs under PPP.\nviii) As per the guidelines of GOI, the rates of drugs constituting the\n drug kits should be as per rates fixed by National Pharma Pricing Authority\n with discount of up to 35%.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P006_C02",
+      "text": "It is pertinent to point out that the purchasing\n department did not seek any rate list of NPPA or rate analysis from the\n supplier CPSEs to ascertain whether the rates quoted are actually as\n certified by NPPA and further to see whether a discount up to 35% has\n been given on such rates.\nix) All the 4 CPSEs raised objection to the condition\nlaid down in\nClause No.02 of the Supply Orders wherein it was stated that all the drugs\n and items should be manufactured by the firm itself and no drug/item will\n be accepted manufactured by any other concern. The Respondent herein\n issued corrigendum thereby modifying the earlier order which conveyed\n that the items can be purchased from other sources also and thus the\n already purchased substandard items were passed by the New Board,\n thereby causing a loss of Rs. 1,04,99,429/- to the State exchequer.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P007_C01",
+      "text": "3. The respondent-accused approached the High Court by way of\n\nO.W.P. No. 1961/2015 invoking its extra-ordinary jurisdiction to quash\n\nthe aforesaid criminal proceedings, raising the following questions:\na) Whether\nSection 3\nof the Prevention of Corruption Act is a\n\n mandatory provision and its non-adherence vitiates the investigation?\nb) Whether prior sanction of a Magistrate under Section 155 Jammu\n\n & Kashmir\nCr.P.C\n. is mandatory for investigating cognizable offences\n\n along with non-cognizable?\nc) Whether under the pretext of Preliminary Verification the\n\n investigating agency can verify the veracity of a complaint before\n\n registration of FIR?\nd) Whether an offence like that of Criminal Conspiracy can be\n\n committed by a juridical person like a company?\n\nHeavy reliance was placed on the decision of this Court in the\n\ncase of\nState of Haryana v. Bhajan Lal\n, 1992 Supp.\n(1) SCC 335 as well\n\nas the decision of this Court in the case of\nLalita Kumari\n(supra).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P008_C01",
+      "text": "4. By the impugned judgment and order, the High Court has quashed\n\nthe entire criminal proceedings initiated against the respondent for the\n\naforesaid offences by holding that:\n(1) there is a non-compliance of the mandatory provision under\nSection 3\nof the J&K PC Act, 2006 inasmuch as no special and\n\n separate reasoned order was passed by the authorising officer while\n\n conferring authority on a non-designated officer as per second proviso\n\nSection 3\n;\n(2) prior sanction of the Magistrate for the offence under Section 120B\n\n as required under Section 155 of the J&K\nCr.P.C\n. was not obtained;\n(3) there was a delay in conducting the preliminary verification and by\n\n holding the preliminary verification the authority entered into the\n\n domain of investigation which is not permissible as held by this Court\n\n in the case of\nLalita Kumari\n(supra); and\n\n (4) the allegations made in the FIR even if accepted to be true in its\n\n entirety are legally not tenable.\n\n4.1 Holding above, the High Court has quashed the preliminary\n\nverification No. 34/2011, FIR No. 32/2012, Police Station, Vigilance\n\nOrganisation Kashmir and the resultant investigation of the FIR.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P008_C02",
+      "text": "The\n\nHigh Court has also quashed the Entrustment Order dated 16.11.2012\n\npassed by the Senior Superintendent of Police, VOK, Srinagar\n\nauthorising the investigating officer to investigate the case/offences. The\n\nHigh Court has also declared Rule 3.16 of the Vigilance Manual, 2008\n\ndealing with Preliminary Enquiry (PE) as ultra vires on the ground that\n\nthe same is in direct conflict with the decision of this Court in the case of\nLalita Kumari\n(supra).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P009_C01",
+      "text": "5. Feeling aggrieved and dissatisfied with the impugned judgment\n\nand order passed by the High Court, the State of Jammu & Kashmir has\n\npreferred the present appeal.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P010_C01",
+      "text": "6. Shri R. Venkataramani, Learned Senior Advocate has appeared on\n\nbehalf of the appellants and Shri R. Basant, Learned Senior Advocate\n\nhas appeared on behalf of the respondent.\n6.1 Shri R. Venkataramani, Learned Senior Advocate appearing on\n\nbehalf of the State has vehemently submitted that in the facts and\n\ncircumstances of the case, the High Court has committed a grave error\n\nin quashing the entire criminal proceedings including the FIR and even\n\nthe Entrustment Order dated 16.11.2012.\n\n6.2 It is submitted that the High Court formulated the four questions,\n\nwhich are reproduced hereinabove. It is submitted that so far as\n\nquestion no. 1, whether Section 3 of the Prevention of Corruption Act is\n\na mandatory provision and its non-adherence vitiates the investigation is\n\nconcerned, it is submitted that the conclusions drawn by the High Court\n\nare in disregard of the relevant provisions of the J&K PC Act, 2006 and\n\nthe J&K Cr.P.C.\n6.3 It is submitted that the reliance placed on the decision of this Court\n\nin the case of\nBhajan Lal\n(supra) is absolutely misconceived.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P010_C02",
+      "text": "It is\n\nsubmitted that in Bhajan Lal’s case,\nSections 3\n&\n5A\nof the Prevention of\n\nCorruption Act, 1947 (hereinafter referred to as the ‘1947 Act’), prior to\n\nthe amendment of the Act in 1988, fell for consideration. It is submitted\n\nthat\nSection 3\nof the J&K PC Act, 2006 under which the prosecution in\n\nquestion was initiated does not correspond either to\nSection 3\nSection\n\n5A\nof the 1947 Act. It is submitted that J&K PC Act, 2006 does not\n\ncontain a provision corresponding to\nSection 5A\nof the 1947 Act.\n\n6.4 It is submitted that the High Court has not properly appreciated the\n\nfact that the reasoning adopted in Bhajan Lal’s case on requirement of\n\ngiving reasons for an authorisation under\nSection 5A\nof the 1947 Act,\n\nhad arisen in the context of the special provisions of\nSection 5A\n. It is\n\nsubmitted that the Court has treated the requirement of giving reasons\n\nby a Magistrate in the context of giving permission to a non-designated\n\nofficer to conduct investigation, and the administrative function of\n\ndelegation of function of investigation by a superior police officer to a\n\nsubordinate police officer, as comparable.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P010_C03",
+      "text": "It is submitted that in view of\n\nthe fact that\nSection 3\nof the J&K PC Act, 2006 with its own special\n\nscheme of delegation enacted in the second proviso to\nSection 3\n,\n\nreliance on Bhajan Lal’s case which was with reference to\nSection 5A\n\nthe 1947 Act is absolutely misconceived.\n6.5 It is further submitted that as such the decision of this Court in the\n\ncase of\nBhajan Lal\n(supra) has been subsequently explained by this\n\nCourt in the case of\nState of M.P. v. Ram Singh\n(2000) 5 SCC 88. It is\n\nsubmitted that in the case of\nRam Singh\n(supra), the order of the\n\nSuperintendent of Police authorising the Inspector to investigate the\n\noffence under the\nPrevention of Corruption Act, 1988\nindicating the\n\nname of the accused, number of the FIR, the nature of the offence and\n\nthe power of the Superintendent of Police permitting him to authorise a\n\njunior officer to investigate, the same is held to be a valid authorisation. It is submitted that in the aforesaid decision, this Court has distinguished\n\nthe decision of this Court in the case of\nBhajan Lal\n(supra).",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P010_C04",
+      "text": "It is\n\nsubmitted that therefore the subsequent decision of this Court in the\n\ncase of\nRam Singh\n(supra) will squarely apply to the facts of the case in\n\nhand.\n6.6 It is submitted that authorisation in the present case by the Senior\n\nSuperintendent of Police, Vigilance Organisation is clearly covered by\n\nand falls within the scope of the second proviso to\nSection 3\n. It is\n\nsubmitted that the High Court has not adverted to the distinct features of\n\nthe second proviso to\nSection 3\n. It is submitted that the second proviso\n\ndoes not demand the requirement of giving reasons for conferring\n\nauthority on a non-designated officer to conduct investigation.\n\n6.7 It is further submitted that unlike discharge of functions, judicial or\n\nquasi-judicial in nature, an administrative authority is not obliged to give\n\nreasons in the discharge of all its functions. It is submitted that the\n\nsecond proviso to\nSection 3\nhas been enacted for administrative\n\nconvenience and for expeditious investigation. It is submitted that in the\n\nvery nature of such functions, it can be presumed that the reasons need\n\nnot be given for authorising an officer of vigilance organisation to\n\nconduct investigation.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P010_C05",
+      "text": "In support of above, reliance is placed on the\n\ndecisions of this Court in the cases of\nS.N. Mukherjee v. Union of India\n,\n\n(1990) 4 SCC 594;\nUnion of India v. E.G. Nambudiri\n, (\n1991) 3 SCC 38\n\nand Oryx Fisheries Pvt. Ltd. v. Union of India\n, (2010) 13 SCC 427.\n\n6.8 It is submitted that therefore the requirement of giving reasons for\n\nthe authorisation referred to in the second proviso to\nSection 3\n\nmisconceived. Firstly, the proviso itself does not contemplate the giving\n\nof reasons for the authorisation of power to investigate and secondly, the\n\npower to authorise being purely administrative based on expediency and\n\npublic policy, no reasons need to be given. It is submitted that the\n\nmatter of delegation of the power to investigate upon a non-designated\n\nofficer, does not involve rights of any party. There is no lis in the matter. The actions taken under the second proviso are not subject to any\n\nappeal, or revision. It is submitted that only where rights of parties are\n\ninvolved; the nature of the function in question is quasi-judicial, or is in\n\nthe hierarchy of appellate or revisional power, reasons may be required\n\nto be given and not otherwise.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P010_C06",
+      "text": "Reliance is placed on the decisions of\n\nthis Court in the cases of\nSpecial Land Acquisition Officer, Bombay v. Godrej & Boyce\n, (\n1988) 1 SCC 50 and Indian National Congress v. Institute of Social Welfare\n, (2002) 5 SCC 685.\n6.9 Now so far as question no.2, whether prior sanction of a\n\nMagistrate under Section 155 of the J&K\nCriminal Procedure Code\n\nmandatory for investigating cognizable offences along with non-\n\ncognizable offences is concerned, it is submitted that the High Court has\n\ncompared Section 155 of the J&K\nCr.P.C\n. and\nSection 155\nof the Cr.P.C.,",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P011_C01",
+      "text": "1973. It is submitted that a particular reference has been made to sub-\n\nsection (4) of\nSection 155\nof the Cr.P.C., 1973. It is submitted that the\n\nHigh Court by holding that the J&K\nCr.P.C\n. does not have in Section 155\n\na provision comparable to sub-section (4) of\nSection 155\nof the Cr.P.C.,\n\n1973, has reached the conclusion that in the absence of a valid sanction\n\nby the Magistrate as provided under Section 155 of the J&K\nCr.P.C\n., the\n\ninvestigation is illegal.\n6.10. It is submitted that the aforesaid issue is squarely covered in\n\nfavour of the State in view of the decision of this Court in the case of\nPravin Chandra Mody v. State of Andhra Pradesh\n, 1965 (1) SCR 269\n\n(para 6).\n6.11 Learned Senior Advocate appearing on behalf of the State has\n\nalso taken us to the legislative history behind Section 155(4) and the 37 th\n\nReport of the Law Commission regarding investigation of a cognizable\n\noffence in the company of a non-cognizable offence, particularly the\n\nrequirement of obtaining an authorisation from the Magistrate. It is\n\nsubmitted that pursuant to the 41st Report of the Law Commission, sub-\n\nsection (4) was inserted in\nSection 155\nCr.P.C.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P011_C02",
+      "text": "It is submitted that as\n\nobserved in the 37th Report, the law has already been\nlaid down by\nthis\n\nCourt in the case of\nPravin Chandra Mody\n(supra) and what was\n\nrequired to be done was only to enact a provision on the lines of\nPravin\n\nChandra Mody\n(supra). It is submitted that decision of this Court in the\n\ncase of\nPravin Chandra Mody\n(supra) has been considered\n\nsubsequently by this Court in the cases of\nState of Punjab v. Brij Lal\n\nPalta\n(1969) 1 SCR 853;\nSatya Narain Musadi v. State of Bihar\n, (1980) 3\n\nSCC 152;\nMadan Lal v. State of Punjab\n, (1967) 3 SCR 439; and\nBhanwar Singh v. State of Rajasthan\n, (1968) 2 SCR 528.\n6.12 It is submitted that the issue as to whether an investigation in\n\nrespect of offences under the\nPrevention of Corruption Act\n, when\n\ncoupled with the offence of conspiracy should always be subject to a\n\nprior sanction by the Magistrate, has to be seen from the perspective\n\nthat merely because the offence of conspiracy may be involved,\n\ninvestigation into the substantive offences which are cognizable should\n\nawait a sanction from the Magistrate, as that would lead to considerable\n\ndelay and uncertainty in the threshold investigation steps.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P011_C03",
+      "text": "It does not\n\nmatter that the offence of conspiracy under Section 120B is also treated\n\nas a substantive offence.\n6.13 It is submitted that if the view taken by the High Court is correct\n\nlaw, it will be in the case of investigation under every special statute\n\nwhere the offences are cognizable, a link with 120B of conspiracy\n\noffence will derail all such investigations and lead to delay.\n\n6.14 Now so far as question no.3, namely, whether under the pretext of\n\npreliminary verification, the investigating agency can verify the veracity\n\nof a complaint before registration of FIR and the observations and the\n\nfindings recorded by the High Court that Rule 3.16 of J&K Vigilance\n\nManual, 2008 is in direct conflict with the judgment of this Court in the\n\ncase of\nLalita Kumari\n(supra) is concerned, it is submitted that the view\n\ntaken by the High Court is absolutely misconceived. It is submitted that\nLalita Kumari\n(supra) takes note of special procedure to be followed in\n\nthe cases of special statutes. Sections 4\n&\n\nof the Code of Criminal\n\nProcedure, 1973 have also been noticed by the High Court.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P011_C04",
+      "text": "Having\n\nregard to the wide spectrum of statutory offences to be investigated\n\nunder ever increasing special statutes, it would be unwise to thwart the\n\ninvestigation and the prosecution on the touchstone of irregularities, if\n\nany, in the conduct of preliminary investigations and registrations of FIR. It is submitted that Rule 3.16 of the Vigilance Manual, 2008 is a well-\n\ndrawn scheme fitting in squarely with the provisions of\nSections 4\n&\n\nthe Cr.P.C., 1973.\n6.15 It is further submitted that in the very nature of the investigation of\n\nsuch offences as the instant case which may involve not only collection\n\nof documentary evidence but other preliminary statements to be\n\nobtained for the purpose of investigation, in order to rule out the absence\n\nof commission of any offence, time will necessarily be consumed. It may\n\nalso become inevitable that materials so collected become part of the\n\ninvestigation as well, which may be of considerable guidance in the\n\ncourse of investigation. It is submitted that\nLalita Kumari\n(supra) does\n\nnot confer any right on the accused to seek a declaration of illegality in\n\ncases of irregularity in the conduct of preliminary enquiry.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P011_C05",
+      "text": "It is submitted\n\nthat no accused who is otherwise prima facie guilty of commission of\n\noffence can walk free from prosecution and punishment if they are\n\notherwise due. It is submitted that ultimately the test to be applied will\n\nbe, whether there is a failure or miscarriage of justice. It is submitted\n\nthat instead of applying the above-said principles, the High Court has\n\nunduly intervened and has erred in quashing the prosecution.\n\n6.16 Now so far as the conclusions drawn under question no.4 are\n\ncontrary to the record of the case. It is submitted that besides the\n\nDirectors of Private Limited Company, respondent no.1 and other\n\nofficials have been arrayed as the accused. It was not necessary that\n\nany person in the State NRHM machinery should have been suspected\n\nand treated as co-conspirators. It is submitted that according to the\n\ninvestigation, the conduct of respondent no.1 and other officials accused\n\nin the course of the Tender Process for purchase of the material in\n\nquestion, alone became suspect events.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P011_C06",
+      "text": "It is submitted that therefore\n\nthe High Court has committed a grave error in quashing the prosecution,\n\nholding question no.4 against the State.\n6.17 Making the above submissions and relying upon the aforesaid\n\ndecision, it is prayed to allow the present appeal.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P012_C01",
+      "text": "7. The present appeal is vehemently opposed by Shri R. Basant,\n\nlearned Senior Advocate appearing on behalf of the respondent. It is\n\nsubmitted that in the facts and circumstances of the case and on true\n\ninterpretation of\nSection 3\nof J&K PC Act, 2006 and in the absence of\n\nprior sanction of the Magistrate under Section 155 of the J&K\nCr.P.C\n.,\n\nthe High Court has rightly quashed the criminal proceedings initiated\n\nagainst the respondent.\n7.1 It is submitted that the High Court has rightly observed that under\n\nthe pretext of the Preliminary Enquiry (PE), the investigating agency\n\ncannot go in detail and verify the veracity of the complaint before\n\nregistration of an FIR. It is submitted that therefore the High Court has\n\nrightly declared Rule 3.16 of the Vigilance Manual, 2008 dealing with\n\nPreliminary Enquiry as ultra vires.\n7.2 It is submitted that the investigation under the J&K PC Act, 2006 is\n\ncontrolled by\nSection 3\nof the Act and as such carries a non-obstante\n\nclause which precludes the procedure under\nCr.P.C\n. It is submitted that\n\namended section makes all the offences under the\nPC Act\ncognizable.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P012_C02",
+      "text": "is submitted that\nSection 3\ncontains two provisos, which in fact create an\n\nembargo on the mode of investigation. As per the first proviso, inter alia,\n\nno police officer below the rank of DSP shall investigate any offence\n\nunder the Act without the order of the Magistrate. The second proviso\n\ncreates an exception to the condition provided in the first proviso and as\n\nper the second proviso, an officer of the Vigilance Organisation of and\n\nabove the rank of Sub-Inspector of Police may investigate such offences\n\nbut if specially authorised in writing by an officer of the Vigilance\n\nOrganisation not below the rank of Assistant Superintendent of Police. It\n\nis submitted that in the instant case the investigation of the FIR under\n\nchallenge was entrusted to Inspector Nisar Hussain. This officer being a\n\nnon-designated officer for the purpose of\nSection 3\n, therefore, must be\n\nspecially authorised by an officer of the Vigilance Organisation not below\n\nthe rank of ASP in terms of the second proviso by way of a separate and\n\nreasoned order.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P012_C03",
+      "text": "It is submitted that the authority conferred upon such\n\nofficer of the Vigilance Organisation being a statutory one, can neither\n\nbe arbitrary nor unreasonable. Therefore, the authorising officer while\n\nconferring authority upon a non-designated investigating officer which in\n\nthe instant case is an inspector has to grant the same by a special and a\n\nseparate reasoned order. Section 3\nis a mandatory provision and the\n\nstatutory obligations created under it must be adhered to and any\n\ndeviation from the same would render the entire investigation void.\n\n7.3 It is submitted that in the present case, there is no reasoned\n\nauthorisation order for conferring special power of investigation upon the\n\ninspector. It is submitted that such order cannot be a mechanical one\n\nand thus has to reveal the reasons for deviating to an exceptional course\n\nof investigation. It is submitted that absence of the reasons from the\n\norder, if any, would also render the order as nullity. It is submitted that\n\ntherefore as a corollary, the investigation is also rendered void and\n\ntherefore the investigation in the instant case being unauthorised has\n\nbeen rightly quashed by the High Court.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P012_C04",
+      "text": "In support of the above, heavy\n\nreliance is placed on the decision of this Court in the case of\nBhajan Lal\n(supra) (paras 102 and 114 to 129).\n7.4 It is further submitted, relying upon Taylor v. Taylor, (1875) 1 Ch.D,\n\n426, 431, where the law prescribes that a certain act must be performed\n\nin a certain way, such act has to be performed in the specified manner\n\nand not in any other manner. Reliance is also placed on the decisions of\n\nthe Indian Courts, (1) Nazir Ahmad v. The King Emperor, AIR 1936 PC\n\n253; and (2) State of Uttar Pradesh v. Singhara Singh, (1964) 4 SCR",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P013_C01",
+      "text": "485. 7.5 It is submitted that\nSection 3\nas a whole is required to be\n\nconsidered, considering the nature of the offence to be investigated\n\nunder the\nPC Act\n. It is submitted that non-obstante clause with which\n\nSection 3\nopens, the superior officer prescribed in the hierarchy who\n\nalone can investigate the offences under the\nPC Act\nas also the\n\nlanguage of\nSection 3\nand its provisos. It is submitted that the\n\nlegislature appears to have consciously noted that the allegations can be\n\nraised against persons in very high positions, like the respondent herein\n\nwho was a Director of Health Services in the State and hence only\n\nDeputy Superintendent of Police can conduct an investigation unless\n\nspecifically authorised by the Magistrate or competent police officials.\n\n7.6 It is further submitted that it is true and cannot be disputed that a\n\nsenior Superintendent of Police can authorise an inspector of police\n\nunder\nSection 3\n, but such authorisation must be valid, legal, proper and\n\nreasoned.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P013_C02",
+      "text": "It is submitted that in the present case in the absence of any\n\nreasons while granting authorisation, there has been no proper\n\nauthorisation.\n7.7 It is submitted that the second proviso to\nSection 3\ninsists on\n\n“special authorisation in writing” and therefore such authorisation must\n\ngive reasons and mere general and non-specific authorisation without\n\ngiving reasons will not be due compliance with the mandate of second\n\nproviso to\nSection 3\n.\n7.8 It is submitted by Shri R.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P013_C03",
+      "text": "Basant, learned Senior Advocate\n\nappearing on behalf of the respondent that, as such, the aforesaid\n\nissue/question is squarely covered by the decision of this Court in the\n\ncase of\nBhajan Lal\n(supra), wherein this Court interpreted second\n\nproviso to Section 5A of the 1947 Act.\n7.9 Now so far as declaring Rule 3.16 of the Vigilance Manual, 2008\n\ndealing with the Preliminary Enquiry (PE) as ultra vires, it is submitted\n\nthat in the present case, the investigating agency before the registration\n\nof an FIR had registered a Preliminary Verification (PE), during which the\n\ninvestigating agency examined the allegations in the FIR on merits and\n\nexamined (1) various communications of NRHM; (2) communications of\n\nDirectorate of Health Services, Srinagar as well as Jammu; (3)\n\nguidelines issued by Ministry of Health and Family Welfare, Government\n\nof India; (4) rates on which Drugs Kits were purchased during the year\n\n2009-2010; (5) the corrigendum issued by Director, Health Services,\n\nKashmir; and (6) the supplies were allegedly made by private agencies\n\nfrom Indore and not by CPSEs.\n7.10 It is submitted that in the FIR itself in para 8, it is stated that on the\n\nbasis of in-depth",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P013_C04",
+      "text": "verification, the allegations against the respondent are\n\nprima facie established.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P013_C05",
+      "text": "It is submitted that the scope of preliminary\n\nverification is not to examine the veracity of the allegations contained in\n\nthe complaint, but only to see whether a cognizable offence is made out\n\nor not. It is submitted that the provisions of\nCr.P.C\n. cannot be amplified\n\nto such an extent which can enable the investigating agency to carry out\n\nan in-depth analysis of a complaint while examining documents and\n\nformulating opinions.\n7.11 It is submitted that there is no provision under the entire\nCr.P.C\n.\n\ngranting authority upon the investigating agency to investigate an\n\noffence prior to the registration of an FIR. Investigation commences with\n\nthe registration of the FIR and not otherwise under Preliminary\n\nVerification. It is submitted that in the case of\nLalita Kumari\n(supra), this\n\nCourt has held that Preliminary Verification cannot be used to verify the\n\nveracity of a complaint and that a Preliminary Verification cannot exceed\n\nmore than 7 days. This duration of 7 days would in any case take a\n\nprospective effect because it does not interpret a provision of law but\n\nlays down law.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P013_C06",
+      "text": "Therefore, registering the FIR on the basis of the\n\ninformation gathered during the illegal investigation launched under the\n\npretext of Preliminary Verification has to be quashed. It is submitted\n\ntherefore that the impugned FIR being an outcome of illegality is liable to\n\nbe quashed and the same has been rightly quashed by the High Court.\n\n7.12 It is further submitted that in the instant case the investigating\n\nagency has verified the veracity of the information at great length for\n\nover a year, as is evident from the contents of the FIR. It is submitted\n\nthat the veracity of a complaint or information can only be verified during\n\ninvestigation, i.e., after the registration of the FIR. It is submitted that the\n\nprocedure enshrined under\nSection 154\nCr.P.C. is a mandatory one and\n\nthe investigating agency is under an obligation to register an FIR on\n\nreceipt of information revealing cognizable offence.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P013_C07",
+      "text": "An exception to this\n\ngeneral principle of criminal law is recognised by this Court in the case of\nLalita Kumari\n(supra), whereby a preliminary verification is permissible\n\nprior to the registration of FIR, with respect to cases related to\n\ncorruption, matrimonial disputes, economic offences etc. However, the\n\nscope of the preliminary verification cannot be enlarged to an extent\n\nwhereby the veracity of a complaint or information can be verified. It is\n\nsubmitted that the procedural safeguard contained in Section 154 is a\n\nmandatory one and any violation thereof is not a mere irregularity but an\n\nillegality which renders the registration of the subsequent FIR illegal.\n7.13 It is submitted that in the case of\nPriyanka Srivastava v. State of\n\nUttar Pradesh\n, (2015) 6 SCC 287, FIR was registered on an application\n\nfiled under\nSection 156(3)\nCr.P.C. The learned Magistrate directed\n\nregistration of the FIR. However, this Court has held the requirements of\n\nSection 154 to be mandatory and in absence of which an application\n\nunder Section 156(3) would not lie.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P013_C08",
+      "text": "It is submitted that non-adherence of\n\nSection 154 rendered the application under Section 156(3) and the order\n\npassed by the learned Magistrate invalid. It is submitted that the FIR\n\nwhich was registered pursuant to the order of the learned Magistrate\n\nunder Section 156(3) was also quashed for non-adherence to Section",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P014_C01",
+      "text": "154. It is submitted that therefore adherence to a mandatory procedure\n\nunder Section 154 cannot be said to be a mere irregularity but an\n\nillegality which renders all the subsequent actions illegal. It is submitted\n\nthat in the present case, the investigation has been carried out without\n\nregistration of the FIR under the guise of Preliminary Verification and\n\ngiving a go-bye to the mandatory procedure required to be followed\n\nunder Section 154 Cr.P.C.\n7.14 Making the above submissions and relying upon the aforesaid\n\ndecisions, it is prayed to dismiss the present appeal.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P015_C01",
+      "text": "8. We have heard the learned senior counsel for the respective\n\nparties at length. At the outset, it is required to be noted that by the impugned\n\njudgment and order and in exercise of its extra-ordinary jurisdiction, the\n\nHigh Court has quashed the entire criminal proceedings and the FIR\n\nagainst the respondent for the offences punishable under\nSections 5(1)\n(d) r/w 5(2) of the J&K PC Act, 2006 and Section 120B of the RPC. The\n\nHigh Court has also declared Rule 3.16 of the Vigilance Manual, 2008\n\ndealing with the Preliminary Enquiry (PE) as ultra vires. While quashing\n\nthe criminal proceedings, the High Court has also quashed the\n\nEntrustment Order dated 16.11.2012 passed by the Senior\n\nSuperintendent of Police, VOK, Srinagar authorising the Inspector to\n\ninvestigate the offences, which authorisation was in exercise of powers\n\nunder the second proviso to\nSection 3\n.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P015_C02",
+      "text": "The High Court framed the\n\nfollowing questions:\na) Whether\nSection 3\nof the Prevention of Corruption Act is a\n\n mandatory provision and its non-adherence vitiates the investigation?\nb) Whether prior sanction of a Magistrate under Section 155 Jammu\n\n & Kashmir\nCr.P.C\n. is mandatory for investigating cognizable offences\n\n along with non-cognizable?\nc) Whether under the pretext of Preliminary Verification the\n\n investigating agency can verify the veracity of a complaint before\n\n registration of FIR?\nd) Whether an offence like that of Criminal Conspiracy can be\n\n committed by a juridical person like a company?\n8.1 Relying upon the decision of this Court in the case of\nBhajan Lal\n(supra), the High Court has observed and held that the authorisation by\n\nthe Senior Superintendent of Police, VOK, Srinagar authorising the\n\ninspector Nisar Hussain to investigate the FIR for the offences under\nSections 5(1)(d)\nr/w 5(2) of the J&K PC Act, 2006, which as such was in\n\nexercise of powers under the second proviso to\nSection 3\nis void and\n\nillegal as no reasons are assigned/given and the same is a non-\n\nreasoned authorisation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P015_C03",
+      "text": "It is required to be noted that in the case of\nBhajan Lal\n(supra), this Court had an occasion to consider Section 5A of\n\nthe 1947 Act and in the present case\nSection 3\nof J&K PC Act, 2006 is\n\nrequired to be considered. Section 5A which fell for consideration before\n\nthis Court in the case of\nBhajan Lal\n(supra) reads as under:\n5-A.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P015_C04",
+      "text": "Investigation into cases under this Act. — (1) Notwithstanding\n anything contained in the\nCode of Criminal Procedure\n, 1898 (5 of 1898), no\n police officer below the rank, —\n(a) in the case of the Delhi Special Police Establishment, of an Inspector of\n Police;\n(b) in the presidency towns of Calcutta and Madras, of an Assistant\n Commissioner of Police;\n(c) in the presidency town of Bombay, of a Superintendent of Police; and\n(d) elsewhere, of a Deputy Superintendent of Police,\n\n shall investigate any offence punishable under Section 161, Section 165 or\n Section 165-A of the Penal Code, 1860 or under\nSection 5\nof this Act without\n the order of a Presidency Magistrate or a Magistrate of the first class, as the\n case may be, or make any arrest therefor without a warrant:\nProvided that if a police officer not below the rank of an Inspector of\n Police is authorised by the State Government in this behalf by general or\n special order, he may also investigate any such offence without the order of\n a Presidency Magistrate or a Magistrate of the first class, as the case may\n be, or make arrest therefor without a warrant:\nProvided further that an offence referred to in clause (e) of",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P015_C05",
+      "text": "sub-section\n (1) of\nSection 5\nshall not be investigated without the order of a police officer\n not below the rank of a Superintendent of Police.”\n\n8.2 The authority under which the investigating officer was authorised\n\nto investigate the offences under\nSection 5A\nof the Act which fell for\n\nconsideration before this Court reads as follows:\n“Haryana Government,\n Home Department,\n ORDER\n No. 4816-3H-75/22965 July 26, 1975\n\nConferred by the first proviso to sub-section (1) of\nSection 5-A\nof the\n Prevention of Corruption Act, 1947, the Governor of Haryana hereby\n authorises all the Inspectors of Police under the administrative control of the\n Inspector General of Police, Haryana to investigate offences under\nSection 5\nof the said Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P015_C06",
+      "text": "S.D. Bhandari\n Secretary to Government, Haryana\n Home Department”\n\n8.3\nSection 3\nof J&K PC Act, 2006, which is relevant for our purpose,\n\nreads as follows:\n“3. Offences to be cognizable and non-bailable – Notwithstanding\n anything to the contrary in the\nCode of Criminal Procedure\nall offences\n punishable under this Act shall be cognizable and non-bailable:\n Provided that no Police Officer below the rank of the Deputy Superintendent\n of Police shall investigate any such offence without the order of a\n Magistrate of the First Class or make any arrest therefor without a warrant:\n Provided further that if an officer of the Vigilance Organization of and above\n the rank of a Sub-Inspector of Police is specially authorised in writing by an\n officer of the Vigilance Organization not below the rank of an Assistant\n Superintendent of Police to investigate such offence, such officer may\n investigate the offence so specified in the order of authorization.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P015_C07",
+      "text": "But such\n officer shall not be competent to arrest any person during such investigation\n unless a Police Officer not below the rank of a Deputy Superintendent of\n Police authorizes such arrest under\nSection 56\nof the Code of Criminal\n Procedure, Samvat 1989.”\n\n8.4 The authorization in the present case authorising the inspector\n\nNisar Hussain to investigate the FIR for the offences under\nSections 5(1)\n(d) r/w 5(2) of the J&K PC Act, 2006 and 120B of the RPC, which as\n\nsuch was in exercise of powers under the second proviso to\nSection 3\nreads as follows:\n“Investigation of Case FIR No. 32/2012\nu/s 5(1)(d)\nr/w 5(2) J&K PC Act Svt.\n 2006 and Section 120-B RPC P/S Vigilance Organization, Srinagar is\n hereby entrusted to Insp. Nisar Hussain No. 4136/NGO. He is authorized\n\nu/s 3\nPC Act\n, Svt. 2006 r/w\nSection 56\nof Cr.P.C. to arrest the accused\n person(s) whenever and wherever necessary. He will conduct investigation of the case under the supervision of\n Superintendent of Police (BKB).”\n\n Therefore, what was considered by this Court in the case of\nBhajan\n\nLal\n(supra) was Section 5A of the 1947 Act and the authorization referred\n\nto hereinabove.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P015_C08",
+      "text": "The wordings used in\nSection 3\nof the J&K PC Act, 2006\n\nare altogether distinct and different and that of\nSection 5A\nof the\n\nPrevention of Corruption Act, 1988 which fell for consideration before this\n\nCourt in the case of\nBhajan Lal\n(supra). The observations and the\n\ndecision of this Court in the case of\nBhajan Lal\n(supra) has been\n\nconsidered and explained by this Court in the case of\nRam Singh\n(supra)\n\nin paragraphs 13 to 15 as under:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P016_C01",
+      "text": "13. The investigation conducted and the consequent proceedings are\n stated to have been quashed on similar grounds in\nBhajan Lal\ncase [1992\n Supp (1) SCC 335. The facts of that case were one Dharam Pal presented\n a complaint against Ch. Bhajan Lal, the former Chief Minister of Haryana\n making certain serious allegations against him which prima facie showed\n commission of offence punishable under the Act. The complaint was\n presented in the Chief Minister's Secretariat on 12-1-1987 when the said\n Shri Bhajan Lal had ceased to be the Chief Minister. An endorsement was\n made by the Officer on Special Duty in the Chief Minister's Secretariat to\n the effect: “CM has seen. For appropriate action” and was marked to the\n Director General of Police who in turn made endorsement on the same\n day which read: “Please look into this; take necessary action and report”\n and marked it to the Superintendent of Police, Hissar. The complaint along\n with the above endorsement of the OSD and the DGP was put up before\n the SP on 21-11-1987 on which date the SP made his endorsement\n reading “Please register a case and investigate”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P016_C02",
+      "text": "The Station House\n Officer of the police station registered a case on the basis of the\n allegations in the complaint under Sections 161 and 165 of the Penal\n Code, 1860 and\nSection 5(2)\nof the Prevention of Corruption Act, 1947. After forwarding the copy of the first information report to the Magistrate\n and other officers concerned, the SHO took up the investigation and\n proceeded to the spot accompanied by his staff. At this stage Shri Bhajan\n\nLal filed Writ Petition No. 9172 of 1987 under\nArticles 226\nand\n\nof the\nConstitution of India seeking quashing of the first information report and\nissuance of directions restraining the police from further proceeding with\nthe investigation. The High Court held that allegations made in the\ncomplaint do not constitute a cognizable offence for commencing a lawful\ninvestigation and granted relief as prayed for by the petitioner therein.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P016_C03",
+      "text": "Aggrieved by the aforesaid judgment the State of Haryana preferred an\nappeal in this Court which was disposed of as under:\n“We set aside the judgment of the High Court quashing the first\n information report as not being legally and factually sustainable in law\n for the reasons aforementioned; but, however, we quash the\n commencement as well as the entire investigation, if any, so far done\n for the reasons given by us in the instant judgment on the ground that\n the third appellant (SHO) is not clothed with valid legal authority to take\n up the investigation and proceed with the same within the meaning of\nSection 5-A(1)\nof the Prevention of Corruption Act, as indicated in this\n judgment. Further we set aside the order of the High Court awarding\n costs with a direction that the said costs are payable to the first\n respondent (Ch. Bhajan Lal) by the second respondent (Dharam Pal).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P016_C04",
+      "text": "In the result, the appeal is disposed of accordingly but at the same time\ngiving liberty to the State Government to direct an investigation afresh, if it\nso desires, through a competent police officer empowered with the valid\nlegal authority in strict compliance with\nSection 5-A(1)\nof the Act as\nindicated supra. No orders as to costs.”\n\nIn the facts and circumstances of that case this Court posed a question to\nitself in the following terms:\n“Now what remains for consideration is whether there is any valid order of\nthe SP permitting the third appellant to investigate the offence falling under\nclause (e) of sub-section (1) of\nSection 5\n. As we have already mentioned\nin the earlier part of this judgment, the SP (the second appellant) has\ngiven the one-word direction on 21-11-1987 ‘investigate’. The question is\nwhether the one-word direction ‘investigate’ would amount to an ‘order’\nwithin the meaning of second proviso of Section 5-A (1).”\n\nThe Court found on facts that as there was absolutely no reason given by\nthe SP in directing the SHO to investigate, the order of the SP was directly\nin violation of the dictum of law.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P016_C05",
+      "text": "The SHO was, therefore, found not\nclothed with the requisite legal authority within the meaning of the second\nproviso to Section 5-A (1) of the 1947 Act to investigate the offences under\nclause (e) of\nSection 5(1)\nof the Act. This Court held that (1) as the\nsalutary legal requirement of disclosing reason for according the\npermission is not complied with, (2) as the prosecution is not satisfactorily\nexplaining the circumstances which impelled the SP to pass the order\ndirecting the SHO to investigate the case, (3) as the said direction\nmanifestly seems to have been granted mechanically and in a very casual\n\nmanner, regardless of the principles of law enunciated by this Court, and\n(4) as the SHO had got neither any order from the Magistrate to\ninvestigate the offences under\nSections 161\nand\n\nIPC nor any order\nfrom the SP for investigation of the offences under\nSection 5(1)(e)\nof the\nPrevention of Corruption Act in the manner known to law, the order of\ndirection reading only “investigate” suffered from legal infirmity.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P016_C06",
+      "text": "The Court\nfound that despite quashing the direction of the SP and the investigation\nthereupon it would not, in any manner, deter the State of Haryana from\npursuing the matter and directing the investigation afresh in pursuance of\nthe FIR, if the State so desired.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P017_C01",
+      "text": "14. It may be noticed at this stage that a three-Judge Bench of this Court\nH.N. Rishbud v. State of Delhi\n[AIR 1955 SC 196] had held that a defect\nor illegality in investigation, however serious, has no direct bearing on the\ncompetence or the procedure relating to cognizance or trial. Referring to\nthe provisions of\nSections 190\n,\n\n,\n\nand\n\nof the Code of\nCriminal Procedure (1898) in the context of an offence under the\nPrevention of Corruption Act, 1947\n, the Court held:\n“A defect or illegality in investigation, however serious, has no direct\nbearing on the competence or the procedure relating to cognizance or\ntrial. No doubt a police report which results from an investigation is\nprovided in\nSection 190\nCrPC as the material on which cognizance is\ntaken. But it cannot be maintained that a valid and legal police report is the\nfoundation of the jurisdiction of the court to take cognizance. Section 190\nCrPC is one out of a group of sections under the heading ‘Conditions\nrequisite for initiation of proceedings’. The language of this section is in\nmarked contrast with that of the other sections of the group under the\nsame heading, i.e., Sections 193 and 195 to 199.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "CrPC 190"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P017_C02",
+      "text": "These latter sections regulate the competence of the court and bar its\njurisdiction in certain cases excepting in compliance therewith. But Section\n190 does not. While no doubt, in one sense, clauses (a), (b) and (c) of\nSection 190(1) are conditions requisite for taking of cognizance, it is not\npossible to say that cognizance on an invalid police report is prohibited\nand is therefore a nullity. Such an invalid report may still fall either under\nclause (a) or (b) of Section 190(1), (whether it is the one or the other we\nneed not pause to consider) and in any case cognizance so taken is only\nin the nature of error in a proceeding antecedent to the trial.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P017_C03",
+      "text": "To such a\nsituation\nSection 537\nCrPC which is in the following terms is attracted:\n‘Subject to the provisions hereinbefore contained, no finding, sentence or\norder passed by a court of competent jurisdiction shall be reversed or\naltered on appeal or revision on account of any error, omission or\nirregularity in the complaint, summons, warrant, charge, proclamation,\norder, judgment or other proceedings before or during trial or in any inquiry\nor other proceedings under this Code, unless such error, omission or\nirregularity, has in fact occasioned a failure of justice.’\nIf, therefore, cognizance is in fact taken, on a police report vitiated by the\nbreach of a mandatory provision relating to investigation, there can be no\ndoubt that the result of the trial which follows it cannot be set aside unless\nthe illegality in the investigation can be shown to have brought about a\n\nmiscarriage of justice. That an illegality committed in the course of\ninvestigation does not affect the competence and the jurisdiction of the\ncourt for trial is well settled as appears from the cases in —\n‘Parbhu v. Emperor\n[AIR 1944 PC 73] and — ‘Lumbhardar\nZutshi v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "CrPC 537"
+      ],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P017_C04",
+      "text": "R. [AIR 1950 PC 26] ”\nIt further held:\n“In our opinion, therefore, when such a breach is brought to the notice of\nthe court at an early stage of the trial, the court will have to consider the\nnature and extent of the violation and pass appropriate orders for such\nreinvestigation as may be called for, wholly or partly, and by such officer as\nit considers appropriate with reference to the requirements of\nSection 5-A\nof the Act. It is in the light of the above considerations that the validity or\notherwise of the objection as to the violation of\nSection 5(4)\nof the Act has\nto be decided and the course to be adopted in these proceedings,\ndetermined.”\n\nBhajan Lal\ncase [1992 Supp (1) SCC 335] this Court had found on facts\nthat the SP had passed the order mechanically and in a very casual\nmanner regardless of the settled principles of law. The provisions of\nSection 17\nof the Act had not been complied with. As earlier noticed the\nSP while authorising the SHO to investigate had made only an\nendorsement to the effect “Please register the case and investigate”.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P017_C05",
+      "text": "The\nSP was shown to be not aware either of the allegations or the nature of the\noffences and the pressure of the workload requiring investigation by an\nInspector. There is no denial of the fact that in cases against the\nrespondents in these appeals, even in the absence of the authority of the\nSP the investigating officer was in law authorised to investigate the offence\nfalling under\nSection 13\nof the Act with the exception of one as is\ndescribed under sub-section (1)(e) of the Act. After registration of the FIR\nthe Superintendent of Police in the instant appeals is shown to be aware\nand conscious of the allegations made against the respondents, the FIR\nregistered against them and pending investigations. The order passed by\nthe SP in the case of Ram Singh on 12-12-1994 with respect to a crime\nregistered in 1992 was to the effect:\n“In exercise of powers conferred by the provisions on me, under\nSection\n\nof the Prevention of Corruption Act, 1988, I, P.K. Runwal,\nSuperintendent of Police, Special Police Establishment, Division I,\nLokayukta Karyalaya, Gwalior Division, Gwalior (M.P.), authorised Shri\nD.S.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P017_C06",
+      "text": "Rana, Inspector (SPE), Lak-Gwl (M.P.) to investigate Crime No. 103\nof 1992 under\nSections 13(1)(e)\n,\n23(2)\nof the Prevention of Corruption Act,\n1988 against Shri Ram Singh, DO, Excise, Batul (M.P.).”\n\nSimilar orders have been passed in the other two cases as well. The\nreasons for entrustment of investigation to the Inspector can be discerned\nfrom the order itself. The appellant State is, therefore, justified in\nsubmitting that the facts of\nBhajan Lal\ncase [1992 Supp (1) SCC 335] were\ndistinguishable as in the instant case the Superintendent of Police appears\nto have applied his mind and passed the order authorising the\ninvestigation by an Inspector under the peculiar circumstances of the\n\ncase. The reasons for entrustment of investigation were obvious. The High\n Court should not have liberally construed the provisions of the Act in\n favour of the accused resulting in closure of the trial of the serious charges\n made against the respondents in relation to commission of offences\n punishable under an Act legislated to curb the illegal and corrupt practices\n of the public officers.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P017_C07",
+      "text": "It is brought to our notice that under similar\n circumstances the High Court had quashed the investigation and\n consequent proceedings in a case registered against Shri Ram Babu\n Gupta against which Criminal Appeal No. 1754 of 1986 was filed in this\n Court which was allowed on 27-9-1986 by setting aside the order of the\n High Court with a direction to the trial court to proceed with the case in\n accordance with law and in the light of the observations made therein.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P018_C01",
+      "text": "15. We are not satisfied with the finding of the High Court that merely\n because the order of the Superintendent of Police was in typed pro forma,\n that showed the non-application of mind or could be held to have been\n passed in a mechanical and casual manner. As noticed earlier the order\n clearly indicates the name of the accused, the number of the FIR, the\n nature of the offence and power of the Superintendent of Police permitting\n him to authorise a junior officer to investigate.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P018_C02",
+      "text": "The time between the\n registration of the FIR and authorisation in terms of the second proviso to\nSection 17\nshows further the application of mind and the circumstances\n which weighed with the Superintendent of Police to direct authorisation to\n order the investigation.”\n\n8.5 Thereafter, having noticed that the order authorising the\n\ninvestigating officer in exercise of powers under\nSection 17\nof the\n\nPrevention of Corruption Act, 1988 indicating the name of the accused,\n\nthe number of the FIR, the nature of the offence and power of the\n\nSuperintendent of Police permitting him to authorise a junior officer to\n\ninvestigate, the time between the registration of the FIR and the\n\nauthorisation in terms of second proviso to\nSection 17\n, this Court has\n\nheld such authorisation to be valid.\n8.6 In the present case also, it cannot be said that there was any non-\n\napplication of mind on the part of the Senior Superintendent of Police\n\nauthorising the inspector Nisar Hussain to enquire into the FIR for the\n\noffences under\nSections 5(1)(d)\nr/w 5(2) of the J&K PC Act, 2006 and\n\n120-B of the Ranbir Penal Code.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P018_C03",
+      "text": "It is required to be noted that Inspector\n\nNisar Hussain who was authorised to investigate the FIR for the\n\naforesaid offences was also authorised to arrest the accused persons\n\nwhenever and wherever necessary. It is also required to be noted that in\n\nthe said authorisation it has been specifically mentioned that he will\n\nconduct the investigation of the case under the supervision of the\n\nSuperintendent of Police (BKB). Therefore, all precautions are taken by\n\nthe Senior Superintendent of Police authorising the Inspector Nisar\n\nHussain to investigate the FIR for the offences under the J&K PC Act,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P019_C01",
+      "text": "2006. Even otherwise, it is required to be noted that on a plain reading of\n\nthe second proviso to\nSection 3\n, only two requirements are required to\n\nbe satisfied, namely, (i) authorisation in writing by an officer of the\n\nVigilance Organisation not below the rank of Assistant Superintendent of\n\nPolice to an officer of not below the rank of Sub-Inspector of Police to\n\ninvestigate such offences; and (ii) such officer authorised may investigate\n\nthe offences so specified in the order of authorisation. Therefore, as\n\nsuch, there is no requirement of giving either special reasons or there is\n\nno requirement to mention reasons. What is required to be considered\n\nis whether there is an application of mind with respect to offences and\n\nthe relevant provisions with respect to authorisation. Considering the\n\nauthorisation reproduced hereinabove, it cannot be said that such\n\nauthorisation authorising Inspector Nisar Hussain to investigate the FIR\n\nfor the offences under\nSections 5(1)(d)\nr/w 5(2) of the J&K PC Act, 2006\n\nand 120B of the RPC can be said to be vitiated and/or can be said to be\n\nvoid which warrants quashing of the entire criminal proceedings including\n\nthe FIR.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P019_C02",
+      "text": "Therefore, as such, the High Court has committed a grave error\n\nin quashing the entire criminal proceedings holding that authorisation in\n\nfavour of Inspector Nisar Hussain was bad in law, relying upon the\n\nobservations made by this Court in the case of\nBhajan Lal\n(supra), which\n\nhas been subsequently explained by this court in the case of\nRam Singh\n(supra). We are of the opinion that in the facts and circumstances of the\n\ncase and considering the authorisation read with the second proviso to\nSection 3\n, authorisation cannot be said to be illegal and/or invalid.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P020_C01",
+      "text": "9. Now so far as the finding recorded by the High Court for non-\n\ncompliance of Section 155 of J&K\nCr.P.C\n. is concerned, it is to be noted\n\nthat the High Court has observed that for an investigating agency to\n\ninvestigate the group of offences which include the non-cognizable one,\n\nit must obtain a sanction from the concerned Magistrate before launching\n\nthe investigation and in the present case no such sanction from the\n\nconcerned Magistrate has been obtained is concerned, it is to be noted\n\nthat the substantive offences against the respondent herein were under\n\nJ&K PC Act, 2006 and as per\nSection 3\nof the Act, all offences under the\n\nAct are cognizable and non-bailable. As such, the aforesaid issue is\n\nsquarely covered against the respondent in view of the decision of this\n\nCourt in the case of\nPravin Chandra Mody\n(supra). In paragraph 6, it is\n\nobserved and held as under:\n“6. Section 156(2) provides that where a police officer enquires into an\n offence under Section 156(1) his action cannot be called into question on\n the ground that he was not empowered to investigate the offence. The\n enquiry was an integrated one, being based on the same set of facts.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P020_C02",
+      "text": "Even if the offence under the\nEssential Commodities Act\nmay not be\n cognizable — though it is not alleged by the appellant that it is non-\n cognizable — the police officer would be competent to include it in the\n charge-sheet under Section 173 with respect to a cognizable offence. Ram Krishna Dalmia v. State\n[AIR (1958) Pb. 172], Falshaw, J (as he\n then was) observed that the provisions of\nSection 155(1)\nof the Criminal\n Procedure Code, must be regarded as applicable to those cases where\n the information given to the police is solely about a non-cognizable\n offence. Where the information discloses a cognizable as well as a non-\n cognizable offence the police officer is not debarred from investigating any\n non-cognizable offence which may arise out of the same facts. He can\n include that non-cognizable offence in the charge-sheet which he presents\n for a cognizable offence. We entirely agree. Both the offences if\n cognizable could be investigated together under Chapter XIV of the Code\n and also if one of them was a non-cognizable offence.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P021_C01",
+      "text": "10. In the present case, the offence under the\nPrevention of Corruption\n\nAct\nis a substantive offence and the investigation in respect of the\n\noffence under the\nPC Act\n, when considered and coupled with the offence\n\nof conspiracy, there is no requirement of prior sanction of the Magistrate.\n\nMerely because the offence of the conspiracy may be involved,\n\ninvestigation into the substantive offence, i.e., in the present case,\n\noffence under the\nPC Act\nwhich is cognizable is not required to await a\n\nsanction from the Magistrate, as that would lead to a considerable delay\n\nand affect the investigation and it will derail the investigation. Therefore,\n\nthe High Court has erred in quashing the criminal proceedings on the\n\nground that as the offence under Section 120B which is a non-\n\ncognizable, prior sanction as required under Section 155 of J&K\nCr.P.C\n.\n\nis not obtained. The view taken by the High Court is just contrary to the\n\nlaw\nlaid down by\nthis Court in the case of\nPravin Chandra Mody\n(supra),\n\nwhich has been subsequently relied upon by this Court in the cases of\nBrij Lal Palta\n(supra);\nSatya Narain Musadi\n(supra);\nMadan Lal\n(supra);\n\nand\nBhanwar Singh\n(supra).",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P022_C01",
+      "text": "11. The impugned judgment and order passed by the High Court\n\ninsofar as holding Rule 3.16 of the Vigilance Manual, 2008 as ultra vires\n\nis concerned, it is required to be noted that even Rule 3.16 can be said\n\nto be in consonance with the observations and the law\nlaid down by\nthis\n\nCourt in the case of\nLalita Kumari\n(supra). Rule 3.16 reads as under:\n“Clause 3.16 – Preliminary Enquiry (PE)\n\n When a complaint or information discloses adequate material indicating\n misconduct on the part of public servant which needs a detailed\n verification prior to registration of a case\nu/s 154\nCr.P.C., a Preliminary\n Enquiry (PE) can be ordered. A PE should normally be completed in a\n period of six months. The PE will be registered on a given proforma\n (Annexure K). Sometimes courts also order an enquiry by the State\n Vigilance Organisation. Such preliminary enquiries should also be\n\nregistered after approval of the Commissioner of Vigilance. A PE may be\n converted into FIR, with the prior concurrence of central office, as soon as\n sufficient material becomes available to show that, prima facie,\n commission of a cognizable offence under\nPrevention of Corruption Act\n made out.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P022_C02",
+      "text": "When the material available indicates ingredients of\n misconduct alone and not criminal misconduct, a self-contained note\n should be sent to the appropriate disciplinary authority for departmental\n action.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P023_C01",
+      "text": "12. On a close reading of Rule/Clause 3.16, it can be seen that even\n\nthe same can be said to be in the interest of the accused and/or a person\n\nagainst whom the allegations are made and to safeguard the accused\n\nagainst frivolous complaints. As per Clause 3.16 only after the\n\nPreliminary Enquiry is conducted and there is a prima facie case found,\n\nan FIR is required to be registered. Considering the nature of offences, a\n\ndetailed enquiry is required and therefore it is observed in Clause 3.16\n\nthat a PE should be completed normally within a period of six months. It\n\nis the case on behalf of the respondent and even as observed and held\n\nby the High Court in the impugned judgment and order as per the law\nlaid down by\nthis Court in the case of\nLalita Kumari\n(supra), a detailed\n\ninvestigation into the allegations on merits is not required by holding\n\nPreliminary Enquiry and that such enquiry is to be completed within a\n\nperiod of 7 days is concerned, it is to be noted that in the case of\nLalita\n\nKumari\n(supra), it is not held that if the Preliminary Enquiry is not\n\ncompleted within a period of 7 days, the entire criminal proceedings\n\nwould be void and the same are to be quashed.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P024_C01",
+      "text": "13. So far as the submission on behalf of the respondent that in the\n\npresent case by conducting a Preliminary Enquiry, detailed investigation\n\nhas been made and only thereafter the FIR is registered and that at the\n\ntime of Preliminary Enquiry, investigation is not permissible since the FIR\n\nis lodged is concerned, the aforesaid submission seems to be attractive\n\nbut has no substance. While holding a Preliminary Enquiry under Clause\n\n3.16, whatever is conducted will be in the form of enquiry into the\n\nallegations to consider whether any prima facie case is made out or not\n\nwhich requires further investigation after registering the FIR or not. While\n\nconsidering the prima facie case for the purpose of registering the FIR,\n\nsome enquiry/investigation is bound to be there, however, the same shall\n\nbe only for the purpose of finding out a prima facie case for the purpose\n\nof registration of the FIR only. Whatever enquiry is conducted at the\n\nstage of Preliminary Enquiry, by no stretch of imagination, will be\n\nconsidered as investigation under the code of criminal procedure which\n\ncan only be after registration of the FIR.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P024_C02",
+      "text": "Even otherwise, merely\n\nbecause while holding a Preliminary Enquiry a detailed enquiry is made\n\ninto the allegations made against the respondent which, as observed\n\nhereinabove, can be said to be only for the purpose of finding out a\n\nprima facie case for the purpose of registration of the FIR and merely\n\nbecause some more time is taken in conducting the Preliminary Enquiry\n\nbefore registering the FIR, the entire criminal proceedings cannot be\n\nquashed. There shall not be any prejudice caused to the accused at the\n\nstage of holding Preliminary Enquiry which as observed hereinabove\n\nshall only be for the purpose of satisfying whether any prima facie case is\n\nmade out with respect to the allegations made in the complaint which\n\nrequires further investigation after registering the FIR or not. Therefore,\n\nthe High Court has materially erred in holding and declaring Clause 3.16\n\nas ultra vires.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P025_C01",
+      "text": "14. Now so far as the 4th ground/question on which the High Court has\n\nquashed the criminal proceedings, namely, the respondent cannot be\n\nheld vicariously liable in the absence of main conspirators – Private\n\nLimited Companies and/or their in-charge persons is concerned, it is to\n\nbe noted that the allegations against the respondent are in respect of his\n\nindividual capacity. Besides the Directors of the Private Limited\n\nCompanies, respondent no.1 and other officials have been arrayed as an\n\naccused. Therefore, there is no question of any vicarious liability and the\n\nobservations made by the High Court that in absence of main\n\nconspirators – Private Limited Companies and/or their in-charge persons,\n\nrespondent no.1 cannot be held liable is unsustainable and cannot be\n\naccepted. The High Court has erred in quashing the entire criminal\n\nproceedings on the aforesaid ground.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P026_C01",
+      "text": "15. In view of the above and for the reasons stated above, the\n\nimpugned judgment and order passed by the High Court quashing the\n\nentire criminal proceedings for the offences under\nSections 5(1)(d)\nr/w\n\n5(2) of the J&K PC Act, 2006 and 120B of the Ranbir Penal Code arising\n\nout of FIR No. 32/2012 and quashing and setting aside the Entrustment\n\nOrder dated 16.11.2012 passed by the Senior Superintendent of Police,\n\nVOK, Srinagar authorising the Inspector Nisar Hussain to investigate the\n\nFIR for the offences under\nSections 5(1)(d)\nr/w 5(2) of the J&K PC Act,\n\n2006 and 120B of the Ranbir Penal Code and holding and declaring\n\nRule/Clause 3.16 of the Vigilance Manual, 2008 dealing with Preliminary\n\nEnquiry (PE) as ultra vires is unsustainable and deserves to be quashed\n\nand set aside and is hereby quashed and set aside. FIR/criminal\n\nproceedings against the respondent being FIR No., 32/2012 for the\n\noffences under\nSections 5(1)(d)\nr/w 5(2) of the J&K PC Act, 2006 and\n\n120B of the Ranbir Penal Code is to be investigated and proceeded\n\nfurther by the authorised officer expeditiously.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA_P027_C01",
+      "text": "16. The present appeal is allowed accordingly.\n………………………………J.\n [M.R. Shah]\n\nNew Delhi; ………………………………..J.\nOctober 29, 2021. [A.S. Bopanna]",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "The State Of Jammu And Kashmir vs Dr. Saleem Ur Rehma",
+    "case_id": "SC_2021_THE_STATE_OF_JAMMU_AND_KASHMIR_VS_DR_SALEEM_UR_REHMA",
+    "court": "Supreme Court of India",
+    "year": "2021",
+    "facts_summary": "1. Feeling aggrieved and dissatisfied with the impugned judgment\n\n and order dated 07.05.2018 passed by the High Court of Jammu &\n\n Kashmir at Srinagar in O.W.P. No. 1961/2015, by which the High Court\n\n in exercise of its extra-ordinary jurisdiction has quashed the criminal\n\n proceedings being FIR No. 32/2012 and has declared Rule 3.16 of the\n\n Vigilance Manual, 2008 dealing with the Preliminary Enquiry (PE) being\n\nin direct conflict with the Constitution Bench Judgment of this Court in\nAIR 2014 SC 187 = 2014 (2) SCC 1, and consequently has declared the\n\nsame ultra vires, the State has preferred the present appeal. 2. That an FIR being FIR No. 32/2012, Police Station, VOK was\n\nregistered against the respondent herein under Section 5(1)(d) r/w 5(2)\n\nof the J&K Prevention of Corruption Act, 2006 (hereinafter referred to as\n\nthe ‘J&K PC Act, 2006’) and Section 120B of the Ranbir Penal Code\n\n(hereinafter referred to as the ‘RPC’) alleging inter alia that during 2010-\n\n11, the Director Health Services, Kashmir along with the other accused\n\npersons misappropriated the huge amount of government money by way\n\nof effecting purchases of sub-standard medical kits under National Rural\n\nHealth Mission (NRHM) at highly exorbitant rates and in violation of the\n\nconditions of supply orders placed by the department. It was alleged\n\nagainst the respondent as under:\ni)The respondent herein purchased various drug kits under NRHM\n Scheme from 4 CPSEs through limited tender and all the 4 CPSEs\n su",
+    "legal_issues": "6. Shri R. Venkataramani, Learned Senior Advocate has appeared on\n\nbehalf of the appellants and Shri R. Basant, Learned Senior Advocate\n\nhas appeared on behalf of the respondent.\n6.1 Shri R. Venkataramani, Learned Senior Advocate appearing on\n\nbehalf of the State has vehemently submitted that in the facts and\n\ncircumstances of the case, the High Court has committed a grave error\n\nin quashing the entire criminal proceedings including the FIR and even\n\nthe Entrustment Order dated 16.11.2012.\n\n6.2 It is submitted that the High Court formulated the four questions,\n\nwhich are reproduced hereinabove. It is submitted that so far as\n\nquestion no. 1, whether Section 3 of the Prevention of Corruption Act is\n\na mandatory provision and its non-adherence vitiates the investigation is\n\nconcerned, it is submitted that the conclusions drawn by the High Court\n\nare in disregard of the relevant provisions of the J&K PC Act, 2006 and\n\nthe J&K Cr.P.C.\n6.3 It is submitted that the reliance placed on the decision of this Court\n\nin the case of\nBhajan Lal\n(supra) is absolutely misconceived. It is\n\nsubmitted that in Bhajan Lal’s case,\nSections 3\n&\n5A\nof the Prevention of\n\nCorruption Act, 1947 (hereinafter referred to as the ‘1947 Act’), prior to\n\nthe amendment of the Act in 1988, fell for consideration. It is submitted\n\nthat\nSection 3\nof the J&K PC Act, 2006 under which the prosecution in\n\nquestion was initiated does not correspond either to\nSection 3\nSection\n\n5A\nof the 1947 Act. It is submitted that ",
+    "ratio_summary": "It is submitted that in view of\n\nthe fact that\nSection 3\nof the J&K PC Act, 2006 with its own special\n\nscheme of delegation enacted in the second proviso to\nSection 3\n,\n\nreliance on Bhajan Lal’s case which was with reference to\nSection 5A\n\nthe 1947 Act is absolutely misconceived.\n6.5 It is further submitted that as such the decision of this Court in the\n\ncase of\nBhajan Lal\n(supra) has been subsequently explained by this\n\nCourt in the case of\nState of M.P. v. Ram Singh\n(2000) 5 SCC 88. It is\n\nsubmitted that in the case of\nRam Singh\n(supra), the order of the\n\nSuperintendent of Police authorising the Inspector to investigate the\n\noffence under the\nPrevention of Corruption Act, 1988\nindicating the\n\nname of the accused, number of the FIR, the nature of the offence and\n\nthe power of the Superintendent of Police permitting him to authorise a\n\njunior officer to investigate, the same is held to be a valid authorisation. It is submitted that in the aforesaid decision, this Court has distinguished\n\nthe decision of this Court in the case of\nBhajan Lal\n(supra).",
+    "final_order": "In the result, the appeal is disposed of accordingly but at the same time\ngiving liberty to the State Government to direct an investigation afresh, if it\nso desires, through a competent police officer empowered with the valid\nlegal authority in strict compliance with\nSection 5-A(1)\nof the Act as\nindicated supra. No orders as to costs.”\n\nIn the facts and circumstances of that case this Court posed a question to\nitself in the following terms:\n“Now what remains for consideration is whether there is any valid order of\nthe SP permitting the third appellant to investigate the offence falling under\nclause (e) of sub-section (1) of\nSection 5\n. As we have already mentioned\nin the earlier part of this judgment, the SP (the second appellant) has\ngiven the one-word direction on 21-11-1987 ‘investigate",
+    "outcome_summary": "Allowed. In the result, the appeal is disposed of accordingly but at the same time\ngiving liberty to the State Government to direct an investigation afresh, if it\nso desires, through a competent police officer empowered with the valid\nlegal authority in strict compliance with\nSection 5-A(1)\nof the Act as\nind",
+    "sections_cited": [
+      "CrPC 190",
+      "CrPC 537"
+    ],
+    "cases_cited": []
+  }
+}

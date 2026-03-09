@@ -1,0 +1,71 @@
+{
+  "case_id": "SC_2022_DEEPENDRA_SINGH_RATHORE_VS_UNION_OF_INDIA",
+  "case_name": "Deependra Singh Rathore vs Union Of India",
+  "normalized_case_name": "DEEPENDRA_SINGH_RATHORE_VS_UNION_OF_INDIA",
+  "court": "Supreme Court of India",
+  "year": "2022",
+  "judgment_template": null,
+  "case_number": "Petition 1277 of 2022",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": "3 March 2022",
+  "judges": [
+    "Uday Umesh Lalit"
+  ],
+  "author": "Uday Umesh Lalit",
+  "bench_type": "single",
+  "petitioner": "Deependra Singh Rathore",
+  "respondent": "Union Of India",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 0,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\2022\\MAR\\2022_MAR_127.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2022_DEEPENDRA_SINGH_RATHORE_VS_UNION_OF_INDIA_P001_C01",
+      "text": "INHERENT JURISDICTION\n REVIEW PETITION(CIVIL)D.NO.1277 OF 2022\n SPECIAL LEAVE PETITION (CIVIL)NO.28312 OF 2019",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2022_DEEPENDRA_SINGH_RATHORE_VS_UNION_OF_INDIA_P002_C01",
+      "text": "DEEPENDRA SINGH RATHORE …Petitioner\n Versus\n UNION OF INDIA AND ORS. …Respondents\n O R D E R\nApplication for oral hearing is rejected.\nThere is delay of 337 days in preferring the review petition. The",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_DEEPENDRA_SINGH_RATHORE_VS_UNION_OF_INDIA_P003_C01",
+      "text": "satisfactory. We, therefore, refuse to condone the delay.\nConsequently, the review petition is dismissed on the ground of",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Deependra Singh Rathore vs Union Of India",
+    "case_id": "SC_2022_DEEPENDRA_SINGH_RATHORE_VS_UNION_OF_INDIA",
+    "court": "Supreme Court of India",
+    "year": "2022",
+    "facts_summary": "DEEPENDRA SINGH RATHORE …Petitioner\n Versus\n UNION OF INDIA AND ORS. …Respondents\n O R D E R\nApplication for oral hearing is rejected.\nThere is delay of 337 days in preferring the review petition. The",
+    "legal_issues": "",
+    "ratio_summary": "",
+    "final_order": "satisfactory. We, therefore, refuse to condone the delay.\nConsequently, the review petition is dismissed on the ground of",
+    "outcome_summary": "Dismissed. satisfactory. We, therefore, refuse to condone the delay.\nConsequently, the review petition is dismissed on the ground of",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

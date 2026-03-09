@@ -1,0 +1,1243 @@
+{
+  "case_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP",
+  "case_name": "Union Of India vs Deloitte Haskins And Sells Llp",
+  "normalized_case_name": "UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP",
+  "court": "Supreme Court of India",
+  "year": "2023",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 793 of 2022",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "3 May 2023",
+  "judges": [
+    "M.R. Shah",
+    "C.T. Ravikumar"
+  ],
+  "author": "M.R. Shah",
+  "bench_type": "division",
+  "petitioner": "Union Of India",
+  "respondent": "Deloitte Haskins And Sells Llp",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 85,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2023\\MAY\\2023_MAY_60.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P001_C01",
+      "text": "CRIMINAL/CIVIL APPELLATE JURISDICTION\n CRIMINAL APPEAL NOS.2305-2307 OF 2022\n\n Union of India and Another …Appellants\n\n Versus\n\n Deloitte Haskins and Sells LLP & Anr. …Respondents\n\n WITH\n\n CRIMINAL APPEAL NOS. 2302-2303 OF 2022\n CIVIL APPEAL NO. 793 OF 2022\n CRIMINAL APPEAL NO. 2298 OF 2022\n CIVIL APPEAL NO. 801 OF 2022\n CRIMINAL APPEAL NO. 2299 OF 2022\n CIVIL APPEAL NO. 877 OF 2022\n CRIMINAL APPEAL NO. 2300 OF 2022\n CRIMINAL APPEAL NO. 2304 OF 2022\n\nM.R. SHAH, J.\nAppeals under consideration:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P002_C01",
+      "text": "1. This batch of Criminal Appeals/Civil Appeals raise\ncommon question(s) of law pertaining to the interpretation\nSection 140(5)\nof the Companies Act, 2013 (hereinafter\nreferred to as the ‘Act, 2013’) and the Investigation Report\ndated 28.05.2019 (hereinafter referred to as the ‘IFIN\nSFIO Report’) in respect of IL&FS Financial Services\nLimited (hereinafter referred to as the ‘IFIN’).\n1.1 Criminal Appeal Nos. 2305-2307/2022, Criminal\nAppeal Nos. 2302-2303/2022 and Criminal Appeal No.\n2300/2022 have been filed by the Union of India, inter\nalia, challenging the common judgment and order dated\n21.04.2020 passed by the High Court of Bombay in Writ\nPetition Nos. 4144 & 4145 of 2019 and other companion\nwrit petitions, by which the High Court, though upheld that\nSection 140(5)\nof the Act, 2013 is not unconstitutional,\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nhas set aside the direction under\nSection 212(14)\nof the\nAct, 2013 dated 29.05.2019 issued by the Union of India\nto the Serious Fraud Investigation Office (SFIO) and\nconsequently set aside the prosecution lodged by the\nSFIO vide Criminal Complaint No.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P002_C02",
+      "text": "CC 20/2019 on the file\nof Special Court (Companies Act) & Additional Sessions\nJudge, Greater Mumbai, the Union of India and the SFIO\nhave preferred the present appeals.\n1.2 In Criminal Appeal Nos. 2302-2303/2022, the\nchallenge pertains to the auditor of IL&FS Financial\nServices Limited, namely, BSR & Associates LLP (BSR)\nand in Criminal Appeal Nos. 2305-2307/2022 and\nCriminal Appeal No. 2300/2022, the challenge pertains to\nanother auditor of IFIN, namely, Deloitte Haskins & Sells\nLLP (for short, ‘Deloitte’) and an ex-director of IFIN,\nnamely, Hari Sankaran.\n1.3 Criminal Appeal Nos. 2298/2022, 2299/2022 &\n2304/2022 have been filed by Deloitte and two of its\npartners challenging the impugned judgment and order\npassed by the High Court insofar as it upholds the\nconstitutionality of\nSection 140(5)\nof the Act, 2013. Criminal Appeal Nos.2305-2307/2022 Etc.\n\n1.4 Civil Appeal Nos. 793/2022, 801/2022 & 877/2022\nhave been filed by Deloitte and two of its partners\nchallenging the order passed by the National Company\nLaw Appellate Tribunal dated 04.03.2020. Factual Background:",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P003_C01",
+      "text": "2. The facts leading to the present proceedings in\nnutshell are as under:\nA series of defaults by the IL&FS Group\nCompanies, which had an aggregate debt burden of more\nthan Rs. 91,000 crores, occurred between June to\nSeptember, 2018 and threatened to collapse the money\nmarkets of India, added pressure to corporate bond yields\nand sparked a sell off in the stock market. The\nDepartment of Economic Affairs, Ministry of Finance\nissued an Office Memorandum dated 30.09.2018 in\nrespect of IL&FS to the Ministry of Corporate Affairs,\nUnion of India requesting it to take action under the Act,",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P004_C01",
+      "text": "2013. The Memorandum and Note highlighted that:\n(a)the IL&FS Group was struggling with a debt\n contagion of approx.. Rs. 91,000 crores across the\n IL&FS Group against Rs. 6950 crores in equity share\n capital and reserves a leverage of at least 13 times. Criminal Appeal Nos.2305-2307/2022 Etc.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P004_C02",
+      "text": "Moreover, in the year 2017-18, the IL&FS Group has\n shown a loss of Rs. 2670 crores;\n(b) this debt contagion, prima facie, was on account of\n\n inter alia failure of corporate governance across the\n IL&FS Group and window dressed accounts; and\n(c) any further defaults would be catastrophic for the\n well-being of the financial markets and the economy.\n2.1 In parallel, the Ministry of Corporate Affairs, upon\nreceipt of a report from the Registrar of Companies under\nSection 208\nof the Act, 2013, directed the SFIO to\ninvestigate into the affairs of IL&FS and its subsidiaries.\n2.2 The Ministry of Corporate Affairs filed a Company\nPetition on 01.10.2018 being Company Petition No.\n3638/2018 against IL&FS and its the then existing Board\nof Directors before the National Company Law Tribunal\n(NCLT) seeking, amongst others, the removal of the then\nexisting Board of Directors of IL&FS and the appointment\nof a new Board of Directors in place and instead thereof. The NCLT passed an interim order on the same date, i.e.,\n01.10.2018 superseding the then existing Board of\nDirectors of IL&FS with a new Board of Directors.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P004_C03",
+      "text": "The\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nnew Board of Directors were directed to take charge of\nthe affairs of the IL&FS. The new Board of Directors of\nIL&FS submitted a report dated 30.10.2018 on progress\nand way forward with the Ministry of Corporate Affairs\nwhich was in turn filed by the Ministry of Corporate Affairs\nwith the NCLT on 31.10.2018, pursuant to the order\npassed by the NCLT on 01.10.2018.\n2.3 Further to the Office Order dated 30.09.2018\ndirecting investigation to be initiated by the SFIO and an\ne-mail dated 01.11.2018, SFIO submitted an interim\nreport in respect of IL&FS and one Employees Welfare\nTrust pertaining to the IL&FS Group. It is required to be\nnoted that the said interim report was submitted as\nMinistry of Corporate Affairs called for an “interim report”,\nwhich was called in pursuance to\nSection 212(11)\nof the\nAct, 2013 which provides that an interim report must be\ncalled for by the Central Government.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P004_C04",
+      "text": "It is to be noted\nthat in the interim report itself, it was specifically recorded\nthat the findings in the interim report are interim findings\nand the interim report concluded by setting forth “based\non the above interim findings…” It is also to be noted that\ninterim report was on the individuals who were in control\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nof the affairs of the IL&FS Group and the illegalities and\nfraud perpetrated by them.\n2.4 On the basis of the interim report, the Ministry of\nCorporate Affairs filed a Miscellaneous Application in\nCompany Petition No. 3638/2018 against the erstwhile\nDirectors of the companies in the IL&FS Group seeking to\nimplead them in the said proceedings and an order to\nattach their immovable/movable properties.\n2.5 On the basis of the interim report and a prima facie\nopinion of the Institute of Chartered Accountants dated\n04.12.2018, the Ministry of Corporate Affairs filed a\npetition under\nsection 130\nof the Companies Act, 2018\nbefore the NCLT praying inter alia that the books of\naccounts of IL&FS, IFIN and IL&FS Transportation\nNetworks Limited (ITNL) may be re-opened and recast.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P004_C05",
+      "text": "Vide order dated 01.01.2019 passed in\nSection 130\npetition, the NCLT directed that the accounts of IL&FS,\nIFIN & ITNL for the past 5 financial years be re-opened\nand recast on the ground that the affairs of IL&FS, IFIN &\nITNL had been mismanaged casting a doubt on the\nreliability of the financial statements/accounts. Criminal Appeal Nos.2305-2307/2022 Etc.\n\n2.6 The auditors of IFIN (BSR & Deloitte) were given\nnotice of\nSection 130\npetition who opposed the said\npetition. Order dated 01.01.2019 passed by the NCLT\nwas challenged by one of the ex-directors of IFIN before\nthe National Company Law Appellate Tribunal, New Delhi\n(NCLAT), which dismissed the appeal vide order dated\n31.01.2019. Order dated 31.01.2019 passed by the\nNCLAT was appealed before this Court. Vide order dated\n04.06.2019, this Court dismissed the civil appeal filed by\nthe said ex-director. Thus, this Court upheld initiation of\nthe proceedings by the Ministry of Corporate Affairs under\nsection 130\nof the Companies Act, 2018.\n2.7 The Reserve Bank of India (RBI) initiated an\ninspection of the IL&FS and IFIN under\nSection 45N\nof the\nRBI Act, 1934.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P004_C06",
+      "text": "Pursuant to the investigation/inspection,\nthe RBI submitted an investigation/inspection report dated\n22.03.2019 to IFIN. IFIN thereafter issued a notice dated\n13.05.2019 under\nSection 140(1)\nof the Act, 2013 inter\nalia on BSR seeking to remove them as auditors. BSR\nfiled a written response to the notice served by IFIN under\nSection 140(1)\nof the Act, 2013 denying the allegations in\nthe notice. A hearing was held on 29.05.2019 by IFIN\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nwhere BSR was also represented/present.\n2.8 Pursuant to the Office Order dated 30.09.2018,\nSFIO submitted the investigation report of IL&FS Financial\nServices Limited (SFIO Report).\n2.9 The Ministry of Corporate Affairs vide letter dated\n29.05.2019 requested the Regional Director (Western\nRegion) and the SFIO to initiate proceedings/prosecution. The SFIO was asked to initiate proceedings/prosecution\nunder\nSection 447\nand other provisions of the\nCompanies\nAct\n, r/w\nSections 417\n,\n\nand\n120B\nof the Indian Penal\nCode.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P004_C07",
+      "text": "The Regional Director was asked to institute a\nPetition under\nSection 140(5)\nof the Act, 2013.\n2.10 That thereafter the SFIO filed a criminal complaint\non 30.05.2019 before the Sessions Court (Special Judge\n–\nCompanies Act\n), Mumbai against, amongst others, the\nauditors/ex-auditors of IFIN being CC No. 20/2019.\n2.11 That thereafter the Ministry of Corporate Affairs filed\na Petition under\nSection 140(5)\nof the Act, 2013 dated\n10.06.2019, inter alia, against the auditors of the IFIN,\nnamely, BSR & Deloitte and the engagement partners as\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nwell as their team.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P004_C08",
+      "text": "In the petition under\nSection 140(5)\n, it\nwas inter alia prayed to remove BSR as auditors of IFIN;\ndeclare that Deloitte shall be deemed to be removed as\nStatutory Auditor for IL&FS for F.Y. 2012-13 to F.Y. 2017-\n18; permit the Ministry of Corporate Affairs to appoint an\nauditor for IFIN under the first proviso of\nSection 140(5)\nthe Act, 2013; and declare/direct that BSR, its\nengagement partners, Deloitte and its engagement\npartners shall not be eligible to be appointed as an auditor\nfor any company for a period of five years under the\nsecond proviso of\nSection 140(5)\nof the Act, 2013.\n2.12 BSR issued a letter of resignation dated 19.06.2019\nto IFIN and simultaneously completed the regulatory\nfilings pursuant to such resignation.\n2.13 BSR and its engagement partners filed a reply\ndated 19.06.2019 to\nSection 140(5)\npetition before the\nNCLT, inter alia, contending that (i) they are not the\nauditors for IFIN any longer as they have tendered their\nresignation and therefore\nSection 140(5)\nis not applicable\nto them; and (ii)\nSection 140(5)\ndoes not demonstrate any\ncase for fraud against BSR.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P004_C09",
+      "text": "Criminal Appeal Nos.2305-2307/2022 Etc.\n\n2.14 Deloitte filed an application dated 19.06.2019\nchallenging the maintainability of\nSection 140(5)\npetition\nbefore the NCLT on the ground that Deloitte is no longer\nthe auditor for IFIN. BSR and its engagement partners\nalso filed an application challenging the maintainability of\nSection 140(5)\npetition before the NCLT on the ground\nthat BSR is no longer the auditor for IFIN.\n2.15 After hearing the auditors (BSR & Deloitte) on the\napplications challenging the maintainability of\nSection\n140(5)\npetition, the NCLT passed an order upholding the\nmaintainability of\nSection 140(5)\npetition.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P004_C10",
+      "text": "That thereafter,\nthe BSR filed a writ petition before the High Court, inter\nalia, challenging the vires of\nSection 140(5)\nof the Act,\n2013; the directions issued and the order of the NCLT\nupholding the maintainability of\nSection 140(5)\npetition.\n2.16 By the impugned judgment and order, though the\nHigh Court has upheld the validity of\nSection 140(5)\nof the\nAct, 2013, the High Court has interpreted\nsection 140(5)\nof the Act, 2013 and has set aside the order passed by\nthe NCLT upholding the maintainability of\nSection 140(5)\npetition and has quashed\nSection 140(5)\npetition and has\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nset aside/quashed the directions issued by the Ministry of\nCorporate Affairs and the SFIO and also has quashed/set\naside criminal proceedings instituted by the SFIO. Hence,\nthe present appeals. Submissions on behalf of the Union of India:",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C01",
+      "text": "3. Shri Balbir Singh, learned Additional Solicitor\nGeneral of India appearing on behalf of the Union of India\nhas vehemently submitted that in the impugned judgment\nand order the High Court has misinterpreted\nSection\n140(5)\nof the Act, 2013, though the High Court has upheld\nthe constitutionality of the said provision.\n3.1 It is submitted that as regards the interpretation of\nSection 140(5)\nof the Act, 2013, the High Court has\nexplained the legislative intent as being to induce/effect a\nchange of an auditor in a company where there is a\nsuspected fraud. It is submitted that thereafter the High\nCourt has erroneously proceeded to hold that the intention\nbehind\nSection 140(5)\nof the Act, 2013 is only to break the\ncollusion between the auditor and the company. It is\nsubmitted that accordingly, the High Court erroneously\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nholds that if the unholy bond between the auditor and\ncompany is broken, either by removal or resignation, then\nSection 140(5)\nof the Act, 2013 fulfils its purpose.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C02",
+      "text": "It is\nsubmitted that according to the High Court,\nSection 140(5)\nof the Act is only attracted when despite the petition by\nthe Central Government, an auditor sets up a defence and\nopposes the petition frivolously and thus invites a final\norder as set forth in the second proviso to\nSection 140(5)\nof the Act, 2013. It is submitted that on this basis, the\nHigh Court proceeded to hold that the petition filed by the\nUnion of India under\nSection 140(5)\nof the Act, 2013 has\nbeen satisfied by the subsequent resignation of the\nauditor and therefore the petition under\nSection 140(5)\nthe Act, 2013 filed by the Union of India is no longer\nmaintainable. It is submitted that the High Court\nerroneously proceeded to quash\nSection 140(5)\npetition\nand the order passed by the NCLT, Mumbai upholding its\nmaintainability.\n3.2 Now insofar as quashing and setting aside the\ncriminal proceedings, it is submitted that the respondents\nassailed\nSection 212(14)\ndirection on two grounds. Firstly, on the ground that the issuance of the direction to\nprosecute within 30 hours of receipt of the IFIN SFIO\nCriminal Appeal Nos.2305-2307/2022 Etc. Report demonstrates non-application of mind.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C03",
+      "text": "Secondly,\nthat the IFIN SFIO Report was an incomplete report as\ninvestigation had not been completed and therefore\nSection 212(14)\ndirection was incompetent. It is\nsubmitted that insofar as the first ground is concerned, the\nHigh Court erroneously holds that there is non-application\nof mind since it was improbable that a report of about 750\npages and 32000 pages of annexures could have been\nconsidered in 30 hours. Further, the High Court\nerroneously holds that the relevant facts and documents\nto demonstrate application of mind have not been placed\non record. It is submitted that while doing so, the High\ncourt also holds that the existence of a valid sanction can\nbe appreciated in a writ Court and need not wait trial.\n3.3 As regards the IFIN SFIO Report, it is submitted that\nthe High Court holds summarily and without even going\ninto the same and erroneously holds that the SFIO Report\nis incomplete and lacking and therefore\nSection 212(14)\ndirection is incorrect and/or invalid.\n3.4 On interpretation of\nSection 140(5)\nof the Act, 2013,\nShri Balbir Singh, learned ASG has taken us to the\nlegislative history and legislative intent of\nSection 140(5)\nof the Act, 2013.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C04",
+      "text": "It is submitted that\nSection 140\nof the\nCriminal Appeal Nos.2305-2307/2022 Etc. Act, 2013 is titled as “Removal, resignation of auditor and\ngiving of special notice”. It appears in\nChapter X of the\nAct\nwhich is titled as “Audit and Auditors”. Section 140(1)\nof the Act, 2013 provides for the procedure to remove an\nauditor by the company before the expiry of his term. Sections 140(2)\nand (3) of the Act deal with resignation of\nauditors and\nSection 140(4)\nof the Act deals with giving of\nspecial notice at an AGM for appointment of an auditor\nother than the retiring auditor and the process in that\nregard. It is submitted that if an auditor of a company is\nacting directly or indirectly in a fraudulent manner or is\nabetting or colluding in fraud with the management of a\ncompany,\nSection 140(5)\nof the Act, 2013 empowers\neither the Central Government or any person concerned\nto approach the NCLT for recourse. Section 140(5)\nof the\nAct also enables the NCLT to take action suo motu\nagainst an auditor who has acted in the aforesaid manner. It is submitted that in addition,\nSection 140(5)\nof the Act,\n2013 has also two provisos and two explanations.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C05",
+      "text": "It is\nsubmitted that therefore as per the first proviso to\nSection\n140(5)\n, on an application made by the Central\nGovernment and if the Tribunal is satisfied that any\nchange of the auditor is required, the Tribunal shall within\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nfifteen days of receipt of such application make an order\nthat the said auditor shall not function as an auditor and\nthe Central government may appoint another auditor in his\nplace. It is submitted that second proviso to\nSection\n140(5)\nof the Act provides that an auditor, whether\nindividual or firm, against whom final order has been\npassed by the Tribunal under\nsection 140(5)\nshall not be\neligible to be appointed as an auditor of any company for\na period of five years from the date of passing of the order\nand the auditor shall also be liable for action under\nSection 447\n. It is submitted that therefore merely\nbecause during the pendency of the proceedings under\nSection 140(5)\nof the Act the auditor resigns, the\nproceedings under\nSection 140(5)\ndo not come to an end.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C06",
+      "text": "Still and after the final order is passed, in that case, a\nfurther order as per second proviso to\nSection 140(5)\ncan\nbe passed to render such a auditor ineligible to be\nappointed as an auditor of any company for a period of\nfive years from the date of passing of the order and even\nsuch auditor shall also be liable for the action under\nsection 447\nof the Companies Act. It is submitted that\ntherefore the High Court has materially erred in observing\nand holding that once the auditor has resigned thereafter\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nthe application under\nsection 140(5)\nof the Act shall not be\nmaintainable and/or is not required to be proceeded\nfurther.\n3.5 Thereafter, Shri Balbir Singh, learned ASG has\ntaken us and referred to the legislative history of\nSection\n\n`40(5) of the Act as under:\nLegislative History of\nSection 140(5)\nof the Act, 2013\n\n Around August 2004, the Government initiated the process of\n review of the\nCompanies Act, 1956\nand drafting of a new\n Companies Bill to replace the\nCompanies Act, 1956\n. A\n concept paper was published on the website of the Ministry\n of Corporate Affairs on which various comments were\n received.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C07",
+      "text": "An expert committee was also constituted by the\n Ministry of Corporate Affairs under the chairmanship of Dr. J.J. Irani, to make recommendations on provisions of\n company law.\na. Companies Bill 2008 and the Companies Bill 2009\n i. After considering the report of the J.J. Irani\n Committee, the Ministry prepared the Companies Bill,\n 2008 and introduced the same before the Lok Sabha on\n October 23, 2008. The 2008 Bill was referred to the\n Department related Parliamentary Standing Committee\n (PSC) on Finance for their examination. However, the\n Lok Sabha was dissolved before the PSC could present\n its report and therefore the 2008 Bill lapsed as per\nArticle\n 107(5)\nof the Constitution of India.\nii. Accordingly, the Companies Bill 2009 was\n introduced in the Lok Sabha on or about July 15, 2009. The 2009 Bill too was referred to the PSC. In identifying\n the features of the 2009 Bill, the PSC Report of August\n 2010 notes the salient features as being “the role, rights\n and duties of the auditors have been defined so as to\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nmaintain integrity and independence of the audit\n process.”\n iii.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C08",
+      "text": "In setting out the guiding principles underlying the\n 2009 Bill, the PSC, in the Report, notes that, amongst\n other principles, the following are the key principles\n underlying the 2009Bill:\n“Need for sturdy systems, enhanced transparency and\n comprehensive disclosures based regime emphasized;\n as companies grow, become bigger and globalise with\n the number and range of stakeholders increasing by\n volumes, necessitating proper checks and balances. Self-regulation through internal mechanism/procedures,\n to be underpinned on strong systems and procedures;\n Central Government to step in only when mis-\n governance takes place. In the light of recent experiences in corporate mis-\n governance, process of audit and functioning of\n auditors to be made more independent and effective;\n stringent joint and individual liability prescribed; setting\n up of oversight body to set standards and supervise\n quality of audit recommended”\n iv. Further, the report notes that various suggestions\n were made by the PSC during deliberations on the Bill\n which were incorporated by the Central Government.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C09",
+      "text": "a reading of these suggestions, it is essential to note that\n independence of the auditors was a key point.\n v. Crucially, in the Report, the PSC notes that the\n 2009 Bill incorporates suggestions of the JPC on the 1993\n Banking and Securities Market Scam and the 2002 JPC\n on the Stock Market Scam. This means that the 2009 Bill\n was a culmination of the growing corporate economy and\n past experiences of corporate fiascos too. One of the\n suggestions were to provide for stricter accountability for\n auditors. Moreover, at the foot of the same page, the PSC\n notes that the 2009Bill has made the regulatory provisions\n and regime more stricter by inter alia providing for making\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nstatutory auditors more accountable by providing for\n substantial civil and criminal liability for auditors.\n vi. The Report clearly demonstrates that there was a\n long discussion on the role, responsibility, duties and\n regulation of auditors and the regulatory and enforcement\n provisions. Particularly, the Report records that various\n suggestions were received to make the provisions\n pertaining to audit and auditors more stringent.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C10",
+      "text": "Significantly, it was suggested that Clause 123(10) of the\n 2009 Bill (which provides for removal of an auditor by the\n NCLT on finding that there is a fraud and corresponds to\nSection 140(5)\nof the Act) should be made more stringent\n and should contemplate that an auditor removed by the\n Tribunal should not be eligible to be appointed as an\n auditor of any company for a period of 5 years. The\n relevant extracts are as follows:\n“34.Suggestions have been received by the Committee\n that there is a need to make provisions relating to Audit\n and Auditors more stringent such as following:-\n(d) Suitable penalty may be provided in case of\n contravention of these provisions. (e) (i) Clause 123(10) of the Bill empowers the\n Tribunal, if it is satisfied that the auditor of a company\n has acted in a fraudulent manner or abetted/colluded in\n any fraud, to direct the company to change its auditors. Suggestions have been made that these provisions\n should be modified to clarify to cover act of fraud or\n abetment by auditor whether directly or indirectly.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C11",
+      "text": "It has\n also been suggested that the Bill may provide that if\n auditor, whether individual or firm, against whom an\n order has been passed by the Tribunal under this clause\n should not be eligible to be appointed as an auditor of\n any company for a period of five years.”\n b. The Companies Bill, 2011\n i. In view of the recommendations of the Standing\n Committee and that of various stakeholders, the Central\n Government withdrew the 2009 Bill with a view to\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nintroduce a fresh Bill incorporating the\n recommendations of the Standing Committee and\n various stakeholders. Consequently, the 2011 Bill was\n introduced in the Lok Sabha in December, 2011,\n accepting and incorporating most of the\n recommendations made by the previous Standing\n Committee in respect of the Companies Bill, 2009. This\n aspect has been recorded in the Statements of Objects\n and Reasons of the Companies Bill, 2011.\nii.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C12",
+      "text": "At this juncture, it is important to bear in mid that the\n suggestion of the Standing Committee to Clause\n 123(10) of the 2009 Bill (which provides for removal of\n an auditor by the NCLT on finding that there is a fraud)\n was to:\n Make the provision more stringent; and\n  To provide for consequences for an auditor when\n such auditor is found to have been perpetrating a\n fraud and is removed by the NCLT for such fraud.\n iii. The 2001 Bill consolidates the provisions pertaining to\n removal of auditors into one clause namely Clause 140\n of the 2011 Bill. Further, the 2011 Bill (like the 2009\n Bill) retains the NCLT’s power to remove an auditor\n upon finding that the auditor has perpetrated a fraud at\n Clause 140(5) of the 2011 Bill. Most pertinently, the\n 2011 Bill incorporating the recommendations of the\n Standing Committee as contained in the Report,\n provides for consequences for an auditor who is found\n to have perpetrated a fraud by the NCLT and is\n removed for such fraud by the NCLT. This has been\n done by way of a proviso to Clause 140(5) of the Bill\n (particularly the second proviso).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C13",
+      "text": "The relevant extract\nSection 140(5)\nof the 2011 Bill is as follows:\n“(5) Without prejudice to any action under the\n provisions of this Act or any other law for the time\n being in force, the Tribunal either suo motu or on an\n application made to it by the Central Government or\n by any person concerned, if it is satisfied that the\n auditor of a company has, whether directly or\n indirectly, acted in a fraudulent manner or abetted or\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\ncolluded in any fraud by, or in relation to, the\n company or its directors or officers, it may, by order,\n direct the company to change its auditors:\nProvided that if the application is made by the\n Central Government and the Tribunal is satisfied that\n any change of the auditor is required, it shall within\n fifteen days of receipt of such application, make an\n order that he shall not function as an auditor and the\n Central government may appoint another auditor in\n his place:\nProvided further that an auditor, whether individual or\n firm, against whom final order has been passed by\n the Tribunal under this section shall not be eligible to\n be appointed as an auditor of any company for a\n period of five years from",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C14",
+      "text": "the date of passing of the\n order and the auditor shall also be liable for action\n under\nsection 447\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C15",
+      "text": "Explanation – For the purposes of this Chapter the\n word “auditor” includes a firm of auditors”.\niv. Thereafter, in January 2012, the 2011 Bill was\n placed before the Standing Committee by the Lok\n Sabha. The Standing Committee has prepared and\n finalized its report in this regard, and insofar as the\n penalty and guiding principles of Clause 140(5) are\n concerned, there is no further guidance on the\n legislative intent behind the same.\nv. In view of the above, the test of Clause 140(5) of\n the 2011 Bill has remained unchanged, the same\n has been enacted as the present\nSection 140(5)\n the Companies Act, 2013.\n3.6 It is submitted that therefore by way of Companies\nBill, 2009 subsequently introduction the Act, for the first\ntime it includes an obligation to an auditor to report any\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nfraud detected to the Central Government as per\nSection\n143(12)\nof the Act and incorporated in the form of the\nsecond proviso to\nSection 140(5)\nof the Act a provision to\nmake an auditor who has been found to have been acting\nin a fraudulent manner or colluding from being an auditor\nin any company for a period of 5 years.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C16",
+      "text": "It is submitted\nthat therefore, the public policy behind\nSection 140(5)\nthe Act is very clear – to prevent an auditor who has been\nfound to perpetrate fraud or colluding in it in one company\nfrom undertaking any statutory audits for a period of 5\nyears. Reliance is placed on the decision of this Court in\nthe case of\nDevas Multimedia Pvt. Ltd. v. Antrix\nCorporation Ltd. & Anr\n, reported in (2023) 1 SCC 216.\n3.7 It is further submitted by Shri Balbir Singh, learned\nASG that\nSection 140(5)\nappears in\nChapter X of the Act\n. It is submitted that Chapter X specifically deals with ‘Audit\nand Auditors’. Section 143\nof the Act deals with the\npowers and duties of the auditors. Sub-section (12) of\nSection 143\nspecifically provides that in the event that the\nauditors has reason to believe that an offence of fraud is\nbeing or has been committed in the company, the auditor\nshall report the matter to the Central Government.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C17",
+      "text": "The\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\ndetailed procedure is provided under the Rules issued in\nthis regard.\n3.8 It is further submitted that\nSection 144\nof the Act\nprovides that the auditor cannot provide certain services\nand the relevant one for the present matter is\n“Management services”. It is submitted that the objective\nis that the auditor should function as an independent\nperson uninfluenced by any of its activities outside the\nscope of audit services. The auditor is prohibited from\nproviding any management service to the Company. It is\nsubmitted that the prohibition and restriction created\nunder\nSection 144\nof the Act is primarily to protect the\ninterest of the Company in question and other\nstakeholders such as lenders and investors and the public\nat large.\n3.9 It is submitted that keeping these provisions and the\nunderlying public policy in the backdrop,\nSection 140 (5)\nof the Act, 2013 is to be considered.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C18",
+      "text": "It is submitted that\nthe plain words of\nSection 140(5)\nof the Act, 2013 provide\nfor the NCLT to, either suo motu or on an application\nmade by the Central Government/any person concerned,\ninquire into/examine the conduct of an auditor or his\ninvolvement in a fraud and reach a satisfaction as regards\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nthe auditors fraudulent conduct. The provision further\nprescribes that the satisfaction of the Hon’ble NCLT “may”\nfinally result in a change of an auditor.\n3.10 It is submitted that the first proviso to\nSection 140(5)\nof the Act is contemplated as an interim or pro-term\nmeasure to prevent an existing auditor from continuing\nand substitute him with an auditor nominated by the\nCentral Government based on a prima facie satisfaction\nthat a fraud has been perpetrated and when\ncircumstances warrant the substitution.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 18
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C19",
+      "text": "This is an interim\norder and operates akin to a temporary suspension.\n3.11 It is submitted that the second proviso to\nSection\n140(5)\nof the Act which is in the nature of a substantive\nprovision activates on an order recording the Hon’ble\nNCLT’s satisfaction of fraudulent or collusive conduct by\nan auditor and his consequent removal from the Company\nand debars him from being an auditor in any company for\na period of 5 years. An order under the first proviso is not\nthe order contemplated under the second proviso to\nSection 140(5)\nof the Act. Thus, if the NCLT finally finds\nno grounds to hold that there has been fraudulent conduct\nor collusion in fraud, then the auditor who may have been\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\ntemporarily suspended under an order under the first\nproviso can be re-instated.\n3.12 It is submitted that\nSection 140(5)\nof the Act\ntherefore confers power onto the Hon’ble NCLT to\nadjudicate on or inquire into the conduct of an auditor and\ndetermine whether the auditor has conducted itself in a\nfraudulent manner. This is clear from the operative part of\nthe provision which mandates the nature of inquiry\nrequired under the section.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 19
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C20",
+      "text": "This is “directly or indirectly,\nacted in a fraudulent manner or abetted or colluded in any\nfraud by, or in relation to, the company or its directors or\nofficers.”\n\n3.13 It is submitted that therefore, any final order would\ncertainly contain either a positive or negative\ndetermination of “fraud” or “fraudulent conduct”. As a\nconsequence of finding fraud under\nSection 140(5)\nof the\nAct, the provision illustrates that the finding of\nfraud/fraudulent conduct “may” lead to an order directing\nchange of an auditor. The second proviso further\nexpressly provides that an auditor “against whom a final\norder has been passed” is in-eligible to act as an auditor\nof any company for a period of 5 years. Significantly, the\nwords used in the second proviso to\nSection 140(5)\nof the\nCriminal Appeal Nos.2305-2307/2022 Etc. Act is “final order” and not “the auditor so removed” or\n“changed auditor”.\n3.14 It is submitted that therefore the requirement or\nnecessity of change of auditor in a company does not\nactivate/govern the power of the NCLT under\nSection\n140(5)\nof the Act, 2013.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 20
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C21",
+      "text": "Instead, it is the inquiry into the\nfraudulent act by an auditor who abdicates his statutorily\nprescribed independent role and responsibilities and\ncolludes with the management or otherwise perpetrates a\nfraud. It is submitted that the essence of the\nprovision/section is determination of fraudulent conduct of\nthe auditor. The consequent “removal” contemplated by\nSection 140(5)\nof the Act, 2013 is not just as acting as an\nauditor in one company or the company concerned but\nfrom any company for a period of five years.\n3.15 It is submitted that therefore the interpretation of\nSection 140(5)\nof the Act, 2013 made by the High Court in\nthe impugned judgment and order is just contrary to the\nobject and purpose of enactment of\nSection 140(5)\nof the\nAct, 2013 and, as such, is contrary to the said provision. Criminal Appeal Nos.2305-2307/2022 Etc.\n\n3.16 Shri Balbir Singh, learned ASG has submitted that\nduring the course of arguments, the submissions made on\nbehalf of the respondents are as under:\na)\nSection 140(5)\nof the Act, in light of the other\n provisions of the Act, is only to incentivize a recalcitrant\n auditor into resigning.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 21
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C22",
+      "text": "Therefore, if an auditor resigns after\n the filing of a Petition under\nSection 140(5)\nof the Act but\n before the Hon’ble NCLT pronounces an order on that\n Petition, the purpose behind\nSection 140(5)\nof the Act is\n fulfilled. This interpretation of\nSection 140(5)\nof the Act is,\n as per the Respondent’s case, clear from the plain words\n of the provision;\nb) continuing a proceeding against an auditor under\nSection 140(5)\nof the Act would despite his resignation\n would lead to reading in a proviso into\nSection 140(5)\n the Act which deems his continuance till the culmination of\n proceedings under\nSection 140(5)\nof the Act;\nc) The second proviso to\nSection 140(5)\nof the Act\n is arbitrary, harsh and burdensome and ought to be read\n down. The mandatory ineligibility to act as an auditor for a\n period of 5 years ought to be read as for a period up to 5\n years to make the provision constitutional.\nd) The ineligibility to act as an auditor of any\n company prescribed under the second proviso to\nSection\n 140(5)\nof the Act can only extend to the audit partners\n concerned and not to the entire firm and the other audit\n partners who were not connected with the fraudulent act or\n acts.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 22
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C23",
+      "text": "Criminal Appeal Nos.2305-2307/2022 Etc.\n\n3.17 Meeting with the aforesaid submissions, it is\nsubmitted as under:\na) Acceptance of Respondent’s contention would mean\n that the jurisdiction of a quasi-judicial tribunal can be\n overcome merely by an act of a party. More significantly, it\n would lead mean that an inquiry into fraudulent conduct\n can be disrupted and/or stands satisfied simply by an act\n of a party.\nb) The entire contention of the provision operating in\n terrorem or to incentivize an auditor to resign is untenable. The consequences of indulging in fraudulent activities\n provided for in the Act including but not limited to\nSection\n\nof the Act itself ought to serve as a deterrent and\n operate “in terrorem”.\nc) The entire construction sought to be attributed to\nSection\n 140(5)\nof the Act by reference to the other provisions of\n the Act (as per paragraphs 9.17 (a) and (b) above) is\n to turn the provision into a dead letter [See\nNEPC\n Micon Ltd. v. Magma Leasing Limited\n(1999) 4\n SCC 253]. Moreover, the Respondent’s interpretation, if\n accepted, would lead to various absurdities.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 23
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C24",
+      "text": "Pertinently,\n amongst other reasons:\ni. given that it is accepted that the first proviso\n provides for a temporary suspension or removal of an\n auditor, if an application is filed under the first proviso\n and the errant auditor replaced (albeit temporarily), then\n an order Second Proviso can never follow. This is\n because the errant auditor cannot, as on date of the\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nfinal order, be said to be the auditor of a company due\n to the first proviso order.\nii. there exists no reason for\nSection 140(5)\nof the Act to operate in terrorrem or to induce a\n recalcitrant auditor to resign. This is so since the first\n proviso to\nSection 140(5)\nof the Act operates\n immediately to effect a change of the auditor/remove\n the existing auditor after filing of a Petition by the\n Central Government under\nSection 140(5)\nof the Act. In\n other words, the first proviso would thus be rendered\n redundant if the intention behind\nSection 140(5)\nof the\n Act is to induce an auditor into resigning.\nd) The ineligibility to act as an auditor for any company for\n a period of 5 years cannot be read down to mean “for a\n period “up to five years”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 24
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C25",
+      "text": "This is so since:\ni. apprehension or misuse of the provision in future\n cannot be ground to test the constitutional validity of the\n provision. [See\nMadras Bar Association v. Union of\n India\n2021 SCC Online SC 463 (para 101-102)]\n\n ii. fraud vitiates everything and the punishment\n mandates in the statute cannot be varied by examining\n the length and breadth of the fraud.\niii. the ineligibility to act under\nSection 140(5)\nof the\n Act is only for acting as an auditor of any company. It\n does not stop the auditor concerned from practising as\n a chartered accountant generally. The individual or firm\n concerned can take up any other activity pertaining to\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\naccounts of the company (which is otherwise barred for\n an auditor by virtue of\nSection 144\n) such as account\n and book keeping service, actuarial service etc or\n otherwise. In fact, in the present case, the auditing firms\n involved have a very significant part of their business\n outside the audit function.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 25
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C26",
+      "text": "The prohibition of 5 years\n does not affect their practise as a chartered accountant\n or any other area of service; and\n\n iv. the fixed prohibition period of 5 years activates\n only in the event of finding of a fraud by the Hon’ble\n NCLT in terms of the statutory scheme and public\n policy. The principle of proportionality cannot be raised\n to a level where the extent of the fraud is required to be\n examined. The very deterrent effect of the provision\n would get diluted and more importantly, it would amount\n to perpetuating the fraud in connection with other\n companies.\nv. As regards the extent of application of the\n ineligibility prescribed under the second proviso to\nSection 140(5)\nof the Act to the firm and individuals, it is\n submitted that a close reading of the provisions of the\n Act reflects that the legislature considered every aspect\n relating to the consequence of\nSection 140(5)\nof the\n Act. An examination of the second proviso to\nSection\n 140(5)\nof the act shows that the Hon’ble NCLT is\n required to give specific findings with regard to fraud\n and whether the auditor is a firm or an individual.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 26
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C27",
+      "text": "There\n cannot be any presumption that mere finding of fraud in\n connection with an individual will automatically\n result in the determination of fraud by the firm. This is also provided under\nSection 147\nof the\n Act which is as follows:\nCriminal Appeal Nos.2305-2307/2022 Etc. (5) Where, in case of audit of a company being\n conducted by an audit firm, it is proved that the\n partner or partners of the audit firm has or have\n acted in a fraudulent manner or abetted or\n colluded in any fraud by, or in relation to or by,\n the company or its directors or officers, the\n liability, whether civil or criminal as provided in\n this Act or in any other law for the time being in\n force, for such act shall be of the partner or\n partners concerned of the audit firm and of the\n firm jointly and severally.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 27
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C28",
+      "text": "Provided that in case of criminal liability of an\n audit firm, in respect of liability other than fine,\n the concerned partner or partners, who acted in\n a fraudulent manner or abetted or, as the case\n may be, colluded in any fraud shall only be liable.\n3.18 Now so far as the submission on behalf of the\nrespondents that once an auditor resigns, the provisions\nSection 140(5)\nof the Act would cease to apply. Instead, the auditor concerned can be proceeded against\nunder\nSection 241(3)\nof the Act and the proceedings\npursuant to\nSection 241(3)\nof the Act would lead to the\nsame result and the auditor would be held not to be ‘fit\nand proper person’ to be appointed in any other office\nconnected with the conduct and management of any\ncompany. It is submitted that:\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\na. Section 241(3)\nand its consequential provisions\n were introduced with effect from 14.8.2019, which\n authorized the Central Government to apply to the\n Tribunal with a request to declare that the persons\n mentioned in\nSection 241(3)\nof the Act are ‘not fit and\n proper persons to hold the office of director or any other\n office connected with conduct and management of any\n company”.\nb.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 28
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C29",
+      "text": "Constructing “any other office connected with the\n conduct and management of any company”, it would be\n necessary to consider the consequential provisions that\n were enacted along with\nSection 241(3)\nof the Act. Particularly,\nSection 243(1A)\nand\nSection 243(2)\n the Act. (1A) The person who is not a fit and proper person\n pursuant to sub-section (4A) of\nsection 242\nshall\n not hold the office of a director or any other office\n connected with the conduct and management of\n the affairs of any company for a period of five\n years from the date of\nthe said decision\n(2) Any person who knowingly acts as a managing\n director or other director or manager of a company\n in contravention of clause (b) of sub-section (1) or\n sub-section (1A), and every other director of the\n company who is knowingly a party to such\n contravention, shall be punishable with fine which\n may extend to five lakh rupees\n\nCriminal Appeal Nos.2305-2307/2022 Etc.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 29
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C30",
+      "text": "Clearly, from the words of the consequential provision, it is\n clear that the reference in specifically\nSection 241(3)\nof the\n Act to “any other office connected with the conduct and\n management of any company” means those akin to\n manager, managing director or other director such as key\n managerial personnel and not an auditor.\nc. Moreover, in\nSection 241(3)\nof the Act specifically,\n the words used are “conduct and management of the\n company”. The auditor as the Act sets forth is an\n independent examiner of accounts and cannot be said to\n be holding an office in the conduct and management of the\n company. This would militate against the very fibre of the\nCompanies Act, 2013\n.\n3.19 Making above submissions, it is submitted that, (i)\nSection 140(5)\nof the Act, 2013 operates to enable a\nquasi-judicial tribunal equipped with powers of a civil court\nto examine the role of auditors and adjudicate on their\nfraudulent conduct and the abdication of their function;\n(ii)\nSection 140(5)\nis not a provision to merely induce/effect\na change of an auditor who is not resigning.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 30
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C31",
+      "text": "It is intended\nas a provision which involves a substantive\ndetermination of fraud so as to isolate or remove an\nauditor from the company and from any company that\nhe/she is auditing. If construed to be a provision only to\ninduce a change of a recalcitrant auditor, the words\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nconferring power on the NCLT to inquire into an auditor’s\nfraudulent conduct would be rendered meaningless; (iii)\n\nthe second proviso to\nSection 140(5)\nof the Act is\nessentially remedial and preventive, though it might\nincidentally also have a punitive effect. The public\npurpose / object of the second proviso to Section is\nclearly to protect companies from being prejudicially\naffected, by debarring such an auditor, who has been held\nto have acted fraudulently, from being appointed as an\nauditor of any company.\n3.20 It is submitted that in the facts of the present case, it\nis pertinent to note that:\na) Deloitte was the statutory auditor of IFIN from\n 2008 till 2018.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 31
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C32",
+      "text": "Deloitte retired by efflux of time in 2018;\nb) BSR was appointed as the joint statutory auditor\n in 2017;\nc) both Deloitte and BSR jointly conducted the\n statutory audit of IFIN for the Financial Year 2017-2018;\nd) the Petitioner i.e., the Union of India filed the\n Petition under\nSection 140(5)\nof the Act against both BSR\n and Deloitte on June 1, 2019. BSR was the statutory\n auditor at that time.\ne) this Petition is based on the SFIO IFIN Report\n which alleges that both auditors i.e., Deloitte and BSR\n acted in a fraudulent manner. This includes the period\n when Deloitte was the sole auditor and for the year when\n the audit was jointly performed by BSR;\nf)after the Petition was filed, BSR tendered its resignation\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nand filed an application in or about July 2019 challenging\n the maintainability of the Union of India’s Petition under\nSection 140(5)\nof the Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 32
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C33",
+      "text": "Deloitte who had retired in 2018\n also filed maintainability application; and\ng) after leave from the Hon’ble Supreme Court, the\n Union of India invoked the Hon’ble NCLT’s powers under\n the first proviso to\nSection 140(5)\nof the Act and an auditor\n was appointed for IFIN.\n3.21 It is submitted that therefore in the facts and\ncircumstances of the present case and on true\ninterpretation of\nSection 140(5)\nof the Act, explained\nabove, the High Court has erroneously quashed the\nNCLT’s order upholding the maintainability of Union of\nIndia’s petition under\nSection 140(5)\nof the Act, 2013 and\nthe proceedings under\nSection 140(5)\nof the Act, 2013\nagainst the auditors – BSR.\n3.22 Given the interpretation of\nSection 140(5)\nof the Act\nsubmitted above, it is contended that the act of\nresignation of BSR after the filing of the Petition under\nSection 140(5)\nof the Act cannot be held to render the\nproceedings under\nSection 140(5)\nof the Act as void. The\nHon’ble Bombay High Court’s interpretation would render\nany proceedings whether against the company’s\nmanagement and / or its auditors for fraud completely\nfrustrated by mere stratagem of design of a party.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 33
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C34",
+      "text": "Under\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nthe circumstances, the Impugned Order passed by the\nHon’ble Bombay High Court is unsustainable and\ndeserves to be set aside.\n3.23 As regards, Deloitte, it is submitted that the Hon’ble\nNCLT and the NCLAT have upheld the maintainability of\nthe Petition under\nSection 140(5)\nof the Act. It is\nsubmitted that as set out above,\nSection 140(5)\nof the Act\nrequires the Hon’ble NCLT to satisfy itself that the auditor\nof the company, whether directly or indirectly, acted in a\nfraudulent manner or abetted or colluded in any fraud. In\norder to arrive at a finding in this regard, it is important to\nexamine the role of both auditors i.e., Deloitte and BSR\nespecially when both were acting as auditors for the\nfinancial year 2017- 2018. Keeping in mind the\ninterpretation of the provision set out above, the\nsatisfaction of the Tribunal may finally result in a change\nof auditor i.e., the change of BSR; however, that does not\ntake away the powers given to the Hon’ble NCLT in terms\nSection 140(5)\nof the Act to inquire into the fraud qua\nDeloitte as well and if found record a satisfaction of fraud\nagainst Deloitte in its final order.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 34
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C35",
+      "text": "Therefore, in the facts of\nthis case, the final order and therefore the second proviso\ncan operate against Deloitte and BSR. Criminal Appeal Nos.2305-2307/2022 Etc.\n\n3.24 Now so far as quashing and setting aside\nSection\n212(14)\ndirection by the Ministry of Corporate Affairs and\nthe Criminal Complaint filed by the SFIO and the IFIN\nSFIO Report, it is submitted that the Bombay High Court\nhas, in the Impugned Order, set aside/quashed the\n212(14) Direction and the Criminal Complaint and the\nSFIO IFIN Report on the ground that:\na. SFIO IFIN Report is an incomplete report/report on an\n incomplete investigation and therefore the 212(14) Direction\n could not be given. The alleged basis of this finding is: (i) a\n singular paragraph in the SFIO IFIN Report; and (ii) the\n 212(14) Direction which calls for a further report on certain\n aspects itself demonstrates that the investigation is\n incomplete; and\n\n b. The 212(14) Direction was given within 30 hours of\n placing the SFIO IFIN Report before the Central Government\n and it was improbable for the Central Government to have\n applied its mind within such a short period. It is submitted that the impugned order is incorrect since:\na.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 35
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C36",
+      "text": "The SFIO IFIN Report is a report prepared by the SFIO\n on the completion of investigation into IFIN viz. one of the\n companies under investigation. The Hon’ble Bombay High\n Court has not appreciated the position that:\n i. By an order dated September 30, 2018, an\n investigation was directed to be conducted by the SFIO\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\ninto IL&FS and its subsidiaries (IL&FS Group) which\n aggregates to approx. 100-169 entities;\n ii. The conduct of affairs of the IL&FS Group which\n was set out in the Interim Report of the SFIO dated\n November 30, 2018 clearly set forth that there were a\n number of interlinkages within the group, routing\n transactions etc;\niii. IFIN is one of the subsidiaries in the IL&FS\n Group and the financial services arm. It facilitated\n borrowings for different group companies in the IL&FS\n Group from third party borrowers and at times routed\n funding from one group company to another;\n iv. Given the nature of interlinkages and overlaps\n between different entities in the IL&FS Group, the SFIO\n IFIN Report sets out that the SFIO IFIN Report is a report\n in respect of IFIN and is a report upon completion of\n investigation into IFIN; and\n v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 36
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C37",
+      "text": "Finally, the SFIO IFIN Report sets forth, in\n light of the complex structure of the IL&FS Group and the\n interlinkages between entities etc, that if any further\n instances or transactions are uncovered qua IFIN during\n the investigation of the other group companies of IL&FS\n then a further report will be filed. This does not mean that the investigation into IFIN is\n incomplete. In fact, even the direction to call for a\n further report on certain aspects (which may be\n related to third parties) does not detract from the\n position that the investigation is complete in all other\n respects. The Hon’ble Bombay High Court has failed\n to appreciate the purport of the submission and has\n fundamentally erred in holding that the SFIO IFIN\n Report is incomplete and/or that the investigation\n into IFIN is incomplete. In the case at hand, the SFIO\nCriminal Appeal Nos.2305-2307/2022 Etc. IFIN Report was submitted by the SFIO after a\n detailed and extensive investigation of IFIN and the\n multiple parties involved.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 37
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C38",
+      "text": "It is submitted that there\n were conclusive findings against each auditor/CA\n pointing out multiple breaches, violations of statutory\n duties and fraudulent conduct with respect to inter alia\n functioning of auditors at the relevant point of time.\nb. The Bombay High Court has proceeded to accept\n the surface level argument of the respondents that\n the 212(14) direction was issued within 30 hours\n which demonstrates non-application of mine without\n considering the following:\ni. The 212(14) direction itself demonstrates application of\n mind from the fact that the direction requests the SFIO to\n prosecute additional persons whose involvement was\n discernible from a reading of the SFIO IFIN Report. This\n would have been possible only if the SFIO IFIN Report\n had been considered. In fact, the 212(14) Direction also\n rectifies a typographical error by the SFIO in the charging\n section applied in the SFIO IFIN Report;\n ii. The affidavit in reply of the UOI before the Hon’ble High\n Court provided an explanation/justification for the time\n taken to process and also set out the process leading up\n to the 212(14) Direction.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 38
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C39",
+      "text": "As against the Respondent’s\n surface level allegation, the Union of India provided a\n clear, transparent and cogent response;\n iii. The Respondents’ contentions were self-serving and\n contradictory. Particularly, the contention that the Union of\n India did not apply its mind given the period of 30 hours\n taken to issue the 212(14) Direction is directly contrary to\n the contention that the direction (contained in the 212(14)\n Direction) to call for a further report demonstrates that\n investigation is incomplete. Notwithstanding the fact that\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\ninvestigation into IFIN is complete, a direction for a further\n report on certain aspects could only have been issued\n after application of mind.\niv. Legal and factual mala fides has a very high threshold –\n one that cannot be met with a surface level contention of\n speed of processing.\nv. The scope of intervention before a Hon’ble Court with\n Writ Jurisdiction would be to determine if there was\n sufficiency of material before the authority granting the\n direction. In the present case, the SFIO IFIN Report was\n before the authority granting the direction to prosecute –\n this fact is not disputed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 39
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C40",
+      "text": "Therefore, it cannot be said that\n the relevant materials were not present before the relevant\n authority.\n3.25 Now so far as the submission on behalf of the\nrespondents that before the NCLT the SFIO IFIN\nReport was referred to as second interim report\nand therefore the SFIO IFIN Report being an\ninterim report, 212(14) direction could not have\nbeen issued as the Act does not contemplate\nissuance of a direction under\nSection 212(14)\nthe Act on the basis of an interim report, it is\nsubmitted by Shri Balbir Singh, learned ASG that\nas per\nsection 212(11)\nof the Act, 2013, during the\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\ncourse of investigation, the Central Government\nhas been empowered to call for an interim report. It is submitted that the SFIO has not been\nempowered to submit an interim report without a\nrequest for an interim report from the Central\nGovernment. It is submitted that the Central\nGovernment vide letter dated 03.11.2018\nspecifically directed the SFIO to submit an interim\nreport. Pursuant to this, the SFIO submitted an\ninterim report dated 30.11.2018.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 40
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C41",
+      "text": "The Interim\nReport, on a bare perusal, records that it is an interim\nreport, records the Central Government’s request for an\ninterim report and classifies its findings as interim findings. It is submitted that this is completely different from the\nSFIO IFIN Report which classifies itself as an\nInvestigation Report under\nSection 212(12)\nof the Act,\nsets out the detailed and extensive investigation\nconducted and records conclusive findings against each\nof the Respondents in the present case. It is submitted\nthat therefore, the stray references to the SFIO IFIN\nReport as an interim report cannot be accepted to classify\nthe report as an Interim Report. It is submitted that in fact,\nthe only reason for such reference was since the\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\ninvestigation into the affairs of other subsidiaries in the\nIL&FS Group (apart from IFIN) is on-going. It is submitted\nthat in fact the said position has been appreciated by the\nBombay High Court in the impugned order in paragraph\nnumbers 202(VIII) and 202(XII).\n3.26 Thereafter, Shri Balbir Singh, learned ASG has\ntaken us to the findings recorded in the SFIO IFIN Report.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 41
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C42",
+      "text": "It is submitted that based on the findings in the\nInvestigation Report, auditors have been charged with:\na. fraud under\nSection 447\nof the Act for colluding\n with the management of IFIN and falsifying the books of\n accounts;\nb. failure in discharging duties under\nsection 143\n&\n\nof the Act ; and\n c. suppression of information/ facts to hide the\n true and fair account of the financial statements and\n present a rosy picture under\nsection 211\nread with\n section 628 &\nSection 129\nread with\nsection 448\nof the\n Act. It is submitted that the Investigation Report broadly\nrecords that the auditors despite knowledge did not point\nout any financial abnormality in the operation of IFIN and\ngave an unmodified opinion stating that the financial\nstatements give a true and fair view in conformity with the\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\naccounting standards and other accounting principles\naccepted in India.\n3.27 It is submitted that in the Investigation Report, there\nare specific findings with respect to auditing of borrowings\nand utilisation; audit of non-convertible debentures; audit\nof lendings.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 42
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C43",
+      "text": "It is submitted that on the basis of the\nfindings recorded in the Investigation Report, the auditors\nhave been charged under\nSection 447\nof the Companies\nAct, 2013 and\nSections 417\n,\n\nr/w 120B of the\nIPC\n. It is\nsubmitted that therefore the High Court has materially\nerred in quashing and setting aside the direction issued\nunder\nSection 212(14)\nof the Act and the\ncomplaint/prosecution launched against the auditors.\n3.28 Making above submissions, it is prayed to set aside\nthe judgment and order passed by the High Court by\nwhich the High Court has quashed\nSection 212(14)\ndirection and the complaint filed by the SFIO and permit\nthe trial to continue against the accused arrayed in the\ncomplaint. It is also prayed to set aside the impugned\njudgment and order passed by the High Court quashing\nand setting aside the order passed by the NCLT/NCLAT\nupholding the proceedings under\nSection 140(5)\nof the\nAct, 2013 and permit/allow the said proceedings to be\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nproceeded further, so as to allow the NCLT to reach to the\nfinal conclusion so that even further steps can be taken as\nper second proviso to\nSection 140(5)\nof the Act, 2013.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 43
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P005_C44",
+      "text": "Submissions on behalf of the opposite parties:",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 44
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C01",
+      "text": "4. While opposing the present appeals, learned senior\ncounsel appearing on behalf of the BSR has made the\nfollowing submissions:\ni) It is submitted that in fact the BSR had challenged\n the vires of\nSection 140(5)\nof the Act, 2013 before the\n High Court being violative of\nArticles 14\n, 19(1)(g)\n, 20\nand\n\nof the Constitution of India as well as being\n unconstitutional and void. It is submitted that however\n the High Court by the impugned judgment and order\n while upholding the constitutionality of\nSection 140(5)\nhas read down\nSection 140(5)\nof the Act, 2013.\nii) It is submitted that by the impugned judgment and\n order, the High Court has held that the object of\nSection\n 140(5)\nis to remove an auditor who has neither been\n removed by the company, nor resigned. It is further\n observed that the role of the NCLT under\nSection\n 140(5)\nis only to examine the need to change a\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\ncompany’s auditor and not to punish or debar the\n auditor.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C02",
+      "text": "It is submitted that rejecting the Ministry’s\n submission that the NCLT can pass an order to debar\n an auditor for 5 years under\nsection 140(5)\nof the Act,\n the High Court has held that the NCLT’s order under\nsection 140(5)\ncan only be for change of auditor of the\n company. It is further observed and held that the\n consequences of debarment in the second proviso\n automatically follow upon such change and NCLT does\n not have any discretion in it.\niii) It is submitted that before the High Court, the BSR\n also challenged two orders of the NCLT, namely, order\n dated 09.08.2019 and order dated 18.10.2019. Both\n these orders were passed by the NCLT purportedly\n under\nsection 140(5)\nof the Act in proceedings\n commenced pursuant to the Ministry’s sanction and\n directions dated 29.05.2019 under\nsection 212\nof the\n Act. It is submitted that BSR had also challenged the\n jurisdiction of NCLT to pass orders under\nsection\n 140(5)\nof the Act, 2013. It is submitted that the NCLT\n has not determined the merits of a\nsection 140(5)\norder\n and the NCLT in its first order has only upheld the\n maintainability of\nsection 140(5)\nproceedings.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C03",
+      "text": "It is\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nsubmitted that therefore the submissions on behalf of\n the respondents do not go into the merits at all.\niv) Now so far as on interpretation and applicability of\nsection 140(5)\nof the Act, 2013, learned counsel\n appearing on behalf of the respective respondents –\n original writ petitioners has taken us to the scheme of\n regulation of Auditors under the\nCompanies Act\nand\n has taken us to the various provisions relating to the\n regulation of Auditors under the\nCompanies Act\n, more\n particularly\nSections 132\n,\n\n,\n\n,\n\n,\n\nand\nSections 435\n\nof the Companies Act. It is\n submitted that the Act provides a holistic scheme for\n regulation and punishment of Auditors, all of which\n have been different functions and purpose and with\n such matrix of sections, no auditor can get away with\n fraud, abetment of fraud, professional misconduct etc. It is submitted that therefore no auditor can escape by\n way of resignation or termination of tenure due to efflux\n of time.\nv) It is submitted that a plain reading of\nSection 140\n a whole shows:\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\ni.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C04",
+      "text": "Section 140(1)\nof the Act deals with the\n procedure for voluntary auditor by a\n company.\nii. 140(2) and (3) deal with the procedure for\n resignation of an auditor.\niii. Section 140(4)\ndeals with special notice. Section 140(5)\ndeals with involuntary\n removal by order of NCLT.\niv. The heading of\nSection 140\nof the Act (i.e.,\n \"Removal, resignation of auditor and giving\n of special notice\") makes it clear that\nSection 140(5)\nonly serves the purpose of\n removal of an auditor and is not a\n standalone substantive provision to\n disqualify auditors. It is well settled that a\n heading is a condensed name to collectively\n indicate the characteristics of the subject\n matter covered by a Section. Reliance is\n placed on the decision of this Court in the\n case of Raichurmatham Prabhakar v. Rawatmal Dugar, (2004) 4 SCC 766\n (Para14).\nvi) It is submitted that\nSections 132\n,\n\n,\n\n,\n\n, and\n\nof the Act deal with liability of an auditor in\n cases of fraud:\ni. Section 132\nprovides for the constitution of\n the National Financial Reporting Authority\nCriminal Appeal Nos.2305-2307/2022 Etc. (\"NFRA\").",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C05",
+      "text": "NFRA has been given ample\n power (including the powers of civil court)\n under\nSection 132\nto impose penalty or\n punishment on an auditor (including\n debarring the auditor) to the auditors\n professional or other misconduct. The\n explanation under\nSection 132\nprovides for\n the terms \"professional or other misconduct\"\nto have the same meaning as prescribed\n under the\nChartered Accountants Act, 1949\n(\"\nCA Act\n\"). The meaning of \"professional or\n other misconduct\" entails a very wide scope\n as evinced from\nSchedule I and II of the CA\n Act\n. Therefore, if auditors are guilty of fraud\n or abetting in fraud, they are certainly guilty\n of professional misconduct, for which\n powers are vested with the NFRA to\n disqualify, suspend etc.\n ii. Section 141(3)(h)\n, which specifically deals\n with eligibility of auditors, provides for the\n ineligibility for appointment of an auditor in\n case such person is convicted of an offence\n involving fraud. Section 141(3)(h)\ndisqualifies the auditor for 10 years from the\n date of conviction for an offence involving\n fraud.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C06",
+      "text": "Pertinently, while the underlying\n offence is the same, i.e., an act involving\n the same fraud, the penalty under\nSections\n 140(5)\nand\n141(3)(h)\nare triggered at\n different times. A situation could arise where\n a person deemed ineligible under\nSection\n 140(5)\nby way of the NCLT's final order is\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nsubsequently acquitted of the charge of\n fraud on the same set of facts under\nSection\n\nof the Act by the criminal court. Further\n even where a person is convicted under\nSection 447\n, if he has already suffered the\n disqualification under\nSection 140(5)\nfor 5\n years he could face a further ineligibility to\n be appointed as an auditor for 10 years. The total period hence could extend to 15\n years.\niii. Section 147(3)\nimposes financial liability on\n auditors by way of refund of remuneration or\n even damages where the auditor is\n convicted under\nSection 147(2)\nof the Act. Section 147(5)\nfurther imposes joint and\n several liability on audit firms and partners\n in case of criminal liability.\niv. Section 241(3)(a)\npertains to the civil\n consequence of fraud and concern \"any\n person concerned in the conduct and\n management of the affairs of a company\".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C07",
+      "text": "This would certainly include auditors who\n can be said to be concerned in the conduct\n and management of a company's affairs. In\n a proceeding under\nSection 241\n, the NCLT\n will determine: (i) whether there has been\n fraud; (ii) who the fraudsters are; (iii) who\n connived in or abetted the fraud; and (iv)\n whether the parties are fit and proper\n persons. The NCLT can decide that an\n auditor has connived in fraud and is not a fit\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nand proper person under\nSection 242 (4A)\nwhich provides as follows:\n\"242. Powers of Tribunal. - (1) If, on any\n application made under\nsection 241\n, the\n Tribunal is of the opinion-... (44) At the conclusion of the hearing of the\n case in respect of sub-section (3) of\nsection\n\n, the Tribunal shall record its decision\n stating therein specifically as to whether or\n not the respondent is a fit and proper person\n to hold the office of director or any other\n office connected with the conduct and\n management of any company.\"\nv. The consequence of holding that a person\n is not fit and proper is provided in\nSection\n 243 (1A)\nviz.:\n\"243.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C08",
+      "text": "Consequences of termination or\n modification of certain agreements – (1A)\n The person who is not a fit and proper\n person pursuant to sub-section (4A) of\nsection 242\nshall not hold the office of a\n director or any other office connected with\n the conduct and management of the affairs\n of any company for a period of five years\n from the date of\nthe said decision\n: Provided\n that the Central Government may, with the\n leave of the Tribunal, permit such person to\n hold any such office before the expiry of the\n said period of five years....\"\nCriminal Appeal Nos.2305-2307/2022 Etc. If a person is found not to be a fit and\n proper person, under\nSection 243 (1A)\n, the\n NCLT can order that such person \"shall not\n hold any office connected with the conduct\n or management of any company for 5 years.\nvi. Section 245(1)(g)(ii)\nalso provides for\n damages or compensation to be ordered\n against auditors, including an audit firm, by\n way of a class action suit for \"Improper or\n misleading statement of particulars made in\n his audit report or for any fraudulent,\n unlawful or wrongful act or conduct. Section\n 245(2)\npermits the NCLT to impose \"any\n suitable action\"\nvii.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C09",
+      "text": "Section 447\npertains to the criminal\n consequences of fraud. Section 447\nprescribes a punishment for the offence of\n 'fraud, the offence itself is created by way of\n an explanation appended to the said\n section. Section 447\nof the Act provides:\n\"447, Without prejudice to any liability\n including repayment of any debt under this\n Act or any other law for the time being in\n force, any person who is found to be guilty\n of fraud, shall be punishable with\n imprisonment for a term which shall not be\n less than six months but which may extend\n to ten years and shall also be liable to fine\n which shall not be less than the amount\n involved in the fraud, but which may extend\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nto three times the amount involved in the\n fraud:\nProvided that where the fraud in question\n involves public interest, the term of\n imprisonment shall not be less than three\n years. Explanation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C10",
+      "text": "For the purposes of this section-\n(i) \"fraud\" in relation to affairs of a company\n or any body corporate, includes any act,\n omission, concealment of any fact or abuse\n of position committed by any person or any\n other person with the connivance in any\n manner, with intent to deceive, to gain\n undue advantage from, or to injure the\n interest of the company or its shareholders\n or its creditors or any other person, whether\n or not there is any wrongful gain or wrongful\n loss:\n(ii) \"wrongful gain\" means the gain by\n unlawful means of property to which the\n person gaining is not legally entitled,\n(iii) \"wrongful loss\" means the loss by\n unlawful means of property to which the\n person losing is legally entitled\"\nvii) It is submitted that\nSections 435\n\nof the\n Companies Act provide a procedure in trial by a Special\n Court incorporating safeguards of the\nCrPC\n.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C11",
+      "text": "A chart\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nreflecting the comparative scheme of protections\n afforded to parties before the NCLT as opposed to a\n prosecution before the Special Court established under\n the Act\nviii) It is submitted that even if\nSection 140(5)\nis not\n applicable in a given case due to the retirement or\n resignation of an auditor prior to an order being passed,\n that will not enable such an auditor to escape the vigour\n of law under the\nCompanies Act, 2013\n, Even if an\n auditor resigns, he will nevertheless have to face (a)\n prosecution for fraud under\nSection 447\nof the Act; (b)\n action before the National Financial Regulatory\n Authority; (c) order by the NCLT debarring auditors from\n acting as such in respect of any company as well can\n be passed under\nSection 243 (1A)\nread with\nSection\n\nand\n242(4A)\n; and (d) disqualification under\nSection\n 141(3)(h)\nif the auditor is found guilty of fraud. The\n consequence of each of these proceedings is grave for\n the auditor, including debarment, and the auditor does\n not escape punishment.\nix) It is submitted that the operative part of\nSection\n 140(5)\nempowers NCLT to direct a company to\n “change” its auditor.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C12",
+      "text": "NCLT can exercise this power if it\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nis satisfied that ah auditor is guilty of acting in a\n fraudulent manner or in abetting or colluding in a fraud\n and has neither resigned nor been removed by the\n company. It is submitted that therefore the order that\n NCLT can pass under the operative part of\nSection\n 140(5)\nis against the company and not the auditor. It is\n an order to the company to change its auditor and no\n other order. It is submitted that the word “change” has\n been held to mean “replace with or exchange for\n another” and “the substitution of one thing for another”.\nx) It is submitted that as per the non-obstante clause\n provided in\nSection 140(5)\n, it is clear that the NCLT can\n direct the company and no one else to remove the\n auditor. The non-obstante clause needs to be read with\n the term “change” as provided therein. It is submitted\n that\nSection 140(5)\nof the Act cannot apply in\n circumstances where the auditor sought to be removed\n has ceased to hold that position as no order of change\n can be passed once the auditor has resigned.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C13",
+      "text": "It is\n submitted that this is clear from the plain language of\n the provision itself.\nxi) It is next submitted that under the first proviso to\nSection 140(5)\n, when an application under Section\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\n140(5) is filed by the Central Government and if NCLT\n is satisfied that a change in auditor is required, then\n within 15 days from the date of filing the said\n application, NCLT can pass an urgent order that the\n auditor will not “function” as an auditor and that the\n Central Government may appoint a new auditor to\n replace the current auditor. It is submitted that this is in\n the nature of a pro tem order pending final order by\n NCLT under the operative part of\nSection 140(5)\nand to\n facilitate the Central Government in appointing an\n auditor whilst the existing auditor functioning is\n restrained.\nxii) It is next submitted that the second proviso to sub-\nsection 5\nSection 140\ncontemplates that if a final\n order is passed against the auditor, then the auditor will\n not be eligible to be appointed as an auditor of any\n company for a period of five years from the date of\n passing of the order.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C14",
+      "text": "Additionally, the auditor shall also\n be liable for action under\nSection 447\nof the Companies\n Act. It is submitted that the second proviso does not\n contemplate any separate order by NCLT. Instead, it\n only provides for an automatic consequence, i.e., five\n years ineligibility qua an auditor whether individual or\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nfirm against whom a final order has been passed by the\n NCLT. It is submitted that moreover, the entire firm\n gets automatically disqualified for the actions of even\n one of its partners. There is no discretion provided to\n NCLT to alter the period of ineligibility. It is submitted\n that the debarment prescribed under the second\n proviso is an in terrorem provision imposed by\n operation of law, in the event an auditor chooses not to\n resign and forces upon himself a final order under the\n provision. It is submitted that the plain language of\n second proviso is anchored squarely on a final order\n being passed under the operative part of\nSection\n 140(5)\n.\nxiii)It is submitted that it is settled law that proceedings\n which may result in disqualification would be of a quasi-\n criminal nature and have to be strictly construed.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C15",
+      "text": "Since\nSection 140(5)\nresults in a disqualification of an auditor,\n proceedings thereunder would be quasi-criminal in\n nature. Disqualification of a professional is akin to a\n death penalty. The standard of proof is therefore\n satisfaction beyond reasonable doubt. Reliance is\n placed upon the decision of this Court in the case of\n Advocate v. Bar Council of India\n(1989) Supp 2 SCC\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\n25 (Para 4(1) & (11) and ICAI v. LK Ratna & Ors. (1986) 4 SCC 537 (para 18).\nxiv)It is submitted that the Act needs to be read and\n interpreted in a holistic manner. Under the scheme of\n the Act, it is\nSection 447\nwhich specifically provides for\n punishment for fraud. Section 140(5)\nis not a provision\n to punish or penalize an auditor. By treating\nSection\n 140(5)\ninstead of\nSection 447\nas a provision to punish\n for fraud, Ministry and NCLT failed to follow the well\n settled rule of interpretation that something may be\n done only in the manner prescribed by the law and in\n no other manner. Reliance is placed upon the decision\n of this Court in the case of\nDharani Sugars and\n Chemicals Ltd. v.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C16",
+      "text": "Union of India\n, (2019) 5 SCC 480\n (para 55).\nxv) It is further submitted that expanding the scope and\n purpose of\nSection 140(5)\nto include punishment for\n fraud, would tantamount to prejudicing the defence that\n an auditor, in a given case, could take in any other\n proceedings. The summary nature in which\nSection\n 140(5)\naims to determine fraud may lead to a complete\n redundancy of all other processes and procedures\n provided for under the\nCompanies Act\nand materially\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nimpact an auditor's right to fair trial. As an example, the\n determination of guilt under\nSection 140(5)\nby way of a\n summary procedure could render the process of\n defences and appeals provided as a part of the NFRA\n process nugatory and a mere formality qua the\n auditors.\nxvi)It is submitted that It is only when the language of\n provisions in a statute are not clear and categorical, the\n purpose of the same can be examined by a court to\n interpret the provision. It is submitted that the following\n principles of law are well settled with regard to the\n primacy of plain language interpretation over purposive\n interpretation:\ni.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C17",
+      "text": "The courts should now be very reluctant to\n hold that Parliament has achieved nothing by\n the language it used, when it is tolerably plain\n what Parliament wished to achieve. [See\nDr. Jaishri Laxmanrao Patil v. Chief Minister\n and Others\n, (2021) 8 SCC 1 (para 150).\nii. The courts will therefore reject that\n construction which will defeat the plain\n intention of the legislature even though there\n may be some in exactitude in the language\n used. [See\nJaishri Laxmanrao Patil\n(supra)\n (para 151). Criminal Appeal Nos.2305-2307/2022 Etc.\n\niii. Purposive interpretation can be given only\n when there is some ambiguity in the language\n of the statutory provisions or it leads to absurd\n results. [See\nState of Maharashtra v. Shri\n Vile Parle Kelvani Mandal & Ors. (2022) 2\n SCC 725 (para 16).\nxvii) It is submitted that in addition, this Court has\n time and again upheld the principle of doubtful\n penalisation which requires that \"if two views and\n reasonable constructions can be put on a provision, the\n court must lean in favour of construction which exempts\n the subject from penalty rather than one which imposes\n penalty\".",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C18",
+      "text": "Reliance is placed on the decision of this\n Court in the cases of SEBI v. Sunil Krishna Khaitan,\n (2023) 2 SCC 643 (Para 55) and Tolaram Relumal v. State of Bombay. (1955) 1 SCR 158 (Para 8).\nxviii) It is submitted that NCLT’s jurisdiction under\nSection 140(5)\nof the Act is to direct the removal of a\n company’s existing auditor and to allow his substitution\n by the Central Government. It is submitted that it is not\n possible to remove any person/firm from a position\n which whey are not holding. Accordingly, an order\n directing removal of BSR who had already resigned as\n auditor of IFIN would only be possible by way of a legal\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nfiction of treating BSR as continuing to remain IFIN’s\n auditor.\nxix)It is next submitted that\nSection 140(5)\nof the Act\n does not create any legal fiction by which an auditor\n who has resigned would continue to be treated as an\n auditor. A deeming fiction can only be created by the\n legislature. In fact, courts and tribunals do not have the\n power to create a deeming fiction by judicial\n interpretation when the statute does not provide for it.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 18
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C19",
+      "text": "Reliance is placed upon the decisions of this Court in\n the cases of\nBhuwalka Steel Industries Ltd & Anr v. UOI\n, (2017) 5 SCC 598 (Para 38) and Sant Lal Gupta\n v. Modern Cooperative Housing Society Ltd., (2010)\n 13 SCC 336 (Para 14).\nxx) It is submitted that the need for a deemed removal\n of a past auditor does not arise, since the very purpose\n and object of\nSection 140\n, i.e., removal and change of\n auditors, has been satisfied by the auditor's resignation. Such a past auditor can, despite his resignation, be\n prosecuted for fraud under\nSection 447\nof the Act. Therefore, the question of removing the auditor under\nSection 140(5)\ncannot and does not arise. Criminal Appeal Nos.2305-2307/2022 Etc.\n\nxxi)It is submitted that the Ministry was aware that an\n order under\nSection 140(5)\ncannot be passed against a\n past auditor except through the device of a deeming\n fiction. This is evident from prayers (a), (b) and (c) of\n the 140(5) Company Petition sought qua Deloitte in\n which Ministry sought a \"deemed removal\" of Deloitte\n even though it had already rotated out as auditor.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 19
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C20",
+      "text": "Consequently, NCLT could not have gone into the\n merits of the 140(5) Company Petition itself as the relief\n sought for was beyond NCLT's powers.\nxxii) It is submitted that further, the prayers in the\n Company Petition sought against BSR became\n infructuous with its resignation on 19 June 2019. Pertinently, no \"deemed removal\" prayer was sought\n against BSR after its resignation. Despite this, NCLT\n proceeded to create a deeming fiction so as to clutch at\n its jurisdiction to pass an order under\nSection 140(5)\nagainst BSR.\nxxiii) It is then submitted that NCLT, exercising\n powers under\nSection 140(5)\n, cannot direct removal of\n past auditors or deem such auditors to have been\n removed at a previous date. NCLT, being a creature of\n a statute, has to act within the domain prescribed by the\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nlaw/statutory provision. Thus, NCLT cannot exercise\n power which has not been expressly vested in it, by\n directing a \"deemed change in auditors. Reliance is\n placed upon the decisions of this Court in the cases of\nB. Himmatlal Agrawal v Competition Commission of\n India\n, AIR 2018 SC 2804 (para 8) and Cellular\n Operators Association of India v.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 20
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C21",
+      "text": "Union of India,\n (2003) 3 SCC 186 (para 20-21).\nxxiv) It is submitted that in\nPasupuleti\n Venkateswarlu v. Motor & General Traders\n, (1975) 1\n SCC 770, this Court held that a proceeding may not be\n maintainable by reasons of a post filing event. This\n Court observed \"If a fact, arising after the lis has come\n to court and has a fundamental impact on the right to\n relief for the manner of moulding it, is brought diligently\n to the notice of the tribunal, it cannot blink at it or be\n blind to events which stultify or render inept the decrotal\n remedy.\"\nxxv) It is submitted that in the present case\n although BSR resigned after the filing of the 140(5)\n petition, the resignation rendered the petition\n infructuous since the reliefs sought for could no longer\n be granted under\nSection 140(5)\nand indeed the\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\npurpose underlying\nSection 140(5)\nstood accomplished\n by such resignation.\nxxvi) It is submitted that reading in an implied\n prohibition against an auditor from resigning after the\n commencement of proceedings under\nSection 140(5)\nwould be contrary to the plain language of the section\n and would require it to be re-written.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 21
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C22",
+      "text": "Such an implied\n provision would also be contrary to the object of\nSection\n 140(5)\nas it would mean that the provision ensures that\n an auditor against whom allegations of fraud have:\nbeen made continues as auditor and is not permitted to\n resign. This would lead to an anomalous situation of\n compelling the continuance of an auditor, despite him\n having committed a fraud until the NCLT passes a final\n order or an interim order under the first proviso to\nSection 140(5)\n.\nxxvii) It is further submitted by the learned counsel\n appearing on behalf of the original writ petitioners that\nSection 140(5)\nis excessive and manifestly arbitrary as\n it provides unguided and untrammelled powers to NCLT\n and that too in a summary proceeding, for\n determination of a serious offence of fraud and\n consequence of mandatory disqualification with grave\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nconsequences akin to civil death.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 22
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C23",
+      "text": "It is submitted that\n the penalty in the form of automatic disqualification of\n auditors and of the entire firm including partners who\n may be entirely unconnected and innocent for a pre-\ndetermined period envisaged under\nSection 140(5)\n highly disproportionate and not the least invasive\n method. It is submitted that\nSection 140(5)\ncreates an\n automatic penalty of disqualification, upon summary\n adjudication, when such a penalty has already been\n provided for under\nsection 141(3)(h)\nof the Act after\n following due process of trial under\nSections 435\n\nof the Act. The same results in contravention of the\n principles of double jeopardy and violation of\nArticle\n 20(2)\nof the Constitution. It is submitted that\n disqualification akin to \"civil death\" under\nSection\n 140(5)\nimpinges upon BSR and its partners'\n fundamental right to carry on its profession, as\n guaranteed under\nArticle 19(1)(g)\nof the Constitution. The same, being unreasonable, does not fall within the\n protection of\nArticle 19(6)\nof the Constitution of India.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 23
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C24",
+      "text": "is submitted that applying\nSection 140(5)\nin its plain\n language i.e., to change of auditors, saves it from the\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nabove serious constitutional infraction without letting\n auditors \"off the hook\" under the\nCompanies Act\n.\nxxviii) It is submitted that the NCLT, vide its first\n Order, erroneously upheld its jurisdiction to maintain the\n 140(5) Company Petition against past auditors of IFIN,\n including BSR, by incorrectly creating a deeming fiction,\n in absence of any legislation to this effect or the\n necessary jurisdiction and power to do so. It is\n submitted that the NCLT wrongly assumed jurisdiction\n by holding that it was empowered to pass directions for\n a deemed change of ex-auditors and therefore the\n NCLT’s first order is contrary to\nSection 140(5)\nas it was\n passed without jurisdiction and based on an incorrect\n assumption that the jurisdictional fact that the existing\n auditors of the company needed to be \"changed\"\n existed.\nxxix) It is submitted that it is trite law that a\n \"jurisdictional fact' is a sine qua non or the condition\n precedent to the assumption of jurisdiction by a court.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 24
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C25",
+      "text": "court cannot erroneously assume jurisdiction either by\n not deciding the jurisdictional fact or by erroneously\n deciding it. Reliance is placed upon the decisions of\n this Court in the cases of Carona Ltd. v. Parvathy\nCriminal Appeal Nos.2305-2307/2022 Etc. Swaminathan & Sons, (2007) 8 SCC 559 (Para 27,\n 28, 36) and Arun Kumar v. Union of India, (2007) 1\n SCC 732 (Para 74-76). It is submitted that this Court\n has clearly laid down that the foundational fact must be\n established before a presumption is made. Reliance is\n placed on the decision of this Court in the case of\n Balram Garg v. SEBI, (2022) 9 SCC 425 (Para 45 and\n51).\nxxx) It is further submitted that even the NCLT’s\n second order on the application filed by the Ministry for\n the appointment of MMC as the statutory auditor of IFIN\n under the first proviso to\nSection 140(5)\nis wholly\n without jurisdiction.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 25
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C26",
+      "text": "It is submitted that once the BSR\n resigned as an auditor, there was no question of\n invoking first proviso to\nsection 140(5)\nof the Act.\nxxxi) It is submitted that statutory auditor\n appointment application was clearly contrary to law,\n without jurisdiction and could not have been under the\n first proviso to\nSection 140(5)\nsince firstly,\nSection\n 140(5)\nitself did not apply to the past auditors, and\n hence no question of invoking the first proviso could\n arise; secondly, the first proviso is only a pro tem\n measure pending a jurisdiction order under Section\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\n140(5); thirdly, the NCLT’s second order is not in the\n nature of a pro tem order; fourthly, once the\n proceedings under\nsection 140(5)\nof the Act are\n initiated, only the Central Government is authorised to\n appoint or change the auditors under the first proviso.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 26
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C27",
+      "text": "Under the first proviso to\nsection 140(5)\n, the power\n given to Central Government to appoint an auditor due\n to urgency, does not take away the power of the\n concerned company to appoint an auditor of its choice;\n fifthly, BSR had admittedly already resigned and\n vacated its office, as accepted by the Ministry in its\n submissions before this Court and this Court noted the\n same in the order dated 26.09.2019.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 27
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C28",
+      "text": "It is submitted\n that moreover, the Ministry withheld various key facts\n from the NCLT at the time of filing.\n4.1 Now so far as the direction issued under\nSection\n212(14)\nand the prosecution under\nSection 212(15)\n, it is\nsubmitted as under:\ni)\nSection 212(1)\nprovides that the Central\n Government may direct the SPIO to investigate into the\n affairs of a company inter alia upon a receipt of the\n report of the Registrar, on intimation of a special\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nresolution passed by a company, in public interest or on\n request from any Department of the Central\n Government or State Government;\nii)\nSection 212(11)\nprovides that SFIO must submit an\n \"interim report\" to the Central Government, if the SFIO\n is directed to do so by the Central Government;\niii)\nSection 212(12)\nrequires SFIO to submit an\n \"investigation report\" to the Central Government only\n upon \"completion of the investigation\".",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 28
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C29",
+      "text": "Therefore, an\n \"investigation report\" cannot be submitted at any time\n prior to the completion of the investigation, whereas an\n \"interim report\" under\nSection 212(11)\ncan be submitted\n at any stage;\niv) Under\nSection 212(14)\n, the Central Government has\n been empowered to direct SPIO to initiate prosecution\n against a company or its officers, if the Central\n Government considers it necessary after examination of\n only the \"investigation report\" issued under\nSection\n 212(12)\n, i.e., after completion of the investigation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 29
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C30",
+      "text": "Reliance is placed on the decision of this Court in the\n case of\nSerious Fraud Investigation Office v Rahul\n Modi\n(2019) 5 SCC 266 (Para 30);\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nv)\nSection 212(14)\npermits the Central Government to\n take legal advice when examining the \"investigation\n report\", which itself gives colour to the word\n \"examination\" and shows that the Central Government\n is to properly apply its mind to the \"investigation report\"\nbefore directing initiation of prosecution, Le, not to do\n so mechanically or for collateral purposes;\nvi)\nSection 212(14A)\nprovides that where the report\n under\nSection 212(11)\nor 212(12) stated that fraud has\n taken place and has been taken advantage of by a\n director, key managerial personnel or other officer, the\n Central Government may file an application before the\n NCLT for appropriate orders for disgorgement of asset\n and for holding such person liable personally;\nvii) Under\nSection 212(15)\n, it is only the \"investigation\n report\" (submitted only upon completion of the\n investigation which is filed with the Special Court is\n deemed to be police officer's report under\nSection 173\nof the Criminal Procedure Code, 1973.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Serious Fraud Investigation Office v Rahul\n Modi"
+      ],
+      "chunk_number": 30
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C31",
+      "text": "(CHPC)\n Significantly,\nSection 212(15)\nis a deeming fiction that is\n limited to only making investigation report under\nSection 212(12)\n, to be the police officer's report under\nSection 173\n, CrPC;\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nviii) It is therefore clear that the legislature has\n envisaged two distinct kinds of reports, with its own\n specific purpose. The first kind of report is under\nSection 212(11)\n. which report is an 'Interim Report' and\n can be issued at any point of time during the course of\n investigation by the SFIO. The 2nd kind of report is an\n 'Investigation Report\" which can be issued only after\n completion of the investigation by the SFIO. Only the\n Investigation Report' can be considered by the Central\n Government under\nSection 212(14)\nfor the purposes of\n commencement of prosecution.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 31
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C32",
+      "text": "On the other hand, an\n action before the NCLT under\nSection 212(14A)\ncan be\n brought on based on either the Investigation Report or\n even the Interim Report;\nix) It is further clear that the Central Government, under\nSection 212(14)\nis required to apply its mind, seek legal\n opinion (if required) and only thereafter decide whether\n or not a sanction order is to be issued, i.e., if in its\n opinion prosecution is to be initiated based on the\n \"Investigation Report'. Further, only such 'Investigation\n Report', which is considered by the Central Government\n for the initiation of prosecution under\nSection 212(14)\n,\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nis to be the police officer's report under\nSection 173\n,\n CrPC;\nx) It is submitted that in the present case, SFIO's 2nd\n Interim Report is an \"Interim report\" and was not issued\n upon \"completion of the investigation\".",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 32
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C33",
+      "text": "As such, the 2\n Interim Report is not an \"investigation report\" under\nSection 212(12)\nof the Act and could not have been\n considered by the Central Government under\nSection\n 212(14)\nfor the purposes of issuing the Sanction Order;\n)\nThe present case\nis not a case of\n invalidity/irregularity of sanction but a case of no\n sanction at all, since the pre-requisite to the sanction,\n i.e., a final investigation report, is absent;\nxii) As is evident from above, where an investigation\n report itself states that the investigation is incomplete or\n that further evidence is yet to be collected, then such an\n investigation report does not meet the obligatory\n requirements of law and cannot be considered a final\n investigation report under\nSection 173(2)\nof the CrPC. Reliance is placed on the following decisions in the\n cases of P.M.C Mercantile Private Ltd. v. The State\n 2014(3) MWN (Cr.) 454 (Para 11 and 19); Pravin\n\nCriminal Appeal Nos.2305-2307/2022 Etc. Chandra Modi v. The State of Andhra Pradesh, Crl\n. App. No. 49, 1964;\nHari Chand & Ram Pal v. State\n Crl\n. Misc. (M) 99 & 111 of 1977 ( Para 14).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 33
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C34",
+      "text": "Accordingly, given the language of paras 1.5 and\n 4.126.1 of the 2nd Interim SFIO Report, that report\n could never be treated as an investigation report under\nSection 212(12)\n;\nxiii) Even while examining the 2nd Interim Report, the\n MCA was of the view that the 2nd Interim Report was\n not a complete investigation report with respect to IFIN. Accordingly, the Ministry had directed the SFIO to carry\n out further investigation on aspects which were already\n covered in the 2nd Interim Report;\nxiv) Further, the Ministry and the SFIO, despite being\n afforded ample opportunity, did not place on record any\n affidavit or argument to explain Para V of the Sanction\n Order or that the investigation was complete and that\n the 2nd Interim Report was not treated by the Ministry\n as an interim report. The SFIO cannot avoid the\n consequences of not having filed an affidavit, stating on\n oath, that the investigation was not complete. This is a\n question of fact;\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nxv)\nSection 212(12)\n, does not permit initiation of\n prosecution based on a report which is issued till such\n time investigation has been completed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 34
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C35",
+      "text": "This is clear\n from a conjoint reading of\nSections 212(12)\n, (14) and\n (15). Further, though\nSection 173(8)\nof the CrPC\n contemplates a further investigation after filing of a\n report under\nSection 173(2)\n, it is trite that\nSection\n 173(8)\ndoes not enable the inspector to submit an\n incomplete or preliminary report and later on submit a\n final report. Reliance is placed on the following\n decisions in the cases of\nKamal Lochan Sen v. State\n of Orissa\n(1982) 54 CLT 509 (Para 5) and AV\n Dharma Reddy v. State of A.P. & Ors., 2011 CriLJ\n 185 (Para 5). Therefore, the stratagem adopted by\n SFIO and the Ministry in proceeding to act based on an\n \"interim report\" and simultaneously carrying on a further\n investigation is illegal;\nxvi) Since the investigation itself was not complete and\n the 2nd Interim SFIO Report is merely an interim report,\n there was no basis for the Ministry to issue a direction\n under\nSection 212(14)\nto initiate prosecution. Accordingly, the Sanction Order is ultra yes.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 35
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C36",
+      "text": "It does not\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nconstitute sanction and the prosecution is void ab initio\n and a nullity;\nxvii) The Sanction Order was passed without\n application of mind to the relevant material and\n evidence;\nxviii)\nSection 212(14)\nrequires an \"examination\" by\n the Central Government and even contemplates \"legal\n advice\" being taken, if required. The Parliament sets\n out a superior degree of care that is required while\n passing an order under\nSection 212(14)\n. Therefore, the\n Central Government's decision must be reasoned and\n must be made with proper application of mind;\nxix) In law, the order of sanction must disclose\n both adequacy of material as well as consideration of\n the relevant facts, material and evidence by the\n sanctioning authority. Reliance is placed on the\n decision of this Court in the case of\nMansukhbhai\n Vithaldas Chauhan v. State of Gujarat\n(1997) 7 SCC\n 622 (Paras 17, 18 and 19);\nxx) SFIO submitted the 2nd Interim SFIO Report on\n 28.05.2019. Admittedly, the report comprised of over\n 32,000 pages, with the body of the report itself forming\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\napproximately 787 pages.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 36
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C37",
+      "text": "The 2 Interim SFIO Report\n was allegedly examined by a Processing Officer (Legal\n Section), Ministry who had prepared a processing note. This processing note was allegedly submitted to the\n 'Senior Officer' on an urgent priority basis. Despite the\n above internal processes, Ministry issued the Sanction\n Order on 29.05.2019 (i.e., within one day). It is pertinent\n to note that a copy of the said processing note was not\n placed before the Bombay High Court or provided to\n BSR despite repeated requests for inspection vide\n emails dated 01.10.2019, 10.10.2019, and 14.10.2019. The Bombay High Court, in these circumstances, was\n correct to draw adverse inference since Ministry and\n SFIO failed to demonstrate due application of mind\n through any document or affidavit;\nxxi)Given the voluminous nature of the 2nd Interim\n SFIO Report and the internal processes in place, it was\n impossible for Ministry to examine and apply its mind to\n the 2nd Interim SFIO Report (as required under\nSection\n 212(14)\nof the Act) within one day before it issued the\n Sanction Order.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 37
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C38",
+      "text": "The events described above clearly\n show that the Sanction Order was granted in haste,\n without application of mind and for extraneous\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nconsideration. As such, the proceedings following such\n Sanction Order also stand vitiated. Reliance is placed\n upon the decisions of this Court in the cases of\nK.K\n Mishra v. State of Madhya Pradesh\n, (2018) 6 SCC\n 676 (Para 18) and Anirudhsinhji Karansinhji Jadeja\n v. State of Gujarat (1995) 5 SCC 302 (Para 15);\nxxii) Further, Ministry’s failure to produce any\n evidence to demonstrate that its officers independently\n applied their minds to the 2nd Interim SFIO Report is\n also contrary to the principles relating to duty of\n disclosure since disclosure would protect the fairness of\n the proceedings and also enhance the transparency of\n the process. Reliance is placed upon the decision of\n this Court in the case of\nT.Takano v. SEBI\n, (2022) 8\n SCC 162 (Para 62.3);\nxxiii) It is therefore submitted that the Sanction\n Order is bad in law and the Bombay High Court rightly\n quashed the same;\nxxiv) A mandatory prerequisite to jurisdiction is the\n existence of a valid sanction.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 38
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C39",
+      "text": "Therefore, the\n prosecution becomes incompetent and consequently\n the proceedings are vitiated and without jurisdiction\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nwhere no valid sanction is granted. Reliance is placed\n on the decisions in the cases of\nGokulchand\n Dwarkadas Morarka v. The King\n, (1947-48) 75 IA 30;\nYusofalli Mulla Noobbhoy v. The King\n, 1949 Cri LJ\n 889 ( Para 15);\nMohd. Iqbal Ahmed v. State of\n Andhra Pradesh\n(1979) 4 SCC 172 (Para 3);\nxxv) The Sanction Order issued by MCA under\nSection 212(14)\nis invalid and non-est. In such\n circumstances, it is submitted that the prosecution\n initiated by SFIO is absent any sanction and hence a\n nullity and without any jurisdiction.\n4.2 Learned counsel appearing on behalf of respondent\nNo.1 in Criminal Appeal No. 2300/2011 – Hari Sankaran,\nin addition, has further submitted that in the present\nmatter no final investigation report has been filed by the\nSFIO qua Hari Sankaran. It is submitted that the second\nreport is not in the nature of final investigation report qua\nHari Sankaran.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 39
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P006_C40",
+      "text": "It is submitted that since the second\nreport was not a final investigation report qua Hari\nSankaran, direction for prosecution in question could not\nhave been issued and therefore consequently the\ncomplaint could not have been filed qua Hari Sankaran. Criminal Appeal Nos.2305-2307/2022 Etc.\n\n4.3 Making above submissions and relying upon the\naforesaid decisions, it is prayed by the learned counsel\nappearing on behalf of the original writ petitioners to\ndismiss the present appeals and uphold the impugned\njudgment and order passed by the High Court. Analysis and Interpretation of\nSection 140(5)\nof the\nCompanies Act, 2013:",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 40
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P007_C01",
+      "text": "5. Section 140(5)\nof the Act, 2013 titled as “Removal,\nResignation of Auditor and Giving of Special Notice”\nappears in\nChapter X of the Act\nwhich is titled as “Audit\nand Auditors”. Therefore, Chapter X is a special provision\nunder the new Act with respect of “Audit and Auditors”. It\ncannot be disputed that the auditor plays a very important\nrole so far as the affairs of any company are concerned\nand therefore he should be independent and above board.\nCompanies Act, 2013\nis the result of the culmination of\ndetailed study after taking into consideration the\nParliamentary Standing Committee on Finance Report as\nwell as the recommendations of the Standing Committee\nby introducing Companies Bill, 2009 and Companies Bill,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P008_C01",
+      "text": "2011. When the earlier Companies Bill, 2009 was\nintroduced, it was a culmination of the growing corporate\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\neconomy and past experiences of corporate fiascos too\nand one of the suggestions were to provide for stricter\naccountability for auditors. There was a long discussion\non the role, responsibility, duties and regulation of\nauditors and the regulatory and enforcement provisions. Various suggestions were received to make the provisions\npertaining to Audit and Auditors more stringent. It was\nsuggested on Clause 123(10) of the 2009 Bill which\nprovides for removal of an auditor by the NCLT on finding\nthat there is a fraud and corresponds to\nSection 140(5)\nthe Act should be made more stringent and should\ncontemplate that an auditor removed by the Tribunal\nshould not be eligible to be appointed as an auditor of any\ncompany for a period of five years.\n5.1 At this stage, it is required to be noted that\nSection\n\nof the Act deals with the powers and duties of the\nauditors.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P008_C02",
+      "text": "Sub-section (12) of\nSection 143\nspecifically\nprovides that in the event that the auditor has reason to\nbelieve that an offence of fraud is being or has been\ncommitted in the company, the auditor shall report the\nmatter to the Central Government. The detailed\nprocedure is provided under the Rules issued in this\nregard. Therefore, a statutory duty is cast upon the\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nauditor to report the matter to the Central Government\nabout the offence of fraud being committed in a company. To see that the auditor is not holding any post in the\ncompany and he acts independently,\nSection 144\nof the\nAct provides that the auditor cannot provide certain\nservices including the management services. The\nobjective seems to be that the auditor should function as\nan independent person uninfluenced by any of its\nactivities outside the scope of audit services. The auditor\nis prohibited from providing any management service to\nthe company. Thus, the prohibition and restriction created\nunder\nSection 144\nof the Act is primarily to protect the\ninterest of the company in question and other\nstakeholders such as lenders and investors and the public\nat large.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P008_C03",
+      "text": "Keeping inb mind the aforesaid provisions and\nthe underlying public policy in the backdrop,\nSection\n140(5)\nof the Act, 2013 is required to be interpreted and/or\nconsidered.\n5.2\nSection 140(1)\nof the Act provides for the procedure\nto remove an auditor by the company before the expiry of\nhis term;\nsection 140(2)\nand (3) of the Act deal with\nresignation of auditors and\nSection 140(4)\nof the Act deals\nwith giving of special notice at an AGM for appointment of\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nan auditor other than the retiring auditor and the process\nin that regard. However,\nSection 140(5)\nof the Act\nempowers the Tribunal (NCLT), either suo motu or on an\napplication made to it by the Central Government or by\nany person concerned, to take action against the auditor\nwho has acted in a fraudulent manner or is abetting or\ncolluding in fraud with the management of a company. If\non completion of an enquiry it is found by the Tribunal that\nan auditor of a company has, whether directly or\nindirectly, acted in a fraudulent manner or abetted or\ncolluded in any fraud by, or in relation to, the company or\nits directors or officers, it may by order direct the company\nto change its auditors.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P008_C04",
+      "text": "Therefore, powers of the NCLT in\nfirst part of\nSection 140(5)\nis quasi-judicial in nature and\nthe Tribunal would have the powers of a civil court to\nexamine the role of auditors and adjudicate on their\nfraudulent conduct and abdication of their function. The\nfirst proviso to\nSection 140(5)\nconfers power upon the\nTribunal on the application made by the Central\nGovernment and if the Tribunal is satisfied that any\nchange of the auditor is required, to remove such auditor\nand/or pass an order that such an auditor shall not\nfunction as an auditor (within 15 days of receipt of such\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\napplication) and the Central Government may appoint\nanother auditor in his place. Thus, the powers under the\nfirst proviso to\nSection 140(5)\ncan be said to be interim or\npro tem measure to prevent an existing auditor from\ncontinuing and substitute him with an auditor based on a\nprima facie satisfaction that a fraud has been perpetrated\nand when circumstances warrant the substitution.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P008_C05",
+      "text": "Such\nan order can be said to be an interim order akin to a\ntemporary suspension during the pendency of the detailed\nenquiry as provided in\nSection 140(5)\nof the Act and\nbefore any final order is passed by the Tribunal.\n5.3 Second proviso to\nsection 140(5)\nof the Act further\nprovides that an auditor, whether individual or firm,\nagainst whom final order has been passed by the Tribunal\nunder\nsection 140(5)\nshall not be eligible to be appointed\nas an auditor of any company for a period of five years\nfrom the date of passing of the order and the auditor shall\nalso be liable of such action under\nsection 447\nof the\nCompanies Act. Therefore, as such, second proviso to\nSection 140(5)\ncan be said to be a substantive provision\nand it operates on the final order passed by the Tribunal\nunder\nSection 140(5)\n(first part). At this stage, it is\nrequired to be noted that after taking into consideration\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nthe recommendations made by the previous Standing\nCommittee in respect of Companies Bill, 2009 and the\nrecommendations from various stakeholders, the\nCompanies Bill, 2011 came to be introduced.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P008_C06",
+      "text": "The\nsuggestion of the Standing Committee to clause 123(1) of\nthe 2009 Bill (which provided for removal of an auditor by\nthe NCLT on finding that there is a fraud) was to make the\nprovision more stringent; and to provide for consequences\nfor an auditor when such auditor is found to have been\nperpetrating a fraud and is removed by the NCLT for\nsuch fraud. The same has been done by way of second\nproviso to\nSection 140(5)\nof the Act, 2013. Therefore, the\nsecond proviso to\nSection 140(5)\nwhich, as observed\nhereinabove, is a substantive provision, is introduced after\na detailed analysis and after taking into consideration the\nrecommendations of the Standing Committee and with a\nview to make the provision more stringent and to provide\nfor consequences for an auditor when such auditor is\nfound to have been perpetrating a fraud and is removed\nby the NCLT for such fraud.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P008_C07",
+      "text": "It is required to be noted that\non passing of the final order by the NCLT under first part\nsection 140(5)\nand if an auditor is found to have been\nindulged into fraudulent activities or abetting or colluding\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nin a fraud with the management of the company,\nconsequences provided under the second proviso to\nsection 140(5)\nshall follow. Therefore, before second\nproviso of\nsection 140(5)\nis attracted, there must be a\ndetailed enquiry against an auditor of a company as per\nfirst part of\nsection 140(5)\nand there must be a finding\narrived at by the NCLT that the auditor of a company has,\ndirectly or indirectly, acted in a fraudulent manner or\nabetted or colluded in any fraud by, or in relation to, the\ncompany or its directors or officers.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P009_C01",
+      "text": "6. By the impugned judgment and order, though the\nHigh Court has upheld the vires of\nSection 140(5)\nof the\nAct, 2013, however, the High Court has held that once the\nauditor resigns as an auditor or is no more an auditor on\nhis resignation, thereafter\nSection 140(5)\nproceedings are\nno longer maintainable as the petition filed by the Union of\nIndia under\nsection 140(5)\nhas been satisfied by the\nsubsequent resignation of the auditor. The view taken by\nthe High Court is absolutely erroneous and is\nunsustainable. Subsequent resignation of an auditor after\nthe application is filed under\nsection 140(5)\nby itself shall\nnot terminate the proceedings under\nsection 140(5)\n. Resignation and/or removal of an auditor cannot be said\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nto be an end of the proceedings under\nsection 140(5)\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P009_C02",
+      "text": "There are further consequences also on culmination of\nthe enquiry under\nsection 140(5)\nproceedings and passing\na final order by the Tribunal on the conduct of an auditor,\nwhether such a auditor has, directly or indirectly, acted in\na fraudulent manner or abetted or colluded in any fraud\nby, or in relation to, the company or its directors or\nofficers, as provided under the second proviso to\nsection\n140(5)\nof the Act, 2013. Therefore, the\nenquiry/proceedings initiated under the first part of\nsection\n140(5)\nhas to go to its logical end and subsequent\nresignation and/or discontinuance of an auditor shall not\nterminate the enquiry/proceedings under\nsection 140(5)\n. If the interpretation given by the High Court that once an\nauditor resigns, the proceedings under\nsection 140(5)\nstand terminated and are no longer further required to be\nproceeded\n,\nin that case\n, an auditor to avoid the final order\nand the consequence of final order as provided under the\nsecond proviso to\nsection 140(5)\nmay resign and avoid\nany final order by the Tribunal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P009_C03",
+      "text": "That cannot be the\nintention of the legislature.\n6.1 As observed hereinabove, the second proviso to\nsection 140(5)\nof the Act, 2013 is a substantive provision,\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nthough it is by way of a proviso, and the same shall\noperate and/or depend upon the final order to be passed\nby the Tribunal in the first part of\nsection 140(5)\n. If the\ninterpretation given by the High Court that on subsequent\nresignation and/or discontinuance of an auditor,\nproceedings under\nsection 140(5)\nstand terminated and/or\nthe petition under\nsection 140(5)\nby the Central\nGovernment is no longer maintainable is accepted\n,\nin that\ncase\n, second proviso to\nsection 140(5)\nwould become\nnugatory and in no case there shall be any action under\nthe second proviso to\nsection 140(5)\n. If such an\ninterpretation, as interpreted by the High Court, is\naccepted\n,\nin that case\n, the object and purpose of\nincorporation of second proviso to\nsection 140(5)\nshall be\nfrustrated.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P009_C04",
+      "text": "The object and purpose of second proviso to\nsection 140(5)\n, as observed hereinabove, is to make the\nprovision more stringent and to provide for consequences\nfor an auditor when such an auditor is found to have been\nperpetrating a fraud and is removed by the NCLT for such\nfraud. At this stage, it is required to be noted that under\nthe second proviso to\nsection 140(5)\non the final order\nbeing passed by the Tribunal that the auditor/firm has,\ndirectly or indirectly, acted in a fraudulent manner or\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nabetted or colluded in any fraud by, or in relation to, the\ncompany or its directors or officers, he/it shall not be\neligible to be appointed as an auditor of any company for\na period of five years. The word “any” used in the second\nproviso to\nsection 140(5)\nis significant. On the final order\nbeing passed by the Tribunal, such an auditor not only\nshall be removed or changed as an auditor of a company,\nbut such an auditor/firm shall also be ineligible to be\nappointed as an auditor of any other company for a period\nof five years.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P010_C01",
+      "text": "7. Therefore, on true interpretation and scheme of\nSection 140(5)\nof the Act, 2013, once the\nenquiry/proceedings is/are initiated under first part of\nsection 140(5)\nof the Act, either suo motu by the Tribunal\nor on an application made to it by the Central Government\nor by any person concerned, it must come to its logical\nend and irrespective of the fact whether during such\nenquiry/proceedings the auditor has resigned or not, there\nmust be a final order to be passed by the Tribunal on\nwhether such an auditor has, in fact, directly or indirectly,\nacted in a fraudulent manner or not. Direction to the\ncompany to change its auditor as provided in the first part\nsection 140(5)\nis only a consequence to the finding\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nrecorded by the Tribunal that the auditor has, directly or\nindirectly, acted in a fraudulent manner. This is the first\nconsequence of the final order under\nsection 140(5)\n(first\npart). On passing the final order by the Tribunal that the\nauditor of a company has, directly or indirectly, acted in a\nfraudulent manner, the second consequence as\nmentioned in the second proviso to\nsection 140(5)\nshall\nbe attracted.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P010_C02",
+      "text": "Therefore, for any consequence as provided\nunder the second proviso to\nsection 140(5)\n, there shall be\na final order by the Tribunal on enquiry as per first part of\nsection 140(5)\n. Therefore, on true interpretation, even on\nresignation by an auditor of a company even during the\nenquiry/proceedings under\nsection 140(5)\nor even prior to\nthat, there shall not be any termination of the proceedings\nunder\nsection 140(5)\nas observed and held by the High\nCourt. At the cost of repetition, it is observed that in a\ngiven case, an auditor, who in fact has, directly or\nindirectly, acted in a fraudulent manner, to avoid any\nfurther consequence under the second proviso to\nsection\n140(5)\n, resigns to avoid any consequence under the\nsecond proviso to\nsection 140(5)\n, it cannot be permitted.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P011_C01",
+      "text": "8. No so far as the submission on behalf of the\nrespective auditors that even if\nsection 140(5)\nwould not\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nhave been there\n,\nin that case\nalso, no auditor can get\naway with fraud, abetment of fraud or professional\nmisconduct etc. and for that purpose the reliance placed\nupon\nsections 132\n,\n\n,\n\n,\n\nand\n\nof the Act is\nconcerned, at the outset, it is required to be noted that all\nthe aforesaid provisions and\nsection 140(5)\noperate in\ndifferent field.\nSection 140(5)\nhas been enacted with a\nspecial object and purpose, as observed hereinabove.\nSecond proviso to\nsection 140(5)\nspecifically provides that\non final order being passed by the NCLT, such an auditor\nshall not be eligible to become an auditor in any other\ncompany for a period of five years. Therefore, merely\nbecause the auditor can be removed as an auditor of a\ncompany including the other provisions,\nsection 140(5)\nwhich has been enacted with a special object and\npurpose cannot be said to be arbitrary and/or ultra vires.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P012_C01",
+      "text": "9. Now so far as the reliance placed upon\nsection\n241(3)\nof the Act and the submission that even in a case\nwhere the auditor resigns, the auditor concerned can be\nproceeded against under\nsection 241(3)\nof the Act and\ntherefore the proceedings pursuant to\nsection 241(3)\nthe Act would lead to the same result and the auditor\nwould be held ‘not to be a fit and proper person’ to be\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nappointed in any other office connected with the conduct\nand management of any company is concerned, at the\noutset, it is required to be noted that\nSection 241(3)\nof the\nAct speaks about the concerned company and not any\nother company. Section 241(3)\nof the Act has been\nintroduced w.e.f. 14.08.2019 which authorises the Central\nGovernment to apply to the Tribunal to declare that the\npersons mentioned in\nsection 241(3)\nof the Act are “not fit\nand proper persons” to hold the office of a director or any\nother office connected with the conduct and management\nof any company. Section 241(3)\nof the Act is required to\nbe read along with\nSections 243(1A)\nand\n243(2)\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P012_C02",
+      "text": "On a\nconjoint reading of the aforesaid provisions, it is clear that\nthe reference specifically in\nSection 241(3)\nof the Act to\n“any other office connected with the conduct and\nmanagement of any company” means those akin to\nmanager, managing director or other director such as key\nmanagerial personnel and not an auditor. The words\nused in\nSection 241(3)\nof the Act are “conduct and\nmanagement of the company”. As per the\nScheme of the\nAct, 2013\n, more particularly Chapter X, the auditor acts as\nan independent examiner of accounts and cannot be said\nto be holding an office in the conduct and management of\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nthe company. Therefore, the submission that what could\nbe achieved under\nsection 140(5)\nof the Act, 2013 can be\nachieved by\nSection 241(3)\neven after the auditor has\nresigned has no substance.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P013_C01",
+      "text": "10. At this stage, it is required to be noted that in\nsection 140(5)\n, it is specifically mentioned that “without\nprejudice to any action under the provisions of this Act or\nany other law for the time being in force”. Therefore, the\nintention of the legislature while enacting\nsection 140(5)\nvery clear and the powers conferred upon the Tribunal\nunder\nsection 140(5)\nshall be without prejudice to any\naction under the provisions of the\nCompanies Act, 2013\nany other law for the time being in force. Therefore,\nirrespective of any other provisions of the Act, 2013, the\nTribunal is vested with the powers under\nSection 140(5)\nthe Act to pass a final order against the auditor on the\nallegation that such an auditor of the company has,\ndirectly or indirectly, acted in a fraudulent manner.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P014_C01",
+      "text": "11. For the reasons stated above, the High Court has\nmaterially erred in holding that on resignation of auditors –\nBSR & Deloitte and on appoint of new auditors,\napplication under\nsection 140(5)\nshall not be\nmaintainable. Consequently, the High Court has erred in\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nsetting aside the order(s) passed by the NCLT/NCLAT by\nwhich the NCLT/NCLAT held that despite the resignation\nof the auditors, enquiry/proceedings under\nSection 140(5)\nshall be maintainable and/or continued. As observed\nhereinabove, despite the subsequent resignation of the\nauditors and/or despite the resignation of an auditor even\nfor the purpose of second proviso to\nsection 140(5)\n, the\nenquiry/proceedings/application under\nsection 140(5)\n(first\npart) shall be maintainable and continued and on the final\norder being passed by the NCLT, as provided in\nsection\n140(5)\n, consequence as provided under the second\nproviso to\nsection 140(5)\nshall follow.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P014_C02",
+      "text": "As neither the\nNCLT nor the High Court have gone into the merits of the\nallegations against the respective auditors and the\ndecision of the NCLT and the High Court is on the\nmaintainability of the proceedings under\nsection 140(5)\nafter resignation of the auditors, we refrain from\nconsidering anything on merits of the allegations against\nthe auditors as the allegations of fraud etc. are yet to be\nconsidered by the Tribunal on merits in an application\nunder\nSection 140(5)\nmade by the Central Government.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P015_C01",
+      "text": "12. Now so far as challenge to the vires of\nSection\n140(5)\nof the Act is concerned, at the outset, it is required\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nto be noted that the High Court, as such, has upheld the\nconstitutional validity/vires of\nsection 140(5)\nagainst which\nthe BSR has not filed any special leave petition. Even\notherwise on merits also, when some of the writ\npetitioners have challenged the impugned judgment and\norder passed by the High Court on constitutional\nvalidity/vires of\nSection 140(5)\n, we are of the opinion that\nsection 140(5)\ncannot be said to be excessive and/or\nmanifestly arbitrary, as contended. It was the case on\nbehalf of the original writ petitioners on the\nconstitutionality/vires of\nsection 140(5)\nthat\nsection 140(5)\nis excessive and arbitrary as it provides unguided and\nuntrammelled powers to NCLT for determination of a\nserious offence of fraud and consequence of mandatory\ndisqualification with grave consequences akin to civil\ndeath. The aforesaid has no substance. As observed\nhereinabove, NCLT shall exercise the quasi-judicial\npowers under\nsection 140(5)\nwith all the powers akin to\ncivil court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P015_C02",
+      "text": "Ample opportunity shall be given by the NCLT\nbefore passing any final order.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P016_C01",
+      "text": "13. Now so far as another submission that\nsection\n140(5)\nis violative of\nArticle 14\nof the Constitution of India\nand discriminates against the auditors unfairly in\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\ncomparison to similarly placed alleged perpetrators, such\nas directors, management etc. It is required to be noted\nthat the role of auditors cannot be equated with directors\nand/or management. Auditors play very important role in\nthe affairs of the company and therefore they have to act\nin the larger public interest and all other stakeholders\nincluding investors etc.\nChapter X of the Act\nspecifically\nfor the “Audit and Auditors” looking to the importance of\nthe auditors. Therefore,\nsection 140(5)\ncannot be said to\nbe discriminatory and/or violative of\nArticle 14\nof the\nConstitution of India.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P017_C01",
+      "text": "14. Now so far as the submission that the penalty in the\nform of automatic disqualification of auditors and of the\nentire firm including partners and that too for a period of\nfive years to become the auditor of any other company is\nhighly disproportionate is concerned, it is ultimately for the\nlegislature/Parliament to provide the debarment. On the\nprinciple of joint and severe liability, the auditors and the\nentire firm including partners shall be liable and therefore\ncan be subjected to\nsection 140(5)\nand the consequences\nmentioned in\nsection 140(5)\nof the Act, 2013. So far as\nthe submission that the disqualification is akin to civil\ndeath and\nsection 140(5)\nimpinges upon BSR and its\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\npartners’ fundamental right to carry on its profession, as\nguaranteed under\nArticle 19(1)(g)\nof the Constitution is\nconcerned, nobody can be permitted to say that despite\nacting fraudulently, directly or indirectly, they had a right to\ncontinue and/or carrying on their profession.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P017_C02",
+      "text": "Acting in a\nfraudulent manner, directly or indirectly, by an auditor is a\nvery serious misconduct and therefore the necessary\nconsequence of indulging into such fraudulent act shall\nfollow. At this stage, it is required to be noted and as\nobserved hereinabove,\nSection 140(5)\nof the Act has\nbeen enacted with the specific object and purpose as\nreferred to hereinabove and the same has been enacted\nafter due deliberations and taking into consideration the\nrecommendations of the Standing Committee as well as\nthe respective stakeholders. Therefore, taking into\nconsideration the object and purpose for which\nsection\n140(5)\nof the Act is enacted, the same cannot be said to\nbe arbitrary, excessive and violative of\nArticle 14\nof the\nConstitution of India and/or violative of fundamental rights\nguaranteed under\nArticle 19(1)(g)\nof the Constitution of\nIndia, as alleged. Criminal Appeal Nos.2305-2307/2022 Etc.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P018_C01",
+      "text": "15. Now far as quashing and setting aside\nsection\n212(14)\ndirection by the High Court by its impugned\njudgment and order is concerned, it appears that the High\nCourt has set aside 212(14) direction mainly on two\ngrounds, firstly, that the direction to prosecute was issued\nwithin 30 hours of report of the IFIN SFIO Report which\ndemonstrates non-application of mind and secondly on\nthe ground that IFIN SFIO Report was an incomplete\nreport as investigation had not been completed and\ntherefore 212(14) direction was incompetent.\n15.1 From the reasoning of the High Court, it appears\nthat the High Court has set aside the direction under\nsection 212(14)\nterming the same as non-application of\nmind since it was improbable that report of about 750\npages and 32000 pages of annexures could have been\nconsidered in 30 hours. The High Court also observed\nthat the relevant facts and documents to demonstrate\napplication of mind have not been placed on record. With\nthe above conclusion, the High Court has observed that\neven according to the investigating agency, SFIO Report\nwas an interim report, even asked by the Central\nGovernment.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P018_C02",
+      "text": "Criminal Appeal Nos.2305-2307/2022 Etc.\n\n15.2 Now so far as the observations made by the High\nCourt that issuance of the direction to prosecute within 30\nhours of the receipt of IFIN SFIO Report demonstrates\nnon-application of mind as it was improbable that report of\nabout 750 pages and 32000 pages of annexures could\nhave been considered in 30 hours is concerned, the\nobservations made by the High Court cannot be accepted. Merely because the direction to prosecute was issued\nwithin 30 hours, by that itself, it cannot be presumed that\nthere was a non-application of mind. A detailed note was\nprepared by the officer which was ultimately placed before\nthe final authority who ultimately took a decision and\nissued a direction to prosecute. What was required to be\nconsidered was, whether there was any material to\nprosecute or not and whether the direction to prosecute\nwas properly given or not. During the trial, the accused\nshall be given ample opportunity to put forward their case. Therefore, on the aforesaid ground, the High Court has\nmaterially erred in setting aside the direction to prosecute\nissued under\nsection 212(14)\nof the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P018_C03",
+      "text": "Now so far as the observations made by the High\nCourt that the relevant facts and documents to\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\ndemonstrate application of mind have not been placed on\nrecord is concerned, it is required to be noted that a final\norder to prosecute was placed on record in which it has\nbeen specifically mentioned that having gone through the\nIFIN SFIO Report.\n15.3 Now so far as another ground on which the\ndirection/sanction to prosecute has been set aside by the\nHigh Court, namely, that it was an incomplete\ninvestigation report and therefore on such an incomplete\ninvestigation report, no direction/sanction to prosecute\ncould have been issued is concerned, at the outset, it is\nrequired to be noted that the High Court has not properly\nappreciated that the SFIO IFIN Report was a report\nprepared by the SFIO on the completion of the\ninvestigation into the IFIN – one of the companies under\ninvestigation. It is required to be noted that by an order\ndated 30.09.2018, an investigation was directed to be\nconducted by the SFIO into IL&FS and its subsidiaries,\nwhich comprise of approximately 100-160 entities.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P018_C04",
+      "text": "So far\nas the IFIN is concerned, it was one of the subsidiaries in\nthe IL&FS group and the financial services arm. It is the\ncase on behalf of the Central Government that so far as\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nthe SFIO IFIN Report is concerned, it is a record in\nrespect of IFIN, upon completion of investigation into IFIN. Merely because so far as the investigation with respect to\nother subsidiary companies of IL&FS group is concerned,\nthe same might have been going on, cannot be a ground\nto observe that at this stage so far as the IFIN is\nconcerned the report was incomplete report and for which\nthe investigation was going on. The High Court has not\nproperly appreciated the aforesaid and has wrongly\ntreated the report as an interim report so far as the IFIN is\nconcerned. At this stage, it is required to be noted that in\nthe SFIO IFIN Report itself, it is observed that in light of\ncomplex structure of the IL&FS Group and the inter-\nlinkages between entities etc, if any further instances or\ntransactions are uncovered qua IFIN during the\ninvestigation of other group companies of IL&FS, then a\nfurther report will be filed.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P018_C05",
+      "text": "Therefore, the High Court has\nmaterially erred that the investigation in respect of IFIN is\nincomplete. It is required to be noted that as such the\nSFIO had submitted the report after a detailed and\nextensive investigation of IFIN. There are conclusive\nfindings against each of the writ petitioners including Hari\nSankaran pointing out multiple breaches, violations of\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nstatutory duties and fraudulent conduct. We are not\nelaborating the same in detail as the prosecution is yet to\ntake place and the concerned persons are to be tried. The proceedings before the High Court were at the stage\nof direction under\nsection 212(14)\nto allow the prosecution\nand the sanction to prosecute. Ample opportunity shall be\navailable to the concerned accused against whom the\nprosecution was ordered for the offences punishable\nunder\nsection 447\nof the Companies Act and other\nrelevant provisions of the\nIPC\n. Therefore, the High Court\nhas erred in setting aside the direction under\nsection\n212(14)\nto prosecute at this stage and on the aforesaid\ngrounds. Conclusion:",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P019_C01",
+      "text": "16. In view of the above and for the reasons stated\nabove, challenge to the constitutional validity of\nsection\n140(5)\nof the Companies Act, 2013 fails and it is observed\nand held that\nsection 140(5)\nis neither discriminatory,\narbitrary and/or violative of\nArticles 14\n, 19(1)(g)\nof the\nConstitution of India, as alleged. The impugned judgment\nand order passed by the High Court quashing and setting\naside the application/proceedings under\nsection 140(5)\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nthe ground that as the auditors have resigned and\ntherefore thereafter the same is not maintainable is\nhereby quashed and set aside. Consequently, the\nimpugned judgment and order passed by the High Court\nquashing and setting aside the NCLT order holding that\neven after the resignation of the auditors, the proceedings\nunder\nsection 140(5)\nshall be maintainable is hereby\nquashed and set aside.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P019_C02",
+      "text": "The application/proceedings\nunder\nsection 140(5)\nof the Act, 2013 is held to be\nmaintainable even after the resignation of the concerned\nauditors and now the NCLT therefore to pass a final order\non such application after holding enquiry in accordance\nwith law and thereafter on the basis of such final order,\nfurther consequences as provided under the second\nproviso to\nsection 140(5)\nshall follow. However, it is made\nclear that we have not expressed anything on merits on\nthe allegations against the concerned auditors and it is\nultimately for the NCLT/Tribunal to pass a final order on\nthe application filed by the Central Government under\nsection 140(5)\nof the Act, 2013.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P020_C01",
+      "text": "17. In view of the above and for the reasons stated\nabove, the impugned judgment and order passed by the\nHigh Court quashing and setting aside the direction under\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nSection 212(14)\nof the Companies Act, 2013 dated\n29.05.2019 issued by the Union of India to SFIO is hereby\nquashed and set aside. The impugned judgment and\norder passed by the High Court quashing and setting\naside the prosecution lodged by the SFIO vide Criminal\nComplaint CC No.20/2019 on the file of Special Court\n(Companies Act) and Additional Sessions Judge, Greater\nMumbai is also hereby quashed and set aside. Now the\nsaid Criminal Complaint CC No. 20/2019 be proceeded\nfurther by the concerned Trial Court in accordance with\nlaw and on its own merits.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP_P021_C01",
+      "text": "18. Accordingly, in view of the above, the appeals filed\nby the Union of India, viz., Criminal Appeal Nos. 2305-\n2307/2022; 2302-2303/2022; and 2300/2022 are allowed\nand Criminal Appeal Nos. 2298/2022, 2299/2022 and\n2304/2022, as also, Civil Appeal Nos.793/2022; 801/2022\nand 877/2022 filed by the Deloitte and its partners are\nhereby dismissed.\n……………………….J.\n [M.R. SHAH]\n\nNEW DELHI; ………………………..J.\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nMAY 03, 2023. [M.M. SUNDRESH]\n\nCriminal Appeal Nos.2305-2307/2022 Etc.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Union Of India vs Deloitte Haskins And Sells Llp",
+    "case_id": "SC_2023_UNION_OF_INDIA_VS_DELOITTE_HASKINS_AND_SELLS_LLP",
+    "court": "Supreme Court of India",
+    "year": "2023",
+    "facts_summary": "1. This batch of Criminal Appeals/Civil Appeals raise\ncommon question(s) of law pertaining to the interpretation\nSection 140(5)\nof the Companies Act, 2013 (hereinafter\nreferred to as the ‘Act, 2013’) and the Investigation Report\ndated 28.05.2019 (hereinafter referred to as the ‘IFIN\nSFIO Report’) in respect of IL&FS Financial Services\nLimited (hereinafter referred to as the ‘IFIN’).\n1.1 Criminal Appeal Nos. 2305-2307/2022, Criminal\nAppeal Nos. 2302-2303/2022 and Criminal Appeal No.\n2300/2022 have been filed by the Union of India, inter\nalia, challenging the common judgment and order dated\n21.04.2020 passed by the High Court of Bombay in Writ\nPetition Nos. 4144 & 4145 of 2019 and other companion\nwrit petitions, by which the High Court, though upheld that\nSection 140(5)\nof the Act, 2013 is not unconstitutional,\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nhas set aside the direction under\nSection 212(14)\nof the\nAct, 2013 dated 29.05.2019 issued by the Union of India\nto the Serious Fraud Investigation Office (SFIO) and\nconsequently set aside the prosecution lodged by the\nSFIO vide Criminal Complaint No. CC 20/2019 on the file\nof Special Court (Companies Act) & Additional Sessions\nJudge, Greater Mumbai, the Union of India and the SFIO\nhave preferred the present appeals.\n1.2 In Criminal Appeal Nos. 2302-2303/2022, the\nchallenge pertains to the auditor of IL&FS Financial\nServices Limited, namely, BSR & Associates LLP (BSR)\nand in Criminal Appeal Nos. 2305-2307/2022 and\nCriminal Appeal",
+    "legal_issues": "That thereafter,\nthe BSR filed a writ petition before the High Court, inter\nalia, challenging the vires of\nSection 140(5)\nof the Act,\n2013; the directions issued and the order of the NCLT\nupholding the maintainability of\nSection 140(5)\npetition.\n2.16 By the impugned judgment and order, though the\nHigh Court has upheld the validity of\nSection 140(5)\nof the\nAct, 2013, the High Court has interpreted\nsection 140(5)\nof the Act, 2013 and has set aside the order passed by\nthe NCLT upholding the maintainability of\nSection 140(5)\npetition and has quashed\nSection 140(5)\npetition and has\n\nCriminal Appeal Nos.2305-2307/2022 Etc.\n\nset aside/quashed the directions issued by the Ministry of\nCorporate Affairs and the SFIO and also has quashed/set\naside criminal proceedings instituted by the SFIO. Hence,\nthe present appeals. Submissions on behalf of the Union of India: 3. Shri Balbir Singh, learned Additional Solicitor\nGeneral of India appearing on behalf of the Union of India\nhas vehemently submitted that in the impugned judgment\nand order the High Court has misinterpreted\nSection\n140(5)\nof the Act, 2013, though the High Court has upheld\nthe constitutionality of the said provision.\n3.1 It is submitted that as regards the interpretation of\nSection 140(5)\nof the Act, 2013, the High Court has\nexplained the legislative intent as being to induce/effect a\nchange of an auditor in a company where there is a\nsuspected fraud. It is submitted that thereafter the High\nCourt has erroneously proceeded to ",
+    "ratio_summary": "Reliance is placed upon the decisions of this Court in\n the cases of\nBhuwalka Steel Industries Ltd & Anr v. UOI\n, (2017) 5 SCC 598 (Para 38) and Sant Lal Gupta\n v. Modern Cooperative Housing Society Ltd., (2010)\n 13 SCC 336 (Para 14).\nxx) It is submitted that the need for a deemed removal\n of a past auditor does not arise, since the very purpose\n and object of\nSection 140\n, i.e., removal and change of\n auditors, has been satisfied by the auditor's resignation. Such a past auditor can, despite his resignation, be\n prosecuted for fraud under\nSection 447\nof the Act. Therefore, the question of removing the auditor under\nSection 140(5)\ncannot and does not arise. Criminal Appeal Nos.2305-2307/2022 Etc.\n\nxxi)It is submitted that the Ministry was aware that an\n order under\nSection 140(5)\ncannot be passed against a\n past auditor except through the device of a deeming\n fiction. This is evident from prayers (a), (b) and (c) of\n the 140(5) Company Petition sought qua Deloitte in\n which Ministry sought a \"deemed removal\" of Deloitte\n even though it had already rotated out as auditor.",
+    "final_order": "Moreover, in the year 2017-18, the IL&FS Group has\n shown a loss of Rs. 2670 crores;\n(b) this debt contagion, prima facie, was on account of\n\n inter alia failure of corporate governance across the\n IL&FS Group and window dressed accounts; and\n(c) any further defaults would be catastrophic for the\n well-being of the financial markets and the economy.\n2.1 In parallel, the Ministry of Corporate Affairs, upon\nreceipt of a report from the Registrar of Companies under\nSection 208\nof the Act, 2013, directed the SFIO to\ninvestigate into the affairs of IL&FS and its subsidiaries.\n2.2 The Ministry of Corporate Affairs filed a Company\nPetition on 01.10.2018 being Company Petition No.\n3638/2018 against IL&FS and its the then existing Board\nof Directors before the National Company Law Tribunal\n(NCLT) s",
+    "outcome_summary": "Dismissed. Moreover, in the year 2017-18, the IL&FS Group has\n shown a loss of Rs. 2670 crores;\n(b) this debt contagion, prima facie, was on account of\n\n inter alia failure of corporate governance across the\n IL&FS Group and window dressed accounts; and\n(c) any further defaults would be catastrophic for the\n w",
+    "sections_cited": [
+      "Constitution 14"
+    ],
+    "cases_cited": [
+      "Serious Fraud Investigation Office v Rahul\n Modi"
+    ]
+  }
+}

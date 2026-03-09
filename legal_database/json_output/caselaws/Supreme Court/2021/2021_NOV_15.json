@@ -1,0 +1,550 @@
+{
+  "case_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD",
+  "case_name": "Welspun Specialty Solutions Limited ... vs Oil And Natural Gas Corporation Ltd. ...",
+  "normalized_case_name": "WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_..._VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD._...",
+  "court": "Supreme Court of India",
+  "year": "2021",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 2826-2827 of 2016",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "13 November 2021",
+  "judges": [
+    "Chief Justice",
+    "Surya Kant",
+    "Hima Kohli"
+  ],
+  "author": "N. V. Ramana",
+  "bench_type": "constitution",
+  "petitioner": "Welspun Specialty Solutions Limited ...",
+  "respondent": "Oil And Natural Gas Corporation Ltd. ...",
+  "reporter_citations": [],
+  "outcome": "set aside",
+  "disposition": "set_aside",
+  "cites_count": 19,
+  "cited_by_count": 24,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2021\\NOV\\2021_NOV_15.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NOS. 2826-2827 OF 2016\n\n WELSPUN SPECIALTY SOLUTIONS LIMITED\n (FORMERLY KNOWN AS REMI METALS GUJARAT LTD.) …APPELLANT\n\n VERSUS\n\n OIL AND NATURAL GAS CORPORATION LTD. …RESPONDENT\n\n WITH\n\n CIVIL APPEAL NO. 6834 OF 2021\n (ARISING OUT OF SLP (C) NO. 19203 OF 2012)\n\n OIL AND NATURAL GAS CORPORATION LTD. …APPELLANT\n\n VERSUS\n\n REMI METALS GUJARAT LTD. …RESPONDENT\n\n JUDGMENT\nN. V. RAMANA, CJI",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P002_C01",
+      "text": "2. Civil Appeal Nos. 2826-2827 of 2016, preferred by Welspun\n\nSpecialty Solutions Limited (formerly known as Remi Metals\n and orders dated 14.10.2008 and 27.07.2010 of the High Court\n\n of Uttarakhand at Nainital in AO Nos.472 and 466 of 2005 and\n\n Review Petition No. 1340 of 2008 in AO No. 472 of 2005\n\n respectively. Civil Appeal arising out of SLP(C) No. 19203 of 2012,\n\n preferred by Oil and Natural Gas Corporation Ltd. (hereinafter\n\n referred to as ‘ONGC’ for the sake of brevity and clarity), has been\n\n filed impugning the judgment and order dated 27.07.2010 of the\n\n High Court of Uttarakhand at Nainital in Review Petition No. 1340\n\n of 2008 in AO No. 472 of 2005.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P003_C01",
+      "text": "3. The short question which arises for determination by this Court\n\n is whether the impugned judgment was correct in setting aside\n\n the arbitration award in favour of the ONGC.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P004_C01",
+      "text": "4. Before we analyse the case at hand, it is necessary for us to have\n\n a brief understanding of the facts. A global tender was floated by\n\n the ONGC for purchase of aggregate quantity of 3,93,297 metres\n\n of seamless steel casing pipes. Remi Metals was a successful\n\n bidder. It claims that it had bid to supply pipes as a supplier on\n\n behalf of Volski Tube Mills, Russia. In furtherance of the same,\n\n4 purchase orders (POs) No. 275, 276, 277 and 286 were issued\n\n in the following manner:",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P005_C01",
+      "text": "5. It was mentioned in the POs that the delivery period will\n\n commence within 16 weeks and will be completed in 40 weeks, or\n\n earlier, from the date of the PO.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P006_C01",
+      "text": "6. Some of the important conditions mentioned in the POs, which\n\n were common to all the POs, are as under:",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P007_C01",
+      "text": "9. i) The time and date of delivery is the essence of\n the supply order and delivery must be completed\n not later than the date specified therein.\nii) It must be noted that delayed supplies even\n delivery and/or accepted by the purchaser will be\n treated as supplied/effected after schedule period\n without prejudice to Failure & Termination\n Clause.\niii) Even when extension in delivery period is\n granted, such acceptance of extension as the case\n may be will be without prejudice to claim damages\n under Failure & Termination Clause unless\n purchaser clearly waives his right in writing to\n recover such damages with the approval of\n competent authority.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P008_C01",
+      "text": "7. Further, relevant provisions of the General Terms and Conditions\n\n appended with the POs are as follows:",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P009_C01",
+      "text": "10. FAILURE AND TERMINATION\n CLAUSE/LIQUIDATED DAMAGES:\nTime and date of delivery shall be essence of the\n contract. If the contractor fails to deliver the\n stores, or any instalment thereof within the period\n fixed for such delivery in the schedule or at any\n time repudiates the contract before the expiry of\n such period, the purchaser may, without\n prejudice to any right or remedy, available to him\n to recover damages for breach of contract :-\n(a) Recover from the contractor as agreed liquidated\n damages and not by way of penalty, a sum\n equivalent to ½% (half percent) of the contract\n price of the whole unit per week for such delay or\n part thereof (this is an agreed, genuine pre-\nestimate of damage duly agreed by the parties)\n which the contractors has failed to deliver within\n the period fixed for delivery in the schedule, where\n delivery thereof is accepted after expiry of the\n aforesaid period.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P009_C02",
+      "text": "It may be noted that such\n recovery of liquidated damages may be up to 5%\n of the contract price of whole unit of stores which\n the contractor has failed to deliver within the\n period fixed for delivery; or\n\n (…)\n(e) It may further be noted that the clause (a) above\n provides for recovery of liquidated damages on the\n cost of contract price of delayed supplies whole\n unit at the rate of ½% (half percent) of the contract\n\nprice of the whole unit per week for such delay or\n part thereof up to a ceiling of 5% of the contract\n price of delayed supplies (whole unit). Liquidated\n damages for delay in supplies thus accrued will be\n recovered by the paying authorities of the\n purchaser specified in the supply order, from the\n bill for payment of the cost of material submitted\n by the contactor or his foreign principals in\n accordance with the term of supply order or\n otherwise.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P010_C01",
+      "text": "8. During the execution of contract, there were certain delays in\n\n meeting the obligation as required under the contract. In this\n\n context, various extensions were given by the ONGC to fulfil their\n\n obligation. The extensions were granted as follows:\nRemi Metals accepted the aforesaid extensions and satisfied the\n\n contract.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P011_C01",
+      "text": "9. In this context, it may be noted that the ONGC had deducted an\n\n aggregate amount of US $8,07,804.03 and Rs.1,05,367/- as\n\nliquidated damages from various bills submitted by the Remi\n\n Metals. There were other claims which were disputed by the Remi\n\n Metals which were claimed before a panel of arbitrators.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P012_C01",
+      "text": "10. In detail, the Remi Metals’ claims were hereunder:\nCLAIM TITLE AMOUNT\n\n Refund of Liquidated US $807,804.03 and\n damages claimed by ONGC Rs. 1,05,367/-\n\n Customs Duty Rs. 1,90,43,037/-\n Reimbursement\n Interest on Delayed US $2,44,121.03 and\n Payments Rs. 5,76,244.31\n\n Amount Short Received Rs. 18,11,456.72\n under invoices\nFailure to Furnish “C” forms US $2,44,649.39\n\n Handling Charges Payable Rs. 24,86,369.86\n on ONGC\n Wrongful reduction of price US $83,324.38\n for balance 8.55%\n (16,174.78m) under PO No.\n\nAward of the above amounts -\nwith 18% interest from the\n date on which it ought to\n have been paid by ONGC and\n\nfurther interest till date of\n payment",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P013_C01",
+      "text": "11. The Arbitral Tribunal, on hearing the parties, had framed 17\n\n issues, of which we are concerned only with the following:\n(i) Was time the essence of the Agreement to make supplies\n\n under the four Purchase Orders and was the delivery date\n\n to be reckoned from the date of the supply order?\n(ii) Was ONGC justified in recovering liquidated damages of\n\n US $8,07,804.03 and Rs.1,05,367/-?\n(iii) Was the Claimant entitled to extension of delivery dates\n\n without levy of liquidated damages on account of force\n\n majeure condition as stated in paragraphs 12.D.3 and\n12.D.4 of the Statement of Claim?\n(iv) Was ONGC entitled to impose liquidated damages on the\n\n basis of the entire value of the Purchase Orders?\n(v) Is the Claimant entitled to refund of any part of the amount\n\n recovered by ONGC as liquidated damages?\n(vi) Is the Claimant entitled to US $2,44,121.03 and\n\n Rs.5,76,244.21 as interest on delayed payment as in\n\n Exhibit ‘H’ to the Statement of Claim?\n\n(vii) Whether the Claimant is entitled to any interest? If so, at\n\n what rate and for what period?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P014_C01",
+      "text": "12. The Arbitral Tribunal, at the outset, held that merely having a\n\n clause in the contract making time the essence of it would not be\n\n determinative; rather, an overall view having regard to all the\n\n terms of contract are to be taken into consideration. Further, they\n\n noted that contracts containing provision for extension of time or\n\n payment of penalty on default would dilute the obligation of timely\n\n performance and render the clauses imbuing time as essence of\n\n the contract ineffective. Additionally, the Arbitral Tribunal also\n\n noted that generally, under construction contracts, time is not\n\n the essence. Ultimately, on this issue, the Arbitral Tribunal noted\n\n as under:\n“43.29. It may also be stated that the supply of\n material in the instant case was not for any specific\n purpose or urgent requirement. The tender was a\n global tender for general requirement as stated by\n Mr. K. Bhattacharya (RW-1).\n43.30. Besides, the contract provides for\n imposition of LD and/or termination of the\n contract. It may also be noticed that ONGC could\n extend the time for delivery and in fact ONGC did\n extend the delivery period without levying any LD.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P014_C02",
+      "text": "These and other stipulations in the contract are a\n\nclear indication that the time was not the essence\n of contract.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P015_C01",
+      "text": "13. On the aspect of liquidated damages, the Arbitral Tribunal held\n\n that liquidated damages, which are pre-estimated damages,\n\n cannot be granted as there was no breach of contract due to the\n\n fact that time was not the essence. Accordingly, the Arbitral\n\n Tribunal proceeded to determine the actual damages based on the\n\n evidence furnished.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P016_C01",
+      "text": "14. It was ONGC’s estimation that there were four categories of\n\n tangible losses, namely: (i) revenue loss; (ii) loss due to the use of\n\n higher ppf/grade casing; (iii) loss due to intra/inter-regional\n\n transportation; and (iv) loss due to foreign exchange fluctuation.\n\n In total, such losses were estimated to be to the tune of\n\n Rs.3,80,64,830/-. The estimation was as follows:\nCATEGORY AMOUNT\n Revenue loss Rs.95,72,332/-\n\n Loss due to the use of higher/ppf Rs.10,97,883/-\n grade casing\n\n Loss due to intra/inter-regional Rs.90,09,950/-\n transportation\n\nLoss due to foreign exchange Rs.1,83,84,668/-\n fluctuation\n Total: Rs.3,80,64,833/-",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P017_C01",
+      "text": "15. The said estimation was accepted by the Arbitral Tribunal.\nHowever, it was also held that ONGC would not be entitled to\n\n claim any damage for losses incurred during the extended period\n\n of delivery where liquidated damages were expressly waived. The\n\n losses claimed during such period without imposition of\n\n liquidated damages are to the tune of Rs.1,71,35,838, which were\n\n excluded from the total computation of loss by the Arbitral\n\n Tribunal. Ultimately, it was held that ONGC would be entitled to\n\n retention of Rs.2,09,28,995/- or its equivalent in US dollars at\n\n the rate as on date of the award, i.e. US $ 440,610.42/-1, out of\n\n the total liquidated damages (US $ 8,07,804.03 and\n\n Rs.1,05,367/-) recovered.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P018_C01",
+      "text": "16. Aggrieved by the award of the Arbitral Tribunal, the ONGC filed a\n\n Section 34 petition before the District Court claiming that the\n\n award of the Arbitral Tribunal was not in tune with the contract,\n\n 1https://www.rbi.org.in/scripts/PublicationsView.aspx?id=15268 1 USD = 47.5 INR end of\n year 2002-03\n\nwhich is a justifiable ground for interference. They sought to\n\n address the concern on delayed acceptance by stating that such\n\n acceptance was valid and permissible under contract law and the\n\n liquidated damages imposed on such acceptance was legally\n\n valid. Further, they pointed out that liquidated damages could\n\n have been given as the same was a genuine and reasonable pre-\n\n estimate of the possible damages negotiated between the parties\n\n at the time of entering into contract.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P019_C01",
+      "text": "17. The District Court, by order dated 19.07.2005, held that the\n\n Tribunal was correct in holding that time was not the essence of\n\n the contract and only the losses actually suffered could be\n\n granted. However, the District Judge modified the costs of\n\n arbitration from Rs.25 lakhs to Rs.9,40,000/-.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P020_C01",
+      "text": "18. Both parties, aggrieved by the order of the District Judge,\n\n appealed the same before the High Court of Uttarakhand in AO\n\n Nos.472 of 2005 and 466 of 2005 under\nSection 37\nof the\n\n Arbitration and Conciliation Act, 1996. The High Court, by\n\n impugned order dated 14.10.2008 held that both the arbitral\n\n award and order of the District Judge erred in construction of the\n\ncontract with respect to whether time was the essence or not.\nFurther, the High Court has reasoned that the Arbitral Tribunal\n\n as well as District Judge committed gross error in arriving at a\n\n conclusion that ONGC had to prove loss suffered before\n\n recovering any damages. Moreover, the decree in respect of cost\n\n of arbitration was upheld by the High Court. Accordingly, AO\n\n No.472 of 2005 filed by ONGC was allowed and AO No.466 of\n\n 2005 filed by Remi Metals (now Welspun) was dismissed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P021_C01",
+      "text": "19. Aggrieved by the aforesaid order, review petitions being Review\n\n Petition Nos.1340 of 2008 and 1339 of 2008 were filed which were\n\n disposed of with the following observation:\n“…The judgement and order passed by the District\n Judge, Dehradun, in Arbitration Case No.31 of 2004\n dated 19th July, 2005, is modified to the extent that\n the appeal with regard to Claim Nos. 1 and 2 is\n allowed, while the judgement and order dated 19th\n July, 2005, passed by the District Judge, Dehradun,\n shall remain intact with regard to claim Nos. 3 to 7…”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P022_C01",
+      "text": "20. Aggrieved by the order passed in the review petitions, both parties\n\n have filed these appeals before this Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P023_C01",
+      "text": "21. Mr. Shyam Divan, learned senior counsel, appearing for Remi\n\n Metals (now Welspun), has submitted that:\n\n• The view taken by the Arbitral Tribunal was reasonable,\n plausible and can be sustained.\n• Time was not the essence of the contract, as the contract\n provided for extension of time as well as for liquidated\n damages.\n• Further, once ONGC waived the liquidated damages in the\n first two extensions, they could not have claimed liquidated\n damages for further extensions of delivery date.\n • This Court should not interfere or set aside awards in a\n casual manner, while doing so this Court should come to a\n clear understanding that the award was patently illegal. [See\nAssociate Builders v. Delhi Development Authority\n(2015) 3 SCC 49 pg. 67]",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P024_C01",
+      "text": "22. Learned Counsel appearing for ONGC has submitted that:\n• That the imposition of liquidated damages has already been\n upheld under similar circumstance by earlier judgment in\nONGC Ltd. v. Saw Pipes Ltd.\n(2003) 5 SCC 705.\n • The award cannot be sustained as in a contract having\n provision for liquidated damages, unliquidated damages\n cannot be given.\n• Reading of the contract makes it clear that the time was of\n the essence, which was also signified in every extension\n given.\n• The award interprets the contractual clauses in a manner\n which is not reasonable and plausible.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P025_C01",
+      "text": "23. Before we analyse the award, we need to first ascertain the scope\n\nSection 34\nof Arbitration Act, before the 2015 amendment,\n\n which provided for certain specific grounds for challenge. Section\n\n, as it existed, reads as under:\n\n34 Application for setting aside arbitral award.\n—\n (1) Recourse to a Court against an arbitral\n award may be made only by an application for\n setting aside such award in accordance with\n sub-section (2) and sub-section (3). (2) An arbitral award may be set aside by the\n Court only if—\n …\n(b) the Court finds that—\n(i) the subject-matter of the dispute is not\n capable of settlement by arbitration under the\n law for the time being in force, or\n(ii) the arbitral award is in conflict with the\n public policy of India. (Emphasis supplied)\n\nThe limited grounds provided under\nSection 34\nof the Act, has been\n\ninterpreted by this Court on numerous occasions. In this case at\n\nhand, the challenge of award is based on the fact that the same is\n\nagainst the public policy and patent illegality. Public policy as a\n\nground of challenge has always been met with certain scepticism.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P025_C02",
+      "text": "The phrase ‘public policy’ does not indicate ‘a catch-all provision’ to\n\nchallenge awards before an appellate forum on infinite grounds. However, the ambit of the same is so diversly interpreted that in\n\nsome cases, the purpose of limiting the\nSection 34\njurisdiction is\n\nlost. This Court’s jurisprudence also shows that\nSection 34(2)(b)\nhas\n\nundergone a lot of churning and continue to evolve. The purpose of\nSection 34\nis to strike a balance between Court’s appellate powers\n\n and integrity of the arbitral process.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P026_C01",
+      "text": "24. The first case, which expounded on the scope of ‘public policy’ was\nRenusagar Power Co. Ltd. v. General Electric Co.\n, 1994 Supp (1)\n\n SCC 644, which inter alia provided that a foreign award may not be\n\n enforced under the said Act, if the court dealing with the case is\n\n satisfied that the enforcement of the award will be contrary to the\n\n public policy. After elaborate discussion, the Court arrived at the\n\n conclusion that public policy comprehended in\nSection 7(1)(b)(ii)\n\n the Foreign Awards (Recognition and Enforcement) Act, 1961 is the\n\n “public policy of India” and does not cover the public policy of any\n\n other country. For giving meaning to the term “public policy”, the\n\n Court observed thus:\n“66. Article V(2)(b) of the New York Convention\n of 1958 and Section 7(1)(b)(ii) of the Foreign\n Awards Act do not postulate refusal of recognition\n and enforcement of a foreign award on the ground\n that it is contrary to the law of the country of\n enforcement and the ground of challenge is\n confined to the recognition and enforcement being\n contrary to the public policy of the country in\n which the award is set to be enforced.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P026_C02",
+      "text": "There is\n nothing to indicate that the expression ‘public\n policy’ in Article V(2)(b) of the New York\n Convention and\nSection 7(1)(b)(ii)\nof the Foreign\n\nAwards Act is not used in the same sense in which\n it was used in Article I(c) of the Geneva Convention\n of 1927 and\nSection 7(1)\nof the Protocol and\n Convention Act of 1937. This would mean that\n ‘public policy’ in\nSection 7(1)(b)(ii)\nhas been used in\n a narrower sense and in order to attract the bar of\n public policy the enforcement of the award must\n invoke something more than the violation of the law\n of India. Since the Foreign Awards Act is\n concerned with recognition and enforcement of\n foreign awards which are governed by the\n principles of private international law, the\n expression ‘public policy’ in Section 7(1)(b)(ii) of\n the Foreign Awards Act must necessarily be\n construed in the sense the doctrine of public\n policy is applied in the field of private international\n law.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P026_C03",
+      "text": "Applying the said criteria it must be held that\n the enforcement of a foreign award would be\n refused on the ground that it is contrary to public\n policy if such enforcement would be contrary to (i)\n fundamental policy of Indian law; or (ii) the\n interests of India; or (iii) justice or morality.”\n\nONGC Ltd. v. Saw Pipes Ltd.\n, (2003) 5 SCC 705, the scope of\nSection 34\nwas expanded to include patent illegality as a ground for\n\nchallenging the award and held as under :\n“31. Therefore, in our view, the phrase ‘public\n policy of India’ used in\nSection 34\nin context is\n required to be given a wider meaning. It can be\n stated that the concept of public policy connotes\n some matter which concerns public good and the\n public interest. What is for public good or in public\n interest or what would be injurious or harmful to\n the public good or public interest has varied from\n time to time. However, the award which is, on the\n face of it, patently in violation of statutory\n provisions cannot be said to be in public interest. Such award/judgment/decision is likely to\nadversely affect the administration of justice.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P026_C04",
+      "text": "Hence, in our view in addition to narrower\nmeaning given to the term ‘public policy’\nRenusagar\ncase [\nRenusagar Power Co. Ltd. v. General Electric Co.\n, 1994 Supp (1) SCC\n644] it is required to be held that the award could\nbe set aside if it is patently illegal. The result\nwould be—award could be set aside if it is contrary\nto:\n(a) fundamental policy of Indian law; or\n(b) the interest of India; or\n(c) justice or morality, or\n(d) in addition, if it is patently illegal. Illegality must go to the root of the matter and if\nthe illegality is of trivial nature it cannot be held\nthat award is against the public policy. Award\ncould also be set aside if it is so unfair and\nunreasonable that it shocks the conscience of the\ncourt. Such award is opposed to public policy and\nis required to be adjudged void. (…)",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P027_C01",
+      "text": "74. In the result, it is held that:\n(A)(1) The court can set aside the arbitral award\nunder\nSection 34(2)\nof the Act if the party making\nthe application furnishes proof that:\n(i) a party was under some incapacity, or\n(ii) the arbitration agreement is not valid under\nthe law to which the parties have subjected it or,\nfailing any indication thereon, under the law for\nthe time being in force; or\n(iii) the party making the application was not\ngiven proper notice of the appointment of an\narbitrator or of the arbitral proceedings or was\notherwise unable to present his case; or\n(iv) the arbitral award deals with a dispute not\ncontemplated by or not falling within the terms of\nthe submission to arbitration, or it contains\ndecisions on matters beyond the scope of the\nsubmission to arbitration.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P027_C02",
+      "text": "(2) The court may set aside the award:\n(i)(a) if the composition of the Arbitral Tribunal\nwas not in accordance with the agreement of the\nparties,\n(b) failing such agreement, the composition of\nthe Arbitral Tribunal was not in accordance with\nPart I of the Act\n,\n(ii) if the arbitral procedure was not in\naccordance with:\n(a) the agreement of the parties, or\n(b) failing such agreement, the arbitral procedure\nwas not in accordance with\nPart I of the Act\n. However, exception for setting aside the award on\nthe ground of composition of Arbitral Tribunal or\nillegality of arbitral procedure is that the\nagreement should not be in conflict with the\nprovisions of\nPart I of the Act\nfrom which parties\ncannot derogate. (c) If the award passed by the Arbitral Tribunal is\nin contravention of the provisions of the Act or any\nother substantive law governing the parties or is\nagainst the terms of the contract. (3) The award could be set aside if it is against\nthe public policy of India, that is to say, if it is\ncontrary to:\n(a) fundamental policy of Indian law; or\n(b) the interest of India; or\n(c) justice or morality; or\n(d) if it is patently illegal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P027_C03",
+      "text": "(4) It could be challenged:\n(a) as provided under Section 13(5); and\n(b)\nSection 16(6)\nof the Act. Eventually, a three-Judge Bench in\nONGC Ltd. v. Western Geco\n\n International Limited\n, (2014) 9 SCC 263, while\n\n upholding\nSaw Pipes\ncase (supra), noted that ‘illegality’ of the\n\n award must go to root of the matter. Illegality of a trivial nature\n\n could not be held to violate the public policy.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P028_C01",
+      "text": "25. Dyna Technologies Pvt. Ltd. v. Crompton Greaves Ltd.\n, (2019)\n\n 20 SCC 1, this Court held:\n“24. There is no dispute that\nSection 34\nof the\n Arbitration Act limits a challenge to an award only\n on the grounds provided therein or as interpreted\n by various Courts. We need to be cognizant of the\n fact that arbitral awards should not be interfered\n with in a casual and cavalier manner, unless the\n Court comes to a conclusion that the perversity of\n the award goes to the root of the matter without\n there being a possibility of alternative\n interpretation which may sustain the arbitral\n award.\nSection 34\nis different in its approach and\n cannot be equated with a normal appellate\n jurisdiction. The mandate under\nSection 34\nis to\n respect the finality of the arbitral award and the\n party autonomy to get their dispute adjudicated\n by an alternative forum as provided under the law.\n If the Courts were to interfere with the arbitral\n award in the usual course on factual aspects, then\n the commercial wisdom behind opting for\n alternate dispute resolution would stand\n frustrated.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P029_C01",
+      "text": "25. Moreover, umpteen number of judgments of\n this Court have categorically held that the Courts\n should not interfere with an award merely because\n\nan alternative view on facts and interpretation of\n contract exists. The Courts need to be cautious\n and should defer to the view taken by the Arbitral\n Tribunal even if the reasoning provided in the\n award is implied unless such award portrays\n perversity unpardonable under\nSection 34\nof the\n Arbitration Act.”\n\n With these observations and limitations set out above, we need to\n\n examine whether the award can be sustained under\nSection 37\n\n the Arbitration Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P030_C01",
+      "text": "26. The main challenge to the award is against the imposition of\n\n unliquidated damages, when the matter of fact stood that the\n\n contract between parties stipulated for pre-estimated damages\n\n (liquidated damages). The concerned contract contained\n\n provisions for liquidated damages for breach of contract,\n\n particularly breach of deadlines set in the contract. Under Indian\n\n Contract law, such liquidated damages are recognized, subject to\n\n the same being reasonable.\nSection 74\nof the Indian Contract Act,\n\n provides that:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P031_C01",
+      "text": "74. Compensation for breach of contract where\n penalty stipulated for.—When a contract has\n been broken, if a sum is named in the contract as\n the amount to be paid in case of such breach, or\n if the contract contains any other stipulation by\n way of penalty, the party complaining of the\n\nbreach is entitled, whether or not actual damage\n or loss is proved to have been caused thereby, to\n receive from the party who has broken the\n contract reasonable compensation not exceeding\n the amount so named or, as the case may be, the\n penalty stipulated for.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P032_C01",
+      "text": "27. In order to examine whether the delayed execution of contract by\n\n the Remi Metals was liable for compensation, the tribunal\n\n examined whether time was of the essence in the contract. In our\n\n considered opinion, ‘time not being the essence of the contract’,\n\n as determined by the Arbitral Tribunal, was beyond reproach.\nReliance on the contractual conditions and conduct of parties to\n\n conclude that existence of extension clause dilutes time being the\n\n essence of the contract, was in accordance with rules of\n\n contractual interpretation.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P033_C01",
+      "text": "28. In this context, the award concludes that as time was not the\n\n essence, liquidated damages could not be granted, in the following\n\n manner:\n“Since time was not the essence of the\n contract, the measure of damages specified\n under Clause/ Liquidated damages, which was\n the essence of the contract, cannot be\n regarded as appropriate for determining the\n loss sustained by ONGC”\n (Emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P034_C01",
+      "text": "29. In order to consider the relevancy of time conditioned obligations,\n\n we may observe some basic principles:\na. Subject to the nature of contract, general rule is that\n\n promisor is bound to complete the obligation by the date\n\n for completion stated in the contract. [Refer to Percy\n\n Bilton Ltd. v. Greater London Council, [1982] 1 WLR\n\n 794]\n\n b. That is subject to the exception that the promisee is not\n\n entitled to liquidated damages, if by his act or omissions\n\n he has prevented the promisor from completing the work\n\n by the completion date. [Refer Holme v. Guppy, (1838) 3\n\n M & W 387]\n\n c. These general principles may be amended by the express\n\n terms of the contract as stipulated in this case.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P035_C01",
+      "text": "30. It is now settled that ‘whether time is of the essence in a contract’,\n\n has to be culled out from the reading of the entire contract as well\n\n as the surrounding circumstances. Merely having an explicit\n\n clause may not be sufficient to make time the essence of the\n\n contract. As the contract was spread over a long tenure, the\n\nintention of the parties to provide for extensions surely reinforces\n\n the fact that timely performance was necessary. The fact that such\n\n extensions were granted indicates ONGC’s effort to uphold the\n\n integrity of the contract instead of repudiating the same.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P036_C01",
+      "text": "31. Clause 9(i) of the Purchase Order reproduced above makes it clear\n\n that time is the essence of the contract, subject to extension\n\n granted without prejudicing the right of ONGC to recover\n\n damages. These damages, by one reasonable interpretation, could\n\n be read as damages based on actual loss. Such conclusion was\n\n based on the Arbitral Tribunal’s interpretation of 2nd para of\nSection 55\nof the Contract Act, which reads as under:\nEffect of such failure when time is not\n essential.- If it was not the intention of the\n parties that time should be of the essence of the\n contract, the contract does not become voidable\n by the failure to do such thing at or before the\n specified time; but the promisee is entitled to\n compensation from the promisor for any loss\n occasioned to him by such failure. (emphasis supplied)\n\n The Arbitral Tribunal construed the aforesaid provision to\n\n interpret the term ‘loss’ to mean actual tangible loss provable by\n\n evidence, instead of pre-estimated loss.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P036_C02",
+      "text": "Such interpretation, in\n\nthe facts and circumstances, could be held to be a reasonable\n\n interpretation, as the other party was not able to impugn the same\n\n by pointing to any documents or correspondence to the contrary. When a standard form of a contract is utilised, ONGC is assumed\n\n in law to have the larger bargaining power to enter into a contract,\n\n unless clear intention is shown to the contrary. In this case at\n\n hand, a reasonable interpretation against ONGC may be utilised.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P037_C01",
+      "text": "32. Saw Pipes\ncase (supra), impugned clause for liquidated\n\n damages was considered and upheld by this Court in the following\n\n manner:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P038_C01",
+      "text": "46. From the aforesaid sections, it can be held\n that when a contract has been broken, the party\n who suffers by such breach is entitled to receive\n compensation for any loss which naturally arises\n in the usual course of things from such breach. These sections further contemplate that if parties\n knew when they made the contract that a\n particular loss is likely to result from such breach,\n they can agree for payment of such compensation. In such a case, there may not be any necessity of\n leading evidence for proving damages, unless the\n court arrives at the conclusion that no loss is\n likely to occur because of such breach. Further, in\n case where the court arrives at the conclusion that\n the term contemplating damages is by way of\n penalty, the court may grant reasonable\n compensation not exceeding the amount so\n named in the contract on proof of damages. However, when the terms of the contract are clear\nand unambiguous then its meaning is to be\ngathered only from the words used therein. In a\ncase where agreement is executed by experts in\nthe field, it would be difficult to hold that the\nintention of the parties was different from the\nlanguage used therein.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P038_C02",
+      "text": "In such a case, it is for the\nparty who contends that stipulated amount is not\nreasonable compensation, to prove the same.\n…",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P039_C01",
+      "text": "64. … Under Section 73, when a contract has\nbeen broken, the party who suffers by such\nbreach is entitled to receive compensation for any\nloss caused to him which the parties knew when\nthey made the contract to be likely to result from\nthe breach of it. This section is to be read with\nSection 74, which deals with penalty stipulated in\nthe contract, inter alia (relevant for the present\ncase) provides that when a contract has been\nbroken, if a sum is named in the contract as the\namount to be paid in case of such breach, the\nparty complaining of breach is entitled, whether or\nnot actual loss is proved to have been caused,\nthereby to receive from the party who has broken\nthe contract reasonable compensation not\nexceeding the amount so named. Section 74\nemphasizes that in case of breach of contract, the\nparty complaining of the breach is entitled to\nreceive reasonable compensation whether or not\nactual loss is proved to have been caused by such\nbreach.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P039_C02",
+      "text": "Therefore, the emphasis is on reasonable\ncompensation. … But if the compensation named\nin the contract for such breach is genuine pre-\nestimate of loss which the parties knew when they\nmade the contract to be likely to result from the\nbreach of it, there is no question of proving such\n\nloss or such party is not required to lead evidence\n to prove actual loss suffered by him..\n…",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P040_C01",
+      "text": "66. In Maula Bux case [(1969) 2 SCC 554] the\n Court has specifically held that it is true that in\n every case of breach of contract the person\n aggrieved by the breach is not required to prove\n actual loss or damage suffered by him before he\n can claim a decree and the court is competent to\n award reasonable compensation in a case of\n breach even if no actual damage is proved to have\n been suffered in consequence of the breach of\n contract. The Court has also specifically held that\n in case of breach of some contracts it may be\n impossible for the court to assess compensation\n arising from breach.\nAlthough the aforesaid case was cited by the Arbitral Tribunal,\n\nit distinguished the same by observing that the aforesaid case\n\nwas silent on the aspect. We need to accept the aforesaid\n\ndistinction based on the different set of circumstances this case\n\nemanates from.\nSaw Pipes\n(supra), the purchaser therein\n\nhad extended the time for supply of goods subject to the specific\n\ncondition that purchaser would recover the agreed stipulated\n\ndamages from the contractor. Thus, the aspect of waiver is an\n\nimportant distinguishing factor, which was not dealt with in the\n\nearlier judgment.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P041_C01",
+      "text": "33. This brings us to the waiver. It may be noted that ONGC waived\n\n liquidated damages twice before giving extension with pre-\n\n estimated damages. The approach of the Arbitral Tribunal was to\n\n hold that once liquidated damages were waived in the first\n\n extension, subsequent extension could not be coupled with\n\n liquidated damages unless a clear intention flowed from the\n\n contract; while this Court recognizes the autonomy of the party to\n\n engage in contractual obligation. Such obligation must be\n\n contracted in clear terms. From the aforesaid discussion, it is\n\n clear that the promisee (ONGC) waived the liquidated damages\n\n initially and the same cannot be imposed, unless such imposition\n\n was clearly accepted by parties. In this case, the interpretation of\n\n the Arbitral Tribunal could not be faulted as being perverse, for\n\n the reasons stated above.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P042_C01",
+      "text": "34. Mr. Shyam Diwan, learned senior counsel, appearing on behalf of\n\n the Remi Metals, submitted that the view taken by the Arbitral\n\n Tribunal was reasonable, as the loss sustained by ONGC is given on\n\n the basis of actual loss. In this situation, the interpretation of the\n\n law and the facts provided under the award is a reasonable\n\n interpretation, which can be sustained as being a plausible view.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P043_C01",
+      "text": "35. This Court cannot interfere with this award, as the award is a\n\n plausible view for the following reasons:\na. The Arbitral Tribunal’s interpretation of contractual clauses\n\n having extension procedure and imposition of liquidated\n\n damages, are good indicators that ‘time was not the essence\n\n of the contract’.\nb. The Arbitral Tribunal’s view to impose damages accrued on\n\n actual loss basis could be sustained in view of the waiver of\n\n liquidated damages and absence of precise language which\n\n allows for reimposition of liquidated damages. Such\n\n imposition is in line with the 2nd para of\nSection 55\nof the\n\n Indian Contract Act.\nc. The Arbitral Tribunal was correct in distinguishing the dictum\n\n of this Court in\nSaw Pipes\n(supra), which validated imposition\n\n of liquidated damages in a similar contract.\nd. The High Court and District Court strayed beyond the\n\n limitation under\nSection 34\nand\n\nof the Arbitration Act.\ne. Other aspects of the award also do not require interference of\n\n this Court, in view of the law\nlaid down in\nthe\nProject\n\nDirector, National Highways No.45E and 220, National\n\n Highways Authority of India v. M. Hakeem.2\n36.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P043_C02",
+      "text": "Therefore, we set aside the order of the High Court as well as the\n\n District Court’s interference, and uphold the award of the Arbitral\n\n Tribunal. Accordingly, Civil Appeal Nos. 2826-2827 of 2016 are\n\n allowed and Civil Appeal arising out of SLP (C) 19203 of 2012 is\n\n disposed of accordingly.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD_P044_C01",
+      "text": "37. Parties are to bear their own costs.\n...........................................CJI.\n(N.V. RAMANA)\n\n ..............................................J.\n (SURYA KANT)\n\n NEW DELHI;\nNOVEMBER 13, 2021\n2 SLP (CIVIL) NO.13020 OF 2020",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Welspun Specialty Solutions Limited ... vs Oil And Natural Gas Corporation Ltd. ...",
+    "case_id": "SC_2021_WELSPUN_SPECIALTY_SOLUTIONS_LIMITED_VS_OIL_AND_NATURAL_GAS_CORPORATION_LTD",
+    "court": "Supreme Court of India",
+    "year": "2021",
+    "facts_summary": "2. Civil Appeal Nos. 2826-2827 of 2016, preferred by Welspun\n\nSpecialty Solutions Limited (formerly known as Remi Metals\n and orders dated 14.10.2008 and 27.07.2010 of the High Court\n\n of Uttarakhand at Nainital in AO Nos.472 and 466 of 2005 and\n\n Review Petition No. 1340 of 2008 in AO No. 472 of 2005\n\n respectively. Civil Appeal arising out of SLP(C) No. 19203 of 2012,\n\n preferred by Oil and Natural Gas Corporation Ltd. (hereinafter\n\n referred to as ‘ONGC’ for the sake of brevity and clarity), has been\n\n filed impugning the judgment and order dated 27.07.2010 of the\n\n High Court of Uttarakhand at Nainital in Review Petition No. 1340\n\n of 2008 in AO No. 472 of 2005. 3. The short question which arises for determination by this Court\n\n is whether the impugned judgment was correct in setting aside\n\n the arbitration award in favour of the ONGC. 4. Before we analyse the case at hand, it is necessary for us to have\n\n a brief understanding of the facts. A global tender was floated by\n\n the ONGC for purchase of aggregate quantity of 3,93,297 metres\n\n of seamless steel casing pipes. Remi Metals was a successful\n\n bidder. It claims that it had bid to supply pipes as a supplier on\n\n behalf of Volski Tube Mills, Russia. In furtherance of the same,\n\n4 purchase orders (POs) No. 275, 276, 277 and 286 were issued\n\n in the following manner:",
+    "legal_issues": "21. Mr. Shyam Divan, learned senior counsel, appearing for Remi\n\n Metals (now Welspun), has submitted that:\n\n• The view taken by the Arbitral Tribunal was reasonable,\n plausible and can be sustained.\n• Time was not the essence of the contract, as the contract\n provided for extension of time as well as for liquidated\n damages.\n• Further, once ONGC waived the liquidated damages in the\n first two extensions, they could not have claimed liquidated\n damages for further extensions of delivery date.\n • This Court should not interfere or set aside awards in a\n casual manner, while doing so this Court should come to a\n clear understanding that the award was patently illegal. [See\nAssociate Builders v. Delhi Development Authority\n(2015) 3 SCC 49 pg. 67] 22. Learned Counsel appearing for ONGC has submitted that:\n• That the imposition of liquidated damages has already been\n upheld under similar circumstance by earlier judgment in\nONGC Ltd. v. Saw Pipes Ltd.\n(2003) 5 SCC 705.\n • The award cannot be sustained as in a contract having\n provision for liquidated damages, unliquidated damages\n cannot be given.\n• Reading of the contract makes it clear that the time was of\n the essence, which was also signified in every extension\n given.\n• The award interprets the contractual clauses in a manner\n which is not reasonable and plausible. 34. Mr. Shyam Diwan, learned senior counsel, appearing on behalf of\n\n the Remi Metals, submitted that the view taken by the Arbitral\n\n Tribunal was reasonable, as t",
+    "ratio_summary": "66. In Maula Bux case [(1969) 2 SCC 554] the\n Court has specifically held that it is true that in\n every case of breach of contract the person\n aggrieved by the breach is not required to prove\n actual loss or damage suffered by him before he\n can claim a decree and the court is competent to\n award reasonable compensation in a case of\n breach even if no actual damage is proved to have\n been suffered in consequence of the breach of\n contract. The Court has also specifically held that\n in case of breach of some contracts it may be\n impossible for the court to assess compensation\n arising from breach.\nAlthough the aforesaid case was cited by the Arbitral Tribunal,\n\nit distinguished the same by observing that the aforesaid case\n\nwas silent on the aspect. We need to accept the aforesaid\n\ndistinction based on the different set of circumstances this case\n\nemanates from.\nSaw Pipes\n(supra), the purchaser therein\n\nhad extended the time for supply of goods subject to the specific\n\ncondition that purchaser would recover the agreed stipulated\n\ndamages from the contractor. Thus, the aspect of waiver is an\n\nimportant distinguishing factor, which was not dealt with in the\n\nearlier judgment.",
+    "final_order": "74. In the result, it is held that:\n(A)(1) The court can set aside the arbitral award\nunder\nSection 34(2)\nof the Act if the party making\nthe application furnishes proof that:\n(i) a party was under some incapacity, or\n(ii) the arbitration agreement is not valid under\nthe law to which the parties have subjected it or,\nfailing any indication thereon, under the law for\nthe time being in force; or\n(iii) the party making the application was not\ngiven proper notice of the appointment of an\narbitrator or of the arbitral proceedings or was\notherwise unable to present his case; or\n(iv) the arbitral award deals with a dispute not\ncontemplated by or not falling within the terms of\nthe submission to arbitration, or it contains\ndecisions on matters beyond the scope of the\nsubmission to arbitration. Ther",
+    "outcome_summary": "Set aside. 74. In the result, it is held that:\n(A)(1) The court can set aside the arbitral award\nunder\nSection 34(2)\nof the Act if the party making\nthe application furnishes proof that:\n(i) a party was under some incapacity, or\n(ii) the arbitration agreement is not valid under\nthe law to which the parties have",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

@@ -1,0 +1,454 @@
+{
+  "case_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY",
+  "case_name": "M/S. Baspa Organics Limited. vs United India Insurance Company ...",
+  "normalized_case_name": "M_S._BASPA_ORGANICS_LIMITED._VS_UNITED_INDIA_INSURANCE_COMPANY_...",
+  "court": "Supreme Court of India",
+  "year": "2020",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 13401 of 2015",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "14 February 2020",
+  "judges": [
+    "R. Subhash Reddy",
+    "Mohan M. Shantanagoudar"
+  ],
+  "author": "Mohan M. Shantanagoudar",
+  "bench_type": "division",
+  "petitioner": "M/S. Baspa Organics Limited.",
+  "respondent": "United India Insurance Company ...",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 12,
+  "cited_by_count": 4,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR 2020 SUPREME COURT 1712",
+    "AIRONLINE 2020 SC 204",
+    "(2020) 3 SCALE 595"
+  ],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2020\\FEB\\2020_FEB_50.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO. 13401 OF 2015\n\n M/S BASPA ORGANICS LIMITED ...APPELLANT\n\n VERSUS\n\n UNITED INDIA INSURANCE COMPANY LTD. …RESPONDENT\n\n JUDGMENT\nMOHAN M. SHANTANAGOUDAR, J.\nThe present appeal arises out of the judgment dated\n\n 21.07.2015 passed by the National Consumer Disputes\n\n Redressal Commission, New Delhi (“National Commission”)\n\n dismissing the consumer complaint (Original Petition No. 48 of\n\n 2004) filed by the Appellant herein.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P002_C01",
+      "text": "2. The facts giving rise to this appeal are as follows:\n2.1 One M/s Shrirang Agro Chemical Pvt. Ltd., having its\n\n factory premises in Tarapur, Thane District, was engaged in the\n\ngrowing cash crops. The said factory premises had become a\n\nsick unit, and was auctioned off by the Maharashtra State\n\nFinancial Corporation (“MSFC”). The bidding took place on\n\n14.03.2001, and on 15.03.2001, the Appellant was declared the\n\nhighest bidder, having quoted a price of Rs. 4 crores.\n\n2.2 The Appellant commenced production of CMAC in\n\nNovember 2001. The previous company (Shrirang Agro\n\nChemical Pvt. Ltd.) had taken an insurance coverage from the\n\nRespondent, and the Appellant continued this coverage. To this\n\nend, after inspecting the plant and machinery, a Fire and\n\nSpecial Perils Policy was issued by the Respondent from\n\n12.11.2001 to 11.12.2001 insuring the subject premises for a\n\ntotal Insured Declared Value of Rs.12.5 crores. The said policy\n\nwas continued for the period between 12.12.2001 and\n\n11.01.2002 as well.\n2.3 On 03.01.2002, a fire broke out at the factory\n\npremises, based on which the Appellant filed a claim with the\n\nRespondent.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P002_C02",
+      "text": "On 30.01.2004, based on reports from the three\n\nsurveyors, the Respondent repudiated the claim of the\n\nAppellant on two grounds. It was held, firstly, that the Appellant\n\nhad purchased the factory premises for only Rs. 4 crores, but\n\nhad overvalued it and taken a policy for an excessive value of\n\nRs. 12.5 crores, and secondly, that the Appellant suppressed\n\nthe material fact of not being duly licensed for the storage and\n\nuse of Hexane at the factory. Aggrieved by such repudiation,\n\nthe Appellant filed a consumer complaint before the National\n\nCommission.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P003_C01",
+      "text": "3. The National Commission dismissed the Appellant’s\n\ncomplaint, holding that the repudiation was justified on both\n\nthe above counts, i.e., that the Appellant had overstated the\n\nvalue of the factory while taking insurance, and that the\n\nAppellant was operating without obtaining the requisite licence\n\nfor the storage of Hexane. It is against this dismissal that the\n\nAppellant has approached this Court by way of an appeal under\nSection 23\nof the Consumer Protection Act, 1986.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P004_C01",
+      "text": "4. Learned Senior Counsel appearing on behalf of the\n\nAppellant, Shri S.S. Naphade, argued against the appointment\n\nof the third surveyor, S.B. Nalluri & Associates (“third\n\nsurveyor”). He contended that once the second surveyor,\n\nMehta and Padamsey Surveyors Pvt. Ltd. (“second surveyor”),\n\nhad clearly assessed the loss and submitted a detailed report\n\nwherein it had ruled out any mala fides on part of the\n\nAppellant, there was no occasion to appoint the third surveyor.\nLearned Senior Counsel also relied on the notification dated\n\n21.11.2001 issued by the Ministry of Petroleum and Natural Gas\n\nin exercise of its powers under the\nEssential Commodities Act,\n\n(“the\nEssential Commodities Act\n”), to argue that the\n\nAppellant was exempt from obtaining a licence for storage of\n\nHexane, since according to him, the Appellant had stored less\n\nthan 20 kilolitres of Hexane. It was submitted that the said\n\nnotification clearly stipulated that there was no requirement of\n\na licence for storing up to 20 kilolitres of Hexane.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P005_C01",
+      "text": "5. On the other hand, learned Senior Counsel appearing\n\non behalf of the Respondent, Shri P.P. Malhotra, contended that\n\nrepudiation of the claim was justified, inasmuch as the\n\nAppellant had not disclosed that it was not in possession of the\n\nrequisite licence for storing Hexane. It was contended that the\n\nAppellant was required to obtain a licence as per either\nArticle\n\nArticle 7\nof the First Schedule to the Petroleum Rules, 1976\n\n(“1976 Rules”).\n5.1 It was further argued that even assuming that the\n\naforementioned notification dated 21.11.2001 exempted the\n\nRespondent from obtaining a licence for storing Hexane up to\n\n20 kilolitres, the second surveyor’s report, against which the\n\nAppellant had not raised any objection, was categorical in its\n\nfinding that the factory premises held over 90 kilolitres of\n\nHexane, out of which 79.152 kilolitres of Hexane had suffered\n\ndamage. Thus, no reliance could be placed on the exemption\n\nunder this notification in the instant facts and circumstances.\n\n5.2 Learned Counsel also argued in favour of the finding\n\nof the National Commission with respect to overvaluation of the\n\nsubject factory by the Appellant while taking insurance.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P006_C01",
+      "text": "6. At the outset, we must observe that we are at a loss\n\nto understand why the insurance policy was taken by the\n\nAppellant for only one month and extended thereafter, again,\n\nfor only one more month. It is also quite perplexing as to why\n\nthe Respondent agreed to issue a policy for such a short period\n\nof time, and no plausible reasons are forthcoming from the\n\nrecords to explain the peculiar nature of this transaction.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P007_C01",
+      "text": "7. Be that as it may, upon perusing the material on\n\nrecord and after hearing the learned counsel, we find that two\n\nissues arise in the instant case, to determine whether\n\nrepudiation of the claim was justified for breach of policy terms:\n\n(i) whether the Appellant was not duly licensed to store\n\nHexane, and therefore had suppressed a material fact, thus\n\nbreaching Clause 1 of the policy, and\n(ii) whether the Appellant overvalued the subject factory\n\nwhile taking insurance, amounting to fraud under Clause 8 of\n\nthe policy.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P008_C01",
+      "text": "8. In this regard, we find it relevant to reproduce the\n\nsaid clauses of the insurance policy:\n“1. This policy shall be voidable in the event of mis-\n representation, mis-description or non-disclosure of\n any material particular.\nxxx",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P009_C01",
+      "text": "8. If the claim be in any respect fraudulent, or if any\n false declaration be made or used in support thereof\n or if any fraudulent means or devices are used by the\n insured or any one acting on his behalf to obtain any\n benefit under the policy or if the loss or damage be\n occasioned by the willful act, or with the connivance\n of the insured, all benefits under this policy shall be\n forfeited.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P010_C01",
+      "text": "9. With respect to the question of licensing, the\n\nRespondent’s case is that the Appellant had not disclosed that\n\nit had stored Hexane without having obtained a licence for the\n\nsame, as required under the 1976 Rules. In this respect, the\n\nRespondent has relied on\nArticles 3\nand\n\nof the First Schedule\n\nto the 1976 Rules.\nArticles 3\nand\n\nspecifically refer to\n\npetroleum Class A, which is defined as follows under\nSection\n\n2(b)\nof the Petroleum Act, 1934 (“the\nPetroleum Act\n”):\n“(b) “petroleum Class A” means petroleum having a\n flash-point below twenty-three degree centigrade”.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P011_C01",
+      "text": "10. To show that Hexane falls within Class A, learned\n\nCounsel for the Respondent has drawn our attention to\n\nliterature from the National Fire Protection Association (“the\n\nNFPA”), an international non-profit organisation working\n\ntowards eliminating death, injury, property and economic loss\n\ndue to fire. As per the records of physical properties of selected\n\nchemicals prepared by the NFPA, the flash point of n-Hexane is\n-23°C.1 Admittedly, the substance being stored by the Appellant\n\nwas n-Hexane, or normal Hexane. Indeed, as per nomenclature\n\nadopted by the International Union of Pure and Applied\n\nChemistry, the substance carrying the molecular formula C 6H14\n\nis known as “Hexane” or “n-Hexane”. 2 This is also supported\n\nby Bretherick’s Handbook of Reactive Chemical Hazards ,\n\nreferred to by the Respondent, which notes that Hexane,\n\nNFPA 497, Recommended Practice for the Classification of\nFlammable Liquids, Gases, or Vapors and of Hazardous (Classified)\nLocations for Electrical Installations in Chemical Process Areas (2017\nedition).",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P011_C02",
+      "text": "National Center for Biotechnology Information, PubChem\nCompound Database, available at\nhttps://pubchem.ncbi.nlm.nih.gov/compound/Hexane.\n\nhaving the formula C6H14, has a flash point of -23°C. 3 Since the\n\nflash point of the substance is well below 23°C, it can safely be\n\nsaid that it falls under the category of petroleum Class A.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P012_C01",
+      "text": "11. Against this backdrop, we find it useful to refer to the\n\nrelevant Articles of the First Schedule to the 1976 Rules, which\n\nwere the rules in force as on the date of the incident:\nFIRST SCHEDULE\n\n Article Form Purpose Authority Fee\n of for empower\n licence which ed to\n granted grant\n licence\n1 2 3 4 5\n3 X To import District Rs. 20 for every\n and store Authority calendar year or\n petroleu part thereof.\nm Class\n A in\n quantity\n not\n exceedin\n g 300\n litres.\nxx xx xx xx xx\n 6 XIII To import Chief\n and store Controller\n petroleu or a\n m in an Controller\n installati of\n on. Explosives\n\nBRETHERICK’S HANDBOOK OF REACTIVE CHEMICAL HAZARDS, Vol. I, 2032\n(PG Urben ed., 7th edition, 2006).\n\nauthorised\n in this\n behalf by\n the Chief\n Controller.\n7 XIV To import Petroleum Class B\n and store – When stored in\n otherwis bulk or with any\n e than in other class of\n bulk (a) petroleum or\n petroleu when stored in\n m Class quantities\n A in exceeding 25,000\n quantitie litres.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P012_C02",
+      "text": "The same\n s fee as laid down\n exceedin for petroleum\n g 300 Class A.\n litres, (b)\n petroleu\n m Class\n B in\n quantitie\n exceedin\n g 25,000\n litres (c)\n petroleu\n m Class\n C in\n quantitie\n exceedin\n g 45,000\n litres or\n (d) partly\n one class\n and\n partly\n two class\n petroleu\n\nm.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P013_C01",
+      "text": "12. Before looking into whether the Appellant was\n\nrequired to obtain a licence under the provisions reproduced\n\nabove, it is relevant to note that the Appellant has not\n\nchallenged the second surveyor’s report, or its finding that the\n\nfactory premises contained over 90 kilolitres of Hexane, out of\n\nwhich 79.152 kilolitres were damaged. On the contrary, the\n\nAppellant seeks to rely on the report heavily.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P014_C01",
+      "text": "13. The Respondent has contended that the Appellant\n\nwas required to obtain a valid licence under the\nPetroleum Act\nand the 1976 Rules. In this regard, it is pertinent to note that\nSection 8\nof the Petroleum Act makes it clear that storage of\n\nsmall quantities of petroleum Class A does not require any\n\nlicence. It reads:\n“8. No licence needed for import, transport or\n storage of small quantities of petroleum Class\n A.—(1) Notwithstanding anything contained in this\n Chapter, a person need not obtain a licence for the\n import, transport or storage of petroleum Class A not\n intended for sale if the total quantity in his\n possession does not exceed thirty litres. (2) Petroleum Class A possessed without a licence\n under this section shall be kept in securely stoppered\n receptacles of glass, stoneware or metal which shall\n not, in the case of receptacles of glass or stoneware,\n exceed one litre in capacity or, in the case of\n\nreceptacles of metal exceed twenty-five litres in\n capacity.”\n\n13.1 Therefore, it is evident that for the storage of\n\npetroleum Class A less than 30 litres in quantity, no licence is\n\nrequired under the\nPetroleum Act\nor rules thereunder.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P014_C02",
+      "text": "As per\nArticle 3\n, a licence issued by the District Authority is required\n\nfor importing and storing petroleum Class A in a quantity not\n\nexceeding 300 litres. Thus, the Respondent may be justified in\n\narguing that for storage of petroleum Class A ranging from 30\n\nlitres to 300 litres in quantity, a licence under\nArticle 3\nmay be\n\nrequired. However, in the instant case, it is clear that the\n\nAppellant had stored much more than 300 litres of Hexane, and\n\ntherefore, a licence under\nArticle 3\nwould not be sufficient.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P015_C01",
+      "text": "14. The Respondent also drew our attention to\nArticle 7\nof the 1976 Rules to further its argument on the requirement of\n\nthe licence.\nArticle 7\ndeals with storage of certain forms of\n\npetroleum otherwise than in bulk. The expression “ petroleum in\n\nbulk” is defined in clause (xv) of Rule 2 of the 1976 Rules as\n\nfollows:\n“(xv) “petroleum in bulk” means petroleum\n contained in a tank irrespective of the quantity of\n petroleum contained therein” (emphasis supplied)\n\n14.1 In turn, the term “tank” is defined in clause (xxii) of\n\nRule 2 in the following manner:\n“(xxii) “tank” means a receptacle for petroleum\n exceeding 1000 litres in capacity”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P016_C01",
+      "text": "15. From the definitions reproduced above, it becomes\n\nevident that irrespective of the quantity of petroleum, when\n\npetroleum is stored in a tank, it is referred to as “ petroleum in\n\nbulk” under the 1976 Rules. As mentioned earlier,\nArticle 7\n, on\n\nwhich the Respondent seeks to place reliance, deals with the\n\ngrant of a licence for storage of petroleum otherwise than in\n\nbulk, i.e. otherwise than in a tank. In other words, for petroleum\n\nClass A exceeding 300 litres, a licence under\nArticle 7\n\nrequired when it is not being stored in receptacles exceeding\n\n1000 litres in capacity.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P017_C01",
+      "text": "16. In this regard, we may also refer to Condition 2 of\n\nForm XIV of the Second Schedule to the 1976 Rules. Form XIV\n\ncorresponds to the licence granted under\nArticle 7\nof the First\n\nSchedule, and Condition 2 of the said Form reads as follows:\n“2. The petroleum shall be stored only in the storage\n shed which shall be constructed of suitable non-\n combustible materials, provided that when no\n petroleum Class A is stored, the beams, rafters,\n columns, windows and doors may be of wood.”\n\n(emphasis supplied)\n\n16.1 In turn, the term “store shed” is defined in clause\n\n(xxi) of Rule 2 as follows:\n“(xxi) “store shed” means a building used for the\n storage of petroleum otherwise than in bulk, whether\n forming part of an installation or not, but does not\n include a building used for the stores of petroleum\n exempt from licence under\nSections 7\n,\n\nor 9 of the\n Act”\n\n16.2 A store shed, therefore, is a building where\n\npetroleum is stored otherwise than in bulk, i.e., otherwise than\n\nin receptacles with a capacity of over 1000 litres. Most\n\nsignificantly, clause (xxi) of Rule 2 states that a store shed may\n\nbe a part of an “installation”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P017_C02",
+      "text": "At this juncture, it is relevant to\n\nnote that this term is also defined under the 1976 Rules, in\n\nclause (xiv) of Rule 2:\n“(xiv) “installation” means any premises wherein any\n place has been specially prepared for the storage of\n petroleum in bulk, but does not include a well-head\n tank or service station”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P018_C01",
+      "text": "17. Upon reading the definitions of “store shed” and\n\n“installation” together, it becomes clear that “ installation”\n\ncarries a much broader meaning. In order for any premises to\n\nbe an “installation” under the 1976 Rules, it must necessarily\n\ncontain a place specially prepared to store petroleum in bulk. In\n\nother words, such a place must have the capacity to hold\n\nreceptacles with a capacity of 1000 litres or more (which would\n\nbe nothing but a “tank” as defined under the 1976 Rules). At\n\nthe same time, an installation may also have the capacity to\n\nstore petroleum otherwise than in bulk. An installation,\n\ntherefore, may consist of both tanks and storage sheds, or it\n\nmay consist only of tanks.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P019_C01",
+      "text": "18. In the instant case, the second surveyor had clearly\n\nstated that the Hexane had leaked from the tanks in which it\n\nwas stored. However, it is not clear from the material on record\n\nwhether or not the term “tank” was assigned the same\n\nmeaning as under the 1976 Rules. If the tanks referred to by\n\nthe second surveyor were receptacles that could not store\n\nmore than 1000 litres of petroleum, then they would not\n\nconstitute “tanks” under the 1976 Rules, and the petroleum\n\nstored in such tanks would fall under the category of petroleum\n\nstored “otherwise than in bulk”. In such a case, a licence would\n\nbe required under\nArticle 7.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P020_C01",
+      "text": "19. At this stage, we may fruitfully refer to the\n\napplication preferred by the Appellant to obtain a licence under\n\nArticle 6\nof the First Schedule to the 1976 Rules, which pertains\n\nto the import and storage of petroleum in an installation, vide\n\nletter dated 22.10.2001. In its response to the above\n\napplication, the Controller of Explosives, Nagpur noted vide\n\nletter dated 05.11.2001, that the drawings of the site and\n\nlayout of the proposed installation had been approved, subject\n\nto the condition that the pump/motor to be incorporated were\n\nflame proof, in accordance with IS:2148. Further, the Appellant\n\nwas asked to submit certain documents that were necessary in\n\nconnection with the grant of the licence applied for, such as an\n\napplication under Form VIII (which is an application for the\n\ngrant, amendment, renewal, or transfer of a licence to import\n\nand store petroleum), a Safety and Test Certificate required\n\nunder Rule 130 and 126 of the 1976 Rules issued by a\n\ncompetent person, a No-Objection Certificate from the Local\n\nDistrict Authority along with the site plan duly endorsed by\n\nsuch authority, and so on.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P020_C02",
+      "text": "Additionally, the Appellant was\n\ndirected to comply with the provisions of the Solvent, Raffinate\n\nand Slop (Acquisition, Sale, Storage and Prevention of Use in\n\nAutomobiles) Order, 2000 (“the 2000 Order”).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P021_C01",
+      "text": "20. The above communication clearly indicates that even\n\nthe Controller of Explosives was of the opinion that the\n\npremises where the Appellant was storing Hexane amounted to\n\nan “installation”. As we have discussed supra, for a premises to\n\nbe considered as an installation, it must contain a place\n\nprepared to hold “tanks” as defined under the 1976 Rules. This\n\nstrongly suggests that the “tanks” referred to by the second\n\nsurveyor were indeed “tanks” as envisaged under the 1976\n\nRules. In our considered view, this shows that the Appellant\n\nmay well have been required to obtain a licence under\nArticle 6\nitself.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P022_C01",
+      "text": "21. It is not the case of the Appellant that it provided the\n\ndocuments stipulated by the Controller of Explosives. No\n\nfurther communication between the Appellant and the said\n\nauthority has been placed on record either. There is nothing on\n\nrecord to show that a licence under\nArticle 6\nwas granted to the\n\nAppellant.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P023_C01",
+      "text": "22. In light of the above discussion, we are of the view\n\nthat the Appellant was required to obtain a licence under the\n\n1976 Rules for the storage of Hexane, be it under\nArticle 6\nor 7,\n\nand has failed to show that it possessed any such licence.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P024_C01",
+      "text": "23. Having examined the scheme of the 1976 Rules with\n\nrespect to licensing requirements, we may now turn to the\n\nAppellant’s contention that it was exempt from obtaining a\n\nlicence under the said rules, by virtue of the notification dated\n\n21.11.2001 issued by the Ministry of Petroleum and Natural\n\nGas, amending the 2000 Order. The relevant clause of the\n\namended order that is being relied upon by the Appellant is as\n\nfollows:\n“3. Restriction on sale and use of solvents,\n raffinates, slops and other product:-\n(1) No person shall either acquire, store or sell\n solvents included in the Schedule, without a licence\n issued by the State Government or the District\n Magistrate or any other Officer authorised by the\n Central or the State Government;\nProvided that no such licence shall be required for\n consumption of 50 KLs per month or less and storage\n of 20 KLs or less of solvents listed in the Schedule\n combined.”",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P025_C01",
+      "text": "24. Evidently, there is an exemption carved out in the\n\nproviso dispensing with the need for a licence in the cases laid\n\ndown thereunder. Significantly, Hexane is mentioned in the\n\nSchedule referred to in the above clause, making it clear that\n\nthe substance is governed by the same. The Appellant seeks to\n\nargue that pursuant to the above proviso, it was not required to\n\nobtain a licence under the 1976 Rules for the storage of\n\nHexane on its premises. In order to determine whether the\n\nreference to a “licence” in the said clause includes licences\n\nunder the\nPetroleum Act\n, it is essential to examine the\n\nbackground and scheme of the 2000 Order.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P026_C01",
+      "text": "25. A glance at the notification dated 21.11.2001,\n\namending the 2000 Order, as well as the said order itself,\n\nreveals that both were issued in exercise of the powers of the\n\nCentral Government under\nSection 3(1)\nof the Essential\n\nCommodities Act. This statute, as is evident from its Statement\n\nof Objects and Reasons, was enacted to provide for the control\n\nof the production, supply and distribution of and trade and\n\ncommerce in certain commodities, in the interest of the general\n\npublic. Further,\nSection 3\nempowers the Central Government to\n\npass orders providing for the regulation or prohibition of the\n\nproduction, supply and distribution of any essential commodity,\n\nand trade and commerce therein, under certain conditions. Section 3(1)\n, in particular, reads as follows:\n“3.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P026_C02",
+      "text": "Powers to control production, supply,\n distribution, etc., of essential commodities.―\n (1) If the Central Government is of opinion that it is\n necessary or expedient so to do for maintaining or\n increasing supplies of any essential commodity or for\n\nsecuring their equitable distribution and availability\n at fair prices, or for securing any essential\n commodity for the defence of India or the efficient\n conduct of military operations, it may, by order,\n provide for regulating or prohibiting the production,\n supply and distribution thereof and trade and\n commerce therein.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P027_C01",
+      "text": "26. Clearly, orders under\nSection 3(1)\nmay pertain to the\n\nfollowing objectives:\n(i) maintaining or increasing supplies of any essential\n\ncommodity;\n(ii) securing the equitable distribution and availability at\n\nfair prices of such commodity; or,\n(iii) securing any essential commodity for the defence of\n\nIndia or the efficient conduct of military operations.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P028_C01",
+      "text": "27. Furthermore,\nSection 3(2)\ncontemplates particular\n\naspects with respect to which orders may be passed in exercise\n\nof the power under\nSection 3(1)\n. In this regard, it is relevant to\n\nrefer to clause (d) of\nSection 3(2)\n:\n“(2) Without prejudice to the generality of the powers\n conferred by sub-section (1), an order made\n thereunder may provide―\n xxx\n\n(d) for regulating by licences, permits or otherwise\n the storage, transport, distribution, disposal,\n acquisition, use or consumption of, any essential\n commodity”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P029_C01",
+      "text": "28. Thus, it is clear that the Central Government has the\n\npower to pass orders under the\nEssential Commodities Act\n\nprovide for licensing regimes governing the storage of an\n\nessential commodity, in pursuance of the three objectives set\n\nout in\nSection 3(1)\n. The 2000 Order, in our considered view, is\n\none such order, providing for a licensing regime regulating the\n\nacquisition, sale, storage and prevention of use in automobiles\n\nof solvents, raffinates and slops, particularly for the purposes of\n\nthe\nEssential Commodities Act\n. There is nothing in the said\n\norder to suggest that it intends to replace or modify any other\n\nexisting licensing regime under any other law in force, including\n\nthe\nPetroleum Act\nand the rules formulated thereunder.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P030_C01",
+      "text": "29. In fact, we find that the notifications issued in\n\npursuance of the 2000 Order set to rest any residual doubt in\n\nthis regard. For instance, a perusal of G.R.S. 578(E), an order\n\ndated 30.06.2000 issued by the Central Government under\n\nClause 3 of the 2000 Order, clearly reveals that the licence\n\nbeing referred to under the order is the Solvent, Raffinate and\n\nSlop Licence. The said notification reiterates that the said\n\nlicence is to be issued by the State Government, District\n\nMagistrate, or the officer authorised by the Central or State\n\nGovernment, as also mentioned in Clause 3(1) of the 2000\n\nOrder.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P031_C01",
+      "text": "30. There cannot be any dispute that the licence issued\n\nunder the\nEssential Commodities Act\nand control orders are for\n\na different purpose altogether compared to the\nPetroleum Act\n. Thus, it is clear that the licensing regime envisaged in clause 3\n\nof the 2000 Order, and the exemption granted thereto, is in\n\naddition to the licensing requirements under the\nPetroleum Act\n. The direction of the Controller of Explosives vide letter dated\n\n05.11.2001 to comply with the requirements under the 2000\n\nOrder is an additional requirement to be complied with in order\n\nto obtain a licence under the\nPetroleum Act\n. It cannot be said\n\nthat an exemption from obtaining a licence under the 2000\n\nOrder would amount to an exemption to obtain a licence under\n\nthe\nPetroleum Act\n. Hence, even assuming that the Appellant\n\nwas exempt from obtaining a licence under the 2000 Order by\n\nvirtue of the said exemption, the Appellant was still required to\n\nobtain a licence in accordance with the 1976 Rules. We hasten\n\nto add here that, as already mentioned supra, the quantity of\n\nHexane stored by the Appellant was more than 20 kilolitres.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P031_C02",
+      "text": "Hence, the Appellant was required to obtain a licence under the\n\n2000 Order as well.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P032_C01",
+      "text": "31. From the above discussion, it is evident that the 1976\n\nRules prescribed that a licence had to be obtained for the\n\npurposes of storing Hexane of the quantity involved in the\n\ninstant case, and the Appellant has failed to comply with this\n\nrequirement. In the absence of such a licence, the Appellant\n\ncould not have lawfully stored Hexane. Therefore, we are of the\n\nview that the non-disclosure of the non-possession of a licence\n\nwas of a material nature, and constituted a violation of\n\nCondition 1 of the insurance policy. As a result, we are inclined\n\nto affirm the finding of the National Commission that the\n\nRespondent was justified in repudiating the claim of the\n\nAppellant on this ground.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P033_C01",
+      "text": "32. The second issue, regarding the overvaluation of the\n\nsubject factory, was not seriously argued by either party.\n\nMoreover, it is a question of fact, which this Court generally\n\ndoes not probe deeply. Thus, we shall refrain from examining\n\nthe merits thereof. The same is also unnecessary in light of our\n\nabove finding that the repudiation of the instant claim was\n\njustified on the ground pertaining to the Appellant lacking a\n\nlicence for storing Hexane under the\nPetroleum Act\nand 1976\n\nRules.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P034_C01",
+      "text": "33. Before we part with this matter, we may note that\n\nsome objection was raised by the Appellant against the\n\nappointment of the third surveyor by the Respondent. Suffice it\n\nto state that the appointment of the third surveyor was for the\n\nlimited purpose of examining whether the Appellant was in\n\npossession of the requisite licences for the storage of Hexane. Moreover, neither did the findings of the third surveyor disturb\n\nthe findings of the second surveyor, nor were they material to\n\nthe conclusion against the Appellant arrived at by the National\n\nCommission. The second surveyor had given a categorical\n\nfinding that about 90 kilolitres of Hexane were stored in the\n\nfactory premises, and this finding has not been challenged by\n\nthe Appellant. At the same time, while the findings of the third\n\nsurveyor supplement the reasoning of the National Commission\n\nvis-à-vis the absence of a licence under the\nPetroleum Act\nand\n\n1976 Rules, they are not crucial to this conclusion, inasmuch as\n\nthe Appellant itself never contended that it was in possession of\n\nthe requisite licences for the storage of Hexane.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P034_C02",
+      "text": "As a result, we\n\nfind that irrespective of whether or not the appointment of the\n\nthird surveyor was proper, the findings of the said surveyor do\n\nnot materially affect the outcome of the instant case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P035_C01",
+      "text": "34. In light of the above discussion, we find no reason to\n\ninterfere with the conclusion in the impugned judgement of the\n\nNational Commission that the repudiation of the claim was\n\njustified for breach of Clauses 1 and 8 of the insurance policy.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY_P036_C01",
+      "text": "35. The instant appeal is therefore dismissed. Ordered\n\naccordingly.\n…..…………................................J.\n (MOHAN M. SHANTANAGOUDAR)\n\n .……………………………...............J.\n (R. SUBHASH REDDY)\nNew Delhi;\nFebruary 14, 2020",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "M/S. Baspa Organics Limited. vs United India Insurance Company ...",
+    "case_id": "SC_2020_MS_BASPA_ORGANICS_LIMITED_VS_UNITED_INDIA_INSURANCE_COMPANY",
+    "court": "Supreme Court of India",
+    "year": "2020",
+    "facts_summary": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO. 13401 OF 2015\n\n M/S BASPA ORGANICS LIMITED ...APPELLANT\n\n VERSUS\n\n UNITED INDIA INSURANCE COMPANY LTD. …RESPONDENT\n\n JUDGMENT\nMOHAN M. SHANTANAGOUDAR, J.\nThe present appeal arises out of the judgment dated\n\n 21.07.2015 passed by the National Consumer Disputes\n\n Redressal Commission, New Delhi (“National Commission”)\n\n dismissing the consumer complaint (Original Petition No. 48 of\n\n 2004) filed by the Appellant herein. 2. The facts giving rise to this appeal are as follows:\n2.1 One M/s Shrirang Agro Chemical Pvt. Ltd., having its\n\n factory premises in Tarapur, Thane District, was engaged in the\n\ngrowing cash crops. The said factory premises had become a\n\nsick unit, and was auctioned off by the Maharashtra State\n\nFinancial Corporation (“MSFC”). The bidding took place on\n\n14.03.2001, and on 15.03.2001, the Appellant was declared the\n\nhighest bidder, having quoted a price of Rs. 4 crores.\n\n2.2 The Appellant commenced production of CMAC in\n\nNovember 2001. The previous company (Shrirang Agro\n\nChemical Pvt. Ltd.) had taken an insurance coverage from the\n\nRespondent, and the Appellant continued this coverage. To this\n\nend, after inspecting the plant and machinery, a Fire and\n\nSpecial Perils Policy was issued by the Respondent from\n\n12.11.2001 to 11.12.2001 insuring the subject premises for a\n\ntotal Insured Declared Value of Rs.12.5 crores. The said policy\n\nwas continued for the period between 12.12.2001 and\n\n11.01.2002 as well.\n2.3 On 0",
+    "legal_issues": "4. Learned Senior Counsel appearing on behalf of the\n\nAppellant, Shri S.S. Naphade, argued against the appointment\n\nof the third surveyor, S.B. Nalluri & Associates (“third\n\nsurveyor”). He contended that once the second surveyor,\n\nMehta and Padamsey Surveyors Pvt. Ltd. (“second surveyor”),\n\nhad clearly assessed the loss and submitted a detailed report\n\nwherein it had ruled out any mala fides on part of the\n\nAppellant, there was no occasion to appoint the third surveyor.\nLearned Senior Counsel also relied on the notification dated\n\n21.11.2001 issued by the Ministry of Petroleum and Natural Gas\n\nin exercise of its powers under the\nEssential Commodities Act,\n\n(“the\nEssential Commodities Act\n”), to argue that the\n\nAppellant was exempt from obtaining a licence for storage of\n\nHexane, since according to him, the Appellant had stored less\n\nthan 20 kilolitres of Hexane. It was submitted that the said\n\nnotification clearly stipulated that there was no requirement of\n\na licence for storing up to 20 kilolitres of Hexane. 5. On the other hand, learned Senior Counsel appearing\n\non behalf of the Respondent, Shri P.P. Malhotra, contended that\n\nrepudiation of the claim was justified, inasmuch as the\n\nAppellant had not disclosed that it was not in possession of the\n\nrequisite licence for storing Hexane. It was contended that the\n\nAppellant was required to obtain a licence as per either\nArticle\n\nArticle 7\nof the First Schedule to the Petroleum Rules, 1976\n\n(“1976 Rules”).\n5.1 It was further ar",
+    "ratio_summary": "9. With respect to the question of licensing, the\n\nRespondent’s case is that the Appellant had not disclosed that\n\nit had stored Hexane without having obtained a licence for the\n\nsame, as required under the 1976 Rules. In this respect, the\n\nRespondent has relied on\nArticles 3\nand\n\nof the First Schedule\n\nto the 1976 Rules.\nArticles 3\nand\n\nspecifically refer to\n\npetroleum Class A, which is defined as follows under\nSection\n\n2(b)\nof the Petroleum Act, 1934 (“the\nPetroleum Act\n”):\n“(b) “petroleum Class A” means petroleum having a\n flash-point below twenty-three degree centigrade”.",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

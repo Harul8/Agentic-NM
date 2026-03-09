@@ -1,0 +1,545 @@
+{
+  "case_id": "SC_2025_2025_MAY_25",
+  "case_name": "Lal Mohd vs State Of U.P",
+  "normalized_case_name": "LAL_MOHD_VS_STATE_OF_U.P",
+  "court": "Supreme Court of India",
+  "year": "2025",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "14 May 2025",
+  "judges": [
+    "Vikram Nath"
+  ],
+  "author": "Vikram Nath",
+  "bench_type": "single",
+  "petitioner": "Lal Mohd",
+  "respondent": "State Of U.P",
+  "reporter_citations": [
+    "2025 INSC 811"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 33,
+  "cited_by_count": 0,
+  "neutral_citation": "2025 INSC 811",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2025\\MAY\\2025_MAY_25.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2025_2025_MAY_25_P001_C01",
+      "text": "REPORTABLE\n\n CRIMINAL APPELLATE JURISDICTION\n\n CRIMINAL APPEAL NO(S). OF 2025\n (Arising out of SLP (Crl.) No (s). 6607 of 2023)\n\n LAL MOHD. & ANR. ….APPELLANT(S)\n\n VERSUS\n\n STATE OF U.P. & ORS. ….RESPONDENT(S)\n\n JUDGMENT\nMehta, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2025_2025_MAY_25_P002_C01",
+      "text": "3. The present appeal by special leave, arises out\n of the final judgment and order dated 3rd May, 20231,\n passed by the learned Division Bench of the High\n Court of Judicature at Allahabad2, in Criminal\n\nfiled by the appellants seeking quashing of First\nInformation Report3, in CC No. 132 of 20234 dated\n30th April, 2023, under Section 3(1) of the Uttar\nPradesh Gangsters & Anti-Social Activities\n(Prevention) Act, 19865, lodged at Police Station\nKhargupur, District-Gonda, Uttar Pradesh.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_2025_MAY_25_P003_C01",
+      "text": "4. The factual background, essential for the\ndisposal of the instant appeal, is as follows:\n4.1 The appellants herein claim to be members of a\npolitical party in the State of Uttar Pradesh. Appellant No. 1 is a former two-time elected\nChairman of the Nagar Panchayat, and appellant No.\n2 is the son of appellant No. 1.\n4.2 On 10th October, 2022, one Rikki Modanwal\nmade a post on a social media platform in which he\nallegedly used language perceived as defamatory\ntowards a particular religion. In response, several\nbelievers of that religion (including the appellants\n\n3 For short ‘FIR’.\n4 Hereinafter referred to as ‘impugned FIR’\n5 Hereinafter referred to as the ‘UP Gangsters Act’. Crl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\nherein) assembled outside the shop owned by Rikki\nModanwal raising vociferous protests against the\nsaid social media post. The protests escalated into\nviolence and acts of vandalism between two different\nreligious groups. Multiple FIR(s) were registered on\n11th October 2022, against the people involved in the\naforesaid incidents.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_2025_MAY_25_P003_C02",
+      "text": "An FIR, bearing CC No. 294 of\n20226, was registered by Sonu Modanwal nominating\n41 accused persons, which included the appellants\nherein, for offences punishable under\nSections 147\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n, and\n\nof Indian\nPenal Code, 18607 and Section 7 of the Criminal Law\nAmendment Act, 20138, at Police Station Khargupur,\nDistrict Gonda, Uttar Pradesh. Subsequently, a\nsecond FIR, bearing CC No. 296 of 20229, was\nregistered by Sub-Inspector Bhole Shankar on the\nsame date, against members of both religious groups\n(including the appellants and Rikki Modanwal) under\nSections 147\n,\n\n,\n\n,\n\n,\n\n,\n\n, and\n\nthe IPC and Section 7 of the Act 2013, and\nSections\n\nand\n\nof the Prevention of Damage to Public\n\n6 Hereinafter referred to as the ‘First FIR.’\n7 Hereinafter referred to as ‘\nIPC\n’.\n8 Hereinafter referred to as ‘Act 2013’.\n9 Hereinafter referred to as the ‘Second FIR.’\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\nProperty Act, 1984, at Police Station Khargupur,\nDistrict Gonda, Uttar Pradesh.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_2025_MAY_25_P003_C03",
+      "text": "As a sequel to the\ninvestigation into the FIRs registered in relation to\nthe aforesaid incident, the appellants herein were\narrested and then released on bail.\n4.3 On 30th April, 2023, Arun Kumar Dwivedi,\nInspector-in-charge, filed the impugned FIR against\nthe appellants herein and 39 other accused, under\nSection 3(1) of the UP Gangsters Act alleging inter\nalia, that on 10th October, 2022, at around 8:00 P.M.,\na group of assailants, led by appellant No. 1, gathered\nat Rikki Modanwal’s shop in Subzi Mandi,\nKhargupur, armed with lathis and glass bottles. They\nreportedly hurled abuses, issued death threats, and\nvandalised the shop while protesting against the\nsocial media post that targeted a specific religious\ngroup. The incident led to fear in public, and\ndisruption of law and order. A Gang Chart was\nprepared under the UP Gangsters Act and approval\nfor registration of an FIR against the accused persons\nwas granted by the District Magistrate vide sanction\nletter dated 29th April, 2023. Crl.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_2025_MAY_25_P003_C04",
+      "text": "Appeal @ SLP (Crl.) No (s). 6607 of 2023\n4.4 Aggrieved by the registration of impugned FIR\ninvoking the provisions of the UP Gangsters Act, the\nappellants approached the High Court of Judicature\nat Allahabad, by way of a criminal writ petition,\nseeking quashing of the said FIR and a direction to\nthe concerned authorities to produce the gang chart,\nif any, prepared by them, on the basis of which Arun\nKumar Dwivedi, Inspector-in-Charge, had lodged the\nimpugned FIR. The High Court, vide judgment dated\n3rd May, 2023, dismissed the said writ petition, which\nis assailed by the appellants herein in this appeal by\nspecial leave. Submissions on behalf of the appellants: -",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_2025_MAY_25_P004_C01",
+      "text": "5. Learned counsel for the appellants, vehemently\nand fervently contended that the High Court\nseriously erred in rejecting the prayer seeking\nquashing of the impugned FIR. In this regard, he\nadvanced the following submissions:\n5.1 That, in the present case, the two earlier FIRs,\nbearing CC No. 294 and CC No. 296 of 2022, were\nregistered on 11th October, 2022, for the same\nincident, involving identical allegations and the same\nset of accused persons. The contents of both FIRs\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\nrelate to the events that unfolded on 10th October,\n2022 in Khargupur, Uttar Pradesh, leading to the\narrest of the appellants and their subsequent release\non bail upon the order of the competent court. However, nearly six months subsequent to the two\nearlier FIRs being registered, the impugned FIR came\nto be registered on 30th April, 2023, under the UP\nGangsters Act, which is based entirely on the same\nallegations set out in the above two FIRs.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_2025_MAY_25_P004_C02",
+      "text": "This highly\nbelated invocation of stringent law, in the absence of\nany intervening act or omission, gives rise to a strong\ninference of severe bias and a persecutory approach\non the part of the prosecuting agency.\n5.2 That the allegations as set out against the\nappellants in the impugned FIR do not meet the\nthreshold justifying invocation of the UP Gangsters\nAct, as there is no material indicating that they form\npart of a “gang” as defined under the UP Gangsters\nAct. There is no evidence/allegation against the\nappellants of repeated criminal activity, habitual\nbehaviour, or any intent to gain undue pecuniary\nadvantage. The appellants are not involved in any\norganised crime. They were simply a part of the\nspontaneous protest against the incendiary social\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\nmedia post made by Rikki Modanwal intended to hurt\nreligious sentiments. They have not formed any\nunlawful syndicate.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_2025_MAY_25_P004_C03",
+      "text": "Their alleged involvement in the\nprotest being a singular act is already being dealt\nwith under regular criminal law and for which bail\nhas already been granted to the appellants.\n5.3 That following their release on bail, no fresh\nmaterial was available to the prosecuting agency\nindicating continuing criminal activity, breach of\npublic order, or prejudicial conduct on the part of the\nappellants. The authorities are not seized of any fresh\nmaterial or credible evidence to indicate that the\nappellants have subsequently committed any offence\nor participated in any gangster-like activity. The\nimpugned FIR does not attribute any specific role or\nleadership to the appellants, nor does it mention any\nact that disturbed the peace after their arrest and\nrelease on bail in the previous FIRs. For invoking the\nUP Gangsters Act, there must be a demonstrable link\nthat connects the accused's actions with the\ndisruption of public order through anti-social\nconduct, yet there is neither a clear nexus between\nthe appellants and the alleged unlawful assembly\nthat turned violent, nor any sustained course of\n\nCrl.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_2025_MAY_25_P004_C04",
+      "text": "Appeal @ SLP (Crl.) No (s). 6607 of 2023\nconduct that can be concluded as intimidating or\ncoercive to the general public. The UP Gangsters Act\nwas introduced to target habitual offenders and\norganised crime syndicates, and not to penalise\nisolated acts of protest-related transgressions. Furthermore, the impugned FIR and gang chart only\nrefer to one of the FIRs, i.e., CC No. 294 of 2022, thus\ndemonstrating the lack of credible material to show\nany persistent or systemic activity that could justify\nthe invocation of the UP Gangsters Act under these\nfacts.\n5.4 That the impugned FIR under the Gangsters Act\nwas registered on 30th April, 2023, with mala fide\nintention. The timing of the FIR creates a grave doubt\non its bona fides as it came to be registered only 13\ndays after appellant No. 1's daughter-in-law filed her\nnomination for Chairmanship of Nagar Panchayat\nKhargupur on 17th April, 2023. The appellants had\nalready anticipated this false case and filed a\nrepresentation on 25th April, 2023, to the UP State\nElection Commission and Party President raising a\nconcern about misuse of the UP Gangsters Act. This\nrepresentation was filed 5 days before the FIR was\nactually registered.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_2025_MAY_25_P004_C05",
+      "text": "The proximity between the\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\npolitical nomination and the criminal case, along\nwith the appellants' anticipated expression of\nconcern to authorities, clearly shows that the UP\nGangsters Act is being used as a political vendetta\nrather than a genuine bona fide criminal prosecution. Therefore, the FIR should be quashed as it\ntantamounts to gross abuse of the process of law. On these grounds, learned counsel for the appellants\nimplored this Court to allow the present appeal, set\naside the judgment passed by the High Court, and\nquash the impugned FIR. Submissions on behalf of the Respondents:",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_2025_MAY_25_P005_C01",
+      "text": "6. Per Contra, learned counsel appearing for the\nState, vehemently and fervently opposed the\nsubmissions advanced on behalf of the appellants,\nand urged that the High Court has rightly rejected\nthe writ petition seeking the quashing of the\nimpugned FIR. In this regard, he has advanced the\nfollowing submissions:\n6.1 The facts disclosed in the first and second FIRs\nclearly show that the appellants led a large unlawful\nassembly equipped with weapons like lathis and glass\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\nbottles and actively participated in violent acts\ntargeting civilians and police personnel alike. The\ngroup, acting violently, vandalised the property of\nSonu Modanwal, created panic among local\nshopkeepers, and over and above that, caused severe\ndisruption to public peace, law & order.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_2025_MAY_25_P005_C02",
+      "text": "Such\ncoordinated violence, especially in a communally\nsensitive context, squarely falls within the ambit of\n‘anti-social activity’ and ‘disturbance of public order’\nas defined under the UP Gangsters Act, which is\nspecifically designed to address situations where\nindividual offences under the\nIPC\nprove inadequate to\nprevent the operation of criminal gangs that seek to\nintimidate, threaten, or gain undue advantage\nthrough violence.\n6.2 That the two earlier FIRs, namely, CC No. 294\nof 2022 and CC No. 296 of 2022 addressed specific\nincidents of violence, while the impugned FIR relates\nto the appellants’ continued involvement in organised\ncrime and their status as habitual offenders\nthreatening public order. The UP Gangsters Act\npermits prosecution based on a pattern of conduct\nthat demonstrates the existence of a gang involved in\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\ncriminal activities and its operation over a period of\ntime. The appellant’s conduct before and after bail,\ncoupled with witness accounts and local reports,\njustifies their classification as gang members.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_2025_MAY_25_P005_C03",
+      "text": "The\nlaw does not require a fresh incident for invoking the\nUP Gangsters Act if existing material establishes\ncontinued unlawful activity intending to create fear\nor extract undue benefit.\n6.3 The contention raised by the appellants, that\nthe UP Gangsters Act cannot be invoked merely\nbecause it refers to only one FIR, is misplaced and\nlegally unsustainable. The UP Gangsters Act does not\nprescribe a numerical threshold of offences/FIRs for\nits applicability. Rather, it focuses on the nature and\nintent of the act, whether it amounts to an anti-social\nactivity intended to disturb public order or to gain\nundue advantage. Learned counsel placed reliance\non the judgment of this Court in\nShraddha Gupta\nv. State of Uttar Pradesh and Others10\n, wherein it\nwas held that even a single offence or charge sheet\ncan form the basis for prosecution under the UP\nGangsters Act, provided it falls within the scope of\n\n10 2022 SCC OnLine SC 514. Crl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\nanti-social activities enumerated under Section 2(b)\nof the Act.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_2025_MAY_25_P005_C04",
+      "text": "Thus, even if the prosecution is based on\none or two offences, if the prejudicial acts involve\norganised crime, intimidation, or threat to public\norder, the invocation of Sections 2 and 3 of the UP\nGangsters Act remains entirely valid and enforceable.\n6.4 The appellant’s conduct in orchestrating a\nviolent riot on 11th October, 2022, which disrupted\ncommunal harmony and public peace, satisfies the\nessential requirements of the statutory provisions\nmaking the prosecution legally tenable. On these grounds, learned counsel for the\nrespondents implored this Court to reject the present\nappeal and uphold the judgment of the High Court. Analysis & Discussion",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_2025_MAY_25_P006_C01",
+      "text": "7. We have given our thoughtful consideration to\nthe submissions advanced at the bar and perused the\nmaterial available on record.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_2025_MAY_25_P007_C01",
+      "text": "8. Before delving into the submissions advanced\nby both the parties, it is essential to first examine the\nfoundational principles that govern the quashing of\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\ncomplaints and criminal proceedings at the\nthreshold. This Court in\nState of Haryana v. Bhajan Lal11\n, has laid down parameters for the\nquashing of an FIR and the proceedings subsequent\nthereto. The relevant paragraphs are reproduced\nherein below:\n“102.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_2025_MAY_25_P007_C02",
+      "text": "In the backdrop of the interpretation of the\n various relevant provisions of the Code under Chapter\n XIV and of the principles of law enunciated by this\n Court in a series of decisions relating to the exercise\n of the extraordinary power under\nArticle 226\nor the\n inherent powers under\nSection 482\nof the Code which\n we have extracted and reproduced above, we have\n given the following categories of cases by way of\n illustration wherein such power could be exercised\n either to prevent abuse of the process of any court or\n otherwise to secure the ends of justice, though it may\n not be possible to lay down any precise, clearly\n defined and sufficiently channelised and inflexible\n guidelines or rigid formulae and to give an exhaustive\n list of myriad kinds of cases wherein such power\n should be exercised. (1) Where the allegations made in the first\n information report or the complaint, even if they\n are taken at their face value and accepted in their\n entirety do not prima facie constitute any offence\n or make out a case against the accused.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_2025_MAY_25_P007_C03",
+      "text": "(2) Where the allegations in the first information\n report and other materials, if any, accompanying the\n FIR do not disclose a cognizable offence, justifying an\n investigation by police officers under\nSection 156(1)\n\n11 1992 Supp (1) SCC 335. Crl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\n the Code except under an order of a Magistrate within\n the purview of\nSection 155(2)\nof the Code. (3) Where the uncontroverted allegations made in\n the FIR or complaint and the evidence collected\n in support of the same do not disclose the\n commission of any offence and make out a case\n against the accused. (4) Where, the allegations in the FIR do not constitute\n a cognizable offence but constitute only a non-\n cognizable offence, no investigation is permitted by a\n police officer without an order of a Magistrate as\n contemplated under\nSection 155(2)\nof the Code. (5) Where the allegations made in the FIR or\n complaint are so absurd and inherently improbable\n on the basis of which no prudent person can ever\n reach a just conclusion that there is sufficient ground\n for proceeding against the accused.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_2025_MAY_25_P007_C04",
+      "text": "(6) Where there is an express legal bar engrafted in\n any of the provisions of the Code or the concerned Act\n (under which a criminal proceeding is instituted) to\n the institution and continuance of the proceedings\n and/or where there is a specific provision in the Code\n or the concerned Act, providing efficacious redress for\n the grievance of the aggrieved party. (7) Where a criminal proceeding is manifestly\n attended with mala fide and/or where the\n proceeding is maliciously instituted with an\n ulterior motive for wreaking vengeance on the\n accused and with a view to spite him due to\n private and personal grudge.”\n\n (emphasis supplied)\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\n9.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_2025_MAY_25_P007_C05",
+      "text": "The core issue, which is posed for the\nconsideration of this Court in the present appeal is,\nwhether the prosecution of the appellants under the\nUP Gangsters Act satisfies the statutory thresholds\nprescribed under the Act, when it is based entirely on\na single FIR (Case Crime No. 294 of 2022), in which\nthe appellants were already arrested and released on\nbail, and where no new act or omission has occurred\nbetween the date of registration of the First FIR i.e.,\n11th October, 2022, and the preparation of the gang\nchart on 29th April, 2023.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_2025_MAY_25_P008_C01",
+      "text": "10. The statutory definitions provided in Sections\n2(b) and 2(c) of the UP Gangsters Act establish the\nframework for determining who qualifies as “gang” or\n“gangster” under the law.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_2025_MAY_25_P009_C01",
+      "text": "11. Gainful reference in this regard may be made to\nSections 2(b)\nand (c) of the UP Gangsters Act, which\nare being reproduced hereinbelow :\n“2. (b) “gang” means a group of persons, who\n acting either singly or collectively, by violence, or\n threat or show of violence, or intimidation, or\n coercion or otherwise with the object of disturbing\n public order or of gaining any undue temporal,\n pecuniary, material or other advantage for himself\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\n or any other person, indulge in anti-social\n activities (Act No. 2 of 1974), namely—\n(i) offences punishable under Chapter XVI, or\n Chapter XVII, or Chapter XXII of the\nIndian\n Penal Code\n(Act No. 45 of 1860), or\n(ii) distilling or manufacturing or storing or\n transporting or importing or exporting or selling\n or distributing any liquor, or intoxicating or\n dangerous drugs, or other intoxicants or\n narcotics or cultivating any plant, in\n contravention of any of the provisions of the\nU.P. Excise Act, 1910\n(U.P.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_2025_MAY_25_P009_C02",
+      "text": "Act No. 4 of 1910) or the\nNarcotic Drugs and Psychotropic Substances\n Act, 1985\nor any other law for the time being in\n force, or\n(iii) occupying or talking possession of\n immovable property otherwise than in\n accordance with law, or setting up false claims\n for title or possession of immovable property\n whether in himself or any other person, or (Act\n No. 61 of 1985)\n(iv) preventing or attempting to prevent any\n public servant or any witness from discharging\n his lawful duties, or\n(v) offences punishable under the Suppression\n of Immoral Traffic in Women and Girls Act,\n 1956, or\n(vi) offences punishable under\nSection 3\nof the\n Public Gambling Act, 1867 (Act No. 104 of\n 1956), or\n\nCrl.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_2025_MAY_25_P009_C03",
+      "text": "Appeal @ SLP (Crl.) No (s). 6607 of 2023\n(vii) preventing any person from offering bids in\n auction lawfully conducted, or tender, lawfully\n invited, by or on behalf of any government\n department, local body or public or private\n undertaking for any lease or right or supply of\n goods or work to be done, or\n(viii) preventing or disturbing the smooth\n running by any person of his lawful business\n profession, trade or employment or any other\n lawful activity connected therewith, or\n(ix) offences punishable under\nSection 171-E\n the Indian Penal Code, or in preventing or\n obstructing any public election being lawfully\n held, by physically preventing the voter from\n exercising his electoral rights, or\n(x) inciting others to resort to violence to disturb\n communal harmony, or\n(xi) creating panic, alarm or terror in public, or\n(xii) terrorising or assaulting employees or\n owners or occupiers of public or private\n undertakings or factories and causing mischief\n in respect of their properties, or\n(xiii) inducing or attempting to induce any\n person to go to foreign countries on false\n representation that any employment, trade or\n profession shall be provided to him in such\n foreign country,",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_2025_MAY_25_P009_C04",
+      "text": "(xiv) kidnapping or abducting any person with\n intent to extort ransom, or\n\nCrl.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_2025_MAY_25_P009_C05",
+      "text": "Appeal @ SLP (Crl.) No (s). 6607 of 2023\n(xv) diverting or otherwise preventing any\n aircraft or public transport vehicle from\n following its scheduled course;\n(c) “gangster” means a member or leader or\n organiser of a gang and includes any person who\n abets or assists in the activities of a gang\n enumerated in clause (b), whether before or after\n the commission of such activities or harbours any\n person who has indulged in such activities.”\n\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_2025_MAY_25_P010_C01",
+      "text": "12. This Court in\nShraddha Gupta\n(supra), held\nthat an accused can be termed as ‘gangster’ when he\nas a member of a ‘gang’, has indulged in any of the\nenumerated anti-social activities, whether by means\nexpressly stated or otherwise, with the object of\ndisturbing public order or of gaining any undue\ntemporal, pecuniary, material or other advantage for\nhimself or any other person. The relevant paragraph\nfrom the aforesaid judgment is reproduced\nhereinbelow:\n“25. A group of persons may act collectively or any\n one of the members of the group may also act singly,\n with the object of disturbing public order indulging in\n anti-social activities mentioned in Section 2(b) of the\n Gangsters Act, who can be termed as “gangster”. A\n member of a “gang” acting either singly or collectively\n may be termed as a member of the “gang” and comes\n within the definition of “gang”, provided he/she is\n found to have indulged in any of the anti-social\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\n activities mentioned in Section 2(b) of the Gangsters\n Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_2025_MAY_25_P011_C01",
+      "text": "27. As per the settled position of law, the provisions\n of the statute are to be read and considered as it is.\nTherefore, considering the provisions under the\n Gangsters Act, 1986 as they are, even in case of a\n single offence/FIR/chargesheet, if it is found that the\n accused is a member of a “gang” and has indulged in\n any of the anti-social activities mentioned in Section\n 2(b) of the Gangsters Act, such as, by violence, or\n threat or show of violence, or intimidation, or coercion\n or otherwise with the object of disturbing public order\n or of gaining any undue temporal, pecuniary, material\n or other advantage for himself or any other person\n and he/she can be termed as “gangster” within the\n definition of\nSection 2(c)\nof the Act, he/she can be\n prosecuted for the offences under the Gangsters Act.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_2025_MAY_25_P012_C01",
+      "text": "13. While adjudicating upon the constitutionality of\nthe UP Gangsters Act, a Division Bench of High Court\nof Allahabad in\nAshok Kumar Dixit v. State of\nU.P.12\n, held that the term ‘gang’ means a group of\npersons who by violence, or threat, or show of\nviolence, or intimidation, or coercion, or otherwise\nindulge in anti-social activities with the object of\ndisturbing public order or gaining any undue or\npecuniary material or other advantage for himself. The relevant paragraph is reproduced below:\n12 1987 SCC OnLine All 203. Crl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\n “12. Section 2(b)\ndefines the term “Gang” to mean a\n group of persons who by violence, or threat, or show\n of violence or intimidation or coercion etc. indulge in\n anti-social activities with the object of disturbing\n public order of gaining any undue temporal or\n pecuniary material or other advantage for himself. S.\n 2(b)\nread as a whole necessarily brings in the concept\n of violence or intimidation or coercion etc. which is\n resorted to for gaining material advantage. Then we\n have cl. (c) of\nS. 2\nwhich defines the word “Gangster”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_2025_MAY_25_P012_C02",
+      "text": "It means a member or leader or organiser of a group\n which indulges in the kind of activities set out under\n the various sub-clauses of cl. (b) of\nS. 2\n, by use of\n violence or threat or show of violence or intimidation\n etc. S. 3(i)\nlays down the penalty for being the member\n or leader or organiser of a group which engages or\n indulges in the kind of unsocial activities enumerated\n under\nS. 2(b)\nby use of violence etc.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_2025_MAY_25_P013_C01",
+      "text": "14. From the above statutory provisions and\njudicial precedents, the legal position concerning the\ndetermination of \"gang\" and \"gangster\" under the UP\nGangsters Act, has been well-defined. The statutory\nscheme delineates that a \"gang\" constitutes a group\nof persons who, whether acting singularly or in\nconcert, perpetrate the enumerated anti-social\nactivities through the instrumentality of violence,\nthreat, intimidation, or coercion with the manifest\nobject of either disturbing public order or procuring\nundue temporal, pecuniary, material or other\nadvantages. From the above exposition of law, a\ngroup of persons may be said to constitute a gang\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\nonly when they, either singly or collectively, indulge\nin any of the anti-social activities enumerated in\nClauses (i) to (xv) of\nSection 2(b)\n, by means specified\ntherein, or otherwise, and most importantly, with the\nobject of disturbing public order, or securing any\nundue temporal, pecuniary, material or other\nadvantage for himself or any other person.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_2025_MAY_25_P014_C01",
+      "text": "15. The impugned FIR dated 30th April, 2023,\nlodged by Inspector Arun Kumar Dwivedi, narrates\nthat the appellants led an organised gang whose\nmembers, armed with lathis and glass bottles,\nattacked the shop owned by Vipin Modanwal and\nothers over a social media post disparaging a specific\nreligion, which created chaos, terror and disrupted\npublic order. The impugned FIR reads thus:\n“Copy of application/complaint in Hindi written by\n Head Constable (HM), Police station Kharagpur,\n District Gonda……. I, Inspector, Incharge, Arun Kumar Dwivedi alongwith\n S.I. Akhilesh Yadav, S.I. Diwakar Mishra, Head\n Constable Munawar Ali, Head Constable Raj Kishore,\n Constable Satyajit Morya, constable Ritesh Gupta,\n W/Ct. Shilpa Yadav, W/Ct. Satakshi Shukla in\n government vehicle UP 43 G 0352 with its driver\n Constable Umender Yadav was on the patrolling of\n the area for controlling the crimes. Meanwhile I came\n to know that accused persons Lal Mohd. son of Munir\n Ahmed resident of Pure Harwahanpurwa, Kharagpur\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\n town District Gonda has an organized gang.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_2025_MAY_25_P014_C02",
+      "text": "alongwith his accomplices Ramzan son of Usman\n Gani resident of Pure Harwahanpurwa, Kharagpur\n town, police station Kharagpur District Gonda,\n Rehman son of Usman Gani resident of Rastogi\n Mohalla, Kharagpur town, police station Kharagpur\n District Gonda, Lukman son of Usman Gani resident\n of Mohalla Rastogi, Kharagpur town, police station\n Kharagpur District Gonda, Shamsher Ali son of\n Mohd. Vaki resident of Thakurganj, Kharagpur town,\n police station Kharagpur District Gonda, Mohd. Yusuf son of Ali Raza resident of Old Bazar,\n Kharagpur town, police station Kharagpur District\n Gonda, Tanvir Ali son of Shamsher Ali resident of\n Thakurganj, Kharagpur town, District Gonda, Taukir\n Ali son of Shamsher Ali resident of Thakurganj,\n Kharagpur town, District Gonda, Mohd. Waris son of\n Wali Mohd. resident of Pure Harwahan Purwa,\n Kharagpur town, District Gonda, Yasin son of Sabir\n resident of Chikwa Badhiya, Kharagpur town,\n District, Gonda, Sakir son of Idu resident Kharagpur\n town, District Gonda, Nakane son of Usman Ali\n resident of Rastogi Mohalla, Kharagpur town, District\n Gonda, Mohd.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_2025_MAY_25_P014_C03",
+      "text": "Akram son of Wali Mohd. resident of\n Pure Harwahan Purwa, Kharagpur town, District\n Gonda, Aslam son of Wali Mohd. resident of Pure\n Harwahan Purwa, Kharagpur town, District Gonda,\n Liyakat son of Aliraza resident of Old Bazar,\n Kharagpur town, District Gonda, Siraz Ali son of\n Hamid Ali resident of Darzi, Kharagpur town West,\n District Gonda, Meraz son of Salim resident of\n Kharagpur town West, District Gonda, Rehmat Ali\n son of Hamid Ali resident of Kathariya Mohalla,\n Kharagpur town, District Gonda, Noor Alam son of\n Nazir resident of Darzi, Kharagpur town East, District\n Gonda, Nazir son of Badal resident of Kharagpur town\n East, District Gonda, Rizwan son of Ramzan Ali\n resident of Pure Harwahan Purwa, Kharagpur town,\n District Gonda, Ramzan Ali son of Munir Ahmed\n resident of Pure Harwahan Purwa, Kharagpur town,\n District Gonda, Jahir alias Jahiruddin son of Lal\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\n Mohd. resident of Pure Harwahan Purwa, Kharagpur\n town, District Gonda, Asif son of Shabir resident of\n Kharagpur town, District Gonda, Arif son of Shabir\n resident of Kharagpur town, District Gonda, Mohd.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_2025_MAY_25_P014_C04",
+      "text": "Shamim alias Nibaru son of Shafi resident of\n Kharagpur town, District Gonda, Danish son of Ali\n Mohd, resident of Kharagpur town, District Gonda,\n Sonu son of Lallu resident of Kharagpur town,\n District Gonda, Banthe son of Shyam Mohd. resident\n of Kharagpur town, District Gonda, Zuber son of Teni\n resident of Kharagpur town, District Gonda, Sakil son\n of Sabbir resident of Kharagpur town, District Gonda,\n Sameer son of Sabbir resident of Kharagpur town,\n District Gonda, Arbaz son of Mobin resident of\n Kharagpur town, District Gonda, Imran son of\n Chhotu alias Shafikurrehman resident of Kharagpur\n town, District Gonda, Azad alias Aizaz son of Irfan\n resident of Kharagpur town, District Gonda, Saif son\n of Manuddin resident of Kathariya town, Kharagpur,\n District Gonda, Azmat Ali son of Tinai resident of Old\n Bazar Kharagpur town, District Gonda, Rizwan son of\n Abdul Hamid resident of Darzi East, Kharagpur town,\n District Gonda, Jokhu son of Tinai resident of Old\n Bazar Kharagpur town, District Gonda, Asif alias Raj\n son of Raju resident of Old Bazar Kharagpur town,\n District Gonda, Mohd.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_2025_MAY_25_P014_C05",
+      "text": "Imran son of Rafique resident\n of Pure Harwahan Purwa Kharagpur town, District\n Gonda, Gulam Haider son of Bakridi resident of Old\n Bazar Kharagpur town, District Gonda organized\n with their common intention, on the comments\n made on Mohd. Prophet on 10.10.2022 at 8.00 PM\n at the shop of Vipin Modanwal situated at Subji\n Mandi, Kharagpur town having lathis and glass\n bottles in their hands, hurled abuses and by\n extending threat to kill, they started vandalizing the\n shop. When they were forbade to do so, then they\n started attacking at Vipin, Sonu, Durgesh, Sarvesh at\n their heads with lathis, wooden sticks and glass\n bottles with intention to kill them. Due to this there\n was a chaotic situation in the market and\n shopkeepers started running away by closing their\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\n shops. Consequently it created an atmosphere of\n fear and terror in entire area and disturbed the law\n and order. This organized gang/group was being\n led by Lal Mohd. son of Munir Ahmed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_2025_MAY_25_P014_C06",
+      "text": "Due to\n criminal acts committed by aforementioned gang\n and its members, general public has suffered with\n heavy financial loss and law and order remained\n disturbed for many days in the area due to\n disturbance of social and religious harmony. Crime\n case under\nsections\n\n/\n\n/\n\n/\n\n/\n\n/\n\n/\n\n/\n\nof Indian\n Penal Code and\nsection 7\nof C.L.A. Act was registered\n against accused persons and after completion of\n investigation, charge sheet has been forwarded to the\n Hon'ble Court, which is under consideration of\n Hon'ble Court. Act committed by accused persons\n falls under the category of offence mentioned in\n Chapters 16 and 22 of the\nIndian Penal Code\n. It is not\n interest in the general public that they set scot free in\n the society. Offence committed by the accused\n persons falls under the purview of\nsection 2(Kha)\n Uttar Pradesh Gangsters and Anti-Social Activities\n (Prevention) Act, 1986.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_2025_MAY_25_P014_C07",
+      "text": "In order to curb these criminal\n acts of these accused persons and in order to control\n the crime, a Gang Chart has got prepared under\nsection 3(1)\nof the Uttar Pradesh Gangsters and Anti-\n Social Activities (Prevention) Act, 1986 and in\n reference to approval accorded by the District\n Magistrate, Gonda on 29.04.2023, gangster case be\n registered against Gang Leader Lal Mohd. above\n named and his above named members. Note - I,\n Inspector Incharge has got written this complaint\n through S.I. Diwakar on my dictation on the spot. Sd/- in English Illegible (Arun Kumar Dwivedi),\n Inspector Incharge, police station Kharagpur District\n Gonda. Dated: 30.04.2023. Note - I, Nitish Mani\n Tripathi do certify that contents of written complaint\n have been mentioned by me in verbatim in CCTNS\n except typographical errors.”\n\n (emphasis supplied)\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\n16. A careful scrutiny of the impugned FIR reveals\ncrucial deficiencies and fundamental flaws.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_2025_MAY_25_P014_C08",
+      "text": "The\nimpugned FIR merely refers to an isolated incident\nthat occurred on 10th October 2022, involving\nallegations of vandalism at Vipin Modanwal's shop\nfollowing disparaging comments made about a\nparticular religious belief by Rikki Modanwal which\nthe appellants follow. The absence of any subsequent\ncriminal acts or pattern of organized criminal\nbehavior between the foundational FIR (Case Crime\nNo. 294 of 2022) registered on 11th October, 2022 and\nthe preparation of the gang chart on 29th April, 2023\ndemonstrates that this single criminal incident dated\n10th October, 2022, regardless of its severity, does not\nconstitute a sustained pattern of activities.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2025_2025_MAY_25_P015_C01",
+      "text": "17. While the FIR alleges that, appellant No. 1, lead\nan ‘organized gang’ with numerous co-accused, it\nprovides no substantive evidence of hierarchical\nstructure, systematic planning, or coordinated\ncriminal activities that would distinguish this group\nfrom a group of individuals involved in a spontaneous\ncommunal protest. The impugned FIR contains a\nmere conjectural statement, neither corroborated nor\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\nsubstantiated by the facts available on record. The\nimpugned FIR's narrative suggests a reactive\nresponse to instigation caused by an inflammatory\nreligious post rather than premeditated gang activity.\nThe mere listing of multiple accused persons without\ndemonstrating their organizational roles, command\nstructure, or evidence of prior or continued\ncoordinated criminal activities fails to meet the\nstringent requirements for establishing gang\nmembership.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2025_2025_MAY_25_P016_C01",
+      "text": "18. The whole incident appears to have been\ntriggered by the incendiary social media post made\nby Rikki Mondalwal tending to defile the religious\nsentiments of the appellants and other co-accused\nrather than by calculated gang objectives of securing\nmaterial advantages or establishing territorial\ncontrol. Furthermore, the FIR does not demonstrate\nany pattern of the offending group engaging in the\nenumerated anti-social activities beyond this single\nincident, thereby failing to establish the sustained\ncriminal enterprise that the UP Gangsters Act is\ndesigned to address. Crl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\n19. It is an undisputed fact that no new act or\nomission occurred between the registration of the\nfirst FIR on 11th October, 2022 and the preparation\nof the gang chart on 29th April, 2023. This temporal\ngap, devoid of any additional criminal activity,\nundermines the prosecution's endeavour to\ndemonstrate ongoing gang operations or escalating\ncriminal behaviour that would justify the invocation\nof the UP Gangsters Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2025_2025_MAY_25_P016_C02",
+      "text": "Mere involvement of the\naccused appellants in a demonstration pursuant to a\ncommunal flare-up, however serious, does not ipso\nfacto transform the participants into a ‘gang’ without\nevidence of organised and continuous criminal\nactivity. Moreover, the impugned FIR fails to\ndistinguish adequately between the roles of the\nnominated accused persons.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_2025_MAY_25_P017_C01",
+      "text": "20. In the present case, the incident occurred on\n10th October, 2022, and the appellants were granted\nbail in January, 2023, after the competent courts\nfound no criminal history and only simple injuries\nresulting from the altercation. The gang chart was\nprepared and approved on 29th April, 2023, and the\nimpugned FIR was registered on 30th April, 2023,\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\nsans any fresh or intervening conduct. This sequence\nindicates that the gang chart was manifestly a post-\nfacto construction aimed at recharacterizing an\nalready investigated and prosecuted communal\naltercation as an act of organised crime, without any\nnew evidence to warrant such a serious escalation.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2025_2025_MAY_25_P018_C01",
+      "text": "21. Furthermore, the impugned FIR was registered\ncoincidentally just 13 days after appellant No. 1's\ndaughter-in-law filed her nomination for the\nChairmanship of Nagar Panchayat Khargupur on\n17th April, 2023. The appellants' representation dated\n25th April, 2023 addressed to the UP-State Election\nCommission and the Party President, regarding the\npossibility of false implication under the UP\nGangsters Act, preceded the actual registration of the\nFIR. This timing lends credence to their contention\nthat the Act may have been weaponised for\nextraneous considerations.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2025_2025_MAY_25_P019_C01",
+      "text": "22. When juxtaposed with the object and intent of\nthe UP Gangsters Act, which was enacted to combat\norganised gang-based crime and dismantle criminal\nsyndicates that pose a persistent threat to public\norder, the application of the Act to the appellants\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\nbased on a single incident of communal violence\nflaring up from an incendiary post made by one\nagainst a particular religion represents a significant\ndeparture from its legislative purpose. The\nafterthought application of the UP Gangsters Act in\nthe present case, in absence of any subsequent\ncriminal conduct of the appellant, bears the hallmark\nof colourable exercise of power for purposes\nextraneous to the Act’s legitimate objectives.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2025_2025_MAY_25_P020_C01",
+      "text": "23. It is trite law that any procedure prescribed by\nlaw must be fair, just, and reasonable, not arbitrary,\npresumption, or oppressive. This principle, firmly\nembedded in our constitutional jurisprudence, forms\nthe cornerstone of\nArticle 21\nof the Constitution of\nIndia, which guarantees that no person shall be\ndeprived of life or personal liberty except according to\nprocedure established by law.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 21"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_2025_MAY_25_P021_C01",
+      "text": "24. The constitutional guarantee of personal liberty\nacquires even greater significance when\nextraordinary legislation with stringent provisions,\nsuch as the UP Gangsters Act, is invoked. While the\nState has broad discretion in criminal prosecution,\nthis discretion must be exercised judiciously, based\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\non relevant considerations, and in conformity with\nthe statutory purpose. The power conferred upon the\nState cannot be wielded as an instrument of\nharassment or intimidation, particularly where\npolitical motivations may be at play.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_2025_MAY_25_P022_C01",
+      "text": "25. It is a cardinal principle of criminal\njurisprudence that extraordinary penal provisions,\nparticularly those that substantially abridge regular\nprocedural safeguards, must be invoked based on\nevidence that meets a threshold of credibility and\nsubstantiality. The materials relied upon must\nestablish a reasonable nexus between the accused\nand the alleged criminal activity, demonstrating\nactual probability of involvement rather than mere\ntheoretical possibility. When a statute creates serious\nfetters on personal liberty, the evidentiary foundation\nfor its invocation must be commensurately strong,\nsupported by concrete, verifiable facts rather than\nvague assertions.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2025_2025_MAY_25_P023_C01",
+      "text": "26. In the present case, the impugned FIR and the\ngang chart fail to meet this essential threshold, as\nthey rest largely on presumptive theories rather than\npresenting tangible material to establish the\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\nprobability that the appellants were engaged in\norganised criminal activity as contemplated by the\nAct. With the trial in the previous FIR remaining\ninconclusive, compelling the appellants to undergo\nanother prosecution under the UP Gangsters Act for\nthe same set of allegations, would constitute a\nmanifest abuse of the legal process and result in a\ngross miscarriage of justice.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_2025_MAY_25_P024_C01",
+      "text": "27. Before concluding, we would like to make a\nreference to a recent Order passed by a Coordinate\nBench of this Court in\nGorakh Nath Mishra v. The\nState of Uttar Pradesh13\n, whereby the State of Uttar\nPradesh was directed to consider framing guidelines-\ncum-parameters which are to be followed before\ninvoking provisions of the UP Gangsters Act. In\ncompliance with that directive, the Uttar Pradesh\nState Government vide Office Memorandum Office\nMemorandum-Circular No. 4619, framed guidelines\nfor invoking the provisions of the UP Gangsters Act,\ndirecting strict compliance with those guidelines,\nread with the UP Gangsters and Anti-Social Activities\n(Prevention) Rules, 2021 framed under the UP\n\n13 Criminal Appeal No. 2589 of 2025. Crl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\nGangsters Act, regarding the preparation of the gang\nchart. The said guidelines have also been made part\nof a judgment in the case of\nVinod Bihari Lal v. State of Uttar Pradesh.14\n28.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_2025_MAY_25_P024_C02",
+      "text": "These guidelines were not placed on record by\nthe appellants in the present case (as they were\nissued subsequent to the filing of this petition),\nhowever, upon a prima facie examination, it appears\nto us that the invocation of the UP Gangsters Act in\nthe present matter would not withstand scrutiny\neven under these guidelines which emphasise the\nneed for rigorous assessment of the gravity of\nunderlying offences, established patterns of criminal\nactivity, and proper verification of criminal\nantecedents before invoking the Act. The allegations\nin the present case fail to meet this rigour. However,\nwe clarify that this observation is based purely on the\nfacts of this case and not a definitive finding on the\napplication of the guidelines, which were not subject\nto adversarial scrutiny in the present appeal.\n14 2025 INSC 267. Crl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\n29. Considering the foregoing facts and\ncircumstances, we are of the view that the procedural\nand substantive thresholds prescribed under\nSections 2(b) and 2(c) of the UP Gangsters Act have\nnot been adequately met in the present case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_2025_MAY_25_P024_C03",
+      "text": "Hence,\nthe impugned FIR dated 30th April, 2023, namely CC\nNo. 132 of 2023, does not stand to scrutiny. The\nimpugned judgment dated 3rd May, 2023, rendered\nby a learned Division Bench of the High Court of\nJudicature at Allahabad, in Criminal Miscellaneous\nWrit Petition No. 3494 of 2023, stands set aside.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_2025_MAY_25_P025_C01",
+      "text": "30. The impugned FIR CC No. 132 of 2023 and all\nproceedings consequential thereto stand quashed.\nHowever, we deem it proper to clarify that our\nobservations and analysis on the foundational FIRs\nare strictly circumscribed to the limited purpose of\nevaluating the impugned FIR under the UP Gangsters\nAct and will not have any bearing on the two pending\nFIRs, namely, CC No. 294 of 2022 and CC No. 296 of\n2022, which shall be dealt with on their own merits\nby the Courts concerned.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2025_2025_MAY_25_P026_C01",
+      "text": "31. The appeal stands allowed in the aforesaid\nterms.\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\n32. Pending applications, if any, shall stand\ndisposed of.\n….……………………J.\n (VIKRAM NATH)\n\n ...…………………….J.\n (SANDEEP MEHTA)\nNEW DELHI;\nMay 14, 2025.\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Lal Mohd vs State Of U.P",
+    "case_id": "SC_2025_2025_MAY_25",
+    "court": "Supreme Court of India",
+    "year": "2025",
+    "facts_summary": "3. The present appeal by special leave, arises out\n of the final judgment and order dated 3rd May, 20231,\n passed by the learned Division Bench of the High\n Court of Judicature at Allahabad2, in Criminal\n\nfiled by the appellants seeking quashing of First\nInformation Report3, in CC No. 132 of 20234 dated\n30th April, 2023, under Section 3(1) of the Uttar\nPradesh Gangsters & Anti-Social Activities\n(Prevention) Act, 19865, lodged at Police Station\nKhargupur, District-Gonda, Uttar Pradesh. 4. The factual background, essential for the\ndisposal of the instant appeal, is as follows:\n4.1 The appellants herein claim to be members of a\npolitical party in the State of Uttar Pradesh. Appellant No. 1 is a former two-time elected\nChairman of the Nagar Panchayat, and appellant No.\n2 is the son of appellant No. 1.\n4.2 On 10th October, 2022, one Rikki Modanwal\nmade a post on a social media platform in which he\nallegedly used language perceived as defamatory\ntowards a particular religion. In response, several\nbelievers of that religion (including the appellants\n\n3 For short ‘FIR’.\n4 Hereinafter referred to as ‘impugned FIR’\n5 Hereinafter referred to as the ‘UP Gangsters Act’. Crl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\nherein) assembled outside the shop owned by Rikki\nModanwal raising vociferous protests against the\nsaid social media post. The protests escalated into\nviolence and acts of vandalism between two different\nreligious groups. Multiple FIR(s) were registered on\n11th October 2022, ag",
+    "legal_issues": "Appeal @ SLP (Crl.) No (s). 6607 of 2023\n4.4 Aggrieved by the registration of impugned FIR\ninvoking the provisions of the UP Gangsters Act, the\nappellants approached the High Court of Judicature\nat Allahabad, by way of a criminal writ petition,\nseeking quashing of the said FIR and a direction to\nthe concerned authorities to produce the gang chart,\nif any, prepared by them, on the basis of which Arun\nKumar Dwivedi, Inspector-in-Charge, had lodged the\nimpugned FIR. The High Court, vide judgment dated\n3rd May, 2023, dismissed the said writ petition, which\nis assailed by the appellants herein in this appeal by\nspecial leave. Submissions on behalf of the appellants: - 5. Learned counsel for the appellants, vehemently\nand fervently contended that the High Court\nseriously erred in rejecting the prayer seeking\nquashing of the impugned FIR. In this regard, he\nadvanced the following submissions:\n5.1 That, in the present case, the two earlier FIRs,\nbearing CC No. 294 and CC No. 296 of 2022, were\nregistered on 11th October, 2022, for the same\nincident, involving identical allegations and the same\nset of accused persons. The contents of both FIRs\n\nCrl. Appeal @ SLP (Crl.) No (s). 6607 of 2023\nrelate to the events that unfolded on 10th October,\n2022 in Khargupur, Uttar Pradesh, leading to the\narrest of the appellants and their subsequent release\non bail upon the order of the competent court. However, nearly six months subsequent to the two\nearlier FIRs being registered, the impugned FIR ca",
+    "ratio_summary": "The core issue, which is posed for the\nconsideration of this Court in the present appeal is,\nwhether the prosecution of the appellants under the\nUP Gangsters Act satisfies the statutory thresholds\nprescribed under the Act, when it is based entirely on\na single FIR (Case Crime No. 294 of 2022), in which\nthe appellants were already arrested and released on\nbail, and where no new act or omission has occurred\nbetween the date of registration of the First FIR i.e.,\n11th October, 2022, and the preparation of the gang\nchart on 29th April, 2023.",
+    "final_order": "",
+    "outcome_summary": "Allowed",
+    "sections_cited": [
+      "Constitution 21"
+    ],
+    "cases_cited": []
+  }
+}

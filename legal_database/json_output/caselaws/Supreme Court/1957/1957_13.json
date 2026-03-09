@@ -1,0 +1,456 @@
+{
+  "case_id": "SC_1957_1957_13",
+  "case_name": "The United Commercial Bank ... vs The Commissioner Of Income-Tax,West ...",
+  "normalized_case_name": "THE_UNITED_COMMERCIAL_BANK_..._VS_THE_COMMISSIONER_OF_INCOME-TAX,WEST_...",
+  "court": "Supreme Court of India",
+  "year": "1957",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "23 May 1957",
+  "judges": [
+    "J.L. Kapur",
+    "Natwarlal H. Bhagwati"
+  ],
+  "author": "J.L. Kapur",
+  "bench_type": "division",
+  "petitioner": "The United Commercial Bank ...",
+  "respondent": "The Commissioner Of Income-Tax,West ...",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 28,
+  "cited_by_count": 433,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1957 AIR 918",
+    "1958 SCR 79",
+    "AIR 1957 SUPREME COURT 918",
+    "1957 32 ITR 688",
+    "1958 SCJ 46"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1957\\1957_13.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1957_1957_13_P001_C01",
+      "text": "PETITIONER:\nTHE UNITED COMMERCIAL BANK LTD.,CALCUTTA\n\n Vs. RESPONDENT:\nTHE COMMISSIONER OF INCOME-TAX,WEST BENGAL\n\nDATE OF JUDGMENT:\n23/05/1957\n\nBENCH:\nKAPUR, J.L. BENCH:\nKAPUR, J.L. BHAGWATI, NATWARLAL H. AIYYAR, T.L. VENKATARAMA\n\nCITATION:\n 1957 AIR 918 1958 SCR 79\n\nACT:\nIncome Tax-Business loss of Previous Year-Set-off against\nincome of the Assessment Year-Income from \"interest on secu-\nrities\"-Banking business-Securities, part of trading assets-\nIndian Income-tax Act, 1922\n(XI Of 1922), SS.6,8,10, 24(2). HEADNOTE:\nFor the assessment year (1945-46) the assessable income of\nthe appellant bank was computed by the Income-tax Officer by\nsplitting up its income into two heads \" interest on\nsecurities \" and \" business income \", and deducting the\nbusiness loss from interest on securities. In the previous\nyear the assessment showed a loss which was computed by\nsetting off the \" business loss against \" interest on\nsecurities The appellant claimed that in the computation of\nits profits for the assessment year in question it was\nentitled to set off the carried over loss of the previous\nyear under\ns. 24(2)\nOf the Indian Income-tax Act, 1922.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1957_1957_13_P001_C02",
+      "text": "The\nIncome-tax Officer rejected the claim on the ground that the\nloss was under the head \" business \" and so could not be set\noff against income from securities under\nS. 24(2)\nof the\nAct. Both the Income-tax Appellate Tribunal and the High\nCourt, on reference, held that in view of\nss. 6\n,\n\nand\n\nthe Act \" interest on securities \" could not be treated as\nbusiness income and therefore the appellant could not claim\na set-off under\nS. 24(2)\n. On appeal to the Supreme Court it\nwas contended for the appellant that (1) ss. 8 and 10 should\nbe so read that where the securities in the hands of an\nassessee are trading assets, s. 8 would be excluded, being\nrestricted to capital investments only, and the matter would\nfall under the head \" business \" within\ns. 10\n, and (2) in\nany case, even if the income from securities fell under s.\n8, the appellant would be entitled to a set-off under -s.\n24(2) because it carried on only one business, namely\nbanking, and the holding of securities by it was part of the\nsaid business.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1957_1957_13_P001_C03",
+      "text": "Held, that the scheme of the\nIndian Income-tax Act, 1922\n, is\nthat the various heads of income, profits and gains\nenumerated in\ns. 6\nare mutually exclusive, each head being\nspecific to cover the item arising from a particular source\nand, consequently, \" interest on securities \" which is\nspecifically made chargeable to tax under\ns. 8\nas a distinct\nhead, falls under that section and cannot be brought under\ns. 10\n, whether the securities are held as trading assets or\ncapital asset,\"\n\nCommissioner of Income Tax v. Chunnilal B. Mehta, [1938] 6\nI.T.R. 521 Salisbury House Estate Ltd. v. Fry, (1930) 15 T. C. 266, Commercial Properties Ltd. v. Commissioner of Income\nTax, Bengal, (1928) 3 I.T.C. 23 and H. C. Kothari v. Commissioner of Income Tax, Madras, [1951] 20 I. T. R. 579,\nrelied on.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1957_1957_13_P001_C04",
+      "text": "The question whether the holding of securities by the\nappellant formed part of the same business within\nS. 24(2)\n,\ncould not be decided in the absence of a finding that the\nsecurities in question were a part of the trading assets\nheld by the appellant in the course of its business as a\nbanker, and the case was remitted to the High Court for a\nfresh decision on the reference after getting from the\nTribunal a fuller statement of facts. JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal No. 161 of 1954. Appeal from the judgment and order dated, May 18, 1953, of\nthe Calcutta High Court in Income-tax Reference No. 72 of",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1957_1957_13_P002_C01",
+      "text": "1951. N. A. Palkhivala, P. D. Himatsingka, J. B. Dadachanji, S.\nN. Andley Rameshwar Nath and P. L. Vohra, for the appellant.\nG. N. Joshi and R. H. Dhebar, for the respondent.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C01",
+      "text": "1957. May 23. The Judgment of the Court was delivered by\nKAPUR J.-This appeal brought on a certificate of the High\nCourt raises a point of far-reaching consequence as to the\ninterpretation of\nss. 8\n,\n\nand\n24(2)\nof the Indian Income-\ntax Act (hereinafter termed the Act). The assessee (who is the appellant before us) claims that in\nthe computation of its profits for the assessment year under\nreview (1945-46), it is entitled to set off the carried over\nloss of the previous year against the profits of the year of\nassessment under s. 24(2) of the Act. The assessee is a\nBank carrying on banking business. For the assessment year\nits assessable income was computed by the Income Tax Officer\nat Rs. 14,95,826 \"by splitting up\" its income into 2\nheads ..................... \"interest on securities\"\nand .................... business income \". \" Interest on\nsecurities\" in the year of assessment was Rs. 23,62,815 and\nunder the head \" business income \" there was a\n\nloss of Rs. 8,86,972. After making the necessary adjust-\nments and deducting the business loss from \" Interest on\nsecurities \", the net income was determined at Rs.\n14,95,826.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C02",
+      "text": "In the previous year there was a loss of Rs.\n3,21,929 which was computed by setting off the business loss\nagainst \"interest on securities \". Before the Income-tax Officer the assessee made its claim on\nthe basis that it was a part of \" the business of the Bank\nto deal in securities............................. and \"\nthat no distinction should be made between income from\nsecurities and income from business for the purpose of set-\noff under\ns. 24\n\". It also claimed that it carried on only\none business, namely banking as defined by\ns. 277F\nof the\nIndian Companies Act in the' course of which the \" Bank has\nto receive money on deposits and invest such deposits in\nsecurities, loans and advances \" and therefore holdings of\nsecurities by it could not be treated as its separate\nbusiness. The Income-tax Officer was of the opinion that,\nas there was a loss under the head \" business \" its claim\ncould; not be sustained and hence it could not be set off\nunder\ns. 24(2)\nof the Act.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C03",
+      "text": "On appeal to the Assistant Commissioner of Income-tax it was\nagain contended that the assessee was a dealer in securities\nand that the two heads of income, \" Interest on securities \"\nand \" profits and gains \" in banking business could not be\ntreated separately and were part of the same business of the\nassessee and therefore it could claim a set-off under s.\n24(2) of the Act. But this contention was repelled. The\nmatter was then taken to the Income-tax Appellate Tribunal\nwhere again the contention was repeated that the business of\nthe assessee could not be split up into two heads under \"\ninterest on securities \" and banking business\". The\nTribunal, however, held:\n\" Reading ss. 6, 8 and 10 it appears to us that the\nlegislature wanted to keep the income from the two sources\nas separate. We are therefore of the opinion that the\nIncome-tax Officer was right in splitting up the income of\nthe appellant into two heads and in refusing the set-off of\nthe business loss brought forward\n\nfrom last year against income from Govt. securities earned\nthis year.\"\nIt therefore did not allow the loss of the previous year to\nbe set off against the computed profits of the assessment\nyear.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C04",
+      "text": "The assessee thereupon asked for a case to be stated to the\nHigh Court and inter alia raised two questions;\n(1) Whether interest on securities was a part of Bank's\nincome from business carried on by it. (2) Whether the assessee was entitled to set off the\ncarried over loss of the previous year against income during\nthe assessment year. The assessee contended that it was carrying on banking\nbusiness in various towns in India, that \" in the usual\ncourse of its business it invests moneys in Securities and\nreceives interest thereon \" and therefore it claimed that\nthe loss of Rs. 3,21,929, carried forward from the previous\nyear could be set off under\ns. 24(2)\nof the Act. The Tribunal stated the case and sought the opinion of the\nHigh Court on the following three questions;\n(1) \" Whether on the facts and in the circumstances of this\ncase, the assessee was entitled to set off the business loss\nof Rs. 3,21,929 brought forward from the preceding year\nagainst this year's income from interest on securities held\nby the assessee.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C05",
+      "text": "(2) Whether on the facts and in the circumstances of this\ncase the assessee was entitled under\ns. 8\nto deduct any part\nof the administrative expenses out of the income from\ninterest on securities. (3) Whether in the circumstances of this case, the assessee\nwas entitled under the first proviso to\ns. 8\nof the Income-\ntax Act to deduct any interest on money borrowed and\nutilised for investment in tax-free securities.\"\nThe High Court answered all the questions in the negative. The learned Chief Justice during the course of his judgment\nsaid:\n\n\" It appears to me, therefore, that because the several\nheads under\ns. 6\nin the Indian Act are mutually exclusive\nand because under any Income-tax Law, an item coming under\nan exclusive head cannot in any circumstances be charged\nunder another head and also because the interest on\nsecurities in the hands of a banker cannot be treated as\nbusiness income on the principles explained by Mr. Justice\nRowlatt, I must hold that the contention of the\nasesssee.................................. must be\nrejected.\" We had the benefit of a full and able argument\nfrom counsel on both sides.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C06",
+      "text": "Counsel for the appellant has\nraised three points:\n(1)That ss. 8 and 10 of the Act should be so read that\n\"interest on securities\", in cases where the true nature and\ncharacter of the securities in the hands of an assessee is\none of trading assets, would be excluded from the scope of\ns. 8\nand would fall under the head \"business\" within\ns. 10\nof the Act\nand alternatively even if\nss. 8\nand\n\nare read as specific\nheads then\ns. 10\n, being more appropriate, should be applied\nto the facts of the present case ;\n(2)If ss. 8 and 10 are equally applicable the assessee has\nthe option to be taxed under that head which imposes a\nlighter burden on him; and\n(3)Lastly he contended that even if the heads of income were\nto be taken as mutually exclusive so that the \"interest on\nsecurities\" falls under\ns. 8\nand \"business\" under\ns. 10\nthe Act, the assessee would be entitled to a set-off under\ns. 24 (2)\nbecause \"interest on securities\" and \"profits and\ngains\" from business result from different operations of the\nsame business, the two being different forms of the same\nbusiness of the assessee. We may now turn to the scheme of the Act.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C07",
+      "text": "Section 2(15)\ndefines \"total income\" to mean \"total amount of income,\nprofits and gains.................computed in the manner\nlaid down in the Act.\"\nChapter I of the Act\ndeals with\n\"Charge of income-tax\". It consists of two sections-3 & 4. Section 3\nprovides that \"income-tax shall be charged for any\nyear at any rate or rates in\n\naccordance with and subject -to the provisions of this Act.\"\nSection 4\nprovides' that \"the total income of any previous\nyear of any person includes all income, profits and gains\nfrom whatever sources derived\". Chapter 3 deals with \"Taxable income\". Section 6\nenumerates\nthe heads of income chargeable to incometax. It says as\nunder :\nS. 6 \"Save as otherwise provided by this Act, the\nfollowing heads of income, profits and gains, shall be\nchargeable to income-tax in the manner hereinafter appearing\nnamely\n(i) Salaries. (ii) Interest on securities. (iii) Income from property. (iv) Profits and gains of business, profession or vocation. (v) Income from other sources.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C08",
+      "text": "(vi) Capital gains.\"\nThe two relevant heads for the purpose of this appeal are\n(ii) & (iv), i.e., \" interest on securities \" and \" profits\nand gains of business\" which are dealt with under\nss. 8\nand\n\nof the Act respectively. Section 8\nprovides that \" the\ntax shall be payable by an assessee under the head \"\ninterest on securities \" in respect of interest receivable\nby him on any security of the Central\nGovernment................. and in the provisos to this\nsection are given the allowable deductions. The amendment\nmade in the proviso by the Act of 1955 is very relevant for\nthe purpose of this appeal and we &hall advert to it at a\nlater stage. Section 10\nprovides:\n\" The tax shall be payable by an assessee under the head \"\nprofits and gains of business, profession or vocation\" in\nrespect of the profits or gains of any business, profession\nor vocation carried on by him \"...",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C09",
+      "text": "The assessee contends\nthat securities are a part of its trading assets and this\nposition has throughout been accepted by the Department, and\nany income which accrues in respect of these assets in the\nform of interest\n\nhas the same characteristics as profits or gains of \"\nbusiness \" and therefore must be treated as income falling\nunder the head \" business \" under\ns. 10\nof the Act. In\nother words the income of the assessee from its banking\nbusiness which includes dealing insecurities is,really\nincome from the same source and whatever accrues in the form\nof interest whether from securities or from any other source\nof investment would fall under\ns. 10\nand not\ns. 8\nbecause\nall the interest accrues from the business carried on by the\nassessee and this business is only one business. The\nargument thus is that\nss. 8\n&\n\nhave to be so construed as\nto harmonise with each other and the only way they can be\nharmonised is that income accruing in the form of \"interest\non securities\" should be taken to be accruing from the\nbusiness of the assessee because securities form part of its\ntrading assets and thus fall within\ns. 10\nand not s. 8,\nwhich must be restricted to capital investments only.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C10",
+      "text": "It is\nfurther contended that if the object of the legislature was\nto give a separate and exclusive identity to the income from\n\" interest on securities\", it would have made the language\ns. 8\nof the Act as specific as it has made in the case of\nincome from dividends from shares, which income by the\naddition of sub-s. (I-A) to\ns. 12\nhas come to have a\nspecific place under the head \"other sources\" and is no\nlonger within the head \"business\" under\ns. 10\nof the Act and\nthus by statute its nature and character have undergone a\nchange. Reference is in this connection made to\nCommissioner of Income-tax v. Ahmuty\n& co. Ltd. (1) where it\nwas held by the High Court of Bombay that dividend income\nreceived by a dealer in shares is chargeable under\ns. 10\nand\nnot under\ns. 12\nof the Act. It is thus contended that in\norder to preserve the unity and oneness of the business of\nthe assessee and to maintain the unity of its business\nincome the applicability of\ns. 8\nshould be circumscribed to\n\"interest on securities\" when they are -not trading assets\nof the assessee.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C11",
+      "text": "According to the scheme of the Act discussed above income-\ntax has to be charged in respect of the \"total\n(1) (1955] 27 I.T.R. 63.\n\nincome\" of the previous year of every assessee and \"total\nincome\" is defined under\ns. 2(15)\nto comprise all income,\nprofits and gains from whatever source derived subject to\ncertain exemptions. Chapter 3 which is entitled \"Taxable\nincome\" comprises\nss. 6\n\n(both sections inclusive ). Section 6\nenumerates the various heads of income, profits\nand gains which are chargeable to income-tax. Each of these\nheads of income, profits and gains is dealt with under a\nseparate section and these sections also give the details of\nallowances and exemptions in regard to each different head. The argument raised by counsel for the Revenue is that\naccording to the decision of the Privy Council in\nProbhat\nChandra Barua v. The King Emperor\n(1) s. 6 is the charging\nsection and that the words of\nss. 7\n\nshow that the\nvarious heads of income are mutually exclusive and items\nwhich specifically fall under these various heads have to be\ncharged under only that head and would fall under one of\nthese several but appropriately specific sections.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C12",
+      "text": "It is\ntrue that the Privy Council in\nProbhat Chandra Barua v. The\nKing Emperor\n(supra) did point out that\ns. 6\nwas a charging\nsection, but this was because\nss. 3\nand\n\nwere then\ndifferently worded as pointed out by Kania, J., in B.M. Kamdar, In re (2 ) at p. 43 and by Chagla, J., in the, same\ncase at p. 57. The Federal Court in\nChatturam and others\nv. Commissioner of Income-tax, Bihar\n(3) said:\nThe liability to pay the tax is founded on\nss. 3\nand\n\nthe Income-tax Act which are the charging sections\". The judgment of the Privy Council in\nWallace Brothers & Co. Ltd. v. Commissioner of Income-tax\n(4) also shows\ns. 3\nbe the charging section. It is then argued that\ns. 6\nof the Act being mandatory all\nitems of income, from whatever source they arise, would fall\nonly under one of the heads enumerated under s. 6 and\ntherefore one of the\nss. 7\n\nwould specifically apply\nand\ns. 8\nwhich relates to \" interest on securities\" must be\nheld to apply to income from that source. It is also\ncontended by counsel for the\n(1) (1930) L.R. 57 I.A. 228, 238. (2) [1946] 14 I.T.R. 10. (3) [1947] 15 I.T.R. 302, 308. (4) [1948] 16 I.T.R. 240.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C13",
+      "text": "Revenue that even if there is any overlapping between\nss. 8\nand\n\n\"interest on securities\" whether accruing from\nsecurities held as a capital asset or trading assets falls\nunder s. 8 alone and s. 10 should be so read as to\naltogether exclude the income from \" interest on\nsecurities\". Counsel for the Revenue has referred us to the form of the\nReturn, prescribed under\ns. 22(1)\nof the Act at the relevant\ntime of the assessment under review. The heads there shown\nare (1) Salary, (2) Interest on securities, (3) Property,\n(4) Business, profession or vocation, (5) other sources, and\nincome from each source is to be shown in a separate column,\nin each one of which reference is made to a particular note\nrelevant to that head of income. In the column under the\nhead \"interest on securities\" reference is made to note 9\nwhich is in the following words:\n\"Interest on securities\" means interest on promissory notes\nor bonds issued by the Government of India or any other\nState Government or the interest on debentures or other\nsecurities issued by or on behalf of a local authority or\ncompany. The gross amount before deduction of income-tax\nshould be entered.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C14",
+      "text": "Entries under this head should be accompanied by persons\npaying the interest under\nsection 18(9)\nof the Act. Deductions are allowable in respect of-\n(a) Commission charged by a banker for collecting the\ninterest. (b) Interest payable on money borrowed for the purpose of\ninvestment in the securities except certain interest payable\nto persons abroad from which tax has not been deducted (see\nsection 8\nof the Act for details).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C15",
+      "text": "Full particulars (in a\nseparate statement if necessary) should be given of any\ndeduction claimed.\"\nThis is a statutory form and it gives what is meant by \"\ninterest on securities \", what documents are to accompany\nthe Return in order to entitle an assessee to claim refund\nand what deductions are to be made.\"\nThe mandatory character of\ns. 6\nis indicated by the language\nemployed in that section and the phraseology of all the\nsections following, i.e., 7 to 12, employing the words \" the\ntax shall be payable under\n\nthe head................... in respect of \" the different\nand distinct heads of income, profits and gains, salaries \"\nInterest on securities \", and \"property \", business etc. is\nindicative of the intention of the legislature making the\nvarious heads of income, profits and gains mutually\nexclusive. So every item of income, whatever its source,\nwould fall under one particular head and for the purpose of\ncomputing the income for charging of income-tax the\nparticular section dealing with that head will have to be\nlooked at.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C16",
+      "text": "The various sources of income, profits and gains\nhave been so classified that the items falling under those\nheads become chargeable under\nss. 7\n\naccording as they\nare income of which the source is \"salaries') \" interest on\nsecurities property business, profession or vocation \", \"\nother sources or \" capital gains \". Looked at thus the\ncontention of counsel for the Revenue that under the scheme\nof the Act and on a true construction of these relevant\nsections\" interest on securities \" by whomsoever and for\nwhatever purpose held has to be taxed under\ns. 8\nand under\nno other section is well founded and must be sustained. It\nbeing a specific head of chargeability of tax, income from \"\ninterest on securities \" whether held as a trading asset or\ncapital asset would have to be taxed under\ns. 8\nand not\nunder\ns. 10\nof the Act. The amendment made in the proviso to\ns. 8\nin the year 1955\nallowing a deduction in respect of any remuneration paid to\nany person other than the banker for realising interest on\nbehalf of the assessee, supports this interpretation.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C17",
+      "text": "Thus\nthis proviso now provides that reasonable amount can be\ndeducted by an assessee for commission paid to a Bank or\nremuneration paid to anybody else for realising interest on\nits behalf which clearly indicates the intention of the\nlegislature that interest on securities specifically falls\nunder\ns. 8\nand under no other section. This amendment shows\nthat even a Bank, if it buys securities as a part of its\ntrading assets, is entitled to make a deduction for\nremuneration paid by it to any person for realising interest\nwhich postulates that \"interest on securities\" would fall\nunder s, 8 of the Act,\n\nThis interpretation receives further support from the\nlanguage of\ns. 18\nwhich deals with payment after deduction\nat source.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C18",
+      "text": "Section 18(3)\nrequires a person responsible for\npaying \" interest on securities \" to deduct income tax on\nthe amount of the interest payable at the maximum rate and\nthe person so responsible is required, after deduction of\nthe income-tax, to pay to the account of the Central\nGovernment within 7 days of the deduction, the sum so\ndeducted and under s. 18(5) the maximum rate is to be\ncharged for the year in which the the amount is paid and not\nat the rate of the assessment year. A combined reading of\nss. 3\n,\n\n,\n\n,\n\n,\n\n,\n\nand refund section,\ns. 48, shows that income-tax is to be charged at the rate or\nrates prescribed in the\nFinance Act\non the total income of\nthe assessee as defined in\ns. 2(15)\nof the Act and computed\nin the manner given in as. 7 to 12 which are not charging\nsections but are provisions for the computation of \" total\nincome \". In the words of Viscount Dunedin in Salisbury\nHouse Estate v. Fry(1):\n\" Now, the cardinal consideration in my judgment is that the\nincome tax is only one tax, a tax on the income of the\nperson whom it is sought to assess, and that the different\nschedules are modes in which the Statute directs this to be\nlevied \".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 18
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C19",
+      "text": "As has been pointed out in that judgment there are no\nseparate taxes under the various schedules but only one tax. But in order to arrive at the total income on which tax is\nto be charged \" you have to consider the nature, the\nconstituent parts, of his (assessee's) income to see which\nschedule you are to apply.\" If these words may be used with\nreference to the language of the Indian Act, we have to look\nat the source of \" income, profits and gains\" and then see\nunder what head it appropriately and specifically falls and\nif it falls under one particular head then computation is to\nbe made under the section which covers that particular head\nof income. We cannot treat any one of the sections from\nss.\n\nto be general or specific for the purpose of any one\nparticular source of income. The\n(1) (1930)15 T.C.266,306.\n\nlanguage shows that they are all specific and deal with the\nvarious heads in which the item of income, profits and gains\nin the case of an assessee falls. Sir George Rankin in\nCommissioner of Income Tax v. Chunilal\nB.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 19
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C20",
+      "text": "Mehta\n(l) said:\n\" The effect of\ns. 6\nis to classify profits and gains, under\ndifferent heads for the purpose of providing for each\nappropriate rules for computing the amount; its language is\n\" shall be chargeable in the manner hereinafter appearing.\"\nOne of the heads is \" business \", which as a head of income\nstands alongside salaries, interest on securities,\nprofessional earnings and other sources. True, the\nclassification of income is according to the character of\nthe source But the list of \" heads in\ns. 6\nis a list of\nsources not in the sense of attributing the income to one\nproperty rather than another, one business rather than\nanother, but only in the sense of attributing it to property\nas distinct from employment, or business as distinct from\ninvestment............ What is to be learnt from an\nexamination of the language of sub-s.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 20
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C21",
+      "text": "(1) of s. 4-income,\nprofits and gains, described or comprised in s. 6 from\nwhatever source derived-is that s. 6 is intended as\ndescribing different kinds of profits\nIn that case the question for decision was whether a\nresident carrying on business in India and controlling\ntransactions abroad in the course of such business was\nliable to income tax on such transactions, it was held that\nthe profits arising under such transactions do not arise or\naccrue in India merely because of control by the assessee in\nIndia. The judgment of the Privy Council shows what\ns. 6\nthe Act means-each head refers to income, profits and gains\nattributable to the source-salary, interest on securities,\nproperty, business, profession etc. This supports the\ncontention of each head being separate, exclusive and\nspecific. Decided cases all support the contention of counsel for the\nRevenue that the various heads of income enumerated in\ns. 6\nof the Act and more particularly\n(1) [1938] 6 I.T.R. 521, 529.\n\ndealt with in\nss. 7\n\nare exclusive heads and if an item\nof income falls under one of these heads then it has to be\ntreated for the purpose of income tax under that head and no\nother.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 21
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C22",
+      "text": "In Salisbury House Estate Ltd. v. Fry (1) the\nassessee was a limited company which was formed for the\nexpress purpose of acquiring Salisbury House and utilising\nit. In this building there were 800 rooms which were let to\ntenants. The company also maintained a staff of servants to\nrender various kinds of services to the occupants of the\nrooms. The company was assessed to income tax under Sch. A\nupon gross valuation of the premises and as the actual rent\nreceived was higher, the Revenue wanted to assess income\nagain under Sch. D. The company contended that so far as\nthe proceeds of the property were concerned they had already\nbeen taxed under Sch. A and could not again be brought \"in\ncomputo\" under Sch. D. Viscount Dunedin at p. 306 observed:\n\" Now, if the income of the assessee consists in part of\nreal property you are, under the Statute, bound to apply\nSch. A \". Lord Atkin at p. 319 said:\n\" the dominance of each Sch. A, B, C & E over its 'own\nsubject matter is confirmed by reference to the Sections and\nRules which respectively regulate them in the Act of 1842.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 22
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C23",
+      "text": "They afford a complete code for each class of income,\ndealing with allowances and exemptions, with the mode of\nassessment, and with the officials whose duty it is to make\nthe assessments. ............ .....................I find no\nground for assessing the taxpayer under Sch. D for any\nproperty or gains which are the subject matter of the other\nspecific Schedules.\"\nAt p. 320, he pointed out that Sch. D is a residuary\nSchedule and all Schedules are mutually exclusive. Referring to investments in securities he said:\nIncome derived by a trading company from investments of its\nfunds, whether temporary or permanent, in government\nsecurities must be taxed under\n(1) (1930) 15 T.C. 266. Sch. C, and cannot for the purposes of assessment under\nSch. D be brought into account.\"\nThis shows that even though Sch. D is residual all\nSchedules are mutually exclusive and if income falls under\none Schedule, it must be assessed under that Schedule\nbecause the Schedules are a complete code for each class of\nincome, dealing with, allowances and exemptions and with the\nmode of assessment.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 23
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C24",
+      "text": "A significant passage in the judgment\nof Lord Atkin (at p. 321) is:\n\" I find it difficult to say that companies which acquire\nand let houses for the purposes of their trade, such as\nbreweries in respect of their tied tenants, and collieries\nand other large employers of labour in respect of their\nemployees, do not let the premises as part of their\noperation of trading. Personally I prefer to say that even\nif they do trade in letting houses their income so far as it\nis derived from that part of their trading must be taxed\nunder Sch. A and not Sch. D.\"\nThus even though the assessee was a company carrying on\nbusiness or trade, income from the head \" property \" was\ntaxed under Sch. A and not Sch. D. This case supports the\ncontention that different Schedules being distinctly\napplicable to each individual head of income would exclude\nthe applicability of any other head. In Butler v. The Mortgage Company of Egypt Ltd. (1), a\nBritish company controlled in Egypt was carrying on business\nof lending money on mortgage of land in Egypt or on the\nsecurity of debentures by mortgage of land.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 24
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C25",
+      "text": "In case of\ndefault the bank could take action in the Egyptian Courts\neither to sell the property or to take possession with a\nview to future sale. The General Commissioners held that\nthe acceptance of ,securities for money lent was only an\nincident of the company's business and that income was not\nassessable under Case 4 of Sch. D. The company claimed that\nthe assessment should be under Case 5 of Sch. D and not\nCase 4. It was held that the Crown had the right to tax\nunder Case 4 but even if the assessee satisfies\n(1) (1928) 13 T.C. 803, 809, 810.\n\nthat Case 5 is also applicable it was still for the Crown to\ndecide and tax under Case 4 provided both cases applied\nequally.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 25
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C26",
+      "text": "Rowlatt J. said:\n\"A banker could never ask to be repaid the tax which had\nbeen deducted from the Government securities which he held,\nbecause he held them as a banker, the point being that when\nyou have once got a security (we will say) the interest on\nwhich is taxed by the Act, you cannot get out of it because\nyou say that you look a little further and see this is only\nembedded in a business.\"\nIt means in terms of the Indian Statute that in the case of\ninterest on securities if chargeable under a specific\nsection, the assessee even though he is a banker cannot\nclaim that they be treated as \"business income.\"\nin Thompson v. The Trust and Loan Company of Canada (1), the\nrespondent company carried on business as a loan and finance\ncompany. During the material years the company bought\ntreasury bonds cum-coupons and on the same day sold bonds of\nthe same nominal value retaining the coupons and received on\nencashment a half year's interest under deduction of income\ntax. The Crown contended that in computing the Company's\nprofits for assessment to income tax under Case I of Sch.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 26
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C27",
+      "text": "there, should be included, as receipts, the amounts realised\nby the sale of bonds ex-coupons and the net proceeds of the\ncoupons and, as disbursements, the amounts paid by the\ncompany for the bonds cum-coupons. But it was held that the\ninterest received by the company was income of the company\ntaxed by deduction under Sch. C and that no part of the\nproceeds of the coupons should be included in the\ncomputation of the company's liability under Sch. D. Rowlatt J. at p. 400 said:\n\" The Crown cannot treat a transaction which has its own\ncharacter for income tax purposes as if it were something of\na different character...\"\nand Lord Hanworth M.R. at p. 406 put the matter thus:\n(1) (1932) 16 T.C. 394. Now in the present case it is plain that this subject matter\nof tax, government bonds and coupons payable out of the\ngovernment funds, have got to be taxed under Sch.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 27
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C28",
+      "text": "C; they\ncannot be taxed anywhere else.\"\nIn Volume I of Simon's Income Tax (1948 Ed.) p. 54 the law\nis thus stated:\n\" These Schedules are prima facie mutually exclusive and\nconsequently if a particular kind of income is charged under\none Schedule the Crown cannot elect to charge it under\nanother.\" This is in accord with the decisions discussed\nabove. The Commercial Properties Ltd. v. Commissioner of Income-\ntax, Bengal(1) was a case of a registered company whose sole\nobject was to acquire lands,, build houses and let them to\ntenants, the sole business of the company being the\nmanagement and collection of rents from the properties. The\nassessment was made under\ns. 9\nof the Act but the company\nclaimed that they were carrying on a business assessable\nunder s. 10 and not under\ns. 9\n. The Court held that the\ncompany was rightly assessed under\ns. 9\n, its income being\nderived from its ownership of buildings. Rankin C.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 28
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C29",
+      "text": "J. said at p. 26:\n\" In my judgment the words of\ns. 6\nand\ns. 9\nand\ns. 10\nmust\nbe read so as to give some effect to the contrast that is\nthere made between income, profits and gains from \" property\n\" and from \" business \" and I entirely refuse my assent to\nthe proposition that because it happens that the owner of a\nproperty is a company which has been. incorporated for the\npurpose of owning such property, therefore the income\nderived from \" property must be regarded as income derived\nfrom business \". In my judgment, income derived from \"\nproperty is a more specific category applicable to the\npresent case\". The decision in this case shows that the ownership of the\nhouse property was not considered as \"business\" and that\nincome derived from such source would more specifically and\nappropriately fall within the head \"property\". (1) (1928) 3 I.T.C. 23. The applicability of\ns. 8\ndirectly arose and was discussed\nH. C. Kothari v, Commissioner of Income-tax, Madras\n(1). The assessees\nin that case\nhad several sources of income,\none of which was interest on securities.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 29
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C30",
+      "text": "The business of\nthe assessees showed a loss but the assessees claimed earned\nincome relief in respect of interest on securities on the\nground that securities, which they had purchased and sold as\npart of their business, formed their stock-in-trade and the\ninterest therefrom should be treated as \"business\" profits. But\ns. 8\nof the Act was held applicable to the facts of that\ncase. Satyanarayana Rao, J. said\n\"\nof the Act which deals with interest on securities is a\nseparate and distinct head, and if an income is chargeable\nunder that head, it is not open either to the assessee or to\nthe department to change the head and claim to tax it under\na different head.... It was also pointed out in this judgment following\nCommissioner of Income_tax v. Bosotto Bros. (2) that if\nincome falls under more than one head the assessee has the\noption to choose the head which makes the burden on his\nshoulders lighter. The following two cases were relied upon by the assessee:-\n(1) Mangalagiri Sri Umamaheshwara Gin and Rice Factory Ltd.\nv. Guntur Merchants Gin and Rice Factory Ltd.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 30
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C31",
+      "text": "(3) where a\nlimited company incorporated for the purpose of milling rice\nleased out the buildings, plant, machinery etc., to another\ncompany for a fixed annual rent. The lessees were to do the\nnecessary repairs to keep the mill in good working condition\nand the lessors were to bear the loss of depreciation. The\nassessee company claimed the allowances for depreciation\nunder s. 10(2) (vi) of the Act. It was held that the\ncompany was carrying on the business of letting a rice mill\nand as such was entitled to a deduction for depreciation. The judgment of Krishnan, J., shows that it was clear from\nthe facts of the case that the company was carrying on\nbusiness\n(1) [1951] 20 I.T.R. 579, 587. (3) (1926) 2 I.T.C. 251. (2) [1940] 8 I.T.R. 41.\n\nof letting the mill for the purpose of being worked by\nlessees and it was under these circumstances that\ns. 10\nwas-\nheld applicable. The other case is Sadhucharan Roy\nChowdhry, In re (1) the facts of which were similar to the\nfacts of Mangalagiri Sri Umamaheshwara Gin and Rice Factory\nLtd. v. Guntur Merchants Gin and Rice Factory Ltd. (supra).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 31
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C32",
+      "text": "It was held that letting of a Jute Press at rent was as much\na business as the letting of a ship to freight or letting of\nmotor-car or any other kind of machines or machinery for\nhire, and therefore allowances for depreciation were allowed\nlike in Mangalagiri's case (supra). Neither of these cases\nthrows any light on the question now before us. The appellant's contention that looking at the real nature\nand character of the source of income arising from \"interest\non securities\" in the case of the present assessee, the\nBank, s. 10 of the Act would apply and not\ns. 8\ncan receive\nno support from the decision in Davies v. Braithwaite (2). That was a case where an actress earned her living by\naccepting and fulfilling professional engagements, her\nactivities being acting in stage-plays in England and\nAmerica, performing for the films and on the wireless and\nperforming for gramophone companies. These were held to\nfall under Sch. D and not E as whatever contracts she made\nwere nothing but incidents in the conduct of her\nprofessional career. The use of the following words by Sir\nGeorge Rankin in\nCommissioner of Income-tax v. Chunilal\nB.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 32
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C33",
+      "text": "Metha\n(3):\nBut the list of \"heads\" in\ns. 6\nis a list of sources not in\nthe sense of attributing the income to ............. one\nbusiness rather than another but only in the sense of\nattributing it to business as distinct from investment.\" is\nno surer foundation for saying that \" interest on securities\n\" is severable into income from securities held as a capital\ninvestment and income from those held as trading assets. The language of\nss. 6\n,\n\nand\n\nis destructive of any such\ncontention. (1) [1935] 3 I.T.R. 114. (2) [1931] 2 K.B. 628. (3) [1938] 6I.T.R. 521, 529. Thus on a true construction of the various sections of the\nAct the income of an assessee is one and the various\nss. 7\n\nare modes in which the Statute directs that income-tax\nis to be levied and these sections are mutually exclusive. The head of income of which the source is \" interest on\nsecurities \" has its' characteristics for income-tax\npurposes and falls under the specific head covered by\ns. 8\nof the Act, and where an item falls specifically under one\nhead it has to be charged under that head and no other.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 33
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C34",
+      "text": "This interpretation follows from the words used in\nss. 6\n,\n\nand\n\nwhich must be read so as to give effect to the\ncontrast between \" income, profits and gains \" chargeable\nunder the head \" interest on securities \" and income,\nprofits and gains \" chargeable under the head business \". Thus on this construction the various heads of \" income,\nprofits and gains \" must be held to be mutually exclusive,\neach head being specific to cover the item arising from a\nparticular source. It cannot, therefore, be said that qua\nthe assessee in the present case and for the purpose of\nsecurities held by it, s. 8 is more specific and s. 10\ngeneral or vice-versa, and therefore no question of the\napplicability of the principle \" generalia specialibus non\nderogant \" arises. This finds support from the decided\ncases which have been discussed above.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 34
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C35",
+      "text": "Thus both on\nprecedent and on a proper construction, the source of income\n\" interest on securities \" would fall under\ns. 8\nand not\nunder\ns. 10\nas it is specifically made chargeable under the\ndistinct head \" interest on securities \" falling under\ns. 8\nof the Act and cannot be brought under a different head even\nthough the securities are held as a trading asset in the\ncourse of its business by a banker. In this view of the\nmatter no question of exercise of option by the assessee or\nthe Revenue arises. Consequently Lord Shaw's observation in\nThe Liverpool and Land Globe Insurance v. Bennett (1):\n\" It appears to me that this selection is not only\njustified in law but is founded upon the soundest and most\nelementary principles of business,\"\n(1) (1913) 6 T.C. 327, 376.\n\nwill be inapplicable to the facts of the present case, and\nso also the rule as to choosing the head which imposes on\nthe assessee's shoulders burden which is highter as given in\nCommissioner of Income-tax v. Bosotto Bros.\n, (supra) and\nreiterated in\nH. C. Kothari v. Commissioner of Income-tax,\nMadras\n(supra).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 35
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C36",
+      "text": "To the third point raised by counsel for the assessee that\neven if interest on securities falls under\ns. 8\nof the Act\nand not under\ns. 10\nthe assessee is entitled to 'Yet a set-\noff under\ns. 24(2)\nof the Act, counsel for the Revenue has\ntaken the objection that this plea is not available to the\nappellant because it was not placed before the Income Tax\nAppellate Tribunal for being referred to the High Court nor\nwas it raised before the High Court. How the question was\nspecifically raised before the Income Tax Officer and the\nAppellate Assist. ant Commissioner and also before the\nIncome Tax Appellate Tribunal has already been mentioned. In its application to the Tribunal for stating the case to\nthe High Court the assessee specifically raised in two\nsuggested questions its right to set off the business loss\nof Rs. 3,21,929 brought forward from the previous year\nagainst the income of the assessee in the assessment year. It does not appear from the judgment of the High Court that\nthe question was argued in the manner it has been debated in\nthis court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 36
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C37",
+      "text": "The appellant seems to have rested his case on\nthe applicability of\ns. 10\nto the profits under the head\n\"interest on securities\" because of the securities being\ntrading assets but this contention was repelled and the same\nquestion has been raised before us but the assessee now\nsupports his case on an alternative argument that even if\nthe securities fall under\ns. 8\nstill the profits from that\nsource are from an item of the assessee's business and\ntherefore the loss of the previous year from the banking\nbusiness of the assessee can be set off against the profits\nof the assessment year whatever be the source of that\nprofit. The case is similar to the one in\nCommissioner of\nIncome-tax v. Messrs\n. Ogale Glass Works Ltd. (1). The\nquestion framed by the Tribunal is a general one and what is\nto be determined is whether\n(1) [1955] 1 S.C.R. 185, 196, 198.\n\nthe loss of the previous year can be set off against the\nincome of the assessment year within the provisions of s.\n24(2) of the Act. The question is wide enough to cover the\npoint raised before us. In the circumstances of this case\nthe third point, raised by counsel for the assessee, is open\nto be canvassed before us.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 37
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C38",
+      "text": "Counsel for the Revenue contends that the words used in s.\n24(2) were \" the same business \" and therefore this set-off\nwould be allowable only against any profits or gains of the\ngame business and no other business. He further contends\nthat the scheme of\ns. 24(1)\nand (2) shows that profits and\ngains must be arising under\ns. 10\nand not under any other\nsection because the expression used is profits or gains\nwhich goes with \" business \" under\ns. 10\nand cannot have\nreference to income, profits and gains arising from interest\non securities \" which are under\ns. 8\nof the Act. Counsel for the assessee on the other hand submits that the\nuse of the word \" same \" signifies the identity of the\nbusiness in which the loss has occurred and has no reference\nto the head under which the profits are chargeable. In\nother words interest does not cease to be profits and gains\nof the same business merely because for the purpose of\nchargeability it falls under a different head, i.e., under\ns. 8\nand not under\ns. 10\n. Section 24\nof the Act deals with\nthe set-off of loss in computing the aggregate income.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 38
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C39",
+      "text": "He also contends that the business which the assessee was\ncarrying on was the business of dealing in money and credit\nand that banking and dealing in securities constitute one\nand the same business. He refers to\ns. 277 F\nof the Indian\nCompanies Act and relies on the Privy Council decision in\nPunjab Co-operative Bank Ltd. v. The, Commissioner of\nIncome-tax, Punjab\n(1) in which it was pointed out that in\nthe ordinary case 'of a bank the business consists in its\nessence of dealing with money and credit. The banker has\nalways to keep enough cash or easily realisable securities\nto meet any probable demand by depositors, and if some of\nthe securities are realised to meet\n(1) [1940] 8 I.T.R. 635.\n\nwithdrawals by depositors, this is clearly a normal step in\ncarrying on the banking business. It is an act done in what\nis truly carrying on of the banking business. In view of the order we propose to make, we do not find it\nnecessary to express any opinion on the respective\ncontentions raised by counsel for the parties.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 39
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1957_1957_13_P003_C40",
+      "text": "Punjab\nCo-operative Bank\n's case (supra) a finding had been given\nthat the purchase and sale of securities was as much the\nassessee's business as receiving deposits from clients and\nwithdrawals by them. In the case before us no such finding\nhas been given and in the absence of such finding no opinion\ncan be given as to whether the holding of securities out of\nwhich interest was derived formed part of the same business\nwithin\ns. 24(2)\nor not. The appeal would therefore, be allowed and the case remitted\nto the High Court for a fresh decision of the reference\nafter getting from the Tribunal a fuller statement of facts\nabout this part of the case, whether the securities in\nquestion were a part of the trading assets held by the\nassessee in the course of its business as a banker. The costs of this appeal will be costs in the reference\nbefore the High Court. Appeal allowed. Case remitted.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 40
+    }
+  ],
+  "case_summary": {
+    "case_name": "The United Commercial Bank ... vs The Commissioner Of Income-Tax,West ...",
+    "case_id": "SC_1957_1957_13",
+    "court": "Supreme Court of India",
+    "year": "1957",
+    "facts_summary": "1957. May 23. The Judgment of the Court was delivered by\nKAPUR J.-This appeal brought on a certificate of the High\nCourt raises a point of far-reaching consequence as to the\ninterpretation of\nss. 8\n,\n\nand\n24(2)\nof the Indian Income-\ntax Act (hereinafter termed the Act). The assessee (who is the appellant before us) claims that in\nthe computation of its profits for the assessment year under\nreview (1945-46), it is entitled to set off the carried over\nloss of the previous year against the profits of the year of\nassessment under s. 24(2) of the Act. The assessee is a\nBank carrying on banking business. For the assessment year\nits assessable income was computed by the Income Tax Officer\nat Rs. 14,95,826 \"by splitting up\" its income into 2\nheads ..................... \"interest on securities\"\nand .................... business income \". \" Interest on\nsecurities\" in the year of assessment was Rs. 23,62,815 and\nunder the head \" business income \" there was a\n\nloss of Rs. 8,86,972. After making the necessary adjust-\nments and deducting the business loss from \" Interest on\nsecurities \", the net income was determined at Rs.\n14,95,826. In the previous year there was a loss of Rs.\n3,21,929 which was computed by setting off the business loss\nagainst \"interest on securities \". Before the Income-tax Officer the assessee made its claim on\nthe basis that it was a part of \" the business of the Bank\nto deal in securities............................. and \"\nthat no distinction should be made between ",
+    "legal_issues": "The\nIncome-tax Officer rejected the claim on the ground that the\nloss was under the head \" business \" and so could not be set\noff against income from securities under\nS. 24(2)\nof the\nAct. Both the Income-tax Appellate Tribunal and the High\nCourt, on reference, held that in view of\nss. 6\n,\n\nand\n\nthe Act \" interest on securities \" could not be treated as\nbusiness income and therefore the appellant could not claim\na set-off under\nS. 24(2)\n. On appeal to the Supreme Court it\nwas contended for the appellant that (1) ss. 8 and 10 should\nbe so read that where the securities in the hands of an\nassessee are trading assets, s. 8 would be excluded, being\nrestricted to capital investments only, and the matter would\nfall under the head \" business \" within\ns. 10\n, and (2) in\nany case, even if the income from securities fell under s.\n8, the appellant would be entitled to a set-off under -s.\n24(2) because it carried on only one business, namely\nbanking, and the holding of securities by it was part of the\nsaid business. Held, that the scheme of the\nIndian Income-tax Act, 1922\n, is\nthat the various heads of income, profits and gains\nenumerated in\ns. 6\nare mutually exclusive, each head being\nspecific to cover the item arising from a particular source\nand, consequently, \" interest on securities \" which is\nspecifically made chargeable to tax under\ns. 8\nas a distinct\nhead, falls under that section and cannot be brought under\ns. 10\n, whether the securities are held as trading assets or\ncapital asse",
+    "ratio_summary": "The question whether the holding of securities by the\nappellant formed part of the same business within\nS. 24(2)\n,\ncould not be decided in the absence of a finding that the\nsecurities in question were a part of the trading assets\nheld by the appellant in the course of its business as a\nbanker, and the case was remitted to the High Court for a\nfresh decision on the reference after getting from the\nTribunal a fuller statement of facts. JUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal No. 161 of 1954. Appeal from the judgment and order dated, May 18, 1953, of\nthe Calcutta High Court in Income-tax Reference No. 72 of (1) of s. 4-income,\nprofits and gains, described or comprised in s. 6 from\nwhatever source derived-is that s. 6 is intended as\ndescribing different kinds of profits\nIn that case the question for decision was whether a\nresident carrying on business in India and controlling\ntransactions abroad in the course of such business was\nliable to income tax on such transactions, it was held that\nthe profits arising under such transactions do not arise or\naccrue in India merely because of control by the assessee in\nIndia. The judgment of the Privy Council shows what\ns. 6\nthe Act means-each head refers to income, profits and gains\nattributable to the source-salary, interest on securities,\nproperty, business, profession etc. This supports the\ncontention of each head being separate, exclusive and\nspecific. Decided cases all support the contention of counsel for the\nRevenue that",
+    "final_order": "",
+    "outcome_summary": "Allowed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

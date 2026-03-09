@@ -1,0 +1,737 @@
+{
+  "case_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI",
+  "case_name": "Sukhpal Singh vs Nct Of Delhi",
+  "normalized_case_name": "SUKHPAL_SINGH_VS_NCT_OF_DELHI",
+  "court": "Supreme Court of India",
+  "year": "2024",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 296 of 2003",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "7 May 2024",
+  "judges": [
+    "B.R. Gavai"
+  ],
+  "author": "B.R. Gavai",
+  "bench_type": "single",
+  "petitioner": "Sukhpal Singh",
+  "respondent": "Nct Of Delhi",
+  "reporter_citations": [
+    "2024 INSC 385"
+  ],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 15,
+  "cited_by_count": 0,
+  "neutral_citation": "2024 INSC 385",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2024\\MAY\\2024_MAY_29.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P001_C01",
+      "text": "CRIMINAL APPELLATE JURISDICTION\n\n CRIMINAL APPEAL NO(S). 55 OF 2015\n SUKHPAL SINGH ….APPELLANT(S)\n\n VERSUS\n\n NCT OF DELHI ….RESPONDENT(S)\n\n JUDGMENT\nMehta, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P002_C01",
+      "text": "1. The instant appeal is directed against the judgment dated 7th\n\n January, 2010 passed by the High Court of Delhi in Criminal\n\n Appeal No. 296 of 2003 whereby the appeal filed by the appellant\n\n against the judgment and order of conviction and sentence dated\n\n 6th March, 2003 passed by the learned Additional Sessions Judge,\n\n Karkardooma Courts, Delhi(hereinafter being referred to as the\n\n ‘trial Court’) was rejected.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P003_C01",
+      "text": "2. By the said judgment, the trial Court convicted the accused\n\n appellant for the offence punishable under Section 302 of the\n\nIndian Penal Code\n, 1860(hereinafter being referred to as the ‘\nIPC\n’)",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 302"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P004_C01",
+      "text": "3. Leave was granted by this Court in this matter on 8th\n\nJanuary, 2015 and the accused appellant was released on bail on\n\nfurnishing bail bonds to the satisfaction of the trial Court.\n\nBrief facts:-",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P005_C01",
+      "text": "4. The accused appellant was married to Usha and three\n\nchildren were born out of the wedlock. However, the spouses got\n\nembroiled in a matrimonial strife and thus the appellant left\n\ncompany of his wife Usha and started residing at his village Khatta,\n\nU.P.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P006_C01",
+      "text": "5. The officers of Police Station Bhajan Pura received a wireless\n\nmessage on 20th May, 1990 from the PCR regarding an incident\n\nwhich had taken place outside the shops of Rori and Badarpur.\n\nActing on the said information, Head Constable Mohan Lal,\n\nConstables Jai Pal, Bhagwan Dass and Ramesh Chand along with\n\nInspector Ishwar Singh reached House no. J-387, Gali No. 14,\n\nKartar Nagar, Delhi where Usha w/o Sukhpal(the appellant herein)\n\nwas found lying dead on a cot in a room of the said house. On\n\ncursory inspection, abrasions, scratches and other injury marks\n\nassociated with bleeding were noticed on the neck, mouth,\n\nshoulder and private parts of the deceased Usha. Marks of\n\ndragging were also found on the right leg below the knee. Strips of\n\ntablets were found scattered around the cot on which the dead\n\nbody was lying. The police officials claim to have recovered a\n\nhandwritten note(Exhibit PW-12/E) from the crime scene bearing\n\na recital indicating that the scribe was the killer of Usha. The\n\nprosecution alleges that the said note was written by the accused\n\nappellant.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P007_C01",
+      "text": "6. Statement(Exhibit PW-1/A) of Ashok Kumar Pathak, resident\n\nof House No. J-386, Gali No. 14, Kartar Nagar, Delhi was recorded\n\nby the police officials on 20th May, 1990 wherein he stated that he\n\nwas residing in the immediate vicinity of House No. J-387, Gali No.\n\n14, Kartar Nagar, Delhi, where Usha with her husband\n\nSukhpal(accused appellant) and three children had been residing\n\nfor the last 3-4 years. Ashok Kumar Pathak was serving with M/s. R.P. Associates and that he had got Sukhpal employed in that very\n\nfirm. Sukhpal suspected his wife Usha of infidelity which often led\n\nto quarrels between them and, therefore, Sukhpal left his wife and\n\nchildren and started residing in village Khatta, U.P. He used to\n\ncommute from the village for attending to his job. Sometimes, he\n\nwould also come and stay with Usha. Four days prior to the alleged\n\noccurrence, Sukhpal had visited Usha and on that day, Usha’s\n\nsister(Sudha) had also come there. Sukhpal quarrelled with Usha\n\nand went away. On the next day, Usha’s sister, Sudha(PW-10) took\n\nthe three children of Usha and went to her house.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P007_C02",
+      "text": "On the day prior\n\nto incident, i.e., on 19th May, 1990, in the evening when Ashok\n\nKumar Pathak had returned from duty and got free after having\n\nhis meals, at about 9.30 p.m., he saw that Sukhpal had come to\n\nvisit Usha on his cycle. The spouses were talking while sitting on\n\na cot in the courtyard. He went to the terrace for sleeping and after\n\nsome time, it started raining so he came downstairs and saw that\n\nSukhpal and Usha had also gone inside their room. The next\n\nmorning i.e. 20th May, 1990, while he was carrying out his daily\n\nchores, he saw Sukhpal’s cycle parked in the courtyard and\n\npresumed that he and Usha were inside the house. He did not see\n\nany movement in the house for the entire day and even at about\n\n5.30 p.m., he saw the cycle of Sukhpal parked at the same place\n\nbut neither Sukhpal nor Usha were to be seen. So, he called out\n\nfrom outside, but nobody responded, on which he went into the\n\nroom and found Usha lying dead on a cot. Sukhpal was not present\n\nthere. He informed the neighbours who, in turn, called the police. He bore a suspicion that Sukhpal(appellant herein) might have\n\nkilled Usha sometime during the night and had fled away.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P007_C03",
+      "text": "This\n\nstatement was taken as a complaint and based thereupon, FIR No.\n\n213 of 1990(Exhibit PW-13/F) came to be registered at P.S. Bhajanpura for the offence punishable under\nSection 302\nIPC.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 302"
+      ],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P008_C01",
+      "text": "7. The dead body of Usha was subjected to autopsy and the post\n\nmortem report(Exhibit PW-15/A) was received with a pertinent\n\nopinion that cause of death was “Asphyxia resulting from manual\n\nstrangulation”. A confession letter/note(Exhibit PW-12/E) was\n\nfound below the cot where the dead body was lying and it was\n\nseized vide memorandum(Exhibit PW-13/B) and spot inspection\n\nmemo(Exhibit PW-12/B) was prepared.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P009_C01",
+      "text": "8. The Investigating Officer(PW-13) collected two letters(Exhibit\n\nPW-12/C and PW-12/D) purportedly written by the accused\n\nappellant from the employer namely Sanjiv Jain(PW-8). Specimen\n\nPad(Exhibit PW-13/O) of the employer was also collected and\n\nseized vide memorandum(Exhibit P-13/N).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P010_C01",
+      "text": "9. The prosecution alleges that the accused appellant fled away\n\nfrom the crime scene. Efforts were made to trace him out without\n\nany success and thus proceedings under\nSection 82\nand\nSection\n\nof the Code of Criminal Procedure, 1973(hereinafter being\n\nreferred to as ‘\nCrPC\n’) were initiated against him. The accused\n\nappellant was declared to be a proclaimed offender and a charge\n\nsheet came to be filed against him under\nSection 299\nCrPC by\n\nshowing him to be an absconder. As per the prosecution case, the\n\ncomplainant Ashok Kumar Pathak, Head Constables Mohan Lal\n\nand Surender Kumar and Inspector Bal Kishan were examined on\n\noath in proceedings under\nSection 299\nCrPC and the file was\n\nconsigned to the record room.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "CrPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P011_C01",
+      "text": "10. The accused appellant could be apprehended on 9th August,\n\n2000 i.e. nearly after ten years of the incident. He gave a disclosure\n\nstatement pointing out the place of incident. His specimen\n\nhandwritings(Exhibits PW-5/D, 5/E and 5/F) were obtained while\n\nhe was in police custody. Thereafter, the confession note(Exhibit\n\nPW-12/E), the specimen handwritings(Exhibits PW-5/D, PW-5/E\n\nand PW-5/F) along with admitted handwritings(Exhibits PW-12/C\n\nand PW-12/D)(collected from the employer of accused appellant)\n\nwere sent to FSL for comparison. The handwriting expert(PW-24)\n\nissued a report(Exhibit PW-12/F) opining that the confession\n\nletter/note(recovered from the crime scene) was in the handwriting\n\nof the accused appellant.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P012_C01",
+      "text": "11. A supplementary charge sheet came to be filed against the\n\naccused appellant for the offence punishable under\nSection 302\nIPC. The trial Court framed charge against the accused appellant\n\nfor the said offence. He pleaded not guilty and claimed trial. The\n\nprosecution examined 24 witnesses and exhibited 48 documents\n\nto support its case.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 302"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P013_C01",
+      "text": "12. It is relevant to mention here that the complainant Ashok\n\nKumar Pathak, was not produced for deposition in the trial which\n\nresumed after the arrest of the accused appellant. The trial Court\n\nheld that the non-examination of complainant Ashok Kumar\n\nPathak was not a deliberate act of the prosecution and rather the\n\nsame was beyond the control of prosecution. The trial Court\n\nfurther found that complainant Ashok Kumar Pathak was\n\nexamined on oath on 17th July, 1991 in proceedings under\nSection\n\nCrPC. In this sworn statement, Ashok Kumar Pathak proved\n\nhis signature on the statement[Exhibit PW-1/A(which led to\n\nregistration of FIR)] made by him to the police on 20th May, 1990\n\nand gave a detailed account of the sequence of events witnessed\n\nby him. The complainant Ashok Kumar Pathak could not be\n\nexamined in the trial proceedings post arrest of the accused as he\n\ncould not be found at the address given in the FIR despite all\n\nsincere efforts.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P014_C01",
+      "text": "13. The trial Court held that since Ashok Kumar Pathak could\n\nnot be located despite genuine efforts, his sworn deposition\n\nrecorded in absence of the accused appellant was liable to be read\n\nin evidence as per the provisions of\nSection 299\nCrPC. Accordingly,\n\nthe said statement was relied upon as a piece of incriminating\n\nevidence against the accused appellant.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "CrPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P015_C01",
+      "text": "14. The trial Court also placed reliance on the confession\n\nnote/letter(Exhibit PW-12/E) holding that the same was found to\n\nbe in the handwriting of the accused appellant by the handwriting\n\nexpert(PW-24) vide report(Exhibit PW-12/F). The said confession\n\nwas treated to be an admission and a strong link of incriminating\n\ncircumstantial evidence against the appellant.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P016_C01",
+      "text": "15. Placing reliance upon the evidence of Ashok Kumar Pathak\n\nrecorded in proceedings under\nSection 299\nCrPC and the evidence\n\nof the handwriting expert(PW-24), the trial Court held the\n\nconfession note(Exhibit PW-12/E) to be an unimpeachable piece\n\nof evidence sealing the fate of the accused. Corroboration thereto\n\nwas sought from the evidence of Sudha(PW-10), sister of the\n\ndeceased Usha. By relying on these incriminating links of\n\ncircumstantial evidence, the trial Court proceeded to convict and\n\nsentenced the accused appellant as above vide judgment dated 6th\n\nMarch, 2003.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "CrPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P017_C01",
+      "text": "16. The appeal preferred by the accused appellant in the High\n\nCourt of Delhi was rejected by learned Division Bench of High\n\nCourt vide judgment dated 7th January, 2010 holding that the\n\nconfession note(Exhibit PW-12/E) written by the accused\n\nappellant proved his culpability in the crime. The prosecution had\n\nestablished that the accused appellant was in company of the\n\ndeceased Usha at her house where she was murdered in the\n\nintervening night of 19th and 20th May, 1990. The prosecution also\n\nestablished that the deceased was done to death by violence in the\n\nsaid intervening night and that the accused appellant had\n\nabsconded to flee from justice which established his guilty\n\nconduct.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P018_C01",
+      "text": "17. The accused appellant has challenged the above judgment\n\naffirming his conviction and sentence through this appeal by\n\nspecial leave.\nSubmissions on behalf of the appellant: -",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P019_C01",
+      "text": "18. Learned legal aid counsel appointed by Supreme Court Legal\n\nServices Committee(SCLSC) for representing the appellant\n\nadvanced extensive submissions to assail the impugned judgment. He urged that:-\n(i) The trial Court as well as the High Court\n\n committed grave factual error in holding that\ncomplainant Ashok Kumar Pathak was examined on\n\n oath in proceedings under\nSection 299\nCrPC. As per\n\n learned counsel, this finding is totally contrary to the\n\n record because the statement of complainant Ashok\n\n Kumar Pathak relied upon by the trial Court and the\n\n High Court is actually the statement of the said witness\n\n recorded by the SHO, PS Bhajan Pura under\nSection 161\nCrPC which was proved by the Investigating Officer(PW-\n13) in proceedings under\nSection 299\nCrPC. (ii) The confession note(Exhibit PW-12/E) is a\n\n fabricated piece of evidence because the prosecution did\n\n not make any endeavour to get the two admitted\n\n documents(Exhibit PW-12/C and PW-12/D) collected\n\n from the employer of the accused appellant, i.e., Sanjiv\n\n Jain(PW-8) compared with the confession note(Exhibit\n\n PW-12/E).",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "CrPC 299",
+        "CrPC 161"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P019_C02",
+      "text": "This contention was made without prejudice\n\n to the plea that the very process of collecting these\n\ndocuments is under a cloud of doubt because the\n\nInvestigating Officer(PW-13) could not have had any idea\n\nthat the accused had worked in M/s. R.P. Associates. (iii) The handwriting expert’s report(Exhibit PW-12/F)\n\nand the testimony of the handwriting expert(PW-24) is\n\nnot reliable, since the expert did not give any opinion\n\nafter comparing the admitted writings(Exhibit PW-12/C\n\nand PW-12/D)(seized from the employer of the accused\n\nappellant) with the confession note(Exhibit PW-12/E). (iv) Without prejudice to the above, learned counsel\n\nsubmitted that from a visual comparison of the\n\nconfession note(PW-12/E) and the specimen\n\nhandwritings of the accused(Exhibit PW-5/D, PW-5/E\n\nand PW-5/F), it would become clear that there is no\n\nsimilarity whatsoever in the two sets of handwritings so\n\nas to conclude with any degree of certainty that the\n\nscribe of these documents was one and the same. He\n\nthus urged that the report(Exhibit PW-12/F) of the\n\nhandwriting expert(PW-24) is unreliable and cannot be\n\npressed into service for affirming the guilt of the\n\naccused.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P019_C03",
+      "text": "(v) He urged that the evidence of Sudha(PW-10) is\n\ntotally unreliable and not trustworthy and deserves to be\n\ndiscarded. It was admitted by the prosecution that the\n\naccused appellant and Usha had divorced each other\n\nand thus it is totally unbelievable that the accused\n\nappellant had come and stayed with Usha, few days\n\nbefore the incident as claimed by Sudha (PW-10). He\n\nurged that the evidence of Sudha(PW-10) is not\n\ntrustworthy and deserves to be discarded. (vi) The claim of the prosecution that the accused\n\nappellant was absconding is totally unfounded because\n\nin the FIR, it was clearly mentioned that the accused\n\nappellant after divorcing deceased Usha had started\n\nresiding in his village Khatta, U.P. However, the\n\nInvestigating Officer(PW-13) made no effort whatsoever\n\nto apprehend the accused appellant from his village. (vii) It has been admitted by material prosecution\n\nwitnesses that deceased Usha was indulged in sex trade\n\nand that Sandeep Kumar used to solicit her services. Sandeep Kumar and Rajbir Singh(PW-14) were\n\napprehended by the police on suspicion of the death of\n\nUsha, however, proper investigation was not made on\n\n this aspect.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P019_C04",
+      "text": "As per him, the possibility of Usha having\n\n been murdered by some other person cannot be ruled\n\n out.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P020_C01",
+      "text": "19. Learned counsel concluded his submissions urging that the\n\ncase is based purely on circumstantial evidence. The entire chain\n\nof incriminating circumstances has to be established leading to the\n\nonly conclusion consistent with the guilt of the accused and\n\ninconsistent with the guilt of anyone else. As per the learned\n\ncounsel, this chain was not established conclusively by cogent and\n\nclinching evidence and hence conviction of the accused appellant\n\nas recorded by the trial Court and affirmed by the High Court is\n\nunsustainable and should be set aside.\nSubmissions on behalf of the respondent-State:-",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P021_C01",
+      "text": "20. Per contra, learned counsel for the respondent State fervently\n\nand vehemently opposed the submissions advanced by learned\n\ncounsel for the appellant and contended that the chain of\n\nincriminating circumstances is complete in all aspects exclusively\n\npointing out towards the guilt of the accused. The learned counsel\n\nmade the following pertinent submissions imploring the Court to\n\ndismiss the appeal and upheld the conviction of the accused\n\nappellant: -\n(i) That the statement of Ashok Kumar Pathak\n\n recorded as PW-1 during proceedings under\nSection\n\nCrPC was rightly relied upon as admissible and\n\n reliable piece of evidence. The non-examination of\n\n Ashok Kumar Pathak during trial is not a deliberate\n\n act of prosecution, rather, the witness could not be\n\n examined during regular trial after apprehension of\n\n the accused appellant. The witness could not be\n\n traced by the prosecuting agency inspite of best\n\n efforts. The prolonged abscondence of the accused\n\n is primarily the reason for non-examination of\n\n Ashok Kumar Pathak.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P021_C02",
+      "text": "(ii) That the complainant Ashok Kumar Pathak in his\n\n evidence as PW-1 during proceedings under\nSection\n\nCrPC has admitted his signature on his\n\n statement[Exhibit PW-1/A(based upon which FIR\n\n was registered)] and also elaborated about the\n\n averments made therein which he had witnessed\n\n with his own eyes. (iii) That the evidence of Ashok Kumar Pathak clearly\n\n establishes the presence of accused appellant with\n\n Usha on intervening night of 19th/20th May, 1990,\n\n whereafter, the lady was found murdered and the\n\n accused was found absconding from the crime scene\n\n leaving behind a confessional note. Ashok Kumar\n\n Pathak also proved about the motive of the appellant\n\n to commit the crime. (iv) The testimony of Usha’s sister Sudha(PW-10)\n\n establishes that the accused appellant used to\n\n quarrel with Usha suspecting her infidelity and\n\n there were repeated altercations between the\n\n spouses. They had indulged in a fight just four days\n\n prior to the incident. This also establishes the\n\n motive attributed to the appellant to commit the\n\n offence.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P021_C03",
+      "text": "(v) That there is no evidence on record to show that\n\n accused appellant and Usha were divorced except a\n\n bald statement made in this regard in the confession\n\n note(Exhibit PW-12/E). (vi) That the report(Exhibit PW-12/F) submitted by the\n\n handwriting expert, Deepa Verma(PW-24) proves\n\n that the handwriting on the confession note(Exhibit\n\n PW-12/E) which was recovered from the crime\n\n scene matched with the handwriting on the two\n\n admitted documents(Exhibits PW-12/C and PW-\n\n 12/D) collected from the employer of the accused\n\n appellant and specimen handwritings(Exhibits PW-\n\n 5/D, PW-5/E and PW-5/F) given by the accused\n\n appellant to the police which in turn concludes the\n\n fact that the confession note is in the handwriting of\n\n the accused.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P022_C01",
+      "text": "21. He urged that the prosecution has proved the case against\n\nthe accused appellant by leading cogent and convincing chain of\n\nincriminating circumstantial evidence and implored the court to\n\ndismiss the appeal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P023_C01",
+      "text": "22. We have given our thoughtful consideration to the\n\nsubmissions advanced by the learned counsel for the parties and\n\nhave gone through the judgments of the trial Court and the High\n\nCourt as well as the evidence available on record.\n\nDiscussion and Conclusion: -",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P024_C01",
+      "text": "23. The main thrust of submissions advanced by Shri Ambreesh\n\nKumar Aggarwal, learned legal aid counsel representing the\n\nappellant so as to criticise the findings of the trial Court and the\n\nHigh Court was that both the Courts erred in holding that the\n\nstatement of complainant Ashok Kumar Pathak had been recorded\n\non oath in the proceedings under\nSection 299\nCrPC. As per Shri\n\nAggarwal, only the\nSection 161\nCrPC statement of complainant\n\nAshok Kumar Pathak was exhibited by the Investigating\n\nOfficer(PW-13) and he never stepped into the witness box.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "CrPC 299",
+        "CrPC 161"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P025_C01",
+      "text": "24. In order to verify this fervent submission of learned counsel\n\nfor the appellant, we carefully sifted through the record and find\n\nthat the submission so made is without any foundation. The\n\naccused appellant was absconding and could not be arrested and\n\nthus, the Investigating Officer(PW-13) made all possible efforts\n\nincluding the procurement of warrant of arrest, attempt to serve\n\nthe same at the village of the appellant, i.e., Khatta, U.P. He tried\n\nto locate the accused appellant at various locations, without any\n\nsuccess. The warrant which is available on record clearly bears the\n\naddress of the accused appellant as Khatta, Prahladpur, Bagpat,\n\nU.P.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P026_C01",
+      "text": "25. Even proceedings of proclamation and attachment were\n\nundertaken under\nSections 82\nand\n\nCrPC but to no avail\n\nbecause the accused appellant had vanished after the crime and\n\nwas not traceable at the crime scene or at his known address i.e.\n\nvillage Khatta, U.P. The fact regarding his abscondence was also\n\npublished. Accordingly, a charge sheet came to be filed under\nSection 299\nCrPC showing the accused appellant to be an\n\nabsconder.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "CrPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P027_C01",
+      "text": "26. The trial Court passed an order dated 18th March, 1991\n\ndeclaring the accused appellant to be an absconder and\n\npermission was granted to the prosecution to proceed with the trial\n\nby resorting to the procedure under\nSection 299\nCrPC. This order\n\nwas never questioned before any court of law.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "CrPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P028_C01",
+      "text": "27. The trial Judge recorded the statement of Ashok Kumar\n\nPathak, the complainant as PW-1 under\nSection 299\nCrPC on 17th\n\nJuly, 1991 after administrating oath to him which begins in the\n\nfollowing manner: -\n“Shri Ashok Kumar Pathak, s/o Shri Ram Puran aged 28 years,\n R/O Kartar Nagar, Gali No. 14, Delhi on S.A.(sworn\n affirmation)”",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "CrPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P029_C01",
+      "text": "28. This statement bears the signature of the presiding officer of\n\nthe Court and so also of the complainant Ashok Kumar Pathak.\n\nThree more witnesses, namely, Head Constables Mohan Lal and\n\nSurender Kumar and Inspector Bal Kishan were also examined on\n\noath in proceedings under\nSection 299\nCrPC.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "CrPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P030_C01",
+      "text": "29. In this background, the fervent submission of the learned\n\ncounsel for the appellant that the prosecution only exhibited the\n\nstatement of complainant Ashok Kumar Pathak recorded under\nSection 161\nCrPC and that he was never examined on oath in\n\nproceedings under\nSection 299\nCrPC seems to have been made out\n\nof sheer ignorance and without ascertaining the correct position\n\nfrom the original record.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "CrPC 161",
+        "CrPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P031_C01",
+      "text": "30. Section 299\nof CrPC expressly provides for the power of the\n\nCourt to record evidence in absence of the accused in the following\n\nterm: -\n“299. Record of evidence in absence of accused.—(1) If it is\n proved that an accused person has absconded, and that there\n is no immediate prospect of arresting him, the court competent\n to try or commit for trial, such person for the offence\n complained of may, in his absence, examine the witnesses (if\n any) produced on behalf of the prosecution, and record their\n depositions and any such deposition may, on the arrest of such\n person, be given in evidence against him on the inquiry into, or\n trial for, the offence with which he is charged, if the deponent\n is dead or incapable of giving evidence or cannot be found or\n his presence cannot be procured without an amount of delay,\n expense or inconvenience which, under the circumstances of\n the case, would be unreasonable.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P031_C02",
+      "text": "(2) If it appears that an offence punishable with death or\n imprisonment for life has been committed by some person or\n persons unknown, the High Court or the Sessions Judge may\n direct that any Magistrate of the First Class shall hold an\n inquiry and examine any witnesses who can give evidence\n concerning the offence and any depositions so taken may be\n given in evidence against any person who is subsequently\n accused of the offence, if the deponent is dead or incapable of\n giving evidence or beyond the limits of India.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P032_C01",
+      "text": "31. Sub-section (1) of\nSection 299\nCrPC is in two parts, the first\n\npart provides for proof of jurisdictional fact in respect of\n\nabscondence of an accused person and the second that there was\n\nno immediate prospect of arresting him. In the event, an order\n\nunder the said provision is passed, deposition of any witness\n\ntaken in the absence of an accused may be used against him if\n\nthe deponent is dead or incapable of giving evidence or cannot be\n\nfound or his presence cannot be procured without any amount of\n\ndelay, expense or inconvenience which, under the circumstances\n\nof the case, would be unreasonable.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "CrPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P033_C01",
+      "text": "32. This Court in the case of\nNirmal Singh v. State of Haryana1\nwhile considering the issue that under what circumstances and by\n\nwhat method, the statement of a witness under\nSection 299\n\nCrPC could have been tendered in the case for being admissible\n\n(2000) 4 SCC 41\n\nunder\nSection 33\nof the Indian Evidence Act, 1872 and whether\n\nthey can form the basis of conviction, held as follows:\n“4. ….. Section 299\nof the Code of Criminal Procedure\n consists of two parts. The first part speaks of the\n circumstances under which witnesses produced by the\n prosecution could be examined in the absence of the\n accused and the second part speaks of the circumstances\n when such deposition can be given in evidence against the\n accused in any inquiry or trial for the offence with which\n he is charged. This procedure contemplated under\nSection 299\nof the Code of Criminal Procedure is thus an exception to the\n principle embodied in\nSection 33\nof the Evidence Act inasmuch\n as under\nSection 33\n, the evidence of a witness, which a party\n has no right or opportunity to cross-examine is not legally\n admissible.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "CrPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P033_C02",
+      "text": "Being an exception, it is necessary, therefore, that\n all the conditions prescribed, must be strictly complied with.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P033_C03",
+      "text": "other words, before recording the statement of the witnesses\n produced by the prosecution, the court must be satisfied that\n the accused has absconded or that there is no immediate\n prospect of arresting him, as provided under the first part of\nSection 299(1)\nof the Code of Criminal Procedure….\n …..There possibly cannot be any dispute with the proposition\n of law that for taking the benefits of\nSection 299\nof the Code of\n Criminal Procedure, the conditions precedent therein must be\n duly established and the prosecution, which proposes to utilise\n the said statement as evidence in trial, must, therefore, prove\n about the existence of the preconditions before tendering the\n evidence. ….\n….On a mere perusal of\nSection 299\nof the Code of Criminal\n Procedure as well as\nSection 33\nof the Evidence Act, we\n have no hesitation to come to the conclusion that the\n preconditions in both the sections must be established by\n the prosecution and it is only then, the statements of\n witnesses recorded under\nSection 299\nCrPC before the\n arrest of the accused can be utilised in evidence in trial\n after the arrest of such accused only if the persons are dead\n or would not be available or any",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "CrPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P033_C04",
+      "text": "other condition\n enumerated in the second part of\nSection 299(1)\nof the\n Code of Criminal Procedure is established….”\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P034_C01",
+      "text": "33. Further, in the case of\nJayendra Vishnu Thakur v. State of\n\nMaharashtra & Another\n2 it was held as follows: -\n“25. It is also beyond any cavil that the provisions of\n Section 299 of the Code must receive strict interpretation,\n and, thus, scrupulous compliance therewith is imperative\n in character. It is a well-known principle of interpretation of\n statute that any word defined in the statutory provision should\n ordinarily be given the same meaning while construing the\n other provisions thereof where the same term has been used.\n Under\nSection 3\nof the Evidence Act like any other fact, the\n prosecution must prove by leading evidence and a definite\n categorical finding must be arrived at by the court in regard to\n the fact required to be proved by a statute. Existence of an\n evidence is not enough but application of mind by the court\n thereupon as also the analysis of the materials and/or\n appreciation thereof for the purpose of placing reliance upon\n that part of the evidence is imperative in character.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P035_C01",
+      "text": "29. Indisputably both the conditions contained in the first\n part of Section 299 of the Code must be read conjunctively\n and not disjunctively. Satisfaction of one of the\n requirements should not be sufficient….”\n (emphasis supplied)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P036_C01",
+      "text": "34. The statement of Ashok Kumar Pathak dated 17th July, 1991\n\nrecorded in proceedings under\nSection 299\nCrPC is as follows: -\n“I am working as Salesman/supply man in the M/s R.P. Associates a shop of medicines in Bhagirath Place for the last\n about seven years. In my neighbourhood accused Sukhpal\n along with his wife Usha and children used to reside in\n H.No.387 Gali No.14 Kartar Nagar for the last 3/4 years prior\n to this case. He was having two daughters and one son. Later\n on he also joined service in M/s R.P. Associates, Bhagirath\n Place with my assistance. Accused suspected infidelity of his\n wife Smt. Usha and for this reason they were not having good\n relations and they always used to quarrel with each other. Prior\n to the occurrence of this case accused left his house leaving his\n wife Smt. Usha and three children at the above said house for\n his village Khatta in UP and used to come to his shop therefrom. (2009) 7 SCC 104\n\nSometimes they used to visit with his wife Usha at his house.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "CrPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P036_C02",
+      "text": "About four days back prior to this occurrence accused Sukhpal\nhad come to his house where sister of Usha was also found\npresent with Usha at his house and on that day Sukhpal had\nquarrelled with his wife Usha and he then returned. Next day\nsister of Usha also left with three children of Usha to her house,\nleaving her sister alone at her house. On 19.5.1990 at about 10.30 P.M. I saw accused Usha &\nSukhpal who came on a cycle to his house having conversation\nwith his wife, sitting on a cot in the court-yard of his house,\nand I went on the roof of my house, and slept. In the night when\nthe rain was started I came down from the roof and I saw the\naccused Sukhpal along with his wife Usha going into inside\ntheir room. Both of them went inside their room. Next morning\ndue to holiday(closeday being Sunday) I woke up some late and\nstarted my daily routine work. I found the cycle of Sukhpal\nparked in the court-yard of his house. I thought that both of\nthem might be in their room. In the noon I again found the cycle\nof Sukhpal parked in the court-yard of the house but none of\nthem was seen outside their room.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P036_C03",
+      "text": "In the evening at about 5.30\nP.M. when I called them but no response came from his house\nbut the door of the room was opened. When I entered the room\nof Usha I found Smt. Usha dead lying on the cot and accused\nSukhpal was found missing therefrom. I informed the nearby\nresidents who called the police. Accused Sukhpal had run away\nfrom his house after committing the murder of his wife Usha in\nthe night. Police came there and completed the proceedings. I\nsave my statement to the police and I signed my statement\nwhich is Ex.PW-1/A and is correct. Other mohalla people also\ncollected there. There were many injuries on the throat and shoulder, neck\nof Smt. Usha. There was blood on the bed sheet on which\nmedicines were found scattered and letter written in Hindi by\naccused Sukhpal regarding the murder of his wife Usha was\nalso found under the cot. I identify the hand-writing of Sukhpal on that letter,\nbecause he was working with me at the aforesaid medicine shop\nwhere we used to prepare and write the documents. I have seen\nhim signing and writing the documents at the above said shop\nwith me. Police seized that letter vide a memo Ex.PW1/B and I\nsigned the same.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P036_C04",
+      "text": "One old cycle make Avon of accused Sukhpal was seized\nvide a memo which is Ex.PW1/D. I signed the same. I had seen\nthe accused using that cycle earlier also and so I identify this\ncase to be of accused Sukhpal. Surinder Kumar who was also\npresent there also signed the memo. On 22.5.1990 I was present on my duty at the shop of M/s\n R.P. Associates, 1696/8 Ist floor Mohan Building Bhagirath\n Place where accused Sukhpal also used to work. On that day\n police officials visited the shop where Sanjiv Kumar, owner of\n the above said shop reduced two letters to the police. One letter\n was an application for resignation from the service written by\n Sukhpal to M/s R.P. Associates and another letter at 12.6.89\n addressed to R.P. Associates requesting for service to him. Both\n these letters were written and signed by accused Sukhpal. I\n identify his writing and signature on it. These letters are\n Ext.PW/E and Ex.PW/F. These letters were seized vide memo\n Ex.PW1/G and I signed it. The letter addressed to the police\n officer written by Sukhpal which was seized from the spot by\n the police is Ex.P1. which was taken into possession vide memo\n Ex.PW1/B.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P036_C05",
+      "text": "Sanjiv Jain owner of the above said shop produced\n one page of the letter pad to the police who seized the same vide\n memo Ex.PW1/H and I signed the same.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P037_C01",
+      "text": "35. The statement of Ashok Kumar Pathak(reproduced supra)\n\ngives positive and unwavering proof of the following\n\ncircumstances: -\n(i) The accused appellant Sukhpal was married to\n\n Usha(deceased). (ii) There was an ongoing marital strife between the\n\n spouses owing to the suspected infidelity of Usha and on\n\n this ground, they used to quarrel with each other. The\n\n accused appellant left his wife Usha and his three\n\n children and started living in village Khatta, U.P. The\n\n accused suspected infidelity of Usha imputes a strong\n\n motive to the accused for her murder. (iii) Ashok Kumar Pathak had facilitated a job for the\n\naccused appellant in M/s. R.P. Associates. (iv) Inspite of the strife and acrimonious relationship,\n\nthe accused appellant often used to visit his wife Usha\n\nand would stay with her. He had come and stayed with\n\nUsha four days before the incident and at that time,\n\nSudha, sister of Usha was also present. Sukhpal\n\nquarrelled with Usha in presence of her sister and then\n\nwent away. (v) A day prior to the incident also, accused appellant\n\nhad come to House No. J-387, Gali No. 4, Kartar Nagar,\n\nDelhi where the alleged incident took place and stayed\n\nwith Usha.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P037_C02",
+      "text": "(vi) The witness Ashok Kumar Pathak saw the accused\n\nappellant parking his cycle in the courtyard of the house. He also saw the accused appellant(Sukhpal) and\n\nwife(Usha) talking to each other while sitting on a cot in\n\nthe courtyard. Then it started raining whereupon, both\n\nwere seen going into the house from the courtyard. On\n\nthe next morning, neither the accused appellant nor Usha\n\nwere anywhere to be seen. (vii) The witness went to Usha’s house in the evening\n\n and saw her dead body lying on cot with large number of\n\n injuries whereas the accused appellant was missing. The\n\n cycle of the accused appellant was still parked in the\n\n courtyard of the house. (viii) A handwritten note(Exhibit PW-12/E) confessing to\n\n the murder was found lying underneath the cot on which\n\n the dead body was lying. The witness categorically stated\n\n that this note was written in the handwriting of the\n\n accused appellant which the witness was able to identify\n\n on account of both having worked together in the same\n\n concern(M/s. R.P. Associates) for a significant period of\n\n time.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P038_C01",
+      "text": "36. Thus, the circumstances of motive, last seen, confession and\n\nabscondence from the crime scene after committing the crime are\n\nall spoken to by the witness Ashok Kumar Pathak(PW-1) in his\n\nstatement dated 17th July, 1991(reproduced supra) recorded on\n\nsworn affirmation during the proceedings under\nSection 299\nCrPC.\n\nIt may be stated here that Ashok Kumar Pathak had no motive\n\nwhatsoever to falsely implicate the accused appellant for the\n\nmurder of Usha.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "CrPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P039_C01",
+      "text": "37. The fact regarding Usha’s homicidal death is not in dispute.\n\nThe Medical Jurist(PW-15) gave categoric testimony to the effect\n\nthat Usha had been manually strangled and the cause of death\n\nwas Asphyxia. Thus, we need not discuss the medical evidence in\n\ndetail.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P040_C01",
+      "text": "38. The statement of Ashok Kumar Pathak by itself provides a\n\ncomplete chain of circumstantial evidence sufficient to establish\n\nthe guilt of the accused appellant. The accused appellant vanished\n\nfrom the crime scene and remained absconding for a period of\n\nnearly 10 years. He could be apprehended on 9th August, 2000,\n\nwhereafter, regular trial was conducted. During the period of\n\nabscondence of the accused appellant, the complainant Ashok\n\nKumar Pathak seems to have left his house at Kartar Nagar, Delhi\n\nwhere he used to reside earlier. Despite ample efforts being made\n\nby the Investigating Agency to summon and examine Ashok Kumar\n\nPathak, he could not be traced out and produced in the witness\n\nbox for deposition during trial after the accused had been arrested.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P041_C01",
+      "text": "39. Viewed in light of the provisions of\nSection 299\nCrPC read\n\nwith\nSection 33\nof the Indian Evidence Act, 1872 as interpreted by\n\nthis Court in the case of\nNirmal Singh\n(supra) and\nJayendra\n\nVishnu Thakur\n(supra), the trial Court was justified in holding that\n\nthe statement of Ashok Kumar Pathak recorded in these\n\nproceedings was fit to be read as a piece of substantive evidence.\n\nWe concur with the findings recorded by the trial Court and\n\naffirmed by the High Court on this vital aspect of the matter.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "CrPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P042_C01",
+      "text": "40. Sudha(PW-10), sister of deceased Usha also stated that the\n\naccused appellant used to quarrel with his wife Usha suspecting\n\nher infidelity. The witness also stated that the accused appellant\n\nhad come to the house of Usha in her presence about four days\n\nbefore the incident and went away after fighting with Usha. Thus,\n\nevidence of this witness also establishes the motive attributed to\n\nthe accused appellant for commission of the murder. Her\n\ntestimony is also sufficient to conclude that inspite of the\n\nacrimonious relations between the husband and wife, the accused\n\nappellant used to visit Usha frequently from the village Khatta,\n\nU.P. where he was residing after having abandoned his wife and\n\nchildren.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P043_C01",
+      "text": "41. The witness Sanjiv Jain(PW-8), employer of accused\n\nappellant gave evidence to the effect that the Investigating\n\nOfficer(PW-13) collected the admitted writings of the\n\naccused(Exhibit PW-12/C and Exhibit PW-12/D) from him during\n\nthe course of the investigation. Sanjiv Jain(PW-8) had no motive\n\nwhatsoever so as to falsely implicate the accused in this case. He\n\nhad provided employment to the accused which fact is not\n\ndisputed. The version of Sanjiv Jain(PW-8) to the effect that the\n\nInvestigating Officer(PW-13) collected the scripts/documents\n\nwritten by the accused while working in his establishment finds\n\ncorroboration from the statement of Ashok Kumar Pathak recorded\n\nin the proceedings under\nSection 299\nCrPC.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "CrPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P044_C01",
+      "text": "42. The contention of learned counsel for the appellant that the\n\ntwo persons namely, Sandeep Kumar and Rajbir Singh(PW-14)\n\nwere involved in an illicit affair with Usha and they might have\n\nmurdered the lady has no legs to stand because in view of what\n\nhas been stated by Ashok Kumar Pathak in his testimony recorded\n\nunder\nSection 299\nCrPC, it is clear that no one other than the\n\naccused appellant was present in the house with Usha on the night\n\nshe was murdered.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "CrPC 299"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P045_C01",
+      "text": "43. The Investigating Officer(PW-13) duly proved the process of\n\narrest of accused on 9th August, 2000, i.e., after more than 10\n\nyears of the incident.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P046_C01",
+      "text": "44. The specimen writings(Exhibits PW-5/D, 5/E and 5/F) of the\n\naccused appellant were lawfully collected by the Investigating\n\nOfficer(PW-13) after he was arrested and all these documents were\n\nplaced on record with the charge sheet. These specimen\n\nwritings(Exhibits PW-5/D, 5/E and 5/F) and the admitted\n\nwritings(Exhibits PW-12/C and PW-12/D) of the accused\n\nappellant along with confession note(Exhibit PW-12/E) recovered\n\nfrom the crime scene were sent to the handwriting expert(PW-24)\n\nfor comparison from where a report(Exhibit PW-12/F) was received\n\nto the effect that the handwritings on these documents match with\n\neach other. As is required under law, the handwriting expert\n\nDeepa Verma was examined as a witness(PW-24) and she proved\n\nthe report(Exhibit PW-12/F) establishing the fact that the\n\nhandwriting on the confessional note(Exhibit PW-12/E) recovered\n\nfrom the crime scene matched with the handwriting of the accused\n\nappellant on the specimen and admitted writings.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P047_C01",
+      "text": "45. The Investigating Officer(PW-13) gave unimpeachable\n\nevidence proving the various steps taken by him for collection of\n\nevidence during investigation so as to link the accused appellant\n\nwith murder of Usha. The fact that the accused appellant was\n\npresent with Usha on the night preceding the murder is firmly\n\nestablished from the deposition of Ashok Kumar Pathak. He went\n\nabsconding after the murder and could not be traced out for almost\n\n10 years which is also a strong circumstance pointing towards his\n\nguilty state of mind.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P048_C01",
+      "text": "46. The circumstances leading to murder of Usha were in the\n\nexclusive knowledge of the appellant. He has offered no\n\nexplanation as to the manner in which Usha was strangled to\n\ndeath within the confines of the room where only he and the\n\ndeceased were present. The bald plea of denial offered by the\n\naccused by way of an explanation to this gravely incriminating\n\ncircumstance is not sufficient to absolve him of the burden cast\n\nupon him by virtue of\nSection 106\nof the Indian Evidence Act,",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P049_C01",
+      "text": "47. As a consequence of the above discussion, we are of the firm\n\nview that the prosecution has established the following links in the\n\nchain of incriminating circumstantial evidence: -\n(i) Motive;\n\n (ii) Last seen together;\n(iii) Medical evidence establishing that the cause of death of\n\n the deceased was homicidal.\n(iv) Confessional note;\n\n (v) Abscondence for nearly 10 years;\n\n(vi) Wrong explanation given by the accused in his\n\n statement under\nSection 313\nCrPC;\n(vii) Failure of the accused to offer explanation for the\n\n homicidal death of his wife in the night time when only\n\n the accused and deceased were present in the house\n\n leading to the interference of guilt by virtue of\nSection\n\nof the Indian Evidence Act, 1872.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "CrPC 313"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P050_C01",
+      "text": "48. Connected together, all these facts form a clinching and\n\ncomplete chain of incriminating circumstances pointing\n\nexclusively towards the guilt of the accused appellant and totally\n\ninconsistent with his innocence or the involvement of any other\n\nperson in the crime.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P051_C01",
+      "text": "49. Consequently, we have no hesitation in confirming the view\n\ntaken by the trial Court and the High Court in convicting and\n\naffirming the conviction of the accused appellant for the charge of\n\ncommitting murder of Usha.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P052_C01",
+      "text": "50. The impugned judgments do not suffer from any infirmity\n\nwarranting any interference.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P053_C01",
+      "text": "51. Hence, the appeal fails and is hereby dismissed as such.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P054_C01",
+      "text": "52. The appellant is on bail. His bail bonds are cancelled. He\n\nshall surrender before the trial Court within the next 60 days to\n\nserve the remainder of the sentence. In case the appellant fails to\n\nsurrender before the trial Court within the aforesaid period, the\n\ntrial Court shall take steps to apprehend him and make him serve\n\nout the sentence.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI_P055_C01",
+      "text": "53. Pending application(s), if any, shall stand disposed of.\n……………………………J.\n (B.R. GAVAI)\n\n ………..………………….J.\n (SANDEEP MEHTA)\nNew Delhi;\nMay 07, 2024.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Sukhpal Singh vs Nct Of Delhi",
+    "case_id": "SC_2024_SUKHPAL_SINGH_VS_NCT_OF_DELHI",
+    "court": "Supreme Court of India",
+    "year": "2024",
+    "facts_summary": "1. The instant appeal is directed against the judgment dated 7th\n\n January, 2010 passed by the High Court of Delhi in Criminal\n\n Appeal No. 296 of 2003 whereby the appeal filed by the appellant\n\n against the judgment and order of conviction and sentence dated\n\n 6th March, 2003 passed by the learned Additional Sessions Judge,\n\n Karkardooma Courts, Delhi(hereinafter being referred to as the\n\n ‘trial Court’) was rejected. 2. By the said judgment, the trial Court convicted the accused\n\n appellant for the offence punishable under Section 302 of the\n\nIndian Penal Code\n, 1860(hereinafter being referred to as the ‘\nIPC\n’) 3. Leave was granted by this Court in this matter on 8th\n\nJanuary, 2015 and the accused appellant was released on bail on\n\nfurnishing bail bonds to the satisfaction of the trial Court.\n\nBrief facts:-",
+    "legal_issues": "13. The trial Court held that since Ashok Kumar Pathak could\n\nnot be located despite genuine efforts, his sworn deposition\n\nrecorded in absence of the accused appellant was liable to be read\n\nin evidence as per the provisions of\nSection 299\nCrPC. Accordingly,\n\nthe said statement was relied upon as a piece of incriminating\n\nevidence against the accused appellant. 14. The trial Court also placed reliance on the confession\n\nnote/letter(Exhibit PW-12/E) holding that the same was found to\n\nbe in the handwriting of the accused appellant by the handwriting\n\nexpert(PW-24) vide report(Exhibit PW-12/F). The said confession\n\nwas treated to be an admission and a strong link of incriminating\n\ncircumstantial evidence against the appellant. 17. The accused appellant has challenged the above judgment\n\naffirming his conviction and sentence through this appeal by\n\nspecial leave.\nSubmissions on behalf of the appellant: -",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [
+      "IPC 302",
+      "CrPC 299",
+      "CrPC 161",
+      "CrPC 313"
+    ],
+    "cases_cited": []
+  }
+}

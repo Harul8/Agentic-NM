@@ -1,0 +1,687 @@
+{
+  "case_id": "SC_2023_2023_OCT_44",
+  "case_name": "Infrastructure Leasing And Financial ... vs Hdfc Bank Ltd.",
+  "normalized_case_name": "INFRASTRUCTURE_LEASING_AND_FINANCIAL_..._VS_HDFC_BANK_LTD.",
+  "court": "Supreme Court of India",
+  "year": "2023",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "19 October 2023",
+  "judges": [
+    "Dipankar Datta",
+    "S. Ravindra Bhat"
+  ],
+  "author": "S. Ravindra Bhat",
+  "bench_type": "division",
+  "petitioner": "Infrastructure Leasing And Financial ...",
+  "respondent": "Hdfc Bank Ltd.",
+  "reporter_citations": [
+    "2023 INSC 929"
+  ],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 28,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2023\\OCT\\2023_OCT_44.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2023_2023_OCT_44_P001_C01",
+      "text": "2023 INSC 929\n\n CIVIL APPELLATE JURISDICTION\n CIVIL APPEAL NO(S). 4708 OF 2022\n\n INFRASTRUCTURE LEASING AND\n FINANCIAL SERVICES LTD. …APPELLANT(S)\n\n VERSUS\n\n HDFC BANK LTD. & ANR. …RESPONDENT(S)\n\n JUDGMENT\nS. RAVINDRA BHAT, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2023_2023_OCT_44_P002_C01",
+      "text": "1. This appeal1, is preferred by Infrastructure Leasing and Financial Services\n Ltd (hereafter “IL&FS” or “the borrower”) aggrieved by an order of the National\n Company Law Appellate Tribunal (hereafter, ‘NCLAT’)2. The point in issue is\n whether the documents executed by IL&FS by which rents were made over to the\n respondent, Housing Development Finance Corporation Ltd (hereafter “HDFC”\n or “the lender”) constituted an assignment and thus fell outside the scope of an\n asset and security freeze order made by the NCLAT.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2023_2023_OCT_44_P003_C01",
+      "text": "2. IL&FS had approached the HDFC for financial assistance. By Sanction\n Letter dated 22.06.2018, the lender sanctioned a financial facility of ₹ 400 crores\n to the borrower. On 25.06.2018, a “Master Facility Agreement” (“MFA”) was\n entered between IL&FS and HDFC for ₹ 400 crores. The MFA envisioned the\n creation of a separate escrow account with Housing Development Finance\n Corporation Bank Limited (hereinafter 'Escrow Bank') for opening of a separate\n\nescrow account with the Escrow Bank. Along with MFA, an “Assignment\n\nDated 13.5.2022 in IA 2196/2020 [in CoAp. (AT) No. 346/2018]\n\nAgreement” (hereafter “AA”) dated 25.06.2018 was also executed between the\nIL&FS and HDFC. Under this document (i.e., the AA) the parties agreed that the\nauthorised indebtedness of IL&FS in terms of the MFA, by way of the facility\ntogether with the interest thereon was payable from the gross income and revenue\nto be derived from the operation of the Business Centre Services\nAgreements/Lease/Leave and License Agreement/s.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2023_2023_OCT_44_P003_C02",
+      "text": "It was also agreed that ‘all\nthe receivables derived/to be derived from the operation of the Borrower's\nContracts, a sufficient portion of which, to pay the principal and interest as and\nwhen the same shall become due’ in terms of the said MFA was assigned and\npledged and was to be ‘set aside for that purpose on the same day’ and a Power\nof Attorney by way of Security Interest was also executed between the IL&FS\nand HDFC.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_2023_OCT_44_P004_C01",
+      "text": "3. By an order, dated 01.10.2018, NCLT in a petition3, filed by the Union of\nIndia (\"UoI\") under\nSections 241\nand\n\nof the Companies Act, 2013 (hereafter\n“the 2013 Act”) ordered to supersede the existing board of directors of the IL&FS. A new board of directors was also constituted, to take charge of the affairs of that\ncompany. Later, by its order dated 12.10.2018, the NCLT declined to issue a\nmoratorium sought by the UOI, (akin to a moratorium under\nSection 14\nof the\nIBC) in respect of IL&FS and its 348 group companies. Aggrieved, appeals were\nfiled before the NCLAT.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_2023_OCT_44_P004_C02",
+      "text": "By order dated 15.10.2018 NCLAT, inter-alia, stayed:\n(i) the institution or continuation of suits or any other proceedings against the\nIL&FS or its 348 group companies, before any court/tribunal/arbitration\npanel/arbitration authority; (ii) any action to foreclose, recover or enforce any\nsecurity interest created over the assets of the IL&FS or those of its 348 group\ncompanies; and (iii) the acceleration, premature withdrawal or other withdrawal,\ninvocation of any term loan, corporate loan, bridge loan, commercial paper,\ndebentures, fixed deposits, guarantees, letter of support, commitment or comfort\n\nNo. 3638 (M.B.) of 2018\n\nand other financial facilities or obligations availed by the IL&FS and its 348\ngroup companies.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_2023_OCT_44_P005_C01",
+      "text": "4. After the interim order of NCLAT, the borrower informed the Escrow\nBank about it, by an email dated 16.10.2018. On 19.10.2018, HDFC instructed\nthe Escrow Bank to transfer monthly instalments from the Escrow Account to the\nLender's Account. On 23.10.2018, IL& FS informed the HDFC about the interim\norder from NCLAT (dated 15.10.2018). The letter stated that the interim order\nrestrained HDFC from appropriating IL& FS account’s with Escrow Bank.\nIL&FS called upon the lender by letter dated 27.10.2018 to reverse the debit of ₹\n6.24 crores and credit the amount back into the account of the borrower. HDFC\nresponded to IL&FS's letter, stating that receivables (i.e. rents) in respect of the\nsecured property were assigned by IL&FS in its favour and that the asset ceased\nto belong to IL&FS.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_2023_OCT_44_P006_C01",
+      "text": "5. On 04.01.2019, IL&FS called upon HDFC to reverse the amount which\nwas debited by the Escrow Bank in the escrow accounts. By the order dated\n04.02.2019, NCLAT directed the UOI and IL&FS to approach Justice (Retd.)\nD.K. Jain (“former judge of this court”) for consent and discuss the terms and\nconditions to supervise the operation of the resolution process. The UOI, through\nthe Ministry of Corporate Affairs, in an affidavit stated that certain banks were\nstill debiting amounts from IL&FS group entities classified as “Amber” and\n“Red” without authorization from the IL&FS board and those debits flouted the\norder dated 15.10.2018. Restraint orders were sought against banks and financial\ninstitutions enjoining them not to debit the accounts of the IL&FS and its group\nentities and/or appropriate the funds held in the said accounts without\nauthorization of IL&FS and the relevant group entities; and further\nreturn/refund/release such amounts that have been debited.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_2023_OCT_44_P006_C02",
+      "text": "On 08.08.2019,\nNCLAT directed as follows:\n\"...If any of the Bank/Financial Institution has debited any amount in\n violation of order of this Appellate Tribunal dated 15th October, 2018, it\n will be open to Union of India/ILFS to bring the same to the notice of Justice\n\nShri D.K. Jain for appropriate orders and also intimate the Bank/Financial\n Institution that it may amount to contempt of court.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_2023_OCT_44_P007_C01",
+      "text": "6. IL&FS wrote, on 22.08.2019 to former judge of this court to make an\nappropriate order. IL& FS made representation before the learned judge on\n28.08.2019. A letter dated 03.09.2019 was sent by the HDFC reiterating that\nmonies in the escrow account were its exclusive property and that IL&FS could\nnot claim ownership over such property. The Escrow Bank wrote on 04.09.2019\nto IL&FS that it had acted in terms of Escrow Agreement and was obliged to hold\nthe money lying in trust for the purpose for which it was received i.e. for the\nbenefit of HDFC. Former judge of this court issued a show-cause notice dated\n30.09.2019 to the HDFC and issued a notice to the Escrow Bank on 10.10.2019. The Escrow Bank on 23.10.2019 wrote to former judge of this court stating that\nthe receivables stood assigned in favour of HDFC and monies received were not\nthe assets of the IL&FS. Former judge of this court granted a personal hearing to\nthe parties. On 12.05.2020, former judge of this court recommended the Escrow\nBank and HDFC to maintain the status quo in the Escrow Account till a final\nview was taken on the IL&FS’s application.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_2023_OCT_44_P007_C02",
+      "text": "The Escrow Bank stopped debiting\nany amount from the Escrow Account and informed the IL&FS and HDFC about\nthis. On 03.07.2020, former judge of this court issued a final order holding that\nthe actions of the HDFC and Escrow Bank in debiting the amount from the\nEscrow Account violated the orders passed by NCLAT and thus HDFC and the\nEscrow Bank were directed to purge themselves within two weeks.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_2023_OCT_44_P008_C01",
+      "text": "7. HDFC and IL&FS claimed opposing reliefs: the lender, on the one hand,\nclaimed- predictably that the interpretation and directions of former judge of this\ncourt in the orders/directions dated 12 May 2020 and 03 July 2020 were incorrect\nand had to be set aside; the borrower, IL&FS in its applications sought directions\nthat ₹ 112,79,18,348 (Rupees One Hundred Twelve Crore Seventy Nine Lakh\nEighteen Thousand Three Hundred Forty Eight), appropriated from its accounts\ntowards debt service payments, were in violation of the order dated 15.10.2018\n\nfrom NCLAT and in compliance with the order passed by former judge of this\ncourt on July 3, 2020.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2023_2023_OCT_44_P009_C01",
+      "text": "8. By the impugned order, NCLAT held that so far as part of the receivables\ndeposited in the Escrow Account which were sufficient to meet the principal and\ninterest (payable by IL&FS) assigned by the said borrower to HDFC, no\nproprietary interest continued -with IL&FS nor could it exercise any right over\nthat part of the Escrow Account which was assigned. It was held, borrower “may\nhave right and interest on the residual of deposits which is an excess of principal\nand interest for which security interest is created in favour of the lender which\nEscrow Bank is permitted to transfer to the borrower.” IL&FS’s argument that\nthere was no assignment of the receivables, but only the creation of security\ninterest in the receivables was rejected. It was also held that since there was an\nexpress assignment of lease rental- sufficient to meet the principal and interest\npayments-, the “assignment has to be accepted as assignment” in favour of\nHDFC and that 'pledge' in AA did not take away the nature of the transaction\ndocuments which was the assignment of receivables.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2023_2023_OCT_44_P009_C02",
+      "text": "NCLAT also held that the\nfreeze order of 15.10.2018 did not negate the AA nor did it take away the property\nright of HDFC in the lease rental receivables. However, the right over receivables\ndeposited in the Escrow Account to the extent they were in excess of principal\nand interest, was retained by the IL&FS and in the event, any amount in excess\nof the said principal and interest was transferred to or debited in the HDFC's\naccount and they needed to be reversed, after adjusting the shortfall in debiting\nany interest or principal of any earlier months. Parties’ contentions",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2023_2023_OCT_44_P010_C01",
+      "text": "9. Mr. Ramji Srinivasan, Sr. Advocate urged, on behalf of IL&FS that the\nMFA (dated 25.06.2018) and other agreements executed on 25.06.2018 clearly\nindicate that the Facility advanced to the Borrower was loan repayable within 96\nmonths. The Security Interest was created by the Borrower and the receivables\n\nwere nothing but security for repayment of the loan. The Escrow Account was\ncreated in the Escrow Bank to facilitate the repayment of principal and interest as\nper the repayment schedule. There was no transfer of title in the receivables from\nBorrower to Lender. The receivables deposited in the Escrow Bank were the\nassets of the Borrower which were deposited in the Escrow Bank as security for\nthe repayment of the loan of ₹ 400 Crores. Till 15.10.2018, the escrow agent was\ndebiting the amount as in terms of the Escrow Agreement. However, after the\ninterim order (dated 15.10.2018), the Escrow Bank was not entitled to debit any\namount to the Lender's Account which was prohibited by the interim order (dated\n15.10.2018) of NCLAT in the pending appeal. IL & FS secured repayment of the\nloan by assigning the lease rental to the extent of principal and interest payable\nper month.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2023_2023_OCT_44_P010_C02",
+      "text": "The MFA and all the agreements clearly depict the relationship\nbetween IL&FS and HDFC. The AA cannot be read in isolation. The Escrow\nBank held the amount in the account as a trustee and the Power of Attorney\nAgreement executed on 25.06.2018 was by way of security interest. Repayment\nwas secured by receivables and other additional securities.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2023_2023_OCT_44_P011_C01",
+      "text": "10. It was thus argued that the assignment of receivables is only security and\nnot transfer. It is submitted that detailed written submissions were filed before\nformer judge of this court by the parties and after considering every contention,\nthe order dated 03.07.2020 was made by him. That order by former judge of this\nCourt, considered all the submissions by the lender, the borrower and the Escrow\nBank, and after examining the principal (and the facility agreement) and all other\nagreements and attendant circumstances. Under that order, the lender and Escrow\nBank were obliged to return the amount debited i.e. ₹112,79,18,348/-.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2023_2023_OCT_44_P012_C01",
+      "text": "11. Learned senior counsel argued that the lender’s claim that the facilities\nextended are in the nature of lease rental discounting facility (LRD) as argued by\nHDFC, and not covered by the injunction is not borne out from the record. He\nargued that the facility is nothing but a type of term loan offered with security of\nrental income. The clear indicators that the Facility is secured by charge created\n\nover the property and the receivables (rent) can be gathered from the following:\nfirstly, sanction letter for the term loan and the Facility specifically refers to this\nas a loan for a term of 96 months to be repaid by IL&FS from the lease rentals\nfrom commercial premises. Secondly, the terms relating to security and\nrepayment also establish this. In fact, none of the documents contain any element\nor even a mention of the sale and purchase of the debt of IL&FS. The transaction\nis a loan transaction and not a sale of debt at all.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2023_2023_OCT_44_P013_C01",
+      "text": "12. Learned counsel refers to Clauses 3 (sets out purpose of availing facility)\nand 4 (Establishes nature of relationship between the parties) of the MFA to argue\nthat purpose of availing facility was merely re-financing of the existing debt and\nclause 4 of MFA clearly establish that nature of relationship between the parties\nwas that of lender-borrower and not that of seller and buyer. It is also pointed out\nthat pursuant to the execution of the financing documents IL&FS submitted form\nCHG-one4, which is confirmed by HDFC Ltd, i.e., the lender form for registration\nof creation of charge to secure the Facility. Therefore, the lender in fact filed its\nclaim as a secured creditor of IL&FS before Grant Thornton India, the client’s\nmanagement consultant.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2023_2023_OCT_44_P014_C01",
+      "text": "13. It is argued that various conditions in the MFA and the Escrow Agreement\nindicate that the transaction is essentially a loan transaction between the lender\nand the borrower with the creation of a security. Counsel points out that the\ndocuments which are part of the MFA nowhere use the expression “lease rent\ndiscounting”. It is also argued that in terms of the Assignment and Administration\nAgreement (also executed on 25 June 2018), receivables which are relevant with\nrespect to the security property were created in favour of the lender bank. Because\none clause5 uses the word assignment and at the same time it also states that the\namounts i.e. receivables are pledged and will be set aside for that purpose. This\nclearly indicates that the plain meaning of the term pledge and that the intention\n\nAn application for registration, or modification of charge. Clause 1 of the Assignment and Administration Agreement dated 25.06.2018 – Assignment and Pledge of\nReceivables.\n\nof the parties was that this amount was to be treated as a security. The expression\nassigned is clarified later, in the words “shall be set aside for that purpose”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2023_2023_OCT_44_P014_C02",
+      "text": "When used in conjunction with the expression “pledge”, what was contemplated\nwas the creation of a security of the property and not its transfer.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2023_2023_OCT_44_P015_C01",
+      "text": "14. It is highlighted that the charge is a kind of security, whether the creditor\nobtains possession of ownership of the assets or not; it is appropriated to the\nsatisfaction of the debt. From the provisions of the AA and the facility agreement,\nit is absolutely clear that receivables were charged in favour of HDFC Ltd, the\nlender, only for securing the obligations of the appellant IL&FS under the Facility\nagreement and facilitation of repayment and it did not amount to a transfer of the\nlegal title over such receivables which continues to vest with IL&FS. It is\nsubmitted that in these circumstances, the holistic reading of all documents as\nresorted to by former judge of this court was the correct approach. Lastly, it is\npointed out that the receivables or the rent paid into the account was to be held in\ntrust by the escrow agent which had to secure compliance with the tribunal's order\ndated 15.08.2018 and the judgement dated 12.03 2020.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2023_2023_OCT_44_P016_C01",
+      "text": "15. Mr. Mukul Rohatgi, learned Sr. Advocate appeared for HDFC Ltd. and\nrefuted the submissions of the learned senior counsel for IL&FS. It was argued\nthat a plain analysis of the transaction documents makes it clear that the facility\nextended to the borrower is a Lease Rental Discounting (LRD) loan transaction,\nwhich is materially different from a traditional loan transaction. An LRD loan\ntransaction involves the assignment/sale of the rent receivables by the landlord to\nthe financing entity at a discounted value in terms of the transaction documents.\nA certain component of lease rentals arising from the use of the TIFC Property\n(or Secured Property) i.e., sufficient for repayment of the facility, has been\nirrevocably assigned in favour of the lender till repayment of the said Facility.\nClause 5(c)6 of Schedule I of the Facility Agreement recognizes that the assigned",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2023_2023_OCT_44_P017_C01",
+      "text": "5. Security and Repayment Specific Covenants:\n\nreceivables are the exclusive property of HDFC Ltd. The assigned receivables are\nclearly the property of HDFC Ltd. The borrower has no right/title or interest in\nthe monies/receivables/amount deposited in the Escrow Account. The relief of\nrelease/refund/reversal of amounts debited from the Escrow Account stating that\nthe same is in line with the order dated 03.07.2020 issued by former judge of this\ncourt is misplaced since the same has not attained finality and was under scrutiny\nby the tribunal in the applications filed by the lender.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2023_2023_OCT_44_P018_C01",
+      "text": "16. It was submitted that no judicial order or judgment prohibited the licensees\nof the TIFC property from depositing monthly lease rent in the Escrow Account,\nnor the orders held that the lender was disentitled from using the assigned\nreceivables/rents. The transaction was not prohibited by the order dated\n15.10.2018, which was restricted to the assets of the IL&FS. Assigned receivables\nwere not its assets. They were consequently outside the purview of the order dated\n15.10.2018. It was contended that former judge of this court by the order (dated\n03.07.2020) unduly broadened the ambit of the order dated 15.10.2018. The\ncommittee overlooked that the distribution of the rentals/receivables was property\nof the lender and therefore, fell outside the scope of any direction of the 15 th\nOctober 2018 order. The borrower was not entitled to any reliefs as claimed in\nI.A. No 2196/ 20207.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2023_2023_OCT_44_P019_C01",
+      "text": "17. It was contended by HDFC that the transfer of ownership of a portion of\nthe rent receivables by IL&FS in its favour was sufficient to pay the principal and\ninterest whenever it became due in terms of the Facility Agreement. It was not\nthe entire rent receivables but only a portion of the same sufficient to cover the\nprincipal and interest, was assigned. The balance portion was not assigned; it\ncontinues to be owned by IL&FS. The borrower hence continues to have title and\ninterest in the residual receivables which too was secured.\n[..] (c) The Borrower agrees that the Receivables shall be exclusive property of the Lender for the purpose of\nsecured repayment of the Facility and as such the Borrower will not make any further borrowing on the\nstrength of the Receivables on being Borrower's property.\n\nSaid IA was Filed for directions against Escrow Bank and lender seeking return of amount debited.\n\nAnalysis and Conclusions",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2023_2023_OCT_44_P020_C01",
+      "text": "18. For appreciation of the transaction (to determine whether the assignment\nor arrangement was a transfer, or security interest), it would be convenient to\nperuse portions of the impugned order, which reproduced the relevant conditions\nin the various documents.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2023_2023_OCT_44_P021_C01",
+      "text": "19. The parties entered into a Master Facility Agreement (MFA) on\n25.06.2018. The definition clause in the MFA, inter alia, defined [Cl. 2 (1)] “due\ndate”; Clause 2 (aa) defined “repayment” and clause 2 (cc) defined “security”. Per Clause 2 (cc), “Security” had to have the same “meaning as described in\nClause-8 of this Agreement and also described in the Schedule-III”. Likewise,\nsecured property inter alia, included immovable property described in Schedule\nIII. The MFA envisioned that the borrower (IL&FS) enters into an escrow\nagreement “on such terms as agreed by the lender. The power was to give\nirrevocable instructions to Escrow Bank. Clause 8 of the MFA deals with the\n'security interest'.” Clause 8(8.1) is as follows:\n“8. SECURITY INTEREST- DESCRIPTION/CREATION/PERFECTION\n 8.1. The Borrower create Security Interest in such form and manner as\n instructed by Lender on the asset/property more particularly described in\n Schedule-III to this Agreement as the principal Security for securing the\n repayment of the Facility.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2023_2023_OCT_44_P021_C02",
+      "text": "The Borrower hereby unconditionally and irrevocably undertakes and\n confirms to create security interest on the said Secured Property in favour\n of the Lender and perfect the security creation as mentioned herein above\n in favour of the Lender in such form and manner as may be deem fit by\n Lender within 6 months from the date of first disbursement of the Facility. The Company further undertakes and confirms to open an Escrow Account\n within 30 days of the first disbursement of the Facility for the assignment of\n receivables arising/accruing from the TIFC Property and creating charge\n on the said Escrow Account in manner and form as made be deem fit by\n Lender.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2023_2023_OCT_44_P022_C01",
+      "text": "20. Clause 13 of the MFA provided for ‘Assignment/Transfer’. Clause 13.1 of\nMFA is as follows:\n“13. ASSIGNMENT/TRANSFER\n 13.1. The Borrower shall not assign or transfer all or any of its rights,\n benefits or obligations under the Facility Agreement and the Transaction\n Documents without the approval of Lender. Lender may, at any time, assign\n\nor transfer all or any of its rights, benefits and obligations under the Facility\n Agreement and the Transaction Documents. Notwithstanding any such\n assignment or transfer, the Borrower shall, unless otherwise notified by\n Lender, continue to make all payments under the Facility Agreement to\n Lender and all such payments when made to Lender shall constitute a\n discharge to the Borrower from its liabilities only to the extent of such\n payments.”\n\nClause 15 covers ‘Event of Default’. Clause 15.2 deals with ‘Consequence of\nDefault and remedies’.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2023_2023_OCT_44_P022_C02",
+      "text": "Schedule-1 of the MFA provides for ‘Special Conditions\nfor Rental Discounting. ‘Receivables’ is defined in Clause 1 of Schedule -I of the\nMFA in the following words:\n“Receivables” shall mean and include gross income and revenue derived\n from the operation of Client’s Contracts and shall include Deferred\n Receivables as stated in Appendix-1.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_2023_OCT_44_P023_C01",
+      "text": "21. Clause 4 of Schedule-1 of the MFA deals with ‘Borrower’s Contracts\nSpecific Covenants’. Clauses 4(c) and Clause 5 (a), (b) and (c) provide as follows:\n\"4. [..] (c) The Borrower shall not alter, change or modify the terms of the\n Borrower's Contracts in so far as it relates to such terms which would have\n an adverse effect or impact on the Receivables and/or which shall otherwise\n detrimentally effect the Lender's interest in the Secured Property and\n income thereof.\"\n\"5.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_2023_OCT_44_P023_C02",
+      "text": "SECURITY AND REPAYMENT SPECIFIC COVENANTS\na) The Borrower agrees that the Facility shall be secured by exclusive\n security interest on the Receivables in such mode and manner as deemed fit\n and desired by the Lender.\nb) The Borrower shall, on execution of this Facility Agreement, assign the\n Receivables in favour of the Lender on such terms as would be entered into\n between the Borrower and the Lender and pursuant thereto shall execute a\n Power of Attorney and Assignment and Management Agreement in line with\n the draft enclosed herewith in Appendix-3 to the Special Conditions.\nc) The Borrower agrees that the Receivables shall be exclusive property of\n the Lender for the purpose of secured repayment of the Facility and as such\n the Borrower will not make any further borrowing on the strength of the\n Receivables as being Borrower's Property.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_2023_OCT_44_P024_C01",
+      "text": "22. An 'Escrow Account Agreement' was also entered between the lender and\nthe borrower on the same date under which the borrower has to open an Escrow\nAccount with the Escrow Bank.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_2023_OCT_44_P024_C02",
+      "text": "Recital (C) of the Escrow Account Agreement\nprovided:\n\n\"(C) The Borrower has agreed that, the payments to be collected/received\n by the Borrower from the clients of Business Service Centre/License/Lessee\n of various Units/properties (hereinafter referred to as \"the said Units\") built\n and/or to be built and leased/to be leased on the Secured Property detailed\n in Schedule B hereunder (hereinafter called \"the said Property\")\n for/against which the Facility granted/to be granted by Lender as per the\n Offer Letter and Facility Agreement, shall be credited to the said Escrow\n Account (hereinafter referred to as \"the Receivables\") and the Lender shall\n on satisfaction of the condition as described in Item No. 6 of Schedule A\n hereunder, adjust all the amounts to be paid by the Borrower to the Lender\n under the Facility Agreement, from time to time, out of the amounts credited\n in the said Escrow Account, and permit the transfer in the Designated\n account of the Borrower opened with the Escrow Bank, the amount as\n mentioned in Item No. 7 of Schedule A out of the remaining balance in the\n said Escrow Account after such adjustment as agreed hereunder.\"\nClause-3 of the Escrow Account",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_2023_OCT_44_P024_C03",
+      "text": "Agreement provides 'Bank's Covenants' which\nreads as follows:\n\"3.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_2023_OCT_44_P024_C04",
+      "text": "BANK'S COVENANTS:\n(a) The Escrow Bank hereby agrees to act as such and to accept all monies\n to be delivered to or held in the Escrow Account, pursuant to the terms and\n conditions of this agreement. This Escrow Bank shall hold and safeguard\n the Escrow Account, during the terms of this Agreement and shall hold all\n cash in the Escrow Account, at the request of the Borrower and to safeguard\n the repayment of the Facility and for the benefit of the Borrower and the\n Lender in accordance with the terms mentioned herein. (b) The Escrow Bank shall not be required to verify and ensure that the\n money(ies) deposited is the Receivables and all money(ies) deposited at any\n time in any quantum should be treated as the Receivables. (c) The Escrow Bank agreed that during the currency of the term of this\n Agreement as may be amended from time to time, the Escrow Bank shall\n ensure that the Escrow Account is operated and maintained as per the terms\n set out herein and shall not permit any deviation, without the written\n consent of the Lender.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_2023_OCT_44_P024_C05",
+      "text": "(d) The Escrow Bank agrees that all money(ies) received by it under this\n Agreement shall, until transferred in accordance with this Agreement, be\n held in trust for the purposes for which they were received, and shall be\n segregated from other accounts of the constituents of the Escrow Bank and\n from the funds and Property of the Escrow Bank, in accordance with the\n banking law and practice. (e) The Bank shall transfer such amounts to the account of the Borrower\n which are in excess of the minimum balance required to be maintained in\n the Escrow Account in accordance with the terms stated herein.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2023_2023_OCT_44_P025_C01",
+      "text": "23. Clause 4(b) of the Escrow Account Agreement deals with 'Operation and\nMaintenance'. Clause 4(a), (c) and (e) provides as follows:\n\n\"4.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2023_2023_OCT_44_P025_C02",
+      "text": "OPERATION AND MAINTENANCE\n(a) The Borrower agrees that, the payments to be collected/received by the\n Borrower from the Business Service Centre/Licensee/lessee of various\n Units/properties built and/or to be built and leased/to be leased on the\n Property which is more particularly described in Schedule of the said\n Facility Agreement (hereinafter called \"the said Property\") for/against\n which the Facility granted/to be granted by Lender as per the Offer Letter\n and Facility Agreement, shall be credited to the said Escrow Account\n (hereinafter referred to as \"the Receivables\") and the Lender shall on\n satisfaction of the condition(s) as described in Item No. 6 of Schedule A\n hereunder, adjust all the amounts to be paid by the Borrower to the Lender\n under the Facility Agreement, from time to time, out of the amounts credited\n in the said Escrow Account, and transfer to the Designated Account of the\n Borrower, the amount as mentioned in Item No. 7 of Schedule A out of the\n remaining balance in the said Escrow Account after keeping the minimum\n balance in the Escrow Account.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2023_2023_OCT_44_P025_C03",
+      "text": "(c) The Lender shall be entitled to instruct the Escrow Bank from time to\n time to transfer amounts from the Escrow Account including as stated\n hereinabove. The Lender shall appropriate these monies towards the\n repayment of the Facility, as and when the same is due and payable in full\n together with all other amounts payable under the Facility Agreement.\n-------------------------\n(e) The Borrower hereby irrevocably authorizes the Escrow Bank to pay\n and to transfer the money(ies) received in the Escrow Account to the Lender\n as per the terms and conditions agreed in the Offer Letter, Facility\n Agreement and this Agreement as may be applicable from time to time.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2023_2023_OCT_44_P026_C01",
+      "text": "24. An Assignment and Administration Agreement was also entered on the\nsame date i.e., 25.06.2018 with the lender and borrower. This agreement provided\nfor the assignment of the receivables by the borrower to the lender. Recital clause\n3 is as follows:\n\"3. It has been agreed that the authorised indebtedness incurred by the\n Borrower in terms of the Facility Agreement by way of the Facility together\n with the interest thereon shall be payable from the gross income and\n revenue to be derived from the operation of the Business Centre Services\n Agreements/Lease/Leave and License Agreement/s as more particularly\n detailed in the Schedule-1 (\"Borrower's Contracts\") to this Agreement\n (hereinafter referred to as \"Receivables\").\nXxxx\n\nFurther Clause 1 of the Assignment and Administration Agreement reads\nas:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2023_2023_OCT_44_P027_C01",
+      "text": "1. Assignment and Pledge of Receivables\n All the Receivables derived/to be derived from the operation of the\n Borrower's Contracts, sufficient portion of which, to pay the principal and\n interest as and when the same shall become due in terms of the said Facility\n Agreement, is hereby assigned and pledged and shall be set aside for that\n\npurpose and this Assignment and Pledge shall extend to and include any\n assessments that may be levied pursuant to Clause 4(a) hereof.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2023_2023_OCT_44_P028_C01",
+      "text": "25. A Power of Attorney document too was executed by IL& FS on\n25.06.2018. By the Power of Attorney, the borrower irrevocably nominated,\nconstituted and appointed HDFC as its true and lawful attorney on behalf of the\nborrower. By recital clause 2 of the said Power of Attorney document, HDFC\ncould “appropriate the proceeds received towards the discharge of the Facility”;\nrecital clause 5 enabled the lender to put to use, the secured property and give the\nbusiness centre, etc, on leave, license or lease basis in the event the borrower’s\nexisting arrangements were terminated or ended. Recital clause 7 enabled HDFC\nto receive all rents and all other sums in respect of such premises.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2023_2023_OCT_44_P029_C01",
+      "text": "26. The effect of these documents is what the court is concerned with. It is a\nknown principle of contract interpretation, that the substance of a document, is\ndiscernible from its terms, rather than the label or its nomenclature. Yellapu\nUma Maheswari and Ors. vs. Buddha Jagadheeswararao & Ors.8\n, the court held:\n“It is well settled that the nomenclature given to the document is not\n decisive factor but the nature and substance of the transaction has to be\n determined with reference to the terms of the documents and that the\n admissibility of a document is entirely dependent upon the recitals\n contained in that document but not on the basis of the pleadings set up by\n the party who seeks to introduce the document in question.”\n\nIn Assam Small Scale Ind. Dev. Corp. Ltd. & Ors. v. J.D. Pharmaceuticals & Anr9\nthe court stated as follows:\n“The nature of transaction is required to be determined on the basis of the\n substance there and not by the nomenclature used. Documents are to be\n construed having regard to the contexts thereof wherefor 'labels' may not\n be of much relevance.”\n\nThis was also stated in\nV. Lakshmanan v. B.R.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2023_2023_OCT_44_P029_C02",
+      "text": "Mangalagiri & Ors10\n( that the\n“nomenclature or label given in the agreement as advance is not either decisive\n\n2015 (11) SCR 849\n\n2005 (4) Suppl. SCR 232\n\n1994 Supp (6) SCR 561\n\nor immutable.”). This principle of substance, over the form, was followed in\nSuper Poly Fabriks Ltd. vs. Commissioner of Central Excise, Punjab11\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Super Poly Fabriks Ltd v Commissioner of Central Excise, Punjab11\n"
+      ],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_2023_OCT_44_P030_C01",
+      "text": "27. That one document is styled or described in a certain manner, or that it uses\na certain expression, or term is not conclusive; it is the effect of all the terms, of\nthe documents, which bring out the true purport and intention of the parties. Likewise, another allied principle of contract interpretation, is that where the\ntransaction is not the subject of one document, but several, which refer to each\nother, or a reading of all, describe the entire contract, then, it is open to the court\nto consider all of them together. This principle was stated in\nS. Chattanatha\nKarayalar v The Central Bank of India & Ors12\nwherein this court held that:\n“The principle is well-established that if the transaction is contained in\n more than one document between the same parties they must be read and\n interpreted together and they have the same legal effect for all purposes as\n if they are one document. In Manks v. Whiteley, [1912] 1 Ch. 735 Moulton,\n L.J. stated :\n\"Where several deeds form part of one transaction and are\n contemporaneously executed they have the same effect for all purposes such\n as are relevant to this case as if they were one deed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_2023_OCT_44_P030_C02",
+      "text": "Each is executed on\n the faith of all the others being executed also and is intended to speak only\n as part of the one transaction, and if one is seeking to make equities apply\n to the parties they must be equities arising out of the transaction as a\n whole.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_2023_OCT_44_P031_C01",
+      "text": "28. Undoubtedly as argued on behalf of IL&FS, there are certain conditions in\nthe MFA – [clauses 2 (cc) and 2 (dd)] which define “security” and “security\ninterest”. Read along with clause 8.1 and Schedule III, these would lead one to\ninfer those receivables or rents that which IL&FS is entitled to, form the security\nfor the advance extended to it by the lender. Nevertheless, as discussed earlier,\nthese conditions cannot be read in isolation because the MFA itself adverts to\nother documents - all of which were executed by the parties contemporaneously.\nThe condition in the Assignment and Administration agreement which [was also\nexecuted on the same day, i.e. 25.06.2018], clearly indicates that rents payable to\n\n2008 (6) SCR 1076\n\n1965 (3) SCR 318\n\nIL&FS stood unconditionally assigned to HDFC. The use of the expression\n“pledge” in this context cannot be made much of. This is because the assignment\nis not hedged with any condition; it entitles HDFC to appropriate the proceeds,\nto the extent of liability of IL&FS.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2023_2023_OCT_44_P032_C01",
+      "text": "29. The Lease Rental Discounting (LRD) arrangement - a new kind of financial\nagreement by which a banker allows credit facilities to a commercial property\nowner, has the flexibility of ensuring that the asset owner is given access to credit. The dominant condition is that a substantial portion or the entire rent or\nreceivables which the owner would be entitled to are made- sold or assigned,\nabsolutely to the creditor bank. This is with the intention that the borrower’s\nliabilities are discharged automatically from the proceeds payable in respect of\nthe property. Such amounts virtually are by way of unsecured debts. In other\nwords, future rent payable is actually an unsecured debt that the owner/borrower\nwould have been otherwise entitled to claim, but for the assignment or transfer,\nto the lender/creditor. Because the owner is a debtor of the bank, the latter\nbecomes the creditor of the tenant or the lessee as the case may be. This\narrangement has the advantage of virtually ring fencing the creditor from the\neventuality of bankruptcy or an insolvency event, which the borrower might be\nexposed to.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2023_2023_OCT_44_P032_C02",
+      "text": "In fact, the Reserve Bank of India (RBI) has formulated guidelines\nwhich regulate all banks’ conduct in regard to the LRD facilities and they extends\nto a class of borrowers who own commercial properties.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2023_2023_OCT_44_P033_C01",
+      "text": "30. It would also be relevant at this stage to notice that clauses 1 and 4(c) and\n(j) of the Assignment Agreement categorically set aside the rents payable to\nIL&FS, in favour of the assignee, i.e. the lender bank. Furthermore, the Escrow\nAgreement records (through clause 2) that all receivables to which the borrower\nwould be entitled would be deposited in the escrow account. Furthermore, the\nlessees or tenants of the properties owned by the borrower be instructed to pay\nsuch an amount in the escrow account itself. Clause 4(c) of the Escrow Agreement\nis more categorical; it authorizes only the lender (i.e., HDFC) to instruct the\n\nescrow bank to transfer the amounts and permits the bank to appropriate amounts\ntowards adjustment arising out of the Facility liability. In the same line, the\nGeneral Power of Attorney (GPA) document (especially clauses 2 and 5)\ncategorically entitles the lender/HDFC to appropriate the proceeds deposited\ntowards the discharge of the borrower’s liability under the Facility. Clause 5\nsimilarly entitles access to the lease rent.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2023_2023_OCT_44_P033_C02",
+      "text": "Furthermore, the bank/lender virtually\nsteps into the shoes of the borrower and by the terms of the GPA is also authorized\nto let out the premises in case due to an unforeseen situation an existing lessee or\ntenant vacates it or is unable to pay.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2023_2023_OCT_44_P034_C01",
+      "text": "31. The borrower is correct in arguing that the expression LRD is nowhere\nused in any of the documents executed at the time. Yet, as discussed earlier in the\njudgment, it is the nature and substance of the transaction which is determinative.\nAn application of the rule that all the contemporaneous documents are to be read\ntogether, to discern the true purport of the contract, it is evident that what the\nparties intended was the assignment of the debt, i.e., the rents payable.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2023_2023_OCT_44_P035_C01",
+      "text": "32. It would at this stage, be necessary to consider whether such amounts\npayable on a future date are to be considered property and, therefore, capable of\ntransfer.\nUnder the Transfer of Property Act, 1882\n,\nSection 5\nstates generally that\nall manner of property is capable of transfer.\nSection 6\nlays out what are the kinds\nof properties or actions which are not transferable: these are “personal claims”\nin the nature of tortious claims and “choices in action” cannot be transferred.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2023_2023_OCT_44_P036_C01",
+      "text": "33. “Actionable claim” is defined by the\nTransfer of Property Act, 1882\n(hereafter “TPA”) in the following manner:\n“\nSection 3\nInterpretation clause….\n“actionable claim” means a claim to any debt, other than a debt secured\n by mortgage of immoveable property or by hypothecation or pledge of\n moveable property, or to any beneficial interest in moveable property not\n in the possession, either actual or constructive, of the claimant, which the\n Civil Courts recognise as affording grounds for relief, whether such debt or\n beneficial interest be existent, accuring, conditional or contingent:”\n\nThus, in terms of\nSection 3\nof the TPA, actionable claim means (a) claim to an\nunsecured debt (other than a debt secured by mortgage of immovable property,\nhypothecation or pledge (b) beneficial interest in a movable property. Both these\nare recognised as enforceable. Other claims, however, do not fall within the\nexpression “actionable claim”.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2023_2023_OCT_44_P037_C01",
+      "text": "34. Sections 130\n,\n\nand\n\nof TPA, deal with transfer of actionable claims:\n“130. Transfer of actionable claim—\n (1) The transfer of an actionable claim [whether with or without\n consideration] shall be effected only by the execution of an instrument in\n writing signed by the transferor or his duly authorised agent, shall be\n complete and effectual upon the execution of such instruments, and\n thereupon all the rights and remedies of the transferor, whether by way of\n damages or otherwise, shall vest in the transferee, whether such notice of\n the transfer as is hereinafter provided be given or not: Provided that every\n dealing with the debt or other actionable claim by the debtor or other\n person from or against whom the transferor would, but for such instrument\n of transfer as aforesaid, have been entitled to recover or enforce such debt\n or other actionable claim, shall (save where the debtor or other person is a\n party to the transfer or has received express notice thereof as hereinafter\n provided) be valid as against such transfer.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2023_2023_OCT_44_P037_C02",
+      "text": "(2) The transferee of an actionable claim may, upon the execution of such\n instrument of transfer as aforesaid, sue or institute proceedings for the same\n in his own name without obtaining the transferor’s consent to such suit or\n proceeding and without making him a party thereto. Exception —Nothing in this section applies to the transfer of a marine or\n fire policy of insurance or affects the provisions of\nsection 38\nof the\n Insurance Act, 1938 (4 of 1938). Illustrations\n(i) A owes money to B, who transfers the debt to C. B then demands the\n debt from A, who, not having received notice of the transfer, as prescribed\nsection 131\n, pays B. The payment is valid, and C cannot sue A for the\n debt. (ii) A effects a policy on his own life with an Insurance Company and\n assigns it to a Bank for securing the payment of an existing or future debt. If A dies, the Bank is entitled to receive the amount of the policy and to sue\n on it without the concurrence of A’s executor, subject to the proviso in sub-\n section (1) of\nsection 130\nand to provisions of\nsection 132\n. Section 131\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2023_2023_OCT_44_P037_C03",
+      "text": "Notice to be in writing signed- Every notice of transfer of an\n actionable claim shall be in writing, signed by the transferor or his agent\n duly authorized in this behalf, or, in case the transferor refuses to sign, by\n the transferee or his agent, and shall state the name and address of the\n transferee.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2023_2023_OCT_44_P038_C01",
+      "text": "35. Mewa Lal and Ors. vs. Tara Rani13\nit was held that:\n\nAIR 1973 All 165\n\n“Actionable claim can be transferred only by execution of an instrument in\n writing signed by the transferor or his duly authorised agent, whereas under\nSection 54\nof the Transfer of Property Act, \"Sale\" is a transfer of ownership\n in exchange for a price paid or promised or part-paid and part-promised.\n This payment of price, in full or in part or promised is by the purchaser to\n the seller. The sale of a property of a value of more than Rs. 100/- has to be\n compulsorily registered, whereas, an actionable claim of any amount can\n be had only by execution of an instrument. Thus, the sale of a property and\n sale of an actionable claim are two different things and one has no relation\n with the other. As the transfer of an actionable claim is not done by a\n registered deed…”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [
+        "Mewa Lal and Ors v Tara Rani13\nit was"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_2023_OCT_44_P039_C01",
+      "text": "36. This court has ruled, in\nSunrise Associates vs Govt. Of NCT of Delhi14\nthat:\n“Distinct elements are deducible from the definition of 'actionable claim' in\nSection 3\nof the Transfer of Property Act. An actionable claim is of course\n as its nomenclature suggests, only a claim. A claim might connote a\n demand, but in the context of the definition it is a right, albeit an incorporeal\n one. Every claim is not an actionable claim. It must be a claim either to a\n debt or to a beneficial interest in movable property. The beneficial interest\n is not the movable property itself, and may be existent, accruing,\n conditional or contingent. The movable property in which such beneficial\n interest is claimed, must not be in the possession of the claimant. An\n actionable claim is therefore an incorporeal right.\n******\n An actionable claim would include a right to recover insurance money or a\n partner's right to sue for an account of a dissolved partnership or the right\n to claim the benefit of a contract not coupled with any liability (see\nUnion\n of India v. Sarada Mills\n(1973 SCR (2) 484)..",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_2023_OCT_44_P039_C02",
+      "text": "A claim for arrears of rent has\n also been held to be an actionable claim\nState of Bihar v Maharajadhiraja\n Sir Kameshwar Singh\n1952 SCR 889, 910). A right to the credit in a\n provident fund account has also been held to an actionable claim (\nOfficial\n Trustee, Bengal v L. Chippendale\nAIR 1944 (Cal.)\n335;\nBhupathi Mohan\n Das v Phanindra Chandra Chakravarthy & Anr. AIR 1935 (Cal.) 756).”\n\nThe issue involved\nin that case\nwas whether the sale of lottery tickets, amounted\nto the sale of goods, attracting a sales tax levy. The court held that the sale did\nnot involve goods, but the sale of actionable claim:\n“The question is, what is this right which the ticket represents? There can\n be no doubt that on purchasing a lottery ticket, the purchaser would have a\n claim to a conditional interest in the prize money which is not in the\n purchaser's possession.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_2023_OCT_44_P039_C03",
+      "text": "The right would fall squarely within the definition\n of an actionable claim and would therefore be excluded from the definition\n of 'goods' under the\nSale of Goods Act\nand the sales tax statute [..]”\n\n2006 Supp(2) SCR 421\n\nThe court characterised the rights contained in a lottery ticket, and that they\nrepresented a right in futuro, the sale of which amounted to the sale of an\nactionable claim:\n“The right to participate being an inseparable part of the chance to win is\n therefore part of an actionable claim. The authorities considered by the\n Court in H.Anraj do not support the sub division of the chance to win into\n a further distinct right to participate. The Court sought to draw the\n distinction between the chance to win and the right to participate by\n describing the former as a right 'in futuro' and the latter as \"in praesenti\". Both the rights are in fact 'in futuro'. In any event the distinction is\n immaterial to the question as to whether the subject matter of the transfer\n is an actionable claim, since an actionable claim may be existent, accruing,\n conditional or contingent.”",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2023_2023_OCT_44_P040_C01",
+      "text": "37. In another decision,\nNoor & Ors. v G.S. Ibrahim (Dead) by LRs15\nit was\nheld that:\n“If right to recover the arrears is assigned, then the transferee/landlord can\n recover those arrears as rent and if not paid maintain a petition for eviction\n under the rent laws for those arrears as well.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [
+        "In another decision,\nNoor & Ors v G.S. Ibrahim"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2023_2023_OCT_44_P041_C01",
+      "text": "38. In another decision,\nICICI Bank v Official Liquidator of APS Star\nIndustries Ltd16\nthis court held that:\n“rights under a contract are always assignable unless the contract is\n personal in its nature or unless the rights are incapable of assignment,\n either under the law or under an agreement between the parties. A benefit\n under the contract can always be assigned. That, there is, in law, a clear\n distinction between assignment of rights under a contract by a party who\n has performed his obligation thereunder and an assignment of a claim for\n compensation which one party has against the other for breach of contract.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2023_2023_OCT_44_P042_C01",
+      "text": "19. In the case of Camdex International Bank Ltd v Bank of Zambia\n reported in (1998) Q.B. 22 (CA) the following observation which is relevant\n to the present case needs to be quoted:\n\"The assignment of a debt will not be contrary to public policy solely on the\n grounds that the assignee has purchased the debt for a considerably\n discounted price or because that price is only payable after a period of\n credit. Nor will the assignment be contrary to public policy simply because\n the assignee may make a profit on the transaction at the end of the day. If\n there was no prospect of a profit, Hobhouse LJ observed, commercial\n entities would never purchase debts.\"",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2023_2023_OCT_44_P043_C01",
+      "text": "20. Similarly, the following proposition in Chitty on Contracts, 27th edn.\n (1994) at para 19.027 is relevant to be noted.\n\"It is also well established that a claim to a simple debt is assignable even\n if the debtor has refused to pay. The practice of assigning or `selling' debts\n\n2003 Supp (2) SCR 204\n\n2010 (12) SCR 644\n\nto debt collecting agencies and credit factors could hardly be carried on if\n the law were otherwise. \"",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2023_2023_OCT_44_P044_C01",
+      "text": "21. In view of the above exposition of law, we find that under the impugned\n Deed of Assignment only the Account Receivables in the books of ICICI\n Bank Ltd. has been transferred to Kotak Mahindra Bank Ltd. The\n obligations of ICICI Bank Ltd. towards its borrower(s) (customer) under\n the loan agreement secured by deed of hypothecation/mortgage have not\n been assigned by ICICI Bank Ltd. to the assignee bank, namely, Kotak\n Mahindra Bank Ltd. Hence, it cannot be said that the impugned Deed of\n Assignment is unsustainable in law. The obligations referred to in the\n impugned Deed of Assignment are the obligations, if any, of ICICI Bank\n Ltd. towards Kotak Mahindra Bank Ltd. (assignee) in the matter of transfer\n of NPAs.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2023_2023_OCT_44_P045_C01",
+      "text": "39. The earlier discussion in this judgment, about the true nature of the\ntransaction in this case led this court to hold that it is an assignment and not a\npledge. The reference to pledge, in some places in the documents, did not\nundermine the fact that the rents payable to and receivable by the lender (IL&FS)\nstood absolutely assigned to HDFC. The provisions of the TPA and the discussion\nof the various authorities support the conclusion that there can be a transfer of\ndebts, which are defined as actionable claims. In the present case, the rents\npayable by IL&FS tenants, lessees and licensees are debts, which stood\ntransferred to the creditor, i.e. HDFC Bank. Therefore, the NCLAT’s conclusions\nare unexceptionable; the challenge to its correctness, therefore fails.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2023_2023_OCT_44_P046_C01",
+      "text": "40. For the foregoing reasons, this court holds that there is no merit in the\nappeal. It is accordingly dismissed, there shall be no order on costs. Pending\napplication(s), if any, shall also stand disposed of.\n…..................................................J.\n [S. RAVINDRA BHAT]\n\n …..................................................J.\n [DIPANKAR DATTA]\n NEW DELHI;\nOCTOBER 19, 2023.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Infrastructure Leasing And Financial ... vs Hdfc Bank Ltd.",
+    "case_id": "SC_2023_2023_OCT_44",
+    "court": "Supreme Court of India",
+    "year": "2023",
+    "facts_summary": "1. This appeal1, is preferred by Infrastructure Leasing and Financial Services\n Ltd (hereafter “IL&FS” or “the borrower”) aggrieved by an order of the National\n Company Law Appellate Tribunal (hereafter, ‘NCLAT’)2. The point in issue is\n whether the documents executed by IL&FS by which rents were made over to the\n respondent, Housing Development Finance Corporation Ltd (hereafter “HDFC”\n or “the lender”) constituted an assignment and thus fell outside the scope of an\n asset and security freeze order made by the NCLAT. 2. IL&FS had approached the HDFC for financial assistance. By Sanction\n Letter dated 22.06.2018, the lender sanctioned a financial facility of ₹ 400 crores\n to the borrower. On 25.06.2018, a “Master Facility Agreement” (“MFA”) was\n entered between IL&FS and HDFC for ₹ 400 crores. The MFA envisioned the\n creation of a separate escrow account with Housing Development Finance\n Corporation Bank Limited (hereinafter 'Escrow Bank') for opening of a separate\n\nescrow account with the Escrow Bank. Along with MFA, an “Assignment\n\nDated 13.5.2022 in IA 2196/2020 [in CoAp. (AT) No. 346/2018]\n\nAgreement” (hereafter “AA”) dated 25.06.2018 was also executed between the\nIL&FS and HDFC. Under this document (i.e., the AA) the parties agreed that the\nauthorised indebtedness of IL&FS in terms of the MFA, by way of the facility\ntogether with the interest thereon was payable from the gross income and revenue\nto be derived from the operation of the Business Centre Services\nAgreements/",
+    "legal_issues": "10. It was thus argued that the assignment of receivables is only security and\nnot transfer. It is submitted that detailed written submissions were filed before\nformer judge of this court by the parties and after considering every contention,\nthe order dated 03.07.2020 was made by him. That order by former judge of this\nCourt, considered all the submissions by the lender, the borrower and the Escrow\nBank, and after examining the principal (and the facility agreement) and all other\nagreements and attendant circumstances. Under that order, the lender and Escrow\nBank were obliged to return the amount debited i.e. ₹112,79,18,348/-. 12. Learned counsel refers to Clauses 3 (sets out purpose of availing facility)\nand 4 (Establishes nature of relationship between the parties) of the MFA to argue\nthat purpose of availing facility was merely re-financing of the existing debt and\nclause 4 of MFA clearly establish that nature of relationship between the parties\nwas that of lender-borrower and not that of seller and buyer. It is also pointed out\nthat pursuant to the execution of the financing documents IL&FS submitted form\nCHG-one4, which is confirmed by HDFC Ltd, i.e., the lender form for registration\nof creation of charge to secure the Facility. Therefore, the lender in fact filed its\nclaim as a secured creditor of IL&FS before Grant Thornton India, the client’s\nmanagement consultant. 14. It is highlighted that the charge is a kind of security, whether the creditor\nobtains possession of",
+    "ratio_summary": "A claim for arrears of rent has\n also been held to be an actionable claim\nState of Bihar v Maharajadhiraja\n Sir Kameshwar Singh\n1952 SCR 889, 910). A right to the credit in a\n provident fund account has also been held to an actionable claim (\nOfficial\n Trustee, Bengal v L. Chippendale\nAIR 1944 (Cal.)\n335;\nBhupathi Mohan\n Das v Phanindra Chandra Chakravarthy & Anr. AIR 1935 (Cal.) 756).”\n\nThe issue involved\nin that case\nwas whether the sale of lottery tickets, amounted\nto the sale of goods, attracting a sales tax levy. The court held that the sale did\nnot involve goods, but the sale of actionable claim:\n“The question is, what is this right which the ticket represents? There can\n be no doubt that on purchasing a lottery ticket, the purchaser would have a\n claim to a conditional interest in the prize money which is not in the\n purchaser's possession. The right would fall squarely within the definition\n of an actionable claim and would therefore be excluded from the definition\n of 'goods' under the\nSale of Goods Act\nand the sales tax statute [..]”\n\n2006 Supp(2) SCR 421\n\nThe court characterised the rights contained in a lottery ticket, and that they\nrepresented a right in futuro, the sale of which amounted to the sale of an\nactionable claim:\n“The right to participate being an inseparable part of the chance to win is\n therefore part of an actionable claim. The authorities considered by the\n Court in H.Anraj do not support the sub division of the chance to win into\n a further distin",
+    "final_order": "4. After the interim order of NCLAT, the borrower informed the Escrow\nBank about it, by an email dated 16.10.2018. On 19.10.2018, HDFC instructed\nthe Escrow Bank to transfer monthly instalments from the Escrow Account to the\nLender's Account. On 23.10.2018, IL& FS informed the HDFC about the interim\norder from NCLAT (dated 15.10.2018). The letter stated that the interim order\nrestrained HDFC from appropriating IL& FS account’s with Escrow Bank.\nIL&FS called upon the lender by letter dated 27.10.2018 to reverse the debit of ₹\n6.24 crores and credit the amount back into the account of the borrower. HDFC\nresponded to IL&FS's letter, stating that receivables (i.e. rents) in respect of the\nsecured property were assigned by IL&FS in its favour and that the asset ceased\nto belong to IL&FS. 9. Mr.",
+    "outcome_summary": "4. After the interim order of NCLAT, the borrower informed the Escrow\nBank about it, by an email dated 16.10.2018. On 19.10.2018, HDFC instructed\nthe Escrow Bank to transfer monthly instalments from the Escrow Account to the\nLender's Account. On 23.10.2018, IL& FS informed the HDFC about the interim\norder from NCLAT (dated 15.10.2018). The letter stated that the interim order\nrestrained HDFC from ",
+    "sections_cited": [],
+    "cases_cited": [
+      "Super Poly Fabriks Ltd v Commissioner of Central Excise, Punjab11\n",
+      "Mewa Lal and Ors v Tara Rani13\nit was",
+      "In another decision,\nNoor & Ors v G.S. Ibrahim"
+    ]
+  }
+}

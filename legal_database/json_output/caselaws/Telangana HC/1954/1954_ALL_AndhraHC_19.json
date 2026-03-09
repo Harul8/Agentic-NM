@@ -1,0 +1,109 @@
+{
+  "case_id": "SC_1954_1954_ALL_ANDHRAHC_19",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1954",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [
+    "AIR 1955 ANDHRA 22",
+    "AIR 1947 Mad 422",
+    "AIR 1932 Mad 693"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 5,
+  "cited_by_count": 3,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1954\\1954_ALL_AndhraHC_19.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1954_1954_ALL_ANDHRAHC_19_P001_C01",
+      "text": "Kalathooru Raghavareddi vs Kalathooru Venkataredii And Ors. on 8 September, 1954\nEquivalent citations: AIR1955AP22, AIR 1955 ANDHRA 22\nAuthor:\nChief Justice\nBench:\nChief Justice\nJUDGMENT\n(1) This appeal is by the 1st defendant against the decree & judgment of the Court of the District Judge of Chittoor, setting aside that of the District Munsif's Court of Thirupati in O. S. No. 371 of 1945, a shit filed by the plaintiff for a declaration of their title to 5 ankanams of thatched cattle shed and for a permanent injunction restraining the defendants from entering the plaint schedule property. The facts of the case may be briefly stated. The plaintiffs, defendants and others constituted members of a joint Hindu family. As disputes arose between them in regard to the division of properties, they referred their disputes to three named arbitrators, A. Venku Reddy, A. Raghava Reddy and A. Balarama Reddy, for effecting the partition. The arbitrators gave an award dividing the family assets and liabilities into four equal shares. \"A\" schedule was allotted to the plaintiffs, \"B\" schedule to Venkatarama Reddy and K.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1954_1954_ALL_ANDHRAHC_19_P001_C02",
+      "text": "Sesha Reddy, \"C\" schedule to the 1st defendant and \"D\" schedule to the 2nd defendant.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1954_1954_ALL_ANDHRAHC_19_P002_C01",
+      "text": "The plaintiffs' case is that the plaint schedule property i.e., 5 ankanams of thatched cattle shed was included as item 11 in the \"A\" schedule properties allotted to their share. The suit was based expressly on the award and the partition lists which were annexed to the award. The 1st defendant in his written statement admitted that there was an award, but stated that, under that award, by mistake the plaint schedule property which should have been allotted to him, was put in the share of the plaintiffs. He also pleaded that the award was invalid as it was neither stamped nor registered. To put it briefly, his defence was that the award was invalid and, alternatively that even if it was valid, the plaint schedule property was included by mistake in the properties alloted to the plaintiff's share instead of in those fallen to the 1st defendant's share. The learned District Munsif held on the evidence that there was an award and that there was no mistake in the allotment of the plaint schedule property to the plaintiff's share. But he held that as the award was neither stamped nor registered, it was invalid and the plaintiffs could not claim any title under that award.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1954_1954_ALL_ANDHRAHC_19_P002_C02",
+      "text": "The learned District Judge, in appeal, accepted the finding of fact given by the learned District Munsif, but held that as the defendants admitted that an award was made, whereunder the suit property was allotted to the plaintiffs' share, the plaintiffs need not prove the award, or the partition effected under the award. In that view, he set aside the decree of the trial Court and gave a decree to the plaintiffs. Hence the second appeal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1954_1954_ALL_ANDHRAHC_19_P003_C01",
+      "text": "(2) Mr. Satyanarayana Raju, the learned counsel for the appellant contended that the learned District Judge was wrong in giving the plaintiffs a decree for the plaint schedule property on the basis of an invalid award and that, in any view, the learned Judge should was either accepted or rejected the entire admission, but could not accept a part and reject the other part. (3) From the aforesaid statement of facts, it is manifest that the defendants did not admit the partition. An admission of a partitition or an award enabling the other party to get a decree on the basis of that partition or award must be an admission of a valid partition or a valid award. What the defendants say in clear terms is that there was an award, but the said award is invalid. I cannot hold that this is an admission of a valid award. When it is common ground that the award was neither registered nor stamped, I do not see how the plaintiffs can get a decree on the basis of an invalid award. A combined reading of S. 17 and\nS. 49\n, Registration Act clearly shown that an unregistered partition deed or an award cannot. affect any immovable property comprised therein.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1954_1954_ALL_ANDHRAHC_19_P003_C02",
+      "text": "It is not a question of admissibility of a document. The non-registration invalidates the transaction altogether. When an invalid document is specifically relied upon by the plaintiff and when it is found in favour of the defendants, the fact that the execution of the invalid document was admitted cannot, by any process of reasoning, validate the invalid document. The decisions relied upon by the learned counsel are beside the point.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1954_1954_ALL_ANDHRAHC_19_P004_C01",
+      "text": "In--\n'Ponnuswamy Chettiar v. Kailasam Chettiar\n'.\nAIR 1947 Mad 422 (A) and -- 'Alimane Sahib v. Subbarayudu\n', AIR 1932 Mad 693 (B), it was held that when the execution of a promissory note is accepted in the written statement,\nS. 58\n, Evidence Act, enables the plaintiff to get a decree without further proof. In these cases, after the execution of the promissory note was admitted, objection was raised in the course of arguments, but that was not allowed.\nIf the award was invalid, the legal position would be, as held by the Full Bench in --\n'Ramayya v. Achamma\n', AIR 1944 Mad 550 (C) that there was no partition at all & the party relying upon an invalid partition should bring a suit for partition on the basis of co-ownership. This suit for a declaration that the plaintiffs are entitled to a specific item alleged to have been allotted to them in the partition is not therefore maintainable.\n(4) In the result, the decree of the lower Appellate Court is set aside and that of the trial Court is restored. The appellant will get his costs both here and in the Courts below. No leave.\n(5) Appeal allowed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1954_1954_ALL_ANDHRAHC_19",
+    "court": "Supreme Court of India",
+    "year": "1954",
+    "facts_summary": "Kalathooru Raghavareddi vs Kalathooru Venkataredii And Ors. on 8 September, 1954\nEquivalent citations: AIR1955AP22, AIR 1955 ANDHRA 22\nAuthor:\nChief Justice\nBench:\nChief Justice\nJUDGMENT\n(1) This appeal is by the 1st defendant against the decree & judgment of the Court of the District Judge of Chittoor, setting aside that of the District Munsif's Court of Thirupati in O. S. No. 371 of 1945, a shit filed by the plaintiff for a declaration of their title to 5 ankanams of thatched cattle shed and for a permanent injunction restraining the defendants from entering the plaint schedule property. The facts of the case may be briefly stated. The plaintiffs, defendants and others constituted members of a joint Hindu family. As disputes arose between them in regard to the division of properties, they referred their disputes to three named arbitrators, A. Venku Reddy, A. Raghava Reddy and A. Balarama Reddy, for effecting the partition. The arbitrators gave an award dividing the family assets and liabilities into four equal shares. \"A\" schedule was allotted to the plaintiffs, \"B\" schedule to Venkatarama Reddy and K. The plaintiffs' case is that the plaint schedule property i.e., 5 ankanams of thatched cattle shed was included as item 11 in the \"A\" schedule properties allotted to their share. The suit was based expressly on the award and the partition lists which were annexed to the award. The 1st defendant in his written statement admitted that there was an award, but stated that, under ",
+    "legal_issues": "(2) Mr. Satyanarayana Raju, the learned counsel for the appellant contended that the learned District Judge was wrong in giving the plaintiffs a decree for the plaint schedule property on the basis of an invalid award and that, in any view, the learned Judge should was either accepted or rejected the entire admission, but could not accept a part and reject the other part. (3) From the aforesaid statement of facts, it is manifest that the defendants did not admit the partition. An admission of a partitition or an award enabling the other party to get a decree on the basis of that partition or award must be an admission of a valid partition or a valid award. What the defendants say in clear terms is that there was an award, but the said award is invalid. I cannot hold that this is an admission of a valid award. When it is common ground that the award was neither registered nor stamped, I do not see how the plaintiffs can get a decree on the basis of an invalid award. A combined reading of S. 17 and\nS. 49\n, Registration Act clearly shown that an unregistered partition deed or an award cannot. affect any immovable property comprised therein. It is not a question of admissibility of a document. The non-registration invalidates the transaction altogether. When an invalid document is specifically relied upon by the plaintiff and when it is found in favour of the defendants, the fact that the execution of the invalid document was admitted cannot, by any process of reasoning, validate",
+    "ratio_summary": "",
+    "final_order": "In--\n'Ponnuswamy Chettiar v. Kailasam Chettiar\n'.\nAIR 1947 Mad 422 (A) and -- 'Alimane Sahib v. Subbarayudu\n', AIR 1932 Mad 693 (B), it was held that when the execution of a promissory note is accepted in the written statement,\nS. 58\n, Evidence Act, enables the plaintiff to get a decree without further proof. In these cases, after the execution of the promissory note was admitted, objection was raised in the course of arguments, but that was not allowed.\nIf the award was invalid, the legal position would be, as held by the Full Bench in --\n'Ramayya v. Achamma\n', AIR 1944 Mad 550 (C) that there was no partition at all & the party relying upon an invalid partition should bring a suit for partition on the basis of co-ownership. This suit for a declaration that the plaintiffs are entitled to a",
+    "outcome_summary": "Allowed. In--\n'Ponnuswamy Chettiar v. Kailasam Chettiar\n'.\nAIR 1947 Mad 422 (A) and -- 'Alimane Sahib v. Subbarayudu\n', AIR 1932 Mad 693 (B), it was held that when the execution of a promissory note is accepted in the written statement,\nS. 58\n, Evidence Act, enables the plaintiff to get a decree without furt",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

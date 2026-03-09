@@ -1,0 +1,82 @@
+{
+  "case_id": "SC_1983_1983_297",
+  "case_name": "Hasan Ali vs State Of Madhya Pradesh",
+  "normalized_case_name": "HASAN_ALI_VS_STATE_OF_MADHYA_PRADESH",
+  "court": "Supreme Court of India",
+  "year": "1983",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "2 February 1983",
+  "judges": [
+    "O. Chinnappa Reddy",
+    "S. Murtaza Fazal Ali",
+    "ORDER"
+  ],
+  "author": "O. Chinnappa Reddy",
+  "bench_type": "constitution",
+  "petitioner": "Hasan Ali",
+  "respondent": "State Of Madhya Pradesh",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 3,
+  "cited_by_count": 6,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1983SC352B",
+    "1983(1)SCALE101",
+    "(1983)2SCC66",
+    "AIR 1983 SUPREME COURT 352(2)",
+    "1983 SCC(CRI) 340",
+    "1983 CRI APP R (SC) 124",
+    "(1983) GUJ LH 380",
+    "(1983) JAB LJ 411",
+    "1983 (2) SCC 66",
+    "1983 UP CRIR 147(2)",
+    "(1983) 1 CRIMES 989"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1983\\1983_297.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1983_1983_297_P001_C01",
+      "text": "1. The appellant has been convicted under\nSection 467\nof the Indian Penal Code. He was also charged under\nSection 420\nread with\nSection 120B\nIPC but he was acquitted of that charge. The charge against the appellant of which he was convicted runs thus:\nYou on or about any date after 20th day of December 1968, forged a certain document purporting to be a valuable security to with Nikagh-form in respect of your marriage with Sirinbai with intent to commit fraud or that fraud may be committed and you thereby committed an offence punishable under\nSection 467\nof Indian Penal Code and within the cognizance of Court of Sessions.\n2. The main allegation is that the appellant forged a Nikah form. The charge does not mention under what circumstances the document was forged. It is vague. Even when the oral evidence was adduced at the trial no evidence Was produced to prove the charge. In the circumstances we find no legal evidence on the basis of which he could be convicted. For these reasons, the appeal is allowed and the conviction and sentence of the appellant under\nSection 467\nIPC are set aside and he is acquitted of the charge. His bail bonds are cancelled.",
+      "paragraph_type": "order",
+      "sections_cited": [
+        "IPC 467",
+        "IPC 120B"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1983_1983_297_P001_C02",
+      "text": "The appeal is accordingly allowed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "Hasan Ali vs State Of Madhya Pradesh",
+    "case_id": "SC_1983_1983_297",
+    "court": "Supreme Court of India",
+    "year": "1983",
+    "facts_summary": "",
+    "legal_issues": "",
+    "ratio_summary": "",
+    "final_order": "1. The appellant has been convicted under\nSection 467\nof the Indian Penal Code. He was also charged under\nSection 420\nread with\nSection 120B\nIPC but he was acquitted of that charge. The charge against the appellant of which he was convicted runs thus:\nYou on or about any date after 20th day of December 1968, forged a certain document purporting to be a valuable security to with Nikagh-form in respect of your marriage with Sirinbai with intent to commit fraud or that fraud may be committed and you thereby committed an offence punishable under\nSection 467\nof Indian Penal Code and within the cognizance of Court of Sessions.\n2. The main allegation is that the appellant forged a Nikah form. The charge does not mention under what circumstances the document was forged. It is vague. Even when the ",
+    "outcome_summary": "Allowed. 1. The appellant has been convicted under\nSection 467\nof the Indian Penal Code. He was also charged under\nSection 420\nread with\nSection 120B\nIPC but he was acquitted of that charge. The charge against the appellant of which he was convicted runs thus:\nYou on or about any date after 20th day of Decem",
+    "sections_cited": [
+      "IPC 467",
+      "IPC 120B"
+    ],
+    "cases_cited": []
+  }
+}

@@ -22,12 +22,21 @@ _default_data = os.path.join(_PROJECT_ROOT, "data")
 _DATA_ROOT = os.environ.get("NYAYMALAW_DATA_ROOT", "").strip()
 DATA_ROOT = os.path.normpath(_DATA_ROOT) if _DATA_ROOT else _default_data
 
-# Derived paths (all under DATA_ROOT)
-CHAT_HISTORY_DIR = os.path.join(DATA_ROOT, "chat_history")
+# Legal database: pipeline output (json_output) and raw_data (BareActs, CaseLaws).
+# Set NYAYMALAW_DATA_SOURCE=legal_database to make backend use legal_database for data, vector store, and chat history.
+LEGAL_DATABASE_DIR = os.path.join(_PROJECT_ROOT, "legal_database")
+LEGAL_DB_JSON_OUTPUT = os.path.join(LEGAL_DATABASE_DIR, "json_output")
+LEGAL_DB_RAW_DATA = os.path.join(LEGAL_DATABASE_DIR, "raw_data")
+USE_LEGAL_DATABASE = os.environ.get("NYAYMALAW_DATA_SOURCE", "").strip().lower() == "legal_database"
+
+# Derived paths: when USE_LEGAL_DATABASE, everything (vector store, chat history, bare acts, case laws) is under legal_database.
+LEGAL_DB_VECTOR_STORE = os.path.join(LEGAL_DATABASE_DIR, "vector_store")
+LEGAL_DB_CHAT_HISTORY = os.path.join(LEGAL_DATABASE_DIR, "chat_history")
+CHAT_HISTORY_DIR = LEGAL_DB_CHAT_HISTORY if USE_LEGAL_DATABASE else os.path.join(DATA_ROOT, "chat_history")
 DB_PATH = os.path.join(CHAT_HISTORY_DIR, "app.db")
-VECTOR_STORE = os.path.join(DATA_ROOT, "vector_store")
-BARE_ACTS_DIR = os.path.join(DATA_ROOT, "BareActs")
-CASELAW_DIR = os.path.join(DATA_ROOT, "CaseLaws")
+VECTOR_STORE = LEGAL_DB_VECTOR_STORE if USE_LEGAL_DATABASE else os.path.join(DATA_ROOT, "vector_store")
+BARE_ACTS_DIR = os.path.join(LEGAL_DB_RAW_DATA, "BareActs") if USE_LEGAL_DATABASE else os.path.join(DATA_ROOT, "BareActs")
+CASELAW_DIR = os.path.join(LEGAL_DB_RAW_DATA, "CaseLaws") if USE_LEGAL_DATABASE else os.path.join(DATA_ROOT, "CaseLaws")
 
 # Feedback Log workbook — auto-filled by feedback_logger.py after every interaction.
 # Override via FEEDBACK_LOG_PATH env var or set this to an absolute path.
@@ -53,6 +62,15 @@ BARE_INDEX_V2 = os.path.join(VECTOR_STORE, "bareacts_v2.index")
 BARE_CHUNKS_V2 = os.path.join(VECTOR_STORE, "bareacts_v2_chunks.json")
 CASE_INDEX_V2 = os.path.join(VECTOR_STORE, "caselaws_v2.index")
 CASE_CHUNKS_V2 = os.path.join(VECTOR_STORE, "caselaws_v2_chunks.json")
+# Case-level summary index (structured embedding: ratio + issues + sections)
+CASE_SUMMARY_INDEX_V2 = os.path.join(VECTOR_STORE, "case_summaries_v2.index")
+CASE_SUMMARY_CHUNKS_V2 = os.path.join(VECTOR_STORE, "case_summaries_v2_chunks.json")
+CASE_SUMMARY_BM25_INDEX = os.path.join(VECTOR_STORE, "case_summaries_bm25.json")
+
+# Act-level summary index (structured embedding: preamble + key sections)
+ACT_SUMMARY_INDEX_V2 = os.path.join(VECTOR_STORE, "act_summaries_v2.index")
+ACT_SUMMARY_CHUNKS_V2 = os.path.join(VECTOR_STORE, "act_summaries_v2_chunks.json")
+ACT_SUMMARY_BM25_INDEX = os.path.join(VECTOR_STORE, "act_summaries_bm25.json")
 
 # BM25 index files (for hybrid search)
 BARE_BM25_INDEX = os.path.join(VECTOR_STORE, "bareacts_bm25.json")
@@ -63,6 +81,9 @@ CASE_BM25_INDEX = os.path.join(VECTOR_STORE, "caselaws_bm25.json")
 # and lazy-rebuilt on first use if the files are missing / stale.
 ACT_PROFILES_META  = os.path.join(VECTOR_STORE, "act_profiles_meta.json")   # {act_name: profile_text}
 ACT_PROFILES_BM25  = os.path.join(VECTOR_STORE, "act_profiles_bm25.json")   # BM25 index over profiles
+
+# Citation graph: case → interprets → section, case → cites → case. Built from CASE_CHUNKS_V2.
+CITATION_GRAPH_PATH = os.path.join(VECTOR_STORE, "citation_graph.json")
 
 # Web references table (articles/news that aren't primary sources)
 WEB_REFERENCES_DB = os.path.join(DATA_ROOT, "web_references.json")

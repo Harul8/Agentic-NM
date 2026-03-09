@@ -1,0 +1,240 @@
+{
+  "case_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "2003",
+  "judgment_template": null,
+  "case_number": "Petition 858 of 1997",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 12,
+  "cited_by_count": 47,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\2003\\2003_ALL_AndhraHC_2.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P001_C01",
+      "text": "Avon Organics Ltd. vs Poineer Products Ltd. And Ors. on 4 July, 2003\nEquivalent citations: 2003(2)ALD(CRI)219, [2004]119COMPCAS18(AP)\nJUDGMENT\n\n Ch.S.R.K. Prasad, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P002_C01",
+      "text": "1. This criminal appeal is directed against the judgment in C. C. No. 858 of 1997 rendered by the 15th Metropolitan Magistrate, Hyderabad, in acquitting the accused for the offence under Section 138 read with\nSections 141\nand\n\nof the Negotiable Instruments Act, 1881 (for short the \"Act\").",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P003_C01",
+      "text": "2. The facts that arise for consideration can be briefly stated as follows : The accused issued a blank cheque without mentioning the date and the amount to the appellant herein and sent it along with a letter dated August 7, 1997, stating that it could be presented after one month for payment, if he failed to pay the amount prior to September 7, 1997. He also requested fifteen days time on August 22, 1997. Thereafter, the cheque was presented after filling up the blanks found at the amount portion and the date and it was presented through the ICICI Banking Corporation after putting the amount as Rs. 11,19,206 and date as September 22, 1997. As can be seen from exhibit P8, it was dishonoured. Thereupon, exhibit P10 notice was issued on October 3, 1997. The accused received the said notice on October 7, 1997. Exhibit P12 is the postal acknowledgment. The appellant invoked the provisions of\nSection 138\nof the Act by presenting the complaint for dishonouring of cheque and it was taken on file. The accused pleaded not guilty. Thereupon, the trial was conducted. The appellant alone was examined as PW1 and the dishonoured cheque was exhibit P7.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P003_C02",
+      "text": "Exhibit P8 is the cheque return memo dated September 25, 1997. Exhibit P9 is the cheque return intimation dated September 26, 1997. Exhibit P10 is the office copy of the notice. Exhibit P1 is the certificate of incorporation. Exhibit P2 is the certificate extract of the minutes of board of directors dated November 5, 1997. Exhibits P3 and P5 are the delivery challan invoices. Exhibit P4 is the copy of consignment note. The learned Metropolitan Magistrate recorded a finding of not guilty and acquitted the accused. Thereupon, the appellant preferred this criminal appeal.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P004_C01",
+      "text": "3. This appeal is presented against the acquittal order. This court can interfere only when it is shown that the judgment is perverse and there is no proper appraisal of the evidence, which led to miscarriage of justice. The powers vested in the appellate court have been adumbrated under\nSection 386\nof the Criminal Procedure Code, 1973. It is to be seen whether there is any perversity in the judgment of the lower court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P005_C01",
+      "text": "4. The contention of learned counsel for the appellant is that the blank cheque was issued for a legally enforceable debt. It is necessary to have a look at\nSection 138\nof the Act, which reads as follows :\n\"138.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P005_C02",
+      "text": "Dishonour of cheque for insufficiency, etc., of funds in the accounts.--Where any cheque drawn by a person on an account maintained by him with a banker for payment of any amount of money to another person from out of that account for the discharge, in whole or in part, of any debt or other liability, is returned by the bank unpaid, either because of the amount of money standing to the credit of that account is insufficient to honour the cheque or that it exceeds the amount arranged to be paid from that account by an agreement made with that bank, such person shall be deemed to have committed an offence and shall, without prejudice to any other provisions of this Act, be punished with imprisonment for a term which may extend to one year, or with fine which may extend to twice the amount of the cheque, or with both : Provided that nothing contained in this section shall apply unless--\n(a) the cheque has been presented to the bank within a period of six months from the date on which it is drawn or within the period of its validity, whichever is earlier ;\n(b) the payee or the holder in due course of the cheque, as the case may be, makes a demand for the payment of the said amount of",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P005_C03",
+      "text": "money by giving a notice, in writing, to the drawer of the cheque, within fifteen days of the receipt of information by him from the bank regarding the return of the cheque as unpaid ; and\n(c) the drawer of such cheque fails to make the payment of the said amount of money to the payee or, as the case may be, to the holder in due course of the cheque, within fifteen days of the receipt of the said notice.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P005_C04",
+      "text": "Explanation.--For the purposes of this section, 'debt or other liability' means a legally enforceable debt or other liability.\" It is clear that the cheque has to be issued for a legally enforceable debt or for other liability. In order to invoke\nSection 138\nof the Act it is also necessary to note whether a blank cheque issued can be called as a cheque within the meaning of\nSection 6\nof the Act. A cheque is defined under\nSection 6\nof the Negotiable Instruments Act as under :\n\"A 'cheque' is a bill of exchange drawn on a specified banker and not expressed to be payable otherwise than on demand.\"",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P006_C01",
+      "text": "5. As per\nSection 5\nof the Negotiable Instruments Act, a bill of exchange is an instrument in writing containing an unconditional order, signed by the maker, directing a certain person to pay a certain sum of money only to, or to the order of a certain person or to the bearer of the instrument. It is clear that a bill of exchange should contain in writing directing a certain person to pay a certain sum of money to the order of a certain person or to the bearer of the instrument. If a blank cheque is drawn and handed over to the party, will it come under the definition of\nSection 5\nof the Act ? Issuing of post-dated cheque and cheques without putting the dates is different. If the cheque is not drawn for a specified amount, it does not fall under the definition of bill of exchange. It cannot be called a cheque within the meaning of\nSections 5\nand\n\nof the Act. Section 138\ncontemplates drawing of cheque by a person on an account maintained by him with a banker for payment of any amount of money to another person from out of that account for the discharge, in whole or in part, of any debt or other liability.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P006_C02",
+      "text": "If the said cheque is returned by the bank unpaid, either because the amount of money standing to the credit of that account is insufficient to honour the cheque or it exceeds the amount arranged to be paid from that account by an agreement made with that bank, such person shall be deemed to have committed an offence and shall, without prejudice to any other provision of this Act, be punished with imprisonment for a term which may extend to one year, or with fine which may extend to twice the amount of the cheque or with both. The accused has taken the plea of material alteration in this case. Section 87\nof the Act reads as under :\n\"Effect of material alteration.--Any material alternation of a negotiable instrument renders the same void as against any one who is a party thereto at the time of making such alteration and does not consent thereto, unless it was made in order to carry out the common intention of the original parties ;\nAlteration by indorsee, and any such alteration, if made by an indorsee, discharges his indorser from all liability to him in respect of the consideration thereof.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P007_C01",
+      "text": "6. PW1 has produced two letters exhibits P15 and P16 written by the accused. The cheque was sent along with exhibit P15. The appellant was also produced exhibits P4 and P6 which showed the consignment. I have perused the letters written by the accused. What is stated in the exhibit P15 letter is that he can present the cheque after one month. In exhibit P16 he requested for further time of 15 days. These aspects cannot amount to give consent to put the amount in the blank column and also the date/The Supreme Court in\nKusum Ingots and Alloys Ltd. v. Pennar Peterson Securities Ltd.\n, laid down the ingredients that have to be satisfied for making out a case under\nSection 138\nof the Act. It is clear from the first ingredient mentioned a person must draw a cheque on the account maintained by him in a bank for payment of certain amount of money. Hence, it is clear from the principles\nlaid down by\nthe Supreme Court that the amount for which the cheque was drawn must be for a certain amount of money. If a person delivers the cheque without putting the actual amount payable, does it constitute a cheque within the meaning of\nSections 5\nand\n\nof the Act ?",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P007_C02",
+      "text": "I have already stated a bill of exchange contemplates mentioning of certain amount as payable. The cheque is a kind of bill of exchange, which means the amount payable must be mentioned in the cheque. At the time of issuing the cheque, the amount payable under the cheque is not mentioned. Consent is not given for which the amount was being drawn. It was virtually amounted to alteration of the cheque, which is not permissible. The letters do not make a specific mention that they can put the amount therein and they can draw. The act of the complainant in filling up the amount portion in words and figures and putting the date as per his own choice is certainly a material alteration. A blank cheque cannot be enforced even though it is issued for legal liability. It is stated in P. Srinivasulu v. Nagaral Eraiah Shetty alias N. Chinna Eranna Setty and Sons [1994] 2 An WR 225 that a presumption under\nSection 138\nof the Act can be drawn in case where issuance of blank cheque which is not denied by the accused even though it was asserted by him that it was not issued with any dishonest intention.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P007_C03",
+      "text": "It is further stated in the said decision at para. 3, which reads as follows :\n\"The lower court found that exhibit P1 does not contain the ingredients of a valid cheque so as to attract the provisions of\nSection 139\nof the Negotiable Instruments Act. In a case where a blank cheque has been issued, the issuance of which is not denied by the accused, even though it was asserted by him that it was not issued with any dishonest intention, the presumption under\nSection 139\nof the Act can be drawn. The presumption under\nSection 139\nis a rebuttable presumption, and the accused admitted the same and has not cross-examined the prosecution witnesses. Mere filling up of the figures in the cheque by the complainant will not be a ground for invalidating the cheque and preventing the party from taking steps under\nSection 138\ninserted by the Negotiable Instruments Laws (Amendment) Act, 1988, on the ground of insufficiency of funds. This court has held that endorsement will not be a ground for throwing away the case under\nSection 138\n.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P008_C01",
+      "text": "7. The Supreme Court has considered the issue regarding post-dated cheques in\nAshok Yeshwant Badave v. Surendra Madhavrao Nighojakar\n. The relevant portion at para. 17 reads as follows (page 175) :\n\"From a bare perusal of\nSections 5\nand\n\nof the Act it would appear that a bill of exchange is a negotiable instrument in writing containing an instruction to a third party to pay a stated sum of money at a designated future date or on demand. On the other hand, a 'cheque' is a bill of exchange drawn on a bank by the holder of an account payable on demand. Under\nSection 6\nof the Act, a 'cheque' is also a bill of exchange, but it is drawn on a banker and payable on demand. A bill of exchange even though drawn on a banker, if it is not payable on demand, it is not a cheque. A post-dated cheque is not payable till the date which is shown thereon arrives and will become a cheque on the said date and prior to that date the same remains a bill of exchange.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P009_C01",
+      "text": "8. It is categorically stated that post-dated cheque is not payable till the date, which is shown thereon, arrives and will become cheque on the said date and prior to that date the same remains bill of exchange. That was a case dealt with in respect of post-dated cheque etc. This court in\nTaher N. Khambat v. Vinayak Enterprises\n[1995] Crl. LJ 560 ; [1996] 86 Comp Cas 471 (AP) held in para. 10 as follows (page 476) :\n\"\nSection 138\nof the Act is introduced with a view to avoid the malignant trade practice of indiscriminately issuing cheques without sufficient funds. The amendment is introduced with a view to curb instances of issuing such cheques indiscriminately. So, having regard to the purpose with which this provision is introduced, it is doubtful whether a case of this nature can be construed as attracting the provisions of\nSection 138\nof the Act. In the instant case, the appellant advanced some money to the respondents and obtained a pronote. It was stipulated that the respondents should pay interest every month.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P009_C02",
+      "text": "At the same time the appellant-creditor took a blank signed cheque from the respondents with the understanding that the complainant could fill the other columns in the cheque and present it if the respondents committed default in payment of interest. The respondents paid interest for about eight months and, thereafter, stopped payment of interest. Then the appellant put the date on January 15, 1991, wrote his own name in the space intended for the payee and also mentioned the amount as Rs. 1,18,337 and presented the cheque. Even at the time when he presented the cheque, he would not have expected that the cheque would be honoured. He was presenting the cheque only with a view to get an endorsement which would enable him to proceed under\nSection 138\nof the Act. If this sort of practice is allowed, every creditor would abuse the provisions of\nSection 138\nof the Act by obtaining blank cheques and putting the debtors in fear of prosecution insist on discharge of the debts at any time. I do not think that would have been the intention of the Legislature while incorporating\nSection 138\nin the\nNegotiable Instruments Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P009_C03",
+      "text": "Though the appellant did not state the circumstances under which he obtained the pronote and the cheque in his complaint yet it is clear from the evidence the circumstances under which the complainant obtained a signed blank cheque from the respondent. So, the appellant has obtained this blank signed cheque with a view to make use of it, as a threat to the respondents for realisation of the amount. So, it cannot be construed that the respondent had issued the cheque voluntarily for discharge of any debt or legal liability as envisaged under\nSection 138\n. I, therefore, find that the facts and circumstances of the case are not attracted by the provisions of\nSection 138\nof the Act and that the learned magistrate was justified in acquitting the accused. Hence, the criminal appeal is dismissed.\"",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P010_C01",
+      "text": "9. Whenever blank cheques are filled up and presented, a presumption can be drawn under\nSection 139\nof the Act. It is a rebuttable presumption. The question is whether the accused is able to rebut the presumption. I am of the considered view that he has rebutted the presumption in this case as he has not given consent to fill up the cheque for a particular amount in figures and words and the date portion. It constitutes alteration of the cheque. It cannot be done without the consent of the party who issued the cheque. I also state that it was issued for the legally enforceable liability, namely, towards the amount due under the invoices. But the instrument issued without mentioning the figures and words and date portion in the cheque do not amount a cheque or a bill of exchange at the time of its issuing. Subsequently, it can be altered only with the consent of the party, who has issued the cheque. Otherwise, it amounts to material alteration. When it does not constitute a cheque and the same is filled up and presented to the bank, it cannot be said that the accused has committed an offence.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P010_C02",
+      "text": "No doubt, morally the accused is not justified in issuing the cheque, when he is not having sufficient funds in the bank. But, the legality has to be judged in this case. The person who accepts the blank cheque certainly has to take it along with the risks to be faced under law. It is not open to him to complain subsequently when the amount has not been realised, etc. I am of considered view that the cheque issued without mentioning the amount for which it is drawn is not a cheque at all. It is not a bill of exchange at all as it is not drawn for a certain amount. When such is the thing, the question of invoking\nSection 138\nof the Act does not arise. May be there is lacuna in\nSection 138\nof the Act. It cannot be said that it covers invalid cheques also. Such an interpretation cannot be put on to it. It is for the Legislature to look at the lacuna found. The lower court has elaborately discussed and ultimately come to the conclusion that the complainant failed to establish the relevant ingredients that are to be established under\nSection 138\nof the Act.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P010_C03",
+      "text": "The relevant ingredients that have to be established have already been mentioned by the Supreme Court in the decision in\nKusum Ingots and Alloys Ltd. v. Pennar Peterson Securities Ltd.\n. If the facts are judged, I am of the considered view that the learned magistrate has rightly come to the conclusion that the ingredients under\nSection 138\nof the Act are not established. In that view of the matter, there is no perversity in the judgment under appeal. The judgment rendered by the learned magistrate in C. C. No. 858 of 1997 is liable to be confirmed and it is, accordingly, confirmed.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA_P011_C01",
+      "text": "10. The criminal appeal is, accordingly, dismissed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_2003_ANDHRA_HC_PRE-TELANGANA",
+    "court": "Supreme Court of India",
+    "year": "2003",
+    "facts_summary": "1. This criminal appeal is directed against the judgment in C. C. No. 858 of 1997 rendered by the 15th Metropolitan Magistrate, Hyderabad, in acquitting the accused for the offence under Section 138 read with\nSections 141\nand\n\nof the Negotiable Instruments Act, 1881 (for short the \"Act\"). 2. The facts that arise for consideration can be briefly stated as follows : The accused issued a blank cheque without mentioning the date and the amount to the appellant herein and sent it along with a letter dated August 7, 1997, stating that it could be presented after one month for payment, if he failed to pay the amount prior to September 7, 1997. He also requested fifteen days time on August 22, 1997. Thereafter, the cheque was presented after filling up the blanks found at the amount portion and the date and it was presented through the ICICI Banking Corporation after putting the amount as Rs. 11,19,206 and date as September 22, 1997. As can be seen from exhibit P8, it was dishonoured. Thereupon, exhibit P10 notice was issued on October 3, 1997. The accused received the said notice on October 7, 1997. Exhibit P12 is the postal acknowledgment. The appellant invoked the provisions of\nSection 138\nof the Act by presenting the complaint for dishonouring of cheque and it was taken on file. The accused pleaded not guilty. Thereupon, the trial was conducted. The appellant alone was examined as PW1 and the dishonoured cheque was exhibit P7. Exhibit P8 is the cheque return memo dated September ",
+    "legal_issues": "4. The contention of learned counsel for the appellant is that the blank cheque was issued for a legally enforceable debt. It is necessary to have a look at\nSection 138\nof the Act, which reads as follows :\n\"138.",
+    "ratio_summary": "9. Whenever blank cheques are filled up and presented, a presumption can be drawn under\nSection 139\nof the Act. It is a rebuttable presumption. The question is whether the accused is able to rebut the presumption. I am of the considered view that he has rebutted the presumption in this case as he has not given consent to fill up the cheque for a particular amount in figures and words and the date portion. It constitutes alteration of the cheque. It cannot be done without the consent of the party who issued the cheque. I also state that it was issued for the legally enforceable liability, namely, towards the amount due under the invoices. But the instrument issued without mentioning the figures and words and date portion in the cheque do not amount a cheque or a bill of exchange at the time of its issuing. Subsequently, it can be altered only with the consent of the party, who has issued the cheque. Otherwise, it amounts to material alteration. When it does not constitute a cheque and the same is filled up and presented to the bank, it cannot be said that the accused has committed an offence. No doubt, morally the accused is not justified in issuing the cheque, when he is not having sufficient funds in the bank. But, the legality has to be judged in this case. The person who accepts the blank cheque certainly has to take it along with the risks to be faced under law. It is not open to him to complain subsequently when the amount has not been realised, etc. I am of considered v",
+    "final_order": "Though the appellant did not state the circumstances under which he obtained the pronote and the cheque in his complaint yet it is clear from the evidence the circumstances under which the complainant obtained a signed blank cheque from the respondent. So, the appellant has obtained this blank signed cheque with a view to make use of it, as a threat to the respondents for realisation of the amount. So, it cannot be construed that the respondent had issued the cheque voluntarily for discharge of any debt or legal liability as envisaged under\nSection 138\n. I, therefore, find that the facts and circumstances of the case are not attracted by the provisions of\nSection 138\nof the Act and that the learned magistrate was justified in acquitting the accused. Hence, the criminal appeal is dismissed.",
+    "outcome_summary": "Dismissed. Though the appellant did not state the circumstances under which he obtained the pronote and the cheque in his complaint yet it is clear from the evidence the circumstances under which the complainant obtained a signed blank cheque from the respondent. So, the appellant has obtained this blank signe",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

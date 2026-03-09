@@ -1,0 +1,83 @@
+{
+  "case_id": "SC_1980_1980_297",
+  "case_name": "Shambhu Kuer vs State Of Bihar",
+  "normalized_case_name": "SHAMBHU_KUER_VS_STATE_OF_BIHAR",
+  "court": "Supreme Court of India",
+  "year": "1980",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "4 March 1980",
+  "judges": [
+    "O. Chinnappa Reddy",
+    "R.S. Pathak",
+    "R.S. Sarkaria",
+    "JUDGMENT",
+    "R.S. Sarkaria, J."
+  ],
+  "author": "R.S. Sarkaria",
+  "bench_type": "constitution",
+  "petitioner": "Shambhu Kuer",
+  "respondent": "State Of Bihar",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 3,
+  "cited_by_count": 12,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1982SC1228",
+    "1982CRILJ1742",
+    "(1982)1SCC486",
+    "AIR 1982 SUPREME COURT 1228",
+    "1982 (1) SCC 486",
+    "1982 SCC(CRI) 264",
+    "(1982) PAT LJR 3"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1980\\1980_297.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1980_1980_297_P001_C01",
+      "text": "1. We have heard the learned Counsel on both sides. There were three persons who were prosecuted for the murder of one Surendra Prasad Singh, a young man of about 21 years. The prosecution allegation was that Shambhu Kuer caught hold of the deceased, and Mandip gave three blows to the deceased with a knife. Out of the accused persons, one, Kailash was acquitted by the trial Court, while the other two were convicted : Mandip under Section 302 and Shambhu Kuer under Section 302 read with\nSection 34\nI.P.C. During the pendency of the appeal Mandip was released by Government on the ground of serious illness. Mandip's appeal was therefore dismissed as infructuous. The conviction of appellant Shambhu Kuer was upheld by the High Court, with the finding that he continued to hold the deceased till the assault was completed by Mandip. One of the three injuries on the deceased which had pierced the right lung, was according to the medical witness, sufficient to cause the death in the ordinary course. Counsel for the appellant contends, and we think right that the eyewitnesses did not clearly state that the appellant continued to hold the deceased till the assault was over.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1980_1980_297_P001_C02",
+      "text": "All that appears in the evidence is that Shambhu Kuer caught hold of the deceased and the latter scuffled to get himself released. Immediately thereafter Mandip took out a knife and started assaulting the deceased. From the mere fact that the appellant caught hold of the deceased and scuffled with him, while Mandip took out a knife and commenced the assault, it cannot be inferred beyond reasonable doubt, that he shared the intention of Mandip to murder the deceased. At the most, he was vicariously liable for an offence under",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1980_1980_297_P002_C01",
+      "text": "Section 326\nread with\nSection 34\nPenal Code. We therefore, partly allow this appeal, alter the conviction of the appellant to one under\nSection 326\nread with\nSection 24\nI.P.C. and sentence him to imprisonment already undergone, which, we are told, is about 6 1/2 years.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Shambhu Kuer vs State Of Bihar",
+    "case_id": "SC_1980_1980_297",
+    "court": "Supreme Court of India",
+    "year": "1980",
+    "facts_summary": "Section 326\nread with\nSection 34\nPenal Code. We therefore, partly allow this appeal, alter the conviction of the appellant to one under\nSection 326\nread with\nSection 24\nI.P.C. and sentence him to imprisonment already undergone, which, we are told, is about 6 1/2 years.",
+    "legal_issues": "1. We have heard the learned Counsel on both sides. There were three persons who were prosecuted for the murder of one Surendra Prasad Singh, a young man of about 21 years. The prosecution allegation was that Shambhu Kuer caught hold of the deceased, and Mandip gave three blows to the deceased with a knife. Out of the accused persons, one, Kailash was acquitted by the trial Court, while the other two were convicted : Mandip under Section 302 and Shambhu Kuer under Section 302 read with\nSection 34\nI.P.C. During the pendency of the appeal Mandip was released by Government on the ground of serious illness. Mandip's appeal was therefore dismissed as infructuous. The conviction of appellant Shambhu Kuer was upheld by the High Court, with the finding that he continued to hold the deceased till the assault was completed by Mandip. One of the three injuries on the deceased which had pierced the right lung, was according to the medical witness, sufficient to cause the death in the ordinary course. Counsel for the appellant contends, and we think right that the eyewitnesses did not clearly state that the appellant continued to hold the deceased till the assault was over.",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

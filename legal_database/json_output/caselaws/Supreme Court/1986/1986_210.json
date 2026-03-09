@@ -1,0 +1,390 @@
+{
+  "case_id": "SC_1986_1986_210",
+  "case_name": "Monsanto Company By Their Patent Agent, ... vs Coramandal Indag Products (P) Ltd",
+  "normalized_case_name": "MONSANTO_COMPANY_BY_THEIR_PATENT_AGENT,_..._VS_CORAMANDAL_INDAG_PRODUCTS_(P)_LTD",
+  "court": "Supreme Court of India",
+  "year": "1986",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "14 January 1986",
+  "judges": [
+    "O. Chinnappa  Reddy",
+    "E.S.  Venkataramiah"
+  ],
+  "author": "O. Chinnappa  Reddy",
+  "bench_type": "division",
+  "petitioner": "Monsanto Company By Their Patent Agent, ...",
+  "respondent": "Coramandal Indag Products (P) Ltd",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 6,
+  "cited_by_count": 16,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1986 AIR 712",
+    "1986 SCR (1) 120",
+    "AIR 1986 SUPREME COURT 712",
+    "1986 (1) SCC 642",
+    "1986 UJ (SC) 304",
+    "(1986) 1 SCJ 234",
+    "(1986) 1 SUPREME 646",
+    "(1986) 2 ARBI L.R. 19",
+    "(1986) 3 COMLJ 66",
+    "(1986) 1 CURCC 902",
+    "(1986) 1 BOM CR 504"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1986\\1986_210.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1986_1986_210_P001_C01",
+      "text": "PETITIONER:\nMONSANTO COMPANY BY THEIR PATENT AGENT, DE PENNING AND DEPEN\n\n Vs.\n\nRESPONDENT:\nCORAMANDAL INDAG PRODUCTS (P) LTD.\n\nDATE OF JUDGMENT14/01/1986\n\nBENCH:\nREDDY, O. CHINNAPPA (J)\nBENCH:\nREDDY, O. CHINNAPPA (J)\nVENKATARAMIAH, E.S. (J)\n\nCITATION:\n 1986 AIR 712 1986 SCR (1) 120\n 1986 SCC (1) 642 1986 SCALE (1)74\n\nACT:\nPatents Act, 1970\n-\nSections 64(1)(e)\nand (f) - Patent\n- When liable to be revoked - Invention being publicly known\n- Requirement of - When satisfied - Emulsification - Whether\ninvention - Herbicide Formulations containing active\ningredient 'Butachlor' - Whether can be enfolded in\nspecification relating to a Patent Product.\n\nHEADNOTE:\n The plaintiff-appellant instituted a suit against the\nrespondent on the ground that its inventions entitled\n\"Phytotoxic Compositions\" and \"Grass Selective Herbicide\nCompositions\" duly patented containing the active ingredient\n\"Butachlor\" was infringed by the defendant-respondent\nmarketing \"Delchor-50\" a formulation of \"Butachlor\" which\nwas alleged to be covered by the plaintiff's Patent No.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1986_1986_210_P002_C01",
+      "text": "125381. In the written statement, the defendant-respondent\nclaimed that the patents were liable to be revoked under\ns.64(1)(a)\n, (b), (d), (e), (f), (g), (h), (i), (j), (k),\n(l), and (m) of the\nPatents Act, 1970\n. The suit was decreed\nby the trial Court, but was dismissed by the appellate\ncourt. Dismissing the appeal,\n^\n HELD : 1(i) Under\ns. 61(1)(d)\n, a patent may be revoked\non the ground that the subject of any claim of the complete\nspecification is not an invention within the meaning of the\nAct. Under\nsec. 64(e)\n, a patent may be revoked if the\ninvention so far as claimed in any claim of the complete\nspecification is not new, having regard to what was publicly\nknown or publicly used in India before the date of the\nclaim, etc.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1986_1986_210_P002_C02",
+      "text": "Under\nsec. 64(1)(f)\n, a patent may be revoked if\nthe invention so far as claimed in any claim of the complete\nspecification is obvious or does not involve any inventive\nstep having regard to what was publicly known or publicly\nused in India or what was published in India before the\npriority date of the claim. [128 G-H; 129 A]\n\n 1(ii) To satisfy the requirement of being publicly\nknown as used in clauses (e) and (f) of\nsec. 64(1)\n, it is\nnot necessary, that it should be widely used to the\nknowledge of the consumer public. It is sufficient if it is\nknown to the persons who are engaged in the pursuit of the\nknowledge of the patented product or process either as men\nof science or men of commerce or consumers. [129 D-E]",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1986_1986_210_P003_C01",
+      "text": "2. Butachlor which was the common name for CP 53619 was\ndiscovered, even prior to 1968 as a Herbicide possessing the\nproperty of non-toxic effect on rice. The formula for the\nHerbicide was published in the report of the International\nRice Research Institute for the year 1968 and its common\nname Butachlor was also mentioned in the report of the\nInternational Rice Research Institute for the year 1969. No\none patented the invention Butachlor and it was the property\nof the population of the world. Before Butachlor or for that\nmatter any Herbicide could be used for killing weeds, it had\nto be converted into an emulsion by dissolving it in a\nsuitable solvent and by mixing the solution with an\nemulsifying agent. Emulsification is a well-known process\nand is no one's discovery. Neither Butachlor nor the process\nof Emulsification was capable of being claimed by the\nplaintiffs as their exclusive property. [128 C-E]\n In the instant case, the solvent and the emulsifier\nwere admittedly not secrets and they were ordinary market\nproducts. From the beginning to the end, there was no secret\nand there was no invention by the plaintiffs.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1986_1986_210_P003_C02",
+      "text": "The\ningredients, the active ingredients the solvent and the\nemulsifier, were known; the process was known, the product\nwas known and the use was known. The plaintiffs were merely\ncamouflaging a substance whose discovery was known\nthroughout the world and trying to enfold it in their\nspecification relating to Patent Number 125381. The patent\nis, therefore, liable to be revoked. [129 F-G; 130 A]\n\nJUDGMENT:\nCIVIL APPELLATE JURISDICTION: Civil Appeal No. 1490 of",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1986_1986_210_P004_C01",
+      "text": "1984. From the Judgment and Order dated 16.2.1984 of the\nMadras High Court in O.S.A. No. 217 of 1982. S. Chellaswamy, N.H. Hingorani, Mrs. Kapila Hingorani,\nMrs. Rekha Pandey and D. Sadasivan for the Appellants. F.S. Nariman, M.K. Rao, P.N. Ramalingam and A.T.M. Sampath for the Respondent. The Judgment of the Court was delivered by\n CHINNAPPA REDDY, J. The long and grasping hand of a\nMulti National Company, the Monsanto Company of St. Lous,\nMissouri, United States of America, has reached out to\nprevent alleged infringement of two of their patents\n(Numbers 104120 and 125381) by the defendant, an Indian\nPrivate Limited Company. Though the suit, as initially laid,\nwas with reference to two patents, the suit was ultimately\nconfined to one patent only (Number 125381), the period for\nwhich the other patent (104120) was valid having expired\nduring the pendency of the suit. The suit was decreed by the\ntrial court, but was dismissed by the appellate court. The\nappeal which is now before us has been filed pursuant to a\ncertificate granted by the appellate bench of the High Court\non the ground that substantial questions of law of great\npublic importance were involved.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1986_1986_210_P004_C02",
+      "text": "The questions, however,\nwere not specified in the certificate. As we see it, we are\nunable to find any substantial questions of law of great\nimportance. We are afraid both the lower courts misdirected\nthemselves and missed the real substance of the dispute and\nfound themselves chasing the mirage of legal questions which\ndid not strictly arise. We may first refer to a few preliminary facts. Weeds,\nas is well-known, are a menace to food crops, particularly\ncrops like rice which belong to the grass-variety. Research\nhas been going on for years to discover a weed killer which\nhas no toxic effect on rice, that is to say, a Herbicide\nwhich will destroy the weeds but allow rice to survive\nwithout any deleterious effect. For long the research was\nfutile. But in 1966-67 came a break through. A Scientist Dr. John Olin discovered CP53619 with the formula '2-Chlore-\n2',6'-Diethyl-N-(Butoxy-Methyl)- Acetanilide' which\nsatisfied the requirement of a weed killer which had no\ntoxic effect on rice. The annual report of the International\nRice Research Institute for 1968 state, \"Weed control in\nrice was an important part of the Agronomy program.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1986_1986_210_P004_C03",
+      "text": "The\nfirst agronomic evidence of the efficacy of granular -\ntrichloroethyl styrene for the selective control of annual\ngrasses in transplanted rice was obtained at the Institute. Another new accession, CP53619, gave excellent weed control\nin transplanted flooded and non-flooded, upland rice.\" It\nwas further stated \"CP53619 at 2 and 4 k.g./ha a.i. appeard\nat least twice among the 20 best treatments\" and \"the most\noutstanding new pre-emergence herbicide was 2-chloro-2', 6'-\ndiethyl-N- (butoxymethyl)-acetanilide (CP 53619).\" The\n\nannual report of the International Rice Research Institute\nfor 1969 shows that the herbicide CP 53619 came to acquire\nthe name of Butachlor. It is now necessary to refer in some detail to the\naverments in the plaint, as the decision of the case, in the\nview that we are taking, turns very much on what the\nplaintiffs themselves had to say about their case. The first\nplaintiff is the Monsanto Company and the second plaintiff\nis a subsidiary of the first plaintiff registered as a\nCompany in India.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1986_1986_210_P004_C04",
+      "text": "It was stated in the plaint that the first\nplaintiff was the patentee of inventions entitled\n\"PHYTOTOXIC COMPOSITIONS\" and \"GRASS SELECTIVE HERBICIDE\nCOMPOSITIONS\", duly patented under patent number 104120\ndated March 1, 1966 and 125381 dated February 20, 1970. The\nclaims and the particulars relating to the inventions were\nstated to be contained in the specifications of the two\npatents annexed to the plaint as annexure I and II. After\nstating so much the plaintiffs said, and this is very\nimportant, \"THE ACTIVE INGREDIENT MENTIONED IN THE CLAIM IS\nCALLED \"BUTACHLOR\". It suggested, without expressly saying\nit that the Plaintiffs' patents covered Butachlor also which\nin fact it did not, as we shall presently see. It was next\nstated that the first plaintiff had permitted the second\nplaintiff to work the patents from 1971 onwards under an\nagreement dated September 3, 1980.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1986_1986_210_P004_C05",
+      "text": "The second plaintiff had\nbeen manufacturing and marketing formulations according to\nthe Patents Numbers 104120 and 125381 and 'a specimen tin\ncontaining formulations produced by the second plaintiff\naccording to the said two patents and sold in the market by\nthe second plaintiff' was produced along with the plaint as\nM.O.I. It came to the notice of the plaintiffs, it was\naverred, that the defendant was attempting to market a\nformulation of Butachlor covered by the said patents. They,\ntherefore, wrote to the defendant drawing their attention to\nthe existence of the patents in their favour. Some\ncorrespondence ensued. In the second week of May, 1981, the\nsecond plaintiff found that the defendant was marketing\nformulation of Butachlor covered by the patents of the first\nplaintiff. Sample tins of \"Butachlor- 50\" manufactured by\nthe defendant were purchased by the plaintiffs and were\nproduced along with the plaint as M.O.s 3 and 4.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1986_1986_210_P004_C06",
+      "text": "The legend\non the tins was as follows :\n\"Delchor-50 Composition\n (Butachlor 50%E.C.) Butachlor 50% W/W\n Herbicide Solvents and Emulsifiers\n 50% W/W\"\n\nAccording to the plaintiffs, the legend on the tins\ncontaining the substance manufactured by the defendants\nshowed that what was sold by the defendants was nothing but\na reproduction of the first plaintiff's patented\nformulations. The formulations of the defendant were sent to\nShri Ram Institute for analysis and they were said to\ncontain the chemical \"Butachlor Chemical formula for which\nis 2 Chloro 2' 6' -Diethyl - N - (Butoxymethyl)\nAcatanilide.\" On these averments, the plaintiffs alleged\nthat the defendant had infringed their Patents Numbers\n104120 and 125381 by selling formulations covered by them. The plaintiffs used for an injunction to restrain the\ndefendant from infringing their Patents Numbers 104120 and\n125371 by the manufacture or sale of the infringing\nformulations as contained in this marked as M.O.Nos. 2 and",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1986_1986_210_P005_C01",
+      "text": "3. The Plaintiffs also asked for an account etc. Annexed to\nthe plaint were the two specifications relating to Patent\nNumbers 104120 and 125381. In the specification relating to\n\"Phytotoxic Composition\" (Specification No. 104120), it was\nclaimed :\n\"We Claim :",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1986_1986_210_P006_C01",
+      "text": "1. A phytotoxic composition comprising as an\n active ingredient a compound of the formula shown\n in Figure 1 of the accompanying drawings, wherein\n R1 and R2 are alkyl of alkoxy having from 1 to 10\n carbon atoms, R3 is halogen, alkyl or alkoxy\n having from 1 to 10 carbon atoms, n is an integer\n from 0 to 3, A is oxygen or sulfur, X is chlorine,\n bromine or iodine, and Z,Z1 and Z2 are hydrogen,\n alkyl, alkoxy,alkenyl or alkynyl having from 1 to\n 18 carbon atoms, aryl having from 6 to 24 carbon\n atoms, heterocyclyl having a miximum of 24 carbon\n atoms and from 1 to 3 hetero atoms, or two of Z\n groups are combined to form a bivalent alkylene\n radical having from 1 to 6 carbon atoms in\n admixture with an adjuvant such as herein\n described, the active ingredient in the said\n composition being present in an amount of at least\n 0.1 per cent by weight.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1986_1986_210_P007_C01",
+      "text": "2. A phytotoxic composition as claimed in Claim 1,\n wherein the active ingredient is 2' -tertbuty 1-2-\nchloro-N- (2-prophynyloxy-methyl)-6'methyl-\n acetanilide.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1986_1986_210_P008_C01",
+      "text": "3. A phytotexic composition as claimed in Claim 1,\n wherein the active ingredient is 2' -tertbutyl-2-\n chlore-N-(2-prophynyloxy-methyl)-6' -methyl-\n acetani-lide.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1986_1986_210_P009_C01",
+      "text": "4. A phytotexic composition as claimed in Claim 1,\n wherein the active ingredient is 2'-tertbutyl-2-\n chlore-N(allyloxymethyl)-6' methylacet-anilide.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1986_1986_210_P010_C01",
+      "text": "5. A phytotoxic composition as claimed in Claim 1,\n wherein the active ingredient is 2-tertbutyl-2-\n brome- N-methexy-methyl-6'-methylacetanilide.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1986_1986_210_P011_C01",
+      "text": "6. A phytotoxic composition as claimed in Claim 1,\n wherein the active ingredient is 2'-tertbutyl-2-\n broome-N-(2-prophynylexymethyl)-6- methylacetani-\n lide.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1986_1986_210_P012_C01",
+      "text": "7. A phytotoxic composition as claimed in Claim 1,\n wherein the active ingredient is 2-chloro-2', 6-\n disthyl-N-(methoxymethyl) acetanilide.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1986_1986_210_P013_C01",
+      "text": "8. A phytotoxic composition as claimed in Claim 1\n wherein the active ingredient is 2'-tertbutyl-2-\n bromo-N-(allyloxymethyl)-6'-methylacetanilide.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1986_1986_210_P014_C01",
+      "text": "9. A phytotoxic composition as claimed in Claim 1,\n wherein the active ingredient is 2'-tertbutyl-2-\n choloro-N- (2-methoxyethoxymethyl) -6'-\n methylacetan-ilide.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1986_1986_210_P015_C01",
+      "text": "10. A phytotoxic composition as claimed in Claim\n 1, wherein the active ingredient is 2'-tertbutyl-\n 2-bromo-N- (2-methoxyethoxymethyl) -6- methylace\n tanilide.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1986_1986_210_P016_C01",
+      "text": "11. A phytotoxic composition as claimed in Claim\n 1, wherein the active ingredient is 2-bromoe-2'-\n terbutyl-N-(2,3 - dihydroxypropoxyomethyl)-6-\n methylacetanilide.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1986_1986_210_P017_C01",
+      "text": "12. A phytotoxic composition as claimed in Claim\n 1, wherein the active ingredient is 2-chloro-2',\n 6-dimethyl-N-(isoproposymethyl)-acetanilide.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1986_1986_210_P018_C01",
+      "text": "13. A phytotoxic composition substantially as\n herein before described.\"\n\nIn the specification relating to Grass selective Herbicide\nCompositions (Specification No. 125381), it was claimed:\n\"We claim:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1986_1986_210_P019_C01",
+      "text": "1. A herbicidal composition in the form of an\n emulsion, suspension or dispersion, comprising as\n active ingredient a compound selected from the\n group.\na) 2',6' -diethyl-N-butoxymethyl-alpha-\n chloroaceta-nilide, and\nb) 2', 6'-diethyl-N-(2-butoxyethyl)-alpha-chloro-\nacetanilide, or a mixture of (a) and (b) in\n admixture with one or more diluents or carriers\n and surface active agents in which an emulsion is\n obtained by dissolving the active ingredient in an\n organic solvent and thereafter dispereing the\n solution in another liquid medium in the presence\n of an emulsifying agent such as herein described.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1986_1986_210_P020_C01",
+      "text": "2. A composition as claimed in claim 1, which\n further comprises one or more compounds selected\n from the following -\nconventional pesticides, fertilizers, and\n extenders such as herein described.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1986_1986_210_P021_C01",
+      "text": "3. A composition as claimed in claim 2, wherein\n mineral extenders such as natural clays, phyro-\n phyllites and vermiculite having a perticle size\n of 2000 to 149 microns, preferably of 1410 to 250\n microns, are used.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1986_1986_210_P022_C01",
+      "text": "4. A herbicidal composition in the form of an\n emulsion, suspension or dispersion substantially\n as hereinbefore described.\"\nWe do not propose to set out in detail the contents of\nthe written statement. It is sufficient to state that the\nDefendant claimed as he was entitled to do under\ns. 107\nthe Patents Act 1970, that the patents were liable to be\nrevoked under s. 64(1)\n(a),(b),(d),(e),(f),(g),(h),(i),(j),(k),(l) and (m) of the\nPatents Act\n. The defendant also made counter claim seeking\nrevocation of the patents. A close scrutiny of the plaint and a reference to the\nevidence of the witnesses for the plaintiff atonce exposes\nthe hollowness of the suit. We must begin with the statement\nin the plaint that \"THE ACTIVE INGREDIENT MENTIONED IN THE\nCLAIM IS CALLED 'BUTACHLOR'\" which suggests that Butachlor\nwas covered by the Plaintiffs' patents and the circumstance\nnow admitted that no one, neither the plaintiff nor any one\nelse, has a patent for Butachlor. The admission was\nexpressly made by PW-2, the power of attorney holder of the\nfirst plaintiff and Director of the second plaintiff\ncompany. The learned counsel for the plaintiffs also\nadmitted the same before us. PW-1, Dr.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1986_1986_210_P022_C02",
+      "text": "Dixon, Chemist of the\nfirst plaintiff company, after explaining the use of an\nemulsifying agent, in answer to a direct question, whether\nhis company claimed any patent or special knowledge for the\nuse of any particular solvent or particular emulsifying\nagent, in the formulation in their patent, had to admit that\nthey had no such patent or special knowledge. He further\nadmitted that the use of solvent and emulsifying agent on\nthe active ingredient was one of the well-known methods used\nin the pesticide industry to prepare a marketable product. He also expressed his inability to say what diluents or\nemulsifying agents the defendant used in their process. PW-2\nadmitted that Butachlor was a common name and that the Weed\nScience Society of America had allotted the common name. He\nstated that \"Machete\" was the brand name under which their\ncompany manufactured Butachlor. He also stated that there\ncould be a number of concerns all over the world\nmanufacturing Butachlor, but he was not aware of them. He\nadmitted that they did not claim a patent for Butachlor.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1986_1986_210_P022_C03",
+      "text": "stated that though his company did not claim a patent for\nButachlor, they claimed a patent for the process of making a\nButachlor emulsifiable concentrate to be used as a Herbicide\ncomposition for rice. Pursued further in cross-examination,\nhe was forced to admit that they used kerosene as a solvent\nfor Butachlor and an emulsifier manufactured by a local\nIndian company as an emulsifying agent. He then proceeded to\nstate that he claimed secrecy with regard to the manufacture\nof their formulation. When he asked further whether the\nsecrecy claimed was with regard to the solvent or with\nregard to the stabilizer, he answered in the negative. He\nfinally admitted that his secret was confined to the active\ningredient Butachlor about which as we know there is no\nsecret. PW-3, Robert Galson Depenning the patent agent of\nthe first plaintiff under a power of attorney from the first\nplaintiff, stated that it was he that had verified the\nplaint and that it\n\nwas on his instructions that the plaint was drafted.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1986_1986_210_P022_C04",
+      "text": "stated that according to him, by selling his formulations\nthe defendant had infringed Patents Numbers 104120 and\n125381, though he was unable to explain which part of his\nclaim in Patent Number 104120 was infringed as he was not a\nChemist. He stated that he said so and was able to say so in\nconsultation with the Managing Director of the second\nplaintiff company. He stated that it was explained to him by\nPW-2 that both the Patents Numbers 104120 and 125381 were\ninfringed. He also admitted that it was he that had signed\nthe specification of 104120 and while he was not sure\nwhether he had signed the specification Number 125381, he\nsaw that it had been signed by Depenning and Depenning. We, therefore, see that Butachlor which was the common\nname for CP 53619 was discovered, even prior to 1968 as a\nHerbicide possessing the property of nontoxic effect on\nrice. The formula for the Herbicide was published in the\nreport of the International Rice Research Institute for the\nyear 1968 and its common name Butachlor was also mentioned\nin the report of the International Rice Research Institute\nfor the year 1969.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1986_1986_210_P022_C05",
+      "text": "No one patented the invention Butachlor\nand it was the property of the population of the world. Before Butachlor or for that matter any Herbicide could be\nused for killing weeds, it had to be converted into an\nemulsion by dissolving it in a suitable solvent and by\nmixing the solution with an emulsifying agent. Emulsification is a well-known process and is no one's\ndiscovery. In the face of the now undisputable fact that\nthere is no patent for or any secrecy attached to Butachlor,\nthe solvent or the emulsifying agent and the further fact\nthat the process of emulsification is no new discovery, the\npresent suit based on the secrecy claimed in respect of the\nactive agent Butachlor and the claim for the process of\nemulsification must necessarily fail. Under\nsec. 61(1)(d)\n, a\npatent may be revoked on the ground that the subject of any\nclaim of the complete specification is not an invention\nwithin the meaning of the Act. Under\nsec. 64(e)\n, a patent\nmay be revoked if the invention so far as claimed in any\nclaim of the complete specification is not new, having\nregard to what was publicly known or publicly used in India\nbefore the date of the claim, etc.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1986_1986_210_P022_C06",
+      "text": "Under\nsec. 64(1)(f)\n, a\npatent may be revoked if the invention so far as claimed in\nany claim of the complete specification is obvious or does\nnot involve any inventive step having regard to what was\npublicly known or publicly used in India or what was\npublished in India before the priority\n\ndate of the claim (the words \"or elsewhere\" are omitted by\nus as the patents in the present case were granted under the\nIndian Patents and Designs Act, 1911\n, i.e., before the\nPatents Act\n1970). \"Invention has been defined by secc. 2(j)\nas follows:\n\" Invention\" means any new and useful -\n(i) art, process, method or manner of manufacture;\n(ii) machine, apparatus or other article;\n(iii) substance produced by manufacture, and\n includes any new and useful improvement of any of\n them, and an alleged invention.\"\nIt is clear from the facts narrated by us that the\nHerbicide CP 53619 (Butachlor) was publicly known before\nPatent Number 125381 was granted. Its formula and use had\nalready been made known to the public by the report of the\nInternational Rice Research Institute for the year 1968. No\none claimed any patent or any other exclusive right in\nButachlor.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1986_1986_210_P022_C07",
+      "text": "To satisfy the requirement of being publicly\nknown as used in clauses (e) and (f) of\nsec. 64(1)\n, it is\nnot necessary that it should be widely used to the knowledge\nof the consumer public. It is sufficient if it is known to\nthe persons who are engaged in the pursuit of knowledge of\nthe patented product or process either as men of sciene or\nmen of commerce or consumers. The section of the public who,\nas men of science or men of commerce, were interested in\nknowing about Herbicides which would destroy weeds but not\nrice, must have been aware of the discovery of Butachlor. There was no secret about the active agent Butachlor as\nclaimed by the plaintiffs since there was no patent for\nButachlor, as admitted by the plaintiffs. Emulsification was\nthe well-known and common process by which any Herbicide\ncould be used. Neither Butachlor nor the process of\nEmulsification was capable of being claimed by the plaintiff\nas their exclusive property. The solvent and the emulsifier\nwere not secrets and they were admittedly not secrets and\nthey were ordinary market products. From the beginning to\nthe end, there was no secret and there was no invention by\nthe palintiffs.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1986_1986_210_P022_C08",
+      "text": "The ingredients, the active ingredient, the\nsolvent and the emulsifier, were known; the process was\nknown, the product was known and the use was known. The\nplaintiffs were merely camouflaging a substance whose\n\ndiscovery was known through out the world and trying to\nenfold it in their specification relating to Patent Number",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1986_1986_210_P023_C01",
+      "text": "125381. The patent is, therefore, liable to be revoked. We\ndo not think that it is necessary for us to go into the\nvarious questions of law so carefully and meticulously\nargued by Mr. Chellaswamy. The questions were no doubt\ninteresting and arose for the first time. But we desire to\nkeep our interest purely academic and within bounds. So we\ndo not pronounce upon those questions. The appeal is\ndismissed with costs.\nM.L.A. Appeal dismissed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Monsanto Company By Their Patent Agent, ... vs Coramandal Indag Products (P) Ltd",
+    "case_id": "SC_1986_1986_210",
+    "court": "Supreme Court of India",
+    "year": "1986",
+    "facts_summary": "PETITIONER:\nMONSANTO COMPANY BY THEIR PATENT AGENT, DE PENNING AND DEPEN\n\n Vs.\n\nRESPONDENT:\nCORAMANDAL INDAG PRODUCTS (P) LTD.\n\nDATE OF JUDGMENT14/01/1986\n\nBENCH:\nREDDY, O. CHINNAPPA (J)\nBENCH:\nREDDY, O. CHINNAPPA (J)\nVENKATARAMIAH, E.S. (J)\n\nCITATION:\n 1986 AIR 712 1986 SCR (1) 120\n 1986 SCC (1) 642 1986 SCALE (1)74\n\nACT:\nPatents Act, 1970\n-\nSections 64(1)(e)\nand (f) - Patent\n- When liable to be revoked - Invention being publicly known\n- Requirement of - When satisfied - Emulsification - Whether\ninvention - Herbicide Formulations containing active\ningredient 'Butachlor' - Whether can be enfolded in\nspecification relating to a Patent Product.\n\nHEADNOTE:\n The plaintiff-appellant instituted a suit against the\nrespondent on the ground that its inventions entitled\n\"Phytotoxic Compositions\" and \"Grass Selective Herbicide\nCompositions\" duly patented containing the active ingredient\n\"Butachlor\" was infringed by the defendant-respondent\nmarketing \"Delchor-50\" a formulation of \"Butachlor\" which\nwas alleged to be covered by the plaintiff's Patent No. 2. Butachlor which was the common name for CP 53619 was\ndiscovered, even prior to 1968 as a Herbicide possessing the\nproperty of non-toxic effect on rice. The formula for the\nHerbicide was published in the report of the International\nRice Research Institute for the year 1968 and its common\nname Butachlor was also mentioned in the report of the\nInternational Rice Research Institute for the year 1969. No\none patented the invention Butachlor ",
+    "legal_issues": "1984. From the Judgment and Order dated 16.2.1984 of the\nMadras High Court in O.S.A. No. 217 of 1982. S. Chellaswamy, N.H. Hingorani, Mrs. Kapila Hingorani,\nMrs. Rekha Pandey and D. Sadasivan for the Appellants. F.S. Nariman, M.K. Rao, P.N. Ramalingam and A.T.M. Sampath for the Respondent. The Judgment of the Court was delivered by\n CHINNAPPA REDDY, J. The long and grasping hand of a\nMulti National Company, the Monsanto Company of St. Lous,\nMissouri, United States of America, has reached out to\nprevent alleged infringement of two of their patents\n(Numbers 104120 and 125381) by the defendant, an Indian\nPrivate Limited Company. Though the suit, as initially laid,\nwas with reference to two patents, the suit was ultimately\nconfined to one patent only (Number 125381), the period for\nwhich the other patent (104120) was valid having expired\nduring the pendency of the suit. The suit was decreed by the\ntrial court, but was dismissed by the appellate court. The\nappeal which is now before us has been filed pursuant to a\ncertificate granted by the appellate bench of the High Court\non the ground that substantial questions of law of great\npublic importance were involved. 4. A herbicidal composition in the form of an\n emulsion, suspension or dispersion substantially\n as hereinbefore described.\"\nWe do not propose to set out in detail the contents of\nthe written statement. It is sufficient to state that the\nDefendant claimed as he was entitled to do under\ns. 107\nthe Patents Act 1970, that the",
+    "ratio_summary": "",
+    "final_order": "125381. The patent is, therefore, liable to be revoked. We\ndo not think that it is necessary for us to go into the\nvarious questions of law so carefully and meticulously\nargued by Mr. Chellaswamy. The questions were no doubt\ninteresting and arose for the first time. But we desire to\nkeep our interest purely academic and within bounds. So we\ndo not pronounce upon those questions. The appeal is\ndismissed with costs.\nM.L.A. Appeal dismissed.",
+    "outcome_summary": "Dismissed. 125381. The patent is, therefore, liable to be revoked. We\ndo not think that it is necessary for us to go into the\nvarious questions of law so carefully and meticulously\nargued by Mr. Chellaswamy. The questions were no doubt\ninteresting and arose for the first time. But we desire to\nkeep our interes",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

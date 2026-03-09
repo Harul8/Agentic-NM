@@ -1,0 +1,443 @@
+{
+  "case_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION",
+  "case_name": "G.S. Bakshi And Ors. vs State (Delhi Administration)",
+  "normalized_case_name": "G.S._BAKSHI_AND_ORS._VS_STATE_(DELHI_ADMINISTRATION)",
+  "court": "Supreme Court of India",
+  "year": "1978",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 311 of 1971",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "30 August 1978",
+  "judges": [
+    "Jaswant Singh",
+    "P.S. Kailasam",
+    "JUDGMENT",
+    "P.S. Kailasam, J."
+  ],
+  "author": "P.S. Kailasam",
+  "bench_type": "constitution",
+  "petitioner": "G.S. Bakshi And Ors.",
+  "respondent": "State (Delhi Administration)",
+  "reporter_citations": [],
+  "outcome": "upheld",
+  "disposition": "upheld",
+  "cites_count": 6,
+  "cited_by_count": 3,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1978SC569",
+    "1979CRILJ476",
+    "(1978)4SCC482",
+    "[1979]43STC271(SC)",
+    "AIR 1979 SUPREME COURT 569",
+    "1978 CRILR(SC MAH GUJ) 438",
+    "(1979) 1 SCJ 530",
+    "1979 MADLJ(CRI) 433",
+    "1979 SCC(CRI) 103",
+    "(1979) SC CR R 148",
+    "1978 (4) SCC 482"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1978\\1978_300.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P001_C01",
+      "text": "1. These appeals Nos. 145, 311 and 314 of 1971 are preferred respectively by G.S. Bakshi, Jaswant Singh Kalsi and Joginder Singh Nanda by special leave against the judgment of the Delhi High Court in Criminal Appeals Nos. 155, 156 and 158 of 1968.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P002_C01",
+      "text": "2. There were seven accused before the Sessions Judge, Delhi in Sessions Case No. 3 of 1967. The learned Sessions Judge acquitted two of the accused, Amar Singh Nanda and Jagjit Singh Bhasin. He convicted the other five accused of offences under Sections 120B, 411, 471 and 420 read with\nSection 120B\nof the Indian Penal Code. Except two accused, Kapoor Singh with whom we are not concerned and J.S. Kalsi, appellant in Criminal Appeal No. 311 of 1971, the others were sentenced to rigorous imprisonment for four years under\nSections 471\nand\n\nread with\nSection 120B\nof the Indian Penal Code and with a fine of Rs. 5,000 under\nSection 471\nof the Indian Penal Code and for one year under\nSection 411\nread with\nSection 120B\nof the Indian Penal Code. Taking into account the age of Kapoor Singh, he was sentenced to one year's rigorous imprisonment on various charges. J.S. Kalsi, appellant in 311 of 1971 was sentenced to one year on various offences, the sentences were to run concurrently. The three appellants herein and two others convicted by the trial Court preferred five criminal appeals, viz., Appeals Nos. 155, 156, 158 of 1968 and 2 and 4 of 1969 to the High Court.",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 120B",
+        "IPC 471"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P002_C02",
+      "text": "The High Court confirmed the conviction of all the appellants but taking into account the age of Kapoor Singh, reduced his sentence to the period already undergone and fine of Rs. 1,000. The sentences imposed on other accused were confirmed.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P003_C01",
+      "text": "3. Only three accused preferred appeals to this Court. Of the three, G.S. Bakshi has since died and his appeal has abated. We are, therefore, concerned only with J.S. Kalsi, appellant in Criminal Appeal No. 311 of 1971 and J.S. Nanda, appellant in Criminal Appeal No. 314 of 1971.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P004_C01",
+      "text": "4. The charge against the accused in the trial court was that they with the approver, Amarjit Singh, P.W. 1, and others entered into a conspiracy to cheat the Government through the Land Acquisition Collector, Delhi, of huge amounts of money by procuring blank cheque leaves from the Land Acquisition Office, getting them forged and opening accounts in other banks in the name of fictitious persons and collecting the money by withdrawing the amounts so deposited.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P005_C01",
+      "text": "5. In pursuance of such a scheme it is alleged that the accused forged three cheques (Exs. P-1 to P-3) opened accounts in other banks in fictitious names and withdrew a sum of Rs. 1,28,115. Five of the accused were found guilty of the charges framed by the trial Court and convicted and sentenced as stated earlier.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P006_C01",
+      "text": "6. The case of the prosecution, as stated by the approver, Amarjit Singh, P.W. 1 may be briefly stated. After taking his B.Com. Degree, P.W. 1 joined the office of Joginder Singh Nanda, appellant in Appeal No. 314 of 1971, who will be referred to as Nanda, practising on the income-tax side. P.W. 1 finding that he was not making enough money in the office of Nanda, took up service in a private firm, Eminent Finance Private Limited. During that time he became intimate with Nanda and used to visit him in his Chambers in Tis Hazari Courts. One day when P.W. 1 and Nanda were taking drinks, the other accused, Kapoor Singh, Jhuman Singh and two others came to the office. During their talks, Nanda suggested it would be good if all of them became rich at once. Everyone welcomed the idea. Nanda stated that he would bring blank cheques from Land Acquisition Branch. The scheme was that these cheques should be forged and fictitious accounts opened and money withdrawn. In one of the subsequent meetings, Nanda showed three cheques (Exs.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P006_C02",
+      "text": "P-1 to P-3); one of them in favour of Dunabh Singh for Rs. 80,605, another in the name of Ram Lal for Rs. 6,960 and the third in favour of Ram Avtar for Rs. 40,550. Ex. P-3 cheque for Rs. 40,550 was handed over to Jagjit Singh Bhasin, who stated that he had arranged for cashing of the cheque through accused G.S. Bakshi. Ex. P-2 cheque for Rs. 6960 was handed over to P.W. 1 and he was asked to assist Jhuman Singh for getting a faked account opened in some bank in the name of Ram Lal for encashing the cheque.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P007_C01",
+      "text": "7. In a subsequent meeting, a week later, in the office of Nanda, Kapoor Singh informed that he got an account opened in the name of Ram Lal through Jhuman Singh in Paharganj Branch of the Punjab National Bank and that cheque, Ex. P-2 had been deposited in the bank, Nanda asked P.W. 1 that he should get an account opened in the name of Durlabh Singh and have the cheque for Rs. 80,605 deposited in that account and promised that P.W. 1 would be paid Rs. 12,000 after the cheque is cashed. When P.W. 1 expressed his inability to have an account opened as there was no one to introduce him, Nanda directed that he can go to the Punjab National Bank at Asaf Ali Road and meet Kalsi, appellant in Criminal Appeal No. 311 of 1971, a clerk who would help in getting an account opened. Accordingly P.W. 1 went to the Punjab National Bank, Asaf Ali Road, a few days later and met Kalsi. When P.W. 1 informed Kalsi of the necessity to have an account opened in the name of Durlabh Singh, as suggested by Nanda, Kalsi demanded Rs. 5,000 for carrying out of the job.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P007_C02",
+      "text": "P.W. 1 informed Nanda about Kalsi demanding Rs. 5,000 and Nanda told P.W. 1 that the amount would be paid to Kalsi after the cheque was encashed. Nanda then gave P.W. 1 Rs. 300 for having an account opened in the bank. On the next day, P.W. 1 went to Asaf Ali Road, met Kalsi and told him that Rs. 5,000 will be paid after the cheque was encashed. Kalsi directed P.W. 1 to get an account opening form from the Accountant of the Bank and have it filled up. The form, after having been duly filled up, was given by P.W. 1 to Kalsi, for getting an introduction. Kalsi directed P.W. 1 to come on the next day. On the next day, Kalsi gave a form to P.W. 1 which was filled up with the signatures in Urdu and the number of account. On the direction of Kalsi, P.W. 1 went to the Accountant and got the account opened. He signed the specimen signatures and deposited Rs. 300 with the Cashier for opening the account on 24th December 1964. P.W. 1 obtained a cheque book containing 20 blank cheques from the bank. Subsequently he informed Nanda about the opening of the account. Nanda gave P.W. 1 the cheque Ex. P-1 for Rs. 80,605.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P007_C03",
+      "text": "As Nanda wanted sum of Rs. 200 to be cashed, he went along with P.W. 1 to the Bank. When Nanda was outside, P.W. 1 filled in the pay-in-slip, handed it over along with Ex. P-1 and presented the cheque Ex. P-1 for encashment in the name of Dur-1abh Singh. Rs. 200 were given by Kalsi to P.W. 1 who was sitting at the counter. P.W. 1 handed over the amount to Nanda.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P008_C01",
+      "text": "8. The evidence is that between the 1st and the 9th January, the entire amount, deposited to the account of Durlabh Singh, a sum of Rs. 80,605, was withdrawn. According to the approver, except a sum of Rs. 11,000, the entire amount was taken by Nanda. P.W. 1 would state that Nanda paid to Kalsi Rs. 5,000 at Allora Restaurant. Subsequently, P.W. 1 withdraw a sum of Rupees 650 and kept the amount for himself.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P009_C01",
+      "text": "9. In the meantime, by about 18th January 1965, P.W. 5, Kishen Chand Mudgil who was working in the office of the Deputy Commissioner, Land Acquisition Branch, found that some cheque leaves were missing from a cheque book with which he was dealing. Enquiry was commenced and a case was registered. Learning that a case had been registered, Nanda went to the office of P.W. 1 at. Karol Bagh and informed him that the Police were on the track and that he should burn the cheque book as well as the pass-book and go out of Delhi. Accordingly P.W. 1 burnt the cheque book and the pass-book and went to Jabalpur and subsequently left for Nagpur and stayed with his sister. While at Nagpur, he sent a draft, Ex. P-19 for Rs. 3,000 to his father through the Punjab National Bank with a covering letter, Ex. P-29. P.W. 1 was arrested at Nagpur on 3rd February 1965. A sum of Rs. 880 was recovered from his person by the Police. Subsequently, the prosecution took him as an approver. Two other cheques, Ex. P-2 for Rs. 6,960 drawn in favour of one Ram Lal was also deposited in the Punjab National Bank, Paharganj and the proceeds of the cheque withdrawn; the third cheque, which is Ex.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P009_C02",
+      "text": "P-3 for Rs. 40,550, drawn in the name of Ram Avtar, an account was opened with the Narang Bank in the name of Ram Avtar and the proceeds of the cheque withdrawn. The prosecution case is that accused Bakshi opened the account in the name of Ram Avtar and had the money withdrawn. As Bakshi is dead and is not before this Court, it is unnecessary to deal with the details regarding the deposit of Ex. P-3 and withdrawal of the amounts.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P010_C01",
+      "text": "10. Ex. P-2 was cashed by opening an account in the name of Ram Lal in the Punjab National Bank, Paharganj. In December 1964, accused Kapoor Singh and Ram Lal who is an alias for Jhuman Singh, accused, went to P.W. 3 with a request that she may introduce Ram Lal to the Punjab National Bank, Paharganj Branch where she had an account. P.W. 3 went along with Kapoor Singh and Jhuman Singh to the bank and got an account opened in Ram Lal's name: At the bank, P.W. 3 found Nanda. Kapoor Singh and Ram Lal got a form for opening an account which was filled in by Nanda. Kapoor Singh got Rs. 100 from Nanda for the purpose of opening an account. Then P.W. 3 went inside along with Kapoor Singh and Ram Lal. Ram Lal signed the form in three places and P.W. 3 signed by way of introduction in that form. The introduction form is Ex. P-25. The account was opened and at the request of Kapoor Singh, the pass book was collected by P.W. 3. A few days later on the 15th December Kapoor Singh and Ram Lal went and asked for the pass book from P.W. 3, but as P.W. 3 was having high fever, her husband, P.W. 2 went to P.W. 3's clinic where the pass book was lying, and handed it over to Kapoor Singh.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P010_C02",
+      "text": "The cheque Ex. P-2 was deposited but when Ram Lal attempted to withdraw the money from the bank, there was some difficulty. A cheque for Rs. 2,000 which was presented on 14th December was not cashed because the signature, according to the bank officials, did not tally. Kapoor Singh and Ram Lal went to P.W. 3 and complained that the bank was not paying the money and that she should accompany them to the bank. P.W. 2 admonished them and asked them to go and look after the affairs themselves.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P011_C01",
+      "text": "11. According to P.W. 11, S.K. Senon, who was working as a clerk in the Punjab National Bank, on 21st December 1964 he received a telephonic message from Kalsi saying that he would send Earn Lal and that P.W. 11 should help him to withdraw the money from his account in the Paharganj Branch of the Punjab National Bank. Soon after, Ram Lal came to P.W. 11 and told him that he could not get payment of a cheque of Rs. 2,000 and thereafter P.W. 11 should help him to get payment. P.W. 11 thereafter took Ram Lal to P.W. 8 and told P.W. 8 that he received a telephone call from Kalsi that Ram Lal is a genuine person and that the cheque may be paid. While P.W. 11 and P.W. 6 were together, a telephone call was received and P.W. 11 who answered it stated that the call was from Kalsi, P.W. 8 passed the cheque after noting Senon's (P.W. 11) name on the back side of the cheque Apart from the evidence of P.Ws. 3, 8 and 11 referred to above the prosecution also examined P.W. 2, husband of P.W. 3. The above version of the approver and the evidence relating to cashing of the two cheques in short is the prosecution case against the two appellants before us, namely Nanda and Kalsi.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P011_C02",
+      "text": "It is needless to say that the evidence of the approver should be corroborated in material particulars connecting each of the accused with the crime. Both the courts have found that so far as the story of the approver is concerned there is nothing to suggest that it is not true. Having found that the version of the approver is prima facie acceptable, the courts below proceeded and found that there was required corroboration.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P012_C01",
+      "text": "12. It was not disputed before us that the signatures as Durlabh Singh and documents Exs. P-1, P-4 to P-18 and writing in P-21 and P-22 are those of the approver, Amarjit Singh. It is also clear that Amarjit Singh sent a letter Ex. P-21 along with the draft for a sum of Rupees 3,000, Ex. P-9 to his father. It has been proved that the letter Ex. P-21 is in the handwriting of the approver. On the day when the police arrested him at Nagpur, they recovered from him a sum of Rupees 880/-. It is also admitted that P. W, 1, the approver did not have enough means to have in his person, the amount of money recovered from him or for sending a draft for Rs. 3000/- to his father. It is therefore established beyond doubt that the approver took part in the conspiracy and had the cheque Ex. P. 1 deposited in the bank in the name of Durlabh Singh and withdrew it by drawing several cheques in the name of Durlabh Singh. It is also clear that he received some benefit out of the transaction which enabled him to be in possession of funds which a person of his means would not have had.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P012_C02",
+      "text": "Having found that the testimony of the approver is prima facie acceptable and that his participation in the conspiracy has been established beyond doubt, it is necessary to consider whether there is sufficient corroboration relating to material particulars connecting the two appellants with the crime.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P013_C01",
+      "text": "13. The evidence of the approver regarding Nanda is corroborated mainly by the testimony of the witnesses P. Ws. 2, 3 and 40 and the evidence of the handwriting expert P.W. 55, who proved his hand-writing in some material documents, particularly Ex. P. 25.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P014_C01",
+      "text": "14. P.W. 3, Satya Wati has her Homoeopathic Clinic in Bhagat Singh Market. Accused Kapoor Singh, Kalsi and Jhuman Singh were known to her. Kapoor Singh's father was admitted in her husband's hopital. In November 1964 Kapoor Singh came to her clinic along with Jhuman Singh (whom she called Ram Lal) and one Chameli who was described as the wife of Ram Lal. Kapoor Singh wanted Chameli to be treat-; ed well since he looked upon Ram Lal as his son. In December 1964, Kapoor Singh and Ram Lal came to her again with a request that she may introduce Ram Lal to the Punjab National Bank, Paharganj where she had an account. It was explained that as Ram Lal had some amount left with him by sale of certain land and that as he had no account with any bank in Delhi, he wanted assistance of P.W. 3. P.W. 3 went along with Kapoor Singh and Ram Lal to the Bank and got an account opened in Ram Lal's name. At the bank she ' found Nanda. Kapoor Singh and Ram Lal got a form for opening an account which was filled by Nanda. Kapoor Singh got Rs. 100/- from Nanda for the purpose of opening the account. Then she went inside along with Kapoor Singh and Ram Lal, and signed at three places in one form.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P014_C02",
+      "text": "P.W. 3 signed by way of introduction in the form Ex. P. 25. She was requested to collect the pass-book which she collected and a few days later on 15th December, Kapoor Singh and Ram Lal came and asked for the pass-book. As she was ill, her husband P.W. 2 went with Kapoor Singh and Ram Lal to the clinic and handed over the pass-book. The evidence of P.W. 3 was attacked on various grounds It was submitted that P.W. 3 is herself in the nature of an accomplice, in that she helped the opening of an account by Jhuman Singh with an alias name as Ram Lal. It was submitted that she would have known that the account was being opened in a fictitious name. Her subsequent conduct in having the passbook according to the learned Counsel would confirm that she was a privy to the crime. We do not think that these circumstances are enough to throw any doubt on the testimony of P.W. 3. A woman, Chameli stated to be the wife of Ram Lal was admitted by Kapoor Singh whom P.W. 3 had known for some time. P.W. 3 had an account and there is nothing unnatural in her helping Ram Lal to open an account in Delhi where he had no bank account.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P014_C03",
+      "text": "The collecting of the pass-book cannot also be viewed suspiciously for it is not unusual for a proposer to keep the passbook with him to be handed over to the person who has opened an account. The evidence of P.W. 3 is that when she went to help Ram Lal to open an account she found Nanda at the bank and it was Nanda that gave Rs. 100/- to Kapoor Singh for the purpose of opening an account. It is also the evidence of P.W. 3 that the form P. 25 was filled by Nanda. If the form is proved to have been filled by Nanda, it would go a long way to corroborate the testimony of P.W. 3. P.W. 3 in her evidence would state that Kapoor Singh and Ram Lal got a form for opening an account and that form was filled by Nanda and that Kapoor Singh got Rs. 100/- from Nanda for the purpose of opening an account. Ex. P. 25 is the account opening form in which she has signed in three places. When further questioned she stated \"I cannot say if this was the form which had been filled in by Nanda. I cannot say if I signed on the same form which had been filled in by Joginder Singh Nanda\". She explained that she was standing in the gate of the bank when the form was being filled up on the road side.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P014_C04",
+      "text": "In cross examination she stated that when the form was filled in, she was standing just in front, and that she was seeing as to who was filling in the form. She further reiterated that it was only one form which had been filled by Nanda and that it was on that form that she had signed and that statement is correct. Though in chief examination she was not very definite whether Nanda signed the same form in which she signed, in cross examination she was very clear that it was the form which Nanda filled up she signed. This testimony has been accepted by the learned Sessions Judge and the High Court and we do not see any reason for not accepting P.W. 3's testimony in this regard.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P015_C01",
+      "text": "15. It may also be noted that P.W. 55, hand-writing expert who was examined on behalf of the prosecution affirmed that the writing in Ex. P. 25 is that of Nanda and his testimony was accepted by both the courts below,",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P016_C01",
+      "text": "16. The testimony of P.W. 3 regarding the filling up of Ex. P-25 by Nanda was sought to be discredited by reference to the testimony of P.W. 8. P.W. 8, Vir Bhan Girotra, was working as a supervisor in the Punjab National Bank. According to this witness, a woman (obviously referring to P.W. 3) accompanied Ram Lal, then signed the form by way of introduction and went to the supervisor for attestation of her signature and got it attested, and thereafter the form was brought to him and that he filled Ex. P. 25 in his handwriting. This statement of the witness that he filled in the form is not only contrary but destructive of the prosecution case that it was Nanda that filled in the form Ex. P. 25. After the end of the cross examination of this witness, the public prosecutor applied for permission to treat this witness as hostile. The accused opposed the request by the public prosecutor and the arguments on this behalf were reserved by the learned Judge for the next day. On the next day the public prosecutor put in written application alleging that P.W. 8 never signed the form and that the statement was hostile to the prosecution.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P016_C02",
+      "text": "The learned Judge declined to permit the prosecution to treat the witness as hostile. We feel that the trial Court was in error in not allowing prosecution to treat the witness as hostile. The only reason given by the learned Judge was that the deposition in the court is not contrary to any earlier statement. When a prosecution witness turns hostile by stating something which is destructive of the prosecution case the prosecution is entitled to pray that the witness be treated as hostile. The learned Counsel, Mr. Latifi, appearing far Nanda, submitted that the prosecution acted unfairly in trying to get P.W. 8 treated as hostile and submitted that P.W. 8 had not stated anywhere that it was not Nanda that filled in the form Ex. P. 25. The learned Counsel further submitted that statements had been recorded under\nSection 162\nand there are no contradictions made out in his deposition from that of the 162 statement. The learned Counsel requested us to peruse the 162 statement of P.W. 8. We looked into it and we did not find anything in his favour.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P016_C03",
+      "text": "We are satisfied that for the first time in the witness box P.W. 8 has come out with the version that it was he that filled in the form, obviously with the view to help Nanda. This view of ours is confirmed by the testimony of P.W. 9, the accountant, Punjab National Bank, who stated that P.W. 3 had a form for opening an account filled with her and came to him for verification of her signatures. According to P.W. 8, the form was got attested by P.W. 3 from P.W. 9 and thereafter the form was brought to him. It is most unlikely that the form was left unfilled when it was taken before P.W. 9 and his attestation secured. Referring to this aspect, the High Court observed that the learned Judge thought the opinion of P.W. 55 regarding the hand-writing that it was Nanda that filled in the form Ex. P. 55 might be correct but still he did not act upon it upon the footing because of the contrary statements of P.W. 8. In respect of the evidence of P.W. 8 the learned Judge, who heard the appeal in the High Court, compared the handwriting in Exs. P-25 and P. 32 with the admitted handwriting of Nanda and found difficulty in accepting the testimony of P.W. 8.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P016_C04",
+      "text": "We feel, the testimony of P.W. 8 is unacceptable in this regard as it is most unlikely that the form without having been filled up was taken to P.W. 9 for attestation of the signature of P.W. 3. P.W. 8's deposition that thereafter the form was given to him and he filled it up cannot be accepted. Further we find that the testimony of P.W. 8 is hostile and made for the first time in the Sessions Court and the trial court was in error in not allowing the public prosecutor to treat him as hostile. The evidence of P.W. 2, the husband of P.W. 3 that Kapoor Singh introduced Nanda to him has not been seriously challenged. P.W. 2 stated that when he went along with Jhuman Singh and Kapoor Singh in a taxi for collecting the passbook he found Nanda in the taxi and he was introduced to him. We see no reason for rejecting the testimony of P.W. 2. It was contended by the learn-ed counsel for Nanda that it was for the first time that P.W. 3 Satya Wati stated in the court that the form Ex, P. 25 was filled in by Nanda and that the prosecution was not fair in not making available to them the 164 statement recorded from Satya Wati.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P016_C05",
+      "text": "In the cross-examination several questions were asked for proving that the statement given by P.W. 3 under\nSection 164\nwas under duress and not voluntary but nowhere it was alleged that the 164 statement recorded from her was not available to the defence counsel. It was not suggested in the cross-examination that P.W. 3 did not state in her 164 statement that it was Nanda that filled in the form Ex. P. 25. It is significant that a question was put to P.W. 3 in the cross-examination that she did not mention the name of Nanda in her statement recorded by the police. We see no reason for accepting the case for the defence that P.W. 3 for the first time mentioned that Nanda filled up Ex. P. 25. The evidence of P. Ws. 2,3 and 8 amply prove that it was Nanda that gave Rs. 100 and filled in the form. P.W. 40 was a Munshi of Nanda (who?) speaks to their close association and the various meetings between Nanda and other accused. The evidence of P.W. 40 had been accepted by the courts below.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P016_C06",
+      "text": "It is unnecessary for us to refer further to the ease against Nanda except to state that we fully agree with the conclusion of the trial court and the High Court that the case against Nanda has been proved beyond doubt.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P017_C01",
+      "text": "17. We will now proceed to consider the case against J.S. Kalsi. According to the approver, P.W. 1, when Nanda asked him to have an account opened in the name of Durlabh Singh and have the cheque for Rs. 80,605/- deposited in that account, he pleaded inability on the ground that he had no introduction to any bank. Nanda directed P.W. 1 to go to Punjab National Bank, Asaf Ali Road and meet Kalsi who would get the account opened on his mentioning Nanda's name. P.W. 1 accordingly went to Punjab National Bank, met Kalsi and after referring to Nanda explained the need to have the account opened in the name of Durlabh Singh. Kalsi demanded Rs. 5000/- for that purpose. The conversation took place in the Allora Restaurant. When informed about the demand Nanda told P.W. 1 that Kalsi would be paid Rs. 5000/- when the cheque was encashed. Nanda thereupon gave Rs. 300/- for having an account opened in the bank. On the next day P.W. 1 went to Asaf Ali Road and met Kalsi and told him that Rupees 5000/-would be paid after the cheque was encashed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P017_C02",
+      "text": "As directed by Kalsi, P.W. 1 took an account opening form from the accountant, filled that form and gave it to Kalsi for introduction, signing the same as Durlabh Singh. Kalsi directed P.W. 1 to come the next day. On the next day when P.W. 1 met Kalsi he found signature of the introducer was filled up and the number given as 747. As directed by Kalsi, P.W. 1 went to the accountant, got the account opened and signed the specimen signatures and deposited Rs. 300/- and then informed Nanda about the account having been opened. A few days later, P.W. 1 and Nanda went to the Bank as Nanda wanted Rs. 200/- to be withdrawn in the name of Durlabh Singh. Nanda was outside the bank. P.W. 1 filled in the pay-in-slip, presented with cheque, Ex. P. 1, for encashing in the name of Durlabh Singh, for Rs. 200/-. The amount was given by Kalsi to P.W. 1 and it was handed over by P.W. 1 to Nanda. P.W. 1 would also say that out of the amount cashed by him and paid to Nanda. Nanda paid at the Allora Res-taurant a sum of Rs. 5000/- to Kalsi. There is some discrepancy regarding the evidence of the approver about the payment of Rs. 5000/- to Kalsi.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P017_C03",
+      "text": "As recorded in English, it reads as follow:\nI took Kalsi to Allora Restaurant. we had tea there along with Nanda and Jhuman Singh accused. At the instance of Nanda I paid Rs. 5000/- out of Rs. 10000/- withdrawn by me on 6-1-1965. The statement in English does not state that the payment was made to Kalsi but the Urdu version as taken by the clerk of the Court and signed by the learned judge reads that the amount was paid to Kalsi. In the summary of the evidence of P.W. 1 as given by the trial Judge, it is stated that at the instance of Nanda, P.W. 1 paid to Kalsi Rs. 5000/-. The courts below have proceeded on the basis that the evidence of P.W. 1 was that Rs. 5000/- was paid to Kalsi at the Allora Restaurant. We are satisfied that the omission in the English version about the payment to Kalsi is only a slip. But now it is necessary to find out whether the above version of the approver has been corroborated in material particulars connecting Kalsi with the crime. The evidence of the approver that he was directed by Nanda to seek the help of Kalsi for opening of an account, receives support from the fact that the form for introduction for the bank Ex.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P017_C04",
+      "text": "P. 4, though purported to be in the name of P.W. 4, was fictitious. P.W. 4 in his deposition categorically denied that he introduced Durlabh Singh. He denied his signature in Ex. P. 4 and P.W. 55 the hand-writing expert expressed his view that the form of introduction was not signed by P.W. 4. This finding corroborates the testimony of P.W. 1 that he handed over the introduction form and it was got filled up by Kalsi. There is no corroboration regarding the payment of Rs. 5000/- to Kalsi. There is no evidence that Kalsi was possessed of funds for which he could not account. In the circumstances, the evidence of P.W. 1 that a sum of Rs. 5000/- was paid will have to be left out of account.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P018_C01",
+      "text": "18. The evidence of P.W. 2, Sabharwal is that he admonished Kapoor Singh and Jhuman Singh when they wanted P.W. 3, Satya Wati to accompany them to the bank for enabling Ram Lal to cash the cheque. P.W. 2 stated that when he admonished both of them, Kapoor Singh and Jhuman Singh enquired the address of Kalsi, and he stated that Kalsi was working in the Punjab National Bank, Asaf Ali Road, New Delhi. The evidence of P. Ws. 8 and 11 would go a long way to prove that Kalsi was taking a keen interest in having the cheques cashed. The statement of account of Ram Lal as given by the Punjab National Bank, Ex. P. 38 shows that the cheque dated 14-12-63 in favour of self for Rs. 4000/- was returned. There was some difficulty in cashing the cheque as the signature of Ram Lal was different from the specimen signatures. The cheque drawn on 21-12-'64 by Ram Lal on the face of it shows that Ram Lal had signed in three places. On the back side, Ram Lal had signed two places The cheque D/- 22-12-64 for Rs. 4000/-was signed by Ram Lal in three places and at the back side in three places. Prima facie therefore there is evidence that there was difficulty in cashing cheques.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P018_C02",
+      "text": "The cheque drawn on 14-12-'64 was returned. The cheques drawn on 2112-1964 and 22-12-1964 were paid after scrutiny. The evidence of P.W. 8 regarding withdrawal of the cheque Ex. P. 34 dated 21-12-1964 is that he noted the name of S.K. Senon, P.W. 11, who was a clerk in the Punjab National Bank, because he came along with Ram Lal for verification of Ram Lal, Senon told the witness that he had received a telephone call from Kalsi of Punjab National Bank to the effect that the aforesaid Ram Lal was a genuine person and therefore he should be identified by Senon. P.W. 8 further stated that when Senon and Ram Lal were standing before him, a telephone call was received by Senon who said that the call was from Kalsi assuring him that Ram Lal was a genuine person. On back side of Ex. 34 it is written under the signature of Ram Lal care of S.K. Senon. The version of P.W. 8 that the identity of Ram Lal was spoken to by Senon and that he noted on the back of the cheque below the signature of Ram Lal 'care of Senon' is borne out by the endorsement on the cheque.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P018_C03",
+      "text": "Senon in his evidence would state that he received a telephone call on 21-12-1964 from Kalsi; that he was sending Ram Lal and that the witness should help him in getting the cheque cashed as Ram Lal was a genuine person. Thereafter Ram Lal came to him and Ram Lal told him that Kalsi would have telephoned to him. Senon also stated that P.W. 8 wrote the words 'care of Senon' on the back of P. 34 in his presence. The evidence of P.W. 8 and P.W. 11 make it clear that Senon intervened and identified Ram Lal before P.W. 8 and the fact was noted on the back side of the cheque. The plea of the defence was that Kalsi had nothing to do with it and that the evidence of P. Ws. 8 and 11 cannot be accepted. P.W. 11 mentioned to P.W. 8 that Kalsi spoke about the identity of Ram Lal is corroborated by P.W. 8 also. Further P.W. 11 would say that when he, P.W. 8 and Ram Lal were together, a telephone call was received by Senon and Senon stated that it was Kalsi who stated that Ram Lal was a genuine person. The circumstances clearly prove that Kalsi was taking an active part in getting the cheques cashed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P018_C04",
+      "text": "P.W. 35, Karan Narain Khanna, a clerk working in the Punjab National Bank, Asaf Ali Road, Delhi, would say that Kalsi was also a clerk in the same bank who requested him that he should speak to Senon and assist Ram Lal in getting payment of the cheque because his signatures did not fully tally. The witness told Kalsi that he himself should ring up Senon in that respect and thereafter Kalsi rang up Senon. The evidence of this witness was attacked on the ground that there was enmity between Kalsi and the witness as they belong to rival Unions in the Bank. The court below has found the testimony of this witness, P.W. 35, acceptable and we see no reason for not agreeing with that. On a consideration of the evidence we are satisfied that the participation of Kalsi has been proved beyond reasonable doubt. We have no hesitation in concurring with the findings of the trial Judge and the High Court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P019_C01",
+      "text": "19. The learned Counsel, appearing for Nanda submitted that the entire investigation of the prosecution was most unfair and was highly prejudicial to the accused. He submitted that the procedure adopted for granting pardon to the approver was improper and that no reliance ought to have been placed on the testimony of the approver. He further submitted that copies of 164 statement of P.W. 2 and P.W. 3, material witnesses, were not furnished to the accused at any time. It was also alleged that when the approver was in the box, giving evidence, his earlier statement was placed in such a way that the approver could read it for giving evidence. All these allegations were made before the trial Court and the High Court and were rightly rejected. We feel that these pleas were raised when the accused found themselves in a desperate situation. Regarding the allegation that 164 statement of P.W. 2 and P.W. 3 were not furnished to them are concerned, we find there is material in the evidence of P.W. 3 which would prove that the accused had the 164 statements and used them for cross- examining the witnesses.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION_P020_C01",
+      "text": "20. In the result, agreeing with the courts below we confirm the conviction and sentence passed on Nanda and Kalsi and dismiss their appeals.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "G.S. Bakshi And Ors. vs State (Delhi Administration)",
+    "case_id": "SC_1978_GS_BAKSHI_AND_ORS_VS_STATE_DELHI_ADMINISTRATION",
+    "court": "Supreme Court of India",
+    "year": "1978",
+    "facts_summary": "2. There were seven accused before the Sessions Judge, Delhi in Sessions Case No. 3 of 1967. The learned Sessions Judge acquitted two of the accused, Amar Singh Nanda and Jagjit Singh Bhasin. He convicted the other five accused of offences under Sections 120B, 411, 471 and 420 read with\nSection 120B\nof the Indian Penal Code. Except two accused, Kapoor Singh with whom we are not concerned and J.S. Kalsi, appellant in Criminal Appeal No. 311 of 1971, the others were sentenced to rigorous imprisonment for four years under\nSections 471\nand\n\nread with\nSection 120B\nof the Indian Penal Code and with a fine of Rs. 5,000 under\nSection 471\nof the Indian Penal Code and for one year under\nSection 411\nread with\nSection 120B\nof the Indian Penal Code. Taking into account the age of Kapoor Singh, he was sentenced to one year's rigorous imprisonment on various charges. J.S. Kalsi, appellant in 311 of 1971 was sentenced to one year on various offences, the sentences were to run concurrently. The three appellants herein and two others convicted by the trial Court preferred five criminal appeals, viz., Appeals Nos. 155, 156, 158 of 1968 and 2 and 4 of 1969 to the High Court. The High Court confirmed the conviction of all the appellants but taking into account the age of Kapoor Singh, reduced his sentence to the period already undergone and fine of Rs. 1,000. The sentences imposed on other accused were confirmed. 3. Only three accused preferred appeals to this Court. Of the three, G.S. Bakshi has",
+    "legal_issues": "P.W. 3 signed by way of introduction in the form Ex. P. 25. She was requested to collect the pass-book which she collected and a few days later on 15th December, Kapoor Singh and Ram Lal came and asked for the pass-book. As she was ill, her husband P.W. 2 went with Kapoor Singh and Ram Lal to the clinic and handed over the pass-book. The evidence of P.W. 3 was attacked on various grounds It was submitted that P.W. 3 is herself in the nature of an accomplice, in that she helped the opening of an account by Jhuman Singh with an alias name as Ram Lal. It was submitted that she would have known that the account was being opened in a fictitious name. Her subsequent conduct in having the passbook according to the learned Counsel would confirm that she was a privy to the crime. We do not think that these circumstances are enough to throw any doubt on the testimony of P.W. 3. A woman, Chameli stated to be the wife of Ram Lal was admitted by Kapoor Singh whom P.W. 3 had known for some time. P.W. 3 had an account and there is nothing unnatural in her helping Ram Lal to open an account in Delhi where he had no bank account. 15. It may also be noted that P.W. 55, hand-writing expert who was examined on behalf of the prosecution affirmed that the writing in Ex. P. 25 is that of Nanda and his testimony was accepted by both the courts below, The learned Judge declined to permit the prosecution to treat the witness as hostile. We feel that the trial Court was in error in not allowing prosecu",
+    "ratio_summary": "",
+    "final_order": "20. In the result, agreeing with the courts below we confirm the conviction and sentence passed on Nanda and Kalsi and dismiss their appeals.",
+    "outcome_summary": "Upheld. 20. In the result, agreeing with the courts below we confirm the conviction and sentence passed on Nanda and Kalsi and dismiss their appeals.",
+    "sections_cited": [
+      "IPC 120B",
+      "IPC 471"
+    ],
+    "cases_cited": []
+  }
+}

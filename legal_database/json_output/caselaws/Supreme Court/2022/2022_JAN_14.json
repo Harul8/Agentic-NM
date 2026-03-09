@@ -1,0 +1,500 @@
+{
+  "case_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD",
+  "case_name": "Intercontinental Hotels Group (India) ... vs Waterline Hotels Pvt. Ltd.",
+  "normalized_case_name": "INTERCONTINENTAL_HOTELS_GROUP_(INDIA)_..._VS_WATERLINE_HOTELS_PVT._LTD.",
+  "court": "Supreme Court of India",
+  "year": "2022",
+  "judgment_template": null,
+  "case_number": "Petition 12 of 2019",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": "25 January 2022",
+  "judges": [
+    "Hima Kohli",
+    "Surya Kant",
+    "N.V. Ramana"
+  ],
+  "author": "N.V. Ramana",
+  "bench_type": "constitution",
+  "petitioner": "Intercontinental Hotels Group (India) ...",
+  "respondent": "Waterline Hotels Pvt. Ltd.",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 22,
+  "cited_by_count": 46,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL ORIGINAL JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2022\\JAN\\2022_JAN_14.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P001_C01",
+      "text": "CIVIL ORIGINAL JURISDICTION\n\n ARBITRATION PETITION (CIVIL) NO. 12 OF 2019\n\n INTERCONTINENTAL HOTELS GROUP (INDIA) ….PETITIONERS\n PVT. LTD. & ANR.\n\n VERSUS\n\n WATERLINE HOTELS PVT. LTD .... RESPONDENT\n\n JUDGMENT\nN.V. RAMANA, CJI.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P002_C01",
+      "text": "1. This petition is filed under Section 11(6) r/w 11(12)(a) of the\nArbitration & Conciliation Act, 1996\nfor appointment of a sole\n\n arbitrator.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P003_C01",
+      "text": "2. The brief facts which are necessary for adjudication of this\n\n application are that the Intercontinental Hotels Group (India) Pvt.\n\n Ltd (Petitioner No.1) and Intercontinental Hotels Group (Asia­\n\nrespectively. The parent company (IHG Group) is a British multi­\n\nnational hotel based out of Denham, United Kingdom.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P004_C01",
+      "text": "3. The respondent is an Indian company engaged in hospitality\n\nsector. The Respondent had agreed to run and operate a hotel by\n\nname Holiday Inn & Suites Bengaluru, Whitefield.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P005_C01",
+      "text": "4. The respondent entered into a Hotel Management Agreement\n\n(HMA) with the petitioners for renovating the existing infrastructure\n\nin accordance with the brand standards established by the IHG\n\ngroup. The HMA elaborated on the rights and obligations of parties\n\nfrom 17.09.2015 for initial ten years and further renewals were also\n\nprovided thereunder. The petitioners alleged that under the HMA,\n\nthe petitioners were required to make significant investments for\n\nsetting up the hotel in accordance with the brand standards. These\n\ninvestments were to be recovered gradually from the profits made\n\nby the hotel in due course.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P006_C01",
+      "text": "5. The HMA mandated that for the renovation undertaken by the\n\npetitioners, the respondent was contractually bound to pay the fee\n\nto petitioner no. 1, known as incentive management fee, at the end\n\nof every month. Further, Petitioner No.2 was entitled to license fee\n\nfrom the respondent for the use of brand and marks as well as an\n\nagreed sum towards “System Fund Contributions”, “Technology\n\nService Fee” & “Technical Service Fee”.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P007_C01",
+      "text": "6. The petitioners allege that the respondent failed to pay the\n\nrequisite fee which it was contractually bound to under the HMA\n\nsince early 2016. As of 12.10.2018, the respondent owed the\n\npetitioners a sum amounting to USD 6,18,719, excluding interest\n\nfor the late payment as provided under Clause 21.3 of the HMA.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P008_C01",
+      "text": "7. In any case, the respondent sent an e­mail on 12.10.2018\n\nterminating the HMA. In the aforesaid e­mail, the respondent stated\n\nthat the hotel was rebranded as Miraya Hotels, and all guests\n\nchecking into the hotel after noon on 12.10.2018, were informed\n\nthat the management of the hotel had been handed over to Miraya.\n\nOn the same day, the petitioners replied to the aforesaid\n\ntermination letter contending that unilateral termination of the\n\nHMA was not valid as there was no legal basis for the same.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P009_C01",
+      "text": "8. The respondent failed to retract the email of 12.10.2018, and\n\nthe petitioners invoked\nSection 9\nof the Arbitration Act seeking\n\ninterim relief before the High Court of Karnataka at Bengaluru in\n\nAPIM No. 3/2018. The High Court, on 23.10.2018, passed an ad­\n\ninterim order directing the respondent not to evict the petitioners\n\nfrom the premises without due process of law until further orders.\n\nHowever, the petitioners allege that the respondent has not been\n\nsincere in complying with the order and has taken steps to frustrate\n\nthe aforesaid order.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P010_C01",
+      "text": "9. As the settlement talks between the parties failed, and the\n\nrespondent remained in persistent breach of the HMA, the\n\npetitioners were left with no option other than to invoke Arbitration\n\nunder clause 18.2 of HMA, which reads as under:\n“Clause 18.2­ Dispute Resolution\n(a) All disputes, controversies or claims arising out of\n\n or in connection with this Agreement and/or any matters\n\n incidental hereto and/or the interpretation and/or\n\n breach hereof, will first be discussed by the Owner and\n\n the Manager with the objective of resolving such dispute,\n\n controversy or claim in a fair, amicable and friendly\n\n manner. If such efforts fail to bring a resolution within\n\n ten (10) Business Days of receipt of a notice issued by\n\none party to another seeking resolution, such disputes,\n\ncontroversies or claims will be finally determined by\n\narbitration in accordance with the Arbitration Rules of\n\nSingapore International Arbitration Centre (“SIAC”) for\n\nthe time being in force, which rules are deemed\n\nincorporated by reference into this clause. (b) The Tribunal shall consist of a sole Arbitrator.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P010_C02",
+      "text": "However, in the event that the Parties are unable to agree\n\non the sole Arbitrator the tribunal shall consist of three\n\nArbitrators, one to be appointed by each of Manager and\n\nOwner, and the third to be appointed by mutual\n\nagreement of the two appointed Arbitrators. In the event\n\nthe Arbitrators appointed by the Manager and the Owner\n\nfail to mutually agree on the third Arbitrator, such third\n\nArbitrator shall be appointed by a Competent Court of\n\nLaw in Bangalore. The Parties herein mutually agree to\n\nexclude the applicability of rules of SIAC to this extent\n\n(i.e., regarding appointment of third Arbitrator). The place\n\nof arbitration will be SIAC in Bengaluru and the official\n\nlanguage of the arbitration will be English. In reaching a\n\n decision, the Arbitrators, will be bound by the terms and\n\n provisions of this Agreement. The decision and award of\n\n the Arbitrator will be final and binding and shall be\n\n enforceable by the Indian Courts…”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P011_C01",
+      "text": "10. In the Notice of Arbitration, the petitioners claimed the\n\nfollowing reliefs:\na. A declaration that:\ni. The Respondent is in breach of the\n Management Agreement dated 7th August\n 2015; and\nii. The Respondent has illegally and wrongfully\n purported to terminate the Management\n Agreement by its email dated 12th October",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P012_C01",
+      "text": "2018. b. Direct the Respondent to pay to the\n Claimants,\ni. The outstanding dues of USD 618,719 as on\n 8 October 2018 owed to the Claimants under\n the Management Agreement;\nii. Interest on the above outstanding amounts\n from the dates the amounts became due until\n the filing of this notice invoking arbitration, in\n accordance with Clause 21.3 of the\n Management Agreement;\n\niii. Damages due to the wrongful\n termination of the Management Agreement for\n the remainder Term of the Management\n Agreement which has as Initial Term of 10\n years from 15 September 2015 with a potential\n 2 x 5 years of Renewal Term, in an amount to\n be assessed later; and\n iv. Such other future sums towards\n damages and as may fall due under the\n Management Agreement and as the Claimants\n may put forth before the Hon’ble Tribunal in its\n Statement of Case.\nc. Pendente Lite and future interest on all\n sums awarded to it at such rate as the\n Tribunal may deem fit, in accordance with Rule\n 32.9 of the SIAC Rules and Arbitration &\n Conciliation Act, 1996;\nd. Award of costs from the Respondent and\n interest on the costs awarded, till payment.\n e.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P012_C02",
+      "text": "Any other prayer the Hon’ble Tribunal may\n deem fit in the interest of justice.,”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P013_C01",
+      "text": "11. The respondent is alleged to have replied to the aforesaid\n\nNotice of Arbitration by stating that the said notice dated\n\n21.01.2019 was not a notice, and consequently did not require a\n\nreply.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P014_C01",
+      "text": "12. Accordingly, the petitioners communicated their intention to\n\ninvoke arbitration to the Singapore International Arbitration Centre\n\n(SIAC). They also approached the SIAC for suggesting names of sole\n\narbitrators or to invoke the mechanism of appointing a three­\n\nmember tribunal if the respondent does not agree on a single\n\nname. SIAC further sent a notice dated 15.02.2019 to the\n\nrespondent for appointment of a suitable arbitrator. Interestingly,\n\nthe respondent replied to the notice sent by the SIAC stating that\n\nthe notice of arbitration dated 21.01.2019 was defective and was\n\nnot curable. In any case, the respondent alleges as under:\n“Strictly without prejudice, we do not\n accept IHG’s proposal to appoint any of the\n 3 Arbitrators named in its Notice, dated\n 08.02.2019, as a sole arbitrator. Nor do we\n wish to propose and names of a sole\n arbitrator. Further, there is no question of\n proposing or agreeing to Arbitration by a\n Tribunal of 3 Arbitrators for the same\n reason. The reasons have been elaborately\n narrated hereinabove and bear no\n repetition.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P014_C02",
+      "text": "Clearly SIAC and its Associate Counsel\n have turned a complete blind eye to the\n legal position, facts of the case and\n conduct of IHG and its Advocates. It would\n not be out place to mention that, in the\n given circumstances SIAC would not be\n entitled to exclusion of liability under Rule\n 38, SIAC Rules.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P015_C01",
+      "text": "13. Aggrieved by the respondent’s denial to appoint a suitable\n\nArbitrator, the petitioners have filed this petition seeking\n\nappointment of an Arbitrator.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P016_C01",
+      "text": "14. When this matter was listed on 16.04.2019, this Court was\n\npleased to issue notice. Thereafter, the respondent entered\n\nappearance and filed a counter­affidavit dated 24.07.2019,\n\npointing out that the purported HMA, which contains the\n\narbitration agreement, was an unstamped document. It notes that\n\nthis Court, in\nGarware Wall Ropes Ltd. v Coastal Marine\n\nConstructions and Engineering Ltd.\n, (2019) 9 SCC 209 has\n\nearlier held that an agreement which is not duly stamped cannot\n\nbe relied on or acted upon unless the unstamped document is\n\nimpounded, and the applicable stamp duty and penalty is assessed\n\nand paid.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [
+        "Court, in\nGarware Wall Ropes Ltd v Coastal Marine\n\nConstructions and Engineering Ltd"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P017_C01",
+      "text": "15. On 02.03.2020, this Court, at the request of the petitioners,\n\nallowed four weeks to file an application. In line with the aforesaid\n\npermission, the petitioners filed an application for permission to\n\nfile additional documents dated 23.06.2020 which reads inter alia\n\nas under:\n“ ………..",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P018_C01",
+      "text": "3. Without prejudice to the above, the Petitioner\n No.1 has taken the necessary step to pay the\n stamp duty applicable to the HMA. In\n accordance with\nSection 2(6)\nof the Indian\n Stamp Act, 1899, the stamping of the HMA\n would be governed by the\nKarnataka Stamp Act,\n\n(“\nKarnataka Stamp Act\n”) because the HMA\n was first executed in Bengaluru, the place of\n performance is Bengaluru and the subject\n matter of the HMA is situated in Bengaluru.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P019_C01",
+      "text": "4. The Schedule of the Karnataka Stamp Act\nenumerates different types of instruments that\n attract stamp duty and the corresponding duty\n that is payable.\nArticle 5\nof the Schedule\n\nprovides the duty applicable to different types of\n agreements, The HMA is a services agreement\n which is not specifically provided for in\nArticle\n\n, and therefore, it would be covered under the\n residuary provisions,\nArticle 5(j)\n, “Agreement or\n [its records or] Memorandum of an Agreement if\n not otherwise provided for”. The corresponding\n stamp duty is INR 200. In order to establish its\n bona fide and to avert any argument regarding\n the adequacy of the stamp duty paid, Petitioner\n No. 1 has also paid the maximum penalty i.e.,\n ten­times that duty amounting to INR 2,000 in\n accordance with the proviso to\nSection 34\nof the\n Karnataka Stamp Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P020_C01",
+      "text": "5. The Petitioners further submit that since they\n have paid the requisite stamp duty along with\n the maximum penalty prescribed under the\nKarnataka Stamp Act\n, this Hon’ble Court may\n proceed to appoint a sole Arbitrator who has the\n jurisdiction to deal with all disputes that arise\n between the parties.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P021_C01",
+      "text": "16. The respondent, while objecting to the aforesaid application\n\nfiled by the petitioners, stated as under:\n\n“4. I state that at the time of hearing of the\nabove cited Petition on the 02.03.2020, the\nlearned Sr. Counsel appearing for the Petitioner\nhad tendered a Letter dated 28.02.2020\nannexing therewith a single e­Stamp paper\nbearing Unique Doc. Reference No.\nSUBINKAKABACSL0850557522508599R dated\n29.07.2020 for Rs.2,200/­ classifying the HMA\nas “Bond” under\nArticle 12\nof the\nSchedule to\nthe Karnataka Stamp Act, 1957\nand the\nConsideration Prices as Zero….",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P022_C01",
+      "text": "5. That this Hon’ble Court, had by its Order\ndated 02.03.2020 directed the Petitioners to file\nthe said single e­Stamp paper, dated\n29.07.2019 along with a proper Application.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P023_C01",
+      "text": "6. I state that, the Petitioners have not filed the\nsaid single e­Stamp Paper, dated 29.07.2019,\nclassifying the HMA as “Bond”. Instead,\npurportedly in furtherance of this Hon’ble\nCourt’s Order dated 02.03.2020, the Petitioners\nhave filed a completely different set of 11 e­\nStamp Papers of Rs.200/­ each all dated\n10.06.2020 this time classifying the agreement\nunder\nArticle 5(j)\nof the\nSchedule to the\nKarnataka Stamp Act, 1957\nand annexing the\nHMA dated 07.08.2015 therewith, under the\n\nabove cited Application seeking permission to\nfile Additional Documents being I.A D. No.\n60764 of 2020.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P024_C01",
+      "text": "7. I state that it is not true that, vide this\nHon’ble Court’s Order, dated 02.03.2020, the\nPetitioners were granted permission to file the\n11 e­Stamp Papers, for Rs.200/­ each, all\ndated 10.06.2020, that have been filed along\nwith the above cited Application seeking\npermission to file Additional Documents being\nI.A D. No. 60764 of 2020.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P025_C01",
+      "text": "8. I submit that the Petitioners have not paid\nthe proper Stamp Duty and penalty under the\nKarnataka Stamp Act, 1957\nnor has the\nprocedure of adjudication of proper stamp duty\nand penalty payable been followed by the\nPetitioner as per law. The Petitioners have, in\nfact, arrogated to themselves the power of\nadjudication under the\nKarnataka Stamp Act,\n\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P026_C01",
+      "text": "9. I state that there is no procedure whereby a\nparty self adjudicates and self certifies the\nproper stamp duty and the penalty payable on\na Document as sought to be done twice by the\nPetitioners as under:\nSELF ADJUDICATION BY THE PETITIONERS WITH\n\nTHE MAXIMUM PENALTY OF 10 TIMES\n 29.07.2019 10.06.2020\n Single e­Stamp paper 11 e­Stamp Papers\n for Rs.2,200/­ for Rs.200/­ each\n\n Description of Doc. Description of Doc.\nArt 12 Bond Art 5(j) Agreement\n (In any other cases)\n\n Property Description Property\n Description\n Hotel Management Agreement\n Agreement\n\n Consideration Price Consideration Price\n (Rs.) 0 (Rs.) 0\n (Zero) (Zero)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P027_C01",
+      "text": "17. We have heard learned counsel for the parties and perused\n\nthe documents available on record.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P028_C01",
+      "text": "18. At the outset, we need to state that this Court’s jurisdiction to\n\nadjudicate issues at the pre­appointment stage has been the\n\nsubject matter of numerous cases before this Court as well as High\n\nCourts. The initial interpretation provided by this Court to examine\n\nissues extensively, was recognized as being against the pro­\n\narbitration stance envisaged by the 1996 Act. Case by case, Courts\n\nrestricted themselves in occupying the space provided for the\n\narbitrators, in line with party autonomy that has been reiterated by\n\nthis Court in\nVidya Drolia v. Durga Trading Corporation\n, (2021)\n\n2 SCC 1, which clearly expounds that Courts had very limited\n\njurisdiction under\nSection 11(6)\nof the Act. Courts are to take a\n\n‘prima facie’ view, as explained therein, on issues relating to\n\nexistence of the arbitration agreement. Usually, issues of\n\narbitrability/validity are matters to be adjudicated upon by\n\narbitrators. The only narrow exception carved out was that Courts\n\ncould adjudicate to ‘cut the deadwood’. Ultimately the Court held\n\nthat the watch word for the Courts is ‘when in doubt, do refer’. This Court concluded as under:\n“225.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P028_C02",
+      "text": "From a study of the above precedents,\n the following conclusion, with respect to\n adjudication of subject­matter arbitrability\n Under\nSection 8\nor 11 of the Act, are pertinent:\n225.1 In line with the categories\nlaid down by\nthe earlier judgment of\nBoghara Polyfab\n [National Insurance Co. Ltd. v. Boghara\n Polyfab (P) Ltd.\n, (2009) 1 SCC 267] the Courts\n were examining 'subject­matter arbitrability' at\n the pre­arbitral stage, prior to the 2015\n amendment.\n225.2 Post the 2015 amendment, judicial\n interference at the reference stage has been\n substantially curtailed.\n225.3 Although subject matter arbitrability\n and public policy objections are provided\n separately Under\nSection 34\nof the Act, the\n Courts herein have understood the same to be\n\ninterchangeable under the Act. Further,\n subject matter arbitrability is inter­linked with\n in­rem rights.\n225.4 There are special classes of rights and\n privileges, which enure to the benefit of a\n citizen, by virtue of constitutional or legislative\n instrument, which may affect the arbitrability\n of a subject­matter.”\n\nFollowing is the opinion of one of us (N. V. Ramana, J., as His\n\nLordship then was):­\n\n “244.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P028_C03",
+      "text": "Before we part, the conclusions reached,\n with respect to question No. 1, are:\n244.1\nSections 8\nand\n\nof the Act have the\n same ambit with respect to judicial\n interference.\n244.2 Usually, subject matter arbitrability\n cannot be decided at the stage of\nSections 8\n 11 of the Act, unless it's a clear case of\n deadwood.\n244.3 The Court, Under\nSections 8\nand\n\n,\n has to refer a matter to arbitration or to\n appoint an arbitrator, as the case may be,\n unless a party has established a prima facie\n (summary findings) case of non­existence of\n valid arbitration agreement, by summarily\n portraying a strong case that he is entitled to\n such a finding.\n244.4 The Court should refer a matter if the\n validity of the arbitration agreement cannot be\n determined on a prima facie basis, as laid\n down above, i.e., 'when in doubt, do refer'.\n 244.5 The scope of the Court to examine the\n prima facie validity of an arbitration agreement\n includes only:\n\n244.5.1 Whether the arbitration agreement\n was in writing? or\n 244.5.2 Whether the arbitration agreement\n was contained in exchange of letters,\n telecommunication etc?\n244.5.3 Whether the core contractual\n ingredients qua the arbitration agreement\n were",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P028_C04",
+      "text": "fulfilled?\n244.5.4 On rare occasions, whether the\n subject­matter of dispute is arbitrable?”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P029_C01",
+      "text": "19. While holding as above, this Court by majority opinion\n\nspeaking through Justice Sanjiv Khanna held as under:\n“147.1. Garware Wall Ropes Ltd. [Garware\n Wall Ropes Ltd. v. Coastal Marine\n Constructions & Engg. Ltd.\n, (2019) 9 SCC 209 :\n(2019) 4 SCC (Civ) 324] , this Court had\n examined the question of stamp duty in an\n underlying contract with an arbitration clause\n and in the context had drawn a distinction\n between the first and second part of\nSection\n 7(2)\nof the Arbitration Act, albeit the\n observations made and quoted above with\n reference to “existence” and “validity” of the\n arbitration agreement being apposite and\n extremely important, we would repeat the\n same by reproducing para 29 thereof : (SCC p.\n238)\n “29. This judgment in Hyundai Engg.\n case [United India Insurance Co. Ltd. v. Hyundai Engg. & Construction Co. Ltd.\n,\n (2018) 17 SCC 607 : (2019) 2 SCC (Civ) 530] is\n important in that what was specifically under\n consideration was an arbitration clause which\n would get activated only if an insurer admits\n\nor accepts liability.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P029_C02",
+      "text": "Since on facts it was found\n that the insurer repudiated the claim, though\n an arbitration clause did “exist”, so to speak,\n in the policy, it would not exist in law, as was\n held in that judgment, when one important\n fact is introduced, namely, that the insurer\n has not admitted or accepted liability. Likewise, in the facts of the present case, it is\n clear that the arbitration clause that is\n contained in the sub­contract would not “exist”\n as a matter of law until the sub­contract is\n duly stamped, as has been held by us above. The argument that\nSection 11\n(6­A) deals with\n “existence”, as opposed to\nSection 8\n,\nSection\n\nand\nSection 45\n, which deal with “validity” of\n an arbitration agreement is answered by this\n Court's understanding of the expression\n “existence” in\nHyundai Engg.\ncase [\nUnited\n India Insurance Co. Ltd. v. Hyundai Engg. &\n Construction Co. Ltd.\n, (2018) 17 SCC 607 :\n(2019) 2 SCC (Civ) 530] , as followed by us.”\n Existence and validity are intertwined, and\n arbitration agreement does not exist if it is\n illegal or does not satisfy mandatory legal\n requirements. Invalid agreement is no\n agreement.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P030_C01",
+      "text": "20. In any case, again in\nN.N. Global Mercantile Private\n\nLimited v. Indo Unique Flame Limited\n, (2021) 4 SCC 379, this\n\nCourt doubted the above proposition as held in\nGarware Wall\n\nRopes\n(supra), and was of the opinion that the utility of the\n\ndoctrine of separability overrides the concern under the respective\n\nStamp Acts. Any concerns of non­stamping or under stamping\n\nwould not affect the validity of the arbitration agreement.\nHowever,\n\nthis Court considered it appropriate to refer the issue for\n\nauthoritative settlement by a Constitution Bench in the light of\nVidya Drolia\n(supra), citing the ratio in\nGarware Wall Ropes\n(supra).\nThe relevant observations made in\nN.N. Global\n(supra)\n\nread as under:\n“56. We are of the considered view that the\n finding in\nSMS Tea Estates [SMS Tea Estates\n (P) Ltd. v. Chandmari Tea Co. (P) Ltd.\n, (\n2011) 14\n SCC 66] and Garware [Garware Wall Ropes\n Ltd. v. Coastal Marine Constructions & Engg\n.\nLtd., (2019) 9 SCC 209] that the non­payment\n of stamp duty on the commercial contract\n would invalidate even the arbitration\n agreement, and render it non­existent in law,\n and un­enforceable, is not the correct position\n in law.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P031_C01",
+      "text": "57. In view of the finding in paras 146 and\n 147 of the judgment in\nVidya Drolia [Vidya\n Drolia v. Durga Trading Corpn.\n, (2021) 2 SCC 1\n by a co­ordinate Bench, which has affirmed the\n judgment in\nGarware [Garware Wall Ropes\n Ltd. v. Coastal Marine Constructions & Engg.\n Ltd.\n, (2019) 9 SCC 209], the aforesaid issue is\n required to be authoritatively settled by a\n Constitution bench of this Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P032_C01",
+      "text": "58. We consider it appropriate to refer the\n following issue, to be authoritatively settled by\n\na Constitution Bench of five Judges of this\n Court:\n“Whether the statutory bar contained in\nSection 35\nof the Indian Stamp Act, 1899\n applicable to instruments chargeable to Stamp\n Duty under\nSection 3\nread with the\nSchedule\n to the Act\n, would also render the arbitration\n agreement contained in such an instrument,\n which is not chargeable to payment of stamp\n duty, as being non­existent, unenforceable, or\n invalid, pending payment of stamp duty on the\n substantive contract/instrument?”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P033_C01",
+      "text": "59. In light of the same, the Registry may\n place this matter before the Hon'ble Chief\n Justice of India for appropriate\n orders/directions.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P034_C01",
+      "text": "21. The reasoning for the above was provided in the captioned\n\n judgment as follows:\n“24. The arbitration agreement contained in\n the Work Order is independent and distinct\n from the underlying commercial contract. The\n arbitration agreement is an agreement which\n provides the mode of dispute resolution.\nSection 3\nof the Maharashtra Stamp Act does\n not subject an arbitration agreement to\n payment of Stamp Duty, unlike various other\n agreements enlisted in the\nSchedule to the Act\n.\n This is for the obvious reason that an\n arbitration agreement is an agreement to\n resolve disputes arising out of a commercial\n agreement, through the mode of arbitration.\n On the basis of the doctrine of separability, the\n arbitration agreement being a separate and\n\ndistinct agreement from the underlying\n commercial contract, would survive\n independent of the substantive contract. The\n arbitration agreement would not be rendered\n invalid, un­enforceable or non­existent, even if\n the substantive contract is not admissible in\n evidence, or cannot be acted upon on account\n of non­payment of Stamp Duty.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P035_C01",
+      "text": "22. Although we agree that there is a need to constitute a larger\n\nBench to settle the jurisprudence, we are also cognizant of time­\n\nsensitivity when dealing with arbitration issues. All these matters\n\nare still at a pre­appointment stage, and we cannot leave them\n\nhanging until the larger Bench settles the issue. In view of the\n\nsame, this Court – until the larger Bench decides on the interplay\n\nbetween\nSections 11(6)\nand\n\n– should ensure that arbitrations\n\nare carried on, unless the issue before the Court patently indicates\n\nexistence of deadwood.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P036_C01",
+      "text": "23. This brings us to the only issue at hand: whether the issue of\n\ninsufficient stamping raised by the respondent is deadwood and\n\nclearly indicative of an unworkable arbitration agreement, or there\n\nare deeper issues which can be resolved at a later stage. The\n\ncounsel for the petitioners has sought to draw our attention to\n\nClause 22(1)(b) of the HMA, to contend that the respondent has\n\npresented a warranty to ensure the said HMA would be valid and\n\nlegally enforceable. Clause 22.1 (b) of the HMA reads as follows:\n“22.1. Owner represents and warrants to\n Manager upon execution of this Agreement and\n again on the Commencement Date that:\n…\nb) it has obtained or shall obtain (with Manager’s\n assistance as it is reasonably able to provide) all\n necessary governmental permissions, licenses\n and permits (including but not limited\n construction, occupancy, liquor, bar, restaurant,\n sign and hotel accommodation licenses) to enable\n Manager to operate the Hotel in accordance with\n the Brand Standards and to ensure this\n Agreement is fully valid and enforceable in the\n Country.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P037_C01",
+      "text": "24. Having perused Clause 22.1, it is necessary to note that the\n\nrespondent is under an obligation to ensure that the agreement\n\nwould be legally valid in India. If such an obligation was\n\nundertaken by the respondent, the extent to which the petitioners\n\ncan rely on the respondent’s warranty, is clearly a debatable issue.\n\nFurther, it is also a matter of adjudication whether the respondent\n\ncould have raised the issue of validity of the arbitration\n\nagreement/substantive contract in view of the warranty. This\n\naspect clearly mandates that the aforesaid issue is not deadwood.\n\nThe issues whether the respondent is estopped from raising the\n\ncontention of unenforceability of the HMA or the issue whether the\n\nHMA is insufficiently or incorrectly stamped, can be finally decided\n\nat a later stage.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P038_C01",
+      "text": "25. Moreover, the petitioners have reiterated that without\n\nprejudice, they have paid the required stamp duty, including the\n\npenalty that may be accruable and sought appointment of a sole\n\narbitrator in light of the same. On the contrary, the respondent, in\n\nrebuttal to the payment of stamp duty, has challenged the same,\n\ncontending that payment of stamp duty has been wrongly classified\n\nand stamp duty has been paid against\nArticle 5(j)\nunder the\n\nschedule of the\nKarnataka Stamp Act, 1957\n, which is erroneous.\n\nTherefore, the respondent contends that the HMA has not been\n\nproperly stamped.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P039_C01",
+      "text": "26. Upon reading\nVidya Drolia\n(supra), the issue of ‘existence’\n\nand/or ‘validity’ of the arbitration clause, would not be needed to\n\nbe looked into herein, as payment of stamp duty, sufficient or\n\notherwise, has taken place herein. In order to ascertain whether\n\nadequate stamp duty has been paid in terms of the Karnataka\n\nStamp Act\n, this Court needs to examine the nature of the\n\nsubstantive agreement, the nature of the arbitration agreement,\n\nand whether a separate stamp fee would be payable for the\n\narbitration agreement at all. It may be noted that the petitioners,\n\nhave themselves attempted to self­adjudicate the required stamp\n\nduty and have paid, on 29.07.19, a stamp duty of Rs 2,200/­,\n\ndescribing the HMA as a “bond”. On 10.06.2020, the petitioners\n\nfurther purchased 11 e­stamps for Rs. 200/­ each, describing the\n\nHMA as an ‘agreement’ under\narticle 5(j). Therefore, it falls upon\n\nthe Court, under the stamp act to review the nature of the\n\nagreement in order to ascertain the stamp duty payable.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P039_C02",
+      "text": "From the\n\nabove it is clear, that stamp duty has been paid, whether it be\n\ninsufficient or appropriate is a question that maybe answered at a\n\nlater stage as this court cannot review or go into this aspect under\nSection 11(6)\n. If it was a question of complete non stamping, then\n\nthis court, might have had an occasion to examine the concern\n\nraised in\nN. N. Global\n(supra), however, this case, is not one such\n\nscenario.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P040_C01",
+      "text": "27. Therefore, we deem it appropriate for this matter to be\n\nreferred to arbitration, in terms of Clause 18.2 of the arbitration\n\nagreement.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P041_C01",
+      "text": "28. Accordingly, we appoint Mr. Justice A.V. Chandrashekara, a\n\nformer Judge of the High Court of Karnataka as a sole arbitrator to\n\nadjudicate the issues. The parties are directed to take steps to\n\nconvey this order to the SIAC to proceed in terms of the SIAC rules.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD_P042_C01",
+      "text": "29. The arbitration petition is allowed in the above terms.\n...........................................CJI.\n(N.V. RAMANA)\n\n ..............................................J.\n (SURYA KANT)\n\n ..............................................J.\n (HIMA KOHLI)\n\nNEW DELHI;\nJANUARY 25, 2022",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Intercontinental Hotels Group (India) ... vs Waterline Hotels Pvt. Ltd.",
+    "case_id": "SC_2022_INTERCONTINENTAL_HOTELS_GROUP_INDIA_VS_WATERLINE_HOTELS_PVT_LTD",
+    "court": "Supreme Court of India",
+    "year": "2022",
+    "facts_summary": "1. This petition is filed under Section 11(6) r/w 11(12)(a) of the\nArbitration & Conciliation Act, 1996\nfor appointment of a sole\n\n arbitrator. 2. The brief facts which are necessary for adjudication of this\n\n application are that the Intercontinental Hotels Group (India) Pvt.\n\n Ltd (Petitioner No.1) and Intercontinental Hotels Group (Asia­\n\nrespectively. The parent company (IHG Group) is a British multi­\n\nnational hotel based out of Denham, United Kingdom. 3. The respondent is an Indian company engaged in hospitality\n\nsector. The Respondent had agreed to run and operate a hotel by\n\nname Holiday Inn & Suites Bengaluru, Whitefield.",
+    "legal_issues": "14. When this matter was listed on 16.04.2019, this Court was\n\npleased to issue notice. Thereafter, the respondent entered\n\nappearance and filed a counter­affidavit dated 24.07.2019,\n\npointing out that the purported HMA, which contains the\n\narbitration agreement, was an unstamped document. It notes that\n\nthis Court, in\nGarware Wall Ropes Ltd. v Coastal Marine\n\nConstructions and Engineering Ltd.\n, (2019) 9 SCC 209 has\n\nearlier held that an agreement which is not duly stamped cannot\n\nbe relied on or acted upon unless the unstamped document is\n\nimpounded, and the applicable stamp duty and penalty is assessed\n\nand paid. 16. The respondent, while objecting to the aforesaid application\n\nfiled by the petitioners, stated as under:\n\n“4. I state that at the time of hearing of the\nabove cited Petition on the 02.03.2020, the\nlearned Sr. Counsel appearing for the Petitioner\nhad tendered a Letter dated 28.02.2020\nannexing therewith a single e­Stamp paper\nbearing Unique Doc. Reference No.\nSUBINKAKABACSL0850557522508599R dated\n29.07.2020 for Rs.2,200/­ classifying the HMA\nas “Bond” under\nArticle 12\nof the\nSchedule to\nthe Karnataka Stamp Act, 1957\nand the\nConsideration Prices as Zero…. 17. We have heard learned counsel for the parties and perused\n\nthe documents available on record.",
+    "ratio_summary": "Before we part, the conclusions reached,\n with respect to question No. 1, are:\n244.1\nSections 8\nand\n\nof the Act have the\n same ambit with respect to judicial\n interference.\n244.2 Usually, subject matter arbitrability\n cannot be decided at the stage of\nSections 8\n 11 of the Act, unless it's a clear case of\n deadwood.\n244.3 The Court, Under\nSections 8\nand\n\n,\n has to refer a matter to arbitration or to\n appoint an arbitrator, as the case may be,\n unless a party has established a prima facie\n (summary findings) case of non­existence of\n valid arbitration agreement, by summarily\n portraying a strong case that he is entitled to\n such a finding.\n244.4 The Court should refer a matter if the\n validity of the arbitration agreement cannot be\n determined on a prima facie basis, as laid\n down above, i.e., 'when in doubt, do refer'.\n 244.5 The scope of the Court to examine the\n prima facie validity of an arbitration agreement\n includes only:\n\n244.5.1 Whether the arbitration agreement\n was in writing? or\n 244.5.2 Whether the arbitration agreement\n was contained in exchange of letters,\n telecommunication etc?\n244.5.3 Whether the core contractual\n ingredients qua the arbitration agreement\n were 19. While holding as above, this Court by majority opinion\n\nspeaking through Justice Sanjiv Khanna held as under:\n“147.1. Garware Wall Ropes Ltd. [Garware\n Wall Ropes Ltd. v. Coastal Marine\n Constructions & Engg. Ltd.\n, (2019) 9 SCC 209 :\n(2019) 4 SCC (Civ) 324] , this Court had\n examined the question ",
+    "final_order": "8. The respondent failed to retract the email of 12.10.2018, and\n\nthe petitioners invoked\nSection 9\nof the Arbitration Act seeking\n\ninterim relief before the High Court of Karnataka at Bengaluru in\n\nAPIM No. 3/2018. The High Court, on 23.10.2018, passed an ad­\n\ninterim order directing the respondent not to evict the petitioners\n\nfrom the premises without due process of law until further orders.\n\nHowever, the petitioners allege that the respondent has not been\n\nsincere in complying with the order and has taken steps to frustrate\n\nthe aforesaid order. 29. The arbitration petition is allowed in the above terms.\n...........................................CJI.\n(N.V. RAMANA)\n\n ..............................................J.\n (SURYA KANT)\n\n ..............................................J.\n (HIMA",
+    "outcome_summary": "Allowed. 8. The respondent failed to retract the email of 12.10.2018, and\n\nthe petitioners invoked\nSection 9\nof the Arbitration Act seeking\n\ninterim relief before the High Court of Karnataka at Bengaluru in\n\nAPIM No. 3/2018. The High Court, on 23.10.2018, passed an ad­\n\ninterim order directing the respondent",
+    "sections_cited": [],
+    "cases_cited": [
+      "Court, in\nGarware Wall Ropes Ltd v Coastal Marine\n\nConstructions and Engineering Ltd"
+    ]
+  }
+}

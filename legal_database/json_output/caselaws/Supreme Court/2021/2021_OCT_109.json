@@ -1,0 +1,89 @@
+{
+  "case_id": "SC_2021_DEEPA_MOHAN_NAIK_VS_CHANDRA_BHUSAN_PAL",
+  "case_name": "Deepa Mohan Naik vs Chandra Bhusan Pal",
+  "normalized_case_name": "DEEPA_MOHAN_NAIK_VS_CHANDRA_BHUSAN_PAL",
+  "court": "Supreme Court of India",
+  "year": "2021",
+  "judgment_template": null,
+  "case_number": "Petition 2241 of 2018",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": "4 October 2021",
+  "judges": [
+    "S. Ravindra Bhat"
+  ],
+  "author": "S. Ravindra Bhat",
+  "bench_type": "single",
+  "petitioner": "Deepa Mohan Naik",
+  "respondent": "Chandra Bhusan Pal",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 0,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL ORIGINAL JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2021\\OCT\\2021_OCT_109.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_DEEPA_MOHAN_NAIK_VS_CHANDRA_BHUSAN_PAL_P001_C01",
+      "text": "Court of Civil Judge Senior Division, Panaji, Goa.\nHaving heard learned counsel for the parties, this Court is of",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_DEEPA_MOHAN_NAIK_VS_CHANDRA_BHUSAN_PAL_P002_C01",
+      "text": "settlement through mediation should be made by the parties.\nConsidering the facts and circumstances on the record and",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_DEEPA_MOHAN_NAIK_VS_CHANDRA_BHUSAN_PAL_P003_C01",
+      "text": "Bihar to the Court at Panaji, Goa, is justified.\nConsequently, the petition being Matrimonial Case No.84 of",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_DEEPA_MOHAN_NAIK_VS_CHANDRA_BHUSAN_PAL_P004_C01",
+      "text": "expeditiously as possible.\nThe Registry is directed to send a copy of this Order to both",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_DEEPA_MOHAN_NAIK_VS_CHANDRA_BHUSAN_PAL_P005_C01",
+      "text": "This transfer petition is allowed accordingly.\n.................................J.\n [S. RAVINDRA BHAT]",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Deepa Mohan Naik vs Chandra Bhusan Pal",
+    "case_id": "SC_2021_DEEPA_MOHAN_NAIK_VS_CHANDRA_BHUSAN_PAL",
+    "court": "Supreme Court of India",
+    "year": "2021",
+    "facts_summary": "Bihar to the Court at Panaji, Goa, is justified.\nConsequently, the petition being Matrimonial Case No.84 of",
+    "legal_issues": "Court of Civil Judge Senior Division, Panaji, Goa.\nHaving heard learned counsel for the parties, this Court is of",
+    "ratio_summary": "",
+    "final_order": "This transfer petition is allowed accordingly.\n.................................J.\n [S. RAVINDRA BHAT]",
+    "outcome_summary": "Allowed. This transfer petition is allowed accordingly.\n.................................J.\n [S. RAVINDRA BHAT]",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

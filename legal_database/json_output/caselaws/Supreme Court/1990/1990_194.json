@@ -1,0 +1,132 @@
+{
+  "case_id": "SC_1990_1990_194",
+  "case_name": "Vijay Cotton And Oil Mills (P) Ltd vs State Of Gujarat",
+  "normalized_case_name": "VIJAY_COTTON_AND_OIL_MILLS_(P)_LTD_VS_STATE_OF_GUJARAT",
+  "court": "Supreme Court of India",
+  "year": "1990",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "6 December 1990",
+  "judges": [
+    "Kuldip Singh",
+    "N.M.  Kasliwal"
+  ],
+  "author": "Kuldip Singh",
+  "bench_type": "division",
+  "petitioner": "Vijay Cotton And Oil Mills (P) Ltd",
+  "respondent": "State Of Gujarat",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 10,
+  "cited_by_count": 40,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1991 AIR 656",
+    "1990 SCR SUPL. (3) 447",
+    "AIR 1991 SUPREME COURT 656",
+    "1991 (1) SCC 262",
+    "1991 AIR SCW 221",
+    "(1990) 4 JT 771 (SC)",
+    "1990 (4) JT 771",
+    "1991 (1) UPLBEC 194",
+    "1991 (1) UJ (SC) 237",
+    "(1991) 1 GUJ LR 523",
+    "(1991) 1 LANDLR 368",
+    "(1991) 1 RRR 266",
+    "(1991) 1 UPLBEC 194",
+    "(1991) 1 CURCC 140"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1990\\1990_194.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1990_1990_194_P001_C01",
+      "text": "CITATION:\n 1991 AIR 656 1990 SCR Supl. (3) 447\n 1991 SCC (1) 262 JT 1990 (4) 771\n 1990 SCALE (2)1194",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1990_1990_194_P002_C01",
+      "text": "&\n26-\n-Costs\nand interest can be awarded by higher courts if not awarded\nby lower court.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1990_1990_194_P003_C01",
+      "text": "HEADNOTE:\n The appellant owned land in Kutch District and the\nGovernment of Gujarat took its possession on a specific\nunderstanding that in exchange the Government would give to\nit land of equal value but the Government resided and issued\na notification under\nsection 6(1)\nof the Land Acquisition\nAct, 1894 straightaway declaring that the land in question\nwas needed for public purpose. The collector awarded\nRs.5,075/44 np as compensation. At the instance of the\nappellant, a reference to the Court was made under\nSection",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1990_1990_194_P004_C01",
+      "text": "of the Act and the District Judge determined the compen-\nsation at the rate of Rs.3 per sq. yard on the basis of the\nmarket value of the land on the date of the notification and\npaid solatium and interest from that date. The State pre-\nferred an appeal against the award of the District Judge\nbefore the High Court but the appellant did not appeal\nagainst that part of the award which went against him but\nfiled Cross-objections which being time-barred were dis-\nmissed. In the Cross-objections the appellant had inter alia\nclaimed interest from November 19, 1949 the date when the\nland in question was taken over by the Government and not\nfrom February 1, 1955, the date when the notification under\nthe\nLand Acquisition Act\nwas issued. The High Court ruled\nthat the compensation could only be determined on the basis\nof the market value of the land on the date of the notifica-\ntion issued under 4( 1 ) of the\nLand Acquisition Act\nand\nsince such a notification had not been issued in the case.\nit was not possible to determine the amount of compensation\npayable to the appellant.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1990_1990_194_P004_C02",
+      "text": "The claimant appellant appealed to\nthis Court on the strength of a certificate and this court\nheld that the notification dated February 1, 1955 issued\nunder\nSection 6\nof the Act could be treated as a composite\nnotification both under\nSection 4(1)\nas also under\nSection\n6(1)\nof the Act and the district Judge could lawfully award\nthe market value of the land. So holding, the Court remanded\nthe matter to the High Court for disposal on merit. The High\nCourt on remand reduced the price of the acquired land from\nRs.3 per sq. yard to 1.35 sq, yard and rejected the claim of\nthe claimant to interest from November 19, 1949 instead of",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1990_1990_194_P005_C01",
+      "text": "February 1, 1955. as the Cross-objections failed by it were\ntreated to be time-barred. Hence this appeal raising both\nthe contentions reprice of the land and the award of inter-\nest., w.e.f. Feb. 1, 1955.\nPartly allowing the appeal this Court;\n HELD: (1) On a reference under\nSection 18\nof the Act the\nparties go to trial before the Court primarily on the issue\nof determination of market value of the land. So far as\naward of interest is concerned it is never an issue between\nthe parties. Once the conditions under\nSection 28\nSection",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1990_1990_194_P006_C01",
+      "text": "of the Act are satisfied the award of interest is conse-\nquential and automatic. [454G-H]\n (2) The payment of interest is not dependent on any\nclaim by the person whose land has been acquired. There can\nbe no controversy or any lis between the parties regarding\npayment of interest. When once the provision of\nsection 34\nare attracted it is obligatory for the collector to pay the\ninterest. If he fails to do so the same can be claimed from\nthe Court in proceedings under\nsection 18\nof the Act or even\nfrom the appellate court/courts thereafter. [455B]\n Reading\nsection 23\nwith\nsection 26\nof the Act, it is\nclear that the award, which is deemed to be a decree, is the\nsum total of conclusions reached by the courts in determin-\ning compensation under\nSection 23\non appreciation of the\nevidence between the parties. The costs 'under\nSection 27\nand the interest under\nSection 28\nand",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1990_1990_194_P007_C01",
+      "text": "are added to the\ncompensation amount to make it a consolidated award. The\ncosts and interest under the Act if not awarded by the lower\ncourt can always be awarded by the higher courts in any\nproceedings under the Act and to any party entitled to the\nsame under the Act. [455D-E]",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Vijay Cotton And Oil Mills (P) Ltd vs State Of Gujarat",
+    "case_id": "SC_1990_1990_194",
+    "court": "Supreme Court of India",
+    "year": "1990",
+    "facts_summary": "&\n26-\n-Costs\nand interest can be awarded by higher courts if not awarded\nby lower court. HEADNOTE:\n The appellant owned land in Kutch District and the\nGovernment of Gujarat took its possession on a specific\nunderstanding that in exchange the Government would give to\nit land of equal value but the Government resided and issued\na notification under\nsection 6(1)\nof the Land Acquisition\nAct, 1894 straightaway declaring that the land in question\nwas needed for public purpose. The collector awarded\nRs.5,075/44 np as compensation. At the instance of the\nappellant, a reference to the Court was made under\nSection",
+    "legal_issues": "February 1, 1955. as the Cross-objections failed by it were\ntreated to be time-barred. Hence this appeal raising both\nthe contentions reprice of the land and the award of inter-\nest., w.e.f. Feb. 1, 1955.\nPartly allowing the appeal this Court;\n HELD: (1) On a reference under\nSection 18\nof the Act the\nparties go to trial before the Court primarily on the issue\nof determination of market value of the land. So far as\naward of interest is concerned it is never an issue between\nthe parties. Once the conditions under\nSection 28\nSection of the Act are satisfied the award of interest is conse-\nquential and automatic. [454G-H]\n (2) The payment of interest is not dependent on any\nclaim by the person whose land has been acquired. There can\nbe no controversy or any lis between the parties regarding\npayment of interest. When once the provision of\nsection 34\nare attracted it is obligatory for the collector to pay the\ninterest. If he fails to do so the same can be claimed from\nthe Court in proceeding",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

@@ -1,0 +1,429 @@
+{
+  "case_id": "SC_1976_1976_39",
+  "case_name": "Damadilal And Others vs Parashram And Others",
+  "normalized_case_name": "DAMADILAL_AND_OTHERS_VS_PARASHRAM_AND_OTHERS",
+  "court": "Supreme Court of India",
+  "year": "1976",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "7 May 1976",
+  "judges": [
+    "A.C. Gupta",
+    "Y.V. Chandrachud",
+    "Ranjit Singh Sarkaria"
+  ],
+  "author": "A.C. Gupta",
+  "bench_type": "constitution",
+  "petitioner": "Damadilal And Others",
+  "respondent": "Parashram And Others",
+  "reporter_citations": [
+    "2229 1976 SCR 645",
+    "[1973] 1 S.C.R. 850"
+  ],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 17,
+  "cited_by_count": 140,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1976 AIR 2229",
+    "1976 SCR 645",
+    "AIR 1976 SUPREME COURT 2229",
+    "1976 4 SCC 855",
+    "1976 2 SCWR 125",
+    "1976 MPLJ 526",
+    "1976 RENCJ 717",
+    "1977 RENTLR 201",
+    "1976 LABLJ 655",
+    "1970 RENCR 584"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1976\\1976_39.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1976_1976_39_P001_C01",
+      "text": "CITATION:\n 1976 AIR 2229 1976 SCR 645\n 1976 SCC (4) 855\n CITATOR INFO :\n R 1977 SC2262 (9)\n D 1979 SC1121 (7)\n R 1981 SC1956 (1)\n RF 1982 SC1043 (14,19)\n APR 1985 SC 796 (12,17,19,21,25,26,31,35)\n R 1987 SC 117 (50)\n D 1991 SC 899 (12)\n E&A 1991 SC2053 (16,17,18)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1976_1976_39_P002_C01",
+      "text": "ACT:\nMadhya Pradesh Accommodation Control Act, 1961\n-S.\n.12(1)(a) and (f)-Scope of-Death of tenant-Heritable\ninterest in the premises-Legal repreentatives-If could claim\nstatutory tenancy-If concept applicable in India-Statutory\ntenant-If could sub-let the premises.\n Rent-Payment-If could be made by cheque.\n Procedure-Lower appellate court overlooked material\nevidence-Finding, if bad in law-High Court-If could reverse.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1976_1976_39_P003_C01",
+      "text": "HEADNOTE:\nSection 12(1)\nof the Madhya Pradesh Accommodation\nControl Act, 1961, enacts that notwithstanding anything to\nthe contrary contained in any other law or contract no suit\nshall be filed in any civil court against a tenant for his\neviction from any accommodation except on one or more of the\ngrounds given in the section. The ground given in cl. (a) is\nthat the tenant has neither paid nor tendered the whole of\nthe arrears of the rent legally recoverable from him within\ntwo months of the date on which the notice had been served\non him by the landlord and the ground in cl. (f) is that the\naccommodation let for non-residential purpose is required\nbona fide by the landlord for the purpose of continuing or\nstarting his business. The appellants brought a suit under\ns. 12(1)(a)\nand (f)\nof the Act for ejectment of their tenants.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1976_1976_39_P003_C02",
+      "text": "The suit was\ndismissed by the trial court on the ground (i) that since\nthe dispute as to the amount of rent payable by the tenants\nhad not been determined during the pendency of the suit\nunder\ns. 13(2)\nno order for eviction could be made; (ii)\nthat there was no bona fide requirement of the premises by\nthe appellants for their own business and (iii) that the\nrefusal by the appellant to accept the arrears of rent by\ncheque was valid because tendering by cheque was not valid\ntender in the absence of an agreement to that effect. The first appellate court decreed the suit. During the\npendency of the second appeal in the High Court the tenants\ndied. The High Court allowed substitution of their legal\nrepresentatives over-ruling the appellants' objection that\nthe deceased tenants were mere statutory tenants and that\nthe right to resist ejectment on the basis of the\nRent\nControl Act\nwas merely a personal right which was not\nheritable. On merits, the High Court held that (i) offer of\nrent by cheque amounted to valid tender by the tenant and\n(ii) the appellants had failed to prove their case of bona\nfide requirement of the premises for their own use.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1976_1976_39_P003_C03",
+      "text": "Dismissing the appeal,\n^\n HELD: There is no force in the contention that the\ndefendants who were statutory tenants had no heritable\ninterest in the demised premises and on their death the\nright to prosecute the appeal in the High Court had not\nsurvived to their heirs and legal representatives. The\npredecessors-in-interest of the respondents had a heritable\ninterest in the premises and consequently the respondents\nhad the right to prosecute the appeal in the High Court.\n[655A]\n (1) (a) The concept of statutory tenancy under the\nEnglish Rent Acts and under the Indian statutes rests on\ndifferent foundations. The term statutory tenancy which is\nused for referring to a tenant whose tenancy has been\nterminated and who would be liable to be evicted but for the\nprotecting statute, is",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1976_1976_39_P004_C01",
+      "text": "borrowed from the English Rent Acts. Courts in England have\nheld that a statutory tenant has no estate or property in\nthe premises he occupies because he retains possession by\nvirtue of the Rent Acts and not as being entitled to a\ntenancy. But in this country it is not possible to proceed\non the basis that a tenant whose contractual tenancy has\ndetermined but who is protected against eviction by the\nstatute, has no right of property but only personal right to\nremain in occupation without ascertaining what his rights\nare under the statute. [654H: 653A-C]\n Anand Nivas (Private) Limited v. Anandji Kalyanji Pedhi\nJUDGMENT:\nv. Sri Kishan & Anr., [1973] 1 S.C.R. 850; Roe v. Russel,\n[1928] 2 K.B. 117; Haskins v. Lewis [1931] 2 K.B. 1(9);\nKeeves v. Dean [1923] (93) L.J.K.B. 203 (207) and Boyer v. Warbey [1953] 2 Q.B. 234, referred to. (b)Tenancy has its origin in contract. A contracual\ntenant had an estate or property in the subject matter of\nthe tenancy and heritability is an incident of tenancy.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1976_1976_39_P004_C02",
+      "text": "cannot be assumed that with the determination of the\ntenancy, the estate must necessarily disappear and the\nstatute can only preserve his status of irremovability and\nnot the estate he had in the premises in his occupation.\n[653D]\n(c) The definition of a tenant contained in s. 2(i)\nmakes a person continuing in possession of a premises after\nthe determination of his tenancy a tenant, unless a decree\nor order for eviction had been made against him, thus,\nputting him on par with a person whose contractual tenancy\nstill subsists. [653]\n(d)\nSection 14\nwhich deals with restrictions on sub-\nletting read with the definition contained in\ns. 2(i)\nmakes\nit clear that the so-called statutory tenant has the right\nto sub-let in common with contractual tenant and this is\nbecause he also has an interest in the premises occupied by\nhim. [654D]\n (2)(a) The High Court rightly held that the cheques\nsent to the appellants amounted to valid tender of rent.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1976_1976_39_P004_C03",
+      "text": "is well-established that a cheque sent in payment of a debt\non the request of the creditor, unless dishonoured, operates\nas a valid discharge of the debt and if the cheque was sent\nby post and was met on presentations the date of payment is\nthe date when the cheque was posted. [655B-D]\n(b) Rent is payable in the same manner as any other\ndebt and the debtor has to pay his creditor in cash or other\nlegal tender, but there can be no dispute that the mode of\npayment can be altered by agreement. In the contemporary\nsociety it is reasonable to suppose payment by cheque as\nimplied unless the circumstances of a case indicate\notherwise. [655C]\n (3) The High Court was within its jurisdiction in\nsetting aside the finding of the lower appellate court and\nrestoring that of the trial court on the question of bona\nfide requirement of the premises by the appellants. The\nlower appellate court overlooked a very material part of the\nevidence bearing on the question. It is well-established\nthat if a finding of fact is arrived at ignoring important\nand relevant evidence the finding is bad in law. [\n651B-C]\n Radha Nath Seal v. Haripada Jana & Ors. AIR 1971 S.C.\n1049, followed. Madan Lal Puri v.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1976_1976_39_P004_C04",
+      "text": "Sain Das Berry AIR 1973 S.C. 585;\nMattulal v. Radhey Lal AIR 1974 S.C. 1956; and Sarvate T. B.\nv. Nemi Chand 1966 M.P.L.J. 26, refered to.\n&\n CIVIL APPELLATE JURISDICTION: Civil Appeal 885/1968. (From the judgment and order dated 6-11-1967 of the\nMadhya Pradesh High Court in Second Appeal No. 913 of 1965).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1976_1976_39_P005_C01",
+      "text": "S. V. Gupte, R. P. Pandey and S. S. Khanduja, for the\nappellants. F. S. Nariman, J. B. Dadachanji, P. C. Bhartari, K. L. John for the respondents. The Judgment of the Court was delivered by\n GUPTA, J. Damadi Lal, Sheo Prasad and Tirath Prasad who\nwere members of a Hindu Joint Family brought a suit for\nejectment on July 31,1962 against their tenants Begamal and\nBudharmal on the grounds mentioned in clauses (a) and (f) of\nsection 12(1)\nof the Madhya Pradesh Accommodation Control\nAct, 1961. The relevant provisions are in these terms:\n\"\nSec. 12\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1976_1976_39_P005_C02",
+      "text": "Restriction on eviction of tenants.-(1)\n Notwithstanding anything to the contrary contained in\n any other law or contract, no suit shall be filed in\n any Civil Court against a tenant for his eviction from\n any accommodation except on one or more of the\n following grounds only, namely-\n(a) That the tenant has neither paid nor tendered\n the whole of the arrears of the rent legally\n recoverable from him within two months of the date on\n which a notice of demand for the arrears of rent has\n been served on him by the landlord in the prescribed\n manner;\nx x x x x\n x x x x x\n(f) that the accommodation let for non-residential\n purposes is required bona fide by the landlord for the\n purpose of continuing or starting his business or that\n of any of his major sons or unmarried daughters if he\n is the owner there of or for any person for whose\n benefit the accommodation is held and that the landlord\n or such person has no other reasonably suitable non-\nresidential accommodation of his own in his occupation\n in the city or town concerned.\"\nPlaintiffs' case under\nsection 12(1)(a)\nwas that the\ndefendant tenants had defaulted in paying rent for the\nperiod October 1, 1961 to May 31, 1962 and did",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1976_1976_39_P005_C03",
+      "text": "not also pay\nor tender the amount in arrears within two months of the\nservice of the notice of demand.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1976_1976_39_P005_C04",
+      "text": "Clause (f) of\nsection 12(1)\nwas invoked on the allegation that the accommodation let was\nrequired bona fide by the plaintiffs for the purpose of\nstarting their own business. Before the suit was instituted\nthe plaintiffs had determined the tenancy from May 31, 1962\nby a notice dated May 7 1962. The house in dispute which is\nin Bazar Chowk in District Satna was let out to the\ndefendants at a monthly rent of Rs. 275/- for the purpose of\ntheir business. The plaintiffs reside in village Nadan,\nTahsil Maihar, where they carry on their business. The trial court by its judgment and decree dated\nNovember 11, 1964 dismissed the suit for eviction. There was\nsome dispute between",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1976_1976_39_P006_C01",
+      "text": "the parties as to the rate of rent; ultimately the\nplaintiffs admitted that the rent was fixed at Rs. 175/- per\nmonth with effect from August 1, 1961 by the Rent Control\nAuthority and a sum of Rs. 1200/-, which was the amount in\narrears, had been tendered to the plaintiffs by cheque on\nMay 26, 1962 which the plaintiffs refused to accept. The\ntrial court was of opinion that the refusal was valid\nbecause \"tendering by cheque is no valid tender\" unless\nthere was an agreement that payment by cheque would be\nacceptable and that the defendants were therefore defaulters\nwithin the meaning of\nsection 12(1)(a)\n. However, in view of\nthe dispute as to the amount of rent payable by the tenants,\nwhich was not determined during the pendency of the suit as\nrequired by\nsection 13(2)\n, the trial court held that no\norder for eviction under\nsection 12(1)(a)\ncould be made in\nthis case and passed a decree for Rs. 1200/- in favour of\nthe plaintiffs. On the question of the plaintiffs' requirement of the\npremises for their own business, the trial court found\nitself unable to accept the evidence adduced on behalf of\nthe plaintiffs.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1976_1976_39_P006_C02",
+      "text": "Of the witnesses examined by the plaintiffs\non the point, the evidence of P.Ws. 1, 3 and 4 was not\nrelied on because none of them was considered to be an\nindependent witness and, further, because it was apparent\nfrom their evidence that what they said was what they were\ntutored to say by the plaintiffs. The other three witnesses\nwere plaintiffs Damadi Lal and Tirath Prasad (P.W.2 and P.W.\n6 respectively) and Radhey Sham (P.W. 5), a son of plaintiff\nSheo Prasad. They were also disbelieved because of the\nfollowing reasons. Damadi Lal tried to give the impression\nthat plaintiffs had no business except the cloth business\nand the grocery shop at Nadan. He tried to conceal that they\nhad a moneylending business and also agricultural lands. Tirath Prasad stated that the main source of income of the\nfamily was from the moneylending business. Tirath Prasad\nalso disclosed that the plaintiffs had already a partnership\nbusiness in cloth at Satna though Damadi Lal and P.W. 5\nRadhey Sham did not admit this. It also appears in evidence\nthat the plaintiffs had yet another cloth business at a\nplace called Ramnagar which was managed by Radhey Sham.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1976_1976_39_P006_C03",
+      "text": "The\nplaintiffs claimed that they would start a business at\nSatna, but Damadi Lal's evidence is that they had no income\nor saving. Tirath Prasad also said that their income was not\neven sufficient for their maintenance. Admittedly,\nplaintiffs had in their possession one room in the house\nwhich was let out to the defendants. The plaintiffs did not\nadduce any evidence to show how the said accommodation was\nunsuitable or insufficient for them to start their own\nbusiness. It was also admitted that the plaintiffs had filed\na suit for ejectment on an earlier occasion, but the\ndefendants having agreed to pay increased rent the suit was\nnot proceeded with. According to the defendants the present\nsuit was not instituted on the defendants' refusal to\nincrease the rent further to Rs. 500/-a month. For the above reasons the trial court did not accept\nthe case of bona fide requirement holding that P.W. 2, P.W.\n5 and P.W. 6 were in the habit of suppressing the truth to\nsuit their own purpose.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1976_1976_39_P007_C01",
+      "text": "On appeal by the plaintiffs, the first appellate court\nreversed the decision of the trial court and decreed the\nsuit. The appellate court agreed with the trial court that\nsending a cheque did not amount to a valid tender of rent\nand, as the tenants did not apply under\nsection 13(2)\n, they\nwere not entitled to protection against eviction on the\nground of default. As regards the plaintiffs' case of\nrequirement, the court found, that the criticism of the\nplaintiffs' witnesses was not justified. The appellate court\nthought that the fact that Tirath Prasad was carrying on a\ncloth business at Satna which Damadi Lal had kept back from\ncourt was irrelevant in view of the plaintiffs' claim that\nsome members of the family wanted to start a new business at\nSatna. According to the appellate court the further fact\nthat P.W. 5 Radhey Sham was running a cloth business at\nRamnagar was indicative of the growing need of the\nplaintiffs' family. The room in the plaintiffs' possession\nin the disputed house was not found suitable or sufficient\nfor a wholesale business that the plaintiffs intended to\nstart.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1976_1976_39_P007_C02",
+      "text": "Referring to the trial court's finding that the\nplaintiffs had no money to start a new business at Satna,\nthe court found that the evidence did not support this. The\nappellate court therefore held that the plaintiffs required\nthe premises for their own business. Dissatisfied with this decision, the defendants\npreferred a second appeal to the High Court. During the\npendency of the second appeal in High Court both the\ndefendants died. Budharmal died on or about January 27, 1966\nand his legal representatives were brought on record and\nsubstituted in his place without objection. Begamal died on\nMarch 2, 1967 and his heirs applied for being brought on\nrecord in his place as appellants. The plaintiffs made an\napplication praying for an order that the appeal had abated\nas a consequence of the death of both the defendants. In\nthis application the plaintiffs contended that Budharmal and\nBegamal were \"merely statutory tenants and their right to\nresist ejectment on the basis of\nMadhya Pradesh\nAccommodation Control Act\nwas merely a personal right\" which\nwas not heritable and had \"not devolved upon their heirs\".",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1976_1976_39_P007_C03",
+      "text": "By its order dated July 26, 1967 the High Court allowed the\napplication for substitution made by Begamal's heirs\noverruling the plaintiffs' objection. Ultimately on November 6, 1967 the High Court allowed\nthe appeal setting aside the decree of the lower appellate\ncourt and restoring that of the trial court dismissing the\nsuit. The High Court found that the defendants were not in\narrears of rent. Differing from both the courts below the\nHigh Court held that the cheque which the defendants had\nsent to the plaintiffs in payment of the amount in arrears\nwithin a month of the service of the writ of summons on him\namounted to a valid tender of rent as required by\nsection",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1976_1976_39_P008_C01",
+      "text": ", and in view of\nsection 12(3)\nno order for eviction could\nbe made.\nSection 12(3)\nprovides that no order for eviction\nof a tenant shall be made on the ground of default if the\ntenant makes payment or deposits rent as required by section\n13. This is what the High Court held on the validity of\ntender of rent by cheque:\n\"The question is as to whether, instead of\n presenting the cash, if a cheque is sent to the\n landlord, that is sufficient tender of the arrears of\n rent or not........In the highly deve-",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1976_1976_39_P009_C01",
+      "text": "loped society, payment by cheque has become more\n convenient mode of discharging one's obligation. If a\n cheque is an instrument which represents and produces\n cash and is treated as such by businessmen, there is no\n reason why the archaic principle of the common law\n should be followed in deciding the question as to\n whether the handing over of the cheque is not a\n sufficient tender of the arrears of rent if the cheque\n is drawn for that amount. It is no doubt true that the\n issuance of the cheque does not operate as a discharge\n of the obligation unless it is encased, and it is\n treated as a conditional payment, yet, in my view, this\n is a sufficient tender of the arrears if the cheque is\n not dishonoured. In the present day society, I am of\n the view, an implied agreement should be inferred that\n if the payment is made by a cheque, that mode of\n payment would be accepted.\"\nOn the ground of bona fide requirement, the High Court found\nthat there was no evidence to show that the plaintiffs had\nsufficient funds to start the wholesale business for which\nthey sought to get possession of the disputed premises.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1976_1976_39_P009_C02",
+      "text": "This\nis a point which has a bearing on the guanines of the\nplaintiffs' claim. The High Court took note of the fact that\nthe plaintiffs made an attempt to keep back from the Court\nthat they were carrying on business at two more places, one\nat Satna, and another at Ramnagar. In this connection the\nHigh Court also referred to the defendants' case that the\nplaintiffs sought to increase the rent from Rs. 275/- to Rs.\n500/- a month and that when the defendants had the rent\nreduced by the Rent Controller to Rs. 175/- per month, the\npresent suit was filed. The High Court found that these\ncircumstances which the trial court took into consideration\nwere ignored by the lower appellate court. The High Court\naccordingly held that the plaintiffs had failed to prove\ntheir case of bona fide requirement, set aside the decree of\nthe appellate court, and restored that of the trial court\ndismissing the suit. Before us, Mr.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1976_1976_39_P009_C03",
+      "text": "Gupte for the plaintiff-appellants\nraised three contentions:(1) Begamal and Budharmal both of\nwhom were statutory tenants had no heritable interest in the\ndemised premises and, on their death, the right to prosecute\nthe appeal in the High Court did not survive to their heirs\nand legal representatives; (2) payment by cheque was not a\nvalid tender of rent and accordingly the suit should have\nbeen decreed on the ground of default; and (3) the High\nCourt had no jurisdiction in second appeal to reverse the\nfinding of the first appellate court on the question of\nreasonable requirement which was a finding of fact. In support of his first contention Mr. Gupte relied on\ntwo decisions of this Court,\nAnand Nivas (Private) Ltd. v. Anandji Kalyanji Pedhi & Ors.\nand\nJagdish Chander Chatterjee\nand Ors. v. Sri Kishan & Anr. The\nstatute considered in\nAnand Nivas\n' case was Bombay",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1976_1976_39_P010_C01",
+      "text": "Rents, Hotel and Lodging Rates Control Act, 1947 as amended\nin 1959. The question there was, whether a tenant whose\ntenancy had been terminated had any right to sublet the\npremises. Of the three learned Judges composing the Bench\nthat heard the appeal, Hidayatullah and Shah JJ. held that a\nstatutory tenant, meaning a tenant whose tenancy has\ndetermined but who continues in possession, has no power of\nsubletting. Sarkar J.delivered a dissenting opinion. Shah J.\nwho spoke for himself and Hidayatullah J. observed in the\ncourse of their Judgment:\n\"A statutory tenant has no interest in the\n premises occupied by him, and he has no estate to\n assign or transfer. A statutory tenant is, as we have\n already observed, a person who on determination of his\n contractual right, is permitted to remain in occupation\n so long as he observes and performs the conditions of\n the tenancy and pays the standard rent and permitted\n increases.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1976_1976_39_P010_C02",
+      "text": "His personal right of occupation is\n incapable of being transferred or assigned, and he\n having no interest in the property there is no estate\n on which subletting may operate.\"\nIt appears from the Judgment of Shah J. that \"the\nBombay Act\nmerely grants conditional protection to a statutory tenant\nand does not invest him with the right to enforce the\nbenefit of any of the terms and conditions the original\ntenancy\". Sarkar J. dissenting held that word 'tenant' as\ndefined in the Act included both a contractual tenant-, a\ntenant whose lease is subsisting as also a statutory tenant,\nand the latter has the same power to sublet as the former. According to Sarkar J. even if a statutory tenant had no\nestate or property in the demised premises, the Act had\nundoubtedly created a right in such a tenant in respect of\nthe property which he could transfer. Jagdish Chander\nChatterjee\n's case dealt with the Rajasthan Premises (Control\nof Rent and Eviction) Act, 1950, and the question for\ndecision was whether on the death of a statutory tenant his\nheirs succeed to the tenancy so as to claim protection of\nthe Act.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1976_1976_39_P010_C03",
+      "text": "In this case it was held by Grover and Palekar JJ.,\nrelying on\nAnand Nivas\n' case, that after the termination of\ncontractual tenancy, a statutory tenant enjoys only a\npersonal right to continue in possession and on his death\nhis heirs do not inherit any estate or interest in the\noriginal tenancy. Both these cases, Anand Nivas and Jagdish Chander\nChatterjee, proceed on the basis that a tenant whose tenancy\nhas been terminated, described as statutory tenant, has no\nestate or interest in the premises but only a personal right\nto remain in occupation. It would seem as if there is a\ndistinct category of tenants called statutory tenants having\nseparate and fixed incidents of tenancy. The term 'statutory\ntenancy' is borrowed from the English Rent Acts. This may be\na convenient expression for referring to a tenant whose\ntenancy has been terminated and who would be liable to be\nevicted but for the protecting statute, but courts in this\ncountry have sometimes borrowed along with the expression\ncertain notions regarding such tenancy from the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1976_1976_39_P011_C01",
+      "text": "decisions of the English courts. In our opinion it has to be\nascertained how far these notions are reconcilable with the\nprovisions of the statute under consideration in any\nparticular case. The expression 'statutory tenancy' was used\nin England in several judgments under the Increase of Rent\nand Mortgage Interest (War Restrictions) Act, 1915, to refer\nto a tenant protected under that Act, but the term got\ncurrency from the marginal note to section 15 of the Rent\nand Mortgage Interest (Restrictions) Act, 1920. That section\nwhich provided inter alia that a tenant who by virtue of\nthat Act retained possession of any dwelling house to which\nthe Act applied, so long as he retained possession, must\nobserve and would be entitled to the benefit of all the\nterms and conditions of the original contract of tenancy\nwhich were consistent with the provisions of the Act,\ncarried the description in the margin \"conditions of\nstatutory tenancy\".",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1976_1976_39_P011_C02",
+      "text": "Since then the term has been used in\nEngland to describe a tenant protected under the subsequent\nstatutes until section 49(1) of the Housing Repairs and Rent\nAct, 1954 for the first time defile 'statutory tenant' and\n'statutory tenancy'. 'Statutory tenant' was define as a\ntenant \"who retains possession by virtue of the Rent Acts\nand not as being entitled to a tenancy, and it was added, \"\nstatutory tenancy' shall be construed accordingly\". This\ndefinition of 'statutory tenancy' has been incorporated in\nthe Rent Acts of 1957 and 1965. In England \"statutory\ntenancy\" does not appear to have had any clear and fixed\nincidents; the concept was developed over the years from the\nprovisions of the successive Rent Restrictions Acts which\ndid not contain a clear indication as to the character of\nsuch tenancy. That a statutory tenant is entitled to the\nbenefit of the terms and conditions of the original contract\nof tenancy so far as they were consistent with the\nprovisions of the statute did not, as Scrutton L. J.\nobserved in Roe v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1976_1976_39_P011_C03",
+      "text": "Russell, \"help very much when one came to\nthe practical facts of life\", according to him \"citizens are\nentitled to complain that their legislators did not address\ntheir minds to the probable events that might happen in\ncases of statutory tenancy, and consider how the legal\ninterest they were granting was affected by those probable\nevents\". He added, \"....it is pretty evident that the\nLegislature never considered as whole the effect on the\nstatutory tenancy of such ordinary incidents as death,\nbankruptcy, voluntary assignment, either inter vivos or by\nwill, a total or partial subletting; but from time to time\nput into one of the series of Acts a provision as to one of\nthe incidents without considering how it fitted in with the\ngeneral nature of the tenancy which those incidents might\naffect\". On the provisions which gave no clear and\ncomprehensive idea of the nature of a statutory tenancy, the\ncourts in England had been slowly \"trying to frame a\nconsistent theory\", \"making bricks with very insufficient\nstatutory straw\". Evershed M. R. in Boyer v. Warbey said:\n\"The character of the statutory tenancy, I",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1976_1976_39_P012_C01",
+      "text": "have already said, is a very special one. It has earned many\nepithets, including \"monstrum horrendum\", and perhaps it has\nnever been fully thought out by Parliament\". Courts in\nEngland have held that a statutory tenant has no estate or\nproperty in the premises he occupies because he retains\npossession by virtue of the Rent Acts and not as being\nentitled to a tenancy; it has been said that he has only a\npersonal right to remain in occupation, the statutory right\nof \"irremovability\", and nothing more. We find it difficult to appreciate how in this country\nwe can proceed on the basis that a tenant whose contractual\ntenancy has determined but who is protected against eviction\nby the statute, has no right of property but only a personal\nright to remain in occupation, without ascertaining what his\nrights are under the statute. The concept of a statutory\ntenant having no estate or property in the premises which he\noccupies is derived from the provisions of the English Rent\nActs. But it is not clear how it can be assumed that the\nposition is the same in this country without any reference\nto the provisions of the relevant statute. Tenancy has its\norigin in contract.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1976_1976_39_P012_C02",
+      "text": "There is no dispute that a contractual\ntenant has an estate or properly in the subject matter of\nthe tenancy, and heritability is an incident of the tenancy. It cannot be assumed, however, that with the determination\nof the tenancy the estate must necessarily disappear and the\nstatute can only preserve his status of irremovability and\nnot the estate he had in the premises in his occupation. It\nis not possible to claim that the \"sanctity\" of contract\ncannot be touched by legislation. It is therefore necessary\nto examine the provisions of the\nMadhya Pradesh\nAccommodation Control Act, 1961\nto find out whether the\nrespondents' predecessors-in-interest retained a heritable\ninterest in the disputed premises even after the termination\nof their tenancy.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1976_1976_39_P012_C03",
+      "text": "Section 2(i)\nof the Madhya Pradesh Accommodation\nControl Act, 1961 defines 'tenant' to mean, unless the\ncontext otherwise requires:\n\"a person by whom or on whose account or behalf\n the rent of any accommodation is, or, but for a\n contract express or implied, would be payable for any\n accommodation and includes any person occupying the\n accommodation as a sub-tenant and also any person\n continuing in possession after the termination of his\n tenancy whether before or after the commencement of\n this Act; but shall not include any person against whom\n any order or decree for eviction has been made\". The definition makes a person continuing in possession after\nthe determination of his tenancy a tenant unless a decree or\norder for eviction has been made against him, thus putting\nhim on par with a person whose contractual tenancy still\nsubsists. The incidents of such tenancy and a contractual\ntenancy must therefore be the same unless any provision of\nthe Act conveyed a contrary intention.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1976_1976_39_P012_C04",
+      "text": "That under this Act\nsuch a tenant retains an interest in the premises, and not\nmerely a personal right of occupation, will also appear from\nsection 14\nwhich contains provisions restricting the\ntenant's power of subletting. Section 14\nis in these terms:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_39_P013_C01",
+      "text": "\"\nSec. 14\nRestrictions on sub-letting.-(1) No\n tenant shall, without the previous consent in writing\n of the landlord-\n(a) sublet the whole or any part of the\n accommodation held by him as a tenant; or\n(b) transfer or assign his rights in the tenancy\n or in any part thereof. (2) No landlord shall claim or receive the payment\n of any sum as premium or pugree or claim or receive any\n consideration whatsoever in cash or in kind for giving\n his consent to the sub-letting of the whole or any part\n of the accommodation held by the tenant.\"\nThere is nothing to suggest that this section does not apply\nto all tenants as defined in\nsection 2(i)\n. A contractual\ntenant has an estate or interest in premises from which he\ncarves out what he gives to the sub-tenant. Section 14\nread\nwith\nsection 2(i)\nmakes it clear that the so-called\nstatutory tenant has the right to sub-let in common with a\ncontractual tenant and this is because he also has an\ninterest in the premises occupied by him. Considering the\nposition of the sub-tenant of a statutory tenant in England,\nLord Denning said in Solomon v.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_39_P013_C02",
+      "text": "Orwell. \"When a statutory\ntenant sub-lets a part of the premises he does not thereby\nconfer any estate or interest in the sub-tenant. A statutory\ntenant has no estate or interest in himself and he cannot\ncarve something out of nothing. The sub-tenant, like the\nstatutory tenant, has only a personal right or privilege.\"\nIn England the statutory tenant's right to sub-let is\nderived from specific provisions of the Acts conceding this\nright to him; in the Act we are concerned with in this\nappeal, the right flows from his status as a tenant. This is\nthe basic difference between the English Rent Restrictions\nActs and the Act under consideration and similar other\nIndian statutes. In a Special Bench decision of the Calcutta\nHigh Court,\nKrishna Prosad Bose v. Sm. Sarajubala Dasi,\nBachawat J.\nconsidering the question whether a statutory\ntenant continuing in occupation by virtue of the West Bengal\nPremises Rent Control (Temporary Provisions) Act, 1950 could\nsub-let the premises let to him, said:\n\"The Rent Control and Tenancy Acts create a\n special world of their own. They speak of life after\n death. The statutory tenancy arises phoenix-like out of\n the ashes of the contractual tenancy.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1976_1976_39_P013_C03",
+      "text": "The contractual\n tenant may die but the statutory tenant may live long\n thereafter. The statutory tenant is an ex-tenant and\n yet he is a tenant.\"\nThe concept of statutory tenancy under the English Rent Acts\nand under the Indian statutes like the one we are concerned\nwith in this appeal rests on different foundations. It must\ntherefore be held that",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1976_1976_39_P014_C01",
+      "text": "the predecessors-in-interest of the present respondents had\na heritable interest in the premises and consequently the\nrespondents had the right to prosecute the appeal in the\nHigh Court. Mr. Gupte's first submission thus fails\n On the ground of default, it is not disputed that the\ndefendants tendered the amount in arrears by cheque within\nthe prescribed time. The question is whether this was a\nlawful tender. It is well established that a cheque sent in\npayment of a debt on the request of the creditor, unless\ndishonoured, operates as valid discharge of the debt and, if\nthe cheque was sent by post and was met on presentation, the\ndate or payment is the date when the cheque was posted. The\nquestion however still remains whether in the absence of an\nagreement between the parties, the tender of rent by cheque\namounts to a valid discharge of the obligation. Earlier, we\nhave extracted a passage from the High Court's Judgment on\nthis aspect of the case. We agree with the view taken by the\nHigh Court on the point.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1976_1976_39_P014_C02",
+      "text": "Rent is payable in the same manner\nas any other debt and the debtor has to pay his creditor in\ncash or other legal tender, but there can be no dispute that\nthe mode of payment can be altered by agreement. In the\ncontemporary society it is reasonable to suppose such\nagreement as implied unless the circumstances of a case\nindicate otherwise. In the circumstance of this case, the\nHigh Court, in our opinion, rightly held that the cheque\nsent to the plaintiffs amounted to valid tender of rent. The\nsecond contention urged on behalf of the appellants must\nalso be rejected. Mr. Gupte's last contention relates to the plaintiffs'\nbona requirement of the premises. The trial court found on\nthe evidence that the plaintiffs' claim was unjustified. The\nfirst court of appeal reversed that finding and held that\nthe plaintiffs' requirement was bona fide. The High Court in\nsecond appeal agreed with. the trial court in holding that\nthe landlord had no bona fide requirement. Mr. Gupte\ncontended that the High Court had no jurisdiction in second\nappeal to upset the finding of the lower appellate court on\nthis issue which, according to him, was a finding of fact. Mr.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1976_1976_39_P014_C03",
+      "text": "Nariman for the respondent relied on the decision of\nthis Court in\nMadan Lal Puri v. Sain Das Berry\nto argue\nthat the question was a mixed question of law and fact and\nthat it was within the jurisdiction of the Court in second\nappeal to examine the correctness of the finding. In answer\nMr. Gupte referred to another decision of this Court\nMattulal v. Radhey Lal\nwhich, relying on an earlier decision\nof this Court in Sarvate T. B. v. Nemi Chand, held that such\na finding was one of fact and not a finding on a mixed\nquestion of law and fact. We do not think that for the\npurpose of this case we need express any opinion on the\napparent conflict between these two decisions. Plaintiffs'\ncase was that they had cloth and grocery business at village\nNadan and that they desired to start a wholesale cloth and\ngrocery business at Satna. The trial court's finding was\nbased inter alia on the evidence",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1976_1976_39_P015_C01",
+      "text": "that the plaintiffs had not adequate funds to start a new\nwholesale business. The lower appellate court reversed the\nfinding of the trial court on the ground that there was no\nevidence that the plaintiff had no money to start a new\nbusiness; the lower appellate court's finding rests mainly\non this consideration. The High Court pointed out that\nplaintff Damadidas alias Damadi Lal (P. W. 2) stated in his\nevidence that their income from the business at Nadan was\nsufficient \" only for meeting the expenses of livelihood\";\nplaintif Tirath Prasad (P.W. 6) also admitted that \"our\npresent income is not sufficient even for our maintenance\nbecause there are many members in the family\" It thus\nappears that the lower appellate court overlooked a very\nmate rial part of the evidence bearing on the question. It\nis well establish ed that if a finding of fact is arrived at\nignoring important and relevant evidence, the finding is bad\nin law. (see\nRadha Nath Seal v. Haripada Jana & Ors. We\ntherefore think that the High Court was within its\njurisdiction in setting aside the finding of the lower\nappellate court and restoring that of the trial court on\nthis point.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1976_1976_39_P015_C02",
+      "text": "In the result the appeal fails and is dismissed but in\nthe circumstances of the case we make no order as to costs. P.B.R. Appeal dismissed.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    }
+  ],
+  "case_summary": {
+    "case_name": "Damadilal And Others vs Parashram And Others",
+    "case_id": "SC_1976_1976_39",
+    "court": "Supreme Court of India",
+    "year": "1976",
+    "facts_summary": "ACT:\nMadhya Pradesh Accommodation Control Act, 1961\n-S.\n.12(1)(a) and (f)-Scope of-Death of tenant-Heritable\ninterest in the premises-Legal repreentatives-If could claim\nstatutory tenancy-If concept applicable in India-Statutory\ntenant-If could sub-let the premises.\n Rent-Payment-If could be made by cheque.\n Procedure-Lower appellate court overlooked material\nevidence-Finding, if bad in law-High Court-If could reverse. HEADNOTE:\nSection 12(1)\nof the Madhya Pradesh Accommodation\nControl Act, 1961, enacts that notwithstanding anything to\nthe contrary contained in any other law or contract no suit\nshall be filed in any civil court against a tenant for his\neviction from any accommodation except on one or more of the\ngrounds given in the section. The ground given in cl. (a) is\nthat the tenant has neither paid nor tendered the whole of\nthe arrears of the rent legally recoverable from him within\ntwo months of the date on which the notice had been served\non him by the landlord and the ground in cl. (f) is that the\naccommodation let for non-residential purpose is required\nbona fide by the landlord for the purpose of continuing or\nstarting his business. The appellants brought a suit under\ns. 12(1)(a)\nand (f)\nof the Act for ejectment of their tenants. The suit was\ndismissed by the trial court on the ground (i) that since\nthe dispute as to the amount of rent payable by the tenants\nhad not been determined during the pendency of the suit\nunder\ns. 13(2)\nno order for eviction could be made; ",
+    "legal_issues": "Of the witnesses examined by the plaintiffs\non the point, the evidence of P.Ws. 1, 3 and 4 was not\nrelied on because none of them was considered to be an\nindependent witness and, further, because it was apparent\nfrom their evidence that what they said was what they were\ntutored to say by the plaintiffs. The other three witnesses\nwere plaintiffs Damadi Lal and Tirath Prasad (P.W.2 and P.W.\n6 respectively) and Radhey Sham (P.W. 5), a son of plaintiff\nSheo Prasad. They were also disbelieved because of the\nfollowing reasons. Damadi Lal tried to give the impression\nthat plaintiffs had no business except the cloth business\nand the grocery shop at Nadan. He tried to conceal that they\nhad a moneylending business and also agricultural lands. Tirath Prasad stated that the main source of income of the\nfamily was from the moneylending business. Tirath Prasad\nalso disclosed that the plaintiffs had already a partnership\nbusiness in cloth at Satna though Damadi Lal and P.W. 5\nRadhey Sham did not admit this. It also appears in evidence\nthat the plaintiffs had yet another cloth business at a\nplace called Ramnagar which was managed by Radhey Sham. Referring to the trial court's finding that the\nplaintiffs had no money to start a new business at Satna,\nthe court found that the evidence did not support this. The\nappellate court therefore held that the plaintiffs required\nthe premises for their own business. Dissatisfied with this decision, the defendants\npreferred a second appeal to the High Cou",
+    "ratio_summary": "is well-established that a cheque sent in payment of a debt\non the request of the creditor, unless dishonoured, operates\nas a valid discharge of the debt and if the cheque was sent\nby post and was met on presentations the date of payment is\nthe date when the cheque was posted. [655B-D]\n(b) Rent is payable in the same manner as any other\ndebt and the debtor has to pay his creditor in cash or other\nlegal tender, but there can be no dispute that the mode of\npayment can be altered by agreement. In the contemporary\nsociety it is reasonable to suppose payment by cheque as\nimplied unless the circumstances of a case indicate\notherwise. [655C]\n (3) The High Court was within its jurisdiction in\nsetting aside the finding of the lower appellate court and\nrestoring that of the trial court on the question of bona\nfide requirement of the premises by the appellants. The\nlower appellate court overlooked a very material part of the\nevidence bearing on the question. It is well-established\nthat if a finding of fact is arrived at ignoring important\nand relevant evidence the finding is bad in law. [\n651B-C]\n Radha Nath Seal v. Haripada Jana & Ors. AIR 1971 S.C.\n1049, followed. Madan Lal Puri v. the parties as to the rate of rent; ultimately the\nplaintiffs admitted that the rent was fixed at Rs. 175/- per\nmonth with effect from August 1, 1961 by the Rent Control\nAuthority and a sum of Rs. 1200/-, which was the amount in\narrears, had been tendered to the plaintiffs by cheque on\nMay 26, 1962 which th",
+    "final_order": "In the result the appeal fails and is dismissed but in\nthe circumstances of the case we make no order as to costs. P.B.R. Appeal dismissed.",
+    "outcome_summary": "Dismissed. In the result the appeal fails and is dismissed but in\nthe circumstances of the case we make no order as to costs. P.B.R. Appeal dismissed.",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

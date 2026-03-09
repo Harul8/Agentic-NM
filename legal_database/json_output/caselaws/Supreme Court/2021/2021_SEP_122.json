@@ -1,0 +1,90 @@
+{
+  "case_id": "SC_2021_NISHA_VS_THE_STATE_OF_MADHYA_PRADESH",
+  "case_name": "Nisha vs The State Of Madhya Pradesh",
+  "normalized_case_name": "NISHA_VS_THE_STATE_OF_MADHYA_PRADESH",
+  "court": "Supreme Court of India",
+  "year": "2021",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 1080 of 2021",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "24 September 2021",
+  "judges": [
+    "S. Ravindra Bhat",
+    "Uday Umesh Lalit"
+  ],
+  "author": "Uday Umesh Lalit",
+  "bench_type": "division",
+  "petitioner": "Nisha",
+  "respondent": "The State Of Madhya Pradesh",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 5,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2021\\SEP\\2021_SEP_122.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_NISHA_VS_THE_STATE_OF_MADHYA_PRADESH_P001_C01",
+      "text": "O R D E R\nLeave granted.\nThis appeal arises out of final judgment and order dated",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_NISHA_VS_THE_STATE_OF_MADHYA_PRADESH_P002_C01",
+      "text": "MCRC No.22186 of 2021.\nApprehending her arrest in connection with crime registered",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_NISHA_VS_THE_STATE_OF_MADHYA_PRADESH_P003_C01",
+      "text": "passed by the High Court and direct:\na) In the event of the arrest of the appellant in",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2021_NISHA_VS_THE_STATE_OF_MADHYA_PRADESH_P004_C01",
+      "text": "furnishing cash security in the sum of Rs.25000/-\n(Rupees Twenty Five Thousand Only) with two like",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2021_NISHA_VS_THE_STATE_OF_MADHYA_PRADESH_P005_C01",
+      "text": "appellant.\nWith the above observations, the appeal is allowed.\n........................J.\n (UDAY UMESH LALIT)",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Nisha vs The State Of Madhya Pradesh",
+    "case_id": "SC_2021_NISHA_VS_THE_STATE_OF_MADHYA_PRADESH",
+    "court": "Supreme Court of India",
+    "year": "2021",
+    "facts_summary": "MCRC No.22186 of 2021.\nApprehending her arrest in connection with crime registered passed by the High Court and direct:\na) In the event of the arrest of the appellant in",
+    "legal_issues": "furnishing cash security in the sum of Rs.25000/-\n(Rupees Twenty Five Thousand Only) with two like",
+    "ratio_summary": "",
+    "final_order": "appellant.\nWith the above observations, the appeal is allowed.\n........................J.\n (UDAY UMESH LALIT)",
+    "outcome_summary": "Allowed. appellant.\nWith the above observations, the appeal is allowed.\n........................J.\n (UDAY UMESH LALIT)",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

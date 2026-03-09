@@ -1,0 +1,101 @@
+{
+  "case_id": "SC_1988_1988_341",
+  "case_name": "Triveniben vs State Of Gujarat",
+  "normalized_case_name": "TRIVENIBEN_VS_STATE_OF_GUJARAT",
+  "court": "Supreme Court of India",
+  "year": "1988",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "11 October 1988",
+  "judges": [
+    "G.L. Oza",
+    "K. Jagannatha Shetty Shetty",
+    "K.N. Singh",
+    "L.M. Sharma",
+    "M.M. Dutt",
+    "ORDER",
+    "G.L. Oza, J."
+  ],
+  "author": "G.L. Oza",
+  "bench_type": "constitution",
+  "petitioner": "Triveniben",
+  "respondent": "State Of Gujarat",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 3,
+  "cited_by_count": 11,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1989SC142",
+    "1988(3)CRIMES771(SC)",
+    "(1989)1GLR622(SC)",
+    "JT1988(4)SC112",
+    "1988(2)SCALE907",
+    "(1988)4SCC574",
+    "AIR 1989 SUPREME COURT 142",
+    "1988 (4) SCC 574",
+    "1988 (18) REPORTS 259",
+    "1988 CRIAPPR(SC) 275",
+    "1988 ALLAPPCAS (CRI) 248",
+    "1988 (4) JT 112",
+    "1989 SCC(CRI) 25",
+    "(1989) EASTCRIC 269",
+    "(1989) 1 CRILC 602",
+    "(1988) ALLCRIC 546",
+    "(1988) 3 CRIMES 771"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1988\\1988_341.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1988_1988_341_P001_C01",
+      "text": "1. In view of the conflicting decisions in (\ni) T.V. Vatheeswaran vs State of Tamil Nadu\n; (ii) Sher Singh vs State of Punjab 1983 (\n2) SCR 682 and (iii) Javed Ahmed Abdul Hamid Pawala vs State of Maharashtra\n, the question as to whether prolonged delay in execution of death sentence entitles the accused to the lesser sentence of life imprisonment has come up for consideration before the Constitution Bench. We have examined the question carefully in the light of the submissions made by counsel on both sides. We have also examined the individual cases listed for consideration. We now give only our conclusion to avoid further delay in these matters. The reasons in support of the conclusion will follow later.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [
+        "T.V. Vatheeswaran v State of Tamil Nadu",
+        "Sher Singh v State of Punjab 1983"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1988_1988_341_P002_C01",
+      "text": "1. Undue long delay in execution of the sentence of death will entitle the condemned person to approach this Court under\nArticle 32\nbut , this Court will only examine the nature of delay caused and circumstances ensued after sentence was finally confirmed by the judicial process and will have no jurisdiction to re-open the conclusion reached by the Court while finally maintaining the sentence of death. This Court, however, may consider the question of inordinate delay in the light of all circumstances of the case to decide whether the execution of sentence should be carried out or should be altered into Imprisonment for life. No fixed period of delay could be held to make the sentence of death inexecutable and to this extent the decision in\nVatheeswaran\n's case cannot be said to lay down the correct law and therefore to that extent stands overruled.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1988_1988_341_P003_C01",
+      "text": "3. In the light of these principles and giving our anxious consideration to every one of these cases, we allow in part only W.P. (Crl) No. 186 of 1986 and quash the sentence of death awarded to the accused (Harbhajan Singh). In the place of the sentence of death, we substitute the sentence of imprisonment for life to that accused.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Triveniben vs State Of Gujarat",
+    "case_id": "SC_1988_1988_341",
+    "court": "Supreme Court of India",
+    "year": "1988",
+    "facts_summary": "",
+    "legal_issues": "3. In the light of these principles and giving our anxious consideration to every one of these cases, we allow in part only W.P. (Crl) No. 186 of 1986 and quash the sentence of death awarded to the accused (Harbhajan Singh). In the place of the sentence of death, we substitute the sentence of imprisonment for life to that accused.",
+    "ratio_summary": "1. In view of the conflicting decisions in (\ni) T.V. Vatheeswaran vs State of Tamil Nadu\n; (ii) Sher Singh vs State of Punjab 1983 (\n2) SCR 682 and (iii) Javed Ahmed Abdul Hamid Pawala vs State of Maharashtra\n, the question as to whether prolonged delay in execution of death sentence entitles the accused to the lesser sentence of life imprisonment has come up for consideration before the Constitution Bench. We have examined the question carefully in the light of the submissions made by counsel on both sides. We have also examined the individual cases listed for consideration. We now give only our conclusion to avoid further delay in these matters. The reasons in support of the conclusion will follow later. 1. Undue long delay in execution of the sentence of death will entitle the condemned person to approach this Court under\nArticle 32\nbut , this Court will only examine the nature of delay caused and circumstances ensued after sentence was finally confirmed by the judicial process and will have no jurisdiction to re-open the conclusion reached by the Court while finally maintaining the sentence of death. This Court, however, may consider the question of inordinate delay in the light of all circumstances of the case to decide whether the execution of sentence should be carried out or should be altered into Imprisonment for life. No fixed period of delay could be held to make the sentence of death inexecutable and to this extent the decision in\nVatheeswaran\n's case cannot be sa",
+    "final_order": "",
+    "outcome_summary": "Allowed",
+    "sections_cited": [],
+    "cases_cited": [
+      "T.V. Vatheeswaran v State of Tamil Nadu",
+      "Sher Singh v State of Punjab 1983"
+    ]
+  }
+}

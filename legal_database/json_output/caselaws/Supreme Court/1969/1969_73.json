@@ -1,0 +1,302 @@
+{
+  "case_id": "SC_1969_1969_73",
+  "case_name": "State Bank Of India vs Ghamandi Ram (Dead) Through Shri Gurbax ...",
+  "normalized_case_name": "STATE_BANK_OF_INDIA_VS_GHAMANDI_RAM_(DEAD)_THROUGH_SHRI_GURBAX_...",
+  "court": "Supreme Court of India",
+  "year": "1969",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "13 February 1969",
+  "judges": [
+    "V. Ramaswami",
+    "J.C. Shah",
+    "A.N. Grover"
+  ],
+  "author": "V. Ramaswami",
+  "bench_type": "constitution",
+  "petitioner": "State Bank Of India",
+  "respondent": "Ghamandi Ram (Dead) Through Shri Gurbax ...",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 12,
+  "cited_by_count": 72,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1969 AIR 1330",
+    "1969 SCR (3) 51",
+    "AIR 1969 SUPREME COURT 1330"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1969\\1969_73.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1969_1969_73_P001_C01",
+      "text": "CITATION:\n 1969 AIR 1330 1969 SCR (3) 51\n 1969 SCC (2) 33\n CITATOR INFO :\n R 1977 SC2069 (8)\n D 1987 SC 558 (9)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1969_1969_73_P002_C01",
+      "text": "ACT:\nHindu Law-Joint Hindu family firm-if 'person' or 'body of\nindividuals not incorporated'.\nPrivate International Law-Priority between voluntary and\ninvoluntary assignments of debts.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1969_1969_73_P003_C01",
+      "text": "HEADNOTE:\nThe respondent was the karta of a joint Hindu 'family firm\ncarrying on business, before the partition of India, in area\nnow forming part of Pakistan. The firm had a cash credit\naccount with the Imperial Bank (now State Bank of India) in\nthat area and had pledged its goods with the Bank as\nsecurity for repayment of the advances. After the\npartition, the family and its members came away to India and\nbecame evacuees in relation to Pakistan. The Bank sold the\npledged goods in 1948 and after adjusting the amounts due to\nit credited the surplus amount in the account of the firm. The Pakistan (Administration of Evacuee Property) Ordinance,\n1949, was promulgated on October 15, 1949 and was amended by\nthe Pakistan (Administration of Evacuee Property) Amendment\nAct, 1951. Under s. 6(1) of the Ordinance all evacuee\nproperty shall vest and shall be deemed to have vested in\nthe Custodian in Pakistan from March 1, 1947. By a\nnotification dated February 19, 1952 the Pakistan Government\nexempted, from the operation of the provision of the\nOrdinance 'cash deposits made in Banks by persons other than\ncompanies or associations or bodies of individuals whether\nincorporated or not'.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1969_1969_73_P003_C02",
+      "text": "The respondent applied under\ns. 13\nof the Displaced Persons\n(Debts Adjustments) Act, 1951 (Indian Act) before the\nTribunal constituted under the Act, claiming the amount in\nthe Bank credited in the account of the family. The\nTribunal dismissed the application. In revision, the High\nCourt allowed the claim on the ground that the amount was a\n'cash deposit made by an individual' in terms of the\nPakistan Notification dated February 19, 1952. In appeal to this Court,\nHELD : (1) Having regard to the juristic nature of the Hindu\nJoint family under the Mitakshara Law, the family firm could\nnot be treated as a 'person' within the meaning of the\nPakistan notification. The firm was 'a body of individuals\nnot incorporated' and hence the amount in the Bank was\nevacuee property and had become vested in the Custodian of\nEvacuee Property, Pakistan, with effect from March 1, 1947.\n[687 E-F]\nSundarsanam Maistri v. Narasimhulu Maistri, I.L.R. 15 Mad.\n149, 154, referred to.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1969_1969_73_P003_C03",
+      "text": "(2) The rule of Private International Law is that where an\ninvoluntary assignment occurs after a voluntary assignment\nhas already been made, the question whether the rights of\nthe voluntary assignee have been postponed or defeated would\nbe governed by the lex situs of the debt. In the present\ncase, since the involuntary assignment in favour of the\nCustodian in Pakistan occurred in 1949, when the Ordinance\nwas promulgated after the voluntary assignment by the Bank\nin favour of the firm in 1948 and the situs of",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1969_1969_73_P004_C01",
+      "text": "the debt was Pakistan (the Bank having garnishable assets of\nthe respondent in Pakistan which could be attached by the\nCustodian in Pakistan), the question of priority would be\ngoverned by the law in Pakistan, namely, the provisions of\nthe Ordinance; and under the Ordinance, the amount vested in\nthe Custodian in Pakistan with effect from March 1, 1947.\nTherefore, the liability of the Bank to the firm must be\ndeemed to have been extinguished. [687 H; 688 G; 689 F]\nRe : Queensland Mercantile and Agency Co. [1891] 1 Ch. 536\nand Arab Bank Ltd. v. Barclays Bank (Dominion, Colonial and\nOverseas) [1954] AC. 495, applied.\nDicey, Conflict of Laws, 8th Edn. p. 780, referred to.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1969_1969_73_P005_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeal No. 449 of 1966. Appeal by special leave from the judgment and order dated\nSeptember 12, 1963 of the Punjab High Court Circuit Bench at\nDelhi in Civil Revision No. 104-D of 1958. Niren De, Attorney-General, S. V. Gupte, H. L. Anand and K. B. Mehta, for the appellant. Bishambar Lal, M. R. Garg, H. K. Puri. and Radha Kishan\nMakhija, for the respondent. The Judgment of the Court was delivered by\nRamaswami, J. M/s. Ghamandi Ram Gurbax Rai, a joint Hindu\nfamily firm consisting of Ghamandi Ram, since deceased,\nGurbax Rai, Chainan Lal and Jagan Nath, used to carry on\nbusiness in Bhawalpur State now forming part of West\nPakistan, before the partition of India. Shri Ghamandi Ram\nwas the manager and karta of the said joint Hindu family\nfirm during the material period. Before the partition of\nIndia, the joint Hindu family firm had a cash credit account\nin its name in the then Imperial Bank of India, Bhawalpur\nState now within Pakistan territory. The said firm had\npledged goods as security for the repayment of the advances\nmade in the said account.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1969_1969_73_P005_C02",
+      "text": "On the partition of India, the\njoint Hindu family and its members admittedly became eva-\ncuees and the then Imperial Bank of India, Bhawalpur State,\nsold the pledged goods in the year 1948 for the realisation\nof its dues in the said cash credit account and credited a\nsum of Rs. 2,54,1/11/- left as surplus balance after the\nadjustment of the dues of the Imperial Bank of India in the\nsaid account. On October 15, 1949, the Pakistan Government\npromulgated Pakistan (Administration of Evacuee Property)\nOrdinance, 1949 (Ordinance No. XV of 1949) whereby all\nproperty in Pakistan in which an evacuee had any right or\ninterest vested in the Custodian of Evacuee Property with\nretrospective effect from March 1, 1947. The expression\n'evacuee property' was defined by\ns. 2\nsub-s. (3) of the\nOrdinance to include any right or interest in joint Hindu\nfamily property. 'Cash deposits in Banks' were how-",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1969_1969_73_P006_C01",
+      "text": "ever excepted from the definition of the term 'property' by\ns. 2(5)\nof the Ordinance. The Ordinance was amended in 1951\nby the Pakistan (Administration of Evacuee Property)\nAmendment Act, 1951 (Act No. VI of 1951) whereby\ns. 2(5)\nthe Ordinance was amended so as to bring cash deposits in\nBanks within the definition of the term 'property'. By a\nnotification dated February 19, 1952, the Pakistan\nGovernment exempted from the operation of the provisions of\nthe said Ordinance 'cash deposits made at Banks by persons\nother than companies or associations or bodies of\nindividuals whether incorporated or not'. On May 9, 1953, Shri Ghamandi Ram (now deceased) as manager\nand karta of the joint Hindu family, firm filed an applica-\ntion under s. 13 of the\nDisplaced Persons (Debts\nAdjustments) Act, 1951\n(Act No. 70 of 1951) before the\nTribunal constituted under the said Act at Delhi claiming\nRs. 3,165/11/- including Rs. 2,341/11/- on account of the\nsaid principal and interest at 6% per annum on the ground\nthat the said amount had got become evacuee property and the\nliability of the Imperial Bank of India had not therefore\nceased.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1969_1969_73_P006_C02",
+      "text": "During the pendency of the proceedings be-fore the\nTribunal the appellant Bank was constituted under the\nprovisions of the\nState Bank of India Act, 1955\n(Act No. 23\nof 1955) and succeeded to the entire rights and liabilities\nof the Imperial Bank of India. The appellant was\naccordingly substituted in the said proceedings for the\nImperial Bank of India. By its order dated November 1,\n1956, the Tribunal dismissed the application of the\nrespondent on the ground that in terms of the law enforced\nin Pakistan the deposit in the Bank in the account of the\nfirm had become an evacuee property and would be deemed to\nhave vested in the Custodian with effect from March 1, 1947\nand by virtue of the said vesting the liability of the Bank\nhad ceased. The Tribunal further held that the only\nproperty in the pledged goods, which belonged to the firm,\nwas the equity of redemption and that had vested in the\nCustodian being a 'property' within the meaning of the said\nOrdinance. The respondent took the matter in revision\nbefore the Punjab High Court being Civil Revision No. 104-D\nof 1958. The application was allowed by Mr. Justice D. K.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1969_1969_73_P006_C03",
+      "text": "Mahajan by his judgment dated 12th September, 1963 on the\nground that the amount claimed by the respondent was cash\ndeposit made by an individual in terms of the notification\ndated February 19, 1952 and was thus beyond the purview of\nthe provisions of the Ordinance. The learned Judge\naccordingly set aside the order of the Tribunal and granted\na decree in favour of the respondent for the amount claimed. This appeal is brought by special leave from the judgment of\nthe Punjab High Court dated 12th September, 1963 in Civil\nRevision No. 104-D of 1958.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1969_1969_73_P007_C01",
+      "text": "Section 2\nsub-section (3) of the Pakistan (Administration of\nEvacuee Property) Ordinance, 1949 (Ordinance No. 15 of 1949)\ndefines the term 'evacuee property' as meaning any property\nin which an evacuee has any right or interest, or which is\nheld by or for him in trust, and includes-\n(a) any right or interest in joint Hindu\n family property which would accrue to the\n evacuee upon the partition of the same, or\n(b) property obtained from an evacuee after\n the twenty eighth day of February, 1947, until\n confirmed by the Custodian,\n but does not include-\n(i) any movable property in the immediate\n physical possession of any evacuee, or\n(ii) any property belonging to a joint stock\n company the head office of which was situated,\n before the fifteenth day of August, 1947, in\n any place in the territories now comprising\n India and continues to be so situated after\n the said date\". Section 2\nsub-section (5) defines the term\n 'property' as follows:-\n\" property' means property of any kind, and\n includes any right or interest in such\n property and any debt or actionable claim, but\n does not include a mere right to sue or a cash\n deposit in a bank\".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1969_1969_73_P007_C02",
+      "text": "Section 2(5)\nof the Ordinance was amended by\n Pakistan (Administration of Evacuee Property)\n Amendment Act, 1951 (Act No. VI of 1951) in\n the following manner:\n\"2(b) in clause (5) the words 'or a cash\n deposit in Bank' shall be omitted\". Section 6\nof the Ordinance states\n \"6(1) All evacuee property shall vest and\n shall be deemed always to have vested in the\n Custodian with effect from the first day of\n March, 1947. The notification of February 19, 1952 issued\n by the Pakistan Government in exercise of the\n powers conferred by\nsection 45\nof the\n Ordinance is in the following terms :\n\"In exercise of the powers conferred by\nsection 45\nof the Pakistan (Administration of\n Evacuee Property) Ordinance XV of 1949, the\n Central Government in",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1969_1969_73_P008_C01",
+      "text": "supersession of its Ministry's notification F.\n 22(1)51-P dated the 9th May, 1951 is pleased\n to exempt from the operation of the provisions\n of the said Ordinance cash deposits made at\n Banks by persons other than companies or\n associations or bodies of individuals whether\n incorporated or not\". Section 7\nof the Ordinance states\n \"7.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1969_1969_73_P008_C02",
+      "text": "(1) Every person who is, or has at any\n time after the twenty-eighth day of February,\n 1947, 'Men in possession, supervision or\n management of any evacuee property, shall be\n deemed to hold or to I have held, as the case\n may be, such property on behalf of the\n Custodian\n (2) Every person who is in possession,\n supervision or management of any evacuee\n property or property which he knows or has\n reason to believe is evacuee property shall,\n as soon as may be but not later than sixty\n days from the commencement of this Ordinance,\n intimate to the Custodian in writing his\n willingness to surrender such property to the\n Custodian or to any person authorised by the\n Custodian in this behalf upon receipt of a-\n notice from the Custodian that the property is\n evacuee property, and shall surrender the same\n if called upon by the Custodian or any person\n authorised as aforesaid. (3) The provisions of sub-section (2) shall\n not apply to any person who is in possession,\n supervision or management of any evacuee\n property by virtue of an allotment made by a\n Rehabilitation Authority\". Section 7\nof the Ordinance was amended in 1951\n in the following terms :-\n\"5.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1969_1969_73_P008_C03",
+      "text": "In sub-section (2) of\nsection 7\nof the\n Ordinance, for the words 'sixty days from the\n commencement of this Ordinance' the words\n 'such date as may be notified by the Central\n Government in the Official Gazette, shall be\n substituted, and the words 'upon receipt of a\n notice from the Custodian that the property is\n evacuee property' shall be omitted\". Section 11\nof the Ordinance states\n \"11. (1) Any amount due to any evacuee, or\n payable in respect of any evacuee property,\n shall be paid to the Custodian by the person\n liable to pay the same. (2) Any person who makes a payment under\n subsection (1) shall be discharged from\n further liability to pay to the extent of the\n payment made. Sup/69-9",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1969_1969_73_P009_C01",
+      "text": "(3) Without prejudice to any penalty to\n which he may be liable under\nsection 29\n, any\n person who makes or has made any payment\n otherwise than in accordance with sub-section\n (1) or any law for the time being in force\n requiring payment of any such amount as is\n mentioned in sub-section (1) to be made to the\n Custodian shall not be discharged from his\n obligation to pay the amount due, and the\n right of the Custodian to enforce such\n obligation against such person shall remain\n unaffected\". The first question involved in this appeal is whether upon a\ncorrect interpretation of the notification of the Pakistan\nGovernment dated February 19, 1952, the joint Hindu family\nfirm \" Ghamandi Ram Gurbax Rai\" was 'a body of individuals'\nwithin the meaning of the notification and whether the\namount in dispute had accordingly become vested in the\nCustodian of Evacuee Property, Pakistan with effect from\nMarch 1, 1947 by virtue of the provisions of the Ordinance\nthereby divesting the said joint Hindu family firm of its\ninterest therein.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1969_1969_73_P009_C02",
+      "text": "According to the Mitakshara School of Hindu Law all the\nproperty of a Hindu joint family is held in collective\nownership by all the coparceners in a quasi-corporate\ncapacity. The textual authority of the Mitakshara lays down\nin express terms that the joint family property is held in\ntrust for the joint family members then living and\nthereafter to be born (See Mitakshara, Ch. 11-27). The\nincidents of co-parcenership under the Mitakshara law are :\nfirst, the lineal male descendants of a person up to the\nthird generation, acquire on birth ownership in the\nancestral properties.is common; fifthly, that no alienation\nof the property any tune work out their rights by asking for\npartition thirdly that till partition each member has got\nownership extending over the entire property, conjointly\nwith the rest; fourthly, that as a result of such co-\nownership the possession and enjoyment of the properties is\ncommon; fifthly, that no alienation of the property is\npossible unless it be for necessity, without the concurrence\nof the coparceners, and sixthly, that the interest of a\ndeceased member lapses on his death to the survivors.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1969_1969_73_P009_C03",
+      "text": "coparcenary under the Mitakshara School is a creature of law\nand cannot arise by act of parties except in so far that on\nadoption the adopted son becomes a coparcener with his\nadoptive father as regards the ancestral properties of the\nlatter. Sundarsanam Maistri v. Narasimhulu Maistri and\nAnr. (1) Mr. Justice Bhashyam Ayyangar stated the legal\nposition thus :-\n\"The Mitakshara doctrine of joint family\n property is founded upon the existence of an\n undivided family, as\n (1) I.L.R. 25 Ma 149,'154.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1969_1969_73_P010_C01",
+      "text": "a corporate body [\nGan Savant Bal Savant v. Narayan Dhond Savant\n(1) and Mayne's 'Hindu Law\n and Usage', 6th edition, paragraph 270] and\n the possession of property by such corporate\n body. The first requisite therefore is the\n family unit; and the possession by it of pro-\n perty is the second requisite. For the\n present purpose, female members of the family\n may be left out of consideration and the\n conception of a Hindu family is a common male\n ancestor with his lineal descendants in the\n male line, and so long as that family is in\n its normal condition viz., the undivided\n state--its forms a corporate body. Such\n corporate body, with its heritage, is purely a\n creature of law and cannot be created by act\n of parties, save in so far that, by adoption,\n a stranger may be affiliated as a member of\n that corporate family\".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1969_1969_73_P010_C02",
+      "text": "Adverting to the nature of the property\n owned, by such a family the learned Judge\n proceeded to state \"\nAs regards the property of such family, the\n 'unobstructed heritage' devolving on such\n family, with its accretions, is, owned by the\n family as 'a corporate body and one or more\n branches of that family, each forming a\n corporate body within a larger corporate body,\n may possess separate 'unobstructed heritage'\n which, with its accretions, may be exclusively\n owned by such branch as a corporate body\". Having regard to the juristic nature of the\n Hindu joint family, according to the doctrine\n of Mitakshara, we are of the opinion that the\n Hindu joint family firm of Ghamandi Ram Gurbax\n Rai cannot be treated as an 'individual'\n within the meaning of the notification of the\n Pakistan Government dated 19th February, 1952,\n but the said firm must be treated as 'a body\n of individuals whether incorporated or not'\n within the meaning of that notification.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1969_1969_73_P010_C03",
+      "text": "We proceed to consider the next question arising in this\nappeal viz., whether the liability of the appellant to the\nrespondent in India would be deemed to be extinguished in\nview of the operation of the Pakistan Evacuee Property\nOrdinance and in view of our finding that the amount in\ndispute had become vested in the Custodian of Evacuee\nProperty, Pakistan with effect from March 1, 1947 by virtue\nof the provisions of the Ordinance. It is not disputed that\nthe appellant had got garnishable assets in Pakistan out of\nwhich the Pakistan Government could realise the amount by\nattachment of the property of the appellant. The question\nis : what is the rule of Private International Law in, such\na case of involuntary assignment of debts ? The question\nhas 'arisen in\n(1) I.L.R. 7 Bom. 467.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1969_1969_73_P011_C01",
+      "text": "English Courts with regard to the legislation passed during\nor after a war by which the contractual rights of the\nenemies vested in the public authorities, such as custodians\nor administrators of enemy property. It was held in\nEnglish courts that in such a case the question whether a\ngiven contractual right, e.g., a debt, is transferred under\nsuch legislation and whether therefore payment to a\ncustodian or administrator has the effect of discharging\nthe, debtor, depends on the situs of that right and not so\nmuch on the proper law of the contract from which the right\narises. (See Dicey Conflict of Laws, 8th Fd. p. 780). For\nexample in Arab Bank Ltd. v. Barclays Bank (Dominion,\nColonial and Overseas) (1), the appellant Bank had a credit\nbalance on the current account with the respondent bank's\nbranch in Jerusalem. The British Mandate over Palestine\nexpired at midnight on May 14, 1948, and thereupon the\nProvisional Council of State and the Provisional Government\nof the State of Israel were constituted. War broke out\nbetween Israel and the Arab States, which rendered the\nfurther performance of the contract of current account\nimpossible.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1969_1969_73_P011_C02",
+      "text": "From the date of the termination of the Mandate\nthe appellant Bank's premises were situate in Arab\ncontrolled territory and the respondent Bank's premises\nwere situate in Israel territory. By legislation the State\nof Israel vested in an official called the 'Custodian of\nthe Property of Absentees', the property in the State of\nIsrael belonging to a class of persons and corporations\nwhich included the Arab Bank. The respondents paid the\nappellants' credit balances, amounting to some pound\n5,83,000 to the custodian. In 1950 the appellants sued the\nrespondents for this sum. It was held that the right to be\npaid the credit balance survived the outbreak of war,\nremaining in existence. subject to the suspension of the\nappellant bank's right to recover it. Being locally situate\nin Israel, it became subject to the legislation of that\nState and vested in the custodian, and was not recoverable\nby the appellant bank from the respondent bank. The key to\nthe problem lies in distinguishing between (1) questions of\nassignability, which are governed by the proper law of the\ndebt, and (2) questions of attachment or garnishment\n(involuntary 'assignment) governed by the lex situs of the\ndebt.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1969_1969_73_P011_C03",
+      "text": "If, for example, an involuntary assignment occurs\nafter a voluntary assignment has already beep made, the lex\nsitus determines whether the rights of the voluntary\nassignee have been postponed or defeated. If the voluntary\nassignment occurs first, the lex situs determines what\nrights, if any, the voluntary assignee has acquired. A\nquestion of priorities arose in the case of Re : Queensland\nMercantile and Agency Co. (2), the facts of which were as\nfollows :-\n\"The Union Bank of Australia held debentures\n issued by the Queensland Company charging the\n shares\n (1) [1954] A.C. 495. (2) [1891] 1 Ch. 536.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1969_1969_73_P012_C01",
+      "text": "in that company that were not fully paid up. The Bank was domiciled in England and the\n company in Queens land. After the capital had\n been called up, but before it was paid by the\n shareholders, who thus became debtors of the\n company, the X Company domiciled in Scotland,\n began an action for negligence in Scotland\n against the Queensland. Company, and\n immediately issued the Scottish process of\n arrestment against numerous shareholders who\n were domiciled in Scotland. The effect of\n this process according to Scottish law was to\n prevent the shareholders, pending a decision\n in the action of negligence, from paying the\n calls to the 'company\". The question that fell to be decided was'whether the Union\nBank, is debenture-holders, were entitled to be paid first\nout of the unpaid shares, according to the, law of England\nand of Qeensland; or whether the X Company in- accordance\nwith the law of Scotand, had a prior right over the shares\nto the extent of the damages :hat they might be awarded in\nthe action of negligence. A question of priorities between\ntwo assignees was thus raised.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1969_1969_73_P012_C02",
+      "text": "The Union Bank contended\nthat the question fell to be decided by the law of\nQueensland, since the Oueensland Company was a creditor in\nrespect of the unpaid shares and any assignment by it must\nbe ested by the law of its domicile North, J., however,\napplied Scottish law. His reasoning was that since the\ndebtors were resident in Scotland and therefore the unpaid\ncalls which formed the subject-matter of the assignments\nwere situated in that country, the assignment must rank in\nthe order prescribed by Scottish law. He assimilated choses\nin action to tangible movables, assertine that 'an\nassignment of the' latter class of property was Governed by\nthe lex situs. In our opinion the same legal position\nprevails in India and therefore the liability of the\nappellant in this case to the respondent in India must be\ndeemed to have been extinguished.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1969_1969_73_P012_C03",
+      "text": "For these reasons we hold that this appeal should be\nallowed, the judgment of the Punjab High Court dated 12th\nSeptember, 1963 in Civil Revision No. 104-D of 1958- should\nbe set aside and the judgment of the Tribunal under the\nDisplaced Pe-sons (Debt Adjustment) Act in case No. 74/11/13\nof 1956/1952 should be restored dismissing the claim of the\nrespondent. There will be no order with regard to costs in\nthe High Court. But as directed by this Court on 30th\nOctober 1964, while granting special leave, appellant will\npay the cost of respondents in this' Court. V.P.S. Appeal allowed,",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    }
+  ],
+  "case_summary": {
+    "case_name": "State Bank Of India vs Ghamandi Ram (Dead) Through Shri Gurbax ...",
+    "case_id": "SC_1969_1969_73",
+    "court": "Supreme Court of India",
+    "year": "1969",
+    "facts_summary": "ACT:\nHindu Law-Joint Hindu family firm-if 'person' or 'body of\nindividuals not incorporated'.\nPrivate International Law-Priority between voluntary and\ninvoluntary assignments of debts. HEADNOTE:\nThe respondent was the karta of a joint Hindu 'family firm\ncarrying on business, before the partition of India, in area\nnow forming part of Pakistan. The firm had a cash credit\naccount with the Imperial Bank (now State Bank of India) in\nthat area and had pledged its goods with the Bank as\nsecurity for repayment of the advances. After the\npartition, the family and its members came away to India and\nbecame evacuees in relation to Pakistan. The Bank sold the\npledged goods in 1948 and after adjusting the amounts due to\nit credited the surplus amount in the account of the firm. The Pakistan (Administration of Evacuee Property) Ordinance,\n1949, was promulgated on October 15, 1949 and was amended by\nthe Pakistan (Administration of Evacuee Property) Amendment\nAct, 1951. Under s. 6(1) of the Ordinance all evacuee\nproperty shall vest and shall be deemed to have vested in\nthe Custodian in Pakistan from March 1, 1947. By a\nnotification dated February 19, 1952 the Pakistan Government\nexempted, from the operation of the provision of the\nOrdinance 'cash deposits made in Banks by persons other than\ncompanies or associations or bodies of individuals whether\nincorporated or not'.",
+    "legal_issues": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeal No. 449 of 1966. Appeal by special leave from the judgment and order dated\nSeptember 12, 1963 of the Punjab High Court Circuit Bench at\nDelhi in Civil Revision No. 104-D of 1958. Niren De, Attorney-General, S. V. Gupte, H. L. Anand and K. B. Mehta, for the appellant. Bishambar Lal, M. R. Garg, H. K. Puri. and Radha Kishan\nMakhija, for the respondent. The Judgment of the Court was delivered by\nRamaswami, J. M/s. Ghamandi Ram Gurbax Rai, a joint Hindu\nfamily firm consisting of Ghamandi Ram, since deceased,\nGurbax Rai, Chainan Lal and Jagan Nath, used to carry on\nbusiness in Bhawalpur State now forming part of West\nPakistan, before the partition of India. Shri Ghamandi Ram\nwas the manager and karta of the said joint Hindu family\nfirm during the material period. Before the partition of\nIndia, the joint Hindu family firm had a cash credit account\nin its name in the then Imperial Bank of India, Bhawalpur\nState now within Pakistan territory. The said firm had\npledged goods as security for the repayment of the advances\nmade in the said account. (1) Every person who is, or has at any\n time after the twenty-eighth day of February,\n 1947, 'Men in possession, supervision or\n management of any evacuee property, shall be\n deemed to hold or to I have held, as the case\n may be, such property on behalf of the\n Custodian\n (2) Every person who is in possession,\n supervision or management of any evacuee\n property or property which he knows or",
+    "ratio_summary": "(2) The rule of Private International Law is that where an\ninvoluntary assignment occurs after a voluntary assignment\nhas already been made, the question whether the rights of\nthe voluntary assignee have been postponed or defeated would\nbe governed by the lex situs of the debt. In the present\ncase, since the involuntary assignment in favour of the\nCustodian in Pakistan occurred in 1949, when the Ordinance\nwas promulgated after the voluntary assignment by the Bank\nin favour of the firm in 1948 and the situs of the debt was Pakistan (the Bank having garnishable assets of\nthe respondent in Pakistan which could be attached by the\nCustodian in Pakistan), the question of priority would be\ngoverned by the law in Pakistan, namely, the provisions of\nthe Ordinance; and under the Ordinance, the amount vested in\nthe Custodian in Pakistan with effect from March 1, 1947.\nTherefore, the liability of the Bank to the firm must be\ndeemed to have been extinguished. [687 H; 688 G; 689 F]\nRe : Queensland Mercantile and Agency Co. [1891] 1 Ch. 536\nand Arab Bank Ltd. v. Barclays Bank (Dominion, Colonial and\nOverseas) [1954] AC. 495, applied.\nDicey, Conflict of Laws, 8th Edn. p. 780, referred to. We proceed to consider the next question arising in this\nappeal viz., whether the liability of the appellant to the\nrespondent in India would be deemed to be extinguished in\nview of the operation of the Pakistan Evacuee Property\nOrdinance and in view of our finding that the amount in\ndispute had become vest",
+    "final_order": "",
+    "outcome_summary": "Allowed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

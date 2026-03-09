@@ -1,0 +1,364 @@
+{
+  "case_id": "SC_1989_1989_ALL_ANDHRAHC_28",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1989",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 34,
+  "cited_by_count": 6,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1989\\1989_ALL_AndhraHC_28.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P001_C01",
+      "text": "P.R. Venkataiah vs A.P. Co-Op. Central Agriculture ... on 17 November, 1989\nEquivalent citations: 1991(2)ALT536, (1993)IIILLJ178AP\nJUDGMENT\n\nJagnnadha Rao, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "P.R. Venkataiah v A.P. Co"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P002_C01",
+      "text": "1. The case raises the question of the remedy of employees of Co-operative Societies in disciplinary matters and the applicability of the provisions of the\nA.P. Shops and Establishments Act, 1966\n. Incidentally, the question also arises whether in such cases if principles of natural justice are violated, the High Court could issue a writ against the co-operative society under\nArticle 226\nof the Constitution, treating the Society as a juristic entity.",
+      "paragraph_type": "ratio",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P003_C01",
+      "text": "2. The petitioner was working as Accountant in the Karimnagar District Co-operative Central Bank Limited, at Choppadandi Branch. He initially questioned the second show-cause notice dated 10.3.1989 but subsequently amended the writ petition questioning the order of compulsory retirement dated 17.6.1989 which was issued by the A.P. Co-operative Central Agricultural Development Bank Ltd. subsequent to the filing of the writ petition.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P004_C01",
+      "text": "3. The petitioner joined service as supervisor on 1.9.1965. He was promoted as Assistant Accountant on 1.7.1977 and thereafter he became Accountant with effect from 19.2.1982. The post of Accountant is in the centralised cadre. While working as Accountant in the erstwhile Primary Agricultural Development Bank, Karimnagar, the Managing Director of the A.P. Co-operative Central Agricultural Development Bank issued a charge-memo to the petitioner on 1.6.1983. The petitioner submitted his explanation to the said charge-memo on 8.7.1983 denying all the charges. The Enquiry Officer fixed the date of enquiry as 30.8.1983. On the ground that he had fallen sick the petitioner asked for an adjournment enclosing a medical certificate. The enquiry however was closed and the petitioner was set ex parte. The enquiry report was submitted by the Enquiry Officer on 26.12.1983. The said Enquiry Report was placed before the Appointment Committee of the Central Agricultural Development Bank. The said Committee felt that the petitioner was denied a reasonable opportunity and that he should be given a fresh opportunity in the enquiry.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P004_C02",
+      "text": "Thereafter, a fresh notice was given to the petitioner in regard to the enquiry on 24.6.1986 and the enquiry was fixed on 15.7.1986. The Manager of the erstwhile Agricultural Development Bank, Shadnagar, appears to have written a letter that he was busy with his office work and prayed for an adjournment. Because of this, a fresh notice was given on 30.6.1986 stating that the enquiry was adjourned to 18.7.1986. The petitioner appears to have been suffering for quite some time from 'duodenal ulcer'\nand applied for leave with a medical certificate dated 16.7.1986 to the Manager of\nthe Bank at Shadnagar and leave was granted\nfor the period 16.7.1986 to 26.7.1986. However, the Inquiry Officer, who also received\na telegram dated 17.7.1986 and a leave letter\nwith a medical certificate, refused adjournment, set the petitioner ex parte and sent\nthe report which was the same as the previous report dated 26.12.1983. Thereafter\nthe present impugned order was issued by\nthe A.P. Co-operative Central Agricultural\nDevelopment Bank Ltd. retiring the petitioner compulsorily as a measure of punishment.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P004_C03",
+      "text": "In addition to the punishment stated above, an amount of Rs. 2,797.99 together with interest in a sum of Rs. 1,962.60 was sought to be recovered. It is this order that is questioned in the writ petition.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P005_C01",
+      "text": "4. The petitioner's counsel Sri M. Panduranga Rao contended that apart from the bye-laws or regulations dealing with disciplinary inquiry, the provisions of the\nA.P. Shops and Establishments Act\nand the rules made thereunder are expressly made applicable to employees of Co-operative Societies and violation of the statutory rules relating to natural justice, consideration of past conduct etc, are sufficient to seek issuance of a writ even to a Co-operative Society, under\nArticle 226\nof the Constitution of India.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P006_C01",
+      "text": "5. On the other hand, it is argued by Mr. P. Srinivas for the respondent that no writ petition lies in view of the judgment of a Division Bench of this Court consisting of Jeeven Reddy, J. and Syed Shah Mohd. Quadri, J. in V. Narsing Rao v. Prudential Co-op. Urban Bank 1989 (1) A.L.T. 300 wherein the learned Judges held that the bye-laws of a Co-operative Society could not be the subject matter of a writ petition inasmuch as there was no breach of any statutory obligation.\nFor this purpose, the learned Judges followed the decision of the Supreme Court, in\nCo-operative Central Bank Limited v. Industrial Tribunal Hyderabad\n1969 Lab-I.C. 285. It is also argued that no writ lies under\nArt. 226\nof the Constitution of India against the 1st respondent,\nthe A.P. Co-op. Central Agricultural Development Bank Limited, as it is only a co-operative society registered under the provisions of the\nCo-operative Societies Act\n.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P007_C01",
+      "text": "6. The points that arise for consideration are:\n(1) Whether in respect of employees of the Co-operative Societies the provisions of the\nA.P. Shops and Establishments Act, 1966\n(now 1968) and the Rules made under that Act are attracted insofar as the disciplinary action is concerned or whether the said employees can plead only breach of bye-laws of the Society ?\n(2) Whether, on the facts of the case, there is violation of principles of natural justice and if so, is it open to this Court to interfere under\nArticle 226\nof the Constitution of India without directing the petitioner to file an appeal before the Assistant Commissioner of Labour and then before the Labour Court under\nSection 41\nof the Shops and Establishments Act, 1966 (now\nSection 48\nof the Act of 1988) ?\n(3) Whether a writ lies against a Cooperative Society under\nArticle 226\nof the Constitution of India treating the society as an 'authority' or a 'person' if there is a violation of statute or statutory rules ?",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P008_C01",
+      "text": "7. Point No. 1: Insofar as the first question is concerned, it is true that Regulation 114 (a) which is in the nature of a bye-law, deals with the procedure to be followed by the Enquiry Officer and the Enquiry Officer is bound to follow the principles of natural justice. If the bye-laws stood alone it could be said that the petitioner was claiming only a breach of bye-laws. But when as pointed out below, there are statutory rules applicable to the Society under the Shops Act, the abovesaid bye-laws must be treated as being merely supplementary to the statutory rules and as providing further details for the proper implementation of the statutory rules.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P009_C01",
+      "text": "8. Under\nSection 69\nof the A.P. Shops and Establishments Act, 1966 (Section 77 of the A.P. Act, 1988) read with\nSection 40(4)\nof the 1966 Act (\nSection 47(2)\nof the 1988 Act), the provisions of the\nA.P Shops and Establishments Act, 1966\nare made applicable to employees of Co-operative Societies, notwithstanding anything in the\nA.P. Co-operative Societies Act\n. The question whether the provisions of the\nShops and Establishments Act\napply to the employees of the Co-operative Societies came up for consideration before Madhava Reddy, J. (as he then was) in Kodandam v. Wanaparthy Co-op. Marketing Society and Ors. 1981(1) ALT 465. There the learned Judge was dealing with\nSections 40\n,\n\nand\n\nof the A.P. Shops and Establishments Act and\nSection 129\nof the Co-operative Societies Act. It was pointed out that\nSection 129\nof the Cooperative Societies Act, 1964 no doubt stated that the provisions of the\nCompanies Act, 1956\nthe\nA.P. (Andhra Area) Shops and Establishments Act, 1948\nand the A.P. (Telangana Area) Shops and Establishments Act, 1951 shall not apply to Societies. But, however, in the later enactment viz., the\nA.P.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P009_C02",
+      "text": "Shops and Establishments Act, 1966\nit was specifically stated in\nSection 69\nthat 'notwithstanding anything in the\nAndhra Pradesh Co-operative Societies Act, 1964\nthe provisions of this Act shall apply to Co-operative Societies. (\nSection 77\nof the Shops Act, 1988 is identical in language). The learned Judge observed that the\nA.P. Shops and Establishments Act, 1966\nwas a later enactment and that in view of the 'non-obstante clause' in\nSection 69\n, the provisions of\nSection 129\nof the A.P. Co-operative Societies Act no longer apply and that therefore the provisions of the\nA.P. Shops and Establishments Act, 1966\napplied to Cooperative Societies falling under the provisions of the\nA.P. Co-operative Societies Act, 1964\n. If the said Act applies, the Shops and Establishments Rules, 1966 also apply. It may also be noted that in\nSection 40(4)\nof the A.P. Shops and Establishments Act, 1966 it is stated:\n'The services of an employee shall not be terminated for misconduct except, for such acts or omissions and in such manner, as may be prescribed'. Section 2(18)\nsays that 'Prescribed' means prescribed by rules made under the\nShops and Establishments Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P009_C03",
+      "text": "Employee is defined in\nSection 2(8)\nof the Act and it is not in dispute that on the admitted facts of the case, the petitioner is an 'employee'. Section 47(2)\nof the new Act provides in its latter part that 'The services of an employee shall not also be terminated for misconduct except for such acts or omission and in such manner as may be prescribed'. Therefore, the petitioner is governed by the provisions of the\nA.P. Shops and Establishments Act\nand the Rules made thereunder. Rule 20 of the Rules reads as follows:\nProcedure for terminating the Services of an Employee: -\nNo employer shall terminate the services of an employee under\nSection 40\nunless an enquiry is held against the employee concerned in respect of any alleged misconduct in the manner set forth in Sub-rule(2). (2) An employee against whom an enquiry has to be held shall be given a charge-sheet clearly setting forth the circumstances appearing against him and requiring explanation. He shall be given an opportunity to answer the charge and shall also be permitted to produce witnesses in his defence and cross-examine any witness on whose evidence the charge rests.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P009_C04",
+      "text": "A concise summary of the evidence led on either side and the employee's plea shall be recorded in a register to be maintained for this purpose. (3) In awarding punishment under this rule, the employer shall take into account the gravity of the misconduct, the previous record, if any, of the employee and any other extenuating or aggravating circumstances that may exist :\nProvided that no punishment shall be awarded based on the previous record and other circumstances that may exist unless the employee has been given an opportunity of making representation in respect of those charges.\"\nThe case therefore cannot be rejected on the ground that there is mere violation of bye-laws.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P010_C01",
+      "text": "9. In V. Narsing Rao v. Prudential Co-op. Urban Bank (supra) the Division Bench proceeded on the basis that the petitioner was questioning merely violation of bye-laws and was not entitled to relief in view of the judgment of the Supreme Court in\nCooperative Central Bank Limited v. Industrial Tribunal Hyderabad\n(supra). Obviously, the provisions of the\nA.P. Shops and Establishments Act\nand the Rules were not brought to the notice of the learned Judges. This is clear from the following statement in\nthe said judgment\n:\n\"It is not alleged in the writ petition that any provision of the Act or the Rules, much less of a public nature, is violated. The main grievance in the writ petition is that no proper enquiry was held and no opportunity was given to the petitioner to defend himself at such enquiry.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P010_C02",
+      "text": "It is not stated that there is any provision in the Act or the Rules, or that there is any other statutory provision governing such enquiry which has been violated.\"\nI, therefore, hold that the petitioner is entitled to contend that there is not only breach of bye-laws but that there is also 40 a breach of the provisions of the\nSection 40(4)\n(or Section 47(2) of the New Act) and Rule 20 of the A.P. Shops and Establishments Rules, 1966, which deal with the procedure for conducting disciplinary enquiries. I hold accordingly on point No. 1.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P011_C01",
+      "text": "10. Point No. 2 :- From the facts mentioned earlier, it will be noticed that when the petitioner applied with medical certificate that he was suffering from 'duodenal ulcer', for leave from 16.7.1986 to 26.7.1986, and the Chairman of the Bank at Shadnagar, who was the employer, accepted the same and granted leave, and therefore the refusal on the part of the Inquiry Officer to adjourn the inquiry on 18.7.1986, in spite of a telegram dt. 17.7.86 and a representation with medical certificate, appears to me to be a clear violation of principles of natural justice. This is what the Chairman of the Bank at Shadnagar wrote in regard to the leave application:\n\"In terms of Regulation No. 73 of the service regulation governing the service conditions of the employees of Centralised Cadre the Medical leave is sanctioned to Sri P.R. Venkataiah, Accountant of Co-op. Agricultural Dev.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P011_C02",
+      "text": "Bank Ltd., Shadnagar for a period of (11) days with effect from 16.7.1986 to 26.7.1986.\"\nFrom the aforesaid proceedings of the Chairman of the Bank at Shadnagar, it is clear that when the employer himself accepts the genuineness of the illness of the writ petitioner right from 16.7.1986 to 26.7.1986, the Enquiry Officer was not justified in closing the inquiry on 18.7.1986 and proceeding ex parte and sending up the same old report which he prepared in 1983 ex parte and which was once set aside by the department itself. I am, therefore, satisfied that this is a clear case where there was violation of principles of natural justice.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P012_C01",
+      "text": "11. As to the incidental point relating to alternative remedy, no doubt,\nSection 41\nor the 1966 Act (Section 48 of the New Shops and Establishments Act) provides a right of appeal initially to the Assistant Commissioner of Labour and then Second Appeal to the Labour Court. But it is well settled that if there is violation of principles of natural justice it is open to the aggrieved party to approach this Court under\nArticle 226\nof the Constitution of India without exhausting the alternative remedy of appeal. This principle is settled in several decisions of the Supreme Court, vide\nA.V. Venkateswaran v. R.S. Wadhwani\n, Baburam v. Zilla Parishad . Indeed, if there is violation of principles of natural justice contained in the statutory rules and the petitioner is still to be relegated to the departmental appeals and if the latter hold, after considerable lapse of time, that there is such violation of natural justice, then there will be unnecessary prolongation of the case resulting in the employer having to pay huge sums by way of back-wages for a long number of years. Such a situation can, in my view, be avoided if the matter is rectified at an earlier stage.",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P012_C02",
+      "text": "In fact, in the present case, the order of termination is dated 17.6.1989 and the learned counsel for the petitioner Mr. Panduranga Rao fairly stated that his is client is not pressing for the arrears of wages from that date upto this date. Alternative remedy is a matter only in the context of exercise of discretion to interfere under\nArticle 226. I prefer to exercise discretion at this stage on this point for it would equally benefit the employer who could avoid being burdened with payment of back wages for long periods.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P013_C01",
+      "text": "12. In any event, \"past conduct\" has to be taken into consideration and a notice issued under Rule 20(2) of the Shops Act and the same not having been issued, the impugned order is liable to be set aside.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P014_C01",
+      "text": "13. I hold that principles of natural justice as embodied in the statutory rules are violated and that past conduct is not taken into account as per the procedure in Rule 20 of the statutory rules made under the\nCo-operative Societies Act\n, and this is a fit case where discretion is to be exercised in favour of the petitioner under\nArticle 226\nfor not compelling him to go by the alternative remedy under the\nShops and Establishments Act\n. I hold on point No. 2 accordingly.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P015_C01",
+      "text": "14. Point No. 3:- If there is violation of a provision of a statute or a statutory rule by an 'authority' or 'person', a writ could issue under\nArticle 226\nof the Constitution of India. This is accepted and the case law in this behalf has been reviewed in V. Narasinga Rao's case (supra) by the Division Bench. The said decision has been followed by me and certain aspects highlighted in Rattanlal Koul v. J. & K. Bank Ltd. 1989 (3) ALT 177 in the light of the decision of the Supreme Court in Shri Anadi Mukta Sadguru S.M V. S.J.M.S. Trust v. V.R. Rudani stating that duties of a public nature, - though non-statutory-could also be enforced. It was further pointed by me that in V. Narasing Rao's case (supra), the Division Bench accepted the principle laid down by P.A. Choudary, J. in\nT. Gattaiah v. The Commissioner of Labour\n1981 (1) A.P.L.J. 280 as affirmed in appeal in I.D.L. Chemicals Ltd. v. T. Gattaiah 1982 (1) ALT 12 (NRC) that a writ could be issued against 'persons' including juristic persons apart from 'authorities'.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P015_C02",
+      "text": "In the present case, it is necessary to explain, on the basis of the law laid down by this Court in the above cases, whether, if there is violation of a statutory provisions pr of public duty, a writ could be issued against a co-operative society, if it is a 'person' as understood under the\nGeneral Clauses Act, 1897\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P016_C01",
+      "text": "15. In V. Narasinsa Rao's case (supra) the learned Judges observed that if certain conditions were satisfied, a writ could issue even against a co-operative society. In para 6 (of A.L.T.P. 302-303), the Bench considered the question whether the 'society' in that case fell within the meaning of the words 'State' in\nArticle 12\nand after holding that the capital of the society in that case was 'not contributed by the State', that the control of the State over it was 'neither deep nor pervasive' and also that having regard to the 'nature of functions', it could not be a 'State' under\nArticle 12\n, the question was posed whether society was a 'person or authority' under\nArticle 226. After referring to the 'ordinary' meaning of 'authority' in Webster's Third New International Dictionary, it was held that the society could not be called a public administrative agency or corporation haying quasi-governmental powers and authorised to administer a revenue-producing public enterprises. In para 7, the Court considered whether the society could be a 'person' and referred to P.A. Choudary, J's judgment in\nT. Gattaiah\n's case (supra) and accepted the same.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P016_C02",
+      "text": "They also referred to the judgment of the Division Bench of Kuppuswamy, J. and P. Ramachandra Raju, J. in I.D.L. Chemicals Ltd. v. T. Gattaiah (supra) (and held that a writ could issue against to 'person' - apart from an 'authority' if 'statutory obligations of a public nature' were violated. Where a statutory obligation of a public nature is imposed upon a body like a company, a society, a writ of mandamus can they said, issue to enforce such obligation. The Court also observed (para 8) that it cannot, therefore, be stated as a rule of law that a writ does lie or does not lie, against a co-operative society. Before answering the said question, one has to make a further inquiry, viz., what is it that the petitioner is seeking to enforce by way of writ petition ?...For example, if what is sought to be enforced is a statutory obligation of a public nature, a writ in the nature of Mandamus will issue against a co-operative society. Similarly, where a writ is sought to quash a quasi-judicial order passed by a co-operative society, a writ in the nature of certiorari would lie.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P016_C03",
+      "text": "However coming to the facts of the case before them, they proceeded (in para 9) on the basis that there was only a breach of bye-laws claimed. They expressly stated that no statutory provision or rule was brought to their notice which could be said to have been violated. It is clear that the provisions of\nSection 69\nof the A.P. Shops and Establishments Act (now 77 of 1988 Act) were not brought to their notice, and the said section applies to the provisions of the\nA.P. Shops and Establishments Act\nand the Rules made thereunder (including Rule 20) and therefore, if there is any breach of the said statutory provisions, a writ could issue.\n16 It is necessary also to refer to the Division Bench judgment in I.D.L. Chemicals case (supra). Therein the Bench pointed out that a writ could not issue for a private purpose' i.e., enforcement of a merely private right. \"Even in England, an order of mandamus, is issued ordering that to be done which a statute requires to be done and for this rule to apply, it is not necessary that the party or Corporation on whom a statutory duty is imposed should be a public official or an official body, (vide Halsbury's Laws of England, Fourth Edn.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P016_C04",
+      "text": "Vol. 1 paragraph 99). Again in paragraph 121, it is stated that the order is only granted to compel the performance of duties of a public nature\". After stating thus, Kuppuswamy, J. pointed out :\n\"The emphasis therefore is not on, the question whether the body to whom the order or mandamus is issued is an individual or a private corporation or a public body but whether the body performs a statutory or a public duty\" . After distinguishing\nP.S. Naidu v. Chittor District Co-op. Central Bank\n's case 1977 (2) APLJ 282 and Praga Tool's case 1969 (2) LLJ 749 the Bench finally referred to Ramanna v. LA. Authority of India 1979 (2) LLJ 217 and observed that-\n\"considerable water has flown since the decision in\nPraga Tools Corporation v. C. V. Imannel\nand the effect of the recent trend of decisions is that the High Court has jurisdiction to issue appropriate writ under\nArticle 226\neven against a private corporation provided that it is to compel the performance of a public duty or a statutory duty\".",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P017_C01",
+      "text": "17. In the\nShri Anadi Mukta Sadguru S.M.V.S.J.M.S. Trust v. V.R. Rudani\n(supra) the Supreme Court also observed (para 19) that the words 'any person or authority' used in\nArticle 226\nare, therefore, not to be confined only to statutory authorities and instrumentalities of the State. They may cover any person or body performing public duty. The form of the body concerned is not very much relevant. As the case did not involve obligations under statute, the Supreme Court had to inquire if 'public duties' were involved though non-statutory. So far as issuing a writ against a 'person' or 'authority' to perform statutory duties is concerned, their Lordships had no doubt. This is clear from para 20 wherein they held that a mandamus can issue against a person or body to carry out the duties placed on them by the statutes even though they are not public officials or statutory body.\"\nThe Supreme Court very significantly relied upon the following passage in\nPraga Tools\ncase which is extremely relevant. It reads:\n\"It is, however, not necessary that the person or the authority on whom the statutory duty is imposed need be a public official or an official body.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P017_C02",
+      "text": "A mandamus can issue, for instance, to an official of a society to compel him to carry out the terms of the statute under or by which the society is constituted or governed and also to companies or corporations to carry out duties placed on them by statutes authorising their undertakings. A mandamus would also lie against a company constituted by a statute for the purpose of fulfilling public responsibilities (see Halsbury's Laws of England, 3rd Edn., Vol. (I, P.52 and onwards).\"\nThat statutory duties could be enforced against a co-operative society is expressly accepted even in V. Narasinga Rao's case and the only qualification that can be read into the statement of law in that case because of the decision of the Bench in I.D.L. Chemical's case (supra) and the last mentioned recent judgment of the Supreme Court is that the writ could issue either for enforcement of statutory duties or in the alternative for enforcement of public duties and it is not necessary that the statutory duties should also be of a public nature. P.A.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P017_C03",
+      "text": "Choudary, J. pointed out in\nGattaiah\n's case (supra) that Part III of the Constitution contains several duties imposed even on citizens in\nArticles 17\n, 18 (2)\n, 23\n, 24\n, that\nArticle 226\nhas to be read with\nArticle 367(1)\nof the Constitution attracting the definitions in the\nGeneral Clauses Act, 1987\nand the word 'person' would include persons who are bound by statutory or public duties including juristic persons. The learned Judge pointed out that even in England, the old view in\nR. v. Electricity Commissioners\n1924 (1) KB 171 that mandamus could issue only against persons having legal authority to determine questions affecting the rights of subjects, has been given a go-bye in R. v. Criminal Injuries Compensation Board Ex-parte Lain 1967 (2) QB 864. This case has also been referred to by Jeevan Reddi, J. in V. Narasinga Rao's case (supra). The attention of the Bench in V. Narasinga Rao's case (supra) was unfortunately not drawn to the applicability of the statutory provisions in the\nShops and Establishments Act, 1966\n(now 1988) and Rules therein as to procedure for following principles of natural justice. I may point out that recently in R. v. Parel on Take-Overs 1987 (1) All.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P017_C04",
+      "text": "ER 564 the Court of Appeal stated in more clear terms that, apart from, statutory duties, public duties or more precisely public law' duties could be enforced against non-statutory bodies. The principles laid down therein are more or less the same as laid down by our Supreme Court in Shri Anadi Mukta's case (supra) and what are 'public duties' is more clearly explained. In the present case, we are concerned with the a fortiori case of enforcing statutory duties. I hold on point No. 3 that a writ lies against the Central Bank which is a society, for enforcing Rule 20 of the Rules made under the\nA.P. Shops & Establishments Act, 1966\n(now 1988).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P018_C01",
+      "text": "18. In the result, I hold that the Enquiry Officer was guilty of violation of principles of natural justice as statutorily embodied in Rule 20 above-referred to. The disciplinary authority also violated that part of the above rules as to consideration of 'past-conduct' and he should have also given notice in that behalf as provided in the rule. As there is breach of rules of natural justice on the face of the proceedings, it is not necessary, as already stated, to drive the petitioner to the alternative remedies under the\nShops and Establishments Act\n. I exercise discretion to interfere for reasons already given.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1989_1989_ALL_ANDHRAHC_28_P019_C01",
+      "text": "19. The writ petition is allowed and the impugned order of punishment as well as the inquiry are quashed. This will not bar the respondents conducting the inquiry in accordance with the statutory provisions, supplemented by regulations, referred to earlier. As conceded, the petitioner will not be entitled to back wages from 17.6.1989 till to-day. He may be entitled, from to-day, to his pay or suspension allowance, as the case may be, as per law. There shall be no order as to costs.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1989_1989_ALL_ANDHRAHC_28",
+    "court": "Supreme Court of India",
+    "year": "1989",
+    "facts_summary": "2. The petitioner was working as Accountant in the Karimnagar District Co-operative Central Bank Limited, at Choppadandi Branch. He initially questioned the second show-cause notice dated 10.3.1989 but subsequently amended the writ petition questioning the order of compulsory retirement dated 17.6.1989 which was issued by the A.P. Co-operative Central Agricultural Development Bank Ltd. subsequent to the filing of the writ petition. 3. The petitioner joined service as supervisor on 1.9.1965. He was promoted as Assistant Accountant on 1.7.1977 and thereafter he became Accountant with effect from 19.2.1982. The post of Accountant is in the centralised cadre. While working as Accountant in the erstwhile Primary Agricultural Development Bank, Karimnagar, the Managing Director of the A.P. Co-operative Central Agricultural Development Bank issued a charge-memo to the petitioner on 1.6.1983. The petitioner submitted his explanation to the said charge-memo on 8.7.1983 denying all the charges. The Enquiry Officer fixed the date of enquiry as 30.8.1983. On the ground that he had fallen sick the petitioner asked for an adjournment enclosing a medical certificate. The enquiry however was closed and the petitioner was set ex parte. The enquiry report was submitted by the Enquiry Officer on 26.12.1983. The said Enquiry Report was placed before the Appointment Committee of the Central Agricultural Development Bank. The said Committee felt that the petitioner was denied a reasonable opportuni",
+    "legal_issues": "4. The petitioner's counsel Sri M. Panduranga Rao contended that apart from the bye-laws or regulations dealing with disciplinary inquiry, the provisions of the\nA.P. Shops and Establishments Act\nand the rules made thereunder are expressly made applicable to employees of Co-operative Societies and violation of the statutory rules relating to natural justice, consideration of past conduct etc, are sufficient to seek issuance of a writ even to a Co-operative Society, under\nArticle 226\nof the Constitution of India. 5. On the other hand, it is argued by Mr. P. Srinivas for the respondent that no writ petition lies in view of the judgment of a Division Bench of this Court consisting of Jeeven Reddy, J. and Syed Shah Mohd. Quadri, J. in V. Narsing Rao v. Prudential Co-op. Urban Bank 1989 (1) A.L.T. 300 wherein the learned Judges held that the bye-laws of a Co-operative Society could not be the subject matter of a writ petition inasmuch as there was no breach of any statutory obligation.\nFor this purpose, the learned Judges followed the decision of the Supreme Court, in\nCo-operative Central Bank Limited v. Industrial Tribunal Hyderabad\n1969 Lab-I.C. 285. It is also argued that no writ lies under\nArt. 226\nof the Constitution of India against the 1st respondent,\nthe A.P. Co-op. Central Agricultural Development Bank Limited, as it is only a co-operative society registered under the provisions of the\nCo-operative Societies Act\n. In fact, in the present case, the order of termination is d",
+    "ratio_summary": "1. The case raises the question of the remedy of employees of Co-operative Societies in disciplinary matters and the applicability of the provisions of the\nA.P. Shops and Establishments Act, 1966\n. Incidentally, the question also arises whether in such cases if principles of natural justice are violated, the High Court could issue a writ against the co-operative society under\nArticle 226\nof the Constitution, treating the Society as a juristic entity. 8. Under\nSection 69\nof the A.P. Shops and Establishments Act, 1966 (Section 77 of the A.P. Act, 1988) read with\nSection 40(4)\nof the 1966 Act (\nSection 47(2)\nof the 1988 Act), the provisions of the\nA.P Shops and Establishments Act, 1966\nare made applicable to employees of Co-operative Societies, notwithstanding anything in the\nA.P. Co-operative Societies Act\n. The question whether the provisions of the\nShops and Establishments Act\napply to the employees of the Co-operative Societies came up for consideration before Madhava Reddy, J. (as he then was) in Kodandam v. Wanaparthy Co-op. Marketing Society and Ors. 1981(1) ALT 465. There the learned Judge was dealing with\nSections 40\n,\n\nand\n\nof the A.P. Shops and Establishments Act and\nSection 129\nof the Co-operative Societies Act. It was pointed out that\nSection 129\nof the Cooperative Societies Act, 1964 no doubt stated that the provisions of the\nCompanies Act, 1956\nthe\nA.P. (Andhra Area) Shops and Establishments Act, 1948\nand the A.P. (Telangana Area) Shops and Establishments Act, 195",
+    "final_order": "18. In the result, I hold that the Enquiry Officer was guilty of violation of principles of natural justice as statutorily embodied in Rule 20 above-referred to. The disciplinary authority also violated that part of the above rules as to consideration of 'past-conduct' and he should have also given notice in that behalf as provided in the rule. As there is breach of rules of natural justice on the face of the proceedings, it is not necessary, as already stated, to drive the petitioner to the alternative remedies under the\nShops and Establishments Act\n. I exercise discretion to interfere for reasons already given. 19. The writ petition is allowed and the impugned order of punishment as well as the inquiry are quashed. This will not bar the respondents conducting the inquiry in accordance wi",
+    "outcome_summary": "Allowed. 18. In the result, I hold that the Enquiry Officer was guilty of violation of principles of natural justice as statutorily embodied in Rule 20 above-referred to. The disciplinary authority also violated that part of the above rules as to consideration of 'past-conduct' and he should have also given ",
+    "sections_cited": [
+      "Constitution 226"
+    ],
+    "cases_cited": [
+      "P.R. Venkataiah v A.P. Co"
+    ]
+  }
+}

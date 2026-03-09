@@ -1,0 +1,339 @@
+{
+  "case_id": "SC_1993_1993_ALL_ANDHRAHC_22",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1993",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": "set aside",
+  "disposition": "set_aside",
+  "cites_count": 11,
+  "cited_by_count": 12,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1993\\1993_ALL_AndhraHC_22.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P001_C01",
+      "text": "United India Insurance Co. Ltd. vs Odeti Mallu Bai And Ors. on 30 April, 1993\nEquivalent citations: 1995ACJ851\nAuthor:\nSyed Shah Mohammed Quadri\nBench:\nSyed Shah Mohammed Quadri\nJUDGMENT\n\n Syed Shah Mohammed Quadri, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P002_C01",
+      "text": "1. This appeal is referred to a Division Bench by a learned single Judge of this court as he felt that there is no authoritative pronouncement of this court on the question whether the insurance company is liable to pay compensation to the heirs of the owner of a vehicle who died in an accident while driving the vehicle.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P003_C01",
+      "text": "2. One Odeti Bhanu Reddy was the owner of the tractor bearing No. APR 6771 and the trailer APR 6772. While driving the said tractor, on his way to his field, he slipped off the tractor, fell down on the ground and was run over by the tractor. He succumbed to the injuries and died on the spot. The tractor was having valid insurance coverage policy issued by the United India Insurance Co. Ltd., the appellant herein, which was valid from 1.3.1983 to 29.2.1984. The deceased was 48 years old at the time of his death. He was Sarpanch of Bommapur village. By cultivation he was earning Rs. 1,200/- per month. He was survived by the petitioners of whom the petitioner No. 1 is his wife, petitioner Nos. 2 and 3 are his sons and petitioner No. 4 is his daughter. They claimed compensation of Rs. 60,000/- in all under different heads under\nSection 110-A\nof the Motor Vehicles Act (for short 'the Act'). The insurance company resisted the claim on the ground that the policy did not cover the risk of the owner of the tractor. Under Endorsement No. 16 the risk of the driver is covered for the liability arising under the\nWorkmen's Compensation Act\n.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P003_C02",
+      "text": "It is urged that the term driver in the policy means an employee and not the owner, so the claim for compensation was not maintainable. It is also urged that the owner of the vehicle was a party to the contract with the insurance company under which it undertook to indemnify the owner for the liability arising against him under the terms of the policy, but the owner himself could not claim any compensation for injuries to him and consequently his heirs could have no better claim for compensation on his death. It was also urged that the heirs of the owner could not claim compensation for the negligence of the owner and that negligence was a prerequisite for claiming compensation.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P004_C01",
+      "text": "3. The petitioners examined two witnesses, PWs 1 and 2 and marked Exh. A-1, xerox copy of the insurance policy dated 1.3.1983 and Exh. A-2, xerox copy of the driving licence dated 20.2.1982. No oral evidence was adduced by the insurance company; however, it marked true copy of the insurance policy as Exh. B-1.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P005_C01",
+      "text": "4. Considering the evidence on record, the learned II Additional District Judge-cum-Motor Accidents Claims Tribunal, Karimnagar, came to the conclusion that the insurance company was liable to pay the compensation to the petitioners and accordingly awarded compensation to the petitioners together with interest at 6 per cent per annum and costs, by allowing O.P. No. 107 of 1984 on 7.2.1986. Being aggrieved by the said order and decree of the learned II Additional District Judge, the insurance company preferred this appeal under\nSection 110-D\nof the Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P006_C01",
+      "text": "5. Mr. S. Hanumaiah, the learned standing counsel for the appellant, contends that neither under\nSections 95\nand\n\nof the Act nor under the policy, the insurance company is liable to pay any compensation to the owner of the vehicle for the personal injuries to him and its obligation is only to indemnify the owner against any liability which arises due to the negligence of the driver, Mr. Ramachandra Rao, the learned counsel for the respondents, on the other hand, contends that the policy, Exh. B-1, is a comprehensive policy and it covers the risk to the owner of the tractor and trailer as the policy mentions that the owner is permitted to drive the vehicle.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P007_C01",
+      "text": "6. The liability of the insurance company for the bodily injury or death of the owner-insured while driving the vehicle can arise either from obligation imposed on it under\nSections 95\nand\n\nof the Act or from the terms of the insurance policy, Exh. B-1.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P008_C01",
+      "text": "7. We shall first examine the position under\nSections 95\nand\n\nof the Act:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P009_C01",
+      "text": "95.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P009_C02",
+      "text": "Requirements of policies and limits of liability.-(1) In order to comply with the requirements of this Chapter, a policy of insurance must be a policy which-\n(a) is issued by a person who is an authorised insurer or by a co-operative society allowed under Section 108 to transact the business of an insurer, and\n(b) insures the person or classes of persons specified in the policy to the extent specified in Sub-section (2)-\n(i) against any liability which may be incurred by him in respect of the death of or bodily injury to any person or damage to any property of a third party caused by or arising out of the use of the vehicle in a public place;\n(ii) against the death of or bodily injury to any passenger of a public service vehicle caused by or arising out of the use of the vehicle in a public place:\nProvided that a policy shall not be required-\n(i) to cover liability in respect of the death, arising out of and in the course of his employment, of the employee of a person insured by the policy or in respect of bodily injury sustained by such an employee arising out of and in the course of his employment other than a liability arising under the\nWorkmen's Compensation Act, 1923\n, in",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P009_C03",
+      "text": "respect of the death of, or bodily injury to, any such employee-\n(a) engaged in driving the vehicle, or\n(b) if it is a public service vehicle, engaged as a conductor of the vehicle or in examining tickets on the vehicle, or\n(c) if it is a goods vehicle, being carried in the vehicle, or\n(ii) except where the vehicle is a vehicle in which passengers are carried for hire or reward or by reason of or in pursuance of a contract of employment, to cover liability in respect of the death of or bodily injury to persons being carried in or upon or entering or mounting or alighting from the vehicle at the time of the occurrence of the event out of which a claim arises, or\n(iii) to cover any contractual liability.\nxxx xxx xxx",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P010_C01",
+      "text": "96. Duty of insurers to satisfy judgments against persons insured in respect of third party risks.-(I) If, after a certificate of insurance has been issued under Sub-section (4) of Section 95 in favour of the person by whom a policy has been effected, judgment in respect of any such liability as is required to be covered by a policy under Clause (b) of Sub-section (1) of Section 95 (being a liability covered by the terms of the policy) is obtained against any person insured by the policy, then, notwithstanding that the insurer may be entitled to avoid or cancel or may have avoided or cancelled the policy, the insurer shall, subject to the provisions of this Section, pay to the person entitled to the benefit of the decree any sum not exceeding the sum assured payable thereunder, as if he were the judgment-debtor, in respect of the liability, together with any amount payable in respect of costs and any sum payable in respect of interest on that sum by virtue of any enactment relating to interest on judgments.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P010_C02",
+      "text": "(2) No sum shall be payable by an insurer under Sub-section (1) in respect of any judgment unless before or after the commencement of the proceedings in which the judgment is given the insurer had notice through the court of the bringing of the proceedings, or in respect of any judgment so long as execution is stayed thereon pending an appeal; and an insurer to whom notice of the bringing of any such proceedings is so given shall be entitled to be made a party thereto and to defend the action on any of the following grounds, namely,-\n(a) that the policy was cancelled by mutual consent or by virtue of any provision contained therein before the accident giving rise to the liability, and that either the certificate of insurance was surrendered to the insurer or that the person to whom the certificate was issued has made an affidavit stating that the certificate has been lost or destroyed, or that either before or not later than fourteen days after the happening of the accident the insurer has commenced proceedings for cancellation of the certificate after compliance with the provisions of Section 105; or\n(b) that there has been a breach of a specified condition of the policy, being",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P010_C03",
+      "text": "one of the following conditions, namely:\n(i) a condition excluding the use of vehicle-\n(a) for hire or reward, where the vehicle is on the date of the contract of insurance a vehicle not covered by a permit to ply for hire or reward, or\n(b) for organised racing and speed-testing, or\n(c) for a purpose not allowed by the permit under which the vehicle is used, where the vehicle is a transport vehicle, or\n(d) without side-car being attached, where the vehicle is a motor cycle, or\n(ii) a condition excluding driving by a named person or persons or by any person who is not duly licensed, or by any person who has been disqualified for holding or obtaining a driving licence during the period of disqualification, or\n(iii) a condition excluding liability for injury caused or contributed to by conditions of war, civil war, riot or civil commotion, or\n(c) that the policy is void on the ground that it was obtained by the nondisclosure of a material fact or by a representation of fact which was false in some material particular.\nxxx xxx xxx",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P011_C01",
+      "text": "8. From a perusal of the above Sections it is evident that no such liability as in question is imposed under the Act, but it is open to the insurance company and the insured to extend coverage of the policy to bodily injury or death of the insured. So it becomes necessary to read terms of the policy.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P012_C01",
+      "text": "9. It would be useful to extract the relevant portions of Exh. B-1 here:\nThe company hereby agrees subject to the terms and conditions contained herein or endorsed or otherwise expressed herein that in respect of accident, loss or damage at any time during the period of insurance stated in the Schedule, the company will indemnify the insured as hereinafter provided. Important Notice\n\nThe insured is not indemnified if the vehicle is used or driven otherwise than in accordance with the Schedule. Any payment made by the company by reason of wider terms appealing in the certificate in order to comply with the\nMotor Vehicles Act, 1939\n, is recoverable from the insured. See the clause headed 'Avoidance of certain terms and right of recovery'. Relevant entry in the Schedule\n\nLimitation as to use:\nUse only under a private carrier's permit within the meaning of the\nMotor Vehicles Act, 1939\n. The policy does not cover-\n(1) Use for hire or reward or for organised racing, pacemaking reliability trial or speed testing. (2) Use whilst drawing a trailer except the towing of any one disabled mechanically propelled vehicle.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P012_C02",
+      "text": "Driver\n\nAny of the following:\n(a) xxx xxx xxx\n (b) xxx xxx xxx\nProvided that the person driving holds a valid driving licence at the time of the accident or had held a permanent driving licence (other than a learner's licence) and is not disqualified from holding or obtaining such a licence. The Insured\n\nAny other person provided he is in the insured's employment and is driving on his order or with his permission. Period of insurance: From 1.3.1983 to 29.2.1984 (both days inclusive). Special conditions: Subject to attached clause M/3 and Endorsement Nos. 21, 23, 37, 16 and 57.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P013_C01",
+      "text": "10. From a perusal of the excerpt of the insurance policy it is clear that the insurance company is liable in respect of accident, loss or damage subject to terms and conditions of and endorsements on the policy to indemnify the insured during the period 1.3.1983 to 29.2.1984 (both days inclusive). The clause under the caption 'Important Notice' shows that the insured is not indemnified if the vehicle is used or driven otherwise than in accordance with the Schedule. The Schedule mentions that the vehicle should be driven (a) by the insured and (b) by any person if he is the insured's employee and is driving on his order or with his permission. This means that the liability of the insurance company to indemnify the insured exists not merely in the case where the vehicle is driven by a driver who is an employee of the insured and a driver who is driving on his order or with his permission but also covers a case where the vehicle is driven by the insured provided the person driving the vehicle holds a valid driving licence at the time of the accident or holds a permanent driving licence and was not disqualified from obtaining such licence.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P013_C02",
+      "text": "The liability is specified in the agreement in three sections. Section I deals with loss or damage to the motor vehicle or its accessories; Section II deals with liability to third parties. Under this Section it is provided that subject to the limit of liability the company will indemnify the insured against all sums including claims, costs and expenses that the insurance company shall become legally liable to pay in respect of death or bodily injury to any person caused by or arising out of the use including loading or unloading of the motor vehicle and damage to property caused by the use of the motor vehicle. It is now well settled that the insured does not come within the meaning of the third party.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P014_C01",
+      "text": "11. We have also perused Endorsement Nos. 21, 23, 37, 16 and 57; they do not cover the case of bodily injury to or death of the owner-insured.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P015_C01",
+      "text": "12. From the above terms and conditions of and endorsements on the policy the liability of the insurance company cannot be culled out.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P016_C01",
+      "text": "13. The fact that the policy in question is a comprehensive policy does not necessarily mean that it covers liability arising due to the bodily injury or the death of the insured himself. The expression 'comprehensive policy' was explained by the Supreme Court in\nNational Insurance Co. Ltd. v. Jugal Kishore\n1988 ACJ 270 (SC). It is observed that-\nComprehensive insurance of the vehicle and payment of higher premium on this score, however, do not mean that the limit of the liability with regard to third party risk becomes unlimited or higher than the statutory liability fixed under Sub-section (2) of\nSection 95\nof the Act. For this purpose a specific agreement has to be arrived at between the owner and the insurance company and separate premium has to be paid on the amount of liability undertaken by the insurance company in this behalf. Likewise, if risk of any other nature, for instance, with regard to the driver or passengers, etc., in excess of statutory liability, if any, is sought to be covered it has to be clearly specified in the policy and separate premium paid therefor. This is the requirement of the Tariff Regulations framed for the purpose.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P017_C01",
+      "text": "14. The learned II Additional District Judge, Karimnagar, classified the loss or damage into three categories-(i) against loss or damage to the vehicle and its accessories; (ii) against personal injury to the owner; and (iii) against loss arising from liability for death or injury caused to the third parties or for damage to their property. Insofar as categories 1 and 3 are concerned, they are covered by Sections I and II of the policy to which a reference has already been made above. Insofar as the second category is concerned, it cannot be supported either on the basis of\nSections 95\nand\n\nof the Motor Vehicles Act or under the terms of policy or on authority.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P018_C01",
+      "text": "15. M. Akkavva v. New India Assurance Co. Ltd.\n1988 ACJ 445 (Karnataka), the son of the owner of the goods vehicle was accompanying the goods of his father which were being carried in the vehicle when it met with an accident due to the negligence of its driver. The question before the High Court of Karnataka was whether the insurance company was liable to pay compensation for the injury to the son of the owner. It was held that the owner of the vehicle who had the benefit of indemnity was himself not covered and his representative was in no better position unless he be an employee covered by the first proviso to\nSection 95 (1) (b)\n. As there was no finding that the son was an employee of the insured, the High Court confirmed the order of the Tribunal that the son was not entitled to compensation.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P019_C01",
+      "text": "16. Mathew Koshy v. Oriental Insurance Co. Ltd.\n1989 ACJ 21 (Kerala), the owner of an auto-rickshaw fell into a ditch while driving it as the road was defective. He sustained injuries and was unable to move his left hand. He claimed compensation alleging that he had spent certain amounts on medical treatment and due to immobility of his left hand his income is considerably reduced. The insurance company defended the case on the ground that it owed no liability to the insured for the injuries sustained by him. The claim of the insured owner was rejected by the Tribunal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P019_C02",
+      "text": "On appeal the Kerala High Court has held that-\nSection 95 (1) (b) (i)\nof the Act provided that the policy of the insurance must be a policy which insures the person or classes of persons specified in the policy and that a reading of\nSection 95\nwould reveal that the compulsory insurance contemplated under\nSection 95\nof the Act is to indemnify the owner of the vehicle from the liability, if any, but if the owner himself suffers an injury in an accident, he does not acquire any right to get compensation from the insurance company under the policy issued by it which was a contract of indemnity to satisfy the conditions laid down under\nSection 95\nof the Act. It was held that the liability of the insurer depended upon the liability of the insured.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P020_C01",
+      "text": "17. In Oriental Fire & Genl. Ins.\nCo. Ltd. v. Shakuntala Devi\n, the question before the Allahabad High Court was whether the insured (Sic. insurer) was liable to satisfy the claim in respect of death of the owner-insured who himself was driving the vehicle when it met with an accident. The High Court has held that the liability of insurer arises only when the insured incurs any liability and that by his death from his own insured vehicle, the insured has not incurred any liability to pay any damages or compensation to any person. On interpreting the policy it came to the conclusion that the policy indicated that the insurance was in respect of damages to third party and not to the owner-insured of vehicle.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P021_C01",
+      "text": "18. A similar question arose before the Bombay High Court in\nOriental Insurance Co. Ltd. v. Chimajirao Kanhojirao Shirke\n1992 ACJ 452 (Bombay). There also the policy was a comprehensive policy. The owner-insured was having a truck which he was driving at the time when it met with an accident which caused his death. In that case extra premium was paid by the insured and was accepted by the insurance company for unlimited personal injury and property up to Rs. 10,00,000/-. The heirs of the deceased laid a suit before a court which decreed the suit for a sum of Rs. 6,00,000/- and odd. On appeal the Bombay High Court held that the term 'unlimited personal injury' mentioned in the policy on payment of extra premium was in fact for covering risk in excess of statutory liability in regard to third party risks and not the personal injury or death of the insured-owner. The High Court, therefore, set aside the decree granted by the trial court and allowed the appeal.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P022_C01",
+      "text": "19. The learned counsel for the respondents relied on the following judgments- Premier Insurance Co. Ltd., Vijayawada v. Siromanamma AIR 1988 AP 396;\nMinu B. Mehta v. Balkrishna Ramchandra Nayan\n1977 ACJ 118 (SC) and Pushpabai Purshottarn Udeshi v. Ranjit Ginning & Pressing Co. Pvt. Ltd. 1977 ACJ 343 (SC).",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P023_C01",
+      "text": "20. We have gone through these judgments. They do not deal with the question which was debated before us, viz., whether the insurance company is liable to pay compensation to the heirs of the insured-owner of a vehicle in the event of his death in an accident while driving the said vehicle.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P024_C01",
+      "text": "21. From the above discussion, it follows that the liability of the insurance company is to indemnify the insured against the claim of a third party but not to pay compensation for injury or death of the insured-owner of a vehicle who died while driving the vehicle due to accident.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1993_1993_ALL_ANDHRAHC_22_P025_C01",
+      "text": "22. For the above reasons, we set aside the judgment under appeal. The appeal is accordingly allowed, but in the circumstances, we direct the parties to bear their own costs.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1993_1993_ALL_ANDHRAHC_22",
+    "court": "Supreme Court of India",
+    "year": "1993",
+    "facts_summary": "2. One Odeti Bhanu Reddy was the owner of the tractor bearing No. APR 6771 and the trailer APR 6772. While driving the said tractor, on his way to his field, he slipped off the tractor, fell down on the ground and was run over by the tractor. He succumbed to the injuries and died on the spot. The tractor was having valid insurance coverage policy issued by the United India Insurance Co. Ltd., the appellant herein, which was valid from 1.3.1983 to 29.2.1984. The deceased was 48 years old at the time of his death. He was Sarpanch of Bommapur village. By cultivation he was earning Rs. 1,200/- per month. He was survived by the petitioners of whom the petitioner No. 1 is his wife, petitioner Nos. 2 and 3 are his sons and petitioner No. 4 is his daughter. They claimed compensation of Rs. 60,000/- in all under different heads under\nSection 110-A\nof the Motor Vehicles Act (for short 'the Act'). The insurance company resisted the claim on the ground that the policy did not cover the risk of the owner of the tractor. Under Endorsement No. 16 the risk of the driver is covered for the liability arising under the\nWorkmen's Compensation Act\n. It is urged that the term driver in the policy means an employee and not the owner, so the claim for compensation was not maintainable. It is also urged that the owner of the vehicle was a party to the contract with the insurance company under which it undertook to indemnify the owner for the liability arising against him under the terms of the policy",
+    "legal_issues": "5. Mr. S. Hanumaiah, the learned standing counsel for the appellant, contends that neither under\nSections 95\nand\n\nof the Act nor under the policy, the insurance company is liable to pay any compensation to the owner of the vehicle for the personal injuries to him and its obligation is only to indemnify the owner against any liability which arises due to the negligence of the driver, Mr. Ramachandra Rao, the learned counsel for the respondents, on the other hand, contends that the policy, Exh. B-1, is a comprehensive policy and it covers the risk to the owner of the tractor and trailer as the policy mentions that the owner is permitted to drive the vehicle. 19. The learned counsel for the respondents relied on the following judgments- Premier Insurance Co. Ltd., Vijayawada v. Siromanamma AIR 1988 AP 396;\nMinu B. Mehta v. Balkrishna Ramchandra Nayan\n1977 ACJ 118 (SC) and Pushpabai Purshottarn Udeshi v. Ranjit Ginning & Pressing Co. Pvt. Ltd. 1977 ACJ 343 (SC).",
+    "ratio_summary": "1. This appeal is referred to a Division Bench by a learned single Judge of this court as he felt that there is no authoritative pronouncement of this court on the question whether the insurance company is liable to pay compensation to the heirs of the owner of a vehicle who died in an accident while driving the vehicle. 15. M. Akkavva v. New India Assurance Co. Ltd.\n1988 ACJ 445 (Karnataka), the son of the owner of the goods vehicle was accompanying the goods of his father which were being carried in the vehicle when it met with an accident due to the negligence of its driver. The question before the High Court of Karnataka was whether the insurance company was liable to pay compensation for the injury to the son of the owner. It was held that the owner of the vehicle who had the benefit of indemnity was himself not covered and his representative was in no better position unless he be an employee covered by the first proviso to\nSection 95 (1) (b)\n. As there was no finding that the son was an employee of the insured, the High Court confirmed the order of the Tribunal that the son was not entitled to compensation. 17. In Oriental Fire & Genl. Ins.\nCo. Ltd. v. Shakuntala Devi\n, the question before the Allahabad High Court was whether the insured (Sic. insurer) was liable to satisfy the claim in respect of death of the owner-insured who himself was driving the vehicle when it met with an accident. The High Court has held that the liability of insurer arises only when the insured",
+    "final_order": "22. For the above reasons, we set aside the judgment under appeal. The appeal is accordingly allowed, but in the circumstances, we direct the parties to bear their own costs.",
+    "outcome_summary": "Set aside. 22. For the above reasons, we set aside the judgment under appeal. The appeal is accordingly allowed, but in the circumstances, we direct the parties to bear their own costs.",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

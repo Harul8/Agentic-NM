@@ -1,0 +1,81 @@
+{
+  "case_id": "SC_1975_1975_282",
+  "case_name": "Vijay Bahadur Singh vs State Of U.P.",
+  "normalized_case_name": "VIJAY_BAHADUR_SINGH_VS_STATE_OF_U.P.",
+  "court": "Supreme Court of India",
+  "year": "1975",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "21 January 1975",
+  "judges": [
+    "R.S. Sarkaria",
+    "V.R. Krishna Iyer",
+    "JUDGMENT",
+    "V.R. Krishna Iyer, J."
+  ],
+  "author": "V.R. Krishna Iyer",
+  "bench_type": "constitution",
+  "petitioner": "Vijay Bahadur Singh",
+  "respondent": "State Of U.P.",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 3,
+  "cited_by_count": 17,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1975SC1512",
+    "(1975)4SCC113",
+    "1975(7)UJ353(SC)",
+    "AIR 1975 SUPREME COURT 1512",
+    "(1975) 4 SCC 113 1975 SCC(CRI) 367",
+    "1975 SCC(CRI) 367"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1975\\1975_282.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1975_1975_282_P001_C01",
+      "text": "1. The appellant is the owner of a truck UPZ 3653. The vehicle was seized by the police in connection with an offence under\nSections 399\nand\n\n, I.P.C. on December 20/21, 1973. For the release of the truck, the appellant moved the Sub. Divisional Magistrate who had jurisdiction, but that application was rejected. Subsequently, he moved in revision, the Sessions Court for the same relief whereupon the Sessions Judge reported the case for decision of the High Court under\nSection 438\n, Cr.P.C. The High Court, after hearing the parties, directed release of the truck on the appellant furnishing a cash security of Rs. 50,000/ and a personal bond in a sum of Rs. 25,000/ . This order is attacked in the present appeal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1975_1975_282_P002_C01",
+      "text": "2. After bearing counsel, on a suggestion from Court, both sides agree that the interests of justice (that is, the availability of the vehicle at the time of of the trial for purposes of evidence) require that the truck be released to the petitioner on condition that he deposits Rs. 10.000/ in cash before the SubDivisional Magistratr, Gyanpur, and enters into a personal bond for Rs.25,000/-. The release will be on the following conditions :\n(a) that the appellant gives an undertaking that the colour and vital parts of the truck will remain intact as they are; and\n(b) that the vehicle shall be in the control and custody of the appellant and shall not in any manner be alienated by him.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1975_1975_282_P003_C01",
+      "text": "3. If the appellant commits a breach of any of the conditions aforesaid the truck shall be liable to be taken into custody by the police who will preserve it for production in the court in session of the criminal case according to directions from court. Ordered accordingly.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Vijay Bahadur Singh vs State Of U.P.",
+    "case_id": "SC_1975_1975_282",
+    "court": "Supreme Court of India",
+    "year": "1975",
+    "facts_summary": "2. After bearing counsel, on a suggestion from Court, both sides agree that the interests of justice (that is, the availability of the vehicle at the time of of the trial for purposes of evidence) require that the truck be released to the petitioner on condition that he deposits Rs. 10.000/ in cash before the SubDivisional Magistratr, Gyanpur, and enters into a personal bond for Rs.25,000/-. The release will be on the following conditions :\n(a) that the appellant gives an undertaking that the colour and vital parts of the truck will remain intact as they are; and\n(b) that the vehicle shall be in the control and custody of the appellant and shall not in any manner be alienated by him. 3. If the appellant commits a breach of any of the conditions aforesaid the truck shall be liable to be taken into custody by the police who will preserve it for production in the court in session of the criminal case according to directions from court. Ordered accordingly.",
+    "legal_issues": "",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

@@ -1,0 +1,441 @@
+{
+  "case_id": "SC_1990_1990_273",
+  "case_name": "Smt. Azra Fatima vs Union Of India And Others",
+  "normalized_case_name": "SMT._AZRA_FATIMA_VS_UNION_OF_INDIA_AND_OTHERS",
+  "court": "Supreme Court of India",
+  "year": "1990",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "12 July 1990",
+  "judges": [
+    "N.M.  Kasliwal",
+    "B.C.  Ray"
+  ],
+  "author": "N.M.  Kasliwal",
+  "bench_type": "division",
+  "petitioner": "Smt. Azra Fatima",
+  "respondent": "Union Of India And Others",
+  "reporter_citations": [
+    "[1990] 1 SCC 746"
+  ],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 12,
+  "cited_by_count": 20,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1990 AIR 1763",
+    "1990 SCR (3) 268",
+    "AIR 1990 SUPREME COURT 1763",
+    "1991 (1) SCC 76",
+    "1990 CRIAPPR(SC) 320",
+    "1990 UP CRIR 433",
+    "1990 IJR 283",
+    "1991 SCC(CRI) 641",
+    "1990 (3) JT 156",
+    "(1991) 53 ELT 508",
+    "(1991) EASTCRIC 213",
+    "(1990) 2 EFR 477",
+    "(1990) 2 RECCRIR 347",
+    "(1990) 2 ALLCRILR 190",
+    "1990 BOM LR 515"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1990\\1990_273.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1990_1990_273_P001_C01",
+      "text": "CITATION:\n 1990 AIR 1763 1990 SCR (3) 268\n 1990 SCC (1) 76 JT 1990 (3) 156\n 1990 SCALE (2)8",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1990_1990_273_P002_C01",
+      "text": "ACT:\nPrevention of Illicit Traffic in Narcotic Drugs and\nPsychotropic Substances Act, 1988\n:\nSection 3(1)\n,\n3(3)\nand\n10(1)\n--Detention-Communication of grounds--Principle of five\ndays and fifteen days-Inapplicable in respect of declara-\ntion.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1990_1990_273_P003_C01",
+      "text": "HEADNOTE:\n The petitioner filed a writ petition in the High Court\nchallenging the detention of her husband, Syed Ali Raza\nShafiq Mohammed, under\nsection 3(1)\nof the Prevention of\nIllicit Traffic in Narcotic Drugs and Psychotropic Sub-\nstances Act, 1988. The detenu was then already in jail as he\nwas involved in a case under the Act, and his bail applica-\ntion in that case had been rejected. 3\"he Division Bench of\nthe High Court dismissed the writ petition.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1990_1990_273_P003_C02",
+      "text": "Before this Court in the Special Leave Petition it was\ninter-alia contended on behalf of the detenu that: (i) the\nmere possibility of the detenu's release on bail was not\nenough for preventive detention unless there was material to\njustify the apprehension that his detention would be neces-\nsary in order to prevent him from engaging in illicit traf-\nficking in narcotic drugs and psychotropic substances, in\ncase of his release on bail; (ii) the detention orders of\nRai Chand Shah and Jai Lal Vora, who were arrested and\ndetained in the same raid, having been struck down by the\nHigh Court on the ground that the medical report in respect\nof the injuries sustained by Rai Chand Shah was placed in a\ntruncated form before the detaining authority, the detention\norder of the detenu should also be set aside as it suffered\nfrom the same vice; (iii) though the declaration was issued\nunder\nSec. 10(1)\nof the Act on 20.1.1989 but the same was\nserved on the detenu on 10.2.1989 after an unexplained delay\nof 21 days; and (iv) there was in an inordinate and unex-\nplained delay in considering the representations made by the\ndetenu.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1990_1990_273_P003_C03",
+      "text": "On the other hand, it was contended on behalf of the\nrespondents that: (i) it would depend on the facts and\ncircumstances of each case whether a detention order was to\nbe passed or not in case of a person who was already in\ncustody; (ii) the detaining authority could take into ac-\ncount the nature of the antecedent activities of the detenu\nin order to",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1990_1990_273_P004_C01",
+      "text": "arrive at the conclusion that it was likely that after his\nrelease from custody he would indulge in criminal activities\nand it was necessary to detain him in order to prevent him\nfrom engaging in such activities; and (iii) in the present\ncase there was complete awareness in the mind of the detain-\ning authority that if he was released on bail he was likely\nto indulge in the criminal activities. Dismissing the special leave petition, this Court,\n HELD: (1) The material placed before the detaining\nauthority and the facts mentioned in the grounds of deten-\ntion clearly go to show that the detaining authority was\nfully aware that the bail application filed by the detenu\nhad been rejected.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1990_1990_273_P004_C02",
+      "text": "The detaining authority was also con-\nscious of the fact that the two other detenus who were\narrested and detained in the same raid had already been\nreleased on bail. [277B-C]\n (2) The antecedents of the detenu which were clear from\nhis own statement went to show that he was initiated in drug\ntrafficking in 1984 and employed as a delivery hay on Rs.30\nper day and within a short span of four years had himself\nstarted buying and selling Narcotic Drugs and amassed huge\nmovable and immovable properties in Bombay. In the present\nraid itself hereoin and Mandrax tablets worth Rs.\n1,13,42,000 were seized from the ownership and possession of\nthe detenu. [277C-D]\n (3) The detaining authority after taking into consider-\nation the material placed before him, arrived at the conclu-\nsion that the detenu being in judicial custody may under the\nnormal law of the land he granted bail and be in a position\nto continue to pursue his nefarious activities- [277E]\n (4) The detaining authority in these circumstances\nconsidered it necessary to invoke the law of preventive\ndetention under the Act to prevent the detenu from indulging\nin prejudicial activities in future.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1990_1990_273_P004_C03",
+      "text": "In these circumstances,\nit cannot be said that the order of detention was illegal on\nthe ground that it was passed while the detenu was already\nin custody- [277F]\n (5) The facts and circumstances of each case have to be\ntaken into consideration in the context of considering the\norder of detention in the case of a detenu who is already in\njail. [273G]\nN. Meera Rani v. Government of Tamil Nadu, JT (1989) 3 SCR",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1990_1990_273_P005_C01",
+      "text": "478; Dharmendra Sugan Chand Chelwat v. Union of India,\n[1990] 1 SCC 746; Sanjeev Kumar Aggarwal Union of India, JT\n(1990) 2 SCC 62; Smt. Shashi Aggarwal v. State of U.P., JT\n(1988) 1 SC 88 and Ramesh Yadav v. District Magistrate,\nEtah, [1985] 4 SCC 232, referred to. (6) A perusal of the orders of the High Court quashing\nthe detention orders of Rai Chand Shah and Jai Lal Vora\nshows that the basis for the detention orders were their\nconfessional statements. The High Court in this regard had\nobserved that the confessional statement of Rai Chand\nShah--which also formed integral and vital part of the\ngrounds of detention of Jai Lal Vora--being product of\nthreats and injuries sustained by him and further his medi-\ncal report having been placed in truncated form before the\ndetaining authority, their detention became invalid. But, so\nfar as the case of the present detenu is concerned, his\ndetention was based on entirely distinct and separate mate-\nrials including his own confessional statements. The basis\nof the grounds of detention of the present detenu is not\nrounded on the truncated form of medical report of injuries\nsustained by Rai Chand Shah.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1990_1990_273_P005_C02",
+      "text": "Thus the present detenu cannot\ntake advantage of any orders passed by the High Court de-\nclaring detention orders of Rai Chand Shah and Jai Lal Vora\nas illegal. [278A-E]\n (7) So far as the provision of Sub-Sec. (3) of\nSec. 3\nthe Act is concerned, it clearly provides that for the\npurposes of clause (5) of\nArt. 22\nof the Constitution, the\ncommunication to a person detained in pursuance of a deten-\ntion order of the grounds on which the order has been made\nshah be made as soon as may he after the detention, but\nordinarily not later than five days, and in exceptional\ncircumstances and for reasons to be recorded in writing, not\nlater than fifteen days, from the date of detention. This\nprovision thus relates to the communication 01' the grounds\nof detention. [279B-C]\n (8) The principle of five days and fifteen days as\nprovided in Sub-section (3) of\nSection 3\nof the Act relating\nto communication of grounds of detention cannot be applied\nin respect of declaration issued under\nSec. 10(1)\nof the\nAct. [280F]\n (9) There is no force in the contention that there was\nan inordinate delay in considering the representations\nsubmitted by the detenu.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1990_1990_273_P005_C03",
+      "text": "The High Court has given adequate\nand detailed reasons in holding that the delay has been\nexplained by the counter affidavit filed by the respondents.\n[281A-B]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1990_1990_273_P006_C01",
+      "text": "JUDGMENT:\nCRIMINAL APPELLATE JURISDICTION: Special Leave Petition\n(Criminal) No. 2531 of 1989. From the Judgment and Order dated 29.9. 1989 of the\nBombay High Court in Criminal Writ Petition No. 87 of 1989. U.R. Lalit and Mukul Mudgal for the Petitioner. Ashok H. Desai, Solicitor General, Ashok Srivastava and\nMs. Sushma Suri for the Respondents. The Judgment of the Court was delivered by\n KASLIWAL, J- This special leave Petition is directed\nagainst the Judgment of the Bombay High Court dated 29th\nSeptember, 1989 dismissing Criminal Writ Petition No. 87 of\n1989. Syed Ali Raza Shafiq Mohammed was detained by an order\nof detention passed under\nSection 3(1)\nof the Prevention of\nIllicit Traffic in Narcotic Drugs and Psychotropic Sub-\nstances Act, 1988 (hereinafter referred to as the Act) dated\n19.12.88 by the Secretary (II) to the Government of Maha-\nrashtra, Home Department. The detention order and the\ngrounds of detention were given to the detenu on 20th Decem-\nber, 1988. It may be mentioned that on 19.12.88 the detenu\nwas already in jail as his bail application had been reject-\ned.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1990_1990_273_P006_C02",
+      "text": "The wife of the detenu filed a writ petition before the\nBombay High Court challenging the detention of her husband\nSyed Ali Raza Shafiq Mohammed. The Division Bench of the\nHigh Court dismissed the writ petition by order dated 29th\nSeptember, 1989. The wife of the detenu has now filed the\npresent Special Leave Petition aggrieved against the Judg-\nment of the Bombay High Court. Learned counsel for the\npetitioner raised the following submissions before us:\n(1) There were no prospects of the detenu being enlarged\non bail as he was involved in a case under the Act where the\noffence was punishable with minimum sentence of ten years. The bail application filed on behalf of the detenu was\nrejected by the Metropolitan Magistrate and the detenu had\nnot filed any application for bail either in the Sessions\nCourt or in the High Court. (2) That detention orders of Rai Chand Shah and Jai Lal\nVora had already been struck down by the High Court on the",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1990_1990_273_P007_C01",
+      "text": "ground that the medical report in respect of the injury\nsustained by Rai Chand Shah was placed in a truncated form\nbefore the detaining authority. The detention order of the\npresent detenu also suffers from the same vice and as such\nhis order of detention should also be set aside. (3) That a declaration was issued under\nSec. 10 (1)\nthe Act on 20th January, 1989 and the said declaration was\nserved on the detenu after an unexplained delay of 21 days. (4) The detenu submitted a representation on 31.1.89\nwhich was jointly addressed to the Government of Maharashtra\nand the Government of India and the Hon'ble Advisory Board\nfor revocation of the impugned order of detention. The State\nGovernment rejected the representation by its reply dated\n21.2.89 and the Central Government by its reply dated\n3.3.89. Thus there was an inordinate and unexplained delay\nin considering the said representations of the detenu and\nthis violated the right of the detenu under\nArt. 22(5)\nthe Constitution of India. The order of detention is illegal\non this count also. We shall deal with the above contentions seriatem.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1990_1990_273_P007_C02",
+      "text": "With\nregard to the first contention it was submitted by the\nlearned counsel that the detenu was already in custody and\nhis bail application had also been rejected and there was no\nlikelihood of the detenu being released on bail in respect\nof the alleged offence under the Act where the minimum\nsentence of imprisonment was ten years. It was submitted\nthat the mere possibility of his release on bail was not\nenough for preventive detention unless there was material to\njustify the apprehension that the detention would be neces-\nsary in order to prevent him from engaging in illicit traf-\nfic in narcotic drugs and psychotropic substances, in case\nof his release on bail. A mere possibility of release on\nbail and a bald statement that the detenu would repeat his\ncriminal activities was alone not sufficient to sustain the\norder of detention. It was further contended that the de-\ntaining authority did not apply its mind to this aspect of\nthe matter, that the detenu was already in custody and his\nbail application having been rejected there was no possibil-\nity of his being released on bail in a serious offence under\nthe Act.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1990_1990_273_P007_C03",
+      "text": "Reliance in support of the above contention was\nplaced on recent decisions of this Court in\nN. Meera Rani v. Government of Tamil Nadu & Anr., JT\n1989 (3) SC 478 and\nDharmendra Sugan Chand Chelwat. v. Union of India & Ors.,\n[1990] 1 SCC 746.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1990_1990_273_P008_C01",
+      "text": "On the other hand Learned,Solicitor General contended\nthat it would depend on the facts and circumstances of each\ncase whether a detention order is to be passed or not in\ncase of a person who was already in custody. An order of\ndetention can be validly passed against a person in custody\nwhere the detaining authority was already aware of such\nfacts and it is satisfied that the detenu is likely to be\nreleased from custody in the near future. The detaining\nauthority can take into account the nature of the antecedent\nactivities of the detenu in order to arrive to the conclu-\nsion that it is likely mat after his release from custody he\n'would indulge in criminal activities and it was necessary\nto detain him in order to prevent him from engaging in such\nactivities in the present case there was complete awareness\nin the mind of the detaining authority about the detenu\nbeing in custody and that if he is released on bail he is\nlikely to indulge in the criminal activities.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1990_1990_273_P008_C02",
+      "text": "The detaining\nauthority was not only aware that the detenu was in jail but\nalso noted the circumstances on the basis of which he was\nsatisfied that the detenu was likely to come out on bail and\ncontinue to engage himself in the criminal activities. It\nwas submitted that the High Court has considered this aspect\nof the case and has given detailed reasons for upholding the\norder of detention and there is no ground or justification\nfor interfering in the order of the High Court. Reliance in\nsupport of the above contention was placed on San jeer Kumar\nAggarwal v. Union of India & Ors., JT [1990] 2 SC 62. We have given our thoughtful consideration to the argu-\nments advanced by Learned counsel for the parties on the\nabove point. The latest decision of this Court on the above\npoint is\nSanjeev Kumar Aggarwal v. Union of India & Ors.\n,\n(supra) decided on 4th April, 1990 in which all the earlier\ncases decided by this Court have been considered including\nthe-cases of N. Meera Rani v. Dharmendra Sugan Chand Chelwat\n(supra) on which reliance has been placed by the Learned\ncounsel for the petitioner.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1990_1990_273_P008_C03",
+      "text": "It was observed in\nSanjeev Kumar\nAggarwal\n's case that no decision of this court has gone to\nthe extent of holding that no order of detention can validly\nbe passed against a person in custody under any circum-\nstances. Therefore, the facts and circumstances of each case\nhave to be taken into consideration in the context of con-\nsidering the order of detention in the case of a detenu who\nis already in jail. The counsel for the detenu\nthe above\ncase\nstrongly relied on Smt. Shashi Aggarwal v. State of\nU.P. & Ors., JT [1988] 1\nSC 88 and Ramesh Yadav v. District\nMagistrate, Etah & Ors.\n, [1985] 4 SCC 232 and contended that\nthe bail application could be opposed if moved or if en-\nlarged the same can be questioned in a higher court and on\nthat ground the detention order should be held to be",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1990_1990_273_P009_C01",
+      "text": "invalid. The Court negatived the above contention by observ-\ning that in\nN. Meera Rani\n's case a Bench of three Judges\nnoted the above observations in Smt. Shashi Aggarwal's case\nand\nRamesh Yadav\n's case and it was said that they were made\non the facts of those particular cases. The\nCourt further\nheld\nthe above case\nthat on the material relied upon by\nthe detaining authority it could not be said that there was\nno awareness in the mind of the detaining authority about\nthe detenu being in custody and that if he is released on\nbail he is likely to indulge in the prejudicial activities. If we examine the facts of the case before us as stated\nin the grounds of detention it would be clear that on the\nbasis of specific information officers of the Narcotics\nControl Bureau, Bombay searched room No. G-2, Purab Paschim\nApartments, Gilbert Hill Road, Munshi Nagar, Andheri (West),\nBombay-58 and recovered 56 Kgs. 650 gms. of Heroin (33 Kgs.\n150 gms. white and 23 kgs. 500 gms. brown) and 4000 Mandrax\nTablets (Methaeualone) totally valued at Rs. 1, 13,42000 on\n21.10.88. One Mr. Syed Asgar Ali was found in the room.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1990_1990_273_P009_C02",
+      "text": "During the\ncourse of the search another person named Abdul Sattar Abdul\nSamad came on Motorcycle No. BLC 7768 Make Hero Honda and\nentered into the premises. Thereafter, two more persons came\ninto the premises who gave their names as Ali Raza Shafiq\nMohamed (detenu in the present case) and Thakur Singh. The\nOfficers also searched and seized a Bajaj Scooter MAQ 169,\nthe Motorcycle No. BLC 7768 and Fiat Car No. MMH 4348 which\nwere parked in the compound of the said society. According\nto the present detenu the said three vehicles belonging to\nhim were used for transportation of Narcotic Drugs. Telephone No. 6288769 was found installed in the prem-\nises. It was subscribed by one Shirish Parikh K. 18 Azad\nNagar Society, Juhu Scheme, Road No. 7, Bombay-56. The\ndetenu disclosed that he was living in Flat No. 15, 4th\nFloor, Chandra Co-op. Housing Society Ltd. Dawood Baug,\nAndheri, Bombay-58, which was also searched on 21.10.88 but\nnothing incriminating was found in the flat. Telephone No.\n6284105 was found installed there, which is subscribed by\nthe detenu.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1990_1990_273_P009_C03",
+      "text": "The detenu also disclosed that he was having two\nshops (i) M/s Ali Decorators, G-I, Parag Niketan, 10th Road,\nJuhu, Bombay400 049 (ii) M/s Ali Decorators, Shop No. 9, A-\nWing, Twin Tower, Lokhandwala Complex, Andheri (West),\nBombay-58 both of which were searched on 21.10.88 and some\ndocuments were seized from the former shop. Nothing was\nseized from the 2nd shop.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1990_1990_273_P010_C01",
+      "text": "The statements of the detenu were recorded on 21.10.88,\n22.10.88 and 7.11.88 under\nSection 67\nof the NDPS Act, 1985.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1990_1990_273_P010_C02",
+      "text": "With regard to the statement given by the detenu on 21.10.88\nit was mentioned as under in the grounds of detention.\n\"In your statement of 21.10.88 you inter-alia, stated that\nyou have a business of Video Libraries and Marriage decora-\ntions; that you own the property and vehicles mentioned\nabove; that you were initiated into drug trafficking some\ntime in 1984 by one Anwar, owner of Anwar Star Petrol Pump\nCrawford Market, that in the beginning you were employed as\na delivery boy on a compensation of Rs.30 per day; that you\nused to deliver Heroin to customers on the road side; that\nafter sometime you started procuring Heroin from Pathans and\nrepacking it in small packets and you used to store it in\npublic toilets with the help of Municipal Sweepers and sell\nthe same: that you used to buy heroin for Rs. 16,000 to\n20,000 and sell it for RS. 18,000 to 25,000 per K.g. that\nyou were making a profit of Rs.4,000 to 5,000 that your main\nselling points were Colaba and Nariman Point; that there\nwere a number of brokers hovering around the above places\nwho contact the customers; that you gave samples to brokers\nwho showed them to the customers; that if a sample was\napproved and the price",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1990_1990_273_P010_C03",
+      "text": "agreeable, then you used to ask the\npurchaser to meet you at some point in Juhu or Andheri or\nsome other places, that you used to pick up the required\nquantity of Heroin and deliver it to the customer and col-\nlect the money; that initially you were storing the Heroin\nin your flat and later on you used to store it in the said\nroom No.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1990_1990_273_P010_C04",
+      "text": "G/2, Purab Aur Paschim Apartments, Gilbert Hill\nRoad, Andheri (W), Bombay-58. As regards the source of the\nHeroin and Mandrax tablets you stated that you acquired 29\nkgs. of white Hereoin in instalment from one Mangal Pandey\nof Banaras and the remaining white hereoin from one Raichand\nChandmal Shah, that 25 kgs. of Brown Heroin was purchased\nfrom one Asgar of Phulgalli, Bhendi Bazar who has since\ndied; that you did not know the address of Mangal Pandey,\nthat you purchased the Heroin on credit; that over the last\nabout 31/2 years you must have sold 300 kgs. of Heroin that\nall the movable and immovable property acquired by you has\nbeen purchased from the profits from drug trafficking; that\nyour income from legal business",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1990_1990_273_P011_C01",
+      "text": "of Video library and decoration is about Rs.2,000 per\nmonth.\"\nThe statement recorded on 22.10.88 as mentioned in the\ngrounds of detention is reproduced as under:\n\"In your next statement of 22.10.88 you stated that because\nyou had to make 3-4 trips to your native place and that was\nthe reason why such a large quantity of heroin was lying\nwith you; that you were keeping one car and two wheeler\nbecause you required them for transporting/selling of Man-\ndrax tablets and it is advisable to use different vehicles\nin this business; you further stated that Abdul Sattar and\nyour brother Syed Asghar Ali were not involved in this\nbusiness and that they did not know that you are dealing in\nheroin; they were present in the room where heroin was\nseized on 21.10.88; because you had sent them to supervise\nmasonry work\"\nThe detaining authority further made the following\nobservations in the grounds of detention:\n\"You were arrested on 22.10.88 and produced before the\nAdditional Chief Metropolitan Magistrate (Holiday Court) on\n23.10.88 who remanded you to Judicial Custody till 4.11.88\nwhich was extended from time to time.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1990_1990_273_P011_C02",
+      "text": "You also filed appli-\ncation for bail on 21.11.88 which was rejected by the AddI. Chief Metropolitan Magistrate, 8th Court, Bombay. It may be further important. to note that in the grounds\nof detention the detaining authority had noted that the\nother detenus Shri Raichand Shah and Sh. Jailal Keshavlal\nVora were already released on bail on 18.11.88 on furnishing\na bail for an amount of Rs. 1,50,000 each in cash. After\ntaking note of all the above circumstances the detaining\nauthority made the following observations in respect of the\ndetenu having a likelihood of being released on bail:\n\"It is clear that there is a ring of traffickers in heroin\nand Mandrax tablets in Bombay and you are a part of the ring\nand you have been habitually engaging yourself in posses-\nsion, sale, purchase, transportation and storage of narcotic\ndrugs and Psychotropic substances. 1 am aware that you",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1990_1990_273_P012_C01",
+      "text": "are still in judicial custody but I am also aware that under\nthe normal law of the land you may be granted bail and be in\na position to continue to pursue your nefarious activities. I, therefore, consider it necessary to invoke the\nlaw of preventive detention and detain you under the PIINDPS\nAct, 1988 to prevent you from indulging in such prejudicial\nactivities in future.\"\nThus the material placed before the detaining authority\nand the facts mentioned in the grounds of detention clearly\ngo to show that the detaining authority was fully aware that\nthe bail application filed by the detenu had been rejected\nby the Additional Chief Metropolitan Magistrate 8th Court,\nBombay- The detaining authority was also conscious of the\nfact that the two other detenus who were arrested and de-\ntained in the same raid had already been released on bail. The antecedents of the detenu which were clear from his own\nstatement went to show that he was initiated in drug traf-\nficking in 1984 and employed as a delivery boy on Rs.30 per\nday Within a short span of four years the detenu himself\nstarted buying and selling Narcotic Drugs and amassed huge\nmovable and immovable properties in Bombay.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1990_1990_273_P012_C02",
+      "text": "In the present\nraid itself heroin and Mandrax tablets worth Rs. 1, 13,42000\nwere seized from the ownership and possession of the detenu. Not only that the detenu was using three vehicles for trans-\nportation of these Narcotic drugs. The detaining authority\nafter taking into consideration the above materials placed\nbefore him, arrived to the conclusion that the detenu being\nin judicial custody may under the normal law of the land be\ngranted bail and be in a position to continue to pursue his\nnefarious activities. The detaining authority in these\ncircumstances considered it necessary to invoke the law of\npreventive detention under the Act to prevent the detenu\nfrom indulging in his prejudicial activities in future.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1990_1990_273_P012_C03",
+      "text": "these circumstances it cannot be said that the order of\ndetention was illegal on the ground that it was passed while\nthe detenu was already in custody\n It was next contended on behalf of the petitioner that\nthe detention orders of Rai Chand Chandmal Shah and Jai lal\nKeshavlal Vora had already been struck down by the High\nCourt on the ground that the medical report in respect of\nthe injury sustained by Rai Chand Shah was placed in a\ntruncated form before the detaining authority. It was thus\nargued that the detention order of the present detenu also\nsuffers from the same vice and as such his order of deten-\ntion should also be set aside.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1990_1990_273_P013_C01",
+      "text": "We see no force in this' contention. We have perused the\norders of the High Court quashing the detention orders of\nRai Chand Shah and Jai Lal Vora. A perusal of the orders of\nthe High Court shows that the basis for the detention orders\nof Rai Chand Shah and Jai Lal Vora were their confessional\nstatements. It was alleged before the High Court that Rai\nChand Shah was given a severe beating on account of which he\nsustained serious injuries and as such his alleged confes-\nsional statement should not have been made a ground of\ndetention. The High Court in this regard observed that the\nconfessional statement of Rai Chand Shah being product of\nthreats and injuries sustained by him and his medical report\nhaving been placed in truncated form before the detaining\nauthority, the certificate showing injuries in detail not\nhaving been placed before the detaining authority by the\nsponsoring authority, the detention became invalid.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1990_1990_273_P013_C02",
+      "text": "Now so\nfar as Jai Lal Keshav Lal Vora is concerned the High Court\ntook the view that the statements of Rai Chand Shah formed\nintegral and vital part of the grounds of detention of Jai\nLal Vora and if such important and vital part of the materi-\nal is obliterated and excluded it is not possible to say\nthat the remaining material is ample and more than suffi-\ncient to justify the detention of Jai Lal K. Vora. The\ndetention order of Jai Lal K. Vora was also declared ille-\ngal. Now so far as the case of the present detenu Syed Ali\nRaza Shafiq Mohd. is concerned as already mentioned above\nhis detention is based on entirely distinct and separate\nmaterials including his own confessional statements. The\nbasis of the grounds of detention of the present detenu is\nnot rounded on the truncated form of medical report of\ninjuries sustained by Rai Chand Shah. At the most it can be\nconsidered as a supplementary kind of material for the\ndetention order of the present detenu. Thus the present\ndetenu cannot take advantage of any orders passed by the\nHigh Court declaring the detention orders of Rai Chand Shah\nand Jai Lal K. Vora as illegal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1990_1990_273_P013_C03",
+      "text": "It was next contended on behalf of the petitioner that\nthough a declaration was issued under\nSec. 10(1)\nof the Act\non 20th January, 1989 but the same was served on the detenu\non 10.2.89 after an unexplained delay of 21 days. It was\nvehemently contended on behalf of the detenu that the detenu\nought to have been served with the declaration as soon as\nmay be after the issue of such declaration, but ordinarily\nnot later than 5 days and in case it was not done within\nfive days then reasons ought to have been recorded in writ-\ning for explaining the delay and that also could not have\nbeen later than 15 days in any case. Learned Counsel in this\nregard submitted that under clause (5) of\nArt. 22\nof the\nConstitution a right is guaranteed to the detenu to afford\nan earliest opportunity of making a representation against\nthe order of",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1990_1990_273_P014_C01",
+      "text": "detention. It was contended that when the liberty of a\ncitizen is taken away he ought to be afforded an opportunity\nof making representation at the earliest and the provisions\ncontained in Sub-Sec. (3) of\nSec. 3\nof the Act should in\nterms also apply in the case of communicating the declara-\ntion issued under\nSec. 10(1)\nof the Act. We see no force in the above contention. So far as the\nprovision of Sub-Sec. (3) of\nSec. 3\nof the Act is concerned\nit clearly provides that for the purposes of clause (5) of\nArt. 22\nof the Constitution, the communication to a person\ndetained in persuance of a detention order of the grounds on\nwhich the order has been made shah be made as soon as may be\nafter the detention, but ordinarily not later than five\ndays, and in exceptional circumstances and for reasons to be\nrecorded in writing, not later than fifteen days, from the\ndate of detention. This provision thus relates to the commu-\nnication of the grounds of detention.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1990_1990_273_P014_C02",
+      "text": "In the case before us\nthe grounds of detention were admittedly communicated on\n20th December, 1988, while the detention order was of\n19.12.88- Thus there is full compliance of the above provi-\nsion and the order of detention cannot be challenged on this\nground. Now so far as the guarantee under Clause (5) of\nArt.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1990_1990_273_P015_C01",
+      "text": "of the Constitution is concerned there can be no manner\nof doubt that the person detained under any law of preven-\ntive detention ought to be communicated the grounds on which\nthe order has been made so as to afford him the earliest\nopportunity of making a representation against the order. The detenu was served with the grounds of detention on 20th\nDecember, 1988 and the detenu had full and ample opportunity\nto make a representation against the detention order. Sub-\nSec.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1990_1990_273_P015_C02",
+      "text": "(1) of\nSec. 10\nof the Act reads as under:\n\"Notwithstanding anything contained in this Act, any person\n(including a foreigner) in respect of whom an order of\ndetention is made under this Act at any time before the 31st\nday of July, 1990, may be detained without obtaining, in\naccordance with the provisions of sub-clause (a) of clause\n(4) of\nArt. 22\nof the Constitution, the opinion of an Advi-\nsory Board for a period longer than three months but not\nexceeding six months from the date of his detention, where\nthe order of detention has been made against such person\nwith a view to preventing him from engaging in illicit\ntraffic in narcotic drugs and psychotropic substances, and\nthe Central Government or any officer of the Central Govern-\nment, not below the rank of an Additional Secretary to that\nGovernment, specially empowered for the",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1990_1990_273_P016_C01",
+      "text": "purposes of this section by that Government, specially\nempowered for the purposes of this section by that Govern-\nment, is satisfied that such person engages or is likely to\nengage in illicit traffic in narcotic drugs and psychotropic\nsubstances into, out of, through or within any area highly\nvulnerable to such illicit traffic and makes a declaration\nto that effect within five weeks of the detention of such\nperson.\"\nIn the counter affidavit filed before this Court it has\nbeen stated in para (L) as under:\n\"Regarding the declaration, it may be stated that the same\nwas dispatched by the Ministry of Finance on 20.1.1989 to\nthe Home Secretary, Government of Maharashtra, Bombay,\nMaharashtra Government forwarded it to NCB, Bombay which was\nreceived in the NCS office on 1.2.89 from the State Govern-\nment. It was then sent for translation, 4th and 5th Febru-\nary, being holidays (being Saturday and Sunday) the declara-\ntion was dispatched on 6.2.89.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1990_1990_273_P016_C02",
+      "text": "It was received by the Jail\nauthorities on 10.2.1989 and served on the detenu same day.\"\nThus the declaration had been made in this case on 20.1.89\nby the Ministry of Finance within the statutory period of\nfive weeks of the detention and the period taken in serving\nthe same on the detenu on 10.2.89 has been sufficiently\nexplained. The detenu was lodged in Central Prison Bombay\nand the Advisory Board had fixed a date on 23.2.89 and as\nsuch the detenu had ample opportunity to challenge the\ndeclaration. The High Court has also gone in detail in\ndealing with this aspect of the matter, and we agree with\nthe finding recorded by the High Court. The principle of\nfive days and fifteen days as provided in Sub-Section (3) of\nSection 3\nrelating to communication of grounds of detention\ncannot be applied in respect of declaration issued under\nSec. 10(1)\nof the Act. In the facts and circumstances of\nthis case we are fully satisfied that the detenu has not\nbeen denied any opportunity of making any effective repre-\nsentation against the declaration issued under\nSec. 10(1)\nthe Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1990_1990_273_P016_C03",
+      "text": "The last submission made on behalf of the detenu is that\nthe detenu had submitted a representation on 31.1.89 jointly\naddressed to the Government of Maharashtra, the Government\nof India and the Advisory Board. The State Government re-\njected the representation",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1990_1990_273_P017_C01",
+      "text": "by its reply dated 21.2.89 and the Central Government by its\nreply dated 3.3.89. It was thus contended that there was an\ninordinate and unexplained delay in considering the said\nrepresentations and this is violative of the right of the\ndetenu conferred under Clause (5) of\nArt. 22\nof the Consti-\ntution- The point should not detain us any longer as we\nfully agree with the finding of the High Court, recorded in\nthis regard. The High Court has given adequate and detailed\nreasons in holding that the delay has been explained by the\ncounter affidavit filed by the respondents. Thus we find no\nforce in this ground of the detenu that his representations\nwere disposed of after an inordinate and unexplained delay.\n As a result of the above discussion, we find no force in\nthis\npetition and it is accordingly dismissed.\nPetition dismissed.\nR.S.S.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Smt. Azra Fatima vs Union Of India And Others",
+    "case_id": "SC_1990_1990_273",
+    "court": "Supreme Court of India",
+    "year": "1990",
+    "facts_summary": "ACT:\nPrevention of Illicit Traffic in Narcotic Drugs and\nPsychotropic Substances Act, 1988\n:\nSection 3(1)\n,\n3(3)\nand\n10(1)\n--Detention-Communication of grounds--Principle of five\ndays and fifteen days-Inapplicable in respect of declara-\ntion. HEADNOTE:\n The petitioner filed a writ petition in the High Court\nchallenging the detention of her husband, Syed Ali Raza\nShafiq Mohammed, under\nsection 3(1)\nof the Prevention of\nIllicit Traffic in Narcotic Drugs and Psychotropic Sub-\nstances Act, 1988. The detenu was then already in jail as he\nwas involved in a case under the Act, and his bail applica-\ntion in that case had been rejected. 3\"he Division Bench of\nthe High Court dismissed the writ petition. arrive at the conclusion that it was likely that after his\nrelease from custody he would indulge in criminal activities\nand it was necessary to detain him in order to prevent him\nfrom engaging in such activities; and (iii) in the present\ncase there was complete awareness in the mind of the detain-\ning authority that if he was released on bail he was likely\nto indulge in the criminal activities. Dismissing the special leave petition, this Court,\n HELD: (1) The material placed before the detaining\nauthority and the facts mentioned in the grounds of deten-\ntion clearly go to show that the detaining authority was\nfully aware that the bail application filed by the detenu\nhad been rejected.",
+    "legal_issues": "Before this Court in the Special Leave Petition it was\ninter-alia contended on behalf of the detenu that: (i) the\nmere possibility of the detenu's release on bail was not\nenough for preventive detention unless there was material to\njustify the apprehension that his detention would be neces-\nsary in order to prevent him from engaging in illicit traf-\nficking in narcotic drugs and psychotropic substances, in\ncase of his release on bail; (ii) the detention orders of\nRai Chand Shah and Jai Lal Vora, who were arrested and\ndetained in the same raid, having been struck down by the\nHigh Court on the ground that the medical report in respect\nof the injuries sustained by Rai Chand Shah was placed in a\ntruncated form before the detaining authority, the detention\norder of the detenu should also be set aside as it suffered\nfrom the same vice; (iii) though the declaration was issued\nunder\nSec. 10(1)\nof the Act on 20.1.1989 but the same was\nserved on the detenu on 10.2.1989 after an unexplained delay\nof 21 days; and (iv) there was in an inordinate and unex-\nplained delay in considering the representations made by the\ndetenu. On the other hand, it was contended on behalf of the\nrespondents that: (i) it would depend on the facts and\ncircumstances of each case whether a detention order was to\nbe passed or not in case of a person who was already in\ncustody; (ii) the detaining authority could take into ac-\ncount the nature of the antecedent activities of the detenu\nin order to JUDGMENT:\nCRIMINAL",
+    "ratio_summary": "",
+    "final_order": "by its reply dated 21.2.89 and the Central Government by its\nreply dated 3.3.89. It was thus contended that there was an\ninordinate and unexplained delay in considering the said\nrepresentations and this is violative of the right of the\ndetenu conferred under Clause (5) of\nArt. 22\nof the Consti-\ntution- The point should not detain us any longer as we\nfully agree with the finding of the High Court, recorded in\nthis regard. The High Court has given adequate and detailed\nreasons in holding that the delay has been explained by the\ncounter affidavit filed by the respondents. Thus we find no\nforce in this ground of the detenu that his representations\nwere disposed of after an inordinate and unexplained delay.\n As a result of the above discussion, we find no force in\nthis\npetition and it is accord",
+    "outcome_summary": "Dismissed. by its reply dated 21.2.89 and the Central Government by its\nreply dated 3.3.89. It was thus contended that there was an\ninordinate and unexplained delay in considering the said\nrepresentations and this is violative of the right of the\ndetenu conferred under Clause (5) of\nArt. 22\nof the Consti-\ntuti",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

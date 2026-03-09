@@ -1,0 +1,119 @@
+{
+  "case_id": "SC_1971_1971_305",
+  "case_name": "State Of West Bengal vs North Adjai Coal Co. Ltd.",
+  "normalized_case_name": "STATE_OF_WEST_BENGAL_VS_NORTH_ADJAI_COAL_CO._LTD.",
+  "court": "Supreme Court of India",
+  "year": "1971",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "8 January 1971",
+  "judges": [
+    "J.C. Shah",
+    "A.N. Grover",
+    "K.S. Hegde",
+    "JUDGMENT",
+    "J.C. Shah, C.J."
+  ],
+  "author": "J.C. Shah",
+  "bench_type": "constitution",
+  "petitioner": "State Of West Bengal",
+  "respondent": "North Adjai Coal Co. Ltd.",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 4,
+  "cited_by_count": 29,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "(1971)1SCC309",
+    "[1971]27STC268(SC)",
+    "AIRONLINE 1971 SC 24"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1971\\1971_305.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1971_1971_305_P001_C01",
+      "text": "1. Section 5(2)(a)(v) of the Bengal Finance (Sales Tax) Act, 1941, provides :\n(2) In this Act the expression 'taxable turnover' means in the case of a dealer who is liable to pay tax under Section 4 or under Sub-section (3) of Section 8, that part of his gross turnover during any period which remains after deducting there from\n(a) his turnover during that period on....\n(v) sales of goods which are shown to the satisfaction of the Commissioner not to have taken place in West Bengal, or to have taken place in the course of inter-State trade or commerce, within the meaning of\nSection 3\nof the Central Sales Tax Act, 1956, or in the course of import of the goods into, or export of the goods out of, the territory of India, within the meaning of\nSection 5\nof that Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1971_1971_305_P002_C01",
+      "text": "2. The respondent-company carries on the business of a colliery. Pursuant to an agreement between the Government of India and the Government of Pakistan, the former agreed to release certain quantities of coal for consumption in East Pakistan. The respondent-company delivered coal to the Fuel Inspector, Eastern Bengal Railway, East Pakistan, of the total value of Rs. 88,929-10-0. In respect of this supply of coal, bills were drawn by the respondent in the name of the Deputy Coal Commissioner (P), Ministry of Steel and Mines, Government of India. Under an arrangement between the Government of India and the Government of Pakistan, the price of coal so supplied was to be realized by the Government of India from the Government of Pakistan. In respect of this supply, the tax authorities of the State of West Bengal levied sales tax under the Bengal Finance (Sales Tax) Act, 1941. The contention raised by the respondent-company that it was exempt from liability to pay sales tax under\nSection 5(2)(a)(v)\nwas rejected by the Sales Tax Officer and by the Deputy Commissioner in appeal.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1971_1971_305_P002_C02",
+      "text": "Without invoking the revisional jurisdiction of the Board of Revenue, the respondent moved a petition before the High Court of Calcutta under\nArticle 226\n, challenging the levy. The petition filed by the respondent was dismissed by a Single Judge, but on appeal under the Letters Patent, the claim was allowed and the High Court declared that the respondent was exempt from liability to pay sales tax in respect of coal supplied to the Government of Pakistan. Against that order of the High Court, this appeal has been filed by the State of West Bengal.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1971_1971_305_P003_C01",
+      "text": "3. It is urged in the first instance that the High Court was incompetent to entertain the writ petition because the respondent had failed to exhaust the statutory remedies permissible under the Bengal Finance (Sales Tax) Act. It was submitted that a revision application lay to the Board of Revenue, and without moving the Board of Revenue, the respondent could not file a petition before the High Court. There is no substance in this contention. It is true that normally before a petition under\nArticle 226\nof the Constitution is entertained, the High Court would insist that the party aggrieved by the order of a quasi-judicial tribunal should have recourse to the statutory authorities, which have power to give relief. But that is a rule of practice and not of jurisdiction. In appropriate cases, the High Court may entertain a petition even if the aggrieved party has not exhausted the remedies available under a statute before the departmental authorities.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1971_1971_305_P003_C02",
+      "text": "In the present case, in the view of the High Court a case was made out for its interference with the order passed by the Deputy Commissioner, and we see no reason to hold that the High Court had not properly exercised jurisdiction in this case. The facts were apparently not in dispute, and the only question was whether in the facts and circumstances of the case, the respondents were entitled to the exemption claimed by them. In the circumstances the High Court cannot be said to have acted improperly in entertaining the petition.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1971_1971_305_P004_C01",
+      "text": "4. It was then urged that there was no contract of sale between the respondent and the Pakistan Government, and that there was a contract between the Government of India and the respondent, and, on that account, the respondent was not entitled to the exemption claimed. It is difficult to appreciate the argument. The questions in dispute were whether there was a sale, and if so, whether the sale was exempt from liability to pay tax. Without deciding whether there was a sale by the respondent to the Government of India or to the Government of Pakistan, it is sufficient for the purpose of this case to observe that the sale if any was by virtue of\nSection 5(2)(a)(v)\nexempt from liability to sales tax under the Bengal Finance (Sales Tax) Act, for it was a sale in the course of export. No argument was advanced before us which would justify us in taking a different view.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1971_1971_305_P005_C01",
+      "text": "5. The appeal, therefore, fails and is dismissed. The respondents have not appeared. There will be no order as to costs.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "State Of West Bengal vs North Adjai Coal Co. Ltd.",
+    "case_id": "SC_1971_1971_305",
+    "court": "Supreme Court of India",
+    "year": "1971",
+    "facts_summary": "2. The respondent-company carries on the business of a colliery. Pursuant to an agreement between the Government of India and the Government of Pakistan, the former agreed to release certain quantities of coal for consumption in East Pakistan. The respondent-company delivered coal to the Fuel Inspector, Eastern Bengal Railway, East Pakistan, of the total value of Rs. 88,929-10-0. In respect of this supply of coal, bills were drawn by the respondent in the name of the Deputy Coal Commissioner (P), Ministry of Steel and Mines, Government of India. Under an arrangement between the Government of India and the Government of Pakistan, the price of coal so supplied was to be realized by the Government of India from the Government of Pakistan. In respect of this supply, the tax authorities of the State of West Bengal levied sales tax under the Bengal Finance (Sales Tax) Act, 1941. The contention raised by the respondent-company that it was exempt from liability to pay sales tax under\nSection 5(2)(a)(v)\nwas rejected by the Sales Tax Officer and by the Deputy Commissioner in appeal. Without invoking the revisional jurisdiction of the Board of Revenue, the respondent moved a petition before the High Court of Calcutta under\nArticle 226\n, challenging the levy. The petition filed by the respondent was dismissed by a Single Judge, but on appeal under the Letters Patent, the claim was allowed and the High Court declared that the respondent was exempt from liability to pay sales tax in respec",
+    "legal_issues": "3. It is urged in the first instance that the High Court was incompetent to entertain the writ petition because the respondent had failed to exhaust the statutory remedies permissible under the Bengal Finance (Sales Tax) Act. It was submitted that a revision application lay to the Board of Revenue, and without moving the Board of Revenue, the respondent could not file a petition before the High Court. There is no substance in this contention. It is true that normally before a petition under\nArticle 226\nof the Constitution is entertained, the High Court would insist that the party aggrieved by the order of a quasi-judicial tribunal should have recourse to the statutory authorities, which have power to give relief. But that is a rule of practice and not of jurisdiction. In appropriate cases, the High Court may entertain a petition even if the aggrieved party has not exhausted the remedies available under a statute before the departmental authorities.",
+    "ratio_summary": "",
+    "final_order": "5. The appeal, therefore, fails and is dismissed. The respondents have not appeared. There will be no order as to costs.",
+    "outcome_summary": "5. The appeal, therefore, fails and is dismissed. The respondents have not appeared. There will be no order as to costs.",
+    "sections_cited": [
+      "Constitution 226"
+    ],
+    "cases_cited": []
+  }
+}

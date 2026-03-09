@@ -1,0 +1,663 @@
+{
+  "case_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1962",
+  "judgment_template": null,
+  "case_number": "Petition 32 of 1956",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 21,
+  "cited_by_count": 3,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1962\\1962_ALL_AndhraHC_26.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P001_C01",
+      "text": "State Of Andhra Pradesh vs Mothey Gangaraju on 9 February, 1962\nEquivalent citations: [1963]14STC112(AP)\nJUDGMENT\n\nVenkatesam, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P002_C01",
+      "text": "1. The question falling for determination in this second appeal is, whether an assessee is entitled to claim interest on sales tax collected from him under an assessment which has been declared to be illegal.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P003_C01",
+      "text": "2. The respondents in this case are a registered firm carrying on business as commission agents. On its turnover for the year 1945-46, the Commercial Tax Authorities levied sales tax amounting to Rs. 7,248-6-2. The respondents thereupon, filed O.S. No. 80 of 1950 on 19th September, 1947, in the District Court, Eluru, for a declaration that the said assessment was illegal, and for a permanent injunction restraining the State from collecting the same. The suit was transferred to the Subordinate Judge's Court, Eluru, and numbered as 0. S. No. in of 1952. During the pendency of the suit, the tax was collected by the department on 26th September, 1949, under threat of coercive process. The Subordinate Judge's Court granted a decree with costs on 25th February, 1954, in favour of the respondent, declaring the levy of the tax as illegal, and giving him liberty to take the necessary action for its recovery from the Government, if it is not paid otherwise. The respondent demanded the refund of the tax collected from him, but the Government repaid only the principal amount with interest from the date of the judgment (i.e., 25th February, 1954).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P003_C02",
+      "text": "This suit was therefore laid for recovery of interest on Rs. 7,248-6-2 from the date of collection (26th September, 1949) till the date of judgment (25th February, 1954) at six per cent. per annum.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P004_C01",
+      "text": "3. The suit was resisted by the State, contending that the appellant was not entitled to recover interest as there was no wrongful withholding of the amount after it was declared that the levy was illegal, and also on the ground that the claim of the appellant was barred by time.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P005_C01",
+      "text": "4. The learned District Munsiff of Eluru held that the present case did not fall within any of the instances in which, according to the decision in\nNanchappa Koundan v. Mannadiar\n(1930) I.L.R. 53 Mad. 549 interest could be awarded either at law or in equity, and accordingly dismissed the suit, although held that the suit was in time.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P006_C01",
+      "text": "5. On appeal (A. S. No. 32 of 1956) preferred to the District Court, Eluru, by the assessee, it was held that the very fact that the levy of the tax was held to be illegal made the collection wrongful and created, in favour of the person who was wrongfully prevented from having the benefit of money, a right to recover the interest from the date of collection till restitution, on grounds of equity, justice and good conscience, and in this view, granted the decree as prayed for.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P007_C01",
+      "text": "6. The correctness of this decision is challenged before me by the Government.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P008_C01",
+      "text": "7. In answering this question, it will be helpful to note the relevant statutory provisions.\nSection 1\nof the Interest Act (XXXII of 1839) reads as follows :-\nIt is, therefore, hereby enacted that, upon all debts or sums certain payable at a certain time or otherwise, the Court before which such debts or sums may be recovered may, if it shall think fit, allow interest to the creditor at a rate not exceeding the current rate of interest from the time when such debts or sums certain were payable, if such debts or sums be payable by virtue of some written instrument at a certain time ; or if payable otherwise, then from the time when demand of payment shall have been made in writing, so as such demand shall give notice to the debtor that interest will be claimed from the date of such (1) demand until the term of payment: provided that interest shall be payable in all cases in which it is now payable by law.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P009_C01",
+      "text": "8. Section 34 of the Civil Procedure Code enacts :",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P010_C01",
+      "text": "34. (1) Where and in so far as a decree is for the payment of' money, the Court may, in the decree, order interest at such rate as the Court deems reasonable to be paid on the principal sum adjudged, from the date of the suit to the date of the decree, in addition to any interest adjudged as such principal sum for any period prior to the institution of the suit, with further interest at such rate not exceeding six per cent, per annum as the Court deems reasonable on such principal sum, from the date of the decree to the date of payment, or to such earlier date as the Court thinks fit.\n...",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P011_C01",
+      "text": "9. It may be noted that this Section provides for the award of interest in the case of decrees for payment of money from the date of the suit. As regards interest prior to the date of the suit, it is silent, as it is a matter of substantive law.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P012_C01",
+      "text": "10. Section 144 of the Civil Procedure Code is as follows :-",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P013_C01",
+      "text": "144. (1) Where and in so far as a decree or an order is varied or reversed, the Court of first instance shall, on the application of any party entitled to any benefit by way of restitution or otherwise, cause such restitution to be made as will, so far as may be, place the parties in the position which they would have occupied but for such decree or order or such part thereof as has been varied or reversed; and for this purpose, the Court may make any orders including orders for the refund of costs and for the payment of interest, damages, compensation and mesne profits, which are properly consequential on such variation or reversal.\n(2) No suit shall be instituted for the purpose of obtaining any restitution or other relief which could be obtained by application under Sub-Section (1).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P014_C01",
+      "text": "11. The doctrine of restitution is based on the principle that the law raises an obligation on the party who received the benefit of the erroneous judgment to make restitution to the other party for what he had lost, and it is the duty of the Courts to enforce this obligation, unless it is shown that restitution would be clearly contrary to the real justice of the case. This Section only embodies the doctrine of restitution and does not confer any new substantive rights which a successful party did not possess under the general law. It is well-settled that the Section merely regulates the exercise of the rights and prescribes a convenient procedure therefor. It is equally clear that the jurisdiction to make restitution is vested in Courts, and the Section will apply only where the decree has been varied or reversed in accordance with law, in whatever manner it may be, even if it be by a suit (vide\nTangatur Subbarayudu v. Yerram Setti Seshasani\n(1917) I.L.R. 40 Mad.\n299 and\nChittoori Venkalaraju v. Chekka Suryanarayana A.I.R.\n1943 Mad.\n248 or even by compromise decree in a suit, vide\nSudarsana Row v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P014_C02",
+      "text": "Gopala Row\n(1933) M.W.N. 641 The right of restitution is vested in the Court which passed the decree. The Section makes it clear that where a sum of money is recovered in execution of a decree which is subsequently reversed, the judgmentdebtor is entitled to get back not only the sum recovered, but also interest for the period that the amount has been withheld from him, and this is on the principle\nlaid down by\nthe Privy Council in Rodger v. The Comptoir D'Escompte De'Paris (1871) 24 Law Times in (at p. 112) \"that the perfect judicial determination which it must be the object of all courts to arrive at, will not have been arrived at unless the persons who have had their money improperly taken from them have the money restored to them with interest during the time that the money has been withheld.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P015_C01",
+      "text": "12. The law in England relating to interest has been stated in Halsbury's Laws of England, Third Edition, Volume 27, page 8, paragraph 8, as follows :-\nAt common law interest is payable (1) where there is an express agreement to pay interest; (2) where an agreement to pay interest can be implied from the course of dealing between the parties or from the nature of the transaction or a custom or usage of the trade or profession concerned ; (3) in certain cases by way of damages for breach of a contract (other than a contract merely to pay money) where the contract, if performed, would to the knowledge of the parties, have entitled the plaintiff to receive interest.\nExcept in the cases mentioned, debts do not carry interest at common law.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P016_C01",
+      "text": "13. In the succeeding paragraph entitled \"equitable right to interest\", in the same volume it is stated thus :-\nIn equity interest may be recovered in certain cases where a particular relationship exists between the creditor and the debtor, such as mortgagor and mortgagee; obligor and obligee on a bond; personal representative and beneficiary; principal and surety; vendor and purchaser; principal and agent; solicitor and client; trustee and cestui que trust; or where the debtor is in a fiduciary position to the creditor. Interest is also allowed on pecuniary legacies not paid within a certain time ; on the dissolution of a partnership, on the arrears of an annuity where : there has been misconduct or improper delay in payment; or in the case of money obtained or retained by fraud. It may also be allowed where the defendant ought to have done something which would have entitled the plaintiff to interest at common law, or has wrongfully prevented the plaintiff from doing something which would have so entitled him.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P017_C01",
+      "text": "14. In the next paragraph entitled \"interest under statute\", it is stated as follows :-\nA right to interest is conferred by statute in many cases, as for example, in the administration of bankrupt estates, and in the liquidation of companies ; and, by statute, the court has now the general discretion, next mentioned, in actions for debt or damages.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P018_C01",
+      "text": "15. The \"Statute\" that is referred to is the Law Reform (Miscellaneous Provisions) Act, 1934 (24 & 25 Geo. 5, c. 4),\nSection 3(1)\nproviso, which it may be noted applied to judgments and proceedings by or against the Crown, vide Crown Proceedings Act, 1947 (10 & 11 Geo. 6, c. 44). It may be noted that in India there is no Act corresponding to the Law Reform (Miscellaneous Provisions) Act, 1934.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P019_C01",
+      "text": "16. The leading English decision on the point is The London, Chatham and Dover Railway Company v. The South Eastern Railway Company [1893] A. C. 429 The scope and effect of Lord Tenterden's Act (3 & 4 Wm. 4, c. 42, s. 28), the language of which is similar to\nSection 1\nof the Interest Act, was considered, and it was stated, that in order to justify the allowance of interest under that Act, it must be shown that there is a debt, or sum certain payable at a certain time by virtue of some written instrument, and that unless that can be established, the case does not come within the words of that part of the Section. Another case provided by the statute in which interest may be allowed is, if a demand has been made in writing for the amount with notice that interest will be claimed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P019_C02",
+      "text": "Adverting to the contention that, even though the plaintiff may not be entitled to interest under the terms of Lord Tenterden's Act, interest might be given by way of damages in respect of the wrongful detention of his debt, the position was stated by Lord Herschell, L.C., to be that interest could not be given by way of damages for detention of the debt, the law upon that subject, unsatisfactory as it is, having been too long settled to be now departed from.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P020_C01",
+      "text": "17. Now, coming to Indian decisions, I may commence with\nAbdul Saffur Rowther v. Hamida Bivi Ammal\n(1919)I.L.R. 42 Mad. 661 That was a suit for a sum of money payable to a Muhammadan lady as for her share on taking accounts of the business carried on by her father, while he was alive, and which was continued by her brothers, the defendants, after his death, wherein the amount due to her was utilised by her brothers. It was held by Seshagiri Ayyar, J., with whom Ayling, J., agreed, that the proviso in the\nInterest Act\napplied to the case, and that six percent interest was payable as damages on the amount found due to the plaintiff. The learned Judge held that the framers of the\nInterest Act\nwere anxious that the right of interest, if any, otherwise possessed, should not be interfered with by that enactment, and inserted the proviso to the Act that interest shall be payable \"in all cases in which it is now payable by law.\"\nThe Interest Act\nwas not exhaustive on the subject. Referring to the decision in The London, Chatham and Dover Railway Company v.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P020_C02",
+      "text": "The South Eastern Railway Company [1893] A.C. 429 it was observed that:\nThe noble Lords who took part in the discussion, especially Lord Herschell, point out that there has been a course of decisions in England which tied the hands of Courts from awarding interest on equitable grounds ; and they regretted that they were obliged on the principle of stare decisis to decline to reopen the question. There is no such course of decisions in this country. On the other hand, the Privy Council held very early that on principles of equity, justice and good conscience which are specially referred to in the\nCivil Courts Act\n, the Courts in India are at liberty to award interest in cases not coming within the purview of the\nInterest Act\n. The Indian Courts have followed this rule for a long time. The Courts in this country therefore are not hampered in the exercise of their equity jurisdiction in the same way that English Courts have been.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P021_C01",
+      "text": "18. The learned Judge observed that it was not necessary for him to rest the claim to interest upon the existence of a quasi-fiduciary relationship between the plaintiff in that case and her brothers. The learned Judge also referred to the decision of the Judicial Committee in Miller v. Barlow (1871)L.R. 3P.C.C. 733 wherein it was pointed out that Indian Courts are both of law and equity, and that they could award as damages interest not covered by the Act.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P022_C01",
+      "text": "19. Nanchappa Koundan v. Mannadiar\n(1930) I.L.R. 53 Mad. 549 Venkatasubba Rao and Madhavan Nair, JJ., had to consider this very question. There, in a lease deed, under which waste lands were to be gradually brought under cultivation, the lessees agreed to pay rent at a certain rate on the extent of the land reclaimed, from the year in which the Government revenue was assessed on such lands ; there was no provision in the deed for payment of interest on the arrears of rent.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P022_C02",
+      "text": "In a suit by the lessor to recover arrears of rent, together with interest thereon, it was held :\n(1) that interest was not payable on the rent under the\nInterest Act\n, as the rent payable under the lease deed was not \"a sum certain\", and the time for its payment was not \"a certain time\", within the meaning of the Act;\n(2) that interest could not be awarded by the Court on general equitable grounds, as the proviso to\nSection 1\nof the Interest Act only enables the Court to award interest in all cases where it was payable in law before the Act, and the Courts in India, following the practice of the English Courts, did not, prior to the Indian Act, award interest in the case of ordinary debts but did so only in certain special cases ; and the decision in The London, Chatham and Dover Railway Company v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P022_C03",
+      "text": "The South Eastern Railway Company [1893] A.C. 429 was followed ;\n(3) that interest could not be granted by way of damages by virtue of\nSection 73\nof the Indian Contract Act, read with illustration (n) to that Section; but,\n\n(4) where the rent was made a charge on land, interest was awardable on the arrears thereof, though there was no provision for interest in the deed creating the charge.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P023_C01",
+      "text": "20. The decisions in Miller v. Barlow (1871) L.R. 3 P.C.C. 733 and Main and New Brunswick Electric Power Co. v. Hart [1929] A.C. 631 (J.C.) were considered, and Venkatasubba Rao, J., held that those cases gave effect to definite and well-recognised rules of equity and were never treated as authorities in English Courts for their position that interest can be allowed on a debt on what are termed the general equitable grounds. Adverting to Section 73, illustration (n), the learned Judge observed :\nIf the English rule as to damages has not had the effect of superseding Lord Tenterden's Act in regard to interest on debts, why should it be assumed that\nSection 73\nof the Contract Act has produced just the contrary result ? I am not prepared to hold that the Legislature, by adding illustration (n) to Section 73, intended to depart from the law which must be treated as having been settled beyond doubt.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P024_C01",
+      "text": "21. Madhavan Nair, J., summed up the effect of the decision in The London, Chatham and Dover Railway Company v. The South Eastern Railway Company [1893] A.C. 429 The learned Judge referred to the case in which interest is payable by the rules of equity and observed that unless a claim for interest on debts fell within any of the above four cases in which interest could be awarded at common law, or the three cases in which according to the rules of equity interest is payable, interest was not awarded under English law. After the fusion of the common law and equity Courts, and the legal and equitable jurisdictions, the position was that the same Court being the Court of law and equity recognised not only legal claims to interest, but also gave effect to such equitable considerations as would be recognised in Courts of equity. The view of Seshagiri Ayyar, J., in\nAbdul Saffur Rowther v. Hamida Bivi Ammal\n(1919) I.LR, 42 Mad. 661 it was pointed, was inconsistent with his (Seshagiri Ayyar, J.'s) own.view in other cases and the view of the other Judges of the Madras High Court. The learned Judge observed at page 570 that the observations in Miller v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P024_C02",
+      "text": "Barlow1 make it clear that their Lordships never intended by this decision to lay down a general rule that interest may be awarded in all cases on account of equitable considerations, and that, in that case, the failure of the officer who wrongfully obtained in the course of legal proceedings a certain sum of money was liable to pay interest in Courts of equity always. Madhavan Nair, J., made it clear as to what is meant by equitable considerations. When we propose to apply equitable considerations in deciding the question whether a party may be awarded interest, we have to ask ourselves the question whether a Court of equity in such a case would usually award interest and unless a particular case falls within the wellrecognised class of cases in which interest is demandable in equity, the Indian Courts, in my view, have no power to award interest in such a case on equitable grounds. If the case is one in which Courts of equity would ordinarily award interest, then Courts of law in this country, having the powers both of the Courts of equity and of law, can also award interest on equitable considerations. This seems to me to be the true scope of the decision in Miller v.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P024_C03",
+      "text": "Barlow (1871) L.R. 3 P.C.C. 733\n22. In view of the difference of opinions expressed in\nAbdul Saffur Rowther v. Hamida Bivi Ammal\n(1919) I.L.R. 42 Mad.\n661 and\nNanchappa Kounclan v. Mannadiar\n(1930) I.L.R. 53 Mad. 549 Sri Surya Row for the respondents stated that the matter should be referred to a Full Bench. I do not think it necessary to do.so in view of the subsequent pronouncements of the Privy Council and Supreme Court on the point, which will be referred to presently.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P025_C01",
+      "text": "23. Bengal Nagpur Railway Company Limited v. Ratanji Ramji I.L.R. (1938) 2 Cal. 72 (P.C.) a contractor entered into a contract with the railway company to execute certain works at scheduled rates. As the rates were found to be . inadequate, they were abandoned by mutual consent, but the works were continued and completed. In a suit by the contractor against the railway company for payment at fair rates with interest on the amount due to him from the date of the completion of the work till the date of the claim, it was held that the contractor was not entitled to interest on the money due for the period prior to the date of suit, but should have interest at six per cent, per annum on the amount awarded from the date of the plaint till decree, and further interest from the date of decree till payment, relying on\nSection 34\nof the Code of Civil Procedure.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P025_C02",
+      "text": "Adverting to the question whether interest could be awarded prior to the date of the plaint, Sir Shadi Lal, who delivered the judgment on behalf of the Board, summed up the position at page JJ thus :-\nThe crucial question, however, is whether the Court has authority to allow interest for the period prior to the institution of the suit; and the solution of this question depends, not upon the Civil Procedure Code, but upon substantive law. Now, interest for the period prior to the date of the suit may be awarded, if there is an agreement for the payment of interest at a fixed rate, or it is payable by the usage of trade having the force of law, or under the provision of any substantive law, entitling the plaintiff to recover interest, for instance, under\nSection 80\nof the Negotiable Instruments Act, 1881, the Court may award interest at the rate of 6 per cent, per annum, when no rate of interest is specified in the promissory note or bill of exchange.... Under the Interest Act\n, XXXII of 1839, the Court may allow interest to the plaintiff, if the amount claimed is a sum certain which is payable at a certain time by virtue of a written instrument....",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P025_C03",
+      "text": "The Interest Act\n, however, contains a proviso that 'interest shall be payable in all cases in which it is now payable at law'. This proviso exercises jurisdiction to allow interest. As observed by Lord Tomlin in Maine and New Brunswick Electric Power Company Limited v. Hart [1929] A.C. 631:\n'In order to invoke a rule of equity it is necessary in the first instance to establish the existence of a state of circumstances which attracts the equitable jurisdiction, as, for example, the non-performance of a contract of which equity can give specific performance.'\n\nThe present case does not, however, attract the equitable jurisdiction of the Court and cannot come within the purview of the provision.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P026_C01",
+      "text": "24. With reference to the divergence of judicial opinion on the question whether interest could be awarded as damages under\nSection 73\nof the Indian Contract Act, it was observed that the illustration to Section 73 does not deal with the right of a creditor to recover interest from his debtor on a loan advanced to the latter by the former. It only shows that if any person breaks his contract to pay to another person a sum of money on a specific date, and in consequence of that breach the latter is unable to pay his debts and is ruined, the former is not liable to make good to the latter anything except the principal sum which he promised to pay, together with interest up to the date of payment. He is not liable to pay damages of a remote character. The illustration does not confer upon a creditor a right to recover interest upon a debt, which is due to him, when he is not entitled to such interest under any provision of the law. Nor can an illustration have the effect of modifying the language of the Section which alone forms the enactment. The learned Judge, referring to the decision of the. Privy Council in Jamal v.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P026_C02",
+      "text": "Moolla Dawood Sons & Co (1915) I.L.R. 43 Cal. 493 and of the House of Lords in London, Chatham and Dover Railway Company v. South Eastern Railway Company [1893] A.C. 429 observed that Section 73 is merely declaratory of the common law as to damages and that interest cannot be allowed at common law by way of damages for wrongful detention of debt, and that where the plaintiff is not entitled to interest at law, interest can be awarded only if it attracted the equitable jurisdiction of the Court. The law has been amended in England by Section 3 of the Law Reform (Miscellaneous Provisions) Act, 1934, empowering a Court of record to award interest on the whole or any part of any debt or damages, at such rate as it thinks fit, for the whole or any part of the period between the date when the cause of action arises and the date of the judgment. But there has been no such amendment of the law in India. In this view, interest prior to the date of the suit was disallowed.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P027_C01",
+      "text": "25. From this decision the following principles emerge :\n(i) Interest for a period prior to the date of suit can be awarded if there is an agreement to pay a fixed rate, or by usage of trade having the force of law, or under the provisions of any substantive law, like\nSection 80\nof the Negotiable Instruments Act;\n(ii)\nInterest Act\nallows interest to be awarded only if the amount claimed is \"a sum certain\", and is payable at \"a certain time\" by virtue of a written instrument;\n(iii) According to the proviso to the\nInterest Act\n, interest may be paid in cases in which interest is \"now payable by law\", which means cases in which interest can be claimed under any other provision of law or the Court of equity exercises its jurisdiction to allow interest;\n(iv) Section 73 of the Indian Contract Act is only declaratory of the English common law as to damages and does not add a new head of interest awardable at law ; and\n(v) A suit for recovery of money on the basis of quantum meruit is not a case to which the jurisdiction of equity Court can be said to be attracted.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P028_C01",
+      "text": "26. This decision, therefore, makes it clear that unless a case falls within any of the above heads, interest cannot be awarded by a Court on what according to it are general principles of equity. This decision of the Privy Council has subsequently been followed by the High Courts in India, vide Haribai v. Bhagirat Ramachandra & Co. I.L.R. (1945) Bom. 819\n27. Seth Thawardas Pherumal v. The Union of India\n[1955] 2 S.C.R. 48 Bose, J., on behalf of the Court cited the decision of the Privy Council in Bengal Nagpur Railway Company Ltd. v. Ralanji Ramji I.L.R. (1938) 2 Cal. 72 (P.C.) with approval at page 65, and enumerated the conditions to be fulfilled for invoking the benefit of the\nInterest Act\n, viz.,\n\n(1) there must be a debt or a sum certain ;\n(2) it must be payable at a certain time or otherwise ;\n(3) these debts or sums must be payable by virtue of some written contract at a certain time ; and\n\n(4) there must have been a demand in writing stating that interest will be demanded from the date of the demand.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P029_C01",
+      "text": "28. It was also laid down that Section 34 of the Civil Procedure Code does not apply to an award passed by the arbitrator, as an arbitrator is not a \"Court\" within the meaning of the Civil Procedure Code, nor does the Code apply to arbitrators, and that, but for Section 34, even a Court would not have the power to give interest after the date of the suit.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P030_C01",
+      "text": "29. It may be noted that in\nNachiappa Chettiar v. Subramaniam Chettiar\n[1960] 2 S.C.R. 209; the Supreme Court referred to the decisions in\nSeth Thawardas Pherumal v. Union of India1\n, and observed that the observation of Justice Bose that Section 34 of the Civil Procedure Code could not be relied on by an arbitrator as he is not a \"Court\" within the meaning of the Civil Procedure Code was open to doubt whether they were intended to lay down a broad and unqualified proposition that in no case can the arbitrator award interest. But that question was not finally allowed to be raised, much less decided.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P031_C01",
+      "text": "30. In the recent decision of the Supreme Court in Satinder Singh v. Umrao Singh A.I.R. 1961 S.C. 908 Gajendragadkar, J., on behalf of the Court, referred to the decisions in\nSeth Thawardas Pherumal v. Union of India\n[1955] 2\nS.C.R. 48 and Nachiappa Chettiar v. Subramaniam Chettiar\n[1960] 2 S.C.R. 209; and referring to\nInterest Act\n, XXXII of 1839, observed thus :\nSection 2\n(sic.) of the Interest Act, 1839, confers power on the Court to allow interest in cases specified therein, but the proviso to the said Section makes it clear that interest shall be payable in all cases in which it is now payable by law. In other words, the operative provisions of\nSection 1\nof the said Act do not mean that where interest was otherwise payable by law, Court's power to award such interest is taken away. The power to award interest on equitable grounds blunder any other provisions of the law is expressly saved by the proviso to\nSection 1\n. This question was considered by the Privy Council in Bengal Nagpur Railway Co. Ltd. v. Ralanji Ramji I.L.R.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P031_C02",
+      "text": "(1938) 2 Cal. 72 (P.C.) Referring to the proviso to\nSection 1\nof the Act, the Privy Council observed, 'this proviso applies to cases in which the Court of equity exercises its jurisdiction to allow interest.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P032_C01",
+      "text": "31. Inasmuch as the right to receive interest in lieu of possession of immovable property taken away by private treaty or compulsory acquisition is regarded by judicial decisions as an equitable right, the proviso to\nSection 1\nwas held to have applied to that case. This case sets the matter beyond doubt, viz., that interest can be awarded not on general equitable grounds, but only in cases where the equitable jurisdiction is attracted, as laid down by the Privy Council.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P033_C01",
+      "text": "32. Mr. Surya Row, on behalf of the respondents, argued that in the passage now extracted, the learned Judge observed that \"the power to award interest on equitable grounds...is expressly saved by the proviso to\nSection 1\n\", and therefore the jurisdiction of the Court to award interest on equitable grounds has been recognised. This argument must straightaway be rejected, as the succeeding sentence puts the matter beyond all doubt.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P034_C01",
+      "text": "33. Attakoya Thangal v. Kunhikoya Thanga I.L.R. (1940) Mad. 50 an inamdar of land situate in Malabar granted by a Mohammadan Ruler and which was confirmed at the time of the Inam Settlement, sued the appellants, who were in possession of the land covered by that grant, for the recovery of interest on a sum of money made up of land revenue, and other amounts for a period of twelve years, on the ground that he was compelled by the Government to pay the land cess, and therefore, he was entitled to recover them from the appellants, the occupiers of the land. The inam grant did not fix the dates when the land revenue was to be paid to the inamdar, but it only enabled him to collect the land revenue. There was no notice in writing given by the respondents-appellants that interest would be demanded in default of payment of the amount paid by them. It was held, following the decision of the Privy Council in\nBengal Nagpur Railway Company Limited v. Ratanji Ramji I.L.R. (1938) 2 Cal. 72 (P.C.) that the respondent was not entitled to interest in respect of the amount due towards land revenue, because the case did not fall within the proviso to\nSection 1\nof the Interest Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P034_C02",
+      "text": "The learned Judges also laid down that the proviso to the\nInterest Act\nleaves it open to the Court to award interest where a Court of equity would recognise the claim, i.e., not on general equitable grounds or consideration. The decision in\nAbdul Saffur Rowther v. Hamida Bivi Ammal\n(1919) I.L.R. 42 Mad, 661 cannot, therefore, be considered as good law. The conclusion therein could, however, be supported as\nin that case\nthe jurisdiction of the equity Courts would be attracted.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P035_C01",
+      "text": "34. Another decision which may be referred to here is\nThe Municipal Borough of Ahmedabad v. Vadilal Dalsukhram\n. I.L.R. 1944 Bom. 134 In that case, a bill was issued to a ratepayer by the Ahmedabad Municipality claiming certain rates including drainage rate and a demand was made under Section 104 of the Bombay Municipal Boroughs Act, 1925. The ratepayer paid the amount under protest, but filed an appeal under the Act to the Magistrate. As the appeal was dismissed, a revision was preferred to the Sessions Court under\nSection 111\nof the Act, and, as this was also dismissed, a revision was preferred to the High Court under Section 115 of the Civil Procedure Code, and it was held by the High Court that, the levy of drainage tax was illegal and directed refund of the amount paid in respect of that tax. Pursuant to the decision of the High Court the amount was refunded by the Municipality on 30th April, 1940. The ratepayer sued for the interest on the amount of drainage tax from 23rd January, 1937, to 30th April, 1940, in the Court of the Small Cause Judge, Ahmedabad. The suit having been decreed, the Municipality preferred revision against the same to the High Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P035_C02",
+      "text": "Beaumont, C.J., held that the terms of the\nInterest Act\ndid not apply to the case, as the High Court made no order for payment of the interest, and as there was no written instrument under which interest was payable. The contention that the interest could be claimed on principles of justice, equity and good conscience as was ruled by the High Court of Madras in\nAbdul Saffur Rowther v. Hamida Bivi Amma\n(1919) I.L.R. 42 Mad 661 could not be accepted. The decision of the Privy Council in\nBengal Nagpur Railway Company Limited v. Ratanji Ramji I.L.R. (1938) 2 Cal. 72 (P.C.) was opposed to that view. The alternative contention that was raised on behalf of the ratepayer was that his claim for interest was in tort. That contention was rejected on the ground that there was no tortious act on the part of the Municipality, as they claimed a sum to which they thought they were entitled under the Act. In this view, the learned Chief Justice rejected the ratepayer's claim for interest.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P035_C03",
+      "text": "This decision is an authority for the proposition that the suit for interest on tax collected illegally, cannot be treated as one based on tort, and that in a suit for recovery of a municipal tax, interest cannot be awarded under the provisions of the\nInterest Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P036_C01",
+      "text": "35. In 51, American Jurisprudence, Taxation, paragraph 1172, at page 1008, dealing with the right to interest the conflict of judicial opinion on the subject was pointed out, and it. is stated thus :-\nThe contrary view, that is, that interest on tax refunds, at least before judgment, cannot be allowed without statutory authority, has been frequently taken in cases refusing, upon that ground, to allow any interest. Some of these cases rest the decision on the general principle that interest is not to be awarded against a sovereign Government unless its consent to pay interest has been manifested by an Act of its Legislature or by lawful contract. Others, however, apparently place the decision upon the ground that the statute providing for tax refunds, by not including the right to interest, impliedly excludes it; and such cases are not necessary authority against the right to interest, where the right to refund has not been made the subject of statute but depends upon common law principles with respect to payments made involuntarily and under duress.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P036_C02",
+      "text": "Manifestly, interest will not be allowed where the allowance would be against public policy, as where the general legislative intent opposes such allowance. In the absence of an express statutory provision as to interest, a taxpayer cannot maintain an independent action for interest alone after he has already received and accepted a refund of amount of the overpayment of the tax itself. In a number of cases committed to the view that even without statutory authority, interest may be allowed on tax refunds, the Courts have more or less incidentally, referred to general statutory provisions as further supporting their decisions.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P037_C01",
+      "text": "36. This statement of the law is very helpful and it lays down the general principle that interest is not to be awarded against a sovereign Government without its consent, expressed in some Act of the Legislature or lawful contract, and that interest will not be allowed where allowance would be against public policy, as where the general legislative intent opposes such allowance.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P038_C01",
+      "text": "37. It is well-known that the power of taxation is an essential and inherent attribute of sovereignly, belonging as a matter of right to every independent Government: vide Picard v. East Tennessee, V. & G. R. Co. 32 L. Ed., 1051 In fact, as laid down in People v. Dummer 113 N.F. 934 the power of taxation may be denned as \"the power inherent in the sovereign State to recover a contribution of money or other property, in accordance with some reasonable rule of apportionment, from the property or occupations within its jurisdiction for the purpose of defraying the public expenses.\" Constitutional provisions relating to the power of taxation do not operate as grants of the power of taxation to the Government but instead merely constitute limitations upon a power which would otherwise be practically without limit, vide McCulloch v. Maryland., (4 L. Ed. 479) It is not even necessary that the Constitution shall contain a grant of power to the Legislature to deal with the question of taxation.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P039_C01",
+      "text": "38. In this view, it cannot be said that tax that is collected creates a debt, or that it is a receipt of money had and received for the benefit of the taxpayer, or that it is a tort.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P040_C01",
+      "text": "39. In the light of these observations, the provisions of the\nSales Tax Act\nmay now be examined. The Madras General Sales Tax Act, 1939, and the rules made thereunder do not expressly state whether interest should be paid on the excess amount of tax collected. Rule 15 of the Madras General Sales Tax Rules is as follows :-\n(1) Every order of an appellate or revising authority shall be communicated to the appellant or petitioner, to every other party, affected by the order, to the licensing or assessing authority against whose order the appeal was filed and to any other authority concerned.,jurisdiction to allow interest.'\n\n(2) The order passed on appeal or revision shall be given effect to by the licensing or assessing authority who shall refund any excess tax or fee found to have been collected, and shall also have power to collect any additional tax or fee which is found to be due, in the same manner as a tax or fee assessed by himself.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P041_C01",
+      "text": "40. This rule, therefore, empowers only the refund of any excess tax collected, even where the refund has become necessary by reason of an order passed by the appellate or revising authority. As per the amendments made by the Madras General Sales Tax (Amendment) Act, VI of 1951, it was provided by the second proviso to Section I2-A(5) as follows :\nProvided further that if as a result of the appeal any change becomes necessary in such assessment, the Appellate Tribunal may authorise the assessing authority to amend the assessment, and on such amendment being made, the amount overpaid by the assessee shall be refunded to him without interest, or the further amount of tax due from him shall be collected in accordance with the provisions of this Act, as the case may, be.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P042_C01",
+      "text": "41. A similar provision is also to be found in the second proviso to Section I2-B(b) dealing with the revision to the High Court. Rule 16-A is as follows:-\nEvery order passed by the Appellate Tribunal or the High Court shall, on the authorisation of the Appellate Tribunal or the High Court, as the case may be, be given effect to by the assessing authority, who shall refund without interest within two months from the date of the communication of the authorisation, any excess tax found to have been collected, and shall also have power to collect any additional tax or fee which is found to be due, in the same manner as a tax or fee assessed by himself.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P043_C01",
+      "text": "42. This provision makes it clear that in cases where the assessee is entitled to a refund of the tax by reason of an appeal or revision, he will not be entitled to claim interest. The Madras General Sales Tax (Amendment) Act, VI of 1951, was in force on 25th February, 1954, when the civil Court granted a declaration that the tax collected was illegal.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P044_C01",
+      "text": "43. The contention on behalf of the assessee is that it is not the law in force on the date the collection was declared to be illegal that should prevail, but that the law prevailing on the date the illegal collection was made, i.e., 26th September, 1949, that should govern the case. I am not impressed by that argument, nor has any authority been placed before me to that effect. On the other hand, the liability to refund arose only by reason of the declaratory decree and it is the law prevailing on that date that should govern. Even otherwise, the assessee's contention cannot prevail. The right to claim refund, no doubt, arose in this case by reason of a decree of the civil Court. That decree has not awarded interest from the date of the collection. In such a case, even if the provisions of the\nSales Tax Act\nin force on that date were to be applied, they only say that the excess tax collected shall be refunded, but do not provide for payment of any interest.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P044_C02",
+      "text": "On the other hand, the provisions as amended by the Amendment Act VI of 1951 clearly state that interest cannot be allowed, and that provision, to my mind, is only declaratory in character, indicating the law existing even before. I am, therefore, of the opinion that the statutory provisions governing the case do not permit the interest being awarded on the excess tax collected.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P045_C01",
+      "text": "44. Even otherwise, I am of the opinion that interest cannot be awarded under the provisions of the\nInterest Act\nin the light of the foregoing discussion.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P046_C01",
+      "text": "45. Further, it may be noted that the claim made in the Privy Council case is for interest due by way of quantum meruit on an obligation resembling that created by contract. Section 73\nof the Indian Contract Act enacts that when an obligation resembling those created by contract has been incurred and has not been discharged, any person injured by the failure to discharge it is entitled to receive the same compensation from the party in default, as if such person had contracted to discharge it and had broken his contract. It would thus be seen that whatever might have been the basis, whether legal or equitable, in an action for money had and received the principles are now embodied in the\nIndian Contract Act\nin Chapter V entitled \"Of Certain Relations Resembling Those Created by Contract\", and even in such cases Section 73 lays down that the principles applicable to damages for breach of contract should apply. It has already been noticed how interest cannot be awarded as damages under\nSection 73\nof the Indian Contract Act in cases in which interest otherwise cannot be awarded. Further, as pointed out in the Bombay case, Municipal Borough of Ahmedabad v. Vadilal Dalsukkmm I.L.R.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P046_C02",
+      "text": "(1944) Bom. 134 collection of the tax in the instant case was made by the Government as it thought that it had a right to do so under the\nSales Tax Act\n.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P047_C01",
+      "text": "46. Sri Surya Row, for the respondent, urged strenuously that the principle laid down in\nAbdul Saffur Rowther v. Hamida Bivi Amtnal\n(1919) I.L.R. 42 Mad.\n661 ought to be applied in this case, and that for a businessman it will be very hard if the Government were to collect by way taxes large sums of money which he would otherwise usefully employ in his business and make a profit, and that with a view to relieve hardship interest should be awarded on general considerations of equity, as held in\nAbdul Saffur Rowther v. Hamida Bivi Ammal\n. (1919) I.L.R. 42 Mad.\n661 The learned counsel also relied on\nArunachalam Chettiar v. Rajeswara Sethupathi\n(A.I.R, 1922 Mad.\n55) which followed\nAbdul Saffur Rowther v. Hamida Bivi Ammal\n. (1919) I.L.R. 42 Mad.\n661 I cannot agree as I have already held that\nAbdul Saffur Rowther v. Hamida Bivi Animal\n(1919) I.L.R. 42 Mad. 661 cannot be considered as good law. Further, the decision\nin that case\ncan be justified on the ground that the relationship between the parties was one of principal and agent, to which the equitable jurisdiction can be said to be attracted.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P048_C01",
+      "text": "47. The counsel for the respondents then contended that interest may be awarded treating his claim as a case of restitution. It is, no doubt, true that if the present case is one governed by Section 144 of the Civil Procedure Code, he will be entitled to payment of interest. But it is not possible for me to hold that this is a case to which Section 144 applies. Here, there is no decision of a Court which is reversed or varied. It cannot be said that the order of assessment of the taxing authorities is an order of a Court. I am, therefore, unable to accept even this contention. Consequently, the decision cited by him viz.,\nArunachalam Chettiar v. Rajeswara Sethupathi\n(A.I.R, 1922 Mad. 55) to the effect that the variance of a decree of a Court need not necessarily be by way of reversal in appeal need not be considered, nor the cases laying down that an act of a Court means all the Courts, from the highest to the lowest, and that a Court has inherent jurisdiction to order restitution. They are all cases where the order in the first instance was made by a Court, and which was subsequently reversed or varied, which is not the case here.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P049_C01",
+      "text": "48. The rulings placed on either side relating to the question whether the Government can be made liable vicariously for the tortious act of its subordinates need not be considered, as I am of the opinion, following the decision of the Bombay High Court in\nMunicipal Borough of Ahmedabad v. Vadilal Dalsukhram I.L.R.\n(1944) Bom 134 that the conduct of the Sales Tax Department in collecting the tax is not a tort.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P050_C01",
+      "text": "49. The learned District Judge has not rightly understood the scope of the Privy Council decision, and did not realise that it is opposed to the principle\nlaid down in\nAbdul Saffur Rowther v. Hamida Bivi Amma\n. (1919) I.L.R. 42 Mad.\n661 He was clearly in error in thinking that\nNanchappa Koundan v. Mannadiar\n(1930) I.L.R. 53 Mad. 549 laid down that interest would be awarded on equitable considerations, independent of Interest Act and Contract Act, and that the present case is one in which such considerations exist.\nI have pointed out in some detail how that is not the view of the Madras High Court in\nNanchappa Koundan v. Mannadiar\n(1930) I.L.R. 53 Mad.\n549 nor is it the view of the Privy Council in\nBengal Nagpur Railway Company Limited v. Ratanji Ramji I.L.R.\n(1938) 2 Cal. 72 nor of the Supreme Court. His reasoning that Section 144 of the Civil Procedure Code enabled interest to be awarded is equally untenable. I am, therefore, unable to uphold his decision.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA_P051_C01",
+      "text": "50. In the result, the appeal is allowed, and the decree of the District Munsiff is restored. In the circumstances, I direct that each party do bear its costs throughout.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1962_ANDHRA_HC_PRE-TELANGANA",
+    "court": "Supreme Court of India",
+    "year": "1962",
+    "facts_summary": "2. The respondents in this case are a registered firm carrying on business as commission agents. On its turnover for the year 1945-46, the Commercial Tax Authorities levied sales tax amounting to Rs. 7,248-6-2. The respondents thereupon, filed O.S. No. 80 of 1950 on 19th September, 1947, in the District Court, Eluru, for a declaration that the said assessment was illegal, and for a permanent injunction restraining the State from collecting the same. The suit was transferred to the Subordinate Judge's Court, Eluru, and numbered as 0. S. No. in of 1952. During the pendency of the suit, the tax was collected by the department on 26th September, 1949, under threat of coercive process. The Subordinate Judge's Court granted a decree with costs on 25th February, 1954, in favour of the respondent, declaring the levy of the tax as illegal, and giving him liberty to take the necessary action for its recovery from the Government, if it is not paid otherwise. The respondent demanded the refund of the tax collected from him, but the Government repaid only the principal amount with interest from the date of the judgment (i.e., 25th February, 1954). This suit was therefore laid for recovery of interest on Rs. 7,248-6-2 from the date of collection (26th September, 1949) till the date of judgment (25th February, 1954) at six per cent. per annum. 3. The suit was resisted by the State, contending that the appellant was not entitled to recover interest as there was no wrongful withholding of the",
+    "legal_issues": "26. This decision, therefore, makes it clear that unless a case falls within any of the above heads, interest cannot be awarded by a Court on what according to it are general principles of equity. This decision of the Privy Council has subsequently been followed by the High Courts in India, vide Haribai v. Bhagirat Ramachandra & Co. I.L.R. (1945) Bom. 819\n27. Seth Thawardas Pherumal v. The Union of India\n[1955] 2 S.C.R. 48 Bose, J., on behalf of the Court cited the decision of the Privy Council in Bengal Nagpur Railway Company Ltd. v. Ralanji Ramji I.L.R. (1938) 2 Cal. 72 (P.C.) with approval at page 65, and enumerated the conditions to be fulfilled for invoking the benefit of the\nInterest Act\n, viz.,\n\n(1) there must be a debt or a sum certain ;\n(2) it must be payable at a certain time or otherwise ;\n(3) these debts or sums must be payable by virtue of some written contract at a certain time ; and\n\n(4) there must have been a demand in writing stating that interest will be demanded from the date of the demand. 29. It may be noted that in\nNachiappa Chettiar v. Subramaniam Chettiar\n[1960] 2 S.C.R. 209; the Supreme Court referred to the decisions in\nSeth Thawardas Pherumal v. Union of India1\n, and observed that the observation of Justice Bose that Section 34 of the Civil Procedure Code could not be relied on by an arbitrator as he is not a \"Court\" within the meaning of the Civil Procedure Code was open to doubt whether they were intended to lay down a broad and unqualified propos",
+    "ratio_summary": "1. The question falling for determination in this second appeal is, whether an assessee is entitled to claim interest on sales tax collected from him under an assessment which has been declared to be illegal. Barlow1 make it clear that their Lordships never intended by this decision to lay down a general rule that interest may be awarded in all cases on account of equitable considerations, and that, in that case, the failure of the officer who wrongfully obtained in the course of legal proceedings a certain sum of money was liable to pay interest in Courts of equity always. Madhavan Nair, J., made it clear as to what is meant by equitable considerations. When we propose to apply equitable considerations in deciding the question whether a party may be awarded interest, we have to ask ourselves the question whether a Court of equity in such a case would usually award interest and unless a particular case falls within the wellrecognised class of cases in which interest is demandable in equity, the Indian Courts, in my view, have no power to award interest in such a case on equitable grounds. If the case is one in which Courts of equity would ordinarily award interest, then Courts of law in this country, having the powers both of the Courts of equity and of law, can also award interest on equitable considerations. This seems to me to be the true scope of the decision in Miller v. Adverting to the question whether interest could be awarded prior to the date of the plaint, Sir Shad",
+    "final_order": "4. The learned District Munsiff of Eluru held that the present case did not fall within any of the instances in which, according to the decision in\nNanchappa Koundan v. Mannadiar\n(1930) I.L.R. 53 Mad. 549 interest could be awarded either at law or in equity, and accordingly dismissed the suit, although held that the suit was in time. 50. In the result, the appeal is allowed, and the decree of the District Munsiff is restored. In the circumstances, I direct that each party do bear its costs throughout.",
+    "outcome_summary": "Allowed. 4. The learned District Munsiff of Eluru held that the present case did not fall within any of the instances in which, according to the decision in\nNanchappa Koundan v. Mannadiar\n(1930) I.L.R. 53 Mad. 549 interest could be awarded either at law or in equity, and accordingly dismissed the suit, altho",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

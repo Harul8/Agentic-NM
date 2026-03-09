@@ -1,0 +1,583 @@
+{
+  "case_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED",
+  "case_name": "Uttar Haryana Bijli Vitran Nigam Ltd vs Adani Power (Mundra) Limited",
+  "normalized_case_name": "UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_(MUNDRA)_LIMITED",
+  "court": "Supreme Court of India",
+  "year": "2023",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 4143 of 2020",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "20 April 2023",
+  "judges": [
+    "B.R. Gavai",
+    "Vikram Nath",
+    "Sanjay Karol"
+  ],
+  "author": "B.R. Gavai",
+  "bench_type": "constitution",
+  "petitioner": "Uttar Haryana Bijli Vitran Nigam Ltd",
+  "respondent": "Adani Power (Mundra) Limited",
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 12,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2023\\APR\\2023_APR_92.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO.4143 OF 2020\n\n UTTAR HARYANA BIJLI VITRAN\n NIGAM LTD. & ANR. ...APPELLANT (S)\n\n VERSUS\n ADANI POWER (MUNDRA) LIMITED\n & ORS. ...RESPONDENT (S)\n\n JUDGMENT\nB.R. GAVAI, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P002_C01",
+      "text": "1. The appellants challenge the judgment and order passed\n\n by the Appellate Tribunal for Electricity, New Delhi (hereinafter\n\n referred to as “APTEL”) dated 3rd November 2020, thereby\n\n dismissing the appeal filed by them and maintaining the\n\n judgment and order dated 31 st May 2018 passed by the Central\n\n Electricity Regulatory Commission (“CERC” for short) in Petition\n\n No. 97/MP/2017.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P003_C01",
+      "text": "2. The facts, in brief, giving rise to the present appeal are as\n\n“Haryana Utilities”/“Appellants”) are distribution licensees\n\nundertaking the distribution and retail supply of electricity to\n\nconsumers in the State of Haryana. Haryana Utilities had\n\nentered into two Power Purchase Agreements (“PPAs” for short)\n\non 7th August 2008 with Adani Power Mundra Limited\n\n(hereinafter referred to as “AP(M)L”) for procurement of\n\ncontracted capacity of 1424 MW from generating units 7, 8 and\n\n9 established by AP(M)L at Mundra in the State of Gujarat.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P004_C01",
+      "text": "4. The PPAs were entered into pursuant to a tariff based\n\nCompetitive Bidding Process initiated by the Haryana Utilities\n\nunder the provisions of\nSection 63\nof the Electricity Act, 2003,\n\nas per the Standard Bidding Guidelines notified by the Central\n\nGovernment.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P005_C01",
+      "text": "5. AP(M)L had filed Petition No. 155/MP/2012 on 5 th July\n\n2012 before the CERC seeking, inter alia, relief of increase in\n\ntariff on various grounds. One of the grounds was that the\n\nIndonesian Regulations, promulgated by the Government of\n\nIndonesia, providing for the application of benchmark price for\n\nexport of coal from Indonesia resulted in higher price of coal\n\nresulting in higher cost of generation of power.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P006_C01",
+      "text": "6. AP(M)L had also claimed Force Majeure Event within the\n\nscope of\nArticle 12\nand Change in Law within the scope of\nArticle 13\nof the PPAs.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P007_C01",
+      "text": "7. The orders dated 2nd April 2013 and 21st February 2014\n\npassed by the CERC in the said Petition No.155/MP/2012 were\n\nchallenged before the learned APTEL by way of a batch of\n\nappeals, the lead being Appeal No. 100 of 2013. The order\n\ndated 7th April 2016 passed by the learned APTEL in Appeal No.\n\n100 of 2013 and the batch of appeals were challenged before\n\nthis Court in the case of\nEnergy Watchdog v. Central\n\nElectricity Regulatory Commission\nand others1. This Court\n\ndisposed of the said appeals on 11 th April 2017 in terms of the\n\nfollowing directions:\n“57. Both the letter dated 31-7-2013 and\n the revised Tariff Policy are statutory\n documents being issued under\nSection 3\n the Act and have the force of law.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P007_C02",
+      "text": "This\n\n1 (2017) 14 SCC 80\n\nbeing so, it is clear that so far as the\nprocurement of Indian coal is concerned,\nto the extent that the supply from Coal\nIndia and other Indian sources is cut\ndown, the PPA read with these documents\nprovides in Clause 13.2 that while\ndetermining the consequences of change in\nlaw, parties shall have due regard to the\nprinciple that the purpose of compensating\nthe party affected by such change in law is\nto restore, through monthly tariff\npayments, the affected party to the\neconomic position as if such change in law\nhas not occurred. Further, for the\noperation period of the PPA, compensation\nfor any increase/decrease in cost to the\nseller shall be determined and be effective\nfrom such date as decided by the Central\nElectricity Regulation Commission. This\nbeing the case, we are of the view that\nthough change in Indonesian law would\nnot qualify as a change in law under the\nguidelines read with the PPA, change in\nIndian law certainly would.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P008_C01",
+      "text": "58. ……….The Central Electricity\nRegulatory Commission will, as a result of\nthis judgment, go into the matter afresh\nand determine what relief should be\ngranted to those power generators who fall\nwithin Clause 13 of the PPA as has been\nheld by us in this judgment.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P009_C01",
+      "text": "8. It may be mentioned that this Court, in the case of\nEnergy\n\nWatchdog\n(supra), specifically rejected the claim that the\n\nincrease in price of coal due to change in Indonesian\n\nRegulations would also amount to Change in Law. This Court\n\nheld that only Change in Law in India would entitle the\n\nGenerator to the benefit of restitution on account of such\n\nChange in Law.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P010_C01",
+      "text": "9. Pursuant to the orders passed by this Court in the case of\nEnergy Watchdog\n(supra), AP(M)L filed Petition\n\nNo.97/MP/2017 before the CERC. The CERC, vide order dated\n\n31st May, 2018, allowed the Petition and directed the working\n\nout of the relief based on the formulation given in Paragraph 46\n\nof its judgment for the period from 1 st April 2013 to 31st March",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P011_C01",
+      "text": "2017. Subsequently, a Review Petition bearing No.24/RP/2018\n\nalso came to be filed. The same was rejected by the CERC vide\n\norder dated 3rd December 2018. Being aggrieved thereby, the\n\nappellants preferred appeal before the learned APTEL.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P012_C01",
+      "text": "10. The learned APTEL framed the following four issues for\n\nconsideration:\n\n“Issue No.1:-\nWhether the Central\n Commission was justified in\n holding that Adani Power's bid\n was based entirely on\n domestic coal availability and\n hence entitled to Change in\n Law relief on account of\n domestic coal shortfall?\nIssue No.2:-\nWhether shortfall in domestic\n coal was due to Change in\n Law and compensation should\n be limited to the difference\n between 100% of ACQ and\n 65%, 65%, 67% and 75% of\n ACQ as specified in NCDP\n 2013?\nIssue No.3:-\nWhether the start date of\n Change in Law compensation\n allowed by the Central\n Commission amounts to\n retrospective operation of\n Ministry of Power's letter\n dated 31.07.2013?\nIssue No.4:-\nWhether the Central\n Commission erred in ignoring\n the methodology for\n computation of Change in Law\n compensation\nlaid down in\nits\n earlier Order in Petition No.\n 79/MP/2013 - GMR\n Kamalanga Energy Ltd. & Anr.\n\nvs. DHBVNL &Ors. (\"GMR\n Case\")?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "GMR\n Kamalanga Energy Ltd. & Anr v DHBVNL &Ors"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P013_C01",
+      "text": "11. After hearing the learned counsel for the parties, the\n\nlearned APTEL held all the issues in favour of the respondent\n\nNo.1-Generator and dismissed the appeal. Being aggrieved\n\nthereby, the appellants have filed the present appeal.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P014_C01",
+      "text": "12. We have heard Shri M.G. Ramachandran, learned Senior\n\nCounsel appearing on behalf of the appellants and Dr. A.M.\n\nSinghvi, learned Senior Counsel appearing on behalf of the\n\nrespondent No.1- AP(M)L.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P015_C01",
+      "text": "13. Shri Ramachandran submits that the CERC as well as the\n\nlearned APTEL have grossly erred in granting Change in Law\n\nrelief for the shortfall in the availability of 100% coal. He\n\nsubmits that AP(M)L’s bid and the PPA were admittedly\n\npremised both on domestic coal and imported coal in the ratio\n\nof 70:30. As such, the relief could be granted only insofar as\n\nthe shortfall in the 70% domestic coal is concerned. He\n\nsubmits that AP(M)L has submitted the bid on the premise that\n\n30% of the coal would be imported, while 70% of the coal would\n\nbe procured indigenously. He submits that the effect of the\n\norders passed by the CERC and the learned APTEL is that\n\nAP(M)L has been granted benefit on the consideration that its\n\nbid was premised on 100% domestic coal.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P016_C01",
+      "text": "14. Shri Ramachandran further submits that a perusal of the\n\nvarious pleadings of AP(M)L would clearly reveal that AP(M)L’s\n\nbid was premised on domestic and imported coal in the\n\nproportion of 70:30. However, all these documents have been\n\nignored by the learned APTEL. Shri Ramachandran submits\n\nthat the documents placed on record would reveal that AP(M)L\n\nhad represented that it will use imported coal for generation of\n\npower. He submits that the Executive Summary of the bid\n\nsubmitted by AP(M)L would reveal that AP(M)L had represented\n\ntherein that the strategic advantage of the Power Plant was its\n\nproximity to Mundra Port, where coal is being imported.\nLearned counsel submits that in view of the pleadings of\n\nAP(M)L, it was clear that it was its responsibility to procure 30%\n\nimported coal. He, therefore, submits that granting of relief for\n\nshortfall of 30% imported coal is nothing else but a perversity.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P017_C01",
+      "text": "15. Shri Ramachandran further submits that the methodology\n\nof computation of compensation on account of the Change in\n\nLaw event has also been erroneously applied by the CERC and\n\naffirmed by the learned APTEL. He submits that the\n\nmethodology that ought to have been applied was the difference\n\nbetween landed cost of alternate coal on the one part and the\n\nprevalent landed cost of domestic coal or quoted energy\n\ncharges, whichever was higher, on the other part. He submits\n\nthat had there been no Change in Law and AP(M)L had received\n\nthe entire quantum of domestic coal, it would have had to bear\n\nthe prevalent price of landed domestic coal on its own,\n\nirrespective of whether such cost is below or above the quoted\n\nenergy charges in the bid. He submits that if such landed cost\n\nof domestic coal is higher than the quoted energy charges,\n\nAP(M)L was not entitled to claim the difference between the\n\nlanded cost of domestic coal and the quoted energy charges.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P018_C01",
+      "text": "16. Shri Ramachandran further submits that the learned\n\nAPTEL is wrong in proceeding on the basis that there was no\n\nobjection by the appellants before the CERC on the\n\nmethodology for computation of Change in Law compensation\n\nlaid down in its order in Petition No. 79/MP/2013-GMR\n\nKamalanga Energy Ltd. & Anr. v. DHBVNL & Ors.\n\n(hereinafter referred to as “GMR Case”)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P019_C01",
+      "text": "17. Shri Ramachandran further submitted that the appellants\n\nhave no objection for giving benefit on account of Change in\n\nLaw for shortfall in 70% of coal to be procured indigenously.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P020_C01",
+      "text": "18. Dr. A.M. Singhvi, on the contrary, submits that the bid\n\nsubmitted by AP(M)L was on the basis of National Coal\n\nDistribution Policy, 2007 (for short, “NCDP 2007”). He submits\n\nthat there was no bifurcation in the bid with regard to 70%\n\ndomestic coal and 30% imported coal. Learned Senior Counsel\n\nsubmits that the cut-off date for Change in Law claim would be\n\n17th November 2007, i.e. minus 7 days from the last date for\n\nsubmission of the bid, i.e. 24th November 2007. It is submitted\n\nthat even in the PPAs signed with Haryana Utilities on 7 th\n\nAugust 2008, there is no bifurcation of domestic and imported\n\ncoal. He submits that though the Standing Linkage Committee\n\n(Long-Term) (hereinafter referred to as “SLC (LT)”) has\n\nconsidered AP(M)L’s application for 100% coal of its total\n\ncapacity, it has granted linkage only for 70% of 1980 MW, i.e.\n\n1386 MW only. He submitted that linkage of balance 30% was\n\ndeferred to the future.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P021_C01",
+      "text": "19. Dr. Singhvi further submitted that the SLC (LT) is a\n\nstatutory body and its decision would amount to Change in\n\nLaw. In this respect, he relies on the judgment of this Court in\n\nthe case of\nAshoka Smokeless Coal India (P) Ltd. and others\n\nv. Union of India\nand others2\n20. When we heard this batch of Electricity appeals, it was\n\nagreed between all the parties that this Court should first\n\ndecide Civil Appeal No. 684 of 2021 (\nMaharashtra State\n\nElectricity Distribution Company Limited v. Adani Power\n\nMaharashtra Limited and Others3\n) [\n“MSEDCL v. APML and\n\nOthers”\n, for short] and Civil Appeal No. 6927 of 2021\n\n(\nMaharashtra State Electricity Distribution Company\n\nLimited v. GMR Warora Energy Ltd. and Others\n) inasmuch\n\nas three of the issues involved in all the appeals in the batch\n2 (2007) 2 SCC 640\n\n3 2023 SCC OnLine SC 233\n\nwere common. It was submitted that those two appeals could\n\nbe decided by deciding the three common issues.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P021_C02",
+      "text": "However,\n\ninsofar as the other appeals are concerned, it was submitted\n\nthat, in addition to the three common issues, certain additional\n\nissues were also involved and it was agreed that after those two\n\nappeals are decided, the other appeals should be heard for\n\nconsidering these additional issues.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P022_C01",
+      "text": "21. The said three common issues are thus:\n(i) Whether ‘Change in Law’ relief on account of NCDP\n\n 2013 should be on ‘actuals’ viz. as against 100% of\n\n normative coal requirement assured in terms of\n\n NCDP 2007 OR restricted to trigger levels in NCDP\n\n 2013 viz. 65%, 65%, 67% and 75% of Assured Coal\n\n Quantity (ACQ)?\n(ii) Whether for computing ‘Change in Law’ relief, the\n\n operating parameters be considered on ‘actuals’ OR\n\n as per technical information submitted in bid?\n\n(iii) Whether ‘Change in Law’ relief compensation is to be\n\n granted from 1st April 2013 (start of Financial Year) or\n\n 31st July 2013 (date of NCDP 2013)?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P023_C01",
+      "text": "22. After extensively hearing all the learned counsel for the\n\nparties, vide the judgment and order dated 3rd March 2023 in\n\nthe case of\nMSEDCL v. APML and Others\n(supra), this Court\n\ndecided those two appeals after considering the aforesaid three\n\nissues.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P024_C01",
+      "text": "23. The first issue was answered by this Court, holding that\n\nthe ‘Change in Law’ relief for domestic coal shortfall should be\n\non ‘actuals’ i.e. as against 100% of normative coal requirement\n\nassured in terms of NCDP, 2007. Insofar as the second issue is\n\nconcerned, it was held that the Station Heat Rate (“SHR” for\n\nshort) and Auxiliary consumption should be considered as per\n\nthe Regulations or actuals, whichever is lower. The third issue\n\nwas answered holding that the Start date for the ‘Change in\n\nLaw’ event for the NCDP, 2013 is 1st April 2013.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P025_C01",
+      "text": "24. As such, Issue Nos. 2 and 3, which were framed by the\n\nlearned APTEL in the impugned judgment and order dated 3 rd\n\nNovember 2020 stand fully covered by the judgment of this\n\nCourt in the case of\nMSEDCL v. APML and Others\n(supra). The\n\nremaining two issues that are required to be considered in the\n\npresent appeal are thus:\n“Issue No.1:- Whether the Central\n [as framed by Commission was justified in\n the learned holding that Adani Power's bid\n APTEL] was based entirely on\n domestic coal availability and\n hence entitled to Change in\n Law relief on account of\n domestic coal shortfall?\n\n Issue No.4:-\n [as framed by Whether the Central\n the learned Commission erred in ignoring\n APTEL] the methodology for\n computation of Change in Law\n compensation\nlaid down in\nits\n earlier Order in Petition No.\n 79/MP/2013 - GMR\n Kamalanga Energy Ltd. & Anr.\n vs. DHBVNL &Ors. (\"GMR\n Case\")?",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "GMR\n Kamalanga Energy Ltd. & Anr v DHBVNL &Ors"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P026_C01",
+      "text": "25. Before we proceed to consider the aforesaid two issues, we\n\nmay note that the present appeal arises out of the concurrent\n\norders passed by the CERC and the learned APTEL.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P027_C01",
+      "text": "26. This Court, in the case of\nMSEDCL v. APML and Others\n(supra), after considering the relevant provisions under the\nElectricity Act, 2003\nwith regard to constitution of various\n\nexpert bodies like the CEA, CERC and the learned APTEL, held\n\nthat these bodies are bodies consisting of experts in the field.\n\nAfter considering various judgments on the issue, this Court\n\nobserved thus:\n“123. Recently, the Constitution Bench of\n this Court in the case of\nVivek Narayan\n Sharma v. Union of India\nhas held that\n the Courts should be slow in interfering\n with the decisions taken by the experts in\n the field and unless it is found that the\n expert bodies have failed to take into\n consideration the mandatory statutory\n provisions or the decisions taken are\n based on extraneous considerations or\n they are ex facie arbitrary and illegal, it\n will not be appropriate for this Court to\n substitute its views with that of the\n expert bodies.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P028_C01",
+      "text": "27. Though the present appeal arises out of the concurrent\n\norders passed by CERC as well as APTEL, in view of the\n\nsubmissions made, we will proceed to consider the rival\n\nsubmissions.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P029_C01",
+      "text": "28. Insofar as the first issue with regard to the bifurcation of\n\n70% domestic and 30% imported coal is concerned, we have\n\nexamined the documents placed on record by the parties.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P030_C01",
+      "text": "29. None of the documents placed on record would reveal that\n\na representation was given by AP(M)L that its bid is based on\n\n70% domestic and 30% imported coal. Insofar as the document\n\non which Shri Ramachandran has relied i.e. the Executive\n\nSummary of the bid is concerned, the same reads thus:\n“Adani Enterprises Ltd., the promoter of\n APL, is the largest coal importing\n company of the country. The strategic\n advantage of the Power Plant is its\n proximity to MUNDRA PORT, where coal\n is being imported. Mundra Port possesses\n World Class Coal handling facilities with\n 17 meter deep draft permitting capsize\n vessels to berth alongside.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P031_C01",
+      "text": "30. It could thus be seen that what has been stated in the\n\nExecutive Summary by AP(M)L is that its Power Plant had a\n\nstrategic advantage inasmuch as it had proximity to Mundra\n\nPort. It further states that Mundra Port possesses World Class\n\nCoal handling facilities with 17 meter deep draft permitting\n\ncapsize vessels to berth alongside. By the said document, it has\n\nproposed to supply 1425 MW to Haryana Power Generation\n\nCorporation Limited (HPGCL) from 1980 MW (3 x 660 MW)\n\nPhase IV extension of Mundra Project. The representation given\n\nis that it will use either imported or indigenous coal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P032_C01",
+      "text": "31. If the argument of the appellants is to be accepted that at\n\nthe time of bid there was no assurance of domestic coal supply,\n\nthen the contention of the appellants that AP(M)L is entitled to\n\nshortfall of 70% of the coal itself is contradictory.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P033_C01",
+      "text": "32. In any case, even on facts, it is to be noted that the\n\ncontention is without substance. AP(M)L has offered to supply\n\n1425 MW of power from its Phase IV extension of Mundra\n\nProject, having a capacity of 1980 MW. The PPA entered into\n\nbetween Haryana Utilities and AP(M)L is for 1424 MW.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P034_C01",
+      "text": "33. The SLC(LT), in its meeting dated 12th November 2008,\n\nbased on the recommendation of the Central Electricity\n\nAuthority (“CEA” for short), Ministry of Power (“MoP” for short)\n\nhad authorized the issuance of LoA for 1386 MW i.e. 70% of\n\n1980 MW installed capacity of Phase IV extension of the\n\nMundra Project. This was done in accordance with the\n\nprovisions of the NCDP 2007. Insofar as the remaining capacity\n\nis concerned, the decision was deferred to be taken by the SLC\n\n(LT) in the future, based on the recommendation of MoP and\n\nother relevant factors.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P035_C01",
+      "text": "34. It could thus be seen that AP(M)L would be entitled to\n\nbenefit on account of the Change in Law if there was any\n\nshortfall of 70% of the domestic coal as was decided to be\n\nallotted by the SLC (LT) in its meeting dated 12 th November\n\n2008, culminating in the Ministry of Coal (for short, “MoC”)\n\nissuing a LoA dated 25th June 2009 and the Fuel Supply\n\nAgreement (for short, “FSA”) being signed by AP(M)L with CIL on\n\n9th June 2012.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P036_C01",
+      "text": "35. Undisputedly, the claim of AP(M)L is with regard to\n\nshortfall in the assured quantity of 70%, and not above that.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P037_C01",
+      "text": "36. From the order passed by the learned APTEL, it is clear\n\nthat it has been the consistent stand of the appellants that\n\nAP(M)L was in a position to generate and supply contracted\n\ncapacity of 1424 MW out of the fuel linkage arising out of the\n\nFSA dated 9th June 2012 with Mahanadi Coal Field Limited\n\n(“MCL” for short). It has been its stand that AP(M)L should use\n\nthe entire domestic coal availability towards the contracted\n\ncapacity of the appellants first, and then use the imported coal\n\nfor the deficit to reach the targeted PLF. It has further been its\n\nstand that the entire domestic coal available should be\n\naccounted towards 1424 MW contracted to Haryana Utilities.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P038_C01",
+      "text": "37. In its reply dated 31st July 2017, Haryana Utilities have\n\ncategorically stated thus:\n“Thus the actual coal received from MCL\n is required to be considered towards\n power supplied under Haryana PPAs for\n the purpose of relief under force\n majeure.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P039_C01",
+      "text": "38. In its I.A. No.12 of 2018 dated 4 th March 2018 in Petition\n\nNo.97/MP/2017, the Haryana Utilities have reiterated thus:\n\n“It is submitted that the entire quantum\n of domestic coal available from MCL under\n the FSA dated 9.6.2012 was to be\n exclusively used for generation and supply\n of electricity to the Haryana Utilities\n under the PPA dated 7.8.2008.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P040_C01",
+      "text": "39. It is further to be noted that the learned APTEL had,\n\nduring the course of the hearing, put a pertinent query to the\n\nlearned counsel appearing for Haryana Utilities, as to whether\n\nthe entire actual coal received from MCL was used towards the\n\npower supplied under the Haryana PPAs. To this query, it was\n\nreplied thus:\n“During the hearing, Mr. Ramachandran\n admitted that Adani Power has been\n using entire actual coal received from\n MCL towards the power supplied under\n the Haryana PPAs”",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P041_C01",
+      "text": "40. In view of this factual position that the entire domestic\n\ncoal linkage came to be utilized for supplying power to Haryana\n\nUtilities, it is unjust, in our opinion, on the part of Haryana\n\nUtilities to say that 70% of the installed capacity should be\n\nfurther bifurcated and the Change in Law benefit should be\n\nrestricted only to 70% of the 70% of the installed capacity which\n\nwas allotted by the SLC (LT).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P042_C01",
+      "text": "41. Even according to Haryana Utilities, the entire coal\n\ncovered under FSA was required to be utilized for generating\n\npower to be supplied to it as per the Memorandum of\n\nUnderstanding (“MoU” for short). Therefore, denial of the benefit\n\nof shortfall of the coal assured under FSA, in our view, would be\n\ncontrary to the restitutionary principle, as held by this Court in\n\nthe cases of\nEnergy Watchdog\n(supra) and\nJaipur Vidyut\n\nVitaran Nigam Ltd. and others v. Adani Power Rajasthan\n\nLimited\nand another4.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P043_C01",
+      "text": "42. In any case, the learned APTEL has clarified that AP(M)L\n\nwas neither claiming nor was entitled to claim any Change in\n\nLaw compensation beyond the one which was covered by\n\nlinkage coal, i.e. 1386 MW.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P044_C01",
+      "text": "43. The other limb of argument in this regard is that AP(M)L\n\nhad MoUs with foreign companies for import of coal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P045_C01",
+      "text": "44. To a specific query by the learned APTEL, it was fairly\n\nconceded by the learned counsel for Haryana Utilities that the\n\nMoUs were general in nature and not specific for Phase IV\n\n4 2020 SCC Online SC 697\n\nMundra Power Plant. As such, the finding of the learned APTEL\n\nthat the MoUs annexed with the bid were only to show its\n\ncompetence to participate in the bid, and that it cannot be\n\nstretched to hold that the bidder was to procure imported coal\n\nto the extent of 30% for the project, cannot be said to be\n\nperverse.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P046_C01",
+      "text": "45. In the case of\nMSEDCL v. APML and Others\n(supra), this\n\nCourt has elaborately referred to the earlier judgments of this\n\nCourt and observed thus:\n“132. Undisputedly, in the case\nEnergy Watchdog\n(supra) as well as\nAdani Rajasthan\ncase (supra) this\n Court has held that on account of the\n Change in Law, the generating companies\n were entitled to compensation so as to\n restore the party to the same economic\n position as if such Change in Law had\n not occurred. Had the Change in Law not\n occurred, the generating companies\n would have been entitled to the supply as\n assured by the CIL/Coal Companies\n under the FSA.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P047_C01",
+      "text": "46. We are, therefore, of the considered view that no error\n\ncould be found with the concurrent findings that AP(M)L was\n\nentitled to Change in Law relief for 100% of the contracted\n\ncapacity i.e. 1386 MW, which is 70% of the installed capacity of\n\n1980 MW of the Phase IV extension of Mundra Project. In other\n\nwords, the finding of the CERC and the learned APTEL is to the\n\neffect that AP(M)L would not be entitled to any benefit of Change\n\nin Law beyond 70% of the installed capacity i.e. 1386 MW. The\n\nsaid findings cannot be said to not be based on the material on\n\nrecord, or based on extraneous considerations.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P048_C01",
+      "text": "47. We are now left with the second issue with regard to\n\nmethodology.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P049_C01",
+      "text": "48. The grievance of Haryana Utilities is that the methodology\n\nfor granting benefit on account of the Change in Law adopted\n\nby the CERC and affirmed by the learned APTEL is contrary to\n\nthe one which was previously arrived at in the earlier cases of\n\nGMR, DB Power etc.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P050_C01",
+      "text": "49. Perusal of the order passed by the learned APTEL would\n\nreveal that AP(M)L had proposed a methodology based on the\n\nmethodology approved by the CERC in the GMR Kamalanga\n\nEnergy Limited and Another v. Dakshin Haryana Bijli\n\nVitran Nigam Limited and Others5 considering the quoted\n\ntariff under the PPAs as the base.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P051_C01",
+      "text": "50. The learned APTEL had referred to the Record of\n\nProceedings of the CERC dated 10th August, 2017, which read\n\nthus:\n“3. In response to the Commission’s\n query as to whether the methodology\n adopted by the Petitioner in the light of\n the methodology given in GMR case is\n acceptable to the Haryana Utilities,\n learned counsel replied in the positive.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P052_C01",
+      "text": "51. The learned APTEL had also referred to the order of the\n\nCERC dated 28th September 2017 in I.A. No.57 of 2017 in\n\nPetition No.97/MP/2017, which reads thus:\n“7…… Haryana Utilities who is the only\n respondent has not objected to the\n calculation made by the Applicant.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P053_C01",
+      "text": "52. The learned APTEL had also referred to the order dated 3 rd\n\nDecember 2018 passed by the CERC in Review Petition bearing\n\nNo.24/RP/2018, which reads thus:\n\"25... It is apparent from the above that\n the Commission, after due consideration\n of the submissions of the Adani Power\n5 Petition No. 79/MP/2013 dated 03.02.2016\n\nand Prayas had consciously decided on\n the methodology for computation of relief\n due to shortage of domestic coal under\n change in law for the period from\n 1.4.2013 to 31.3.2017 in Para 46 of the\n impugned order. The Review Petitioners\n had not suggested any methodology of\n calculation of the relief due to shortage of\n domestic coal. On the other hand, the\n Review Petitioners in their reply dated\n 28.7.2017 in the Petition No.\n 97/MP/2017 had stated that \"the\n reliance to the decision of GMR is wholly\n in appropriate\". The Review Petitioners\n are now suggesting an alternative\n formula for computation of the relief\n under change in law. As already\n reiterated in the earlier part of the order,\n the review cannot be used for\n substitution of a view already taken with\n a new view. Therefore, the review on the\n ground is not maintainable.\"",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P054_C01",
+      "text": "53. We find that Haryana Utilities are indulging into\n\napprobation and reprobation. They cannot be permitted to blow\n\nhot and cold at the same time. After accepting before the CERC\n\nthat they would adopt the methodology as given in the case of\n\nGMR Kamalanga Energy Limited (supra), it would not be\n\nappropriate, in our view, on the part of the appellants, which\n\nare, after all, instrumentalities of the State, to change its stand\n\nafter final orders are passed by the CERC.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P055_C01",
+      "text": "54. In the case of\nMSEDCL v. APML and Others\n(supra), this\n\nCourt observed thus:\n“150. In spite of this legal position and\n the stand taken by the Union of India,\n the DISCOMS are taking a stand which is\n contrary to the stand of the Union of\n India.\nEnergy Watchdog\n(supra), it was\n also sought to be urged by DISCOMS that\n even on account of Change in Law,\n adjustments would not be permissible,\n which contention was outrightly rejected.\n We have come across a number of\n matters wherein concurrent orders\n passed by the Regulatory Body and the\n Appellate Forum are assailed. Such a\n litigation would, in fact, efface the\n purpose of the\nElectricity Act\n. As already\n discussed herein above, one of the major\n reasons for the enactment of\n the\nElectricity Act\nwas the deterioration\n in performance of the State Electricity\n Boards.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P056_C01",
+      "text": "55. In the present case also, we find that the concurrent\n\nfindings of fact recorded by the two expert bodies could have\n\nbeen interfered with only if they failed to take into consideration\n\nthe mandatory statutory provisions or if the decisions had been\n\ntaken by them on extraneous considerations or that they were\n\nex facie arbitrary and illegal. Nothing of that sort can be found\n\nin the impugned judgment and order to warrant interference.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED_P057_C01",
+      "text": "56. The appeal is, therefore, found to be without substance\n\nand the same is accordingly dismissed. No costs.\n…….........................J.\n [B.R. GAVAI]\n\n …….........................J.\n [VIKRAM NATH]\nNEW DELHI;\nAPRIL 20, 2023",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Uttar Haryana Bijli Vitran Nigam Ltd vs Adani Power (Mundra) Limited",
+    "case_id": "SC_2023_UTTAR_HARYANA_BIJLI_VITRAN_NIGAM_LTD_VS_ADANI_POWER_MUNDRA_LIMITED",
+    "court": "Supreme Court of India",
+    "year": "2023",
+    "facts_summary": "1. The appellants challenge the judgment and order passed\n\n by the Appellate Tribunal for Electricity, New Delhi (hereinafter\n\n referred to as “APTEL”) dated 3rd November 2020, thereby\n\n dismissing the appeal filed by them and maintaining the\n\n judgment and order dated 31 st May 2018 passed by the Central\n\n Electricity Regulatory Commission (“CERC” for short) in Petition\n\n No. 97/MP/2017. 2. The facts, in brief, giving rise to the present appeal are as\n\n“Haryana Utilities”/“Appellants”) are distribution licensees\n\nundertaking the distribution and retail supply of electricity to\n\nconsumers in the State of Haryana. Haryana Utilities had\n\nentered into two Power Purchase Agreements (“PPAs” for short)\n\non 7th August 2008 with Adani Power Mundra Limited\n\n(hereinafter referred to as “AP(M)L”) for procurement of\n\ncontracted capacity of 1424 MW from generating units 7, 8 and\n\n9 established by AP(M)L at Mundra in the State of Gujarat. 4. The PPAs were entered into pursuant to a tariff based\n\nCompetitive Bidding Process initiated by the Haryana Utilities\n\nunder the provisions of\nSection 63\nof the Electricity Act, 2003,\n\nas per the Standard Bidding Guidelines notified by the Central\n\nGovernment.",
+    "legal_issues": "11. After hearing the learned counsel for the parties, the\n\nlearned APTEL held all the issues in favour of the respondent\n\nNo.1-Generator and dismissed the appeal. Being aggrieved\n\nthereby, the appellants have filed the present appeal. 12. We have heard Shri M.G. Ramachandran, learned Senior\n\nCounsel appearing on behalf of the appellants and Dr. A.M.\n\nSinghvi, learned Senior Counsel appearing on behalf of the\n\nrespondent No.1- AP(M)L. 14. Shri Ramachandran further submits that a perusal of the\n\nvarious pleadings of AP(M)L would clearly reveal that AP(M)L’s\n\nbid was premised on domestic and imported coal in the\n\nproportion of 70:30. However, all these documents have been\n\nignored by the learned APTEL. Shri Ramachandran submits\n\nthat the documents placed on record would reveal that AP(M)L\n\nhad represented that it will use imported coal for generation of\n\npower. He submits that the Executive Summary of the bid\n\nsubmitted by AP(M)L would reveal that AP(M)L had represented\n\ntherein that the strategic advantage of the Power Plant was its\n\nproximity to Mundra Port, where coal is being imported.\nLearned counsel submits that in view of the pleadings of\n\nAP(M)L, it was clear that it was its responsibility to procure 30%\n\nimported coal. He, therefore, submits that granting of relief for\n\nshortfall of 30% imported coal is nothing else but a perversity.",
+    "ratio_summary": "13. Shri Ramachandran submits that the CERC as well as the\n\nlearned APTEL have grossly erred in granting Change in Law\n\nrelief for the shortfall in the availability of 100% coal. He\n\nsubmits that AP(M)L’s bid and the PPA were admittedly\n\npremised both on domestic coal and imported coal in the ratio\n\nof 70:30. As such, the relief could be granted only insofar as\n\nthe shortfall in the 70% domestic coal is concerned. He\n\nsubmits that AP(M)L has submitted the bid on the premise that\n\n30% of the coal would be imported, while 70% of the coal would\n\nbe procured indigenously. He submits that the effect of the\n\norders passed by the CERC and the learned APTEL is that\n\nAP(M)L has been granted benefit on the consideration that its\n\nbid was premised on 100% domestic coal.",
+    "final_order": "56. The appeal is, therefore, found to be without substance\n\nand the same is accordingly dismissed. No costs.\n…….........................J.\n [B.R. GAVAI]\n\n …….........................J.\n [VIKRAM NATH]\nNEW DELHI;\nAPRIL 20, 2023",
+    "outcome_summary": "56. The appeal is, therefore, found to be without substance\n\nand the same is accordingly dismissed. No costs.\n…….........................J.\n [B.R. GAVAI]\n\n …….........................J.\n [VIKRAM NATH]\nNEW DELHI;\nAPRIL 20, 2023",
+    "sections_cited": [],
+    "cases_cited": [
+      "GMR\n Kamalanga Energy Ltd. & Anr v DHBVNL &Ors"
+    ]
+  }
+}

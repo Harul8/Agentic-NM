@@ -1,0 +1,592 @@
+{
+  "case_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR",
+  "case_name": "Kanwal Tanuj vs The State Of Bihar",
+  "normalized_case_name": "KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR",
+  "court": "Supreme Court of India",
+  "year": "2020",
+  "judgment_template": null,
+  "case_number": "Criminal Appeal 414 of 2020",
+  "case_number_regex": "CRIMINAL_APPEAL",
+  "date_of_judgment": "24 April 2020",
+  "judges": [
+    "Dinesh Maheshwari",
+    "A.M. Khanwilkar"
+  ],
+  "author": "A.M. Khanwilkar",
+  "bench_type": "division",
+  "petitioner": "Kanwal Tanuj",
+  "respondent": "The State Of Bihar",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 22,
+  "cited_by_count": 13,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR 2020 SUPREME COURT 2023",
+    "AIRONLINE 2020 SC 478"
+  ],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2020\\APR\\2020_APR_23.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P001_C01",
+      "text": "CRIMINAL APPELLATE JURISDICTION\n\n CRIMINAL APPEAL NO. 414 OF 2020\n (Arising out of SLP(Crl.) No. 9876 of 2018)\n\n Kanwal Tanuj ….Appellant(s)\n\n Versus\n\n State of Bihar & Ors. ….Respondent(s)\n\n JUDGMENT\nA.M. Khanwilkar, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P002_C01",
+      "text": "2. This appeal emanates from the judgment and order dated\n\n 17.9.2018 passed by the High Court of Judicature at Patna (for\n\n short, “the High Court”) in Criminal Writ Jurisdiction Case\n\n (CWJC) No. 879/2018, whereby the writ petition filed by the\n\n appellant for quashing of first information report (FIR) being R.C.\n\n A.C.­I, 2018A 0002 dated 21.2.2018 registered by the Central\n\n Bureau of Investigation (for short, “the CBI”) under Sections\n\n“the\nIPC\n”) read with\nSection 13(1)(d)\nof the Prevention of\n\nCorruption Act, 1988 (for short, “the\nPC Act\n”) came to be rejected.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P003_C01",
+      "text": "3. The principal ground canvassed by the appellant before the\n\nHigh Court was that he being an officer of the Indian\n\nAdministrative Service (IAS) employed in connection with the\n\naffairs of the Government of Bihar as District Magistrate at\n\nAurangabad District (State of Bihar) could not be subjected to\n\ninvestigation by the CBI without the prior consent of the State.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P004_C01",
+      "text": "4. The appellant has been named as an accused alongwith one\n\nShri C. Sivakumar, CEO, Bhartiya Rail Bijli Company Limited (for\n\nshort, “BRBCL”), Nabinagar, District Aurangabad, Bihar on the\n\nbasis of FIR registered by the CBI pursuant to information\n\nreceived from a reliable source alleging as follows: ­\n\n “A reliable source information has been received that\n Bhartiya Rail Bijlee Company Limited (BRBCL), a\n subsidiary of NTPC Ltd. is constructing four units of 250\n MW at Nabinagar in Aurangabad District (Bihar). The\n joint venture project has been developed by Bhartiya Rail\n Bijlee Company Limited (BRBCL) with NTPC having 74\n percent share, while the Ministry of Railways with the\n remaining 26 percent. Indian Railways would get 90\n percent and the state of Bihar would get ten percent of\n the power generated from BRBCL’s plants. The\n construction work of BRBCL was proposed in the 2005­06\n Union Budget and the Central Govt. approved the\n company in February 2007 but work on the plant was\n delayed due to land acquisition problems at Nabinagar. Actual work on BRBCL power plants started in 2008­09.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P004_C02",
+      "text": "The four units of BRBCL plant are proposed to be\n\nconstructed on around 1,500 acres of land at Nabinagar\nand all of them are to be completed at a revised cost of\naround Rs.8,100 crore.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P005_C01",
+      "text": "2. Information further revealed that large scale\ncorruption and siphoning of government funds has taken\nplace in the land acquisition for the plant of Bhartiya Rail\nBijlee Company Limited (BRBCL) by the BRBCL officials\nin criminat connivance with Local District Administration.\nA specific instance has been formed by source in this\nregard pertaining to acquisition of tL.57 acre land of\nKhata No.12, plot No.1, of Mauja Kajrine for the Thermal\nPower Project at Nabinagar in the District of Aurangabad\n(Bihar). The proposal to acquire land has already been\napproved by the State Government of Bihar along with the\ncompensation amount payable to the owner of the\nacquired lands.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P006_C01",
+      "text": "3. Information also revealed that initially vide letter\nNo.452, dated 22.06.2015, Circle Officer, Nabinagar\ninformed Chief Executive Officer, BRBCL, Nabinagar that\nthere was no claimant for land 7.09 acre pertaining to\nKhata No.12, plot No.1 of Mauja Kajrine. In this regard\nBRBCL issued a letter to Circle Officer, Nabinagar on\n15.01.2016 that company had no objection if aforesaid\nleft out land was transferred to company (BRBCL).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P007_C01",
+      "text": "4. It has been further revealed by a source that Shri C.\nShiv Kumar, CEO, BRBCL, Nabinagar entered into a\ncriminal conspiracy with Shri Kanwal Tanuj, District\nMagistrate, Aurangabad District (Bihar), other unknown\nofficers/officials of BRBCL, local District Administration\nand Shri Gopal prasad singh (now deceased). In\nfurtherance of the said criminal conspiracy, Shri Kanwal\nTanuj, District Magistrate, Aurangabad District (Bihar)\ngot false documents of Khata No.12, plot No.1 of Mauja\nKajrine prepared in respect of one shri Gopal prasad\nsingh (now deceased) s/o Late Kesho Prasad singh, R/o­\nNabinagar District­ Aurangabad (Bihar). Some false\nreceipts of Lagan for the period 1988­89 to 2016­17, some\nother related papers/returns of above land shown to be\npurchased from Shri Mukund Lal (Jamindar), who was\nnever jamindar (Land lord) of the area were prepared and\nsubmitted for claim/compensation in the name of Gopal\nPrasad Singh (now deceased).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P008_C01",
+      "text": "5. It was then fraudulently directed by Shri Kanwal\nTanuj, DM, Aurangabad that 7.45 acre land in Khata\nNo.12, Plot No.1 of Mauja Kajrine be recorded in the name\nof Shri Gopal Prasad Singh (now deceased) and the matter\n\nmay be further processed accordingly. Circle Officer,\nNabinagar sent a letter No.74, dated 11.03.2017 to Chief­\nExecutive officer BRBCL for purchasing of the land from\nthe owner Shri Gopal Prasad Singh (now deceased), Circle\nOfficer, Nabinagar thereafter issued another letter dated\n25.03.2017 to BRBCL recalling his previous letter dated\n22.06.2015 and informed that 7.45 acres out of the total\nland in Khata No.12, plot No.1 of Mauja Kajrine has been\nregistered in name of Shri Gopal Prasad Singh. The circle\nofficer further informed BRBCL that 6.545 acres falling in\nthe Ash Dyke area in the above mentioned plot was being\nearmarked/acquired for the BRBCL and directed the\nBRBCL to purchase the said land from the owner Shri\nGopal Prasad Singh and 0.905 acres from the Govt. Land\nwas being transferred to BRBCL for the purpose of the\nplant.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P009_C01",
+      "text": "6. Source information also revealed that as per\nprocedure possession of land is taken in the presence of\nland owners after identification of their land but when\nBRBCL officers along with other officers visited the site on\n11 & 12.04.2017 for possession of the aforesaid land, the\nclaimant Gopal prasad singh (now deceased) allegedly\ncould not identify his own land and many villagers, who\ngathered there opposed that the said land was not owned\nby Shri Gopal Prasad Singh (now deceased). In this regard\na video/CD was also prepared at the spot. In furtherance\nof the conspiracy, vide letter 1707 dated 26.05.2017 Shri\nKanwal Tanuj, DM, Aurangabad thereafter directed\nBRBCL to make payment of compensation for the land\n(Khata No.12, Plot No.1, of Mauja Kajrine) to Gopal\nPrasad Singh (now deceased) within 48 hours. Vide letter\nNo.151, dated 12.06.2017 Shri C. Shiv Kumar, CEO,\nBRBCL, Nabinagar made payment of Rs.2,07,84,583/­ to\nShri Gopal Prasad Singh (now deceased) despite having\nthe knowledge that Shri Gopal Prasad Singh could not\nidentify the land and many villagers who had gathered\nthere opposed that the said land was not owned by Shri\nGopal Prasad Singh (now deceased).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P010_C01",
+      "text": "7. Source has further informed that an a/c. Payee\nCheque No.382774, dated 29.05.2017 for\nRs.2,07,84,583/­ was issued from account\nNo.30450307785 by Bhartiya Rail Bijlee Co. Ltd. in favour\nof Shri Gopal Prasad Singh (now deceased) and same was\ncredited in a/c number 6082000100097579 of Shri Gopal\nPrasad Singh (now deceased) maintained in SBI,\nNabinagar branch, District­Aurangabad (Bihar). This\namount was transferred via RTGS/SBINR520170529 in\n\nthis account and subsequently the money was withdrawn.\n Thus, BRBCL was caused a wrongful loss to the tune of\n Rs.2,07,84,5831­ and corresponding wrongful gain to\n themselves.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P011_C01",
+      "text": "8. The above facts and circumstances prima­facie\n disclose commission of offences punishable U/s. 120­B,\n 420, 467, 468 & 471\nIPC\nand Section 73(2) r/w\nSection\n 13 (1) (d)\nof the P.C. Act, 1988 against Shri C. Shiv\n Kumar, CEO, BRBCL Nabinagar, Shri Kanwal Tanuj, DM,\n Aurangabad and other unknown public servants of\n BRBCL and local administration and other private\n persons.\nA Regular case is, therefore, registered and\n entrusted to Shri Pramod Kumar, Dy. Supdt. of police\n CBI, AC­I, New Delhi Supdt. of Police, CBI/AC­I, New\n Delhi for investigation and report.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P012_C01",
+      "text": "5. As aforesaid, the appellant filed writ petition for quashing of\n\nthe said FIR on the ground that it does not disclose any criminal\n\noffence against the appellant and for a declaration that it has\n\nbeen lodged against the appellant (a State Government\n\nemployee), without prior permission of the State Government and\n\nwas thus in violation of\nSection 6\nof the Delhi Special Police\n\nEstablishment Act, 1946 (for short, “the 1946 Act”). In other\n\nwords, the FIR has been registered without jurisdiction and is\n\nvoid ab initio.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P013_C01",
+      "text": "6. The High Court after considering the grounds of challenge,\n\nproceeded to hold that BRBCL is an “affiliate” or “associate” in\n\nrelation to National Thermal Power Company (NTPC) Ltd. and the\n\nRailways respectively. The registered office of BRBCL was in the\n\nUnion Territory of Delhi (National Capital Territory of Delhi) and\n\nthe allegation regarding defrauding the said undertaking (BRBCL)\n\nand siphoning of funds had occurred in the Union Territory of\n\nDelhi (National Capital Territory of Delhi). The funds for\n\nimplementation of the project through BRBCL were provided by\n\nthe Central Government in terms of the Union Budget proposed\n\nin the year 2005­06. The High Court then concluded that\n\ncriminal conspiracy for committing the offence was thus hatched\n\nat Delhi and for all these reasons, the CBI was competent to\n\nregister FIR at Delhi and to carry on investigation in that regard.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P013_C02",
+      "text": "Additionally, the High Court referred to the notification dated\n\n19.2.1996 issued by the State Government of Bihar according\n\nconsent to all members of the Delhi Special Police Establishment\n\n(for short, “the DSPE”) to exercise powers and jurisdiction under\n\nthe 1946 Act in the whole of the State of Bihar in respect of the\n\nstated offences. The said notification reads thus: ­\n\n “NO.3/Vividh­6019/96\n Government of Bihar\n Home (Police) Department\n Notification\n\n Patna the February, 1996\n\nO.O. No.____________/­ In exercise of the powers conferred\nsection 6\nof the Delhi Special Police Establishment Act.\n1945 (Act XXV of 1945), and in supersession of all\nprevious notifications on the subject the Governor of\nBihar is pleased to accord his consent to all members of\nthe Delhi Special Police Establishment to exercise powers\nand jurisdiction under the said Act in whole of the State\nof Bihar in respect of the investigation of the followings:­\n(a) Offences committed in connection with the affairs of\nthe Govt. of India, Local authority subject to the control of\nthe Government of India or any corporation, company or\nBank owned or controlled by the Govt. of India.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P013_C03",
+      "text": "(i) punishable under the prevention of corruption Act,\n1947 (Act 2 of 1947);\n(ii) punishable under Section 403, 406, 407, 408, 409,\n411, 412, 413, 414, 417, 418, 419, 420, 465, 466, 467,\n468, 471 and 477­A of the Indian Penal Code (45 of 1860);\nand\n(iii) attempts, abetments and conspiracies in relation to,\nor in connection with the offences mentioned in clause (i)\nand (ii) above any other offence committed in the course\nof the same transaction arising out of the same facts. (b) offences punishable under the Central Acts\nspecified in the Annexure appended hereto,\n Provided that where public servants employed in\nconnection with the affairs of the Government of Bihar\nand persons employed in connection with the affairs of\nany local authority subject to the control of the\nGovernment of Bihar or any corporation, company or\nBank owned or controlled by the Government of Bihar or\nany institution receiving or having received any financial\naid from the Government of Bihar are concerned in\noffences referred to in items a(i) to (iii) and (b) above, the\nprior consent of the State Government shall be obtained\nfor the investigation of any such offence by the Delhi\nSpecial Police Establishment.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P013_C04",
+      "text": "File No.1/Vividh­6019/96)\n By order of Governor of\nBihar\n\n Sd/­­­\n (D.P. Maheshwari)\n\nCommissioner & Secretary\n Home Department”\n\nThe High Court negatived the argument of the appellant that the\n\nproviso in the said notification restricted the general consent\n\naccorded by the State. It was urged by the appellant that the\n\npurport of the proviso was to make it amply clear that no consent\n\nwas given by the State Government in terms of\nSection 6\nof the\n\n1946 Act to authorise the members of the DSPE to exercise\n\npowers and jurisdiction under the 1946 Act in respect of offences\n\nin which public servants employed in connection with the affairs\n\nof the Government of Bihar were allegedly involved. Investigation\n\nin respect of such cases could be undertaken only after taking\n\nprior consent of the State Government of Bihar and not\n\notherwise.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P014_C01",
+      "text": "7. The High Court noted that it was not the case of the\n\nappellant that the offences referred to in the subject FIR were not\n\ncovered by the notification issued by the Central Government in\n\nterms of\nSection 3\nof the 1946 Act. The High Court held that the\n\ninvestigation in the present case had begun in respect of affairs\n\nof an agent of a public sector undertaking and the Central\n\nGovernment through Ministry of Railways with regard to\n\nsiphoning of funds by the agent entering into a criminal\n\nconspiracy with some persons who incidentally reside outside the\n\nUnion Territory. Investigation qua them could be proceeded by\n\nthe CBI without the consent of the concerned State Government\n\nwhere the co­accused resided. The High Court in paragraphs 46\n\nand 48 noted thus: ­\n\n “46.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P014_C02",
+      "text": "Once the offences or the classes of offences are\n covered under the notification issued by the Central\n Government in terms of\nSection 3\nand the offences alleged\n are said to be in respect of the funds of the government\n being siphoned through its agent which is a corporate\n body and a government company through its Chief\n Executive Officer and the registered office of the said\n corporate body is in the Union Territory of Delhi, the\n institution of the FIR as well as the investigation taken up\n pursuant thereto cannot be stopped and no consent of the\n government of Bihar would be required to investigate the\n persons involved in commission of the offence. Such\n person may be an officer working in connection with the\n affairs of the State of Bihar, but where the offences\n alleged are in connection with the funds of the\n Government of India through its agent a government\n company having its registered office at Union Territory of\n Delhi, it would be immaterial that any other person\n involved in commission of the said offence is working in\n connection with the affairs of the State Government.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P014_C03",
+      "text": "the facts of the present case, this Court is of the\n considered opinion that no consent of the State\n Government in terms of\nSection 6\nof the DSPE Act, 1946\n would be required.\nxxx xxx xxx",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P015_C01",
+      "text": "48. Even though learned Senior counsel representing\n the petitioner submits that in the present case the\n B.R.B.C.L. cannot be said to be a company owned or\n controlled by the Central Government, this Court is of the\n considered opinion that first part of the notification dated\n 19.02.1996 in so far as it states that the consent of the\n government is in respect of the investigation of the offence\n\ncommitted in connection with the affairs of the\n Government of India, local authority subject to the control\n of the Government of India, local authority subject to the\n control of the Government of India or any Corporation,\n Company or Bank owned and controlled by the\n Government of India cannot be given a narrow meaning.”\n\nWhile dealing with the proviso in the subject notification dated\n\n19.2.1996, the High Court in paragraphs 57 and 58 observed\n\nthus:­\n\n “57.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P015_C02",
+      "text": "The proviso to the notification dated 19.02.1996\n issued by the Government of Bihar cannot come to the\n rescue of the petitioner in the present set of facts and\n circumstances where the C.B.I. while investigating a case\n involving a government company who is acting as an\n agent of the public sector undertaking and Ministry of\n Railways finds that some more persons including those\n who are public servants presently working and serving\n under the Government of Bihar are also involved in the\n conspiracy which has an ultimate effect of causing\n unlawful loss to the principal for which the agent is\n working, no individual consent would be required in\n terms of\nSection 6\nof the D.S.P.E. Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P016_C01",
+      "text": "58. The contention of the learned Senior Counsel\n based on the proviso part of the notification dated\n 19.02.1996 could have been worth consideration if it\n could have been shown to this Court that the entire\n alleged offence in respect of which the C.B.I. has\n assumed jurisdiction to investigate relate to an affairs of\n the State of Bihar. This Court would, therefore, reiterate\n that in the facts situation of the present case no consent\n at all would be required from the Government of Bihar.”\n\nThe High Court accordingly rejected the challenge put forth by\n\nthe appellant and dismissed the writ petition being devoid of\n\nmerit.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P017_C01",
+      "text": "8. The appellant has reiterated the grounds urged before the\n\nHigh Court and would contend that CBI could not have registered\n\nthe FIR much less investigated the same without prior consent of\n\nthe State of Bihar in that regard. The notification dated\n\n19.2.1996 does not authorise the CBI to register cases against\n\nthe public servants employed in connection with the affairs of the\n\nGovernment of Bihar. In support of this submission, reliance has\n\nbeen placed on the decisions in\nState of West Bengal & Ors.\n\nvs. Committee\nfor Protection of Democratic Rights, West\n\nBengal & Ors.1, Ms. Mayawati vs. Union of India & Ors. 2 and\nM. Balakrishna Reddy vs. Director, Central Bureau of\n\nInvestigation, New Delhi3\n. It is urged that the interpretation by\n\nthe High Court regarding the purport of the subject notification\n\ndated 19.2.1996 is flawed; and, is in teeth of the express\n\nstipulation in the proviso thereof. It is urged that any other view\n\nwould result in impacting the federal structure of the country,\n\nwhich is the basic feature of the Constitution of India.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P017_C02",
+      "text": "Further,\n\nthe general consent accorded by the State of Bihar vide stated\n\nnotification is a conditional one for exercise of powers and\n\n1 (2010) 3 SCC 571\n2 (2012) 8 SCC 106\n3 (2008) 4 SCC 409\n\njurisdiction by the officials of the DSPE. The appellant has\n\ndrawn our attention to the expression “may” used in\nSections 3\nand\n\nof the 1946 Act in contradistinction to the expression\n\n“shall” in\nSection 6\nand would urge that the requirement of prior\n\nunambiguous consent of the State Government is the pre­\n\nrequisite and sine qua non to empower the officials of the DSPE. The appellant has also pointed out that the nature of allegation\n\nin the FIR against the appellant disregards the factual\n\nbackground in which the declaration in favour of Gopal Prasad\n\nSingh regarding the land bearing Khata No. 12, Plot number 1 of\n\nMauja Kajrain was issued after due evaluation of his claim in the\n\nhierarchy of administrative set up right from Anchal Amin upto\n\nAdditional District Magistrate, which process went on from 1971\n\nas is manifest from the official record. It is thus urged that the\n\nalleged act of the appellant was done in official capacity and was\n\nprotected by\nSection 79\nof the IPC.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P017_C03",
+      "text": "The CBI ought to have\n\nundertaken preliminary enquiry before rushing to register the\n\nFIR on the basis of source information. Even for that reason, the\n\naction of CBI cannot be countenanced ­ not being in conformity\n\nwith the CBI Manual. It is urged that the FIR does not disclose\n\nany offence qua the appellant and that it was registered without\n\noffering any explanation for the inordinate delay. Finally, it is\n\nurged that the registration of FIR itself was barred by\nSection 6\n\nthe 1946 Act read with notification dated 19.2.1996.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P018_C01",
+      "text": "9. The State of Bihar has supported the claim of the appellant\n\non the question of law by contending that Policing is a State\n\nsubject under Entry 2 List II of Schedule VII of the Constitution. Hence, having due regard to the federal structure recognised\n\nunder the Constitution, provision such as\nSection 6\nof the 1946\n\nAct has been incorporated. According to the State, combined\n\nreading of\nSections 2\n,\n\n,\n\nand\n\nof the 1946 Act would show that\n\nDSPE has jurisdiction to investigate offences notified under\nSection 3\nin any Union Territory; the use of the expression “may”\n\nSections 3\nand\n\nis indicative that it is only an enabling\n\nprovision, enabling the Central Government to extend the area of\n\noperation of DSPE to any area in the State by an order. The\n\norder under\nSection 5\n, however, is made subject to the condition\n\npredicated in\nSection 6\n, namely, it would come into effect only\n\nafter consent of the concerned State Government is accorded.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P018_C02",
+      "text": "For,\nSection 6\nuses the expression “shall”, which is suggestive of\n\nthe fact that the said requirement is mandatory in nature and\n\nwithout such prior consent of the State, DSPE would not get\n\njurisdiction to enter upon investigation of the specified offences\n\nand exercise its powers and jurisdiction in any area of a State. As regards the notification dated 19.2.1996, it is urged by the\n\nState that it is a general consent, making it amply clear that prior\n\nconsent to investigate cases against the public servants employed\n\nin connection with the affairs of the Government of Bihar is\n\nessential. That requirement has not been dispensed with in\n\nterms of the proviso in the subject notification. It is always open\n\nto the State to accord partial consent on the terms specified in\n\nthe notification. As the State is variously concerned about the\n\nactions of its employees including the subject of Policing being a\n\nState subject, it is urged that the DSPE ought to have intimated\n\nthe State about the acts of commission and omission of the\n\nofficers of the State, so that the State could have examined the\n\nsame and resorted to appropriate action as per law.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P018_C03",
+      "text": "The State is\n\nalso relying on the exposition in Committee for Protection of\n\nDemocratic Rights, West Bengal (supra). It is urged by the\n\nState that no consent has been obtained by the DSPE in terms of\n\nthe proviso, although the allegations in the FIR registered by\n\nthem against the appellant who is a State Government employee\n\nare in connection with the affairs of the State.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P019_C01",
+      "text": "10. The learned Additional Solicitor General appearing for the\n\nCBI has adopted the reasons noted by the High Court. He has\n\nurged that the occupation/residence of one of the accused cannot\n\ncome in the way of DSPE to carry on the investigation in respect\n\nof offence of conspiracy to defraud the Government of India\n\nundertaking whose registered office is at Delhi and moreso\n\nbecause the siphoning of funds of the undertaking has been\n\ncommitted within the territory of Delhi. The investigation of such\n\na case cannot be regarded as in respect of an offence\n\nindependently committed by the public servant employed in\n\nconnection with the affairs of the Government of Bihar as such. As a result, no consent of any State to investigate such an office\n\nwould be necessary. As a matter of fact, no State would have\n\njurisdiction to enquire into or investigate the offence committed\n\nin relation to the Government of India undertaking registered in\n\nthe territory of Delhi. Similarly, only the Courts in Delhi would\n\nhave jurisdiction to take cognizance of the stated offence.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P019_C02",
+      "text": "such a situation, the occupation or status of the accused or his\n\nresidence cannot be the basis to constrict the powers of the\n\ninvestigating agency (DSPE) in any manner. It is urged that if the\n\nargument of the appellant is accepted, that would have serious\n\nimplications. For, in cases where the DSPE during the course of\n\ninvestigation of specified crimes committed in Union Territory is\n\nconfronted with the accused employed/residing in different\n\nStates, it would require the DSPE to obtain consent of every such\n\nState wherever the accused resides and is an employee of that\n\nState. That cannot be the intention of law in empowering the\n\nspecial police establishment (DSPE) to investigate specified and\n\nnotified offences committed within the Union Territory. The\n\nharmonious and purposive construction of the provisions of the\n\n1946 Act, in particular\nSection 5\nthereof, would be to confine the\n\nconsent of the State Government under\nSection 6\nin respect of\n\ninvestigation of crime exclusively committed within the\n\njurisdiction of that State.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P019_C03",
+      "text": "In other words, no consent would be\n\nrequired in respect of specified offence(s) committed within the\n\nUnion Territory, which could be investigated only by the DSPE\n\nunder\nSections 2\nand\n\nof the 1946 Act throughout India. Any\n\nother interpretation would render the dispensation regarding\n\ninvestigation of specified offences committed within the Union\n\nTerritory otiose. This is moreso because the State would have no\n\njurisdiction to investigate such offence committed within the\n\njurisdiction of the Union Territory. Resultantly, the question of\n\nobtaining consent of the State merely because one of the accused\n\ninvolved in the offence happens to be residing in that State or is a\n\npublic servant of that State, is not contemplated by law. It is also\n\nurged that the proviso to the subject notification dated 19.2.1996\n\nhas the effect of defeating the purpose for which special\n\nlegislation has been enacted and dispensation thereunder for\n\ninvestigation of specified offences is established.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P020_C01",
+      "text": "11. Relying on the exposition of the Constitution Bench in\nSubramanian Swamy vs. Director, Central Bureau of\n\nInvestigation & Anr.4\n, it is urged that the principle underlying\n\nthe declaration of provisions such as\nSection 6A\nof the 1946 Act\n\nbeing ultra vires, must apply to the proviso which is part of\n\nnotification being an executive instruction classifying offenders\n\ndifferently for treatment thereunder, including investigation of\n\noffences and prosecution for offences, according to their status in\n\nlife on account of being employed in connection with the affairs of\n\nthe Government of Bihar. That is impermissible and cannot be\n4 (2014) 8 SCC 682\n\ncountenanced as it defeats the purpose of finding prima facie\n\ntruth into the allegations of the specified crime, as every person\n\naccused of committing the same offence is to be dealt with in the\n\nsame manner in accordance with law, which is equal in its\n\napplication to everyone.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P020_C02",
+      "text": "The alleged acts of commission and\n\nomission of the appellant in the State of Bihar would not alter the\n\nsubstratum of the offence or crime in question stated to have\n\nbeen committed to defraud the Government undertaking (BRBCL)\n\nand resultantly siphoning of its funds within the Union Territory\n\nof Delhi (National Capital Territory of Delhi).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P021_C01",
+      "text": "12. Our attention is also invited by the learned Additional\n\nSolicitor General to a recent decision of the Delhi High Court in\nAnand Agarwal vs. Union of India & Ors.5\n, which has upheld\n\nthe stand taken by the CBI that requirement of consent of the\n\nState is premised on the basis that the specified offence or\n\noffences committed and under investigation, have taken place in\n\nthe State (outside the Union Territory). The Delhi High Court has\n\nagreed with the view taken by the High Court of Judicature at\n\nPatna in the impugned judgment. It is urged that the appeal be\n\ndismissed being devoid of merit.\n5 (2018) SCC Online Del 11713\n13. After cogitating over the rival submissions, the core issue\n\nwhich arises for consideration in the present case is: whether the\n\nproviso in the stated notification dated 19.2.1996 would come in\n\nthe way of the officials of DSPE to register FIR and carry on\n\ninvestigation of specified offences committed within the Union\n\nTerritory (National Capital Territory of Delhi), to which the 1946\n\nAct applies?",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P022_C01",
+      "text": "14. The 1946 Act has been enacted to make provision for\n\nconstitution of a special police force in Delhi for the investigation\n\nof certain offences (committed) in the Union Territories, for the\n\nsuperintendence and administration of the said force and for the\n\nextension to other areas of the powers and jurisdiction of the\n\nmembers in regard to the investigation of the said offences.\nThis\n\nAct\napplies to the whole of India.\nSection 2\nof the 1946 Act\n\nenables the Central Government to constitute a special force to\n\nbe called DSPE for the investigation in any Union Territory of\n\nspecified offences notified under\nSection 3\n.\nSection 3\nof the 1946\n\nAct enables the Central Government, by notification in the official\n\ngazette to specify the offences or classes of offences which are to\n\nbe investigated by the DSPE. It is not in dispute that the offences\n\nreferred to in the subject FIR are so specified by the notification\n\nissued under\nSection 3\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P023_C01",
+      "text": "15. The consequence of establishing a special police force under\nSection 2\nis to empower the members of the said police force to\n\nexercise all the powers, duties, privileges and liabilities\n\nthroughout the Union Territory in relation to the investigation of\n\nspecified offences, which police officers of that Union Territory\n\nhave in connection with the investigation of offences committed\n\ntherein. By virtue of sub­Section (3) of\nSection 2\nof the 1946 Act,\n\nany member of the said establishment of or above the rank of\n\nSub­Inspector may, subject to any orders which the Central\n\nGovernment may make in this behalf, exercise in any Union\n\nTerritory any of the powers of the officer in charge of a police\n\nstation in the area in which he is for the time being and when so\n\nexercising such powers shall, subject to any such orders, be\n\ndeemed to be an officer in charge of a police station discharging\n\nthe functions of such an officer within the limits of his station.\n\nResultantly, specified offences committed within the Union\n\nTerritories are required to be investigated exclusively by the\n\nspecial police force constituted for that purpose.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P024_C01",
+      "text": "16. The purport of\nSection 5\nof the 1946 Act is to enable the\n\nCentral Government to extend the powers and jurisdiction of\n\nmembers of the DSPE for the investigation of any offence or class\n\nof offences specified in the notification under\nSection 3\n, in a State\n\nnot being a Union Territory. Such extension of powers and\n\njurisdiction of members of the special police force becomes\n\nnecessary in respect of specified offences “committed outside the\n\njurisdiction of the Union Territory” referred to in\nSections 2\nand\n\nof the 1946 Act. However, in keeping with the federal structure\n\nof the Constitution which is fundamental to the Constitution,\n\nconsent of such a State has been made essential, as predicated\n\nSection 6\nof the 1946 Act. Sections 5\nand\n\nof the 1946 Act\n\nread thus: ­\n\n “5. Extension of powers and jurisdiction of special\n police establishment to other areas.—(1) The Central\n Government may by order extend to any area (including\n Railway areas), in a State, not being a Union territory the\n powers and jurisdiction of members of the Delhi Special\n Police Establishment for the investigation of any offences\n or classes of offences specified in a notification under\nsection 3\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P024_C02",
+      "text": "(2) When by an order under sub­section (1) the powers\n and jurisdiction of members of the said police\n establishment are extended to any such area, a member\n thereof may, subject of any orders which the Central\n Government may make in this behalf, discharge the\n functions of a police officer in that area and shall, while\n so discharging such functions, be deemed to be a member\n of a police force of that area and be vested with the\n\npowers, functions and privileges and be subject to the\n liabilities of a police officer belonging to that police force. (3) Where any such order under sub­section (1) is\n made in relation to any area, then, without prejudice to\n the provisions of sub­section (2), any member of the Delhi\n Special Police Establishment of or above the rank of Sub­\n Inspector may, subject to any orders which the Central\n Government may make in this behalf, exercise the powers\n of the officer in charge of a police station in that area and\n when so exercising such powers, shall be deemed to be an\n officer incharge of a police station discharging the\n functions of such an officer within the limits of his\n station.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P025_C01",
+      "text": "6. Consent of State Government to exercise of\n powers and jurisdiction.—Nothing contained in\nsection 5\nshall be deemed to enable any member of the Delhi Special\n Police Establishment to exercise powers and jurisdiction in\n any area in a State, not being a Union territory or railway\n area, without the consent of the Government of that\n State.”\n\nSuch a consent may not be necessary regarding the investigation\n\nby the special police force (DSPE) in respect of specified offences\n\ncommitted within Union Territory and other offences associated\n\ntherewith. That may be so, even if one of the accused involved in\n\nthe given case may be residing or employed in some other State\n\n(outside the Union Territory) including in connection with the\n\naffairs of the State/local body/corporation, company or bank of\n\nthe State or controlled by the State/institution receiving or\n\nhaving received financial aid from State Government, as the case\n\nmay be.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P025_C02",
+      "text": "Taking any other view would require the special police\n\nforce to comply with the formality of taking consent for\n\ninvestigation even in relation to specified offence committed\n\nwithin Union Territory, from the concerned State merely because\n\nof the fortuitous situation that part of the associated offence is\n\ncommitted in other State and the accused involved in the offence\n\nis residing in or employed in connection with the affairs of that\n\nState. Such interpretation would result in an absurd situation\n\nespecially when the 1946 Act extends to the whole of India and\n\nthe special police force has been constituted with a special\n\npurpose for investigation of specified offences committed within\n\nthe Union Territory, in terms of notification issued under\nSection\n\nof the 1946 Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P026_C01",
+      "text": "17. This Court in\nM. Balakrishna Reddy\n(supra) expounded\n\nthe purport of\nSections 3\n,\n\nand\n\nof the 1946 Act and observed\n\nin paragraph 19 as under: ­\n\n “19. Plain reading of the above provisions goes to show\n that for exercise of jurisdiction by CBI in a State (other\n than Union Territory or Railway area), consent of the\n State Government is necessary.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P026_C02",
+      "text": "In other words, before the\n provisions of the\nDelhi Act\nare invoked to exercise power\n and jurisdiction by Special Police Establishment in any\n State, the following conditions must be fulfilled:\n(i) A notification must be issued by the Central\n Government specifying the offences to be\n investigated by Delhi Special Police Establishment\n (\nSection 3\n);\n(ii) An order must be passed by the Central\n Government extending the powers and jurisdiction\n\nof Delhi Special Police Establishment to any State\n in respect of the offences specified under Section 3\n (Section 5); and\n(iii) Consent of the State Government must be\n obtained for the exercise of powers by Delhi Special\n Police Establishment in the State (\nSection 6\n).”\n\nThis judgment dealt with a case where offence was committed in\n\nthe State of Madhya Pradesh in the year 1996, which had already\n\naccorded consent under\nSection 6\n, but the accused at the time\n\nwhen the case was registered, was working in a different State i.e.\n\nthe State of Uttar Pradesh. The challenge\nin that case\nwas to the\n\norder which according to the appellant therein, did not fulfil the\n\nelements of\nSection 6\nof the 1946 Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P026_C03",
+      "text": "That challenge came to be\n\nnegatived by this Court in paragraphs 69 and 71 of the reported\n\njudgment, in the following words: ­\n\n “69. In the present case, the decision produced by the\n respondent along with the counter­affidavit filed by the\n Superintendent of Police, CBI, Bhopal clearly sets out all\n the particulars required by\nSection 6\nof the Delhi Act. It\n refers to the file/reference number, name of the\n department, the authority from whom it was issued and\n communicated to the department concerned of the\n Central Government. It, therefore, cannot be said that the\n State Government had not granted consent under\nSection\n\nof the Delhi Act.\nxxx xxx xxx",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P027_C01",
+      "text": "71. A closer scrutiny of the relevant provisions of the\nDelhi Act\nalso add credence to the view which we are\n inclined to take. Section 3\nrefers to “notification” and\n requires the Central Government to issue notification\n specifying offences or class of offences to be investigated\n by Special Police Establishment. Section 5\nuses the term\n “order” and enables the Central Government to extend\n\npowers and jurisdiction of Special Police Establishment to\n other areas not covered by the Act. Section 6\nwhich\n speaks of consent of the State Government for the\n exercise of powers and jurisdiction of the Special\n Establishment neither refers to “notification” nor “order”. It merely requires consent of the State Government for the\n application of the\nDelhi Act\n. Parliament, in our considered\n opinion, advisedly and deliberately did not specify the\n mode, method or manner for granting consent though in\n two preceding sections such mode was provided. If it\n intended that such consent should be in a particular\n form, it would certainly have provided the form as it was\n aware of different forms of exercise of power.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P027_C02",
+      "text": "It, therefore,\n depends on the facts of each case whether the consent\n required by\nSection 6\nof the Delhi Act has or has not been\n given by the State Government and no rule of universal\n application can be laid down.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P028_C01",
+      "text": "18. The High Court, in the present case, after analysing the\n\nmaterial on record clearly found that BRBCL was a Government\n\nundertaking and the project undertaken by it was funded by the\n\nCentral Government and that it had its registered office in the\n\nUnion Territory of Delhi (National Capital Territory of Delhi),\n\nwhere the offence of defrauding the undertaking (BRBCL) and\n\nsiphoning of its funds was allegedly committed. We see no\n\nreason to deviate from the opinion so recorded by the High Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P029_C01",
+      "text": "19. The appellant, however, would rely on the allegations in the\n\nsubject FIR to contend that the role of the appellant at best is in\n\nrespect of certain official duty in connection with the affairs of the\n\nGovernment of Bihar. This submission overlooks the substratum\n\nof the allegations in the FIR, as registered by the CBI against the\n\nCEO of BRBCL – Shri C. Sivakumar and the appellant being co­\n\naccused (party to the conspiracy) regarding defrauding the\n\nGovernment of India undertaking (BRBCL) having its registered\n\noffice at Delhi (Union Territory) and siphoning of its funds. The\n\nalleged role played by the appellant may be a means to facilitate\n\nthe commission of crime of defrauding and siphoning of funds.\n\nThe FIR in that sense is not limited to an offence of manipulation\n\nof official records of the State of Bihar as such, but is about the\n\nmeans used by the different actors who were party to the\n\nconspiracy in defrauding the Government of India undertaking\n\n(BRBCL) and siphoning of its funds.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P030_C01",
+      "text": "20. Indisputably, the registered office of BRBCL is within the\n\njurisdiction of Union Territory of Delhi (National Capital Territory\n\nof Delhi) and allegedly the offence has been committed at Delhi,\n\nfor which reason the Delhi Court will have jurisdiction to take\n\ncognizance thereof. To put it differently, the offence in question\n\nhas been committed outside the State of Bihar. The investigation\n\nof the stated offence may incidentally transcend to the territory of\n\nState of Bihar because of the acts of commission and omission of\n\nthe appellant who is resident of that State and employed in\n\nconnection with the affairs of the State of Bihar. That, however,\n\ncannot come in the way of special police force (DSPE) from\n\ninvestigating the offence committed at Delhi and has been so\n\nregistered by it and is being investigated. Had it been an offence\n\nlimited to manipulation of official record of the State and\n\ninvolvement of officials of the State of Bihar, it would have been a\n\ndifferent matter.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P030_C02",
+      "text": "It is not the case of the appellant or the State of\n\nBihar that even an offence accomplished at Delhi of defrauding of\n\nthe Government of India undertaking (having registered office at\n\nDelhi) and siphoning of the funds thereof at Delhi can be\n\ninvestigated by the State of Bihar. If the State police has had no\n\njurisdiction to investigate the offence in question, as registered,\n\nthen, seeking consent of the State in respect of such offence does\n\nnot arise. Any other approach would render the special\n\nprovisions of the 1946 Act otiose.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P031_C01",
+      "text": "21. In any case, the respondent­State having granted general\n\nconsent in terms of\nSection 6\nof the 1946 Act vide notification\n\ndated 19.2.1996, it is not open to it to argue to the contrary. The\n\nrespondent­State cannot be allowed to approbate and reprobate.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P032_C01",
+      "text": "22. Indeed, the said notification contains a proviso, which\n\npredicates that if any public servant employed in connection with\n\nthe affairs of the Government of Bihar is concerned in offences\n\nbeing investigated by the special police force pursuant to the\n\nnotification, prior consent of the State Government qua him shall\n\nbe obtained. This proviso must operate limited to cases or\n\noffences which have been committed within the territory of the\n\nState of Bihar. If the specified offence is committed outside the\n\nState of Bihar, as in this case in Delhi, the State police will have\n\nno jurisdiction to investigate such offence and for which reason\n\nseeking consent of the State to investigate the same would not\n\narise. In our opinion, the stated proviso will have no application\n\nto the offence in question and thus the Delhi special police\n\nforce/DSPE (CBI) must be held to be competent to register the\n\nFIR at Delhi and also to investigate the same without the consent\n\nof the State.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P033_C01",
+      "text": "23. Even otherwise, the proviso has the effect of differentiating\n\nand classifying offenders differently for treatment thereunder,\n\nincluding investigation of offences and prosecution for offences\n\non the basis of being public servant employed in connection with\n\nthe affairs of the Government of Bihar. The power bestowed on\n\nspecial police force in terms of\nSections 2\nand\n\nof the 1946 Act\n\ncannot be undermined by an executive instruction in the form of\n\nproviso. Dealing with a similar challenge to a statutory provision\n\n­\nSection 6A\nof the Act, the Constitution Bench of this Court in\nSubramanian Swamy\n(supra) held that sub­Section (1) thereof\n\nwas invalid and violative of\nArticle 14\nof the Constitution. In\n\nparagraphs 61 and 68 of\nthe said decision\n, the Court noted\n\nthus:­\n\n “61. The essence of police investigation is skillful\n inquiry and collection of material and evidence in a\n manner by which the potential culpable individuals are\n not forewarned. The previous approval from the\n Government necessarily required under\nSection 6\n­A\n would result in indirectly putting to notice the officers\n to be investigated before the commencement of\n investigation.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 14"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P033_C02",
+      "text": "Moreover, if CBI is not even allowed to\n verify complaints by preliminary enquiry, how can the case\n move forward? A preliminary enquiry is intended to\n ascertain whether a prima facie case for investigation is\n made out or not. If CBI is prevented from holding a\n preliminary enquiry, at the very threshold, a fetter is put\n to enable CBI to gather relevant material. As a matter of\n fact, CBI is not able to collect the material even to move\n the Government for the purpose of obtaining previous\n approval from the Central Government.\nxxx xxx xxx",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P034_C01",
+      "text": "68. Can it be said that the classification is based on\n intelligible differentia when one set of bureaucrats of Joint\n Secretary level and above who are working with the\n Central Government are offered protection under\nSection\n\n­A while the same level of officers who are working in the\n States do not get protection though both classes of these\n officers are accused of an offence under the\nPC Act, 1988\nand inquiry/investigation into such allegations is to be\n carried out. Our answer is in the negative. The provision\nSection 6\n­A, thus, impedes tracking down the\n corrupt senior bureaucrats as without previous\n approval of the Central Government, CBI cannot even\n\nhold preliminary inquiry much less an investigation\n into the allegations. The protection in\nSection 6\n­A has\n propensity of shielding the corrupt. The object of\nSection 6\n­A, that senior public servants of the level of\n Joint Secretary and above who take policy decision must\n not be put to any harassment, sidetracks the fundamental\n objective of the\nPC Act, 1988\nto deal with corruption and\n act against senior public servants.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P034_C02",
+      "text": "CBI is not able to\n proceed even to collect the material to unearth prima facie\n substance into the merits of allegations. Thus, the object\nSection 6\n­A itself is discriminatory. That being the\n position, the discrimination cannot be justified on the\n ground that there is a reasonable classification\n because it has rational relation to the object sought to\n be achieved.”\n (emphasis supplied)\n\nThe thrust of this exposition is that every person committing the\n\nsame offence is to be dealt with in the same manner in\n\naccordance with law, which is equal in its application to\n\neveryone. The discrimination or differentiation must be founded\n\non pertinent and real differences as distinguished from irrelevant\n\nand artificial ones. In paragraph 70, the Court went on to\n\nobserve that every public servant against whom there is a\n\nreasonable suspicion of commission of a crime or there are\n\nallegations of an offence under the\nPC Act\nhas to be treated\n\nequally and similarly under law.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P035_C01",
+      "text": "24. Suffice it to observe that the proviso contained in the stated\n\nnotification dated 19.2.1996 cannot be the basis to disempower\n\nthe special police force/DSPE (CBI) from registering the offence\n\ncommitted at Delhi to defraud the Government of India\n\nundertaking (BRBCL) and siphoning of its funds and having its\n\nregistered office at Delhi. Allegedly, the stated offence has been\n\ncommitted at Delhi. If so, the Delhi Courts will have jurisdiction\n\nto take cognizance thereof. The State police (State of Bihar)\n\ncannot investigate the specified offences committed and\n\naccomplished at Delhi, being outside the territory of the State of\n\nBihar. It must follow that the consent of the State of Bihar to\n\ninvestigate such offence is not required in law and for which\n\nreason, the special police force would be competent to carry on\n\nthe investigation thereof even if one of the accused allegedly\n\ninvolved in the commission of stated offence happens to be\n\nresident of the State of Bihar or employed in connection with the\n\naffairs of the Government of Bihar and allegedly committed\n\nassociated offences in that capacity.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P035_C02",
+      "text": "In other words, consent of\n\nthe State under\nSection 6\ncannot come in the way or constrict the\n\njurisdiction of the special police force constituted under\nSection 2\nto investigate specified offences under\nSection 3\nof the 1946 Act\n\ncommitted within the Union Territories. Indeed, when the Court\n\nof competent jurisdiction proceeds to take cognizance of offence\n\nand particularly against the appellant, it may consider the\n\nquestion of necessity of a prior sanction of the State of Bihar qua\n\nits official(s) as may be required by law. That question can be\n\nconsidered on its own merits in accordance with law.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P036_C01",
+      "text": "25. For the view that we have taken, it may not be necessary for\n\nus to analyse the decisions relied upon by the parties, which in\n\nour opinion, do not pertain to the question under consideration\n\nregarding the effect of the proviso contained in the notification\n\ndated 19.2.1996.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR_P037_C01",
+      "text": "26. In view of the above, this appeal must fail and the same is\n\naccordingly dismissed. Pending interlocutory applications, if any,\n\nshall also stand disposed of.\n..................................J.\n (A.M. Khanwilkar)\n\n ..................................J.\n (Dinesh Maheshwari)\nNew Delhi;\nApril 24, 2020.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Kanwal Tanuj vs The State Of Bihar",
+    "case_id": "SC_2020_KANWAL_TANUJ_VS_THE_STATE_OF_BIHAR",
+    "court": "Supreme Court of India",
+    "year": "2020",
+    "facts_summary": "2. This appeal emanates from the judgment and order dated\n\n 17.9.2018 passed by the High Court of Judicature at Patna (for\n\n short, “the High Court”) in Criminal Writ Jurisdiction Case\n\n (CWJC) No. 879/2018, whereby the writ petition filed by the\n\n appellant for quashing of first information report (FIR) being R.C.\n\n A.C.­I, 2018A 0002 dated 21.2.2018 registered by the Central\n\n Bureau of Investigation (for short, “the CBI”) under Sections\n\n“the\nIPC\n”) read with\nSection 13(1)(d)\nof the Prevention of\n\nCorruption Act, 1988 (for short, “the\nPC Act\n”) came to be rejected. 3. The principal ground canvassed by the appellant before the\n\nHigh Court was that he being an officer of the Indian\n\nAdministrative Service (IAS) employed in connection with the\n\naffairs of the Government of Bihar as District Magistrate at\n\nAurangabad District (State of Bihar) could not be subjected to\n\ninvestigation by the CBI without the prior consent of the State. 4. The appellant has been named as an accused alongwith one\n\nShri C. Sivakumar, CEO, Bhartiya Rail Bijli Company Limited (for\n\nshort, “BRBCL”), Nabinagar, District Aurangabad, Bihar on the\n\nbasis of FIR registered by the CBI pursuant to information\n\nreceived from a reliable source alleging as follows: ­\n\n “A reliable source information has been received that\n Bhartiya Rail Bijlee Company Limited (BRBCL), a\n subsidiary of NTPC Ltd. is constructing four units of 250\n MW at Nabinagar in Aurangabad District (Bihar). The\n joint venture project has been ",
+    "legal_issues": "File No.1/Vividh­6019/96)\n By order of Governor of\nBihar\n\n Sd/­­­\n (D.P. Maheshwari)\n\nCommissioner & Secretary\n Home Department”\n\nThe High Court negatived the argument of the appellant that the\n\nproviso in the said notification restricted the general consent\n\naccorded by the State. It was urged by the appellant that the\n\npurport of the proviso was to make it amply clear that no consent\n\nwas given by the State Government in terms of\nSection 6\nof the\n\n1946 Act to authorise the members of the DSPE to exercise\n\npowers and jurisdiction under the 1946 Act in respect of offences\n\nin which public servants employed in connection with the affairs\n\nof the Government of Bihar were allegedly involved. Investigation\n\nin respect of such cases could be undertaken only after taking\n\nprior consent of the State Government of Bihar and not\n\notherwise. 48. Even though learned Senior counsel representing\n the petitioner submits that in the present case the\n B.R.B.C.L. cannot be said to be a company owned or\n controlled by the Central Government, this Court is of the\n considered opinion that first part of the notification dated\n 19.02.1996 in so far as it states that the consent of the\n government is in respect of the investigation of the offence\n\ncommitted in connection with the affairs of the\n Government of India, local authority subject to the control\n of the Government of India, local authority subject to the\n control of the Government of India or any Corporation,\n Company or Bank owned and con",
+    "ratio_summary": "9. The State of Bihar has supported the claim of the appellant\n\non the question of law by contending that Policing is a State\n\nsubject under Entry 2 List II of Schedule VII of the Constitution. Hence, having due regard to the federal structure recognised\n\nunder the Constitution, provision such as\nSection 6\nof the 1946\n\nAct has been incorporated. According to the State, combined\n\nreading of\nSections 2\n,\n\n,\n\nand\n\nof the 1946 Act would show that\n\nDSPE has jurisdiction to investigate offences notified under\nSection 3\nin any Union Territory; the use of the expression “may”\n\nSections 3\nand\n\nis indicative that it is only an enabling\n\nprovision, enabling the Central Government to extend the area of\n\noperation of DSPE to any area in the State by an order. The\n\norder under\nSection 5\n, however, is made subject to the condition\n\npredicated in\nSection 6\n, namely, it would come into effect only\n\nafter consent of the concerned State Government is accorded. In other words, no consent would be\n\nrequired in respect of specified offence(s) committed within the\n\nUnion Territory, which could be investigated only by the DSPE\n\nunder\nSections 2\nand\n\nof the 1946 Act throughout India. Any\n\nother interpretation would render the dispensation regarding\n\ninvestigation of specified offences committed within the Union\n\nTerritory otiose. This is moreso because the State would have no\n\njurisdiction to investigate such offence committed within the\n\njurisdiction of the Union Territory. Resultantly, the question",
+    "final_order": "26. In view of the above, this appeal must fail and the same is\n\naccordingly dismissed. Pending interlocutory applications, if any,\n\nshall also stand disposed of.\n..................................J.\n (A.M. Khanwilkar)\n\n ..................................J.\n (Dinesh Maheshwari)\nNew Delhi;\nApril 24, 2020.",
+    "outcome_summary": "Dismissed. 26. In view of the above, this appeal must fail and the same is\n\naccordingly dismissed. Pending interlocutory applications, if any,\n\nshall also stand disposed of.\n..................................J.\n (A.M. Khanwilkar)\n\n ..................................J.\n (Dinesh Maheshwari)\nNew Delhi;\nApril 24, ",
+    "sections_cited": [
+      "Constitution 14"
+    ],
+    "cases_cited": []
+  }
+}

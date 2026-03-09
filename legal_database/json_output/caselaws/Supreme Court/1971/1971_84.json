@@ -1,0 +1,340 @@
+{
+  "case_id": "SC_1971_1971_84",
+  "case_name": "Bhawanji Lakhamhi & Ors vs Himatlal Jamnadas Dani & Ors",
+  "normalized_case_name": "BHAWANJI_LAKHAMHI_&_ORS_VS_HIMATLAL_JAMNADAS_DANI_&_ORS",
+  "court": "Supreme Court of India",
+  "year": "1971",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "14 December 1971",
+  "judges": [
+    "Kuttyil Kurien Mathew",
+    "C.A. Vaidyialingam"
+  ],
+  "author": "Kuttyil Kurien Mathew",
+  "bench_type": "division",
+  "petitioner": "Bhawanji Lakhamhi & Ors",
+  "respondent": "Himatlal Jamnadas Dani & Ors",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 14,
+  "cited_by_count": 126,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1972 AIR 819",
+    "1972 SCR (2) 890",
+    "AIR 1972 SUPREME COURT 819",
+    "1973 MAH LJ 1",
+    "1973 MPLJ 1",
+    "1972 RENCJ 529",
+    "1972 SCD 209",
+    "1972 2 SCR 890",
+    "1972 2 SCJ 174",
+    "1972 RENCR 33",
+    "1975 BOM LR 404"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1971\\1971_84.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1971_1971_84_P001_C01",
+      "text": "CITATION:\n 1972 AIR 819 1972 SCR (2) 890\n 1972 SCC (1) 388\n CITATOR INFO :\n R 1973 SC 508 (8)\n RF 1978 SC1518 (7)",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1971_1971_84_P002_C01",
+      "text": "ACT:\nTransfer of Property Act\n, s. 116 and Bombay Rents, Hotel and\nLodging House Rates (control) Act, 1947-Contractual tenancy\ndetermined by efflux of time-Tenancy thereafter protected by\nstatute Tenant continuing in possession and landlord\naccepting rent-Without proof that both parties had the\nnecessary intention there is no 'holding over' by the tenant\nwithin meaning of\ns. 116\nof Transfer of Property Act.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1971_1971_84_P003_C01",
+      "text": "HEADNOTE:\nThe appellants were lessees of a plot of land in Bombay. The lease Was granted in 1948 and was determined by efflux\nof time on September 30, 1958. However the appellants\ncontinued to occupy the land and to pay rent to the lessors. On August 7, 1959 the lessors gave notice purporting to\nterminate the tenancy in the land by the end of September\n1959 on the ground inter alia that the lessors required the\nplot for the purpose of putting up construction on it. Since the appellants did not vacate the premises the lessors\nfiled a suit on October 22, 1959 in the Small Causes Court,\nBombay. The appellants contended in defence that the land\nwas not required by the lessors bona fide for purposes of\nconstruction. They further contended that they were tenants\nholding over within the meaning of\ns. 116\nof the Transfer of\nProperty Act, and that since the landlord had accepted rent\nafter the tenancy had determined by afflux of time a new\nlease had come into being and as the original lease was for\na manufacturing purpose the new lease was by implication for\nthe same purpose and consequently six months' notice was\nrequired for its termination by the lessors.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1971_1971_84_P003_C02",
+      "text": "The Trial\nCourt held that the, plaintiff required the plot bona fide\nfor constructing a new building within the meaning of clause\n(1) of sub-section (1) of '\nsection 13\nof the Bombay Rents,\nHotel and Lodging House Rates (Control) Act, 1947. The\nCourt also held. that the tenancy terminated by efflux of\ntime, but that the lessees continued in possession by virtue\nof the immunity from eviction conferred by the aforesaid\nBombay Act\nand so they were not holding over within the\nmeaning of s. 116 of the\nTransfer of Property Act\n. The\nTrial Court accordingly decreed the suit. In appeal the\nappellate Court confirmed the decree.The High Court\nrejected the appellants' petition under\nArt. 227\nof the\nConstitution. In appeal to this Court by Special leave,\nHELD : The act ofholding over after the expiration of the\nterm does not create tenancy ofany kind. if a tenant\nremains in possession after the determination of the lease\nthe common law rule is that he is a tenant on sufferance. A distinction should be drawn between a tenant continuing-\nin possession after the determination of the term with the\nconsent of the landlord and a tenant doing so without his\nconsent.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1971_1971_84_P003_C03",
+      "text": "The former is a tenant on sufferance in English\nlaw and the latter a tenant holding over a tenant-at will. In view of the concluding words of\ns. 116\nof the Transfer of\nProperty Act a lease holding over is in a better position\nthan a tenant-at-will. The assent of the landlord to the\ncontinuance of possession after the determination of the\ntenancy will create a new tenancy. What the section\ncontemplates is that on one side their- should be an offer\nof taking a new lease evidenced by the lessee or sub-lessee\nremaining",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1971_1971_84_P004_C01",
+      "text": "in Possession of the property after his term was over and on\nthe other side there must be a definite consent to the\ncontinuance of possession by the landlord expressed by\nacceptance of rent or otherwise. The bases of the section\nis thus a bilateral contract between the erstwhile landlord\nand the erstwhile tenant. If the tenant has the statutory\nright to remain in possession, and if he pays the rent, that\nwill not normally be referable to an offer for his\ncontinuing in possession which can be converted into a\ncontract by acceptance thereof by the landlord. [894 B-D;\n897 G-H]\nIn the case of normal tenancy a landlord is entitled where\nhe does not accept the rent after the notice to quit, to\nfile a suit in ejectment and obtain a decree for possession,\nand so his acceptance of rent is an unequivocal act\nreferable only to his desire to assent to the tenant con-\ntinuing in possession.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1971_1971_84_P004_C02",
+      "text": "That is not so where a\nRent Act\nexists; and if the tenant says that landlord accepted the\nrent not as statutory tenant but only as legal rent\nindicating his assent to the tenant's continuing in pos-\nsession it is for the tenant to establish it. [898 B-C]\nIn the present case neither the landlord's desire that the\nappellants should continue in possession nor the necessary\nanimus on the part of the tenant had been proved. The\nparties had not been shown to be ad idem. [898 D]\nAcccordingly it must be held that there was no holding over\nby the appellants and the appeal must be dismissed. Ganga Dutt Murarka v. Kartik Chandra Das, [1961] 3 S.C.R.\n813, reaffirmed. Kai Khushroo Bezonjee Capadia v. Bai Jerbai Hirjibhoy Warden\nJUDGMENT:\nK.B. 428, Morriwon v. Jacobs, [1945] 1 K. B. 577 and\nMangilal v. Sugan Chand, A.I.R. 1965 S.C. 101, applied. Manujendra Dutt v. Purendu Prosad Roy Chowdhury & Ors.\n,\n[1967] 1 S.C.R. 475, distinguished.\n&\nCIVIL APPELLATE JURISDICTION: Civil Appeal No. 1546 of 1969. V.M. Tarkunde, S. K. Dholakia and S. K. Bagga, for\nappelIants Nos. 1 and 3. S. K. Bagga, for appellant No. 2. D. V. Patel, A. G. Parikh and B. R. Agarwala, for the\nrespondents.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1971_1971_84_P004_C03",
+      "text": "The Judgment of the Court was delivered by\nMathew, J. This is an appeal by special leave, from the\njudgment of the High Court of Bombay dismissing a petition\nfiled under\nArticle 227\nof the Constitution praying for\nissue of an approprivate writ or order quashing the order\ndated 28-2-1968 passed by the Full Bench, Small Causes\nCourt, Bombay, in appeal No. 95 of 1963 from the order dated\n21-2-1963 passed by the Judge, Small Causes Court, Bombay,\nin R.A.E. Suit No. 9293 of 1959. In this appeal we are concerned with a plot of land\nadmeasuring 2108 square yards in Survey No. 171, Hissa No.\n7, at",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 227"
+      ],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1971_1971_84_P005_C01",
+      "text": "Ghatkopar. This plot belonged to one Jamnadas Chhotalal\nDani. On 15-11-1948, Jamnadas executed two leases in favour\nof one Bhawani Laksamsi and Maojibhai Jethabhai, defendants\n1 and 2. The subject matter of the first lease was two\nplots, the one\nreferred to above\nand another in the same\narea measuring 805 square yards. The subject matter of the\nsecond lease was a third plot in the same area. The leases were for a period of ten years and in respect of\nthe first plot, the rent payable was Rs. 75/- a month. In\nboth the leases there was an option clause which entitled\nthe lessees to surrender the leased property by 30-9-1953. The lessees surrendered the two plots, other than the plot\nwith which we are ,concerned, in pursuance of the option\nclause, on 15-1-1951, with the result that the lease in\nrespect of the first plot continued. Jamnadas died on 14-8-\n195 1, but before his death he had made a gift of the leased\nproperty in favour of the three respondents. The lease in\nrespect of the plot in question here determined by efflux of\ntime on 30-9-1958. But the lessees continued to remain in\npossession paying rent at the rate of Rs. 75/- per month.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1971_1971_84_P005_C02",
+      "text": "On 7-8-1959, the lessors gave notice purporting to Terminate\nthe tenancy by the end of September, 1959. They stated in\nthe notice that the lessees had sub-let the premises and\nthat the lessors required the plot for the purpose of\nputting up constructions on it. Since the lessees did not\nvacate the premises, the lessors filed suit on 22-10-1959 in\nthe Small Causes Court of Bombay. The lessees contended that they did not sub-let the premises\nand that the lessors did not bona-fide require the premises\nfor the purpose of construction. They also contended that\nby the acceptance of rent by the lessors after the\ntermination of the tenancy by efflux of time, a fresh\ntenancy was created, that the original lease was granted for\nerecting a saw mill-a manufacturing purpose and so the lease\ncreated by holding over was, by implication, also for a\nmanufacturing purpose, and therefore, lessees were entitled\nto six months' notice expiring with the end of the year of\nthe tenancy, and that the tenancy created by holding over\nwas not validly determined by the one month's notice.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1971_1971_84_P005_C03",
+      "text": "The trial court held that there was no clear evidence of the\nsubletting of the premises, but that the plaintiffs required\nthe plot bona fide for constructing a new building within\nthe meaning of ,clause (1) of sub-section (1) of\nSection 13\nof the Bombay Rents, Hotel and Lodging House Rates (Control)\nAct, 1947, hereinafter called the Act. The court also held\nthat the tenancy terminated by efflux of time, but that the\nlessees continued in possession by virtue of the immunity\nfrom eviction conferred by the Act and so, they were not\nholding over within the meaning of\nsection 116",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1971_1971_84_P006_C01",
+      "text": "of the Transfer of Property Act, notwithstanding the fact\nthat rent was accepted by the lessors from month to month\nafter 30-9-1958, and that it was not necessary to give the\nlessees six months' notice expiring with the end of the year\nof the tenancy, for terminating that tenancy. In appeal,\nthe Full Bench of the Small Causes Court confirmed the\ndecree of the trial court. It was to quash this decree that\nthe petition under\nArticle 227\nwas filed before the High\nCourt. Before the High Court, the main contention of the appellants\nwas that, since a fresh tenancy by holding over was created\nby the acceptance of rent by the lessors after the\ndetermination of the lease by efflux of time, the appellants\nwere entitled to six months' notice expiring with the end of\nthe year of the tenancy, as the lease originally granted was\nfor a manufacturing purpose, and therefore, the lease\ncreated by the holding over was also for same purpose. The\nHigh Court was of (the opinion that in view of the decision\nof this Court in\nGanga Dutt Murarka v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1971_1971_84_P006_C02",
+      "text": "Kartik Chandra Das\n(l)\nno case was made out for new tenancy by holding over under\nsection 116\nof the Transfer of Property Act as the appel-\nlants had obtained the status of irremovability under the\nAct, and as there was no contractual tenancy, the tenants\nwere not entitled to any notice. The Court also held that\nthe lease which was granted for erecting a saw mill was not\na lease for manufacturing purpose. Counsel for the appellants argued that the appellants were\nholding over as the lessors were receiving the rent from the\nappellants after the termination of the tenancy by efflux of\ntime on 30-9-1958 and the fact that appellants gained\nimmunity from eviction by virtue of the Act was quite\nimmaterial in deciding the question whether the appellants\nwere holding over under\nsection 116\nof the Transfer of\nProperty Act. He submitted that as there was a new\ncontractual tenancy created by the holding over, the\nappellants were entitled to six months' notice as the\npurpose of the original lease was for a manufacturing\npurpose and that purpose became incorporated in the new\nlease by implication of law.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1971_1971_84_P006_C03",
+      "text": "Counsel said that certain\nvital points were omitted to be considered in the decision\nof this Court in\nGanga Dutt Murarka v. Kartik Chandra\nDas\n,(1) and therefore, the decision requires re-\nconsideration. In Ganga Dutt Mararka v. Karlik Chandra Das,\nthis Court held that where a contractual tenancy, to which\nrent control legislation applied, had expired by efflux of\ntime or by determination by notice to quit and the tenant\ncontinued in possession of the premises, acceptance of rent\nfrom the tenant by the landlord after the expiration or\ndetermination of the contractual tenancy will not afford\nground for holding that the landlord had assented to a new\ncontractual tenancy. It was further. held\n(1) [1961] 3 S.C.R. 813.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1971_1971_84_P007_C01",
+      "text": "that acceptance by the landlord from the tenant, after the\ncontractual tenancy had expired, of amounts equivalent to\nrent, or amounts which were fixed as standard rent, did not\namount to acceptance of rent from a lessee within the\nmeaning of\nsection 1",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1971_1971_84_P008_C01",
+      "text": "of the Transfer of Property Act. The act of holding over after the expiration of the term\ndoes not create a tenancy of any kind. If a tenant remains\nin possession after the determination of the lease, the\ncommon law rule is that he is a tenant on sufferance. A\ndistinction should be drawn between a tenant continuing in\npossession after the determination of the term with the\nconsent of the landlord and a tenant doing so without his\nconsent. The former is a tenant at sufferance in English\nLaw and the latter a tenant holding over or a tenant at\nwill. In view of the concluding words of\nsection 116\nof the\nTransfer of Property Act, a lessee holding over is in a\nbetter position than a tenant at will. The assent of the\nlandlord to the continuance of possession after the\ndetermination of the tenancy will create a new tenancy. What the section contemplates is that on one side there\nshould be an offer of taking a new lease evidenced by the\nlessee or sub-lessee remaining in possession of the property\nafter his term was over and on the other side there must be\na definite consent to the continuance of possession by the\nlandlord expressed by acceptance of rent or otherwise.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1971_1971_84_P008_C02",
+      "text": "Kai Khushroo Bezonjee Capadia v. Bai Jerbai Hirjibhoy Warden\nand another(), the Federal Court had occasion to consider\nthe question of the nature of the tenancy created under\nsection 116\nof the Transfer of Property Act and Mukberiea J.\nspeaking for the majority said, that the tenancy which is\ncreated by the \"holding over\" of a lessee or under-lessee is\na new tenancy in law even though many of the terms of the\nold lease might be continued in it, by implication; and that\nto brine a new tenancy into existence, there must be a\nbilateral act. It was further held that the assent of the\nlandlord which is founded on acceptance of rent must be\nacceptance of rent as such and in clear recognition of the\ntenancy right asserted by the person who pays it.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1971_1971_84_P008_C03",
+      "text": "Patanjali\nSastri J., in his dissenting judgment, has substantially\nagreed with the majority as regards the nature of the\ntenancy created by\nsection 116\nof the Transfer of Property\nAct, and that is evident from the following observations :-\n\"Turning now to the main point, it will be\n seen that the section Postulates the lessee\n remaining in possession after the\n determination of the lease which is conduct\n indicative, in ordinary circumstances of his\n desire to continue as a tenant under the\n lessor and implies a tacit offer to take a new\n tenancy from the expiration of the\n(1) [1949-50] F.C.R. 262.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1971_1971_84_P009_C01",
+      "text": "old on the same terms so far as they are\n applicable to the new situation, and when the\n lessor assents to the lessee so continuing in\n possession, he tacitly accepts the latter's\n offer and a fresh tenancy results by the\n implied agreement of the parties. When\n further the lessee in that situation tenders\n rent and the lessor accepts it, their conduct\n raises more readily and clearly the\n implication of an agreement between the\n parties to create a fresh tenancy.\"\nMere acceptance of amounts equivalent to rent by a landlord\nfrom a tenant in possession after a lease had been\ndetermined, either by efflux of time or by notice to quilt,\nand who enjoys statutory immunity from eviction except on\nwell defined grounds as in the Act, cannot be regarded as\nevidence of a new agreement of tenancy. Ganga Dutt\nMurarka v.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1971_1971_84_P009_C02",
+      "text": "Kartik Chandra Das\n,(1) this Court observed as\nfollows :-\n\" By the Rent Restriction Statutes at the\n material time, Statutory immunity was granted\n to the appellant against eviction, and\n acceptance of the amounts from him which were\n equivalent to rent after the contractual\n tenancy had expired or which were fixed as\n standard rent did not amount to acceptance of\n rent from a lessee within the meaning of s.\n 116,\nTransfer of Property Act\n. Failure to\n take action which was consequent upon a\n statutory prohibition imposed upon the courts\n and not the result of any voluntary conduct on\n the part of the appellant did not also amount\n to \"otherwise assenting to the lessee\n continuing in possession\". Of course, there\n is no prohibition against a landlord entering\n into a fresh contract of tenancy will a tenant\n whose right of occupation is determined and\n who remains in occupationtion by virtue of the\n statutory immunity.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1971_1971_84_P009_C03",
+      "text": "Apart from an express\n contract, conduct of the parties may un-\n doubtedly justify an inference that after\n determination of the contractual tenancy, the\n landlord had entered into a fresh contract\n with the tenant, but whether the conduct\n justifies such an inference must always depend\n upon the facts of each case. Occupation of\n premises by a tenant whose tenancy is\n determined is by virtue of the protection\n granted by the statute and not because of any\n right arising from the contract which is\n determined. The statute protects his\n possession so long as the conditions which\n justify a lessor in obtaining an order of\n eviction against him do not exist. Once the-\nprohibition against the exercise of\n jurisdiction by the,\n(1) [1961] 3 S.C.R. 813.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1971_1971_84_P010_C01",
+      "text": "Court is removed, the right to obtain\npossession by the lessor under the ordinary\n law springs into action and the exercise of\n the lessor's right to evict the tenant will\n not unless the statute provides otherwise, be\n conditioned.\"\nIn Davies v. Bristow(1) the Court held that where a tenant\nof a house to which the Increase of Rent, & c. (War\nRestrictions) Acts apply, holds ever after the expiry of a\nnotice to quit, and pays rent, the landlord is not to be\ntaken by accepting it to assent to a renewal of the tenancy\non the old terms, for he has no choice but to accept the\nrent; he could not sue in trespass for mesne profits, for\nthose Acts provide that the tenant, notwithstanding the\nnotice to quit, shall not be regarded as a trespasser so\nlong as he pays the rent and performs the other conditions\nof the lease. In Morrison v. Jacobs(2), Scott L.J. said :\n\"The sole question before the court is whether\n after the expiration of the contractual\n tenancy the mere fact of the landlord\n receiving rent for the dwelling house from the\n tenant affords any evidence that the landlord\n had entered on a new contractual tenancy to\n take the place of the tenancy which had\n expired.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1971_1971_84_P010_C02",
+      "text": "In my opinion, it does not. The\n true view is that the landlord takes the rent,\n knowing that the tenant is granted a statutory\n tenancy by the Rent Restrictions Acts and that\n his right to gain possession of his dwelling\n house depends entirely on his establishing\n that he brings himself within the conditions\n laid down by the Acts.\"\nIn the same case, MacKinnon J. said:\n\"At common law, if at the expiration of a\n tenancy a landlord has acquired a right to\n claim possession against his tenant and\n instead of exercising that right he allows him\n to remain in the house and accepts rent from\n him as before, the parties by their conduct\n may, with reason, be held to have entered into\n a new contract of demise. But the essential\n factor in those circumstances is that the\n landlord voluntarily abstains from turning the\n tenant out. When the tenant remains in\n possession, not by reason of any such\n abstention by the landlord, but because the\n Rent and Mortgage Interest Restrictions Acts\n deprive the landlord of his former power of\n eviction, no such inference can property be\n drawn. That is the very obvious and cogent\n basis of the decision in Davies v. Bristow\".",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1971_1971_84_P010_C03",
+      "text": "It was argued on behalf of the appellants, on the basis of\nthe ,decision of this Court in\nManujendra Dutt v. Purendu\nProsad Roy\n(1) [1920]3 K.B. p. 428. (2) [1945] 1 K.B. p. 577.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1971_1971_84_P011_C01",
+      "text": "Chowdhury & others(l) that if in the case of a tenancy to\nwhich Rent Restriction Acts applied, the Provision of\nsection 106\nof the Transfer of Property Act was applicable,\nthere is nothing incongruous in making\nsection 116\nalso\napplicable in the case of a statutory tenancy.\nthe said\ndecision\n, the appellant before this Court was a tenant of a\npiece of land. The lease was for a period of ten years but\nthe lessee was given the option of renewal on his fulfilling\ncertain conditions. The lease deed also provided that if\nthe lessor required the lessee to vacate the premises,\nwhether at the time of the expiry of the lease or thereafter\n(in case the lessee exercised his option to renew the lease)\nsix month notice to the lessee was necessary. The lessee\nexercised his option to renew the lease and offered to\nfulfill the condition therefore. In the meanwhile the\nCalcutta Thika Tenancy Act, 1949\n, was passed. One of the\nquestions which arose for consideration was whether the\nThika tenant was entitled to the notice provided under the\nlease. This Court held that the Act did not give a right to\nthe landlord to evict a contractual tenant without first\ndetermining the contractual tenancy.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1971_1971_84_P011_C02",
+      "text": "After referring to the\ndecision of this Court in Mangilal v. Sigam Chand(2), it was\nheld that\nsection 3\nof the Act in question was similar to\nsection 4\nof the Madhya Pradesh Accommodation Control Act\n(XXIII of 1965). It was further held that on the\nconstruction placed upon the section, name IV, that the\nprovisions of the section are in addition to those of the\nTransfer of Property Act\n, it follows that, before a tenant\ncan be evicted, a landlord must comply with both the\nprovisions of\nsection 106\nof the Transfer of Property Act\nand those of\nsection 3\n. In the case before us, admittedly,\nthe tenancy has been determined by efflux of time and what\nis contended for is that by the acceptance of rent, a new\ntenancy has been created by virtue of the provisions of\nsection 116\nof the Transfer of Property Art. In other\nwords, the question here is whether the conditions for the\napplication of\nsection 116\nof the Transfer of Property Act\nare fulfilled. Learned counsel for the appellants argued that whenever rent\nis accepted by a landlord from a tenant whose tenancy has\nbeen determined, but who continues in possession, a tenancy\nby holding over is created.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1971_1971_84_P011_C03",
+      "text": "The argument was that the\nassent of the lessor alone and not that of the lessee was\nmaterial for the purposes of\nsection 116\n. We are not\ninclined to accept this contention. We have already shown\nthat the basis of the, section is a bilateral contract\nbetween the erstwhile landlord and the erstwhile tenant If\nthe tenant has the statutory right to remain in possession,\nand if he pays the rent, that will not normally be referable\nto an offer for his continuing in possession which can be\nconverted into a contract by acceptance thereof by the\nlandlord. We do not say\n(1) [1967] 1 S.C.R. 475. (2) A.I.R. 1965 S.C. 101.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1971_1971_84_P012_C01",
+      "text": "that the operation of\nsection 116\nis always excluded\nwhatever might be the circumstances under which the tenant\npays the rent and the landlord accepts it. We have earlier\nreferred to the observations of this Court in\nGanga Dutt\nMurarka v. Kartik Chandra Das\n(1) regarding some of the\ncircumstances in which a fresh contract of tenancy may be\ninferred. We have already held the whole basis of\nsection",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1971_1971_84_P013_C01",
+      "text": "of the Transfer of Property Act is that, in case of\nnormal tenancy, a landlord is entitled, where he does not\naccept the rent after the notice to quit, to file a suit in\nejectment and obtain a decree for possession, and so his\nacceptance of rent is an unequivocal act referable only to\nhis desire to assent to the tenant continuing in possession. That is not so where\nRent Act\nexists; and if the tenant says\nthat landlord accepted the rent not as statutory tenant but\nonly as legal rent indicating his assent to the tenant's\ncontinuing in possession, it is for the tenant to establish\nit. No attempt has been made to establish it in this case\nand there is no evidence, apart from the acceptance of the\nrent by the landlord, to indicate even remotely that he\ndesired the appellants to continue in possession after the\ntermination of the tenancy. Besides, as we have already\nindicated, the animus of the tenant in tendering the rent is\nalso material. If he tenders the rent as the rent payable\nunder the statutory tenancy, the landlord cannot, by\naccepting it as rent, create a tenancy by holding over. In\nsuch a case the parties would not be id idem and there will\nbe no consensus.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1971_1971_84_P013_C02",
+      "text": "The decision in\nGanga Dutt Murarka v. Kartik Chandra Das\n(l), Which followed the principles\nlaid\ndown by\nthe Federal Court in Kai Khushrao Bezonjee Capadia\nv. Bai Jerbai Hirjibhoy Warden and another(1) is correct and\ndoes not require reconsideration. We, therefore, come to the conclusion that there was no\nholding over by the appellants and if that be so, the\nquestion whether the tenancy created by holding over was for\nmanufacturing purpose and therefore the landlord was bound\nto give six months' notice for the determination of the\ntenancy by holding over does not arise for consideration. Appellants' counsel prayed that the appellants may be given\nsome time for vacating the premises. This Court, when\npassing the order on July 31, 1969, on the application for\nstay by the appellants had observed :\n\"Petitioner undertakes to vacate the premises\n within such time as may be fixed by this\n Court.\"\n(1) [1961] 3 S.C.R. 813. (2) [1949-50] F.C.R. 262",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1971_1971_84_P014_C01",
+      "text": "We accordingly grant three months, time from today to the\nappellants to vacate the premises, and they have to comply\nwith the undertaking given to this Court and referred to\nabove.\nWe dismiss the appeal with costs,\nG.C. Appeal dismissed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Bhawanji Lakhamhi & Ors vs Himatlal Jamnadas Dani & Ors",
+    "case_id": "SC_1971_1971_84",
+    "court": "Supreme Court of India",
+    "year": "1971",
+    "facts_summary": "ACT:\nTransfer of Property Act\n, s. 116 and Bombay Rents, Hotel and\nLodging House Rates (control) Act, 1947-Contractual tenancy\ndetermined by efflux of time-Tenancy thereafter protected by\nstatute Tenant continuing in possession and landlord\naccepting rent-Without proof that both parties had the\nnecessary intention there is no 'holding over' by the tenant\nwithin meaning of\ns. 116\nof Transfer of Property Act. The Trial\nCourt held that the, plaintiff required the plot bona fide\nfor constructing a new building within the meaning of clause\n(1) of sub-section (1) of '\nsection 13\nof the Bombay Rents,\nHotel and Lodging House Rates (Control) Act, 1947. The\nCourt also held. that the tenancy terminated by efflux of\ntime, but that the lessees continued in possession by virtue\nof the immunity from eviction conferred by the aforesaid\nBombay Act\nand so they were not holding over within the\nmeaning of s. 116 of the\nTransfer of Property Act\n. The\nTrial Court accordingly decreed the suit. In appeal the\nappellate Court confirmed the decree.The High Court\nrejected the appellants' petition under\nArt. 227\nof the\nConstitution. In appeal to this Court by Special leave,\nHELD : The act ofholding over after the expiration of the\nterm does not create tenancy ofany kind. if a tenant\nremains in possession after the determination of the lease\nthe common law rule is that he is a tenant on sufferance. A distinction should be drawn between a tenant continuing-\nin possession after the determination of the term",
+    "legal_issues": "HEADNOTE:\nThe appellants were lessees of a plot of land in Bombay. The lease Was granted in 1948 and was determined by efflux\nof time on September 30, 1958. However the appellants\ncontinued to occupy the land and to pay rent to the lessors. On August 7, 1959 the lessors gave notice purporting to\nterminate the tenancy in the land by the end of September\n1959 on the ground inter alia that the lessors required the\nplot for the purpose of putting up construction on it. Since the appellants did not vacate the premises the lessors\nfiled a suit on October 22, 1959 in the Small Causes Court,\nBombay. The appellants contended in defence that the land\nwas not required by the lessors bona fide for purposes of\nconstruction. They further contended that they were tenants\nholding over within the meaning of\ns. 116\nof the Transfer of\nProperty Act, and that since the landlord had accepted rent\nafter the tenancy had determined by afflux of time a new\nlease had come into being and as the original lease was for\na manufacturing purpose the new lease was by implication for\nthe same purpose and consequently six months' notice was\nrequired for its termination by the lessors. On 7-8-1959, the lessors gave notice purporting to Terminate\nthe tenancy by the end of September, 1959. They stated in\nthe notice that the lessees had sub-let the premises and\nthat the lessors required the plot for the purpose of\nputting up constructions on it. Since the lessees did not\nvacate the premises, the lessors filed suit ",
+    "ratio_summary": "That is not so where a\nRent Act\nexists; and if the tenant says that landlord accepted the\nrent not as statutory tenant but only as legal rent\nindicating his assent to the tenant's continuing in pos-\nsession it is for the tenant to establish it. [898 B-C]\nIn the present case neither the landlord's desire that the\nappellants should continue in possession nor the necessary\nanimus on the part of the tenant had been proved. The\nparties had not been shown to be ad idem. [898 D]\nAcccordingly it must be held that there was no holding over\nby the appellants and the appeal must be dismissed. Ganga Dutt Murarka v. Kartik Chandra Das, [1961] 3 S.C.R.\n813, reaffirmed. Kai Khushroo Bezonjee Capadia v. Bai Jerbai Hirjibhoy Warden\nJUDGMENT:\nK.B. 428, Morriwon v. Jacobs, [1945] 1 K. B. 577 and\nMangilal v. Sugan Chand, A.I.R. 1965 S.C. 101, applied. Manujendra Dutt v. Purendu Prosad Roy Chowdhury & Ors.\n,\n[1967] 1 S.C.R. 475, distinguished.\n&\nCIVIL APPELLATE JURISDICTION: Civil Appeal No. 1546 of 1969. V.M. Tarkunde, S. K. Dholakia and S. K. Bagga, for\nappelIants Nos. 1 and 3. S. K. Bagga, for appellant No. 2. D. V. Patel, A. G. Parikh and B. R. Agarwala, for the\nrespondents. Kartik Chandra Das\n(l)\nno case was made out for new tenancy by holding over under\nsection 116\nof the Transfer of Property Act as the appel-\nlants had obtained the status of irremovability under the\nAct, and as there was no contractual tenancy, the tenants\nwere not entitled to any notice. The Court also held that\nthe lease",
+    "final_order": "",
+    "outcome_summary": "Dismissed",
+    "sections_cited": [
+      "Constitution 227"
+    ],
+    "cases_cited": []
+  }
+}

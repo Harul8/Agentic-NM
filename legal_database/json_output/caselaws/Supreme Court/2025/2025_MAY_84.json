@@ -1,0 +1,779 @@
+{
+  "case_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA",
+  "case_name": "In Re : T.N. Godavarman Thirumulpad vs Union Of India",
+  "normalized_case_name": "IN_RE_T.N._GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA",
+  "court": "Supreme Court of India",
+  "year": "2025",
+  "judgment_template": null,
+  "case_number": "Writ Petition 202 of 1995",
+  "case_number_regex": "WRIT_PETITION",
+  "date_of_judgment": "21 May 2025",
+  "judges": [
+    "B.R. Gavai"
+  ],
+  "author": "B.R. Gavai",
+  "bench_type": "single",
+  "petitioner": "In Re : T.N. Godavarman Thirumulpad",
+  "respondent": "Union Of India",
+  "reporter_citations": [
+    "2025 INSC 748"
+  ],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 11,
+  "cited_by_count": 0,
+  "neutral_citation": "2025 INSC 748",
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": true,
+  "source_file": "Supreme Court\\2025\\MAY\\2025_MAY_84.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P001_C01",
+      "text": "INHERENT/ORIGINAL JURISDICTION\n\n IN RE: PERFORMANCE APPRAISAL REPORTS OF THE\n OFFICERS OF THE INDIAN FOREST SERVICE\n\n I.A. NO.172422 OF 2024\n [Applications for Impleadment]\n WITH\n I.A. NO.172425 OF 2024\n [Applications for Direction]\n WITH\n I.A. NO. 172427 OF 2024\n [Application for Exemption from filing Official\n Translation]\n WITH\n I.A. NO. 172429 OF 2024\n [Application for appearing as Petitioner-in-Person]\n WITH\n I.A. NO. 179359 OF 2024\n [Application for Ex-Party and Interim Stay]\n WITH\n I.A. NO. 290215 OF 2024\n [Application for Impleadment]\n WITH\n I.A. NO. 290217 OF 2024\n [Application for Direction]\n WITH\n I.A. NO. 105862 OF 2025\n [Applications for Impleadment]\n WITH\n Signature Not Verified\n\n [Application for Direction]\n\n WITH\n I.A. NO. 105865 OF 2025\n [Application for Exemption from filing Official\n Translation]\n WRIT PETITION (C) NO. 202 OF 1995\n\nIN RE: T.N. GODAVARMAN THIRUMULPAD\n …PETITIONERS\n VERSUS\n\nUNION OF INDIA AND OTHERS …RESPONDENTS\nIN THE MATTER OF:\nGAURAV KUMAR BANSAL …APPLICANT\n\nUNNAMATLA PRAKASHAM …APPLICANT\n\nINDIAN FOREST SERVICE ASSOCIATION\n(STATE UNIT) …APPLICANT\n\n INDEX\n\nI.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P001_C02",
+      "text": "INTRODUCTION ...................................................................... 3\nII. SUBMISSIONS ......................................................................... 4\nIII. DISCUSSION AND ANALYSIS ................................................. 7\n(i) Statutory Provisions ............................................................ 7\n(ii) Internal Communications ............................................... 10\n(iii) Legal Precedents ............................................................. 17\n(\na) State of Haryana v. P.C. Wadhwa, IPS, Inspector General\n of Police and Another\n........................................................... 17\n(\nb) Santosh Bharti v. State of Madhya Pradesh\n................ 21\n(iv) Order of this Court in I.A. No.776 of 2002 in the present\n proceedings ............................................................................. 26\n(v) Recent judgment of this Court in\nState of Assam and\n Others v. Binod Kumar and Others\n.......................................... 30\n(vi) Impugned G.O. dated 29th June 2024.............................. 32\nIV. DIRECTIONS ...................................................................... 37\n\nJUDGMENT\n\nB.R.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P001_C03",
+      "text": "GAVAI, CJI\n\nI. INTRODUCTION",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P002_C01",
+      "text": "1. The present batch of applications pertains to an issue as\n\nto whether the officers in the Indian Administrative Service\n\n(hereinafter referred to as, “IAS”) would be a “reporting\n\nauthority”, “reviewing authority” and “accepting authority” of\n\nthe officers working in the Indian Forest Service (hereinafter\n\nreferred to as, “IFS”).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P003_C01",
+      "text": "2. The present applications basically challenge the\n\nGovernment Order dated 29th June 2024 (hereinafter referred\n\nto as the, “said G.O.”) notified by the Government of Madhya\n\nPradesh with regard to writing Performance Appraisal Report\n\n(hereinafter referred to as, “PAR”) of the officers belonging to\n\nthe IFS. The relevant part of the said G.O. reads thus:\n“2. Before evaluating the performance of the\n Divisional Forest Officer (Territorial), the concerned\n Conservator or Chief Conservator of Forest\n (Reporting Authorities) will seek a note from the\n District Collector. Similarly and before evaluating the\n performance of the Conservator of Forests and Chief\n Forest Conservator (Territorial), the Additional\n Principal Chief Forest Conservator (Development) will\n seek a note from the Divisional Commissioner and\n\nthese notes shall be considered during the time of\n Performance Appraisal Report (PAR).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P004_C01",
+      "text": "3. Comments by Collector and Divisional\n Commissioner on performance of Indian Forest\n Service officers in field positions on areas such as\n MANREGAS, Joint Forest Management, Forest\n Rights Act, land acquisition for development projects,\n mining, district planning committee decisions,\n livelihood and skill development, district\n archeological and tourism council, implementation\n initiatives related to any other development will be\n sent on a separate sheet.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P005_C01",
+      "text": "3. The applicants have a grievance with regards to the\n\n“reporting authority”, “reviewing authority” and “accepting\n\nauthority” as prescribed in the said G.O., insofar as certain\n\nposts in the IFS are concerned. The applicants also have a\n\ngrievance with regard to the aforementioned paragraphs 2 and\n\n3 of the said G.O.\n\nII. SUBMISSIONS",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P006_C01",
+      "text": "4. We have heard Shri K. Parameshwar, learned amicus\n\ncuriae and Shri Tushar Mehta, learned Solicitor General\n\nappearing on behalf of the State of Madhya Pradesh.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P007_C01",
+      "text": "5. Shri Parameshwar, learned amicus curiae submits that\n\nthe said G.O issued by the Government of Madhya Pradesh is\n\ndirectly in violation of the judgments delivered by this Court in\n\nthe cases of\nState of Haryana v. P.C. Wadhwa, IPS,\n\nInspector General of Police and Another1\n,\nSantosh Bharti\n\nv. State of Madhya Pradesh2\n, and the order passed by this\n\nCourt in the present proceedings dated 19th April 2004. The\n\nlearned amicus curiae therefore submits that the said G.O. is\n\nliable to be quashed and set aside.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P008_C01",
+      "text": "6. Per contra, Shri Tushar Mehta, learned Solicitor General\n\nappearing on behalf of the State of Madhya Pradesh submits\n\nthat as per the Order of Precedence of the Government of\n\nMadhya Pradesh dated 23rd December 2011, the Additional\n\nChief Secretary (hereinafter referred to as, “ACS”) and the\n\nPrincipal Secretary (hereinafter referred to as, “PS”) hold ranks\n\nsuperior to that of the Principal Chief Conservator of Forests\n\n(hereinafter referred to as, “PCCF”). He further submits that in\n\naccordance with the provisions as contained in clauses (2) and\n\n(3) of\nArticle 166\nof the Constitution of India, the Governor of\n\nMadhya Pradesh has framed the Madhya Pradesh Government\n\nBusiness (Allocation) Rules. He submits that under the said\n\nRules, each Secretariat Department is required to have a\n\nSecretary to the Government (ACS/PS). It is submitted that for\n\n1 (1987) 2 SCC 602\n2 (2007) 15 SCC 273\n\nthe Forest Department, ACS/PS is the official administrative\n\nhead of the IFS.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Constitution 166"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P009_C01",
+      "text": "7. The learned Solicitor General submits that the Forest\n\nOfficers and particularly the Divisional Forest Officer\n\n(hereinafter referred to as, “DFO”) who is the Head of the\n\nDivision, discharges diverse responsibilities. It is submitted\n\nthat the DFO is also responsible for various duties like\n\nconservation of forests, implementation of government\n\nschemes, enforcement of forest laws, forest fire management,\n\nlegal matters, financial administration, and interdepartmental\n\ncoordination, amongst others. He submits that therefore, it is\n\nnecessary that the evaluation of the performance of DFOs\n\nshould be accepted by the Secretary of the Forest Department\n\nwho is normally an ACS/PS. He submits that similarly even\n\ninsofar as the PAR of the Chief Conservators of Forests\n\n(hereinafter referred to as, “CCFs”) is concerned, the\n\n“accepting authority” should be only ACS or PS. He further\n\nsubmits that assigning PCCF or the Head of Forests as\n\n“reviewing authority” or “accepting authority” for the\n\nAdditional Principal Chief Conservator of Forest (hereinafter\n\nreferred to as, “APCCF”) working in vertical roles at the\n\nheadquarters is not consistent with the revised appraisal\n\nrules.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P009_C02",
+      "text": "He submits that the performance must be evaluated by\n\nthose who have continuing engagement with the officer’s work.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P010_C01",
+      "text": "8. Shri Tushar Mehta, learned Solicitor General fairly\n\nsubmits that ignoring the role of the ACS/PS in the PAR\n\nchannel of IFS officers would not only be contrary to legislative\n\nintent but also inconsistent with principles of governance,\n\naccountability and equity in public administration that\n\ndemand accountability through real supervision. He fairly\n\nsubmits that in order to alleviate the fear in the minds of the\n\nIFS officers, the State of Madhya Pradesh has agreed that it\n\nwill not insist on marking by the ACS/PS, instead, only\n\ncomments of the reviewing officers would be called for.\nIII. DISCUSSION AND ANALYSIS\n (i) Statutory Provisions",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P011_C01",
+      "text": "9. For examining the controversy, it will be relevant to refer\n\nto sub-section (1) of\nSection 3\nof the All-India Services Act,\n\n1951 (hereinafter referred to as, “AIS Act”), which reads thus:\n“3. Regulation of recruitment and conditions of\n service.—(1) The Central Government may, after\n consultation with the Governments of the States\n concerned including the State of Jammu and\n Kashmir and by notification in the Official Gazette,\n make rules for the regulation of recruitment, and the\n\nconditions of service of persons appointed, to an all-\nIndia Service.”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P012_C01",
+      "text": "10. In exercise of powers conferred by sub-section (1) of\n\nSection 3 of the AIS Act, the Central Government, after\n\nconsultation with the Governments of the States concerned,\n\nhas made the All-India Services (Confidential Rolls) Rules,\n\n1970 (hereinafter referred to as, “1970 Rules”).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P013_C01",
+      "text": "11. Rule 2 of the 1970 Rules provides various definitions. It\n\nwill be relevant to refer to the following definitions provided in\n\nthe 1970 Rules:\n“2. Definitions.—In these rules, unless the context\n otherwise requires:—\n(a) ‘accepting authority’ means the authority who\n was, during the period for which the confidential\n report is written, immediately superior to the\n reviewing authority and such other authority as may\n be specifically empowered in this behalf by the\n Government”;\n………..\n(e) ‘reporting authority’ means the authority who\n was, during the period for which the confidential\n report is written, immediately superior to the\n member of the Service and such other authority as\n may be specifically empowered in this behalf by the\n Government;\n(f) ‘reviewing authority’ means the authority who\n was, during the period for which the confidential\n report is written, immediately superior to the\n reporting authority and such other authority as may\n be specifically empowered in this behalf by the\n Government;”",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P014_C01",
+      "text": "12. In exercise of powers conferred by sub-section (1) of\n\nSection 3 of the AIS Act, the Central Government, after\n\nconsultation with the Governments of the States concerned,\n\nby a notification dated 8th December 1987, has made the All-\n\nIndia Services (Confidential Rolls) Second Amendment Rules,\n\n1970, by which the definitions of “accepting authority”,\n\n“reporting authority” and “reviewing authority” were amended,\n\nwhich read thus:\n“(a) ‘accepting authority’ means such authority or\n authorities supervising the performance of the\n reviewing authority as may be specifically empowered\n in this behalf by the Government”;\n………..\n(e) ‘reporting authority’ means such authority or\n authorities supervising the performance of the\n member of the Service reported upon as may be\n specifically empowered in this behalf by the\n Government;\n(f) ‘reviewing authority’ means authority or\n authorities supervising the performance of the\n reporting authority as may be specifically empowered\n in this behalf by the Government;”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P015_C01",
+      "text": "13. In exercise of powers conferred by sub-section (1) of\n\nSection 3 of the AIS Act, the Central Government, after\n\nconsultation with the Governments of the States concerned,\n\nmade the All-India Services (Performance Appraisal Report)\n\nRules, 2007 (hereinafter referred to as, “2007 Rules”). The\n\ndefinitions of “accepting authority”, “reporting authority” and\n\n“reviewing authority” as provided in the 2007 Rules, read thus:\n“(a) ‘accepting authority’ means the authority which\n supervises the performance of the reviewing\n authority as may be specifically empowered in this\n behalf by the Government”;\n………..\n(j) ‘reporting authority’ means such authority or\n authorities supervising the performance of the\n member of the Service reported upon as may be\n specifically empowered in this behalf by the\n Government;\n(k) ‘reviewing authority’ means such authority or\n authorities supervising the performance of the\n reporting authority as may be specifically empowered\n in this behalf by the Government;”\n(ii) Internal Communications",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P016_C01",
+      "text": "14. For deciding the issue in question, it will also be\n\nnecessary to refer to certain clarifications and Office\n\nMemorandum (hereinafter referred to as, “O.M.”) issued by the\n\nUnion of India.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P017_C01",
+      "text": "15. Clause 4 of the clarification dated 28th December 1990\n\nreads thus:\n“4. Reporting Authority should be in a higher\n grade of pay than the officers reported upon and\n the Reviewing Authority should be in a higher\n grade than the Reporting Authority.- I am directed\n\nto refer to Rule 2(e) of the AIS (CR) Rules, 1970,\n wherein the reporting authority has been defined as\n the authority or authorities supervising the\n performance of the member of the Service reported\n upon as may be specifically empowered in this behalf\n by the Government.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P018_C01",
+      "text": "2. It appears that some States have kept in view the\n seniority and pay scale of the reporting officer vis-à-\nvis the Member of the Service reported upon while\n assigning reporting authorities whereas others have\n not. Instances have come to the notice of this\n Department wherein ACRs of the members of All\n India Service have been initiated by officers belonging\n to the same batch or drawing pay in the same scale\n as that of the officer reported upon.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P019_C01",
+      "text": "3. It is suggested to the State Govts. that while\n assigning reporting/reviewing authorities efforts may\n be made to ensure that a member of the Service or\n any other officer does not initiate the C.R. of another\n member of the Service in the same grade of pay. It is\n also desirable that the reviewing authority is in a\n higher grade than the reporting authority within the\n limits of administrative convenience.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P020_C01",
+      "text": "16. It can thus be seen that seniority and pay-scales of the\n\nreporting officer vis-à-vis the Member of the Service reported\n\nupon is required to be taken into consideration while assigning\n\nreporting authorities. It further states that various instances\n\nhave come to notice wherein Annual Confidential Reports\n\n(hereinafter referred to as, “ACRs”) of the Members of All India\n\nService have been initiated by officers belonging to the same\n\nbatch or drawing pay in the same scale as that of the officer\n\nreported upon. It has therefore been suggested to the State\n\nGovernments that while assigning reporting/reviewing\n\nauthorities, efforts should be made to ensure that a Member\n\nof the Service or any other officer does not initiate the\n\nConfidential Report (hereinafter referred to as, “C.R.”) of\n\nanother Member of the Service in the same grade or pay. It\n\nfurther provides that it is desirable that the reviewing\n\nauthority is in a higher grade than the reporting authority\n\nwithin the limits of administrative convenience.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P021_C01",
+      "text": "17. It will also be relevant to refer to a letter of the Ministry\n\nof Environment & Forest (hereinafter referred to as, “MoEF”)\n\ndated 8th November 2001, which reads thus:\n“(V) WRITING OF REPORTS OF MEMBERS OF THE\n INDIAN FOREST SERVICE",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P022_C01",
+      "text": "1. Writing of Reports of members of the Indian\n Forest Service.- Attention of the State Government\n is invited to this Ministry’s letter No. 14/20/2000-SU\n dated 28th September, 2000 vide which a copy of\n order dated 22/09/2000 passed by the Hon’ble\n Supreme Court in I.A. No. 424 (Civil Writ Petition No.\n 202 of 1995) : T.N. Godavarman Thirumulkpad had\n been forwarded for implementation of various\n directions given by the Apex Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P023_C01",
+      "text": "2. One of the directions of the Apex Court was in\n regard to writing of Annual Confidential report of the\n members of the Indian Forest Service. The Hon’ble\n Supreme Court had directed that upto the officers of\n the rank of Addl. Principal Chief Conservator of\n Forests the reporting authority has to be the\n immediately superior officer within the Forest\n Department. It is only in the case of Principal Chief\n\nConservator of Forest that the reporting authority\n would be a person other than the one belonging to\n the Service because there is no one superior to him\n within the EFS. Therefore, in his case the reporting\n authority would be a person to whom he reports and\n who is superior to him in hierarchy.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P024_C01",
+      "text": "3. Keeping in view the directions given by the Hon’ble\n Supreme Court, all the State Governments are\n advised to ensure that for writing the Annual\n Confidential Reports of the IFS officers upto the rank\n of Additional Principal Chief Conservator of Forests,\n the reporting authority should be their immediate\n superior authorities in the Forest Department. As\n regards reviewing/reporting authority in relation to\n officers of the rank of Addl. Principal Chief\n Conservator of Forests and Principal Chief\n Conservator of Forests, the concerned authority\n would person who is familiar with their work and that\n will be the person to whom addl. PCCF/PCCF reports\n and who is superior to them in rank and hierarchy.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P025_C01",
+      "text": "4. The State Government may, if necessary direct the\n Collectors and Commissioners to record their\n comments on a separate sheet about the\n performance of the IFS officers in relation to\n implementation of developmental work (including 20-\npoint programme) funded by the District\n Administration for being considered by the superior\n departmental officers at the time of writing of ACRs.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P026_C01",
+      "text": "5. The State Governments are requested to ensure\n that the directions given by the Hon’ble Supreme\n Court in the matter of writing of ACRs, as explained\n above, are strictly followed.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P027_C01",
+      "text": "18. It can thus be seen that the said letter specifically noted\n\nthe order passed by this Court in the present proceedings\n\ntitled dated 22nd September 20003, wherein this Court had\n\n3 (2007) 15 SCC 273\n\ndirected that up to the rank of APCCF, the “reporting\n\nauthority” had to be an immediate superior officer within the\n\nForest Department. It further noted that this Court had also\n\ndirected that it was only in the case of PCCF that the “reporting\n\nauthority” would be a person other than the one belonging to\n\nthe Forest Service because there was no one superior to\n\nhim/her within the IFS. It noted that this Court further\n\ndirected that\nin that case\n, the “reporting authority” would be a\n\nperson to whom he reported and who was superior to him in\n\nhierarchy.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P028_C01",
+      "text": "19. The aforesaid communication of the MoEF directed all\n\nthe State Governments to ensure that for writing the ACRs of\n\nthe IFS officers up to the rank of APCCF, the “reporting\n\nauthority” should be their immediate superior authorities in\n\nthe Forest Department. It further directed that regarding the\n\nreviewing/reporting authority in relation to officers of the rank\n\nof APCCF and PCCF, the concerned authority would be a\n\nperson who was familiar with their work and that would be the\n\nperson to whom APCCF/PCCF reported and who was superior\n\nto them in rank and hierarchy. It further directed that the\n\nState Governments may, if necessary, direct the Collectors and\n\nCommissioners to record their comments on a separate sheet\n\nabout the performance of the IFS officers in relation to the\n\nimplementation of developmental work (including 20 point\n\nprogramme) funded by the District Administration for being\n\nconsidered by the superior departmental officers at the time of\n\nwriting of ACRs.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P029_C01",
+      "text": "20. It will be relevant to refer to the O.M. dated 2nd September\n\n2004 notified by the Department of Personnel and Training\n\n(hereinafter referred to as, “DoPT”), which reads thus:\n“2. Writing of ACRs of All India Services Officers\n – instructions regarding.- The Hon’ble Supreme\n Court in I.A. No.424 in Writ Petition (Civil) No. 202 of\n 1995 (\nT.N. Godavarman Thirumulkpad Vs. Union of\n India & Others\n) had considered the issue of the\n competent authority to write the confidential report\n of Forest Department Officers (implementation of the\n judgement of the Hon’ble Supreme Court). The\n Ministry of Environment & Forests issued\n instructions vide letter No. 22019/1/2001-IFS-I\n dated 8th November, 2001 (Copy enclosed).\n 2.1 This Department filed I.A.No. 477/2003 for\n modification or clarification of the above order of the\n Hon’ble Supreme Court. The Hon’ble Supreme Court\n directed that the matter be heard by the Central\n Empowered Committee (CEC), constituted by the\n Hon’ble Supreme Court of India.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P029_C02",
+      "text": "The CEC has agreed\n with the views of Department of Personnel & Training\n (DOP&T) that the Hon’ble Court’s order dated\n 22.09.2000 was issued in a particular context and\n should not be generalized to cover other Services. It\n has also agreed with the view of the DOP&T that if\n the Forest Officer is working in the Secretariat or\n\nother Departments where his immediate supervising\nofficer is a non-forest officer, his C.R should be\nwritten by such an officer [para 8(x)].\n2.2 The relevant recommendation of the CEC is\nreproduced below:-\n“In the light of the above, the Committee is\n of the considered view that this Hon’ble\n Court’s order dated 22.09.2000 requires\n no modification. The Hon’ble Court’s order\n has set right the anomaly that existed in\n the State of Madhya Pradesh regarding\n CRs of the Forest Officers. The Hon’ble\n Court’s order is not inconsistent with the\n amended CR Rules.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P029_C03",
+      "text": "It may be clarified that\n the order of 22.09.2000 of this Hon’ble\n Court is applicable only for reporting,\n reviewing or accepting the confidential\n reports of the Forest Officers working\n within the Forest Department and is not\n applicable for Forest Officers working\n outside the Department or for other\n Services”.(para 10).\n2.3 In pursuance of the recommendations of CEC,\nthe Hon’ble Supreme Court has in its order of 26th\nApril, 2004 in I.A.No. 1035, (Report of the Central\nEmpowered Committee in I.A. No. 776) in WP (Civil)\nNo. 202 of 1995 , agreed with the same and has\ndismissed I.A.No. 424 and disposed of I.A.No. 1035. A copy of the Recommendation of the CEC can be\nmade available on request.\n2.4 It is therefore, clarified that the order passed by\nHon’ble Supreme Court on 22.9.2000 is applicable to\nForest Officers working within the Forest Department\nand is not applicable to Forest Officers working\noutside the Department. It is also clarified that if the\nForest Officer is working in the Secretariat or other\nDepartment where his immediate superior officer is a\nnon-Forest officer, his CR should be written by that\nsuperior officer.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P029_C04",
+      "text": "This order of the Hon’ble Apex Court\nis also not applicable to other Services viz., the Indian\nAdministrative Service and the Indian Police Service.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P030_C01",
+      "text": "21. It can thus be seen that the DoPT had clarified that the\n\norder passed by this Court in the present proceedings on 22nd\nSeptember 2000 (Santosh Bharti\ncase) was applicable to\n\nForest Officers working within the Forest Department and was\n\nnot applicable to Forest Officers working outside the\n\nDepartment. It further clarified that if the Forest Officer was\n\nworking in the Secretariat or other Department where his\n\nimmediate superior officer was a non-Forest Officer, his CR\n\nshould be written by that officer superior to him. It further\n\nprovided that the order of this Court was not applicable to\n\nother Services viz., IAS and Indian Police Service (hereinafter\n\nreferred to as, “IPS”).\n(iii) Legal Precedents\n(\na) State of Haryana v. P.C. Wadhwa, IPS,\n Inspector General of Police and Another",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P031_C01",
+      "text": "22. It will also be relevant to refer to some judgments and\n\norders of this Court.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P032_C01",
+      "text": "23. An issue with regard to whether the provision\n\nempowering the Home Secretary as the reporting authority for\n\nthe purpose of writing a Confidential Report (hereinafter\n\nreferred to as “CR”) in respect of the Inspector General of Police\n\narose for consideration before this Court in the case of\nP.C. Wadhwa, IPS, Inspector General of Police\n(supra). This\n\nCourt had an occasion to consider clauses ‘e’, ‘f’ and ‘a’ of Rule\n\n2 of the 1970 Rules. It will be relevant to refer to paragraphs 8\n\nand 11 of\nthe said judgment\n, which read thus:\n“8. Now the question is whether the State\n Government can specifically empower any authority\n to be the reporting authority of the Inspector General\n of Police under the second part of clause (e). Apart\n from any legal provision, it is just and proper that\n a reporting authority must be a person to whom\n the member of the Service is answerable for his\n performances. In other words, the reporting\n authority should be a person higher in rank than\n the member of the Service. Indeed, that is\n apparent from the first part of clause (e).",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P032_C02",
+      "text": "It is true\n that under the second part of clause (e), there is\n no indication as to the status and position of the\n authority who may be specifically empowered by\n the Government as the reporting authority, but\n from the point of view of propriety and\n reasonableness and having regard to the\n intention behind the rule which is manifest, such\n an authority must be one superior in rank to the\n member of the Service concerned. If that be not\n so, there will be an apparent conflict between the\n first part and second part of clause (e). We are,\n therefore, of the view that the State Government\n can specifically empower only such authority as\n the reporting authority as is superior in rank to\n the Inspector General of Police.\n………………",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P033_C01",
+      "text": "11. In view of\nSections 3\nand\n\nof the Police Act read\n with Rule 1.2 of the Punjab Police Rules, the\n Inspector General of Police, Haryana, is the head of\n the Police Department. The immediate authority\n\nsuperior to the Inspector General of Police is the\n Minister-in-Charge of the Police Department. The\n only authority who could be specifically empowered\n as the reporting authority in regard to the Inspector\n General of Police under clause (e) of Rule 2 of the\n Rules is the Minister-in-Charge and the Chief\n Minister, being superior to the Minister-in-Charge,\n may be the reviewing authority under clause (f) of\n Rule 2. In acting as the reporting authority the\n Minister-in-Charge may be assisted by the Home\n Secretary, but the confidential report relating to the\n performances of the Inspector General of Police has\n to be written by the Minister-in-Charge. The\n Minister-in-Charge of the Police Department is\n supposed to be aware of the performances of the\n Inspector General of Police.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P033_C02",
+      "text": "As the Chief Minister is\n the reviewing authority, he will also act as the\n accepting authority on the basis of the principle\n as laid down under Rule 6-B of the Rules\n providing that where the accepting authority\n writes or reviews the confidential report of any\n member of the Service, it shall not be further\n necessary to review or accept any such report. In\n other words, the Chief Minister will act both as\n the reviewing authority and the accepting\n authority.\n[Emphasis supplied]",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P034_C01",
+      "text": "24. It can thus be seen that this Court observed that apart\n\nfrom any legal provision, it was just and proper that the\n\n“reporting authority” must be a person to whom the member\n\nof the Service was answerable for his performance. This Court\n\nobserved that the “reporting authority” should be a person\n\nhigher in rank than the member of the Service. This Court held\n\nthat from the point of view of propriety and reasonableness\n\nand in light of the manifest intention underlying the rule, the\n\n“reporting authority” must be an individual holding a rank\n\nsuperior to that of the Service member concerned. This Court\n\nparticularly observed that the State Government could\n\nempower only such authority as the “reporting authority”\n\nwhich was superior in rank to the Inspector General of Police\n\n(hereinafter referred to as, “IGP”). This Court further observed\n\nthat in view of\nSections 3\nand\n\nof the Police Act, 1861 read\n\nwith Rule 1.2 of the Punjab Police Rules, 1934, the IGP,\n\nHaryana, was the head of the Police Department. It observed\n\nthat the immediate authority superior to IGP was the Minister-\n\nin-Charge of the Police Department.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P034_C02",
+      "text": "It observed that the only\n\nauthority who could be specifically empowered as the\n\n“reporting authority” in regard to the IGP under clause (e) of\n\nRule 2 of the said Rules was the Minister-in-Charge and the\n\nChief Minister, being superior to the Minister-in-Charge, may\n\nbe the “reviewing authority” under clause (f) of Rule 2 of the\n\nsaid Rules. It further observed that in acting as the “reporting\n\nauthority” the Minister-in-Charge may be assisted by the\n\nHome Secretary, but the confidential report relating to the\n\nperformance of the IGP has to be written by the Minister-in-\n\nCharge. It further observed that the Chief Minister would act\n\nas the “reviewing authority” as well as the “accepting\n\nauthority” on the basis of the principle as laid down under\n\nRule 6-B of the said Rules providing that where the “accepting\n\nauthority” writes or reviews the C.Rs. of any member of the\n\nService, it shall not be further necessary to review or accept\n\nany such report. (\nb) Santosh Bharti v. State of Madhya Pradesh",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P035_C01",
+      "text": "25. It will further be relevant to note that an application being\n\nI.A. No.424 of 1998 came to be filed before this Court in the\n\npresent proceedings with regard to the question as to who is\n\nthe authority competent to write the C.R. with regard to an\n\nofficer belonging to the Forest Department. It will be relevant\n\nto refer to the following observations of this Court in the\n\naforementioned I.A. vide order dated 22nd\nSeptember 2000\n\n(Santosh Bharti\ncase):\n“17. The question which arises for consideration is\n as to who is the authority competent to write a\n confidential report with regard to an officer belonging\n to the Forest Department.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P036_C01",
+      "text": "18. The Indian Forest Service is one of the All-India\n Services. The officers selected on the basis of an all-\nIndia competitive examination, like the officers\n belonging to the Indian Administrative Service, are\n\nthen deployed in different States. That becomes the\ncadre for them.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P037_C01",
+      "text": "19. In the State of Madhya Pradesh, persons\nbelonging to the Indian Forest Service are also\ndeployed, just as they are deployed to other States.\nIn the Forest Department in the State, the lowest\nrung for a direct recruit belonging to the Indian\nForest Service is the post of Assistant Conservator of\nForests. Below the Assistant Conservator of Forests\nare three levels starting with that of a Guard,\nForester and Range Forest Officer. These three lowest\nrungs are manned by officers belonging to the State\nForest Service. Recruitment to the post of Assistant\nConservator of Forests is made partly by promotion\nfrom an officer belonging to the State Forest\nDepartment (being a Range Forest Officer) and partly,\nas already noticed, by direct recruitment to the\nIndian Forest Service.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P038_C01",
+      "text": "20. The hierarchy in the Indian Forest Service is that\nabove the Assistant Conservator of Forests is the\nDivisional Forest Officer, thereafter on promotion a\nperson becomes Conservator of Forests, then Chief\nConservator of Forests followed by Additional\nPrincipal Chief Conservator of Forests and at the\npinnacle of the pyramid is the Principal Chief\nConservator of Forests.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P039_C01",
+      "text": "21. The practice which has been adopted so far in the\nState of Madhya Pradesh and possibly in some other\nStates also, is that the confidential reports of the\nofficers belonging to the Forest Department holding\nany of the posts between that of a Guard and the\nPrincipal Chief Conservator of Forests is not written\nby the superiors within the same service but is\nwritten by the officers belonging to the office of the\nDistrict Collector and superior officers on the civil\nside.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P040_C01",
+      "text": "22. For writing of the confidential reports, the\nCentral Government has, under\nSection 3\nof the All\nIndia Services Act, 1951, framed All India Services\n(Confidential Rolls) Rules, 1970. According to Rule\n2(e), the “reporting authority” is defined as follows:\n\n“2. (e) ‘reporting authority’ means the\n authority who was, during the period for\n which the confidential report is written,\n immediately superior to the member of the\n service and such other authority as may\n be specifically empowered in this behalf by\n the Government;”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P041_C01",
+      "text": "23. The “reviewing authority” is defined in Rule 2(f)\nas follows:\n“2. (f) ‘reviewing authority’ means the\n authority who was, during the period for\n which the confidential report is written,\n immediately superior to the reporting\n authority and such other authority as may\n be specifically empowered in this behalf by\n the Government;”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P042_C01",
+      "text": "24. It seems that Rule 2(e) had been interpreted by\nthe State to mean that the confidential report of an\nofficer could be written by a person who is superior\nto him and also by such other officer who may be\nspecified in this behalf. In view of the latter portion\nof the said Rule 2(e), the State Government has\nauthorised officers of service other than of the Forest\nDepartment to write the confidential reports. In this\nmanner, in effect, the administrative control of\nofficers belonging to the Forest Department is not\nwithin the Department itself.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P043_C01",
+      "text": "25. The aforesaid Rule 2(e) came up for consideration\nbefore this Court in\nState of Haryana v. P.C.\nWadhwa\n[(1987) 2 SCC 602 : (1987) 3 ATC 690 :\n(1987) 2 SCR 1030] . While interpreting the said Rule\n2(e), this Court at p. 1035 observed as follows: (SCC\npp. 606-07, para 5)\n “5. In this connection, it may be pointed\n out that it is not disputed that the\n conjunction ‘and’ occurring in clauses (e),\n(f) and (a) should be read as ‘or’. Under\n clause (e), the ‘reporting authority’ may be\n either immediately superior to the member\n of the service or such other authority as\n\nmay be specifically empowered in this\n behalf by the Government. The expression\n ‘immediately superior’ obviously indicates\n that the reporting authority should be the\n immediate superior officer in the same\n service to which the member of the service\n belongs. The position is the same as in the\n cases of ‘reviewing authority’ and\n ‘accepting authority’. So, under the first\n part of clause (e), the reporting authority\n of the respondent could be a person who\n is immediately superior to him in the\n police service.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P044_C01",
+      "text": "26. It appears to us, and which is logical, that up\nto the officer of the rank of Additional Principal\nChief Conservator of Forests the reporting\nauthority has to be the immediately superior\nofficer within the Forest Department. For\nexample, for the Assistant Conservator of Forests,\nthe reporting authority can only be the Divisional\nForest Officer and for him the reporting authority\nwould be the Conservator of Forests for whom the\nreporting authority has to be the Chief\nConservator of Forests and his reporting\nauthority would be Additional Principal Chief\nConservator of Forests and lastly his reporting\nauthority would be the Principal Chief\nConservator of Forests. Likewise the reviewing\nauthority would also be the person within the\nsame Department. It is only in case of the\nPrincipal Chief Conservator of Forests that the\nreporting authority will be a person other than\nthe one belonging to the service because there is\nno one superior to the Principal Chief\nConservator of Forests within the service.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P044_C02",
+      "text": "As far\nas he is concerned, the reporting authority would\nbe a person who is familiar with the work of\nPrincipal Chief Conservator of Forests and that\nwill be the person to whom he reports and who is\nsuperior to him in rank and hierarchy.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P045_C01",
+      "text": "27. We, therefore, direct the State of Madhya\n Pradesh to pass appropriate orders enumerating the\n reporting authorities in the manner indicated\n hereinabove.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P046_C01",
+      "text": "28. The Union of India is directed to bring to the\n notice of the other States the ratio of this decision as\n well as the decision in\nP.C. Wadhwa\ncase [(1987) 2\n SCC 602 : (1987) 3 ATC 690 : (1987) 2 SCR 1030] for\n issuing suitable orders wherever necessary.”\n [Emphasis supplied]",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P047_C01",
+      "text": "26. It can thus be seen from the aforesaid observations that\n\nthis Court in detail had considered the hierarchy in IFS. This\n\nCourt noted the practice in the State of Madhya Pradesh that\n\nthe C.Rs. of the officers belonging to the Forest Department\n\nholding any of the posts between that of a Guard and the PCCF\n\nwere not written by the superiors within the same service but\n\nwere written by the officers belonging to the office of the\n\nDistrict Collector and superior officers on the civil side. After\n\nconsidering the definitions of “reporting authority” and\n\n“reviewing authority” as contained in the 1970 Rules and the\n\njudgment of this Court in the case of\nP.C. Wadhwa, IPS,\n\nInspector General of Police\n(supra), this Court reiterated\n\nthat up to the officer of the rank of APCCF, the “reporting\n\nauthority” has to be the immediately superior officer within the\n\nForest Department. This Court has given the entire illustration\n\nin paragraph 26 as to who would be the “reporting authority”\n\nand the “reviewing authority” in respect of an officer.\n(iv) Order of this Court in I.A. No.776 of 2002 in the\n present proceedings",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P048_C01",
+      "text": "27. It is further relevant to note that the State of Madhya\n\nPradesh, in the present proceedings, had also filed an\n\napplication being I.A. No.776 of 2002 seeking\n\nmodification/clarification of the order of this Court dated 22nd\nSeptember 2000 (Santosh Bharti\ncase). It will be relevant to\n\nrefer to the prayers made in the said I.A., which read thus:\n“(i) Modify/clarify the order dated 22.09.2000 that\n the Reporting Authority and Reviewing Authority up\n to the rank of Additional Chief Conservator of Forests\n should be immediately superior officer as per\n amended provisions of Rule 2 (a), 2 (e) and 2(f) All\n India Service (Confidential Rolls) Rules, 1970.\n(ii) The amended provisions of the All-India Services\n (Confidential Rolls) Rules, 1970. In\nSection 2 (e)\n,\n2(f)\nand\n2(a)\nbe given full effect to in its letter and spirit.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P049_C01",
+      "text": "28. This Court, vide order dated 1st August 2003 passed in\n\nthe present proceedings, directed the Central Empowered\n\nCommittee (hereinafter referred to as, “CEC”) to examine the\n\nissue and submit a report.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P050_C01",
+      "text": "29. The CEC, accordingly, submitted its report on 22nd\n\nJanuary 2004. It will be relevant to refer to the following\n\nextract of the said report:\n“(i) In all the States and Union Territories except the\n State of Madhya Pradesh, the CR's of the Assistant\n Conservator of Forests, the Divisional Forest Officer\n and the Conservator of Forests working in the Forest\n Department are written by their immediate superiors\n in the Forest Department i.e. the Divisional Forest\n Officer, the Conservator of Forests and the Chief\n Conservator of Forests respectively. In the State of\n Madhya Pradesh the CR's of these Forest Officers\n were being written by their counterparts in the\n Revenue Department i.e. Assistant Collector, District\n Collector and Divisional Commissioner,\n(ii) the primary responsibility of the forest officers\n working in the field is forest protection, wildlife\n management, implementation of FC Act, Indian\n Forest Act, Wildlife (Protection) Act, preparation and\n Implementation of Working Plans and other forestry\n activities. These officers work under the direct\n supervision and administrative control of their\n superior forest officers.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P050_C02",
+      "text": "It is, therefore, logical that\n their CR's are written by their superior officers in the\n Forest Department and not by their counterparts in\n the Revenue Department;\n(iii) though the forest officers may be involved in\n implementation of various welfare and development\n schemes of the State Government, this should not\n normally become their primary responsibility;\n(iv) in view of above, the system of writing of CR's of\n the Forest Officers working in the field by their\n counterparts in the Revenue Department may not be\n appropriate. If required, a report about the\n performance of the Forest Officer (s) in\n implementation of the welfare schemes may be sent\n by the Assistant Collector, Collector or the Divisional\n Commissioner to the designated Reporting Officer (s),\n\nwhich could be taken into consideration by the\nReporting Officer (s) while writing the CR(s);\n(v) the CR should normally be written by the officer\nof higher rank and pay scale. In exceptional cases it\nmay be allowed to be written by the officer in the\nsame pay scale provided he is senior. It should never\nbe allowed to be written by an officer of a lower rank\nor who is in a lower pay scale.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P050_C03",
+      "text": "There are many\nDivisional Forest Officers who are in a higher pay\nscale and/or of higher seniority vis-à-vis the District\nCollectors;\n(vi) Rule 2(e), 2(f) and 2(a) of the All India Services\n(Confidential Rolls) Rules, 1970 as amended on\n8.12.1987 deal with the \"reporting authority\",\n\"reviewing authority\" and \"accepting authority\".\nrespectively. As per the amended rules, the reviewing\nauthority and the accepting authority shall be the\nauthority supervising the performance of the\nreporting authority and reviewing authority,\nrespectively. Since the Divisional Commissioner is\nthe supervising authority for the District Collectors\nand Revenue Secretary is the supervising authority\nfor the Divisional Commissioner, if a District\nCollector is designated as the reporting authority for\nthe DFO, the Divisional Commissioner and the\nRevenue Secretary will be the Reviewing Officer and\nAccepting Officer, respectively.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P050_C04",
+      "text": "Under these\ncircumstances none of the officers working in the\nForest Department would be involved at any level in\nassessing the performance of the Divisional Forest\nOfficer;\n(vii) in view of above the practice of designating the\nDistrict Collector as the reporting authority and the\nConservator of Forests as the reviewing authority for\nwriting the CR of the DFO was not in consonance\nwith the amended CR rules. Similar situation existed\nfor other field officers of the Forest Department;\n(viii) the amendments made in the All India Services\n(Confidential Rolls) Rules, 1970 on 8.12.1987\nresulted in nullifying the Hon'ble Court's judgment\ndated 16.4.1987 delivered in\nState of Haryana vs. Shri P.C. Wadhwa, IPS, Inspector General of Police &\n Anr.\n, 1987 (2) SCR 1030.. The amendment to the said\n rules was not made to cure any defect in pursuant to\n any order of this Hon'ble Court's. The amended rules\n permit the Government to designate an officer in a\n lower pay scale or rank to write the CR of another\n officer in higher pay scale or rank from the same\n service or another service, which is not appropriate.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P050_C05",
+      "text": "Although there may be situations in which the\n reporting officer, reviewing officer or the accepting\n officer are from different services or departments, it\n is necessary that the reporting officer should be in a\n higher pay scale than the officer reported upon. Similarly the reviewing officer and the accepting\n officer should normally be in a higher-pay scale and\n rank and in no case in a lower pay scale or rank than\n the reporting officer and the reviewing officer,\n(ix) the amended rules could have been brought to\n the notice of this Hon'ble Court by the applicant\n during the hearing which was not done. In any case\n the Hon'ble Court's order is not contrary to or\n inconsistent with the amended rules;\n(x) the Committee agrees with the views of the DOPT\n that the Hon'ble Court's order dated 22.9.2000 was\n issued in a particular context and should not be\n generalised to cover other services. Similarly, it also\n agrees with the contention of the DOPT that if the\n Forest Officer is working in the Secretariat or other\n departments where his immediate supervising officer\n is a non-forest officer, his CR should be written by\n such an officer;”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P051_C01",
+      "text": "30. After considering the aforesaid report of the CEC, this\n\nCourt passed an order in the present proceedings on 19th April\n\n2004, extract of which reads thus:\n“Despite the order of this Court the State of Madhya\n Pradesh has not filed its response. We are in\n agreement with the recommendations of the CEC. IA\n\nNo.776 in IA No.424 is accordingly dismissed. It\n appears that several States are not following the\n recommendations of the CEC and the Order dated\n 22.9.2000. We, therefore direct that since the matter\n has already been decided all the States including the\n State of Chhattisgarh shall abide by the order dated\n 22.9.2000. I.A.No.1035 is disposed of”",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P052_C01",
+      "text": "31. It can thus be seen that this Court has reiterated that all\n\nthe States shall abide by the order passed in the present\n\nproceedings by a 3-Judges Bench of this Court dated 22nd\nSeptember 2000 (Santosh Bharti\ncase).\n(v) Recent judgment of this Court in\nState of Assam\n and Others v. Binod Kumar and Others",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P053_C01",
+      "text": "32. Recently, this Court in the case of\nState of Assam and\n\nOthers v. Binod Kumar and Others4\nhad an occasion to\n\nconsider a similar controversy with regard to who shall be the\n\n“reporting authority” or recording of the Annual Performance\n\nAppraisal Report (hereinafter referred to as, “APAR”) of the\n\nofficers belonging to the IPS. This Court also had an occasion\n\nto consider the 1970 Rules as amended in 1987 and also the\n\n2007 Rules. It will be relevant to refer to the following\n\nparagraphs of\nthe said judgment\n:\n“21. The definition of “reporting authority” in the\n 1970 Rules, post 1987, and in the 2007 Rules, did\n4 (2024) 3 SCC 611\n\naway with the mandate of having the “immediate\nsuperior” of the officer reported upon undertaking\nthat exercise but it still requires the “reporting\nauthority” to be someone who supervises the\nperformance of the said officer. Ordinarily, such\nsupervision would be by an officer from within the\nsame department, who is higher in rank than the\nofficer reported upon. The Government was, no\ndoubt, given discretion to empower any of the\nauthorities who supervise the performance of the\nofficer reported upon to assume such role.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P053_C02",
+      "text": "This\ndiscretion, however, cannot be construed to mean\nthat someone from outside the department can be\ngiven such power, in the light of the “reviewing\nauthority” being defined as someone who supervises\nthe performance of such “reporting authority”. This\nclearly implies that both authorities must belong to\nthe same service or department. In effect, Rule 63(iii)\nof the Manual does not fit in with the scheme\nobtaining under the 1970 Rules and the 2007 Rules.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P054_C01",
+      "text": "30. In this regard, we may also note that,\nin SBI v. Kashinath Kher [SBI v. Kashinath Kher,\n(1996) 8 SCC 762 : 1996 SCC (L&S) 1117] , this Court\nheld that officers reporting upon performance must\nshow objectivity, impartiality and fair assessment,\nwithout any prejudices whatsoever, and the highest\nsense of responsibility so as to inculcate devotion to\nduty, honesty and integrity. It was further observed\nthat as officers may get demoralised by negative\nACRs, which would be deleterious to the efficacy and\nefficiency of public service, such ACRs should be\nwritten by a superior officer of high rank. Earlier,\nState of Haryana v. P.C. Wadhwa [State of\nHaryana\nv. P.C. Wadhwa, (1987) 2 SCC 602] , this\nCourt considered whether the State Government\ncould empower any authority to be the “reporting\nauthority” of the Inspector General of Police under\nRule 2(e) of the 1970 Rules. It was observed that,\nfrom the point of view of propriety and\nreasonableness and having regard to the intention\nbehind the Rule, which is manifest, such an\nauthority must be one superior in rank to the\n\nmember of the service concerned.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P054_C02",
+      "text": "No doubt, these\n observations were made in the context of the\n unamended Rule 2(e) of the 1970 Rules, but the\n principle culled out is sound and still holds good.”",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P055_C01",
+      "text": "33. This Court in the aforesaid judgment recorded that\n\nthough the Government had been given discretion to empower\n\nany of the authorities who supervise the performance of the\n\nofficer reported upon to assume such role, such a discretion\n\ncould not be construed to mean that someone from outside the\n\ndepartment could be given such power, in the light of the\n\n“reviewing authority” being defined as someone who\n\nsupervises the performance of such “reporting authority”. It\n\nclearly implied that both authorities must belong to the same\n\nservice or department. This Court reiterated the position as\n\nheld by this Court in the case of\nP.C. Wadhwa, IPS, Inspector\n\nGeneral of Police\n(supra). (vi) Impugned G.O. dated 29th June 2024\n34. It appears that, while other States were adhering to the\n\npractice wherein the “reporting authority” and the “reviewing\n\nauthority” belonged to the same service, with the “reporting\n\nauthority” being immediately superior to the officer being\n\nreported upon, and the “reviewing authority” being the\n\nauthority supervising the performance of the “reporting\n\nauthority”, the State of Madhya Pradesh was not following this\n\nestablished practice.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P055_C02",
+      "text": "The practice of ACRs of the IFS officers\n\nbeing recorded by the officers from the IAS i.e., the District\n\nCollectors and superior officers was followed in the State of\n\nMadhya Pradesh. This practice was specifically challenged in\n\nthe present proceedings by way of an application and it was\n\nfound that the said practice as followed by the State of Madhya\n\nPradesh was not correct. This Court specifically in its order\n\ndated 22nd September 2000 observed that insofar as Assistant\n\nConservator of Forests are concerned, the “reporting\n\nauthority” could only be the DFO and for DFO, the “reporting\n\nauthority” would be the Conservator of Forests. This Court\n\nfurther observed that for the Conservator of Forests, the\n\n“reporting authority” has to be the CCFs and for CCFs, the\n\n“reporting authority” would be APCCF and for APCCF, the\n\n“reporting authority” would be the PCCF. This Court observed\n\nthat up to the APCCF, the “reporting authority” and the\n\n“reviewing authority” would be the person within the same\n\ndepartment.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P055_C03",
+      "text": "This Court observed that it was only in the case\n\nof PCCF that the “reporting authority” would be a person other\n\nthan the one belonging to the service because there was no\n\none superior to the PCCF within the service. This Court\n\nobserved that in such a case, the “reporting authority” would\n\nbe a person who was familiar with the work of PCCF and that\n\nwould be the person to whom he reported and who was\n\nsuperior to him in rank and hierarchy.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P056_C01",
+      "text": "35. It can further be seen that in view of the order passed by\n\nthis Court in the present proceedings dated 22nd September\n\n2000, MoEF issued specific directions to the various State\n\nGovernments.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P057_C01",
+      "text": "36. It is to be noted that the State of Madhya Pradesh had\n\nalso filed an application being I.A. No.776 of 2002 in the\n\npresent proceedings for modification of the aforesaid\n\ndirections of this Court. This Court directed the CEC to submit\n\nits report. The CEC accordingly submitted its report on 22nd\n\nApril 2004. This Court, vide order dated 19th April 2004,\n\nexpressed its agreement with the said report of the CEC and\n\nrecorded that several States including the State of Madhya\n\nPradesh were not following the recommendations made by the\n\nCEC in its report and the directions of this Court issued vide\n\norder dated 22nd September 2000 in the present proceedings.\n\nThis Court therefore reiterated its said order dated 22nd\n\nSeptember 2000 and directed all the State Governments to\n\nfollow the same.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P058_C01",
+      "text": "37. The legal position as approved by this Court in two\n\nseparate orders of this Court and as rightly understood by the\n\nMoEF as could be seen from its letter dated 8th November 2001\n\nis that insofar as writing of ACRs up to the rank of APCCF is\n\nconcerned, the “reporting authority” should be the immediate\n\nsuperior authority in the Forest Department. The position is\n\nclear as regards “reviewing authority” or “reporting authority”\n\nin relation to officers up to the rank of APCCF. It is clear that\n\nexcept the PCCF, the “reporting authority” has to be a superior\n\nofficer from the IFS. It is only with regard to PCCF that the\n\n“reporting authority” would be a person to whom he reports\n\nand who is superior to him in rank. No doubt that, if\n\nnecessary, the State Governments can provide that the\n\nCollectors and Commissioners can record their comments on\n\na separate sheet about the performance of the IFS officers in\n\nrelation to the implementation of developmental work funded\n\nby the district administration. However, the same is again\n\nrequired to be considered by a superior departmental officer of\n\nthe IFS.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P059_C01",
+      "text": "38. It is further to be noted that even the DoPT has also\n\nissued an O.M. dated 2nd September 2004 informing all the\n\nStates about the order passed by this Court in the present\n\nproceedings dated 22nd\nSeptember 2000 (Santosh Bharti\ncase) and the instructions issued by MoEF vide its letter dated\n\n8th November 2001. However, the DoPT clarified that the said\n\norder passed by this Court on 22nd September 2000 would not\n\nbe applicable to the forest officers who are working in a\n\nseparate department where his immediate superior officer is a\n\nnon-forest officer.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P060_C01",
+      "text": "39. We are of the considered view that the G.O. dated 29th\n\nJune 2024 is totally in violation of the specific directions\n\nissued by this Court vide its orders dated 22nd September 2000\n\nin the present proceedings (\nSantosh Bharti\ncase) and 19th\n\nApril 2024. Perusal of the table annexed at Annexure-8 with\n\nthe compilation of the learned amicus curiae would reveal that\n\nexcept the State of Madhya Pradesh, all the other States are\n\nscrupulously adhering to the directions issued by this Court\n\nin the aforesaid orders. We have no hesitation to hold that the\n\nimpugned G.O. is rather contemptuous in nature inasmuch as\n\nthe said G.O. which is in violation of the aforesaid orders of\n\nthis Court dated 22nd September 2000 and 19th April 2024 has\n\nbeen issued without even seeking clarification/modification of\n\nthis Court. We could have very well proceeded to initiate\n\ncontempt proceedings against the officers responsible for\n\nissuance of such G.O. However, we refrain ourselves from\n\ndoing so. The said G.O. being in violation of the directions of\n\nthis Court is liable to be quashed and set aside.\nIV. DIRECTIONS",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 61,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P061_C01",
+      "text": "40. We are, therefore, inclined to allow the present\n\napplications.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 62,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P062_C01",
+      "text": "41. In the result, we pass the following order:\n(i) The present applications are allowed;\n(ii) The impugned G.O. dated 29th June 2004 is held to be\n\n in violation of the order passed by this Court in the\n\n present proceedings dated 22nd\nSeptember 2000\n\n (Santosh Bharti\ncase) which is reiterated and is\n\n consequently quashed and set aside;\n(iii) The State of Madhya Pradesh is directed to reframe the\n\n rules by strictly adhering to the directions issued by\n\nthis Court vide order dated 22nd September 2000 in\n\n the present proceedings (\nSantosh Bharti\ncase) which\n\n has been clarified by the MoEF in its letter dated 8th\n\n November 2001 and also clarified by the DoPT vide its\n\n letter dated 2nd September 2004; and\n(iv) The same shall be done within a period of one month\n\n from the date of this judgment.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 63,
+      "chunk_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA_P063_C01",
+      "text": "42. We place on record our appreciation for the efforts put in\n\nby Shri K. Parameshwar, learned amicus curiae for extending\n\nsupport and suggestion and Shri Tushar Mehta, learned\n\nSolicitor General for taking a fair stand on behalf of the State\n\nof Madhya Pradesh.\n..............................CJI\n (B.R. GAVAI)\n\n ............................................J\n (AUGUSTINE GEORGE MASIH)\n\nNEW DELHI;\nMAY 21, 2025.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "In Re : T.N. Godavarman Thirumulpad vs Union Of India",
+    "case_id": "SC_2025_IN_RE_TN_GODAVARMAN_THIRUMULPAD_VS_UNION_OF_INDIA",
+    "court": "Supreme Court of India",
+    "year": "2025",
+    "facts_summary": "1. The present batch of applications pertains to an issue as\n\nto whether the officers in the Indian Administrative Service\n\n(hereinafter referred to as, “IAS”) would be a “reporting\n\nauthority”, “reviewing authority” and “accepting authority” of\n\nthe officers working in the Indian Forest Service (hereinafter\n\nreferred to as, “IFS”). 2. The present applications basically challenge the\n\nGovernment Order dated 29th June 2024 (hereinafter referred\n\nto as the, “said G.O.”) notified by the Government of Madhya\n\nPradesh with regard to writing Performance Appraisal Report\n\n(hereinafter referred to as, “PAR”) of the officers belonging to\n\nthe IFS. The relevant part of the said G.O. reads thus:\n“2. Before evaluating the performance of the\n Divisional Forest Officer (Territorial), the concerned\n Conservator or Chief Conservator of Forest\n (Reporting Authorities) will seek a note from the\n District Collector. Similarly and before evaluating the\n performance of the Conservator of Forests and Chief\n Forest Conservator (Territorial), the Additional\n Principal Chief Forest Conservator (Development) will\n seek a note from the Divisional Commissioner and\n\nthese notes shall be considered during the time of\n Performance Appraisal Report (PAR). 3. Comments by Collector and Divisional\n Commissioner on performance of Indian Forest\n Service officers in field positions on areas such as\n MANREGAS, Joint Forest Management, Forest\n Rights Act, land acquisition for development projects,\n mining, district",
+    "legal_issues": "4. We have heard Shri K. Parameshwar, learned amicus\n\ncuriae and Shri Tushar Mehta, learned Solicitor General\n\nappearing on behalf of the State of Madhya Pradesh. 6. Per contra, Shri Tushar Mehta, learned Solicitor General\n\nappearing on behalf of the State of Madhya Pradesh submits\n\nthat as per the Order of Precedence of the Government of\n\nMadhya Pradesh dated 23rd December 2011, the Additional\n\nChief Secretary (hereinafter referred to as, “ACS”) and the\n\nPrincipal Secretary (hereinafter referred to as, “PS”) hold ranks\n\nsuperior to that of the Principal Chief Conservator of Forests\n\n(hereinafter referred to as, “PCCF”). He further submits that in\n\naccordance with the provisions as contained in clauses (2) and\n\n(3) of\nArticle 166\nof the Constitution of India, the Governor of\n\nMadhya Pradesh has framed the Madhya Pradesh Government\n\nBusiness (Allocation) Rules. He submits that under the said\n\nRules, each Secretariat Department is required to have a\n\nSecretary to the Government (ACS/PS). It is submitted that for\n\n1 (1987) 2 SCC 602\n2 (2007) 15 SCC 273\n\nthe Forest Department, ACS/PS is the official administrative\n\nhead of the IFS. 7. The learned Solicitor General submits that the Forest\n\nOfficers and particularly the Divisional Forest Officer\n\n(hereinafter referred to as, “DFO”) who is the Head of the\n\nDivision, discharges diverse responsibilities. It is submitted\n\nthat the DFO is also responsible for various duties like\n\nconservation of forests, implementation of government\n\nsc",
+    "ratio_summary": "23. An issue with regard to whether the provision\n\nempowering the Home Secretary as the reporting authority for\n\nthe purpose of writing a Confidential Report (hereinafter\n\nreferred to as “CR”) in respect of the Inspector General of Police\n\narose for consideration before this Court in the case of\nP.C. Wadhwa, IPS, Inspector General of Police\n(supra). This\n\nCourt had an occasion to consider clauses ‘e’, ‘f’ and ‘a’ of Rule\n\n2 of the 1970 Rules. It will be relevant to refer to paragraphs 8\n\nand 11 of\nthe said judgment\n, which read thus:\n“8. Now the question is whether the State\n Government can specifically empower any authority\n to be the reporting authority of the Inspector General\n of Police under the second part of clause (e). Apart\n from any legal provision, it is just and proper that\n a reporting authority must be a person to whom\n the member of the Service is answerable for his\n performances. In other words, the reporting\n authority should be a person higher in rank than\n the member of the Service. Indeed, that is\n apparent from the first part of clause (e). 25. It will further be relevant to note that an application being\n\nI.A. No.424 of 1998 came to be filed before this Court in the\n\npresent proceedings with regard to the question as to who is\n\nthe authority competent to write the C.R. with regard to an\n\nofficer belonging to the Forest Department. It will be relevant\n\nto refer to the following observations of this Court in the\n\naforementioned I.A. vide order dated 22nd\nS",
+    "final_order": "INHERENT/ORIGINAL JURISDICTION\n\n IN RE: PERFORMANCE APPRAISAL REPORTS OF THE\n OFFICERS OF THE INDIAN FOREST SERVICE\n\n I.A. NO.172422 OF 2024\n [Applications for Impleadment]\n WITH\n I.A. NO.172425 OF 2024\n [Applications for Direction]\n WITH\n I.A. NO. 172427 OF 2024\n [Application for Exemption from filing Official\n Translation]\n WITH\n I.A. NO. 172429 OF 2024\n [Application for appearing as Petitioner-in-Person]\n WITH\n I.A. NO. 179359 OF 2024\n [Application for Ex-Party and Interim Stay]\n WITH\n I.A. NO. 290215 OF 2024\n [Application for Impleadment]\n WITH\n I.A. NO. 290217 OF 2024\n [Application for Direction]\n WITH\n I.A. NO. 105862 OF 2025\n [Applications for Impleadment]\n WITH\n Signature Not Verified\n\n [Application for Direction]\n\n WITH\n I.A. NO. 105865 OF 2025\n [Application for Exemption from fil",
+    "outcome_summary": "INHERENT/ORIGINAL JURISDICTION\n\n IN RE: PERFORMANCE APPRAISAL REPORTS OF THE\n OFFICERS OF THE INDIAN FOREST SERVICE\n\n I.A. NO.172422 OF 2024\n [Applications for Impleadment]\n WITH\n I.A. NO.172425 OF 2024\n [Applications for Direction]\n WITH\n I.A. NO. 172427 OF 2024\n [Application for Exemption from filing Official\n Translation]\n WITH\n I.A. NO. 172429 OF 2024\n [Application for appearing as Petitioner-",
+    "sections_cited": [
+      "Constitution 166"
+    ],
+    "cases_cited": []
+  }
+}

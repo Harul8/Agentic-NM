@@ -13,6 +13,8 @@ Phase 2 cleanup:
 """
 
 import logging
+import os
+import time
 
 from llm.ollama_client import ask_llm
 from services.fact_collector import get_next_question_or_complete
@@ -24,6 +26,18 @@ from services.response_generator_v2 import (
 from services.content_guard import check_query_safety, sanitize_input, check_response_safety
 
 logger = logging.getLogger(__name__)
+
+# Set PIPELINE_TIMING=1 in env to log elapsed ms for each step (debug slow follow-ups)
+_PIPELINE_TIMING = os.environ.get("PIPELINE_TIMING", "").lower() in ("1", "true", "yes")
+
+
+def _log_step(step_name: str, elapsed_ms: float, extra: str = "") -> None:
+    """Log a pipeline step and elapsed time when PIPELINE_TIMING is enabled."""
+    if _PIPELINE_TIMING:
+        msg = f"PIPELINE_TIMING {step_name}: {elapsed_ms:.0f} ms"
+        if extra:
+            msg += f" | {extra}"
+        logger.info(msg)
 
 
 def _ensure_message(msg: str, facts: str, intent: str) -> str:
@@ -55,8 +69,14 @@ def _run_bare_acts_phase(facts_summary: str, progress_callback=None, states: lis
     states: list of state names detected from the query (e.g. ['Telangana']).
       Used to search BOTH Union/central acts AND state-specific acts.
     """
+    pending_indexing_list = []
     try:
-        result = retrieve_bare_acts_phase(facts_summary, progress_callback=progress_callback, states=states or [])
+        result = retrieve_bare_acts_phase(
+            facts_summary,
+            progress_callback=progress_callback,
+            states=states or [],
+            pending_indexing_list=pending_indexing_list,
+        )
     except Exception as e:
         logger.error("_run_bare_acts_phase: retrieval failed: %s", e, exc_info=True)
         result = {"bare_acts": [], "followup_question": None, "intro_text": "I couldn't retrieve bare act sections right now. Proceeding with general analysis."}
@@ -87,14 +107,16 @@ def _run_bare_acts_phase(facts_summary: str, progress_callback=None, states: lis
         "response_type": "bare_acts_presented",
         "materials_to_confirm": None,
         "indexed": False,
+        "pending_indexing_list": pending_indexing_list,
     }
 
 
-def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_info: str, progress_callback=None, states: list = None) -> dict:
+def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_info: str, progress_callback=None, states: list = None, pending_indexing_list: list = None) -> dict:
     """
     New Phase B: given collected facts + already-retrieved bare acts + any additional user info,
     retrieve case laws, associate them with sections, and generate the structured final opinion.
     states: optional list of state names (e.g. from Phase A) so web search is jurisdiction-aware.
+    pending_indexing_list: optional list from Phase A (web bare-act URLs); Phase B appends case-law URLs for Pending indexing UI.
     """
     try:
         resp = generate_final_opinion_with_case_laws(
@@ -103,6 +125,7 @@ def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_in
             additional_info=additional_info,
             progress_callback=progress_callback,
             states=states or [],
+            pending_indexing_list=pending_indexing_list,
         )
     except Exception as e:
         logger.error("_run_final_with_case_laws failed: %s", e, exc_info=True)
@@ -191,6 +214,66 @@ def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_coun
     }
 
 
+def _run_legal_opinion_simple(
+    facts_summary: str,
+    progress_callback=None,
+    search_strategy: str = "local_only",
+) -> dict:
+    """
+    Single-pass legal opinion: hybrid retrieval (local only) + LLM reasoning.
+
+    This bypasses the older two-phase bare-acts-then-caselaw flow and skips web
+    enrichment so the hot path is:
+      facts → local retrieval (acts + cases) → opinion.
+    """
+    try:
+        resp = generate_response(
+            facts_summary,
+            jurisdiction_state="",
+            intent="legal_opinion",
+            progress_callback=progress_callback,
+            document_types="both",
+            search_strategy=search_strategy or "local_only",
+            result_count=None,
+        )
+    except Exception as e:
+        logger.error("Legal opinion generation failed: %s", e, exc_info=True)
+        return {
+            "phase": "done",
+            "message": "I encountered an issue while preparing your legal opinion. Please try again or rephrase your query.",
+            "facts_summary": facts_summary,
+            "response": None,
+            "response_type": "legal_opinion",
+            "materials_to_confirm": None,
+            "indexed": False,
+        }
+
+    # Output safety check
+    explanation = (resp.get("explanation") or "").strip()
+    if explanation:
+        resp_safety = check_response_safety(explanation)
+        if not resp_safety.get("safe"):
+            logger.warning("Unsafe legal-opinion output blocked")
+            explanation = "I was unable to generate a safe response for this query. Please try rephrasing."
+
+    return {
+        "phase": "done",
+        "message": "",
+        "facts_summary": facts_summary,
+        "response": {
+            "bare_act_sections": resp.get("bare_act_sections", []),
+            "case_laws": resp.get("case_laws", []),
+            "internet_case_laws": resp.get("internet_case_laws", []),
+            "explanation": explanation or "Here's my analysis based on the most relevant bare acts and case laws I found.",
+            "progress": resp.get("progress"),
+            "indexing_candidates": resp.get("indexing_candidates", []),
+        },
+        "response_type": "legal_opinion",
+        "materials_to_confirm": None,
+        "indexed": False,
+    }
+
+
 # Generalist Agent — handles all conversations and queries NOT covered by legal agents:
 # non-legal topics (politics, science, tech, general knowledge), how-to, trivia, and any unclear request.
 GENERIC_CHAT_SYSTEM = """You are a helpful, knowledgeable generalist assistant. You handle any question or conversation that is not a legal research request (case laws, bare acts, legal advice, or bulk indexing from a URL). Answer clearly and conversationally — like ChatGPT or Perplexity. Topics you handle include: politics, science, technology, history, how-to, trivia, general knowledge, and any other non-legal or ambiguous query. If the question is clearly about law (Indian law, cases, acts, legal advice), briefly say you're better suited for legal research and suggest they ask for case laws or legal opinion in this app. Otherwise answer from your training knowledge. Keep responses informative and concise. If you don't know something, say so. Do not use legal disclaimers for non-legal topics."""
@@ -253,6 +336,7 @@ def process_chat(
     result_count: int = None,
     bare_acts: list = None,
     states: list = None,
+    pending_indexing_list: list = None,
     chat_mode: str | None = None,
 ) -> dict:
     """
@@ -268,9 +352,13 @@ def process_chat(
     materials_to_confirm, indexed
     """
 
+    t_pipeline_start = time.perf_counter()
+    _log_step("process_chat START", 0, f"phase={phase}")
+
     # ---- Safety gate: check input before any processing ----
     current_message = sanitize_input(current_message)
     safety = check_query_safety(current_message)
+    _log_step("safety_check", (time.perf_counter() - t_pipeline_start) * 1000)
 
     if not safety.get("safe"):
         logger.warning("Blocked unsafe query (risk=%s): %s", safety.get("risk_level"), current_message[:80])
@@ -303,13 +391,16 @@ def process_chat(
                 msg=msg,
                 result_count=None,
                 progress_callback=progress_callback,
-                search_strategy=_detect_search_strategy_from_keywords(current_message) or "local_then_web",
+                # Use local-only retrieval in hot path; caller can still request web via API-level overrides.
+                search_strategy="local_only",
             )
 
         # Default / explicit legal opinion: use fact collector, but force LEGAL
         # so Gate 1 can never downgrade to GENERALIST when the user chose legal mode.
         force_legal = mode == "legal_opinion"
+        t_before_fact = time.perf_counter()
         result = get_next_question_or_complete(conversation, current_message, force_legal=force_legal)
+        _log_step("get_next_question_or_complete", (time.perf_counter() - t_before_fact) * 1000, f"action={result.get('action')}")
 
         if result.get("action") == "complete":
             intent = result.get("intent", "legal_opinion")
@@ -319,6 +410,7 @@ def process_chat(
             if intent in ("search", "lookup"):
                 count = result.get("result_count")
                 strategy = result.get("search_strategy", "local_then_web")
+                _log_step("FACT_COLLECTION → retrieval (search/lookup)", (time.perf_counter() - t_pipeline_start) * 1000, f"facts_len={len(facts or '')}")
                 return _run_search_or_lookup(facts, intent, msg, result_count=count, progress_callback=progress_callback, search_strategy=strategy)
 
             if intent == "bulk_ingest":
@@ -328,12 +420,19 @@ def process_chat(
             if intent == "generic_chat":
                 return _run_generic_chat(conversation, current_message)
 
-            # Legal opinion: NEW FLOW — retrieve bare acts first, explain them, ask follow-up
-            # Pass detected states so web search covers both central + state-specific acts
-            states = result.get("states") or []
-            return _run_bare_acts_phase(facts, progress_callback=progress_callback, states=states)
+            # Legal opinion: single-pass retrieval (local-only) + reasoning.
+            # This replaces the older two-phase bare-acts-first + web-enrichment flow
+            # to keep responses fast and deterministic.
+            facts_len = len(facts or "")
+            _log_step(
+                "FACT_COLLECTION → _run_legal_opinion_simple",
+                (time.perf_counter() - t_pipeline_start) * 1000,
+                f"facts_len={facts_len}",
+            )
+            return _run_legal_opinion_simple(facts, progress_callback=progress_callback, search_strategy="local_only")
 
-        # Still collecting facts — return the question
+        # Still collecting facts — return the question (no retrieval)
+        _log_step("fact_collection DONE (ask)", (time.perf_counter() - t_pipeline_start) * 1000)
         return {
             "phase": "fact_collection",
             "message": (result.get("question") or "").strip(),
@@ -346,11 +445,13 @@ def process_chat(
 
     # ---- Phase: Response Generation ----
     elif phase == "response_generation":
+        _log_step("response_generation START", (time.perf_counter() - t_pipeline_start) * 1000)
         facts = facts_summary or current_message
         use_intent = intent or "legal_opinion"
         use_document_types = document_types or "both"
         use_search_strategy = search_strategy or "local_then_web"
         use_result_count = result_count
+        t_before_gen = time.perf_counter()
         try:
             resp = generate_response(
                 facts,
@@ -372,6 +473,7 @@ def process_chat(
                 "materials_to_confirm": None,
                 "indexed": False,
             }
+        _log_step("generate_response (retrieval+LLM)", (time.perf_counter() - t_before_gen) * 1000)
 
         # Check if materials need user confirmation first
         if resp.get("needs_confirmation"):
@@ -424,11 +526,13 @@ def process_chat(
         # The user replied to the follow-up question shown after bare act presentation.
         # additional_info = user's answer; bare_acts = sections from Phase A (passed by frontend).
         # states = from Phase A response so case-law web search is jurisdiction-aware.
+        # pending_indexing_list = from Phase A so Pending indexing UI gets both bare-act and case-law URLs.
         facts = facts_summary or current_message
         additional_info = current_message
         stored_bare_acts = bare_acts or []
+        pending_from_phase_a = pending_indexing_list if pending_indexing_list is not None else []
         return _run_final_with_case_laws(
-            facts, stored_bare_acts, additional_info, progress_callback=progress_callback, states=states or []
+            facts, stored_bare_acts, additional_info, progress_callback=progress_callback, states=states or [], pending_indexing_list=pending_from_phase_a
         )
 
     # ---- Phase: Confirm Index ----

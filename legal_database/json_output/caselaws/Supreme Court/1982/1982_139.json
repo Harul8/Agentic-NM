@@ -1,0 +1,86 @@
+{
+  "case_id": "SC_1982_1982_139",
+  "case_name": "Hercules Trading Corporation (P) ... vs Commissioner Of Income Tax, Central ...",
+  "normalized_case_name": "HERCULES_TRADING_CORPORATION_(P)_..._VS_COMMISSIONER_OF_INCOME_TAX,_CENTRAL_...",
+  "court": "Supreme Court of India",
+  "year": "1982",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "17 February 1982",
+  "judges": [
+    "R.S. Pathak",
+    "V.D. Tulzapurkar",
+    "JUDGMENT"
+  ],
+  "author": "R.S. Pathak",
+  "bench_type": "constitution",
+  "petitioner": "Hercules Trading Corporation (P) ...",
+  "respondent": "Commissioner Of Income Tax, Central ...",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 3,
+  "cited_by_count": 8,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1982(1)SCALE544",
+    "(1982)2SCC32",
+    "AIRONLINE 1982 SC 60"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1982\\1982_139.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1982_1982_139_P001_C01",
+      "text": "1. This appeal by special leave is directed against the order of the High Court of Calcutta made under\nSection 266(2)\nof the Income-tax Act, 1961 declining to call for a statement of the case.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1982_1982_139_P002_C01",
+      "text": "2. The appellant was assessed to Income-tax under\nSection 23(3)\nof the Indian Income-tax Act, 1922 for the assessment year 1955-56. Subsequently, the assessment proceedings were reopened under\nSection 34(1)(a)\nof the Act and the Income-tax Officer refused to allow a loss originally claimed by the appellant on the sale of an item of property purchased by it. The order under\nSection 34(1)(a)\nwas assailed by the appellant before the Appellate Assistant Commissioner, who allowed the appeal on the finding that the notice was invalid. The Income-tax Appellate Tribunal, on appeal filed by the Income-tax Department, took the view that the appellant had not disclosed all material facts before the Income-tax Officer during the original assessment and that therefore the reopening of the assessment proceedings under\nSection 34(1)(a)\nwas justified.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1982_1982_139_P003_C01",
+      "text": "3. In this appeal, it has been strenuously urged by learned Counsel for the appellant that the view taken by the Income-tax Appellate Tribunal is erroneous and all the primary facts necessary for consideration of the loss were placed before the Income-tax Officer, and that therefore a question of law arose in the case. We have given the matter our anxious consideration and we are satisfied that the High Court is right in holding that no question of law arises in this case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1982_1982_139_P004_C01",
+      "text": "4. The appeal is dismissed, but there will be no order as to costs.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Hercules Trading Corporation (P) ... vs Commissioner Of Income Tax, Central ...",
+    "case_id": "SC_1982_1982_139",
+    "court": "Supreme Court of India",
+    "year": "1982",
+    "facts_summary": "2. The appellant was assessed to Income-tax under\nSection 23(3)\nof the Indian Income-tax Act, 1922 for the assessment year 1955-56. Subsequently, the assessment proceedings were reopened under\nSection 34(1)(a)\nof the Act and the Income-tax Officer refused to allow a loss originally claimed by the appellant on the sale of an item of property purchased by it. The order under\nSection 34(1)(a)\nwas assailed by the appellant before the Appellate Assistant Commissioner, who allowed the appeal on the finding that the notice was invalid. The Income-tax Appellate Tribunal, on appeal filed by the Income-tax Department, took the view that the appellant had not disclosed all material facts before the Income-tax Officer during the original assessment and that therefore the reopening of the assessment proceedings under\nSection 34(1)(a)\nwas justified.",
+    "legal_issues": "3. In this appeal, it has been strenuously urged by learned Counsel for the appellant that the view taken by the Income-tax Appellate Tribunal is erroneous and all the primary facts necessary for consideration of the loss were placed before the Income-tax Officer, and that therefore a question of law arose in the case. We have given the matter our anxious consideration and we are satisfied that the High Court is right in holding that no question of law arises in this case.",
+    "ratio_summary": "",
+    "final_order": "4. The appeal is dismissed, but there will be no order as to costs.",
+    "outcome_summary": "Dismissed. 4. The appeal is dismissed, but there will be no order as to costs.",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

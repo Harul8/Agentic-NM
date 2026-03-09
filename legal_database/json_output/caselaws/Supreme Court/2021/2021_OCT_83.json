@@ -1,0 +1,71 @@
+{
+  "case_id": "SC_2021_2021_OCT_83",
+  "case_name": "Babita Srivastava vs Vinod Srivastava",
+  "normalized_case_name": "BABITA_SRIVASTAVA_VS_VINOD_SRIVASTAVA",
+  "court": "Supreme Court of India",
+  "year": "2021",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "25 October 2021",
+  "judges": [
+    "B.V. Nagarathna"
+  ],
+  "author": "B.V. Nagarathna",
+  "bench_type": "single",
+  "petitioner": "Babita Srivastava",
+  "respondent": "Vinod Srivastava",
+  "reporter_citations": [],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 1,
+  "cited_by_count": 1,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL ORIGINAL JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2021\\OCT\\2021_OCT_83.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2021_2021_OCT_83_P001_C01",
+      "text": "for the respondent.\nIt is submitted that the petitioner is presently residing at",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2021_2021_OCT_83_P002_C01",
+      "text": "the competent court of jurisdiction at Gwalior.\nLearned counsel for the respondent submitted that no",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2021_2021_OCT_83_P003_C01",
+      "text": "disposal of the petition.\nThe Petition is allowed and disposed of in the aforesaid",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Babita Srivastava vs Vinod Srivastava",
+    "case_id": "SC_2021_2021_OCT_83",
+    "court": "Supreme Court of India",
+    "year": "2021",
+    "facts_summary": "",
+    "legal_issues": "for the respondent.\nIt is submitted that the petitioner is presently residing at the competent court of jurisdiction at Gwalior.\nLearned counsel for the respondent submitted that no",
+    "ratio_summary": "",
+    "final_order": "disposal of the petition.\nThe Petition is allowed and disposed of in the aforesaid",
+    "outcome_summary": "Allowed. disposal of the petition.\nThe Petition is allowed and disposed of in the aforesaid",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

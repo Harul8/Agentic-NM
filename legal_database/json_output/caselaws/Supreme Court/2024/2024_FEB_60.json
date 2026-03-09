@@ -1,0 +1,122 @@
+{
+  "case_id": "SC_2024_ABDUL_JABBAR_VS_THE_STATE_OF_HARYANA",
+  "case_name": "Abdul Jabbar vs The State Of Haryana",
+  "normalized_case_name": "ABDUL_JABBAR_VS_THE_STATE_OF_HARYANA",
+  "court": "Supreme Court of India",
+  "year": "2024",
+  "judgment_template": null,
+  "case_number": "Petition 3005 of 2013",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": "5 February 2024",
+  "judges": [
+    "Vikram Nath"
+  ],
+  "author": "Vikram Nath",
+  "bench_type": "single",
+  "petitioner": "Abdul Jabbar",
+  "respondent": "The State Of Haryana",
+  "reporter_citations": [
+    "2024 INSC 99"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 4,
+  "cited_by_count": 0,
+  "neutral_citation": "2024 INSC 99",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CRIMINAL APPELLATE JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2024\\FEB\\2024_FEB_60.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2024_ABDUL_JABBAR_VS_THE_STATE_OF_HARYANA_P001_C01",
+      "text": "REPORTABLE\n\n CRIMINAL APPELLATE JURISDICTION\n\n CRIMINAL APPEAL NO(S). OF 2024\n [Arising out of Special Leave Petition (Crl.) No(s). 8845 of 2023]\n\n ABDUL JABBAR …APPELLANT(S)\n\n VERSUS\n\n THE STATE OF HARYANA & ORS. …RESPONDENT(S)\n\n ORDER",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2024_ABDUL_JABBAR_VS_THE_STATE_OF_HARYANA_P002_C01",
+      "text": "2. The decision of the High Court of Punjab & Haryana (the\n “High Court”) in Criminal Revision Petition bearing number\n CRR No. 3005 of 2013 is assailed before us.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2024_ABDUL_JABBAR_VS_THE_STATE_OF_HARYANA_P003_C01",
+      "text": "3. The Appellant was prosecuted along with 3 (three) other\n persons for offences punishable under Section 452, Section 323\n and\nSection 325\nof the Indian Penal Code (the “\nIPC\n”).\n Thereafter, vide an order dated 22.04.2013, the Appellant came\n to be convicted by the Chief Judicial Magistrate, Nuh, Haryana\n (the “Trial Court”) in relation to offences punishable under (i)\nSection 323\nread with\nSection 34\n; and (ii)\nSection 325\nread with\n\nSection 34\nof the IPC. Accordingly, the Trial Court sentenced the\nIPC\n03 Months -\n325/34\nIPC\n01 Year INR 500\n\n (the “Trial Court Order”).",
+      "paragraph_type": "facts",
+      "sections_cited": [
+        "IPC 325"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2024_ABDUL_JABBAR_VS_THE_STATE_OF_HARYANA_P004_C01",
+      "text": "4. The Trial Court Order was assailed before the Additional\nSession Judge, Nuh unsuccessfully, and thereafter challenged\nbefore the High Court. Vide an order dated 01.05.2023, the High\nCourt partly allowed the Criminal Revision Petition i.e., upheld\nthe conviction recorded by the Trial Court, however, on account\nof substantial delay i.e., extending to a period of almost 13\n(thirteen) years in the underlying trial, modified the sentence\nimposed by Trial Court on the Appellant, as under:\nOffence(s) Period of Sentence Fine Imposed\n 323/34\nIPC\n03 Months -\n325/34\nIPC\n03 Months INR 5000\n\n (the “Impugned Order”).",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2024_ABDUL_JABBAR_VS_THE_STATE_OF_HARYANA_P005_C01",
+      "text": "5. Mr. Deepkaran Dayal, learned counsel appearing on behalf\nof the Appellant has drawn the attention of this Court to the fact\nthat the Appellant has undergone almost 1/3rd of his sentence i.e.,\na period extending to 1 (one) month; and 3 (three) days.\nSLP (Crl.) No. 8845 of 2023 Page 2 of 3\nFurthermore, he has submitted that the underlying offence\npertains to 2010 and that the Appellant was made to suffer the\nagony of a protracted trial spanning over 13 (thirteen) years.\nAccordingly, it was urged before us that the sentence awarded to\nthe Appellant be reduced to the period already undergone.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2024_ABDUL_JABBAR_VS_THE_STATE_OF_HARYANA_P006_C01",
+      "text": "6. Taking into consideration the totality of circumstances,\ncoupled with the fact that underlying incident occurred in 2010,\nthe appeal is allowed in part and the Impugned Order is modified\nto the extent that the Appellants’ sentence is reduced to the period\nalready undergone i.e., 1 (one) month; and 3 (three) days.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2024_ABDUL_JABBAR_VS_THE_STATE_OF_HARYANA_P007_C01",
+      "text": "7. In view of the aforesaid, I.A. No. 126067 of 2023 i.e., an\napplication seeking declaration of the Appellant as a juvenile at\nthe time of the underlying offence, does not require any\nconsideration by this Court.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2024_ABDUL_JABBAR_VS_THE_STATE_OF_HARYANA_P008_C01",
+      "text": "8. Pending application(s), if any, shall stand disposed of. No\norder as to costs.\n....…………………………………J.\n (VIKRAM NATH)\n\n .……………………………………J.\n (SATISH CHANDRA SHARMA)\n NEW DELHI\n FEBRUARY 05, 2024\nSLP (Crl.) No. 8845 of 2023 Page 3 of 3",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Abdul Jabbar vs The State Of Haryana",
+    "case_id": "SC_2024_ABDUL_JABBAR_VS_THE_STATE_OF_HARYANA",
+    "court": "Supreme Court of India",
+    "year": "2024",
+    "facts_summary": "2. The decision of the High Court of Punjab & Haryana (the\n “High Court”) in Criminal Revision Petition bearing number\n CRR No. 3005 of 2013 is assailed before us. 3. The Appellant was prosecuted along with 3 (three) other\n persons for offences punishable under Section 452, Section 323\n and\nSection 325\nof the Indian Penal Code (the “\nIPC\n”).\n Thereafter, vide an order dated 22.04.2013, the Appellant came\n to be convicted by the Chief Judicial Magistrate, Nuh, Haryana\n (the “Trial Court”) in relation to offences punishable under (i)\nSection 323\nread with\nSection 34\n; and (ii)\nSection 325\nread with\n\nSection 34\nof the IPC. Accordingly, the Trial Court sentenced the\nIPC\n03 Months -\n325/34\nIPC\n01 Year INR 500\n\n (the “Trial Court Order”).",
+    "legal_issues": "5. Mr. Deepkaran Dayal, learned counsel appearing on behalf\nof the Appellant has drawn the attention of this Court to the fact\nthat the Appellant has undergone almost 1/3rd of his sentence i.e.,\na period extending to 1 (one) month; and 3 (three) days.\nSLP (Crl.) No. 8845 of 2023 Page 2 of 3\nFurthermore, he has submitted that the underlying offence\npertains to 2010 and that the Appellant was made to suffer the\nagony of a protracted trial spanning over 13 (thirteen) years.\nAccordingly, it was urged before us that the sentence awarded to\nthe Appellant be reduced to the period already undergone.",
+    "ratio_summary": "",
+    "final_order": "6. Taking into consideration the totality of circumstances,\ncoupled with the fact that underlying incident occurred in 2010,\nthe appeal is allowed in part and the Impugned Order is modified\nto the extent that the Appellants’ sentence is reduced to the period\nalready undergone i.e., 1 (one) month; and 3 (three) days. 8. Pending application(s), if any, shall stand disposed of. No\norder as to costs.\n....…………………………………J.\n (VIKRAM NATH)\n\n .……………………………………J.\n (SATISH CHANDRA SHARMA)\n NEW DELHI\n FEBRUARY 05, 2024\nSLP (Crl.) No. 8845 of 2023 Page 3 of 3",
+    "outcome_summary": "Allowed. 6. Taking into consideration the totality of circumstances,\ncoupled with the fact that underlying incident occurred in 2010,\nthe appeal is allowed in part and the Impugned Order is modified\nto the extent that the Appellants’ sentence is reduced to the period\nalready undergone i.e., 1 (one) month; an",
+    "sections_cited": [
+      "IPC 325"
+    ],
+    "cases_cited": []
+  }
+}

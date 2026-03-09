@@ -1,0 +1,247 @@
+{
+  "case_id": "SC_1999_1999_ALL_ANDHRAHC_80",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1999",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": "disposed of",
+  "disposition": "disposed",
+  "cites_count": 20,
+  "cited_by_count": 5,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1999\\1999_ALL_AndhraHC_80.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P001_C01",
+      "text": "Mir Sabir Ali vs Commissioner Of Police, Hyderabad on 11 June, 1999\nEquivalent citations: 1999(5)ALD123, 1999(4)ALT32\nORDER",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P002_C01",
+      "text": "1. The petitioner made an application to the respondent-Commissioner of Police, Hyderabad on 23-5-1997 under\nSections 13\nand\n\nof the Arms Act, 1959 (hereinafter referred to as the Act) seeking an arms licence. The same was rejected by the respondent by an order dated 8-8-1997. Impugning the same, the petitioner filed this writ petition seeking a writ of mandamus directing the respondent to reconsider the application for grant of arms licence.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P003_C01",
+      "text": "2. The impugned order dated 8-8-1997 bearing No.L&O/35/Arms/Hs.6/97 reads as follows:\n\"Government of Andhra Pradesh \n\n(Police Department)\n\nOffice of the Commissioner \n\nof Police, Hyderabad-City.\nDated 8-8-1997.\nNo.L & O/35/35/Arms/HS6/97.\nMemo\n\n Sub:\nArms Act\nand Rules-Grant of Fresh Arms Licence-Reg.\nRef: Your application dated 23-5-1997.\nWith reference to your application cited, your request for grant of Fresh Arms licence has been considered and 'Rejected'.\nSd/xxxxx            \n\nfor Commissioner of Police, \n\n Hyderabad-City.\nTo:\nSri Mir Sabir Ali, \n\n R/o:H.No.22-1-611, \n\nNoorkhan Bazar, Hyderabad\"",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P004_C01",
+      "text": "3. Learned Counsel for the petitioner submits that\nSection 13\nof the Arms Act empowers the respondent to grant licence and\nSection 14\ndeals with the conditions under which a request for grant of an arms licence can be rejected. The respondent, according to the learned Counsel for the petitioner, has not disclosed any reasons in the impugned order. Therefore, the impugned order is wholly unsustainable.",
+      "paragraph_type": "arguments",
+      "sections_cited": [
+        "Arms Act 13"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P005_C01",
+      "text": "4. On the other hand, the learned Government Pleader for Home Sri Sadasiva Reddy, submits, on the strength of the counter-affidavit filed by the respondent-\nCommissioner of Police, that the petitioner is involved in a number of criminal cases and a rowdy sheet was opened against him and if an arms licence is issued to him, there is every likelihood of misusing the weapon by the petitioner and hence the respondent rejected the application of the petitioner for arms licence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P006_C01",
+      "text": "5. I have heard the Counsel for the petitioner and the learned Government Pleader.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P007_C01",
+      "text": "6. On 24-4-1998, when the matter came up for admission, it was directed to be listed on 8-6-1998 and to-day the matter has come up before me. Both the learned Counsel requested me to dispose of the writ petition itself. Therefore, the writ petition is taken up for final hearing.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P008_C01",
+      "text": "7. The learned Counsel for the petitioner contends that when an authority exercises statutory powers culminating in a decision such decision should be supported by reasons. There cannot be any dispute with this contention. In fact this legal position is not seriously disputed by the learned Government Pleader for Home. However, what is submitted is that in view of the reasons now disclosed in the counter-affidavit, the petitioner should be directed to avail the alternative remedy by way of appeal. I do not agree. It is well-settled that when a statutory order is passed by a duly constituted statutory authority, the order should disclose the reasons for the conclusion. The Supreme Court in\nCommissioner of Police v. Gordhandas\n, , in similar context held:\n\"We are clear that public orders, publicly made, in exercise of a statutory authority cannot be construed in the light of explanations subsequently given by the officer making the order of what he meant, or of what was in his mind or what he intended to do.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P008_C02",
+      "text": "Public orders made by public authorities are meant to\n\nhave public effect and are intended to affect the actings and conduct of those to whom they are addressed and must be construed objectively with reference to the language used in the order itself.\"\nThe above view in\nGordhandas\ncase (supra), was followed by a Constitution Bench of Supreme Court in\nMohinder Singh v. Chief Election Commissioner\n, . While referring to\nGordhandas\ncase (supra) his Lordship Justice Krishna Iyer held:\n\"The second equally relevant matter is that when a statutory functionary makes an order based on certain grounds, its validity must be judged by the reasons so mentioned and cannot be supplemented by fresh reasons in the shape of affidavit or otherwise. Otherwise, an order bad in the beginning may, by the time it comes to Court on account of a challenge, get validates by additional grounds later brought out.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P009_C01",
+      "text": "8. The learned Government Pleader for Home contended that in view of\nSection 18\nof the Act which provides for an appeal against an order refusing to grant licence, the petitioner's writ petition should be rejected. Before dealing with this contention, it is useful to note the law on the subject of an administrative order rendering itself invalid for want of reasons. Generally any order whether judicial, quasi-judicial or administrative/executive orders cannot be sustained in judicial review if they do not contain reasons. Whether the reasons are adequate, whether the reasons are correct or perverse and whether the reasons supporting the decision are relevant are different questions, a discussion about which is not necessary here. Whether an authority is exercising original jurisdiction or appeal jurisdiction or revision jurisdiction, the law obligates such an authority to record the reasons for the decision on the pain of rendering such a decision vitiated and invalid. S.N. Mukherjee v.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P009_C02",
+      "text": "Union of India\n, , a Constitution Bench of the Supreme Court dealing with a case arising under\nArmy Act, 1950\n, the question which fell for consideration before the Hon'ble Supreme Court was\n \n\"Is there any general principle of law which requires an administrative authority to record the reasons for its decision.\"\nThe Supreme Court referred to the law on the subject as obtaining in the United States, England, Canada and Australia. After referring to leading authorities viz.,\nHarinagar Sugar Mills Ltd. v. Shyam Sundar Jhunhunwala\n, ,\nMadhya Pradesh Industries Ltd. v. Union of India\n, ,\nBhagat Raja v. Union of India\n, ,\nTravancore Rayon Ltd v. Union of India\n, ,\nMahabir Prasad Santosh Kumar v. State of Uttar Pradesh\n, ,\nSiemens Engineering & Manufacturing Co. of India Ltd. v. Union of India\n, ,\nTarachand Khatri v. Municipal Corporation of Delhi\n, and Raipur Development Authority v. M/s.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P009_C03",
+      "text": "Chokhamal Contractors, AIR 1990 SC 1426, the Hon'ble Supreme Court pointed out the rationale behind the compelling an authority to record the reasons thus:\n\"An important consideration which has weighed with the Court for holding that an administrative authority exercising quasi-judicial functions must record the reasons for its decision, is that such a decision is subject to the appellate jurisdiction of this Court under\nArticle 136\nof the Constitution as well as the supervisory jurisdiction of this Court under\nArticle 227\nof the Constitution and that the reasons, if recorded, would enable this Court or the High Courts to effectively exercise the appellate or supervisory power. But this is not the sole consideration. The other considerations which have\n\nalso weighed with the Court in taking this view are that the requirement of recording reasons would (i) guarantee consideration by the authority; (ii) introduce clarity in the decisions; and (iii) minimise chances of arbitrariness in decision-making.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [
+        "Constitution 136",
+        "Constitution 227"
+      ],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P010_C01",
+      "text": "9. Further, the Supreme Court in the above judgment held that except in cases where the requirement has been dispensed with either expressly or by necessary implication, an administrative authority exercising judicial or quasi-judicial functions is required to record the reasons for its decision. Therefore, it is settled law that every administrative authority exercising judicial or quasi-judicial functions is required to record the reasons for its decision. In our case as can be seen from the one line order of the respondent extracted hereinabove, the said order does not disclose any reasons. Admittedly, the petitioner herein requested the office of the respondent to furnish a copy of reasons and the respondent did not respond in any manner to the request made by the petitioner. The petitioner presumably made such a request based on\nSection 14(3)\nof the Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P010_C02",
+      "text": "It is useful to extract the same:\n\"14(3): Where the licensing authority refuses to grant a licence to any person it shall record in writing the reasons for such refusal and furnish to that person on demand a brief statement of the same unless in any case the licensing authority is of the opinion that it will not be in the public interest to furnish such statement.\"",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P011_C01",
+      "text": "10. In the absence of any communication by the respondent addressed to the petitioner regarding furnishing of reasons, it has to be held that the respondent acted contrary to law in rejecting the application for arms licence.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P012_C01",
+      "text": "11. As already noted, the learned Government Pleader for Home contended that in view of remedy of appeal available to the petitioner, the petitioner may as well be directed to approach the appellate authority and agitate all these grounds. There is no force in the contention of the learned Government Pleader for Home.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P013_C01",
+      "text": "12. The availability of alternative remedy to a citizen does not debar this Court from exercising the discretion under\nArticle 226\nof the Constitution of India in appropriate cases.\nIn this connection, it is useful to refer to the latest ruling of the Apex Court in\nWhirlpool Corporation v. Registrar of Trade Marks, Mumbai\n, , wherein their Lordships have held:\n\"Under\nArticle 226\nof the Constitution, the High Court, having regard to the facts of the case, has a discretion to entertain or not to entertain a writ petition. But the High Court has imposed upon itself certain restrictions one of which is that if an effective and efficatious remedy is available the High Court would not normally exercise its jurisdiction. But the alternative remedy has been consistently held by this Court not to operate as a bar in at least three contingencies, namely where the writ petition has been filed for the enforcement of any of the Fundamental Rights or where there has been a violation of the principles of natural justice or where the order or proceedings are wholly without jurisdiction or the vires an Act is challenged.\"",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P014_C01",
+      "text": "13. The Hon'ble Supreme Court referred to five Judgments of the Supreme Court rendered during the evolutionary era of the Constitutional law and in paragraph 20 held as under:\n\"Much water has since flown beneath the bridge, but there has been no corrosive effect on these decisions which though\n\nold continue to hold the field with the result that law as to the jurisdiction of the High Court in entertaining a writ petition under\nArticle 226\nof the Constitution, in spite of the alternative statutory remedies, is not affected, specially in a case where the authority against whom the writ is filed is shown to have had no jurisdiction or had purported to usurp jurisdiction without any legal foundation.\"\nIn this context a question would arise as to whether an order passed by an authority without reasons amounts to violation of principles of natural justice. The doctrine of fairness which is slowly coming to be recognised as the only ground of judicial review, contemplates that every person whose rights are affected should be treated fairly, in that he should be supplied with reasons for the decision which affects his rights.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P014_C02",
+      "text": "A decision supported by reasons is part of doctrine of fairness and treatment with fairness is part of principle of natural justice. Therefore, if a decision culminating in an order is not supported by reasons, the same would be violating the principles of natural justice. S.N. Mukherjee\n's case (supra), the Hon'ble Supreme Court dealt with this aspect of the matter and held:\n\"The object underlying the rules of natural justice 'is to prevent miscarriage of justice' and secure 'fair play in action'. As pointed out earlier the requirement about recording of reasons for its decision by an administrative authority exercising quasi-judicial functions achieves this object by excluding chances of arbitrariness and ensuring a degree of fairness in the process of decision-making keeping in view the expanding horizon of the principles of natural justice, we are of the opinion, that the requirement to record reasons can be regarded as one of the principles of natural justice which govern exercise of power by\n\nadministrative authorities. The rules of natural justice are not embodied rules.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P014_C03",
+      "text": "The extent of their application depends upon the particular statutory framework whereunder jurisdiction has been conferred on the administrative authority.\"\nTherefore, the impugned order passed by the respondent is in violation of the principles of natural justice. When the principles of natural justice are violated, the availability of alternative remedy is no bar for the exercise of this Court's jurisdiction under\nArticle 226\nof Constitution of India. Further as seen,\nSection 14(3)\nof the Act mandates that the licensing authority shall record the reasons while rejecting the application for arms and such reasons are to be furnished to the applicant on demand. As both these are absent, the impugned order is vitiated by illegality as well as by violation of principles of natural justice. Therefore, this writ petition is disposed of with a direction to the respondent to consider the application of the petitioner for grant of arms licence and pass appropriate orders keeping in view the observations made herein-above.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "Constitution 226"
+      ],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_80_P015_C01",
+      "text": "14. The writ petition is disposed of accordingly. No costs.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1999_1999_ALL_ANDHRAHC_80",
+    "court": "Supreme Court of India",
+    "year": "1999",
+    "facts_summary": "1. The petitioner made an application to the respondent-Commissioner of Police, Hyderabad on 23-5-1997 under\nSections 13\nand\n\nof the Arms Act, 1959 (hereinafter referred to as the Act) seeking an arms licence. The same was rejected by the respondent by an order dated 8-8-1997. Impugning the same, the petitioner filed this writ petition seeking a writ of mandamus directing the respondent to reconsider the application for grant of arms licence. 2. The impugned order dated 8-8-1997 bearing No.L&O/35/Arms/Hs.6/97 reads as follows:\n\"Government of Andhra Pradesh \n\n(Police Department)\n\nOffice of the Commissioner \n\nof Police, Hyderabad-City.\nDated 8-8-1997.\nNo.L & O/35/35/Arms/HS6/97.\nMemo\n\n Sub:\nArms Act\nand Rules-Grant of Fresh Arms Licence-Reg.\nRef: Your application dated 23-5-1997.\nWith reference to your application cited, your request for grant of Fresh Arms licence has been considered and 'Rejected'.\nSd/xxxxx            \n\nfor Commissioner of Police, \n\n Hyderabad-City.\nTo:\nSri Mir Sabir Ali, \n\n R/o:H.No.22-1-611, \n\nNoorkhan Bazar, Hyderabad\"",
+    "legal_issues": "3. Learned Counsel for the petitioner submits that\nSection 13\nof the Arms Act empowers the respondent to grant licence and\nSection 14\ndeals with the conditions under which a request for grant of an arms licence can be rejected. The respondent, according to the learned Counsel for the petitioner, has not disclosed any reasons in the impugned order. Therefore, the impugned order is wholly unsustainable. 5. I have heard the Counsel for the petitioner and the learned Government Pleader. 6. On 24-4-1998, when the matter came up for admission, it was directed to be listed on 8-6-1998 and to-day the matter has come up before me. Both the learned Counsel requested me to dispose of the writ petition itself. Therefore, the writ petition is taken up for final hearing.",
+    "ratio_summary": "Union of India\n, , a Constitution Bench of the Supreme Court dealing with a case arising under\nArmy Act, 1950\n, the question which fell for consideration before the Hon'ble Supreme Court was\n \n\"Is there any general principle of law which requires an administrative authority to record the reasons for its decision.\"\nThe Supreme Court referred to the law on the subject as obtaining in the United States, England, Canada and Australia. After referring to leading authorities viz.,\nHarinagar Sugar Mills Ltd. v. Shyam Sundar Jhunhunwala\n, ,\nMadhya Pradesh Industries Ltd. v. Union of India\n, ,\nBhagat Raja v. Union of India\n, ,\nTravancore Rayon Ltd v. Union of India\n, ,\nMahabir Prasad Santosh Kumar v. State of Uttar Pradesh\n, ,\nSiemens Engineering & Manufacturing Co. of India Ltd. v. Union of India\n, ,\nTarachand Khatri v. Municipal Corporation of Delhi\n, and Raipur Development Authority v. M/s.",
+    "final_order": "14. The writ petition is disposed of accordingly. No costs.",
+    "outcome_summary": "Disposed of. 14. The writ petition is disposed of accordingly. No costs.",
+    "sections_cited": [
+      "Arms Act 13",
+      "Constitution 136",
+      "Constitution 227",
+      "Constitution 226"
+    ],
+    "cases_cited": []
+  }
+}

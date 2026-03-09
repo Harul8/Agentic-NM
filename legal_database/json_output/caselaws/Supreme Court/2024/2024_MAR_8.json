@@ -1,0 +1,716 @@
+{
+  "case_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL",
+  "case_name": "M/S Bisco Limited Through Its Managing ... vs Commissioner Of Customs And Central ...",
+  "normalized_case_name": "M_S_BISCO_LIMITED_THROUGH_ITS_MANAGING_..._VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_...",
+  "court": "Supreme Court of India",
+  "year": "2024",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 4663 of 2009",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "20 March 2024",
+  "judges": [
+    "B. V. Nagarathna"
+  ],
+  "author": "B. V. Nagarathna",
+  "bench_type": "single",
+  "petitioner": "M/S Bisco Limited Through Its Managing ...",
+  "respondent": "Commissioner Of Customs And Central ...",
+  "reporter_citations": [
+    "2024 INSC 231"
+  ],
+  "outcome": "allowed",
+  "disposition": "allowed",
+  "cites_count": 39,
+  "cited_by_count": 0,
+  "neutral_citation": "2024 INSC 231",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2024\\MAR\\2024_MAR_8.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P001_C01",
+      "text": "REPORTABLE\n\n CIVIL APPELLATE JURISDICTION\n CIVIL APPEAL NO. 4663 OF 2009\n\n M/S. BISCO LIMITED APPELLANT(S)\n\n VERSUS\n\n COMMISSIONER OF CUSTOMS\n AND CENTRAL EXCISE RESPONDENT(S)\n\n JUDGMENT\nUJJAL BHUYAN, J.\nHeard learned counsel for the parties.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P002_C01",
+      "text": "2. This is a statutory appeal under\nSection 130E\nof the\n\n Customs Act, 1962 (briefly the ‘\nCustoms Act\n’ hereinafter)\n\n against the final order dated 30.04.2009 passed by the\n\n Customs, Excise and Service Tax Appellate Tribunal, New Delhi\n\n(for short ‘CESTAT’ hereinafter) in Customs Appeal No.441 of\nCustoms and Central Excise, Indore (for short ‘the\n\nCommissioner’ hereinafter).\n2.1 By the aforesaid order dated 28.04.2005, the\n\nCommissioner had confirmed the duty demand of\n\nRs.3,99,255.00 in respect of 27 cases not found in the\n\nwarehouse and imposed penalty of Rs.1 lakh on the appellant\n\nunder\nSection 112\nof the Customs Act. That apart, the appellant\n\nwas directed to pay interest on the duty confirmed in terms of\nSection 28AB\nof the Customs Act from the date of enforcement\n\nof the said section till the date of actual payment of duty. The\n\nCommissioner had also confiscated 264 cases of imported goods\n\nvalued at Rs.48,79,776.00 seized from within the factory\n\npremises of the appellant but outside the approved warehouse\n\nunder\nSection 111\nof the Customs Act. However, the confiscated\n\ngoods were permitted to be redeemed on payment of fine of Rs.\n\n2 lakhs.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P002_C02",
+      "text": "Thirty days’ time was granted to the appellant to\n\nexercise the option for redeeming the goods. Further, the\n\nCommissioner had confirmed customs duty amounting to\n\nRs.39,03,821.00 in terms of\nSection 71\nread with the proviso to\nSection 28A\nof the Customs Act. The appellant was also\n\nrequired to pay interest amounting to Rs.18,88,425.00 on the\n\ncustoms duty confirmed on the 264 packages from the date of\n\nwarehousing till the date of detection of the shortage in the\n\nwarehouse; in addition, appellant was also required to pay\n\ninterest on the duty confirmed in terms of\nSection 28AB\nof the\n\nCustoms Act from the date of enforcement of the said section\n\ntill the date of actual payment of duty confirmed on the 264\n\ncases.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P003_C01",
+      "text": "3. Appellant before us is M/s Bhanu Iron and Steel\n\nCompany Limited, Plot No. 801, Sector III, Industrial Estate,\n\nPithampur, District Dhar in the State of Madhya Pradesh\n\n(‘BISCO’ for short).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P004_C01",
+      "text": "4. This appeal has a chequered history. Before finally\n\nlanding in this Court, the appellant had gone through several\n\nrounds of appeal and remand. For a proper perspective, it would\n\nbe apposite to briefly narrate the factual trajectory of the case.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P005_C01",
+      "text": "5. Appellant had imported second hand steel mill\n\nmachinery and parts thereof under Project Import Facility\n\ncovered by Chapter Heading No.98.01 of the Schedule to the\n\nCustoms Tariff Act, 1975.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P006_C01",
+      "text": "6. A warehouse within the precincts of the\n\nindustrial/factory premises of the appellant was notified as a\n\npublic bonded warehouse on management basis with M/s\n\nCentral Warehousing Corporation as warehouse keeper by the\n\nthen Collector of Customs and Central Excise, Indore vide the\n\nnotification dated 03.05.1989 for storage of the imported second\n\nhand steel mill machinery and parts thereof without payment\n\nof customs duty. According to the respondent, the appellant had\n\nimported in all 595 cases of machinery parts which were\n\nrequired to be warehoused in the notified public bonded\n\nwarehouse. The breakup of the 595 cases of the machinery\n\nparts as provided by the respondent is as under:\nSl. Transit Bond No. No. of cases\n No. & Date actually received in\n the customs\n bonded warehouse.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P007_C01",
+      "text": "1. T-1592 dated 172\n 31.05.89\n2. T-7012 dated 146\n 04.12.89\n3. T-2014 dated 277\n 30.05.90\n Total 595\n7. Acting on the basis of information received that the\n\nappellant had misused the warehousing facility, officials of the\n\nrespondent had searched the industrial premises of the\n\nappellant including the notified public bonded warehouse on\n\n07.08.1992. In the course of the search, the stock lying within\n\nthe notified public bonded warehouse were verified. On such\n\nverification, only 304 cases were found lying inside the\n\nwarehouse; 264 cases were found outside the warehouse but\n\nwithin the industrial/factory premises of the appellant;\n\nremaining 27 cases were not found either inside the warehouse\n\nor outside the warehouse within the industrial/factory\n\npremises.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P008_C01",
+      "text": "8. As no documents showing clearance of the goods\n\ncontained in the 264 cases from within the warehouse but lying\n\noutside the warehouse on payment of duty and interest as\n\nrequired under\nSection 71\nof the Customs Act could be\n\nproduced, the said goods were seized in terms of\nSection 110\n\nthe Customs Act. The value of the goods seized was estimated\n\nat Rs.48,79,776.00.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P009_C01",
+      "text": "9. In his statement recorded under\nSection 108\nof the\n\nCustoms Act on 07.08.1992, Sh. Yashwant Singh Bisht, Project\n\nOfficer (Commercial) of the appellant stated that the 264 cases\n\nof imported goods were kept outside the bond under a shed as\n\nthe trailers transporting the goods could not enter the notified\n\nwarehouse in view of the soil becoming very sluggish on account\n\nof heavy rains and also because of paucity of space. The\n\nCollector, therefore, opined that the appellant had removed the\n\n264 cases of warehoused goods valued at Rs.48,79,776.00\n\nattracting duty of Rs.39,03,821.00 and interest of\n\nRs.18,88,425.00 in violation of\nSection 71\nread with\nSection\n\n111(j)\nof the Customs Act. The seized goods were thus held\n\nliable for confiscation.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P010_C01",
+      "text": "10. It was further alleged that appellant had\n\nunauthorisedly cleared 27 cases of the imported goods valued\n\nat Rs.4,99,068.00 attracting duty of Rs.3,99,255.00 with\n\ninterest of Rs.2,41,326.00 which were liable to be recovered\n\nunder\nSection 71\nread with the proviso to\nSection 28(1)\nof the\n\nCustoms Act.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P011_C01",
+      "text": "11. That apart, it was alleged that M/s. Central\n\nWarehousing Corporation, Pithampur had abetted the appellant\n\nin clearing the warehoused goods without payment of duty and\n\ninterest.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P012_C01",
+      "text": "12. In the above circumstances, a show cause notice\n\ndated 22.01.1993 was issued to the appellant as well as to the\n\nwarehouse keeper by the Collector (now the Commissioner) to\n\nexplain and show cause as to why:\n(i) the seized quantity of 264 cases of goods\n valued at Rs.48,79,776.00 and attracting duty\n of Rs.39,03,821.00 plus Rs.18,88,425.00 due to\n interest should not be confiscated in terms of\nSection 71\nread with\nSection 111(j)\nof the\n Customs Act.\n(ii) the amount of duty of Rs.3,99,255.00 plus\n interest of Rs.2,41,326.00 payable on 27 cases\n of goods valued at Rs.4,99,068.00 cleared and\n utilized by the appellant, should not be\n demanded from the appellant in terms of\nSection\n\nread with the proviso to\nSection 28 (1)\nof the\n Customs Act.\n(iii) a penalty under\nSection 112\nof the Customs\n Act should not be imposed for violation of\nSection 71\nand\nSection 111(j)\nof the Customs\n Act.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P013_C01",
+      "text": "13. Appellant submitted reply dated 02.04.1994. In its\n\nreply, appellant stated that there was heavy rain in the month\n\nof August 1989 and the soil outside the notified warehouse had\n\nbecome very sluggish. As a result, the trailers carrying the\n\nconsignment could not enter the notified warehouse. The goods\n\nwere downloaded in the open outside the notified warehouse\n\nbut within the factory premises. To prevent the goods from\n\ngetting damaged, appellant had requested the concerned\n\nSuperintendent of Customs and Central Excise to shift the\n\nmachineries to under a shed within the factory premises under\nSection 64\nof the Customs Act. Permission was granted by the\n\nSuperintendent. In terms of such permission of the\n\nSuperintendent, who was the proper officer, appellant had\n\nshifted the goods to under the shed to prevent further damage\n\nof the goods. It was contended that the goods were still under\n\nthe bonded warehouse and could not be said to have been\n\ncleared. In this connection, reference to and reliance was placed\n\nSection 15\nof the Customs Act. This position was clarified by\n\nSh. Yashwant Singh Bisht in his statement recorded on\n\n07.08.1992.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P013_C02",
+      "text": "The appellant, therefore, requested the authority to\n\ndrop the proceedings.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P014_C01",
+      "text": "14. It may be mentioned that the Central Warehousing\n\nCorporation (for short ‘the Corporation’ hereinafter) had also\n\nsubmitted its reply dated 19.12.1993. In the reply it was stated\n\nthat an open area of 2,000 sq. meters in the premises of the\n\nappellant having fencing and a gate with locking arrangement\n\nwas approved by the customs and central excise authorities as\n\na public bonded warehouse. Appellant vide letter dated\n\n30.08.1989 sought permission from the Superintendent,\n\nCustoms and Central Excise, Range-III, Pithampur for\n\nunloading the cargo covered by Bond No.T-1592 dated\n\n31.05.1989 outside the said warehouse on account of heavy\n\nrains, etc. It was pointed out that the trailers carrying the\n\nconsignment could not enter the said warehouse because those\n\ngot stuck in the soil outside the said warehouse as the soil had\n\ngot sluggish due to heavy rains. The Superintendent gave\n\npermission for unloading the cargo outside the warehouse but\n\nwithin the factory premises on the body of the letter itself. The\n\nmachinery parts had to be shifted to a shed outside the bonded\n\nwarehouse but within the factory premises to protect those\n\nparts from further rusting and corrosion.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P015_C01",
+      "text": "15. Commissioner by his adjudication order dated\n\n28.08.1996 did not accept the reply of the appellant and\n\nconfirmed the demand and interest. It was ordered as under:\n\n(i) demand for duty of Rs.3,99,255.00 plus\n Rs.2,41,326.00 leviable on 27 cases cleared in\n a clandestine manner was confirmed for\n recovery from the appellant in terms of\nSection\n\nread with the proviso to\nSection 28(1)\nof the\n Customs Act.\n(ii) 264 cases of imported goods valued at\n Rs.48,79,776.00 seized from the premises\n other than the approved warehouse were\n confiscated under\nSection 111\nof the Customs\n Act but permitted to be redeemed on payment\n of fine of Rs.12,00,000.00 (Rs. twelve lakhs\n only). Appellant would also suffer duty of\n Rs.39,03,821.00 plus interest at the time of\n their ultimate clearance.\n(iii) penalty of Rs.5,00,000.00 (Rs. five lakhs\n only) was imposed on the appellant under\nSection 112\nof the Customs Act.\n(iv) penalty of Rs.25,000.00 (Rs. twenty five\n thousand only) was imposed on the Central\n Warehousing Corporation under\nSection 112\n the Customs Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P016_C01",
+      "text": "16. Aggrieved by the aforesaid order of the\n\nCommissioner, appellant preferred an appeal before the then\n\nCentral Excise and Gold Appellate Tribunal (CEGAT). By order\n\ndated 18.02.1999, CEGAT disposed of the appeal by setting\n\naside the order of the Commissioner and remanding the matter\n\nback to the Commissioner for fresh adjudication. The\n\nCommissioner was directed to look into the new facts and\n\ndocuments brought on record by the appellant and thereafter\n\ndecide the case de novo in accordance with the principles of\n\nnatural justice.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P017_C01",
+      "text": "17. Following the remand, a fresh adjudication order was\n\npassed by the Commissioner on 31.12.2002. In this order, the\n\nCommissioner recorded that the warehoused goods were\n\nremoved to a place outside the approved warehouse without\n\nfollowing the procedure set out under\nSections 67\n,\n\nand\n\nthe Customs Act. The Commissioner, thereafter, reiterated the\n\nfirst adjudication order dated 28.08.1996.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P018_C01",
+      "text": "18. Assailing the aforesaid order of the Commissioner\n\ndated 31.12.2002, appellant preferred appeal before the\n\nCESTAT. In its order dated 08.10.2003, CESTAT observed that\n\nthe Commissioner had not looked into the additional\n\ndocuments which were part of the record. CESTAT, therefore,\n\nopined that the matter should be remanded back to the\n\nadjudicating authority for fresh adjudication after taking into\n\nconsideration the documents produced by the appellant,\n\nincluding those produced before the CESTAT. Thus, by the\n\norder dated 08.10.2003, CESTAT allowed the appeal of the\n\nappellant by remanding the matter back to the Commissioner\n\nfor re-adjudication after affording an opportunity of hearing to\n\nthe appellant.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P019_C01",
+      "text": "19. The matter was taken up by the Commissioner afresh\n\non remand. By a detailed order dated 28.04.2005, the\n\nCommissioner directed as under:\n(i) demand of Rs.3,99,255.00 leviable on the\n 27 cases found not warehoused was confirmed\n for recovery from the appellant in terms of the\n conditions of transit bond. (ii) appellant should pay interest on the duty\n confirmed in terms of\nSection 28AB\nof the\n Customs Act from the date of enforcement of the\n said section till the date of actual payment of\n duty. The interest amount was directed to be\n worked out and communicated to the appellant\n by the Assistant Commissioner, Central Excise\n Division, Pithampur. (iii) 264 cases of imported goods valued at\n Rs.48,79,776.00 seized from the premises of the\n\nappellant outside the approved warehouse were\nconfiscated under\nSection 111\nof the Customs\nAct. As the goods were within the factory\npremises but outside the bonded warehouse, a\nlenient view was taken; the goods were\npermitted to be redeemed on payment of fine of\nRs.2,00,000.00 (Rupees two lakhs only). The\noption for redeeming the goods was to be\nexercised by the appellant within 30 days from\nthe date of receipt of the order.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P019_C02",
+      "text": "(iv) customs duty amounting to\nRs.39,03,821.00 for recovery from the appellant\nin terms of\nSection 71\nread with the proviso to\nSection 28A\nof the Customs Act was confirmed. (v) appellant was required to pay interest\namounting to Rs.18,88,425.00 on the customs\nduty confirmed on the 264 packages from the\ndate of warehousing till the date of detection of\nthe shortage in the warehouse, i.e. from\n04.02.1989 to 07.08.1992, in terms of\nSection\n\nof the Customs Act. (vi) appellant was also required to pay interest\non the duty confirmed in terms of\nSection 28AB\nof the Customs Act from the date of enforcement\nof the said section to till the date of actual\npayment of duty confirmed on the 264\npackages. The interest amount was directed to\n\nbe worked out and communicated to the\n appellant by the Assistant Commissioner,\n Central Excise Division, Pithampur. (vii) penalty of Rs.1,00,000.00 (Rupees one\n lakh only) was imposed on the appellant under\nSection 112\nof the Customs Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P020_C01",
+      "text": "20. It was against this order that the related appeal was\n\nfiled by the appellant before the CESTAT. By the impugned\n\norder dated 30.04.2009, CESTAT dismissed the appeal.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P021_C01",
+      "text": "21. Hence the present appeal. This Court by order dated\n\n21.08.2009 had issued notice.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P022_C01",
+      "text": "22. Respondent has filed counter affidavit. It is stated\n\nthat during the visit of the officials of the Preventive Branch of\n\nthe Commissionerate on 07.08.1992, the impugned goods were\n\nfound outside the notified warehouse. That apart, there was no\n\nexplanation for the imported goods contained in the 27 cases\n\nwhich were neither found within the bonded warehouse nor\n\noutside the bonded warehouse within the factory premises. In\n\nsuch circumstances, the respondent has justified the order\n\ndated 28.04.2005 which was affirmed by the CESTAT vide order\n\ndated 30.04.2009.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P023_C01",
+      "text": "23. It may be mentioned that appellant has brought on\n\nrecord two additional documents. Appellant had sought for\n\ninformation from the Central Warehousing Corporation under\n\nthe\nRight to Information Act, 2005\nvide letter dated 22.09.2009\n\nregarding payment of custom establishment charges by the\n\nCorporation. Appellant was informed by the Central\n\nWarehousing Corporation vide letter dated 18.12.2009 that the\n\nCorporation had deposited a sum of Rs.56,10.294.00 under the\n\nhead of ‘Pithampur Warehousing (Bhanu Iron and Steel\n\nCompany Limited along with wind up Warehouse) custom\n\nestablishment charges’ for the financial year 1992-1993 to\n\n2007-2008.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P024_C01",
+      "text": "24. Learned counsel for the appellant submits that\n\nCESTAT had failed to consider the fact that it was on the basis\n\nof specific permission granted to the appellant by the proper\n\nofficer that the impugned goods were found outside the\n\nwarehouse but within the industrial/factory premises of the\n\nappellant. Therefore, in terms\nSection 64(d)\nof the Customs Act\n\nrespondent could not have treated the said goods as having\n\nbeen removed from the warehouse. He submits that since the\n\nappellant had not cleared the warehoused goods,\nSection 64\n\nthe\nCustoms Act\nwould come into play. Therefore, CESTAT was\n\nclearly in error in upholding the order of the respondent\n\napplying\nSection 15(1)(b)\nof the Customs Act for determining the\n\nrate of duty in respect of those goods. According to him, in the\n\nfacts of the present case the only provision that would be\n\napplicable is the residuary provision i.e.,\nSection 15 (1) (c)\nof the\n\nCustoms Act.\n24.1. Learned counsel has also placed reliance on the\n\ncircular dated 12.07.1989 of the Central Board of Excise and\n\nCustoms which was fully applicable to the case of the appellant.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P024_C02",
+      "text": "Though this circular was subsequently superseded by circular\n\ndated 14.08.1997, it would be the former circular which would\n\nbe applicable to the facts of the present case.\n\n24.2. Learned counsel further submits that CESTAT was\n\nnot justified for upholding the order of the respondent applying\nSection 71\nof the Customs Act read with\nSection 28AB\nof the\n\nsaid Act while imposing interest on the confiscated goods. Confiscation itself was not justified.\n24.3. Finally, it is contended that both the respondent as\n\nwell as CESTAT had overlooked the fact that the goods in\n\nquestion were denied to the appellant for a long time. Therefore,\n\na lenient view ought to have been taken.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P025_C01",
+      "text": "25. Learned counsel for the respondent, on the other\n\nhand, submits that on the basis of reliable information received\n\nabout suspected misuse of the warehousing facility by the\n\nappellant, officers of the Preventive Branch of the Collectorate\n\nof Central Excise and Customs, Indore had searched the\n\npremises of the appellant on 07.08.1992 and physically verified\n\nthe stock. On verification, it was found that 304 cases were\n\nstocked inside the warehouse while 264 cases were found\n\noutside the warehouse but within the factory premises.\n\nRemaining 27 cases were found neither inside the warehouse\n\nnor within the factory premises. It was thereafter that action\n\nwas taken under the relevant provisions of the\nCustoms Act\nfollowing which show cause notice was issued to the appellant.\n\n25.1. Learned counsel has justified the ultimate\n\nadjudication order as well as the impugned order of the CESTAT\n\nconfirming the said adjudication order.\n25.2. In such circumstances, he submits that there is no\n\nmerit in the appeal and, therefore, the same should be\n\ndismissed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P026_C01",
+      "text": "27. We may now refer to some of the relevant provisions\n\nof the\nCustoms Act\n.\nSection 2(43)\ndefines a ‘warehouse’ to mean\n\na public warehouse licensed under\nSection 57\nor a private\n\nwarehouse licensed under\nSection 58\nor a special warehouse\n\nlicensed under\nSection 58A\nof the Customs Act. ‘Warehoused\n\ngoods’ has been defined under\nSection 2(44)\nto mean goods\n\ndeposited in a warehouse.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P027_C01",
+      "text": "28. Section 12\nof the Customs Act deals with dutiable\n\ngoods. Sub-Section(1) thereof says that duties of customs shall\n\nbe levied at such rates as may be specified under the\nCustoms\n\nTariff Act, 1975\non goods imported into or exported from India.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P028_C01",
+      "text": "29. Date for determination of rate of duty and tariff\n\nvaluation of imported goods is dealt with in\nSection 15\n. Sub-\n\nSection(1) of\nSection 15\nsays that the rate of duty and tariff\n\nvaluation, if any, applicable to any imported goods shall be the\n\nrate and valuation in force-\n(a) in the case of goods entered for home\n consumption under\nSection 46\n, on the date on\n which a bill of entry in respect of such goods is\n presented under that section;\n\n(b) in the case of goods cleared from a\n warehouse under\nSection 68\n, on the date on\n which the goods are actually removed from the\n warehouse;\n(c) in the case of any other goods, on the date\n of payment of duty.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P029_C01",
+      "text": "30. While\nSection 28\nprovides for recovery of duties not\n\nlevied or short levied,\nSection 28AA\ndeals with interest on\n\ndelayed payment of duty. On the other hand,\nSection 28AB\nprovided for interest on delayed payment of duty in special\n\ncases. Substance of\nSection 28AB\n(since deleted) was that where\n\nany duty was not levied or paid or short levied etc., the person\n\nwho was liable to pay the duty would also be liable to pay\n\ninterest in addition to duty at such rate not below 10% and not\n\nexceeding 36% per annum as may be fixed by the central\n\ngovernment by notification in the official gazette.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 30,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P030_C01",
+      "text": "31. Chapter IX of the Customs Act\ncomprising of\nSections\n\nto 73A deal with warehousing.\nSection 57\nprovides for\n\nlicensing of public warehouses where dutiable goods may be\n\nwarehoused. As per\nSection 58\n, as it stood at the relevant time,\n\nthe proper officer may license a private warehouse where\n\ndutiable goods imported by or on behalf of the licensee or any\n\nother imported goods in respect of which facilities for deposit in\n\na public warehouse are not available, may be deposited. Sub-\n\nSection(2) provides for cancellation of license so granted by\n\ngiving a month’s written notice in advance if the licensee had\n\ncontravened any of the provisions of the\nCustoms Act\n\ncommitted breach of any of the conditions of the license.\n\nHowever, before such cancellation, the licensee was required to\n\nbe given a reasonable opportunity of being heard.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 31,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P031_C01",
+      "text": "32. ‘Warehousing bond’ is provided for in\nSection 59\n. As\n\nper sub-Section(1), the importer of any goods specified in\nSection 61(1)\nwhich had been entered for warehousing and\n\nassessed to duty under\nSections 17\nor 18 shall execute a bond\n\nbinding himself in a sum equal to thrice the amount of the duty\n\nassessed on such goods.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 32,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P032_C01",
+      "text": "33. As per\nSection 60\n, as it stood at the relevant point of\n\ntime, when the provisions of\nSection 59\nhave been complied\n\nwith in respect of any goods, the proper officer may make an\n\norder permitting the deposit of goods in a warehouse.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P033_C01",
+      "text": "34. Section 61\nmentions the period for which the goods\n\nmay remain warehoused. Sub-Section (1) says that any\n\nwarehoused goods may be left in the warehouse in which they\n\nare deposited or in any warehouse to which they may be\n\nremoved-\n(a) in the case of capital goods intended for\n use in any hundred percent export-oriented\n undertaking, till the expiry of five years;\n\n (aa) in the case of goods other than capital\n goods intended for use in any hundred percent\n export-oriented undertaking, till the expiry of\n three years; and\n(b) in the case of any other goods, till the\n expiry of one year;\nafter the date on which the proper officer has made an order\n\nunder\nSection 60\npermitting the deposit of the goods in a\n\nwarehouse.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 33,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P033_C02",
+      "text": "However, proviso (i) (B) says that in the case of any\n\ngoods which are not likely to deteriorate and which are not\n\nintended for use in any hundred percent export oriented\n\nundertaking, the period specified in clauses (a), (aa) or (b) may,\n\non sufficient cause being shown, be extended by the Principal\n\nCommissioner or Commissioner of Customs for a period not\n\nexceeding six months and by the Principal Chief Commissioner\n\nor Chief Commissioner of Customs for further period as he may\n\ndeem fit.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 34,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P034_C01",
+      "text": "35. Section 64\ndeals with owner’s right to deal with\n\nwarehoused goods.\nSection 64\n, as it stood at the relevant point\n\nof time, read as under:",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 35,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P035_C01",
+      "text": "64. Owner’s right to deal with warehoused\n goods.- With the sanction of the proper\n officer and on payment of the prescribed\n fees, the owner of any goods may either\n before or after warehousing the same-\n(a) inspect the goods;\n(b) separate damaged or deteriorated\n goods from the rest;\n(c) sort the goods or change their\n containers for the purpose of\n preservation, sale, export or\n disposal of the goods;\n(d) deal with the goods and their\n containers in such manner as may\n be necessary to prevent loss or\n deterioration or damage to the\n goods;\n(e) show the goods for sale; or\n(f) take samples of goods without\n entry for home consumption, and if\n the proper officer so permits,\n without payment of duty on such\n samples.\n\n35.1. Thus, this section provided that the owner of any\n\ngoods with the sanction of the proper officer and on payment of\n\nthe prescribed fees may either before or after warehousing the\n\nsame, deal with the goods and their containers in such manner\n\nas may be necessary to prevent loss or deterioration or damage\n\nto the goods.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 36,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P036_C01",
+      "text": "36. Section 67\ndeals with removal of goods from one\n\nwarehouse to another. It says that the owner of any warehoused\n\ngoods may with the permission of the proper officer, remove\n\nthem from one warehouse to another subject to such conditions\n\nas may be prescribed for the due arrival of the warehoused\n\ngoods at the warehouse to which removal is permitted.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 37,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P037_C01",
+      "text": "37. Heading of\nSection 68\nis ‘Clearance of warehoused\n\ngoods for home consumption’. This section, as it stood at the\n\nrelevant point of time, provided that the importer of any\n\nwarehoused goods may clear those goods from the warehouse\n\nfor home consumption if –\n(a) a bill of entry for home consumption in\n respect of such goods has been presented in\n the prescribed form;\n\n(b) the import duty leviable on such goods\n and all penalties rent, interest and other\n charges payable in respect of such goods have\n been paid; and\n(c) an order for clearance of such goods for\n home consumption has been made by the\n proper officer.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 38,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P038_C01",
+      "text": "38. There is an embargo provided in\nSection 71\nfrom\n\ntaking out goods from a warehouse. As per\nSection 71\n, no\n\nwarehoused goods shall be taken out of a warehouse except on\n\nclearance for home consumption or re-exportation or for\n\nremoval to another warehouse or as otherwise provided by the\nCustoms Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 39,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P039_C01",
+      "text": "39. Section 71\nis followed by\nSection 72\nwhich deals with\n\ngoods improperly removed from warehouse, etc. As per sub-\n\nSection(1)(b) where any warehoused goods have not been\n\nremoved from a warehouse at the expiration of the period during\n\nwhich such goods are permitted under\nSection 61\nto remain in\n\na warehouse, the proper officer may demand and the owner of\n\nsuch goods shall forthwith pay, the full amount of duty\n\nchargeable on account of such goods together with all penalties,\n\nrent, interest and other charges payable in respect of such\n\ngoods.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 40,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P040_C01",
+      "text": "40. Once the goods covered by any bond executed under\nSection 59\nhave been cleared for home consumption or exported\n\nor transferred or are otherwise duly accounted for, and when all\n\namounts due on account of such goods have been paid, the\n\nproper officer shall cancel the bond as discharged in full and\n\ndeliver the same after cancellation to the person who has\n\nexecuted or is entitled to receive it.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 41,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P041_C01",
+      "text": "41. Section 110(1)\nof the Customs Act empowers the\n\nproper officer to seize any goods if he has reason to believe that\n\nsuch goods are liable to confiscation under the\nCustoms Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 42,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P042_C01",
+      "text": "42. As per\nSection 111(j)\n, any dutiable or prohibited\n\ngoods removed or attempted to be removed from a customs area\n\nor a warehouse without the permission of the proper officer or\n\ncontrary to the terms of such permission, shall be liable for\n\nconfiscation.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 43,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P043_C01",
+      "text": "43. In the event of such an act, the concerned person\n\nshall be liable to pay penalty under\nSection 112\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P044_C01",
+      "text": "44. Central Board of Excise and Customs had issued\n\nCircular No.98/95-Cus. dated 12.07.1989. Subject matter of\n\nthis circular was what would be the relevant date for calculation\n\nof customs duty in cases where warehoused goods were cleared\n\nafter expiry of the warehousing period. Reference was made to\n\nthe instructions of the Board dated 17.03.1987 where it was\n\nclarified that in cases where warehoused goods were cleared\n\nfrom a warehouse after expiry of the bond period, the rate of\n\nduty would be the one which was prevalent on the date of expiry\n\nof the bond. The issue was reconsidered in the tripartite meeting\n\nheld between the Ministry of Law, Department of Revenue and\n\nthe Comptroller and Auditor General. It was observed in the\n\nmeeting that on expiry of the warehousing period, the goods\n\nkept in a warehouse ceased to be warehoused goods and,\n\ntherefore, their removal from the warehouse could not be\n\nregarded as covered by the provisions of\nSection 15(1)(b)\nof the\n\nCustoms Act.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 44,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P044_C02",
+      "text": "After noting that there was no specific legal\n\nprovision to determine the rate of duty in such cases of\n\nwarehoused goods where the bond period had expired, it was\n\nconcluded that the residual clause of\nSection 15(1)(c)\nof the\n\nCustoms Act could apply to cases where the goods were\n\nremoved from the warehouse after expiry of the warehousing\n\nperiod and that the rate of duty in such cases would be the rate\n\nprevalent on the date of payment of duty. It was further clarified\n\nthat provisions of\nSection 15(1)(b)\nof the Customs Act would\n\ncontinue to apply in cases where goods were cleared from the\n\nwarehouse after extension of the warehousing period but before\n\nexpiry of the extended period for which applications from the\n\nimporters for extension of the warehousing period should be\n\nreceived before expiry of the permitted period of warehousing. These conclusions reached in the tripartite meeting were\n\naccepted by the Board and by the aforesaid circular dated\n\n12.07.1989, direction was issued for their immediate\n\nimplementation superseding the instructions dated\n\n17.03.1987.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P045_C01",
+      "text": "45. The above provision continued to hold the field till\n\nthe decision of this Court in\nKesoram Rayon versus Collector of\n\nCustoms, Calcutta\n, (1996) 5 SCC 576. The question for\n\nconsideration in Kesoram was the rate at which customs duty\n\nwas to be levied on goods that remained in a bonded warehouse\n\nbeyond the permitted period. A two judge bench of this Court\n\nafter referring to various provisions of the\nCustoms Act\nheld that\n\nSection 15(1)(b)\nwould apply to the case of goods cleared under\nSection 68\nfrom a warehouse upon presentation of a bill of entry\n\nfor home consumption; payment of duty, interest, penalty, rent\n\nand other charges; and an order for home clearance. This Court\n\nclarified that provisions of\nSection 68\nand consequently\nSection\n\n15(1)(b)\nwould apply only when goods have been cleared from\n\nthe warehouse within the permitted period or its permitted\n\nextension and not when by reason of their remaining in the\n\nwarehouse beyond the permitted period or its permitted\n\nextension, the goods would be deemed to have been improperly\n\nremoved from the warehouse under\nSection 72\n.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [
+        "Court in\nKesoram Rayon v Collector of\n\nCustoms, Calcutta\n"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 45,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P045_C02",
+      "text": "In the facts of\n\nthat case, it was found that there was nothing on record to\n\nsuggest that clearance of the goods in question under\nSection\n\nwas ordered and, therefore,\nSection 15(1)(b)\nhad no\n\napplication. Finally, this Court held that the consequence of\n\nnon-removal of the warehoused goods within the permitted\n\nperiod or the permitted extension by virtue of\nSection 72\n\ncertain. The date on which it comes to an end is the date\n\nrelevant for determining the rate of duty; when the duty is in\n\nfact demanded is not relevant.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 46,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P046_C01",
+      "text": "46. Following the decision of this Court in Kesoram, the\n\nCentral Board of Excise and Customs issued Circular\n\nNo.31/97-Cus. dated 14.08.1997. The Board held that in view\n\nof this Court’s judgment, the date of payment of duty in the case\n\nof warehoused goods removed after expiry of the permissible or\n\nextended period would be the date of expiry of the warehousing\n\nperiod or such other extended period, as the case may be, and\n\nnot the date of payment of duty. Goods not removed from a\n\nwarehouse within the permissible period or the extended period\n\nare to be treated as goods improperly removed from the\n\nwarehouse.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P047_C01",
+      "text": "47. Simplex Castings Ltd. versus Commissioner of\n\nCustoms, Vishakhapatnam\n, (2003) 5 SCC 528, the appellant\n\nhad questioned filing of appeal by the Commissioner before the\n\nCEGAT in view of the circular dated 12.07.1989 issued by the\n\nCentral Board of Excise and Customs. It was argued that it was\n\nnot open to the Commissioner to take the stand that non-\n\nremoval of the goods from the warehouse after the period of\n\nwarehousing was over would be deemed removal from the\n\nwarehouse and that the rate of duty would be leviable from the\n\ndate the period of warehousing was over. The Commissioner\n\nhad appealed against the decision of the Collector of Customs\n\n(Appeals) in which the circular dated 12.07.1989 was followed. The appeal filed by the Commissioner was allowed by the\n\nCEGAT by relying upon the decision of this Court in Kesoram.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [
+        "Simplex Castings Ltd v Commissioner of\n\nCustoms, Vishakhapatnam\n"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 47,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P047_C02",
+      "text": "This Court referred to its earlier decision in\nPaper Products Ltd.\n\nversus Commissioner of Central Excise\n, (1999) 7 SCC 84, and\n\nheld that the circular dated 12.07.1989 was binding on the\n\nDepartment and, therefore, it was not open to the Department\n\nto prefer appeal before CEGAT contrary to what was\nlaid down\n\nthe circular dated 12.07.1989 in which it was specifically\n\nprovided that the residual\nSection 15(1)(c)\nof the Customs Act\n\nwould apply to cases where the goods were removed from a\n\nwarehouse after expiry of the warehousing period and that the\n\nrate of duty in such cases would be the rate prevalent on the\n\ndate of payment of duty. This Court noted that the aforesaid\n\ncircular dated 12.07.1989 was withdrawn by the subsequent\n\ncircular dated 14.08.1997. But, at the relevant point of time,\n\nthe circular dated 12.07.1989 was holding the field. Thus, the\n\nappellate order passed by the Collector of Customs (Appeal)\n\ncould not be said to be in anyway illegal or erroneous and,\n\ntherefore, it was not open to the Department to challenge the\n\nsaid order before the CEGAT in contravention of the circular\n\ndated 12.07.1989.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Paper Products Ltd v Commissioner of Central Excise\n"
+      ],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 48,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P048_C01",
+      "text": "48. The decision in Kesoram was approved and applied\n\nby a coordinate bench of this Court in\nSBEC Sugar Ltd versus\n\nUnion of India\n, (2011) 4 SCC 668. This Court held that\nSection\n\n15(1)(b)\nwould be applicable only when the goods are cleared\n\nfrom the warehouse under\nSection 68\nof the Customs Act i.e.\n\nwithin the initially permitted period or during the permitted\n\nextended period. When the goods are cleared from the\n\nwarehouse after expiry of the permitted period or its permitted\n\nextension, the goods are deemed to have been improperly\n\nremoved under\nSection 72(1)(b)\nof the Customs Act with the\n\nconsequence that the rate of duty has to be computed according\n\nto the rate applicable on the date of expiry of the permitted\n\nperiod under\nSection 61\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [
+        "Court in\nSBEC Sugar Ltd v Union of India\n"
+      ],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P049_C01",
+      "text": "49. Let us now briefly recap the facts. Appellant had\n\nimported second hand steel mill machinery and parts covered\n\nby three transit bonds totalling 595 cases. The customs\n\nauthority had notified an open area of 2000 square meters\n\nwithin the industrial/factory premises of the appellant as a\n\npublic bonded warehouse. This open area was fenced and had\n\ngate with locking arrangement. The imported goods covered by\n\nthe 595 cases were required to be warehoused in the said\n\nnotified public bonded warehouse without payment of customs\n\nduty. Appellant had written a letter dated 30.08.1989 to the\n\nconcerned Superintendent seeking permission to unload a\n\nportion of the cargo outside the warehouse but within the\n\nfactory premises. It was pointed out that the trailers carrying\n\nthe consignment could not enter the said warehouse as because\n\nthose trailers had got stuck in the soil outside the warehouse\n\nbut within the factory premises as the soil had become very\n\nsluggish due to heavy rain and also because of paucity of space\n\nwithin the notified open area.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P049_C02",
+      "text": "The Superintendent gave\n\npermission on the body of the letter itself for unloading the\n\ncargo outside the warehouse but within the factory premises. The machinery parts which were thus unloaded were shifted to\n\na shed outside the bonded warehouse but within the factory\n\npremises of the appellant so that those machinery parts did not\n\nget damaged, lying in the open and getting exposed to the\n\nelements.\n\n49.1. Officials of the Preventive Branch of the\n\nCommissionerate searched the industrial premises of the\n\nappellant, including the notified public bonded warehouse, on\n\n07.08.1992 and physically verified the stock in the notified\n\npublic bonded warehouse as well as outside but within the\n\nindustrial/factory premises of the appellant. On such\n\nverification, it was found that only 304 cases were stocked\n\ninside the warehouse, whereas 264 cases were found outside\n\nthe warehouse but within the industrial/factory premises of the\n\nappellant. Remaining 27 cases were neither found inside the\n\nwarehouse nor outside the warehouse but within the\n\nindustrial/factory premises of the appellant.\n\n49.2.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P049_C03",
+      "text": "After issuance of show cause notice and hearing,\n\nrespondent passed adjudication order dated 28.08.1996 which\n\nsuffered several rounds of appeals and remand. Ultimately, the\n\nCommissioner passed the final adjudication order dated\n\n28.04.2005 whereby demand of Rs.3,99,255.00 leviable on the\n\n27 cases found not warehoused was confirmed. Appellant was\n\nalso directed to pay interest on the said duty in terms of\nSection\n\n28AB\nof the Customs Act. The 264 cases of imported goods\n\nfound outside the notified warehouse were confiscated but\n\noption of redemption was given to the appellant on payment of\n\nfine of Rs.2,00,000.00. For the goods covered by the 264 cases,\n\ncustoms duty amounting to Rs.39,03,821.00 was directed to be\n\nrecovered from the appellant in terms of\nSection 71\nread with\n\nthe proviso to\nSection 28A\nof the Customs Act. That apart,\n\nappellant was directed to pay interest of Rs.18,88,425.00 on the\n\naforesaid quantum of customs duty in respect of the 264 cases\n\nfrom the date of warehousing till the date of detection of the\n\nshortage in the warehouse.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 49,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P049_C04",
+      "text": "Further, appellant was directed to\n\npay interest under\nSection 28AB\nin respect of the 264 cases\n\nfrom the date of enforcement of the said section to till the date\n\nof actual payment of the duty. Penalty of Rs.1,00,000.00 was\n\nalso imposed on the appellant under\nSection 112\nof the\n\nCustoms Act.\n49.3. In appeal, CESTAT by the impugned order affirmed\n\nthe aforesaid decision of the Commissioner.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 50,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P050_C01",
+      "text": "50. We may mention that the permission granted by the\n\nSuperintendent to the appellant on 30.08.1989 to unload a\n\nportion of the cargo outside the open space which was notified\n\nas public bonded warehouse but within the factory premises of\n\nthe appellant was neither cancelled nor revoked by the\n\nSuperintendent or even by the Commissioner. Infact, a view can\n\nreasonably be taken that the appellant as the owner of the goods\n\nhad exercised its right under\nSection 64(d)\nwhich was endorsed\n\nby the Superintendent. Therefore, it would not be correct to say\n\nthat the 264 cases found outside the notified warehouse but\n\nwithin the factory premises of the appellant were improperly or\n\nunauthorisedly removed from the notified public bonded\n\nwarehouse.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 51,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P051_C01",
+      "text": "51. It has also come on record that Central Warehousing\n\nCorporation had deposited a sum of Rs.56,10,294.00 with the\n\nrespondent as custom establishment charges in respect of the\n\naforesaid notified public bonded warehouse for the period 1992-\n\n1993 to 2007-2008. This would mean that the warehousing in\n\nthe aforesaid notified public bonded warehouse continued\n\nduring the said period. Thus, the period of warehousing had not\n\nexpired and continued to remain operational in terms of the\n\nproviso to\nSection 61\nof the Customs Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 52,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P052_C01",
+      "text": "52. This would further be borne out from the fact that it\n\nis not the case of the respondent that the 304 cases found inside\n\nthe notified warehouse were kept there beyond the warehousing\n\nperiod. In fact, the allegation of the respondent is that 264 cases\n\nwere improperly or unauthorisedly removed from the notified\n\nwarehouse as those were found lying outside the notified area\n\nbut within the industrial/factory premises of the appellant.\n\nThat apart, 27 cases were neither found inside the notified\n\nwarehouse nor outside the said warehouse but within the\n\nfactory premises of the appellant.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P053_C01",
+      "text": "53. In such a scenario, the provisions of\nSections 71\nand\n\nwould not be applicable. Therefore, the decision of the\n\nrespondent to invoke\nSection 71\nand thereafter levy interest on\n\nthe goods covered by the 264 cases under\nSection 28AB\nof the\n\nCustoms Act was not justified. Since the imported goods\n\ncovered by the 264 cases were never warehoused inside the\n\nnotified public bonded warehouse but were unloaded outside\n\nthe notified area but within the factory premises of the appellant\n\nand kept under a shed on permission granted by the\n\nSuperintendent which permission was neither cancelled nor\n\nrevoked, question of warehousing the goods covered by the 264\n\ncases within the notified public bonded warehouse did not arise. As a corollary, the further question of improperly or\n\nunauthorisedly removing the 264 cases from the notified\n\nwarehouse to outside the said area but within the factory\n\npremises of the appellant attracting\nSection 71\nand the\n\nconsequences following the same did not arise.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 53,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P053_C02",
+      "text": "Inference drawn\n\nby the respondent that the permission granted by the\n\nSuperintendent was only temporary and therefore, the rigor of\nSection 71\nwould be attracted, in our view, would not be a\n\ncorrect understanding of the situation and the law.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 54,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P054_C01",
+      "text": "54. Having said that, we find that there is no explanation\n\non the part of the appellant qua the missing 27 cases. Therefore,\n\nthe view taken by the respondent and affirmed by the CESTAT\n\nthat those 27 cases were improperly or unauthorisedly removed\n\nfrom the notified public bonded warehouse is correct and\n\nrequires no interference.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 55,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P055_C01",
+      "text": "55. Reverting back to the 264 cases, we are of the view\n\nthat in a case of this nature,\nSection 15(1)(b)\nwould have no\n\napplication. Rather,\nSection 15(1)(c)\nwould be attracted.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P056_C01",
+      "text": "56. In so far the Board’s circular dated 12.07.1989 is\n\nconcerned, the subject matter of the said circular was what\n\nwould be the relevant date for calculation of customs duty in\n\ncases where warehoused goods were cleared after expiry of the\n\nwarehousing period. In that context, it was clarified that\n\nprovisions of\nSection 15(1)(b)\nof the Customs Act would apply to\n\ncases where the goods were cleared from the warehouse after\n\nextension of the warehousing period but before expiry of such\n\nextended period. On the other hand, in respect of cases where\n\nthe goods were removed after expiry of the warehousing period,\n\nthe residual clause of\nSection 15(1)(c)\nof the Customs Act would\n\napply. Evidently, this circular dated 12.7.1989 would not be\n\napplicable to the facts of the present case in as much as it is\n\nnot the case of the respondent that either the warehousing\n\nperiod had expired or that the warehousing period was\n\nextended.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 56,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P056_C02",
+      "text": "As we have seen, the warehousing in the notified\n\npublic bonded warehouse continued as the Corporation had\n\ndeposited with the respondent a sum of Rs. 56,10,294.00 in\n\nrespect of the notified warehouse as custom establishment\n\ncharges for the period from 1992-1993 to 2007-2008. That\n\napart, we can refer to the fact that respondent had not levied\n\nany customs duty on the 304 cases found within the notified\n\narea which would mean that the notified warehousing\n\ncontinued. Therefore, this is not a case where\nSection 15(1)(b)\ncould have been invoked.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 57,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P057_C01",
+      "text": "57. As regards, the decision of this Court in Kesoram is\n\nconcerned, the question for consideration\nin that case\nwas the\n\nrate at which customs duty could be levied on goods that\n\nremained in a bonded warehouse beyond the permitted period.\n\nIt was in that context that this Court held that\nSection 68\nwould\n\nnot be applicable since\nSection 68\noperates in a different\n\ncontext. On the contrary,\nSection 72\nwould apply. Thus, this\n\nCourt clarified that the date on which the warehousing period\n\ncomes to an end, would be the date relevant for determining the\n\nrate of duty and when the duty is actually demanded would not\n\nbe relevant. It was further clarified that\nSection 15(1)(b)\nwould\n\napply to goods cleared under\nSection 68\n. Goods which remain\n\nin the bonded warehouse beyond the permitted period would be\n\ndeemed to have been improperly removed from the warehouse\n\nunder\nSection 72\n. It is quite evident that this decision would not\n\nbe applicable to the facts of the present case.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 58,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P058_C01",
+      "text": "58. Thus, having regard to the discussions made above,\n\nwe are of the view that the demand raised by the respondent\n\nagainst the appellant and affirmed by the CESTAT qua the 264\n\ncases including levy of customs duty and interest cannot be\n\nsustained. Those are accordingly set aside and quashed. Parties\n\nare directed to work out their remedies in respect of the 264\n\ncases of goods under\nSection 15(1)(c)\nof the Customs Act within\n\na period of eight weeks from the date of receipt of a copy of this\n\norder. In so far the demand of customs duty and interest on the\n\n27 cases is concerned, the same is hereby sustained. The\n\ndecision imposing penalty of rupees one lakh on the appellant\n\nunder\nSection 112\nof the Customs Act is also not disturbed in\n\nview of the conduct of the appellant in unauthorisedly removing\n\nthe 27 cases of imported goods not only from the notified public\n\nbonded warehouse but also from the industrial/factory\n\npremises of the appellant.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 59,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P059_C01",
+      "text": "59. Impugned order of CESTAT would stand modified\n\naccordingly.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 60,
+      "chunk_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL_P060_C01",
+      "text": "60. Appeal is allowed in part in the above terms. No\n\ncosts.\n..…………………………J.\n [B. V. NAGARATHNA]\n\n ……………………………J.\n [UJJAL BHUYAN]\n\nNEW DELHI;\n20.03.2024",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "M/S Bisco Limited Through Its Managing ... vs Commissioner Of Customs And Central ...",
+    "case_id": "SC_2024_MS_BISCO_LIMITED_THROUGH_ITS_MANAGING_VS_COMMISSIONER_OF_CUSTOMS_AND_CENTRAL",
+    "court": "Supreme Court of India",
+    "year": "2024",
+    "facts_summary": "Thirty days’ time was granted to the appellant to\n\nexercise the option for redeeming the goods. Further, the\n\nCommissioner had confirmed customs duty amounting to\n\nRs.39,03,821.00 in terms of\nSection 71\nread with the proviso to\nSection 28A\nof the Customs Act. The appellant was also\n\nrequired to pay interest amounting to Rs.18,88,425.00 on the\n\ncustoms duty confirmed on the 264 packages from the date of\n\nwarehousing till the date of detection of the shortage in the\n\nwarehouse; in addition, appellant was also required to pay\n\ninterest on the duty confirmed in terms of\nSection 28AB\nof the\n\nCustoms Act from the date of enforcement of the said section\n\ntill the date of actual payment of duty confirmed on the 264\n\ncases. 3. Appellant before us is M/s Bhanu Iron and Steel\n\nCompany Limited, Plot No. 801, Sector III, Industrial Estate,\n\nPithampur, District Dhar in the State of Madhya Pradesh\n\n(‘BISCO’ for short). 4. This appeal has a chequered history. Before finally\n\nlanding in this Court, the appellant had gone through several\n\nrounds of appeal and remand. For a proper perspective, it would\n\nbe apposite to briefly narrate the factual trajectory of the case.",
+    "legal_issues": "REPORTABLE\n\n CIVIL APPELLATE JURISDICTION\n CIVIL APPEAL NO. 4663 OF 2009\n\n M/S. BISCO LIMITED APPELLANT(S)\n\n VERSUS\n\n COMMISSIONER OF CUSTOMS\n AND CENTRAL EXCISE RESPONDENT(S)\n\n JUDGMENT\nUJJAL BHUYAN, J.\nHeard learned counsel for the parties. 13. Appellant submitted reply dated 02.04.1994. In its\n\nreply, appellant stated that there was heavy rain in the month\n\nof August 1989 and the soil outside the notified warehouse had\n\nbecome very sluggish. As a result, the trailers carrying the\n\nconsignment could not enter the notified warehouse. The goods\n\nwere downloaded in the open outside the notified warehouse\n\nbut within the factory premises. To prevent the goods from\n\ngetting damaged, appellant had requested the concerned\n\nSuperintendent of Customs and Central Excise to shift the\n\nmachineries to under a shed within the factory premises under\nSection 64\nof the Customs Act. Permission was granted by the\n\nSuperintendent. In terms of such permission of the\n\nSuperintendent, who was the proper officer, appellant had\n\nshifted the goods to under the shed to prevent further damage\n\nof the goods. It was contended that the goods were still under\n\nthe bonded warehouse and could not be said to have been\n\ncleared. In this connection, reference to and reliance was placed\n\nSection 15\nof the Customs Act. This position was clarified by\n\nSh. Yashwant Singh Bisht in his statement recorded on\n\n07.08.1992. 24. Learned counsel for the appellant submits that\n\nCESTAT had failed to consider the fact that i",
+    "ratio_summary": "45. The above provision continued to hold the field till\n\nthe decision of this Court in\nKesoram Rayon versus Collector of\n\nCustoms, Calcutta\n, (1996) 5 SCC 576. The question for\n\nconsideration in Kesoram was the rate at which customs duty\n\nwas to be levied on goods that remained in a bonded warehouse\n\nbeyond the permitted period. A two judge bench of this Court\n\nafter referring to various provisions of the\nCustoms Act\nheld that\n\nSection 15(1)(b)\nwould apply to the case of goods cleared under\nSection 68\nfrom a warehouse upon presentation of a bill of entry\n\nfor home consumption; payment of duty, interest, penalty, rent\n\nand other charges; and an order for home clearance. This Court\n\nclarified that provisions of\nSection 68\nand consequently\nSection\n\n15(1)(b)\nwould apply only when goods have been cleared from\n\nthe warehouse within the permitted period or its permitted\n\nextension and not when by reason of their remaining in the\n\nwarehouse beyond the permitted period or its permitted\n\nextension, the goods would be deemed to have been improperly\n\nremoved from the warehouse under\nSection 72\n. 57. As regards, the decision of this Court in Kesoram is\n\nconcerned, the question for consideration\nin that case\nwas the\n\nrate at which customs duty could be levied on goods that\n\nremained in a bonded warehouse beyond the permitted period.\n\nIt was in that context that this Court held that\nSection 68\nwould\n\nnot be applicable since\nSection 68\noperates in a different\n\ncontext. On the contrary,\nSect",
+    "final_order": "2. This is a statutory appeal under\nSection 130E\nof the\n\n Customs Act, 1962 (briefly the ‘\nCustoms Act\n’ hereinafter)\n\n against the final order dated 30.04.2009 passed by the\n\n Customs, Excise and Service Tax Appellate Tribunal, New Delhi\n\n(for short ‘CESTAT’ hereinafter) in Customs Appeal No.441 of\nCustoms and Central Excise, Indore (for short ‘the\n\nCommissioner’ hereinafter).\n2.1 By the aforesaid order dated 28.04.2005, the\n\nCommissioner had confirmed the duty demand of\n\nRs.3,99,255.00 in respect of 27 cases not found in the\n\nwarehouse and imposed penalty of Rs.1 lakh on the appellant\n\nunder\nSection 112\nof the Customs Act. That apart, the appellant\n\nwas directed to pay interest on the duty confirmed in terms of\nSection 28AB\nof the Customs Act from the date of enforcement\n\nof the said sec",
+    "outcome_summary": "Allowed. 2. This is a statutory appeal under\nSection 130E\nof the\n\n Customs Act, 1962 (briefly the ‘\nCustoms Act\n’ hereinafter)\n\n against the final order dated 30.04.2009 passed by the\n\n Customs, Excise and Service Tax Appellate Tribunal, New Delhi\n\n(for short ‘CESTAT’ hereinafter) in Customs Appeal No.441 of",
+    "sections_cited": [],
+    "cases_cited": [
+      "Court in\nKesoram Rayon v Collector of\n\nCustoms, Calcutta\n",
+      "Simplex Castings Ltd v Commissioner of\n\nCustoms, Vishakhapatnam\n",
+      "Paper Products Ltd v Commissioner of Central Excise\n",
+      "Court in\nSBEC Sugar Ltd v Union of India\n"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "case_id": "SC_1981_1981_160",
+  "case_name": "Amar Singh And Ors. vs State Of Madhya Pradesh",
+  "normalized_case_name": "AMAR_SINGH_AND_ORS._VS_STATE_OF_MADHYA_PRADESH",
+  "court": "Supreme Court of India",
+  "year": "1981",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "6 March 1981",
+  "judges": [
+    "A.N.Sen",
+    "S. Murtaza Fazal Ali",
+    "ORDER",
+    "S. Murtaza Fazal Ali, J."
+  ],
+  "author": "S. Murtaza Fazal Ali",
+  "bench_type": "constitution",
+  "petitioner": "Amar Singh And Ors.",
+  "respondent": "State Of Madhya Pradesh",
+  "reporter_citations": [],
+  "outcome": "disposed of",
+  "disposition": "disposed",
+  "cites_count": 3,
+  "cited_by_count": 60,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR1982SC129",
+    "1982CRILJ610",
+    "(1982)3SCC214",
+    "AIR 1982 SUPREME COURT 129",
+    "1982 (3) SCC 214",
+    "1982 SCC(CRI) 700.2",
+    "(1983) JAB LJ 163"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1981\\1981_160.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1981_1981_160_P001_C01",
+      "text": "1. We have heard counsel for the parties and after going through the judgment of the courts below we are satisfied that this was not a fit case in which the appellants could have been convicted on the basis of presumption (under\nSection 114\nof Evidence Act) under\nSection 395\nof the Indian Penal Code. As however the articles were recovered very soon after the dacoity had taken place and had been proved to have been stolen in the course of the dacoity, the case of the appellants clearly falls within the ambit of\nSection 412\n, I.P.C. We therefore alter the conviction of the appellants from one under\nSection 395\n, I.P.C, to that under\nSection 412\n, I.P.C, and reduce the sentence from four years to two years rigorous imprisonment. Fine to be maintained. Out of the sum of the fine, the entire amount shall be paid to the complainant.\n2. With this modification, the appeal is disposed of.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [
+        "IPC 395"
+      ],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Amar Singh And Ors. vs State Of Madhya Pradesh",
+    "case_id": "SC_1981_1981_160",
+    "court": "Supreme Court of India",
+    "year": "1981",
+    "facts_summary": "",
+    "legal_issues": "1. We have heard counsel for the parties and after going through the judgment of the courts below we are satisfied that this was not a fit case in which the appellants could have been convicted on the basis of presumption (under\nSection 114\nof Evidence Act) under\nSection 395\nof the Indian Penal Code. As however the articles were recovered very soon after the dacoity had taken place and had been proved to have been stolen in the course of the dacoity, the case of the appellants clearly falls within the ambit of\nSection 412\n, I.P.C. We therefore alter the conviction of the appellants from one under\nSection 395\n, I.P.C, to that under\nSection 412\n, I.P.C, and reduce the sentence from four years to two years rigorous imprisonment. Fine to be maintained. Out of the sum of the fine, the entire amount shall be paid to the complainant.\n2. With this modification, the appeal is disposed of.",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "Disposed of",
+    "sections_cited": [
+      "IPC 395"
+    ],
+    "cases_cited": []
+  }
+}

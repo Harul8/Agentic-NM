@@ -1,0 +1,479 @@
+{
+  "case_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP",
+  "case_name": "Banglore Electricity Supply Company ... vs Hirehalli Solar Power Project L.L.P",
+  "normalized_case_name": "BANGLORE_ELECTRICITY_SUPPLY_COMPANY_..._VS_HIREHALLI_SOLAR_POWER_PROJECT_L.L.P",
+  "court": "Supreme Court of India",
+  "year": "2024",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 7595 of 2021",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "27 August 2024",
+  "judges": [
+    "Pankaj Mithal",
+    "Pamidighantam Sri Narasimha"
+  ],
+  "author": "Pamidighantam Sri Narasimha",
+  "bench_type": "division",
+  "petitioner": "Banglore Electricity Supply Company ...",
+  "respondent": "Hirehalli Solar Power Project L.L.P",
+  "reporter_citations": [
+    "2024 INSC 631"
+  ],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 26,
+  "cited_by_count": 0,
+  "neutral_citation": "2024 INSC 631",
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2024\\AUG\\2024_AUG_19.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO. 7595 of 2021\n\n BANGALORE ELECTRICITY SUPPLY\n COMPANY LIMITED ...APPELLANT(S)\n\n VERSUS\n\n HIREHALLI SOLAR POWER PROJECT LLP\n & OTHERS …RESPONDENT(S)\n WITH\n CIVIL APPEAL NO. 7608 OF 2021\n WITH\n CIVIL APPEAL NO. 6386 OF 2021\n\n Table of Contents\n\n Facts: .......................................................................................................................................... 2\n KERC’s order: . ........................................................................................................................ 5\n APTEL’s impugned order:. .................................................................................................... 6\n Submissions:. ......................................................................................................................... 10\n Scope of Supreme Court’s appellate jurisdiction under Section 125 of the Act: 13\n Analysis on merits:............................................................................................................... 16\n Clauses of the Power Purchase Agreement (PPA):. ..................................................... 17\n Re: Applicability of the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P001_C02",
+      "text": "force majeure clause: ............................................................... 21\n Signature Not Verified\n\n JUDGMENT\n\nPAMIDIGHANTAM SRI NARASIMHA, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P002_C01",
+      "text": "1. The short issue arising from these appeals is whether the\n\nextension of the Scheduled Commissioning Date1 was occasioned\n\nunder the force majeure clause of the Power Purchase Agreement2,\n\nand consequently, whether the reduction in tariff payable to the\n\nrespondents is justified. While upholding the decision of the\n\nAppellate Tribunal for Electricity 3 we have examined the scope and\n\nambit of our appellate jurisdiction under\nSection 125\nof the\n\nElectricity Act, 2003 4. We have held that the restrictive scope of\n\nappellate jurisdiction is a product not only of the statutory\n\npreconditions, but also a necessary measure to enable freedom to\n\nstatutory regulator and Tribunal to develop sectorial laws through\n\na principled and consistent approach.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P003_C01",
+      "text": "2. Facts: Since the facts and the PPAs are similar in all three\n\nappeals, we will deal with the facts in the lead Civil Appeal No.\n\n7595/2021, where the most relevant facts are as follows:\n2.1 State of Karnataka introduced a policy dated 26.08.2014 to\n\nidentify and promote solar energy projects by land-owning farmers. Hereinafter “SCD”. Hereinafter “PPA”. Hereinafter “APTEL”. Hereinafter “the Act”. These solar power plants of 1-3 MW capacity would generate and\n\nsell power to the State Electricity (Distribution) Supply\n\nCompanies5 at the tariff determined by the Karnataka Electricity\n\nRegulatory Commission6.\n2.2 Respondent no. 2 is one of the many farmers who applied\n\nunder the policy and is recognised as a solar power developer 7\n\nunder the policy. Respondent No.1 is a special purpose vehicle to\n\nundertake the solar power project in Chitradurga district in\n\nKarnataka.\n2.3 Pursuant to a Letter of Award dated 28.08.2015, the\n\nappellant entered into a PPA with respondent no. 2 on 29.08.2015. This PPA was approved by the KERC on 07.09.2015.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P003_C02",
+      "text": "The relevant\n\nclauses of the PPA will be discussed later, but an important aspect\n\nto note at this juncture is that the SPV must achieve commercial\n\noperation within 18 months from the effective date as per\nArticle\n\n1.1(xxviii)\nread with\nArticle 4.1(c)\nof the PPA. Effective date is\n\ndefined under\nArticle 1.1(xii)\nas the date of signing the PPA. Hence,\n\nthe SCD for the project was 28.02.2017 as per these clauses. Hereinafter “DISCOMs”. Hereinafter “KERC”. Hereinafter “SPD”.\n\n2.4 The SPV (respondent no. 1) was incorporated on\n\n05.02.2016. The respondents then submitted an application for\n\nland conversion on 16.02.2016. On 10.03.2016, they paid the\n\nevacuation approval processing fee. On 27.12.2016, they paid the\n\nland conversion processing fee, and the approval for conversion\n\nwas granted on 07.01.2017. The evacuation scheme was\n\nprovisionally approved on 13.05.2016, and the final approval was\n\non 22.08.2016.\n2.5 Several farmers, including the respondent, raised concerns\n\nregarding delay in the execution of the project on account of delay\n\nin getting land use conversion, delay in getting evacuation\n\napprovals, demonetisation, and other reasons.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P003_C03",
+      "text": "Hence, the\n\nGovernment of Karnataka by a letter dated 24.11.2016 directed all\n\nDISCOMs to set up 3-member committees to examine each request\n\nfor extension.\n2.6 The present respondents requested a 6-month extension\n\nunder\nArticle 2.5\nof the PPA on 03.12.2016. This was approved by\n\nthe appellant through a letter dated 02.03.2017.\n\n2.7 However, by a letter dated 05.04.2017, KERC directed the\n\nDISCOMs that all requests for extensions must be filed before it. Pursuant to this letter, the respondents filed a petition before the\n\nKERC seeking extension of time for the commercial operation of\n\nthe project and invoked the force majeure clause in the PPA (\nArticle\n\n8.3\n).\n2.8 During the pendency of the petition, the respondents’ solar\n\npower project was commissioned on 24.08.2017, within the\n\nextended period of 24 months.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P004_C01",
+      "text": "3. KERC’s order: In its order dated 18.09.2018, the KERC\n\nrejected the various causes of delay put forth by the respondents\n\nand held that the force majeure clause must be strictly interpreted. First, delay in approval of the PPA by KERC was held to have no\n\nbearing on the initial obligations of the SPD in applying for\n\napprovals, loans, etc as the respondents had not proved the same. Second, it found that the respondent had applied for conversion of\n\nland only on 18.02.2016, over five months after signing the PPA\n\nand paid the charges only on 27.12.2016, after which it was\n\nallowed on 07.01.2017. Hence, the delay in conversion of land use\n\nwas attributed to the respondent. Third, the delay in disbursement\n\nof loan also did not delay the implementation as the respondent\n\nhad commenced implementation from its own funds. Fourth, the\n\nrespondent applied for the evacuation approval only on\n\n25.02.2016, and the regular approval was finally granted on\n\n22.08.2016. Hence, the respondent delayed the application and\n\ncannot attribute the same to the authorities.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P004_C02",
+      "text": "Similarly, the KERC\n\nalso rejected delay on other grounds such as time taken for\n\ndelivery of the breaker, and inspection of the project and grant of\n\nsafety approval.\n3.1 It also found that the respondents had not submitted a notice\n\nas contemplated under\nArticle 8.3(b)(i)\nand hence, they are not\n\nentitled to invoke force majeure and claim an extension of time\n\nunder\nArticle 2.5. Since the KERC found that the delay in securing\n\napprovals and the consequent delay in commissioning was\n\nattributable to the respondents, it imposed liquidated damages\n\nunder\nArticles 2.2\nand 2.5.7 of the PPA.\n3.2 Lastly, the KERC reduced the tariff payable to the respondent\n\nto Rs. 4.36 per unit for the term of the PPA by relying on\nArticle\n\n5.1\nof the PPA.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P005_C01",
+      "text": "4. APTEL’s impugned order: The respondent’s appeal against the\n\norder of the KERC was allowed by the APTEL by the order\n\nimpugned before us. The APTEL dealt with each ground of delay\n\nraised by the respondents. First, it took note that the respondent’s\n\napplication for land conversion was on 16.02.2016, after which it\n\nhad to procure several documents, including a PTCL certificate, as\n\nprovided under Rule 106\nA of the Karnataka Land Revenue Act\n. Further, these documents must be secured from various\n\ngovernment departments, which is a laborious process. The PTCL\n\ncertificate was issued by the government only on 04.10.2016,\n\nalthough the respondent had applied for it even before signing the\n\nPPA. Hence, it found that the respondent could not be blamed for\n\nthe delay in getting approval for land use conversion.\n\n4.1 Further, the APTEL also took note of the State Government’s\n\nopinion to grant deemed conversion in such projects due to the\n\nnumber of SPDs facing similar issues. However, the APTEL\n\nobserved, the guidelines to revenue authorities were unclear and\n\nhence the SPDs could not benefit from the same.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P005_C02",
+      "text": "The delay in the\n\nissuance of these guidelines and the confusion among authorities\n\nregarding deemed conversion had also resulted in a delay in\n\nobtaining land use conversion, which the respondents cannot be\n\nfaulted for.\n4.2 Second, the APTEL found that although the application for\n\ngrid connectivity and evacuation approval were submitted on\n\n25.02.2016, the final approval was only given on 22.08.2016, after\n\na lapse of 5 months. Until this approval is given, the authorities\n\nwill not prepare the bay SLD and layout drawings with estimation\n\nof bay erection. The bay intimation notice was received by the\n\nrespondents only a few days before the original SCD, and it was\n\n170 days after the grant of final evacuation approval. Hence, there\n\nwas a delay in the construction of the bay that was not caused by\n\nthe respondents.\n4.3 Relying on other decisions by the APTEL, it held that the date\n\nof signing the PPA will not be the effective date, as provided in\nArticle 1.1(xxviii). Rather, the PPA becomes effective only when it\n\nis approved by the KERC, which in this case was on 07.09.2015.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P005_C03",
+      "text": "Hence, 18 months must be calculated from this date.\n\n4.4 The APTEL observed that the appellant had itself approved\n\nthe extension of time by 6 months after a Technical Committee\n\nconstituted by it had scrutinised all relevant documents. Hence,\n\nthe appellant could not take the stance that the respondents were\n\nnot diligent. Even before the KERC, the appellant had not objected\n\nto the grounds raised by the respondents, and hence they could\n\nnot take a contrary stance at this stage.\n4.5 Considering the delay in obtaining the PTCL certificate and\n\napproval for land conversion, the approval for evacuation, and\n\nconstruction of the bay, the APTEL found that the respondents had\n\ntaken all necessary care and caution and acted with due diligence. Hence, it held that the respondents could not be blamed for the\n\ndelay as the time taken by government authorities to provide\n\napprovals was not within their control and they had taken all the\n\nmeasures that they could. Consequently, the APTEL found that the\n\nrespondents are entitled to the benefit of the force majeure clause\n\nand an extension of time, as was already approved by the\n\nappellant.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P005_C04",
+      "text": "The respondents were able to commission the project on\n\n24.08.2017, which falls within the extended period of 24 months\n\nfrom 07.09.2015.\n4.6 With regard to the reduction in tariff by the KERC, APTEL\n\nconsidered that the government scheme, under which these PPAs\n\nwere signed, was intended to create opportunity and benefit for\n\nfarmers by establishing solar power plants. The farmers had\n\ninvested huge amounts, sometimes through loans, in these\n\nprojects and a reduction in tariff from Rs. 8.40 to Rs. 4.36 per unit\n\nwould adversely affect them. Hence, it directed the appellant to pay\n\nthe difference in per unit tariff along with the late payment\n\nsurcharge as provided under\nArticle 6.4\nof the PPA.\n\n4.7 Lastly, it also set aside the imposition of liquidated damages\n\nunder the PPA as it found that there was no delay in securing\n\napprovals and commissioning the project.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P006_C01",
+      "text": "5. Submissions: We have heard Mr. K.M. Nataraj, ASG and Mr. Yasobant Das, senior advocate appearing for the appellants, and\n\nMr. Basava Prabhu Patil, senior advocate for the respondents. The\n\nlearned counsels have, through the course of their submissions,\n\nemphasised on whether or not the delay in the present matter\n\nwould be covered under the force majeure clause of the PPA.\n\n5.1 Learned ASG argued that a force majeure clause must be\n\nstrictly interpreted. There must be a specific pleading by the party\n\nclaiming force majeure and the burden is on him to prove the\n\nsame. In this regard, he made two primary submissions: first, there\n\nwas no force majeure event that warrants an extension of time\n\nunder\nArticle 2.5\nof the PPA; and second, the respondents have not\n\ncomplied with the requirement of submitting a written notice\n\ninvoking force majeure as required under\nArticle 8.3(b)(i). Further,\n\nhe has also argued that the APTEL was not justified in granting\n\nlate payment surcharge to the respondent as the same was not\n\npleaded before the KERC or in appeal.\n5.2 In regard the argument on force majeure, Mr.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P006_C02",
+      "text": "Nataraj has\n\ntaken us through the various dates concerning approval for change\n\nin land use and the evacuation approval. He has submitted that\n\nthe delay in securing these approvals is attributable to the\n\nrespondents, who were required to obtain these permissions\n\nwithin the contractually stipulated period of 365 days under\nArticle 2.1\nof the PPA, and to finally commission the project within\n\na period of 18 months. Despite being aware of these timelines, he\n\nsubmits that the respondents delayed the applications and\n\npayment of requisite fees. The government departments provided\n\nthe approvals within a few days from the time when the\n\nrespondents fulfilled all requirements. He therefore submits that\n\nthe delay is attributable to the respondents and hence, as per\nArticle 8.3(b)(iv)\n, they cannot claim benefit of force majeure. Consequently, the tariff must be reduced as per\nArticle 5.1\nas a\n\nhigher tariff increases the burden on consumers and hence, affects\n\npublic interest.\n5.3 Mr. Das supplemented these submissions by arguing that in\n\nCivil Appeal No. 6386 of 2021, the respondents therein had also\n\nraised the ground of demonetisation as a reason for delay in\n\ncommissioning.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P006_C03",
+      "text": "He submits that\nArticle 8.3\nof the PPA does not\n\ncover such a ground as a force majeure event.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P007_C01",
+      "text": "6. Mr. Patil, appearing for the respondents, has submitted that\n\nthere are three primary factors, among several others, that caused\n\nthe delay – (i) time taken for converting the land; (ii) time taken for\n\nthe KERC to approve the PPA; and (iii) time taken for the\n\nevacuation approval. He submits that these concerns have been\n\nraised by not only the respondents in the present case but in\n\nseveral other cases. Due to the extent to which SPDs were facing\n\nthese issues, the government directed DISCOMs to set up\n\ncommittees to look into the same and consider the facts of each\n\ncase individually. It is pursuant to this direction that the\n\nrespondents’ case was considered by the appellant, who granted a\n\n6-month extension on 02.03.2017 by exercising its power under\nArticle 2.5\nread with\nArticle 8.3\nof the PPA. He submits that it was\n\nincorrect for the KERC to then require the respondents to file a\n\nseparate petition to seek extension as the same is not as per the\n\nterms of the PPA. He further submits that the KERC had perversely\n\nappreciated the evidence regarding delay and that it should not\n\nhave rejected the petition when the appellant had already granted\n\nthe extension.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P007_C02",
+      "text": "Further, he submitted that the respondents were\n\nable to complete the project within the extended time period.\n\n6.1 Mr. Patil also took us through several orders of this Court8\n\nthat dismiss appeals arising out of similar orders by the APTEL. He has specifically referred to the APTEL’s decision in\n\nIn Civil Appeal No. 3958/2020; Civil Appeal No. 897/2022; Civil Appeal No. 5134/2021; Civil Appeal Diary\nNos. 32980/2022, 33053/2022 and 33572/2022. Chennamangathihalli Solar Power Project LLP v. BESCOM 9 and has\n\nsubmitted that this decision has been relied on by the APTEL in\n\nseveral subsequent decisions arising out of similar facts, including\n\nthe present impugned order. This Court has dismissed the appeal\n\narising out of Chennamangathihalli (supra)10 and appeals from\n\nother APTEL orders relying on it. Mr. Nataraj, in his written\n\nsubmissions, has sought to differentiate these cases from the\n\npresent matter on facts.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P008_C01",
+      "text": "7. Scope of Supreme Court’s appellate jurisdiction under\nSection\n\nof the Act: Before we deal with the submissions of the learned\n\ncounsels, we must take note of the scope of our appellate\n\njurisdiction under\nSection 125\n, which reads:\n“\nSection 125\n. (Appeal to Supreme Court):\nAny person aggrieved by any decision or order of the Appellate\n Tribunal, may, file an appeal to the Supreme Court within sixty days\n from the date of communication of the decision or order of the\n Appellate Tribunal, to him, on any one or more of the grounds\n specified in\nsection 100\nof the Code of Civil Procedure,1908…”\n\n7.1\nSection 100\nof the CPC restricts the High Court’s\n\njurisdiction in second appeals to cases that involve ‘substantial\n\nquestions of law’. There are two components to this requirement –\n(i) there must be a ‘question of law’; and (ii) such question of law\n\nmust be ‘substantial’.\n\n2020 SCC OnLine APTEL 75. In Civil Appeal No. 3958/2020.\n\n7.2 In\nSEBI v. Mega Corporation Limited\n11, this Court analysed\n\nthe meaning of ‘question of law’ to determine the scope of its\n\nappellate jurisdiction under\nSection 15Z\nof the SEBI Act, 1992 12.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P008_C02",
+      "text": "It held that this phrase is open textured and must be interpreted\n\nby looking at the words in their context13. The relevant portions\n\nare extracted:\n“17. The jurisdiction of the Supreme Court under Section 15Z to\n consider any question of law arising from the orders of the\n Tribunal should therefore be seen in the ‘context’ of the powers and\n jurisdiction of the Tribunal under\nSections 15K\n,\n15L\n,\n15M\n,\n15T\n,\n15U\nand\n15Y\nof the Act. It is in the functioning of the Tribunal to re-examine\n all questions of fact at the appellate stage while exercising jurisdiction\n under\nSection 15T\nof the Act. In Clariant and National Securities\n Depository, this Court had an occasion to examine the jurisdiction of\n the Tribunal and explain that the Tribunal has wide powers. Being a\n permanent body, apart from acting as an appellate Tribunal on fact,\n the Tribunal routinely interprets the Act, Rules and Regulations made\n thereunder and evolves a legal regime, systematically developed over\n a period of time. The advantage and benefit of this process is\n consistency and structural evolution of the sectorial laws.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P009_C01",
+      "text": "18. It is in the above-referred context that the Supreme Court while\n exercising appellate jurisdiction under\nSection 15Z\nof the Act would\n be measured in its approach while entertaining any appeal from the\n decision of the Tribunal. This freedom to evolve and interpret laws\n must belong to the Tribunals to subserve the regulatory regime for\n clarity and consistency and it is with this perspective that the\n Supreme Court will consider appeals against judgment of the\n Tribunals on questions of law arising from its orders.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P010_C01",
+      "text": "19. It is in this very context that the UK Supreme Court in the case\n of Jones v. First Tier Tribunal, formulated certain principles for\n appellate courts to interfere against the orders of Tribunals on the\n ground of existence of questions of law. The Court held as under:\n“16 … It is primarily for the tribunals, not the appellate\n courts, to develop a consistent approach to these issues [of\n\n2022 SCC OnLine SC 361. Section 15Z\nof the SEBI Act, 1992 reads:\n“15Z. Appeal to Supreme Court.-- Any person aggrieved by any decision or order of the Securities\n Appellate Tribunal may file an appeal to the Supreme Court within sixty days from the date of\n communication of the decision or order of the Securities Appellate Tribunal to him on any question\n of law arising out of such order…” (emphasis supplied)\n\nibid, para 16.\n\nlaw and fact], bearing in mind that they are peculiarly well\n fitted to determine them. A pragmatic approach should be\n taken to the dividing line between law and fact, so that the\n expertise of tribunals at the first tier and that of the Upper\n Tribunal can be used to best effect.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P010_C02",
+      "text": "An appeal court should\n not venture too readily into this area by classifying issues\n as issues of law which are really best left for determination\n by the specialist appellate tribunals.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P011_C01",
+      "text": "20. The scope of appeal under\nSection 15Z\nmay be formulated as\n under:\n20.1 The Supreme Court will exercise jurisdiction only when there is\n a question of law arising for consideration from the decision of the\n Tribunal. A question of law may arise when there is an erroneous\n construction of the legal provisions of the statute or the general\n principles of law. In such cases, the Supreme Court in exercise of its\n jurisdiction of\nSection 15Z\nmay substitute its decision on any question\n of law that it considers appropriate.\n20.2 However, not every interpretation of the law would amount to a\n question of law warranting exercise of jurisdiction under\nSection 15Z\n. The Tribunal while exercising jurisdiction under\nSection 15T\n, apart\n from acting as an appellate authority on fact, also interprets the Act,\n Rules and Regulations made thereunder and systematically evolves\n a legal regime. These very principles are applied consistently for\n structural evolution of the sectorial laws. This freedom to evolve and\n interpret laws must belong to the Tribunal to subserve the Regulatory\n regime for clarity and consistency.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P011_C02",
+      "text": "These are policy and functional\n considerations which the Supreme Court will keep in mind while\n exercising its jurisdiction under\nSection 15Z\n.”\n\n7.3 The above understanding of ‘question of law’ as a\n\nprecondition to this Court’s exercise of appellate jurisdiction under\n\nregulatory statutes is extremely pertinent to the present matter. The Act\nenvisages the establishment of State Electricity Regulatory\n\nCommissions and the Central Electricity Regulatory Commission\n\nas expert and specialised bodies that discharge advisory,\n\nregulatory, and adjudicatory functions.14 It has established the\n\nThe functions of the Central Commission are enlisted in\nSection 79\nof the Act. Similarly, Section 86 provides\nthe functions of the State Commissions.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P011_C03",
+      "text": "APTEL as an appellate body to hear appeals against orders of the\n\nadjudicating officers or the Appropriate Commission. 15 Hence,\n\nwhile delineating the contours of this Court’s interference in\n\nappeal under Section 125, we must be mindful and measured so\n\nas to enable a systematic and coherent development of electricity\n\nlaw by the Commissions and the APTEL.\n7.4 Having examined the scope of this Court’s exercise of\n\nappellate jurisdiction when there is a ‘question of law’ under\nSection 15Z\nof the SEBI Act, the position that emerges in this case,\n\nit is a little more restrictive as the requirement under Section 125\n\nis not merely a ‘question of a law’ but a ‘substantial question of\n\nlaw’.16\n8. Analysis on merits: The above discussion provides the context\n\nin which we decide the present appeals. We take note of several\n\norders of this Court that have dismissed appeals arising out of\n\nsimilar orders and similar facts 17. We find it necessary to state our\n\nreasons for dismissing the present appeals, to finally settle this\n\nissue. We will therefore analyse the submissions of the learned\n\nSection 110 establishes the APTEL.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P011_C04",
+      "text": "Section 111 provides the scope of appellate jurisdiction of the APTEL and\nSection 120 sets out the procedure to be followed by the APTEL and the powers of the APTEL. The requirement of ‘substantial question of law’ for this Court to exercise appellate jurisdiction under Section\n125 has also been recognised in\nBSES Rajdhani Power Limited v. Delhi Electricity Regulatory Commission\n, (2023)\n4 SCC 788. In Civil Appeal No. 3958/2020; Civil Appeal No. 897/2022; Civil Appeal No. 5134/2021; Civil Appeal Diary\nNos. 32980/2022, 33053/2022 and 33572/2022.\n\ncounsels in light of the scope of our jurisdiction and the reasoning\n\nand findings of the impugned order.\n8.1 At the outset, it is necessary to state that the learned ASG\n\nand learned senior counsel for the appellant have not proposed a\n\nsubstantial question of law for this Court to consider. Rather, they\n\nhave argued on facts as to whether or not the delay is attributable\n\nto the respondents, and consequently whether force majeure is\n\napplicable. We will analyse the impugned order, as well as the\n\nKERC’s order, to determine whether there is any substantial\n\nquestion of law that calls for our interference.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P012_C01",
+      "text": "9. Clauses of the Power Purchase Agreement (PPA): Before\n\ndiscussing the orders of the KERC and the APTEL, it is necessary\n\nto identify the relevant clauses of the PPA. Article 2.1\nof the PPA\n\nimposes the obligation on the SPD to secure necessary approvals,\n\nclearances, and permits within 365 days. Liquidated damages can\n\nbe imposed on the SPD under\nArticle 2.2\nin case of delay, provided\n\nthat the delay is not attributable to the appellant or due to a force\n\nmajeure event.\n9.1 Article 2.5.1 permits the extension of the SCD in case the\n\nSPD is unable to fulfil its contractual obligations due to the\n\nappellant’s default or there are force majeure events that affect\n\neither the appellant or the SPD. The list of force majeure events is\n\nset out in\nArticle 8.3(a)\n, and sub-clause (vi) is the most relevant for\n\nus. A party can invoke the force majeure clause subject to the\n\nconditions set out in\nArticle 8.3(b).\n9.2 Article 2.5.7 provides that subject to the other provisions of\n\nthe PPA, the SPD is liable to pay liquidated damages if it is unable\n\nto supply power to the appellant by the SCD.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P012_C02",
+      "text": "Therefore, the\n\npayment of damages under this clause is subject to an extension\n\nof time under Article 2.5.1. Article 5.1\nprovides for the tariff rate\n\npayable to the SPD as Rs. 8.40 per unit. However, in cases of delay,\n\nsubject to extension of time under\nArticle 2.5\n, it provides that the\n\nlower of Rs. 8.40 per unit and the varied tariff applicable as on the\n\ndate of commercial operation will apply. A plain reading of\nArticle\n\n5.1\nmakes it clear that the lower tariff will not apply if there is an\n\nextension of time under\nArticle 2.5.\n9.3 The relevant clauses of the PPA are reproduced for ready\n\nreference:\n“Article 2.1: Conditions Precedent\n The obligations of BESCOM and the SPD under this Agreement are\n conditional upon the occurrence of the following in full within 365\n days from the effective date.\n2.1.1\n(i)The SPD shall obtain all permits, clearances and approvals\n (whether Statutory or otherwise) as required to execute and operate\n the Protect hereinafter referred to as \"Approvals\"):\n\n(ii) The Conditions Precedent required to be satisfied by the SPD shall\nbe deemed to have been fulfilled when the SPD shall submit:\na.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P012_C03",
+      "text": "The DPR to BESCOM and achieve financial closure and\n provide a certificate to BESCOM from the lead banker to this\n effect;\nb. All Consents, Clearances and Permits required for supply of\n power to BESCOM as per the terms of this Agreement; and\n c. Power evacuation approval from Karnataka Power\n Transmission Company Limited or BESCOM, as the case\n maybe.\n2.1.2 SPD shall make all reasonable endeavors to satisfy the\nConditions Precedent within the time stipulated and BESCOM shall\nprovide to the SPD all the reasonable cooperation as may be required\nto the SPD for satisfying the Conditions Precedent.\n2.1.3 The SPD shall notify BESCOM in writing at least once a month\non the progress made in satisfying the Conditions Precedent.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P012_C04",
+      "text": "The\ndate, on which the SPD fulfills any of the Conditions Precedent\npursuant to Clause 2.1.1, it shall promptly notify BESCOM of the\nsame.”\n\n“Article 2.2: Damages for delay by the SPD:\n“2.2.1 In the event that the SPD does not fulfill any or all of the\nConditions Precedent set forth in Clause 2.1 within the period of 365\ndays and the delay has not occurred for any reasons attributable to\nBESCOM or due to Force Majeure, the SPD shall pay to BESCOM\ndamages in an amount calculated at the rate of 0.2% (zero point two\nper cent) of the Performance Security for each day's delay until the\nfulfillment of such Conditions Precedent, subject to a maximum period\nof 60 (Sixty) days. On expiry of the said 60 (Sixty) days, BESCOM at\nits discretion may terminate this Agreement.”\nArticle 2.5:\nExtension of Time\n“2.5.1 In the event that the SPD is prevented from performing its\nobligations under Clause 4.1 by the Scheduled Commissioning Date\ndue to:\na. Any BESCOM Event of Default; or\n b. Force Majeure Events affecting BESCOM; or\n c.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P012_C05",
+      "text": "Force Majeure Events affecting the SPD,\n2.5.2 The Scheduled Commissioning Date and the Expiry Date shall\nbe deferred, subject to the reasons and limits prescribed in Clause\n2.5.1 and Clause 2.5.3 for a reasonable period but not less than 'day\nfor day' basis, to permit the SPD or BESCOM through the use of due\ndiligence, to overcome the effects of the Force Majeure Events\naffecting the SPD or BESCOM, or till such time such Event of Default\nis rectified by BESCOM.\n2.5.3. In case of extension occurring due to reasons specified in clause\n2.5.1 (a), any of the dates specified therein can be extended, subject\nto the condition that the Scheduled Commissioning Date would not be\nextended by more than 6 (six) months.\n\n…\n2.5.6. As a result of such extension, the Scheduled Commissioning\nDate and the Expiry Date newly determined date shall be deemed to\nbe the Scheduled Commissioning Date and the Expiry Date for the\npurposes of this Agreement.\n2.5.7. Liquidated damages for delay in commencement of supply of\npower to BESCOMs.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P012_C06",
+      "text": "Subject to the other provisions of this agreement, if the SPD is unable\nto commence supply of power to BESCOM by the scheduled\ncommissioning date, the SPD shall pay to BESCOM, liquidated\ndamages for the delay in such commencement of supply of power as\nfollows:\n(a) For the delay up to one month-amount equivalent to 20% of the\n performance security. (b) For the delay of more than one month up to three months-amount\n equivalent to 40% of the performance security. (c) For the delay of more than three months up to six months-amount\n equivalent to 100% of the performance security. For avoidance of doubt, in the event of failure to pay the above\nmentioned damages by the SPD, the BESCOM entitled to encash the\nperformance Security.”\nArticle 5:\nRates and Charges:\n“5.1 Tariff payable: The SPD shall be entitled to receive the Tariff of\nRs. 8.40 per kwh based on the KERC tariff order S/03/1 dated\n10.10.2013 in respect of SPD's Solar PV projects in terms of this\nagreement for the period between COD and the Expiry Date.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P012_C07",
+      "text": "However, subject to Clause 2.5, if there is a delay in commissioning\nof the Project beyond the Scheduled Commissioning Date and during\nsuch period such period there is a variation in the KERC Tariff, then\nthe applicable Tariff for the projects shall be the lower of the following:\n(i) Rs.8.40 per kwh\n(ii) varied tariff applicable as on the date of Commercial Operation…”\nArticle 8:\nForce Majeure\n“8.3 Force Majeure Events:\na) Neither Party shall be responsible or liable for or deemed in breach\nhereof because of any delay or failure in the performance of its\nobligations hereunder (except for obligations to pay money due prior\nto occurrence of Force Majeure events under this Agreement) or failure\nto meet milestone dates due to any event or circumstance (a \"Force\nMajeure Event\") beyond the reasonable control of the Party affected\nby such delay or failure, including the occurrence of any of the\nfollowing:\ni. Acts of God;\nii. Typhoons, floods, lightning, cyclone, hurricane, drought, famine,\nepidemic, plague or other natural calamities;\niii. Strikes, work stoppages, work slowdowns or other labor dispute\nwhich affects a Party's ability to perform under this Agreement;\n\niv.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P012_C08",
+      "text": "Acts of war (whether declared or undeclared), invasion or civil\n unrest;\nv. Any requirement, action or omission to act pursuant to any\n judgment or order of any court or judicial authority in India (provided\n such requirement, action or omission to act is not due to the breach\n by the SPD or BESCOM, of any Law or any of their respective\n obligations under this Agreement);\nvi. Inability despite complying with all legal requirements to obtain,\n renew or maintain required licenses or Legal Approvals;\n vii. Fire, Earthquakes, explosions, accidents, landslides;\n viii. Expropriation and/or compulsory acquisition of the Project in\n whole or in part;\nix. Chemical or radioactive contamination or ionizing radiation; or\n x.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P012_C09",
+      "text": "Damage to or breakdown of transmission facilities of either Party;\nb) The availability of the above item (a) to excuse a Party's obligations\n under this Agreement due to a Force Majeure Event shall be subject\n to the following limitations and restrictions:\n(i) The non-performing Party gives the other Party written notice\n describing the particulars of the Force Majeure Event as soon as\n practicable after its occurrence;\n(ii) The suspension of performance is of no greater scope and of no\n longer duration than is required by the Force Majeure Event. (iii) The non-performing Party is able to resume performance of its\n obligations under this Agreement, it shall give the other Party written\n notice to that effect;\n(iv) The Force Majeure Event was not caused by the non performing\n Party's negligent or intentional acts, errors or omissions, or by its\n negligence/failure to comply with any material Law, or by any\n material breach or default under this Agreement;\n(v) In no event shall a Force Majeure Event excuse the obligations of\n a Party that are required to be completely performed prior to the\n occurrence of a Force Majeure Event.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P013_C01",
+      "text": "10. Re: Applicability of the force majeure clause: The primary\n\nissue for our consideration is whether the delay in this case is due\n\nto a force majeure event as defined under\nArticle 8.3\n, and\n\nconsequently whether the respondents were entitled to an\n\nextension of time under\nArticle 2.5.\nIf the answer to these\n\nquestions is affirmative, the tariff cannot be lowered under\n\nArticle 5.1\nand liquidated damages cannot be imposed under\nArticles 2.2\nand 2.5.7.\n10.1 The law on force majeure, specifically in the context of PPAs,\n\nhas been comprehensively dealt with by this Court in\nEnergy\n\nWatchdog v. Central Electricity Regulatory Commission",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P014_C01",
+      "text": "18. The Court\n\ndelved into contractual jurisprudence on force majeure clauses\n\nand frustration of contracts. It held that\nSections 32\nand\n\nof the\n\nIndian Contract Act, 1872 19 govern the law on force majeure. When\n\nthe contract contains an express or implied force majeure clause,\n\nit is governed under\nChapter III of the Contract Act\n, specifically\nSection 32\n. In such cases, the ‘doctrine of frustration’ in Section\n\n56 does not apply and the court must interpret the force majeure\n\nclause contained in the contract 20. It held that a force majeure\n\nclause must be narrowly construed 21. (2017) 14 SCC 80. Section 32\nreads:\n“32. Enforcement of contracts contingent on an event happening.—Contingent contracts to do or\n not to do anything if an uncertain future event happens, cannot be enforced by law unless and until\n that event has happened. If the event becomes impossible, such contracts become void.”\nSection 56 reads:\n“56. Agreement to do impossible act.—An agreement to do an act impossible in itself is void.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P014_C02",
+      "text": "Contract to do act afterwards becoming impossible or unlawful.—A contract to do an act which,\n after the contract is made, becomes impossible, or, by reason of some event which the promisor\n could not prevent, unlawful, becomes void when the act becomes impossible or unlawful. Compensation for loss through non-performance of act known to be impossible or unlawful.—\n Where one person has promised to do something which he knew, or, with reasonable diligence,\n might have known, and which the promisee did not know, to be impossible or unlawful, such\n promisor must make compensation to such promisee for any loss which such promisee sustains\n through the non-performance of the promise.”\n\nEnergy Watchdog\n(supra), para 47.\n\nibid, para 45.\n\n10.2\nThe present case\nis clearly one where the PPA contains an\n\nexplicit force majeure clause in\nArticle 8.3\n, which has already been\n\nextracted above. The question is whether the delay in\n\ncommissioning falls within the ambit of this clause. Article 8.3(a)(vi)\nis the most relevant force majeure event that\n\nwould apply to the facts here. It reads:\n“vi.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P014_C03",
+      "text": "Inability despite complying with all legal requirements to\n obtain, renew or maintain required licenses or Legal Approvals”\nArticle 8.3(b)(iv)\ndisentitles a party from claiming force majeure\n\nwhen the event was caused by its own negligence, intentional act,\n\nor omission.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P014_C04",
+      "text": "It reads:\n“b) The availability of the above item (a) to excuse a Party's\n obligations under this Agreement due to a Force Majeure Event\n shall be subject to the following limitations and restrictions:\n …\n(iv) The Force Majeure Event was not caused by the non\n performing Party's negligent or intentional acts, errors or\n omissions, or by its negligence/failure to comply with any\n material Law, or by any material breach or default under this\n Agreement…”\n\n10.3 When these clauses are read together, it is clear that the\n\nSPD would be entitled to the benefit of\nArticle 8.3(a)(vi)\nwhen it is\n\nunable to secure the necessary approvals and licenses required\n\nunder the PPA, provided that there is no negligence or intentional\n\nact or omission on its part that caused this situation.\n\n10.4 The entire dispute before the KERC and the APTEL revolves\n\non a question of fact – whether the respondents were negligent or\n\nnot diligent in securing approvals and hence, is the delay in\n\ncommissioning attributable to them.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P014_C05",
+      "text": "The KERC’s appreciation of\n\nthe evidence has led it to the conclusion that the delay in\n\ncommissioning was due to the respondents’ delay in making the\n\napplications, despite the approval of the PPA. However, the APTEL\n\nhas taken note of certain additional factors affecting the time taken\n\nto secure the approvals that were not considered by the KERC. These include the time taken by the government to provide the\n\nPTCL that is required for approval of land conversion, and the\n\ndelay caused by the authority in evacuation approval. Considering\n\nthese additional factors, the APTEL has reappreciated the evidence\n\nto find that the delay was not attributable to the respondents but\n\nto the government bodies and relevant authorities. We find that\n\nthere is no error in the APTEL’s approach, and it is reasonable in\n\nits reappreciation of evidence.\n10.5 Further, the APTEL also correctly took note of the fact that\n\na large number of SPDs have raised similar issues, and the\n\ngovernment has responded to the same by requiring DISCOMs to\n\nset-up committees to look into these cases.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P014_C06",
+      "text": "The large number of\n\ncases that raise similar grounds and the government’s response\n\nshow that the delay was not faced by the respondents alone, and\n\nhence cannot be entirely blamed on them. The government has\n\nitself acknowledged that the land use conversion process is a long\n\nand arduous one, which led it to deem conversion for solar power\n\nprojects under the present scheme. However, due to lapses in the\n\nimplementation of the deemed conversion, the SPDs were unable\n\nto avail the same. The APTEL has rightly appreciated these facts\n\nto hold that the respondents acted diligently and with care and\n\ncaution to secure approvals, and hence their claims cannot be\n\nrejected through recourse to\nArticle 8.3(b)(iv).",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P015_C01",
+      "text": "11. Finally, we have also considered the letter by the appellant\n\ndated 02.03.2017 that granted a 6-month extension to the\n\nrespondents after considering its individual facts and\n\ncircumstances. This grant of extension must be seen in light of the\n\ngovernment’s direction to DISCOMs dated 24.11.2016 to set up 3-\n\nmember committees to consider each request for extension. This\n\nshows that the appellant, after considering the specific case of the\n\nrespondents, has itself accepted that they are entitled to the\n\nbenefit of\nArticle 2.5\nread with\nArticle 8.3\nof the PPA. Even before\n\nthe KERC, the appellant did not challenge the respondents’\n\ncontentions. Therefore, at the appellate stage before the APTEL\n\nand this Court, they cannot be permitted to take a contrary stance\n\nand raise the plea that the delay was attributable to the\n\nrespondents and not covered by the force majeure clause or that\n\nthere was non-compliance with the notice requirement under\nArticle 8.3(b)(i).\nWe therefore reject the contentions of the appellant\n\nthat force majeure does not apply in this case.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P016_C01",
+      "text": "12. In light of the above findings of fact by the APTEL that the\n\ndelay is not attributable to the respondents and that the force\n\nmajeure clause is applicable, it rightly held that the extension of\n\ntime under\nArticle 2.5\nis warranted and the commissioning of the\n\nproject on 24.08.2017 is within the extended period of 24 months.\n\nConsequently, the APTEL also rightly held that there is no occasion\n\nfor the imposition of liquidated damages under\nArticles 2.2\nand\n\n2.5.7 or for the reduction of tariff under\nArticle 5.1\nof the PPA.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P017_C01",
+      "text": "13. Conclusion: After considering the learned counsels’\n\nsubmissions in light of the above findings of the APTEL, we find\n\nthat no substantial question of law arises in the present case. The\n\nAPTEL has primarily decided a question of fact as to the\n\nattributability of the delay, and from the above, it is clear that the\n\nAPTEL’s findings are neither illegal nor unreasonable. Hence, we\n\nfind no reason to interfere with the same.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P018_C01",
+      "text": "14. Lastly, we also reject the appellant’s contention that the\n\nAPTEL’s direction to pay late payment surcharge to the\n\nrespondents is unjustified since the same was not pleaded. As we\n\nhave already held, the APTEL rightly restored the tariff of Rs. 8.4\n\nper unit and directed the appellant to pay the difference amount.\n\nThe direction to pay the late payment surcharge on this amount is\n\nexplicitly rooted in the PPA, and hence, is in furtherance of the\n\nintention of the parties. There is no reason to set aside the same.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P019_C01",
+      "text": "15. With the above reasons, we dismiss the present appeals.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP_P020_C01",
+      "text": "16. No order as to costs.\n………………………………....J.\n [PAMIDIGHANTAM SRI NARASIMHA]\n\n ………………………………....J.\n [PANKAJ MITHAL]\n\nNEW DELHI;\nAugust 27, 2024",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Banglore Electricity Supply Company ... vs Hirehalli Solar Power Project L.L.P",
+    "case_id": "SC_2024_BANGLORE_ELECTRICITY_SUPPLY_COMPANY_VS_HIREHALLI_SOLAR_POWER_PROJECT_LLP",
+    "court": "Supreme Court of India",
+    "year": "2024",
+    "facts_summary": "1. The short issue arising from these appeals is whether the\n\nextension of the Scheduled Commissioning Date1 was occasioned\n\nunder the force majeure clause of the Power Purchase Agreement2,\n\nand consequently, whether the reduction in tariff payable to the\n\nrespondents is justified. While upholding the decision of the\n\nAppellate Tribunal for Electricity 3 we have examined the scope and\n\nambit of our appellate jurisdiction under\nSection 125\nof the\n\nElectricity Act, 2003 4. We have held that the restrictive scope of\n\nappellate jurisdiction is a product not only of the statutory\n\npreconditions, but also a necessary measure to enable freedom to\n\nstatutory regulator and Tribunal to develop sectorial laws through\n\na principled and consistent approach. 2. Facts: Since the facts and the PPAs are similar in all three\n\nappeals, we will deal with the facts in the lead Civil Appeal No.\n\n7595/2021, where the most relevant facts are as follows:\n2.1 State of Karnataka introduced a policy dated 26.08.2014 to\n\nidentify and promote solar energy projects by land-owning farmers. Hereinafter “SCD”. Hereinafter “PPA”. Hereinafter “APTEL”. Hereinafter “the Act”. These solar power plants of 1-3 MW capacity would generate and\n\nsell power to the State Electricity (Distribution) Supply\n\nCompanies5 at the tariff determined by the Karnataka Electricity\n\nRegulatory Commission6.\n2.2 Respondent no. 2 is one of the many farmers who applied\n\nunder the policy and is recognised as a solar power developer 7\n\nunde",
+    "legal_issues": "5. Submissions: We have heard Mr. K.M. Nataraj, ASG and Mr. Yasobant Das, senior advocate appearing for the appellants, and\n\nMr. Basava Prabhu Patil, senior advocate for the respondents. The\n\nlearned counsels have, through the course of their submissions,\n\nemphasised on whether or not the delay in the present matter\n\nwould be covered under the force majeure clause of the PPA.\n\n5.1 Learned ASG argued that a force majeure clause must be\n\nstrictly interpreted. There must be a specific pleading by the party\n\nclaiming force majeure and the burden is on him to prove the\n\nsame. In this regard, he made two primary submissions: first, there\n\nwas no force majeure event that warrants an extension of time\n\nunder\nArticle 2.5\nof the PPA; and second, the respondents have not\n\ncomplied with the requirement of submitting a written notice\n\ninvoking force majeure as required under\nArticle 8.3(b)(i). Further,\n\nhe has also argued that the APTEL was not justified in granting\n\nlate payment surcharge to the respondent as the same was not\n\npleaded before the KERC or in appeal.\n5.2 In regard the argument on force majeure, Mr. Nataraj has\n\ntaken us through the various dates concerning approval for change\n\nin land use and the evacuation approval. He has submitted that\n\nthe delay in securing these approvals is attributable to the\n\nrespondents, who were required to obtain these permissions\n\nwithin the contractually stipulated period of 365 days under\nArticle 2.1\nof the PPA, and to finally commission the p",
+    "ratio_summary": "APTEL as an appellate body to hear appeals against orders of the\n\nadjudicating officers or the Appropriate Commission. 15 Hence,\n\nwhile delineating the contours of this Court’s interference in\n\nappeal under Section 125, we must be mindful and measured so\n\nas to enable a systematic and coherent development of electricity\n\nlaw by the Commissions and the APTEL.\n7.4 Having examined the scope of this Court’s exercise of\n\nappellate jurisdiction when there is a ‘question of law’ under\nSection 15Z\nof the SEBI Act, the position that emerges in this case,\n\nit is a little more restrictive as the requirement under Section 125\n\nis not merely a ‘question of a law’ but a ‘substantial question of\n\nlaw’.16\n8. Analysis on merits: The above discussion provides the context\n\nin which we decide the present appeals. We take note of several\n\norders of this Court that have dismissed appeals arising out of\n\nsimilar orders and similar facts 17. We find it necessary to state our\n\nreasons for dismissing the present appeals, to finally settle this\n\nissue. We will therefore analyse the submissions of the learned\n\nSection 110 establishes the APTEL. Section 111 provides the scope of appellate jurisdiction of the APTEL and\nSection 120 sets out the procedure to be followed by the APTEL and the powers of the APTEL. The requirement of ‘substantial question of law’ for this Court to exercise appellate jurisdiction under Section\n125 has also been recognised in\nBSES Rajdhani Power Limited v. Delhi Electricity Regul",
+    "final_order": "16. No order as to costs.\n………………………………....J.\n [PAMIDIGHANTAM SRI NARASIMHA]\n\n ………………………………....J.\n [PANKAJ MITHAL]\n\nNEW DELHI;\nAugust 27, 2024",
+    "outcome_summary": "Dismissed. 16. No order as to costs.\n………………………………....J.\n [PAMIDIGHANTAM SRI NARASIMHA]\n\n ………………………………....J.\n [PANKAJ MITHAL]\n\nNEW DELHI;\nAugust 27, 2024",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

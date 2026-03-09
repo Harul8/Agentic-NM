@@ -1,0 +1,71 @@
+{
+  "case_id": "SC_2022_2022_FEB_116",
+  "case_name": "M/S. Himalaya Distilleries Limited vs Urmila Pradha",
+  "normalized_case_name": "M_S._HIMALAYA_DISTILLERIES_LIMITED_VS_URMILA_PRADHA",
+  "court": "Supreme Court of India",
+  "year": "2022",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": "25 February 2022",
+  "judges": [
+    "Abhay S. Oka"
+  ],
+  "author": "Abhay S. Oka",
+  "bench_type": "single",
+  "petitioner": "M/S. Himalaya Distilleries Limited",
+  "respondent": "Urmila Pradha",
+  "reporter_citations": [],
+  "outcome": "disposed of",
+  "disposition": "disposed",
+  "cites_count": 0,
+  "cited_by_count": 0,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": "CIVIL ORIGINAL JURISDICTION",
+  "reportable": null,
+  "source_file": "Supreme Court\\2022\\FEB\\2022_FEB_116.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2022_2022_FEB_116_P001_C01",
+      "text": "to the order of this Court dated 1st October, 2021.\nThe learned senior counsel appearing for the parties agree",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2022_2022_FEB_116_P002_C01",
+      "text": "Bengal where the suit subject matter of this petition can be tried.\nAccordingly, the order dated 1st October, 2021 is modified. It",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2022_2022_FEB_116_P003_C01",
+      "text": "Senior Civil Judge at Siliguri, State of West Bengal.\nWith the above discussion, the misc. application is disposed",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "M/S. Himalaya Distilleries Limited vs Urmila Pradha",
+    "case_id": "SC_2022_2022_FEB_116",
+    "court": "Supreme Court of India",
+    "year": "2022",
+    "facts_summary": "Bengal where the suit subject matter of this petition can be tried.\nAccordingly, the order dated 1st October, 2021 is modified. It Senior Civil Judge at Siliguri, State of West Bengal.\nWith the above discussion, the misc. application is disposed",
+    "legal_issues": "to the order of this Court dated 1st October, 2021.\nThe learned senior counsel appearing for the parties agree",
+    "ratio_summary": "",
+    "final_order": "",
+    "outcome_summary": "Disposed of",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

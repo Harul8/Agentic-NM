@@ -1,0 +1,202 @@
+{
+  "case_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS",
+  "case_name": "R.B. Chaudhary Raghuraj Singh vs Murari Lal & Ors",
+  "normalized_case_name": "R.B._CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_&_ORS",
+  "court": "Supreme Court of India",
+  "year": "1967",
+  "judgment_template": null,
+  "case_number": "Petition 440 of 1953",
+  "case_number_regex": "GENERIC_PETITION",
+  "date_of_judgment": "16 March 1967",
+  "judges": [
+    "K.N. Wanchoo",
+    "Vishishtha Bhargava"
+  ],
+  "author": "K.N. Wanchoo",
+  "bench_type": "division",
+  "petitioner": "R.B. Chaudhary Raghuraj Singh",
+  "respondent": "Murari Lal & Ors",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 8,
+  "cited_by_count": 11,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "1967 AIR 1631",
+    "1967 SCR (3) 199",
+    "AIR 1967 SUPREME COURT 1631"
+  ],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Supreme Court\\1967\\1967_274.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P001_C01",
+      "text": "ACT:\nU.P. Zamindar's Debt Reduction Act (15 of 1953), ss. 2(m), 3\nand--4--\"Suit relating to secured debt\" and \"decree relating\nto secured debt\", meaning of.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P002_C01",
+      "text": "HEADNOTE:\nA suit was filed by the respondents, on the basis of a\npromissory note executed in their favour by the appellant,\nand a decree was passed against the appellant. The decree\nprovided for payment of the amount due in instalments and\ncontained a default clause under which the whole decree\ncould be executed. The decree also created a charge on\ncertain immovable properties of the appellant. As default\nwas committed by the appellant, the respondents sought\nexecution of the decree. The appellant thereupon applied to\nthe Court which passed the decree, under s. 4 of the U.P. Zamindar's Debt Reduction Act, 1953 to reduce the decretal\namount. The first Court and the High Court on appeal,\ndismissed the appellant's application. In appeal to this Court,\nHELD : Section 4 of the Act did not apply in the present\ncase, and therefore the decretal amount could not be\nreduced. Section 3 of the Act provides for the reduction of debt at\nthe time of the passing the decree in \"a suit .... relating\nto secured debt\", and s. 4 provides for reduction of the\ndebts after the passing of \"a decree...... relating to a\nsecured debt\".",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P002_C02",
+      "text": "Whether the debt was secured or not is a\nmatter that has to be tested, both for s. 4 as well as for\ns. 3, on the date the suit was filed. If on that date the\ndebt was secured, as per the definition of a secured debt in\ns. 2(m) of the Act, by a mortgage or a charge under\ns. 100\nof the Transfer of Property Act, the suit would be relating\nto a secured debt and so would be the decree which might\nlater be passed in that suit. But if on that date, the debt\nwas not secured it cannot be said that the decree related to\na secured debt simply because the decree created a charge. The legislature could not have intended, that the fact that\nthe decree created a charge should result in converting what\nwas an unsecured debt into a secured debt for the purpose of\ns. 4\n. [202 A, C-G; 203 E, H; 204 A-B]",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P003_C01",
+      "text": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeals Nos. 952 and\n953 of 1964.\nAppeals by special leave from the judgment and order dated\nJuly 24, 1961 of the Allahabad High Court in Execution First\nAppeal No. 440 of 1953 and Civil Revision No. 1402 of 1953.\nC. B. Agarwala and K. P. Gupta, for the appellant (in both\nthe appeals).\nS. P. Sinha and S. Shaukat Hussain, for respondent No. 1\n(in both the appeals).",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P004_C01",
+      "text": "The Judgment of the Court was delivered by\nWanchoo, J. These are two connected appeals by special leave\nfrom a common judgment of the Allahabad High Court. The\nfacts necessary for present purposes may be briefly\nindicated. The appellant borrowed some money on a\npromissory note from the respondents' predecessors. The\nsuit was filed by the respondents on the basis of the\npromissory note and a decree for Rs. 2,71,000/and odd was\npassed against the appellant. The decree provided for 20\ninstalments payable half-yearly. The decree also provided\nfor one or more instalments for pendente lite and future\ninterest beyond the twentieth instalment. The first\ninstalment was payable in November 1938 and thereafter each\ninstalment was payable on or before July 31 and December 31\neach year. There was also a default clause providing that\nin case there were three defaults in the payment of\ninstalments, the whole decree could be executed. Finally\nthe decree created a charge on 1 8 villages belonging to the\nappellant. It may be added that the charge was created\nunder s. 3 of the U.P. Agriculturists' Relief Act, No. XXVII\nof 1934. The appellant paid the first 17 instalments in\ntime.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P004_C02",
+      "text": "He paid the eighteenth instalment on July 31, 1948\nbut this was late as by then the 20th instalment had also\nfallen due. As the 19th and 20th instalments as well as\npendente lite and future interest had not been paid the\ndecree was put in execution by the respondents on April 26,\n1951 for recovery of Rs. 49,000/- and odd by the sale of a\nkothi and an Ahata belonging to the appellant. The decree-\nholder respondent also prayed that in case the whole amount\nwas notrealised from the sale of the above property,\nzamidari property on which a charge bad been created might\nbe put to sale. The appellant raised objections under\ns. 47\nof the Code of\nCivil Procedure against the execution. He also filed an\napplication under ss. 4 and 8 of the U.P. Zamindar's Debt\nReduction Act, No. XV of 1963, (hereinafter referred to as\nthe Act). It is unnecessary to refer to the objections in\ndetail, for in the present appeals we are concerned only\nwith one point, namely, whether\ns. 4\nof the Act applies to\nthe present case. Under that section the appellant had\napplied to the court which passed the decree to reduce the\namount as provided therein.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P004_C03",
+      "text": "Further in his objection under\ns. 47\nof the Code of Civil Procedure the appellant claimed\nthe same relief. That is how there were two proceedings in\nthe first court, one under\ns. 4\nof the Act and the other an\nobjection under\ns. 47\nof the Code of Civil Procedure. The\nfirst court held that\ns. 4\nof the Act did not apply. In\nconsequence it held that the amount for which execution had\nbeen taken out was not liable to reduction. It therefore\ndismissed both the application Linder\ns. 4\nas well as the\nobjection Linder\ns. 47\nof the Code of Civil Procedure. There was also a question",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P005_C01",
+      "text": "Of limitation, but we are not concerned in the present\nappeals with that question. This gave rise to two proceedings before the High Court. The appellant went in appeal against the dismissal of his\nobjection under\ns. 47\nof the Code of Civil Procedure. He\nalso filed a civil revision against the dismissal of his\napplication under s. 4 of the Act. The two matters were\nheard together by the High Court, which held that\ns. 4\ndid\nnot apply and therefore the amount could not be reduced. The High Court having refused to grant leave to the\nappellant, he secured special leave from this Court; and\nthat is how the matter arises before us. The Act\nwas passed in 1953 to give relief to zamindars whose\nlands had been acquired by the State under the\nU.P. Zamindari Abolition and Land Reforms Act\n, No. 1 of 1951.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P005_C02",
+      "text": "Section 2\ndefines certain terms out of which it is necessary\nto refer to the following -.\n\" (m) 'secured debt' means a debt secured by\n mortgage of an estate and other immovable\n property;\n(i) 'mortgage' with its cognate expressions\n shall have the meaning assigned to it in the\nTransfer of Property Act, 1882\nand includes a\n charge as defined in\nsection 100\nof that Act;\n(o) 'suit to which this Act applies' means\n any suit or proceeding relating to a debt\n whether secured or otherwise;\n(e) 'decree to which this Act applies' means\n a decree passed either before or after the\n commencement of this Act in a suit to which\n this Act applies;\n(f) 'debt' means an advance in cash or in\n kind and includes any transaction which is in\n substance a debt but does not include an\n advance as aforesaid made on or before the\n first day of July 1952..........\"\nCertain debts are exempt from this definition but we are not\nconcerned with them in the present appeals. It will be seen from these definitions that a decree in a\nsuit based on any debt is a decree to which the Act applies\nand such decrees can be of two kinds, namely, (i) those\nbased on a secured debt, and (ii) those based on an\nunsecured debt.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P005_C03",
+      "text": "A secured debt is a debt secured by a\nmortgage and includes a debt secured by a charge under s.\n100 of the\nTransfer of Property Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P006_C01",
+      "text": "Then comes\ns. 3\nwhich provides for reduction of debt at the\ntime of passing of decree Sub-section (1) thereof lays down\nthat \" notwithstanding anything in any law, agreement or\ndocument, in any suit to which this Act applies relating to\na secured debt, the court shall, after the amount due has\nbeen ascertained, but before passing a decree, proceed as\nhereinafter stated.\" Then follow provisions as to the manner\nin which the debt, would be reduced, but we are not\nconcerned with the details there of\nSection 3\ntherefore\napplies to a case where a decree relating to a secured debt\nhad not been passed before the Act came into force. In such\na case the court passing the decree has to reduce the amount\nin the manner provided in that section. It is however clear\nthat before the court can act under\ns. 3\n, it has to come to\nthe conclusion that the debt in question is a secured debt\ni.e. a debt secured by a mortgage or a charge under\ns. 100\nof the Transfer of Property Act. The mortgage or the charge\nmust be there on the date of the suit and the suit must be\nwith respect to a secured debt.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P006_C02",
+      "text": "The date therefore on which\nthe court has to see whether the debt in the suit before it\nis a secured debt or not is the date on which the suit is\nfiled. The High Court seems to be in error when it held\nthat under the definition of \"secured debt\" only such debts\nas are secured by a mortgage come in and not debts which are\nsecured by a charge. It seems to have overlooked that part\nof the definition of the word \"mortgage\" which lays down\nthat a mortgage will include a charge as defined in\ns. 100\nof the Transfer of Property Act. Therefore, even though a\ndebt may be secured by a charge it will be a secured debt\nfor the purpose of\ns. 3\nprovided the charge was there before\nthe date of the suit. We have referred to\ns. 3\nin some\ndetail because we are of opinion that the interpretation to\nbe put on\ns. 3\nwill have a direct bearing on the inter-\npretation of the words of\ns. 4\nwhere also the material words\nare the same as in\ns. 3\n. Section 4\nprovides for reduction of debts after passing of\ndecrees, and sub-s.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P006_C03",
+      "text": "(i) thereof reads thus :\n\"(1) Notwithstanding anything in\nthe Code of Civil\nProcedure\n, 1908, or any other law-the court which passed a\ndecree to which this Act applies relating to a secured debt,\nshall, on the application either of the decree-holder or\njudgment-debtor, proceed as hereinafter stated.\"\nThen come provisions as to the reduction of debt; but we are\nnot concerned with the details thereof. The question that has been posed before us is the meaning of\nthe words \"a decree...... relating to a secured debt\". The",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P007_C01",
+      "text": "comparable words in\nS. 3\nAre \"a suit relating to a secured\ndebt\". As we have already said, so far as\nS. 3\nis concerned\nit is the date on which the suit is filed which has to be\nseen to determine whether the suit relates to a secured debt\nas defined in the Act. It has been urged on behalf of the\nappellant that\nS. 4\napplies undoubtedly to a case where the\ndebt was a secured debt at the tithe the, suit was filed. But it is further urged that in an application under\ns. 4\n,\nthe court may also take into account the fact that though\nthe debt may not have been a secured debt on the date the\nsuit was filed in which the decree was passed, the decree\nhaving created a charge the debt becomes secured and the\ndecree relates to a secured debt, the relevant date in such\na case being the date on which the application under s. 4\nhas been made to the court. It is said that the words \"a\ndecree relating to secured debt\" means a decree which has\nsecured a debt whether the debt was secured before the suit\nwas filed or not. We are of opinion that this meaning cannot be given to the\nwords \"a decree relating to a secured debt\".",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P007_C02",
+      "text": "We have\nalready indicated that the comparable words in\nS. 3\nare the\nsame and there the words \"a suit relating to a secured debt\"\nclearly mean a suit which is based on a debt which was\nsecured before the suit was filed. On the same reasoning\nwhen\ns. 4\nspeaks of \"a decree relating to a secured debt\" it\nmeans a decree passed in a suit which was based on a secured\ndebt as on the date of the suit. The legislature could not\nhave intended by using these words in\ns. 4\nthat the fact\nthat the decree created a charge should result in converting\nwhat was an unsecured debt into a secured. debt for the\npurpose of\ns. 4\n. It seems to us that if one were to ask in a\ncase of this kind whether the decree related to a secured\ndebt or not, the answer would clearly be that the decree\ndoes not relate to a secured debt but to an unsecured debt\nbased on a promissory note. It is true that the decree\nitself created a charge but that is very different from\nsaying that the decree relates to a secured debt.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P007_C03",
+      "text": "We have\nno doubt that if the legislature intended that a decree\nwhich relates to an unsecured debt but which itself creates\na charge for any reason would also be covered by\ns. 4\n, it\nwould have used different and appropriate words to convey\nthat idea. Thus to our mind, as the words \"suit relating to\na secured debt\" mean a suit relating to a debt which was\nsecured on the date the suit was filed, a decree relating to\nsecured debt must also mean the same thing i.e. decree in\nrespect of a debt which was secured when the suit in which\nthe decree was passed was filed. The mere fact that the\ndecree created a charge for certain reasons, as in this\ncase, under the U.P. Agriculturists Relief Act, is no reason\nfor holding that the decree relates to a secured debt. Whe-\nther the debt was secured or otherwise is a matter which in\nour opinion has to be tested both for\ns. 4\nas well as for\ns.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS_P008_C01",
+      "text": "date the suit is filed. If on that date the debt was\nsecured, the suit would be relating to a secured debt and so\nwould be the decree which might later be passed in that\nsuit. But if on the date of the suit the debt was not\nsecured it cannot be said that the decree related to a\nsecured debt simply because the decree created a charge for\nsome reason or other. We are therefore of opinion that the\nHigh Court was right in the view it took that this case was\nnot covered by\ns. 4\nof the Act.\nThe appeals therefore fail and are hereby dismissed with\ncosts--one hearing fee.\nV.P.S.\nAppeals dismissed.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "R.B. Chaudhary Raghuraj Singh vs Murari Lal & Ors",
+    "case_id": "SC_1967_RB_CHAUDHARY_RAGHURAJ_SINGH_VS_MURARI_LAL_ORS",
+    "court": "Supreme Court of India",
+    "year": "1967",
+    "facts_summary": "HEADNOTE:\nA suit was filed by the respondents, on the basis of a\npromissory note executed in their favour by the appellant,\nand a decree was passed against the appellant. The decree\nprovided for payment of the amount due in instalments and\ncontained a default clause under which the whole decree\ncould be executed. The decree also created a charge on\ncertain immovable properties of the appellant. As default\nwas committed by the appellant, the respondents sought\nexecution of the decree. The appellant thereupon applied to\nthe Court which passed the decree, under s. 4 of the U.P. Zamindar's Debt Reduction Act, 1953 to reduce the decretal\namount. The first Court and the High Court on appeal,\ndismissed the appellant's application. In appeal to this Court,\nHELD : Section 4 of the Act did not apply in the present\ncase, and therefore the decretal amount could not be\nreduced. Section 3 of the Act provides for the reduction of debt at\nthe time of the passing the decree in \"a suit .... relating\nto secured debt\", and s. 4 provides for reduction of the\ndebts after the passing of \"a decree...... relating to a\nsecured debt\". Whether the debt was secured or not is a\nmatter that has to be tested, both for s. 4 as well as for\ns. 3, on the date the suit was filed. If on that date the\ndebt was secured, as per the definition of a secured debt in\ns. 2(m) of the Act, by a mortgage or a charge under\ns. 100\nof the Transfer of Property Act, the suit would be relating\nto a secured debt and so would be th",
+    "legal_issues": "JUDGMENT:\nCIVIL APPELLATE JURISDICTION : Civil Appeals Nos. 952 and\n953 of 1964.\nAppeals by special leave from the judgment and order dated\nJuly 24, 1961 of the Allahabad High Court in Execution First\nAppeal No. 440 of 1953 and Civil Revision No. 1402 of 1953.\nC. B. Agarwala and K. P. Gupta, for the appellant (in both\nthe appeals).\nS. P. Sinha and S. Shaukat Hussain, for respondent No. 1\n(in both the appeals).",
+    "ratio_summary": "(i) thereof reads thus :\n\"(1) Notwithstanding anything in\nthe Code of Civil\nProcedure\n, 1908, or any other law-the court which passed a\ndecree to which this Act applies relating to a secured debt,\nshall, on the application either of the decree-holder or\njudgment-debtor, proceed as hereinafter stated.\"\nThen come provisions as to the reduction of debt; but we are\nnot concerned with the details thereof. The question that has been posed before us is the meaning of\nthe words \"a decree...... relating to a secured debt\". The",
+    "final_order": "",
+    "outcome_summary": "Dismissed",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}

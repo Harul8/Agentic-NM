@@ -1,0 +1,403 @@
+{
+  "case_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD",
+  "case_name": "Commissioner Of Income Tax Udaipur vs M/S Chetak Enterprises Pvt. Ltd.",
+  "normalized_case_name": "COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_M_S_CHETAK_ENTERPRISES_PVT._LTD.",
+  "court": "Supreme Court of India",
+  "year": "2020",
+  "judgment_template": null,
+  "case_number": "Civil Appeal 1764 of 2010",
+  "case_number_regex": "CIVIL_APPEAL",
+  "date_of_judgment": "5 March 2020",
+  "judges": [
+    "Dinesh Maheshwari",
+    "A.M. Khanwilkar"
+  ],
+  "author": "A. M. Khanwilkar",
+  "bench_type": "division",
+  "petitioner": "Commissioner Of Income Tax Udaipur",
+  "respondent": "M/S Chetak Enterprises Pvt. Ltd.",
+  "reporter_citations": [],
+  "outcome": "dismissed",
+  "disposition": "dismissed",
+  "cites_count": 7,
+  "cited_by_count": 5,
+  "neutral_citation": null,
+  "equivalent_citations": [
+    "AIR 2020 SUPREME COURT 4305",
+    "AIRONLINE 2020 SC 334"
+  ],
+  "jurisdiction_type": "CIVIL APPELLATE JURISDICTION",
+  "reportable": true,
+  "source_file": "Supreme Court\\2020\\MAR\\2020_MAR_46.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P001_C01",
+      "text": "CIVIL APPELLATE JURISDICTION\n\n CIVIL APPEAL NO. 1764 OF 2010\n\n Commissioner of Income Tax, Udaipur … Appellant(s)\n\n Versus\n\n M/s. Chetak Enterprises Pvt. Ltd. …Respondent(s)\n\n JUDGMENT\nA. M. KHANWILKAR, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P002_C01",
+      "text": "1. This appeal takes exception to the judgment and order dated\n\n 5.5.2008 passed by the High Court of Judicature for Rajasthan at\n\n Jodhpur (for short, “the High Court”) in Income Tax Appeal No. 71 of",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C01",
+      "text": "2. The matter relates to Assessment Year 2002­2003, the relevant\n\n Previous/Financial year for which is 2001­2002 i.e. 1.4.2001 to\n\n 31.3.2002. Rajasthan for construction of road and collection of road/toll tax. The construction of road was completed by the said firm on 27.3.2000\n\nand the same was inaugurated on 1.4.2000. The firm was converted\n\ninto a private limited company on 28.3.2000 named as M/s. Chetak\n\nEnterprises (P) Ltd. (for short, “the assessee­Company”) under\nPart IX\n\nof the Companies Act, 1956\n(for short, “the\nCompanies Act\n”). On\n\nconversion of the firm into company, an intimation was given to the\n\nChief Engineer (Roads), P.W.D., Rajasthan, Jaipur. The said\n\nauthority noted the change and cancelled the registration of the firm\n\nand granted a fresh registration code to the assessee­Company. As\n\naforesaid, the road was inaugurated on 1.4.2000 and the assessee­\n\nCompany started collecting toll tax. For the relevant assessment\n\nyear, the assessee­Company claimed deduction under\nSection 80\n­IA\n\nof the Income Tax Act, 1961 (for short, “the\nIncome Tax Act\n”).",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C02",
+      "text": "The\n\nassessing officer declined that claim of the assessee­Company, which\n\ndecision was reversed by the Commissioner of Income­Tax (Appeals),\n\nUdaipur. The Income Tax Appellate Tribunal (for short, “the ITAT”)\n\nconfirmed the decision of the first appellate authority, following its\n\ndecision1 in the case of the assessee­Company for the Assessment\n\nYear 2001­2002. As a result, the Department preferred an appeal\n\nChetak Enterprises P. Ltd. vs. ACIT\n, (2005) 95 ITD 1 (Jodh.)\n\nbefore the High Court.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [
+        "Chetak Enterprises P. Ltd v ACIT\n"
+      ],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C03",
+      "text": "The High Court formulated the following\n\nquestion of law: ­\n\n “Whether in the facts and in the circumstances of\n the case, the assessee­Company was right in finding\n that the assessee fulfilled the condition of sub­\n Section (4)(i)(b) of\nSection 80\n­IA?”\nSection 80\n­IA, as applicable to Assessment Year 2002­03 reads thus:\n­\n\n “80­IA (1) Where the gross total income of an assessee\n includes any profits and gains derived from any business of\n an industrial undertaking or an enterprise referred to in\n sub­section (4) (such business being hereinafter referred to\n as the eligible business), there shall, in accordance with and\n subject to the provisions of this section, be allowed, in\n computing the total income of the assessee, a deduction\n from such profits and gains of an amount equal to hundred\n per cent of profits and gains derived from such business for\n the first five assessment years commencing at any time\n during the periods as specified in sub­section (2) and\n thereafter, twenty­five per cent of the profits and gains for\n further five assessment years:\nProvided that where the assessee is a company, the\n provisions of this sub­section shall have effect as if for the\n words",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 3
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C04",
+      "text": "“twenty­five per cent”, the words “thirty per cent” had\n been substituted.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 4
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C05",
+      "text": "(2) The deduction specified in sub­section (1) may, at the\n option of the assessee, be claimed by him for any ten\n consecutive assessment years out of fifteen years beginning\n from the year in which the undertaking or the enterprise\n develops and begins to operate any infrastructure facility or\n starts providing telecommunication service or develops an\n industrial park or generates power or commences\n transmission or distribution of power:\nProvided that where the assessee begins operating and\n maintaining any infrastructure facility referred to in clause\n(b) of Explanation to clause (i) of sub­section (4), the\n\nprovisions of this sub­section shall have effect as if for the\nwords “fifteen years”, the words “twenty years” had been\nsubstituted.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 5
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C06",
+      "text": "(2A) Notwithstanding anything contained in sub­section (1)\nor sub­section (2), the deduction in computing the total\nincome of an undertaking providing telecommunication\nservices, specified in clause (ii) of sub­section (4), shall be\nhundred per cent of the profits and gains of the eligible\nbusiness for the first five assessment years commencing at\nany time during the periods as specified in sub­section (2)\nand thereafter, thirty per cent of such profits and gains for\nfurther five assessment years.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 6
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C07",
+      "text": "(3) This section applies to an industrial undertaking\nreferred to in clause (iv) of sub­section (4) which fulfils all the\nfollowing conditions, namely: ­\n(i) it is not formed by splitting up, or the\n reconstruction, of a business already in\n existence:\nProvided that this condition shall not apply\n in respect of an industrial undertaking which\n is formed as a result of the re­establishment,\n re­construction or revival by the assessee of\n the business of any such industrial\n undertaking as is referred to in section 33B,\n in the circumstances and within the period\n specified in that section;\n(ii) it is not formed by the transfer to a new\n business of machinery or plant previously\n used for any purpose.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 7
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C08",
+      "text": "Explanation 1.­For the purposes of clause (ii),\n any machinery or plant which was used\n outside India by any person other than the\n assessee shall not be regarded as machinery\n or plant previously used for any purpose, if\n the following conditions are fulfilled, namely:\n­\n(a) Such machinery or plant was not, at\n any time previous to the date of the\n installation by the assessee, used in\n India;\n(b) such machinery or plant is imported\n into India from any country outside\n India; and\n\n(c) no deduction on account of\n depreciation in respect of such\n machinery or plant has been allowed or\n is allowable under the provisions of this\n Act in computing the total income of\n any person for any period prior to the\n date of the installation of machinery or\n plant by the assessee.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 8
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C09",
+      "text": "Explanation 2.­Where in the case of an\n industrial undertaking, any machinery or\n plant or any part thereof previously used for\n any purpose is transferred to a new business\n and the total value of the machinery or plant\n or part so transferred does not exceed twenty\n per cent of the total value of the machinery or\n plant used in the business, then, for the\n purposes of clause (ii) of this sub­section, the\n condition specified therein shall be deemed to\n have been complied with.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 9
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C10",
+      "text": "(4) This section applies to­\n(i) Any enterprise carrying on the business of (i)\n developing, (ii) maintaining and operating or\n(iii) developing, maintaining and operating\n any infrastructure facility which fulfils all the\n following conditions, namely: ­\n(a) it is owned by a company registered in\n India or by a consortium of such\n companies;\n(b) it has entered into an agreement with\n the Central Government or a State\n Government or a local authority or any\n other statutory body for (i) developing,\n(ii) maintaining and operating or (iii)\n developing, maintaining and operating\n a new infrastructure facility subject to\n the condition that such infrastructure\n facility shall be transferred to the\n Central Government, State\n Government, local authority or such\n other statutory body, as the case may\n be, within the period stipulated in the\n agreement;\n(c) it has started or starts operating and\n maintaining the infrastructure facility\n on or after the 1st day of April, 1995:\n\nProvided that where an infrastructure\n facility is transferred on or after the 1 st\n day of April, 1999 by an enterprise\n which developed such infrastructure\n facility (hereafter referred to in this\n section as the",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 10
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C11",
+      "text": "transferor enterprise) to\n another enterprise (hereafter in this\n section referred to as the transferee\n enterprise) for the purpose of operating\n and maintaining the infrastructure\n facility on its behalf in accordance with\n the agreement with the Central\n Government, State Government, local\n authority or statutory body, the\n provisions of this section shall apply to\n the transferee enterprise as if it were\n the enterprise to which this clause\n applies and the deduction from profits\n and gains would be available to such\n transferee enterprise for the unexpired\n period during which the transferor\n enterprise would have been entitled to\n the deduction, if the transfer had not\n taken place.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 11
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C12",
+      "text": "Explanation.­ For the purposes of this clause,\n “infrastructure facility” means,­\n(a) a road, bridge, airport, port, inland\n waterways and inland ports, rail\n system or any other public facility of a\n similar nature as may be notified by\n the Board in this behalf in the Official\n Gazette;\n(b) a highway project including housing or\n other activities being an integral part of\n the highway project; and\n(c) a water supply project, water treatment\n system, irrigation project sanitation\n and sewerage system or solid waste\n management system;\n(ii) any undertaking which has started or starts\n providing telecommunication services\n whether basic or cellular, including radio\n paging, domestic satellite service, network of\n turnking, broadband network and internet\n services on or after the 1st day of April, 1995,\n but on or before the 31st day of March, 2003;\n\n(iii) any undertaking which develops, develops\n and operates or maintains and operates an\n industrial park notified by the Central\n Government in accordance with the scheme\n framed and notified by the Government for\n the period beginning on the 1st day of April,\n 1997 and ending on the 31st day of March,\n 2006:\nProvided that in a case",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 12
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C13",
+      "text": "where an\n undertaking develops an industrial park on\n or after the 1st day of April, 1999 and\n transfers the operation and maintenance of\n such industrial park to another undertaking\n (hereafter in this section referred to as the\n transferee undertaking) the deduction under\n sub­section (1), shall be allowed to such\n transferee undertaking for the remaining\n period in the ten consecutive assessment\n years in a manner as if the operation and\n maintenance were not so transferred to the\n transferee undertaking;\n(iv) an industrial undertaking which,­\n(a) is set up in any part of India for the\n generation or generation and\n distribution of power if it begins to\n generate power at any time during the\n period beginning on the 1st day of April,\n 1993 and ending on the 31 st day of\n March, 2003;\n(b) starts transmission or distribution by\n laying a network of new transmission\n or distribution lines at any time during\n the period beginning on the 1st day of\n April, 1999 and ending on the 31 st day\n of March, 2003:\nProvided that the deduction under this section to\n an industrial undertaking under sub­clause (b)\n shall be allowed only in relation to the profits\n derived from laying of such",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 13
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C14",
+      "text": "network of new lines for\n transmission or distribution.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 14
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C15",
+      "text": "(5) Notwithstanding anything contained in any other\nprovision of this Act, the profits and gains of an eligible\nbusiness to which the provisions of sub­section (1) apply\nshall, for the purposes of determining the quantum of\n\ndeduction under that sub­section for the assessment year\nimmediately succeeding the initial assessment year or any\nsubsequent assessment year, be computed as if such eligible\nbusiness were the only source of income of the assessee\nduring the previous year relevant to the initial assessment\nyear and to every subsequent assessment year up to and\nincluding the assessment year for which the determination is\nto be made.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 15
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C16",
+      "text": "(6) Notwithstanding anything contained in sub­section (4),\nwhere housing or other activities are an integral part of the\nhighway project and the profits of which are computed on\nsuch basis and manner as may be prescribed, such profit\nshall not be liable to tax where the profit has been\ntransferred to a special reserve account and the same is\nactually utilised for the highway project excluding housing\nand other activities before the expiry of three years following\nthe year in which such amount was transferred to the\nreserve account; and the amount remaining unutilised shall\nbe chargeable to tax as income of the year in which such\ntransfer to reserve account took place.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 16
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C17",
+      "text": "(7) Where the assessee is a person other than a company\nor a co­operative society, the deduction under the sub­\nsection (1) from profits and gains derived from an industrial\nundertaking shall not be admissible unless the accounts of\nthe industrial undertaking for the previous year relevant to\nthe assessment year for which the deduction is claimed have\nbeen audited by an accountant, as defined in the\nExplanation below sub­section (2) of\nsection 288\n, and the\nassessee furnishes, along with his return of income, the\nreport of such audit in the prescribed form duly signed and\nverified by such accountant.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 17
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C18",
+      "text": "(8) Where any goods held for the purposes of the eligible\nbusiness are transferred to any other business carried on by\nthe assessee, or where any goods held for the purposes of\nany other business carried on by the assessee are\ntransferred to the eligible business and, in either case, the\nconsideration, if any, for such transfer as recorded in the\naccounts of the eligible business does not correspond to the\nmarket value of such goods as on the date of the transfer,\nthen, for the purposes of the deduction under this section,\nthe profits and gains of such eligible business shall be\ncomputed as if the transfer, in either case, had been made at\nthe market value of such goods as on that date:\n\nProvided that where, in the opinion of the Assessing Officer,\nthe computation of the profits and gains of the eligible\nbusiness in the manner hereinbefore specified presents\nexceptional difficulties, the Assessing Officer may compute\nsuch profits and gains on such reasonable basis as he may\ndeem fit. Explanation. ­For the purposes of this sub­section, “market\nvalue”, in relation to any goods, means the price that such\ngoods would ordinarily fetch on sale in the open market.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 18
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C19",
+      "text": "(9) Where any amount of profits and gains of an industrial\nundertaking or of an enterprise in the case of an assessee is\nclaimed and allowed under this section for any assessment\nyear, deduction to the extent of such profits and gains shall\nnot be allowed under any other provisions of this Chapter\nunder the heading “C.­Deductions in respect of certain\nincomes”, and shall in no case exceed the profits and gains\nof such eligible business of industrial undertaking or\nenterprise, as the case may be. (10) Where it appears to the Assessing Officer that, owing\nto the close connection between the assessee carrying on the\neligible business to which this section applies an any other\nperson, or for any other reason, the course of business\nbetween them is so arranged that the business transacted\nbetween them produces to the assessee more than the\nordinary profits which might be expected to arise in such\neligible business, the Assessing Officer shall, in computing\nthe profits and gains of such eligible business for the\npurposes of the deduction under this section, take the\namount of profits as may be reasonably deemed to have been\nderived therefrom.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 19
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C20",
+      "text": "(11) The Central Government may, after making such\ninquiry as it may think fit, direct, by notification in the\nOfficial Gazette, that the exemption conferred by this section\nshall not apply to any class of industrial undertaking or\nenterprise with effect from such date as it may specify in the\nnotification.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 20
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C21",
+      "text": "(12) Where any undertaking of an Indian company which is\nentitled to the deduction under this section is transferred,\nbefore the expiry of the period specified in this section, to\nanother Indian company in a scheme of amalgamation or\ndemerger­\n(a) no deduction shall be admissible under this\n section to the amalgamating or the demerged\n company for the previous year in which the\n\namalgamation or the demerger takes place;\n and\n(b) the provisions of this section shall, as far as\n may be, apply to the amalgamated or the\n resulting company as they would have\n applied to the amalgamating or the demerged\n company if the amalgamation or demerger\n had not taken place.”\n\nThe High Court while upholding the view taken by the first appellate\n\nauthority and the ITAT, dismissed the appeal and observed thus: ­\n\n ‘‘…..In the present case, so far as the facts are concerned, it\n is not in dispute, that the work of construction of roads was\n completed on 27.3.2000, and on and with effect from\n 28.3.2000, the partnership firm was converted into a\n Company, by being registered under\nPart IX of the\n Companies Act\n, and became a private Limited Company.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 21
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C22",
+      "text": "noticed above, the relevant previous year is 1.4.2000 to\n 31.3.2001. Thus, right from the commencement of the\n relevant financial year, it cannot be disputed, that it was a\n Company, and was undertaking the specified business.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 22
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C23",
+      "text": "Then, so far as the question, as has been gone into by the\n Assessing Officer, and the Excise Commissioner that the\n assessee Company has not entered into any agreement with\n the Government, is concerned, in that regard, the learned\n Tribunal has found, that the main objects of the\n Memorandum of Association of the assessee Company\n indicates, that it was mentioned as under:\n‘‘On conversion of the partnership firm into a\n company limited by shares under these\n presents to acquire by operation of Law under\nPart IX of the Companies Act, 1956\nas going\n concern and continue the partnership business\n now being carried on under the name & style of\n M/s Chetak Enterprises including all its assets,\n movables and immovables, rights, debts and\n liabilities in connection therewith.’’\n\n Then, it has also been found by the learned Tribunal,\n at page 13 of the judgment, that the erstwhile partnership\n firm, in its first communication to the Chief Engineer on\n 23.10.1998, while replying to the notice inviting bids, made\n it categorically clear, that ‘‘the firm will be converted into a\n limited company under\nChapter IX of the Companies Act\n.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 23
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C24",
+      "text": "such, you are requested to allow us change in constitution\n and accordingly change of name in agreement, after\n\nconverting firm into company with the existing partners as\nits Directors, and the Chief Engineer vide letter dt.\n27.8.1999, took note of this letter, and informed, that their\noffer was accepted, subject to terms and conditions specified\ntherein. It is thereafter, that agreement was entered into\nbetween the Government and the Firm, wherein the said\nletter of the Chief Engineer dt. 27.8.1999, was considered as\npart of the agreement. With this, the agreement also\nmentions the firm, ‘‘to mean and include its successors and\nassigns’’. Thus it has been found, that since incorporation of\nthe Firm into a Company, has the effect of statutorily vesting\nof liabilities and assets in the Firm, and the agreement\ncomprehends successors and assigns, it is clear, that the\nassessee fulfils all the conditions. Then the proviso,\nappended in this sub­section, has also been considered,\nwhich clearly provides for entitlement of the deduction to the\ntransferee, with effect from the date of transfer, therefore\nalso, it was found that the deduction is available.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 24
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C25",
+      "text": "In our view, when right from the day one, i.e. while\nreplying to the notice inviting tenders itself, it was made\nclear by the Firm, that the Firm will be converting into a\nlimited Company under\nPart IX of the Companies Act\n, and\nthe Chief Engineer was requested to allow the change in the\nConstitution, and accordingly change of name in the\nagreement, after converting the Firm into the Company, with\nthe existing partners as its Directors, and this request was\naccepted, and that acceptance letter formed part of the\nagreement, in our view, the Firm stands in the shoes of\npromoter, and the Company takes over all assets and\nliabilities statutorily. In other words, by operation of law, there is statutory\ntransformation of the Firm into the Company, obviously the\nrights and liabilities of the Company, and the assets, go to\nthe Company. It is a different story that even from the\nagreement entered into by the promoter (predecessor in the\ninterest of the Company), as successor of the Firm and the\nCompany is deemed to be a party, and, therefore also, is very\nmuch entitled to the benefit of deduction on this ground.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 25
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P003_C26",
+      "text": "Over & above all this, the proviso is a complete answer to the\ncontention of the Revenue, and in favour of the assessee,\nwhich rather clearly provides, that even in case of transfer,\nthe transferee will become entitled to deduction of course\nwith effect from the date of transfer. In the present case, the transfer was statutory, and did\ncome into effect since 28.3.2000, i.e. much before the\ncommencement of the relevant financial year, and as such,\n\nconsidering from any standpoint, the assessee could not be\n denied benefit of deduction available to it.”",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 26
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P004_C01",
+      "text": "4. Being aggrieved, the Department filed two separate special leave\n\npetitions before this Court. The present civil appeal emanates from\n\nSLP(C) No. 6772/2009 and pertains to Assessment Year 2002­2003.\n\nAs regards Civil Appeal No. 1748/2010 (arising out of SLP(C) No.\n\n3430/2009) pertaining to Assessment Year 2001­2002, the same has\n\nbeen disposed of in terms of order dated 17.10.2019 due to low tax\n\neffect leaving question of law open.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P005_C01",
+      "text": "5. We have heard Mr. Rupesh Kumar, learned counsel for the\n\nappellant and Mr. S. Krishnan, learned counsel for the respondent.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P006_C01",
+      "text": "6. It is not in dispute that an agreement was executed between the\n\nerstwhile partnership firm and the State Government for construction\n\nof road and collection of toll tax. Before the commencement of the\n\nassessment year in question i.e. 2002­2003, the construction of road\n\nwas completed (on 27.3.2000) and it was inaugurated on 1.4.2000. Before the date of inauguration, the partnership firm was converted\n\ninto a company on 28.3.2000 under\nPart IX of the Companies Act\n. The Memorandum of Association of the assessee­Company reveals the\n\nmain object as follows: ­\n\n“On conversion of the partnership firm into a\n company limited by shares under these presents to\n acquire by operation of law under\nPart IX of the\n Companies Act, 1956\nas going concern and\n continue the partnership business now being\n carried on under the name and style of M/s. Chetak\n Enterprises including all its assets, movables and\n immovables, rights, debts and liabilities in\n connection therewith.”\n\nAs a matter of fact, before the agreement was executed with the\n\nerstwhile partnership firm, it was clearly understood that the\n\npartnership firm would in due course be converted into a registered\n\nlimited company.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P006_C02",
+      "text": "That is evident from the communication addressed\n\nto the Chief Engineer on 23.10.1998, at the time of replying to the\n\nnotice inviting bids. An explicit request was made to allow the\n\npartnership firm to change its constitution and consequently change\n\nof name in the agreement after converting the firm into a company\n\nwith the existing partners as its Directors. The Chief Engineer being\n\nthe appropriate authority of the State, vide letter dated 27.8.1999,\n\ntook note of the request made by the erstwhile partnership firm and\n\ninformed the said firm that its offer was accepted subject to terms\n\nand conditions specified in that regard. It is only after this\n\ninteraction, an agreement was entered into between the Government\n\nof Rajasthan and the erstwhile partnership firm, in which the\n\ncommunication sent by the Chief Engineer, dated 27.8.1999, was\n\nmade part of the agreement. Notably, after the conversion of the\n\npartnership firm into a company under\nPart IX of the Companies Act\n,\n\nthe State authorities noted the change and provided fresh registration\n\ncode to the assessee­Company.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P007_C01",
+      "text": "7. The question is: what is the effect of conversion of partnership\n\nfirm into a company under\nPart IX of the Companies Act\n? That can\n\nbe discerned from\nSection 575\nof the Companies Act, which reads\n\nthus: ­\n\n “575. Vesting of property on registration.­ All property,\n movable and immovable (including actionable claims),\n belonging to or vested in a company at the date of its\n registration in pursuance of this Part, shall, on such\n registration, pass to and vest in the company as\n incorporated under this Act for all the estate and interest of\n the company therein.”\n\nIt is manifest that all properties, movable and immovable (including\n\nactionable claims) belonging to or vested in a company at the date of\n\nits registration would vest in the company as incorporated under the\n\nAct. In other words, the property acquired by a promoter can be\n\nclaimed by the company after its incorporation without any need for\n\nconveyance on account of statutory vesting. On such statutory\n\nvesting, all the properties of the firm, in law, vest in the company and\n\nthe firm is succeeded by the company. The firm ceases to exist and\n\nassumes the status of a company after its registration as a company.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P007_C02",
+      "text": "A priori, it must follow that the business is carried on by the\n\nenterprise owned by a company registered in India and the agreement\n\nentered into between the erstwhile partnership firm and the State\n\nGovernment, by legal implication, assumes the character of an\n\nagreement between the company registered in India and the State\n\nGovernment for (i) developing, (ii) maintaining and operating or (iii)\n\ndeveloping, maintaining and operating a new infrastructure facility.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P008_C01",
+      "text": "8. For the purpose of considering compliance of clause (a) of\nSection 80\n­IA(4)(i), the assessee must be an enterprise carrying on\n\nbusiness of (i) developing, (ii) maintaining and operating or (iii)\n\ndeveloping, maintaining and operating any infrastructure facility,\n\nwhich enterprise is owned by a company registered in India. That\n\nstipulation is fulfilled in the present case, as the registered firm was\n\nconverted into a company under\nPart IX of the Companies Act\n\n28.3.2000, which is before the commencement of Assessment Year\n\n2002­2003. For the assessment year under consideration, the\n\nactivity undertaken by the assessee is only maintaining and operating\n\nor developing, maintaining and operating the infrastructure facility,\n\ninasmuch as, the construction of the road was completed on\n\n27.3.2000 and the same was inaugurated on 1.4.2000, whereafter toll\n\ntax was being collected by the assessee­Company.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P009_C01",
+      "text": "9. As regards clause (b) of\nSection 80\n­IA(4)(i), the requirement\n\npredicated is that the assessee must have entered into an agreement\n\nwith the Central Government or a State Government or a local\n\nauthority or any other statutory body for (i) developing, (ii)\n\nmaintaining and operating or (iii) developing, maintaining and\n\noperating a new infrastructure facility. As aforesaid, in the present\n\ncase, the agreement was initially executed between the erstwhile\n\npartnership firm and the State Government, but with clear\n\nunderstanding that as and when the partnership firm is converted\n\ninto a company, the name of the company in the agreement so\n\nexecuted be recorded recognising the change. Notably, the agreement\n\nitself mentions that M/s. Chetak Enterprises as party to the\n\nagreement was meant to include its successors and assignee. Further, the State Government had granted sanction to the company\n\nand the original agreement entered into with the firm automatically\n\nstood converted in favour of the assessee­Company, which came into\n\nexistence on 28.3.2000 being the successor of the erstwhile\n\npartnership firm.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P009_C02",
+      "text": "Thus understood, even the stipulation in clause (b)\n\nSection 80\n­IA(4)(i) is fulfilled by the assessee­Company. Since\n\nthese are the only two issues which weighed with the assessing officer\n\nto deny deduction to the assessee­Company as claimed under\nSection\n\n­IA of the Income Tax Act, the first appellate authority was justified\n\nin reversing the view taken by the assessing officer. For the same\n\nreason, the ITAT, as well as, the High Court have justly affirmed the\n\nview taken by the first appellate authority, holding that the\n\nrespondent/assessee­Company qualified for the deduction under\nSection 80\n­IA being an enterprise carrying on the stated business\n\npertaining to infrastructure facility and owned by a Company\n\nregistered in India on the basis of the agreement executed with the\n\nState Government to which the respondent/assessee­Company has\n\nsucceeded in law after conversion of the partnership firm into a\n\ncompany.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 2
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P010_C01",
+      "text": "10. Learned counsel for the appellant has relied on the decision of\n\nthis Court in\nGiridhar G. Yadalam vs. Commissioner of Wealth\n\nTax & Anr.2\n. In\nthe said decision\n, the Court had delineated the\n\ncontours regarding permissibility of purposive interpretation of\n\ntaxing/fiscal statutes, particularly in the context of an exemption.\n\nThis decision is of no avail to doubt the correctness of the view taken\n\n2 (2015) 17 SCC 664\n\nby the High Court vide the impugned judgment, in the facts of the\n\npresent case.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD_P011_C01",
+      "text": "11. In view of the above, the appeal stands dismissed with no order\n\nas to costs.\n................................., J\n (A.M. Khanwilkar)\n\n ................................., J\n (Dinesh Maheshwari)\nNew Delhi;\nMarch 05, 2020.",
+      "paragraph_type": "order",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Commissioner Of Income Tax Udaipur vs M/S Chetak Enterprises Pvt. Ltd.",
+    "case_id": "SC_2020_COMMISSIONER_OF_INCOME_TAX_UDAIPUR_VS_MS_CHETAK_ENTERPRISES_PVT_LTD",
+    "court": "Supreme Court of India",
+    "year": "2020",
+    "facts_summary": "1. This appeal takes exception to the judgment and order dated\n\n 5.5.2008 passed by the High Court of Judicature for Rajasthan at\n\n Jodhpur (for short, “the High Court”) in Income Tax Appeal No. 71 of 2. The matter relates to Assessment Year 2002­2003, the relevant\n\n Previous/Financial year for which is 2001­2002 i.e. 1.4.2001 to\n\n 31.3.2002. Rajasthan for construction of road and collection of road/toll tax. The construction of road was completed by the said firm on 27.3.2000\n\nand the same was inaugurated on 1.4.2000. The firm was converted\n\ninto a private limited company on 28.3.2000 named as M/s. Chetak\n\nEnterprises (P) Ltd. (for short, “the assessee­Company”) under\nPart IX\n\nof the Companies Act, 1956\n(for short, “the\nCompanies Act\n”). On\n\nconversion of the firm into company, an intimation was given to the\n\nChief Engineer (Roads), P.W.D., Rajasthan, Jaipur. The said\n\nauthority noted the change and cancelled the registration of the firm\n\nand granted a fresh registration code to the assessee­Company. As\n\naforesaid, the road was inaugurated on 1.4.2000 and the assessee­\n\nCompany started collecting toll tax. For the relevant assessment\n\nyear, the assessee­Company claimed deduction under\nSection 80\n­IA\n\nof the Income Tax Act, 1961 (for short, “the\nIncome Tax Act\n”). The\n\nassessing officer declined that claim of the assessee­Company, which\n\ndecision was reversed by the Commissioner of Income­Tax (Appeals),\n\nUdaipur. The Income Tax Appellate Tribunal (for short, “the ITAT”)\n\nconf",
+    "legal_issues": "5. We have heard Mr. Rupesh Kumar, learned counsel for the\n\nappellant and Mr. S. Krishnan, learned counsel for the respondent. 10. Learned counsel for the appellant has relied on the decision of\n\nthis Court in\nGiridhar G. Yadalam vs. Commissioner of Wealth\n\nTax & Anr.2\n. In\nthe said decision\n, the Court had delineated the\n\ncontours regarding permissibility of purposive interpretation of\n\ntaxing/fiscal statutes, particularly in the context of an exemption.\n\nThis decision is of no avail to doubt the correctness of the view taken\n\n2 (2015) 17 SCC 664\n\nby the High Court vide the impugned judgment, in the facts of the\n\npresent case.",
+    "ratio_summary": "7. The question is: what is the effect of conversion of partnership\n\nfirm into a company under\nPart IX of the Companies Act\n? That can\n\nbe discerned from\nSection 575\nof the Companies Act, which reads\n\nthus: ­\n\n “575. Vesting of property on registration.­ All property,\n movable and immovable (including actionable claims),\n belonging to or vested in a company at the date of its\n registration in pursuance of this Part, shall, on such\n registration, pass to and vest in the company as\n incorporated under this Act for all the estate and interest of\n the company therein.”\n\nIt is manifest that all properties, movable and immovable (including\n\nactionable claims) belonging to or vested in a company at the date of\n\nits registration would vest in the company as incorporated under the\n\nAct. In other words, the property acquired by a promoter can be\n\nclaimed by the company after its incorporation without any need for\n\nconveyance on account of statutory vesting. On such statutory\n\nvesting, all the properties of the firm, in law, vest in the company and\n\nthe firm is succeeded by the company. The firm ceases to exist and\n\nassumes the status of a company after its registration as a company.",
+    "final_order": "11. In view of the above, the appeal stands dismissed with no order\n\nas to costs.\n................................., J\n (A.M. Khanwilkar)\n\n ................................., J\n (Dinesh Maheshwari)\nNew Delhi;\nMarch 05, 2020.",
+    "outcome_summary": "Dismissed. 11. In view of the above, the appeal stands dismissed with no order\n\nas to costs.\n................................., J\n (A.M. Khanwilkar)\n\n ................................., J\n (Dinesh Maheshwari)\nNew Delhi;\nMarch 05, 2020.",
+    "sections_cited": [],
+    "cases_cited": [
+      "Chetak Enterprises P. Ltd v ACIT\n"
+    ]
+  }
+}

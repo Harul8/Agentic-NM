@@ -1,0 +1,303 @@
+{
+  "case_id": "SC_1999_1999_ALL_ANDHRAHC_39",
+  "case_name": "Andhra HC (Pre-Telangana)",
+  "normalized_case_name": "ANDHRA_HC_(PRE-TELANGANA)",
+  "court": "Supreme Court of India",
+  "year": "1999",
+  "judgment_template": null,
+  "case_number": null,
+  "case_number_regex": null,
+  "date_of_judgment": null,
+  "judges": [],
+  "author": null,
+  "bench_type": null,
+  "petitioner": "Andhra HC (Pre-Telangana)",
+  "respondent": null,
+  "reporter_citations": [],
+  "outcome": null,
+  "disposition": null,
+  "cites_count": 4,
+  "cited_by_count": 11,
+  "neutral_citation": null,
+  "equivalent_citations": [],
+  "jurisdiction_type": null,
+  "reportable": null,
+  "source_file": "Telangana HC\\1999\\1999_ALL_AndhraHC_39.txt",
+  "source_type": "txt_scraped",
+  "paragraphs": [
+    {
+      "paragraph_id": 1,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P001_C01",
+      "text": "Commissioner Of Income-Tax vs Dr. S. Surender Reddy on 7 June, 1999\nEquivalent citations: [2000]243ITR110(AP)\nJUDGMENT\n\n S.V. Maruthi, J.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 2,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P002_C01",
+      "text": "1. The Tribunal referred the following question for the opinion of this court under\nSection 256(1)\nof the Income-tax Act, 1961 :\n\"Whether, on the facts and in the circumstances of the case, the Income-tax Appellate Tribunal is correct in law in holding that the asses-see, who is running a diagnostic centre, as a qualified professional, is carrying on business and/or is a small industrial undertaking, engaged in manufacture or production of an article or thing, and is entitled to investment allowance under\nSection 32A\nof the Income-tax Act, 1961 ?\"",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 3,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P003_C01",
+      "text": "2. The facts in brief are as follows :\nThe assessee is a qualified doctor with P. G. degree in radio therapy and is running a diagnostic centre. It is registered as a small-scale industrial undertaking. He claimed investment allowance on the same under\nSection 32A\nof the Income-tax Act in respect of the following machinery :",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 4,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P004_C01",
+      "text": "2. Modulab system which is a computerised bio-chemistry analyser for bio-chemical analysis of blood, serum, etc.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 5,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P005_C01",
+      "text": "4. Photometer used for the analysis of electrolytes like sodium, potassium, etc., in blood.",
+      "paragraph_type": "facts",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 6,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P006_C01",
+      "text": "5. Microscope used for blood cell counting and for histopathology slides to detect cancer, malarial parasites, etc.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 7,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P007_C01",
+      "text": "6. Incubator used to incubate the test material at particular temperature for a particular period.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 8,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P008_C01",
+      "text": "7. Air-conditioner used to keep the analytical systems like modulab at 24C.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 9,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P009_C01",
+      "text": "8. Hot air oven used to sterilize glass ware, etc., in dry heat to destroy bacteria, etc.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 10,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P010_C01",
+      "text": "9. Thermostatic water-bath used to incubate test material at particular temperature for a particular period on indirect heat.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 11,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P011_C01",
+      "text": "10. Centrifuge used to separate serum from whole blood containing cells, etc.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 12,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P012_C01",
+      "text": "11. P. H. meter used to know the PH of test material-whether test material is alkaline or acidic.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 13,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P013_C01",
+      "text": "12. C. D. E. L. rotator used to mix serum with bio-chemical at a particular speed.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 14,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P014_C01",
+      "text": "13. Photoelectric calorimeter used for bio-chemical analysis of serum, blood, etc., for urea, chlorides, etc.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 15,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P015_C01",
+      "text": "14. Systonics horizontal electrophoresis apparatus used for the analysis of various immunoglobulins, serum, tissue, fluid, etc.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 16,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P016_C01",
+      "text": "15. Stabilizer used for regulated power supply to medical equipments.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 17,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P017_C01",
+      "text": "16. Electric fans (exhaust fans) used for removing fumes arising from the test material during the tests.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 18,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P018_C01",
+      "text": "17. Aloka sec. scanner used to scan and see various body parts like liver, heart, spleen, on a T. V. monitor.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 19,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P019_C01",
+      "text": "18. Densitameter used to see and measure the density of the various serum proteins of the patients.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 20,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P020_C01",
+      "text": "19. Gamma counter used for analysis of various hormones using radio isotopes.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 21,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P021_C01",
+      "text": "20. Reflamate-220V which is a portable machine used to analyse and determine urea and sugar levels in an emergency.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 22,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P022_C01",
+      "text": "3. The Income-tax Officer declined to grant investment allowance on the ground that the assessee is not engaged in the manufacture or production of any article or thing but was only rendering certain services. The appellate authority upheld the claim of the assessee. On appeal, the Tribunal agreed with the assessee. At the request of the Revenue, the question set out in the earlier paragraph was referred for the opinion of this court.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 23,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P023_C01",
+      "text": "4. The Tribunal held that the assessee is entitled for investment allowance under\nSection 32A\nof the Income-tax Act, in respect of the equipment used in the laboratory for testing blood, serum, etc., and also in respect of X-ray machines, air-conditioner used to keep the analytical systems, stabilizer used for regulating power supply to medical equipment, electric fans and aloka sec. scanner used to scan and see various body parts.",
+      "paragraph_type": "unknown",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 24,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P024_C01",
+      "text": "5. According to the Tribunal the result of examinations which is given in the form of a report is an article or thing and, therefore, on the equipment used for analysing blood, serum and tissues, etc., the assessee is entitled for investment allowance under\nSection 32A\nof the Income-tax Act. As regards the X-rays the Tribunal is also of the view that the X-rays produced by using X-ray equipment is a thing within the meaning of\nSection 32A\nof the Income-tax Act.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 25,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P025_C01",
+      "text": "6. The main argument of learned counsel for the Revenue is that by using this machinery neither a thing nor an article is produced, but only a report is given and, therefore, it does not qualify for allowance under\nSection 32A\nof the Act in view of the language used in Sub-clause (iii) of subsection (2) of\nSection 32A\n; while learned counsel for the assessee submitted that giving of a report by the doctor with the assistance of the machinery amounts to production of an article or thing and, therefore, the assessee is entitled for investment allowance, not only with reference to the\n\nX-ray machinery and other items, but also with reference to the equipment used for conducting pathological tests.",
+      "paragraph_type": "arguments",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 26,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P026_C01",
+      "text": "7. To consider the issue that arises for consideration it is necessary to refer to\nSection 32A(2)(b)\nwhich reads as under :\n\"(b) any new machinery or plant installed after the 31st day of March, 1976-\n(i) for the purposes of business of generation or distribution of electricity or any other form of power ; or\n(ii) in a small-scale industrial undertaking for the purposes of business of manufacture or production of any article or thing ; or\n(iii) in any other industrial undertaking for the purposes of business of construction, manufacture or production of any article or thing, not being an article or thing specified in the list in the Eleventh Schedule . . .\"",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 27,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P027_C01",
+      "text": "8. From a reading of Sub-clause (2)(ii) it is clear that any new machinery installed in a small-scale industrial undertaking for the purposes of business of manufacture or production of any article or thing is allowable for investment allowance. The question, therefore, is whether the report given by conducting tests by using the equipment for the said purpose amounts to production of any article or thing. In our view, the report given by conducting the tests by using the equipment installed by the assessee does not amount to production of an article or a thing. No article or a thing is produced by the machinery while giving the report after conducting the pathological tests. A person records readings by using machinery and, therefore, it cannot be said that it is a thing or an article. Therefore, the assessee is not entitled for investment allowance as far as the equipment used for the purpose of conducting pathological tests.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 28,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P028_C01",
+      "text": "9. Next comes the equipment used for purposes of X-ray. By putting the X-ray film in to the X-ray machine a different article is produced. It is a different article from the film which is produced from the X-ray machine and, therefore, it is a thing within the meaning of\nSection 32A(2)(b)(ii)\n. Therefore, the Tribunal is right in its view that when X-ray films are produced the assessee produces a thing and, therefore, he is entitled for investment allowance. As regards the equipment used for conducting the pathological tests the assessee is not qualified to claim investment allowance under\nSection 32A\nof the Act. The assessee is also entitled for investment allowance on stabilizer, electric fans, scanner and air-conditioner used to keep the analytical systems, as they are necessary for purposes of production of an article or a thing.",
+      "paragraph_type": "reasoning",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    },
+    {
+      "paragraph_id": 29,
+      "chunk_id": "SC_1999_1999_ALL_ANDHRAHC_39_P029_C01",
+      "text": "10. In the light of the above, we answer the question referred in the affirmative in so far as the equipment used for production of X-rays, air conditioner, fans, stabilizer and scanner. We answer the question referred by the Tribunal in the negative in so far as the equipment used for purposes of conducting pathological tests.",
+      "paragraph_type": "ratio",
+      "sections_cited": [],
+      "cited_cases": [],
+      "chunk_number": 1
+    }
+  ],
+  "case_summary": {
+    "case_name": "Andhra HC (Pre-Telangana)",
+    "case_id": "SC_1999_1999_ALL_ANDHRAHC_39",
+    "court": "Supreme Court of India",
+    "year": "1999",
+    "facts_summary": "1. The Tribunal referred the following question for the opinion of this court under\nSection 256(1)\nof the Income-tax Act, 1961 :\n\"Whether, on the facts and in the circumstances of the case, the Income-tax Appellate Tribunal is correct in law in holding that the asses-see, who is running a diagnostic centre, as a qualified professional, is carrying on business and/or is a small industrial undertaking, engaged in manufacture or production of an article or thing, and is entitled to investment allowance under\nSection 32A\nof the Income-tax Act, 1961 ?\" 2. The facts in brief are as follows :\nThe assessee is a qualified doctor with P. G. degree in radio therapy and is running a diagnostic centre. It is registered as a small-scale industrial undertaking. He claimed investment allowance on the same under\nSection 32A\nof the Income-tax Act in respect of the following machinery : 2. Modulab system which is a computerised bio-chemistry analyser for bio-chemical analysis of blood, serum, etc.",
+    "legal_issues": "6. The main argument of learned counsel for the Revenue is that by using this machinery neither a thing nor an article is produced, but only a report is given and, therefore, it does not qualify for allowance under\nSection 32A\nof the Act in view of the language used in Sub-clause (iii) of subsection (2) of\nSection 32A\n; while learned counsel for the assessee submitted that giving of a report by the doctor with the assistance of the machinery amounts to production of an article or thing and, therefore, the assessee is entitled for investment allowance, not only with reference to the\n\nX-ray machinery and other items, but also with reference to the equipment used for conducting pathological tests.",
+    "ratio_summary": "3. The Income-tax Officer declined to grant investment allowance on the ground that the assessee is not engaged in the manufacture or production of any article or thing but was only rendering certain services. The appellate authority upheld the claim of the assessee. On appeal, the Tribunal agreed with the assessee. At the request of the Revenue, the question set out in the earlier paragraph was referred for the opinion of this court. 10. In the light of the above, we answer the question referred in the affirmative in so far as the equipment used for production of X-rays, air conditioner, fans, stabilizer and scanner. We answer the question referred by the Tribunal in the negative in so far as the equipment used for purposes of conducting pathological tests.",
+    "final_order": "",
+    "outcome_summary": "",
+    "sections_cited": [],
+    "cases_cited": []
+  }
+}
