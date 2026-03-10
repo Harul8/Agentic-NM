@@ -111,7 +111,7 @@ def _run_bare_acts_phase(facts_summary: str, progress_callback=None, states: lis
     }
 
 
-def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_info: str, progress_callback=None, states: list = None, pending_indexing_list: list = None) -> dict:
+def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_info: str, progress_callback=None, states: list = None, pending_indexing_list: list = None, step_callback=None, token_callback=None) -> dict:
     """
     New Phase B: given collected facts + already-retrieved bare acts + any additional user info,
     retrieve case laws, associate them with sections, and generate the structured final opinion.
@@ -126,6 +126,8 @@ def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_in
             progress_callback=progress_callback,
             states=states or [],
             pending_indexing_list=pending_indexing_list,
+            step_callback=step_callback,
+            token_callback=token_callback,
         )
     except Exception as e:
         logger.error("_run_final_with_case_laws failed: %s", e, exc_info=True)
@@ -163,7 +165,7 @@ def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_in
     }
 
 
-def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_count: int = None, progress_callback=None, search_strategy: str = "local_then_web") -> dict:
+def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_count: int = None, progress_callback=None, search_strategy: str = "local_then_web", step_callback=None, token_callback=None) -> dict:
     """Handle search/lookup intents: go straight to research and return results."""
     # Always retrieve both bare acts AND case laws regardless of intent.
     # The original "acts_only"/"case_laws_only" split was too aggressive:
@@ -181,6 +183,8 @@ def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_coun
             progress_callback=progress_callback,
             document_types=document_types,
             search_strategy=search_strategy,
+            step_callback=step_callback,
+            token_callback=token_callback,
         )
     except Exception as e:
         logger.error("Research generation failed: %s", e, exc_info=True)
@@ -218,6 +222,8 @@ def _run_legal_opinion_simple(
     facts_summary: str,
     progress_callback=None,
     search_strategy: str = "local_only",
+    step_callback=None,
+    token_callback=None,
 ) -> dict:
     """
     Single-pass legal opinion: hybrid retrieval (local only) + LLM reasoning.
@@ -235,6 +241,8 @@ def _run_legal_opinion_simple(
             document_types="both",
             search_strategy=search_strategy or "local_only",
             result_count=None,
+            step_callback=step_callback,
+            token_callback=token_callback,
         )
     except Exception as e:
         logger.error("Legal opinion generation failed: %s", e, exc_info=True)
@@ -338,6 +346,8 @@ def process_chat(
     states: list = None,
     pending_indexing_list: list = None,
     chat_mode: str | None = None,
+    step_callback=None,
+    token_callback=None,
 ) -> dict:
     """
     Process a chat message and return the appropriate response.
@@ -393,6 +403,8 @@ def process_chat(
                 progress_callback=progress_callback,
                 # Use local-only retrieval in hot path; caller can still request web via API-level overrides.
                 search_strategy="local_only",
+                step_callback=step_callback,
+                token_callback=token_callback,
             )
 
         # Default / explicit legal opinion: use fact collector, but force LEGAL
@@ -411,7 +423,7 @@ def process_chat(
                 count = result.get("result_count")
                 strategy = result.get("search_strategy", "local_then_web")
                 _log_step("FACT_COLLECTION → retrieval (search/lookup)", (time.perf_counter() - t_pipeline_start) * 1000, f"facts_len={len(facts or '')}")
-                return _run_search_or_lookup(facts, intent, msg, result_count=count, progress_callback=progress_callback, search_strategy=strategy)
+                return _run_search_or_lookup(facts, intent, msg, result_count=count, progress_callback=progress_callback, search_strategy=strategy, step_callback=step_callback, token_callback=token_callback)
 
             if intent == "bulk_ingest":
                 # Bulk ingest removed; treat as generic chat
@@ -420,16 +432,18 @@ def process_chat(
             if intent == "generic_chat":
                 return _run_generic_chat(conversation, current_message)
 
-            # Legal opinion: single-pass retrieval (local-only) + reasoning.
-            # This replaces the older two-phase bare-acts-first + web-enrichment flow
-            # to keep responses fast and deterministic.
+            # Legal opinion: two-phase flow.
+            # Phase A: retrieve bare act sections, present legal protection summary,
+            # ask client if they want a detailed opinion (or ask for any critical gaps).
+            # Phase B (bare_acts_review): retrieve case laws + generate full structured opinion.
             facts_len = len(facts or "")
+            states = result.get("states", [])
             _log_step(
-                "FACT_COLLECTION → _run_legal_opinion_simple",
+                "FACT_COLLECTION → _run_bare_acts_phase",
                 (time.perf_counter() - t_pipeline_start) * 1000,
                 f"facts_len={facts_len}",
             )
-            return _run_legal_opinion_simple(facts, progress_callback=progress_callback, search_strategy="local_only")
+            return _run_bare_acts_phase(facts, progress_callback=progress_callback, states=states)
 
         # Still collecting facts — return the question (no retrieval)
         _log_step("fact_collection DONE (ask)", (time.perf_counter() - t_pipeline_start) * 1000)
@@ -461,6 +475,8 @@ def process_chat(
                 document_types=use_document_types,
                 search_strategy=use_search_strategy,
                 result_count=use_result_count,
+                step_callback=step_callback,
+                token_callback=token_callback,
             )
         except Exception as e:
             logger.error("Response generation failed: %s", e, exc_info=True)
@@ -532,7 +548,7 @@ def process_chat(
         stored_bare_acts = bare_acts or []
         pending_from_phase_a = pending_indexing_list if pending_indexing_list is not None else []
         return _run_final_with_case_laws(
-            facts, stored_bare_acts, additional_info, progress_callback=progress_callback, states=states or [], pending_indexing_list=pending_from_phase_a
+            facts, stored_bare_acts, additional_info, progress_callback=progress_callback, states=states or [], pending_indexing_list=pending_from_phase_a, step_callback=step_callback, token_callback=token_callback,
         )
 
     # ---- Phase: Confirm Index ----

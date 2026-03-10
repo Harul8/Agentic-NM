@@ -101,29 +101,28 @@ def normalize_legal_query(query: str) -> str:
 
 def _get_embedder():
     """
-    Lazy-load the sentence-transformer embedding model.
+    Lazy-load the sentence-transformer embedding model, GPU-optimised when available.
 
-    thenlper/gte-base is natively packaged as a sentence-transformers model
-    and loads via the fast path (direct SentenceTransformer()).  The explicit
-    mean-pooling fallback is retained for compatibility if the configured model
-    is a HuggingFace-only BERT model (e.g. nlpaueb/legal-bert-base-uncased).
+    Must match build_indexes._get_embedder() exactly — same device, same precision
+    (FP16 on GPU) — so query vectors live in the same space as indexed vectors.
     """
     global _embedder
     if _embedder is None:
         from sentence_transformers import SentenceTransformer, models
         import torch
         from config import EMBEDDING_MODEL
-        device = "cuda" if torch.cuda.is_available() else "cpu"
+
+        on_gpu = torch.cuda.is_available()
+        device = "cuda" if on_gpu else "cpu"
+
+        if on_gpu:
+            torch.backends.cudnn.benchmark = True
+
         logger.info(f"Loading embedding model '{EMBEDDING_MODEL}' on {device}")
         try:
-            # Fast path: model is natively packaged as a sentence-transformers model
             _embedder = SentenceTransformer(EMBEDDING_MODEL, device=device)
-            # Smoke-test to confirm it can encode (catches silent mis-loads)
-            _ = _embedder.encode("test", convert_to_numpy=True)
+            _ = _embedder.encode("test", convert_to_numpy=True)  # smoke-test
         except Exception:
-            # Fallback: build with explicit Transformer + mean-pooling layers.
-            # Required for HuggingFace BERT models not packaged as sentence-transformers
-            # (e.g. nlpaueb/legal-bert-base-uncased).
             logger.info(
                 "Native SentenceTransformer load failed; building with explicit "
                 "mean-pooling for '%s'", EMBEDDING_MODEL,
@@ -138,17 +137,27 @@ def _get_embedder():
             _embedder = SentenceTransformer(
                 modules=[word_embedding_model, pooling_model], device=device
             )
+
+        if on_gpu:
+            # FP16 — must match build_indexes._get_embedder() so vectors are
+            # in the same space.  Output is cast to float32 before FAISS search.
+            _embedder = _embedder.half()
+            logger.info("Embedding model loaded in FP16 on %s", torch.cuda.get_device_name(0))
+
     return _embedder
 
 
 def _get_cross_encoder():
-    """Lazy-load the cross-encoder re-ranker model."""
+    """Lazy-load the cross-encoder re-ranker model, on GPU when available."""
     global _cross_encoder
     if _cross_encoder is None:
         from sentence_transformers import CrossEncoder
+        import torch
         from config import CROSS_ENCODER_MODEL
-        logger.info(f"Loading cross-encoder '{CROSS_ENCODER_MODEL}'")
-        _cross_encoder = CrossEncoder(CROSS_ENCODER_MODEL)
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        logger.info(f"Loading cross-encoder '{CROSS_ENCODER_MODEL}' on {device}")
+        # CrossEncoder accepts a device argument — moves model to GPU automatically.
+        _cross_encoder = CrossEncoder(CROSS_ENCODER_MODEL, device=device)
     return _cross_encoder
 
 
@@ -739,12 +748,8 @@ def hybrid_search(
     if not candidate_chunks:
         return []
 
-    # Query sections for citation boost (case-law chunks that cite same act/section as query)
-    try:
-        from Ingestion.smart_chunker import _extract_sections_cited
-        query_sections = set(_extract_sections_cited(query))
-    except Exception:
-        query_sections = set()
+    # Query sections for citation boost (sections_cited already stored in chunk metadata by pipeline)
+    query_sections = set()
 
     try:
         from config import LEGAL_TERM_BOOST_WEIGHT
@@ -955,7 +960,7 @@ def search_bare_acts_filtered(
         Search query (same format as search_bare_acts).
     allowed_acts : frozenset
         Set of act_name strings to restrict to.  Pass the return value of
-        ``retrieval.act_profile_index.identify_relevant_acts()``.
+        Frozenset of act names to restrict search to.
         Empty frozenset → no act-level filter (identical to search_bare_acts).
     top_k : int
         Max results per call (default 15, same as retrieve_bare_acts_for_dispute).

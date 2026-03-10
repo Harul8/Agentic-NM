@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useMemo } from "react";
+import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import jsPDF from "jspdf"; // npm install jspdf
@@ -179,6 +179,25 @@ function App() {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [expandedGroups, setExpandedGroups] = useState({});
 
+  // Streaming state: step timeline + live token text
+  const [streamingSteps, setStreamingSteps] = useState([]); // [{message, icon, done}]
+  const [streamingToken, setStreamingToken] = useState("");  // accumulated LLM tokens
+
+  // Shared SSE handlers for "step" progress and incremental "token" output.
+  const handleStep = useCallback((stepPayload) => {
+    setStreamingSteps((prev) => {
+      if (prev.length === 0) {
+        return [{ message: stepPayload.message, icon: stepPayload.icon || "", done: false }];
+      }
+      const updated = prev.map((s, i) => (i === prev.length - 1 ? { ...s, done: true } : s));
+      return [...updated, { message: stepPayload.message, icon: stepPayload.icon || "", done: false }];
+    });
+  }, []);
+
+  const handleToken = useCallback((tokenPayload) => {
+    setStreamingToken((prev) => prev + (tokenPayload.content || ""));
+  }, []);
+
   // Manual mode selection: "legal_opinion" (default), "legal_research", "general"
   const [chatMode, setChatMode] = useState("legal_opinion");
 
@@ -289,7 +308,15 @@ function App() {
     "WALTA_Act_2002.pdf",
   ];
   const [bareActs, setBareActs] = useState(DEFAULT_BARE_ACTS);
+  // Grouped Bare Acts from legal_database/json_output/BareActs/<Jurisdiction>/...
+  // Each item: { name: "Telangana" | "Union of India" | ..., acts: [baseName, ...] }
+  const [bareActsLibrary, setBareActsLibrary] = useState(null);
   const [caseLawsList, setCaseLawsList] = useState([]);
+  // Which Bare Acts jurisdiction group is expanded (e.g. "Telangana" or "Union of India")
+  const [bareActsJurisdictionOpen, setBareActsJurisdictionOpen] = useState(null);
+  // Grouped case laws by court, e.g. "Supreme Court", "Telangana HC"
+  const [caseLawsLibrary, setCaseLawsLibrary] = useState(null);
+  const [caseLawsCourtOpen, setCaseLawsCourtOpen] = useState(null);
   const [bareActsFilter, setBareActsFilter] = useState("");
   const [caseLawsFilter, setCaseLawsFilter] = useState("");
   const [chatHistoryFilter, setChatHistoryFilter] = useState("");
@@ -410,6 +437,30 @@ function App() {
   useEffect(() => {
     const fetchBareActs = async () => {
       try {
+        // Prefer new grouped library endpoint that mirrors json_output/BareActs/<Jurisdiction>/...
+        const libRes = await fetch(`${API_BASE}/bareacts/library`);
+        if (libRes.ok) {
+          const libData = await libRes.json().catch(() => ({}));
+          const jurisdictions = Array.isArray(libData?.jurisdictions) ? libData.jurisdictions : [];
+          const normalized = jurisdictions
+            .map((j) => ({
+              name: (j?.name || "").trim() || "Bare Acts",
+              acts: Array.isArray(j?.acts) ? j.acts : [],
+            }))
+            .filter((j) => j.acts.length > 0);
+          if (normalized.length > 0) {
+            setBareActsLibrary(normalized);
+            // Keep flat list for places that just need "all Bare Acts".
+            setBareActs(normalized.flatMap((j) => j.acts));
+            // Default to the first jurisdiction being expanded.
+            if (!bareActsJurisdictionOpen && normalized[0]?.name) {
+              setBareActsJurisdictionOpen(normalized[0].name);
+            }
+            return;
+          }
+        }
+
+        // Fallback: older API that returns a flat list.
         const res = await fetch(`${API_BASE}/bareacts/list`);
         if (!res.ok) {
           setBareActs(DEFAULT_BARE_ACTS);
@@ -438,6 +489,28 @@ function App() {
   useEffect(() => {
     const fetchCaseLaws = async () => {
       try {
+        // Prefer grouped library endpoint for courts (Supreme Court, Telangana HC, etc.).
+        const libRes = await fetch(`${API_BASE}/caselaws/library`);
+        if (libRes.ok) {
+          const libData = await libRes.json().catch(() => ({}));
+          const courts = Array.isArray(libData?.courts) ? libData.courts : [];
+          const normalized = courts
+            .map((c) => ({
+              name: (c?.name || "").trim() || "Case laws",
+              cases: Array.isArray(c?.cases) ? c.cases : [],
+            }))
+            .filter((c) => c.cases.length > 0);
+          if (normalized.length > 0) {
+            setCaseLawsLibrary(normalized);
+            setCaseLawsList(normalized.flatMap((c) => c.cases));
+            if (!caseLawsCourtOpen && normalized[0]?.name) {
+              setCaseLawsCourtOpen(normalized[0].name);
+            }
+            return;
+          }
+        }
+
+        // Fallback: older API that returns a flat list.
         const res = await fetch(`${API_BASE}/caselaws/list`);
         if (!res.ok) return;
         const data = await res.json().catch(() => ({}));
@@ -564,7 +637,7 @@ function App() {
   // -------------------------
   // SSE Stream Consumer Helper
   // -------------------------
-  const consumeSSEStream = async (url, body, onProgress, onDone) => {
+  const consumeSSEStream = async (url, body, onProgress, onDone, onStep, onToken) => {
     const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -595,6 +668,10 @@ function App() {
           const payload = JSON.parse(dataLine);
           if (eventType === "progress" && onProgress) {
             onProgress(payload);
+          } else if (eventType === "step" && onStep) {
+            onStep(payload);
+          } else if (eventType === "token" && onToken) {
+            onToken(payload);
           } else if (eventType === "done" && onDone) {
             onDone(payload);
             return;
@@ -819,6 +896,8 @@ function App() {
     setError("");
     setLoading(true);
     setProgress(null); // Reset progress
+    setStreamingSteps([]);
+    setStreamingToken("");
     setElapsedTime(0); // Reset timer
     setInput(""); // Clear input after submission
     setPendingMaterials(null); // Clear pending materials on new submission
@@ -868,6 +947,8 @@ function App() {
             }
           },
           (data) => {
+            setStreamingSteps([]);
+            setStreamingToken("");
             setRawResponse(JSON.stringify(data, null, 2));
             if (data.status === "question" && data.next_question) {
               setCurrentQuestion(data.next_question);
@@ -975,10 +1056,14 @@ function App() {
             } else {
               if (data.message) setError(data.message);
             }
-          }
+          },
+          handleStep,
+          handleToken,
         );
       } catch (err) {
         console.error("submit_case stream error:", err);
+        setStreamingSteps([]);
+        setStreamingToken("");
         setError(err.message || "Error during processing. Please try again.");
         setRawResponse("Error: " + (err.message || ""));
       } finally {
@@ -1018,6 +1103,8 @@ function App() {
             }
           },
           (data) => {
+            setStreamingSteps([]);
+            setStreamingToken("");
             setRawResponse(JSON.stringify(data, null, 2));
             if (data.status === "question" && data.next_question) {
               setCurrentQuestion(data.next_question);
@@ -1102,7 +1189,9 @@ function App() {
             } else {
               if (data.message) setError(data.message);
             }
-          }
+          },
+          handleStep,
+          handleToken,
         );
       } catch (err) {
         console.error("interview_step stream error:", err);
@@ -1187,10 +1276,16 @@ function App() {
                 { role: "assistant", content: data.next_question, timestamp: new Date().toISOString() },
               ]);
             }
-          }
+            setStreamingSteps([]);
+            setStreamingToken("");
+          },
+          handleStep,
+          handleToken,
         );
       } catch (err) {
         console.error("bare_acts_review stream error:", err);
+        setStreamingSteps([]);
+        setStreamingToken("");
         setError("Error during processing: " + (err.message || "Network or server error"));
       } finally {
         setLoading(false);
@@ -1324,7 +1419,11 @@ function App() {
                 { role: "assistant", content: fallbackContent, timestamp: new Date().toISOString() },
               ]);
             }
-          }
+            setStreamingSteps([]);
+            setStreamingToken("");
+          },
+          handleStep,
+          handleToken,
         );
       } catch (err) {
         setError("Error continuing chat: " + (err.message || ""));
@@ -2694,28 +2793,89 @@ function App() {
                     aria-label="Filter bare acts"
                   />
                   <div className="sidebar-list-scroll" onMouseDown={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
-                  <ul className="bare-act-list">
-                    {bareActs
-                      .filter((name) => !bareActsFilter.trim() || name.toLowerCase().includes(bareActsFilter.trim().toLowerCase()))
-                      .map((name, idx) => {
-                        const useRelative =
-                          typeof window !== "undefined" &&
-                          (window.location.hostname === "localhost" ||
-                            window.location.hostname === "127.0.0.1" ||
-                            API_BASE === "" ||
-                            API_BASE.startsWith(window.location.origin));
-                        const downloadUrl = useRelative
-                          ? `/bareacts/download?name=${encodeURIComponent(name)}&inline=1`
-                          : `${API_BASE}/bareacts/download?name=${encodeURIComponent(name)}&inline=1`;
-                        return (
-                          <li key={`${name}-${idx}`} className="bare-act-list-item">
-                            <a href={downloadUrl} target="_blank" rel="noopener noreferrer" className="bare-act-download-link">
-                              {name}
-                            </a>
-                          </li>
+                    {Array.isArray(bareActsLibrary) && bareActsLibrary.length > 0 ? (
+                      bareActsLibrary.map((jurisdiction) => {
+                        const filteredActs = jurisdiction.acts.filter(
+                          (name) =>
+                            !bareActsFilter.trim() ||
+                            name.toLowerCase().includes(bareActsFilter.trim().toLowerCase()),
                         );
-                      })}
-                  </ul>
+                        if (!filteredActs.length) return null;
+                        const isOpen = bareActsJurisdictionOpen === jurisdiction.name;
+                        return (
+                          <details
+                            key={jurisdiction.name}
+                            className="bare-acts-collapsible"
+                            open={isOpen}
+                            onClick={(e) => {
+                              if (e.target.closest("summary")) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                setBareActsJurisdictionOpen((prev) =>
+                                  prev === jurisdiction.name ? null : jurisdiction.name,
+                                );
+                              }
+                            }}
+                          >
+                            <summary className="bare-acts-collapsible-summary sidebar-collapsible-summary">
+                              {jurisdiction.name} ({jurisdiction.acts.length})
+                            </summary>
+                            <ul className="bare-act-list">
+                              {filteredActs.map((name, idx) => {
+                                const useRelative =
+                                  typeof window !== "undefined" &&
+                                  (window.location.hostname === "localhost" ||
+                                    window.location.hostname === "127.0.0.1" ||
+                                    API_BASE === "" ||
+                                    API_BASE.startsWith(window.location.origin));
+                                const downloadUrl = useRelative
+                                  ? `/bareacts/view?name=${encodeURIComponent(name)}`
+                                  : `${API_BASE}/bareacts/view?name=${encodeURIComponent(name)}`;
+                                return (
+                                  <li key={`${jurisdiction.name}-${name}-${idx}`} className="bare-act-list-item">
+                                    <a
+                                      href={downloadUrl}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="bare-act-download-link"
+                                    >
+                                      {name}
+                                    </a>
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          </details>
+                        );
+                      })
+                    ) : (
+                      <ul className="bare-act-list">
+                        {bareActs
+                          .filter(
+                            (name) =>
+                              !bareActsFilter.trim() ||
+                              name.toLowerCase().includes(bareActsFilter.trim().toLowerCase()),
+                          )
+                          .map((name, idx) => {
+                            const useRelative =
+                              typeof window !== "undefined" &&
+                              (window.location.hostname === "localhost" ||
+                                window.location.hostname === "127.0.0.1" ||
+                                API_BASE === "" ||
+                                API_BASE.startsWith(window.location.origin));
+                            const downloadUrl = useRelative
+                              ? `/bareacts/view?name=${encodeURIComponent(name)}`
+                              : `${API_BASE}/bareacts/view?name=${encodeURIComponent(name)}`;
+                            return (
+                              <li key={`${name}-${idx}`} className="bare-act-list-item">
+                                <a href={downloadUrl} target="_blank" rel="noopener noreferrer" className="bare-act-download-link">
+                                  {name}
+                                </a>
+                              </li>
+                            );
+                          })}
+                      </ul>
+                    )}
                   </div>
                 </>
               ) : (
@@ -2752,28 +2912,94 @@ function App() {
                     aria-label="Filter case laws"
                   />
                   <div className="sidebar-list-scroll" onMouseDown={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
-                  <ul className="case-laws-list">
-                    {caseLawsList
-                      .filter((name) => !caseLawsFilter.trim() || name.toLowerCase().includes(caseLawsFilter.trim().toLowerCase()))
-                      .map((name, idx) => {
-                        const useRelative =
-                          typeof window !== "undefined" &&
-                          (window.location.hostname === "localhost" ||
-                            window.location.hostname === "127.0.0.1" ||
-                            API_BASE === "" ||
-                            API_BASE.startsWith(window.location.origin));
-                        const downloadUrl = useRelative
-                          ? `/caselaws/download?name=${encodeURIComponent(name)}&inline=1`
-                          : `${API_BASE}/caselaws/download?name=${encodeURIComponent(name)}&inline=1`;
-                        return (
-                          <li key={`${name}-${idx}`} className="case-laws-list-item">
-                            <a href={downloadUrl} target="_blank" rel="noopener noreferrer" className="case-laws-download-link">
-                              {name}
-                            </a>
-                          </li>
+                    {Array.isArray(caseLawsLibrary) && caseLawsLibrary.length > 0 ? (
+                      caseLawsLibrary.map((court) => {
+                        const filteredCases = court.cases.filter(
+                          (name) =>
+                            !caseLawsFilter.trim() ||
+                            name.toLowerCase().includes(caseLawsFilter.trim().toLowerCase()),
                         );
-                      })}
-                  </ul>
+                        if (!filteredCases.length) return null;
+                        const isOpen = caseLawsCourtOpen === court.name;
+                        return (
+                          <details
+                            key={court.name}
+                            className="case-laws-collapsible"
+                            open={isOpen}
+                            onClick={(e) => {
+                              if (e.target.closest("summary")) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                setCaseLawsCourtOpen((prev) =>
+                                  prev === court.name ? null : court.name,
+                                );
+                              }
+                            }}
+                          >
+                            <summary className="case-laws-collapsible-summary sidebar-collapsible-summary">
+                              {court.name} ({court.cases.length})
+                            </summary>
+                            <ul className="case-laws-list">
+                              {filteredCases.map((name, idx) => {
+                                const useRelative =
+                                  typeof window !== "undefined" &&
+                                  (window.location.hostname === "localhost" ||
+                                    window.location.hostname === "127.0.0.1" ||
+                                    API_BASE === "" ||
+                                    API_BASE.startsWith(window.location.origin));
+                                const downloadUrl = useRelative
+                                  ? `/caselaws/view?name=${encodeURIComponent(name)}`
+                                  : `${API_BASE}/caselaws/view?name=${encodeURIComponent(name)}`;
+                                return (
+                                  <li key={`${court.name}-${name}-${idx}`} className="case-laws-list-item">
+                                    <a
+                                      href={downloadUrl}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="case-laws-download-link"
+                                    >
+                                      {name}
+                                    </a>
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          </details>
+                        );
+                      })
+                    ) : (
+                      <ul className="case-laws-list">
+                        {caseLawsList
+                          .filter(
+                            (name) =>
+                              !caseLawsFilter.trim() ||
+                              name.toLowerCase().includes(caseLawsFilter.trim().toLowerCase()),
+                          )
+                          .map((name, idx) => {
+                            const useRelative =
+                              typeof window !== "undefined" &&
+                              (window.location.hostname === "localhost" ||
+                                window.location.hostname === "127.0.0.1" ||
+                                API_BASE === "" ||
+                                API_BASE.startsWith(window.location.origin));
+                            const downloadUrl = useRelative
+                              ? `/caselaws/view?name=${encodeURIComponent(name)}`
+                              : `${API_BASE}/caselaws/view?name=${encodeURIComponent(name)}`;
+                            return (
+                              <li key={`${name}-${idx}`} className="case-laws-list-item">
+                                <a
+                                  href={downloadUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="case-laws-download-link"
+                                >
+                                  {name}
+                                </a>
+                              </li>
+                            );
+                          })}
+                      </ul>
+                    )}
                   </div>
                 </>
               ) : (
@@ -3379,30 +3605,56 @@ function App() {
                       <span className="avatar-ai">⚖</span>
                     </div>
                     <div className="message-content">
-                      <div className="message-bubble message-bubble--assistant typing-indicator">
-                        <span className="typing-indicator-text">Nyaymalaw is thinking</span>
-                        <span className="typing-dots">
-                          <span className="typing-dot" />
-                          <span className="typing-dot" />
-                          <span className="typing-dot" />
-                        </span>
-                        {elapsedTime > 0 && (
-                          <span className="typing-timer">
-                            {Math.floor(elapsedTime / 60)} min {Math.floor(elapsedTime % 60)} sec
+                      {/* Step timeline — shows while no tokens yet */}
+                      {streamingSteps.length > 0 && !streamingToken && (
+                        <div className="streaming-steps">
+                          {streamingSteps.map((s, i) => (
+                            <div key={i} className={`streaming-step ${s.done ? "streaming-step--done" : "streaming-step--active"}`}>
+                              <span className="streaming-step-icon">{s.icon || "•"}</span>
+                              <span className="streaming-step-msg">{s.message}</span>
+                              {!s.done && i === streamingSteps.length - 1 && (
+                                <span className="streaming-step-pulse" />
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      {/* Streaming token text — shows as LLM generates */}
+                      {streamingToken && (
+                        <div className="message-bubble message-bubble--assistant streaming-response">
+                          {/* Compact step summary above streaming text */}
+                          {streamingSteps.length > 0 && (
+                            <div className="streaming-steps streaming-steps--compact">
+                              {streamingSteps.filter(s => s.done || streamingSteps.indexOf(s) === streamingSteps.length - 1).slice(-4).map((s, i) => (
+                                <span key={i} className="streaming-step-chip">{s.icon} {s.message}</span>
+                              ))}
+                            </div>
+                          )}
+                          <div className="streaming-text">{streamingToken}<span className="streaming-cursor">▋</span></div>
+                        </div>
+                      )}
+                      {/* Fallback typing indicator when nothing is streaming yet */}
+                      {streamingSteps.length === 0 && !streamingToken && (
+                        <div className="message-bubble message-bubble--assistant typing-indicator">
+                          <span className="typing-indicator-text">Nyaymalaw is thinking</span>
+                          <span className="typing-dots">
+                            <span className="typing-dot" />
+                            <span className="typing-dot" />
+                            <span className="typing-dot" />
                           </span>
-                        )}
-                      </div>
+                          {elapsedTime > 0 && (
+                            <span className="typing-timer">
+                              {Math.floor(elapsedTime / 60)} min {Math.floor(elapsedTime % 60)} sec
+                            </span>
+                          )}
+                        </div>
+                      )}
                       {progress && (
-                        <ProgressDisplay 
-                          progress={progress} 
+                        <ProgressDisplay
+                          progress={progress}
                           expandedGroups={expandedGroups}
                           setExpandedGroups={setExpandedGroups}
                         />
-                      )}
-                      {!progress && (
-                        <div className="progress-display progress-display--loading">
-                          <p className="progress-wait-message">Starting search… Progress will appear here as the backend processes your query.</p>
-                        </div>
                       )}
                     </div>
                   </div>

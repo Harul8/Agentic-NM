@@ -31,7 +31,6 @@ from config import (
     WEB_REFERENCES_DB,
 )
 from retrieval.tiered_search import classify_source, fetch_content_and_pdf
-from retrieval.case_law_filename import suggest_case_law_basename
 
 logger = logging.getLogger(__name__)
 
@@ -380,8 +379,6 @@ def enrich_from_search_result(
             "chunks_added": int,
         }
     """
-    from Ingestion.smart_chunker import chunk_bare_act, chunk_case_law
-
     url = result.get("url", "")
     title = result.get("title", "Unknown")
     snippet = result.get("snippet", "")
@@ -481,8 +478,7 @@ def enrich_from_search_result(
             enrichment["content"] = f"{title}\n\n{snippet}" if snippet else title  # Use title+snippet only for display
             # Still save PDF if we have bytes, but don't index
             if pdf_bytes and len(pdf_bytes) > 1000:
-                filename = suggest_case_law_basename((text_content or "")[:3000], title)
-                saved_path = save_pdf_to_drive(pdf_bytes, filename, "CaseLaws")
+                saved_path = save_pdf_to_drive(pdf_bytes, title, "CaseLaws")
                 enrichment["pdf_saved"] = bool(saved_path)
             return enrichment
 
@@ -495,19 +491,10 @@ def enrich_from_search_result(
 
         if pdf_bytes and len(pdf_bytes) > 1000 and rerank_score > HIGH_QUALITY_SCORE:
             subfolder = "CaseLaws"
-            filename = suggest_case_law_basename((text_content or "")[:3000], title)
-            saved_path = save_pdf_to_drive(pdf_bytes, filename, subfolder)
+            saved_path = save_pdf_to_drive(pdf_bytes, title, subfolder)
             enrichment["pdf_saved"] = bool(saved_path)
-            if saved_path and text_content:
-                chunks = chunk_case_law(text_content, saved_path)
-                added = add_case_law_chunks(chunks)
-                enrichment["indexed"] = added > 0
-                enrichment["chunks_added"] = added
-                logger.info(f"Indexed {added} chunks from PDF (score {rerank_score:.2f} > {HIGH_QUALITY_SCORE}): {title}")
         elif pdf_bytes and len(pdf_bytes) > 1000:
-            # Save PDF to Drive but do NOT index (score <= 5.0)
-            filename = suggest_case_law_basename((text_content or "")[:3000], title)
-            saved_path = save_pdf_to_drive(pdf_bytes, filename, "CaseLaws")
+            saved_path = save_pdf_to_drive(pdf_bytes, title, "CaseLaws")
             enrichment["pdf_saved"] = bool(saved_path)
             if not saved_path:
                 _save_web_reference(result, text_content)
@@ -515,16 +502,14 @@ def enrich_from_search_result(
             _save_web_reference(result, text_content)
         return enrichment
 
-    # Bare acts or unscored: save and index as before (only as bare act if classified as legislation)
+    # Bare acts or unscored: save only (only as bare act if classified as legislation)
     if pdf_bytes and len(pdf_bytes) > 1000:
         if doc_type == "bare_act" and not is_legislation:
-            # Document is not an Act/Law (e.g. notification, circular); do not save as BareAct or index
             _save_web_reference(result, text_content)
             logger.info(f"Not an Act/Law; saved as web reference only: {title[:60]}")
         else:
             subfolder = "CaseLaws" if doc_type == "case_law" else "BareActs"
-            filename = suggest_case_law_basename((text_content or "")[:3000], title) if doc_type == "case_law" else title
-            saved_path = save_pdf_to_drive(pdf_bytes, filename, subfolder)
+            saved_path = save_pdf_to_drive(pdf_bytes, title, subfolder)
             enrichment["pdf_saved"] = bool(saved_path)
 
             if saved_path and text_content:

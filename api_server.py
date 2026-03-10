@@ -7,11 +7,12 @@ import logging
 import secrets
 import time
 import traceback
+from html import escape as _html_escape
 from queue import Queue
 from typing import List, Optional
 
 from fastapi import BackgroundTasks, FastAPI, Query, HTTPException, Depends, Header, Request
-from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
+from fastapi.responses import FileResponse, JSONResponse, StreamingResponse, HTMLResponse
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
@@ -19,8 +20,6 @@ import uvicorn
 
 from agents.Legal_Research.act_case_fusion_agent import fuse_bare_act_and_case_law
 from services.interactive_chat import process_chat
-from services.case_law_indexer_incremental import index_new_case_laws
-from services.bare_act_indexer_incremental import index_new_bare_acts
 from services.response_generator_v2 import generate_response_v2
 from llm.ollama_client import check_ollama_health, get_last_model_used
 
@@ -170,6 +169,12 @@ from config import (
     LEGAL_DB_JSON_OUTPUT as _LEGAL_DB_JSON_OUTPUT,
 )
 _BASE_DIR = os.path.dirname(os.path.abspath(os.path.normpath(__file__)))
+
+# Directories inside legal_database/json_output used by the pipeline.
+# BareActs are mirrored under json_output/BareActs/<Jurisdiction>/..., and
+# case-law JSONs are under json_output/caselaws/YYYY/MON/...
+_LEGAL_DB_BAREACTS_DIR = os.path.join(_LEGAL_DB_JSON_OUTPUT, "BareActs")
+_LEGAL_DB_CASELAWS_DIR = os.path.join(_LEGAL_DB_JSON_OUTPUT, "caselaws")
 
 
 def _hash_password(password: str) -> str:
@@ -587,48 +592,131 @@ def _build_conv(messages: list[ChatMessage] | None) -> list[dict]:
 # Path to vector store and BareActs directory – resolve from this file’s location
 
 
+def _iter_bareacts_json_files():
+    """
+    Yield (rel_dir, base_name) for each BareActs JSON file under the legal
+    database. Mirrors the json_output/BareActs/<Jurisdiction>/ tree produced
+    by legal_database/pipeline.py.
+    """
+    if not _USE_LEGAL_DATABASE:
+        return
+
+    # Preferred structure: json_output/BareActs/<Jurisdiction>/YYYY_idx_ActName.json
+    if os.path.isdir(_LEGAL_DB_BAREACTS_DIR):
+        for root, _, files in os.walk(_LEGAL_DB_BAREACTS_DIR):
+            rel = os.path.relpath(root, _LEGAL_DB_BAREACTS_DIR)
+            for name in files:
+                if not name.lower().endswith(".json"):
+                    continue
+                base = os.path.splitext(name)[0]
+                if base:
+                    yield rel, base
+        return
+
+    # Backwards-compatible fallback: flat json_output/ directory.
+    if os.path.isdir(_LEGAL_DB_JSON_OUTPUT):
+        for name in os.listdir(_LEGAL_DB_JSON_OUTPUT):
+            if not name.lower().endswith(".json"):
+                continue
+            base = os.path.splitext(name)[0]
+            if base:
+                # Treat flat layout as having no jurisdiction-specific folder.
+                yield "", base
+
+
 def _list_bare_acts_from_json_output() -> list[str]:
     """List act names (JSON base names) from legal_database/json_output (statute schema)."""
-    if not _USE_LEGAL_DATABASE or not os.path.isdir(_LEGAL_DB_JSON_OUTPUT):
+    if not _USE_LEGAL_DATABASE:
         return []
-    out = []
-    for f in os.listdir(_LEGAL_DB_JSON_OUTPUT):
-        if not f.lower().endswith(".json"):
+    out: list[str] = []
+    seen: set[str] = set()
+    for _rel, base in _iter_bareacts_json_files():
+        if base in seen:
             continue
-        path = os.path.join(_LEGAL_DB_JSON_OUTPUT, f)
-        try:
-            with open(path, encoding="utf-8") as fp:
-                data = json.load(fp)
-            if data.get("act_id") or (data.get("sections") and data.get("act_name")):
-                base = os.path.splitext(f)[0]
-                if base and base not in out:
-                    out.append(base)
-        except Exception:
-            continue
+        # Optionally validate statute schema by peeking into one file per base,
+        # but skip heavy JSON reads here for performance.
+        seen.add(base)
+        out.append(base)
     return sorted(out)
+
+
+def _iter_caselaws_json_files():
+    """
+    Yield (path, base_name) for each case-law JSON file under the legal
+    database. Matches the json_output/caselaws/YYYY/MON/ tree produced
+    by legal_database/pipeline.py, with a flat json_output/ fallback.
+    """
+    if not _USE_LEGAL_DATABASE:
+        return
+
+    # Preferred structure: json_output/caselaws/YYYY/MON/CaseName.json
+    if os.path.isdir(_LEGAL_DB_CASELAWS_DIR):
+        for root, _, files in os.walk(_LEGAL_DB_CASELAWS_DIR):
+            for name in files:
+                if not name.lower().endswith(".json"):
+                    continue
+                base = os.path.splitext(name)[0]
+                if base:
+                    yield os.path.join(root, name), base
+        return
+
+    # Backwards-compatible fallback: flat json_output/ directory.
+    if os.path.isdir(_LEGAL_DB_JSON_OUTPUT):
+        for name in os.listdir(_LEGAL_DB_JSON_OUTPUT):
+            if not name.lower().endswith(".json"):
+                continue
+            base = os.path.splitext(name)[0]
+            if base:
+                yield os.path.join(_LEGAL_DB_JSON_OUTPUT, name), base
 
 
 def _list_case_laws_from_json_output() -> list[str]:
-    """List case names (JSON base names) from legal_database/json_output (case schema)."""
-    if not _USE_LEGAL_DATABASE or not os.path.isdir(_LEGAL_DB_JSON_OUTPUT):
+    """
+    List case names (JSON base names) from legal_database/json_output
+    (case schema).
+    """
+    if not _USE_LEGAL_DATABASE:
         return []
-    out = []
-    for f in os.listdir(_LEGAL_DB_JSON_OUTPUT):
-        if not f.lower().endswith(".json"):
-            continue
-        path = os.path.join(_LEGAL_DB_JSON_OUTPUT, f)
+
+    bases: set[str] = set()
+    for _path, base in _iter_caselaws_json_files():
+        bases.add(base)
+    return sorted(bases)
+
+
+def _group_case_laws_by_court() -> dict[str, list[str]]:
+    """
+    Group case laws by court, using the "court" field from the case-law JSON.
+
+    Returns a mapping like:
+      {
+        "Supreme Court": [...],
+        "Telangana HC": [...],
+        "Other courts": [...]
+      }
+    """
+    groups: dict[str, list[str]] = {}
+    if not _USE_LEGAL_DATABASE:
+        return groups
+
+    for path, base in _iter_caselaws_json_files():
         try:
             with open(path, encoding="utf-8") as fp:
                 data = json.load(fp)
-            if data.get("act_id"):
-                continue
-            if data.get("case_name") or data.get("paragraphs"):
-                base = os.path.splitext(f)[0]
-                if base and base not in out:
-                    out.append(base)
         except Exception:
             continue
-    return sorted(out)
+        court = (data.get("court") or "").lower()
+        if "supreme" in court:
+            label = "Supreme Court"
+        elif "telangana" in court:
+            label = "Telangana HC"
+        else:
+            label = "Other courts"
+        groups.setdefault(label, []).append(base)
+
+    for cases in groups.values():
+        cases.sort()
+    return groups
 
 
 def _list_bare_acts_from_vector_store() -> list[str]:
@@ -665,6 +753,35 @@ def _list_bare_acts_from_disk() -> list[str]:
         if os.path.isfile(path) and (f.lower().endswith(".pdf") or f.lower().endswith(".txt")):
             out.append(f)
     return sorted(out)
+
+
+def _group_bare_acts_by_jurisdiction() -> dict[str, list[str]]:
+    """
+    Group Bare Acts by top-level jurisdiction folder under json_output/BareActs.
+
+    Example layout (mirrors legal_database/pipeline.py):
+      json_output/BareActs/Telangana/1987_15_SomeAct.json
+      json_output/BareActs/Union of India/2023_01_AnotherAct.json
+
+    Returns:
+      {"Telangana": [...], "Union of India": [...], ...}
+    """
+    groups: dict[str, list[str]] = {}
+    if not _USE_LEGAL_DATABASE:
+        return groups
+
+    for rel, base in _iter_bareacts_json_files():
+        # rel example: ".", "Telangana", "Union of India", "Telangana/Subdir"
+        jurisdiction = ""
+        if rel and rel != ".":
+            jurisdiction = rel.split(os.sep, 1)[0]
+        if not jurisdiction:
+            jurisdiction = "Union of India"
+        groups.setdefault(jurisdiction, []).append(base)
+
+    for acts in groups.values():
+        acts.sort()
+    return groups
 
 
 def _chat_error_fallback(detail: str = "") -> dict:
@@ -960,9 +1077,37 @@ def search_law(query: SearchQuery, background_tasks: BackgroundTasks):
     return result
 
 
+@app.get("/bareacts/library")
+def bareacts_library():
+    """
+    Return Bare Acts grouped by jurisdiction, mirroring the
+    legal_database/json_output/BareActs/<Jurisdiction>/ structure.
+
+    Response shape:
+      {
+        "jurisdictions": [
+          {"name": "Telangana", "acts": ["YYYY_idx_ActName", ...]},
+          {"name": "Union of India", "acts": ["YYYY_idx_ActName", ...]},
+          ...
+        ]
+      }
+    """
+    if not _USE_LEGAL_DATABASE:
+        # When not using the legal_database mirror, fall back to a flat list.
+        acts = _list_bare_acts_from_vector_store()
+        return {"jurisdictions": [{"name": "All", "acts": acts}]}
+
+    groups = _group_bare_acts_by_jurisdiction()
+    jurisdictions = [
+        {"name": name, "acts": acts}
+        for name, acts in sorted(groups.items(), key=lambda kv: kv[0].lower())
+    ]
+    return {"jurisdictions": jurisdictions}
+
+
 @app.get("/bareacts/list")
 def bareacts_list():
-    """Return list of bare act filenames from data/BareActs (same source as download)."""
+    """Return flat list of Bare Acts for backwards compatibility."""
     acts = _list_bare_acts_from_vector_store()
     return {"acts": acts}
 
@@ -996,20 +1141,43 @@ def _resolve_bare_act_path(base: str):
 
 def _get_json_from_legal_db(base: str, is_statute: bool) -> dict | None:
     """Return parsed JSON for a statute or case from legal_database/json_output."""
-    if not _USE_LEGAL_DATABASE or not os.path.isdir(_LEGAL_DB_JSON_OUTPUT):
+    if not _USE_LEGAL_DATABASE:
         return None
     base = (base or "").strip()
     if not base:
         return None
     if base.lower().endswith(".json"):
         base = base[:-5]
-    path = os.path.join(_LEGAL_DB_JSON_OUTPUT, base + ".json")
-    if not os.path.isfile(path):
-        for f in os.listdir(_LEGAL_DB_JSON_OUTPUT):
-            if os.path.splitext(f)[0].lower() == base.lower():
-                path = os.path.join(_LEGAL_DB_JSON_OUTPUT, f)
+
+    # Choose the correct root based on whether we are looking for a statute
+    # (BareActs) or a case law (caselaws). The pipeline mirrors:
+    #   json_output/BareActs/<Jurisdiction>/YYYY_idx_ActName.json
+    #   json_output/caselaws/YYYY/MON/CaseName.json
+    if is_statute:
+        search_root = _LEGAL_DB_BAREACTS_DIR if os.path.isdir(_LEGAL_DB_BAREACTS_DIR) else _LEGAL_DB_JSON_OUTPUT
+    else:
+        search_root = _LEGAL_DB_CASELAWS_DIR if os.path.isdir(_LEGAL_DB_CASELAWS_DIR) else _LEGAL_DB_JSON_OUTPUT
+
+    if not os.path.isdir(search_root):
+        return None
+
+    # First try an exact filename under the chosen root (non-recursive).
+    candidate = os.path.join(search_root, base + ".json")
+    path = candidate if os.path.isfile(candidate) else ""
+
+    # Fallback: walk the tree and match by base name, case-insensitive.
+    if not path:
+        target = base.lower()
+        for root, _, files in os.walk(search_root):
+            for name in files:
+                if not name.lower().endswith(".json"):
+                    continue
+                if os.path.splitext(name)[0].lower() == target:
+                    path = os.path.join(root, name)
+                    break
+            if path:
                 break
-        else:
+        if not path:
             return None
     try:
         with open(path, encoding="utf-8") as fp:
@@ -1043,6 +1211,300 @@ def caselaws_json(name: str = Query(..., description="Base name of the case JSON
     if not data:
         raise HTTPException(status_code=404, detail="Case not found")
     return data
+
+
+@app.get("/bareacts/view", response_class=HTMLResponse)
+def bareacts_view(name: str = Query(..., description="Base name of the act JSON (e.g. ADVOCATES_Act)")):
+    """
+    Render a statute JSON from legal_database/json_output as a readable HTML document.
+    Sections are ordered numerically and long sections that were split into
+    sub-chunks are recombined in display order.
+    """
+    if not _USE_LEGAL_DATABASE:
+        raise HTTPException(status_code=400, detail="JSON endpoint requires NYAYMALAW_DATA_SOURCE=legal_database")
+    data = _get_json_from_legal_db(name, is_statute=True)
+    if not data:
+        raise HTTPException(status_code=404, detail="Act not found")
+
+    title = (data.get("act_name") or name or "").strip() or "Bare Act"
+    year = data.get("year") or (data.get("act_summary") or {}).get("year")
+    sections = data.get("sections") or []
+
+    # Group sections by section_number and sort numerically.
+    sections_by_num: dict[str, list[dict]] = {}
+    for sec in sections:
+        num = str(sec.get("section_number") or "").strip()
+        if not num:
+            continue
+        sections_by_num.setdefault(num, []).append(sec)
+
+    def _sec_sort_key(num_str: str) -> tuple[int, str]:
+        import re as _re
+        m = _re.match(r"(\d+)", num_str)
+        if m:
+            base = int(m.group(1))
+            suffix = num_str[m.end() :].strip()
+        else:
+            base = 10**9
+            suffix = num_str
+        return (base, suffix)
+
+    ordered_nums = sorted(sections_by_num.keys(), key=_sec_sort_key)
+
+    def _sub_sort_key(sec: dict) -> tuple[int, int, str]:
+        import re as _re
+        sub = (sec.get("sub_section") or "").strip()
+        if not sub:
+            return (0, 0, "")
+        m = _re.match(r"\(?(\d+)\)?\s*([A-Za-z]*)", sub)
+        if m:
+            num = int(m.group(1)) if m.group(1) else 0
+            suf = m.group(2) or ""
+            return (1, num, suf)
+        return (1, 0, sub)
+
+    def _render_text_block(text: str) -> str:
+        """
+        Render a section's text into HTML paragraphs.
+
+        Normalises patterns where section / sub-section markers are on their own
+        line and the substantive text starts on the next line, e.g.:
+          "11.\nGrant of probate..."   → "11. Grant of probate..."
+          "(a)\nany person appears..." → "(a) any person appears..."
+        """
+        import re as _re
+        t = text or ""
+
+        # First, join marker-only lines with the following content line.
+        lines = t.splitlines()
+        joined_lines: list[str] = []
+        i = 0
+        sec_pat = _re.compile(r"^\s*\d+[A-Za-z]*\.\s*$")              # 11. / 11A.
+        sub_pat = _re.compile(r"^\s*\([A-Za-z0-9ivxIVX]+\)\s*$")      # (a), (b), (i), (ii), etc.
+        while i < len(lines):
+            line = lines[i]
+            if (sec_pat.match(line) or sub_pat.match(line)) and i + 1 < len(lines):
+                next_line = lines[i + 1]
+                # Only join when the next line has substantive text.
+                if next_line.strip():
+                    joined_lines.append(line.strip() + " " + next_line.lstrip())
+                    i += 2
+                    continue
+            joined_lines.append(line)
+            i += 1
+
+        normalised = "\n".join(joined_lines)
+
+        # Split into paragraphs on double newlines; preserve remaining single
+        # newlines as <br>.
+        paras = [s for s in normalised.split("\n\n") if s.strip()]
+        if not paras:
+            return ""
+        html_parts: list[str] = []
+        for para in paras:
+            safe = _html_escape(para)
+            safe = safe.replace("\n", "<br />")
+            html_parts.append(f"<p>{safe}</p>")
+        return "\n".join(html_parts)
+
+    sections_html: list[str] = []
+    for num in ordered_nums:
+        group = sections_by_num[num]
+        group_sorted = sorted(group, key=_sub_sort_key)
+        first = group_sorted[0]
+        sec_title = (
+            (first.get("section_title") or first.get("title") or "").strip()
+            or (first.get("text") or "").split("\n", 1)[0].strip()
+        )
+        header = f"Section {num}"
+        if sec_title:
+            header = f"{header}. {sec_title}"
+        body_text = "\n\n".join((sec.get("text") or "").strip() for sec in group_sorted if (sec.get("text") or "").strip())
+        body_html = _render_text_block(body_text)
+        sections_html.append(
+            f"<section class='bare-section'>"
+            f"<h2>{_html_escape(header)}</h2>"
+            f"{body_html}"
+            f"</section>"
+        )
+
+    sections_joined = "\n".join(sections_html) if sections_html else "<p>No sections found in this act.</p>"
+
+    html = f"""
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{_html_escape(title)}</title>
+    <style>
+      body {{
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        margin: 16px;
+        background: #f7f7f8;
+        color: #222;
+      }}
+      h1 {{
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+      }}
+      h2 {{
+        font-size: 1.05rem;
+        margin-top: 18px;
+        margin-bottom: 6px;
+      }}
+      .meta {{
+        margin-bottom: 16px;
+        font-size: 0.9rem;
+        color: #555;
+      }}
+      .bare-section {{
+        padding-bottom: 12px;
+        border-bottom: 1px solid #e0e0e0;
+        margin-bottom: 12px;
+      }}
+      .bare-section:last-of-type {{
+        border-bottom: none;
+      }}
+      p {{
+        font-size: 0.92rem;
+        line-height: 1.5;
+      }}
+    </style>
+  </head>
+  <body>
+    <h1>{_html_escape(title)}</h1>
+    <div class="meta">
+      Source: legal_database/json_output (bare act JSON)
+      {"&nbsp;•&nbsp;Year: " + _html_escape(str(year)) if year else ""}
+    </div>
+    {sections_joined}
+  </body>
+</html>
+"""
+    return HTMLResponse(content=html)
+
+
+@app.get("/caselaws/view", response_class=HTMLResponse)
+def caselaws_view(name: str = Query(..., description="Base name of the case JSON (e.g. ABHILASHA_V_PARKASH)")):
+    """
+    Render a case-law JSON from legal_database/json_output as a readable HTML document.
+    Paragraphs are shown in logical order (paragraph_id) so that any chunking
+    for indexing does not affect the reading flow.
+    """
+    if not _USE_LEGAL_DATABASE:
+        raise HTTPException(status_code=400, detail="JSON endpoint requires NYAYMALAW_DATA_SOURCE=legal_database")
+    data = _get_json_from_legal_db(name, is_statute=False)
+    if not data:
+        raise HTTPException(status_code=404, detail="Case not found")
+
+    title = (data.get("case_name") or name or "").strip() or "Case law"
+    court = (data.get("court") or "").strip()
+    date = (data.get("date_of_judgment") or "").strip()
+    judges = data.get("judges") or []
+    bench_type = (data.get("bench_type") or "").strip()
+    citations = data.get("equivalent_citations") or data.get("reporter_citations") or []
+    paragraphs = data.get("paragraphs") or []
+
+    paragraphs_sorted = sorted(
+        paragraphs,
+        key=lambda p: int(p.get("paragraph_id") or 0),
+    )
+
+    def _render_para_text(text: str) -> str:
+        parts = [t for t in (text or "").split("\n\n") if t.strip()]
+        if not parts:
+            return ""
+        html_parts: list[str] = []
+        for part in parts:
+            safe = _html_escape(part)
+            safe = safe.replace("\n", "<br />")
+            html_parts.append(f"<p>{safe}</p>")
+        return "\n".join(html_parts)
+
+    paras_html: list[str] = []
+    for p in paragraphs_sorted:
+        pid = p.get("paragraph_id")
+        text = p.get("text") or ""
+        body_html = _render_para_text(text)
+        if not body_html:
+            continue
+        label = f"¶ {pid}" if pid is not None else "¶"
+        paras_html.append(
+            f"<article class='case-paragraph'>"
+            f"<div class='para-label'>{_html_escape(label)}</div>"
+            f"<div class='para-body'>{body_html}</div>"
+            f"</article>"
+        )
+
+    paras_joined = "\n".join(paras_html) if paras_html else "<p>No paragraphs available for this judgment.</p>"
+
+    judges_str = ", ".join(judges) if judges else ""
+    citations_str = "; ".join(citations) if citations else ""
+
+    html = f"""
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{_html_escape(title)}</title>
+    <style>
+      body {{
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        margin: 16px;
+        background: #f7f7f8;
+        color: #222;
+      }}
+      h1 {{
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+      }}
+      .meta {{
+        margin-bottom: 16px;
+        font-size: 0.9rem;
+        color: #555;
+      }}
+      .meta b {{
+        font-weight: 600;
+      }}
+      .case-paragraph {{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 8px 12px;
+        padding: 8px 0;
+        border-bottom: 1px solid #e0e0e0;
+      }}
+      .case-paragraph:last-of-type {{
+        border-bottom: none;
+      }}
+      .para-label {{
+        font-size: 0.8rem;
+        color: #777;
+        min-width: 48px;
+      }}
+      .para-body p {{
+        margin: 0 0 6px 0;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }}
+      .para-body p:last-child {{
+        margin-bottom: 0;
+      }}
+    </style>
+  </head>
+  <body>
+    <h1>{_html_escape(title)}</h1>
+    <div class="meta">
+      {f"<b>Court:</b> {_html_escape(court)}<br />" if court else ""}
+      {f"<b>Date:</b> {_html_escape(date)}<br />" if date else ""}
+      {f"<b>Bench:</b> {_html_escape(judges_str)}" if judges_str else ""}
+      {f" &nbsp;&nbsp;({_html_escape(bench_type)})" if bench_type else ""}
+      {f"<br /><b>Citations:</b> {_html_escape(citations_str)}" if citations_str else ""}
+    </div>
+    {paras_joined}
+  </body>
+</html>
+"""
+    return HTMLResponse(content=html)
 
 
 @app.get("/bareacts/download")
@@ -1114,6 +1576,34 @@ def caselaws_list():
     """Return list of case law names (from legal_database/json_output or data/CaseLaws)."""
     files = _list_case_laws_from_disk_or_json()
     return {"cases": files}
+
+
+@app.get("/caselaws/library")
+def caselaws_library():
+    """
+    Return case laws grouped by court, using the legal_database/json_output
+    case-law JSONs when USE_LEGAL_DATABASE is enabled.
+
+    Response shape:
+      {
+        "courts": [
+          {"name": "Supreme Court", "cases": [...]},
+          {"name": "Telangana HC", "cases": [...]},
+          {"name": "Other courts", "cases": [...]}
+        ]
+      }
+    """
+    if not _USE_LEGAL_DATABASE:
+        # Fallback: single flat group when not using legal_database.
+        files = _list_case_laws_from_disk_or_json()
+        return {"courts": [{"name": "All courts", "cases": files}]}
+
+    groups = _group_case_laws_by_court()
+    courts = [
+        {"name": name, "cases": cases}
+        for name, cases in sorted(groups.items(), key=lambda kv: kv[0].lower())
+    ]
+    return {"courts": courts}
 
 
 @app.get("/caselaws/download")
@@ -1406,6 +1896,10 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
             return
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
+        def step_callback(step_data: dict):
+            queue.put(("step", step_data))
+        def token_callback(token: str):
+            queue.put(("token", {"content": token}))
 
         result = process_chat(
             conversation=conv,
@@ -1414,6 +1908,8 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
             facts_summary=None,
             progress_callback=progress_callback,
             chat_mode=mode,
+            step_callback=step_callback,
+            token_callback=token_callback,
         )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": result.get("message", "")}]
@@ -1428,6 +1924,8 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
                 result_count=result.get("result_count"),
                 progress_callback=progress_callback,
                 chat_mode=mode,
+                step_callback=step_callback,
+                token_callback=token_callback,
             )
         if result.get("phase") == "done":
             increment_query_count(user_id)
@@ -1454,6 +1952,10 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
             return
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
+        def step_callback(step_data: dict):
+            queue.put(("step", step_data))
+        def token_callback(token: str):
+            queue.put(("token", {"content": token}))
 
         conv = [{"role": "user", "content": text}]
         result = process_chat(
@@ -1463,6 +1965,8 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
             facts_summary=None,
             progress_callback=progress_callback,
             chat_mode=mode,
+            step_callback=step_callback,
+            token_callback=token_callback,
         )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
@@ -1477,6 +1981,8 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
                 result_count=result.get("result_count"),
                 progress_callback=progress_callback,
                 chat_mode=mode,
+                step_callback=step_callback,
+                token_callback=token_callback,
             )
         if result.get("phase") == "done":
             increment_query_count(user_id)
@@ -1494,6 +2000,10 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
     try:
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
+        def step_callback(step_data: dict):
+            queue.put(("step", step_data))
+        def token_callback(token: str):
+            queue.put(("token", {"content": token}))
 
         conv = [{"role": "user", "content": facts}]
         for qa in qa_history:
@@ -1511,6 +2021,8 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
                 bare_acts=bare_acts,
                 progress_callback=progress_callback,
                 chat_mode=mode,
+                step_callback=step_callback,
+                token_callback=token_callback,
             )
         else:
             result = process_chat(
@@ -1520,6 +2032,8 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
                 facts_summary=None,
                 progress_callback=progress_callback,
                 chat_mode=mode,
+                step_callback=step_callback,
+                token_callback=token_callback,
             )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
@@ -1534,6 +2048,8 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
                 result_count=result.get("result_count"),
                 progress_callback=progress_callback,
                 chat_mode=mode,
+                step_callback=step_callback,
+                token_callback=token_callback,
             )
         if result.get("phase") == "done":
             increment_query_count(user_id)
@@ -1576,8 +2092,12 @@ async def submit_case_stream(request: SubmitCaseRequest, user: dict = Depends(_u
             if kind == "result":
                 yield f"event: done\ndata: {json.dumps(payload)}\n\n"
                 break
-            if kind == "progress":
+            elif kind == "progress":
                 yield f"event: progress\ndata: {json.dumps(payload)}\n\n"
+            elif kind == "step":
+                yield f"event: step\ndata: {json.dumps(payload)}\n\n"
+            elif kind == "token":
+                yield f"event: token\ndata: {json.dumps(payload)}\n\n"
 
     return StreamingResponse(
         event_generator(),
@@ -1622,8 +2142,12 @@ async def interview_step_stream(request: InterviewStepRequest, user: dict = Depe
             if kind == "result":
                 yield f"event: done\ndata: {json.dumps(payload)}\n\n"
                 break
-            if kind == "progress":
+            elif kind == "progress":
                 yield f"event: progress\ndata: {json.dumps(payload)}\n\n"
+            elif kind == "step":
+                yield f"event: step\ndata: {json.dumps(payload)}\n\n"
+            elif kind == "token":
+                yield f"event: token\ndata: {json.dumps(payload)}\n\n"
 
     return StreamingResponse(
         event_generator(),
@@ -1673,8 +2197,12 @@ async def continue_chat_stream(request: ContinueChatRequest, user: dict = Depend
             if kind == "result":
                 yield f"event: done\ndata: {json.dumps(payload)}\n\n"
                 break
-            if kind == "progress":
+            elif kind == "progress":
                 yield f"event: progress\ndata: {json.dumps(payload)}\n\n"
+            elif kind == "step":
+                yield f"event: step\ndata: {json.dumps(payload)}\n\n"
+            elif kind == "token":
+                yield f"event: token\ndata: {json.dumps(payload)}\n\n"
 
     return StreamingResponse(
         event_generator(),
@@ -1685,41 +2213,6 @@ async def continue_chat_stream(request: ContinueChatRequest, user: dict = Depend
             "X-Accel-Buffering": "no",
         },
     )
-
-
-@app.post("/chat/confirm-index")
-def confirm_index(request: ConfirmIndexRequest, user: dict = Depends(_user_from_token)):
-    """
-    Index user-confirmed bare acts and case laws into the vector store,
-    then generate and return the full legal research response.
-    """
-    bare_result = {"success": True, "chunks_added": 0}
-    case_result = {"success": True, "chunks_added": 0}
-
-    if request.bare_acts:
-        bare_result = index_new_bare_acts(request.bare_acts)
-    if request.case_laws:
-        case_result = index_new_case_laws(request.case_laws)
-
-    if not bare_result.get("success") and not case_result.get("success"):
-        return {
-            "success": False,
-            "message": bare_result.get("message", "") or case_result.get("message", ""),
-            "response": None,
-        }
-
-    # Generate full response with confirmed materials
-    confirmed = {
-        "bare_acts": request.bare_acts,
-        "case_laws": request.case_laws,
-    }
-    resp = generate_response_v2(request.facts_summary, confirmed_materials=confirmed)
-
-    return {
-        "success": True,
-        "message": f"Indexed: {bare_result.get('chunks_added', 0)} bare act chunks, {case_result.get('chunks_added', 0)} case law chunks",
-        "response": resp,
-    }
 
 
 # ---------- Tier / Freemium endpoints ----------
@@ -1972,92 +2465,6 @@ def indexing_pending_clear(user: dict = Depends(_user_from_token)):
     """Clear persisted pending indexing candidates."""
     _save_pending_indexing([])
     return {"items": [], "message": "Cleared"}
-
-
-@app.post("/indexing/run")
-def indexing_run(request: IndexingRunRequest, user: dict = Depends(_user_from_token)):
-    """
-    Index selected documents from the Pending indexing list.
-    For each item: fetch from source_url, then chunk and add to the appropriate index (bare_act or case_law).
-    On success, removes indexed items from persisted pending list.
-
-    P0: BM25 rebuilds deferred to end of batch (one rebuild per category instead of N).
-    P1: Up to 3 documents fetched + embedded in parallel; writes serialised via _index_write_lock.
-    """
-    import threading
-    from concurrent.futures import ThreadPoolExecutor, as_completed
-    from retrieval.auto_enricher import enrich_from_search_result, begin_batch_indexing, end_batch_indexing
-
-    _enforce_query_limit(user)
-    items = request.items or []
-    if not items:
-        return {"indexed": 0, "errors": [], "message": "No items to index."}
-
-    indexed = 0
-    errors = []
-    _results_lock = threading.Lock()
-
-    def _index_one(i: int, item) -> None:
-        nonlocal indexed
-        url = (item.url or "").strip()
-        title = (item.title or "").strip()
-        category = (item.category or "case_law").strip().lower()
-        if category not in ("bare_act", "case_law"):
-            category = "case_law"
-        if not url or not title:
-            with _results_lock:
-                errors.append({"index": i, "error": "Missing url or title"})
-            return
-        try:
-            result = {"url": url, "title": title, "snippet": "", "source_tag": "USER_INDEX"}
-            enrichment = enrich_from_search_result(result, category, original_query="", skip_index=False)
-            if enrichment.get("chunks_added", 0) > 0 or enrichment.get("indexed"):
-                with _results_lock:
-                    indexed += 1
-                _remove_from_pending_indexing([(url, title)])
-        except Exception as e:
-            logger.exception("Indexing failed for %s: %s", url[:80], e)
-            with _results_lock:
-                errors.append({"index": i, "url": url[:80], "error": str(e)[:200]})
-
-    # P0: enter batch mode so BM25 is only rebuilt once at the end
-    begin_batch_indexing()
-    had_case_law = any((getattr(it, "category", "") or "case_law").strip().lower() == "case_law" for it in items)
-    try:
-        if len(items) == 1:
-            _index_one(0, items[0])
-        else:
-            # P1: parallel fetch + embed (max 3 workers); writes are serialised inside add_chunks_to_index
-            with ThreadPoolExecutor(max_workers=3) as executor:
-                futures = {executor.submit(_index_one, i, item): i for i, item in enumerate(items)}
-                for future in as_completed(futures):
-                    try:
-                        future.result()
-                    except Exception as e:
-                        logger.error("Unexpected error in indexing worker: %s", e)
-    finally:
-        # P0: flush deferred BM25 rebuilds regardless of errors
-        end_batch_indexing()
-
-    # When case law was indexed, update citation graph so retrieval can expand by precedent
-    if indexed > 0 and had_case_law:
-        try:
-            from config import CASE_CHUNKS_V2, CITATION_GRAPH_PATH
-            from retrieval.hybrid_retriever import load_chunks
-            from retrieval.citation_graph import build_citation_graph_from_chunks, invalidate_graph
-            chunks_dict = load_chunks(CASE_CHUNKS_V2)
-            if chunks_dict:
-                build_citation_graph_from_chunks(chunks_dict, CITATION_GRAPH_PATH)
-                invalidate_graph()
-                logger.info("Citation graph updated after case law indexing.")
-        except Exception as e:
-            logger.warning("Citation graph update after indexing failed (non-fatal): %s", e)
-
-    return {
-        "indexed": indexed,
-        "errors": errors,
-        "message": f"Indexed {indexed} of {len(items)} document(s)." if items else "No items to index.",
-    }
 
 
 # ---------------------------------------------------------------------------

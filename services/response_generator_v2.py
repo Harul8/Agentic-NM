@@ -25,7 +25,7 @@ from config import (
     GOOGLE_DRIVE_BARE_ACTS_FOLDER_URL,
     GOOGLE_DRIVE_CASE_LAWS_FOLDER_URL,
 )
-from llm.ollama_client import ask_llm, get_model_display_for_prompt, get_gpu_info
+from llm.ollama_client import ask_llm, ask_llm_stream, get_model_display_for_prompt, get_gpu_info
 from prompts.advocate_prompts import (
     EXPAND_LEGAL_QUERY_SYSTEM,
     EXTRACT_BARE_ACT_PORTIONS_SYSTEM,
@@ -1328,7 +1328,6 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
     No result cap — every section that passes quality filter is returned.
     """
     from retrieval.hybrid_retriever import search_bare_acts_auto, search_bare_acts_filtered
-    from retrieval.act_profile_index import identify_relevant_acts
 
     dispute_text = dispute.get("dispute", "")
     dispute_id = dispute.get("id", "?")
@@ -1336,40 +1335,9 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
     if debug is not None:
         debug_entry = debug.setdefault(dispute_id, {})
 
-    # --- Act-first: identify relevant acts before any section-level queries ---
-    # Use ONLY dispute_text (e.g. "Neighbor attacked causing severe leg injury"),
-    # NOT full_query (facts_summary).  dispute_text is already a concise one-line
-    # legal label produced by the dispute decomposer — it's the ideal BM25 query.
-    # full_query (facts summary) adds 2-3 sentences of case facts that introduce
-    # noise tokens ("yesterday", "police complaint", "original documents") that
-    # dilute the legal signal and cause wrong act matches.
-    # The profile BM25 is fast (no GPU, < 50ms), defaults: top_k=3, min_score=0.15.
-    act_query = dispute_text.strip()
-    allowed_acts = identify_relevant_acts(act_query)
-    # Structured statute lookup: legal_concepts → act names (concept index)
-    legal_concepts = dispute.get("legal_concepts") or []
-    if legal_concepts:
-        try:
-            from retrieval.statute_concept_index import get_act_names_for_concepts
-            concept_acts = get_act_names_for_concepts(legal_concepts)
-            if concept_acts:
-                allowed_acts = (allowed_acts or frozenset()) | concept_acts
-                logger.info(
-                    "[%s] Statute concept lookup: %s → acts %s",
-                    dispute_id, legal_concepts[:5], sorted(concept_acts),
-                )
-        except Exception as e:
-            logger.debug("Statute concept index lookup failed: %s", e)
-    if allowed_acts:
-        logger.info(
-            "[%s] Act-first profile match: %d acts identified → %s",
-            dispute_id, len(allowed_acts), sorted(allowed_acts),
-        )
-    else:
-        logger.info(
-            "[%s] Act-first: profile index unavailable or no match — falling back to unfiltered search",
-            dispute_id,
-        )
+    # Act filtering removed (act_profile_index + statute_concept_index deleted).
+    # hybrid_retriever cross-encoder handles relevance filtering directly.
+    allowed_acts = None
 
     # Diagnostic: compare decomposer hints against profile-identified acts.
     # When both are non-empty but completely disjoint, the two systems disagree
@@ -1848,7 +1816,11 @@ def _explain_sections_and_get_followup(dispute_text: str, bare_acts: list) -> di
     if isinstance(items, list) and len(items) > 0:
         items = [str(x).strip() for x in items if str(x).strip()]
     if items:
-        followup = "To better apply the relevant provisions, please provide:\n" + "\n".join("• " + x for x in items)
+        followup = (
+            "Before I proceed to the full legal opinion, there are a few details that would help "
+            "me apply the right provisions more precisely. Could you clarify:\n"
+            + "\n".join("• " + x for x in items)
+        )
     else:
         followup = (parsed.get("followup_question") or "").strip() or None
     if followup and len(followup) < 15:
@@ -1969,20 +1941,28 @@ def retrieve_bare_acts_phase(facts_summary: str, progress_callback=None, states:
         _dispute_map[did]["sections"].append(ba)
     disputes_grouped = list(_dispute_map.values())
 
-    # Build a friendly intro
+    # Build a friendly advocate-voice intro
     n = len(flat_bare_acts)
     nd = len(disputes_grouped)
     if n == 0:
         intro = (
-            "I searched the legal database but couldn't find specific sections for your query. "
-            "I'll proceed with a general analysis."
+            "I've reviewed your situation carefully. At this stage I wasn't able to locate specific statutory provisions "
+            "in the database for your query, but let me walk you through the general legal position and what you can do next."
+        )
+    elif nd == 1:
+        section_word = "provision" if n == 1 else "provisions"
+        intro = (
+            f"I've had a chance to look into your situation. Based on what you've shared, "
+            f"I've identified {n} legal {section_word} that are directly relevant to your case. "
+            "Here is the legal protection available to you — and what each provision means in your specific circumstances."
         )
     else:
-        dispute_word = "dispute" if nd == 1 else "disputes"
-        section_word = "section" if n == 1 else "sections"
+        dispute_word = "distinct legal issues" if nd > 1 else "legal issue"
+        section_word = "provision" if n == 1 else "provisions"
         intro = (
-            f"I found {n} relevant {section_word} across {nd} {dispute_word}. "
-            "Here's what each section says and how it applies to your situation."
+            f"I've reviewed your situation carefully. I can see {nd} {dispute_word} arising from the facts you've described, "
+            f"and I've identified {n} legal {section_word} across these. "
+            "Let me walk you through the legal protection available to you for each."
         )
 
     return {
@@ -2000,6 +1980,8 @@ def generate_final_opinion_with_case_laws(
     progress_callback=None,
     states: list = None,
     pending_indexing_list: list = None,
+    step_callback=None,
+    token_callback=None,
 ) -> dict:
     """
     Phase B of the new two-phase flow.
@@ -2137,9 +2119,21 @@ def generate_final_opinion_with_case_laws(
 
     if progress_callback:
         progress_callback({"step": "opinion", "message": "Generating structured legal opinion…"})
+    if step_callback:
+        try:
+            step_callback({"message": "Now I have everything I need — composing your legal analysis...", "icon": "💡"})
+        except Exception:
+            pass
 
     try:
-        opinion_text = ask_llm(opinion_prompt).strip()
+        if token_callback:
+            opinion_text = ""
+            for _tok in ask_llm_stream(opinion_prompt):
+                token_callback(_tok)
+                opinion_text += _tok
+            opinion_text = opinion_text.strip()
+        else:
+            opinion_text = ask_llm(opinion_prompt).strip()
     except Exception as e:
         logger.error("generate_final_opinion_with_case_laws: opinion LLM failed: %s", e)
         opinion_text = "I was unable to generate a structured opinion at this time. Please try again."
@@ -2170,6 +2164,8 @@ def generate_response_v2(
     progress_callback=None,
     document_types: str = "both",
     search_strategy: str = "local_then_web",
+    step_callback=None,
+    token_callback=None,
 ) -> dict:
     """
     Full legal research pipeline — dispute-first approach.
@@ -2208,6 +2204,14 @@ def generate_response_v2(
             except Exception:
                 pass
 
+    def _emit_step(message: str, icon: str = ""):
+        """Emit a single clean user-facing step message (separate from ProgressTracker)."""
+        if step_callback:
+            try:
+                step_callback({"message": message, "icon": icon})
+            except Exception:
+                pass
+
     if search_strategy not in ("local_only", "web_only", "local_then_web"):
         search_strategy = "local_then_web"
 
@@ -2239,6 +2243,7 @@ def generate_response_v2(
         retrieve_acts = retrieve_case_laws_flag = True
 
     # Step 2: Dispute decomposition
+    _emit_step("Analysing your legal situation...", "🔍")
     progress.start_group("Dispute Analysis", "Identifying distinct dispute components")
     _emit_progress()
 
@@ -2246,6 +2251,7 @@ def generate_response_v2(
         # Direct search/lookup — no decomposition needed
         disputes = [{"id": "d1", "dispute": facts_summary[:300], "legal_nature": "both", "keywords": []}]
         progress.add_step("Direct search/lookup — treating as single query", {"disputes": 1})
+        _emit_step("Searching legal database...", "🔎")
     else:
         from services.dispute_decomposer import decompose_disputes
         disputes = decompose_disputes(facts_summary)
@@ -2255,6 +2261,10 @@ def generate_response_v2(
             {"count": len(disputes), "disputes": labels},
         )
         logger.info("Disputes identified: %s", labels)
+        _emit_step(
+            f"Broken down into {len(disputes)} legal dispute component{'s' if len(disputes) != 1 else ''}",
+            "📋",
+        )
 
     _emit_progress()
     progress.finish_group()
@@ -2285,6 +2295,7 @@ def generate_response_v2(
         # 3a: Bare acts
         bare_d = []
         if retrieve_acts:
+            _emit_step("Identifying relevant legal provisions...", "📖")
             progress.add_step(f"[{d_id}] Searching bare acts...")
             _emit_progress()
 
@@ -2316,11 +2327,25 @@ def generate_response_v2(
                 f"[{d_id}] Found {len(bare_d)} bare act section(s)",
                 {"count": len(bare_d), "dispute": d_text[:60]},
             )
+            # Emit user-friendly summary of acts found
+            if bare_d:
+                act_names = list(dict.fromkeys(
+                    ba.get("act_name") or ba.get("title", "").split(" §")[0]
+                    for ba in bare_d if ba.get("act_name") or ba.get("title")
+                ))[:4]
+                acts_str = ", ".join(act_names) if act_names else "legal provisions"
+                _emit_step(
+                    f"Found {len(bare_d)} section{'s' if len(bare_d) != 1 else ''} — {acts_str}",
+                    "✅",
+                )
+            else:
+                _emit_step("No bare act sections found in local database — trying web...", "⚠️")
             _emit_progress()
 
         # 3b: Case laws
         case_d = []
         if retrieve_case_laws_flag:
+            _emit_step("Searching for judicial precedents...", "⚖️")
             progress.add_step(f"[{d_id}] Searching case laws...")
             _emit_progress()
 
@@ -2352,6 +2377,19 @@ def generate_response_v2(
                 f"[{d_id}] Found {len(case_d)} case law(s)",
                 {"count": len(case_d), "dispute": d_text[:60]},
             )
+            # Emit user-friendly summary of judgements found
+            if case_d:
+                sc_count = sum(
+                    1 for cl in case_d
+                    if "supreme" in (cl.get("court") or cl.get("source") or "").lower()
+                )
+                detail = f"including {sc_count} Supreme Court" if sc_count else "from High Courts"
+                _emit_step(
+                    f"Found {len(case_d)} judgement{'s' if len(case_d) != 1 else ''} ({detail})",
+                    "✅",
+                )
+            else:
+                _emit_step("No judgements found in local database", "ℹ️")
             _emit_progress()
 
         progress.finish_group()
@@ -2406,8 +2444,10 @@ def generate_response_v2(
     # Step 6: LLM opinion / summary
     if intent in ("search", "lookup"):
         progress.add_step("Generating search summary...")
+        _emit_step("Now I have everything I need — composing your summary...", "💡")
     else:
         progress.add_step("Generating legal opinion...")
+        _emit_step("Now I have everything I need — composing your legal analysis...", "💡")
     _emit_progress()
 
     flattened_case_laws = []
@@ -2447,12 +2487,14 @@ def generate_response_v2(
     else:
         if intent in ("search", "lookup"):
             explanation = _generate_conversational_summary(
-                facts_summary, formatted_bare, flattened_case_laws, intent=intent
+                facts_summary, formatted_bare, flattened_case_laws, intent=intent,
+                token_callback=token_callback,
             )
         else:
             # Legal opinion: structured by dispute (Dispute Summary → Section + why + precedents per component → Legal Position)
             explanation = _generate_structured_opinion_by_dispute(
-                facts_summary, dispute_results, additional_info=""
+                facts_summary, dispute_results, additional_info="",
+                token_callback=token_callback,
             )
             if not (explanation or "").strip():
                 explanation = _generate_legal_opinion(
@@ -3088,10 +3130,13 @@ def _generate_structured_opinion_by_dispute(
     facts_summary: str,
     dispute_results: list,
     additional_info: str = "",
+    token_callback=None,
 ) -> str:
     """
     Generate structured legal opinion: Dispute Summary → Section + why it applies + precedents (per component) → Legal Position.
     Uses STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT. Strictly grounded in retrieved materials only.
+
+    If token_callback is provided, streams tokens to it and returns the collected text.
     """
     if not dispute_results:
         return RELEVANCE_EXPLANATION_NO_MATERIALS
@@ -3108,6 +3153,12 @@ def _generate_structured_opinion_by_dispute(
         dispute_blocks_text=dispute_blocks_text,
     )
     try:
+        if token_callback:
+            full_text = ""
+            for token in ask_llm_stream(prompt):
+                token_callback(token)
+                full_text += token
+            return full_text.strip()
         return ask_llm(prompt).strip()
     except Exception as e:
         logger.error("Structured opinion by dispute failed: %s", e)
@@ -3197,6 +3248,7 @@ def _generate_conversational_summary(
     case_laws: list,
     intent: str = "search",
     on_before_llm=None,
+    token_callback=None,
 ) -> str:
     """Generate a conversational summary for search/lookup. For lookup use bare-act-only summary; for search use dispute+order/judgement in brief.
     When no materials exist for the requested type, return fixed 'I don't have any data' — do NOT call LLM (anti-hallucination). on_before_llm(prompt) is called before LLM if provided."""
@@ -3301,6 +3353,12 @@ Response:"""
     try:
         if callable(on_before_llm):
             on_before_llm(prompt)
+        if token_callback:
+            full_text = ""
+            for token in ask_llm_stream(prompt):
+                token_callback(token)
+                full_text += token
+            return full_text.strip()
         return ask_llm(prompt).strip()
     except Exception as e:
         logger.error(f"Summary generation failed: {e}")
@@ -3347,16 +3405,11 @@ def _format_no_materials_message(search_strategy: str, web_search_stats: Optiona
 # ---------------------------------------------------------------------------
 
 def _add_confirmed_materials(confirmed: dict, bare_acts: list, case_laws: list):
-    """Add user-confirmed materials and index them."""
-    from retrieval.auto_enricher import add_bare_act_chunks, add_case_law_chunks
-    from Ingestion.smart_chunker import chunk_bare_act, chunk_case_law
-
+    """Add user-confirmed materials to the in-memory response lists (indexing removed)."""
     for b in confirmed.get("bare_acts", []):
         text = b.get("text", b.get("content", ""))
         title = b.get("title", "Confirmed")
         if text:
-            chunks = chunk_bare_act(text, title)
-            add_bare_act_chunks(chunks)
             bare_acts.append({
                 "act_name": title,
                 "text": text,
@@ -3368,8 +3421,6 @@ def _add_confirmed_materials(confirmed: dict, bare_acts: list, case_laws: list):
         text = c.get("relevant_portion", c.get("content", c.get("text", "")))
         title = c.get("title", "Confirmed")
         if text:
-            chunks = chunk_case_law(text, title)
-            add_case_law_chunks(chunks)
             case_laws.append({
                 "case_name": title,
                 "text": text,

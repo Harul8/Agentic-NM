@@ -1,42 +1,40 @@
 """
-Central data path config. Set NYAYMALAW_DATA_ROOT to store all app data
-(chat history, login DB, vector store, BareActs, CaseLaws) in one folder,
-e.g. a Google Drive folder: G:\\My Drive\\Nyaymalaw
+Central data path config. All app data lives under legal_database/ (vector store,
+chat history, json_output, bare acts/case laws lists). No external DATA_ROOT/vector_store.
 """
 import os
 
-# Optional: load .env so NYAYMALAW_DATA_ROOT can be set there (requires python-dotenv)
+# Optional: load .env (requires python-dotenv)
 _PROJECT_ROOT = os.path.dirname(os.path.abspath(os.path.normpath(__file__)))
 try:
     from dotenv import load_dotenv
-    # Load .env from project root so it works regardless of process cwd
     _env_path = os.path.join(_PROJECT_ROOT, ".env")
     load_dotenv(_env_path)
 except ImportError:
     pass
 except Exception:
     pass
-_default_data = os.path.join(_PROJECT_ROOT, "data")
 
-# Use env var for data root (e.g. Google Drive path). If unset, use project/data.
-_DATA_ROOT = os.environ.get("NYAYMALAW_DATA_ROOT", "").strip()
-DATA_ROOT = os.path.normpath(_DATA_ROOT) if _DATA_ROOT else _default_data
-
-# Legal database: pipeline output (json_output) and raw_data (BareActs, CaseLaws).
-# Set NYAYMALAW_DATA_SOURCE=legal_database to make backend use legal_database for data, vector store, and chat history.
+# Legal database: single source for all app data (vector store, chat history, json_output).
 LEGAL_DATABASE_DIR = os.path.join(_PROJECT_ROOT, "legal_database")
 LEGAL_DB_JSON_OUTPUT = os.path.join(LEGAL_DATABASE_DIR, "json_output")
 LEGAL_DB_RAW_DATA = os.path.join(LEGAL_DATABASE_DIR, "raw_data")
-USE_LEGAL_DATABASE = os.environ.get("NYAYMALAW_DATA_SOURCE", "").strip().lower() == "legal_database"
-
-# Derived paths: when USE_LEGAL_DATABASE, everything (vector store, chat history, bare acts, case laws) is under legal_database.
 LEGAL_DB_VECTOR_STORE = os.path.join(LEGAL_DATABASE_DIR, "vector_store")
 LEGAL_DB_CHAT_HISTORY = os.path.join(LEGAL_DATABASE_DIR, "chat_history")
-CHAT_HISTORY_DIR = LEGAL_DB_CHAT_HISTORY if USE_LEGAL_DATABASE else os.path.join(DATA_ROOT, "chat_history")
+
+# Data source: legal_database (default) or legacy DATA_ROOT/Google Drive.
+# Default is legal_database so you can run e.g. python legal_database/build_indexes.py without setting env.
+USE_LEGAL_DATABASE = (
+    os.environ.get("NYAYMALAW_DATA_SOURCE", "legal_database").strip().lower() == "legal_database"
+)
+CHAT_HISTORY_DIR = LEGAL_DB_CHAT_HISTORY
 DB_PATH = os.path.join(CHAT_HISTORY_DIR, "app.db")
-VECTOR_STORE = LEGAL_DB_VECTOR_STORE if USE_LEGAL_DATABASE else os.path.join(DATA_ROOT, "vector_store")
-BARE_ACTS_DIR = os.path.join(LEGAL_DB_RAW_DATA, "BareActs") if USE_LEGAL_DATABASE else os.path.join(DATA_ROOT, "BareActs")
-CASELAW_DIR = os.path.join(LEGAL_DB_RAW_DATA, "CaseLaws") if USE_LEGAL_DATABASE else os.path.join(DATA_ROOT, "CaseLaws")
+VECTOR_STORE = LEGAL_DB_VECTOR_STORE
+BARE_ACTS_DIR = os.path.join(LEGAL_DB_RAW_DATA, "BareActs")
+CASELAW_DIR = os.path.join(LEGAL_DB_RAW_DATA, "CaseLaws")
+
+# Legacy alias (DATA_ROOT no longer used for vector store / chat / bare acts / case laws)
+DATA_ROOT = LEGAL_DATABASE_DIR
 
 # Feedback Log workbook — auto-filled by feedback_logger.py after every interaction.
 # Override via FEEDBACK_LOG_PATH env var or set this to an absolute path.
@@ -99,8 +97,6 @@ BARE_ACT_SUMMARY_INDEX_PATH = os.path.join(DATA_ROOT, "bare_act_summary_index.js
 # Case law summary index (signature -> summary text)
 CASE_LAW_SUMMARY_INDEX_PATH = os.path.join(DATA_ROOT, "case_law_summary_index.json")
 
-# Indian Kanoon API (https://api.indiankanoon.org). Set INDIAN_KANOON_API_TOKEN in .env.
-INDIAN_KANOON_API_TOKEN = os.environ.get("INDIAN_KANOON_API_TOKEN", "").strip()
 
 # ---------------------------------------------------------------------------
 # Embedding & re-ranker model names
@@ -239,23 +235,5 @@ TIER_FEATURES = {
 
 # High Court domain mapping by state (for jurisdiction-aware search)
 HC_DOMAIN_BY_STATE = {
-    "karnataka": "karnatakajudiciary.kar.nic.in",
-    "maharashtra": "bombayhighcourt.nic.in",
-    "goa": "hcmadgoa.nic.in",
-    "delhi": "delhihighcourt.nic.in",
-    "tamil nadu": "mhc.tn.gov.in",
-    "uttar pradesh": "allahabadhighcourt.in",
-    "punjab": "highcourtchd.gov.in",
-    "haryana": "highcourtchd.gov.in",
-    "chandigarh": "highcourtchd.gov.in",
-    "andhra pradesh": "phc.gov.in",
-    "telangana": "tshc.gov.in",          # Telangana State High Court (ghconline.gov.in is defunct)
-    "rajasthan": "hcraj.nic.in",
-    "jharkhand": "jharkhandhighcourt.nic.in",
-    "odisha": "orissahighcourt.nic.in",
-    "chhattisgarh": "cghc.nic.in",
-    "jammu and kashmir": "hckashmir.nic.in",
-    "meghalaya": "meghalayahighcourt.nic.in",
-    "tripura": "thc.nic.in",
-    "sikkim": "hcsikkim.gov.in",
+    "telangana": "tshc.gov.in"  
 }

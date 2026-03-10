@@ -128,6 +128,54 @@ def _extract_text(data: dict) -> str:
     return ""
 
 
+def ask_llm_stream(
+    prompt: str,
+    model: str = None,
+    timeout: int = None,
+    task_hint: str = None,
+):
+    """
+    Stream tokens from Ollama one fragment at a time.
+
+    Yields each text fragment (typically 1-4 words) as it is produced by the model.
+    Use when you want to pipe each token to a UI callback for live display.
+
+    Example:
+        full = ""
+        for token in ask_llm_stream(prompt):
+            token_callback(token)
+            full += token
+        return full.strip()
+    """
+    chosen = _get_model_for_prompt(prompt, model, task_hint)
+    try:
+        _last_model_used.value = chosen
+    except Exception:
+        pass
+    timeout = timeout or DEFAULT_TIMEOUT
+    payload = {"model": chosen, "prompt": prompt, "stream": True}
+    try:
+        with requests.post(
+            OLLAMA_GENERATE_URL, json=payload, stream=True, timeout=timeout
+        ) as response:
+            if not response.ok:
+                err = response.text or "Unknown error"
+                raise RuntimeError(f"Ollama error ({response.status_code}): {err}")
+            for line in response.iter_lines():
+                if line:
+                    try:
+                        data = json.loads(line)
+                        token = data.get("response", "")
+                        if token:
+                            yield token
+                        if data.get("done"):
+                            break
+                    except json.JSONDecodeError:
+                        continue
+    except requests.RequestException as e:
+        raise RuntimeError(f"Ollama streaming failed: {e}") from e
+
+
 def ask_llm(
     prompt: str,
     model: str = None,

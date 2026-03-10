@@ -13,6 +13,7 @@ import hashlib
 import json
 import logging
 import os
+import re
 from typing import Optional
 
 logger = logging.getLogger(__name__)
@@ -45,6 +46,34 @@ def _normalize_case_id(case_name: str, court: str = "", year: str = "") -> str:
 def _normalize_cited_case_name(name: str) -> str:
     """Normalize a cited case name for matching to graph nodes."""
     return _normalize_case_name_key(name)
+
+
+def _clean_cited_name(name: str) -> str:
+    """
+    Clean OCR / extraction artifacts from a cited case name before normalizing.
+    - Collapses newlines and excess whitespace (OCR line-breaks mid-name)
+    - Strips leading/trailing punctuation noise
+    """
+    if not name or not isinstance(name, str):
+        return ""
+    # Collapse any whitespace including newlines into a single space
+    cleaned = " ".join(name.split())
+    # Strip leading/trailing punctuation that isn't part of a name
+    cleaned = cleaned.strip(".,;:()\"'")
+    return cleaned
+
+
+def _normalize_for_cites_lookup(name: str) -> str:
+    """
+    Extended normalization for cited-case name lookup.
+    Converts 'vs.' / 'versus' → 'v' so short extracted names can match indexed forms.
+    """
+    norm = _normalize_case_name_key(name)
+    # Canonicalize separator: 'vs.' / 'vs' / 'versus' → 'v'
+    norm = re.sub(r'\bvs\.?\b|\bversus\b', 'v', norm)
+    # Collapse any double spaces introduced above
+    norm = " ".join(norm.split())
+    return norm
 
 
 def _is_bad_case_name(name: str) -> bool:
@@ -98,6 +127,9 @@ def build_citation_graph_from_chunks(chunks_dict: dict, out_path: str) -> dict:
     name_to_ids = {}  # normalized_name -> [stable_id] for lookup
 
     # Pass 1: build nodes (case_info, name_to_ids)
+    # Register both the raw-normalised key AND a vs→v-normalised key so that
+    # short extracted references ("A v B") can resolve to full indexed names
+    # ("A vs The B ...") in Pass 2.
     for _idx, chunk in chunks_dict.items():
         if not isinstance(chunk, dict) or chunk.get("doc_type") != "case_law":
             continue
@@ -112,6 +144,10 @@ def build_citation_graph_from_chunks(chunks_dict: dict, out_path: str) -> dict:
             norm_name = _normalize_case_name_key(case_name)
             if norm_name:
                 name_to_ids.setdefault(norm_name, []).append(cid)
+            # Also register v-normalised variant so short cited references can match
+            norm_v = _normalize_for_cites_lookup(case_name)
+            if norm_v and norm_v != norm_name:
+                name_to_ids.setdefault(norm_v, []).append(cid)
 
     # Pass 2: build interprets and cites (resolve to_case_id to stable_id)
     interprets = []
@@ -131,12 +167,39 @@ def build_citation_graph_from_chunks(chunks_dict: dict, out_path: str) -> dict:
         for cited in (chunk.get("cited_cases") or []):
             if not cited or not isinstance(cited, str):
                 continue
-            to_norm = _normalize_cited_case_name(cited)
-            if len(to_norm) < 10 or _is_bad_case_name(cited):
+
+            # ── Step 1: clean OCR/extraction artifacts (newlines, stray punctuation)
+            cited_clean = _clean_cited_name(cited)
+            if not cited_clean or _is_bad_case_name(cited_clean):
+                continue
+
+            # ── Step 2: try exact-normalised lookup first
+            to_norm = _normalize_cited_case_name(cited_clean)
+            if len(to_norm) < 10:
                 continue
             to_id = name_to_ids.get(to_norm, [None])[0] if to_norm in name_to_ids else None
+
+            # ── Step 3: if not found, try vs→v-normalised variant
             if to_id is None:
-                continue
+                to_norm_v = _normalize_for_cites_lookup(cited_clean)
+                if to_norm_v and to_norm_v != to_norm:
+                    to_id = name_to_ids.get(to_norm_v, [None])[0] if to_norm_v in name_to_ids else None
+
+            # ── Step 4: still not found → create a lightweight stub node so the
+            #    edge is never silently dropped.  Stub nodes carry is_stub=True so
+            #    callers can choose whether to surface them.
+            if to_id is None:
+                stub_id = _stable_case_id(cited_clean, "")
+                if stub_id not in case_info:
+                    case_info[stub_id] = {
+                        "case_name": cited_clean,
+                        "court": "",
+                        "year": "",
+                        "is_stub": True,
+                    }
+                    name_to_ids.setdefault(to_norm, []).append(stub_id)
+                to_id = stub_id
+
             if to_id == cid:
                 continue
             cites.append({"from_case_id": cid, "to_case_id": to_id})
@@ -257,9 +320,10 @@ def get_sections_interpreted_by_cases(case_names: list) -> list:
     return sections
 
 
-def get_cases_cited_by(case_names: list) -> list:
+def get_cases_cited_by(case_names: list, include_stubs: bool = False) -> list:
     """
-    Return normalized case_ids (and display names if in graph) that the given cases cite.
+    Return (case_id, display_name) of cases that the given cases cite.
+    include_stubs: if False (default) only return fully-indexed cases (is_stub not set).
     Useful to expand retrieval with precedent.
     """
     graph = get_graph()
@@ -276,19 +340,19 @@ def get_cases_cited_by(case_names: list) -> list:
             to_id = (e.get("to_case_id") or "").strip()
             if to_id:
                 out_ids.add(to_id)
-    # Prefer display names from case_info when we have that case in the index
     result = []
     for cid in out_ids:
-        if cid in case_info:
-            result.append((cid, (case_info[cid].get("case_name") or cid)))
-        else:
-            result.append((cid, cid))
+        info = case_info.get(cid, {})
+        if not include_stubs and info.get("is_stub"):
+            continue
+        result.append((cid, (info.get("case_name") or cid)))
     return result
 
 
-def get_cases_citing(case_names: list) -> list:
+def get_cases_citing(case_names: list, include_stubs: bool = False) -> list:
     """
     Return (case_id, display_name) of cases that cite any of the given cases (reverse edges).
+    include_stubs: if False (default) only return fully-indexed cases (is_stub not set).
     """
     graph = get_graph()
     if not graph:
@@ -306,10 +370,10 @@ def get_cases_citing(case_names: list) -> list:
                 out_ids.add(from_id)
     result = []
     for cid in out_ids:
-        if cid in case_info:
-            result.append((cid, (case_info[cid].get("case_name") or cid)))
-        else:
-            result.append((cid, cid))
+        info = case_info.get(cid, {})
+        if not include_stubs and info.get("is_stub"):
+            continue
+        result.append((cid, (info.get("case_name") or cid)))
     return result
 
 
@@ -318,10 +382,11 @@ def expand_case_names_by_precedent(case_names: list, max_extra: int = 15) -> tup
     Given case names from retrieval, return (extra_case_names, sections_interpreted).
     extra_case_names: names of cases to add (cited by or citing), capped at max_extra.
     sections_interpreted: section_ids those cases interpret (for bare-act boost or display).
+    Stubs (unindexed cited cases) are excluded from expansion since they have no chunks.
     """
     sections = get_sections_interpreted_by_cases(case_names)
-    cited = get_cases_cited_by(case_names)
-    citing = get_cases_citing(case_names)
+    cited = get_cases_cited_by(case_names, include_stubs=False)
+    citing = get_cases_citing(case_names, include_stubs=False)
     extra = []
     seen = set(_normalize_case_id(n) for n in case_names)
     for _cid, name in cited + citing:

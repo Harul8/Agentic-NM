@@ -312,17 +312,6 @@ def tiered_search(
     """
     all_results = []
 
-    # 0) Case law only: eCourts (judgments.ecourts.gov.in) — Supreme Court + High Court
-    if search_type == "case_law":
-        try:
-            from retrieval.ecourts_client import search_ecourts_both_courts
-            ecourts_results = search_ecourts_both_courts(query, max_results_per_court=max_per_tier)
-            all_results.extend(ecourts_results)
-            if ecourts_results:
-                logger.info("eCourts (first step): %d results for case law query", len(ecourts_results))
-        except Exception as e:
-            logger.warning("eCourts search failed: %s", e)
-
     # 1) Official sources (courts for case_law, India Code for bare_act, or both)
     if search_type == "case_law":
         time.sleep(2)

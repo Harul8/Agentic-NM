@@ -2139,7 +2139,42 @@ body {
   padding: 0; /* Changed to 0 to allow messages-container to control padding */
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  /* Conversation font size 25% smaller: base scale for em, overrides below for rem */
+  font-size: 75%;
 }
+
+/* 25% smaller font overrides for rem-based sizes inside conversation */
+.conversation-card .message-bubble,
+.conversation-card .message-bubble--user { font-size: calc(0.88rem * 0.75); }
+.conversation-card .message-avatar { font-size: calc(1rem * 0.75); }
+.conversation-card .avatar-user { font-size: calc(0.9rem * 0.75); }
+.conversation-card .conversational-summary-para { font-size: calc(0.86rem * 0.75); }
+.conversation-card .search-empty { font-size: calc(0.9rem * 0.75); }
+.conversation-card .retrieved-text { font-size: calc(0.85rem * 0.75); }
+.conversation-card .debug-checkbox-wrapper { font-size: calc(0.9rem * 0.75); }
+.conversation-card .dispute-block-header { font-size: calc(0.97rem * 0.75); }
+.conversation-card .bare-act-section-heading { font-size: calc(0.95rem * 0.75); }
+.conversation-card .bare-act-section-explanation { font-size: calc(0.93rem * 0.75); }
+.conversation-card .bare-acts-preview-intro { font-size: calc(0.98rem * 0.75); }
+.conversation-card .message-bare-acts-preview--compact .dispute-block-header--compact { font-size: calc(0.95rem * 0.75); }
+.conversation-card .bare-act-section-list--compact { font-size: calc(0.9rem * 0.75); }
+.conversation-card .bare-act-section-actions-inline .web-section-source-link,
+.conversation-card .bare-act-section-actions-inline .add-to-index-btn-inline { font-size: calc(0.8rem * 0.75); }
+.conversation-card .bare-acts-followup-text,
+.conversation-card .bare-acts-followup-intro,
+.conversation-card .bare-acts-followup-ul { font-size: calc(0.93rem * 0.75); }
+.conversation-card .bare-acts-next-steps { font-size: calc(0.88rem * 0.75); }
+.conversation-card .chat-welcome h2 { font-size: calc(2rem * 0.75); }
+.conversation-card .chat-welcome p { font-size: calc(1rem * 0.75); }
+.conversation-card .suggestions button { font-size: calc(0.9rem * 0.75); }
+.conversation-card .welcome-icon { font-size: calc(4rem * 0.75); }
+.conversation-card .message-final-opinion .opinion-title { font-size: calc(1rem * 0.75); }
+.conversation-card .message-final-opinion .final-output-header--chat,
+.conversation-card .message-final-opinion .bare-acts-used-title { font-size: calc(0.9rem * 0.75); }
+.conversation-card .message-explanation p { font-size: calc(0.85rem * 0.75); }
+.conversation-card .message-result-block { font-size: calc(0.88rem * 0.75); }
+.conversation-card .retrieved-summary { font-size: inherit; }
+.conversation-card .dispute-block-description { font-size: inherit; }
 
 .input-card { /* This class is no longer explicitly used, as the chat-input-wrapper is used directly */
   background-color: #ffffff;
@@ -2272,12 +2307,19 @@ body {
   width: 90%;
   max-width: 90%;
   margin: 0.25em 5% 0.25em 5%;
-  padding: 0.35em 0.5em;
-  background: #e5e5e5;
+  padding: 0.5em 0.75em;
+  /* 80% lighter than previous #e5e5e5 → almost white */
+  background: #fafafa;
   border-radius: 4px;
   white-space: pre-wrap;
   box-sizing: border-box;
   font-size: 0.95em;
+}
+.opinion-quote::before {
+  content: '"';
+}
+.opinion-quote::after {
+  content: '"';
 }
 
 .bare-acts-used-empty-message {
@@ -2447,10 +2489,16 @@ body {
   color: #444;
   line-height: 1.7;
   margin-top: 10px;
-  padding: 0;
-  background: transparent; /* Removed grey background */
-  border-radius: 0; /* Removed border radius */
-  /* Removed max-height to show full content by default */
+  padding: 12px 16px;
+  /* 80% lighter gray: almost white, subtle tint */
+  background: #fcfcfc;
+  border-radius: 4px;
+}
+.result-item-full-text::before {
+  content: '"';
+}
+.result-item-full-text::after {
+  content: '"';
 }
 
 .result-item-source-link {
@@ -3171,12 +3219,12 @@ body {
   margin-bottom: 4px;
 }
 
-/* ── Verbatim statutory text — full four-sided box ── */
 .bare-act-verbatim {
   margin: 0 0 4px;
   padding: 12px 16px;
-  background: #f7f7f7;
-  border: 1px solid #c8c8c8;
+  /* 80% lighter than previous #f7f7f7 → almost white */
+  background: #fcfcfc;
+  border: 1px solid #e0e0e0;
   border-radius: 4px;
   font-size: 0.875rem;
   line-height: 1.7;
@@ -3185,6 +3233,12 @@ body {
   word-break: break-word;
   font-style: normal;
   font-family: inherit;
+}
+.bare-act-verbatim::before {
+  content: '"';
+}
+.bare-act-verbatim::after {
+  content: '"';
 }
 
 /* Separator between disputes */
@@ -3315,4 +3369,107 @@ body {
   font-size: 0.88rem;
   color: #888;
   font-style: italic;
+}
+
+/* ── Streaming step timeline ── */
+.streaming-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border-left: 3px solid #6366f1;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  max-width: 520px;
+}
+
+.streaming-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  line-height: 1.4;
+  transition: opacity 0.2s;
+}
+
+.streaming-step--done {
+  opacity: 0.55;
+  color: #6b7280;
+}
+
+.streaming-step--active {
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.streaming-step-icon {
+  font-size: 1rem;
+  min-width: 20px;
+  text-align: center;
+}
+
+.streaming-step-msg {
+  flex: 1;
+}
+
+.streaming-step-pulse {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #6366f1;
+  animation: pulse-dot 1s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* ── Streaming text response ── */
+.streaming-response {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  max-width: 700px;
+}
+
+.streaming-text {
+  display: inline;
+}
+
+.streaming-cursor {
+  display: inline-block;
+  color: #6366f1;
+  animation: blink-cursor 0.7s step-end infinite;
+  font-size: 0.9em;
+  vertical-align: text-bottom;
+  margin-left: 1px;
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── Compact step chips above streaming text ── */
+.streaming-steps--compact {
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: none;
+  border-left: none;
+  padding: 0 0 6px 0;
+  gap: 4px;
+}
+
+.streaming-step-chip {
+  font-size: 0.78rem;
+  color: #6b7280;
+  background: #f1f5f9;
+  border-radius: 10px;
+  padding: 1px 8px;
+  white-space: nowrap;
 }
