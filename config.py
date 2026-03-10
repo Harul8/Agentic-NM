@@ -105,7 +105,7 @@ INDIAN_KANOON_API_TOKEN = os.environ.get("INDIAN_KANOON_API_TOKEN", "").strip()
 # ---------------------------------------------------------------------------
 # Embedding & re-ranker model names
 # ---------------------------------------------------------------------------
-EMBEDDING_MODEL = "nlpaueb/legal-bert-base-uncased"
+EMBEDDING_MODEL = "thenlper/gte-base"
 CROSS_ENCODER_MODEL = "cross-encoder/ms-marco-MiniLM-L-12-v2"
 
 # ---------------------------------------------------------------------------

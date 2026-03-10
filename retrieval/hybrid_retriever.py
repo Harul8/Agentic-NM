@@ -27,6 +27,14 @@ _cross_encoder = None
 _bm25_bare = None
 _bm25_case = None
 
+# ---------------------------------------------------------------------------
+# In-memory index cache — populated once at startup by preload_all_indexes().
+# Keys: ("faiss", path) → faiss index object
+#       ("bm25",  path) → BM25 object
+#       ("chunks",path) → dict
+# ---------------------------------------------------------------------------
+_index_cache: dict = {}
+
 
 # ---------------------------------------------------------------------------
 # Query normalisation — expand Indian legal abbreviations
@@ -95,11 +103,10 @@ def _get_embedder():
     """
     Lazy-load the sentence-transformer embedding model.
 
-    Uses explicit mean-pooling when the model is not natively packaged as a
-    sentence-transformers model (e.g. nlpaueb/legal-bert-base-uncased).
-    The explicit path gives correct mean-pooled sentence embeddings regardless
-    of whether the HuggingFace hub entry includes a sentence-transformers config.
-    Falls back gracefully to direct SentenceTransformer() for native models.
+    thenlper/gte-base is natively packaged as a sentence-transformers model
+    and loads via the fast path (direct SentenceTransformer()).  The explicit
+    mean-pooling fallback is retained for compatibility if the configured model
+    is a HuggingFace-only BERT model (e.g. nlpaueb/legal-bert-base-uncased).
     """
     global _embedder
     if _embedder is None:
@@ -143,6 +150,79 @@ def _get_cross_encoder():
         logger.info(f"Loading cross-encoder '{CROSS_ENCODER_MODEL}'")
         _cross_encoder = CrossEncoder(CROSS_ENCODER_MODEL)
     return _cross_encoder
+
+
+def preload_all_indexes():
+    """
+    Load all FAISS indexes, BM25 indexes, and chunk stores into _index_cache.
+
+    Call once at FastAPI startup so that every query reads from RAM instead of
+    re-loading multi-GB files from disk on each request.  Safe to call multiple
+    times — already-cached entries are skipped.
+
+    Indexes loaded:
+      - Bare acts:      FAISS v2, BM25, chunks
+      - Case laws:      FAISS v2, BM25, chunks
+      - Case summaries: FAISS v2, BM25, chunks
+      - Act summaries:  FAISS v2, BM25, chunks
+    """
+    global _index_cache
+    from config import (
+        BARE_INDEX_V2, BARE_CHUNKS_V2, BARE_BM25_INDEX,
+        CASE_INDEX_V2, CASE_CHUNKS_V2, CASE_BM25_INDEX,
+        CASE_SUMMARY_INDEX_V2, CASE_SUMMARY_CHUNKS_V2, CASE_SUMMARY_BM25_INDEX,
+        ACT_SUMMARY_INDEX_V2, ACT_SUMMARY_CHUNKS_V2, ACT_SUMMARY_BM25_INDEX,
+    )
+    index_groups = [
+        ("bare_acts",       BARE_INDEX_V2,         BARE_CHUNKS_V2,         BARE_BM25_INDEX),
+        ("case_laws",       CASE_INDEX_V2,          CASE_CHUNKS_V2,         CASE_BM25_INDEX),
+        ("case_summaries",  CASE_SUMMARY_INDEX_V2,  CASE_SUMMARY_CHUNKS_V2, CASE_SUMMARY_BM25_INDEX),
+        ("act_summaries",   ACT_SUMMARY_INDEX_V2,   ACT_SUMMARY_CHUNKS_V2,  ACT_SUMMARY_BM25_INDEX),
+    ]
+    for label, faiss_path, chunks_path, bm25_path in index_groups:
+        # FAISS index
+        faiss_key = ("faiss", faiss_path)
+        if faiss_key not in _index_cache:
+            if os.path.exists(faiss_path):
+                try:
+                    idx = faiss.read_index(faiss_path)
+                    # Set efSearch for HNSW indexes (ignored silently on flat indexes)
+                    try:
+                        idx.hnsw.efSearch = 64
+                    except AttributeError:
+                        pass
+                    _index_cache[faiss_key] = idx
+                    logger.info("Preloaded FAISS [%s]: %d vectors", label, idx.ntotal)
+                except Exception as e:
+                    logger.error("Preload FAISS [%s] failed: %s", label, e)
+            else:
+                logger.debug("Preload FAISS [%s]: file not found (%s)", label, faiss_path)
+        # Chunks JSON
+        chunks_key = ("chunks", chunks_path)
+        if chunks_key not in _index_cache:
+            if os.path.exists(chunks_path):
+                try:
+                    with open(chunks_path, encoding="utf-8") as f:
+                        _index_cache[chunks_key] = json.load(f)
+                    logger.info("Preloaded chunks [%s]: %d chunks", label, len(_index_cache[chunks_key]))
+                except Exception as e:
+                    logger.error("Preload chunks [%s] failed: %s", label, e)
+            else:
+                logger.debug("Preload chunks [%s]: file not found (%s)", label, chunks_path)
+        # BM25 index
+        bm25_key = ("bm25", bm25_path)
+        if bm25_key not in _index_cache:
+            if os.path.exists(bm25_path):
+                try:
+                    with open(bm25_path, encoding="utf-8") as f:
+                        data = json.load(f)
+                    _index_cache[bm25_key] = BM25.from_dict(data)
+                    logger.info("Preloaded BM25 [%s]: %d docs", label, _index_cache[bm25_key].doc_count)
+                except Exception as e:
+                    logger.error("Preload BM25 [%s] failed: %s", label, e)
+            else:
+                logger.debug("Preload BM25 [%s]: file not found (%s)", label, bm25_path)
+    logger.info("Index preload complete. Cache has %d entries.", len(_index_cache))
 
 
 def score_query_document(query: str, document_text: str) -> float:
@@ -412,13 +492,21 @@ def save_bm25_index(bm25: BM25, path: str):
 
 
 def load_bm25_index(path: str) -> Optional[BM25]:
-    """Load BM25 index from JSON file."""
+    """Load BM25 index from cache or disk.
+
+    On cache hit, returns the pre-loaded BM25 object immediately (no disk I/O).
+    """
+    cache_key = ("bm25", path)
+    if cache_key in _index_cache:
+        return _index_cache[cache_key]
     if not os.path.exists(path):
         return None
     try:
         with open(path, encoding="utf-8") as f:
             data = json.load(f)
-        return BM25.from_dict(data)
+        bm25 = BM25.from_dict(data)
+        _index_cache[cache_key] = bm25
+        return bm25
     except Exception as e:
         logger.error(f"Failed to load BM25 index from {path}: {e}")
         return None
@@ -429,11 +517,25 @@ def load_bm25_index(path: str) -> Optional[BM25]:
 # ---------------------------------------------------------------------------
 
 def safe_read_faiss(index_path: str):
-    """Read FAISS index. Returns (index, True) or (None, False)."""
+    """Read FAISS index from cache or disk. Returns (index, True) or (None, False).
+
+    On cache hit, returns the pre-loaded index immediately (no disk I/O).
+    On cache miss, loads from disk, sets HNSW efSearch=64 if applicable, and
+    stores in cache for subsequent calls.
+    """
+    cache_key = ("faiss", index_path)
+    if cache_key in _index_cache:
+        return _index_cache[cache_key], True
     try:
         if not os.path.exists(index_path):
             return None, False
         idx = faiss.read_index(index_path)
+        # Set efSearch for HNSW indexes (noop on flat indexes — attribute missing)
+        try:
+            idx.hnsw.efSearch = 64
+        except AttributeError:
+            pass
+        _index_cache[cache_key] = idx
         return idx, True
     except Exception as e:
         logger.error(f"Failed to read FAISS index {index_path}: {e}")
@@ -452,12 +554,20 @@ def safe_write_faiss(index, path: str) -> bool:
 
 
 def load_chunks(chunks_path: str) -> dict:
-    """Load chunk store from JSON. Returns dict or empty dict on failure."""
+    """Load chunk store from cache or disk. Returns dict or empty dict on failure.
+
+    On cache hit, returns the pre-loaded dict immediately (no disk I/O).
+    """
+    cache_key = ("chunks", chunks_path)
+    if cache_key in _index_cache:
+        return _index_cache[cache_key]
     if not os.path.exists(chunks_path):
         return {}
     try:
         with open(chunks_path, encoding="utf-8") as f:
-            return json.load(f)
+            data = json.load(f)
+        _index_cache[cache_key] = data
+        return data
     except Exception as e:
         logger.error(f"Failed to load chunks from {chunks_path}: {e}")
         return {}
@@ -472,18 +582,23 @@ def hybrid_search(
     faiss_index_path: str,
     chunks_path: str,
     bm25_index_path: str,
-    faiss_top_k: int = 50,
-    bm25_top_k: int = 50,
-    rerank_top_k: int = 20,
+    faiss_top_k: int = 30,
+    bm25_top_k: int = 30,
+    rerank_top_k: int = 40,
     min_rerank_score: float = 0.0,
     allowed_acts: Optional[frozenset] = None,
     allowed_cases: Optional[frozenset] = None,
 ) -> list:
     """
-    Three-stage hybrid search:
+    Four-stage hybrid search:
     1. FAISS semantic search (top faiss_top_k)
     2. BM25 keyword search (top bm25_top_k)
-    3. Merge, deduplicate, optional act/case filter, cross-encoder re-rank (top rerank_top_k)
+    3. Reciprocal Rank Fusion (RRF) to merge and pre-rank candidates
+    4. Cross-encoder re-rank (top rerank_top_k from RRF pool)
+
+    RRF score: sum(1 / (60 + rank_i)) across retrievers.
+    Candidates appearing in both retrievers naturally get a higher RRF score
+    (they are ranked by both a semantic and a keyword signal).
 
     allowed_acts: if provided, keep only chunks with act_name in this set (bare-act optimisation).
     allowed_cases: if provided, keep only chunks with case_name in this set (two-tier case-law).
@@ -497,8 +612,9 @@ def hybrid_search(
         logger.warning(f"No chunks found at {chunks_path}")
         return []
 
-    # --- Stage 1: FAISS vector search ---
-    faiss_candidates = set()
+    # --- Stage 1: FAISS vector search (ranked) ---
+    # faiss_ranked: {chunk_key: rank}  (rank 0 = most similar)
+    faiss_ranked: dict = {}
     faiss_index, ok = safe_read_faiss(faiss_index_path)
     if ok and faiss_index:
         try:
@@ -513,32 +629,49 @@ def hybrid_search(
                 )
                 for rank, idx in enumerate(indices[0]):
                     if idx >= 0 and str(idx) in chunks:
-                        faiss_candidates.add(str(idx))
+                        faiss_ranked[str(idx)] = rank
         except Exception as e:
             logger.error(f"FAISS search failed: {e}")
 
-    # --- Stage 2: BM25 keyword search ---
-    bm25_candidates = set()
+    # --- Stage 2: BM25 keyword search (ranked) ---
+    # bm25_ranked: {chunk_key: rank}  (rank 0 = highest BM25 score)
+    bm25_ranked: dict = {}
     bm25 = load_bm25_index(bm25_index_path)
     if bm25:
         try:
             bm25_results = bm25.score(query, top_k=bm25_top_k)
-            for doc_idx, score in bm25_results:
+            for rank, (doc_idx, score) in enumerate(bm25_results):
                 key = str(doc_idx)
                 if key in chunks:
-                    bm25_candidates.add(key)
+                    bm25_ranked[key] = rank
         except Exception as e:
             logger.error(f"BM25 search failed: {e}")
 
-    # --- Merge candidates ---
-    all_candidate_keys = faiss_candidates | bm25_candidates
-    if not all_candidate_keys:
+    # --- Stage 3: Reciprocal Rank Fusion (RRF) ---
+    # RRF_k=60 is the standard constant (Cormack et al. 2009).
+    # A candidate missing from a retriever gets rank = that retriever's top_k
+    # (worst possible rank), so it still gets a small contribution.
+    _RRF_K = 60
+    all_keys = set(faiss_ranked) | set(bm25_ranked)
+    if not all_keys:
         logger.info("No candidates from either FAISS or BM25")
         return []
 
+    rrf_scores: dict = {}
+    for key in all_keys:
+        faiss_rank = faiss_ranked.get(key, faiss_top_k)
+        bm25_rank  = bm25_ranked.get(key,  bm25_top_k)
+        rrf_scores[key] = 1.0 / (_RRF_K + faiss_rank) + 1.0 / (_RRF_K + bm25_rank)
+
+    # Sort by RRF descending, pass the top pool to the cross-encoder
+    # (cap at 2× rerank_top_k so we don't feed 100s of chunks to the cross-encoder)
+    rrf_pool_size = max(rerank_top_k * 2, len(all_keys))
+    rrf_sorted = sorted(all_keys, key=lambda k: rrf_scores[k], reverse=True)[:rrf_pool_size]
+    all_candidate_keys = set(rrf_sorted)
+
     logger.info(
-        f"Hybrid search: {len(faiss_candidates)} FAISS + "
-        f"{len(bm25_candidates)} BM25 = {len(all_candidate_keys)} unique candidates"
+        "Hybrid search: %d FAISS + %d BM25 → %d RRF candidates (pool for re-rank)",
+        len(faiss_ranked), len(bm25_ranked), len(all_candidate_keys),
     )
 
     # --- Act-level pre-filter (act-first optimisation) ---
@@ -619,11 +752,6 @@ def hybrid_search(
         LEGAL_TERM_BOOST_WEIGHT = 0.25
 
     try:
-        from config import FAISS_BM25_INTERSECTION_BONUS
-    except Exception:
-        FAISS_BM25_INTERSECTION_BONUS = 0.15
-
-    try:
         cross_encoder = _get_cross_encoder()
         pairs = [(query, text) for text in candidate_texts]
         scores = cross_encoder.predict(pairs, show_progress_bar=False)
@@ -637,14 +765,10 @@ def hybrid_search(
             boost = 0.0
             if LEGAL_TERM_BOOST_WEIGHT > 0:
                 boost = LEGAL_TERM_BOOST_WEIGHT * legal_term_boost(query, candidate_texts[i])
-            # Intersection bonus — chunks retrieved by BOTH FAISS (semantic similarity)
-            # AND BM25 (exact keyword match) are the most reliable candidates:
-            # the embedding model says the meaning is relevant AND the exact legal
-            # terms appear verbatim in the chunk.  This bonus lifts them above
-            # chunks that only one retriever found.
-            in_faiss = key in faiss_candidates
-            in_bm25  = key in bm25_candidates
-            intersection_bonus = FAISS_BM25_INTERSECTION_BONUS if (in_faiss and in_bm25) else 0.0
+            # RRF pre-selection has already promoted docs seen by both retrievers.
+            # Track membership for diagnostic fields only (no separate bonus needed).
+            in_faiss = key in faiss_ranked
+            in_bm25  = key in bm25_ranked
 
             # Paragraph-type boost (case-law only): ratio/reasoning rank above facts
             para_boost = 0.0
@@ -677,7 +801,7 @@ def hybrid_search(
                 except Exception:
                     pass
 
-            rerank_score = ce_score + boost + intersection_bonus + para_boost + citation_boost + authority_boost + pagerank_boost
+            rerank_score = ce_score + boost + para_boost + citation_boost + authority_boost + pagerank_boost
             if rerank_score >= min_rerank_score:
                 result = dict(chunk)
                 # Normalize display text: chunks may have search_text/full_text but not "text"
@@ -692,7 +816,7 @@ def hybrid_search(
                 result["_rerank_score"] = rerank_score
                 result["_ce_score"] = ce_score              # raw cross-encoder score
                 result["_legal_boost"] = boost              # P4 boost component
-                result["_intersection_bonus"] = intersection_bonus  # FAISS∩BM25 reward
+                result["_rrf_score"] = rrf_scores.get(key, 0.0)  # RRF pre-rank signal
                 result["_paragraph_type_boost"] = para_boost
                 result["_sections_cited_boost"] = citation_boost
                 result["_authority_boost"] = authority_boost
@@ -713,11 +837,10 @@ def hybrid_search(
 
     except Exception as e:
         logger.error(f"Cross-encoder re-ranking failed: {e}")
-        # Fallback: return FAISS candidates with score=0.0 to signal unavailability.
-        # NOTE: Do NOT use chunk.get("_score") — chunks have no such field.
-        # Using 0.0 makes it explicit that ranking is unknown (not artificially 0.5 uniform).
+        # Fallback: return FAISS candidates (ordered by RRF score) with rerank_score=0.0
+        # to signal that the cross-encoder was unavailable.
         fallback = []
-        for key in faiss_candidates:
+        for key in rrf_sorted:
             if key in chunks:
                 chunk = dict(chunks[key])
                 if "text" not in chunk or not (chunk.get("text") or "").strip():

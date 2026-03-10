@@ -24,8 +24,6 @@ import numpy as np
 import faiss
 
 from config import (
-    BARE_ACTS_DIR,
-    CASELAW_DIR,
     VECTOR_STORE,
     BARE_INDEX_V2,
     BARE_CHUNKS_V2,
@@ -33,10 +31,12 @@ from config import (
     CASE_INDEX_V2,
     CASE_CHUNKS_V2,
     CASE_BM25_INDEX,
-)
-from Ingestion.smart_chunker import (
-    process_bare_acts_directory,
-    process_case_laws_directory,
+    CASE_SUMMARY_INDEX_V2,
+    CASE_SUMMARY_CHUNKS_V2,
+    CASE_SUMMARY_BM25_INDEX,
+    ACT_SUMMARY_INDEX_V2,
+    ACT_SUMMARY_CHUNKS_V2,
+    ACT_SUMMARY_BM25_INDEX,
 )
 from retrieval.hybrid_retriever import BM25, save_bm25_index
 
@@ -183,14 +183,15 @@ def build_index(
                 "building fresh index.", faiss_path,
             )
         dim = embeddings.shape[1]
-        index = faiss.IndexFlatIP(dim)
+        index = faiss.IndexHNSWFlat(dim, 32)   # M=32 neighbours per node
+        index.hnsw.efConstruction = 200         # build-time accuracy vs speed
         index.add(np.array(embeddings, dtype="float32"))
         faiss.write_index(index, faiss_path)
-        logger.info("FAISS index saved: %s (%d vectors)", faiss_path, index.ntotal)
+        logger.info("FAISS HNSW index saved: %s (%d vectors)", faiss_path, index.ntotal)
 
         chunk_store = {str(i): chunk for i, chunk in enumerate(stored_chunks)}
-        # BM25 texts for fresh build: use embed_texts (search_text) for consistency
-        bm25_texts = embed_texts
+        # BM25 texts for fresh build: use full_text (raw paragraph text, not metadata-polluted search_text)
+        bm25_texts = [c.get("full_text") or c.get("text") or "" for c in stored_chunks]
 
     # ── 5. Save / overwrite chunks JSON ───────────────────────────────────────
     with open(chunks_path, "w", encoding="utf-8") as f:
@@ -209,49 +210,77 @@ def main():
     logger.info("=" * 60)
     logger.info("NYAYMALAW V2 INDEX BUILDER")
     logger.info("=" * 60)
-    logger.info(f"Bare Acts dir: {BARE_ACTS_DIR}")
-    logger.info(f"Case Laws dir: {CASELAW_DIR}")
-    logger.info(f"Vector Store:  {VECTOR_STORE}")
+    logger.info(f"Vector Store: {VECTOR_STORE}")
+
+    # Import pipeline chunk loaders here (deferred to avoid circular imports at module level).
+    # These read from the pipeline's JSON output (json_output/caselaws/, json_output/BareActs/)
+    # and produce chunks that are already enriched with paragraph_type, sections_cited,
+    # cited_cases, and have header chunks filtered out.  This is the correct source for indexing.
+    from legal_database.pipeline import _json_to_case_chunks, _json_to_statute_chunks
 
     embedder = _get_embedder()
 
-    # --- Bare Acts ---
-    logger.info("\n--- BARE ACTS (Section-Level Chunking) ---")
-    if os.path.isdir(BARE_ACTS_DIR):
-        bare_chunks = process_bare_acts_directory(BARE_ACTS_DIR)
-        if bare_chunks:
-            build_index(bare_chunks, BARE_INDEX_V2, BARE_CHUNKS_V2, BARE_BM25_INDEX, embedder)
-            logger.info(f"Bare acts: {len(bare_chunks)} section-level chunks indexed")
-
-            # Stats
-            acts = set(c.get("act_name", "") for c in bare_chunks if c.get("act_name"))
-            logger.info(f"Acts covered: {len(acts)}")
-            for act in sorted(acts):
-                count = sum(1 for c in bare_chunks if c.get("act_name") == act)
-                logger.info(f"  - {act}: {count} sections")
-        else:
-            logger.warning("No bare act chunks produced. Check PDF files in BareActs/")
+    # --- Bare Acts (sections + act summaries) ---
+    logger.info("\n--- BARE ACTS (Section-Level Chunking from JSON output) ---")
+    bare_chunks, act_summary_chunks = _json_to_statute_chunks()
+    if bare_chunks:
+        build_index(bare_chunks, BARE_INDEX_V2, BARE_CHUNKS_V2, BARE_BM25_INDEX, embedder)
+        logger.info("Bare acts: %d section-level chunks indexed", len(bare_chunks))
+        acts = set(c.get("act_name", "") for c in bare_chunks if c.get("act_name"))
+        logger.info("Acts covered: %d", len(acts))
+        for act in sorted(acts):
+            count = sum(1 for c in bare_chunks if c.get("act_name") == act)
+            logger.info("  - %s: %d sections", act, count)
     else:
-        logger.warning(f"Bare Acts directory not found: {BARE_ACTS_DIR}")
+        logger.warning(
+            "No bare act chunks produced. Run the bare acts pipeline first to generate "
+            "JSON output in json_output/BareActs/."
+        )
 
-    # --- Case Laws ---
-    logger.info("\n--- CASE LAWS (Paragraph-Level Chunking) ---")
-    if os.path.isdir(CASELAW_DIR):
-        case_chunks = process_case_laws_directory(CASELAW_DIR)
-        if case_chunks:
-            build_index(case_chunks, CASE_INDEX_V2, CASE_CHUNKS_V2, CASE_BM25_INDEX, embedder)
-            logger.info(f"Case laws: {len(case_chunks)} paragraph-level chunks indexed")
-
-            # Stats
-            cases = set(c.get("case_name", "") for c in case_chunks if c.get("case_name"))
-            logger.info(f"Cases covered: {len(cases)}")
-            for case in sorted(cases)[:20]:
-                count = sum(1 for c in case_chunks if c.get("case_name") == case)
-                logger.info(f"  - {case}: {count} paragraphs")
-        else:
-            logger.warning("No case law chunks produced. Check files in CaseLaws/")
+    if act_summary_chunks:
+        build_index(
+            act_summary_chunks,
+            ACT_SUMMARY_INDEX_V2, ACT_SUMMARY_CHUNKS_V2, ACT_SUMMARY_BM25_INDEX,
+            embedder,
+        )
+        logger.info("Act summaries: %d act-level chunks indexed", len(act_summary_chunks))
     else:
-        logger.warning(f"Case Laws directory not found: {CASELAW_DIR}")
+        logger.warning("No act summary chunks produced.")
+
+    # --- Case Laws (paragraphs + case summaries) ---
+    logger.info("\n--- CASE LAWS (Paragraph-Level Chunking from JSON output) ---")
+    case_chunks, case_summary_chunks = _json_to_case_chunks()
+    if case_chunks:
+        build_index(case_chunks, CASE_INDEX_V2, CASE_CHUNKS_V2, CASE_BM25_INDEX, embedder)
+        logger.info("Case laws: %d paragraph-level chunks indexed", len(case_chunks))
+
+        # Paragraph type distribution
+        ptypes: dict = {}
+        for c in case_chunks:
+            pt = c.get("paragraph_type", "unknown")
+            ptypes[pt] = ptypes.get(pt, 0) + 1
+        logger.info("Paragraph type distribution: %s", sorted(ptypes.items(), key=lambda x: -x[1]))
+
+        cases = set(c.get("case_name", "") for c in case_chunks if c.get("case_name"))
+        logger.info("Cases covered: %d", len(cases))
+        for case in sorted(cases)[:20]:
+            count = sum(1 for c in case_chunks if c.get("case_name") == case)
+            logger.info("  - %s: %d paragraphs", case, count)
+    else:
+        logger.warning(
+            "No case law chunks produced. Run the case law pipeline first to generate "
+            "JSON output in json_output/caselaws/."
+        )
+
+    if case_summary_chunks:
+        build_index(
+            case_summary_chunks,
+            CASE_SUMMARY_INDEX_V2, CASE_SUMMARY_CHUNKS_V2, CASE_SUMMARY_BM25_INDEX,
+            embedder,
+        )
+        logger.info("Case summaries: %d case-level chunks indexed", len(case_summary_chunks))
+    else:
+        logger.warning("No case summary chunks produced.")
 
     logger.info("\n" + "=" * 60)
     logger.info("V2 INDEX BUILD COMPLETE")

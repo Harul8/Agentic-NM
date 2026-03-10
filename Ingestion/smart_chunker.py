@@ -398,6 +398,10 @@ _NAMED_SUBCHUNK_PATTERN = re.compile(
 _SUB_CHUNK_THRESHOLD = 3000   # chars; split section if longer than this
 _SUB_CHUNK_MIN       = 100    # don't emit sub-chunks shorter than this
 
+# Hard limit for a single bare-act chunk (chars).  We keep this aligned with
+# the case-law limit so that every chunk (section or paragraph) is <= 1 800.
+_BARE_ACT_CHUNK_LIMIT = 1800
+
 
 def _split_section_into_subchunks(
     section_text: str,
@@ -523,7 +527,7 @@ def _split_section_into_subchunks(
 
 
 _HARD_SPLIT_THRESHOLD = 6000    # chars; paragraph-fallback fires above this
-_HARD_SPLIT_PARA_TARGET = 2500  # aim for ~2.5 k char paragraphs in fallback
+_HARD_SPLIT_PARA_TARGET = 1800  # aim for ~1.8 k char paragraphs in fallback
 
 
 def _para_fallback_split(chunk: dict) -> list:
@@ -595,6 +599,75 @@ def _para_fallback_split(chunk: dict) -> list:
     return results if results else [chunk]
 
 
+def _split_bareact_text_to_limit(chunk: dict, limit: int = _BARE_ACT_CHUNK_LIMIT) -> list[dict]:
+    """
+    Split a bare-act section/sub-section chunk into <=limit-char parts,
+    preferring to cut at the latest newline before the limit, then at
+    whitespace, finally hard-cutting when needed.
+    """
+    text = (chunk.get("full_text") or "").strip()
+    if not text or len(text) <= limit:
+        return [chunk]
+
+    parts: list[str] = []
+    remaining = text
+    while len(remaining) > limit:
+        cut = remaining.rfind("\n", 0, limit)
+        if cut == -1:
+            cut = remaining.rfind(" ", 0, limit)
+        if cut == -1:
+            cut = limit
+        part = remaining[:cut].strip()
+        if part:
+            parts.append(part)
+        remaining = remaining[cut:].lstrip()
+    if remaining.strip():
+        parts.append(remaining.strip())
+
+    if not parts:
+        return [chunk]
+
+    act_name  = chunk.get("act_name", "")
+    act_alias = _act_alias(act_name)
+    alias_part = f" ({act_alias})" if act_alias else ""
+    sec_num   = chunk.get("section_number", "")
+    sec_title = chunk.get("section_title", "")
+    chapter   = chunk.get("chapter", "")
+    source    = chunk.get("source_file", "")
+    base_id   = chunk.get("chunk_id") or f"{_safe_id(act_name)}_section_{sec_num}"
+    base_sub  = (chunk.get("sub_section") or "").strip()
+
+    result: list[dict] = []
+    for idx, part_text in enumerate(parts):
+        if idx == 0:
+            sub_label = base_sub
+            suffix = ""
+        else:
+            suffix = f"_P{idx}"
+            sub_label = f"{base_sub}_{idx}" if base_sub else f"para_{idx}"
+        search_text = (
+            f"{act_name}{alias_part} Section {sec_num}"
+            + (f" — {sec_title}" if sec_title else "")
+            + (f" {sub_label}" if sub_label else "")
+            + (f" [{chapter}]" if chapter else "")
+            + f"\n\n{part_text}"
+        )
+        new_chunk = {
+            "chunk_id":      f"{base_id}{suffix}",
+            "act_name":      act_name,
+            "section_number": sec_num,
+            "section_title":  sec_title,
+            "sub_section":    sub_label,
+            "chapter":        chapter,
+            "full_text":      part_text,
+            "search_text":    search_text,
+            "keywords":       _extract_keywords(part_text),
+            "source_file":    source,
+            "doc_type":       "bare_act",
+        }
+        result.append(new_chunk)
+    return result
+
 def _maybe_split_chunk(chunk: dict) -> list:
     """
     If chunk['full_text'] exceeds _SUB_CHUNK_THRESHOLD, split it into
@@ -621,13 +694,13 @@ def _maybe_split_chunk(chunk: dict) -> list:
     )
 
     if len(sub_chunks) > 1:
-        # Apply paragraph fallback to any sub-chunk that is still above the
-        # hard threshold (e.g. a spurious "section" blob that had one (b) marker
-        # early on, leaving a 78k tail labelled sub=(b)).
-        final: list = []
+        # For each structured sub-chunk, ensure it does not exceed
+        # _BARE_ACT_CHUNK_LIMIT by splitting at newline/whitespace where needed.
+        final: list[dict] = []
         for sc in sub_chunks:
-            if len(sc.get("full_text", "")) > _HARD_SPLIT_THRESHOLD:
-                final.extend(_para_fallback_split(sc))
+            text_len = len(sc.get("full_text", "") or "")
+            if text_len > _BARE_ACT_CHUNK_LIMIT:
+                final.extend(_split_bareact_text_to_limit(sc, limit=_BARE_ACT_CHUNK_LIMIT))
             else:
                 final.append(sc)
         logger.debug(

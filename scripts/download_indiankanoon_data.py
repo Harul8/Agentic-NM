@@ -31,9 +31,9 @@ RETRY_ON_ERROR_WAIT = 10  # seconds before retry on 403, 502, 500, etc.
 MAX_ERROR_RETRIES = 2
 
 # For general download: both Cites and Cited by must be >= this to save the file.
-CITES_AND_CITED_BY_MIN = 3
+CITES_AND_CITED_BY_MIN = 0
 # For stop-month/year rule: if this many links in a batch have Cited by below threshold, stop (default threshold = CITES_AND_CITED_BY_MIN).
-MIN_LOW_CITED_BY_TO_STOP_MONTH = 8
+MIN_LOW_CITED_BY_TO_STOP_MONTH = 0
 
 # Regex to extract Cites and Cited by (match on normalized text; use \s+ for flexible whitespace)
 CITES_RE = re.compile(r"Cites\s*:?\s*(\d+(?:,\d+)*)", re.I)
@@ -61,6 +61,42 @@ def _parse_cites_citedby(text: str) -> tuple[int, int, bool, bool] | None:
     if not found_cites and not found_cited_by:
         return None  # Can't parse either -> don't download
     return cites, cited_by, found_cites, found_cited_by
+
+
+def _strip_indiankanoon_banner(text: str) -> str:
+    """
+    Remove the Indian Kanoon PRISM/banner block that appears at the top of
+    some documents, e.g.:
+      - Tools for analyzing structure and cite text of judgments
+      - Unlock Advanced Research with PRISM AI ...
+      - Document Options / Get in PDF / Print it!
+    """
+    if not text:
+        return text
+    lower = text.lower()
+    # Try to locate the banner start using robust markers
+    start = lower.find("tools for analyzing structure and cite text of judgments")
+    if start == -1:
+        start = lower.find("unlock advanced research with")
+    if start == -1:
+        return text
+    # End marker: "Print it!" preferred; fallback to "Document Options"
+    end = lower.find("print it!", start)
+    if end != -1:
+        end += len("print it!")
+    else:
+        end = lower.find("document options", start)
+        if end == -1:
+            return text
+        # extend to end of that line
+        newline = text.find("\n", end)
+        end = newline if newline != -1 else end
+    # Splice out the banner block
+    prefix = text[:start].rstrip()
+    suffix = text[end:].lstrip()
+    if prefix and suffix:
+        return prefix + "\n\n" + suffix
+    return prefix or suffix
 
 
 def get_judgment_text(url: str, cited_by_stop_threshold: int | None = None) -> tuple[str | None, str | None]:
@@ -124,9 +160,125 @@ def get_judgment_text(url: str, cited_by_stop_threshold: int | None = None) -> t
         data_html = soup.find("div", attrs={"class": "judgments"})
         if data_html is None:
             return (None, None)
-        return (data_html.get_text(separator="\n", strip=True), None)
+        raw_text = data_html.get_text(separator="\n", strip=True)
+        clean_text = _strip_indiankanoon_banner(raw_text)
+        return (clean_text, None)
     except Exception:
         return (None, None)  # Any parsing/other error -> skip this doc, don't crash
+
+
+def get_doc_text_any(url: str) -> str | None:
+    """
+    Fetch any Indian Kanoon doc URL and return main content as text (no cites/cited-by filter).
+    Used for bare acts (andhra-act, etc.) where we want to download everything.
+    Tries div.judgments, then div with class containing 'doc' or 'content', then body.
+    Returns None on fetch error or if no content found.
+    """
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    html = None
+    for attempt in range(MAX_ERROR_RETRIES + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                html = resp.read()
+            break
+        except urllib.error.HTTPError as e:
+            if e.code in (403, 500, 502, 503) and attempt < MAX_ERROR_RETRIES:
+                time.sleep(RETRY_ON_ERROR_WAIT)
+                continue
+            print(f"  Error fetching {url}: HTTP {e.code}")
+            return None
+        except (OSError, IncompleteRead) as e:
+            if attempt < MAX_ERROR_RETRIES:
+                time.sleep(RETRY_ON_ERROR_WAIT)
+                continue
+            print(f"  Error fetching {url}: {e}")
+            return None
+    if html is None:
+        return None
+    try:
+        soup = BeautifulSoup(html, "lxml")
+    except Exception:
+        soup = BeautifulSoup(html, "html.parser")
+    # Prefer judgments div (acts/judgments often use same layout), then doc/content divs, then body
+    for selector in ["div.judgments", "div.doc_content", "div[class*='doc']", "div[class*='content']"]:
+        el = soup.select_one(selector)
+        if el:
+            raw = el.get_text(separator="\n", strip=True)
+            text = _strip_indiankanoon_banner(raw)
+            if text and len(text) > 100:
+                return text
+    body = soup.find("body")
+    if body:
+        raw = body.get_text(separator="\n", strip=True)
+        text = _strip_indiankanoon_banner(raw)
+        if text and len(text) > 100:
+            return text
+    return None
+
+
+def get_doc_text_with_citedby_min(url: str, min_cited_by: int) -> str | None:
+    """
+    Fetch an Indian Kanoon doc URL and return main content as text,
+    but only when Cited by >= min_cited_by.
+
+    Used for union-act bare acts to avoid downloading sparsely cited acts.
+    Falls back to 0 when Cited by cannot be parsed or is missing.
+    """
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    html = None
+    for attempt in range(MAX_ERROR_RETRIES + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                html = resp.read()
+            break
+        except urllib.error.HTTPError as e:
+            if e.code in (403, 500, 502, 503) and attempt < MAX_ERROR_RETRIES:
+                time.sleep(RETRY_ON_ERROR_WAIT)
+                continue
+            print(f"  Error fetching {url}: HTTP {e.code}")
+            return None
+        except (OSError, IncompleteRead) as e:
+            if attempt < MAX_ERROR_RETRIES:
+                time.sleep(RETRY_ON_ERROR_WAIT)
+                continue
+            print(f"  Error fetching {url}: {e}")
+            return None
+    if html is None:
+        return None
+    try:
+        soup = BeautifulSoup(html, "lxml")
+    except Exception:
+        soup = BeautifulSoup(html, "html.parser")
+
+    # Decide based on Cited by count from normalized page text
+    cited_by = 0
+    try:
+        page_text = soup.get_text(separator=" ", strip=True)
+        parsed = _parse_cites_citedby(page_text)
+        if parsed is not None:
+            _, cited_by_val, _, found_cited_by = parsed
+            if found_cited_by:
+                cited_by = cited_by_val
+    except Exception:
+        pass
+    if cited_by < min_cited_by:
+        return None
+
+    # Reuse the main-content extraction logic from get_doc_text_any
+    for selector in ["div.judgments", "div.doc_content", "div[class*='doc']", "div[class*='content']"]:
+        el = soup.select_one(selector)
+        if el:
+            raw = el.get_text(separator="\n", strip=True)
+            text = _strip_indiankanoon_banner(raw)
+            if text and len(text) > 100:
+                return text
+    body = soup.find("body")
+    if body:
+        raw = body.get_text(separator="\n", strip=True)
+        text = _strip_indiankanoon_banner(raw)
+        if text and len(text) > 100:
+            return text
+    return None
 
 
 def download_month_urls(

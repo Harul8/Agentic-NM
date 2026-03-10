@@ -19,10 +19,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import logging
 
-from Ingestion.smart_chunker import (
-    extract_text_from_pdf_first_n_pages,
-    _detect_act_name_from_text,
-)
+from Ingestion.smart_chunker import _detect_act_name_from_text
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -81,14 +78,11 @@ def scan_bare_acts_for_rename(bare_acts_dir: str) -> list[tuple[str, str]]:
         if not os.path.isfile(path):
             continue
         low = name.lower()
-        if not (low.endswith(".pdf") or low.endswith(".txt")):
+        if not low.endswith(".txt"):
             continue
         try:
-            if low.endswith(".pdf"):
-                text = extract_text_from_pdf_first_n_pages(path, n=2)
-            else:
-                with open(path, encoding="utf-8", errors="ignore") as f:
-                    text = f.read()
+            with open(path, encoding="utf-8", errors="ignore") as f:
+                text = f.read()
             text_sample = (text or "")[:_TITLE_PAGE_CHARS]
             results.append((path, text_sample))
         except Exception as e:
@@ -111,14 +105,11 @@ def scan_bare_acts_dir(bare_acts_dir: str) -> list[tuple[str, str, Optional[date
         if not os.path.isfile(path):
             continue
         low = name.lower()
-        if not (low.endswith(".pdf") or low.endswith(".txt")):
+        if not low.endswith(".txt"):
             continue
         try:
-            if low.endswith(".pdf"):
-                text = extract_text_from_pdf_first_n_pages(path, n=2)
-            else:
-                with open(path, encoding="utf-8", errors="ignore") as f:
-                    text = f.read()
+            with open(path, encoding="utf-8", errors="ignore") as f:
+                text = f.read()
             text_sample = (text or "")[:_TITLE_PAGE_CHARS]
             title = _detect_act_name_from_text(text_sample, name)
             title_norm = _normalize_title_for_grouping(title)

@@ -2269,6 +2269,17 @@ async def startup_validation():
     except Exception as _warmup_err:
         logger.warning("⚠ Model pre-load failed (will load on first request): %s", _warmup_err)
 
+    # Pre-load all FAISS indexes, BM25 indexes, and chunk stores into RAM.
+    # Without this, each query loads 5+ GB of data from disk, causing seconds of
+    # I/O latency per request.  Preloading at startup means all queries serve from
+    # in-memory cache.  Failure is non-fatal — indexes will still load on demand.
+    try:
+        from retrieval.hybrid_retriever import preload_all_indexes
+        preload_all_indexes()
+        logger.info("✓ All indexes pre-loaded into RAM (queries will serve from cache)")
+    except Exception as _preload_err:
+        logger.warning("⚠ Index pre-load failed (will load on first request): %s", _preload_err)
+
     logger.info("=" * 60)
 
 

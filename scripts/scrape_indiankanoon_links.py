@@ -16,9 +16,9 @@ parser.add_argument("--test", action="store_true", help="Quick test: START_YEAR 
 args = parser.parse_args()
 
 # Date range to scrape (inclusive). Process order: newest first (START down to END)
-START_YEAR = 2016
+START_YEAR = 2026
 START_MONTH = "JAN"  # First month to scrape
-END_YEAR = 2011
+END_YEAR = 2018
 END_MONTH = "DEC"  # Last month to scrape
 
 # Ensure scripts/ is on path when run from project root
