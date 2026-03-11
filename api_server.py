@@ -64,13 +64,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Case law discovery: separate workflow; documents persist until user Index or Clear
-try:
-    from case_law_discovery.routes import router as case_law_discovery_router
-    app.include_router(case_law_discovery_router)
-except Exception as e:
-    logger.warning("Case law discovery routes not loaded: %s", e)
-
 # ---------------------------------------------------------------------------
 # Per-IP request rate limiter (in-memory sliding window)
 # ---------------------------------------------------------------------------
@@ -167,6 +160,7 @@ from config import (
     VECTOR_STORE as _VECTOR_STORE,
     USE_LEGAL_DATABASE as _USE_LEGAL_DATABASE,
     LEGAL_DB_JSON_OUTPUT as _LEGAL_DB_JSON_OUTPUT,
+    LEGAL_DATABASE_DIR as _LEGAL_DATABASE_DIR,
 )
 _BASE_DIR = os.path.dirname(os.path.abspath(os.path.normpath(__file__)))
 
@@ -692,7 +686,7 @@ def _group_case_laws_by_court() -> dict[str, list[str]]:
       {
         "Supreme Court": [...],
         "Telangana HC": [...],
-        "Other courts": [...]
+        "TG HC": [...]
       }
     """
     groups: dict[str, list[str]] = {}
@@ -711,7 +705,8 @@ def _group_case_laws_by_court() -> dict[str, list[str]]:
         elif "telangana" in court:
             label = "Telangana HC"
         else:
-            label = "Other courts"
+            # Bucket all remaining courts under a concise label for the UI
+            label = "TG HC"
         groups.setdefault(label, []).append(base)
 
     for cases in groups.values():
@@ -1589,14 +1584,14 @@ def caselaws_library():
         "courts": [
           {"name": "Supreme Court", "cases": [...]},
           {"name": "Telangana HC", "cases": [...]},
-          {"name": "Other courts", "cases": [...]}
+          {"name": "TG HC", "cases": [...]}
         ]
       }
     """
     if not _USE_LEGAL_DATABASE:
         # Fallback: single flat group when not using legal_database.
         files = _list_case_laws_from_disk_or_json()
-        return {"courts": [{"name": "All courts", "cases": files}]}
+        return {"courts": [{"name": "TG HC", "cases": files}]}
 
     groups = _group_case_laws_by_court()
     courts = [
@@ -1629,6 +1624,220 @@ def caselaws_download(
         raise HTTPException(status_code=500, detail=str(e))
 
 
+@app.get("/caselaws/most_cited", response_class=HTMLResponse)
+def caselaws_most_cited():
+    """
+    Render a single HTML table of the 200 most-cited cases from
+    legal_database/top_200_cited_cases.jsonl.
+
+    Each JSON field becomes a column; each case is a row. The case_name
+    column is hyperlinked to the underlying case-law HTML view when a
+    json_base identifier is available.
+    """
+    path = os.path.join(_LEGAL_DATABASE_DIR, "top_200_cited_cases.jsonl")
+    if not os.path.isfile(path):
+        raise HTTPException(status_code=404, detail="Most-cited cases file not found")
+
+    rows: list[dict] = []
+    try:
+        with open(path, encoding="utf-8") as fp:
+            for line in fp:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    rows.append(json.loads(line))
+                except Exception:
+                    continue
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    if not rows:
+        raise HTTPException(status_code=404, detail="No most-cited cases available")
+
+    # Use keys from first row as canonical columns (keeps table manageable).
+    first = rows[0]
+    columns = list(first.keys())
+
+    # Build HTML table (compact, with expandable text cells)
+    def esc(val: str) -> str:
+        return _html_escape(str(val)) if val is not None else ""
+
+    header_cells_parts = []
+    for col in columns:
+        col_label = esc(col)
+        if col == "case_name":
+            header_cells_parts.append(f"<th class='col-case-name'>{col_label}</th>")
+        elif col in ("disputes", "key_arguments", "reasoning"):
+            header_cells_parts.append(f"<th class='col-long'>{col_label}</th>")
+        else:
+            header_cells_parts.append(f"<th class='col-meta'>{col_label}</th>")
+    header_cells = "".join(header_cells_parts)
+
+    body_rows: list[str] = []
+    for idx, r in enumerate(rows):
+        cells: list[str] = []
+        for col in columns:
+            val = r.get(col)
+            if col == "case_name":
+                base = r.get("json_base") or r.get("case_id") or ""
+                base = str(base).strip()
+                if base:
+                    href = f"/caselaws/view?name={base}"
+                    cells.append(
+                        f"<td class='col-case-name'><a href='{esc(href)}' target='_blank' rel='noopener noreferrer'>{esc(val)}</a></td>"
+                    )
+                else:
+                    cells.append(f"<td class='col-case-name'>{esc(val)}</td>")
+            elif col in ("disputes", "key_arguments", "reasoning"):
+                text = esc(val) if val is not None else ""
+                cells.append(
+                    "<td class='col-long'>"
+                    f"<div class='cell-text truncated' data-row='{idx}' data-col='{esc(col)}'>{text}</div>"
+                    f"<button type='button' class='expand-btn' data-row='{idx}' aria-label='Expand row'>⤢</button>"
+                    "</td>"
+                )
+            else:
+                cells.append(f"<td class='col-meta'>{esc(val)}</td>")
+        body_rows.append("<tr>" + "".join(cells) + "</tr>")
+
+    table_html = f"""
+<table>
+  <thead>
+    <tr>{header_cells}</tr>
+  </thead>
+  <tbody>
+    {''.join(body_rows)}
+  </tbody>
+</table>
+"""
+
+    html = f"""
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Most cited case laws</title>
+    <style>
+      body {{
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        margin: 16px;
+        background: #f7f7f8;
+        color: #222;
+      }}
+      h1 {{
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+      }}
+      table {{
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 0.8rem;
+        table-layout: fixed;
+      }}
+      th, td {{
+        border: 1px solid #ddd;
+        padding: 4px 6px;
+        vertical-align: top;
+      }}
+      th {{
+        background: #f0f0f3;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        text-align: left;
+      }}
+      tr:nth-child(even) td {{
+        background: #fafafa;
+      }}
+      .col-meta {{
+        width: 90px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }}
+      .col-case-name {{
+        width: 220px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }}
+      .col-long {{
+        width: 28%;
+      }}
+      .cell-text {{
+        display: block;
+        line-height: 1.35;
+      }}
+      .cell-text.truncated {{
+        max-height: 4.05em; /* ~3 lines */
+        overflow: hidden;
+      }}
+      .expand-btn {{
+        margin-top: 4px;
+        padding: 0 4px;
+        font-size: 0.7rem;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background: #fff;
+        cursor: pointer;
+      }}
+      .expand-btn:hover {{
+        background: #f0f0f3;
+      }}
+      a {{
+        color: #0b5fff;
+        text-decoration: none;
+      }}
+      a:hover {{
+        text-decoration: underline;
+      }}
+    </style>
+  </head>
+  <body>
+    <h1>Most cited case laws (Top 200)</h1>
+    {table_html}
+    <script>
+      (function () {{
+        let expandedRow = null;
+        function setRowState(rowId, expand) {{
+          const cells = document.querySelectorAll(".cell-text[data-row='" + rowId + "']");
+          cells.forEach((el) => {{
+            if (expand) {{
+              el.classList.remove("truncated");
+            }} else {{
+              el.classList.add("truncated");
+            }}
+          }});
+          const buttons = document.querySelectorAll(".expand-btn[data-row='" + rowId + "']");
+          buttons.forEach((btn) => {{
+            btn.textContent = expand ? "⤡" : "⤢";
+          }});
+        }}
+        document.addEventListener("click", function (e) {{
+          const btn = e.target.closest(".expand-btn");
+          if (!btn) return;
+          const rowId = btn.getAttribute("data-row");
+          if (!rowId) return;
+          if (expandedRow !== null && expandedRow !== rowId) {{
+            setRowState(expandedRow, false);
+          }}
+          if (expandedRow === rowId) {{
+            setRowState(rowId, false);
+            expandedRow = null;
+          }} else {{
+            setRowState(rowId, true);
+            expandedRow = rowId;
+          }}
+        }});
+      }})();
+    </script>
+  </body>
+</html>
+"""
+    return HTMLResponse(content=html)
+
+
 def _normalize_content(c):
     """Ensure content is string for backend processing."""
     if isinstance(c, str):
@@ -1654,12 +1863,6 @@ def chat(request: ChatRequest):
     routed to the case law discovery workflow and do not go through the main pipeline.
     """
     message = (request.message or "").strip()
-    if message:
-        from case_law_discovery.workflow import is_case_law_discovery_request, run as run_case_law_discovery
-        if is_case_law_discovery_request(message):
-            workflow_result = run_case_law_discovery(message)
-            return _case_law_discovery_ui_result(workflow_result)
-
     conv = [
         {"role": m.role, "content": _normalize_content(m.content)}
         for m in request.conversation
@@ -1706,11 +1909,6 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
             "retrieved": [],
         }
     try:
-        from case_law_discovery.workflow import is_case_law_discovery_request, run as run_case_law_discovery
-        if is_case_law_discovery_request(text):
-            workflow_result = run_case_law_discovery(text)
-            increment_query_count(user["id"])
-            return _case_law_discovery_ui_result(workflow_result)
         conv = [{"role": "user", "content": text}]
         result = process_chat(
             conversation=conv,
@@ -1807,27 +2005,6 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
         return _chat_error_fallback(str(e)[:200])
 
 
-def _case_law_discovery_ui_result(workflow_result: dict) -> dict:
-    """Build UI result when the request was handled by the separate case law discovery workflow.
-    Use response_type generic_chat so the UI does not show 'Legal Opinion' or 'Download as PDF'.
-    """
-    msg = (workflow_result.get("message") or "").strip()
-    if not msg:
-        msg = "Case law discovery ran. Check **Case law discovery – Pending** in the left sidebar for documents to index or clear."
-    else:
-        msg = f"{msg} Check **Case law discovery – Pending** in the left sidebar to index or clear."
-    return {
-        "status": "done",
-        "response_type": "generic_chat",
-        "case_law_discovery": True,
-        "opinion_text": msg,
-        "bare_acts": [],
-        "case_laws": [],
-        "retrieved": [],
-        "model_used": get_last_model_used(),
-    }
-
-
 @app.post("/conversation/continue")
 def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_token)):
     """
@@ -1845,11 +2022,6 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
             "retrieved": [],
         }
     try:
-        from case_law_discovery.workflow import is_case_law_discovery_request, run as run_case_law_discovery
-        if is_case_law_discovery_request(message):
-            workflow_result = run_case_law_discovery(message)
-            increment_query_count(user.get("id", 0))
-            return _case_law_discovery_ui_result(workflow_result)
         conv = [
             {"role": m.role, "content": _normalize_content(m.content)}
             for m in (request.conversation or [])
@@ -1887,13 +2059,6 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
     Case-law-discovery requests are handled by the separate workflow and do not use process_chat.
     """
     try:
-        from case_law_discovery.workflow import is_case_law_discovery_request, run as run_case_law_discovery
-        if is_case_law_discovery_request(message):
-            queue.put(("progress", {"groups": [{"name": "Case law discovery", "steps": [{"name": "Running case law discovery workflow…", "status": "running", "duration_seconds": 0}]}]}))
-            workflow_result = run_case_law_discovery(message)
-            increment_query_count(user_id)
-            queue.put(("result", _case_law_discovery_ui_result(workflow_result)))
-            return
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
         def step_callback(step_data: dict):
@@ -1943,13 +2108,6 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
     Case-law-discovery requests are handled by the separate workflow and do not use process_chat.
     """
     try:
-        from case_law_discovery.workflow import is_case_law_discovery_request, run as run_case_law_discovery
-        if is_case_law_discovery_request(text):
-            queue.put(("progress", {"groups": [{"name": "Case law discovery", "steps": [{"name": "Running case law discovery workflow…", "status": "running", "duration_seconds": 0}]}]}))
-            workflow_result = run_case_law_discovery(text)
-            increment_query_count(user_id)
-            queue.put(("result", _case_law_discovery_ui_result(workflow_result)))
-            return
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
         def step_callback(step_data: dict):

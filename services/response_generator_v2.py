@@ -1965,10 +1965,27 @@ def retrieve_bare_acts_phase(facts_summary: str, progress_callback=None, states:
             "Let me walk you through the legal protection available to you for each."
         )
 
+    # Ensure we always offer a clear next step to the client.
+    followup = enriched.get("followup_question")
+    if not followup:
+        if n == 0:
+            # No sections found: explicitly offer judgments + full opinion as the next step.
+            followup = (
+                "Even though I couldn't match a specific bare act section in the database right now, "
+                "I can still search for relevant court judgments and prepare a full legal opinion for you. "
+                "Would you like me to go ahead and do that next?"
+            )
+        else:
+            # Sections found but no follow-up suggested — offer to proceed with detailed opinion.
+            followup = (
+                "Based on these provisions, I can now prepare a detailed opinion that also brings in key judgments "
+                "on situations like yours. Shall I proceed with that for you?"
+            )
+
     return {
         "disputes": disputes_grouped,        # new: grouped by dispute for UI rendering
-        "bare_acts": flat_bare_acts,          # kept: flat list used by Phase B (case laws + opinion)
-        "followup_question": enriched["followup_question"],
+        "bare_acts": flat_bare_acts,        # kept: flat list used by Phase B (case laws + opinion)
+        "followup_question": followup,
         "intro_text": intro,
     }
 

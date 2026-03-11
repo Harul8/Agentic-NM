@@ -981,27 +981,6 @@ function App() {
                   });
                 }
               }
-              if (data.case_law_discovery) {
-                const headers = localStorage.getItem(AUTH_TOKEN_KEY) ? { Authorization: `Bearer ${localStorage.getItem(AUTH_TOKEN_KEY)}` } : {};
-                fetch(`${API_BASE}/case-law-discovery/pending`, { headers })
-                  .then(async (res) => (res.ok ? res.json().catch(() => ({})) : { items: [] }))
-                  .then((pendData) => {
-                    const items = Array.isArray(pendData?.items) ? pendData.items : [];
-                    setCaseLawDiscoveryPending(items.map((c, i) => ({
-                      id: `cld-${Date.now()}-${i}`,
-                      title: c.title || "",
-                      source_url: c.source_url || "",
-                      suggested_category: c.suggested_category || "case_law",
-                      category: c.suggested_category || "case_law",
-                      selected: !c.already_in_store,
-                      already_in_store: !!c.already_in_store,
-                      signature: c.signature,
-                      act_name: c.act_name,
-                      summary: c.summary,
-                    })));
-                  })
-                  .catch(() => {});
-              }
               const newAssistantMsg = {
                 role: "assistant",
                 content: {
@@ -1010,7 +989,7 @@ function App() {
                   opinionText: opinion,
                   bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
                   case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
-                  case_law_discovery: !!data.case_law_discovery,
+                  case_law_discovery: false,
                   retrieved: retr,
                   progress: data.progress || null,
                   model_used: data.model_used || null,
@@ -1343,27 +1322,6 @@ function App() {
                   });
                 }
               }
-              if (data.case_law_discovery) {
-                const headers = localStorage.getItem(AUTH_TOKEN_KEY) ? { Authorization: `Bearer ${localStorage.getItem(AUTH_TOKEN_KEY)}` } : {};
-                fetch(`${API_BASE}/case-law-discovery/pending`, { headers })
-                  .then(async (res) => (res.ok ? res.json().catch(() => ({})) : { items: [] }))
-                  .then((pendData) => {
-                    const items = Array.isArray(pendData?.items) ? pendData.items : [];
-                    setCaseLawDiscoveryPending(items.map((c, i) => ({
-                      id: `cld-${Date.now()}-${i}`,
-                      title: c.title || "",
-                      source_url: c.source_url || "",
-                      suggested_category: c.suggested_category || "case_law",
-                      category: c.suggested_category || "case_law",
-                      selected: !c.already_in_store,
-                      already_in_store: !!c.already_in_store,
-                      signature: c.signature,
-                      act_name: c.act_name,
-                      summary: c.summary,
-                    })));
-                  })
-                  .catch(() => {});
-              }
               setMessages((prev) => [
                 ...prev,
                 {
@@ -1374,7 +1332,7 @@ function App() {
                     opinionText: opinion,
                     bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
                     case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
-                    case_law_discovery: !!data.case_law_discovery,
+                    case_law_discovery: false,
                     retrieved: retr,
                     progress: data.progress || null,
                     model_used: data.model_used || null,
@@ -2555,7 +2513,7 @@ function App() {
           ) : (
             caseLaws.length > 0 && renderGroupBox("Relevant Case Laws", caseLaws)
           )}
-          {bareActs.length === 0 && caseLaws.length === 0 && opinion && !content.case_law_discovery && (
+          {bareActs.length === 0 && caseLaws.length === 0 && opinion && (
             <p className="search-empty">No supporting materials were retrieved for this query.</p>
           )}
         </div>
@@ -2903,6 +2861,30 @@ function App() {
               </summary>
               {caseLawsList.length ? (
                 <>
+                  {/* Most cited – single HTML table with top 200 cases */}
+                  <div className="sidebar-section-link-row">
+                    {(() => {
+                      const useRelative =
+                        typeof window !== "undefined" &&
+                        (window.location.hostname === "localhost" ||
+                          window.location.hostname === "127.0.0.1" ||
+                          API_BASE === "" ||
+                          API_BASE.startsWith(window.location.origin));
+                      const mostCitedUrl = useRelative
+                        ? "/caselaws/most_cited"
+                        : `${API_BASE}/caselaws/most_cited`;
+                      return (
+                        <a
+                          href={mostCitedUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="case-laws-download-link"
+                        >
+                          Most cited (top 200)
+                        </a>
+                      );
+                    })()}
+                  </div>
                   <input
                     type="text"
                     placeholder="Search case laws..."
