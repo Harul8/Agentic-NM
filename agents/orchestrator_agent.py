@@ -63,11 +63,11 @@ def run_orchestrator(conversation_history: list, user_message: str) -> Optional[
         task = Task(
             description=(
                 "Using the system instructions below, analyze the conversation and latest user message. "
-                "Output your reasoning on the first line if needed, then on the next line output exactly one valid JSON object. "
+                "Output exactly one valid JSON object and nothing else. "
                 "Use 'reply_to_client' in the JSON for the message the user sees; use 'question' only when action is 'ask'. "
                 "System instructions:\n\n" + FACT_COLLECTION_SYSTEM
                 + "\n\nConversation so far:\n" + context
-                + "\n\nNow output REASONING: (optional) then your JSON with reply_to_client."
+                + "\n\nNow output only the JSON with reply_to_client."
             ),
             expected_output="One valid JSON object with action, and reply_to_client or question, plus intent/facts_summary/result_count when action is complete.",
             agent=agent,

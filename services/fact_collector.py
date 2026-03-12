@@ -550,7 +550,7 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
 Conversation so far:
 {conv_text}
 
-Now output REASONING: then on the next line your JSON with reply_to_client."""
+Now output only one JSON object with reply_to_client."""
 
     # Attempt 1
     try:

@@ -788,6 +788,43 @@ def _build_bare_act_queries(dispute: dict) -> list[str]:
     # Q4: dispute text only (no keywords — helps when keywords are too noisy)
     _add(dispute_text)
 
+    # Q4b: deterministic statute-style injections for common criminal-code disputes.
+    # This strengthens local retrieval when the user describes facts in plain language
+    # ("beat me", "threatened to break my knees") but the indexed act is stored under
+    # formal statute names like Bharatiya Nyaya Sanhita, 2023.
+    legal_nature = str(dispute.get("legal_nature", "both")).lower()
+    new_codes = _detect_new_criminal_codes(dispute_text, legal_nature)
+    concept_text = " ".join(
+        [str(x).strip() for x in (legal_concepts or []) + (keywords or []) if str(x).strip()]
+    ).lower()
+    text_lower = dispute_text.lower()
+
+    def _has_any(text: str, phrases: list[str]) -> bool:
+        return any(p in text for p in phrases)
+
+    bns_terms: list[str] = []
+    if _has_any(concept_text + " " + text_lower, ["criminal intimidation", "threat", "threatened", "threat of injury"]):
+        bns_terms.append("criminal intimidation")
+    if _has_any(concept_text + " " + text_lower, ["assault", "attack", "beat", "beaten", "physical harm", "injury", "hurt", "metal rod"]):
+        bns_terms.append("hurt assault physical harm")
+    if new_codes.get("bns"):
+        primary_bns = " ".join(dict.fromkeys(bns_terms)) if bns_terms else "criminal intimidation hurt assault"
+        _add(f"Bharatiya Nyaya Sanhita 2023 {primary_bns}")
+        _add(f"BNS 2023 {primary_bns}")
+    if new_codes.get("bnss"):
+        _add("Bharatiya Nagarik Suraksha Sanhita 2023 FIR complaint investigation")
+    if new_codes.get("bsa"):
+        _add("Bharatiya Sakshya Adhiniyam 2023 evidence witness electronic record")
+
+    # Q4c: deterministic tenancy/rent injections for local act retrieval.
+    # This is especially useful when the user describes a lease/rent default in
+    # plain language but does not name the applicable act.
+    if _is_rent_eviction_dispute(dispute):
+        _add("Transfer of Property Act lease forfeiture non payment of rent eviction")
+        _add("rent tenancy eviction non payment of rent lease agreement landlord tenant")
+        if _has_any(text_lower, ["written agreement", "lease agreement", "vacating the property", "vacate the property"]):
+            _add("lease agreement forfeiture termination of lease non payment of rent")
+
     # Q5: If we still have < 3 queries, generate via LLM
     if len(queries) < 3:
         try:
@@ -809,7 +846,17 @@ def _build_bare_act_queries(dispute: dict) -> list[str]:
             logger.debug("Bare act LLM query gen failed: %s", e)
 
     # Cap at 3 queries for Tier 1 fast path (roadmap: max_queries = 3)
-    return queries[:3]
+    final_queries = queries[:3]
+    try:
+        logger.info(
+            "Bare-act query builder [%s]: legal_nature=%s queries=%s",
+            (dispute.get("id") or "?"),
+            str(dispute.get("legal_nature", "both")).lower(),
+            [q[:140] for q in final_queries],
+        )
+    except Exception:
+        pass
+    return final_queries
 
 
 # Matches cross-references that are WITHIN the same act
@@ -1337,7 +1384,9 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
 
     # Act filtering removed (act_profile_index + statute_concept_index deleted).
     # hybrid_retriever cross-encoder handles relevance filtering directly.
-    allowed_acts = None
+    # Keep this as an empty frozenset rather than None so downstream diagnostics
+    # and candidate-act loops remain iterable even when no act filter is active.
+    allowed_acts = frozenset()
 
     # Diagnostic: compare decomposer hints against profile-identified acts.
     # When both are non-empty but completely disjoint, the two systems disagree
@@ -1897,6 +1946,7 @@ def retrieve_bare_acts_phase(facts_summary: str, progress_callback=None, states:
     # Retrieve bare acts per dispute in parallel; tag each section with its dispute origin
     # so Phase B can reconstruct per-dispute groupings without re-running decomposition.
     all_bare_acts: list = []
+    dispute_errors: list[dict] = []
 
     _states = states or []
 
@@ -1914,12 +1964,38 @@ def retrieve_bare_acts_phase(facts_summary: str, progress_callback=None, states:
             try:
                 all_bare_acts.extend(fut.result())
             except Exception as exc:
-                logger.warning("retrieve_bare_acts_phase: dispute retrieval error: %s", exc)
+                dispute = futures[fut]
+                dispute_errors.append({
+                    "dispute_id": dispute.get("id", "?"),
+                    "dispute": (dispute.get("dispute", "") or "")[:200],
+                    "error": repr(exc),
+                })
+                logger.exception(
+                    "retrieve_bare_acts_phase: dispute retrieval error for %s: %s",
+                    dispute.get("id", "?"),
+                    exc,
+                )
 
     # Deduplicate across disputes (first-seen dispute tag is preserved via setdefault above)
     all_bare_acts = _merge_deduplicate_bare_acts(all_bare_acts, [])
     # Safety cap: max 15 total across all disputes (5 per dispute × 3 disputes typical)
     all_bare_acts = _cap_bare_acts_by_score(all_bare_acts, MAX_BARE_ACTS_OVERALL)
+
+    if not all_bare_acts:
+        if dispute_errors:
+            logger.error(
+                "retrieve_bare_acts_phase: no bare acts returned because all dispute workers failed. "
+                "errors=%s",
+                dispute_errors,
+            )
+        else:
+            logger.warning(
+                "retrieve_bare_acts_phase: no bare acts found after local/web retrieval and filtering. "
+                "facts_summary=%r disputes=%s states=%s",
+                facts_summary[:300],
+                [d.get("dispute", "")[:120] for d in disputes],
+                _states,
+            )
 
     if progress_callback:
         progress_callback({"step": "bare_acts_explain",
