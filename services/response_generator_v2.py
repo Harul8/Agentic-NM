@@ -64,10 +64,10 @@ JUNK_CASE_PATTERNS = ("unknown", "unknown (", "high court, 1908", "high court, 1
 # When user does NOT set a limit: include all with score > HIGH_QUALITY_SCORE; if fewer than this, add from >= MIN_RERANK_SCORE up to this many
 FLEXIBLE_MIN_FALLBACK = 10  # Minimum results to show when no user limit and not enough high-similarity (all must pass MIN_RERANK_SCORE)
 
-# Section caps — keep retrieval focused: goal is 1–2 really on-point sections per dispute.
-# Cross-encoder (local) + doc-level scoring (web) pick the BEST N by score; caps prevent 100+ sections per act.
-MAX_WEB_SECTIONS_PER_DISPUTE = 3    # Top N chunks kept from web search per dispute (by doc/section score)
-MAX_SECTIONS_PER_DISPUTE_TOTAL = 3  # Hard cap per dispute after local+web+xref merge (top N by score)
+# Section caps — keep retrieval focused while still allowing connected statutory provisions
+# to appear together in the final opinion for one dispute.
+MAX_WEB_SECTIONS_PER_DISPUTE = 5    # Top N chunks kept from web search per dispute (by doc/section score)
+MAX_SECTIONS_PER_DISPUTE_TOTAL = 5  # Hard cap per dispute after local+web+xref merge (top N by score)
 MAX_BARE_ACTS_OVERALL = 12          # Safety cap on total sections sent to UI across all disputes
 
 # Act-level pre-filter (for 100+ act indexes)
@@ -1608,20 +1608,23 @@ def _build_case_law_query(dispute_text: str, bare_act_sections: list) -> str:
     return " ".join(parts).strip()[:500] or dispute_text[:300]
 
 
-def _apply_dispute_case_law_limit(case_laws: list) -> list:
+def _apply_dispute_case_law_limit(case_laws: list, num_sections: int = 1) -> list:
     """
     Threshold-based limit for per-dispute case laws:
-      • If any result scores > HIGH_QUALITY_SCORE (5.0): keep top 5 of those.
-      • Otherwise: keep top 2 that pass MIN_RERANK_SCORE.
+      • If there is one main section: keep up to 3 strongest cases.
+      • If there are multiple connected sections: keep up to 5 strongest cases so they
+        can be distributed across sections in the final opinion.
+      • Prefer high-quality cases first; otherwise fall back to top relevant cases.
     Input must already be quality-filtered.
     """
     if not case_laws:
         return []
+    cap = 5 if int(num_sections or 1) > 1 else 3
     sorted_cls = sorted(case_laws, key=lambda x: x.get("_rerank_score", 0), reverse=True)
     high_quality = [cl for cl in sorted_cls if cl.get("_rerank_score", 0) > HIGH_QUALITY_SCORE]
     if high_quality:
-        return high_quality[:5]
-    return sorted_cls[:2]
+        return high_quality[:cap]
+    return sorted_cls[:cap]
 
 
 def _web_search_case_laws(dispute: dict, bare_act_sections: list, full_query: str, states: list = None, pending_indexing_list: list = None) -> list:
@@ -1721,7 +1724,7 @@ def retrieve_case_laws_for_dispute(dispute: dict, bare_act_sections: list, full_
         cl for cl in local_raw
         if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)
     ]
-    limited = _apply_dispute_case_law_limit(local_results)
+    limited = _apply_dispute_case_law_limit(local_results, num_sections=len(bare_act_sections))
     logger.info("[%s] Case laws Round 1 local: %d after filter, %d after limit", dispute_id, len(local_results), len(limited))
 
     # If we got the maximum (5 high-quality), stop
@@ -1741,7 +1744,7 @@ def retrieve_case_laws_for_dispute(dispute: dict, bare_act_sections: list, full_
         if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)
     ]
     llm_filtered = _filter_case_laws_with_llm(dispute, bare_act_sections, merged_filtered, debug)
-    final = _apply_dispute_case_law_limit(llm_filtered)
+    final = _apply_dispute_case_law_limit(llm_filtered, num_sections=len(bare_act_sections))
     logger.info(
         "[%s] Case laws Round 2 complete: %d final (local=%d web=%d)",
         dispute_id, len(final), len(local_results), len(web_results),
@@ -1914,6 +1917,58 @@ def _link_case_laws_to_sections(bare_acts: list, case_laws: list) -> list:
         result[0]["related_case_laws"].extend(unmatched)
 
     return result
+
+
+def _distribute_case_laws_across_sections(sections_with_cases: list) -> list:
+    """
+    Rebalance linked case laws across sections within one dispute.
+
+    Goals:
+    - 1 section: keep up to 3 most relevant case laws
+    - 2+ sections: keep up to 5 total across the dispute
+    - give the strongest section 2-3 case laws when available
+    - allow remaining sections to keep 1-2 each when relevant
+    """
+    if not sections_with_cases:
+        return sections_with_cases
+
+    sections = [{**s, "related_case_laws": list(s.get("related_case_laws", []))} for s in sections_with_cases]
+    sections.sort(key=lambda x: x.get("_rerank_score", 0), reverse=True)
+
+    total_cap = 5 if len(sections) > 1 else 3
+    per_section_caps = [3] + [2] * max(0, len(sections) - 1)
+    used_case_keys: set[str] = set()
+    total_kept = 0
+
+    def _case_key(cl: dict) -> str:
+        return (
+            (cl.get("case_name") or cl.get("title") or cl.get("source") or "").strip().lower()
+            + "|"
+            + str(cl.get("paragraph_num") or "")[:20]
+            + "|"
+            + (cl.get("_chunk_key") or "")[:80]
+        )
+
+    for idx, sec in enumerate(sections):
+        if total_kept >= total_cap:
+            sec["related_case_laws"] = []
+            continue
+        cap = per_section_caps[idx] if idx < len(per_section_caps) else 1
+        cap = min(cap, total_cap - total_kept)
+        ranked = sorted(sec.get("related_case_laws", []), key=lambda x: x.get("_rerank_score", 0), reverse=True)
+        kept = []
+        for cl in ranked:
+            key = _case_key(cl)
+            if key in used_case_keys:
+                continue
+            kept.append(cl)
+            used_case_keys.add(key)
+            if len(kept) >= cap:
+                break
+        sec["related_case_laws"] = kept
+        total_kept += len(kept)
+
+    return sections
 
 
 def retrieve_bare_acts_phase(facts_summary: str, progress_callback=None, states: list = None, pending_indexing_list: list = None) -> dict:
@@ -2153,6 +2208,7 @@ def generate_final_opinion_with_case_laws(
     for did, grp in dispute_groups.items():
         grp_case_laws = case_laws_by_dispute.get(did, [])
         grp["sections_with_cases"] = _link_case_laws_to_sections(grp["sections"], grp_case_laws)
+        grp["sections_with_cases"] = _distribute_case_laws_across_sections(grp["sections_with_cases"])
         all_bare_acts_with_cases.extend(grp["sections_with_cases"])
 
     # --- Build dispute_blocks_text for STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT ---
@@ -2178,7 +2234,7 @@ def generate_final_opinion_with_case_laws(
                 lines.append("Case laws linked to this section:")
                 for cl in related[:3]:
                     name = _format_case_citation(cl)
-                    body = (cl.get("text") or cl.get("full_text") or "")[:250]
+                    body = (cl.get("text") or cl.get("full_text") or "")[:350]
                     lines.append(f"  - [{name}]: {body}")
             lines.append("")
         dispute_blocks.append("\n".join(lines))

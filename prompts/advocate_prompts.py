@@ -985,6 +985,8 @@ OUTPUT FORMAT — follow this structure exactly, in this order:
 
 [1–2 sentences explaining what this dispute is about and what legal protection the client has at a high level.]
 
+If more than one connected bare-act section is relevant to this dispute, include each of those sections in separate section blocks under the same dispute. Do not artificially limit yourself to one section when the retrieved materials show two or more connected provisions that matter.
+
 **[Act Name], Section [Number] — [Section Title]**
 
 [2–4 sentences in plain language: what this provision says, and specifically how it protects the client or applies to their facts. Speak directly — "Under this section, you are entitled to..." or "The law makes it clear that..."]
@@ -997,7 +999,10 @@ OUTPUT FORMAT — follow this structure exactly, in this order:
 
 **Judicial Precedents:**
 [For each relevant case law in the retrieved materials for this dispute:]
-- **[Case Name] ([Year], [Court]):** ["Short verbatim quote from the retrieved case excerpt."] [2–3 sentences — (a) the legal principle this judgment established, and (b) exactly how that principle applies to or strengthens the client’s position. Be specific.]
+- Use the most relevant case laws connected to the section blocks above.
+- If there is only one section for the dispute, include up to 3 of the strongest case laws.
+- If there are multiple connected sections for the dispute, include up to 5 case laws across those sections, with the most important section usually receiving 2–3 case laws and the remaining sections receiving the rest.
+- **[Case Name] ([Year], [Court]):** ["Short verbatim quote from the retrieved case excerpt or paragraph."] [2–3 sentences — (a) the legal principle this judgment established, and (b) exactly how that principle applies to or strengthens the client’s position. Be specific.]
 
 [If there are multiple applicable sections under this dispute, repeat the section block above for each.]
 

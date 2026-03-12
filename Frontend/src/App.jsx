@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useMemo, useCallback } from "react";
+import { memo, useState, useRef, useEffect, useMemo, useCallback } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import jsPDF from "jspdf"; // npm install jspdf
@@ -132,6 +132,78 @@ function linkifyOpinionSegment(text, bareMap, caseMap) {
   return parts.length ? parts : [text];
 }
 
+const ChatComposer = memo(function ChatComposer({
+  loading,
+  placeholder,
+  onSubmit,
+  resetSignal,
+  showDisclaimer,
+}) {
+  const [draft, setDraft] = useState("");
+  const textareaRef = useRef(null);
+
+  useEffect(() => {
+    setDraft("");
+  }, [resetSignal]);
+
+  useEffect(() => {
+    const el = textareaRef.current;
+    if (!el) return;
+    el.style.height = "24px";
+    el.style.height = `${Math.min(el.scrollHeight, 200)}px`;
+  }, [draft]);
+
+  useEffect(() => {
+    if (!loading && textareaRef.current) textareaRef.current.focus();
+  }, [loading]);
+
+  const submitDraft = useCallback(() => {
+    const raw = draft ?? "";
+    if (!raw.trim() || loading) return;
+    onSubmit(raw);
+    setDraft("");
+  }, [draft, loading, onSubmit]);
+
+  const handleKeyDown = useCallback((e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      submitDraft();
+    }
+  }, [submitDraft]);
+
+  return (
+    <>
+      <div className="chat-input-container">
+        <textarea
+          ref={textareaRef}
+          autoFocus
+          value={draft}
+          onChange={(e) => setDraft(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder={placeholder}
+          className="chat-input"
+          rows={1}
+          disabled={loading}
+        />
+        <button
+          type="button"
+          onClick={submitDraft}
+          disabled={loading || !draft.trim()}
+          className="chat-send"
+          aria-label="Send message"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+          </svg>
+        </button>
+      </div>
+      {showDisclaimer && (
+        <p className="chat-disclaimer">Nyaymalaw AI can make mistakes. Consider checking important information.</p>
+      )}
+    </>
+  );
+});
+
 // ---------------------------------------------------
 // MAIN APP
 // ---------------------------------------------------
@@ -151,7 +223,6 @@ function App() {
   // -------------------------
   // Chat & Interview state (merged from existing and snippet)
   // -------------------------
-  const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [phase, setPhase] = useState("fact_collection"); // Retain existing phase logic
   const [factsSummary, setFactsSummary] = useState(null); // Retain existing
@@ -159,8 +230,8 @@ function App() {
   const [loading, setLoading] = useState(false); // Retain existing
   const [error, setError] = useState(""); // Retain existing
   const messagesEndRef = useRef(null);
-  const textareaRef = useRef(null);
   const messagesContainerRef = useRef(null);
+  const [composerResetSignal, setComposerResetSignal] = useState(0);
 
   // New interview state from snippet
   const [stage, setStage] = useState("await_facts"); // "await_facts" | "interview" | "bare_acts_review" | "done"
@@ -548,19 +619,6 @@ function App() {
     };
   }, []);
 
-  // Existing textarea autosize (retained)
-  useEffect(() => {
-    const el = textareaRef.current;
-    if (!el) return;
-    el.style.height = "24px";
-    el.style.height = `${Math.min(el.scrollHeight, 200)}px`;
-  }, [input]);
-
-  // Keep focus in chat input when not loading (so user can type without clicking)
-  useEffect(() => {
-    if (!loading && textareaRef.current) textareaRef.current.focus();
-  }, [loading]);
-
   // Elapsed time timer while loading (drives loading-step circles and "X min Y sec")
   useEffect(() => {
     if (!loading) return;
@@ -705,7 +763,7 @@ function App() {
     currentChatIdRef.current = null;
     setStage("await_facts");
     setFacts("");
-    setInput(""); // Reset existing input
+    setComposerResetSignal((prev) => prev + 1);
     setCurrentQuestion("");
     setQaHistory([]);
     setOpinionText("");
@@ -886,8 +944,8 @@ function App() {
   // -------------------------
   // Core submit logic (adapted from snippet's handleSubmit, using existing 'input' state)
   // -------------------------
-  const handleSubmit = async () => {
-    const raw = input ?? "";
+  const handleSubmit = async (submittedRaw) => {
+    const raw = submittedRaw ?? "";
     if (!raw.trim()) {
       alert("Please type something before pressing Submit.");
       return;
@@ -899,7 +957,7 @@ function App() {
     setStreamingSteps([]);
     setStreamingToken("");
     setElapsedTime(0); // Reset timer
-    setInput(""); // Clear input after submission
+    setComposerResetSignal((prev) => prev + 1);
     setPendingMaterials(null); // Clear pending materials on new submission
 
     // Keep exact format user typed (spaces, newlines)
@@ -2063,13 +2121,6 @@ function App() {
       return { type: "question", text: data.message };
     }
     return { type: "question", text: "How can I help?" };
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      handleSubmit(); // Call the new handleSubmit
-    }
   };
 
   const renderAssistantContent = (content) => {
@@ -3423,33 +3474,13 @@ function App() {
                         General
                       </button>
                     </div>
-                    <div className="chat-input-container">
-                      <textarea
-                        ref={textareaRef}
-                        autoFocus
-                        value={input}
-                        onChange={(e) => setInput(e.target.value)}
-                        onKeyDown={handleKeyDown}
-                        placeholder="Describe your case or ask a question"
-                        className="chat-input"
-                        rows={1}
-                        disabled={loading}
-                      />
-                      <button
-                        type="button"
-                        onClick={handleSubmit}
-                        disabled={loading || !input.trim()}
-                        className="chat-send"
-                        aria-label="Send message"
-                      >
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M12 19V5M5 12l7-7 7 7" />
-                        </svg>
-                      </button>
-                    </div>
-                    {bottomExpandedSection == null && (
-                      <p className="chat-disclaimer">Nyaymalaw AI can make mistakes. Consider checking important information.</p>
-                    )}
+                    <ChatComposer
+                      loading={loading}
+                      placeholder="Describe your case or ask a question"
+                      onSubmit={handleSubmit}
+                      resetSignal={composerResetSignal}
+                      showDisclaimer={bottomExpandedSection == null}
+                    />
                   </div>
               </div>
             ) : (
@@ -3676,43 +3707,21 @@ function App() {
                       </button>
                     </div>
                   )}
-                  <div className="chat-input-container">
-                    <textarea
-                      ref={textareaRef}
-                      autoFocus
-                      value={input}
-                      onChange={(e) => setInput(e.target.value)}
-                      onKeyDown={handleKeyDown}
-                      placeholder={
-                        stage === "bare_acts_review"
-                          ? "Provide the additional details, or type 'proceed' to continue"
-                          : stage === "interview" && currentQuestion
-                          ? "Type your details here"
-                          : stage === "await_facts"
-                          ? "Describe your case facts here"
-                          : "Type here to start a new case"
-                      }
-                      className="chat-input"
-                      rows={1}
-                      disabled={loading}
-                    />
-                    <button
-                      type="button"
-                      onClick={handleSubmit}
-                      disabled={loading || !input.trim()}
-                      className="chat-send"
-                      aria-label="Send message"
-                    >
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 19V5M5 12l7-7 7 7" />
-                      </svg>
-                    </button>
-                  </div>
-                  {bottomExpandedSection == null && (
-                    <p className="chat-disclaimer">
-                      Nyaymalaw AI can make mistakes. Consider checking important information.
-                    </p>
-                  )}
+                  <ChatComposer
+                    loading={loading}
+                    placeholder={
+                      stage === "bare_acts_review"
+                        ? "Provide the additional details, or type 'proceed' to continue"
+                        : stage === "interview" && currentQuestion
+                        ? "Type your details here"
+                        : stage === "await_facts"
+                        ? "Describe your case facts here"
+                        : "Type here to start a new case"
+                    }
+                    onSubmit={handleSubmit}
+                    resetSignal={composerResetSignal}
+                    showDisclaimer={bottomExpandedSection == null}
+                  />
                 </div>
 
                 {/* Confirmation bar */}
