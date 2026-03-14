@@ -12,6 +12,7 @@ Phase 2 rewrite:
 import json
 import logging
 import os
+import re
 import time
 
 from llm.ollama_client import ask_llm
@@ -149,6 +150,116 @@ def _extract_json(text: str) -> dict | None:
 
 
 # ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# Intake deduplication helpers — prevent the model from repeating questions
+# ---------------------------------------------------------------------------
+
+# Keywords whose co-occurrence in two questions signals they are about the same topic.
+_DEDUP_TOPIC_KEYWORDS: frozenset[str] = frozenset({
+    "prayer", "relief", "outcome", "want", "seeking", "hope", "wish",
+    "maintenance", "custody", "protection order", "residence order",
+    "injunction", "compensation", "damages", "fir", "police report", "complaint",
+    "arrest", "bail", "charge",
+    "injury", "injured", "hurt", "wound", "hospital", "doctor", "medical", "treatment",
+    "weapon", "knife", "rod", "stick", "object", "used",
+    "evidence", "witness", "proof", "document", "certificate",
+    "income", "salary", "earning", "financial", "money", "rupee", "lakh", "amount",
+    "location", "state", "city", "district", "place", "where",
+    "when", "date", "time", "how long", "since when", "duration",
+    "property", "house", "land", "flat", "deed", "ownership", "possession",
+    "agreement", "contract", "written", "registered",
+    "children", "child", "son", "daughter", "minor",
+    "dowry", "jewellery", "gold", "stridhan",
+    "employer", "employment", "job", "termination", "notice",
+    "cheque", "dishonour", "bounce", "payment",
+})
+
+
+def _extract_asked_questions(conversation_history: list) -> list[str]:
+    """
+    Pull every sentence that ends with '?' from all assistant turns in the conversation.
+    Returns a flat list of question strings.
+    """
+    questions: list[str] = []
+    for msg in conversation_history:
+        if msg.get("role") != "assistant":
+            continue
+        content = (msg.get("content") or "").strip()
+        if not content:
+            continue
+        # Split on sentence boundaries; keep sentences that contain '?'
+        for sentence in re.split(r"(?<=[.!?])\s+", content):
+            s = sentence.strip()
+            if "?" in s and len(s) > 12:
+                questions.append(s)
+    return questions
+
+
+def _build_intake_context_block(conversation_history: list) -> str:
+    """
+    Build a structured ALREADY-ASKED / ALREADY-KNOWN block to inject into Gate 2 prompts.
+    Makes it impossible for the model to miss what has already been covered.
+    """
+    if not conversation_history:
+        return ""
+
+    asked_questions = _extract_asked_questions(conversation_history)
+    user_facts: list[str] = []
+    for msg in conversation_history:
+        if msg.get("role") == "user":
+            content = (msg.get("content") or "").strip()
+            if len(content) > 5:
+                # Truncate very long user messages for prompt brevity
+                user_facts.append(content[:350] if len(content) > 350 else content)
+
+    if not asked_questions and not user_facts:
+        return ""
+
+    lines = [
+        "",
+        "══════════════════════════════════════════════════════",
+        "INTAKE MEMORY — READ BEFORE DECIDING WHAT TO ASK NEXT",
+        "══════════════════════════════════════════════════════",
+    ]
+
+    if user_facts:
+        lines.append("FACTS ALREADY STATED BY CLIENT — treat as fully known, do NOT ask about these:")
+        for i, fact in enumerate(user_facts, 1):
+            lines.append(f"  [{i}] {fact}")
+
+    if asked_questions:
+        lines.append("")
+        lines.append("QUESTIONS ALREADY ASKED — NEVER repeat these or anything substantially similar:")
+        for i, q in enumerate(asked_questions, 1):
+            lines.append(f"  [{i}] {q}")
+        lines.append("")
+        lines.append("⛔  Your next question MUST be on a COMPLETELY DIFFERENT topic not listed above.")
+        lines.append("⛔  If no genuinely new material fact is still missing, set action=complete NOW.")
+
+    lines.append("══════════════════════════════════════════════════════")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def _is_duplicate_question(proposed: str, asked_questions: list[str]) -> bool:
+    """
+    Return True if the proposed question substantially overlaps (same topic keywords)
+    with any question already in asked_questions. Two or more shared topic keywords = duplicate.
+    """
+    if not asked_questions or not proposed:
+        return False
+    p_lower = proposed.lower()
+    p_topics = {kw for kw in _DEDUP_TOPIC_KEYWORDS if kw in p_lower}
+    if not p_topics:
+        return False
+    for asked in asked_questions:
+        a_topics = {kw for kw in _DEDUP_TOPIC_KEYWORDS if kw in asked.lower()}
+        if len(p_topics & a_topics) >= 2:
+            return True
+    return False
+
+
+# ---------------------------------------------------------------------------
 # Two-gate routing: Gate 1 (legal vs generalist vs greeting), Gate 2 (legal intent)
 # ---------------------------------------------------------------------------
 
@@ -192,8 +303,29 @@ def _run_gate2_legal(conversation_history: list, user_message: str) -> dict | No
         f"{'User' if m.get('role') == 'user' else 'Assistant'}: {m.get('content') or ''}"
         for m in conversation_history
     )
-    prompt = f"""{ROUTING_GATE2_SYSTEM}
 
+    # --- Few-shot injection: only on the first 2 user turns ---
+    # After turn 2 the conversation history itself demonstrates the desired arc/style.
+    # Skipping the few-shot block on later turns reduces the Gate 2 prompt by ~2000 tokens
+    # which cuts per-turn LLM latency significantly.
+    user_turn_count = sum(1 for m in conversation_history if m.get("role") == "user")
+    few_shot_block = ""
+    if user_turn_count <= 2:
+        try:
+            from training.few_shot_retriever import get_intake_example
+            all_user_text = " ".join(
+                m.get("content", "") for m in conversation_history if m.get("role") == "user"
+            ) + " " + user_message
+            example = get_intake_example(all_user_text)
+            if example:
+                few_shot_block = f"\n\n{example}\n"
+        except Exception:
+            pass  # Never break the main flow for a missing example
+
+    # Build explicit intake memory block (already-asked + already-known facts)
+    intake_context_block = _build_intake_context_block(conversation_history)
+
+    prompt = f"""{ROUTING_GATE2_SYSTEM}{few_shot_block}{intake_context_block}
 Conversation so far:
 {context}
 
@@ -202,7 +334,35 @@ User: {user_message}
 Output one line of valid JSON only (action, intent, facts_summary, reply_to_client; add result_count for search/lookup; add search_strategy only when user clearly wants web_only or local_only; use action "ask" only if you need one more question for legal_opinion)."""
     try:
         response = ask_llm(prompt).strip()
-        return _parse_llm_response(response, user_message)
+        parsed = _parse_llm_response(response, user_message)
+
+        # --- Code-level deduplication guard ---
+        # If the model still returned action=ask with a question it already asked, block it.
+        if parsed and parsed.get("action") == "ask":
+            asked_questions = _extract_asked_questions(conversation_history)
+            reply = parsed.get("reply_to_client") or ""
+            if asked_questions and _is_duplicate_question(reply, asked_questions):
+                logger.info(
+                    "[Gate2] Duplicate question detected — forcing action=complete. "
+                    "Proposed: %s", reply[:120]
+                )
+                # Build best-effort facts_summary from all user messages
+                all_user_text = " | ".join(
+                    (m.get("content") or "")
+                    for m in conversation_history
+                    if m.get("role") == "user"
+                )
+                return {
+                    "action": "complete",
+                    "intent": "legal_opinion",
+                    "result_count": None,
+                    "facts_summary": all_user_text.strip() or user_message,
+                    "message": "",
+                    "document_types": "both",
+                    "search_strategy": "local_then_web",
+                }
+
+        return parsed
     except Exception:
         return None
 
@@ -479,6 +639,32 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
             "search_strategy": _detect_search_strategy_from_keywords(user_message) or "local_then_web",
         }
 
+    # --- Gate 1 fast-bypass for established legal conversations ---
+    # Once a conversation has ≥2 user turns it is almost certainly a legal intake.
+    # Running Gate 1 (a full LLM round-trip) on every follow-up is pure overhead.
+    # We skip it and go straight to Gate 2, saving ~10-15 s per turn on slow hardware.
+    _legal_bypass_keywords = [
+        "case", "court", "section", "act", "ipc", "crpc", "bns", "bnss", "fir",
+        "police", "judge", "magistrate", "bail", "advocate", "lawyer", "dispute",
+        "contract", "property", "divorce", "custody", "maintenance", "assault",
+        "fraud", "cheque", "notice", "complaint", "petition", "suit", "relief",
+        "compensation", "damages", "injunction", "arrest", "crime", "offence",
+    ]
+    established_user_turns = [m for m in conversation_history if m.get("role") == "user"]
+    _has_legal_context = len(established_user_turns) >= 2 or any(
+        any(kw in (m.get("content") or "").lower() for kw in _legal_bypass_keywords)
+        for m in conversation_history
+        if m.get("role") == "user"
+    )
+    if _has_legal_context or force_legal:
+        _log_fc_step("gate1", 0, "bypassed (legal context established)")
+        t_g2 = time.perf_counter()
+        parsed = _run_gate2_legal(conversation_history, user_message)
+        _log_fc_step("gate2", (time.perf_counter() - t_g2) * 1000, f"action={parsed.get('action') if parsed else 'None'}")
+        if parsed:
+            return parsed
+        # Gate 2 failed — fall through to full two-gate path below as safety net
+
     # --- Two-gate routing: Gate 1 (legal vs generalist vs greeting) ---
     t_g1 = time.perf_counter()
     gate1_result = _run_gate1(conversation_history, user_message)
@@ -545,8 +731,20 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
     )
     conv_text += f"\nClient: {user_message}"
 
-    prompt = f"""{FACT_COLLECTION_SYSTEM}
+    # --- Few-shot injection for fallback path too ---
+    fallback_few_shot = ""
+    try:
+        from training.few_shot_retriever import get_intake_example
+        all_user_text = " ".join(
+            m["content"] for m in conversation_history if m.get("role") == "user"
+        ) + " " + user_message
+        example = get_intake_example(all_user_text)
+        if example:
+            fallback_few_shot = f"\n\n{example}\n"
+    except Exception:
+        pass
 
+    prompt = f"""{FACT_COLLECTION_SYSTEM}{fallback_few_shot}
 Conversation so far:
 {conv_text}
 

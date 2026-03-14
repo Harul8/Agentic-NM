@@ -1486,6 +1486,27 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
     # This eliminates sections from irrelevant acts (POCSO, Arms Act, Constitution,
     # Indian Succession Act ...) before the score-threshold filter runs.
     top_acts = _select_top_acts(all_local)
+
+    # Secondary guard: if LLM already identified relevant acts (allowed_acts), drop any
+    # reranker-selected act that is NOT a fuzzy substring match of a LLM-allowed act.
+    # This prevents false positives like Telangana Excise Act sneaking through because
+    # its drunkenness provisions scored well on a domestic violence query.
+    if top_acts and allowed_acts:
+        def _act_in_llm_list(act: str, llm_acts: frozenset) -> bool:
+            al = act.lower()
+            return any(la.lower() in al or al in la.lower() for la in llm_acts)
+        llm_intersect = {a for a in top_acts if _act_in_llm_list(a, allowed_acts)}
+        if llm_intersect:
+            dropped = top_acts - llm_intersect
+            if dropped:
+                logger.info(
+                    "[%s] LLM-act guard: dropped %s (not in LLM-identified acts %s)",
+                    dispute_id, list(dropped), list(allowed_acts),
+                )
+            top_acts = llm_intersect
+        # else: llm_intersect empty means the LLM act names don't fuzzy-match anything
+        # the reranker found — fall back to reranker selection (likely an alias mismatch).
+
     if top_acts:
         before = len(all_local)
         all_local = [ba for ba in all_local if (ba.get("act_name") or "").strip() in top_acts]
@@ -2260,11 +2281,21 @@ def generate_final_opinion_with_case_laws(
         f"RETRIEVED MATERIALS BY DISPUTE COMPONENT above."
     )
 
+    # --- Few-shot opinion example injection ---
+    opinion_few_shot = ""
+    try:
+        from training.few_shot_retriever import get_opinion_example
+        opinion_few_shot = get_opinion_example(full_facts) or ""
+        if opinion_few_shot:
+            opinion_few_shot = f"\n\n{opinion_few_shot}\n"
+    except Exception:
+        pass
+
     opinion_prompt = STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT.format(
         dispute_facts=full_facts[:800],
         additional_info=(additional_info or "None provided").strip(),
         dispute_blocks_text=dispute_blocks_text,
-    ) + _allowlist_suffix
+    ) + opinion_few_shot + _allowlist_suffix
 
     if progress_callback:
         progress_callback({"step": "opinion", "message": "Generating structured legal opinion…"})
@@ -3296,11 +3327,21 @@ def _generate_structured_opinion_by_dispute(
 
     from prompts.advocate_prompts import STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT
 
+    # --- Few-shot opinion example injection ---
+    opinion_few_shot = ""
+    try:
+        from training.few_shot_retriever import get_opinion_example
+        opinion_few_shot = get_opinion_example(facts_summary) or ""
+        if opinion_few_shot:
+            opinion_few_shot = f"\n\n{opinion_few_shot}\n"
+    except Exception:
+        pass
+
     prompt = STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT.format(
         dispute_facts=facts_summary[:1200],
         additional_info=(additional_info or "None provided").strip(),
         dispute_blocks_text=dispute_blocks_text,
-    )
+    ) + opinion_few_shot
     try:
         if token_callback:
             full_text = ""

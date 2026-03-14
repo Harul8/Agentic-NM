@@ -305,22 +305,11 @@ function App() {
   const [architectureLoading, setArchitectureLoading] = useState(false);
   const [updatesRows, setUpdatesRows] = useState([]);
 
-  // Pending indexing (left pane, below Chat history) — from web enrichment; user selects and clicks Index
-  const [pendingIndexingCandidates, setPendingIndexingCandidates] = useState([]);
-  const [indexingRunning, setIndexingRunning] = useState(false);
-  const [showClearPendingConfirm, setShowClearPendingConfirm] = useState(false);
-
-  // Case law discovery: documents presented for indexing (persist until user Index or Clear; survives refresh/restart)
-  const [caseLawDiscoveryPending, setCaseLawDiscoveryPending] = useState([]);
-  const [caseLawDiscoveryRunning, setCaseLawDiscoveryRunning] = useState(false);
-  const [showClearCaseLawDiscoveryConfirm, setShowClearCaseLawDiscoveryConfirm] = useState(false);
-
   // Saved chats (ChatGPT-style): list of past conversations, persisted to localStorage
   const [savedChats, setSavedChats] = useState([]);
   const hasSavedCurrentChatRef = useRef(false);
   const [editingChatId, setEditingChatId] = useState(null);
   const [editingTitle, setEditingTitle] = useState("");
-  const [openMenuChatId, setOpenMenuChatId] = useState(null);
   const editInputRef = useRef(null);
   const editMessageInputRef = useRef(null);
   const currentChatIdRef = useRef(null);
@@ -328,11 +317,10 @@ function App() {
   // Edit user message (current and old chats)
   const [editingMessageIndex, setEditingMessageIndex] = useState(null);
   const [editDraft, setEditDraft] = useState("");
-  const [actionMenuOpenIndex, setActionMenuOpenIndex] = useState(null);
   const [copyJustDoneIndex, setCopyJustDoneIndex] = useState(null);
 
-  // Left sidebar accordion: only one of Bare Acts / Case Laws / Chat history expanded at a time
-  const [sidebarExpandedSection, setSidebarExpandedSection] = useState(null);
+  // Left sidebar accordion: chat history stays open by default unless another section is expanded
+  const [sidebarExpandedSection, setSidebarExpandedSection] = useState("chat_history");
 
   // Left pane width (resizable: 50% smaller to 50% larger than base)
   const LEFT_COLUMN_BASE_WIDTH = 280;
@@ -340,6 +328,13 @@ function App() {
   const LEFT_COLUMN_MIN_WIDTH = LEFT_COLUMN_BASE_WIDTH * 0.5;
   const LEFT_COLUMN_MAX_WIDTH = LEFT_COLUMN_BASE_WIDTH * 1.5;
   const [leftColumnWidth, setLeftColumnWidth] = useState(LEFT_COLUMN_DEFAULT_WIDTH);
+
+  const toggleSidebarSection = (section) => {
+    setSidebarExpandedSection((prev) => {
+      if (section === "chat_history") return "chat_history";
+      return prev === section ? "chat_history" : section;
+    });
+  };
 
   const handleSidebarResizeMouseDown = (e) => {
     e.preventDefault();
@@ -398,59 +393,6 @@ function App() {
      (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
       ? "http://127.0.0.1:8000"
       : (typeof window !== "undefined" ? window.location.origin : "http://127.0.0.1:8000"));
-
-  // Load persisted pending indexing candidates on mount (survives refresh)
-  useEffect(() => {
-    const token = localStorage.getItem(AUTH_TOKEN_KEY);
-    const headers = token ? { Authorization: `Bearer ${token}` } : {};
-    fetch(`${API_BASE}/indexing/pending`, { headers })
-      .then(async (res) => {
-        if (!res.ok) return { items: [] };
-        const data = await res.json().catch(() => ({}));
-        return data;
-      })
-      .then((data) => {
-        const items = Array.isArray(data?.items) ? data.items : [];
-        setPendingIndexingCandidates(items.map((c, i) => ({
-          id: `idx-${Date.now()}-${i}`,
-          title: c.title || "",
-          source_url: c.source_url || "",
-          suggested_category: c.suggested_category || "case_law",
-          category: c.suggested_category || "case_law",
-          selected: !c.already_in_store,
-          already_in_store: !!c.already_in_store,
-        })));
-      })
-      .catch(() => {});
-  }, [API_BASE]);
-
-  // Load case law discovery pending on mount (persisted; survives refresh and backend restart)
-  useEffect(() => {
-    const token = localStorage.getItem(AUTH_TOKEN_KEY);
-    const headers = token ? { Authorization: `Bearer ${token}` } : {};
-    fetch(`${API_BASE}/case-law-discovery/pending`, { headers })
-      .then(async (res) => {
-        if (!res.ok) return { items: [] };
-        const data = await res.json().catch(() => ({}));
-        return data;
-      })
-      .then((data) => {
-        const items = Array.isArray(data?.items) ? data.items : [];
-        setCaseLawDiscoveryPending(items.map((c, i) => ({
-          id: `cld-${Date.now()}-${i}`,
-          title: c.title || "",
-          source_url: c.source_url || "",
-          suggested_category: c.suggested_category || "case_law",
-          category: c.suggested_category || "case_law",
-          selected: !c.already_in_store,
-          already_in_store: !!c.already_in_store,
-          signature: c.signature,
-          act_name: c.act_name,
-          summary: c.summary,
-        })));
-      })
-      .catch(() => {});
-  }, [API_BASE]);
 
   // Load saved chats once on mount (do not depend on API_BASE to avoid re-runs and 429 from backend).
   useEffect(() => {
@@ -774,36 +716,6 @@ function App() {
     setMessages([]);
   };
 
-  const applyIndexingCandidates = (data) => {
-    if (data && data.indexing_candidates && data.indexing_candidates.length) {
-      const candidates = data.indexing_candidates.map((c, i) => ({
-        id: `idx-${Date.now()}-${i}`,
-        title: c.title || "",
-        source_url: c.source_url || "",
-        suggested_category: c.suggested_category || "case_law",
-        category: c.suggested_category || "case_law",
-        selected: !c.already_in_store,
-        already_in_store: !!c.already_in_store,
-      }));
-      setPendingIndexingCandidates(candidates);
-      const token = localStorage.getItem(AUTH_TOKEN_KEY);
-      const persistItems = data.indexing_candidates.map((c) => ({
-        title: c.title || "",
-        source_url: c.source_url || "",
-        suggested_category: c.suggested_category || "case_law",
-        already_in_store: !!c.already_in_store,
-      }));
-      fetch(`${API_BASE}/indexing/pending`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          ...(token ? { Authorization: `Bearer ${token}` } : {}),
-        },
-        body: JSON.stringify({ items: persistItems }),
-      }).catch(() => {});
-    }
-  };
-
   // Save current conversation to savedChats (for sidebar list and persistence)
   const saveCurrentChatToHistory = (msgs, opinion, retr) => {
     const firstUser = (msgs || []).find((m) => m.role === "user");
@@ -913,7 +825,6 @@ function App() {
   const handleDeleteChat = async (chat) => {
     const idToRemove = chat.id;
     const idForUrl = typeof idToRemove === "number" ? idToRemove : String(idToRemove).trim();
-    setOpenMenuChatId(null);
     const token = localStorage.getItem(AUTH_TOKEN_KEY);
     const wasCurrent = currentChatIdRef.current == idToRemove;
     const headers = token ? { Authorization: `Bearer ${token}` } : {};
@@ -932,14 +843,6 @@ function App() {
     setSavedChats((prev) => prev.filter((c) => String(c.id) !== String(idToRemove)));
     if (wasCurrent) handleStartNewCase();
   };
-
-  // Close chat menu when clicking outside
-  useEffect(() => {
-    if (openMenuChatId == null) return;
-    const close = () => setOpenMenuChatId(null);
-    document.addEventListener("click", close);
-    return () => document.removeEventListener("click", close);
-  }, [openMenuChatId]);
 
   // -------------------------
   // Core submit logic (adapted from snippet's handleSubmit, using existing 'input' state)
@@ -1027,7 +930,6 @@ function App() {
               const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
               setOpinionText(opinion);
               setRetrieved(retr);
-              applyIndexingCandidates(data);
               if (data.progress) {
                 setProgress(data.progress);
                 const groups = (data.progress && data.progress.groups) || [];
@@ -1047,7 +949,6 @@ function App() {
                   opinionText: opinion,
                   bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
                   case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
-                  case_law_discovery: false,
                   retrieved: retr,
                   progress: data.progress || null,
                   model_used: data.model_used || null,
@@ -1162,7 +1063,6 @@ function App() {
               const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
               setOpinionText(opinion);
               setRetrieved(retr);
-              applyIndexingCandidates(data);
               if (data.progress) {
                 setProgress(data.progress);
                 const groups = (data.progress && data.progress.groups) || [];
@@ -1273,7 +1173,6 @@ function App() {
               const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
               setOpinionText(opinion);
               setRetrieved(retr);
-              applyIndexingCandidates(data);
               if (data.progress) {
                 setProgress(data.progress);
                 const groups = (data.progress && data.progress.groups) || [];
@@ -1368,7 +1267,6 @@ function App() {
               const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
               setOpinionText(opinion);
               setRetrieved(retr);
-              applyIndexingCandidates(data);
               if (data.progress) {
                 setProgress(data.progress);
                 const groups = (data.progress && data.progress.groups) || [];
@@ -1390,7 +1288,6 @@ function App() {
                     opinionText: opinion,
                     bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
                     case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
-                    case_law_discovery: false,
                     retrieved: retr,
                     progress: data.progress || null,
                     model_used: data.model_used || null,
@@ -1978,19 +1875,9 @@ function App() {
     const str = getMessageTextForCopy(msg);
     navigator.clipboard.writeText(str).then(() => {
       setCopyJustDoneIndex(messageIndex);
-      setActionMenuOpenIndex(null);
       setTimeout(() => setCopyJustDoneIndex(null), 1500);
     }).catch(() => {});
   };
-
-  useEffect(() => {
-    if (actionMenuOpenIndex == null) return;
-    const close = (e) => {
-      if (!e.target.closest(".message-action-menu-wrap")) setActionMenuOpenIndex(null);
-    };
-    document.addEventListener("mousedown", close);
-    return () => document.removeEventListener("mousedown", close);
-  }, [actionMenuOpenIndex]);
 
   const startEditUserMessage = (index) => {
     const msg = messages[index];
@@ -2761,7 +2648,7 @@ function App() {
     >
       {/* Two-pane layout: Left (sidebar) and Right (chat) */}
       <div className="main-content-wrapper">
-        {/* LEFT PANE – New chat, Bare Acts, Case Laws, Chat history, Pending indexing (fixed order) */}
+        {/* LEFT PANE – New chat, Bare Acts, Case Laws, Chat history (fixed order) */}
         <div
           className="left-column"
           style={{ width: leftColumnWidth, minWidth: leftColumnWidth, maxWidth: leftColumnWidth }}
@@ -2775,12 +2662,12 @@ function App() {
               ＋ New chat
             </button>
             <details
-              className="bare-acts-collapsible"
+              className={`bare-acts-collapsible sidebar-section${sidebarExpandedSection === "bare_acts" ? " sidebar-section--active" : ""}`}
               open={sidebarExpandedSection === "bare_acts"}
               onClick={(e) => {
                 if (e.target.closest("summary")) {
                   e.preventDefault();
-                  setSidebarExpandedSection((prev) => (prev === "bare_acts" ? null : "bare_acts"));
+                  toggleSidebarSection("bare_acts");
                 }
               }}
             >
@@ -2894,12 +2781,12 @@ function App() {
 
             {/* Case Laws – below Bare Acts, same functionality */}
             <details
-              className="case-laws-collapsible"
+              className={`case-laws-collapsible sidebar-section${sidebarExpandedSection === "case_laws" ? " sidebar-section--active" : ""}`}
               open={sidebarExpandedSection === "case_laws"}
               onClick={(e) => {
                 if (e.target.closest("summary")) {
                   e.preventDefault();
-                  setSidebarExpandedSection((prev) => (prev === "case_laws" ? null : "case_laws"));
+                  toggleSidebarSection("case_laws");
                 }
               }}
             >
@@ -3041,14 +2928,14 @@ function App() {
             </details>
 
             {/* Saved chats – below Case Laws */}
-            <div className="chat-history-section">
+            <div className={`chat-history-section sidebar-section${sidebarExpandedSection === "chat_history" ? " sidebar-section--active" : ""}`}>
               <details
                 className="chat-history-collapsible"
                 open={sidebarExpandedSection === "chat_history"}
                 onClick={(e) => {
                   if (e.target.closest("summary")) {
                     e.preventDefault();
-                    setSidebarExpandedSection((prev) => (prev === "chat_history" ? null : "chat_history"));
+                    toggleSidebarSection("chat_history");
                   }
                 }}
               >
@@ -3098,28 +2985,29 @@ function App() {
                                   >
                                     {chat.title}
                                   </button>
-                                  <div className="chat-history-menu-wrap">
+                                  <div className="chat-history-hover-actions" aria-hidden="true">
                                     <button
                                       type="button"
-                                      onClick={(e) => { e.stopPropagation(); setOpenMenuChatId((id) => (id === chat.id ? null : chat.id)); }}
-                                      className="chat-history-menu-btn"
-                                      title="Options"
-                                      aria-label="Chat options"
-                                      aria-expanded={openMenuChatId == chat.id}
+                                      onClick={(e) => { e.stopPropagation(); startRenamingChat(chat); }}
+                                      className="chat-history-icon-btn"
+                                      title="Rename chat"
+                                      aria-label="Rename chat"
                                     >
-                                      ⋯
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" />
+                                      </svg>
                                     </button>
-                                    {openMenuChatId == chat.id && (
-                                      <div className="chat-history-dropdown" onClick={(e) => e.stopPropagation()}>
-                                        <button type="button" onClick={() => { startRenamingChat(chat); setOpenMenuChatId(null); }} className="chat-history-dropdown-item">
-                                          Rename
-                                        </button>
-                                        <hr className="chat-history-dropdown-divider" />
-                                        <button type="button" onClick={() => handleDeleteChat(chat)} className="chat-history-dropdown-item chat-history-dropdown-item--danger">
-                                          Delete
-                                        </button>
-                                      </div>
-                                    )}
+                                    <button
+                                      type="button"
+                                      onClick={(e) => { e.stopPropagation(); handleDeleteChat(chat); }}
+                                      className="chat-history-icon-btn chat-history-icon-btn--danger"
+                                      title="Delete chat"
+                                      aria-label="Delete chat"
+                                    >
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fillRule="evenodd" d="M8.75 2a.75.75 0 00-.75.75V3H5.5a.75.75 0 000 1.5h.443l.664 9.298A2.25 2.25 0 008.85 15.9h2.3a2.25 2.25 0 002.243-2.102l.664-9.298h.443a.75.75 0 000-1.5H12V2.75A.75.75 0 0011.25 2h-2.5zM9.5 3v-.25h1V3h-1zm-.75 4.25a.75.75 0 011.5 0v4.5a.75.75 0 01-1.5 0v-4.5zm3 0a.75.75 0 011.5 0v4.5a.75.75 0 01-1.5 0v-4.5z" clipRule="evenodd" />
+                                      </svg>
+                                    </button>
                                   </div>
                                 </>
                               )}
@@ -3136,282 +3024,6 @@ function App() {
               </details>
             </div>
 
-            {/* Pending indexing – same row as above three: font, color, gap, one-expanded-at-a-time */}
-            <details
-              className="pending-indexing-collapsible"
-              open={sidebarExpandedSection === "pending_indexing"}
-              onClick={(e) => {
-                if (e.target.closest("summary")) {
-                  e.preventDefault();
-                  setSidebarExpandedSection((prev) => (prev === "pending_indexing" ? null : "pending_indexing"));
-                }
-              }}
-            >
-              <summary className="pending-indexing-collapsible-summary sidebar-collapsible-summary">
-                <span className="pending-indexing-count">Pending indexing ({pendingIndexingCandidates.length})</span>
-              </summary>
-              <div className="pending-indexing-body" onMouseDown={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
-                {pendingIndexingCandidates.length > 0 ? (
-                  <>
-                    <div className="pending-indexing-actions">
-                      <button
-                        type="button"
-                        className="pending-indexing-btn"
-                        disabled={indexingRunning || !pendingIndexingCandidates.some((c) => c.selected && !c.already_in_store)}
-                        onClick={async () => {
-                          const selected = pendingIndexingCandidates.filter((c) => c.selected && !c.already_in_store);
-                          if (!selected.length) return;
-                          setIndexingRunning(true);
-                          const token = localStorage.getItem(AUTH_TOKEN_KEY);
-                          const headers = token ? { Authorization: `Bearer ${token}` } : {};
-                          const refreshPending = async () => {
-                            try {
-                              const pendRes = await fetch(`${API_BASE}/indexing/pending`, { headers });
-                              const pendData = pendRes.ok ? await pendRes.json().catch(() => ({})) : {};
-                              const items = Array.isArray(pendData?.items) ? pendData.items : [];
-                              setPendingIndexingCandidates(items.map((c, i) => ({
-                                id: `idx-${Date.now()}-${i}`,
-                                title: c.title || "",
-                                source_url: c.source_url || "",
-                                suggested_category: c.suggested_category || "case_law",
-                                category: c.suggested_category || "case_law",
-                                selected: !c.already_in_store,
-                                already_in_store: !!c.already_in_store,
-                              })));
-                            } catch (_) {}
-                          };
-                          const pollId = setInterval(refreshPending, 2000);
-                          try {
-                            const res = await fetch(`${API_BASE}/indexing/run`, {
-                              method: "POST",
-                              headers: {
-                                "Content-Type": "application/json",
-                                ...headers,
-                              },
-                              body: JSON.stringify({
-                                items: selected.map((c) => ({
-                                  url: (c.source_url || "").trim(),
-                                  title: (c.title || "").trim(),
-                                  category: c.category || c.suggested_category || "bare_act",
-                                })),
-                              }),
-                            });
-                            const data = res.ok ? await res.json().catch(() => ({})) : {};
-                            if (res.ok) await refreshPending();
-                            if (data.errors && data.errors.length) {
-                              setError(data.message || "Some items could not be indexed.");
-                            }
-                          } catch (e) {
-                            setError(e?.message || "Indexing request failed.");
-                          } finally {
-                            clearInterval(pollId);
-                            await refreshPending();
-                            setIndexingRunning(false);
-                          }
-                        }}
-                      >
-                        {indexingRunning ? "Indexing…" : "Index"}
-                      </button>
-                      <button
-                        type="button"
-                        className="pending-indexing-btn pending-indexing-btn-clear"
-                        disabled={indexingRunning || pendingIndexingCandidates.length === 0}
-                        onClick={() => setShowClearPendingConfirm(true)}
-                      >
-                        Clear
-                      </button>
-                    </div>
-                    <ul className="pending-indexing-list">
-                      {pendingIndexingCandidates.map((c) => (
-                        <li key={c.id} className={`pending-indexing-item${c.already_in_store ? " pending-indexing-item--duplicate" : ""}`}>
-                          <label className="pending-indexing-row">
-                            <input
-                              type="checkbox"
-                              checked={!!c.selected}
-                              disabled={!!c.already_in_store}
-                              onChange={() => {
-                                if (c.already_in_store) return;
-                                setPendingIndexingCandidates((prev) =>
-                                  prev.map((x) => (x.id === c.id ? { ...x, selected: !x.selected } : x))
-                                );
-                              }}
-                              className="pending-indexing-checkbox"
-                              aria-label={c.already_in_store ? `Already in library: ${c.title}` : `Select ${c.title}`}
-                            />
-                            <a
-                              href={c.source_url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={`pending-indexing-link${c.already_in_store ? " pending-indexing-link--duplicate" : ""}`}
-                              title={c.already_in_store ? `${c.title} — Already in library` : c.title}
-                            >
-                              {c.title.length > 40 ? c.title.slice(0, 40) + "…" : c.title}
-                            </a>
-                            {c.already_in_store && (
-                              <span className="pending-indexing-badge" title="Same act/document already in internal store">Already in library</span>
-                            )}
-                            <select
-                              value={c.category}
-                              onChange={(e) => {
-                                setPendingIndexingCandidates((prev) =>
-                                  prev.map((x) => (x.id === c.id ? { ...x, category: e.target.value } : x))
-                                );
-                              }}
-                              className="pending-indexing-dropdown"
-                              aria-label="Category"
-                            >
-                              <option value="bare_act">Bare act</option>
-                              <option value="case_law">Case law</option>
-                            </select>
-                          </label>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                ) : (
-                  <p className="pending-indexing-empty">No documents pending. New candidates appear here after web search.</p>
-                )}
-              </div>
-            </details>
-
-            {/* Case law discovery – documents presented for indexing (persist until Index or Clear; survives refresh/restart) */}
-            <details
-              className="pending-indexing-collapsible"
-              open={sidebarExpandedSection === "case_law_discovery"}
-              onClick={(e) => {
-                if (e.target.closest("summary")) {
-                  e.preventDefault();
-                  setSidebarExpandedSection((prev) => (prev === "case_law_discovery" ? null : "case_law_discovery"));
-                }
-              }}
-            >
-              <summary className="pending-indexing-collapsible-summary sidebar-collapsible-summary">
-                <span className="pending-indexing-count">Case law discovery – Pending ({caseLawDiscoveryPending.length})</span>
-              </summary>
-              <div className="pending-indexing-body" onMouseDown={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
-                {caseLawDiscoveryPending.length > 0 ? (
-                  <>
-                    <div className="pending-indexing-actions">
-                      <button
-                        type="button"
-                        className="pending-indexing-btn"
-                        disabled={caseLawDiscoveryRunning || !caseLawDiscoveryPending.some((c) => c.selected && !c.already_in_store)}
-                        onClick={async () => {
-                          const selected = caseLawDiscoveryPending.filter((c) => c.selected && !c.already_in_store);
-                          if (!selected.length) return;
-                          setCaseLawDiscoveryRunning(true);
-                          const token = localStorage.getItem(AUTH_TOKEN_KEY);
-                          const headers = token ? { Authorization: `Bearer ${token}` } : {};
-                          const refreshPending = async () => {
-                            try {
-                              const pendRes = await fetch(`${API_BASE}/case-law-discovery/pending`, { headers });
-                              const pendData = pendRes.ok ? await pendRes.json().catch(() => ({})) : {};
-                              const items = Array.isArray(pendData?.items) ? pendData.items : [];
-                              setCaseLawDiscoveryPending(items.map((c, i) => ({
-                                id: `cld-${Date.now()}-${i}`,
-                                title: c.title || "",
-                                source_url: c.source_url || "",
-                                suggested_category: c.suggested_category || "case_law",
-                                category: c.suggested_category || "case_law",
-                                selected: !c.already_in_store,
-                                already_in_store: !!c.already_in_store,
-                                signature: c.signature,
-                                act_name: c.act_name,
-                                summary: c.summary,
-                              })));
-                            } catch (_) {}
-                          };
-                          const pollId = setInterval(refreshPending, 2000);
-                          try {
-                            const res = await fetch(`${API_BASE}/case-law-discovery/confirm-index`, {
-                              method: "POST",
-                              headers: { "Content-Type": "application/json", ...headers },
-                              body: JSON.stringify({
-                                items: selected.map((c) => ({
-                                  source_url: (c.source_url || "").trim(),
-                                  title: (c.title || "").trim(),
-                                  suggested_category: c.category || c.suggested_category || "case_law",
-                                  act_name: (c.act_name || "").trim() || undefined,
-                                  signature: (c.signature || "").trim() || undefined,
-                                  summary: (c.summary || "").trim() || undefined,
-                                })),
-                              }),
-                            });
-                            const data = res.ok ? await res.json().catch(() => ({})) : {};
-                            if (res.ok) await refreshPending();
-                            if (data.errors && data.errors.length) setError(data.message || "Some items could not be indexed.");
-                          } catch (e) {
-                            setError(e?.message || "Indexing request failed.");
-                          } finally {
-                            clearInterval(pollId);
-                            await refreshPending();
-                            setCaseLawDiscoveryRunning(false);
-                          }
-                        }}
-                      >
-                        {caseLawDiscoveryRunning ? "Indexing…" : "Index"}
-                      </button>
-                      <button
-                        type="button"
-                        className="pending-indexing-btn pending-indexing-btn-clear"
-                        disabled={caseLawDiscoveryRunning || caseLawDiscoveryPending.length === 0}
-                        onClick={() => setShowClearCaseLawDiscoveryConfirm(true)}
-                      >
-                        Clear
-                      </button>
-                    </div>
-                    <ul className="pending-indexing-list">
-                      {caseLawDiscoveryPending.map((c) => (
-                        <li key={c.id} className={`pending-indexing-item${c.already_in_store ? " pending-indexing-item--duplicate" : ""}`}>
-                          <label className="pending-indexing-row">
-                            <input
-                              type="checkbox"
-                              checked={!!c.selected}
-                              disabled={!!c.already_in_store}
-                              onChange={() => {
-                                if (c.already_in_store) return;
-                                setCaseLawDiscoveryPending((prev) =>
-                                  prev.map((x) => (x.id === c.id ? { ...x, selected: !x.selected } : x))
-                                );
-                              }}
-                              className="pending-indexing-checkbox"
-                              aria-label={c.already_in_store ? `Already in library: ${c.title}` : `Select ${c.title}`}
-                            />
-                            <a
-                              href={c.source_url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={`pending-indexing-link${c.already_in_store ? " pending-indexing-link--duplicate" : ""}`}
-                              title={c.already_in_store ? `${c.title} — Already in library` : c.title}
-                            >
-                              {c.title.length > 40 ? c.title.slice(0, 40) + "…" : c.title}
-                            </a>
-                            {c.already_in_store && (
-                              <span className="pending-indexing-badge" title="Same document already in internal store">Already in library</span>
-                            )}
-                            <select
-                              value={c.category}
-                              onChange={(e) =>
-                                setCaseLawDiscoveryPending((prev) =>
-                                  prev.map((x) => (x.id === c.id ? { ...x, category: e.target.value } : x))
-                                )
-                              }
-                              className="pending-indexing-dropdown"
-                              aria-label="Category"
-                            >
-                              <option value="bare_act">Bare act</option>
-                              <option value="case_law">Case law</option>
-                            </select>
-                          </label>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                ) : (
-                  <p className="pending-indexing-empty">No documents. Run case law discovery to add candidates for indexing.</p>
-                )}
-              </div>
-            </details>
             </div>
         </div>
         <div
@@ -3545,30 +3157,24 @@ function App() {
                                 })()}
                               </div>
                               <div className="message-bubble-actions">
-                                <div className="message-action-menu-wrap">
-                                  <button
-                                    type="button"
-                                    className="message-action-dots-btn"
-                                    onClick={() => setActionMenuOpenIndex(actionMenuOpenIndex === i ? null : i)}
-                                    title="Actions"
-                                    aria-label="Actions"
-                                    aria-expanded={actionMenuOpenIndex === i}
-                                  >
-                                    <span className="message-action-dots">⋯</span>
-                                  </button>
-                                  {actionMenuOpenIndex === i && (
-                                    <div className="message-action-dropdown" role="menu">
-                                      <button type="button" className="message-action-dropdown-item" role="menuitem" onClick={() => { setActionMenuOpenIndex(null); startEditUserMessage(i); }}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden><path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" /></svg>
-                                        <span>Edit</span>
-                                      </button>
-                                      <button type="button" className="message-action-dropdown-item" role="menuitem" onClick={() => handleCopyMessage(msg, i)}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden><path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" /><path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.379 6H4.5z" /></svg>
-                                        <span>{copyJustDoneIndex === i ? "Copied" : "Copy"}</span>
-                                      </button>
-                                    </div>
-                                  )}
-                                </div>
+                                <button
+                                  type="button"
+                                  className="message-action-btn"
+                                  onClick={() => startEditUserMessage(i)}
+                                  title="Edit message"
+                                  aria-label="Edit message"
+                                >
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" /></svg>
+                                </button>
+                                <button
+                                  type="button"
+                                  className="message-action-btn"
+                                  onClick={() => handleCopyMessage(msg, i)}
+                                  title={copyJustDoneIndex === i ? "Copied" : "Copy message"}
+                                  aria-label={copyJustDoneIndex === i ? "Copied" : "Copy message"}
+                                >
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" /><path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.379 6H4.5z" /></svg>
+                                </button>
                               </div>
                             </div>
                           )}
@@ -3578,32 +3184,26 @@ function App() {
                           <div className="message-bubble-inner">
                             {renderAssistantContent(msg.content)}
                             <div className="message-bubble-actions">
-                              <div className="message-action-menu-wrap">
+                              <button
+                                type="button"
+                                className="message-action-btn"
+                                onClick={() => handleCopyMessage(msg, i)}
+                                title={copyJustDoneIndex === i ? "Copied" : "Copy message"}
+                                aria-label={copyJustDoneIndex === i ? "Copied" : "Copy message"}
+                              >
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" /><path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.379 6H4.5z" /></svg>
+                              </button>
+                              {msg.content?.type === "final_opinion" && (msg.content?.opinionText || "").trim() && (
                                 <button
                                   type="button"
-                                  className="message-action-dots-btn"
-                                  onClick={() => setActionMenuOpenIndex(actionMenuOpenIndex === i ? null : i)}
-                                  title="Actions"
-                                  aria-label="Actions"
-                                  aria-expanded={actionMenuOpenIndex === i}
+                                  className="message-action-btn"
+                                  onClick={() => handleDownloadPdf(msg.content?.opinionText)}
+                                  title="Download"
+                                  aria-label="Download"
                                 >
-                                  <span className="message-action-dots">⋯</span>
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z" /><path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z" /></svg>
                                 </button>
-                                {actionMenuOpenIndex === i && (
-                                  <div className="message-action-dropdown" role="menu">
-                                    <button type="button" className="message-action-dropdown-item" role="menuitem" onClick={() => { setActionMenuOpenIndex(null); handleCopyMessage(msg, i); }}>
-                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden><path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" /><path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.379 6H4.5z" /></svg>
-                                      <span>{copyJustDoneIndex === i ? "Copied" : "Copy"}</span>
-                                    </button>
-                                    {msg.content?.type === "final_opinion" && (msg.content?.opinionText || "").trim() && (
-                                      <button type="button" className="message-action-dropdown-item" role="menuitem" onClick={() => { setActionMenuOpenIndex(null); handleDownloadPdf(msg.content?.opinionText); }}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden><path d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z" /><path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z" /></svg>
-                                        <span>Download</span>
-                                      </button>
-                                    )}
-                                  </div>
-                                )}
-                              </div>
+                              )}
                             </div>
                           </div>
                         </div>
@@ -3771,59 +3371,6 @@ function App() {
         </div>
       </div>
 
-      {/* Confirmation: discard pending indexing documents */}
-      {showClearPendingConfirm && (
-        <div className="clear-pending-overlay" onClick={() => setShowClearPendingConfirm(false)}>
-          <div className="clear-pending-dialog" onClick={(e) => e.stopPropagation()}>
-            <p className="clear-pending-message">Are you sure you want to discard these documents?</p>
-            <div className="clear-pending-actions">
-              <button type="button" className="clear-pending-btn clear-pending-btn-no" onClick={() => setShowClearPendingConfirm(false)}>
-                No
-              </button>
-              <button type="button" className="clear-pending-btn clear-pending-btn-yes" onClick={async () => {
-                const token = localStorage.getItem(AUTH_TOKEN_KEY);
-                try {
-                  await fetch(`${API_BASE}/indexing/pending`, {
-                    method: "DELETE",
-                    headers: token ? { Authorization: `Bearer ${token}` } : {},
-                  });
-                } catch {}
-                setPendingIndexingCandidates([]);
-                setShowClearPendingConfirm(false);
-              }}>
-                Yes
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Confirmation: discard case law discovery pending documents */}
-      {showClearCaseLawDiscoveryConfirm && (
-        <div className="clear-pending-overlay" onClick={() => setShowClearCaseLawDiscoveryConfirm(false)}>
-          <div className="clear-pending-dialog" onClick={(e) => e.stopPropagation()}>
-            <p className="clear-pending-message">Discard all case law discovery documents presented for indexing?</p>
-            <div className="clear-pending-actions">
-              <button type="button" className="clear-pending-btn clear-pending-btn-no" onClick={() => setShowClearCaseLawDiscoveryConfirm(false)}>
-                No
-              </button>
-              <button type="button" className="clear-pending-btn clear-pending-btn-yes" onClick={async () => {
-                const token = localStorage.getItem(AUTH_TOKEN_KEY);
-                try {
-                  await fetch(`${API_BASE}/case-law-discovery/pending`, {
-                    method: "DELETE",
-                    headers: token ? { Authorization: `Bearer ${token}` } : {},
-                  });
-                } catch {}
-                setCaseLawDiscoveryPending([]);
-                setShowClearCaseLawDiscoveryConfirm(false);
-              }}>
-                Yes
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

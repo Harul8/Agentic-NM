@@ -75,7 +75,7 @@ _RATE_LIMIT_ENABLED = os.environ.get("RATE_LIMIT_ENABLED", "false").lower() == "
 _rate_store: dict[str, list[float]] = defaultdict(list)
 
 # Only rate-limit mutation endpoints (not health, static, etc.)
-_RATE_LIMITED_PATHS = {"/submit_case", "/submit_case/stream", "/interview_step", "/interview_step/stream", "/conversation/continue", "/conversation/continue/stream", "/chat", "/chat/confirm-index", "/search", "/indexing/run"}
+_RATE_LIMITED_PATHS = {"/submit_case", "/submit_case/stream", "/interview_step", "/interview_step/stream", "/conversation/continue", "/conversation/continue/stream", "/chat", "/chat/confirm-index", "/search"}
 
 # IPs to skip rate limiting (localhost for development)
 _SKIP_RATE_LIMIT_IPS = {"127.0.0.1", "localhost", "::1"}
@@ -169,6 +169,12 @@ _BASE_DIR = os.path.dirname(os.path.abspath(os.path.normpath(__file__)))
 # case-law JSONs are under json_output/caselaws/YYYY/MON/...
 _LEGAL_DB_BAREACTS_DIR = os.path.join(_LEGAL_DB_JSON_OUTPUT, "BareActs")
 _LEGAL_DB_CASELAWS_DIR = os.path.join(_LEGAL_DB_JSON_OUTPUT, "caselaws")
+
+# ── In-memory cache for library endpoints ────────────────────────────────────
+# _group_case_laws_by_court() opens every JSON file on disk; at 1000+ cases
+# this takes ~2 minutes on first load.  Cache the result after the first call.
+_caselaws_library_cache: dict[str, list[str]] | None = None
+_bareacts_library_cache: dict[str, list[str]] | None = None
 
 
 def _hash_password(password: str) -> str:
@@ -558,23 +564,6 @@ class ContinueChatRequest(BaseModel):
     conversation: list[ChatMessage] = []
     message: str = ""
     mode: str | None = None  # "legal_opinion" | "legal_research" | "general"
-
-
-class IndexingItem(BaseModel):
-    """One document to index (from Pending indexing UI)."""
-    url: str = ""
-    title: str = ""
-    category: str = "case_law"  # "bare_act" | "case_law"
-
-
-class IndexingRunRequest(BaseModel):
-    """Request to index selected documents (user-triggered from left pane)."""
-    items: list[IndexingItem] = []
-
-
-class PendingIndexingUpdateRequest(BaseModel):
-    """Request to persist pending indexing candidates (survives refresh)."""
-    items: list[dict] = []
 
 
 def _build_conv(messages: list[ChatMessage] | None) -> list[dict]:
@@ -1035,8 +1024,6 @@ def _map_chat_result_to_ui(result: dict) -> dict:
             "progress": resp.get("progress"),  # Include progress tracking data
             "model_used": get_last_model_used(),
         }
-        if resp.get("indexing_candidates"):
-            out["indexing_candidates"] = resp["indexing_candidates"]
         return out
     if phase == "done":
         return {
@@ -1087,17 +1074,29 @@ def bareacts_library():
         ]
       }
     """
+    global _bareacts_library_cache
+
     if not _USE_LEGAL_DATABASE:
-        # When not using the legal_database mirror, fall back to a flat list.
         acts = _list_bare_acts_from_vector_store()
         return {"jurisdictions": [{"name": "All", "acts": acts}]}
 
-    groups = _group_bare_acts_by_jurisdiction()
+    if _bareacts_library_cache is None:
+        _bareacts_library_cache = _group_bare_acts_by_jurisdiction()
+
     jurisdictions = [
         {"name": name, "acts": acts}
-        for name, acts in sorted(groups.items(), key=lambda kv: kv[0].lower())
+        for name, acts in sorted(_bareacts_library_cache.items(), key=lambda kv: kv[0].lower())
     ]
     return {"jurisdictions": jurisdictions}
+
+
+@app.post("/library/refresh-cache")
+def library_refresh_cache():
+    """Force-refresh the in-memory library caches (call after ingesting new documents)."""
+    global _caselaws_library_cache, _bareacts_library_cache
+    _caselaws_library_cache = None
+    _bareacts_library_cache = None
+    return {"status": "ok", "message": "Library caches cleared — will reload on next request"}
 
 
 @app.get("/bareacts/list")
@@ -1588,15 +1587,18 @@ def caselaws_library():
         ]
       }
     """
+    global _caselaws_library_cache
+
     if not _USE_LEGAL_DATABASE:
-        # Fallback: single flat group when not using legal_database.
         files = _list_case_laws_from_disk_or_json()
         return {"courts": [{"name": "TG HC", "cases": files}]}
 
-    groups = _group_case_laws_by_court()
+    if _caselaws_library_cache is None:
+        _caselaws_library_cache = _group_case_laws_by_court()
+
     courts = [
         {"name": name, "cases": cases}
-        for name, cases in sorted(groups.items(), key=lambda kv: kv[0].lower())
+        for name, cases in sorted(_caselaws_library_cache.items(), key=lambda kv: kv[0].lower())
     ]
     return {"courts": courts}
 
@@ -1859,8 +1861,6 @@ def chat(request: ChatRequest):
     """
     Interactive chat endpoint.
     Phase: fact_collection | response_generation | confirm_index
-    Case-law-discovery requests (e.g. user says "case law discovery" or first N bare acts) are
-    routed to the case law discovery workflow and do not go through the main pipeline.
     """
     message = (request.message or "").strip()
     conv = [
@@ -1896,8 +1896,6 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
     """
     Initial case submission (await_facts). Frontend sends { text }.
     Returns status + next_question | opinion_text | needs_confirmation so the UI can continue the flow.
-    Case-law-discovery requests (e.g. first N bare acts, find case laws in vector store) are
-    routed to the separate case law discovery workflow and do not go through the main pipeline.
     """
     _enforce_query_limit(user)
     text = (request.text or "").strip()
@@ -2010,8 +2008,6 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
     """
     Continue a conversation from chat history. Sends full conversation + new message
     so the LLM has full context. Returns same shape as submit_case / interview_step.
-    Case-law-discovery requests (e.g. first N bare acts, find case laws in vector store) are
-    routed to the separate case law discovery workflow and do not go through the main pipeline.
     """
     _enforce_query_limit(user)
     message = (request.message or "").strip()
@@ -2055,9 +2051,7 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
 
 
 def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, user_id: str, mode: str | None = None) -> None:
-    """Run the same logic as continue_chat, pushing progress to queue and finally the result.
-    Case-law-discovery requests are handled by the separate workflow and do not use process_chat.
-    """
+    """Run the same logic as continue_chat, pushing progress to queue and finally the result."""
     try:
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
@@ -2104,9 +2098,7 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
 
 
 def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: str | None = None) -> None:
-    """Run submit_case logic with progress streaming.
-    Case-law-discovery requests are handled by the separate workflow and do not use process_chat.
-    """
+    """Run submit_case logic with progress streaming."""
     try:
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
@@ -2566,63 +2558,6 @@ def docs_architecture():
     except Exception as e:
         logger.exception("Docs architecture read failed: %s", e)
         return JSONResponse(status_code=500, content={"detail": str(e)})
-
-
-def _load_pending_indexing() -> list:
-    """Load persisted pending indexing candidates from disk."""
-    from config import PENDING_INDEXING_PATH, DATA_ROOT
-    try:
-        if os.path.isfile(PENDING_INDEXING_PATH):
-            with open(PENDING_INDEXING_PATH, "r", encoding="utf-8") as f:
-                data = json.load(f)
-            return data.get("items", []) if isinstance(data, dict) else (data if isinstance(data, list) else [])
-    except Exception as e:
-        logger.warning("Could not load pending indexing: %s", e)
-    return []
-
-
-def _save_pending_indexing(items: list) -> None:
-    """Persist pending indexing candidates to disk."""
-    from config import PENDING_INDEXING_PATH, DATA_ROOT
-    try:
-        os.makedirs(DATA_ROOT, exist_ok=True)
-        with open(PENDING_INDEXING_PATH, "w", encoding="utf-8") as f:
-            json.dump({"items": items, "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}, f, indent=2)
-    except Exception as e:
-        logger.warning("Could not save pending indexing: %s", e)
-
-
-def _remove_from_pending_indexing(url_title_pairs: list[tuple]) -> None:
-    """Remove indexed items from persisted pending list by (url, title) pairs."""
-    items = _load_pending_indexing()
-    if not items or not url_title_pairs:
-        return
-    seen = {(str(u).strip(), str(t).strip()) for u, t in url_title_pairs}
-    kept = [c for c in items if (str(c.get("source_url", "") or "").strip(), str(c.get("title", "") or "").strip()) not in seen]
-    if len(kept) != len(items):
-        _save_pending_indexing(kept)
-
-
-@app.get("/indexing/pending")
-def indexing_pending_get(user: dict = Depends(_user_from_token)):
-    """Return persisted pending indexing candidates (survives refresh)."""
-    items = _load_pending_indexing()
-    return {"items": items}
-
-
-@app.post("/indexing/pending")
-def indexing_pending_save(request: PendingIndexingUpdateRequest, user: dict = Depends(_user_from_token)):
-    """Persist pending indexing candidates (replace full list)."""
-    items = request.items or []
-    _save_pending_indexing(items)
-    return {"items": items, "message": "Saved"}
-
-
-@app.delete("/indexing/pending")
-def indexing_pending_clear(user: dict = Depends(_user_from_token)):
-    """Clear persisted pending indexing candidates."""
-    _save_pending_indexing([])
-    return {"items": [], "message": "Cleared"}
 
 
 # ---------------------------------------------------------------------------

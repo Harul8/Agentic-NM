@@ -143,11 +143,21 @@ Search strategy:
 - web_only = user explicitly wants web/internet only
 - local_only = user explicitly wants local database only
 
+CRITICAL — facts_summary for legal_opinion (action=complete):
+Scan the ENTIRE conversation history and build a complete narrative. You MUST include:
+1. What happened (incident, harm, parties)
+2. Location / jurisdiction if stated
+3. Client's prayer / relief sought — maintenance amount, custody, protection order, FIR, compensation, etc.
+   If a specific monetary amount was stated (e.g. "Rs 45000 per month"), include it.
+   If the reason for the amount or the other party's income was stated, include those too.
+4. Any other material facts (evidence, FIR status, employment, property details)
+Never truncate the prayer. If the client said "I want protection, maintenance of Rs 45000 per month and custody of two children", the facts_summary MUST say exactly that.
+
 Output only one line of valid JSON:
 - Search complete: {"action": "complete", "intent": "search", "result_count": <1-20>, "facts_summary": "<topic>", "reply_to_client": "<short sentence>", "search_strategy": "<optional>"}
 - Lookup complete: {"action": "complete", "intent": "lookup", "result_count": 5, "facts_summary": "<topic>", "reply_to_client": "<short sentence>", "search_strategy": "<optional>"}
 - Legal opinion ask: {"action": "ask", "reply_to_client": "<brief acknowledgment + one grouped question if needed>"}
-- Legal opinion complete: {"action": "complete", "intent": "legal_opinion", "facts_summary": "<clear summary of known facts>", "reply_to_client": "<short transition sentence>"}
+- Legal opinion complete: {"action": "complete", "intent": "legal_opinion", "facts_summary": "<complete narrative including all stated facts and prayer>", "reply_to_client": "<short transition sentence>"}
 
 Do not output reasoning, markdown, or any text outside the JSON."""
 
@@ -417,6 +427,17 @@ RULES FOR DISPUTE SELECTION (DISTINCTNESS & COMPLETENESS):
 - If the situation has only one grievance, output exactly 1 dispute.
 - Do NOT invent hypothetical disputes that are not reasonably grounded in the client's description.
 
+DOMESTIC VIOLENCE / MATRIMONIAL CASES — mandatory multi-dispute recognition:
+When a client describes domestic violence with dowry harassment, always decompose into at LEAST:
+  d1: The physical assault / grievous hurt / threat (criminal)
+  d2: Cruelty and dowry harassment by husband and in-laws (criminal — this is a separate statutory offence)
+  d3: Civil reliefs sought — protection order / residence order / maintenance / custody (civil/both)
+Do NOT collapse these into a single "physical injury" dispute. Each has its own Acts and sections.
+
+MAINTENANCE / DIVORCE / CUSTODY — always a separate dispute from cruelty/assault.
+CHEQUE BOUNCE + CONTRACT BREACH — two separate disputes even if same transaction.
+PROPERTY ENCROACHMENT + TITLE DISPUTE — separate: possession (urgent injunction) vs. title (declaration suit).
+
 FIELD-LEVEL RULES:
 - "id": Use "d1", "d2", "d3", ... in order, no gaps.
 - "dispute":
@@ -542,7 +563,11 @@ GUIDELINES:
 - "high" = clearly central to resolving this dispute.
 - "medium" = plausibly relevant or covering an important secondary angle.
 - "low" = mostly unrelated in subject-matter; should usually be ignored for this dispute.
-- Prefer a small set of "high"/"medium" Acts over marking many Acts as "high"."""
+- Prefer a small set of "high"/"medium" Acts over marking many Acts as "high".
+- CRIMINAL LAW (post-July 2024): Bharatiya Nyaya Sanhita 2023 (BNS) replaces IPC 1860.
+  Bharatiya Nagarik Suraksha Sanhita 2023 (BNSS) replaces CrPC 1973.
+  Bharatiya Sakshya Adhiniyam 2023 (BSA) replaces Indian Evidence Act 1872.
+  For criminal disputes arising after July 2024, mark BNS/BNSS as "high" and IPC/CrPC as "low" unless the case facts specifically mention the old codes."""
 
 
 # ---------------------------------------------------------------------------
@@ -876,12 +901,15 @@ TASK B — Critical gaps only:
 Identify facts that are missing and would either (a) change WHICH sections apply or how serious the offence/remedy is, or (b) are needed to make the final opinion complete and useful. Check ALL of the following:
 
 PRIORITY 1 — PRAYER / RELIEF SOUGHT (always check this first):
-- Has the client mentioned what they want — their prayer or relief sought (e.g. maintenance, compensation, injunction, FIR, custody, eviction, etc.)? If NOT, this MUST be the first question in additional_info_items: "What outcome are you hoping for — what would you like the court or the other party to do?"
-- If a specific monetary amount was mentioned (e.g. ₹10,000/month maintenance, ₹5 lakh damages): has the client explained WHY they want that amount (what expenses it covers)? If NOT, add: "You mentioned [amount] — could you tell me what expenses or needs that figure is based on?"
-- If the monetary amount rationale was given but the other party's financial position is unknown, add: "Approximately how much does [the other party] earn per month? Courts consider this when assessing the amount."
+PRAYER DETECTION — read DISPUTE above carefully. The prayer is already collected if the text contains ANY of:
+  • "seeking", "want", "need", "I want", "asking for", "I need", "relief", "protection", "maintenance", "custody",
+    "compensation", "FIR", "injunction", "eviction", "punish", "divorce", or any rupee / Rs / INR amount.
+If the prayer IS present in DISPUTE above → DO NOT ask about it. Move straight to PRIORITY 2 or return empty list.
+If the prayer IS NOT present in DISPUTE above → add as the ONLY question: "What outcome are you hoping for — what would you like the court or the other party to do?"
+- If a specific monetary amount was mentioned (e.g. ₹10,000/month maintenance, ₹5 lakh damages): has the client explained WHY they want that amount AND is the other party's income known? If both are in DISPUTE, skip. If amount is present but reason/income missing, add those questions only.
 - Once the prayer and its reasoning are captured, do NOT ask about them again.
 
-PRIORITY 2 — LEGAL GAPS (only after prayer is covered):
+PRIORITY 2 — LEGAL GAPS (only after prayer is confirmed covered):
 - Facts that determine which sub-section applies (e.g. weapon used in assault → grievous hurt vs. simple hurt)
 - Facts that affect limitation periods (how long ago did this happen?)
 - Facts that determine jurisdiction or severity (e.g. whether a registered deed exists for property, whether a written contract exists for employment)
