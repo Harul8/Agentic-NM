@@ -12,9 +12,20 @@ retrieval loop in response_generator_v2.
 import json
 import logging
 import re
+import threading
+import time
 from typing import Optional
 
 logger = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# Request-scoped decomposition cache — avoids re-calling the LLM when Phase A
+# (bare acts) and Phase B (case laws) receive the same facts_summary.
+# TTL is short (5 min) so stale entries don't accumulate between sessions.
+# ---------------------------------------------------------------------------
+_DECOMPOSE_CACHE: dict[str, tuple[list, float]] = {}
+_DECOMPOSE_CACHE_LOCK = threading.Lock()
+_DECOMPOSE_CACHE_TTL = 300  # seconds
 
 
 def decompose_disputes(facts_summary: str, llm_fn=None) -> list:
@@ -32,6 +43,18 @@ def decompose_disputes(facts_summary: str, llm_fn=None) -> list:
         facts_summary: Plain-language description of the legal situation
         llm_fn: LLM callable (default: ollama_client.ask_llm)
     """
+    # Cache key: normalised whitespace, first 500 chars (covers the meaningful part).
+    # Only cache when using the default LLM so custom llm_fn callers always get fresh results.
+    cache_key = " ".join(facts_summary.split())[:500] if llm_fn is None else None
+    if cache_key:
+        with _DECOMPOSE_CACHE_LOCK:
+            entry = _DECOMPOSE_CACHE.get(cache_key)
+            if entry is not None:
+                cached_result, ts = entry
+                if time.time() - ts < _DECOMPOSE_CACHE_TTL:
+                    logger.debug("Dispute decomposition cache HIT (%d chars)", len(cache_key))
+                    return [dict(d) for d in cached_result]  # return copies
+
     if llm_fn is None:
         from llm.ollama_client import ask_llm
         llm_fn = ask_llm
@@ -40,24 +63,30 @@ def decompose_disputes(facts_summary: str, llm_fn=None) -> list:
 
     prompt = DISPUTE_DECOMPOSITION_PROMPT.format(query=facts_summary[:2000])
 
+    disputes = None
     try:
         response = llm_fn(prompt)
-        disputes = _parse_disputes(response)
-        if disputes:
-            # Ensure IDs are set and unique
-            disputes = _normalise_ids(disputes)
+        parsed = _parse_disputes(response)
+        if parsed:
+            disputes = _normalise_ids(parsed)
             logger.info(
                 "Dispute decomposition: %d component(s) — %s",
                 len(disputes),
                 [d.get("dispute", "")[:60] for d in disputes],
             )
-            return disputes
     except Exception as e:
         logger.error("Dispute decomposition LLM call failed: %s", e)
 
-    # Fallback: single dispute = full query
-    logger.warning("Dispute decomposition failed; treating query as single dispute")
-    return _single_dispute_fallback(facts_summary)
+    if not disputes:
+        logger.warning("Dispute decomposition failed; treating query as single dispute")
+        disputes = _single_dispute_fallback(facts_summary)
+
+    # Store in cache (only for default LLM path)
+    if cache_key:
+        with _DECOMPOSE_CACHE_LOCK:
+            _DECOMPOSE_CACHE[cache_key] = ([dict(d) for d in disputes], time.time())
+
+    return disputes
 
 
 # ---------------------------------------------------------------------------

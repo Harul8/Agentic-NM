@@ -15,6 +15,7 @@ import json
 import logging
 import math
 import re
+import threading
 import numpy as np
 import faiss
 from typing import Optional
@@ -23,9 +24,16 @@ logger = logging.getLogger(__name__)
 
 # Lazy-loaded models (initialized on first use to save memory)
 _embedder = None
-_cross_encoder = None
 _bm25_bare = None
 _bm25_case = None
+
+# Cross-encoder: dual GPU+CPU instances with automatic OOM fallback.
+# GPU instance is used when VRAM is available; if it raises OOM the call
+# transparently retries on CPU.  A per-GPU lock serialises GPU calls so that
+# concurrent threads (parallel dispute retrieval) don't fragment VRAM.
+_cross_encoder_gpu = None   # CrossEncoder on CUDA, or False if unavailable
+_cross_encoder_cpu = None   # CrossEncoder on CPU (always available fallback)
+_ce_gpu_lock = threading.Lock()  # serialise GPU predict() calls
 
 # ---------------------------------------------------------------------------
 # In-memory index cache — populated once at startup by preload_all_indexes().
@@ -147,18 +155,57 @@ def _get_embedder():
     return _embedder
 
 
-def _get_cross_encoder():
-    """Lazy-load the cross-encoder re-ranker model, on GPU when available."""
-    global _cross_encoder
-    if _cross_encoder is None:
-        from sentence_transformers import CrossEncoder
+def _get_cross_encoder_gpu():
+    """Lazy-load cross-encoder on CUDA. Returns None if CUDA is unavailable or load failed."""
+    global _cross_encoder_gpu
+    if _cross_encoder_gpu is None:
         import torch
+        if torch.cuda.is_available():
+            try:
+                from sentence_transformers import CrossEncoder
+                from config import CROSS_ENCODER_MODEL
+                _cross_encoder_gpu = CrossEncoder(CROSS_ENCODER_MODEL, device="cuda")
+                logger.info("Cross-encoder loaded on CUDA")
+            except Exception as e:
+                logger.warning("Cross-encoder CUDA load failed (%s) — CPU only", e)
+                _cross_encoder_gpu = False  # sentinel: tried, unavailable
+        else:
+            _cross_encoder_gpu = False
+    return _cross_encoder_gpu if _cross_encoder_gpu is not False else None
+
+
+def _get_cross_encoder_cpu():
+    """Lazy-load cross-encoder on CPU (always-available fallback)."""
+    global _cross_encoder_cpu
+    if _cross_encoder_cpu is None:
+        from sentence_transformers import CrossEncoder
         from config import CROSS_ENCODER_MODEL
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-        logger.info(f"Loading cross-encoder '{CROSS_ENCODER_MODEL}' on {device}")
-        # CrossEncoder accepts a device argument — moves model to GPU automatically.
-        _cross_encoder = CrossEncoder(CROSS_ENCODER_MODEL, device=device)
-    return _cross_encoder
+        _cross_encoder_cpu = CrossEncoder(CROSS_ENCODER_MODEL, device="cpu")
+        logger.info("Cross-encoder loaded on CPU")
+    return _cross_encoder_cpu
+
+
+def _predict_cross_encoder(pairs: list) -> list:
+    """
+    Run cross-encoder inference on (query, text) pairs.
+
+    Strategy:
+      1. Attempt GPU inference (serialised via _ce_gpu_lock to prevent VRAM fragmentation
+         when multiple dispute threads run concurrently).
+      2. On CUDA OOM or any GPU error, transparently fall back to the CPU instance.
+    """
+    import torch
+    gpu_ce = _get_cross_encoder_gpu()
+    if gpu_ce is not None:
+        try:
+            with _ce_gpu_lock:
+                return gpu_ce.predict(pairs, show_progress_bar=False)
+        except torch.cuda.OutOfMemoryError:
+            logger.warning("Cross-encoder GPU OOM (%d pairs) — retrying on CPU", len(pairs))
+            torch.cuda.empty_cache()
+        except Exception as e:
+            logger.warning("Cross-encoder GPU error (%s) — retrying on CPU", e)
+    return _get_cross_encoder_cpu().predict(pairs, show_progress_bar=False)
 
 
 def preload_all_indexes():
@@ -247,9 +294,8 @@ def score_query_document(query: str, document_text: str) -> float:
     if len(text) < 50:
         return 0.0
     try:
-        ce = _get_cross_encoder()
-        score = ce.predict([(query, text)], show_progress_bar=False)
-        return float(score[0])
+        scores = _predict_cross_encoder([(query, text)])
+        return float(scores[0])
     except Exception as e:
         logger.warning(f"Cross-encoder score failed: {e}")
         return 0.0
@@ -757,9 +803,8 @@ def hybrid_search(
         LEGAL_TERM_BOOST_WEIGHT = 0.25
 
     try:
-        cross_encoder = _get_cross_encoder()
         pairs = [(query, text) for text in candidate_texts]
-        scores = cross_encoder.predict(pairs, show_progress_bar=False)
+        scores = _predict_cross_encoder(pairs)
 
         # Combine with scores
         scored = []
@@ -1023,8 +1068,8 @@ def search_case_laws(query: str, top_k: int = 30) -> list:
                     faiss_index_path=CASE_INDEX_V2,
                     chunks_path=CASE_CHUNKS_V2,
                     bm25_index_path=CASE_BM25_INDEX,
-                    faiss_top_k=50,
-                    bm25_top_k=50,
+                    faiss_top_k=20,
+                    bm25_top_k=20,
                     rerank_top_k=top_k,
                     min_rerank_score=-5.0,
                     allowed_cases=allowed_cases,
@@ -1035,8 +1080,8 @@ def search_case_laws(query: str, top_k: int = 30) -> list:
                     faiss_index_path=CASE_INDEX_V2,
                     chunks_path=CASE_CHUNKS_V2,
                     bm25_index_path=CASE_BM25_INDEX,
-                    faiss_top_k=40,
-                    bm25_top_k=40,
+                    faiss_top_k=20,
+                    bm25_top_k=20,
                     rerank_top_k=top_k,
                     min_rerank_score=-5.0,
                 )
@@ -1047,8 +1092,8 @@ def search_case_laws(query: str, top_k: int = 30) -> list:
                 faiss_index_path=CASE_INDEX_V2,
                 chunks_path=CASE_CHUNKS_V2,
                 bm25_index_path=CASE_BM25_INDEX,
-                faiss_top_k=40,
-                bm25_top_k=40,
+                faiss_top_k=20,
+                bm25_top_k=20,
                 rerank_top_k=top_k,
                 min_rerank_score=-5.0,
             )
@@ -1058,8 +1103,8 @@ def search_case_laws(query: str, top_k: int = 30) -> list:
             faiss_index_path=CASE_INDEX_V2,
             chunks_path=CASE_CHUNKS_V2,
             bm25_index_path=CASE_BM25_INDEX,
-            faiss_top_k=40,
-            bm25_top_k=40,
+            faiss_top_k=20,
+            bm25_top_k=20,
             rerank_top_k=top_k,
             min_rerank_score=-5.0,
         )

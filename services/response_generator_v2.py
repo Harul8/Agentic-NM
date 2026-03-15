@@ -15,7 +15,7 @@ import os
 import json
 import logging
 import re
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Optional
 
@@ -1147,6 +1147,12 @@ def _filter_bare_acts_with_llm(dispute: dict, bare_acts: list, debug: dict | Non
     if not bare_acts:
         return bare_acts
 
+    # Skip expensive LLM call when every section already scores above the high-quality
+    # threshold — the cross-encoder is already confident they are all relevant.
+    if all(ba.get("_rerank_score", 0) >= HIGH_QUALITY_SCORE for ba in bare_acts):
+        logger.debug("Bare-act LLM filter skipped — all %d sections high quality", len(bare_acts))
+        return bare_acts
+
     dispute_text = (dispute.get("dispute") or "")[:400]
 
     # Build a compact JSON payload for the top-N candidates only to control prompt size.
@@ -1243,6 +1249,12 @@ def _filter_case_laws_with_llm(dispute: dict, bare_act_sections: list, case_laws
     Falls back to the original list on any error or empty filter output.
     """
     if not case_laws:
+        return case_laws
+
+    # Skip expensive LLM call when every result already scores above the high-quality
+    # threshold — the cross-encoder is already confident they are all relevant.
+    if all(cl.get("_rerank_score", 0) >= HIGH_QUALITY_SCORE for cl in case_laws):
+        logger.debug("Case-law LLM filter skipped — all %d results high quality", len(case_laws))
         return case_laws
 
     dispute_text = (dispute.get("dispute") or "")[:400]
@@ -1748,11 +1760,10 @@ def retrieve_case_laws_for_dispute(dispute: dict, bare_act_sections: list, full_
     limited = _apply_dispute_case_law_limit(local_results, num_sections=len(bare_act_sections))
     logger.info("[%s] Case laws Round 1 local: %d after filter, %d after limit", dispute_id, len(local_results), len(limited))
 
-    # If we got the maximum (5 high-quality), stop
+    # If we got the maximum (5 high-quality), stop — skip LLM filter, already sufficient.
     if len(limited) >= 5:
         logger.info("[%s] Case laws Round 1 sufficient (5 high-quality). Stopping.", dispute_id)
-        filtered_limited = _filter_case_laws_with_llm(dispute, bare_act_sections, limited, debug)
-        return filtered_limited
+        return limited
 
     # --- Round 2: web search ---
     logger.info("[%s] Case laws Round 2 — web search (local had %d)", dispute_id, len(limited))
@@ -1833,7 +1844,7 @@ def _deduplicate_case_laws(case_laws: list) -> list:
 # BARE ACTS PHASE — present sections, explain, ask follow-up, then final opinion
 # ---------------------------------------------------------------------------
 
-def _explain_sections_and_get_followup(dispute_text: str, bare_acts: list) -> dict:
+def _explain_sections_and_get_followup(dispute_text: str, bare_acts: list, conversation_history: list = None) -> dict:
     """
     Single LLM call: add a contextual explanation to each retrieved section
     and generate ONE targeted follow-up question (or None if facts are sufficient).
@@ -1853,9 +1864,41 @@ def _explain_sections_and_get_followup(dispute_text: str, bare_acts: list) -> di
             f"({ba.get('section_title', '')}): {section_text}"
         )
 
+    # Build "questions already asked" block from conversation history so the prompt
+    # cannot re-ask anything covered during intake.
+    questions_already_asked_block = ""
+    if conversation_history:
+        asked: list[str] = []
+        user_facts: list[str] = []
+        for msg in conversation_history:
+            role = msg.get("role", "")
+            content = (msg.get("content") or "").strip()
+            if not content:
+                continue
+            if role == "assistant":
+                import re as _re
+                for sentence in _re.split(r"(?<=[.!?])\s+", content):
+                    s = sentence.strip()
+                    if "?" in s and len(s) > 12:
+                        asked.append(s)
+            elif role == "user" and len(content) > 5:
+                user_facts.append(content[:300])
+        lines_block = []
+        if user_facts:
+            lines_block.append("FACTS ALREADY STATED BY CLIENT — do NOT ask about any of these again:")
+            for i, f in enumerate(user_facts, 1):
+                lines_block.append(f"  [{i}] {f}")
+        if asked:
+            lines_block.append("QUESTIONS ALREADY ASKED IN THIS SESSION — NEVER repeat these:")
+            for i, q in enumerate(asked, 1):
+                lines_block.append(f"  [{i}] {q}")
+            lines_block.append("Your additional_info_items MUST NOT duplicate any of the above questions.")
+        questions_already_asked_block = "\n".join(lines_block)
+
     prompt = BARE_ACT_EXPLAIN_AND_FOLLOWUP_PROMPT.format(
         dispute_facts=dispute_text[:800],
         bare_acts_list="\n".join(lines),
+        questions_already_asked=questions_already_asked_block,
     )
 
     try:
@@ -1992,7 +2035,7 @@ def _distribute_case_laws_across_sections(sections_with_cases: list) -> list:
     return sections
 
 
-def retrieve_bare_acts_phase(facts_summary: str, progress_callback=None, states: list = None, pending_indexing_list: list = None) -> dict:
+def retrieve_bare_acts_phase(facts_summary: str, progress_callback=None, states: list = None, pending_indexing_list: list = None, conversation_history: list = None, step_callback=None) -> dict:
     """
     Phase A of the new two-phase flow.
     1. Decompose disputes.
@@ -2009,16 +2052,26 @@ def retrieve_bare_acts_phase(facts_summary: str, progress_callback=None, states:
     """
     from services.dispute_decomposer import decompose_disputes
 
+    def _step(msg: str, icon: str = ""):
+        if step_callback:
+            try:
+                step_callback({"message": msg, "icon": icon})
+            except Exception:
+                pass
+
     if progress_callback:
         progress_callback({"step": "bare_acts", "message": "Retrieving relevant bare act sections…"})
 
+    _step("Analysing your legal situation...", "🔍")
     try:
         disputes = decompose_disputes(facts_summary)
+        _step(f"Identified {len(disputes)} legal dispute component{'s' if len(disputes) != 1 else ''}", "📋")
     except Exception as e:
         logger.warning("retrieve_bare_acts_phase: decompose_disputes failed (%s). Using single dispute.", e)
         disputes = [{"id": "d1", "dispute": facts_summary[:300], "legal_nature": "both",
                      "keywords": [], "bare_act_hints": [], "search_angles": []}]
 
+    _step("Retrieving relevant legal provisions...", "📖")
     # Retrieve bare acts per dispute in parallel; tag each section with its dispute origin
     # so Phase B can reconstruct per-dispute groupings without re-running decomposition.
     all_bare_acts: list = []
@@ -2073,12 +2126,17 @@ def retrieve_bare_acts_phase(facts_summary: str, progress_callback=None, states:
                 _states,
             )
 
+    if all_bare_acts:
+        _step(f"Found {len(all_bare_acts)} relevant legal provision{'s' if len(all_bare_acts) != 1 else ''} — preparing summary...", "✅")
+    else:
+        _step("No provisions found in local database — checking web sources...", "⚠️")
+
     if progress_callback:
         progress_callback({"step": "bare_acts_explain",
                            "message": f"Explaining {len(all_bare_acts)} section(s)…"})
 
     # Explain sections + generate follow-up
-    enriched = _explain_sections_and_get_followup(facts_summary, all_bare_acts)
+    enriched = _explain_sections_and_get_followup(facts_summary, all_bare_acts, conversation_history=conversation_history or [])
 
     flat_bare_acts = enriched["bare_acts"]  # flat list (kept for Phase B backward compat)
 
@@ -2453,8 +2511,10 @@ def generate_response_v2(
     # State list for jurisdiction-aware web search (HC domain, IndiaCode state filter)
     _states = [jurisdiction_state] if (jurisdiction_state or "").strip() else []
 
-    # Step 3: Per-dispute retrieval
-    # Web search uses pending_only: no fetch in-request; URLs go here for Pending indexing UI.
+    # Step 3: Per-dispute retrieval — all disputes run in parallel.
+    # _emit_step / step_callback wraps queue.put() which is thread-safe.
+    # Each worker uses its own local pending/debug lists; we merge them back
+    # to the shared structures in the main thread after all futures complete.
     pending_indexing_list = []
     dispute_results = []
     debug_pipeline = {
@@ -2462,128 +2522,96 @@ def generate_response_v2(
         "per_dispute": {},
     }
 
-    for dispute in disputes:
+    def _retrieve_dispute(dispute):
+        """Worker: retrieve bare acts + case laws for one dispute component."""
         d_id = dispute.get("id", "?")
         d_text = dispute.get("dispute", "")
+        _local_pending: list = []
+        _local_debug: dict = {}
 
-        progress.start_group(
-            f"Research [{d_id}]: {d_text[:50]}",
-            "Retrieving bare acts and case laws for this dispute",
-        )
-        _emit_progress()
+        _emit_step(f"[{d_id}] Identifying legal provisions...", "📖")
 
         # 3a: Bare acts
         bare_d = []
         if retrieve_acts:
-            _emit_step("Identifying relevant legal provisions...", "📖")
-            progress.add_step(f"[{d_id}] Searching bare acts...")
-            _emit_progress()
-
             if search_strategy == "web_only":
-                bare_d = _web_search_bare_acts(dispute, facts_summary, states=_states, pending_indexing_list=pending_indexing_list)
-                bare_d = [
-                    ba for ba in bare_d
-                    if ba.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_bare_act(ba)
-                ]
+                bare_d = _web_search_bare_acts(dispute, facts_summary, states=_states, pending_indexing_list=_local_pending)
+                bare_d = [ba for ba in bare_d if ba.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_bare_act(ba)]
             elif search_strategy == "local_only":
                 from retrieval.hybrid_retriever import search_bare_acts_auto
                 kw = " ".join(dispute.get("keywords", []))
                 q = f"{d_text} {kw}".strip()[:400]
                 raw = search_bare_acts_auto(q, top_k=50)
-                bare_d = [
-                    ba for ba in raw
-                    if ba.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_bare_act(ba)
-                ]
+                bare_d = [ba for ba in raw if ba.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_bare_act(ba)]
             else:
-                bare_d = retrieve_bare_acts_for_dispute(
-                    dispute,
-                    facts_summary,
-                    states=_states,
-                    debug=debug_pipeline["per_dispute"],
-                    pending_indexing_list=pending_indexing_list,
-                )
+                bare_d = retrieve_bare_acts_for_dispute(dispute, facts_summary, states=_states, debug=_local_debug, pending_indexing_list=_local_pending)
 
-            progress.add_step(
-                f"[{d_id}] Found {len(bare_d)} bare act section(s)",
-                {"count": len(bare_d), "dispute": d_text[:60]},
-            )
-            # Emit user-friendly summary of acts found
             if bare_d:
                 act_names = list(dict.fromkeys(
                     ba.get("act_name") or ba.get("title", "").split(" §")[0]
                     for ba in bare_d if ba.get("act_name") or ba.get("title")
                 ))[:4]
                 acts_str = ", ".join(act_names) if act_names else "legal provisions"
-                _emit_step(
-                    f"Found {len(bare_d)} section{'s' if len(bare_d) != 1 else ''} — {acts_str}",
-                    "✅",
-                )
+                _emit_step(f"[{d_id}] Found {len(bare_d)} section{'s' if len(bare_d) != 1 else ''} — {acts_str}", "✅")
             else:
-                _emit_step("No bare act sections found in local database — trying web...", "⚠️")
-            _emit_progress()
+                _emit_step(f"[{d_id}] No bare act sections found — trying web...", "⚠️")
 
         # 3b: Case laws
         case_d = []
         if retrieve_case_laws_flag:
-            _emit_step("Searching for judicial precedents...", "⚖️")
-            progress.add_step(f"[{d_id}] Searching case laws...")
-            _emit_progress()
-
+            _emit_step(f"[{d_id}] Searching for judicial precedents...", "⚖️")
             if search_strategy == "web_only":
-                raw_cl = _web_search_case_laws(dispute, bare_d, facts_summary, states=_states, pending_indexing_list=pending_indexing_list)
-                case_d = _apply_dispute_case_law_limit([
-                    cl for cl in raw_cl
-                    if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)
-                ])
+                raw_cl = _web_search_case_laws(dispute, bare_d, facts_summary, states=_states, pending_indexing_list=_local_pending)
+                case_d = _apply_dispute_case_law_limit([cl for cl in raw_cl if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)])
             elif search_strategy == "local_only":
                 from retrieval.hybrid_retriever import search_case_laws_auto
                 q = _build_case_law_query(d_text, bare_d)
                 raw_cl = search_case_laws_auto(q, top_k=50)
-                case_d = _apply_dispute_case_law_limit([
-                    cl for cl in raw_cl
-                    if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)
-                ])
+                case_d = _apply_dispute_case_law_limit([cl for cl in raw_cl if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)])
             else:
-                case_d = retrieve_case_laws_for_dispute(
-                    dispute,
-                    bare_d,
-                    facts_summary,
-                    states=_states,
-                    debug=debug_pipeline["per_dispute"],
-                    pending_indexing_list=pending_indexing_list,
-                )
+                case_d = retrieve_case_laws_for_dispute(dispute, bare_d, facts_summary, states=_states, debug=_local_debug, pending_indexing_list=_local_pending)
 
-            progress.add_step(
-                f"[{d_id}] Found {len(case_d)} case law(s)",
-                {"count": len(case_d), "dispute": d_text[:60]},
-            )
-            # Emit user-friendly summary of judgements found
             if case_d:
-                sc_count = sum(
-                    1 for cl in case_d
-                    if "supreme" in (cl.get("court") or cl.get("source") or "").lower()
-                )
+                sc_count = sum(1 for cl in case_d if "supreme" in (cl.get("court") or cl.get("source") or "").lower())
                 detail = f"including {sc_count} Supreme Court" if sc_count else "from High Courts"
-                _emit_step(
-                    f"Found {len(case_d)} judgement{'s' if len(case_d) != 1 else ''} ({detail})",
-                    "✅",
-                )
+                _emit_step(f"[{d_id}] Found {len(case_d)} judgement{'s' if len(case_d) != 1 else ''} ({detail})", "✅")
             else:
-                _emit_step("No judgements found in local database", "ℹ️")
-            _emit_progress()
+                _emit_step(f"[{d_id}] No judgements found in local database", "ℹ️")
 
-        progress.finish_group()
-        _emit_progress()
-
-        # Tag every section and case law with its originating dispute ID *before*
-        # aggregation.  The matching step (_match_case_laws_to_bare_acts) reads
-        # these tags to group by dispute instead of re-scoring every pair with the
-        # cross-encoder (O(sections × case_laws) calls → 0 calls).
+        # Tag with dispute ID before returning
         for _ba in bare_d:
             _ba.setdefault("_dispute_id", d_id)
         for _cl in case_d:
             _cl.setdefault("_dispute_id", d_id)
-        dispute_results.append({"dispute": dispute, "bare_acts": bare_d, "case_laws": case_d})
+
+        return {
+            "dispute": dispute,
+            "bare_acts": bare_d,
+            "case_laws": case_d,
+            "_pending": _local_pending,
+            "_debug": _local_debug,
+        }
+
+    # Submit all disputes to the thread pool; collect as each completes.
+    progress.start_group("Research", f"Retrieving bare acts and case laws for {len(disputes)} dispute(s)")
+    _emit_progress()
+    with ThreadPoolExecutor(max_workers=min(len(disputes), 3)) as executor:
+        futures = {executor.submit(_retrieve_dispute, d): d for d in disputes}
+        for fut in as_completed(futures):
+            try:
+                dr = fut.result()
+                pending_indexing_list.extend(dr.pop("_pending", []))
+                debug_pipeline["per_dispute"].update(dr.pop("_debug", {}))
+                dispute_results.append(dr)
+                progress.add_step(
+                    f"[{dr['dispute'].get('id','?')}] Retrieved {len(dr['bare_acts'])} sections, {len(dr['case_laws'])} judgements",
+                    {"dispute": dr["dispute"].get("dispute", "")[:60]},
+                )
+                _emit_progress()
+            except Exception as exc:
+                logger.error("Dispute retrieval failed: %s", exc)
+    progress.finish_group()
+    _emit_progress()
 
     # Step 4: Aggregate + deduplicate across disputes
     all_bare_raw = []

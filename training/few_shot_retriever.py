@@ -282,7 +282,7 @@ def _sep(label: str) -> str:
 
 def _format_intake(ex: dict) -> str:
     """
-    Format a rich intake example for injection into ROUTING_GATE2_SYSTEM
+    Format a rich intake example for injection into ROUTING_SINGLE_GATE_SYSTEM
     or FACT_COLLECTION_SYSTEM.
 
     Shows the model:
@@ -455,7 +455,7 @@ def get_intake_example(query: str) -> str | None:
     Return a formatted few-shot intake conversation relevant to the query,
     or None if nothing relevant is found.
 
-    Inject the returned string at the END of ROUTING_GATE2_SYSTEM or
+    Inject the returned string at the END of ROUTING_SINGLE_GATE_SYSTEM or
     FACT_COLLECTION_SYSTEM, preceded by two blank lines.
 
     Args:

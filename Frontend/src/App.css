@@ -1671,7 +1671,9 @@ details.sidebar-section--active > .sidebar-list-scroll {
   cursor: pointer;
   font-size: 0.72rem;
   line-height: 1.25;
-  word-break: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-decoration: none;
   font-family: inherit;
 }

@@ -19,8 +19,7 @@ from llm.ollama_client import ask_llm
 from prompts.advocate_prompts import (
     GREETING_PHRASES,
     GREETING_RESPONSE_PROMPT,
-    ROUTING_GATE1_SYSTEM,
-    ROUTING_GATE2_SYSTEM,
+    ROUTING_SINGLE_GATE_SYSTEM,
     FACT_COLLECTION_SYSTEM,
     FACT_COLLECTION_RETRY_PROMPT,
     STOP_PHRASES,
@@ -260,54 +259,28 @@ def _is_duplicate_question(proposed: str, asked_questions: list[str]) -> bool:
 
 
 # ---------------------------------------------------------------------------
-# Two-gate routing: Gate 1 (legal vs generalist vs greeting), Gate 2 (legal intent)
+# Single-gate routing — replaces the old two-gate (Gate1 + Gate2) design.
+# One LLM call handles greeting / generalist / legal-search / legal-opinion.
 # ---------------------------------------------------------------------------
 
-def _run_gate1(conversation_history: list, user_message: str) -> dict | None:
+def _run_single_gate(conversation_history: list, user_message: str) -> dict | None:
     """
-    Gate 1: Classify as GREETING | LEGAL | GENERALIST.
-    Returns {"gate1": "GREETING"|"LEGAL"|"GENERALIST", "reply_to_client": "..."} or None.
-    """
-    context = "\n".join(
-        f"{'User' if m.get('role') == 'user' else 'Assistant'}: {(m.get('content') or '')[:200]}"
-        for m in conversation_history[-4:]
-    )
-    prompt = f"""{ROUTING_GATE1_SYSTEM}
+    Unified router: one LLM call that classifies AND decides action.
+    Returns a parsed result dict ready for the caller, or None on failure.
 
-Conversation (recent):
-{context or '(none)'}
-
-User: {user_message}
-
-Reply with ONLY one line of JSON (gate1 and reply_to_client when applicable)."""
-    try:
-        response = ask_llm(prompt).strip()
-        out = _extract_json(response)
-        if not out or not isinstance(out, dict):
-            return None
-        gate1 = (out.get("gate1") or "").strip().upper()
-        if gate1 not in ("GREETING", "LEGAL", "GENERALIST"):
-            return None
-        reply = (out.get("reply_to_client") or "").strip()
-        return {"gate1": gate1, "reply_to_client": reply}
-    except Exception:
-        return None
-
-
-def _run_gate2_legal(conversation_history: list, user_message: str) -> dict | None:
-    """
-    Gate 2: Only for LEGAL requests. Classify intent (search, lookup, legal_opinion)
-    and return full fact-collector shape for _parse_llm_response.
+    Handles:
+      greeting    → action="greeting"   (caller converts to ask-style response)
+      generic_chat → action="complete", intent="generic_chat"
+      search/lookup → action="complete", intent="search"|"lookup"
+      legal_opinion → action="ask" or action="complete"
     """
     context = "\n".join(
         f"{'User' if m.get('role') == 'user' else 'Assistant'}: {m.get('content') or ''}"
         for m in conversation_history
     )
 
-    # --- Few-shot injection: only on the first 2 user turns ---
-    # After turn 2 the conversation history itself demonstrates the desired arc/style.
-    # Skipping the few-shot block on later turns reduces the Gate 2 prompt by ~2000 tokens
-    # which cuts per-turn LLM latency significantly.
+    # Few-shot injection only on the first 2 user turns — after that the conversation
+    # history itself demonstrates the desired style; injecting it is pure token waste.
     user_turn_count = sum(1 for m in conversation_history if m.get("role") == "user")
     few_shot_block = ""
     if user_turn_count <= 2:
@@ -320,33 +293,34 @@ def _run_gate2_legal(conversation_history: list, user_message: str) -> dict | No
             if example:
                 few_shot_block = f"\n\n{example}\n"
         except Exception:
-            pass  # Never break the main flow for a missing example
+            pass
 
-    # Build explicit intake memory block (already-asked + already-known facts)
+    # Structured INTAKE MEMORY block — explicit list of everything already asked / known.
     intake_context_block = _build_intake_context_block(conversation_history)
 
-    prompt = f"""{ROUTING_GATE2_SYSTEM}{few_shot_block}{intake_context_block}
-Conversation so far:
-{context}
+    prompt = (
+        f"{ROUTING_SINGLE_GATE_SYSTEM}"
+        f"{few_shot_block}"
+        f"{intake_context_block}"
+        f"\nConversation so far:\n{context}"
+        f"\n\nUser: {user_message}"
+        f"\n\nOutput one line of valid JSON only."
+    )
 
-User: {user_message}
-
-Output one line of valid JSON only (action, intent, facts_summary, reply_to_client; add result_count for search/lookup; add search_strategy only when user clearly wants web_only or local_only; use action "ask" only if you need one more question for legal_opinion)."""
     try:
         response = ask_llm(prompt).strip()
         parsed = _parse_llm_response(response, user_message)
 
-        # --- Code-level deduplication guard ---
-        # If the model still returned action=ask with a question it already asked, block it.
+        # Code-level deduplication guard: if the model still proposes a duplicate
+        # question despite the INTAKE MEMORY block, force completion.
         if parsed and parsed.get("action") == "ask":
             asked_questions = _extract_asked_questions(conversation_history)
             reply = parsed.get("reply_to_client") or ""
             if asked_questions and _is_duplicate_question(reply, asked_questions):
                 logger.info(
-                    "[Gate2] Duplicate question detected — forcing action=complete. "
-                    "Proposed: %s", reply[:120]
+                    "[SingleGate] Duplicate question blocked — forcing complete. Proposed: %s",
+                    reply[:120],
                 )
-                # Build best-effort facts_summary from all user messages
                 all_user_text = " | ".join(
                     (m.get("content") or "")
                     for m in conversation_history
@@ -450,7 +424,15 @@ def _extract_result_count(msg: str) -> int | None:
 def _parse_llm_response(response: str, user_message: str) -> dict | None:
     """Parse LLM output. Returns None if invalid."""
     out = _extract_json(response)
-    if not out or not isinstance(out, dict) or out.get("action") not in ("ask", "complete"):
+    if not out or not isinstance(out, dict):
+        return None
+
+    # Pass greeting action through as-is — the caller (_run_single_gate / get_next_question_or_complete)
+    # handles it before doing anything with the rest of the shape.
+    if out.get("action") == "greeting":
+        return out
+
+    if out.get("action") not in ("ask", "complete"):
         return None
 
     reply = (out.get("reply_to_client") or out.get("question") or "").strip()
@@ -639,40 +621,19 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
             "search_strategy": _detect_search_strategy_from_keywords(user_message) or "local_then_web",
         }
 
-    # --- Gate 1 fast-bypass for established legal conversations ---
-    # Once a conversation has ≥2 user turns it is almost certainly a legal intake.
-    # Running Gate 1 (a full LLM round-trip) on every follow-up is pure overhead.
-    # We skip it and go straight to Gate 2, saving ~10-15 s per turn on slow hardware.
-    _legal_bypass_keywords = [
-        "case", "court", "section", "act", "ipc", "crpc", "bns", "bnss", "fir",
-        "police", "judge", "magistrate", "bail", "advocate", "lawyer", "dispute",
-        "contract", "property", "divorce", "custody", "maintenance", "assault",
-        "fraud", "cheque", "notice", "complaint", "petition", "suit", "relief",
-        "compensation", "damages", "injunction", "arrest", "crime", "offence",
-    ]
-    established_user_turns = [m for m in conversation_history if m.get("role") == "user"]
-    _has_legal_context = len(established_user_turns) >= 2 or any(
-        any(kw in (m.get("content") or "").lower() for kw in _legal_bypass_keywords)
-        for m in conversation_history
-        if m.get("role") == "user"
-    )
-    if _has_legal_context or force_legal:
-        _log_fc_step("gate1", 0, "bypassed (legal context established)")
-        t_g2 = time.perf_counter()
-        parsed = _run_gate2_legal(conversation_history, user_message)
-        _log_fc_step("gate2", (time.perf_counter() - t_g2) * 1000, f"action={parsed.get('action') if parsed else 'None'}")
-        if parsed:
-            return parsed
-        # Gate 2 failed — fall through to full two-gate path below as safety net
+    # --- Single-gate routing: one LLM call handles everything ---
+    t_gate = time.perf_counter()
+    parsed = _run_single_gate(conversation_history, user_message)
+    _log_fc_step("single_gate", (time.perf_counter() - t_gate) * 1000,
+                 f"action={parsed.get('action') if parsed else 'None'}, "
+                 f"intent={parsed.get('intent', '-') if parsed else '-'}")
 
-    # --- Two-gate routing: Gate 1 (legal vs generalist vs greeting) ---
-    t_g1 = time.perf_counter()
-    gate1_result = _run_gate1(conversation_history, user_message)
-    _log_fc_step("gate1", (time.perf_counter() - t_g1) * 1000, gate1_result.get("gate1", "?") if gate1_result else "None")
-    if gate1_result:
-        g1 = gate1_result.get("gate1", "")
-        reply = (gate1_result.get("reply_to_client") or "").strip()
-        if g1 == "GREETING":
+    if parsed:
+        action = parsed.get("action", "")
+        reply  = (parsed.get("reply_to_client") or "").strip()
+
+        # Greeting response from the LLM (covers edge-cases the keyword check missed)
+        if action == "greeting":
             cleaned = user_message.strip().lower().rstrip("!?.,;:")
             question = (
                 GREETING_STATIC_TEMPLATE
@@ -680,43 +641,19 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
                 else (reply or generate_greeting_response(user_message))
             )
             return {"action": "ask", "question": question}
-        if g1 == "GENERALIST" and not force_legal:
-            return {
-                "action": "complete",
-                "intent": "generic_chat",
-                "result_count": None,
-                "facts_summary": user_message,
-                "message": reply or "I'll answer that as a general question.",
-                "document_types": "both",
-                "search_strategy": "local_then_web",
-            }
-        if g1 in ("LEGAL", "GENERALIST") or force_legal:
-            # Treat as LEGAL when gate1 says LEGAL, or when caller forces legal mode
-            # even if gate1 returned GENERALIST.
-            t_g2 = time.perf_counter()
-            parsed = _run_gate2_legal(conversation_history, user_message)
-            _log_fc_step("gate2", (time.perf_counter() - t_g2) * 1000, f"action={parsed.get('action') if parsed else 'None'}")
-            if parsed:
-                return parsed
-            # Gate 2 failed: fall back to full orchestrator
-            try:
-                t_orch = time.perf_counter()
-                from agents.orchestrator_agent import run_orchestrator
-                orchestrator_output = run_orchestrator(conversation_history, user_message)
-                _log_fc_step("orchestrator_fallback", (time.perf_counter() - t_orch) * 1000)
-                if orchestrator_output:
-                    parsed = _parse_llm_response(orchestrator_output, user_message)
-                    if parsed:
-                        return parsed
-            except Exception:
-                pass
 
-    # --- Fallback: try full orchestrator if two-gate was skipped or Gate 2 failed ---
+        # force_legal overrides a generic_chat classification
+        if parsed.get("intent") == "generic_chat" and force_legal:
+            parsed["intent"] = "legal_opinion"
+
+        return parsed
+
+    # --- Fallback: single gate failed — try orchestrator then bare LLM ---
     try:
         t_orch = time.perf_counter()
         from agents.orchestrator_agent import run_orchestrator
         orchestrator_output = run_orchestrator(conversation_history, user_message)
-        _log_fc_step("orchestrator_full", (time.perf_counter() - t_orch) * 1000)
+        _log_fc_step("orchestrator_fallback", (time.perf_counter() - t_orch) * 1000)
         if orchestrator_output:
             parsed = _parse_llm_response(orchestrator_output, user_message)
             if parsed:

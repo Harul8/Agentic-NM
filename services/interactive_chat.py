@@ -60,7 +60,7 @@ def _ensure_message(msg: str, facts: str, intent: str) -> str:
         return "Thank you for sharing the details. I've researched the applicable bare acts and case laws. Here's my analysis."
 
 
-def _run_bare_acts_phase(facts_summary: str, progress_callback=None, states: list = None) -> dict:
+def _run_bare_acts_phase(facts_summary: str, progress_callback=None, states: list = None, conversation_history: list = None, step_callback=None) -> dict:
     """
     New Phase A: retrieve and explain bare acts, then ask a targeted follow-up question
     (or proceed directly if no follow-up is needed).
@@ -68,6 +68,8 @@ def _run_bare_acts_phase(facts_summary: str, progress_callback=None, states: lis
 
     states: list of state names detected from the query (e.g. ['Telangana']).
       Used to search BOTH Union/central acts AND state-specific acts.
+    conversation_history: full chat history so the followup-question generator can avoid
+      repeating questions that were already asked during intake.
     """
     pending_indexing_list = []
     try:
@@ -76,6 +78,8 @@ def _run_bare_acts_phase(facts_summary: str, progress_callback=None, states: lis
             progress_callback=progress_callback,
             states=states or [],
             pending_indexing_list=pending_indexing_list,
+            conversation_history=conversation_history or [],
+            step_callback=step_callback,
         )
     except Exception as e:
         logger.error("_run_bare_acts_phase: retrieval failed: %s", e, exc_info=True)
@@ -287,7 +291,7 @@ def _run_legal_opinion_simple(
 GENERIC_CHAT_SYSTEM = """You are a helpful, knowledgeable generalist assistant. You handle any question or conversation that is not a legal research request (case laws, bare acts, legal advice, or bulk indexing from a URL). Answer clearly and conversationally — like ChatGPT or Perplexity. Topics you handle include: politics, science, technology, history, how-to, trivia, general knowledge, and any other non-legal or ambiguous query. If the question is clearly about law (Indian law, cases, acts, legal advice), briefly say you're better suited for legal research and suggest they ask for case laws or legal opinion in this app. Otherwise answer from your training knowledge. Keep responses informative and concise. If you don't know something, say so. Do not use legal disclaimers for non-legal topics."""
 
 
-def _run_generic_chat(conversation: list, current_message: str) -> dict:
+def _run_generic_chat(conversation: list, current_message: str, token_callback=None) -> dict:
     """Generalist Agent: handle any query not covered by legal agents (search, lookup, legal_opinion). Answers like ChatGPT/Perplexity; no legal retrieval."""
     try:
         context = "\n".join(
@@ -295,7 +299,15 @@ def _run_generic_chat(conversation: list, current_message: str) -> dict:
             for m in conversation[-6:]
         )
         prompt = f"{GENERIC_CHAT_SYSTEM}\n\nConversation:\n{context}\n\nUser: {current_message}\n\nAssistant:"
-        reply = ask_llm(prompt).strip()
+        if token_callback:
+            from llm.ollama_client import ask_llm_stream
+            parts = []
+            for tok in ask_llm_stream(prompt):
+                token_callback(tok)
+                parts.append(tok)
+            reply = "".join(parts).strip()
+        else:
+            reply = ask_llm(prompt).strip()
         if not reply:
             reply = "I'm not sure how to answer that. Could you rephrase or ask something else?"
     except Exception as e:
@@ -389,7 +401,7 @@ def process_chat(
     if phase == "fact_collection":
         # Manual override: general chat → skip legal routing entirely
         if mode == "general":
-            return _run_generic_chat(conversation, current_message)
+            return _run_generic_chat(conversation, current_message, token_callback=token_callback)
 
         # Manual override: direct legal research (search-style workflow)
         if mode == "legal_research":
@@ -427,10 +439,10 @@ def process_chat(
 
             if intent == "bulk_ingest":
                 # Bulk ingest removed; treat as generic chat
-                return _run_generic_chat(conversation, current_message)
+                return _run_generic_chat(conversation, current_message, token_callback=token_callback)
 
             if intent == "generic_chat":
-                return _run_generic_chat(conversation, current_message)
+                return _run_generic_chat(conversation, current_message, token_callback=token_callback)
 
             # Legal opinion: two-phase flow.
             # Phase A: retrieve bare act sections, present legal protection summary,
@@ -443,13 +455,17 @@ def process_chat(
                 (time.perf_counter() - t_pipeline_start) * 1000,
                 f"facts_len={facts_len}",
             )
-            return _run_bare_acts_phase(facts, progress_callback=progress_callback, states=states)
+            return _run_bare_acts_phase(facts, progress_callback=progress_callback, states=states, conversation_history=conversation, step_callback=step_callback)
 
-        # Still collecting facts — return the question (no retrieval)
+        # Still collecting facts — stream the question token-by-token then return.
         _log_step("fact_collection DONE (ask)", (time.perf_counter() - t_pipeline_start) * 1000)
+        question = (result.get("question") or "").strip()
+        if token_callback and question:
+            for word in question.split(" "):
+                token_callback(word + " ")
         return {
             "phase": "fact_collection",
-            "message": (result.get("question") or "").strip(),
+            "message": question,
             "facts_summary": None,
             "response": None,
             "response_type": None,
