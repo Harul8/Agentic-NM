@@ -3,7 +3,6 @@ Fact Collection Service — Adaptive advocate-style intake.
 
 Phase 2 rewrite:
 - Uses GREETING_PHRASES from prompts (Indian language support)
-- Dedicated GREETING_RESPONSE_PROMPT for natural greeting handling
 - Adaptive: skips questions when user already provided enough detail
 - All user-facing messages from LLM — no hardcoded responses
 - Falls back to research (not dead-end) if LLM parsing fails
@@ -18,12 +17,18 @@ import time
 from llm.ollama_client import ask_llm
 from prompts.advocate_prompts import (
     GREETING_PHRASES,
-    GREETING_RESPONSE_PROMPT,
     ROUTING_SINGLE_GATE_SYSTEM,
     FACT_COLLECTION_SYSTEM,
     FACT_COLLECTION_RETRY_PROMPT,
+    SENIOR_ADVOCATE_INTAKE_SYSTEM,
     STOP_PHRASES,
 )
+
+# Feature flag: set USE_SENIOR_ADVOCATE_INTAKE=1 to activate the new
+# senior-advocate intake prompt (replaces ROUTING_SINGLE_GATE_SYSTEM).
+import os as _os
+_USE_SENIOR_INTAKE = _os.environ.get("USE_SENIOR_ADVOCATE_INTAKE", "1").strip() in ("1", "true", "yes")
+_ACTIVE_INTAKE_SYSTEM = SENIOR_ADVOCATE_INTAKE_SYSTEM if _USE_SENIOR_INTAKE else ROUTING_SINGLE_GATE_SYSTEM
 
 logger = logging.getLogger(__name__)
 
@@ -97,15 +102,21 @@ def is_greeting(msg: str, conversation_history: list = None) -> bool:
 
 
 def generate_greeting_response(user_message: str) -> str:
-    """Generate a warm greeting using the dedicated greeting prompt."""
-    try:
-        prompt = f"{GREETING_RESPONSE_PROMPT}\n\nUser said: \"{user_message}\""
-        reply = ask_llm(prompt).strip()
-        if reply and len(reply) > 10:
-            return reply
-    except Exception:
-        pass
-    return "Hello! I'm here to help with legal research — case laws, bare act provisions, or legal advice. What would you like to explore?"
+    """Return a deterministic greeting so simple hellos never need an LLM call."""
+    msg = (user_message or "").strip().lower()
+    if any(word in msg for word in ("good morning",)):
+        greeting = "Good morning!"
+    elif any(word in msg for word in ("good afternoon",)):
+        greeting = "Good afternoon!"
+    elif any(word in msg for word in ("good evening", "good night")):
+        greeting = "Good evening!"
+    elif any(word in msg for word in ("thanks", "thank you", "dhanyavaad", "shukriya", "nandri", "dhonnobad", "aabhar")):
+        greeting = "You're welcome."
+    elif any(word in msg for word in ("bye", "goodbye", "see you", "alvida")):
+        greeting = "Take care."
+    else:
+        greeting = "Hello!"
+    return f"{greeting} I'm here to help with legal research, relevant laws, and next-step legal guidance. Tell me what happened."
 
 
 # ---------------------------------------------------------------------------
@@ -171,6 +182,10 @@ _DEDUP_TOPIC_KEYWORDS: frozenset[str] = frozenset({
     "dowry", "jewellery", "gold", "stridhan",
     "employer", "employment", "job", "termination", "notice",
     "cheque", "dishonour", "bounce", "payment",
+    # Acquisition / land-value terms added to close gaps
+    "claim", "claiming", "basis", "reason", "purpose", "total", "specific",
+    "market", "value", "per acre", "acre", "area", "extent",
+    "request", "requesting", "clarify", "share", "tell", "provide",
 })
 
 
@@ -253,7 +268,7 @@ def _is_duplicate_question(proposed: str, asked_questions: list[str]) -> bool:
         return False
     for asked in asked_questions:
         a_topics = {kw for kw in _DEDUP_TOPIC_KEYWORDS if kw in asked.lower()}
-        if len(p_topics & a_topics) >= 2:
+        if len(p_topics & a_topics) >= 1:  # Any 1 shared topic = duplicate
             return True
     return False
 
@@ -263,7 +278,7 @@ def _is_duplicate_question(proposed: str, asked_questions: list[str]) -> bool:
 # One LLM call handles greeting / generalist / legal-search / legal-opinion.
 # ---------------------------------------------------------------------------
 
-def _run_single_gate(conversation_history: list, user_message: str) -> dict | None:
+def _run_single_gate(conversation_history: list, user_message: str, token_callback=None) -> dict | None:
     """
     Unified router: one LLM call that classifies AND decides action.
     Returns a parsed result dict ready for the caller, or None on failure.
@@ -299,7 +314,7 @@ def _run_single_gate(conversation_history: list, user_message: str) -> dict | No
     intake_context_block = _build_intake_context_block(conversation_history)
 
     prompt = (
-        f"{ROUTING_SINGLE_GATE_SYSTEM}"
+        f"{_ACTIVE_INTAKE_SYSTEM}"
         f"{few_shot_block}"
         f"{intake_context_block}"
         f"\nConversation so far:\n{context}"
@@ -308,14 +323,24 @@ def _run_single_gate(conversation_history: list, user_message: str) -> dict | No
     )
 
     try:
-        response = ask_llm(prompt).strip()
+        if token_callback:
+            from llm.ollama_client import ask_llm_stream
+            _parts: list[str] = []
+            for _tok in ask_llm_stream(prompt):
+                token_callback(_tok)
+                _parts.append(_tok)
+            response = "".join(_parts).strip()
+        else:
+            response = ask_llm(prompt).strip()
         parsed = _parse_llm_response(response, user_message)
 
         # Code-level deduplication guard: if the model still proposes a duplicate
         # question despite the INTAKE MEMORY block, force completion.
+        # NOTE: _parse_llm_response normalises the reply into "question" key;
+        # "reply_to_client" is only present in the raw LLM JSON before parsing.
         if parsed and parsed.get("action") == "ask":
             asked_questions = _extract_asked_questions(conversation_history)
-            reply = parsed.get("reply_to_client") or ""
+            reply = parsed.get("question") or parsed.get("reply_to_client") or ""
             if asked_questions and _is_duplicate_question(reply, asked_questions):
                 logger.info(
                     "[SingleGate] Duplicate question blocked — forcing complete. Proposed: %s",
@@ -567,10 +592,51 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
 
 
 # ---------------------------------------------------------------------------
+# Facts enrichment — always build facts_summary from ALL user messages
+# ---------------------------------------------------------------------------
+
+def _enrich_facts_summary(parsed: dict, conversation_history: list, user_message: str) -> dict:
+    """
+    Replace or augment the LLM-generated facts_summary with the full concatenation
+    of every user message in the conversation.  This guarantees that dispute
+    decomposition, bare-act retrieval and the final legal opinion all see the
+    complete picture — not just whatever the LLM happened to digest.
+
+    Only applied when action=complete so it never interferes with ask responses.
+    """
+    if parsed.get("action") != "complete":
+        return parsed
+
+    seen: set[str] = set()
+    user_msgs: list[str] = []
+    for m in conversation_history:
+        if m.get("role") == "user":
+            content = (m.get("content") or "").strip()
+            if content and content not in seen:
+                seen.add(content)
+                user_msgs.append(content)
+    current = (user_message or "").strip()
+    if current and current not in seen:
+        user_msgs.append(current)
+
+    full_text = "\n".join(user_msgs).strip()
+    if not full_text:
+        return parsed
+
+    llm_summary = (parsed.get("facts_summary") or "").strip()
+    # Append LLM summary only when it adds info not already in the raw messages
+    if llm_summary and llm_summary not in full_text and len(llm_summary) > 50:
+        parsed["facts_summary"] = f"{full_text}\n\n{llm_summary}"
+    else:
+        parsed["facts_summary"] = full_text
+    return parsed
+
+
+# ---------------------------------------------------------------------------
 # Main entry point
 # ---------------------------------------------------------------------------
 
-def get_next_question_or_complete(conversation_history: list, user_message: str, force_legal: bool = False) -> dict:
+def get_next_question_or_complete(conversation_history: list, user_message: str, force_legal: bool = False, token_callback=None) -> dict:
     """
     Returns:
     - {"action": "ask", "question": "..."} — follow-up for the user
@@ -623,7 +689,7 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
 
     # --- Single-gate routing: one LLM call handles everything ---
     t_gate = time.perf_counter()
-    parsed = _run_single_gate(conversation_history, user_message)
+    parsed = _run_single_gate(conversation_history, user_message, token_callback=token_callback)
     _log_fc_step("single_gate", (time.perf_counter() - t_gate) * 1000,
                  f"action={parsed.get('action') if parsed else 'None'}, "
                  f"intent={parsed.get('intent', '-') if parsed else '-'}")
@@ -645,6 +711,33 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
         # force_legal overrides a generic_chat classification
         if parsed.get("intent") == "generic_chat" and force_legal:
             parsed["intent"] = "legal_opinion"
+
+        # Hard cap: if 2+ assistant questions already asked, force complete so
+        # the LLM can't keep asking even when it hasn't learned anything new.
+        if parsed.get("action") == "ask":
+            n_q = sum(
+                1 for m in conversation_history
+                if m.get("role") == "assistant" and "?" in (m.get("content") or "")
+            )
+            if n_q >= 2:
+                all_user = "\n".join(
+                    m["content"] for m in conversation_history if m.get("role") == "user"
+                )
+                logger.info("[FactCollector] Hard cap hit (%d questions asked) — forcing complete", n_q)
+                return {
+                    "action": "complete",
+                    "intent": "legal_opinion",
+                    "result_count": None,
+                    "facts_summary": f"{all_user}\n{user_message}".strip(),
+                    "message": "",
+                    "document_types": "both",
+                    "search_strategy": _detect_search_strategy_from_keywords(user_message) or "local_then_web",
+                }
+
+        # Enrich facts_summary with ALL user messages so downstream phases see
+        # the full conversation, not just the LLM's digest of the latest turn.
+        if parsed.get("action") == "complete":
+            parsed = _enrich_facts_summary(parsed, conversation_history, user_message)
 
         return parsed
 

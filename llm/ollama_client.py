@@ -20,6 +20,7 @@ from llm.config import (
     OLLAMA_MODEL,
     OLLAMA_MODEL_LONG_CONTEXT,
     LONG_CONTEXT_THRESHOLD,
+    OLLAMA_KEEP_ALIVE,
     OLLAMA_MODEL_DISPLAY,
     OLLAMA_MODEL_LONG_CONTEXT_DISPLAY,
 )
@@ -128,6 +129,37 @@ def _extract_text(data: dict) -> str:
     return ""
 
 
+def warmup_ollama_model(
+    model: str = None,
+    timeout: int = 180,
+) -> bool:
+    """
+    Warm the configured Ollama model so the first real request avoids model-load latency.
+    Returns True on success, False on failure.
+    """
+    chosen = model or OLLAMA_MODEL
+    payload = {
+        "model": chosen,
+        "prompt": "Reply with exactly: OK",
+        "stream": False,
+        "keep_alive": OLLAMA_KEEP_ALIVE,
+    }
+    try:
+        response = requests.post(OLLAMA_GENERATE_URL, json=payload, timeout=timeout)
+        if not response.ok:
+            logger.warning(
+                "Ollama warmup failed for %s: HTTP %s %s",
+                chosen,
+                response.status_code,
+                (response.text or "").strip()[:200],
+            )
+            return False
+        return True
+    except requests.RequestException as exc:
+        logger.warning("Ollama warmup failed for %s: %s", chosen, exc)
+        return False
+
+
 def ask_llm_stream(
     prompt: str,
     model: str = None,
@@ -153,7 +185,12 @@ def ask_llm_stream(
     except Exception:
         pass
     timeout = timeout or DEFAULT_TIMEOUT
-    payload = {"model": chosen, "prompt": prompt, "stream": True}
+    payload = {
+        "model": chosen,
+        "prompt": prompt,
+        "stream": True,
+        "keep_alive": OLLAMA_KEEP_ALIVE,
+    }
     try:
         with requests.post(
             OLLAMA_GENERATE_URL, json=payload, stream=True, timeout=timeout
@@ -201,7 +238,12 @@ def ask_llm(
         pass
     model = chosen
     timeout = timeout or DEFAULT_TIMEOUT
-    payload = {"model": model, "prompt": prompt, "stream": False}
+    payload = {
+        "model": model,
+        "prompt": prompt,
+        "stream": False,
+        "keep_alive": OLLAMA_KEEP_ALIVE,
+    }
 
     for attempt in range(1 + MAX_RETRIES):
         try:

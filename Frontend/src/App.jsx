@@ -226,7 +226,6 @@ function App() {
   const [messages, setMessages] = useState([]);
   const [phase, setPhase] = useState("fact_collection"); // Retain existing phase logic
   const [factsSummary, setFactsSummary] = useState(null); // Retain existing
-  const [pendingMaterials, setPendingMaterials] = useState(null); // Retain existing
   const [loading, setLoading] = useState(false); // Retain existing
   const [error, setError] = useState(""); // Retain existing
   const messagesEndRef = useRef(null);
@@ -463,8 +462,8 @@ function App() {
             .filter((j) => j.acts.length > 0);
           if (normalized.length > 0) {
             setBareActsLibrary(normalized);
-            // Keep flat list for places that just need "all Bare Acts".
-            setBareActs(normalized.flatMap((j) => j.acts));
+            // Keep flat list of names for retrieval (acts are now {name, file} objects).
+            setBareActs(normalized.flatMap((j) => j.acts.map((a) => (typeof a === "string" ? a : a.name))));
             // Default to the first jurisdiction being expanded.
             if (!bareActsJurisdictionOpen && normalized[0]?.name) {
               setBareActsJurisdictionOpen(normalized[0].name);
@@ -515,7 +514,7 @@ function App() {
             .filter((c) => c.cases.length > 0);
           if (normalized.length > 0) {
             setCaseLawsLibrary(normalized);
-            setCaseLawsList(normalized.flatMap((c) => c.cases));
+            setCaseLawsList(normalized.flatMap((c) => c.cases.map((x) => (typeof x === "string" ? x : x.name))));
             if (!caseLawsCourtOpen && normalized[0]?.name) {
               setCaseLawsCourtOpen(normalized[0].name);
             }
@@ -712,7 +711,6 @@ function App() {
     setRetrieved([]);
     setRawResponse("");
     setError(""); // Reset existing error
-    setPendingMaterials(null); // Reset existing pending materials
     setMessages([]);
   };
 
@@ -861,7 +859,6 @@ function App() {
     setStreamingToken("");
     setElapsedTime(0); // Reset timer
     setComposerResetSignal((prev) => prev + 1);
-    setPendingMaterials(null); // Clear pending materials on new submission
 
     // Keep exact format user typed (spaces, newlines)
     const userMsg = { role: "user", content: raw, timestamp: new Date().toISOString() };
@@ -982,7 +979,6 @@ function App() {
                 },
               ]);
             } else if (data.needs_confirmation) {
-              setPendingMaterials(data.materials_to_confirm);
               setMessages((prev) => [
                 ...prev,
                 {
@@ -1114,7 +1110,6 @@ function App() {
                 },
               ]);
             } else if (data.needs_confirmation) {
-              setPendingMaterials(data.materials_to_confirm);
               setMessages((prev) => [
                 ...prev,
                 {
@@ -1320,7 +1315,6 @@ function App() {
                 },
               ]);
             } else if (data.needs_confirmation) {
-              setPendingMaterials(data.materials_to_confirm);
               setMessages((prev) => [
                 ...prev,
                 { role: "assistant", content: data.summary ?? "Please confirm the materials to proceed.", timestamp: new Date().toISOString() },
@@ -1904,72 +1898,6 @@ function App() {
   const cancelEditUserMessage = () => {
     setEditingMessageIndex(null);
     setEditDraft("");
-  };
-
-  const confirmAndIndex = async () => {
-    if (!pendingMaterials || loading) return;
-    const hasBare = pendingMaterials.bare_acts?.length > 0;
-    const hasCase = pendingMaterials.case_laws?.length > 0;
-    if (!hasBare && !hasCase) return;
-
-    setLoading(true);
-    setError("");
-    try {
-      const res = await fetch(`${API_BASE}/chat/confirm-index`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          bare_acts: pendingMaterials.bare_acts || [],
-          case_laws: pendingMaterials.case_laws || [],
-          facts_summary: factsSummary || "",
-        }),
-      });
-      let data = {};
-      try {
-        const text = await res.text();
-        data = text ? JSON.parse(text) : {};
-      } catch (_) {
-        setError("Server returned an invalid or empty response.");
-        return;
-      }
-      if (data.success) {
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: "assistant",
-            content: {
-              type: "indexed",
-              text: data.message || "Materials have been indexed successfully.",
-            },
-            timestamp: new Date().toISOString(),
-          },
-        ]);
-        setPendingMaterials(null);
-        setStage("done"); // Assuming after indexing, we are done with current interview
-        setCurrentQuestion(""); // Clear current question
-
-        if (data.response) {
-          const fullContent = buildAssistantContent({
-            response: data.response,
-            message: data.response.explanation,
-          });
-          setMessages((prev) => [
-            ...prev,
-            { role: "assistant", content: fullContent, timestamp: new Date().toISOString() },
-          ]);
-          setOpinionText(data.response.explanation || ""); // Update opinion text if provided
-          if (Array.isArray(data.response.bare_act_sections) || Array.isArray(data.response.case_laws)) {
-            setRetrieved([...(data.response.bare_act_sections || []), ...(data.response.case_laws || [])]);
-          }
-        }
-      } else {
-        setError(data.message || "Indexing failed");
-      }
-    } catch (err) {
-      setError("Failed to index materials: " + err.message);
-    } finally {
-      setLoading(false);
-    }
   };
 
   const buildAssistantContent = (data) => { // Removed isConfirmResponse as it's not used
@@ -2692,9 +2620,10 @@ function App() {
                     {Array.isArray(bareActsLibrary) && bareActsLibrary.length > 0 ? (
                       bareActsLibrary.map((jurisdiction) => {
                         const filteredActs = jurisdiction.acts.filter(
-                          (name) =>
-                            !bareActsFilter.trim() ||
-                            name.toLowerCase().includes(bareActsFilter.trim().toLowerCase()),
+                          (act) => {
+                            const n = typeof act === "string" ? act : act.name;
+                            return !bareActsFilter.trim() || n.toLowerCase().includes(bareActsFilter.trim().toLowerCase());
+                          }
                         );
                         if (!filteredActs.length) return null;
                         const isOpen = bareActsJurisdictionOpen === jurisdiction.name;
@@ -2717,25 +2646,28 @@ function App() {
                               {jurisdiction.name} ({jurisdiction.acts.length})
                             </summary>
                             <ul className="bare-act-list">
-                              {filteredActs.map((name, idx) => {
+                              {filteredActs.map((act, idx) => {
+                                const actName = typeof act === "string" ? act : act.name;
+                                const actFile = typeof act === "string" ? null : act.file;
                                 const useRelative =
                                   typeof window !== "undefined" &&
                                   (window.location.hostname === "localhost" ||
                                     window.location.hostname === "127.0.0.1" ||
                                     API_BASE === "" ||
                                     API_BASE.startsWith(window.location.origin));
-                                const downloadUrl = useRelative
-                                  ? `/bareacts/view?name=${encodeURIComponent(name)}`
-                                  : `${API_BASE}/bareacts/view?name=${encodeURIComponent(name)}`;
+                                const base = useRelative ? "" : API_BASE;
+                                const downloadUrl = actFile
+                                  ? `${base}/bareacts/view?file=${encodeURIComponent(actFile)}&name=${encodeURIComponent(actName)}`
+                                  : `${base}/bareacts/view?name=${encodeURIComponent(actName)}`;
                                 return (
-                                  <li key={`${jurisdiction.name}-${name}-${idx}`} className="bare-act-list-item">
+                                  <li key={`${jurisdiction.name}-${actName}-${idx}`} className="bare-act-list-item">
                                     <a
                                       href={downloadUrl}
                                       target="_blank"
                                       rel="noopener noreferrer"
                                       className="bare-act-download-link"
                                     >
-                                      {name}
+                                      {actName}
                                     </a>
                                   </li>
                                 );
@@ -2835,9 +2767,10 @@ function App() {
                     {Array.isArray(caseLawsLibrary) && caseLawsLibrary.length > 0 ? (
                       caseLawsLibrary.map((court) => {
                         const filteredCases = court.cases.filter(
-                          (name) =>
-                            !caseLawsFilter.trim() ||
-                            name.toLowerCase().includes(caseLawsFilter.trim().toLowerCase()),
+                          (c) => {
+                            const n = typeof c === "string" ? c : c.name;
+                            return !caseLawsFilter.trim() || n.toLowerCase().includes(caseLawsFilter.trim().toLowerCase());
+                          }
                         );
                         if (!filteredCases.length) return null;
                         const isOpen = caseLawsCourtOpen === court.name;
@@ -2860,25 +2793,28 @@ function App() {
                               {court.name} ({court.cases.length})
                             </summary>
                             <ul className="case-laws-list">
-                              {filteredCases.map((name, idx) => {
+                              {filteredCases.map((c, idx) => {
+                                const caseName = typeof c === "string" ? c : c.name;
+                                const caseFile = typeof c === "string" ? null : c.file;
                                 const useRelative =
                                   typeof window !== "undefined" &&
                                   (window.location.hostname === "localhost" ||
                                     window.location.hostname === "127.0.0.1" ||
                                     API_BASE === "" ||
                                     API_BASE.startsWith(window.location.origin));
-                                const downloadUrl = useRelative
-                                  ? `/caselaws/view?name=${encodeURIComponent(name)}`
-                                  : `${API_BASE}/caselaws/view?name=${encodeURIComponent(name)}`;
+                                const base = useRelative ? "" : API_BASE;
+                                const downloadUrl = caseFile
+                                  ? `${base}/caselaws/view?file=${encodeURIComponent(caseFile)}&name=${encodeURIComponent(caseName)}`
+                                  : `${base}/caselaws/view?name=${encodeURIComponent(caseName)}`;
                                 return (
-                                  <li key={`${court.name}-${name}-${idx}`} className="case-laws-list-item">
+                                  <li key={`${court.name}-${caseName}-${idx}`} className="case-laws-list-item">
                                     <a
                                       href={downloadUrl}
                                       target="_blank"
                                       rel="noopener noreferrer"
                                       className="case-laws-download-link"
                                     >
-                                      {name}
+                                      {caseName}
                                     </a>
                                   </li>
                                 );
@@ -3324,21 +3260,6 @@ function App() {
                   />
                 </div>
 
-                {/* Confirmation bar */}
-                {pendingMaterials?.bare_acts?.length > 0 && (
-                  <div className="confirm-index-bar">
-                    <button type="button" onClick={confirmAndIndex} disabled={loading} className="confirm-index-btn">
-                      ✓ Confirm & Index Bare Acts
-                    </button>
-                  </div>
-                )}
-                {pendingMaterials?.case_laws?.length > 0 && (
-                  <div className="confirm-index-bar">
-                    <button type="button" onClick={confirmAndIndex} disabled={loading} className="confirm-index-btn">
-                      ✓ Confirm & Index Case Laws
-                    </button>
-                  </div>
-                )}
                 {error && (
                   <div className="chat-error">
                     <span>⚠</span> {error}

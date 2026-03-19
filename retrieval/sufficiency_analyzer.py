@@ -263,89 +263,26 @@ def get_broad_discovery_queries(
 
     Returns list of dicts: [{"query": "...", "type": "bare_act"|"case_law"}]
     """
-    if llm_fn is None:
-        from llm.ollama_client import ask_llm
-        llm_fn = ask_llm
+    combined = " ".join(
+        part.strip() for part in ((user_request or ""), (legal_query or ""))
+        if part and part.strip()
+    ).strip()[:300]
+    if not combined:
+        combined = "Indian law"
 
-    # Build intent block from extracted intent (dynamic)
-    intent_block = ""
-    if intent and isinstance(intent, dict):
-        intent_block = "\nEXTRACTED INTENT (use only these; do not add others):\n" + json.dumps(intent)
+    if document_types == "acts_only":
+        queries = [{"query": combined, "type": "bare_act"}]
+    elif document_types == "case_laws_only":
+        queries = [{"query": combined, "type": "case_law"}]
+    else:
+        queries = [
+            {"query": combined, "type": "bare_act"},
+            {"query": combined, "type": "case_law"},
+        ]
 
-    try:
-        from prompts.advocate_prompts import BROAD_DISCOVERY_QUERIES_PROMPT
-        prompt = BROAD_DISCOVERY_QUERIES_PROMPT.format(
-            user_request=(user_request or "")[:1500],
-            legal_query=(legal_query or "")[:800],
-            intent_block=intent_block,
-        )
-        response = llm_fn(prompt)
-        out = _parse_json_response(response)
-        if not out or "queries" not in out:
-            raise ValueError("No queries in LLM response")
-        raw = out["queries"]
-        if not isinstance(raw, list):
-            raw = [raw]
-        queries = []
-        for q in raw[:10]:
-            if isinstance(q, dict):
-                query = (q.get("query") or "").strip()
-                qtype = (q.get("type") or "bare_act").strip().lower()
-                if qtype not in ("bare_act", "case_law", "both"):
-                    qtype = "bare_act"
-                if query:
-                    queries.append({"query": query, "type": qtype})
-            elif isinstance(q, str) and q.strip():
-                queries.append({"query": q.strip(), "type": "bare_act"})
-        if not queries:
-            raise ValueError("Empty queries list")
-        # Respect document_types: filter to bare_act or case_law only if requested
-        if document_types == "acts_only":
-            queries = [g for g in queries if g.get("type") == "bare_act"]
-            if not queries:
-                queries = [{"query": (user_request or legal_query)[:200], "type": "bare_act"}]
-        elif document_types == "case_laws_only":
-            queries = [g for g in queries if g.get("type") == "case_law"]
-            if not queries:
-                queries = [{"query": (user_request or legal_query)[:200], "type": "case_law"}]
-        logger.info("Broad discovery: %d queries for web_only", len(queries))
-        return queries[:8]
-    except Exception as e:
-        logger.warning("Broad discovery LLM failed (%s), retrying with simpler prompt", e)
-        # Retry with simpler LLM prompt (model-driven before static fallback)
-        try:
-            simple_prompt = (
-                f"User wants to find Indian acts/laws via web search. Request: {(user_request or legal_query or '')[:400]}\n\n"
-                "Output valid JSON only: {\"queries\": [{\"query\": \"search phrase 1\", \"type\": \"bare_act\"}, ...]}\n"
-                "Generate 2-4 short web search phrases. Use type \"bare_act\" for acts/laws, \"case_law\" for judgments."
-            )
-            response = llm_fn(simple_prompt)
-            out = _parse_json_response(response)
-            if out and out.get("queries"):
-                raw = out["queries"] if isinstance(out["queries"], list) else [out["queries"]]
-                queries = []
-                for q in raw[:8]:
-                    if isinstance(q, dict) and (q.get("query") or "").strip():
-                        qtype = (q.get("type") or "bare_act").strip().lower()
-                        if qtype not in ("bare_act", "case_law"):
-                            qtype = "bare_act"
-                        queries.append({"query": (q.get("query") or "").strip(), "type": qtype})
-                    elif isinstance(q, str) and q.strip():
-                        queries.append({"query": q.strip(), "type": "bare_act"})
-                if queries:
-                    if document_types == "acts_only":
-                        queries = [g for g in queries if g.get("type") == "bare_act"] or [{"query": (user_request or legal_query)[:200], "type": "bare_act"}]
-                    elif document_types == "case_laws_only":
-                        queries = [g for g in queries if g.get("type") == "case_law"] or [{"query": (user_request or legal_query)[:200], "type": "case_law"}]
-                    logger.info("Broad discovery retry: %d queries", len(queries))
-                    return queries[:8]
-        except Exception as e2:
-            logger.warning("Broad discovery retry failed (%s), using template fallback", e2)
-        # Static fallback when both LLM attempts fail
-        combined = (user_request or legal_query or "").strip()[:200]
-        fallback = [{"query": f"India Code bare acts {combined}".strip(), "type": "bare_act"}]
-        if "state" in (combined or "").lower():
-            fallback.append({"query": f"state acts {combined[:120]}".strip(), "type": "bare_act"})
-        if document_types == "case_laws_only":
-            fallback = [{"query": combined or "Indian court judgments", "type": "case_law"}]
-        return fallback[:8]
+    logger.info(
+        "Indiankanoon web_only discovery: %d direct quer%s",
+        len(queries),
+        "y" if len(queries) == 1 else "ies",
+    )
+    return queries

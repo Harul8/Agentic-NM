@@ -460,7 +460,7 @@ body {
 }
 
 .typing-indicator-text {
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: normal;
 }
 
@@ -472,7 +472,7 @@ body {
 
 .typing-timer {
   margin-left: auto;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   color: #666;
   font-weight: normal;
 }
@@ -1261,23 +1261,19 @@ body {
 }
 
 .sidebar-section--active {
-  flex: 1;
   min-height: 0;
 }
 
 details.sidebar-section--active {
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 
 .chat-history-section.sidebar-section--active {
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 
 .chat-history-section.sidebar-section--active > .chat-history-collapsible {
-  flex: 1;
-  min-height: 0;
+  display: block;
 }
 
 /* Pending indexing is inside left-column-scroll with same gap as other sections; no extra border */
@@ -1372,10 +1368,11 @@ details.sidebar-section--active {
   touch-action: pan-y;
 }
 
+/* When a section is active (expanded), its list fills the available window height.
+   280px covers: top padding + New Chat btn + other collapsed section headers + search/link rows + gaps */
 details.sidebar-section--active > .sidebar-list-scroll {
-  flex: 1;
-  min-height: 0;
-  max-height: none;
+  max-height: calc(100vh - 280px);
+  overflow-y: auto;
 }
 .sidebar-list-scroll::-webkit-scrollbar {
   width: 12px;
@@ -1622,9 +1619,8 @@ details.sidebar-section--active > .sidebar-list-scroll {
 }
 
 .chat-history-section.sidebar-section--active .chat-history-groups {
-  flex: 1;
-  min-height: 0;
-  max-height: none;
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
 }
 
 .chat-history-group {
@@ -1838,7 +1834,7 @@ details.sidebar-section--active > .sidebar-list-scroll {
 
 .chat-center-input-wrapper {
   width: 100%;
-  max-width: 960px;
+  max-width: none;
   margin: 0 auto;
   padding: 0 16px 16px;
 }
@@ -1863,6 +1859,8 @@ details.sidebar-section--active > .sidebar-list-scroll {
 
 .conversation-card {
   background-color: #ffffff;
+  width: 100%;
+  max-width: none;
   padding: 0; /* Changed to 0 to allow messages-container to control padding */
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
@@ -3108,7 +3106,8 @@ details.sidebar-section--active > .sidebar-list-scroll {
   border-left: 3px solid #6366f1;
   border-radius: 6px;
   margin-bottom: 8px;
-  max-width: 520px;
+  width: 100%;
+  max-width: none;
 }
 
 .streaming-step {
@@ -3161,7 +3160,8 @@ details.sidebar-section--active > .sidebar-list-scroll {
   word-break: break-word;
   font-size: 0.92rem;
   line-height: 1.65;
-  max-width: 700px;
+  width: 100%;
+  max-width: none;
 }
 
 .streaming-text {
@@ -3193,7 +3193,7 @@ details.sidebar-section--active > .sidebar-list-scroll {
 }
 
 .streaming-step-chip {
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   color: #6b7280;
   background: #f1f5f9;
   border-radius: 10px;

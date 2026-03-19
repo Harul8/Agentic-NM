@@ -21,7 +21,7 @@ import uvicorn
 from agents.Legal_Research.act_case_fusion_agent import fuse_bare_act_and_case_law
 from services.interactive_chat import process_chat
 from services.response_generator_v2 import generate_response_v2
-from llm.ollama_client import check_ollama_health, get_last_model_used
+from llm.ollama_client import check_ollama_health, get_last_model_used, warmup_ollama_model
 
 # Feedback logging (non-critical — import errors must not crash the server)
 try:
@@ -43,6 +43,16 @@ logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M:%S",
 )
 logger = logging.getLogger("nyaymalaw.api")
+_PIPELINE_TIMING = os.environ.get("PIPELINE_TIMING", "").lower() in ("1", "true", "yes")
+
+
+def _log_pipeline_step(step_name: str, elapsed_ms: float, extra: str = "") -> None:
+    """Log pipeline timing details when enabled via PIPELINE_TIMING=1."""
+    if _PIPELINE_TIMING:
+        msg = f"PIPELINE_TIMING api.{step_name}: {elapsed_ms:.0f} ms"
+        if extra:
+            msg += f" | {extra}"
+        logger.info(msg)
 
 # ---------------------------------------------------------------------------
 # App init
@@ -75,7 +85,7 @@ _RATE_LIMIT_ENABLED = os.environ.get("RATE_LIMIT_ENABLED", "false").lower() == "
 _rate_store: dict[str, list[float]] = defaultdict(list)
 
 # Only rate-limit mutation endpoints (not health, static, etc.)
-_RATE_LIMITED_PATHS = {"/submit_case", "/submit_case/stream", "/interview_step", "/interview_step/stream", "/conversation/continue", "/conversation/continue/stream", "/chat", "/chat/confirm-index", "/search"}
+_RATE_LIMITED_PATHS = {"/submit_case", "/submit_case/stream", "/interview_step", "/interview_step/stream", "/conversation/continue", "/conversation/continue/stream", "/chat", "/search"}
 
 # IPs to skip rate limiting (localhost for development)
 _SKIP_RATE_LIMIT_IPS = {"127.0.0.1", "localhost", "::1"}
@@ -173,8 +183,8 @@ _LEGAL_DB_CASELAWS_DIR = os.path.join(_LEGAL_DB_JSON_OUTPUT, "caselaws")
 # ── In-memory cache for library endpoints ────────────────────────────────────
 # _group_case_laws_by_court() opens every JSON file on disk; at 1000+ cases
 # this takes ~2 minutes on first load.  Cache the result after the first call.
-_caselaws_library_cache: dict[str, list[str]] | None = None
-_bareacts_library_cache: dict[str, list[str]] | None = None
+_caselaws_library_cache: dict[str, list[dict]] | None = None
+_bareacts_library_cache: dict[str, list[dict]] | None = None
 
 
 def _hash_password(password: str) -> str:
@@ -667,39 +677,50 @@ def _list_case_laws_from_json_output() -> list[str]:
     return sorted(bases)
 
 
-def _group_case_laws_by_court() -> dict[str, list[str]]:
+def _group_case_laws_by_court() -> dict[str, list[dict]]:
     """
-    Group case laws by court, using the "court" field from the case-law JSON.
-
-    Returns a mapping like:
-      {
-        "Supreme Court": [...],
-        "Telangana HC": [...],
-        "TG HC": [...]
-      }
+    Group case laws by court using raw_data/CaseLaws/<Court>/ folder names.
+    Returns {"Court": [{"name": "Case Title", "file": "CaseLaws/Court/case.txt"}, ...]}
+    where "file" is relative to raw_data/ and used directly in the view URL.
     """
-    groups: dict[str, list[str]] = {}
-    if not _USE_LEGAL_DATABASE:
+    groups: dict[str, list[dict]] = {}
+    if not _USE_LEGAL_DATABASE or not os.path.isdir(_CASELAW_DIR):
         return groups
 
-    for path, base in _iter_caselaws_json_files():
+    vs_path = os.path.join(_VECTOR_STORE, "case_summaries_v2_chunks.json")
+    case_title_map: dict[str, str] = {}
+    if os.path.exists(vs_path):
         try:
-            with open(path, encoding="utf-8") as fp:
-                data = json.load(fp)
+            import json as _json
+            with open(vs_path, encoding="utf-8") as f:
+                summaries = _json.load(f)
+            for chunk in summaries.values():
+                sf = chunk.get("source_file", "").replace("\\", "/")
+                title = (chunk.get("title") or chunk.get("case_name") or "").strip()
+                if sf and title:
+                    case_title_map[sf] = title
         except Exception:
-            continue
-        court = (data.get("court") or "").lower()
-        if "supreme" in court:
-            label = "Supreme Court"
-        elif "telangana" in court:
-            label = "Telangana HC"
-        else:
-            # Bucket all remaining courts under a concise label for the UI
-            label = "TG HC"
-        groups.setdefault(label, []).append(base)
+            pass
 
-    for cases in groups.values():
-        cases.sort()
+    raw_data_dir = os.path.dirname(_CASELAW_DIR)
+
+    for entry in os.scandir(_CASELAW_DIR):
+        if not entry.is_dir():
+            continue
+        court_label = entry.name
+        cases: list[dict] = []
+        for root, _, files in os.walk(entry.path):
+            for fname in files:
+                if not fname.lower().endswith(".txt"):
+                    continue
+                full = os.path.join(root, fname)
+                rel = os.path.relpath(full, raw_data_dir).replace("\\", "/")
+                title = case_title_map.get(rel, "") or os.path.splitext(fname)[0]
+                cases.append({"name": title, "file": rel})
+        if cases:
+            cases.sort(key=lambda c: c["name"])
+            groups[court_label] = cases
+
     return groups
 
 
@@ -739,32 +760,61 @@ def _list_bare_acts_from_disk() -> list[str]:
     return sorted(out)
 
 
-def _group_bare_acts_by_jurisdiction() -> dict[str, list[str]]:
+def _load_act_names_from_summaries() -> dict[str, str]:
     """
-    Group Bare Acts by top-level jurisdiction folder under json_output/BareActs.
-
-    Example layout (mirrors legal_database/pipeline.py):
-      json_output/BareActs/Telangana/1987_15_SomeAct.json
-      json_output/BareActs/Union of India/2023_01_AnotherAct.json
-
-    Returns:
-      {"Telangana": [...], "Union of India": [...], ...}
+    Load source_file -> act_name mapping from act_summaries vector store chunks.
+    Keys are normalised forward-slash paths relative to raw_data/, e.g.
+    "BareActs/Telangana/1948_0.txt".
     """
-    groups: dict[str, list[str]] = {}
-    if not _USE_LEGAL_DATABASE:
+    vs_path = os.path.join(_VECTOR_STORE, "act_summaries_v2_chunks.json")
+    if not os.path.exists(vs_path):
+        return {}
+    try:
+        import json as _json
+        with open(vs_path, encoding="utf-8") as f:
+            chunks = _json.load(f)
+        mapping: dict[str, str] = {}
+        for chunk in chunks.values():
+            sf = chunk.get("source_file", "").replace("\\", "/")
+            name = chunk.get("act_name", "").strip()
+            if sf and name:
+                mapping[sf] = name
+        return mapping
+    except Exception:
+        return {}
+
+
+def _group_bare_acts_by_jurisdiction() -> dict[str, list[dict]]:
+    """
+    Group Bare Acts by jurisdiction folder under raw_data/BareActs.
+    Returns {"Jurisdiction": [{"name": "Act Name", "file": "BareActs/Jurisdiction/1948_0.txt"}, ...]}
+    where "file" is relative to raw_data/ and used directly in the view URL.
+    """
+    groups: dict[str, list[dict]] = {}
+
+    if not _USE_LEGAL_DATABASE or not os.path.isdir(_BARE_ACTS_DIR):
         return groups
 
-    for rel, base in _iter_bareacts_json_files():
-        # rel example: ".", "Telangana", "Union of India", "Telangana/Subdir"
-        jurisdiction = ""
-        if rel and rel != ".":
-            jurisdiction = rel.split(os.sep, 1)[0]
-        if not jurisdiction:
-            jurisdiction = "Union of India"
-        groups.setdefault(jurisdiction, []).append(base)
+    act_name_map = _load_act_names_from_summaries()
+    raw_data_dir = os.path.dirname(_BARE_ACTS_DIR)
 
-    for acts in groups.values():
-        acts.sort()
+    for entry in os.scandir(_BARE_ACTS_DIR):
+        if not entry.is_dir():
+            continue
+        jurisdiction = entry.name
+        acts: list[dict] = []
+        for root, _, files in os.walk(entry.path):
+            for fname in files:
+                if not fname.lower().endswith(".txt"):
+                    continue
+                full = os.path.join(root, fname)
+                rel = os.path.relpath(full, raw_data_dir).replace("\\", "/")
+                act_name = act_name_map.get(rel, "") or os.path.splitext(fname)[0]
+                acts.append({"name": act_name, "file": rel})
+        if acts:
+            acts.sort(key=lambda a: a["name"])
+            groups[jurisdiction] = acts
+
     return groups
 
 
@@ -1207,16 +1257,240 @@ def caselaws_json(name: str = Query(..., description="Base name of the case JSON
     return data
 
 
+def _serve_raw_txt_as_html(file_rel: str, title: str) -> HTMLResponse:
+    """Serve a raw_data/ txt file as a simple readable HTML page."""
+    raw_data_dir = os.path.dirname(_BARE_ACTS_DIR)
+    raw_path = os.path.abspath(os.path.join(raw_data_dir, file_rel.replace("/", os.sep)))
+    if not raw_path.startswith(os.path.abspath(raw_data_dir)):
+        raise HTTPException(status_code=400, detail="Invalid file path")
+    if not os.path.isfile(raw_path):
+        raise HTTPException(status_code=404, detail="File not found")
+    content = open(raw_path, encoding="utf-8", errors="replace").read()
+    is_case = file_rel.startswith("CaseLaws/") or "/CaseLaws/" in file_rel
+    return HTMLResponse(content=_format_legal_html(content, title, is_case=is_case))
+
+
+def _format_legal_html(text: str, title: str, is_case: bool = False) -> str:
+    """
+    Convert a raw bare-act / case-law TXT into a clean, readable HTML page.
+    Section and subsection numbers are rendered inline with their text.
+    A Print/PDF button is included at the top.
+    For case laws (is_case=True), numbered paragraphs are merged across line
+    breaks so the text flows naturally.
+    """
+    import html as _h
+    import re as _re
+
+    body_parts: list[str] = []
+
+    if is_case:
+        # ── Case law: render raw text as-is ─────────────────────────────────
+        body_parts.append(f'<pre class="case-raw">{_h.escape(text)}</pre>')
+
+    else:
+        # ── Bare act: section-aware line-by-line parsing ────────────────────
+        lines = [l.rstrip() for l in text.splitlines()]
+
+        # Patterns
+        SEC_RE   = _re.compile(r'^(\d+[A-Z]?)\.\s*$')          # "14." alone
+        SUB_RE   = _re.compile(r'^(\([0-9a-zA-Z]+\))\s*$')      # "(1)" or "(a)" alone
+        HEAD_RE  = _re.compile(r'^(PART|CHAPTER|SCHEDULE)\b', _re.I)
+        BRACKET_LINE_RE = _re.compile(r'^\[.*\]\s*$')            # editorial notes "[...]"
+
+        def next_nonempty(idx):
+            j = idx + 1
+            while j < len(lines) and not lines[j].strip():
+                j += 1
+            return j
+
+        i = 0
+        while i < len(lines):
+            raw = lines[i]
+            line = raw.strip()
+
+            if not line:
+                i += 1
+                continue
+
+            # ── Section heading: "14." on its own line ───────────────────────
+            m = SEC_RE.match(line)
+            if m:
+                num = m.group(1)
+                j = next_nonempty(i)
+                heading = _h.escape(lines[j].strip()) if j < len(lines) else ""
+                body_parts.append(
+                    f'<div class="section">'
+                    f'<span class="sec-num">{_h.escape(num)}.</span> '
+                    f'<span class="sec-title">{heading}</span>'
+                    f'</div>'
+                )
+                i = j + 1 if j < len(lines) else i + 1
+                continue
+
+            # ── Subsection: "(1)" or "(a)" on its own line ───────────────────
+            m = SUB_RE.match(line)
+            if m:
+                marker = m.group(1)
+                j = next_nonempty(i)
+                sub_text = _h.escape(lines[j].strip()) if j < len(lines) else ""
+                body_parts.append(
+                    f'<p class="subsection">'
+                    f'<span class="sub-marker">{_h.escape(marker)}</span> {sub_text}'
+                    f'</p>'
+                )
+                i = j + 1 if j < len(lines) else i + 1
+                continue
+
+            # ── Part / Chapter / Schedule heading ────────────────────────────
+            if HEAD_RE.match(line) or (line.isupper() and 4 < len(line) < 80 and not BRACKET_LINE_RE.match(line)):
+                body_parts.append(f'<h2 class="chapter">{_h.escape(line)}</h2>')
+                i += 1
+                continue
+
+            # ── Editorial note in brackets ────────────────────────────────
+            if BRACKET_LINE_RE.match(line):
+                body_parts.append(f'<p class="editorial">{_h.escape(line)}</p>')
+                i += 1
+                continue
+
+            # ── Plain paragraph ───────────────────────────────────────────
+            body_parts.append(f'<p>{_h.escape(line)}</p>')
+            i += 1
+
+    body_html = "\n".join(body_parts)
+    t = _h.escape(title)
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{t}</title>
+<style>
+  body {{
+    font-family: Georgia, 'Times New Roman', serif;
+    max-width: 860px;
+    margin: 36px auto;
+    padding: 0 28px 60px;
+    line-height: 1.8;
+    color: #1a1a1a;
+    font-size: 15px;
+  }}
+  h1 {{
+    font-size: 1.25em;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 24px;
+  }}
+  h2.chapter {{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 28px;
+    margin-bottom: 4px;
+    color: #444;
+  }}
+  div.section {{
+    margin-top: 20px;
+    margin-bottom: 4px;
+  }}
+  .sec-num {{
+    font-weight: bold;
+    font-size: 1em;
+    color: #111;
+  }}
+  .sec-title {{
+    font-weight: bold;
+  }}
+  p {{
+    margin: 4px 0 4px 0;
+  }}
+  p.subsection {{
+    margin: 4px 0 4px 1.6em;
+  }}
+  .sub-marker {{
+    font-weight: 600;
+    min-width: 2em;
+    display: inline-block;
+  }}
+  p.editorial {{
+    color: #666;
+    font-style: italic;
+    font-size: 0.9em;
+    margin: 2px 0 2px 1.6em;
+  }}
+  pre.case-raw {{
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+  }}
+  /* Download / print button */
+  #dl-bar {{
+    position: sticky;
+    top: 0;
+    background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    padding: 8px 0 8px 0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 100;
+  }}
+  #dl-bar h1 {{
+    margin: 0;
+    border: none;
+    padding: 0;
+    font-size: 1em;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }}
+  #pdf-btn {{
+    background: #1a56db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 16px;
+    font-size: 0.88em;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }}
+  #pdf-btn:hover {{ background: #1648c0; }}
+  @media print {{
+    #dl-bar {{ display: none; }}
+    body {{ margin: 0; padding: 16px; }}
+  }}
+</style>
+</head>
+<body>
+<div id="dl-bar">
+  <h1>{t}</h1>
+  <button id="pdf-btn" onclick="window.print()">⬇ Download PDF</button>
+</div>
+{body_html}
+</body>
+</html>"""
+
+
 @app.get("/bareacts/view", response_class=HTMLResponse)
-def bareacts_view(name: str = Query(..., description="Base name of the act JSON (e.g. ADVOCATES_Act)")):
-    """
-    Render a statute JSON from legal_database/json_output as a readable HTML document.
-    Sections are ordered numerically and long sections that were split into
-    sub-chunks are recombined in display order.
-    """
+def bareacts_view(
+    file: str = Query(None, description="Path relative to raw_data/ e.g. BareActs/Telangana/1948_0.txt"),
+    name: str = Query(None, description="Legacy: act name (fallback to JSON output)"),
+):
+    """Render a bare act as HTML. Prefers file= (raw txt); falls back to name= (JSON output)."""
     if not _USE_LEGAL_DATABASE:
-        raise HTTPException(status_code=400, detail="JSON endpoint requires NYAYMALAW_DATA_SOURCE=legal_database")
-    data = _get_json_from_legal_db(name, is_statute=True)
+        raise HTTPException(status_code=400, detail="Requires NYAYMALAW_DATA_SOURCE=legal_database")
+
+    if file:
+        return _serve_raw_txt_as_html(file, name or file.split("/")[-1])
+
+    # Legacy fallback: look up by name in json_output
+    data = _get_json_from_legal_db(name or "", is_statute=True)
     if not data:
         raise HTTPException(status_code=404, detail="Act not found")
 
@@ -1379,15 +1653,18 @@ def bareacts_view(name: str = Query(..., description="Base name of the act JSON 
 
 
 @app.get("/caselaws/view", response_class=HTMLResponse)
-def caselaws_view(name: str = Query(..., description="Base name of the case JSON (e.g. ABHILASHA_V_PARKASH)")):
-    """
-    Render a case-law JSON from legal_database/json_output as a readable HTML document.
-    Paragraphs are shown in logical order (paragraph_id) so that any chunking
-    for indexing does not affect the reading flow.
-    """
+def caselaws_view(
+    file: str = Query(None, description="Path relative to raw_data/ e.g. CaseLaws/Supreme Court/case.txt"),
+    name: str = Query(None, description="Legacy: case name (fallback to JSON output)"),
+):
+    """Render a case law as HTML. Prefers file= (raw txt); falls back to name= (JSON output)."""
     if not _USE_LEGAL_DATABASE:
-        raise HTTPException(status_code=400, detail="JSON endpoint requires NYAYMALAW_DATA_SOURCE=legal_database")
-    data = _get_json_from_legal_db(name, is_statute=False)
+        raise HTTPException(status_code=400, detail="Requires NYAYMALAW_DATA_SOURCE=legal_database")
+
+    if file:
+        return _serve_raw_txt_as_html(file, name or file.split("/")[-1])
+
+    data = _get_json_from_legal_db(name or "", is_statute=False)
     if not data:
         raise HTTPException(status_code=404, detail="Case not found")
 
@@ -1883,7 +2160,7 @@ def chat(request: ChatRequest):
             facts_summary=result["facts_summary"],
             intent=result.get("intent", "legal_opinion"),
             document_types=result.get("document_types", "both"),
-            search_strategy=result.get("search_strategy", "local_then_web"),
+            search_strategy=result.get("search_strategy", "local_only"),
             result_count=result.get("result_count"),
         )
         return resp_result
@@ -1924,7 +2201,7 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
                 facts_summary=result["facts_summary"],
                 intent=result.get("intent", "legal_opinion"),
                 document_types=result.get("document_types", "both"),
-                search_strategy=result.get("search_strategy", "local_then_web"),
+                search_strategy=result.get("search_strategy", "local_only"),
                 result_count=result.get("result_count"),
                 chat_mode=mode,
             )
@@ -1989,7 +2266,7 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
                 facts_summary=result["facts_summary"],
                 intent=result.get("intent", "legal_opinion"),
                 document_types=result.get("document_types", "both"),
-                search_strategy=result.get("search_strategy", "local_then_web"),
+                search_strategy=result.get("search_strategy", "local_only"),
                 result_count=result.get("result_count"),
                 chat_mode=mode,
             )
@@ -2037,7 +2314,7 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
                 facts_summary=result["facts_summary"],
                 intent=result.get("intent", "legal_opinion"),
                 document_types=result.get("document_types", "both"),
-                search_strategy=result.get("search_strategy", "local_then_web"),
+                search_strategy=result.get("search_strategy", "local_only"),
                 result_count=result.get("result_count"),
             )
         if result.get("phase") == "done":
@@ -2079,7 +2356,7 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
                 facts_summary=result["facts_summary"],
                 intent=result.get("intent", "legal_opinion"),
                 document_types=result.get("document_types", "both"),
-                search_strategy=result.get("search_strategy", "local_then_web"),
+                search_strategy=result.get("search_strategy", "local_only"),
                 result_count=result.get("result_count"),
                 progress_callback=progress_callback,
                 chat_mode=mode,
@@ -2127,7 +2404,7 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
                 facts_summary=result["facts_summary"],
                 intent=result.get("intent", "legal_opinion"),
                 document_types=result.get("document_types", "both"),
-                search_strategy=result.get("search_strategy", "local_then_web"),
+                search_strategy=result.get("search_strategy", "local_only"),
                 result_count=result.get("result_count"),
                 progress_callback=progress_callback,
                 chat_mode=mode,
@@ -2148,6 +2425,8 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
 def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue, user_id: str, bare_acts: list = None, mode: str | None = None) -> None:
     """Run interview_step logic with progress streaming."""
     try:
+        t_total = time.perf_counter()
+
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
         def step_callback(step_data: dict):
@@ -2155,14 +2434,21 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
         def token_callback(token: str):
             queue.put(("token", {"content": token}))
 
+        t_conv = time.perf_counter()
         conv = [{"role": "user", "content": facts}]
         for qa in qa_history:
             conv.append({"role": "assistant", "content": qa.question})
             conv.append({"role": "user", "content": qa.answer})
         current_message = qa_history[-1].answer if qa_history else ""
+        _log_pipeline_step(
+            "interview_step.build_conversation",
+            (time.perf_counter() - t_conv) * 1000,
+            f"qa_turns={len(qa_history)} bare_acts={'yes' if bare_acts else 'no'}",
+        )
 
         if bare_acts:
             # User is answering the bare-acts follow-up question — go straight to final opinion
+            t_phase = time.perf_counter()
             result = process_chat(
                 conversation=conv,
                 current_message=current_message,
@@ -2174,7 +2460,13 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
                 step_callback=step_callback,
                 token_callback=token_callback,
             )
+            _log_pipeline_step(
+                "interview_step.process_chat.bare_acts_review",
+                (time.perf_counter() - t_phase) * 1000,
+                f"phase={result.get('phase')}",
+            )
         else:
+            t_phase = time.perf_counter()
             result = process_chat(
                 conversation=conv,
                 current_message=current_message,
@@ -2185,8 +2477,14 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
                 step_callback=step_callback,
                 token_callback=token_callback,
             )
+            _log_pipeline_step(
+                "interview_step.process_chat.fact_collection",
+                (time.perf_counter() - t_phase) * 1000,
+                f"phase={result.get('phase')}",
+            )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
+            t_phase = time.perf_counter()
             result = process_chat(
                 conversation=conv,
                 current_message=result["facts_summary"],
@@ -2194,12 +2492,17 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
                 facts_summary=result["facts_summary"],
                 intent=result.get("intent", "legal_opinion"),
                 document_types=result.get("document_types", "both"),
-                search_strategy=result.get("search_strategy", "local_then_web"),
+                search_strategy=result.get("search_strategy", "local_only"),
                 result_count=result.get("result_count"),
                 progress_callback=progress_callback,
                 chat_mode=mode,
                 step_callback=step_callback,
                 token_callback=token_callback,
+            )
+            _log_pipeline_step(
+                "interview_step.process_chat.response_generation",
+                (time.perf_counter() - t_phase) * 1000,
+                f"phase={result.get('phase')}",
             )
         if result.get("phase") == "done":
             increment_query_count(user_id)
@@ -2207,6 +2510,11 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
         if result.get("phase") == "bare_acts_presented":
             _fire_feedback_log_bare_acts(result, facts=facts, session_ref=str(user_id))
         queue.put(("result", _map_chat_result_to_ui(result)))
+        _log_pipeline_step(
+            "interview_step.total",
+            (time.perf_counter() - t_total) * 1000,
+            f"final_phase={result.get('phase')}",
+        )
     except Exception as e:
         logger.exception("Stream interview_step failed")
         queue.put(("result", _chat_error_fallback(str(e)[:200])))
@@ -2724,6 +3032,10 @@ async def startup_validation():
     ollama = check_ollama_health()
     if ollama.get("ollama_reachable") and ollama.get("model_loaded"):
         logger.info("✓ Ollama reachable, model '%s' loaded", ollama["model"])
+        if warmup_ollama_model(ollama["model"]):
+            logger.info("✓ Ollama model '%s' warmed and kept alive", ollama["model"])
+        else:
+            logger.warning("⚠ Ollama model '%s' could not be warmed at startup", ollama["model"])
     elif ollama.get("ollama_reachable"):
         logger.warning("⚠ Ollama reachable but model '%s' NOT found. Run: ollama pull %s", ollama["model"], ollama["model"])
     else:
@@ -2779,6 +3091,15 @@ async def startup_validation():
         logger.info("✓ All indexes pre-loaded into RAM (queries will serve from cache)")
     except Exception as _preload_err:
         logger.warning("⚠ Index pre-load failed (will load on first request): %s", _preload_err)
+
+    # Pre-load few-shot examples so the first intake request does not parse the
+    # markdown corpus and JSONL files on the critical path.
+    try:
+        from training.few_shot_retriever import preload_examples
+        preload_examples()
+        logger.info("✓ Few-shot examples pre-loaded into memory")
+    except Exception as _fewshot_err:
+        logger.warning("⚠ Few-shot pre-load failed (will load on first request): %s", _fewshot_err)
 
     logger.info("=" * 60)
 

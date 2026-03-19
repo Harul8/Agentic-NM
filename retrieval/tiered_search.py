@@ -199,94 +199,26 @@ def search_tier2_official(
     search_type: str = "both",
 ) -> list:
     """
-    Tier 2: Search official court websites and India Code.
-
-    search_type: "bare_act" = only legislation (India Code, legislative.gov.in); no court judgments.
-    "case_law" = only courts (Supreme Court, High Court judgments). "both" = all.
+    Search exclusively on indiankanoon.org for both bare acts and case laws.
     """
+    ik_query = f"{query} site:indiankanoon.org"
+    raw = _ddgs_search(ik_query, max_results=max_results)
+
     results = []
+    seen: set[str] = set()
+    for r in raw:
+        url = r.get("url", "")
+        if "indiankanoon.org" not in url.lower():
+            continue
+        if url in seen:
+            continue
+        seen.add(url)
+        r["source_tag"] = OFFICIAL_SOURCE_TAG
+        r["tier"] = 2
+        results.append(r)
 
-    # India Code / legislation (for bare acts) — only when we want acts, not judgments
-    if search_type in ("bare_act", "both"):
-        ic_query = f"{query} site:indiacode.nic.in"
-        ic_results = _ddgs_search(ic_query, max_results=max_results if search_type == "bare_act" else 5)
-        for r in ic_results:
-            url = r.get("url", "")
-            if is_blocked_source(url):
-                continue
-            if "indiacode.nic.in" not in url.lower():
-                continue
-            r["source_tag"] = OFFICIAL_SOURCE_TAG
-            r["tier"] = 2
-            results.append(r)
-
-        # Legislative.gov.in (central acts)
-        leg_query = f"{query} site:legislative.gov.in"
-        leg_results = _ddgs_search(leg_query, max_results=3)
-        for r in leg_results:
-            url = r.get("url", "")
-            if is_blocked_source(url):
-                continue
-            if "legislative.gov.in" not in url.lower():
-                continue
-            r["source_tag"] = OFFICIAL_SOURCE_TAG
-            r["tier"] = 2
-            results.append(r)
-
-    # Supreme Court & High Courts (judgments only) — only when we want case laws
-    if search_type in ("case_law", "both"):
-        sc_query = f"{query} site:sci.gov.in judgment"
-        sc_results = _ddgs_search(sc_query, max_results=max_results)
-        for r in sc_results:
-            url = r.get("url", "")
-            if is_blocked_source(url):
-                continue
-            url_lower = url.lower()
-            if "sci.gov.in" not in url_lower:
-                continue
-            # Filter out non-judgment SCI pages: cause lists, case status trackers,
-            # NJDG portals, and SCI home/navigation pages all score -10 to -11
-            # in the cross-encoder and waste fetch time.  Only accept URLs whose
-            # path suggests actual judgment or order content.
-            _JUDGMENT_PATH_MARKERS = (
-                "/judgment", "/judgement", "/judgments", "/judgements",
-                "/order", "/supct", ".pdf",
-            )
-            if not any(marker in url_lower for marker in _JUDGMENT_PATH_MARKERS):
-                logger.debug("sci.gov.in: skipping non-judgment URL: %s", url[:100])
-                continue
-            r["source_tag"] = OFFICIAL_SOURCE_TAG
-            r["tier"] = 2
-            results.append(r)
-
-        # Relevant High Court
-        if jurisdiction_state:
-            state_lower = jurisdiction_state.lower().strip()
-            hc_domain = HC_DOMAIN_BY_STATE.get(state_lower)
-            if hc_domain:
-                hc_query = f"{query} site:{hc_domain}"
-                hc_results = _ddgs_search(hc_query, max_results=max_results)
-                for r in hc_results:
-                    url = r.get("url", "")
-                    if is_blocked_source(url):
-                        continue
-                    domain_clean = hc_domain.replace("https://", "").replace("http://", "").replace("www.", "")
-                    if domain_clean not in url.lower():
-                        continue
-                    r["source_tag"] = OFFICIAL_SOURCE_TAG
-                    r["tier"] = 2
-                    results.append(r)
-
-    # Deduplicate by URL
-    seen = set()
-    unique = []
-    for r in results:
-        if r["url"] not in seen:
-            seen.add(r["url"])
-            unique.append(r)
-
-    logger.info(f"Tier 2 search: {len(unique)} results for '{query[:80]}'")
-    return unique
+    logger.info(f"indiankanoon.org search: {len(results)} results for '{query[:80]}'")
+    return results
 
 
 def tiered_search(

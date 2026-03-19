@@ -191,12 +191,12 @@ def _call_llm(prompt: str) -> str:
     Call the configured LLM for the AI Gate review.
 
     Tries (in order):
-      1. Ollama local (OLLAMA_MODEL env var, default qwen3:8b)
+      1. Ollama local (OLLAMA_MODEL env var, default qwen3.5:9b)
       2. OpenAI-compatible endpoint (OPENAI_API_KEY + OPENAI_BASE_URL)
     Returns the raw text content of the response.
     """
     # ── 1. Ollama ──────────────────────────────────────────────────────────
-    ollama_model = os.environ.get("OLLAMA_MODEL", "qwen3:8b")
+    ollama_model = os.environ.get("OLLAMA_MODEL", "qwen3.5:9b")
     try:
         import requests as _req
         resp = _req.post(

@@ -156,6 +156,101 @@ def _cap_bare_acts_by_score(bare_acts: list, cap: int) -> list:
     return sorted(bare_acts, key=lambda x: x.get("_rerank_score", 0), reverse=True)[:cap]
 
 
+_RE_DISALLOWED_LEGACY_CODES = re.compile(
+    r"\b(?:IPC|Indian Penal Code|CrPC|Code of Criminal Procedure|IEA|Indian Evidence Act)\b",
+    re.IGNORECASE,
+)
+_RE_SECTION_CITATION = re.compile(r"\bsections?\s+([0-9A-Za-z,\sand]+)", re.IGNORECASE)
+
+
+def _local_only_no_materials_message() -> str:
+    """Strict fallback when an answer cannot be grounded in the local vector store."""
+    return (
+        "I don't have grounded data for this query in the local vector store. "
+        "I can only answer legal questions from locally retrieved bare act provisions and case laws. "
+        "Please index the relevant materials or rephrase the query."
+    )
+
+
+def _is_local_db_source(item: dict) -> bool:
+    """True when a retrieved item came from the local vector store."""
+    return (item.get("source_tag") or "").strip().upper() == "LOCAL_DB"
+
+
+def _filter_materials_to_local_db(bare_acts: list | None, case_laws: list | None) -> tuple[list, list]:
+    """Keep only LOCAL_DB materials and drop nested related case laws from other sources."""
+    local_bare: list = []
+    for ba in bare_acts or []:
+        if not _is_local_db_source(ba):
+            continue
+        clone = dict(ba)
+        clone["related_case_laws"] = [
+            cl for cl in (clone.get("related_case_laws") or [])
+            if _is_local_db_source(cl)
+        ]
+        local_bare.append(clone)
+
+    local_case = [cl for cl in (case_laws or []) if _is_local_db_source(cl)]
+    return local_bare, local_case
+
+
+def _filter_dispute_results_to_local_db(dispute_results: list | None) -> list:
+    """Keep only local bare acts and case laws inside dispute-level retrieval results."""
+    filtered: list = []
+    for dr in dispute_results or []:
+        local_bare, local_case = _filter_materials_to_local_db(
+            dr.get("bare_acts"),
+            dr.get("case_laws"),
+        )
+        clone = dict(dr)
+        clone["bare_acts"] = local_bare
+        clone["case_laws"] = local_case
+        filtered.append(clone)
+    return filtered
+
+
+def _extract_cited_section_numbers(text: str) -> set[str]:
+    """Extract section numbers mentioned in generated output."""
+    found: set[str] = set()
+    for match in _RE_SECTION_CITATION.finditer(text or ""):
+        for sec in re.findall(r"\d+[A-Za-z]?", match.group(1), flags=re.IGNORECASE):
+            found.add(sec.lower())
+    return found
+
+
+def _build_allowed_section_numbers(bare_acts: list | None) -> set[str]:
+    """Build the set of section numbers actually present in retrieved local materials."""
+    allowed: set[str] = set()
+    for ba in bare_acts or []:
+        sec = str(ba.get("section_number") or "").strip().lower()
+        if sec:
+            allowed.add(sec)
+    return allowed
+
+
+def _violates_local_grounding(text: str, bare_acts: list | None) -> bool:
+    """Detect unsupported legal citations in model output."""
+    if not (text or "").strip():
+        return False
+    if _RE_DISALLOWED_LEGACY_CODES.search(text):
+        return True
+
+    cited_sections = _extract_cited_section_numbers(text)
+    allowed_sections = _build_allowed_section_numbers(bare_acts)
+    if cited_sections and not allowed_sections:
+        return True
+    return any(sec not in allowed_sections for sec in cited_sections)
+
+
+def _enforce_local_grounding(text: str, bare_acts: list | None) -> str:
+    """Return a strict local-only fallback if the model output cites unsupported law."""
+    cleaned = (text or "").strip()
+    if _violates_local_grounding(cleaned, bare_acts):
+        logger.warning("Blocked unsupported legal citations in generated output; returning local-only fallback")
+        return _local_only_no_materials_message()
+    return cleaned
+
+
 # Keywords that identify rent/tenant/eviction disputes for act-preference (ToPA over Contract Act 294A)
 _RENT_EVICTION_KEYWORDS = frozenset({
     "rent", "tenant", "landlord", "eviction", "lease", "tenancy",
@@ -1113,29 +1208,15 @@ def _web_search_bare_acts(dispute: dict, full_query: str, round1_queries: list =
 
     try:
         gap_results = search_for_gaps(web_gaps, jurisdiction_state=states[0] if states else "")
-        enrichment = enrich_from_gap_results(
-            gap_results,
-            original_query=full_query,
-            local_high_quality_count=0,
-            target_high_quality=0,
-            skip_index=True,
-            pending_only=True,
-        )
     except Exception as e:
         logger.error("Web search bare acts failed for dispute '%s': %s", dispute_text[:60], e)
         return []
 
-    # pending_only: no fetch — enriched items have content="". Append to pending for UI; return no web sections.
-    if pending_indexing_list is not None:
-        for enriched in enrichment.get("enriched_bare_acts", []):
-            url = (enriched.get("url") or "").strip()
-            if url and url.startswith(("http://", "https://")):
-                pending_indexing_list.append({
-                    "title": (enriched.get("title") or "Unknown").strip(),
-                    "source_url": url,
-                    "suggested_category": "bare_act",
-                })
-    # No content to chunk — do not run fetch/chunk path; return [] so answer uses local-only.
+    logger.info(
+        "Indiankanoon bare-act search: %d results for dispute '%s'",
+        len(gap_results.get("bare_act_results", [])),
+        dispute_text[:60],
+    )
     return []
 
 
@@ -1506,7 +1587,19 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
     if top_acts and allowed_acts:
         def _act_in_llm_list(act: str, llm_acts: frozenset) -> bool:
             al = act.lower()
-            return any(la.lower() in al or al in la.lower() for la in llm_acts)
+            for la in llm_acts:
+                la_l = la.lower()
+                # 1. Direct substring match (original check)
+                if la_l in al or al in la_l:
+                    return True
+                # 2. Word-overlap match — catches aliases like "Land Acquisition Act 1894"
+                #    vs "...Land Acquisition...Rules 2014".  Strip stop-words by requiring
+                #    4+ character words so "act", "the", "and" don't create false positives.
+                al_words = set(re.findall(r'\b[a-z]{4,}\b', al))
+                la_words = set(re.findall(r'\b[a-z]{4,}\b', la_l))
+                if len(al_words & la_words) >= 1:
+                    return True
+            return False
         llm_intersect = {a for a in top_acts if _act_in_llm_list(a, allowed_acts)}
         if llm_intersect:
             dropped = top_acts - llm_intersect
@@ -1516,8 +1609,21 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
                     dispute_id, list(dropped), list(allowed_acts),
                 )
             top_acts = llm_intersect
-        # else: llm_intersect empty means the LLM act names don't fuzzy-match anything
-        # the reranker found — fall back to reranker selection (likely an alias mismatch).
+        else:
+            # llm_intersect empty: LLM-identified act (e.g. "Land Acquisition Act 1894")
+            # is not indexed locally. Log it so we can investigate, but don't silently
+            # keep all reranker acts — that allows completely unrelated acts (Prisons,
+            # HMDA) to slip through. Fall back to the top 1 reranker act only.
+            best_act = max(top_acts, key=lambda a: max(
+                (c.get("_rerank_score", 0) for c in all_local if (c.get("act_name") or "").strip() == a),
+                default=0,
+            ))
+            logger.info(
+                "[%s] LLM-act guard: no word-overlap match found — LLM acts=%s; "
+                "falling back to top reranker act '%s' only (was: %s)",
+                dispute_id, list(allowed_acts), best_act, list(top_acts),
+            )
+            top_acts = {best_act}
 
     if top_acts:
         before = len(all_local)
@@ -1663,12 +1769,11 @@ def _apply_dispute_case_law_limit(case_laws: list, num_sections: int = 1) -> lis
 def _web_search_case_laws(dispute: dict, bare_act_sections: list, full_query: str, states: list = None, pending_indexing_list: list = None) -> list:
     """
     Web search for case laws for one dispute, using the richer dispute+sections query.
-    Uses pending_only enrichment: no fetch in-request; results go to pending_indexing_list for UI.
-    Returns [] so answer is local-only; indexing happens when user runs Pending indexing.
+    Runs an Indiankanoon-only web search for case laws.
+    This path no longer builds pending-indexing candidates.
+    Returns [] so answer remains grounded in locally indexed materials only.
     """
     from retrieval.tiered_search import search_for_gaps
-    from retrieval.auto_enricher import enrich_from_gap_results
-
     dispute_text = dispute.get("dispute", "")
     dispute_id = dispute.get("id", "?")
     gap_query = _build_case_law_query(dispute_text, bare_act_sections)
@@ -1677,31 +1782,13 @@ def _web_search_case_laws(dispute: dict, bare_act_sections: list, full_query: st
     gaps = [{"query": gap_query, "type": "case_law"}]
     try:
         gap_results = search_for_gaps(gaps, jurisdiction_state=states[0] if states else "")
-        enrichment = enrich_from_gap_results(
-            gap_results,
-            original_query=full_query,
-            local_high_quality_count=0,
-            target_high_quality=TARGET_HIGH_QUALITY_CASE_LAWS,
-            skip_index=True,
-            pending_only=True,
-        )
     except Exception as e:
         logger.error("Web search case laws failed for dispute '%s': %s", dispute_text[:60], e)
         return []
 
-    # pending_only: no fetch — append to pending for UI; return [] so answer uses local-only.
-    if pending_indexing_list is not None:
-        for enriched in enrichment.get("enriched_case_laws", []):
-            url = (enriched.get("url") or "").strip()
-            if url and url.startswith(("http://", "https://")):
-                pending_indexing_list.append({
-                    "title": (enriched.get("title") or "Unknown").strip(),
-                    "source_url": url,
-                    "suggested_category": "case_law",
-                })
     logger.info(
-        "[%s] Web case laws (pending_only): %d candidates for Pending indexing UI (no fetch).",
-        dispute_id, len(enrichment.get("enriched_case_laws", [])),
+        "[%s] Indiankanoon case-law search: %d results.",
+        dispute_id, len(gap_results.get("case_law_results", [])),
     )
     return []
 
@@ -1903,9 +1990,9 @@ def _explain_sections_and_get_followup(dispute_text: str, bare_acts: list, conve
 
     try:
         raw = ask_llm(prompt)
-        # Strip any preamble before the first '{'
-        raw = raw[raw.find("{"):].strip() if "{" in raw else raw
-        parsed = json.loads(raw)
+        parsed = _extract_json(raw)
+        if not parsed or not isinstance(parsed, dict):
+            raise ValueError("No valid JSON dict found in LLM response")
     except Exception as e:
         logger.warning("_explain_sections_and_get_followup: LLM/JSON failed (%s). Using sections as-is.", e)
         return {"bare_acts": bare_acts, "followup_question": None}
@@ -2225,6 +2312,7 @@ def generate_final_opinion_with_case_laws(
     from collections import OrderedDict
     from prompts.advocate_prompts import STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT
 
+    bare_acts, _ = _filter_materials_to_local_db(bare_acts, None)
     full_facts = facts_summary
     if (additional_info or "").strip():
         full_facts = f"{facts_summary}\n\nAdditional information provided by client: {additional_info.strip()}"
@@ -2281,6 +2369,11 @@ def generate_final_opinion_with_case_laws(
                 logger.warning("generate_final_opinion_with_case_laws: case law error: %s", exc)
 
     all_case_laws = _deduplicate_case_laws(all_case_laws)
+    _, all_case_laws = _filter_materials_to_local_db(None, all_case_laws)
+    case_laws_by_dispute = {
+        did: [cl for cl in cls if _is_local_db_source(cl)]
+        for did, cls in case_laws_by_dispute.items()
+    }
 
     # --- Link case laws to sections within each dispute group ---
     all_bare_acts_with_cases: list = []
@@ -2288,6 +2381,7 @@ def generate_final_opinion_with_case_laws(
         grp_case_laws = case_laws_by_dispute.get(did, [])
         grp["sections_with_cases"] = _link_case_laws_to_sections(grp["sections"], grp_case_laws)
         grp["sections_with_cases"] = _distribute_case_laws_across_sections(grp["sections_with_cases"])
+        grp["sections_with_cases"], _ = _filter_materials_to_local_db(grp["sections_with_cases"], None)
         all_bare_acts_with_cases.extend(grp["sections_with_cases"])
 
     # --- Build dispute_blocks_text for STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT ---
@@ -2319,6 +2413,15 @@ def generate_final_opinion_with_case_laws(
         dispute_blocks.append("\n".join(lines))
 
     dispute_blocks_text = "\n".join(dispute_blocks) or "None retrieved."
+    if not all_bare_acts_with_cases and not all_case_laws:
+        return {
+            "bare_act_sections": [],
+            "case_laws": [],
+            "internet_case_laws": [],
+            "explanation": _local_only_no_materials_message(),
+            "progress": None,
+            "indexing_candidates": [],
+        }
 
     # --- Build strict citation allowlist ---
     _final_sec_allowlist = [
@@ -2339,21 +2442,11 @@ def generate_final_opinion_with_case_laws(
         f"RETRIEVED MATERIALS BY DISPUTE COMPONENT above."
     )
 
-    # --- Few-shot opinion example injection ---
-    opinion_few_shot = ""
-    try:
-        from training.few_shot_retriever import get_opinion_example
-        opinion_few_shot = get_opinion_example(full_facts) or ""
-        if opinion_few_shot:
-            opinion_few_shot = f"\n\n{opinion_few_shot}\n"
-    except Exception:
-        pass
-
     opinion_prompt = STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT.format(
         dispute_facts=full_facts[:800],
         additional_info=(additional_info or "None provided").strip(),
         dispute_blocks_text=dispute_blocks_text,
-    ) + opinion_few_shot + _allowlist_suffix
+    ) + _allowlist_suffix
 
     if progress_callback:
         progress_callback({"step": "opinion", "message": "Generating structured legal opinion…"})
@@ -2376,8 +2469,7 @@ def generate_final_opinion_with_case_laws(
         logger.error("generate_final_opinion_with_case_laws: opinion LLM failed: %s", e)
         opinion_text = "I was unable to generate a structured opinion at this time. Please try again."
 
-    # Indexing candidates from pending_only web search (bare acts + case laws) for Pending indexing UI.
-    indexing_candidates = _build_indexing_candidates_from_pending_list(pending_indexing_list or [])
+    opinion_text = _enforce_local_grounding(opinion_text, all_bare_acts_with_cases)
 
     return {
         "bare_act_sections": all_bare_acts_with_cases,
@@ -2385,7 +2477,7 @@ def generate_final_opinion_with_case_laws(
         "internet_case_laws": [],
         "explanation": opinion_text,
         "progress": None,
-        "indexing_candidates": indexing_candidates,
+        "indexing_candidates": [],
     }
 
 
@@ -2450,8 +2542,14 @@ def generate_response_v2(
             except Exception:
                 pass
 
+    if intent in ("legal_opinion", "search", "lookup") and search_strategy != "local_only":
+        logger.info(
+            "Overriding legal search strategy '%s' -> 'local_only' for strict local vector store grounding",
+            search_strategy,
+        )
+        search_strategy = "local_only"
     if search_strategy not in ("local_only", "web_only", "local_then_web"):
-        search_strategy = "local_then_web"
+        search_strategy = "local_only"
 
     # Intent extraction — used for query expansion
     research_intent = None
@@ -2539,9 +2637,18 @@ def generate_response_v2(
                 bare_d = [ba for ba in bare_d if ba.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_bare_act(ba)]
             elif search_strategy == "local_only":
                 from retrieval.hybrid_retriever import search_bare_acts_auto
-                kw = " ".join(dispute.get("keywords", []))
-                q = f"{d_text} {kw}".strip()[:400]
-                raw = search_bare_acts_auto(q, top_k=50)
+                # Multi-query: run all _build_bare_act_queries and merge by best score per section.
+                queries_ba = _build_bare_act_queries(dispute)
+                seen_ba: dict = {}
+                for _q_ba in queries_ba:
+                    for _ba in search_bare_acts_auto(_q_ba, top_k=30):
+                        _key = (
+                            (_ba.get("act_name") or "").strip().lower(),
+                            (_ba.get("section_number") or "").strip().lower(),
+                        )
+                        if _ba.get("_rerank_score", 0) > (seen_ba.get(_key) or {}).get("_rerank_score", -999):
+                            seen_ba[_key] = _ba
+                raw = list(seen_ba.values())
                 bare_d = [ba for ba in raw if ba.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_bare_act(ba)]
             else:
                 bare_d = retrieve_bare_acts_for_dispute(dispute, facts_summary, states=_states, debug=_local_debug, pending_indexing_list=_local_pending)
@@ -2565,11 +2672,65 @@ def generate_response_v2(
                 case_d = _apply_dispute_case_law_limit([cl for cl in raw_cl if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)])
             elif search_strategy == "local_only":
                 from retrieval.hybrid_retriever import search_case_laws_auto
-                q = _build_case_law_query(d_text, bare_d)
-                raw_cl = search_case_laws_auto(q, top_k=50)
+                # Multi-query: base dispute query + up to 2 section-anchored queries, merge best per chunk.
+                _q_base = _build_case_law_query(d_text, bare_d)
+                _queries_cl = [_q_base]
+                for _ba in bare_d[:2]:
+                    _act = (_ba.get("act_name") or "").strip()
+                    _sec = (_ba.get("section_number") or "").strip()
+                    if _act and _sec:
+                        _queries_cl.append(f"Section {_sec} {_act} case law interpretation")
+                _queries_cl = list(dict.fromkeys(_queries_cl))[:3]
+                seen_cl: dict = {}
+                for _q_cl in _queries_cl:
+                    for _cl in search_case_laws_auto(_q_cl, top_k=20):
+                        _ck = _cl.get("_chunk_key") or (
+                            (_cl.get("case_name") or "").lower() + "|" + (_cl.get("full_text", "")[:100])
+                        )
+                        if _cl.get("_rerank_score", 0) > (seen_cl.get(_ck) or {}).get("_rerank_score", -999):
+                            seen_cl[_ck] = _cl
+                raw_cl = list(seen_cl.values())
                 case_d = _apply_dispute_case_law_limit([cl for cl in raw_cl if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)])
             else:
                 case_d = retrieve_case_laws_for_dispute(dispute, bare_d, facts_summary, states=_states, debug=_local_debug, pending_indexing_list=_local_pending)
+
+            # Citation graph expansion: boost recall by fetching chunks for cases
+            # that the retrieved cases cite (forward) or that cite them (backward).
+            # Runs after all retrieval paths so it always supplements the best results.
+            if case_d:
+                try:
+                    from retrieval.citation_graph import (
+                        expand_case_names_by_precedent,
+                        get_chunks_by_case_names,
+                    )
+                    from retrieval.hybrid_retriever import load_chunks as _hr_load_chunks
+                    from config import CASE_CHUNKS_V2
+                    _top_names = [
+                        cl.get("case_name", "")
+                        for cl in case_d
+                        if cl.get("case_name")
+                    ]
+                    _extra_names, _ = expand_case_names_by_precedent(_top_names, max_extra=8)
+                    if _extra_names:
+                        _chunks_dict = _hr_load_chunks(CASE_CHUNKS_V2)
+                        _exp_chunks = get_chunks_by_case_names(_chunks_dict, _extra_names, max_total=6)
+                        if _exp_chunks:
+                            _existing_names = {
+                                (cl.get("case_name") or "").strip().lower()
+                                for cl in case_d
+                            }
+                            _new = [
+                                c for c in _exp_chunks
+                                if (c.get("case_name") or "").strip().lower() not in _existing_names
+                                and _is_quality_case_law(c)
+                            ]
+                            if _new:
+                                logger.info(
+                                    "[%s] Citation graph expansion: +%d cases added", d_id, len(_new)
+                                )
+                                case_d = case_d + _new
+                except Exception as _cg_err:
+                    logger.debug("[%s] Citation graph expansion skipped: %s", d_id, _cg_err)
 
             if case_d:
                 sc_count = sum(1 for cl in case_d if "supreme" in (cl.get("court") or cl.get("source") or "").lower())
@@ -2637,6 +2798,8 @@ def generate_response_v2(
     formatted_bare = _format_bare_acts(all_bare_raw)
     formatted_case = _format_case_laws(all_case_raw_div, user_query=facts_summary)
     formatted_bare = _match_case_laws_to_bare_acts(formatted_bare, formatted_case)
+    formatted_bare, _ = _filter_materials_to_local_db(formatted_bare, None)
+    local_dispute_results = _filter_dispute_results_to_local_db(dispute_results)
 
     # Search-only: wrap case laws in a bare-act shell so UI renders them
     if intent == "search" and not formatted_bare and formatted_case:
@@ -2645,7 +2808,7 @@ def generate_response_v2(
             "act_name": "Case laws",
             "title": "Case laws (search results)",
             "text": "",
-            "related_case_laws": formatted_case[:limit],
+            "related_case_laws": [cl for cl in formatted_case[:limit] if _is_local_db_source(cl)],
             "source_tag": "LOCAL_DB",
         }]
 
@@ -2701,7 +2864,7 @@ def generate_response_v2(
         else:
             # Legal opinion: structured by dispute (Dispute Summary → Section + why + precedents per component → Legal Position)
             explanation = _generate_structured_opinion_by_dispute(
-                facts_summary, dispute_results, additional_info="",
+                facts_summary, local_dispute_results, additional_info="",
                 token_callback=token_callback,
             )
             if not (explanation or "").strip():
@@ -2713,15 +2876,13 @@ def generate_response_v2(
             explanation = "Here's what I found for your query. Below are the relevant legal provisions with related case laws."
         if explanation and "I don't have any data" in explanation:
             explanation = _format_no_materials_message(search_strategy, None)
+        explanation = _enforce_local_grounding(explanation, formatted_bare)
 
     sources_used = set()
     for ba in formatted_bare:
         sources_used.add(ba.get("source_tag", "LOCAL_DB"))
         for cl in ba.get("related_case_laws", []):
             sources_used.add(cl.get("source_tag", "LOCAL_DB"))
-
-    # Indexing candidates: from pending_only web search (no fetch in-request; user indexes via UI).
-    indexing_candidates = _build_indexing_candidates_from_pending_list(pending_indexing_list)
 
     # Finish the main research/opinion group
     progress.finish_group()
@@ -2778,7 +2939,7 @@ def generate_response_v2(
         "needs_confirmation": False,
         "internet_case_laws": [],             # backward compat
         "progress": progress.get_progress(),
-        "indexing_candidates": indexing_candidates,
+        "indexing_candidates": [],
         "dispute_breakdown": [
             {
                 "dispute_id": dr["dispute"].get("id"),
@@ -3347,37 +3508,33 @@ def _generate_structured_opinion_by_dispute(
     If token_callback is provided, streams tokens to it and returns the collected text.
     """
     if not dispute_results:
-        return RELEVANCE_EXPLANATION_NO_MATERIALS
+        return _local_only_no_materials_message()
 
     dispute_blocks_text = _build_dispute_blocks_text(dispute_results)
     if dispute_blocks_text.strip() == "No dispute components with retrieved materials.":
-        return RELEVANCE_EXPLANATION_NO_MATERIALS
+        return _local_only_no_materials_message()
 
     from prompts.advocate_prompts import STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT
-
-    # --- Few-shot opinion example injection ---
-    opinion_few_shot = ""
-    try:
-        from training.few_shot_retriever import get_opinion_example
-        opinion_few_shot = get_opinion_example(facts_summary) or ""
-        if opinion_few_shot:
-            opinion_few_shot = f"\n\n{opinion_few_shot}\n"
-    except Exception:
-        pass
 
     prompt = STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT.format(
         dispute_facts=facts_summary[:1200],
         additional_info=(additional_info or "None provided").strip(),
         dispute_blocks_text=dispute_blocks_text,
-    ) + opinion_few_shot
+    )
     try:
         if token_callback:
             full_text = ""
             for token in ask_llm_stream(prompt):
                 token_callback(token)
                 full_text += token
-            return full_text.strip()
-        return ask_llm(prompt).strip()
+            local_bare = []
+            for dr in dispute_results:
+                local_bare.extend(dr.get("bare_acts") or [])
+            return _enforce_local_grounding(full_text.strip(), local_bare)
+        local_bare = []
+        for dr in dispute_results:
+            local_bare.extend(dr.get("bare_acts") or [])
+        return _enforce_local_grounding(ask_llm(prompt).strip(), local_bare)
     except Exception as e:
         logger.error("Structured opinion by dispute failed: %s", e)
         return ""
@@ -3392,6 +3549,9 @@ def _generate_legal_opinion(
 ) -> str:
     """Generate a formal legal opinion with citations and source tags. on_before_llm(prompt) is called before LLM if provided."""
     # Check if we have any materials at all
+    bare_acts, case_laws = _filter_materials_to_local_db(bare_acts, case_laws)
+    bare_acts, case_laws = _filter_materials_to_local_db(bare_acts, case_laws)
+    bare_acts, case_laws = _filter_materials_to_local_db(bare_acts, case_laws)
     has_bare_acts = bool(bare_acts and len(bare_acts) > 0)
     has_case_laws = bool(case_laws and len(case_laws) > 0)
     
@@ -3401,7 +3561,7 @@ def _generate_legal_opinion(
 {facts[:200]}
 
 ## Analysis and Conclusion
-{RELEVANCE_EXPLANATION_NO_MATERIALS}"""
+{_local_only_no_materials_message()}"""
 
     bare_text = json.dumps(
         [{"title": b.get("title"), "text": b.get("text", "")[:500], "source_tag": b.get("source_tag")}
@@ -3454,7 +3614,7 @@ Generate the legal analysis:"""
     try:
         if callable(on_before_llm):
             on_before_llm(prompt)
-        return ask_llm(prompt).strip()
+        return _enforce_local_grounding(ask_llm(prompt).strip(), bare_acts)
     except Exception as e:
         logger.error(f"Opinion generation failed: {e}")
         return ""
@@ -3480,15 +3640,15 @@ def _generate_conversational_summary(
     # Fix: only return no-materials when the specific requested type is empty AND nothing
     # else is available either (truly empty response).
     if not has_bare_acts and not has_case_laws:
-        return RELEVANCE_EXPLANATION_NO_MATERIALS
+        return _local_only_no_materials_message()
 
     # For lookup: bare-acts are primary. For search: case laws are primary.
     # If the primary type is missing but the secondary is present, fall through
     # to generate a summary of whatever was found (intent treated as generic).
     if intent == "lookup" and not has_bare_acts:
-        return RELEVANCE_EXPLANATION_NO_MATERIALS
+        return _local_only_no_materials_message()
     if intent == "search" and not has_case_laws and not has_bare_acts:
-        return RELEVANCE_EXPLANATION_NO_MATERIALS
+        return _local_only_no_materials_message()
 
     bare_text = json.dumps(
         [{"title": b.get("title"), "text": b.get("text", "")[:300]}
@@ -3576,8 +3736,8 @@ Response:"""
             for token in ask_llm_stream(prompt):
                 token_callback(token)
                 full_text += token
-            return full_text.strip()
-        return ask_llm(prompt).strip()
+            return _enforce_local_grounding(full_text.strip(), bare_acts)
+        return _enforce_local_grounding(ask_llm(prompt).strip(), bare_acts)
     except Exception as e:
         logger.error(f"Summary generation failed: {e}")
         return ""
@@ -3609,6 +3769,11 @@ def _format_no_materials_message(search_strategy: str, web_search_stats: Optiona
             f"I searched the web and found {wf} act(s)/law(s). After relevance checks, {sl} were shortlisted. "
             f"I'm proposing {prop} for indexing; {already} are already in your library. "
             "None of the retrieved materials met the relevance threshold for the answer above—try rephrasing with specific section numbers, Act names, or a different legal angle."
+        )
+    if search_strategy == "local_only":
+        return (
+            "I searched the local vector store only and found no relevant bare act provisions or case laws. "
+            "Try rephrasing with specific section numbers, Act names, or a different legal angle."
         )
     if search_strategy == "web_only":
         return (

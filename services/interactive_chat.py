@@ -2,7 +2,6 @@
 Interactive Chat Orchestrator — Handles multi-phase legal chat flow:
 1. Fact collection (professional advocate intake) with intent detection
 2. Response generation (bare acts + case laws + structured opinion)
-3. Material confirmation & indexing
 
 Phase 2 cleanup:
 - Greeting logic moved to fact_collector (is_greeting + generate_greeting_response)
@@ -71,13 +70,12 @@ def _run_bare_acts_phase(facts_summary: str, progress_callback=None, states: lis
     conversation_history: full chat history so the followup-question generator can avoid
       repeating questions that were already asked during intake.
     """
-    pending_indexing_list = []
+    t_phase = time.perf_counter()
     try:
         result = retrieve_bare_acts_phase(
             facts_summary,
             progress_callback=progress_callback,
             states=states or [],
-            pending_indexing_list=pending_indexing_list,
             conversation_history=conversation_history or [],
             step_callback=step_callback,
         )
@@ -89,6 +87,11 @@ def _run_bare_acts_phase(facts_summary: str, progress_callback=None, states: lis
     disputes   = result.get("disputes", [])   # per-dispute groupings for UI rendering
     followup_question = result.get("followup_question")
     intro_text = result.get("intro_text", "Here are the relevant bare act sections I found.")
+    _log_step(
+        "_run_bare_acts_phase",
+        (time.perf_counter() - t_phase) * 1000,
+        f"bare_acts={len(bare_acts)} disputes={len(disputes)} followup={'yes' if followup_question else 'no'}",
+    )
 
     # If no follow-up needed and we have sections, we can still present them before
     # the user confirms to proceed — keep phase as bare_acts_presented in all cases.
@@ -111,17 +114,16 @@ def _run_bare_acts_phase(facts_summary: str, progress_callback=None, states: lis
         "response_type": "bare_acts_presented",
         "materials_to_confirm": None,
         "indexed": False,
-        "pending_indexing_list": pending_indexing_list,
     }
 
 
-def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_info: str, progress_callback=None, states: list = None, pending_indexing_list: list = None, step_callback=None, token_callback=None) -> dict:
+def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_info: str, progress_callback=None, states: list = None, step_callback=None, token_callback=None) -> dict:
     """
     New Phase B: given collected facts + already-retrieved bare acts + any additional user info,
     retrieve case laws, associate them with sections, and generate the structured final opinion.
     states: optional list of state names (e.g. from Phase A) so web search is jurisdiction-aware.
-    pending_indexing_list: optional list from Phase A (web bare-act URLs); Phase B appends case-law URLs for Pending indexing UI.
     """
+    t_phase = time.perf_counter()
     try:
         resp = generate_final_opinion_with_case_laws(
             facts_summary,
@@ -129,7 +131,6 @@ def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_in
             additional_info=additional_info,
             progress_callback=progress_callback,
             states=states or [],
-            pending_indexing_list=pending_indexing_list,
             step_callback=step_callback,
             token_callback=token_callback,
         )
@@ -150,6 +151,11 @@ def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_in
         resp_safety = check_response_safety(explanation)
         if not resp_safety.get("safe"):
             explanation = "I was unable to generate a safe response for this query. Please rephrase."
+    _log_step(
+        "_run_final_with_case_laws",
+        (time.perf_counter() - t_phase) * 1000,
+        f"bare_acts={len(resp.get('bare_act_sections', []))} case_laws={len(resp.get('case_laws', []))}",
+    )
 
     return {
         "phase": "done",
@@ -169,7 +175,7 @@ def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_in
     }
 
 
-def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_count: int = None, progress_callback=None, search_strategy: str = "local_then_web", step_callback=None, token_callback=None) -> dict:
+def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_count: int = None, progress_callback=None, search_strategy: str = "local_only", step_callback=None, token_callback=None) -> dict:
     """Handle search/lookup intents: go straight to research and return results."""
     # Always retrieve both bare acts AND case laws regardless of intent.
     # The original "acts_only"/"case_laws_only" split was too aggressive:
@@ -423,7 +429,7 @@ def process_chat(
         # so Gate 1 can never downgrade to GENERALIST when the user chose legal mode.
         force_legal = mode == "legal_opinion"
         t_before_fact = time.perf_counter()
-        result = get_next_question_or_complete(conversation, current_message, force_legal=force_legal)
+        result = get_next_question_or_complete(conversation, current_message, force_legal=force_legal, token_callback=token_callback)
         _log_step("get_next_question_or_complete", (time.perf_counter() - t_before_fact) * 1000, f"action={result.get('action')}")
 
         if result.get("action") == "complete":
@@ -433,7 +439,7 @@ def process_chat(
 
             if intent in ("search", "lookup"):
                 count = result.get("result_count")
-                strategy = result.get("search_strategy", "local_then_web")
+                strategy = result.get("search_strategy", "local_only")
                 _log_step("FACT_COLLECTION → retrieval (search/lookup)", (time.perf_counter() - t_pipeline_start) * 1000, f"facts_len={len(facts or '')}")
                 return _run_search_or_lookup(facts, intent, msg, result_count=count, progress_callback=progress_callback, search_strategy=strategy, step_callback=step_callback, token_callback=token_callback)
 
@@ -457,15 +463,12 @@ def process_chat(
             )
             return _run_bare_acts_phase(facts, progress_callback=progress_callback, states=states, conversation_history=conversation, step_callback=step_callback)
 
-        # Still collecting facts — stream the question token-by-token then return.
+        # Still collecting facts — tokens were already streamed inside _run_single_gate
+        # when token_callback was provided.  Just return the structured result.
         _log_step("fact_collection DONE (ask)", (time.perf_counter() - t_pipeline_start) * 1000)
-        question = (result.get("question") or "").strip()
-        if token_callback and question:
-            for word in question.split(" "):
-                token_callback(word + " ")
         return {
             "phase": "fact_collection",
-            "message": question,
+            "message": result.get("question") or result.get("message", current_message),
             "facts_summary": None,
             "response": None,
             "response_type": None,
@@ -479,7 +482,7 @@ def process_chat(
         facts = facts_summary or current_message
         use_intent = intent or "legal_opinion"
         use_document_types = document_types or "both"
-        use_search_strategy = search_strategy or "local_then_web"
+        use_search_strategy = search_strategy or "local_only"
         use_result_count = result_count
         t_before_gen = time.perf_counter()
         try:
@@ -558,13 +561,11 @@ def process_chat(
         # The user replied to the follow-up question shown after bare act presentation.
         # additional_info = user's answer; bare_acts = sections from Phase A (passed by frontend).
         # states = from Phase A response so case-law web search is jurisdiction-aware.
-        # pending_indexing_list = from Phase A so Pending indexing UI gets both bare-act and case-law URLs.
         facts = facts_summary or current_message
         additional_info = current_message
         stored_bare_acts = bare_acts or []
-        pending_from_phase_a = pending_indexing_list if pending_indexing_list is not None else []
         return _run_final_with_case_laws(
-            facts, stored_bare_acts, additional_info, progress_callback=progress_callback, states=states or [], pending_indexing_list=pending_from_phase_a, step_callback=step_callback, token_callback=token_callback,
+            facts, stored_bare_acts, additional_info, progress_callback=progress_callback, states=states or [], step_callback=step_callback, token_callback=token_callback,
         )
 
     # ---- Phase: Confirm Index ----

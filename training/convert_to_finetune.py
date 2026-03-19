@@ -44,6 +44,7 @@ from pathlib import Path
 EXAMPLES_DIR = Path(__file__).parent / "examples"
 OUTPUT_DIR   = Path(__file__).parent / "finetune_ready"
 OUTPUT_DIR.mkdir(exist_ok=True)
+RICH_FILE    = EXAMPLES_DIR / "rich_cases" / "rich_training_records.jsonl"
 
 # ── Short system prompt for fine-tuned model ──────────────────────────────────
 # After training, this replaces the current 300-line FACT_COLLECTION_SYSTEM.
@@ -99,6 +100,52 @@ def write_jsonl(path: Path, records: list[dict]) -> None:
     print(f"  Written {len(records)} examples → {path}")
 
 
+def _conversation_for_example(ex: dict) -> list[dict]:
+    return (
+        ex.get("conversation")
+        or ex.get("intake_conversation", {}).get("conversation")
+        or []
+    )
+
+
+def _opinion_text_for_example(ex: dict) -> str:
+    return (
+        ex.get("opinion_text")
+        or ex.get("final_opinion", {}).get("opinion_text")
+        or ""
+    ).strip()
+
+
+def _case_type_for_example(ex: dict) -> str:
+    return ex.get("case_type") or ex.get("legal_domain") or "unknown"
+
+
+def _description_for_example(ex: dict) -> str:
+    return (
+        ex.get("description")
+        or ex.get("client_scenario", {}).get("presenting_problem")
+        or ex.get("case_name")
+        or ""
+    )
+
+
+def _merge_by_id(*groups: list[dict]) -> list[dict]:
+    """
+    Merge multiple example groups, preserving first-seen preference by id.
+    Rich records should be passed before legacy ones.
+    """
+    out: list[dict] = []
+    seen: set[str] = set()
+    for group in groups:
+        for ex in group:
+            ex_id = ex.get("id")
+            if not ex_id or ex_id in seen:
+                continue
+            seen.add(ex_id)
+            out.append(ex)
+    return out
+
+
 # ── Intake converter ──────────────────────────────────────────────────────────
 
 def convert_intake(examples: list[dict]) -> list[dict]:
@@ -114,7 +161,7 @@ def convert_intake(examples: list[dict]) -> list[dict]:
     """
     records = []
     for ex in examples:
-        conversation = ex.get("conversation", [])
+        conversation = _conversation_for_example(ex)
         if not conversation:
             continue
 
@@ -133,8 +180,8 @@ def convert_intake(examples: list[dict]) -> list[dict]:
                     ),
                     "_meta": {
                         "source_id":   ex["id"],
-                        "case_type":   ex["case_type"],
-                        "description": ex["description"],
+                        "case_type":   _case_type_for_example(ex),
+                        "description": _description_for_example(ex),
                     }
                 }
                 records.append(record)
@@ -157,13 +204,13 @@ def convert_opinions(examples: list[dict]) -> list[dict]:
     """
     records = []
     for ex in examples:
-        opinion_text = ex.get("opinion_text", "").strip()
+        opinion_text = _opinion_text_for_example(ex)
         if not opinion_text:
             continue
 
         # Reconstruct a plausible user prompt (facts + empty retrieved block)
         user_content = (
-            f"CLIENT FACTS:\n{ex['description']}\n\n"
+            f"CLIENT FACTS:\n{_description_for_example(ex)}\n\n"
             "RETRIEVED LEGAL MATERIALS GROUPED BY DISPUTE:\n"
             "[Retrieved sections and case laws would be inserted here by the pipeline]\n\n"
             "Please prepare the structured legal opinion."
@@ -177,8 +224,8 @@ def convert_opinions(examples: list[dict]) -> list[dict]:
             ],
             "_meta": {
                 "source_id":   ex["id"],
-                "case_type":   ex["case_type"],
-                "description": ex["description"],
+                "case_type":   _case_type_for_example(ex),
+                "description": _description_for_example(ex),
             }
         }
         records.append(record)
@@ -206,14 +253,23 @@ def print_stats(records: list[dict], label: str) -> None:
 def main() -> None:
     print("\n=== Nyaymalaw → Fine-Tune Converter ===\n")
 
-    # Load raw examples
-    intake_raw  = load_jsonl(EXAMPLES_DIR / "intake_conversations.jsonl")
-    opinion_raw = load_jsonl(EXAMPLES_DIR / "final_opinions.jsonl")
-    print(f"Loaded {len(intake_raw)} intake examples, {len(opinion_raw)} opinion examples")
+    # Load raw examples, preferring the richer unified records and falling back to
+    # the older split legacy files only when needed.
+    rich_raw          = load_jsonl(RICH_FILE)
+    legacy_intake_raw = load_jsonl(EXAMPLES_DIR / "intake_conversations.jsonl")
+    legacy_op_raw     = load_jsonl(EXAMPLES_DIR / "final_opinions.jsonl")
+    merged_raw        = _merge_by_id(rich_raw, legacy_intake_raw, legacy_op_raw)
+
+    print(
+        f"Loaded {len(rich_raw)} rich records, "
+        f"{len(legacy_intake_raw)} legacy intake records, "
+        f"{len(legacy_op_raw)} legacy opinion records"
+    )
+    print(f"Using {len(merged_raw)} unique records for conversion")
 
     # Convert
-    intake_records  = convert_intake(intake_raw)
-    opinion_records = convert_opinions(opinion_raw)
+    intake_records  = convert_intake(merged_raw)
+    opinion_records = convert_opinions(merged_raw)
 
     print_stats(intake_records,  "Intake fine-tune records")
     print_stats(opinion_records, "Opinion fine-tune records")
@@ -230,7 +286,10 @@ def main() -> None:
     print("  2. Adjust INTAKE_SYSTEM / OPINION_SYSTEM at top of this file if needed")
     print("  3. Run Unsloth with finetune_ready/intake_finetune.jsonl + opinion_finetune.jsonl")
     print("  4. Export merged model to GGUF → load in Ollama as 'nyaymalaw-ft'")
-    print("  5. Gradually shorten live prompts as fine-tuned behaviour is verified\n")
+    print("  5. Gradually shorten live prompts as fine-tuned behaviour is verified")
+    print("  NOTE: curated_* markdown examples are now used directly by the live few-shot retriever.")
+    print("        They are not yet auto-converted here because the compact curated format is")
+    print("        optimized for inference-time behavior guidance, not one-to-one chat JSON export.\n")
 
 
 if __name__ == "__main__":
