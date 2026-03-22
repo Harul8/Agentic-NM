@@ -1,10 +1,9 @@
 """
-Response Generator v2 — Full legal research pipeline with:
+Response Generator v2 — Local-first legal research pipeline with:
 - Hybrid retrieval (FAISS + BM25 + cross-encoder re-ranking)
-- LLM-driven sufficiency analysis (no hard numeric limits)
-- Tiered internet search (official courts → legal portals → newspapers)
-- Auto-enrichment (PDFs saved to Google Drive, indexed to vector store)
-- Source tagging ([LOCAL_DB], [OFFICIAL] = government sources, [LEGAL_PORTAL], [NEWS_REFERENCE])
+- Local vector-store grounding for legal analysis
+- Narrow Indiankanoon fallback only when local retrieval returns no relevant
+  bare acts and/or case laws
 
 This replaces the old response_generator.py's generate_response() function.
 The old module is preserved for backward compatibility — this new module is
@@ -15,6 +14,7 @@ import os
 import json
 import logging
 import re
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Optional
@@ -28,8 +28,6 @@ from config import (
 from llm.ollama_client import ask_llm, ask_llm_stream, get_model_display_for_prompt, get_gpu_info
 from prompts.advocate_prompts import (
     EXPAND_LEGAL_QUERY_SYSTEM,
-    EXTRACT_BARE_ACT_PORTIONS_SYSTEM,
-    EXTRACT_CASE_PORTIONS_SYSTEM,
     CASE_SUMMARY_SYSTEM,
     RELEVANCE_EXPLANATION_SYSTEM,
     RELEVANCE_EXPLANATION_NO_MATERIALS,
@@ -44,6 +42,10 @@ from prompts.advocate_prompts import (
 from services.progress_tracker import ProgressTracker
 
 logger = logging.getLogger(__name__)
+_ENABLE_CITATION_GRAPH_EXPANSION = os.environ.get("ENABLE_CITATION_GRAPH_EXPANSION", "").lower() in ("1", "true", "yes")
+_ENABLE_CASE_SUMMARY_LLM = os.environ.get("ENABLE_CASE_SUMMARY_LLM", "").lower() in ("1", "true", "yes")
+_ENABLE_BARE_ACT_LLM_FILTER = os.environ.get("ENABLE_BARE_ACT_LLM_FILTER", "").lower() in ("1", "true", "yes")
+_ENABLE_CASE_LAW_LLM_FILTER = os.environ.get("ENABLE_CASE_LAW_LLM_FILTER", "").lower() in ("1", "true", "yes")
 
 # Relevance and quality thresholds — keep only high-quality, recent materials
 MIN_RERANK_SCORE = 0.5  # Minimum score to include in pool. ms-marco cross-encoder logits:
@@ -52,7 +54,7 @@ MIN_RERANK_SCORE = 0.5  # Minimum score to include in pool. ms-marco cross-encod
                         # BNSS/BNS/BSA sections (typical scores 0.5–3.0 for plain-language queries).
                         # The per-dispute hard cap (MAX_SECTIONS_PER_DISPUTE_TOTAL) then keeps
                         # only the top N by score. Raised from 0.0 (allowed all noise) to 0.5.
-HIGH_QUALITY_SCORE = 5.0  # Case laws with score > this: "highly relevant"; stop web search if we have 5+; index web PDFs only if > this
+HIGH_QUALITY_SCORE = 5.0  # Case laws with score > this: "highly relevant"
 BARE_ACT_HIGH_QUALITY_SCORE = 2.0  # Bare-act equivalent. ms-marco scores for on-topic legal sections
                                    # cluster around 2–3; using 2.0 (not 5.0) as the HQ threshold for
                                    # bare acts so the auto-stop and LLM-sufficiency tiers fire correctly.
@@ -66,9 +68,10 @@ FLEXIBLE_MIN_FALLBACK = 10  # Minimum results to show when no user limit and not
 
 # Section caps — keep retrieval focused while still allowing connected statutory provisions
 # to appear together in the final opinion for one dispute.
-MAX_WEB_SECTIONS_PER_DISPUTE = 5    # Top N chunks kept from web search per dispute (by doc/section score)
 MAX_SECTIONS_PER_DISPUTE_TOTAL = 5  # Hard cap per dispute after local+web+xref merge (top N by score)
 MAX_BARE_ACTS_OVERALL = 12          # Safety cap on total sections sent to UI across all disputes
+MAX_SECTIONS_PER_DISPUTE_FOR_OPINION = 3
+MAX_CASE_LAWS_PER_DISPUTE = 3
 
 # Act-level pre-filter (for 100+ act indexes)
 # An act qualifies if its highest-scoring section clears this threshold.
@@ -78,14 +81,7 @@ MAX_BARE_ACTS_OVERALL = 12          # Safety cap on total sections sent to UI ac
 ACT_SELECTION_MIN_SCORE = 5.0
 ACT_SELECTION_MAX_ACTS  = 4   # Never take more than 4 even if many qualify
 
-# Web search fallback threshold.
-# If the BEST local section score is below this, the local index doesn't have a
-# confident match — trigger web search regardless of section count.
-# ms-marco logits: 8+ = "exact match" (BNS 115 for assault, TP Act 54 for sale).
-# Only trigger web when local result count is low (roadmap: not by score threshold).
-# Score-based trigger caused almost every request to hit the internet.
-WEB_SEARCH_MIN_LOCAL_COUNT = 3  # if len(local_results) < this, allow web search
-# Legacy: kept for logging; no longer used to force web
+WEB_SEARCH_MIN_LOCAL_COUNT = 3  # legacy constant retained for compatibility
 WEB_SEARCH_FALLBACK_MIN_SCORE = 8.0
 
 # ---------------------------------------------------------------------------
@@ -149,6 +145,67 @@ def _detect_new_criminal_codes(dispute_text: str, legal_nature: str) -> dict:
     return result
 
 
+def _is_quality_bare_act(section: dict) -> bool:
+    """
+    Lightweight bare-act quality guard for the final analysis lane.
+
+    Keep sections that have a plausible act name, section identifier, and usable text.
+    This avoids obvious junk while letting the reranker score decide relevance.
+    """
+    if not isinstance(section, dict):
+        return False
+    act_name = (section.get("act_name") or "").strip()
+    sec_num = str(section.get("section_number") or "").strip()
+    text = (
+        section.get("text")
+        or section.get("full_text")
+        or section.get("search_text")
+        or ""
+    ).strip()
+    if not act_name or len(act_name) < 4:
+        return False
+    if not sec_num:
+        return False
+    if not text or len(text) < 25:
+        return False
+    junk_markers = ("unknown", "not available", "no text", "n/a")
+    low = f"{act_name} {text[:120]}".lower()
+    if any(marker in low for marker in junk_markers):
+        return False
+    return True
+
+
+def _is_quality_case_law(case_law: dict) -> bool:
+    """
+    Lightweight case-law quality guard for the final analysis lane.
+
+    Keep final-judgment-style results with a real case/source name and usable text.
+    Strong ranking and court-ordering still happen elsewhere.
+    """
+    if not isinstance(case_law, dict):
+        return False
+    case_name = (
+        case_law.get("case_name")
+        or case_law.get("title")
+        or case_law.get("source")
+        or ""
+    ).strip()
+    text = (
+        case_law.get("text")
+        or case_law.get("full_text")
+        or case_law.get("search_text")
+        or ""
+    ).strip()
+    if not case_name or len(case_name) < 6:
+        return False
+    if not text or len(text) < 60:
+        return False
+    low_name = case_name.lower()
+    if any(p in low_name for p in JUNK_CASE_PATTERNS):
+        return False
+    return True
+
+
 def _cap_bare_acts_by_score(bare_acts: list, cap: int) -> list:
     """Return top `cap` bare acts sorted by _rerank_score descending."""
     if not bare_acts or cap <= 0:
@@ -161,6 +218,10 @@ _RE_DISALLOWED_LEGACY_CODES = re.compile(
     re.IGNORECASE,
 )
 _RE_SECTION_CITATION = re.compile(r"\bsections?\s+([0-9A-Za-z,\sand]+)", re.IGNORECASE)
+_RE_EXPLICIT_LEGAL_REFERENCE = re.compile(
+    r"\b(?:section|sections|article|articles|act|code|rule|rules|bns|bnss|bsa|bharatiya|constitution|hindu marriage act|domestic violence act|juvenile justice)\b",
+    re.IGNORECASE,
+)
 
 
 def _local_only_no_materials_message() -> str:
@@ -207,6 +268,28 @@ def _filter_dispute_results_to_local_db(dispute_results: list | None) -> list:
         clone["case_laws"] = local_case
         filtered.append(clone)
     return filtered
+
+
+def _format_indiankanoon_fallback_results(results: list | None, kind: str) -> list:
+    """Shape Indiankanoon fallback results for the UI without mixing them into grounded analysis."""
+    formatted: list = []
+    seen: set[str] = set()
+    label = "Bare Act" if kind == "bare_act" else "Case Law"
+    for item in results or []:
+        url = (item.get("url") or "").strip()
+        if not url or url in seen:
+            continue
+        seen.add(url)
+        title = (item.get("title") or "").strip() or f"{label} fallback result"
+        snippet = " ".join((item.get("snippet") or item.get("text") or "").split()).strip()
+        text = snippet[:700]
+        formatted.append({
+            "title": f"[{label}] {title}",
+            "text": text,
+            "url": url,
+            "source_tag": "INDIANKANOON",
+        })
+    return formatted
 
 
 def _extract_cited_section_numbers(text: str) -> set[str]:
@@ -294,318 +377,6 @@ def _reorder_bare_acts_for_rent_disputes(bare_acts: list, dispute: dict) -> list
     return sorted(bare_acts, key=_act_priority)
 
 
-def _build_indexing_candidates_from_web_case_laws(case_laws: list) -> list:
-    """
-    Build indexing_candidates from web-sourced case laws for the Pending indexing UI.
-    Only includes case laws with a fetchable URL (http/https) and source_tag != LOCAL_DB.
-    Runs check_indexing_candidates to mark already_in_store.
-    """
-    if not case_laws:
-        return []
-    from services.indexing_duplicate_check import check_indexing_candidates
-
-    candidates = []
-    seen_urls = set()
-    for cl in case_laws:
-        url = (cl.get("url") or cl.get("source_url") or "").strip()
-        if not url or not url.startswith(("http://", "https://")):
-            continue
-        if (cl.get("source_tag") or "").upper() == "LOCAL_DB":
-            continue
-        if url in seen_urls:
-            continue
-        seen_urls.add(url)
-        title = (cl.get("case_name") or cl.get("title") or cl.get("source") or "Unknown").strip()
-        content = (cl.get("text") or cl.get("full_text") or "")[:2000]
-        candidates.append({
-            "title": title,
-            "source_url": url,
-            "suggested_category": "case_law",
-            "content": content,
-        })
-    return check_indexing_candidates(candidates)
-
-
-def _build_indexing_candidates_from_pending_list(pending_list: list) -> list:
-    """
-    Build indexing_candidates from the pending_indexing_list (web search pending_only path).
-    Each item is {title, source_url, suggested_category}. Dedupes by URL, runs
-    check_indexing_candidates to mark already_in_store.
-    """
-    if not pending_list:
-        return []
-    from services.indexing_duplicate_check import check_indexing_candidates
-
-    seen_urls = set()
-    candidates = []
-    for item in pending_list:
-        url = (item.get("source_url") or "").strip()
-        if not url or not url.startswith(("http://", "https://")) or url in seen_urls:
-            continue
-        seen_urls.add(url)
-        candidates.append({
-            "title": (item.get("title") or "Unknown").strip(),
-            "source_url": url,
-            "suggested_category": (item.get("suggested_category") or "case_law").strip(),
-            "content": item.get("content", ""),
-        })
-    return check_indexing_candidates(candidates)
-
-
-def _select_top_acts(all_local: list) -> set:
-    """
-    Act-level pre-filter for a 100+ act index.
-
-    With many acts indexed, a broad hybrid search returns sections from dozens of
-    acts (POCSO, Arms Act, Constitution ...) that happen to share adjacent concepts.
-    This function selects acts based on score quality, not a hard count:
-
-    1. For each act, find its highest-scoring section across all queries.
-    2. Keep only acts whose max score >= ACT_SELECTION_MIN_SCORE (5.0).
-       ms-marco logits: 5+ = "confident match"; 0-2 = "adjacent terminology only".
-    3. Cap at ACT_SELECTION_MAX_ACTS (4) to prevent runaway on edge cases.
-    4. Fallback: if nothing clears the threshold (index has no strong local match),
-       take the single best-scoring act rather than returning empty — empty would
-       incorrectly suppress local results and skip straight to web search.
-
-    Examples:
-      BNS=9.8, BNSS=7.2, TP Act=6.1 → all three qualify (all ≥ 5.0)
-      BNS=9.8, Arms Act=1.8          → only BNS qualifies; Arms Act dropped
-      Succession Act=4.9, CPC=3.1    → nothing qualifies; take Succession Act as fallback
-    """
-    if not all_local:
-        return set()
-
-    act_max: dict[str, float] = {}
-    for chunk in all_local:
-        act = (chunk.get("act_name") or "").strip()
-        if not act:
-            continue
-        score = chunk.get("_rerank_score", 0.0)
-        if score > act_max.get(act, -999.0):
-            act_max[act] = score
-
-    # Acts that clear the quality bar
-    qualifying = sorted(
-        [(act, score) for act, score in act_max.items() if score >= ACT_SELECTION_MIN_SCORE],
-        key=lambda x: x[1], reverse=True
-    )
-
-    if qualifying:
-        top_acts = {act for act, _ in qualifying[:ACT_SELECTION_MAX_ACTS]}
-    else:
-        # Fallback: nothing clears the 5.0 threshold.
-        # If the best act scores below 3.0 the whole local pool is the wrong domain
-        # (e.g. Copyright Act at 1.45 for an assault query). Return empty set — the
-        # caller treats empty as "no act filter applied", which means all local sections
-        # survive. Since max_local_score < WEB_SEARCH_FALLBACK_MIN_SCORE (8.0), force_web
-        # fires and web results dominate the capped list; the low-scoring local stragglers
-        # rarely beat web results in the score-sorted cap.
-        # Only use "best act" fallback when it's at least in the right ballpark (3.0–4.9):
-        # that means roughly the right legal domain even if not the exact provision.
-        best = max(act_max, key=act_max.get)
-        best_score = act_max[best]
-        if best_score < 3.0:
-            logger.info(
-                "Act pre-filter: best act '%s' scores %.2f < 3.0 — skip fallback (wrong domain); "
-                "local results will not be filtered by act; web search will fill the gap.",
-                best, best_score,
-            )
-            return set()
-        top_acts = {best}
-        logger.info(
-            "Act pre-filter: no act cleared %.1f threshold; fallback to best act '%s' (score=%.2f)",
-            ACT_SELECTION_MIN_SCORE, best, act_max[best],
-        )
-
-    logger.info(
-        "Act pre-filter: %d/%d acts qualify (min_score=%.1f, cap=%d) → %s",
-        len(qualifying), len(act_max), ACT_SELECTION_MIN_SCORE, ACT_SELECTION_MAX_ACTS, list(top_acts),
-    )
-    return top_acts
-
-
-def _is_quality_case_law(chunk: dict) -> bool:
-    """
-    Reject junk case law chunks: template text, very old (when year known).
-    Allow results with real judgment text; use source/source_file as display if case_name missing.
-    """
-    case_name = (chunk.get("case_name") or chunk.get("source") or chunk.get("source_file") or "").strip()
-    # Allow chunks that have at least a source/file name for display (not strictly require case_name)
-    if not case_name:
-        return False
-    name_lower = case_name.lower()
-    if name_lower == "unknown":
-        return False
-    for bad in JUNK_CASE_PATTERNS:
-        if bad in name_lower:
-            return False
-    # Only reject when year is present and too old; missing year is OK (we sort by year preference)
-    year_raw = chunk.get("year")
-    if year_raw is not None and year_raw != "":
-        try:
-            y = int(str(year_raw).strip()[:4])
-            if y < MIN_CASE_YEAR:
-                return False
-        except (ValueError, TypeError):
-            pass
-    text = (chunk.get("full_text") or chunk.get("text") or "").strip()
-    if len(text) < 50:
-        return False
-    return True
-
-
-def _is_quality_bare_act(chunk: dict) -> bool:
-    """Reject bare act chunks without proper act/section metadata."""
-    act_name = (chunk.get("act_name") or "").strip()
-    if not act_name or act_name.lower() == "unknown":
-        return False
-    section = (chunk.get("section_number") or "").strip()
-    if not section:
-        return False
-    text = (chunk.get("full_text") or chunk.get("text") or "").strip()
-    return len(text) >= 50
-
-
-def _case_year_for_sort(chunk: dict) -> int:
-    """Return year for sorting; 0 = unknown, use for 'prefer recent' ordering."""
-    raw = chunk.get("year")
-    if raw is None or raw == "":
-        return 0
-    try:
-        return int(str(raw).strip()[:4])
-    except (ValueError, TypeError):
-        return 0
-
-
-def _apply_flexible_result_limit(
-    items: list,
-    score_key: str = "_rerank_score",
-    user_limit: Optional[int] = None,
-    high_score: float = HIGH_QUALITY_SCORE,
-    min_score: float = MIN_RERANK_SCORE,
-    min_fallback: int = FLEXIBLE_MIN_FALLBACK,
-) -> list:
-    """
-    When user did not set a limit (user_limit is None): include all items with score > high_score;
-    if there are fewer than min_fallback, add from items with score >= min_score up to min_fallback total.
-    When user set a limit: return first user_limit items (caller ensures items already pass min_score).
-    Items without score are treated as min_score so they can be included in the fallback tier.
-    """
-    if not items:
-        return []
-    if user_limit is not None and user_limit > 0:
-        return items[:user_limit]
-    # Sort by score desc (missing score treated as min_score for inclusion in pool)
-    def _score(i):
-        s = i.get(score_key)
-        return (float(s) if s is not None else min_score)
-    sorted_items = sorted(items, key=_score, reverse=True)
-    high = [i for i in sorted_items if _score(i) > high_score]
-    rest = [i for i in sorted_items if min_score <= _score(i) <= high_score]
-    if len(high) >= min_fallback:
-        return high
-    need = min_fallback - len(high)
-    return high + rest[:need]
-
-
-# Court name → display acronym for case title (e.g. [SC] Appellant v/s Respondent)
-COURT_ACRONYMS = {
-    "supreme_court": "[SC]",
-    "supreme court": "[SC]",
-    "high_court": "[HC]",
-    "high court": "[HC]",
-    "sessions court": "[Sess. Ct.]",
-    "sessions court of": "[Sess. Ct.]",
-    "civil court": "[Civil Ct.]",
-    "district court": "[DC]",
-    "tribunal": "[Trib.]",
-    "nclt": "[NCLT]",
-    "nclat": "[NCLAT]",
-    "consumer": "[Consumer]",
-    "family court": "[Family Ct.]",
-}
-
-
-def _format_case_citation(cl: dict) -> str:
-    """Format case for display: name + (year) + court when available, so LLM can cite fully."""
-    name = (cl.get("case_name") or cl.get("title") or cl.get("source") or "Unknown").strip()
-    year = cl.get("year")
-    court = cl.get("court") or cl.get("binding_authority") or ""
-    if year or court:
-        parts = [name]
-        if year:
-            try:
-                parts.append(f"({int(str(year).strip()[:4])})")
-            except (ValueError, TypeError):
-                pass
-        if court:
-            parts.append(f"— {court.strip()}")
-        return " ".join(parts)
-    return name
-
-
-def _court_acronym(court: str, binding_authority: str, case_name_or_source: str = "") -> str:
-    """Return court acronym for display: [SC], [HC], [Sess. Ct.], [Civil Ct.], [DC], [Trib.], etc."""
-    combined = " ".join(
-        filter(None, [
-            (binding_authority or "").strip().lower(),
-            (court or "").strip().lower(),
-            (case_name_or_source or "").strip().lower(),
-        ])
-    )
-    for key, acronym in COURT_ACRONYMS.items():
-        if key in combined:
-            return acronym
-    if "supreme" in combined:
-        return "[SC]"
-    if "high court" in combined:
-        return "[HC]"
-    if "session" in combined:
-        return "[Sess. Ct.]"
-    if "civil" in combined and "court" in combined:
-        return "[Civil Ct.]"
-    if "district" in combined:
-        return "[DC]"
-    if "tribunal" in combined:
-        return "[Trib.]"
-    # Fallback: "State of X" or "v/s State of" in case name usually indicates state/High Court litigation
-    # Also check for "v/s State" or "vs State" (without "of")
-    if ("state of " in combined or " v/s state" in combined or " vs state" in combined or 
-        " v/s state" in combined or " vs state" in combined or
-        "/state" in combined.lower()):
-        return "[HC]"
-    # If case name contains "State" and looks like a court case, default to HC
-    if "state" in combined and ("v/s" in combined or "vs" in combined or "v." in combined):
-        return "[HC]"
-    return "[Court]"
-
-
-# ---------------------------------------------------------------------------
-# Gap query generation (LLM-driven when empty or generic)
-# ---------------------------------------------------------------------------
-
-def _generate_gap_search_query(facts_summary: str, legal_query: str, gap_type: str) -> Optional[str]:
-    """Generate one web search query for a gap via LLM. Returns None on failure."""
-    kind = "bare act / legislation" if gap_type == "bare_act" else "case law / court judgment"
-    prompt = f"""You are an Indian legal research assistant. We need a short web search phrase to find {kind}.
-
-User request: {facts_summary[:400]}
-Legal query: {legal_query[:300]}
-
-Generate ONE short search phrase (5-12 words) suitable for a search engine to find relevant Indian {kind}. Include India Code or Supreme Court/High Court if appropriate. Output only the search phrase, no preamble or explanation."""
-    try:
-        out = (ask_llm(prompt) or "").strip()[:200]
-        return out if out else None
-    except Exception as e:
-        logger.debug("Gap query LLM failed: %s", e)
-        return None
-
-
-# ---------------------------------------------------------------------------
-# Query Expansion (reused from v1, improved)
-# ---------------------------------------------------------------------------
-
 def expand_legal_query(facts: str, intent: dict = None) -> list[str]:
     """
     Convert plain-language facts to 1–3 legal research queries (roadmap: multi-query retrieval).
@@ -638,36 +409,68 @@ def expand_legal_query(facts: str, intent: dict = None) -> list[str]:
                         return text + " " + r  # append first missing synonym
         return ""
 
+    def _normalize_fact_query(text: str) -> str:
+        cleaned = re.sub(r"\s+", " ", (text or "").strip())
+        cleaned = re.sub(r"[\"'`]+", "", cleaned)
+        return cleaned[:300]
+
+    def _build_plain_language_variant(text: str) -> str:
+        low = text.lower()
+        tags: list[str] = []
+        if any(k in low for k in ("husband", "wife", "marriage", "marital", "spouse")):
+            tags.append("domestic violence")
+        if any(k in low for k in ("beat", "beating", "assault", "abuse", "violence", "harass")):
+            tags.append("physical abuse")
+        if any(k in low for k in ("daughter", "son", "child", "children", "minor")):
+            tags.append("child safety")
+        if any(k in low for k in ("maintenance", "support", "living expenses")):
+            tags.append("maintenance")
+        if not tags:
+            return ""
+        return f"{text} {' '.join(tags[:3])}"[:500]
+
     intent_block = ""
     if intent and isinstance(intent, dict) and (intent.get("states") or intent.get("domains") or intent.get("topics")):
         intent_block = EXPAND_LEGAL_QUERY_INTENT_BLOCK.format(intent_json=json.dumps(intent, indent=0))
 
-    prompt = f"""{EXPAND_LEGAL_QUERY_SYSTEM}
+    queries = []
+    normalized_facts = _normalize_fact_query(facts)
+    has_explicit_legal_reference = bool(_RE_EXPLICIT_LEGAL_REFERENCE.search(normalized_facts))
+
+    if has_explicit_legal_reference:
+        prompt = f"""{EXPAND_LEGAL_QUERY_SYSTEM}
 {intent_block}
 
 FACTS:
 {facts[:2000]}
 
 Query:"""
-    queries = []
-    try:
-        base = ask_llm(prompt).strip()[:500]
-        if base:
-            queries.append(base)
-    except Exception:
-        pass
+        try:
+            base = ask_llm(prompt, task_hint="fast").strip()[:500]
+            if base:
+                queries.append(base)
+        except Exception:
+            pass
     if not queries:
-        queries.append(facts[:300])
+        queries.append(normalized_facts)
 
     # Variant 2: synonym-expanded
     syn = _add_synonym_variant(queries[0])
-    if syn and syn not in [q.lower() for q in queries]:
+    existing_lower = [q.lower() for q in queries]
+    if syn and syn.lower() not in existing_lower:
         queries.append(syn[:500])
+        existing_lower.append(syn.lower())
+
+    if len(queries) < 3 and not has_explicit_legal_reference:
+        plain_variant = _build_plain_language_variant(normalized_facts)
+        if plain_variant and plain_variant.lower() not in existing_lower:
+            queries.append(plain_variant)
+            existing_lower.append(plain_variant.lower())
 
     # Variant 3: statute-style (e.g. "default in payment of rent" if "rent not paid")
     if len(queries) < 3 and "default" not in queries[0].lower() and ("rent" in queries[0].lower() or "payment" in queries[0].lower()):
         statute_style = queries[0].replace("not paid", "default in payment").replace("did not pay", "default in payment")
-        if statute_style != queries[0] and statute_style not in [q.lower() for q in queries]:
+        if statute_style != queries[0] and statute_style.lower() not in existing_lower:
             queries.append(statute_style[:500])
 
     return queries[:3]
@@ -675,31 +478,6 @@ Query:"""
 
 # ---------------------------------------------------------------------------
 # Extract relevant portions from fetched content
-# ---------------------------------------------------------------------------
-
-def extract_relevant_portions(facts: str, title: str, content: str, doc_type: str) -> str:
-    """Use LLM to extract only the relevant portions of a document."""
-    if doc_type == "bare_act":
-        system = EXTRACT_BARE_ACT_PORTIONS_SYSTEM
-    else:
-        system = EXTRACT_CASE_PORTIONS_SYSTEM
-
-    prompt = f"""{system}
-
-CASE FACTS: {facts[:500]}
-DOCUMENT TITLE: {title}
-DOCUMENT CONTENT:
-{content[:3000]}
-
-Relevant portions:"""
-    try:
-        return ask_llm(prompt).strip()
-    except Exception:
-        return content[:1500]
-
-
-# ---------------------------------------------------------------------------
-# Per-Dispute Retrieval Helpers (dispute-first pipeline)
 # ---------------------------------------------------------------------------
 
 def _summarize_bare_acts_brief(bare_acts: list) -> str:
@@ -723,13 +501,13 @@ def _summarize_bare_acts_brief(bare_acts: list) -> str:
 def _check_bare_act_sufficiency(dispute_text: str, bare_acts: list, llm_fn=None) -> bool:
     """
     Lightweight LLM check: are the retrieved bare act sections sufficient for this dispute?
-    Returns True  → stop, do not go to web.
-    Returns False → proceed to Round 2 web search.
-    Defaults to False on any error so we err on the side of searching more.
+    Returns True  → stop, local coverage is sufficient.
+    Returns False → local coverage may be incomplete.
+    Defaults to False on any error.
     """
     if llm_fn is None:
         from llm.ollama_client import ask_llm
-        llm_fn = ask_llm
+        llm_fn = lambda prompt: ask_llm(prompt, task_hint="fast")
     from prompts.advocate_prompts import BARE_ACT_DISPUTE_SUFFICIENCY_PROMPT
 
     ba_summary = _summarize_bare_acts_brief(bare_acts)
@@ -930,7 +708,7 @@ def _build_bare_act_queries(dispute: dict) -> list[str]:
                 act_hints=", ".join(bare_act_hints[:3]) or "unknown",
                 keywords=", ".join(keywords[:5]) or "none",
             )
-            raw = ask_llm(prompt).strip()
+            raw = ask_llm(prompt, task_hint="fast").strip()
             # Strip markdown fence if present
             if "```" in raw:
                 raw = raw.split("```")[1].replace("json", "").strip()
@@ -1055,7 +833,7 @@ def _web_search_bare_acts(dispute: dict, full_query: str, round1_queries: list =
     """
     Web search for bare acts targeting one dispute component.
     Runs up to 3 targeted queries instead of one generic one.
-    Returns list of bare-act-like dicts.
+    Returns generic Indiankanoon fallback results for bare acts.
 
     Query priority:
       1. search_angles from decomposer (focused plain-language phrases)
@@ -1066,8 +844,6 @@ def _web_search_bare_acts(dispute: dict, full_query: str, round1_queries: list =
       4. dispute_text[:200] — last resort when nothing else is available
     """
     from retrieval.tiered_search import search_for_gaps
-    from retrieval.auto_enricher import enrich_from_gap_results
-
     dispute_text    = dispute.get("dispute", "")
     keywords        = dispute.get("keywords", [])
     bare_act_hints  = dispute.get("bare_act_hints", [])
@@ -1212,12 +988,13 @@ def _web_search_bare_acts(dispute: dict, full_query: str, round1_queries: list =
         logger.error("Web search bare acts failed for dispute '%s': %s", dispute_text[:60], e)
         return []
 
+    bare_results = gap_results.get("bare_act_results", [])
     logger.info(
-        "Indiankanoon bare-act search: %d results for dispute '%s'",
-        len(gap_results.get("bare_act_results", [])),
+        "Indiankanoon bare-act fallback: %d results for dispute '%s'",
+        len(bare_results),
         dispute_text[:60],
     )
-    return []
+    return bare_results
 
 
 def _filter_bare_acts_with_llm(dispute: dict, bare_acts: list, debug: dict | None = None) -> list:
@@ -1226,6 +1003,8 @@ def _filter_bare_acts_with_llm(dispute: dict, bare_acts: list, debug: dict | Non
     Falls back to the original list on any error or empty filter output.
     """
     if not bare_acts:
+        return bare_acts
+    if not _ENABLE_BARE_ACT_LLM_FILTER:
         return bare_acts
 
     # Skip expensive LLM call when every section already scores above the high-quality
@@ -1280,7 +1059,7 @@ def _filter_bare_acts_with_llm(dispute: dict, bare_acts: list, debug: dict | Non
             dispute=dispute_text,
             sections_json=json.dumps(candidates, ensure_ascii=False),
         )
-        resp = ask_llm(prompt)
+        resp = ask_llm(prompt, task_hint="fast")
         data = json.loads(resp)
         keep_keys = set()
         for s in data.get("sections") or []:
@@ -1330,6 +1109,8 @@ def _filter_case_laws_with_llm(dispute: dict, bare_act_sections: list, case_laws
     Falls back to the original list on any error or empty filter output.
     """
     if not case_laws:
+        return case_laws
+    if not _ENABLE_CASE_LAW_LLM_FILTER:
         return case_laws
 
     # Skip expensive LLM call when every result already scores above the high-quality
@@ -1400,7 +1181,7 @@ def _filter_case_laws_with_llm(dispute: dict, bare_act_sections: list, case_laws
             bare_act_context=bare_act_context,
             cases_json=json.dumps(candidates, ensure_ascii=False),
         )
-        resp = ask_llm(prompt)
+        resp = ask_llm(prompt, task_hint="fast")
         data = json.loads(resp)
         keep_names = set()
         for c in data.get("cases") or []:
@@ -1461,9 +1242,10 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
         Scans retrieved chunks for "subject to Section X / as defined under Section Y"
         references and fetches those sections if not already retrieved.
 
-    Round 2 — tiered web search (bare acts only):
-        Targeted queries (act names + keywords + India Code) instead of generic.
-        → merge, deduplicate → STOP
+    External fallback:
+        If local retrieval returns zero relevant sections, the caller may query
+        Indiankanoon for fallback links/results, but those are not merged into
+        grounded local analysis here.
 
     No result cap — every section that passes quality filter is returned.
     """
@@ -1520,7 +1302,7 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
                 dispute=dispute_text[:400],
                 candidate_acts_json=json.dumps(candidate_acts, ensure_ascii=False),
             )
-            resp = ask_llm(prompt)
+            resp = ask_llm(prompt, task_hint="fast")
             data = json.loads(resp)
             refined = [
                 (a.get("act_name") or "").strip()
@@ -1645,7 +1427,7 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
     # of unrelated acts, causing Constitution / IBC / Succession Act sections to flood results.
     # Re-enable only once the index is restricted to a curated set of acts.
 
-    # Stop condition: skip Round 2 web search when local results are sufficient.
+    # Stop condition: if local retrieval found anything relevant, return it.
     # Sufficiency tiers (fastest-first, avoids unnecessary LLM calls):
     #
     #   Tier A1 — AUTO-STOP (no LLM): ≥ 5 sections score > BARE_ACT_HIGH_QUALITY_SCORE (2.0).
@@ -1661,70 +1443,52 @@ def retrieve_bare_acts_for_dispute(dispute: dict, full_query: str, states: list 
     #
     #   Tier C — ALWAYS WEB: 0 high-quality sections → proceed to Round 2 regardless.
     high_quality_local = [ba for ba in local_results if ba.get("_rerank_score", 0) > BARE_ACT_HIGH_QUALITY_SCORE]
-    _AUTO_STOP_COUNT = 3   # ≥ 3 HQ sections (score > 2.0) → skip LLM and web search entirely
-    _AUTO_STOP_VOLUME = 5  # ≥ 5 any-score sections → stop (matches MAX_SECTIONS_PER_DISPUTE_TOTAL)
+    _AUTO_STOP_COUNT = 3
+    _AUTO_STOP_VOLUME = 5
 
-    # Web search gate: only when local result count is low (roadmap: not by score).
-    # If we have at least WEB_SEARCH_MIN_LOCAL_COUNT sections, do not force web.
-    max_local_score = max((ba.get("_rerank_score", 0) for ba in local_results), default=0.0)
-    force_web = (len(local_results) < WEB_SEARCH_MIN_LOCAL_COUNT)
-    if force_web:
+    if len(high_quality_local) >= _AUTO_STOP_COUNT:
         logger.info(
-            "[%s] Local sections %d < %d — allowing web search (best score %.2f).",
-            dispute_id, len(local_results), WEB_SEARCH_MIN_LOCAL_COUNT, max_local_score,
+            "[%s] Bare acts Round 1 auto-sufficient (%d HQ sections ≥ %d, score>%.1f).",
+            dispute_id, len(high_quality_local), _AUTO_STOP_COUNT, BARE_ACT_HIGH_QUALITY_SCORE,
         )
-    else:
-        if len(high_quality_local) >= _AUTO_STOP_COUNT:
-            logger.info(
-                "[%s] Bare acts Round 1 auto-sufficient (%d HQ sections ≥ %d, score>%.1f). "
-                "Skipping LLM sufficiency call and web search.",
-                dispute_id, len(high_quality_local), _AUTO_STOP_COUNT, BARE_ACT_HIGH_QUALITY_SCORE,
-            )
-            filtered_local = _filter_bare_acts_with_llm(dispute, local_results, debug)
-            return _cap_bare_acts_by_score(
-                _reorder_bare_acts_for_rent_disputes(filtered_local, dispute),
-                MAX_SECTIONS_PER_DISPUTE_TOTAL,
-            )
+        filtered_local = _filter_bare_acts_with_llm(dispute, local_results, debug)
+        return _cap_bare_acts_by_score(
+            _reorder_bare_acts_for_rent_disputes(filtered_local, dispute),
+            MAX_SECTIONS_PER_DISPUTE_TOTAL,
+        )
 
-        if len(local_results) >= _AUTO_STOP_VOLUME:
-            logger.info(
-                "[%s] Bare acts Round 1 auto-sufficient by volume (%d sections ≥ %d). "
-                "Skipping LLM sufficiency call and web search.",
-                dispute_id, len(local_results), _AUTO_STOP_VOLUME,
-            )
-            filtered_local = _filter_bare_acts_with_llm(dispute, local_results, debug)
-            return _cap_bare_acts_by_score(
-                _reorder_bare_acts_for_rent_disputes(filtered_local, dispute),
-                MAX_SECTIONS_PER_DISPUTE_TOTAL,
-            )
+    if len(local_results) >= _AUTO_STOP_VOLUME:
+        logger.info(
+            "[%s] Bare acts Round 1 auto-sufficient by volume (%d sections ≥ %d).",
+            dispute_id, len(local_results), _AUTO_STOP_VOLUME,
+        )
+        filtered_local = _filter_bare_acts_with_llm(dispute, local_results, debug)
+        return _cap_bare_acts_by_score(
+            _reorder_bare_acts_for_rent_disputes(filtered_local, dispute),
+            MAX_SECTIONS_PER_DISPUTE_TOTAL,
+        )
 
-        if high_quality_local and local_results and _check_bare_act_sufficiency(dispute_text, local_results):
-            logger.info(
-                "[%s] Bare acts Round 1 sufficient (%d sections, %d high-quality). Stopping.",
-                dispute_id, len(local_results), len(high_quality_local),
-            )
-            filtered_local = _filter_bare_acts_with_llm(dispute, local_results, debug)
-            return _cap_bare_acts_by_score(
-                _reorder_bare_acts_for_rent_disputes(filtered_local, dispute),
-                MAX_SECTIONS_PER_DISPUTE_TOTAL,
-            )
+    if high_quality_local and local_results and _check_bare_act_sufficiency(dispute_text, local_results):
+        logger.info(
+            "[%s] Bare acts Round 1 sufficient (%d sections, %d high-quality).",
+            dispute_id, len(local_results), len(high_quality_local),
+        )
+        filtered_local = _filter_bare_acts_with_llm(dispute, local_results, debug)
+        return _cap_bare_acts_by_score(
+            _reorder_bare_acts_for_rent_disputes(filtered_local, dispute),
+            MAX_SECTIONS_PER_DISPUTE_TOTAL,
+        )
 
-    # --- Round 2: web search ---
-    logger.info("[%s] Bare acts Round 2 — web search (local had %d, force_web=%s)", dispute_id, len(local_results), force_web)
-    # Pass `queries` so the web search can reuse the focused Round 1 queries
-    # (including LLM-generated ones) instead of falling back to raw dispute text.
-    # Pass `states` so web search covers both central/Union acts AND state-specific acts.
-    web_results = _web_search_bare_acts(dispute, full_query, round1_queries=queries, states=states or [], pending_indexing_list=pending_indexing_list)
+    if local_results:
+        logger.info("[%s] Bare acts Round 1 returning %d local section(s); no external fallback needed.", dispute_id, len(local_results))
+        filtered_local = _filter_bare_acts_with_llm(dispute, local_results, debug)
+        return _cap_bare_acts_by_score(
+            _reorder_bare_acts_for_rent_disputes(filtered_local, dispute),
+            MAX_SECTIONS_PER_DISPUTE_TOTAL,
+        )
 
-    merged = _merge_deduplicate_bare_acts(local_results, web_results)
-    merged = _filter_bare_acts_with_llm(dispute, merged, debug)
-    merged = _reorder_bare_acts_for_rent_disputes(merged, dispute)
-    capped = _cap_bare_acts_by_score(merged, MAX_SECTIONS_PER_DISPUTE_TOTAL)
-    logger.info(
-        "[%s] Bare acts Round 2 complete: %d total → %d after cap (local=%d web=%d)",
-        dispute_id, len(merged), len(capped), len(local_results), len(web_results),
-    )
-    return capped
+    logger.info("[%s] Bare acts Round 1 found no relevant local sections.", dispute_id)
+    return []
 
 
 def _build_case_law_query(dispute_text: str, bare_act_sections: list) -> str:
@@ -1745,6 +1509,33 @@ def _build_case_law_query(dispute_text: str, bare_act_sections: list) -> str:
         elif act:
             parts.append(act)
     return " ".join(parts).strip()[:500] or dispute_text[:300]
+
+
+def _select_top_acts(bare_acts: list, max_acts: int = 2) -> set[str]:
+    """
+    Keep only the strongest act clusters for one dispute.
+
+    Acts are ranked by:
+    1. best section rerank score
+    2. number of supporting sections
+    This trims noisy cross-act spillover without requiring hardcoded act lists.
+    """
+    act_scores: dict[str, dict] = {}
+    for ba in bare_acts or []:
+        act_name = (ba.get("act_name") or "").strip()
+        if not act_name:
+            continue
+        score = float(ba.get("_rerank_score", 0) or 0)
+        entry = act_scores.setdefault(act_name, {"best": score, "count": 0})
+        entry["best"] = max(entry["best"], score)
+        entry["count"] += 1
+
+    ranked = sorted(
+        act_scores.items(),
+        key=lambda item: (item[1]["best"], item[1]["count"]),
+        reverse=True,
+    )
+    return {act for act, _meta in ranked[:max_acts] if act}
 
 
 def _apply_dispute_case_law_limit(case_laws: list, num_sections: int = 1) -> list:
@@ -1771,7 +1562,7 @@ def _web_search_case_laws(dispute: dict, bare_act_sections: list, full_query: st
     Web search for case laws for one dispute, using the richer dispute+sections query.
     Runs an Indiankanoon-only web search for case laws.
     This path no longer builds pending-indexing candidates.
-    Returns [] so answer remains grounded in locally indexed materials only.
+    Returns generic Indiankanoon fallback results for case laws.
     """
     from retrieval.tiered_search import search_for_gaps
     dispute_text = dispute.get("dispute", "")
@@ -1786,11 +1577,12 @@ def _web_search_case_laws(dispute: dict, bare_act_sections: list, full_query: st
         logger.error("Web search case laws failed for dispute '%s': %s", dispute_text[:60], e)
         return []
 
+    case_results = gap_results.get("case_law_results", [])
     logger.info(
-        "[%s] Indiankanoon case-law search: %d results.",
-        dispute_id, len(gap_results.get("case_law_results", [])),
+        "[%s] Indiankanoon case-law fallback: %d results.",
+        dispute_id, len(case_results),
     )
-    return []
+    return case_results
 
 
 def retrieve_case_laws_for_dispute(dispute: dict, bare_act_sections: list, full_query: str, states: list = None, debug: dict | None = None, pending_indexing_list: list = None) -> list:
@@ -1806,8 +1598,8 @@ def retrieve_case_laws_for_dispute(dispute: dict, bare_act_sections: list, full_
         Merge by chunk key, keep best score, quality filter, limit.
         → if already at 5 → STOP
 
-    Round 2 — tiered web search (case laws only):
-        → merge with local, deduplicate, re-apply limit.
+    No external results are merged into grounded analysis here. Indiankanoon
+    fallback is handled by the caller only when local retrieval returns zero.
     """
     from retrieval.hybrid_retriever import search_case_laws_auto
 
@@ -1847,28 +1639,17 @@ def retrieve_case_laws_for_dispute(dispute: dict, bare_act_sections: list, full_
     limited = _apply_dispute_case_law_limit(local_results, num_sections=len(bare_act_sections))
     logger.info("[%s] Case laws Round 1 local: %d after filter, %d after limit", dispute_id, len(local_results), len(limited))
 
-    # If we got the maximum (5 high-quality), stop — skip LLM filter, already sufficient.
+    # If we got the maximum (5 high-quality), stop — already sufficient.
     if len(limited) >= 5:
         logger.info("[%s] Case laws Round 1 sufficient (5 high-quality). Stopping.", dispute_id)
         return limited
+    if local_results:
+        logger.info("[%s] Case laws Round 1 returning %d local result(s); no external fallback needed.", dispute_id, len(limited))
+        llm_filtered = _filter_case_laws_with_llm(dispute, bare_act_sections, local_results, debug)
+        return _apply_dispute_case_law_limit(llm_filtered, num_sections=len(bare_act_sections))
 
-    # --- Round 2: web search ---
-    logger.info("[%s] Case laws Round 2 — web search (local had %d)", dispute_id, len(limited))
-    web_results = _web_search_case_laws(dispute, bare_act_sections, full_query, states=states, pending_indexing_list=pending_indexing_list)
-
-    # Merge, deduplicate, re-apply numeric filter, then LLM relevance filter + per-dispute limit
-    merged = _merge_deduplicate_case_laws(local_results, web_results)
-    merged_filtered = [
-        cl for cl in merged
-        if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)
-    ]
-    llm_filtered = _filter_case_laws_with_llm(dispute, bare_act_sections, merged_filtered, debug)
-    final = _apply_dispute_case_law_limit(llm_filtered, num_sections=len(bare_act_sections))
-    logger.info(
-        "[%s] Case laws Round 2 complete: %d final (local=%d web=%d)",
-        dispute_id, len(final), len(local_results), len(web_results),
-    )
-    return final
+    logger.info("[%s] Case laws Round 1 found no relevant local judgments.", dispute_id)
+    return []
 
 
 def _merge_deduplicate_bare_acts(local: list, web: list) -> list:
@@ -1989,7 +1770,7 @@ def _explain_sections_and_get_followup(dispute_text: str, bare_acts: list, conve
     )
 
     try:
-        raw = ask_llm(prompt)
+        raw = ask_llm(prompt, task_hint="fast")
         parsed = _extract_json(raw)
         if not parsed or not isinstance(parsed, dict):
             raise ValueError("No valid JSON dict found in LLM response")
@@ -2122,369 +1903,6 @@ def _distribute_case_laws_across_sections(sections_with_cases: list) -> list:
     return sections
 
 
-def retrieve_bare_acts_phase(facts_summary: str, progress_callback=None, states: list = None, pending_indexing_list: list = None, conversation_history: list = None, step_callback=None) -> dict:
-    """
-    Phase A of the new two-phase flow.
-    1. Decompose disputes.
-    2. Retrieve relevant bare act sections for all disputes.
-    3. Add contextual explanations to each section.
-    4. Generate one targeted follow-up question (or None if not needed).
-
-    Returns:
-      {
-        "bare_acts": [list with "explanation" field on each entry],
-        "followup_question": str | None,
-        "intro_text": str,   # human-readable intro shown in chat
-      }
-    """
-    from services.dispute_decomposer import decompose_disputes
-
-    def _step(msg: str, icon: str = ""):
-        if step_callback:
-            try:
-                step_callback({"message": msg, "icon": icon})
-            except Exception:
-                pass
-
-    if progress_callback:
-        progress_callback({"step": "bare_acts", "message": "Retrieving relevant bare act sections…"})
-
-    _step("Analysing your legal situation...", "🔍")
-    try:
-        disputes = decompose_disputes(facts_summary)
-        _step(f"Identified {len(disputes)} legal dispute component{'s' if len(disputes) != 1 else ''}", "📋")
-    except Exception as e:
-        logger.warning("retrieve_bare_acts_phase: decompose_disputes failed (%s). Using single dispute.", e)
-        disputes = [{"id": "d1", "dispute": facts_summary[:300], "legal_nature": "both",
-                     "keywords": [], "bare_act_hints": [], "search_angles": []}]
-
-    _step("Retrieving relevant legal provisions...", "📖")
-    # Retrieve bare acts per dispute in parallel; tag each section with its dispute origin
-    # so Phase B can reconstruct per-dispute groupings without re-running decomposition.
-    all_bare_acts: list = []
-    dispute_errors: list[dict] = []
-
-    _states = states or []
-
-    def _fetch_for_dispute(d):
-        sections = retrieve_bare_acts_for_dispute(d, facts_summary, states=_states, pending_indexing_list=pending_indexing_list)
-        for s in sections:
-            # setdefault: first dispute tag wins if a section appears in multiple disputes
-            s.setdefault("_dispute_id", d["id"])
-            s.setdefault("_dispute_text", d.get("dispute", ""))
-        return sections
-
-    with ThreadPoolExecutor(max_workers=min(len(disputes), 3)) as ex:
-        futures = {ex.submit(_fetch_for_dispute, d): d for d in disputes}
-        for fut in futures:
-            try:
-                all_bare_acts.extend(fut.result())
-            except Exception as exc:
-                dispute = futures[fut]
-                dispute_errors.append({
-                    "dispute_id": dispute.get("id", "?"),
-                    "dispute": (dispute.get("dispute", "") or "")[:200],
-                    "error": repr(exc),
-                })
-                logger.exception(
-                    "retrieve_bare_acts_phase: dispute retrieval error for %s: %s",
-                    dispute.get("id", "?"),
-                    exc,
-                )
-
-    # Deduplicate across disputes (first-seen dispute tag is preserved via setdefault above)
-    all_bare_acts = _merge_deduplicate_bare_acts(all_bare_acts, [])
-    # Safety cap: max 15 total across all disputes (5 per dispute × 3 disputes typical)
-    all_bare_acts = _cap_bare_acts_by_score(all_bare_acts, MAX_BARE_ACTS_OVERALL)
-
-    if not all_bare_acts:
-        if dispute_errors:
-            logger.error(
-                "retrieve_bare_acts_phase: no bare acts returned because all dispute workers failed. "
-                "errors=%s",
-                dispute_errors,
-            )
-        else:
-            logger.warning(
-                "retrieve_bare_acts_phase: no bare acts found after local/web retrieval and filtering. "
-                "facts_summary=%r disputes=%s states=%s",
-                facts_summary[:300],
-                [d.get("dispute", "")[:120] for d in disputes],
-                _states,
-            )
-
-    if all_bare_acts:
-        _step(f"Found {len(all_bare_acts)} relevant legal provision{'s' if len(all_bare_acts) != 1 else ''} — preparing summary...", "✅")
-    else:
-        _step("No provisions found in local database — checking web sources...", "⚠️")
-
-    if progress_callback:
-        progress_callback({"step": "bare_acts_explain",
-                           "message": f"Explaining {len(all_bare_acts)} section(s)…"})
-
-    # Explain sections + generate follow-up
-    enriched = _explain_sections_and_get_followup(facts_summary, all_bare_acts, conversation_history=conversation_history or [])
-
-    flat_bare_acts = enriched["bare_acts"]  # flat list (kept for Phase B backward compat)
-
-    # Group sections by dispute for the new per-dispute UI layout
-    from collections import OrderedDict as _OD
-    _dispute_map: _OD = _OD()
-    for ba in flat_bare_acts:
-        did = ba.get("_dispute_id") or "d_main"
-        dtext = ba.get("_dispute_text") or facts_summary[:200]
-        if did not in _dispute_map:
-            _dispute_map[did] = {"id": did, "dispute": dtext, "sections": []}
-        _dispute_map[did]["sections"].append(ba)
-    disputes_grouped = list(_dispute_map.values())
-
-    # Build a friendly advocate-voice intro
-    n = len(flat_bare_acts)
-    nd = len(disputes_grouped)
-    if n == 0:
-        intro = (
-            "I've reviewed your situation carefully. At this stage I wasn't able to locate specific statutory provisions "
-            "in the database for your query, but let me walk you through the general legal position and what you can do next."
-        )
-    elif nd == 1:
-        section_word = "provision" if n == 1 else "provisions"
-        intro = (
-            f"I've had a chance to look into your situation. Based on what you've shared, "
-            f"I've identified {n} legal {section_word} that are directly relevant to your case. "
-            "Here is the legal protection available to you — and what each provision means in your specific circumstances."
-        )
-    else:
-        dispute_word = "distinct legal issues" if nd > 1 else "legal issue"
-        section_word = "provision" if n == 1 else "provisions"
-        intro = (
-            f"I've reviewed your situation carefully. I can see {nd} {dispute_word} arising from the facts you've described, "
-            f"and I've identified {n} legal {section_word} across these. "
-            "Let me walk you through the legal protection available to you for each."
-        )
-
-    # Ensure we always offer a clear next step to the client.
-    followup = enriched.get("followup_question")
-    if not followup:
-        if n == 0:
-            # No sections found: explicitly offer judgments + full opinion as the next step.
-            followup = (
-                "Even though I couldn't match a specific bare act section in the database right now, "
-                "I can still search for relevant court judgments and prepare a full legal opinion for you. "
-                "Would you like me to go ahead and do that next?"
-            )
-        else:
-            # Sections found but no follow-up suggested — offer to proceed with detailed opinion.
-            followup = (
-                "Based on these provisions, I can now prepare a detailed opinion that also brings in key judgments "
-                "on situations like yours. Shall I proceed with that for you?"
-            )
-
-    return {
-        "disputes": disputes_grouped,        # new: grouped by dispute for UI rendering
-        "bare_acts": flat_bare_acts,        # kept: flat list used by Phase B (case laws + opinion)
-        "followup_question": followup,
-        "intro_text": intro,
-    }
-
-
-def generate_final_opinion_with_case_laws(
-    facts_summary: str,
-    bare_acts: list,
-    additional_info: str = "",
-    progress_callback=None,
-    states: list = None,
-    pending_indexing_list: list = None,
-    step_callback=None,
-    token_callback=None,
-) -> dict:
-    """
-    Phase B of the new two-phase flow.
-    1. Build enriched facts (original + any additional info user provided).
-    2. Reconstruct per-dispute groupings from _dispute_id/_dispute_text tags on bare_acts
-       (no new LLM decomposition — reuse Phase A's decomposition directly).
-    3. Retrieve case laws per dispute group in parallel.
-    4. Link case laws to sections within each dispute group.
-    5. Build dispute_blocks_text and generate structured opinion:
-       Dispute N → Section (verbatim + how it applies) → Case laws (what parts apply and how).
-
-    Returns the standard generate_response_v2() response dict.
-    """
-    from collections import OrderedDict
-    from prompts.advocate_prompts import STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT
-
-    bare_acts, _ = _filter_materials_to_local_db(bare_acts, None)
-    full_facts = facts_summary
-    if (additional_info or "").strip():
-        full_facts = f"{facts_summary}\n\nAdditional information provided by client: {additional_info.strip()}"
-
-    if progress_callback:
-        progress_callback({"step": "case_laws", "message": "Searching for relevant case laws…"})
-
-    # --- Reconstruct per-dispute groupings from Phase A tags (no re-decomposition) ---
-    dispute_groups: OrderedDict = OrderedDict()  # dispute_id → {id, dispute, sections}
-    for ba in bare_acts:
-        did = ba.get("_dispute_id") or "d_main"
-        dtext = ba.get("_dispute_text") or full_facts[:300]
-        if did not in dispute_groups:
-            dispute_groups[did] = {
-                "id": did,
-                "dispute": dtext,
-                "keywords": [],
-                "bare_act_hints": [],
-                "search_angles": [],
-                "sections": [],
-            }
-        dispute_groups[did]["sections"].append(ba)
-
-    # Fallback: single group with all bare acts if Phase A tags are absent
-    if not dispute_groups:
-        dispute_groups["d_main"] = {
-            "id": "d_main",
-            "dispute": full_facts[:300],
-            "keywords": [],
-            "bare_act_hints": [],
-            "search_angles": [],
-            "sections": list(bare_acts),
-        }
-
-    # --- Retrieve case laws per dispute group in parallel ---
-    _states = states or []
-    _pending = pending_indexing_list if pending_indexing_list is not None else []
-
-    def _fetch_case_laws_for_group(grp):
-        cls = retrieve_case_laws_for_dispute(grp, grp["sections"], full_facts, states=_states, pending_indexing_list=_pending)
-        return grp["id"], cls
-
-    all_case_laws: list = []
-    case_laws_by_dispute: dict = {}
-    with ThreadPoolExecutor(max_workers=min(len(dispute_groups), 3)) as ex:
-        futures = {ex.submit(_fetch_case_laws_for_group, grp): grp
-                   for grp in dispute_groups.values()}
-        for fut in futures:
-            try:
-                did, cls = fut.result()
-                case_laws_by_dispute[did] = cls
-                all_case_laws.extend(cls)
-            except Exception as exc:
-                logger.warning("generate_final_opinion_with_case_laws: case law error: %s", exc)
-
-    all_case_laws = _deduplicate_case_laws(all_case_laws)
-    _, all_case_laws = _filter_materials_to_local_db(None, all_case_laws)
-    case_laws_by_dispute = {
-        did: [cl for cl in cls if _is_local_db_source(cl)]
-        for did, cls in case_laws_by_dispute.items()
-    }
-
-    # --- Link case laws to sections within each dispute group ---
-    all_bare_acts_with_cases: list = []
-    for did, grp in dispute_groups.items():
-        grp_case_laws = case_laws_by_dispute.get(did, [])
-        grp["sections_with_cases"] = _link_case_laws_to_sections(grp["sections"], grp_case_laws)
-        grp["sections_with_cases"] = _distribute_case_laws_across_sections(grp["sections_with_cases"])
-        grp["sections_with_cases"], _ = _filter_materials_to_local_db(grp["sections_with_cases"], None)
-        all_bare_acts_with_cases.extend(grp["sections_with_cases"])
-
-    # --- Build dispute_blocks_text for STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT ---
-    # Format: Dispute → Section (verbatim + explanation) → Case laws (what parts apply and how)
-    # Use section chunk limit for verbatim (not entire act)
-    dispute_blocks = []
-    for i, (did, grp) in enumerate(dispute_groups.items(), start=1):
-        lines = [f"--- DISPUTE COMPONENT {i} ---"]
-        lines.append(f"Dispute: {grp['dispute']}")
-        lines.append("")
-        for ba in grp.get("sections_with_cases", grp["sections"]):
-            act = ba.get("act_name", "Unknown Act")
-            sec = ba.get("section_number", "?")
-            title = ba.get("section_title", "")
-            verbatim = (ba.get("full_text") or ba.get("text") or "").strip()[:600]
-            expl = (ba.get("explanation") or "").strip()
-            lines.append(f"[{act}, Section {sec} — {title}]")
-            lines.append(f'Verbatim section text: "{verbatim}"')
-            if expl:
-                lines.append(f"Applicability note (from Phase A): {expl}")
-            related = ba.get("related_case_laws", [])
-            if related:
-                lines.append("Case laws linked to this section:")
-                for cl in related[:3]:
-                    name = _format_case_citation(cl)
-                    body = (cl.get("text") or cl.get("full_text") or "")[:350]
-                    lines.append(f"  - [{name}]: {body}")
-            lines.append("")
-        dispute_blocks.append("\n".join(lines))
-
-    dispute_blocks_text = "\n".join(dispute_blocks) or "None retrieved."
-    if not all_bare_acts_with_cases and not all_case_laws:
-        return {
-            "bare_act_sections": [],
-            "case_laws": [],
-            "internet_case_laws": [],
-            "explanation": _local_only_no_materials_message(),
-            "progress": None,
-            "indexing_candidates": [],
-        }
-
-    # --- Build strict citation allowlist ---
-    _final_sec_allowlist = [
-        f"{ba.get('act_name', '')} § {ba.get('section_number', '')}"
-        for ba in bare_acts[:20] if ba.get("section_number")
-    ]
-    _final_case_allowlist = [
-        _format_case_citation(cl)
-        for cl in all_case_laws[:10]
-        if (cl.get("case_name") or cl.get("title") or "").strip()
-    ]
-    _allowlist_suffix = (
-        f"\n\n🚨 STRICT CITATION RULES — NO EXCEPTIONS:\n"
-        f"• Sections you may cite: {_final_sec_allowlist if _final_sec_allowlist else ['NONE']}\n"
-        f"• Cases you may cite: {_final_case_allowlist if _final_case_allowlist else ['NONE']}\n"
-        f"• Do NOT add any IPC, CrPC, or other section numbers / case names from training knowledge "
-        f"that are NOT in the above lists. Every section and case in the opinion must be from "
-        f"RETRIEVED MATERIALS BY DISPUTE COMPONENT above."
-    )
-
-    opinion_prompt = STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT.format(
-        dispute_facts=full_facts[:800],
-        additional_info=(additional_info or "None provided").strip(),
-        dispute_blocks_text=dispute_blocks_text,
-    ) + _allowlist_suffix
-
-    if progress_callback:
-        progress_callback({"step": "opinion", "message": "Generating structured legal opinion…"})
-    if step_callback:
-        try:
-            step_callback({"message": "Now I have everything I need — composing your legal analysis...", "icon": "💡"})
-        except Exception:
-            pass
-
-    try:
-        if token_callback:
-            opinion_text = ""
-            for _tok in ask_llm_stream(opinion_prompt):
-                token_callback(_tok)
-                opinion_text += _tok
-            opinion_text = opinion_text.strip()
-        else:
-            opinion_text = ask_llm(opinion_prompt).strip()
-    except Exception as e:
-        logger.error("generate_final_opinion_with_case_laws: opinion LLM failed: %s", e)
-        opinion_text = "I was unable to generate a structured opinion at this time. Please try again."
-
-    opinion_text = _enforce_local_grounding(opinion_text, all_bare_acts_with_cases)
-
-    return {
-        "bare_act_sections": all_bare_acts_with_cases,
-        "case_laws": [],           # Nested under bare acts — no top-level duplicates
-        "internet_case_laws": [],
-        "explanation": opinion_text,
-        "progress": None,
-        "indexing_candidates": [],
-    }
-
-
-# ---------------------------------------------------------------------------
-# Main Response Generation Pipeline
-# ---------------------------------------------------------------------------
-
 def generate_response_v2(
     facts_summary: str,
     jurisdiction_state: str = "",
@@ -2496,6 +1914,7 @@ def generate_response_v2(
     search_strategy: str = "local_then_web",
     step_callback=None,
     token_callback=None,
+    model_override: str | None = None,
 ) -> dict:
     """
     Full legal research pipeline — dispute-first approach.
@@ -2542,14 +1961,11 @@ def generate_response_v2(
             except Exception:
                 pass
 
-    if intent in ("legal_opinion", "search", "lookup") and search_strategy != "local_only":
-        logger.info(
-            "Overriding legal search strategy '%s' -> 'local_only' for strict local vector store grounding",
-            search_strategy,
-        )
-        search_strategy = "local_only"
-    if search_strategy not in ("local_only", "web_only", "local_then_web"):
-        search_strategy = "local_only"
+    if search_strategy == "web_only":
+        logger.info("Overriding deprecated legal search strategy 'web_only' -> 'local_then_web'")
+        search_strategy = "local_then_web"
+    if search_strategy not in ("local_only", "local_then_web"):
+        search_strategy = "local_then_web"
 
     # Intent extraction — used for query expansion
     research_intent = None
@@ -2615,6 +2031,7 @@ def generate_response_v2(
     # to the shared structures in the main thread after all futures complete.
     pending_indexing_list = []
     dispute_results = []
+    external_fallback_results = []
     debug_pipeline = {
         "disputes": disputes,
         "per_dispute": {},
@@ -2626,16 +2043,14 @@ def generate_response_v2(
         d_text = dispute.get("dispute", "")
         _local_pending: list = []
         _local_debug: dict = {}
+        _external_results: list = []
 
         _emit_step(f"[{d_id}] Identifying legal provisions...", "📖")
 
         # 3a: Bare acts
         bare_d = []
         if retrieve_acts:
-            if search_strategy == "web_only":
-                bare_d = _web_search_bare_acts(dispute, facts_summary, states=_states, pending_indexing_list=_local_pending)
-                bare_d = [ba for ba in bare_d if ba.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_bare_act(ba)]
-            elif search_strategy == "local_only":
+            if search_strategy == "local_only":
                 from retrieval.hybrid_retriever import search_bare_acts_auto
                 # Multi-query: run all _build_bare_act_queries and merge by best score per section.
                 queries_ba = _build_bare_act_queries(dispute)
@@ -2652,6 +2067,12 @@ def generate_response_v2(
                 bare_d = [ba for ba in raw if ba.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_bare_act(ba)]
             else:
                 bare_d = retrieve_bare_acts_for_dispute(dispute, facts_summary, states=_states, debug=_local_debug, pending_indexing_list=_local_pending)
+                if not bare_d:
+                    _emit_step(f"[{d_id}] No local bare act sections found — checking Indiankanoon fallback...", "🌐")
+                    for _r in _web_search_bare_acts(dispute, facts_summary, states=_states, pending_indexing_list=_local_pending):
+                        _rr = dict(_r)
+                        _rr["_fallback_kind"] = "bare_act"
+                        _external_results.append(_rr)
 
             if bare_d:
                 act_names = list(dict.fromkeys(
@@ -2661,16 +2082,13 @@ def generate_response_v2(
                 acts_str = ", ".join(act_names) if act_names else "legal provisions"
                 _emit_step(f"[{d_id}] Found {len(bare_d)} section{'s' if len(bare_d) != 1 else ''} — {acts_str}", "✅")
             else:
-                _emit_step(f"[{d_id}] No bare act sections found — trying web...", "⚠️")
+                _emit_step(f"[{d_id}] No local bare act sections found", "⚠️")
 
         # 3b: Case laws
         case_d = []
         if retrieve_case_laws_flag:
             _emit_step(f"[{d_id}] Searching for judicial precedents...", "⚖️")
-            if search_strategy == "web_only":
-                raw_cl = _web_search_case_laws(dispute, bare_d, facts_summary, states=_states, pending_indexing_list=_local_pending)
-                case_d = _apply_dispute_case_law_limit([cl for cl in raw_cl if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)])
-            elif search_strategy == "local_only":
+            if search_strategy == "local_only":
                 from retrieval.hybrid_retriever import search_case_laws_auto
                 # Multi-query: base dispute query + up to 2 section-anchored queries, merge best per chunk.
                 _q_base = _build_case_law_query(d_text, bare_d)
@@ -2693,11 +2111,16 @@ def generate_response_v2(
                 case_d = _apply_dispute_case_law_limit([cl for cl in raw_cl if cl.get("_rerank_score", 0) >= MIN_RERANK_SCORE and _is_quality_case_law(cl)])
             else:
                 case_d = retrieve_case_laws_for_dispute(dispute, bare_d, facts_summary, states=_states, debug=_local_debug, pending_indexing_list=_local_pending)
+                if not case_d:
+                    for _r in _web_search_case_laws(dispute, bare_d, facts_summary, states=_states, pending_indexing_list=_local_pending):
+                        _rr = dict(_r)
+                        _rr["_fallback_kind"] = "case_law"
+                        _external_results.append(_rr)
 
             # Citation graph expansion: boost recall by fetching chunks for cases
             # that the retrieved cases cite (forward) or that cite them (backward).
             # Runs after all retrieval paths so it always supplements the best results.
-            if case_d:
+            if case_d and _ENABLE_CITATION_GRAPH_EXPANSION:
                 try:
                     from retrieval.citation_graph import (
                         expand_case_names_by_precedent,
@@ -2749,6 +2172,7 @@ def generate_response_v2(
             "dispute": dispute,
             "bare_acts": bare_d,
             "case_laws": case_d,
+            "external_results": _external_results,
             "_pending": _local_pending,
             "_debug": _local_debug,
         }
@@ -2756,13 +2180,14 @@ def generate_response_v2(
     # Submit all disputes to the thread pool; collect as each completes.
     progress.start_group("Research", f"Retrieving bare acts and case laws for {len(disputes)} dispute(s)")
     _emit_progress()
-    with ThreadPoolExecutor(max_workers=min(len(disputes), 3)) as executor:
+    with ThreadPoolExecutor(max_workers=min(len(disputes), 2)) as executor:
         futures = {executor.submit(_retrieve_dispute, d): d for d in disputes}
         for fut in as_completed(futures):
             try:
                 dr = fut.result()
                 pending_indexing_list.extend(dr.pop("_pending", []))
                 debug_pipeline["per_dispute"].update(dr.pop("_debug", {}))
+                external_fallback_results.extend(dr.pop("external_results", []))
                 dispute_results.append(dr)
                 progress.add_step(
                     f"[{dr['dispute'].get('id','?')}] Retrieved {len(dr['bare_acts'])} sections, {len(dr['case_laws'])} judgements",
@@ -2783,6 +2208,12 @@ def generate_response_v2(
 
     all_bare_raw = _deduplicate_bare_acts(all_bare_raw)
     all_case_raw = _deduplicate_case_laws(all_case_raw)
+    _external_bare = [r for r in external_fallback_results if r.get("_fallback_kind") == "bare_act"]
+    _external_case = [r for r in external_fallback_results if r.get("_fallback_kind") != "bare_act"]
+    external_fallback_results = (
+        _format_indiankanoon_fallback_results(_external_bare, kind="bare_act")
+        + _format_indiankanoon_fallback_results(_external_case, kind="case_law")
+    )
 
     if confirmed_materials:
         all_bare_raw, all_case_raw = _add_confirmed_materials(confirmed_materials, all_bare_raw, all_case_raw)
@@ -2793,7 +2224,7 @@ def generate_response_v2(
     _emit_progress()
 
     all_case_raw_div = _diversify_case_laws_by_case(
-        all_case_raw, max_chunks_per_case=4, max_total=max(len(all_bare_raw) * 6, 30),
+        all_case_raw, max_chunks_per_case=3, max_total=max(len(all_bare_raw) * 4, 18),
     )
     formatted_bare = _format_bare_acts(all_bare_raw)
     formatted_case = _format_case_laws(all_case_raw_div, user_query=facts_summary)
@@ -2832,9 +2263,9 @@ def generate_response_v2(
 
     # Model display step (before blocking on LLM call)
     _ctx = (facts_summary or "")[:1500]
-    _ctx += json.dumps([{"t": b.get("title", ""), "x": (b.get("text") or "")[:500]} for b in formatted_bare[:15]])[:3000]
-    _ctx += json.dumps([{"t": c.get("title", ""), "x": (c.get("text") or "")[:500]} for c in flattened_case_laws[:15]])[:3000]
-    _display, _switched = get_model_display_for_prompt(_ctx)
+    _ctx += json.dumps([{"t": b.get("title", ""), "x": (b.get("text") or "")[:250]} for b in formatted_bare[:8]])[:1800]
+    _ctx += json.dumps([{"t": c.get("title", ""), "x": (c.get("text") or "")[:220]} for c in flattened_case_laws[:8]])[:1800]
+    _display, _switched = get_model_display_for_prompt(_ctx, explicit_model=model_override)
     if _display:
         _action = "Switching to" if _switched else "Calling"
         _msg = f"{_action} {_display} model"
@@ -2854,22 +2285,30 @@ def generate_response_v2(
 
     if not has_materials:
         # Hard stop: no sections or case laws → do not fabricate a legal opinion.
-        explanation = _format_no_materials_message(search_strategy, None)
+        fallback_stats = None
+        if external_fallback_results:
+            fallback_stats = {
+                "web_found": len(external_fallback_results),
+                "shortlisted": len(external_fallback_results),
+                "proposed": 0,
+                "already_in_library": 0,
+            }
+        explanation = _format_no_materials_message(search_strategy, fallback_stats)
     else:
         if intent in ("search", "lookup"):
             explanation = _generate_conversational_summary(
                 facts_summary, formatted_bare, flattened_case_laws, intent=intent,
-                token_callback=token_callback,
+                token_callback=token_callback, model_override=model_override,
             )
         else:
             # Legal opinion: structured by dispute (Dispute Summary → Section + why + precedents per component → Legal Position)
             explanation = _generate_structured_opinion_by_dispute(
                 facts_summary, local_dispute_results, additional_info="",
-                token_callback=token_callback,
+                token_callback=token_callback, model_override=model_override,
             )
             if not (explanation or "").strip():
                 explanation = _generate_legal_opinion(
-                    facts_summary, formatted_bare, flattened_case_laws, sufficiency
+                    facts_summary, formatted_bare, flattened_case_laws, sufficiency, model_override=model_override
                 )
 
         if not (explanation or "").strip():
@@ -2936,8 +2375,7 @@ def generate_response_v2(
         "explanation": explanation,
         "sufficiency": sufficiency,
         "sources_used": list(sources_used),
-        "needs_confirmation": False,
-        "internet_case_laws": [],             # backward compat
+        "internet_case_laws": external_fallback_results,
         "progress": progress.get_progress(),
         "indexing_candidates": [],
         "dispute_breakdown": [
@@ -3286,7 +2724,7 @@ EXCERPTS FROM THE JUDGMENT (most relevant paragraphs):
 
 Your response (first line = Appellant v/s Respondent, then blank line, then 150-200 word summary):"""
     try:
-        raw = ask_llm(prompt).strip()
+        raw = ask_llm(prompt, task_hint="fast").strip()
         if not raw:
             return ("", paragraph_texts[0][:800] if paragraph_texts else "")
         lines = raw.split("\n")
@@ -3303,6 +2741,72 @@ Your response (first line = Appellant v/s Respondent, then blank line, then 150-
     except Exception as e:
         logger.warning(f"Case summary generation failed: {e}")
         return ("", paragraph_texts[0][:800] if paragraph_texts else "")
+
+
+def _build_case_summary_from_paragraphs(paragraph_texts: list, max_chars: int = 700) -> str:
+    """Build a compact extractive summary without an extra LLM call."""
+    cleaned = []
+    seen = set()
+    for txt in paragraph_texts:
+        t = " ".join((txt or "").split())
+        if not t:
+            continue
+        t = t[:max_chars]
+        if t in seen:
+            continue
+        seen.add(t)
+        cleaned.append(t)
+        if len(cleaned) >= 2:
+            break
+    if not cleaned:
+        return ""
+    summary = "\n\n".join(cleaned)
+    return summary[: max_chars * 2]
+
+
+def _case_year_for_sort(case_row: dict) -> int:
+    """Parse a sortable year from case metadata (fallback 0 when unknown)."""
+    if not isinstance(case_row, dict):
+        return 0
+
+    raw = case_row.get("year")
+    if raw is not None:
+        y = str(raw).strip()
+        if y.isdigit():
+            yi = int(y)
+            if 1800 <= yi <= 2100:
+                return yi
+
+    citation = str(case_row.get("citation") or "")
+    m = re.search(r"\b(18|19|20)\d{2}\b", citation)
+    if m:
+        return int(m.group(0))
+
+    source = str(case_row.get("source") or case_row.get("source_file") or "")
+    m = re.search(r"\b(18|19|20)\d{2}\b", source)
+    if m:
+        return int(m.group(0))
+
+    return 0
+
+
+def _format_case_citation(case_law: dict) -> str:
+    """Stable display string for case-law bullets in opinion prompts."""
+    if not isinstance(case_law, dict):
+        return "Unknown case"
+    title = (
+        case_law.get("title")
+        or case_law.get("case_name")
+        or case_law.get("source")
+        or "Unknown case"
+    )
+    citation = (case_law.get("citation") or "").strip()
+    year = str(case_law.get("year") or "").strip()
+    if citation:
+        return f"{title} [{citation}]"
+    if year:
+        return f"{title} ({year})"
+    return str(title)
 
 
 def _format_case_laws(case_laws: list, user_query: str = "") -> list:
@@ -3355,18 +2859,18 @@ def _format_case_laws(case_laws: list, user_query: str = "") -> list:
         paragraph_texts = [c["text"] for c in top3]
         parties_line = ""
         summary_body = ""
-        if user_query.strip():
+        if user_query.strip() and _ENABLE_CASE_SUMMARY_LLM:
             parties_line, summary_body = _summarize_case_paragraphs(
                 user_query, fallback_title, paragraph_texts
             )
         if not summary_body:
-            summary_body = paragraph_texts[0][:800] if paragraph_texts else ""
+            summary_body = _build_case_summary_from_paragraphs(paragraph_texts, max_chars=450)
+        if not summary_body:
+            summary_body = paragraph_texts[0][:700] if paragraph_texts else ""
 
-        acronym = _court_acronym(court, binding_authority, case_name or first.get("source", ""))
-        if parties_line.strip():
-            display_title = f"{acronym} {parties_line.strip()}"
-        else:
-            display_title = f"{acronym} {fallback_title}".strip() if acronym != "[Court]" else fallback_title
+        # Vector store already provides clean case names; `fallback_title` is constructed with court/year details.
+        # We keep `parties_line` only for the LLM summary context, not for the UI title prefixing.
+        display_title = fallback_title
 
         # Use web URL if present; else file:// link to local/Drive PDF so hyperlinks always work
         url = first.get("url") or first.get("source_url") or ""
@@ -3410,43 +2914,6 @@ def _format_case_laws(case_laws: list, user_query: str = "") -> list:
     return formatted
 
 
-def _filter_by_intent(facts: str, intent: str, bare_acts: list, case_laws: list):
-    """Filter results based on user intent (search/lookup vs legal_opinion)."""
-    query_lower = facts.lower()
-
-    case_law_only = any(
-        phrase in query_lower
-        for phrase in ["case law", "case laws", "judgment", "judgments", "ruling", "pull", "find"]
-    ) and not any(
-        phrase in query_lower
-        for phrase in ["bare act", "bare acts", "sections", "provisions"]
-    )
-
-    if case_law_only:
-        return [], case_laws
-
-    bare_act_only = any(
-        phrase in query_lower
-        for phrase in ["bare act", "bare acts", "section", "provisions", "act sections"]
-    ) and not any(
-        phrase in query_lower
-        for phrase in ["case law", "judgment", "ruling"]
-    )
-
-    if bare_act_only:
-        return bare_acts, []
-
-    return bare_acts, case_laws
-
-
-# Max sections per dispute to pass to structured opinion (most relevant only)
-MAX_SECTIONS_PER_DISPUTE_FOR_OPINION = 5
-MAX_CASE_LAWS_PER_DISPUTE = 5
-
-# ---------------------------------------------------------------------------
-# Explanation Generation
-# ---------------------------------------------------------------------------
-
 def _build_dispute_blocks_text(dispute_results: list) -> str:
     """
     Build dispute-wise text for STRUCTURED_FINAL_OPINION_BY_DISPUTE_PROMPT.
@@ -3480,15 +2947,15 @@ def _build_dispute_blocks_text(dispute_results: list) -> str:
             title = ba.get("title", ba.get("section_title", ""))
             verbatim_text = (ba.get("text") or ba.get("full_text") or "").strip()
             # Provide enough for verbatim quoting (up to 600 chars per section)
-            verbatim_snippet = verbatim_text[:600] if verbatim_text else ""
+            verbatim_snippet = verbatim_text[:180] if verbatim_text else ""
             lines.append(f"\n**{act}, Section {sec}** — {title}")
-            lines.append(f"Verbatim section text (quote this in the opinion):\n{verbatim_snippet}")
+            lines.append(f"Section text excerpt:\n{verbatim_snippet}")
             related = ba.get("related_case_laws") or []
             if related:
                 lines.append("Case laws under this section (explain what parts apply and how):")
-                for cl in related[:3]:
+                for cl in related[:2]:
                     name = _format_case_citation(cl)
-                    snippet = (cl.get("text") or cl.get("full_text") or "")[:300]
+                    snippet = (cl.get("text") or cl.get("full_text") or "")[:120]
                     lines.append(f"- {name}: {snippet}")
         blocks.append("\n".join(lines))
 
@@ -3500,6 +2967,7 @@ def _generate_structured_opinion_by_dispute(
     dispute_results: list,
     additional_info: str = "",
     token_callback=None,
+    model_override: str | None = None,
 ) -> str:
     """
     Generate structured legal opinion: Dispute Summary → Section + why it applies + precedents (per component) → Legal Position.
@@ -3521,20 +2989,38 @@ def _generate_structured_opinion_by_dispute(
         additional_info=(additional_info or "None provided").strip(),
         dispute_blocks_text=dispute_blocks_text,
     )
+    logger.info(
+        "Final structured opinion prompt size: %d chars across %d dispute component(s)",
+        len(prompt),
+        len(dispute_results),
+    )
+    t_start = time.perf_counter()
     try:
         if token_callback:
             full_text = ""
-            for token in ask_llm_stream(prompt):
+            for token in ask_llm_stream(prompt, model=model_override):
                 token_callback(token)
                 full_text += token
             local_bare = []
             for dr in dispute_results:
                 local_bare.extend(dr.get("bare_acts") or [])
-            return _enforce_local_grounding(full_text.strip(), local_bare)
+            result = _enforce_local_grounding(full_text.strip(), local_bare)
+            logger.info(
+                "Final structured opinion generated in %.0f ms (%d chars output)",
+                (time.perf_counter() - t_start) * 1000,
+                len(result),
+            )
+            return result
         local_bare = []
         for dr in dispute_results:
             local_bare.extend(dr.get("bare_acts") or [])
-        return _enforce_local_grounding(ask_llm(prompt).strip(), local_bare)
+        result = _enforce_local_grounding(ask_llm(prompt, model=model_override).strip(), local_bare)
+        logger.info(
+            "Final structured opinion generated in %.0f ms (%d chars output)",
+            (time.perf_counter() - t_start) * 1000,
+            len(result),
+        )
+        return result
     except Exception as e:
         logger.error("Structured opinion by dispute failed: %s", e)
         return ""
@@ -3546,11 +3032,10 @@ def _generate_legal_opinion(
     case_laws: list,
     sufficiency: dict,
     on_before_llm=None,
+    model_override: str | None = None,
 ) -> str:
     """Generate a formal legal opinion with citations and source tags. on_before_llm(prompt) is called before LLM if provided."""
     # Check if we have any materials at all
-    bare_acts, case_laws = _filter_materials_to_local_db(bare_acts, case_laws)
-    bare_acts, case_laws = _filter_materials_to_local_db(bare_acts, case_laws)
     bare_acts, case_laws = _filter_materials_to_local_db(bare_acts, case_laws)
     has_bare_acts = bool(bare_acts and len(bare_acts) > 0)
     has_case_laws = bool(case_laws and len(case_laws) > 0)
@@ -3614,7 +3099,7 @@ Generate the legal analysis:"""
     try:
         if callable(on_before_llm):
             on_before_llm(prompt)
-        return _enforce_local_grounding(ask_llm(prompt).strip(), bare_acts)
+        return _enforce_local_grounding(ask_llm(prompt, model=model_override).strip(), bare_acts)
     except Exception as e:
         logger.error(f"Opinion generation failed: {e}")
         return ""
@@ -3627,6 +3112,7 @@ def _generate_conversational_summary(
     intent: str = "search",
     on_before_llm=None,
     token_callback=None,
+    model_override: str | None = None,
 ) -> str:
     """Generate a conversational summary for search/lookup. For lookup use bare-act-only summary; for search use dispute+order/judgement in brief.
     When no materials exist for the requested type, return fixed 'I don't have any data' — do NOT call LLM (anti-hallucination). on_before_llm(prompt) is called before LLM if provided."""
@@ -3733,11 +3219,11 @@ Response:"""
             on_before_llm(prompt)
         if token_callback:
             full_text = ""
-            for token in ask_llm_stream(prompt):
+            for token in ask_llm_stream(prompt, model=model_override):
                 token_callback(token)
                 full_text += token
             return _enforce_local_grounding(full_text.strip(), bare_acts)
-        return _enforce_local_grounding(ask_llm(prompt).strip(), bare_acts)
+        return _enforce_local_grounding(ask_llm(prompt, model=model_override).strip(), bare_acts)
     except Exception as e:
         logger.error(f"Summary generation failed: {e}")
         return ""
@@ -3745,42 +3231,31 @@ Response:"""
 
 def _format_no_materials_message(search_strategy: str, web_search_stats: Optional[dict]) -> str:
     """
-    Return a truthful, data-driven message when no materials are shown in the answer.
-    When web search was used, report actual counts (found, shortlisted, proposed, already in library)
-    so the user sees what happened instead of a static 'I don't have any data'.
-    When user asked for web_only, never claim we 'searched the internal vector store'.
+    Return a truthful, data-driven message when no grounded local materials were found.
+    When Indiankanoon fallback was used, report actual counts so the user sees what
+    happened instead of a generic "I don't have any data" message.
     """
     if web_search_stats is not None:
         wf = web_search_stats.get("web_found", 0)
         sl = web_search_stats.get("shortlisted", 0)
-        prop = web_search_stats.get("proposed", 0)
-        already = web_search_stats.get("already_in_library", 0)
         if wf == 0 and sl == 0:
-            if search_strategy == "web_only":
-                return (
-                    "I searched the web only (as you requested) but found no acts or laws. "
-                    "Try rephrasing with specific section numbers, Act names, or a different legal angle."
-                )
             return (
-                "I searched the web but found no results. "
+                "I searched the local vector store first and then checked Indiankanoon, but found no relevant acts or judgments. "
                 "Try rephrasing with specific section numbers, Act names, or a different legal angle."
             )
         return (
-            f"I searched the web and found {wf} act(s)/law(s). After relevance checks, {sl} were shortlisted. "
-            f"I'm proposing {prop} for indexing; {already} are already in your library. "
-            "None of the retrieved materials met the relevance threshold for the answer above—try rephrasing with specific section numbers, Act names, or a different legal angle."
+            f"I found no grounded local materials in the vector store. I then checked Indiankanoon and found {wf} fallback result(s), "
+            f"with {sl} shown below for reference. These external results are not used as grounded local citations in the legal opinion above."
         )
     if search_strategy == "local_only":
         return (
             "I searched the local vector store only and found no relevant bare act provisions or case laws. "
             "Try rephrasing with specific section numbers, Act names, or a different legal angle."
         )
-    if search_strategy == "web_only":
-        return (
-            "I searched the web only (as you requested) but found no relevant bare act provisions or case laws. "
-            "Try rephrasing with specific section numbers, Act names, or a different legal angle."
-        )
-    return RELEVANCE_EXPLANATION_NO_MATERIALS
+    return (
+        "I searched the local vector store first and then checked Indiankanoon, but found no relevant bare act provisions or case laws. "
+        "Try rephrasing with specific section numbers, Act names, or a different legal angle."
+    )
 
 
 # ---------------------------------------------------------------------------

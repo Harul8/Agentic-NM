@@ -5,6 +5,7 @@ import sqlite3
 import hashlib
 import logging
 import secrets
+import re
 import time
 import traceback
 from html import escape as _html_escape
@@ -21,7 +22,13 @@ import uvicorn
 from agents.Legal_Research.act_case_fusion_agent import fuse_bare_act_and_case_law
 from services.interactive_chat import process_chat
 from services.response_generator_v2 import generate_response_v2
+from services.response_feedback_store import (
+    RESPONSE_FEEDBACK_TAGS,
+    append_response_feedback,
+    feedback_store_path,
+)
 from llm.ollama_client import check_ollama_health, get_last_model_used, warmup_ollama_model
+from llm.config import OLLAMA_MODEL, OLLAMA_MODEL_FAST, OLLAMA_WARM_ANALYSIS_AT_STARTUP
 
 # Feedback logging (non-critical — import errors must not crash the server)
 try:
@@ -543,10 +550,6 @@ class ChatRequest(BaseModel):
     facts_summary: str | None = None
 
 
-class ConfirmIndexRequest(BaseModel):
-    bare_acts: list[dict] = []
-    case_laws: list[dict] = []
-    facts_summary: str = ""
 
 
 class SubmitCaseRequest(BaseModel):
@@ -554,6 +557,7 @@ class SubmitCaseRequest(BaseModel):
     text: str = ""
     # chat_mode: "legal_opinion" | "legal_research" | "general" (optional; default router when empty)
     mode: str | None = None
+    model_override: str | None = None
 
 
 class QAPair(BaseModel):
@@ -562,11 +566,11 @@ class QAPair(BaseModel):
 
 
 class InterviewStepRequest(BaseModel):
-    """Follow-up answer in interview - frontend sends { facts, qa_history, bare_acts?, mode }."""
+    """Follow-up answer in interview - frontend sends { facts, qa_history, mode }."""
     facts: str = ""
     qa_history: list[QAPair] = []
-    bare_acts: list[dict] = []   # populated when answering a bare-acts-phase follow-up question
     mode: str | None = None      # "legal_opinion" | "legal_research" | "general"
+    model_override: str | None = None
 
 
 class ContinueChatRequest(BaseModel):
@@ -574,6 +578,7 @@ class ContinueChatRequest(BaseModel):
     conversation: list[ChatMessage] = []
     message: str = ""
     mode: str | None = None  # "legal_opinion" | "legal_research" | "general"
+    model_override: str | None = None
 
 
 def _build_conv(messages: list[ChatMessage] | None) -> list[dict]:
@@ -902,46 +907,6 @@ def _fire_feedback_log(result: dict, facts: str, session_ref: str = "") -> None:
     t.start()
 
 
-def _fire_feedback_log_bare_acts(result: dict, facts: str, session_ref: str = "") -> None:
-    """
-    When phase is 'bare_acts_presented', log one row with timestamp, user input, and
-    model output (disputes, sections, intro text as opinion, follow-up as additional info).
-    So if the user closes the chat after only bare acts, the feedback log already has the row.
-    """
-    if not _FEEDBACK_ENABLED or not _log_interaction:
-        return
-    if result.get("phase") != "bare_acts_presented":
-        return
-    import threading
-    bare_acts = result.get("bare_acts") or []
-    disputes_raw = result.get("disputes") or []
-    disputes_list = [d.get("dispute", "") for d in disputes_raw if isinstance(d, dict) and d.get("dispute")]
-    if not disputes_list:
-        disputes_list = [str((result.get("facts_summary") or "")[:80])]
-    sections_list = [
-        f"{ba.get('act_name', '?')} § {ba.get('section_number', '?')}"
-        for ba in bare_acts
-    ]
-    intro = (result.get("message") or "").strip() or "Here are the relevant bare act sections I found."
-    followup = (result.get("followup_question") or "").strip()
-
-    def _do_log():
-        try:
-            _log_interaction(
-                facts=facts,
-                followup_question=followup,
-                disputes=disputes_list,
-                sections=sections_list,
-                case_laws=[],
-                legal_opinion=intro,
-                router_classification="Legal Opinion",
-                session_ref=session_ref,
-            )
-        except Exception as _le:
-            logger.warning("Feedback log (bare acts) failed (non-critical): %s", _le)
-
-    t = threading.Thread(target=_do_log, daemon=True, name="feedback-log-bare-acts")
-    t.start()
 
 
 def _fire_feedback_log_research(result: dict, query: str, session_ref: str = "") -> None:
@@ -1000,35 +965,19 @@ def _map_chat_result_to_ui(result: dict) -> dict:
     phase = result.get("phase")
     response_type = result.get("response_type")  # "search_results", "lookup_results", "legal_opinion"
 
+    def _safe_next_question(text: str) -> str:
+        candidate = (text or "").strip()
+        normalized = re.sub(r"[\s\W_]+", "", candidate)
+        if len(normalized) < 6:
+            return "Please share one more important detail, or say 'proceed' if you want me to begin the legal analysis."
+        return candidate
+
     if phase == "fact_collection":
-        next_q = (result.get("message") or "").strip()
-        if not next_q:
-            next_q = "Could you tell me more about your legal query?"
+        next_q = _safe_next_question(result.get("message") or "")
         return {
             "status": "question",
             "next_question": next_q,
             "retrieved": result.get("response") or [],
-        }
-    if phase == "bare_acts_presented":
-        # Intermediate phase: show retrieved bare acts with explanations + optional follow-up question
-        bare_acts = result.get("bare_acts") or []
-        disputes  = result.get("disputes") or []   # grouped for new per-dispute UI
-        followup = (result.get("followup_question") or "").strip() or None
-        intro = (result.get("message") or "").strip() or "Here are the relevant bare act sections I found."
-        return {
-            "status": "bare_acts_presented",
-            "opinion_text": intro,
-            "disputes": disputes,             # new: grouped [{id, dispute, sections}]
-            "bare_acts": bare_acts,           # kept: flat list for Phase B backward compat
-            "followup_question": followup,
-            # Pass facts_summary so the frontend can echo it back in the next request
-            "facts_summary": result.get("facts_summary") or "",
-        }
-    if phase == "confirm_materials":
-        return {
-            "needs_confirmation": True,
-            "materials_to_confirm": result.get("materials_to_confirm"),
-            "summary": result.get("message", ""),
         }
     if phase == "done" and result.get("response"):
         resp = result["response"]
@@ -1085,9 +1034,7 @@ def _map_chat_result_to_ui(result: dict) -> dict:
             "retrieved": [],
             "model_used": get_last_model_used(),
         }
-    next_q = (result.get("message") or "").strip()
-    if not next_q:
-        next_q = "Please continue or rephrase your question."
+    next_q = _safe_next_question(result.get("message") or "")
     return {
         "status": "question",
         "next_question": next_q,
@@ -2137,7 +2084,7 @@ def _normalize_content(c):
 def chat(request: ChatRequest):
     """
     Interactive chat endpoint.
-    Phase: fact_collection | response_generation | confirm_index
+    Phase: fact_collection | response_generation
     """
     message = (request.message or "").strip()
     conv = [
@@ -2160,7 +2107,7 @@ def chat(request: ChatRequest):
             facts_summary=result["facts_summary"],
             intent=result.get("intent", "legal_opinion"),
             document_types=result.get("document_types", "both"),
-            search_strategy=result.get("search_strategy", "local_only"),
+            search_strategy=result.get("search_strategy", "local_then_web"),
             result_count=result.get("result_count"),
         )
         return resp_result
@@ -2172,11 +2119,12 @@ def chat(request: ChatRequest):
 def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_token)):
     """
     Initial case submission (await_facts). Frontend sends { text }.
-    Returns status + next_question | opinion_text | needs_confirmation so the UI can continue the flow.
+    Returns status + next_question | opinion_text so the UI can continue the flow.
     """
     _enforce_query_limit(user)
     text = (request.text or "").strip()
     mode = (request.mode or "").strip().lower() or None
+    model_override = (request.model_override or "").strip() or None
     if not text:
         return {
             "status": "question",
@@ -2191,6 +2139,7 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
             phase="fact_collection",
             facts_summary=None,
             chat_mode=mode,
+            model_override=model_override,
         )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
@@ -2201,15 +2150,14 @@ def submit_case(request: SubmitCaseRequest, user: dict = Depends(_user_from_toke
                 facts_summary=result["facts_summary"],
                 intent=result.get("intent", "legal_opinion"),
                 document_types=result.get("document_types", "both"),
-                search_strategy=result.get("search_strategy", "local_only"),
+                search_strategy=result.get("search_strategy", "local_then_web"),
                 result_count=result.get("result_count"),
                 chat_mode=mode,
+                model_override=model_override,
             )
         if result.get("phase") == "done":
             increment_query_count(user["id"])
             _fire_feedback_log(result, facts=text, session_ref=str(user.get("id", "")))
-        if result.get("phase") == "bare_acts_presented":
-            _fire_feedback_log_bare_acts(result, facts=text, session_ref=str(user.get("id", "")))
         return _map_chat_result_to_ui(result)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
@@ -2225,38 +2173,33 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
     facts = request.facts or ""
     qa_history = request.qa_history or []
     mode = (request.mode or "").strip().lower() or None
+    model_override = (request.model_override or "").strip() or None
     if not qa_history:
         return {
             "status": "question",
             "next_question": "",
             "retrieved": [],
         }
-    bare_acts_from_client = request.bare_acts or []
+
     try:
+        # Build conversation from interview transcript:
+        # - user: overall facts
+        # - assistant/user alternation for each Q/A turn
         conv = [{"role": "user", "content": facts}]
         for qa in qa_history:
             conv.append({"role": "assistant", "content": qa.question})
             conv.append({"role": "user", "content": qa.answer})
-        current_message = qa_history[-1].answer
 
-        # If the frontend passed bare_acts, the user is answering the bare-acts follow-up question
-        if bare_acts_from_client:
-            result = process_chat(
-                conversation=conv,
-                current_message=current_message,
-                phase="bare_acts_review",
-                facts_summary=facts,
-                bare_acts=bare_acts_from_client,
-                chat_mode=mode,
-            )
-        else:
-            result = process_chat(
-                conversation=conv,
-                current_message=current_message,
-                phase="fact_collection",
-                facts_summary=None,
-                chat_mode=mode,
-            )
+        current_message = qa_history[-1].answer if qa_history else ""
+        result = process_chat(
+            conversation=conv,
+            current_message=current_message,
+            phase="fact_collection",
+            facts_summary=None,
+            chat_mode=mode,
+            model_override=model_override,
+        )
+
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
             result = process_chat(
@@ -2266,15 +2209,16 @@ def interview_step(request: InterviewStepRequest, user: dict = Depends(_user_fro
                 facts_summary=result["facts_summary"],
                 intent=result.get("intent", "legal_opinion"),
                 document_types=result.get("document_types", "both"),
-                search_strategy=result.get("search_strategy", "local_only"),
+                search_strategy=result.get("search_strategy", "local_then_web"),
                 result_count=result.get("result_count"),
                 chat_mode=mode,
+                model_override=model_override,
             )
+
         if result.get("phase") == "done":
             increment_query_count(user["id"])
             _fire_feedback_log(result, facts=facts, session_ref=str(user.get("id", "")))
-        if result.get("phase") == "bare_acts_presented":
-            _fire_feedback_log_bare_acts(result, facts=facts, session_ref=str(user.get("id", "")))
+
         return _map_chat_result_to_ui(result)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
@@ -2288,6 +2232,8 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
     """
     _enforce_query_limit(user)
     message = (request.message or "").strip()
+    mode = (request.mode or "").strip().lower() or None
+    model_override = (request.model_override or "").strip() or None
     if not message:
         return {
             "status": "question",
@@ -2304,6 +2250,8 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
             current_message=message,
             phase="fact_collection",
             facts_summary=None,
+            chat_mode=mode,
+            model_override=model_override,
         )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": result.get("message", "")}]
@@ -2314,20 +2262,20 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
                 facts_summary=result["facts_summary"],
                 intent=result.get("intent", "legal_opinion"),
                 document_types=result.get("document_types", "both"),
-                search_strategy=result.get("search_strategy", "local_only"),
+                search_strategy=result.get("search_strategy", "local_then_web"),
                 result_count=result.get("result_count"),
+                chat_mode=mode,
+                model_override=model_override,
             )
         if result.get("phase") == "done":
             increment_query_count(user["id"])
             _fire_feedback_log(result, facts=message, session_ref=str(user.get("id", "")))
-        if result.get("phase") == "bare_acts_presented":
-            _fire_feedback_log_bare_acts(result, facts=message, session_ref=str(user.get("id", "")))
         return _map_chat_result_to_ui(result)
     except Exception as e:
         return _chat_error_fallback(str(e)[:200])
 
 
-def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, user_id: str, mode: str | None = None) -> None:
+def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None) -> None:
     """Run the same logic as continue_chat, pushing progress to queue and finally the result."""
     try:
         def progress_callback(progress_snapshot: dict):
@@ -2346,6 +2294,7 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
             chat_mode=mode,
             step_callback=step_callback,
             token_callback=token_callback,
+            model_override=model_override,
         )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "user", "content": message}, {"role": "assistant", "content": result.get("message", "")}]
@@ -2356,25 +2305,24 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
                 facts_summary=result["facts_summary"],
                 intent=result.get("intent", "legal_opinion"),
                 document_types=result.get("document_types", "both"),
-                search_strategy=result.get("search_strategy", "local_only"),
+                search_strategy=result.get("search_strategy", "local_then_web"),
                 result_count=result.get("result_count"),
                 progress_callback=progress_callback,
                 chat_mode=mode,
                 step_callback=step_callback,
                 token_callback=token_callback,
+                model_override=model_override,
             )
         if result.get("phase") == "done":
             increment_query_count(user_id)
             _fire_feedback_log(result, facts=message, session_ref=str(user_id))
-        if result.get("phase") == "bare_acts_presented":
-            _fire_feedback_log_bare_acts(result, facts=message, session_ref=str(user_id))
         queue.put(("result", _map_chat_result_to_ui(result)))
     except Exception as e:
         logger.exception("Stream continue_chat failed")
         queue.put(("result", _chat_error_fallback(str(e)[:200])))
 
 
-def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: str | None = None) -> None:
+def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None) -> None:
     """Run submit_case logic with progress streaming."""
     try:
         def progress_callback(progress_snapshot: dict):
@@ -2394,6 +2342,7 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
             chat_mode=mode,
             step_callback=step_callback,
             token_callback=token_callback,
+            model_override=model_override,
         )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
@@ -2404,25 +2353,24 @@ def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: 
                 facts_summary=result["facts_summary"],
                 intent=result.get("intent", "legal_opinion"),
                 document_types=result.get("document_types", "both"),
-                search_strategy=result.get("search_strategy", "local_only"),
+                search_strategy=result.get("search_strategy", "local_then_web"),
                 result_count=result.get("result_count"),
                 progress_callback=progress_callback,
                 chat_mode=mode,
                 step_callback=step_callback,
                 token_callback=token_callback,
+                model_override=model_override,
             )
         if result.get("phase") == "done":
             increment_query_count(user_id)
             _fire_feedback_log(result, facts=text, session_ref=str(user_id))
-        if result.get("phase") == "bare_acts_presented":
-            _fire_feedback_log_bare_acts(result, facts=text, session_ref=str(user_id))
         queue.put(("result", _map_chat_result_to_ui(result)))
     except Exception as e:
         logger.exception("Stream submit_case failed")
         queue.put(("result", _chat_error_fallback(str(e)[:200])))
 
 
-def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue, user_id: str, bare_acts: list = None, mode: str | None = None) -> None:
+def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None) -> None:
     """Run interview_step logic with progress streaming."""
     try:
         t_total = time.perf_counter()
@@ -2443,45 +2391,25 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
         _log_pipeline_step(
             "interview_step.build_conversation",
             (time.perf_counter() - t_conv) * 1000,
-            f"qa_turns={len(qa_history)} bare_acts={'yes' if bare_acts else 'no'}",
+            f"qa_turns={len(qa_history)}",
         )
-
-        if bare_acts:
-            # User is answering the bare-acts follow-up question — go straight to final opinion
-            t_phase = time.perf_counter()
-            result = process_chat(
-                conversation=conv,
-                current_message=current_message,
-                phase="bare_acts_review",
-                facts_summary=facts,
-                bare_acts=bare_acts,
-                progress_callback=progress_callback,
-                chat_mode=mode,
-                step_callback=step_callback,
-                token_callback=token_callback,
-            )
-            _log_pipeline_step(
-                "interview_step.process_chat.bare_acts_review",
-                (time.perf_counter() - t_phase) * 1000,
-                f"phase={result.get('phase')}",
-            )
-        else:
-            t_phase = time.perf_counter()
-            result = process_chat(
-                conversation=conv,
-                current_message=current_message,
-                phase="fact_collection",
-                facts_summary=None,
-                progress_callback=progress_callback,
-                chat_mode=mode,
-                step_callback=step_callback,
-                token_callback=token_callback,
-            )
-            _log_pipeline_step(
-                "interview_step.process_chat.fact_collection",
-                (time.perf_counter() - t_phase) * 1000,
-                f"phase={result.get('phase')}",
-            )
+        t_phase = time.perf_counter()
+        result = process_chat(
+            conversation=conv,
+            current_message=current_message,
+            phase="fact_collection",
+            facts_summary=None,
+            progress_callback=progress_callback,
+            chat_mode=mode,
+            step_callback=step_callback,
+            token_callback=token_callback,
+            model_override=model_override,
+        )
+        _log_pipeline_step(
+            "interview_step.process_chat.fact_collection",
+            (time.perf_counter() - t_phase) * 1000,
+            f"phase={result.get('phase')}",
+        )
         if result.get("phase") == "response_generation" and result.get("facts_summary"):
             conv = conv + [{"role": "assistant", "content": result.get("message", "")}]
             t_phase = time.perf_counter()
@@ -2492,12 +2420,13 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
                 facts_summary=result["facts_summary"],
                 intent=result.get("intent", "legal_opinion"),
                 document_types=result.get("document_types", "both"),
-                search_strategy=result.get("search_strategy", "local_only"),
+                search_strategy=result.get("search_strategy", "local_then_web"),
                 result_count=result.get("result_count"),
                 progress_callback=progress_callback,
                 chat_mode=mode,
                 step_callback=step_callback,
                 token_callback=token_callback,
+                model_override=model_override,
             )
             _log_pipeline_step(
                 "interview_step.process_chat.response_generation",
@@ -2507,8 +2436,6 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
         if result.get("phase") == "done":
             increment_query_count(user_id)
             _fire_feedback_log(result, facts=facts, session_ref=str(user_id))
-        if result.get("phase") == "bare_acts_presented":
-            _fire_feedback_log_bare_acts(result, facts=facts, session_ref=str(user_id))
         queue.put(("result", _map_chat_result_to_ui(result)))
         _log_pipeline_step(
             "interview_step.total",
@@ -2526,6 +2453,7 @@ async def submit_case_stream(request: SubmitCaseRequest, user: dict = Depends(_u
     _enforce_query_limit(user)
     text = (request.text or "").strip()
     mode = (request.mode or "").strip().lower() or None
+    model_override = (request.model_override or "").strip() or None
     if not text:
         return JSONResponse(
             status_code=400,
@@ -2536,7 +2464,7 @@ async def submit_case_stream(request: SubmitCaseRequest, user: dict = Depends(_u
     user_id = user.get("id", _ANONYMOUS_EMAIL)
 
     def run_in_thread():
-        _run_submit_case_with_progress(text, queue, user_id, mode)
+        _run_submit_case_with_progress(text, queue, user_id, mode, model_override)
 
     thread = __import__("threading").Thread(target=run_in_thread)
     thread.start()
@@ -2574,8 +2502,8 @@ async def interview_step_stream(request: InterviewStepRequest, user: dict = Depe
     _enforce_query_limit(user)
     facts = request.facts or ""
     qa_history = request.qa_history or []
-    bare_acts_from_client = request.bare_acts or []
     mode = (request.mode or "").strip().lower() or None
+    model_override = (request.model_override or "").strip() or None
     if not qa_history:
         return JSONResponse(
             status_code=400,
@@ -2586,7 +2514,7 @@ async def interview_step_stream(request: InterviewStepRequest, user: dict = Depe
     user_id = user.get("id", _ANONYMOUS_EMAIL)
 
     def run_in_thread():
-        _run_interview_step_with_progress(facts, qa_history, queue, user_id, bare_acts=bare_acts_from_client, mode=mode)
+        _run_interview_step_with_progress(facts, qa_history, queue, user_id, mode=mode, model_override=model_override)
 
     thread = __import__("threading").Thread(target=run_in_thread)
     thread.start()
@@ -2627,6 +2555,7 @@ async def continue_chat_stream(request: ContinueChatRequest, user: dict = Depend
     _enforce_query_limit(user)
     message = (request.message or "").strip()
     mode = (request.mode or "").strip().lower() or None
+    model_override = (request.model_override or "").strip() or None
     if not message:
         return JSONResponse(
             status_code=400,
@@ -2641,7 +2570,7 @@ async def continue_chat_stream(request: ContinueChatRequest, user: dict = Depend
     user_id = user.get("id", _ANONYMOUS_EMAIL)
 
     def run_in_thread():
-        _run_continue_chat_with_progress(conv, message, queue, user_id, mode)
+        _run_continue_chat_with_progress(conv, message, queue, user_id, mode, model_override)
 
     thread = __import__("threading").Thread(target=run_in_thread)
     thread.start()
@@ -2950,6 +2879,21 @@ class FeedbackLogSaveRequest(BaseModel):
     rows: List[List[str]] = []  # array of rows, each row array of cell values
 
 
+class ResponseFeedbackRequest(BaseModel):
+    chat_id: str = ""
+    message_id: str = ""
+    rating: str = ""
+    reason_tags: List[str] = []
+    free_text: str = ""
+    assistant_text: str = ""
+    user_message: str = ""
+    stage: str = ""
+    response_type: str = ""
+    model_used: str = ""
+    latency_ms: Optional[float] = None
+    metadata: dict = {}
+
+
 @app.post("/feedback_log/save")
 def feedback_log_save(request: FeedbackLogSaveRequest):
     """
@@ -2973,6 +2917,51 @@ def feedback_log_save(request: FeedbackLogSaveRequest):
         return {"message": "Saved", "rows": len(new_rows)}
     except Exception as e:
         logger.exception("feedback_log POST save: %s", e)
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/feedback/response/taxonomy")
+def response_feedback_taxonomy():
+    return {
+        "ratings": ["good", "okay", "bad"],
+        "reason_tags": list(RESPONSE_FEEDBACK_TAGS),
+        "store_path": str(feedback_store_path()),
+    }
+
+
+@app.post("/feedback/response")
+def submit_response_feedback(request: ResponseFeedbackRequest, user: dict = Depends(_user_from_token)):
+    message_id = (request.message_id or "").strip()
+    rating = (request.rating or "").strip().lower()
+    assistant_text = (request.assistant_text or "").strip()
+    if not message_id:
+        raise HTTPException(status_code=400, detail="message_id is required")
+    if not rating:
+        raise HTTPException(status_code=400, detail="rating is required")
+
+    try:
+        append_response_feedback(
+            {
+                "user_id": user.get("id"),
+                "chat_id": (request.chat_id or "").strip(),
+                "message_id": message_id,
+                "rating": rating,
+                "reason_tags": request.reason_tags or [],
+                "free_text": (request.free_text or "").strip(),
+                "assistant_text": assistant_text,
+                "user_message": (request.user_message or "").strip(),
+                "stage": (request.stage or "").strip(),
+                "response_type": (request.response_type or "").strip(),
+                "model_used": (request.model_used or "").strip(),
+                "latency_ms": request.latency_ms,
+                "metadata": request.metadata or {},
+            }
+        )
+        return {"success": True}
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        logger.exception("submit_response_feedback failed")
         raise HTTPException(status_code=500, detail=str(e))
 
 
@@ -3024,6 +3013,22 @@ def health_check():
 @app.on_event("startup")
 async def startup_validation():
     """Log system status on startup — warns but does NOT block if services are down."""
+    if os.environ.get("FEEDBACK_DISTILL_ON_STARTUP", "true").strip().lower() in ("1", "true", "yes", "on"):
+        try:
+            from services.feedback_learning_pipeline import run_daily_feedback_distillation
+            result = run_daily_feedback_distillation()
+            if result.get("status") == "processed":
+                logger.info(
+                    "âœ“ Feedback distillation processed (%s feedback â†’ %s training candidates, %s eval candidates)",
+                    result.get("feedback_records_total", 0),
+                    result.get("training_candidates_total", 0),
+                    result.get("eval_candidates_total", 0),
+                )
+            else:
+                logger.info("âœ“ Feedback distillation skipped (%s)", result.get("reason", "not_needed"))
+        except Exception as _feedback_distill_err:
+            logger.warning("âš  Feedback distillation failed on startup: %s", _feedback_distill_err)
+
     logger.info("=" * 60)
     logger.info("Nyaymalaw API v3.0.0 starting up")
     logger.info("=" * 60)
@@ -3032,10 +3037,18 @@ async def startup_validation():
     ollama = check_ollama_health()
     if ollama.get("ollama_reachable") and ollama.get("model_loaded"):
         logger.info("✓ Ollama reachable, model '%s' loaded", ollama["model"])
-        if warmup_ollama_model(ollama["model"]):
-            logger.info("✓ Ollama model '%s' warmed and kept alive", ollama["model"])
-        else:
-            logger.warning("⚠ Ollama model '%s' could not be warmed at startup", ollama["model"])
+        if OLLAMA_MODEL_FAST:
+            if warmup_ollama_model(OLLAMA_MODEL_FAST):
+                logger.info("✓ Fast intake model '%s' warmed and kept alive", OLLAMA_MODEL_FAST)
+            else:
+                logger.warning("⚠ Fast intake model '%s' could not be warmed at startup", OLLAMA_MODEL_FAST)
+        if OLLAMA_WARM_ANALYSIS_AT_STARTUP and OLLAMA_MODEL and OLLAMA_MODEL != OLLAMA_MODEL_FAST:
+            if warmup_ollama_model(OLLAMA_MODEL):
+                logger.info("✓ Analysis model '%s' warmed and kept alive", OLLAMA_MODEL)
+            else:
+                logger.warning("⚠ Analysis model '%s' could not be warmed at startup", OLLAMA_MODEL)
+        elif not OLLAMA_WARM_ANALYSIS_AT_STARTUP:
+            logger.info("✓ Skipping analysis-model warmup at startup; it will load on first final analysis")
     elif ollama.get("ollama_reachable"):
         logger.warning("⚠ Ollama reachable but model '%s' NOT found. Run: ollama pull %s", ollama["model"], ollama["model"])
     else:
@@ -3073,11 +3086,18 @@ async def startup_validation():
     # during startup ensures they are in memory before any user query arrives.
     # Failure is non-fatal — models will still load on demand.
     try:
-        from retrieval.hybrid_retriever import _get_embedder, _get_cross_encoder
+        from retrieval.hybrid_retriever import (
+            _get_cross_encoder_cpu,
+            _get_cross_encoder_gpu,
+            _get_embedder,
+        )
         _get_embedder()
         logger.info("✓ Embedding model pre-loaded (warm)")
-        _get_cross_encoder()
-        logger.info("✓ Cross-encoder model pre-loaded (warm)")
+        if _get_cross_encoder_gpu() is not None:
+            logger.info("✓ Cross-encoder model pre-loaded on CUDA")
+        else:
+            _get_cross_encoder_cpu()
+            logger.info("✓ Cross-encoder model pre-loaded on CPU")
     except Exception as _warmup_err:
         logger.warning("⚠ Model pre-load failed (will load on first request): %s", _warmup_err)
 

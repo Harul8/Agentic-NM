@@ -178,6 +178,31 @@ One question at a time. Always the highest-decision-value question. Never "tell 
 
 ---
 
+## Quality Feedback Anchors
+
+When this agent is reviewed turn by turn, the most important qualitative signals are:
+- `wrong_followup`
+- `repeated_question`
+- `premature_proceed`
+- `missed_urgency`
+- `missed_prior_actions`
+- `missed_client_objective`
+- `poor_empathy`
+- `poor_clarity`
+- `unsupported_legal_reference`
+- `poor_grounding`
+- `hallucinated_query_expansion`
+- `bad_stop_continue_judgment`
+
+These tags are not decorative. They are the failure modes this workflow is designed to avoid.
+
+When improving the system:
+- convert repeated tagged failures into new eval cases
+- convert corrected high-quality responses into few-shot or training examples
+- treat `wrong_followup`, `premature_proceed`, `unsupported_legal_reference`, and `poor_grounding` as the highest-priority fixes
+
+---
+
 ## Output Format
 
 ### For Lay Clients

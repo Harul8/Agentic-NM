@@ -19,6 +19,31 @@ Important boundary:
 - Final legal advice examples should be treated as belonging to the grounded legal-advice layer.
 - Do not learn from these examples that intake may freely cite unsupported law from memory.
 
+### Feedback Tagging Guidance
+
+When reviewing real conversations against this example pack, use the same qualitative vocabulary consistently.
+
+Common failure tags:
+- `wrong_followup`
+- `repeated_question`
+- `premature_proceed`
+- `missed_urgency`
+- `missed_prior_actions`
+- `missed_client_objective`
+- `poor_empathy`
+- `unsupported_legal_reference`
+- `poor_grounding`
+- `bad_stop_continue_judgment`
+
+Common positive tags:
+- `strong_reasoning`
+- `strong_empathy`
+- `strong_grounding`
+
+Each corrected bad response should eventually become either:
+1. a new contrastive example, or
+2. a strengthened eval case.
+
 ---
 
 ## Example 1 - Lay Client: Property Dispute with Buried Urgency
@@ -31,6 +56,8 @@ Important boundary:
 ### Ideal Follow-Up
 
 **Question:** "When exactly is the municipal corporation coming, what date is mentioned in the notice, and have you received any prior notice from them before this one?"
+
+**If the model misses this move, likely feedback tags:** `missed_urgency`, `wrong_followup`
 
 **Why this question was chosen:**
 The demolition deadline is the live urgency. Everything else, the encroachment case, the neighbour's wall, the underlying title dispute, can wait. If the corporation demolishes next week, an injunction application must be filed within days. The date determines whether emergency relief is even possible. The prior-notice question tests whether there is a procedural defect in the corporation's action that strengthens an injunction application.
@@ -121,6 +148,8 @@ The procedural defect is a strong ground for interim stay. A stay buys time. It 
 
 **Question:** "What exactly have you sent in those messages to your manager and HR, specifically, have you said anything like 'I accept that my performance was poor' or 'I'm willing to resign if you give me a settlement'?"
 
+**If the model misses this move, likely feedback tags:** `missed_prior_actions`, `wrong_followup`
+
 **Why this question was chosen:**
 The client has already been communicating with the employer after termination. These messages are now part of the evidentiary record. A single message that contains an admission, an offer to resign, or an expression of acceptance of the termination characterisation can seriously damage a wrongful termination claim. This question must be asked before any strategy is recommended.
 
@@ -198,6 +227,8 @@ Without written warnings or a documented performance improvement plan, the compa
 ### Ideal Follow-Up
 
 **Question:** "Before I give you my view, what is your analysis of whether this is primarily a civil wrong or a criminal one, and what do you think is the threshold that takes this from breach of contract to criminal breach of trust?"
+
+**If the model misses this move, likely feedback tags:** `wrong_followup`, `poor_clarity`
 
 **Why this question was chosen:**
 The junior has already done some thinking and has a factual basis. The senior's job here is not to give the answer immediately but to test whether the junior understands the distinction between a civil breach and a criminal act. If the junior cannot articulate the threshold, they will not be able to defend the FIR if the accused challenges it, and they will not understand why a civil suit might serve the client better in some circumstances.

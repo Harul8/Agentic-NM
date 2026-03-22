@@ -38,6 +38,32 @@
     "intake_layer_rule": "During intake, use this schema to structure facts, urgency, issues, evidence, forum, risk, and next-step thinking. Do not treat this schema as authority for citation-backed law.",
     "grounded_advice_rule": "Specific legal citations, case names, section numbers, and citation-backed legal propositions belong only to the retrieval-grounded final legal advice layer."
   },
+  "_feedback_loop": {
+    "purpose": "Use per-response qualitative feedback to improve prompts, evals, and training examples.",
+    "priority_failure_tags": [
+      "wrong_followup",
+      "repeated_question",
+      "premature_proceed",
+      "missed_urgency",
+      "missed_prior_actions",
+      "missed_client_objective",
+      "poor_empathy",
+      "unsupported_legal_reference",
+      "poor_grounding",
+      "hallucinated_query_expansion",
+      "bad_stop_continue_judgment"
+    ],
+    "tag_to_schema_hint": {
+      "wrong_followup": "decision_state.next_best_question or decision_state.question_purpose was wrong",
+      "repeated_question": "decision_state.next_best_question duplicated known topic",
+      "premature_proceed": "decision_state.enough_to_advise fired too early",
+      "missed_urgency": "urgency.urgency_flags or urgency.urgency_level was wrong",
+      "missed_prior_actions": "prior_actions.prior_actions_taken was incomplete",
+      "missed_client_objective": "objective.stated_objective or objective.real_objective was incomplete",
+      "poor_grounding": "intake and grounded-advice layer boundary was blurred",
+      "bad_stop_continue_judgment": "decision_state.enough_to_advise and current_best_decision were out of sync"
+    }
+  },
   "session": {
     "turn": 0,
     "conflict_checked": false,

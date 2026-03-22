@@ -534,6 +534,21 @@ def _best_match(examples: list[dict], query: str) -> dict | None:
     return best if best_score > 0.0 else None
 
 
+def _rank_matches(examples: list[dict], query: str) -> list[tuple[dict, float]]:
+    """Return examples ranked by relevance score descending, dropping non-positive matches."""
+    if not examples:
+        return []
+    query_lower = query.lower()
+    query_tokens = _tokenise(query)
+    detected_domain = _detect_domain(query_lower)
+    scored = [
+        (ex, _score(ex, query_tokens, query_lower, detected_domain))
+        for ex in examples
+    ]
+    scored.sort(key=lambda x: x[1], reverse=True)
+    return [(ex, score) for ex, score in scored if score > 0.0]
+
+
 def _best_intake_match(query: str) -> dict | None:
     """
     Prefer curated compact examples for intake behavior. Fall back to the rich
@@ -590,7 +605,7 @@ def _format_intake_from_md(ex: dict, block: dict) -> str:
         _sep(f"REFERENCE EXAMPLE ({rec_id}) — {heading}"),
         "",
         "INSTRUCTION: Mirror the DECISION PATTERN of this intake — not the facts.",
-        "  • Replicate the question discipline: one focused question per turn",
+        "  • Replicate the question discipline: one focused question, or one compact cluster of 2-3 tightly related sub-questions, per turn",
         "  • Note why each turn's question wins over the bad alternative",
         "  • Follow the decision-state schema shown in the snapshot",
         "  • Stop only when the three exit conditions are met (see Stop Policy)",
@@ -904,6 +919,59 @@ def get_intake_example(query: str) -> str | None:
         return _format_intake(ex)
     except Exception as e:
         logger.warning("Failed to format intake example: %s", e)
+        return None
+
+
+def get_intake_example_pack(query: str, max_examples: int = 2) -> str | None:
+    """
+    Return a tiny curated intake pack optimized for runtime prompting:
+    - strongest behavioral match
+    - optional complementary curated example with a different matter shape or
+      outcome pattern to reduce overfitting to one script
+    """
+    curated = _parse_curated_blocks()
+    ranked = _rank_matches(curated, query)
+    if not ranked:
+        single = get_intake_example(query)
+        return single
+
+    chosen: list[dict] = [ranked[0][0]]
+    if max_examples > 1:
+        first = chosen[0]
+        first_client = (first.get("client_type") or "").strip().lower()
+        first_shape = (first.get("matter_shape") or "").strip().lower()
+        first_outcome = (first.get("outcome_pattern") or "").strip().lower()
+
+        for ex, _score_val in ranked[1:]:
+            if ex.get("id") == first.get("id"):
+                continue
+            client = (ex.get("client_type") or "").strip().lower()
+            shape = (ex.get("matter_shape") or "").strip().lower()
+            outcome = (ex.get("outcome_pattern") or "").strip().lower()
+
+            same_client = bool(first_client) and client == first_client
+            complementary = (
+                (shape and shape != first_shape)
+                or (outcome and outcome != first_outcome)
+            )
+            if same_client and complementary:
+                chosen.append(ex)
+                break
+
+        if len(chosen) == 1:
+            for ex, _score_val in ranked[1:]:
+                if ex.get("id") != first.get("id"):
+                    chosen.append(ex)
+                    break
+
+    try:
+        rendered = [_format_intake(ex) for ex in chosen[:max_examples]]
+        rendered = [r for r in rendered if (r or "").strip()]
+        if not rendered:
+            return None
+        return "\n\n".join(rendered)
+    except Exception as e:
+        logger.warning("Failed to format intake example pack: %s", e)
         return None
 
 

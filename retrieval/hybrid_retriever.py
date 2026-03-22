@@ -26,6 +26,7 @@ logger = logging.getLogger(__name__)
 _embedder = None
 _bm25_bare = None
 _bm25_case = None
+_embedder_lock = threading.Lock()
 
 # Cross-encoder: dual GPU+CPU instances with automatic OOM fallback.
 # GPU instance is used when VRAM is available; if it raises OOM the call
@@ -34,6 +35,7 @@ _bm25_case = None
 _cross_encoder_gpu = None   # CrossEncoder on CUDA, or False if unavailable
 _cross_encoder_cpu = None   # CrossEncoder on CPU (always available fallback)
 _ce_gpu_lock = threading.Lock()  # serialise GPU predict() calls
+_ce_init_lock = threading.Lock()
 
 # ---------------------------------------------------------------------------
 # In-memory index cache — populated once at startup by preload_all_indexes().
@@ -116,41 +118,43 @@ def _get_embedder():
     """
     global _embedder
     if _embedder is None:
-        from sentence_transformers import SentenceTransformer, models
-        import torch
-        from config import EMBEDDING_MODEL
+        with _embedder_lock:
+            if _embedder is None:
+                from sentence_transformers import SentenceTransformer, models
+                import torch
+                from config import EMBEDDING_MODEL
 
-        on_gpu = torch.cuda.is_available()
-        device = "cuda" if on_gpu else "cpu"
+                on_gpu = torch.cuda.is_available()
+                device = "cuda" if on_gpu else "cpu"
 
-        if on_gpu:
-            torch.backends.cudnn.benchmark = True
+                if on_gpu:
+                    torch.backends.cudnn.benchmark = True
 
-        logger.info(f"Loading embedding model '{EMBEDDING_MODEL}' on {device}")
-        try:
-            _embedder = SentenceTransformer(EMBEDDING_MODEL, device=device)
-            _ = _embedder.encode("test", convert_to_numpy=True)  # smoke-test
-        except Exception:
-            logger.info(
-                "Native SentenceTransformer load failed; building with explicit "
-                "mean-pooling for '%s'", EMBEDDING_MODEL,
-            )
-            word_embedding_model = models.Transformer(EMBEDDING_MODEL)
-            pooling_model = models.Pooling(
-                word_embedding_model.get_word_embedding_dimension(),
-                pooling_mode_mean_tokens=True,
-                pooling_mode_cls_token=False,
-                pooling_mode_max_tokens=False,
-            )
-            _embedder = SentenceTransformer(
-                modules=[word_embedding_model, pooling_model], device=device
-            )
+                logger.info(f"Loading embedding model '{EMBEDDING_MODEL}' on {device}")
+                try:
+                    _embedder = SentenceTransformer(EMBEDDING_MODEL, device=device)
+                    _ = _embedder.encode("test", convert_to_numpy=True)  # smoke-test
+                except Exception:
+                    logger.info(
+                        "Native SentenceTransformer load failed; building with explicit "
+                        "mean-pooling for '%s'", EMBEDDING_MODEL,
+                    )
+                    word_embedding_model = models.Transformer(EMBEDDING_MODEL)
+                    pooling_model = models.Pooling(
+                        word_embedding_model.get_word_embedding_dimension(),
+                        pooling_mode_mean_tokens=True,
+                        pooling_mode_cls_token=False,
+                        pooling_mode_max_tokens=False,
+                    )
+                    _embedder = SentenceTransformer(
+                        modules=[word_embedding_model, pooling_model], device=device
+                    )
 
-        if on_gpu:
-            # FP16 — must match build_indexes._get_embedder() so vectors are
-            # in the same space.  Output is cast to float32 before FAISS search.
-            _embedder = _embedder.half()
-            logger.info("Embedding model loaded in FP16 on %s", torch.cuda.get_device_name(0))
+                if on_gpu:
+                    # FP16 — must match build_indexes._get_embedder() so vectors are
+                    # in the same space.  Output is cast to float32 before FAISS search.
+                    _embedder = _embedder.half()
+                    logger.info("Embedding model loaded in FP16 on %s", torch.cuda.get_device_name(0))
 
     return _embedder
 
@@ -159,18 +163,20 @@ def _get_cross_encoder_gpu():
     """Lazy-load cross-encoder on CUDA. Returns None if CUDA is unavailable or load failed."""
     global _cross_encoder_gpu
     if _cross_encoder_gpu is None:
-        import torch
-        if torch.cuda.is_available():
-            try:
-                from sentence_transformers import CrossEncoder
-                from config import CROSS_ENCODER_MODEL
-                _cross_encoder_gpu = CrossEncoder(CROSS_ENCODER_MODEL, device="cuda")
-                logger.info("Cross-encoder loaded on CUDA")
-            except Exception as e:
-                logger.warning("Cross-encoder CUDA load failed (%s) — CPU only", e)
-                _cross_encoder_gpu = False  # sentinel: tried, unavailable
-        else:
-            _cross_encoder_gpu = False
+        with _ce_init_lock:
+            if _cross_encoder_gpu is None:
+                import torch
+                if torch.cuda.is_available():
+                    try:
+                        from sentence_transformers import CrossEncoder
+                        from config import CROSS_ENCODER_MODEL
+                        _cross_encoder_gpu = CrossEncoder(CROSS_ENCODER_MODEL, device="cuda")
+                        logger.info("Cross-encoder loaded on CUDA")
+                    except Exception as e:
+                        logger.warning("Cross-encoder CUDA load failed (%s) — CPU only", e)
+                        _cross_encoder_gpu = False  # sentinel: tried, unavailable
+                else:
+                    _cross_encoder_gpu = False
     return _cross_encoder_gpu if _cross_encoder_gpu is not False else None
 
 
@@ -178,10 +184,12 @@ def _get_cross_encoder_cpu():
     """Lazy-load cross-encoder on CPU (always-available fallback)."""
     global _cross_encoder_cpu
     if _cross_encoder_cpu is None:
-        from sentence_transformers import CrossEncoder
-        from config import CROSS_ENCODER_MODEL
-        _cross_encoder_cpu = CrossEncoder(CROSS_ENCODER_MODEL, device="cpu")
-        logger.info("Cross-encoder loaded on CPU")
+        with _ce_init_lock:
+            if _cross_encoder_cpu is None:
+                from sentence_transformers import CrossEncoder
+                from config import CROSS_ENCODER_MODEL
+                _cross_encoder_cpu = CrossEncoder(CROSS_ENCODER_MODEL, device="cpu")
+                logger.info("Cross-encoder loaded on CPU")
     return _cross_encoder_cpu
 
 
@@ -637,9 +645,9 @@ def hybrid_search(
     faiss_index_path: str,
     chunks_path: str,
     bm25_index_path: str,
-    faiss_top_k: int = 30,
-    bm25_top_k: int = 30,
-    rerank_top_k: int = 40,
+    faiss_top_k: int = 20,
+    bm25_top_k: int = 20,
+    rerank_top_k: int = 12,
     min_rerank_score: float = 0.0,
     allowed_acts: Optional[frozenset] = None,
     allowed_cases: Optional[frozenset] = None,
@@ -718,9 +726,14 @@ def hybrid_search(
         bm25_rank  = bm25_ranked.get(key,  bm25_top_k)
         rrf_scores[key] = 1.0 / (_RRF_K + faiss_rank) + 1.0 / (_RRF_K + bm25_rank)
 
-    # Sort by RRF descending, pass the top pool to the cross-encoder
-    # (cap at 2× rerank_top_k so we don't feed 100s of chunks to the cross-encoder)
-    rrf_pool_size = max(rerank_top_k * 2, len(all_keys))
+    # Sort by RRF descending, pass only the top pool to the cross-encoder.
+    # The previous implementation used max(..., len(all_keys)) which effectively
+    # removed the cap and pushed the entire candidate set to the cross-encoder.
+    # That was a major source of latency under multi-query legal retrieval.
+    rrf_pool_size = min(
+        len(all_keys),
+        max(rerank_top_k + 4, math.ceil(rerank_top_k * 1.5)),
+    )
     rrf_sorted = sorted(all_keys, key=lambda k: rrf_scores[k], reverse=True)[:rrf_pool_size]
     all_candidate_keys = set(rrf_sorted)
 
@@ -788,8 +801,8 @@ def hybrid_search(
         if len(text) < 30:
             continue
         candidate_chunks.append((key, chunk))
-        # Truncate for cross-encoder (max ~512 tokens)
-        candidate_texts.append(text[:1500])
+        # Truncate for cross-encoder to keep hot-path reranking lean.
+        candidate_texts.append(text[:1000])
 
     if not candidate_chunks:
         return []
@@ -926,10 +939,10 @@ def search_bare_acts(query: str, top_k: int = 30) -> list:
                 faiss_index_path=ACT_SUMMARY_INDEX_V2,
                 chunks_path=ACT_SUMMARY_CHUNKS_V2,
                 bm25_index_path=ACT_SUMMARY_BM25_INDEX,
-                faiss_top_k=20,
-                bm25_top_k=20,
-                rerank_top_k=15,
-                min_rerank_score=-5.0,
+                faiss_top_k=12,
+                bm25_top_k=12,
+                rerank_top_k=8,
+                min_rerank_score=0.0,
             )
             allowed_acts = frozenset(
                 (r.get("act_name") or "").strip()
@@ -942,10 +955,10 @@ def search_bare_acts(query: str, top_k: int = 30) -> list:
                     faiss_index_path=BARE_INDEX_V2,
                     chunks_path=BARE_CHUNKS_V2,
                     bm25_index_path=BARE_BM25_INDEX,
-                    faiss_top_k=50,
-                    bm25_top_k=50,
-                    rerank_top_k=top_k,
-                    min_rerank_score=-5.0,
+                    faiss_top_k=24,
+                    bm25_top_k=24,
+                    rerank_top_k=min(top_k, 10),
+                    min_rerank_score=0.0,
                     allowed_acts=allowed_acts,
                 )
             else:
@@ -954,10 +967,10 @@ def search_bare_acts(query: str, top_k: int = 30) -> list:
                     faiss_index_path=BARE_INDEX_V2,
                     chunks_path=BARE_CHUNKS_V2,
                     bm25_index_path=BARE_BM25_INDEX,
-                    faiss_top_k=40,
-                    bm25_top_k=40,
-                    rerank_top_k=top_k,
-                    min_rerank_score=-5.0,
+                    faiss_top_k=20,
+                    bm25_top_k=20,
+                    rerank_top_k=min(top_k, 10),
+                    min_rerank_score=0.0,
                 )
         except Exception as e:
             logger.warning("Two-tier bare-act search failed, falling back to single-tier: %s", e)
@@ -966,10 +979,10 @@ def search_bare_acts(query: str, top_k: int = 30) -> list:
                 faiss_index_path=BARE_INDEX_V2,
                 chunks_path=BARE_CHUNKS_V2,
                 bm25_index_path=BARE_BM25_INDEX,
-                faiss_top_k=40,
-                bm25_top_k=40,
-                rerank_top_k=top_k,
-                min_rerank_score=-5.0,
+                faiss_top_k=20,
+                bm25_top_k=20,
+                rerank_top_k=min(top_k, 10),
+                min_rerank_score=0.0,
             )
     else:
         results = hybrid_search(
@@ -977,10 +990,10 @@ def search_bare_acts(query: str, top_k: int = 30) -> list:
             faiss_index_path=BARE_INDEX_V2,
             chunks_path=BARE_CHUNKS_V2,
             bm25_index_path=BARE_BM25_INDEX,
-            faiss_top_k=40,
-            bm25_top_k=40,
-            rerank_top_k=top_k,
-            min_rerank_score=-5.0,  # keep generous; sufficiency analyzer decides
+            faiss_top_k=20,
+            bm25_top_k=20,
+            rerank_top_k=min(top_k, 10),
+            min_rerank_score=0.0,
         )
     for r in results:
         r["source_tag"] = "LOCAL_DB"
@@ -1018,10 +1031,10 @@ def search_bare_acts_filtered(
         faiss_index_path=BARE_INDEX_V2,
         chunks_path=BARE_CHUNKS_V2,
         bm25_index_path=BARE_BM25_INDEX,
-        faiss_top_k=40,
-        bm25_top_k=40,
-        rerank_top_k=top_k,
-        min_rerank_score=-5.0,
+        faiss_top_k=20,
+        bm25_top_k=20,
+        rerank_top_k=min(top_k, 10),
+        min_rerank_score=0.0,
         allowed_acts=allowed_acts,
     )
     for r in results:
@@ -1052,10 +1065,10 @@ def search_case_laws(query: str, top_k: int = 30) -> list:
                 faiss_index_path=CASE_SUMMARY_INDEX_V2,
                 chunks_path=CASE_SUMMARY_CHUNKS_V2,
                 bm25_index_path=CASE_SUMMARY_BM25_INDEX,
-                faiss_top_k=20,
-                bm25_top_k=20,
-                rerank_top_k=15,
-                min_rerank_score=-5.0,
+                faiss_top_k=12,
+                bm25_top_k=12,
+                rerank_top_k=8,
+                min_rerank_score=0.0,
             )
             allowed_cases = frozenset(
                 (r.get("case_name") or "").strip()
@@ -1068,10 +1081,10 @@ def search_case_laws(query: str, top_k: int = 30) -> list:
                     faiss_index_path=CASE_INDEX_V2,
                     chunks_path=CASE_CHUNKS_V2,
                     bm25_index_path=CASE_BM25_INDEX,
-                    faiss_top_k=20,
-                    bm25_top_k=20,
-                    rerank_top_k=top_k,
-                    min_rerank_score=-5.0,
+                    faiss_top_k=15,
+                    bm25_top_k=15,
+                    rerank_top_k=min(top_k, 6),
+                    min_rerank_score=0.0,
                     allowed_cases=allowed_cases,
                 )
             else:
@@ -1080,10 +1093,10 @@ def search_case_laws(query: str, top_k: int = 30) -> list:
                     faiss_index_path=CASE_INDEX_V2,
                     chunks_path=CASE_CHUNKS_V2,
                     bm25_index_path=CASE_BM25_INDEX,
-                    faiss_top_k=20,
-                    bm25_top_k=20,
-                    rerank_top_k=top_k,
-                    min_rerank_score=-5.0,
+                    faiss_top_k=15,
+                    bm25_top_k=15,
+                    rerank_top_k=min(top_k, 6),
+                    min_rerank_score=0.0,
                 )
         except Exception as e:
             logger.warning("Two-tier case search failed, falling back to single-tier: %s", e)
@@ -1092,10 +1105,10 @@ def search_case_laws(query: str, top_k: int = 30) -> list:
                 faiss_index_path=CASE_INDEX_V2,
                 chunks_path=CASE_CHUNKS_V2,
                 bm25_index_path=CASE_BM25_INDEX,
-                faiss_top_k=20,
-                bm25_top_k=20,
-                rerank_top_k=top_k,
-                min_rerank_score=-5.0,
+                faiss_top_k=15,
+                bm25_top_k=15,
+                rerank_top_k=min(top_k, 6),
+                min_rerank_score=0.0,
             )
     else:
         results = hybrid_search(
@@ -1103,10 +1116,10 @@ def search_case_laws(query: str, top_k: int = 30) -> list:
             faiss_index_path=CASE_INDEX_V2,
             chunks_path=CASE_CHUNKS_V2,
             bm25_index_path=CASE_BM25_INDEX,
-            faiss_top_k=20,
-            bm25_top_k=20,
-            rerank_top_k=top_k,
-            min_rerank_score=-5.0,
+            faiss_top_k=15,
+            bm25_top_k=15,
+            rerank_top_k=min(top_k, 6),
+            min_rerank_score=0.0,
         )
     for r in results:
         r["source_tag"] = "LOCAL_DB"

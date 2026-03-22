@@ -18,10 +18,18 @@ import requests
 
 from llm.config import (
     OLLAMA_MODEL,
+    OLLAMA_MODEL_FAST,
     OLLAMA_MODEL_LONG_CONTEXT,
     LONG_CONTEXT_THRESHOLD,
     OLLAMA_KEEP_ALIVE,
+    OLLAMA_TIMEOUT_FAST_SEC,
+    OLLAMA_TIMEOUT_DEFAULT_SEC,
+    OLLAMA_TIMEOUT_LONG_SEC,
+    OLLAMA_RETRIES_FAST,
+    OLLAMA_RETRIES_DEFAULT,
+    OLLAMA_RETRIES_LONG,
     OLLAMA_MODEL_DISPLAY,
+    OLLAMA_MODEL_FAST_DISPLAY,
     OLLAMA_MODEL_LONG_CONTEXT_DISPLAY,
 )
 
@@ -40,10 +48,11 @@ def _get_model_for_prompt(
     Decide which Ollama model to use for this request. Priority order:
 
     1. explicit_model — if the caller passed a model name, use it.
-    2. task_hint == "long_context" — use long-context model (e.g. Llama 3.1 8B).
-    3. Prompt length > LONG_CONTEXT_THRESHOLD — use long-context model so we don't
+    2. task_hint == "fast" — use the fast intake model when configured.
+    3. task_hint == "long_context" — use long-context model (e.g. Llama 3.1 8B).
+    4. Prompt length > LONG_CONTEXT_THRESHOLD — use long-context model so we don't
        truncate; default threshold is 120_000 characters (~30K tokens).
-    4. Otherwise — use default model (e.g. Qwen 2.5 7B).
+    5. Otherwise — use default model (e.g. Qwen 3.5 9B).
 
     So: short prompts and most tasks use the default model; long prompts (or
     explicit task_hint) use the long-context model. The UI shows which model
@@ -51,6 +60,8 @@ def _get_model_for_prompt(
     """
     if explicit_model:
         return explicit_model
+    if task_hint == "fast":
+        return OLLAMA_MODEL_FAST
     if task_hint == "long_context" or (
         not task_hint and len(prompt) > LONG_CONTEXT_THRESHOLD
     ):
@@ -81,6 +92,8 @@ def get_display_name_for_model(model_name: str) -> str:
         return ""
     if OLLAMA_MODEL in model_name or model_name in OLLAMA_MODEL:
         return OLLAMA_MODEL_DISPLAY
+    if OLLAMA_MODEL_FAST in model_name or model_name in OLLAMA_MODEL_FAST:
+        return OLLAMA_MODEL_FAST_DISPLAY
     if OLLAMA_MODEL_LONG_CONTEXT in model_name or model_name in OLLAMA_MODEL_LONG_CONTEXT:
         return OLLAMA_MODEL_LONG_CONTEXT_DISPLAY
     return model_name
@@ -89,13 +102,14 @@ def get_display_name_for_model(model_name: str) -> str:
 def get_model_display_for_prompt(
     prompt: str,
     task_hint: str = None,
+    explicit_model: str = None,
 ) -> tuple:
     """
     Return (display_name, is_switched) for the model that would be used for this prompt.
     display_name: e.g. 'Qwen 2.5 7B' or 'Llama 3.1 8B'.
     is_switched: True when long-context model is used (so UI can show "Switching to X model").
     """
-    chosen = _get_model_for_prompt(prompt, None, task_hint)
+    chosen = _get_model_for_prompt(prompt, explicit_model, task_hint)
     display = get_display_name_for_model(chosen)
     is_switched = chosen == OLLAMA_MODEL_LONG_CONTEXT
     return (display, is_switched)
@@ -112,10 +126,29 @@ def get_last_model_used() -> str:
 OLLAMA_BASE_URL = "http://localhost:11434"
 OLLAMA_GENERATE_URL = f"{OLLAMA_BASE_URL}/api/generate"
 
-# Retry config — only retries on transient network errors, NOT on model/prompt errors
-MAX_RETRIES = 2
 RETRY_BACKOFF_BASE = 2  # seconds; doubles each retry (2s, 4s)
-DEFAULT_TIMEOUT = 300  # 5 minutes — long prompts on 7B model need time
+
+
+def _resolve_timeout_and_retries(
+    prompt: str,
+    chosen_model: str,
+    task_hint: str = None,
+    timeout: int = None,
+) -> tuple[int, int]:
+    """Choose task-appropriate timeout and retry policy."""
+    if timeout is not None:
+        # If caller overrides timeout, keep retries conservative for fast tasks.
+        retries = OLLAMA_RETRIES_FAST if task_hint == "fast" else OLLAMA_RETRIES_DEFAULT
+        return timeout, retries
+    long_context_active = (
+        task_hint == "long_context"
+        or (not task_hint and len(prompt) > LONG_CONTEXT_THRESHOLD)
+    )
+    if task_hint == "fast" or chosen_model == OLLAMA_MODEL_FAST:
+        return OLLAMA_TIMEOUT_FAST_SEC, OLLAMA_RETRIES_FAST
+    if long_context_active:
+        return OLLAMA_TIMEOUT_LONG_SEC, OLLAMA_RETRIES_LONG
+    return OLLAMA_TIMEOUT_DEFAULT_SEC, OLLAMA_RETRIES_DEFAULT
 
 
 def _extract_text(data: dict) -> str:
@@ -184,7 +217,7 @@ def ask_llm_stream(
         _last_model_used.value = chosen
     except Exception:
         pass
-    timeout = timeout or DEFAULT_TIMEOUT
+    timeout, _ = _resolve_timeout_and_retries(prompt, chosen, task_hint, timeout)
     payload = {
         "model": chosen,
         "prompt": prompt,
@@ -237,7 +270,7 @@ def ask_llm(
     except Exception:
         pass
     model = chosen
-    timeout = timeout or DEFAULT_TIMEOUT
+    timeout, max_retries = _resolve_timeout_and_retries(prompt, chosen, task_hint, timeout)
     payload = {
         "model": model,
         "prompt": prompt,
@@ -245,27 +278,27 @@ def ask_llm(
         "keep_alive": OLLAMA_KEEP_ALIVE,
     }
 
-    for attempt in range(1 + MAX_RETRIES):
+    for attempt in range(1 + max_retries):
         try:
             response = requests.post(
                 OLLAMA_GENERATE_URL, json=payload, timeout=timeout
             )
             break  # success — exit retry loop
         except (requests.ConnectionError, requests.Timeout) as e:
-            if attempt < MAX_RETRIES:
+            if attempt < max_retries:
                 wait = RETRY_BACKOFF_BASE * (2 ** attempt)
                 logger.warning(
                     "Ollama request failed (attempt %d/%d), retrying in %ds: %s",
-                    attempt + 1, 1 + MAX_RETRIES, wait, e,
+                    attempt + 1, 1 + max_retries, wait, e,
                 )
                 time.sleep(wait)
             else:
                 logger.error(
                     "Ollama request failed after %d attempts: %s",
-                    1 + MAX_RETRIES, e,
+                    1 + max_retries, e,
                 )
                 raise RuntimeError(
-                    f"Ollama unreachable after {1 + MAX_RETRIES} attempts: {e}"
+                    f"Ollama unreachable after {1 + max_retries} attempts: {e}"
                 ) from e
         except requests.RequestException as e:
             # Non-transient error (e.g. invalid URL) — fail immediately

@@ -57,7 +57,7 @@ def decompose_disputes(facts_summary: str, llm_fn=None) -> list:
 
     if llm_fn is None:
         from llm.ollama_client import ask_llm
-        llm_fn = ask_llm
+        llm_fn = lambda prompt: ask_llm(prompt, task_hint="fast")
 
     from prompts.advocate_prompts import DISPUTE_DECOMPOSITION_PROMPT
 

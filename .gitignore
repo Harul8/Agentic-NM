@@ -33,3 +33,8 @@ build/
 .env
 .env.local
 *.local
+
+# Fine-tuning artifacts (too large for GitHub; use RunPod volume or Hugging Face Hub)
+training/lora_model/
+training/merged_model/
+unsloth_compiled_cache/

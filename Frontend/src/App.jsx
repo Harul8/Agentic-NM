@@ -9,6 +9,46 @@ const AUTH_TOKEN_KEY = "nyaymalaw_auth_token";
 const CURRENT_USER_KEY = "nyaymalaw_current_user";
 const CURRENT_USER_NAME_KEY = "nyaymalaw_current_user_name";
 
+const RESPONSE_FEEDBACK_TAG_GROUPS = [
+  {
+    title: "Intake / Reasoning",
+    tags: [
+      "wrong_followup",
+      "repeated_question",
+      "premature_proceed",
+      "missed_urgency",
+      "missed_prior_actions",
+      "missed_client_objective",
+      "bad_stop_continue_judgment",
+      "strong_reasoning",
+    ],
+  },
+  {
+    title: "Communication",
+    tags: [
+      "poor_empathy",
+      "poor_clarity",
+      "too_verbose",
+      "strong_empathy",
+    ],
+  },
+  {
+    title: "Grounding / Retrieval",
+    tags: [
+      "unsupported_legal_reference",
+      "poor_grounding",
+      "hallucinated_query_expansion",
+      "strong_grounding",
+    ],
+  },
+  {
+    title: "Performance",
+    tags: [
+      "too_slow",
+    ],
+  },
+];
+
 /** Splits opinion text into normal segments and quote blocks (content inside ┌─┐ │ ... │ └─┘). Returns [{ type: 'normal'|'quote', text }]. */
 function parseOpinionWithQuotes(opinion) {
   if (!opinion || typeof opinion !== "string") return [{ type: "normal", text: "" }];
@@ -138,6 +178,10 @@ const ChatComposer = memo(function ChatComposer({
   onSubmit,
   resetSignal,
   showDisclaimer,
+  chatMode,
+  onChatModeChange,
+  selectedModel,
+  onModelChange,
 }) {
   const [draft, setDraft] = useState("");
   const textareaRef = useRef(null);
@@ -197,10 +241,120 @@ const ChatComposer = memo(function ChatComposer({
           </svg>
         </button>
       </div>
+      <div className="chat-composer-controls">
+        <select
+          id="chat-mode-select"
+          className="chat-model-select"
+          value={chatMode}
+          onChange={(e) => onChatModeChange(e.target.value)}
+          disabled={loading}
+        >
+          <option value="legal_opinion">Legal opinion</option>
+          <option value="legal_research">Legal research</option>
+          <option value="general">General</option>
+        </select>
+        <select
+          id="chat-model-select"
+          className="chat-model-select"
+          value={selectedModel}
+          onChange={(e) => onModelChange(e.target.value)}
+          disabled={loading}
+        >
+          <option value="default">Default (Qwen 3 8B)</option>
+          <option value="qwen3:8b">Qwen 3 8B</option>
+          <option value="qwen3.5:9b">Qwen 3.5 9B</option>
+        </select>
+      </div>
       {showDisclaimer && (
         <p className="chat-disclaimer">Nyaymalaw AI can make mistakes. Consider checking important information.</p>
       )}
     </>
+  );
+});
+
+const ResponseFeedbackPanel = memo(function ResponseFeedbackPanel({
+  messageId,
+  existing,
+  onSave,
+  onCancel,
+}) {
+  const [rating, setRating] = useState(existing?.rating || "");
+  const [reasonTags, setReasonTags] = useState(existing?.reason_tags || []);
+  const [freeText, setFreeText] = useState(existing?.free_text || "");
+
+  useEffect(() => {
+    setRating(existing?.rating || "");
+    setReasonTags(existing?.reason_tags || []);
+    setFreeText(existing?.free_text || "");
+  }, [messageId, existing]);
+
+  const toggleTag = useCallback((tag) => {
+    setReasonTags((prev) => (
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
+    ));
+  }, []);
+
+  return (
+    <div className="message-feedback-panel">
+      <div className="message-feedback-ratings">
+        {["good", "okay", "bad"].map((value) => (
+          <button
+            key={value}
+            type="button"
+            className={`message-feedback-rating ${rating === value ? "message-feedback-rating--active" : ""}`}
+            onClick={() => setRating(value)}
+          >
+            {value}
+          </button>
+        ))}
+      </div>
+      <div className="message-feedback-groups">
+        {RESPONSE_FEEDBACK_TAG_GROUPS.map((group) => (
+          <div key={group.title} className="message-feedback-group">
+            <div className="message-feedback-group-title">{group.title}</div>
+            <div className="message-feedback-tags">
+              {group.tags.map((tag) => (
+                <button
+                  key={tag}
+                  type="button"
+                  className={`message-feedback-tag ${reasonTags.includes(tag) ? "message-feedback-tag--active" : ""}`}
+                  onClick={() => toggleTag(tag)}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <textarea
+        className="message-feedback-textarea"
+        placeholder="What was good or what should have been different?"
+        value={freeText}
+        onChange={(e) => setFreeText(e.target.value)}
+        rows={3}
+      />
+      <div className="message-feedback-footer">
+        {existing?.submittedAt && (
+          <span className="message-feedback-status">Saved</span>
+        )}
+        <button
+          type="button"
+          className="message-feedback-submit"
+          disabled={!rating}
+          onClick={() => onSave({ rating, reasonTags, freeText })}
+        >
+          Save feedback
+        </button>
+        <button
+          type="button"
+          className="message-feedback-cancel"
+          onClick={onCancel}
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
   );
 });
 
@@ -224,8 +378,6 @@ function App() {
   // Chat & Interview state (merged from existing and snippet)
   // -------------------------
   const [messages, setMessages] = useState([]);
-  const [phase, setPhase] = useState("fact_collection"); // Retain existing phase logic
-  const [factsSummary, setFactsSummary] = useState(null); // Retain existing
   const [loading, setLoading] = useState(false); // Retain existing
   const [error, setError] = useState(""); // Retain existing
   const messagesEndRef = useRef(null);
@@ -233,12 +385,10 @@ function App() {
   const [composerResetSignal, setComposerResetSignal] = useState(0);
 
   // New interview state from snippet
-  const [stage, setStage] = useState("await_facts"); // "await_facts" | "interview" | "bare_acts_review" | "done"
+  const [stage, setStage] = useState("await_facts"); // "await_facts" | "interview" | "done"
   const [facts, setFacts] = useState("");
   const [currentQuestion, setCurrentQuestion] = useState("");
   const [qaHistory, setQaHistory] = useState([]); // [{question, answer}]
-  const [pendingBareActs, setPendingBareActs] = useState([]); // bare acts from Phase A, sent back in Phase B
-  const [pendingFactsSummary, setPendingFactsSummary] = useState(""); // facts_summary from Phase A
   const [opinionText, setOpinionText] = useState("");
   const [retrieved, setRetrieved] = useState([]);
   const [rawResponse, setRawResponse] = useState("");
@@ -252,6 +402,9 @@ function App() {
   // Streaming state: step timeline + live token text
   const [streamingSteps, setStreamingSteps] = useState([]); // [{message, icon, done}]
   const [streamingToken, setStreamingToken] = useState("");  // accumulated LLM tokens
+  const [openFeedbackMessageId, setOpenFeedbackMessageId] = useState(null);
+  const [feedbackStatusByMessageId, setFeedbackStatusByMessageId] = useState({});
+  const turnStartedAtRef = useRef(0);
 
   // Shared SSE handlers for "step" progress and incremental "token" output.
   const handleStep = useCallback((stepPayload) => {
@@ -270,6 +423,7 @@ function App() {
 
   // Manual mode selection: "legal_opinion" (default), "legal_research", "general"
   const [chatMode, setChatMode] = useState("legal_opinion");
+  const [selectedModel, setSelectedModel] = useState("default");
 
   // Bottom pane: single accordion (Eval | Architecture | Updates Tracker). Default: minimal strip at bottom; can extend up to 75% of viewport.
   const [bottomExpandedSection, setBottomExpandedSection] = useState(null); // "eval" | "architecture" | "updates" | null
@@ -327,6 +481,7 @@ function App() {
   const LEFT_COLUMN_MIN_WIDTH = LEFT_COLUMN_BASE_WIDTH * 0.5;
   const LEFT_COLUMN_MAX_WIDTH = LEFT_COLUMN_BASE_WIDTH * 1.5;
   const [leftColumnWidth, setLeftColumnWidth] = useState(LEFT_COLUMN_DEFAULT_WIDTH);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const toggleSidebarSection = (section) => {
     setSidebarExpandedSection((prev) => {
@@ -392,6 +547,129 @@ function App() {
      (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
       ? "http://127.0.0.1:8000"
       : (typeof window !== "undefined" ? window.location.origin : "http://127.0.0.1:8000"));
+
+  const makeMessageId = useCallback(
+    (prefix = "msg") => `${prefix}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+    [],
+  );
+
+  const normalizeAssistantText = useCallback((content) => {
+    if (content == null) return "";
+    if (typeof content === "string") return content;
+    if (content?.type === "question") return content.text || "";
+    if (content?.type === "final_opinion") return content.opinionText || "";
+    if (content?.text) return content.text;
+    if (content?.summary) return content.summary;
+    return "";
+  }, []);
+
+  const makeAssistantMessage = useCallback((content, feedbackMeta = {}) => ({
+    id: makeMessageId("asst"),
+    role: "assistant",
+    content,
+    timestamp: new Date().toISOString(),
+    feedbackMeta,
+  }), [makeMessageId]);
+
+  const makeUserMessage = useCallback((content) => ({
+    id: makeMessageId("user"),
+    role: "user",
+    content,
+    timestamp: new Date().toISOString(),
+  }), [makeMessageId]);
+
+  const normalizeLoadedMessages = useCallback((msgs) => (
+    Array.isArray(msgs)
+      ? msgs.map((m) => ({
+          ...m,
+          id: m?.id || makeMessageId(m?.role === "assistant" ? "asst" : "user"),
+        }))
+      : []
+  ), [makeMessageId]);
+
+  const currentTurnLatencyMs = useCallback(() => {
+    if (!turnStartedAtRef.current) return null;
+    return Math.max(0, Date.now() - turnStartedAtRef.current);
+  }, []);
+
+  const looksLikeFreshCaseOpening = useCallback((text) => {
+    const value = (text || "").trim().toLowerCase();
+    if (value.length < 35) return false;
+    if (["proceed", "continue", "ok", "okay", "yes", "no", "thanks", "thank you"].includes(value)) return false;
+    if (value.includes("?")) return false;
+    const markers = [
+      "my husband", "my wife", "my employer", "my landlord", "my tenant",
+      "my brother", "my sister", "my father", "my mother", "my neighbour",
+      "has been", "have been", "harassing", "threatening", "beats me",
+      "assault", "abuse", "evict", "terminated", "fired", "cheated",
+      "for last", "for the last", "comes home", "living with", "maintenance",
+    ];
+    return markers.some((marker) => value.includes(marker));
+  }, []);
+
+  const openFeedbackForMessage = useCallback((msg) => {
+    const messageId = msg?.id || null;
+    if (!messageId) return;
+    setOpenFeedbackMessageId(messageId);
+  }, []);
+
+  const closeFeedbackPanel = useCallback(() => {
+    setOpenFeedbackMessageId(null);
+  }, []);
+
+  const submitResponseFeedback = useCallback(async (msg, index, draft) => {
+    if (!msg?.id || !draft?.rating) return;
+    const token = localStorage.getItem(AUTH_TOKEN_KEY);
+    const headers = {
+      "Content-Type": "application/json",
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    };
+    const previousUser = [...messages]
+      .slice(0, index)
+      .reverse()
+      .find((m) => m.role === "user");
+    const payload = {
+      chat_id: currentChatIdRef.current != null ? String(currentChatIdRef.current) : "",
+      message_id: msg.id,
+      rating: draft.rating,
+      reason_tags: draft.reasonTags,
+      free_text: draft.freeText,
+      assistant_text: normalizeAssistantText(msg.content),
+      user_message: typeof previousUser?.content === "string" ? previousUser.content : "",
+      stage: msg.feedbackMeta?.stage || (msg.content?.type === "final_opinion" ? "analysis" : "intake"),
+      response_type: msg.feedbackMeta?.responseType || msg.content?.response_type || (msg.content?.type === "final_opinion" ? "legal_opinion" : "intake_question"),
+      model_used: msg.feedbackMeta?.modelUsed || msg.content?.model_used || "",
+      latency_ms: msg.feedbackMeta?.latencyMs ?? null,
+      metadata: {
+        message_index: index,
+        tags_version: "v1",
+        ...msg.feedbackMeta,
+      },
+    };
+    try {
+      const res = await fetch(`${API_BASE}/feedback/response`, {
+        method: "POST",
+        headers,
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(text || "Failed to save feedback");
+      }
+      setFeedbackStatusByMessageId((prev) => ({
+        ...prev,
+        [msg.id]: {
+          rating: draft.rating,
+          reason_tags: draft.reasonTags,
+          free_text: draft.freeText,
+          submittedAt: new Date().toISOString(),
+        },
+      }));
+      setOpenFeedbackMessageId(null);
+    } catch (err) {
+      setError(err.message || "Could not save feedback");
+    }
+  }, [API_BASE, messages, normalizeAssistantText]);
 
   // Load saved chats once on mount (do not depend on API_BASE to avoid re-runs and 429 from backend).
   useEffect(() => {
@@ -734,7 +1012,7 @@ function App() {
 
   // Open a saved chat in the chat window
   const handleLoadChat = (chat) => {
-    setMessages(chat.messages || []);
+    setMessages(normalizeLoadedMessages(chat.messages || []));
     setOpinionText(chat.opinionText || "");
     setRetrieved(chat.retrieved || []);
     setStage("done");
@@ -859,9 +1137,10 @@ function App() {
     setStreamingToken("");
     setElapsedTime(0); // Reset timer
     setComposerResetSignal((prev) => prev + 1);
+    turnStartedAtRef.current = Date.now();
 
     // Keep exact format user typed (spaces, newlines)
-    const userMsg = { role: "user", content: raw, timestamp: new Date().toISOString() };
+    const userMsg = makeUserMessage(raw);
     const isFirstMessage = messages.length === 0;
 
     setMessages((prev) => [...prev, userMsg]);
@@ -892,7 +1171,7 @@ function App() {
       try {
         await consumeSSEStream(
           `${API_BASE}/submit_case/stream`,
-          { text: raw, mode: chatMode },
+          { text: raw, mode: chatMode, model_override: selectedModel === "default" ? "" : selectedModel },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
@@ -908,16 +1187,18 @@ function App() {
             setStreamingSteps([]);
             setStreamingToken("");
             setRawResponse(JSON.stringify(data, null, 2));
-            if (data.status === "question" && data.next_question) {
-              setCurrentQuestion(data.next_question);
+            if (data.status === "question") {
+              const nextQuestion = (data.next_question || data.message || "Please share one more important detail, or say 'proceed' if you want me to begin the legal analysis.").trim();
+              setCurrentQuestion(nextQuestion);
               setStage("interview");
               setMessages((prev) => [
                 ...prev,
-                {
-                  role: "assistant",
-                  content: data.next_question,
-                  timestamp: new Date().toISOString(),
-                },
+                makeAssistantMessage(nextQuestion, {
+                  stage: "intake",
+                  responseType: "intake_question",
+                  modelUsed: "fast_intake_model",
+                  latencyMs: currentTurnLatencyMs(),
+                }),
               ]);
               if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
             } else if (data.status === "done") {
@@ -938,55 +1219,22 @@ function App() {
                   });
                 }
               }
-              const newAssistantMsg = {
-                role: "assistant",
-                content: {
-                  type: "final_opinion",
-                  response_type: data.response_type || "legal_opinion",
-                  opinionText: opinion,
-                  bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
-                  case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
-                  retrieved: retr,
-                  progress: data.progress || null,
-                  model_used: data.model_used || null,
-                },
-                timestamp: new Date().toISOString(),
-              };
+              const newAssistantMsg = makeAssistantMessage({
+                type: "final_opinion",
+                response_type: data.response_type || "legal_opinion",
+                opinionText: opinion,
+                bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
+                case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
+                retrieved: retr,
+                progress: data.progress || null,
+                model_used: data.model_used || null,
+              }, {
+                stage: "analysis",
+                responseType: data.response_type || "legal_opinion",
+                modelUsed: data.model_used || "",
+                latencyMs: currentTurnLatencyMs(),
+              });
               setMessages((prev) => [...prev, newAssistantMsg]);
-            } else if (data.status === "bare_acts_presented") {
-              // Phase A complete: bare acts retrieved and explained. Show them + follow-up question.
-              const bareActs = Array.isArray(data.bare_acts) ? data.bare_acts : [];
-              const disputes  = Array.isArray(data.disputes)  ? data.disputes  : [];
-              const followupQ = data.followup_question || null;
-              const introText = data.opinion_text || "Here are the relevant bare act sections I found.";
-              const savedFacts = data.facts_summary || facts;
-              setPendingBareActs(bareActs);
-              setPendingFactsSummary(savedFacts);
-              setCurrentQuestion(followupQ || "");
-              setStage("bare_acts_review");
-              setMessages((prev) => [
-                ...prev,
-                {
-                  role: "assistant",
-                  content: {
-                    type: "bare_acts_preview",
-                    text: introText,
-                    disputes: disputes,
-                    bare_acts: bareActs,
-                    followup_question: followupQ,
-                  },
-                  timestamp: new Date().toISOString(),
-                },
-              ]);
-            } else if (data.needs_confirmation) {
-              setMessages((prev) => [
-                ...prev,
-                {
-                  role: "assistant",
-                  content: data.summary,
-                  timestamp: new Date().toISOString(),
-                },
-              ]);
             } else {
               if (data.message) setError(data.message);
             }
@@ -1024,7 +1272,7 @@ function App() {
       try {
         await consumeSSEStream(
           `${API_BASE}/interview_step/stream`,
-          { facts, qa_history: updatedHistory, mode: chatMode },
+          { facts, qa_history: updatedHistory, mode: chatMode, model_override: selectedModel === "default" ? "" : selectedModel },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
@@ -1040,16 +1288,18 @@ function App() {
             setStreamingSteps([]);
             setStreamingToken("");
             setRawResponse(JSON.stringify(data, null, 2));
-            if (data.status === "question" && data.next_question) {
-              setCurrentQuestion(data.next_question);
+            if (data.status === "question") {
+              const nextQuestion = (data.next_question || data.message || "Please share one more important detail, or say 'proceed' if you want me to begin the legal analysis.").trim();
+              setCurrentQuestion(nextQuestion);
               setStage("interview");
               setMessages((prev) => [
                 ...prev,
-                {
-                  role: "assistant",
-                  content: data.next_question,
-                  timestamp: new Date().toISOString(),
-                },
+                makeAssistantMessage(nextQuestion, {
+                  stage: "intake",
+                  responseType: "intake_question",
+                  modelUsed: "fast_intake_model",
+                  latencyMs: currentTurnLatencyMs(),
+                }),
               ]);
               if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
             } else if (data.status === "done") {
@@ -1070,54 +1320,22 @@ function App() {
                   });
                 }
               }
-              const newAssistantMsg = {
-                role: "assistant",
-                content: {
-                  type: "final_opinion",
-                  response_type: data.response_type || "legal_opinion",
-                  opinionText: opinion,
-                  bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
-                  case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
-                  retrieved: retr,
-                  progress: data.progress || null,
-                  model_used: data.model_used || null,
-                },
-                timestamp: new Date().toISOString(),
-              };
+              const newAssistantMsg = makeAssistantMessage({
+                type: "final_opinion",
+                response_type: data.response_type || "legal_opinion",
+                opinionText: opinion,
+                bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
+                case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
+                retrieved: retr,
+                progress: data.progress || null,
+                model_used: data.model_used || null,
+              }, {
+                stage: "analysis",
+                responseType: data.response_type || "legal_opinion",
+                modelUsed: data.model_used || "",
+                latencyMs: currentTurnLatencyMs(),
+              });
               setMessages((prev) => [...prev, newAssistantMsg]);
-            } else if (data.status === "bare_acts_presented") {
-              const bareActs = Array.isArray(data.bare_acts) ? data.bare_acts : [];
-              const disputes  = Array.isArray(data.disputes)  ? data.disputes  : [];
-              const followupQ = data.followup_question || null;
-              const introText = data.opinion_text || "Here are the relevant bare act sections I found.";
-              const savedFacts = data.facts_summary || facts;
-              setPendingBareActs(bareActs);
-              setPendingFactsSummary(savedFacts);
-              setCurrentQuestion(followupQ || "");
-              setStage("bare_acts_review");
-              setMessages((prev) => [
-                ...prev,
-                {
-                  role: "assistant",
-                  content: {
-                    type: "bare_acts_preview",
-                    text: introText,
-                    disputes: disputes,
-                    bare_acts: bareActs,
-                    followup_question: followupQ,
-                  },
-                  timestamp: new Date().toISOString(),
-                },
-              ]);
-            } else if (data.needs_confirmation) {
-              setMessages((prev) => [
-                ...prev,
-                {
-                  role: "assistant",
-                  content: data.summary,
-                  timestamp: new Date().toISOString(),
-                },
-              ]);
             } else {
               if (data.message) setError(data.message);
             }
@@ -1135,97 +1353,93 @@ function App() {
       return;
     }
 
-    // 2b) Bare acts review — user is answering the follow-up after Phase A
-    if (stage === "bare_acts_review") {
-      const updatedHistory = [
-        ...qaHistory,
-        { question: currentQuestion || "Any additional information?", answer: raw },
-      ];
-      setQaHistory(updatedHistory);
-      setCurrentQuestion("");
-
-      try {
-        await consumeSSEStream(
-          `${API_BASE}/interview_step/stream`,
-          { facts: pendingFactsSummary || facts, qa_history: updatedHistory, bare_acts: pendingBareActs, mode: chatMode },
-          (progressPayload) => {
-            setProgress(progressPayload);
-            const groups = progressPayload.groups || [];
-            if (groups.length > 0) {
-              setExpandedGroups((prev) => {
-                const next = { ...prev };
-                groups.forEach((g) => { if (g && g.name) next[g.name] = true; });
-                return next;
-              });
-            }
-          },
-          (data) => {
-            setRawResponse(JSON.stringify(data, null, 2));
-            if (data.status === "done") {
-              setStage("done");
-              setCurrentQuestion("");
-              const opinion = data.opinion_text || "";
-              const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
-              setOpinionText(opinion);
-              setRetrieved(retr);
-              if (data.progress) {
-                setProgress(data.progress);
-                const groups = (data.progress && data.progress.groups) || [];
-                if (groups.length > 0) {
-                  setExpandedGroups((prev) => {
-                    const next = { ...prev };
-                    groups.forEach((g) => { if (g && g.name) next[g.name] = false; });
-                    return next;
-                  });
-                }
-              }
-              setMessages((prev) => [
-                ...prev,
-                {
-                  role: "assistant",
-                  content: {
-                    type: "final_opinion",
-                    response_type: data.response_type || "legal_opinion",
-                    opinionText: opinion,
-                    bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
-                    case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
-                    retrieved: retr,
-                    progress: data.progress || null,
-                    model_used: data.model_used || null,
-                  },
-                  timestamp: new Date().toISOString(),
-                },
-              ]);
-              // Clean up bare acts phase state
-              setPendingBareActs([]);
-              setPendingFactsSummary("");
-            } else if (data.status === "question") {
-              setCurrentQuestion(data.next_question);
-              setStage("interview");
-              setMessages((prev) => [
-                ...prev,
-                { role: "assistant", content: data.next_question, timestamp: new Date().toISOString() },
-              ]);
-            }
-            setStreamingSteps([]);
-            setStreamingToken("");
-          },
-          handleStep,
-          handleToken,
-        );
-      } catch (err) {
-        console.error("bare_acts_review stream error:", err);
-        setStreamingSteps([]);
-        setStreamingToken("");
-        setError("Error during processing: " + (err.message || "Network or server error"));
-      } finally {
-        setLoading(false);
-      }
-      return;
-    }
 
     // 3) Continue a loaded chat: use stream endpoint for live progress
     if (stage === "done") {
+      if (looksLikeFreshCaseOpening(raw)) {
+        setStage("await_facts");
+        setFacts("");
+        setCurrentQuestion("");
+        setQaHistory([]);
+        setOpinionText("");
+        setRetrieved([]);
+        setRawResponse("");
+        setProgress(null);
+        setStreamingSteps([]);
+        setStreamingToken("");
+        try {
+          await consumeSSEStream(
+            `${API_BASE}/submit_case/stream`,
+            { text: raw, mode: chatMode, model_override: selectedModel === "default" ? "" : selectedModel },
+            (progressPayload) => {
+              setProgress(progressPayload);
+              const groups = progressPayload.groups || [];
+              if (groups.length > 0) {
+                setExpandedGroups((prev) => {
+                  const next = { ...prev };
+                  groups.forEach((g) => { if (g && g.name) next[g.name] = true; });
+                  return next;
+                });
+              }
+            },
+            (data) => {
+              setStreamingSteps([]);
+              setStreamingToken("");
+              setRawResponse(JSON.stringify(data, null, 2));
+              if (data.status === "question") {
+                const nextQuestion = (data.next_question || data.message || "Please share one more important detail, or say 'proceed' if you want me to begin the legal analysis.").trim();
+                setFacts(raw);
+                setCurrentQuestion(nextQuestion);
+                setStage("interview");
+                setMessages((prev) => [
+                  ...prev,
+                  makeAssistantMessage(nextQuestion, {
+                    stage: "intake",
+                    responseType: "intake_question",
+                    modelUsed: "fast_intake_model",
+                    latencyMs: currentTurnLatencyMs(),
+                  }),
+                ]);
+                if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
+              } else if (data.status === "done") {
+                setFacts(raw);
+                setStage("done");
+                setCurrentQuestion("");
+                const opinion = data.opinion_text || "";
+                const retr = Array.isArray(data.retrieved) ? data.retrieved : [];
+                setOpinionText(opinion);
+                setRetrieved(retr);
+                const newAssistantMsg = makeAssistantMessage({
+                  type: "final_opinion",
+                  response_type: data.response_type || "legal_opinion",
+                  opinionText: opinion,
+                  bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
+                  case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
+                  retrieved: retr,
+                  progress: data.progress || null,
+                  model_used: data.model_used || null,
+                }, {
+                  stage: "analysis",
+                  responseType: data.response_type || "legal_opinion",
+                  modelUsed: data.model_used || "",
+                  latencyMs: currentTurnLatencyMs(),
+                });
+                setMessages((prev) => [...prev, newAssistantMsg]);
+              } else if (data.message) {
+                setError(data.message);
+              }
+            },
+            handleStep,
+            handleToken,
+          );
+        } catch (err) {
+          setError("Error during processing: " + (err.message || "Network or server error"));
+        } finally {
+          setLoading(false);
+        }
+        return;
+      }
+
       const normalizeContent = (msg) => {
         if (typeof msg.content === "string") return msg.content;
         if (msg.content?.opinionText != null) return msg.content.opinionText || "";
@@ -1237,7 +1451,7 @@ function App() {
         await new Promise((r) => setTimeout(r, 0));
         await consumeSSEStream(
           `${API_BASE}/conversation/continue/stream`,
-          { conversation, message: raw, mode: chatMode },
+          { conversation, message: raw, mode: chatMode, model_override: selectedModel === "default" ? "" : selectedModel },
           (progressPayload) => {
             setProgress(progressPayload);
             const groups = progressPayload.groups || [];
@@ -1254,7 +1468,12 @@ function App() {
             if (data.status === "question") {
               setMessages((prev) => [
                 ...prev,
-                { role: "assistant", content: assistantContent || "Could you tell me more?", timestamp: new Date().toISOString() },
+                makeAssistantMessage(assistantContent || "Could you tell me more?", {
+                  stage: "intake",
+                  responseType: "intake_question",
+                  modelUsed: "fast_intake_model",
+                  latencyMs: currentTurnLatencyMs(),
+                }),
               ]);
               if (Array.isArray(data.retrieved)) setRetrieved(data.retrieved);
             } else if (data.status === "done") {
@@ -1275,55 +1494,32 @@ function App() {
               }
               setMessages((prev) => [
                 ...prev,
-                {
-                  role: "assistant",
-                  content: {
-                    type: "final_opinion",
-                    response_type: data.response_type || "legal_opinion",
-                    opinionText: opinion,
-                    bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
-                    case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
-                    retrieved: retr,
-                    progress: data.progress || null,
-                    model_used: data.model_used || null,
-                  },
-                  timestamp: new Date().toISOString(),
-                },
-              ]);
-            } else if (data.status === "bare_acts_presented") {
-              const bareActs = Array.isArray(data.bare_acts) ? data.bare_acts : [];
-              const disputes  = Array.isArray(data.disputes)  ? data.disputes  : [];
-              const followupQ = data.followup_question || null;
-              const introText = data.opinion_text || "Here are the relevant bare act sections I found.";
-              const savedFacts = data.facts_summary || facts;
-              setPendingBareActs(bareActs);
-              setPendingFactsSummary(savedFacts);
-              setCurrentQuestion(followupQ || "");
-              setStage("bare_acts_review");
-              setMessages((prev) => [
-                ...prev,
-                {
-                  role: "assistant",
-                  content: {
-                    type: "bare_acts_preview",
-                    text: introText,
-                    disputes: disputes,
-                    bare_acts: bareActs,
-                    followup_question: followupQ,
-                  },
-                  timestamp: new Date().toISOString(),
-                },
-              ]);
-            } else if (data.needs_confirmation) {
-              setMessages((prev) => [
-                ...prev,
-                { role: "assistant", content: data.summary ?? "Please confirm the materials to proceed.", timestamp: new Date().toISOString() },
+                makeAssistantMessage({
+                  type: "final_opinion",
+                  response_type: data.response_type || "legal_opinion",
+                  opinionText: opinion,
+                  bare_acts: Array.isArray(data.bare_acts) ? data.bare_acts : [],
+                  case_laws: Array.isArray(data.case_laws) ? data.case_laws : [],
+                  retrieved: retr,
+                  progress: data.progress || null,
+                  model_used: data.model_used || null,
+                }, {
+                  stage: "analysis",
+                  responseType: data.response_type || "legal_opinion",
+                  modelUsed: data.model_used || "",
+                  latencyMs: currentTurnLatencyMs(),
+                }),
               ]);
             } else {
               const fallbackContent = assistantContent || data.opinion_text || data.summary || "Processing...";
               setMessages((prev) => [
                 ...prev,
-                { role: "assistant", content: fallbackContent, timestamp: new Date().toISOString() },
+                makeAssistantMessage(fallbackContent, {
+                  stage: "analysis",
+                  responseType: "continuation",
+                  modelUsed: "",
+                  latencyMs: currentTurnLatencyMs(),
+                }),
               ]);
             }
             setStreamingSteps([]);
@@ -1336,7 +1532,10 @@ function App() {
         setError("Error continuing chat: " + (err.message || ""));
         setMessages((prev) => [
           ...prev,
-          { role: "assistant", content: "Sorry, something went wrong. Please try again.", timestamp: new Date().toISOString() },
+          makeAssistantMessage("Sorry, something went wrong. Please try again.", {
+            stage: "system",
+            responseType: "error",
+          }),
         ]);
       } finally {
         setLoading(false);
@@ -1923,7 +2122,7 @@ function App() {
       if (data.response.internet_case_laws?.length > 0) {
         parts.push({
           type: "internet_case",
-          title: "📚 Case Laws (from internet search)",
+          title: "📚 Indiankanoon Fallback Results",
           items: data.response.internet_case_laws,
         });
       }
@@ -1952,168 +2151,6 @@ function App() {
     }
     if (content.type === "indexed") { // Added for indexed message type
       return <p className="message-indexed">{content.text}</p>;
-    }
-    if (content.type === "bare_acts_preview") {
-      const disputes  = content.disputes  || [];
-      const bareActs  = content.bare_acts  || [];
-      const followupQ = content.followup_question || null;
-
-      // Short names for well-known Indian acts — used in section headings
-      const ACT_SHORT_NAMES = {
-        "bharatiya nyaya sanhita 2023":              "BNS",
-        "bharatiya nyaya sanhita":                   "BNS",
-        "bharatiya nagarik suraksha sanhita 2023":   "BNSS",
-        "bharatiya nagarik suraksha sanhita":        "BNSS",
-        "bharatiya sakshya adhiniyam 2023":          "BSA",
-        "bharatiya sakshya adhiniyam":               "BSA",
-        "indian penal code 1860":                    "IPC",
-        "indian penal code":                         "IPC",
-        "code of criminal procedure 1973":           "CrPC",
-        "code of criminal procedure":                "CrPC",
-        "indian evidence act 1872":                  "IEA",
-        "indian evidence act":                       "IEA",
-        "code of civil procedure 1908":              "CPC",
-        "code of civil procedure":                   "CPC",
-        "transfer of property act 1882":             "TP Act",
-        "transfer of property act":                  "TP Act",
-        "specific relief act 1963":                  "Specific Relief Act",
-        "specific relief act":                       "Specific Relief Act",
-        "negotiable instruments act 1881":           "NI Act",
-        "negotiable instruments act":                "NI Act",
-        "hindu marriage act 1955":                   "HMA",
-        "hindu marriage act":                        "HMA",
-        "hindu succession act 1956":                 "HSA",
-        "hindu succession act":                      "HSA",
-        "consumer protection act 2019":              "Consumer Protection Act",
-        "consumer protection act":                   "Consumer Protection Act",
-        "arbitration and conciliation act 1996":     "Arbitration Act",
-        "arbitration and conciliation act":          "Arbitration Act",
-        "indian contract act 1872":                  "Contract Act",
-        "indian contract act":                       "Contract Act",
-        "registration act 1908":                     "Registration Act",
-        "limitation act 1963":                       "Limitation Act",
-        "motor vehicles act 1988":                   "MV Act",
-        "companies act 2013":                        "Companies Act",
-        "protection of women from domestic violence act 2005": "DV Act",
-        "protection of women from domestic violence act":      "DV Act",
-        "dowry prohibition act 1961":                "Dowry Act",
-        "telangana land encroachment act":           "TG Encroachment Act",
-      };
-
-      const shortActName = (actName) => {
-        const key = (actName || "").toLowerCase().trim();
-        return ACT_SHORT_NAMES[key] || actName;
-      };
-
-      // Build dispute groups: prefer grouped disputes from backend; fall back to flat list
-      const disputeGroups = disputes.length > 0
-        ? disputes
-        : bareActs.length > 0
-          ? [{ id: "d_main", dispute: "", sections: bareActs }]
-          : [];
-
-      const introText = (content.text || "").trim();
-
-      return (
-        <div className="message-bare-acts-preview message-bare-acts-preview--compact">
-          {introText && (
-            <p className="bare-acts-preview-intro">{introText}</p>
-          )}
-          {/* Per-dispute: dispute line, then section number + act name + crisp summary only */}
-          {disputeGroups.map((group, gi) => {
-            const sections = group.sections || [];
-            const multipleDisputes = disputeGroups.length > 1;
-            return (
-              <div key={group.id || gi} className="dispute-block dispute-block--compact">
-                {(multipleDisputes || group.dispute) && (
-                  <p className="dispute-block-header dispute-block-header--compact">
-                    {multipleDisputes && (
-                      <span className="dispute-block-number">Dispute {gi + 1}{group.dispute ? ": " : ""}</span>
-                    )}
-                    {group.dispute && (
-                      <span className="dispute-block-description">{group.dispute}</span>
-                    )}
-                  </p>
-                )}
-
-                <ul className="bare-act-section-list--compact">
-                  {sections.map((ba, si) => {
-                    const actName = ba.act_name || "Unknown Act";
-                    const short = shortActName(actName);
-                    const secNum = ba.section_number || "?";
-                    const summary = (ba.explanation || "").trim() || "Relevant to this dispute.";
-                    const isWeb = !!ba._web_sourced;
-                    const sourceUrl = ba.url || null;
-
-                    const handleAddToIndex = async () => {
-                      try {
-                        const resp = await fetch(`${API_BASE}/propose_index`, {
-                          method: "POST",
-                          headers: { "Content-Type": "application/json" },
-                          body: JSON.stringify({ section: ba }),
-                        });
-                        const data = await resp.json();
-                        alert(data.message || "Saved for indexing.");
-                      } catch {
-                        alert("Could not save section. Please try again.");
-                      }
-                    };
-
-                    return (
-                      <li key={si} className="bare-act-section-item--compact">
-                        <span className="bare-act-section-ref">Section {secNum}, {short}</span>
-                        <span className="bare-act-section-summary"> — {summary}</span>
-                        {isWeb && (
-                          <span className="bare-act-section-actions-inline">
-                            {" "}
-                            <a href={sourceUrl} target="_blank" rel="noreferrer" className="web-section-source-link">View source</a>
-                            <button type="button" className="add-to-index-btn-inline" onClick={handleAddToIndex}>+ Index</button>
-                          </span>
-                        )}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            );
-          })}
-
-          {/* Separator + single follow-up question or next-steps prompt */}
-          <div className="bare-acts-followup-separator" />
-          {followupQ ? (
-            <div className="bare-acts-followup">
-              {followupQ.includes("\n") ? (
-                <div className="bare-acts-followup-list">
-                  {(() => {
-                    const lines = followupQ.split("\n").filter(Boolean);
-                    const introLine = lines[0] && !lines[0].trim().startsWith("•") ? lines[0] : null;
-                    const bullets = lines.filter((l) => l.trim().startsWith("•"));
-                    return (
-                      <>
-                        {introLine && <p className="bare-acts-followup-intro">{introLine}</p>}
-                        {bullets.length > 0 && (
-                          <ul className="bare-acts-followup-ul">
-                            {bullets.map((line, i) => (
-                              <li key={i} className="bare-acts-followup-bullet">{line.trim().replace(/^•\s*/, "")}</li>
-                            ))}
-                          </ul>
-                        )}
-                      </>
-                    );
-                  })()}
-                </div>
-              ) : (
-                <p className="bare-acts-followup-text">{followupQ}</p>
-              )}
-            </div>
-          ) : (
-            <p className="bare-acts-next-steps">
-              If you'd like, I can find relevant court judgments on this, or give you a full legal opinion.
-            </p>
-          )}
-
-        </div>
-      );
     }
     if (content.type === "final_opinion") {
       const opinion = content.opinionText || "";
@@ -2578,17 +2615,28 @@ function App() {
       <div className="main-content-wrapper">
         {/* LEFT PANE – New chat, Bare Acts, Case Laws, Chat history (fixed order) */}
         <div
-          className="left-column"
-          style={{ width: leftColumnWidth, minWidth: leftColumnWidth, maxWidth: leftColumnWidth }}
+          className={`left-column${sidebarCollapsed ? " left-column--collapsed" : ""}`}
+          style={sidebarCollapsed ? undefined : { width: leftColumnWidth, minWidth: leftColumnWidth, maxWidth: leftColumnWidth }}
         >
             <div className="left-column-scroll">
-            <button
-              type="button"
-              onClick={handleNewChat}
-              className="chat-history-new-btn"
-            >
-              ＋ New chat
-            </button>
+            <div className="left-column-topbar">
+              <button
+                type="button"
+                onClick={handleNewChat}
+                className="chat-history-new-btn"
+              >
+                ＋ New chat
+              </button>
+              <button
+                type="button"
+                className="sidebar-collapse-btn"
+                onClick={() => setSidebarCollapsed(true)}
+                aria-label="Collapse sidebar"
+                title="Collapse sidebar"
+              >
+                ‹
+              </button>
+            </div>
             <details
               className={`bare-acts-collapsible sidebar-section${sidebarExpandedSection === "bare_acts" ? " sidebar-section--active" : ""}`}
               open={sidebarExpandedSection === "bare_acts"}
@@ -2962,16 +3010,29 @@ function App() {
 
             </div>
         </div>
-        <div
-          className="left-column-resizer"
-          onMouseDown={handleSidebarResizeMouseDown}
-          role="separator"
-          aria-orientation="vertical"
-          aria-label="Resize sidebar"
-        />
+        {!sidebarCollapsed && (
+          <div
+            className="left-column-resizer"
+            onMouseDown={handleSidebarResizeMouseDown}
+            role="separator"
+            aria-orientation="vertical"
+            aria-label="Resize sidebar"
+          />
+        )}
 
         {/* RIGHT PANE – Title at top, then chat area */}
         <div className={`right-content-wrapper${messages.some((m) => m.role === "user") ? " chat-mode" : ""}`}>
+          {sidebarCollapsed && (
+            <button
+              type="button"
+              className="sidebar-expand-btn"
+              onClick={() => setSidebarCollapsed(false)}
+              aria-label="Expand sidebar"
+              title="Expand sidebar"
+            >
+              ›
+            </button>
+          )}
           {/* Title at top left of right pane */}
           <div className="right-pane-header">
             <h1 className="main-title">
@@ -2996,37 +3057,15 @@ function App() {
                   </p>
                 </div>
                   <div className="chat-center-input-wrapper">
-                    <div className="chat-mode-toggle">
-                      <button
-                        type="button"
-                        className={`chat-mode-button ${chatMode === "legal_opinion" ? "chat-mode-button--active" : ""}`}
-                        onClick={() => setChatMode("legal_opinion")}
-                        disabled={loading}
-                      >
-                        Legal opinion
-                      </button>
-                      <button
-                        type="button"
-                        className={`chat-mode-button ${chatMode === "legal_research" ? "chat-mode-button--active" : ""}`}
-                        onClick={() => setChatMode("legal_research")}
-                        disabled={loading}
-                      >
-                        Legal research
-                      </button>
-                      <button
-                        type="button"
-                        className={`chat-mode-button ${chatMode === "general" ? "chat-mode-button--active" : ""}`}
-                        onClick={() => setChatMode("general")}
-                        disabled={loading}
-                      >
-                        General
-                      </button>
-                    </div>
                     <ChatComposer
                       loading={loading}
                       placeholder="Describe your case or ask a question"
                       onSubmit={handleSubmit}
                       resetSignal={composerResetSignal}
+                      chatMode={chatMode}
+                      onChatModeChange={setChatMode}
+                      selectedModel={selectedModel}
+                      onModelChange={setSelectedModel}
                       showDisclaimer={bottomExpandedSection == null}
                     />
                   </div>
@@ -3041,7 +3080,7 @@ function App() {
                   >
                     {messages.map((msg, i) => (
                   <div
-                    key={`msg-${i}`}
+                    key={`msg-${msg.id || i}`}
                     className={`message message--${msg.role}`}
                   >
                     <div className="message-avatar">
@@ -3129,6 +3168,17 @@ function App() {
                               >
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z" /><path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.379 6H4.5z" /></svg>
                               </button>
+                              {msg.id && (
+                                <button
+                                  type="button"
+                                  className={`message-action-btn ${openFeedbackMessageId === msg.id ? "message-action-btn--active" : ""}`}
+                                  onClick={() => openFeedbackForMessage(msg)}
+                                  title="Give feedback"
+                                  aria-label="Give feedback"
+                                >
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2.5a7.5 7.5 0 100 15 7.5 7.5 0 000-15zm-3 6.25a.75.75 0 011.5 0v.5a1.5 1.5 0 003 0v-.5a.75.75 0 011.5 0v.5a3 3 0 11-6 0v-.5zm1.125-2.125a.875.875 0 110-1.75.875.875 0 010 1.75zm3.75 0a.875.875 0 110-1.75.875.875 0 010 1.75z" /></svg>
+                                </button>
+                              )}
                               {msg.content?.type === "final_opinion" && (msg.content?.opinionText || "").trim() && (
                                 <button
                                   type="button"
@@ -3141,6 +3191,14 @@ function App() {
                                 </button>
                               )}
                             </div>
+                            {msg.id && openFeedbackMessageId === msg.id && (
+                              <ResponseFeedbackPanel
+                                messageId={msg.id}
+                                existing={feedbackStatusByMessageId[msg.id]}
+                                onSave={(draft) => submitResponseFeedback(msg, i, draft)}
+                                onCancel={closeFeedbackPanel}
+                              />
+                            )}
                           </div>
                         </div>
                       )}
@@ -3215,40 +3273,10 @@ function App() {
 
                 {/* Fixed bottom input when in chat mode */}
                 <div className="chat-input-wrapper">
-                  {messages.length === 0 && (
-                    <div className="chat-mode-toggle">
-                      <button
-                        type="button"
-                        className={`chat-mode-button ${chatMode === "legal_opinion" ? "chat-mode-button--active" : ""}`}
-                        onClick={() => setChatMode("legal_opinion")}
-                        disabled={loading}
-                      >
-                        Legal opinion
-                      </button>
-                      <button
-                        type="button"
-                        className={`chat-mode-button ${chatMode === "legal_research" ? "chat-mode-button--active" : ""}`}
-                        onClick={() => setChatMode("legal_research")}
-                        disabled={loading}
-                      >
-                        Legal research
-                      </button>
-                      <button
-                        type="button"
-                        className={`chat-mode-button ${chatMode === "general" ? "chat-mode-button--active" : ""}`}
-                        onClick={() => setChatMode("general")}
-                        disabled={loading}
-                      >
-                        General
-                      </button>
-                    </div>
-                  )}
                   <ChatComposer
                     loading={loading}
                     placeholder={
-                      stage === "bare_acts_review"
-                        ? "Provide the additional details, or type 'proceed' to continue"
-                        : stage === "interview" && currentQuestion
+                      stage === "interview" && currentQuestion
                         ? "Type your details here"
                         : stage === "await_facts"
                         ? "Describe your case facts here"
@@ -3256,6 +3284,10 @@ function App() {
                     }
                     onSubmit={handleSubmit}
                     resetSignal={composerResetSignal}
+                    chatMode={chatMode}
+                    onChatModeChange={setChatMode}
+                    selectedModel={selectedModel}
+                    onModelChange={setSelectedModel}
                     showDisclaimer={bottomExpandedSection == null}
                   />
                 </div>

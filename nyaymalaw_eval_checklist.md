@@ -12,6 +12,19 @@ A deployment-ready prompt must pass all Tier 1 hard blocks. Any Fail on tests 1-
 Do not evaluate fluency. Do not evaluate whether the response "sounds good."
 Evaluate only whether the model **behaved** correctly.
 
+When real-user feedback is available, convert repeated qualitative tags into eval pressure:
+- `wrong_followup` -> Tests 2, 4, 8
+- `repeated_question` -> Tests 4, 10, 18
+- `premature_proceed` -> Tests 7, 8, 10
+- `missed_urgency` -> Test 1
+- `missed_prior_actions` -> Test 2
+- `missed_client_objective` -> Tests 4, 10
+- `poor_empathy` -> Test 5 and conversational review
+- `unsupported_legal_reference` -> Test 9
+- `poor_grounding` -> Test 9
+- `hallucinated_query_expansion` -> add retrieval-stage regression case
+- `bad_stop_continue_judgment` -> Tests 8 and 10
+
 ---
 
 ## Tier 1 - Hard Blocks (Fail = Do Not Deploy)
@@ -198,3 +211,14 @@ Evaluate only whether the model **behaved** correctly.
 - Whether the client would be impressed
 
 None of these matter if the behavioral tests are failing.
+
+---
+
+## Feedback-To-Eval Rule
+
+When the same qualitative tag appears in 3 or more real conversations within a review cycle:
+1. add or tighten at least one eval case for that failure mode,
+2. add one corrected positive example to the example set,
+3. only then change prompts or runtime policy.
+
+This prevents prompt tuning by anecdote.

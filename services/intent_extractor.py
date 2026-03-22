@@ -12,7 +12,7 @@ from typing import Any, Optional
 
 logger = logging.getLogger(__name__)
 
-EXTRACT_RESEARCH_INTENT_PROMPT = """You are an Indian legal research assistant. From the user's message, extract structured intent for searching acts/laws. Output ONLY what the user actually mentioned or clearly implied. Do NOT add states, domains, or topics they did not ask for.
+EXTRACT_RESEARCH_INTENT_PROMPT = """You are an Indian legal research assistant. From the user's message, extract structured intent for legal research. Output ONLY what the user actually mentioned or clearly implied. Do NOT add states, domains, or topics they did not ask for.
 
 USER MESSAGE:
 {user_message}
@@ -25,7 +25,7 @@ Extract and output valid JSON only (no preamble):
   "scope": "broad or specific",
   "central_or_state": "both or central or state",
   "document_types": "acts_only or case_laws_only or both",
-  "search_strategy": "web_only or local_only or local_then_web",
+  "search_strategy": "local_only or local_then_web",
   "result_count": null or integer
 }}
 
@@ -36,7 +36,8 @@ RULES:
 - scope: "broad" if they want "all acts", "list all", "every act", "pull all"; "specific" otherwise.
 - central_or_state: "both" if they mention BOTH India/Central AND a state; "central" if only India/Central; "state" if only state acts.
 - document_types: "acts_only" if they want only acts/laws (no judgments)—e.g. "only acts", "bare acts", "laws by government", "no case laws". "case_laws_only" if they want only judgments—e.g. "only case laws", "only judgments", "no acts". "both" otherwise.
-- search_strategy: "web_only" if they say skip local, avoid local, only web, directly go to web, search the web only. "local_only" if they say only local, no web, local database only. "local_then_web" otherwise.
+- search_strategy: "local_only" if they say only local, no web, local database only. "local_then_web" otherwise.
+- "local_then_web" means: search the local vector store first, and use Indiankanoon only if the local store has no relevant result for a material type.
 - result_count: set to an integer ONLY if they explicitly asked for a number (e.g. "5 case laws", "top 10", "three judgments")—use that number, cap at 30. Set to null if they did not specify a count (then the system will show all highly relevant results).
 - Use only what the user said. Do not infer or add examples."""
 
@@ -49,13 +50,13 @@ def extract_research_intent(user_message: str, llm_fn=None) -> dict[str, Any]:
     Returns:
         dict with keys: states, domains, topics, scope, central_or_state,
         document_types ("acts_only"|"case_laws_only"|"both"),
-        search_strategy ("web_only"|"local_only"|"local_then_web"),
+        search_strategy ("local_only"|"local_then_web"),
         result_count (int or None; None = not specified → pipeline uses flexible limit).
         On failure returns safe defaults.
     """
     if llm_fn is None:
         from llm.ollama_client import ask_llm
-        llm_fn = ask_llm
+        llm_fn = lambda prompt: ask_llm(prompt, task_hint="fast")
 
     default = {
         "states": [],
@@ -122,7 +123,7 @@ def extract_research_intent(user_message: str, llm_fn=None) -> dict[str, Any]:
             central_or_state = "both"
         if document_types not in ("acts_only", "case_laws_only", "both"):
             document_types = "both"
-        if search_strategy not in ("web_only", "local_only", "local_then_web"):
+        if search_strategy not in ("local_only", "local_then_web"):
             search_strategy = "local_then_web"
         if result_count is not None:
             try:

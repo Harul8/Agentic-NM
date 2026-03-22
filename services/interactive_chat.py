@@ -1,5 +1,5 @@
-"""
-Interactive Chat Orchestrator — Handles multi-phase legal chat flow:
+﻿"""
+Interactive Chat Orchestrator â€” Handles multi-phase legal chat flow:
 1. Fact collection (professional advocate intake) with intent detection
 2. Response generation (bare acts + case laws + structured opinion)
 
@@ -16,11 +16,9 @@ import os
 import time
 
 from llm.ollama_client import ask_llm
-from services.fact_collector import get_next_question_or_complete
+from services.fact_collector import get_next_question_or_complete, is_stop_signal
 from services.response_generator_v2 import (
     generate_response_v2 as generate_response,
-    retrieve_bare_acts_phase,
-    generate_final_opinion_with_case_laws,
 )
 from services.content_guard import check_query_safety, sanitize_input, check_response_safety
 
@@ -28,6 +26,12 @@ logger = logging.getLogger(__name__)
 
 # Set PIPELINE_TIMING=1 in env to log elapsed ms for each step (debug slow follow-ups)
 _PIPELINE_TIMING = os.environ.get("PIPELINE_TIMING", "").lower() in ("1", "true", "yes")
+
+GENERIC_CHAT_SYSTEM = (
+    "You are a concise, helpful assistant. "
+    "Answer clearly and accurately. "
+    "Do not provide legal advice in this mode; suggest switching to legal mode for legal analysis."
+)
 
 
 def _log_step(step_name: str, elapsed_ms: float, extra: str = "") -> None:
@@ -59,131 +63,140 @@ def _ensure_message(msg: str, facts: str, intent: str) -> str:
         return "Thank you for sharing the details. I've researched the applicable bare acts and case laws. Here's my analysis."
 
 
-def _run_bare_acts_phase(facts_summary: str, progress_callback=None, states: list = None, conversation_history: list = None, step_callback=None) -> dict:
-    """
-    New Phase A: retrieve and explain bare acts, then ask a targeted follow-up question
-    (or proceed directly if no follow-up is needed).
-    Returns phase="bare_acts_presented" so the API can show sections + question to the user.
+_ANALYSIS_READY_PREFIX = "I have enough to begin the legal analysis"
 
-    states: list of state names detected from the query (e.g. ['Telangana']).
-      Used to search BOTH Union/central acts AND state-specific acts.
-    conversation_history: full chat history so the followup-question generator can avoid
-      repeating questions that were already asked during intake.
-    """
-    t_phase = time.perf_counter()
-    try:
-        result = retrieve_bare_acts_phase(
-            facts_summary,
-            progress_callback=progress_callback,
-            states=states or [],
-            conversation_history=conversation_history or [],
-            step_callback=step_callback,
-        )
-    except Exception as e:
-        logger.error("_run_bare_acts_phase: retrieval failed: %s", e, exc_info=True)
-        result = {"bare_acts": [], "followup_question": None, "intro_text": "I couldn't retrieve bare act sections right now. Proceeding with general analysis."}
 
-    bare_acts = result.get("bare_acts", [])
-    disputes   = result.get("disputes", [])   # per-dispute groupings for UI rendering
-    followup_question = result.get("followup_question")
-    intro_text = result.get("intro_text", "Here are the relevant bare act sections I found.")
-    _log_step(
-        "_run_bare_acts_phase",
-        (time.perf_counter() - t_phase) * 1000,
-        f"bare_acts={len(bare_acts)} disputes={len(disputes)} followup={'yes' if followup_question else 'no'}",
+def _build_analysis_ready_prompt() -> str:
+    return (
+        "I have enough to begin the legal analysis. "
+        "If you want, you can add any one last important fact now. "
+        "Otherwise, just say 'proceed' and I will prepare the full legal opinion from the local legal database."
     )
 
-    # If no follow-up needed and we have sections, we can still present them before
-    # the user confirms to proceed — keep phase as bare_acts_presented in all cases.
-    return {
-        "phase": "bare_acts_presented",
-        "message": intro_text,
-        "facts_summary": facts_summary,
-        "bare_acts": bare_acts,
-        "disputes": disputes,             # forwarded to API → frontend for per-dispute layout
-        "states": states or [],           # so frontend can send back for Phase B (case-law search)
-        "followup_question": followup_question,
-        "response": {
-            "bare_act_sections": bare_acts,
-            "case_laws": [],
-            "internet_case_laws": [],
-            "explanation": intro_text,
-            "progress": None,
-            "indexing_candidates": [],
-        },
-        "response_type": "bare_acts_presented",
-        "materials_to_confirm": None,
-        "indexed": False,
-    }
+
+def _analysis_confirmation_already_asked(conversation: list) -> bool:
+    for msg in reversed(conversation or []):
+        if msg.get("role") == "assistant":
+            return _ANALYSIS_READY_PREFIX.lower() in (msg.get("content") or "").lower()
+    return False
 
 
-def _run_final_with_case_laws(facts_summary: str, bare_acts: list, additional_info: str, progress_callback=None, states: list = None, step_callback=None, token_callback=None) -> dict:
+def _last_assistant_is_analysis_ready(conversation: list) -> bool:
+    """True only when the most recent assistant turn is the analysis-ready handoff."""
+    for msg in reversed(conversation or []):
+        role = msg.get("role")
+        content = (msg.get("content") or "").strip()
+        if not content:
+            continue
+        if role == "assistant":
+            return _ANALYSIS_READY_PREFIX.lower() in content.lower()
+        if role == "user":
+            return False
+    return False
+
+
+
+def _looks_like_new_case_opening(current_message: str, conversation: list) -> bool:
     """
-    New Phase B: given collected facts + already-retrieved bare acts + any additional user info,
-    retrieve case laws, associate them with sections, and generate the structured final opinion.
-    states: optional list of state names (e.g. from Phase A) so web search is jurisdiction-aware.
-    """
-    t_phase = time.perf_counter()
-    try:
-        resp = generate_final_opinion_with_case_laws(
-            facts_summary,
-            bare_acts,
-            additional_info=additional_info,
-            progress_callback=progress_callback,
-            states=states or [],
-            step_callback=step_callback,
-            token_callback=token_callback,
-        )
-    except Exception as e:
-        logger.error("_run_final_with_case_laws failed: %s", e, exc_info=True)
-        resp = {
-            "bare_act_sections": bare_acts,
-            "case_laws": [],
-            "internet_case_laws": [],
-            "explanation": "I encountered an issue while preparing the final analysis. Please try again.",
-            "progress": None,
-            "indexing_candidates": [],
-        }
+    Detect when a user is starting a fresh matter inside an already-completed chat.
 
-    explanation = (resp.get("explanation") or "").strip()
-    if explanation:
-        from services.content_guard import check_response_safety
-        resp_safety = check_response_safety(explanation)
-        if not resp_safety.get("safe"):
-            explanation = "I was unable to generate a safe response for this query. Please rephrase."
-    _log_step(
-        "_run_final_with_case_laws",
-        (time.perf_counter() - t_phase) * 1000,
-        f"bare_acts={len(resp.get('bare_act_sections', []))} case_laws={len(resp.get('case_laws', []))}",
+    Keep this narrow: only trigger on substantive factual narratives, not short follow-ups
+    like "proceed", "what about bail?", or "summarize this".
+    """
+    text = (current_message or "").strip()
+    if len(text) < 35:
+        return False
+    low = text.lower()
+    if is_stop_signal(text) or low in {"ok", "okay", "yes", "no", "thanks", "thank you"}:
+        return False
+    if "?" in text:
+        return False
+
+    factual_markers = (
+        "my husband", "my wife", "my employer", "my landlord", "my tenant",
+        "my brother", "my sister", "my father", "my mother", "my neighbour",
+        "has been", "have been", "is harassing", "is threatening",
+        "beats me", "assault", "abuse", "evict", "terminated me", "fired me",
+        "refused", "cheated", "for last", "for the last", "for three months",
+        "comes home", "living with", "police", "fir", "maintenance",
     )
+    if not any(marker in low for marker in factual_markers):
+        return False
 
-    return {
-        "phase": "done",
-        "message": "",
-        "facts_summary": facts_summary,
-        "response": {
-            "bare_act_sections": resp.get("bare_act_sections", []),
-            "case_laws": resp.get("case_laws", []),
-            "internet_case_laws": resp.get("internet_case_laws", []),
-            "explanation": explanation,
-            "progress": resp.get("progress"),
-            "indexing_candidates": resp.get("indexing_candidates", []),
-        },
-        "response_type": "legal_opinion",
-        "materials_to_confirm": None,
-        "indexed": False,
-    }
+    assistant_text = " ".join(
+        (msg.get("content") or "").lower()
+        for msg in (conversation or [])
+        if msg.get("role") == "assistant"
+    )
+    return _ANALYSIS_READY_PREFIX.lower() in assistant_text or "legal opinion" in assistant_text or "applicable laws" in assistant_text
+def _build_chat_window_summary(conversation: list, current_message: str = "") -> str:
+    """Deterministic summary of the current chat window for downstream analysis."""
+    user_points: list[str] = []
+    asked_questions: list[str] = []
+    seen_user: set[str] = set()
+    seen_q: set[str] = set()
+
+    for msg in conversation or []:
+        role = msg.get("role")
+        content = (msg.get("content") or "").strip().replace("\n", " ")
+        if not content:
+            continue
+        if role == "user":
+            if content not in seen_user:
+                seen_user.add(content)
+                user_points.append(content[:260])
+        elif role == "assistant" and "?" in content:
+            if content not in seen_q:
+                seen_q.add(content)
+                asked_questions.append(content[:220])
+
+    current = (current_message or "").strip().replace("\n", " ")
+    if current and not is_stop_signal(current) and current.lower() not in {"ok", "okay", "yes"} and current not in seen_user:
+        user_points.append(current[:260])
+
+    lines = ["CHAT WINDOW SUMMARY"]
+    if user_points:
+        lines.append("User facts and statements:")
+        for idx, item in enumerate(user_points[-8:], 1):
+            lines.append(f"{idx}. {item}")
+    if asked_questions:
+        lines.append("Questions already asked in this chat:")
+        for idx, item in enumerate(asked_questions[-6:], 1):
+            lines.append(f"{idx}. {item}")
+    return "\n".join(lines)
 
 
-def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_count: int = None, progress_callback=None, search_strategy: str = "local_only", step_callback=None, token_callback=None) -> dict:
+def _augment_facts_with_chat_summary(facts_summary: str, conversation: list, current_message: str = "") -> str:
+    """Append a compact chat-window summary so final reasoning carries the whole matter forward."""
+    base = (facts_summary or "").strip()
+    summary = _build_chat_window_summary(conversation, current_message=current_message).strip()
+    if not summary:
+        return base
+    if summary in base:
+        return base
+    return f"{base}\n\n{summary}".strip() if base else summary
+
+
+def _run_search_or_lookup(
+    facts_summary: str,
+    intent: str,
+    msg: str,
+    result_count: int = None,
+    progress_callback=None,
+    search_strategy: str = "local_then_web",
+    step_callback=None,
+    token_callback=None,
+    document_types: str | None = None,
+    model_override: str | None = None,
+) -> dict:
     """Handle search/lookup intents: go straight to research and return results."""
     # Always retrieve both bare acts AND case laws regardless of intent.
     # The original "acts_only"/"case_laws_only" split was too aggressive:
-    #   • "search" → "case_laws_only": if user asks "which sections apply", gets 0 bare acts
-    #   • "lookup" → "acts_only": never shows any supporting case laws
+    #   â€¢ "search" â†’ "case_laws_only": if user asks "which sections apply", gets 0 bare acts
+    #   â€¢ "lookup" â†’ "acts_only": never shows any supporting case laws
     # With an experiment corpus that may have acts but no case laws (or vice versa),
     # exclusive selection causes false "No results" responses.
-    document_types = "both"
+    effective_document_types = (document_types or "").strip().lower() or "both"
     try:
         resp = generate_response(
             facts_summary,
@@ -191,10 +204,11 @@ def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_coun
             intent=intent,
             result_count=result_count,
             progress_callback=progress_callback,
-            document_types=document_types,
+            document_types=effective_document_types,
             search_strategy=search_strategy,
             step_callback=step_callback,
             token_callback=token_callback,
+            model_override=model_override,
         )
     except Exception as e:
         logger.error("Research generation failed: %s", e, exc_info=True)
@@ -228,75 +242,6 @@ def _run_search_or_lookup(facts_summary: str, intent: str, msg: str, result_coun
     }
 
 
-def _run_legal_opinion_simple(
-    facts_summary: str,
-    progress_callback=None,
-    search_strategy: str = "local_only",
-    step_callback=None,
-    token_callback=None,
-) -> dict:
-    """
-    Single-pass legal opinion: hybrid retrieval (local only) + LLM reasoning.
-
-    This bypasses the older two-phase bare-acts-then-caselaw flow and skips web
-    enrichment so the hot path is:
-      facts → local retrieval (acts + cases) → opinion.
-    """
-    try:
-        resp = generate_response(
-            facts_summary,
-            jurisdiction_state="",
-            intent="legal_opinion",
-            progress_callback=progress_callback,
-            document_types="both",
-            search_strategy=search_strategy or "local_only",
-            result_count=None,
-            step_callback=step_callback,
-            token_callback=token_callback,
-        )
-    except Exception as e:
-        logger.error("Legal opinion generation failed: %s", e, exc_info=True)
-        return {
-            "phase": "done",
-            "message": "I encountered an issue while preparing your legal opinion. Please try again or rephrase your query.",
-            "facts_summary": facts_summary,
-            "response": None,
-            "response_type": "legal_opinion",
-            "materials_to_confirm": None,
-            "indexed": False,
-        }
-
-    # Output safety check
-    explanation = (resp.get("explanation") or "").strip()
-    if explanation:
-        resp_safety = check_response_safety(explanation)
-        if not resp_safety.get("safe"):
-            logger.warning("Unsafe legal-opinion output blocked")
-            explanation = "I was unable to generate a safe response for this query. Please try rephrasing."
-
-    return {
-        "phase": "done",
-        "message": "",
-        "facts_summary": facts_summary,
-        "response": {
-            "bare_act_sections": resp.get("bare_act_sections", []),
-            "case_laws": resp.get("case_laws", []),
-            "internet_case_laws": resp.get("internet_case_laws", []),
-            "explanation": explanation or "Here's my analysis based on the most relevant bare acts and case laws I found.",
-            "progress": resp.get("progress"),
-            "indexing_candidates": resp.get("indexing_candidates", []),
-        },
-        "response_type": "legal_opinion",
-        "materials_to_confirm": None,
-        "indexed": False,
-    }
-
-
-# Generalist Agent — handles all conversations and queries NOT covered by legal agents:
-# non-legal topics (politics, science, tech, general knowledge), how-to, trivia, and any unclear request.
-GENERIC_CHAT_SYSTEM = """You are a helpful, knowledgeable generalist assistant. You handle any question or conversation that is not a legal research request (case laws, bare acts, legal advice, or bulk indexing from a URL). Answer clearly and conversationally — like ChatGPT or Perplexity. Topics you handle include: politics, science, technology, history, how-to, trivia, general knowledge, and any other non-legal or ambiguous query. If the question is clearly about law (Indian law, cases, acts, legal advice), briefly say you're better suited for legal research and suggest they ask for case laws or legal opinion in this app. Otherwise answer from your training knowledge. Keep responses informative and concise. If you don't know something, say so. Do not use legal disclaimers for non-legal topics."""
-
-
 def _run_generic_chat(conversation: list, current_message: str, token_callback=None) -> dict:
     """Generalist Agent: handle any query not covered by legal agents (search, lookup, legal_opinion). Answers like ChatGPT/Perplexity; no legal retrieval."""
     try:
@@ -308,12 +253,12 @@ def _run_generic_chat(conversation: list, current_message: str, token_callback=N
         if token_callback:
             from llm.ollama_client import ask_llm_stream
             parts = []
-            for tok in ask_llm_stream(prompt):
+            for tok in ask_llm_stream(prompt, task_hint="fast"):
                 token_callback(tok)
                 parts.append(tok)
             reply = "".join(parts).strip()
         else:
-            reply = ask_llm(prompt).strip()
+            reply = ask_llm(prompt, task_hint="fast").strip()
         if not reply:
             reply = "I'm not sure how to answer that. Could you rephrase or ask something else?"
     except Exception as e:
@@ -360,12 +305,10 @@ def process_chat(
     document_types: str = None,
     search_strategy: str = None,
     result_count: int = None,
-    bare_acts: list = None,
-    states: list = None,
-    pending_indexing_list: list = None,
     chat_mode: str | None = None,
     step_callback=None,
     token_callback=None,
+    model_override: str | None = None,
 ) -> dict:
     """
     Process a chat message and return the appropriate response.
@@ -373,7 +316,7 @@ def process_chat(
     Args:
         conversation: List of {role, content} messages
         current_message: User's current message
-        phase: "fact_collection" | "response_generation" | "confirm_index"
+        phase: "fact_collection" | "response_generation"
         facts_summary: Collected facts (when phase is response_generation)
 
     Returns dict with: phase, message, facts_summary, response, response_type,
@@ -405,7 +348,7 @@ def process_chat(
 
     # ---- Phase: Fact Collection ----
     if phase == "fact_collection":
-        # Manual override: general chat → skip legal routing entirely
+        # Manual override: general chat â†’ skip legal routing entirely
         if mode == "general":
             return _run_generic_chat(conversation, current_message, token_callback=token_callback)
 
@@ -419,11 +362,39 @@ def process_chat(
                 msg=msg,
                 result_count=None,
                 progress_callback=progress_callback,
-                # Use local-only retrieval in hot path; caller can still request web via API-level overrides.
-                search_strategy="local_only",
+                # Use local-first retrieval with Indiankanoon fallback only when local retrieval is empty.
+                search_strategy="local_then_web",
                 step_callback=step_callback,
                 token_callback=token_callback,
+                model_override=model_override,
             )
+
+        if _looks_like_new_case_opening(current_message, conversation):
+            logger.info("Detected fresh case opening inside completed chat; re-entering intake with reset conversation")
+            conversation = []
+        # If the immediately previous assistant turn was the analysis-ready handoff,
+        # the user is either confirming to proceed or giving one last material fact.
+        # In either case, do not re-enter intake.
+        if _last_assistant_is_analysis_ready(conversation):
+            merged_facts = _augment_facts_with_chat_summary(
+                facts_summary or "",
+                conversation,
+                current_message=current_message,
+            )
+            _log_step("fact_collection ANALYSIS_READY_ACK", (time.perf_counter() - t_pipeline_start) * 1000)
+            return {
+                "phase": "response_generation",
+                "message": "",
+                "facts_summary": merged_facts,
+                "intent": "legal_opinion",
+                "document_types": "both",
+                "search_strategy": "local_then_web",
+                "result_count": None,
+                "response": None,
+                "response_type": None,
+                "materials_to_confirm": None,
+                "indexed": False,
+            }
 
         # Default / explicit legal opinion: use fact collector, but force LEGAL
         # so Gate 1 can never downgrade to GENERALIST when the user chose legal mode.
@@ -435,13 +406,24 @@ def process_chat(
         if result.get("action") == "complete":
             intent = result.get("intent", "legal_opinion")
             facts = result.get("facts_summary", current_message)
+            facts = _augment_facts_with_chat_summary(facts, conversation, current_message=current_message)
             msg = _ensure_message(result.get("message", ""), facts, intent)
 
             if intent in ("search", "lookup"):
                 count = result.get("result_count")
-                strategy = result.get("search_strategy", "local_only")
-                _log_step("FACT_COLLECTION → retrieval (search/lookup)", (time.perf_counter() - t_pipeline_start) * 1000, f"facts_len={len(facts or '')}")
-                return _run_search_or_lookup(facts, intent, msg, result_count=count, progress_callback=progress_callback, search_strategy=strategy, step_callback=step_callback, token_callback=token_callback)
+                strategy = result.get("search_strategy", "local_then_web")
+                _log_step("FACT_COLLECTION â†’ retrieval (search/lookup)", (time.perf_counter() - t_pipeline_start) * 1000, f"facts_len={len(facts or '')}")
+                return _run_search_or_lookup(
+                    facts,
+                    intent,
+                    msg,
+                    result_count=count,
+                    progress_callback=progress_callback,
+                    search_strategy=strategy,
+                    step_callback=step_callback,
+                    token_callback=token_callback,
+                    document_types=result.get("document_types", "both"),
+                )
 
             if intent == "bulk_ingest":
                 # Bulk ingest removed; treat as generic chat
@@ -450,21 +432,41 @@ def process_chat(
             if intent == "generic_chat":
                 return _run_generic_chat(conversation, current_message, token_callback=token_callback)
 
-            # Legal opinion: two-phase flow.
-            # Phase A: retrieve bare act sections, present legal protection summary,
-            # ask client if they want a detailed opinion (or ask for any critical gaps).
-            # Phase B (bare_acts_review): retrieve case laws + generate full structured opinion.
-            facts_len = len(facts or "")
-            states = result.get("states", [])
-            _log_step(
-                "FACT_COLLECTION → _run_bare_acts_phase",
-                (time.perf_counter() - t_pipeline_start) * 1000,
-                f"facts_len={facts_len}",
-            )
-            return _run_bare_acts_phase(facts, progress_callback=progress_callback, states=states, conversation_history=conversation, step_callback=step_callback)
+            # Keep intake fast: once enough facts exist, ask for confirmation to proceed
+            # to full research instead of launching retrieval in the same turn.
+            if not is_stop_signal(current_message) and not _analysis_confirmation_already_asked(conversation):
+                _log_step("fact_collection ANALYSIS_READY", (time.perf_counter() - t_pipeline_start) * 1000)
+                return {
+                    "phase": "fact_collection",
+                    "message": _build_analysis_ready_prompt(),
+                    "facts_summary": facts,
+                    "response": None,
+                    "response_type": None,
+                    "materials_to_confirm": None,
+                    "indexed": False,
+                }
 
-        # Still collecting facts — tokens were already streamed inside _run_single_gate
-        # when token_callback was provided.  Just return the structured result.
+            _log_step(
+                "FACT_COLLECTION â†’ response_generation",
+                (time.perf_counter() - t_pipeline_start) * 1000,
+                f"facts_len={len(facts or '')}",
+            )
+            return {
+                "phase": "response_generation",
+                "message": result.get("message", ""),
+                "facts_summary": facts,
+                "intent": intent,
+                "document_types": result.get("document_types", "both"),
+                "search_strategy": result.get("search_strategy", "local_then_web"),
+                "result_count": result.get("result_count"),
+                "response": None,
+                "response_type": None,
+                "materials_to_confirm": None,
+                "indexed": False,
+            }
+
+        # Still collecting facts — the compact intake path already streamed any tokens.
+        # Just return the structured question result to the caller.
         _log_step("fact_collection DONE (ask)", (time.perf_counter() - t_pipeline_start) * 1000)
         return {
             "phase": "fact_collection",
@@ -479,10 +481,14 @@ def process_chat(
     # ---- Phase: Response Generation ----
     elif phase == "response_generation":
         _log_step("response_generation START", (time.perf_counter() - t_pipeline_start) * 1000)
-        facts = facts_summary or current_message
+        facts = _augment_facts_with_chat_summary(
+            facts_summary or current_message,
+            conversation,
+            current_message=current_message,
+        )
         use_intent = intent or "legal_opinion"
         use_document_types = document_types or "both"
-        use_search_strategy = search_strategy or "local_only"
+        use_search_strategy = search_strategy or "local_then_web"
         use_result_count = result_count
         t_before_gen = time.perf_counter()
         try:
@@ -496,6 +502,7 @@ def process_chat(
                 result_count=use_result_count,
                 step_callback=step_callback,
                 token_callback=token_callback,
+                model_override=model_override,
             )
         except Exception as e:
             logger.error("Response generation failed: %s", e, exc_info=True)
@@ -510,28 +517,8 @@ def process_chat(
             }
         _log_step("generate_response (retrieval+LLM)", (time.perf_counter() - t_before_gen) * 1000)
 
-        # Check if materials need user confirmation first
-        if resp.get("needs_confirmation"):
-            materials = resp.get("materials_to_confirm", {})
-            return {
-                "phase": "confirm_materials",
-                "message": resp.get("summary", resp.get("explanation", "")),
-                "facts_summary": facts,
-                "response": {
-                    "bare_act_sections": resp.get("bare_act_sections", []),
-                    "case_laws": resp.get("case_laws", []),
-                    "internet_case_laws": [],
-                    "explanation": resp.get("summary", resp.get("explanation", "")),
-                },
-                "response_type": "legal_opinion",
-                "materials_to_confirm": {
-                    "bare_acts": materials.get("bare_acts", []),
-                    "case_laws": materials.get("case_laws", []),
-                },
-                "indexed": False,
-            }
 
-        # Full response ready — check output safety
+        # Full response ready â€” check output safety
         explanation = (resp.get("explanation") or "").strip()
         if explanation:
             resp_safety = check_response_safety(explanation)
@@ -541,7 +528,7 @@ def process_chat(
 
         return {
             "phase": "done",
-            "message": "",  # transition text only — explanation goes in response.explanation
+            "message": "",  # transition text only â€” explanation goes in response.explanation
             "facts_summary": facts,
             "response": {
                 "bare_act_sections": resp.get("bare_act_sections", []),
@@ -556,20 +543,9 @@ def process_chat(
             "indexed": False,
         }
 
-    # ---- Phase: Bare Acts Review (user answered the follow-up question) ----
-    elif phase == "bare_acts_review":
-        # The user replied to the follow-up question shown after bare act presentation.
-        # additional_info = user's answer; bare_acts = sections from Phase A (passed by frontend).
-        # states = from Phase A response so case-law web search is jurisdiction-aware.
-        facts = facts_summary or current_message
-        additional_info = current_message
-        stored_bare_acts = bare_acts or []
-        return _run_final_with_case_laws(
-            facts, stored_bare_acts, additional_info, progress_callback=progress_callback, states=states or [], step_callback=step_callback, token_callback=token_callback,
-        )
-
-    # ---- Phase: Confirm Index ----
-    elif phase == "confirm_index":
-        return _empty_result("done", facts_summary)
 
     return _empty_result()
+
+
+
+

@@ -1,7 +1,7 @@
-### ARCHITECTURE (Current Codebase + Target) ###
+### ARCHITECTURE (Historical + Needs Refresh) ###
 
-Nyaymalaw 3.0 — Legal RAG: fact collection, hybrid retrieval (FAISS + BM25 + cross-encoder),
-two-phase response (bare acts → case laws), web fallback, and optional CrewAI agents.
+Nyaymalaw 3.0 � Legal RAG: compact intake, proceed-to-analysis flow, hybrid retrieval, local-first grounding, and optional legacy search utilities.
+This file still contains some historical flow notes from older two-phase and fallback designs; treat the runtime code as the source of truth until this document is fully refreshed.
 
 Ref: api_server.py, services/interactive_chat.py, services/response_generator_v2.py,
      services/fact_collector.py, retrieval/hybrid_retriever.py, Ingestion/smart_chunker.py.

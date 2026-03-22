@@ -50,6 +50,31 @@ class EvalResult:
     reason: str
     elapsed_ms: float
     raw_output: Optional[str] = None
+    feedback_tags: Optional[list[str]] = None
+
+
+def _feedback_tags_for_test(test_id: int) -> list[str]:
+    mapping = {
+        1: ["missed_urgency"],
+        2: ["missed_prior_actions", "wrong_followup"],
+        3: ["poor_clarity"],
+        4: ["wrong_followup", "repeated_question"],
+        5: ["poor_clarity", "poor_empathy"],
+        6: ["poor_clarity"],
+        7: ["premature_proceed", "bad_stop_continue_judgment"],
+        8: ["premature_proceed", "bad_stop_continue_judgment"],
+        9: ["unsupported_legal_reference", "poor_grounding"],
+        10: ["bad_stop_continue_judgment", "repeated_question"],
+        11: ["wrong_followup"],
+        12: ["poor_clarity"],
+        13: ["strong_reasoning"],
+        14: ["strong_reasoning"],
+        15: ["strong_reasoning"],
+        16: ["strong_reasoning"],
+        17: ["strong_reasoning"],
+        18: ["repeated_question", "bad_stop_continue_judgment"],
+    }
+    return mapping.get(test_id, [])
 
 
 def _run_intake(conversation: list, user_message: str) -> dict:
@@ -482,7 +507,10 @@ def run_eval(test_ids: list[int] = None, tier_filter: str = None, verbose: bool 
         except Exception as e:
             idx = ALL_TESTS.index(fn) + 1
             tier = "hard" if idx <= HARD_TEST_COUNT else "quality"
-            r = EvalResult(idx, fn.__name__, tier, "FAIL", f"EXCEPTION: {e}", 0.0)
+            r = EvalResult(idx, fn.__name__, tier, "FAIL", f"EXCEPTION: {e}", 0.0, feedback_tags=_feedback_tags_for_test(idx))
+
+        if r.feedback_tags is None:
+            r.feedback_tags = _feedback_tags_for_test(r.test_id)
 
         results.append(r)
 
@@ -532,6 +560,7 @@ def run_eval(test_ids: list[int] = None, tier_filter: str = None, verbose: bool 
                     "verdict": r.verdict,
                     "reason": r.reason,
                     "elapsed_ms": r.elapsed_ms,
+                    "feedback_tags": r.feedback_tags or [],
                 }
                 for r in results
             ],

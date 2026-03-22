@@ -17,23 +17,16 @@ import time
 from llm.ollama_client import ask_llm
 from prompts.advocate_prompts import (
     GREETING_PHRASES,
-    ROUTING_SINGLE_GATE_SYSTEM,
-    FACT_COLLECTION_SYSTEM,
-    FACT_COLLECTION_RETRY_PROMPT,
-    SENIOR_ADVOCATE_INTAKE_SYSTEM,
+    INTAKE_STATE_UPDATE_SYSTEM,
+    NEXT_QUESTION_FROM_STATE_SYSTEM,
     STOP_PHRASES,
 )
-
-# Feature flag: set USE_SENIOR_ADVOCATE_INTAKE=1 to activate the new
-# senior-advocate intake prompt (replaces ROUTING_SINGLE_GATE_SYSTEM).
-import os as _os
-_USE_SENIOR_INTAKE = _os.environ.get("USE_SENIOR_ADVOCATE_INTAKE", "1").strip() in ("1", "true", "yes")
-_ACTIVE_INTAKE_SYSTEM = SENIOR_ADVOCATE_INTAKE_SYSTEM if _USE_SENIOR_INTAKE else ROUTING_SINGLE_GATE_SYSTEM
 
 logger = logging.getLogger(__name__)
 
 # Set PIPELINE_TIMING=1 to log elapsed ms for each step (debug slow follow-ups)
 _PIPELINE_TIMING = os.environ.get("PIPELINE_TIMING", "").lower() in ("1", "true", "yes")
+_ENABLE_INTAKE_FEWSHOT = os.environ.get("ENABLE_INTAKE_FEWSHOT", "1").lower() in ("1", "true", "yes")
 
 # Static greeting for exact match (target <100 ms; no LLM call)
 GREETING_STATIC_TEMPLATE = (
@@ -58,6 +51,11 @@ _LEGAL_KEYWORDS = (
     "cheque", "bounce", "fraud", "theft", "murder", "ipc", "crpc", "cpc",
     "bnss", "bns", "bsa",  # new criminal codes
     "petition", "writ", "appeal", "tribunal", "arbitration",
+    # Plain-language legal distress terms that often appear before formal legal words
+    "harass", "harassment", "beat", "beating", "abuse", "assault", "violence",
+    "threat", "threaten", "terrorise", "terrorize", "injury", "injured",
+    "husband", "wife", "children", "child", "daughter", "son", "dowry",
+    "separate", "separation", "protection",
 )
 
 
@@ -175,7 +173,8 @@ _DEDUP_TOPIC_KEYWORDS: frozenset[str] = frozenset({
     "evidence", "witness", "proof", "document", "certificate",
     "income", "salary", "earning", "financial", "money", "rupee", "lakh", "amount",
     "location", "state", "city", "district", "place", "where",
-    "when", "date", "time", "how long", "since when", "duration",
+    "when", "date", "time", "how long", "since when", "duration", "frequency",
+    "regularly", "often", "pattern", "specific time", "specific times",
     "property", "house", "land", "flat", "deed", "ownership", "possession",
     "agreement", "contract", "written", "registered",
     "children", "child", "son", "daughter", "minor",
@@ -209,161 +208,261 @@ def _extract_asked_questions(conversation_history: list) -> list[str]:
     return questions
 
 
-def _build_intake_context_block(conversation_history: list) -> str:
-    """
-    Build a structured ALREADY-ASKED / ALREADY-KNOWN block to inject into Gate 2 prompts.
-    Makes it impossible for the model to miss what has already been covered.
-    """
-    if not conversation_history:
-        return ""
+def _compact_conversation_context(conversation_history: list, max_messages: int = 6, max_chars: int = 240) -> str:
+    """Build a compact recent-history block for fast intake routing."""
+    recent = conversation_history[-max_messages:] if conversation_history else []
+    lines: list[str] = []
+    for msg in recent:
+        role = "User" if msg.get("role") == "user" else "Assistant"
+        content = (msg.get("content") or "").strip().replace("\n", " ")
+        if len(content) > max_chars:
+            content = content[:max_chars].rstrip() + "..."
+        if content:
+            lines.append(f"{role}: {content}")
+    return "\n".join(lines)
 
-    asked_questions = _extract_asked_questions(conversation_history)
-    user_facts: list[str] = []
+
+def _build_compact_intake_state_context(conversation_history: list, user_message: str) -> str:
+    """Build a compact, high-signal context block for intake state extraction."""
+    recent = _compact_conversation_context(conversation_history, max_messages=5, max_chars=200)
+    asked_questions = _extract_asked_questions(conversation_history)[-5:]
+    user_points: list[str] = []
+    seen: set[str] = set()
     for msg in conversation_history:
-        if msg.get("role") == "user":
-            content = (msg.get("content") or "").strip()
-            if len(content) > 5:
-                # Truncate very long user messages for prompt brevity
-                user_facts.append(content[:350] if len(content) > 350 else content)
+        if msg.get("role") != "user":
+            continue
+        content = (msg.get("content") or "").strip().replace("\n", " ")
+        if not content or content in seen:
+            continue
+        seen.add(content)
+        user_points.append(content[:220])
+    current = (user_message or "").strip().replace("\n", " ")
+    if current and current not in seen:
+        user_points.append(current[:220])
 
-    if not asked_questions and not user_facts:
-        return ""
-
-    lines = [
-        "",
-        "══════════════════════════════════════════════════════",
-        "INTAKE MEMORY — READ BEFORE DECIDING WHAT TO ASK NEXT",
-        "══════════════════════════════════════════════════════",
-    ]
-
-    if user_facts:
-        lines.append("FACTS ALREADY STATED BY CLIENT — treat as fully known, do NOT ask about these:")
-        for i, fact in enumerate(user_facts, 1):
-            lines.append(f"  [{i}] {fact}")
-
+    lines = []
+    if recent:
+        lines.append("RECENT CONVERSATION:")
+        lines.append(recent)
+    if user_points:
+        lines.append("")
+        lines.append("USER STATEMENTS SO FAR:")
+        for i, item in enumerate(user_points[-6:], 1):
+            lines.append(f"{i}. {item}")
     if asked_questions:
         lines.append("")
-        lines.append("QUESTIONS ALREADY ASKED — NEVER repeat these or anything substantially similar:")
+        lines.append("QUESTIONS ALREADY ASKED:")
         for i, q in enumerate(asked_questions, 1):
-            lines.append(f"  [{i}] {q}")
-        lines.append("")
-        lines.append("⛔  Your next question MUST be on a COMPLETELY DIFFERENT topic not listed above.")
-        lines.append("⛔  If no genuinely new material fact is still missing, set action=complete NOW.")
-
-    lines.append("══════════════════════════════════════════════════════")
+            lines.append(f"{i}. {q[:180]}")
     lines.append("")
-    return "\n".join(lines)
+    lines.append(f"CURRENT USER MESSAGE: {current}")
+    return "\n".join(lines).strip()
+
+
+def _parse_intake_state(response: str) -> dict | None:
+    out = _extract_json(response)
+    if not out or not isinstance(out, dict):
+        return None
+    route = (out.get("route") or "").strip().lower()
+    if route not in ("greeting", "generic_chat", "search", "lookup", "legal_opinion"):
+        return None
+    out["route"] = route
+    out["known_facts"] = [str(x).strip() for x in (out.get("known_facts") or []) if str(x).strip()][:6]
+    out["prior_actions_taken"] = [str(x).strip() for x in (out.get("prior_actions_taken") or []) if str(x).strip()][:5]
+    out["open_points"] = [str(x).strip() for x in (out.get("open_points") or []) if str(x).strip()][:5]
+    out["facts_summary"] = (out.get("facts_summary") or "").strip()
+    out["enough_to_proceed"] = bool(out.get("enough_to_proceed"))
+    return out
+
+
+def _count_distinct_user_turns(conversation_history: list, user_message: str) -> int:
+    """Count distinct substantive user turns seen so far, including the current one."""
+    seen: set[str] = set()
+    count = 0
+    for msg in conversation_history or []:
+        if msg.get("role") != "user":
+            continue
+        content = (msg.get("content") or "").strip().lower()
+        if not content or content in seen:
+            continue
+        seen.add(content)
+        count += 1
+    current = (user_message or "").strip().lower()
+    if current and current not in seen:
+        count += 1
+    return count
+
+
+def _needs_more_intake_clarification(intake_state: dict, conversation_history: list, user_message: str) -> bool:
+    """
+    Generic guardrail against premature intake completion.
+
+    The model still chooses the next question, but we do not allow `enough_to_proceed`
+    to fire too early when the decision state is still thin.
+    """
+    if not intake_state or intake_state.get("route") != "legal_opinion":
+        return False
+    if not intake_state.get("enough_to_proceed"):
+        return False
+
+    objective = (intake_state.get("client_objective") or "").strip()
+    urgency = (intake_state.get("urgency_level") or "unknown").strip().lower()
+    prior_actions = [x for x in (intake_state.get("prior_actions_taken") or []) if str(x).strip()]
+    open_points = [x for x in (intake_state.get("open_points") or []) if str(x).strip()]
+    user_turns = _count_distinct_user_turns(conversation_history, user_message)
+
+    # Do not stop on the very first substantive legal turn.
+    # Even a strong opening narrative usually still needs one decision-critical follow-up.
+    if user_turns <= 1:
+        return True
+
+    # More generally, if multiple decision-critical uncertainties remain, keep intake open.
+    if len(open_points) >= 2:
+        return True
+    if open_points and (not objective or urgency in ("", "unknown") or not prior_actions):
+        return True
+
+    return False
+
+
+def _run_compact_intake_state(conversation_history: list, user_message: str) -> dict | None:
+    """Small model call: extract route + compact legal intake state."""
+    context_block = _build_compact_intake_state_context(conversation_history, user_message)
+    few_shot_block = ""
+    if _ENABLE_INTAKE_FEWSHOT:
+        try:
+            from training.few_shot_retriever import get_intake_example_pack
+            full_query = " ".join(
+                [(m.get("content") or "").strip() for m in conversation_history if (m.get("content") or "").strip()]
+                + [(user_message or "").strip()]
+            ).strip()
+            packed = get_intake_example_pack(full_query, max_examples=2)
+            if packed:
+                few_shot_block = f"\n\n{packed}\n"
+        except Exception:
+            few_shot_block = ""
+    prompt = (
+        f"{INTAKE_STATE_UPDATE_SYSTEM}"
+        f"{few_shot_block}\n\n"
+        f"{context_block}\n\n"
+        f"Output one line of valid JSON only."
+    )
+    try:
+        response = ask_llm(prompt, task_hint="fast").strip()
+        return _parse_intake_state(response)
+    except Exception:
+        return None
+
+
+def _run_next_question_from_state(intake_state: dict, conversation_history: list) -> dict | None:
+    """Small model call: choose one next question or complete from compact state."""
+    asked_questions = _extract_asked_questions(conversation_history)[-5:]
+    few_shot_block = ""
+    if _ENABLE_INTAKE_FEWSHOT:
+        try:
+            from training.few_shot_retriever import get_intake_example_pack
+            query_parts = [
+                intake_state.get("facts_summary", ""),
+                " ".join(intake_state.get("known_facts", []) or []),
+                " ".join(intake_state.get("open_points", []) or []),
+            ]
+            packed = get_intake_example_pack(" ".join([p for p in query_parts if p]).strip(), max_examples=2)
+            if packed:
+                few_shot_block = f"\n\n{packed}\n"
+        except Exception:
+            few_shot_block = ""
+    state_json = json.dumps({
+        "client_objective": intake_state.get("client_objective", ""),
+        "urgency_level": intake_state.get("urgency_level", "unknown"),
+        "known_facts": intake_state.get("known_facts", []),
+        "prior_actions_taken": intake_state.get("prior_actions_taken", []),
+        "open_points": intake_state.get("open_points", []),
+        "enough_to_proceed": intake_state.get("enough_to_proceed", False),
+        "facts_summary": intake_state.get("facts_summary", ""),
+    }, ensure_ascii=False)
+    asked_json = json.dumps(asked_questions, ensure_ascii=False)
+    prompt = (
+        f"{NEXT_QUESTION_FROM_STATE_SYSTEM}"
+        f"{few_shot_block}\n\n"
+        f"COMPACT CASE STATE:\n{state_json}\n\n"
+        f"QUESTIONS ALREADY ASKED:\n{asked_json}\n\n"
+        f"Output one line of valid JSON only."
+    )
+    try:
+        response = ask_llm(prompt, task_hint="fast").strip()
+        return _parse_llm_response(response, intake_state.get("facts_summary", ""))
+    except Exception:
+        return None
+
+
 
 
 def _is_duplicate_question(proposed: str, asked_questions: list[str]) -> bool:
     """
     Return True if the proposed question substantially overlaps (same topic keywords)
-    with any question already in asked_questions. Two or more shared topic keywords = duplicate.
+    with any question already in asked_questions.
+
+    We allow a compact grouped follow-up when it stays in the same general area
+    but adds a genuinely new related fact. Example: "Any eyewitnesses?" can be
+    followed by "Would they testify or file an affidavit?" without being treated
+    as a duplicate.
     """
     if not asked_questions or not proposed:
         return False
-    p_lower = proposed.lower()
+    p_lower = re.sub(r"\s+", " ", proposed.lower()).strip()
     p_topics = {kw for kw in _DEDUP_TOPIC_KEYWORDS if kw in p_lower}
-    if not p_topics:
-        return False
     for asked in asked_questions:
-        a_topics = {kw for kw in _DEDUP_TOPIC_KEYWORDS if kw in asked.lower()}
-        if len(p_topics & a_topics) >= 1:  # Any 1 shared topic = duplicate
+        a_lower = re.sub(r"\s+", " ", asked.lower()).strip()
+        if p_lower == a_lower:
+            return True
+        a_topics = {kw for kw in _DEDUP_TOPIC_KEYWORDS if kw in a_lower}
+        if not p_topics or not a_topics:
+            continue
+        shared_topics = p_topics & a_topics
+        new_topics = p_topics - a_topics
+        if shared_topics and not new_topics:
+            return True
+        if len(shared_topics) >= 2 and len(new_topics) == 0:
             return True
     return False
 
 
-# ---------------------------------------------------------------------------
-# Single-gate routing — replaces the old two-gate (Gate1 + Gate2) design.
-# One LLM call handles greeting / generalist / legal-search / legal-opinion.
-# ---------------------------------------------------------------------------
-
-def _run_single_gate(conversation_history: list, user_message: str, token_callback=None) -> dict | None:
+def _is_low_value_timing_followup(proposed: str, intake_state: dict, asked_questions: list[str]) -> bool:
     """
-    Unified router: one LLM call that classifies AND decides action.
-    Returns a parsed result dict ready for the caller, or None on failure.
-
-    Handles:
-      greeting    → action="greeting"   (caller converts to ask-style response)
-      generic_chat → action="complete", intent="generic_chat"
-      search/lookup → action="complete", intent="search"|"lookup"
-      legal_opinion → action="ask" or action="complete"
+    Reject repeated low-value timing questions when an ongoing pattern is already clear
+    and higher-value decision gaps still exist.
     """
-    context = "\n".join(
-        f"{'User' if m.get('role') == 'user' else 'Assistant'}: {m.get('content') or ''}"
-        for m in conversation_history
+    if not proposed:
+        return False
+    p = proposed.lower()
+    timing_signals = (
+        "specific time", "specific times", "what time", "which time", "frequency",
+        "how often", "how many times", "duration", "late evening", "regularly",
+    )
+    if not any(sig in p for sig in timing_signals):
+        return False
+
+    state_blob = " ".join(
+        [intake_state.get("facts_summary", "")]
+        + list(intake_state.get("known_facts", []) or [])
+        + list(intake_state.get("open_points", []) or [])
+    ).lower()
+    ongoing_signals = ("last", "months", "regular", "regularly", "ongoing", "contin", "every", "often")
+    if not any(sig in state_blob for sig in ongoing_signals):
+        return False
+
+    higher_value_gaps = (
+        "objective", "relief", "protection", "complaint", "police", "fir", "medical",
+        "evidence", "children", "child", "safety", "residence", "maintenance",
+    )
+    if not any(sig in state_blob for sig in higher_value_gaps):
+        return False
+
+    return _is_duplicate_question(proposed, asked_questions) or any(
+        any(sig in (q or "").lower() for sig in timing_signals)
+        for q in asked_questions
     )
 
-    # Few-shot injection only on the first 2 user turns — after that the conversation
-    # history itself demonstrates the desired style; injecting it is pure token waste.
-    user_turn_count = sum(1 for m in conversation_history if m.get("role") == "user")
-    few_shot_block = ""
-    if user_turn_count <= 2:
-        try:
-            from training.few_shot_retriever import get_intake_example
-            all_user_text = " ".join(
-                m.get("content", "") for m in conversation_history if m.get("role") == "user"
-            ) + " " + user_message
-            example = get_intake_example(all_user_text)
-            if example:
-                few_shot_block = f"\n\n{example}\n"
-        except Exception:
-            pass
-
-    # Structured INTAKE MEMORY block — explicit list of everything already asked / known.
-    intake_context_block = _build_intake_context_block(conversation_history)
-
-    prompt = (
-        f"{_ACTIVE_INTAKE_SYSTEM}"
-        f"{few_shot_block}"
-        f"{intake_context_block}"
-        f"\nConversation so far:\n{context}"
-        f"\n\nUser: {user_message}"
-        f"\n\nOutput one line of valid JSON only."
-    )
-
-    try:
-        if token_callback:
-            from llm.ollama_client import ask_llm_stream
-            _parts: list[str] = []
-            for _tok in ask_llm_stream(prompt):
-                token_callback(_tok)
-                _parts.append(_tok)
-            response = "".join(_parts).strip()
-        else:
-            response = ask_llm(prompt).strip()
-        parsed = _parse_llm_response(response, user_message)
-
-        # Code-level deduplication guard: if the model still proposes a duplicate
-        # question despite the INTAKE MEMORY block, force completion.
-        # NOTE: _parse_llm_response normalises the reply into "question" key;
-        # "reply_to_client" is only present in the raw LLM JSON before parsing.
-        if parsed and parsed.get("action") == "ask":
-            asked_questions = _extract_asked_questions(conversation_history)
-            reply = parsed.get("question") or parsed.get("reply_to_client") or ""
-            if asked_questions and _is_duplicate_question(reply, asked_questions):
-                logger.info(
-                    "[SingleGate] Duplicate question blocked — forcing complete. Proposed: %s",
-                    reply[:120],
-                )
-                all_user_text = " | ".join(
-                    (m.get("content") or "")
-                    for m in conversation_history
-                    if m.get("role") == "user"
-                )
-                return {
-                    "action": "complete",
-                    "intent": "legal_opinion",
-                    "result_count": None,
-                    "facts_summary": all_user_text.strip() or user_message,
-                    "message": "",
-                    "document_types": "both",
-                    "search_strategy": "local_then_web",
-                }
-
-        return parsed
-    except Exception:
-        return None
 
 
 # ---------------------------------------------------------------------------
@@ -395,16 +494,8 @@ def _detect_intent_from_keywords(msg: str) -> str | None:
 
 
 def _detect_search_strategy_from_keywords(msg: str) -> str | None:
-    """Detect explicit user intent to use only web or only local. Returns 'web_only' | 'local_only' | None."""
+    """Detect explicit user intent to disable the Indiankanoon fallback and stay local-only."""
     m = msg.lower()
-    web_only_phrases = [
-        "avoid local", "skip local", "don't search local", "do not search local",
-        "only web search", "only web", "directly go to web", "go to web",
-        "no local search", "search the web only", "use internet only", "web only",
-        "internet only", "don't use local", "without local",
-    ]
-    if any(p in m for p in web_only_phrases):
-        return "web_only"
     local_only_phrases = [
         "only local", "no web", "don't search internet", "do not search internet",
         "skip web", "local database only", "local only", "no internet",
@@ -452,8 +543,8 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
     if not out or not isinstance(out, dict):
         return None
 
-    # Pass greeting action through as-is — the caller (_run_single_gate / get_next_question_or_complete)
-    # handles it before doing anything with the rest of the shape.
+    # Pass greeting action through as-is � the caller handles it before routing the rest.
+    # This keeps greeting handling stable even when the router returns only {action:"greeting"}.
     if out.get("action") == "greeting":
         return out
 
@@ -461,6 +552,10 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
         return None
 
     reply = (out.get("reply_to_client") or out.get("question") or "").strip()
+    if reply:
+        normalized_reply = re.sub(r"[\s\W_]+", "", reply)
+        if len(normalized_reply) < 6:
+            reply = ""
 
     if out["action"] == "complete":
         # LLM-proposed intent; we will treat legal_opinion as the default and
@@ -564,11 +659,11 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
 
         # search_strategy: from intent first; fallback from routing LLM + keywords.
         # Explicit user phrases ("avoid local", "directly go to web", "web only") always override so we never ignore them.
-        if research_intent and research_intent.get("search_strategy") in ("web_only", "local_only", "local_then_web"):
+        if research_intent and research_intent.get("search_strategy") in ("local_only", "local_then_web"):
             search_strategy = research_intent["search_strategy"]
         else:
             search_strategy = (out.get("search_strategy") or "local_then_web").strip().lower()
-            if search_strategy not in ("local_only", "web_only", "local_then_web"):
+            if search_strategy not in ("local_only", "local_then_web"):
                 search_strategy = "local_then_web"
         keyword_strategy = _detect_search_strategy_from_keywords(user_message)
         if keyword_strategy:
@@ -669,7 +764,7 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
             f"Conversation:\n{json.dumps(conversation_history + [{'role': 'user', 'content': user_message}], indent=2)}"
         )
         try:
-            response = ask_llm(prompt)
+            response = ask_llm(prompt, task_hint="fast")
             parsed = _parse_llm_response(response, user_message)
             if parsed:
                 return parsed
@@ -687,130 +782,186 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
             "search_strategy": _detect_search_strategy_from_keywords(user_message) or "local_then_web",
         }
 
-    # --- Single-gate routing: one LLM call handles everything ---
-    t_gate = time.perf_counter()
-    parsed = _run_single_gate(conversation_history, user_message, token_callback=token_callback)
-    _log_fc_step("single_gate", (time.perf_counter() - t_gate) * 1000,
-                 f"action={parsed.get('action') if parsed else 'None'}, "
-                 f"intent={parsed.get('intent', '-') if parsed else '-'}")
+    # --- Compact intake state + next-question selector ---
+    t_compact = time.perf_counter()
+    intake_state = _run_compact_intake_state(conversation_history, user_message)
+    _log_fc_step(
+        "compact_intake_state",
+        (time.perf_counter() - t_compact) * 1000,
+        f"route={intake_state.get('route') if intake_state else 'None'}",
+    )
 
-    if parsed:
-        action = parsed.get("action", "")
-        reply  = (parsed.get("reply_to_client") or "").strip()
+    if intake_state:
+        route = intake_state.get("route")
 
-        # Greeting response from the LLM (covers edge-cases the keyword check missed)
-        if action == "greeting":
+        if route == "greeting":
             cleaned = user_message.strip().lower().rstrip("!?.,;:")
             question = (
                 GREETING_STATIC_TEMPLATE
                 if cleaned in GREETING_PHRASES
-                else (reply or generate_greeting_response(user_message))
+                else generate_greeting_response(user_message)
             )
             return {"action": "ask", "question": question}
 
-        # force_legal overrides a generic_chat classification
-        if parsed.get("intent") == "generic_chat" and force_legal:
-            parsed["intent"] = "legal_opinion"
+        if route in ("search", "lookup"):
+            return {
+                "action": "complete",
+                "intent": route,
+                "result_count": _extract_result_count(user_message),
+                "facts_summary": intake_state.get("facts_summary") or user_message,
+                "message": "",
+                "document_types": "acts_only" if route == "lookup" else "case_laws_only",
+                "search_strategy": _detect_search_strategy_from_keywords(user_message) or "local_then_web",
+            }
 
-        # Hard cap: if 2+ assistant questions already asked, force complete so
-        # the LLM can't keep asking even when it hasn't learned anything new.
-        if parsed.get("action") == "ask":
-            n_q = sum(
-                1 for m in conversation_history
-                if m.get("role") == "assistant" and "?" in (m.get("content") or "")
-            )
-            if n_q >= 2:
-                all_user = "\n".join(
-                    m["content"] for m in conversation_history if m.get("role") == "user"
-                )
-                logger.info("[FactCollector] Hard cap hit (%d questions asked) — forcing complete", n_q)
-                return {
+        if route == "generic_chat" and not force_legal:
+            return {
+                "action": "complete",
+                "intent": "generic_chat",
+                "facts_summary": intake_state.get("facts_summary") or user_message,
+                "message": "",
+                "document_types": "both",
+                "search_strategy": "local_then_web",
+            }
+
+        if route == "legal_opinion" or force_legal:
+            user_turns = _count_distinct_user_turns(conversation_history, user_message)
+            if _needs_more_intake_clarification(intake_state, conversation_history, user_message):
+                intake_state = dict(intake_state)
+                intake_state["enough_to_proceed"] = False
+                open_points = [str(x).strip() for x in (intake_state.get("open_points") or []) if str(x).strip()]
+                if not (intake_state.get("client_objective") or "").strip():
+                    open_points.append("client objective / relief sought")
+                if (intake_state.get("urgency_level") or "unknown").strip().lower() in ("", "unknown"):
+                    open_points.append("urgency / immediate safety position")
+                if not (intake_state.get("prior_actions_taken") or []):
+                    open_points.append("prior actions already taken or not yet taken")
+                # Keep the list short and unique so the next-question selector stays focused.
+                intake_state["open_points"] = list(dict.fromkeys(open_points))[:4]
+
+            if intake_state.get("enough_to_proceed"):
+                parsed = {
                     "action": "complete",
                     "intent": "legal_opinion",
                     "result_count": None,
-                    "facts_summary": f"{all_user}\n{user_message}".strip(),
+                    "facts_summary": intake_state.get("facts_summary") or user_message,
                     "message": "",
                     "document_types": "both",
                     "search_strategy": _detect_search_strategy_from_keywords(user_message) or "local_then_web",
                 }
+                return _enrich_facts_summary(parsed, conversation_history, user_message)
 
-        # Enrich facts_summary with ALL user messages so downstream phases see
-        # the full conversation, not just the LLM's digest of the latest turn.
-        if parsed.get("action") == "complete":
-            parsed = _enrich_facts_summary(parsed, conversation_history, user_message)
+            t_next = time.perf_counter()
+            parsed = _run_next_question_from_state(intake_state, conversation_history)
+            _log_fc_step(
+                "next_question_from_state",
+                (time.perf_counter() - t_next) * 1000,
+                f"action={parsed.get('action') if parsed else 'None'}",
+            )
+            if parsed:
+                if parsed.get("action") == "ask":
+                    asked_questions = _extract_asked_questions(conversation_history)
+                    reply = parsed.get("question") or parsed.get("reply_to_client") or ""
+                    needs_retry = False
+                    if asked_questions and _is_duplicate_question(reply, asked_questions):
+                        needs_retry = True
+                    if _is_low_value_timing_followup(reply, intake_state, asked_questions):
+                        needs_retry = True
 
+                    if needs_retry:
+                        retry_state = dict(intake_state)
+                        retry_open_points = []
+                        for point in list(retry_state.get("open_points") or []):
+                            p = str(point).strip()
+                            low = p.lower()
+                            if any(tok in low for tok in ("time", "date", "duration", "frequency", "when")):
+                                continue
+                            if p:
+                                retry_open_points.append(p)
+                        if not retry_open_points:
+                            retry_open_points = [
+                                "client objective / relief sought",
+                                "prior actions already taken or not yet taken",
+                                "present safety / urgency position",
+                            ]
+                        retry_state["open_points"] = retry_open_points[:4]
+                        retry_parsed = _run_next_question_from_state(retry_state, conversation_history)
+                        if retry_parsed and retry_parsed.get("action") == "ask":
+                            retry_reply = retry_parsed.get("question") or retry_parsed.get("reply_to_client") or ""
+                            if not _is_duplicate_question(retry_reply, asked_questions) and not _is_low_value_timing_followup(retry_reply, retry_state, asked_questions):
+                                return retry_parsed
+
+                        parsed = {
+                            "action": "complete",
+                            "intent": "legal_opinion",
+                            "result_count": None,
+                            "facts_summary": intake_state.get("facts_summary") or user_message,
+                            "message": "",
+                            "document_types": "both",
+                            "search_strategy": _detect_search_strategy_from_keywords(user_message) or "local_then_web",
+                        }
+                        return _enrich_facts_summary(parsed, conversation_history, user_message)
+                    return parsed
+
+                if parsed.get("action") == "complete":
+                    if user_turns <= 1:
+                        forced_state = dict(intake_state)
+                        forced_state["enough_to_proceed"] = False
+                        forced_open_points = [str(x).strip() for x in (forced_state.get("open_points") or []) if str(x).strip()]
+                        forced_open_points.extend([
+                            "immediate safety / urgency position",
+                            "client objective / relief sought",
+                            "prior actions already taken or not yet taken",
+                        ])
+                        forced_state["open_points"] = list(dict.fromkeys([p for p in forced_open_points if p]))[:4]
+                        forced_parsed = _run_next_question_from_state(forced_state, conversation_history)
+                        if forced_parsed and forced_parsed.get("action") == "ask":
+                            return forced_parsed
+                    parsed.setdefault("intent", "legal_opinion")
+                    parsed.setdefault("document_types", "both")
+                    parsed.setdefault("search_strategy", _detect_search_strategy_from_keywords(user_message) or "local_then_web")
+                    parsed.setdefault("result_count", None)
+                    if not (parsed.get("facts_summary") or "").strip():
+                        parsed["facts_summary"] = intake_state.get("facts_summary") or user_message
+                    return _enrich_facts_summary(parsed, conversation_history, user_message)
+
+    # If the compact intake path failed but we are clearly in a legal conversation,
+    # do not cascade into multiple more LLM fallbacks on the hot path.
+    has_legal_context = force_legal or any(
+        any(kw in ((m.get("content") or "").lower()) for kw in _LEGAL_KEYWORDS)
+        for m in conversation_history
+        if m.get("role") == "user"
+    ) or any(kw in user_message.lower() for kw in _LEGAL_KEYWORDS)
+    if has_legal_context and conversation_history:
+        all_user = "\n".join(
+            (m.get("content") or "").strip()
+            for m in conversation_history
+            if m.get("role") == "user" and (m.get("content") or "").strip()
+        )
+        parsed = {
+            "action": "complete",
+            "intent": "legal_opinion",
+            "result_count": None,
+            "facts_summary": f"{all_user}\n{user_message}".strip() if all_user else user_message,
+            "message": "",
+            "document_types": "both",
+            "search_strategy": _detect_search_strategy_from_keywords(user_message) or "local_then_web",
+        }
+        _log_fc_step("compact_intake_fallback_complete", (time.perf_counter() - t_start) * 1000)
         return parsed
 
-    # --- Fallback: single gate failed — try orchestrator then bare LLM ---
-    try:
-        t_orch = time.perf_counter()
-        from agents.orchestrator_agent import run_orchestrator
-        orchestrator_output = run_orchestrator(conversation_history, user_message)
-        _log_fc_step("orchestrator_fallback", (time.perf_counter() - t_orch) * 1000)
-        if orchestrator_output:
-            parsed = _parse_llm_response(orchestrator_output, user_message)
-            if parsed:
-                return parsed
-    except Exception:
-        pass
-
-    # --- Fallback: build prompt and call LLM ---
-    conv_text = "\n".join(
-        f"{'Client' if m['role'] == 'user' else 'Lawyer'}: {m['content']}"
+    # Compact intake failed or returned an incomplete result. Fall back to a
+    # cheap deterministic completion instead of cascading into older prompt stacks.
+    all_user_text = "\n".join(
+        m["content"]
         for m in conversation_history
+        if m.get("role") == "user"
     )
-    conv_text += f"\nClient: {user_message}"
-
-    # --- Few-shot injection for fallback path too ---
-    fallback_few_shot = ""
-    try:
-        from training.few_shot_retriever import get_intake_example
-        all_user_text = " ".join(
-            m["content"] for m in conversation_history if m.get("role") == "user"
-        ) + " " + user_message
-        example = get_intake_example(all_user_text)
-        if example:
-            fallback_few_shot = f"\n\n{example}\n"
-    except Exception:
-        pass
-
-    prompt = f"""{FACT_COLLECTION_SYSTEM}{fallback_few_shot}
-Conversation so far:
-{conv_text}
-
-Now output only one JSON object with reply_to_client."""
-
-    # Attempt 1
-    try:
-        t_llm = time.perf_counter()
-        response = ask_llm(prompt)
-        _log_fc_step("fallback_llm_attempt1", (time.perf_counter() - t_llm) * 1000)
-        parsed = _parse_llm_response(response, user_message)
-        if parsed:
-            return parsed
-    except Exception:
-        pass
-
-    # Attempt 2: simpler retry prompt
-    try:
-        t_llm = time.perf_counter()
-        retry_prompt = FACT_COLLECTION_RETRY_PROMPT.format(user_message=user_message[:500])
-        response = ask_llm(retry_prompt)
-        _log_fc_step("fallback_llm_attempt2", (time.perf_counter() - t_llm) * 1000)
-        parsed = _parse_llm_response(response, user_message)
-        if parsed:
-            return parsed
-    except Exception:
-        pass
-
-    # --- Both attempts failed: default to research with what we have (flexible limit when no count) ---
-    _log_fc_step("get_next_question_or_complete TOTAL", (time.perf_counter() - t_start) * 1000, "defaulting to complete")
-    logger.warning("Fact collection LLM failed twice, proceeding to research with user's message")
-    all_user_text = "\n".join(m["content"] for m in conversation_history if m.get("role") == "user")
     combined = f"{all_user_text}\n{user_message}".strip() or user_message
+    _log_fc_step("compact_intake_default_complete", (time.perf_counter() - t_start) * 1000)
     return {
         "action": "complete",
-        "intent": _detect_intent_from_keywords(user_message) or "legal_opinion",
+        "intent": _detect_intent_from_keywords(user_message) or ("legal_opinion" if (force_legal or has_legal_context) else "generic_chat"),
         "result_count": _extract_result_count(user_message),
         "facts_summary": combined,
         "message": "",

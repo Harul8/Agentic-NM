@@ -10,23 +10,35 @@ Model selection logic (see llm/ollama_client._get_model_for_prompt):
 Default: Qwen 3.5 9B for normal and long-context prompts. Override via .env.
 
 Env vars:
-  OLLAMA_MODEL              — default model (e.g. qwen3.5:9b)
+  OLLAMA_MODEL              — default model (e.g. qwen3:8b)
+  OLLAMA_MODEL_FAST         — fast model for intake / routing / lightweight chat
   OLLAMA_MODEL_LONG_CONTEXT — model for long prompts (e.g. qwen3.5:9b)
   LONG_CONTEXT_THRESHOLD    — switch when prompt length > this (default 120000 ≈ 30K tokens)
   OLLAMA_KEEP_ALIVE         — Ollama keep-alive window for loaded models (default 30m)
+  OLLAMA_TIMEOUT_FAST_SEC   — timeout for fast intake/routing calls
+  OLLAMA_TIMEOUT_DEFAULT_SEC — timeout for normal calls
+  OLLAMA_TIMEOUT_LONG_SEC   — timeout for long-context calls
+  OLLAMA_RETRIES_FAST       — retry count for fast calls
+  OLLAMA_RETRIES_DEFAULT    — retry count for normal calls
+  OLLAMA_RETRIES_LONG       — retry count for long-context calls
+  OLLAMA_WARM_ANALYSIS_AT_STARTUP — warm the default analysis model on startup (default false)
   OLLAMA_MODEL_DISPLAY      — UI label for default model (e.g. "Qwen 3.5 9B")
+  OLLAMA_MODEL_FAST_DISPLAY — UI label for fast model
   OLLAMA_MODEL_LONG_CONTEXT_DISPLAY — UI label for long-context model
 """
 
 import os
 
-# Default model — Qwen 3.5 9B
-OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "qwen3.5:9b").strip() or "qwen3.5:9b"
+# Default model — Qwen 3 8B
+OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "qwen3:8b").strip() or "qwen3:8b"
+
+# Fast model — defaults to Qwen 2.5 3B for intake/routing unless overridden.
+OLLAMA_MODEL_FAST = os.environ.get("OLLAMA_MODEL_FAST", "qwen2.5:3b").strip() or "qwen2.5:3b"
 
 # Long-context model — same as default unless overridden in env
 OLLAMA_MODEL_LONG_CONTEXT = os.environ.get(
-    "OLLAMA_MODEL_LONG_CONTEXT", "qwen3.5:9b"
-).strip() or "qwen3.5:9b"
+    "OLLAMA_MODEL_LONG_CONTEXT", "qwen3:8b"
+).strip() or "qwen3:8b"
 
 # Switch to long-context model when prompt exceeds this many characters (~30K tokens at ≈4 chars/token)
 _threshold = os.environ.get("LONG_CONTEXT_THRESHOLD", "120000").strip()
@@ -41,8 +53,30 @@ CREWAI_LLM = f"ollama/{OLLAMA_MODEL}"
 # Keep the model resident in memory between requests to reduce cold starts.
 OLLAMA_KEEP_ALIVE = os.environ.get("OLLAMA_KEEP_ALIVE", "30m").strip() or "30m"
 
+def _int_env(name: str, default: int) -> int:
+    try:
+        return int((os.environ.get(name, str(default)) or str(default)).strip())
+    except ValueError:
+        return default
+
+
+def _bool_env(name: str, default: bool) -> bool:
+    raw = (os.environ.get(name, str(default)) or str(default)).strip().lower()
+    return raw in ("1", "true", "yes", "on")
+
+OLLAMA_TIMEOUT_FAST_SEC = _int_env("OLLAMA_TIMEOUT_FAST_SEC", 25)
+OLLAMA_TIMEOUT_DEFAULT_SEC = _int_env("OLLAMA_TIMEOUT_DEFAULT_SEC", 180)
+OLLAMA_TIMEOUT_LONG_SEC = _int_env("OLLAMA_TIMEOUT_LONG_SEC", 240)
+OLLAMA_RETRIES_FAST = _int_env("OLLAMA_RETRIES_FAST", 0)
+OLLAMA_RETRIES_DEFAULT = _int_env("OLLAMA_RETRIES_DEFAULT", 1)
+OLLAMA_RETRIES_LONG = _int_env("OLLAMA_RETRIES_LONG", 1)
+OLLAMA_WARM_ANALYSIS_AT_STARTUP = _bool_env("OLLAMA_WARM_ANALYSIS_AT_STARTUP", False)
+
 # Display names for UI (e.g. "Qwen 3.5 9B")
-OLLAMA_MODEL_DISPLAY = os.environ.get("OLLAMA_MODEL_DISPLAY", "Qwen 3.5 9B").strip() or "Qwen 3.5 9B"
+OLLAMA_MODEL_DISPLAY = os.environ.get("OLLAMA_MODEL_DISPLAY", "Qwen 3 8B").strip() or "Qwen 3 8B"
+OLLAMA_MODEL_FAST_DISPLAY = os.environ.get(
+    "OLLAMA_MODEL_FAST_DISPLAY", "Qwen 2.5 3B"
+).strip() or "Qwen 2.5 3B"
 OLLAMA_MODEL_LONG_CONTEXT_DISPLAY = os.environ.get(
-    "OLLAMA_MODEL_LONG_CONTEXT_DISPLAY", "Qwen 3.5 9B"
-).strip() or "Qwen 3.5 9B"
+    "OLLAMA_MODEL_LONG_CONTEXT_DISPLAY", "Qwen 3 8B"
+).strip() or "Qwen 3 8B"
