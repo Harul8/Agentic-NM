@@ -4,7 +4,7 @@ Base model  : Qwen3-8B (thinking mode — silent CoT improves legal reasoning)
 Hardware    : tuned for ~48 GB VRAM (e.g. A6000, L40S, RTX 6000 Ada)
 
 Run from the project root:
-    cd "Nyaymalaw 5.0"
+    cd /workspace/Nyaymalaw-5.0
     python training/finetune_unsloth.py
 
 RunPod SSH tip:
@@ -37,6 +37,7 @@ from unsloth import FastLanguageModel
 from datasets import load_dataset
 from trl import SFTTrainer
 from transformers import TrainingArguments, DataCollatorForSeq2Seq, TrainerCallback
+from peft import PeftModel
 import sys
 import torch, pathlib, subprocess, time, gc
 
@@ -44,28 +45,48 @@ import torch, pathlib, subprocess, time, gc
 # Profile: ~48 GB VRAM — larger batches, longer context headroom, full AdamW.
 VRAM_TARGET_GB = int(os.environ.get("NYAYMALAW_VRAM_TARGET_GB", "48"))
 BASE_DIR   = pathlib.Path(__file__).resolve().parent          # .../training/
-DATA_DIR   = BASE_DIR / "finetune_ready"
-OUTPUT_DIR  = BASE_DIR / "lora_model"     # fresh run — clean output dir
-MERGE_DIR   = BASE_DIR / "merged_model"
-RESUME_FROM = None                         # scratch run — no checkpoint to resume
+DATA_DIR   = pathlib.Path(os.environ.get("NYAYMALAW_DATA_DIR", str(BASE_DIR / "finetune_ready")))
+OUTPUT_DIR = pathlib.Path(os.environ.get("NYAYMALAW_OUTPUT_DIR", str(BASE_DIR / "lora_model")))
+MERGE_DIR  = pathlib.Path(os.environ.get("NYAYMALAW_MERGE_DIR", str(BASE_DIR / "merged_model")))
+
+# ── How to continue training (pick ONE) ───────────────────────────────────────
+# LOAD_ADAPTER_FROM — path to checkpoint-* with LoRA weights. Loads adapter + fresh Adam.
+# RESUME_FROM — full Trainer resume (optimizer + scheduler + step counter).
+_load_adapter_env = os.environ.get("NYAYMALAW_LOAD_ADAPTER_FROM", "").strip()
+LOAD_ADAPTER_FROM = pathlib.Path(_load_adapter_env) if _load_adapter_env else None
+_resume_env = os.environ.get("NYAYMALAW_RESUME_FROM", "").strip()
+RESUME_FROM = pathlib.Path(_resume_env) if _resume_env else None
+if LOAD_ADAPTER_FROM and RESUME_FROM:
+    raise ValueError(
+        "Set only one of NYAYMALAW_LOAD_ADAPTER_FROM or NYAYMALAW_RESUME_FROM, not both."
+    )
 
 # Qwen3-8B — 4-bit via Unsloth; ~48 GB fits higher batch + rank + seq than 8–24 GB setups.
 MODEL_NAME = os.environ.get("NYAYMALAW_MODEL_NAME", "unsloth/Qwen3-8B-bnb-4bit")
 # Fallback:  "unsloth/Qwen3-8B-Instruct-bnb-4bit"
 
-MAX_SEQ_LEN      = int(os.environ.get("NYAYMALAW_MAX_SEQ_LEN", "2048"))
-LORA_RANK        = int(os.environ.get("NYAYMALAW_LORA_RANK", "64"))
-LORA_ALPHA       = int(os.environ.get("NYAYMALAW_LORA_ALPHA", "128"))
+MAX_SEQ_LEN      = int(os.environ.get("NYAYMALAW_MAX_SEQ_LEN", "1596"))
+LORA_RANK        = int(os.environ.get("NYAYMALAW_LORA_RANK", "32"))
+LORA_ALPHA       = int(os.environ.get("NYAYMALAW_LORA_ALPHA", "64"))
 EVAL_SUBSET_SIZE = int(os.environ.get("NYAYMALAW_EVAL_SUBSET_SIZE", "115"))
 LORA_DROPOUT     = float(os.environ.get("NYAYMALAW_LORA_DROPOUT", "0.05"))
-BATCH_SIZE       = int(os.environ.get("NYAYMALAW_BATCH_SIZE", "8"))
-EVAL_BATCH       = int(os.environ.get("NYAYMALAW_EVAL_BATCH", "4"))
-GRAD_ACCUM       = int(os.environ.get("NYAYMALAW_GRAD_ACCUM", "2"))
-EPOCHS           = int(os.environ.get("NYAYMALAW_EPOCHS", "3"))
-LR               = float(os.environ.get("NYAYMALAW_LR", "2e-4"))
-WARMUP_RATIO     = float(os.environ.get("NYAYMALAW_WARMUP_RATIO", "0.05"))
-WEIGHT_DECAY     = float(os.environ.get("NYAYMALAW_WEIGHT_DECAY", "0.01"))
+BATCH_SIZE       = int(os.environ.get("NYAYMALAW_BATCH_SIZE", "4"))
+EVAL_BATCH       = int(os.environ.get("NYAYMALAW_EVAL_BATCH", "1"))
+GRAD_ACCUM       = int(os.environ.get("NYAYMALAW_GRAD_ACCUM", "4"))
 SEED             = int(os.environ.get("NYAYMALAW_SEED", "42"))
+
+# Scratch run defaults (used unless overridden by NYAYMALAW_* env vars)
+SCRATCH_EPOCHS         = int(os.environ.get("NYAYMALAW_SCRATCH_EPOCHS", "4"))
+SCRATCH_LR             = float(os.environ.get("NYAYMALAW_SCRATCH_LR", "2e-4"))
+SCRATCH_WEIGHT_DECAY   = float(os.environ.get("NYAYMALAW_SCRATCH_WEIGHT_DECAY", "0.01"))
+SCRATCH_LR_SCHEDULER   = os.environ.get("NYAYMALAW_SCRATCH_LR_SCHEDULER", "cosine")
+SCRATCH_WARMUP_STEPS   = int(os.environ.get("NYAYMALAW_SCRATCH_WARMUP_STEPS", "20"))
+
+EPOCHS = int(os.environ.get("NYAYMALAW_EPOCHS", str(SCRATCH_EPOCHS)))
+LR = float(os.environ.get("NYAYMALAW_LR", str(SCRATCH_LR)))
+WEIGHT_DECAY = float(os.environ.get("NYAYMALAW_WEIGHT_DECAY", str(SCRATCH_WEIGHT_DECAY)))
+LR_SCHEDULER = os.environ.get("NYAYMALAW_LR_SCHEDULER", SCRATCH_LR_SCHEDULER)
+WARMUP_STEPS = int(os.environ.get("NYAYMALAW_WARMUP_STEPS", str(SCRATCH_WARMUP_STEPS)))
 
 # Prefer bf16 on capable GPUs (Ada, etc.). If bitsandbytes backward hits
 # CUBLAS_STATUS_EXECUTION_FAILED (often Windows + 4-bit), set NYAYMALAW_FP16=1.
@@ -89,6 +110,12 @@ print(f"\n{'='*60}")
 print(f"  Loading base model : {MODEL_NAME}")
 print(f"  VRAM profile       : ~{VRAM_TARGET_GB} GB (batch {BATCH_SIZE} × accum {GRAD_ACCUM}, seq {MAX_SEQ_LEN})")
 print(f"  Thinking mode      : ENABLED (silent CoT)")
+if LOAD_ADAPTER_FROM:
+    print(f"  Continue mode      : LOAD_ADAPTER_FROM={LOAD_ADAPTER_FROM}")
+elif RESUME_FROM:
+    print(f"  Continue mode      : RESUME_FROM={RESUME_FROM}")
+else:
+    print("  Continue mode      : SCRATCH")
 if not torch.cuda.is_available():
     raise RuntimeError("CUDA GPU not detected. Run this on a GPU pod (RunPod) with CUDA enabled.")
 gpu_name = torch.cuda.get_device_name(0)
@@ -115,21 +142,25 @@ model, tokenizer = FastLanguageModel.from_pretrained(
 
 # ── 3. Attach LoRA adapters ───────────────────────────────────────────────────
 # Qwen3 uses the same projection names as Qwen2 — no changes needed here.
-model = FastLanguageModel.get_peft_model(
-    model,
-    r                   = LORA_RANK,
-    target_modules      = [
-        "q_proj", "k_proj", "v_proj", "o_proj",
-        "gate_proj", "up_proj", "down_proj",
-    ],
-    lora_alpha          = LORA_ALPHA,
-    lora_dropout        = LORA_DROPOUT,
-    bias                = "none",
-    use_gradient_checkpointing = "unsloth" if GRADIENT_CHECKPOINTING else False,
-    random_state        = SEED,
-    use_rslora          = False,
-    loftq_config        = None,
-)
+if LOAD_ADAPTER_FROM:
+    print(f"Loading existing LoRA adapter from: {LOAD_ADAPTER_FROM}")
+    model = PeftModel.from_pretrained(model, str(LOAD_ADAPTER_FROM), is_trainable=True)
+else:
+    model = FastLanguageModel.get_peft_model(
+        model,
+        r                   = LORA_RANK,
+        target_modules      = [
+            "q_proj", "k_proj", "v_proj", "o_proj",
+            "gate_proj", "up_proj", "down_proj",
+        ],
+        lora_alpha          = LORA_ALPHA,
+        lora_dropout        = LORA_DROPOUT,
+        bias                = "none",
+        use_gradient_checkpointing = "unsloth" if GRADIENT_CHECKPOINTING else False,
+        random_state        = SEED,
+        use_rslora          = False,
+        loftq_config        = None,
+    )
 
 # ── 4. Thermal throttle callback ─────────────────────────────────────────────
 class ThermalThrottleCallback(TrainerCallback):
@@ -261,7 +292,8 @@ training_args = TrainingArguments(
     per_device_train_batch_size = BATCH_SIZE,
     gradient_accumulation_steps = GRAD_ACCUM,
     per_device_eval_batch_size  = EVAL_BATCH,   # 1 — eval examples can be long
-    eval_strategy               = "epoch",
+    eval_strategy               = "steps",
+    eval_steps                  = SAVE_STEPS,
     save_strategy               = "steps",   # spot-safe: checkpoint every 25 steps
     save_steps                  = SAVE_STEPS,
     save_total_limit            = 4,         # keep last 4 checkpoints only
@@ -273,8 +305,8 @@ training_args = TrainingArguments(
     # label_smoothing_factor removed — when > 0, HF Trainer bypasses Unsloth's
     # chunked fused CE and materialises full fp32 logits (151k vocab × batch × seq),
     # causing ~45 GB VRAM use and numerically unstable loss on 4-bit models.
-    warmup_ratio                = WARMUP_RATIO,
-    lr_scheduler_type           = "cosine",
+    warmup_steps                = WARMUP_STEPS,
+    lr_scheduler_type           = LR_SCHEDULER,
     fp16                        = _USE_FP16 or not torch.cuda.is_bf16_supported(),
     bf16                        = not _USE_FP16 and torch.cuda.is_bf16_supported(),
     logging_steps               = 20,

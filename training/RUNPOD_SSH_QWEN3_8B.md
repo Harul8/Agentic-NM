@@ -36,6 +36,16 @@ tmux new -s nyayma-train
 bash training/runpod_finetune_qwen3_8b.sh
 ```
 
+Optional overrides before launch:
+
+```bash
+export NYAYMALAW_DATA_DIR=training/finetune_ready
+export NYAYMALAW_OUTPUT_DIR=training/lora_model
+export NYAYMALAW_MERGE_DIR=training/merged_model
+# Resume from an interrupted checkpoint (example):
+# export NYAYMALAW_RESUME_FROM=training/lora_model/checkpoint-200
+```
+
 Detach without stopping:
 
 ```bash
