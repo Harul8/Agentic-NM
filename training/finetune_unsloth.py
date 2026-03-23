@@ -29,7 +29,7 @@ by stripping everything between <think> and </think> in your API server.
 import os
 
 os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"   # reduce fragmentation
-_DISABLE_FUSED_CE = os.environ.get("NYAYMALAW_DISABLE_FUSED_CE", "0") == "1"
+_DISABLE_FUSED_CE = os.environ.get("NYAYMALAW_DISABLE_FUSED_CE", "1") == "1"
 if _DISABLE_FUSED_CE:
     # Force fallback CE path (returns logits) to avoid fused CE workspace spikes.
     os.environ["UNSLOTH_RETURN_LOGITS"] = "1"
@@ -70,7 +70,7 @@ MAX_SEQ_LEN      = int(os.environ.get("NYAYMALAW_MAX_SEQ_LEN", "1596"))
 LORA_RANK        = int(os.environ.get("NYAYMALAW_LORA_RANK", "32"))
 LORA_ALPHA       = int(os.environ.get("NYAYMALAW_LORA_ALPHA", "64"))
 EVAL_SUBSET_SIZE = int(os.environ.get("NYAYMALAW_EVAL_SUBSET_SIZE", "145"))
-LORA_DROPOUT     = float(os.environ.get("NYAYMALAW_LORA_DROPOUT", "0.05"))
+LORA_DROPOUT     = float(os.environ.get("NYAYMALAW_LORA_DROPOUT", "0.0"))
 BATCH_SIZE       = int(os.environ.get("NYAYMALAW_BATCH_SIZE", "4"))
 EVAL_BATCH       = int(os.environ.get("NYAYMALAW_EVAL_BATCH", "1"))
 GRAD_ACCUM       = int(os.environ.get("NYAYMALAW_GRAD_ACCUM", "4"))
@@ -96,7 +96,7 @@ _USE_FP16 = os.environ.get("NYAYMALAW_FP16", "0") == "1"
 # ── Thermal throttle settings ─────────────────────────────────────────────────
 TEMP_LIMIT_C  = int(os.environ.get("NYAYMALAW_TEMP_LIMIT_C", "80"))
 COOL_WAIT_S   = int(os.environ.get("NYAYMALAW_COOL_WAIT_S", "30"))
-MIN_FREE_VRAM_MB = int(os.environ.get("NYAYMALAW_MIN_FREE_VRAM_MB", "800"))
+MIN_FREE_VRAM_MB = int(os.environ.get("NYAYMALAW_MIN_FREE_VRAM_MB", "256"))
 REPORT_TO = os.environ.get("NYAYMALAW_REPORT_TO", "none")
 SAVE_STEPS = int(os.environ.get("NYAYMALAW_SAVE_STEPS", "25"))
 DATALOADER_WORKERS = int(
