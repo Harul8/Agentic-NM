@@ -29,9 +29,10 @@ by stripping everything between <think> and </think> in your API server.
 import os
 
 os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"   # reduce fragmentation
-# NOTE: UNSLOTH_RETURN_LOGITS and the _safe_ce_fallback monkey-patch are intentionally
-# absent here. Those were workarounds for 8GB VRAM. On 24GB+ Unsloth's native
-# fused CE (chunked, bf16) works correctly and uses far less memory.
+_DISABLE_FUSED_CE = os.environ.get("NYAYMALAW_DISABLE_FUSED_CE", "0") == "1"
+if _DISABLE_FUSED_CE:
+    # Force fallback CE path (returns logits) to avoid fused CE workspace spikes.
+    os.environ["UNSLOTH_RETURN_LOGITS"] = "1"
 
 from unsloth import FastLanguageModel
 from datasets import load_dataset
@@ -68,7 +69,7 @@ MODEL_NAME = os.environ.get("NYAYMALAW_MODEL_NAME", "unsloth/Qwen3-8B-bnb-4bit")
 MAX_SEQ_LEN      = int(os.environ.get("NYAYMALAW_MAX_SEQ_LEN", "1596"))
 LORA_RANK        = int(os.environ.get("NYAYMALAW_LORA_RANK", "32"))
 LORA_ALPHA       = int(os.environ.get("NYAYMALAW_LORA_ALPHA", "64"))
-EVAL_SUBSET_SIZE = int(os.environ.get("NYAYMALAW_EVAL_SUBSET_SIZE", "115"))
+EVAL_SUBSET_SIZE = int(os.environ.get("NYAYMALAW_EVAL_SUBSET_SIZE", "145"))
 LORA_DROPOUT     = float(os.environ.get("NYAYMALAW_LORA_DROPOUT", "0.05"))
 BATCH_SIZE       = int(os.environ.get("NYAYMALAW_BATCH_SIZE", "4"))
 EVAL_BATCH       = int(os.environ.get("NYAYMALAW_EVAL_BATCH", "1"))
@@ -95,7 +96,7 @@ _USE_FP16 = os.environ.get("NYAYMALAW_FP16", "0") == "1"
 # ── Thermal throttle settings ─────────────────────────────────────────────────
 TEMP_LIMIT_C  = int(os.environ.get("NYAYMALAW_TEMP_LIMIT_C", "80"))
 COOL_WAIT_S   = int(os.environ.get("NYAYMALAW_COOL_WAIT_S", "30"))
-MIN_FREE_VRAM_MB = int(os.environ.get("NYAYMALAW_MIN_FREE_VRAM_MB", "6000"))
+MIN_FREE_VRAM_MB = int(os.environ.get("NYAYMALAW_MIN_FREE_VRAM_MB", "800"))
 REPORT_TO = os.environ.get("NYAYMALAW_REPORT_TO", "none")
 SAVE_STEPS = int(os.environ.get("NYAYMALAW_SAVE_STEPS", "25"))
 DATALOADER_WORKERS = int(
@@ -104,6 +105,7 @@ DATALOADER_WORKERS = int(
 DISABLE_THERMAL_GUARD = os.environ.get("NYAYMALAW_DISABLE_THERMAL_GUARD", "0") == "1"
 DISABLE_VRAM_GUARD = os.environ.get("NYAYMALAW_DISABLE_VRAM_GUARD", "0") == "1"
 GRADIENT_CHECKPOINTING = os.environ.get("NYAYMALAW_GRADIENT_CHECKPOINTING", "true").lower() == "true"
+DEBUG_VRAM = os.environ.get("NYAYMALAW_DEBUG_VRAM", "0") == "1"
 
 # ── 2. Load model + tokeniser ─────────────────────────────────────────────────
 print(f"\n{'='*60}")
@@ -129,6 +131,16 @@ else:
     _compute_dtype = torch.float16
 _dtype_label = "fp16 (NYAYMALAW_FP16=1)" if _USE_FP16 else str(_compute_dtype).split(".")[-1]
 print(f"  Compute dtype      : {_dtype_label}")
+if _DISABLE_FUSED_CE:
+    print("  CE path            : fallback (UNSLOTH_RETURN_LOGITS=1)")
+else:
+    print("  CE path            : fused (default)")
+if LORA_DROPOUT > 0:
+    print(
+        f"  LoRA dropout       : {LORA_DROPOUT} (disables Unsloth fast LoRA patching; may increase VRAM use)"
+    )
+else:
+    print(f"  LoRA dropout       : {LORA_DROPOUT} (enables Unsloth fast LoRA patching)")
 print(f"{'='*60}\n")
 
 model, tokenizer = FastLanguageModel.from_pretrained(
@@ -161,6 +173,12 @@ else:
         use_rslora          = False,
         loftq_config        = None,
     )
+
+# Reduce training-time memory pressure and print checkpointing state explicitly.
+if hasattr(model, "config"):
+    model.config.use_cache = False
+gc_state = bool(getattr(model, "is_gradient_checkpointing", False))
+print(f"  Gradient checkpointing active: {gc_state}")
 
 # ── 4. Thermal throttle callback ─────────────────────────────────────────────
 class ThermalThrottleCallback(TrainerCallback):
@@ -249,6 +267,38 @@ class VramGuardCallback(TrainerCallback):
                 print(f"   Free VRAM still low: {free_mb} MB — waiting...")
         print(f"   Free VRAM recovered: {free_mb} MB — resuming.\n")
 
+
+class VramDebugCallback(TrainerCallback):
+    """Prints periodic CUDA memory telemetry for peak usage debugging."""
+
+    def __init__(self, every_steps: int = 10):
+        self.every_steps = max(1, every_steps)
+
+    @staticmethod
+    def _mb(value_bytes: int) -> int:
+        return int(value_bytes / 1024 / 1024)
+
+    def on_step_end(self, args, state, control, **kwargs):
+        if not torch.cuda.is_available():
+            return
+        if state.global_step <= 0 or (state.global_step % self.every_steps) != 0:
+            return
+
+        allocated = self._mb(torch.cuda.memory_allocated(0))
+        reserved = self._mb(torch.cuda.memory_reserved(0))
+        peak_alloc = self._mb(torch.cuda.max_memory_allocated(0))
+        peak_reserved = self._mb(torch.cuda.max_memory_reserved(0))
+        free_mb, total_mb = torch.cuda.mem_get_info(0)
+        free_mb = self._mb(free_mb)
+        total_mb = self._mb(total_mb)
+        print(
+            f"🧠 VRAM step {state.global_step}: "
+            f"alloc={allocated}MB reserved={reserved}MB "
+            f"peak_alloc={peak_alloc}MB peak_reserved={peak_reserved}MB "
+            f"free={free_mb}MB/{total_mb}MB"
+        )
+        torch.cuda.reset_peak_memory_stats(0)
+
 # ── 5. Load datasets ──────────────────────────────────────────────────────────
 print("Loading train / val datasets …")  # ── was §4, renumbered below
 train_ds = load_dataset("json", data_files=str(DATA_DIR / "train.jsonl"), split="train")
@@ -333,6 +383,9 @@ if not DISABLE_VRAM_GUARD:
     print(f"  VRAM guard         : pause if free VRAM < {MIN_FREE_VRAM_MB} MB\n")
 else:
     print("  VRAM guard         : disabled by env\n")
+if DEBUG_VRAM:
+    callbacks.append(VramDebugCallback(every_steps=10))
+    print("  VRAM debug         : enabled (prints every 10 steps)\n")
 
 trainer = SFTTrainer(
     model              = model,
