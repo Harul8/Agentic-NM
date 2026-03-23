@@ -8,7 +8,7 @@ Requirements (run once in your ai-gpu venv):
 Easier alternative — use llama.cpp's convert script:
     python llama.cpp/convert_hf_to_gguf.py training/merged_model --outtype q4_k_m \
         --outfile training/nyaymalaw-q4_k_m.gguf
-# Note: base model is Qwen3-4B (not 8B) — GGUF will be ~2.5 GB at q4_k_m
+# Note: base model is Qwen3-8B — GGUF will be ~5 GB at q4_k_m (fits on 8 GB VRAM for inference)
 
 Then register with Ollama:
     ollama create nyaymalaw -f training/Modelfile
@@ -18,7 +18,7 @@ from unsloth import FastLanguageModel
 import pathlib, sys
 
 BASE_DIR   = pathlib.Path(__file__).resolve().parent
-LORA_DIR   = BASE_DIR / "lora_model"
+LORA_DIR   = BASE_DIR / "lora_model"      # fresh scratch run output
 MERGE_DIR  = BASE_DIR / "merged_model"
 GGUF_PATH  = BASE_DIR / "nyaymalaw-q4_k_m.gguf"
 

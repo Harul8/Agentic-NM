@@ -1,11 +1,15 @@
 """
 Nyaymalaw — Unsloth QLoRA fine-tune script
 Base model  : Qwen3-8B (thinking mode — silent CoT improves legal reasoning)
-Hardware    : RTX 4060 8 GB VRAM
+Hardware    : tuned for ~48 GB VRAM (e.g. A6000, L40S, RTX 6000 Ada)
 
 Run from the project root:
-    cd "Nyaymalaw 4.0"
+    cd "Nyaymalaw 5.0"
     python training/finetune_unsloth.py
+
+RunPod SSH tip:
+    tmux new -s nyayma-train
+    python training/finetune_unsloth.py 2>&1 | tee training/runpod_train.log
 
 Outputs:
     training/lora_model/          ← LoRA adapter weights (checkpoint)
@@ -25,107 +29,71 @@ by stripping everything between <think> and </think> in your API server.
 import os
 
 os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"   # reduce fragmentation
-# Avoid Unsloth fused CE VRAM probe crashes on 8GB cards / fragmented VRAM.
-# Must be set before importing unsloth.
-os.environ["UNSLOTH_RETURN_LOGITS"] = "1"
+# NOTE: UNSLOTH_RETURN_LOGITS and the _safe_ce_fallback monkey-patch are intentionally
+# absent here. Those were workarounds for 8GB VRAM. On 24GB+ Unsloth's native
+# fused CE (chunked, bf16) works correctly and uses far less memory.
 
 from unsloth import FastLanguageModel
-import unsloth.models.llama as unsloth_llama
 from datasets import load_dataset
 from trl import SFTTrainer
 from transformers import TrainingArguments, DataCollatorForSeq2Seq, TrainerCallback
+import sys
 import torch, pathlib, subprocess, time, gc
-import torch.nn.functional as F
-
-
-def _safe_ce_fallback(
-    trainer,
-    hidden_states,
-    lm_head_weight,
-    lm_head_bias,
-    labels,
-    mask=None,
-    n_items=None,
-    scaling=None,
-    target_gb=None,
-    torch_compile=True,
-    logit_softcapping=0,
-    **kwargs,
-):
-    """
-    Fallback for environments where Unsloth fused CE fails VRAM probing.
-    Uses standard shifted-token cross entropy.
-    """
-    del trainer, mask, target_gb, torch_compile, kwargs
-    logits = F.linear(hidden_states, lm_head_weight, lm_head_bias)
-    if logit_softcapping and logit_softcapping > 0:
-        logits = logit_softcapping * torch.tanh(logits / logit_softcapping)
-
-    shift_logits = logits[..., :-1, :].contiguous()
-    shift_labels = labels[..., 1:].contiguous()
-
-    if n_items is not None:
-        loss = F.cross_entropy(
-            shift_logits.view(-1, shift_logits.size(-1)).float(),
-            shift_labels.view(-1),
-            ignore_index=-100,
-            reduction="sum",
-        )
-        n_items = n_items.to(dtype=torch.float32) if torch.is_tensor(n_items) else torch.tensor(float(n_items), device=loss.device)
-        loss = loss / torch.clamp(n_items, min=1.0)
-    else:
-        loss = F.cross_entropy(
-            shift_logits.view(-1, shift_logits.size(-1)).float(),
-            shift_labels.view(-1),
-            ignore_index=-100,
-            reduction="mean",
-        )
-
-    return loss * scaling if scaling is not None else loss
-
-
-# Hard-disable fused CE path that errors with "No or negligible GPU memory..."
-unsloth_llama.unsloth_fused_ce_loss = _safe_ce_fallback
 
 # ── 1. Config ─────────────────────────────────────────────────────────────────
+# Profile: ~48 GB VRAM — larger batches, longer context headroom, full AdamW.
+VRAM_TARGET_GB = int(os.environ.get("NYAYMALAW_VRAM_TARGET_GB", "48"))
 BASE_DIR   = pathlib.Path(__file__).resolve().parent          # .../training/
 DATA_DIR   = BASE_DIR / "finetune_ready"
-OUTPUT_DIR = BASE_DIR / "lora_model"
-MERGE_DIR  = BASE_DIR / "merged_model"
+OUTPUT_DIR  = BASE_DIR / "lora_model"     # fresh run — clean output dir
+MERGE_DIR   = BASE_DIR / "merged_model"
+RESUME_FROM = None                         # scratch run — no checkpoint to resume
 
-# Qwen3-4B — 4-bit quantised via Unsloth (~2.8 GB, leaves ~5 GB free for training)
-# 8B OOMs on RTX 4060 8GB due to Qwen3's 151k-token vocab CE loss buffer requirement.
-MODEL_NAME = "unsloth/Qwen3-4B-bnb-4bit"
-# Fallback:  "unsloth/Qwen3-4B-Instruct-bnb-4bit"
-# Fallback2: "unsloth/Qwen2.5-3B-Instruct-bnb-4bit"
+# Qwen3-8B — 4-bit via Unsloth; ~48 GB fits higher batch + rank + seq than 8–24 GB setups.
+MODEL_NAME = os.environ.get("NYAYMALAW_MODEL_NAME", "unsloth/Qwen3-8B-bnb-4bit")
+# Fallback:  "unsloth/Qwen3-8B-Instruct-bnb-4bit"
 
-MAX_SEQ_LEN   = 1024   # VRAM headroom; ~19/1034 train examples exceed 1024 tokens (will truncate)
-LORA_RANK     = 16     # reduced from 32 — saves ~40 MB adapter memory
-LORA_ALPHA    = 32     # alpha = 2 × rank
-EVAL_SUBSET_SIZE = 48  # lighter eval (VRAM + time); still epoch-aligned, seeded shuffle
-LORA_DROPOUT  = 0.05
-BATCH_SIZE    = 1      # reduced from 2 — halves activation memory on 8 GB
-EVAL_BATCH    = 1      # eval uses full-length examples — stay at 1 to avoid OOM
-GRAD_ACCUM    = 16     # effective batch = 1 × 16 = 16 (same as before)
-EPOCHS        = 3
-LR            = 2e-4
-WARMUP_RATIO  = 0.05
-WEIGHT_DECAY  = 0.01
-SEED          = 42
+MAX_SEQ_LEN      = int(os.environ.get("NYAYMALAW_MAX_SEQ_LEN", "2048"))
+LORA_RANK        = int(os.environ.get("NYAYMALAW_LORA_RANK", "64"))
+LORA_ALPHA       = int(os.environ.get("NYAYMALAW_LORA_ALPHA", "128"))
+EVAL_SUBSET_SIZE = int(os.environ.get("NYAYMALAW_EVAL_SUBSET_SIZE", "115"))
+LORA_DROPOUT     = float(os.environ.get("NYAYMALAW_LORA_DROPOUT", "0.05"))
+BATCH_SIZE       = int(os.environ.get("NYAYMALAW_BATCH_SIZE", "8"))
+EVAL_BATCH       = int(os.environ.get("NYAYMALAW_EVAL_BATCH", "4"))
+GRAD_ACCUM       = int(os.environ.get("NYAYMALAW_GRAD_ACCUM", "2"))
+EPOCHS           = int(os.environ.get("NYAYMALAW_EPOCHS", "3"))
+LR               = float(os.environ.get("NYAYMALAW_LR", "2e-4"))
+WARMUP_RATIO     = float(os.environ.get("NYAYMALAW_WARMUP_RATIO", "0.05"))
+WEIGHT_DECAY     = float(os.environ.get("NYAYMALAW_WEIGHT_DECAY", "0.01"))
+SEED             = int(os.environ.get("NYAYMALAW_SEED", "42"))
 
 # Prefer bf16 on capable GPUs (Ada, etc.). If bitsandbytes backward hits
 # CUBLAS_STATUS_EXECUTION_FAILED (often Windows + 4-bit), set NYAYMALAW_FP16=1.
 _USE_FP16 = os.environ.get("NYAYMALAW_FP16", "0") == "1"
 
 # ── Thermal throttle settings ─────────────────────────────────────────────────
-TEMP_LIMIT_C  = 80     # pause training above this GPU temperature
-COOL_WAIT_S   = 30     # seconds to idle before re-checking temperature
-MIN_FREE_VRAM_MB = 700 # pause step if free VRAM drops below this
+TEMP_LIMIT_C  = int(os.environ.get("NYAYMALAW_TEMP_LIMIT_C", "80"))
+COOL_WAIT_S   = int(os.environ.get("NYAYMALAW_COOL_WAIT_S", "30"))
+MIN_FREE_VRAM_MB = int(os.environ.get("NYAYMALAW_MIN_FREE_VRAM_MB", "6000"))
+REPORT_TO = os.environ.get("NYAYMALAW_REPORT_TO", "none")
+SAVE_STEPS = int(os.environ.get("NYAYMALAW_SAVE_STEPS", "25"))
+DATALOADER_WORKERS = int(
+    os.environ.get("NYAYMALAW_DATALOADER_WORKERS", "4" if sys.platform != "win32" else "0")
+)
+DISABLE_THERMAL_GUARD = os.environ.get("NYAYMALAW_DISABLE_THERMAL_GUARD", "0") == "1"
+DISABLE_VRAM_GUARD = os.environ.get("NYAYMALAW_DISABLE_VRAM_GUARD", "0") == "1"
+GRADIENT_CHECKPOINTING = os.environ.get("NYAYMALAW_GRADIENT_CHECKPOINTING", "true").lower() == "true"
 
 # ── 2. Load model + tokeniser ─────────────────────────────────────────────────
 print(f"\n{'='*60}")
 print(f"  Loading base model : {MODEL_NAME}")
+print(f"  VRAM profile       : ~{VRAM_TARGET_GB} GB (batch {BATCH_SIZE} × accum {GRAD_ACCUM}, seq {MAX_SEQ_LEN})")
 print(f"  Thinking mode      : ENABLED (silent CoT)")
+if not torch.cuda.is_available():
+    raise RuntimeError("CUDA GPU not detected. Run this on a GPU pod (RunPod) with CUDA enabled.")
+gpu_name = torch.cuda.get_device_name(0)
+gpu_total_gb = torch.cuda.get_device_properties(0).total_memory / 1024 / 1024 / 1024
+print(f"  GPU                : {gpu_name} ({gpu_total_gb:.1f} GB)")
 if _USE_FP16:
     _compute_dtype = torch.float16
 elif torch.cuda.is_available() and torch.cuda.is_bf16_supported():
@@ -140,7 +108,7 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     model_name      = MODEL_NAME,
     max_seq_length  = MAX_SEQ_LEN,
     dtype           = _compute_dtype,
-    load_in_4bit    = True,           # 4-bit NF4 weights — essential for 8 GB
+    load_in_4bit    = True,           # 4-bit NF4 weights
     # Unsloth enables double-quantisation internally when load_in_4bit=True,
     # saving an extra ~0.4 GB vs single-quant.
 )
@@ -157,7 +125,7 @@ model = FastLanguageModel.get_peft_model(
     lora_alpha          = LORA_ALPHA,
     lora_dropout        = LORA_DROPOUT,
     bias                = "none",
-    use_gradient_checkpointing = "unsloth",   # saves ~30% VRAM
+    use_gradient_checkpointing = "unsloth" if GRADIENT_CHECKPOINTING else False,
     random_state        = SEED,
     use_rslora          = False,
     loftq_config        = None,
@@ -219,7 +187,7 @@ class ThermalThrottleCallback(TrainerCallback):
 class VramGuardCallback(TrainerCallback):
     """
     Pauses at step start if currently free VRAM is below a safety floor.
-    Helps avoid mid-run OOM spikes on near-capacity 8GB GPUs.
+    Helps avoid mid-run OOM spikes when free VRAM is critically low.
     """
 
     def __init__(self, min_free_mb: int = MIN_FREE_VRAM_MB, wait_s: int = 10):
@@ -294,30 +262,45 @@ training_args = TrainingArguments(
     gradient_accumulation_steps = GRAD_ACCUM,
     per_device_eval_batch_size  = EVAL_BATCH,   # 1 — eval examples can be long
     eval_strategy               = "epoch",
-    save_strategy               = "epoch",
+    save_strategy               = "steps",   # spot-safe: checkpoint every 25 steps
+    save_steps                  = SAVE_STEPS,
+    save_total_limit            = 4,         # keep last 4 checkpoints only
     load_best_model_at_end      = True,
     metric_for_best_model       = "eval_loss",
     greater_is_better           = False,
     learning_rate               = LR,
     weight_decay                = WEIGHT_DECAY,
+    # label_smoothing_factor removed — when > 0, HF Trainer bypasses Unsloth's
+    # chunked fused CE and materialises full fp32 logits (151k vocab × batch × seq),
+    # causing ~45 GB VRAM use and numerically unstable loss on 4-bit models.
     warmup_ratio                = WARMUP_RATIO,
     lr_scheduler_type           = "cosine",
     fp16                        = _USE_FP16 or not torch.cuda.is_bf16_supported(),
     bf16                        = not _USE_FP16 and torch.cuda.is_bf16_supported(),
     logging_steps               = 20,
-    report_to                   = "none",       # swap to "wandb" if you want tracking
+    report_to                   = REPORT_TO,
     seed                        = SEED,
-    optim                       = "adamw_8bit", # Unsloth 8-bit Adam — saves VRAM
-    dataloader_num_workers      = 0,            # avoids multiprocessing issues on Windows
-    torch_empty_cache_steps     = 20,           # periodically release cached VRAM to reduce spikes
+    optim                       = "adamw_torch",  # 48 GB: full-precision Adam (8-bit optional on tight VRAM)
+    dataloader_num_workers      = DATALOADER_WORKERS,
+    torch_empty_cache_steps     = 50,
 )
 
 # ── 7. Trainer ────────────────────────────────────────────────────────────────
-thermal_cb = ThermalThrottleCallback(max_temp=TEMP_LIMIT_C, wait_s=COOL_WAIT_S)
-vram_cb = VramGuardCallback(min_free_mb=MIN_FREE_VRAM_MB, wait_s=10)
-print(f"  Thermal throttle   : pause if GPU > {TEMP_LIMIT_C}°C, "
-      f"idle {COOL_WAIT_S}s per check\n")
-print(f"  VRAM guard         : pause if free VRAM < {MIN_FREE_VRAM_MB} MB\n")
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+MERGE_DIR.mkdir(parents=True, exist_ok=True)
+
+callbacks = []
+if not DISABLE_THERMAL_GUARD:
+    callbacks.append(ThermalThrottleCallback(max_temp=TEMP_LIMIT_C, wait_s=COOL_WAIT_S))
+    print(f"  Thermal throttle   : pause if GPU > {TEMP_LIMIT_C}C, idle {COOL_WAIT_S}s per check")
+else:
+    print("  Thermal throttle   : disabled by env")
+
+if not DISABLE_VRAM_GUARD:
+    callbacks.append(VramGuardCallback(min_free_mb=MIN_FREE_VRAM_MB, wait_s=10))
+    print(f"  VRAM guard         : pause if free VRAM < {MIN_FREE_VRAM_MB} MB\n")
+else:
+    print("  VRAM guard         : disabled by env\n")
 
 trainer = SFTTrainer(
     model              = model,
@@ -328,7 +311,7 @@ trainer = SFTTrainer(
     max_seq_length     = MAX_SEQ_LEN,
     data_collator      = DataCollatorForSeq2Seq(tokenizer, pad_to_multiple_of=8),
     args               = training_args,
-    callbacks          = [thermal_cb, vram_cb],
+    callbacks          = callbacks,
 )
 
 # ── 8. Train ──────────────────────────────────────────────────────────────────
@@ -340,9 +323,13 @@ print(f"{'='*60}\n")
 gc.collect()
 torch.cuda.empty_cache()
 
-# Unsloth compiler can change this during setup; enforce right before train loop.
-os.environ["UNSLOTH_RETURN_LOGITS"] = "1"
-trainer_stats = trainer.train()
+_resume = str(RESUME_FROM) if (RESUME_FROM and RESUME_FROM.exists()) else None
+if _resume:
+    print(f"  Resuming from checkpoint : {_resume}\n")
+else:
+    print(f"  Fresh run — training from base model weights\n")
+
+trainer_stats = trainer.train(resume_from_checkpoint=_resume)
 
 print(f"\nTraining complete.")
 print(f"  Final train loss : {trainer_stats.training_loss:.4f}")
