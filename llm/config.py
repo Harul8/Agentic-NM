@@ -50,8 +50,9 @@ except ValueError:
 # CrewAI agents use default model (format: ollama/model_name)
 CREWAI_LLM = f"ollama/{OLLAMA_MODEL}"
 
-# Keep the model resident in memory between requests to reduce cold starts.
-OLLAMA_KEEP_ALIVE = os.environ.get("OLLAMA_KEEP_ALIVE", "30m").strip() or "30m"
+# Keep models resident for much longer so the first analysis after a quiet period
+# does not pay the full load cost again. Override via env in tighter-memory setups.
+OLLAMA_KEEP_ALIVE = os.environ.get("OLLAMA_KEEP_ALIVE", "12h").strip() or "12h"
 
 def _int_env(name: str, default: int) -> int:
     try:

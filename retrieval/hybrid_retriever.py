@@ -22,6 +22,11 @@ from typing import Optional
 
 logger = logging.getLogger(__name__)
 
+_FORCE_LOCAL_MODEL_FILES = os.environ.get("FORCE_LOCAL_MODEL_FILES", "1").lower() in ("1", "true", "yes")
+if _FORCE_LOCAL_MODEL_FILES:
+    os.environ.setdefault("HF_HUB_OFFLINE", "1")
+    os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
+
 # Lazy-loaded models (initialized on first use to save memory)
 _embedder = None
 _bm25_bare = None
@@ -287,6 +292,82 @@ def preload_all_indexes():
             else:
                 logger.debug("Preload BM25 [%s]: file not found (%s)", label, bm25_path)
     logger.info("Index preload complete. Cache has %d entries.", len(_index_cache))
+
+
+def _preload_index_group(label: str, faiss_path: str, chunks_path: str, bm25_path: str):
+    """Preload one FAISS/chunks/BM25 group into the shared in-memory cache."""
+    global _index_cache
+
+    faiss_key = ("faiss", faiss_path)
+    if faiss_key not in _index_cache:
+        if os.path.exists(faiss_path):
+            try:
+                idx = faiss.read_index(faiss_path)
+                try:
+                    idx.hnsw.efSearch = 64
+                except AttributeError:
+                    pass
+                _index_cache[faiss_key] = idx
+                logger.info("Preloaded FAISS [%s]: %d vectors", label, idx.ntotal)
+            except Exception as e:
+                logger.error("Preload FAISS [%s] failed: %s", label, e)
+        else:
+            logger.debug("Preload FAISS [%s]: file not found (%s)", label, faiss_path)
+
+    chunks_key = ("chunks", chunks_path)
+    if chunks_key not in _index_cache:
+        if os.path.exists(chunks_path):
+            try:
+                with open(chunks_path, encoding="utf-8") as f:
+                    _index_cache[chunks_key] = json.load(f)
+                logger.info("Preloaded chunks [%s]: %d chunks", label, len(_index_cache[chunks_key]))
+            except Exception as e:
+                logger.error("Preload chunks [%s] failed: %s", label, e)
+        else:
+            logger.debug("Preload chunks [%s]: file not found (%s)", label, chunks_path)
+
+    bm25_key = ("bm25", bm25_path)
+    if bm25_key not in _index_cache:
+        if os.path.exists(bm25_path):
+            try:
+                with open(bm25_path, encoding="utf-8") as f:
+                    data = json.load(f)
+                _index_cache[bm25_key] = BM25.from_dict(data)
+                logger.info("Preloaded BM25 [%s]: %d docs", label, _index_cache[bm25_key].doc_count)
+            except Exception as e:
+                logger.error("Preload BM25 [%s] failed: %s", label, e)
+        else:
+            logger.debug("Preload BM25 [%s]: file not found (%s)", label, bm25_path)
+
+
+def preload_interactive_indexes():
+    """
+    Preload only the indexes needed for the fast interactive legal-opinion path.
+
+    This intentionally skips the full paragraph-level case-law index so chat
+    startup stays lighter while deep research/search can still lazy-load it on
+    demand.
+    """
+    from config import (
+        ACT_SUMMARY_INDEX_V2,
+        ACT_SUMMARY_CHUNKS_V2,
+        ACT_SUMMARY_BM25_INDEX,
+        BARE_INDEX_V2,
+        BARE_CHUNKS_V2,
+        BARE_BM25_INDEX,
+        CASE_SUMMARY_INDEX_V2,
+        CASE_SUMMARY_CHUNKS_V2,
+        CASE_SUMMARY_BM25_INDEX,
+    )
+
+    groups = [
+        ("act_summaries", ACT_SUMMARY_INDEX_V2, ACT_SUMMARY_CHUNKS_V2, ACT_SUMMARY_BM25_INDEX),
+        ("bare_acts", BARE_INDEX_V2, BARE_CHUNKS_V2, BARE_BM25_INDEX),
+        ("case_summaries", CASE_SUMMARY_INDEX_V2, CASE_SUMMARY_CHUNKS_V2, CASE_SUMMARY_BM25_INDEX),
+    ]
+    for label, faiss_path, chunks_path, bm25_path in groups:
+        _preload_index_group(label, faiss_path, chunks_path, bm25_path)
+    logger.info("Interactive index preload complete. Cache has %d entries.", len(_index_cache))
 
 
 def score_query_document(query: str, document_text: str) -> float:
@@ -1155,6 +1236,119 @@ def search_case_laws(query: str, top_k: int = 30) -> list:
     results = [r for r in results if _is_final_judgment_chunk(r)]
     if len(results) < before:
         logger.info("P2 filter: removed %d interlocutory/procedural docs from local case law results", before - len(results))
+    return results
+
+
+def _binding_authority_from_court(court: str) -> str:
+    """Map a court label to a coarse binding-authority bucket."""
+    value = (court or "").strip().lower()
+    if not value:
+        return "unknown"
+    if "supreme court" in value:
+        return "supreme_court"
+    if "high court" in value:
+        return "high_court"
+    if "tribunal" in value:
+        return "tribunal"
+    if "district" in value or "sessions" in value:
+        return "district_court"
+    return "unknown"
+
+
+def search_bare_acts_fast(query: str, top_k: int = 6) -> list:
+    """
+    Lower-latency bare-act search for interactive chat.
+
+    Uses a much smaller candidate pool than the deep-research path and narrows
+    section search through the act-summary index when possible.
+    """
+    from config import (
+        ACT_SUMMARY_INDEX_V2,
+        ACT_SUMMARY_CHUNKS_V2,
+        ACT_SUMMARY_BM25_INDEX,
+        BARE_INDEX_V2,
+        BARE_CHUNKS_V2,
+        BARE_BM25_INDEX,
+    )
+
+    allowed_acts = None
+    if os.path.isfile(ACT_SUMMARY_INDEX_V2) and os.path.isfile(ACT_SUMMARY_CHUNKS_V2):
+        try:
+            act_results = hybrid_search(
+                query=query,
+                faiss_index_path=ACT_SUMMARY_INDEX_V2,
+                chunks_path=ACT_SUMMARY_CHUNKS_V2,
+                bm25_index_path=ACT_SUMMARY_BM25_INDEX,
+                faiss_top_k=3,
+                bm25_top_k=3,
+                rerank_top_k=1,
+                min_rerank_score=0.0,
+            )
+            allowed_acts = frozenset(
+                (r.get("act_name") or "").strip()
+                for r in act_results
+                if (r.get("act_name") or "").strip()
+            ) or None
+        except Exception as e:
+            logger.debug("Fast act-summary prefilter failed: %s", e)
+
+    results = hybrid_search(
+        query=query,
+        faiss_index_path=BARE_INDEX_V2,
+        chunks_path=BARE_CHUNKS_V2,
+        bm25_index_path=BARE_BM25_INDEX,
+        faiss_top_k=6,
+        bm25_top_k=6,
+        rerank_top_k=min(top_k, 4),
+        min_rerank_score=0.0,
+        allowed_acts=allowed_acts,
+    )
+    if not results and allowed_acts:
+        logger.debug("Fast bare-act search returned no sections with act prefilter; retrying without act filter")
+        results = hybrid_search(
+            query=query,
+            faiss_index_path=BARE_INDEX_V2,
+            chunks_path=BARE_CHUNKS_V2,
+            bm25_index_path=BARE_BM25_INDEX,
+            faiss_top_k=6,
+            bm25_top_k=6,
+            rerank_top_k=min(top_k, 4),
+            min_rerank_score=0.0,
+            allowed_acts=None,
+        )
+    for r in results:
+        r["source_tag"] = "LOCAL_DB"
+        r["retrieval_profile"] = "interactive_fast"
+    return results
+
+
+def search_case_summaries_fast(query: str, top_k: int = 4) -> list:
+    """
+    Lower-latency precedent search for interactive chat.
+
+    Retrieves compact case-summary documents instead of paragraph-level chunks.
+    This is substantially faster and usually good enough for an interactive
+    opinion, while deeper search can still use the full case-law index.
+    """
+    from config import CASE_SUMMARY_INDEX_V2, CASE_SUMMARY_CHUNKS_V2, CASE_SUMMARY_BM25_INDEX
+
+    results = hybrid_search(
+        query=query,
+        faiss_index_path=CASE_SUMMARY_INDEX_V2,
+        chunks_path=CASE_SUMMARY_CHUNKS_V2,
+        bm25_index_path=CASE_SUMMARY_BM25_INDEX,
+        faiss_top_k=4,
+        bm25_top_k=4,
+        rerank_top_k=min(top_k, 3),
+        min_rerank_score=0.0,
+    )
+    for r in results:
+        r["source_tag"] = "LOCAL_DB"
+        r["retrieval_profile"] = "interactive_fast"
+        r["is_case_summary"] = True
+        r["binding_authority"] = r.get("binding_authority") or _binding_authority_from_court(r.get("court"))
+        if not r.get("text"):
+            r["text"] = (r.get("full_text") or "").strip()
     return results
 
 

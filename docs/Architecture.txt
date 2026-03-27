@@ -1,6 +1,6 @@
 ### ARCHITECTURE (Historical + Needs Refresh) ###
 
-Nyaymalaw 3.0 — Legal RAG: compact intake, proceed-to-analysis flow, hybrid retrieval, local-first grounding, and optional legacy search utilities.
+Nyaymalaw 3.0 ï¿½ Legal RAG: compact intake, proceed-to-analysis flow, hybrid retrieval, local-first grounding, and optional legacy search utilities.
 This file still contains some historical flow notes from older two-phase and fallback designs; treat the runtime code as the source of truth until this document is fully refreshed.
 
 Ref: api_server.py, services/interactive_chat.py, services/response_generator_v2.py,
@@ -265,3 +265,4 @@ legal query expansion, statute-anchored case retrieval, no synchronous web/index
   For multi-agent routing and intent behaviour, see docs/CREWAI_MULTI_AGENT_ARCHITECTURE.md.
   For latency diagnosis, three-tier design, legal query augmentation, statute-anchored retrieval,
   vector store rebuild, and code checklist, see docs/IMPROVEMENT_ROADMAP.md.
+

@@ -15,6 +15,7 @@ import threading
 import time
 
 import requests
+from requests.adapters import HTTPAdapter
 
 from llm.config import (
     OLLAMA_MODEL,
@@ -34,6 +35,9 @@ from llm.config import (
 )
 
 logger = logging.getLogger(__name__)
+
+_session_lock = threading.Lock()
+_session = None
 
 # Thread-local: model name used by the last ask_llm call in this thread (for API to include in response)
 _last_model_used = threading.local()
@@ -129,6 +133,20 @@ OLLAMA_GENERATE_URL = f"{OLLAMA_BASE_URL}/api/generate"
 RETRY_BACKOFF_BASE = 2  # seconds; doubles each retry (2s, 4s)
 
 
+def _get_http_session() -> requests.Session:
+    """Reuse HTTP connections to Ollama so repeated local calls stay cheap."""
+    global _session
+    if _session is None:
+        with _session_lock:
+            if _session is None:
+                session = requests.Session()
+                adapter = HTTPAdapter(pool_connections=8, pool_maxsize=16)
+                session.mount("http://", adapter)
+                session.mount("https://", adapter)
+                _session = session
+    return _session
+
+
 def _resolve_timeout_and_retries(
     prompt: str,
     chosen_model: str,
@@ -178,7 +196,7 @@ def warmup_ollama_model(
         "keep_alive": OLLAMA_KEEP_ALIVE,
     }
     try:
-        response = requests.post(OLLAMA_GENERATE_URL, json=payload, timeout=timeout)
+        response = _get_http_session().post(OLLAMA_GENERATE_URL, json=payload, timeout=timeout)
         if not response.ok:
             logger.warning(
                 "Ollama warmup failed for %s: HTTP %s %s",
@@ -225,7 +243,7 @@ def ask_llm_stream(
         "keep_alive": OLLAMA_KEEP_ALIVE,
     }
     try:
-        with requests.post(
+        with _get_http_session().post(
             OLLAMA_GENERATE_URL, json=payload, stream=True, timeout=timeout
         ) as response:
             if not response.ok:
@@ -280,7 +298,7 @@ def ask_llm(
 
     for attempt in range(1 + max_retries):
         try:
-            response = requests.post(
+            response = _get_http_session().post(
                 OLLAMA_GENERATE_URL, json=payload, timeout=timeout
             )
             break  # success — exit retry loop
@@ -358,7 +376,7 @@ def check_ollama_health() -> dict:
 
     # 1. Check if Ollama is reachable
     try:
-        resp = requests.get(OLLAMA_BASE_URL, timeout=5)
+        resp = _get_http_session().get(OLLAMA_BASE_URL, timeout=5)
         result["ollama_reachable"] = resp.ok
     except requests.RequestException as e:
         result["error"] = f"Ollama not reachable: {e}"
@@ -366,7 +384,7 @@ def check_ollama_health() -> dict:
 
     # 2. Check if both models are available
     try:
-        resp = requests.get(f"{OLLAMA_BASE_URL}/api/tags", timeout=10)
+        resp = _get_http_session().get(f"{OLLAMA_BASE_URL}/api/tags", timeout=10)
         if resp.ok:
             models = resp.json().get("models", [])
             model_names = [m.get("name", "") for m in models]

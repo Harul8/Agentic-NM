@@ -1,0 +1,132 @@
+{
+  "generated_at": "2026-03-27T09:25:10.958211Z",
+  "patterns": [
+    {
+      "scenario_type": "matrimonial_violence",
+      "reason_tags": [
+        "missed_client_objective",
+        "missed_urgency",
+        "poor_clarity",
+        "poor_empathy"
+      ],
+      "count": 2,
+      "generalized_issue": "Client reports ongoing domestic violence affecting both the client and minor children, with immediate safety concerns.",
+      "preferred_behavior": [
+        "Clarify what the client wants right now: protection, recovery, complaint, defence, settlement, or another concrete outcome.",
+        "When ongoing harm or deadline risk appears, acknowledge it and assess immediate safety or timing before secondary details.",
+        "Use simpler, more direct language and ask only one focused question at a time.",
+        "Acknowledge distress in plain human language before moving into legal questioning."
+      ],
+      "sample_user_message": "my husband has been harassing me for last 3 months, he comes home drunk and beats me up and terrorises my two daughters",
+      "sample_bad_response": "Are you currently in a position to communicate openly about what happened? Are there any messages or documents from the harassment that you can share with me?",
+      "sample_preferred_response": "I am sorry to know that you have been put through such difficulties. IYou and your daughters must be very terrified to live with your husband in the same house. You must living under constant fear thinking what could happend today evening. But, please don't worry, I can help you with the legal protection for you and your daughters. Firstly, hope you and your daughters are safe at the moment? do you need any imeediate protections like by today or tomorrow?",
+      "message_ids": [
+        "asst_1774007523448_aswe71",
+        "asst_1774010243360_g3mn5n"
+      ]
+    },
+    {
+      "scenario_type": "general_legal_intake",
+      "reason_tags": [
+        "missed_prior_actions",
+        "poor_clarity"
+      ],
+      "count": 1,
+      "generalized_issue": "Client presents a legal intake involving: adversly, affecting.",
+      "preferred_behavior": [
+        "Ask what has already been reported, filed, admitted, paid, or informally settled before deciding the path ahead.",
+        "Use simpler, more direct language and ask only one focused question at a time."
+      ],
+      "sample_user_message": "yes, it is adversly affecting",
+      "sample_bad_response": "Hello! I'm here to help with legal research, relevant laws, and next-step legal guidance. Tell me what happened.",
+      "sample_preferred_response": "model forgot all the ongoing conversation and abruptly started from the scratch again and again",
+      "message_ids": [
+        "asst_1774008927012_82212q"
+      ]
+    },
+    {
+      "scenario_type": "general_legal_intake",
+      "reason_tags": [
+        "missed_urgency",
+        "poor_clarity",
+        "wrong_followup"
+      ],
+      "count": 1,
+      "generalized_issue": "Client presents a legal intake involving: speak, openely, however, also.",
+      "preferred_behavior": [
+        "When ongoing harm or deadline risk appears, acknowledge it and assess immediate safety or timing before secondary details.",
+        "Use simpler, more direct language and ask only one focused question at a time.",
+        "Ask the single next question that most changes legal advice, not a low-value detail question."
+      ],
+      "sample_user_message": "I can speak about it openely, however, I am also afraid to do that I have a few neighbours who are witnesses to this along with my two minro daughters",
+      "sample_bad_response": "Do the neighbours have any recent updates on this situation, such as messages or call logs?",
+      "sample_preferred_response": "would your neighbours be willing to file affiavits supporting your claims. Do you have any other evidences like video recorings, voice recording, photos etc. because it is important to have documentd evidences to present a strong case in teh court of law.",
+      "message_ids": [
+        "asst_1774007609589_p9wpu6"
+      ]
+    },
+    {
+      "scenario_type": "general_legal_intake",
+      "reason_tags": [
+        "poor_clarity",
+        "poor_empathy",
+        "premature_proceed"
+      ],
+      "count": 1,
+      "generalized_issue": "Client presents a legal intake involving: couple, neighnbours, would, willing.",
+      "preferred_behavior": [
+        "Use simpler, more direct language and ask only one focused question at a time.",
+        "Acknowledge distress in plain human language before moving into legal questioning.",
+        "Do not move to legal analysis until urgency, client objective, and prior-action position are sufficiently clear."
+      ],
+      "sample_user_message": "yes, couple of my neighnbours would be willing to do that",
+      "sample_bad_response": "I have enough to begin the legal analysis. If you want, you can add any one last important fact now. Otherwise, just say 'proceed' and I will prepare the full legal opinion from the local legal database.",
+      "sample_preferred_response": "Should have informed the client that what what her husband is doing is criminally wrong and that there are strong legal protections for her and her daughters. Our laws are inclined to protect you and your children and I will guide you on the same step by step. However, is there any specific relief you want? like Police action against your husband, counselling, keeping him away from you, you needed police protection, you need financial assitance etc.",
+      "message_ids": [
+        "asst_1774010364836_c5vbga"
+      ]
+    },
+    {
+      "scenario_type": "general_legal_intake",
+      "reason_tags": [
+        "poor_empathy",
+        "premature_proceed"
+      ],
+      "count": 1,
+      "generalized_issue": "Client presents a legal intake involving: quite, regular, laast, months.",
+      "preferred_behavior": [
+        "Acknowledge distress in plain human language before moving into legal questioning.",
+        "Do not move to legal analysis until urgency, client objective, and prior-action position are sufficiently clear."
+      ],
+      "sample_user_message": "its been quite regular in laast few months",
+      "sample_bad_response": "I have enough to begin the legal analysis. If you want, you can add any one last important fact now. Otherwise, just say 'proceed' and I will prepare the full legal opinion from the local legal database.",
+      "sample_preferred_response": "",
+      "message_ids": [
+        "asst_1774004849767_8mlely"
+      ]
+    },
+    {
+      "scenario_type": "matrimonial",
+      "reason_tags": [
+        "missed_client_objective",
+        "poor_clarity",
+        "poor_empathy",
+        "wrong_followup"
+      ],
+      "count": 1,
+      "generalized_issue": "Client presents with a matrimonial dispute requiring objective, forum, and relief clarification.",
+      "preferred_behavior": [
+        "Clarify what the client wants right now: protection, recovery, complaint, defence, settlement, or another concrete outcome.",
+        "Use simpler, more direct language and ask only one focused question at a time.",
+        "Acknowledge distress in plain human language before moving into legal questioning.",
+        "Ask the single next question that most changes legal advice, not a low-value detail question."
+      ],
+      "sample_user_message": "no, they see what is happened in our house, and whenever my husband makes loud abuses they would hear as well",
+      "sample_bad_response": "Have there been any changes in communication patterns with your husband since he started harassing you and the children?",
+      "sample_preferred_response": "how is communication patterns matter to this case, the client clearly said she is facing ongoing voilent harassment and that she is terrified. yet, the model remained insensitive to the situtation asking random questions which could further frustrate the client who is seeking console and advice. We should not make matters wrose for a client.",
+      "message_ids": [
+        "asst_1774007673766_gfp5k7"
+      ]
+    }
+  ]
+}

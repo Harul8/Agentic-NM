@@ -1,0 +1,39 @@
+INFO:     Started server process [39488]
+INFO:     Waiting for application startup.
+2026-03-27 14:55:10 | INFO     | services.feedback_learning_pipeline | Feedback distillation complete | feedback=7 training_candidates=6 eval_candidates=7
+2026-03-27 14:55:10 | INFO     | nyaymalaw.api | ✓ Feedback distillation processed (7 feedback → 6 training candidates, 7 eval candidates)
+2026-03-27 14:55:10 | INFO     | nyaymalaw.api | ============================================================
+2026-03-27 14:55:10 | INFO     | nyaymalaw.api | Nyaymalaw API v3.0.0 starting up
+2026-03-27 14:55:10 | INFO     | nyaymalaw.api | ============================================================
+2026-03-27 14:55:15 | INFO     | nyaymalaw.api | \u2713 Ollama reachable, model 'llama3.1:8b' loaded
+2026-03-27 14:55:23 | INFO     | nyaymalaw.api | \u2713 Fast intake model 'llama3.2:3b' warmed and kept alive
+2026-03-27 14:55:23 | INFO     | nyaymalaw.api | \u2713 Skipping analysis-model warmup at startup; it will load on first final analysis
+2026-03-27 14:55:23 | INFO     | nyaymalaw.api | \u2713 Database accessible at C:\Users\rahul\Nyaymalaw-5.0\legal_database\chat_history\app.db
+2026-03-27 14:55:23 | INFO     | nyaymalaw.api | Data root: C:\Users\rahul\Nyaymalaw-5.0\legal_database (BareActs: C:\Users\rahul\Nyaymalaw-5.0\legal_database\raw_data\BareActs)
+2026-03-27 14:55:23 | INFO     | nyaymalaw.api | \u2713 Vector store at C:\Users\rahul\Nyaymalaw-5.0\legal_database\vector_store (bare_acts: \u2713, case_laws: \u2713)
+2026-03-27 14:55:23 | INFO     | nyaymalaw.api | CORS origins: ['*']
+2026-03-27 14:55:23 | INFO     | faiss.loader | Loading faiss with AVX2 support.
+2026-03-27 14:55:23 | INFO     | faiss.loader | Successfully loaded faiss with AVX2 support.
+2026-03-27 14:55:45 | WARNING  | nyaymalaw.api | \u26a0 Model pre-load failed (will load on first request): huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 14:55:45 | INFO     | retrieval.hybrid_retriever | Preloaded FAISS [bare_acts]: 80644 vectors
+2026-03-27 14:55:49 | INFO     | retrieval.hybrid_retriever | Preloaded chunks [bare_acts]: 80644 chunks
+2026-03-27 14:55:53 | INFO     | retrieval.hybrid_retriever | Preloaded BM25 [bare_acts]: 80644 docs
+2026-03-27 14:56:01 | INFO     | retrieval.hybrid_retriever | Preloaded FAISS [case_laws]: 1015756 vectors
+2026-03-27 15:02:54 | INFO     | retrieval.hybrid_retriever | Preloaded chunks [case_laws]: 1015756 chunks
+2026-03-27 15:04:12 | INFO     | retrieval.hybrid_retriever | Preloaded BM25 [case_laws]: 1015756 docs
+2026-03-27 15:04:12 | INFO     | retrieval.hybrid_retriever | Preloaded FAISS [case_summaries]: 34037 vectors
+2026-03-27 15:04:14 | INFO     | retrieval.hybrid_retriever | Preloaded chunks [case_summaries]: 34037 chunks
+2026-03-27 15:04:18 | INFO     | retrieval.hybrid_retriever | Preloaded BM25 [case_summaries]: 34037 docs
+2026-03-27 15:04:18 | INFO     | retrieval.hybrid_retriever | Preloaded FAISS [act_summaries]: 1705 vectors
+2026-03-27 15:04:18 | INFO     | retrieval.hybrid_retriever | Preloaded chunks [act_summaries]: 1705 chunks
+2026-03-27 15:04:18 | INFO     | retrieval.hybrid_retriever | Preloaded BM25 [act_summaries]: 1705 docs
+2026-03-27 15:04:18 | INFO     | retrieval.hybrid_retriever | Index preload complete. Cache has 12 entries.
+2026-03-27 15:04:18 | INFO     | nyaymalaw.api | \u2713 All indexes pre-loaded into RAM (queries will serve from cache)
+2026-03-27 15:04:19 | INFO     | training.few_shot_retriever | Loaded 37 few-shot examples from runtime_examples.jsonl
+2026-03-27 15:04:19 | INFO     | nyaymalaw.api | \u2713 Few-shot examples pre-loaded into memory
+2026-03-27 15:04:19 | INFO     | nyaymalaw.api | ============================================================
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8000): only one usage of each socket address (protocol/network address/port) is normally permitted
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.

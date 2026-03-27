@@ -17,6 +17,7 @@ import time
 
 from llm.ollama_client import ask_llm
 from services.fact_collector import get_next_question_or_complete, is_stop_signal
+from services.runtime_warmup import kickoff_runtime_warmup
 from services.response_generator_v2 import (
     generate_response_v2 as generate_response,
 )
@@ -166,9 +167,28 @@ def _build_chat_window_summary(conversation: list, current_message: str = "") ->
     return "\n".join(lines)
 
 
+def _build_user_fact_history(conversation: list, current_message: str = "") -> str:
+    """Join substantive user facts so response generation never starts from an empty base."""
+    user_points: list[str] = []
+    seen: set[str] = set()
+    for msg in conversation or []:
+        if msg.get("role") != "user":
+            continue
+        content = (msg.get("content") or "").strip()
+        if not content or is_stop_signal(content) or content.lower() in {"ok", "okay", "yes", "no"}:
+            continue
+        if content not in seen:
+            seen.add(content)
+            user_points.append(content)
+    current = (current_message or "").strip()
+    if current and not is_stop_signal(current) and current.lower() not in {"ok", "okay", "yes", "no"} and current not in seen:
+        user_points.append(current)
+    return "\n".join(user_points).strip()
+
+
 def _augment_facts_with_chat_summary(facts_summary: str, conversation: list, current_message: str = "") -> str:
     """Append a compact chat-window summary so final reasoning carries the whole matter forward."""
-    base = (facts_summary or "").strip()
+    base = (facts_summary or "").strip() or _build_user_fact_history(conversation, current_message=current_message)
     summary = _build_chat_window_summary(conversation, current_message=current_message).strip()
     if not summary:
         return base
@@ -240,6 +260,20 @@ def _run_search_or_lookup(
         "materials_to_confirm": None,
         "indexed": False,
     }
+
+
+def _default_search_strategy_for_intent(intent: str | None, requested_strategy: str | None) -> str:
+    """
+    Keep interactive legal opinions on the fast local path by default.
+
+    Deep search/research flows can still opt into slower local+web behavior.
+    """
+    if (intent or "").strip().lower() == "legal_opinion":
+        return "local_only"
+    requested = (requested_strategy or "").strip().lower()
+    if requested in ("local_only", "local_then_web"):
+        return requested
+    return "local_then_web"
 
 
 def _run_generic_chat(conversation: list, current_message: str, token_callback=None) -> dict:
@@ -326,6 +360,12 @@ def process_chat(
     t_pipeline_start = time.perf_counter()
     _log_step("process_chat START", 0, f"phase={phase}")
 
+    try:
+        if phase == "fact_collection" and (chat_mode or "").strip().lower() != "general":
+            kickoff_runtime_warmup("intake")
+    except Exception:
+        pass
+
     # ---- Safety gate: check input before any processing ----
     current_message = sanitize_input(current_message)
     safety = check_query_safety(current_message)
@@ -369,15 +409,13 @@ def process_chat(
                 model_override=model_override,
             )
 
-        if _looks_like_new_case_opening(current_message, conversation):
-            logger.info("Detected fresh case opening inside completed chat; re-entering intake with reset conversation")
-            conversation = []
         # If the immediately previous assistant turn was the analysis-ready handoff,
         # the user is either confirming to proceed or giving one last material fact.
         # In either case, do not re-enter intake.
         if _last_assistant_is_analysis_ready(conversation):
+            base_facts = _build_user_fact_history(conversation, current_message=current_message)
             merged_facts = _augment_facts_with_chat_summary(
-                facts_summary or "",
+                facts_summary or base_facts,
                 conversation,
                 current_message=current_message,
             )
@@ -388,13 +426,16 @@ def process_chat(
                 "facts_summary": merged_facts,
                 "intent": "legal_opinion",
                 "document_types": "both",
-                "search_strategy": "local_then_web",
+                "search_strategy": "local_only",
                 "result_count": None,
                 "response": None,
                 "response_type": None,
                 "materials_to_confirm": None,
                 "indexed": False,
             }
+        if _looks_like_new_case_opening(current_message, conversation):
+            logger.info("Detected fresh case opening inside completed chat; re-entering intake with reset conversation")
+            conversation = []
 
         # Default / explicit legal opinion: use fact collector, but force LEGAL
         # so Gate 1 can never downgrade to GENERALIST when the user chose legal mode.
@@ -457,7 +498,10 @@ def process_chat(
                 "facts_summary": facts,
                 "intent": intent,
                 "document_types": result.get("document_types", "both"),
-                "search_strategy": result.get("search_strategy", "local_then_web"),
+                "search_strategy": _default_search_strategy_for_intent(
+                    intent,
+                    result.get("search_strategy"),
+                ),
                 "result_count": result.get("result_count"),
                 "response": None,
                 "response_type": None,
@@ -488,7 +532,7 @@ def process_chat(
         )
         use_intent = intent or "legal_opinion"
         use_document_types = document_types or "both"
-        use_search_strategy = search_strategy or "local_then_web"
+        use_search_strategy = _default_search_strategy_for_intent(use_intent, search_strategy)
         use_result_count = result_count
         t_before_gen = time.perf_counter()
         try:

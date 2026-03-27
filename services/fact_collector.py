@@ -293,6 +293,358 @@ def _count_distinct_user_turns(conversation_history: list, user_message: str) ->
     return count
 
 
+_EVIDENCE_HINTS = (
+    "document", "documents", "message", "messages", "whatsapp", "email", "notice",
+    "order", "agreement", "contract", "record", "records", "receipt", "payment",
+    "bank transfer", "photo", "photos", "video", "audio", "medical", "report",
+    "certificate", "witness", "witnesses", "screenshot", "slip", "fir", "complaint",
+)
+
+_PRIOR_ACTION_HINTS = (
+    "complaint", "fir", "police", "lawyer", "advocate", "notice sent", "replied",
+    "representation", "appeal", "application", "petition", "emailed", "wrote",
+    "requested", "asked", "called", "visited", "reported", "medical treatment",
+    "clinic", "hospital",
+)
+
+_STAGE_HINTS = (
+    "today", "yesterday", "notice", "order", "hearing", "auction", "termination",
+    "dismissal", "chargesheet", "charge sheet", "sale notice", "deadline", "summons",
+    "proceeding", "case filed", "complaint filed", "fir", "medical examination",
+    "lock changed", "eviction notice", "show cause", "suspension", "arrest",
+)
+
+_RELIEF_HINTS = (
+    "want", "need", "seeking", "relief", "protection", "custody", "maintenance",
+    "compensation", "injunction", "stay", "access", "release", "bail", "quash",
+    "set aside", "reinstatement", "refund", "possession", "stop", "restrain",
+)
+
+_LOW_SIGNAL_OPEN_POINT_HINTS = (
+    "current situation", "next steps", "more details", "further details", "what happened",
+    "background", "context", "general information", "immediate legal action",
+    "lawyer consultation", "legal strategy",
+)
+
+_QUESTION_STOPWORDS = {
+    "what", "which", "when", "where", "there", "their", "about", "would", "could",
+    "should", "right", "immediate", "present", "current", "already", "taken", "detail",
+    "details", "provide", "share", "please", "help", "legal", "issue", "matter",
+    "client", "steps", "support", "position", "available", "relief", "outcome",
+}
+
+
+def _combine_user_messages(conversation_history: list, user_message: str) -> str:
+    seen: set[str] = set()
+    user_msgs: list[str] = []
+    for msg in conversation_history or []:
+        if msg.get("role") != "user":
+            continue
+        content = (msg.get("content") or "").strip()
+        if content and content not in seen:
+            seen.add(content)
+            user_msgs.append(content)
+    current = (user_message or "").strip()
+    if current and current not in seen:
+        user_msgs.append(current)
+    return "\n".join(user_msgs).strip()
+
+
+def _has_legal_context(conversation_history: list, user_message: str, force_legal: bool = False) -> bool:
+    if force_legal:
+        return True
+    blob_parts = []
+    for msg in conversation_history or []:
+        if msg.get("role") in ("user", "assistant"):
+            blob_parts.append((msg.get("content") or "").strip().lower())
+    blob_parts.append((user_message or "").strip().lower())
+    blob = " ".join(part for part in blob_parts if part)
+    return any(kw in blob for kw in _LEGAL_KEYWORDS)
+
+
+def _normalize_intake_route(route: str | None, conversation_history: list, user_message: str, force_legal: bool = False) -> str:
+    route = (route or "").strip().lower()
+    explicit_intent = _detect_intent_from_keywords(user_message)
+    legal_context = _has_legal_context(conversation_history, user_message, force_legal=force_legal)
+    if explicit_intent in ("search", "lookup"):
+        return explicit_intent
+    if route in ("search", "lookup") and not explicit_intent and legal_context:
+        return "legal_opinion"
+    if route in ("greeting", "generic_chat") and legal_context:
+        return "legal_opinion"
+    if route in ("greeting", "generic_chat", "search", "lookup", "legal_opinion"):
+        return route
+    return "legal_opinion" if legal_context else "generic_chat"
+
+
+def _state_text_blob(intake_state: dict) -> str:
+    parts = [
+        intake_state.get("client_objective", ""),
+        intake_state.get("facts_summary", ""),
+        " ".join(intake_state.get("known_facts", []) or []),
+        " ".join(intake_state.get("prior_actions_taken", []) or []),
+        " ".join(intake_state.get("open_points", []) or []),
+    ]
+    return " ".join(str(part).strip().lower() for part in parts if str(part).strip())
+
+
+def _contains_any_term(text: str, terms: tuple[str, ...]) -> bool:
+    low = (text or "").lower()
+    for term in terms:
+        pattern = rf"\b{re.escape(term.lower())}\b"
+        if re.search(pattern, low):
+            return True
+    return False
+
+
+def _append_unique_point(points: list[str], candidate: str) -> None:
+    cand = (candidate or "").strip()
+    if not cand:
+        return
+    low = cand.lower()
+    for existing in points:
+        ex = existing.lower()
+        if low == ex or low in ex or ex in low:
+            return
+    points.append(cand)
+
+
+def _derive_core_open_points(intake_state: dict, conversation_history: list, user_message: str) -> list[str]:
+    points: list[str] = []
+    state_blob = _state_text_blob(intake_state)
+    objective = (intake_state.get("client_objective") or "").strip()
+    urgency = (intake_state.get("urgency_level") or "unknown").strip().lower()
+    prior_actions = [str(x).strip() for x in (intake_state.get("prior_actions_taken") or []) if str(x).strip()]
+    evidence_present = _contains_any_term(state_blob, _EVIDENCE_HINTS)
+    stage_present = _contains_any_term(state_blob, _STAGE_HINTS)
+
+    if not objective and not _contains_any_term(state_blob, _RELIEF_HINTS):
+        _append_unique_point(points, "client objective / relief sought")
+    if urgency in ("", "unknown"):
+        _append_unique_point(points, "present urgency / current position")
+    if not prior_actions and not _contains_any_term(state_blob, _PRIOR_ACTION_HINTS):
+        _append_unique_point(points, "prior actions already taken")
+    if not evidence_present:
+        _append_unique_point(points, "documents / messages / witnesses currently available")
+    if _count_distinct_user_turns(conversation_history, user_message) <= 2 and not stage_present:
+        _append_unique_point(points, "current stage / notice / immediate trigger")
+
+    for point in intake_state.get("open_points", []) or []:
+        cleaned = str(point).strip()
+        low = cleaned.lower()
+        if not cleaned:
+            continue
+        if any(hint in low for hint in _LOW_SIGNAL_OPEN_POINT_HINTS):
+            continue
+        if any(token in low for token in ("time", "timing", "date", "duration", "frequency", "when exactly")):
+            continue
+        if objective and any(token in low for token in ("objective", "relief", "outcome", "prayer", "remedy", "legal remedy")):
+            continue
+        if urgency not in ("", "unknown") and any(token in low for token in ("urgency", "current position", "immediate position", "safety")):
+            continue
+        if prior_actions and any(token in low for token in ("prior action", "already taken", "complaint", "steps taken")):
+            continue
+        if _contains_any_term(state_blob, ("police", "lawyer", "advocate", "complaint", "clinic", "hospital")) and any(
+            token in low for token in ("police involvement", "lawyer consultation", "police", "lawyer", "advocate", "consultation")
+        ):
+            continue
+        if evidence_present and any(token in low for token in ("document", "communication", "message", "material", "supporting", "evidence", "witness")):
+            continue
+        if stage_present and any(token in low for token in ("stage", "notice", "trigger", "process", "hearing", "order")):
+            continue
+        _append_unique_point(points, cleaned)
+        if len(points) >= 5:
+            break
+    return points[:5]
+
+
+def _normalize_legal_intake_state(intake_state: dict | None, conversation_history: list, user_message: str) -> dict:
+    state = dict(intake_state or {})
+    facts_summary = _combine_user_messages(conversation_history, user_message) or (state.get("facts_summary") or "").strip()
+    known_facts = [str(x).strip() for x in (state.get("known_facts") or []) if str(x).strip()]
+    prior_actions = [
+        str(x).strip()
+        for x in (state.get("prior_actions_taken") or [])
+        if str(x).strip() and str(x).strip().lower() not in {"none", "nil", "nothing", "not yet", "no action", "no action taken"}
+    ]
+    normalized = {
+        "route": "legal_opinion",
+        "client_objective": (state.get("client_objective") or "").strip(),
+        "urgency_level": (state.get("urgency_level") or "unknown").strip().lower() or "unknown",
+        "known_facts": list(dict.fromkeys(known_facts))[:6],
+        "prior_actions_taken": list(dict.fromkeys(prior_actions))[:5],
+        "facts_summary": facts_summary,
+        "enough_to_proceed": False,
+        "open_points": [],
+    }
+    normalized["open_points"] = _derive_core_open_points(normalized | {"open_points": state.get("open_points") or []}, conversation_history, user_message)
+    return normalized
+
+
+def _topic_already_asked(point: str, asked_questions: list[str]) -> bool:
+    low = (point or "").lower()
+    mapping = {
+        "client objective / relief sought": ("relief", "want", "outcome", "seeking", "what do you want"),
+        "present urgency / current position": ("urgent", "urgency", "current position", "right now", "immediate risk", "safe"),
+        "prior actions already taken": ("already taken", "steps have you already taken", "complaint", "notice sent", "police", "lawyer"),
+        "documents / messages / witnesses currently available": ("document", "message", "photo", "witness", "evidence", "records"),
+        "current stage / notice / immediate trigger": ("notice", "order", "hearing", "deadline", "stage", "what happened today", "trigger"),
+    }
+    signals = mapping.get(low, tuple(token for token in re.split(r"[\s/]+", low) if len(token) > 3))
+    for question in asked_questions or []:
+        q_low = (question or "").lower()
+        if any(signal in q_low for signal in signals):
+            return True
+    return False
+
+
+def _should_complete_legal_intake(intake_state: dict, conversation_history: list, user_message: str, stop_requested: bool = False) -> bool:
+    user_turns = _count_distinct_user_turns(conversation_history, user_message)
+    if stop_requested:
+        return bool((intake_state.get("facts_summary") or "").strip())
+    if user_turns < 2:
+        return False
+    return len(intake_state.get("open_points") or []) == 0
+
+
+def _is_low_quality_next_question(reply: str) -> bool:
+    low = (reply or "").strip().lower()
+    if len(low) < 20:
+        return True
+    if "?" not in low:
+        return True
+    banned_fragments = (
+        "hello!", "hi!", "tell me what happened", "tell me more", "start from the beginning",
+        "what happened", "share your facts", "landlord and tenant act", "section ", "under the act",
+        "supreme court", "high court", "article ",
+    )
+    return any(fragment in low for fragment in banned_fragments)
+
+
+def _question_is_grounded_in_state(reply: str, intake_state: dict) -> bool:
+    state_blob = _state_text_blob(intake_state)
+    if not state_blob:
+        return True
+    reply_tokens = {
+        token
+        for token in re.findall(r"[a-zA-Z]{4,}", (reply or "").lower())
+        if token not in _QUESTION_STOPWORDS
+    }
+    if not reply_tokens:
+        return False
+    overlap = {token for token in reply_tokens if token in state_blob}
+    if len(overlap) < min(2, len(reply_tokens)):
+        return False
+    return (len(overlap) / max(len(reply_tokens), 1)) >= 0.3
+
+
+def _join_question_fragments(fragments: list[str]) -> str:
+    if not fragments:
+        return ""
+    if len(fragments) == 1:
+        return f"{fragments[0]}?"
+    if len(fragments) == 2:
+        return f"{fragments[0]}, and {fragments[1]}?"
+    return f"{fragments[0]}, {fragments[1]}, and {fragments[2]}?"
+
+
+def _custom_open_point_to_fragment(point: str) -> str:
+    low = (point or "").strip().lower().rstrip(".")
+    if not low:
+        return ""
+    if low.startswith("possibility of ") and low.endswith(" claim"):
+        target = low[len("possibility of "):]
+        return f"what facts presently support {target}"
+    if "intent behind" in low:
+        tail = low.split("intent behind", 1)[1].strip()
+        if tail:
+            return f"what explanation, if any, the other side gave about {tail}"
+    if low.startswith("immediacy of "):
+        tail = low[len("immediacy of "):].strip()
+        if tail:
+            return f"whether {tail} is possible right now"
+    if low.startswith("protections against "):
+        tail = low[len("protections against "):].strip()
+        if tail:
+            return f"what immediate protection is needed against {tail}"
+    if low.startswith("available support"):
+        return "what family, local, or institutional support is available to you right now"
+    return f"what do we know about {low[:120]}"
+
+
+def _build_fallback_next_question(intake_state: dict, conversation_history: list) -> str:
+    asked_questions = _extract_asked_questions(conversation_history)
+    missing_points = [
+        point for point in (intake_state.get("open_points") or [])
+        if not _topic_already_asked(point, asked_questions)
+    ]
+    if not missing_points:
+        missing_points = list(intake_state.get("open_points") or [])
+
+    facts_blob = _state_text_blob(intake_state)
+    issue_family = "general"
+    if _contains_any_term(facts_blob, ("landlord", "tenant", "rent", "evict", "flat", "lease")):
+        issue_family = "tenancy"
+    elif _contains_any_term(facts_blob, ("assault", "abuse", "injury", "husband", "violence", "beat", "harassment")):
+        issue_family = "personal_safety"
+    elif _contains_any_term(facts_blob, ("employer", "salary", "termination", "suspension", "dismissal", "service")):
+        issue_family = "employment"
+
+    fragment_map_by_family = {
+        "general": {
+            "client objective / relief sought": "what exact relief or outcome do you want right now",
+            "present urgency / current position": "what is the present urgency or immediate position as of now",
+            "prior actions already taken": "what steps have you already taken with the other side, police, authority, or any lawyer",
+            "documents / messages / witnesses currently available": "what documents, messages, payment records, photos, medical papers, or witnesses do you currently have",
+            "current stage / notice / immediate trigger": "has any notice, order, complaint, hearing, or other immediate trigger already started",
+        },
+        "tenancy": {
+            "client objective / relief sought": "what exact relief do you want right now, such as access, protection against dispossession, or recovery of belongings",
+            "present urgency / current position": "are you still locked out right now and is there any immediate risk to your belongings or possession",
+            "prior actions already taken": "what steps have you already taken with the landlord, police, society, or any lawyer",
+            "documents / messages / witnesses currently available": "what rent agreement, payment proof, messages, photos, notices, or witnesses do you currently have",
+            "current stage / notice / immediate trigger": "has any notice, police interaction, or other formal eviction step already happened",
+        },
+        "personal_safety": {
+            "client objective / relief sought": "what immediate help or protection do you want right now",
+            "present urgency / current position": "are you safe right now and is there any immediate risk of further harm",
+            "prior actions already taken": "what steps have you already taken with police, medical care, family support, or any lawyer",
+            "documents / messages / witnesses currently available": "what injury photos, medical papers, messages, recordings, or witnesses do you currently have",
+            "current stage / notice / immediate trigger": "has any police complaint, medical examination, or other formal step already started after the incident",
+        },
+        "employment": {
+            "client objective / relief sought": "what exact relief do you want right now, such as reinstatement, salary dues, or protection against further action",
+            "present urgency / current position": "are you still in service right now or has the suspension, termination, or other action already taken effect",
+            "prior actions already taken": "what steps have you already taken with the employer, HR, departmental authority, or any lawyer",
+            "documents / messages / witnesses currently available": "what appointment papers, emails, notices, salary records, or witness support do you currently have",
+            "current stage / notice / immediate trigger": "has any show-cause, inquiry, termination, suspension, or hearing already begun",
+        },
+    }
+    fragment_map = fragment_map_by_family.get(issue_family, fragment_map_by_family["general"])
+    fragments: list[str] = []
+    for point in missing_points:
+        fragment = fragment_map.get(point)
+        if not fragment:
+            fragment = _custom_open_point_to_fragment(point)
+        if fragment and fragment not in fragments:
+            fragments.append(fragment)
+        if len(fragments) >= 3:
+            break
+    if not fragments:
+        fragments = [
+            "what exact relief do you want right now",
+            "what supporting material do you currently have",
+            "what step has already been taken, if any",
+        ]
+    if fragments:
+        fragments[0] = fragments[0][:1].upper() + fragments[0][1:]
+    return (
+        "I understand the core issue. "
+        "The next details will help me assess urgency, evidentiary support, and the most workable immediate legal path. "
+        f"{_join_question_fragments(fragments)}"
+    )
+
+
 def _needs_more_intake_clarification(intake_state: dict, conversation_history: list, user_message: str) -> bool:
     """
     Generic guardrail against premature intake completion.
@@ -505,6 +857,27 @@ def _detect_search_strategy_from_keywords(msg: str) -> str | None:
     return None
 
 
+def _default_search_strategy_for_intent(
+    intent: str | None,
+    user_message: str,
+    requested_strategy: str | None = None,
+) -> str:
+    """
+    Keep legal-opinion flows on the fast local-only path unless the user explicitly
+    asked for something else. Search/lookup flows retain the broader mixed strategy.
+    """
+    keyword_strategy = _detect_search_strategy_from_keywords(user_message)
+    if keyword_strategy:
+        return keyword_strategy
+    normalized_intent = (intent or "").strip().lower()
+    requested = (requested_strategy or "").strip().lower()
+    if normalized_intent == "legal_opinion":
+        return "local_only"
+    if requested in ("local_only", "local_then_web"):
+        return requested
+    return "local_then_web"
+
+
 def _is_all_acts_style_request(msg: str) -> bool:
     """True if user is asking for 'all acts' / 'pull all' / 'list all' (broad discovery, not a small count)."""
     m = (msg or "").lower()
@@ -659,15 +1032,14 @@ def _parse_llm_response(response: str, user_message: str) -> dict | None:
 
         # search_strategy: from intent first; fallback from routing LLM + keywords.
         # Explicit user phrases ("avoid local", "directly go to web", "web only") always override so we never ignore them.
+        requested_search_strategy = None
         if research_intent and research_intent.get("search_strategy") in ("local_only", "local_then_web"):
-            search_strategy = research_intent["search_strategy"]
+            requested_search_strategy = research_intent["search_strategy"]
         else:
-            search_strategy = (out.get("search_strategy") or "local_then_web").strip().lower()
-            if search_strategy not in ("local_only", "local_then_web"):
-                search_strategy = "local_then_web"
-        keyword_strategy = _detect_search_strategy_from_keywords(user_message)
-        if keyword_strategy:
-            search_strategy = keyword_strategy
+            candidate = (out.get("search_strategy") or "").strip().lower()
+            if candidate in ("local_only", "local_then_web"):
+                requested_search_strategy = candidate
+        search_strategy = _default_search_strategy_for_intent(intent, user_message, requested_search_strategy)
 
         payload = {
             "action": "complete",
@@ -727,6 +1099,23 @@ def _enrich_facts_summary(parsed: dict, conversation_history: list, user_message
     return parsed
 
 
+def _normalize_completion_payload(parsed: dict, user_message: str) -> dict:
+    """Normalize completion routing so legal-opinion flows stay on the intended path."""
+    normalized = dict(parsed or {})
+    intent = normalized.get("intent") or "legal_opinion"
+    normalized["intent"] = intent
+    normalized.setdefault("document_types", "both")
+    normalized.setdefault("result_count", None)
+    if not (normalized.get("facts_summary") or "").strip():
+        normalized["facts_summary"] = user_message
+    normalized["search_strategy"] = _default_search_strategy_for_intent(
+        intent,
+        user_message,
+        normalized.get("search_strategy"),
+    )
+    return normalized
+
+
 # ---------------------------------------------------------------------------
 # Main entry point
 # ---------------------------------------------------------------------------
@@ -756,215 +1145,88 @@ def get_next_question_or_complete(conversation_history: list, user_message: str,
         _log_fc_step("greeting_response", (time.perf_counter() - t_before) * 1000)
         return out
 
-    # --- Fast path: stop signals ---
-    if is_stop_signal(user_message):
-        prompt = (
-            f"The client said they have no more information. Summarise what they shared for research.\n"
-            f"Output valid JSON only (one line): {{\"action\": \"complete\", \"facts_summary\": \"<brief summary>\", \"reply_to_client\": \"<your short sentence to the client>\"}}\n\n"
-            f"Conversation:\n{json.dumps(conversation_history + [{'role': 'user', 'content': user_message}], indent=2)}"
-        )
-        try:
-            response = ask_llm(prompt, task_hint="fast")
-            parsed = _parse_llm_response(response, user_message)
-            if parsed:
-                return parsed
-        except Exception:
-            pass
-        # Fallback: combine all user text; no result_count = flexible limit
-        all_text = "\n".join(m["content"] for m in conversation_history if m.get("role") == "user")
-        return {
-            "action": "complete",
-            "intent": "legal_opinion",
-            "result_count": None,
-            "facts_summary": f"{all_text}\n{user_message}".strip(),
-            "message": "",
-            "document_types": "both",
-            "search_strategy": _detect_search_strategy_from_keywords(user_message) or "local_then_web",
-        }
+    stop_requested = is_stop_signal(user_message)
+    legal_context = _has_legal_context(conversation_history, user_message, force_legal=force_legal)
 
-    # --- Compact intake state + next-question selector ---
+    # --- Compact intake state: the single routing and state brain ---
     t_compact = time.perf_counter()
-    intake_state = _run_compact_intake_state(conversation_history, user_message)
+    raw_intake_state = _run_compact_intake_state(conversation_history, user_message)
     _log_fc_step(
         "compact_intake_state",
         (time.perf_counter() - t_compact) * 1000,
-        f"route={intake_state.get('route') if intake_state else 'None'}",
+        f"route={raw_intake_state.get('route') if raw_intake_state else 'None'}",
     )
 
-    if intake_state:
-        route = intake_state.get("route")
+    intake_state = dict(raw_intake_state or {})
+    route = _normalize_intake_route(intake_state.get("route"), conversation_history, user_message, force_legal=force_legal)
 
-        if route == "greeting":
-            cleaned = user_message.strip().lower().rstrip("!?.,;:")
-            question = (
-                GREETING_STATIC_TEMPLATE
-                if cleaned in GREETING_PHRASES
-                else generate_greeting_response(user_message)
-            )
-            return {"action": "ask", "question": question}
-
-        if route in ("search", "lookup"):
-            return {
-                "action": "complete",
-                "intent": route,
-                "result_count": _extract_result_count(user_message),
-                "facts_summary": intake_state.get("facts_summary") or user_message,
-                "message": "",
-                "document_types": "acts_only" if route == "lookup" else "case_laws_only",
-                "search_strategy": _detect_search_strategy_from_keywords(user_message) or "local_then_web",
-            }
-
-        if route == "generic_chat" and not force_legal:
-            return {
-                "action": "complete",
-                "intent": "generic_chat",
-                "facts_summary": intake_state.get("facts_summary") or user_message,
-                "message": "",
-                "document_types": "both",
-                "search_strategy": "local_then_web",
-            }
-
-        if route == "legal_opinion" or force_legal:
-            user_turns = _count_distinct_user_turns(conversation_history, user_message)
-            if _needs_more_intake_clarification(intake_state, conversation_history, user_message):
-                intake_state = dict(intake_state)
-                intake_state["enough_to_proceed"] = False
-                open_points = [str(x).strip() for x in (intake_state.get("open_points") or []) if str(x).strip()]
-                if not (intake_state.get("client_objective") or "").strip():
-                    open_points.append("client objective / relief sought")
-                if (intake_state.get("urgency_level") or "unknown").strip().lower() in ("", "unknown"):
-                    open_points.append("urgency / immediate safety position")
-                if not (intake_state.get("prior_actions_taken") or []):
-                    open_points.append("prior actions already taken or not yet taken")
-                # Keep the list short and unique so the next-question selector stays focused.
-                intake_state["open_points"] = list(dict.fromkeys(open_points))[:4]
-
-            if intake_state.get("enough_to_proceed"):
-                parsed = {
-                    "action": "complete",
-                    "intent": "legal_opinion",
-                    "result_count": None,
-                    "facts_summary": intake_state.get("facts_summary") or user_message,
-                    "message": "",
-                    "document_types": "both",
-                    "search_strategy": _detect_search_strategy_from_keywords(user_message) or "local_then_web",
-                }
-                return _enrich_facts_summary(parsed, conversation_history, user_message)
-
-            t_next = time.perf_counter()
-            parsed = _run_next_question_from_state(intake_state, conversation_history)
-            _log_fc_step(
-                "next_question_from_state",
-                (time.perf_counter() - t_next) * 1000,
-                f"action={parsed.get('action') if parsed else 'None'}",
-            )
-            if parsed:
-                if parsed.get("action") == "ask":
-                    asked_questions = _extract_asked_questions(conversation_history)
-                    reply = parsed.get("question") or parsed.get("reply_to_client") or ""
-                    needs_retry = False
-                    if asked_questions and _is_duplicate_question(reply, asked_questions):
-                        needs_retry = True
-                    if _is_low_value_timing_followup(reply, intake_state, asked_questions):
-                        needs_retry = True
-
-                    if needs_retry:
-                        retry_state = dict(intake_state)
-                        retry_open_points = []
-                        for point in list(retry_state.get("open_points") or []):
-                            p = str(point).strip()
-                            low = p.lower()
-                            if any(tok in low for tok in ("time", "date", "duration", "frequency", "when")):
-                                continue
-                            if p:
-                                retry_open_points.append(p)
-                        if not retry_open_points:
-                            retry_open_points = [
-                                "client objective / relief sought",
-                                "prior actions already taken or not yet taken",
-                                "present safety / urgency position",
-                            ]
-                        retry_state["open_points"] = retry_open_points[:4]
-                        retry_parsed = _run_next_question_from_state(retry_state, conversation_history)
-                        if retry_parsed and retry_parsed.get("action") == "ask":
-                            retry_reply = retry_parsed.get("question") or retry_parsed.get("reply_to_client") or ""
-                            if not _is_duplicate_question(retry_reply, asked_questions) and not _is_low_value_timing_followup(retry_reply, retry_state, asked_questions):
-                                return retry_parsed
-
-                        parsed = {
-                            "action": "complete",
-                            "intent": "legal_opinion",
-                            "result_count": None,
-                            "facts_summary": intake_state.get("facts_summary") or user_message,
-                            "message": "",
-                            "document_types": "both",
-                            "search_strategy": _detect_search_strategy_from_keywords(user_message) or "local_then_web",
-                        }
-                        return _enrich_facts_summary(parsed, conversation_history, user_message)
-                    return parsed
-
-                if parsed.get("action") == "complete":
-                    if user_turns <= 1:
-                        forced_state = dict(intake_state)
-                        forced_state["enough_to_proceed"] = False
-                        forced_open_points = [str(x).strip() for x in (forced_state.get("open_points") or []) if str(x).strip()]
-                        forced_open_points.extend([
-                            "immediate safety / urgency position",
-                            "client objective / relief sought",
-                            "prior actions already taken or not yet taken",
-                        ])
-                        forced_state["open_points"] = list(dict.fromkeys([p for p in forced_open_points if p]))[:4]
-                        forced_parsed = _run_next_question_from_state(forced_state, conversation_history)
-                        if forced_parsed and forced_parsed.get("action") == "ask":
-                            return forced_parsed
-                    parsed.setdefault("intent", "legal_opinion")
-                    parsed.setdefault("document_types", "both")
-                    parsed.setdefault("search_strategy", _detect_search_strategy_from_keywords(user_message) or "local_then_web")
-                    parsed.setdefault("result_count", None)
-                    if not (parsed.get("facts_summary") or "").strip():
-                        parsed["facts_summary"] = intake_state.get("facts_summary") or user_message
-                    return _enrich_facts_summary(parsed, conversation_history, user_message)
-
-    # If the compact intake path failed but we are clearly in a legal conversation,
-    # do not cascade into multiple more LLM fallbacks on the hot path.
-    has_legal_context = force_legal or any(
-        any(kw in ((m.get("content") or "").lower()) for kw in _LEGAL_KEYWORDS)
-        for m in conversation_history
-        if m.get("role") == "user"
-    ) or any(kw in user_message.lower() for kw in _LEGAL_KEYWORDS)
-    if has_legal_context and conversation_history:
-        all_user = "\n".join(
-            (m.get("content") or "").strip()
-            for m in conversation_history
-            if m.get("role") == "user" and (m.get("content") or "").strip()
+    if route == "greeting" and not legal_context:
+        cleaned = user_message.strip().lower().rstrip("!?.,;:")
+        question = (
+            GREETING_STATIC_TEMPLATE
+            if cleaned in GREETING_PHRASES
+            else generate_greeting_response(user_message)
         )
+        return {"action": "ask", "question": question}
+
+    if route in ("search", "lookup"):
+        parsed = {
+            "action": "complete",
+            "intent": route,
+            "result_count": _extract_result_count(user_message),
+            "facts_summary": (intake_state.get("facts_summary") or _combine_user_messages(conversation_history, user_message) or user_message),
+            "message": "",
+            "document_types": "acts_only" if route == "lookup" else "case_laws_only",
+            "search_strategy": _default_search_strategy_for_intent(route, user_message),
+        }
+        return _normalize_completion_payload(parsed, user_message)
+
+    if route == "generic_chat" and not legal_context and not force_legal:
+        return _normalize_completion_payload({
+            "action": "complete",
+            "intent": "generic_chat",
+            "facts_summary": intake_state.get("facts_summary") or user_message,
+            "message": "",
+            "document_types": "both",
+            "search_strategy": _default_search_strategy_for_intent("generic_chat", user_message),
+        }, user_message)
+
+    # Legal opinion is the single structured intake path.
+    legal_state = _normalize_legal_intake_state(intake_state, conversation_history, user_message)
+    legal_state["route"] = "legal_opinion"
+    legal_state["enough_to_proceed"] = _should_complete_legal_intake(
+        legal_state,
+        conversation_history,
+        user_message,
+        stop_requested=stop_requested,
+    )
+
+    if legal_state["enough_to_proceed"]:
         parsed = {
             "action": "complete",
             "intent": "legal_opinion",
             "result_count": None,
-            "facts_summary": f"{all_user}\n{user_message}".strip() if all_user else user_message,
+            "facts_summary": legal_state.get("facts_summary") or user_message,
             "message": "",
             "document_types": "both",
-            "search_strategy": _detect_search_strategy_from_keywords(user_message) or "local_then_web",
+            "search_strategy": _default_search_strategy_for_intent("legal_opinion", user_message),
         }
-        _log_fc_step("compact_intake_fallback_complete", (time.perf_counter() - t_start) * 1000)
-        return parsed
+        _log_fc_step("legal_intake_complete", (time.perf_counter() - t_start) * 1000)
+        return _enrich_facts_summary(_normalize_completion_payload(parsed, user_message), conversation_history, user_message)
 
-    # Compact intake failed or returned an incomplete result. Fall back to a
-    # cheap deterministic completion instead of cascading into older prompt stacks.
-    all_user_text = "\n".join(
-        m["content"]
-        for m in conversation_history
-        if m.get("role") == "user"
-    )
-    combined = f"{all_user_text}\n{user_message}".strip() or user_message
-    _log_fc_step("compact_intake_default_complete", (time.perf_counter() - t_start) * 1000)
-    return {
+    fallback_question = _build_fallback_next_question(legal_state, conversation_history)
+    if fallback_question:
+        _log_fc_step("legal_intake_ask_deterministic", (time.perf_counter() - t_start) * 1000)
+        return {"action": "ask", "question": fallback_question}
+
+    parsed = {
         "action": "complete",
-        "intent": _detect_intent_from_keywords(user_message) or ("legal_opinion" if (force_legal or has_legal_context) else "generic_chat"),
-        "result_count": _extract_result_count(user_message),
-        "facts_summary": combined,
+        "intent": "legal_opinion",
+        "result_count": None,
+        "facts_summary": legal_state.get("facts_summary") or _combine_user_messages(conversation_history, user_message) or user_message,
         "message": "",
         "document_types": "both",
-        "search_strategy": _detect_search_strategy_from_keywords(user_message) or "local_then_web",
+        "search_strategy": _default_search_strategy_for_intent("legal_opinion", user_message),
     }
+    _log_fc_step("legal_intake_complete_fallback", (time.perf_counter() - t_start) * 1000)
+    return _enrich_facts_summary(_normalize_completion_payload(parsed, user_message), conversation_history, user_message)

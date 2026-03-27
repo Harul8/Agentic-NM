@@ -18,6 +18,7 @@ requests==2.32.3
 faiss-cpu==1.8.0
 numpy==1.26.4
 sentence-transformers==2.7.0
+huggingface-hub>=0.34,<1.0
 torch>=2.6,<2.7
 torchvision>=0.21,<0.22
 torchaudio>=2.6,<2.7

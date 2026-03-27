@@ -1,0 +1,185 @@
+INFO:     Started server process [29948]
+INFO:     Waiting for application startup.
+2026-03-27 15:10:07 | INFO     | nyaymalaw.api | ============================================================
+2026-03-27 15:10:07 | INFO     | nyaymalaw.api | Nyaymalaw API v3.0.0 starting up
+2026-03-27 15:10:07 | INFO     | nyaymalaw.api | ============================================================
+2026-03-27 15:10:07 | INFO     | nyaymalaw.api | âœ“ Database accessible at C:\Users\rahul\Nyaymalaw-5.0\legal_database\chat_history\app.db
+2026-03-27 15:10:07 | INFO     | nyaymalaw.api | Data root: C:\Users\rahul\Nyaymalaw-5.0\legal_database (BareActs: C:\Users\rahul\Nyaymalaw-5.0\legal_database\raw_data\BareActs)
+2026-03-27 15:10:07 | INFO     | nyaymalaw.api | âœ“ Vector store at C:\Users\rahul\Nyaymalaw-5.0\legal_database\vector_store (bare_acts: âœ“, case_laws: âœ“)
+2026-03-27 15:10:07 | INFO     | nyaymalaw.api | CORS origins: ['*']
+2026-03-27 15:10:07 | INFO     | nyaymalaw.api | âœ“ Startup checks complete; background warmup tasks launched
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-03-27 15:10:09 | INFO     | nyaymalaw.api | GET /chats \u2192 200 (1520ms)
+2026-03-27 15:10:09 | INFO     | training.few_shot_retriever | Loaded 37 few-shot examples from runtime_examples.jsonl
+2026-03-27 15:10:11 | INFO     | nyaymalaw.api | âœ“ Ollama reachable, model 'llama3.1:8b' loaded
+2026-03-27 15:10:14 | INFO     | nyaymalaw.api | âœ“ Fast intake model 'llama3.2:3b' warmed and kept alive
+2026-03-27 15:10:14 | INFO     | nyaymalaw.api | âœ“ Skipping analysis-model warmup at startup; it will load on first final analysis
+2026-03-27 15:10:14 | INFO     | faiss.loader | Loading faiss with AVX2 support.
+2026-03-27 15:10:14 | INFO     | faiss.loader | Successfully loaded faiss with AVX2 support.
+2026-03-27 15:10:18 | INFO     | nyaymalaw.api | POST /submit_case \u2192 200 (8733ms)
+2026-03-27 15:10:18 | INFO     | nyaymalaw.api | POST /chats \u2192 200 (51ms)
+2026-03-27 15:10:18 | INFO     | nyaymalaw.api | GET /chats/604418051 \u2192 200 (13ms)
+2026-03-27 15:10:25 | INFO     | services.intent_extractor | Extracted intent: document_types=both search_strategy=local_then_web result_count=None states=[] scope=specific
+2026-03-27 15:10:26 | WARNING  | nyaymalaw.api | âš  Model pre-load failed (will load on first request): huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:10:26 | INFO     | retrieval.hybrid_retriever | Preloaded FAISS [bare_acts]: 80644 vectors
+2026-03-27 15:10:30 | INFO     | retrieval.hybrid_retriever | Preloaded chunks [bare_acts]: 80644 chunks
+2026-03-27 15:10:35 | INFO     | services.intent_extractor | Extracted intent: document_types=both search_strategy=local_then_web result_count=None states=[] scope=specific
+2026-03-27 15:10:35 | INFO     | services.response_generator_v2 | Expanded query(s): The client complained about severe leakage, stopped paying rent, and submitted two repair requests. The client wants to understand their immediate legal position. CHAT WINDOW SUMMARY User facts and st
+2026-03-27 15:10:35 | INFO     | retrieval.hybrid_retriever | Preloaded BM25 [bare_acts]: 80644 docs
+2026-03-27 15:10:41 | INFO     | retrieval.hybrid_retriever | Preloaded FAISS [case_laws]: 1015756 vectors
+2026-03-27 15:10:43 | INFO     | services.dispute_decomposer | Dispute decomposition: 2 component(s) — ['My landlord is threatening to evict me because I complained ', 'I submitted two repair requests for the leakage, and my land']
+2026-03-27 15:10:43 | INFO     | services.response_generator_v2 | Disputes identified: ['My landlord is threatening to evict me because I complained ', 'I submitted two repair requests for the leakage, and my land']
+2026-03-27 15:10:43 | INFO     | services.response_generator_v2 | Bare-act query builder [d1]: legal_nature=civil queries=['Eviction for Non-Payment of Rent', 'Breach of Lease Agreement', 'My landlord is threatening to evict me because I complained about the severe leakage and stopped paying part of the rent. eviction landlord ']
+2026-03-27 15:10:43 | INFO     | services.response_generator_v2 | [d1] Bare acts Round 1 — 3 queries: ['Eviction for Non-Payment of Rent', 'Breach of Lease Agreement', 'My landlord is threatening to evict me because I complained ']
+2026-03-27 15:10:43 | INFO     | services.response_generator_v2 | Bare-act query builder [d2]: legal_nature=civil queries=['Maintenance and Repair Obligations of Landlord', 'Breach of Warranty of Habitability', 'I submitted two repair requests for the leakage, and my landlord has not taken adequate action. repair landlord leakage tenant']
+2026-03-27 15:10:43 | INFO     | services.response_generator_v2 | [d2] Bare acts Round 1 — 3 queries: ['Maintenance and Repair Obligations of Landlord', 'Breach of Warranty of Habitability', 'I submitted two repair requests for the leakage, and my land']
+2026-03-27 15:10:43 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:10:43 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 12 BM25 \u2192 12 RRF candidates (pool for re-rank)
+2026-03-27 15:10:43 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:10:43 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 12 BM25 \u2192 12 RRF candidates (pool for re-rank)
+2026-03-27 15:10:43 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:10:43 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:10:43 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:12:42 | INFO     | retrieval.hybrid_retriever | Preloaded chunks [case_laws]: 1015756 chunks
+2026-03-27 15:12:42 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 24 BM25 \u2192 15 RRF candidates (pool for re-rank)
+2026-03-27 15:12:42 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:13:59 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 24 BM25 \u2192 15 RRF candidates (pool for re-rank)
+2026-03-27 15:13:59 | INFO     | retrieval.hybrid_retriever | Act pre-filter (profile): BYPASSED — only 0 candidates after filter (< 5 min); proceeding with all 15 candidates. Check act profile coverage for this query.
+2026-03-27 15:13:59 | INFO     | retrieval.hybrid_retriever | Preloaded BM25 [case_laws]: 1015756 docs
+2026-03-27 15:14:00 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:00 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:00 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:00 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 12 BM25 \u2192 12 RRF candidates (pool for re-rank)
+2026-03-27 15:14:00 | INFO     | retrieval.hybrid_retriever | Preloaded FAISS [case_summaries]: 34037 vectors
+2026-03-27 15:14:00 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:00 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 12 BM25 \u2192 12 RRF candidates (pool for re-rank)
+2026-03-27 15:14:02 | INFO     | retrieval.hybrid_retriever | Preloaded chunks [case_summaries]: 34037 chunks
+2026-03-27 15:14:02 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:05 | INFO     | retrieval.hybrid_retriever | Preloaded BM25 [case_summaries]: 34037 docs
+2026-03-27 15:14:05 | INFO     | retrieval.hybrid_retriever | Index preload complete. Cache has 12 entries.
+2026-03-27 15:14:05 | INFO     | nyaymalaw.api | âœ“ All indexes pre-loaded into RAM (queries will serve from cache)
+2026-03-27 15:14:05 | INFO     | nyaymalaw.api | âœ“ Few-shot examples pre-loaded into memory
+2026-03-27 15:14:05 | INFO     | nyaymalaw.api | ============================================================
+2026-03-27 15:14:05 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:05 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:06 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 24 BM25 \u2192 15 RRF candidates (pool for re-rank)
+2026-03-27 15:14:06 | INFO     | retrieval.hybrid_retriever | Act pre-filter (profile): BYPASSED — only 2 candidates after filter (< 5 min); proceeding with all 15 candidates. Check act profile coverage for this query.
+2026-03-27 15:14:06 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:07 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 24 BM25 \u2192 15 RRF candidates (pool for re-rank)
+2026-03-27 15:14:07 | INFO     | retrieval.hybrid_retriever | Act pre-filter (profile): BYPASSED — only 0 candidates after filter (< 5 min); proceeding with all 15 candidates. Check act profile coverage for this query.
+2026-03-27 15:14:07 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:07 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:08 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:08 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 12 BM25 \u2192 12 RRF candidates (pool for re-rank)
+2026-03-27 15:14:08 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:08 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 12 BM25 \u2192 12 RRF candidates (pool for re-rank)
+2026-03-27 15:14:08 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:08 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:10 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:12 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 24 BM25 \u2192 15 RRF candidates (pool for re-rank)
+2026-03-27 15:14:12 | INFO     | retrieval.hybrid_retriever | Act pre-filter (profile): BYPASSED — only 0 candidates after filter (< 5 min); proceeding with all 15 candidates. Check act profile coverage for this query.
+2026-03-27 15:14:12 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:15 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:15 | INFO     | services.response_generator_v2 | [d1] Act pre-filter: 28 \u2192 13 sections (kept acts: ['Telangana Buildings (Lease, Rent And Eviction) Control Act, 1960', 'The Delhi Rent Act, 1995'])
+2026-03-27 15:14:15 | INFO     | services.response_generator_v2 | [d1] Bare acts Round 1: 0 unique sections across 3 queries (after act pre-filter + quality filter)
+2026-03-27 15:14:15 | INFO     | services.response_generator_v2 | [d1] Bare acts Round 1 found no relevant local sections.
+2026-03-27 15:14:15 | INFO     | services.response_generator_v2 | Web search queries for dispute 'My landlord is threatening to evict me because I c' (states=[]): ["Liability angle: Landlord's right to terminate tenancy India central act", "Remedy angle: Tenant's rights to protection against eviction India central act", 'eviction landlord leakage India legislation']
+2026-03-27 15:14:15 | INFO     | retrieval.tiered_search | Searching Indiankanoon fallback for gap: 'Liability angle: Landlord's right to terminate tenancy India central act' (type=bare_act)
+2026-03-27 15:14:16 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 24 BM25 \u2192 15 RRF candidates (pool for re-rank)
+2026-03-27 15:14:16 | INFO     | retrieval.hybrid_retriever | Act pre-filter (profile): BYPASSED — only 0 candidates after filter (< 5 min); proceeding with all 15 candidates. Check act profile coverage for this query.
+2026-03-27 15:14:16 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:16 | INFO     | services.response_generator_v2 | [d2] Act pre-filter: 27 \u2192 10 sections (kept acts: ['The Marine Insurance Act, 1963', 'The Sale Of Goods Act, 1930'])
+2026-03-27 15:14:16 | INFO     | services.response_generator_v2 | [d2] Bare acts Round 1: 0 unique sections across 3 queries (after act pre-filter + quality filter)
+2026-03-27 15:14:16 | INFO     | services.response_generator_v2 | [d2] Bare acts Round 1 found no relevant local sections.
+2026-03-27 15:14:16 | INFO     | services.response_generator_v2 | Web search queries for dispute 'I submitted two repair requests for the leakage, a' (states=[]): ["Liability angle: Landlord's duty to repair India central act", "Remedy angle: Tenant's right to damages or abatement India central act", 'repair landlord leakage India legislation']
+2026-03-27 15:14:16 | INFO     | retrieval.tiered_search | Searching Indiankanoon fallback for gap: 'Liability angle: Landlord's duty to repair India central act' (type=bare_act)
+2026-03-27 15:14:20 | ERROR    | retrieval.tiered_search | DuckDuckGo search failed for 'Liability angle: Landlord's right to terminate tenancy India central act site:indiankanoon.org': name 'TIER2_OFFICIAL_COURT_DOMAINS' is not defined
+2026-03-27 15:14:20 | INFO     | retrieval.tiered_search | indiankanoon.org search: 0 results for 'Liability angle: Landlord's right to terminate tenancy India central act'
+2026-03-27 15:14:20 | INFO     | retrieval.tiered_search | Indiankanoon fallback search complete: 0 results
+2026-03-27 15:14:20 | INFO     | retrieval.tiered_search | Searching Indiankanoon fallback for gap: 'Remedy angle: Tenant's rights to protection against eviction India central act' (type=bare_act)
+2026-03-27 15:14:21 | ERROR    | retrieval.tiered_search | DuckDuckGo search failed for 'Liability angle: Landlord's duty to repair India central act site:indiankanoon.org': name 'TIER2_OFFICIAL_COURT_DOMAINS' is not defined
+2026-03-27 15:14:21 | INFO     | retrieval.tiered_search | indiankanoon.org search: 0 results for 'Liability angle: Landlord's duty to repair India central act'
+2026-03-27 15:14:21 | INFO     | retrieval.tiered_search | Indiankanoon fallback search complete: 0 results
+2026-03-27 15:14:21 | INFO     | retrieval.tiered_search | Searching Indiankanoon fallback for gap: 'Remedy angle: Tenant's right to damages or abatement India central act' (type=bare_act)
+2026-03-27 15:14:23 | ERROR    | retrieval.tiered_search | DuckDuckGo search failed for 'Remedy angle: Tenant's rights to protection against eviction India central act site:indiankanoon.org': name 'TIER2_OFFICIAL_COURT_DOMAINS' is not defined
+2026-03-27 15:14:23 | INFO     | retrieval.tiered_search | indiankanoon.org search: 0 results for 'Remedy angle: Tenant's rights to protection against eviction India central act'
+2026-03-27 15:14:23 | INFO     | retrieval.tiered_search | Indiankanoon fallback search complete: 0 results
+2026-03-27 15:14:23 | INFO     | retrieval.tiered_search | Searching Indiankanoon fallback for gap: 'eviction landlord leakage India legislation' (type=bare_act)
+2026-03-27 15:14:25 | ERROR    | retrieval.tiered_search | DuckDuckGo search failed for 'Remedy angle: Tenant's right to damages or abatement India central act site:indiankanoon.org': name 'TIER2_OFFICIAL_COURT_DOMAINS' is not defined
+2026-03-27 15:14:25 | INFO     | retrieval.tiered_search | indiankanoon.org search: 0 results for 'Remedy angle: Tenant's right to damages or abatement India central act'
+2026-03-27 15:14:25 | INFO     | retrieval.tiered_search | Indiankanoon fallback search complete: 0 results
+2026-03-27 15:14:25 | INFO     | retrieval.tiered_search | Searching Indiankanoon fallback for gap: 'repair landlord leakage India legislation' (type=bare_act)
+2026-03-27 15:14:27 | ERROR    | retrieval.tiered_search | DuckDuckGo search failed for 'eviction landlord leakage India legislation site:indiankanoon.org': name 'TIER2_OFFICIAL_COURT_DOMAINS' is not defined
+2026-03-27 15:14:27 | INFO     | retrieval.tiered_search | indiankanoon.org search: 0 results for 'eviction landlord leakage India legislation'
+2026-03-27 15:14:27 | INFO     | retrieval.tiered_search | Indiankanoon fallback search complete: 0 results
+2026-03-27 15:14:27 | INFO     | retrieval.tiered_search | Gap search complete: 0 bare acts, 0 case laws, 0 news refs
+2026-03-27 15:14:27 | INFO     | services.response_generator_v2 | Indiankanoon bare-act fallback: 0 results for dispute 'My landlord is threatening to evict me because I complained '
+2026-03-27 15:14:28 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:29 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 12 BM25 \u2192 12 RRF candidates (pool for re-rank)
+2026-03-27 15:14:29 | ERROR    | retrieval.tiered_search | DuckDuckGo search failed for 'repair landlord leakage India legislation site:indiankanoon.org': name 'TIER2_OFFICIAL_COURT_DOMAINS' is not defined
+2026-03-27 15:14:29 | INFO     | retrieval.tiered_search | indiankanoon.org search: 0 results for 'repair landlord leakage India legislation'
+2026-03-27 15:14:29 | INFO     | retrieval.tiered_search | Indiankanoon fallback search complete: 0 results
+2026-03-27 15:14:29 | INFO     | retrieval.tiered_search | Gap search complete: 0 bare acts, 0 case laws, 0 news refs
+2026-03-27 15:14:29 | INFO     | services.response_generator_v2 | Indiankanoon bare-act fallback: 0 results for dispute 'I submitted two repair requests for the leakage, and my land'
+2026-03-27 15:14:29 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:29 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:31 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 12 BM25 \u2192 12 RRF candidates (pool for re-rank)
+2026-03-27 15:14:31 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:33 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:14:37 | ERROR    | retrieval.hybrid_retriever | FAISS search failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:15:47 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 15 BM25 \u2192 10 RRF candidates (pool for re-rank)
+2026-03-27 15:15:50 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:15:50 | INFO     | services.response_generator_v2 | [d2] Case laws Round 1 local: 0 after filter, 0 after limit
+2026-03-27 15:15:50 | INFO     | services.response_generator_v2 | [d2] Case laws Round 1 found no relevant local judgments.
+2026-03-27 15:15:50 | INFO     | retrieval.tiered_search | Searching Indiankanoon fallback for gap: 'I submitted two repair requests for the leakage, and my landlord has not taken adequate action. Supreme Court High Court judgment India' (type=case_law)
+2026-03-27 15:15:54 | INFO     | retrieval.hybrid_retriever | Hybrid search: 0 FAISS + 15 BM25 \u2192 10 RRF candidates (pool for re-rank)
+2026-03-27 15:15:55 | ERROR    | retrieval.hybrid_retriever | Cross-encoder re-ranking failed: huggingface-hub>=0.34.0,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.7.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+2026-03-27 15:15:55 | INFO     | services.response_generator_v2 | [d1] Case laws Round 1 local: 0 after filter, 0 after limit
+2026-03-27 15:15:55 | INFO     | services.response_generator_v2 | [d1] Case laws Round 1 found no relevant local judgments.
+2026-03-27 15:15:55 | INFO     | retrieval.tiered_search | Searching Indiankanoon fallback for gap: 'My landlord is threatening to evict me because I complained about the severe leakage and stopped paying part of the rent. Supreme Court High Court judgment India' (type=case_law)
+2026-03-27 15:15:56 | ERROR    | retrieval.tiered_search | DuckDuckGo search failed for 'I submitted two repair requests for the leakage, and my landlord has not taken adequate action. Supreme Court High Court judgment India site:indiankanoon.org': name 'TIER2_OFFICIAL_COURT_DOMAINS' is not defined
+2026-03-27 15:15:56 | INFO     | retrieval.tiered_search | indiankanoon.org search: 0 results for 'I submitted two repair requests for the leakage, and my landlord has not taken a'
+2026-03-27 15:15:56 | INFO     | retrieval.tiered_search | Indiankanoon fallback search complete: 0 results
+2026-03-27 15:15:56 | INFO     | retrieval.tiered_search | Gap search complete: 0 bare acts, 0 case laws, 0 news refs
+2026-03-27 15:15:56 | INFO     | services.response_generator_v2 | [d2] Indiankanoon case-law fallback: 0 results.
+2026-03-27 15:16:03 | ERROR    | retrieval.tiered_search | DuckDuckGo search failed for 'My landlord is threatening to evict me because I complained about the severe leakage and stopped paying part of the rent. Supreme Court High Court judgment India site:indiankanoon.org': name 'TIER2_OFFICIAL_COURT_DOMAINS' is not defined
+2026-03-27 15:16:03 | INFO     | retrieval.tiered_search | indiankanoon.org search: 0 results for 'My landlord is threatening to evict me because I complained about the severe lea'
+2026-03-27 15:16:03 | INFO     | retrieval.tiered_search | Indiankanoon fallback search complete: 0 results
+2026-03-27 15:16:03 | INFO     | retrieval.tiered_search | Gap search complete: 0 bare acts, 0 case laws, 0 news refs
+2026-03-27 15:16:03 | INFO     | services.response_generator_v2 | [d1] Indiankanoon case-law fallback: 0 results.
+2026-03-27 15:16:03 | WARNING  | nyaymalaw.api | Feedback log failed (non-critical): Excel feedback log not found: C:\Users\rahul\Nyaymalaw-5.0\Nyaymalaw_Feedback_Log_v3.xlsx
+2026-03-27 15:16:03 | INFO     | nyaymalaw.api | POST /conversation/continue \u2192 200 (345143ms)

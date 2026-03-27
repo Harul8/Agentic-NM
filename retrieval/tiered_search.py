@@ -14,7 +14,9 @@ import threading
 from typing import Optional
 
 from config import (
+    TIER2_OFFICIAL_COURT_DOMAINS,
     TIER3_LEGAL_PORTAL_DOMAINS,
+    TIER4_NEWSPAPER_DOMAINS,
     BLOCKED_DOMAINS,
 )
 

@@ -7,9 +7,10 @@ import logging
 import secrets
 import re
 import time
+import threading
 import traceback
 from html import escape as _html_escape
-from queue import Queue
+from queue import Queue, Empty
 from typing import List, Optional
 
 from fastapi import BackgroundTasks, FastAPI, Query, HTTPException, Depends, Header, Request
@@ -2153,6 +2154,33 @@ def _normalize_content(c):
     return str(c) if c else ""
 
 
+async def _stream_sse_queue(queue: Queue, loop):
+    """
+    Drain a worker queue into SSE events, with heartbeats so the connection feels
+    live even while retrieval is still in flight.
+    """
+    while True:
+        try:
+            kind, payload = await loop.run_in_executor(None, lambda: queue.get(timeout=1.0))
+        except Empty:
+            yield ": ping\n\n"
+            continue
+        except Exception:
+            break
+
+        if kind == "result":
+            yield f"event: done\ndata: {json.dumps(payload)}\n\n"
+            break
+        if kind == "progress":
+            yield f"event: progress\ndata: {json.dumps(payload)}\n\n"
+            continue
+        if kind == "step":
+            yield f"event: step\ndata: {json.dumps(payload)}\n\n"
+            continue
+        if kind == "token":
+            yield f"event: token\ndata: {json.dumps(payload)}\n\n"
+
+
 @app.post("/chat")
 def chat(request: ChatRequest):
     """
@@ -2351,6 +2379,7 @@ def continue_chat(request: ContinueChatRequest, user: dict = Depends(_user_from_
 def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None) -> None:
     """Run the same logic as continue_chat, pushing progress to queue and finally the result."""
     try:
+        queue.put(("step", {"message": "Starting analysis of your latest message...", "icon": "⚡"}))
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
         def step_callback(step_data: dict):
@@ -2398,6 +2427,7 @@ def _run_continue_chat_with_progress(conv: list, message: str, queue: Queue, use
 def _run_submit_case_with_progress(text: str, queue: Queue, user_id: str, mode: str | None = None, model_override: str | None = None) -> None:
     """Run submit_case logic with progress streaming."""
     try:
+        queue.put(("step", {"message": "Reviewing the facts you shared...", "icon": "⚡"}))
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
         def step_callback(step_data: dict):
@@ -2447,6 +2477,7 @@ def _run_interview_step_with_progress(facts: str, qa_history: list, queue: Queue
     """Run interview_step logic with progress streaming."""
     try:
         t_total = time.perf_counter()
+        queue.put(("step", {"message": "Reviewing your latest answer...", "icon": "⚡"}))
 
         def progress_callback(progress_snapshot: dict):
             queue.put(("progress", progress_snapshot))
@@ -2543,20 +2574,8 @@ async def submit_case_stream(request: SubmitCaseRequest, user: dict = Depends(_u
     thread.start()
 
     async def event_generator():
-        while True:
-            try:
-                kind, payload = await loop.run_in_executor(None, queue.get)
-            except Exception:
-                break
-            if kind == "result":
-                yield f"event: done\ndata: {json.dumps(payload)}\n\n"
-                break
-            elif kind == "progress":
-                yield f"event: progress\ndata: {json.dumps(payload)}\n\n"
-            elif kind == "step":
-                yield f"event: step\ndata: {json.dumps(payload)}\n\n"
-            elif kind == "token":
-                yield f"event: token\ndata: {json.dumps(payload)}\n\n"
+        async for event in _stream_sse_queue(queue, loop):
+            yield event
 
     return StreamingResponse(
         event_generator(),
@@ -2593,20 +2612,8 @@ async def interview_step_stream(request: InterviewStepRequest, user: dict = Depe
     thread.start()
 
     async def event_generator():
-        while True:
-            try:
-                kind, payload = await loop.run_in_executor(None, queue.get)
-            except Exception:
-                break
-            if kind == "result":
-                yield f"event: done\ndata: {json.dumps(payload)}\n\n"
-                break
-            elif kind == "progress":
-                yield f"event: progress\ndata: {json.dumps(payload)}\n\n"
-            elif kind == "step":
-                yield f"event: step\ndata: {json.dumps(payload)}\n\n"
-            elif kind == "token":
-                yield f"event: token\ndata: {json.dumps(payload)}\n\n"
+        async for event in _stream_sse_queue(queue, loop):
+            yield event
 
     return StreamingResponse(
         event_generator(),
@@ -2649,20 +2656,8 @@ async def continue_chat_stream(request: ContinueChatRequest, user: dict = Depend
     thread.start()
 
     async def event_generator():
-        while True:
-            try:
-                kind, payload = await loop.run_in_executor(None, queue.get)
-            except Exception:
-                break
-            if kind == "result":
-                yield f"event: done\ndata: {json.dumps(payload)}\n\n"
-                break
-            elif kind == "progress":
-                yield f"event: progress\ndata: {json.dumps(payload)}\n\n"
-            elif kind == "step":
-                yield f"event: step\ndata: {json.dumps(payload)}\n\n"
-            elif kind == "token":
-                yield f"event: token\ndata: {json.dumps(payload)}\n\n"
+        async for event in _stream_sse_queue(queue, loop):
+            yield event
 
     return StreamingResponse(
         event_generator(),
@@ -3085,6 +3080,145 @@ def health_check():
 
 @app.on_event("startup")
 async def startup_validation():
+    """Run quick checks and launch the targeted interactive warmup in background."""
+    logger.info("=" * 60)
+    logger.info("Nyaymalaw API v3.0.0 starting up")
+    logger.info("=" * 60)
+
+    try:
+        conn = _get_db()
+        conn.execute("SELECT 1").fetchone()
+        conn.close()
+        logger.info("Database accessible at %s", _DB_PATH)
+    except Exception as e:
+        logger.warning("Database error: %s", e)
+
+    from config import DATA_ROOT, BARE_ACTS_DIR, VECTOR_STORE, BARE_INDEX_V2, CASE_SUMMARY_INDEX_V2
+    logger.info("Data root: %s (BareActs: %s)", DATA_ROOT, BARE_ACTS_DIR)
+    if os.path.isdir(VECTOR_STORE):
+        bare_ok = os.path.isfile(BARE_INDEX_V2)
+        case_summary_ok = os.path.isfile(CASE_SUMMARY_INDEX_V2)
+        logger.info(
+            "Vector store at %s (bare_acts: %s, case_summaries: %s)",
+            VECTOR_STORE,
+            "yes" if bare_ok else "no",
+            "yes" if case_summary_ok else "no",
+        )
+    else:
+        logger.warning("Vector store directory not found: %s", VECTOR_STORE)
+
+    logger.info("CORS origins: %s", _cors_origins)
+
+    try:
+        from services.runtime_warmup import kickoff_runtime_warmup
+        kickoff_runtime_warmup("startup")
+        logger.info("Startup checks complete; targeted runtime warmup launched")
+    except Exception as e:
+        logger.warning("Targeted runtime warmup could not be started: %s", e)
+
+    logger.info("=" * 60)
+    return
+
+    try:
+        conn = _get_db()
+        conn.execute("SELECT 1").fetchone()
+        conn.close()
+        logger.info("âœ“ Database accessible at %s", _DB_PATH)
+    except Exception as e:
+        logger.warning("âš  Database error: %s", e)
+
+    from config import DATA_ROOT, BARE_ACTS_DIR
+    logger.info("Data root: %s (BareActs: %s)", DATA_ROOT, BARE_ACTS_DIR)
+
+    from config import VECTOR_STORE, BARE_INDEX_V2, CASE_INDEX_V2
+    if os.path.isdir(VECTOR_STORE):
+        bare_ok = os.path.isfile(BARE_INDEX_V2)
+        case_ok = os.path.isfile(CASE_INDEX_V2)
+        logger.info(
+            "âœ“ Vector store at %s (bare_acts: %s, case_laws: %s)",
+            VECTOR_STORE, "âœ“" if bare_ok else "âœ—", "âœ“" if case_ok else "âœ—",
+        )
+    else:
+        logger.warning("âš  Vector store directory not found: %s", VECTOR_STORE)
+
+    logger.info("CORS origins: %s", _cors_origins)
+
+    def _background_startup_tasks():
+        if os.environ.get("FEEDBACK_DISTILL_ON_STARTUP", "true").strip().lower() in ("1", "true", "yes", "on"):
+            try:
+                from services.feedback_learning_pipeline import run_daily_feedback_distillation
+                result = run_daily_feedback_distillation()
+                if result.get("status") == "processed":
+                    logger.info(
+                        "Ã¢Å“â€œ Feedback distillation processed (%s feedback Ã¢â€ â€™ %s training candidates, %s eval candidates)",
+                        result.get("feedback_records_total", 0),
+                        result.get("training_candidates_total", 0),
+                        result.get("eval_candidates_total", 0),
+                    )
+                else:
+                    logger.info("Ã¢Å“â€œ Feedback distillation skipped (%s)", result.get("reason", "not_needed"))
+            except Exception as _feedback_distill_err:
+                logger.warning("Ã¢Å¡Â  Feedback distillation failed on startup: %s", _feedback_distill_err)
+
+        ollama = check_ollama_health()
+        if ollama.get("ollama_reachable") and ollama.get("model_loaded"):
+            logger.info("âœ“ Ollama reachable, model '%s' loaded", ollama["model"])
+            if OLLAMA_MODEL_FAST:
+                if warmup_ollama_model(OLLAMA_MODEL_FAST):
+                    logger.info("âœ“ Fast intake model '%s' warmed and kept alive", OLLAMA_MODEL_FAST)
+                else:
+                    logger.warning("âš  Fast intake model '%s' could not be warmed at startup", OLLAMA_MODEL_FAST)
+            if OLLAMA_WARM_ANALYSIS_AT_STARTUP and OLLAMA_MODEL and OLLAMA_MODEL != OLLAMA_MODEL_FAST:
+                if warmup_ollama_model(OLLAMA_MODEL):
+                    logger.info("âœ“ Analysis model '%s' warmed and kept alive", OLLAMA_MODEL)
+                else:
+                    logger.warning("âš  Analysis model '%s' could not be warmed at startup", OLLAMA_MODEL)
+            elif not OLLAMA_WARM_ANALYSIS_AT_STARTUP:
+                logger.info("âœ“ Skipping analysis-model warmup at startup; it will load on first final analysis")
+        elif ollama.get("ollama_reachable"):
+            logger.warning("âš  Ollama reachable but model '%s' NOT found. Run: ollama pull %s", ollama["model"], ollama["model"])
+        else:
+            logger.warning("âš  Ollama NOT reachable at localhost:11434. Start Ollama first.")
+
+        try:
+            from retrieval.hybrid_retriever import (
+                _get_cross_encoder_cpu,
+                _get_cross_encoder_gpu,
+                _get_embedder,
+            )
+            _get_embedder()
+            logger.info("âœ“ Embedding model pre-loaded (warm)")
+            if _get_cross_encoder_gpu() is not None:
+                logger.info("âœ“ Cross-encoder model pre-loaded on CUDA")
+            else:
+                _get_cross_encoder_cpu()
+                logger.info("âœ“ Cross-encoder model pre-loaded on CPU")
+        except Exception as _warmup_err:
+            logger.warning("âš  Model pre-load failed (will load on first request): %s", _warmup_err)
+
+        try:
+            from retrieval.hybrid_retriever import preload_all_indexes
+            preload_all_indexes()
+            logger.info("âœ“ All indexes pre-loaded into RAM (queries will serve from cache)")
+        except Exception as _preload_err:
+            logger.warning("âš  Index pre-load failed (will load on first request): %s", _preload_err)
+
+        try:
+            from training.few_shot_retriever import preload_examples
+            preload_examples()
+            logger.info("âœ“ Few-shot examples pre-loaded into memory")
+        except Exception as _fewshot_err:
+            logger.warning("âš  Few-shot pre-load failed (will load on first request): %s", _fewshot_err)
+
+        logger.info("=" * 60)
+
+    threading.Thread(
+        target=_background_startup_tasks,
+        name="nyaymalaw-startup-warmup",
+        daemon=True,
+    ).start()
+    logger.info("âœ“ Startup checks complete; background warmup tasks launched")
+    return
     """Log system status on startup — warns but does NOT block if services are down."""
     if os.environ.get("FEEDBACK_DISTILL_ON_STARTUP", "true").strip().lower() in ("1", "true", "yes", "on"):
         try:
